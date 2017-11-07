@@ -171,7 +171,7 @@
       "dotnet-xref/_zip/missingapi.yml",
       "dotnet-xref/_zip/msdnsmallset.yml",
       "dotnet-xref/_zip/roslyn.yml"
-    ]
+    ],
     "lruSize": 0
   }
 }
