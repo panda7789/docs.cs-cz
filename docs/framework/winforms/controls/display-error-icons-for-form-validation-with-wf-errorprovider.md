@@ -1,0 +1,108 @@
+---
+title: "Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí součásti Windows Forms ErrorProvider"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- errors [Windows Forms], displaying to users
+- error icons
+- ErrorProvider component [Windows Forms], displaying error icons
+- error messages [Windows Forms], displaying icons
+ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 02638ab59c0ba1c0eb0f8090be118b3d5a9111f8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a>Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí součásti Windows Forms ErrorProvider
+Můžete použít Windows Forms <xref:System.Windows.Forms.ErrorProvider> součást zobrazíte ikonu chyby, když uživatel zadá neplatná data. Musí mít alespoň dva ovládací prvky na formuláři kartě mezi nimi a tím vyvolání ověřovacího kódu.  
+  
+### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a>Zobrazit ikonu chyby při ovládacího prvku hodnota je neplatná.  
+  
+1.  Přidání ovládacích prvků dvě – například textová pole – na formuláři Windows.  
+  
+2.  Přidat <xref:System.Windows.Forms.ErrorProvider> součásti pro formulář.  
+  
+3.  Vyberte první prvek a přidat kód pro jeho <xref:System.Windows.Forms.Control.Validating> obslužné rutiny události. Aby pro tento kód správně spouštět postup musí být připojen k události. Další informace najdete v tématu [postupy: vytváření obslužných rutin událostí spustit čas pro Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
+  
+     Následující kód testy platnosti dat, která uživatel zadal; Pokud je neplatná, data <xref:System.Windows.Forms.ErrorProvider.SetError%2A> metoda je volána. První argument funkce <xref:System.Windows.Forms.ErrorProvider.SetError%2A> metoda určuje, kterého ovládacího prvku na ikonu vedle položky zobrazení. Druhý argument je zobrazený text chyby.  
+  
+    ```vb  
+    Private Sub TextBox1_Validating(ByVal Sender As Object, _  
+       ByVal e As System.ComponentModel.CancelEventArgs) Handles _  
+       TextBox1.Validating  
+          If Not IsNumeric(TextBox1.Text) Then  
+             ErrorProvider1.SetError(TextBox1, "Not a numeric value.")  
+          Else  
+             ' Clear the error.  
+             ErrorProvider1.SetError(TextBox1, "")  
+          End If  
+    End Sub  
+    ```  
+  
+    ```csharp  
+    protected void textBox1_Validating (object sender,  
+       System.ComponentModel.CancelEventArgs e)  
+    {  
+       try  
+       {  
+          int x = Int32.Parse(textBox1.Text);  
+          errorProvider1.SetError(textBox1, "");  
+       }  
+       catch (Exception ex)  
+       {  
+          errorProvider1.SetError(textBox1, "Not an integer value.");  
+       }  
+    }  
+    ```  
+  
+    ```cpp  
+    private:  
+       System::Void textBox1_Validating(System::Object ^  sender,  
+          System::ComponentModel::CancelEventArgs ^  e)  
+       {  
+          try  
+          {  
+             int x = Int32::Parse(textBox1->Text);  
+             errorProvider1->SetError(textBox1, "");  
+          }  
+          catch (System::Exception ^ ex)  
+          {  
+             errorProvider1->SetError(textBox1, "Not an integer value.");  
+          }  
+       }  
+    ```  
+  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+  
+    ```csharp  
+    this.textBox1.Validating += new  
+    System.ComponentModel.CancelEventHandler(this.textBox1_Validating);  
+    ```  
+  
+    ```cpp  
+    this->textBox1->Validating += gcnew  
+       System::ComponentModel::CancelEventHandler  
+       (this, &Form1::textBox1_Validating);  
+    ```  
+  
+4.  Spusťte projekt. Zadejte (v tomto příkladu jiné než číselné) neplatná data do první prvek a potom karty druhou. Když se zobrazí ikona chyby, přejděte na to ukazatel myši zobrazíte text chyby.  
+  
+## <a name="see-also"></a>Viz také  
+ <xref:System.Windows.Forms.ErrorProvider.SetError%2A>  
+ [ErrorProvider – přehled komponenty](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
+ [Postupy: zobrazení chyb v prvku DataSet pomocí ovládacího prvku Windows Forms ErrorProvider – komponenta](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)

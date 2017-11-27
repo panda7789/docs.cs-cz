@@ -1,0 +1,41 @@
+---
+title: "Postupy: Čtení uživatelských nastavení při běhu pomocí C#"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application settings [Windows Forms], reading
+- application settings [Windows Forms], run time
+- application settings [Windows Forms], C#
+ms.assetid: dbe8bf09-5e1c-49da-9192-154033d7240b
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c23fd88d33ff4ca480c435f2058f4c568320578
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="how-to-read-settings-at-run-time-with-c"></a>Postupy: Čtení uživatelských nastavení při běhu pomocí C# #
+Nastavení brány obor aplikace a nastavení uživatele si můžete přečíst v době běhu prostřednictvím vlastnosti objektu. Objekt vlastností zpřístupní všechna výchozí nastavení pro projekt prostřednictvím Properties.Settings.Default člena.  
+  
+### <a name="to-read-settings-at-run-time-with-c"></a>Číst nastavení při běhu pomocí C#  
+  
+-   Přístup k příslušné nastavení prostřednictvím Properties.Settings.Default člena. Následující příklad ukazuje, jak přiřadit nastavení s názvem `myColor` na vlastnost Barva pozadí. Vyžaduje, abyste vytvořili nastavení souboru, který obsahuje nastavení s názvem `myColor` typu `System.Drawing.Color`. Informace o vytvoření souboru nastavení najdete v tématu [postupy: vytvoření nového nastavení v době návrhu](../../../../docs/framework/winforms/advanced/how-to-create-a-new-setting-at-design-time.md).  
+  
+    ```  
+    // C#  
+    this.BackColor = Properties.Settings.Default.myColor;  
+    ```  
+  
+## <a name="see-also"></a>Viz také  
+ [Použití nastavení aplikace a nastavení uživatele](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
+ [Postupy: Zápis uživatelských nastavení při běhu pomocí C#](../../../../docs/framework/winforms/advanced/how-to-write-user-settings-at-run-time-with-csharp.md)  
+ [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
