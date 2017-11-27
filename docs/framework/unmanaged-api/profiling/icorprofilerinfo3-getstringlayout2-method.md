@@ -1,0 +1,62 @@
+---
+title: "ICorProfilerInfo3::GetStringLayout2 – metoda"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+api_name: ICorProfilerInfo3.GetStringLayout2 Method
+api_location: Mscorwks.dll
+api_type: COM
+f1_keywords: ICorProfilerInfo3::GetStringLayout2
+helpviewer_keywords:
+- ICorProfilerInfo3::GetStringLayout2 method [.NET Framework profiling]
+- GetStringLayout2 method [.NET Framework profiling]
+ms.assetid: 1a268496-ee51-4d84-8700-ee56fd0c499d
+topic_type: apiref
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: de89776c6208ec7e3434fa747057edbf818ec013
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="icorprofilerinfo3getstringlayout2-method"></a>ICorProfilerInfo3::GetStringLayout2 – metoda
+Získá informace o rozložení objektu řetězce. Tato metoda nahrazuje [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) metoda.  
+  
+## <a name="syntax"></a>Syntaxe  
+  
+```  
+HRESULT GetStringLayout2(  
+    [out] ULONG *pStringLengthOffset,  
+    [out] ULONG *pBufferOffset);  
+```  
+  
+#### <a name="parameters"></a>Parametry  
+ `pStringLengthOffset`  
+ [out] Ukazatel na posun umístění relativně k `ObjectID` ukazatele, uchovávající délky řetězce sám sebe. Délka se ukládají jako `DWORD`.  
+  
+ `pBufferOffset`  
+ [out] Ukazatel na posun vyrovnávací paměti, relativně k `ObjectID` ukazatele, který ukládá řetězec široké znaky.  
+  
+## <a name="remarks"></a>Poznámky  
+ Řetězce mohou nebo nemusí být ukončené hodnotou null.  
+  
+## <a name="requirements"></a>Požadavky  
+ **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+  
+ **Záhlaví:** CorProf.idl, CorProf.h  
+  
+ **Knihovna:** CorGuids.lib  
+  
+ **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+  
+## <a name="see-also"></a>Viz také  
+ [Icorprofilerinfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
+ [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

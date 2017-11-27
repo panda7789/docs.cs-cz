@@ -1,0 +1,64 @@
+---
+title: "Jednorozměrná pole (Průvodce programováním v C#)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.topic: article
+helpviewer_keywords:
+- single-dimensional arrays [C#]
+- arrays [C#], single-dimensional
+ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
+caps.latest.revision: "18"
+author: BillWagner
+ms.author: wiwagn
+ms.openlocfilehash: fed9042ba37164927bb8073bc669fafeb5d40598
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
+Je možné deklarovat jednorozměrná pole pět celých čísel, jak je znázorněno v následujícím příkladu:  
+  
+ [!code-csharp[csProgGuideArrays#4](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_1.cs)]  
+  
+ Toto pole obsahuje elementy ze `array[0]` k `array[4]`. [Nové](../../../csharp/language-reference/keywords/new.md) operátor slouží k vytvoření pole a inicializace elementy pole na výchozí hodnoty. V tomto příkladu jsou inicializovány všechny elementy pole na hodnotu nula.  
+  
+ Pole, které ukládá prvků řetězce lze deklarovat stejným způsobem. Příklad:  
+  
+ [!code-csharp[csProgGuideArrays#5](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_2.cs)]  
+  
+## <a name="array-initialization"></a>Inicializace pole  
+ Je možné k chybě při inicializaci pole po deklaraci, v takovém případě není nutné specifikátor rozsahu, protože je již poskytl počet elementů v seznamu inicializace. Příklad:  
+  
+ [!code-csharp[csProgGuideArrays#6](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_3.cs)]  
+  
+ Pole řetězců jde inicializovat stejným způsobem. Toto je deklaraci pole řetězců kde každý element pole se inicializuje pomocí názvu za den:  
+  
+ [!code-csharp[csProgGuideArrays#7](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_4.cs)]  
+  
+ Při inicializaci pole po deklaraci, můžete použít následující klávesové zkratky:  
+  
+ [!code-csharp[csProgGuideArrays#8](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_5.cs)]  
+  
+ Je možné deklarovat bez inicializace proměnné pole, ale je nutné použít `new` operátor při přiřazení pole na tuto proměnnou. Příklad:  
+  
+ [!code-csharp[csProgGuideArrays#9](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_6.cs)]  
+  
+ C# 3.0 zavádí implicitně typovaná pole. Další informace najdete v tématu [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
+  
+## <a name="value-type-and-reference-type-arrays"></a>Typ hodnoty a odkaz na typ pole  
+ Vezměte v úvahu následující deklarace pole:  
+  
+ [!code-csharp[csProgGuideArrays#10](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_7.cs)]  
+  
+ Výsledek tohoto prohlášení, závisí na tom, zda `SomeType` je hodnota typu nebo typu odkazu. Pokud je typ hodnoty, příkaz vytvoří pole 10 elementů, z nichž každá má typ `SomeType`. Pokud `SomeType` je typu odkazu. příkaz vytvoří pole 10 elementů, z nichž každý je inicializováno odkaz s hodnotou null.  
+  
+ Další informace o typy hodnot a typy odkazu najdete v tématu [typy](../../../csharp/language-reference/keywords/types.md).  
+  
+## <a name="see-also"></a>Viz také  
+ <xref:System.Array>  
+ [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Pole](../../../csharp/programming-guide/arrays/index.md)  
+ [Vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)  
+ [Vícenásobná pole](../../../csharp/programming-guide/arrays/jagged-arrays.md)

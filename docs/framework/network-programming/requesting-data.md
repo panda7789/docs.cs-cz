@@ -1,0 +1,67 @@
+---
+title: "Požadavek na Data"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- sending data
+- WebRequest class, sending and receiving data
+- requesting data from Internet, about requesting data
+- WebClient class, sending and receiving data
+- network, requesting data
+- receiving data
+- sending data, about sending data
+- response to Internet request, about responding to Internet requests
+- data requests
+- receiving data, about receiving data
+- Internet, requesting data
+ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: bb5c79980246a9afa5a7e5024049c26815cab49d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="requesting-data"></a>Požadavek na Data
+Vývoj aplikací, které běží v distribuované provozní prostředí dnešní Internetu vyžaduje metodu efektivní, snadno použitelné pro načítání dat ze všech typů prostředků. Modulární protokoly umožňují vyvíjet aplikace, které pomocí jediného rozhraní k načtení dat z více internetových protokolech.  
+  
+## <a name="uploading-and-downloading-data-from-an-internet-server"></a>Nahrávání a stahování dat z internetového serveru  
+ Pro jednoduché požadavku a odpovědi transakce <xref:System.Net.WebClient> třída poskytuje nejsnazší pro nahrávání dat nebo stahování dat z internetového serveru. **Webový klient** poskytuje metody pro odesílání a stahování souborů, přijímající a odesílající datové proudy, vyrovnávací paměť dat na server a přijímání odpověď. **Webový klient** používá <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> je k dispozici pro použití třídy aby skutečné připojení k Internetu, takže všechny registrované modulární protokol.  
+  
+ Klientských aplikací, které je třeba, aby složitější data požadavku transakcí ze serverů pomocí **WebRequest** třídy a jeho následníky. **WebRequest** zapouzdří podrobnosti o připojení k serveru, odesílání požadavku a přijetí odpovědi. **WebRequest** je abstraktní třída, která definuje sadu vlastností a metod, které jsou k dispozici pro všechny aplikace, které používají modulární protokoly. Následníků **WebRequest**, jako například <xref:System.Net.HttpWebRequest>, implementovat vlastnosti a metody definované **WebRequest** způsobem, který je v souladu s základního protokolu.  
+  
+ **WebRequest** třída vytváří instance specifické pro protokol **WebRequest** následníky, pomocí hodnoty identifikátoru URI předaný jeho <xref:System.Net.WebRequest.Create%2A> metoda určení konkrétní odvozené třídy instance pro vytvoření. Vyberte aplikace, které **WebRequest** následník se má použít k má požadavek zpracovat tak, že zaregistrujete následník konstruktor s <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType> metoda.  
+  
+ Žádosti se k internetového zdroji voláním <xref:System.Net.WebRequest.GetResponse%2A> metodu **WebRequest**. **GetResponse** metoda vytvoří žádost specifické pro protokol z vlastností **WebRequest**, vytvoří soketu připojení TCP nebo UDP na server a odešle žádost. Pro požadavky, které odesílají data na server, jako je například HTTP **Post** nebo FTP **Put** požadavky, <xref:System.Net.WebRequest.GetRequestStream%2A?displayProperty=nameWithType> metoda poskytuje datový proud sítě, ve kterém se má odeslat data.  
+  
+ **GetResponse** metoda vrátí hodnotu konkrétního protokolu **WebResponse** odpovídající **WebRequest.**  
+  
+ **WebResponse** třída je také abstraktní třída, která definuje vlastnosti a metody, které jsou k dispozici pro všechny aplikace, které používají modulární protokoly. **WebResponse** následníky implementovat tyto vlastnosti a metody pro základní protokol. <xref:System.Net.HttpWebResponse> Například třída implementuje **WebResponse** třídy pro protokol HTTP.  
+  
+ Data vrácená serverem jsou zobrazena na aplikaci v datový proud vrácený <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metoda. Tento datový proud stejně jako jakýkoli jiný, můžete použít, jak je znázorněno v následujícím příkladu.  
+  
+```csharp  
+StreamReader sr =  
+   new StreamReader(resp.GetResponseStream(), Encoding.ASCII);  
+```  
+  
+```vb  
+Dim sr As StreamReader  
+sr = New StreamReader(resp.GetResponseStream(), Encoding.ASCII)  
+```  
+  
+## <a name="see-also"></a>Viz také  
+ [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
+ [Postupy: žádosti o webovou stránku a načtěte výsledky jako datový proud](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
+ [Postupy: načtení WebResponse specifické pro protokol, který odpovídá WebRequest](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)

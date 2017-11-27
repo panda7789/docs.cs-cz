@@ -1,0 +1,142 @@
+---
+title: "Třída Operation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+ms.assetid: b19d1496-ef06-4d0c-b2ae-e728ec00cca0
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 739f8309e7a01eeecf921b50fcde24417fbbc515
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/18/2017
+---
+# <a name="operation-class"></a>Třída Operation
+Operace  
+  
+## <a name="syntax"></a>Syntaxe  
+  
+```  
+class Operation  
+{  
+  string Action;  
+  boolean AsyncPattern;  
+  Behavior Behaviors[];  
+  boolean IsCallback;  
+  boolean IsInitiating;  
+  boolean IsOneWay;  
+  boolean IsTerminating;  
+  string MethodSignature;  
+  string Name;  
+  string ParameterTypes[];  
+  string ReplyAction;  
+  string ReturnType;  
+};  
+```  
+  
+## <a name="methods"></a>Metody  
+ Třída Operation nedefinuje žádné metody.  
+  
+## <a name="properties"></a>Vlastnosti  
+ Třída Operation má následující vlastnosti:  
+  
+### <a name="action"></a>Akce  
+ Datový typ: řetězec  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Akce WS-Addressing zprávy požadavku.  
+  
+### <a name="asyncpattern"></a>Parametru AsyncPattern  
+ Datový typ: logická hodnota  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Označuje, že operace je implementovaná asynchronně pomocí `Begin`[otevření nebo uzavření lomené závorky] a `End`pár – metoda [otevření nebo uzavření lomené závorky] v kontraktu služby.  
+  
+### <a name="behaviors"></a>Chování  
+ Datový typ: chování pole  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Chování, které jsou spojené s touto operací.  
+  
+### <a name="iscallback"></a>IsCallback  
+ Datový typ: logická hodnota  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Hodnota TRUE, po operaci zpětného volání operace.  
+  
+### <a name="isinitiating"></a>IsInitiating  
+ Datový typ: logická hodnota  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Určuje, zda metoda provádí operaci, která můžete zahájit relaci na serveru.  
+  
+### <a name="isoneway"></a>IsOneWay  
+ Datový typ: logická hodnota  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Určuje, zda operace vrátí zprávu odpovědi.  
+  
+### <a name="isterminating"></a>IsTerminating  
+ Datový typ: logická hodnota  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Určuje, zda operace vrátí zprávu odpovědi.  
+  
+### <a name="methodsignature"></a>MethodSignature  
+ Datový typ: řetězec  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Podpis metody operace.  
+  
+### <a name="name"></a>Název  
+ Datový typ: řetězec  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Název operace.  
+  
+### <a name="parametertypes"></a>ParameterTypes  
+ Datový typ: pole řetězců  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Typy parametrů operace.  
+  
+### <a name="replyaction"></a>ReplyAction  
+ Datový typ: řetězec  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Hodnota akce SOAP zprávy s odpovědí operace.  
+  
+### <a name="returntype"></a>Vlastnost ReturnType  
+ Datový typ: řetězec  
+  
+ Přístup k typu: jen pro čtení  
+  
+ Návratový typ operace.  
+  
+## <a name="requirements"></a>Požadavky  
+  
+|MOF|Deklarované v Servicemodel.mof.|  
+|---------|-----------------------------------|  
+|Obor názvů|Definované v root\ServiceModel|  
+  
+## <a name="see-also"></a>Viz také  
+ <xref:System.ServiceModel.Description.OperationDescription>

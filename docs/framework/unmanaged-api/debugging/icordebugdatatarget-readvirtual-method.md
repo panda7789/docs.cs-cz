@@ -1,0 +1,72 @@
+---
+title: "ICorDebugDataTarget::ReadVirtual – metoda"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+api_name: ICorDebugDataTarget.ReadVirtual Method
+api_location: mscordbi.dll
+api_type: COM
+f1_keywords: ICorDebugDataTarget::ReadVirtual
+helpviewer_keywords:
+- ICorDebugDataTarget::ReadVirtual method [.NET Framework debugging]
+- ReadVirtual method, ICorDebugDataTarget interface [.NET Framework debugging]
+ms.assetid: 55e57640-b3d2-413d-b4f4-fbc27fb8e37c
+topic_type: apiref
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b9b9f0399c05155a9925624e5c9d6bcb6a52f024
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="icordebugdatatargetreadvirtual-method"></a>ICorDebugDataTarget::ReadVirtual – metoda
+Získá blok souvislé paměti začínající na zadanou adresu a vrátí ji v poskytnutá vyrovnávací paměť.  
+  
+## <a name="syntax"></a>Syntaxe  
+  
+```  
+HRESULT ReadVirtual(  
+    [in] CORDB_ADDRESS   address,  
+    [out, size_is(bytesRequested), length_is(*pBytesRead)]  
+          BYTE *     pBuffer,  
+    [in]  ULONG32    bytesRequested,  
+    [out] ULONG32 *  pBytesRead);  
+```  
+  
+#### <a name="parameters"></a>Parametry  
+ `address`  
+ [v] Počáteční adresa požadovanou paměť.  
+  
+ `pbuffer`  
+ [out] Vyrovnávací paměť, kde bude uložena paměti.  
+  
+ `bytesRequested`  
+ [v] Počet bajtů, které mají získat z cílovou adresu.  
+  
+ `pBytesRead`  
+ [out] Počet bajtů ve skutečnosti čtení z cílovou adresu. To může být méně než `bytesRequested`.  
+  
+## <a name="remarks"></a>Poznámky  
+ Pokud lze číst prvního bajtu (na adrese zadaným počátečním), by měla vrátit volání úspěšné (pro podporu efektivní čtení datových struktur s popisující samy sebe délka jako řetězce ukončené hodnotou null).  
+  
+## <a name="requirements"></a>Požadavky  
+ **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
+  
+ **Knihovna:** CorGuids.lib  
+  
+ **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+  
+## <a name="see-also"></a>Viz také  
+ [ICorDebugDataTarget – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)  
+ [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

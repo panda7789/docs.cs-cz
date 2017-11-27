@@ -1,0 +1,87 @@
+---
+title: "IMetaDataAssemblyImport::GetAssemblyProps – metoda"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+api_name: IMetaDataAssemblyImport.GetAssemblyProps
+api_location: mscoree.dll
+api_type: COM
+f1_keywords: IMetaDataAssemblyImport::GetAssemblyProps
+helpviewer_keywords:
+- GetAssemblyProps method [.NET Framework metadata]
+- IMetaDataAssemblyImport::GetAssemblyProps method [.NET Framework metadata]
+ms.assetid: 0eaa4aa9-9441-444a-920c-e4b2a2db899e
+topic_type: apiref
+caps.latest.revision: "12"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: f3ff9c66d483392823a1cc95163e4d5e7e81a364
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/18/2017
+---
+# <a name="imetadataassemblyimportgetassemblyprops-method"></a>IMetaDataAssemblyImport::GetAssemblyProps – metoda
+Získá sadu vlastností pro sestavení s podpisem Zadaná metadata.  
+  
+## <a name="syntax"></a>Syntaxe  
+  
+```  
+HRESULT GetAssemblyProps (  
+    [in]  mdAssembly          mda,  
+    [out] const void          **ppbPublicKey,   
+    [out] ULONG               *pcbPublicKey,  
+    [out] ULONG               *pulHashAlgId,  
+    [out] LPWSTR              szName,  
+    [in] ULONG                cchName,  
+    [out] ULONG               *pchName,  
+    [out] ASSEMBLYMETADATA    *pMetaData,  
+    [out] DWORD               *pdwAssemblyFlags  
+);  
+```  
+  
+#### <a name="parameters"></a>Parametry  
+ `mda`  
+ [v]. `mdAssembly` Metadata token, který představuje sestavení, pro které chcete získat vlastnosti.  
+  
+ `ppbPublicKey`  
+ [out] Ukazatel na veřejný klíč, nebo token pro metadata.  
+  
+ `pcbPublicKey`  
+ [out] Počet bajtů vrácených veřejný klíč.  
+  
+ `pulHashAlgId`  
+ [out] Ukazatel na algoritmus použitý k hodnoty hash souborů v sestavení.  
+  
+ `szName`  
+ [out] Jednoduchý název sestavení.  
+  
+ `cchName`  
+ [v] Velikost v široké znaků, z `szName`.  
+  
+ `pchName`  
+ [out] Počet široké znaků ve skutečnosti, vrátí se v `szName`.  
+  
+ `pMetaData`  
+ [out] Ukazatel na assemblymetadata – struktura, která obsahuje metadata sestavení.  
+  
+ `pdwAssemblyFlags`  
+ [out] Příznaky, které popisují metadata použijí k sestavení. Tato hodnota je kombinací jednoho nebo více [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty.  
+  
+## <a name="requirements"></a>Požadavky  
+ **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+  
+ **Záhlaví:** Cor.h  
+  
+ **Knihovna:** používat jako prostředek v MsCorEE.dll  
+  
+ **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+  
+## <a name="see-also"></a>Viz také  
+ [Imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
