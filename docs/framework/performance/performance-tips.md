@@ -1,0 +1,57 @@
+---
+title: "Tipy pro zvýšení výkonu rozhraní .NET"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- C# language, performance
+- performance [C#]
+- Visual Basic, performance
+- performance [Visual Basic]
+ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
+caps.latest.revision: "36"
+author: BillWagner
+ms.author: wiwagn
+manager: wpickett
+ms.openlocfilehash: 93db69b67bfac3bcefbc818032aae64df0fd47b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="net-performance-tips"></a><span data-ttu-id="5b83e-102">Tipy pro zvýšení výkonu rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="5b83e-102">.NET Performance Tips</span></span>
+<span data-ttu-id="5b83e-103">Termín *výkonu* obvykle odkazuje na rychlost zpracování programu.</span><span class="sxs-lookup"><span data-stu-id="5b83e-103">The term *performance* generally refers to the execution speed of a program.</span></span> <span data-ttu-id="5b83e-104">Rychlost provádění někdy zvýšíte následující některých základních pravidel ve zdrojovém kódu.</span><span class="sxs-lookup"><span data-stu-id="5b83e-104">You can sometimes increase execution speed by following certain basic rules in your source code.</span></span> <span data-ttu-id="5b83e-105">V některých aplikacích je důležité, abyste pečlivě zkontrolujte kód a použít profilery a ujistěte se, zda je spuštěna co nejrychleji.</span><span class="sxs-lookup"><span data-stu-id="5b83e-105">In some programs, it is important to examine code closely and use profilers to make sure that it is running as fast as possible.</span></span> <span data-ttu-id="5b83e-106">V jiných programů nemáte provést tyto optimalizace, protože je kód spuštěn přijatelně rychlé, jako je zapsán.</span><span class="sxs-lookup"><span data-stu-id="5b83e-106">In other programs, you do not have to perform such optimization because the code is running acceptably fast as it is written.</span></span> <span data-ttu-id="5b83e-107">V tomto článku jsou uvedené některé běžné oblasti, kde můžete sníží výkon a tipy pro zlepšení ho a také odkazy na témata další výkonu.</span><span class="sxs-lookup"><span data-stu-id="5b83e-107">This article lists some common areas where performance can suffer and tips for improving it as well as links to additional performance topics.</span></span> <span data-ttu-id="5b83e-108">Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)</span><span class="sxs-lookup"><span data-stu-id="5b83e-108">For more information about planning and measuring for performance, see [Performance](../../../docs/framework/performance/index.md)</span></span>  
+  
+## <a name="boxing-and-unboxing"></a><span data-ttu-id="5b83e-109">Zabalení a rozbalení</span><span class="sxs-lookup"><span data-stu-id="5b83e-109">Boxing and Unboxing</span></span>  
+ <span data-ttu-id="5b83e-110">Doporučujeme nepoužívat hodnotu typy v situacích, kde musí být do pole velký počet dobu, například v třídy neobecnou kolekcí, jako <xref:System.Collections.ArrayList?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b83e-110">It is best to avoid using value types in situations where they must be boxed a high number of times, for example in non-generic collections classes such as <xref:System.Collections.ArrayList?displayProperty=nameWithType>.</span></span> <span data-ttu-id="5b83e-111">Zabalení typů hodnot se můžete vyhnout pomocí obecné kolekce <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b83e-111">You can avoid boxing of value types by using generic collections such as <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>.</span></span> <span data-ttu-id="5b83e-112">Zabalení a rozbalení jsou náročné procesy.</span><span class="sxs-lookup"><span data-stu-id="5b83e-112">Boxing and unboxing are computationally expensive processes.</span></span> <span data-ttu-id="5b83e-113">Když je do pole zadejte hodnotu, musí být vytvořený zcela nový objekt.</span><span class="sxs-lookup"><span data-stu-id="5b83e-113">When a value type is boxed, an entirely new object must be created.</span></span> <span data-ttu-id="5b83e-114">Může to trvat až 20 x delší než jednoduchý odkaz přiřazení.</span><span class="sxs-lookup"><span data-stu-id="5b83e-114">This can take up to 20 times longer than a simple reference assignment.</span></span> <span data-ttu-id="5b83e-115">Po rozbalení, může proces přetypování trvat čtyřikrát stejně dlouho jako přiřazení.</span><span class="sxs-lookup"><span data-stu-id="5b83e-115">When unboxing, the casting process can take four times as long as an assignment.</span></span> <span data-ttu-id="5b83e-116">Další informace najdete v tématu [zabalení a rozbalení](~/docs/csharp/programming-guide/types/boxing-and-unboxing.md).</span><span class="sxs-lookup"><span data-stu-id="5b83e-116">For more information, see [Boxing and Unboxing](~/docs/csharp/programming-guide/types/boxing-and-unboxing.md).</span></span>  
+  
+## <a name="strings"></a><span data-ttu-id="5b83e-117">Řetězce</span><span class="sxs-lookup"><span data-stu-id="5b83e-117">Strings</span></span>  
+ <span data-ttu-id="5b83e-118">Když jste řetězení velký počet proměnných řetězce, například ve smyčce úzkou použít <xref:System.Text.StringBuilder?displayProperty=nameWithType> místo jazyka C# [+ – operátor](~/docs/csharp/language-reference/operators/addition-operator.md) nebo Visual Basic [operátory zřetězení](~/docs/visual-basic/language-reference/operators/concatenation-operators.md).</span><span class="sxs-lookup"><span data-stu-id="5b83e-118">When you concatenate a large number of string variables, for example in a tight loop, use <xref:System.Text.StringBuilder?displayProperty=nameWithType> instead of the C# [+ operator](~/docs/csharp/language-reference/operators/addition-operator.md) or the Visual Basic [Concatenation Operators](~/docs/visual-basic/language-reference/operators/concatenation-operators.md).</span></span> <span data-ttu-id="5b83e-119">Další informace najdete v tématu [postupy: řetězení více řetězců](~/docs/csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md) a [operátory řetězení v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).</span><span class="sxs-lookup"><span data-stu-id="5b83e-119">For more information, see [How to: Concatenate Multiple Strings](~/docs/csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md) and [Concatenation Operators in Visual Basic](~/docs/visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).</span></span>  
+  
+## <a name="destructors"></a><span data-ttu-id="5b83e-120">Destruktory</span><span class="sxs-lookup"><span data-stu-id="5b83e-120">Destructors</span></span>  
+ <span data-ttu-id="5b83e-121">Nepoužívejte prázdné destruktory.</span><span class="sxs-lookup"><span data-stu-id="5b83e-121">Empty destructors should not be used.</span></span> <span data-ttu-id="5b83e-122">Pokud třída obsahuje destruktor, bude vytvořena položka ve frontě Finalize.</span><span class="sxs-lookup"><span data-stu-id="5b83e-122">When a class contains a destructor, an entry is created in the Finalize queue.</span></span> <span data-ttu-id="5b83e-123">Při volání destruktoru, volá se ke zpracování fronty uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="5b83e-123">When the destructor is called, the garbage collector is invoked to process the queue.</span></span> <span data-ttu-id="5b83e-124">Pokud destruktoru je prázdná, to jednoduše vede ke ztrátě výkonu.</span><span class="sxs-lookup"><span data-stu-id="5b83e-124">If the destructor is empty, this simply results in a loss of performance.</span></span> <span data-ttu-id="5b83e-125">Další informace najdete v tématu [destruktory](~/docs/csharp/programming-guide/classes-and-structs/destructors.md) a [doba života objektu: jak jsou objekty vytvořen a Destroyed](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).</span><span class="sxs-lookup"><span data-stu-id="5b83e-125">For more information, see [Destructors](~/docs/csharp/programming-guide/classes-and-structs/destructors.md) and [Object Lifetime: How Objects Are Created and Destroyed](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).</span></span>  
+  
+## <a name="other-resources"></a><span data-ttu-id="5b83e-126">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="5b83e-126">Other Resources</span></span>  
+  
+-   [<span data-ttu-id="5b83e-127">Spravovaný kód a rychlejší psaní: Vědět, co věcí náklady</span><span class="sxs-lookup"><span data-stu-id="5b83e-127">Writing Faster Managed Code: Know What Things Cost</span></span>](http://go.microsoft.com/fwlink/?LinkId=99294)  
+  
+-   [<span data-ttu-id="5b83e-128">Zápis vysoce výkonné aplikace spravovaného: Základy</span><span class="sxs-lookup"><span data-stu-id="5b83e-128">Writing High-Performance Managed Applications: A Primer</span></span>](http://go.microsoft.com/fwlink/?LinkId=99295)  
+  
+-   [<span data-ttu-id="5b83e-129">Základní informace o systém uvolňování paměti a výkon pomocné parametry</span><span class="sxs-lookup"><span data-stu-id="5b83e-129">Garbage Collector Basics and Performance Hints</span></span>](http://go.microsoft.com/fwlink/?LinkId=99296)  
+  
+-   [<span data-ttu-id="5b83e-130">Tipy pro zvýšení výkonu a triky v aplikacích .NET</span><span class="sxs-lookup"><span data-stu-id="5b83e-130">Performance Tips and Tricks in .NET Applications</span></span>](http://go.microsoft.com/fwlink/?LinkId=99297)  
+  
+-   [<span data-ttu-id="5b83e-131">Uvnitř diagnostické nástroje pro .NET</span><span class="sxs-lookup"><span data-stu-id="5b83e-131">Inside Diagnostic Tools for .NET</span></span>](http://go.microsoft.com/fwlink/?LinkId=112407)  
+  
+-   [<span data-ttu-id="5b83e-132">Tidbits Portoriku Mariani výkonu</span><span class="sxs-lookup"><span data-stu-id="5b83e-132">Rico Mariani's Performance Tidbits</span></span>](http://go.microsoft.com/fwlink/?LinkId=115679)  
+  
+## <a name="see-also"></a><span data-ttu-id="5b83e-133">Viz také</span><span class="sxs-lookup"><span data-stu-id="5b83e-133">See Also</span></span>  
+ [<span data-ttu-id="5b83e-134">Výkon</span><span class="sxs-lookup"><span data-stu-id="5b83e-134">Performance</span></span>](../../../docs/framework/performance/index.md)  
+ [<span data-ttu-id="5b83e-135">Programování konceptů</span><span class="sxs-lookup"><span data-stu-id="5b83e-135">Programming Concepts</span></span>](http://msdn.microsoft.com/library/65c12cca-af4f-4017-886e-2dbc00a189d6)  
+ [<span data-ttu-id="5b83e-136">Průvodce programováním v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5b83e-136">Visual Basic Programming Guide</span></span>](../../visual-basic/programming-guide/index.md)  
+ [<span data-ttu-id="5b83e-137">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="5b83e-137">C# Programming Guide</span></span>](http://msdn.microsoft.com/library/ac0f23a2-6bf3-4077-be99-538ae5fd3bc5)

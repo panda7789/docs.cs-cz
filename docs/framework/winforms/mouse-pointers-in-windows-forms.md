@@ -1,0 +1,46 @@
+---
+title: "Ukazatele myši ve Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- pointers [Windows Forms], setting
+- mouse pointers
+- mouse cursors
+- mouse pointers [Windows Forms], setting
+- cursors [Windows Forms], setting
+- mouse [Windows Forms], cursors
+ms.assetid: c3400d85-de5b-42e8-abc3-d6088d69ee53
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4fb0e193ccbced719f30ede91cb59cd51dd349a9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="mouse-pointers-in-windows-forms"></a><span data-ttu-id="65dde-102">Ukazatele myši ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="65dde-102">Mouse Pointers in Windows Forms</span></span>
+<span data-ttu-id="65dde-103">Myš *ukazatel*, která se někdy označuje jako kurzor, je rastrového obrázku, který určuje bod fokus na obrazovce na vstup uživatele pomocí myši.</span><span class="sxs-lookup"><span data-stu-id="65dde-103">The mouse *pointer*, which is sometimes referred to as the cursor, is a bitmap that specifies a focus point on the screen for user input with the mouse.</span></span> <span data-ttu-id="65dde-104">Toto téma obsahuje přehled ukazatele myši ve Windows Forms a popisuje některé z způsobů, jak upravit a ovládat ukazatel myši.</span><span class="sxs-lookup"><span data-stu-id="65dde-104">This topic provides an overview of the mouse pointer in Windows Forms and describes some of the ways to modify and control the mouse pointer.</span></span>  
+  
+## <a name="accessing-the-mouse-pointer"></a><span data-ttu-id="65dde-105">Přístup k ukazatele myši</span><span class="sxs-lookup"><span data-stu-id="65dde-105">Accessing the Mouse Pointer</span></span>  
+ <span data-ttu-id="65dde-106">Je reprezentována ukazatel myši <xref:System.Windows.Forms.Cursor> třídy a každý <xref:System.Windows.Forms.Control> má <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> vlastnost, která určuje ukazatele pro ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="65dde-106">The mouse pointer is represented by the <xref:System.Windows.Forms.Cursor> class, and each <xref:System.Windows.Forms.Control> has a <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> property that specifies the pointer for that control.</span></span> <span data-ttu-id="65dde-107"><xref:System.Windows.Forms.Cursor> Třída obsahuje vlastnosti, které popisují, jako má ukazatel <xref:System.Windows.Forms.Cursor.Position%2A> a <xref:System.Windows.Forms.Cursor.HotSpot%2A> vlastnosti a metody, které můžete upravit vzhled ukazatele, například <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A>, a <xref:System.Windows.Forms.Cursor.DrawStretched%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="65dde-107">The <xref:System.Windows.Forms.Cursor> class contains properties that describe the pointer, such as the <xref:System.Windows.Forms.Cursor.Position%2A> and <xref:System.Windows.Forms.Cursor.HotSpot%2A> properties, and methods that can modify the appearance of the pointer, such as the <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A>, and <xref:System.Windows.Forms.Cursor.DrawStretched%2A> methods.</span></span>  
+  
+## <a name="controlling-the-mouse-pointer"></a><span data-ttu-id="65dde-108">Řízení ukazatele myši</span><span class="sxs-lookup"><span data-stu-id="65dde-108">Controlling the Mouse Pointer</span></span>  
+ <span data-ttu-id="65dde-109">V některých případech může chtít omezit oblasti, ve kterém ukazatele myši můžete použít nebo změní pozici myší.</span><span class="sxs-lookup"><span data-stu-id="65dde-109">Sometimes you may want to limit the area in which the mouse pointer can be used or change the position the mouse.</span></span> <span data-ttu-id="65dde-110">Můžete získat nebo nastavit aktuální umístění pomocí myši <xref:System.Windows.Forms.Cursor.Position%2A> vlastnost <xref:System.Windows.Forms.Cursor>.</span><span class="sxs-lookup"><span data-stu-id="65dde-110">You can get or set the current location of the mouse using the <xref:System.Windows.Forms.Cursor.Position%2A> property of the <xref:System.Windows.Forms.Cursor>.</span></span> <span data-ttu-id="65dde-111">Kromě toho můžete omezit oblasti ukazatele myši můžete použít se nastavení <xref:System.Windows.Forms.Cursor.Clip%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="65dde-111">In addition, you can limit the area the mouse pointer can be used be setting the <xref:System.Windows.Forms.Cursor.Clip%2A> property.</span></span> <span data-ttu-id="65dde-112">Oblasti klip ve výchozím nastavení, je na celou obrazovku.</span><span class="sxs-lookup"><span data-stu-id="65dde-112">The clip area, by default, is the entire screen.</span></span>  
+  
+## <a name="changing-the-mouse-pointer"></a><span data-ttu-id="65dde-113">Změnu ukazatele myši</span><span class="sxs-lookup"><span data-stu-id="65dde-113">Changing the Mouse Pointer</span></span>  
+ <span data-ttu-id="65dde-114">Změna ukazatel myši je důležité způsob, jak poskytnout zpětnou vazbu pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="65dde-114">Changing the mouse pointer is an important way of providing feedback to the user.</span></span> <span data-ttu-id="65dde-115">Například můžete upravit ukazatel myši v obslužné rutiny z <xref:System.Windows.Forms.Control.MouseEnter> a <xref:System.Windows.Forms.Control.MouseLeave> události informuje uživatele, že se vyskytnou výpočty a interakci s uživatelem v ovládacím prvku.</span><span class="sxs-lookup"><span data-stu-id="65dde-115">For example, the mouse pointer can be modified in the handlers of the <xref:System.Windows.Forms.Control.MouseEnter> and <xref:System.Windows.Forms.Control.MouseLeave> events to tell the user that computations are occurring and to limit user interaction in the control.</span></span> <span data-ttu-id="65dde-116">V některých případech se ukazatel myši změní z důvodu systémové události, například když je aplikace součástí operaci přetažení myší.</span><span class="sxs-lookup"><span data-stu-id="65dde-116">Sometimes, the mouse pointer will change because of system events, such as when your application is involved in a drag-and-drop operation.</span></span>  
+  
+ <span data-ttu-id="65dde-117">Primární způsob, jak změnit ukazatel myši je nastavením <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.Control.DefaultCursor%2A> vlastností ovládacího prvku na nový <xref:System.Windows.Forms.Cursor>.</span><span class="sxs-lookup"><span data-stu-id="65dde-117">The primary way to change the mouse pointer is by setting the <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> or <xref:System.Windows.Forms.Control.DefaultCursor%2A> property of a control to a new <xref:System.Windows.Forms.Cursor>.</span></span> <span data-ttu-id="65dde-118">Příklady změnu ukazatele myši, viz příklad kódu v <xref:System.Windows.Forms.Cursor> třídy.</span><span class="sxs-lookup"><span data-stu-id="65dde-118">For examples of changing the mouse pointer, see the code example in the <xref:System.Windows.Forms.Cursor> class.</span></span> <span data-ttu-id="65dde-119">Kromě toho <xref:System.Windows.Forms.Cursors> třída zpřístupňuje sadu <xref:System.Windows.Forms.Cursor> objekty pro mnoho různých typů ukazatele, jako je například ukazatele, který vypadá takto: dlaně.</span><span class="sxs-lookup"><span data-stu-id="65dde-119">In addition, the <xref:System.Windows.Forms.Cursors> class exposes a set of <xref:System.Windows.Forms.Cursor> objects for many different types of pointers, such as a pointer that resembles a hand.</span></span> <span data-ttu-id="65dde-120">Chcete-li zobrazit ukazatele čekání, která vypadá přibližně takto: přesýpací hodiny, vždy, když ukazatel myši na ovládací prvek, použijte <xref:System.Windows.Forms.Control.UseWaitCursor%2A> vlastnost <xref:System.Windows.Forms.Control> – třída.</span><span class="sxs-lookup"><span data-stu-id="65dde-120">To display the wait pointer, which resembles an hourglass, whenever the mouse pointer is on the control, use the <xref:System.Windows.Forms.Control.UseWaitCursor%2A> property of the <xref:System.Windows.Forms.Control> class.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="65dde-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="65dde-121">See Also</span></span>  
+ <xref:System.Windows.Forms.Cursor>  
+ [<span data-ttu-id="65dde-122">Vstup z myši ve Windows Forms aplikace</span><span class="sxs-lookup"><span data-stu-id="65dde-122">Mouse Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="65dde-123">A přetažení funkce ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="65dde-123">Drag-and-Drop Functionality in Windows Forms</span></span>](../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)

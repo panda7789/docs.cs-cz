@@ -1,0 +1,63 @@
+---
+title: "Vymazání nespravovaných prostředků"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Close method
+- Dispose method
+- garbage collector
+- garbage collection, unmanaged resources
+- cleanup operations
+- explicit cleanups
+- unmanaged resource cleanup
+- Finalize method
+ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
+caps.latest.revision: "19"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: c94a449edbbe38c4028e27fd946b66a054badf51
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/18/2017
+---
+# <a name="cleaning-up-unmanaged-resources"></a><span data-ttu-id="86f8f-102">Vymazání nespravovaných prostředků</span><span class="sxs-lookup"><span data-stu-id="86f8f-102">Cleaning Up Unmanaged Resources</span></span>
+<span data-ttu-id="86f8f-103">Pro většinu objektů, které vytváří vaše aplikace můžete spolehnout na. NET na systém uvolňování paměti pro zpracování Správa paměti.</span><span class="sxs-lookup"><span data-stu-id="86f8f-103">For the majority of the objects that your app creates, you can rely on .NET's garbage collector to handle memory management.</span></span> <span data-ttu-id="86f8f-104">Pokud však vytváříte objekty, které zahrnují nespravované prostředky, musíte tyto prostředky explicitně uvolnit, pokud je v rámci aplikace již nepoužíváte.</span><span class="sxs-lookup"><span data-stu-id="86f8f-104">However, when you create objects that include unmanaged resources, you must explicitly release those resources when you finish using them in your app.</span></span> <span data-ttu-id="86f8f-105">Nejběžnějšími typy nespravovaných prostředků jsou objekty, které obalují prostředky operačního systému, jako jsou soubory, okna, síťová připojení nebo připojení databáze.</span><span class="sxs-lookup"><span data-stu-id="86f8f-105">The most common types of unmanaged resource are objects that wrap operating system resources, such as files, windows, network connections, or database connections.</span></span> <span data-ttu-id="86f8f-106">Přestože je systém uvolňování paměti schopen sledovat dobu platnosti objektu, který zapouzdřuje nespravovaný prostředek, nemá specifické znalosti o tom, jak spravovaný prostředek uvolnit a vyčistit.</span><span class="sxs-lookup"><span data-stu-id="86f8f-106">Although the garbage collector is able to track the lifetime of an object that encapsulates an unmanaged resource, it doesn't know how to release and clean up the unmanaged resource.</span></span>  
+  
+ <span data-ttu-id="86f8f-107">Pokud vaše typy používají nespravované prostředky, měli byste provést následující úkony:</span><span class="sxs-lookup"><span data-stu-id="86f8f-107">If your types use unmanaged resources, you should do the following:</span></span>  
+  
+-   <span data-ttu-id="86f8f-108">Implementace [dispose vzor](../../../docs/standard/design-guidelines/dispose-pattern.md).</span><span class="sxs-lookup"><span data-stu-id="86f8f-108">Implement the [dispose pattern](../../../docs/standard/design-guidelines/dispose-pattern.md).</span></span> <span data-ttu-id="86f8f-109">To vyžaduje, aby poskytovaly <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace povolit deterministický verzi nespravovaných prostředků.</span><span class="sxs-lookup"><span data-stu-id="86f8f-109">This requires that you provide an <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation to enable the deterministic release of  unmanaged resources.</span></span> <span data-ttu-id="86f8f-110">Příjemce voláními typ <xref:System.IDisposable.Dispose%2A> při objektu (a prostředky používá) již není potřeba.</span><span class="sxs-lookup"><span data-stu-id="86f8f-110">A consumer of your type calls <xref:System.IDisposable.Dispose%2A> when the object (and the resources it uses) is no longer needed.</span></span> <span data-ttu-id="86f8f-111"><xref:System.IDisposable.Dispose%2A> Metoda okamžitě uvolní nespravované prostředky.</span><span class="sxs-lookup"><span data-stu-id="86f8f-111">The <xref:System.IDisposable.Dispose%2A> method immediately releases the unmanaged resources.</span></span>  
+  
+-   <span data-ttu-id="86f8f-112">Poskytují pro nespravované prostředky k uvolnění v případě, že příjemce vašeho typu zapomene volat <xref:System.IDisposable.Dispose%2A>.</span><span class="sxs-lookup"><span data-stu-id="86f8f-112">Provide for your unmanaged resources to be released in the event that a consumer of your type forgets to call <xref:System.IDisposable.Dispose%2A>.</span></span> <span data-ttu-id="86f8f-113">Toto lze provést dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="86f8f-113">There are two ways to do this:</span></span>  
+  
+    -   <span data-ttu-id="86f8f-114">Použijte bezpečný popisovač, který zajistí obtékání nespravovaných prostředků.</span><span class="sxs-lookup"><span data-stu-id="86f8f-114">Use a safe handle to wrap your unmanaged resource.</span></span> <span data-ttu-id="86f8f-115">Toto je doporučený postup.</span><span class="sxs-lookup"><span data-stu-id="86f8f-115">This is the recommended technique.</span></span> <span data-ttu-id="86f8f-116">Bezpečné obslužné rutiny, které jsou odvozeny od <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> třídy a zahrnout robustní <xref:System.Object.Finalize%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="86f8f-116">Safe handles are derived from the <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> class and include a robust <xref:System.Object.Finalize%2A> method.</span></span> <span data-ttu-id="86f8f-117">Použijete-li bezpečné popisovač, jednoduše implementovat <xref:System.IDisposable> rozhraní a volání bezpečného popisovač <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> metoda ve vaší <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace.</span><span class="sxs-lookup"><span data-stu-id="86f8f-117">When you use a safe handle, you simply implement the <xref:System.IDisposable> interface and call your safe handle's <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> method in your <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation.</span></span> <span data-ttu-id="86f8f-118">Finalizační metodu bezpečné popisovač se nazývá automaticky modulem garbage collector v případě jeho <xref:System.IDisposable.Dispose%2A> metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="86f8f-118">The safe handle's finalizer is called automatically by the garbage collector if its <xref:System.IDisposable.Dispose%2A> method is not called.</span></span>  
+  
+         <span data-ttu-id="86f8f-119">—nebo—</span><span class="sxs-lookup"><span data-stu-id="86f8f-119">—or—</span></span>  
+  
+    -   <span data-ttu-id="86f8f-120">Přepsání <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metoda.</span><span class="sxs-lookup"><span data-stu-id="86f8f-120">Override the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="86f8f-121">Finalizace umožňuje Nedeterministický verzi nespravovaných prostředků, když dojde k volání selhání příjemce a typ <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> k uvolnění těchto nepodmíněně.</span><span class="sxs-lookup"><span data-stu-id="86f8f-121">Finalization enables the non-deterministic release of unmanaged resources when the consumer of a type fails to call <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> to dispose of them deterministically.</span></span> <span data-ttu-id="86f8f-122">Vzhledem k tomu, že finalizace objektu může být složitá operace náchylná k chybám, doporučujeme namísto poskytování vlastní finalizační metody použít bezpečný popisovač.</span><span class="sxs-lookup"><span data-stu-id="86f8f-122">However, because object finalization can be a complex and error-prone operation, we recommend that you use a safe handle instead of providing your own finalizer.</span></span>  
+  
+ <span data-ttu-id="86f8f-123">Potom můžete volat příjemci vašeho typu vaší <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace přímo na uvolnění paměti, které nespravovaných prostředků.</span><span class="sxs-lookup"><span data-stu-id="86f8f-123">Consumers of your type can then call your <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation directly to free memory used by unmanaged resources.</span></span> <span data-ttu-id="86f8f-124">Při správně implementaci <xref:System.IDisposable.Dispose%2A> metoda, buď bezpečné popisovač <xref:System.Object.Finalize%2A> metoda nebo vlastní přepsání <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metoda bude chránit vyčištění prostředků v případě, že <xref:System.IDisposable.Dispose%2A> metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="86f8f-124">When you properly implement a <xref:System.IDisposable.Dispose%2A> method, either your safe handle's <xref:System.Object.Finalize%2A> method or your own override of the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method becomes a safeguard to clean up resources in the event that the <xref:System.IDisposable.Dispose%2A> method is not called.</span></span>  
+  
+## <a name="in-this-section"></a><span data-ttu-id="86f8f-125">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="86f8f-125">In This Section</span></span>  
+ [<span data-ttu-id="86f8f-126">Implementace metody Dispose</span><span class="sxs-lookup"><span data-stu-id="86f8f-126">Implementing a Dispose Method</span></span>](../../../docs/standard/garbage-collection/implementing-dispose.md)  
+ <span data-ttu-id="86f8f-127">Popisuje, jak implementovat [dispose vzor](../../../docs/standard/design-guidelines/dispose-pattern.md) pro uvolnění nespravovaných prostředků.</span><span class="sxs-lookup"><span data-stu-id="86f8f-127">Describes how to implement the [dispose pattern](../../../docs/standard/design-guidelines/dispose-pattern.md) for releasing unmanaged resources.</span></span>  
+  
+ [<span data-ttu-id="86f8f-128">Použití objektů implementujících rozhraní IDisposable</span><span class="sxs-lookup"><span data-stu-id="86f8f-128">Using Objects That Implement IDisposable</span></span>](../../../docs/standard/garbage-collection/using-objects.md)  
+ <span data-ttu-id="86f8f-129">Popisuje, jak uživatelé typu zajistěte, aby jeho <xref:System.IDisposable.Dispose%2A> implementace je volána.</span><span class="sxs-lookup"><span data-stu-id="86f8f-129">Describes how consumers of a type ensure that its <xref:System.IDisposable.Dispose%2A> implementation is called.</span></span> <span data-ttu-id="86f8f-130">Doporučujeme používat jazyka C# `using` příkaz nebo Visual Basic `Using` příkaz k tomu.</span><span class="sxs-lookup"><span data-stu-id="86f8f-130">We recommend using the C# `using` statement or the Visual Basic `Using` statement to do this.</span></span>  
+  
+## <a name="reference"></a><span data-ttu-id="86f8f-131">Odkaz</span><span class="sxs-lookup"><span data-stu-id="86f8f-131">Reference</span></span>  
+ <xref:System.IDisposable?displayProperty=nameWithType>  
+ <span data-ttu-id="86f8f-132">Definuje <xref:System.IDisposable.Dispose%2A> metodu pro uvolnění nespravovaných prostředků.</span><span class="sxs-lookup"><span data-stu-id="86f8f-132">Defines the <xref:System.IDisposable.Dispose%2A> method for releasing unmanaged resources.</span></span>  
+  
+ <xref:System.Object.Finalize%2A?displayProperty=nameWithType>  
+ <span data-ttu-id="86f8f-133">Poskytuje pro dokončení objektu, pokud nejsou vydal nespravované prostředky <xref:System.IDisposable.Dispose%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="86f8f-133">Provides for object finalization if unmanaged resources are not released by the <xref:System.IDisposable.Dispose%2A> method.</span></span>  
+  
+ <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>  
+ <span data-ttu-id="86f8f-134">Potlačí finalizaci.</span><span class="sxs-lookup"><span data-stu-id="86f8f-134">Suppresses finalization.</span></span> <span data-ttu-id="86f8f-135">Tato metoda je volána infrastruktura z `Dispose` metodu finalizační metody zabránit ve spouštění.</span><span class="sxs-lookup"><span data-stu-id="86f8f-135">This method is customarily called from a `Dispose` method to prevent a finalizer from executing.</span></span>

@@ -1,0 +1,101 @@
+---
+title: Oracle BFILEs
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f48bd85559d55d9a1190310bcf13cd4a68625011
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="oracle-bfiles"></a><span data-ttu-id="143b7-102">Oracle BFILEs</span><span class="sxs-lookup"><span data-stu-id="143b7-102">Oracle BFILEs</span></span>
+<span data-ttu-id="143b7-103">Zprostředkovatel dat .NET Framework pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleBFile> třídy, která se používá pro práci s Oracle <xref:System.Data.OracleClient.OracleType.BFile> datového typu.</span><span class="sxs-lookup"><span data-stu-id="143b7-103">The .NET Framework Data Provider for Oracle includes the <xref:System.Data.OracleClient.OracleBFile> class, which is used to work with the Oracle <xref:System.Data.OracleClient.OracleType.BFile> data type.</span></span>  
+  
+ <span data-ttu-id="143b7-104">Oracle **BFILE** datový typ je Oracle **obchodní** datový typ, který obsahuje odkaz na binární data s maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="143b7-104">The Oracle **BFILE** data type is an Oracle **LOB** data type that contains a reference to binary data with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="143b7-105">Oracle **BFILE** se liší od jiných Oracle **obchodní** datové typy, že data jsou uložena v fyzického souboru operačního systému místo na serveru.</span><span class="sxs-lookup"><span data-stu-id="143b7-105">An Oracle **BFILE** differs from other Oracle **LOB** data types in that its data is stored in a physical file in the operating system instead of on the server.</span></span> <span data-ttu-id="143b7-106">Všimněte si, že **BFILE** datový typ poskytuje přístup jen pro čtení k datům.</span><span class="sxs-lookup"><span data-stu-id="143b7-106">Note that the **BFILE** data type provides read-only access to data.</span></span>  
+  
+ <span data-ttu-id="143b7-107">Další vlastnosti **BFILE** datový typ, který odlišující jej od **obchodní** datový typ jsou to:</span><span class="sxs-lookup"><span data-stu-id="143b7-107">Other characteristics of a **BFILE** data type that distinguish it from a **LOB** data type are that it:</span></span>  
+  
+-   <span data-ttu-id="143b7-108">Obsahuje Nestrukturovaná data.</span><span class="sxs-lookup"><span data-stu-id="143b7-108">Contains unstructured data.</span></span>  
+  
+-   <span data-ttu-id="143b7-109">Podporuje rozdělování na straně serveru.</span><span class="sxs-lookup"><span data-stu-id="143b7-109">Supports server-side chunking.</span></span>  
+  
+-   <span data-ttu-id="143b7-110">Používá referenční sémantiku kopírování.</span><span class="sxs-lookup"><span data-stu-id="143b7-110">Uses reference copy semantics.</span></span> <span data-ttu-id="143b7-111">Například, pokud provádíte na operace kopírování **BFILE**, jenom **BFILE** zkopíruje Lokátor (což je odkaz na soubor).</span><span class="sxs-lookup"><span data-stu-id="143b7-111">For example, if you perform a copy operation on a **BFILE**, only the **BFILE** locator (which is a reference to the file) is copied.</span></span> <span data-ttu-id="143b7-112">Data v souboru není zkopírována.</span><span class="sxs-lookup"><span data-stu-id="143b7-112">The data in the file is not copied.</span></span>  
+  
+ <span data-ttu-id="143b7-113">**BFILE** datový typ měli použít pro odkazování na objekty LOBs, které jsou velké a proto není potřeba ukládat v databázi.</span><span class="sxs-lookup"><span data-stu-id="143b7-113">The **BFILE** data type should be used for referencing LOBs that are large in size, and therefore, not practical to store in the database.</span></span> <span data-ttu-id="143b7-114">Další režii klienta, komunikace a server je zahrnuta při použití **BFILE** datový typ ve srovnání s **obchodní** datového typu.</span><span class="sxs-lookup"><span data-stu-id="143b7-114">More client, server, and communication overhead is involved when using a **BFILE** data type compared with the **LOB** data type.</span></span> <span data-ttu-id="143b7-115">Přístup je efektivnější **BFILE** Pokud potřebujete získat malé množství dat.</span><span class="sxs-lookup"><span data-stu-id="143b7-115">It is more efficient to access a **BFILE** if you only need to obtain a small amount of data.</span></span> <span data-ttu-id="143b7-116">Je efektivnější k přístupu k databázi rezidentní objekty LOBs, pokud je nutné získat celý objekt.</span><span class="sxs-lookup"><span data-stu-id="143b7-116">It is more efficient to access database-resident LOBs if you need to obtain the entire object.</span></span>  
+  
+ <span data-ttu-id="143b7-117">Každý NENULOVOU **OracleBFile** objekt je přidružený ke dvě entity, které definují umístění základní fyzický soubor:</span><span class="sxs-lookup"><span data-stu-id="143b7-117">Each non-NULL **OracleBFile** object is associated with two entities that define the location of the underlying physical file:</span></span>  
+  
+1.  <span data-ttu-id="143b7-118">Objekt Oracle adresář, který je alias databáze pro adresář v systému souborů, a</span><span class="sxs-lookup"><span data-stu-id="143b7-118">An Oracle DIRECTORY object, which is a database alias for a directory in the file system, and</span></span>  
+  
+2.  <span data-ttu-id="143b7-119">Název souboru základní fyzického souboru, který je umístěný v adresáři přidružená k objektu adresáře.</span><span class="sxs-lookup"><span data-stu-id="143b7-119">The file name of the underlying physical file, which is located in the directory associated with the DIRECTORY object.</span></span>  
+  
+## <a name="example"></a><span data-ttu-id="143b7-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="143b7-120">Example</span></span>  
+ <span data-ttu-id="143b7-121">Následující příklad jazyka C# ukazuje, jak můžete vytvořit **BFILE** v Oracle tabulky a následně načíst ve formě **OracleBFile** objektu.</span><span class="sxs-lookup"><span data-stu-id="143b7-121">The following C# example demonstrates how you can create a **BFILE** in an Oracle table and then retrieve it in the form of an **OracleBFile** object.</span></span> <span data-ttu-id="143b7-122">Tento příklad ukazuje, jak pomocí <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleBFile** **Seek** a **čtení** metody.</span><span class="sxs-lookup"><span data-stu-id="143b7-122">The example demonstrates using the <xref:System.Data.OracleClient.OracleDataReader> object and the **OracleBFile** **Seek** and **Read** methods.</span></span> <span data-ttu-id="143b7-123">Všimněte si, že chcete-li použít tuto ukázku, musíte nejprve vytvořit adresář s názvem "c:\\\bfiles" a soubor s názvem "MyFile.jpg" na serveru Oracle.</span><span class="sxs-lookup"><span data-stu-id="143b7-123">Note that in order to use this sample, you must first create a directory named "c:\\\bfiles" and file named "MyFile.jpg" on the Oracle server.</span></span>  
+  
+```csharp  
+using System;  
+using System.IO;  
+using System.Data;  
+using System.Data.OracleClient;  
+  
+public class Sample  
+{  
+   public static void Main(string[] args)  
+   {  
+      OracleConnection connection = new OracleConnection(  
+        "Data Source=Oracle8i;Integrated Security=yes");  
+      connection.Open();  
+  
+      OracleCommand command = connection.CreateCommand();  
+      command.CommandText =   
+        "CREATE or REPLACE DIRECTORY MyDir as 'c:\\bfiles'";  
+      command.ExecuteNonQuery();  
+      command.CommandText =   
+        "DROP TABLE MyBFileTable";  
+      try {  
+        command.ExecuteNonQuery();  
+      }  
+      catch {  
+      }  
+      command.CommandText =   
+        "CREATE TABLE MyBFileTable(col1 number, col2 BFILE)";  
+      command.ExecuteNonQuery();  
+      command.CommandText =   
+        "INSERT INTO MyBFileTable values ('2', BFILENAME('MyDir', " +  
+        "'MyFile.jpg'))";  
+      command.ExecuteNonQuery();  
+      command.CommandText = "SELECT * FROM MyBFileTable";  
+  
+        byte[] buffer = new byte[100];  
+  
+      OracleDataReader reader = command.ExecuteReader();  
+      using (reader) {  
+          if (reader.Read()) {  
+                OracleBFile bFile = reader.GetOracleBFile(1);  
+                using (bFile) {  
+                  bFile.Seek(0, SeekOrigin.Begin);  
+                  bFile.Read(buffer, 0, 100);  
+              }  
+          }  
+      }  
+  
+      connection.Close();  
+   }  
+  
+}  
+```  
+  
+## <a name="see-also"></a><span data-ttu-id="143b7-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="143b7-124">See Also</span></span>  
+ [<span data-ttu-id="143b7-125">Oracle a ADO.NET</span><span class="sxs-lookup"><span data-stu-id="143b7-125">Oracle and ADO.NET</span></span>](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
+ [<span data-ttu-id="143b7-126">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="143b7-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
