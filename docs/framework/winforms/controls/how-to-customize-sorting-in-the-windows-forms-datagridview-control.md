@@ -1,0 +1,63 @@
+---
+title: "Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- sorting [Windows Forms], DataGridView control
+- DataGridView control [Windows Forms], sorting
+- data grids [Windows Forms], customizing sorting
+ms.assetid: 92fb5c14-afab-4cf5-a97e-924fd9cb99f5
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f3ea4c7ccd215bed9bd31e0cd5155209fddcc7b0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="how-to-customize-sorting-in-the-windows-forms-datagridview-control"></a>Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView
+<xref:System.Windows.Forms.DataGridView> Řízení poskytuje automatické řazení, ale podle svých potřeb, možná budete muset přizpůsobit operace řazení. Například můžete programový řazení vytvořit alternativní uživatelské rozhraní (UI). Alternativně může zpracovat <xref:System.Windows.Forms.DataGridView.SortCompare> události nebo volání `Sort(IComparer)` přetížení z <xref:System.Windows.Forms.DataGridView.Sort%2A> metoda větší flexibilitu řazení, jako je například řazení více sloupců.  
+  
+ Následující příklady kódu ukazují tyto tři metody vlastní řazení. Další informace najdete v tématu [režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-sort-modes-in-the-windows-forms-datagridview-control.md).  
+  
+## <a name="programmatic-sorting"></a>Programová řazení  
+ Následující příklad kódu ukazuje programový řazení pomocí <xref:System.Windows.Forms.DataGridView.SortOrder%2A> a <xref:System.Windows.Forms.DataGridView.SortedColumn%2A> vlastnosti k určení směru řazení a <xref:System.Windows.Forms.DataGridViewColumnHeaderCell.SortGlyphDirection%2A> vlastnost ručně nastavit glyfy řazení. `Sort(DataGridViewColumn,ListSortDirection)` Přetížení z <xref:System.Windows.Forms.DataGridView.Sort%2A> metoda se používá k řazení dat jenom do jednoho sloupce.  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewProgrammaticSort#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewProgrammaticSort/CS/form1.cs#00)]
+ [!code-vb[System.Windows.Forms.DataGridViewProgrammaticSort#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewProgrammaticSort/VB/form1.vb#00)]  
+  
+## <a name="custom-sorting-using-the-sortcompare-event"></a>Vlastní řazení pomocí SortCompare události  
+ Následující příklad kódu ukazuje vlastní řazení pomocí <xref:System.Windows.Forms.DataGridView.SortCompare> obslužné rutiny události. Vybraný <xref:System.Windows.Forms.DataGridViewColumn> řadí a, pokud existují duplicitní hodnoty ve sloupci, sloupec ID slouží k určení konečného pořadí.  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#00)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#00)]  
+  
+## <a name="custom-sorting-using-the-icomparer-interface"></a>Vlastní řazení pomocí IComparer rozhraní  
+ Následující příklad kódu ukazuje vlastní řazení pomocí `Sort(IComparer)` přetížení z <xref:System.Windows.Forms.DataGridView.Sort%2A> metodu, která přebírá implementaci <xref:System.Collections.IComparer> rozhraní provést řazení podle více sloupců.  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewIComparerSort#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewIComparerSort/CS/form1.cs#00)]
+ [!code-vb[System.Windows.Forms.DataGridViewIComparerSort#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewIComparerSort/VB/form1.vb#00)]  
+  
+## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+ Tyto příklady vyžadují:  
+  
+-   Odkazy na systém, System.Drawing a System.Windows.Forms sestavení.  
+  
+ Informace o vytváření těchto příkladech z příkazového řádku pro [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] nebo [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], najdete v části [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). V tomto příkladu můžete také vytvořit [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+  
+## <a name="see-also"></a>Viz také  
+ <xref:System.Windows.Forms.DataGridView>  
+ [Řazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sorting-data-in-the-windows-forms-datagridview-control.md)  
+ [Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-sort-modes-in-the-windows-forms-datagridview-control.md)  
+ [Postupy: nastavení režimů třídění pro sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/set-the-sort-modes-for-columns-wf-datagridview-control.md)
