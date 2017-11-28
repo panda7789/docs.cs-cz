@@ -1,0 +1,39 @@
+---
+title: "Hostování ve spravované aplikaci"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 30d531d436937bf5183ac0c28d59425ea71762e8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="hosting-in-a-managed-application"></a><span data-ttu-id="f5ad3-102">Hostování ve spravované aplikaci</span><span class="sxs-lookup"><span data-stu-id="f5ad3-102">Hosting in a Managed Application</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="f5ad3-103">služby mohou být hostovány v žádném [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-103"> services can be hosted in any [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="f5ad3-104">Samoobslužné služby hostování je nejpružnější hostování možnost, protože vyžaduje minimálně infrastrukturu pro nasazování.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-104">Self-hosting services is the most flexible hosting option because it requires the least infrastructure to deploy.</span></span> <span data-ttu-id="f5ad3-105">Je však také alespoň robustní hostování možnost, protože spravované aplikace neposkytují pokročilých funkcí správy a hostování další možnosti hostování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například Internetové informační služby (IIS) a služby systému Windows.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-105">However, it is also the least robust hosting option, because managed applications do not provide the advanced hosting and management features of other hosting options in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], such as Internet Information Services (IIS) and Windows services.</span></span>  
+  
+ <span data-ttu-id="f5ad3-106">Služba s vlastním hostováním, vytvořte a spusťte instanci <xref:System.ServiceModel.ServiceHost>, který spustí službu naslouchání pro zprávy.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-106">To create a self-hosted service, create and open an instance of the <xref:System.ServiceModel.ServiceHost>, which starts a service listening for messages.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="f5ad3-107">[Postupy: hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).</span><span class="sxs-lookup"><span data-stu-id="f5ad3-107"> [How to: Host a WCF Service in a Managed Application](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).</span></span>  
+  
+ <span data-ttu-id="f5ad3-108">Úplný příklad o tom, jak definovat kontrakt, implementaci kontraktu a hostitelem služby v rámci spravované aplikace najdete v článku [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md) a [hostování na vlastním](../../../../docs/framework/wcf/samples/self-host.md).</span><span class="sxs-lookup"><span data-stu-id="f5ad3-108">For a complete example on how to define a contract, implement the contract, and host a service inside of a managed application see the [Getting Started Tutorial](../../../../docs/framework/wcf/getting-started-tutorial.md) and the [Self-Host](../../../../docs/framework/wcf/samples/self-host.md).</span></span>  
+  
+ <span data-ttu-id="f5ad3-109">Následující části popisují běžné scénáře, které pomocí této možnosti hostování.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-109">The following sections describe common scenarios that use this hosting option.</span></span>  
+  
+## <a name="console-applications"></a><span data-ttu-id="f5ad3-110">Konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="f5ad3-110">Console Applications</span></span>  
+ <span data-ttu-id="f5ad3-111">Běžné scénáře, které umožňuje samoobslužné hostování jsou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb běžících v rámci konzoly aplikace.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-111">Common scenarios that self-hosting enables are [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services running inside console applications.</span></span> <span data-ttu-id="f5ad3-112">Hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu v konzolové aplikaci je obvykle užitečné v průběhu fáze vývoje služby.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-112">Hosting a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service inside a console application is typically useful during the development phase of the service.</span></span> <span data-ttu-id="f5ad3-113">Díky tomu je usnadňuje ladění, lze snadno získávat informace trasování z a zjistěte, co se děje v rámci aplikace a usnadňuje pohyb zkopírováním do nového umístění.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-113">This makes them easy to debug, easy to get trace information from to find out what is happening inside of the application, and easy to move around by copying them to new locations.</span></span>  
+  
+## <a name="rich-client-applications"></a><span data-ttu-id="f5ad3-114">Bohaté klientské aplikace</span><span class="sxs-lookup"><span data-stu-id="f5ad3-114">Rich Client Applications</span></span>  
+ <span data-ttu-id="f5ad3-115">Další běžné scénáře, že umožňuje samoobslužné hostování jsou plně funkčního klienta aplikace, jako jsou na základě [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] nebo Windows Forms (WinForms).</span><span class="sxs-lookup"><span data-stu-id="f5ad3-115">Other common scenarios that self-hosting enables are rich client applications, such as those based on [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] or Windows Forms (WinForms).</span></span> <span data-ttu-id="f5ad3-116">Tato možnost hostování také usnadňuje plně funkčního klienta s aplikací, například [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] a WinForms aplikace komunikovat s vnějším světem.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-116">This hosting option also makes it easy for rich client applications, such as [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] and WinForms applications, to communicate with the outside world.</span></span> <span data-ttu-id="f5ad3-117">Například peer-to-peer spolupráce klienta, který používá [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] jeho uživatelské rozhraní a také hostitelů [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, která umožňuje dalším klientům připojit se k němu a sdílet informace.</span><span class="sxs-lookup"><span data-stu-id="f5ad3-117">For example, a peer-to-peer collaboration client that uses [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] for its user interface and also hosts a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that allows other clients to connect to it and share information.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="f5ad3-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="f5ad3-118">See Also</span></span>  
+ [<span data-ttu-id="f5ad3-119">Služby hostování</span><span class="sxs-lookup"><span data-stu-id="f5ad3-119">Hosting Services</span></span>](../../../../docs/framework/wcf/hosting-services.md)  
+ [<span data-ttu-id="f5ad3-120">Kurz Začínáme</span><span class="sxs-lookup"><span data-stu-id="f5ad3-120">Getting Started Tutorial</span></span>](../../../../docs/framework/wcf/getting-started-tutorial.md)
