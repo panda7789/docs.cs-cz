@@ -1,0 +1,46 @@
+---
+title: "Použitelnost funkční transformaci (C#)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-csharp
+ms.topic: article
+ms.assetid: c78107bd-b006-4574-a3d4-bbf808388ff3
+caps.latest.revision: "4"
+author: BillWagner
+ms.author: wiwagn
+ms.openlocfilehash: c7196e128a6d61b2b28e955a79561db2b9a5e51b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="applicability-of-functional-transformation-c"></a><span data-ttu-id="4c915-102">Použitelnost funkční transformaci (C#)</span><span class="sxs-lookup"><span data-stu-id="4c915-102">Applicability of Functional Transformation (C#)</span></span>
+<span data-ttu-id="4c915-103">Čistý funkční transformace platí v celé řadě situacích.</span><span class="sxs-lookup"><span data-stu-id="4c915-103">Pure functional transformations are applicable in a wide variety of situations.</span></span>  
+  
+ <span data-ttu-id="4c915-104">Funkční transformace přístupu je ideální pro dotazování a manipulace s nimi strukturovaných dat; proto vyhovuje s technologií LINQ.</span><span class="sxs-lookup"><span data-stu-id="4c915-104">The functional transformation approach is ideally suited for querying and manipulating structured data; therefore it fits well with LINQ technologies.</span></span> <span data-ttu-id="4c915-105">Funkční transformace má však mnohem širší použitelnost než použití s dotazy LINQ.</span><span class="sxs-lookup"><span data-stu-id="4c915-105">However, functional transformation has a much wider applicability than use with LINQ.</span></span> <span data-ttu-id="4c915-106">Jakýkoli proces, kde je hlavní aktivní transformace dat z jednoho formátu do druhého by měly být považovány pravděpodobně kandidátem na funkční transformace.</span><span class="sxs-lookup"><span data-stu-id="4c915-106">Any process where the main focus is on transforming data from one form to another should probably be considered as a candidate for functional transformation.</span></span>  
+  
+ <span data-ttu-id="4c915-107">Tento přístup je pro mnoho problémů, které nemusí být kandidátem na první pohled zobrazit.</span><span class="sxs-lookup"><span data-stu-id="4c915-107">This approach is applicable to many problems that might not appear at first glance to be a candidate.</span></span> <span data-ttu-id="4c915-108">Používá ve spojení s nebo samostatně z technologie LINQ, považovat za funkční transformaci v následujících oblastech:</span><span class="sxs-lookup"><span data-stu-id="4c915-108">Used in conjunction with or separately from LINQ, functional transformation should be considered for the following areas:</span></span>  
+  
+-   <span data-ttu-id="4c915-109">Dokumenty XML.</span><span class="sxs-lookup"><span data-stu-id="4c915-109">XML-based documents.</span></span> <span data-ttu-id="4c915-110">Všechny dialekt XML ve správném formátu data můžete snadno upravit prostřednictvím funkční transformace.</span><span class="sxs-lookup"><span data-stu-id="4c915-110">Well-formed data of any XML dialect can be easily manipulated through functional transformation.</span></span> <span data-ttu-id="4c915-111">Další informace najdete v tématu [funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md).</span><span class="sxs-lookup"><span data-stu-id="4c915-111">For more information, see [Functional Transformation of XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md).</span></span>  
+  
+-   <span data-ttu-id="4c915-112">Ostatní formáty strukturovaných souborů.</span><span class="sxs-lookup"><span data-stu-id="4c915-112">Other structured file formats.</span></span> <span data-ttu-id="4c915-113">Většina souborů z Windows.ini soubory do prostého textu dokumentů, mít některé struktura, která slouží k analýze a transformace.</span><span class="sxs-lookup"><span data-stu-id="4c915-113">From Windows.ini files to plain text documents, most files have some structure that lends itself to analysis and transformation.</span></span>  
+  
+-   <span data-ttu-id="4c915-114">Protokoly streamování data.</span><span class="sxs-lookup"><span data-stu-id="4c915-114">Data streaming protocols.</span></span> <span data-ttu-id="4c915-115">Kódování dat do a dekódování dat z komunikační protokoly můžete často reprezentované pomocí jednoduchého funkční transformace.</span><span class="sxs-lookup"><span data-stu-id="4c915-115">Encoding data into and decoding data from communication protocols can often be represented by a simple functional transform.</span></span>  
+  
+-   <span data-ttu-id="4c915-116">RDBMS a OODBMS data.</span><span class="sxs-lookup"><span data-stu-id="4c915-116">RDBMS and OODBMS data.</span></span> <span data-ttu-id="4c915-117">Relační a objektově orientované databáze, stejně jako XML, jsou často používá strukturované datové zdroje.</span><span class="sxs-lookup"><span data-stu-id="4c915-117">Relational and object-oriented databases, just like XML, are widely-used structured data sources.</span></span>  
+  
+-   <span data-ttu-id="4c915-118">Mathematic statistiky a vědecké účely řešení.</span><span class="sxs-lookup"><span data-stu-id="4c915-118">Mathematic, statistic, and science solutions.</span></span> <span data-ttu-id="4c915-119">Tato pole jsou obvykle zpracování velkých datových sad, které vám pomohou uživatele v vizualizace, odhad nebo ve skutečnosti řešení potíží, které nejsou v netriviálních.</span><span class="sxs-lookup"><span data-stu-id="4c915-119">These fields tend to manipulate large data sets to assist the user in visualizing, estimating, or actually solving non-trivial problems.</span></span>  
+  
+ <span data-ttu-id="4c915-120">Jak je popsáno v [refaktoring do čistého funkce (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md), pomocí čistý funkcí je příkladem funkční programování.</span><span class="sxs-lookup"><span data-stu-id="4c915-120">As described in [Refactoring Into Pure Functions (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md), using pure functions is an example of functional programming.</span></span> <span data-ttu-id="4c915-121">V další jejich okamžité výhody pomocí čistý funkcí poskytuje cenné v přemýšlení o problémy z hlediska funkčnosti transformace.</span><span class="sxs-lookup"><span data-stu-id="4c915-121">In additional to their immediate benefits, using pure functions provides valuable experience in thinking about problems from a functional transformation perspective.</span></span> <span data-ttu-id="4c915-122">Tento přístup může mít významný vliv na program a třída návrhu.</span><span class="sxs-lookup"><span data-stu-id="4c915-122">This approach can also have major impact on program and class design.</span></span> <span data-ttu-id="4c915-123">To platí hlavně při problém slouží k transformaci řešení dat, jak je popsáno výše.</span><span class="sxs-lookup"><span data-stu-id="4c915-123">This is especially true when a problem lends itself to a data transformation solution as described above.</span></span>  
+  
+ <span data-ttu-id="4c915-124">I když jsou nad rámec tohoto kurzu, návrhy, které jsou ovlivněné funkční transformace perspektivy jsou obvykle na střed v procesech více než u objektů jako aktéři a výsledný řešení obvykle provádí jako řadu ve velkém měřítku transformace, místo jednotlivého objektu změny stavu.</span><span class="sxs-lookup"><span data-stu-id="4c915-124">Although they are beyond the scope of this tutorial, designs that are influenced by the functional transformation perspective tend to center on processes more than on objects as actors, and the resulting solution tends to be implemented as series of large-scale transformations, rather than individual object state changes.</span></span>  
+  
+ <span data-ttu-id="4c915-125">Znovu nezapomeňte, že C# podporuje imperativní a funkční přístupy, takže nejvhodnější návrh pro vaše aplikace může obsahovat elementy obou.</span><span class="sxs-lookup"><span data-stu-id="4c915-125">Again, remember that C# supports both imperative and functional approaches, so the best design for your application might incorporate elements of both.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="4c915-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="4c915-126">See Also</span></span>  
+ [<span data-ttu-id="4c915-127">Úvod do čistého funkční transformace (C#)</span><span class="sxs-lookup"><span data-stu-id="4c915-127">Introduction to Pure Functional Transformations (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
+ [<span data-ttu-id="4c915-128">Funkční transformace XML (C#)</span><span class="sxs-lookup"><span data-stu-id="4c915-128">Functional Transformation of XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md)  
+ [<span data-ttu-id="4c915-129">Refaktoring do čistého funkcí (C#)</span><span class="sxs-lookup"><span data-stu-id="4c915-129">Refactoring Into Pure Functions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

@@ -1,0 +1,38 @@
+---
+title: NetworkInformation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Network
+ms.assetid: 31b44dd3-b903-4a48-8419-40419a3e4038
+caps.latest.revision: "5"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: acf15eb79fab479036f182c58b8ec94d3ac43ea0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="networkinformation"></a><span data-ttu-id="0d8f7-102">NetworkInformation</span><span class="sxs-lookup"><span data-stu-id="0d8f7-102">NetworkInformation</span></span>
+<span data-ttu-id="0d8f7-103"><xref:System.Net.NetworkInformation> Obor názvů umožňuje shromažďovat informace o události sítě, změny, statistiky a vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-103">The <xref:System.Net.NetworkInformation> namespace enables you to gather information about network events, changes, statistics, and properties.</span></span> <span data-ttu-id="0d8f7-104">Můžete také určit, zda je vzdálený hostitel dosažitelný pomocí <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-104">You can also determine whether a remote host is reachable by using the <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> class.</span></span>  
+  
+## <a name="network-availability-and-events"></a><span data-ttu-id="0d8f7-105">Dostupnost sítě a události</span><span class="sxs-lookup"><span data-stu-id="0d8f7-105">Network Availability and Events</span></span>  
+ <span data-ttu-id="0d8f7-106"><xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> Třída umožňuje určit, zda došlo ke změně adresy sítě nebo dostupnost.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-106">The <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> class enables you to determine whether the network address or availability has changed.</span></span> <span data-ttu-id="0d8f7-107">Pokud chcete používat tuto třídu, vytvořte obslužnou rutinu události ke zpracování změn a přidružte ji s <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> nebo <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-107">To use this class, create an event handler to process the change, and associate it with a <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> or a <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>.</span></span> <span data-ttu-id="0d8f7-108">Další informace najdete v tématu [postupy: zjištění dostupnosti sítě a změny adresy](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md).</span><span class="sxs-lookup"><span data-stu-id="0d8f7-108">For more information, see [How to: Detect Network Availability and Address Changes](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md).</span></span>  
+  
+## <a name="network-statistics-and-properties"></a><span data-ttu-id="0d8f7-109">Vlastnosti a statistiku sítě</span><span class="sxs-lookup"><span data-stu-id="0d8f7-109">Network Statistics and Properties</span></span>  
+ <span data-ttu-id="0d8f7-110">Můžete shromáždit statistiku sítě a vlastností na základě rozhraní nebo protokolu.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-110">You can gather network statistics and properties on an interface or protocol basis.</span></span> <span data-ttu-id="0d8f7-111"><xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>, A <xref:System.Net.NetworkInformation.PhysicalAddress> třídy poskytnout informace o konkrétní síťové rozhraní, zatímco <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics>, a <xref:System.Net.NetworkInformation.UdpStatistics> třídy poskytnout informace o vrstvy 3 a 4 pakety vrstvy.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-111">The <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>, and <xref:System.Net.NetworkInformation.PhysicalAddress> classes give information about a particular network interface, while the <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics>, and <xref:System.Net.NetworkInformation.UdpStatistics> classes give information about layer 3 and layer 4 packets.</span></span> <span data-ttu-id="0d8f7-112">Další informace najdete v tématu [postupy: získání rozhraní a informace o protokolu](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md).</span><span class="sxs-lookup"><span data-stu-id="0d8f7-112">For more information, see [How to: Get Interface and Protocol Information](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md).</span></span>  
+  
+## <a name="determine-if-a-remote-host-is-reachable"></a><span data-ttu-id="0d8f7-113">Určí, zda vzdáleného hostitele dostupné</span><span class="sxs-lookup"><span data-stu-id="0d8f7-113">Determine if a Remote Host is Reachable</span></span>  
+ <span data-ttu-id="0d8f7-114">Můžete použít <xref:System.Net.NetworkInformation.Ping> třídu k určení, zda je vzdálený hostitel nahoru, v síti a dostupný.</span><span class="sxs-lookup"><span data-stu-id="0d8f7-114">You can use the <xref:System.Net.NetworkInformation.Ping> class to determine whether a Remote Host is up, on the network, and reachable.</span></span> <span data-ttu-id="0d8f7-115">Další informace najdete v tématu [postup: příkaz Ping hostitele](../../../docs/framework/network-programming/how-to-ping-a-host.md).</span><span class="sxs-lookup"><span data-stu-id="0d8f7-115">For more information, see [How to: Ping a Host](../../../docs/framework/network-programming/how-to-ping-a-host.md).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="0d8f7-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="0d8f7-116">See Also</span></span>  
+ [<span data-ttu-id="0d8f7-117">Síťové programování ukázky</span><span class="sxs-lookup"><span data-stu-id="0d8f7-117">Network Programming Samples</span></span>](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [<span data-ttu-id="0d8f7-118">Ukázka technologie informace o síti</span><span class="sxs-lookup"><span data-stu-id="0d8f7-118">Network Information Technology Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=179564)  
+ [<span data-ttu-id="0d8f7-119">Ukázkový nástroj NetStat technologie</span><span class="sxs-lookup"><span data-stu-id="0d8f7-119">NetStat Tool Technology Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=179562)  
+ [<span data-ttu-id="0d8f7-120">Ukázka technologie ping klienta</span><span class="sxs-lookup"><span data-stu-id="0d8f7-120">Ping Client Technology Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=179565)

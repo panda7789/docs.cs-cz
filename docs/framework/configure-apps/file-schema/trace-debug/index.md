@@ -1,0 +1,64 @@
+---
+title: "Trasování a ladění schématu nastavení"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- tracing [.NET Framework], trace and debug settings schema
+- configuration schema [.NET Framework], trace and debug settings
+- configuration settings [.NET Framework], tracing
+- schema configuration settings
+- configuration settings [.NET Framework], debugging
+- trace listeners, trace and debug settings schema
+- configuration sections [.NET Framework]
+- elements [.NET Framework], trace and debug settings
+ms.assetid: 277ca5f6-e1c4-41b6-a47f-3a67ce5b94ac
+caps.latest.revision: "14"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 97c96fbb1abf969d902159709ca0e738f475fab9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="trace-and-debug-settings-schema"></a><span data-ttu-id="f18be-102">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="f18be-102">Trace and Debug Settings Schema</span></span>
+<span data-ttu-id="f18be-103">Nastavení trasování a ladění zadejte naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-103">Trace and debug settings specify trace listeners that collect, store, and route messages, and the level where a trace switch is set.</span></span>  
+  
+ <span data-ttu-id="f18be-104">Následující tabulka popisuje funkci jednotlivých prvků nastavení trasování a ladění.</span><span class="sxs-lookup"><span data-stu-id="f18be-104">The following table describes the function of each trace and debug settings element.</span></span>  
+  
+|<span data-ttu-id="f18be-105">Prvek</span><span class="sxs-lookup"><span data-stu-id="f18be-105">Element</span></span>|<span data-ttu-id="f18be-106">Popis</span><span class="sxs-lookup"><span data-stu-id="f18be-106">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="f18be-107">\<Přidat ></span><span class="sxs-lookup"><span data-stu-id="f18be-107">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-source.md)|<span data-ttu-id="f18be-108">Přidá naslouchací proces a `Listeners` kolekce zdroje trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-108">Adds a listener to the `Listeners` collection for a trace source.</span></span>|  
+|[<span data-ttu-id="f18be-109">\<Přidat ></span><span class="sxs-lookup"><span data-stu-id="f18be-109">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|<span data-ttu-id="f18be-110">Přidá naslouchací proces a `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="f18be-110">Adds a listener to the `Listeners` collection.</span></span>|  
+|[<span data-ttu-id="f18be-111">\<Přidat ></span><span class="sxs-lookup"><span data-stu-id="f18be-111">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-sharedlisteners.md)|<span data-ttu-id="f18be-112">Přidá naslouchací proces a `sharedListeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="f18be-112">Adds a listener to the `sharedListeners` collection.</span></span>|  
+|[<span data-ttu-id="f18be-113">\<Přidat ></span><span class="sxs-lookup"><span data-stu-id="f18be-113">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-switches.md)|<span data-ttu-id="f18be-114">Určuje úroveň, kde je nastaven na přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-114">Specifies the level where a trace switch is set.</span></span>|  
+|[<span data-ttu-id="f18be-115">\<Assert – ></span><span class="sxs-lookup"><span data-stu-id="f18be-115">\<assert></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/assert-element.md)|<span data-ttu-id="f18be-116">Určuje, jestli se má zobrazit okno se zprávou při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zprávy.</span><span class="sxs-lookup"><span data-stu-id="f18be-116">Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.</span></span>|  
+|[<span data-ttu-id="f18be-117">\<Clear ></span><span class="sxs-lookup"><span data-stu-id="f18be-117">\<clear></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-source.md)|<span data-ttu-id="f18be-118">Vymaže `Listeners` kolekce zdroje trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-118">Clears the `Listeners` collection for a trace source.</span></span>|  
+|[<span data-ttu-id="f18be-119">\<Clear ></span><span class="sxs-lookup"><span data-stu-id="f18be-119">\<clear></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)|<span data-ttu-id="f18be-120">Vymaže `Listeners` kolekce pro trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-120">Clears the `Listeners` collection for trace.</span></span>|  
+|[<span data-ttu-id="f18be-121">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="f18be-121">\<filter></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-listeners-for-source.md)|<span data-ttu-id="f18be-122">Přidá filtr do naslouchací proces ve `Listeners` kolekce zdroje trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-122">Adds a filter to a listener in the `Listeners` collection for a trace source.</span></span>|  
+|[<span data-ttu-id="f18be-123">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="f18be-123">\<filter></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-listeners-for-trace.md)|<span data-ttu-id="f18be-124">Přidá filtr do naslouchací proces ve `Listeners` kolekce pro trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-124">Adds a filter to a listener in the `Listeners` collection for trace.</span></span>|  
+|[<span data-ttu-id="f18be-125">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="f18be-125">\<filter></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-sharedlisteners.md)|<span data-ttu-id="f18be-126">Přidá filtr do naslouchací proces ve `sharedListeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="f18be-126">Adds a filter to a listener in the `sharedListeners` collection.</span></span>|  
+|[<span data-ttu-id="f18be-127">\<moduly pro naslouchání ></span><span class="sxs-lookup"><span data-stu-id="f18be-127">\<listeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|<span data-ttu-id="f18be-128">Určuje naslouchací procesy pro `Listeners` kolekce zdroje trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-128">Specifies listeners for the `Listeners` collection for a trace source.</span></span>|  
+|[<span data-ttu-id="f18be-129">\<moduly pro naslouchání ></span><span class="sxs-lookup"><span data-stu-id="f18be-129">\<listeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|<span data-ttu-id="f18be-130">Určuje naslouchací procesy pro `Listeners` kolekce pro trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-130">Specifies listeners for the `Listeners` collection for trace.</span></span>|  
+|[<span data-ttu-id="f18be-131">\<čítače výkonu ></span><span class="sxs-lookup"><span data-stu-id="f18be-131">\<performanceCounters></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md)|<span data-ttu-id="f18be-132">Určuje velikost globální paměť sdíleny čítače výkonu.</span><span class="sxs-lookup"><span data-stu-id="f18be-132">Specifies the size of the global memory shared by performance counters.</span></span>|  
+|[<span data-ttu-id="f18be-133">\<Odebrat ></span><span class="sxs-lookup"><span data-stu-id="f18be-133">\<remove></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)|<span data-ttu-id="f18be-134">Odebere naslouchací proces z `Listeners` kolekce pro trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-134">Removes a listener from the `Listeners` collection for trace.</span></span>|  
+|[<span data-ttu-id="f18be-135">\<Odebrat ></span><span class="sxs-lookup"><span data-stu-id="f18be-135">\<remove></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-source.md)|<span data-ttu-id="f18be-136">Odebere naslouchací proces z `Listeners` kolekce zdroje trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-136">Removes a listener from the `Listeners` collection for a trace source.</span></span>|  
+|[<span data-ttu-id="f18be-137">\<sharedListeners ></span><span class="sxs-lookup"><span data-stu-id="f18be-137">\<sharedListeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)|<span data-ttu-id="f18be-138">Obsahuje naslouchací procesy, které může odkazovat všechny zdroje nebo element trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-138">Contains listeners that any source or trace element can reference.</span></span>|  
+|[<span data-ttu-id="f18be-139">\<zdroje ></span><span class="sxs-lookup"><span data-stu-id="f18be-139">\<sources></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sources-element.md)|<span data-ttu-id="f18be-140">Obsahuje trasování zdrojů, které zahájí trasování zpráv.</span><span class="sxs-lookup"><span data-stu-id="f18be-140">Contains trace sources that initiate tracing messages.</span></span>|  
+|[<span data-ttu-id="f18be-141">\<zdroj ></span><span class="sxs-lookup"><span data-stu-id="f18be-141">\<source></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)|<span data-ttu-id="f18be-142">Určuje zdroj trasování, který iniciuje trasování zpráv.</span><span class="sxs-lookup"><span data-stu-id="f18be-142">Specifies a trace source that initiates tracing messages.</span></span>|  
+|[<span data-ttu-id="f18be-143">\<přepínače ></span><span class="sxs-lookup"><span data-stu-id="f18be-143">\<switches></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|<span data-ttu-id="f18be-144">Obsahuje trasování – přepínače a úroveň, kde jsou nastaveny trasování – přepínače.</span><span class="sxs-lookup"><span data-stu-id="f18be-144">Contains trace switches and the level where the trace switches are set.</span></span>|  
+|[<span data-ttu-id="f18be-145">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="f18be-145">\<system.diagnostics></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)|<span data-ttu-id="f18be-146">Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="f18be-146">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
+|[<span data-ttu-id="f18be-147">\<trasování ></span><span class="sxs-lookup"><span data-stu-id="f18be-147">\<trace></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|<span data-ttu-id="f18be-148">Obsahuje naslouchací procesy, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="f18be-148">Contains listeners that collect, store, and route tracing messages.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="f18be-149">Viz také</span><span class="sxs-lookup"><span data-stu-id="f18be-149">See Also</span></span>  
+ <xref:System.Diagnostics.Trace>  
+ <xref:System.Diagnostics.TraceSource>  
+ <xref:System.Diagnostics.Debug>  
+ [<span data-ttu-id="f18be-150">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="f18be-150">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
