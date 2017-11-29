@@ -1,0 +1,54 @@
+---
+title: "klíč entity"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: d0d7df7ff1a0e8e732688e10befb4bffa86599d0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="entity-key"></a><span data-ttu-id="077a1-102">klíč entity</span><span class="sxs-lookup"><span data-stu-id="077a1-102">entity key</span></span>
+<span data-ttu-id="077a1-103">*Klíč entity* je [vlastnost](../../../../docs/framework/data/adonet/property.md) nebo sada vlastností [typ entity](../../../../docs/framework/data/adonet/entity-type.md) , se používají k určení identity.</span><span class="sxs-lookup"><span data-stu-id="077a1-103">An *entity key* is a [property](../../../../docs/framework/data/adonet/property.md) or a set of properties of an [entity type](../../../../docs/framework/data/adonet/entity-type.md) that are used to determine identity.</span></span> <span data-ttu-id="077a1-104">Vlastnosti, které tvoří klíč entity, jsou vybraná v době návrhu.</span><span class="sxs-lookup"><span data-stu-id="077a1-104">The properties that make up an entity key are chosen at design time.</span></span> <span data-ttu-id="077a1-105">Hodnoty vlastnosti klíče entity musí jednoznačně identifikovat instance typu entity v rámci [sady entit](../../../../docs/framework/data/adonet/entity-set.md) za běhu.</span><span class="sxs-lookup"><span data-stu-id="077a1-105">The values of entity key properties must uniquely identify an entity type instance within an [entity set](../../../../docs/framework/data/adonet/entity-set.md) at run time.</span></span> <span data-ttu-id="077a1-106">Vlastnosti, které tvoří klíč entity je třeba zvolit zaručovat jedinečnost instancí v sadu entit.</span><span class="sxs-lookup"><span data-stu-id="077a1-106">The properties that make up an entity key should be chosen to guarantee uniqueness of instances in an entity set.</span></span>  
+  
+ <span data-ttu-id="077a1-107">Následují požadavky na sadu vlastností pro být klíč entity:</span><span class="sxs-lookup"><span data-stu-id="077a1-107">The following are the requirements for a set of properties to be an entity key:</span></span>  
+  
+-   <span data-ttu-id="077a1-108">Žádné klíče dvě entity v rámci sadu entit může být identické.</span><span class="sxs-lookup"><span data-stu-id="077a1-108">No two entity keys within an entity set can be identical.</span></span> <span data-ttu-id="077a1-109">To znamená dvě entity v rámci sadu entit, hodnoty pro všechny vlastnosti, které tvoří klíč nesmí být stejné.</span><span class="sxs-lookup"><span data-stu-id="077a1-109">That is, for any two entities within an entity set, the values for all of the properties that constitute a key cannot be the same.</span></span> <span data-ttu-id="077a1-110">Ale některé (ale ne všechny) hodnoty, které tvoří entitu klíč může být stejné.</span><span class="sxs-lookup"><span data-stu-id="077a1-110">However, some (but not all) of the values that make up an entity key can be the same.</span></span>  
+  
+-   <span data-ttu-id="077a1-111">Klíč entity musí obsahovat sadu neumožňující hodnotu Null, neměnné, [primitivní typ vlastnosti](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).</span><span class="sxs-lookup"><span data-stu-id="077a1-111">An entity key must consist of a set of non-nullable, immutable, [primitive type properties](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).</span></span>  
+  
+-   <span data-ttu-id="077a1-112">Vlastnosti, které tvoří klíčem entity pro danou entitu Typ nelze změnit.</span><span class="sxs-lookup"><span data-stu-id="077a1-112">The properties that make up an entity key for a given entity type cannot change.</span></span> <span data-ttu-id="077a1-113">Více než jeden klíč možné entity nelze povolit pro danou entitu typu; náhradní klíče nejsou podporovány.</span><span class="sxs-lookup"><span data-stu-id="077a1-113">You cannot allow more than one possible entity key for a given entity type; surrogate keys are not supported.</span></span>  
+  
+-   <span data-ttu-id="077a1-114">Když entity je součástí hierarchie dědičnosti, kořenové entity musí obsahovat všechny vlastnosti, které tvoří klíč entity a klíč musí být definovaný pro kořenové typ entity.</span><span class="sxs-lookup"><span data-stu-id="077a1-114">When an entity is involved in an inheritance hierarchy, the root entity must contain all the properties that make up the entity key, and the entity key must be defined on the root entity type.</span></span> <span data-ttu-id="077a1-115">Další informace najdete v tématu [datového modelu Entity: dědičnosti](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).</span><span class="sxs-lookup"><span data-stu-id="077a1-115">For more information, see [Entity Data Model: Inheritance](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).</span></span>  
+  
+## <a name="example"></a><span data-ttu-id="077a1-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="077a1-116">Example</span></span>  
+ <span data-ttu-id="077a1-117">Následující diagram znázorňuje Koncepční model se tři typy entit: `Book`, `Publisher`, a `Author`.</span><span class="sxs-lookup"><span data-stu-id="077a1-117">The diagram below shows a conceptual model with three entity types: `Book`, `Publisher`, and `Author`.</span></span> <span data-ttu-id="077a1-118">Vlastnosti každého typu entity, které tvoří svůj klíč entity, jsou označeny "(klíč)".</span><span class="sxs-lookup"><span data-stu-id="077a1-118">The properties of each entity type that make up its entity key are denoted with "(Key)".</span></span> <span data-ttu-id="077a1-119">Všimněte si, že `Author` typ entity má klíč entity, která se skládá ze dvou vlastností `Name` a `Address`.</span><span class="sxs-lookup"><span data-stu-id="077a1-119">Note that the `Author` entity type has an entity key that consists of two properties, `Name` and `Address`.</span></span>  
+  
+ <span data-ttu-id="077a1-120">![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span><span class="sxs-lookup"><span data-stu-id="077a1-120">![Example Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span></span>  
+  
+ <span data-ttu-id="077a1-121">[ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá specifické pro doménu jazyka (DSL) nazývaného konceptuálního schématu definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelech.</span><span class="sxs-lookup"><span data-stu-id="077a1-121">The [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="077a1-122">Definuje CSDL níže `Book` typ entity, které jsou uvedené v diagramu výše.</span><span class="sxs-lookup"><span data-stu-id="077a1-122">The CSDL below defines the `Book` entity type shown in the diagram above.</span></span> <span data-ttu-id="077a1-123">Všimněte si, že klíč entity je definován pod položkou `ISBN` vlastnost typu entity.</span><span class="sxs-lookup"><span data-stu-id="077a1-123">Note that the entity key is defined by referencing the `ISBN` property of the entity type.</span></span>  
+  
+ [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
+  
+ <span data-ttu-id="077a1-124">`ISBN` Vlastnost je vhodná pro klíč entity, protože mezinárodní číslo pro standardní adresáře (ISBN) jednoznačně identifikuje knihy.</span><span class="sxs-lookup"><span data-stu-id="077a1-124">The `ISBN` property is a good choice for the entity key because an International Standard Book Number (ISBN) uniquely identifies a book.</span></span>  
+  
+ <span data-ttu-id="077a1-125">Definuje CSDL níže `Author` typ entity, které jsou uvedené v diagramu výše.</span><span class="sxs-lookup"><span data-stu-id="077a1-125">The CSDL below defines the `Author` entity type shown in the diagram above.</span></span> <span data-ttu-id="077a1-126">Všimněte si, že klíč entity se skládá ze dvou vlastností `Name` a `Address`.</span><span class="sxs-lookup"><span data-stu-id="077a1-126">Note that the entity key consists of two properties, `Name` and `Address`.</span></span>  
+  
+ [!code-xml[EDM_Example_Model#CompositeKeyExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#compositekeyexample)]  
+  
+ <span data-ttu-id="077a1-127">Pomocí `Name` a `Address` pro entitu klíč je vhodná volba, protože je nepravděpodobné, že za provozu na stejnou adresu dva autoři se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="077a1-127">Using `Name` and `Address` for the entity key is a reasonable choice, because two authors of the same name are unlikely to live at the same address.</span></span> <span data-ttu-id="077a1-128">Tato volba pro klíč entity, ale v absolutně nezaručuje klíče jedinečné entity v sadu entit.</span><span class="sxs-lookup"><span data-stu-id="077a1-128">However, this choice for an entity key does not absolutely guarantee unique entity keys in an entity set.</span></span> <span data-ttu-id="077a1-129">Přidání vlastnosti, jako například `AuthorId`, který může použít k jednoznačné identifikaci Autor doporučenou v tomto případě.</span><span class="sxs-lookup"><span data-stu-id="077a1-129">Adding a property, such as `AuthorId`, that could be used to uniquely identify an author would be recommended in this case.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="077a1-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="077a1-130">See Also</span></span>  
+ [<span data-ttu-id="077a1-131">Entity Data Model klíčové koncepty</span><span class="sxs-lookup"><span data-stu-id="077a1-131">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="077a1-132">Datového modelu entity</span><span class="sxs-lookup"><span data-stu-id="077a1-132">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)
