@@ -1,0 +1,72 @@
+---
+title: "Maximalizace výkonu WPF 3D"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: 3-D graphics [WPF]
+ms.assetid: 4bcf949d-d92f-4d8d-8a9b-1e4c61b25bf6
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 26df55c9658721eb907db5837ac467a5899e84eb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/18/2017
+---
+# <a name="maximize-wpf-3d-performance"></a>Maximalizace výkonu WPF 3D
+Při používání [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sestavení 3D ovládacích prvků a zahrnutí 3D scény do vaší aplikace, je důležité vzít v úvahu optimalizace výkonu. Toto téma obsahuje seznam 3D třídy a vlastnosti, které mají vliv na výkon pro vaši aplikaci, včetně doporučení pro optimalizaci výkonu, když je budete používat.  
+  
+ Toto téma předpokládá znalost pokročilé [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 3D funkce. Návrhy v tomto dokumentu se týkají "vykreslování vrstvy 2" – zhruba definován jako hardware, který podporuje pixelů shaderu verze 2.0 a vrchol shaderu verze 2.0. Další podrobnosti najdete v tématu [vrstev vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).  
+  
+## <a name="performance-impact-high"></a>Vliv na výkon: Vysoká  
+  
+|Vlastnost|Doporučení|  
+|-|-|  
+|<xref:System.Windows.Media.Brush>|Rychlost štětce (nejrychlejší k nejpomalejší):<br /><br /> <xref:System.Windows.Media.SolidColorBrush><br /><br /> <xref:System.Windows.Media.LinearGradientBrush><br /><br /> <xref:System.Windows.Media.ImageBrush><br /><br /> <xref:System.Windows.Media.DrawingBrush>(v mezipaměti)<br /><br /> <xref:System.Windows.Media.VisualBrush>(v mezipaměti)<br /><br /> <xref:System.Windows.Media.RadialGradientBrush><br /><br /> <xref:System.Windows.Media.DrawingBrush>(bez vyrovnávací paměti)<br /><br /> <xref:System.Windows.Media.VisualBrush>(bez vyrovnávací paměti)|  
+|<xref:System.Windows.UIElement.ClipToBoundsProperty>|Nastavit `Viewport3D.ClipToBounds` na hodnotu false vždy, když není potřeba mít [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] explicitně oříznutí obsah <xref:System.Windows.Controls.Viewport3D> na Viewport3D obdélník. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]výstřižek antialiased může být velmi pomalé a `ClipToBounds` (pomalu) ve výchozím nastavení zapnutá na <xref:System.Windows.Controls.Viewport3D>.|  
+|<xref:System.Windows.UIElement.IsHitTestVisible%2A>|Nastavit `Viewport3D.IsHitTestVisible` na hodnotu false vždy, když není nutné [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vzít v úvahu obsah <xref:System.Windows.Controls.Viewport3D> testování při průchodu provádění myši.  Přístupů testování 3D obsah se provádí v softwaru a může být pomalé v sítích s velké skupiny uzlů. <xref:System.Windows.UIElement.IsHitTestVisible%2A>(pomalu) ve výchozím nastavení zapnutá na <xref:System.Windows.Controls.Viewport3D>.|  
+|<xref:System.Windows.Media.Media3D.GeometryModel3D>|Vytvořte různé modely jenom v případě, že vyžadují různé materiály nebo transformací.  Pokud, pokuste se ke sloučení mnoha <xref:System.Windows.Media.Media3D.GeometryModel3D> instancí se stejným materiály a transformace do pár větší <xref:System.Windows.Media.Media3D.GeometryModel3D> a <xref:System.Windows.Media.Media3D.MeshGeometry3D> instance.|  
+|<xref:System.Windows.Media.Media3D.MeshGeometry3D>|OK sítě animace – Změna jednotlivých vrcholy mřížky na základě na rámce – není vždy efektivní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Chcete-li minimalizovat dopad na výkon oznámení o změnách při změně každý vrchol, odpojte OK ze stromu visual před provedením změny na vrchol.  Jakmile OK byla změněna, připojte ji k vizuálním stromu.  Zkuste taky, chcete-li minimalizovat velikost skupiny uzlů, které bude animovaný tímto způsobem.|  
+|3D vyhlazení|Chcete-li zvýšit rychlost vykreslování, zakažte multisampling na <xref:System.Windows.Controls.Viewport3D> nastavením připojená vlastnost <xref:System.Windows.Media.RenderOptions.EdgeMode%2A> k `Aliased`.  Ve výchozím nastavení, je na zakázáno 3D vyhlazení [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] a povolená na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] s 4 vzorky na pixel.|  
+|Text|Live text v 3D scény (za provozu, protože je v <xref:System.Windows.Media.DrawingBrush> nebo <xref:System.Windows.Media.VisualBrush>) může být pomalé. Zkuste místo toho použít Image textu (prostřednictvím <xref:System.Windows.Media.Imaging.RenderTargetBitmap>) Pokud se změní text.|  
+|<xref:System.Windows.Media.TileBrush>|Pokud je nutné použít <xref:System.Windows.Media.VisualBrush> nebo <xref:System.Windows.Media.DrawingBrush> v 3D scény vzhledem k tomu, že není statický obsah štětce, zkuste ukládání do mezipaměti štětce (nastavení přidružená vlastnost <xref:System.Windows.Media.RenderOptions.CachingHint%2A> k `Cache`).  Nastavte minimální a maximální měřítko zneplatnění prahové hodnoty (s přidružené vlastnosti <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMinimum%2A> a <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMaximum%2A>) tak, aby v mezipaměti štětce nebude příliš často, obnovovaly současně se zachovává vaše požadované úrovně kvality.  Ve výchozím nastavení <xref:System.Windows.Media.DrawingBrush> a <xref:System.Windows.Media.VisualBrush> se neukládají do mezipaměti, což znamená, že pokaždé, když se něco vykresluje štětcem musí být znovu vykreslené, celého obsahu štětce musí nejprve znovu vykresleny zprostředkující prostor.|  
+|<xref:System.Windows.Media.Effects.BitmapEffect>|<xref:System.Windows.Media.Effects.BitmapEffect>vynutí všechny dotčené obsah k vykreslení bez hardwarovou akceleraci.  Pro nejlepší výkon, nepoužívejte <xref:System.Windows.Media.Effects.BitmapEffect>.|  
+  
+## <a name="performance-impact-medium"></a>Vliv na výkon: střední  
+  
+|Vlastnost|Doporučení|  
+|-|-|  
+|<xref:System.Windows.Media.Media3D.MeshGeometry3D>|Když mřížku je definován jako sousedících trojúhelníčky s sdílené vrcholy a tyto vrcholy mají stejné pozici, normální a texture souřadnice, definovat každý sdílený vrchol jenom jednou a potom vaší trojúhelníčky index s <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>.|  
+|<xref:System.Windows.Media.ImageBrush>|Snažit minimalizovat texture velikosti, když máte explicitní kontrolu nad velikost (Pokud používáte <xref:System.Windows.Media.Imaging.RenderTargetBitmap> nebo <xref:System.Windows.Media.ImageBrush>).  Všimněte si, že nižší rozlišení textury může snížit kvalitu proto zkuste najít rovnováhu mezi kvality a výkonu.|  
+|Neprůhlednost.|Při vykreslování průhledná 3D obsahu (například odrazů), použijte vlastnosti krytí na štětce nebo materiály (prostřednictvím <xref:System.Windows.Media.Brush.Opacity%2A> nebo <xref:System.Windows.Media.Media3D.DiffuseMaterial.Color%2A>) místo vytvoření samostatné průhledná <xref:System.Windows.Controls.Viewport3D> nastavením `Viewport3D.Opacity` na hodnotu menší než 1.|  
+|<xref:System.Windows.Controls.Viewport3D>|Minimalizujte počet <xref:System.Windows.Controls.Viewport3D> objekty, které používáte ve scény.  Uveďte mnoho 3D modelů do stejné Viewport3D místo vytvoření samostatné instance Viewport3D pro každý model.|  
+|<xref:System.Windows.Freezable>|Obvykle je vhodné použít <xref:System.Windows.Media.Media3D.MeshGeometry3D>, <xref:System.Windows.Media.Media3D.GeometryModel3D>, štětce a materiály.  Všechny jsou multiparentable vzhledem k tomu, že odvozené z `Freezable`.|  
+|<xref:System.Windows.Freezable>|Volání <xref:System.Windows.Freezable.Freeze%2A> metodu Freezables při jejich vlastnosti zůstane beze změny ve vaší aplikaci.  Zmrazení můžete snížit pracovní sady a zvýšit rychlost.|  
+|<xref:System.Windows.Media.Brush>|Použití <xref:System.Windows.Media.ImageBrush> místo <xref:System.Windows.Media.VisualBrush> nebo <xref:System.Windows.Media.DrawingBrush> Pokud nedojde ke změně obsahu štětce.  2D obsah může být převeden na <xref:System.Windows.Controls.Image> prostřednictvím <xref:System.Windows.Media.Imaging.RenderTargetBitmap> a pak se použije v <xref:System.Windows.Media.ImageBrush>.|  
+|<xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A>|Nepoužívejte <xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A> Pokud skutečně potřebujete najdete v části back řezy z vaší <xref:System.Windows.Media.Media3D.GeometryModel3D>.|  
+|<xref:System.Windows.Media.Media3D.Light>|Rychlost světla (nejrychlejší k nejpomalejší):<br /><br /> <xref:System.Windows.Media.Media3D.AmbientLight><br /><br /> <xref:System.Windows.Media.Media3D.DirectionalLight><br /><br /> <xref:System.Windows.Media.Media3D.PointLight><br /><br /> <xref:System.Windows.Media.Media3D.SpotLight>|  
+|<xref:System.Windows.Media.Media3D.MeshGeometry3D>|Zkuste zachovat o velikosti pod tato omezení:<br /><br /> <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A>: 20,001 <xref:System.Windows.Media.Media3D.Point3D> instancí<br /><br /> <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>: 60,003 <xref:System.Int32> instancí|  
+|<xref:System.Windows.Media.Media3D.Material>|Podstatným rychlost (nejrychlejší k nejpomalejší):<br /><br /> <xref:System.Windows.Media.Media3D.EmissiveMaterial><br /><br /> <xref:System.Windows.Media.Media3D.DiffuseMaterial><br /><br /> <xref:System.Windows.Media.Media3D.SpecularMaterial>|  
+|<xref:System.Windows.Media.Brush>|[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]3D není vyjádření výslovného nesouhlasu neviditelná štětce (černé vedlejším štětce, zrušte štětce atd.) v konzistentní způsob.  Vezměte v úvahu tyto z vaší scény vynechá.|  
+|<xref:System.Windows.Media.Media3D.MaterialGroup>|Každý <xref:System.Windows.Media.Media3D.Material> v <xref:System.Windows.Media.Media3D.MaterialGroup> způsobí, že jiný průchodu vykreslování, takže včetně mnoha materiály, dokonce i jednoduché materiály, může výrazně zvýšit výplně nároky na vaše GPU.  Minimalizujte počet materiály v vaší <xref:System.Windows.Media.Media3D.MaterialGroup>.|  
+  
+## <a name="performance-impact-low"></a>Vliv na výkon: Nízká  
+  
+|Vlastnost|Doporučení|  
+|-|-|  
+|<xref:System.Windows.Media.Media3D.Transform3DGroup>|Pokud nepotřebujete animace nebo datové vazby, místo použití transformace skupina, která obsahuje více transformací, použijte jediný <xref:System.Windows.Media.Media3D.MatrixTransform3D>, že bude produkt všechny transformace, které by nezávisle existují jinak ve skupině transformace nastavení.|  
+|<xref:System.Windows.Media.Media3D.Light>|Minimalizujte počet indikátory v vaší scény. Příliš mnoho indikátory v scény vynutí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] k vykreslování softwaru.  Omezení jsou přibližně 110 <xref:System.Windows.Media.Media3D.DirectionalLight> objekty, 70 <xref:System.Windows.Media.Media3D.PointLight> objekty nebo 40 <xref:System.Windows.Media.Media3D.SpotLight> objekty.|  
+|<xref:System.Windows.Media.Media3D.ModelVisual3D>|Oddělení přesun objektů ze statické objekty umístěním je v samostatné <xref:System.Windows.Media.Media3D.ModelVisual3D> instance.  ModelVisual3D je "těžší" než <xref:System.Windows.Media.Media3D.GeometryModel3D> vzhledem k tomu, že ho ukládá do mezipaměti transformovaných hranice.  GeometryModel3D je optimalizovaná tak, aby se model; ModelVisual3D je optimalizovaná tak, aby se scény uzlu.  Pomocí ModelVisual3D vložit sdílené instance GeometryModel3D do scény.|  
+|<xref:System.Windows.Media.Media3D.Light>|Minimalizujte počet, kolikrát změnit počet indikátory v scény.  Každé změně počtu světla vynutí opětovné generování shaderu a rekompilace, pokud má tato konfigurace existoval dříve (a proto má v mezipaměti jeho shaderu).|  
+|Lehký|Indikátory černé nezobrazí, ale bude přidat k vykreslení čas; Zvažte vynechání je.|  
+|<xref:System.Windows.Media.Media3D.MeshGeometry3D>|Chcete-li minimalizovat čas vytváření rozsáhlých kolekcí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], jako je například MeshGeometry3D <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A>, <xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>, <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>, a <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>, předem velikost kolekcí před hodnotu základního souboru. Pokud je to možné předejte kolekce konstruktory předem vyplněnou datové struktury například pole nebo seznamy.|  
+  
+## <a name="see-also"></a>Viz také  
+ [Přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)

@@ -1,0 +1,97 @@
+---
+title: "Konfigurace služby dat (služby WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: WCF Data Services, configuring
+ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bdfd498dbac7f6a14b8d87a2414af606c33e9104
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace služby dat (služby WCF Data Services)
+S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit datové služby, které zveřejňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Data v těchto kanálů mohou pocházet z různých datových zdrojů. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Zprostředkovatelé dat používá ke zveřejnění těchto dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Zahrnout tyto zprostředkovatele [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, zprostředkovatele reflexe a sadu rozhraní poskytovatele služeb vlastní data. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  
+  
+ V [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], datové služby je třída, která dědí z <xref:System.Data.Services.DataService%601> třídy, kde je typ dat služby kontejneru entit datového modelu. Tento kontejner entity má jednu nebo více vlastností, které vracejí <xref:System.Linq.IQueryable%601>, které se používají pro přístup k entity nastaví v datovém modelu.  
+  
+ Chování datové služby jsou definované členy <xref:System.Data.Services.DataServiceConfiguration> třída a členové <xref:System.Data.Services.DataServiceBehavior> třídy, která je k němu přistupovat z <xref:System.Data.Services.DataServiceConfiguration.DataServiceBehavior%2A> vlastnost <xref:System.Data.Services.DataServiceConfiguration> – třída. <xref:System.Data.Services.DataServiceConfiguration> Třída je dodána na `InitializeService` metodu, která je implementována pomocí služby data jako za následující implementaci Northwind datové služby:  
+  
+[!code-csharp[Astoria Northwind Service#DataServiceConfigComplete](../../../../samples/snippets/csharp/VS_Snippets_Misc/Astoria Northwind Service/cs/northwind.svc.cs#dataserviceconfigcomplete)]  
+[!code-vb[Astoria Northwind Service#DataServiceConfigComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/Astoria Northwind Service/vb/northwind.svc.vb#dataserviceconfigcomplete)]  
+  
+## <a name="data-service-configuration-settings"></a>Nastavení konfigurace služby dat  
+ <xref:System.Data.Services.DataServiceConfiguration> Třída umožňuje určit následující chování služby dat:  
+  
+|Člen|Chování|  
+|------------|--------------|  
+|<xref:System.Data.Services.DataServiceBehavior.AcceptCountRequests%2A>|Umožňuje zakázat počet požadavků, které jsou ke službě data pomocí `$count` segmentu cesty a `$inlinecount` možnost dotazu. Další informace najdete v tématu [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).|  
+|<xref:System.Data.Services.DataServiceBehavior.AcceptProjectionRequests%2A>|Umožňuje zakázat podporu projekce data v požadavků, které jsou ke službě data pomocí `$select` možnost dotazu. Další informace najdete v tématu [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).|  
+|<xref:System.Data.Services.DataServiceConfiguration.EnableTypeAccess%2A>|Povolí datový typ mají být exponovány v metadatech pro zprostředkovatele metadat dynamické definované pomocí <xref:System.Data.Services.Providers.IDataServiceMetadataProvider> rozhraní.|  
+|<xref:System.Data.Services.DataServiceConfiguration.EnableTypeConversion%2A>|Umožňuje určit, zda by měl běh služby data převést typ, který je obsažena v datové části skutečné vlastnost typu, který je zadaný v požadavku.|  
+|<xref:System.Data.Services.DataServiceBehavior.InvokeInterceptorsOnLinkDelete%2A>|Umožňuje určit, zda zaregistrován sběrače změny jsou vyvolány na související entity při odstranění odkaz vztah mezi dvěma entitami.|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxBatchCount%2A>|Umožňuje omezit počet sady změn a dotazování operace, které jsou povoleny v jedné dávce. Další informace najdete v tématu [OData: Batch](http://go.microsoft.com/fwlink/?LinkId=185602) a [dávkování operací](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxChangesetCount%2A>|Umožňuje omezit počet změn, které můžou být součástí sady jediné změny. Další informace najdete v tématu [postupy: povolení stránkování z dat služby výsledky](../../../../docs/framework/data/wcf/how-to-enable-paging-of-data-service-results-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxExpandCount%2A>|Umožňuje omezit počet entit v relaci, které můžou být součástí jedné žádosti pomocí velikost odpovědi `$expand` – operátor dotazu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v tématu [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odložení obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxExpandDepth%2A>|Umožňuje omezit omezením hloubky grafu entit v relaci, které můžou být součástí jedné žádosti pomocí velikost odpovědi `$expand` – operátor dotazu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v tématu [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odložení obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxObjectCountOnInsert%2A>|Umožňuje omezit počet entit, které má být vložen, který může být obsažený v jednom požadavku POST.|  
+|<xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A>|Definuje verzi protokolu Atom, který je používán službou data. Pokud hodnota <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> nastavena na hodnotu menší než maximální hodnota, která <xref:System.Data.Services.Common.DataServiceProtocolVersion>, nejnovější funkce [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] není k dispozici pro klienty přístupu ke službě data. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Verze datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxResultsPerCollection%2A>|Umožňuje omezit velikost odpovědi v omezením počet entit v každé sadě entit, která je vrácena jako datový kanál.|  
+|<xref:System.Data.Services.DataServiceConfiguration.RegisterKnownType%2A>|Datový typ se přidá do seznamu typů, které jsou rozpoznány službou data.|  
+|<xref:System.Data.Services.DataServiceConfiguration.SetEntitySetAccessRule%2A>|Nastaví přístupová práva pro entitu nastavit prostředky, které jsou k dispozici ve službě data. Znak hvězdičky (`*`) může být zadána hodnota pro parametr name nastavit přístup pro všechny zbývající sad entit na stejné úrovni. Doporučujeme nastavit přístup k sady entit pro poskytování nejnižší oprávnění přístupu k prostředky služby dat, které jsou vyžadované klientské aplikace. Další informace najdete v tématu [zabezpečení služby WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md). Příklady minimální přístupová práva potřebná pro danou akci URI a HTTP, najdete v tabulce v [minimální požadavky na přístup k prostředku](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md#accessRequirements) části.|  
+|<xref:System.Data.Services.DataServiceConfiguration.SetEntitySetPageSize%2A>|Nastaví maximální velikost stránky pro entitu nastavení prostředku. Další informace najdete v tématu [postupy: povolení stránkování z dat služby výsledky](../../../../docs/framework/data/wcf/how-to-enable-paging-of-data-service-results-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.SetServiceOperationAccessRule%2A>|Nastaví přístupová práva pro operace služby, které jsou definovány na službu data. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md). Znak hvězdičky (`*`) může být zadána hodnota pro parametr name nastavit přístup pro všechny operace služby na stejné úrovni. Doporučujeme nastavit přístup k operacím služby k poskytování nejnižší oprávnění přístupu k prostředky služby dat, které jsou vyžadované klientské aplikace. Další informace najdete v tématu [zabezpečení služby WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A>|Tato vlastnost konfigurace umožňuje snadněji řešit datové služby vrácením Další informace v chybové zprávě odpovědi. Tato možnost není určena pro použití v provozním prostředí. Další informace najdete v tématu [rozvojových a nasazení služby WCF Data Services](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md).|  
+  
+<a name="accessRequirements"></a>   
+## <a name="minimum-resource-access-requirements"></a>Požadavky na přístup minimální prostředky  
+ Následující tabulka Podrobnosti sady entit minimální oprávnění, kterým je uděleno oprávnění k provedení určité operace. Cesta příklady jsou založeny na službu Northwind data, která se vytvoří při dokončení [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md). Vzhledem k tomu, jak <xref:System.Data.Services.EntitySetRights> – výčet a <xref:System.Data.Services.ServiceOperationRights> výčtu jsou definované za použití <xref:System.FlagsAttribute>, logický operátor OR můžete určit více oprávnění pro jednu entitu sady nebo operace. Další informace najdete v tématu [postup: Povolit přístup ke službě Data](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).  
+  
+|Cesta nebo akce|`GET`|`DELETE`|`MERGE`|`POST`|`PUT`|  
+|------------------|-----------|--------------|-------------|------------|-----------|  
+|`/Customers`|<xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|<xref:System.Data.Services.EntitySetRights.WriteAppend>|Nepodporováno|  
+|`/Customers('ALFKI')`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.ReadSingle>a<xref:System.Data.Services.EntitySetRights.WriteDelete>|<xref:System.Data.Services.EntitySetRights.ReadSingle>a<xref:System.Data.Services.EntitySetRights.WriteMerge>|není k dispozici|<xref:System.Data.Services.EntitySetRights.ReadSingle>a<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers('ALFKI')/Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a <xref:System.Data.Services.EntitySetRights.WriteMerge> nebo<xref:System.Data.Services.EntitySetRights.WriteReplace><br /><br /> - a -<br /><br /> `Orders``:` a<xref:System.Data.Services.EntitySetRights.WriteAppend>|Nepodporováno|  
+|`/Customers('ALFKI')/Orders(10643)`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a<xref:System.Data.Services.EntitySetRights.WriteDelete>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a<xref:System.Data.Services.EntitySetRights.WriteMerge>|Nepodporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Orders(10643)/Customer`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a<xref:System.Data.Services.EntitySetRights.WriteDelete><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a <xref:System.Data.Services.EntitySetRights.WriteMerge>;<br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.WriteAppend> a<xref:System.Data.Services.EntitySetRights.ReadSingle>|Nepodporováno|  
+|`/Customers('ALFKI')/$links/Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a <xref:System.Data.Services.EntitySetRights.WriteMerge> nebo<xref:System.Data.Services.EntitySetRights.WriteReplace><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|Nepodporováno|  
+|`/Customers('ALFKI')/$links/Orders(10643)`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a <xref:System.Data.Services.EntitySetRights.WriteMerge> nebo<xref:System.Data.Services.EntitySetRights.WriteReplace><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|Nepodporováno|Nepodporováno|Nepodporováno|  
+|`/Orders(10643)/$links/Customer`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a <xref:System.Data.Services.EntitySetRights.WriteMerge> nebo<xref:System.Data.Services.EntitySetRights.WriteReplace>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a<xref:System.Data.Services.EntitySetRights.WriteMerge>|Nepodporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle>;<br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> a<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers/$count`|<xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|Nepodporováno|Nepodporováno|  
+|`/Customers('ALFKI')/ContactName`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Nepodporováno|<xref:System.Data.Services.EntitySetRights.WriteMerge>|Nepodporováno|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers('ALFKI')/Address/StreetAddress/$value` <sup>1</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.WriteDelete>|Nepodporováno|Nepodporováno|Nepodporováno|  
+|`/Customers('ALFKI')/ContactName/$value`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.ReadSingle>a<xref:System.Data.Services.EntitySetRights.WriteDelete>|<xref:System.Data.Services.EntitySetRights.WriteMerge>|Nepodporováno|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers('ALFKI')/$value` <sup>2</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Nepodporováno|Nepodporováno|Nepodporováno|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|Nepodporováno|  
+|`/Customers('ALFKI')?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|Nepodporováno|Nepodporováno|  
+  
+ <sup>1</sup> v tomto příkladu `Address` představuje vlastnost komplexního typu `Customers` entity, který má vlastnost s názvem `StreetAddress`. Model používaný službami data Northwind explicitně nedefinuje tohohle komplexního typu. Když datový model je definována pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, můžete použít [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje k definování komplexního typu. Další informace najdete v tématu [postupy: vytvoření a úprava komplexní typy](http://msdn.microsoft.com/en-us/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
+  
+ <sup>2</sup> tento identifikátor URI je podporovaná, když vlastnosti, která vrací binární rozsáhlý objekt (binární rozsáhlý OBJEKT) je definován jako mediální prostředek, který patří do entity, která je položka odkaz média, který v tomto případě je `Customers`. Další informace najdete v tématu [streamování zprostředkovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
+  
+<a name="versioning"></a>   
+## <a name="versioning-requirements"></a>Požadavky na Správa verzí  
+ Následující chování konfigurace služby dat vyžadují verze 2 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu nebo novější verze:  
+  
+-   Podpora pro počet požadavků.  
+  
+-   Podpora pro možnost dotazu $select pro projekce.  
+  
+ Další informace najdete v tématu [verze datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
+  
+## <a name="see-also"></a>Viz také  
+ [Definování datových služeb WCF](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
+ [Hostující službu Data](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)

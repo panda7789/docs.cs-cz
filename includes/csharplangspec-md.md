@@ -1,0 +1,1 @@
+Další informace najdete v tématu [Specifikace jazyka C#](~/docs/csharp/language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
