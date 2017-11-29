@@ -1,0 +1,173 @@
+---
+title: "Postupy: Transformace XML pomocí LINQ (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XML [Visual Basic], transforming
+- LINQ to XML [Visual Basic], transforming XML
+ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: cf7c44598558b2c631ff3ef4c2ae0986a49ca2bd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="how-to-transform-xml-by-using-linq-visual-basic"></a>Postupy: Transformace XML pomocí LINQ (Visual Basic)
+[XML – literály](../../../../visual-basic/language-reference/xml-literals/index.md) usnadňují čtení XML z jednoho zdroje a transformují je na nový formát XML. Můžete využít výhod dotazů LINQ k získání obsahu k transformaci, nebo změnit obsah stávající dokument na nový formát XML.  
+  
+ V příkladu v tomto tématu transformuje obsah ze zdrojového dokumentu XML do formátu HTML lze zobrazit v prohlížeči.  
+  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
+  
+### <a name="to-transform-an-xml-document"></a>K transformaci dokumentu XML  
+  
+1.  V sadě Visual Studio vytvořte nový projekt jazyka Visual Basic v **konzolové aplikace** šablona projektu.  
+  
+2.  Poklikejte na soubor Module1.vb vytvořené v projektu upravit kód jazyka Visual Basic. Přidejte následující kód, který `Sub Main` z `Module1` modulu. Tento kód vytvoří zdrojový dokument XML jako <xref:System.Xml.Linq.XDocument> objektu.  
+  
+    ```vb  
+    Dim catalog =   
+      <?xml version="1.0"?>  
+        <Catalog>  
+          <Book id="bk101">  
+            <Author>Garghentini, Davide</Author>  
+            <Title>XML Developer's Guide</Title>  
+            <Price>44.95</Price>  
+            <Description>  
+              An in-depth look at creating applications  
+              with <technology>XML</technology>. For   
+              <audience>beginners</audience> or   
+              <audience>advanced</audience> developers.  
+            </Description>  
+          </Book>  
+          <Book id="bk331">  
+            <Author>Spencer, Phil</Author>  
+            <Title>Developing Applications with Visual Basic .NET</Title>  
+            <Price>45.95</Price>  
+            <Description>  
+              Get the expert insights, practical code samples,   
+              and best practices you need   
+              to advance your expertise with <technology>Visual   
+              Basic .NET</technology>.   
+              Learn how to create faster, more reliable applications  
+              based on professional,   
+              pragmatic guidance by today's top <audience>developers</audience>.  
+            </Description>  
+          </Book>  
+        </Catalog>  
+    ```  
+  
+     [Postupy: načtení XML ze souboru, řetězce nebo proudu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).  
+  
+3.  Po kód k vytvoření zdrojový dokument XML, přidejte následující kód k načtení všech \<kniha > elementy z objektu a transformují je na dokument HTML. Seznam \<kniha > elementy je vytvořená pomocí LINQ dotaz, který vrátí kolekce <xref:System.Xml.Linq.XElement> objektů, které obsahují transformovaných HTML. Vložené výrazy můžete uvést hodnoty ze zdrojového dokumentu v novém formátu XML.  
+  
+     Výsledný dokumentu HTML se zapisují do souboru s použitím <xref:System.Xml.Linq.XElement.Save%2A> metoda.  
+  
+    ```vb  
+    Dim htmlOutput =   
+      <html>  
+        <body>  
+          <%= From book In catalog.<Catalog>.<Book>   
+              Select <div>  
+                       <h1><%= book.<Title>.Value %></h1>  
+                       <h3><%= "By " & book.<Author>.Value %></h3>  
+                        <h3><%= "Price = " & book.<Price>.Value %></h3>  
+                        <h2>Description</h2>  
+                        <%= TransformDescription(book.<Description>(0)) %>  
+                        <hr/>  
+                      </div> %>  
+        </body>  
+      </html>  
+  
+    htmlOutput.Save("BookDescription.html")  
+    ```  
+  
+4.  Po `Sub Main` z `Module1`, přidat nové metody (`Sub`) k transformaci \<popis > uzlu do zadaného formátu HTML. Tato metoda je volána metodou kód v předchozím kroku a slouží k zachování formát \<popis > elementy.  
+  
+     Tato metoda nahrazuje dílčí prvky \<popis > element s jazykem HTML. `ReplaceWith` Metoda se používá k zachování umístění podřízených prvků. Transformovaných obsah \<popis > elementu je součástí HTML odstavec (\<p >) elementu. <xref:System.Xml.Linq.XContainer.Nodes%2A> Vlastnost se používá k načtení transformovaných obsah \<popis > elementu. Tím se zajistí dílčí prvky jsou součástí transformovaných obsah.  
+  
+     Přidejte následující kód po `Sub Main` z `Module1`.  
+  
+    ```vb  
+    Public Function TransformDescription(ByVal desc As XElement) As XElement  
+  
+      ' Replace <technology> elements with <b>.  
+      Dim content = (From element In desc...<technology>).ToList()  
+  
+      If content.Count > 0 Then  
+        For i = 0 To content.Count - 1  
+          content(i).ReplaceWith(<b><%= content(i).Value %></b>)  
+        Next  
+      End If  
+  
+      ' Replace <audience> elements with <i>.  
+      content = (From element In desc...<audience>).ToList()  
+  
+      If content.Count > 0 Then  
+        For i = 0 To content.Count - 1  
+          content(i).ReplaceWith(<i><%= content(i).Value %></i>)  
+        Next  
+      End If  
+  
+      ' Return the updated contents of the <Description> element.  
+      Return <p><%= desc.Nodes %></p>  
+    End Function  
+    ```  
+  
+5.  Uložte provedené změny.  
+  
+6.  Stisknutím klávesy F5 spusťte kód. Výsledná uložit dokument bude vypadat takto:  
+  
+    ```  
+    <?xml version="1.0"?>  
+    <html>  
+      <body>  
+        <div>  
+          <h1>XML Developer's Guide</h1>  
+          <h3>By Garghentini, Davide</h3>  
+          <h3>Price = 44.95</h3>  
+          <h2>Description</h2>  
+          <p>  
+            An in-depth look at creating applications  
+            with <b>XML</b>. For   
+            <i>beginners</i> or   
+            <i>advanced</i> developers.  
+          </p>  
+          <hr />  
+        </div>  
+        <div>  
+          <h1>Developing Applications with Visual Basic .NET</h1>  
+          <h3>By Spencer, Phil</h3>  
+          <h3>Price = 45.95</h3>  
+          <h2>Description</h2>  
+          <p>  
+            Get the expert insights, practical code   
+            samples, and best practices you need   
+            to advance your expertise with <b>Visual   
+            Basic .NET</b>. Learn how to create faster,  
+            more reliable applications based on  
+            professional, pragmatic guidance by today's   
+            top <i>developers</i>.  
+          </p>  
+          <hr />  
+        </div>  
+      </body>  
+    </html>  
+    ```  
+  
+## <a name="see-also"></a>Viz také  
+ [XML – literály](../../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Zacházení s XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
+ [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
+ [Postupy: načtení XML ze souboru, řetězce nebo proudu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
+ [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
+ [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
