@@ -12,14 +12,14 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: a8a4418c582d00f1163305ce5d63c63c198dbc30
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 57a6a15f648f83a60f3ac402443c3c5e4aecfcd4
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="usage-of-the-switch-activity-with-custom-types"></a>Použití přepínače aktivity s vlastní typy
-Tato ukázka popisuje, jak povolit <!--zz <xref:System.Activities. Statements.Switch`1>--> `xref:System.Activities` Statements.Switch`1?qualifyHint=False&autoUpgrade=True activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a `přepínače se příkaz funguje na výraz, který lze vyhodnotit staticky. Například v jazyce C# to znamená, že pouze primitivní typy, jako například <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, a podporované výčtové typy.  
+Tato ukázka popisuje, jak povolit <xref:System.Activities.Statements.Switch%601> aktivity k vyhodnocení, uživatelem definované komplexního typu za běhu. V nejvíce tradiční procedurální programovacích jazyků [přepínač](http://go.microsoft.com/fwlink/?LinkId=180521) příkaz vybere logiky provádění na základě podmíněného vyhodnocení proměnné. Obvyklým `switch` příkaz funguje na výraz, který lze vyhodnotit staticky. Například v jazyce C# to znamená, že pouze primitivní typy, jako například <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, a podporované výčtové typy.  
   
  Pokud chcete povolit přepnutí na vlastní třídu, musí být implementované logiku k vyhodnocení hodnot vlastní komplexního typu za běhu. Tento příklad ukazuje, jak povolit přepínání vlastní komplexní typ s názvem `Person`.  
   

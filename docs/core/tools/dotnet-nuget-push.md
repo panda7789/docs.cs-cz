@@ -7,11 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 6721615e4df820ab50ea4f79fbba30daeffe8165
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: dc4250ab7417c9f19babdf37c556daf7c3bd6a81
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dotnet-nuget-push"></a>nabízená nuget DotNet.
 
@@ -45,7 +45,7 @@ Vytiskne krátké nápovědy pro příkaz.
 
 Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
 
-`--symbols-source <SOURCE>`
+`--symbol-source <SOURCE>`
 
 Určuje adresu URL serveru symbol.
 

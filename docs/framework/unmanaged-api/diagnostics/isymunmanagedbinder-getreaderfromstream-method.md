@@ -21,14 +21,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 96bd12b69b84537415ddf2e0ae992ec179f32493
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: aa6a2e60e34f6c3a78343318ae102883da84e266
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="isymunmanagedbindergetreaderfromstream-method"></a>ISymUnmanagedBinder::GetReaderFromStream – metoda
-Zadaný datový proud, který obsahuje úložiště symbolů a metadat rozhraní, vrátí správné <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> Struktura, která budou číst ladění symboly z obchodu daný symbol.  
+Zadaný datový proud, který obsahuje úložiště symbolů a metadat rozhraní, vrátí správné [ISymUnmanagedReader](isymunmanagedreader-interface.md) struktura, která budou číst ladění symboly z obchodu daný symbol.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ HRESULT GetReaderFromStream(
  [v] Ukazatel na datový proud, který obsahuje úložiště symbolů.  
   
  `pRetVal`  
- [out] Ukazatele, který je nastavený s vráceným <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> rozhraní.  
+ [out] Ukazatele, který je nastavený s vráceným [ISymUnmanagedReader](isymunmanagedreader-interface.md) rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  

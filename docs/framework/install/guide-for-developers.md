@@ -14,18 +14,21 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: db8d543b07ede81c8b07e607bedd4ee2a01b0022
-ms.sourcegitcommit: be7862cac09066bc505586cbf071d0e2c8fb1508
+ms.openlocfilehash: babcb6f09d44662b71774376d68b063f7a303284
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="install-the-net-framework-for-developers"></a>Nainstalujte rozhraní .NET Framework pro vývojáře
 
 Rozhraní .NET je nedílnou součástí mnoho aplikace běžící v systému Windows a poskytuje běžné funkce pro tyto aplikace spouštět. Pro vývojáře rozhraní .NET Framework poskytuje komplexní a konzistentní programovací model pro vytváření aplikací, které mají vizuálně omráčení koncových uživatelů a hladkou a zabezpečenou komunikaci.  
 
-Tento článek obsahuje odkazy pro instalaci rozhraní .NET Framework 4.5, jeho verze bodu (4.5.1, 4.5.2), [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], jeho bodu verzích (4.6.1, 4.6.2) a rozhraní .NET Framework 4.7 a její verze bodu (4.7.1) ve vašem počítači. Pokud jste vývojář, můžete také pomocí těchto odkazů můžete stáhnout a znovu distribuovat rozhraní .NET Framework s vaší aplikací.
+Tento článek obsahuje odkazy pro instalaci z rozhraní .NET Framework 4.5 na všechny verze rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] ve vašem počítači. Pokud jste vývojář, můžete také pomocí těchto odkazů můžete stáhnout a znovu distribuovat rozhraní .NET Framework s vaší aplikací.
 
+> [!NOTE]
+> Toto téma je určeno pro vývojáře, kteří chtějí buď nainstalovat rozhraní .NET Framework na své vlastní systému nebo kteří chtějí nainstalovat pomocí svých aplikací. Uživatelé nainstalovat rozhraní .NET Framework, naleznete v jednotlivých témata, která popisuje instalaci rozhraní .NET Framework na konkrétní operační systémy, jako například [instalaci rozhraní .NET Framework na Windows 10 a Windows Server 2016](on-windows-10.md).  
+  
 Všimněte si, že instalace nové verze rozhraní .NET Framework není vždy nahradit předchozí verze. Další informace o verzích rozhraní .NET Framework a o tom, jaké verze jsou nainstalovány na počítači najdete v tématu [verze a závislosti](~/docs/framework/migration-guide/versions-and-dependencies.md) a [postupy: určení které rozhraní .NET Framework verze jsou Nainstalovat](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md). Všechny verze rozhraní .NET Framework, které jsou uvedené v následující tabulce jsou na místě aktualizace rozhraní .NET Framework 4. Jinými slovy Pokud nainstalujete novější verzi, jako je rozhraní .NET Framework 4.6, nejprve nemáte k instalaci předchozí verze, jako je rozhraní .NET Framework 4.5 a 4.5.1, 4.5.2. Podobně pokud nainstalujete novější verzi, jako je rozhraní .NET Framework 4.6, nejprve nemáte odinstalovat předchozí verze, jako je rozhraní .NET Framework 4.5 a 4.5.1, 4.5.2. 
 
 Skutečnost, že jsou novější verze rozhraní .NET Framework 4.x místní aktualizace znamená starší verze, které je *nelze* instalaci starší verze uvedené v tabulce, pokud je již nainstalována novější verze. Například nelze nainstalovat rozhraní .NET Framework 4.6 v systému Windows 10 listopadu aktualizace, protože rozhraní .NET Framework 4.6.1 je předinstalován v něm.    

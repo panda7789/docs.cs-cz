@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9eeaf201c1f5a58044db62e356199b609c4c035a
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 0c6e44a3e1a1458f4211b66b6d1ef5b4b30cd7c1
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="reference-semantics-with-value-types"></a>Odkaz na sémantiku s typy hodnot
 
@@ -85,7 +85,7 @@ První přiřazení v předchozí kód vytvoří kopii `Origin` konstanta a při
 Použití `ref readonly` k velkým provozem použití struktury může být plně dostačující.
 Další dobu, můžete vytvořit neměnné struktura. Potom můžete vždy předat odkazem jen pro čtení. Aby postup odebere Obranným zkopíruje které se provádějí při přístupu k metodám struktury použít jako `in` parametr.
 
-Můžete to udělat tak, že vytvoříte `readonly struct` typu. Můžete přidat `readonly` modifikátor k deklaraci struktura. Kompilátor vynucuje, zda jsou všichni členové struct `readonly`; `struct` musí být neměnitelný.
+Můžete to udělat tak, že vytvoříte `readonly struct` typu. Můžete přidat `readonly` modifikátor k deklaraci struktura. Kompilátor vynucuje, aby se všichni její členové instance dané struktury `readonly`; `struct` musí být neměnitelný.
 
 Existují další optimalizace pro `readonly struct`. Můžete použít `in` modifikátor v každé umístění kde `readonly struct` je argument. Kromě toho se můžete vrátit `readonly struct` jako `ref return` když se vrátí objekt, jehož životnost rozšiřuje nad rámec metoda vrací objekt.
 

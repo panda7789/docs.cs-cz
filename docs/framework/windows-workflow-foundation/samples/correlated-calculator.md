@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 9d0d3c03b946a1f3805ea6e229e4019540b58286
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 53d96e090edabc65b7356497c3726d29e46c4ea7
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="correlated-calculator"></a>Korelační kalkulačky
 Tento příklad znázorňuje způsob použití zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply>) v návrháři se korelace na základě obsahu na základě parametru ve zprávě. V tomto scénáři jsou operace kalkulačky v paralelní convoy. Instance a existuje korelace (na základě `CalculatorId`) se vytvoří, když je první zpráva odeslána do pracovního postupu a dalších zpráv se stejným `CalculatorId` se odesílají do této instance, dokud operace resetování, se nazývá. Klient je implementovaný jako WPF aplikace, která používá proxy server založené na kódu klienta ke komunikaci se službou.  
@@ -44,6 +44,4 @@ Tento příklad znázorňuje způsob použití zasílání zpráv aktivity (<xre
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\CorellatedCalculator`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\CorellatedCalculator`

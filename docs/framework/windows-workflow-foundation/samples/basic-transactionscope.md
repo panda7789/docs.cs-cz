@@ -12,11 +12,11 @@ caps.latest.revision: "13"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: d4f9d9e966a0a6d8fa48d195b17438b3d78b32a9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 01d5d6f35ed9eaa64786d18c2477862594c546be
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="basic-transactionscope"></a>Základní TransactionScope
 Tato ukázka se skládá ze čtyř scénářů, spusťte znázorňující vnořit <xref:System.Activities.Statements.TransactionScope> instance. První scénář ukazuje vnoření aktivitu 3. stran, které autor nemá žádné informace o konstrukce. Druhý a třetí scénáře ukazují, jak jsou dodržovány vypršení časových limitů a poslední scénář ukazuje <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> nastavení.  
@@ -47,6 +47,4 @@ Tato ukázka se skládá ze čtyř scénářů, spusťte znázorňující vnoři
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Transactions\BasicTransactionScope`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Transactions\BasicTransactionScope`

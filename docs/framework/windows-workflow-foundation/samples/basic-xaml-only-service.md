@@ -12,11 +12,11 @@ caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 3fbf8a719647199439e2333ba5e26cbe51be3add
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 004a37682b855135998ef4620e673421f769326d
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="basic-xaml-only-service"></a>Pouze služba základní XAML
 Tento příklad znázorňuje způsob vytvoření služby pouze XAML. Tento scénář je služba diagnostiky pro problémy související s Auto. Služba se implementuje jako pracovní postup, který klient zeptá na několik otázek a diagnostikovat problém. Existují dva typy službu lze diagnostikovat problémy (car nezačíná ani klimatizace nepracuje). Pracovní postup používá šablonu požadavek nebo odpověď z Návrháře ke zveřejnění tři operací jednoduché služby. Služba je hostovaná ve službě IIS tak, že vytvoříte virtuální adresář ve službě IIS a kopírování service1.xamlx a souborů Web.config do virtuálního adresáře, žádné zkompilovaný kód je požadovaná. Ve výchozím nastavení tato ukázka automaticky zkopíruje potřebné soubory do virtuální adresář vytvořen, pokud budete postupovat podle pokynů instalačního programu pro ukázky WCF a WF: [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) při sestavení v sadě Visual Studio 2010.  
@@ -38,6 +38,4 @@ Tento příklad znázorňuje způsob vytvoření služby pouze XAML. Tento scén
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\XAMLService`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\XAMLService`

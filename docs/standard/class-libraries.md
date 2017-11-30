@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: c72cdcbbe20c3c7a6890cdacb446e3db8de1b37a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: cc55f1a919303abe81735da5ad9347115c827d2a
+ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="net-class-libraries"></a>Knihovny tříd rozhraní .NET
 
@@ -24,7 +24,7 @@ Existují tři typy knihovny tříd, které můžete použít:
 
 *   **Specifické pro platformu** knihovny tříd mají přístup k rozhraním API v dané platformy (pro rozhraní .NET Framework, například Xamarin iOS), ale dá použít jenom aplikace a knihovny, které cílí na této platformě.
 *   **Přenosné** knihovny tříd mít přístup k podmnožinu rozhraní API a mohou být využívána aplikace a knihovny, které více cílových platforem.
-*   **.NET core** knihovny tříd jsou fúze konceptu specifické pro platformu a přenosné knihovny do jednoho model, který poskytuje nejlepší z obou.
+*   **.NET standard** knihovny tříd jsou fúze konceptu specifické pro platformu a přenosné knihovny do jednoho model, který poskytuje nejlepší z obou.
 
 ## <a name="platform-specific-class-libraries"></a>Knihovny tříd specifických pro platformy
 

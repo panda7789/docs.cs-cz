@@ -12,11 +12,11 @@ caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: b5fc8834fb72163a615633d81232e25768683278
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 085c52d94db5af12a022fa353a80d69534bfe219
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="transaction-convoy-scope"></a>Oboru Convoy transakce
 Tento příklad ukazuje, jak vytvořit paralelní Convoy zasílání zpráv vzor aktivity ve spojení s <xref:System.ServiceModel.Activities.TransactedReceiveScope> pro modelování protokol, kde několik operací, může dojít v libovolném pořadí všechny ve stejné transakci. Tento příklad také ukazuje, jak <xref:System.ServiceModel.Activities.TransactedReceiveScope> automaticky vytvoří novou transakci, pokud jeden není předávány na server, tak klient neprovede použití jakékoli transakce.  
@@ -50,6 +50,4 @@ Tento příklad ukazuje, jak vytvořit paralelní Convoy zasílání zpráv vzor
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedConvoyScope`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedConvoyScope`

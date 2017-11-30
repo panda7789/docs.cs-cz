@@ -13,11 +13,11 @@ caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 1c84483b2ca18d63f20e64a62bb757e244db9b24
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1493728809721c125b371e0d2ade2050b4909e5d
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-contracts-in-workflow"></a>Použití kontraktů v pracovním postupu
 Při implementaci služby, definujete číslo smlouvy, které popisují služby a data, která se odesílá a přijímá. Data je reprezentována jako kontrakty dat a kontrakty zpráv; obě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a služby, pracovní postup definice kontraktu dat kontrakt a zprávy v rámci popis služby. Službu samotnou zveřejňuje metadata (ve formě WSDL) Chcete-li popsali, jak službu. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], služba kontraktů a kontraktů operaci definovat služby a činnosti podporuje. Ale ve službě pracovního postupu, tyto smlouvy jsou součástí obchodní proces, sama o sobě; pomocí procesu nazývaného kontrakt odvození jsou vystaveny v metadatech.  
@@ -29,17 +29,13 @@ Při implementaci služby, definujete číslo smlouvy, které popisují služby 
   
 -   <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>  
   
--   <!--zz <xref:System.ServiceModel.Activities.Receive.OperationContractName%2A>  --> `System.ServiceModel.Activities.Receive.OperationContractName`
+-   <xref:System.ServiceModel.Activities.Receive.OperationName%2A>
   
--   <xref:System.ServiceModel.Activities.Receive.Action%2A>  
-  
--   <!--zz <xref:System.ServiceModel.Activities.Receive.ValueType%2A> --> `System.ServiceModel.Activities.Receive.ValueType`
-  
+-   <xref:System.ServiceModel.Activities.Receive.Action%2A>   
+ 
  <xref:System.ServiceModel.Activities.SendReply>Aktivity  
   
 -   <xref:System.ServiceModel.Activities.SendReply.Action%2A>  
-  
--   <!--zz <xref:System.ServiceModel.Activities.SendReply.ValueType%2A>-->  `System.ServiceModel.Activities.SendReply.ValueType`
   
  <xref:System.ServiceModel.Activities.TransactedReceiveScope>Aktivity  
   

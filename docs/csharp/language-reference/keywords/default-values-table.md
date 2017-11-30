@@ -18,11 +18,11 @@ ms.assetid: 4af2c1df-9e3a-48c1-83ac-b192986fc5bc
 caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7f692ee1242af88dc6bd3938f7a00f3d11ed8ca7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: d034c1daf495c50e299fec4c5bf399652dad08ce
+ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/25/2017
 ---
 # <a name="default-values-table-c-reference"></a>Tabulka výchozích hodnot (referenční dokumentace jazyka C#)
 V následující tabulce jsou uvedeny výchozí hodnoty typů hodnot vrácených výchozí konstruktory. Výchozí konstruktory jsou vyvolány pomocí `new` operátor následujícím způsobem:
@@ -44,7 +44,7 @@ Mějte na paměti, že není povolené použití neinicializovaného proměnnýc
 |[BOOL](../../../csharp/language-reference/keywords/bool.md)|`false`|
 |[bajtů](../../../csharp/language-reference/keywords/byte.md)|0|
 |[Char](../../../csharp/language-reference/keywords/char.md)|'\0'|
-|[Decimal](../../../csharp/language-reference/keywords/decimal.md)|0,0 M|
+|[Decimal](../../../csharp/language-reference/keywords/decimal.md)|0M|
 |[Double](../../../csharp/language-reference/keywords/double.md)|0,0 D|
 |[výčet](../../../csharp/language-reference/keywords/enum.md)|Hodnota vyprodukované výraz (E) 0, kde E je identifikátor výčtu.|
 |[plovoucí desetinná čárka](../../../csharp/language-reference/keywords/float.md)|0,0 F|

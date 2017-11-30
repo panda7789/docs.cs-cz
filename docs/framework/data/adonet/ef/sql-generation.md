@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 727aa0ca3e1673a5bbd29884077ed5aa65d792f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 39f31e27f1e62d889df5a40a9ecb554c2547db8f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="sql-generation"></a>Generování SQL
 Při psaní poskytovatele pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], musí překládat [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] příkaz stromy do SQL, který můžete porozumět konkrétní databázi, například Transact-SQL pro SQL Server nebo PL/SQL pro databázi Oracle. V této části se dozvíte, jak vyvíjet součást generování SQL (pro vyberte dotazy) pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele. Informace o vložení, aktualizace a odstranit dotazy najdete [generování SQL úpravy](../../../../../docs/framework/data/adonet/ef/modification-sql-generation.md).  
@@ -27,7 +27,7 @@ Při psaní poskytovatele pro [!INCLUDE[adonet_ef](../../../../../includes/adone
 ## <a name="the-role-of-the-sql-generation-module"></a>Role modulu generování jazyka SQL  
  Modul generování SQL [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele překládá stromu příkazů daný dotaz do jednoho příkazu SQL SELECT, který se zaměřuje SQL:1999 – databáze kompatibilní. Vygenerovaný SQL by měl mít jako několika vnořené dotazy míře. Modul generování SQL by neměl zjednodušit strom příkazů výstup dotazu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Se to udělat, například odstraňuje spojení a sbalení uzly po sobě jdoucích filtrů.  
   
- <!--zz<xref:System.Data.Common.DBProviderServices> --> `System.Data.Common.DBProviderServices` Třída je výchozím bodem pro přístup k vrstvě generování SQL pro převod stromy příkazů do <!--zz<xref:System.Data.Common.DbCommands>--> `System.Data.Common.DbCommands`.  
+ <xref:System.Data.Common.DbProviderServices> Třída je výchozím bodem pro přístup k vrstvě generování SQL pro převod stromy příkazů do <xref:System.Data.Common.DbCommand>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Obrazec stromy příkazů](../../../../../docs/framework/data/adonet/ef/the-shape-of-the-command-trees.md)  

@@ -13,14 +13,14 @@ caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 11a6a1efad59ba5b9f3a143277909b63a5fe5e05
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3d18626412c0a6233c8792a4f19d5d05ef083333
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>Přístup k informacím OperationContext ze služby pracovních postupů
-Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby pracovních postupů, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. Přepsání <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & autoUpgrade = True metodu, která je předána odkaz na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace tato vlastnost provádění načíst vlastní hlavičky, jakož i vlastní aktivity, který bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> informace budou načteny.  Toto téma také ukazuje, jak získat přístup na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí hlavičky prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  
+Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby pracovních postupů, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. Přepsání <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda, která se předá odkaz na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace tato vlastnost provádění načíst vlastní hlavičky, jakož i vlastní aktivity, který bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> informace budou načteny.  Toto téma také ukazuje, jak získat přístup na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí hlavičky prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  
   
 ### <a name="implement-the-service-side-ireceivemessagecallback"></a>Implementace IReceiveMessageCallback straně služby  
   

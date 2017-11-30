@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: a65ca3d3d4a787132246312e28213e71defc94ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 5efe784f434ff357120343061c1c4b9447cc8cd1
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="workflowapplication-readline-host"></a>WorkflowApplication ReadLine hostitele
 Tato ukázka je obecný ReadLine hostitele. Můžete načíst a spustit žádný pracovní postup pomocí zahrnutou `ReadLine` aktivity (nebo ostatní aktivity, jako je získávající data z záložky pokračuje s řetězce). Výstup z `WriteLine` aktivity nebo nic zápis do <xref:System.Activities.Statements.WriteLine.TextWriter%2A> rozšíření se nasměruje do okna hostitele. Při nečinnosti instance, k dispozici záložky u dané instance se objeví v poli se seznamem. Vyberte záložku, vložení textu, některé a kliknutím na tlačítko Obnovit záložku pokračovat v provádění pracovního postupu. Můžete také zrušit, zrušení nebo ukončení vybrané pracovního postupu. Trvalost je ve výchozím – můžete vypnout hostitele a vrátí ji zpět a naplnění seznamu instanci s instancemi uloženy v databázi. Sledování se používá k výstupu <xref:System.Activities.WorkflowApplication>-úroveň události na hostitele s možností přidat podrobné sledování na úrovni aktivity.  
@@ -67,6 +67,4 @@ Tato ukázka je obecný ReadLine hostitele. Můžete načíst a spustit žádný
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ControllingWorkflowApplications`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ControllingWorkflowApplications`

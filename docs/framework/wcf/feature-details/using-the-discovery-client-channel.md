@@ -13,11 +13,11 @@ caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 9d0aede489c6b5db029a9df37f84d0a067bbf836
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 655885aa392420cc0f35955e6146fd6a1f8e50d7
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-the-discovery-client-channel"></a>Použití kanálu klienta zjišťování
 Při zápisu klientské aplikace WCF je třeba vědět adresa koncového bodu služby, ke kterému se připojujete. V mnoha situacích adresa koncového bodu služby není známa předem nebo adresu služby změny v čase. Kanálem klienta zjišťování umožňuje psát aplikace klienta WCF, popisují službu, kterou chcete volat a kanálem klienta automaticky odešle žádost o test. Jakmile služba odpoví, kanálem klienta zjišťování načte adresa koncového bodu služby z testu odpovědi a použije k vyvolání služby.  
@@ -32,13 +32,13 @@ Při zápisu klientské aplikace WCF je třeba vědět adresa koncového bodu sl
   
 1.  <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.FindCriteria%2A>, který se používá k popisu služby, který chcete použít.  
   
-2.  <!--zz <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpoint%2A>  --> `DiscoveryEndpoint`, which specifies the discovery endpoint to send discovery messages to.  
+2.  <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A>Určuje, který koncový bod zjišťování k odesílání zprávy zjišťování.  
   
- <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.FindCriteria%2A> Vlastnost umožňuje určit kontrakt služby, který hledáte, potřebné obor identifikátory URI a maximální počet času, který se pokusí otevřít kanál. Typ smlouvy je zadána při volání konstruktoru <<!--zz <xref:System.ServiceModel.Discovery.FindCriteria%2A>  --> `FindCriteria`>. Identifikátory URI oboru lze přidat do <xref:System.ServiceModel.Discovery.FindCriteria.Scopes%2A> vlastnost. <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> Vlastnost umožňuje určit maximální počet výsledků, na které se klient pokusí připojit k. Při obdržení odpovědi testu klient se pokusí otevřít kanál pomocí adresa koncového bodu z testu odpovědi. Pokud dojde k výjimce klient přesune další kontroly odpovědi, čekání na další odpovědi k přijetí v případě potřeby. Uděláte to tak dlouho, dokud úspěšně otevření kanálu nebo je dosaženo maximálního počtu výsledků pokračuje. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Tato nastavení najdete v části <<!--zz <xref:System.ServiceModel.Discovery.FindCriteria%2A>  --> `FindCriteria`>.  
+ <xref:System.ServiceModel.Discovery.FindCriteria.%23ctor%2A> Vlastnost umožňuje určit kontrakt služby, který hledáte, potřebné obor identifikátory URI a maximální počet času, který se pokusí otevřít kanál. Typ smlouvy je zadána při volání konstruktoru <xref:System.ServiceModel.Discovery.FindCriteria>. Identifikátory URI oboru lze přidat do <xref:System.ServiceModel.Discovery.FindCriteria.Scopes%2A> vlastnost. <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> Vlastnost umožňuje určit maximální počet výsledků, na které se klient pokusí připojit k. Při obdržení odpovědi testu klient se pokusí otevřít kanál pomocí adresa koncového bodu z testu odpovědi. Pokud dojde k výjimce klient přesune další kontroly odpovědi, čekání na další odpovědi k přijetí v případě potřeby. Uděláte to tak dlouho, dokud úspěšně otevření kanálu nebo je dosaženo maximálního počtu výsledků pokračuje. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Tato nastavení najdete v části <xref:System.ServiceModel.Discovery.FindCriteria>.  
   
- <!--zz <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpoint%2A>  --> `DiscoveryEndpoint%2A>` Vlastnost umožňuje určit koncový bod zjišťování používat. Obvykle je to <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, ale může být libovolný platný koncový bod.  
+ <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A> Vlastnost umožňuje určit koncový bod zjišťování používat. Obvykle je to <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, ale může být libovolný platný koncový bod.  
   
- Při vytváření vazby ke komunikaci se službou, musí být přesně stejnou vazbu použít jako služba. Jediným rozdílem je, že má klient vazby <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> v horní části zásobníku. Pokud služba používá jedna z vazeb poskytovaných systémem, vytvořte novou <xref:System.ServiceModel.Channels.CustomBinding> a předat vazby poskytované systémem <!--zz <xref:System.ServiceModel.CustomBinding.CustomBinding%2A> `CustomBinding` --> konstruktor. Potom můžete přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> voláním `Insert` na <!--zz <xref:System.ServiceModel.Channels.Binding.Elements%2A> --> `Elements` vlastnost.  
+ Při vytváření vazby ke komunikaci se službou, musí být přesně stejnou vazbu použít jako služba. Jediným rozdílem je, že má klient vazby <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> v horní části zásobníku. Pokud služba používá jedna z vazeb poskytovaných systémem, vytvořte novou <xref:System.ServiceModel.Channels.CustomBinding> a předat vazby poskytované systémem <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> konstruktor. Potom můžete přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> voláním `Insert` na <xref:System.ServiceModel.Channels.CustomBinding.Elements%2A> vlastnost.  
   
  Po přidání <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> k vaší vazby a nakonfiguruje ji, můžete vytvořit instanci třídy klienta WCF, otevřete ho a volat její metody. Následující příklad používá ke zjišťování služby WCF, který implementuje kanálem klienta zjišťování `ICalculator` – třída (používá se v tomto kurzu získávání spuštění WCF) a volání jeho `Add` metoda.  
   

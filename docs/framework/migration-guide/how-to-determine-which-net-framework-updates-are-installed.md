@@ -1,7 +1,7 @@
 ---
 title: "Postupy: určení, které rozhraní .NET Framework bezpečnostní aktualizace a opravy hotfix jsou nainstalovány."
 description: "Zjistěte, jak určit, které aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix jsou nainstalovány v počítači."
-ms.date: 11/21/2017
+ms.date: 11/27/2017
 ms.prod: .net-framework
 ms.technology: dotnet-clr
 ms.topic: article
@@ -15,11 +15,11 @@ ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c35705470a8e1b553eca2ca0c68d3b8b9b3f6fa6
-ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
-ms.translationtype: HT
+ms.openlocfilehash: 9ff10928b87834f9b8e74e269082919f49497023
+ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Postupy: určení, které rozhraní .NET Framework bezpečnostní aktualizace a opravy hotfix jsou nainstalovány.
 
@@ -75,39 +75,38 @@ Microsoft .NET Framework 4 Extended
 Následující příklad ukazuje, jak určit rozhraní .NET Framework bezpečnostní aktualizace a opravy hotfix, které jsou nainstalovány v počítači pomocí prostředí PowerShell:
 
 ```powershell
- Get-ChildItem "HKLM:SOFTWARE\Wow6432Node\Microsoft\Updates\*" -Recurse | Where-Object {$_.name -like
+$DotNetVersions = Get-ChildItem HKLM:\SOFTWARE\WOW6432Node\Microsoft\Updates | Where-Object {$_.name -like
  "*.NET Framework*"}
+
+ForEach($Version in $DotNetVersions){
+    
+   $Updates = Get-ChildItem $Version.PSPath
+    $Version.PSChildName
+    ForEach ($Update in $Updates){
+       $Update.PSChildName
+       }
+}
 ```
 
 Tento příklad vytvoří výstupu, který je podobné následující:
 
 ```console
-    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\Microsoft .NET Framework 4 Client Profile
-
-
-Name                           Property
-----                           --------
-KB2468871                      ThisVersionInstalled : Y
-KB2468871v2                    ThisVersionInstalled : Y
-KB2478063                      ThisVersionInstalled : Y
-KB2533523                      ThisVersionInstalled : Y
-KB2544514                      ThisVersionInstalled : Y
-KB2600211                      ThisVersionInstalled : Y
-KB2600217                      ThisVersionInstalled : Y
-
-
-    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\Microsoft .NET Framework 4 Extended
-
-
-Name                           Property
-----                           --------
-KB2468871                      ThisVersionInstalled : Y
-KB2468871v2                    ThisVersionInstalled : Y
-KB2478063                      ThisVersionInstalled : Y
-KB2533523                      ThisVersionInstalled : Y
-KB2544514                      ThisVersionInstalled : Y
-KB2600211                      ThisVersionInstalled : Y
-KB2600217                      ThisVersionInstalled : Y
+Microsoft .NET Framework 4 Client Profile
+KB2468871
+KB2468871v2
+KB2478063
+KB2533523
+KB2544514
+KB2600211
+KB2600217
+Microsoft .NET Framework 4 Extended
+KB2468871
+KB2468871v2
+KB2478063
+KB2533523
+KB2544514
+KB2600211
+KB2600217
 ```
 
 ## <a name="see-also"></a>Viz také

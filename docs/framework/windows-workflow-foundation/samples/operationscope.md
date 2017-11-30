@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 6d1e2738e8cdb546a1dcbb00689e5b4c360ddd04
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b90ab7e38f40cb515166d4d08e0316ffb9061be3
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="operationscope"></a>OperationScope
 Tento příklad ukazuje, jak aktivity, zasílání zpráv <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> můžete použít k vystavení existující vlastní aktivity jako operaci v služby pracovních postupů. Tato ukázka obsahuje novou vlastní aktivitu volána `OperationScope`. Je určena k usnadnění vývoje služby pracovního postupu tak, že umožníte uživatelům vytvářet text činnosti samostatně jako vlastní aktivity a pak je snadno vystavení jako operací služby pomocí `OperationScope` aktivity. Například vlastní `Add` aktivity, která přebírá dva `in` argumentů a vrátí jeden `out` může dojít k vystavení argument jako `Add` provozní stav služby pracovního postupu umístěním do `OperationScope`.  
@@ -47,6 +47,4 @@ Tento příklad ukazuje, jak aktivity, zasílání zpráv <xref:System.ServiceMo
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\OperationScope`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\OperationScope`

@@ -13,14 +13,14 @@ caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 3b1a54f1c1529879074d2d0e7172fd52c5386c8f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a9797330cf983ed67d3bc07a7984d47454adcb49
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="accessing-identity-information-inside-a-workflow-service"></a>Přístup k informacím o identitě v rámci služby pracovních postupů
-Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & autoUpgrade = True metoda dostanete <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístup k informacím identity. Toto téma vás provede procesem implementace tato vlastnost spouštění, jakož i vlastní aktivity, která bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> aktivity za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a informace o identitě bude načten.  
+Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda dostanete <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístup k informacím identity. Toto téma vás provede procesem implementace tato vlastnost spouštění, jakož i vlastní aktivity, která bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> aktivity za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a informace o identitě bude načten.  
   
 ### <a name="implement-ireceivemessagecallback"></a>Implementace IReceiveMessageCallback  
   

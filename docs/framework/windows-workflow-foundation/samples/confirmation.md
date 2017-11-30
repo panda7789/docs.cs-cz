@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: d7013ce5608efb32d7a640af622c2bc43f00b610
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: dc4e2ad7ad37bdda5c41c8d746ea5badf5db7751
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="confirmation"></a>Potvrzení
 Tento příklad ukazuje čtyři běžné scénáře, které obaluje použití <xref:System.Activities.Statements.CompensableActivity> a potvrzení hesla. Ukázka spustí čtyři pracovní postupy pro zobrazení potvrzení. Tato ukázka je dostupná v deklarativní a imperativní verze.  
@@ -50,6 +50,4 @@ Tento příklad ukazuje čtyři běžné scénáře, které obaluje použití <x
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\Confirmation`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\Confirmation`

@@ -3,18 +3,14 @@ title: "Nainstalujte rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a W
 description: "Zjistěte, jak nainstalovat rozhraní .NET Framework 3.5 na Windows 10, Windows 8.1 a Windows 8."
 author: rlander
 ms.author: mairaw
-keywords: "Rozhraní .NET framework, instalace"
-ms.date: 05/26/2017
+ms.date: 11/27/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.technology: vs-ide-deployment
-ms.devlang: dotnet
-ms.assetid: 67cda1d5-c6g4-4eb5-93e6-4f478de07ff7
-ms.openlocfilehash: 85a3cada074714c24015d90c26d94551f4f411f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 51c412733b76777a78c4a739ce9b077acc86f069
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Nainstalujte rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8
 
@@ -37,3 +33,9 @@ Můžete povolit rozhraní .NET Framework 3.5 prostřednictvím ovládacího pan
    ![Instalace rozhraní .NET pomocí ovládacího panelu](./media/dotnet-control-panel.png)
 
    Není třeba vybírat podřízené položky pro **aktivace Windows Communication Foundation (WCF) protokolem HTTP** a **Aktivace jiným protokolem než HTTP Windows Communication Foundation (WCF)** Pokud jste vývojář nebo Správce serveru, který tato funkce vyžaduje.
+
+## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>Řešení potíží instalace rozhraní .NET Framework 3.5
+
+Během instalace, se můžete setkat chyba 0x800f0906 0x800f0907, 0x800f081f nebo 0x800F0922, v takovém případě odkazovat na [chyby instalace rozhraní .NET Framework 3.5: 0x800f0906, 0x800f0907 nebo 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) chcete zjistit, jak chcete-li tyto problémy.
+
+Pokud některou z metod popsaných v předchozím článku nezdaří, nebo pokud nemáte připojení k Internetu, je třeba použít instalačním médiu systému Windows. Další informace najdete v tématu [nasazení rozhraní .NET Framework 3.5 pomocí Deployment Image Servicing and Management (DISM)](https://technet.microsoft.com/library/Dn482069.aspx). Pokud nemáte k dispozici na instalačním médiu, přečtěte si téma [vytvořit instalační médium pro Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).

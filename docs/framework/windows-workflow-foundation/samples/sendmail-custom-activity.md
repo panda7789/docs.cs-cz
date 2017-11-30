@@ -12,11 +12,11 @@ caps.latest.revision: "11"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 0e4501a4d1e9524a3631b29dba3cfee58bea5129
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: bffca162bfa7bf5a4d2b1bf23566f2b039391f4c
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="sendmail-custom-activity"></a>SendMail vlastní aktivity
 Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která je odvozena od <xref:System.Activities.AsyncCodeActivity> k odesílání pošty přes protokol SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronně odesílat e-mailu a odesílat e-maily s ověřováním. Poskytuje také některé funkce koncového uživatele jako testování režim tokenu nahrazení, soubor šablony a otestovat rozevírací cestu.  
@@ -147,6 +147,4 @@ new SendMail
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SendMail`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SendMail`

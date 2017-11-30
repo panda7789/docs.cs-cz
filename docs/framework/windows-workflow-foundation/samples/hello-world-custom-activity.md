@@ -12,11 +12,11 @@ caps.latest.revision: "12"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: b05608ca0704483f4318342a733ce363c0a66fc9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 75f4a75a38b79e7b7ab18ac2ce3eff2a13aab15f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="hello-world-custom-activity"></a>Hello World vlastní aktivity
 Tento příklad znázorňuje několik klíčových funkcích služby [!INCLUDE[wf](../../../../includes/wf-md.md)], včetně toho, jak vytvořit jednoduché vlastní aktivity. Některé funkce předvedená v této ukázce vytváření vlastních aktivit v C# a pomocí `in` a `out` argumenty (<xref:System.Activities.InArgument> a <xref:System.Activities.OutArgument>).  
@@ -59,6 +59,4 @@ Tento příklad znázorňuje několik klíčových funkcích služby [!INCLUDE[w
   
 2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
   
-3.  Pokud chcete spustit řešení, stisknutím klávesy F5.  
-  
-## <a name="see-also"></a>Viz také
+3.  Pokud chcete spustit řešení, stisknutím klávesy F5.

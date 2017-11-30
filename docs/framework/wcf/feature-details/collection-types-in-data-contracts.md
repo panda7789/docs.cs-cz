@@ -20,11 +20,11 @@ caps.latest.revision: "19"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: ca3bbb4b88bf4355d3c487196672636e6b77d419
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 8591f1c7c3aa123acd17a9e3ab22cf950275f588
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], jsou seznamy může být reprezentován pomocí pole nebo celou řadu dalších typů (obecný seznam, obecného <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro danou zákazníka. Tato kolekce se nazývají *seznam kolekcí*, bez ohledu na to jejich skutečným typem.  
@@ -165,7 +165,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
 ```xml  
 <CustomerList4>  
-    <customer>...</ customer>  
+    <customer>...</customer>  
     <customer>...</customer>  
     <customer>...</customer>  
     ...  
@@ -297,10 +297,10 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 |Odkazovaného typu|Rozhraní implementované odkazovaného typu|Příklad|Typ považován za|  
 |---------------------|----------------------------------------------|-------------|---------------------|  
 |Obecná jiného typu nebo uzavřených obecného (libovolný počet parametrů)|<xref:System.Collections.IDictionary>|`MyType : IDictionary`<br /><br /> or<br /><br /> `MyType<T> : IDictionary`kde T =`int`|Uzavřený obecné`IDictionary<object,object>`|  
-|Uzavřené obecného (libovolný počet parametrů)|<xref:System.Collections.Generic.IDictionary%602>, uzavřený|`MyType<T> : IDictionary\<string, bool>`kde T =`int`|Uzavřené obecného (například `IDIctionary\<string,bool>`)|  
-|Uzavřené obecného (libovolný počet parametrů)|Obecné <xref:System.Collections.Generic.IDictionary%602>, jeden klíč nebo hodnota je uzavřen, druhý je otevřený a používá jeden z parametrů typu.|`MyType\<T,U,V> : IDictionary\<string,V>`kde T =`int`, U =`float`, V =`bool`<br /><br /> or<br /><br /> `MyType<Z> : IDictionary\<Z,bool>`kde Z =`string`|Uzavřené obecného (například `IDictionary\<string,bool>`)|  
-|Uzavřené obecného (libovolný počet parametrů)|Obecné <xref:System.Collections.Generic.IDictionary%602>, klíče a hodnoty jsou otevřené a každá používá jeden z parametrů typu.|`MyType\<T,U,V> : IDictionary\<V,U>`kde T =`int`, U =`bool`, V =`string`|Uzavřené obecného (například `IDictionary\<string,bool>`)|  
-|Otevřete obecného (dva parametry)|Obecné <xref:System.Collections.Generic.IDictionary%602>, otevření, oba parametry obecného typu používá v pořadí, jsou zobrazeny|`MyType\<K,V> : IDictionary\<K,V>`, Tisíc a V obou otevřete|Otevřete obecného (například `IDictionary\<K,V>`)|  
+|Uzavřené obecného (libovolný počet parametrů)|<xref:System.Collections.Generic.IDictionary%602>, uzavřený|`MyType<T> : IDictionary<string, bool>`kde T =`int`|Uzavřené obecného (například `IDIctionary<string,bool>`)|  
+|Uzavřené obecného (libovolný počet parametrů)|Obecné <xref:System.Collections.Generic.IDictionary%602>, jeden klíč nebo hodnota je uzavřen, druhý je otevřený a používá jeden z parametrů typu.|`MyType<T,U,V> : IDictionary<string,V>`kde T =`int`, U =`float`, V =`bool`<br /><br /> or<br /><br /> `MyType<Z> : IDictionary<Z,bool>`kde Z =`string`|Uzavřené obecného (například `IDictionary<string,bool>`)|  
+|Uzavřené obecného (libovolný počet parametrů)|Obecné <xref:System.Collections.Generic.IDictionary%602>, klíče a hodnoty jsou otevřené a každá používá jeden z parametrů typu.|`MyType<T,U,V> : IDictionary<V,U>`kde T =`int`, U =`bool`, V =`string`|Uzavřené obecného (například `IDictionary<string,bool>`)|  
+|Otevřete obecného (dva parametry)|Obecné <xref:System.Collections.Generic.IDictionary%602>, otevření, oba parametry obecného typu používá v pořadí, jsou zobrazeny|`MyType<K,V> : IDictionary<K,V>`, Tisíc a V obou otevřete|Otevřete obecného (například `IDictionary<K,V>`)|  
   
  Pokud typ implementuje obě <xref:System.Collections.IDictionary> a obecná <xref:System.Collections.Generic.IDictionary%602>pouze obecný <xref:System.Collections.Generic.IDictionary%602> se považuje za.  
   

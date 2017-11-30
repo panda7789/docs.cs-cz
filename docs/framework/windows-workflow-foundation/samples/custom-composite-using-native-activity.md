@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 7af9562f38b68acc95c051e85d007ce9bd5a2c87
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7e67febe1197a026b7bdcc6a4be27467c24da1c1
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="custom-composite-using-native-activity"></a>Vlastní složené pomocí nativní aktivity
 Tento příklad ukazuje, jak k zápisu <xref:System.Activities.NativeActivity> , jiné plány <xref:System.Activities.Activity> objekty, které se řídí tok spuštění pracovního postupu. Tato ukázka používá dvě běžné řízení toky, pořadí a při, aby ukazují, jak to udělat.  
@@ -49,6 +49,4 @@ Tento příklad ukazuje, jak k zápisu <xref:System.Activities.NativeActivity> ,
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\Code-Bodied\CustomCompositeNativeActivity`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\Code-Bodied\CustomCompositeNativeActivity`

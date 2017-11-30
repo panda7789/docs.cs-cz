@@ -16,11 +16,11 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 47009516d4118fec1a075a2dbccfa747f9a63131
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 47956848079e6094dc000d95ec4066f814a70e35
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotou tabulky
 Parametry s hodnotou tabulky představují snadný způsob, jak zařazování více řádků dat z klientskou aplikaci, aby [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] bez nutnosti více odezev nebo speciální logiku na straně serveru pro zpracování dat. Parametry s hodnotou tabulky můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Příchozí data řádky jsou uložené v proměnné tabulky, která lze poté ho zpracovat. pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
@@ -96,7 +96,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
 -   Pomocí příkazů ALTER TABLE nelze použít k úpravě návrh parametry s hodnotou tabulky.  
   
 ## <a name="configuring-a-sqlparameter-example"></a>Konfigurace SqlParameter příklad  
- <xref:System.Data.SqlClient>podporuje naplnění parametry s hodnotou tabulky z <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> nebo System.Collections.Generic.IEnumerable\<<xref:Microsoft.SqlServer.Server.SqlDataRecord>> (<xref:System.Collections.Generic.IEnumerable%601>? qualifyHint = False & autoUpgrade = True) objekty. Musíte zadat název typu pro parametr s hodnotou tabulky s použitím <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. `TypeName` Musí odpovídat názvu kompatibilní typ vytvořili na serveru. Následující fragment kódu ukazuje, jak nakonfigurovat <xref:System.Data.SqlClient.SqlParameter> vložit data.  
+ <xref:System.Data.SqlClient>podporuje naplnění parametry s hodnotou tabulky z <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> nebo <xref:System.Collections.Generic.IEnumerable%601>  \  <xref:Microsoft.SqlServer.Server.SqlDataRecord> objekty. Musíte zadat název typu pro parametr s hodnotou tabulky s použitím <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. `TypeName` Musí odpovídat názvu kompatibilní typ vytvořili na serveru. Následující fragment kódu ukazuje, jak nakonfigurovat <xref:System.Data.SqlClient.SqlParameter> vložit data.  
   
 ```csharp  
 // Configure the command and parameter.  

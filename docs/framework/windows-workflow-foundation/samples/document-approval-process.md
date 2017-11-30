@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 52c36870134006eafaaf64824969c5314459d2c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: b3b436d1f01e1ddb2f8f8058acfbbbdc7dcae12f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="document-approval-process"></a>Proces schválení dokumentu
 Tento příklad znázorňuje použití mnoha [!INCLUDE[wf](../../../../includes/wf-md.md)] a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkcí společně. Společně se implementaci procesu scénáře schválení dokumentu. Klientská aplikace může odesílat dokumenty k schválení a schválit dokumenty. Aplikace Správce schválení existuje pro usnadnění komunikace mezi klienty a vynucování pravidel procesu schvalování. Proces schválení je pracovní postup, který můžete spustit několik typů schválení. Aktivity existovat získat jeden schválení, schválení kvora (procento sadu schvalovatelů) a komplexní schválení proces, který se skládá z jedné schválení v pořadí a kvora.  
@@ -155,6 +155,4 @@ Tento příklad znázorňuje použití mnoha [!INCLUDE[wf](../../../../includes/
   
 ##### <a name="to-clean-up"></a>Vyčistěte  
   
-1.  Z [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] příkazový řádek, přejděte do složky DocumentApprovalProcess a spusťte Cleanup.cmd.  
-  
-## <a name="see-also"></a>Viz také
+1.  Z [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] příkazový řádek, přejděte do složky DocumentApprovalProcess a spusťte Cleanup.cmd.

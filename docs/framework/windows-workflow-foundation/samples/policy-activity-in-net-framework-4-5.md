@@ -12,11 +12,11 @@ caps.latest.revision: "15"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 1374bc086923b9ffef288a7fa90427710bdd91b4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: d12a3d5a74fa8b0d266fb2ba9494e1a5775f0411
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="policy-activity-in-net-framework-45"></a>Zásady aktivity v rozhraní .NET Framework 4.5
 Umožňuje aktivity Policy4 [!INCLUDE[wf2](../../../../includes/wf2-md.md)] v [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty, které chcete použít v [!INCLUDE[wf2](../../../../includes/wf2-md.md)] v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4.5) přímo pomocí pravidla modulem, který se dodává v WF 3.5. Pomocí této aktivity může vytvářet a spouštět WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WF 3.5 stroj pravidel, které jsou součástí Windows Workflow Foundation, přečtěte si úvod k modulu Windows Workflow Foundation pravidla. Další informace o migraci pravidla, která WF v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], přečtěte si prosím [migrace pokyny](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
@@ -87,6 +87,4 @@ public class Policy4Activity<TResult>: NativeActivity<TResult>
   
 3.  Kompilace projektu, stiskněte CTRL + SHIFT + B.  
   
-4.  Chcete-li spustit projekt, stiskněte CTRL + F5.  
-  
-## <a name="see-also"></a>Viz také
+4.  Chcete-li spustit projekt, stiskněte CTRL + F5.

@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 6e3ec30edc65fd136fff56b1469664a6ba3b44f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 9ff7a7e7cfd29ea6e5029219115b4bfff1c6895c
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="external-ruleset-toolkit"></a>Externí Ruleset Toolkit
 Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovního postupu, pravidla jsou součástí sestavení. V některých případech můžete udržovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez opětovné sestavení a nasazení sestavení pracovního postupu. Tato ukázka vám umožňuje spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu. To umožňuje, aby automaticky začlenit RuleSet změny spuštěných instancí pracovního postupu.  
@@ -143,6 +143,4 @@ Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovní
 10. Teď můžete spustit `RuleSetToolkitUsageSample` projektu stejně jako všechny ostatní konzolové aplikace pracovního postupu. Stiskněte klávesu F5 nebo Ctrl + F5 v rámci [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] nebo RuleSetToolkitUsageSample.exe soubor spustit přímo.  
   
     > [!NOTE]
-    >  Protože nástroj načte sestavení ukázkové použití, je třeba nejprve zavřít nástroj RuleSet překompilovat ukázce využití.  
-  
-## <a name="see-also"></a>Viz také
+    >  Protože nástroj načte sestavení ukázkové použití, je třeba nejprve zavřít nástroj RuleSet překompilovat ukázce využití.
