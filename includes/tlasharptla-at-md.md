@@ -1,0 +1,1 @@
+Technologie pro usnadnění

@@ -1,0 +1,1 @@
+Dostupné od verze 4.6, pouze .NET Native

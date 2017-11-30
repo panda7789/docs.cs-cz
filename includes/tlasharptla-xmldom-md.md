@@ -1,0 +1,1 @@
+model DOM (Document Object Model) dokumentu XML

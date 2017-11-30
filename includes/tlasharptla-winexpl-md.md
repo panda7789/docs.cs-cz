@@ -1,0 +1,1 @@
+Průzkumník Windows

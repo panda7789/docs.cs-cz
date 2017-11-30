@@ -1,0 +1,1 @@
+bodů na palec (dpi)

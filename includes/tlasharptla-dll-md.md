@@ -1,0 +1,1 @@
+Dynamická knihovna (DLL)

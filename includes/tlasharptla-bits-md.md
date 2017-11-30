@@ -1,0 +1,1 @@
+Služba inteligentního přenosu na pozadí (BITS)

@@ -1,0 +1,132 @@
+---
+title: "Postupy: Použití validátoru vlastního uživatelského jména a hesla"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: WCF, username and password
+ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9086489d7b48b459ad92f1712809406cbde7e074
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="how-to-use-a-custom-user-name-and-password-validator"></a>Postupy: Použití validátoru vlastního uživatelského jména a hesla
+Ve výchozím nastavení, pokud uživatelské jméno a heslo slouží k ověřování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá Windows k ověření uživatelského jména a hesla. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje vlastní uživatelské jméno a heslo schémat ověřování, také známé jako *validátory*. Zahrnout validátor vlastní uživatelské jméno a heslo, vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> a potom jej nakonfigurovat.  
+  
+ Ukázkovou aplikaci, najdete v části [validátor hesel pro uživatele název](../../../../docs/framework/wcf/samples/user-name-password-validator.md).  
+  
+### <a name="to-create-a-custom-user-name-and-password-validator"></a>Chcete-li vytvořit validátor vlastní uživatelské jméno a heslo  
+  
+1.  Vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>.  
+  
+     [!code-csharp[C_CustomUsernameAndPasswordValidator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customusernameandpasswordvalidator/cs/service.cs#3)]
+     [!code-vb[C_CustomUsernameAndPasswordValidator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customusernameandpasswordvalidator/vb/service.vb#3)]  
+  
+2.  Implementace vlastního ověřování schématu přepsáním <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metoda.  
+  
+     Nepoužívejte kód v následujícím příkladu, který přepíše <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metoda v produkčním prostředí. Nahraďte kód vaše vlastní uživatelské jméno a heslo schéma ověřování, které mohou zahrnovat načítání dvojice název a heslo uživatele z databáze.  
+  
+     Pokud chcete vrátit zpátky chybám při ověřování klienta, throw <xref:System.ServiceModel.FaultException> v <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metoda.  
+  
+     [!code-csharp[C_CustomUsernameAndPasswordValidator#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customusernameandpasswordvalidator/cs/service.cs#4)]
+     [!code-vb[C_CustomUsernameAndPasswordValidator#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customusernameandpasswordvalidator/vb/service.vb#4)]  
+  
+### <a name="to-configure-a-service-to-use-a-custom-user-name-and-password-validator"></a>Nakonfigurujte službu používat validátor vlastní uživatelské jméno a heslo  
+  
+1.  Nakonfigurujte vazbu, která používá zabezpečení zpráv přes všechny přenos nebo zabezpečení na úrovni přenosu přes protokol HTTP (S).  
+  
+     Při použití zabezpečení zpráv, přidejte jedno z vazby poskytované systémem, jako například [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), nebo [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) zabezpečení podporuje zpráv a `UserName` typ přihlašovacích údajů.  
+  
+     Při použití zabezpečení na úrovni přenosu přes protokol HTTP (S), přidejte buď [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md), [ \< netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md) nebo [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) , který používá protokol HTTP (S) a `Basic` schéma ověřování.  
+  
+    > [!NOTE]
+    >  Když [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] nebo novějším, je použít, můžete použít vlastní validátor uživatelské jméno a heslo s zabezpečení zprávy a přenos. S [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], vlastní validátor uživatelské jméno a heslo lze použít pouze s zabezpečení zpráv.  
+  
+    > [!TIP]
+    >  Další informace o používání \<netTcpBinding > v tomto kontextu, najdete v části [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)  
+  
+    1.  V konfiguračním souboru v části [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) elementu, přidejte [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element.  
+  
+    2.  Přidat [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element do části vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby elementu, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+  
+    3.  Nastavte `mode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) nebo [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md) k `Message`, `Transport`, `or``TransportWithMessageCredential`.  
+  
+    4.  Nastavte `clientCredentialType` atribut [ \<zpráva >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) nebo [ \<přenosu >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md).  
+  
+         Při použití zabezpečení zpráv, `clientCredentialType` atribut [ \<zpráva >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) k `UserName`.  
+  
+         Při použití zabezpečení na úrovni přenosu přes protokol HTTP (S), `clientCredentialType` atribut [ \<přenosu >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md) nebo [ \<přenosu >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-basichttpbinding.md) k `Basic`.  
+  
+        > [!NOTE]
+        >  Když [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba je hostovaná v Internetové informační služby (IIS) pomocí zabezpečení na úrovni přenosu a <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A> je nastavena na <xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom>, schéma vlastní ověřování používá podmnožinu ověřování systému Windows. Důvodem je, že v tomto scénáři služba IIS provede ověřování systému Windows před [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyvolání vlastní authenticator.  
+  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby elementu, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+  
+     Následující příklad ukazuje kód konfigurace pro vazbu.  
+  
+    ```xml  
+    <system.serviceModel>   
+      <bindings>  
+      <wsHttpBinding>  
+          <binding name="Binding1">  
+            <security mode="Message">  
+              <message clientCredentialType="UserName" />  
+            </security>  
+          </binding>          
+        </wsHttpBinding>  
+      </bindings>  
+    </system.serviceModel>  
+    ```  
+  
+2.  Konfigurace chování, která určuje, zda validátor vlastní uživatelské jméno a heslo slouží k ověření uživatele dvojice název a heslo pro příchozí <xref:System.IdentityModel.Tokens.UserNameSecurityToken> tokeny zabezpečení.  
+  
+    1.  Jako podřízené [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) elementu, přidejte [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) element.  
+  
+    2.  Přidat [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) k [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) element.  
+  
+    3.  Přidat [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) elementu a sadu `name` atribut na odpovídající hodnotu.  
+  
+    4.  Přidat [ \<– serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) k [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) element.  
+  
+    5.  Přidat [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) k [ \<– serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
+  
+    6.  Nastavte `userNamePasswordValidationMode` k `Custom`.  
+  
+        > [!IMPORTANT]
+        >  Pokud `userNamePasswordValidationMode` hodnota není nastavena, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá ověřování systému Windows místo validátoru vlastního uživatelského jména a hesla.  
+  
+    7.  Nastavte `customUserNamePasswordValidatorType` typu, který představuje validátor vaše vlastní uživatelské jméno a heslo.  
+  
+     Následující příklad ukazuje `<serviceCredentials>` fragment k tomuto bodu.  
+  
+    ```xml  
+    <serviceCredentials>  
+      <userNameAuthentication userNamePasswordValidationMode="Custom" customUserNamePasswordValidatorType="Microsoft.ServiceModel.Samples.CalculatorService.CustomUserNameValidator, service" />  
+    </serviceCredentials>  
+    ```  
+  
+## <a name="example"></a>Příklad  
+ Následující příklad kódu ukazuje, jak vytvořit vlastní uživatelská jména a hesla validátoru. Nepoužívejte kód, který přepíše <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metoda v produkčním prostředí. Nahraďte kód vaše vlastní uživatelské jméno a heslo schéma ověřování, které mohou zahrnovat načítání dvojice název a heslo uživatele z databáze.  
+  
+ [!code-csharp[C_CustomUsernameAndPasswordValidator#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customusernameandpasswordvalidator/cs/service.cs#1)]
+ [!code-vb[C_CustomUsernameAndPasswordValidator#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customusernameandpasswordvalidator/vb/service.vb#1)]  
+[!code-csharp[C_CustomUsernameAndPasswordValidator#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customusernameandpasswordvalidator/cs/service.cs#2)]
+[!code-vb[C_CustomUsernameAndPasswordValidator#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customusernameandpasswordvalidator/vb/service.vb#2)]  
+  
+## <a name="see-also"></a>Viz také  
+ <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>  
+ [Postupy: použití poskytovatele členství prostředí ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
+ [Ověřování](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)

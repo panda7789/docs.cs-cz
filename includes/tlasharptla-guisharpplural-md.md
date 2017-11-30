@@ -1,0 +1,1 @@
+Grafická uživatelská rozhraní (GUI)

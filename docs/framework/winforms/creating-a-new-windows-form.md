@@ -16,14 +16,14 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31406d7ed98b462a39e0b57bf66988b1c440a33f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: f373696f4d3a92f15ab7c8641e02303da4a54e6d
+ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/25/2017
 ---
 # <a name="creating-a-new-windows-form"></a>Vytvoření nového formuláře Windows Form
-Toto téma obsahuje odkazy na témata, které popisují, jak vytvořit svoji první aplikaci Windows Forms. Navíc témata v této části představují některé základní slovník a pokyny, které byste měli vědět, kdy začnete vytvářet aplikace Windows Forms. . Další informace o aplikaci Windows Forms ovládací prvky, které můžete použít na ně, události a zpracování událostí a jak se zpracovat vstup od uživatele najdete v seznamu související téma.  
+Toto téma obsahuje odkazy na témata, které popisují, jak vytvořit svoji první aplikaci Windows Forms. Navíc témata v této části představují některé základní slovník a pokyny, které byste měli vědět, kdy začnete vytvářet aplikace Windows Forms. Další informace o aplikacích Windows Forms, ovládací prvky můžete použít v nich, události a zpracování událostí a jak se zpracovat vstup od uživatele, najdete v seznamu související téma.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Windows Forms – souřadnice](../../../docs/framework/winforms/windows-forms-coordinates.md).  

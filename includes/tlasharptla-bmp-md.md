@@ -1,0 +1,1 @@
+Rastrový obrázek (BMP)

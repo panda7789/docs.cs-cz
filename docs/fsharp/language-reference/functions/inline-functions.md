@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 3fa31178-08f8-463d-9d41-d29220a90027
-ms.openlocfilehash: 8293a73e9468d3bc3eb51cd99860e52c48121ae3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 0489d411e2754eaab6a10ff0feb4405491b3b511
+ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/25/2017
 ---
 # <a name="inline-functions"></a>Vložené funkce
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 10/18/2017
 
 
 ## <a name="using-inline-functions"></a>Pomocí vložené funkce
-Použijete-li parametry statické typu, musí být všechny funkce, které jsou parametry podle parametrů typu vložené. Zaručí se tím, která kompilátor může vyřešit tyto parametry typu. Při použití parametrů obyčejnou obecného typu neexistuje žádné takových omezení.
+Použijete-li parametry statické typu, musí být všechny funkce, které jsou parametry podle parametrů typu vložené. To zaručuje, že kompilátor mohou vyřešit tyto parametry typu. Při použití parametrů obyčejnou obecného typu neexistuje žádné takových omezení.
 
 Než povolíte využití člen omezení, může být užitečné v optimalizace kódu vložené funkce. Nadměrné vložené funkce však může způsobit kódu méně odolné na změny v kompilátoru optimalizace a provádění – funkce knihovny. Z tohoto důvodu byste neměli používat vložené funkce optimalizace, pokud Pokusili jste se všechny ostatní techniky optimalizace. Provedení vnořené funkce nebo metoda může někdy zlepšit výkon, ale není, vždy. Proto byste měli použít také měření výkonu k ověření, že provedení jakékoli dané funkce vložené ve skutečnosti mít kladný vliv.
 

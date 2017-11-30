@@ -1,0 +1,1 @@
+Správa práv systému Microsoft Windows

@@ -1,0 +1,1 @@
+Identifikátory URI (Uniform Resource Identifier)

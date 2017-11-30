@@ -12,11 +12,11 @@ ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
 caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 114c2c68f50704595b71f22386625091b5b05e8d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 0e03ab24f5d22133e061be3872de00a143bbeca8
+ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/25/2017
 ---
 # <a name="decimal-c-reference"></a>decimal (Referenční dokumentace jazyka C#)
 `decimal` – Klíčové slovo označuje typ dat 128-bit. Porovnání na jiné typy s plovoucí desetinnou čárkou `decimal` typ má více přesnost i s menším rozsahem, takže je vhodné pro finanční a peněžní výpočty. Přibližná rozsah a přesnost pro `decimal` typu jsou uvedené v následující tabulce.  
@@ -24,6 +24,8 @@ ms.lasthandoff: 11/21/2017
 |Typ|Přibližný rozsah|Přesnost|Typ rozhraní .NET Framework|  
 |----------|-----------------------|---------------|-------------------------|  
 |`decimal`|(-7.9 × 10<sup>28</sup> 7.9 × 10<sup>28</sup>) / (10<sup>0</sup> na 10<sup>28</sup>)|28–29 významných číslic|<xref:System.Decimal?displayProperty=nameWithType>|  
+
+Výchozí hodnota `decimal` je 0 m.
   
 ## <a name="literals"></a>Literály  
  Pokud chcete, aby číselný literál skutečné považován za `decimal`, použít příponu m nebo M, například:  

@@ -1,0 +1,1 @@
+Rozhraní .NET Framework

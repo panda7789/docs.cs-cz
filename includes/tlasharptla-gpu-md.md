@@ -1,0 +1,1 @@
+Grafický procesor (GPU)

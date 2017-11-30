@@ -1,0 +1,1 @@
+Integrované vývojové prostředí (IDE)

@@ -1,0 +1,1 @@
+Rozhraní MDI (Multiple Document Interface)

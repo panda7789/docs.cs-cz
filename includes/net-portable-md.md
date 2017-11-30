@@ -1,0 +1,1 @@
+Přenosná knihovna tříd

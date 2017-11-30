@@ -1,0 +1,1 @@
+Zabezpečení přístupu kódu (CAS)

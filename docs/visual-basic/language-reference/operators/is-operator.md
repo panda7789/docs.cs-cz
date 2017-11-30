@@ -1,0 +1,65 @@
+---
+title: "Is – operátor (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.is
+helpviewer_keywords:
+- comparison operators [Visual Basic]
+- equivalent objects
+- TypeOf...Is expression
+- Is operator [Visual Basic]
+ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4b1f3f0fa1fd782550c08c816f47b7541399198e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="is-operator-visual-basic"></a>Is – operátor (Visual Basic)
+Porovná dvě proměnné objektových referencí.  
+  
+## <a name="syntax"></a>Syntaxe  
+  
+```  
+result = object1 Is object2  
+```  
+  
+## <a name="parts"></a>Součásti  
+ `result`  
+ Požadováno. Všechny `Boolean` hodnotu.  
+  
+ `object1`  
+ Požadováno. Všechny `Object` název.  
+  
+ `object2`  
+ Požadováno. Všechny `Object` název.  
+  
+## <a name="remarks"></a>Poznámky  
+ `Is` Operátor určuje, pokud dva odkazy na objekty odkazují na stejný objekt. Neprovede však porovnání hodnot. Pokud `object1` a `object2` odkazují na přesně stejnou instanci objektu, `result` je `True`; Pokud ne, `result` je `False`.  
+  
+ `Is`Můžete také použít s `TypeOf` – klíčové slovo, aby `TypeOf`... `Is` výraz, který testuje, zda je kompatibilní s datovým typem proměnné objektu.  
+  
+> [!NOTE]
+>  `Is` – Klíčové slovo je používán také [vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md).  
+  
+## <a name="example"></a>Příklad  
+ Následující příklad používá `Is` operátor k porovnání páry odkazy na objekty. Výsledky jsou přiřazeny k `Boolean` hodnotu udávající, zda dva objekty jsou identické.  
+  
+ [!code-vb[VbVbalrOperators#27](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/is-operator_1.vb)]  
+  
+ Jak ukazuje předchozí příklad, můžete použít `Is` operátor k testování obě časné a pozdní vazba objekty.  
+  
+## <a name="see-also"></a>Viz také  
+ [Typeof – operátor](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [IsNot – operátor](../../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  
+ [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

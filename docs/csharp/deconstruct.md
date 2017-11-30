@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 2bb94b3f1f4966ed44b2a5d4f14dfeee29707059
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: e626eeb1f3de2716e1ffe4fcbec1c16558e5bf0e
+ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Deconstructing řazených kolekcí členů a dalších typů #
 
@@ -34,7 +34,7 @@ C# – funkce integrovanou podporu pro deconstructing řazené kolekce členů, 
 var (name, address, city, zip) = contact.GetAddressInfo();
 ```
 
-Existují dva způsoby, jak deconstruct řazené kolekce členů:
+Existují tři způsoby, jak deconstruct řazené kolekce členů:
 
 - Je možné deklarovat explicitně typ každé pole v závorkách. Následující příklad používá tento přístup k deconstruct 3 řazené kolekce členů vrácený `QueryCityData` metoda.
 
@@ -50,9 +50,15 @@ Existují dva způsoby, jak deconstruct řazené kolekce členů:
 
     Toto je náročná a se nedoporučuje.
 
+- Nakonec může deconstruct řazenou kolekci členů do proměnné, které již byl deklarován.
+
+    [!code-csharp[Deconstruction-Declared](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple5.cs#1)]
+
 Všimněte si, že i v případě, že každé pole v řazené kolekci členů má stejný typ nelze zadat konkrétní typ mimo závorkách. To vygeneruje Chyba kompilátoru CS8136, "formuláře 'var (...)' Deconstruction zakáže konkrétního typu pro 'var'.".
 
 Všimněte si, že je nutné přiřadit také každý prvek řazenou kolekci členů k proměnné. Pokud nezadáte žádné elementy, kompilátor vygeneruje chyba CS8132, "Nelze deconstruct řazená kolekce členů x elementy do proměnné"y"."
+
+Všimněte si, že není možné kombinovat deklarace a přiřazení do existujících proměnných na levé straně deconstruction. Kompilátor vygeneruje chyba CS8184, "deconstruction nelze kombinovat deklarace a výrazy na levou-stranu-straně." Když členy obsahovat nově deklarované a existující proměnné.
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>Deconstructing prvky řazené kolekce členů s zahodí
 
