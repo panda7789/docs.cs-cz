@@ -1,0 +1,47 @@
+---
+title: "&lt;&lt;= – Operátor (referenční dokumentace jazyka C#)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.topic: article
+f1_keywords: <<=_CSharpKeyword
+helpviewer_keywords:
+- <<= operator (left-shift assignment) [C#]
+- left shift assignment operator (<<=) [C#]
+ms.assetid: 3bc99c78-1edb-4827-86fc-bce6c3048871
+caps.latest.revision: "16"
+author: BillWagner
+ms.author: wiwagn
+ms.openlocfilehash: b5c2a177182561075442afc3f1b76603c6646bd6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="ltlt-operator-c-reference"></a><span data-ttu-id="d379f-102">&lt;&lt;= – Operátor (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="d379f-102">&lt;&lt;= Operator (C# Reference)</span></span>
+<span data-ttu-id="d379f-103">Operátor přiřazení posunutí doleva.</span><span class="sxs-lookup"><span data-stu-id="d379f-103">The left-shift assignment operator.</span></span>  
+  
+## <a name="remarks"></a><span data-ttu-id="d379f-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d379f-104">Remarks</span></span>  
+ <span data-ttu-id="d379f-105">Výraz, který formuláře</span><span class="sxs-lookup"><span data-stu-id="d379f-105">An expression of the form</span></span>  
+  
+```  
+x <<= y  
+```  
+  
+ <span data-ttu-id="d379f-106">vyhodnotí jako</span><span class="sxs-lookup"><span data-stu-id="d379f-106">is evaluated as</span></span>  
+  
+```  
+x = x << y  
+```  
+  
+ <span data-ttu-id="d379f-107">Kromě toho, že `x` je Vyhodnocená jenom jednou.</span><span class="sxs-lookup"><span data-stu-id="d379f-107">except that `x` is only evaluated once.</span></span> <span data-ttu-id="d379f-108">[<< Operátor](../../../csharp/language-reference/operators/left-shift-operator.md) posune `x` zbývajících podle počtu bitů určeného `y`.</span><span class="sxs-lookup"><span data-stu-id="d379f-108">The [<< operator](../../../csharp/language-reference/operators/left-shift-operator.md) shifts `x` left by the number of bits specified by `y`.</span></span>  
+  
+ <span data-ttu-id="d379f-109">`<<=` Operátor nemohou být přetíženy přímo, ale může přetížit uživatelem definované typy [<< operátor](../../../csharp/language-reference/operators/left-shift-operator.md) (viz [operátor](../../../csharp/language-reference/keywords/operator.md)).</span><span class="sxs-lookup"><span data-stu-id="d379f-109">The `<<=` operator cannot be overloaded directly, but user-defined types can overload the [<< operator](../../../csharp/language-reference/operators/left-shift-operator.md) (see [operator](../../../csharp/language-reference/keywords/operator.md)).</span></span>  
+  
+## <a name="example"></a><span data-ttu-id="d379f-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="d379f-110">Example</span></span>  
+ [!code-csharp[csRefOperators#12](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-assignment-operator_1.cs)]  
+  
+## <a name="see-also"></a><span data-ttu-id="d379f-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="d379f-111">See Also</span></span>  
+ [<span data-ttu-id="d379f-112">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d379f-112">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="d379f-113">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="d379f-113">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="d379f-114">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d379f-114">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)

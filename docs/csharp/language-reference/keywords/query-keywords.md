@@ -1,0 +1,46 @@
+---
+title: "Klíčová slova dotazu (Referenční dokumentace jazyka C#)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.topic: article
+helpviewer_keywords:
+- query keywords [C#]
+- LINQ [C#], query keywords
+ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
+caps.latest.revision: "15"
+author: BillWagner
+ms.author: wiwagn
+ms.openlocfilehash: 30526e7bc4f99110d421855866381d9b7934d31c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="query-keywords-c-reference"></a><span data-ttu-id="c2d45-102">Klíčová slova dotazu (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="c2d45-102">Query Keywords (C# Reference)</span></span>
+<span data-ttu-id="c2d45-103">Tato část obsahuje kontextová klíčová slova použít ve výrazech dotazů.</span><span class="sxs-lookup"><span data-stu-id="c2d45-103">This section contains the contextual keywords used in query expressions.</span></span>  
+  
+## <a name="in-this-section"></a><span data-ttu-id="c2d45-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c2d45-104">In This Section</span></span>  
+  
+|<span data-ttu-id="c2d45-105">Klauzule</span><span class="sxs-lookup"><span data-stu-id="c2d45-105">Clause</span></span>|<span data-ttu-id="c2d45-106">Popis</span><span class="sxs-lookup"><span data-stu-id="c2d45-106">Description</span></span>|  
+|------------|-----------------|  
+|[<span data-ttu-id="c2d45-107">z</span><span class="sxs-lookup"><span data-stu-id="c2d45-107">from</span></span>](../../../csharp/language-reference/keywords/from-clause.md)|<span data-ttu-id="c2d45-108">Určuje zdroj dat a proměnnou rozsahu (podobně jako na proměnnou iterace).</span><span class="sxs-lookup"><span data-stu-id="c2d45-108">Specifies a data source and a range variable (similar to an iteration variable).</span></span>|  
+|[<span data-ttu-id="c2d45-109">kde</span><span class="sxs-lookup"><span data-stu-id="c2d45-109">where</span></span>](../../../csharp/language-reference/keywords/where-clause.md)|<span data-ttu-id="c2d45-110">Filtry zdroje prvky založené na jeden nebo více logických výrazů, které jsou odděleny logické a a nebo operátory ( `&&` nebo <code>&#124;&#124;</code> ).</span><span class="sxs-lookup"><span data-stu-id="c2d45-110">Filters source elements based on one or more Boolean expressions separated by logical AND and OR operators ( `&&` or <code>&#124;&#124;</code> ).</span></span>|  
+|[<span data-ttu-id="c2d45-111">Vyberte</span><span class="sxs-lookup"><span data-stu-id="c2d45-111">select</span></span>](../../../csharp/language-reference/keywords/select-clause.md)|<span data-ttu-id="c2d45-112">Určuje typ a tvar, který elementů v pořadí vrácených bude mít při spuštění dotazu.</span><span class="sxs-lookup"><span data-stu-id="c2d45-112">Specifies the type and shape that the elements in the returned sequence will have when the query is executed.</span></span>|  
+|[<span data-ttu-id="c2d45-113">skupiny</span><span class="sxs-lookup"><span data-stu-id="c2d45-113">group</span></span>](../../../csharp/language-reference/keywords/group-clause.md)|<span data-ttu-id="c2d45-114">Výsledky dotazu skupin podle zadanou hodnotou klíče.</span><span class="sxs-lookup"><span data-stu-id="c2d45-114">Groups query results according to a specified key value.</span></span>|  
+|[<span data-ttu-id="c2d45-115">do</span><span class="sxs-lookup"><span data-stu-id="c2d45-115">into</span></span>](../../../csharp/language-reference/keywords/into.md)|<span data-ttu-id="c2d45-116">Poskytuje identifikátor, který může sloužit jako odkaz na výsledky spojení, skupiny nebo klauzuli select.</span><span class="sxs-lookup"><span data-stu-id="c2d45-116">Provides an identifier that can serve as a reference to the results of a join, group or select clause.</span></span>|  
+|[<span data-ttu-id="c2d45-117">Řadit podle</span><span class="sxs-lookup"><span data-stu-id="c2d45-117">orderby</span></span>](../../../csharp/language-reference/keywords/orderby-clause.md)|<span data-ttu-id="c2d45-118">Výsledky dotazu řazení ve vzestupném nebo sestupném pořadí podle výchozí porovnávače pro typ elementu.</span><span class="sxs-lookup"><span data-stu-id="c2d45-118">Sorts query results in ascending or descending order based on the default comparer for the element type.</span></span>|  
+|[<span data-ttu-id="c2d45-119">připojení k</span><span class="sxs-lookup"><span data-stu-id="c2d45-119">join</span></span>](../../../csharp/language-reference/keywords/join-clause.md)|<span data-ttu-id="c2d45-120">Spojí dva zdroje dat podle porovnání rovnosti mezi dvěma zadaným odpovídající kritériím.</span><span class="sxs-lookup"><span data-stu-id="c2d45-120">Joins two data sources based on an equality comparison between two specified matching criteria.</span></span>|  
+|[<span data-ttu-id="c2d45-121">umožňují</span><span class="sxs-lookup"><span data-stu-id="c2d45-121">let</span></span>](../../../csharp/language-reference/keywords/let-clause.md)|<span data-ttu-id="c2d45-122">Představuje proměnnou rozsahu pro uložení výsledků dílčích výrazů ve výrazu dotazu.</span><span class="sxs-lookup"><span data-stu-id="c2d45-122">Introduces a range variable to store sub-expression results in a query expression.</span></span>|  
+|[<span data-ttu-id="c2d45-123">v</span><span class="sxs-lookup"><span data-stu-id="c2d45-123">in</span></span>](../../../csharp/language-reference/keywords/in.md)|<span data-ttu-id="c2d45-124">Kontextové klíčové slovo v [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzule.</span><span class="sxs-lookup"><span data-stu-id="c2d45-124">Contextual keyword in a [join](../../../csharp/language-reference/keywords/join-clause.md) clause.</span></span>|  
+|[<span data-ttu-id="c2d45-125">na</span><span class="sxs-lookup"><span data-stu-id="c2d45-125">on</span></span>](../../../csharp/language-reference/keywords/on.md)|<span data-ttu-id="c2d45-126">Kontextové klíčové slovo v [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzule.</span><span class="sxs-lookup"><span data-stu-id="c2d45-126">Contextual keyword in a [join](../../../csharp/language-reference/keywords/join-clause.md) clause.</span></span>|  
+|[<span data-ttu-id="c2d45-127">rovná se</span><span class="sxs-lookup"><span data-stu-id="c2d45-127">equals</span></span>](../../../csharp/language-reference/keywords/equals.md)|<span data-ttu-id="c2d45-128">Kontextové klíčové slovo v [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzule.</span><span class="sxs-lookup"><span data-stu-id="c2d45-128">Contextual keyword in a [join](../../../csharp/language-reference/keywords/join-clause.md) clause.</span></span>|  
+|[<span data-ttu-id="c2d45-129">pomocí</span><span class="sxs-lookup"><span data-stu-id="c2d45-129">by</span></span>](../../../csharp/language-reference/keywords/by.md)|<span data-ttu-id="c2d45-130">Kontextové klíčové slovo v [skupiny](../../../csharp/language-reference/keywords/group-clause.md) klauzule.</span><span class="sxs-lookup"><span data-stu-id="c2d45-130">Contextual keyword in a [group](../../../csharp/language-reference/keywords/group-clause.md) clause.</span></span>|  
+|[<span data-ttu-id="c2d45-131">vzestupné</span><span class="sxs-lookup"><span data-stu-id="c2d45-131">ascending</span></span>](../../../csharp/language-reference/keywords/ascending.md)|<span data-ttu-id="c2d45-132">Kontextové klíčové slovo v [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) klauzule.</span><span class="sxs-lookup"><span data-stu-id="c2d45-132">Contextual keyword in an [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) clause.</span></span>|  
+|[<span data-ttu-id="c2d45-133">sestupné</span><span class="sxs-lookup"><span data-stu-id="c2d45-133">descending</span></span>](../../../csharp/language-reference/keywords/descending.md)|<span data-ttu-id="c2d45-134">Kontextové klíčové slovo v [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) klauzule.</span><span class="sxs-lookup"><span data-stu-id="c2d45-134">Contextual keyword in an [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) clause.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="c2d45-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="c2d45-135">See Also</span></span>  
+ [<span data-ttu-id="c2d45-136">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c2d45-136">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+ [<span data-ttu-id="c2d45-137">LINQ (Language-Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="c2d45-137">LINQ (Language-Integrated Query)</span></span>](../../programming-guide/concepts/linq/index.md)  
+ [<span data-ttu-id="c2d45-138">LINQ – výrazy dotazů</span><span class="sxs-lookup"><span data-stu-id="c2d45-138">LINQ Query Expressions</span></span>](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [<span data-ttu-id="c2d45-139">Začínáme s dotazy LINQ v jazyku C#</span><span class="sxs-lookup"><span data-stu-id="c2d45-139">Getting Started with LINQ in C#</span></span>](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
