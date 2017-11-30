@@ -1,0 +1,1 @@
+<span data-ttu-id="8be6b-101">Zabezpečení přístupu kódu (CAS)</span><span class="sxs-lookup"><span data-stu-id="8be6b-101">Code Access Security (CAS)</span></span>

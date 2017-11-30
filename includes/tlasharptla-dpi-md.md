@@ -1,0 +1,1 @@
+<span data-ttu-id="2cbcb-101">bodů na palec (dpi)</span><span class="sxs-lookup"><span data-stu-id="2cbcb-101">dots per inch (dpi)</span></span>

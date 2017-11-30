@@ -1,0 +1,1 @@
+<span data-ttu-id="8e0a5-101">bodů na palec</span><span class="sxs-lookup"><span data-stu-id="8e0a5-101">dpi</span></span>

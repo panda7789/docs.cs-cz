@@ -1,0 +1,1 @@
+<span data-ttu-id="0d218-101">Atributy rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0d218-101">.NET Framework attributes</span></span>

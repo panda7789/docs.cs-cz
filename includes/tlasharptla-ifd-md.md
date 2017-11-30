@@ -1,0 +1,1 @@
+<span data-ttu-id="5ce54-101">Adresář souboru obrázku (IFD)</span><span class="sxs-lookup"><span data-stu-id="5ce54-101">image file directory (IFD)</span></span>

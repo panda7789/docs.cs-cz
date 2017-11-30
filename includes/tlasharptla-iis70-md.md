@@ -1,0 +1,1 @@
+<span data-ttu-id="f4426-101">Internetová informační služba (IIS) 7.0</span><span class="sxs-lookup"><span data-stu-id="f4426-101">Microsoft Internet Information Services (IIS) 7.0</span></span>

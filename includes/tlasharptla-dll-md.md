@@ -1,0 +1,1 @@
+<span data-ttu-id="36f36-101">Dynamická knihovna (DLL)</span><span class="sxs-lookup"><span data-stu-id="36f36-101">dynamic-link library (DLL)</span></span>

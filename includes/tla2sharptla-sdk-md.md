@@ -1,0 +1,1 @@
+<span data-ttu-id="f2595-101">Sada SDK</span><span class="sxs-lookup"><span data-stu-id="f2595-101">SDK</span></span>

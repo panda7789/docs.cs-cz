@@ -1,0 +1,1 @@
+<span data-ttu-id="1fd21-101">Průzkumník Windows</span><span class="sxs-lookup"><span data-stu-id="1fd21-101">Microsoft Windows Explorer</span></span>

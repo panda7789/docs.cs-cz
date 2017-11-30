@@ -1,0 +1,1 @@
+<span data-ttu-id="19c4c-101">hostování funkcí služby Windows Server AppFabric</span><span class="sxs-lookup"><span data-stu-id="19c4c-101">hosting features of Windows Server AppFabric</span></span>

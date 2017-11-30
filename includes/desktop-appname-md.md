@@ -1,0 +1,1 @@
+<span data-ttu-id="ae493-101">klasické pracovní plochy</span><span class="sxs-lookup"><span data-stu-id="ae493-101">desktop</span></span>

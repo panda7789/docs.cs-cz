@@ -1,0 +1,1 @@
+<span data-ttu-id="bec62-101">GDI+</span><span class="sxs-lookup"><span data-stu-id="bec62-101">GDI+</span></span>

@@ -1,0 +1,1 @@
+<span data-ttu-id="ab04b-101">IDE – integrované vývojové prostředí</span><span class="sxs-lookup"><span data-stu-id="ab04b-101">IDE</span></span>

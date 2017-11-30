@@ -1,0 +1,1 @@
+<span data-ttu-id="98455-101">Dostupné od verze 1.0</span><span class="sxs-lookup"><span data-stu-id="98455-101">Available since 1.0</span></span>

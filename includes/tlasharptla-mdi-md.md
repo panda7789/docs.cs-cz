@@ -1,0 +1,1 @@
+<span data-ttu-id="593e3-101">Rozhraní MDI (Multiple Document Interface)</span><span class="sxs-lookup"><span data-stu-id="593e3-101">multiple-document interface (MDI)</span></span>

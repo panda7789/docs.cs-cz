@@ -1,0 +1,1 @@
+<span data-ttu-id="91818-101">Internetová informační služba 6.0</span><span class="sxs-lookup"><span data-stu-id="91818-101">IIS 6.0</span></span>

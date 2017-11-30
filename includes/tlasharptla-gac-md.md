@@ -1,0 +1,1 @@
+<span data-ttu-id="74cb2-101">Globální mezipaměť sestavení (GAC)</span><span class="sxs-lookup"><span data-stu-id="74cb2-101">global assembly cache (GAC)</span></span>

@@ -1,0 +1,1 @@
+<span data-ttu-id="7f9d6-101">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="7f9d6-101">URL</span></span>

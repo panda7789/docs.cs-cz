@@ -1,0 +1,1 @@
+<span data-ttu-id="123d0-101">Uživatelské rozhraní</span><span class="sxs-lookup"><span data-stu-id="123d0-101">user interface (UI)</span></span>

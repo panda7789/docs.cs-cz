@@ -1,0 +1,1 @@
+<span data-ttu-id="d8e05-101">Instalační služba systému Microsoft Windows</span><span class="sxs-lookup"><span data-stu-id="d8e05-101">Microsoft Windows Installer</span></span>

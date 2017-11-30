@@ -1,0 +1,1 @@
+<span data-ttu-id="e4562-101">Dostupné od verze 4.5.1</span><span class="sxs-lookup"><span data-stu-id="e4562-101">Available since 4.5.1</span></span>

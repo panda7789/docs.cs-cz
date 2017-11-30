@@ -1,0 +1,1 @@
+<span data-ttu-id="ef9ab-101">prostředí Windows Runtime</span><span class="sxs-lookup"><span data-stu-id="ef9ab-101">Windows Runtime</span></span>

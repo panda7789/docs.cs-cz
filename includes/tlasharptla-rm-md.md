@@ -1,0 +1,1 @@
+<span data-ttu-id="5eb8f-101">Správa práv systému Microsoft Windows</span><span class="sxs-lookup"><span data-stu-id="5eb8f-101">Microsoft Windows Rights Management (RM)</span></span>

@@ -1,0 +1,1 @@
+<span data-ttu-id="c131d-101">Technologie pro usnadnění</span><span class="sxs-lookup"><span data-stu-id="c131d-101">Assistive technologies</span></span>

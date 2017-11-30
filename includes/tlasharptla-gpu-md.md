@@ -1,0 +1,1 @@
+<span data-ttu-id="07066-101">Grafický procesor (GPU)</span><span class="sxs-lookup"><span data-stu-id="07066-101">graphics processing unit (GPU)</span></span>

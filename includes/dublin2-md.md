@@ -1,0 +1,1 @@
+<span data-ttu-id="76e22-101">hostování funkcí</span><span class="sxs-lookup"><span data-stu-id="76e22-101">hosting features</span></span>

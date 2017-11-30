@@ -1,0 +1,1 @@
+<span data-ttu-id="524cc-101">Rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="524cc-101">Framework</span></span>

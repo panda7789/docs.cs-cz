@@ -1,0 +1,1 @@
+<span data-ttu-id="c15e0-101">.NET Framework 2.0 Service Pack 1</span><span class="sxs-lookup"><span data-stu-id="c15e0-101">.NET Framework 2.0 Service Pack 1</span></span>

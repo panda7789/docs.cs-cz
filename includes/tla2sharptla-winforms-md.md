@@ -1,0 +1,1 @@
+<span data-ttu-id="db232-101">Windows Forms</span><span class="sxs-lookup"><span data-stu-id="db232-101">Windows Forms</span></span>

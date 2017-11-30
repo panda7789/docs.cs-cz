@@ -1,0 +1,39 @@
+---
+title: "Můj odkaz (referenční dokumentace jazyka Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- My feature
+- My reference
+ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9cf23a3cc435f3ddea778b368716a35dde90656c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/21/2017
+---
+# <a name="my-reference-visual-basic"></a><span data-ttu-id="0c5df-102">Můj odkaz (referenční dokumentace jazyka Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0c5df-102">My Reference (Visual Basic)</span></span>
+<span data-ttu-id="0c5df-103">`My` Programování rychlejší a snazší díky funkci tím, že intuitivní přístup pro běžně používané metody, vlastnosti a události.</span><span class="sxs-lookup"><span data-stu-id="0c5df-103">The `My` feature makes programming faster and easier by giving you intuitive access to commonly used methods, properties, and events.</span></span> <span data-ttu-id="0c5df-104">Tato tabulka uvádí objekty obsažené v `My`a akcí, které lze provést s každým.</span><span class="sxs-lookup"><span data-stu-id="0c5df-104">This table lists the objects contained in `My`, and the actions that can be performed with each.</span></span>  
+  
+|<span data-ttu-id="0c5df-105">**Akce**</span><span class="sxs-lookup"><span data-stu-id="0c5df-105">**Action**</span></span>|<span data-ttu-id="0c5df-106">**Objekt**</span><span class="sxs-lookup"><span data-stu-id="0c5df-106">**Object**</span></span>|  
+|----------------|----------------|  
+|<span data-ttu-id="0c5df-107">Informace o přístupu k aplikaci a služby.</span><span class="sxs-lookup"><span data-stu-id="0c5df-107">Accessing application information and services.</span></span>|<span data-ttu-id="0c5df-108">`My.Application` Objekt se skládá z následujících tříd:</span><span class="sxs-lookup"><span data-stu-id="0c5df-108">The `My.Application` object consists of the following classes:</span></span><br /><br /> <span data-ttu-id="0c5df-109"><xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>poskytuje členy, které jsou k dispozici ve všech projektech.</span><span class="sxs-lookup"><span data-stu-id="0c5df-109"><xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> provides members that are available in all projects.</span></span><br /><br /> <span data-ttu-id="0c5df-110"><xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>poskytuje členy, které jsou k dispozici v aplikacích Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c5df-110"><xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> provides members available in Windows Forms applications.</span></span><br /><br /> <span data-ttu-id="0c5df-111"><xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>poskytuje členy, které jsou k dispozici v konzolové aplikace.</span><span class="sxs-lookup"><span data-stu-id="0c5df-111"><xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> provides members available in console applications.</span></span>|  
+|<span data-ttu-id="0c5df-112">Přístup k hostitelský počítač a jeho prostředky, služby a data.</span><span class="sxs-lookup"><span data-stu-id="0c5df-112">Accessing the host computer and its resources, services, and data.</span></span>|<span data-ttu-id="0c5df-113">`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)</span><span class="sxs-lookup"><span data-stu-id="0c5df-113">`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)</span></span>|  
+|<span data-ttu-id="0c5df-114">Přístup k formulářům v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="0c5df-114">Accessing the forms in the current project.</span></span>|[<span data-ttu-id="0c5df-115">My.Forms – objekt</span><span class="sxs-lookup"><span data-stu-id="0c5df-115">My.Forms Object</span></span>](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
+|<span data-ttu-id="0c5df-116">Přístup k protokolu aplikace.</span><span class="sxs-lookup"><span data-stu-id="0c5df-116">Accessing the application log.</span></span>|<span data-ttu-id="0c5df-117">`My.Application.Log` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log%2A>)</span><span class="sxs-lookup"><span data-stu-id="0c5df-117">`My.Application.Log` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log%2A>)</span></span>|  
+|<span data-ttu-id="0c5df-118">Přístup k aktuální webový požadavek.</span><span class="sxs-lookup"><span data-stu-id="0c5df-118">Accessing the current web request.</span></span>|[<span data-ttu-id="0c5df-119">My.Request – objekt</span><span class="sxs-lookup"><span data-stu-id="0c5df-119">My.Request Object</span></span>](../../../visual-basic/language-reference/objects/my-request-object.md)|  
+|<span data-ttu-id="0c5df-120">Přístup k elementům prostředků.</span><span class="sxs-lookup"><span data-stu-id="0c5df-120">Accessing resource elements.</span></span>|[<span data-ttu-id="0c5df-121">My.Resources – objekt</span><span class="sxs-lookup"><span data-stu-id="0c5df-121">My.Resources Object</span></span>](../../../visual-basic/language-reference/objects/my-resources-object.md)|  
+|<span data-ttu-id="0c5df-122">Přístup k aktuální webovou odezvu.</span><span class="sxs-lookup"><span data-stu-id="0c5df-122">Accessing the current web response.</span></span>|[<span data-ttu-id="0c5df-123">My.Response – objekt</span><span class="sxs-lookup"><span data-stu-id="0c5df-123">My.Response Object</span></span>](../../../visual-basic/language-reference/objects/my-response-object.md)|  
+|<span data-ttu-id="0c5df-124">Přístup k nastavení úrovně uživatelů a aplikací.</span><span class="sxs-lookup"><span data-stu-id="0c5df-124">Accessing user and application level settings.</span></span>|[<span data-ttu-id="0c5df-125">My.Settings – objekt</span><span class="sxs-lookup"><span data-stu-id="0c5df-125">My.Settings Object</span></span>](../../../visual-basic/language-reference/objects/my-settings-object.md)|  
+|<span data-ttu-id="0c5df-126">Přístup k kontext zabezpečení aktuálního uživatele.</span><span class="sxs-lookup"><span data-stu-id="0c5df-126">Accessing the current user's security context.</span></span>|<span data-ttu-id="0c5df-127">`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)</span><span class="sxs-lookup"><span data-stu-id="0c5df-127">`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)</span></span>|  
+|<span data-ttu-id="0c5df-128">Přístup k webové služby XML odkazuje v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="0c5df-128">Accessing XML Web services referenced by the current project.</span></span>|[<span data-ttu-id="0c5df-129">My.WebServices – objekt</span><span class="sxs-lookup"><span data-stu-id="0c5df-129">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
+  
+## <a name="see-also"></a><span data-ttu-id="0c5df-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="0c5df-130">See Also</span></span>  
+ [<span data-ttu-id="0c5df-131">Přehled aplikačního modelu jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="0c5df-131">Overview of the Visual Basic Application Model</span></span>](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
+ [<span data-ttu-id="0c5df-132">Vývoj s Moje</span><span class="sxs-lookup"><span data-stu-id="0c5df-132">Development with My</span></span>](../../../visual-basic/developing-apps/development-with-my/index.md)

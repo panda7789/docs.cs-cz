@@ -1,0 +1,1 @@
+<span data-ttu-id="10aa3-101">Technologie pro usnadnění</span><span class="sxs-lookup"><span data-stu-id="10aa3-101">assistive technology</span></span>

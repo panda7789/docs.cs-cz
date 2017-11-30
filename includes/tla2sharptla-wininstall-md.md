@@ -1,0 +1,1 @@
+<span data-ttu-id="3cf75-101">Instalační služba systému Windows</span><span class="sxs-lookup"><span data-stu-id="3cf75-101">Windows Installer</span></span>

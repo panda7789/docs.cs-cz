@@ -1,0 +1,1 @@
+<span data-ttu-id="02a7b-101">ASP.NET 2,0</span><span class="sxs-lookup"><span data-stu-id="02a7b-101">ASP.NET 2.0</span></span>

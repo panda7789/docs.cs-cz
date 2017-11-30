@@ -1,0 +1,1 @@
+<span data-ttu-id="7faf6-101">rozhraní API</span><span class="sxs-lookup"><span data-stu-id="7faf6-101">API</span></span>

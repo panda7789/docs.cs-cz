@@ -1,0 +1,1 @@
+<span data-ttu-id="d351b-101">Integrované vývojové prostředí (IDE)</span><span class="sxs-lookup"><span data-stu-id="d351b-101">Integrated Development Environment (IDE)</span></span>

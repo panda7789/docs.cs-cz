@@ -1,0 +1,1 @@
+<span data-ttu-id="bad30-101">Aplikace XBAP</span><span class="sxs-lookup"><span data-stu-id="bad30-101">XBAPs</span></span>

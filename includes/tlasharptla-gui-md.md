@@ -1,0 +1,1 @@
+<span data-ttu-id="200e7-101">Grafické uživatelské rozhraní (GUI)</span><span class="sxs-lookup"><span data-stu-id="200e7-101">graphical user interface (GUI)</span></span>

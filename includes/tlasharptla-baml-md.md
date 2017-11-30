@@ -1,0 +1,1 @@
+<span data-ttu-id="e4303-101">Binární jazyk XAML (BAML)</span><span class="sxs-lookup"><span data-stu-id="e4303-101">binary XAML (BAML)</span></span>
