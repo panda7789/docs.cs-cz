@@ -1,0 +1,1 @@
+<span data-ttu-id="dbca7-101">Internetová informační služba 7,0</span><span class="sxs-lookup"><span data-stu-id="dbca7-101">IIS 7.0</span></span>
