@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.openlocfilehash: 9f6a70598f3a0c0e3f479a25171e1deb6abffa33
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 666c06b236ad870c5c683749ab57d4488b4b8a39
+ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>V .NET Core a .NET Standard testování částí
 
@@ -47,6 +47,6 @@ Další informace o těchto kombinace v těchto kurzů:
 
 Můžete vybrat různé jazyky pro vaše knihovny tříd a vaše jednotkové testování knihovny. Dozvíte, jak pomocí kombinace a porovnávání názorné postupy odkazuje výše.
 
-* Pokud používáte Visual Studio, stačí zobrazit [za provozu v .NET Core testování částí](/visualstudio/test/live-unit-testing)
+* Visual Studio Enterprise nabízí skvělý testování nástroje pro .NET Core. Podívejte se na [Live testování částí](/visualstudio/test/live-unit-testing) nebo [pokrytí kódu](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#working-with-code-coverage) Další informace.
 * Další příklady a další informace o tom, jak pomocí filtrování testovací selektivní jednotky, najdete v části [spouštění testů jednotek selektivní](selective-unit-tests.md), nebo [zahrnutí a vyloučení testů pomocí sady Visual Studio](/visualstudio/test/live-unit-testing#including-and-excluding-test-projects-and-test-methods).
 * Týmem XUnit zápisem kurz, který ukazuje [použití xUnit s .NET Core a Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).

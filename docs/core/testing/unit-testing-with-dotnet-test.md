@@ -3,14 +3,14 @@ title: "Testování kódu C# v .NET Core pomocí testovacích dotnet a xUnit č�
 description: "Další koncepty test jednotky v C# a .NET Core prostřednictvím interaktivní prostředí sestavování podrobné ukázkové řešení pomocí testovacích dotnet a xUnit."
 author: ardalis
 ms.author: wiwagn
-ms.date: 09/08/2017
+ms.date: 11/29/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 6e986e89d47ba4de9b8563f1a95cb1ae89accc89
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a9e64fe37f05b7bbe05b1c5878e4b31084a1c8b6
+ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování C# v .NET Core pomocí testovacích dotnet a xUnit částí
 
@@ -19,8 +19,8 @@ Tento kurz vás provede interaktivní prostředí vytváření ukázkové řeše
 ## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje
 
 Otevřete okno prostředí. Vytvořte adresář s názvem *testování pomocí dotnet – testování* pro uložení řešení.
-Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) k vytvoření nové řešení. Díky tomu je snazší správa knihovny tříd a projektu testování částí.
-V adresáři řešení vytvořit *PrimeService* adresáře. Strukturu adresáře a souboru proto mnohem je zobrazena níže:
+Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) k vytvoření nové řešení. S řešením je snazší správa knihovny tříd a projektu testování částí.
+V adresáři řešení vytvořit *PrimeService* adresáře. Strukturu adresáře a souboru doposud by měl vypadat takto:
 
 ```
 /unit-testing-using-dotnet-test
@@ -28,7 +28,7 @@ V adresáři řešení vytvořit *PrimeService* adresáře. Strukturu adresáře
     /PrimeService
 ```
 
-Ujistěte se, *PrimeService* aktuální adresář a spusťte [ `dotnet new classlib` ](../tools/dotnet-new.md) a vytvořte tak projekt zdroje. Přejmenování *Class1.cs* k *PrimeService.cs*. Použití vývoje řízeného testováním (TDD), vytvoříte selhání provádění `PrimeService` třídy:
+Ujistěte se, *PrimeService* aktuální adresář a spusťte [ `dotnet new classlib` ](../tools/dotnet-new.md) a vytvořte tak projekt zdroje. Přejmenování *Class1.cs* k *PrimeService.cs*. Použití vývoje řízeného testováním (TDD), je nejprve vytvořit selhání provádění `PrimeService` třídy:
 
 ```csharp
 using System;
@@ -37,15 +37,21 @@ namespace Prime.Services
 {
     public class PrimeService
     {
-        public bool IsPrime(int candidate) 
+        public bool IsPrime(int candidate)
         {
             throw new NotImplementedException("Please create a test first");
-        } 
+        }
     }
 }
 ```
 
-Změnit adresář zpět do *testování pomocí dotnet – testování* adresáře. Spustit [ `dotnet sln add .\PrimeService\PrimeService.csproj` ](../tools/dotnet-sln.md) přidání projektu knihovny tříd do řešení.
+Změnit adresář zpět do *testování pomocí dotnet – testování* adresáře.
+
+Spustit [SLN – dotnet](../tools/dotnet-sln.md) příkaz pro přidání projektu knihovny tříd do řešení:
+
+```
+dotnet sln add .\PrimeService\PrimeService.csproj
+```
 
 ## <a name="creating-the-test-project"></a>Vytvoření projektu testů
 
@@ -60,11 +66,11 @@ Dále vytvořte *PrimeService.Tests* adresáře. Zobrazí následující osnova 
     /PrimeService.Tests
 ```
 
-Ujistěte se, *PrimeService.Tests* adresář aktuální adresář a vytvoření nového projektu pomocí [ `dotnet new xunit` ](../tools/dotnet-new.md). Tím se vytvoří testovací projekt, který používá xUnit jako knihovně testu. Nástroj test runner v nakonfiguruje vygenerované šablony *PrimeServiceTests.csproj*:
+Ujistěte se, *PrimeService.Tests* adresář aktuální adresář a vytvoření nového projektu pomocí [ `dotnet new xunit` ](../tools/dotnet-new.md). Tento příkaz vytvoří testovací projekt, který používá xUnit jako knihovně testu. Nástroj test runner v nakonfiguruje vygenerované šablony *PrimeServiceTests.csproj* souboru podobná následující kód:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
   <PackageReference Include="xunit" Version="2.2.0" />
   <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
 </ItemGroup>
@@ -91,7 +97,11 @@ Na obrázku rozložení konečné řešení:
         PrimeServiceTests.csproj
 ```
 
-Spuštění [ `dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj` ](../tools/dotnet-sln.md) v *testování pomocí dotnet – testování* adresáře. 
+K řešení přidat k testovacímu projektu, spusťte [SLN – dotnet](../tools/dotnet-sln.md) v *testování pomocí dotnet – testování* directory:
+
+```
+dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
+```
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
@@ -123,9 +133,9 @@ namespace Prime.UnitTests.Services
 }
 ```
 
-`[Fact]` Atribut označuje testovací metodu, která spustí nástroj test runner. Z *testování pomocí dotnet – testování*, provést [ `dotnet test` ](../tools/dotnet-test.md) vytvářet testy a knihovny tříd a poté spusťte testy. Nástroj test runner xUnit obsahuje vstupní bod programu ke spuštění testů. `dotnet test`Spustí nástroj test runner pomocí projektu testů jednotek, které jste vytvořili.
+`[Fact]` Atribut označuje testovací metodu, která spustí nástroj test runner. Z *PrimeService.Tests* složky, provést [ `dotnet test` ](../tools/dotnet-test.md) vytvářet testy a knihovny tříd a poté spusťte testy. Nástroj test runner xUnit obsahuje vstupní bod programu ke spuštění testů. `dotnet test`Spustí nástroj test runner pomocí projektu testů jednotek, které jste vytvořili.
 
-Test se nezdaří. Nevytvořili jste ještě implementace. Psaní kódu nejjednodušší v, aby tento test `PrimeService` třídu, která funguje:
+Test se nezdaří. Nevytvořili jste ještě implementace. Psaní kódu nejjednodušší v, aby tento test `PrimeService` třídu, která funguje. Nahradit existující `IsPrime` implementace metod následujícím kódem:
 
 ```csharp
 public bool IsPrime(int candidate)
@@ -138,17 +148,21 @@ public bool IsPrime(int candidate)
 }
 ```
 
-V *testování pomocí dotnet – testování* spusťte `dotnet test` znovu. `dotnet test` Příkaz spustí sestavení pro `PrimeService` projektu a pak `PrimeService.Tests` projektu. Po sestavení obou projektů, spustí se tento jeden test. Pak předá.
+V *PrimeService.Tests* spusťte `dotnet test` znovu. `dotnet test` Příkaz spustí sestavení pro `PrimeService` projektu a pak `PrimeService.Tests` projektu. Po sestavení obou projektů, spustí se tento jeden test. Pak předá.
 
 ## <a name="adding-more-features"></a>Přidání další funkce
 
-Teď, když jste udělali jeden testovací předání, je čas zapsat informace. Existuje několik dalších jednoduchý případů pro prvočísel: 0, -1. Můžete přidat jako nový testování pomocí těchto případech `[Fact]` atribut, ale které rychle stane zdlouhavé. Existují další xUnit atributy, které vám umožní zápisu sada testů, podobně jako.  A `[Theory]` atribut představuje sada testů, které provést stejný kód, ale mají jinou vstupní argumenty. Můžete použít `[InlineData]` atribut zadat hodnoty pro tyto vstupy.
+Teď, když jste udělali jeden testovací předání, je čas zapsat informace. Existuje několik dalších jednoduchý případů pro prvočísel: 0, -1. Můžete přidat jako nový testování pomocí těchto případech `[Fact]` atribut, ale které rychle stane zdlouhavé. Existují další xUnit atributy, které vám umožní zápisu sada testů, podobně jako:
 
-Místo vytváření nové testů, platí tyto dva atributy pro vytvoření jedné teoreticky. Teorie je metoda, která porovná několik hodnoty menší než dva, což je nejnižší prime číslo:
+- `[Theory]`představuje sada testů, které provést stejný kód, ale mají jinou vstupní argumenty.
+
+- `[InlineData]`atribut určuje hodnoty pro tyto vstupy.
+
+Místo vytváření nové testů, platí tyto dva atributy `[Theory]` a `[InlineData]`, k vytvoření jedné teoreticky v *PrimeService_IsPrimeShould.cs* souboru. Teorie je metoda, která porovná několik hodnoty menší než dva, což je nejnižší prime číslo:
 
 [!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
-Spustit `dotnet test`, a dvě z nich testy nezdaří. Chcete-li všechny testy průchodu, změnit `if` klauzule na začátku metody:
+Spustit `dotnet test` znovu, a obě tyto testy by měl nezdaří. Chcete-li všechny testy průchodu, změnit `if` klauzule na začátku `IsPrime` metoda v *PrimeService.cs* souboru:
 
 ```csharp
 if (candidate < 2)
@@ -158,4 +172,4 @@ Pokračujte k iteraci v přidáním další testy, další teorií a další kó
 
 ### <a name="additional-resources"></a>Další zdroje
 
-[Testování řadiče logiku v ASP.NET Core](https://docs.microsoft.com/aspnet/core/mvc/controllers/testing)
+[Testování řadiče logiku v ASP.NET Core](/aspnet/core/mvc/controllers/testing)

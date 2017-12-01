@@ -4,15 +4,15 @@ description: "Zjistěte, jak obnovit závislosti a specifické pro projekt nást
 keywords: "příkaz DotNet obnovit, rozhraní příkazového řádku, rozhraní příkazového řádku, .NET Core"
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 11/30/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 82a78dcb0cc85e2ba087b6df5ee029cbfb687358
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 887f562803226d99901a6ee13175c1a43956b0cd
+ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="dotnet-restore"></a>obnovení DotNet.
 
@@ -53,6 +53,21 @@ Závislosti, zadáte umístění obnoveného balíčky během obnovení operace 
 Pro konkrétní projekt nástrojů, `dotnet restore` nejprve obnoví balíček, ve kterém se nástroj nachází v balení a potom pokračuje k obnovení nástroje závislosti uvedeného v souboru projektu.
 
 Chování `dotnet restore` příkaz je ovlivňován některá nastavení v *Nuget.Config* soubor, pokud je k dispozici. Například nastavení `globalPackagesFolder` v *NuGet.Config* umístí obnovené balíčků NuGet v zadané složce. Jde o alternativu k určení `--packages` možnost `dotnet restore` příkaz. Další informace najdete v tématu [NuGet.Config odkaz](/nuget/schema/nuget-config-file).
+
+## <a name="implicit-dotnet-restore"></a>Implicitní`dotnet restore`
+
+Od verze rozhraní .NET 2.0 jádra, `dotnet restore` spuštění implicitně v případě potřeby při vydání následující příkazy:
+
+- [`dotnet new`](dotnet-new.md)
+- [`dotnet build`](dotnet-build.md)
+- [`dotnet run`](dotnet-run.md)
+- [`dotnet test`](dotnet-test.md)
+- [`dotnet publish`](dotnet-publish.md)
+- [`dotnet pack`](dotnet-pack.md)
+
+Ve většině případů potřebujete už explicitně použít `dotnet restore` příkaz. 
+
+V některých případech je nepohodlná pro `dotnet restore` ke spuštění implicitně. Například některé automatizované systémy, jako je například systémy sestavení muset volat `dotnet restore` explicitně k řízení, když dojde k obnovení, abyste se mohli řídit využití sítě. Aby se zabránilo `dotnet restore` ve spuštění implicitně, můžete použít `--no-restore` přepínače s žádným z těchto příkazů zakázat implicitní obnovení.
 
 ## <a name="arguments"></a>Arguments
 
