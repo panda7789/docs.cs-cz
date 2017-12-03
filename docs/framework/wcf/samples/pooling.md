@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
 caps.latest.revision: "29"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e7e893a48e590f2b8a2ada88662cf454dc7881e3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fb45a08e9f21578b69dedbe504cfb8bbd21193bb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="pooling"></a>Sdružování
 Tento příklad ukazuje, jak rozšířit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pro podporu sdružování objektů. Ukázka ukazuje, jak vytvořit atribut, který je syntakticky a sémanticky podobná `ObjectPoolingAttribute` atribut funkce služby Enterprise. Sdružování objektů zajistí výrazné zvýšení výkonu aplikace na výkon. Pokud se nepoužívá správně však může mít opačný efekt. Sdružování objektů pomáhá snížit režii znovu vytvořit často používaných objektů, které vyžadují rozsáhlé inicializace. Však sdružování objekt fronty Pokud volání metody na objekt ve fondu používá značné množství času na dokončení, další požadavky při dosažení k maximální velikosti fondu. Proto může dojít k selhání obsluze některé objekt požadavky na vytvoření byla vrácena výjimka časového limitu.  

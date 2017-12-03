@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1e7a223248b574e30c266c3c9ac66bf317f1d19f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 369c8738addeb083b42063161957cf9f97e2cd1c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation funkce podrobností
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]Přidá do modelu Windows Workflow Foundation celou řadu funkcí. Tento dokument obsahuje několik nových funkcí a uvádí podrobnosti o scénářích, ve kterých mohou být užitečné.  
@@ -188,7 +188,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Návrhář dokumentaci:  
   
-    -   [Vývojový diagram návrháře aktivit](/visualstudio/workflow-designer/flowchart-activity-designers)  
+    -   [Návrháři aktivit vývojového diagramu](/visualstudio/workflow-designer/flowchart-activity-designers)  
   
 ### <a name="flowchart-scenarios"></a>Vývojový diagram scénáře  
  Vývojový diagram aktivity lze použít k implementaci hádání hru. Je velmi jednoduchý hádání herní: počítač vybere náhodné číslo a má přehrávač tak snadno uhodnout toto číslo. Když přehrávač odešle každý odhad, počítač mu zobrazuje nápovědu (tj. "zkoušet na nižší číslo"). Pokud přehrávač najde číslo menší než 7 pokusů o přihlášení, dostane speciální Blahopřání z počítače. Tato hra můžete provedeny s kombinaci následující procedurální aktivity:  
@@ -220,7 +220,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Návrhář dokumentaci:  
   
-    -   [Návrhář paralelní aktivity](/visualstudio/workflow-designer/parallel-activity-designer)  
+    -   [Návrhář aktivity Parallel](/visualstudio/workflow-designer/parallel-activity-designer)  
   
     -   [ParallelForEach\<T > Návrhář aktivity](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)  
   

@@ -10,14 +10,14 @@ ms.topic: article
 helpviewer_keywords: programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7b9afd82e90aa8a951f8d78535958723f8c632dd
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 47d06950f8aa9b85420d873adcc4b1acb89a5219
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-security"></a>Pracovní postup zabezpečení
 [!INCLUDE[wf](../../../includes/wf-md.md)]je integrován s několika různých technologií, jako je Microsoft SQL Server a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Interakci s těmito technologiemi může znamenat problémy se zabezpečením do vašeho pracovního postupu, pokud se to udělá nesprávně.  

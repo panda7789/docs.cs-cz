@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 941049b6-8e98-497f-ab3f-19848241699f
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 21f85c21490f1200d1f486f44036356287aec91f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 99c7c0e02d82b9c7d05ab04cd8896449f8a7de89
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="data-contracts"></a>Kontrakty dat
 Tato část obsahuje příklady vysvětlující kontrakty dat v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

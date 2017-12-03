@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4ab86b17-eab9-4846-a881-0099f9a7cc64
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ba41bd63f1dc23441cc7f265a8b1339d0b1194d5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8dbaa6f3df2bd4dcbde199f867686b3e05ae235f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>Atributy ServiceModel a odkazy ServiceDescription
 *Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třída) společně popisují všechny aspekty služby. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá popis stromu k sestavení běhu platný služby, chcete-li publikovat Web Services Description Language (WSDL), jazyk definice schématu XML (XSD) a výrazy zásad (metadata) o služby, který můžou klienti používat pro připojení k a používat službu a Generovat různé kódu a konfigurace souborů reprezentace strom hodnot popis.  

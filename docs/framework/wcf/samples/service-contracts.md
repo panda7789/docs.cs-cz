@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9e34b694-aa56-45b3-8dd1-2616705b4fc5
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4d11dd73858848ab700a560896c311784e694ccf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fdbd6260cc435094b499b9e4f3b7bf02f32e27a1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="service-contracts"></a>Kontrakty služeb
 Tato část obsahuje příklady vysvětlující kontraktů služby v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

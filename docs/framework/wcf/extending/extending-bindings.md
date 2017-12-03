@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: extending bindings [WCF]
 ms.assetid: 5e40d306-b3c1-4429-80c4-fbb1d956856c
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7f51aea5451f4f74c6658e16c4aced6e76ecbb3b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 692e51fc6276fbee0c1764c0040a251fe32b2c9f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="extending-bindings"></a>Rozšiřování vazeb
 Vazby zadejte přenosu, kódování a protokol požadované pro připojení ke koncovému bodu. Vazba rozšíření a vlastní vazby implementovat vlastní komunikaci funkce potřebné k podpoře funkce aplikací.  

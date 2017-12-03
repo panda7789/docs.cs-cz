@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
 caps.latest.revision: "37"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2136b4f9ab97f7ed0e4c31e6ffc26f788546419b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f3f9834e99fb7fa98e2f986a1ce5460aa387143f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace.  

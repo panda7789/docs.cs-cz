@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ac770da2-218e-4708-aeb5-465369c94a8d
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b9046bcf4382ba664b85e033fad1a221189bbadf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 925d541cde2da4226ed993ee3a9dec324dca8298
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="microsofttransactionstransactionbridgeprotocolstarted"></a>Microsoft.Transactions.TransactionBridge.ProtocolStarted
 Protokol WS-Atomic Transactions byla spuštěna.  

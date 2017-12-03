@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: data contracts [WCF], equivalence
 ms.assetid: f06f3c7e-c235-4ec1-b200-68142edf1ed1
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e3494c877db156ecc818c760bd0712f5e59ca0a3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7367cabecc18f32860e0a391ce5cf48d54503dc6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="data-contract-equivalence"></a>Ekvivalence kontraktů dat
 Pro klienta k úspěšnému odeslání dat určitého typu služby nebo k službě úspěšně posílat data do klienta odeslané typ nemusí nutně existovat na koncové straně příjmu. Jediným požadavkem je, že kontrakty dat obou typů být ekvivalentní. (V některých případech striktní ekvivalenční se nevyžaduje, jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).)  

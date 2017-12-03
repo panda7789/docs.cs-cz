@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: cb4173c5-476b-40d9-aa5c-19d95e98a51d
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8cc69c86ca73db180ea797d1018ca49bf21f8448
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 43ce0200a48ec9b470b7ec98f447b6e37512d06f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsnoexistingtransportmanager"></a>System.ServiceModel.Channels.NoExistingTransportManager
 System.ServiceModel.Channels.NoExistingTransportManager  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c3c9bb9619cf076f6d6053e1936f989b169ebec4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2cbc0fc790ce6ed9de2a920c851ee6656fa3abaa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="lttcptransportgt"></a>&lt;tcpTransport&gt;
 Definuje přenos TCP, který lze použít pro vlastní vazby pomocí kanálu pro přenos zpráv.  

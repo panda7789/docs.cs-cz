@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e8e589d2-12c6-4794-8a11-1ee90b47dfaa
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2a50f8f36eb8116f7890ba6eda3fcbb3b2e940c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ec7014afbc9007deda93be8c8117b136ab5f554
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="interoperability-with-web-services-enhancements-30"></a>Interoperabilita s Web Services Enhancements 3.0
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]služby a klienti jsou úroveň kompatibilní s 3.0 vylepšení webové služby pro klienty Microsoft .NET (WSE) a služby při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienty a služby jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing.  

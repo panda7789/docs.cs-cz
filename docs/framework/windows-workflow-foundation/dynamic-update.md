@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8b6ef19b-9691-4b4b-824c-3c651a9db96e
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1d8aff19cc087cf4aea2befb7a39533422aeabd8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0bd320b9875f7ed2d5acb124feb4b7d3bb82d62e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="dynamic-update"></a>Dynamická aktualizace
 Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři aplikace k aktualizaci definice pracovního postupu instance trvalou pracovního postupu. To může být implementace oprava chyb, nové požadavky, nebo aby bylo možné ošetřit neočekávané změny. Toto téma obsahuje přehled funkcí Dynamická aktualizace byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  

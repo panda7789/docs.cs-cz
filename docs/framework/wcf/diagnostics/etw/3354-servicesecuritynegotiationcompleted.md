@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 093aeefe-1609-4409-b6d2-00f71772bcf7
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e1fac85d86aeaa5a39b784e105731769bb734ca2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 36fd2f34579f20eddfe3ca73b8d0b87afab900c8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="3354---servicesecuritynegotiationcompleted"></a>3354 - ServiceSecurityNegotiationCompleted
 ## <a name="properties"></a>Vlastnosti  

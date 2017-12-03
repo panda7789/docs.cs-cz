@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 05b0549b-882d-4660-b6f0-5678543e5475
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8a4a458d49e7ec3db3e80202e53e3a1f264d207b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0086dc0c82fefad3cb1e5a73ddd9ced909f05453
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>Postupy: Vytvoření vlastní zásady autorizace
 Infrastruktura Identity modelu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporuje model na základě deklarace autorizace. Deklarace identity jsou extrahovány z tokenů, volitelně zpracovává vlastní zásady autorizace a pak umístit do <xref:System.IdentityModel.Policy.AuthorizationContext> , pak může být prověřen pro autorizační rozhodnutí. Vlastní zásadu lze použít na transformaci deklarací od příchozí tokeny do očekávaného aplikaci deklarací identity. Tímto způsobem může být aplikační vrstvu izolované od podrobnosti o různé deklarace obsloužených token různé typy, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje. Toto téma ukazuje, jak implementovat vlastní zásady autorizace a postup přidání ke kolekci zásady, které používá služba pro tuto zásadu.  

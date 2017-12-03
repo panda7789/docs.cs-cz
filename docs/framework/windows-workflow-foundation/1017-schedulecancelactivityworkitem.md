@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 864546ab-d65c-4989-8fcb-537ba03a3cdd
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c6d348ec18b4d5eff7156d1e9809eb793ac1681d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a632d59ddd75b375ff5e828a9f35aeecb0118f1c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="1017---schedulecancelactivityworkitem"></a>1017 - ScheduleCancelActivityWorkItem
 ## <a name="properties"></a>Vlastnosti  

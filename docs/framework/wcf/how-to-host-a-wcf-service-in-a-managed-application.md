@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
 caps.latest.revision: "42"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ca834c097f7e8cea14337fece651b2b3059d06b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ddbf0df6e4fbf62ab0e7ec8c741a0f3be01c35ef
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-application"></a>Postupy: Hostování služby WCF ve spravované aplikaci
 K hostování služby ve spravované aplikaci, vkládat kód pro službu uvnitř kódu spravované aplikace, definujte koncový bod služby buď imperativní v kódu deklarativně prostřednictvím konfigurace, nebo pomocí výchozí koncové body a pak vytvořte instance <xref:System.ServiceModel.ServiceHost>.  

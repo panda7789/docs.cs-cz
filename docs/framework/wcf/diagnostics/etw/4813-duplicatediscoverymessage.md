@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c49417d1-1f21-4a85-88a5-cbfe108ac8a1
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 32f837f3103e8c71f9359826c30c8d79b198cd35
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 94e0ae2e04b5a9ae7ed015bcfbb3f20f8a7e4d44
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4813---duplicatediscoverymessage"></a>4813 – DuplicateDiscoveryMessage
 ## <a name="properties"></a>Vlastnosti  

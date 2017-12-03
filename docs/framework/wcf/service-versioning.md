@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 73b7fd7564fea065167978deaad21bb533dbef0c
-ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 679a6a30e72e18547a04007c58c82d5f121893d0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/25/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně několikrát během své životnosti může potřebovat služby (a koncových bodů, které vystavují) se musí změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo k jiné řešení problémy. Každé změně zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu správu verzí v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].  

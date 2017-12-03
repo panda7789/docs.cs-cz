@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Windows Communication Foundation, transports
 ms.assetid: 005c894b-af70-48aa-a1c1-c99338083c27
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 115e2a69c7d990c7d4c59634644fb557e83ad405
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9275f1812111365ed6b0fb3be6957cd9ca883fdf
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Přenosy ve službě Windows Communication Foundation
 Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, konfigurace přenosu a nastavení, ladění vlastnosti.  

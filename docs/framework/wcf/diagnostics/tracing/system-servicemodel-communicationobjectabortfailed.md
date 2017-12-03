@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f3cab70b-ec5d-412c-a7c2-e09377bc6d46
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 542d6c29537cb371f37a97c029935adcedb3329d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2f1e8016731919b96a673a2f05acafb86636beaa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcommunicationobjectabortfailed"></a>System.ServiceModel.CommunicationObjectAbortFailed
 Přerušení komunikace objektu se nezdařilo.  

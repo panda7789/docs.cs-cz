@@ -14,14 +14,14 @@ helpviewer_keywords:
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 52c5dfd84a55e727e465e2bd6214462fd57c334f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3231e5b043dd0e65c09f25eed56341e660bf1f87
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledat a identifikovat koncový bod. Tato adresa se skládá především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je znázorněná [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] programovací model pomocí <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiných koncovými body, které exchange zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují jiné záhlaví SOAP, vyžaduje ke zpřístupnění služby. Zadejte další volitelné hlavičky a podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentován v drátové síti WS-Addressing reference koncového bodu (EPR).  

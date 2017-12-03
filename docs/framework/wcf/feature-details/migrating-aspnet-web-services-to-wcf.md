@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1adbb931-f0b1-47f3-9caf-169e4edc9907
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e2051de2c0cef9a31337b320c347bb7d85dbadae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4ca1eb73842f3f7dac5557c1eafff637396d317a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>Migrace webových služeb ASP.NET na WCF
 Technologie ASP.NET poskytuje knihovny tříd rozhraní .NET Framework a nástroje pro vytváření webových služeb, jakož i zařízení pro hostování služeb v rámci Internetové informační služby (IIS). [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje knihovny tříd rozhraní .NET Framework, nástroje a hostování zařízení pro povolení softwaru entity na komunikaci pomocí žádné protokoly, včetně těch, které používá webové služby.  Migrace webových služeb ASP.NET pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje využívat nové funkce a vylepšení, které jsou jedinečné pro vaše aplikace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  

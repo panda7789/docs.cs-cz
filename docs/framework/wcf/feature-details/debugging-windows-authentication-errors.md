@@ -16,14 +16,14 @@ helpviewer_keywords:
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f24dd1d597345f1aa8658073eef730832379b78c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c153fc3fa44b6f84d5aa11a7f20dcce3df533c8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování systému Windows jako vhodný mechanismus zabezpečení, rozhraní pro zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Při výskytu chyb zabezpečení ve vrstvě rozhraní SSPI, jsou prezentované podle [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Toto téma obsahuje framework a sadu otázky, které pomohou diagnostikovat chyby.  

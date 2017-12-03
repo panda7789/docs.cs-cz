@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d7e8d8446f9cf4f95fecba6bfc18a5432f996f9f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63f44a6380d2bca4ad831c590920e09ab93610c4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace, které hostují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby využívají protokoly HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  

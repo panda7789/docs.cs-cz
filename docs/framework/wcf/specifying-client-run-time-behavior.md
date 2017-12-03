@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3aebab3799af562d958eb8e3e83380e734fe9268
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 22d244fdc2c9fc3d3802e520d1fdd6f31bdc1c4e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]jako klienti, [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby, lze nakonfigurovat tak, abyste upravili chování běhové tak, aby vyhovovala klientská aplikace. Tři atributy jsou k dispozici pro určení chování klienta. Můžete použít objekty zpětné volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributy změnit jejich chování. Pro atribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, lze použít k oddělení logické cílové z cílového okamžitou síť. Kromě toho můžete použít typů zpětného volání duplexní klientů některá chování straně služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Určení chování služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  

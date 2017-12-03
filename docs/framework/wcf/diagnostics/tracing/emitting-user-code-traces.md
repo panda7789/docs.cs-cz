@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d743ae68955bba844f84fed71047d9331fd349af
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2162377fbe8f8329c12dfd88a55d893d26f5b2bf
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="emitting-user-code-traces"></a>Generování trasování v uživatelském kódu
 Kromě povolení trasování v konfiguraci ke shromažďování dat instrumentace generované [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)], můžete také generování trasování v uživatelském kódu prostřednictvím kódu programu. Tímto způsobem můžete vytvořit proaktivně instrumentace data, která můžete zobrazit později pro účely diagnostiky. Toto téma popisuje, jak můžete to provést.  

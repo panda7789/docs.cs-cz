@@ -6,14 +6,14 @@ ms.technology: dotnet-clr
 ms.topic: article
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3a41c6c7304234535993d83329c4faa464218e3d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 43732c6c2effd38b8bfdb49c1a5fbf8275eb15e3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-web-http-formatting"></a>Formátování WCF Web HTTP
 Programovací model WCF Web HTTP umožňuje dynamicky určí nejlepší formát pro operaci služby vrátit v odpovědi. Jsou podporovány dvě metody pro zjištění odpovídající formátu: automatické a explicitní.  

@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: WCF, username and password
 ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9086489d7b48b459ad92f1712809406cbde7e074
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1ec4dc2d7f066d79b2cf54c3d474b47e769b626c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>Postupy: Použití validátoru vlastního uživatelského jména a hesla
 Ve výchozím nastavení, pokud uživatelské jméno a heslo slouží k ověřování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá Windows k ověření uživatelského jména a hesla. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje vlastní uživatelské jméno a heslo schémat ověřování, také známé jako *validátory*. Zahrnout validátor vlastní uživatelské jméno a heslo, vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> a potom jej nakonfigurovat.  

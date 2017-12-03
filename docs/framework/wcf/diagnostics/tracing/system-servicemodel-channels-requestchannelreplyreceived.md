@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 61d428d1-903e-4c34-9c4f-22704043d9d6
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5e5e2f05865e777c7540d22ba172ba557c97be73
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b715185032e11ad9db9ddda028791fad06508eca
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsrequestchannelreplyreceived"></a>System.ServiceModel.Channels.RequestChannelReplyReceived
 System.ServiceModel.Channels.RequestChannelReplyReceived  

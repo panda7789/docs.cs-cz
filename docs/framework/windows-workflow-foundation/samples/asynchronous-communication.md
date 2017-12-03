@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 128dc092-9eb2-4e33-9470-9a7f62b60df6
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1b9435342d73fc5cb292ee72781362146604ce9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5ea2d705a38ddae1689d212bbd50196920fe73fe
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="asynchronous-communication"></a>Asynchronní komunikaci
 Tento příklad znázorňuje způsob komunikace mezi dva různé [!INCLUDE[wf](../../../../includes/wf-md.md)] služby se ve výchozím nastavení provádí asynchronně.  

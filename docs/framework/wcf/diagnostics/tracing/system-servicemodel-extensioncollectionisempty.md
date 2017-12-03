@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: efac8d8a-4c91-45f4-8e33-9e370be55eae
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d79096280e361acb1d2d87ad524756d9f73383f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: db9c01b941da5836f022e438e1e989c7e5b26697
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelextensioncollectionisempty"></a>System.ServiceModel.ExtensionCollectionIsEmpty
 System.ServiceModel.ExtensionCollectionIsEmpty  

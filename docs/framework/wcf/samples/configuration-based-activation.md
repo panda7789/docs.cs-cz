@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 21bb762e-c43e-4b0c-887b-5e434d665838
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: db67447ce262949c9ad302a37420fc7023264bd2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cc39a282cbb12b014c0749b3eb807f3248fca16e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuration-based-activation"></a>Aktivace podle konfigurace
 Tento příklad ukazuje, jak aktivovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby bez nutnosti .svc souboru.  

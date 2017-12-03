@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a79ed2aa-e49a-47a8-845a-c9f436ec9987
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 972b7e0ed9ffbc9f9ddecb2ab7afdd08626fde19
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9f93b1e9fdb1569507937c5381b157204ac88f87
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="understanding-state-changes"></a>Principy změn stavů
 Toto téma popisuje stavy a přechody, které mají kanály, typy používané struktura kanál stavy a jejich implementaci.  

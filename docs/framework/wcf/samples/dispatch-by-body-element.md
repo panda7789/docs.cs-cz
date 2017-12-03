@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1f727b5d4a1e2689b4a90971f5b5c93efb55c475
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c3624290176d93519ae420a98a7e93534d910fa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="dispatch-by-body-element"></a>Přiřazování zpráv metodám podle elementu těla
 Tento příklad znázorňuje způsob implementace alternativní algoritmus pro přiřazení k operacím příchozí zprávy.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0d925119-01a1-45c2-9ea0-23061323ad33
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 70398a66ac7036a2db8250acbe3927ad378f21b7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d910ad667a197c42c843c352429afeadbc0e81d0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="interoperability-and-integration"></a>Vzájemná spolupráce a integrace
 Tato část popisuje vzájemná spolupráce a integrace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

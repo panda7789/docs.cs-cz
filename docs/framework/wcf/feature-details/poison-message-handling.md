@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
 caps.latest.revision: "29"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 719210e91fc98c7ceb0f6c51252cfcdfe2f1339c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 609f53431e52da3629f5107adf91994a55eca89d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace mohou vzniknout, když aplikace založenou na fronty nemůže zpracovat zprávu z důvodu chyb. Splňovat požadavky na spolehlivost, aplikace přijímá zprávy v rámci transakce. Ruší se transakce, ve kterém byl přijat zprávu ve frontě zanechává zprávy ve frontě, zpráva se pokus o pod novou transakci. Pokud není problém, která způsobila zrušení vyřešen, může být zablokován má přijímající aplikace v smyčku přijímáním a přerušení stejná zpráva, dokud byl překročen maximální počet pokusů o doručení a výsledky poškozená zpráva.  

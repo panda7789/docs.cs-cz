@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 20d9cad52c0f528b521b031173b5dce1cb4f2a50
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5926af60d62e9063588cf7f7f8c4309568594337
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď
 Následující postupy popisují, jak získat přístup [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby jednosměrného kontraktu a kontraktů požadavek odpověď, který definuje a která nepoužívá vzoru duplexní komunikace.  

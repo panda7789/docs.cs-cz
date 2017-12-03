@@ -17,14 +17,14 @@ helpviewer_keywords:
 - WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2f103570cf7d94a9ac6256f3db991c44767fa7c4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4aa9cacfaa966bbe37618406f4b1413dec433726
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="administration-and-diagnostics"></a>Správa a diagnostika
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohatou sadu funkcí, které umožňují monitorovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]taky zpřístupňuje dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). Při vyskytne chyba nebo spustí funguje nesprávně aplikace, můžete zobrazit, pokud nic významné došlo k chybě v protokolu událostí. Můžete také použít protokolování zpráv a trasování a zjistěte, jaké události jsou situaci klient server ve vaší aplikaci. Tyto funkce pomůže vývojáře a IT odborníky řešení potíží [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace při nepracuje správně.  

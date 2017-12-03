@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
 caps.latest.revision: "31"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a659fa3801d52da4fa4837b7df4fea9e4ac6cf5d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fc0190747545e9325b62453bc79d163d3e566791
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] šablony jsou předdefinovaných šablon projektů a položek, můžete použít v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] rychle sestavíte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a okolního aplikace.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 94a30661-7177-4a63-ad07-54457137e9f2
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3cc26e26a9b26d7a0d124303df859cd6f727fd04
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1b7ee6cda688472ba3b038d1fa93fcb7b29565d8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelspeerneighborstatechanged"></a>System.ServiceModel.Channels.PeerNeighborStateChanged
 Došlo ke změně stavu sousedním partnera.  

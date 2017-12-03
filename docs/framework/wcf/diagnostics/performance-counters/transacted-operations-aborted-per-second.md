@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 19fc993f-2b3d-4898-852e-3b98ec2153a5
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 96ef8181b95d8614ae6cbfeaa468b0138d1129d5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a54b84f2fa0ab9c7531a17e69b10f78c725255ef
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transacted-operations-aborted-per-second"></a>Počet zrušených zpracovaných operací za sekundu
 Název čítače: Transakční operace přerušených za sekundu.  

@@ -13,14 +13,14 @@ helpviewer_keywords:
 - extending [WF]
 ms.assetid: d6861f28-9c8c-4225-872d-9a80e2e59034
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c5abf2876e53c58b85fb2c56465dda63cb98fb12
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e3640e69a46596d4675d7744c6e43fe9a499cb99
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="extending-windows-workflow-foundation"></a>Rozšíření modelu Windows Workflow Foundation
 Následující část popisuje, jak rozšířit [!INCLUDE[wf](../../../includes/wf-md.md)] u vlastních aktivit a návrhářů, v prostředích opětovné hostování nástroje mimo [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  

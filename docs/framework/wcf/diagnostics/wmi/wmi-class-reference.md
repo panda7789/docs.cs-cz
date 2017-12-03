@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ee03f0c567f2b154eaf2e7fdf608b093cfbe2d1e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7a74f1d7e70b8664df5022d6f9f42cf04b88f930
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wmi-class-reference"></a>WMI – přehled tříd
 Tato část obsahuje seznam všech tříd WMI vystavené [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] zprostředkovatele rozhraní WMI.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e2616a10-317e-4c34-8023-0c015a80a82f
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1e2d9389487bb95fe13b5c12b6f861ae30e29677
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ef77df0681f7177a3b006b84d5ed3b60b7954555
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="extended-protection-policy"></a>Zásady rozšířené ochrany
 Rozšířená ochrana je initiative zabezpečení pro ochranu proti útokům man-in-the-middle (typu MITM). Útoky typu MITM je ohrožení zabezpečení, ve kterém MITM přijímá pověření klienta a předává je na server.  

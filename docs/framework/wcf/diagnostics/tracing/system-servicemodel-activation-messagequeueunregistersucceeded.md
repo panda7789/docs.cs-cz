@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c2e344a4-3b10-430b-bdf3-b065777861bb
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cf4d5bb9bec05d24a9013c2f0ca5fde365dc48c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 36dc0a86d521b25d05b19550a9626703a4422be6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelactivationmessagequeueunregistersucceeded"></a>System.ServiceModel.Activation.MessageQueueUnregisterSucceeded
 System.ServiceModel.Activation.MessageQueueUnregisterSucceeded  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 71a78650cc430068b2ecf27174140f27e7193ae6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f7372aab9e728876a6127eb49e1594ac50810c99
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="troubleshooting-the-getting-started-tutorial"></a>Odstraňování problémů v kurzu Začínáme
 Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednictvím kurzu Začínáme a způsob jejich řešení.  

@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
 caps.latest.revision: "36"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f17b37b77c157f1ce3d5ee40fd6464ab378039d5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 78ad1159232ecfb75745dd72b7da1e3153a79574
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="basic-programming-lifecycle"></a>Základní programovací životní cyklus
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]umožňuje aplikacím komunikovat, zda jsou na stejném počítači, v Internetu, nebo na jinou aplikaci platformy. Toto téma popisuje úkoly, které jsou nutné k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace. Ukázkovou aplikaci, práce, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  

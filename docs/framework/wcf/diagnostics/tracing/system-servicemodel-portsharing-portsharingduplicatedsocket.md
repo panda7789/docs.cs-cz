@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7fd7a35d-3ade-44c2-b40e-2236c3ff18c5
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 472961b2a06d92ebda2b10bffc05b79d6306dc8f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f933a6cc0744afa552af4903eda5a9b77604e5fc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelportsharingportsharingduplicatedsocket"></a>System.ServiceModel.PortSharing.PortSharingDuplicatedSocket
 System.ServiceModel.PortSharing.PortSharingDuplicatedSocket  

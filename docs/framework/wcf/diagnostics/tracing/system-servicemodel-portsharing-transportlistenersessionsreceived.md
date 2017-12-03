@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e7a1aca3-7585-4e83-be9e-c2010424647e
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9235c5f0e12da3c8641893136188b11eef4acc62
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 93d4b930110ce360c86a0607e73a5514e58c7ca4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelportsharingtransportlistenersessionsreceived"></a>System.ServiceModel.PortSharing.TransportListenerSessionsReceived
 System.ServiceModel.PortSharing.TransportListenerSessionsReceived  

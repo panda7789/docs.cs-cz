@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3b749493-bd8a-4ccb-893e-5948901a1486
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a79a5c4997403f018ba34aea65e4c9fadab29443
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4aa0f4aec0a673a07c6b6d752d8609caedbcfa4b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuration-channel-factory"></a>Postup konfiguračního kanálu
 Tato ukázka obsahuje využití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>. <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> Umožňuje centrální správu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace klienta. To může být užitečný ve scénářích, ve kterých je konfigurace vybrali nebo změnit po doba načítání domény aplikace.  

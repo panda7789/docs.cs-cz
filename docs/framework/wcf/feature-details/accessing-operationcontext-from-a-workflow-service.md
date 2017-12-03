@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3d18626412c0a6233c8792a4f19d5d05ef083333
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 445a7c5e9b0665fcf57138144c8cf3445f2d15f2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>Přístup k informacím OperationContext ze služby pracovních postupů
 Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby pracovních postupů, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. Přepsání <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda, která se předá odkaz na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace tato vlastnost provádění načíst vlastní hlavičky, jakož i vlastní aktivity, který bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> informace budou načteny.  Toto téma také ukazuje, jak získat přístup na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí hlavičky prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  

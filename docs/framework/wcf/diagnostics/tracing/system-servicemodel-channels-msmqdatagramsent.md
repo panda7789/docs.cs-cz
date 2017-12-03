@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: eab449e8-e01b-4af8-bd8e-0f3a24689c82
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 84a25426d29aba83afd84edf6842209b387db5de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c75f4519820b88c7eaa0d2e51787b9581be00b9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsmsmqdatagramsent"></a>System.ServiceModel.Channels.MsmqDatagramSent
 System.ServiceModel.Channels.MsmqDatagramSent  

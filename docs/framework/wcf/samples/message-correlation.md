@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 54b7b7d9ba247f329fbf3c9040c641e3194d3bfb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ef105626d2427f0ea6dd49f696b78ffac4834f92
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tento příklad ukazuje, jak můžete k aplikaci služby Řízení front zpráv (MSMQ) odešle zprávu služby MSMQ pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavků a odpovědí. Tato ukázka používá – msmqIntegrationBinding vazby. Služba je v tomto případě vlastním hostováním konzolovou aplikaci, abyste mohli pozorovat, že služby, která přijímá zprávy zařazené do fronty. K  

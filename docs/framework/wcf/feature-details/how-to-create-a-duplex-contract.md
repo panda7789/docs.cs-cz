@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: duplex contracts [WCF]
 ms.assetid: 500a75b6-998a-47d5-8e3b-24e3aba2a434
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 537e86b4eb43864e9a27d5a8a485ea5cb752833d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 30fc31055563db75512639bf7fb3b9119be280e6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-duplex-contract"></a>Postupy: Vytvoření duplexního kontraktu
 Toto téma ukazuje základní kroky pro vytvoření metody, které používají duplexního kontraktu (obousměrné). Duplexní kontrakt umožňuje klienty a servery pro komunikaci mezi sebou nezávisle tak, aby buď můžete spustit volání na druhý. Duplexní kontrakt je jedním ze tří vzorů zprávy k dispozici pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Další dva zprávy vzory jsou jednosměrná a požadavku a odpovědi. Duplexního kontraktu se skládá ze dvou jednosměrné kontrakty mezi klientem a serverem a nevyžaduje korelaci volání metody. Tento druh kontrakt použijte, pokud vaše služba musí dotazovat klienta pro další informace nebo explicitně vyvolávání událostí na klientovi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Vytvoření aplikace klienta pro duplexního kontraktu, najdete v části [postupy: přístup k službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Ukázku práce, najdete [duplexní](../../../../docs/framework/wcf/samples/duplex.md) ukázka.  

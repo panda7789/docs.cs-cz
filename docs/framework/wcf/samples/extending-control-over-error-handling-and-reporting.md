@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: acd45c82983cb122844866b9db4a356b746a10eb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a4284f07a21a9bb176a78a8a2abefe7c7c7c6b66
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
 Tento příklad ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidat ke službě se budou zpracovávat chyby. Klient vynutí několik chybové stavy. Služba zachytí chyby a zaznamenává je do souboru.  

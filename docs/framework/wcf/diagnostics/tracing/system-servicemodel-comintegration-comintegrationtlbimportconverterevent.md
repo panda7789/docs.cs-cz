@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b9d06575-521c-4b88-ae45-0aec098b5bd7
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 15e9da2d78ff2fff680f0f6ebe211c9a2b494f76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3c91b09f23efe7bd1bc627402c924a47786a05b0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationtlbimportconverterevent"></a>System.ServiceModel.ComIntegration.ComIntegrationTLBImportConverterEvent
 System.ServiceModel.ComIntegration.ComIntegrationTLBImportConverterEvent  

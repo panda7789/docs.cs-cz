@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6a37a754-6b8c-4ebe-bdf2-d4f0520271d5
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 97bf047f26b95cdd4ac4a40e6b2284ec170442bb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 184c4a5c31969ee060f72d937ab02af733340ca4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-with-scopes-sample"></a>Ukázka zjišťování pomocí oborů
 Tento příklad ukazuje způsob použití obory zařadit do kategorií zjistitelný koncových bodů a jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> pro asynchronní vyhledávání pro koncové body. Tato ukázka na službu, ukazuje, jak přizpůsobit přidáním koncový bod zjišťování chování a jej použijete k přidání oboru ke koncovému bodu, stejně jako řízení možnosti rozpoznání pro koncový bod zjišťování pro každý koncový bod. Na straně klienta vzorku prochází přes jak klienti mohou vytvářet <xref:System.ServiceModel.Discovery.DiscoveryClient> a optimalizovat vyhledávání parametry, které zahrnují obory přidáním oborů, které chcete <xref:System.ServiceModel.Discovery.FindCriteria>. Tento příklad také ukazuje, jak klienti může omezit odpovědi přidáním kritéria ukončení.  

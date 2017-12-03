@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ac361bfb-017d-4da9-a2d7-fc0fb72d65bb
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 75069b00fa07078ff0eb2d49e64f046d5415d154
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5e8a853ebfa84ab5517e34bd67ae38672fdacddf
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="deploying-services"></a>Nasazení služeb
 Toto téma popisuje, jak můžete nasadit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace běhové prostředí.  

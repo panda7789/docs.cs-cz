@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 279f6094b7e41549a285ac0175c3f949f9d8e7e1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d00f8847e64e30b42490f319ea3e1df5e5a1850d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
 Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporu pro fronty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje podporu pro službu Řízení front s využitím Microsoft služby Řízení front zpráv (dříve označované jako MSMQ) jako přenosového mechanismu a umožňuje následující scénáře:  

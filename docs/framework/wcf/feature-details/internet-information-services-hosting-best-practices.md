@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 60d703336aeac3471e4b554f65998621b5cc8ef8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6b1139fe82bc0a02eafb274f13bfb7b39eeec609
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé z osvědčených postupů pro hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.  

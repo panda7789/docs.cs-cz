@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1aab82e7-7f89-4255-be46-526b09ceeb8b
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6c07855537e7fdbd2d2323c00b7fe8f5c7cb1d4f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9064f56dab2c7a2b36394f6f77ded77edc0b387b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-custom-activity-designers-and-templates"></a>Pomocí Návrháře vlastních aktivit a šablony
 Tento oddíl obsahuje témata popisující, jak vytvářet Návrháře vlastních aktivit a šablony vlastní aktivity.  

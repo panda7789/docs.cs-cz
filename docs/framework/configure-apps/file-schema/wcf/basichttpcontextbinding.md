@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 39b16b82-4ec6-4eff-8031-67e026870961
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1c39ca0a4437016b8b718bd5d3cf988029556fb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b18afdeb63badb22e1447372961d2eff7735243b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltbasichttpcontextbindinggt"></a>&lt;Vazba basicHttpContextBinding&gt;
 Určení vazbu, která poskytuje kontext pro <xref:System.ServiceModel.BasicHttpBinding> k výměně povolením soubory cookie HTTP jako mechanismus exchange.  

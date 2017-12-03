@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 15b19d09-7de7-4638-9556-6ef396cc45ec
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 12a0a0b93bfb944a3032cc171f97f411de5d2aab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 50d523fdd0498aef7e662af5f4dc41b2394dcf42
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>Správa služby kontextu dat (služby WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány službě zadaná data. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou bezstavové služby, není kontextu. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakce s službu data za účelem podpory funkcí, jako například Správa změn. Tato třída také spravuje identit a sleduje změny.  

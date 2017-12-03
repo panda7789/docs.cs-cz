@@ -17,14 +17,14 @@ helpviewer_keywords:
 - data contracts [WCF], creating for a class or structure
 ms.assetid: bc464889-3070-4a2f-91d2-e788a0f686a7
 caps.latest.revision: "25"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6c5f82e2445e816c4e577e6ce5b0c8c4e2359221
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e530cfa5cd5716e937318bf8fc458d372202ffeb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu
 Toto téma ukazuje základní kroky pro vytvoření kontraktu dat pomocí třídu nebo strukturu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]měnící data a jak se používají, najdete v části [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  

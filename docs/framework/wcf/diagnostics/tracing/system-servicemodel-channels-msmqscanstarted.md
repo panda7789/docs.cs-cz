@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 56046431-94fc-4b04-a0fb-4b3f3e31a26f
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1c42fd58c0874db20d1e3c0fb78b2d62d58869ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 071b7135f6c3a91442bf50be2bcc567464ae8e7d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsmsmqscanstarted"></a>System.ServiceModel.Channels.MsmqScanStarted
 System.ServiceModel.Channels.MsmqScanStarted  

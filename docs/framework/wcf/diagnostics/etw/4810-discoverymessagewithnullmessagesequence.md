@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: aa70573e-8a76-486a-9616-ccca8c7008b6
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1925e11e2b572f66f5c9da9f48b5110ff3db6e31
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6b4f02ad0b34eb402aa0f79d0675f4d1fb0e5781
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4810---discoverymessagewithnullmessagesequence"></a>4810 – DiscoveryMessageWithNullMessageSequence
 ## <a name="properties"></a>Vlastnosti  

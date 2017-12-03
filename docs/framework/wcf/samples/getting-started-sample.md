@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
 caps.latest.revision: "60"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: dda172904f55330700d1cf3e6e5e2c3462118c91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a5ff6af234fabf278c84a3487b9f65217d84f6e4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="getting-started-sample"></a>Ukázka Začínáme
 Ukázka Začínáme ukazuje, jak implementovat typické služby a typické klienta pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Tato ukázka je základem pro všechny ostatní vzorky základní technologie.  

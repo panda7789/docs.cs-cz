@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 74540f52-8762-4147-b5ba-e171180515a3
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4d7386b2f7c6d78dde41c88c66d216b99cc21050
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d97d78ddbf52e821cfff2aac08b41e732b189602
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="queue-dropped-messages-per-second"></a>Počet zpráv vyřazených z fronty za sekundu
 Název čítače: Zařadit do fronty ztracených zpráv za sekundu.  

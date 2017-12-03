@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: security [WCF], custom tokens
 ms.assetid: 8b2dbe29-dec2-4652-8e34-fb21bc1437b5
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 36335ce8fd7cc3b82f73c25dbd71e74e207f4f3b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b36910f9448fadc6ffb5efc86a091fbac58c35f9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-tokens"></a>Vlastní tokeny
 I když [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nativně podporuje certifikáty X.509, tokeny kontext zabezpečení, lístky protokolu Kerberos a název tokeny uživatele jako přihlašovací údaje, je dostatečně flexibilní, aby vám umožní používat vlastní pověření.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 22dcace51b2c73193356450b4b210d1c1a899e28
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5886b327f1ea6d2866b9fc76bb29031ee870934e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 Podmnožinu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkcí podporovaných pro použití v částečně důvěryhodné aplikace slouží ke splnění požadavků některé, ale ne všechny scénáře použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Na serveru [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] splňuje požadavky na internetových sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] oprávnění na úrovni Medium Trust nastavit z bezpečnostních důvodů. Na straně klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporu částečné důvěryhodnosti je tak, aby splnily požadavky na nasazení technologie, jako [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]na aplikace prohlížeče XAML technologii, která umožňují plynulé a bezpečné nasazení aplikací klasické pracovní plochy umístěné na serverech.  

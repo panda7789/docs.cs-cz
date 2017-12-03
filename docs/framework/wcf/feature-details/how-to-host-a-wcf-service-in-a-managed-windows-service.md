@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 01f6ce27a05c11ddf4662609bf98730df5ddfda3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3e8572541e0bf9ddcfb93939c177b5cb8c440b41
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Postupy: Hostování služby WCF ve spravované službě Windows
 Toto téma popisuje základní kroky potřebné pro vytvoření [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služba, která je hostitelem služby systému Windows. Ve spravovaných hostování možnost, která je dlouho běžící služby systému Windows je povoleno scénáři [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované v zabezpečeném prostředí, která není zpráv, ve aktivovat mimo Internetové informační služby (IIS). Doba platnosti služby místo toho řídí operační systém. Tento hostitelský možnost je dostupná ve všech verzích systému Windows.  

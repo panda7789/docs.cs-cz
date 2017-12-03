@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f0be40b84b11268319daff343598aa949977c52d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 340af20c44b8fde3fdff92d07837c3cc04ca517d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="client-validation"></a>Ověřování ze strany klienta
 Služby často publikování metadat povolit automatické generování a konfigurace různých typů klientů proxy serveru. Pokud služba není důvěryhodný, klientské aplikace by měl ověřit, že metadata, splňuje zásady klientské aplikace týkající se zabezpečení, transakce, typ kontrakt služby a tak dále. Následující příklad ukazuje, jak zapsat klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že tento koncový bod služby lze bezpečně používat.  

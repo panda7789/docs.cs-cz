@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c5fcd409-246f-4f3e-b3f1-629506ca4c04
 caps.latest.revision: "23"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9737adfe300eaaeab75b4b071b4ed49fda4499c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 84c4ed6f27e98bcbb94b63a48f19b2d20aca7507
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-binding-reliable-session"></a>Spolehlivá relace s vlastními vazbami
 Vlastní vazby je definována seřazený seznam prvky diskrétní vazby. Tento příklad ukazuje, jak nakonfigurovat vlastní vazby s různými přenosu a zpráva kódování elementy, zejména povolení spolehlivé relace.  

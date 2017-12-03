@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f752d2aa2621ff650c864b2aca0928c5244c4917
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9532363adafd492ca35e10e6d20c788ddf5b1d17
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-the-wcf-development-tools"></a>Používání vývojářských nástrojů WCF
 Tato část popisuje [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] nástroje pro vývoj, které vám může pomoci při vývoji vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]služby.  

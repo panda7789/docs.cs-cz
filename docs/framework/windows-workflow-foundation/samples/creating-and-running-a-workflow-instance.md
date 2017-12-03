@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 19d27f47-0491-4569-8f53-51bc1d940e80
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d53becfc126f1acee4759ddff956b4435c9aa769
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b25acebfaf6df68ac3163a5ef4bcb235077139cc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="creating-and-running-a-workflow-instance"></a>Vytváření a spouštění instanci pracovního postupu
 Tento příklad ukazuje, jak spustit instanci pracovního postupu. Ukazuje, jak provést synchronně a asynchronně.  

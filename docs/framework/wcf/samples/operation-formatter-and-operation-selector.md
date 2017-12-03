@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c0e2dbd255a1fbadbd5dd4cd7e676b75e659fe2a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3fd8b59cd69807928b1a441d1bfb57f82d072288
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
 Tento příklad ukazuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] body rozšiřitelnosti lze povolit data zpráv do jiného formátu z co [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] očekává. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formátování očekávat parametry metody, které mají být zahrnuty v části `soap:body` elementu. Ukázka ukazuje, jak implementovat vlastní operaci formátování, které analyzuje data parametr z řetězce dotazu HTTP GET místo a vyvolá metody pomocí tato data.  

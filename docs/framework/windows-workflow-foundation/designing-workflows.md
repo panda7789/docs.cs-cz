@@ -10,14 +10,14 @@ ms.topic: article
 helpviewer_keywords: programming [WF], designing workflows
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: aff3f8108eb5cbe254575c73a5022e8dd1f99db1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 24bcc7377cad408d2cfe4c9e0f3fb60fe4b0327b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="designing-workflows"></a>Navrhování pracovních postupů
 Témata v této části popisují vzorů řízení toku používané při vývoji pracovního postupu.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a69a1b8f-8e15-45c5-87b8-bdb71e1c7ab8
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c8d68e665bbc48392ece1e4d708068da59f2146f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e1d533a1f559044caf3bc711e9401b75703254bc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="building-a-peer-channel-application"></a>Vytvoření aplikace rovnocenného kanálu
 Následující části obsahují pokyny týkající se vývoje aplikací rovnocenného kanálu.  

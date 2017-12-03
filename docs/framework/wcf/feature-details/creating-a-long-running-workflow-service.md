@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f4204de8c113c2ff553afec934b68f0beeb89580
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 65aa61ec53c00ed69d55d36fb023dc92c77e1f13
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící služeb pracovních postupů mohou spustit pro dlouhou dobu. V určitém okamžiku pracovní postup může se stát, nečinnosti čeká se na některé další informace. V takovém případě pracovního postupu uložena v databázi SQL a bude odebrán z paměti. Jakmile bude k dispozici další informace k instanci pracovního postupu je načteno zpět do paměti a pokračuje v provádění.  V tomto scénáři jsou implementace velmi zjednodušené řazení systému.  Klient odešle zprávu počáteční služby pracovního postupu spustit pořadí. Vrátí pořadí ID klienta. V tomto okamžiku služby pracovního postupu se čeká na další zprávu od klienta a klient se přepne do stavu nečinnosti a uložena v databázi systému SQL Server.  Když klient odešle na další zprávu pořadí položku, služby pracovního postupu je načteno zpět do paměti a dokončí zpracování pořadí. V ukázce kódu vrátí řetězec s informacemi o tom, že položka se přidal do pořadí. Ukázka kódu není určené jako aplikace skutečných technologie, ale spíš jednoduchý příklad, který znázorňuje dlouhotrvající služeb pracovních postupů. Toto téma předpokládá, že víte, jak vytvořit [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] projekty a řešení.  

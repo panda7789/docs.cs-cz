@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a5223f9b6e7854ec6575e8673bb874a1b9b60df7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 08296be1002ee50e18a45c546645f4cc117d6bb5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="quickstart-wcf-data-services"></a>Rychlý start (služby WCF Data Services)
 Tento rychlý Start umožňuje seznámit se s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] prostřednictvím řadu úloh, které podporují témata v [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).  

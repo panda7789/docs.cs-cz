@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 62210fd8-a372-4d55-ab9b-c99827d1885e
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d09b8e662b2876fa5d5c5246ea7e7a4998cde9ea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 75b18dab37a18723671cebf51c3cc943b907b38a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front
 Můžete integrovat existující aplikace služby Řízení front zpráv (MSMQ) s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace pomocí integrace vazby služby MSMQ pro převod MSMQ zprávy do a z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy. To umožňuje provádět volání do aplikacím služby MSMQ příjemce z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienty, jakož i volání do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby od odesílatele aplikacím služby MSMQ.  

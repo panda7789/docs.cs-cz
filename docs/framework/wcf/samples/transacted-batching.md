@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ecd328ed-332e-479c-a894-489609bcddd2
 caps.latest.revision: "23"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: dbd11f3dad60463a5650d7aa6e53f9e8f3f5021e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cc04f0ce1d303a32cbf2232c76bfc4ef1143c9ea
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transacted-batching"></a>Transakční dávkování
 Tento příklad ukazuje, jak dávky zpracovaných čtení pomocí služby Řízení front zpráv (MSMQ). Zpracovaných Batching je funkce optimalizace výkonu pro zpracovaných čtení v komunikaci ve frontě.  

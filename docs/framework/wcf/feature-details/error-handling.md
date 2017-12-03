@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 308712ed4c8f44740622c57525f152152f7d6c73
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 215fb30772e4f1b25e20303b3f83d6fe0c00ebae
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="error-handling"></a>Zpracování chyb
 ## <a name="error-handling-in-windows-communication-foundation"></a>Chyba při zpracování ve Windows Communication Foundation  

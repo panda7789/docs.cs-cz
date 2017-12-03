@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 403c82e8-7f2b-42f6-93cd-95c35bc76ead
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9f34189c8f9911b09017056b22611d27df25c10e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 811ffe44a65dea13482d600a09989ce42f6580dd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="linq-to-objects-activity"></a>LINQ na objekty aktivity
 Tento příklad znázorňuje postup vytvoření aktivitu pomocí LINQ na objekty dotazu elementů v kolekci.  

@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: e0b12b34-8004-443a-a46d-83a5c00f2601
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 58393f6ed3f14e65b1732c8ec8f90c109be0894a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 61c7dd84b802d116721170080bb55a0be1ef1dfc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-control-service-instancing"></a>Postupy: vytváření instancí služby Řízení
 Nastavení režimu instance služby umožňuje určit, kdy <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> (a jeho objekt přidružená služba definovaný uživatelem) je vytvořen. Najdete v článku <xref:System.ServiceModel.InstanceContextMode> výčet režimů možné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]najdete v části chování, [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md). Pracovní příklady najdete v tématu [chování](../../../../docs/framework/wcf/samples/behaviors.md).  

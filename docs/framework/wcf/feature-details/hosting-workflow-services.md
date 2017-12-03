@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ad4e5af26291c210f4f46f20e5b9585e3e095ae7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1bf0b63d3de750b5ec2aea41dcb6bb700385663a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="hosting-workflow-services"></a>Hostování služeb pracovních postupů
 Musí být hostované služby pracovního postupu pro něj reagovat na příchozí zprávy. Pracovní postup služby pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zasílání zpráv infrastruktury a jsou proto hostované podobným způsobem. Jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb, pracovní postup služby může být hostovaný ve spravované aplikaci, v rámci Internetové informační služby (IIS), nebo v rámci procesu aktivace služby WAS (Windows). Kromě toho může být hostovaný pracovní postup služby v systému Windows Server App Fabric. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric najdete [dokumentaci systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](http://go.microsoft.com/fwlink/?LinkId=196495). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]různé způsoby, kterými hostitele [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  

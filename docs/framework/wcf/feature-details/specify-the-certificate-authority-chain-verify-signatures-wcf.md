@@ -13,14 +13,14 @@ helpviewer_keywords:
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ce846d5637c6d49b4a3b1c6f28ae533e4900f696
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6cba37a82174ab255cb6814e296154485fbdd54c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)
 Když [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obdrží zprávu protokolu SOAP podepsána pomocí certifikátu X.509, ve výchozím nastavení ověřuje, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. K tomu je potřeba vyhledávání v úložišti certifikátů a určení, pokud pro tento certifikační autorita je klasifikován jako důvěryhodný certifikát. Aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] za účelem určení, musí být nainstalován řetězu certifikátů certifikační autority v úložišti certifikátů správné.  

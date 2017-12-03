@@ -13,14 +13,14 @@ helpviewer_keywords:
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6fbd4a322153bd9f560b6c039f586100770a0216
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9a08627e213196c2d5fb296f458a5d3a8c7bb1a0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="authentication-in-wcf"></a>Ověřování ve WCF
 Následující témata ukazují počet různých mechanismech [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] , poskytovat ověřování, například, ověřování systému Windows, certifikáty X.509 a uživatelského jména a hesla.  

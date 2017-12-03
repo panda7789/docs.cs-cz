@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8498f215-1823-4aba-a6e1-391407f8c273
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 67a14c70f6287f1d37e6c855589d86aeba395c24
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c08d57f36d733312793ab9de1699b83a1e22ce31
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="messaging-activities"></a>Aktivity zasílání zpráv
 Zasílání zpráv aktivity umožňují pracovní postupy pro odesílání a přijímání zpráv WCF. Přidáním aktivity zasílání zpráv do pracovního postupu můžete model žádné libovolně komplexní zpráva exchange vzory (MEP).  

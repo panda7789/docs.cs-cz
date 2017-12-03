@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f91c6d0a-3af2-45c5-9a5c-e75390619836
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bb9855f590fd02cc11448568b211f85ee6a951cd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d9a332e9b0aeec74a8cfd87622ce3be7bbffe3c9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-versioning"></a>Správa verzí zjišťování
 Toto téma obsahuje stručný přehled implementace některé nové funkce zjišťování. Také nabízí přehled o tom, jak vybrat zjišťování verze se má použít.  

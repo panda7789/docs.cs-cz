@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4fb3957543d6a0fcf3b375f9cb43ae089ac9d600
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 934b5d16cdea7026e0e7874cf04ab53c8fbdf58e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>Postupy: Hostování služby WCF v IIS
 Toto téma popisuje základní kroky potřebné pro vytvoření [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, který je hostován v Internetové informační služby (IIS). Toto téma předpokládá se seznámíte se službou IIS a pochopit, jak vytvořit a spravovat aplikace služby IIS pomocí nástroje pro správu služby IIS. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Služba IIS najdete v části [Internetová informační služba](http://go.microsoft.com/fwlink/?LinkId=132449). A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která běží v prostředí služby IIS plně využívá funkce služby IIS, jako je recyklace procesů, nečinnosti vypnutí, monitorování stavu procesu a aktivace na základě zpráv. Tato možnost hostování vyžaduje, aby se služba IIS správně nakonfigurovaná, ale nevyžaduje, aby všechny hostování kódu zapsání jako součást aplikace. Můžete použít hostování IIS pouze s přenosového protokolu HTTP.  

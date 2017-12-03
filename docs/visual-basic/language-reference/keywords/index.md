@@ -17,17 +17,17 @@ ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
 caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7ee4d12659dd6da8c5290134c48d280692a496f4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 35a40d6dfb6c66183afb0f3a2980a3b7863353fa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="keywords-visual-basic"></a>Klíčová slova (Visual Basic)
 V následujících tabulkách jsou uvedeny všechny [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] klíčová slova jazyka.  
   
 ## <a name="reserved-keywords"></a>Vyhrazená slova  
- Následující klíčová slova jsou *vyhrazené*, což znamená, že je nelze použít jako názvy pro programování prvky jako jsou například postupy nebo proměnných. Toto omezení můžete obejít, zadejte název do hranatých závorek (`[``]`). Další informace najdete v tématu "Uvozené názvy" v [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ Následující klíčová slova jsou *vyhrazené*, což znamená, že je nelze použít jako názvy pro programování prvky jako jsou například postupy nebo proměnných. Toto omezení můžete obejít, zadejte název do hranatých závorek (`[]`). Další informace najdete v tématu "Uvozené názvy" v [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 > [!NOTE]
 >  Nedoporučujeme používat řídicí názvy, protože váš kód mohl zajistit těžko čitelný, a může vést k jemně chyb, které může být obtížné vyhledat.  

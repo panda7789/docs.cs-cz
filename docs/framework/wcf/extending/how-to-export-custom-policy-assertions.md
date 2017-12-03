@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 466aecb5102332d3e246fd340e43b482d2c17a4c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1cfce32a7e7099a601c76874c8ca951488335fc6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>Postupy: Export kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby. Aplikace služby můžete pomocí kontrolních výrazů vlastních zásad metadata služby komunikovat koncový bod, vazba nebo kontrakt informace o přizpůsobení do klientské aplikace. Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] export kontrolní výrazy ve výrazech zásad připojena v WSDL vazby na koncový bod, operace nebo zpráva tématům, v závislosti na možnosti nebo požadavky jsou komunikaci.  

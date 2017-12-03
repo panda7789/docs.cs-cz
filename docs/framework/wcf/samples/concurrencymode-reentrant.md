@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 17c3bf41f9db0458b91af808cbde56634ef1fca8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bf852c67bec8abb2af3593d537010e5cc2718176
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
 Tento příklad znázorňuje nezbytné a důsledky použití ConcurrencyMode.Reentrant na implementaci služby. ConcurrencyMode.Reentrant znamená, že služba (nebo zpětného volání) zpracovává jenom jednu zprávu v daném okamžiku (podobá `ConcurencyMode.Single`). K zajištění bezpečnosti vlákno [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zámky `InstanceContext` zpracování zprávy, takže lze zpracovat žádné další zprávy. V případě vícenásobné režimu `InstanceContext` je odemčený těsně před služby umožňuje odchozí volání následných volání (může to být vícenásobné, jak je předvedeno v ukázce) a tím umožní získat zámek příštím pochází službě. K předvedení chování, příklad ukazuje, jak může klient a služba odesílání zpráv mezi sebou pomocí duplexního kontraktu.  

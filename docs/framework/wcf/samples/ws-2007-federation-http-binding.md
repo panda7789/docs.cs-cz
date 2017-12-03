@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
 caps.latest.revision: "23"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2a8ab75dea29196d956e1c2f7717d9008be12566
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3cdba8b43c109b8fbd0a5892bfa4c4c15e1caabf
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 Tento příklad znázorňuje použití <xref:System.ServiceModel.WS2007FederationHttpBinding>, standard, můžete použít k vytvoření této verze podpory 1.3 specifikace WS-Trust federovaných scénářích vazby.  

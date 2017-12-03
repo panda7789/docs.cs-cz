@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 19593e61cc640068ac7c90a6abbd6ea0d6a3ff08
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4f7a425853c2416f390d28ca31dae3f415e23c54
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní tokenu implementaci do [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace. V příkladu se používá `CreditCardToken` bezpečně předávat informace o platebních kartách klienta ke službě. Token je předán v záhlaví zprávy WS-zabezpečení a je podepsat a zašifrovat, pomocí vazby symetrický zabezpečení element společně s tělo zprávy a jiné záhlaví zprávy. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tento příklad znázorňuje, jak poskytnout token zabezpečení vlastní službě místo pomocí jedné z předdefinovaných tokenů. Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 20e65df6-4539-428d-bf61-92e05c405bef
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bbd4482f93b25c351c3311b5d74ddb40e208af8a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6b26f8b74a5d6eba8f63d088545bd3a6e232fcae
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsnamedpipechannelmessagereceivefailed"></a>System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed
 System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed  

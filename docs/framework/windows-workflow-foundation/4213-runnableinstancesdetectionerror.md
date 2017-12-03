@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 979ec935-bd9f-4798-be9a-25e08c4b94cf
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f4ceb99ffed46a4d05d2f20b380ea3438f20113b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cd9a18b2f1b0a9a01965f2ff8464bf6d17030973
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4213---runnableinstancesdetectionerror"></a>4213 - RunnableInstancesDetectionError
 ## <a name="properties"></a>Vlastnosti  

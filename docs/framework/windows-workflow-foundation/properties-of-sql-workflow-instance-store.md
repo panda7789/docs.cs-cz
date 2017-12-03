@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 91a2711fae91c09df0a62759edaa41483eb4ea28
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5d4b890b80880638fae62c1ae79f8d2f436ef309
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti úložiště Instance pracovního postupu SQL
 Témata v této části poskytují informace o vlastnostech SQL úložiště Instance pracovního postupu.  

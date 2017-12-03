@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 234e5a7ef9591c1e943484402bc235b62ad7fb87
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8bb78a6f02dd593635c47b8c39a87f40566be1a7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="non-generic-foreach"></a>Neobecné ForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]se dodává v jeho nástrojů sadu aktivity toku řízení, včetně <xref:System.Activities.Statements.ForEach%601>, což umožňuje iterace v rámci <!--zz <xref:System.Collections.IEnumerable%601> --> `System.Collections.IEnumerable` kolekce.  

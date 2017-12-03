@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e9ae808a-7e1f-46b0-9560-d5a866be6d6e
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0f4a8614420a11b31bf3b19fb03e13210f4590a8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7a65ce815cbf958d898c26433fede931c5e3db6f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="endpoint-reliable-messaging-sessions-faulted-per-second"></a>Koncový bod: Počet nezdařených relací spolehlivého zasílání zpráv za sekundu
 Název čítače: Relací spolehlivého zasílání zpráv s chybou za sekundu.  

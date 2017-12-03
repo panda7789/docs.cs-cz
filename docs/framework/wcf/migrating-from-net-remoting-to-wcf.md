@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 228a6faca43ed121de59ed35c5a186294b41d147
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8f39a26d52d7002e793935135e0c5d5e8f11c3d8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak k migraci aplikace, která používá .NET Remoting používat Windows Communication Foundation (WCF). Porovnává podobné koncepty mezi tyto produkty a pak popisuje, jak provést několik běžných scénářů vzdálené komunikace v WCF.  

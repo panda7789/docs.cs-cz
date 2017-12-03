@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
 caps.latest.revision: "60"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c5583956e206194e7c457f9e4162660a6f1c59b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ea5cd7f8510836b17a20b523dc2455611cdb2382
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="system-provided-bindings"></a>Vazby poskytované systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit k koncový bod. Vazba obsahuje následující prvky:  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d990d119-7321-4b8c-852b-10256f59f9b0
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ec3b161ec9dedc2cbf389d8ec5ac4629cf54e007
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 729bf8bd1371bf64b9b05a235331120608824083
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="receivecontext-enabled-wcf-channels"></a>Kanály WCF povolenou třídou ReceiveContext
 Tento příklad znázorňuje užitečnost <xref:System.ServiceModel.Channels.ReceiveContext>-Povolit kanály WCF. Ukázka implementuje služby Vrátí součin dvou čísel pomocí NetMSMQ kanál.  

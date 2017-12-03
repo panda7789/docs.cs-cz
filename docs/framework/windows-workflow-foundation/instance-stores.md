@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f2629668-0923-4987-b943-67477131c1e0
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c78e5ff1310951defdfaa38a9b63aacb9c27872b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c794c6e20b479ea4686caba29704f8851d108432
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="instance-stores"></a>Instance úložiště
 Instance úložiště je logický kontejner instancí. Je na místě, kde je uložena instance data a metadata. Instance úložiště neznamená vyhrazené fyzické úložiště. Instance úložiště může obsahovat trvanlivý informace v databázi systému SQL Server nebo informace o stavu netrvalý v paměti. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává s SQL úložiště Instance pracovního postupu, který je na konkrétní implementace úložiště instance, které umožňuje pracovní postupy pro zachování dat instance a metadat do databáze systému SQL Server 2005 nebo SQL Server 2008. Windows Server App Fabric kromě poskytuje konkrétní implementaci instance úložiště. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server App Fabric Instance úložiště, dotazů a poskytovatelé řízení](http://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409).  

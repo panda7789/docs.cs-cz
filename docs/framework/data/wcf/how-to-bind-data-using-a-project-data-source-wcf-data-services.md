@@ -16,14 +16,14 @@ helpviewer_keywords:
 - WCF Data Services, data binding
 ms.assetid: 2477af0a-676f-44f7-b73d-e66208785509
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5b56fecef5ace38f728d8cc68df4dcfeb71bfedf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3ee72f1c3eaf2c78a7cdff9b2a4db81ef0b767a2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: vytvoření vazby dat pomocí projektu zdroje dat (služby WCF Data Services)
 Vytvořením zdroje dat, které jsou založeny na generované datové objekty [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské aplikace. Když přidáte odkaz na datové služby pomocí **přidat odkaz na službu** dialogové okno, zdroj dat projektu je vytvořen společně s datové třídy generovaného klienta. Jeden zdroj dat se vytvoří pro každou sadu entit, že data služby vystavuje. Můžete vytvořit formuláře, které zobrazují data ze služby tak, že přetáhnete tyto položky zdroje dat z **zdroje dat** okna do návrháře. Tyto položky stát ovládacích prvků, které jsou vázány na zdroj dat. Během provádění tento zdroj dat je vázána na instanci systému <xref:System.Data.Services.Client.DataServiceCollection%601> třídy, která je vyplněn objekty, které jsou ke službě dat vrácených dotazem. Další informace najdete v tématu [vazby dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  

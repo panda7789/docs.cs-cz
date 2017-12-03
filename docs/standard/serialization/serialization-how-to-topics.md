@@ -10,14 +10,14 @@ ms.topic: article
 helpviewer_keywords: serialization, how-tos
 ms.assetid: 46c972ab-2193-4f72-9413-eca4521ed4b0
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0abaa3bfd85316d61a5d48b0af9cd7ec2a6bf366
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 75915c92390be1698f5a972901c1defc8003e096
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="serialization-how-to-topics"></a>Postupy: témata serializace
 Následující seznam obsahuje odkazy na témata s postupy v konceptuální dokumentaci k serializaci.  

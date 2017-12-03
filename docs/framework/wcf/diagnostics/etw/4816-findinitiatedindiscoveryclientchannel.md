@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e64ad429-3a9a-4df6-893a-36a116d393ee
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: fb694a53b06c4d540f7d74bdf16ebbb8d1390e2e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9fa1e4c0a35d494856a7205991ab07d6c91f9d47
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4816---findinitiatedindiscoveryclientchannel"></a>4816 – FindInitiatedInDiscoveryClientChannel
 ## <a name="properties"></a>Vlastnosti  

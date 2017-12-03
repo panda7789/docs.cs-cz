@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0c189f09-887d-459e-b7ab-529110437254
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5d59d4248193abf80ac528a0ed036c94b5562574
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 24d4b5af1dcffba1f63504d771a8ea268afa99f6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsservermaxpooledconnectionsquotareached"></a>System.ServiceModel.Channels.ServerMaxPooledConnectionsQuotaReached
 System.ServiceModel.Channels.ServerMaxPooledConnectionsQuotaReached  

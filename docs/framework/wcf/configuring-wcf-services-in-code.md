@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 134de9fce41ccdcd9c26277c6a52d67823199da3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c05cc5947a36bbe8573c5308cdfbbe3f6c990815
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když je potřeba nakonfigurovat po nasazení služby. Při použití konfigurační soubory, odborník v oblasti IT pouze musí aktualizovat konfigurační soubor, není třeba žádné opětovnou kompilaci. Konfigurační soubory, však může být složité a obtížné. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurace – elementy odkazují názvy, které umožňuje vytváření konfigurační soubory k chybám a obtížná. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]také umožňuje konfigurovat služby v kódu. V dřívějších verzích [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] (4.0 a starší) konfigurace služby v kódu se snadno ve vlastním hostováním scénářů <xref:System.ServiceModel.ServiceHost> třída povolena, můžete nakonfigurovat koncové body a chování před volání ServiceHost.Open. Ve scénářích hostovaná na webu, ale nemáte přímý přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webové hostované služby, bylo potřeba vytvořit `System.ServiceModel.ServiceHostFactory` vytvořené <xref:System.ServiceModel.Activation.ServiceHostFactory> a provést všechny potřebné konfigurace. Od verze rozhraní .NET 4.5, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje snadný způsob, jak nakonfigurovat i samoobslužně hostované a webové hostované služby v kódu.  

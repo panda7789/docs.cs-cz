@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
 caps.latest.revision: "83"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7f2cb8d8376447de12f324719e39f575df8f33a3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5b699a9af286287f1cdd1aa224afd3f8c41dd90d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ukázky jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresáře. Tento postup jednorázové instalační program vytvoří složku na disku; také přidá virtuální adresář pro službu IIS s názvem **ServiceModelSamples**.  

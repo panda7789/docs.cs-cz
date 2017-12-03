@@ -5,14 +5,14 @@ ms.prod: .net-framework
 ms.topic: article
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7b7f13a5119b429d8a80f48cf670b897ed97e094
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 806e31f3d5c0998e7a30dfbb9d1fdec9a1a50269
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky pracovního postupu (WF) Windows
 Tyto ukázky poskytují pokyny o různých aspektech [!INCLUDE[wf](../../../../includes/wf-md.md)].  

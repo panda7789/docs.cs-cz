@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fd174313-ad81-4dca-898a-016ccaff8187
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 25380c021372d8c74498952ddc482aada8a1e906
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ce72cb4d71bcc08980104158940a15ea6ecd0c6e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-disable-encryption-of-digital-signatures"></a>Postupy: Zakázání šifrování digitálních podpisů
 Ve výchozím nastavení je podepsaný zprávu a podpis je digitálně zašifrovaný. Toto se řídí vytváření vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces využívá až o 30 procent déle než jednoduše podepisování a šifrování založené na celkovou velikost zprávy (menší zprávy, tím větší dopad na výkon). Zakázáním šifrování podpis, však může útočníkovi umožnit uhodnout obsah zprávy. To je možné, protože obsahuje prvek podpisu hodnota hash ve formátu prostého textu každých podepsaný části ve zprávě. Například i když text zprávy je ve výchozím nastavení zašifrované, nezašifrované podpis obsahuje kód hash těla zprávy před šifrování. Pokud je sada možných hodnot pro část podepsaná a šifrované malé, může útočník moci odvodit obsah pohledem na hodnotě hash. Šifrování podpis snižuje tento vektor útoku.  

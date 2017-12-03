@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8eb4d28885308c400c445ae71019373ec92ed27a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 26ed0c9dd2c895d4a01536a5715c6235ff65df7b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltudpbindinggt"></a>&lt;udpBinding&gt;
 Element konfigurace slouží ke konfiguraci <xref:System.ServiceModel.UdpBinding> vazby.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: be6f1ede-2b05-437d-8f86-165dc9968a35
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 02f5a9f8244086d92929127f4397510e1792aa32
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e2897deaefa5a145f1f787aa6eb8eecccf61e2de
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="microsofttransactionstransactionbridgeparticipantrecovered"></a>Microsoft.Transactions.TransactionBridge.ParticipantRecovered
 Zápis účastníka byla obnovena z protokolu správce transakcí.  

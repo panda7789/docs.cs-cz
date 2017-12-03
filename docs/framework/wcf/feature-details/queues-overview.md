@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 768bcdeca75def84d93c1a7b786fed4c1b5b8184
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c0952f238c34176112f6ec6a8520fb603cca4750
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="queues-overview"></a>Fronty – přehled
 Tato část představuje obecné a základní koncepty za komunikace ve frontě. Následující části přejděte do podrobnosti o tom, jak jsou služby Řízení front konceptů popsaných v tomto poli označované v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

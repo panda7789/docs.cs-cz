@@ -10,14 +10,14 @@ ms.topic: article
 helpviewer_keywords: programming [WF], activities
 ms.assetid: 2a69f32e-007f-47d0-ab96-535311641428
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cf633da7ee90816c534de090ebca79cc2a5f880d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b9330efdfdb9a92449e155a265d1c2c18cd3a310
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-and-creating-activities"></a>Pomocí a vytvoření aktivity
 Témata v této části popisují aktivity poskytované systémem, které jsou k dispozici v [!INCLUDE[wf](../../../includes/wf-md.md)].  

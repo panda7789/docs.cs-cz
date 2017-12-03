@@ -16,14 +16,14 @@ helpviewer_keywords:
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 21820333cf9b07ea9ac6883f6aa7b16ebc2d807e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f107e4d1a9779c04a33060af34ee1fc873305eab
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
 `ProtectionLevel` Vlastnost nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost řídí, jak je chráněný část (nebo celé) zprávy. Toto téma vysvětluje [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] funkce a jak to funguje.  

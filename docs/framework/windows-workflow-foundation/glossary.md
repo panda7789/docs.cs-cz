@@ -12,14 +12,14 @@ helpviewer_keywords:
 - WF [WF], glossary
 ms.assetid: ab682b2f-3779-45ca-b831-b7c03d7dbb3a
 caps.latest.revision: "259"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c0c1e6fa7eee64283dce20b24a1a957f1d2d8f8f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1153b1b87a7b16c330d05a6a89516ab1944bf6e1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-workflow-foundation-glossary-for-net-framework-45"></a>Glosář služby Windows Workflow Foundation pro rozhraní .NET Framework 4.5
 V dokumentaci k Windows Workflow Foundation se používají následující termíny.  

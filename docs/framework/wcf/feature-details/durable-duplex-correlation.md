@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: fc7a6655467fccf924783fea9110bdaf1b788675
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9371729dcac22b0611f8ea3ec29cc59daf5d67b8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="durable-duplex-correlation"></a>Korelace trvanlivého duplexního přenosu
 Korelace trvanlivého duplexního přenosu, také známé jako zpětné volání korelace, je užitečné, když služby pracovního postupu se poslat počáteční volající zpětné volání. Na rozdíl od duplexní režim WCF může dojít kdykoliv v budoucnu zpětné volání a není vázaný na stejném kanálu nebo kanálu životnost; Jediným požadavkem je, že volající mít aktivní koncový bod naslouchání pro zpětné volání zprávy. To umožňuje dvou služeb pracovních postupů pro komunikaci v rámci dlouhodobé konverzace. Toto téma obsahuje přehled korelace trvanlivého duplexního přenosu.  

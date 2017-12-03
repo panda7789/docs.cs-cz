@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 49619f59-9819-484a-bcd8-5596308e8551
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f45d4ffc04b206db0dfefbdbbe683146e09c767f
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6ebc79fa582a32ccc252e6c22b9b223870da7e44
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="external-activity-validation"></a>Ověření externích aktivity
 Tento příklad ukazuje, jak přidat logiku ověření do předdefinovaných aktivity, která nejsou autora. Logiku ověření se skládá z vynucení, který všechny <xref:System.Activities.Statements.If> aktivity k dispozici v pracovním postupu, musíte být jejich <xref:System.Activities.Statements.If.Then%2A> sada vlastností nebo jejich <xref:System.Activities.Statements.If.Else%2A> sadu vlastností. Navíc obsahuje logiku ověření kontrola, která všechny <xref:System.Activities.Statements.Pick> aktivity v pracovním postupu mají více než jeden větve, a pokud není tento případ, vygeneruje se upozornění.  

@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8352c7761447322d1ddf8381be145e38d6b7df8d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 72e111340fc01df3def2fcb1d5360b00720af2f6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>Postupy: Vytvoření základní webové služby HTTP WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje vytvořit službu, která zveřejňuje koncový bod webové. Koncových bodů webové odesílat data XML nebo JSON, že neexistují žádné obálku protokolu SOAP. Toto téma ukazuje, jak vystavit takové koncový bod.  

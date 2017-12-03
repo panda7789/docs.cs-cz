@@ -14,14 +14,14 @@ helpviewer_keywords:
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c1ee80307e0db82f4744970844754a910e81ca3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6c0b13ee48ed729d89f4b4b506e3608abe7e82b5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce nabízené sítěmi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  

@@ -15,14 +15,14 @@ helpviewer_keywords:
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6c97dc9b98f90af31c86af5295a7a4ad9894b428
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ab8f86b66e92ea250fbe20e8bcb27e6706302db4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="serialization-in-net"></a>Serializace v rozhraní .NET
 Serializace je proces převodu stav objektu do tvaru, který může být zachována nebo přenosu. Doplňkovým serializace je deserializace, která převádí na objekt datového proudu. Tyto procesy dohromady, povolit, aby snadno ukládat a přenesených údaje.  

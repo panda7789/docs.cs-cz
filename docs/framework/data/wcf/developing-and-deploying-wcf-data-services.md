@@ -15,14 +15,14 @@ helpviewer_keywords:
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 302b706c06596adcc54ef24526d17bb4c6a306d3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 87a074b96583f44e8655c9efde145e28b490f6e9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Vývoj a nasazení služby WCF Data Services
 Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pro další základní informace o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], najdete v části [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) a [přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  

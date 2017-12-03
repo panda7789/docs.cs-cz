@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 99e202b99abeacd286c6f9a8b917f8a9c4416718
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6a363cc8f43e4d2c4126d4287a3c998e9b8adecf
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="persistence-database-schema"></a>Trvalost schématu databáze
 Toto téma popisuje veřejné zobrazení podporuje ukládání Instance pracovního postupu SQL.  

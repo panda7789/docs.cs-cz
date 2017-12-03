@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ccf90c64-31de-4a18-9208-28887735ce80
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9f68600a85b9bb35b7ce953c411ce8d3f3d0ceb2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5994a8d3526bde8f06e30b16157a0823f5249813
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="tool-samples"></a>Ukázky nástrojů
 Tato část obsahuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nástroje.  

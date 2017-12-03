@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7318921b-47c4-4c8c-9fdd-41a92061c53f
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0408bbc4bbe6e49bcd830a1de8563c02002f1b7e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8708e7f030e0c10028938abcdccb54903a7fca52
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transacted-operations-committed-per-second"></a>Počet potvrzených zpracovaných operací za sekundu
 Název čítače: Potvrzených zpracovaných operací za sekundu.  

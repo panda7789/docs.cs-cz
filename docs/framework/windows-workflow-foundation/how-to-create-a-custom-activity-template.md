@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 90c92295bbccc7cf7e50a9da5bd52110d9d26a3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2ae81b96a348712af58c5e8527f0f04a59689368
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-custom-activity-template"></a>Postupy: vytvoření vlastní aktivity šablony
 Vlastní aktivity šablony slouží k přizpůsobení konfigurace aktivit, včetně vlastních složené aktivit, tak, aby uživatelé nebudou mít k vytvoření jednotlivě každou aktivitu a nakonfigurovat jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony může být k dispozici v **sada nástrojů** na [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] nebo opětovné hostování nástroje návrháře, ze kterého uživatelů můžete přetáhnout na předkonfigurované návrhovou plochu. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]se dodává s dobrým příkladem takové šablony: [SendAndReceiveReply Template Designer](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [ReceiveAndSendReply Template Designer](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v [návrháře aktivitslužbyzasílánízpráv](/visualstudio/workflow-designer/messaging-activity-designers) kategorie.  

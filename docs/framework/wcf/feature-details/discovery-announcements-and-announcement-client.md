@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 426c6437-f8d2-4968-b23a-18afd671aa4b
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 36003933a9fb49fe4fe4f0b677ee584066d415ac
-ms.sourcegitcommit: ea1fd4ff4c36169fc722ef263e24884c5cd431a2
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a6da9c2e251a6592bb0af039d552d02e7e4fd3fd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-announcements-and-announcement-client"></a>Oznámení zjišťování a klient oznámení
 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Zjišťování funkce umožňuje součásti oznamujeme jejich dostupnost. Pokud je nakonfigurovaná tak, odešle služba Hello a Bye oznámení. Klienti ani jiné součásti může sledovat takové zprávy oznámení a s nimi pracovat. To poskytuje alternativní metoda pro klienty vědět služeb. Funkce oznámení má několika způsoby, například pokud služby zadejte a nechat síť často, oznámení může být lepší alternativou než hledání pro služby. S tímto přístupem se snižuje síťový provoz a klient se dozvíte přítomnosti nebo odeslání služby při přijímání oznámení.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6cf60298-dccf-4587-b92c-ae3edb75c331
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e6e45d2c5709cfe9a1e5930a59e28129c68b47b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 90d98c9ede1857abac239474a1ed85a118ab3f30
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodeltxsourcetxscoperequiredistransactedtransport"></a>System.ServiceModel.TxSourceTxScopeRequiredIsTransactedTransport
 Zadanou transakci byla přijata pro danou operaci od transakčního přenosu, například služby MSMQ.  

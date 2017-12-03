@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WF [WF], programming
 ms.assetid: f62354e2-6a2b-4e8c-a4bc-533fb96267a4
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 952f1f16ff610282f2f15c9d78bf3d45d5c354da
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fd42299a217cef6125f348d47e0a5216f9e8205f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-workflow-foundation-programming"></a>Windows Workflow Foundation programování
 Tato část obsahuje sadu Úvod do témata, které byste měli porozumět stane znalosti [!INCLUDE[wf](../../../includes/wf-md.md)] programátory.  

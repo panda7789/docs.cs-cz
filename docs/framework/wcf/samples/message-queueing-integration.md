@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8d2b47a0-5d51-45b5-9633-b62e064e8ea4
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: dca7b9326656ef930d977d9c9f1813230975385b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d2e4771ac7ed2c9dce94bc4e9da62bb0017daa30
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-queueing-integration"></a>Integrace služby Řízení front zpráv
 Tato část obsahuje příklady vysvětlující integraci služby Řízení front zpráv a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

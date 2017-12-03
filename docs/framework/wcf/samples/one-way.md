@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 05dbd465345f3b0cd9506f581f1a779f834c50fe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 73a8d570456826a183436066a9198861a7f0c87b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="one-way"></a>Jednosměrný
 Tento příklad znázorňuje služby kontaktu s operací jednosměrné služby. Klient není počkejte na dokončení stejně jako v případě s operací obousměrné služby operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služba v této ukázce je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolové aplikace.  

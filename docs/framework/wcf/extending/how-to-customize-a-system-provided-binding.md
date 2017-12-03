@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 68a6feffcb4925a20e128c2bc9f06e20ea90a678
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c46886879d19d612827b94821e0105c68c437c56
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>Postupy: přizpůsobení vazby poskytované systémem
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti. Toto téma ukazuje, jak nastavit vlastnosti u elementů vazby k vytvoření vlastní vazby.  

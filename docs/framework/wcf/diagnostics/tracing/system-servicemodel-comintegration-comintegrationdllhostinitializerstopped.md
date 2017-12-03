@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6b2912d4-21a4-4a9c-bb68-8626fca5cc39
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9b6978cb39c76c14b3ccbd5ef0e04b644ccec094
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c520874cbe267c418acbbf532f80416442869a12
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopped"></a>System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped
 System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped  

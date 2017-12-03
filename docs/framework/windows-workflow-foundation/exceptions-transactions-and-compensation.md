@@ -10,14 +10,14 @@ ms.topic: article
 helpviewer_keywords: programming [WF], error handling
 ms.assetid: 694db4f9-7387-4b13-8f9f-b923b18c7490
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: be803580a4d8ed195222e5960cfa6e26804d91c5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7fab7247540ba4e098a793adebab54ca4219e503
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="exceptions-transactions-and-compensation"></a>Výjimky transakce a kompenzace
 [!INCLUDE[wf1](../../../includes/wf1-md.md)]poskytuje několik různých mechanismů pro nakládání běhu chybové stavy v pracovních postupech. Pracovní postupy můžete použít kombinaci obslužné rutiny výjimek, transakce, zrušení a náhrady ke zpracování a elegantně zotavit chybové stavy.  

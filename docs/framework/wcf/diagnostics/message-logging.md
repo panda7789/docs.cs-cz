@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6bce0682-75ef-4d65-a659-b328fba4a8b5
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 04e1b881d9aab1c35195794394cddf5172288cc1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a771cbc22febf966fec2cf608a9b59204fc6e51a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-logging"></a>Protokolování zpráv
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje schopnost příchozí a odchozí zprávy pro offline používání protokolu. Protokolování zpráv umožňuje zjistit, jaké zprávu a zpráva textu vypadá jako. Tento typ protokolování je zvláště užitečné v umožňují vědět, co bylo předáno argumentů a jak přijímající koncový bod viděli argumenty, vyjádřené jako XML. Kromě toho protokolování zprávy, protože byla přijata umožňuje diagnostikovat poškozených zpráv také, najdete v části jak byly přijaty zprávy. Můžete také zkontrolovat zabezpečení použití tokenů částí šifrovaný a podepsaný a částí zůstává nedotčeno.  

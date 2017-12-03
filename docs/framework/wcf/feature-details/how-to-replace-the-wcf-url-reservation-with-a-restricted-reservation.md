@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9dd631f08f9367576adf97f9139348bfce69a92f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c25403f298444732f6787979add595bd877bb2c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
 Rezervaci adresy URL můžete omezit, kdo může přijímat zprávy z adresy URL nebo sadu adres URL. Rezervace se skládá z šablony adresu URL, seznam řízení přístupu (ACL) a sadu příznaků. Adresa URL Šablona definuje adresy URL, které ovlivňuje rezervace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak se zpracovávají šablony adresu URL, najdete v části [směrování příchozích požadavků](http://go.microsoft.com/fwlink/?LinkId=136764). Seznam řízení přístupu řídí, jaké uživatel nebo skupina uživatelů je povoleno přijímat zprávy ze zadaných adres URL. V příznacích označuje, zda rezervace udělit oprávnění uživatele nebo skupinu tak, aby naslouchala na adresu URL přímo, nebo chcete delegovat oprávnění pro naslouchání na jiný proces.  

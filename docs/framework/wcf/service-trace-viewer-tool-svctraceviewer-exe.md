@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
 caps.latest.revision: "55"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 29a5ae7fa8cbfd3b5a9812918428b8965398a483
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7832060a29ceb2dc58feac9ce2fc97f58caf70f0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Nástroj Prohlížeč trasování služby umožňuje analyzovat diagnostické trasování, které jsou generovány nástrojem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrovat zprávy trasování v protokolu, aby mohli diagnostikovat, opravit a ověřte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby problémy.  

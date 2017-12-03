@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 582ff24f9f7935f6bbb143685826fc10df1ab432
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0ef5406831e1bfaa9c1c4f959363bc8b26cd3820
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="context-exchange-protocol"></a>Protokol kontextové výměny
 Tato část popisuje protokol kontextové výměny byla zavedená v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] verzi. Tento protokol umožňuje kanálem klienta přijmout kontextu poskytl služby a použijte ho pro všechny následné žádosti do této služby, odešlou přes stejnou instanci kanálu klienta. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: soubory cookie protokolu HTTP nebo hlavičku protokolu SOAP.  

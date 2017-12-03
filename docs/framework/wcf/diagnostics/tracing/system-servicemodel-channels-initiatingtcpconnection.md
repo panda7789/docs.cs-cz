@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d0a2749d-3f97-41b8-ac08-37b5069fe41e
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8d2689d71d9fcc3be4736afb60d64654aa66d3a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 792f9798025e0eba5a9981f5188d01bc11060df5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsinitiatingtcpconnection"></a>System.ServiceModel.Channels.InitiatingTcpConnection
 System.ServiceModel.Channels.InitiatingTcpConnection  

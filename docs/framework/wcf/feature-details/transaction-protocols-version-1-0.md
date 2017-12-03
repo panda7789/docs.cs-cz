@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 95bf16a4e243d82b9b8fe83b306284335ae0bd16
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 544e505dd182d331179d9a6d3da4815b849fdd95
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transaction-protocols-version-10"></a>Protokoly transakce verze 1.0
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]verze 1 implementuje verze 1.0 protokoly WS-Atomic Transactions a WS-spolupráce. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]verze 1.1, najdete v části [protokoly transakcí](../../../../docs/framework/wcf/feature-details/transaction-protocols.md).  

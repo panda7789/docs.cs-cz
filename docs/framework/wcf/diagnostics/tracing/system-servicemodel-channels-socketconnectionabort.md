@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5e1a7716-b23a-46c5-952a-19c53b447a71
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b4b4f0bfa7e85b9bb562fda27f8a37700e33dc46
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 49ab8c8a612ff51c9910172679c2f6568e05d93a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelssocketconnectionabort"></a>System.ServiceModel.Channels.SocketConnectionAbort
 System.ServiceModel.Channels.SocketConnectionAbort  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 04e4d3bd-ab89-4b50-8f42-2a4430751a9c
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cb77e794119db2434a38ff7271912f50e483d766
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8f1f0be7d3080e7e33100c4718d7f8db25a4f87b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="basic"></a>Základní
 Tato část obsahuje oddíly ukázky, která ukazují základní [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]funkce.  

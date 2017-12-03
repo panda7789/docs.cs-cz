@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 593b675f-938c-44ff-807b-0ca9fea30103
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cf1ad835d6fcebee6a048c0f7059eac8af15a89f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3ea06f1ce1d49b731a37d28a43626b05380a3718
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="serialization-tools"></a>Serializace nástroje
 Tento oddíl obsahuje podrobné informace o nástrojích pro serializaci. Všechny nástroje můžete spustit z příkazového řádku.  

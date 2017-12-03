@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 221df2e7-0931-4cbc-93b9-dfffd0fdf4c8
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 01a27e211d79053dbce3b815cbfc7df8e0b95bdd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 46435d6e1f15007edf5a24736222922848b7f251
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemidentitymodelselectorsstorebegintransaction"></a>System.IdentityModel.Selectors.StoreBeginTransaction
 System.IdentityModel.Selectors.StoreBeginTransaction  

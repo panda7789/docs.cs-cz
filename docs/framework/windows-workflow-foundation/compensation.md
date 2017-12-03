@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 338eb9f39034bbc9daf184d691cc1bb535326a45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 248af9c669687d0ab4d41f0ac93985d0d9a17678
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="compensation"></a>kompenzace
 Náhrada v [!INCLUDE[wf](../../../includes/wf-md.md)] mechanismus, pomocí kterého dříve dokončené práce odvolat nebo kompenzované (následující logiky definované aplikací.) Pokud dojde k následující chybě. Tato část popisuje postup použití kompenzace v pracovních postupech.  

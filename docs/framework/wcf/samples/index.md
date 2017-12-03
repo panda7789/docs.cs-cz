@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d90b133819df2997ed4d3a880d891d97b06a22c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a2d618fee858a9a3b864d4213c940cd28fd5e1be
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-communication-foundation-wcf-samples"></a>Ukázky služby Windows Communication Foundation (WCF)
 Tyto ukázky poskytují pokyny o různých aspektech [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

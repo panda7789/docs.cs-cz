@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
 caps.latest.revision: "40"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 866a53af52ac43363ff195dde84092df61deb339
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e42b4007d438fbabaf497981b654415ca7eeb415
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro různé scénáře.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d8af1dbf-ea3b-4931-94eb-6d21e30a886e
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 61b6a669b2a708c41148a36874cd2f4743ebb3b8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d66fe030483da47870a600795026c486ce32894d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="3306---clientbasechannelfactoryagedoutofcache"></a>3306 – ClientBaseChannelFactoryAgedOutofCache
 ## <a name="properties"></a>Vlastnosti  

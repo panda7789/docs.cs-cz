@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: claims [WCF], and tokens
 ms.assetid: eff167f3-33f8-483d-a950-aa3e9f97a189
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5df0845a341dc557627210c7f84fc59b4fadfd10
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 57983e667f3cca5d8f68a0f2355182b8756e3ceb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="claims-and-tokens"></a>Deklarace a tokeny
 Toto téma popisuje různé typy deklarací identity, která [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vytvoří z výchozí tokeny, které podporuje.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 14bd4be6-1ff1-4df5-b89f-af7950f62ef4
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 699266dfd878762f88143660cd9b61e74e29a0fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: deeefcf39a886b26890d6871669e274535db37fd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelspeernodeaddresschanged"></a>System.ServiceModel.Channels.PeerNodeAddressChanged
 Jeden nebo více adres Uzel PeerNode došlo ke změně.  

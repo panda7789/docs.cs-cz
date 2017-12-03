@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c2eca9553862cf1349272142e4165c3cfd2e4f3f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b367b5133cd765fe7e160cd2706589c1773eeb59
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 Operaci hledání zjišťování se spouští pomocí klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce v zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným WS-Discovery ProbeMatch zprávy odpovědi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zjišťování zprávy, najdete v článku [specifikaci WS-Discovery](http://go.microsoft.com/fwlink/?LinkID=122347).  

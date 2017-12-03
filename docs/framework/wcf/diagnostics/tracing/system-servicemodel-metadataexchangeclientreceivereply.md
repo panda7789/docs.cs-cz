@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 24edae24-8ced-43c4-948b-f400ba42b2a5
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4529d56f9fc9b9548e517077a436c7b669806901
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bba6323c24eae80330b145dcfaf90674f7c6ffe1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelmetadataexchangeclientreceivereply"></a>System.ServiceModel.MetadataExchangeClientReceiveReply
 System.ServiceModel.MetadataExchangeClientReceiveReply  

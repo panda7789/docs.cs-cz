@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0fd35dff-e1ff-4902-a89b-093f0e34466f
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 32399567401d5b64884af52e35a6bf24afd3949a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ab1198a6c7e233fd168c79fdfbd7d518faa60ea1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationmexmonikermetadataexchangecomplete"></a>System.ServiceModel.ComIntegration.ComIntegrationMexMonikerMetadataExchangeComplete
 System.ServiceModel.ComIntegration.ComIntegrationMexMonikerMetadataExchangeComplete  

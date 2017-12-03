@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: WS-AT protocol [WCF]
 ms.assetid: 04a4c200-0af0-4c5d-a3d9-87cb7339e054
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7046add86f1255b222640912be02c08b98cb9cae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 12e6e2be3e01ea920b45cce7a27814dd19c00935
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-ws-atomictransaction"></a>Používání protokolu WS-AtomicTransaction
 WS-AtomicTransaction (WS-AT) je protokol umožňuje vzájemnou spolupráci transakce. Umožňuje toku distribuované transakce prostřednictvím zpráv, webové služby a koordinovat způsobem umožňuje vzájemnou spolupráci mezi infrastruktury heterogenní transakce. WS-AT používá protokol dvoufázový zápis k řízení atomic výsledek mezi distribuovaných aplikací, správci transakcí a správci prostředků.  

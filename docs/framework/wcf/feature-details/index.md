@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c58d09c11618e19f29311d54cc413a74e40a3725
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fbf351f0d71893457419d3b8b0e2cfb9c96ad0b0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-feature-details"></a>Podrobnosti o funkcích WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]základní programování, viz [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  

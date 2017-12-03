@@ -12,14 +12,14 @@ dev_langs:
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5390aed3af9146700a4dca7c5b56ddabdca993dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b708d39ba6e5f53579f575d5e228de43db3d90a9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Vlastní složený Designer - přednášejícího položky pracovního postupu
 <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> Je typ klíče v WF návrháře programovací model, který umožňuje úpravu kolekci elementů obsažené. Tento příklad ukazuje, jak sestavit Návrhář aktivity, která vyvolá upravitelné kolekce.  
@@ -168,4 +168,4 @@ End Sub
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.Presentation.WorkflowItemsPresenter>  
- [Vývoj aplikací pomocí návrháře pracovních postupů](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)
+ [Vývoj aplikací pomocí návrháře postupu provádění](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

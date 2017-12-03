@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c77b8029-64f4-48c6-a67a-2999f417495d
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4331dd001e92bd14ad17bf640f738311e07577da
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 21cf508246721169975d7ae0b4a540398c2b1caa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="events-general-reference"></a>Události – obecné referenční informace
 Tato část obsahuje všechny události, které jsou vysílaných [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].

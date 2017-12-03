@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 346dc5f06fd5f655426d8f41164a9a2f24acdb5b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b282a098e53666bcb17d3c619633edba8f06c248
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje
 [!INCLUDE[wf](../../../includes/wf-md.md)]v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená mnoha nových funkcí, včetně několik vylepšení zkušeností Návrháře pracovního postupu. V tomto tématu jsou tyto funkce jsou podporované v Návrháři opětovné hostování nástroje, a ty, které nejsou aktuálně podporovány.  

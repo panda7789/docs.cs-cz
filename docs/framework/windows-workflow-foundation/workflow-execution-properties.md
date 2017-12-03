@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d119d721964df7ea1c007eadd17a8db54f4f8cd9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6136aca5af6a5da7d7ac468e07c81047352d9be2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-execution-properties"></a>Vlastnosti pracovního postupu provádění
 Pomocí místní úložiště vláken (TLS) modul CLR udržuje kontextu spuštění pro každé vlákno. Tento kontext spuštění řídí vlastnosti dobře známé vlákna například identity vláken vedlejším transakce a sadou kromě vlákno uživatelem definované vlastnosti jako aktuální oprávnění s názvem sloty.  

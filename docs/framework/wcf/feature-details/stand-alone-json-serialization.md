@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
 caps.latest.revision: "32"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3b3e09af7491b57d0b318b88623343aaa6bfcf8b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0c75a7cedac9d06c9f8da36dc131521053450a37
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="stand-alone-json-serialization"></a>Samostatná serializace JSON
 JSON (JavaScript Object Notation) je formát dat, která je určená speciálně pro používat kód JavaScript spuštěný na webových stránkách otvírala v prohlížeči. Je výchozí formát dat používaný pomocí prvku ASP.NET AJAX služeb vytvořených v rámci [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

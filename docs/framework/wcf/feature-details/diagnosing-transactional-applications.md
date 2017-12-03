@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 81c16e8a1b61a408abe92cd346c84d0a4fb6ff44
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 15bb435269ca67e8de67e8e768e98d5832556f02
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
 Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce správy a diagnostických nástrojů k řešení potíží s transakční aplikace.  

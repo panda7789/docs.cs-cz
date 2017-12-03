@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
 caps.latest.revision: "29"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d1c4488421f4162d70fc47f8dd4d04c9374f25fc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 04de29891bcf5d8cdbac32ffc85d64a4003e3184
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte logiku aplikace založené na součást hostované v modelu COM +, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání. Obvyklým scénářem je, když chcete vystavit existující modelu COM + nebo podnikové služby obchodní logiky přes webové služby.  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1f9f201e14abdcfb98c33e947428137eca3caeaf
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b82fabec32a256e0ba1aad4ab28896782cef0c04
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="hiring-process"></a>Náborové procesu
 Tento příklad ukazuje, jak implementovat obchodní proces, který používá aktivity zasílání zpráv a dvě pracovních hostované jako pracovní postup služby. Tyto pracovní postupy jsou součástí IT infrastruktury fiktivní společnosti nazývané Contoso, Inc.  

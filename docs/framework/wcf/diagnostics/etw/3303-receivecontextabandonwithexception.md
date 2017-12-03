@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: eae255f8-13fd-4d8e-9f9e-56aea0d588c3
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 22bb8a15fe9b840a70edbc6d467dfeb55e5f3b8b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 91fcbc8d71446d23c41efd25a9f88a60c3db11bb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="3303---receivecontextabandonwithexception"></a>3303 – ReceiveContextAbandonWithException
 ## <a name="properties"></a>Vlastnosti  

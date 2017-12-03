@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1b883334-1590-4fbb-b0d6-65197efe0700
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9b3a4c1cbfd2ca95d3fc4d674fa6566e09fd9682
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e5894a8b5d4d0873a231927498a8d1e2c4e18afd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-control-endpoint"></a>Kontrolní koncový bod pracovního postupu
 Kontrolní koncový bod pracovního postupu umožňuje vývojářům volat operace ovládacího prvku vzdálené řízení instancí pracovních postupů, které jsou hostované pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Tato funkce slouží k prostřednictvím kódu programu provádění operací řízení jako pozastavení, obnovení a ukončení.  

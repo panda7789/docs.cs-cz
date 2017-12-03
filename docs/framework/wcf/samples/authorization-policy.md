@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
 caps.latest.revision: "38"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 50998acedf3b462e17c57d784dfc1ebe6fff38b9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d46be95be90901e51713bc20cd2898e3db069802
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="authorization-policy"></a>Zásada autorizace
 Tato ukázka ukazuje, jak implementovat zásady autorizace vlastních deklarací identity a přidružená služba vlastního Správce autorizací. To je užitečné, když služba díky přístupu na základě deklarace identity ověří k operacím služby a před kontroly přístupu, uděluje volající určitá práva. Tento příklad ukazuje, jak proces přidávání deklarací identity, jakož i proces pro provádění kontroly přístupu proti dokončené sadu deklarací identity. Všechny zprávy aplikace mezi klientem a serverem jsou podepsat a zašifrovat. Ve výchozím nastavení se `wsHttpBinding` vazby, uživatelské jméno a heslo, které poskytl klient, se používají k přihlašování na platný účet systému Windows NT. Tento příklad ukazuje, jak využívat vlastní <!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>--> `System.IdentityModel.Selectors.UsernamePasswordValidator` k ověření klienta. Kromě toho tento příklad ukazuje ověřování do služby pomocí certifikátu X.509. certifikát klienta. Tento příklad ukazuje implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> a <xref:System.ServiceModel.ServiceAuthorizationManager>, které mezi sebou udělit přístup k konkrétních metod služby pro konkrétní uživatele. Tato ukázka je založena na [zpráva zabezpečení uživatelské jméno](../../../../docs/framework/wcf/samples/message-security-user-name.md), ale ukazuje, jak provést transformace deklarací identity před <xref:System.ServiceModel.ServiceAuthorizationManager> volána.  

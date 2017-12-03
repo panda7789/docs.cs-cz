@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b88bcdbc8b5dc542a8d8e555785d36ba7e602547
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b8d353b50cf9439a9741199a52ca650e02e4d49f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu. Tato funkce je určena pro typ přizpůsobení a nahrazování v situacích, kde chcete změnit, jak je serializováno typu, deserializovat nebo předpokládané do metadata uživatele. Některé scénáře, kde lze použít náhradní je při kontraktu dat nebyl zadán pro typ, pole a vlastnosti nejsou označené jako <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatele chcete dynamicky vytvořte variace schématu.  

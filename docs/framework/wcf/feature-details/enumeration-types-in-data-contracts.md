@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ea76ae136695ce2dc9eca0a9c7660e4e1ffe547d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 13b3d19c8e71d7bd6a37362b1ac1b5e23e8ff24a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Výčtové typy v kontraktech dat
 Výčty může být vyjádřený v datovém modelu kontrakt. Toto téma vás provede několik příkladů, které vysvětlují programovací model.  

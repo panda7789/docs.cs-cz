@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 38edfcb1363e538295e1fb1a8b8fe0c5b2d34691
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 79b35fc63fa34bf6de462bad3c18d857215cbfa1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="web-hosting-a-queued-application"></a>Webhosting frontové aplikace
 Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace, které hostují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby využívají protokoly HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
 caps.latest.revision: "35"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 58e88e319da6d78071293ce92bb7e9ebb33224bb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 68d9d153127f3f34c6546cef9f2b3ab5fc668899
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
 Jak vyvíjet aplikace, budete také muset změnit data měnící použití služby. Toto téma vysvětluje, jak kontrakty dat verze. Toto téma popisuje mechanismy Správa verzí kontraktů dat. Úplný přehled a správa verzí závazné pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  

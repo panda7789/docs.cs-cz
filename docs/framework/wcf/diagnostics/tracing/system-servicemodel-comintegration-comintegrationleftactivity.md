@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 266e21b6-2809-4561-b7d9-eec40f1e1e10
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b047e6a9a83c3825b543781ddf35f356e94b9255
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1605e54b3082e2594729cb48c58034fdecd51740
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationleftactivity"></a>System.ServiceModel.ComIntegration.ComIntegrationLeftActivity
 System.ServiceModel.ComIntegration.ComIntegrationLeftActivity  

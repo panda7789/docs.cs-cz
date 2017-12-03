@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 11c11108-8eb4-4d49-95a0-83285a812262
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6f636fe5bc79c18634f2239bc403c5189531737b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a7cf84c30c5784de813f947d26b18816906ec6a7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="operationcontextscope"></a>OperationContextScope
 Ukázka OperationContextScope ukazuje, jak odeslat na doplňující informace [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] volat pomocí hlavičky. V této ukázce se serverem a klientem konzolové aplikace.  

@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 19dfb8d6a75496cf193831c1d9e6e71ee6bb1a7a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9be7f226c331ad20c58a06b5c7497c7942db013d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Zásobník kanál je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model závisí na několika rozhraní a dalších typů souhrnně označované jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] model kanálu. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  

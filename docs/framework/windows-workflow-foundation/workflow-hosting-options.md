@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 37bcd668-9c5c-4e7c-81da-a1f1b3a16514
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 06d39fc37d40747eef323d83f65426e015099913
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 72c9c2078f694a1739a7f33689a0d8275d786937
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-hosting-options"></a>Hostování možnosti pracovní postup
 Většina [!INCLUDE[wf](../../../includes/wf-md.md)] ukázky pomocí pracovních postupů, které jsou hostované v konzolové aplikaci, ale není to realistické scénář pro skutečné pracovní postupy. Pracovní postupy v skutečné obchodní aplikace hostované ve trvalé procesy – služba systému Windows, jako vývojář nebo serverová aplikace vytvořené [!INCLUDE[iisver](../../../includes/iisver-md.md)] nebo AppFabric. Rozdíly mezi těmito dvěma způsoby jsou následujícím způsobem.  

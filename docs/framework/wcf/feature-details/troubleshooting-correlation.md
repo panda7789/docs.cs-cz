@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 07fd03d929c99638b2cb148beded118bbdd679a4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5ea348811a1b2dbd19254f6979a5165c821aa31e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá k propojení zpráv služby pracovního postupu se vzájemně k sobě a k instanci pracovního postupu správný, ale pokud není správně nakonfigurována, nebude přijaty zprávy a aplikace nebude správně fungovat. Toto téma obsahuje přehled několik metod pro řešení potíží s korelace a také uvádí některé běžné problémy, které může dojít, když používáte korelace.  

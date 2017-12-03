@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4f90311a-2593-462e-9174-2f7ac78217b9
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d6eaa86880f8c867ecc7d219f5c0c4bc453e893d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d065f4af7476e90c789c0647b1944aa50b5af5fc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-authorization"></a>Autorizace uživatele
 Autorizace je proces řízení přístupu k prostředkům a úlohy. Témata v této části vám umožňují vytvářet pro implementaci různých typů a deklarací identity, zásady.  

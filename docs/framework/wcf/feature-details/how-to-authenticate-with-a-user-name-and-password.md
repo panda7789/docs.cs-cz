@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 73ef3c3f4f4aeb9295cedbbf56635454869b3f4f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 31e05709465e429445a2ebdafae719c24d316c8e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>Postupy: Ověřování pomocí uživatelského jména a hesla
 Toto téma ukazuje, jak povolit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby k ověření klienta s uživatelské jméno domény systému Windows a heslo. Předpokládá se, že máte funkční, služba WCF s vlastním hostováním. Pro příklad vytvoření základní vlastním hostováním WCF služby naleznete v tématu [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md). Toto téma předpokládá, že služba je nakonfigurována v kódu. Pokud byste chtěli vidět najdete příklad konfigurace podobně jako služby pomocí konfiguračního souboru [zpráva zabezpečení uživatelské jméno](../../../../docs/framework/wcf/samples/message-security-user-name.md)  

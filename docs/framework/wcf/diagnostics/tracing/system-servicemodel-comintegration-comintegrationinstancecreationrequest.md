@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e9f3f224-cb6b-4c72-a808-d4905ca0c2b8
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f1a74f9bd585f06482255e78d76ff8b3a0e25726
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 39efce36dc7259acc03e5b5c602040936deb68ca
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationinstancecreationrequest"></a>System.ServiceModel.ComIntegration.ComIntegrationInstanceCreationRequest
 System.ServiceModel.ComIntegration.ComIntegrationInstanceCreationRequest  

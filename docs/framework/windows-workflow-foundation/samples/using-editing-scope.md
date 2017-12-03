@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 79306f9e-318b-4687-9863-8b93d1841716
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6aec54cef13bcd99fb65a6305e086fe577b6bc13
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dd0752502bdbd7da9d749ae4f71ea869a4c1ec95
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-editing-scope"></a>Pomocí úpravy rozsahu
 Tento příklad znázorňuje postup dávky sadu změn, aby se můžete odvolat v jedné jednotky atomic. Ve výchozím nastavení jsou automaticky akce prováděné pomocí návrháře Autor aktivity integrované do systému zpět/opakování.  

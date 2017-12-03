@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6334a5b866d239dc5f961ce4f1c89eac5b6ed3b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2cf83f7c9af667a9efed59ff7a1f86ace6d8821d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje nové Serializační stroj <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/21/2017
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zahrnuje také doprovodné serializátor, <xref:System.Runtime.Serialization.NetDataContractSerializer>. <xref:System.Runtime.Serialization.NetDataContractSerializer> Je podobná <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializátorů protože také vysílá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zadejte názvy v rámci serializovaná data. Používá se při stejné typy jsou sdíleny serializaci a deserializaci elementy end. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer> odvozena z běžných základní třídy, <xref:System.Runtime.Serialization.XmlObjectSerializer>.  
   
 > [!WARNING]
->  <xref:System.Runtime.Serialization.DataContractSerializer> Serializuje řetězců obsahujících řídicí znaky s hexadecimální hodnotu nižší než 20 jako entity XML. To může způsobit problém pomocí jiné služby WCF klienta došlo k odeslání těchto dat na službu WCF.  
+>  <xref:System.Runtime.Serialization.DataContractSerializer> Serializuje řetězců obsahujících řídicí znaky s hexadecimální hodnotu nižší než 20 jako entity XML. Při odesílání těchto dat na službu WCF může dojít k potížím s klienta bez WCF.  
   
 ## <a name="creating-a-datacontractserializer-instance"></a>Vytvoření DataContractSerializer Instance  
  Vytváření instance <xref:System.Runtime.Serialization.DataContractSerializer> je důležitý krok. Po vytváření nelze změnit některé z nastavení.  

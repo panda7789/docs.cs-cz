@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4202c0471c681257fa1ab1153d363e59615e10c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 497d7242b581a61aa156741a8c2f0ea278fe2372
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních metadat WS Exchange vazby
 Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje čtyři metadata definovaná systémem vazby, ale můžete metadat pomocí žádné vazby, které chcete publikovat. Toto téma vám ukáže, jak publikovat pomocí metadat `wsHttpBinding`. Tato vazba vám dává možnost vystavení metadata zabezpečené způsobem. Kód v tomto článku je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  

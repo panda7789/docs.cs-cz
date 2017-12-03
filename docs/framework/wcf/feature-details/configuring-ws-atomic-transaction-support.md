@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
 caps.latest.revision: "31"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5f03f39a58a574587aba09023c1d482debe31947
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d398df112a7309979ba35020fa1d9538aa0ce5d6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-ws-atomic-transaction-support"></a>Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)
 Toto téma popisuje, jak můžete nakonfigurovat podporu protokolu WS-AtomicTransaction (WS-AT) pomocí nástroje Konfigurace služby WS-AT.  

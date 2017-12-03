@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1dfa02df-15b1-4e97-9c8e-f5f2772711b0
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f16cf2ffc9e03308ce3b8a5e967c29e624ffd1af
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 515f91baf48f68ba0c1cb32e00152bf025fe7323
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-proxy-sample"></a>Ukázka proxy serveru zjišťování
 Tento příklad ukazuje, jak vytvořit implementace zjišťování proxy k uložení informací o existujících služeb a jak se klienti mohou odesílat dotazy tento proxy server pro informace. Tato ukázka se skládá ze tří projektů:  

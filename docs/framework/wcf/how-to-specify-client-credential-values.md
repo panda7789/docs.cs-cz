@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 82293d7f-471a-4549-8f19-0be890e7b074
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ee08f226492d7cb2327ac49ba57ac8bf24a57a07
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 42c6390fb2bd39a0003beecbbe10cd72a38ed63d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-specify-client-credential-values"></a>Postupy: Zadání hodnot přihlašovacích údajů klienta
 Pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], službu, můžete určit, jak je ověření klienta ke službě. Službu můžete například stanovení, ověření klienta s certifikátem.  

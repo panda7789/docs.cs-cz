@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f362562c-767d-401b-8257-916616568fd4
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 892875fb8340220dc152f91ab2239257c7b96fb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0abc1ac1cea6c9799c3d6bb349869b77f1d0b7c3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-non-service-workflow-in-iis"></a>Postupy: hostování bez služby pracovního postupu ve službě IIS
 Pracovní postupy, které nejsou služby pracovního postupu může být hostovaný v rámci služby IIS / byla. To je užitečné, pokud budete potřebovat k hostování pracovní postup zapsaných správcem někdo jiný. Například pokud opětovným hostováním návrháře pracovních postupů a povolit uživatelům vytvářet své vlastní pracovní postupy.  Hostování pracovních bez služby ve službě IIS poskytuje podporu pro funkce, například recyklace, nečinnosti ukončení procesu, monitorování stavu procesu a aktivaci na základě zpráv. Pracovní postup služby hostované ve službě IIS obsahovat <xref:System.ServiceModel.Activities.Receive> aktivity a jsou aktivovat, pokud služba IIS přijme zprávu. Jiné než služba pracovní postupy neobsahují aktivity zasílání zpráv a ve výchozím nastavení nelze aktivovat odesláním zprávy.  Musí být odvozen od třídy <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> a definování kontraktu služby, který obsahuje operace vytvoření instance pracovního postupu. Toto téma vás provede procesem vytvoření jednoduchého pracovního postupu, definování kontraktu služby klienta můžete použít k aktivaci pracovního postupu a odvození třídy z <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> , který používá kontrakt služby tak, aby naslouchala pro vytváření žádostí o pracovní postup.  

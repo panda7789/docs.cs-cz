@@ -14,14 +14,14 @@ helpviewer_keywords:
 - discovery [WCF]
 ms.assetid: 462c4913-f388-45a9-9042-28ae96a4e735
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: fda50f14d9003b81f93840571b8b27f874f7730b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0c9b083180870e451816b54dddc10068ca7ec5db
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-discovery"></a>Zjišťování WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje podporu pro povolení služby umožňuje vzájemnou spolupráci způsobem pomocí protokolu WS-Discovery být zjistitelný za běhu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby může informovat jejich dostupnost k síti pomocí vícesměrového vysílání zprávy nebo na proxy serveru zjišťování. Klientské aplikace může hledat v síti nebo proxy server zjišťování k vyhledání služeb, které splňují zadaná kritéria. Témata v této části poskytují přehled a programovací model pro tuto funkci podrobně popisují.  

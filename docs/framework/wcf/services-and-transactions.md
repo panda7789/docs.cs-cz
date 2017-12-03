@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7a206ff3d82378e825cd612a6564366ef1e07977
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 680a86d453dd8ca7c78d0ca6ba60cbaa691e44f3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="services-and-transactions"></a>Služby a transakce
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]aplikace můžete zahájit transakci ze v rámci klienta a koordinovat transakce v rámci operace služby. Klienty můžete zahájit transakci a vyvolání několik operací služby a ujistěte se, že operace služby jsou buď potvrzena nebo vrácena zpět jako na jednu jednotku.  

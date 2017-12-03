@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 00108ffa-fe02-477e-b9aa-6f08f6849cd2
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4976e001eef5ee1950fd450e1ed817057d6f4d3b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b6a1ebd08af9dc9525b7d2fd0016a5aa067e9242
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4021---tcptransportlistenerlisteningstop"></a>4021 - TcpTransportListenerListeningStop
 ## <a name="properties"></a>Vlastnosti  

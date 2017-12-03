@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: af6d4c39-e5e8-4099-aee6-5261feff9107
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 629ec17ea01ec29480f15f5921d09e7497e9f8c8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4f1595cbb1d225e3dd4e73a354028745d4cd0428
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-syndication-overview"></a>Syndikace WCF – přehled
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje podporu pro informační kanály syndikace z vystavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Syndikace je mechanismus integrace aplikací, ve kterém server zpřístupní data některých aplikací ve formátu, který umožňuje vzájemnou spolupráci známé jako informačního kanálu. Informační kanál je kolekce dat aplikací, která se skládá z některé informačního kanálu úroveň metadat (název, Autor, adresy URL a další metadata) a řadu položky informačních kanálů. V informačním kanálu položky informačních kanálů jsou obvykle čas seřazené v obráceném chronologickém pořadí. Položka informačního obsahuje standardní sadu úrovni položky metadat (název, URL, datum vytvoření, kategorie a další metadata na úrovni položek) a libovolné množství dat v konkrétní aplikaci. Jsou dvě nejběžnějších typů informační kanály syndikace skutečně jednoduché syndikace (RSS) 2.0 a Atom 1.0, které jsou podporovány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  

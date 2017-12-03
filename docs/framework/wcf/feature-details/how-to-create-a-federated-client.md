@@ -16,14 +16,14 @@ helpviewer_keywords:
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 47cf0961c6f9292d034e2ba8b345763aaff2c12a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 87d29a53bc33ecd114e3315475984cbf04ce17c8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-federated-client"></a>Postupy: Vytvoření federovaného klienta
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vytvoření klienta pro *Federovaná služba* zahrnuje tři hlavní kroky:  

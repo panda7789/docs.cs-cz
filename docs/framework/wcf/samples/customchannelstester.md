@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2d915d567a5918060ab5e7592d4cd49384249ab9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 802d501dabbf14d30a26cd682afb366f0a83a17a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="customchannelstester"></a>CustomChannelsTester
 `CustomChannelsTester` Je nástroj, který můžete použít k testování vaší implementace vlastní kanál oproti sadě kontrakty předdefinovaných služeb. Můžete vybrat sadu kontraktů služby a předejte ji do nástroje pomocí souboru XML. Nástroj potom generuje službu a klienta, který vykonává vaší implementace vlastní kanál při výměně zpráv.  

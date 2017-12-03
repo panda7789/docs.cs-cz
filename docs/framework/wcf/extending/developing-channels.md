@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0513af9f-a0c2-457b-9a50-5b6bfee48513
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: dd33f987ab28b42c16aa4798c59675225dcaf520
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 231948af1a0bfe7840ffbde2ab162ceea33698ca
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="developing-channels"></a>Vývoj kanálů
 K vývoji pro protokol nebo přenos kanálu, který lze použít s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikační vrstvu, vyžaduje několik kroků. Toto téma popisuje kroky a bodů na konkrétní témata pro další informace. Zjistit model kanálu a různé typy, které jsou uvedené v tomto tématu najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md). Kanál ukázku dokončení přenosu, najdete [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md).  

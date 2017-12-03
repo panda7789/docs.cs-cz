@@ -12,14 +12,14 @@ dev_langs:
 - vb
 ms.assetid: 786a12c2-d530-49f4-9c59-5c973e15a11d
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: abd80187d6dac9f94aa49d9cd9b9eb94671a7c66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 98ac35edc458e370f2b7b9b116d2872d0db2da71
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="enlisting-resources-as-participants-in-a-transaction"></a>Uvedení prostředky jako účastníky v transakci
 Každý zdroj účasti na transakci spravuje správce prostředků, jejichž akce jsou koordinovaný správcem transakcí. Koordinace se provádí prostřednictvím oznámením na účastníky, kteří mají uveden v transakci prostřednictvím Správce transakcí.  

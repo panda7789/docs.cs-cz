@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5c6c0a55-f92d-442c-a61e-7841341a79df
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7d63638a3ae8829179cf95d8465bcd5daa7fb453
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6da8c187d3ec4290181c4aad8c2338fb05f1563b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelsmsmqpoisonmessagemovedretry"></a>System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry
 System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry  

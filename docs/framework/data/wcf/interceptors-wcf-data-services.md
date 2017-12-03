@@ -16,14 +16,14 @@ helpviewer_keywords:
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7aad516b819723c97a40a016a46ddcbe0fcdf4d2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f9718876e43c56c81f0a772670f187f6dd95f139
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="interceptors-wcf-data-services"></a>Sběrače (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]umožňuje aplikaci intercept zpráv žádostí, aby můžete přidat vlastní logiky do operace. Tato vlastní logiky můžete použít pro ověření dat v příchozí zprávy. Můžete ji použít i další omezit obor dotazu požadavku, jako třeba vložit vlastní zásady autorizace na základě žádosti.  

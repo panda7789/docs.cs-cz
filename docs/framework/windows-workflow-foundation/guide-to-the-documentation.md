@@ -12,14 +12,14 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], guide to
 ms.assetid: a75025be-f225-430f-90cf-98f7022db436
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 55859cb83c98c28ced862a66bd56dd86a828c1fc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: be645a0aa07a38e8cac7fa0a6d03634c64d3e11e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="guide-to-the-windows-workflow-documentation"></a>Průvodce dokumentací pracovního postupu systému Windows
 Toto téma obsahuje informace o tom, jak používat v dokumentaci Windows Workflow Foundation. Propojené dokumenty doporučují se, že počáteční body seskupené podle konkrétní zájmů a úrovně odborných znalostí.  

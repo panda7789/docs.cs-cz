@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: Multiple EndPoints
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
 caps.latest.revision: "31"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3b7e3a6da177c381bafe3adee16be36ceba50616
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6595184219ac87ef1d490308bcd927f57fa0a3ba
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="multiple-endpoints"></a>Víc koncových bodů
 Ukázka několik koncových bodů ukazuje, jak nakonfigurovat několik koncových bodů na služby a ke komunikaci se každý koncový bod z klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Chcete-li definovat dva koncové body, které podporují byla změněna konfigurace služby `ICalculator` kontrakt, ale každý na jinou adresu pomocí jinou vazbou. Konfigurace klienta a kód bylo upraveno, aby komunikovat s oběma koncové body služby.  

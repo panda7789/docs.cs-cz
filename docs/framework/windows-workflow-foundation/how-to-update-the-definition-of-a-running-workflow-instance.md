@@ -12,14 +12,14 @@ dev_langs:
 - vb
 ms.assetid: 26dfac36-ae23-4909-9867-62495b55fb5e
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 73b36ca4dfd5ba61e99531df53a0e71dd4d32551
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7cb2191482771647bcc2cd1003229e445c320e1a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a>Postupy: aktualizovat definici spuštěná instance pracovního postupu
 Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři aplikace k aktualizaci definice pracovního postupu instance trvalou pracovního postupu. Požadovaná změna může být implementace oprava chyb, nové požadavky, nebo aby bylo možné ošetřit neočekávané změny. Tento krok v tomto kurzu demonstruje použití dynamické aktualizace k úpravě trvalou instance `v1` číslo uhodnutí pracovního postupu tak, aby odpovídala nové funkce, zavedená v [postup: více verzí pracovní postup-souběžného hostitele ](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  

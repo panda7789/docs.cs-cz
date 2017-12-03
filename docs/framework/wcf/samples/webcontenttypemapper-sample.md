@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 994742d0c0d60b9fbe2dd7ed1ea252d1074140f9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 27342076290ca40abefea63edcc5f5c7186c4256
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper – ukázka
 Tento příklad znázorňuje způsob namapování nové typy obsahu ke [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] formáty text zprávy.  

@@ -16,14 +16,14 @@ helpviewer_keywords:
 - federation
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3314519e89a78f188d78a5e5af641d7c87ee1c46
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f03734babf27ac4350580e7bed03645f3049c956
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>Postupy: vytvoření třídy WSFederationHttpBinding
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceModel.WSFederationHttpBinding> – třída ([\<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, služby, která vyžaduje ověření pomocí tokenu zabezpečení vydaného služby tokenů zabezpečení klientů. Toto téma ukazuje, jak nastavit <xref:System.ServiceModel.WSFederationHttpBinding> v kódu a konfigurace. Po vytvoření vazby, můžete nastavit koncový bod pro tuto vazbu používají.  

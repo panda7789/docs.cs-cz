@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9c2aa6bd10d95abefd37fb53f88916d90cfe2344
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 468d0ca5f4afa4e84b69f58887672ffcf1a14fa6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>Činnost externalized zásad v rozhraní .NET Framework 4.5
 Tento příklad ukazuje, jak aktivity ExternalizedPolicy4 umožňuje provádění stávající [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] [!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] [!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 4.5) přímo pomocí pravidla modulem, který se dodává v WF 3.5. Pomocí této aktivity můžete otevřít a provést jakékoli existující 3.5 WF <xref:System.Workflow.Activities.Rules.RuleSet>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WF 3.5 stroj pravidel, které jsou součástí Windows Workflow Foundation, přečtěte si [Úvod k modulu Windows Workflow Foundation pravidla](http://go.microsoft.com/fwlink/?LinkId=166079). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]migrace pravidla, která [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], přečtěte si pokyny migrace na [migrace pokyny](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  

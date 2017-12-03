@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1afd3d94ceb3389a7d87528371925120f3c92764
-ms.sourcegitcommit: e99dfadbca1992c187179b6a3b42bef44534ebb6
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cb9fc13d7facf3bdc3f9da43297a47fd1cf4af65
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-discovery-overview"></a>Přehled zjišťování WCF
 Zjišťování rozhraní API poskytuje jednotný programovací model pro dynamické publikace a zjišťování webové služby pomocí protokolu WS-Discovery. Tato rozhraní API umožňují služby k publikování sami a klienti najít publikované služby. Jakmile služba je k zjistitelný, služba má možnost zasílání oznámení a také naslouchat a reagovat na požadavky na zjišťování. Zjistitelný služby může odesílat zprávy Hello oznamujeme jejich přijetí v síti a zprávy Bye oznamujeme jejich přesun ze sítě. Pokud chcete vyhledat služby, klienti odesílají `Probe` požadavek, který obsahuje určitá kritéria, například typ kontraktu služby, klíčová slova a oboru v síti. Přijímat služby `Probe` žádosti a určit, zda se shodují se kritéria. Pokud služba odpovídá, odpoví odesláním `ProbeMatch` zprávy zpět do klienta se informace potřebné k kontaktovat službu. Klienty můžete také odeslat `Resolve` požadavků, které mohly najít služby, které mohl změnit jejich adresa koncového bodu. Odpovídající služby reagovat na `Resolve` požadavky odesláním `ResolveMatch` zprávy zpět do klienta.  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e80d9734-b43a-4d21-a250-74400330a4c0
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e54065f0877e8df410b91f9b4e25c9cb6120d718
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d84dc6f49eb7062313e3dcbc71efbb475041865d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="flowchart-activities-in-wf"></a>Vývojový diagram aktivity v WF
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]poskytuje několik poskytované systémem aktivity pro řízení provádění a vytvoření větve v rámci vývojového diagramu.  

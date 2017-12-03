@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c07435f3-5214-4791-8961-2c2b61306d71
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 01998d0ac732f63f6771c47bfc76a8207a5531f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 413adbc25e2f92ae2e989290685db6dfeaf58368
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-message-formatters"></a>Vlastní formátování zpráv
 Obsah zprávy je často ve formátu XML, což je obvykle není vhodné formát pro aplikaci. Aplikace pracovat s objekty, získávání a nastavování jejich vlastností. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá *kontrakt dat* převést <xref:System.ServiceModel.Channels.Message> objektu na objekt jednoduše zvládne aplikace. Tyto procesy se nazývají serializace a deserializace. Upozorňujeme, že jsou popsat serializaci a deserializaci provádí přenosové vrstvy do a z přenosový formát zprávy, což je proces nesouvisejícími tyto stejných podmínek.  

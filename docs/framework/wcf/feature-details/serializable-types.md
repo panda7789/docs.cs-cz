@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6f053edc688080293b6fae927049bf6776551b7c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4e368472db3bdca73661586821106174e13d4d24
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="serializable-types"></a>Serializovatelné typy
 Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> serializuje všechny typy veřejně viditelný. Všechny veřejné vlastnosti a pole typu se serializují.  

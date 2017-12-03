@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1e2852be-3601-45ae-b507-ccc465d45c60
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e21c6eb15e305584b86c35f8a3cb4a7e549b7cae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 18f6501d2c5a97f7f267321e9cf0b06737afa5bd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="context-exchange-correlation"></a>Korelace kontextové výměny
 Korelace kontextu je založené na mechanismu exchange kontext, který je popsané v [Exchange kontextu .NET – specifikace protokolu](http://go.microsoft.com/fwlink/?LinkId=166059). Korelace kontextové používá dobře známé kontextu hlavičky nebo soubor cookie k úpravě zprávy na správnou instanci. Použít korelace kontextu, na základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding>, nebo <xref:System.ServiceModel.NetTcpContextBinding> na zadaný pro koncový bod se musí použít <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Toto téma vysvětluje, jak používat kontextu korelace aktivitách zasílání zpráv ve službě pracovního postupu.  

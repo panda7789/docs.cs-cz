@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: de2152e557ccfe19c47247e2501f2e2d62253e81
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d33e809a0db0b812cf7311d7b5686d9125e80976
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="instance-activation"></a>Instance aktivace
 Ukládání Instance pracovního postupu SQL spustí vnitřní úloh, která pravidelně probudí a zjišťuje instance pracovního postupu spustitelného nebo activatable v databázi trvalost. Pokud najde instanci spustitelného pracovního postupu, upozorní hostitele pracovního postupu, který je schopen aktivace instance. Pokud instance úložiště najde instance activatable pracovního postupu, upozorní obecné hostitele, který aktivuje hostitele pracovního postupu, který pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  

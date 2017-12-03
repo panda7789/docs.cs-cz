@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
 caps.latest.revision: "37"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2cb8ae40cb62c65bf6dbd394055fffadd7202f16
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 17b0d3166b742aacfb935b8ab8ba4864bf1f7188
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="datacontractserializer-sample"></a>Ukázka třídy DataContractSerializer
 Ukázka třídy DataContractSerializer ukazuje <xref:System.Runtime.Serialization.DataContractSerializer>, která provede obecné serializace a deserializace služeb pro data třídy kontrakt. Ukázka vytvoří `Record` objektu, serializuje na datový proud paměti a deserializuje datový proud paměti zpět do jiného `Record` objekt, který chcete ukazují použití <xref:System.Runtime.Serialization.DataContractSerializer>. Ukázka poté serializuje `Record` pomocí binární zapisovač k předvedení toho, jak zapisovač ovlivňuje serializace.  

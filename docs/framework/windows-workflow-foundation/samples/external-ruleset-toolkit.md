@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9ff7a7e7cfd29ea6e5029219115b4bfff1c6895c
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fcdd42700ad13eb8b81714cc97dafaa5bf45d2a2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="external-ruleset-toolkit"></a>Externí Ruleset Toolkit
 Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovního postupu, pravidla jsou součástí sestavení. V některých případech můžete udržovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez opětovné sestavení a nasazení sestavení pracovního postupu. Tato ukázka vám umožňuje spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu. To umožňuje, aby automaticky začlenit RuleSet změny spuštěných instancí pracovního postupu.  

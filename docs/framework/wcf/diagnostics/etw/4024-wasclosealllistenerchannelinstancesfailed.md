@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 73f0dc73-f0b7-4c13-8328-9fdc262009ec
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ce63dfd3ce7309cb63158656513cac613d2dab76
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 46a169931955ce6d0ed60a0f870d55245e727371
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4024---wasclosealllistenerchannelinstancesfailed"></a>4024 – WasCloseAllListenerChannelInstancesFailed
 ## <a name="properties"></a>Vlastnosti  

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c0c6d4917cc34021381e30d45b50b225b6aa4d18
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7a65f2c1daaac7e0e795412d666bb7d15e639361
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="schema-import-and-export"></a>Import a export schémat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje nové Serializační stroj <xref:System.Runtime.Serialization.DataContractSerializer>. `DataContractSerializer` Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML (v obou směrech). Vedle sebe, serializátor [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje přidružené schéma import a export mechanismy schématu. *Schéma* formální, přesné a strojově čitelným popis obrazec XML, který produkuje serializátor nebo který deserializátor přístup. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]jazyk definice schématu XML World Wide Web Consortium (W3C) (XSD) se používá jako jeho reprezentace schématu, která je široce vzájemná spolupráce s mnoha platformy třetí strany.  

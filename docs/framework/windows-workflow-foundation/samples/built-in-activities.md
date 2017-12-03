@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 31e1b8c2-7f74-458a-b2e2-fddc5b10eac1
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 65eab701db6385f4dbd3da3482398611d8777387
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 642ba5100cca17623a07e5de613b6d6aa26bd23f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="built-in-activities"></a>Zabudované aktivity
 Tato část obsahuje příklady vysvětlující integrovanou [!INCLUDE[wf](../../../../includes/wf-md.md)] aktivity.  

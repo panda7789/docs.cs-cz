@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6d2ad3c9-47ee-4e77-b1c6-259ab15b0cfb
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: dc7c4e9a3d3e1b5cb844c039d66abf7e33c9cedd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7b43d3170bc3ef417612ea5e2f67422836f74f0e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="5012---dcjsongenreaderstart"></a>5012 – DCJsonGenReaderStart
 ## <a name="properties"></a>Vlastnosti  

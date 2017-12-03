@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4e594eec-2a31-4d49-ad31-aca2ecbb1f69
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 26feff95fb6d6584f487a408566aee089a57ad7f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3a86cbe3d36383623c70c6a0588d3c0e8fe0bf5c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="sql-server-persistence-database"></a>Trvalost databáze systému SQL Server
 Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepodporuje ukládání Instance pracovního postupu SQL a ukazuje, jak deserializovat vlastnosti primitivní instance dat a jak dotazovat pro netrvalé instance.  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c4ad9bb2-9037-413a-8b14-59ed7b927a9e
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5cd0859db8071f9af130756fdc9b34726199be9a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ed50cd5f27ab41702b134438693c4d75935cb4fc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ifelse-with-rules"></a>IfElse s pravidly
 Tento příklad ukazuje použití podmínku pravidla s <xref:System.Workflow.Activities.IfElseActivity> aktivity.  

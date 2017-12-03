@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e1e85d1815d1fbde25e1963a54cce8f02f5344a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f0cc23d5b6720d78afdc1acd50a2b84b76b977e9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-custom-claim"></a>Postupy: vytvoření vlastních deklarací identity
 Infrastruktura Identity modelu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje sadu předdefinovaných typy a práva pomocných funkcí pro vytváření <xref:System.IdentityModel.Claims.Claim> instancí s těmito typy a práva. Tyto integrované deklarace jsou navrženy pro informace o modelu, které se nacházejí v klientovi přihlašovací údaje typy, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje ve výchozím nastavení. V mnoha případech jsou předdefinované deklarace identity dostatečná; Některé aplikace ale můžou vyžadovat vlastní deklarace. Deklarace identity se skládá z typ deklarace identity, prostředků, pro kterou platí deklarace identity k a práv, která jsou uplatňovaná přes tento prostředek. Toto téma popisuje postup vytvoření vlastních deklarací identity.  

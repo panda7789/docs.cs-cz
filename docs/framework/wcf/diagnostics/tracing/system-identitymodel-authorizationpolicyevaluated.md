@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 99a3b127-0513-48f0-9af4-83b1b40716b1
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0b3d51375f3169c06489fd11fdc9f5b24440f95d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f31ccc6c0a85bf27821ff00ed08cde91b378aba2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemidentitymodelauthorizationpolicyevaluated"></a>System.IdentityModel.AuthorizationPolicyEvaluated
 System.IdentityModel.AuthorizationPolicyEvaluated  

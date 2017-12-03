@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1d2e0153a9ab8839aed1af948183397f7728e3d2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aa728f64b336cc13ae515838fb7ff5c98c742d10
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuration-and-metadata-support"></a>Konfigurace a podpora metadat
 Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky vazeb.  

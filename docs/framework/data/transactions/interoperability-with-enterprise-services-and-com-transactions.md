@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 14763de8861c06072f7f13928caa3327e9d7ff42
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6e9537f9ad25fe9a077b657f418c5b69d768818c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +
 <xref:System.Transactions> Obor názvů podporuje spolupráci mezi objekty transakce vytvořené pomocí tohoto oboru názvů a transakce vytvořené pomocí modelu COM +.  

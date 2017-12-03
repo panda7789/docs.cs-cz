@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3fa40a7a864ae65d15d787f5dec58a8da7b8e9a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bba89e9da78fd96d0cd7d61e825e4792729bae5b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-composite-designers---workflow-item-presenter"></a>Vlastní složený Designer - přednášejícího položky pracovního postupu
 <xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity. Tento příklad ukazuje, jak stavět Návrhář aktivity tohoto povrchy takovou "rozevírací zónu."  
@@ -91,4 +91,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.Presentation.WorkflowItemPresenter>  
- [Vývoj aplikací pomocí návrháře pracovních postupů](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)
+ [Vývoj aplikací pomocí návrháře postupu provádění](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

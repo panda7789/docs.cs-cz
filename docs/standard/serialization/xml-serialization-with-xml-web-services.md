@@ -24,14 +24,14 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c8ec820d631532b782b738f0fefcffce3e4b93d6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0f174ef3ada619e20d375035bee82b0ed9bbc145
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webové služby XML
 Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. K řízení XML generované webové služby XML, můžete použít atributy uvedené v obou [atributy, řízení XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, řízení kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) do třídy, návratové hodnoty, parametry a pole souboru, který se používá k vytvoření webové služby XML (.asmx). Další informace o vytváření webové služby XML, najdete v části [vytváření XML webové služby pomocí ASP.NET](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c).  

@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 96308e77752105ad0f3eb874b435f3bf47d332e3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 694b904587795823ae2f730b8182f404eba93a58
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltwsfederationhttpbindinggt"></a>&lt;– wsFederationHttpBinding&gt;
 Definuje vazbu, která podporuje WS-Federation.  

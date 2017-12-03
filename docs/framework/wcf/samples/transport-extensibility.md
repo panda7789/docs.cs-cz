@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3c9108be-f60f-4035-9f57-1da58c325420
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3351da4b7eeb319a9d2fb395874d1c3866a2ef5f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b46e3659f2311f5f049d4bfd04b1731bb9b4ae7d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transport-extensibility"></a>Rozšiřitelnost přenosů
 Tato část obsahuje příklady vysvětlující vlastní přenosy v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

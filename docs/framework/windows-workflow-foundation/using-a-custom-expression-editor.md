@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: dcf9970b2b4986c3948704d848c67d8a3c6f7d9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3a809c1d0eeb8f45d55f4e1f436b70ceb01b4a2f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-a-custom-expression-editor"></a>Pomocí vlastního výrazu editoru
 Editor vlastního výrazu se dá implementovat zajistit výraz bohatší nebo jednodušší prostředí pro úpravy. Existuje několik situací, ve kterých můžete chtít použít editor vlastního výrazu:  

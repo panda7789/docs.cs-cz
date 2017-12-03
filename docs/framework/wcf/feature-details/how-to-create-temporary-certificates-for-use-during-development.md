@@ -13,14 +13,14 @@ helpviewer_keywords:
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a1b386906c1d493a23d8a58f3540758d3ae0d26e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 83f93d6bac0e16fe0b44ea5aba718ddb4dcf7c6e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití při vývoji
 Při vývoji zabezpečení služby nebo klienta s použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], je často potřeba zadat certifikát X.509, který se má použít jako pověření. Certifikát je obvykle součástí řetěz certifikátů s kořenovou autoritou nalezen v úložišti Důvěryhodné kořenové certifikační autority počítače. S řetěz certifikátů umožňuje určit obor sadu certifikáty, které obvykle kořenovou autoritou je z vaší organizace nebo organizační jednotka. To emulovat v době vývoje, můžete vytvořit dva certifikáty splňovat požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti důvěryhodných kořenových certifikačních autorit a druhý certifikát je vytvořený z první a je umístěn v osobním úložišti umístění místního počítače nebo osobním úložišti Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí [nástroje vytvoření certifikátu (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=248185), poskytnutá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK.  

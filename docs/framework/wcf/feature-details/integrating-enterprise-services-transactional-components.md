@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7c2420c700d893e6c2c19b72beed0e605ffd4853
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a236a34dd20661d62d59a3712a1800ff1f9a11ad
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Integrace transakčních komponent služeb Enterprise Services
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje mechanismus automatického pro integraci do podnikové služby (viz [integrace s aplikacemi modelu COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Ale můžete chtít flexibilitu při vývoji služeb, které používají interně hostovaným v rámci služby podnikového transakčních komponent. Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] transakce funkce je založená na <xref:System.Transactions> infrastruktury, proces pro integraci služby Enterprise s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je stejná jako pro zadání vzájemná funkční spolupráce mezi <xref:System.Transactions> a Enterprise Služby, jak je uvedeno v [vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +](http://go.microsoft.com/fwlink/?LinkId=94949).  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d03dbe34-5b2e-4f21-8b57-693ee49611b8
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e09548b617fec71ed9cec73f09ef19a8c5b41fe5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5f231a4e43723ce3ea73831086ed54e9ee08c1a0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="variables-and-arguments"></a>Proměnné a argumenty
 V [!INCLUDE[wf](../../../includes/wf-md.md)], proměnné představují úložiště dat a argumenty představují tok dat do a z aktivity. Aktivita má sadu argumentů a jejich tvoří podpis aktivity. Kromě toho aktivitu můžete spravovat seznam proměnné, do kterých vývojář lze přidávat nebo odebírat proměnné při návrhu pracovního postupu. Argument je svázán pomocí výraz, který vrátí hodnotu.  

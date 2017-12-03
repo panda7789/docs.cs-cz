@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 61d2791c-e1a2-400a-a57e-66818ac5962e
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 93fc58528cfad7ae2e0450069fe1fb5a832863e8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a8a8a5ed3758f6d0b1a013f3a4b43d5deda946c0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4804---discoverymessagereceivedafteroperationcompleted"></a>4804 – DiscoveryMessageReceivedAfterOperationCompleted
 ## <a name="properties"></a>Vlastnosti  

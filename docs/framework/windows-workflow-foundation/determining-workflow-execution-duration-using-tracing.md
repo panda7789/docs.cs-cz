@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f04ad0fd-edc7-4cbc-8979-356f2a1131c4
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: acdc4f7d58eb0f5737adb59b113ea24d723d3b61
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c635dbd551eaba6ce338c38564480d0f5cfae553
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="determining-workflow-execution-duration-using-tracing"></a>Určení dobu trvání provádění pracovního postupu pomocí trasování
 Toto téma ukazuje, jak určit čas potřebný pro úspěšně dokončila, vlastním hostováním pracovní postup provést pomocí trasování pracovního postupu.  

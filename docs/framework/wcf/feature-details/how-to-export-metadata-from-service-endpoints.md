@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d076878f31d162713feaecc0a92c2f6f534897b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 684d9bcf2e4787457a6ef3251e0202e1559561b5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-export-metadata-from-service-endpoints"></a>Postupy: Export metadat z koncových bodů služby
 Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.  

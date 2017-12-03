@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
 caps.latest.revision: "31"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 715786cf6e7086d0b626f18c4192e3469fc1fb82
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5345816295b9de54426aef3da697b99b4f0ce10e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="instancing-initialization"></a>Inicializace vytváření instancí
 Tato ukázka rozšiřuje [Pooling](../../../../docs/framework/wcf/samples/pooling.md) ukázku definováním rozhraní, `IObjectControl`, který přizpůsobí inicializace objektu aktivace a deaktivace ho. Klient volá metody, které vrací objekt do fondu a která nevrátí objektu do fondu.  

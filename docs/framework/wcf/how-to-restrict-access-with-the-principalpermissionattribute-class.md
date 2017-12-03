@@ -17,14 +17,14 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: 5162f5c4-8781-4cc4-9425-bb7620eaeaf4
 caps.latest.revision: "23"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: afee838dac830d060ac933f314d3a57dcc11d603
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ddfb7b343bf4eb551b5029c538d29f104698adf
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute
 Řízení přístupu k prostředkům v počítači domény systému Windows je úloha základní zabezpečení. Například pouze určité uživatelé by měli být schopní zobrazit citlivá data, jako jsou informace o mzdách. Toto téma vysvětluje, jak omezit přístup k metodě pomocí vyžadování, které uživatel patří do předdefinované skupiny. Pracovní vzorek, najdete v části [autorizace přístupu k operacím služby](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md).  

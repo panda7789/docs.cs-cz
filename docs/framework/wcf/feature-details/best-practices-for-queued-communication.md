@@ -13,14 +13,14 @@ helpviewer_keywords:
 - best practices [WCF], queued communication
 ms.assetid: 446a6383-cae3-4338-b193-a33c14a49948
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: db0506f6fbbda7758d4cbfc3624d68277a301268
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 15de43cc83e92b781e44da703353bec98dbc2c6a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="best-practices-for-queued-communication"></a>Doporučené postupy pro komunikaci ve frontě
 Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Následující části popisují doporučené postupy z hlediska scénář.  

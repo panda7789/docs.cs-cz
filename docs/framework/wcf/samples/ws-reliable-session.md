@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: Reliable session
 ms.assetid: 86e914f2-060b-432b-bd17-333695317745
 caps.latest.revision: "30"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ec04c91237516bcf535963c2d5ff7b0584c52be2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9f016cc075b98b03c17959280215f7aa64f44e24
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ws-reliable-session"></a>Spolehlivá relace WS
 Tento příklad znázorňuje použití spolehlivé relace. Spolehlivé relace poskytuje podporu pro spolehlivé zasílání zpráv a relací. Spolehlivé zasílání zpráv opakování komunikace při selhání a umožňuje záruky doručení zadat, jako je například doručení zpráv v daném pořadí. Relace uchování stavu pro klienty mezi volání. Ukázka implementuje relace pro zachování stavu klienta a určuje záruky doručení v daném pořadí.  

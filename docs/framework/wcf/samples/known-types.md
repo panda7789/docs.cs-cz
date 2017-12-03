@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: eae1a7971c50372b999678b79be6503885d71f1e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 45f57fd90eb787099e37b012eb528a2072f175c3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="known-types"></a>Známé typy
 Tento příklad ukazuje, jak zadejte informace o odvozené typy v kontraktu dat. Kontrakty dat umožňují předat strukturovaných dat do a ze služby. V objektově orientované programování jde použít místo původní typ typ, který dědí z jiného typu. Při programování orientované na služby, se předávají schémata spíše než typy a proto není zachován vztah mezi typy. <xref:System.Runtime.Serialization.KnownTypeAttribute> Informace o odvozené typy, které mají být zahrnuty v kontraktu dat umožňuje atribut. Pokud se nepoužívá tento mechanismus, nelze odesílat nebo přijímat, kde je očekávána základní typ odvozený typ.  

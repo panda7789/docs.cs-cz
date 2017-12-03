@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 78e4e780-c784-4511-8cf5-dd5293579cec
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 67654e6947263a4f89d3550718a122823e74f934
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e9584735c427ef00a4e17a2c033571a3cb42fd78
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationservicehoststoppingservice"></a>System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService
 System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService  

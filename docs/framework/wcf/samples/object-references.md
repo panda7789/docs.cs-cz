@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 643cdf80900a02f269887aa6c95832429060fc8d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e734f7909265b4e811b462f81d471b24b6330d6a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="object-references"></a>Odkazy na objekty
 Tento příklad znázorňuje, jak předat objekty podle odkazů mezi serverem a klientem. Ukázka použití simulated *sociálních sítí*. Sociální sítě se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých je každý friend instance `Person` třída, s vlastní seznamu přátel. Tím se vytvoří graf objektů. Službu zpřístupní operace v těchto sociálních sítích.  

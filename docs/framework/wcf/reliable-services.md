@@ -16,14 +16,14 @@ helpviewer_keywords:
 - service contracts [WCF], reliable services
 ms.assetid: 07814ed0-0775-47f2-987b-d8134fdd5099
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4872afb097d01279b24697a7b385f336d34ea4f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f8bc4e68e705691db0c6fcd0e8be0447af73ec42
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="reliable-services"></a>Spolehlivé služby
 Fronty a spolehlivé relace jsou [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] funkce, které implementují spolehlivé zasílání zpráv. Toto téma popisuje funkce spolehlivého zasílání zpráv [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0754e9dc-13c5-45c2-81b5-f3da466e5a87
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6a675c42c597928c0ea2cc60be6de0cea6111499
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cccbf343acc74b3e0da0f55e497f19ca15e27892
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a>Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient
 Použití <xref:System.ServiceModel.Description.MetadataExchangeClient> třídy ke stažení metadat pomocí protokolu WS-MetadataExchange (MEX). Soubory načtené metadat se vrátí jako <xref:System.ServiceModel.Description.MetadataSet> objektu. Vrácený <xref:System.ServiceModel.Description.MetadataSet> objektu obsahuje kolekci <xref:System.ServiceModel.Description.MetadataSection> objekty, z nichž každý obsahuje dialekt konkrétních metadat a identifikátor. Metadata vrácená může zapisovat do souborů, nebo pokud vrácený metadat obsahuje webové služby popis Language (WSDL) dokumenty, můžete importovat metadata pomocí <xref:System.ServiceModel.Description.WsdlImporter>.  

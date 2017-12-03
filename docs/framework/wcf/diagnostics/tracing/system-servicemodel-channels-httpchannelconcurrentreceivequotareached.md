@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: db6d8cdb-0d25-4bfb-8963-eff465733d70
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 40b5e992751fdf9a7ce65c1f3ac379e5e4669e6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 03fb0a1d7bc461bc5319a65cc04eb0e1ce032255
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelshttpchannelconcurrentreceivequotareached"></a>System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached
 System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached  

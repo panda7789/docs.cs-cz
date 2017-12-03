@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6fa68698c6c343b29ca39e66150753502cb8f673
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bdd547a62391d11050071e1ede648b28c28bd3f4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
 Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>, v uvedeném pořadí) jsou na místě kde [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikačního modelu souvisí s objektů factory kanálu a moduly pro naslouchání kanálu. Bez vazby, použití vlastních kanály vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni služby kanálů](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavek na povolit pomocí kanálu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit použití z aplikace, jak je popsáno v kroku 4 v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  

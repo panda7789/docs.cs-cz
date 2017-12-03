@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ab46b1c908e8eb61ea49315e120973f1ea381bc6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 191baa2df4a6a5a4fe8139e8b7ad36bd1c60b40d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
 Rovnocenného kanálu je záměrné všesměrového vysílání mřížku. Svůj základní flooding model spočívá v distribuci každá zpráva odeslaná do všech členů tohoto oka kteréhokoli člena mřížku. To se hodí v situacích, kde každé zprávy vygenerované metodou členem je relevantní a užitečné pro všechny ostatní členy (například konverzační skupina). Ale mnoho aplikací mít občasné potřebu omezení distribuce zpráv. Například pokud nového člena spojí mřížku a chce načíst poslední zprávou odeslanou přes síť, tento požadavek není nutné k zaplnění na každého člena OK. Žádost může být omezen na téměř okolí, nebo může být odfiltrována místně vygenerovanou zprávy. Zprávy mohou rovněž odeslány do jednotlivých uzlu na OK. Toto téma popisuje použití počet směrování, šíření filtru zpráv, filtrem místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu OK a obsahuje obecné pokyny pro výběr přístup.  

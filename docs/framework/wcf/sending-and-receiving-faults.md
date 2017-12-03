@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7b7a97ef253431b5519de2b3e45485a15ca3f5ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5897d107fc27b56ffd1eb476dff1fa1d507f5de5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="sending-and-receiving-faults"></a>Chyby odesílání a přijímání
 Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Obvykle služby definuje vlastní chyby obsahu a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klienta může poslat tyto chyby při odpovídající chybový stav a jak klienta nebo aplikace služby zpracovává tyto chyby. Přehled zpracování chyb v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  

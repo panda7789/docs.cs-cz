@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
 caps.latest.revision: "39"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 92da011b6bd3fda342e827536b698c6ae6f4c6f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d1cc61b1b777de7149b8f12c0b2f6030b305a73c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Pro zjednodušení konfigurace služby pro interoperabilita osvědčených postupů, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zavádí tři umožňuje vzájemnou spolupráci vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro spolupráci s organizace rozvoj z strukturovaných informace standardy (OASIS) standardů [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje jednu vzájemná spolupráce poskytnutými systémem vazbu: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje dvě umožňuje vzájemnou spolupráci vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma uvádí specifikace, které podporují umožňuje vzájemnou spolupráci vazby poskytované systémem.  

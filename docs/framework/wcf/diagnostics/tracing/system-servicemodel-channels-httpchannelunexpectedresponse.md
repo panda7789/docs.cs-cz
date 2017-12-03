@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: eafa9450-4077-4c3a-94c4-52862d66eb6f
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ee404417cf2a4238b905e95b1a4af0b42358d7c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cfa4f5592e15f3cd9f76e35c02d12e038da3d422
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelchannelshttpchannelunexpectedresponse"></a>System.ServiceModel.Channels.HttpChannelUnexpectedResponse
 System.ServiceModel.Channels.HttpChannelUnexpectedResponse  

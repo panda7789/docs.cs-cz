@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d1d547d2-f5fb-4de3-a959-ee6139a4f1ad
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1c866d337b6e02fa18241b6fafd9d4e5a397ef69
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f644f09af3ce9e191dc6c5680472de4ef5ab727d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="overloadgroups"></a>OverloadGroups
 Tato ukázka se skládá z aktivity (`CreateLocation`), která má dva zajímavé vlastnosti:  

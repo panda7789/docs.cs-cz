@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7cd418f0-0eab-48d1-a493-7eb907867ec3
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 49e64fb9a8a2b6bd90c2f9ed062afecafc8cfecd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e6cd38a2fd0a682ebae0a32cc1fec31a3ac40851
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>Objekty DiscoveryClient a DynamicEndpoint
 <xref:System.ServiceModel.Discovery.DiscoveryClient>a <xref:System.ServiceModel.Discovery.DynamicEndpoint> jsou dvě třídy používané na straně klienta pro vyhledání služeb. <xref:System.ServiceModel.Discovery.DiscoveryClient>poskytuje seznam služeb, které odpovídají konkrétní nastavení kritérií a umožňuje vám umožní připojit se ke službám. <xref:System.ServiceModel.Discovery.DynamicEndpoint>provádí stejné operace a kromě toho se automaticky připojí k jedné ze služeb, které byl nalezen. Žádný koncový bod, mohou být provedeny do <xref:System.ServiceModel.Discovery.DynamicEndpoint>, kritéria hledání se dá přidat taky v konfiguraci, proto <xref:System.ServiceModel.Discovery.DynamicEndpoint> je užitečné, když potřebujete zjišťování ve vašem řešení, ale nechcete, aby k úpravě klienta logiku – potřebujete upravit koncových bodů. <xref:System.ServiceModel.Discovery.DiscoveryClient>na druhé straně může použít k získání lepší kontrolu nad vaše operace vyhledávání. K použití a výhody jednotlivých jsou podrobně uvedeno níže.  

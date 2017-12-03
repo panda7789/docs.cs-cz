@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 305eeb65-a52f-459e-9aa8-0ef071eade16
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 660ec440c7edd60af9c90f87d082b0aed608db30
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f03e1bf9562b53ed4b43655848a4469ab8d7626d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="contract"></a>Kontrakt
 Tato část obsahuje příklady vysvětlující kontrakty [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

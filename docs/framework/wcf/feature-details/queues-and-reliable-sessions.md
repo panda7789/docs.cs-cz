@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7e794d03-141c-45ed-b6b1-6c0e104c1464
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cfd81e1b2290f1ed2c4e2400516ce0d23c7588f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9b2ad869e8127bcaf513bee82e3175b35349d922
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="queues-and-reliable-sessions"></a>Fronty a spolehlivé relace
 Fronty a spolehlivé relace jsou [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce, které implementují spolehlivé zasílání zpráv. Témata obsažené v této části popisují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce spolehlivého zasílání zpráv.  

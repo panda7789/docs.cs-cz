@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6c0a23c9-a663-461c-bdab-58b4d3e23642
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e9fc16bb6bd512c424f2b3630f7bb6d0614bb067
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 81eb778d70722cb44fa8dd4bc3f1152a12d87199
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="core-communications-httphttps-transport-channels"></a>Základní komunikace: Protokolu HTTP nebo HTTPS přenosové kanály
 Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] přenosové kanály protokolu HTTP nebo HTTPS.  

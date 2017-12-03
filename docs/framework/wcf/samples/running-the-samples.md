@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c3cc4417d1781975663b92b777ecff8789372848
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1a37c7b01d4ef40727c02e0782422776086b5297
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Ukázky můžete spustit v jednom počítači nebo počítači konfiguraci. Zadaný, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je potřeba upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak spustit ukázku ve stejném počítači a počítači konfigurace. Všimněte si, že jsou rozdíly v kroků pro služby hostované v Internetové informační služby (IIS) a vlastním hostováním ukázky. Většina ukázky jsou hostované ve službě IIS; Zobrazit informace o ukázkový soubor readme k určení, jak je hostovaná.  

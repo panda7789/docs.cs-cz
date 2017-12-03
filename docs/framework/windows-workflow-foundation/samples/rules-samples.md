@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fe156790-3260-4d50-a4a6-e6bc80575af0
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 757a66c435d33281cab03ffcd3fe5fc96770fce6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9f130fb875074e45144e8ff7bb4cc48e353f0428
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="rules-samples"></a>Ukázky pravidla
 Tato část obsahuje ukázky, která demonstruje použití modul pravidla pracovních postupů z [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].  

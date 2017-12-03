@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f850b3e2-022b-4c75-aca3-1a8b14f9dc30
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1270f01135f6f0d0b4bfe775b9b08308e802c3f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ba0442365991c1278bb71dbf9b4c881ef9e78908
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemidentitymodelselectorsstorefailedtoopenstore"></a>System.IdentityModel.Selectors.StoreFailedToOpenStore
 System.IdentityModel.Selectors.StoreFailedToOpenStore  

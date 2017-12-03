@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b6479892b6b631b3196604353670b7f47f552441
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c538ead434a7e5abe85f0d28ac7bf7edae98cbb8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využívání OData informační kanály z pracovního postupu
 Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] , umožňuje vytvářet služby, které používají Open Data Protocol (OData) vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantiky representational stavu transfer (REST). OData zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Všechny aplikace mohou komunikovat s služby OData na základě dat Pokud můžete odeslat požadavek HTTP a zpracování datového kanálu OData, vrátí datové služby. Kromě toho služby WCF Data Services zahrnuje klientské knihovny, které poskytují bohatší programovací prostředí spotřebuje informační kanály OData z [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace. Toto téma poskytuje přehled o využívání OData kanálu v pracovním postupu s i bez použití knihovny klienta.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 632d8084-f492-47bd-a40d-f9281c130149
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f8b4c295afdd0bc8470cf7bc12702c345c7c70c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1dbcedfed20c66c156afb605a22efaf10c61be52
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodelactivationwebhostdebugrequest"></a>System.ServiceModel.Activation.WebHostDebugRequest
 System.ServiceModel.Activation.WebHostDebugRequest  

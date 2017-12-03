@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b2c34ae5-62ed-4c2d-b2fa-2d4d0802099c
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 29fff4c458b7c9ef0c830fe8d46fe1cd1462f767
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b356fd413ab61990b685d3104b9f1bc00dfbd71c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="syndication-extensibility-samples"></a>Ukázky rozšiřitelnosti syndikace
 Tato část obsahuje příklady vysvětlující vlastní syndikace v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
 caps.latest.revision: "25"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0c913896611ea4b336f7626b21f9fe959ef4fd09
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 455dec4adefc479433945f9f9b02708c23437991
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které government problémy k prokázání přístupem v zemi nebo oblasti. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přihlašovací údaje mohou mít mnoho forem, jako je například uživatelské jméno tokeny a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  

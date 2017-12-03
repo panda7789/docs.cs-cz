@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f70e5d7b36b2795dd00c59de6e569623c2bbe180
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 65a9f5ca09fd93861df19af1ced86f7b74af93ed
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="trusted-facade-service"></a>Důvěryhodná služba facade
 Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího jedna služba jiné pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Infrastruktura zabezpečení.  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f76ef924-34ce-48ae-8c8d-48faf9697754
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ab8f47601f84267d1ac357b313fa5d2215a586d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e0df4ddc6f2cc5404c8153b30df66cda41487691
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="conditioned-activity-group"></a>Klimatizovaném skupiny aktivit
 Ukázka ukazuje na aplikaci rezervace cesta. <xref:System.Workflow.Activities.ConditionedActivityGroup> (CAG) má dvě aktivity kód: aktivitu Car a aktivitu letecká společnost. V `SimpleCAGWorkflow` konstruktoru, objekt ArrayList "travelNeedType" naplněný typy cesta rezervace, které jsou požadovány. Pomocí komentářů na jeden nebo oba `travelNeeds.Add` příkazy, můžete změnit chování CAG odpovídajícím způsobem. Auto i letecká společnost aktivity mají jejich <xref:System.Workflow.Activities.ConditionedActivityGroup.WhenConditionProperty> naplněný podmínku <xref:System.Workflow.Activities.CodeCondition>. Aktivity Car provádí pouze v případě, `travelNeeds` kolekce má `TravelNeeds.Car` položku a letecká společnost aktivita se spustí pouze v případě `travelNeeds` kolekce má `TravelNeeds.Airline` položku.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 469f3056-5ef2-4753-8acf-b574d23d83cf
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bf8e62d99ffc0a7296d83685dfeb15993afff934
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9081b47284b63315d950ef791389312df32815f8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="http-acknowledgement-channel"></a>Kanál potvrzení HTTP
 Kanál potvrzení HTTP je příkladem vrstveného kanálu, který změní jednosměrný vzorcem zasílání zpráv, povolení služby vědomí nebo odmítnout příchozí zprávy místo automaticky odesláno potvrzení na potvrzení. Kanál potvrzení HTTP také umožňuje službě potvrzení zpoždění, dokud mohl zajistit firemní úrovni záruku, že dojde ke zpracování zprávy.  

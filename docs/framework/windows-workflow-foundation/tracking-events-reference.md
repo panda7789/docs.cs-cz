@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c1c1ee87-f80a-449b-acd0-50d81eef116e
 caps.latest.revision: "23"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d54c8bd4c6a73b9ff5b4066832b557041d7dec0d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9eaf7f8bd4d477b08cda16ca544f240a417f6b21
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="tracking-events-reference"></a>Sledovací odkaz události
 Během provádění pracovní postup v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] vyvolá sledování událostí při jejich přesunu různými fázemi v celé jeho životnosti. Hostitel může přihlásit k odběru těchto událostí a aktualizovat stav průběhu pracovního postupu během celé jeho životnosti. Sledování události vyvolané jsou popsané v této části.  

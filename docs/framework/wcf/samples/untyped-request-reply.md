@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c154fe7c072fc90d616e9788055a45ed66deb0db
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 45e68bd28a4ab5a0e7425bf06b02b8c3d3d25311
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="untyped-requestreply"></a>Netypový požadavek/odpověď
 Tento příklad znázorňuje jak definovat operace smlouvy, které použít třídu zpráv.  

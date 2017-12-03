@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5e01af77-6b14-4964-91a5-7dfd143449c0
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8efaba416511856d7d2e0a70e171eed2d8e2e96b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8a7dd9e0ccc29c81426064110eda3e00d2f27b99
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="non-persisted-workflow-instances"></a>Instance pracovního postupu netrvalé
 Novou instanci pracovního postupu vytvoření která je uchována jeho stav v <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, hostitel služby vytvoří záznam pro tuto službu v úložišti instance. Když je následně k instanci pracovního postupu trvalé poprvé, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> uloží aktuální stav instance. Pokud je pracovní postup je hostovaná v aktivační službě procesů systému Windows, data nasazení služby se zapisují také do instance úložiště při první instance.  

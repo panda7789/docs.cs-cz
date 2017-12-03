@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: dba7f15e-b8f5-4c96-9c02-a3a49723ebb2
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3c2bed197d5bee4dfcb64ec7e8711ae2028c5659
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e3625ad475e15ad2afecbbb5cedc23971b849993
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="systemservicemodeldiagnosticsfailedtoreadanactivityidheader"></a>System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader
 System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader  

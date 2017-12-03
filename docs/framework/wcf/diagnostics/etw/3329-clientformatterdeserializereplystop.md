@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c65657a4-80c1-448a-81d9-02d734e66075
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2d1696c6bfad090486966e9d5eb1cdafb7cd4a75
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8856a1d83daa674b2fd4c8dbb83123d467aa38c7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="3329---clientformatterdeserializereplystop"></a>3329 – ClientFormatterDeserializeReplyStop
 ## <a name="properties"></a>Vlastnosti  

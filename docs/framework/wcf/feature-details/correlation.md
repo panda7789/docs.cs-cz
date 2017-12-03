@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 60151f6c-19b7-47af-9cdc-76c2ac95f301
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d15609db250e4743ae2a7a1b6c3c355600704f02
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fc1608cc4e746af56e7d89237f0c1f5e6cc3bc7e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="correlation"></a>Korelace
 Když aplikace služby pracovního postupu komunikovat s jinými službami, je důležité, aby zpráv mezi nimi jsou odesílány do instance příslušné pracovního postupu. Korelace poskytuje mechanismus pro tento. Témata v této části poskytují přehled korelace a způsobu jeho použití v různých pracovních postupech služby.  

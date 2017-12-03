@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
 caps.latest.revision: "39"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1977bab08f35c8603776974a9e5266cbb140b4e2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 210f0ba6e205dcd383a96b1da75367c308d15837
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="default-nettcpbinding"></a>Výchozí NetTcpBinding
 Tento příklad znázorňuje použití <xref:System.ServiceModel.NetTcpBinding> vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce služba se hostuje sama. Klient a služba jsou konzolové aplikace.  

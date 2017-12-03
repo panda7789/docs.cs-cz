@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
 caps.latest.revision: "24"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c86ab6996b85e679fc5c15d85e86d25eaa8b1844
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: efa21ed4781cf635c5b49ebda9b13711a032e981
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-services-and-aspnet"></a>Služby WCF a ASP.NET
 Toto téma popisuje hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služeb souběžného s ASP.NET a jejich hostování v režimu kompatibility ASP.NET.  

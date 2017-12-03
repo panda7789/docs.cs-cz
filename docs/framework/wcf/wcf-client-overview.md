@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7434e0ea112a6641e356a1ec3da3a4bd6524bdda
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6333db92d010eab7765cfc62a9f64601d5b82d55
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, jaké klientské aplikace provést, jak nakonfigurovat, vytvořit a použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] klienta a jak zabezpečit klientské aplikace.  

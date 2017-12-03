@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
 caps.latest.revision: "32"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 91999180c6d1b828630b9fff6f2199cbeaf3501c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 92cc99a80c718811d0184a557efd38dd93fcc949
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="what39s-new-in-windows-workflow-foundation-in-net-45"></a>Jaký & č. 39; s nové v modelu Windows Workflow Foundation v rozhraní .NET 4.5
 [!INCLUDE[wf](../../../includes/wf-md.md)]v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavádí mnoha nových funkcí, jako je například nové aktivity, návrháře možnosti a modely vývoj pracovního postupu. Mnoho, ale ne všechny nové funkce pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)]nové funkce, které jsou podporované, najdete v části [podporu pro nové funkce Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]migrace na rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi, najdete v části [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md). Toto téma poskytuje přehled nových funkcí pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  

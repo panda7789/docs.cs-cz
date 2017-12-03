@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b951c77e522180fa615a9b6853bfc195a3e5bcb2
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a4dd96f444d6405022a0a812a55a92cec1052fbb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]umožňuje používat deklarativní ukládání do mezipaměti mechanismus, který je již k dispozici v technologii ASP.NET v službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z vaší operací služby WCF Web HTTP. Když uživatel odešle do služby, který je nakonfigurován pro ukládání do mezipaměti GET protokolu HTTP, ASP.NET zašle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, se nazývá metodu služby a ještě jednou do mezipaměti odpovědi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Ukládání do mezipaměti, ASP.NET, najdete v části [přehled ukládání do mezipaměti technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152534)  

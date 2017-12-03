@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
 caps.latest.revision: "25"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 953bc79207b7006977a0eb96e0026767bf05194c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2c8cf38e65bbc917720b1a1c5b604d81ca536c14
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
 Tento příklad ukazuje, jak povolit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Služby spuštěné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility účast ve plně [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace kanálu a mohl provádět použití [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce jako je například autorizace soubor nebo adresa URL, stav relace a <xref:System.Web.HttpContext> – třída. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relací a další [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce. Tento režim vyžaduje, aby vazby používají přenos HTTP a samotné služby musí být hostované ve službě IIS.  

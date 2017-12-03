@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ef245191-fdab-4468-a0da-7c6f25d2110f
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 91954f1fbc06de2dd61da30310da415fbd2e7cad
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f4a841fec01b3a0ef29cd836cccf3f337f29ddb6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="client-channel-factories-and-channels"></a>Klienta: Objekty pro vytváření kanálů a kanály
 Toto téma popisuje vytvářet objekty pro vytváření kanálů a kanály.  

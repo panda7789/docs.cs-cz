@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 10f8de5d-b81d-4ea7-b37e-7f2c00c39714
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 23752cb259accb1df6093a4b1d90a2541fd771d4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a7267fa8e71a7bbe202bce9897ea09079307be50
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ws-metadataexchange-bindings"></a>WS-MetadataExchange Bindings
 Toto téma popisuje, jak se vytvářejí výchozí metadata exchange vazby pro různé přenosy.  

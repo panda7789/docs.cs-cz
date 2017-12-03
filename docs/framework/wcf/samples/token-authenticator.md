@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 559ce043c50582f40e2d7828ad74f6d16e2b81f8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7404087117ec45e09495897905094690c01fbaa8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ověřovací data tokenu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] slouží k ověřování použít se zprávou, že je konzistentní a ověřování identity přidružené k tokenu ověření tokenu.  

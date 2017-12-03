@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1d9cc47a-8966-4286-94d5-4221403d9c06
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4c690a0233a425a706ead7441447f589d8330bc0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e76c08586d45e09359b74d9c8cacdccef6f1ad13
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-custom-persistence-participant"></a>Postupy: vytvoření vlastního účastník
 Následující postup obsahuje kroky k vytvoření účastník trvalost. Najdete v článku [účastní trvalost](http://go.microsoft.com/fwlink/?LinkID=177735) ukázka a [rozšiřitelnost úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md) téma pro ukázkové implementace trvalost účastníky.  

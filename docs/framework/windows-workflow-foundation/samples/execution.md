@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a9dcedcc-9f4c-45c2-8222-6bcbf48f3534
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 46c52eba539c9a5970d4569016120eeab0c4ce36
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0849f1e086a99539978e2c3c978807d2f83ae7ed
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="execution"></a>Spuštění
 Tato část obsahuje příklady vysvětlující spouštění pracovních postupů v [!INCLUDE[wf](../../../../includes/wf-md.md)].  

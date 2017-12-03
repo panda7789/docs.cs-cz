@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf28aae3-ddfb-4a86-b55d-1957f08c4e10
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0beafcb1c67cfddc8dceac16a965e39e0b3adb76
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6f544a92aa0e8df154ba5e165ce9a940b6120950
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="designer"></a>Návrhář
 Tato část obsahuje vzorků, které ukazují, jak používat [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].  
