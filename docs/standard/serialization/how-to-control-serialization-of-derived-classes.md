@@ -12,21 +12,21 @@ dev_langs:
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b6ef944b9c41d26736f044fff9d40efb5e3ef32f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f97445be151afdf460da6610462930c564e42ccc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="how-to-control-serialization-of-derived-classes"></a><span data-ttu-id="25eee-102">Postupy: řízení serializace odvozených tříd</span><span class="sxs-lookup"><span data-stu-id="25eee-102">How to: Control Serialization of Derived Classes</span></span>
-<span data-ttu-id="25eee-103">Pomocí **XmlElementAttribute** atribut chcete změnit název elementu XML není jediný způsob, jak přizpůsobit serializace objektu.</span><span class="sxs-lookup"><span data-stu-id="25eee-103">Using the **XmlElementAttribute** attribute to change the name of an XML element is not the only way to customize object serialization.</span></span> <span data-ttu-id="25eee-104">Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.</span><span class="sxs-lookup"><span data-stu-id="25eee-104">You can also customize the XML stream by deriving from an existing class and instructing the <xref:System.Xml.Serialization.XmlSerializer> instance how to serialize the new class.</span></span>  
+# <a name="how-to-control-serialization-of-derived-classes"></a><span data-ttu-id="4e2df-102">Postupy: řízení serializace odvozených tříd</span><span class="sxs-lookup"><span data-stu-id="4e2df-102">How to: Control Serialization of Derived Classes</span></span>
+<span data-ttu-id="4e2df-103">Pomocí **XmlElementAttribute** atribut chcete změnit název elementu XML není jediný způsob, jak přizpůsobit serializace objektu.</span><span class="sxs-lookup"><span data-stu-id="4e2df-103">Using the **XmlElementAttribute** attribute to change the name of an XML element is not the only way to customize object serialization.</span></span> <span data-ttu-id="4e2df-104">Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.</span><span class="sxs-lookup"><span data-stu-id="4e2df-104">You can also customize the XML stream by deriving from an existing class and instructing the <xref:System.Xml.Serialization.XmlSerializer> instance how to serialize the new class.</span></span>  
   
- <span data-ttu-id="25eee-105">Například uděleno `Book` třídy, můžete z něj odvodit a vytvořit `ExpandedBook` třídu, která má několik více vlastností.</span><span class="sxs-lookup"><span data-stu-id="25eee-105">For example, given a `Book` class, you can derive from it and create an `ExpandedBook` class that has a few more properties.</span></span> <span data-ttu-id="25eee-106">Však musí vyzvat **XmlSerializer** při serializaci nebo deserializaci přijímat odvozeném typu.</span><span class="sxs-lookup"><span data-stu-id="25eee-106">However, you must instruct the **XmlSerializer** to accept the derived type when serializing or deserializing.</span></span> <span data-ttu-id="25eee-107">To lze provést tak, že vytvoříte <xref:System.Xml.Serialization.XmlElementAttribute> instance a nastavení jeho **typ** vlastnost typu odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="25eee-107">This can be done by creating a <xref:System.Xml.Serialization.XmlElementAttribute> instance and setting its **Type** property to the derived class type.</span></span> <span data-ttu-id="25eee-108">Přidat **XmlElementAttribute** k <xref:System.Xml.Serialization.XmlAttributes> instance.</span><span class="sxs-lookup"><span data-stu-id="25eee-108">Add the **XmlElementAttribute** to a <xref:System.Xml.Serialization.XmlAttributes> instance.</span></span> <span data-ttu-id="25eee-109">Pak přidejte **atributy XmlAttribute** k <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, určuje typ přepsání a název člena, který přijímá odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="25eee-109">Then add the **XmlAttributes** to a <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, specifying the type being overridden and the name of the member that accepts the derived class.</span></span> <span data-ttu-id="25eee-110">To je ukázáno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="25eee-110">This is shown in the following example.</span></span>  
+ <span data-ttu-id="4e2df-105">Například uděleno `Book` třídy, můžete z něj odvodit a vytvořit `ExpandedBook` třídu, která má několik více vlastností.</span><span class="sxs-lookup"><span data-stu-id="4e2df-105">For example, given a `Book` class, you can derive from it and create an `ExpandedBook` class that has a few more properties.</span></span> <span data-ttu-id="4e2df-106">Však musí vyzvat **XmlSerializer** při serializaci nebo deserializaci přijímat odvozeném typu.</span><span class="sxs-lookup"><span data-stu-id="4e2df-106">However, you must instruct the **XmlSerializer** to accept the derived type when serializing or deserializing.</span></span> <span data-ttu-id="4e2df-107">To lze provést tak, že vytvoříte <xref:System.Xml.Serialization.XmlElementAttribute> instance a nastavení jeho **typ** vlastnost typu odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="4e2df-107">This can be done by creating a <xref:System.Xml.Serialization.XmlElementAttribute> instance and setting its **Type** property to the derived class type.</span></span> <span data-ttu-id="4e2df-108">Přidat **XmlElementAttribute** k <xref:System.Xml.Serialization.XmlAttributes> instance.</span><span class="sxs-lookup"><span data-stu-id="4e2df-108">Add the **XmlElementAttribute** to a <xref:System.Xml.Serialization.XmlAttributes> instance.</span></span> <span data-ttu-id="4e2df-109">Pak přidejte **atributy XmlAttribute** k <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, určuje typ přepsání a název člena, který přijímá odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="4e2df-109">Then add the **XmlAttributes** to a <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, specifying the type being overridden and the name of the member that accepts the derived class.</span></span> <span data-ttu-id="4e2df-110">To je ukázáno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="4e2df-110">This is shown in the following example.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="25eee-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="25eee-111">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="4e2df-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="4e2df-111">Example</span></span>  
   
 ```vb  
 Public Class Orders  
@@ -241,11 +241,11 @@ public class Run
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="25eee-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="25eee-112">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="4e2df-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="4e2df-112">See Also</span></span>  
  <xref:System.Xml.Serialization.XmlSerializer>  
  <xref:System.Xml.Serialization.XmlElementAttribute>  
  <xref:System.Xml.Serialization.XmlAttributes>  
  <xref:System.Xml.Serialization.XmlAttributeOverrides>  
- [<span data-ttu-id="25eee-113">XML a serializace protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="25eee-113">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
- [<span data-ttu-id="25eee-114">Postupy: serializaci objektu</span><span class="sxs-lookup"><span data-stu-id="25eee-114">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [<span data-ttu-id="25eee-115">Postupy: Zadejte název alternativní elementu pro datový proud XML</span><span class="sxs-lookup"><span data-stu-id="25eee-115">How to: Specify an Alternate Element Name for an XML Stream</span></span>](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+ [<span data-ttu-id="4e2df-113">XML a serializace protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="4e2df-113">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [<span data-ttu-id="4e2df-114">Postupy: serializaci objektu</span><span class="sxs-lookup"><span data-stu-id="4e2df-114">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="4e2df-115">Postupy: Zadejte název alternativní elementu pro datový proud XML</span><span class="sxs-lookup"><span data-stu-id="4e2df-115">How to: Specify an Alternate Element Name for an XML Stream</span></span>](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
