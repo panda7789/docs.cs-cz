@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 80bcea7c-ae57-4b89-8032-5f9787545b07
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3a81ad1e35334a17a92cd1e733c62c2998b75842
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: df1a6e263528192ed1b5732b0da3962971e7e492
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="3359---securityimpersonationsuccess"></a><span data-ttu-id="b07e5-102">3359 – SecurityImpersonationSuccess</span><span class="sxs-lookup"><span data-stu-id="b07e5-102">3359 - SecurityImpersonationSuccess</span></span>
-## <a name="properties"></a><span data-ttu-id="b07e5-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="b07e5-103">Properties</span></span>  
+# <a name="3359---securityimpersonationsuccess"></a><span data-ttu-id="6cbd1-102">3359 – SecurityImpersonationSuccess</span><span class="sxs-lookup"><span data-stu-id="6cbd1-102">3359 - SecurityImpersonationSuccess</span></span>
+## <a name="properties"></a><span data-ttu-id="6cbd1-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="6cbd1-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="b07e5-104">ID</span><span class="sxs-lookup"><span data-stu-id="b07e5-104">ID</span></span>|<span data-ttu-id="b07e5-105">3359</span><span class="sxs-lookup"><span data-stu-id="b07e5-105">3359</span></span>|  
-|<span data-ttu-id="b07e5-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="b07e5-106">Keywords</span></span>|<span data-ttu-id="b07e5-107">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="b07e5-107">Security</span></span>|  
-|<span data-ttu-id="b07e5-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="b07e5-108">Level</span></span>|<span data-ttu-id="b07e5-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="b07e5-109">Verbose</span></span>|  
-|<span data-ttu-id="b07e5-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="b07e5-110">Channel</span></span>|<span data-ttu-id="b07e5-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="b07e5-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="6cbd1-104">ID</span><span class="sxs-lookup"><span data-stu-id="6cbd1-104">ID</span></span>|<span data-ttu-id="6cbd1-105">3359</span><span class="sxs-lookup"><span data-stu-id="6cbd1-105">3359</span></span>|  
+|<span data-ttu-id="6cbd1-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="6cbd1-106">Keywords</span></span>|<span data-ttu-id="6cbd1-107">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="6cbd1-107">Security</span></span>|  
+|<span data-ttu-id="6cbd1-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="6cbd1-108">Level</span></span>|<span data-ttu-id="6cbd1-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="6cbd1-109">Verbose</span></span>|  
+|<span data-ttu-id="6cbd1-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="6cbd1-110">Channel</span></span>|<span data-ttu-id="6cbd1-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="6cbd1-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="b07e5-112">Popis</span><span class="sxs-lookup"><span data-stu-id="b07e5-112">Description</span></span>  
- <span data-ttu-id="b07e5-113">Tato událost je vygenerované při zosobnění zabezpečení proběhla úspěšně.</span><span class="sxs-lookup"><span data-stu-id="b07e5-113">This event is emitted when the security impersonation has succeeded.</span></span>  
+## <a name="description"></a><span data-ttu-id="6cbd1-112">Popis</span><span class="sxs-lookup"><span data-stu-id="6cbd1-112">Description</span></span>  
+ <span data-ttu-id="6cbd1-113">Tato událost je vygenerované při zosobnění zabezpečení proběhla úspěšně.</span><span class="sxs-lookup"><span data-stu-id="6cbd1-113">This event is emitted when the security impersonation has succeeded.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="b07e5-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="b07e5-114">Message</span></span>  
- <span data-ttu-id="b07e5-115">Zosobnění zabezpečení byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b07e5-115">Security impersonation succeeded.</span></span>  
+## <a name="message"></a><span data-ttu-id="6cbd1-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="6cbd1-114">Message</span></span>  
+ <span data-ttu-id="6cbd1-115">Zosobnění zabezpečení byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="6cbd1-115">Security impersonation succeeded.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="b07e5-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="b07e5-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="6cbd1-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="6cbd1-116">Details</span></span>
