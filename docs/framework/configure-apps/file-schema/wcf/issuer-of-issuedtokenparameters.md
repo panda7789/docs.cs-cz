@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d6a95f32-d58c-40fc-8658-dd92564d3c90
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1eae3b472e33d4d0504ba487c8c871165af8cdf9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 82e73a571ce7179518d380c0c63c9161b2ad5c55
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltissuergt-of-ltissuedtokenparametersgt"></a>&lt;issuer&gt; – &lt;issuedTokenParameters&gt;
 Určuje zabezpečení Token Service (Služba tokenů zabezpečení), která vydává tokeny zabezpečení.  

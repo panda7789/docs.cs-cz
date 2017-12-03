@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 505bd987-0042-4622-b68e-94f439729d53
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f26321afdbe53c4ab3750eae4a7a730bcb5ae4e4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4f2fa776711223ace6a4cebce7783b1fa0c148a4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltpeergt-of-ltclientcredentialsgt-element"></a>&lt;peer&gt; elementu &lt;clientCredentials&gt;
 Určuje pověření použitá při ověřování klientů peer-to-peer.  

@@ -14,14 +14,14 @@ helpviewer_keywords:
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3edf0cbe10361b456469714747c074ba054e16a4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4fab5868556d5b7ba3a63cbc06780b0102783910
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
 Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyk integrovaného dotazu (LINQ), služby WCF Data Services a XML.  

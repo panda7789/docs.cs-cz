@@ -15,14 +15,14 @@ helpviewer_keywords:
 - KnownTypes
 ms.assetid: f41fb4d5-24e7-4059-8010-286a30bfea93
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4ba6a70f6d618446ed3ffd446c06c8f3c88354ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d38e3786c595c3fe6cc9ea54b68784c927901731
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltdatacontractserializergt"></a>&lt;dataContractSerializer&gt;
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>. Tento element proběhne dvě různé hierarchie. Jeden je uvedena v následující části schéma hierarchie a druhý je uveden v oddílu Poznámky.  

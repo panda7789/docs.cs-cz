@@ -12,14 +12,14 @@ api_location: Microsoft.VisualStudio.Activities.dll
 api_type: Assembly
 ms.assetid: d83033b0-a4cb-4d40-835e-5c1a176cde5b
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8f52dad6149df78cacb77d0d18ba044aee573563
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 21e3ed09e590a5c01e5e9ca4c9f763a24df0c8df
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilderbuild"></a>Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build
 Vytvoří a nakonfiguruje <xref:System.Activities.ActivityBuilder> objekt, který poskytuje data pro aktivitu pracovního postupu.  

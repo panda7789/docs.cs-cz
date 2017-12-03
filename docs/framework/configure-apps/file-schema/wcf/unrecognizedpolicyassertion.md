@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 043c3c8f-f263-4ac7-a1af-945d03413f0b
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2bc4bf17884f3668f5538d03e3aabe9a7aa6df5f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f648862829301679dc4bcf3636298398d0dc0325
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltunrecognizedpolicyassertiongt"></a>&lt;unrecognizedPolicyAssertion&gt;
 Představuje element vazby, který určuje výraz zásad. Tento element nemá žádný atribut a je k dispozici jako prázdný přepínač.  

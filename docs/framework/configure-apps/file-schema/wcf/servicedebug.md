@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: fbc201719f467ad35d1c8f524bfd539d293359be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 85a980191e727ec1a20cca618504d1d9cbc2c277
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
 Určuje funkce informace o ladění a nápovědu pro [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby.  

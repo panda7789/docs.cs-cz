@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e43fbe2002c19b8203ff048b4200dcfaad27afe0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1480047f14d9528d4d498b417e5d0b4a0f87a622
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Volání operace služby (služby WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Definuje operací služby pro službu data. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Umožňuje definovat tyto operace jako metody pro službu data. Jako další prostředky služby dat jsou tyto operace služby řešit pomocí identifikátory URI. Operace služby může vrátit kolekce typů entit, instance typu jedné entity a primitivní typy, jako je celé číslo a řetězec. Můžete se taky vrátit operaci služby `null` (`Nothing` v jazyce Visual Basic). [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny lze použít pro přístup k operace služby, které podporují požadavky HTTP GET. Tyto typy operací služby jsou definované jako metody, které mají <xref:System.ServiceModel.Web.WebGetAttribute> použít. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  

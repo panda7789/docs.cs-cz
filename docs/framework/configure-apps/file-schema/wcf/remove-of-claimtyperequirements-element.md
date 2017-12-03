@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8ef05bc4-1950-4ee4-95c5-1c6a394eff7e
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 96155ed805d99a3678c5d20d83a490efb9811815
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dde956ab80a41d15a6496f84432a2ae2a9d09b76
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltremovegt-of-ltclaimtyperequirementsgt-element"></a>&lt;remove&gt; elementu &lt;claimTypeRequirements&gt;
 Určuje typy deklarací identity k odebrání v federované přihlašovací údaje.  

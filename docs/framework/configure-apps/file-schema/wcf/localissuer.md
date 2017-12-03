@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6b11f5cbf2d70b4fff607ac42c2c98af7fb9542b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e8836d9e57dd7c4d9cfdc20c5e4856e384e6d67b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltlocalissuergt"></a>&lt;localIssuer&gt;
 Určuje adresu a vazba místního vystavitele, který se má použít k získání tokenu zabezpečení.  

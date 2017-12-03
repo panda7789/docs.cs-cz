@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
 caps.latest.revision: "34"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5f11fffbc30ed1f3bf98ca78243bf4d52f438347
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c31674f26724e575170be5698e8671ba156739f4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt;
 Definuje vazbu, která poskytuje služby Řízení front podporu tím, že směrování zpráv prostřednictvím služby MSMQ.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d5f3a949e8cade47876bb578725a130ef7dac934
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7879a600ec0ecfebc96b18476121f2ad205ece8f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
 Akcí OData, které poskytují způsob, jak implementovat chování, který funguje na prostředek načíst ze služby OData.  Například vezměte v úvahu digitální film jako prostředek, je mnoho věcí, které může provádět s digitální video: rezervace, míry nebo komentář nebo vrácení se změnami. Toto jsou příklady všechny akce, které mohou být prováděny WCF Data Service, která spravuje digitální filmy. Akce jsou popsané v odpovědi OData obsahující prostředků, na který lze vyvolat akci. Když uživatel požádá o prostředek, který představuje digitální film odpověď vrácená služby WCF Data Service obsahuje informace o akcích, které jsou k dispozici pro tento prostředek. Dostupnost akce mohou záviset na stav služby data nebo prostředků. Pro příklad, jakmile ji je rezervována digitální film nelze rezervována jiným uživatelem. Klienty můžete vyvolat akci jednoduše tak, že zadáte adresu URL. Například by http://MyServer/MovieService.svc/Movies (6) určit konkrétní digitální film a http://MyServer/MovieService.svc/Movies (6) / Checkout by vyvolání akce na konkrétní film. Akce vám umožní vystavit můžete povolit model služby bez vystavení datového modelu. Pokračování službu příkladu film s, můžete chtít umožnit uživateli hodnocení filmu, ale ne přímo vystavit data hodnocení jako prostředek. Míra akce chcete umožnit uživatelům hodnocení filmu, ale není přímo přistupovat ke hodnocení data jako prostředek může implementovat.  

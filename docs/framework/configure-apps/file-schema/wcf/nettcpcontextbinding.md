@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 56a28aac1a8fccf0e820536e144c8b5d10f43c2b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a6595bce1187b1ce79e6ab2597a70e978bdc00f1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltnettcpcontextbindinggt"></a>&lt;netTcpContextBinding&gt;
 Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> který vyžaduje, aby byly podepsány úroveň ochrany. Mechanismus contextExchangeMechanism pro NetTcpContextBinding je SOAPHeader.  

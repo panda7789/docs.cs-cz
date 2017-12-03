@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9d85113b-73b9-4599-b776-30b40aaf1e7a
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 60e590c6261643031922a9f9c6f85420d8bb3d90
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 54c677d3296c71465135abdc7e6b2e2b82194c88
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="4801---discoveryclientinclientchannelfailedtoclose"></a>4801 – DiscoveryClientInClientChannelFailedToClose
 ## <a name="properties"></a>Vlastnosti  

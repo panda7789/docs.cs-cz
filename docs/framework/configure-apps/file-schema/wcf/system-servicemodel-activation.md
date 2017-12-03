@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 18376f3553bc0a39b82cb0f223081c09a674e062
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f15466e5ae0421f400d80f66370cb60f75c83990
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltsystemservicemodelactivationgt"></a>&lt;system.serviceModel.activation&gt;
 Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe. Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config. Konkrétně obsahuje všechna nastavení celého systému, které musí být nakonfigurovaná.  

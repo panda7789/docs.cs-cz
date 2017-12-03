@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0f70ec06-8249-4f0c-9f49-b4df59985fb8
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0baac8dc6a9899261a490a257dbae0e7eb4d2ced
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d7808036452a5344f24da73083f1d8fa15c79a6e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltuserdefinedtypegt"></a>&lt;userDefinedType&gt;
 Představuje uživatel definovaný typ (UDT), které má být součástí kontraktu služby.  

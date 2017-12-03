@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 35ae79a1-ec00-4db7-9073-4a5dbd62dc82
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 149e14a2d8036825be81219acd7e9159825170ff
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8e5f19c1a344b8f1fb70684f9f42b240021a566c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="3404---wrappedkeydecryptionsuccess"></a>3404 - WrappedKeyDecryptionSuccess
 ## <a name="properties"></a>Vlastnosti  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 867fc93e-ae8f-41b4-9264-210042c4bb75
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 170d349fb81aead98d1a4f08acd827e591b467be
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3458e556c535ff913d203e9b29dfe42dbba58726
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="3323---dispatchformatterdeserializerequeststop"></a>3323 – DispatchFormatterDeserializeRequestStop
 ## <a name="properties"></a>Vlastnosti  

@@ -14,14 +14,14 @@ helpviewer_keywords:
 - architecture [WCF]
 ms.assetid: a3bcb0a1-56ea-4ba6-9736-d260d90dade5
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: fb706706869507a7cce35022525cf0efa34c15fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7be93c5949966c052e77adebe8bb4d7aac9149bb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architektura Windows Communication Foundation
 Následující obrázek znázorňuje hlavní vrstvy [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architektura.  

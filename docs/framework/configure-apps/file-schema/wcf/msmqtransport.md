@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bc96bcaae74be5e59f0da69b02e350e2c77d61e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 87fd7dc848e59cd8fb58131cf24cae4038ea82d3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
 Na přenos MSMQ způsobí kanálu pro přenos zpráv, když je zahrnutý do vlastní vazby.  

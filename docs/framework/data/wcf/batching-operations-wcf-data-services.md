@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: WCF Data Services, client library
 ms.assetid: 962a49d1-cc11-4b96-bc7d-071dd6607d6c
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e929e9771ba1d47016919f017f3476b17581d8a1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3bcb29fa522f706f5500ab3cb12f956d5e2236b5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="batching-operations-wcf-data-services"></a>Dávkování operací (služby WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Podporuje dávkové zpracování žádostí o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby. Další informace najdete v tématu [OData: dávkové zpracování](http://go.microsoft.com/fwlink/?LinkId=186075). V [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], každou operaci, která používá <xref:System.Data.Services.Client.DataServiceContext>, jako jsou například provádění dotazu nebo uložení změn, výsledkem samostatné žádosti odesílány ke službě data. Aby byla zachována logické obor pro sady operací, můžete definovat explicitně provozní dávky. To zajistí, že všechny operace v dávce se odesílají do služby data v jednom požadavku HTTP, umožňuje, aby server ke zpracování operace atomicky a snižuje počet zpátečních cest k službě data.  

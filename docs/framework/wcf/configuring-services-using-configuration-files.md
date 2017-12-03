@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
 caps.latest.revision: "29"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 480cdb83248dc1cf9dd90c0f654aa4f269318c4a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4decb820f012d3f4b2a9855cd08701f14dcc5431
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfiguračním souborem vám umožní poskytovat chování data koncový bod a služby v okamžiku nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  

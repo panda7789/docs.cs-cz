@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 793e41c2-31ea-4159-abbc-2123bf097233
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bc98f45d197675f8cc9618f08447cc42acdd1872
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5cf2740b0218286178e62262723bb060dc2d3817
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltwindowsgt-of-ltclientcredentialsgt-element"></a>&lt;windows&gt; elementu &lt;clientCredentials&gt;
 Určuje nastavení pro pověření systému Windows, který se má použít k reprezentování klienta.  

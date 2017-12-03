@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ee2b7be3-7148-4a3a-b861-48e7330615e5
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ccb7152197a021821936e178e0de77b9dfabce45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bedebb98e5fc48292c503eef30cee30c8d29c41c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltknowntypegt"></a>&lt;Třída knownType&gt;
 Určuje typ má být používána <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Element "známému typu" Určuje, který vrátí pole nebo vlastnost "deklarovaný typ". Další informace najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5fa93919bfc6f7f078fd2de4653e8b9e878a84fc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 046400e1d6a4a304d673ee8d0c7a3bf7ee6bbe5b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltwebhttpbindinggt"></a>&lt;webHttpBinding&gt;
 Definuje vazbu element, který slouží ke konfiguraci koncových bodů pro [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] webové služby tohoto reakce na požadavky HTTP místo protokolu SOAP zprávy.  

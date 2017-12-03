@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8cab2a9a-c51f-4283-bb60-2ad0c274fd46
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 653f2e48e8743cd07fe0e8a9adb92eb5691049f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 39ceaf3377f1da7f3f953024e1207618df84bf1d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltbaseaddressprefixfiltersgt"></a>&lt;baseAddressPrefixFilters&gt;
 Představuje kolekci elementů konfigurace, které určují průchodu přes filtrů, které poskytují mechanismus vyberte odpovídající vazby Internetové informační služby (IIS), při hostování [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] aplikace ve službě IIS.  

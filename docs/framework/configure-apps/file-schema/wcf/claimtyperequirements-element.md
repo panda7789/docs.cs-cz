@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a26efe73-4bad-4731-8cad-27f00d54354b
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0146250c12c9c12e1f204c467a9a454b90e9f47a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 187fedc6f81e1cc4a022bfe3b6c68e2c12d09022
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltclaimtyperequirementsgt-element"></a>Element &lt;claimTypeRequirements&gt;
 Určuje kolekci typů požadované deklarace identity.  

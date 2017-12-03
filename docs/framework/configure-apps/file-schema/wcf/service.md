@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
 caps.latest.revision: "27"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9f909fe64e8997a39519fbde2e476a324319f57d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 61c8d8451e271e756fce6f83a4f8b8fd4c8b9f77
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltservicegt"></a>&lt;služby&gt;
 `service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje taky koncových bodů, které službu vystavit.  

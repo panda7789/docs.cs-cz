@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e720e69b9c7ee6e6777a69403ff6cee43e532cd1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4ce1a24cb9a41e5b0ef090cd898c44b481b3bbd4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltaddgt-of-ltscopedcertificatesgt-element"></a>&lt;add&gt; elementu &lt;scopedCertificates&gt;
 Přidá do kolekce vymezená certifikátů certifikát X.509.  

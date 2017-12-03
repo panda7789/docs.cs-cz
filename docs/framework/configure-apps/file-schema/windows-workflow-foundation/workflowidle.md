@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 ms.assetid: b2ef703c-3e01-4213-9d2e-c14c7dba94d2
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5f9b4989de57204d9ec97d69475121c30ae82644
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 66b2ff0db90a8126027eca976f73b3a8b554e3f4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltworkflowidlegt"></a>&lt;workflowIdle&gt;
 Chování služby, která určuje, kdy jsou instance nečinných pracovních postupů odpojeno a zachována.  

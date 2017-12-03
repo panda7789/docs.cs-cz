@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ac359c65-c22d-42d2-97de-db53b77cebdb
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 883ae318e32493013f009f3580ef102e4d39b3e0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 27bcccab90c4627f2c9a1d241af3b1833ae13a18
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltcertificatereferencegt-for-ltidentitygt"></a>&lt;certificateReference&gt; pro &lt;identity&gt;
 Určuje nastavení pro ověření certifikátu X.509. Zabezpečený [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] klienta, která se připojuje k koncový bod s tuto identitu ověřuje, že deklarací identity předkládaných server obsahovat použitý k vytvoření tuto identitu deklarace identity.  

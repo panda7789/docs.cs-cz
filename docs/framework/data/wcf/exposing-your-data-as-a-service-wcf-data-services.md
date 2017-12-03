@@ -14,14 +14,14 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: df0bbcee-f66f-4a88-abb4-4e73c8b9c908
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 122d05d5e4bd7690f32b22453dccbfaab2fb7f13
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0c2d664166d9c0b750f6aecf9588a63b8705f0d1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="exposing-your-data-as-a-service-wcf-data-services"></a>Vystavení dat jako služba (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]se integruje s Visual Studio umožňují snadno definovat služby, která zveřejňuje data podle [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Vytvoření datové služby, který zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál zahrnuje následující základní kroky:  

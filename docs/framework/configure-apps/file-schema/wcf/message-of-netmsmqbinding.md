@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6ebf0240-d7be-4493-b0fe-f00fd5989d77
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f3b03fcce02c51563ed006e62a3f77f76bede777
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d91d97a27c06e8e6e3ab624c45c6853b1cc23e8f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltmessagegt-of-ltnetmsmqbindinggt"></a>&lt;message&gt; – &lt;netMsmqBinding&gt;
 Definuje nastavení zabezpečení protokolu SOAP zprávy na tomto `netMsmqBinding` vazby.  
@@ -50,7 +50,7 @@ Definuje nastavení zabezpečení protokolu SOAP zprávy na tomto `netMsmqBindin
 |Atribut|Popis|  
 |---------------|-----------------|  
 |algorithmSuite|Nastaví zprávu algoritmy šifrování a klíč wrap, které se používají k dosažení zabezpečení na základě zpráv pro zprávy odeslané přes přenos MSMQ.<br /><br /> Výchozí hodnota je `Aes256`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.|  
-|clientCredentialType|Určuje typ pověření, který se má použít při ověřování klienta pro zprávy odeslané přes přenosu služby MSMQ. Platné hodnoty patří:<br /><br /> -None: To umožňuje službu k interakci s anonymní klienty. Služba ani klient vyžaduje přihlašovací údaje.<br />-Windows: Umožňuje výměnu SOAP pod pro ověřený kontext pověření systému Windows. Vždy provede ověřování založené na protokolu Kerberos.<br />-UserName: To povoluje službu tak, aby vyžadovala, ověření klienta pomocí pověření uživatelského jména. Přihlašovací údaje v takovém případě musí být zadán pomocí `clientCredentials` chování **upozornění:** [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] nepodporuje odesílání heslo hodnotou hash nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv.   Proto [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] vynutí, že exchange zabezpečené při použití pověření uživatelského jména. Tento režim vyžaduje, aby byl certifikát služby specifikován na straně klienta používá `clientCredential` chování a `serviceCertificate`. <br /><br /> -Certifikát: To povoluje službu tak, aby vyžadovala, ověření klienta pomocí certifikátu. V takovém případě musí být zadán pomocí pověření klienta `clientCredentials` chování. Přihlašovací údaje služby v takovém případě musí být zadán pomocí `clientCredentials` chování zadáním `serviceCertificate`.<br />-CardSpace: To umožňuje službě vyžadují, ověření klienta pomocí CardSpace. `serviceCertiifcate` Musí být zřízená v `clientCredential` chování.<br /><br /> Výchozí hodnota je `Windows`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
+|clientCredentialType|Určuje typ pověření, který se má použít při ověřování klienta pro zprávy odeslané přes přenosu služby MSMQ. Platné hodnoty patří:<br /><br /> -None: To umožňuje službu k interakci s anonymní klienty. Služba ani klient vyžaduje přihlašovací údaje.<br />-Windows: Umožňuje výměnu SOAP pod pro ověřený kontext pověření systému Windows. Vždy provede ověřování založené na protokolu Kerberos.<br />-UserName: To povoluje službu tak, aby vyžadovala, ověření klienta pomocí pověření uživatelského jména. Přihlašovací údaje v takovém případě musí být zadán pomocí `clientCredentials` chování **upozornění:** [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] nepodporuje odesílání heslo hodnotou hash nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Proto [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] vynutí, že exchange zabezpečené při použití pověření uživatelského jména. Tento režim vyžaduje, aby byl certifikát služby specifikován na straně klienta používá `clientCredential` chování a `serviceCertificate`. <br /><br /> -Certifikát: To povoluje službu tak, aby vyžadovala, ověření klienta pomocí certifikátu. V takovém případě musí být zadán pomocí pověření klienta `clientCredentials` chování. Přihlašovací údaje služby v takovém případě musí být zadán pomocí `clientCredentials` chování zadáním `serviceCertificate`.<br />-CardSpace: To umožňuje službě vyžadují, ověření klienta pomocí CardSpace. `serviceCertiifcate` Musí být zřízená v `clientCredential` chování.<br /><br /> Výchozí hodnota je `Windows`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

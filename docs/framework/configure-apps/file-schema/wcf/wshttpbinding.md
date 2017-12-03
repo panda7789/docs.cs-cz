@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
 caps.latest.revision: "30"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1368b4a677e5cce7b666c94a6f3ddd919e72f7c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 53e189b761ccd1c3cee75d4afa81291e02082684
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltwshttpbindinggt"></a>&lt;wsHttpBinding&gt;
 Definuje vhodný pro služby bez duplexní kontrakty vazbu bezpečné, spolehlivé a umožňuje vzájemnou spolupráci. Vazba implementuje tyto specifikace: WS-spolehlivé zasílání zpráv spolehlivost a WS-zabezpečení pro zabezpečení zpráv a ověřování. Přenos protokolu HTTP a kódování zpráv je Text/XML kódování.  

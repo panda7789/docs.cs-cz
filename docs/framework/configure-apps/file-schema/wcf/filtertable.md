@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e9f05441-3ad1-49b9-a267-71724aa094b4
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 04780d51cfd1d1d0049fc608cf7bd304be382b9b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 96425604fab8f70456ea1e0d97efb2c3bf843224
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltfiltertablegt"></a>&lt;filterTable&gt;
 Představuje směrovací tabulku, která obsahuje seznam filtrů vyhodnocení zprávy proti a koncový bod klienta pro směrování zpráv do, pokud filtr se vyhodnotí jako true.  

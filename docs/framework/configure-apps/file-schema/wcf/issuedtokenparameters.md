@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ef68585054d61de8c25b7e3effd1d72063d4589c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4fdb110302de05fd7dac3c318b8cd4bf83c0155b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltissuedtokenparametersgt"></a>&lt;– issuedTokenParameters&gt;
 Určuje parametry pro token zabezpečení vydané ve scénáři federovaný zabezpečení.  

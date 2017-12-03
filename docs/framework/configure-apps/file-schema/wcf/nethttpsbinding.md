@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ff122116-6042-4792-9f21-275b4f97a105
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ec9cf31cb81896ecebe246b4f7cad4e56f2f4c23
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e339066311adf10791c1b6759cc7be6b419320b7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltnethttpsbindinggt"></a>&lt;netHttpsBinding&gt;
 Představuje vazbu, [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby můžete použít ke konfiguraci a vystavit koncové body, které mohou komunikovat přes protokol HTTPS. Při použití s duplexního kontraktu, webové sokety se bude používat, v opačném případě se použije protokol HTTPS.  

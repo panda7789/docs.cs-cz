@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d183516b7e431131f61c3fe1f27bd8deea8fa6d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9a72445a73be44e8c7b039463ccd8b939ae6a148
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénáře aplikací (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje základní sady scénáře pro vystavení a použití dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Toto téma vám ukazuje na témata, které jsou relevantní pro tyto scénáře.  

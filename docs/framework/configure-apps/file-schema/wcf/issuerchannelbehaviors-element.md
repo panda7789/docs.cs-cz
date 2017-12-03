@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f7378673-8e9b-45b2-98d1-cf5dccdd8c40
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 051525738f0138955358587a8fd25272dfdb9d28
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b73d090aa47e18792d313b3d086e7a667e74bb08
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltissuerchannelbehaviorsgt-element"></a>Element &lt;issuerChannelBehaviors&gt;
 Obsahuje kolekci [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] chování klienta koncový bod (definovanou v konfiguraci) má být použit při komunikaci s určeným službám tokenu služby. Chování definované nemůže obsahovat žádné [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementy.  

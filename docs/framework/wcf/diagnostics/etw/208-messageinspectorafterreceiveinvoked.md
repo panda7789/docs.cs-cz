@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: dfb5f7b0-4346-4949-8104-351726b1f502
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cdb89eb9f2a50db20f6da53a2b3f527aef8c0ed1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 670650c612ac01ab9c82028388a4524d2f08fd79
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="208---messageinspectorafterreceiveinvoked"></a>208 – MessageInspectorAfterReceiveInvoked
 ## <a name="properties"></a>Vlastnosti  

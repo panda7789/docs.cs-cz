@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: df86d364d75f62cbe8be5f72e0b3b120784c35a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4d558bf6ac71a3a19fb8c28989fd9262e7a13f0f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltdiagnosticsgt"></a>&lt;Diagnostika&gt;
 `diagnostics` Element definuje nastavení, které lze použít správce pro spuštění kontroly a řízení.  

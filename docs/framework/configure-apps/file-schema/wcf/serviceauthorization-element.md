@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cdbe676fa73c040737c947902d64b2c0e689e2a9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bc04552b9b2ecd85a520ed16ae9a6ee0dfc98a46
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltserviceauthorizationgt-element"></a>Element &lt;serviceAuthorization&gt;
 Určuje nastavení, které zajistí autorizaci přístupu k operacím služby  

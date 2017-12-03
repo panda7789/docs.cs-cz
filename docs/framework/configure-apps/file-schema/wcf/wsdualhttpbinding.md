@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: wsDualHttpBinding Element
 ms.assetid: fd8ac4e2-5641-473b-9115-73f14ab1c065
 caps.latest.revision: "25"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2bc3af648c43e1dd7e1bc43e26765c9be5994366
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4d7a6cd2d1a5028463d6d9b4b492c88707f08145
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltwsdualhttpbindinggt"></a>&lt;– wsDualHttpBinding&gt;
 Definuje vazbu zabezpečené, spolehlivé a vzájemná spolupráce, který je vhodný pro služby duplexní kontrakty nebo komunikaci prostřednictvím protokolu SOAP zprostředkovatelů.  

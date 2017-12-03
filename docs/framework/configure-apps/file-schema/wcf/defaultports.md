@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 725d4ee5-bd46-4f0e-9c20-30ba75d6eb2c
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0e127935977795181411dfa6b03d8b09fe88e0f5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1886f6efdfaa8f4105e6ef16ad72093867e0f3fe
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltdefaultportsgt"></a>&lt;defaultPorts&gt;
 Kolekce výchozí porty výpis komunikaci výchozí koncové body, které klientská aplikace naslouchá.  

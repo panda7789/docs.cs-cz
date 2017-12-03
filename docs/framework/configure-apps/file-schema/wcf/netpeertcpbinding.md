@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: netPeerBinding element
 ms.assetid: 2dd77ada-a176-47c7-a740-900b279f1aad
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bf978034e25d0d644803eed98fc73a60952d817b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 35dfb3eee5a01d5fed21bda59f1cab5eb09a1401
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltnetpeertcpbindinggt"></a>&lt;netPeerTcpBinding&gt;
 Definuje vazbu pro sdílené kanál konkrétní TCP zasílání zpráv.  

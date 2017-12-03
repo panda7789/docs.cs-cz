@@ -15,14 +15,14 @@ helpviewer_keywords:
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
 caps.latest.revision: "45"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 27c1a240817be169decbb0bbbac9fc78b189fc2d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a301e23ead8e52273ed4fe7a503f1fe11e2f1348
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Nástroj Configuration Editor (SvcConfigEditor.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Služby Configuration Editor (SvcConfigEditor.exe) umožňuje správcům a vývojářům umožňuje vytvořit a upravit nastavení konfigurace pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vazby, chování, služeb a diagnostiky, aniž by museli přímo upravit konfigurační soubory XML.  

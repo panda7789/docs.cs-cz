@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: WCF Data Services, providers
 ms.assetid: 650b5eb6-c71d-4dc1-8b64-b6beaf752114
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f2ce54596cbfebd1a4b0a81819b34c6ffcddfb88
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 26c054e3cc9dbf920ab280df43d97acdb90ca055
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="entity-framework-provider-wcf-data-services"></a>Zprostředkovatel Entity Framework (služby WCF Data Services)
 Jako [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], ADO.NET Entity Framework je založena na Entity Data Model, který je typu modelu vztah entit. Rozhraní Entity Framework překládá operace u jeho implementace modelu Entity Data Model, který se nazývá *konceptuálního modelu*, do ekvivalentní operací zdroj dat a. Díky rozhraní Entity Framework poskytovatele ideální pro data služby, které jsou založeny na relační data a všechny databáze, který má zprostředkovatele dat, který podporuje rozhraní Entity Framework lze použít s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Seznam zdrojů dat, které aktuálně podporují rozhraní Entity Framework najdete v tématu [poskytovatelů třetích stran pro rozhraní Entity Framework](http://go.microsoft.com/fwlink/?LinkId=143699).  

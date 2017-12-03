@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a47513a4-a96c-4350-8586-daacb05dee71
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4044e81b7c33c7a755678e79586dd4f37cf54ed5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a64f5ae4573efbd8c0f7d622e6b94b7786585bb1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="datacontractserializer"></a>dataContractSerializer
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.  

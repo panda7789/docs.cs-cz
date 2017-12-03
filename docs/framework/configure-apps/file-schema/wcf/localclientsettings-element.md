@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d56c7c199ed437fdfc1277ecb6c99f7b8c6cbe38
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cabde7eb9dd122c2f7060b2f2e2c16f5949dc1f3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltlocalclientsettingsgt-element"></a>Element &lt;localClientSettings&gt;
 Určuje nastavení zabezpečení místního klienta pro tuto vazbu.  

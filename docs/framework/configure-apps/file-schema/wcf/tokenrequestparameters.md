@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1fc2b90c-a61f-4337-ac4c-f341e596a781
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c7c97407f0c02ac2a939c97ae2163dabbf4ff9b3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0d74ab8d27bbfe6bec849e5263f01d92310ca5b2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="lttokenrequestparametersgt"></a>&lt;tokenRequestParameters&gt;
 Tento element konfigurace obsahuje podřízené elementy, které lze použít k určení dalších elementů XML k odeslání v textu zprávy do služby tokenů zabezpečení žádosti o token.  

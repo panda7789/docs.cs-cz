@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8253555a-9002-4565-8ede-33d7a33a895f
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f896055d958947e54ee77bb812b8d424e6f4f94f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2b30e53803692b7127d63a67b2c2c4178dc645db
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="204---clientparameterinspectorbeforecallinvoked"></a>204 – ClientParameterInspectorBeforeCallInvoked
 ## <a name="properties"></a>Vlastnosti  

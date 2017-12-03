@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a4d891f2-6fc8-4395-93c6-6819492406e0
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ec8537c4fdf80ffe448bba1376eacf519d67bcbe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c988f5ab5a342ad3282414634ca3bfc21f481ea5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="writing-a-transactional-application"></a>Zápis transakčních aplikací
 Jako programátor transakční aplikace můžete využívat výhod dvou programovacích modelů poskytované <xref:System.Transactions> obor názvů umožní vytvořit transakci. Můžete použít explicitní programovací model pomocí <xref:System.Transactions.Transaction> třídu nebo implicitní programovací model, ve kterém transakce jsou automaticky spravovány infrastrukturu, pomocí <xref:System.Transactions.TransactionScope> – třída. Doporučujeme použít model implicitní transakci pro vývoj. Můžete najít další informace o tom, jak používat v oboru transakce [implementace implicitní transakci pomocí oboru transakce](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md) tématu.  

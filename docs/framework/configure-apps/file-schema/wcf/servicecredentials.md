@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 96db336c-4f7a-4193-81a5-910b8ffd804f
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bef277ebd2bd80d51380ae9786b290e7d05a0f0d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d8e2fa4fe72b7b4c2f421aefa566f89492c06457
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltservicecredentialsgt"></a>&lt;– serviceCredentials&gt;
 Určuje pověření, která se použije v ověřování služby a nastavení související s ověření pověření klienta.  

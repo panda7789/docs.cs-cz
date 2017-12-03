@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6aacdb254b12e5c1b344b43c2fbf2e94681c1f6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3097f5352a8f92397b80f0c20e0cc2206e1e3fee
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="lthttptransportgt"></a>&lt;httpTransport&gt;
 Určuje přenosového protokolu HTTP pro přenos protokolu SOAP zprávy pro vlastní vazby.  

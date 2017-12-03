@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 040f7a8c-bb57-4db6-bdb0-cfb92a1b01af
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3d4932f86f686b1c3054f6b53c84c27d492800c6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a92a30ca5e2b95e7622bc145d837ac876955a8cb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltheadersgt-element"></a>Element &lt;headers&gt;
 Tato položka obsahuje kolekce hlavičky adresy, které jsou požadovány k správně adres místního vystavitele. Můžete použít `add` – klíčové slovo přidat hlavičku do této kolekce.  

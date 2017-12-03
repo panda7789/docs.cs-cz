@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d7fcfc5f-6d35-491e-8fa6-2f964c1e792f
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e86b69b7d633fd99728936070e94da964e16de58
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5a030a615aae0159e1426bdf4c640ddfab7287dd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltcallbacktimeoutsgt"></a>&lt;callbackTimeouts&gt;
 Určuje hodnotu časového limitu při toku transakcí ze serveru pro položku scénáři zpětného volání duplexní kontrakt.  

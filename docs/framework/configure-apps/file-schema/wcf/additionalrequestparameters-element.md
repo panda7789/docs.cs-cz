@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: da8109fb-581c-48f4-b718-3bbda1edc47d
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f1f94f111c1df1cbbbca512d6a2eaf3b740fe0cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1f05a1019d7acc45ddc0e1bc3f2a145a297322d5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltadditionalrequestparametersgt-element"></a>Element &lt;additionalRequestParameters&gt;
 Tato položka obsahuje kolekci elementů konfigurace, které zadejte parametry další požadavek.  

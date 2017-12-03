@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a3af8c07e86b7ccdf5443a666626b523914a2c45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3754964d07dd80442fbffd7c632304ef9d83ab1d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltpeergt-of-ltservicecredentialsgt"></a>&lt;peer&gt; – &lt;serviceCredentials&gt;
 Určuje, že aktuální přihlašovací údaje pro uzel sdílené.  

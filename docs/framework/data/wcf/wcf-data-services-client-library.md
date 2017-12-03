@@ -14,14 +14,14 @@ helpviewer_keywords:
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1e321200ce4b3582d154c5a188584c9e0b12c10d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 65b02945aa81fdf18ad328a833f8f85744035871
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-data-services-client-library"></a>Klientská knihovna pro WCF Data Services
 Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]-založené služba dat v případě, že může posílat proces a požadavek HTTP [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu, vrátí datové služby. Tato interoperabilita umožňuje přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povoleno rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]zahrnuje knihovny klienta, které poskytují bohatší programovací prostředí spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály v rozhraní .NET Framework nebo aplikace programu Silverlight.  
