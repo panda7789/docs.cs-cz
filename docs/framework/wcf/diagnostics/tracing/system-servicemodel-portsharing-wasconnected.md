@@ -10,22 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8af0f73f-3718-4dc8-93f4-638e2465da21
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c6e8d9efee7c6cc3295fd7b9ebb89d45e2764fbf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 651a60639a0b938009dace9b82202d862f294544
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="systemservicemodelportsharingwasconnected"></a><span data-ttu-id="eb17e-102">System.ServiceModel.PortSharing.WasConnected</span><span class="sxs-lookup"><span data-stu-id="eb17e-102">System.ServiceModel.PortSharing.WasConnected</span></span>
-<span data-ttu-id="eb17e-103">System.ServiceModel.PortSharing.WasConnected</span><span class="sxs-lookup"><span data-stu-id="eb17e-103">System.ServiceModel.PortSharing.WasConnected</span></span>  
+# <a name="systemservicemodelportsharingwasconnected"></a><span data-ttu-id="eaa7a-102">System.ServiceModel.PortSharing.WasConnected</span><span class="sxs-lookup"><span data-stu-id="eaa7a-102">System.ServiceModel.PortSharing.WasConnected</span></span>
+<span data-ttu-id="eaa7a-103">System.ServiceModel.PortSharing.WasConnected</span><span class="sxs-lookup"><span data-stu-id="eaa7a-103">System.ServiceModel.PortSharing.WasConnected</span></span>  
   
-## <a name="description"></a><span data-ttu-id="eb17e-104">Popis</span><span class="sxs-lookup"><span data-stu-id="eb17e-104">Description</span></span>  
- <span data-ttu-id="eb17e-105">Služba aktivace procesů systému Windows (WAS) je připojených.</span><span class="sxs-lookup"><span data-stu-id="eb17e-105">Windows Process Activation Service (WAS) has connected.</span></span>  
+## <a name="description"></a><span data-ttu-id="eaa7a-104">Popis</span><span class="sxs-lookup"><span data-stu-id="eaa7a-104">Description</span></span>  
+ <span data-ttu-id="eaa7a-105">Služba aktivace procesů systému Windows (WAS) je připojených.</span><span class="sxs-lookup"><span data-stu-id="eaa7a-105">Windows Process Activation Service (WAS) has connected.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eb17e-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="eb17e-106">See Also</span></span>  
- [<span data-ttu-id="eb17e-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="eb17e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="eb17e-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="eb17e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="eb17e-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="eb17e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="eaa7a-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="eaa7a-106">See Also</span></span>  
+ [<span data-ttu-id="eaa7a-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="eaa7a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="eaa7a-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="eaa7a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="eaa7a-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="eaa7a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

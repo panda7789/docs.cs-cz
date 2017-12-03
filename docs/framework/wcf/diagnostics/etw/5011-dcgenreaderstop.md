@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7d59368a-5ef0-4d3c-8bfe-8bb509b90afa
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6c55464c80170afdfafeea35fb5f1c64f73e15c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0cadd8c4fa7b5c8627892b0cc7e37eaf519e4cad
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="5011---dcgenreaderstop"></a><span data-ttu-id="72dbd-102">5011 – DCGenReaderStop</span><span class="sxs-lookup"><span data-stu-id="72dbd-102">5011 - DCGenReaderStop</span></span>
-## <a name="properties"></a><span data-ttu-id="72dbd-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="72dbd-103">Properties</span></span>  
+# <a name="5011---dcgenreaderstop"></a><span data-ttu-id="c8f26-102">5011 – DCGenReaderStop</span><span class="sxs-lookup"><span data-stu-id="c8f26-102">5011 - DCGenReaderStop</span></span>
+## <a name="properties"></a><span data-ttu-id="c8f26-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="c8f26-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="72dbd-104">ID</span><span class="sxs-lookup"><span data-stu-id="72dbd-104">ID</span></span>|<span data-ttu-id="72dbd-105">5011</span><span class="sxs-lookup"><span data-stu-id="72dbd-105">5011</span></span>|  
-|<span data-ttu-id="72dbd-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="72dbd-106">Keywords</span></span>|<span data-ttu-id="72dbd-107">Serializace</span><span class="sxs-lookup"><span data-stu-id="72dbd-107">Serialization</span></span>|  
-|<span data-ttu-id="72dbd-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="72dbd-108">Level</span></span>|<span data-ttu-id="72dbd-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="72dbd-109">Verbose</span></span>|  
-|<span data-ttu-id="72dbd-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="72dbd-110">Channel</span></span>|<span data-ttu-id="72dbd-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="72dbd-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="c8f26-104">ID</span><span class="sxs-lookup"><span data-stu-id="c8f26-104">ID</span></span>|<span data-ttu-id="c8f26-105">5011</span><span class="sxs-lookup"><span data-stu-id="c8f26-105">5011</span></span>|  
+|<span data-ttu-id="c8f26-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="c8f26-106">Keywords</span></span>|<span data-ttu-id="c8f26-107">Serializace</span><span class="sxs-lookup"><span data-stu-id="c8f26-107">Serialization</span></span>|  
+|<span data-ttu-id="c8f26-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="c8f26-108">Level</span></span>|<span data-ttu-id="c8f26-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="c8f26-109">Verbose</span></span>|  
+|<span data-ttu-id="c8f26-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="c8f26-110">Channel</span></span>|<span data-ttu-id="c8f26-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="c8f26-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="72dbd-112">Popis</span><span class="sxs-lookup"><span data-stu-id="72dbd-112">Description</span></span>  
- <span data-ttu-id="72dbd-113">Tato událost je vygenerované při zastavení generování kontraktu.</span><span class="sxs-lookup"><span data-stu-id="72dbd-113">This event is emitted when the DataContract generation stops.</span></span>  
+## <a name="description"></a><span data-ttu-id="c8f26-112">Popis</span><span class="sxs-lookup"><span data-stu-id="c8f26-112">Description</span></span>  
+ <span data-ttu-id="c8f26-113">Tato událost je vygenerované při zastavení generování kontraktu.</span><span class="sxs-lookup"><span data-stu-id="c8f26-113">This event is emitted when the DataContract generation stops.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="72dbd-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="72dbd-114">Message</span></span>  
- <span data-ttu-id="72dbd-115">Zastaví generování kontraktu.</span><span class="sxs-lookup"><span data-stu-id="72dbd-115">DataContract generation stop.</span></span>  
+## <a name="message"></a><span data-ttu-id="c8f26-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="c8f26-114">Message</span></span>  
+ <span data-ttu-id="c8f26-115">Zastaví generování kontraktu.</span><span class="sxs-lookup"><span data-stu-id="c8f26-115">DataContract generation stop.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="72dbd-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="72dbd-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="c8f26-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="c8f26-116">Details</span></span>

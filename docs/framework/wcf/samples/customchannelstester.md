@@ -10,43 +10,43 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2d915d567a5918060ab5e7592d4cd49384249ab9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 802d501dabbf14d30a26cd682afb366f0a83a17a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="customchannelstester"></a><span data-ttu-id="d3f59-102">CustomChannelsTester</span><span class="sxs-lookup"><span data-stu-id="d3f59-102">CustomChannelsTester</span></span>
-<span data-ttu-id="d3f59-103">`CustomChannelsTester` Je nástroj, který můžete použít k testování vaší implementace vlastní kanál oproti sadě kontrakty předdefinovaných služeb.</span><span class="sxs-lookup"><span data-stu-id="d3f59-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="d3f59-104">Můžete vybrat sadu kontraktů služby a předejte ji do nástroje pomocí souboru XML.</span><span class="sxs-lookup"><span data-stu-id="d3f59-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="d3f59-105">Nástroj potom generuje službu a klienta, který vykonává vaší implementace vlastní kanál při výměně zpráv.</span><span class="sxs-lookup"><span data-stu-id="d3f59-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
+# <a name="customchannelstester"></a><span data-ttu-id="a728c-102">CustomChannelsTester</span><span class="sxs-lookup"><span data-stu-id="a728c-102">CustomChannelsTester</span></span>
+<span data-ttu-id="a728c-103">`CustomChannelsTester` Je nástroj, který můžete použít k testování vaší implementace vlastní kanál oproti sadě kontrakty předdefinovaných služeb.</span><span class="sxs-lookup"><span data-stu-id="a728c-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="a728c-104">Můžete vybrat sadu kontraktů služby a předejte ji do nástroje pomocí souboru XML.</span><span class="sxs-lookup"><span data-stu-id="a728c-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="a728c-105">Nástroj potom generuje službu a klienta, který vykonává vaší implementace vlastní kanál při výměně zpráv.</span><span class="sxs-lookup"><span data-stu-id="a728c-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
   
-### <a name="to-build-the-tool"></a><span data-ttu-id="d3f59-106">K sestavení nástroje</span><span class="sxs-lookup"><span data-stu-id="d3f59-106">To build the tool</span></span>  
+### <a name="to-build-the-tool"></a><span data-ttu-id="a728c-106">K sestavení nástroje</span><span class="sxs-lookup"><span data-stu-id="a728c-106">To build the tool</span></span>  
   
-1.  <span data-ttu-id="d3f59-107">Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="d3f59-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+1.  <span data-ttu-id="a728c-107">Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a728c-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2.  <span data-ttu-id="d3f59-108">Sestavování řešení generuje tři soubory: CustomChannelsTester.exe, TestSpec.xml a SampleRun.cmd.</span><span class="sxs-lookup"><span data-stu-id="d3f59-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="d3f59-109">Soubor SampleRun.cmd má ukázka příkazového řádku, který ukazuje, jak tento nástroj použijte k testování [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka.</span><span class="sxs-lookup"><span data-stu-id="d3f59-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
+2.  <span data-ttu-id="a728c-108">Sestavování řešení generuje tři soubory: CustomChannelsTester.exe, TestSpec.xml a SampleRun.cmd.</span><span class="sxs-lookup"><span data-stu-id="a728c-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="a728c-109">Soubor SampleRun.cmd má ukázka příkazového řádku, který ukazuje, jak tento nástroj použijte k testování [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka.</span><span class="sxs-lookup"><span data-stu-id="a728c-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
   
-### <a name="to-run-the-tool"></a><span data-ttu-id="d3f59-110">Chcete-li spustit nástroj</span><span class="sxs-lookup"><span data-stu-id="d3f59-110">To run the tool</span></span>  
+### <a name="to-run-the-tool"></a><span data-ttu-id="a728c-110">Chcete-li spustit nástroj</span><span class="sxs-lookup"><span data-stu-id="a728c-110">To run the tool</span></span>  
   
--   <span data-ttu-id="d3f59-111">Na příkazovém řádku zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="d3f59-111">At the command prompt type the following command:</span></span>  
+-   <span data-ttu-id="a728c-111">Na příkazovém řádku zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="a728c-111">At the command prompt type the following command:</span></span>  
   
     ```  
     CustomChannelsTester.exe /binding:YourCustomBindngName /dll:TheAssemblyWhereThisTypeisDefined /testspec:XmlFileNameWhichContainsTestOptions  
     ```  
   
-     <span data-ttu-id="d3f59-112">Pomocí `/binding` možnost je povinná.</span><span class="sxs-lookup"><span data-stu-id="d3f59-112">Using the `/binding` option is required.</span></span>  
+     <span data-ttu-id="a728c-112">Pomocí `/binding` možnost je povinná.</span><span class="sxs-lookup"><span data-stu-id="a728c-112">Using the `/binding` option is required.</span></span>  
   
-     <span data-ttu-id="d3f59-113">`/dll`je nutný, pokud "vazba" není vazby poskytované systémem poskytované [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d3f59-113">`/dll` is required if "binding" is not a system-provided binding provided by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
+     <span data-ttu-id="a728c-113">`/dll`je nutný, pokud "vazba" není vazby poskytované systémem poskytované [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="a728c-113">`/dll` is required if "binding" is not a system-provided binding provided by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
   
-     <span data-ttu-id="d3f59-114">`/testspec`je volitelný.</span><span class="sxs-lookup"><span data-stu-id="d3f59-114">`/testspec` is optional.</span></span>  
+     <span data-ttu-id="a728c-114">`/testspec`je volitelný.</span><span class="sxs-lookup"><span data-stu-id="a728c-114">`/testspec` is optional.</span></span>  
   
-     <span data-ttu-id="d3f59-115">Tím se vytvoří serverem a klienty na základě specifikace test a vazby.</span><span class="sxs-lookup"><span data-stu-id="d3f59-115">This creates server and clients based on the test specifications and the binding.</span></span>  
+     <span data-ttu-id="a728c-115">Tím se vytvoří serverem a klienty na základě specifikace test a vazby.</span><span class="sxs-lookup"><span data-stu-id="a728c-115">This creates server and clients based on the test specifications and the binding.</span></span>  
   
-     <span data-ttu-id="d3f59-116">Provede klient a server a vrátí výsledky.</span><span class="sxs-lookup"><span data-stu-id="d3f59-116">Executes the client and server and returns the results.</span></span>  
+     <span data-ttu-id="a728c-116">Provede klient a server a vrátí výsledky.</span><span class="sxs-lookup"><span data-stu-id="a728c-116">Executes the client and server and returns the results.</span></span>  
   
-     <span data-ttu-id="d3f59-117">Zde je ukázka XML pro popis specifikace testu (testspec.xml):</span><span class="sxs-lookup"><span data-stu-id="d3f59-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
+     <span data-ttu-id="a728c-117">Zde je ukázka XML pro popis specifikace testu (testspec.xml):</span><span class="sxs-lookup"><span data-stu-id="a728c-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
   
     ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"   
@@ -79,4 +79,4 @@ ms.lasthandoff: 10/18/2017
     </TestSpec>  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="d3f59-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="d3f59-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a728c-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="a728c-118">See Also</span></span>

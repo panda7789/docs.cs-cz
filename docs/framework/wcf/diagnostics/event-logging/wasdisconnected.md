@@ -10,25 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7d86f1a7-a9f9-41f5-9ba2-3ffa70972a9c
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: eccfa649ce4de7f0d70a45d3e1163dbbd48b5e1f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a949c27d6d2ff95f36050bcb6c1241b0acf7ce96
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="wasdisconnected"></a><span data-ttu-id="4331a-102">WasDisconnected</span><span class="sxs-lookup"><span data-stu-id="4331a-102">WasDisconnected</span></span>
-<span data-ttu-id="4331a-103">ID: 162</span><span class="sxs-lookup"><span data-stu-id="4331a-103">Id: 162</span></span>  
+# <a name="wasdisconnected"></a><span data-ttu-id="1517d-102">WasDisconnected</span><span class="sxs-lookup"><span data-stu-id="1517d-102">WasDisconnected</span></span>
+<span data-ttu-id="1517d-103">ID: 162</span><span class="sxs-lookup"><span data-stu-id="1517d-103">Id: 162</span></span>  
   
- <span data-ttu-id="4331a-104">Závažnost: Chyba</span><span class="sxs-lookup"><span data-stu-id="4331a-104">Severity: Error</span></span>  
+ <span data-ttu-id="1517d-104">Závažnost: Chyba</span><span class="sxs-lookup"><span data-stu-id="1517d-104">Severity: Error</span></span>  
   
- <span data-ttu-id="4331a-105">Kategorie: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="4331a-105">Category: SMSvcHost</span></span>  
+ <span data-ttu-id="1517d-105">Kategorie: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="1517d-105">Category: SMSvcHost</span></span>  
   
-## <a name="description"></a><span data-ttu-id="4331a-106">Popis</span><span class="sxs-lookup"><span data-stu-id="4331a-106">Description</span></span>  
- <span data-ttu-id="4331a-107">Tato událost označuje, že bylo přerušeno aktivace procesů systému Windows (WAS).</span><span class="sxs-lookup"><span data-stu-id="4331a-107">This event indicates that Windows Process Activation (WAS) was disconnected.</span></span> <span data-ttu-id="4331a-108">Události jsou uvedeny HRESULT, název procesu a ID procesu.</span><span class="sxs-lookup"><span data-stu-id="4331a-108">The event lists the HRESULT, process name and process ID.</span></span>  
+## <a name="description"></a><span data-ttu-id="1517d-106">Popis</span><span class="sxs-lookup"><span data-stu-id="1517d-106">Description</span></span>  
+ <span data-ttu-id="1517d-107">Tato událost označuje, že bylo přerušeno aktivace procesů systému Windows (WAS).</span><span class="sxs-lookup"><span data-stu-id="1517d-107">This event indicates that Windows Process Activation (WAS) was disconnected.</span></span> <span data-ttu-id="1517d-108">Události jsou uvedeny HRESULT, název procesu a ID procesu.</span><span class="sxs-lookup"><span data-stu-id="1517d-108">The event lists the HRESULT, process name and process ID.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4331a-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="4331a-109">See Also</span></span>  
- [<span data-ttu-id="4331a-110">Protokolování událostí</span><span class="sxs-lookup"><span data-stu-id="4331a-110">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [<span data-ttu-id="4331a-111">Události Obecné referenční informace</span><span class="sxs-lookup"><span data-stu-id="4331a-111">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="1517d-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="1517d-109">See Also</span></span>  
+ [<span data-ttu-id="1517d-110">Protokolování událostí</span><span class="sxs-lookup"><span data-stu-id="1517d-110">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="1517d-111">Události Obecné referenční informace</span><span class="sxs-lookup"><span data-stu-id="1517d-111">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

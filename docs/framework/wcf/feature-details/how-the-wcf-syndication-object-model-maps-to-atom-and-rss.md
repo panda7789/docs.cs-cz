@@ -13,17 +13,17 @@ dev_langs:
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9e6af3dc911cdf67e7290d339122821c00fe6bc6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 00c5b310fbda189cfffe74767c9d77ac86481afe
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a><span data-ttu-id="f5159-102">Mapování modelu objektu syndikace WCF na Atom a RSS</span><span class="sxs-lookup"><span data-stu-id="f5159-102">How the WCF Syndication Object Model Maps to Atom and RSS</span></span>
-<span data-ttu-id="f5159-103">Při vývoji [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndikace službu, vytvoříte informačních kanálů a položky pomocí následující třídy:</span><span class="sxs-lookup"><span data-stu-id="f5159-103">When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndication service, you create feeds and items using the following classes:</span></span>  
+# <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a><span data-ttu-id="784e2-102">Mapování modelu objektu syndikace WCF na Atom a RSS</span><span class="sxs-lookup"><span data-stu-id="784e2-102">How the WCF Syndication Object Model Maps to Atom and RSS</span></span>
+<span data-ttu-id="784e2-103">Při vývoji [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndikace službu, vytvoříte informačních kanálů a položky pomocí následující třídy:</span><span class="sxs-lookup"><span data-stu-id="784e2-103">When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndication service, you create feeds and items using the following classes:</span></span>  
   
 -   <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
@@ -41,29 +41,29 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.ServiceModel.Syndication.XmlSyndicationContent>  
   
- <span data-ttu-id="f5159-104">A <xref:System.ServiceModel.Syndication.SyndicationFeed> lze serializovat do jakékoli syndikace formátu, pro který je definován formátování.</span><span class="sxs-lookup"><span data-stu-id="f5159-104">A <xref:System.ServiceModel.Syndication.SyndicationFeed> can be serialized into any syndication format for which a formatter is defined.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="f5159-105">se dodává s dvěma formátování: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> a <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.</span><span class="sxs-lookup"><span data-stu-id="f5159-105"> ships with two formatters: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> and <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.</span></span>  
+ <span data-ttu-id="784e2-104">A <xref:System.ServiceModel.Syndication.SyndicationFeed> lze serializovat do jakékoli syndikace formátu, pro který je definován formátování.</span><span class="sxs-lookup"><span data-stu-id="784e2-104">A <xref:System.ServiceModel.Syndication.SyndicationFeed> can be serialized into any syndication format for which a formatter is defined.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="784e2-105">se dodává s dvěma formátování: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> a <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.</span><span class="sxs-lookup"><span data-stu-id="784e2-105"> ships with two formatters: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> and <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.</span></span>  
   
- <span data-ttu-id="f5159-106">Objektový model kolem <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> je zarovnán přesněji specifikace Atom 1.0 než specifikace RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-106">The object model around <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> is aligned more closely with the Atom 1.0 specification than the RSS 2.0 specification.</span></span> <span data-ttu-id="f5159-107">Je to proto Atom 1.0 je mnohem vyšší specifikace, která definuje elementy, které se nejednoznačný nebo vynechání z specifikace RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-107">This is because Atom 1.0 is a more substantial specification that defines elements that are ambiguous or omitted from the RSS 2.0 specification.</span></span> <span data-ttu-id="f5159-108">Z toho důvodu mnoho položek [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modelu objektu syndikace nemají žádnou přímou reprezentaci ve specifikaci RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-108">Because of this, many items in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] syndication object model have no direct representation in the RSS 2.0 specification.</span></span> <span data-ttu-id="f5159-109">Při serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> objektů do RSS 2.0 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje serializuje datové prvky specifické pro formát Atom jako rozšíření oboru názvů kvalifikovaný prvky, které odpovídají specifikaci Atom.</span><span class="sxs-lookup"><span data-stu-id="f5159-109">When serializing <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> objects into RSS 2.0, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] allows you to serialize Atom-specific data elements as namespace-qualified extension elements that conform to the Atom specification.</span></span> <span data-ttu-id="f5159-110">To můžete řídit pomocí parametr předaný <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> konstruktor.</span><span class="sxs-lookup"><span data-stu-id="f5159-110">You can control this with a parameter passed to the <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> constructor.</span></span>  
+ <span data-ttu-id="784e2-106">Objektový model kolem <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> je zarovnán přesněji specifikace Atom 1.0 než specifikace RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-106">The object model around <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> is aligned more closely with the Atom 1.0 specification than the RSS 2.0 specification.</span></span> <span data-ttu-id="784e2-107">Je to proto Atom 1.0 je mnohem vyšší specifikace, která definuje elementy, které se nejednoznačný nebo vynechání z specifikace RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-107">This is because Atom 1.0 is a more substantial specification that defines elements that are ambiguous or omitted from the RSS 2.0 specification.</span></span> <span data-ttu-id="784e2-108">Z toho důvodu mnoho položek [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modelu objektu syndikace nemají žádnou přímou reprezentaci ve specifikaci RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-108">Because of this, many items in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] syndication object model have no direct representation in the RSS 2.0 specification.</span></span> <span data-ttu-id="784e2-109">Při serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> objektů do RSS 2.0 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje serializuje datové prvky specifické pro formát Atom jako rozšíření oboru názvů kvalifikovaný prvky, které odpovídají specifikaci Atom.</span><span class="sxs-lookup"><span data-stu-id="784e2-109">When serializing <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> objects into RSS 2.0, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] allows you to serialize Atom-specific data elements as namespace-qualified extension elements that conform to the Atom specification.</span></span> <span data-ttu-id="784e2-110">To můžete řídit pomocí parametr předaný <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> konstruktor.</span><span class="sxs-lookup"><span data-stu-id="784e2-110">You can control this with a parameter passed to the <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> constructor.</span></span>  
   
- <span data-ttu-id="f5159-111">Ukázky kódu v tomto tématu jedním ze dvou způsobů zde definované udělat aktuální serializace.</span><span class="sxs-lookup"><span data-stu-id="f5159-111">The code samples in this topic use one of two methods defined here to do the actual serialization.</span></span>  
+ <span data-ttu-id="784e2-111">Ukázky kódu v tomto tématu jedním ze dvou způsobů zde definované udělat aktuální serializace.</span><span class="sxs-lookup"><span data-stu-id="784e2-111">The code samples in this topic use one of two methods defined here to do the actual serialization.</span></span>  
   
- <span data-ttu-id="f5159-112">`SerializeFeed`serializuje syndikace informačního kanálu.</span><span class="sxs-lookup"><span data-stu-id="f5159-112">`SerializeFeed` serializes a syndication feed.</span></span>  
+ <span data-ttu-id="784e2-112">`SerializeFeed`serializuje syndikace informačního kanálu.</span><span class="sxs-lookup"><span data-stu-id="784e2-112">`SerializeFeed` serializes a syndication feed.</span></span>  
   
  [!code-csharp[SyndicationMapping#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#10)]
  [!code-vb[SyndicationMapping#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#10)]  
   
- <span data-ttu-id="f5159-113">`SerializeItem`serializuje syndikace položky.</span><span class="sxs-lookup"><span data-stu-id="f5159-113">`SerializeItem` serializes a syndication item.</span></span>  
+ <span data-ttu-id="784e2-113">`SerializeItem`serializuje syndikace položky.</span><span class="sxs-lookup"><span data-stu-id="784e2-113">`SerializeItem` serializes a syndication item.</span></span>  
   
  [!code-csharp[SyndicationMapping#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#11)]
  [!code-vb[SyndicationMapping#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#11)]  
   
-## <a name="syndicationfeed"></a><span data-ttu-id="f5159-114">SyndicationFeed</span><span class="sxs-lookup"><span data-stu-id="f5159-114">SyndicationFeed</span></span>  
- <span data-ttu-id="f5159-115">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-115">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationFeed> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationfeed"></a><span data-ttu-id="784e2-114">SyndicationFeed</span><span class="sxs-lookup"><span data-stu-id="784e2-114">SyndicationFeed</span></span>  
+ <span data-ttu-id="784e2-115">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-115">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationFeed> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#0)]
  [!code-vb[SyndicationMapping#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#0)]  
   
- <span data-ttu-id="f5159-116">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationFeed> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-116">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-116">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationFeed> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-116">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to Atom 1.0.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -112,7 +112,7 @@ ms.lasthandoff: 11/21/2017
 </feed>  
 ```  
   
- <span data-ttu-id="f5159-117">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationFeed> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-117">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-117">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationFeed> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-117">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to RSS 2.0.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -154,13 +154,13 @@ ms.lasthandoff: 11/21/2017
 </rss>  
 ```  
   
-## <a name="syndicationitem"></a><span data-ttu-id="f5159-118">SyndicationItem</span><span class="sxs-lookup"><span data-stu-id="f5159-118">SyndicationItem</span></span>  
- <span data-ttu-id="f5159-119">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationItem> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-119">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationItem> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationitem"></a><span data-ttu-id="784e2-118">SyndicationItem</span><span class="sxs-lookup"><span data-stu-id="784e2-118">SyndicationItem</span></span>  
+ <span data-ttu-id="784e2-119">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationItem> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-119">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationItem> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#1)]
  [!code-vb[SyndicationMapping#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#1)]  
   
- <span data-ttu-id="f5159-120">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationItem> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-120">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-120">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationItem> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-120">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to Atom 1.0.</span></span>  
   
 ```xml  
 <entry xmlns="http://www.w3.org/2005/Atom">  
@@ -202,7 +202,7 @@ ms.lasthandoff: 11/21/2017
 </entry>  
 ```  
   
- <span data-ttu-id="f5159-121">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationItem> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-121">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-121">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationItem> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-121">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to RSS 2.0.</span></span>  
   
 ```xml  
 <item>  
@@ -240,13 +240,13 @@ ms.lasthandoff: 11/21/2017
 </item>  
 ```  
   
-## <a name="syndicationperson"></a><span data-ttu-id="f5159-122">SyndicationPerson</span><span class="sxs-lookup"><span data-stu-id="f5159-122">SyndicationPerson</span></span>  
- <span data-ttu-id="f5159-123">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationPerson> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-123">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationPerson> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationperson"></a><span data-ttu-id="784e2-122">SyndicationPerson</span><span class="sxs-lookup"><span data-stu-id="784e2-122">SyndicationPerson</span></span>  
+ <span data-ttu-id="784e2-123">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationPerson> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-123">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationPerson> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#2)]
  [!code-vb[SyndicationMapping#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#2)]  
   
- <span data-ttu-id="f5159-124">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-124">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-124">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-124">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> is serialized to Atom 1.0.</span></span>  
   
 ```xml  
   <author>  
@@ -261,7 +261,7 @@ ms.lasthandoff: 11/21/2017
   </contributor>  
 ```  
   
- <span data-ttu-id="f5159-125">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> třída je serializovat na RSS 2.0, pokud pouze jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` nebo `Contributors` kolekcí, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="f5159-125">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if only one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
+ <span data-ttu-id="784e2-125">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> třída je serializovat na RSS 2.0, pokud pouze jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` nebo `Contributors` kolekcí, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="784e2-125">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if only one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
   
 ```xml  
 <author>Jesper.Aaberg@contoso.com</author>  
@@ -272,7 +272,7 @@ ms.lasthandoff: 11/21/2017
 </a10:contributor>  
 ```  
   
- <span data-ttu-id="f5159-126">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> třída je serializovat na RSS 2.0, pokud více než jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` nebo `Contributors` kolekcí, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="f5159-126">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if more than one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
+ <span data-ttu-id="784e2-126">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> třída je serializovat na RSS 2.0, pokud více než jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` nebo `Contributors` kolekcí, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="784e2-126">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if more than one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
   
 ```xml  
 <a10:author>  
@@ -297,67 +297,67 @@ ms.lasthandoff: 11/21/2017
 </a10:contributor>  
 ```  
   
-## <a name="syndicationlink"></a><span data-ttu-id="f5159-127">SyndicationLink</span><span class="sxs-lookup"><span data-stu-id="f5159-127">SyndicationLink</span></span>  
- <span data-ttu-id="f5159-128">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationLink> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-128">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationLink> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationlink"></a><span data-ttu-id="784e2-127">SyndicationLink</span><span class="sxs-lookup"><span data-stu-id="784e2-127">SyndicationLink</span></span>  
+ <span data-ttu-id="784e2-128">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationLink> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-128">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationLink> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#3)]
  [!code-vb[SyndicationMapping#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#3)]  
   
- <span data-ttu-id="f5159-129">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationLink> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-129">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-129">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationLink> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-129">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to Atom 1.0.</span></span>  
   
  `<link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
- <span data-ttu-id="f5159-130">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationLink> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-130">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-130">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationLink> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-130">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to RSS 2.0.</span></span>  
   
  `<a10:link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
-## <a name="syndicationcategory"></a><span data-ttu-id="f5159-131">SyndicationCategory</span><span class="sxs-lookup"><span data-stu-id="f5159-131">SyndicationCategory</span></span>  
- <span data-ttu-id="f5159-132">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationCategory> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-132">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationCategory> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationcategory"></a><span data-ttu-id="784e2-131">SyndicationCategory</span><span class="sxs-lookup"><span data-stu-id="784e2-131">SyndicationCategory</span></span>  
+ <span data-ttu-id="784e2-132">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationCategory> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-132">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationCategory> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#4)]
  [!code-vb[SyndicationMapping#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#4)]  
   
- <span data-ttu-id="f5159-133">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationCategory> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-133">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-133">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationCategory> je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-133">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to Atom 1.0.</span></span>  
   
  `<category term="categoryName" label="categoryLabel" scheme="categoryScheme" />`  
   
- <span data-ttu-id="f5159-134">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationCategory> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-134">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-134">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationCategory> je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-134">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to RSS 2.0.</span></span>  
   
  `<category domain="categoryScheme">categoryName</category>`  
   
-## <a name="textsyndicationcontent"></a><span data-ttu-id="f5159-135">TextSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="f5159-135">TextSyndicationContent</span></span>  
- <span data-ttu-id="f5159-136">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořena s obsah HTML.</span><span class="sxs-lookup"><span data-stu-id="f5159-136">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with HTML content.</span></span>  
+## <a name="textsyndicationcontent"></a><span data-ttu-id="784e2-135">TextSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="784e2-135">TextSyndicationContent</span></span>  
+ <span data-ttu-id="784e2-136">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořena s obsah HTML.</span><span class="sxs-lookup"><span data-stu-id="784e2-136">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with HTML content.</span></span>  
   
  [!code-csharp[SyndicationMapping#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#5)]
  [!code-vb[SyndicationMapping#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#5)]  
   
- <span data-ttu-id="f5159-137">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třída obsah ve formátu HTML je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-137">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-137">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třída obsah ve formátu HTML je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-137">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to Atom 1.0.</span></span>  
   
  `<content type="html"><html> some html </html></content>`  
   
- <span data-ttu-id="f5159-138">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třída obsah ve formátu HTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-138">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-138">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třída obsah ve formátu HTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-138">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to RSS 2.0.</span></span>  
   
  `<description><html> some html </html></description>`  
   
- <span data-ttu-id="f5159-139">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořena s obsah ve formátu prostého textu.</span><span class="sxs-lookup"><span data-stu-id="f5159-139">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with plain text content.</span></span>  
+ <span data-ttu-id="784e2-139">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořena s obsah ve formátu prostého textu.</span><span class="sxs-lookup"><span data-stu-id="784e2-139">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with plain text content.</span></span>  
   
  [!code-csharp[SyndicationMapping#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#6)]
  [!code-vb[SyndicationMapping#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#6)]  
   
- <span data-ttu-id="f5159-140">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> se obsah ve formátu prostého textu se serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-140">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-140">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> se obsah ve formátu prostého textu se serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-140">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to Atom 1.0.</span></span>  
   
  `<content type="text">Some Plain Text</content>`  
   
- <span data-ttu-id="f5159-141">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> se obsah ve formátu prostého textu se serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-141">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-141">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> se obsah ve formátu prostého textu se serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-141">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to RSS 2.0.</span></span>  
   
  `<description>Some Plain Text</description>`  
   
- <span data-ttu-id="f5159-142">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořena s obsahem XHTML.</span><span class="sxs-lookup"><span data-stu-id="f5159-142">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with XHTML content.</span></span>  
+ <span data-ttu-id="784e2-142">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořena s obsahem XHTML.</span><span class="sxs-lookup"><span data-stu-id="784e2-142">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with XHTML content.</span></span>  
   
  [!code-csharp[SyndicationMapping#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#7)]
  [!code-vb[SyndicationMapping#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#7)]  
   
- <span data-ttu-id="f5159-143">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy s obsahem XHTML je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-143">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-143">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy s obsahem XHTML je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-143">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to Atom 1.0.</span></span>  
   
  `<content type="xhtml">`  
   
@@ -365,33 +365,33 @@ ms.lasthandoff: 11/21/2017
   
  `</content>`  
   
- <span data-ttu-id="f5159-144">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy s obsahem XHTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-144">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-144">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy s obsahem XHTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-144">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
   
  `<description><html> some xhtml </html></description>`  
   
-## <a name="urlsyndicationcontent"></a><span data-ttu-id="f5159-145">UrlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="f5159-145">UrlSyndicationContent</span></span>  
- <span data-ttu-id="f5159-146">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-146">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="urlsyndicationcontent"></a><span data-ttu-id="784e2-145">UrlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="784e2-145">UrlSyndicationContent</span></span>  
+ <span data-ttu-id="784e2-146">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-146">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#8)]
  [!code-vb[SyndicationMapping#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#8)]  
   
- <span data-ttu-id="f5159-147">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třída je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-147">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-147">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třída je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-147">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
   
  `<content type="audio" src="http://someurl/" />`  
   
- <span data-ttu-id="f5159-148">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třídy s obsahem XHTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-148">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-148">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třídy s obsahem XHTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-148">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
   
  `<description />`  
   
  `<content type="audio" src="http://Contoso/someurl/" xmlns="http://www.w3.org/2005/Atom" />`  
   
-## <a name="xmlsyndicationcontent"></a><span data-ttu-id="f5159-149">XmlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="f5159-149">XmlSyndicationContent</span></span>  
- <span data-ttu-id="f5159-150">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-150">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="xmlsyndicationcontent"></a><span data-ttu-id="784e2-149">XmlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="784e2-149">XmlSyndicationContent</span></span>  
+ <span data-ttu-id="784e2-150">Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třídy Atom 1.0 a RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-150">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#9)]
  [!code-vb[SyndicationMapping#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#9)]  
   
- <span data-ttu-id="f5159-151">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třída je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-151">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="784e2-151">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třída je serializovat na Atom 1.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-151">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
   
  `<content type="mytype">`  
   
@@ -399,7 +399,7 @@ ms.lasthandoff: 11/21/2017
   
  `</content>`  
   
- <span data-ttu-id="f5159-152">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třídy s obsahem XHTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="f5159-152">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="784e2-152">Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třídy s obsahem XHTML je serializovat na RSS 2.0.</span><span class="sxs-lookup"><span data-stu-id="784e2-152">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
   
  `<content type="mytype" xmlns="http://www.w3.org/2005/Atom">`  
   
@@ -407,9 +407,9 @@ ms.lasthandoff: 11/21/2017
   
  `</content>`  
   
-## <a name="see-also"></a><span data-ttu-id="f5159-153">Viz také</span><span class="sxs-lookup"><span data-stu-id="f5159-153">See Also</span></span>  
- [<span data-ttu-id="f5159-154">Syndikace WCF – přehled</span><span class="sxs-lookup"><span data-stu-id="f5159-154">WCF Syndication Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
- [<span data-ttu-id="f5159-155">Architektura syndikace</span><span class="sxs-lookup"><span data-stu-id="f5159-155">Architecture of Syndication</span></span>](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
- [<span data-ttu-id="f5159-156">Postupy: vytvoření základního kanálu RSS</span><span class="sxs-lookup"><span data-stu-id="f5159-156">How to: Create a Basic RSS Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
- [<span data-ttu-id="f5159-157">Postupy: vytvoření základního informačního kanálu Atom</span><span class="sxs-lookup"><span data-stu-id="f5159-157">How to: Create a Basic Atom Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
- [<span data-ttu-id="f5159-158">Postupy: vystavení informačního kanálu jako Atom a RSS</span><span class="sxs-lookup"><span data-stu-id="f5159-158">How to: Expose a Feed as Both Atom and RSS</span></span>](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+## <a name="see-also"></a><span data-ttu-id="784e2-153">Viz také</span><span class="sxs-lookup"><span data-stu-id="784e2-153">See Also</span></span>  
+ [<span data-ttu-id="784e2-154">Syndikace WCF – přehled</span><span class="sxs-lookup"><span data-stu-id="784e2-154">WCF Syndication Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [<span data-ttu-id="784e2-155">Architektura syndikace</span><span class="sxs-lookup"><span data-stu-id="784e2-155">Architecture of Syndication</span></span>](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
+ [<span data-ttu-id="784e2-156">Postupy: vytvoření základního kanálu RSS</span><span class="sxs-lookup"><span data-stu-id="784e2-156">How to: Create a Basic RSS Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
+ [<span data-ttu-id="784e2-157">Postupy: vytvoření základního informačního kanálu Atom</span><span class="sxs-lookup"><span data-stu-id="784e2-157">How to: Create a Basic Atom Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
+ [<span data-ttu-id="784e2-158">Postupy: vystavení informačního kanálu jako Atom a RSS</span><span class="sxs-lookup"><span data-stu-id="784e2-158">How to: Expose a Feed as Both Atom and RSS</span></span>](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)

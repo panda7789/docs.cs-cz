@@ -10,19 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0a9c8674-29f7-4f14-aa1f-dc2644ca57e4
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2eb7be7fb1acbfb9ccd46aee341e001156795ebc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e33bd0e5e399b2c531503986582bd155cd2cf08f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="transactionflowattribute"></a><span data-ttu-id="37679-102">TransactionFlowAttribute</span><span class="sxs-lookup"><span data-stu-id="37679-102">TransactionFlowAttribute</span></span>
-<span data-ttu-id="37679-103">TransactionFlowAttribute</span><span class="sxs-lookup"><span data-stu-id="37679-103">TransactionFlowAttribute</span></span>  
+# <a name="transactionflowattribute"></a><span data-ttu-id="86332-102">TransactionFlowAttribute</span><span class="sxs-lookup"><span data-stu-id="86332-102">TransactionFlowAttribute</span></span>
+<span data-ttu-id="86332-103">TransactionFlowAttribute</span><span class="sxs-lookup"><span data-stu-id="86332-103">TransactionFlowAttribute</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="37679-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="37679-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="86332-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="86332-104">Syntax</span></span>  
   
 ```  
 class TransactionFlowAttribute : Behavior  
@@ -31,24 +31,24 @@ class TransactionFlowAttribute : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="37679-105">Metody</span><span class="sxs-lookup"><span data-stu-id="37679-105">Methods</span></span>  
- <span data-ttu-id="37679-106">Třída TransactionFlowAttribute nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="37679-106">The TransactionFlowAttribute class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="86332-105">Metody</span><span class="sxs-lookup"><span data-stu-id="86332-105">Methods</span></span>  
+ <span data-ttu-id="86332-106">Třída TransactionFlowAttribute nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="86332-106">The TransactionFlowAttribute class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="37679-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="37679-107">Properties</span></span>  
- <span data-ttu-id="37679-108">Třída TransactionFlowAttribute má následující vlastnost:</span><span class="sxs-lookup"><span data-stu-id="37679-108">The TransactionFlowAttribute class has the following property:</span></span>  
+## <a name="properties"></a><span data-ttu-id="86332-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="86332-107">Properties</span></span>  
+ <span data-ttu-id="86332-108">Třída TransactionFlowAttribute má následující vlastnost:</span><span class="sxs-lookup"><span data-stu-id="86332-108">The TransactionFlowAttribute class has the following property:</span></span>  
   
-### <a name="transactionflowoption"></a><span data-ttu-id="37679-109">TransactionFlowOption</span><span class="sxs-lookup"><span data-stu-id="37679-109">TransactionFlowOption</span></span>  
- <span data-ttu-id="37679-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="37679-110">Data type: string</span></span>  
+### <a name="transactionflowoption"></a><span data-ttu-id="86332-109">TransactionFlowOption</span><span class="sxs-lookup"><span data-stu-id="86332-109">TransactionFlowOption</span></span>  
+ <span data-ttu-id="86332-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="86332-110">Data type: string</span></span>  
   
- <span data-ttu-id="37679-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="37679-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="86332-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="86332-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="37679-112">Určuje, jestli tok transakcí.</span><span class="sxs-lookup"><span data-stu-id="37679-112">Indicates whether transactions flow.</span></span>  
+ <span data-ttu-id="86332-112">Určuje, jestli tok transakcí.</span><span class="sxs-lookup"><span data-stu-id="86332-112">Indicates whether transactions flow.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="37679-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="37679-113">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="86332-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="86332-113">Requirements</span></span>  
   
-|<span data-ttu-id="37679-114">MOF</span><span class="sxs-lookup"><span data-stu-id="37679-114">MOF</span></span>|<span data-ttu-id="37679-115">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="37679-115">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="86332-114">MOF</span><span class="sxs-lookup"><span data-stu-id="86332-114">MOF</span></span>|<span data-ttu-id="86332-115">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="86332-115">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="37679-116">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="37679-116">Namespace</span></span>|<span data-ttu-id="37679-117">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="37679-117">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="86332-116">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="86332-116">Namespace</span></span>|<span data-ttu-id="86332-117">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="86332-117">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="37679-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="37679-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="86332-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="86332-118">See Also</span></span>  
  <xref:System.ServiceModel.TransactionFlowAttribute>
