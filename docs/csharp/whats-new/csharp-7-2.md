@@ -8,11 +8,11 @@ ms.date: 08/16/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: a580a4a3a0a49e97ea8fb96699d1d978a9bc0a64
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: cc861f186bea681bb32a2f8041a7155026679987
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v C# 7.2
 
@@ -61,6 +61,6 @@ int binaryValue = 0b_0101_0101;
 
 ## `private protected`
 
-Nakonec novou modifikátor přístupu složené: `private protected` znamená, že může být členem přistupovat odvozené třídy, které jsou deklarovány ve stejném sestavení. Při `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení `private protected` omezuje přístup na odvozené typy deklarován ve stejném sestavení.
+Nakonec novou modifikátor přístupu složené: `private protected` znamená, že může být členem přistupovat pomocí obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Při `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení `private protected` omezuje přístup na odvozené typy deklarován ve stejném sestavení.
 
 Další informace najdete v části [přístup modifikátory](../language-reference/keywords/access-modifiers.md) v dokumentu.

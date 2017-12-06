@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: f98039404789e8886154e04c4b97a21741c4d885
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 3f3598fce5abeb67b772f51ed6f93e6ada4c92d0
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="whats-new-in-c-7"></a>Co je nového v C# 7
 
@@ -183,7 +183,7 @@ Začněme pomocí jednoduchého scénáře. Do tohoto scénáře, které ukazuj�
 
 [!code-csharp[SumDieRolls](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#14_SumDieRolls "Sum die rolls")]
 
-Můžete rychle zjistit, budete muset najít že součet die vrátí, kde některé zobrazí souhrn se provedou více počátku. Součást vstupní pořadí může být více výsledků místo jedno číslo:
+Můžete rychle zjistit, budete muset najít součet die zobrazí souhrn, kde některé zobrazí souhrn se provedou více rozčlenění (rozčlenění je množném čísle die). Součást vstupní pořadí může být více výsledků místo jedno číslo:
 
 [!code-csharp[SumDieRollsWithGroups](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#15_SumDieRollsWithGroups "Sum die rolls with groups")]
 
@@ -215,9 +215,9 @@ Nakonec přidejme jednu poslední `case` nového stylu die. Některé hry pomoc�
 > [!NOTE]
 > Dva rozčlenění 10 zachytávání percentilu může představovat každé číslo od 0 do 99. Počátku má strany, které jsou označené jako `00`, `10`, `20`,... `90`. Další die má strany s názvem bez přípony `0`, `1`, `2`,... `9`. Přidejte dva die hodnot společně a získáte každé číslo od 0 až 99.
 
-Pokud chcete tento druh die přidat do kolekce, nejprve definujte typ představují die percentilu:
+Pokud chcete tento druh die přidat do kolekce, nejprve definujte typ představují rozčlenění percentil. `TensDigit` Vlastnosti se ukládají hodnoty `0`, `10`, `20`, až `90`:
 
-[!code-csharp[18_PercentileDie](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDie "Percentile Die type")]
+[!code-csharp[18_PercentileDice](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDice "Percentile Die type")]
 
 Potom přidat `case` odpovídat výrazu pro nový typ:
 

@@ -12,11 +12,11 @@ ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
 caps.latest.revision: "36"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 69a3a575347a62b298c17af050cb925f7819b552
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 23a3299492c538963e9a5dceaadc81a44d386b19
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor se použije pro úlohu v asynchronní metodu vložit bod pozastavení při provádění metody až do dokončení awaited úloh. Úloha reprezentuje probíhající práce.  
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/18/2017
 [!code-csharp[await-example](../../../../samples/snippets/csharp/language-reference/keywords/await/await1.cs)]  
 
 > [!IMPORTANT]
->  Úplný příklad najdete v tématu [návod: přístup k webu pomocí modifikátoru Async a Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Si můžete stáhnout ukázkový z [ukázky kódu vývojáře](http://go.microsoft.com/fwlink/?LinkID=255191) na webu společnosti Microsoft. Příkladem je v AsyncWalkthrough_HttpClient projektu.  
+>  Úplný příklad najdete v tématu [návod: přístup k webu pomocí modifikátoru Async a Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Si můžete stáhnout ukázkový z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. Příkladem je v AsyncWalkthrough_HttpClient projektu.  
   
 Jak ukazuje předchozí příklad, pokud `await` se použije na výsledek volání metody, která vrátí `Task<TResult>`, pak typ `await` výraz `TResult`. Pokud `await` se použije na výsledek volání metody, která vrátí `Task`, pak typ `await` výraz `void`. Následující příklad ukazuje rozdíl.  
   

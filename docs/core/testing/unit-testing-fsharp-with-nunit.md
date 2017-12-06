@@ -1,21 +1,20 @@
 ---
-title: "Jednotka knihovny F # testování v .NET Core pomocí testovacích dotnet a Mstestu"
-description: "Další koncepty testů jednotek pro F # v .NET Core prostřednictvím interaktivní prostředí sestavování podrobné ukázkové řešení pomocí testovacích dotnet a Mstestu."
-author: billwagner
-ms.author: wiwagn
-ms.date: 08/30/2017
+title: "Testování knihovny F # v .NET Core pomocí testovacích dotnet a NUnit částí"
+description: "Další koncepty testů jednotek pro F # v .NET Core prostřednictvím interaktivní prostředí sestavování podrobné ukázkové řešení pomocí testovacích dotnet a NUnit."
+author: rprouse
+ms.date: 12/01/2017
 ms.topic: article
 dev_langs: fsharp
 ms.prod: .net-core
-ms.openlocfilehash: ad869d6b66ad5d966037a3ef38154fadcfa5978b
+ms.openlocfilehash: 27a7bb889fd736294252da39b1839b2197b8df03
 ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 12/06/2017
 ---
-# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>Jednotka knihovny F # testování v .NET Core pomocí testovacích dotnet a Mstestu
+# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Testování knihovny F # v .NET Core pomocí testovacích dotnet a NUnit částí
 
-Tento kurz vás provede interaktivní prostředí vytváření ukázkové řešení podrobné další koncepty testování částí. Pokud chcete postupovat v kurzu pomocí předdefinovaných řešení, [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-mstest/) před zahájením. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Tento kurz vás provede interaktivní prostředí vytváření ukázkové řešení podrobné další koncepty testování částí. Pokud chcete postupovat v kurzu pomocí předdefinovaných řešení, [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-nunit/) před zahájením. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje
 
@@ -38,6 +37,14 @@ module MyMath =
 
 Změna adresáře zpět do *jednotky – testování s fsharp* adresáře. Spustit [ `dotnet sln add .\MathService\MathService.fsproj` ](../tools/dotnet-sln.md) přidání projektu knihovny tříd do řešení.
 
+## <a name="install-the-nunit-project-template"></a>Šablona projektu NUnit instalace
+
+NUnit testování projektu, který je potřeba nainstalovat před vytvořením testovacího projektu šablony. To jenom je nutné provést jednou na každém počítači vývojáře, kde vytvoříte nové projekty NUnit. Spustit [ `dotnet new -i NUnit3.DotNetNew.Template` ](../tools/dotnet-new.md) instalovat NUnit šablony.
+
+ ```
+ dotnet new -i NUnit3.DotNetNew.Template
+ ```
+
 ## <a name="creating-the-test-project"></a>Vytvoření projektu testů
 
 Dále vytvořte *MathService.Tests* adresáře. Zobrazí následující osnova adresářovou strukturu:
@@ -51,17 +58,17 @@ Dále vytvořte *MathService.Tests* adresáře. Zobrazí následující osnova a
     /MathService.Tests
 ```
 
-Ujistěte se, *MathService.Tests* adresář aktuální adresář a vytvoření nového projektu pomocí [ `dotnet new mstest -lang F#` ](../tools/dotnet-new.md). Tím se vytvoří testovací projekt, který používá Mstestu jako rozhraní test. Nástroj test runner v nakonfiguruje vygenerované šablony *MathServiceTests.fsproj*:
+Ujistěte se, *MathService.Tests* adresář aktuální adresář a vytvoření nového projektu pomocí [ `dotnet new nunit -lang F#` ](../tools/dotnet-new.md). Tím se vytvoří testovací projekt, který používá NUnit jako rozhraní test. Nástroj test runner v nakonfiguruje vygenerované šablony *MathServiceTests.fsproj*:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-  <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
-  <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+  <PackageReference Include="NUnit" Version="3.9.0" />
+  <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
 </ItemGroup>
 ```
 
-K testovacímu projektu vyžaduje další balíčky k vytváření a spouštění testování částí. `dotnet new`v předchozím kroku přidat Mstestu a Mstestu runner. Nyní přidejte `MathService` knihovny tříd jako další závislosti do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
+K testovacímu projektu vyžaduje další balíčky k vytváření a spouštění testování částí. `dotnet new`v předchozím kroku přidat že nunit a NUnit testovací adaptéru. Nyní přidejte `MathService` knihovny tříd jako další závislosti do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
 
 ```
 dotnet add reference ../MathService/MathService.fsproj
@@ -92,35 +99,35 @@ Volá TDD přístup pro zápis jeden selhání test, což předat a zopakování
 namespace MathService.Tests
 
 open System
-open Microsoft.VisualStudio.TestTools.UnitTesting
+open NUnit.Framework
 open MathService
 
-[<TestClass>]
+[<TestFixture>]
 type TestClass () =
 
-    [<TestMethod>]
+    [<Test>]
     member this.TestMethodPassing() =
-        Assert.IsTrue(true)
+        Assert.True(true)
 
-    [<TestMethod>]
-     member this.FailEveryTime() = Assert.IsTrue(false)
+    [<Test>]
+     member this.FailEveryTime() = Assert.True(false)
 ```
 
-`[<TestClass>]` Atribut označuje třídu, která obsahuje testy. `[<TestMethod>]` Atribut označuje testovací metodu, která spustí nástroj test runner. Z *jednotky – testování s fsharp* adresáře, provést [ `dotnet test` ](../tools/dotnet-test.md) vytvářet testy a knihovny tříd a poté spusťte testy. Nástroj test runner Mstestu obsahuje vstupní bod programu ke spuštění testů. `dotnet test`Spustí nástroj test runner pomocí projektu testů jednotek, které jste vytvořili.
+`[<TestFixture>]` Atribut označuje třídu, která obsahuje testy. `[<Test>]` Atribut označuje testovací metodu, která spustí nástroj test runner. Z *jednotky – testování s fsharp* adresáře, provést [ `dotnet test` ](../tools/dotnet-test.md) vytvářet testy a knihovny tříd a poté spusťte testy. Nástroj test runner NUnit obsahuje vstupní bod programu ke spuštění testů. `dotnet test`Spustí nástroj test runner pomocí projektu testů jednotek, které jste vytvořili.
 
 Tyto dva testy zobrazit nejzákladnější, předávání a selhání testy. `My test`úspěšně projde, a `Fail every time` selže. Teď vytvořte testu pro `sumOfSquares` metoda. `sumOfSquares` Metoda vrátí součet kvadratických hodnot liché celé číslo, které jsou součástí vstupní pořadí. Místo došlo k pokusu o zápis všechny tyto funkce najednou, můžete vytvořit interaktivně testy, které ověřit funkčnost. Provedení každého testu předat znamená vytváření potřebné funkce pro metodu.
 
 Nejjednodušší testu jsme může zapisovat je volání `sumOfSquares` s všechna čísla sudé, kde výsledkem by měl být prázdnou sekvencí celých čísel.  Tady je testu:
 
 ```fsharp
-[<TestMethod>]
+[<Test>]
 member this.TestEvenSequence() =
     let expected = Seq.empty<int> |> Seq.toList
     let actual = MyMath.sumOfSquares [2; 4; 6; 8; 10]
-    Assert.AreEqual(expected, actual)
+    Assert.That(actual, Is.EqualTo(expected))
 ```
 
-Všimněte si, že `expected` pořadí byl převeden na seznamu. Knihovna Mstestu spoléhá na mnoho standardní typy .NET. Aby závislost znamená, že veřejné rozhraní a očekávaných výsledků podporu <xref:System.Collections.ICollection> místo <xref:System.Collections.IEnumerable>.
+Všimněte si, že `expected` pořadí byl převeden na seznamu. Rozhraní framework NUnit spoléhá na mnoho standardní typy .NET. Aby závislost znamená, že veřejné rozhraní a očekávaných výsledků podporu <xref:System.Collections.ICollection> místo <xref:System.Collections.IEnumerable>.
 
 Při spuštění testu, uvidíte, že váš test se nezdaří. Nevytvořili jste ještě implementace. Psaní kódu nejjednodušší v, aby tento test `Mathservice` třídu, která funguje:
 
@@ -136,11 +143,11 @@ V *jednotky – testování s fsharp* spusťte `dotnet test` znovu. `dotnet test
 Teď, když jste udělali jeden testovací předání, je čas zapsat informace. Další jednoduché případ funguje s pořadím, jejichž pouze liché číslo je `1`. Číslo 1 je jednodušší, protože druhou mocninu 1 je 1. Zde je další testu:
 
 ```fsharp
-[<TestMethod>]
+[<Test>]
 member public this.SumOnesAndEvens() =
     let expected = [1; 1; 1; 1]
     let actual = MyMath.sumOfSquares [2; 1; 4; 1; 6; 1; 8; 1; 10]
-    Assert.AreEqual(expected, actual)
+    Assert.That(actual, Is.EqualTo(expected))
 ```
 
 Provádění `dotnet test` nový test se nezdaří. Je nutné aktualizovat `sumOfSquares` metodu ke zpracování tento nový test. Musí filtrovat všechna čísla sudé mimo pořadí, aby tento test předat. Můžete to udělat tak, že zápis funkce malé filtru a pomocí `Seq.filter`:
@@ -150,7 +157,8 @@ let private isOdd x = x % 2 <> 0
 
 let sumOfSquares xs =
     xs
-    |> Seq.filter isOdd |> Seq.toList
+    |> Seq.filter isOdd
+    |> Seq.toList
 ```
 
 Všimněte si volání `Seq.toList`. Který vytvoří seznam, který implementuje <xref:System.Collections.ICollection> rozhraní.
@@ -158,11 +166,11 @@ Všimněte si volání `Seq.toList`. Který vytvoří seznam, který implementuj
 Neexistuje jeden krok přejdete: Čtvereček každý liché čísel. Začněte vytvořením nového testu:
 
 ```fsharp
-[<TestMethod>]
+[<Test>]
 member public this.TestSquaresOfOdds() =
     let expected = [1; 9; 25; 49; 81]
     let actual = MyMath.sumOfSquares [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
-    Assert.AreEqual(expected, actual)
+    Assert.That(actual, Is.EqualTo(expected))
 ```
 
 Můžete je vyřešit test tím filtrované pořadí prostřednictvím operace mapy vypočítat druhou mocninu každý lichý počet:

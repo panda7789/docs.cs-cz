@@ -13,11 +13,11 @@ ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
 caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1a49d36b8580812c08e9ee080a9602d9fc2027ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6c2372380d8162d3e7760bba4a43cdb1c568bf5b
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="-operator-c-reference"></a>?? Operátor (referenční dokumentace jazyka C#)
 `??` Operátor se označuje jako operátor slučování hodnotu null.  Vrátí levý operand, pokud hodnota operandu není null; v opačném případě vrátí pravý operand.  
@@ -37,4 +37,4 @@ ms.lasthandoff: 11/21/2017
  [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
  [Typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
- [Jaké přesně nemá 'Zrušit' znamená?](http://go.microsoft.com/fwlink/?LinkID=112382)
+ [Jaké přesně nemá 'Zrušit' znamená?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)

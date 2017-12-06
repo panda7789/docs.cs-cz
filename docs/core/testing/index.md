@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.openlocfilehash: 666c06b236ad870c5c683749ab57d4488b4b8a39
-ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+ms.openlocfilehash: 780c2655b6d6a660939fb79ea58bec463ec97aa9
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>V .NET Core a .NET Standard testování částí
 
@@ -34,15 +34,18 @@ Pokud zápis testů částí, dávejte pozor, nejsou omylem zavést závislosti 
 
 Další informace o testování v projektech .NET Core jednotky:
 
-Projektů testování částí pro rozhraní .NET Core jsou podporovány pro [C#](../../csharp/index.md), [F #](../../fsharp/index.md) a [jazyka Visual Basic](../../visual-basic/index.md). Můžete také zvolit [xUnit](http://xunit.github.io) a [Mstestu](https://github.com/Microsoft/vstest-docs).
+Projektů testování částí pro rozhraní .NET Core jsou podporovány pro [C#](../../csharp/index.md), [F #](../../fsharp/index.md) a [jazyka Visual Basic](../../visual-basic/index.md). Můžete také zvolit [xUnit](http://xunit.github.io), [NUnit](http://nunit.org) a [Mstestu](https://github.com/Microsoft/vstest-docs).
 
 Další informace o těchto kombinace v těchto kurzů:
 
 * Vytváření testů jednotek pomocí [ *XUnit* a *C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-dotnet-test.md).
+* Vytváření testů jednotek pomocí [ *NUnit* a *C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-nunit.md).
 * Vytváření testů jednotek pomocí [ *Mstestu* a *C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-mstest.md).
 * Vytváření testů jednotek pomocí [ *XUnit* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-dotnet-test.md).
+* Vytváření testů jednotek pomocí [ *NUnit* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-nunit.md).
 * Vytváření testů jednotek pomocí [ *Mstestu* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-mstest.md).
 * Vytváření testů jednotek pomocí [ *XUnit* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-dotnet-test.md).
+* Vytváření testů jednotek pomocí [ *NUnit* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-nunit.md).
 * Vytváření testů jednotek pomocí [ *Mstestu* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-mstest.md).
 
 Můžete vybrat různé jazyky pro vaše knihovny tříd a vaše jednotkové testování knihovny. Dozvíte, jak pomocí kombinace a porovnávání názorné postupy odkazuje výše.
