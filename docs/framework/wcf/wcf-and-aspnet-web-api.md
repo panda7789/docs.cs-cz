@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b311dc5b328a09bd301cc1d012ca4d13cfb70f9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 932db4ef12666d20ba497cc8f6d78b43c7670373
+ms.sourcegitcommit: 5126483ef09c487296801bbac368dd8a55a6b709
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF a ASP.NET Web API
 WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby společnosti Microsoft. Umožňuje vývojářům vytvářet bezpečné, spolehlivé a zpracovaných řešení, které integrovat do různých platforem a zajistit vzájemnou funkční spolupráci s stávajících investic. [Rozhraní ASP.NET Web API](http://www.asp.net/web-api) je rozhraní, které usnadňuje sestavování služeb HTTP, které využity širokou škálou klientů včetně prohlížečů a mobilních zařízení. Rozhraní ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  
@@ -29,7 +29,7 @@ WCF je jednotný programovací model pro vytváření aplikací orientovaných n
 |---------|---------------------|  
 |Umožňuje vytváření služeb, které podporují víc protokolů přenosu (HTTP, TCP, UDP a vlastní přenosy) a umožňuje přepínání mezi nimi.|Pouze HTTP. První třídy programovací model pro protokol HTTP. Nejvhodnější pro přístup z různých prohlížečů, mobilní zařízení apod povolení celý dosáhnout.|  
 |Povoluje vytváření služeb, které podporují více kódování (Text, MTOM a binární) stejná zpráva typu a umožňuje přepínání mezi nimi.|Umožňuje vytvářet webové rozhraní API, které podporují celou řadu typů médií, včetně XML, JSON atd.|  
-|Podporuje vytváření služeb s WS-* standardy jako zabezpečení zpráv spolehlivého zasílání zpráv a transakce.|Základní protokolu a hodnot, jako je například HTTP, Websocket, SSL, JQuery, JSON a XML. Neexistuje žádná podpora pro protokoly vyšší úrovně, jako je například spolehlivé zasílání zpráv nebo transakce.|  
+|Podporuje vytváření služeb s WS-* standardy jako zabezpečení zpráv spolehlivého zasílání zpráv a transakce.|Základní protokolu a hodnot, jako je například HTTP, Websocket, SSL, JSON a XML. Neexistuje žádná podpora pro protokoly vyšší úrovně, jako je například spolehlivé zasílání zpráv nebo transakce.|  
 |Podporuje vzory exchange zprávu požadavku a odpovědi, jeden způsob a duplexní režim.|HTTP je požadavek a odpověď, ale další vzory může podporovat prostřednictvím [SignalR](https://github.com/SignalR/SignalR) a integrace objekty WebSockets.|  
 |Služby WCF SOAP můžete popsané v WSDL umožňuje automatizované nástroje pro generování proxy klienta i pro služby s komplexní schématy.|Je různými způsoby k popisu webového rozhraní API od automaticky generovaný HTML stránky nápovědy popisující fragmenty na strukturovaných metadata pro OData integrované rozhraní API.|  
 |Se dodává s rozhraním .NET framework.|Se dodává s verzí rozhraní .NET framework, ale je typu open source a je také k dispozici out-of-band nezávislé ke stažení.|  
