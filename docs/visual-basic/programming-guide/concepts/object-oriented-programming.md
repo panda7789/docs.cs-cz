@@ -278,7 +278,7 @@ Dim sampleObject = New SampleClass With
 
 - [<span data-ttu-id="de6ee-215">Inicializátory objektů: Pojmenované a anonymní typy</span><span class="sxs-lookup"><span data-stu-id="de6ee-215">Object Initializers: Named and Anonymous Types</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 
-###  <span data-ttu-id="de6ee-216"><a name="Static"></a>Sdílené třídy a členové</span><span class="sxs-lookup"><span data-stu-id="de6ee-216"><a name="Static"></a> Shared Classes and Members</span></span>  
+###  <a name="Static"></a><span data-ttu-id="de6ee-216">Sdílené třídy a členové</span><span class="sxs-lookup"><span data-stu-id="de6ee-216">Shared Classes and Members</span></span>  
  <span data-ttu-id="de6ee-217">Sdíleného člena třídy je vlastnost, postup nebo pole, které platí pro všechny instance třídy.</span><span class="sxs-lookup"><span data-stu-id="de6ee-217">A shared member of the class is a property, procedure, or field that is shared by all instances of a class.</span></span>  
   
  <span data-ttu-id="de6ee-218">Chcete-li definovat sdíleného člena:</span><span class="sxs-lookup"><span data-stu-id="de6ee-218">To define a shared member:</span></span>  

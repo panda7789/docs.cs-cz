@@ -63,7 +63,7 @@ End Sub
   
  <span data-ttu-id="f4d46-126">Volitelné argumenty můžete explicitně zadat, chcete-li řídit nebo skrýt informace o volajícím.</span><span class="sxs-lookup"><span data-stu-id="f4d46-126">You can explicitly supply the optional arguments to control the caller information or to hide caller information.</span></span>  
   
-###  <span data-ttu-id="f4d46-127"><a name="MEMBERNAMES"></a>Názvy členů</span><span class="sxs-lookup"><span data-stu-id="f4d46-127"><a name="MEMBERNAMES"></a> Member Names</span></span>  
+###  <a name="MEMBERNAMES"></a><span data-ttu-id="f4d46-127">Názvy členů</span><span class="sxs-lookup"><span data-stu-id="f4d46-127">Member Names</span></span>  
  <span data-ttu-id="f4d46-128">Můžete použít `CallerMemberName` atribut Vyhněte se zadání název člena jako `String` argument volané metodě.</span><span class="sxs-lookup"><span data-stu-id="f4d46-128">You can use the `CallerMemberName` attribute to avoid specifying the member name as a `String` argument to the called method.</span></span> <span data-ttu-id="f4d46-129">Pomocí Tato technika tomuto problému vyhnout, **přejmenovat refaktoring** nezmění `String` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="f4d46-129">By using this technique, you avoid the problem that **Rename Refactoring** doesn't change the `String` values.</span></span> <span data-ttu-id="f4d46-130">Tato výhoda se hodí zvláště v těchto úlohách:</span><span class="sxs-lookup"><span data-stu-id="f4d46-130">This benefit is especially useful for the following tasks:</span></span>  
   
 -   <span data-ttu-id="f4d46-131">Použití trasování a diagnostických rutin.</span><span class="sxs-lookup"><span data-stu-id="f4d46-131">Using tracing and diagnostic routines.</span></span>  

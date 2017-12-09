@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <span data-ttu-id="6774c-111">Druhý počítač, na kterém jsou nainstalované rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.</span><span class="sxs-lookup"><span data-stu-id="6774c-111">A second computer on which the .NET Framework 4 or higher and a different version of Excel are installed.</span></span>  
   
-##  <span data-ttu-id="6774c-112"><a name="BKMK_createapp"></a>Chcete-li vytvořit aplikaci, která funguje s více verzemi systému Microsoft Office</span><span class="sxs-lookup"><span data-stu-id="6774c-112"><a name="BKMK_createapp"></a> To create an application that works with multiple versions of Microsoft Office</span></span>  
+##  <a name="BKMK_createapp"></a><span data-ttu-id="6774c-112">Chcete-li vytvořit aplikaci, která funguje s více verzemi systému Microsoft Office</span><span class="sxs-lookup"><span data-stu-id="6774c-112">To create an application that works with multiple versions of Microsoft Office</span></span>  
   
 1.  <span data-ttu-id="6774c-113">Spuštění sady Visual Studio v počítači, na kterém je nainstalována aplikace Excel.</span><span class="sxs-lookup"><span data-stu-id="6774c-113">Start Visual Studio on a computer on which Excel is installed.</span></span>  
   
@@ -106,7 +106,7 @@ ms.lasthandoff: 11/21/2017
   
 9. <span data-ttu-id="6774c-131">Stisknutím klávesy CTRL + F5 sestavit a spustit projekt.</span><span class="sxs-lookup"><span data-stu-id="6774c-131">Press CTRL+F5 to build and run the project.</span></span> <span data-ttu-id="6774c-132">Ověřte, že sešit aplikace Excel byl vytvořen v umístění zadaném v ukázkový kód: C:\SampleFolder\SampleWorkbook.xls.</span><span class="sxs-lookup"><span data-stu-id="6774c-132">Verify that an Excel workbook has been created at the location specified in the example code: C:\SampleFolder\SampleWorkbook.xls.</span></span>  
   
-##  <span data-ttu-id="6774c-133"><a name="BKMK_publishapp"></a>Publikování aplikace do počítače, na kterém je nainstalovaná jiná verze systému Microsoft Office</span><span class="sxs-lookup"><span data-stu-id="6774c-133"><a name="BKMK_publishapp"></a> To publish the application to a computer on which a different version of Microsoft Office is installed</span></span>  
+##  <a name="BKMK_publishapp"></a><span data-ttu-id="6774c-133">Publikování aplikace do počítače, na kterém je nainstalovaná jiná verze systému Microsoft Office</span><span class="sxs-lookup"><span data-stu-id="6774c-133">To publish the application to a computer on which a different version of Microsoft Office is installed</span></span>  
   
 1.  <span data-ttu-id="6774c-134">Otevřete projekt vytvořené tento návod v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="6774c-134">Open the project created by this walkthrough in Visual Studio.</span></span>  
   

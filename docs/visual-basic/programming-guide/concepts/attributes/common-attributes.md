@@ -31,7 +31,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [<span data-ttu-id="e2fbc-108">Visual Basic – atributy</span><span class="sxs-lookup"><span data-stu-id="e2fbc-108">Visual Basic Attributes</span></span>](#VB)  
   
-##  <span data-ttu-id="e2fbc-109"><a name="Global"></a>Globální atributy</span><span class="sxs-lookup"><span data-stu-id="e2fbc-109"><a name="Global"></a> Global Attributes</span></span>  
+##  <a name="Global"></a><span data-ttu-id="e2fbc-109">Globální atributy</span><span class="sxs-lookup"><span data-stu-id="e2fbc-109">Global Attributes</span></span>  
  <span data-ttu-id="e2fbc-110">Většina atributy platí pro konkrétní jazyk prvky, jako jsou například třídy nebo metody; ale některé atributy jsou globální – se vztahují na modul nebo celý sestavení.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-110">Most attributes are applied to specific language elements such as classes or methods; however, some attributes are global—they apply to an entire assembly or module.</span></span> <span data-ttu-id="e2fbc-111">Například <xref:System.Reflection.AssemblyVersionAttribute> atribut slouží k vložení informací o verzi do sestavení, například takto:</span><span class="sxs-lookup"><span data-stu-id="e2fbc-111">For example, the <xref:System.Reflection.AssemblyVersionAttribute> attribute can be used to embed version information into an assembly, like this:</span></span>  
   
 ```vb  
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|<span data-ttu-id="e2fbc-153">Manifest sestavení definuje vlastní atribut, který určuje konfigurace aplikace sestavení (například instalačních nebo ladicích).</span><span class="sxs-lookup"><span data-stu-id="e2fbc-153">Defines a custom attribute that specifies an assembly configuration (such as retail or debug) for an assembly manifest.</span></span>|  
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|<span data-ttu-id="e2fbc-154">Definuje výchozí popisný aliasu pro manifest sestavení</span><span class="sxs-lookup"><span data-stu-id="e2fbc-154">Defines a friendly default alias for an assembly manifest</span></span>|  
   
-##  <span data-ttu-id="e2fbc-155"><a name="Obsolete"></a>Zastaralé atribut</span><span class="sxs-lookup"><span data-stu-id="e2fbc-155"><a name="Obsolete"></a> Obsolete Attribute</span></span>  
+##  <a name="Obsolete"></a><span data-ttu-id="e2fbc-155">Zastaralé atribut</span><span class="sxs-lookup"><span data-stu-id="e2fbc-155">Obsolete Attribute</span></span>  
  <span data-ttu-id="e2fbc-156">`Obsolete` Atribut určí program entity jako ten, který již není doporučeno pro použití.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-156">The `Obsolete` attribute marks a program entity as one that is no longer recommended for use.</span></span> <span data-ttu-id="e2fbc-157">Každý použijte entity označeny jako zastaralé následně vydá upozornění nebo chybu, v závislosti na konfiguraci atributu.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-157">Each use of an entity marked obsolete will subsequently generate a warning or an error, depending on how the attribute is configured.</span></span> <span data-ttu-id="e2fbc-158">Příklad:</span><span class="sxs-lookup"><span data-stu-id="e2fbc-158">For example:</span></span>  
   
 ```vb  
@@ -125,7 +125,7 @@ b.NewMethod()
   
  <span data-ttu-id="e2fbc-166">`Obsolete` Atribut je jedno použití atribut a dají se použít k Každá entita, která umožňuje atributy.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-166">The `Obsolete` attribute is a single-use attribute and can be applied to any entity that allows attributes.</span></span> <span data-ttu-id="e2fbc-167">`Obsolete`je alias <xref:System.ObsoleteAttribute>.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-167">`Obsolete` is an alias for <xref:System.ObsoleteAttribute>.</span></span>  
   
-##  <span data-ttu-id="e2fbc-168"><a name="Conditional"></a>Podmíněný atribut</span><span class="sxs-lookup"><span data-stu-id="e2fbc-168"><a name="Conditional"></a> Conditional Attribute</span></span>  
+##  <a name="Conditional"></a><span data-ttu-id="e2fbc-168">Podmíněný atribut</span><span class="sxs-lookup"><span data-stu-id="e2fbc-168">Conditional Attribute</span></span>  
  <span data-ttu-id="e2fbc-169">`Conditional` Atribut umožňuje provádění metody závisí na identifikátor předběžného zpracování.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-169">The `Conditional` attribute makes the execution of a method dependent on a preprocessing identifier.</span></span> <span data-ttu-id="e2fbc-170">`Conditional` Atribut je alias <xref:System.Diagnostics.ConditionalAttribute>a dají se použít metody nebo třídy atributu.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-170">The `Conditional` attribute is an alias for <xref:System.Diagnostics.ConditionalAttribute>, and can be applied to a method or an attribute class.</span></span>  
   
  <span data-ttu-id="e2fbc-171">V tomto příkladu `Conditional` je použitý na metodu, pokud chcete povolit nebo zakázat zobrazení diagnostické informace specifické pro aplikace:</span><span class="sxs-lookup"><span data-stu-id="e2fbc-171">In this example, `Conditional` is applied to a method to enable or disable the display of program-specific diagnostic information:</span></span>  
@@ -218,7 +218,7 @@ Class SampleClass
 End Class  
 ```  
   
-##  <span data-ttu-id="e2fbc-186"><a name="CallerInfo"></a>Volající – atributy s informacemi</span><span class="sxs-lookup"><span data-stu-id="e2fbc-186"><a name="CallerInfo"></a> Caller Info Attributes</span></span>  
+##  <a name="CallerInfo"></a><span data-ttu-id="e2fbc-186">Volající – atributy s informacemi</span><span class="sxs-lookup"><span data-stu-id="e2fbc-186">Caller Info Attributes</span></span>  
  <span data-ttu-id="e2fbc-187">Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-187">By using Caller Info attributes, you can obtain information about the caller to a method.</span></span> <span data-ttu-id="e2fbc-188">Můžete získat cestu k souboru zdrojového kódu, číslo řádku v zdrojový kód a název člena volajícího.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-188">You can obtain the file path of the source code, the line number in the source code, and the member name of the caller.</span></span>  
   
  <span data-ttu-id="e2fbc-189">Chcete-li získat informace o subjektu volajícím člen, použijte atributy, které se použijí pro volitelné parametry.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-189">To obtain member caller information, you use attributes that are applied to optional parameters.</span></span> <span data-ttu-id="e2fbc-190">Každý volitelný parametr určí výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-190">Each optional parameter specifies a default value.</span></span> <span data-ttu-id="e2fbc-191">Následující tabulka uvádí informace o volajícím atributy, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> obor názvů:</span><span class="sxs-lookup"><span data-stu-id="e2fbc-191">The following table lists the Caller Info attributes that are defined in the <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> namespace:</span></span>  
@@ -231,7 +231,7 @@ End Class
   
  <span data-ttu-id="e2fbc-200">Další informace o atributech volající informace najdete v tématu [informace o subjektu volajícím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).</span><span class="sxs-lookup"><span data-stu-id="e2fbc-200">For more information about the Caller Info attributes, see [Caller Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).</span></span>  
   
-##  <span data-ttu-id="e2fbc-201"><a name="VB"></a>Visual Basic – atributy</span><span class="sxs-lookup"><span data-stu-id="e2fbc-201"><a name="VB"></a> Visual Basic Attributes</span></span>  
+##  <a name="VB"></a><span data-ttu-id="e2fbc-201">Visual Basic – atributy</span><span class="sxs-lookup"><span data-stu-id="e2fbc-201">Visual Basic Attributes</span></span>  
  <span data-ttu-id="e2fbc-202">Následující tabulka obsahuje seznam atributy, které jsou specifické pro Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="e2fbc-202">The following table lists the attributes that are specific to Visual Basic.</span></span>  
   
 |<span data-ttu-id="e2fbc-203">Atribut</span><span class="sxs-lookup"><span data-stu-id="e2fbc-203">Attribute</span></span>|<span data-ttu-id="e2fbc-204">Účel</span><span class="sxs-lookup"><span data-stu-id="e2fbc-204">Purpose</span></span>|  
