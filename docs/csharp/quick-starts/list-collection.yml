@@ -1,3 +1,4 @@
+### YamlMime:YamlDocument
 documentType: Tutorial
 title: Kolekce v jazyce C#
 metadata:
@@ -8,14 +9,14 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-items:
-- durationInMinutes: 1
-  content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče psaní kódu jazyka C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které slouží k vytváření, úpravě a prozkoumejte kolekce a pole.\n"
   ms.openlocfilehash: e00cf6badcbd39cc1e9320095169d86efb9cad8f
   ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
   ms.lasthandoff: 12/07/2017
+items:
+- durationInMinutes: 1
+  content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče psaní kódu jazyka C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které slouží k vytváření, úpravě a prozkoumejte kolekce a pole.\n"
 - title: "Vytváření seznamů"
   durationInMinutes: 2
   content: "Spusťte následující kód v okně interaktivní. K tomu, zadejte následující blok kódu v okně interaktivní (nahradit \"<name>\" s název) a klikněte na tlačítko **spustit** tlačítko:\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nJste právě vytvořili seznam řetězců, přidat tři názvy do tohoto seznamu a vytisknout se názvy v velká písmena. Koncepty, které jste se naučili v dříve rychle spustí používáte k prosmyčkování seznamu.\n\nKód zobrazení názvů využívá **interpolované řetězce**.  Když je před `string` s `$` znak, vložením kódu C# v deklaraci řetězec. Konkrétní řetězec nahradí hodnotu, kterou generuje tento kód C#. V tomto příkladu se nahradí `{name.ToUpper()}` s každý název převeden na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A> metoda.\n\nZachovat umožňuje prohlížení.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"

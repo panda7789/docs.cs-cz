@@ -1,3 +1,4 @@
+### YamlMime:YamlDocument
 documentType: Tutorial
 title: Hello C#
 metadata:
@@ -10,14 +11,14 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-items:
-- durationInMinutes: 1
-  content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče zápisu C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které začínají s programem \"Hello World\". Tyto poznatky získají naučit základy jazyka C#.\n"
   ms.openlocfilehash: ce1791bd7949c89269b1051d15765f5efd273e7c
   ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
   ms.lasthandoff: 12/07/2017
+items:
+- durationInMinutes: 1
+  content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče zápisu C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které začínají s programem \"Hello World\". Tyto poznatky získají naučit základy jazyka C#.\n"
 - title: "Spusťte váš první program C#"
   durationInMinutes: 2
   content: "Spusťte následující kód v okně interaktivní. K tomu, zadejte následující blok kódu v okně interaktivní a klikněte na **spustit** tlačítko:\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nBlahopřejeme! Spustíte váš první program C#. Je jednoduchý program, který se zobrazí zpráva \"Hello, World!\". Používanou <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metoda tisknout této zprávě. `Console`je typ, který reprezentuje v okně konzoly. `WriteLine`je metoda `Console` typ, který se vytiskne na řádku textu do této konzoly text.\n\nUmožňuje přesunout a prozkoumejte informace. Jsou zde popsány zbytek této lekci práci s `string` typu, který reprezentuje text v jazyce C#. Podobně jako `Console` typu, `string` typ má metody. `string` Metody pracovat s textem. \n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
