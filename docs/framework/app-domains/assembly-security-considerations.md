@@ -33,7 +33,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="assembly-security-considerations"></a><span data-ttu-id="83a56-102">Důležité informace o zabezpečení sestavení</span><span class="sxs-lookup"><span data-stu-id="83a56-102">Assembly Security Considerations</span></span>
-<span data-ttu-id="83a56-103"><a name="top"></a>Při vytváření sestavení, můžete sadu oprávnění, která sestavení vyžaduje ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="83a56-103"><a name="top"></a> When you build an assembly, you can specify a set of permissions that the assembly requires to run.</span></span> <span data-ttu-id="83a56-104">Zda jsou některá oprávnění udělit nebo nejsou udělena sestavení je založena na důkaz.</span><span class="sxs-lookup"><span data-stu-id="83a56-104">Whether certain permissions are granted or not granted to an assembly is based on evidence.</span></span>  
+<a name="top"></a><span data-ttu-id="83a56-103">Při vytváření sestavení, můžete sadu oprávnění, která sestavení vyžaduje ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="83a56-103">When you build an assembly, you can specify a set of permissions that the assembly requires to run.</span></span> <span data-ttu-id="83a56-104">Zda jsou některá oprávnění udělit nebo nejsou udělena sestavení je založena na důkaz.</span><span class="sxs-lookup"><span data-stu-id="83a56-104">Whether certain permissions are granted or not granted to an assembly is based on evidence.</span></span>  
   
  <span data-ttu-id="83a56-105">Existují dva způsoby distinct, důkaz se používá:</span><span class="sxs-lookup"><span data-stu-id="83a56-105">There are two distinct ways evidence is used:</span></span>  
   

@@ -59,7 +59,7 @@ ms.lasthandoff: 11/08/2017
   
 -   [<span data-ttu-id="70ebc-124">Delegáti</span><span class="sxs-lookup"><span data-stu-id="70ebc-124">Delegates</span></span>](#Delegates)  
   
-##  <span data-ttu-id="70ebc-125"><a name="Classes"></a>Třídy a objekty</span><span class="sxs-lookup"><span data-stu-id="70ebc-125"><a name="Classes"></a> Classes and Objects</span></span>  
+##  <a name="Classes"></a><span data-ttu-id="70ebc-125">Třídy a objekty</span><span class="sxs-lookup"><span data-stu-id="70ebc-125">Classes and Objects</span></span>  
  <span data-ttu-id="70ebc-126">Podmínky *třída* a *objekt* se někdy používají zcela zaměnitelným významem, ale ve skutečnosti třídy popisují *typ* objektů, zatímco objekty jsou použitelné  *instance* tříd.</span><span class="sxs-lookup"><span data-stu-id="70ebc-126">The terms *class* and *object* are sometimes used interchangeably, but in fact, classes describe the *type* of objects, while objects are usable *instances* of classes.</span></span> <span data-ttu-id="70ebc-127">Ano, je volána v rámci vytvoření objektu *vytváření instancí*.</span><span class="sxs-lookup"><span data-stu-id="70ebc-127">So, the act of creating an object is called *instantiation*.</span></span> <span data-ttu-id="70ebc-128">Pomocí analogie plán, podle kterého, třída je plán, podle kterého a v budově z tento plán, podle kterého je objekt.</span><span class="sxs-lookup"><span data-stu-id="70ebc-128">Using the blueprint analogy, a class is a blueprint, and an object is a building made from that blueprint.</span></span>  
   
  <span data-ttu-id="70ebc-129">Chcete-li definovat třídu:</span><span class="sxs-lookup"><span data-stu-id="70ebc-129">To define a class:</span></span>  
@@ -86,10 +86,10 @@ struct SampleStruct
   
 -   [<span data-ttu-id="70ebc-134">Struktura</span><span class="sxs-lookup"><span data-stu-id="70ebc-134">struct</span></span>](../../../csharp/language-reference/keywords/struct.md)  
   
-###  <span data-ttu-id="70ebc-135"><a name="Members"></a>Členy třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-135"><a name="Members"></a> Class Members</span></span>  
+###  <a name="Members"></a><span data-ttu-id="70ebc-135">Členy třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-135">Class Members</span></span>  
  <span data-ttu-id="70ebc-136">Každá třída může mít různé *třídy členy* , zahrnout vlastnosti, které popisují data třídy, metody, které definují chování třídy a události, které zajišťují komunikaci mezi různými třídami a objekty.</span><span class="sxs-lookup"><span data-stu-id="70ebc-136">Each class can have different *class members* that include properties that describe class data, methods that define class behavior, and events that provide communication between different classes and objects.</span></span>  
   
-####  <span data-ttu-id="70ebc-137"><a name="Properties"></a>Vlastnosti a pole</span><span class="sxs-lookup"><span data-stu-id="70ebc-137"><a name="Properties"></a> Properties and Fields</span></span>  
+####  <a name="Properties"></a><span data-ttu-id="70ebc-137">Vlastnosti a pole</span><span class="sxs-lookup"><span data-stu-id="70ebc-137">Properties and Fields</span></span>  
  <span data-ttu-id="70ebc-138">Pole a vlastnosti představují informací, které obsahuje objekt.</span><span class="sxs-lookup"><span data-stu-id="70ebc-138">Fields and properties represent information that an object contains.</span></span> <span data-ttu-id="70ebc-139">Pole jsou jako proměnné, protože můžou být číst nebo nastavovat přímo.</span><span class="sxs-lookup"><span data-stu-id="70ebc-139">Fields are like variables because they can be read or set directly.</span></span>  
   
  <span data-ttu-id="70ebc-140">Chcete-li definovat pole:</span><span class="sxs-lookup"><span data-stu-id="70ebc-140">To define a field:</span></span>  
@@ -138,7 +138,7 @@ class SampleClass
   
 -   [<span data-ttu-id="70ebc-151">nastavení</span><span class="sxs-lookup"><span data-stu-id="70ebc-151">set</span></span>](../../../csharp/language-reference/keywords/set.md)  
   
-####  <span data-ttu-id="70ebc-152"><a name="Methods"></a>Metody</span><span class="sxs-lookup"><span data-stu-id="70ebc-152"><a name="Methods"></a> Methods</span></span>  
+####  <a name="Methods"></a><span data-ttu-id="70ebc-152">Metody</span><span class="sxs-lookup"><span data-stu-id="70ebc-152">Methods</span></span>  
  <span data-ttu-id="70ebc-153">A *metoda* je akce, která může provádět objekt.</span><span class="sxs-lookup"><span data-stu-id="70ebc-153">A *method* is an action that an object can perform.</span></span>  
   
  <span data-ttu-id="70ebc-154">Definovat metodu třídy:</span><span class="sxs-lookup"><span data-stu-id="70ebc-154">To define a method of a class:</span></span>  
@@ -170,7 +170,7 @@ public int sampleMethod(int sampleParam) {}
   
 -   [<span data-ttu-id="70ebc-161">Metody rozšíření</span><span class="sxs-lookup"><span data-stu-id="70ebc-161">Extension Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
   
-####  <span data-ttu-id="70ebc-162"><a name="Constructors"></a>Konstruktory</span><span class="sxs-lookup"><span data-stu-id="70ebc-162"><a name="Constructors"></a> Constructors</span></span>  
+####  <a name="Constructors"></a><span data-ttu-id="70ebc-162">Konstruktory</span><span class="sxs-lookup"><span data-stu-id="70ebc-162">Constructors</span></span>  
  <span data-ttu-id="70ebc-163">Konstruktory jsou metody třídy, které jsou spouštěny automaticky, když je vytvořen objekt daného typu.</span><span class="sxs-lookup"><span data-stu-id="70ebc-163">Constructors are class methods that are executed automatically when an object of a given type is created.</span></span> <span data-ttu-id="70ebc-164">Konstruktory obvykle inicializovat datových členů nového objektu.</span><span class="sxs-lookup"><span data-stu-id="70ebc-164">Constructors usually initialize the data members of the new object.</span></span> <span data-ttu-id="70ebc-165">Konstruktor lze spustit pouze po vytvoření třídy.</span><span class="sxs-lookup"><span data-stu-id="70ebc-165">A constructor can run only once when a class is created.</span></span> <span data-ttu-id="70ebc-166">Kromě toho kód v konstruktoru vždy spouští před jakýkoli jiný kód v třídě.</span><span class="sxs-lookup"><span data-stu-id="70ebc-166">Furthermore, the code in the constructor always runs before any other code in a class.</span></span> <span data-ttu-id="70ebc-167">Můžete však vytvořit více přetížení konstruktor stejným způsobem jako u jakékoliv jiné metody.</span><span class="sxs-lookup"><span data-stu-id="70ebc-167">However, you can create multiple constructor overloads in the same way as for any other method.</span></span>  
   
  <span data-ttu-id="70ebc-168">Chcete-li definovat konstruktor pro třídu:</span><span class="sxs-lookup"><span data-stu-id="70ebc-168">To define a constructor for a class:</span></span>  
@@ -189,12 +189,12 @@ public class SampleClass
   
  <span data-ttu-id="70ebc-170">[Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md).</span><span class="sxs-lookup"><span data-stu-id="70ebc-170">[Constructors](../../../csharp/programming-guide/classes-and-structs/constructors.md).</span></span>  
   
-####  <span data-ttu-id="70ebc-171"><a name="Finalizers"></a>Finalizační metody</span><span class="sxs-lookup"><span data-stu-id="70ebc-171"><a name="Finalizers"></a> Finalizers</span></span>  
+####  <a name="Finalizers"></a><span data-ttu-id="70ebc-171">Finalizační metody</span><span class="sxs-lookup"><span data-stu-id="70ebc-171">Finalizers</span></span>  
  <span data-ttu-id="70ebc-172">Finalizační metody se používají k destruct instance tříd.</span><span class="sxs-lookup"><span data-stu-id="70ebc-172">Finalizers are used to destruct instances of classes.</span></span> <span data-ttu-id="70ebc-173">V rozhraní .NET Framework bude systém uvolňování automaticky spravuje přidělování a uvolňování paměti pro spravované objekty v aplikaci.</span><span class="sxs-lookup"><span data-stu-id="70ebc-173">In the .NET Framework, the garbage collector automatically manages the allocation and release of memory for the managed objects in your application.</span></span> <span data-ttu-id="70ebc-174">Mohou však stále zapotřebí finalizační metody vyčistit všechny nespravovaných prostředků, které vytváří vaše aplikace.</span><span class="sxs-lookup"><span data-stu-id="70ebc-174">However, you may still need finalizers to clean up any unmanaged resources that your application creates.</span></span> <span data-ttu-id="70ebc-175">Může existovat pouze jedna finalizační metody pro třídu.</span><span class="sxs-lookup"><span data-stu-id="70ebc-175">There can be only one finalizers for a class.</span></span>  
   
  <span data-ttu-id="70ebc-176">Další informace o finalizační metody a uvolňování paměti v rozhraní .NET Framework najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).</span><span class="sxs-lookup"><span data-stu-id="70ebc-176">For more information about finalizers and garbage collection in the .NET Framework, see [Garbage Collection](../../../standard/garbage-collection/index.md).</span></span>  
   
-####  <span data-ttu-id="70ebc-177"><a name="Events"></a>Události</span><span class="sxs-lookup"><span data-stu-id="70ebc-177"><a name="Events"></a> Events</span></span>  
+####  <a name="Events"></a><span data-ttu-id="70ebc-177">Události</span><span class="sxs-lookup"><span data-stu-id="70ebc-177">Events</span></span>  
  <span data-ttu-id="70ebc-178">Události povolit třídu nebo objekt, který chcete upozornit ostatní třídy nebo objekty, když něco zájmu dojde.</span><span class="sxs-lookup"><span data-stu-id="70ebc-178">Events enable a class or object to notify other classes or objects when something of interest occurs.</span></span> <span data-ttu-id="70ebc-179">Třída, která odešle (nebo vyvolá) událost je volána *vydavatele* a třídy, které zobrazí (nebo zpracování) události, se nazývají *Odběratelé, kteří*.</span><span class="sxs-lookup"><span data-stu-id="70ebc-179">The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*.</span></span> <span data-ttu-id="70ebc-180">Další informace o událostech, způsob jejich jsou vyvolány a zpracovávají, najdete v části [události](../../../standard/events/index.md).</span><span class="sxs-lookup"><span data-stu-id="70ebc-180">For more information about events, how they are raised and handled, see [Events](../../../standard/events/index.md).</span></span>  
   
 -   <span data-ttu-id="70ebc-181">Chcete-li deklarovat událost v třídě, použijte [událostí](../../../csharp/language-reference/keywords/event.md) – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="70ebc-181">To declare an event in a class, use the [event](../../../csharp/language-reference/keywords/event.md) keyword.</span></span>  
@@ -203,7 +203,7 @@ public class SampleClass
   
 -   <span data-ttu-id="70ebc-183">K odběru události, použijte `+=` operátor; k odhlášení odběru událostí, použijte `-=` operátor.</span><span class="sxs-lookup"><span data-stu-id="70ebc-183">To subscribe to an event, use the `+=` operator; to unsubscribe from an event, use the `-=` operator.</span></span>  
   
-####  <span data-ttu-id="70ebc-184"><a name="NestedClasses"></a>Vnořené třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-184"><a name="NestedClasses"></a> Nested Classes</span></span>  
+####  <a name="NestedClasses"></a><span data-ttu-id="70ebc-184">Vnořené třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-184">Nested Classes</span></span>  
  <span data-ttu-id="70ebc-185">Třídy definované v rámci jiné třídy se nazývá *vnořené*.</span><span class="sxs-lookup"><span data-stu-id="70ebc-185">A class defined within another class is called *nested*.</span></span> <span data-ttu-id="70ebc-186">Ve výchozím nastavení je vnořené třídy soukromé.</span><span class="sxs-lookup"><span data-stu-id="70ebc-186">By default, the nested class is private.</span></span>  
   
 ```csharp  
@@ -222,7 +222,7 @@ class Container
 Container.Nested nestedInstance = new Container.Nested()  
 ```  
   
-###  <span data-ttu-id="70ebc-188"><a name="AccessModifiers"></a>Modifikátory přístupu a úrovně přístupu</span><span class="sxs-lookup"><span data-stu-id="70ebc-188"><a name="AccessModifiers"></a> Access Modifiers and Access Levels</span></span>  
+###  <a name="AccessModifiers"></a><span data-ttu-id="70ebc-188">Modifikátory přístupu a úrovně přístupu</span><span class="sxs-lookup"><span data-stu-id="70ebc-188">Access Modifiers and Access Levels</span></span>  
  <span data-ttu-id="70ebc-189">Všechny třídy a jejich členové můžete určit, jakou úroveň přístupu poskytují další třídy pomocí *přístup modifikátory*.</span><span class="sxs-lookup"><span data-stu-id="70ebc-189">All classes and class members can specify what access level they provide to other classes by using *access modifiers*.</span></span>  
   
  <span data-ttu-id="70ebc-190">K dispozici jsou následující modifikátory přístupu:</span><span class="sxs-lookup"><span data-stu-id="70ebc-190">The following access modifiers are available:</span></span>  
@@ -238,7 +238,7 @@ Container.Nested nestedInstance = new Container.Nested()
   
  <span data-ttu-id="70ebc-205">Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).</span><span class="sxs-lookup"><span data-stu-id="70ebc-205">For more information, see [Access Modifiers](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).</span></span>  
   
-###  <span data-ttu-id="70ebc-206"><a name="InstantiatingClasses"></a>Vytváření instancí třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-206"><a name="InstantiatingClasses"></a> Instantiating Classes</span></span>  
+###  <a name="InstantiatingClasses"></a><span data-ttu-id="70ebc-206">Vytváření instancí třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-206">Instantiating Classes</span></span>  
  <span data-ttu-id="70ebc-207">Pro vytvoření objektu, musíte vytvořit instanci třídy, nebo vytvořit instanci třídy.</span><span class="sxs-lookup"><span data-stu-id="70ebc-207">To create an object, you need to instantiate a class, or create a class instance.</span></span>  
   
 ```csharp  
@@ -268,7 +268,7 @@ SampleClass sampleObject = new SampleClass
   
 -   [<span data-ttu-id="70ebc-212">Inicializátory objektu a kolekce</span><span class="sxs-lookup"><span data-stu-id="70ebc-212">Object and Collection Initializers</span></span>](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
   
-###  <span data-ttu-id="70ebc-213"><a name="Static"></a>Statické třídy a členové</span><span class="sxs-lookup"><span data-stu-id="70ebc-213"><a name="Static"></a> Static Classes and Members</span></span>  
+###  <a name="Static"></a><span data-ttu-id="70ebc-213">Statické třídy a členové</span><span class="sxs-lookup"><span data-stu-id="70ebc-213">Static Classes and Members</span></span>  
  <span data-ttu-id="70ebc-214">Statický člen třídy je vlastnost, postup nebo pole, které platí pro všechny instance třídy.</span><span class="sxs-lookup"><span data-stu-id="70ebc-214">A static member of the class is a property, procedure, or field that is shared by all instances of a class.</span></span>  
   
  <span data-ttu-id="70ebc-215">Chcete-li definovat je statický člen:</span><span class="sxs-lookup"><span data-stu-id="70ebc-215">To define a static member:</span></span>  
@@ -290,7 +290,7 @@ Console.WriteLine(SampleClass.SampleString);
   
  <span data-ttu-id="70ebc-219">Další informace najdete v tématu: [statické](../../../csharp/language-reference/keywords/static.md).</span><span class="sxs-lookup"><span data-stu-id="70ebc-219">For more information, see: [static](../../../csharp/language-reference/keywords/static.md).</span></span>  
   
-###  <span data-ttu-id="70ebc-220"><a name="AnonymousTypes"></a>Anonymní typy</span><span class="sxs-lookup"><span data-stu-id="70ebc-220"><a name="AnonymousTypes"></a> Anonymous Types</span></span>  
+###  <a name="AnonymousTypes"></a><span data-ttu-id="70ebc-220">Anonymní typy</span><span class="sxs-lookup"><span data-stu-id="70ebc-220">Anonymous Types</span></span>  
  <span data-ttu-id="70ebc-221">Anonymní typy umožňují vytvářet objekty bez nutnosti psaní definice třídy pro datový typ.</span><span class="sxs-lookup"><span data-stu-id="70ebc-221">Anonymous types enable you to create objects without writing a class definition for the data type.</span></span> <span data-ttu-id="70ebc-222">Kompilátor místo, vygeneruje třídu pro vás.</span><span class="sxs-lookup"><span data-stu-id="70ebc-222">Instead, the compiler generates a class for you.</span></span> <span data-ttu-id="70ebc-223">Třída nemá žádný použitelný název a obsahuje vlastnosti, které zadáte v deklarace objektu.</span><span class="sxs-lookup"><span data-stu-id="70ebc-223">The class has no usable name and contains the properties you specify in declaring the object.</span></span>  
   
  <span data-ttu-id="70ebc-224">Chcete-li vytvořit instanci anonymního typu:</span><span class="sxs-lookup"><span data-stu-id="70ebc-224">To create an instance of an anonymous type:</span></span>  
@@ -303,7 +303,7 @@ var sampleObject =
   
  <span data-ttu-id="70ebc-225">Další informace najdete v tématu: [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span><span class="sxs-lookup"><span data-stu-id="70ebc-225">For more information, see: [Anonymous Types](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span></span>  
   
-##  <span data-ttu-id="70ebc-226"><a name="Inheritance"></a>Dědičnost</span><span class="sxs-lookup"><span data-stu-id="70ebc-226"><a name="Inheritance"></a> Inheritance</span></span>  
+##  <a name="Inheritance"></a><span data-ttu-id="70ebc-226">Dědičnost</span><span class="sxs-lookup"><span data-stu-id="70ebc-226">Inheritance</span></span>  
  <span data-ttu-id="70ebc-227">Dědičnost umožňuje vytvořit novou třídu, která opětovně používá rozšiřuje a mění chování, která je definována v jiné třídy.</span><span class="sxs-lookup"><span data-stu-id="70ebc-227">Inheritance enables you to create a new class that reuses, extends, and modifies the behavior that is defined in another class.</span></span> <span data-ttu-id="70ebc-228">Je volána třídu, jejíž členové jsou děděné *základní třída*, a třídu, která dědí členů, se nazývá *odvozené třídy*.</span><span class="sxs-lookup"><span data-stu-id="70ebc-228">The class whose members are inherited is called the *base class*, and the class that inherits those members is called the *derived class*.</span></span> <span data-ttu-id="70ebc-229">Ale všechny třídy v jazyce C# implicitně dědí z <xref:System.Object> třídu, která podporuje hierarchie tříd rozhraní .NET a poskytuje nižší úroveň služby pro všechny třídy.</span><span class="sxs-lookup"><span data-stu-id="70ebc-229">However, all classes in C# implicitly inherit from the <xref:System.Object> class that supports .NET class hierarchy and provides low-level services to all classes.</span></span>  
   
 > [!NOTE]
@@ -335,7 +335,7 @@ public abstract class B { }
   
 -   [<span data-ttu-id="70ebc-239">abstraktní</span><span class="sxs-lookup"><span data-stu-id="70ebc-239">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)  
   
-###  <span data-ttu-id="70ebc-240"><a name="Overriding"></a>Přepis členů</span><span class="sxs-lookup"><span data-stu-id="70ebc-240"><a name="Overriding"></a> Overriding Members</span></span>  
+###  <a name="Overriding"></a><span data-ttu-id="70ebc-240">Přepis členů</span><span class="sxs-lookup"><span data-stu-id="70ebc-240">Overriding Members</span></span>  
  <span data-ttu-id="70ebc-241">Ve výchozím nastavení odvozené třídy dědí všechny členy ze své základní třídy.</span><span class="sxs-lookup"><span data-stu-id="70ebc-241">By default, a derived class inherits all members from its base class.</span></span> <span data-ttu-id="70ebc-242">Pokud chcete změnit chování zděděného členu, budete muset přepsat.</span><span class="sxs-lookup"><span data-stu-id="70ebc-242">If you want to change the behavior of the inherited member, you need to override it.</span></span> <span data-ttu-id="70ebc-243">To znamená můžete definovat nové implementace metoda, vlastnost nebo události v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="70ebc-243">That is, you can define a new implementation of the method, property or event in the derived class.</span></span>  
   
  <span data-ttu-id="70ebc-244">Následující modifikátory je možné určit, jak jsou přepsaná vlastnosti a metody:</span><span class="sxs-lookup"><span data-stu-id="70ebc-244">The following modifiers are used to control how properties and methods are overridden:</span></span>  
@@ -347,7 +347,7 @@ public abstract class B { }
 |[<span data-ttu-id="70ebc-251">abstraktní</span><span class="sxs-lookup"><span data-stu-id="70ebc-251">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)|<span data-ttu-id="70ebc-252">Vyžaduje, aby člena třídy k přepsání v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="70ebc-252">Requires that a class member to be overridden in the derived class.</span></span>|  
 |[<span data-ttu-id="70ebc-253">New – modifikátor</span><span class="sxs-lookup"><span data-stu-id="70ebc-253">new Modifier</span></span>](../../../csharp/language-reference/keywords/new-modifier.md)|<span data-ttu-id="70ebc-254">Skryje členem zděděn ze základní třídy</span><span class="sxs-lookup"><span data-stu-id="70ebc-254">Hides a member inherited from a base class</span></span>|  
   
-##  <span data-ttu-id="70ebc-255"><a name="Interfaces"></a>Rozhraní</span><span class="sxs-lookup"><span data-stu-id="70ebc-255"><a name="Interfaces"></a> Interfaces</span></span>  
+##  <a name="Interfaces"></a><span data-ttu-id="70ebc-255">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="70ebc-255">Interfaces</span></span>  
  <span data-ttu-id="70ebc-256">Rozhraní, jako jsou třídy, definovat sadu vlastností, metod a události.</span><span class="sxs-lookup"><span data-stu-id="70ebc-256">Interfaces, like classes, define a set of properties, methods, and events.</span></span> <span data-ttu-id="70ebc-257">Ale na rozdíl od třídy, rozhraní neposkytují implementace.</span><span class="sxs-lookup"><span data-stu-id="70ebc-257">But unlike classes, interfaces do not provide implementation.</span></span> <span data-ttu-id="70ebc-258">Jsou implementované třídy a definován jako samostatné entity z tříd.</span><span class="sxs-lookup"><span data-stu-id="70ebc-258">They are implemented by classes, and defined as separate entities from classes.</span></span> <span data-ttu-id="70ebc-259">Rozhraní představuje kontraktu, v tomto třídu, která implementuje rozhraní musí implementovat všechny aspekty tohoto rozhraní přesně tak, jak je definována.</span><span class="sxs-lookup"><span data-stu-id="70ebc-259">An interface represents a contract, in that a class that implements an interface must implement every aspect of that interface exactly as it is defined.</span></span>  
   
  <span data-ttu-id="70ebc-260">Definice rozhraní:</span><span class="sxs-lookup"><span data-stu-id="70ebc-260">To define an interface:</span></span>  
@@ -377,7 +377,7 @@ class SampleClass : ISampleInterface
   
  [<span data-ttu-id="70ebc-264">rozhraní</span><span class="sxs-lookup"><span data-stu-id="70ebc-264">interface</span></span>](../../../csharp/language-reference/keywords/interface.md)  
   
-##  <span data-ttu-id="70ebc-265"><a name="Generics"></a>Obecné typy</span><span class="sxs-lookup"><span data-stu-id="70ebc-265"><a name="Generics"></a> Generics</span></span>  
+##  <a name="Generics"></a><span data-ttu-id="70ebc-265">Obecné typy</span><span class="sxs-lookup"><span data-stu-id="70ebc-265">Generics</span></span>  
  <span data-ttu-id="70ebc-266">Třídy, struktury, rozhraní a metody v rozhraní .NET Framework může zahrnovat *parametry typu* , definování typů objektů, které lze uložit nebo použít.</span><span class="sxs-lookup"><span data-stu-id="70ebc-266">Classes, structures, interfaces and methods in the .NET Framework can include *type parameters* that define types of objects that they can store or use.</span></span> <span data-ttu-id="70ebc-267">Nejčastější obecných typů je kolekce, kde můžete určit typ objektů, které chcete uložit v kolekci.</span><span class="sxs-lookup"><span data-stu-id="70ebc-267">The most common example of generics is a collection, where you can specify the type of objects to be stored in a collection.</span></span>  
   
  <span data-ttu-id="70ebc-268">Zadat obecné třídy:</span><span class="sxs-lookup"><span data-stu-id="70ebc-268">To define a generic class:</span></span>  
@@ -402,7 +402,7 @@ sampleObject.Field = "Sample string";
   
 -   [<span data-ttu-id="70ebc-272">Obecné typy</span><span class="sxs-lookup"><span data-stu-id="70ebc-272">Generics</span></span>](../../../csharp/programming-guide/generics/index.md)  
   
-##  <span data-ttu-id="70ebc-273"><a name="Delegates"></a>Delegáti</span><span class="sxs-lookup"><span data-stu-id="70ebc-273"><a name="Delegates"></a> Delegates</span></span>  
+##  <a name="Delegates"></a><span data-ttu-id="70ebc-273">Delegáti</span><span class="sxs-lookup"><span data-stu-id="70ebc-273">Delegates</span></span>  
  <span data-ttu-id="70ebc-274">A *delegovat* je typ, který definuje podpis metody a může poskytnout odkaz na libovolnou metodu kompatibilní podpisem.</span><span class="sxs-lookup"><span data-stu-id="70ebc-274">A *delegate* is a type that defines a method signature, and can provide a reference to any method with a compatible signature.</span></span> <span data-ttu-id="70ebc-275">Můžete vyvolat (nebo volání) metoda prostřednictvím delegáta.</span><span class="sxs-lookup"><span data-stu-id="70ebc-275">You can invoke (or call) the method through the delegate.</span></span> <span data-ttu-id="70ebc-276">Delegáty se používají pro předávání metod jako argumentů jiným metodám.</span><span class="sxs-lookup"><span data-stu-id="70ebc-276">Delegates are used to pass methods as arguments to other methods.</span></span>  
   
 > [!NOTE]

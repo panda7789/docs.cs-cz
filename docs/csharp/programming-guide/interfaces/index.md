@@ -71,7 +71,7 @@ ms.lasthandoff: 11/21/2017
  [<span data-ttu-id="caaa4-155">Postupy: explicitní implementace členů dvou rozhraní</span><span class="sxs-lookup"><span data-stu-id="caaa4-155">How to: Explicitly Implement Members of Two Interfaces</span></span>](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md)  
  <span data-ttu-id="caaa4-156">Poskytuje příklad explicitní implementace členů rozhraní s použitím dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="caaa4-156">Provides an example of how to explicitly implement members of interfaces with inheritance.</span></span>  
   
-##  <span data-ttu-id="caaa4-157"><a name="BKMK_RelatedSections"></a>Související oddíly</span><span class="sxs-lookup"><span data-stu-id="caaa4-157"><a name="BKMK_RelatedSections"></a> Related Sections</span></span>  
+##  <a name="BKMK_RelatedSections"></a><span data-ttu-id="caaa4-157">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="caaa4-157">Related Sections</span></span>  
   
 -   [<span data-ttu-id="caaa4-158">Vlastnosti rozhraní</span><span class="sxs-lookup"><span data-stu-id="caaa4-158">Interface Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
   

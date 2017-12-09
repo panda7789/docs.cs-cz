@@ -55,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="prerequisites"></a><span data-ttu-id="7ef24-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7ef24-122">Prerequisites</span></span>  
  <span data-ttu-id="7ef24-123">Visual Studio 2012 nebo novější musí být nainstalován v počítači.</span><span class="sxs-lookup"><span data-stu-id="7ef24-123">Visual Studio 2012 or later must be installed on your computer.</span></span> <span data-ttu-id="7ef24-124">Další informace najdete v tématu [webu společnosti Microsoft](http://go.microsoft.com/fwlink/?LinkId=235233).</span><span class="sxs-lookup"><span data-stu-id="7ef24-124">For more information, see the [Microsoft website](http://go.microsoft.com/fwlink/?LinkId=235233).</span></span>  
   
-###  <span data-ttu-id="7ef24-125"><a name="CreateWPFApp"></a>Chcete-li vytvořit aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="7ef24-125"><a name="CreateWPFApp"></a> To create a WPF application</span></span>  
+###  <a name="CreateWPFApp"></a><span data-ttu-id="7ef24-125">Chcete-li vytvořit aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="7ef24-125">To create a WPF application</span></span>  
   
 1.  <span data-ttu-id="7ef24-126">Spuštění sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7ef24-126">Start Visual Studio.</span></span>  
   
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="7ef24-131">Nový projekt se zobrazí v **Průzkumníku řešení**.</span><span class="sxs-lookup"><span data-stu-id="7ef24-131">The new project appears in **Solution Explorer**.</span></span>  
   
 ##  <a name="BKMK_DesignWPFMainWin"></a>   
-###  <span data-ttu-id="7ef24-132"><a name="MainWindow"></a>Při návrhu jednoduché MainWindow WPF</span><span class="sxs-lookup"><span data-stu-id="7ef24-132"><a name="MainWindow"></a> To design a simple WPF MainWindow</span></span>  
+###  <a name="MainWindow"></a><span data-ttu-id="7ef24-132">Při návrhu jednoduché MainWindow WPF</span><span class="sxs-lookup"><span data-stu-id="7ef24-132">To design a simple WPF MainWindow</span></span>  
   
 1.  <span data-ttu-id="7ef24-133">V editoru Visual Studio Code, vyberte **MainWindow.xaml** kartě.</span><span class="sxs-lookup"><span data-stu-id="7ef24-133">In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.</span></span>  
   
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="7ef24-145">Další informace o WPF návrháře XAML najdete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).</span><span class="sxs-lookup"><span data-stu-id="7ef24-145">For more information about the WPF XAML Designer, see [Creating a UI by using XAML Designer](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).</span></span>  
   
 ##  <a name="BKMK_AddReference"></a>   
-###  <span data-ttu-id="7ef24-146"><a name="AddRef"></a>Chcete-li přidat odkaz</span><span class="sxs-lookup"><span data-stu-id="7ef24-146"><a name="AddRef"></a> To add a reference</span></span>  
+###  <a name="AddRef"></a><span data-ttu-id="7ef24-146">Chcete-li přidat odkaz</span><span class="sxs-lookup"><span data-stu-id="7ef24-146">To add a reference</span></span>  
   
 1.  <span data-ttu-id="7ef24-147">V **Průzkumníku**, zvýrazněte názvem vašeho projektu.</span><span class="sxs-lookup"><span data-stu-id="7ef24-147">In **Solution Explorer**, highlight your project's name.</span></span>  
   
@@ -116,7 +116,7 @@ ms.lasthandoff: 11/21/2017
 6.  <span data-ttu-id="7ef24-153">Vyberte **OK** tlačítko dialogové okno zavřete.</span><span class="sxs-lookup"><span data-stu-id="7ef24-153">Choose the **OK** button to close the dialog box.</span></span>  
   
 ##  <a name="BKMK_AddStatesandDirs"></a>   
-###  <span data-ttu-id="7ef24-154"><a name="usingDir"></a>Chcete-li přidat potřebné pomocí direktiv</span><span class="sxs-lookup"><span data-stu-id="7ef24-154"><a name="usingDir"></a> To add necessary using directives</span></span>  
+###  <a name="usingDir"></a><span data-ttu-id="7ef24-154">Chcete-li přidat potřebné pomocí direktiv</span><span class="sxs-lookup"><span data-stu-id="7ef24-154">To add necessary using directives</span></span>  
   
 1.  <span data-ttu-id="7ef24-155">V **Průzkumníku řešení**, otevřete místní nabídku pro MainWindow.xaml.cs a potom zvolte **kód zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="7ef24-155">In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.cs, and then choose **View Code**.</span></span>  
   
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/21/2017
     ```  
   
 ##  <a name="BKMK_CreatSynchApp"></a>   
-###  <span data-ttu-id="7ef24-157"><a name="synchronous"></a>Chcete-li vytvořit synchronní aplikace</span><span class="sxs-lookup"><span data-stu-id="7ef24-157"><a name="synchronous"></a> To create a synchronous application</span></span>  
+###  <a name="synchronous"></a><span data-ttu-id="7ef24-157">Chcete-li vytvořit synchronní aplikace</span><span class="sxs-lookup"><span data-stu-id="7ef24-157">To create a synchronous application</span></span>  
   
 1.  <span data-ttu-id="7ef24-158">V okně návrhu MainWindow.xaml, dvakrát klikněte **spustit** tlačítko vytvořte `startButton_Click` obslužné rutiny událostí v MainWindow.xaml.cs.</span><span class="sxs-lookup"><span data-stu-id="7ef24-158">In the design window, MainWindow.xaml, double-click the **Start** button to create the `startButton_Click` event handler in MainWindow.xaml.cs.</span></span>  
   
@@ -234,7 +234,7 @@ ms.lasthandoff: 11/21/2017
     ```  
   
 ##  <a name="BKMK_TestSynchSol"></a>   
-###  <span data-ttu-id="7ef24-167"><a name="testSynch"></a>K testování synchronní řešení</span><span class="sxs-lookup"><span data-stu-id="7ef24-167"><a name="testSynch"></a> To test the synchronous solution</span></span>  
+###  <a name="testSynch"></a><span data-ttu-id="7ef24-167">K testování synchronní řešení</span><span class="sxs-lookup"><span data-stu-id="7ef24-167">To test the synchronous solution</span></span>  
   
 1.  <span data-ttu-id="7ef24-168">Zvolte klávesy F5 spusťte program a potom vyberte **spustit** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="7ef24-168">Choose the F5 key to run the program, and then choose the **Start** button.</span></span>  
   
@@ -260,7 +260,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="7ef24-170">Všimněte si, že bude trvat několik sekund zobrazí počty.</span><span class="sxs-lookup"><span data-stu-id="7ef24-170">Notice that it takes a few seconds to display the counts.</span></span> <span data-ttu-id="7ef24-171">Během této doby je blokována vlákna uživatelského rozhraní, kdy čeká požadované prostředky ke stažení.</span><span class="sxs-lookup"><span data-stu-id="7ef24-171">During that time, the UI thread is blocked while it waits for requested resources to download.</span></span> <span data-ttu-id="7ef24-172">V důsledku toho nelze přesunout, maximalizovat, minimalizovat nebo i zavřete okno zobrazení po kliknutí **spustit** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="7ef24-172">As a result, you can't move, maximize, minimize, or even close the display window after you choose the  **Start** button.</span></span> <span data-ttu-id="7ef24-173">Tyto úsilí nezdaří, dokud začít zobrazí počet bajtů.</span><span class="sxs-lookup"><span data-stu-id="7ef24-173">These efforts fail until the byte counts start to appear.</span></span> <span data-ttu-id="7ef24-174">Pokud web nereaguje, nemáte žádná informace o lokality, která se nezdařila.</span><span class="sxs-lookup"><span data-stu-id="7ef24-174">If a website isn’t responding, you have no indication of which site failed.</span></span> <span data-ttu-id="7ef24-175">Je i obtížné čekání na zastavení a ukončení programu.</span><span class="sxs-lookup"><span data-stu-id="7ef24-175">It is difficult even to stop waiting and close the program.</span></span>  
   
 ##  <a name="BKMK_ConvertGtBtArr"></a>   
-###  <span data-ttu-id="7ef24-176"><a name="GetURLContents"></a>Chcete-li převést GetURLContents asynchronní metody</span><span class="sxs-lookup"><span data-stu-id="7ef24-176"><a name="GetURLContents"></a> To convert GetURLContents to an asynchronous method</span></span>  
+###  <a name="GetURLContents"></a><span data-ttu-id="7ef24-176">Chcete-li převést GetURLContents asynchronní metody</span><span class="sxs-lookup"><span data-stu-id="7ef24-176">To convert GetURLContents to an asynchronous method</span></span>  
   
 1.  <span data-ttu-id="7ef24-177">Převést synchronní řešení asynchronní řešení, je nejlepší místo k spuštění v `GetURLContents` protože volání <xref:System.Net.HttpWebRequest> metoda <xref:System.Net.HttpWebRequest.GetResponse%2A> a <xref:System.IO.Stream> metoda <xref:System.IO.Stream.CopyTo%2A> jsou, kde aplikace přistupuje k webové .</span><span class="sxs-lookup"><span data-stu-id="7ef24-177">To convert the synchronous solution to an asynchronous solution, the best place to start is in `GetURLContents` because the calls to the <xref:System.Net.HttpWebRequest> method <xref:System.Net.HttpWebRequest.GetResponse%2A> and to the <xref:System.IO.Stream> method <xref:System.IO.Stream.CopyTo%2A> are where the application accesses the web.</span></span> <span data-ttu-id="7ef24-178">Rozhraní .NET Framework usnadňuje převod zadáním asynchronní verze obě metody.</span><span class="sxs-lookup"><span data-stu-id="7ef24-178">The .NET Framework makes the conversion easy by supplying asynchronous versions of both methods.</span></span>  
   
@@ -342,7 +342,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="7ef24-220">Pomocí těchto několik změn, převod `GetURLContents` pro asynchronní metodu dokončení.</span><span class="sxs-lookup"><span data-stu-id="7ef24-220">With those few changes, the conversion of `GetURLContents` to an asynchronous method is complete.</span></span>  
   
 ##  <a name="BKMK_ConvertSumPagSzs"></a>   
-###  <span data-ttu-id="7ef24-221"><a name="SumPageSizes"></a>Chcete-li převést SumPageSizes asynchronní metody</span><span class="sxs-lookup"><span data-stu-id="7ef24-221"><a name="SumPageSizes"></a> To convert SumPageSizes to an asynchronous method</span></span>  
+###  <a name="SumPageSizes"></a><span data-ttu-id="7ef24-221">Chcete-li převést SumPageSizes asynchronní metody</span><span class="sxs-lookup"><span data-stu-id="7ef24-221">To convert SumPageSizes to an asynchronous method</span></span>  
   
 1.  <span data-ttu-id="7ef24-222">Opakováním kroků v předchozím postupu pro `SumPageSizes`.</span><span class="sxs-lookup"><span data-stu-id="7ef24-222">Repeat the steps from the previous procedure for `SumPageSizes`.</span></span> <span data-ttu-id="7ef24-223">Nejprve změnit volání `GetURLContents` pro asynchronní volání.</span><span class="sxs-lookup"><span data-stu-id="7ef24-223">First, change the call to `GetURLContents` to an asynchronous call.</span></span>  
   
@@ -382,7 +382,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="7ef24-234">Převod `SumPageSizes` k `SumPageSizesAsync` dokončení.</span><span class="sxs-lookup"><span data-stu-id="7ef24-234">The conversion of `SumPageSizes` to `SumPageSizesAsync` is complete.</span></span>  
   
 ##  <a name="BKMK_Cnvrtbttn1"></a>   
-###  <span data-ttu-id="7ef24-235"><a name="startButton"></a>Chcete-li převést startButton_Click asynchronní metody</span><span class="sxs-lookup"><span data-stu-id="7ef24-235"><a name="startButton"></a> To convert startButton_Click to an asynchronous method</span></span>  
+###  <a name="startButton"></a><span data-ttu-id="7ef24-235">Chcete-li převést startButton_Click asynchronní metody</span><span class="sxs-lookup"><span data-stu-id="7ef24-235">To convert startButton_Click to an asynchronous method</span></span>  
   
 1.  <span data-ttu-id="7ef24-236">V obslužné rutině, změňte název metody volané z `SumPageSizes` k `SumPageSizesAsync`, pokud jste tak již neučinili.</span><span class="sxs-lookup"><span data-stu-id="7ef24-236">In the event handler, change the name of the called method from `SumPageSizes` to `SumPageSizesAsync`, if you haven’t already done so.</span></span>  
   
@@ -428,7 +428,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="7ef24-248">Převod projektu synchronní pro asynchronní zpracování je dokončena.</span><span class="sxs-lookup"><span data-stu-id="7ef24-248">The conversion of the project from synchronous to asynchronous processing is complete.</span></span>  
   
 ##  <a name="BKMK_testAsynchSolution"></a>   
-###  <span data-ttu-id="7ef24-249"><a name="testAsynch"></a>K testování asynchronní řešení</span><span class="sxs-lookup"><span data-stu-id="7ef24-249"><a name="testAsynch"></a> To test the asynchronous solution</span></span>  
+###  <a name="testAsynch"></a><span data-ttu-id="7ef24-249">K testování asynchronní řešení</span><span class="sxs-lookup"><span data-stu-id="7ef24-249">To test the asynchronous solution</span></span>  
   
 1.  <span data-ttu-id="7ef24-250">Zvolte klávesy F5 spusťte program a potom vyberte **spustit** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="7ef24-250">Choose the F5 key to run the program, and then choose the **Start** button.</span></span>  
   
@@ -439,7 +439,7 @@ ms.lasthandoff: 11/21/2017
     -   <span data-ttu-id="7ef24-258">Co je nejdůležitější – vlákna uživatelského rozhraní není blokován během stahování.</span><span class="sxs-lookup"><span data-stu-id="7ef24-258">Most importantly, the UI thread isn’t blocked during the downloads.</span></span> <span data-ttu-id="7ef24-259">Můžete přesunout nebo změňte velikost okna během stahování webové prostředky, počítají a zobrazit.</span><span class="sxs-lookup"><span data-stu-id="7ef24-259">You can move or resize the window while the web resources are being downloaded, counted, and displayed.</span></span> <span data-ttu-id="7ef24-260">Pokud jeden z webů je pomalé nebo přestane reagovat, můžete zrušit operaci tak, že zvolíte **Zavřít** tlačítko (x v poli red v pravém horním rohu).</span><span class="sxs-lookup"><span data-stu-id="7ef24-260">If one of the websites is slow or not responding, you can cancel the operation by choosing the **Close** button (the x in the red field in the upper-right corner).</span></span>  
   
 ##  <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
-###  <span data-ttu-id="7ef24-261"><a name="GetURLContentsAsync"></a>Chcete-li nahradit metoda GetURLContentsAsync pomocí metody rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="7ef24-261"><a name="GetURLContentsAsync"></a> To replace method GetURLContentsAsync with a .NET Framework method</span></span>  
+###  <a name="GetURLContentsAsync"></a><span data-ttu-id="7ef24-261">Chcete-li nahradit metoda GetURLContentsAsync pomocí metody rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="7ef24-261">To replace method GetURLContentsAsync with a .NET Framework method</span></span>  
   
 1.  <span data-ttu-id="7ef24-262">Rozhraní .NET Framework 4.5 poskytuje mnoho asynchronní metody, které můžete použít.</span><span class="sxs-lookup"><span data-stu-id="7ef24-262">The .NET Framework 4.5 provides many async methods that you can use.</span></span> <span data-ttu-id="7ef24-263">Jeden z nich, <xref:System.Net.Http.HttpClient> metoda <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>, nemá právě co potřebujete pro účely tohoto postupu.</span><span class="sxs-lookup"><span data-stu-id="7ef24-263">One of them, the <xref:System.Net.Http.HttpClient> method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>, does just what you need for this walkthrough.</span></span> <span data-ttu-id="7ef24-264">Můžete ho místo `GetURLContentsAsync` metoda, kterou jste vytvořili v předchozím kroku.</span><span class="sxs-lookup"><span data-stu-id="7ef24-264">You can use it instead of the `GetURLContentsAsync` method that you created in an earlier procedure.</span></span>  
   
@@ -464,7 +464,7 @@ ms.lasthandoff: 11/21/2017
   
      <span data-ttu-id="7ef24-270">Chování tuto verzi projekt by měl odpovídat chování, které je popsaný v části "postup testovací asynchronní řešení", ale s i méně úsilí od vás.</span><span class="sxs-lookup"><span data-stu-id="7ef24-270">The behavior of this version of the project should match the behavior that the "To test the asynchronous solution" procedure describes but with even less effort from you.</span></span>  
   
-##  <span data-ttu-id="7ef24-271"><a name="BKMK_CompleteCodeExamples"></a>Příklad</span><span class="sxs-lookup"><span data-stu-id="7ef24-271"><a name="BKMK_CompleteCodeExamples"></a> Example</span></span>  
+##  <a name="BKMK_CompleteCodeExamples"></a><span data-ttu-id="7ef24-271">Příklad</span><span class="sxs-lookup"><span data-stu-id="7ef24-271">Example</span></span>  
  <span data-ttu-id="7ef24-272">Následující kód obsahuje úplný příklad převod synchronního asynchronní řešení pomocí asynchronní `GetURLContentsAsync` metoda, která jste napsali.</span><span class="sxs-lookup"><span data-stu-id="7ef24-272">The following code contains the full example of the conversion from a synchronous to an asynchronous solution by using the asynchronous `GetURLContentsAsync` method that you wrote.</span></span> <span data-ttu-id="7ef24-273">Všimněte si, že důrazně podobá řešení původní, synchronní.</span><span class="sxs-lookup"><span data-stu-id="7ef24-273">Notice that it strongly resembles the original, synchronous solution.</span></span>  
   
 ```csharp  
