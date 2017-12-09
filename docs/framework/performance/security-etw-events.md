@@ -23,7 +23,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="security-etw-events"></a><span data-ttu-id="fd437-102">Události Trasování událostí pro Windows zabezpečení</span><span class="sxs-lookup"><span data-stu-id="fd437-102">Security ETW Events</span></span>
-<span data-ttu-id="fd437-103"><a name="top"></a>Události zabezpečení jsou vyvolány během ověřování silných názvů a ověření Authenticode.</span><span class="sxs-lookup"><span data-stu-id="fd437-103"><a name="top"></a> Security events are raised during strong name verification and Authenticode verification.</span></span>  
+<a name="top"></a><span data-ttu-id="fd437-103">Události zabezpečení jsou vyvolány během ověřování silných názvů a ověření Authenticode.</span><span class="sxs-lookup"><span data-stu-id="fd437-103">Security events are raised during strong name verification and Authenticode verification.</span></span>  
   
  <span data-ttu-id="fd437-104">Tato kategorie se skládá z následujících událostí:</span><span class="sxs-lookup"><span data-stu-id="fd437-104">This category consists of the following events:</span></span>  
   

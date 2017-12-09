@@ -23,7 +23,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="thread-pool-etw-events"></a><span data-ttu-id="2bb96-102">Události Trasování událostí pro Windows fondu vláken</span><span class="sxs-lookup"><span data-stu-id="2bb96-102">Thread Pool ETW Events</span></span>
-<span data-ttu-id="2bb96-103"><a name="top"></a>Tyto události shromažďovat informace o vstupně-výstupních operací vláken a pracovního procesu.</span><span class="sxs-lookup"><span data-stu-id="2bb96-103"><a name="top"></a> These events collect information about worker and I/O threads.</span></span>  
+<a name="top"></a><span data-ttu-id="2bb96-103">Tyto události shromažďovat informace o vstupně-výstupních operací vláken a pracovního procesu.</span><span class="sxs-lookup"><span data-stu-id="2bb96-103">These events collect information about worker and I/O threads.</span></span>  
   
  <span data-ttu-id="2bb96-104">Existují dvě skupiny události fondu vláken:</span><span class="sxs-lookup"><span data-stu-id="2bb96-104">There are two groups of thread pool events:</span></span>  
   

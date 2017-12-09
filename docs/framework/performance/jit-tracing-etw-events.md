@@ -23,7 +23,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="jit-tracing-etw-events"></a><span data-ttu-id="a90e9-102">Události Trasování událostí pro Windows trasování JIT</span><span class="sxs-lookup"><span data-stu-id="a90e9-102">JIT Tracing ETW Events</span></span>
-<span data-ttu-id="a90e9-103"><a name="top"></a>Tyto události shromažďovat údaje o úspěch nebo Chyba v běhu (JIT) vložené a volání tail JIT.</span><span class="sxs-lookup"><span data-stu-id="a90e9-103"><a name="top"></a> These events collect information relating to the success or failure of just-in-time (JIT) inlining and JIT tail calls.</span></span>  
+<a name="top"></a><span data-ttu-id="a90e9-103">Tyto události shromažďovat údaje o úspěch nebo Chyba v běhu (JIT) vložené a volání tail JIT.</span><span class="sxs-lookup"><span data-stu-id="a90e9-103">These events collect information relating to the success or failure of just-in-time (JIT) inlining and JIT tail calls.</span></span>  
   
  <span data-ttu-id="a90e9-104">JIT – události trasování se skládají z následujících dvou kategorií:</span><span class="sxs-lookup"><span data-stu-id="a90e9-104">JIT tracing events consist of the following two categories:</span></span>  
   

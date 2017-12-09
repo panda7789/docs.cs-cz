@@ -23,7 +23,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="interop-etw-events"></a><span data-ttu-id="b3cb1-102">Události Trasování událostí pro Windows interoperability</span><span class="sxs-lookup"><span data-stu-id="b3cb1-102">Interop ETW Events</span></span>
-<span data-ttu-id="b3cb1-103"><a name="top"></a>Události interoperability zaznamenat informace o Microsoft (MSIL intermediate language) se zakázaným inzerováním generování a ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="b3cb1-103"><a name="top"></a> Interop events capture information about Microsoft intermediate language (MSIL) stub generation and caching.</span></span>  
+<a name="top"></a><span data-ttu-id="b3cb1-103">Události interoperability zaznamenat informace o Microsoft (MSIL intermediate language) se zakázaným inzerováním generování a ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="b3cb1-103">Interop events capture information about Microsoft intermediate language (MSIL) stub generation and caching.</span></span>  
   
  <span data-ttu-id="b3cb1-104">Tato kategorie se skládá z následujících událostí:</span><span class="sxs-lookup"><span data-stu-id="b3cb1-104">This category consists of the following events:</span></span>  
   
