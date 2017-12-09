@@ -27,7 +27,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="troubleshooting-hybrid-applications"></a><span data-ttu-id="cd321-102">Řešení potíží s hybridními aplikacemi</span><span class="sxs-lookup"><span data-stu-id="cd321-102">Troubleshooting Hybrid Applications</span></span>
-<span data-ttu-id="cd321-103"><a name="introduction"></a>Toto téma uvádí některé běžné problémy, ke kterým dochází při vytváření hybridní aplikace, které používají obě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.</span><span class="sxs-lookup"><span data-stu-id="cd321-103"><a name="introduction"></a> This topic lists some common problems that can occur when authoring hybrid applications, which use both [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologies.</span></span>  
+<a name="introduction"></a><span data-ttu-id="cd321-103">Toto téma uvádí některé běžné problémy, ke kterým dochází při vytváření hybridní aplikace, které používají obě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.</span><span class="sxs-lookup"><span data-stu-id="cd321-103">This topic lists some common problems that can occur when authoring hybrid applications, which use both [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologies.</span></span>  
   
 
   

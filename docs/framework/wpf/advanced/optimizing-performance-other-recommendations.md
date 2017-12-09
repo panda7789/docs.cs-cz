@@ -29,7 +29,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="optimizing-performance-other-recommendations"></a><span data-ttu-id="ea532-102">Optimalizace výkonu: Další doporučení</span><span class="sxs-lookup"><span data-stu-id="ea532-102">Optimizing Performance: Other Recommendations</span></span>
-<span data-ttu-id="ea532-103"><a name="introduction"></a>Toto téma obsahuje doporučení výkonu kromě těch, které jsou předmětem témata v [optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) části.</span><span class="sxs-lookup"><span data-stu-id="ea532-103"><a name="introduction"></a> This topic provides performance recommendations in addition to the ones covered by the topics in the [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) section.</span></span>  
+<a name="introduction"></a><span data-ttu-id="ea532-103">Toto téma obsahuje doporučení výkonu kromě těch, které jsou předmětem témata v [optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) části.</span><span class="sxs-lookup"><span data-stu-id="ea532-103">This topic provides performance recommendations in addition to the ones covered by the topics in the [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) section.</span></span>  
   
  <span data-ttu-id="ea532-104">Toto téma obsahuje následující oddíly:</span><span class="sxs-lookup"><span data-stu-id="ea532-104">This topic contains the following sections:</span></span>  
   

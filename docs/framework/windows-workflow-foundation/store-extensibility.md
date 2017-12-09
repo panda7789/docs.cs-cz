@@ -117,7 +117,7 @@ ms.lasthandoff: 12/02/2017
     go  
     ```  
   
-##  <span data-ttu-id="d57ce-119"><a name="InstancePromotedProperties"></a>Zobrazení [System.Activities.DurableInstancing.InstancePromotedProperties]</span><span class="sxs-lookup"><span data-stu-id="d57ce-119"><a name="InstancePromotedProperties"></a> [System.Activities.DurableInstancing.InstancePromotedProperties] view</span></span>  
+##  <a name="InstancePromotedProperties"></a><span data-ttu-id="d57ce-119">Zobrazení [System.Activities.DurableInstancing.InstancePromotedProperties]</span><span class="sxs-lookup"><span data-stu-id="d57ce-119">[System.Activities.DurableInstancing.InstancePromotedProperties] view</span></span>  
   
 |<span data-ttu-id="d57ce-120">Název sloupce</span><span class="sxs-lookup"><span data-stu-id="d57ce-120">Column Name</span></span>|<span data-ttu-id="d57ce-121">Typ sloupce</span><span class="sxs-lookup"><span data-stu-id="d57ce-121">Column Type</span></span>|<span data-ttu-id="d57ce-122">Popis</span><span class="sxs-lookup"><span data-stu-id="d57ce-122">Description</span></span>|  
 |-----------------|-----------------|-----------------|  

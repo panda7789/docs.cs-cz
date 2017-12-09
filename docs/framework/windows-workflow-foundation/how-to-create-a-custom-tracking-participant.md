@@ -37,7 +37,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [<span data-ttu-id="f8137-116">Sestavení a spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="f8137-116">To build and run the application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_BuildAndRun)  
   
-###  <span data-ttu-id="f8137-117"><a name="BKMK_CustomTrackingParticipant"></a>Chcete-li vytvořit vlastní sledování účastník</span><span class="sxs-lookup"><span data-stu-id="f8137-117"><a name="BKMK_CustomTrackingParticipant"></a> To create the custom tracking participant</span></span>  
+###  <a name="BKMK_CustomTrackingParticipant"></a><span data-ttu-id="f8137-117">Chcete-li vytvořit vlastní sledování účastník</span><span class="sxs-lookup"><span data-stu-id="f8137-117">To create the custom tracking participant</span></span>  
   
 1.  <span data-ttu-id="f8137-118">Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **třída**.</span><span class="sxs-lookup"><span data-stu-id="f8137-118">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**.</span></span> <span data-ttu-id="f8137-119">Typ `StatusTrackingParticipant` do **název** pole a klikněte na tlačítko **přidat**.</span><span class="sxs-lookup"><span data-stu-id="f8137-119">Type `StatusTrackingParticipant` into the **Name** box, and click **Add**.</span></span>  
   
@@ -113,7 +113,7 @@ ms.lasthandoff: 12/02/2017
   
      <span data-ttu-id="f8137-127">Pokud je zadán žádný profil sledování, použije se výchozí sledovacího profilu.</span><span class="sxs-lookup"><span data-stu-id="f8137-127">When no tracking profile is specified, the default tracking profile is used.</span></span> <span data-ttu-id="f8137-128">Pokud je použita výchozí sledování profil, jsou pro všechny vygenerované záznamy o sledování `ActivityStates`.</span><span class="sxs-lookup"><span data-stu-id="f8137-128">When the default tracking profile is used, tracking records are emitted for all `ActivityStates`.</span></span> <span data-ttu-id="f8137-129">Vzhledem k tomu, že musíme zaznamenat text během životního cyklu jednou `WriteLine` aktivitu, jsme pouze rozbalte text z `ActivityStates.Executing` stavu.</span><span class="sxs-lookup"><span data-stu-id="f8137-129">Because we only need to capture the text one time during the lifecycle of the `WriteLine` activity, we only extract the text from the `ActivityStates.Executing` state.</span></span> <span data-ttu-id="f8137-130">V [vytvořit profil sledování a zaregistrovat účastník sledování](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), sledování profil je vytvořen pouze určující `WriteLine` `ActivityStates.Executing` jsou vygenerované záznamy o sledování.</span><span class="sxs-lookup"><span data-stu-id="f8137-130">In [To create the tracking profile and register the tracking participant](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), a tracking profile is created that specifies that only `WriteLine` `ActivityStates.Executing` tracking records are emitted.</span></span>  
   
-###  <span data-ttu-id="f8137-131"><a name="BKMK_TrackingProfile"></a>Vytvořit profil sledování a zaregistrovat účastník sledování</span><span class="sxs-lookup"><span data-stu-id="f8137-131"><a name="BKMK_TrackingProfile"></a> To create the tracking profile and register the tracking participant</span></span>  
+###  <a name="BKMK_TrackingProfile"></a><span data-ttu-id="f8137-131">Vytvořit profil sledování a zaregistrovat účastník sledování</span><span class="sxs-lookup"><span data-stu-id="f8137-131">To create the tracking profile and register the tracking participant</span></span>  
   
 1.  <span data-ttu-id="f8137-132">Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníku řešení** a zvolte **kód zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="f8137-132">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
@@ -234,7 +234,7 @@ ms.lasthandoff: 12/02/2017
         // Workflow lifecycle handlers...  
     ```  
   
-###  <span data-ttu-id="f8137-137"><a name="BKMK_DisplayTracking"></a>Chcete-li zobrazit informace o sledování</span><span class="sxs-lookup"><span data-stu-id="f8137-137"><a name="BKMK_DisplayTracking"></a> To display the tracking information</span></span>  
+###  <a name="BKMK_DisplayTracking"></a><span data-ttu-id="f8137-137">Chcete-li zobrazit informace o sledování</span><span class="sxs-lookup"><span data-stu-id="f8137-137">To display the tracking information</span></span>  
   
 1.  <span data-ttu-id="f8137-138">Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníku řešení** a zvolte **kód zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="f8137-138">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
@@ -329,7 +329,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="f8137-142"><a name="BKMK_BuildAndRun"></a>Sestavení a spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="f8137-142"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="f8137-142">Sestavení a spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="f8137-142">To build and run the application</span></span>  
   
 1.  <span data-ttu-id="f8137-143">Stisknutím kombinace kláves Ctrl + Shift + B pro sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="f8137-143">Press Ctrl+Shift+B to build the application.</span></span>  
   

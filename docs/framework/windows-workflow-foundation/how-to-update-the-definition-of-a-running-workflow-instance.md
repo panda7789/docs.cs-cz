@@ -49,7 +49,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [<span data-ttu-id="964fc-117">Chcete-li povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="964fc-117">To enable starting previous versions of the workflows</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
   
-###  <span data-ttu-id="964fc-118"><a name="BKMK_CreateProject"></a>Vytvoření projektu CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="964fc-118"><a name="BKMK_CreateProject"></a> To create the CreateUpdateMaps project</span></span>  
+###  <a name="BKMK_CreateProject"></a><span data-ttu-id="964fc-118">Vytvoření projektu CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="964fc-118">To create the CreateUpdateMaps project</span></span>  
   
 1.  <span data-ttu-id="964fc-119">Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníku řešení** a zvolte **přidat**, **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="964fc-119">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>  
   
@@ -233,7 +233,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="964fc-143"><a name="BKMK_StateMachine"></a>Chcete-li aktualizovat StateMachineNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="964fc-143"><a name="BKMK_StateMachine"></a> To update StateMachineNumberGuessWorkflow</span></span>  
+###  <a name="BKMK_StateMachine"></a><span data-ttu-id="964fc-143">Chcete-li aktualizovat StateMachineNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="964fc-143">To update StateMachineNumberGuessWorkflow</span></span>  
   
 1.  <span data-ttu-id="964fc-144">Přidat `CreateStateMachineUpdateMap` k `Program` – třída (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="964fc-144">Add a `CreateStateMachineUpdateMap` to the `Program` class (or `Module1`).</span></span>  
   
@@ -426,7 +426,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="964fc-151"><a name="BKMK_Flowchart"></a>Chcete-li aktualizovat FlowchartNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="964fc-151"><a name="BKMK_Flowchart"></a> To update FlowchartNumberGuessWorkflow</span></span>  
+###  <a name="BKMK_Flowchart"></a><span data-ttu-id="964fc-151">Chcete-li aktualizovat FlowchartNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="964fc-151">To update FlowchartNumberGuessWorkflow</span></span>  
   
 1.  <span data-ttu-id="964fc-152">Přidejte následující `CreateFlowchartUpdateMethod` k `Program` – třída (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="964fc-152">Add the following `CreateFlowchartUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="964fc-153">Tato metoda je podobná `CreateStateMachineUpdateMap`.</span><span class="sxs-lookup"><span data-stu-id="964fc-153">This method is similar to `CreateStateMachineUpdateMap`.</span></span> <span data-ttu-id="964fc-154">Začíná volání `StartUpdate`, aktualizuje definice vývojový diagram pracovního postupu a dokončení uložením aktualizace mapování a pracovní postup aktualizované definice.</span><span class="sxs-lookup"><span data-stu-id="964fc-154">It starts with a call to `StartUpdate`, updates the flowchart workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>  
   
@@ -540,7 +540,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="964fc-155"><a name="BKMK_Sequential"></a>Chcete-li aktualizovat SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="964fc-155"><a name="BKMK_Sequential"></a> To update SequentialNumberGuessWorkflow</span></span>  
+###  <a name="BKMK_Sequential"></a><span data-ttu-id="964fc-155">Chcete-li aktualizovat SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="964fc-155">To update SequentialNumberGuessWorkflow</span></span>  
   
 1.  <span data-ttu-id="964fc-156">Přidejte následující `CreateSequentialUpdateMethod` k `Program` – třída (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="964fc-156">Add the following `CreateSequentialUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="964fc-157">Tato metoda je podobná tyto dvě metody.</span><span class="sxs-lookup"><span data-stu-id="964fc-157">This method is similar to the other two methods.</span></span> <span data-ttu-id="964fc-158">Začíná volání `StartUpdate`, aktualizuje definice sekvenčního pracovního postupu a dokončení uložením aktualizace mapování a pracovní postup aktualizované definice.</span><span class="sxs-lookup"><span data-stu-id="964fc-158">It starts with a call to `StartUpdate`, updates the sequential workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>  
   
@@ -620,7 +620,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="964fc-159"><a name="BKMK_CreateUpdateMaps"></a>Sestavení a spuštění aplikace CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="964fc-159"><a name="BKMK_CreateUpdateMaps"></a> To build and run the CreateUpdateMaps application</span></span>  
+###  <a name="BKMK_CreateUpdateMaps"></a><span data-ttu-id="964fc-159">Sestavení a spuštění aplikace CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="964fc-159">To build and run the CreateUpdateMaps application</span></span>  
   
 1.  <span data-ttu-id="964fc-160">Aktualizace `Main` metoda a přidejte následující volání tří metod.</span><span class="sxs-lookup"><span data-stu-id="964fc-160">Update the `Main` method and add the following three method calls.</span></span> <span data-ttu-id="964fc-161">Tyto metody jsou přidány v následujících částech.</span><span class="sxs-lookup"><span data-stu-id="964fc-161">These methods are added in the following sections.</span></span> <span data-ttu-id="964fc-162">Každá metoda aktualizace odpovídající číslo odhad pracovního postupu a vytvoří `DynamicUpdateMap` aktualizace, který popisuje.</span><span class="sxs-lookup"><span data-stu-id="964fc-162">Each method updates the corresponding number guess workflow and creates a `DynamicUpdateMap` that describes the updates.</span></span>  
   
@@ -654,7 +654,7 @@ ms.lasthandoff: 12/02/2017
   
      <span data-ttu-id="964fc-166">Po aktualizaci mapu lze vytvořit a aktualizovat definice pracovního postupu, dalším krokem je vytvoření aktualizované pracovního postupu sestavení obsahující aktualizované definice.</span><span class="sxs-lookup"><span data-stu-id="964fc-166">Once the update maps are created and the workflow definitions updated, the next step is to build an updated workflow assembly containing the updated definitions.</span></span>  
   
-###  <span data-ttu-id="964fc-167"><a name="BKMK_BuildAssembly"></a>K vytvoření sestavení aktualizované pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="964fc-167"><a name="BKMK_BuildAssembly"></a> To build the updated workflow assembly</span></span>  
+###  <a name="BKMK_BuildAssembly"></a><span data-ttu-id="964fc-167">K vytvoření sestavení aktualizované pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="964fc-167">To build the updated workflow assembly</span></span>  
   
 1.  <span data-ttu-id="964fc-168">Otevřít druhou instanci [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="964fc-168">Open a second instance of [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span></span>  
   
@@ -685,7 +685,7 @@ ms.lasthandoff: 12/02/2017
   
 12. <span data-ttu-id="964fc-185">Přejmenování **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Postupy: hostování více verzí pracovní postup-souběžného](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="964fc-185">Rename **NumberGuessWorkflowActivities.dll** to **NumberGuessWorkflowActivities_v15.dll**, and copy it to the **PreviousVersions** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>  
   
-###  <span data-ttu-id="964fc-186"><a name="BKMK_UpdateWorkflowVersionMap"></a>Chcete-li aktualizovat WorkflowVersionMap nové verze</span><span class="sxs-lookup"><span data-stu-id="964fc-186"><a name="BKMK_UpdateWorkflowVersionMap"></a> To update WorkflowVersionMap with the new versions</span></span>  
+###  <a name="BKMK_UpdateWorkflowVersionMap"></a><span data-ttu-id="964fc-186">Chcete-li aktualizovat WorkflowVersionMap nové verze</span><span class="sxs-lookup"><span data-stu-id="964fc-186">To update WorkflowVersionMap with the new versions</span></span>  
   
 1.  <span data-ttu-id="964fc-187">Přepněte zpět na původní instanci [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="964fc-187">Switch back to the initial instance of [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span></span>  
   
@@ -1072,7 +1072,7 @@ ms.lasthandoff: 12/02/2017
   
 5.  <span data-ttu-id="964fc-195">Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.</span><span class="sxs-lookup"><span data-stu-id="964fc-195">Press CTRL+SHIFT+B to build the project.</span></span>  
   
-###  <span data-ttu-id="964fc-196"><a name="BKMK_ApplyUpdate"></a>Použití dynamické aktualizace</span><span class="sxs-lookup"><span data-stu-id="964fc-196"><a name="BKMK_ApplyUpdate"></a> To apply the dynamic updates</span></span>  
+###  <a name="BKMK_ApplyUpdate"></a><span data-ttu-id="964fc-196">Použití dynamické aktualizace</span><span class="sxs-lookup"><span data-stu-id="964fc-196">To apply the dynamic updates</span></span>  
   
 1.  <span data-ttu-id="964fc-197">Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníku řešení** a zvolte **přidat**, **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="964fc-197">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>  
   
@@ -1447,7 +1447,7 @@ ms.lasthandoff: 12/02/2017
 <span data-ttu-id="964fc-261">**Probíhá kontrola: SequentialNumberGuessWorkflow; Verzi = 2.0.0.0** </span><span class="sxs-lookup"><span data-stu-id="964fc-261">**Inspecting: SequentialNumberGuessWorkflow; Version=2.0.0.0** </span></span>  
 <span data-ttu-id="964fc-262">**Stisknutím libovolné klávesy pokračujte...**</span><span class="sxs-lookup"><span data-stu-id="964fc-262">**Press any key to continue . . .**</span></span>  
   
-###  <span data-ttu-id="964fc-263"><a name="BKMK_BuildAndRun"></a>Ke spuštění aplikace s aktualizované pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="964fc-263"><a name="BKMK_BuildAndRun"></a> To run the application with the updated workflows</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="964fc-263">Ke spuštění aplikace s aktualizované pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="964fc-263">To run the application with the updated workflows</span></span>  
   
 1.  <span data-ttu-id="964fc-264">Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="964fc-264">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>  
   
@@ -1482,7 +1482,7 @@ ms.lasthandoff: 12/02/2017
 <span data-ttu-id="964fc-291">**Zadejte prosím číslo mezi 1 a 10** </span><span class="sxs-lookup"><span data-stu-id="964fc-291">**Please enter a number between 1 and 10** </span></span>  
 <span data-ttu-id="964fc-292">**6 je správná. Uhádnout na oplátku 4.**</span><span class="sxs-lookup"><span data-stu-id="964fc-292">**6 is correct. You guessed it in 4 turns.**</span></span>  
   
-###  <span data-ttu-id="964fc-293"><a name="BKMK_StartPreviousVersions"></a>Chcete-li povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="964fc-293"><a name="BKMK_StartPreviousVersions"></a> To enable starting previous versions of the workflows</span></span>  
+###  <a name="BKMK_StartPreviousVersions"></a><span data-ttu-id="964fc-293">Chcete-li povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="964fc-293">To enable starting previous versions of the workflows</span></span>  
  <span data-ttu-id="964fc-294">Pokud spustíte mimo pracovní postupy pro aktualizace, můžete upravit `NumberGuessWorkflowHost` aplikaci, která od předchozích verzí pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="964fc-294">If you run out of workflows to update, you can modify the `NumberGuessWorkflowHost` application to enable starting previous versions of the workflows.</span></span>  
   
 1.  <span data-ttu-id="964fc-295">Klikněte dvakrát na **WorkflowHostForm** v **Průzkumníku řešení**a vyberte **WorkflowType** – pole se seznamem.</span><span class="sxs-lookup"><span data-stu-id="964fc-295">Double-click **WorkflowHostForm** in **Solution Explorer**, and select the **WorkflowType** combo box.</span></span>  

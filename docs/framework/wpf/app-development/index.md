@@ -23,9 +23,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/22/2017
 ---
 # <a name="application-development"></a><span data-ttu-id="afc09-102">Vývoj aplikací</span><span class="sxs-lookup"><span data-stu-id="afc09-102">Application Development</span></span>
-<span data-ttu-id="afc09-103"><a name="introduction"></a>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]je rozhraní prezentace, které slouží k vytvoření následujících typů aplikací:</span><span class="sxs-lookup"><span data-stu-id="afc09-103"><a name="introduction"></a>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] is a presentation framework that can be used to develop the following types of applications:</span></span>  
+<a name="introduction"></a>
+<span data-ttu-id="afc09-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]je rozhraní prezentace, které slouží k vytvoření následujících typů aplikací:</span><span class="sxs-lookup"><span data-stu-id="afc09-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] is a presentation framework that can be used to develop the following types of applications:</span></span>  
   
 -   <span data-ttu-id="afc09-104">Samostatné aplikace (tradiční styl [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace vytvořené jako spustitelný soubor sestavení, které jsou nainstalovány na a spustit z klientského počítače).</span><span class="sxs-lookup"><span data-stu-id="afc09-104">Standalone Applications (traditional style [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] applications built as executable assemblies that are installed to and run from the client computer).</span></span>  
   
