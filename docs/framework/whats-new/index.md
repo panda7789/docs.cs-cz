@@ -20,7 +20,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2017
 ---
 # <a name="whats-new-in-the-net-framework"></a><span data-ttu-id="0191d-102">Co je nového v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0191d-102">What's new in the .NET Framework</span></span>
-<span data-ttu-id="0191d-103"><a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:</span><span class="sxs-lookup"><span data-stu-id="0191d-103"><a name="introduction"></a>This article summarizes key new features and improvements in the following versions of the .NET Framework:</span></span>  
+<a name="introduction"></a><span data-ttu-id="0191d-103">Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:</span><span class="sxs-lookup"><span data-stu-id="0191d-103">This article summarizes key new features and improvements in the following versions of the .NET Framework:</span></span>  
  
 <span data-ttu-id="0191d-104">[Rozhraní .NET framework 4.7.1](#v471)  </span><span class="sxs-lookup"><span data-stu-id="0191d-104">[.NET Framework 4.7.1](#v471)  </span></span>  
 <span data-ttu-id="0191d-105">[Rozhraní .NET framework 4.7](#v47) </span><span class="sxs-lookup"><span data-stu-id="0191d-105">[.NET Framework 4.7](#v47) </span></span>  
