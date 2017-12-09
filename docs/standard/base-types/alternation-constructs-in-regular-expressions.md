@@ -31,7 +31,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a><span data-ttu-id="43ddf-102">Konstrukce alternace v regulárních výrazech</span><span class="sxs-lookup"><span data-stu-id="43ddf-102">Alternation Constructs in Regular Expressions</span></span>
-<span data-ttu-id="43ddf-103"><a name="top"></a>Konstrukce alternace upravit regulární výraz k povolení buď / nebo nebo podmíněného odpovídající.</span><span class="sxs-lookup"><span data-stu-id="43ddf-103"><a name="top"></a> Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="43ddf-104">Rozhraní .NET podporuje tři konstrukce alternace:</span><span class="sxs-lookup"><span data-stu-id="43ddf-104">.NET supports three alternation constructs:</span></span>  
+<a name="top"></a><span data-ttu-id="43ddf-103">Konstrukce alternace upravit regulární výraz k povolení buď / nebo nebo podmíněného odpovídající.</span><span class="sxs-lookup"><span data-stu-id="43ddf-103">Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="43ddf-104">Rozhraní .NET podporuje tři konstrukce alternace:</span><span class="sxs-lookup"><span data-stu-id="43ddf-104">.NET supports three alternation constructs:</span></span>  
   
 -   [<span data-ttu-id="43ddf-105">Porovnávání vzorů s &#124;</span><span class="sxs-lookup"><span data-stu-id="43ddf-105">Pattern matching with &#124;</span></span>](#Either_Or)  
   

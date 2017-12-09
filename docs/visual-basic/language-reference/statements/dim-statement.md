@@ -251,7 +251,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
   
  <span data-ttu-id="485c0-219">Další informace o literálech pole najdete v tématu [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).</span><span class="sxs-lookup"><span data-stu-id="485c0-219">For more information about array literals, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).</span></span>  
   
-##  <span data-ttu-id="485c0-220"><a name="default"></a>Typy a hodnoty výchozí Data</span><span class="sxs-lookup"><span data-stu-id="485c0-220"><a name="default"></a> Default Data Types and Values</span></span>  
+##  <a name="default"></a><span data-ttu-id="485c0-220">Typy a hodnoty výchozí Data</span><span class="sxs-lookup"><span data-stu-id="485c0-220">Default Data Types and Values</span></span>  
  <span data-ttu-id="485c0-221">Následující tabulka popisuje výsledky datový typ a inicializátoru v různých kombinacích `Dim` příkaz.</span><span class="sxs-lookup"><span data-stu-id="485c0-221">The following table describes the results of various combinations of specifying the data type and initializer in a `Dim` statement.</span></span>  
   
 |<span data-ttu-id="485c0-222">Datový typ zadaný?</span><span class="sxs-lookup"><span data-stu-id="485c0-222">Data type specified?</span></span>|<span data-ttu-id="485c0-223">Zadaný inicializační?</span><span class="sxs-lookup"><span data-stu-id="485c0-223">Initializer specified?</span></span>|<span data-ttu-id="485c0-224">Příklad</span><span class="sxs-lookup"><span data-stu-id="485c0-224">Example</span></span>|<span data-ttu-id="485c0-225">Výsledek</span><span class="sxs-lookup"><span data-stu-id="485c0-225">Result</span></span>|  

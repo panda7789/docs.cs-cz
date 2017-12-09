@@ -26,7 +26,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="path-animations-overview"></a><span data-ttu-id="e9062-102">Přehled animací cesty</span><span class="sxs-lookup"><span data-stu-id="e9062-102">Path Animations Overview</span></span>
-<span data-ttu-id="e9062-103"><a name="introduction"></a>Toto téma představuje animací cesty, které vám umožní používat geometrickou cestu ke generování hodnot výstup.</span><span class="sxs-lookup"><span data-stu-id="e9062-103"><a name="introduction"></a> This topic introduces path animations, which enable you to use a geometric path to generate output values.</span></span> <span data-ttu-id="e9062-104">Cesta animací jsou užitečné pro přesunutí a otáčení objektů podél komplexní cesty.</span><span class="sxs-lookup"><span data-stu-id="e9062-104">Path animations are useful for moving and rotating objects along complex paths.</span></span>  
+<a name="introduction"></a><span data-ttu-id="e9062-103">Toto téma představuje animací cesty, které vám umožní používat geometrickou cestu ke generování hodnot výstup.</span><span class="sxs-lookup"><span data-stu-id="e9062-103">This topic introduces path animations, which enable you to use a geometric path to generate output values.</span></span> <span data-ttu-id="e9062-104">Cesta animací jsou užitečné pro přesunutí a otáčení objektů podél komplexní cesty.</span><span class="sxs-lookup"><span data-stu-id="e9062-104">Path animations are useful for moving and rotating objects along complex paths.</span></span>  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a><span data-ttu-id="e9062-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e9062-105">Prerequisites</span></span>  

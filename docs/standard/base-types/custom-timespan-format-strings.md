@@ -47,7 +47,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.TimeSpan.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customparseexample1.cs#2)]
  [!code-vb[Conceptual.TimeSpan.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customparseexample1.vb#2)]  
   
-<span data-ttu-id="f3728-117"><a name="table"></a>Následující tabulka popisuje vlastní datum a čas specifikátory formátu.</span><span class="sxs-lookup"><span data-stu-id="f3728-117"><a name="table"></a> The following table describes the custom date and time format specifiers.</span></span>  
+<a name="table"></a><span data-ttu-id="f3728-117">Následující tabulka popisuje vlastní datum a čas specifikátory formátu.</span><span class="sxs-lookup"><span data-stu-id="f3728-117">The following table describes the custom date and time format specifiers.</span></span>  
   
 |<span data-ttu-id="f3728-118">Specifikátor formátu</span><span class="sxs-lookup"><span data-stu-id="f3728-118">Format specifier</span></span>|<span data-ttu-id="f3728-119">Popis</span><span class="sxs-lookup"><span data-stu-id="f3728-119">Description</span></span>|<span data-ttu-id="f3728-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="f3728-120">Example</span></span>|  
 |----------------------|-----------------|-------------|  

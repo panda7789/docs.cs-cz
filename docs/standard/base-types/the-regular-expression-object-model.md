@@ -52,7 +52,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="the-regular-expression-object-model"></a><span data-ttu-id="4962e-102">Model objektu regulárního výrazu</span><span class="sxs-lookup"><span data-stu-id="4962e-102">The Regular Expression Object Model</span></span>
-<span data-ttu-id="4962e-103"><a name="introduction"></a>Toto téma popisuje objektový model použít v práci s regulární výrazy rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="4962e-103"><a name="introduction"></a> This topic describes the object model used in working with .NET regular expressions.</span></span> <span data-ttu-id="4962e-104">Obsahuje následující oddíly:</span><span class="sxs-lookup"><span data-stu-id="4962e-104">It contains the following sections:</span></span>  
+<a name="introduction"></a><span data-ttu-id="4962e-103">Toto téma popisuje objektový model použít v práci s regulární výrazy rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="4962e-103">This topic describes the object model used in working with .NET regular expressions.</span></span> <span data-ttu-id="4962e-104">Obsahuje následující oddíly:</span><span class="sxs-lookup"><span data-stu-id="4962e-104">It contains the following sections:</span></span>  
   
 -   [<span data-ttu-id="4962e-105">Modul regulárních výrazů</span><span class="sxs-lookup"><span data-stu-id="4962e-105">The Regular Expression Engine</span></span>](#Engine)  
   

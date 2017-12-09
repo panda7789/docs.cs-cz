@@ -27,7 +27,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="fundamentals-of-garbage-collection"></a><span data-ttu-id="d4dea-102">Základy kolekce paměti</span><span class="sxs-lookup"><span data-stu-id="d4dea-102">Fundamentals of Garbage Collection</span></span>
-<span data-ttu-id="d4dea-103"><a name="top"></a>V common language runtime (CLR) bude systém uvolňování slouží jako správce automatické paměti.</span><span class="sxs-lookup"><span data-stu-id="d4dea-103"><a name="top"></a> In the common language runtime (CLR), the garbage collector serves as an automatic memory manager.</span></span> <span data-ttu-id="d4dea-104">Poskytuje následující výhody:</span><span class="sxs-lookup"><span data-stu-id="d4dea-104">It provides the following benefits:</span></span>  
+<a name="top"></a><span data-ttu-id="d4dea-103">V common language runtime (CLR) bude systém uvolňování slouží jako správce automatické paměti.</span><span class="sxs-lookup"><span data-stu-id="d4dea-103">In the common language runtime (CLR), the garbage collector serves as an automatic memory manager.</span></span> <span data-ttu-id="d4dea-104">Poskytuje následující výhody:</span><span class="sxs-lookup"><span data-stu-id="d4dea-104">It provides the following benefits:</span></span>  
   
 -   <span data-ttu-id="d4dea-105">Umožňuje vyvíjet aplikaci bez nutnosti volné paměti.</span><span class="sxs-lookup"><span data-stu-id="d4dea-105">Enables you to develop your application without having to free memory.</span></span>  
   
