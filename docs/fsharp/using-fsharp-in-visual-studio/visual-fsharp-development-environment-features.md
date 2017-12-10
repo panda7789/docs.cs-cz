@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 809e9a34-b271-4c87-8356-2426b44f4721
-ms.openlocfilehash: bcba1e5d1cae1c610525c51bdbdd54088359e79a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 05727bf11eccfd64f823dd280b1a19210815ca5a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="visual-f-development-environment-features"></a>Visual F # – funkce vývojového prostředí
 
@@ -50,7 +50,7 @@ Následující tabulka shrnuje funkce vlastnosti projektu podporované a nepodpo
 |Zabezpečení (Změna úrovně důvěryhodnosti)|Ne||
 
 ## <a name="code-and-text-editor-features"></a>Kódu a textovém editoru funkce
-Následující funkce sady Visual Studiocode a textové editory jsou podporovány v jazyce F #. Obecné informace o úpravách kód v sadě Visual Studio a funkce textového editoru najdete v tématu [psaní kódu v editoru kódu a textovém editoru](https://msdn.microsoft.com/library/efc4xwkb.aspx).
+Následující funkce sady Visual Studiocode a textové editory jsou podporovány v jazyce F #. Obecné informace o úpravách kód v sadě Visual Studio a funkce textového editoru najdete v tématu [psaní kódu v editoru kódu a textovém editoru](/visualstudio/ide/writing-code-in-the-code-and-text-editor).
 
 |Funkce|Popis|Podporované v jazyce F #?|
 |-------|-----------|----------------|
@@ -58,18 +58,18 @@ Následující funkce sady Visual Studiocode a textové editory jsou podporován
 |Automatické formátování|Přeformátuje kódu pomocí standardní odsazení a stylu.|Ne|
 |Záložky|Umožňuje uložit míst v editoru.|Ano|
 |Změnit odsazení|Odsadí nebo unindents vybrané řádky.|Ano|
-|[Hledání a nahrazení textu](https://msdn.microsoft.com/library/139eef4h.aspx)|Umožňuje hledat v souboru, projekt nebo řešení a potenciálně Změna textu.|Ano|
+|[Hledání a nahrazení textu](/visualstudio/ide/finding-and-replacing-text)|Umožňuje hledat v souboru, projekt nebo řešení a potenciálně Změna textu.|Ano|
 |Přechod na definici pro rozhraní .NET Framework API|Když kurzor je nastavený na rozhraní API rozhraní .NET Framework, ukazuje kód, který vygenerovala z metadata rozhraní .NET Framework.|Ne|
 |Přechod na definici pro uživatelské rozhraní API|Pokud je kurzor u entity program, který jste definovali, přesune kurzor na umístění ve vašem kódu, kde je definován entity.|Ano|
 |Přechod na řádek|Umožňuje přejít na konkrétní řádek v souboru, podle čísla řádku.|Ano|
 |Navigační panely v horní části souboru|Umožňuje přejít do umístění v kódu, například název funkce.|Ano|
-|Osnova. V tématu [osnovy](https://msdn.microsoft.com/library/td6a5x4s.aspx).|Umožňuje sbalit části kódu můžete vytvořit kompaktnější zobrazení.|Ano|
+|Osnova. V tématu [osnovy](/visualstudio/ide/outlining).|Umožňuje sbalit části kódu můžete vytvořit kompaktnější zobrazení.|Ano|
 |Převedení na tabulátory|Převede mezery na kartách.|Ano|
 |Zabarvení typu|Zobrazuje názvy typů definované v speciální barev.|Ano|
 |Rychle najít. V tématu rychle najít, najít a nahradit okno.|Umožňuje hledat v souboru nebo v projektu.|Ano|
 
 ## <a name="intellisense-features"></a>Funkce technologie IntelliSense
-Následující tabulka shrnuje funkce IntelliSense podporované a nepodporované v F #. Obecné informace o technologii IntelliSense, najdete v části [pomocí IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx).
+Následující tabulka shrnuje funkce IntelliSense podporované a nepodporované v F #. Obecné informace o technologii IntelliSense, najdete v části [pomocí IntelliSense](/visualstudio/ide/using-intellisense).
 
 |Funkce|Popis|Podporované v jazyce F #?|
 |-------|-----------|----------------|
@@ -108,10 +108,10 @@ Následující tabulka shrnuje podporu pro F # v sadě Visual Studio tools.
 |Hierarchie volání|Zobrazí strukturu vnořené funkce zavolá do vašeho kódu.|Ne|
 |Metriky kódu|Shromažďuje informace o kódu, jako jsou počty řádků.|Ne|
 |zobrazení tříd|Poskytuje založený na typu zobrazení kódu v projektu.|Ne|
-|[Okno Seznam chyb](https://msdn.microsoft.com/library/33df3b7a.aspx)|Zobrazí seznam chyb v kódu.|Ano|
+|[Okno Seznam chyb](/visualstudio/ide/reference/error-list-window)|Zobrazí seznam chyb v kódu.|Ano|
 |[F # interaktivní](../tutorials/fsharp-interactive/index.md)|Umožňuje vám zadejte (nebo zkopírujte a vložte) F # code a spustit okamžitě, nezávisle na vytvoření projektu. F # interaktivních okna je pro čtení, hodnocení, tisk smyčky (REPL).|Ano|
 |prohlížeč objektů|Umožňuje zobrazit typy v sestavení.|Typy F # jak se zobrazují v kompilovaném sestavení se nezobrazí přesně tak, jak je vytváříte. Můžete procházet kompilované reprezentace typů F #, ale typy nelze zobrazit, jak vypadají z F #.|
-|[Výstup – okno](https://msdn.microsoft.com/library/3hk6fby3.aspx)|Zobrazí sestavení výstupu.|Ano|
+|[Okno Výstup](/visualstudio/ide/reference/output-window)|Zobrazí sestavení výstupu.|Ano|
 |Analýza výkonu|Poskytuje nástroje pro měření výkonu vašeho kódu.|Ano|
 |Okno vlastností|Zobrazuje a umožňuje úpravy vlastností objektu ve vývojovém prostředí, který má právě fokus.|Ano|
 |[V Průzkumníku serveru](https://msdn.microsoft.com/library/x603htbk.aspx)|Poskytuje způsoby, jak pracovat s různými prostředky serveru.|Ano|

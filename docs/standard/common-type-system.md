@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
-ms.openlocfilehash: 9c2cc090dfd5405def0cd6ab9ec1771be4a332a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7f92dd26def56deacb24de37fb7f23f79799d20a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="common-type-system--common-language-specification"></a>Obecný systém typů & Common Language Specification
 
@@ -57,5 +57,5 @@ Lze najít dokumenty v [více prostředků](#more-resources) části níže zís
 
 ## <a name="more-resources"></a>Další prostředky
 
-*   [Obecný systém typů](https://msdn.microsoft.com/library/zcx1eb1e.aspx)
-*   [Common Language Specification](https://msdn.microsoft.com/library/12a7a7h3.aspx)
+*   [Obecný systém typů](./base-types/common-type-system.md)
+*   [Common Language Specification](language-independence-and-language-independent-components.md)

@@ -11,11 +11,11 @@ ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 caps.latest.revision: "41"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6be0f4dcf3aa9c66335ab466d1c50a5714314b42
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 45dd48a53d3fae58596d9328ef8daba566b2ded1
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec se objekt typu <xref:System.String> jehož hodnota je text. Interně, je text uložený jako sekvenční jen pro čtení kolekce <xref:System.Char> objekty. Neexistuje žádné ukončení null znak na konci C# řetězec; řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, nikoli počet znaků Unicode. Chcete-li získat přístup k jednotlivé body kódu Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -130,9 +130,9 @@ string s = String.Empty;
 |[Postupy: vyhledávání řetězců pomocí regulárních výrazů](../../../csharp/programming-guide/strings/how-to-search-strings-using-regular-expressions.md)|Vysvětluje, jak vyhledávání řetězců pomocí regulárních výrazů.|  
 |[Postupy: určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec a zjistěte, zda má platnou číselnou hodnotu.|  
 |[Postupy: převedení řetězce na datum a čas](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|Ukazuje, jak převést řetězec jako je například "01/24/2008" k <xref:System.DateTime?displayProperty=nameWithType> objektu.|  
-|[Základní operace s řetězci](https://msdn.microsoft.com/library/a292he7t)|Obsahuje odkazy na témata, které používají <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> metody k provedení základní operace s řetězci.|  
-|[Analýza řetězců](https://msdn.microsoft.com/library/b4w53z0y)|Popisuje, jak vložit znaky nebo prázdné mezery na řetězec.|  
-|[Porovnávání řetězců](https://msdn.microsoft.com/library/fbh501kz)|Obsahuje informace o tom, jak porovnat řetězce a příklady v C# a Visual Basic.|  
+|[Základní operace s řetězci](../../../../docs/standard/base-types/basic-string-operations.md)|Obsahuje odkazy na témata, které používají <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> metody k provedení základní operace s řetězci.|  
+|[Analýza řetězců](../../../../docs/standard/base-types/parsing-strings.md)|Popisuje, jak vložit znaky nebo prázdné mezery na řetězec.|  
+|[Porovnávání řetězců](../../../../docs/standard/base-types/comparing.md)|Obsahuje informace o tom, jak porovnat řetězce a příklady v C# a Visual Basic.|  
 |[Používání třídy StringBuilder](../../../standard/base-types/stringbuilder.md)|Popisuje, jak vytvořit a upravit objekty dynamického řetězce pomocí <xref:System.Text.StringBuilder> třídy.|  
 |[LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|Poskytuje informace o tom, jak provádět různé operace s řetězci pomocí dotazů LINQ.|  
 |[Průvodce programováním v C#](../../../csharp/programming-guide/index.md)|Obsahuje odkazy na témata, která popisují programovací konstrukce v jazyce C#.|  

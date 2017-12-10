@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 809f0eaddf298b0d6a57e217c2bcf5450675c3e9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: dd4062905b38f4dff99c03c9bb3849ac3b552e5d
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="tour-of-net"></a>Přehled používání rozhraní .NET
 
@@ -124,7 +124,7 @@ Další informace a zobrazit některé ukázky, najdete v článku [LINQ (Langua
 
 Každý operační systém, zahrnuje programovací rozhraní aplikace (API), která poskytuje systémových služeb. Rozhraní .NET poskytuje několik způsobů, jak volat těchto rozhraní API.
 
-Hlavní způsob k provedení nativní Interoperabilita je prostřednictvím "vyvolání platformy" nebo P/Invoke pro zkrácení, která je podporována mezi platformami, Linux a Windows. Pouze pro systém Windows způsob, jakým způsobem nativní interoperabilita se označuje jako "COM interoperabilita", který se používá pro práci s [COM – součásti](https://msdn.microsoft.com/library/bwa2bx93.aspx) ve spravovaném kódu. Je postavená na infrastruktuře P/Invoke, ale funguje trochu různými způsoby.
+Hlavní způsob k provedení nativní Interoperabilita je prostřednictvím "vyvolání platformy" nebo P/Invoke pro zkrácení, která je podporována mezi platformami, Linux a Windows. Pouze pro systém Windows způsob, jakým způsobem nativní interoperabilita se označuje jako "COM interoperabilita", který se používá pro práci s [COM – součásti](/cpp/atl/introduction-to-com) ve spravovaném kódu. Je postavená na infrastruktuře P/Invoke, ale funguje trochu různými způsoby.
 
 Většina na Mono (a proto je Xamarin) podpory interoperability Java a jazyka Objective-C jsou vytvořeny podobně, to znamená, že použít stejné zásady.
 

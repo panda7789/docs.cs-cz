@@ -1,6 +1,6 @@
 ---
 title: "Úrovně přístupnosti (Referenční dokumentace jazyka C#)"
-ms.date: 07/20/2015
+ms.date: 12/06/2017
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.topic: article
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 77124554d7a0b38414e154e024aceddbfffcfbd4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 816ee0fab3fae21bff2ffbfcbfe39d04dcf95025
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="accessibility-levels-c-reference"></a>Úrovně přístupnosti (Referenční dokumentace jazyka C#)
+
 Použijte modifikátory přístupu [veřejné](../../../csharp/language-reference/keywords/public.md), [chráněné](../../../csharp/language-reference/keywords/protected.md), [interní](../../../csharp/language-reference/keywords/internal.md), nebo [privátní](../../../csharp/language-reference/keywords/private.md), chcete zadat jednu z následujících deklarovaný úrovně přístupnosti pro členy.  
   
 |Deklarované usnadnění přístupu|Význam|  
@@ -27,7 +27,7 @@ Použijte modifikátory přístupu [veřejné](../../../csharp/language-referenc
 |`internal`|Přístup je omezen na aktuální sestavení.|  
 |`protected internal`|Přístup je omezen na aktuální sestavení nebo typy odvozené od obsahující třídy.|  
 |`private`|Přístup je omezen na nadřazeném typu.|  
-|`private protected`|Přístup je omezen na obsahující třídu nebo typy odvozené od třídy obsahující v rámci aktuální sestavení.|  
+|`private protected`|Přístup je omezen na obsahující třídu nebo typy odvozené od třídy obsahující v rámci aktuální sestavení. Dostupné od verze jazyka C# 7.2. |  
   
  Modifikátor přístupu jenom jeden je povolena pro člena nebo typu, s výjimkou při použití `protected internal` nebo `private protected` kombinace.  
   

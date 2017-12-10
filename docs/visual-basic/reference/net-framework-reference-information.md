@@ -12,11 +12,11 @@ ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c5c2824b3af8753dbb90577fe47cf63d2dc793ff
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 158da956015e022c20550171ebe867e7c975c03a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Referenční dokumentace rozhraní .NET Framework (Visual Basic)
 Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.  
@@ -25,13 +25,13 @@ Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshor
  [Začínáme](../../framework/get-started/index.md)  
  Poskytuje ucelený přehled o rozhraní .NET Framework a odkazy na další materiály.  
   
- [Přehled knihovny tříd](https://msdn.microsoft.com/library/hfa3fa08)  
+ [Přehled knihovny tříd](../../../docs/standard/class-library-overview.md)  
  Představuje třídy, rozhraní a typy hodnot, které pomáhají urychlit a optimalizovat proces vývoje a poskytují přístup k funkci systému.  
   
- [Průvodce vývojem](https://msdn.microsoft.com/library/hh156542)  
+ [Průvodce vývojem](../../../docs/framework/development-guide.md)  
  Poskytuje průvodce pro všechny úlohy a oblasti klíčová technologie pro vývoj aplikací, včetně vytváření, konfiguraci, ladění, zabezpečení a nasazení aplikace. Toto téma obsahuje také informace o dynamické programování, vzájemná funkční spolupráce, rozšiřitelnosti, správa paměti a dělení na vlákna.  
   
- [Nástroje](https://msdn.microsoft.com/library/d9kh6s92)  
+ [Nástroje](../../../docs/framework/tools/index.md)  
  Popisuje nástroje, které můžete použít k vývoji, konfigurovat a nasazovat aplikace pomocí technologie .NET Framework.  
   
  [.NET framework – ukázky](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  

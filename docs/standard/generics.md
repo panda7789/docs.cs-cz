@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-ms.openlocfilehash: 08b8de2fe17a0032a1c1180667f39b1d6ce0feb6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: acd6f1cc3a6200140f25fc31e4f6fb0f8da5a6e3
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="generic-types-generics-overview"></a>Obecné typy (Obecné) – přehled
 
@@ -22,7 +22,7 @@ Používáme obecné vždy v jazyce C#, ať už implicitně nebo explicitně. P�
 
 Poprvé rozhraní .NET Framework 2.0, obecné typy související se situací změny jazyka C# a Common Language Runtime (CLR). **Obecné typy** jsou v podstatě "kód šablonu", který umožňuje vývojářům definovat [bezpečnost typů](https://msdn.microsoft.com/library/hbzz1a9a.aspx) datové struktury bez potvrzení typ skutečná data. Například `List<T>` je [obecnou kolekci](xref:System.Collections.Generic) , lze deklarovat a použít s žádným typem: `List<int>`, `List<string>`, `List<Person>`atd.
 
-Ano co je bod? Obecné typy jsou užitečné Chcete-li to porozumět, musíme si prohlédněte určité třídy před a po přidání obecné typy. Podívejme se na `ArrayList`. V jazyce C# 1.0 `ArrayList` elementy byly typu `object`. To znamenalo, že byl libovolný element, který byl přidán bezobslužně převeden do `object`; stejné co se stane na čtení elementy ze seznamu (Tento proces se označuje jako [zabalení](https://msdn.microsoft.com/library/yz2be5wk.aspx) a rozbalení v uvedeném pořadí). Zabalení a rozbalení mít vliv výkonu. Více než ale není v době kompilace zjistit, co je skutečný typ dat v seznamu. Díky tomu pro některé křehké kód. Obecné typy tento problém vyřešit tím, že poskytuje další informace o typu dat, které bude obsahovat každou instanci seznamu. Jednoduše PUT, lze přidat pouze celých čísel na `List<int>` a přidat pouze osoby, aby `List<Person>`atd.
+Ano co je bod? Obecné typy jsou užitečné Chcete-li to porozumět, musíme si prohlédněte určité třídy před a po přidání obecné typy. Podívejme se na `ArrayList`. V jazyce C# 1.0 `ArrayList` elementy byly typu `object`. To znamenalo, že byl libovolný element, který byl přidán bezobslužně převeden do `object`; stejné co se stane na čtení elementy ze seznamu (Tento proces se označuje jako [zabalení](../../docs/csharp/programming-guide/types/boxing-and-unboxing.md) a rozbalení v uvedeném pořadí). Zabalení a rozbalení mít vliv výkonu. Více než ale není v době kompilace zjistit, co je skutečný typ dat v seznamu. Díky tomu pro některé křehké kód. Obecné typy tento problém vyřešit tím, že poskytuje další informace o typu dat, které bude obsahovat každou instanci seznamu. Jednoduše PUT, lze přidat pouze celých čísel na `List<int>` a přidat pouze osoby, aby `List<Person>`atd.
 
 Obecné typy jsou také k dispozici v době běhu nebo **reified**. To znamená, že modul runtime ví, jaký typ dat struktura používáte a můžete ho uložit v paměti efektivněji.
 
@@ -72,4 +72,4 @@ Užitečné věc o běhu znalost typ vaší obecného je lépe ladění prostře
 ## <a name="further-reading-and-resources"></a>Další čtení a prostředky
 
 *   [Úvod do obecnými typy C#](https://msdn.microsoft.com/library/ms379564.aspx)
-*   [C# Průvodce programováním – obecné typy](https://msdn.microsoft.com/library/512aeb7t.aspx)
+*   [C# Průvodce programováním – obecné typy](../../docs/csharp/programming-guide/generics/index.md)

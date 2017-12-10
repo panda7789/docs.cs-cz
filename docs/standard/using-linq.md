@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 1478b5dc5844cef0abfea44eba88a12801d32bd4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: ae0fb23c3edb6488fd0c281b1b94548e1cb2d3bd
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language integrovaného dotazu)
 
@@ -80,7 +80,7 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
 
 Psaní kódu ručně procházení v dokumentu XML k provedení této úlohy bude podstatně více náročné.
 
-Jediné, co můžete provést zprostředkovatelům LINQ interakci se souborem XML není. [Technologie LINQ to SQL](https://msdn.microsoft.com/library/bb386976.aspx) je poměrně holou objekt relační Mapper (ORM) pro databázi MSSQL serveru. [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna nabízí efektivní traversal dokumentu JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovnu, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://msdn.microsoft.com/library/Bb546158.aspx)!
+Jediné, co můžete provést zprostředkovatelům LINQ interakci se souborem XML není. [Technologie LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně holou objekt relační Mapper (ORM) pro databázi MSSQL serveru. [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna nabízí efektivní traversal dokumentu JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovnu, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://msdn.microsoft.com/library/Bb546158.aspx)!
 
 ## <a name="why-use-the-query-syntax"></a>Proč používat syntaxi dotazu?
 
@@ -254,7 +254,7 @@ Ve formuláři diagram:
 
 ![PLINQ diagram](./media/using-linq/plinq-diagram.png)
 
-Paralelní úlohy vázané na procesor, které lze snadno vyjádřit pomocí LINQ (jinými slovy, jsou čistá funkce a mít žádné vedlejší účinky) jsou skvělý kandidátem pro PLINQ. Pro úlohy, které _provést_ mít vedlejším účinkem, zvažte použití [Task Parallel Library](https://msdn.microsoft.com/library/dd460717.aspx).
+Paralelní úlohy vázané na procesor, které lze snadno vyjádřit pomocí LINQ (jinými slovy, jsou čistá funkce a mít žádné vedlejší účinky) jsou skvělý kandidátem pro PLINQ. Pro úlohy, které _provést_ mít vedlejším účinkem, zvažte použití [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).
 
 ## <a name="further-resources"></a>Další prostředky:
 

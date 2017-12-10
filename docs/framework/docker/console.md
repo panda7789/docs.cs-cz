@@ -9,11 +9,11 @@ ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: 2fdce1e131eaa0d6952b2910f73105f097487711
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 037d94452dd62c06fe6d8ac7aea1143f52b96d32
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Konzolové aplikace spuštěna v kontejnerech Windows
 
@@ -59,7 +59,7 @@ Je potřeba mít Docker pro systém Windows, verze 1.12 Beta 26 nebo vyšší pr
 ## <a name="building-the-application"></a>Vytváření aplikace
 Obvykle jsou konzolových aplikací distribuovaných přes instalačního programu, FTP nebo sdílené složky nasazení. Pokud nasazujete do kontejneru, prostředky nutné zkompilovat a dvoufázové instalace do umístění, které lze použít při vytváření bitové kopie Docker.
 
-V *build.ps1*, tento skript využívá [MSBuild](https://msdn.microsoft.com/library/dd393574.aspx) zkompilovat aplikace k dokončení úlohy vytváření prostředků. Existuje několik parametrů předaný MSBuild finalizace potřebné prostředky. Název souboru projektu nebo řešení, které mají být zkompilovány, do, umístění pro výstup a nakonec konfigurace (verze nebo verze pro ladění).
+V *build.ps1*, tento skript využívá [MSBuild](/visualstudio/msbuild/msbuild) zkompilovat aplikace k dokončení úlohy vytváření prostředků. Existuje několik parametrů předaný MSBuild finalizace potřebné prostředky. Název souboru projektu nebo řešení, které mají být zkompilovány, do, umístění pro výstup a nakonec konfigurace (verze nebo verze pro ladění).
 
 Ve volání `Invoke-MSBuild` `OutputPath` je nastaven na **publikování** a `Configuration` nastavena na **verze**. 
 

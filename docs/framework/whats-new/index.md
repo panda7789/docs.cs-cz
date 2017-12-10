@@ -13,11 +13,11 @@ ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 53205ca9fd304d1dd1c76c5d6952d78634c5b231
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
+ms.openlocfilehash: 2c8c7f8c4d4c7c882f4f295b13fa4add3a11582f
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -777,7 +777,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 ### <a name="native-image-generator-ngen-pdbs"></a>Soubory PDB (NGEN) Generátor nativních bitových kopií
  Trasování událostí mezi počítači umožňuje zákazníkům profilu program na počítači A a podívejte se na data profilování s mapování řádku zdroje na počítači B. používání předchozích verzích rozhraní .NET Framework, uživatel by zkopírujte všechny moduly a nativní bitové kopie z PROFILOVANÉHO počítač analysis počítač, který obsahuje PDB IL vytvořit zdroj nativní mapování. Během tohoto procesu může fungovat i v případě, že soubory jsou relativně malé, například pro telefonní aplikace, soubory může být velmi velké v systémech klientů a vyžadují významné čas potřebný ke kopírování.
 
- S Ngen PDB můžete vytvořit NGen PDB, který obsahuje mapování IL nativní bez závislosti na IL PDB. V našem scénáři trasování událostí mezi počítači všechno, co je potřeba je zkopírovat nativních bitových kopií PDB, který je generovaný počítače A počítač b a použití [ladění rozhraní API přístup](https://msdn.microsoft.com/library/ee8x173s.aspx) číst IL PDB zdroj IL mapování a nativního bitové kopie na PDB IL nativní mapování. Kombinace obou mapování poskytuje zdroj nativní mapování. Vzhledem k tomu, že nativních bitových kopií PDB je mnohem menší než všechny moduly a nativní bitové kopie, proces kopírování z počítače A počítač b je mnohem rychlejší.
+ S Ngen PDB můžete vytvořit NGen PDB, který obsahuje mapování IL nativní bez závislosti na IL PDB. V našem scénáři trasování událostí mezi počítači všechno, co je potřeba je zkopírovat nativních bitových kopií PDB, který je generovaný počítače A počítač b a použití [ladění rozhraní API přístup](/visualstudio/debugger/debug-interface-access/debug-interface-access-sdk-reference) číst IL PDB zdroj IL mapování a nativního bitové kopie na PDB IL nativní mapování. Kombinace obou mapování poskytuje zdroj nativní mapování. Vzhledem k tomu, že nativních bitových kopií PDB je mnohem menší než všechny moduly a nativní bitové kopie, proces kopírování z počítače A počítač b je mnohem rychlejší.
 
 <a name="v46"></a> 
 ## <a name="whats-new-in-net-2015"></a>Co je nového v rozhraní .NET 2015

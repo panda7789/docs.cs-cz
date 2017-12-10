@@ -8,15 +8,15 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 1745198720fd12a9d26aab2d2afb2c5dd6b6b49d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 88decdc2f2ea945dc04cdb66402b12bd972414ce
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="using-enumeration-classes-instead-of-enum-types"></a>Pomocí třídy výčtu místo typy výčtu
 
-[Výčty](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx) (*výčty* pro zkrácení) jsou dynamické jazyk obálku kolem integrální typu. Můžete chtít omezit jejich použití k když ukládáte jednu hodnotu z uzavřených sadu hodnot. Klasifikace podle pohlaví (například mužského, samičího neznámé), nebo velikosti (S, M, L, XL) jsou dobrými příklady. Pomocí výčty pro tok řízení nebo robustnější abstrakce může být [code pach](http://deviq.com/code-smells/). Tento typ využití povede k křehké kód s mnoha příkazy toku řízení kontrola hodnoty výčtového typu.
+[Výčty](../../../../docs/csharp/language-reference/keywords/enum.md) (*výčty* pro zkrácení) jsou dynamické jazyk obálku kolem integrální typu. Můžete chtít omezit jejich použití k když ukládáte jednu hodnotu z uzavřených sadu hodnot. Klasifikace podle pohlaví (například mužského, samičího neznámé), nebo velikosti (S, M, L, XL) jsou dobrými příklady. Pomocí výčty pro tok řízení nebo robustnější abstrakce může být [code pach](http://deviq.com/code-smells/). Tento typ využití povede k křehké kód s mnoha příkazy toku řízení kontrola hodnoty výčtového typu.
 
 Místo toho můžete vytvořit výčet tříd, které povolit všechny bohaté funkce jazyka objektově orientovaný. Ale nejedná se o kritický problém a v mnoha případech pro jednoduchost, stále můžete regulární výčty, pokud vaši volbu.
 

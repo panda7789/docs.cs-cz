@@ -19,11 +19,11 @@ ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
 caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f77bd40ea8ec0745dda3d40eee273d9e7338263b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0633e348c762879caa4e3f72a3662722b3894e4c
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]není jenom o načtení dat. Je také výkonný nástroj pro převod data. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence jako vstup a upravit v mnoho způsobů, jak vytvořit nové pořadí výstup. Můžete upravit pořadí samotné beze změny samotné prvky řazení a seskupování. Ale možná nejúčinnějších funkci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzule. Například můžete provádět následující úlohy:  
@@ -107,7 +107,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
- [Technologie LINQ to SQL](https://msdn.microsoft.com/library/bb386976)  
+ [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
  [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
  [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
  [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  

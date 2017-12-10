@@ -12,11 +12,11 @@ ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
 caps.latest.revision: "28"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: cba6852f129e0c62a7ece97f18b6f67c423c608c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 92aef08636b7bba3a61367f8a707c82c75f8d3d3
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří dobrým místem, kde spustit získávání informací o produktu nebo oblasti určité funkce.  
@@ -37,19 +37,19 @@ Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří d
  [Vytváření a používání dynamických objektů (C# a Visual Basic)](../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
  Uvádí, jak vytvořit vlastní objekt, který dynamicky zveřejňuje obsah textového souboru a jak vytvořit projekt, který používá `IronPython` knihovny.  
    
- [Vytvoření složeného ovládacího prvku pomocí Visual C#](https://msdn.microsoft.com/library/a6h7e207.aspx)  
+ [Vytvoření složeného ovládacího prvku pomocí Visual C#](../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
  Ukazuje vytvoření jednoduché složeného ovládacího prvku a rozšířit jeho funkce prostřednictvím dědičnosti.  
   
- [Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio návrhu](https://msdn.microsoft.com/library/35ea88wb.aspx)  
+ [Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio návrhu](../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
  Ukazuje, jak vytvořit vlastní designer vlastního ovládacího prvku.  
   
- [Dědění z ovládacího prvku Windows Forms pomocí Visual C#](https://msdn.microsoft.com/library/5h0k2e6x.aspx)  
+ [Dědění z ovládacího prvku Windows Forms pomocí Visual C#](../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)  
  Ukazuje vytvoření ovládacího prvku jednoduché zděděné tlačítko. Toto tlačítko dědí funkce standardní tlačítka Windows Forms a zveřejňuje vlastní člena.  
   
- [Ladění vlastní Windows Forms – ovládací prvky v době návrhu](https://msdn.microsoft.com/library/5ytx0z24.aspx)  
+ [Ladění vlastní Windows Forms – ovládací prvky v době návrhu](../../docs/framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)  
  Popisuje, jak k ladění chování návrhu vlastního ovládacího prvku.
 
- [Provádění obecných úloh pomocí inteligentních značek v systému Windows Forms – ovládací prvky](https://msdn.microsoft.com/library/xhz359sc.aspx)  
+ [Provádění obecných úloh pomocí inteligentních značek v systému Windows Forms – ovládací prvky](../../docs/framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md)  
  Ukazuje některé běžně prováděné úlohy, jako je například přidávání nebo odebírání na kartě `TabControl`ukotvení nadřazenému prvku a změna orientace `SplitContainer` ovládacího prvku.  
   
  [Zápis dotazů v C# (LINQ)](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
@@ -76,4 +76,4 @@ Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří d
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v C#](../csharp/programming-guide/index.md)  
- [Visual Studio – ukázky](/visualstudio/ide/visual-studio-samples)
+ [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-samples)

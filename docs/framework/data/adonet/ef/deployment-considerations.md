@@ -13,18 +13,18 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 03c64c9a300a92a86dfac1ed92c67be248e53219
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 31f458f884bb7d1aad64657244e2e0278d713c20
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="deployment-considerations-entity-framework"></a>Důležité informace o nasazení (rozhraní Entity Framework)
 Toto téma obsahuje informace o nasazení aplikace, které používají ADO.NET Entity Framework pro přístup k datům. Další informace o rozhraní Entity Framework najdete v tématu [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md).  
   
  Rozhraní Entity Framework poskytuje sadu nástrojů, které integrovat a usnadňují vývoj v sadě Visual Studio. Další informace najdete v tématu [nástrojů modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527). Toto téma nepopisuje použití určitých technologií nasazení aplikace rozhraní Entity Framework.  
   
- Visual Studio poskytuje zařízení pro distribuci a nasazení aplikací, jako je například ClickOnce – nasazení. Další informace najdete v tématu [nasazení aplikací a součástí](https://msdn.microsoft.com/library/wtzawcsz) v dokumentaci sady Visual Studio.  
+ Visual Studio poskytuje zařízení pro distribuci a nasazení aplikací, jako je například ClickOnce – nasazení. Další informace najdete v tématu [nasazení aplikací a součástí](/visualstudio/deployment/deploying-applications-services-and-components) v dokumentaci sady Visual Studio.  
   
  Když nasadíte aplikaci používající rozhraní Entity Framework, platí následující aspekty:  
   

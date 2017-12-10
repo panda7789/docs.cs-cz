@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 28b588f2-0c9e-4c0d-babf-901ed934638a
-ms.openlocfilehash: 43ff52134093acbd670d48ea83d40f1e9eb377c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9465f33bac6fa8234f684ddefe24cbe4d6c71028
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="events"></a>Události
 
@@ -182,7 +182,7 @@ Application.Run(appForm)
 ## <a name="see-also"></a>Viz také
 [Členy](index.md)
 
-[Zpracování a generování událostí](https://msdn.microsoft.com/library/edzehd2t.aspx)
+[Zpracování a generování událostí](../../../../docs/standard/events/index.md)
 
 [Výrazy lambda: `fun` – klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md)
 

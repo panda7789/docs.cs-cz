@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
-ms.openlocfilehash: a4819c2174485411a83e1baa1a0da6c759ba04f8
-ms.sourcegitcommit: 5126483ef09c487296801bbac368dd8a55a6b709
+ms.openlocfilehash: c6e8b378c093ffd58678e331f0ad02fb27991ecf
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="native-interoperability"></a>Nativní interoperabilita
 
@@ -263,7 +263,7 @@ Obě uvedených příkladech závisí na parametry a v obou případech jsou uve
 
 **Zařazování** je proces transformace typy, když potřebují překročit spravované hranice do nativní a naopak.
 
-Zařazování důvod je potřeba je proto, že typy v kód spravovanými a nespravovanými se liší. Ve spravovaném kódu, například máte `String`, zatímco v nespravované world mohou být řetězce Unicode ("širokou"), kódování Unicode, ukončené hodnotou null, ASCII, atd. Ve výchozím nastavení, se pokusí provést věc vpravo na výchozí chování, které se zobrazí na základě subsystém P/Invoke [MSDN](https://msdn.microsoft.com/library/zah6xy75.aspx). Pro tyto situace, kdy potřebujete další kontrolu, ale můžete použít `MarshalAs` atribut k určení, co je očekávaný typ na nespravované straně. Například pokud chceme řetězec, který má být odeslán jako ANSI řetězce ukončené hodnotou null, můžeme ho udělat takto:
+Zařazování důvod je potřeba je proto, že typy v kód spravovanými a nespravovanými se liší. Ve spravovaném kódu, například máte `String`, zatímco v nespravované world mohou být řetězce Unicode ("širokou"), kódování Unicode, ukončené hodnotou null, ASCII, atd. Ve výchozím nastavení, se pokusí provést věc vpravo na výchozí chování, které se zobrazí na základě subsystém P/Invoke [MSDN](../../docs/framework/interop/default-marshaling-behavior.md). Pro tyto situace, kdy potřebujete další kontrolu, ale můžete použít `MarshalAs` atribut k určení, co je očekávaný typ na nespravované straně. Například pokud chceme řetězec, který má být odeslán jako ANSI řetězce ukončené hodnotou null, můžeme ho udělat takto:
 
 ```csharp
 [DllImport("somenativelibrary.dll")]

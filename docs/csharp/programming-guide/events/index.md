@@ -12,11 +12,11 @@ ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
 caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f714bded446e62ac6165d691d2404249275178e8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5ab40de46bf198cf683ec4847a42d88b3d4807e0
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="events-c-programming-guide"></a>Události (Průvodce programováním v C#)
 Povolit události [třídy](../../../csharp/language-reference/keywords/class.md) nebo objekt, který chcete upozornit jiné třídy nebo objekty něco zájmu případě. Třídu, která odešle (nebo *vyvolá*) událost se nazývá *vydavatele* a třídy, které přijímají (nebo *zpracování*) se označují jako událost *odběratele* .  
@@ -34,7 +34,7 @@ Povolit události [třídy](../../../csharp/language-reference/keywords/class.md
   
 -   Události jsou obvykle používány signál uživatele akcí, například kliknutí na tlačítko nebo nabídky výběrů v grafickém uživatelském rozhraní.  
   
--   Událost má více odběrateli, obslužné rutiny událostí jsou vyvolány synchronně, když událost se vyvolá. Vyvolání událostí asynchronně, najdete v tématu [volání synchronních metod asynchronně](https://msdn.microsoft.com/library/2e08f6yc).  
+-   Událost má více odběrateli, obslužné rutiny událostí jsou vyvolány synchronně, když událost se vyvolá. Vyvolání událostí asynchronně, najdete v tématu [volání synchronních metod asynchronně](../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).  
   
 -   V [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd události jsou založené na <xref:System.EventHandler> delegovat a <xref:System.EventArgs> základní třídy.  
   
@@ -67,5 +67,5 @@ Povolit události [třídy](../../../csharp/language-reference/keywords/class.md
  <xref:System.EventHandler>  
  [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
  [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
- [Vytváření obslužných rutin událostí v systému Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx)  
- [Vícevláknové programování s asynchronním vzorem založený na událostech](https://msdn.microsoft.com/library/hkasytyf)
+ [Vytváření obslužných rutin událostí v systému Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [Vícevláknové programování s asynchronním vzorem založený na událostech](../../../../docs/standard/asynchronous-programming-patterns/multithreaded-programming-with-the-event-based-asynchronous-pattern.md)

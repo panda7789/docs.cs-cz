@@ -13,11 +13,11 @@ ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
 caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5822f2e4e120f476d925520f0681055f058e3df1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2965543066b0846a6a4f8a3199590049947122f2
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="interoperability-c-programming-guide"></a>Interoperabilita (Průvodce programováním v C#)
 Vzájemná funkční spolupráce umožňuje zachovat a využít existující investice v nespravovaném kódu. Kód, který běží pod kontrolou common language runtime (CLR) se nazývá *spravovaného kódu*, a kód, který je spuštěn mimo modulu CLR se nazývá *nespravovaného kódu*. COM, COM +, C++ komponent, součásti ActiveX a Microsoft Win32 API jsou příklady nespravovaného kódu.  
@@ -49,5 +49,5 @@ Vzájemná funkční spolupráce umožňuje zachovat a využít existující inv
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>  
  [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Spolupráce s nespravovaným kódem](https://msdn.microsoft.com/library/sd10k43k)  
+ [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
  [Návod: Programování pro Office](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)

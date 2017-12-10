@@ -15,11 +15,11 @@ ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d9347f7771e0e86f9a19cbec94ef59dcf1bdb250
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 28ec54dc062d4fdea4836b0ecc8699982dace623
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>Interoperabilita modelů COM v aplikacích .NET Framework (Visual Basic)
 Pokud chcete použít objekty COM a .NET Framework objekty ve stejné aplikaci, budete muset vyřešit rozdíly v tom, jak existují objekty v paměti. Objekt rozhraní .NET Framework je umístěn ve spravované paměti – paměť řízené modul common language runtime – a může podle potřeby přesunout modulem runtime. Objekt COM se nachází v nespravované paměti a neočekává přesunout do jiného umístění v paměti. [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] poskytují nástroje pro řízení interakce těchto spravovaných a nespravovaných součásti. Další informace o spravovaném kódu najdete v tématu [modul Common Language Runtime](../../../standard/clr.md).  
@@ -35,7 +35,7 @@ Pokud chcete použít objekty COM a .NET Framework objekty ve stejné aplikaci, 
  [Chyba obálky zprostředkovatele komunikace s objekty COM](/cpp/misc/com-interop-wrapper-error)  
  Popisuje důsledky a možnosti, pokud systém projektu nelze vytvořit obálku vzájemná funkční spolupráce COM pro konkrétní součást.  
   
- [Spolupráce s nespravovaným kódem](https://msdn.microsoft.com/library/sd10k43k)  
+ [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
  Stručně popisuje některé z potíží interakce mezi spravovanými a nespravovanými kódu a obsahuje odkazy na další studie.  
   
  [COM – obálky](../../../framework/interop/com-wrappers.md)  

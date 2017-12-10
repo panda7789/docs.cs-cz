@@ -11,11 +11,11 @@ ms.assetid: 236d157d-37c0-4ee8-89fc-721e6c596325
 caps.latest.revision: "4"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 633fe784b98bf67086581b82fb4b00cff28d5f5a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 661208662c022b2a3b9c5daae6b0425e46ea6501
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="threading-c"></a>Dělení na vlákna (C#)
 Dělení na vlákna umožňuje vašeho programu C# k provedení souběžné zpracování, takže můžete provést více než jednu operaci najednou. Například můžete dělení na vlákna monitorovat vstup od uživatele, provedení úlohy na pozadí a zpracování souběžných datové proudy vstupu.  
@@ -26,7 +26,7 @@ Dělení na vlákna umožňuje vašeho programu C# k provedení souběžné zpra
   
 -   Rozhraní .NET Framework <xref:System.Threading> použití vláken snazší díky oboru názvů.  
   
--   Vlákna sdílet prostředky aplikace. Další informace najdete v tématu [použití vláken a zřetězení](https://msdn.microsoft.com/library/e1dx6b2h).  
+-   Vlákna sdílet prostředky aplikace. Další informace najdete v tématu [použití vláken a zřetězení](../../../../../docs/standard/threading/using-threads-and-threading.md).  
   
  Ve výchozím nastavení má programu v C# jedno vlákno. Pomocná vláken však můžete vytvořit a používají ke spouštění kódu paralelně s primární vlákno. Tyto vláken se často nazývají *pracovních vláken*.  
   
@@ -39,7 +39,7 @@ Dělení na vlákna umožňuje vašeho programu C# k provedení souběžné zpra
  Pomocí některé nebo všechny tyto třídy můžete synchronizovat aktivity z více vláken, ale podporuje někteří podporu pro dělení na vlákna jazyka C#. Například [Lock – příkaz](../../../../csharp/language-reference/keywords/lock-statement.md) poskytuje funkce synchronizace prostřednictvím implicitní použití <xref:System.Threading.Monitor>.  
   
 > [!NOTE]
->  Počínaje [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], vícevláknové programování je výrazně jednodušší s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy, [paralelní LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688), nové souběžných kolekce tříd v <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů a nové programovací model, který je založen na konceptu úkolů, nikoli vláken. Další informace najdete v tématu [paralelní programování](https://msdn.microsoft.com/library/dd460693).  
+>  Počínaje [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], vícevláknové programování je výrazně jednodušší s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy, [paralelní LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688), nové souběžných kolekce tříd v <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů a nové programovací model, který je založen na konceptu úkolů, nikoli vláken. Další informace najdete v tématu [paralelní programování](../../../../../docs/standard/parallel-programming/index.md).  
   
 ## <a name="related-topics"></a>Související témata  
   
@@ -52,4 +52,4 @@ Dělení na vlákna umožňuje vašeho programu C# k provedení souběžné zpra
 |[Časovače vláken (C#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md)|Popisuje postup spouštění procedur v samostatných vláknech v pevných intervalech.|  
 |[Přístup z více vláken sdružování (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)|Popisuje, jak používat fond pracovních vláken, které jsou spravovány systémem.|  
 |[Postupy: použití fondu vláken (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|Demonstruje synchronizované používání více vláken ve fondu vláken.|  
-|[Dělení na vlákna](https://msdn.microsoft.com/library/3e8s7xdd)|Popisuje, jak implementovat dělení na vlákna v rozhraní .NET Framework.|
+|[Dělení na vlákna](../../../../../docs/standard/threading/index.md)|Popisuje, jak implementovat dělení na vlákna v rozhraní .NET Framework.|

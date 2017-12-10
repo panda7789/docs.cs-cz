@@ -11,11 +11,11 @@ ms.assetid: f148f13f-a0d5-4f22-9c87-4b73d5dde270
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2993ef3f424aa6487681e194f21e0f82193342ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f9fc23cf7afbd28f0c9ae438cbce298cbf362fbd
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="attributes-c"></a>Atributy (C#)
 Atributy poskytují výkonný metoda spojování metadata nebo deklarativní informace s kódem (sestavení, typy, metody, vlastnosti a tak dále). Po atribut je spojen s entitou program, může být dotazován atribut v době běhu pomocí techniky názvem *reflexe*. Další informace najdete v tématu [reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md).  
@@ -182,4 +182,4 @@ int Method3() { return 0; }
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)  
  [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
- [Atributy](https://msdn.microsoft.com/library/5x6cd29c)
+ [Atributy](../../../../../docs/standard/attributes/index.md)

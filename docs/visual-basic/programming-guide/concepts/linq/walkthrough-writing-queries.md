@@ -17,11 +17,11 @@ ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
 caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 00103fe95912ba44a764cef30b337603301c8479
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d30ad7f0db2760427493610c630f3fff8dcfac31
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů ve Visual Basic
 Tento návod ukazuje, jak můžete použít funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz výrazy. Návod ukazuje, jak vytvářet dotazy na seznam objektů studenty, jak spouštět dotazy a postup je upravit. Dotazy obsahovat několik funkcí, včetně inicializátory objektů, odvození místního typu a anonymní typy.  
@@ -145,7 +145,7 @@ Tento návod ukazuje, jak můžete použít funkce jazyka Visual Basic pro zápi
   
  [LINQ na objekty](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)  
   
- [Technologie LINQ to SQL](https://msdn.microsoft.com/library/bb386976)  
+ [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
   
  [Technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)  
   

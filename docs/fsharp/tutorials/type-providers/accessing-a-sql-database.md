@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 1c413eb0-16a5-4c1a-9a4e-ad6877e645d6
-ms.openlocfilehash: c99afc1121b4f0d6d05ef82681a32437ede06e42
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7177eca33ded712308bbc6198040d833b7364d55
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="walkthrough-accessing-a-sql-database-by-using-type-providers"></a>Návod: Přístup k databázi SQL s použitím zprostředkovatelů typů
 
@@ -458,6 +458,6 @@ INSERT INTO Table3 (Id, Name, Data)
 
 [Výrazy dotazů](../../language-reference/query-expressions.md)
 
-[Technologie LINQ to SQL](https://msdn.microsoft.com/library/bb386976)
+[Technologie LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)
 
-[SqlMetal.exe & #40; Nástroj pro vytváření kódu & #41;](https://msdn.microsoft.com/library/bb386987)
+[SqlMetal.exe &#40; Nástroj pro vytváření kódu &#41;](https://msdn.microsoft.com/library/bb386987)

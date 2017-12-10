@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: d04a158db4f97a0e37f8a92149a3f237ee2e5434
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c348c36caeaf703a99336f1d2a8f6cdbe5968b99
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="delegates-and-lambdas"></a>Delegáti a lambdas
 
@@ -152,6 +152,6 @@ public MainWindow()
 
 ## <a name="further-reading-and-resources"></a>Další čtení a prostředky
 
-*   [Delegáti](https://msdn.microsoft.com/library/ms173171.aspx)
-*   [Anonymní funkce](https://msdn.microsoft.com/library/bb882516.aspx)
-*   [Lambda – výrazy](https://msdn.microsoft.com/library/bb397687.aspx)
+*   [Delegáti](../../docs/csharp/programming-guide/delegates/index.md)
+*   [Anonymní funkce](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
+*   [Lambda – výrazy](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

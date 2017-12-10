@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6fbb6ccc-248f-4226-95e9-f6f99541dbe4
-ms.openlocfilehash: 50e0a2bb6378c82b5c6425589da8a982b5fc496a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a919c2acb2b5b8c2ce93124f2f541bd092d15c35
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="walkthrough-generating-f-types-from-a-dbml-file"></a>Návod: Generování typů F# ze souboru DBML
 
@@ -24,7 +24,7 @@ Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FS
 > [!NOTE]
 Rozhraní API referenčních odkazů se dostanete na webu MSDN.  Referenční dokumentace rozhraní API docs.microsoft.com není dokončena.
 
-Tento názorný postup pro F # 3.0 popisuje postup vytvoření typů dat z databáze, pokud máte v souboru DBML kódování informace o schématu. Technologie LINQ to SQL používá k reprezentaci schéma databáze tohoto formátu souboru. Technologie LINQ to SQL souboru schématu v sadě Visual Studio můžete vygenerovat pomocí Návrhář relací objektů (relací objektů). Další informace najdete v tématu [přehled Návrhář relací objektů](https://msdn.microsoft.com/library/bb384511.aspx) a [generování kódu v technologii LINQ to SQL](https://msdn.microsoft.com/library/bb386976).
+Tento názorný postup pro F # 3.0 popisuje postup vytvoření typů dat z databáze, pokud máte v souboru DBML kódování informace o schématu. Technologie LINQ to SQL používá k reprezentaci schéma databáze tohoto formátu souboru. Technologie LINQ to SQL souboru schématu v sadě Visual Studio můžete vygenerovat pomocí Návrhář relací objektů (relací objektů). Další informace najdete v tématu [přehled Návrhář relací objektů](https://msdn.microsoft.com/library/bb384511.aspx) a [generování kódu v technologii LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md).
 
 Typ zprostředkovatele databáze Markup Language (DBML) umožňuje psát kód, který používá typy podle schématu databáze, aniž by bylo potřeba zadat statické připojovací řetězec v době kompilace. Který může být užitečné, pokud je potřeba povolit možnost, že poslední aplikace bude používat jiné databázi, jiné přihlašovací údaje nebo jiné připojovací řetězec než ten, který použijete k vývoji aplikace. Pokud máte připojení k databázi direct, který můžete použít při kompilaci a jedná se o stejné databáze a přihlašovacích údajů, které bude nakonec použijete v integrované aplikaci, můžete taky sqldataconnection – zprostředkovatel typu. Další informace najdete v tématu [návod: přístup k databázi SQL pomocí zprostředkovatelé typu](accessing-a-sql-database.md).
 

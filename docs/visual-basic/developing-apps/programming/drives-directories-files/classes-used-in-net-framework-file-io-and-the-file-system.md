@@ -12,16 +12,16 @@ ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: abb2291ce797f3630eebd24e563994a2d86242bd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 772d3e59dbc84f77dc6f94e7cc60a89c7888551a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)
 Následující tabulka uvádí třídy běžně používané pro rozhraní .NET Framework soubor vstupně-výstupních operací, rozděleny do třídy vstupně-výstupních souborů, třídy používané pro vytváření datových proudů a třídy používané pro čtení a zápis do datových proudů.  
   
- Zadat [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] dokumentaci a najít komplexnější seznam, najdete v části [– přehled knihovny tříd](https://msdn.microsoft.com/library/hfa3fa08).  
+ Zadat [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] dokumentaci a najít komplexnější seznam, najdete v části [– přehled knihovny tříd](../../../../../docs/standard/class-library-overview.md).  
   
 ## <a name="basic-io-classes-for-files-drives-and-directories"></a>Vstupně-výstupních operací základní třídy pro soubory, jednotky a adresáře  
  Následující tabulka uvádí a popisuje hlavní třídy používané pro soubor vstupně-výstupní operace.  
@@ -64,7 +64,7 @@ Následující tabulka uvádí třídy běžně používané pro rozhraní .NET 
 |<xref:System.IO.StringWriter?displayProperty=nameWithType>|Zapíše znaky `String`. Výstup může být buď datový proud v jakémkoli kódování nebo `String`.|  
   
 ## <a name="see-also"></a>Viz také  
- [Skládání datových proudů](https://msdn.microsoft.com/library/e4y2dch9)  
+ [Skládání datových proudů](../../../../../docs/standard/io/composing-streams.md)  
  [Vstupně-výstupních souborů a proudů](https://msdn.microsoft.com/library/k3352a4t)  
  [Asynchronní I/O soubory](https://msdn.microsoft.com/library/kztecsys)  
  [Základní informace o souborech vstupně-výstupních operací a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

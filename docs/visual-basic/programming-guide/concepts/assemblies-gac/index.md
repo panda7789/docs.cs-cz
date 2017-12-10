@@ -12,22 +12,22 @@ ms.assetid: fcf78ff1-f1ab-4a5d-b6d8-00d2046b6c80
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8a53a153851973c735a430056520b01c27b1ef59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9ef4306da5c093b8302e377cc3b68d5700b8dfa8
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>Sestavení a globální mezipaměti sestavení (Visual Basic)
 Vytváří základní jednotku nasazení, Správa verzí, opakované použití, aktivaci oborů a oprávnění zabezpečení pro sestavení. Aplikace založené na Asp.net. Sestavení mít formu na spustitelný soubor (.exe) nebo soubor dynamické knihovny (DLL) a představují stavební kameny rozhraní .NET Framework. Poskytují modul common language runtime s použitím informací, musí se jednat o zjištění typu implementace. Si můžete představit jako kolekci typů a prostředky, které tvoří logickou jednotku funkcí a jsou vytvořeny tak spolupracují sestavení.  
   
- Sestavení může obsahovat jeden nebo více modulů. Například může být plánované větší projekty tak, že několik jednotlivých vývojáři fungovat na samostatné moduly, všechny příchozí dohromady a vytvoří jednoho sestavení. Další informace o modulech, naleznete v tématu [postupy: sestavení sestavení Multifile](https://msdn.microsoft.com/library/226t7yxe).  
+ Sestavení může obsahovat jeden nebo více modulů. Například může být plánované větší projekty tak, že několik jednotlivých vývojáři fungovat na samostatné moduly, všechny příchozí dohromady a vytvoří jednoho sestavení. Další informace o modulech, naleznete v tématu [postupy: sestavení sestavení Multifile](../../../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md).  
   
  Sestavení mít následující vlastnosti:  
   
 -   Sestavení se implementují jako soubory .exe nebo .dll.  
   
--   Můžete sdílet sestavení mezi aplikacemi umístěním v globální mezipaměti sestavení. Sestavení musí být silným názvem dříve než může být zahrnuta v globální mezipaměti sestavení. Další informace najdete v tématu [sestavení se silným názvem](https://msdn.microsoft.com/library/wd40t7ad).  
+-   Můžete sdílet sestavení mezi aplikacemi umístěním v globální mezipaměti sestavení. Sestavení musí být silným názvem dříve než může být zahrnuta v globální mezipaměti sestavení. Další informace najdete v tématu [sestavení se silným názvem](../../../../../docs/framework/app-domains/strong-named-assemblies.md).  
   
 -   Sestavení jsou načtena do paměti, pouze pokud jsou požadována. Pokud se nepoužívají, nejsou načíst. To znamená, že sestavení může být účinný způsob, jak spravovat prostředky v větší projekty.  
   
@@ -46,7 +46,7 @@ Vytváří základní jednotku nasazení, Správa verzí, opakované použití, 
   
  Protože sestavení obsahuje informace o obsahu, verze a závislosti, nespoléhejte na hodnoty registru systému Windows pro správné fungování aplikace, které vytvoříte v jazyce Visual Basic. Sestavení snižte .dll konflikty a spolehlivější a snazší nasazování zpřístupnit vaše aplikace. V mnoha případech můžete nainstalovat. Aplikace založené na NET jednoduše tak, že kopírování jeho soubory do cílového počítače.  
   
- Další informace najdete v části [Manifest sestavení](https://msdn.microsoft.com/library/1w45z383).  
+ Další informace najdete v části [Manifest sestavení](../../../../../docs/framework/app-domains/assembly-manifest.md).  
   
 ## <a name="adding-a-reference-to-an-assembly"></a>Přidat odkaz na sestavení  
  Pokud chcete použít sestavení, musíte přidat odkaz na jeho. V dalším kroku použijete [Imports – příkaz](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) vybrat obor názvů položky, které chcete použít. Po sestavení odkazuje a importovat, všechny dostupné třídy, vlastnosti, metod a ostatním členům jeho obory názvů jsou k dispozici do vaší aplikace jako svůj kód byly součástí zdrojového souboru.  
@@ -58,7 +58,7 @@ Vytváří základní jednotku nasazení, Správa verzí, opakované použití, 
 >  K vytvoření sestavení v sadě Visual Studio na **sestavení** nabídce zvolte **sestavení**.  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavení v modulu Common Language Runtime](https://msdn.microsoft.com/library/k3677y81)  
+ [Sestavení v modulu Common Language Runtime](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Přátelská sestavení (Visual Basic)](friend-assemblies.md)  
  [Postupy: sdílení sestavení s jinými aplikacemi (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)  
  [Postupy: zavedení a uvolnění sestavení (Visual Basic)](how-to-load-and-unload-assemblies.md)  
