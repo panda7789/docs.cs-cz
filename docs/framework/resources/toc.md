@@ -1,0 +1,6 @@
+# [Prostředky v aplikacích klasické pracovní plochy](index.md)
+## [Vytváření zdrojových souborů](creating-resource-files-for-desktop-apps.md)
+### [Práce se soubory .resx programově](working-with-resx-files-programmatically.md)
+## [Vytváření satelitních sestavení](creating-satellite-assemblies-for-desktop-apps.md)
+## [Zabalení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md)
+## [Načítání prostředků](retrieving-resources-in-desktop-apps.md)

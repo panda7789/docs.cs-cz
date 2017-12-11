@@ -1,0 +1,8 @@
+# [Výjimky a jejich zpracování](index.md)
+## [Použití výjimek](using-exceptions.md)
+## [Zpracování výjimek](exception-handling.md)
+## [Vytváření a vyvolávání výjimek](creating-and-throwing-exceptions.md)
+## [Výjimky generované kompilátorem](compiler-generated-exceptions.md)
+## [Postupy: Zpracování výjimky pomocí bloku try/catch](how-to-handle-an-exception-using-try-catch.md)
+## [Postupy: Spuštění kódu čištění pomocí příkazu finally](how-to-execute-cleanup-code-using-finally.md)
+## [Postupy: Zachycení výjimky nekompatibilní se specifikací CLS](how-to-catch-a-non-cls-exception.md)

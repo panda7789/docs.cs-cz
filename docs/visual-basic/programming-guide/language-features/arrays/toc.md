@@ -1,0 +1,6 @@
+# [Pole v jazyce Visual Basic](index.md)
+## [Rozměry pole](array-dimensions.md)
+## [Postupy: Inicializace proměnné pole](how-to-initialize-an-array-variable.md)
+## [Postupy: Řazení pole](how-to-sort-an-array.md)
+## [Postupy: Přiřazení jednoho pole k druhému](how-to-assign-one-array-to-another-array.md)
+## [Řešení potíží s poli](troubleshooting-arrays.md)

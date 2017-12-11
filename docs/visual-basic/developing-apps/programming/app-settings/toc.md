@@ -1,0 +1,5 @@
+# [Přístup k nastavení aplikace](accessing-application-settings.md)
+## [Postupy: Vytváření mřížek vlastností pro nastavení uživatele](how-to-create-property-grids-for-user-settings.md)
+## [Postupy: Zachování uživatelského nastavení](how-to-persist-user-settings.md)
+## [Postupy: Změna uživatelského nastavení](how-to-change-user-settings.md)
+## [Postupy: Čtení nastavení aplikace](how-to-read-application-settings.md)

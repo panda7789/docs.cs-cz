@@ -1,0 +1,5 @@
+# [Delegáti](index.md)
+## [Použití delegátů](using-delegates.md)
+## [Delegáti s pojmenovanými vs. anonymními metodami](delegates-with-named-vs-anonymous-methods.md)
+## [Postupy: Kombinování delegátů (vícesměroví delegáti) (Průvodce programováním v C#)](how-to-combine-delegates-multicast-delegates.md)
+## [Postupy: Deklarování, vytváření instancí a použití delegáta](how-to-declare-instantiate-and-use-a-delegate.md)

@@ -1,0 +1,7 @@
+# [Vývoj pro různé platformy](index.md)
+## [Přenosná knihovna tříd](cross-platform-development-with-the-portable-class-library.md)
+## [Používání knihovny přenosných tříd spolu s modelem MVVM](using-portable-class-library-with-model-view-view-model.md)
+## [Prostředky aplikací pro knihovny cílené na více platforem](app-resources-for-libraries-that-target-multiple-platforms.md)
+## [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](support-for-windows-store-apps-and-windows-runtime.md)
+## [Předávání identifikátorů URI do prostředí Windows Runtime](passing-a-uri-to-the-windows-runtime.md)
+## [WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) – metoda](windowsruntimestreamextensions-asrandomaccessstream-method.md)
