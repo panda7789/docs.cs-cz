@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7e90af1b-f8f6-41b9-a63a-8490ada502b1
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9c58998e3fd75d2bdadc029f44cc9927b849ddd9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2e40669baadf27ee8d10d84961f27bfea3c997d1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="synchronous-scenarios-using-http-tcp-or-named-pipe"></a>Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
 Toto téma popisuje aktivity a přenosy pro různé synchronní požadavek nebo odpověď scénáře s jedním podprocesem klienta, pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu. V tématu [asynchronní scénáře použití HTTP, TCP nebo pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md) Další informace o Vícevláknová požadavky.  

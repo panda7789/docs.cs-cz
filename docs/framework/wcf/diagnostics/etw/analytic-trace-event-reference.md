@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: analytic tracing [WCF]. reference
 ms.assetid: e44540cf-44a1-4efc-b965-7fbfd2131d73
 caps.latest.revision: "50"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3b47456ecea86652e80bb60f155bffd6100e1fc7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 616751adfd14e2f07de764b37d684ecdc276847b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="analytic-trace-event-reference"></a>Události analytického trasování – přehled
 Následující tabulka definuje úrovní událostí, identifikátory a zprávy přidružené [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] analytické trasování.  
