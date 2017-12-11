@@ -1,0 +1,6 @@
+# [Úvod](index.md)
+## [Migrace existujících aplikací metodou „lift and shift“ – Azure IaaS](lift-and-shift-existing-apps-azure-iaas.md)
+## [Migrace relačních databází do Azure](migrate-your-relational-databases-to-azure.md)
+## [Migrace existujících aplikací metodou „lift and shift“ – DevOps](lift-and-shift-existing-apps-devops/)
+## [Návody a přehled technických začátků](walkthroughs-technical-get-started-overview.md)
+## [Závěry](conclusions.md)

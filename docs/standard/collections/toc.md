@@ -1,0 +1,8 @@
+# [Kolekce a datové struktury](index.md)
+# [Výběr třídy kolekce](selecting-a-collection-class.md)
+# [Běžně používané typy kolekcí](commonly-used-collection-types.md)
+# [Kdy použít generické kolekce](when-to-use-generic-collections.md)
+# [Porovnávání a řazení v kolekcích](comparisons-and-sorts-within-collections.md)
+# [Typy řazených kolekcí](sorted-collection-types.md)
+# [Typy kolekce Hashtable a Dictionary](hashtable-and-dictionary-collection-types.md)
+# [Kolekce se zabezpečenými vlákny](thread-safe/)

@@ -1,0 +1,5 @@
+# [Typy s povolenou hodnotou Null](index.md)
+## [Použití typů s povolenou hodnotou Null](using-nullable-types.md)
+## [Zabalení typů s povolenou hodnotou Null](boxing-nullable-types.md)
+## [Postupy: Identifikace typu s povolenou hodnotou Null](how-to-identify-a-nullable-type.md)
+## [Postupy: Bezpečné přetypování z typu bool? na bool](how-to-safely-cast-from-bool-to-bool.md)
