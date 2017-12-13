@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: ec5ca3132ac68b85ebb517e569241f20080b4f63
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 39de8879fd902c714a58cf59c70f0a4914b2ff6e
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="inheritance-in-c-and-net"></a>Dědičnost v C# a rozhraní .NET
 
@@ -179,7 +179,7 @@ V návrhu naše `Publication` třídy, je třeba mít několik rozhodnutí o ná
 
 - Jaké členy pro zahrnutí do našich základní `Publication` třída a jestli `Publication` členy poskytovat metoda implementace, nebo jestli `Publication` je abstraktní základní třída, která slouží jako šablona pro jejich odvozené třídy.
 
-  V takovém případě `Publication` třída bude poskytovat implementace metoda. [Návrh abstraktní základní třídy amd jejich odvozené třídy](#abstract) část obsahuje příklad, který se používá abstraktní základní třída pro definování metody, které odvozené třídy musí přepsat. Odvozené třídy mohou poskytnout žádnou implementaci, který je vhodný pro odvozený typ.
+  V takovém případě `Publication` třída bude poskytovat implementace metoda. [Navrhování abstraktní základní třídy a jejich odvozené třídy](#abstract) část obsahuje příklad, který se používá abstraktní základní třída pro definování metody, které odvozené třídy musí přepsat. Odvozené třídy mohou poskytnout žádnou implementaci, který je vhodný pro odvozený typ.
 
   Možnost pro opakované použití kódu (tedy více odvozené třídy sdílet deklarace a implementaci základní metody třídy a není potřeba nepřepíšete) je výhoda neabstraktní základní třídy. Proto měli přidávat členy do `Publication` Pokud svůj kód je pravděpodobně sdílí některé nebo nejvíce specializuje `Publication` typy. Pokud se nám nepovedlo Uděláte to tak efektivní, jsme nakonec se museli zadávat implementace z velké části identické člen v odvozených třídách místo jediná implementace v základní třídě. Je potřeba udržovat duplicitní kód v několika umístěních je potenciální příčinu chyby.
 

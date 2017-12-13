@@ -1,5 +1,5 @@
 ---
-title: "Rychlý Start - větve a lops – průvodce v C#"
+title: "Rychlý Start - větve a smyčky - průvodce v C#"
 description: "V této úvodní o větve a smyčky psaní kódu jazyka C# a prozkoumejte syntaxi jazyka, která podporuje podmíněného větvení a smyčky provést příkazy opakovaně."
 author: billwagner
 ms.author: wiwagn
@@ -9,17 +9,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 4b077a29cf42072a93b054f50a13a4580ad54304
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.openlocfilehash: 7954475616b122f8bb96ad00d05b476b3beeb52c
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 
 Tento rychlý start se naučíte, jak napsat kód, který hledá proměnné a změní cesta spuštění na základě těchto proměnných. Psaní kódu jazyka C# a zobrazit výsledky kompilace a jejím spuštěním. Rychlý start obsahuje řadu lekce, které prozkoumat větvení a opakování ve smyčce konstrukce v jazyce C#. Tyto poznatky získají naučit základy jazyka C#.
 
-Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux.
+Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="make-decisions-using-the-if-statement"></a>Rozhodnutí, pomocí `if` – příkaz
 
@@ -250,7 +250,7 @@ Teď, když jste viděli `if` prohlášení a opakování konstrukce v jazyce C#
 - `if` Příkaz vám dává stav chcete zobrazit, pokud číslo musí být součástí součet.
 - `for` Smyčky vám může pomoct opakujte sérii kroků pro všechna čísla 1 až 20.
 
-Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Zobrazí jednu možnou odpověď podle [zobrazení Dokončený kód v Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/branches-quickstart/Program.cs#L46-L54).
+Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Měli byste obdržet 63 pro odpověď. Zobrazí jednu možnou odpověď podle [zobrazení Dokončený kód v Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/branches-quickstart/Program.cs#L46-L54).
 
 Po dokončení "větví a cyklu" rychlý start.
 

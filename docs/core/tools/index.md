@@ -7,11 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: d66738593a1542affc956e08bbc38a3b2b1841b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0f43f569cdb8b9e4be68b61ba7b5cc4686fdb871
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET core nástrojů rozhraní příkazového řádku (CLI)
 
@@ -34,14 +34,14 @@ Ve výchozím nastavení instalují se následující příkazy:
 
 **Základní příkazy**
 
-* [Nový](dotnet-new.md)
+* [new](dotnet-new.md)
 * [obnovení](dotnet-restore.md)
 * [sestavení](dotnet-build.md)
 * [publikování](dotnet-publish.md)
 * [Spustit](dotnet-run.md)
 * [Test](dotnet-test.md)
 * [vstest](dotnet-vstest.md)
-* [Pack](dotnet-pack.md)
+* [pack](dotnet-pack.md)
 * [migrace](dotnet-migrate.md)
 * [Vyčištění](dotnet-clean.md)
 * [SLN –](dotnet-sln.md)
@@ -68,14 +68,14 @@ Ve výchozím nastavení instalují se následující příkazy:
 
 **Základní příkazy**
 
-* [Nový](dotnet-new.md)
+* [new](dotnet-new.md)
 * [obnovení](dotnet-restore.md)
 * [sestavení](dotnet-build.md)
 * [publikování](dotnet-publish.md)
 * [Spustit](dotnet-run.md)
 * [Test](dotnet-test.md)
 * [vstest](dotnet-vstest.md)
-* [Pack](dotnet-pack.md)
+* [pack](dotnet-pack.md)
 * [migrace](dotnet-migrate.md)
 * [Vyčištění](dotnet-clean.md)
 * [SLN –](dotnet-sln.md)
@@ -146,7 +146,7 @@ Možnosti, které můžete předat na příkazovém řádku jsou možnosti k vyv
 
 ## <a name="migration-from-projectjson"></a>Migrace ze souboru project.json
 
-Pokud jste použili Preview 2 nástrojů k vytvoření *project.json*– na základě projekty, najdete [dotnet migrovat](dotnet-migrate.md) tématu informace o migraci projektu nástroje MSBuild /*.csproj*pro použití s verzí nástroje. Pro .NET Core projekty vytvořené před vydáním nástrojů Preview 2, buď ručně aktualizovat projektu následující pokyny v [migrace z DNX na .NET Core rozhraní příkazového řádku (project.json)](../migration/from-dnx.md) a pak použijte `dotnet migrate` nebo přímo upgrade vašich projektů.
+Pokud jste použili Preview 2 nástrojů k vytvoření *project.json*– na základě projekty, najdete [dotnet migrovat](dotnet-migrate.md) tématu informace o migraci projektu nástroje MSBuild /*.csproj*pro použití s verzí nástroje. Pro .NET Core projekty vytvořené před vydáním nástrojů Preview 2 buď ručně aktualizovat následující pokyny v projektu [migrace z DNX na .NET Core rozhraní příkazového řádku (project.json)](../migration/from-dnx.md) a pak použijte `dotnet migrate` nebo přímo upgradovat. projekty.
 
 ## <a name="see-also"></a>Viz také
 

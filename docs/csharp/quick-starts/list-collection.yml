@@ -9,11 +9,11 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: e00cf6badcbd39cc1e9320095169d86efb9cad8f
-  ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+  ms.openlocfilehash: 764caf36026fb96ecfdd002c6df5294f8282a4c3
+  ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/07/2017
+  ms.lasthandoff: 12/12/2017
 items:
 - durationInMinutes: 1
   content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče psaní kódu jazyka C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které slouží k vytváření, úpravě a prozkoumejte kolekce a pole.\n"
@@ -31,8 +31,8 @@ items:
   content: "Jste dosud používali `string` typu v seznamech dosavadní práce. Provedeme <xref:System.Collections.Generic.List%601> pomocí jiného typu. Vytvořme sady čísel. Odstranit kód, který jste napsali dosavadní a nahraďte ji metodou toto:\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n```\n\nZda vytvoří seznam celých čísel a nastaví první dva celých čísel na hodnotu 1. Jedná se o první dvě hodnoty z *Fibonacciho pořadí*, pořadí čísel. Každé další číslo Fibonacciho nachází provedením součet předchozích dvou čísel. Přidejte tento kód:\n\n```csharp\nvar previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\nvar previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n\nfibonacciNumbers.Add(previous + previous2);\n\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nStiskněte klávesu **spustit** a zobrazte si výsledky;\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
 - title: "výzvy"
   durationInMinutes: 10
-  content: "Pokud můžete umístit společně najdete některé poznatky z tohoto a starší lekce. Rozbalte položku na co jste vytvořili, pokud se Fibonacciho čísla. Zkuste a napsat kód pro vytvoření prvních 20 čísel v pořadí.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
+  content: "Pokud můžete umístit společně najdete některé koncepty z tohoto a starší lekce. Rozbalte položku na co jste vytvořili, pokud se Fibonacciho čísla. Zkuste a napsat kód pro vytvoření prvních 20 čísel v pořadí. (Jako nápovědu, je číslo 20 Fibonacciho 6765.)\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
 - title: "Dokončení výzvy"
   durationInMinutes: 3
   content: "Vytvoříte přibližně toto?\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nS každou iteraci smyčky přenášíte posledních dvou celých čísel v seznamu je sčítání a přidáním této hodnoty do seznamu. Smyčky se opakuje, dokud nepřidáte 20 položky do seznamu.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
-- content: "Po dokončení seznamu rychlý start. Tento rychlý start je poslední interaktivní rychlý start. Můžete pokračovat v těchto – elementy QuickStart na vašem vývojovém prostředí. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí. Jakmile provedete tento krok, pokračujte [Úvod do třídy](introduction-to-classes.md) ve vašem místním prostředí.\n\nDalší informace o práci s `List` zadejte [.NET průvodce](../../standard/index.md) téma na [kolekce](../../standard/collections/index.md). Budete také informace o mnoho dalších typů kolekce.\0"
+- content: "Po dokončení seznamu rychlý start. Tento rychlý start je poslední interaktivní rychlý start. Můžete pokračovat v těchto rychlé spuštění na vašem vývojovém prostředí. Seznámíte se základy [místní vývoj](local-environment.md) a pak vyberte rychlý start. Zkuste tento stejný postup, přímo na další rychlý start nebo znovu spustit na s [čísla v jazyce C#](numbers-in-csharp-local.md) rychlý start.\n\nDalší informace o práci s `List` zadejte [.NET průvodce](../../standard/index.md) téma na [kolekce](../../standard/collections/index.md). Budete také informace o mnoho dalších typů kolekce.\0"

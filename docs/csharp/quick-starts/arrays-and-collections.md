@@ -10,17 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 228a9dd88d0a511492ccb8b70e0231278969acbe
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.openlocfilehash: 6f559c7a3290e7db2266e10ec792c283394fb904
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="c-quick-start-collections"></a>C# rychlý start: kolekce #
 
 Tento úvodní poskytuje úvod do jazyka C# a základní informace o <xref:System.Collections.Generic.List%601> třídy.
 
-Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux.
+Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="a-basic-list-example"></a>Příklad základního seznamu.
 
@@ -210,7 +210,7 @@ Uložte soubor a typ `dotnet run` a zobrazte si výsledky.
 > Soustředit se na právě v této části, můžete Zakomentovat kód, který volá `WorkingWithStrings();`. Vloží dva pouze `/` znaky před volání, jako to: `// WorkingWithStrings();`. 
 
 ## <a name="challenge"></a>výzvy
-Pokud můžete umístit společně najdete některé poznatky z tohoto a starší lekce. Rozbalte položku na co jste vytvořili, pokud se Fibonacciho čísla. Zkuste a napsat kód pro vytvoření prvních 20 čísel v pořadí.
+Pokud můžete umístit společně najdete některé koncepty z tohoto a starší lekce. Rozbalte položku na co jste vytvořili, pokud se Fibonacciho čísla. Zkuste napsat kód pro vytvoření prvních 20 čísel v pořadí. (Jako nápovědu, je číslo 20 Fibonacciho 6765.)
 
 ## <a name="complete-challenge"></a>Dokončení výzvy
 

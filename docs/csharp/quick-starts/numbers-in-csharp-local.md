@@ -9,17 +9,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 821cca4ea6d6148410e9b179f05d5b74c4844628
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.openlocfilehash: f275f157d9a9e41407be0beac83c337c7706a95d
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="numbers-in-c-quick-start"></a>Čísla v jazyce C# rychlý start #
 
 Tento rychlý start se dozvíte, jaké číslo typy v jazyku C# interaktivně. Napíšete malé množství kódu a potom budete zkompilování a spuštění tohoto kódu. Rychlý start obsahuje řadu lekce, které prozkoumat matematické operace v jazyce C# a čísla. Tyto poznatky získají naučit základy jazyka C#.
 
-Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux.
+Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="explore-integer-math"></a>Prozkoumejte matematické celé číslo
 
@@ -312,8 +312,9 @@ Všimněte si, že výpočty pomocí typu decimal obsahuje více číslic vpravo
 
 ***Výzvy***
 
-Teď, když jste se seznámili s různými typy číselné, napište kód, který vypočítá oblasti jejichž radius je 2.50 palce kruh. Mějte na paměti, že oblast kruhu je radius spolehlivosti násobí hodnotou platformy. Jeden pomocný parametr: C# obsahuje konstanty pro platformy, <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu. 
+Teď, když jste se seznámili s různými typy číselné, napište kód, který vypočítá oblasti jejichž radius je 2.50 palce kruh. Mějte na paměti, že oblast kruhu je radius spolehlivosti násobí hodnotou platformy. Jeden pomocný parametr: .NET obsahuje konstanty pro platformy, <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu. 
 
+Měli byste obdržet odpověď až 19, 20.
 Můžete zkontrolovat vaše odpověď podle [prohlížení dokončení ukázkový kód na Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/numbers-quickstart/Program.cs#L104-L106)
 
 Pokud chcete, zkuste některé jiné vzorce. 
