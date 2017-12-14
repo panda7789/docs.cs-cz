@@ -17,11 +17,11 @@ caps.latest.revision: "30"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7037e0c91ee6ae83b70d6a26e72b87095456063b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1c7a9226a710fef5ecd0b027bee129271654e01d
+ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/13/2017
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronní programování, je velmi běžné jeden asynchronní operaci na dokončení pro vyvolání druhá operace a předat data. Obvyklým byla provedena pomocí metody zpětného volání. V Task Parallel Library stejné funkce poskytované *úloh pokračování*. Úloha pokračování (známou taky stejně jako pokračování) je asynchronní úkol, který je vyvolán jiná úloha, která se označuje jako *předchůdce*, až se dokončí předchůdce.  
@@ -124,7 +124,7 @@ V asynchronní programování, je velmi běžné jeden asynchronní operaci na d
 ## <a name="associating-state-with-continuations"></a>Stav přidružení k pokračování  
  Libovolný stavu můžete přidružit úkolů pokračování. <xref:System.Threading.Tasks.Task.ContinueWith%2A> Metoda nabízí přetížené verze, která každý proveďte <xref:System.Object> hodnotu, která představuje stav pokračování. Můžete později přístup k tomuto objektu stavu pomocí <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> vlastnost. Tento objekt stavu je `null` Pokud nezadáte hodnotu.  
   
- Pokračování stavu je užitečné, když převést stávající kód, který používá [asynchronní programování modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) použití TPL. V APM, je obvykle zadat stav objektu v  **začít*metoda*** metoda a později přístup, který stavu pomocí <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> vlastnost. Pomocí <xref:System.Threading.Tasks.Task.ContinueWith%2A> metodu, můžete zachovat tento stav při převodu kód, který používá APM použití TPL.  
+ Pokračování stavu je užitečné, když převést stávající kód, který používá [asynchronní programování modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) použití TPL. V APM, je obvykle zadat stav objektu v **začít***metoda* metoda a později přístup, který stavu pomocí <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> vlastnost. Pomocí <xref:System.Threading.Tasks.Task.ContinueWith%2A> metodu, můžete zachovat tento stav při převodu kód, který používá APM použití TPL.  
   
  Pokračování stavu může být také užitečná při práci s <xref:System.Threading.Tasks.Task> objekty v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] ladicí program. Například v **paralelních úloh** okně **úloh** sloupec zobrazuje řetězcovou reprezentaci objektu stav pro každý úkol. Další informace o **paralelních úloh** okně najdete v části [používání okna úloh](/visualstudio/debugger/using-the-tasks-window).  
   

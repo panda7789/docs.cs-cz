@@ -14,11 +14,11 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b6d24356841e8b385bef47bcba0e5694b48240
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 543e6496c826c864dc77e50fd096fc4cb43f600e
+ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/13/2017
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
 Cílem tohoto návodu je informace o vytváření animované tlačítko pro použití v [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace. Tento návod používá styly a šablonu pro vytvoření přizpůsobené tlačítko prostředek, který umožňuje opětovné použití kódu a oddělení tlačítko logiku z deklarace tlačítko. Tento názorný postup je zapsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -76,7 +76,7 @@ Cílem tohoto návodu je informace o vytváření animované tlačítko pro pou�
     </Application>  
     ```  
   
-     Obor prostředků je určen podle kde definici zdroje. Definování prostředky v `Application.Resoureses` v app.xaml umožňuje soubor prostředků pro použití v libovolné místo v aplikaci. Další informace o definování oboru vašich prostředků najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+     Obor prostředků je určen podle kde definici zdroje. Definování prostředky v `Application.Resources` v app.xaml umožňuje soubor prostředků pro použití v libovolné místo v aplikaci. Další informace o definování oboru vašich prostředků najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
 2.  **Vytvořit styl a definovat hodnoty vlastnosti základní s ním:** přidejte následující kód do `Application.Resources` bloku. Tento kód vytvoří <xref:System.Windows.Style> , platí pro všechny tlačítka v nastavení aplikace <xref:System.Windows.FrameworkElement.Width%2A> tlačítek a 90 a <xref:System.Windows.FrameworkElement.Margin%2A> 10:  
   
@@ -328,7 +328,7 @@ Cílem tohoto návodu je informace o vytváření animované tlačítko pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci a klikněte na jednu z tlačítka. Všimněte si, že zůstane tlačítko zvýrazněná po kliknutí na tlačítko ji vzhledem k tomu, že je stále fokus. Pokud klepnete na tlačítko Další, nové tlačítko získá fokus při poslední ztratí ho.  
   
-4.  **Přidání animace pro** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** další přidáme některé animací aktivačních událostí.   Přidejte následující kód kdekoli v z `ControlTemplate.Triggers` bloku.  
+4.  **Přidání animace pro** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** další přidáme některé animací aktivačních událostí. Přidejte následující kód kdekoli v z `ControlTemplate.Triggers` bloku.  
   
     ```  
     <!-- Animations that start when mouse enters and leaves button. -->  
@@ -400,7 +400,7 @@ Cílem tohoto návodu je informace o vytváření animované tlačítko pro pou�
   
 ## <a name="see-also"></a>Viz také  
  [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Malování s plnou barvy a přechody – přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Přehled důsledky rastrového obrázku](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [Přehled efektů bitmap](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)
