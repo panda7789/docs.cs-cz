@@ -16,11 +16,11 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b82b409f27b14109c8e13fc8909235befc7a8d1d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4363e4e4e444a2c34b79e3b3ad8d8e2f36fe8e1a
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ na DataSet)
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Můžete vytvořit <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz přes <xref:System.Data.DataTable>, nebo si můžete vytvořit z představuje zadaný nebo beztypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není zkonstruovatelný přímo v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu.  
@@ -60,7 +60,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[li
  [!code-csharp[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquery1)]
  [!code-vb[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquery1)]  
   
- Můžete také základě řetězec <xref:System.Data.DataView.RowFilter%2A> a <xref:System.Data.DataView.Sort%2A> vlastnosti k filtrování a řazení <xref:System.Data.DataView> po vytvoření z dotazu. Všimněte si, že tato akce vymaže toto řazení a filtrování informace zděděno z dotazu. Následující příklad vytvoří <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz, který filtruje poslední názvy, které začínají je ". Řetězec základě <xref:System.Data.DataView.Sort%2A> je nastavena na seřadit příjmení ve vzestupném pořadí a potom první názvy v sestupném pořadí:  
+ Můžete taky základě řetězec <xref:System.Data.DataView.RowFilter%2A> a <xref:System.Data.DataView.Sort%2A> vlastnosti k filtrování a řazení <xref:System.Data.DataView> po vytvoření z dotazu. Všimněte si, že tato akce vymaže toto řazení a filtrování informace zděděno z dotazu. Následující příklad vytvoří <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz, který filtruje poslední názvy, které začínají je ". Řetězec základě <xref:System.Data.DataView.Sort%2A> je nastavena na seřadit příjmení ve vzestupném pořadí a potom první názvy v sestupném pořadí:  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquerystringsort)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquerystringsort)]  
@@ -81,6 +81,6 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[li
  Však dojde ke ztrátě výkonu, která se dodává s nastavením <xref:System.Data.DataView.RowFilter%2A> nebo <xref:System.Data.DataView.Sort%2A> vlastnost po <xref:System.Data.DataView> byl vytvořen z dotazu, protože <xref:System.Data.DataView> vytvoří index pro podporu filtrování a řazení. Nastavení <xref:System.Data.DataView.RowFilter%2A> nebo <xref:System.Data.DataView.Sort%2A> vlastnost znovu sestaví index pro data, přidávání režie k vaší aplikaci a snížení výkonu. Pokud je to možné, je lepší zadejte filtrování a řazení informace při prvním vytváření <xref:System.Data.DataView> a neměli upravovat ji později.  
   
 ## <a name="see-also"></a>Viz také  
- [Datové vazby a LINQ na DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)  
- [Filtrování pomocí zobrazení dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
- [Řazení s zobrazení dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)
+ [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)  
+ [Filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
+ [Řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)

@@ -24,11 +24,11 @@ caps.latest.revision: "79"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f0346de00988a6863c212a95be3ffa9d356fe5ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 11fdbcd65c4f5588d9f32357dcf344f5f8544614
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 Řetězec formátu data a času definuje textovou reprezentaci hodnoty <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu, která je výsledkem operace formátování. Může také definovat reprezentaci hodnoty data a času nezbytnou v rámci operace analýzy a úspěšně tak řetězec převést na datum a čas. Řetězec vlastního formátu se skládá z jednoho nebo více vlastních specifikátorů formátu data a času. Libovolný řetězec, který není [řetězec formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) interpretována jako vlastní data a času řetězec formátu.  
@@ -691,7 +691,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="control-panel-settings"></a>Nastavení ovládacího panelu  
  **Místní a jazykové nastavení** nastavení v Ovládacích panelech ovlivní výsledný řetězec formátování operací, která zahrnuje celou řadu vlastní datum a čas specifikátory formátu. Tato nastavení slouží k inicializaci <xref:System.Globalization.DateTimeFormatInfo> objekt přidružený k aktuální jazykovou verzi vlákna, které poskytuje hodnoty použité k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.  
   
- Kromě toho, pokud použijete <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktor k vytvoření instance nového <xref:System.Globalization.CultureInfo> objekt, který reprezentuje stejnou jazykovou verzi jako aktuální systémovou kulturu jakékoli vlastní nastavení **místní a jazykové nastavení** na ovládacím panelu se použijí k novému <xref:System.Globalization.CultureInfo> objektu. Můžete použít <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> nereflektuje k vytvoření <xref:System.Globalization.CultureInfo> objekt, který vlastní nastavení systému.  
+ Kromě toho, pokud použijete <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktor k vytvoření instance nového <xref:System.Globalization.CultureInfo> objekt, který reprezentuje stejnou jazykovou verzi jako aktuální systémovou kulturu jakékoli vlastní nastavení **místní a jazykové nastavení** na ovládacím panelu se použijí k novému <xref:System.Globalization.CultureInfo> objektu. Můžete použít <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktor k vytvoření <xref:System.Globalization.CultureInfo> objekt, který vlastní nastavení systému.  
   
 ### <a name="datetimeformatinfo-properties"></a>Vlastnosti DateTimeFormatInfo  
  Formátování je ovlivněno vlastnosti aktuální <xref:System.Globalization.DateTimeFormatInfo> objekt, který je poskytnut implicitně aktuální jazykovou verzi vlákna nebo explicitně pomocí <xref:System.IFormatProvider> parametru metody, která vyvolá formátování. Pro <xref:System.IFormatProvider> musíte zadat parametr, <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, nebo <xref:System.Globalization.DateTimeFormatInfo> objektu.  
@@ -702,5 +702,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.DateTime?displayProperty=nameWithType>  
  <xref:System.IFormatProvider?displayProperty=nameWithType>  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- [Řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
+ [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
  [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

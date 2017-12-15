@@ -16,11 +16,11 @@ ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6c52ac09e209d6e3f0cfd877a071cbbe3ab96f18
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d9294c2d1d83dce3bca2abc22ee9c70296fc8014
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)
 Poskytuje přístup k hodnotě první prvek kolekce <xref:System.Xml.Linq.XElement> objekty.  
@@ -77,9 +77,9 @@ object.Value
  <xref:System.Xml.Linq.XElement>  
  <xref:System.Collections.Generic.IEnumerable%601>  
  [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
- [XML – literály](../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
  [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Metody rozšíření](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
+ [Rozšiřující metody](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
  [Vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)  
- [Vlastnost osy podřízeného souboru XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
+ [Vlastnost osy podřízeného XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
  [Vlastnost osy atributu XML](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)

@@ -12,11 +12,11 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 369c8738addeb083b42063161957cf9f97e2cd1c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: e60ed6fb2fb85faa1d2d744bf29e40d3eaa639c3
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation funkce podrobností
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]Přidá do modelu Windows Workflow Foundation celou řadu funkcí. Tento dokument obsahuje několik nových funkcí a uvádí podrobnosti o scénářích, ve kterých mohou být užitečné.  
@@ -56,7 +56,7 @@ ms.lasthandoff: 12/02/2017
   
 -   Ukázky pro <xref:System.ServiceModel.WorkflowServiceHost> naleznete v následujících částech:  
   
-    -   [Provádění](../../../docs/framework/windows-workflow-foundation/samples/execution.md)  
+    -   [Spuštění](../../../docs/framework/windows-workflow-foundation/samples/execution.md)  
   
     -   Basic: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
   
@@ -116,7 +116,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [Příručka pro vývojáře pro WCF 4.0](http://go.microsoft.com/fwlink/?LinkId=204940)  
   
--   [Postup konfiguračního kanálu](http://go.microsoft.com/fwlink/?LinkId=204941)  
+-   [Objekt pro vytváření kanálů konfigurace](http://go.microsoft.com/fwlink/?LinkId=204941)  
   
 -   [Element standardní koncového bodu](http://go.microsoft.com/fwlink/?LinkId=204942)  
   
@@ -180,11 +180,11 @@ ms.lasthandoff: 12/02/2017
   
 -   Ukázky:  
   
-    -   [Selhání zpracování v aktivitě sady vývojový diagram pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
+    -   [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
   
-    -   [Pomocí kombinace vývojový diagram a vybrat scénář StateMachine](../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
+    -   [Scénář stavového stroje s využitím kombinace FlowChart a Pick](../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
   
-    -   [Náborové procesu](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
+    -   [Proces náboru](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
   
 -   Návrhář dokumentaci:  
   
@@ -214,9 +214,9 @@ ms.lasthandoff: 12/02/2017
   
 -   Ukázky:  
   
-    -   [Náborové procesu](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
+    -   [Proces náboru](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
   
-    -   [Podnikové nákupní proces](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)  
+    -   [Proces nákupu v podniku](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)  
   
 -   Návrhář dokumentaci:  
   
@@ -258,9 +258,9 @@ ms.lasthandoff: 12/02/2017
   
 -   Ukázky:  
   
-    1.  [Selhání zpracování v aktivitě sady vývojový diagram pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
+    1.  [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
   
-    2.  [Pomocí procedurální aktivit](../../../docs/framework/windows-workflow-foundation/samples/using-procedural-activities.md)  
+    2.  [Použití procedurálních aktivit](../../../docs/framework/windows-workflow-foundation/samples/using-procedural-activities.md)  
   
 -   Návrhář dokumentace: [návrháře aktivit zpracování chyb](/visualstudio/workflow-designer/error-handling-activity-designers)  
   

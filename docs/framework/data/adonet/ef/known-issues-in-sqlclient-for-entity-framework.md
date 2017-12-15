@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 67d4c4f08661bbf2febefead64e62c8a84045f47
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ddc93c7d707b9569bd2ea1e2c09889d68ff056bf
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient rozhraní Entity Framework
 Tato část popisuje známé problémy související s zprostředkovatele dat .NET Framework pro SQL Server (SqlClient).  
@@ -58,7 +58,7 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
  Určitého chování databáze závisí na úroveň kompatibility nastaveno na databázi. Pokud vaše `ProviderManifestToken` 2005 nastavený atribut a je vaší verze systému SQL Server 2005, ale úroveň kompatibility databáze je nastavena na "80" (SQL Server 2000), vygenerovaného [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] bude cílené na SQL Server 2005, ale nemusí provést podle očekávání kvůli nastavení úrovně kompatibility. Například může ztratit řazení informace, pokud název sloupce v seznamu ORDER BY odpovídá název sloupce v modulu pro výběr.  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
- Vnořené dotazy v klauzuli projekce může získat přeložit na kartézský součin dotazy na serveru. Na některých serverech back-end, včetně serveru SQL Server to může způsobit databáze TempDB tabulku, kterou chcete získat poměrně velké. To může snížit výkon serveru.  
+ Vnořené dotazy v klauzuli projekce může získat přeložit na kartézský součin dotazy na serveru. Na některých serverech back-end, včetně serveru SQL Server to může způsobit v tabulce databáze TempDB získat poměrně velké. To může snížit výkon serveru.  
   
  Následuje příklad vnořený dotaz v klauzuli projekce:  
   
@@ -70,5 +70,5 @@ SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje hodnoty generované serverem GUID typ identity, ale zprostředkovatel musí podporovat vrácení hodnoty generované serverem identity po vložení řádku. Počínaje [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005, můžete se vrátit na typ GUID generované serverem v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] databáze prostřednictvím [klauzuli OUTPUT](http://go.microsoft.com/fwlink/?LinkId=169400) .  
   
 ## <a name="see-also"></a>Viz také  
- [SqlClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
- [Známé problémy a aspekty v technologii LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)
+ [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
+ [Známé problémy a aspekty u LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)

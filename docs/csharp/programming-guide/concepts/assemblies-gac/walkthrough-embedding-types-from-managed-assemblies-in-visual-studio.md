@@ -11,11 +11,11 @@ ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: cbd95c71525a92714ab5758855964e323345b2e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5b07b940d6287de0caf41c7d15f3036ad4041ad0
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>Návod: Vložení typů z řízených sestavení v sadě Visual Studio (C#)
 Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně spojte typy v aplikaci k dosažení nezávislost verze. To znamená váš program může být napsán používat typy z více verzí aplikace spravované knihovny aniž byste museli zopakovat pro každou verzi.  
@@ -66,7 +66,7 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 3.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na soubor Class1.cs a klikněte na **přejmenovat**. Přejmenujte soubor `ISampleInterface.cs` a stiskněte klávesu ENTER. Přejmenování souboru také přejmenuje třídy pro `ISampleInterface`. Tato třída bude reprezentovat veřejné rozhraní pro třídu.  
   
-4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **vlastnosti**. Klikněte na **sestavení** karta. Nastavte výstupní cesta na některé platné místo ve svém vývojovém počítači, jako je třeba `C:\TypeEquivalenceSample`. Toto umístění se taky použije později v tomto návodu.  
+4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **vlastnosti**. Klikněte **sestavení** kartě. Nastavte výstupní cesta na některé platné místo ve svém vývojovém počítači, jako je třeba `C:\TypeEquivalenceSample`. Toto umístění se taky použije později v tomto návodu.  
   
 5.  Při úpravách stále vlastností projektu, klikněte **podpisování** karta. Vyberte **podepsání sestavení** možnost. V **vyberte soubor klíče se silným názvem** seznamu, klikněte na tlačítko **< nová... >**. V **název souboru klíče** zadejte `key.snk`. Vymazat **chránit Moje soubor klíče s heslem** zaškrtávací políčko. Click **OK**.  
   
@@ -242,6 +242,6 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 ## <a name="see-also"></a>Viz také  
  [/ Link (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
  [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)  
  [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)

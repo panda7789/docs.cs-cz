@@ -3,15 +3,15 @@ title: "příkaz pack DotNet - .NET Core rozhraní příkazového řádku"
 description: "Příkaz pack dotnet vytvoří balíčky NuGet pro projekt .NET Core."
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 12/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 8594c863d67baf0237b63e61f28ca9ee315eeddf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: ac1ff90cb97fa4802883e70b0abdf4e77b58dd65
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="dotnet-pack"></a>pack DotNet.
 
@@ -45,7 +45,7 @@ Závislosti NuGet sbalené projektu se přidají do *příponou .nuspec* souboru
 
 Ve výchozím nastavení `dotnet pack` nejprve sestavení projektu. Pokud chcete-li se tomu vyhnout, předat `--no-build` možnost. Toto je často užitečný ve scénářích sestavení nepřetržité integrace (CI), které víte, že kód byl dříve vytvořený.
 
-Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces okolních. Další informace najdete v tématu [NuGet metadata vlastnosti](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
+Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces okolních. Další informace najdete v tématu [NuGet metadata vlastnosti](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) část ukazuje způsob použití nástroje MSBuild přepínače pro několik různých scénářů.
 
 ## <a name="arguments"></a>Arguments
 
@@ -172,3 +172,7 @@ V projektu je verze přípona nakonfigurovat jako `<VersionSuffix>$(VersionSuffi
 Nastavte verzi balíčku `2.1.0` s `PackageVersion` vlastnosti MSBuild:
 
 `dotnet pack /p:PackageVersion=2.1.0`
+
+Pack projekt pro konkrétní [cílové rozhraní](../../standard/frameworks.md):
+
+`dotnet pack /p:TargetFrameworks=net45`

@@ -15,17 +15,17 @@ helpviewer_keywords:
 - text [Windows Forms], drawing at specified locations [Windows Forms]
 - drawing text
 - drawing text [Windows Forms], specified locations [Windows Forms]
-- Windows Forms, drawing text a a specified location
+- Windows Forms, drawing text at a specified location
 ms.assetid: 60816423-1c38-465e-980d-2c2b64d74086
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aab9570b98caec5b3975a5b3ff6f1e62d4ad303b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe6e8563b19ef18b89ad970f3ca35bf5f0782a32
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="how-to-draw-text-at-a-specified-location"></a>Postupy: Kreslení textu v určeném umístění
 Při provádění vlastní kreslení je nakreslit text ve vodorovném jeden řádek začínající na zadaný bod. Tímto způsobem můžete nakreslit text pomocí <xref:System.Drawing.Graphics.DrawString%2A> přetížený metodu <xref:System.Drawing.Graphics> třídu, která přebírá <xref:System.Drawing.Point> nebo <xref:System.Drawing.PointF> parametr. <xref:System.Drawing.Graphics.DrawString%2A> Metoda také vyžaduje, <xref:System.Drawing.Brush> a<xref:System.Drawing.Font>  
@@ -56,7 +56,7 @@ Při provádění vlastní kreslení je nakreslit text ve vodorovném jeden řá
 -   <xref:System.Windows.Forms.PaintEventArgs>  `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: kreslení textu pomocí GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
+ [Postupy: Kreslení textu pomocí GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
  [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
- [Postupy: vytváření rodin písem a písem](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
- [Postupy: kreslení zalomeného textu v obdélníku](../../../../docs/framework/winforms/advanced/how-to-draw-wrapped-text-in-a-rectangle.md)
+ [Postupy: Vytváření rodin písem a písem](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
+ [Postupy: Kreslení zalomeného textu do obdélníku](../../../../docs/framework/winforms/advanced/how-to-draw-wrapped-text-in-a-rectangle.md)

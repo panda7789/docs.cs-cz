@@ -36,11 +36,11 @@ ms.assetid: e347d700-d06c-405b-b302-e9b1edb57dfc
 caps.latest.revision: "52"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 02ba9a999db20abce2106269522c9a3221a00cef
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0a2d0d5ffdca857a3a5ca58cd38b0930f254526f
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="sub-statement-visual-basic"></a>Sub – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, který definovat `Sub` postupu.  
@@ -70,13 +70,13 @@ End Sub
   
      Volitelné. Může být jedna z následujících akcí:  
   
-    -   [Veřejné](../modifiers/public.md)  
+    -   [Public](../modifiers/public.md)  
   
-    -   [Chráněný](../modifiers/protected.md)  
+    -   [Protected](../modifiers/protected.md)  
   
     -   [Friend](../modifiers/friend.md)  
   
-    -   [Privátní](../modifiers/private.md)  
+    -   [Private](../modifiers/private.md)  
   
     -   `Protected Friend`  
   
@@ -86,9 +86,9 @@ End Sub
   
      Volitelné. Může být jedna z následujících akcí:  
   
-    -   [Přetížení](../modifiers/overloads.md)  
+    -   [Overloads](../modifiers/overloads.md)  
   
-    -   [Přepsání](../modifiers/overrides.md)  
+    -   [Overrides](../modifiers/overrides.md)  
   
     -   [Overridable](../modifiers/overridable.md)  
   
@@ -224,20 +224,20 @@ End Sub
  [!code-vb[VbVbalrStatements#58](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/sub-statement_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `DelayAsync` je došlo `Async``Function` s návratovým typem <xref:System.Threading.Tasks.Task%601>. `DelayAsync`má `Return` příkaz, který vrátí celé číslo. Proto funkce deklaraci `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `Dim result As Integer = Await delayTask`.  
+ V následujícím příkladu `DelayAsync` je `Async``Function` s návratovým typem <xref:System.Threading.Tasks.Task%601>. `DelayAsync`má `Return` příkaz, který vrátí celé číslo. Proto funkce deklaraci `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `Dim result As Integer = Await delayTask`.  
   
  `startButton_Click` Postup je příklad `Async Sub` postupu. Protože `DoSomethingAsync` je `Async` funkce, úlohy pro volání `DoSomethingAsync` musí být očekáváno, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. `startButton_Click``Sub` Postupu musí být definovány se `Async` modifikátor vzhledem k tomu, že má `Await` výrazu.  
   
  [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/sub-statement_2.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Implements – příkaz](implements-statement.md)  
- [Function – příkaz](function-statement.md)  
+ [Příkaz Implements](implements-statement.md)  
+ [Příkaz Function](function-statement.md)  
  [Seznam parametrů](parameter-list.md)  
- [Dim – příkaz](dim-statement.md)  
- [Call – příkaz](call-statement.md)  
+ [Příkaz Dim](dim-statement.md)  
+ [Příkaz Call](call-statement.md)  
  [Z](of-clause.md)  
  [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)  
- [Postupy: použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)  
  [Částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)

@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
-ms.openlocfilehash: 45b361a40148c287511fafe25de4000c1dd54102
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1800eb5c69e2436d89f4abd3b519902c5724e411
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -25,9 +25,9 @@ Nainstalujte .NET Core [Windows](https://www.microsoft.com/net/core#windows).
 
 Abyste mohli začít, vývoj aplikací .NET Core pomocí následujících tyto podrobné kurzy.
 
-* [Vytvoření C# Hello World aplikace s .NET Core ve Visual Studio 2017](./tutorials/with-visual-studio.md) -na další informace pro vytváření, ladění a publikovat pomocí jazyka C# a Visual Studio 2017 jednoduché aplikace konzoly .NET Core.
+* [Vytvoření C# Hello World aplikace s .NET Core ve Visual Studio 2017](./tutorials/with-visual-studio.md) – Naučte se vytvářet, ladit a publikovat pomocí jazyka C# a Visual Studio 2017 jednoduché aplikace konzoly .NET Core.
 * [Vytvoření knihovny tříd s C# a .NET Core ve Visual Studio 2017](./tutorials/library-with-visual-studio.md) – Naučte se vytvářet knihovny tříd napsané v C# s použitím Visual Studio 2017.
-* [Vytvoření aplikace Visual Basic Hello World s .NET Core ve Visual Studio 2017](./tutorials/vb-with-visual-studio.md) -na další informace pro vytváření, ladění a publikovat pomocí jazyka Visual Basic a Visual Studio 2017 jednoduché aplikace konzoly .NET Core. 
+* [Vytvoření aplikace Visual Basic Hello World s .NET Core ve Visual Studio 2017](./tutorials/vb-with-visual-studio.md) – Naučte se vytvářet, ladit a publikovat pomocí jazyka Visual Basic a Visual Studio 2017 jednoduché aplikace konzoly .NET Core. 
 * [Sestavení knihovny tříd jazyka Visual Basic a .NET Core ve Visual Studio 2017](./tutorials/vb-library-with-visual-studio.md) – Naučte se vytvářet napsané v jazyce Visual Basic, Visual Studio 2017 pomocí knihovny tříd.
 * [Začínáme s Visual Studio Code na systému Windows pomocí jazyka C# a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio Code](https://www.visualstudio.com/products/code-vs), Microsoft je lightweight editor kódu a platformy, k vytvoření vaší první aplikace konzoly v .NET Core.
 * [Začínáme s .NET Core a Visual Studio 2017](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio 2017](https://www.visualstudio.com/), Microsoft je plně vybavená integrovaného vývojového prostředí, chcete-li vytvořit první napříč platformami konzolové aplikace v .NET Core.

@@ -11,11 +11,11 @@ ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8c1ccbfd71baff50a8055cd89ddecf47bd35cac9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 19820cd20ea87720968298aad8edef69d2bd1603
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>Tvar WordprocessingML dokumentů (C#)
 Toto téma představuje obrazec WordprocessingML dokumentu XML.  
@@ -23,7 +23,7 @@ Toto téma představuje obrazec WordprocessingML dokumentu XML.
 ## <a name="microsoft-office-formats"></a>Formáty Microsoft Office  
  Nativní formát pro systém Microsoft Office 2007 je Office Open XML (označovaného jako Open XML). Otevřete soubor XML je XML na základě formátu, který Ecma standard a je aktuálně projít proces standardy ISO / IEC. Jazyk kódu pro zpracování textu soubory v rámci Open XML se nazývá WordprocessingML. Tento kurz používá WordprocessingML zdrojové soubory jako vstup pro příklady.  
   
- Pokud používáte Microsoft Office 2003, mohou ukládat dokumenty do formátu Office Open XML, pokud jste nainstalovali sady Microsoft Office kompatibility Pack pro Word, Excel a PowerPoint formáty souborů 2007.  
+ Pokud používáte Microsoft Office 2003, můžete uložit dokumenty ve formátu Office Open XML Pokud jste nainstalovali sadu Microsoft Office kompatibility pro Word, Excel a PowerPoint formáty souborů 2007.  
   
 ## <a name="the-shape-of-wordprocessingml-documents"></a>Obrazec WordprocessingML dokumenty  
  První věc pochopit je obrazec WordprocessingML dokumenty. Dokument WordprocessingML obsahuje body element (s názvem `w:body`), který obsahuje odstavců dokumentu. Jednotlivých odstavců, obsahuje jeden nebo více spustí text (s názvem `w:r`). Každý text spustit obsahuje jeden nebo více částí textu (s názvem `w:t`).  

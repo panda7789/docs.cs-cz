@@ -17,11 +17,11 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a27e17e4940ff68f34d1e7e4accfb9e112bc412b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3f024ae77740c596d8646b10a036428e2342d084
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroje událostí nebude v koordinaci s objektem naslouchací proces, který obslužná rutina připojen ke zdroji. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]představuje návrhový vzor, který lze tento problém vyřešit pomocí vyhrazené manager třídu pro konkrétní události a implementace rozhraní na naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabé událostí vzor*.  
@@ -45,7 +45,7 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroj
 |--------------|-----------------------|  
 |Použít existující třídu manager slabé události|Pokud se chcete přihlásit k odběru události má odpovídající <xref:System.Windows.WeakEventManager>, použijte existující správce slabé událostí. Seznam manažerů slabé událostí, které jsou součástí WPF najdete v tématu v hierarchii dědičnosti <xref:System.Windows.WeakEventManager> třídy. Upozorňujeme však, že jsou poměrně málo správci slabé událostí, které jsou součástí WPF, takže budete pravděpodobně muset vyberte jednu z dalších přístupy.|  
 |Použití třídy manager obecné slabé událostí|Použít obecný <xref:System.Windows.WeakEventManager%602> pokud stávající <xref:System.Windows.WeakEventManager> má není k dispozici, má snadný způsob, jak implementovat a nemáte zájem o efektivitu. Obecná <xref:System.Windows.WeakEventManager%602> sice méně efektivní než existující nebo vlastní správce slabé událostí. Například obecná třída nepodporuje více reflexe ke zjištění události název události. Navíc kód k registraci události pomocí Obecné <xref:System.Windows.WeakEventManager%602> více podrobné než při použití existující nebo vlastní <xref:System.Windows.WeakEventManager>.|  
-|Vytvoření třídy manager vlastní slabé událostí|Vytvoření vlastní <xref:System.Windows.WeakEventManager> Pokud jste stávající <xref:System.Windows.WeakEventManager> není k dispozici a chcete nejlepšího výkonu. Použití vlastní <xref:System.Windows.WeakEventManager> přihlásit k odběru události bude efektivnější, ale způsobit náklady na zápis další kód na začátku.|  
+|Vytvoření třídy manager vlastní slabé událostí|Vytvoření vlastní <xref:System.Windows.WeakEventManager> pokud stávající <xref:System.Windows.WeakEventManager> není k dispozici, a chcete nejlepšího výkonu. Použití vlastní <xref:System.Windows.WeakEventManager> přihlásit k odběru události bude efektivnější, ale způsobit náklady na zápis další kód na začátku.|  
   
  Následující části popisují, jak implementovat vzor slabé událostí.  Pro účely Tato diskuse se přihlásit k odběru události má následující vlastnosti.  
   
@@ -142,5 +142,5 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroj
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.WeakEventManager>  
  <xref:System.Windows.IWeakEventListener>  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
