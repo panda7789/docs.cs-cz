@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 9ff9380b318457a842dec4e41b9b74dcddcda3d3
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
+ms.openlocfilehash: 00140e0dfd88481b90d5c310db060c5888205c62
+ms.sourcegitcommit: 5bfcb8d341239df251351f318038d31cdc9159d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Charakteristika moderních webových aplikací
 
@@ -41,7 +41,7 @@ ASP.NET Core je optimalizovaná pro cloudu (veřejný cloud, privátního cloudu
 
 ## <a name="cross-platform"></a>Různé platformy
 
-ASP.NET Core je napříč platformami a můžete spustit na Linux a systému MacOS, jakož i Windows. Otevře se mnoho nové možnosti pro vývoj a nasazení aplikace vytvořené s ASP.NET Core. Docker kontejnery, které obvykle běží Linux dnes, může hostovat aplikace ASP.NET Core, což jim umožní využívat výhody [kontejnery a mikroslužeb](../microservices-architecture).
+ASP.NET Core je napříč platformami a můžete spustit na Linux a systému MacOS, jakož i Windows. Otevře se mnoho nové možnosti pro vývoj a nasazení aplikace vytvořené s ASP.NET Core. Docker kontejnery, které obvykle běží Linux dnes, může hostovat aplikace ASP.NET Core, což jim umožní využívat výhody [kontejnery a mikroslužeb](../microservices-architecture/index.md).
 
 ## <a name="modular-and-loosely-coupled"></a>Modulární a volně párované
 

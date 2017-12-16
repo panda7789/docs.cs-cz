@@ -19,18 +19,18 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bf609a8c350a44fc802cce0ec10693431bbf4f42
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 45cbf9fc6ecda5c1695ee3441fab7fde6c423861
+ms.sourcegitcommit: 5bfcb8d341239df251351f318038d31cdc9159d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat
 Tento dokument popisuje, jak používat knihovna toku dat TPL čtení zpráv z bloku toku dat a zápis zpráv do. Knihovna toku dat TPL poskytuje synchronní a asynchronní metody pro zápis zprávy a čtení zpráv z bloku toku dat. Používá tento dokument <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType> třídy. <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> Třída vyrovnávacích pamětí zpráv a chová jako zdroj zprávy a jako cíl zprávy.  
   
 > [!TIP]
->  Knihovna toku dat TPL (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> oboru názvů) není distribuované s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online `Microsoft.Tpl.Dataflow` balíčku.  
-  
+>  Knihovna toku dat TPL ( <xref:System.Threading.Tasks.Dataflow> oboru názvů) není distribuované s rozhraním .NET Framework. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v sadě Visual Studio, zvolte **spravovat balíčky NuGet** z **projektu** nabídce a vyhledejte online `System.Threading.Tasks.Dataflow` balíčku.  
+
 ## <a name="writing-to-and-reading-from-a-dataflow-block-synchronously"></a>Zápis do a čtení synchronně z bloku toku dat  
  Následující příklad používá <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> metoda k zápisu <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> bloku toku dat a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A> metoda číst ze stejného objektu.  
   
@@ -74,4 +74,4 @@ Tento dokument popisuje, jak používat knihovna toku dat TPL čtení zpráv z b
  Tento příklad ukazuje, jak číst z a zapisovat přímo do bloku zpráv. Bloků toku dat může připojit i k formuláře *kanály*, které jsou lineární pořadí bloků toku dat, nebo *sítě*, které jsou grafy bloků toku dat. V kanálu nebo sítě zdroje asynchronně rozšíří dat k cílům, jakmile tato data k dispozici. Příklad, který vytváří základní toku dat kanál, naleznete v části [návod: vytvoření kanálu toku dat](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md). Příklad, který vytvoří síť složitější toku dat, naleznete v části [návod: použití toku dat ve formulářové aplikaci Windows](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+ [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
