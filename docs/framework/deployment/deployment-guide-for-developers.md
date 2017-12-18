@@ -1,7 +1,7 @@
 ---
 title: "Rozhraní .NET framework – Průvodce nasazením pro vývojáře"
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
+ms.date: 12/14/2017
 ms.prod: .net-framework
 ms.technology: dotnet-clr
 ms.topic: article
@@ -12,14 +12,14 @@ ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 287005af09f3f022c368d3c8fab12ad02b30e944
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 08716b0988e8c76144d8e0a3871c7c91f7419306
+ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
-Toto téma obsahuje informace pro vývojáře, kteří mají být nainstalovány [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1, 4.6.2, nebo rozhraní .NET Framework 4.7 nebo 4.7.1 s svoje aplikace.
+Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat z rozhraní .NET Framework 4.5 na verzi rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] s svoje aplikace.
 
 Odkazy na stažení, najdete v části [Distribuovatelné balíčky](#redistributable-packages). Jazykové sady a Distribuovatelné balíčky můžete také stáhnout z těchto stránkách Microsoft Download Center:
 
@@ -44,9 +44,9 @@ Odkazy na stažení, najdete v části [Distribuovatelné balíčky](#redistribu
 > [!NOTE]
 > Fráze " [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho bod" odkazuje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a všechny novější verze.
 
-- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 a 4.7.1 jsou na místě aktualizace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], což znamená, používají stejnou verzi modulu runtime, ale verze sestavení jsou aktualizovány a zahrnuje nové typy a členy.
+- Verze rozhraní .NET Framework z [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] prostřednictvím [!INCLUDE[net_current](../../../includes/net-current-version.md)] jsou na místě aktualizace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], což znamená, používají stejnou verzi modulu runtime, ale verze sestavení jsou aktualizovány a zahrnuje nové typy a členy.
 
-- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho verze bodu jsou postupně na založený [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Při instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 nebo 4.7.1 v systému, který má [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] nainstalovaná, verze 4 sestavení jsou nahrazena novější verze.
+- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho verze bodu jsou postupně na založený [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Při instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo jeho bod uvolní v systému, který má [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] nainstalovaná, verze 4 sestavení jsou nahrazena novější verze.
 
 - Pokud je odkazováno na Microsoft [out-of-band balíček](http://msdn.microsoft.com/library/dn151288\(v=vs.110\).aspx) ve vaší aplikaci, bude sestavení součástí balíčku aplikace.
 
@@ -342,7 +342,7 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 - [Kódy výsledků agenta Windows Update Agent](http://go.microsoft.com/fwlink/?LinkId=180951)
 
 ## <a name="uninstalling-the-net-framework"></a>Odinstalace rozhraní .NET Framework
- Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)], můžete odinstalovat [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 nebo 4.7.1 pomocí **zapnout funkce systému Windows a vypnutí** v Ovládacích panelech. Ve starších verzích Windows, můžete odinstalovat [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 nebo 4.7.1 pomocí **přidat nebo odebrat programy** v Ovládacích panelech.
+ Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)], můžete odinstalovat [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo jeden z jeho bod uvolní pomocí **zapnout funkce systému Windows a vypnutí** v Ovládacích panelech. Ve starších verzích Windows, můžete odinstalovat [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo jeden z jeho bod uvolní pomocí **přidat nebo odebrat programy** v Ovládacích panelech.
 
 > [!IMPORTANT]
 > Pro systém Windows 7 a starší operační systémy, odinstalace [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 nebo 4.7.1 nepodporuje obnovení [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] soubory a odinstalace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nepodporuje obnovení [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] soubory. Pokud chcete přejít zpět na starší verzi, musíte ho přeinstalovat a všechny aktualizace.
@@ -400,9 +400,9 @@ Následující tabulka uvádí jazykových sad rozhraní .NET Framework, které 
 |3082|Španělština – Španělsko (moderní řazení)|ES|
 
 ## <a name="see-also"></a>Viz také
- [Průvodce nasazením pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)  
+ [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)  
  [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md)  
  [Nainstalujte rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)  
- [Řešení potíží s blokované rozhraní .NET Framework a odinstalacemi](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+ [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
  [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
- [Postupy: získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+ [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)

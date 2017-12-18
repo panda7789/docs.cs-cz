@@ -14,17 +14,17 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 46e79e67b5d6f088eb2a0fb39e6f4f10c6ed8549
-ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+ms.openlocfilehash: cee014956ff4ba2f8e0f66df5bd46a4e843352e4
+ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="install-the-net-framework-for-developers"></a>Nainstalujte rozhraní .NET Framework pro vývojáře
 
 Rozhraní .NET je nedílnou součástí mnoho aplikace běžící v systému Windows a poskytuje běžné funkce pro tyto aplikace spouštět. Pro vývojáře rozhraní .NET Framework poskytuje komplexní a konzistentní programovací model pro vytváření aplikací, které mají vizuálně omráčení koncových uživatelů a hladkou a zabezpečenou komunikaci.  
 
-Tento článek obsahuje odkazy pro instalaci z rozhraní .NET Framework 4.5 na všechny verze rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] ve vašem počítači. Pokud jste vývojář, můžete také pomocí těchto odkazů můžete stáhnout a znovu distribuovat rozhraní .NET Framework s vaší aplikací.
+Tento článek obsahuje odkazy pro instalaci z rozhraní .NET Framework 4.5 na všechny verze rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] ve vašem počítači. Pokud jste vývojář, můžete také pomocí těchto odkazů můžete stáhnout a znovu distribuovat rozhraní .NET Framework s vaší aplikací. Informace o nasazení verzi rozhraní .NET Framework s vaší aplikací najdete v tématu [rozhraní .NET Framework – Průvodce nasazením pro vývojáře](../deployment/deployment-guide-for-developers.md).
 
 > [!NOTE]
 > Toto téma je určeno pro vývojáře, kteří chtějí buď nainstalovat rozhraní .NET Framework na své vlastní systému nebo kteří chtějí nainstalovat pomocí svých aplikací. Uživatelé nainstalovat rozhraní .NET Framework, naleznete v jednotlivých témata, která popisuje instalaci rozhraní .NET Framework na konkrétní operační systémy, jako například [instalaci rozhraní .NET Framework na Windows 10 a Windows Server 2016](on-windows-10.md).  
