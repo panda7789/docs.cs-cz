@@ -172,7 +172,7 @@
       "dotnet-xref/_zip/office15.zip",
       "dotnet-xref/_zip/missingapi.yml",
       "dotnet-xref/_zip/msdnsmallset.yml",
-      "dotnet-xref/_zip/roslyn.yml
+      "dotnet-xref/_zip/roslyn.yml"
     ],
     "lruSize": 0
   }
