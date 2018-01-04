@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e3bb7a7c53cbca8bbd4026b46ce59589cef22382
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c22de3ed401e0be10b155649395da43cedb35e6d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="additional-class-libraries-and-apis"></a>Rozhraní API a knihovny další – třída
 
@@ -32,7 +33,7 @@ Kromě toho některé knihovny cíle specifické platformy nebo implementace roz
   
 ## <a name="oob-projects"></a>Projekty OOB
   
-| Project | Popis |  
+| Projekt | Popis |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | Poskytuje kolekcí, které jsou vlákno bezpečné a zaručenou nikdy změnit jejich obsah. |
 | <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužné rutiny zpráv pro <xref:System.Net.Http.HttpClient> založené na rozhraní WinHTTP systému Windows. |
@@ -41,7 +42,7 @@ Kromě toho některé knihovny cíle specifické platformy nebo implementace roz
 
 ## <a name="platform-specific-libraries"></a>Specifické pro platformu knihovny
   
-| Project | Popis |  
+| Projekt | Popis |  
 | ------- | ----------- |  
 | <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje <xref:System.Text.EncodingProvider> třídy pro zpřístupnění kódování stránky kód pro aplikace, které cílí na univerzální platformu Windows. |  
   
@@ -65,4 +66,4 @@ Tato rozhraní API podpory produktu infrastruktury a nejsou určené/podporovan�
   
 ## <a name="see-also"></a>Viz také
 
-[Rozhraní .NET Framework a Out-of-Band verze](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)
+[Rozhraní .NET Framework a nesvázaná vydání](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)
