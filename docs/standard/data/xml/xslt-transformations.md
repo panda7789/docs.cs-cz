@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0d7fa8492487daff68fd8ebaf4159dd537d13e51
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 92d0688b86e6a95af46e09c21c1a8b3cdf66efc3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xslt-transformations"></a>Transformace XSLT
 Šablony stylů transformace XSLT (Extensible Language) umožňuje transformace do jiného dokumentu, který se liší ve formátu nebo struktura obsah zdrojový dokument XML. Můžete například XSLT transformace XML do kódu HTML k použití na webu a transformují je na dokument, který obsahuje pouze pole, které jsou vyžadována danou aplikací. Tento proces transformace je zadána [doporučení W3C XSL transformace XSLT () verze 1.0](http://go.microsoft.com/fwlink/?LinkID=49919).  
@@ -31,13 +34,13 @@ ms.lasthandoff: 10/18/2017
  [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)  
  Poskytuje informace o používání <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
- [Migrace z XslTransform – třída](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
+ [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
  Popisuje, jak do migrace kódu z <xref:System.Xml.Xsl.XslTransform> třídy.  
   
- [Kompilátoru XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
  Poskytuje informace o používání kompilátoru XSLT.  
   
- [Transformace XSLT pomocí XslTransform – třída](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [Transformace XSLT s třídou XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
  Poskytuje informace o používání <xref:System.Xml.Xsl.XslTransform> třídy.  
   
  **Poznámka:** <xref:System.Xml.Xsl.XslTransform> třída je zastaralá ve verzi rozhraní .NET Framework 2.0.  
@@ -50,4 +53,4 @@ ms.lasthandoff: 10/18/2017
  <xref:System.Xml.Xsl.XsltSettings>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [XML – dokumenty a Data](../../../../docs/standard/data/xml/index.md)
+ [Dokumenty a data XML](../../../../docs/standard/data/xml/index.md)

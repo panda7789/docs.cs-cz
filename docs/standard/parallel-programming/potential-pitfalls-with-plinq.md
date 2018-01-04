@@ -17,11 +17,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f7c971d2c039e6441669108e966eba472819fde5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 972734b1275c82141c9057398268d068f5eaf3e6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Potenciální nástrahy PLINQ
 V mnoha případech můžete PLINQ poskytují významné zlepšení výkonu přes sekvenčních LINQ na objekty dotazy. Vytváření paralelních dotazů však zavádí složitost, který může vést k problémům, které v sekvenčních kódu nejsou jako běžné nebo nejsou vůbec došlo. Toto téma uvádí některé postupy, abyste se vyhnuli při psaní PLINQ dotazů.  

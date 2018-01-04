@@ -13,17 +13,17 @@ ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a5aa7af1f07a29660335d968c1ecc17be5f8beec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe548caacf2c8e7498e3b7abc814b4f89af9b3d6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="myforms-object"></a>My.Forms – objekt
 Poskytuje vlastnosti pro přístup k instanci jednotlivých formulářů Windows, které jsou deklarované v aktuálním projektu.  
   
 ## <a name="remarks"></a>Poznámky  
- `My.Forms` Objekt poskytuje instanci každého formuláře v aktuálním projektu. Název vlastnosti je stejný jako název ve tvaru, který přistupuje k vlastnosti. Informace o přidávání formuláře do projektu najdete v tématu [postupy: Přidání Windows Forms do projektu](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
+ `My.Forms` Objekt poskytuje instanci každého formuláře v aktuálním projektu. Název vlastnosti je stejný jako název ve tvaru, který přistupuje k vlastnosti.   
   
  Dostanete formulářích, které `My.Forms` objektu pomocí názvu formuláře, bez kvalifikace. Název vlastnosti je stejný jako název typu formuláře, to umožňuje přístup do formuláře jako, pokud má výchozí instance. Například `My.Forms.Form1.Show` je ekvivalentní `Form1.Show`.  
   
@@ -53,7 +53,7 @@ Poskytuje vlastnosti pro přístup k instanci jednotlivých formulářů Windows
   
  [!code-vb[VbVbalrMyForms#2](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-forms-object_1.vb)]  
   
- Pro tento příklad fungoval, musí mít váš projekt formuláře s názvem `SidebarMenu`. Další informace najdete v tématu [postupy: Přidání Windows Forms do projektu](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
+ Pro tento příklad fungoval, musí mít váš projekt formuláře s názvem `SidebarMenu`.  
   
  Tento kód bude fungovat pouze v projektu aplikace systému Windows.  
   
@@ -76,7 +76,6 @@ Poskytuje vlastnosti pro přístup k instanci jednotlivých formulářů Windows
  <xref:System.Windows.Forms.Form>  
  <xref:System.Windows.Forms.Form.Close%2A>  
  [Objekty](../../../visual-basic/language-reference/objects/index.md)  
- [Postupy: přidání do projektu Windows Forms](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1)  
- [Is – operátor](../../../visual-basic/language-reference/operators/is-operator.md)  
- [IsNot – operátor](../../../visual-basic/language-reference/operators/isnot-operator.md)  
- [Přístup k formulářům aplikace](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)
+ [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)  
+ [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Přístup k formulářům aplikace](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)

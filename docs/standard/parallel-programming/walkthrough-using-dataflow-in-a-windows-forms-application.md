@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d2775cc99020fd99d6e7d79cdf3e1ffcc3219146
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f9f5a771818231e87f05777803fff39cb40ebd48
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Postupy: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -143,4 +146,4 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
 ## <a name="next-steps"></a>Další kroky  
   
 ## <a name="see-also"></a>Viz také  
- [Toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+ [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

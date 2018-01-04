@@ -25,11 +25,14 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3be1a51db31f18255eabe633cdeaeb860f9c8ce7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3e75f3c74c5966ce5ce22b23f7ba179e903d37aa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="secure-coding-guidelines"></a>Pokyny pro zabezpečené kódování
 Zabezpečení na základě důkaz a zabezpečení přístupu kódu poskytují velmi výkonné, explicitní mechanismy pro implementaci zabezpečení. Většinu kódu aplikace můžete jednoduše používat infrastrukturu implementované rozhraní .NET Framework. V některých případech další bezpečnostní specifické pro aplikaci je nutné, vytvořené pomocí rozšíření zabezpečení systému nebo pomocí nových ad hoc metod.  
@@ -86,5 +89,5 @@ Zabezpečení na základě důkaz a zabezpečení přístupu kódu poskytují ve
 |[Zabezpečení stavových dat](../../../docs/standard/security/securing-state-data.md)|Popisuje, jak chránit soukromé členy.|  
 |[Zabezpečení a uživatelský vstup](../../../docs/standard/security/security-and-user-input.md)|Popisuje otázky zabezpečení pro aplikace, které přijímají vstup uživatele.|  
 |[Zabezpečení a konflikty časování](../../../docs/standard/security/security-and-race-conditions.md)|Popisuje, jak se vyhnout časování ve vašem kódu.|  
-|[Zabezpečení a generování kódu v chodu](../../../docs/standard/security/security-and-on-the-fly-code-generation.md)|Popisuje otázky zabezpečení pro aplikace, které generují dynamický kód.|  
-|[Na základě rolí zabezpečení](../../../docs/standard/security/role-based-security.md)|Popisuje podrobně zabezpečení na základě rolí rozhraní .NET Framework a poskytuje pokyny pro použití v kódu.|
+|[Zabezpečení a průběžné vytváření kódu](../../../docs/standard/security/security-and-on-the-fly-code-generation.md)|Popisuje otázky zabezpečení pro aplikace, které generují dynamický kód.|  
+|[Zabezpečení na základě rolí](../../../docs/standard/security/role-based-security.md)|Popisuje podrobně zabezpečení na základě rolí rozhraní .NET Framework a poskytuje pokyny pro použití v kódu.|

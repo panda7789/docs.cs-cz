@@ -5,15 +5,17 @@ ms.date: 11/08/2017
 ms.prod: .net
 ms.topic: article
 ms.technology: dotnet-standard
-ms.##devlang: dotnet
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e938c009b79af3b2f36094bbb74f4d38baeeac0b
-ms.sourcegitcommit: 281070dee88db86ec3bb4634d5f558d1a4e159dd
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3a5833bdfcf1e3433ea82403908e9a06a88cde27
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="whats-new-in-the-net-standard"></a>Co je nového ve standardní rozhraní .NET
 

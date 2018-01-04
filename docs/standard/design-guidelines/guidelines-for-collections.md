@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9eea60dafef508748df53e23c211f5778250e7f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 62205e6bea39214383f6a653d719c0285f374a9f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="guidelines-for-collections"></a>Pokyny pro kolekce
 Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že některé běžné vlastnosti lze považovat za kolekce. Je téměř vždy vhodné pro tyto typy pro implementaci <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže v této části jsme pouze na nabídnuté typy implementace jednoho nebo obou těchto rozhraní jako kolekce.  
@@ -137,5 +140,5 @@ Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že ně
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny týkající se používání](../../../docs/standard/design-guidelines/usage-guidelines.md)
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)

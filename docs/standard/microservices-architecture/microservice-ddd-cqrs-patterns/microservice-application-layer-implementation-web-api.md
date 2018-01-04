@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: d505a2561ae9b8dee05e803fd639387b63b28b70
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d1e14f2ab26360792b34fee48b7e180346064e46
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
 
@@ -20,11 +23,11 @@ ms.lasthandoff: 10/18/2017
 
 Jak je uvedeno nahoře, aplikační vrstvu můžete implementovat jako součást artefaktů, který vytváříte, například v projektu webového rozhraní API nebo projekt aplikace MVC. V případě mikroslužbu, vytvořené s ASP.NET Core aplikační vrstvu bude obvykle knihovnu webového rozhraní API. Pokud chcete k oddělení, co pochází z ASP.NET Core (jeho infrastruktury a řadičů) z vašeho kódu vrstvy vlastní aplikaci, umístíte vaší aplikační vrstvy může také v knihovně samostatné třídy, ale který je volitelné.
 
-Například kód aplikace vrstvy řazení mikroslužbu přímo implementována jako součást **Ordering.API** projektu (projektu webového rozhraní API ASP.NET Core), jako uvedené v obrázek 9-19.
+Například kód aplikace vrstvy řazení mikroslužbu přímo implementována jako součást **Ordering.API** projektu (projektu webového rozhraní API ASP.NET Core), jako uvedené v obrázek 9 – 23.
 
 ![](./media/image20.png)
 
-**Obrázek 9-19**. Aplikační vrstvu v projektu webového rozhraní API pro jádro ASP.NET Ordering.API
+**Obrázek 9 – 23**. Aplikační vrstvu v projektu webového rozhraní API pro jádro ASP.NET Ordering.API
 
 ASP.NET Core zahrnuje jednoduchou [předdefinované kontejner IoC](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) (představované rozhraní IServiceProvider), která podporuje vkládání konstruktor ve výchozím nastavení a ASP.NET zpřístupní určité služby prostřednictvím DI. ASP.NET Core používá termín *služby* pro všechny typy zaregistrujete, které budou vloženy prostřednictvím DI. Nakonfigurujete integrované kontejneru služby v metodě ConfigureServices ve třídě spuštění vaší aplikace. Závislostmi se implementují ve služby, které potřebuje typu.
 
@@ -33,49 +36,48 @@ Obvykle je vhodné pro vkládání závislosti, které implementují objekty inf
 V následujícím příkladu vidíte, jak je .NET Core vložení požadované úložiště objektů pomocí konstruktoru. Třída je obslužná rutina příkazu, který vám nabídneme v další části.
 
 ```csharp
-// Sample command handler
 public class CreateOrderCommandHandler
     : IAsyncRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
+    private readonly IIdentityService _identityService;
+    private readonly IMediator _mediator;
 
-    // Constructor where Dependencies are injected
-    public CreateOrderCommandHandler(IOrderRepository orderRepository)
+    // Using DI to inject infrastructure persistence Repositories
+    public CreateOrderCommandHandler(IMediator mediator, 
+                                     IOrderRepository orderRepository, 
+                                     IIdentityService identityService)
     {
-        if (orderRepository == null)
-        {
-            throw new ArgumentNullException(nameof(orderRepository));
-        }
-        _orderRepository = orderRepository;
+        _orderRepository = orderRepository ?? 
+                          throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? 
+                          throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? 
+                                 throw new ArgumentNullException(nameof(mediator));
     }
 
     public async Task<bool> Handle(CreateOrderCommand message)
     {
-        //
-        // ... Additional code
-        //
         // Create the Order AggregateRoot
         // Add child entities and value objects through the Order aggregate root
-        // methods and constructor so validations, invariants, and business logic
+        // methods and constructor so validations, invariants, and business logic 
         // make sure that consistency is preserved across the whole aggregate
-        var address = new Address(message.Street, message.City, message.State,
-            message.Country, message.ZipCode);
-        var order = new Order(address, message.CardTypeId, message.CardNumber,
-            message.CardSecurityNumber,
-            message.CardHolderName,
-            message.CardExpiration);
-
+        var address = new Address(message.Street, message.City, message.State, 
+                                  message.Country, message.ZipCode);
+        var order = new Order(message.UserId, address, message.CardTypeId, 
+                              message.CardNumber, message.CardSecurityNumber, 
+                              message.CardHolderName, message.CardExpiration);
+            
         foreach (var item in message.OrderItems)
         {
             order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                item.Discount, item.PictureUrl, item.Units);
+                               item.Discount, item.PictureUrl, item.Units);
         }
 
-        //Persist the Order through the Repository
         _orderRepository.Add(order);
-        var result = await _orderRepository.UnitOfWork
+
+        return await _orderRepository.UnitOfWork
             .SaveEntitiesAsync();
-        return result > 0;
     }
 }
 ```
@@ -130,8 +132,7 @@ Můžete také používat další technologie IoC kontejnery a připojte je kan�
 Například následující je [modulu aplikace Autofac](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/ApplicationModule.cs) pro [Ordering.API webového rozhraní API](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.API) projektu s typy můžete vložit.
 
 ```csharp
-public class ApplicationModule
-    :Autofac.Module
+public class ApplicationModule : Autofac.Module
 {
     public string QueriesConnectionString { get; }
     public ApplicationModule(string qconstr)
@@ -177,8 +178,8 @@ Typ oboru instance Určuje, jak sdílet instanci mezi požadavky pro stejné slu
 -   **Autofac.** Oficiální dokumentaci.
     [*http://docs.autofac.org/en/Latest/*](http://docs.autofac.org/en/latest/)
 
--   **Cesaru členka Torre. Porovnávání životnosti služby kontejner IoC jádro ASP.NET s obory instance kontejner Autofac IoC**
-    [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/ Comparing-ASP-NET-Core-IOC-Service-LIFE-Times-and-autofac-IOC-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
+-   **Porovnávání životnosti služby kontejner IoC jádro ASP.NET s obory instance kontejner Autofac IoC - Cesaru členka Torre. ** 
+     [ *https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
 
 ## <a name="implementing-the-command-and-command-handler-patterns"></a>Implementace vzorů příkaz a obslužná rutina příkazu
 
@@ -186,11 +187,11 @@ V příkladu DI prostřednictvím konstruktor uvedené v předchozí části se 
 
 Příkaz vzor nesouvisí vnitřně CQRS vzor, která byla zavedená dříve v tomto průvodci. CQRS má dvě strany. První oblast je dotazy, zjednodušené dotazy s pomocí [Dapper](https://github.com/StackExchange/dapper-dot-net) malých ORM, který je popsaný výše. Druhý oblast je příkazy, které jsou výchozím bodem pro transakce a vstupní kanál z mimo službu.
 
-Jak znázorňuje obrázek 9-20, vzor je založena na přijímá příkazy ze strany klienta, je na základě pravidel modelu domény zpracování a nakonec uložením stavy s transakce.
+Jak znázorňuje obrázek 9 – 24, vzor je založena na přijímá příkazy ze strany klienta, je na základě pravidel modelu domény zpracování a nakonec uložením stavy s transakce.
 
 ![](./media/image21.png)
 
-**Obrázek 9-20**. Podrobný pohled na příkazy nebo "transakcí" straně ve tvaru CQRS
+**Obrázek 9 – 24**. Podrobný pohled na příkazy nebo "transakcí" straně ve tvaru CQRS
 
 ### <a name="the-command-class"></a>Příkaz – třída
 
@@ -214,7 +215,7 @@ Následující příklad ukazuje zjednodušený CreateOrderCommand třídy. Toto
 
 ```csharp
 // DDD and CQRS patterns comment
-// Note that it is recommended that yuo implement immutable commands
+// Note that we recommend that you implement immutable commands
 // In this case, immutability is achieved by having all the setters as private
 // plus being able to update the data just once, when creating the object
 // through the constructor.
@@ -229,37 +230,26 @@ public class CreateOrderCommand
 {
     [DataMember]
     private readonly List<OrderItemDTO> _orderItems;
-
     [DataMember]
     public string City { get; private set; }
-
     [DataMember]
     public string Street { get; private set; }
-
     [DataMember]
     public string State { get; private set; }
-
     [DataMember]
     public string Country { get; private set; }
-
     [DataMember]
     public string ZipCode { get; private set; }
-
     [DataMember]
     public string CardNumber { get; private set; }
-
     [DataMember]
     public string CardHolderName { get; private set; }
-
     [DataMember]
     public DateTime CardExpiration { get; private set; }
-
     [DataMember]
     public string CardSecurityNumber { get; private set; }
-
     [DataMember]
     public int CardTypeId { get; private set; }
-
     [DataMember]
     public IEnumerable<OrderItemDTO> OrderItems => _orderItems;
 
@@ -323,7 +313,7 @@ public class UpdateOrderStatusCommand
 }
 ```
 
-Někteří vývojáři zvýšit jejich žádost objekty uživatelského rozhraní odděleně od jejich příkaz DTOs, ale který stačí preference. Je zdlouhavé oddělení se nevěnuje přidanou hodnotu a objekty jsou téměř úplně stejné tvaru. V eShopOnContainers, například příkazy pocházejí přímo ze strany klienta.
+Někteří vývojáři zvýšit jejich žádost objekty uživatelského rozhraní odděleně od jejich příkaz DTOs, ale který stačí preference. Je zdlouhavé oddělení se nevěnuje přidanou hodnotu a objekty jsou téměř úplně stejné tvaru. V eShopOnContainers, například některé příkazy pocházejí přímo ze strany klienta.
 
 ### <a name="the-command-handler-class"></a>Obslužná rutina příkazu – třída
 
@@ -343,60 +333,57 @@ Obslužná rutina trvá obvykle následující kroky:
 
 -   Zůstává v nový stav agregace k související databázi. Tato poslední operace je aktuální transakci.
 
-Se jeden agregace vycházejí z jeho agregační kořenové (kořenové entity) se obvykle týká obslužná rutina příkazu. Pokud více agregace by měl být ovlivněn příjem jeden příkaz, můžete použít události domény ke rozšíří stavy nebo akcí na více agregace
+Se jeden agregace vycházejí z jeho agregační kořenové (kořenové entity) se obvykle týká obslužná rutina příkazu. Pokud více agregace by měl být ovlivněn příjem jeden příkaz, můžete použít události domény potřebný k šíření stavy nebo akce napříč více agregace.
 
 Zde důležité je, že při zpracování příkazu, veškerou logiku domény musí být uvnitř modelu domény (agregace) plně zapouzdřené a připravena k testování jednotek. Obslužná rutina funguje stejně jako způsob, jak získat modelu domény z databáze a jako poslední krok, říct vrstvě infrastruktury (úložiště) a zachová tak změny při změně modelu. Výhodou tohoto přístupu je, že můžete Refaktorovat logiku domény ve model domény izolované, plně zapouzdřené, bohaté, chování beze změny kódu v aplikaci nebo infrastruktury vrstvy, které jsou na úrovni vložení (obslužné rutiny příkazů, webového rozhraní API, úložiště atd.).
 
 Při obslužné rutiny příkazů získat komplexní, se příliš mnoho logikou, který může být pach kódu. Zkontrolujte je a pokud najít logiku domény Refaktorovat kód přesunout této domény chování metody objektů domény (agregační kořenové a podřízené entity).
 
-Jako příklad třídu obslužné rutiny příkaz následující kód ukazuje stejnou třídu CreateOrderCommandHandler, kterou jste viděli na začátku této kapitoly. V takovém případě jsme zdůraznily metody zpracování a operace s objekty nebo agregace modelu domény.
+Jako příklad třídu obslužné rutiny příkaz následující kód ukazuje stejnou třídu CreateOrderCommandHandler, kterou jste viděli na začátku této kapitoly. V tomto případě chceme zvýrazněte metody zpracování a operace s objekty nebo agregace modelu domény.
 
 ```csharp
 public class CreateOrderCommandHandler
     : IAsyncRequestHandler<CreateOrderCommand, bool>
 {
-    private readonly IBuyerRepository _buyerRepository;
     private readonly IOrderRepository _orderRepository;
+    private readonly IIdentityService _identityService;
+    private readonly IMediator _mediator;
 
-    public CreateOrderCommandHandler(IBuyerRepository buyerRepository,
-        IOrderRepository orderRepository)
+    // Using DI to inject infrastructure persistence Repositories
+    public CreateOrderCommandHandler(IMediator mediator, 
+                                     IOrderRepository orderRepository, 
+                                     IIdentityService identityService)
     {
-        if (buyerRepository == null)
-        {
-            throw new ArgumentNullException(nameof(buyerRepository));
-        }
-        if (orderRepository == null)
-        {
-            throw new ArgumentNullException(nameof(orderRepository));
-        }
-
-        _buyerRepository = buyerRepository;
-        _orderRepository = orderRepository;
+        _orderRepository = orderRepository ?? 
+                          throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? 
+                          throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? 
+                                 throw new ArgumentNullException(nameof(mediator));
     }
 
     public async Task<bool> Handle(CreateOrderCommand message)
     {
-        //
-        // Additional code ...
-        //
-        // Create the Order aggregate root
+        // Create the Order AggregateRoot
         // Add child entities and value objects through the Order aggregate root
-        // methods and constructor so validations, invariants, and business logic
+        // methods and constructor so validations, invariants, and business logic 
         // make sure that consistency is preserved across the whole aggregate
-        var order = new Order(buyer.Id, payment.Id,
-            new Address(message.Street,
-            message.City, message.State,
-            message.Country, message.ZipCode));
-
+        var address = new Address(message.Street, message.City, message.State, 
+                                  message.Country, message.ZipCode);
+        var order = new Order(message.UserId, address, message.CardTypeId, 
+                              message.CardNumber, message.CardSecurityNumber, 
+                              message.CardHolderName, message.CardExpiration);
+            
         foreach (var item in message.OrderItems)
         {
             order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                item.Discount, item.PictureUrl, item.Units);
+                               item.Discount, item.PictureUrl, item.Units);
         }
 
-        // Persist the Order through the aggregate's repository
         _orderRepository.Add(order);
-        return await _orderRepository.UnitOfWork.SaveChangesAsync();
+
+        return await _orderRepository.UnitOfWork
+            .SaveEntitiesAsync();
     }
 }
 ```
@@ -438,29 +425,29 @@ Další dvě hlavní možnosti, které jsou doporučené možnosti, jsou:
 
 ### <a name="using-the-mediator-pattern-in-memory-in-the-command-pipeline"></a>Použití vzoru zprostředkovatel (v paměti) v příkazu kanálu
 
-Jak znázorňuje obrázek 9 – 21, v rámci CQRS přístupu použijete inteligentního zprostředkovatel, podobně jako sběrnici v paměti, což je dostatečně inteligentní přesměrování na základě typu příkazu nebo DTO přijímání správné obslužná rutina. Jeden černé šipky mezi součástmi představují závislosti mezi objekty (v mnoha případech vložit prostřednictvím DI) s jejich odpovídající interakce.
+Jak znázorňuje obrázek 9 – 25, v rámci CQRS přístupu použijete inteligentního zprostředkovatel, podobně jako sběrnici v paměti, což je dostatečně inteligentní přesměrování na základě typu příkazu nebo DTO přijímání správné obslužná rutina. Jeden černé šipky mezi součástmi představují závislosti mezi objekty (v mnoha případech vložit prostřednictvím DI) s jejich odpovídající interakce.
 
 ![](./media/image22.png)
 
-**Obrázek 9 – 21**. Použití vzoru zprostředkovatel v procesu v jednom mikroslužbu CQRS
+**Obrázek 9 25**. Použití vzoru zprostředkovatel v procesu v jednom mikroslužbu CQRS
 
 Z důvodu, který pomocí vzoru zprostředkovatel smysl je, že v podnikových aplikacích zpracování požadavků můžete získat složitá. Chcete mít možnost Přidat otevřete počet mezi vyjímání otázky, jako je protokolování, ověření, auditování a zabezpečení. V těchto případech můžete spoléhat na kanál zprostředkovatel (najdete v části [zprostředkovatel vzor](https://en.wikipedia.org/wiki/Mediator_pattern)) pro zajištění způsob tyto doplňující chování nebo mezi vyjímání otázky.
 
-Zprostředkovatel je objekt, který zapouzdří "jak" tohoto procesu: ho koordinuje spuštění na základě stavu, je vyvolána způsob obslužná rutina příkazu nebo datové části zadejte do obslužné rutiny. Pomocí součásti zprostředkovatel můžete použít mezi vyjímání obavy centralizované a transparentním způsobem použitím dekoratéry (nebo [kanálu chování](https://github.com/jbogard/MediatR/wiki/Behaviors) od zprostředkovatel v3). (Další informace najdete v tématu [Dekoratéra vzor](https://en.wikipedia.org/wiki/Decorator_pattern).)
+Zprostředkovatel je objekt, který zapouzdří "jak" tohoto procesu: ho koordinuje spuštění na základě stavu, je vyvolána způsob obslužná rutina příkazu nebo datové části zadejte do obslužné rutiny. Pomocí součásti zprostředkovatel můžete použít mezi vyjímání obavy centralizované a transparentním způsobem použitím dekoratéry (nebo [kanálu chování](https://github.com/jbogard/MediatR/wiki/Behaviors) od [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0)). Další informace najdete v tématu [Dekoratéra vzor](https://en.wikipedia.org/wiki/Decorator_pattern).
 
 Dekoratéry a chování jsou podobné [aspekt orientované programování (CHOP)](https://en.wikipedia.org/wiki/Aspect-oriented_programming), pouze u konkrétní proces kanálu spravuje komponentu zprostředkovatel. Aspekty v CHOP, které implementují mezi vyjímání otázky se používají na základě *aspekt weavers* podle zachycení volání objektu nebo vložit během kompilace. Obou přístupů typické CHOP se někdy říká, že fungují "jako"magic, protože není snadno zjistit, jak funguje CHOP svou práci. Při plánování práce s závažných problémech nebo oznámení chyb, může být obtížné ladění CHOP. Tyto dekoratéry chování jsou na druhé straně explicitní a použité jen v kontextu zprostředkovatel, tak ladění je mnohem víc předvídatelný a snadné.
 
-Například v eShopOnContainers řazení mikroslužbu, implementovali jsme dva dekoratéry ukázka, [LogDecorator](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Decorators/LogDecorator.cs) třídy a [ValidatorDecorator](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Decorators/ValidatorDecorator.cs) třídy. Implementace dekoratéra je vysvětleno v další části. Všimněte si, že v budoucí verzi, bude eShopOnContainers migrovat do [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) a přesunout do [chování](https://github.com/jbogard/MediatR/wiki/Behaviors) místo použití dekorátory.
+Například v eShopOnContainers řazení mikroslužbu, implementovali jsme dva ukázkové chování [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) třídy a [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs) třídy. Implementace chování je vysvětleno v další části ukazuje, jak eShopOnContainers implementuje [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) [chování](https://github.com/jbogard/MediatR/wiki/Behaviors).
 
 ### <a name="using-message-queues-out-of-proc-in-the-commands-pipeline"></a>Pomocí fronty zpráv (out-of-proc) v příkazu kanálu
 
-Další možnost je použít asynchronní zprávy na základě zprostředkovatelé nebo fronty zpráv, jak je znázorněno v obrázek 9 – 22. Tato možnost může být spojen s komponentu zprostředkovatel bezprostředně před obslužná rutina příkazu.
+Další možnost je použít asynchronní zprávy na základě zprostředkovatelé nebo fronty zpráv, jak je znázorněno v obrázek 9-26. Tato možnost může být spojen s komponentu zprostředkovatel bezprostředně před obslužná rutina příkazu.
 
 ![](./media/image23.png)
 
-**Obrázek 9 – 22**. Pomocí příkazů CQRS fronty zpráv (mimo proces a komunikaci mezi procesy)
+**Obrázek 9-26**. Pomocí příkazů CQRS fronty zpráv (mimo proces a komunikaci mezi procesy)
 
-Pomocí zprávy fronty přijmout, že můžete další příkazy zkomplikovat kanálu váš příkaz, protože budete pravděpodobně muset kanál rozdělit do dvou procesů připojené prostřednictvím fronty externí zpráv. Stále by měl použít pokud potřebujete mít lepší škálovatelnost a výkon podle asynchronní zasílání zpráv. Zvažte, že v případě obrázek 9 22, řadičem právě odešle příkaz zprávy do fronty a vrátí. Obslužné rutiny příkazů pak zpracování zpráv vlastním tempem. To znamená uvítali front – fronty zpráv vystupovat jako vyrovnávací paměť v případech hyper škálovatelnost je potřebné, například pro akcií nebo všechny další scénáře s k velkému počtu vstupní data.
+Pomocí zprávy fronty přijmout, že můžete další příkazy zkomplikovat kanálu váš příkaz, protože budete pravděpodobně muset kanál rozdělit do dvou procesů připojené prostřednictvím fronty externí zpráv. Stále by měl použít pokud potřebujete mít lepší škálovatelnost a výkon podle asynchronní zasílání zpráv. Zvažte, že v případě obrázek 9-26, řadičem právě odešle příkaz zprávy do fronty a vrátí. Obslužné rutiny příkazů pak zpracování zpráv vlastním tempem. To znamená uvítali front: fronty zpráv vystupovat jako vyrovnávací paměť v případech hyper škálovatelnost je potřebné, například pro akcií nebo všechny další scénáře s k velkému počtu vstupní data.
 
 Ale kvůli asynchronní povaha fronty zpráv, musíte zjistit, jak komunikaci s aplikací klienta o úspěchu nebo neúspěchu procesu příkaz. Platí pravidlo nikdy byste neměli používat "fire a zapomněli" příkazy. Každé obchodní aplikace je potřeba vědět, pokud příkaz byla úspěšně zpracována, nebo aspoň ověřit a přijmout.
 
@@ -480,7 +467,7 @@ V každém případě to by měl být na základě požadavků vaší aplikace n
 
 ## <a name="implementing-the-command-process-pipeline-with-a-mediator-pattern-mediatr"></a>Implementace příkaz proces kanálu pomocí vzoru zprostředkovatel (MediatR)
 
-Jako ukázka provádění Tento průvodce navrhuje pomocí kanálu v procesu na základě vzoru zprostředkovatel k přijímání příkaz jednotky a směrování, v paměti, obslužné rutiny příkaz right. Průvodce také navrhne použití dekoratéry nebo [chování](https://github.com/jbogard/MediatR/wiki/Behaviors) k oddělení mezi vyjímání otázky.
+Jako ukázka provádění Tento průvodce navrhuje pomocí kanálu v procesu na základě vzoru zprostředkovatel jednotky příkaz přijímání a směrování, příkazy v paměti pro příkaz right obslužné rutiny. Průvodce také navrhne použití [chování](https://github.com/jbogard/MediatR/wiki/Behaviors) k oddělení mezi vyjímání otázky.
 
 Pro implementaci v .NET Core jsou více knihovny open-source dostupné které implementují vzoru zprostředkovatel. Knihovna používané v tomto průvodci se [MediatR](https://github.com/jbogard/MediatR) knihovny open-source (vytvořený Jimmy Bogard), ale může použít jiná možnost. MediatR je malý a jednoduchý knihovny, která umožňuje zpracování zpráv v paměti jako příkaz, při použití dekoratéry nebo chování.
 
@@ -490,13 +477,13 @@ Dalším důvodem dobrý k použití vzoru zprostředkovatel byl vysvětlené Ji
 
 Myslím, může být důležité zmínit, zde testování – poskytuje okno konzistentním změněnými do chování systému. V požadavku, odpověď na více systémů. Jsme zjistili tento aspekt velmi cenné v budově konzistentně chovají testy.
 
-První dejte nám prohlédněte si kód řadiče ve skutečnosti použít objekt zprostředkovatel. Pokud nebyly používá zprostředkovatel objektu, musíte vložit všechny závislosti pro tento kontroler, třeba objekt protokolovacího nástroje a další. Konstruktor proto může být poměrně složitá. Na druhé straně Pokud chcete použít objekt zprostředkovatel, konstruktoru řadiče může být značnou měrou s několika závislosti místo velký počet závislostí, které byste měli Pokud jste měli jednu na operace vyjímání mezi, jako v následujícím příkladu:
+První Podíváme se na řadič WebAPI ukázka ve skutečnosti použít objekt zprostředkovatel. Pokud nebyly používá zprostředkovatel objektu, musíte vložit všechny závislosti pro tento kontroler, třeba objekt protokolovacího nástroje a další. Konstruktor proto může být poměrně složitá. Na druhé straně Pokud chcete použít objekt zprostředkovatel, konstruktoru řadiče může být značnou měrou jenom pár závislosti místo velký počet závislostí, pokud jste měli jednu na operace vyjímání mezi, jako v následujícím příkladu:
 
 ```csharp
-public class OrdersController : Controller
+public class MyMicroserviceController : Controller
 {
-    public OrdersController(IMediator mediator,
-        IOrderQueries orderQueries)
+    public MyMicroserviceController(IMediator mediator, 
+                                    IMyMicroserviceQueries microserviceQueries)
     // ...
 ```
 
@@ -504,14 +491,152 @@ Uvidíte, že zprostředkovatel poskytuje vyčištění a štíhlého konstrukto
 
 ```csharp
 [Route("new")]
-[HttpPost]
-public async Task<IActionResult> CreateOrder([FromBody]CreateOrderCommand
-    createOrderCommand)
+[HttpPost] 
+public async Task<IActionResult> ExecuteBusinessOperation([FromBody]RunOpCommand 
+                                                               runOperationCommand) 
 {
-    var commandResult = await _mediator.SendAsync(createOrderCommand);
+    var commandResult = await _mediator.SendAsync(runOperationCommand); 
+
     return commandResult ? (IActionResult)Ok() : (IActionResult)BadRequest();
 }
 ```
+
+### <a name="implementing-idempotent-commands"></a>Implementace idempotent příkazy
+
+V eShopOnContainers je pokročilejší příklad než výše odesílá objekt CreateOrderCommand z mikroslužbu řazení. Ale vzhledem k tomu, že obchodní proces řazení je trochu složitější a v našem případě ve skutečnosti začne v košíku mikroslužbu, tato akce odeslání objekt CreateOrderCommand se provádí z obslužné rutiny události integrace s názvem [ UserCheckoutAcceptedIntegrationEvent.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) místo jednoduché řadiče WebAPI volat z klientské aplikace jako v předchozím příkladu jednodušší. 
+
+Akce odeslání příkazu MediatR je nicméně poměrně podobné, jak je znázorněno v následujícím kódu.
+
+```csharp
+var createOrderCommand = new CreateOrderCommand(eventMsg.Basket.Items,     
+                                                eventMsg.UserId, eventMsg.City, 
+                                                eventMsg.Street, eventMsg.State,
+                                                eventMsg.Country, eventMsg.ZipCode,
+                                                eventMsg.CardNumber, 
+                                                eventMsg.CardHolderName, 
+                                                eventMsg.CardExpiration,
+                                                eventMsg.CardSecurityNumber,  
+                                                eventMsg.CardTypeId);
+
+var requestCreateOrder = new IdentifiedCommand<CreateOrderCommand,bool>(createOrderCommand, 
+                                                                        eventMsg.RequestId);
+result = await _mediator.Send(requestCreateOrder);
+```
+
+Tento případ je však také chvíli pokročilejší protože také Zavádíme idempotent příkazy. Proces CreateOrderCommand by měla být idempotent, takže pokud stejná zpráva obsahuje duplicitní přes síť, z důvodu z jakéhokoli důvodu třeba opakovaných pokusů, stejné pořadí firmy, budou zpracovány pouze jednou.
+
+Tato možnost je implementovaná pomocí zabalení příkaz obchodní (v této případu CreateOrderCommand) a embeding do obecné IdentifiedCommand, který je sledován pomocí ID každé zprávy přicházející přes síť, která má být idempotent.
+
+V následující kód uvidíte, že IdentifiedCommand není nic jiného než DTO s a ID a objekt příkazu zabalené obchodní.
+
+```csharp
+public class IdentifiedCommand<T, R> : IRequest<R>
+    where T : IRequest<R>
+{
+    public T Command { get; }
+    public Guid Id { get; }
+    public IdentifiedCommand(T command, Guid id)
+    {
+        Command = command;
+        Id = id;
+    }
+}
+```
+
+Potom commandhandler – pro IdentifiedCommand s názvem [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs) bude v podstatě zkontrolujte, jestli ID již v rámci zprávy již existuje v tabulce. Pokud je k dispozici, příkaz nebude možné znovu zpracovat, takže se chová jako příkaz idempotent. Prováděné kód infrastruktury `_requestManager.ExistAsync` volání metody níže.
+
+```csharp
+// IdentifiedCommandHandler.cs
+public class IdentifiedCommandHandler<T, R> : 
+                                   IAsyncRequestHandler<IdentifiedCommand<T, R>, R>
+                                   where T : IRequest<R>
+{
+    private readonly IMediator _mediator;
+    private readonly IRequestManager _requestManager;
+
+    public IdentifiedCommandHandler(IMediator mediator, 
+                                    IRequestManager requestManager)
+    {
+        _mediator = mediator;
+        _requestManager = requestManager;
+    }
+
+    protected virtual R CreateResultForDuplicateRequest()
+    {
+        return default(R);
+    }
+
+    public async Task<R> Handle(IdentifiedCommand<T, R> message)
+    {
+        var alreadyExists = await _requestManager.ExistAsync(message.Id);
+        if (alreadyExists)
+        {
+            return CreateResultForDuplicateRequest();
+        }
+        else
+        {
+            await _requestManager.CreateRequestForCommandAsync<T>(message.Id);
+
+            // Send the embeded business command to mediator 
+            // so it runs its related CommandHandler 
+            var result = await _mediator.Send(message.Command);
+                
+            return result;
+        }
+    }
+}
+```
+
+Vzhledem k tomu, že IdentifiedCommand chová jako příkaz obchodní obálky, když je potřeba zpracovat, protože se nejedná o opakované Id příkaz obchodní, pak trvá tento příkaz vnitřní obchodní a znovu odešle ji zprostředkovatel jako poslední část při výše uvedeném kódu spuštění `_mediator.Send(message.Command)`, z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
+
+Při učinit, bude odkaz a spusťte obchodní obslužná rutina, v takovém případě CreateOrderCommandHandler, který je spuštěn transakce proti dané databázi řazení, jak je znázorněno v následujícím kódu.
+
+```csharp
+// CreateOrderCommandHandler.cs
+public class CreateOrderCommandHandler
+                                   : IAsyncRequestHandler<CreateOrderCommand, bool>
+{
+    private readonly IOrderRepository _orderRepository;
+    private readonly IIdentityService _identityService;
+    private readonly IMediator _mediator;
+
+    // Using DI to inject infrastructure persistence Repositories
+    public CreateOrderCommandHandler(IMediator mediator, 
+                                     IOrderRepository orderRepository, 
+                                     IIdentityService identityService)
+    {
+        _orderRepository = orderRepository ?? 
+                          throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? 
+                          throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? 
+                                 throw new ArgumentNullException(nameof(mediator));
+    }
+
+    public async Task<bool> Handle(CreateOrderCommand message)
+    {
+        // Add/Update the Buyer AggregateRoot
+        var address = new Address(message.Street, message.City, message.State,
+                                  message.Country, message.ZipCode);
+        var order = new Order(message.UserId, address, message.CardTypeId,  
+                              message.CardNumber, message.CardSecurityNumber, 
+                              message.CardHolderName, message.CardExpiration);
+            
+        foreach (var item in message.OrderItems)
+        {
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
+                               item.Discount, item.PictureUrl, item.Units);
+        }
+
+        _orderRepository.Add(order);
+
+        return await _orderRepository.UnitOfWork
+            .SaveEntitiesAsync();
+    }
+}
+```
+
+### <a name="registering-the-types-used-by-mediatr"></a>Registrace typů používané MediatR
 
 Aby MediatR vědět třídy obslužná rutina příkazu budete muset registrovat zprostředkovatel třídy a třídy obslužné rutiny příkazů ve vašem kontejner IoC. Ve výchozím nastavení MediatR používá Autofac jako kontejner IoC, ale můžete také použít integrované kontejner IoC jádro ASP.NET nebo jiných kontejneru, nepodporuje MediatR.
 
@@ -524,20 +649,21 @@ public class MediatorModule : Autofac.Module
     {
         builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
             .AsImplementedInterfaces();
-        builder.RegisterAssemblyTypes(typeof(CreateOrderCommand)
-            .GetTypeInfo().Assembly)
-            .As(o => o.GetInterfaces()
-            .Where(i => i.IsClosedTypeOf(typeof(IAsyncRequestHandler<,>)))
-            .Select(i => new KeyedService("IAsyncRequestHandler", i)));
-        builder.RegisterGenericDecorator(typeof(LogDecorator<,>),
-            typeof(IAsyncRequestHandler<,>), "IAsyncRequestHandler");
 
+        // Register all the Command classes (they implement IAsyncRequestHandler)
+        // in assembly holding the Commands
+        builder.RegisterAssemblyTypes(
+                              typeof(CreateOrderCommand).GetTypeInfo().Assembly).
+                                   AsClosedTypesOf(typeof(IAsyncRequestHandler<,>));
         // Other types registration
+        //...
     }
 }
 ```
 
-Protože každý obslužná rutina příkazu implementuje rozhraní s obecné IAsyncRequestHandler&lt;T&gt; a poté zkontroluje RegisteredAssemblyTypes objektu obslužná rutina je propojovat s jeho obslužná rutina příkazu každý příkaz, protože, relace je uvedeno v třídě commandhandler – jako v následujícím příkladu:
+To je, kdy "magic se stane" s MediatR. 
+
+Protože každý obslužná rutina příkazu implementuje obecné IAsyncRequestHandler&lt;T&gt; rozhraní, při registraci sestavení, kód zaregistruje s RegisteredAssemblyTypes všechny typy maked jako RequestHandlers při vztahující se CommandHandlers s jejich příkazy, díky relace uvedená v třídě commandhandler – jako v následujícím příkladu:
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -545,37 +671,51 @@ public class CreateOrderCommandHandler
 {
 ```
 
-Toto je kód, který příkazy koreluje s obslužné rutiny příkazů. Obslužná rutina je pouze jednoduchou třídu, ale dědí z RequestHandler&lt;T&gt;, a MediatR zajišťuje je volán s správné datové části.
+Se kód, který příkazy koreluje s obslužné rutiny příkazů. Obslužná rutina je pouze jednoduchou třídu, ale dědí z RequestHandler&lt;T&gt;, a MediatR zajišťuje vyvolání správné datové části.
 
-## <a name="applying-cross-cutting-concerns-when-processing-commands-with-the-mediator-and-decorator-patterns"></a>Při zpracování příkazů vzory zprostředkovatel a Dekoratéra použití mezi vyjímání otázky
+## <a name="applying-cross-cutting-concerns-when-processing-commands-with-the-behaviors-in-meadiatr"></a>Při zpracování příkazů s chováním v MeadiatR použití mezi vyjímání otázky
 
-Neexistuje jeden krok: schopnost použít mezi vyjímání obavy zprostředkovatel kanálu. Můžete také zjistit na konci kód Autofac registrace modulu jak se registrují dekoratéra, konkrétně zadejte vlastní třídu LogDecorator.
-
-Znovu si všimněte, že budoucí verzi systému eShopOnContainers se bude migrovat do [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) a přesunout do [chování](https://github.com/jbogard/MediatR/wiki/Behaviors) místo použití dekorátory.
-
-Aby [LogDecorator](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Decorators/LogDecorator.cs) třídy mohou být provedena jako následující kód, který ukládá do protokolu informace o obslužná rutina se spouští a bez ohledu na jeho, jestli byla úspěšná.
+Neexistuje jeden krok: schopnost použít mezi vyjímání obavy zprostředkovatel kanálu. Taky uvidíte na konci kód Autofac registrace modulu jak registruje chování typu, konkrétně, vlastní třídu LoggingBehavior a třídu ValidatorBehavior. Ale můžete přidat další vlastní jednání příliš.
 
 ```csharp
-public class LogDecorator<TRequest, TResponse>
-    : IAsyncRequestHandler<TRequest, TResponse>
-    where TRequest : IAsyncRequest<TResponse>
+public class MediatorModule : Autofac.Module
 {
-    private readonly IAsyncRequestHandler<TRequest, TResponse> _inner;
-    private readonly ILogger<LogDecorator<TRequest, TResponse>> _logger;
-
-    public LogDecorator(
-        IAsyncRequestHandler<TRequest, TResponse> inner,
-        ILogger<LogDecorator<TRequest, TResponse>> logger)
+    protected override void Load(ContainerBuilder builder)
     {
-        _inner = inner;
-        _logger = logger;
+        builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
+            .AsImplementedInterfaces();
+
+        // Register all the Command classes (they implement IAsyncRequestHandler)
+        // in assembly holding the Commands
+        builder.RegisterAssemblyTypes(
+                              typeof(CreateOrderCommand).GetTypeInfo().Assembly).
+                                   AsClosedTypesOf(typeof(IAsyncRequestHandler<,>));
+        // Other types registration
+        //...        
+        builder.RegisterGeneric(typeof(LoggingBehavior<,>)).
+                                                   As(typeof(IPipelineBehavior<,>));
+        builder.RegisterGeneric(typeof(ValidatorBehavior<,>)).
+                                                   As(typeof(IPipelineBehavior<,>));
     }
+}
+```
 
-    public async Task<TResponse> Handle(TRequest message)
+Aby [LoggingBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) třídy mohou být provedena jako následující kód, který ukládá do protokolu informace o obslužná rutina se spouští a bez ohledu na jeho, jestli byla úspěšná.
+
+```csharp
+public class LoggingBehavior<TRequest, TResponse> 
+         : IPipelineBehavior<TRequest, TResponse>
+{
+    private readonly ILogger<LoggingBehavior<TRequest, TResponse>> _logger;
+    public LoggingBehavior(ILogger<LoggingBehavior<TRequest, TResponse>> logger) =>
+                                                                  _logger = logger;
+
+    public async Task<TResponse> Handle(TRequest request,
+                                        RequestHandlerDelegate<TResponse> next)
     {
-        _logger.LogInformation($"Executing command {_inner.GetType().FullName}");
-        var response = await _inner.Handle(message);
-        _logger.LogInformation($"Succeeded executed command{_inner.GetType().FullName}");
+        _logger.LogInformation($"Handling {typeof(TRequest).Name}");
+        var response = await next();
+        _logger.LogInformation($"Handled {typeof(TResponse).Name}");
         return response;
     }
 }
@@ -583,7 +723,7 @@ public class LogDecorator<TRequest, TResponse>
 
 Právě implementací této třídy dekoratéra a architekturu kanál s ním všechny příkazy, které jsou zpracované pomocí MediatR protokolování informace o provádění.
 
-EShopOnContainers řazení mikroslužbu platí také pro základní ověření, druhý dekoratéra [ValidatorDecorator](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Decorators/ValidatorDecorator.cs) třídu, která závisí na [FluentValidation](https://github.com/JeremySkinner/FluentValidation) knihovny, jak je znázorněno Následující kód:
+EShopOnContainers řazení mikroslužbu platí také druhý chování pro základní ověření [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs) třídu, která závisí na [FluentValidation](https://github.com/JeremySkinner/FluentValidation) knihovny, jak je znázorněno v Následující kód:
 
 ```csharp
 public class ValidatorDecorator<TRequest, TResponse>
@@ -623,6 +763,38 @@ public class ValidatorDecorator<TRequest, TResponse>
 Pak na základě [FluentValidation](https://github.com/JeremySkinner/FluentValidation) knihovna, kterou jsme vytvořili ověření dat předávaných s CreateOrderCommand, jako v následujícím kódu:
 
 ```csharp
+public class ValidatorBehavior<TRequest, TResponse> 
+         : IPipelineBehavior<TRequest, TResponse>
+{
+    private readonly IValidator<TRequest>[] _validators;
+    public ValidatorBehavior(IValidator<TRequest>[] validators) =>
+                                                         _validators = validators;
+
+    public async Task<TResponse> Handle(TRequest request,
+                                        RequestHandlerDelegate<TResponse> next)
+    {
+        var failures = _validators
+            .Select(v => v.Validate(request))
+            .SelectMany(result => result.Errors)
+            .Where(error => error != null)
+            .ToList();
+
+        if (failures.Any())
+        {
+            throw new OrderingDomainException(
+                $"Command Validation Errors for type {typeof(TRequest).Name}",
+                        new ValidationException("Validation exception", failures));
+        }
+
+        var response = await next();
+        return response;
+    }
+}
+```
+
+Potom založené na knihovně FluentValidation, jsme vytvořili ověření dat předávaných s CreateOrderCommand, jako v následujícím kódu:
+
+```csharp
 public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
 {
     public CreateOrderCommandValidator()
@@ -632,14 +804,12 @@ public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
         RuleFor(command => command.State).NotEmpty();
         RuleFor(command => command.Country).NotEmpty();
         RuleFor(command => command.ZipCode).NotEmpty();
-        RuleFor(command => command.CardNumber).NotEmpty().Length(12, 19);
+        RuleFor(command => command.CardNumber).NotEmpty().Length(12, 19); 
         RuleFor(command => command.CardHolderName).NotEmpty();
-        RuleFor(command => command.CardExpiration).NotEmpty().Must(BeValidExpirationDate).
-            WithMessage("Please specify a valid card expiration date");
-        RuleFor(command => command.CardSecurityNumber).NotEmpty().Length(3);
+        RuleFor(command => command.CardExpiration).NotEmpty().Must(BeValidExpirationDate).WithMessage("Please specify a valid card expiration date"); 
+        RuleFor(command => command.CardSecurityNumber).NotEmpty().Length(3); 
         RuleFor(command => command.CardTypeId).NotEmpty();
-        RuleFor(command => command.OrderItems).
-            Must(ContainOrderItems).WithMessage("No order items found");
+        RuleFor(command => command.OrderItems).Must(ContainOrderItems).WithMessage("No order items found"); 
     }
 
     private bool BeValidExpirationDate(DateTime dateTime)
@@ -652,11 +822,12 @@ public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
         return orderItems.Any();
     }
 }
+
 ```
 
 Můžete vytvořit další ověření. Toto je velmi vyčištění a elegantní způsob, jak implementovat vaše příkaz ověření.
 
-Podobným způsobem může implementovat jiné dekoratéry pro další aspekty nebo mezi vyjímání aspekty, které chcete použít k příkazům při jejich zpracování.
+Podobným způsobem může implementovat jiného chování pro další aspekty nebo mezi vyjímání aspekty, které chcete použít k příkazům při jejich zpracování.
 
 #### <a name="additional-resources"></a>Další zdroje
 

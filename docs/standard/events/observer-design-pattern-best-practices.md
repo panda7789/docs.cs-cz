@@ -16,11 +16,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0edba44efcaa46812f535b39364c2f5e4e3a1afe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dc42ccd425b52719b2b69525d2bbbe4607a19982
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="observer-design-pattern-best-practices"></a>Doporučené postupy pro návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel je v rozhraní .NET Framework, implementované jako sada rozhraní. <xref:System.IObservable%601?displayProperty=nameWithType> Rozhraní představuje poskytovatele dat, který je také zajišťuje <xref:System.IDisposable> implementace, která umožňuje pozorovatelů zrušit odběr oznámení. <xref:System.IObserver%601?displayProperty=nameWithType> Rozhraní představuje pozorovatele. Toto téma popisuje osvědčené postupy, které vývojáři postupujte při implementaci návrhový vzor pozorovatel pomocí těchto rozhraní.  
@@ -61,6 +64,6 @@ Návrhový vzor pozorovatel je v rozhraní .NET Framework, implementované jako 
  Přestože je možné připojit k více poskytovatelů pozorovatele, doporučené vzor je pro připojení <xref:System.IObserver%601> instance, která má jenom jeden <xref:System.IObservable%601> instance.  
   
 ## <a name="see-also"></a>Viz také  
- [Návrhový vzor pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
- [Postupy: implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)  
- [Postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)
+ [Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
+ [Postupy: Implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)  
+ [Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)

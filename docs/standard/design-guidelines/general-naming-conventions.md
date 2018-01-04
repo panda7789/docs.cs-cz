@@ -24,11 +24,14 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dde3adbb7640978829dea4b977ed14eec38a9077
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5e5c09c4db8e65d836c7afc7cb78c1f9e32bab65
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="general-naming-conventions"></a>Obecné zásady vytváření názvů
 Tato část popisuje obecné zásady vytváření názvů vztahující se k výběru word pokyny k používání zkratky a zkratky a doporučení na tom, jak zamezit pomocí názvů konkrétní jazyk.  
@@ -68,20 +71,20 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
   
 |C#|Visual Basic|C++|CLR|  
 |---------|------------------|-----------|---------|  
-|**SByte –**|**SByte –**|**Char**|**SByte –**|  
-|**bajtů**|**Bajtů**|**unsigned char**|**Bajtů**|  
-|**krátký**|**Krátký**|**krátký**|**Int16**|  
-|**ushort –**|**UInt16**|**short bez znaménka**|**UInt16**|  
-|**celá čísla**|**Celé číslo**|**celá čísla**|**Int32**|  
+|**sbyte**|**SByte –**|**char**|**SByte –**|  
+|**byte**|**Bajtů**|**unsigned char**|**Bajtů**|  
+|**short**|**Krátký**|**short**|**Int16**|  
+|**ushort**|**UInt16**|**short bez znaménka**|**UInt16**|  
+|**int**|**Celé číslo**|**int**|**Int32**|  
 |**uint**|**UInt32**|**int bez znaménka**|**UInt32**|  
-|**dlouhá**|**Dlouhá**|**__int64**|**Int64**|  
-|**ulong –**|**UInt64**|**__int64 bez znaménka**|**UInt64**|  
-|**plovoucí desetinná čárka**|**Jeden**|**plovoucí desetinná čárka**|**Jeden**|  
-|**Double**|**Double**|**Double**|**Double**|  
-|**BOOL**|**Logická hodnota**|**BOOL**|**Logická hodnota**|  
-|**Char**|**Char –**|**wchar_t**|**Char –**|  
-|**řetězec**|**Řetězec**|**Řetězec**|**Řetězec**|  
-|**objekt**|**Objekt**|**Objekt**|**Objekt**|  
+|**long**|**Dlouhá**|**__int64**|**Int64**|  
+|**ulong**|**UInt64**|**__int64 bez znaménka**|**UInt64**|  
+|**float**|**Jeden**|**float**|**Jeden**|  
+|**double**|**Double**|**double**|**Double**|  
+|**bool**|**Logická hodnota**|**bool**|**Logická hodnota**|  
+|**char**|**Char –**|**wchar_t**|**Char –**|  
+|**string**|**Řetězec**|**Řetězec**|**Řetězec**|  
+|**object**|**Objekt**|**Objekt**|**Objekt**|  
   
  **PROVEĎTE ✓** použít běžný název, například `value` nebo `item`, místo opakování název typu ve výjimečných případech, pokud identifikátor nemá žádný význam sémantického a typ parametru není důležité.  
   
@@ -107,5 +110,5 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
  [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

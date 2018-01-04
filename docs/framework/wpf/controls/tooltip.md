@@ -18,11 +18,12 @@ caps.latest.revision: "68"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29123dc5de6390d18aaccbb064e53748499d61e4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 79ef4306d193bdb6f55aec467074c8b5b2f374b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tooltip"></a>Popisy tlačítek
 Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví ukazatel myši nad elementem, například jako přes <xref:System.Windows.Controls.Button>.  
@@ -35,7 +36,7 @@ Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví u
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ToolTip – přehled](../../../../docs/framework/wpf/controls/tooltip-overview.md)  
-  [Postupy: témata](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
+  [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ToolTip>  
@@ -43,5 +44,5 @@ Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví u
   <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled místní nabídka](../../../../docs/framework/wpf/controls/popup-overview.md)  
-  [Postupy: témata](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
+ [Přehled prvku Popup](../../../../docs/framework/wpf/controls/popup-overview.md)  
+  [Témata s postupy](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)

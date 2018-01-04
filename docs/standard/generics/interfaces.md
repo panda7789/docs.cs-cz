@@ -18,11 +18,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 71cc1410a13fc73cce931a063a929ba94aab91be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b0735718db6317716055b9ee59cf90e869f2015c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-interfaces"></a>Obecná rozhraní
 Toto téma obsahuje přehled obecných rozhraní, které tvoří běžné funkce celé řady obecných typů.  
@@ -53,6 +56,6 @@ Toto téma obsahuje přehled obecných rozhraní, které tvoří běžné funkce
  <xref:System.Collections.Generic?displayProperty=nameWithType>  
  <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
  [Obecné typy](../../../docs/standard/generics/index.md)  
- [Obecné kolekce v rozhraní .NET Framework](../../../docs/standard/generics/collections.md)  
- [Obecní delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)  
+ [Generování kolekcí v architektuře .NET Framework](../../../docs/standard/generics/collections.md)  
+ [Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)  
  [Kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md)

@@ -8,11 +8,14 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 1e1dc919c7e35580576c86b4cf9872b4f8cea2c2
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7ba7f09e189cd6d58ba9e84c4b668b871eb25dcb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace mikroslužbu
 
@@ -58,7 +61,7 @@ Co by měl být architektura nasazení aplikace? Specifikace pro aplikaci, spole
 
 V tomto přístupu každou službu (kontejner) implementuje sadu získá na ucelenosti a úzce související funkce. Aplikace může například obsahovat služeb, jako je služba katalogu řazení služby, služby košík, služba profilů uživatelů atd.
 
-Mikroslužeb komunikovat pomocí protokoly, jako je například HTTP (REST), ale také asynchronně (který je AMQP) kdykoli je to možné, zejména při šíření aktualizací s událostmi integrace.
+Mikroslužeb komunikaci pomocí protokolů takové jako HTTP (REST), ale také asynchronně (například pomocí protokolu AMQP) kdykoli je to možné, zejména při šíření aktualizací s událostmi integrace.
 
 Mikroslužeb se vyvíjí a nasadit jako kontejnery nezávisle na sobě. To znamená, že může být vývojový tým vývoj a nasazení určité mikroslužbu bez dopadu na ostatní subsystémy.
 
@@ -150,7 +153,7 @@ Jak je uvedeno v části architektura, při navrhování a vytváření složit�
 
 ## <a name="external-versus-internal-architecture-and-design-patterns"></a>Externí versus interní architektury a návrhu vzory
 
-Externí architektura je architektury mikroslužby skládá více službou následující zásady popsané v části architektura tohoto průvodce. Ale v závislosti na povaze každý mikroslužbu a nezávisle na Architektura vysoké úrovně mikroslužbu zvolíte, je běžné a někdy doporučuje mít různé interní architektury, každý podle různé vzorce pro různé mikroslužeb. Mikroslužeb můžete použít i různé technologie a programovací jazyky. Obrázek 8-2 je znázorněný tyto rozdíly.
+Externí architektura je architektury mikroslužby sestává z několika služeb, následující zásady popsané v části architektura tohoto průvodce. Ale v závislosti na povaze každý mikroslužbu a nezávisle na Architektura vysoké úrovně mikroslužbu zvolíte, je běžné a někdy doporučuje mít různé interní architektury, každý podle různé vzorce pro různé mikroslužeb. Mikroslužeb můžete použít i různé technologie a programovací jazyky. Obrázek 8-2 je znázorněný tyto rozdíly.
 
 ![](./media/image2.png)
 

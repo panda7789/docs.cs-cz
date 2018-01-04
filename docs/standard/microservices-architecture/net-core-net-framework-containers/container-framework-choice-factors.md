@@ -8,11 +8,14 @@ ms.date: 10/18/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 4889662c4d887bebd320389e3ced6aae1c93133b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 40e6a14e7e3515194185e1f4558c91ac29429108
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="decision-table-net-frameworks-to-use-for-docker"></a>Rozhodovací tabulky: rozhraní .NET Framework pro Docker
 

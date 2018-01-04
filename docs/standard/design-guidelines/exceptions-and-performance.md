@@ -19,11 +19,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9c2d7cfcb228c492d2adbe614d0ed88a3b02bb68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9a876a818086e0d54251f53a1e8f83cc74a574ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exceptions-and-performance"></a>Výjimky a výkonu
 Jeden běžný problém související s výjimkami je, že pokud se výjimky použijí pro kód, který pravidelně selže, výkon implementace nepřijatelné. Jde o platný problém. Pokud člen, vyvolá výjimku, může být jeho výkon pořadí podle velikosti pomalejší. Je však možné, abyste dosáhli dobrého výkonu při zachování výhradně výjimka pokyny, které zakáže použití kódy chyb. Dva vzory popsaných v této části zjistíte, jak to udělat.  
@@ -81,5 +84,5 @@ public struct DateTime {
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny pro návrh pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)

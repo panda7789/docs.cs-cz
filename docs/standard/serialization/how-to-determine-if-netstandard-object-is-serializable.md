@@ -14,11 +14,14 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0460fe27228fb9e17bde2d10652164707cd47a8b
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7c44e350ad4e561f03bf6c598172058a0a9ca41e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Postupy: určit, zda je serializovatelný objekt .NET Standard
 

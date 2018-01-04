@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6a06de3f8fb6351d340e1c8f1bfe8f4105967e25
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e18a3151228ea7edb5a8380f6ed707ee88d369e5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-object-model-overview"></a>Přehled modelu objektů schématu XML
 Model objektu schématu (SOM) v rozhraní Microsoft .NET Framework je bohatá rozhraní API, která umožňuje vytvářet, upravovat a ověřit schémata prostřednictvím kódu programu. SOM funguje na dokumentech schémat XML podobně jako na způsob, jakým modelu objektu dokumentu (DOM) funguje na dokumenty XML. Dokumentech schémat XML. jsou platné soubory XML, které jednou načtena do SOM, nesou význam o struktuře a platnosti jiných dokumentů XML, která vyhovují schématu.  
@@ -46,10 +49,10 @@ Model objektu schématu (SOM) v rozhraní Microsoft .NET Framework je bohatá ro
  Další informace o každé třídě <xref:System.Xml.Schema> obor názvů, najdete v článku <xref:System.Xml.Schema> obor názvů referenční dokumentaci v knihovně tříd rozhraní .NET Framework.  
   
 ## <a name="see-also"></a>Viz také  
- [Čtení a zápis XML schémata](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
- [Vytváření XML schémata](../../../../docs/standard/data/xml/building-xml-schemas.md)  
+ [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
+ [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
  [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
- [Úpravy XML schémata](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
- [Včetně nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
+ [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
+ [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
  [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- [Informační sadu po schématu kompilace](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+ [Informační sada po kompilaci schématu](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)

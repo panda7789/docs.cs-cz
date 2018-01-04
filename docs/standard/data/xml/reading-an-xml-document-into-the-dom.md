@@ -16,11 +16,14 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b8844705b492574443ff4f37de33ccaf1f5fedd7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bbbd61cbe22eb2c8e54daad863ad35ef076c1bc3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reading-an-xml-document-into-the-dom"></a>Čtení dokumentu XML do modelu DOM
 Informace o XML je načíst do paměti z různých formátech. Může být číst z řetězce, datový proud, adresa URL, čtečky textu nebo třídy odvozené od <xref:System.Xml.XmlReader>.  
@@ -78,4 +81,4 @@ public class Sample
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

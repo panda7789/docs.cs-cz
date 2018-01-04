@@ -4,11 +4,14 @@ description: "Postup navýšení a posunutí existujících aplikací do cloudu 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: b7ef8c0e68eee3b2b4247454929e92fb175cae0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5e1a04a0d8ed151337e00c8147756644dfc9075a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-v10"></a>Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery (1.0)  
 
@@ -197,4 +200,4 @@ Obě ukázkové aplikace druhá verze modernized kód, a která jsou přímočar
 Napsali jsme tento průvodce vám pomůže pochopit možnosti pro zlepšení a modernizace existujících webových aplikací .NET. Průvodce a související ukázkové aplikace se vyvíjejí. Uvítáme vaše názory a připomínky. Pokud máte komentáře o tom, jak tento průvodce může být užitečnější, pošlete prosím, aby [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 >[!div class="step-by-step"]
-[Další](lift-and-shift-existing-apps-azure-iaas.md)
+[Next](lift-and-shift-existing-apps-azure-iaas.md)

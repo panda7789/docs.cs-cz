@@ -12,11 +12,14 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31bb350d454d2fcb0f38d092240c98c1b87966be
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0e6407fc8da8695da47165ae0ea2c2c6d863ec23
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Nástroje definice schématu XML (Xsd.exe)
 Nástroj pro definici schématu XML (Xsd.exe) generuje schématu XML nebo běžné language runtime třídy z XDR, XML a XSD souborů nebo ze třídy v sestavení modulu runtime.  
@@ -66,7 +69,7 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 |**/f**[**pole vlastností**]|Generuje polí místo vlastností. Ve výchozím nastavení jsou generovány vlastnosti.|  
 |**/l**[**anguage**]**:***jazyk*|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, který je ve výchozím nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název třídy implementující<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|  
 |**/n**[**amespace**]**:***obor názvů*|Určuje runtime obor názvů pro generovaný typy. Výchozí obor názvů je `Schemas`.|  
-|**/ nologo**|Potlačí hlavičky.|  
+|**/nologo**|Potlačí hlavičky.|  
 |**/ORDER**|Generuje explicitní pořadí identifikátory pro všechny členy částic.|  
 |**/o [ut]:** *directoryName*|Určuje výstupní adresář pro soubory v. Výchozí je aktuální adresář.|  
 |**/u**[**ri**]**:***identifikátor uri*|Určuje identifikátor URI pro elementy ve schématu pro generování kódu pro. Tento identifikátor URI, pokud je k dispozici, se vztahuje na všechny prvky určené s `/element` možnost.|  
@@ -235,6 +238,6 @@ xsd myAssembly.dll
  <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>  
  [Nástroje](../../../docs/framework/tools/index.md)      
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
- [LINQ na DataSet přehled](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
- [Dotazování typové datové sady](../../../docs/framework/data/adonet/querying-typed-datasets.md)  
+ [Přehled LINQ to DataSet](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
+ [Dotazy na typové datové sady](../../../docs/framework/data/adonet/querying-typed-datasets.md)  
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)

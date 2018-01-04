@@ -16,11 +16,14 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b91c49be9268d8dc967daeac116cf67b2ed7d742
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 06cac8d76b17f3ef32931ea21d0556085f05d7b1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 Rozhraní Microsoft .NET Framework obsahuje základní sadu třídy, která poskytuje implementaci z XML modelu DOM (Document Object). <xref:System.Xml.XmlNode>a jeho odvozené třídy, poskytuje metody a vlastnosti, které vám umožní přejít, dotazování a změnit obsah a struktura dokumentu XML.  
@@ -256,4 +259,4 @@ Number of elements in book.xml: 3
  Pokud přepíšete <xref:System.Xml.XmlDocument.CreateElement%2A> metoda v odvozené třídě, výchozí atributy nepřidávají při vytváření nové prvky při úpravách dokumentu. Jedná se pouze o problém při úpravách. Protože <xref:System.Xml.XmlDocument.CreateElement%2A> metoda je zodpovědný za přidání výchozí atributy, které mají <xref:System.Xml.XmlDocument>, musí code tuto funkci v <xref:System.Xml.XmlDocument.CreateElement%2A> metoda. Při zavádění <xref:System.Xml.XmlDocument> , který obsahuje výchozí atributy, se budou zpracovávat správně. Další informace o výchozí atributy najdete v tématu [vytváření nové atributy pro elementy v modelu DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

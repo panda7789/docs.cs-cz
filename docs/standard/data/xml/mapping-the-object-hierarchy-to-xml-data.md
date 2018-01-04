@@ -16,11 +16,14 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1bf43922fb702988e9057f541833cd58d33c820a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2191cb15a85e9b16ff0a21084668e80d3c197bfa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na XML Data
 Když je dokument XML v paměti, je koncepční reprezentace stromu. Pro programování, nebudete mít hierarchii k objektu pro přístup k uzlu stromu. Následující příklad ukazuje, jak se změní obsah XML na uzly.  
@@ -185,7 +188,7 @@ public class Sample
   
  Výstup z příkladu odhalí mapování dat na typy uzlů.  
   
- **Výstup**  
+ **Output**  
   
 ```xml  
 <?xml version='1.0'?><!--This is a sample XML document --><!DOCTYPE Items [<!ENTITY number "123">]<Items><Item>Test with an entity: 123</Item><Item>test with a child element <more> stuff</Item><Item>test with a CDATA section <![CDATA[<456>]]> def</Item><Item>Test with a char entity: A</Item><--Fourteen chars in this element.--><Item>1234567890ABCD</Item></Items>  
@@ -228,4 +231,4 @@ public class Sample
  Přidání nových uzlů k modelu DOM naleznete v tématu [vkládání uzly do dokumentu XML](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md). Odebrat uzly z modelu DOM, najdete v části [odebrání uzlů, obsah a hodnoty z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md). Chcete-li upravit obsah uzly v modelu DOM, přečtěte si téma [úprava uzlů, obsah a hodnoty v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

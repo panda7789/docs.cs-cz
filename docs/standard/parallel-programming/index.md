@@ -1,5 +1,5 @@
 ---
-title: "Paralelní programování v rozhraní .NET"
+title: "Paralelní programování v .NET"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -14,13 +14,16 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e061508b6b74e81b79ab7d53b0277afd38072635
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 554de5d65929afc03b57bdc604ceeb6ac35362d4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="parallel-programming-in-net"></a>Paralelní programování v rozhraní .NET
+# <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
 Mnoho osobních počítačů a pracovních stanic má dvě nebo čtyři jádra (CPU) umožňující provádění více vláken současně. V blízké budoucnosti se očekává, že počítače budou mít mnohem více jader. V rámci využití výhod dostupného hardwaru lze kód paralelizovat a distribuovat tak práci mezi více procesorů. V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] rozšiřují podporu pro paralelní programování poskytnutím nový modul runtime, nových typů knihovny tříd a nové diagnostické nástroje. Tyto funkce zjednodušují vývoj paralelních aplikací tak, aby bylo možné psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken. Následující obrázek poskytuje podrobný přehled architektury paralelní programování v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
  ![Paralelní programování architektura .NET](../../../docs/standard/parallel-programming/media/tpl-architecture.png "TPL_Architecture")  

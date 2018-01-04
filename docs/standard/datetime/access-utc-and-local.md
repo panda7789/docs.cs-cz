@@ -23,11 +23,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4538407bc66ad7974a9a4998c8e5d7ccb38fab4e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 600dbb98264c4750db1ffb98b757ad191eaf4fe5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: přístup k místním ČASEM a předdefinované objekty zóny
 

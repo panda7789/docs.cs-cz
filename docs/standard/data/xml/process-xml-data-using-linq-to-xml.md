@@ -13,11 +13,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a6b7a3c452d6b29145b8a2e7b1d2a1e824aaf508
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 26258489742db3de108ddf68f68074682c30fe57
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="process-xml-data-using-linq-to-xml"></a>Zpracování dat XML pomocí LINQ to XML
 Technologie LINQ to XML je nový model v rozhraní .NET Framework verze 3.5 pro zpracování dat XML. Technologie LINQ to XML umožňuje vývojářům provádět všechno, co byste očekávali s daty XML: dotazování, úprava, vytváření, ukládání a serializaci dokumentů XML. Skutečné výhody ležet v možnosti dotazu a vytvoření.  
@@ -31,5 +34,5 @@ Technologie LINQ to XML je nový model v rozhraní .NET Framework verze 3.5 pro 
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Linq>  
  <xref:System.Linq>  
- [Technologie LINQ to XML vs. DOM](http://msdn.microsoft.com/library/19b5ed02-feb2-455a-8897-f7f0fd76aca3)  
- [Technologie LINQ to XML vs. Další technologie XML](http://msdn.microsoft.com/library/7ba1eecf-f09a-42de-bc80-22ca5b2e42d3)
+ [Technologie LINQ to XML versus model DOM](http://msdn.microsoft.com/library/19b5ed02-feb2-455a-8897-f7f0fd76aca3)  
+ [Technologie LINQ to XML versus jiné technologie XML](http://msdn.microsoft.com/library/7ba1eecf-f09a-42de-bc80-22ca5b2e42d3)

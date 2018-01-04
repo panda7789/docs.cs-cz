@@ -17,11 +17,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cc1883e8503567bdf2f6e0bda20cea777a12c7cf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ceca36b5e988751dff34b5574978aa0ae2da1259
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="traversing-xml-schemas"></a>Procházení schémat XML
 Procházení schématu XML pomocí schématu objektu modelu (SOM) rozhraní API poskytuje přístup k prvky, atributy a typy, které jsou uložené v SOM. Procházení XML schéma načtena do rozsahu SOM je také prvním krokem při úpravě schématu XML pomocí rozhraní API SOM.  
@@ -75,10 +78,10 @@ Procházení schématu XML pomocí schématu objektu modelu (SOM) rozhraní API 
  Příklad kódu v [schémat XML vytváření](../../../../docs/standard/data/xml/building-xml-schemas.md) tématu použít <xref:System.Xml.Schema.XmlSchemaComplexType.Attributes%2A?displayProperty=nameWithType> kolekce přidat atribut `CustomerId` k `Customer` elementu. Toto je vlastnost vedlejší schema kompilace. Je odpovídající vlastnost po-Schema-kompilace-informační sadu <xref:System.Xml.Schema.XmlSchemaComplexType.AttributeUses%2A?displayProperty=nameWithType> kolekce, která obsahuje všechny atributy komplexního typu, včetně těch, které se dědí prostřednictvím odvození typu.  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled modelu objektů schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
- [Čtení a zápis XML schémata](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
- [Vytváření XML schémata](../../../../docs/standard/data/xml/building-xml-schemas.md)  
- [Úpravy XML schémata](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
- [Včetně nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
+ [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
+ [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
+ [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
+ [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
+ [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
  [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- [Informační sadu po schématu kompilace](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+ [Informační sada po kompilaci schématu](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)

@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: b814d344f2c78e7cf57f9e2896cf1d6b52db38d9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1fa9f3ad2e08b68fcdc60375ab164cb87a3eeb91
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduchého mikroslužbu CRUD řízené daty
 
@@ -48,7 +51,7 @@ Chcete-li implementovat jednoduché mikroslužbu CRUD pomocí .NET Core a Visual
 
 **Obrázek 8-6**. Vytvoření projektu webového rozhraní API ASP.NET Core v sadě Visual Studio
 
-Po vytvoření projektu, můžete implementovat vaše řadiče MVC, stejně jako v jiných projekt webového rozhraní API pomocí rozhraní Entity Framework API nebo dalších rozhraní API. V projektu eShopOnContainers.Catalog.API uvidíte, že hlavní závislosti pro tento mikroslužby jsou právě ASP.NET Core sám sebe, rozhraní Entity Framework a Swashbuckle, jak je znázorněno na obrázku 8-7.
+Po vytvoření projektu, můžete implementovat vaše řadiče MVC, stejně jako v jiných projekt webového rozhraní API pomocí rozhraní Entity Framework API nebo dalších rozhraní API. V nový projekt webového rozhraní API uvidíte, že pouze závislost máte, mikroslužby jsou v technologii ASP.NET Core sám sebe. Interně v rámci `Microsoft.AspNetCore.All` závislostí, odkazuje na Entity Framework a mnoho dalších balíčcích Nuget pro rozhraní .NET Core, jak je znázorněno na obrázku 8-7.
 
 ![](./media/image8.PNG)
 
@@ -60,13 +63,6 @@ Základní Entity Framework (EF) je lightweight rozšiřitelný, a přístup tec
 
 Mikroslužbu katalogu používá EF a zprostředkovatele SQL Server, protože jeho databáze se spouští v kontejneru se systémem SQL Server pro Linux Docker bitovou kopii. Databáze však může být nasazený do všech ostatních SQL serverech, jako je Windows na pracovišti nebo v databázi SQL Azure. Jediné, co by se musela změnit je připojovací řetězec v rozhraní ASP.NET Web API mikroslužby.
 
-#### <a name="add-entity-framework-core-to-your-dependencies"></a>Přidání Entity Framework Core do vaší závislosti
-
-Můžete nainstalovat balíček NuGet pro zprostředkovatele databáze, které chcete použít, v tomto případě SQL Server, z v prostředí Visual Studio IDE nebo s konzolou NuGet. Použijte následující příkaz:
-
-```
-  Install-Package Microsoft.EntityFrameworkCore.SqlServer
-```
 
 #### <a name="the-data-model"></a>Datový model
 
@@ -79,12 +75,20 @@ public class CatalogItem
     public string Name { get; set; }
     public string Description { get; set; }
     public decimal Price { get; set; }
+    public string PictureFileName { get; set; }
     public string PictureUri { get; set; }
     public int CatalogTypeId { get; set; }
     public CatalogType CatalogType { get; set; }
     public int CatalogBrandId { get; set; }
     public CatalogBrand CatalogBrand { get; set; }
+    public int AvailableStock { get; set; }
+    public int RestockThreshold { get; set; }
+    public int MaxStockThreshold { get; set; }
+
+    public bool OnReorder { get; set; }
     public CatalogItem() { }
+
+    // Additional code ...
 }
 ```
 
@@ -96,7 +100,6 @@ public class CatalogContext : DbContext
     public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
     {
     }
-
     public DbSet<CatalogItem> CatalogItems { get; set; }
     public DbSet<CatalogBrand> CatalogBrands { get; set; }
     public DbSet<CatalogType> CatalogTypes { get; set; }
@@ -106,9 +109,7 @@ public class CatalogContext : DbContext
 }
 ```
 
-Můžete mít další kód v implementaci DbContext. Například v ukázkové aplikaci máme metody OnModelCreating ve třídě CatalogContext, která automaticky naplní ukázkových dat při prvním pokusu o přístup k databázi. Tato metoda je užitečná pro ukázková data. Metody OnModelCreating můžete také použít k přizpůsobení objektu a databáze entity mapování s mnoha dalších [body rozšiřitelnosti EF](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/).
-
-Zobrazí se další podrobnosti o OnModelCreating v [implementace vrstvě infrastruktury trvalost Entity Framework základní](#implementing_infrastructure_persistence) dále v této příručce.
+Můžete mít další `DbContext` implementace. Například v mikroslužbu Catalog.API ukázkové, je druhý `DbContext` s názvem `CatalogContextSeed` kde automaticky naplní ukázkových dat při prvním pokusu o přístup k databázi. Tato metoda je užitečná pro ukázková data, pro automatizované testování scénáře, také. V rámci `DbContext`, můžete použít `OnModelCreating` metodu za účelem přizpůsobení objektu a databáze entity mapování s a dalších [body rozšiřitelnosti EF](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/).
 
 ##### <a name="querying-data-from-web-api-controllers"></a>Dotazování na data z řadičů webového rozhraní API
 
@@ -122,13 +123,13 @@ public class CatalogController : ControllerBase
     private readonly CatalogSettings _settings;
     private readonly ICatalogIntegrationEventService _catalogIntegrationEventService;
 
-    public CatalogController(CatalogContext context,
-        IOptionsSnapshot<CatalogSettings> settings,
-        ICatalogIntegrationEventService catalogIntegrationEventService)
+    public CatalogController(CatalogContext context, 
+                             IOptionsSnapshot<CatalogSettings> settings,
+                             ICatalogIntegrationEventService catalogIntegrationEventService)
     {
         _catalogContext = context ?? throw new ArgumentNullException(nameof(context));
-        _catalogIntegrationEventService = catalogIntegrationEventService ??
-           throw new ArgumentNullException(nameof(catalogIntegrationEventService));
+        _catalogIntegrationEventService = catalogIntegrationEventService ?? throw new ArgumentNullException(nameof(catalogIntegrationEventService));
+
         _settings = settings.Value;
         ((DbContext)context).ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
     }
@@ -136,22 +137,27 @@ public class CatalogController : ControllerBase
     // GET api/v1/[controller]/items[?pageSize=3&pageIndex=10]
     [HttpGet]
     [Route("[action]")]
-    public async Task<IActionResult> Items([FromQuery]int pageSize = 10,
-    [FromQuery]int pageIndex = 0)
+    [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> Items([FromQuery]int pageSize = 10, 
+                                           [FromQuery]int pageIndex = 0)
+
     {
         var totalItems = await _catalogContext.CatalogItems
             .LongCountAsync();
+
         var itemsOnPage = await _catalogContext.CatalogItems
             .OrderBy(c => c.Name)
             .Skip(pageSize * pageIndex)
             .Take(pageSize)
             .ToListAsync();
+
         itemsOnPage = ChangeUriPlaceholder(itemsOnPage);
+
         var model = new PaginatedItemsViewModel<CatalogItem>(
             pageIndex, pageSize, totalItems, itemsOnPage);
+
         return Ok(model);
     } 
-
     //...
 }
 ```
@@ -162,20 +168,22 @@ Data je vytvořit, odstranit a upravit v databázi pomocí instance třídy enti
 
 ```csharp
 var catalogItem = new CatalogItem() {CatalogTypeId=2, CatalogBrandId=2,
-   Name="Roslyn T-Shirt", Price = 12};
+                                     Name="Roslyn T-Shirt", Price = 12};
 _context.Catalog.Add(catalogItem);
 _context.SaveChanges();
 ```
 
 ##### <a name="dependency-injection-in-aspnet-core-and-web-api-controllers"></a>Vkládání závislostí v řadiče ASP.NET Core a webového rozhraní API
 
-V ASP.NET Core můžete ihned vkládání závislostí (DI). Není potřeba nastavit kontejner inverzi řízení (IoC) třetí strany, i když je možné připojit vaše upřednostňované kontejner IoC ASP.NET základní infrastruktury Chcete-li. V takovém případě znamená, že můžete přímo vložit požadované DBContext EF nebo další úložiště pomocí konstruktoru řadiče. V příkladu výše třídy CatalogController jsme jsou vložení objekt typu CatalogContext plus pomocí konstruktoru CatalogController jiné objekty.
+V ASP.NET Core můžete ihned vkládání závislostí (DI). Není potřeba nastavit kontejner inverzi řízení (IoC) třetí strany, i když je možné připojit vaše upřednostňované kontejner IoC ASP.NET základní infrastruktury Chcete-li. V takovém případě znamená, že můžete přímo vložit požadované DBContext EF nebo další úložiště pomocí konstruktoru řadiče. V příkladu výše `CatalogController` třída, jsme jsou vložení objektu `CatalogContext` zadejte plus jiné objekty prostřednictvím `CatalogController()` konstruktor.
 
-Důležité konfigurační nastavení v projektu webového rozhraní API je registrace třídy DbContext do kontejneru služby IoC. Obvykle uděláte ve třídě spuštění voláním služby. Metoda AddDbContext uvnitř metody ConfigureServices, jak je znázorněno v následujícím příkladu:
+Důležité konfigurační nastavení v projektu webového rozhraní API je registrace třídy DbContext do kontejneru služby IoC. Obvykle děláte proto v `Startup` třída voláním `services.AddDbContext<DbContext>()` metodu `ConfigureServices()` metoda, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
+    // Additional code...
+
     services.AddDbContext<CatalogContext>(options =>
     {
         options.UseSqlServer(Configuration["ConnectionString"],
@@ -183,10 +191,10 @@ public void ConfigureServices(IServiceCollection services)
         {
            sqlOptions.
                MigrationsAssembly(
-               typeof(Startup).
-               GetTypeInfo().
-               Assembly.
-               GetName().Name);
+                   typeof(Startup).
+                    GetTypeInfo().
+                     Assembly.
+                      GetName().Name);
 
            //Configuring Connection Resiliency:
            sqlOptions.
@@ -234,9 +242,9 @@ Můžete použít nastavení ASP.NET Core a přidejte vlastnost ConnectionString
 }
 ```
 
-Soubor settings.json může mít výchozí hodnoty pro vlastnost ConnectionString nebo pro žádné jiné vlastnosti. Tyto vlastnosti však bude možné přepsat hodnoty proměnné prostředí, které zadáte v soubor docker-compose.override.yml.
+Soubor settings.json může mít výchozí hodnoty pro vlastnost ConnectionString nebo pro žádné jiné vlastnosti. Tyto vlastnosti však bude možné přepsat hodnoty proměnné prostředí, které zadáte v soubor docker-compose.override.yml, při použití Docker.
 
-Z docker-compose.yml nebo docker compose.override.yml souborů můžete inicializovat těchto proměnných prostředí tak, že Docker bude nastavit je jako proměnné prostředí operačního systému pro vás, jak je znázorněno v následující soubor docker-compose.override.yml (připojení řetězec a další řádky zalomení v tomto příkladu, ale nebude zabalit do vlastního souboru).
+Z docker-compose.yml nebo docker compose.override.yml souborů můžete inicializovat těchto proměnných prostředí tak, že Docker bude nastavit je jako proměnné prostředí operačního systému pro vás, jak je znázorněno v následující soubor docker-compose.override.yml (připojení řetězec a další řádky zalomení v tomto příkladu, ale nebude zalomení v souboru kódu).
 
 ```yml
 # docker-compose.override.yml
@@ -245,14 +253,12 @@ Z docker-compose.yml nebo docker compose.override.yml souborů můžete iniciali
 catalog.api:
   environment:
     - ConnectionString=Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
-    - ExternalCatalogBaseUrl=http://10.0.75.1:5101
-    #- ExternalCatalogBaseUrl=http://dockerhoststaging.westus.cloudapp.azure.com:5101
-  
+    # Additional environment variables for this service
   ports:
-    - "5101:5101"
+    - "5101:80"
 ```
 
-Soubory docker-compose.yml na úrovni řešení nejsou jenom flexibilnější než konfigurační soubory na úrovni projektu nebo mikroslužbu, ale také bezpečnější. Vezměte v úvahu, že imagí Dockeru, které vytvoříte za mikroslužbu neobsahují docker-compose.yml soubory jenom binární soubory a soubory konfigurace pro každý mikroslužbu, včetně soubor Docker. Ale soubor docker-compose.yml není nasazena spolu s aplikace; používá se pouze v době nasazení. Umístění hodnot proměnných prostředí v těchto souborech docker-compose.yml (i bez šifrování hodnoty) je proto bezpečnější než uvedení tyto hodnoty regulární .NET konfigurační soubory, které jsou nasazeny pomocí kódu.
+Soubory docker-compose.yml na úrovni řešení nejsou jenom flexibilnější než soubory konfigurace na úrovni projektu nebo mikroslužbu, ale také informace, ale také bezpečnější Pokud přepíšete deklarovat na docker-compose soubory pomocí proměnné prostředí hodnoty nastavené z nástrojů pro vaše nasazení, jako je z úlohy nasazení služby VSTS Docker. 
 
 Nakonec můžete získat tuto hodnotu z vašeho kódu pomocí konfigurace\["ConnectionString"\], jak je znázorněno v metodě ConfigureServices v předchozí příklad kódu.
 
@@ -291,8 +297,7 @@ Tento mechanismus správy verzí je jednoduchý a závisí na serveru pro směro
     [*http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
 -   **Správa verzí RESTful webového rozhraní API**
-
-    [*https://docs.microsoft.com/Azure/Architecture/Best-Practices/API-Design#Versioning-a-RESTful-web-API*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
+    [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
 -   **Royi Fielding. Správa verzí, hypermédií a REST**
     [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
@@ -343,9 +348,7 @@ To znamená, že můžete doplnit rozhraní API pomocí dobrý zjišťování u�
 
 Průzkumník rozhraní API není zde je třeba mít. Jakmile máte webového rozhraní API, která může sám sebe popisují v metadatech Swagger, rozhraní API slouží bezproblémově z nástrojů rozhraní Swagger, včetně generátory kódu třídu proxy klienta, které můžete cílit na mnoha platformách. Například jako uvedených [AutoRest](https://github.com/Azure/AutoRest) automaticky vygeneruje třídy klienta rozhraní .NET. Jako další nástroje, ale [swagger codegen](https://github.com/swagger-api/swagger-codegen) jsou také k dispozici, který povolí generování kódu rozhraní API klienta knihovny, server zástupných procedur a dokumentaci automaticky.
 
-V současné době se skládá ze dvou balíčků NuGet Swashbuckle: Swashbuckle.SwaggerGen a Swashbuckle.SwaggerUi. První poskytuje funkce pro generování jeden nebo více dokumentů Swagger přímo z vaší implementace rozhraní API a umístěte je jako koncové body JSON. K tomu poskytuje embedded verzi nástroje uživatelského rozhraní swagger, která může obsluhovat vaší aplikace a používá technologii generovaného dokumenty Swagger, které se popisují vaše rozhraní API. Nejnovější verze Swashbuckle zabalit však tato nastavení u Swashbuckle.AspNetCore metapackage.
-
-Všimněte si, že pro projekty webového rozhraní API .NET Core, budete muset použít [Swashbuckle.AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore/1.0.0) verze 1.0.0 nebo později.
+V současné době Swashbuckle se skládá ze dvou několik interní balíčků NuGet v rámci vysoké úrovně metabalíček [Swashbuckle.Swashbuckle.AspNetCoreSwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) verze 1.0.0 nebo novější pro aplikace ASP.NET Core.
 
 Po instalaci těchto balíčků NuGet v projektu webového rozhraní API, musíte nakonfigurovat Swagger ve třídě, spuštění, jako v následujícím kódu:
 
@@ -358,18 +361,20 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // Other ConfigureServices() code...
-        services.AddSwaggerGen();
-        services.ConfigureSwaggerGen(options =>
+
+        // Add framework services.
+        services.AddSwaggerGen(options =>
         {
             options.DescribeAllEnumsAsStrings();
-            options.SingleApiVersion(new Swashbuckle.Swagger.Model.Info()
+            options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
             {
                 Title = "eShopOnContainers - Catalog HTTP API",
                 Version = "v1",
-                Description = "The Catalog Microservice HTTP API",
-                TermsOfService = "eShopOnContainers terms of service"
+                Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
+                TermsOfService = "Terms Of Service"
             });
         });
+
         // Other ConfigureServices() code...
     }
 
@@ -380,7 +385,10 @@ public class Startup
         // Other Configure() code...
         // ...
         app.UseSwagger()
-            .UseSwaggerUi();
+            .UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
     }
 }
 ```
@@ -390,7 +398,7 @@ Až bude vše Hotovo, můžete spustit aplikaci a procházet vytvoření násled
 ```json
   http://<your-root-url>/swagger/v1/swagger.json
   
-  http://<your-root-url>/swagger/ui
+  http://<your-root-url>/swagger/
 ```
 
 Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL podobnou http://&lt;vaše kořenové url &gt; /swagger/uživatelského rozhraní. Obrázek 8-9 se také zobrazí jak můžete testovat libovolné metody rozhraní API.

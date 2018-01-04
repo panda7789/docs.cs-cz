@@ -17,11 +17,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: aaf63acbb58fd86f7fa9a5dc3dce7508d90cfada
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 96f8cf924ffe510e1fea4d21fe86ca860fe8fab0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Čtení a zápis XML schémata
 Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápisu definice schématu XML schémata jazyk (XSD) ze souborů nebo jiných zdrojů a XML schémata v paměti pomocí třídy v sestavení <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů, který mapování struktury definované v celém světě Doporučení schématu XML Wide Web Consortium (W3C).  
@@ -55,11 +58,11 @@ Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápisu def
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled modelu objektů schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
- [Vytváření XML schémata](../../../../docs/standard/data/xml/building-xml-schemas.md)  
+ [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
+ [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
  [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
- [Úpravy XML schémata](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
- [Včetně nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
+ [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
+ [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
  [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- [Informační sadu po schématu kompilace](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)  
+ [Informační sada po kompilaci schématu](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)  
  [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)

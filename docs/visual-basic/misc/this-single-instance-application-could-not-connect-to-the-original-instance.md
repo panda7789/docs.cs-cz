@@ -9,11 +9,11 @@ ms.assetid: 7c2c0cee-02a1-4157-be03-39d18e18408f
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: fbc8458231c36f3af9ca4de524e01e19a162ee47
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9cb8cef696ba93f922dfe0d92195a5fb5147b4cc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a>Nelze se připojit k původní instance této aplikace s jedinou instancí
 Tato aplikace s jedinou instancí se nemohl připojit k původní instance. Některé možné příčiny tohoto problému jsou následující:  
@@ -37,6 +37,5 @@ Tato aplikace s jedinou instancí se nemohl připojit k původní instance. Něk
 5.  Poznámka: v případech, za kterých se stala chyba a telefonní služby Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také  
- [NIB: Postupy: Specifikace chování vytváření instancí pro aplikaci (Visual Basic)](http://msdn.microsoft.com/en-us/48539ad8-d960-4210-beab-ee65f6c6dc6e)  
  [Základy ladicího programu](/visualstudio/debugger/debugger-basics)  
- [Podpora produktu PAVEOVER a usnadnění přístupu](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)
+

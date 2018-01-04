@@ -19,11 +19,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d5b89392801e7cf85fcda121a86d0bda4e7ac18
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 006727e70c58834a4e628f584a28302a62363844
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-and-soap-serialization"></a>XML a serializace protokolu SOAP
 Převede serializace XML (serializuje) veřejné polí a vlastností objektu, nebo parametry a návratovými hodnotami metod do datový proud XML, který odpovídá určitého dokumentu definition language (XSD) schématu XML. Serializace XML výsledkem silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na sériového formátu (v tomto případě XML) pro uložení nebo přenos.  
@@ -38,43 +41,43 @@ Převede serializace XML (serializuje) veřejné polí a vlastností objektu, ne
  [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
  Poskytuje obecné definici serializaci, zejména serializace XML.  
   
- [Postupy: serializaci objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
  Obsahuje podrobné pokyny pro serializaci objektu.  
   
- [Postupy: deserializaci objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+ [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
  Obsahuje podrobné pokyny pro deserializaci objektu.  
   
  [Příklady serializace XML](../../../docs/standard/serialization/examples-of-xml-serialization.md)  
  Obsahuje příklady, které ukazují základy serializace XML.  
   
- [Nástroj definice schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
+ [Nástroj pro definici schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
  Popisuje, jak používat nástroj definici schématu XML k vytvoření třídy, které splňovat konkrétní jazyk (XSD) schématu definice schématu XML nebo ke generování schématu XML z soubor DLL.  
   
  [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
  Popisuje, jak řídit serializace pomocí atributů.  
   
- [Atributy, které řídí serializace XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+ [Seznam atributů řídících serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
  Seznam atributů, které se používají k řízení serializace XML.  
   
- [Postupy: Zadejte název alternativní elementu pro datový proud XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+ [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
  Uvede případě rozšířeného scénáře ukázkami, jak ke generování více datové proudy XML přepsáním serializace.  
   
- [Postupy: řízení serializace odvozených tříd](../../../docs/standard/serialization/how-to-control-serialization-of-derived-classes.md)  
+ [Postupy: Řízení serializace odvozených tříd](../../../docs/standard/serialization/how-to-control-serialization-of-derived-classes.md)  
  Obsahuje příklad toho, jak řídit serializace odvozené třídy.  
   
- [Postupy: určení – Element XML a názvy atributů XML](../../../docs/standard/serialization/how-to-qualify-xml-element-and-xml-attribute-names.md)  
+ [Postupy: Kvalifikace názvů elementů a atributů XML](../../../docs/standard/serialization/how-to-qualify-xml-element-and-xml-attribute-names.md)  
  Popisuje, jak lze definovat a určit tak, jak v XML, které se používají obory názvů v datovém proudu XML.  
   
- [Serializace XML pomocí webové služby XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
+ [Serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
  Vysvětluje, jak serializace XML se používá v webové služby XML.  
   
- [Postupy: serializaci objektu jako datový proud XML kódováním protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
+ [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
  Popisuje, jak lze použít <xref:System.Xml.Serialization.XmlSerializer> třídy za účelem vytvoření kódovaného datové proudy SOAP XML, které odpovídají část 5 W3c (www.w3.org) dokumentu s názvem "Simple Object Access Protocol (SOAP) 1.1."  
   
- [Postupy: potlačení serializace XML kódovaného protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
+ [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
  Popisuje proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP.  
   
- [Atributy, které řídí serializace kódovaného protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
  Seznam atributů, které se používají k řízení kódováním SOAP serializace.  
   
  [\<System.XML.Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)  

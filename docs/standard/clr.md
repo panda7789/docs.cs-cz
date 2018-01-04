@@ -21,11 +21,14 @@ ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dc103d1fc853cd98f899e75d08dbfaf4dd9230d0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 43c3d8e2c6e99d88f461b3c45f6839ddf738ae6a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="common-language-runtime-clr"></a>Common Language Runtime (CLR)
 Rozhraní .NET Framework poskytuje běhové prostředí volá modul common language runtime, která spustí kód a poskytuje služby, které usnadňují procesu vývoje.  
@@ -82,7 +85,7 @@ Rozhraní .NET Framework poskytuje běhové prostředí volá modul common langu
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Proces spravovaného spouštění](../../docs/standard/managed-execution-process.md)|Popisuje kroky potřebné k využít modul common language runtime.|  
+|[Proces spravovaného spuštění](../../docs/standard/managed-execution-process.md)|Popisuje kroky potřebné k využít modul common language runtime.|  
 |[Automatická správa paměti](../../docs/standard/automatic-memory-management.md)|Popisuje, jak má systém uvolňování přiděluje a uvolní paměť.|  
 |[NIB: Přehled rozhraní .NET Framework](http://msdn.microsoft.com/en-us/ea38ac1e-92af-4d1b-8db1-e8a5ea10ed85)|Popisuje klíčové koncepty rozhraní .NET Framework, např. obecný systém typů, vzájemná funkční spolupráce mezi jazyky, spravovaného spouštění, aplikační domény a sestavení.|  
 |[Obecný systém typů](../../docs/standard/base-types/common-type-system.md)|Popisuje, jak jsou typy deklarovat, používat a spravovat v modulu runtime podporu integrace mezi jazyky.|  

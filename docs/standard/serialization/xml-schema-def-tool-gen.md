@@ -17,11 +17,14 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3c1f0dd08e820e5433f05c8bc90d85c84eb05972
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0e390b808f9eaa5d6b305284e1abe28f45f4d104
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Postupy: použití nástroje definice schématu XML pro generování tříd a dokumentech schémat XML.
 Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML, která popisuje třídu nebo ke generování třídy definované ve schématu XML. Následující postupy ukazují, jak provádět tyto operace.  
@@ -63,9 +66,9 @@ Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataSet>  
- [Nástroj definice schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
+ [Nástroj pro definici schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
  [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [Nástroje definice schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)  
+ [Nástroj XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)  
  <xref:System.Xml.Serialization.XmlSerializer>  
- [Postupy: serializaci objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [Postupy: deserializaci objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+ [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

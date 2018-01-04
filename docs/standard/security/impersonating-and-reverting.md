@@ -20,11 +20,14 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 4d1bd053cacc677ca66fc2e2a9e14620e1d3a8b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 869b9aadfa236a39d9807062e61046922e382d13
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="impersonating-and-reverting"></a>Zosobnění a návrat
 V některých případech budete muset získat token účtu Windows zosobnit účet systému Windows. Například aplikace založený na technologii ASP.NET může mít zastupovat několika uživatelům v různých časech. Aplikace může přijmout token, který představuje správce z Internetové informační služby (IIS), zosobnit uživatele, provedení určité operace a vrátit k předchozí identitu. V dalším kroku ji může přijmout token ze služby IIS, který reprezentuje uživatele s menším počtem práv, provádět některé operace a vracet znovu.  
@@ -70,5 +73,5 @@ V některých případech budete muset získat token účtu Windows zosobnit ú�
 ## <a name="see-also"></a>Viz také  
  <xref:System.Security.Principal.WindowsIdentity>  
  <xref:System.Security.Principal.WindowsImpersonationContext>  
- [Hlavní a objekty Identity](../../../docs/standard/security/principal-and-identity-objects.md)  
+ [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)  
  [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)

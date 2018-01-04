@@ -14,11 +14,14 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a695e10ae9b074f0f9dc913d2f687c82e00475dd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 27423607959af4b3201da8d83630b7827b2eeeb6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
@@ -146,8 +149,8 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
 ## <a name="see-also"></a>Viz také  
  [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
  [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)  
- [Typy podporované systémem serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
+ [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
  [Binární serializace](binary-serialization.md)  
  [Vzdálených objektů](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)  
- [XML a serializace protokolu SOAP](xml-and-soap-serialization.md)  
+ [Serializace XML a SOAP](xml-and-soap-serialization.md)  
  [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

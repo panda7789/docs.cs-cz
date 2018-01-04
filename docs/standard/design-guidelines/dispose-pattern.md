@@ -19,11 +19,14 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 97f0c63857b7af408613e1ffdfecb157d1e2c704
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 86fef5b18ac2c1c1b1dfee385b726484191fe714
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dispose-pattern"></a>Dispose – vzor
 Všechny programy získat jeden nebo více systémových prostředků, například paměť, popisovače systému nebo připojení databáze, v průběhu jejich provádění. Vývojáři mají být opatrní při použití takových systémové prostředky, protože musí být vydané po svém získat a použít.  
@@ -289,6 +292,6 @@ public class ComplexResourceHolder : IDisposable {
 ## <a name="see-also"></a>Viz také  
  <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>  
  <xref:System.Object.Finalize%2A?displayProperty=nameWithType>  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
  [Obecné vzory návrhu](../../../docs/standard/design-guidelines/common-design-patterns.md)  
  [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

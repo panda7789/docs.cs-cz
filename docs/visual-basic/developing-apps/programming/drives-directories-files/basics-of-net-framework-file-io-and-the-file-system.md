@@ -18,11 +18,11 @@ ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
 caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 53bd56647d04c40c44a240edcd084f0719c3d4aa
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: d6cfdb939bd4bf84fafbffceefccd5cd522018c2
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 Třídy v <xref:System.IO> obor názvů se používají k práci s disky, souborů a adresářů.  
@@ -46,7 +46,7 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 -   **Vyhledávání**. Můžete vyhledat a upravit vaši pozici v datovém proudu.  
   
- Další informace najdete v tématu [vytváření datových proudů](../../../../../docs/standard/io/composing-streams.md).  
+ Další informace najdete v tématu [vytváření datových proudů](../../../../standard/io/composing-streams.md).  
   
 ## <a name="types-of-streams"></a>Typy datových proudů  
  V [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], je reprezentována datový proud <xref:System.IO.Stream> třída, která tvoří abstraktní třídu pro všechny datové proudy. Nelze vytvořit přímo instance <xref:System.IO.Stream> třídy, ale musí používat jednu z tříd implementuje.  
@@ -65,13 +65,13 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 |Chcete-li|Další informace naleznete v tématu|
 |---|---|   
-|Čtení a zápisu do datového souboru|[Postupy: čtení a zápisu do nově vytvořeného datového souboru](../../../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
-|Čtení textu ze souboru|[Postupy: čtení textu ze souboru](../../../../../docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Zápis textu do souboru|[Postupy: zápis textu do souboru](../../../../../docs/standard/io/how-to-write-text-to-a-file.md)|  
-|Čtení znaků z řetězce|[Postupy: čtení znaků z řetězce](../../../../../docs/standard/io/how-to-read-characters-from-a-string.md)|  
-|Zápis znaků do řetězce|[Postupy: zápis znaků do řetězce](../../../../../docs/standard/io/how-to-write-characters-to-a-string.md)|  
-|Šifrování dat|[Šifrování dat](../../../../../docs/standard/security/encrypting-data.md)|  
-|Dešifrování dat|[Dešifrování dat](../../../../../docs/standard/security/decrypting-data.md)|  
+|Čtení a zápisu do datového souboru|[Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|Čtení textu ze souboru|[Postupy: Čtení textu ze souboru](../../../../standard/io/how-to-read-text-from-a-file.md)|  
+|Zápis textu do souboru|[Postupy: Zápis textu do souboru](../../../../standard/io/how-to-write-text-to-a-file.md)|  
+|Čtení znaků z řetězce|[Postupy: Čtení znaků z řetězce](../../../../standard/io/how-to-read-characters-from-a-string.md)|  
+|Zápis znaků do řetězce|[Postupy: Zápis znaků do řetězce](../../../../standard/io/how-to-write-characters-to-a-string.md)|  
+|Šifrování dat|[Šifrování dat](../../../../standard/security/encrypting-data.md)|  
+|Dešifrování dat|[Dešifrování dat](../../../../standard/security/decrypting-data.md)|  
   
 ## <a name="file-access-and-attributes"></a>Přístup k souborům a atributy  
  Můžete řídit, jak se vytváří soubory, otevřenou a sdíleny s <xref:System.IO.FileAccess>, <xref:System.IO.FileMode>, a <xref:System.IO.FileShare> výčty, které budou obsahovat příznaky, které používají konstruktory z <xref:System.IO.FileStream> třídy. Například při otevření nebo vytvořte novou <xref:System.IO.FileStream>, <xref:System.IO.FileMode> výčtu umožňuje určit, zda je soubor otevřen pro přidávání, zda je vytvořen nový soubor Pokud zadaný soubor neexistuje, nebo zda je soubor přepsán a tak dále.  
@@ -82,11 +82,11 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 |Chcete-li|Další informace naleznete v tématu|  
 |---|---|
-|Otevření a přidání textu do souboru protokolu|[Postupy: otevření a připojení k souboru protokolu](../../../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)|  
+|Otevření a přidání textu do souboru protokolu|[Postupy: Otevření a připojení k souboru protokolu](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|  
 |Určit atributy souboru|<xref:System.IO.FileAttributes>|  
   
 ## <a name="file-permissions"></a>Oprávnění souborů  
- Řízení přístupu pro soubory a adresáře lze provést pomocí <xref:System.Security.Permissions.FileIOPermission> třídy. To může být obzvláště důležité pro vývojáře, kteří pracují s webovými formuláři, který ve výchozím nastavení běží v kontextu speciální místní uživatelský účet s názvem ASPNET, který je vytvořen jako součást [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] instalace. Pokud tyto aplikace požaduje přístup k prostředku, ASPNET uživatelský účet má omezená oprávnění, která může zabránit uživateli v provádění akcí, jako je zápis do souboru z webové aplikace. Další informace najdete v tématu [oprávnění zabezpečení](http://msdn.microsoft.com/en-us/b03757b4-e926-4196-b738-3733ced2bda0)a <xref:System.Security.Permissions.FileIOPermission>.  
+ Řízení přístupu pro soubory a adresáře lze provést pomocí <xref:System.Security.Permissions.FileIOPermission> třídy. To může být obzvláště důležité pro vývojáře, kteří pracují s webovými formuláři, který ve výchozím nastavení běží v kontextu speciální místní uživatelský účet s názvem ASPNET, který je vytvořen jako součást [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] instalace. Pokud tyto aplikace požaduje přístup k prostředku, ASPNET uživatelský účet má omezená oprávnění, která může zabránit uživateli v provádění akcí, jako je zápis do souboru z webové aplikace. Další informace naleznete v tématu <xref:System.Security.Permissions.FileIOPermission>.  
   
 ## <a name="isolated-file-storage"></a>Izolované úložiště  
  Izolované úložiště je pokus o řešení problémů, které jsou vytvořeny při práci se soubory, které uživatele nebo kód nemusí mít nezbytná oprávnění. Izolované úložiště přiřadí každému uživateli datový prostor, která může pojmout jednoho nebo více úložišť. Úložiště může být od sebe navzájem oddělené uživatelem a sestavením. Pouze uživatel a sestavení, které vytvoření úložiště k dispozici. Úložiště funguje jako dokončení virtuálním souborovém systému – v rámci jednoho úložiště můžete vytvořit a upravit adresářů a souborů.  
@@ -95,19 +95,19 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 |Chcete-li|Další informace naleznete v tématu|
 |---|---|  
-|Vytvoření izolovaného úložiště|[Postupy: získávání úložišť pro izolované úložiště](../../../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|  
-|Zobrazení výčtu izolované úložiště|[Postupy: vytvoření výčtu úložišť pro izolované úložiště](../../../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|  
-|Odstranění izolovaného úložiště|[Postupy: odstraňování úložišť v izolovaném úložišti](../../../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|  
-|Vytvořit soubor nebo adresář v izolovaném úložišti|[Postupy: vytváření souborů a adresářů v izolovaném úložišti](../../../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|  
-|Vyhledat soubor v izolovaném úložišti|[Postupy: hledání existujících souborů a adresářů v izolovaném úložišti](../../../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|  
-|Číst nebo zapisovat do souboru v izolovaném úložišti|[Postupy: čtení a zápis do souborů v izolovaném úložišti](../../../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|  
-|Odstranit soubor nebo adresář v izolovaném úložišti|[Postupy: odstraňování souborů a adresářů v izolovaném úložišti](../../../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|  
+|Vytvoření izolovaného úložiště|[Postupy: Získávání úložišť pro izolované úložiště](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|  
+|Zobrazení výčtu izolované úložiště|[Postupy: Vytvoření výčtu úložišť pro izolované úložiště](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|  
+|Odstranění izolovaného úložiště|[Postupy: Odstraňování úložišť v izolovaném úložišti](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|  
+|Vytvořit soubor nebo adresář v izolovaném úložišti|[Postupy: Vytváření souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|  
+|Vyhledat soubor v izolovaném úložišti|[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|  
+|Číst nebo zapisovat do souboru v izolovaném úložišti|[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|  
+|Odstranit soubor nebo adresář v izolovaném úložišti|[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|  
   
 ## <a name="file-events"></a>Soubor události  
  <xref:System.IO.FileSystemWatcher> Součást umožňuje sledovat změny souborů a adresářů v systému nebo na libovolném počítači, ke které máte přístup k síti. Pokud je upraven soubor, můžete chtít odesílat oznámení došlo změně uživatele. Při změnách, jeden nebo více událostí se vyvolá, uložené do vyrovnávací paměti a předávány <xref:System.IO.FileSystemWatcher> součásti pro zpracování.  
   
 ## <a name="see-also"></a>Viz také  
- [Skládání datových proudů](../../../../../docs/standard/io/composing-streams.md)  
- [Vstupně-výstupních souborů a proudů](https://msdn.microsoft.com/library/k3352a4t)  
- [Asynchronní I/O soubory](https://msdn.microsoft.com/library/kztecsys)  
+ [Skládání streamů](../../../../standard/io/composing-streams.md)  
+ [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)  
+ [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)  
  [Třídy používané v rozhraní .NET Framework vstupně-výstupní a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: a15b5cf1-9055-4481-918c-4c8a051b5829
-ms.openlocfilehash: 26478ccfbf88d43c0b194e77d9aacc313515283f
-ms.sourcegitcommit: 8d14e8c1b15009330c9880f8523686158924e1a4
+ms.openlocfilehash: e6535b11464f5de0515c05e6678f6328f48a676a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="results"></a>Výsledky
 
@@ -51,7 +51,7 @@ type Request =
 let validateName req =
     match req.Name with
     | null -> Error "No name found."
-    | String.Empty -> Error "Name is empty."
+    | "" -> Error "Name is empty."
     | "bananas" -> Error "Bananas is not a name."
     | _ -> Ok req
 
@@ -59,9 +59,9 @@ let validateName req =
 let validateEmail req =
     match req.Email with
     | null -> Error "No email found."
-    | String.Empty -> Error "Email is empty."
+    | "" -> Error "Email is empty."
     | s when s.EndsWith("bananas.com") -> Error "No email from bananas.com is allowed."
-    | _ -> OK req
+    | _ -> Ok req
 
 let validateRequest reqResult =
     reqResult 
@@ -71,16 +71,16 @@ let validateRequest reqResult =
 let test() = 
     // Now, create a Request and pattern match on the result.
     let req1 = { Name = "Phillip"; Email = "phillip@contoso.biz" }
-    let res1 = validateRequest (OK req1)
+    let res1 = validateRequest (Ok req1)
     match res1 with
-    | Ok req -> printfn "My request was valid! Name: %s Email %s" req1.Name req1.Email
+    | Ok req -> printfn "My request was valid! Name: %s Email %s" req.Name req.Email
     | Error e -> printfn "Error: %s" e
-    // Prints " "My request was valid!  Name: Phillip Email: phillip@consoto.biz"
+    // Prints: "My request was valid!  Name: Phillip Email: phillip@consoto.biz"
 
     let req2 = { Name = "Phillip"; Email = "phillip@bananas.com" }
-    let res2 = validateRequest (OK req2)
+    let res2 = validateRequest (Ok req2)
     match res2 with
-    | Ok req -> printfn "My request was valid! Name: %s Email %s" req1.Name req1.Email
+    | Ok req -> printfn "My request was valid! Name: %s Email %s" req.Name req.Email
     | Error e -> printfn "Error: %s" e
     // Prints: "Error: No email from bananas.com is allowed."
 
@@ -93,4 +93,4 @@ Jak můžete vidět, je poměrně snadné různé funkce ověřování řetězu 
 
 [Rozlišovaná sjednocení](discriminated-unions.md)
 
-[Shoda vzoru](pattern-matching.md)
+[Porovnávání vzorů](pattern-matching.md)

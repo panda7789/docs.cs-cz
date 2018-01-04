@@ -17,11 +17,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e9bf586c1805fc5b5f1cc5f96f4e6b08d80c199a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4758046fef55af86754ecb38aa50c4ff832f54db
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
 Při provádění dotazu jako paralelní, oddíly PLINQ zdrojové sekvence více vláken mohli pracovat na různé části souběžně, obvykle v samostatných vláknech. Pokud výsledky mají být využívány na jedno vlákno, například v `foreach` (`For Each` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) smyčce, pak je potřeba sloučit výsledky z každého vlákno zpět do jedné sekvence. Druh sloučení, který provádí PLINQ závisí na operátory, které se nacházejí v dotazu. Operátory, které zavádí nové pořadí ve výsledcích například musí vyrovnávací paměti všechny elementy z všechna vlákna. Z hlediska využívání vlákno (což je také u uživatelů aplikace) může plně ve vyrovnávací paměti dotaz spustit znatelné dobu před tím, než vyvolá první výsledek. Jiné operátory ve výchozím nastavení, jsou částečně do vyrovnávací paměti; dávají výsledky v dávkách. Jeden operátor <xref:System.Linq.ParallelEnumerable.ForAll%2A> není ve výchozím nastavení do vyrovnávací paměti. Dává všechny elementy ze všech vláken okamžitě.  
@@ -73,4 +76,4 @@ Při provádění dotazu jako paralelní, oddíly PLINQ zdrojové sekvence více
   
 ## <a name="see-also"></a>Viz také  
  [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
- [Postupy: určení možností sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)
+ [Postupy: Určení možností sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)

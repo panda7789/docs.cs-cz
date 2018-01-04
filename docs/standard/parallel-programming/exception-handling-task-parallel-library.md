@@ -17,11 +17,14 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e62498376d321d8ff22a53315b9d5f18a8865056
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 86b4d105b7d79abbd25b342774705866119ada68
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exception-handling-task-parallel-library"></a>Zpracování výjimek (Task Parallel Library)
 Nezpracované výjimky, které jsou vyvolány pomocí uživatelského kódu, které běží uvnitř úlohy rozšířeny zpět do volající vlákno, s výjimkou v některých scénářích, které jsou popsány dále v tomto tématu. Výjimky rozšířeny při použití statický nebo instance <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> nebo <!--zz <xref:System.Threading.Tasks.Task%601.Wait%2A?displayProperty=nameWithType>  --> `Wait` metody a zpracování je zachytávají v `try` / `catch` příkaz. Pokud úloha je nadřazená připojené podřízené úlohy, nebo pokud čekáte na více úloh, může být vyvolána více výjimek.  

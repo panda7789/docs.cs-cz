@@ -20,11 +20,14 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d5b5c8db7dc264185a5f58438ead83d4a65ec492
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 80f95099644552aed34553385544f21d07b29114
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegátů následuje návrhový vzor pozorovatel, která umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Události odesílatele doručí oznámení, že došlo k události a přijímače událostí přijetí tohoto oznámení a definuje odpověď na něj. Tento článek popisuje hlavní součásti modelu delegáta, jak zpracovávat události v aplikacích a postupy implementace událostí v kódu.  
@@ -89,10 +92,10 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Postupy: vyvolávání a zpracovávání událostí](../../../docs/standard/events/how-to-raise-and-consume-events.md)|Obsahuje příklady vyvolání a pracovat s nimi události.|  
-|[Postupy: zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md)|Ukazuje, jak pomocí vlastností události pro zpracování více událostí.|  
-|[Návrhový vzor pozorovatel](../../../docs/standard/events/observer-design-pattern.md)|Popisuje návrhový vzor, který umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele.|  
-|[Postupy: příjem událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost, která se vyvolá pomocí ovládacího prvku na webové formuláře.|  
+|[Postupy: Vyvolávání a zpracovávání událostí](../../../docs/standard/events/how-to-raise-and-consume-events.md)|Obsahuje příklady vyvolání a pracovat s nimi události.|  
+|[Postupy: Zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md)|Ukazuje, jak pomocí vlastností události pro zpracování více událostí.|  
+|[Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)|Popisuje návrhový vzor, který umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele.|  
+|[Postupy: Zpracování událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost, která se vyvolá pomocí ovládacího prvku na webové formuláře.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.EventHandler>  

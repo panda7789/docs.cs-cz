@@ -14,11 +14,11 @@ ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 13df7dc6b325b97411b910c0fc8e05e65a332dc5
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 39a4245b51c1199a6aeb0c23282b1917f51164d2
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje zpřístupnění jeho funkce pro ostatní součásti a hostování aplikací založených na objekt. Při COM – objekty byly nezbytné, aby Windows programování mnoho let, aplikací navržených pro modul CLR (CLR) nabízí celou řadu výhod.  
@@ -51,7 +51,7 @@ Modelu COM (Component Object) umožňuje zpřístupnění jeho funkce pro ostatn
 ### <a name="importing-and-exporting-type-libraries"></a>Import a export knihovny typů  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]obsahuje nástroje, Tlbimp, který umožňuje importovat informace z knihovny typů do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Knihovny typů ze sestavení můžete vygenerovat pomocí nástroje Tlbexp.  
   
- Informace o Tlbimp a Tlbexp najdete v tématu [Tlbimp.exe (Importér knihovny)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382) a [Tlbexp.exe (Exportér knihovny)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
+ Informace o Tlbimp a Tlbexp najdete v tématu [Tlbimp.exe (Importér knihovny)](../../../framework/tools/tlbimp-exe-type-library-importer.md) a [Tlbexp.exe (Exportér knihovny)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
   
 ## <a name="interop-assemblies"></a>Sestavení spolupráce  
  Spolupráce – sestavení jsou [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, které most mezi spravovaných a nespravovaných code, členové objektu COM mapování na ekvivalentní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] spravované členy. Spolupráce – sestavení vytvořené Visual Basic .NET zpracovávat řadu podrobnosti o práci s objekty modelu COM, jako je například zařazování interoperability.  
@@ -61,11 +61,11 @@ Modelu COM (Component Object) umožňuje zpřístupnění jeho funkce pro ostatn
   
 ## <a name="see-also"></a>Viz také  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
- [Návod: Implementace dědičnosti s objekty COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
+ [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
+ [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)  
  [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
- [Sestavení a globální mezipaměti sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Tlbimp.exe (Importér knihovny)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
- [Tlbexp.exe (Exportér knihovny)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
+ [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)  
+ [Tlbexp.exe (exportér knihovny typů)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
  [Zařazování spolupráce](../../../framework/interop/interop-marshaling.md)  
- [Zprostředkovatel komunikace s objekty COM bez registrace](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)
+ [Bezregistrační zprostředkovatel komunikace s objekty COM](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)

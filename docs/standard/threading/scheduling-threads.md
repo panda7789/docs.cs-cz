@@ -16,11 +16,14 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2e1fb7d61b8e250884b2c57cad8c5106bc77787a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6bb715c11cc0d9b07e4ea8805ace7680ca92097c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="scheduling-threads"></a>Plánování vláken
 Každé vlákno má přiřazen prioritu přístup z více vláken. Vlákna v rámci modul common language runtime vytvořili původně přiřazené priority **ThreadPriority.Normal**. Vlákna vytvořen vně modulu runtime zachovat prioritu, kterou měla před jejich zadali spravovaném prostředí. Můžete získat nebo nastavit prioritu všech vlákno se **Thread.Priority** vlastnost.  
@@ -29,4 +32,4 @@ Každé vlákno má přiřazen prioritu přístup z více vláken. Vlákna v rá
   
 ## <a name="see-also"></a>Viz také  
  [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  
- [Spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)
+ [Dělení na spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)

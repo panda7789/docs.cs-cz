@@ -16,11 +16,14 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 61cd2317b5690573532af2a25c0b84b1fe136fd9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 43fe5f9d193de3f48abfc0d91e01a70ee601a651
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="managed-threading"></a>Dělení na spravovaná vlákna
 Zda vyvíjíte pro počítače s jeden procesor nebo několik, má vaše aplikace poskytují nejvíce přizpůsobivý interakci s uživatelem, i když aplikaci právě provádí jinou práci. Používání více vláken, která je jedním z nejúčinnějších způsobů, jak udržovat aplikace reaguje na uživatele a současně proveďte využití procesoru v mezi nebo i během událostí uživatele. Při této části jsou popsány základní koncepty dělení na vlákna, se zaměřuje na spravovaná vlákna koncepty a pomocí spravovaného dělení na vlákna.  
@@ -29,16 +32,16 @@ Zda vyvíjíte pro počítače s jeden procesor nebo několik, má vaše aplikac
 >  Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vícevláknové programování je výrazně jednodušší s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy, [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), nové souběžných kolekce tříd v <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů a nové programovací model, který je založen na konceptu úkolů, nikoli vláken. Další informace najdete v tématu [paralelní programování](../../../docs/standard/parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Dělení na spravovaná vlákna základy](../../../docs/standard/threading/managed-threading-basics.md)  
+ [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)  
  Poskytuje přehled spravovaného dělení na vlákna a popisuje použití více vláken.  
   
  [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  
  Vysvětluje, jak vytvořit a spuštění, pozastavení, obnovení a zrušení vláken.  
   
- [Dělení na spravovaná vlákna osvědčené postupy](../../../docs/standard/threading/managed-threading-best-practices.md)  
+ [Doporučené postupy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-best-practices.md)  
  Popisuje úrovně synchronizace, jak se vyhnout blokování a konflikty časování, jedním procesorem a počítačů s více procesory a další vláken problémy.  
   
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
  Popisuje spravované třídy, které můžete použít k synchronizaci aktivity vláken a data objektů získat přístup v různých vláknech a poskytuje přehled podprocesy z fondu podprocesů.  
   
 ## <a name="reference"></a>Odkaz  
@@ -55,7 +58,7 @@ Zda vyvíjíte pro počítače s jeden procesor nebo několik, má vaše aplikac
  [Aplikační domény](../../../docs/framework/app-domains/application-domains.md)  
  Poskytuje přehled aplikační domény a jejich použití Common Language Infrastructure.  
   
- [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
+ [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
  Popisuje výhody výkonu a základní operace asynchronních vstupně-výstupních operací.  
   
  [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  

@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 508d60d73eb7c0f0cc2cc909613cc4f8712b4aba
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 67f89b4ee42d896497f462b80d41afff6b347e05
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvu trvalosti infrastruktury základní Entity Framework
 
@@ -46,11 +49,11 @@ Z DDD hlediska, je důležitou schopností EF možnost používat domény entity
 
 Za vzory DDD by měl zapouzdřovat domény chování a pravidla v rámci třídy entity samostatně, takže ho můžete řídit výstupních podmínek, ověření a pravidel, při přístupu k jakékoli kolekce. Proto není vhodné v DDD umožňující veřejný přístup do kolekcí podřízených entit nebo hodnota objekty. Místo toho kterou chcete vystavit metody, které řídí, jak a kdy mohou být aktualizovány polí a vlastností kolekce, a jaké chování a akcí, má dojít, pokud k tomu dojde.
 
-V EF základní 1.1 splňovat tyto požadavky DDD může mít prostý pole v entity místo vlastnosti veřejné a privátní setter. Pokud nechcete, aby pole entity externě přístupné, můžete vytvořit pouze atribut nebo pole místo vlastnost. Je třeba použít privátní setter Pokud dáváte přednost tento čisticí přístup.
+Od verze 1.1 základní EF splňovat tyto požadavky DDD, může mít prostý pole v místo veřejné vlastnosti vaší entity. Pokud nechcete, aby pole entity externě přístupné, můžete vytvořit pouze atribut nebo pole místo vlastnost. Můžete také použít privátní vlastnost Setter.
 
-Podobným způsobem, můžete Teď máte přístup jen pro čtení k kolekce pomocí veřejná vlastnost typu IEnumerable&lt;T&gt;, který je zálohovaný díky členem soukromé pole pro kolekci (jako seznam&lt;&gt;) ve vaší Entita, která využívá EF trvalosti. Předchozí verze Entity Frameworku požadované vlastnosti kolekce pro podporu ICollection&lt;T&gt;, který určená, kdokoli z vývojářů pomocí třídy nadřazená entita může přidat nebo odebrat položky z kolekce jeho vlastnosti. Tato možnost by proti doporučené vzory v DDD.
+Podobným způsobem, můžete Teď máte přístup jen pro čtení k kolekce pomocí zadané jako veřejná vlastnost `IReadOnlyCollection<T>`, který je zálohovaný díky členem soukromé pole pro kolekci (například `List<T>`) ve vaší entity, které jsou závislé na EF trvalosti. Předchozí verze Entity Frameworku požadované vlastnosti kolekce pro podporu `ICollection<T>`, který určená, kdokoli z vývojářů pomocí třídy nadřazená entita může přidat nebo odebrat položky přes jeho vlastnost kolekce. Tato možnost by proti doporučené vzory v DDD.
 
-Soukromé kolekce při vystavení objekt rozhraní IEnumerable jen pro čtení, můžete použít, jak je znázorněno v následujícím příkladu kódu:
+Můžete použít kolekci privátní při vystavení jen pro čtení `IReadOnlyCollection<T>` objektu, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class Order : Entity
@@ -58,9 +61,9 @@ public class Order : Entity
     // Using private fields, allowed since EF Core 1.1
     private DateTime _orderDate;
     // Other fields ...
-    private readonly List<OrderItem> _orderItems;
 
-    public IEnumerable<OrderItem> OrderItems => _orderItems.AsReadOnly();
+    private readonly List<OrderItem> _orderItems; 
+    public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
     protected Order() { }
 
@@ -70,40 +73,52 @@ public class Order : Entity
     }
 
     public void AddOrderItem(int productId, string productName,
-        decimal unitPrice, decimal discount,
-        string pictureUrl, int units = 1)
+                             decimal unitPrice, decimal discount,
+                             string pictureUrl, int units = 1)
     {
         // Validation logic...
-        var orderItem = new OrderItem(productId, productName, unitPrice, discount,
-            pictureUrl, units);
+
+        var orderItem = new OrderItem(productId, productName, 
+                                      unitPrice, discount,
+                                      pictureUrl, units);
         _orderItems.Add(orderItem);
     }
 }
 ```
 
-Všimněte si, že vlastnost OrderItems lze přistupovat pouze jen pro čtení pomocí seznamu&lt;&gt;. AsReadOnly(). Tato metoda vytvoří obálku kolem seznamu privátní jen pro čtení tak, že je soubor chráněný proti externí aktualizace. Je výrazně levnější než ToList způsobem, protože nemá zkopírujte všechny položky v kolekci nové; Místo toho provádí pouze jednu operaci alokační haldy pro instanci obálku.
+Všimněte si, že `OrderItems` vlastnost lze přistupovat pouze jako jen pro čtení pomocí `IReadOnlyCollection<OrderItem>`. Tento typ je jen pro čtení, takže je chráněný proti externí pravidelných aktualizace. 
 
-Základní EF poskytuje způsob, jak mapování modelu domény na fyzické databázi bez kontaminujících modelu domény. Je čistá .NET objektů POCO kódu, protože mapování akce je implementována ve vrstvu trvalosti. V této akci mapování budete muset konfigurovat mapování polí do databáze. V následujícím příkladu metody OnModelCreating informuje zvýrazněný EF základní přístup k vlastnosti OrderItems prostřednictvím jeho pole.
+Základní EF poskytuje způsob, jak mapování modelu domény na fyzické databázi bez "kontaminujících" modelu domény. Je čistá .NET objektů POCO kódu, protože mapování akce je implementována ve vrstvu trvalosti. V této akci mapování budete muset konfigurovat mapování polí do databáze. V následujícím příkladu metody OnModelCreating informuje zvýrazněný EF základní přístup k vlastnosti OrderItems prostřednictvím jeho pole.
 
 ```csharp
+// At OrderingContext.cs from eShopOnContainers
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
-    // ...
-    modelBuilder.Entity<Order>(ConfigureOrder);
-    // Other entities ...
+   // ...
+   modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+   // Other entities’ configuration ...
 }
 
-void ConfigureOrder(EntityTypeBuilder<Order> orderConfiguration)
+// At OrderEntityTypeConfiguration.cs from eShopOnContainers
+class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
-    // Other configuration ...
-    var navigation = orderConfiguration.Metadata.
-    FindNavigation(nameof(Order.OrderItems));
-    navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
-    // Other configuration ...
+    public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+    {
+        orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
+        // Other configuration
+
+        var navigation = 
+              orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+
+        //EF access the OrderItem collection property through its backing field
+        navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+
+        // Other configuration
+    }
 }
 ```
 
-Pokud použijete pole místo vlastnosti, je entita OrderItem nastavené jako trvalé stejně, jako by se mělo seznam&lt;OrderItem&gt; vlastnost. Však zveřejňuje jednoho přístupového objektu (metoda AddOrderItem) pro přidání nových položek do pořadí. V důsledku toho chování a data jsou svázané společně a bude konzistentní v rámci aplikace kód, který používá model domény.
+Pokud použijete pole místo vlastnosti, je entita OrderItem nastavené jako trvalé stejně, jako by se mělo seznam&lt;OrderItem&gt; vlastnost. Však zveřejňuje jednoho přístupového objektu, `AddOrderItem` metoda pro přidání nových položek do pořadí. V důsledku toho chování a data jsou svázané společně a bude konzistentní v rámci aplikace kód, který používá model domény.
 
 ## <a name="implementing-custom-repositories-with-entity-framework-core"></a>Implementace vlastní úložiště základní Entity Framework
 
@@ -116,7 +131,6 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositor
     public class BuyerRepository : IBuyerRepository
     {
         private readonly OrderingContext _context;
-
         public IUnitOfWork UnitOfWork
         {
             get
@@ -124,34 +138,31 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositor
                 return _context;
             }
         }
-    }
 
-    public BuyerRepository(OrderingContext context)
-    {
-        if (context == null)
+        public BuyerRepository(OrderingContext context)
         {
-            throw new ArgumentNullException(
-                nameof(context));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-        _context = context;
-    }
 
-    public Buyer Add(Buyer buyer)
-    {
-        return _context.Buyers.Add(buyer).Entity;
-    }
+        public Buyer Add(Buyer buyer)
+        {
+            return _context.Buyers.Add(buyer).Entity; 
+        }
 
-    public async Task<Buyer> FindAsync(string BuyerIdentityGuid)
-    {
-        var buyer = await _context.Buyers.Include(b => b.Payments)
-            .Where(b => b.FullName == BuyerIdentityGuid)
-            .SingleOrDefaultAsync();
-        return buyer;
+        public async Task<Buyer> FindAsync(string BuyerIdentityGuid)
+        {
+            var buyer = await _context.Buyers
+                .Include(b => b.Payments)
+                .Where(b => b.FullName == BuyerIdentityGuid)
+                .SingleOrDefaultAsync();
+
+            return buyer;
+        }
     }
 }
 ```
 
-Všimněte si, že rozhraní IBuyerRepository pochází z vrstvy modelu domény. Implementace úložiště se však provádí na trvalosti a vrstvě infrastruktury.
+Všimněte si, že rozhraní IBuyerRepository pochází z vrstvy modelu domény jako kontraktu. Implementace úložiště se však provádí na trvalosti a vrstvě infrastruktury.
 
 EF DbContext přicházejí konstruktoru pomocí vkládání závislostí. Jsou sdílena mezi několika úložiště v rámci stejného oboru požadavku HTTP, díky jeho výchozí doba života (ServiceLifetime.Scoped) v kontejneru IoC (která může také být explicitně nastaveny službou. AddDbContext&lt;&gt;).
 
@@ -185,7 +196,7 @@ Pokud jste používali DbContext přímo, jenom možnost, kterou byste měli by 
 
 ## <a name="ef-dbcontext-and-iunitofwork-instance-lifetime-in-your-ioc-container"></a>EF DbContext a IUnitOfWork doba platnosti instance v vaší kontejner IoC
 
-Objekt DbContext (zveřejněné jako objekt IUnitOfWork) může být potřeba sdílet mezi více úložiště v rámci stejného oboru požadavku HTTP. Například to platí při operaci spouštěna musí pracovat s více agregace, ani jednoduše vzhledem k tomu, že používáte více instancí úložiště. Je také důležité zmínit, že rozhraní IUnitOfWork je součástí domény, ne typ EF.
+Objekt DbContext (zveřejněné jako objekt IUnitOfWork) může být potřeba sdílet mezi více úložiště v rámci stejného oboru požadavku HTTP. Například to platí při operaci spouštěna musí pracovat s více agregace, ani jednoduše vzhledem k tomu, že používáte více instancí úložiště. Je také důležité zmínit, že rozhraní IUnitOfWork je součástí vaší domény vrstvy, není typ EF jádra.
 
 Aby bylo možné provést, musí mít jeho služby dobu života nastavenu na ServiceLifetime.Scoped instanci objekt DbContext. Toto je výchozí doba života při registraci DbContext s služeb. AddDbContext ve vaší kontejner IoC z metody ConfigureServices souboru Startup.cs v projektu webového rozhraní API ASP.NET Core. Následující kód to znázorňuje.
 
@@ -199,16 +210,16 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
     }).AddControllersAsServices();
 
     services.AddEntityFrameworkSqlServer()
-    .AddDbContext<OrderingContext>(options =>
-    {
-        options.UseSqlServer(Configuration["ConnectionString"],
-        sqlop => sqlop.MigrationsAssembly(typeof(Startup).GetTypeInfo().
-        Assembly.GetName().Name));
-    },
-    ServiceLifetime.Scoped // Note that Scoped is the default choice
-    // in AddDbContext. It is shown here only for
-    // pedagogic purposes.
-    );
+      .AddDbContext<OrderingContext>(options =>
+      {
+          options.UseSqlServer(Configuration["ConnectionString"],
+                               sqlOptions => sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().
+                                                                                    Assembly.GetName().Name));
+      },
+      ServiceLifetime.Scoped // Note that Scoped is the default choice
+                             // in AddDbContext. It is shown here only for
+                             // pedagogic purposes.
+      );
 }
 ```
 
@@ -252,54 +263,70 @@ Datových poznámek musí použít na třídy modelu entity, sami, což je více
 
 ### <a name="fluent-api-and-the-onmodelcreating-method"></a>Rozhraní Fluent API a metody OnModelCreating
 
-Jak je uvedeno, aby bylo možné změnit konvence a mapování, můžete metody OnModelCreating v třídy DbContext. Následující příklad ukazuje, jak jsme to udělat v řazení mikroslužbu v eShopOnContainers.
+Jak je uvedeno, aby bylo možné změnit konvence a mapování, můžete metody OnModelCreating v třídy DbContext. 
+
+Řazení mikroslužbu v eShopOnContainers implementuje explicitní mapování a konfigurace v případě potřeby, jak je znázorněno v následujícím kódu.
 
 ```csharp
+// At OrderingContext.cs from eShopOnContainers
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
-    //Other entities
-    modelBuilder.Entity<OrderStatus>(ConfigureOrderStatus);
-    //Other entities
+   // ...
+   modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+   // Other entities’ configuration ...
 }
 
-void ConfigureOrder(EntityTypeBuilder<Order> orderConfiguration)
+// At OrderEntityTypeConfiguration.cs from eShopOnContainers
+class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
-    orderConfiguration.ToTable("orders", DEFAULT_SCHEMA);
-    orderConfiguration.HasKey(o => o.Id);
-    orderConfiguration.Property(o => o.Id).ForSqlServerUseSequenceHiLo("orderseq", DEFAULT_SCHEMA);
-    orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
-    orderConfiguration.Property<string>("Street").IsRequired();
-    orderConfiguration.Property<string>("State").IsRequired();
-    orderConfiguration.Property<string>("City").IsRequired();
-    orderConfiguration.Property<string>("ZipCode").IsRequired();
-    orderConfiguration.Property<string>("Country").IsRequired();
-    orderConfiguration.Property<int>("BuyerId").IsRequired();
-    orderConfiguration.Property<int>("OrderStatusId").IsRequired();
-    orderConfiguration.Property<int>("PaymentMethodId").IsRequired();
+    public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+    {
+            orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
 
-    var navigation =
-    orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
-    // DDD Patterns comment:
-    // Set as Field (new since EF 1.1) to access
-    // the OrderItem collection property as a field
-    navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+            orderConfiguration.HasKey(o => o.Id);
 
-    orderConfiguration.HasOne(o => o.PaymentMethod)
-        .WithMany()
-        .HasForeignKey("PaymentMethodId")
-        .OnDelete(DeleteBehavior.Restrict);
-        orderConfiguration.HasOne(o => o.Buyer)
-        .WithMany()
-        .HasForeignKey("BuyerId");
-        orderConfiguration.HasOne(o => o.OrderStatus)
-        .WithMany()
-        .HasForeignKey("OrderStatusId");
+            orderConfiguration.Ignore(b => b.DomainEvents);
+
+            orderConfiguration.Property(o => o.Id)
+                .ForSqlServerUseSequenceHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
+
+            //Address Value Object persisted as owned entity type supported since EF Core 2.0
+            orderConfiguration.OwnsOne(o => o.Address);
+
+            orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
+            orderConfiguration.Property<int?>("BuyerId").IsRequired(false);
+            orderConfiguration.Property<int>("OrderStatusId").IsRequired();
+            orderConfiguration.Property<int?>("PaymentMethodId").IsRequired(false);
+            orderConfiguration.Property<string>("Description").IsRequired(false);
+
+            var navigation = orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+            
+            // DDD Patterns comment:
+            //Set as field (New since EF 1.1) to access the OrderItem collection property through its field
+            navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+
+            orderConfiguration.HasOne<PaymentMethod>()
+                .WithMany()
+                .HasForeignKey("PaymentMethodId")
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            orderConfiguration.HasOne<Buyer>()
+                .WithMany()
+                .IsRequired(false)
+                .HasForeignKey("BuyerId");
+
+            orderConfiguration.HasOne(o => o.OrderStatus)
+                .WithMany()
+                .HasForeignKey("OrderStatusId");
+    }
 }
 ```
 
-Můžete nastavit všechna rozhraní Fluent API mapování v rámci stejné metody OnModelCreating, ale doporučuje se oddílu tento kód a mít více submethods, jeden pro každou entitu, jak je znázorněno v příkladu. U modelů, zejména velké může i být vhodné mít samostatné zdrojové soubory (statické třídy) pro konfiguraci různých entity typů.
+Můžete nastavit všechna rozhraní Fluent API mapování v rámci stejné metody OnModelCreating, ale doporučuje se oddílu tento kód a mít více tříd konfigurace, jeden pro každou entitu, jak je znázorněno v příkladu. Zejména pro zvlášť velké modely se doporučuje mít třídy samostatné konfigurace pro konfiguraci různých entity typů.
 
-Kód v ukázce je explicitní. Konvence EF základní však provádění většiny to automaticky, takže skutečný kód, který by potřebujete k zápisu do dosáhnout samé by být mnohem menší.
+V příkladu kód ukazuje několik explicitní deklarace a mapování. Ale EF základní konvence tomu mnoho z těchto mapování automaticky, skutečný kód, který je nutné ve vašem případě může být menší.
+
 
 ### <a name="the-hilo-algorithm-in-ef-core"></a>Algoritmus HIS použití/Lo v EF jádra
 
@@ -319,46 +346,114 @@ Jádro EF podporuje [HiLo](http://stackoverflow.com/questions/282099/whats-the-h
 
 ### <a name="mapping-fields-instead-of-properties"></a>Mapování polí místo vlastnosti
 
-S funkcí 1.1 EF jádra, která se mapuje na pole sloupců je možné nechcete použít jakékoli vlastnosti ve třídě entity a jenom pro mapování sloupce z tabulky na pole. Běžně používá pro který by privátní pole pro všechny vnitřní stav, která nemusí být subjekty mimo entity.
+Pomocí této funkce dostupné od verze 1.1 základní EF, můžete přímo namapovat sloupce na pole. Je možné nechcete použít vlastnosti ve třídě entity a jenom pro mapování sloupce z tabulky na pole. Běžně používá pro který by privátní pole pro všechny vnitřní stav, která nemusí být subjekty mimo entity. 
 
-EF 1.1 podporuje mapováním pole bez související vlastnosti na sloupec v databázi. To provedete pomocí jednoho pole nebo také pomocí kolekcí, jako je seznam&lt; &gt; pole. Tento bod jsem už zmínili dřív když jsme se bavili modelování třídy modelu domény, ale zde se zobrazí, jak se provádí mapování s konfigurací PropertyAccessMode.Field zvýrazněných v předchozí kód.
+To provedete pomocí jednoho pole nebo také pomocí kolekcí, jako je třeba `List<>` pole. Tento bod již bylo zmíněno dříve když jsme se bavili modelování třídy modelu domény, ale zde se zobrazí, jak se provádí mapování pomocí `PropertyAccessMode.Field` konfigurace zvýrazněných v předchozí kód.
 
-### <a name="using-shadow-properties-in-value-objects-for-hidden-ids-at-the-infrastructure-level"></a>Používání stínové vlastností v objektech hodnota skrytá ID na úrovni infrastruktury
+### <a name="using-shadow-properties-in-ef-core-hidden-at-the-infrastructure-level"></a>Použití stínové vlastnosti v EF jádra, skrytý na úrovni infrastruktury
 
 Vlastnosti stínové v základní EF jsou vlastnosti, které nejsou k dispozici do třídy modelu entity. Hodnoty a stavy tyto vlastnosti jsou zachována výhradně v [ChangeTracker](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) třídy na úrovni infrastruktury.
 
-Z DDD hlediska jsou vlastnosti stínové pohodlný způsob, jak implementovat objekty hodnota skrytím ID jako primární klíč stínové vlastnost. To je důležité, protože objekt hodnoty by neměl mít identity (alespoň, můžete by neměl mít ID ve vrstvě modelu domény při shaping hodnota objektů). Zde bod nemá, od aktuální verze EF základní EF základní způsob, jak implementovat objekty hodnotu jako [komplexní typy](https://msdn.microsoft.com/library/jj680147(v=vs.113).aspx), jak je možné v EF 6.x. To je důvod, proč potřebujete aktuálně implementovat objekt hodnoty jako entity s skrytá ID (primární klíč) nastavit jako vlastnost stínové.
 
-Jak vidíte v [objekt hodnoty adres](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs) v eShopOnContainers, v modelu adresu nevidíte ID:
+## <a name="implementing-the-specification-pattern"></a>Implementace vzoru specifikace
+
+Zavádí dříve v části návrhu, je vzor specifikace (plným názvem být specifikaci dotazu vzor) vzor návrhu Domain-Driven určená jako místo, kde můžete ukládat definici dotazu s volitelné, řazení a stránkování logiku. Vzor specifikace definuje dotazu v objektu. Chcete-li zapouzdření stránkové dotaz, který hledá některé produkty, například můžete vytvořit specifikaci PagedProduct, která se mají potřebné vstupní parametry (pageNumber pageSize, filtr, atd.). Metoda žádné úložiště (obvykle přetížení List()) by pak přijměte ISpecification a spusťte očekávané dotaz založený na této specifikaci.
+
+Následující kód je například obecné specifikace rozhraní [eShopOnweb](https://github.com/dotnet-architecture/eShopOnWeb). 
 
 ```csharp
-public class Address : ValueObject
+// GENERIC SPECIFICATION INTERFACE
+// https://github.com/dotnet-architecture/eShopOnWeb 
+
+public interface ISpecification<T>
 {
-    public String Street { get; private set; }
-    public String City { get; private set; }
-    public String State { get; private set; }
-    public String Country { get; private set; }
-    public String ZipCode { get; private set; }
-    //Constructor initializing, etc
+    Expression<Func<T, bool>> Criteria { get; }
+    List<Expression<Func<T, object>>> Includes { get; }
+    List<string> IncludeStrings { get; }
 }
 ```
 
-Ale v pozadí, je potřeba zadat ID tak, aby základní EF je možné zachovat tato data v tabulkách databáze. Provedeme to v metodě ConfigureAddress [OrderingContext.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Infrastructure/OrderingContext.cs) třídy na úrovni infrastruktury, proto jsme není znečištění směrovány správu modelu domény s EF infrastruktury kódem.
+Potom implementace specifikace obecné základní třídy je následující.
 
 ```csharp
-void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
+// GENERIC SPECIFICATION IMPLEMENTATION (BASE CLASS)
+// https://github.com/dotnet-architecture/eShopOnWeb
+ 
+public abstract class BaseSpecification<T> : ISpecification<T>
 {
-    addressConfiguration.ToTable("address", DEFAULT_SCHEMA);
-    // DDD pattern comment:
-    // Implementing the Address ID as a shadow property, because the
-    // address is a value object and an identity is not required for a
-    // value object
-    // EF Core just needs the ID so it can store it in a database table
-    // See: https://docs.microsoft.com/ef/core/modeling/shadow-properties
-    addressConfiguration.Property<int>("Id").IsRequired();
-    addressConfiguration.HasKey("Id");
+    public BaseSpecification(Expression<Func<T, bool>> criteria)
+    {
+        Criteria = criteria;
+    }
+    public Expression<Func<T, bool>> Criteria { get; }
+
+    public List<Expression<Func<T, object>>> Includes { get; } = 
+                                           new List<Expression<Func<T, object>>>();
+
+    public List<string> IncludeStrings { get; } = new List<string>();
+ 
+    protected virtual void AddInclude(Expression<Func<T, object>> includeExpression)
+    {
+        Includes.Add(includeExpression);
+    }
+    
+    // string-based includes allow for including children of children
+    // e.g. Basket.Items.Product
+    protected virtual void AddInclude(string includeString)
+    {
+        IncludeStrings.Add(includeString);
+    }
 }
 ```
+
+V následující specifikaci načte košík jedné entity, danou košíku ID nebo ID kupujících, do kterého patří košíku. Zruší [přes zatížení](https://docs.microsoft.com/en-us/ef/core/querying/related-data) kolekce položky košíku.
+
+```csharp
+// SAMPLE QUERY SPECIFICATION IMPLEMENTATION
+
+public class BasketWithItemsSpecification : BaseSpecification<Basket>
+{
+    public BasketWithItemsSpecification(int basketId)
+        : base(b => b.Id == basketId)
+    {
+        AddInclude(b => b.Items);
+    }
+    public BasketWithItemsSpecification(string buyerId)
+        : base(b => b.BuyerId == buyerId)
+    {
+        AddInclude(b => b.Items);
+    }
+}
+```
+
+A nakonec se zobrazí pod jak obecné EF úložiště můžete použít tyto specifikace na filtr a eager zatížení dat souvisejících s danou entitu typu T.
+
+```csharp
+// GENERIC EF REPOSITORY WITH SPECIFICATION
+// https://github.com/dotnet-architecture/eShopOnWeb
+
+public IEnumerable<T> List(ISpecification<T> spec)
+{
+    // fetch a Queryable that includes all expression-based includes
+    var queryableResultWithIncludes = spec.Includes
+        .Aggregate(_dbContext.Set<T>().AsQueryable(),
+            (current, include) => current.Include(include));
+ 
+    // modify the IQueryable to include any string-based include statements
+    var secondaryResult = spec.IncludeStrings
+        .Aggregate(queryableResultWithIncludes,
+            (current, include) => current.Include(include));
+ 
+    // return the result of the query using the specification's criteria expression
+    return secondaryResult
+                    .Where(spec.Criteria)
+                    .AsEnumerable();
+}
+```
+Kromě zapouzdřením filtrování logiku, specifikace zadejte obrazec data, která mají být vráceny, včetně vlastnosti, které k naplnění. 
+
+I když nepodporujeme doporučené vrácení IQueryable z úložiště, je v pořádku perfektně jejich použití v rámci úložiště vytvořit sadu výsledků. Zobrazí se tento postup použít v seznamu metodu výše, která používá zprostředkující IQueryable výrazy k sestavení dotazu seznamu zahrnuje před provedením dotazu s kritérii v specifikaci na posledním řádku.
+
 
 #### <a name="additional-resources"></a>Další zdroje
 
@@ -377,6 +472,9 @@ void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 -   **Stínové vlastnosti**
     [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)
 
+-   **Vzor specifikace**
+    [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
+    
 
 >[!div class="step-by-step"]
 [Předchozí] (infrastruktury trvalost layer-design.md) [Další] (nosql-database trvalost infrastructure.md)

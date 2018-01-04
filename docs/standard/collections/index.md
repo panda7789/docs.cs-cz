@@ -16,11 +16,14 @@ caps.latest.revision: "36"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8ab02ada92e06333cc7ec2ea3ae832c48d3e16ec
-ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7760f30e8053b55c2f846c08ccb6a3d026089afb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobně jako data lze často zpracovávat efektivněji při uloženy a zpracovávány jako kolekce. Můžete použít <xref:System.Array?displayProperty=nameWithType> třídu nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable oborů názvů pro přidání, odebrání a změna jednotlivé elementy nebo rozsah elementů v kolekci.  
@@ -84,8 +87,8 @@ Podobně jako data lze často zpracovávat efektivněji při uloženy a zpracov�
 |[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje použití obecné typy kolekcí.|  
 |[Porovnávání a řazení v kolekcích](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|Popisuje použití porovnání rovnosti a porovnání při řazení v kolekcích.|  
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje výkonu řazených kolekcí a vlastnosti|  
-|[Slovník typy kolekce Hashtable a](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce pro obecné a neobecné slovník na základě hodnoty hash typů.|  
-|[Kolekce bezpečné pro přístup z více vláken](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekcí, například <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> podporující bezpečný a efektivní souběžný přístup z více vláken.|  
+|[Typy kolekce Hashtable a Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce pro obecné a neobecné slovník na základě hodnoty hash typů.|  
+|[Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekcí, například <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> podporující bezpečný a efektivní souběžný přístup z více vláken.|  
 |System.Collections.Immutable|Neměnné kolekce uvádí a poskytuje odkazy na typy kolekcí.|  
   
 <a name="BKMK_Reference"></a>   

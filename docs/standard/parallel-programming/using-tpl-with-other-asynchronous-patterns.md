@@ -14,20 +14,23 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 05883a89511574c43bf27d9781e862f7f52a6471
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 89ea927d2862aa447ad2b66c77eb493541b0e62d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-tpl-with-other-asynchronous-patterns"></a>Použití TPL s dalšími asynchronními vzory
 Task Parallel Library lze použít s tradiční rozhraní .NET Framework asynchronními vzory programovací různými způsoby.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [TPL a tradiční rozhraní .NET Framework asynchronní programování](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md)  
+ [TPL a tradiční asynchronní programování v .NET Framework](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md)  
  Popisuje, jak <xref:System.Threading.Tasks.Task> objekty může používat ve spojení s asynchronní programování modelu (APM) a na základě událostí asynchronní vzor (EAP).  
   
- [Postupy: zalomení vzoru EAP v úloze](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)  
+ [Postupy: Zalomení vzorů EAP v úloze](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)  
  Ukazuje, jak používat <xref:System.Threading.Tasks.Task> objekty k zapouzdření vzorů EAP.  
   
 ## <a name="see-also"></a>Viz také  

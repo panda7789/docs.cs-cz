@@ -12,11 +12,12 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
-ms.openlocfilehash: ce02033a7994d48494b4e627f1ed8f1dea4caadb
-ms.sourcegitcommit: 5bfcb8d341239df251351f318038d31cdc9159d7
+ms.workload: dotnetcore
+ms.openlocfilehash: 9935578f750e75c2261e1206cb6cc3292d16a049
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 
@@ -113,7 +114,7 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
  [Dotnet – ukázka framework: 3.5](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-3.5) ukazuje základní "text hello world" použití [rozhraní .NET Framework 3.5](https://github.com/Microsoft/dotnet-framework-docker/tree/master/3.5). Ho ukazuje, jak můžete sestavit a nasazení projektu spoléhat na rozhraní .NET Framework 3.5 v Docker.
 
-#### <a name="aspnet-core"></a>Jádro ASP.NET
+#### <a name="aspnet-core"></a>ASP.NET Core
 
 * [Tato ukázka ASP.NET Core Docker](https://github.com/dotnet/dotnet-docker-samples/tree/master/aspnetapp) ukazuje osvědčených postupů vzor pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Linux a Windows.
 

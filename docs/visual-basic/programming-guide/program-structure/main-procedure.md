@@ -16,11 +16,11 @@ ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
 caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 90550ce3e62e4afbc94e2d383fa73db7178633d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6de98ad4e470cd0becaf25f5a9a00c8095e44b15
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="main-procedure-in-visual-basic"></a>Hlavní procedura v jazyce Visual Basic
 Každá aplikace Visual Basic musí obsahovat proceduře volána `Main`. Tento postup slouží jako počáteční bod a celkové řízení pro vaše aplikace. Volání rozhraní .NET Framework vaší `Main` procedury při načetl vaší aplikace a chce předá řízení. Pokud vytváříte aplikace Windows Forms, musíte napsat `Main` postup pro aplikace, které běží na své vlastní.  
@@ -120,10 +120,9 @@ Každá aplikace Visual Basic musí obsahovat proceduře volána `Main`. Tento p
  <xref:System.Array.Length%2A>  
  <xref:Microsoft.VisualBasic.Information.UBound%2A>  
  [Struktura programu v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)  
- [NIB: verze jazyka Visual Basic Hello, World](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)  
- [/ main](../../../visual-basic/reference/command-line-compiler/main.md)  
- [Sdílené](../../../visual-basic/language-reference/modifiers/shared.md)  
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Integer – datový typ](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
- [String – datový typ](../../../visual-basic/language-reference/data-types/string-data-type.md)
+ [/main](../../../visual-basic/reference/command-line-compiler/main.md)  
+ [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [Datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md)

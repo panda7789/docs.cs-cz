@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3914a2c5c06a2cc73f14bc473984094b474d537e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0fd196f4aed5d4faa3e703f639b927f001b50174
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="types-of-xml-nodes"></a>Typy uzlů XML
 Pokud dokument XML je pro čtení do paměti jako strom uzlů, typy uzlů pro uzly se rozhodla při vytvoření uzly. XML modelu DOM (Document Object) má několik druhů typy uzlů, dáno World Wide Web Consortium (W3C) a uvedené v části 1.1.1 modelu DOM struktura. Následující tabulka uvádí typy uzlů přiřazené pro daný typ uzlu a krátký popis každého objektu.  
@@ -54,4 +57,4 @@ Pokud dokument XML je pro čtení do paměti jako strom uzlů, typy uzlů pro uz
  Další informace o hierarchie objektů typy uzlů a jejich název ekvivalentnímu objektu v tématu [hierarchii XML modelu DOM (Document Object)](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md). Další informace o objekty vytvořené v uzlu stromu najdete v tématu [mapování hierarchie objektů na XML Data](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

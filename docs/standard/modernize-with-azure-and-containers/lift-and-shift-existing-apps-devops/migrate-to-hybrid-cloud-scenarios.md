@@ -4,11 +4,14 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/2/2017
-ms.openlocfilehash: 7394d0fd208e131b4e683298f6ca31a9eddade28
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 61b22e48afd543ac077ebb4fe1b7be200f9ec859
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Migrace na hybridní cloudové scénáře
 

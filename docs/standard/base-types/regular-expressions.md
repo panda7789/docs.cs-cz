@@ -30,11 +30,14 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cb612d524f32eb4a97ac358d6deb8d2889ee5391
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b9922576e4ef942e896f365c44cebec717abe3b4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-regular-expressions"></a>Regulární výrazy rozhraní .NET
 Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Extenzivní notace vzoru regulárních výrazů umožňuje rychlé analyzování velkého množství textu pro vyhledání konkrétních znakových vzorů; pro ověření toho, zda text souhlasí s předdefinovaným vzorem (jako je e-mailová adresa); pro vyjmutí, úpravy, nahrazení nebo odstranění textových podřetězců a pro přidávání vyjmutých řetězců do kolekce za účelem vytvoření sestavy. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  
@@ -120,7 +123,7 @@ Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpra
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Poskytuje informace o sadách znaků, operátorech a konstrukcích, které lze použít pro definování regulárních výrazů.|  
+|[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Poskytuje informace o sadách znaků, operátorech a konstrukcích, které lze použít pro definování regulárních výrazů.|  
 |[Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Poskytuje informace a příklady kódu znázorňující způsob používání tříd regulárních výrazů.|  
 |[Podrobnosti k chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Poskytuje informace o možnostech a chování regulárních výrazech .NET.|  
 |[Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)|Poskytuje příklady kódu, které znázorňují typické způsoby používání regulárních výrazů.|  

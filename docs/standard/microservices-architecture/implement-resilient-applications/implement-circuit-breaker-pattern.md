@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 11/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 2a629e25a7565aaba156f68cf06d9a24b6c2b8b0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5d7db6899068f84f9165022cfbf17767a75e7db9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="implementing-the-circuit-breaker-pattern"></a>Implementace vzoru jistič
 
@@ -152,7 +155,7 @@ Existuje několik způsobů, můžete otevřít okruhu a otestovat s eShopOnCont
 
 Jednou z možností je na nižší povolený počet opakování 1 v zásadách jistič a znovu nasaďte celé řešení do Docker. Pomocí jednoho opakování je dobré pravděpodobné, že požadavek HTTP se nezdaří během nasazení, se otevře jistič a dojde k chybě.
 
-Další možností je použít vlastní middleware, která je implementována v řazení mikroslužby. Pokud je povoleno tento middleware, zachytí všechny požadavky protokolu HTTP a vrátí stavový kód 500. Můžete povolit middleware tím, že požadavek GET na selhání identifikátor URI, třeba takto:
+Další možností je použít vlastní middleware, která je implementována v `Basket` mikroslužby. Pokud je povoleno tento middleware, zachytí všechny požadavky protokolu HTTP a vrátí stavový kód 500. Můžete povolit middleware tím, že požadavek GET na selhání identifikátor URI, třeba takto:
 
 -   ZÍSKAT/selhání
 
@@ -166,42 +169,44 @@ Tento požadavek umožňuje middleware.
 
 Tento požadavek zakáže middleware.
 
-Například když aplikace běží, můžete povolit middleware pomocí libovolného prohlížeče v následující identifikátor URI požadavku. Všimněte si, že řazení mikroslužbu používá port 5102.
+Například když aplikace běží, můžete povolit middleware pomocí libovolného prohlížeče v následující identifikátor URI požadavku. Všimněte si, že řazení mikroslužbu používá port 5103.
 
-http://localhost:5102 / nedaří? povolit
+http://localhost:5103 / nedaří? povolit
 
-Potom můžete zkontrolovat stav pomocí identifikátoru URI [http://localhost:5102 / selhání](http://localhost:5100/failing), jak je znázorněno na obrázku 10-4.
+Potom můžete zkontrolovat stav pomocí identifikátoru URI [http://localhost:5103 / selhání](http://localhost:5103/failing), jak je znázorněno na obrázku 10-4.
 
 ![](./media/image4.png)
 
-**Obrázek 10-4**. Simulace selhání s ASP.NET middlewaru
+**Obrázek 10-4**. Kontroluje se stav "Selhání" middleware ASP.NET – v takovém případě zakázána. 
 
-V tomto okamžiku řazení odpoví mikroslužbu se stavovým kódem 500 vždy, když zavoláte ji použít.
+V tomto okamžiku odpoví mikroslužbu nákupního košíku se stavovým kódem 500 vždy, když zavoláte ji použít.
 
 Jakmile middleware běží, můžete zkusit provedení pořadí z webové aplikace MVC. Protože žádosti se nezdařilo, otevře se okruh.
 
 V následujícím příkladu vidíte, že má webová aplikace MVC catch blokovat v logiku pro umístění pořadí. Pokud kód zachytí výjimky otevřete okruh, ukazuje uživateli popisný zpráva s upozorněním čekání.
 
 ```csharp
-[HttpPost]
-public async Task<IActionResult> Create(Order model, string action)
+public class CartController : Controller
 {
-    try
+    //…
+    public async Task<IActionResult> Index()
     {
-        if (ModelState.IsValid)
+        try
         {
-            var user = _appUserParser.Parse(HttpContext.User);
-            await _orderSvc.CreateOrder(model);
-            //Redirect to historic list.
-            return RedirectToAction("Index");
+            //… Other code
         }
-    }
-    catch(BrokenCircuitException ex)
+        catch (BrokenCircuitException)
+        {
+            // Catches error when Basket.api is in circuit-opened mode                 
+            HandleBrokenCircuitException();
+        }
+        return View();
+    }       
+
+    private void HandleBrokenCircuitException()
     {
-        ModelState.AddModelError("Error",
-            "It was not possible to create a new order, please try later on");
+        TempData["BasketInoperativeMsg"] = "Basket Service is inoperative, please try later on. (Business message due to Circuit-Breaker)";
     }
-    return View(model);
 }
 ```
 

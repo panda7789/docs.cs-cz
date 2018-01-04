@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 62a514f94857044af5020d36a1cfd6ce06741ac7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 648f8b86ecf73a7da5f3f33d71fb8617bacccee1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
 (ARM) sledování prostředků domény aplikace umožňuje hostitelům sledování využití procesoru a paměti aplikační doménou. To je užitečné pro hostitele například ASP.NET využívající mnoho aplikační domény v dlouho běžící proces. Hostitel může uvolnění domény aplikace aplikace, která nepříznivě ovlivňuje výkon celý proces, ale pouze pokud se ale může pomoci identifikovat problematické aplikace. ARM poskytuje informace, které je možné, které vám pomohou v rozhodování.  
@@ -92,6 +95,6 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
- [Iclrappdomainresourcemonitor – rozhraní](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
+ [ICLRAppDomainResourceMonitor – rozhraní](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
  [\<appdomainresourcemonitoring – >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)  
- [CLR ETW – události](../../../docs/framework/performance/clr-etw-events.md)
+ [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

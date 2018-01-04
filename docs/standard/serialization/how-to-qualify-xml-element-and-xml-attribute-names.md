@@ -19,11 +19,14 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e94b9022e6da29f0aa8deb5534fec6e89d40152a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 048bcc587915467f644a2cce695cec352147223a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: určení – Element XML a názvy atributů XML
 [Příklad kódu](#cpconworkingwithxmlnamespacesanchor1)  
@@ -180,10 +183,10 @@ public class Book
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Serialization.XmlSerializer>  
- [Nástroj definice schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
+ [Nástroj pro definici schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
  [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
  [Třídy XmlSerializer](xref:System.Xml.Serialization.XmlSerializer)  
- [Atributy, které řídí serializace XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
- [Postupy: Zadejte název alternativní elementu pro datový proud XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
- [Postupy: serializaci objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [Postupy: deserializaci objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+ [Seznam atributů řídících serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+ [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+ [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

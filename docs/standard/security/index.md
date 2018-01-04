@@ -18,11 +18,14 @@ caps.latest.revision: "37"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5d6bf5929466d09b70cb74ffdf6c46d21c6f85ca
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7f8600da624ff75ce2dbd5c417f886d6b3b1ac37
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="security-in-the-net-framework"></a>Zabezpečení v rozhraní .NET Framework
 Modul common language runtime a rozhraní .NET Framework poskytují mnoho užitečných tříd a služby, které umožňuje vývojářům snadno psát kód, zabezpečení a umožňují správcům systému přizpůsobit oprávnění udělená kódu tak, aby měl přístup chráněné zdroje. Kromě toho modul runtime a rozhraní .NET Framework poskytují užitečné třídy a služby, které usnadňují použití kryptografie a na základě rolí zabezpečení.  
@@ -34,10 +37,10 @@ Modul common language runtime a rozhraní .NET Framework poskytují mnoho užite
  [Klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md)  
  Obsahuje přehled common language runtime funkce zabezpečení. Tato část je určen pro vývojáře a správce systému.  
   
- [Na základě rolí zabezpečení](../../../docs/standard/security/role-based-security.md)  
+ [Zabezpečení na základě rolí](../../../docs/standard/security/role-based-security.md)  
  Popisuje, jak pracovat se zabezpečením na základě rolí v kódu. Tato část je určen pro vývojáře.  
   
- [Kryptografický Model](../../../docs/standard/security/cryptography-model.md)  
+ [Kryptografický model](../../../docs/standard/security/cryptography-model.md)  
  Poskytuje přehled kryptografických služeb rozhraní .NET Framework. Tato část je určen pro vývojáře.  
   
  [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)  
@@ -46,7 +49,7 @@ Modul common language runtime a rozhraní .NET Framework poskytují mnoho užite
  [Pokyny pro zabezpečení nespravovaného kódu](../../../docs/framework/security/secure-coding-guidelines-for-unmanaged-code.md)  
  Popisuje některé osvědčené postupy a aspekty zabezpečení při volání nespravovaného kódu.  
   
- [Technologie Windows Identity Foundation](../../../docs/framework/security/index.md)  
+ [Windows Identity Foundation](../../../docs/framework/security/index.md)  
  Popisuje, jak můžete implementovat na základě deklarace identity ve svých aplikacích.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -1,5 +1,5 @@
 ---
-title: "Serializace v rozhraní .NET"
+title: Serializace v .NET
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -18,13 +18,16 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ab8f86b66e92ea250fbe20e8bcb27e6706302db4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1a0d9f5fd32b5610e3d7b05455c7bd3c55b5b77e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="serialization-in-net"></a>Serializace v rozhraní .NET
+# <a name="serialization-in-net"></a>Serializace v .NET
 Serializace je proces převodu stav objektu do tvaru, který může být zachována nebo přenosu. Doplňkovým serializace je deserializace, která převádí na objekt datového proudu. Tyto procesy dohromady, povolit, aby snadno ukládat a přenesených údaje.  
   
 Služeb .NET features dvě technologie serializace:  
@@ -34,16 +37,16 @@ Služeb .NET features dvě technologie serializace:
 -   Serializace XML serializuje pouze veřejné vlastnosti a pole a nezachovává věrnost typu. To je užitečné, pokud chcete zadat nebo spotřebovat data bez omezení aplikace, která používá data. Protože kód XML je otevřený standard, je to atraktivní volba pro sdílení dat v rámci webu. Protokol SOAP je rovněž otevřený standard, díky čemuž je atraktivní výběru.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
-[Postupy: témata serializace](../../../docs/standard/serialization/serialization-how-to-topics.md)  
+[Postupy: Serializace](../../../docs/standard/serialization/serialization-how-to-topics.md)  
 Obsahuje seznam odkazů na témata s postupy, které jsou obsažené v této části.
   
 [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)  
 Popisuje binární serializace mechanismus, který je součástí common language runtime.
 
-[XML a serializace protokolu SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+[Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
 Popisuje mechanismus serializace XML a SOAP, která je součástí common language runtime.
 
-[Serializace nástroje](../../../docs/standard/serialization/serialization-tools.md)  
+[Nástroje pro serializaci](../../../docs/standard/serialization/serialization-tools.md)  
 Tyto nástroje pomáhají při vývoji serializace kódu.
 
 [Ukázky serializace](../../../docs/standard/serialization/serialization-samples.md)  

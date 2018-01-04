@@ -11,11 +11,11 @@ ms.assetid: 130f7c2b-8eb1-4a6e-81aa-e30e27d3d4f7
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bceda3e102ec79bda6607d77c3b778f9a2014a33
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 37c88c7d88e01e6201a4679ae312e045c8cfab4a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="visual-basic-run-time-messages"></a>Visual Basic Runtime zprávy
 Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke kterým dochází při spuštění.  
@@ -24,11 +24,11 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Oddělovač nemůže být Nothing nebo prázdný řetězec.](../../visual-basic/misc/a-delimiter-cannot-be-nothing-or-an-empty-string.md)  
   
- [Dvojité uvozovky není platný token komentáře pro pole kde parametr EscapeQuote je nastaven na hodnotu True](../../visual-basic/language-reference/error-messages/a-double-quote-is-not-a-valid-comment-token-for-delimited-fields.md)  
+ [Dvojité uvozovky nepředstavují platný token komentáře pro pole oddělené oddělovačem, kde parametr EscapeQuote je nastaven na hodnotu True.](../../visual-basic/language-reference/error-messages/a-double-quote-is-not-a-valid-comment-token-for-delimited-fields.md)  
   
  [Protokol byl vytvořen s tímto názvem na tomto počítači](../../visual-basic/misc/a-log-has-already-been-created-with-this-name-on-this-machine.md)  
   
- [Volání vlastnosti nebo metody nemůže obsahovat odkaz na soukromý objekt, buď jako argument, nebo jako návratová hodnota](../../visual-basic/language-reference/error-messages/a-property-or-method-call-cannot-include-a-reference-to-a-private-object.md)  
+ [Volání vlastnosti nebo metody nemůže obsahovat odkaz na soukromý objekt, a to ani jako argument, ani jako návratovou hodnotu.](../../visual-basic/language-reference/error-messages/a-property-or-method-call-cannot-include-a-reference-to-a-private-object.md)  
   
  [Nebyl zadán formulář spuštění.](../../visual-basic/language-reference/error-messages/a-startup-form-has-not-been-specified.md)  
   
@@ -40,7 +40,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Byl zadán neplatný název protokolu událostí](../../visual-basic/misc/an-invalid-name-was-specified-for-the-event-log.md)  
   
- [Došlo k neočekávané chybě protože nebylo možné získat prostředek operačního systému vyžadované pro spuštění jedné instance.](../../visual-basic/language-reference/error-messages/an-unexpected-error-has-occurred.md)  
+ [Došlo k neočekávané chybě, protože nelze získat prostředek operačního systému požadovaný ke spuštění jedné instance.](../../visual-basic/language-reference/error-messages/an-unexpected-error-has-occurred.md)  
   
  [Jiné protokolu událostí už zaregistrovaný zdroj s tímto názvem](../../visual-basic/misc/another-event-log-has-already-registered-a-source-with-this-name.md)  
   
@@ -128,7 +128,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Chybný režim souboru](../../visual-basic/language-reference/error-messages/bad-file-mode.md)  
   
- [Chybný název souboru nebo číslo](../../visual-basic/language-reference/error-messages/bad-file-name-or-number.md)  
+ [Chybný název nebo číslo souboru](../../visual-basic/language-reference/error-messages/bad-file-name-or-number.md)  
   
  [Chybná délka záznamu](../../visual-basic/language-reference/error-messages/bad-record-length.md)  
   
@@ -176,7 +176,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Třída není registrované na místním počítači](../../visual-basic/misc/class-not-registered-on-local-machine.md)  
   
- [Formát schránky není platný](../../visual-basic/language-reference/error-messages/clipboard-format-is-not-valid.md)  
+ [Formát schránky není platný.](../../visual-basic/language-reference/error-messages/clipboard-format-is-not-valid.md)  
   
  [Chyba zámku prostředků kódu](../../visual-basic/misc/code-resource-lock-error.md)  
   
@@ -194,11 +194,11 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [DataBits musí být větší než 0.](../../visual-basic/misc/databits-must-be-greater-than-0.md)  
   
- [Chyba zařízení vstupně-výstupních operací](../../visual-basic/language-reference/error-messages/device-i-o-error.md)  
+ [Vstupně-výstupní chyba zařízení](../../visual-basic/language-reference/error-messages/device-i-o-error.md)  
   
  [Zařízení není k dispozici](../../visual-basic/misc/device-unavailable.md)  
   
- [Funkce 'Dir' musí být nejdříve volána s argumentem 'PathName'.](../../visual-basic/language-reference/error-messages/dir-function-must-first-be-called-with-a-pathname-argument.md)  
+ [Funkce Dir musí být nejdříve volána s argumentem PathName.](../../visual-basic/language-reference/error-messages/dir-function-must-first-be-called-with-a-pathname-argument.md)  
   
  [Disk plný (Visual Basic)](../../visual-basic/misc/disk-full.md)  
   
@@ -218,7 +218,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Výraz '\<name >' není procedura, ale dojde k jako cíl volání procedury](../../visual-basic/misc/expression-name-is-not-a-procedure-but-occurs-as-the-target-of-a-procedure-call.md)  
   
- [Výraz je příliš složitý](../../visual-basic/language-reference/error-messages/expression-too-complex.md)  
+ [Výraz je příliš složitý.](../../visual-basic/language-reference/error-messages/expression-too-complex.md)  
   
  [Funkce ještě nebyla implementována](../../visual-basic/misc/feature-not-yet-implemented.md)  
   
@@ -232,7 +232,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Soubor již existuje.](../../visual-basic/misc/file-already-exists.md)  
   
- [Soubor je již otevřen](../../visual-basic/language-reference/error-messages/file-already-open.md)  
+ [Soubor již je otevřen.](../../visual-basic/language-reference/error-messages/file-already-open.md)  
   
  [Formát souboru není platný](../../visual-basic/misc/file-format-not-valid.md)  
   
@@ -244,11 +244,11 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Informace o souboru nemůže být dotazována otevřené pro zápis.](../../visual-basic/misc/file-information-cannot-be-queried-while-open-for-writing.md)  
   
- [Soubor je příliš velký na načtení do bajtového pole](../../visual-basic/language-reference/error-messages/file-is-too-large-to-read-into-a-byte-array.md)  
+ [Soubor je pro načtení do bajtového pole příliš velký.](../../visual-basic/language-reference/error-messages/file-is-too-large-to-read-into-a-byte-array.md)  
   
  [Název souboru nebo název třídy nebyl nalezen v průběhu operace Automation (Visual Basic)](../../visual-basic/language-reference/error-messages/file-name-or-class-name-not-found-during-automation-operation.md)  
   
- [Soubor nebyl nalezen (chyba runtime jazyka Visual Basic)](../../visual-basic/language-reference/error-messages/file-not-found-visual-basic-run-time-error.md)  
+ [Soubor se nenašel (chyba modulu runtime jazyka Visual Basic).](../../visual-basic/language-reference/error-messages/file-not-found-visual-basic-run-time-error.md)  
   
  [Soubor určený touto FileName nepoužívá kódování určeného FileEncoding](../../visual-basic/misc/file-specified-by-filename-does-not-use-the-encoding-specified-by-fileencoding.md)  
   
@@ -304,7 +304,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Metoda nebo data člen nebyl nalezen](../../visual-basic/misc/method-or-data-member-not-found.md)  
   
- [My.Application.Log nelze určit množství volného místa na disku](../../visual-basic/misc/my-application-log-cannot-determine-the-amount-of-free-disk-space.md)  
+ [My.Application.Log](xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log)  
   
  [Argument s názvem "\<název argumentu argumentname >' zadán více než jednou.](../../visual-basic/misc/named-argument-argumentname-specified-multiple-times.md)  
   
@@ -312,7 +312,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Pojmenované argumenty nemohou odpovídat parametrům ParamArray](../../visual-basic/misc/named-arguments-cannot-match-paramarray-parameters.md)  
   
- [Vyžadován index pole vlastností](../../visual-basic/language-reference/error-messages/need-property-array-index.md)  
+ [Je vyžadován index pole vlastností.](../../visual-basic/language-reference/error-messages/need-property-array-index.md)  
   
  [Žádné dostupné přetížený '\<methodname >' lze volat s těmito argumenty bez zužující převod](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments.md)  
   
@@ -342,11 +342,11 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Objekt nepodporuje tuto vlastnost nebo metodu (Visual Basic)](../../visual-basic/misc/object-doesn-t-support-this-property-or-method.md)  
   
- [Objekt nebo třída nepodporuje sadu událostí.](../../visual-basic/language-reference/error-messages/object-or-class-does-not-support-the-set-of-events.md)  
+ [Objekt nebo třída nepodporují sadu událostí.](../../visual-basic/language-reference/error-messages/object-or-class-does-not-support-the-set-of-events.md)  
   
  [Vyžadován objekt](../../visual-basic/language-reference/error-messages/object-required.md)  
   
- [Objektová proměnná nebo proměnná bloku With nebyla nastavena](../../visual-basic/language-reference/error-messages/object-variable-or-with-block-variable-not-set.md)  
+ [Objektová proměnná nebo proměnná bloku With nebyla nastavena.](../../visual-basic/language-reference/error-messages/object-variable-or-with-block-variable-not-set.md)  
   
  [Jeden nebo více složek v cílové cestě neexistují.](../../visual-basic/misc/one-or-more-folders-in-the-target-path-do-not-exist.md)  
   
@@ -356,7 +356,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Operátor není platný pro typ '\<typename >.](../../visual-basic/misc/operator-is-not-valid-for-type-typename.md)  
   
- [Ordinální číslo není platné](../../visual-basic/language-reference/error-messages/ordinal-is-not-valid.md)  
+ [Ordinální číslo není platné.](../../visual-basic/language-reference/error-messages/ordinal-is-not-valid.md)  
   
  [Nedostatek paměti (chyba runtime jazyka Visual Basic)](../../visual-basic/misc/out-of-memory-run-time-error.md)  
   
@@ -364,7 +364,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Nedostatek místa na řetězce (Visual Basic)](../../visual-basic/language-reference/error-messages/out-of-string-space.md)  
   
- [Přetečení (chyba runtime jazyka Visual Basic)](../../visual-basic/language-reference/error-messages/overflow-visual-basic-run-time-error.md)  
+ [Přetečení (chyba modulu runtime jazyka Visual Basic)](../../visual-basic/language-reference/error-messages/overflow-visual-basic-run-time-error.md)  
   
  [Cesta '\<pathname >' nebyla nalezena](../../visual-basic/misc/path-pathname-not-found.md)  
   
@@ -386,13 +386,13 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Vlastnost \<propertyname > nelze nastavit na hodnotu Nothing](../../visual-basic/misc/property-propertyname-cannot-be-set-to-nothing.md)  
   
- [Index pole vlastností není platný](../../visual-basic/language-reference/error-messages/property-array-index-is-not-valid.md)  
+ [Index pole vlastností není platný.](../../visual-basic/language-reference/error-messages/property-array-index-is-not-valid.md)  
   
- [Procedura Property let není definována a procedura property get nevrátila objekt](../../visual-basic/language-reference/error-messages/property-let-procedure-not-defined-and-property-get-procedure-did-not-return.md)  
+ [Procedura Property Let není definována a procedura Property Get nevrátila objekt.](../../visual-basic/language-reference/error-messages/property-let-procedure-not-defined-and-property-get-procedure-did-not-return.md)  
   
  [Vlastnost nebyla nalezena.](../../visual-basic/language-reference/error-messages/property-not-found.md)  
   
- [Vlastnost nebo metoda nebyla nalezena](../../visual-basic/language-reference/error-messages/property-or-method-not-found.md)  
+ [Vlastnost nebo metoda nebyla nalezena.](../../visual-basic/language-reference/error-messages/property-or-method-not-found.md)  
   
  [Hodnota vlastnosti není platná](../../visual-basic/misc/property-value-is-not-valid.md)  
   
@@ -426,7 +426,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Některé soubory a složky nezdařila z důvodu výjimky během operace](../../visual-basic/misc/some-files-and-folders-caused-exceptions-during-the-operation.md)  
   
- [Některé dílčí klíče nelze odstranit.](../../visual-basic/language-reference/error-messages/some-subkeys-cannot-be-deleted.md)  
+ [Některé podklíče nelze odstranit.](../../visual-basic/language-reference/error-messages/some-subkeys-cannot-be-deleted.md)  
   
  [Zdrojové složky a cílové složky jsou shodné](../../visual-basic/misc/source-folder-and-target-folder-are-the-same.md)  
   
@@ -462,7 +462,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [TextFieldParser nepodporuje oddělovače, které obsahují znaky ukončovacího](../../visual-basic/misc/textfieldparser-does-not-support-delimiters-that-contain-endline-characters.md)  
   
- [Je TextFieldParser nemůže dokončit operaci čtení, protože byla překročena maximální velikost vyrovnávací paměti](../../visual-basic/language-reference/error-messages/textfieldparser-is-unable-to-complete-read-operation.md)  
+ [TextFieldParser nemůže dokončit operaci čtení, protože byla překročena maximální velikost vyrovnávací paměti.](../../visual-basic/language-reference/error-messages/textfieldparser-is-unable-to-complete-read-operation.md)  
   
  [Adresa pro UploadFile musí obsahovat název souboru](../../visual-basic/misc/the-address-for-uploadfile-needs-to-include-a-filename.md)  
   
@@ -496,7 +496,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Toto pole nelze upravovat nebo je dočasně uzamčeno (Visual Basic)](../../visual-basic/language-reference/error-messages/this-array-is-fixed-or-temporarily-locked.md)  
   
- [Tento klíč již je přidružen k elementu této kolekce](../../visual-basic/language-reference/error-messages/this-key-is-already-associated-with-an-element-of-this-collection.md)  
+ [Tento klíč již je přidružen k elementu této kolekce.](../../visual-basic/language-reference/error-messages/this-key-is-already-associated-with-an-element-of-this-collection.md)  
   
  [Tuto operaci lze provést pouze, pokud soubor se zavřel.](../../visual-basic/misc/this-operation-can-only-be-done-when-the-file-is-closed.md)  
   
@@ -518,7 +518,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Typ argumentu '\<název argumentu argumentname >' je '\<typename >', což není číselné](../../visual-basic/misc/type-of-argument-argumentname-is-typename-which-is-not-numeric.md)  
   
- [Nelze získat názvy sériových portů. z důvodu interní chyby systému](../../visual-basic/language-reference/error-messages/unable-to-get-serial-port-names-because-of-an-internal-system-error.md)  
+ [Z důvodu interní chyby systému nelze získat názvy sériových portů.](../../visual-basic/language-reference/error-messages/unable-to-get-serial-port-names-because-of-an-internal-system-error.md)  
   
  [Nelze získat datový proud pro protokol](../../visual-basic/misc/unable-to-obtain-a-stream-for-the-log.md)  
   
@@ -544,7 +544,7 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
   
  [Došlo k přerušení uživatele](../../visual-basic/misc/user-interrupt-occurred.md)  
   
- [Proměnná používá typ automatizace není podporována v jazyce Visual Basic](../../visual-basic/language-reference/error-messages/variable-uses-an-automation-type-not-supported.md)  
+ [Proměnná používá typ automatizace, který se v jazyce Visual Basic nepodporuje.](../../visual-basic/language-reference/error-messages/variable-uses-an-automation-type-not-supported.md)  
   
  [Argumenty VbStrConv.Wide a VbStrConv.Narrow nejsou použitelné pro zadaný národní prostředí](../../visual-basic/misc/vbstrconv-wide-and-vbstrconv-narrow-are-not-applicable-to-the-locale-specified.md)  
   
@@ -559,5 +559,5 @@ Tato část obsahuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] čas, ke který
  [Musíte zadat cestu, která je v aktuální složce nebo jeden z jejích podsložkách](../../visual-basic/misc/you-must-specify-path-that-is-under-the-current-folder-or-one-of-sub-folders.md)  
   
 ## <a name="see-also"></a>Viz také  
- [NOTINBUILD postupy: získání informací o chybách runtime jazyka Visual Basic](http://msdn.microsoft.com/en-us/22a7d0a6-b7d7-4c5d-971c-52ff0583c656)  
+   
  [Chybové zprávy](../../visual-basic/language-reference/error-messages/index.md)

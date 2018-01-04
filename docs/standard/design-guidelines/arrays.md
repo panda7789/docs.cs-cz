@@ -17,11 +17,14 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c957d4336527de8c11b763c31c1fdf0015b675b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2e634cdcff0b1b2968a3b64d8d05cb57feeddb51
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="arrays"></a>Pole
 **PROVEĎTE ✓** raději pomocí kolekcí přes pole v veřejná rozhraní API. [Kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) oddíl obsahuje podrobné informace o tom, jak si vybrat mezi kolekcí a pole.  
@@ -38,5 +41,5 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Array>  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny týkající se používání](../../../docs/standard/design-guidelines/usage-guidelines.md)
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)

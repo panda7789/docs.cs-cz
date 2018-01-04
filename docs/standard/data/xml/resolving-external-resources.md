@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 824a35ee5d4ecafc45167ff3f4bc89802af4ed96
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c711cbd7b563bf647d7b4fb90873a396ddfaefdf
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="resolving-external-resources"></a>Řešení externí zdroje
 **Objekt XmlResolver** vlastnost **třídou XMLDocument nastavenou na** je používán **třídou XMLDocument nastavenou na** třída najít prostředky, které nejsou vnořené v datech XML, jako je například externí dokument – typ definice (specifikace DTD), entit a schémat. Tyto položky může být umístěn v síti nebo na místní disk a identifikovat pomocí identifikátor URI (Uniform Resource). To umožňuje **třídou XMLDocument nastavenou na** vyřešit **EntityReference** uzlů, které jsou k dispozici v dokumentu a ověření dokumentu podle externí DTD nebo schéma.  
@@ -60,4 +63,4 @@ ms.lasthandoff: 10/18/2017
  Další informace najdete v části poznámky <xref:System.Xml.XmlResolver> stránka s referencemi k.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

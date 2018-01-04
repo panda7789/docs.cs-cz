@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8c5cfcc9f35e4a07e9426a4dd24c1e2f04985f16
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b0d4589dc73b4effeff553e5b7bf5562a7602c2d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Direktivy list stylu vložených v dokumentu
 V některých případech existující soubor XML obsahuje direktiva list stylu z `<?xml:stylesheet?>`. Aplikace Microsoft Internet Explorer to přijímá jako alternativu k `<?xml-stylesheet?>` syntaxe. Když se XML data obsahuje `<?xml:stylesheet?>` direktivy, jak je uvedené v následující data pokusu o načtení tato data do XML modelu DOM (Document Object) vyvolá výjimku.  
@@ -44,4 +47,4 @@ V některých případech existující soubor XML obsahuje direktiva list stylu 
  Podle World Wide Web Consortium (W3C) přidružení šablony stylů s dokumenty XML verze 1.0 doporučení, nacházející se v www.w3.org/TR/xml-stylesheet, pokyny pro zpracování stylů XSLT přidružit dokument XML je `<?xml-stylesheet?>`, s pomlčkou nahrazení dvojtečkou.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

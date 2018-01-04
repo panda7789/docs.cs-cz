@@ -17,11 +17,14 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 819f564b93d54c41b879fbfcb20997a8abdebc6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5407beba999ede6131adbc17f56d139396429597
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
 Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework používá jednotný model pro spolupráci zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na prostý objekt názvem token zrušení. Objekt, který vyvolá jednu nebo více operací možné zrušit, třeba tak, že vytvoříte novou vláken nebo úlohy, předá tento token na každou operaci. Jednotlivé operace můžete zase předat jiné operace kopie tokenu. Později objekt, který vytvořili token slouží k vyžádání, že operace zastavit, co dělají. Pouze objekt požadavku můžete vydat žádost o zrušení a každý listener je odpovědná za vašeho povšimnutí žádosti a reagovat na ni příslušná a včas způsobem.  
@@ -155,4 +158,4 @@ Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhran
  <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> jsou příklady třídy, které řídí tyto pokyny. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md)a [postupy: zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na spravovaná vlákna základy](../../../docs/standard/threading/managed-threading-basics.md)
+ [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)

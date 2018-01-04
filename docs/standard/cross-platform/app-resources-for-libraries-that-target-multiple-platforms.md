@@ -22,11 +22,14 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 74cd3df645c2490bcf98533ca8846ddfb742f67f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7006c07d32a9f0adbafce1c83c1b29842f634a9a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Můžete použít rozhraní .NET Framework [Přenosná knihovna tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) projektu typu zajistit, aby prostředky ve vašich knihovnách třída je přístupná z více platforem. Tento typ projektu není k dispozici v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] a cílem do něj podmnožinu Přenosná knihovna tříd rozhraní .NET Framework. Použití [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] zajistí, že vaše knihovna je přístupná z aplikace klasické pracovní plochy, aplikace Silverlight, aplikace Windows Phone, a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
@@ -111,5 +114,5 @@ Můžete použít rozhraní .NET Framework [Přenosná knihovna tříd](../../..
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Resources.ResourceManager>  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)  
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
  [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)

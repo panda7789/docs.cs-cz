@@ -19,11 +19,14 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34d0529c302f08287f2714e056eb6a536f3b28ec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 863c79b36cd51b2e1e747169fd15a2358a1e6fee
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-serialize-an-object-as-a-soap-encoded-xml-stream"></a>Postupy: serializaci objektu jako datový proud XML kódováním protokolu SOAP
   
@@ -80,9 +83,9 @@ XmlSerializer mySerializer = new XmlSerializer(myTypeMapping);
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [XML a serializace protokolu SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
- [Atributy, které řídí serializace kódovaného protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
- [Serializace XML pomocí webové služby XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
- [Postupy: serializaci objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [Postupy: deserializaci objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
- [Postupy: potlačení serializace XML kódovaného protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)
+ [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [Serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
+ [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+ [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)

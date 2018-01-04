@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5d03a0ca7518b06c08d98967d7c5ae864f1c04ac
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d0728ff5d695ccc5fc5912631d29c89b7cc36ca5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>XML integrace s relačních dat a ADO.NET
 **XmlDataDocument** třída je třídu odvozenou z **třídou XMLDocument nastavenou na**a obsahuje XML data. Výhodou **XmlDataDocument** je, že zajišťuje most mezi hierarchické a relační data. Je **třídou XMLDocument nastavenou na** mohou být vázány na **datovou sadu** a obě třídy můžete synchronizovat změny provedené data obsažená ve dvou tříd. **Třídou XMLDocument nastavenou na** která je vázaná **datovou sadu** umožňuje XML tak, aby integrovat relačních dat, a není nutné mít data reprezentována jako buď XML nebo v relačním formátu. Můžete provést i a nesmí být omezené na jednom znázornění dat.  
@@ -55,4 +58,4 @@ ms.lasthandoff: 10/18/2017
  Pokud načítání **datovou sadu** z **XmlDataDocument** adresy vašim potřebám, najdete v části [synchronizace Datasetwith dokument XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+ [Použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)

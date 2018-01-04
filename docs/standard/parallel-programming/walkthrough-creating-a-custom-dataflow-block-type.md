@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 809b21fa6e1470890011604792d849998dd03ede
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1a17bdf149d3a263b064f96feae8c660be34d375
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Postupy: Vytvoření bloku toku dat vlastního typu
 Přestože knihovna toku dat TPL poskytuje několik typů bloku toku dat, které umožňují celou řadu funkcí, můžete také vytvořit vlastní bloku typy. Tento dokument popisuje, jak vytvořit typ bloku toku dat, který implementuje vlastní chování.  
@@ -74,4 +77,4 @@ Přestože knihovna toku dat TPL poskytuje několik typů bloku toku dat, které
 ## <a name="next-steps"></a>Další kroky  
   
 ## <a name="see-also"></a>Viz také  
- [Toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+ [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

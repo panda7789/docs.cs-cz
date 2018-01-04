@@ -24,11 +24,14 @@ caps.latest.revision: "92"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ca51c13a8c25575080c56b8d1ffe5723f34b539e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 55f8f6b544a3ade0ad9423e8253cc44e0fb5fec1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Formátovací řetězec datum a čas, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní data a času řetězec formátu; Další informace najdete v tématu [vlastní řetězců data a času formát](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:  
@@ -422,5 +425,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.DateTime?displayProperty=nameWithType>  
  <xref:System.DateTimeOffset?displayProperty=nameWithType>  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- [Řetězce formátu vlastní hodnota data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
+ [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
  [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

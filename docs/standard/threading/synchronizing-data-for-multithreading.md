@@ -17,11 +17,14 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a17eba2f930fda06d643d78c73c117e89ae86928
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4e1e123b8c8440b766e5b8903170c8cb392f154a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro vícevláknové zpracování
 Když více vláken můžete volat vlastnosti a metody jednoho objektu, je velmi důležité synchronizovat těchto volání. V opačném případě může být jedno vlákno přerušení činnosti jiné vlákno a objekt může být ponecháno v neplatném stavu. Třídu, jejíž členové jsou chráněny před přerušení práce se nazývá bezpečné pro přístup z více vláken.  
@@ -78,5 +81,5 @@ Když více vláken můžete volat vlastnosti a metody jednoho objektu, je velmi
  <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>  
  [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)  
  [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
- [SyncLock – příkaz](~/docs/visual-basic/language-reference/statements/synclock-statement.md)  
- [Lock – příkaz](~/docs/csharp/language-reference/keywords/lock-statement.md)
+ [Příkaz SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md)  
+ [lock – příkaz](~/docs/csharp/language-reference/keywords/lock-statement.md)

@@ -26,11 +26,11 @@ ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
 caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b863ed5c8aca3332f4af3d759789eec153a79aed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4ba49d6582eb2ecac4846eaee570a4d92439a5d9
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definované události.  
@@ -122,17 +122,17 @@ End Event
  Stisknutím klávesy F5 spusťte předchozí příklad a klikněte na tlačítko s názvem bez přípony **spustit**. První textové pole začne počítat dolů sekundách. Po uplynutí doby úplné (10 sekund), zobrazí první textové pole, "Hotovo".  
   
 > [!NOTE]
->  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, nemá formuláře. Chcete-li povolit tento formulář pro zpracování událostí přímo, můžete použít více vláken. Další informace najdete v tématu [zřetězení](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c).  
+>  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, nemá formuláře. Chcete-li povolit tento formulář pro zpracování událostí přímo, můžete použít více vláken. Další informace najdete v tématu [zřetězení](../../programming-guide/concepts/threading/index.md).  
   
 ## <a name="see-also"></a>Viz také  
- [RaiseEvent – příkaz](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
- [Implements – příkaz](../../../visual-basic/language-reference/statements/implements-statement.md)  
+ [Příkaz RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
+ [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)  
  [Události](../../../visual-basic/programming-guide/language-features/events/index.md)  
- [AddHandler – příkaz](../../../visual-basic/language-reference/statements/addhandler-statement.md)  
- [RemoveHandler – příkaz](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
+ [Příkaz AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)  
+ [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
  [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)  
- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)  
- [Postupy: deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)  
- [Postupy: deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)  
- [Sdílené](../../../visual-basic/language-reference/modifiers/shared.md)  
- [Stínů](../../../visual-basic/language-reference/modifiers/shadows.md)
+ [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)  
+ [Postupy: Deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)  
+ [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)

@@ -19,11 +19,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a964bd031f6f8a7fc029b2b209b9693b72e688af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b895739daf1f4844d6300df4788441be67b90254
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-implement-an-observer"></a>Postupy: Implementace pozorovatele
 Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, které je zaregistruje pro oznámení, a zprostředkovatele, který monitoruje data a odešle oznámení pozorovatelů jeden nebo více. Toto téma popisuje postup vytvoření pozorovatele. Související téma, [postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md), popisuje, jak vytvářet poskytovatele.  
@@ -58,6 +61,6 @@ Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, které je zaregi
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IObserver%601>  
- [Návrhový vzor pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
- [Postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)  
- [Pozorovatel osvědčené postupy pro návrhový vzor](../../../docs/standard/events/observer-design-pattern-best-practices.md)
+ [Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
+ [Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)  
+ [Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)

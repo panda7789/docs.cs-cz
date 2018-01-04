@@ -14,11 +14,11 @@ ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2490529b951ef6e583e3bfa54afced89c823e874
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1f9d4f584f217e6996a499614b97f184b28664f8
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="doc"></a>/doc
 Zpracuje dokumentační komentáře do souboru XML.  
@@ -55,7 +55,7 @@ Zpracuje dokumentační komentáře do souboru XML.
   
 |Chcete-li nastavit/doc v sadě Visual Studio integrované vývojové prostředí|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Klikněte **zkompilovat** kartě.<br />3.  Nastavte hodnotu v **souborů dokumentace XML vygenerovat** pole.|  
+|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte **zkompilovat** kartě.<br />3.  Nastavte hodnotu v **souborů dokumentace XML vygenerovat** pole.|  
   
 ## <a name="example"></a>Příklad  
  V tématu [dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md) pro ukázku.  

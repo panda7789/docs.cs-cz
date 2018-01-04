@@ -14,11 +14,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0bfb5ef2679c4e20e99a10dcf82a251673811b41
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 61444afd5afe52cbcb0f64074ec4479bd6252358
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Zavádí pět nové typy kolekcí, které jsou speciálně určené pro podporu Vícevláknová přidávat a odebírat operace. K dosažení vláken, použít tyto nové typy různé druhy efektivní zamykání a mechanismy zámku bez synchronizace. Synchronizace přidá režie pro operaci. Množství práce, závisí na typ synchronizace, která se používá, druh operace, které se provádí a dalších faktorů, jako je počet vláken, které se pokoušíte získat přístup ke kolekci současně.  
@@ -70,5 +73,5 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
- [Kolekce bezpečné pro přístup z více vláken](../../../../docs/standard/collections/thread-safe/index.md)  
+ [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)  
  [Paralelní programování](../../../../docs/standard/parallel-programming/index.md)

@@ -12,11 +12,11 @@ ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2082d8169dc325b86957e7a54c6e49304660aa94
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 42ed9866f168c06e8641ace712da58e953951676
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost vytvářet aplikace Windows Forms, které běží místně na počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní Windows Forms pomocí. Aplikace Windows Forms jsou založeny na třídy z <xref:System.Windows.Forms> oboru názvů.  
@@ -24,11 +24,11 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
 ## <a name="designing-windows-forms-applications"></a>Navrhování Windows Forms aplikace  
  Můžete vytvořit Windows Forms a aplikace služby systému Windows s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Další informace naleznete v následujících tématech:  
   
--   [Začínáme s Windows Forms](../../../../docs/framework/winforms/getting-started-with-windows-forms.md). Poskytuje informace o tom, jak vytvořit a program Windows Forms.  
+-   [Začínáme s Windows Forms](../../../framework/winforms/getting-started-with-windows-forms.md). Poskytuje informace o tom, jak vytvořit a program Windows Forms.  
    
--   [Ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/index.md). Kolekce témat s podrobnostmi o použití ovládacích prvků Windows Forms.  
+-   [Ovládací prvky Windows Forms](../../../framework/winforms/controls/index.md). Kolekce témat s podrobnostmi o použití ovládacích prvků Windows Forms.  
   
--   [Aplikace služby systému Windows](../../../../docs/framework/windows-services/index.md). Seznam témat, která popisují, jak vytváření služeb systému Windows.  
+-   [Aplikace služby systému Windows](../../../framework/windows-services/index.md). Seznam témat, která popisují, jak vytváření služeb systému Windows.  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>Sestavování bohaté, interaktivní uživatelské rozhraní  
  Windows Forms je komponenta čipové klienta [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], sadu spravovaných knihovny, které umožňují běžné úkoly aplikace jako čtení a zápis do systému souborů. Použití vývojového prostředí jako [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], můžete vytvořit Windows Forms aplikace, které zobrazují informace, žádají vstup od uživatele a komunikaci se vzdálenými počítači přes síť.  
@@ -36,10 +36,10 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
  V systému Windows Forms formulář je visual prostor, na kterém je zobrazit informace o uživateli. Běžně vytváříte aplikace Windows Forms podle umístění ovládacích prvků ve formulářích a vývoj odpovědi na akce uživatele, jako je například kliknutí myší nebo stisknutí klávesy. A *řízení* je element diskrétní uživatelské rozhraní (UI), který zobrazuje data nebo přijímá data vstup.  
   
 ### <a name="events"></a>Události  
- Když uživatel provede něco do svého formuláře nebo jeden z jeho ovládacích prvků, vygeneruje událost. Vaše aplikace reaguje na tyto události pomocí kódu a zpracovává události, když k nim dojde. Další informace najdete v tématu [vytváření obslužných rutin událostí v systému Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).  
+ Když uživatel provede něco do svého formuláře nebo jeden z jeho ovládacích prvků, vygeneruje událost. Vaše aplikace reaguje na tyto události pomocí kódu a zpracovává události, když k nim dojde. Další informace najdete v tématu [vytváření obslužných rutin událostí v systému Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md).  
   
 ### <a name="controls"></a>Ovládací prvky  
- Windows Forms obsahuje řadu ovládacích prvků, které můžete umístit na formulářích: ovládací prvky, které zobrazují textová pole, tlačítka, rozevírací seznamy, přepínače a i webové stránky. Seznam všech ovládacích prvků, můžete použít ve formuláři najdete v tématu [ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md). Pokud ovládací prvek existující nevyhovuje vašim potřebám, Windows Forms také podporuje, vytváření vlastní vlastních ovládacích prvků pomocí <xref:System.Windows.Forms.UserControl> třídy.  
+ Windows Forms obsahuje řadu ovládacích prvků, které můžete umístit na formulářích: ovládací prvky, které zobrazují textová pole, tlačítka, rozevírací seznamy, přepínače a i webové stránky. Seznam všech ovládacích prvků, můžete použít ve formuláři najdete v tématu [ovládací prvky používané ve formulářích Windows](../../../framework/winforms/controls/controls-to-use-on-windows-forms.md). Pokud ovládací prvek existující nevyhovuje vašim potřebám, Windows Forms také podporuje, vytváření vlastní vlastních ovládacích prvků pomocí <xref:System.Windows.Forms.UserControl> třídy.  
   
  Windows Forms má bohaté ovládací prvky uživatelského rozhraní, které emulují funkce v vyšší kategorie aplikace, jako je Microsoft Office. Pomocí <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.MenuStrip> ovládací prvek, můžete vytvořit panely nástrojů a nabídky, které obsahují text, obrázky, zobrazují podnabídky a hostovat další ovládací prvky, jako je například textová pole a pole se seznamem.  
   
@@ -53,9 +53,9 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
 |Vytvořte novou aplikaci Windows Forms s[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[Návod: Vytvoření jednoduché Windows Form](http://msdn.microsoft.com/en-us/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
-|Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
-|Vytváření grafiky s<xref:System.Drawing>|[Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
-|Vytvořit vlastní ovládací prvky|[Postupy: dědění ze třídy UserControl](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
+|Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
+|Vytváření grafiky s<xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
+|Vytvořit vlastní ovládací prvky|[Postupy: Dědění ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ## <a name="displaying-and-manipulating-data"></a>Zobrazení a manipulace s daty  
  Mnoho aplikací musí zobrazit data z databáze, soubor XML, webové služby XML nebo jiný zdroj dat. Windows Forms poskytuje flexibilní ovládací <xref:System.Windows.Forms.DataGridView> řízení pro vykreslení tabulkových data v tradiční řádků a sloupců formátu, tak, aby každá část data nacházela vlastní buňku. Pomocí <xref:System.Windows.Forms.DataGridView> můžete přizpůsobit vzhled jednotlivých buněk, zamknout libovolný řádků a sloupců v místě a zobrazit komplexní ovládacích prvků do buněk mezi další funkce.  
@@ -72,8 +72,8 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Použití <xref:System.Windows.Forms.BindingSource> součásti|[Postupy: vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
-|Práce s [!INCLUDE[vstecado](~/includes/vstecado-md.md)] zdroje dat|[Postupy: řazení a filtrování dat ADO.NET pomocí součásti Windows Forms BindingSource](https://msdn.microsoft.com/library/ya3sah92.aspx)|  
+|Použití <xref:System.Windows.Forms.BindingSource> součásti|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
+|Práce s [!INCLUDE[vstecado](~/includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí komponenty Windows Forms BindingSource](https://msdn.microsoft.com/library/ya3sah92.aspx)|  
 |Použití okna zdroje dat|[Návod: Zobrazování dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
@@ -98,10 +98,10 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytiskne obsah formuláře|[Postupy: tisk grafiky ve Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v systému Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
-|Další informace o zabezpečení Windows Forms|[Zabezpečení ve Windows Forms – přehled](../../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
+|Vytiskne obsah formuláře|[Postupy: Tisk grafiky v modelu Windows Forms](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
+|Další informace o zabezpečení Windows Forms|[Přehled zabezpečení ve Windows Forms](../../../framework/winforms/security-in-windows-forms-overview.md)|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
- [Přehled produktu Windows Forms](../../../../docs/framework/winforms/windows-forms-overview.md)  
- [My.Forms – objekt](../../../visual-basic/language-reference/objects/my-forms-object.md)
+ [Přehled produktu Windows Forms](../../../framework/winforms/windows-forms-overview.md)  
+ [Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)

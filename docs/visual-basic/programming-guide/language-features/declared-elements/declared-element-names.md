@@ -32,11 +32,11 @@ ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
 caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 59fee9eb79af86df7f01bd77c27a929ef61fcfe2
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 22595eff2509d3954b3ce9d5038b19a681fbfbbe
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="declared-element-names-visual-basic"></a>Deklarované názvy elementu (Visual Basic)
 Každý element, deklarované má název, označované taky jako *identifikátor*, což je kód používá na ni odkazuje.  
@@ -71,7 +71,7 @@ Každý element, deklarované má název, označované taky jako *identifikátor
  `xyz$wv`  
   
 > [!CAUTION]
->  Názvy elementů začíná podtržítkem (`_`) jsou nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../../../docs/standard/language-independence-and-language-independent-components.md) CLS (), takže kompatibilní se specifikací CLS kód nelze použít komponenty, která definuje takové názvy. Podtržítkem v každém místě v název elementu je však kompatibilní se specifikací CLS.  
+>  Názvy elementů začíná podtržítkem (`_`) jsou nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md) CLS (), takže kompatibilní se specifikací CLS kód nelze použít komponenty, která definuje takové názvy. Podtržítkem v každém místě v název elementu je však kompatibilní se specifikací CLS.  
   
 ### <a name="name-length-guidelines"></a>Název délka pokyny  
  Prakticky musí být název co nejkratší při identifikaci stále jasně povaha elementu. Tím zlepšuje čitelnost kódu a snižuje velikost řádku délku a zdrojový soubor.  
@@ -99,6 +99,6 @@ Každý element, deklarované má název, označované taky jako *identifikátor
   
 ## <a name="see-also"></a>Viz také  
  [Deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)  
- [Deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
  [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
  [Příkazy](../../../../visual-basic/language-reference/statements/index.md)

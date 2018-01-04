@@ -1,5 +1,5 @@
 ---
-title: "XML – dokumenty a Data"
+title: Dokumenty a data XML
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -13,13 +13,16 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 38382609fb21069fd69a84eb8b9de4701efeaf2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 22a2eb72dc06a644171c143a61698e661d2c66c6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="xml-documents-and-data"></a>XML – dokumenty a Data
+# <a name="xml-documents-and-data"></a>Dokumenty a data XML
 Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které vám umožní snadno vytvářet aplikace podporující rozhraní XML. Třídy v následujících oborů názvů podporují analýzy a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.  
   
 -   <xref:System.Xml>  
@@ -65,7 +68,7 @@ Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které
 -   **Integrace s ADO.NET.** Třídy XML a [ADO.NET](../../../../docs/framework/data/adonet/index.md) jsou pevně integrovány sdružujícího relačních dat a XML. <xref:System.Data.DataSet> Třída je mezipaměť v paměti se data načtená z databáze. <xref:System.Data.DataSet> Třída má možnost číst a zapisovat XML pomocí <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy zachována jeho vnitřní relační schéma struktura jako schémat XML (XSD) a odvodit strukturu schématu dokumentu XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Možnosti pro zpracování XML](../../../../docs/standard/data/xml/xml-processing-options.md)  
+ [Možnosti zpracování XML](../../../../docs/standard/data/xml/xml-processing-options.md)  
  Popisuje možnosti pro zpracování dat XML.  
   
  [Zpracování dat XML v paměti](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md)  
@@ -74,16 +77,16 @@ Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
  Popisuje způsob použití procesoru XSLT.  
   
- [Objektový Model schématu XML (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
  Popisuje třídy používané pro vytváření a manipulace s schémat XML (XSD) tím, že poskytuje <xref:System.Xml.Schema.XmlSchema> třídy se načíst a upravit schéma.  
   
- [XML integrace s relačních dat a ADO.NET](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)  
+ [Integrace XML s relačními daty a ADO.NET](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)  
  Popisuje, jak rozhraní .NET Framework umožňuje v reálném čase, synchronní přístup k hierarchické a relační reprezentace dat prostřednictvím <xref:System.Data.DataSet> objektu a <xref:System.Xml.XmlDataDocument> objektu.  
   
  [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)  
  Popisuje, jak <xref:System.Xml.XmlNamespaceManager> třída se používá k uložení a správě informace oboru názvů.  
   
- [Podpora typu v System.Xml třídy](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)  
+ [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)  
  Popisuje, jak mapování typů dat XML do CLR typy, jak převést datové typy XML a další funkce, typ podpory v <xref:System.Xml> třídy.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: c20bc80d2ddb864a3a0172beb211974426a278a8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2b7b85d2aa3c563fbd4c7cf89336827d25f22c0e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="implementing-value-objects"></a>Implementace hodnota objekty
 
@@ -26,7 +29,7 @@ Obrázek 9 – 13 ukazuje objekt hodnoty adres v rámci agregace pořadí.
 
 **Obrázek 9 – 13**. Adresa hodnota objekt v rámci agregace pořadí
 
-Jak znázorňuje obrázek 9 – 13, entity se obvykle skládá z více atributů. Například pořadí můžete modelován jako entity s identitou a interně tvořený sadu atributů například OrderId, OrderDate, OrderItems atd. Ale na adresu, což je jednoduše komplexní hodnota skládá z země, ulici, města, musí být modelovány a považován za objekt hodnoty atd.
+Jak znázorňuje obrázek 9 – 13, entity se obvykle skládá z více atributů. Například `Order` entity můžete modelován jako entity s identity a složené interně sady atributů, například OrderId, OrderDate, OrderItems atd. Ale na adresu, což je jednoduše komplexní hodnota tvořený země, ulici, Město, atd. a je žádná identita v této doméně, musí být modelovány a považován za objekt hodnoty.
 
 ## <a name="important-characteristics-of-value-objects"></a>Důležité charakteristiky hodnota objektů
 
@@ -104,8 +107,9 @@ public class Address : ValueObject
     public String Country { get; private set; }
     public String ZipCode { get; private set; }
 
-    public Address(string street, string city, string state,
-        string country, string zipcode)
+    private Address() { }
+
+    public Address(string street, string city, string state, string country, string zipcode)
     {
         Street = street;
         City = city;
@@ -116,6 +120,7 @@ public class Address : ValueObject
 
     protected override IEnumerable<object> GetAtomicValues()
     {
+        // Using a yield return statement to return each element one at a time
         yield return Street;
         yield return City;
         yield return State;
@@ -125,25 +130,177 @@ public class Address : ValueObject
 }
 ```
 
-## <a name="hiding-the-identity-characteristic-when-using-ef-core-to-persist-value-objects"></a>Skrytí vlastnosti identity při použití EF základní udržení hodnota objekty
+## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20"></a>Postup zachovat hodnotu objekty v databázi s EF základní 2.0
 
-Omezení při použití EF základní je, že v jeho aktuální verze (EF základní 1.1) nelze použít [komplexní typy](https://docs.microsoft.com/de-de/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7) definovaným v EF 6.x. Proto musíte uložit hodnotu objektu jako EF entity. Však můžete skrýt jeho ID, takže byste měli vytvořit jasné, že identita není důležité v modelu, který je součástí objekt hodnoty. Skrýt ID je pomocí ID jako vlastnost stínové. Vzhledem k tomu, že tato konfigurace pro skrytí ID v modelu je nastaven na úrovni infrastruktury, je transparentní pro váš model domény a jeho implementace infrastruktury může v budoucnu změnit.
+Právě jste viděli, jak definovat objekt hodnoty v modelu domény. Ale, jak můžete je ve skutečnosti zachovat ji do databáze prostřednictvím základní Entity Framework (EF), které se obvykle týká entity s identity?
 
-Skrytá ID vyžaduje EF základní infrastruktury je v eShopOnContainers, implementovaná tímto způsobem na úrovni DbContext pomocí rozhraní Fluent API v projektu OMI.
+### <a name="background-and-older-approaches-using-ef-core-11"></a>Pozadí a starší přístupů pomocí EF základní 1.1
+
+Jako pozadí, byl omezení při použití EF základní 1.0 a 1.1, nelze použít [komplexní typy](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7) definovaným v EF 6.x v tradiční rozhraní .NET Framework. Proto pokud používáte EF základní 1.0 nebo 1.1, je potřebný k uložení objektu hodnotu jako entity EF s pole ID. A, vypadal další jako objekt hodnoty pomocí žádná identita, může skrýt jeho ID, takže byste měli vytvořit jasné, že identita objekt hodnoty není důležité v modelu domény. Toto ID může skrýt pomocí ID jako [stínové vlastnost](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Vzhledem k tomu, že konfigurace pro skrytí ID v modelu je nastaven na úrovni infrastruktury EF, bylo by druh transparentní pro modelu domény.
+
+Skrytá ID vyžaduje EF základní infrastruktury byla v původní verzi eShopOnContainers (.NET Core 1.1), implementovaná tímto způsobem na úrovni DbContext pomocí rozhraní Fluent API v projektu OMI. Proto se ID skrytá z hlediska domény modelu, ale stále přítomen v infrastruktuře.
 
 ```csharp
-// Fluent API within the OrderingContext:DbContext in the
-// Ordering.Infrastructure project
-
-void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
+// Old approach with EF Core 1.1
+// Fluent API within the OrderingContext:DbContext in the Infrastructure project
+void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration) 
 {
-    addressConfiguration.ToTable("address", DEFAULT_SCHEMA);
-    addressConfiguration.Property<int>("Id").IsRequired();
-    addressConfiguration.HasKey("Id");
+    addressConfiguration.ToTable("address", DEFAULT_SCHEMA); 
+
+    addressConfiguration.Property<int>("Id")  // Id is a shadow property
+        .IsRequired();
+    addressConfiguration.HasKey("Id");   // Id is a shadow property
 }
 ```
 
-Proto ID je skrytý z hlediska domény modelu a v budoucnu infrastruktury objekt hodnotu lze také implementovat jako komplexní typ nebo jiným způsobem.
+Však trvalost hodnotu objektu do databáze byla provedena jako regulární entity v jiné tabulky.
+
+S EF základní 2.0, je nový a lepší způsoby zachovat objekty hodnotu.
+
+## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20"></a>Zachovat objekty hodnotu jako ve vlastnictví entity typy v EF základní 2.0
+
+I když některé mezery mezi vzor objektu kanonické hodnoty v DDD a typ vlastní entity v základní EF je aktuálně nejlepší způsob, jak zachovat objekty hodnotu s EF základní 2.0. Zobrazí se omezeních na konci této části.
+
+Funkci typu vlastněná entita byla přidána do základní EF od verze 2.0.
+
+Typ entity ve vlastnictví umožňuje mapovat typy, které nemají své vlastní identity explicitně definované v modelu domény a jsou použity jako vlastnosti, například objekt hodnoty v některé z vaší entity. Typ entity ve vlastnictví sdílí stejný typ CLR s jiným typem entity. Entita obsahující definující navigační je vlastníka. Při dotazování vlastník, vlastní typy jsou zahrnuté ve výchozím nastavení.
+
+Podle vzhledu modelu domény, vlastní typ vypadá nemá žádné identity.
+V pozadí, vlastní typy mají identity, ale je součástí tuto identitu vlastníka navigační vlastnost.
+
+Identita instance vlastní typy není úplně svoje vlastní. Obsahuje tři komponenty: 
+
+- Identitu vlastníka
+
+- Vlastnost navigace na ně odkazují
+
+- V případě kolekce vlastní typy komponentu nezávislé (není dosud podporován v EF základní 2.0).
+
+V modelu domény řazení v eShopOnContainers jako součást pořadí entity, například objekt hodnoty adresa je implementovaný jako typ entity ve vlastnictví v rámci entity vlastníka, který je entita pořadí. Adresa je typu s žádná vlastnost identity, které jsou definované v modelu domény. Jako vlastnost typu pořadí slouží k určení adresy příjemce pro konkrétní pořadí.
+
+Podle konvence stínové primární klíč se vytvoří pro vlastní typ a bude být namapované na stejné tabulce jako vlastník pomocí rozdělení tabulky. To umožňuje použití vlastní typy podobně jako na tom, jak komplexní typy, které se používají v EF6 v tradiční rozhraní .NET Framework.
+
+Je důležité si uvědomit, že který vlastněných typy nikdy zjištění podle konvence v EF jádra, musíte je výslovně deklarovat.
+
+V eShopOnContainers v OrderingContext.cs, v rámci metody OnModelCreating(), existuje více konfigurace infrastruktury, které bylo použito. Jeden z nich se týká entity pořadí.
+
+```csharp
+// Part of the OrderingContext.cs class at the Ordering.Infrastructure project
+// 
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.ApplyConfiguration(new ClientRequestEntityTypeConfiguration());
+    modelBuilder.ApplyConfiguration(new PaymentMethodEntityTypeConfiguration());
+    modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+    modelBuilder.ApplyConfiguration(new OrderItemEntityTypeConfiguration());
+    //...Additional type configurations
+}
+```
+
+V následujícím kódu je definováno infrastruktury trvalosti pro entitu pořadí:
+
+```csharp
+// Part of the OrderEntityTypeConfiguration.cs class 
+// 
+public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+{
+    orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
+    orderConfiguration.HasKey(o => o.Id);
+    orderConfiguration.Ignore(b => b.DomainEvents);
+    orderConfiguration.Property(o => o.Id)
+        .ForSqlServerUseSequenceHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
+
+    //Address value object persisted as owned entity in EF Core 2.0
+    orderConfiguration.OwnsOne(o => o.Address);
+
+    orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
+    
+    //...Additional validations, constraints and code...
+    //...
+}
+```
+
+V předchozí kód `orderConfiguration.OwnsOne(o => o.Address)` metoda určuje, že `Address` vlastnost je vlastní entita `Order` typu.
+
+Ve výchozím nastavení, konvence EF základní název sloupce databáze pro vlastnosti typu entity ve vlastnictví jako `EntityProperty_OwnedEntityProperty`. Proto vnitřní vlastnosti `Address` se objeví v `Orders` tabulku s názvy `Address_Street`, `Address_City` (a tak dále pro `State`, `Country` a `ZipCode`).
+
+Můžete připojit `Property().HasColumnName()` fluent metoda přejmenovat tyto sloupce. V případě, kde `Address` veřejná vlastnost mapování by bylo třeba takto:
+
+```csharp
+orderConfiguration.OwnsOne(p => p.Address)
+                            .Property(p=>p.Street).HasColumnName("ShippingStreet");
+
+orderConfiguration.OwnsOne(p => p.Address)
+                            .Property(p=>p.City).HasColumnName("ShippingCity");
+```
+
+Je možné řetězec `OwnsOne` metoda fluent mapování. V následujícím příkladu hypotetický `OrderDetails` vlastní `BillingAddress` a `ShippingAddress`, které jsou obě `Address` typy. Potom `OrderDetails` vlastníkem je `Order` typu.
+
+```csharp
+orderConfiguration.OwnsOne(p => p.OrderDetails, cb =>
+    {
+        cb.OwnsOne(c => c.BillingAddress);
+        cb.OwnsOne(c => c.ShippingAddress);
+    });
+//...
+//...
+public class Order
+{
+    public int Id { get; set; }
+    public OrderDetails OrderDetails { get; set; }
+}
+
+public class OrderDetails
+{
+    public StreetAddress BillingAddress { get; set; }
+    public StreetAddress ShippingAddress { get; set; }
+}
+
+public class Address
+{
+    public string Street { get; set; }
+    public string City { get; set; }
+}
+```
+
+### <a name="additional-details-on-owned-entity-types"></a>Další informace o typy vlastní entit
+
+• Vlastní typy jsou definovány při konfiguraci navigační vlastnost pro konkrétní typ pomocí rozhraní fluent API OwnsOne.
+
+• Definici vlastní typu v našem model metadat je složené: Typ vlastníka, navigační vlastnost a typ CLR vlastní typu.
+
+• Identity (klíč) vlastní typ instance v našem zásobníku je složené identity typu vlastníka a definicí typu vlastní.
+
+#### <a name="owned-entities-capabilities"></a>Vlastní entity možnosti:
+
+•, Že typ, můžete odkazovat jinými entitami, buď ve vlastnictví (vnořené vlastní typy) bez vlastněné nebo (navigační vlastnosti regulární odkazu na ostatní entity).
+
+• Můžete mapovat stejný typ CLR jako ve vlastnictví různého stejné entity vlastníka prostřednictvím samostatné navigační vlastnosti.
+
+• Rozdělení tabulky je nastavená podle konvence, ale můžete chodit tak, že mapuje vlastní typ do jiné tabulky pomocí ToTable.
+
+• Přes načtení je prováděno automaticky pro vlastní typy, tj. není třeba volat Include() na dotaz.
+
+#### <a name="owned-entities-limitations"></a>Vlastní entity omezení:
+
+• Nelze vytvořit DbSet<T> vlastní typu (záměrně).
+
+• Nelze volat ModelBuilder.Entity<T>() pro vlastní typy (aktuálně podle návrhu).
+
+• Žádné kolekce vlastní typy ještě (ale bude se podporovány ve verzích po EF základní 2.0).
+
+• Žádná podpora pro jejich konfigurací prostřednictvím atributu.
+
+• Žádná podpora pro volitelné (tj. připouštějící hodnotu Null) vlastní typy, které jsou mapovány s vlastníkem ve stejné tabulce (tj. pomocí rozdělení tabulky). To je proto nemáme samostatné sentinel pro hodnotu null.
+
+• Podpora mapování dědičnosti pro vlastní typy, ale byste měli mít k mapování dva typy na stejné hierarchie dědičnosti jako ve vlastnictví různého typu list. Základní EF nebude důvodu o tom, že jsou součástí stejné hierarchie.
+
+#### <a name="main-differences-with-ef6s-complex-types"></a>Hlavní rozdíly mezi EF6 je komplexní typy
+
+• Rozdělení tabulky je volitelné, tj. jejich může volitelně mapovat do samostatné tabulky a přesto být vlastní typy.
+
+• Mohou odkazovat ostatní entity (tj. jejich může fungovat jako závislé straně u relací na jiné typy bez vlastněných).
+
 
 ## <a name="additional-resources"></a>Další zdroje
 
@@ -164,6 +321,7 @@ Proto ID je skrytý z hlediska domény modelu a v budoucnu infrastruktury objekt
 
 -   **Třídy adres.** Ukázka třídy objektu hodnotu v eShopOnContainers.
     [*https://github.com/DotNet/eShopOnContainers/BLOB/Master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs)
+
 
 
 >[!div class="step-by-step"]

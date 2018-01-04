@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9f953f6477abf1f4e0d6aaf79e67005172ff1144
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 144bcde6c4c8fb227773fe613da8445f100ce66d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="countdownevent"></a>CountdownEvent
 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType>je synchronizace primitivní, který odblokuje jeho vláken čekání po jejím signalizovala stanovený počet. <xref:System.Threading.CountdownEvent>je určen pro scénáře, ve kterých by jinak musíte použít <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim> a ručně snížení proměnné před signalizace události. Například v případě rozvětvení/spojení právě vytvořením <xref:System.Threading.CountdownEvent> má signál počet 5, a poté spuštění pět pracovních položek ve vlákně fondu a mít každý pracovní položka volání <xref:System.Threading.CountdownEvent.Signal%2A> po dokončení operace. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> snižuje počet signál o 1. Na hlavní vlákno volání <xref:System.Threading.CountdownEvent.Wait%2A> se zablokuje, dokud se počet signál je nula.  

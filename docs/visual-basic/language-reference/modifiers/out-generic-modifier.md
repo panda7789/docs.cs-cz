@@ -12,11 +12,11 @@ ms.assetid: c4418369-1518-4a46-9a1e-054c61038eca
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 94d18200e6d7ce0ad63a229223ae77d99302e0e6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4e54504cd65b78846af41692f39899140a6d99b5
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="out-generic-modifier-visual-basic"></a>Out (generický modifikátor) (Visual Basic)
 Pro parametry obecného typu `Out` – klíčové slovo určuje, že typu je kovariant.  
@@ -34,7 +34,7 @@ Pro parametry obecného typu `Out` – klíčové slovo určuje, že typu je kov
 -   Parametr typu je použit pouze jako návratový typ metody rozhraní a nepoužívá jako typ metoda argumenty.  
   
     > [!NOTE]
-    >  Existuje jedna výjimka tohoto pravidla. Pokud v kovariantní rozhraní máte obecný delegát kontravariant jako parametru metody, můžete jako parametr obecného typu kovariantní typ pro tento delegát. Další informace o kovariantní a obecní delegáti kontravariant, najdete v části [odchylky v delegátech](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca) a [pomocí odchylky pro Func a obecní delegáti akce](http://msdn.microsoft.com/library/e69c4f39-09aa-4c6d-a752-08cc767d8290).  
+    >  Existuje jedna výjimka tohoto pravidla. Pokud v kovariantní rozhraní máte obecný delegát kontravariant jako parametru metody, můžete jako parametr obecného typu kovariantní typ pro tento delegát. Další informace o kovariantní a obecní delegáti kontravariant, najdete v části [odchylky v delegátech](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [pomocí odchylky pro Func a obecní delegáti akce](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
 -   Parametr typu není používána jako obecná omezení pro metody rozhraní.  
   

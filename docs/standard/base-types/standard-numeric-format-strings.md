@@ -21,11 +21,14 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 81547bbcdbae5b4cc8dc1f20e829dfb5ede08963
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9416bff21607d8e37f9e7dbc270477539043fe8b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 Řetězce standardního číselného formátu se používají pro formátování běžných číselných typů. Řetězec standardní číselného formátu má podobu `Axx`, kde:  
@@ -355,6 +358,6 @@ Pro <xref:System.Double> a <xref:System.Single> hodnoty, specifikace formátu "R
  <xref:System.Globalization.NumberFormatInfo>  
  [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- [Postupy: zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
+ [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
  [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)  
  [Složené formátování](../../../docs/standard/base-types/composite-formatting.md)

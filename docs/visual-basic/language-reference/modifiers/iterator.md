@@ -11,11 +11,11 @@ ms.assetid: 69cb0b04-ac87-49d0-bcfe-810c0d60daff
 caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 503d586c0515b4cb53f8ec5656e5fe765cc094a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fd6c0b1fa422dc4ab659d8c59472e5c098c729bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iterator-visual-basic"></a>Iterátor (Visual Basic)
 Určuje, že funkce nebo `Get` přistupujícího objektu je iterátor.  
@@ -33,16 +33,14 @@ Určuje, že funkce nebo `Get` přistupujícího objektu je iterátor.
   
  Iterátor nemohou být v události, konstruktoru instance, statického konstruktoru nebo statické destruktor.  
   
- Iterace může být anonymní funkce. Další informace najdete v tématu [iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7).  
-  
- Další informace o iterátory najdete v tématu [iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7).  
+ Iterace může být anonymní funkce. Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
 ## <a name="usage"></a>Použití  
  `Iterator` Modifikátor lze použít v těchto kontexty:  
   
--   [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje funkce iterator. Funkce iterator má `Yield` příkaz, který je uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. Každé iteraci [pro každou](../../../visual-basic/language-reference/statements/for-each-next-statement.md) těla příkazu v `Main` vytvoří volání `Power` iterator funkce. Každé volání funkce iterator pokračuje dalším spuštění `Yield` příkaz, který spadá další iterace `For…Next` smyčky.  
@@ -54,9 +52,9 @@ Určuje, že funkce nebo `Get` přistupujícího objektu je iterátor.
   
  [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_2.vb)]  
   
- Další příklady najdete v tématu [iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7).  
+ Další příklady najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.CompilerServices.IteratorStateMachineAttribute>  
- [Iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)  
- [YIELD – příkaz](../../../visual-basic/language-reference/statements/yield-statement.md)
+ [Iterátory](../../programming-guide/concepts/iterators.md)  
+ [Příkaz Yield](../../../visual-basic/language-reference/statements/yield-statement.md)

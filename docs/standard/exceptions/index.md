@@ -21,11 +21,14 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b064dc39f5807b154a1529eebe17493ae84981cf
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 82e314dacc9fb2657a3a7088a928b59d00282a5d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Zpracování a generování výjimek v rozhraní .NET
 
@@ -68,12 +71,12 @@ Následující tabulka uvádí některé běžné výjimky s příklady, co mů�
 ## <a name="see-also"></a>Viz také
 
 * [Třída a vlastnosti výjimky](exception-class-and-properties.md)
-* [Postupy: zachycení výjimky pomocí bloku Try-Catch](how-to-use-the-try-catch-block-to-catch-exceptions.md)
-* [Postupy: používání specifických výjimek v bloku Catch](how-to-use-specific-exceptions-in-a-catch-block.md)
-* [Postupy: explicitní generování výjimek](how-to-explicitly-throw-exceptions.md)
-* [Postupy: vytváření uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)
+* [Postupy: Používání bloku Try/Catch k zachycování výjimek](how-to-use-the-try-catch-block-to-catch-exceptions.md)
+* [Postupy: Používání specifických výjimek v bloku Catch](how-to-use-specific-exceptions-in-a-catch-block.md)
+* [Postupy: Explicitní generování výjimek](how-to-explicitly-throw-exceptions.md)
+* [Postupy: Vytváření uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)
 * [Používání obslužných rutin uživatelsky filtrovaných výjimek](using-user-filtered-exception-handlers.md)
-* [Postupy: používání bloků Finally](how-to-use-finally-blocks.md)
+* [Postupy: Používání bloků Finally](how-to-use-finally-blocks.md)
 * [Zpracování výjimek vzájemné spolupráce COM](handling-com-interop-exceptions.md)
 * [Doporučené postupy pro výjimky](best-practices-for-exceptions.md)
 

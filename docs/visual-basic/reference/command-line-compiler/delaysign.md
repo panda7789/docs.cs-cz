@@ -14,11 +14,11 @@ ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: dc457a1a32048441f82976488158f223e7e3e087
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: b4d29f99d0c375eebee0f477720cb9a22172dddb
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="delaysign"></a>/delaysign
 Určuje, zda bude sestavení zcela nebo částečně podepsáno.  
@@ -40,11 +40,11 @@ Určuje, zda bude sestavení zcela nebo částečně podepsáno.
   
  Například pomocí `/delaysign+`, vývojáři v organizaci můžete distribuovat nepodepsané testovací verze sestavení, které testery můžete zaregistrovat s globální mezipaměti sestavení a použít. Po dokončení práce na sestavení může osoba odpovědná za soukromého klíče organizace plně podepsat sestavení. Tato takové soukromého klíče organizace chrání před zpřístupnění současně všechny vývojářům pracovat na sestavení.  
   
- V tématu [vytvoření a použití sestavení](../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
+ V tématu [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
   
 ### <a name="to-set-delaysign-in-the-visual-studio-integrated-development-environment"></a>Chcete-li nastavit/delaysign v sadě Visual Studio integrované vývojové prostředí  
   
-1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
   
 2.  Klikněte **podpisování** kartě.  
   
@@ -52,6 +52,6 @@ Určuje, zda bude sestavení zcela nebo částečně podepsáno.
   
 ## <a name="see-also"></a>Viz také  
  [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [/ keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
- [/ keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)  
+ [/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
+ [/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

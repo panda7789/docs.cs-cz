@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2dbe0bcb5d3c46edcb97410e00832f1b9d6205b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0ca385e1aee10fb10ac3e912999aec3a11d03ab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-position-the-child-elements-of-a-grid"></a>Postupy: Umístění podřízených elementů mřížky
 Tento příklad ukazuje, jak používat get a nastavit metody, které jsou definovány na <xref:System.Windows.Controls.Grid> na pozici podřízené elementy.  
@@ -38,4 +39,4 @@ Tento příklad ukazuje, jak používat get a nastavit metody, které jsou defin
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.Grid>  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)

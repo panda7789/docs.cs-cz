@@ -20,11 +20,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 41f1b83fab6ff44e69ac2f010f70e6e254341f5e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8f75c1d3dfeb28f55dbb198315b9bd314b70843c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-unlink-dataflow-blocks"></a>Postupy: Zrušení propojení bloků toku dat
 Tento dokument popisuje, jak zrušení propojení cíl bloku toku dat z její zdroj.  
@@ -56,4 +59,4 @@ Tento dokument popisuje, jak zrušení propojení cíl bloku toku dat z její zd
 ## <a name="robust-programming"></a>Robustní programování  
   
 ## <a name="see-also"></a>Viz také  
- [Toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+ [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

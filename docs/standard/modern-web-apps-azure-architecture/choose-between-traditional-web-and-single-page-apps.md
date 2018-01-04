@@ -6,11 +6,14 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 5bae77fc4e0df9d0bc7fecfad25adfcee2419084
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: eb830ede1b644700a80f0e9fac2f3608deb88276
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradiční webové aplikace a jednostránkové aplikace (SPA)
 
@@ -85,7 +88,7 @@ Pokud jste již podporujete webové rozhraní API pro ostatní klienty, může v
 
 Následující rozhodnutí tabulka shrnuje některé základní faktorů, které je třeba zvážit při výběru mezi tradiční webové aplikace a SPA.
 
-  | **Koeficient** | **Tradiční webové aplikace** | **Jednostránkové aplikace** |
+  | **Koeficient** | **Tradiční webové aplikace** | **Jednostránková aplikace** |
   |---|---|---|
   | Požadované Team znalost jazyka JavaScript nebo TypeScript | **Minimální** | **Požadované** |
   | Podpora prohlížeče bez skriptování | **Podporované** | **Nepodporuje se** |

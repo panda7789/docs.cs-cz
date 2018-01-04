@@ -8,11 +8,11 @@ ms.assetid: 59f7c731-8291-4a85-bf51-c225e48cdc84
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: daa3567e47f170c64b45cbb9e49d7fa0026b8903
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 42baef6e0634849004290dce3db32e47f103282d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="encoding-cannot-be-set-to-nothing"></a>Kódování nelze nastavit na hodnotu Nothing
 Pokus o číst nebo zapisovat do souboru se nezdařila, protože parametr `encoding` byla nastavena na `Nothing` , ale vyžaduje platnou hodnotu.  
@@ -27,5 +27,5 @@ Pokus o číst nebo zapisovat do souboru se nezdařila, protože parametr `encod
  [Kódování souborů](../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
  [Čtení ze souborů](../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  [Zápis do souborů](../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
- [My.Computer.FileSystem.ReadAllText – metoda](http://msdn.microsoft.com/en-us/3a7ac8be-fb1d-4087-bc65-167d6754d57f)  
- [My.Computer.FileSystem.WriteAllText – metoda](http://msdn.microsoft.com/en-us/f507460c-87d9-4504-b74f-3ff825c7d5c4)
+ [My.Computer.FileSystem.ReadAllText](xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A)  
+ [My.Computer.FileSystem.WriteAllText –](xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A)

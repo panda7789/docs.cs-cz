@@ -23,11 +23,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a60284bf2db8f47dd17c04fad5cbd6db4970a8a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 357d18843af0af2869d0ec98def6c733e51f9a4c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="globalization"></a>Globalizace
 Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje lokalizované rozhraní a místní data pro uživatele ve více jazykových verzí. Před zahájením fáze návrhu, měli byste určit jazykové verze, které bude podporovat aplikace. I když aplikace cílí na jednu kulturu nebo oblasti jako jeho výchozí, můžete navrhnout a zapisuje tak, aby ho lze snadno rozšířit na uživatele ve dalších jazykové verze.  
@@ -378,4 +381,4 @@ Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje l
   
 ## <a name="see-also"></a>Viz také  
  [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
- [Osvědčené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)
+ [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)

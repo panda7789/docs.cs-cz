@@ -17,11 +17,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 51ca7b5d18e4b664fcc5a56f7de004c42cb95c9e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 716e9baca52e9f5b7f4f24821e50b6a16aef9136
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
 <xref:System.Xml.XmlDocument> Třída nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schématu XML definice jazyka (XSD) schématu nebo s dokumentem definice typu (DTD) ve výchozím nastavení; XML se ověří pouze se ve správném formátu.  
@@ -95,4 +98,4 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Xml.Schema.ValidationEventHandler>  
  <xref:System.Xml.XmlReaderSettings>  
  [Zpracování dat XML pomocí modelu DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
- [Práce s XML schémata](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+ [Práce se schématy XML](../../../../docs/standard/data/xml/working-with-xml-schemas.md)

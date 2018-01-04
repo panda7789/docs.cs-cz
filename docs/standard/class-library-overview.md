@@ -45,11 +45,14 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 05af1b2a881cabb418adcaaee44a819ae323e62a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 607ef0020e15581c6ccca8f232eaea6be547f63b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-framework-class-library-overview"></a>.NET Framework – přehled knihovny tříd
 [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] Zahrnuje třídy, rozhraní a typy hodnot, které urychlit a optimalizovat proces vývoje a poskytují přístup k funkci systému. Většina typů rozhraní .NET Framework usnadňuje vzájemná funkční spolupráce mezi jazyky jsou kompatibilní se specifikací CLS a proto lze z žádný programovací jazyk, jehož kompilátoru vyhovuje specifikace (CLS).  
@@ -90,23 +93,23 @@ ms.lasthandoff: 11/21/2017
   
 |Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ C#|C++ – datový typ|JScript datový typ|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
-|Integer|<xref:System.Byte>|8bitové celé číslo bez znaménka.|**Bajtů**|**bajtů**|**unsigned char**|**Bajtů**|  
-||<xref:System.SByte>|Celé číslo podepsaný 8 bitů.<br /><br /> Není kompatibilní se specifikací CLS.|**SByte –**|**SByte –**|**Char**<br /><br /> -nebo-<br /><br /> **podepsané** **char**|**SByte –**|  
-||<xref:System.Int16>|16bitové znaménkem.|**Krátký**|**krátký**|**krátký**|**krátký**|  
-||<xref:System.Int32>|32-bit znaménkem.|**Celé číslo**|**celá čísla**|**celá čísla**<br /><br /> -nebo-<br /><br /> **dlouhá**|**celá čísla**|  
-||<xref:System.Int64>|64bitová verze znaménkem.|**Dlouhá**|**dlouhá**|**__int64**|**dlouhá**|  
-||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Ushort –**|**ushort –**|**short bez znaménka**|**UInt16**|  
+|Integer|<xref:System.Byte>|8bitové celé číslo bez znaménka.|**Bajtů**|**byte**|**unsigned char**|**Bajtů**|  
+||<xref:System.SByte>|Celé číslo podepsaný 8 bitů.<br /><br /> Není kompatibilní se specifikací CLS.|**SByte –**|**sbyte**|**char**<br /><br /> -nebo-<br /><br /> **podepsané** **char**|**SByte –**|  
+||<xref:System.Int16>|16bitové znaménkem.|**Krátký**|**short**|**short**|**short**|  
+||<xref:System.Int32>|32-bit znaménkem.|**Celé číslo**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
+||<xref:System.Int64>|64bitová verze znaménkem.|**Dlouhá**|**long**|**__int64**|**long**|  
+||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Ushort –**|**ushort**|**short bez znaménka**|**UInt16**|  
 ||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Uinteger –**|**uint**|**int bez znaménka**<br /><br /> -nebo-<br /><br /> **dlouho bez znaménka**|**UInt32**|  
-||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Ulong –**|**ulong –**|**__int64 bez znaménka**|**UInt64**|  
-|Plovoucí desetinné čárky|<xref:System.Single>|(32 bitů) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**plovoucí desetinná čárka**|**plovoucí desetinná čárka**|**plovoucí desetinná čárka**|  
-||<xref:System.Double>|(64 bitů) číslo s dvojitou přesností s plovoucí desetinnou čárkou|**Double**|**Double**|**Double**|**Double**|  
-|Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Logická hodnota**|**BOOL**|**BOOL**|**BOOL**|  
-|Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char –**|**Char**|**wchar_t**|**Char**|  
-||<xref:System.Decimal>|Desetinnou hodnotu (128-bit).|**Decimal**|**Decimal**|**Decimal**|**Decimal**|  
+||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Ulong –**|**ulong**|**__int64 bez znaménka**|**UInt64**|  
+|Plovoucí desetinné čárky|<xref:System.Single>|(32 bitů) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float**|  
+||<xref:System.Double>|(64 bitů) číslo s dvojitou přesností s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**double**|  
+|Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Logická hodnota**|**bool**|**bool**|**bool**|  
+|Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char –**|**char**|**wchar_t**|**char**|  
+||<xref:System.Decimal>|Desetinnou hodnotu (128-bit).|**Decimal**|**decimal**|**Decimal**|**Decimal**|  
 ||<xref:System.IntPtr>|Znaménkem jejíž aktuální velikost závisí na základní platformě (32bitová verze hodnota na 32bitové platformě) a hodnota 64bitová verze na 64bitovou platformu.|**IntPtr**<br /><br /> Žádné předdefinované typu.|**IntPtr**<br /><br /> Žádné předdefinované typu.|**IntPtr**<br /><br /> Žádné předdefinované typu.|**IntPtr**|  
 ||<xref:System.UIntPtr>|Celé číslo bez znaménka jejíž aktuální velikost závisí na základní platformě (32bitová verze hodnota na 32bitové platformě) a hodnota 64bitová verze na 64bitovou platformu.<br /><br /> Není kompatibilní se specifikací CLS.|**UIntPtr**<br /><br /> Žádné předdefinované typu.|**UIntPtr**<br /><br /> Žádné předdefinované typu.|**UIntPtr**<br /><br /> Žádné předdefinované typu.|**UIntPtr**|  
-ASS objekty|<xref:System.Object>|Kořen hierarchie objektů.|**Objekt**|**objekt**|**Objekt\***|**Objekt**|  
-||<xref:System.String>|Neměnné, pevnou délkou řetězec znaků Unicode.|**Řetězec**|**řetězec**|**Řetězec\***|**Řetězec**|  
+ASS objekty|<xref:System.Object>|Kořen hierarchie objektů.|**Objekt**|**object**|**Objekt\***|**Objekt**|  
+||<xref:System.String>|Neměnné, pevnou délkou řetězec znaků Unicode.|**Řetězec**|**string**|**Řetězec\***|**Řetězec**|  
   
  Kromě základních datových typů <xref:System> obor názvů obsahuje více než 100 tříd ze třídy, které zpracování výjimek na třídy, které pracují s základní koncepty runtime, například aplikační domény a uvolňování paměti. <xref:System> Názvů také obsahuje mnoho oborů názvů druhé úrovně.  
   

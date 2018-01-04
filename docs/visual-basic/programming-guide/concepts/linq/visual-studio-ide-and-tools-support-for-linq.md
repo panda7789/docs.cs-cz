@@ -12,17 +12,17 @@ ms.assetid: e3bfe0d9-4a79-49cf-a31c-93297c688829
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 887c4fc280b64f996faf10e247c4c0ee1f1d6793
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 83de1e4c95ecea749e0a93c5c596d5e6c044a4ef
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-visual-basic"></a>Visual Studio – sada IDE a nástrojů podpory pro výrazy LINQ (Visual Basic)
 Integrované vývojové prostředí (IDE) sady Visual Studio poskytuje následující funkce, které podporují vývoj aplikací LINQ:  
   
 ## <a name="object-relational-designer"></a>Object Relational Designer  
- Návrhář relací objektů je nástroj visual návrh, který můžete použít v [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) aplikace vygenerovat třídy v jazyce Visual Basic, které představují relační data v podkladové databázi. Další informace najdete v tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Návrhář relací objektů je nástroj visual návrh, který můžete použít v [technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) aplikace vygenerovat třídy v jazyce Visual Basic, které představují relační data v podkladové databázi. Další informace najdete v tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="sqlmetal-command-line-tool"></a>SQLMetal nástroj příkazového řádku  
  SQLMetal je nástroj příkazového řádku, který lze použít v sestavení procesy vygenerovat třídy z existující databáze pro použití v technologii LINQ SQL aplikací. Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](http://msdn.microsoft.com/library/819e5a96-7646-4fdb-b14b-fe31221b0614).  

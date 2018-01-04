@@ -17,11 +17,14 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 12d234b86b0067178d54d2fdcb5d37ceaee6109d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bc409a528dd095d3defb0026a48430b10a3ba6f3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Vlastní dělicí metody pro PLINQ a TPL
 Učinit paralelní operace pro zdroj dat, jedním z nezbytné kroky je *oddílu* zdroje do více oddílů, které dostanete souběžně několik vláken. PLINQ a Task Parallel Library (TPL) zadejte výchozí dělicí metody, které fungují transparentně při psaní paralelního dotazu nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky. Pro pokročilejší scénáře můžete zařadit vlastní dělicí metody.  
@@ -128,5 +131,5 @@ Učinit paralelní operace pro zdroj dat, jedním z nezbytné kroky je *oddílu*
   
 ## <a name="see-also"></a>Viz také  
  [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
- [Postupy: implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)  
- [Postupy: implementace rozdělovače pro statické dělení](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)
+ [Postupy: Implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)  
+ [Postupy: Implementace rozdělovače pro statické dělení](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)

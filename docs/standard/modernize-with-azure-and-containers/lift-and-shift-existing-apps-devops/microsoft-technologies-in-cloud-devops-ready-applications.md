@@ -4,11 +4,14 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: a7ce240ee89321f79b10a701cd26fa84b6006f83
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3212bf1e938b789d68ca76dd06ce53a2788244b6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="microsoft-technologies-in-cloud-devops-ready-applications"></a>Technologie Microsoftu v cloudové aplikace devops připravené pro použití
 

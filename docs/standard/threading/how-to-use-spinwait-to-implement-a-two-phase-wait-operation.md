@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2717ba2d63e4ecf40638c369b66f2c696e396a5e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 63e4ea5c1c1d6143f1b6daa0312fa32b52af5787
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Postupy: Použití objektu SpinWait pro implementaci dvoufázové operace čekání
 Následující příklad ukazuje, jak používat <xref:System.Threading.SpinWait?displayProperty=nameWithType> objektu k implementaci dvoufázové operace čekání. V první fázi objekt synchronizace `Latch`, otáčí po několik cyklů při zkontroluje, jestli má k dispozici zámek. V druhé fázi, pokud zámek k dispozici pak se `Wait` metoda vrátí bez použití <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> čekání; provést, jinak hodnota `Wait` provádí čekání.  
@@ -37,5 +40,5 @@ Následující příklad ukazuje, jak používat <xref:System.Threading.SpinWait
  Protokolování výstupu ukazuje, jak často se zámek a zvyšuje výkon získávání zámek bez použití <xref:System.Threading.ManualResetEvent>.  
   
 ## <a name="see-also"></a>Viz také  
- [Objektu SpinWait](../../../docs/standard/threading/spinwait.md)  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)
+ [SpinWait](../../../docs/standard/threading/spinwait.md)  
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

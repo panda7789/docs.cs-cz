@@ -18,11 +18,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 217e9eae3540e0a20afd0888d24803285d6352b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 39dd4e31e84e455b72ce53bd8abffd650ce77dfc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="events-and-callbacks"></a>Události a zpětná volání
 Zpětná volání jsou body rozšiřitelnosti, které umožňují rozhraní pro zpětné volání do kódu uživatele prostřednictvím delegáta. Tyto Delegáti jsou obvykle předaný rozhraní prostřednictvím parametru metody.  
@@ -53,4 +56,4 @@ Zpětná volání jsou body rozšiřitelnosti, které umožňují rozhraní pro 
   
 ## <a name="see-also"></a>Viz také  
  [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

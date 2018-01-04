@@ -13,11 +13,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c28c0f21b03fe7db014f118251363230a6ffc591
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2f4a50fcd3e3ee56ded97edef08c2ee08f4a7233
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>Pravidla pro odvození typů uzlů schéma a struktura
 Toto téma popisuje, jak proces odvození schématu překládá typy uzlů v dokumentu XML na strukturu schématu XML definition language (XSD).  
@@ -149,13 +152,13 @@ Toto téma popisuje, jak proces odvození schématu překládá typy uzlů v dok
 |Odkaz na entitu|<xref:System.Xml.Schema.XmlSchemaInference> Třída nezpracovává odkazy na entity. Pokud dokument XML obsahuje odkazy na entity, budete muset použít čtečka čipových karet, které zasahuje entity. Například můžete předat <xref:System.Xml.XmlTextReader> s <xref:System.Xml.XmlTextReader.EntityHandling%2A> vlastnost nastavena na hodnotu <xref:System.Xml.EntityHandling.ExpandEntities> jako parametr. Pokud došlo k odkazy na entity a čtečky nerozšiřuje entity, je výjimku throw.|  
 |CDATA|Všechny `<![CDATA[ … ]]` oddíly v dokumentu XML se odvodit jako `xs:string`.|  
 |Typ dokumentu|Ignorovat.|  
-|Obory názvů|Ignorovat.|  
+|Jmenné prostory|Ignorovat.|  
   
  Další informace o procesu odvození schématu najdete v tématu [odvození schémata z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Schema.XmlSchemaInference>  
- [Objektový Model schématu XML (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
  [Odvození schématu XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
- [Odvození schémata z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
- [Pravidla pro jednoduché typy odvození](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+ [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+ [Pravidla pro odvození jednoduchých typů](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

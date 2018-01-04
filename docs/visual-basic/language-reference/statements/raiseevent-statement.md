@@ -18,11 +18,11 @@ ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2575598577820bd7a72fae2d9b8ba52978f5952d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e6ba5ce4b009e0d8c675db07b56b9811c595ae2f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent – příkaz
 Aktivuje událost deklarovat na úrovni modulu v rámci třídy, formulář nebo dokumentu.  
@@ -80,11 +80,11 @@ RaiseEvent eventname[( argumentlist )]
  Stisknutím klávesy F5 spusťte v předchozím příkladu a klikněte na tlačítko s názvem bez přípony **spustit**. První textové pole začne počítat dolů sekundách. Po uplynutí doby úplné (10 sekund), zobrazí první textové pole, "Hotovo".  
   
 > [!NOTE]
->  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, jak to dělá formuláře. Chcete-li povolit formuláře pro zpracování událostí přímo, můžete použít více vláken. Další informace najdete v tématu [zřetězení](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c).  
+>  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, jak to dělá formuláře. Chcete-li povolit formuláře pro zpracování událostí přímo, můžete použít více vláken. Další informace najdete v tématu [zřetězení](../../programming-guide/concepts/threading/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Události](../../../visual-basic/programming-guide/language-features/events/index.md)  
- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
- [AddHandler – příkaz](../../../visual-basic/language-reference/statements/addhandler-statement.md)  
- [RemoveHandler – příkaz](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
+ [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Příkaz AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)  
+ [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
  [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)

@@ -22,11 +22,14 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bb7092a2eae8d950f3709ea4fde63f6c7d5b32b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 826adbecfc6a57b05db482766baae397ce72bc9d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
 <xref:System.Collections> Třídy provádění porovnávání v téměř všechny procesy související Správa kolekcí, zda hledání elementu, který chcete odebrat nebo vrací hodnotu z dvojice klíč hodnota.  

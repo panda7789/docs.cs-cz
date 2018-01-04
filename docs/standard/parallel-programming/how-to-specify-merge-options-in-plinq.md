@@ -17,11 +17,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ec601e8bbefd31650fb91c438b032942cfc93101
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 59ffff3019f10874bd2df977b80d46e903d13613
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-specify-merge-options-in-plinq"></a>Postupy: Určení možností sloučení v PLINQ
 Tento příklad ukazuje postup určení možností sloučení, které se použijí na všechny následné operátory v PLINQ dotazu. Není nutné explicitně nastavit možnosti sloučení, ale to může zvýšit výkon. Další informace o možnostech sloučení najdete v tématu [možností sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  

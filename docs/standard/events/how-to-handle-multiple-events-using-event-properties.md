@@ -22,11 +22,14 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c16918e715a93de8fdf164e75ce7be81511b71b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f0069c827bbc88b5ec5184f491b811a66955adbb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Postupy: Zpracování více událostí pomocí vlastností událostí
 Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událostí ve třídě, která události vyvolá, a poté nastavit delegáty pro tyto vlastnosti událostí ve třídách, které události zpracovávají. Pokud chcete implementovat několik vlastností události ve třídě, musí třída interně ukládat a udržovat delegáta definovaného pro každou jednotlivou událost. Typickým přístupem je implementace delegáta kolekce, která je indexovat pomocí klíče události.  
@@ -61,4 +64,4 @@ Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událos
  <xref:System.ComponentModel.EventHandlerList?displayProperty=nameWithType>  
  [Události](../../../docs/standard/events/index.md)  
  <xref:System.Web.UI.Control.Events%2A>  
- [Postupy: deklarování vlastních událostí pro konzervaci paměti](~/docs/visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)
+ [Postupy: Deklarování vlastních událostí pro konzervaci paměti](~/docs/visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)

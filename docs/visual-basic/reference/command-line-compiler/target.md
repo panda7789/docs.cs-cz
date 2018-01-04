@@ -14,11 +14,11 @@ ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
 caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8a8a9fcd6fa6dfaace01f8fbb7fa407145acc16f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 900693ac3793fb59133b31d8fc0136df63c11a10
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="target-visual-basic"></a>/target (Visual Basic)
 Určuje formát výstupu kompilátoru.  
@@ -49,7 +49,7 @@ Určuje formát výstupu kompilátoru.
   
 ### <a name="to-set-target-in-the-visual-studio-ide"></a>Chcete-li nastavit/Target v integrovaném vývojovém prostředí sady Visual Studio  
   
-1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
   
 2.  Klikněte **aplikace** kartě.  
   
@@ -64,10 +64,10 @@ vbc /target:library in.vb
   
 ## <a name="see-also"></a>Viz také  
  [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [/ main](../../../visual-basic/reference/command-line-compiler/main.md)  
+ [/main](../../../visual-basic/reference/command-line-compiler/main.md)  
  [/ out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)  
  [/ Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  
- [/ addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)  
- [/ moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)  
- [Sestavení a globální mezipaměti sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)  
+ [/moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)  
+ [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -1,6 +1,6 @@
 ---
 title: "Začínáme s F # pomocí nástroje příkazového řádku"
-description: "Další informace o použití F # pomocí rozhraní příkazového řádku a platformy .NET Core."
+description: "Další informace o použití F # na všechny operačního systému (Windows, systému MacOS, Linux) pomocí rozhraní příkazového řádku a platformy .NET Core."
 keywords: "Visual f #, f #, funkční programování, .NET, .NET Core"
 author: cartermp
 ms.author: phcart
@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 615db1ec-6ef3-4de2-bae6-4586affa9771
-ms.openlocfilehash: a23d4861ce599f20f37ecd0564a0187e7b9b739f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4820a8a306bd478429b497a8b7c70ff170c1c655
+ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s F # pomocí rozhraní příkazového řádku .NET Core
 
-Tento článek popisuje, jak začít s použitím F # na .NET Core. Protože budou přenášeny prostřednictvím vytváření řešení vícenásobného projektu s knihovnou tříd, která je volána konzolové aplikace.
+Tento článek popisuje, jak můžete začít používat pomocí F # pomocí rozhraní příkazového řádku .NET Core na všechny operačního systému (Windows, systému macOS nebo Linux). Protože budou přenášeny prostřednictvím vytváření řešení vícenásobného projektu s knihovnou tříd, která je volána konzolové aplikace.
 
 ## <a name="prerequisites"></a>Požadavky
 

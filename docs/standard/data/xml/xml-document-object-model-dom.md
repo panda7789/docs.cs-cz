@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ff91e929876ceec8512e962b88795b6a8a29f3d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: af9473af6a315feb6b1f0a741525cbf42dd32d1d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-document-object-model-dom"></a>model DOM (Document Object Model) dokumentu XML
 Třída XML modelu DOM (Document Object) je reprezentaci v paměti dokumentu XML. Modelu DOM umožňuje prostřednictvím kódu programu pro čtení, manipulaci a upravovat dokument XML. **XmlReader** XML přečte třída; však poskytuje přístup bez mezipaměti, dopředné, jen pro čtení. To znamená, že neexistují žádné možnosti, chcete-li upravit hodnoty atributu nebo obsah elementu nebo možnost Vložit a odebrání uzlů s **XmlReader**. Úpravy je primární funkce modelu DOM. Je běžné a způsobem strukturovaných, že XML data je reprezentována v paměti, i když skutečná data XML je lineárně uložené v souboru nebo brzo z jiného objektu. Následuje XML data.  
@@ -85,4 +88,4 @@ Struktura dokumentu XML
   
 ## <a name="see-also"></a>Viz také  
  [Typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md)  
- [Mapování hierarchie objektů na XML Data](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)
+ [Mapování hierarchie objektů na data XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)

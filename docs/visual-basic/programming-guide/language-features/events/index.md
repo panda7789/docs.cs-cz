@@ -14,11 +14,11 @@ ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10213597fa65c44a56b30c37e2e6f4e732d96954
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5a1edd7976f1e22117e1f4f31354388d5257ffc1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu jako řadu postupů, které jsou spouštěny v pořadí, ve skutečnosti většiny programů, jsou události řízené – znamená tok provádění je dáno externí výskytů názvem *události*.  
@@ -109,9 +109,9 @@ Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu ja
 |-----------|-----------------|  
 |[Návod: Deklarace a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)|Poskytuje podrobný popis toho, jak deklarace a vyvolávání událostí třídy.|  
 |[Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|Ukazuje, jak napsat proceduru obslužných rutin událostí.|  
-|[Postupy: deklarování vlastních událostí k zabránění blokování](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|Ukazuje, jak definovat vlastní událost, která umožňuje jeho obslužné rutiny událostí k volání asynchronně.|  
-|[Postupy: deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Ukazuje, jak definovat vlastní událost, která používá paměť jenom v případě, že se zpracovává událost.|  
+|[Postupy: Deklarování vlastních událostí k zabránění blokování](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|Ukazuje, jak definovat vlastní událost, která umožňuje jeho obslužné rutiny událostí k volání asynchronně.|  
+|[Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Ukazuje, jak definovat vlastní událost, která používá paměť jenom v případě, že se zpracovává událost.|  
 |[Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|Jsou uvedeny běžné problémy, které nastat u obslužné rutiny událostí v zděděné součásti.|  
 |[Události](../../../../standard/events/index.md)|Obsahuje základní informace o modelu událostí v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].|  
-|[Vytváření obslužných rutin událostí v systému Windows Forms](../../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)|Popisuje, jak pracovat s události související s objekty Windows Forms.|  
+|[Vytváření obslužných rutin událostí ve Windows Forms](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Popisuje, jak pracovat s události související s objekty Windows Forms.|  
 |[Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Poskytuje přehled Delegáti v jazyce Visual Basic.|

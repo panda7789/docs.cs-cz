@@ -18,11 +18,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ebb5559d300bb3db34fe640e87eb8b9e67931561
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4f68a7aebdb1625b149287d70fd91c2108a658b9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exceptions-in-managed-threads"></a>Výjimky ve spravovaných vláknech
 Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umožňuje nejvíce neošetřených výjimek v vláken přirozeně pokračovat. Ve většině případů to znamená, že neošetřené výjimce způsobí, že je aplikace ukončena.  
@@ -86,4 +89,4 @@ Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umož
  V rozhraní .NET Framework verze 2.0, můžete použít nespravované hostitele [ICLRPolicyManager](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) rozhraní v rozhraní API hostování přepsat výchozí nastavení neošetřená výjimka zásady modul common language runtime. [Iclrpolicymanager::setunhandledexceptionpolicy –](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) funkce slouží k nastavení zásad pro neošetřených výjimek.  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na spravovaná vlákna základy](../../../docs/standard/threading/managed-threading-basics.md)
+ [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)

@@ -8,11 +8,14 @@ ms.date: 10/18/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: c8227ec47888c7cf361f34c4c85a09c0666f886e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 96a02958ef5750aec7a92ff0dd145edc15a5953a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="direct-client-to-microservice-communication-versus-the-api-gateway-pattern"></a>Přímé komunikaci klienta mikroslužbu versus vzoru Brána rozhraní API
 

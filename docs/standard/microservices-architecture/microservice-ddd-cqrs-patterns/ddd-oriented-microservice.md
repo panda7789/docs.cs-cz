@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 11/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: df45441089fd59d5e0e52b4bcec409adcc11fb71
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 38b65bc6752dd8b6ed4083c0bc5a5eccabcffbcc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="designing-a-ddd-oriented-microservice"></a>Navrhování orientované DDD mikroslužbu
 
@@ -38,7 +41,7 @@ Například může entity načíst z databáze. Součástí těchto informací n
 
 Kromě toho je potřeba mít vždy platné entity (najdete v článku [navrhování ověření ve vrstvě modelu domény](#designing-validations-in-the-domain-model-layer) část) řízené agregační kořenových certifikačních autorit (kořenové entity). Proto entity by neměl být vázána na zobrazení klientů, protože úrovni uživatelského rozhraní nemusí stále ověřit některá data. Toto je, co ViewModel je. ViewModel je datový model výhradně pro potřeby prezentační vrstvy. Domény entity, které nejsou členy přímo ViewModel. Místo toho musíte k převodu mezi ViewModels a domény entity a naopak.
 
-Při boji se složitost, je důležité mít modelu domény řídí agregační kořeny (jsme přejděte do této podrobněji později), které Ujistěte se, že všechny výstupních podmínek a pravidel, vztahuje k této skupině entit (agregační) se provádí prostřednictvím jednu položku bod nebo brány, kořenu agregační.
+Při boji se složitost, je důležité mít modelu domény řídí agregační kořeny, které se ujistěte, že všechny výstupních podmínek a pravidel, vztahuje k této skupině entit (agregační) prováděno prostřednictvím jeden vstupní bod nebo brány, kořenu agregační.
 
 Obrázek 9-5 ukazuje, jak je implementována vrstvený návrh v aplikaci eShopOnContainers.
 
@@ -46,7 +49,7 @@ Obrázek 9-5 ukazuje, jak je implementována vrstvený návrh v aplikaci eShopOn
 
 **Obrázek 9-5**. DDD vrstvy v řazení mikroslužbu v eShopOnContainers
 
-Chcete navrhnout systému tak, aby každé vrstvě komunikuje jenom s některých jiných vrstev. Které mohou být snazší vynutit v případě, že vrstvy jsou implementované jako jinou třídu knihovny, protože jasně zjistíte, jaké závislosti jsou nastaveny mezi knihovny. Například vrstva modelu domény by neměly být závislý na další vrstvou (třídy modelu domény by měl být prostý staré objekty CLR nebo [objektů POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object), třídy). Jak je znázorněno na obrázku 9-6 **Ordering.Domain** vrstvy knihovny má závislosti, jenom na knihovny .NET Core, ale ne na žádné jiné vlastní knihovny (knihovna dat, trvalost knihovny atd.).
+Chcete navrhnout systému tak, aby každé vrstvě komunikuje jenom s některých jiných vrstev. Které mohou být snazší vynutit v případě, že vrstvy jsou implementované jako jinou třídu knihovny, protože jasně zjistíte, jaké závislosti jsou nastaveny mezi knihovny. Například vrstva modelu domény by neměly být závislý na další vrstvou (třídy modelu domény by měl být prostý staré objekty CLR nebo [objektů POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object), třídy). Jak je znázorněno na obrázku 9-6 **Ordering.Domain** vrstvy knihovny má závislosti, jenom na knihovny .NET Core nebo balíčky NuGet, ale ne na jiných vlastní knihovny, například data knihovnu nebo trvalost.
 
 ![](./media/image7.PNG)
 

@@ -16,11 +16,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 35f24c0a033748917b465510d4f70b75946a0a74
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 83022c879abe324287d821cec90f65f1865f8281
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xslt-stylesheet-scripting-using-ltmsxslscriptgt"></a>Pomocí skriptování šablony stylů XSLT &lt;msxsl:script&gt;
 <xref:System.Xml.Xsl.XslTransform> Třída podporuje použití vloženého skriptu `script` elementu.  
@@ -237,4 +240,4 @@ public class Sample
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Třída XslTransform implementuje procesoru XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+ [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

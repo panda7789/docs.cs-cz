@@ -23,11 +23,14 @@ caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bc43226a508dfd0286c7667c02bdc2543346be9c
-ms.sourcegitcommit: 9c4b8d457ffb8d134c9d55c6d7682a0f22e2b9a8
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ec6f7df4cc42b71ab9c61e84b71a81f641a1d0b3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojář, můžete vyvíjet v jednom z mnoha jazycích, které cílí na rozhraní .NET Framework, jako je například C#, C + +/ CLI, Eiffel, F #, IronPython, IronRuby, aplikace PowerBuilder, Visual Basic, Visual COBOL a prostředí Windows PowerShell. Můžete přejít na typy a členy vytvořených pro rozhraní .NET Framework, aniž by museli znát jazyk, ve kterém byly se původně zapsán a bez nutnosti postupovat podle některého z původní jazyk konvence knihovny tříd. Pokud jste vývojář součásti, příslušné součásti jsou přístupné kteroukoli aplikací rozhraní .NET Framework, bez ohledu na jeho jazyk.  
@@ -67,7 +70,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
   
     -   [Události](#events)  
   
-    -   [Přetížení](#overloads)  
+    -   [Overloads](#overloads)  
   
     -   [Výjimky](#exceptions)  
   
@@ -144,8 +147,8 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
 |Zásady vytváření názvů|[Zásady vytváření názvů](#naming)|Sestavení se řídí přílohy 7 z Technical Report 15 z Standard3.0 znakové sady Unicode, kterými se řídí sadu znaků povolených pro spuštění a být součástí identifikátory, k dispozici onlineat http://www.unicode.org/unicode/reports/tr15/tr15-18.html. Identifikátory musí být ve formátu thecanonical definované Unicode normalizaci formuláře C. Pro účely specifikací CLS, dvě identifiersare stejné, pokud jejich malá mapování (podle národního prostředí nezávislé, jeden toonelowercase mapování Unicode) jsou stejné. To znamená dva identifikátory, aby byla považována za differentunder specifikaci CLS se liší se pouze jejich případě. Ale aby bylo možné přepsat aninherited definice rozhraní příkazového řádku vyžaduje přesné kódování původní deklaraci použít.|4|  
 |Přetížení|[Zásady vytváření názvů](#naming)|Všechny názvy, které se zavedly v kompatibilní se specifikací CLS oboru musí být odlišné nezávislé ofkind, s výjimkou případů, kdy jsou názvy identické a vyřešené prostřednictvím přetížení. To znamená, že při CTSallows jeden typ používat stejný název pro metodu a pole specifikaci CLS neexistuje.|5|  
 |Přetížení|[Zásady vytváření názvů](#naming)|Vnořené typy a pole musí být odlišné podle porovnání identifikátoru samostatně, eventhough CTS umožňuje odlišné podpisy odlišit. Metody, vlastnosti a eventsthat mít stejný název (podle porovnání identifikátoru) se liší o více než jen návratový typ, s výjimkou zadané v 39 pravidlo specifikací CLS.|6|  
-|Přetížení|[Přetížení](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
-|Přetížení|[Přetížení](#overloads)|Vlastnosti a metody mohou být přetíženy na základě pouze na počtu a typů jejich parametrů, s výjimkou operátory převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratový typ.|38|  
+|Přetížení|[Overloads](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
+|Přetížení|[Overloads](#overloads)|Vlastnosti a metody mohou být přetíženy na základě pouze na počtu a typů jejich parametrů, s výjimkou operátory převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratový typ.|38|  
 |Přetížení|--|Pokud dva nebo více kompatibilní se specifikací CLS metody, které jsou deklarované v typu mají stejné nameand, pro konkrétní sadu konkretizací typ nemají stejný parametr a návratové typy, thenall tyto metody musí být v těchto typ konkretizací sémanticky ekvivalentní.|48|  
 |Typy|[Zadejte a zadejte signaturách členu](#Types)|<xref:System.Object?displayProperty=nameWithType>je kompatibilní se specifikací CLS. Jiná kompatibilní se specifikací CLS třída musí dědit z třídu kompatibilní se specifikací CLS.|23|  
 |Vlastnosti|[Vlastnosti](#properties)|Metody, které implementují metody getter a setter shallbe vlastnost označena `SpecialName` v metadatech.|24|  

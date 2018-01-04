@@ -16,11 +16,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a433ec5f83a50aa4fe4b2017a0dac3d2a5e5710c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4f134761c4dadcef4692194293c8c99899bb6be2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Přístup k atributům v modelu DOM
 Atributy jsou vlastnosti elementu, ne podřízených objektů daného elementu. Tento rozdíl je důležitý kvůli metody použité k přejděte na stejné úrovni, nadřazené a podřízené uzly z XML modelu DOM (Document Object). Například **PreviousSibling** a **NextSibling** metody nepoužívají se k přejděte z prvku, atributu nebo mezi atributy. Místo toho atribut je vlastnost elementu a vlastní element, má **OwnerElement** vlastnost a ne **parentNode** vlastnost, a má odlišné metody navigace.  
@@ -123,7 +126,7 @@ public class Sample
   
  Tento příklad zobrazí následující výstup:  
   
- **Výstup**  
+ **Output**  
   
  Zobrazte všechny atributy v kolekci.  
   
@@ -268,4 +271,4 @@ XmlAttribute attr = doc.DocumentElement.Attributes[0];
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

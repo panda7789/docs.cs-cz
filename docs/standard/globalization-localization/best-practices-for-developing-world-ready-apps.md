@@ -18,11 +18,14 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8a50080fa4b84abe84fbb1a44f18e1fb680a07c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 367da11fd0af9673a60d9acff20aef5969c98aae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Doporučené postupy pro vývoj aplikací připravených k použití
 Tato část popisuje osvědčené postupy při vývoji aplikací připravených.  
@@ -109,4 +112,4 @@ Tato část popisuje osvědčené postupy při vývoji aplikací připravených.
   
 ## <a name="see-also"></a>Viz také  
  [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)

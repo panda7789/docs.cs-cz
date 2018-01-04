@@ -16,11 +16,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6970ffc38e900c9b47c58c8ae4b81b9551f5589b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4f3ae0c3db65fe7bda1bcc5bd247fea80a2a9c4e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>Vytvoření nové atributy pro elementy v modelu DOM
 Vytvoření nového atributu se liší od vytvoření jiných typů uzlů, protože atributy nejsou uzly, ale jsou vlastnosti uzlu elementu a jsou součástí **XmlAttributeCollection** přidružené k elementu. Vytvořte atribut a jeho připojení pro element několika způsoby:  
@@ -111,7 +114,7 @@ doc.DocumentElement.SetAttributeNode(attr)
 doc.DocumentElement.SetAttributeNode(attr);  
 ```  
   
- **Výstup**  
+ **Output**  
   
 ```xml  
 <book genre="novel" ISBN="1-861001-57-5" publisher="WorldWide Publishing">  
@@ -132,4 +135,4 @@ doc.DocumentElement.SetAttributeNode(attr);
  Hodnota uzlu atributu se změní jeho podřízené uzly. Existují jenom dva typy platný podřízené uzly: **XmlText** uzly, a **XmlEntityReference** uzlů. Tyto jsou podřízené uzly v tom smyslu, že tyto metody, jako **hodnotu FirstChild** a **LastChild** zpracovat jako podřízené uzly. Tento rozdíl atributu s podřízenými uzly je důležité při pokusu o odebrání atributů nebo atribut podřízené uzly. Další informace najdete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

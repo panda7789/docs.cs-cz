@@ -4,11 +4,14 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 941ca8d8fcb4d69f60282737851ab3e86b5782d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4f09ec8f5aa041057ac1256eb564e197793c8a2b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reasons-to-lift-and-shift-existing-net-apps-to-cloud-devops-ready-applications"></a>Důvodů, proč navýšení a shift existující aplikace .NET pro DevOps připravené pro cloudové aplikace
 

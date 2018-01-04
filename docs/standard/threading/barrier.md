@@ -17,11 +17,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a8111cc9f2798ff96be8b128f22a75d21b441178
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 392e975f6bf566c2ba36290940eb0daee03f004f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="barrier-net-framework"></a>Bariéra [.NET Framework]
 A *barrier* je uživatelem definované synchronizaci primitivní umožňující více vláken (označované jako *účastníky*) pro práci současně na algoritmus ve fázích. Každý účastník, provede, dokud nebude dosaženo bodem bariéry v kódu. Bariéry představuje konec jednou z fází práce. Když účastník dosáhne bariéry, zablokuje, dokud všichni účastníci dosáhli stejné bariéry. Po všichni účastníci dosáhli bariéry, můžete případně vyvolat po fáze akce. Tato fáze po akce slouží k provádění akcí podle jedním vláknem a při jiná vlákna jsou stále zablokované. Po provedení akce, jsou všechny odblokuje jednotlivými účastníky.  
@@ -56,5 +59,5 @@ A *barrier* je uživatelem definované synchronizaci primitivní umožňující 
  Další informace najdete v tématu [řetězení úloh pomocí úloh pokračování pomocí](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)  
- [Postupy: synchronizace souběh operací pomocí bariéry](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md)
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [Postupy: Synchronizace souběžných operací pomocí třídy Barrier](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md)

@@ -8,11 +8,14 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 433711c3479eafd52bf9f5d53faf8e5707c6c624
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3aaa7eaa8bc535874369cf08414f2211cae1bed9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
 

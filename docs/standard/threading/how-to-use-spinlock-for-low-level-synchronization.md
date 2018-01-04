@@ -17,11 +17,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 30ddc7d340b210aaad4a04ea43e89555d2701f20
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 11d41a1fd04039fd08d945a72a37a479f79449a5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Postupy: Použití SpinLock pro synchronizaci nízké úrovně
 Následující příklad ukazuje, jak používat <xref:System.Threading.SpinLock>.  
@@ -39,4 +42,4 @@ Následující příklad ukazuje, jak používat <xref:System.Threading.SpinLock
  Všimněte si použití `false` (`False` v jazyce Visual Basic) ve volání <xref:System.Threading.SpinLock.Exit%2A>. To poskytuje nejlepší výkon. Zadejte `true` (`True`) na architektury IA64 používat ochranná paměti, která vyprázdní vyrovnávací paměti zápisu zajistit, že zámek je nyní k dispozici pro další vlákna ukončíte.  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

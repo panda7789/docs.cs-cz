@@ -10,11 +10,12 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: cb213625-cc60-438b-9b9e-49aed0e4a974
-ms.openlocfilehash: 6fbebf69b2772b4159841d13068e7b95a39bea92
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload: dotnetcore
+ms.openlocfilehash: 3ab19566acb36cb96e0572931ba39f2ae99a3ca7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Ladění aplikace Hello World s Visual Studio 2017
 

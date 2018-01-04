@@ -22,11 +22,14 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 38032fccce1a8f6f7cbcb3bbd3d3f9d008a74141
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e50fd66096d6bd58fb7db692449e7f8654b5ca76
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="the-managed-thread-pool"></a>Spravovaný fond vláken
 <xref:System.Threading.ThreadPool> Třída poskytuje vaší aplikace pomocí fond pracovních vláken, které jsou spravovány nástrojem systému, což umožňuje soustředit se jenom na úlohy aplikace a nikoli vláken správy. Pokud máte krátké úlohy, které vyžadují zpracování na pozadí, spravovaný fond vláken je snadný způsob, jak využít výhod více vláken. Například počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] můžete vytvořit <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty, které asynchronní zpracovávat podprocesy z fondu podprocesů.  
@@ -151,8 +154,8 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Threading.Tasks.Task%601>  
  [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
  [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
- [Postupy: vrácení hodnoty z úlohy](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [Postupy: Vrácení hodnoty z úlohy](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)  
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
  [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)  
- [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
+ [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
  [Časovače](../../../docs/standard/threading/timers.md)

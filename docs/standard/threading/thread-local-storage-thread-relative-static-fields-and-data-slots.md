@@ -18,11 +18,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 39dd80d378171563f2aadadaa146278e8a417d32
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 127f7ea9bb6a6bf91547d049f582439882d2fb6e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům
 Můžete použít spravované úložiště thread local (TLS) k uložení dat které jsou jedinečné pro přístup z více vláken a aplikace domény. Rozhraní .NET Framework poskytuje dva způsoby, jak používat spravované TLS: statická pole a datové sloty relativní vůči vláknu.  

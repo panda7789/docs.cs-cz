@@ -28,11 +28,14 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6b07c090a381925f5330a820214126a121d3790b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 173d7974d9cad24aff7c4da8f38f22b150ea8a0c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který ho vytvořil. Implementaci tohoto typu izolace, modul common language runtime používá stejný pojem identitu uživatele, který rozpoznává operační systém, což je identita spojená s procesu, ve kterém kód běží, když je otevřen úložišti. Tato identita je ověřená identita uživatele, ale zosobnění může způsobit, že identita aktuálního uživatele, aby se dynamicky mění.  
@@ -115,4 +118,4 @@ Typy izolovaného úložiště
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO.IsolatedStorage.IsolatedStorageScope>  
- [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)
+ [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

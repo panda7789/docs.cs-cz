@@ -26,11 +26,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7633c7fe9e99bde96ee108460e983eff48f1c7f0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2aaf7c466c6662611e2b37d5c967a99d050158df
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="localizability-review"></a>Revize lokalizovatelnosti
 Revize lokalizovatelnosti je přechodný krok pro vývoj aplikací připravených. Ověří, že globalizovaná aplikace je připravena k lokalizaci a identifikuje kód, nebo všechny aspekty uživatelského rozhraní, které vyžadují zvláštní zpracování. Tento krok také pomáhá zajistit, že proces lokalizace nezavedou žádné funkční vady do vaší aplikace. Pokud byla vyřešili všechny problémy, které jsou vydané revize lokalizovatelnosti, je aplikace připravená pro lokalizaci. Pokud revize lokalizovatelnosti důkladné, by neměl mít k úpravě jakékoli zdrojového kódu během procesu lokalizace.  
@@ -84,4 +87,4 @@ Revize lokalizovatelnosti je přechodný krok pro vývoj aplikací připravenýc
  [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
  [Lokalizace](../../../docs/standard/globalization-localization/localization.md)  
  [Globalizace](../../../docs/standard/globalization-localization/globalization.md)  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)

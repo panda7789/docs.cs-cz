@@ -10,13 +10,16 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 7819424510fe33c775cefb195f78697aef8b512d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c9b4ae0f845d3e290df66b85548b697d9be002a4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="net-guide"></a>.NET – Průvodce
+# <a name="net-guide"></a>Průvodce technologií .NET
 
 V příručce .NET poskytuje velké množství informací o rozhraní .NET.  V závislosti na vaší znalost .NET můžete prozkoumat různé části této příručky a dalších částech v dokumentaci k rozhraní .NET.
 
@@ -48,8 +51,8 @@ Pokud hledáte, můžete k portu balíčku NuGet pro rozhraní .NET standardní,
 
 Pokud vás zajímají některé hlavní koncepty .NET, podívejte se na:
 
-* [Součástí architektury .NET](components.md)
-* [Standardní rozhraní .NET](net-standard.md)
+* [Architektonické součásti technologie .NET](components.md)
+* [.NET Standard](net-standard.md)
 * [Nativní interoperabilita](native-interop.md)
 * [Uvolňování paměti](garbagecollection/index.md)
 * [Základní typy v rozhraní .NET](base-types/index.md)
@@ -59,9 +62,9 @@ Pokud vás zajímají některé hlavní koncepty .NET, podívejte se na:
 
 Kromě toho podívejte se na každý příručka jazyka Další informace o tři hlavní jazyky rozhraní .NET:
 
-* [Průvodce v C#](../csharp/index.md)
-* [Průvodce F #](../fsharp/index.md)
-* [Příručka jazyka Visual Basic](../visual-basic/index.md)
+* [Průvodce jazykem C#](../csharp/index.md)
+* [Průvodce jazykem F#](../fsharp/index.md)
+* [Průvodce jazykem Visual Basic](../visual-basic/index.md)
 
 ## <a name="api-reference"></a>Referenční dokumentace ke knihovně API
 

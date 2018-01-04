@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 484aa47744de95c849b237112f1a383c2c2cb0b7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87e3b1b63c8582a322f74659f03803d1dbb19621
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animation-and-timing-system-overview"></a>Animace a časování přehledu systému
 Toto téma popisuje, jak používá systém časování animace, <xref:System.Windows.Media.Animation.Timeline>, a <xref:System.Windows.Media.Animation.Clock> třídy pro animaci vlastnosti.  
@@ -93,6 +94,6 @@ ClockGroup
  Když animace vlastnosti <xref:System.Windows.Media.Animation.AnimationClock> nastaví vlastnosti *aktuální* hodnota. Načítání hodnotu vlastnosti prostřednictvím její přistupující objekt CLR nebo <xref:System.Windows.DependencyObject.GetValue%2A> metoda vrátí výstup <xref:System.Windows.Media.Animation.AnimationClock> při <xref:System.Windows.Media.Animation.AnimationClock> je <xref:System.Windows.Media.Animation.ClockState.Active> nebo <xref:System.Windows.Media.Animation.ClockState.Filling>. Základní hodnotu vlastnosti můžete načíst pomocí <xref:System.Windows.Media.Animation.IAnimatable.GetAnimationBaseValue%2A> metoda.  
   
 ## <a name="see-also"></a>Viz také  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [Přehled událostí časování](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)  
  [Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

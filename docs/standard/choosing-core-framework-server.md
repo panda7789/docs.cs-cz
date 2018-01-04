@@ -6,11 +6,14 @@ ms.author: mairaw
 ms.date: 08/15/2016
 ms.topic: article
 ms.prod: .net
-ms.openlocfilehash: fa001492aa76c4690faca23cb2a1e0467a857a6d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2108125b9c01a2686d66b0ebd4e43e7ac863e223
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
 
@@ -107,8 +110,8 @@ Některé společnosti Microsoft nebo třetích stran platformy nepodporují .NE
 
 ## <a name="see-also"></a>Viz také
  [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)  
- [Příručka pro základní rozhraní .NET](../core/index.md)  
+ [Průvodce platformou .NET Core](../core/index.md)  
  [Portování z rozhraní .NET Framework na .NET Core](../core/porting/index.md)  
- [Průvodce Docker v rozhraní .NET framework](../framework/docker/index.md)  
+ [Průvodce rozhraním .NET Framework v Dockeru](../framework/docker/index.md)  
  [Přehled součásti rozhraní .NET](components.md)  
  [Rozhraní .NET Mikroslužeb. Architektura pro aplikace .NET Kontejnerizované](microservices-architecture/index.md)

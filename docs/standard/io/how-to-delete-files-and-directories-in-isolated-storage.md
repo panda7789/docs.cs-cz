@@ -27,11 +27,14 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 971f27cd25cbe4be3ca3fad6283ab32d4f6db0ac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cd17b85dbdc9315654d042e18d28fbfd0e2dcc52
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Postupy: Odstraňování souborů a adresářů v izolovaném úložišti
 Můžete odstranit adresářů a souborů v souboru izolovaného úložiště. Názvy souborů a adresářů v rámci úložiště, jsou závislé na operačním systému a je zadána jako relativní vůči kořenovému adresáři virtuálním souborovém systému. Nejsou malá a velká písmena v operačních systémech Windows.  
@@ -49,4 +52,4 @@ Můžete odstranit adresářů a souborů v souboru izolovaného úložiště. N
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>  
- [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)
+ [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

@@ -30,11 +30,14 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 965e5928c03ae573eacba98a7596f55b56aaba26
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e7e6f402d9423a8ae1ee464499f1b794785c2b06
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Asynchronní volání synchronních metod
 Rozhraní .NET Framework umožňuje libovolné metody asynchronní volání. K tomu můžete definovat delegáta se stejným podpisem jako metodu, kterou chcete volat; modul common language runtime automaticky definuje `BeginInvoke` a `EndInvoke` metody pro tento delegát s odpovídajícími podpisy.  

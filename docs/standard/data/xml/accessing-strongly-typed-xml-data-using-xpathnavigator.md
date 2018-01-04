@@ -16,11 +16,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 61c78adff541ac2ba261d31776478a0468e21d4f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 651a8e11b5782227cdf5ffcc3d53cf2c75def031
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k důrazně zadali pomocí objektem XPathNavigator nastaveným na Data XML
 Jako instance datového modelu XPath 2.0 <xref:System.Xml.XPath.XPathNavigator> třídy může obsahovat data silného typu, který se mapuje na běžné typy language runtime (CLR). Podle modelu dat XPath 2.0 může obsahovat pouze elementy a atributy data silného typu. <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje mechanismus pro přístup k datům v rámci <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> jako silného typu dat, jakož i mechanismy pro převod z jednoho datového typu na jiný objekt.  
@@ -196,8 +199,8 @@ Console.WriteLine("The price of the book has been dropped 20% from {0:C} to {1:C
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
- [Podpora typu v System.Xml třídy](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)  
- [Zpracování kódu XML dat pomocí jazyka XPath datový Model](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [Uzel navigační sady pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
- [Atribut a Namespace uzlu navigace pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
- [Extrahovat pomocí objektem XPathNavigator nastaveným na Data XML](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)
+ [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)  
+ [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [Navigace v sadě uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
+ [Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
+ [Extrahování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)

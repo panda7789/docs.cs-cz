@@ -17,11 +17,14 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 060459cf8f408e40ddc394fbcda6a022ec6379de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 164dce7c58e1ce44972e0e390e4f0bf2be8de548
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="order-preservation-in-plinq"></a>Zachování pořadí v PLINQ
 Cílem je v PLINQ, maximalizovat výkon při zachování správnosti. Dotaz by měl spustit co nejrychleji, ale stále správné výsledky. V některých případech správnost vyžaduje pořadí zdrojové sekvence dat; řazení však může být náročné. Proto ve výchozím nastavení, PLINQ nezachová pořadí zdrojové sekvence. V tomto ohledu PLINQ podobá [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], ale na rozdíl od LINQ na objekty, které zachováváno.  

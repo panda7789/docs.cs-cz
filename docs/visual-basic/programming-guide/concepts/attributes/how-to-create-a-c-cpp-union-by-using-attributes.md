@@ -12,11 +12,11 @@ ms.assetid: 9352a7e4-c0da-4d07-aa14-55ed43736fcb
 caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bcb5291737a9f4763f680daaf625c58d308423f8
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 51d04c573e91a351c48edefebdb3d32fce1d306f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>Postupy: vytváření sjednocení C/C++ pomocí atributů (Visual Basic)
 Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti. Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.  
@@ -79,7 +79,7 @@ Structure TestExplicit
  <xref:System.Reflection>  
  <xref:System.Attribute>  
  [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)  
- [Atributy](../../../../../docs/standard/attributes/index.md)  
+ [Atributy](../../../../standard/attributes/index.md)  
  [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
  [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
  [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)  

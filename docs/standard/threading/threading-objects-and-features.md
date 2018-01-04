@@ -16,11 +16,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2a73e5c60a661c171e9e46e6307484cf5e0e6b80
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0cb36c004c46e22256928b3b2432da59fb3e6fa2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="threading-objects-and-features"></a>Dělení objektů a funkcí na vlákna
 Rozhraní .NET Framework poskytuje mnoho objektů, které vám pomůžou vytvářet a spravovat vícevláknové aplikace. Spravovaných vláknech jsou reprezentované pomocí <xref:System.Threading.Thread> třídy. <xref:System.Threading.ThreadPool> Třída poskytuje snadné vytváření a Správa úloh na pozadí s více vlákny. <xref:System.ComponentModel.BackgroundWorker> Třída nemá stejný pro úlohy, které zajišťují interakci s uživatelským rozhraním. <xref:System.Threading.Timer> Třída spustí úlohy na pozadí v určitých intervalech.  
@@ -49,10 +52,10 @@ Rozhraní .NET Framework poskytuje mnoho objektů, které vám pomůžou vytvá�
  [Propojené operace](../../../docs/standard/threading/interlocked-operations.md)  
  Vysvětluje, jak používat <xref:System.Threading.Interlocked> třída zvýší nebo sníží hodnotu a uložit hodnotu v rámci jedné atomické operace.  
   
- [Čtení a zápis zámky.](../../../docs/standard/threading/reader-writer-locks.md)  
+ [Zámky modulů pro čtení a zápis](../../../docs/standard/threading/reader-writer-locks.md)  
  Definuje zámku, která implementuje sémantiku single zapisovače nebo více čtecími.  
   
- [Semafor a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)  
+ [Semaphore a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)  
  Popisuje <xref:System.Threading.Semaphore> objekty a vysvětluje, jak je používat k řízení přístupu k prostředků omezené.  
   
  [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
@@ -64,7 +67,7 @@ Rozhraní .NET Framework poskytuje mnoho objektů, které vám pomůžou vytvá�
  [SpinLock](../../../docs/standard/threading/spinlock.md)  
  Popisuje <xref:System.Threading.SpinLock>, lightweight alternativa k třídě monitorování pro určité scénáře nižší úrovně.  
   
- [Objektu SpinWait](../../../docs/standard/threading/spinwait.md)  
+ [SpinWait](../../../docs/standard/threading/spinwait.md)  
  Popisuje <xref:System.Threading.SpinWait>, nízkou úroveň synchronizace primitivní, který provádí zaneprázdnění před zahájením čekání základě jádra.  
   
 ## <a name="reference"></a>Odkaz  
@@ -75,7 +78,7 @@ Rozhraní .NET Framework poskytuje mnoho objektů, které vám pomůžou vytvá�
  Umožňuje úlohy na pozadí, které zajišťují interakci s uživatelským rozhraním, komunikaci přes události vyvolané vlákna uživatelského rozhraní.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
+ [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
  Popisuje, jak porty vstupně-výstupní operace asynchronní dokončení použít fondu vláken tak, aby vyžadovala zpracování jenom v případě, že dokončení vstupně výstupní operace.  
   
  [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  

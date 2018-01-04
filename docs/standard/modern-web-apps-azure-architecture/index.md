@@ -6,11 +6,14 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 93a74bb7ba537d3c7c0291f7903112dc470133a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 44864274a86634c0199885b5507124f2f54ce0f6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architekti moderních webových aplikací pomocí ASP.NET Core a Azure
 
@@ -67,7 +70,7 @@ Tato příručka obsahuje byla vyjádřit těmito poměrně malý dokument, kter
 Nebojte se, že předávání této příručce si s týmem k zajištění výklad tyto požadavky a možnosti. Má každý uživatel práce z společnou sadu terminologie a základních zásad vám pomůže zajistit konzistentní použití architektury vzory a postupy.
 
 ## <a name="references"></a>Odkazy
-- **Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace**  
+- **Volba mezi .NET Core a .NET Framework pro serverové aplikace**  
 <https://docs.microsoft.com/DotNet/articles/Standard/Choosing-Core-Framework-server>
 
 >[!div class="step-by-step"]

@@ -16,11 +16,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2e127fb02725d11e62c45157b4e45327fc9f1ace
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: badf5511c5638d98d25997f31a3aff8dc11144d6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="script-blocks-using-msxslscript"></a>Msxsl:script bloky pomocí skriptu
 <xref:System.Xml.Xsl.XslCompiledTransform> Třída podporuje vložené skripty pomocí `msxsl:script` elementu. Při načtení šablony stylů žádné definované funkce jsou kompilovaná do převodního jazyka Microsoft (MSIL) Code Document Object Model (CodeDOM) a jsou při běhu spuštěn. Sestavení vygenerovat z bloku vloženého skriptu je samostatný než sestavení vygenerované šablony stylů.  
@@ -98,7 +101,7 @@ ms.lasthandoff: 11/21/2017
   
  `name` Atribut obsahuje název sestavení a `href` atribut obsahuje cestu k sestavení. Název sestavení může být úplný název, například "System.Data, verze = 2.0.3600.0, Culture = neutral, PublicKeyToken = b77a5c561934e089", nebo krátký název, jako je například "System.Web".  
   
-#### <a name="namespaces"></a>Obory názvů  
+#### <a name="namespaces"></a>Jmenné prostory  
  Ve výchozím nastavení jsou zahrnuty následující obory názvů:  
   
 -   Systém  
@@ -157,4 +160,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
- [Generování dynamických zdrojového kódu a kompilace](../../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)
+ [Dynamické vytváření a kompilování zdrojového kódu](../../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)

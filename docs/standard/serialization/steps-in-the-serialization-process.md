@@ -11,11 +11,14 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2709af8e63428db2165ecd1256bce4f6690ae0a6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c232a76c8a000fcf4ac6c98d3f5c19e50869a362
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="steps-in-the-serialization-process"></a>Kroky v procesu serializace
 Když <xref:System.Runtime.Serialization.Formatter.Serialize*> metoda je volána v [formátovací modul](xref:System.Runtime.Serialization.Formatter), serializace objektu pokračuje podle pořadí následující pravidla:
@@ -32,4 +35,4 @@ Když <xref:System.Runtime.Serialization.Formatter.Serialize*> metoda je volána
   
 ## <a name="see-also"></a>Viz také  
  [Binární serializace](binary-serialization.md)  
- [XML a serializace protokolu SOAP](xml-and-soap-serialization.md)
+ [Serializace XML a SOAP](xml-and-soap-serialization.md)

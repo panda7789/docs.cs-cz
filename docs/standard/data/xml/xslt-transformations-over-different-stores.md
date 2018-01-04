@@ -13,11 +13,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b909b754c1d0d3007e06cd04376413d02cbc2f76
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2b642a1f2c29c6b4143b3f520a3df47328fcb41d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xslt-transformations-over-different-stores"></a>Transformace XSLT přes různé úložiště
 > [!NOTE]
@@ -28,4 +31,4 @@ ms.lasthandoff: 10/18/2017
  XML DOM poskytuje přístup k datům v XML – dokumenty a další třídy pro čtení, zápisu a přejděte do dokumentů XML. Tyto třídy jsou podporovány v <xref:System.Xml> názvů, který také kombinuje XML DOM s služby přístup dat poskytované ADO.NET. <xref:System.Xml.XmlDataDocument> Poskytuje relační přístup k datům. <xref:System.Xml.XmlDataDocument> Mapuje XML na relační data v technologie ADO.NET <xref:System.Data.DataSet>. Všechny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]– na základě aplikace můžete použít třídy v <xref:System.Xml> obor názvů pro přístup a zpracování dokumentů XML a relační data v <xref:System.Xml.XmlDataDocument>. Tato implementace podporuje n vrstvé architektury pro shromažďování a distribuci dat. Další informace najdete v tématu [XML integrace s relačních dat a ADO.NET](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Třída XslTransform implementuje procesoru XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+ [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

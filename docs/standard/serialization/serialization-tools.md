@@ -12,11 +12,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3ea06f1ce1d49b731a37d28a43626b05380a3718
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 33da3336cc78763de080eb21e3b84fd4cfdc7716
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-tools"></a>Serializace nástroje
 Tento oddíl obsahuje podrobné informace o nástrojích pro serializaci. Všechny nástroje můžete spustit z příkazového řádku.  
@@ -28,8 +31,8 @@ Tento oddíl obsahuje podrobné informace o nástrojích pro serializaci. Všech
   
 |Nástroj|Popis|  
 |----------|-----------------|  
-|[Nástroje Generátor serializátor XML (Sgen.exe)](../../../docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)|Vytvoří sestavení serializace XML pro typy v zadané sestavení s cílem zlepšit výkon běhu <xref:System.Xml.Serialization.XmlSerializer>.|  
-|[Nástroje definice schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)|Generuje schémat XML, které následují jazyk XSD navrhovaná World Wide Web Consortium (W3C). Tento nástroj generuje běžné třídy language runtime a <xref:System.Data.DataSet> třídy ze souboru schématu XSD.|  
+|[Nástroj XML Serializer Generator (Sgen.exe)](../../../docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)|Vytvoří sestavení serializace XML pro typy v zadané sestavení s cílem zlepšit výkon běhu <xref:System.Xml.Serialization.XmlSerializer>.|  
+|[Nástroj XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)|Generuje schémat XML, které následují jazyk XSD navrhovaná World Wide Web Consortium (W3C). Tento nástroj generuje běžné třídy language runtime a <xref:System.Data.DataSet> třídy ze souboru schématu XSD.|  
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)

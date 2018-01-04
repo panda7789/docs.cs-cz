@@ -21,11 +21,14 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 83a3f58fc13eb1aaacb99a3f35c3149d78451c23
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 18b2883fd69f5cadf2fce3dc677e5d2b79806d0b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="role-based-security"></a>Zabezpečení na základě rolí
 Role se často používají v finanční nebo obchodní aplikace k vynucení zásad. Aplikace může například uložit omezení na velikost zpracovávané v závislosti na tom, zda uživatel zadal žádost je členem zadané roli transakce. Úředníci mohou být autorizace k provádění transakcí, které jsou menší než zadaná prahová hodnota, vedoucí mohou mít vyšší limit a místopředsedové mohou mít stále vyšší limit (nebo vůbec žádné omezení). Na základě rolí zabezpečení mohou sloužit také pokud aplikace vyžaduje více schválení pro dokončení akce. Takovém případě může být nákupní systém, ve kterém můžete každý zaměstnanec generovat nákupní žádost, ale pouze nákupní agent můžete převést tuto žádost nákupní objednávka, který lze odeslat buď do jiného dodavatele.  
@@ -42,7 +45,7 @@ Role se často používají v finanční nebo obchodní aplikace k vynucení zá
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Hlavní a objekty Identity](../../../docs/standard/security/principal-and-identity-objects.md)|Vysvětluje, jak nastavit a spravovat Windows a obecné identity a objekty zabezpečení.|  
+|[Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)|Vysvětluje, jak nastavit a spravovat Windows a obecné identity a objekty zabezpečení.|  
 |[Klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md)|Představuje základní koncepty, které je třeba porozumět před použitím zabezpečení rozhraní .NET Framework.|  
   
 ## <a name="reference"></a>Odkaz  

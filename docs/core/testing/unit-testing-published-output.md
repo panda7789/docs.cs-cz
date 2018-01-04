@@ -6,11 +6,12 @@ ms.author: kehavens
 ms.date: 10/18/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 6651d41d4d60194aec035107e3a65df6a5f70a51
-ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
+ms.workload: dotnetcore
+ms.openlocfilehash: 373c557d3fc640ed9071a732bba9f082ca6a4d33
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/17/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Testování publikované výstup s vstest dotnet.
 

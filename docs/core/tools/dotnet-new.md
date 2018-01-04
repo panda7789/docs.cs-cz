@@ -10,11 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
-ms.openlocfilehash: d64881380febee08414f57a36ed92079e8d69ed6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: f5815e1ad2a36a8ef3279f6ff83465dba9ec5d50
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -324,6 +325,6 @@ Seznam všech šablon, které jsou k dispozici pro MVC:
 ## <a name="see-also"></a>Viz také
 
 [Vlastní šablony pro nové dotnet.](custom-templates.md)  
-[Vytvoření nové vlastní šablony pro dotnet.](~/docs/core/tutorials/create-custom-template.md)  
+[Vytvoření vlastní šablony pro dotnet new](~/docs/core/tutorials/create-custom-template.md)  
 [úložiště GitHub DotNet/dotnet šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
 [Dostupné šablony pro nové dotnet.](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new)

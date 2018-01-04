@@ -20,11 +20,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d7b680c3377cbfa40734a57f9408d9487dbf3769
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 739f86acd534549bc997dc7a939cf43a0c6fc3cb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="abstract-class-design"></a>Abstraktní třída návrhu
 **X nesmí** definice veřejných nebo chráněného interní konstruktorů v abstraktních typech.  
@@ -46,5 +49,5 @@ ms.lasthandoff: 11/21/2017
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Typ pokynů pro návrh](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)
+ [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

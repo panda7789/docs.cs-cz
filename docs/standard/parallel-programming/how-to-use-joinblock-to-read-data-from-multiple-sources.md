@@ -20,11 +20,14 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 41445e4874b94809840ecf9ebda6f27ccc955c9b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fa5f531257c0593f615e4620b56b2ef581ac143c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock
 Tento dokument vysvětluje, jak používat <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třída k provedení určité operace, pokud jsou k dispozici data z více zdrojů. Také ukazuje, jak povolit více připojení k bloků efektivněji sdílet zdroje dat pomocí typu non-greedy režimu.  
@@ -55,4 +58,4 @@ Tento dokument vysvětluje, jak používat <xref:System.Threading.Tasks.Dataflow
  Použití spojení typu non-greedy také vám pomůže předejít zablokování v aplikaci. V aplikaci softwaru *zablokování* nastane, když minimálně dva procesy každý uložení prostředku a vzájemně čekat na jiný proces k uvolnění jiný prostředek. Zvažte aplikaci, která definuje dvě <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty. Oba objekty každý přečíst data z dva bloky sdílené zdroje. V typu greedy režimu Pokud jeden spojení blok čte z zdroji první a druhý bloku spojení načítá druhý zdroje, aplikace může zablokování, protože obě připojení bloky vzájemně Čekejte na další vydat jeho prostředků. V typu non-greedy režimu každého bloku spojení čtení z její zdroje jenom v případě, že je k dispozici všechna data a proto riziko vzájemného zablokování je eliminovat.  
   
 ## <a name="see-also"></a>Viz také  
- [Toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+ [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

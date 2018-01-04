@@ -24,11 +24,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4aaf2da77a1fab55cbebd6bfa05a2b1c74e5cbbd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 952696cf813a4bd0915f85a02946489d389d23e7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="localization"></a>Lokalizace
 Lokalizace je proces převodu aplikace prostředky do lokalizované verze pro každou jazykovou verzi, která bude podporovat aplikace. Až po dokončení byste měli přistoupit k lokalizaci [lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md) kroku ověřte, že globalizovaná aplikace je připravena k lokalizaci.  
@@ -41,6 +44,6 @@ Lokalizace je proces převodu aplikace prostředky do lokalizované verze pro ka
   
 ## <a name="see-also"></a>Viz také  
  [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
- [Revize lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)  
+ [Vyhodnocení lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)  
  [Globalizace](../../../docs/standard/globalization-localization/globalization.md)  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)

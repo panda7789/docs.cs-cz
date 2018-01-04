@@ -20,11 +20,14 @@ caps.latest.revision: "33"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 48a3c0e0e00e9fd55dd3e4dfde8e20522b801bc8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 33d33826037197a0c679dacfff57eb77de5f5341
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework [System.IO](http://go.microsoft.com/fwlink/?LinkId=231142) obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na datové proudy a souborů. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -163,19 +166,19 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
 ## <a name="related-topics"></a>Související témata  
   
--   [Běžné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)  
+-   [Obecné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)  
   
  Poskytuje seznam vstupně-výstupních úkolů přidružených k souborům, adresářům a datovým proudům a odkazuje pro každý úkol na relevantní obsah a příklady.  
   
--   [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
+-   [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
   
  Popisuje výhody výkonu a základní operace asynchronních vstupně-výstupních operací.  
   
--   [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)  
+-   [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
   
  Popisuje mechanismus pro ukládání dat poskytující izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty.  
   
--   [Kanály](../../../docs/standard/io/pipe-operations.md)  
+-   [Pojmenované kanály](../../../docs/standard/io/pipe-operations.md)  
   
  Popisuje operace anonymních a pojmenovaných kanálů v rozhraní .NET Framework.  
   

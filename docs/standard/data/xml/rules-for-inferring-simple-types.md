@@ -13,11 +13,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9a74d111720eb9436f0cd71fd5acef7ea10939c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c3e6c24fafdd79676e68fa9dd06cf399fc09d5ea
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="rules-for-inferring-simple-types"></a>Pravidla pro jednoduché typy odvození
 Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datový typ pro atributy a elementy.  
@@ -83,6 +86,6 @@ Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datov�
 |`xsi:noNamespaceSchemaLocation`|Pokud `xsi:noNamespaceSchemaLocation` je došlo, je ignorováno.|  
   
 ## <a name="see-also"></a>Viz také  
- [Objektový Model schématu XML (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
- [Odvození schémata z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
- [Pravidla pro odvození typů uzlů schéma a struktura](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+ [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+ [Pravidla pro odvození typů a struktury uzlů schémat](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

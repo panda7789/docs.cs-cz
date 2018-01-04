@@ -12,11 +12,11 @@ ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
 caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: efdfa297099fb5538e7b92514c8440c2722f3fe1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 2b78eb3e5ac52ec89e810fde682249c689ba304a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="attributes-overview-visual-basic"></a>Přehled atributy (Visual Basic)
 Atributy poskytují výkonný metoda spojování metadata nebo deklarativní informace s kódem (sestavení, typy, metody, vlastnosti a tak dále). Po atribut je spojen s entitou program, může být dotazován atribut v době běhu pomocí techniky názvem *reflexe*. Další informace najdete v tématu [reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md).  
@@ -154,4 +154,4 @@ Module: CLSCompliant(True)>
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)  
  [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
- [Atributy](../../../../../docs/standard/attributes/index.md)
+ [Atributy](../../../../standard/attributes/index.md)

@@ -17,11 +17,14 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6102274f75d2fe66b89f917cf9095d3a6dfaa3e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4c65edd8959cbf5f83e3353770f71cad130953d1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu
 Následující příklad znázorňuje, jakým způsobem lze zapisovat metodu <xref:System.Threading.Tasks.Parallel.ForEach%2A>, která používá místní proměnné vlákna. Při provedení smyčky <xref:System.Threading.Tasks.Parallel.ForEach%2A> dochází k rozdělení kolekce prostředků na několik oddílů. Jednotlivé oddíly obdrží vlastní kopii „místní proměnné vlákna“. (Termín „místní proměnné vlákna“ je mírně nepřesný, protože v některých případech mohou být na stejném vlákně spuštěny dva oddíly.)  
@@ -56,5 +59,5 @@ Následující příklad znázorňuje, jakým způsobem lze zapisovat metodu <xr
   
 ## <a name="see-also"></a>Viz také  
  [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
- [Postupy: zápis smyčky Parallel.For pomocí lokální proměnné vláken](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)  
+ [Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)  
  [Výrazy lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

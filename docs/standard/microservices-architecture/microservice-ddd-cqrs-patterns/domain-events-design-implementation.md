@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 2d98b302be4ee72d8225526944fc3e41cbadcb5f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 607ca2977f382a3af20dac7470e970f483133756
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -24,7 +27,7 @@ Událost je něco, co došlo v minulosti. Událost domény, logicky, něco, co s
 
 Důležité výhodou události domény je, že vedlejší účinky po se něco stalo v doméně, může být vyjádřený explicitně místo implicitně. Tyto straně důsledky musí být konzistentní, proto dojít buď všechny operace související s obchodní úlohy, nebo žádná z nich. Kromě toho události domény umožňuje lepší oddělené oblasti zájmu v rámci třídy ve stejné doméně.
 
-Například pokud právě používáte jenom Entity Framework a entity nebo i agregace, pokud musí existovat vedlejší účinky provoked případem použití, ty budou prováděny jako implicitní koncept v párované kódu po se něco stalo. Ale pokud se zobrazí pouze tento kód, možná nevíte, pokud tento kód (vedlejším účinkem) je součástí hlavní operaci, nebo pokud se ve skutečnosti je vedlejším účinkem. Na druhé straně pomocí události domény mohou koncept explicitní a součástí všudypřítomný jazyk. Například v aplikaci eShopOnContainers vytváření pořadí není jenom o pořadí; aktualizací nebo vytvoří kupujících agregační na základě původního uživatele, protože uživatel není kupující dokud pořadí na místě. Pokud používáte události domény, můžete explicitně express pravidlo této domény založené na všudypřítomný jazyk zadaný odborníky domény.
+Například pokud právě používáte rozhraní Entity Framework a entity nebo i agregace, pokud musí existovat vedlejší účinky provoked případem použití, ty budou prováděny jako implicitní koncept v párované kódu po se něco stalo. Ale pokud se zobrazí pouze tento kód, možná nevíte, pokud tento kód (vedlejším účinkem) je součástí hlavní operaci, nebo pokud se ve skutečnosti je vedlejším účinkem. Na druhé straně pomocí události domény mohou koncept explicitní a součástí všudypřítomný jazyk. Například v aplikaci eShopOnContainers vytváření pořadí není jenom o pořadí; aktualizací nebo vytvoří kupujících agregační na základě původního uživatele, protože uživatel není kupující dokud pořadí na místě. Pokud používáte události domény, můžete explicitně express pravidlo této domény založené na všudypřítomný jazyk zadaný odborníky domény.
 
 Události domény jsou trochu podobné události zasílání zpráv ve stylu s jeden podstatným rozdílem. S skutečné zasílání zpráv služby Řízení front zpráv, zpráv zprostředkovatelé nebo služby service bus pomocí AMPQ se zprávu vždy odesílají asynchronně a předávat v rámci procesy a počítače. To je užitečné pro integraci více ohraničenou kontexty, mikroslužeb nebo i jiné aplikace. S událostmi domény chcete vyvolat událost z operace domény, které jsou aktuálně spuštěné, ale chcete, aby žádné vedlejší účinky v rámci stejné domény.
 
@@ -62,7 +65,7 @@ Na druhé straně Pokud používáte události domény, můžete vytvořit podro
 2.  Zobrazí příkaz v obslužná rutina příkazu.
     -   Spusťte jeden agregace transakce.
     -   (Volitelné) Vyvolávání událostí domény pro vedlejší efekty (například OrderStartedDomainDvent).
-1.  Popisovač domény události (v rámci aktuální proces) thast provede otevřete počet vedlejší účinky v několika agregace nebo se akce aplikace. Příklad:
+1.  Zpracování událostí domény (v rámci aktuální proces), které budou spuštěny otevřete počet vedlejší účinky v několika agregace nebo se akce aplikace. Příklad:
     -   Ověřte nebo vytvořte kupujících a způsobu platby.
     -   Vytvoření a odeslání událostí související integrace ke sběrnici událostí k rozšíří stavy na mikroslužeb nebo aktivační událost externí akcí jako odběratel odesílání e-mailu.
     -   Zpracujte jiné vedlejší účinky.
@@ -84,8 +87,9 @@ Pokud celková velikost koupili zákazníka v úložišti, napříč jakékoli �
 V jazyce C# domény událostí je jednoduše data za ruku struktura nebo třídy, jako je DTO, všechny informace související s co se právě stalo v doméně, jak je znázorněno v následujícím příkladu:
 
 ```csharp
-public class OrderStartedDomainEvent : IAsyncNotification
+public class OrderStartedDomainEvent : INotification
 {
+    public string UserId { get; private set; }
     public int CardTypeId { get; private set; }
     public string CardNumber { get; private set; }
     public string CardSecurityNumber { get; private set; }
@@ -94,9 +98,9 @@ public class OrderStartedDomainEvent : IAsyncNotification
     public Order Order { get; private set; }
 
     public OrderStartedDomainEvent(Order order,
-        int cardTypeId, string cardNumber,
-        string cardSecurityNumber, string cardHolderName,
-        DateTime cardExpiration)
+                                   int cardTypeId, string cardNumber,
+                                   string cardSecurityNumber, string cardHolderName,
+                                   DateTime cardExpiration)
     {
         Order = order;
         CardTypeId = cardTypeId;
@@ -112,7 +116,7 @@ Toto je v podstatě třídu, která obsahuje všechna data související s Order
 
 Z hlediska všudypřítomný jazyka domény vzhledem k tomu, že událost je něco, co se stalo v minulosti, název třídy události by měl být reprezentován jako minulost operace, jako je OrderStartedDomainEvent nebo OrderShippedDomainEvent. To je, jak je implementovaná událost domény v řazení mikroslužbu v eShopOnContainers.
 
-Jak jsme mají už jsme zmínili, důležitou vlastností událostí je, že vzhledem k tomu, že událost je něco, co se stalo v minulosti, neměli měnit. Proto musí být třídu neměnné. Zobrazí se v předchozím kódu, které vlastnosti jsou jen pro čtení z mimo objekt. Jediný způsob, jak aktualizovat objekt je pomocí konstruktoru, při vytváření objektu události.
+Jak již bylo uvedeno dříve, důležitou vlastností událostí je, že vzhledem k tomu, že událost je něco, co se stalo v minulosti, neměli měnit. Proto musí být třídu neměnné. Zobrazí se v předchozí kód, který vlastnosti jsou jen pro čtení z mimo objekt. Jediný způsob, jak aktualizovat objekt je pomocí konstruktoru, při vytváření objektu události.
 
 ### <a name="raising-domain-events"></a>Vyvolání událostí domény
 
@@ -128,22 +132,22 @@ Místo odeslání na obslužnou rutinu události domény okamžitě, je lepší 
 
 Při rozhodování o tom, pokud je odeslat události domény hned před nebo správné za potvrzení transakce je důležité, protože určuje, zda bude obsahovat vedlejší účinky v rámci stejné transakci nebo jinou transakcí. V takovém případě budete muset řešit případné konzistence napříč více agregace. Toto téma je popsané v další části.
 
-Odložené přístup je, jaké eShopOnContainers používá. Nejprve přidejte události děje ve vašem entity do kolekce nebo seznamu událostí za entity. Tento seznam musí být součástí objektu entity, nebo i lépe součástí třídy základní entitu, jak je znázorněno v následujícím příkladu:
+Odložené přístup je, jaké eShopOnContainers používá. Nejprve přidejte události děje ve vašem entity do kolekce nebo seznamu událostí za entity. Tento seznam musí být součástí objektu entity, nebo i lépe součástí třídy základní entitu, jak je znázorněno v následujícím příkladu základní třídy Entity:
 
 ```csharp
 public abstract class Entity
 {
-    private List<IAsyncNotification> _domainEvents;
+     //... 
+    private List<INotification> _domainEvents;
+    public List<INotification> DomainEvents => _domainEvents;
 
-    public List<IAsyncNotification> DomainEvents => _domainEvents;
-
-    public void AddDomainEvent(IAsyncNotification eventItem)
+    public void AddDomainEvent(INotification eventItem)
     {
-        _domainEvents = _domainEvents ?? new List<IAsyncNotification>();
+        _domainEvents = _domainEvents ?? new List<INotification>();
         _domainEvents.Add(eventItem);
     }
 
-    public void RemoveDomainEvent(IAsyncNotification eventItem)
+    public void RemoveDomainEvent(INotification eventItem)
     {
         if (_domainEvents is null) return;
         _domainEvents.Remove(eventItem);
@@ -152,19 +156,20 @@ public abstract class Entity
 }
 ```
 
-Když chcete vyvolat událost, stačí přidat jej do kolekce událostí umístit v metodě agregační entity, jak ukazuje následující kód:
+Když chcete vyvolat událost, stačí ho přidáte do kolekce událostí z kódu v jakékoli metody objektu entity agregace root.
+
+Následující kód, součástí [pořadí agregate-root na eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs), ukazuje příklad:
 
 ```csharp
 var orderStartedDomainEvent = new OrderStartedDomainEvent(this, //Order object
-    cardTypeId,
-    cardNumber,
-    cardSecurityNumber,
-    cardHolderName,
-    cardExpiration);
+                                                          cardTypeId, cardNumber,
+                                                          cardSecurityNumber,
+                                                          cardHolderName,
+                                                          cardExpiration);
 this.AddDomainEvent(orderStartedDomainEvent);
 ```
 
-Všimněte si, že je jediné, co dělají metodu AddDomainEvent přidání události do seznamu. Žádná událost se vyvolá ještě a ještě volána žádná obslužná rutina události.
+Všimněte si, že je jediné, co dělají metodu AddDomainEvent přidání události do seznamu. Žádná událost je odeslána ještě a ještě volána žádná obslužná rutina události.
 
 Chcete skutečně později na odeslání události při potvrzení transakce do databáze. Pokud používáte Entity Framework Core, znamená to v metodě SaveChanges vaší EF DbContext, jako v následujícím kódu:
 
@@ -173,7 +178,7 @@ Chcete skutečně později na odeslání události při potvrzení transakce do 
 public class OrderingContext : DbContext, IUnitOfWork
 {
     // ...
-    public async Task<int> SaveEntitiesAsync()
+    public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
     {
         // Dispatch Domain Events collection.
         // Choices:
@@ -182,8 +187,9 @@ public class OrderingContext : DbContext, IUnitOfWork
         // handlers that are using the same DbContext with Scope lifetime
         // B) Right AFTER committing data (EF SaveChanges) into the DB. This makes
         // multiple transactions. You will need to handle eventual consistency and
-        // compensatory actions in case of failures.
+        // compensatory actions in case of failures.        
         await _mediator.DispatchDomainEventsAsync(this);
+
         // After this line runs, all the changes (from the Command Handler and Domain
         // event handlers) performed through the DbContext will be commited
         var result = await base.SaveChangesAsync();
@@ -201,7 +207,7 @@ Mějte na paměti zde přehrání transakční hranice začalo významné. Pokud
 
 Dotaz, zda provést jediné transakce napříč agregace versus spoléhat na konzistence typu případné mezi tyto agregace je sporná. Mnoho DDD autoři jako zařízení Evans Erica a Vaughn Vernon doporučují pravidlo této jednu transakci = jeden agregace a proto uvádějí pro konzistence typu případné napříč agregace. Například v jeho kniha *Domain-Driven návrhu*, zařízení Erica Evans uvádí toto:
 
-Jakékoli pravidlo, které zahrnuje agregace nebude možné očekává aktuální za všech okolností. Prostřednictvím zpracování událostí, dávkové zpracování nebo jiných mechanismů aktualizace může být další závislosti vyřešen v určité chvíli. (pg. 128)
+Jakékoli pravidlo, které zahrnuje agregace nebude možné očekává aktuální za všech okolností. Prostřednictvím zpracování událostí, dávkové zpracování nebo jiných mechanismů aktualizace může být další závislosti vyřešen v určité chvíli. (stránka 128)
 
 Vaughn Vernon uvádí následující [efektivní návrh agregace. Část II: Provádění agreguje pracovní společně](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
 
@@ -225,7 +231,7 @@ Ale jak je ve skutečnosti odeslání události, k jejich obslužné rutiny udá
 
 ### <a name="the-domain-event-dispatcher-mapping-from-events-to-event-handlers"></a>Dispečer událostí domény: mapování z událostí na obslužné rutiny událostí
 
-Jakmile budete moci odeslání nebo publikovat události, je nutné nějaký druh artefaktů, která bude publikovat události tak, aby každý související rutiny můžete ho získat a proces vedlejší účinky na základě této události.
+Jakmile budete moct odeslat nebo publikovat události, je nutné nějaký druh artefaktů, která bude publikovat události, tak, aby každý související rutiny můžete ho získat a zpracovat vedlejší účinky na základě této události.
 
 Jeden z přístupů je skutečně zasílání zpráv systému nebo i událostí sběrnici, případně založená na služby service bus a události v paměti. Pro první případ skutečných zasílání zpráv by však bylo přehnaně pro zpracování události domény, protože stačí ke zpracování těchto událostí v rámci stejného procesu (to znamená, v rámci stejné vrstvě domény a aplikace).
 
@@ -237,7 +243,7 @@ Dalším způsobem se mapují události do více obslužných rutin událostí j
 
 Můžete vytvořit všechny vložení a artefaktů k implementaci tohoto přístupu podle sami. Však můžete použít také k dispozici knihovny jako [MediatR](https://github.com/jbogard/MediatR), který pod pozadí používá vaše IoT kontejneru. Proto přímo můžete vytvořit předdefinované rozhraní a metody publikování nebo odeslání objekt zprostředkovatel.
 
-V kódu musíte nejprve zaregistrovat typy obslužných rutin událostí v vaší kontejner IoC, jak je znázorněno v následujícím příkladu:
+V kódu, je nutné nejprve zaregistrovat typy obslužných rutin událostí v vaší kontejner IoC, jak je znázorněno v následujícím příkladu v [eShopOnContainers řazení mikroslužbu](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs):
 
 ```csharp
 public class MediatorModule : Autofac.Module
@@ -245,13 +251,11 @@ public class MediatorModule : Autofac.Module
     protected override void Load(ContainerBuilder builder)
     {
         // Other registrations ...
-        // Register the DomainEventHandler classes (they implement
-        // IAsyncNotificationHandler<>) in assembly holding the Domain Events
-        builder.RegisterAssemblyTypes(
-            typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler)
-            .GetTypeInfo().Assembly)
-            .Where(t => t.IsClosedTypeOf(typeof(IAsyncNotificationHandler<>)))
-            .AsImplementedInterfaces();
+        // Register the DomainEventHandler classes (they implement IAsyncNotificationHandler<>)
+        // in assembly holding the Domain Events
+        builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler)
+                                       .GetTypeInfo().Assembly)
+                                         .AsClosedTypesOf(typeof(IAsyncNotificationHandler<>));
         // Other registrations ...
     }
 }
@@ -261,7 +265,7 @@ Kód nejprve identifikuje sestavení, které obsahuje obslužné rutiny událost
 
 ### <a name="how-to-subscribe-to-domain-events"></a>Tom, jak se přihlásit k odběru událostí domény
 
-Při použití MediatR každý obslužné rutiny události musí používat typ události, který je k dispozici na obecný parametr IAsyncNotificationHandler rozhraní, jak můžete vidět v následujícím kódu:
+Při použití MediatR každý obslužné rutiny události musí používat typ události, který je k dispozici na obecný parametr INotificationHandler rozhraní, jak můžete vidět v následujícím kódu:
 
 ```csharp
 public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
@@ -272,61 +276,66 @@ Na základě vztahu mezi událostí a obslužná rutina události, která lze po
 
 ### <a name="how-to-handle-domain-events"></a>Postupy: zpracování události domény
 
-Nakonec obslužné rutiny události obvykle implementuje aplikační vrstvy kód, který používá infrastrukturu úložiště získat požadovaná další agregace a provést logiku domény vedlejším účinkem. Následující kód ukazuje příklad.
+Nakonec obslužné rutiny události obvykle implementuje aplikační vrstvy kód, který používá infrastrukturu úložiště získat požadovaná další agregace a provést logiku domény vedlejším účinkem. Následující [domény kód obslužné rutiny událostí v eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/DomainEventHandlers/OrderStartedEvent/ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler.cs), ukazuje příklad implementace.
 
 ```csharp
 public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
-    : IAsyncNotificationHandler<OrderStartedDomainEvent>
+                   : INotificationHandler<OrderStartedDomainEvent>
 {
     private readonly ILoggerFactory _logger;
     private readonly IBuyerRepository<Buyer> _buyerRepository;
     private readonly IIdentityService _identityService;
+
     public ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler(
         ILoggerFactory logger,
         IBuyerRepository<Buyer> buyerRepository,
         IIdentityService identityService)
     {
-        // Parameter validations
-        //...
+        // ...Parameter validations...
     }
 
     public async Task Handle(OrderStartedDomainEvent orderStartedEvent)
     {
-        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ?
-            orderStartedEvent.CardTypeId : 1;
+        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ? orderStartedEvent.CardTypeId : 1;        
         var userGuid = _identityService.GetUserIdentity();
         var buyer = await _buyerRepository.FindAsync(userGuid);
         bool buyerOriginallyExisted = (buyer == null) ? false : true;
+
         if (!buyerOriginallyExisted)
         {
             buyer = new Buyer(userGuid);
         }
+
         buyer.VerifyOrAddPaymentMethod(cardTypeId,
-            $"Payment Method on {DateTime.UtcNow}",
-            orderStartedEvent.CardNumber,
-            orderStartedEvent.CardSecurityNumber,
-            orderStartedEvent.CardHolderName,
-            orderStartedEvent.CardExpiration,
-            orderStartedEvent.Order.Id);
-        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer) :
-        _buyerRepository.Add(buyer);
-        await _buyerRepository.UnitOfWork.SaveEntitiesAsync();
+                                       $"Payment Method on {DateTime.UtcNow}",
+                                       orderStartedEvent.CardNumber,
+                                       orderStartedEvent.CardSecurityNumber,
+                                       orderStartedEvent.CardHolderName,
+                                       orderStartedEvent.CardExpiration,
+                                       orderStartedEvent.Order.Id);
+
+        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer) 
+                                                                      : _buyerRepository.Add(buyer);
+
+        await _buyerRepository.UnitOfWork
+                .SaveEntitiesAsync();
+
         // Logging code using buyerUpdated info, etc.
     }
 }
 ```
 
-Tento kód obslužné rutiny událostí považuje za kódu vrstvy aplikace protože ji používá infrastrukturu úložiště, jak je vysvětleno v další části na vrstvě infrastruktury trvalost. Obslužné rutiny událostí může také použít další součásti infrastruktury.
+Předchozí kód obslužné rutiny událostí domény považuje za vrstvy kódu aplikace protože ji používá infrastrukturu úložiště, jak je vysvětleno v další části na vrstvě infrastruktury trvalost. Obslužné rutiny událostí může také použít další součásti infrastruktury.
 
 #### <a name="domain-events-can-generate-integration-events-to-be-published-outside-of-the-microservice-boundaries"></a>Události domény může generovat události integrace publikována mimo hranice mikroslužbu
 
 Nakonec je důležité zmínili, může někdy chcete rozšíří události na více mikroslužeb. Který považuje za událost integrace a může být publikován přes sběrnici událostí z obslužné rutiny události žádné konkrétní doméně.
 
-## <a name="conclusions-on-domain-events"></a>Závěrů na události domény 
+## <a name="conclusions-on-domain-events"></a>Závěrů na události domény
 
 Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší účinky změn ve vaší doméně. Terminologie DDD, použití události domény explicitně implementovat vedlejší účinky přes jeden nebo více agregace. Kromě toho a lepší škálovatelnost a menší dopad na uzamčení databáze použijte konzistence typu případné mezi agregace ve stejné doméně.
 
-#### <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje
 
 -   **Gregu Young. Co je událost domény? ** 
      [ *http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)

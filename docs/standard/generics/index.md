@@ -36,11 +36,14 @@ caps.latest.revision: "23"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 510d7f30853496409caccab69e68f55a6638319e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d06c2ae074045ae750c079383f43c3d6aa6f726c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generics-in-the-net-framework"></a>Obecné typy v architektuře .NET Framework
 <a name="top"></a>Obecné typy umožňují přizpůsobit metoda, třída, struktura nebo rozhraní na přesné datový typ, kterým se pracuje. Například místo použití <xref:System.Collections.Hashtable> třídy, což umožňuje klíče a hodnoty k být jakéhokoli typu, můžete použít <xref:System.Collections.Generic.Dictionary%602> obecné třídy a zadat typ povolené pro klíč a typ povolené pro hodnotu. Mezi výhody obecných typů jsou vyšší kódu – opětovné použití a typ zabezpečení.  
@@ -57,7 +60,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [Související témata](#related_topics)  
   
--   [Referenční dokumentace](#reference)  
+-   [Referenční informace](#reference)  
   
 <a name="defining_and_using_generics"></a>   
 ## <a name="defining-and-using-generics"></a>Definování a použití obecných typů  
@@ -169,16 +172,16 @@ ms.lasthandoff: 10/18/2017
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Obecné kolekce v rozhraní .NET Framework](../../../docs/standard/generics/collections.md)|Popisuje obecnou kolekci třídy a jiné obecné typy v rozhraní .NET Framework.|  
-|[Obecní delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|Popisuje obecní delegáti převody, predikáty vyhledávání a akce, které budou provedeny na elementy pole nebo kolekce.|  
+|[Generování kolekcí v architektuře .NET Framework](../../../docs/standard/generics/collections.md)|Popisuje obecnou kolekci třídy a jiné obecné typy v rozhraní .NET Framework.|  
+|[Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|Popisuje obecní delegáti převody, predikáty vyhledávání a akce, které budou provedeny na elementy pole nebo kolekce.|  
 |[Obecná rozhraní](../../../docs/standard/generics/interfaces.md)|Popisuje obecná rozhraní, které tvoří běžné funkce celé řady obecných typů.|  
 |[Kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md)|Popisuje kovariance a kontravariance v parametry obecného typu.|  
 |[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Poskytuje souhrnné informace o vlastnostech a scénáře použití typy kolekcí v rozhraní .NET Framework, včetně obecné typy.|  
 |[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje obecná pravidla pro určování, kdy použít obecné typy kolekcí.|  
-|[Postupy: definování obecného typu pomocí reflexe emitování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Vysvětluje, jak vygenerovat dynamická sestavení, které zahrnují obecné typy a metody.|  
+|[Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Vysvětluje, jak vygenerovat dynamická sestavení, které zahrnují obecné typy a metody.|  
 |[Obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md)|Popisuje funkce obecných typů pro uživatele, Visual Basic, včetně témat s postupy pro používání a definice obecných typů.|  
 |[Úvod do obecných typů](~/docs/csharp/programming-guide/generics/introduction-to-generics.md)|Poskytuje přehled o definice a použití obecných typů pro C# uživatele.|  
-|[Přehled obecných typů v jazyce Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkce obecných typů pro uživatele, C++, včetně rozdíly mezi obecné typy a šablony.|  
+|[Přehled obecných typů ve Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkce obecných typů pro uživatele, C++, včetně rozdíly mezi obecné typy a šablony.|  
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Odkaz  

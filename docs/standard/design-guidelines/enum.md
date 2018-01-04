@@ -19,11 +19,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b7e1686dca2b96e339917b6dd4861f0f43d20d66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3ee73e8677ca3fd48f4bb3c94bd4e15c49a564c7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="enum-design"></a>Návrh výčtu
 Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduchý výčty a příznak výčty.  
@@ -105,5 +108,5 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Typ pokynů pro návrh](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)
+ [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

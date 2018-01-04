@@ -18,11 +18,14 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 91cd9a03ad1acf61681ecfad0edb061802c4362c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5098db5131c2e47c0b73efaac51477ef3b107761
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-standard-exception-types"></a>Použití typů standardní výjimky
 Tato část popisuje standardní výjimky poskytované rozhraní a podrobnosti o jejich využití. V seznamu je rozhodně není vyčerpávající. Naleznete na referenční dokumentaci rozhraní .NET Framework pro použití jiných typů výjimek Framework.  
@@ -72,5 +75,5 @@ Tato část popisuje standardní výjimky poskytované rozhraní a podrobnosti o
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny pro návrh pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)

@@ -21,11 +21,14 @@ caps.latest.revision: "42"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3f6beb720819a1be4e45bf4cefac3d805d7ee5e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7e176ebf6660e1c517e5ef7a505c259666bb30a0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>Globalizace a lokalizace aplikací .NET Framework
 Vývoj [aplikací připravených](http://msdn.microsoft.com/goglobal/bb978433.aspx), včetně aplikace, která je možné lokalizovat do jednoho nebo více jazyků, zahrnuje tři kroky: globalizace, lokalizovatelnosti a lokalizace.  
@@ -33,7 +36,7 @@ Vývoj [aplikací připravených](http://msdn.microsoft.com/goglobal/bb978433.as
  [Globalizace](../../../docs/standard/globalization-localization/globalization.md)  
  Tento krok zahrnuje návrh a kódování aplikace, která je neutrální pro jazykové prostředí a daný jazyk a která podporuje lokalizovaná uživatelská rozhraní a regionální data pro všechny uživatele aplikace. Patří sem proces vytvoření návrhu a rozhodnutí z oblasti programování, která nejsou založena na jazykových předpokladech. Zatímco globalizovaná aplikace není lokalizována, je i přesto navržena a napsána tak, aby bylo možné ji poměrně snadno následně lokalizovat do jednoho nebo více jazyků.  
   
- [Revize lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)  
+ [Vyhodnocení lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)  
  Tento krok zahrnuje revizi kódu a návrhu aplikace a zajišťuje, aby bylo možné ji snadno lokalizovat, identifikovat potenciální problémy lokalizace a ověřit, zda je spustitelný kód aplikace oddělen od prostředků. Pokud fáze globalizace byla účinná, přezkoumání lokalizovatelnosti potvrdí návrh a kódování provedené během globalizace. Fáze lokalizovatelnosti může rovněž určit všechny zbývající problémy tak, aby zdrojový kód aplikace nemusel být změněn během fáze lokalizace.  
   
  [Lokalizace](../../../docs/standard/globalization-localization/localization.md)  
@@ -53,16 +56,16 @@ Vývoj [aplikací připravených](http://msdn.microsoft.com/goglobal/bb978433.as
  [Globalizace](../../../docs/standard/globalization-localization/globalization.md)  
  Tento článek popisuje první fázi vytváření globalizované aplikace, včetně návrhu a kódování aplikace, která je nezávislá na jazykové verzi a jazyce.  
   
- [Revize lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)  
+ [Vyhodnocení lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)  
  Tento článek popisuje vytvoření lokalizované aplikace, včetně identifikace možných potenciálních problémů při lokalizaci.  
   
  [Lokalizace](../../../docs/standard/globalization-localization/localization.md)  
  Tento článek popisuje závěrečnou fázi vytvoření lokalizované aplikace, která spočívá v přizpůsobení uživatelského rozhraní pro konkrétní oblasti nebo jazykové verze.  
   
- [Operace s řetězci nezávislé na jazykové verzi](../../../docs/standard/globalization-localization/culture-insensitive-string-operations.md)  
+ [Řetězcové operace nezávislé na jazykové verzi](../../../docs/standard/globalization-localization/culture-insensitive-string-operations.md)  
  Popisuje způsob použití metod a tříd rozhraní .NET Framework, které jsou ve výchozím nastavení závislé na jazykové verzi, a to za účelem získání výsledků nezávislých na jazykové verzi.  
   
- [Osvědčené postupy pro vývoj aplikací připravených](../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md)  
+ [Doporučené postupy pro vývoj aplikací připravených k použití](../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md)  
  Popisuje doporučené postupy pro globalizaci, lokalizaci a vývoj globalizovaných aplikací technologie ASP.NET.  
   
 ## <a name="reference"></a>Odkaz  
@@ -75,8 +78,8 @@ Vývoj [aplikací připravených](http://msdn.microsoft.com/goglobal/bb978433.as
  <xref:System.Text>obor názvů  
  Obsahuje třídy představující kódování znaků ASCII, ANSI, Unicode a další.  
   
- [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)  
+ [Resgen.exe (generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)  
  Popisuje způsob použití Resgen.exe pro převedení souborů TXT a souborů prostředků založených na formátu XML (RESX) na binární soubory .resources modulu CLR (Common Language Runtime).  
   
- [Winres.exe (Editor prostředků Windows Forms)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)  
+ [Winres.exe (editor prostředků Windows Forms)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)  
  Popisuje způsob lokalizace formulářů Windows Forms pomocí nástroje Winres.exe.

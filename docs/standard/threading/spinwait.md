@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cfaf85c0fe1de3be89618ae540e9c183b66a11eb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1e67dd59464de09a35941d91ef984db6b7779b8c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="spinwait"></a>SpinWait
 <xref:System.Threading.SpinWait?displayProperty=nameWithType>je typ zjednodušené synchronizace, můžete použít ve scénářích nízké úrovně, aby se zabránilo nákladné kontextu přepínače a přechody jádra, které jsou požadovány pro události kernel. Na počítačích vícejádrovými když prostředek neočekává se, že uchovávat po delší dobu, může být efektivnější pro čekání na vlákno číselníku v uživatelském režimu pro několik set desítek nebo několik cyklů a poté opakujte získat prostředek. Pokud daný prostředek k dispozici po roztočený, byla uložena několik cyklů tisíců. Pokud prostředek je stále není k dispozici, pak jste utratili jenom několik cyklů a stále zadat čekání základě jádra. Tato kombinace roztočený. potom čekání se někdy označuje jako *dvoufázové operace čekání*.  
@@ -37,4 +40,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Threading.Thread.SpinWait%2A>  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

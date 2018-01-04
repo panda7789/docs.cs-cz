@@ -14,11 +14,11 @@ ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
 caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2be2c460fddf2e8ea4fe1239ec073f208c072d34
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4f8a87ea3f3e551dfc84212e92f1409ef61bcba2
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="libpath"></a>/libpath
 Určuje umístění odkazované sestavení.  
@@ -54,7 +54,7 @@ Určuje umístění odkazované sestavení.
   
 |Chcete-li nastavit/Libpath v sadě Visual Studio integrované vývojové prostředí|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Klikněte **odkazy** kartě.<br />3.  Klikněte **odkazovat cesty...**  tlačítko.<br />4.  V **cesty odkazů** dialogovém okně zadejte název adresáře v **složky:** pole.<br />5.  Klikněte na tlačítko **přidat složku**.|  
+|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte **odkazy** kartě.<br />3.  Klikněte **odkazovat cesty...**  tlačítko.<br />4.  V **cesty odkazů** dialogovém okně zadejte název adresáře v **složky:** pole.<br />5.  Klikněte na tlačítko **přidat složku**.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `T2.vb` k vytvoření souboru s příponou .exe. Kompilátor vyhledá v pracovním adresáři, v kořenovém adresáři jednotky C: a v adresáři nové sestavení jednotky C: odkazy na sestavení.  
@@ -64,6 +64,6 @@ vbc /libpath:c:\;"c:\New Assemblies" /reference:t2.dll t2.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavení a globální mezipaměti sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

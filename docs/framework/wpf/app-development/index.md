@@ -16,11 +16,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ff8f8ab85cda7bdbf66b000a89d8a862e765d561
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 67a49e1b27c227623d01dba17b7b0a1aea7c1290
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a>
@@ -135,9 +136,9 @@ ms.lasthandoff: 10/22/2017
 |Název|Popis|  
 |-----------|-----------------|  
 |[Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)|Obsahuje přehled <xref:System.Windows.Application> třídy, včetně správy životního cyklu aplikací, windows, prostředky aplikace a navigace.|  
-|[Windows v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)|Poskytuje podrobné informace o správě systému windows ve vaší aplikaci, včetně toho, jak používat <xref:System.Windows.Window> třídy a dialogové okno polí.|  
-|[Navigace – přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md)|Poskytuje přehled správy navigace mezi stránkami vaší aplikace.|  
+|[Windows ve WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)|Poskytuje podrobné informace o správě systému windows ve vaší aplikaci, včetně toho, jak používat <xref:System.Windows.Window> třídy a dialogové okno polí.|  
+|[Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)|Poskytuje přehled správy navigace mezi stránkami vaší aplikace.|  
 |[Hostování](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)|Obsahuje přehled [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].|  
 |[Sestavení a nasazení](../../../../docs/framework/wpf/app-development/building-and-deploying-wpf-applications.md)|Popisuje, jak vytvářet a nasazovat aplikace WPF.|  
 |[Úvod k použití WPF v sadě Visual Studio 2015](../../../../docs/framework/wpf/getting-started/introduction-to-wpf-in-vs.md)|Popisuje hlavní funkce WPF.|  
-|[Návod: Můj první grafický subsystém WPF aplikace pracovní plochy](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|Návod, který ukazuje, jak vytvořit WPF aplikace pomocí stránky navigace, rozložení, ovládací prvky, Image, styly a vazbu.|
+|[Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|Návod, který ukazuje, jak vytvořit WPF aplikace pomocí stránky navigace, rozložení, ovládací prvky, Image, styly a vazbu.|

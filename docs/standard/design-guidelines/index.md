@@ -1,5 +1,5 @@
 ---
-title: "Pokyny pro návrh Framework"
+title: "Pokyny k návrhu architektury"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -17,13 +17,16 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a812207fb58e6c87c263966081060d02f8038963
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 38c344e4f4ede58fcb39dd638f6aa8e896e63da0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="framework-design-guidelines"></a>Pokyny pro návrh Framework
+# <a name="framework-design-guidelines"></a>Pokyny k návrhu architektury
 Tato část obsahuje pokyny pro návrh knihovny, které rozšiřují a interakci s rozhraním .NET Framework. Cílem je pomoct knihovny Designer zajistit konzistentnost rozhraní API a snadné použití tím, že poskytuje jednotný programovací model, která je nezávislá programovací jazyk používaný pro vývoj. Doporučujeme vám, postupujte podle těchto pokynů pro návrh, při vývoji třídy a součásti, které rozšiřují rozhraní .NET Framework. Návrh nekonzistentní knihovny nepříznivě ovlivní produktivita vývojářů a nedoporučuje přijetí.  
   
  Pokyny jsou uspořádána jako jednoduchý doporučení předponu s podmínkami `Do`, `Consider`, `Avoid`, a `Do not`. Tyto pokyny jsou určeny k pomoci třídy knihovny Designer pochopit kompromis mezi různá řešení. Můžou nastat situace, kdy dobrý knihovny návrhu vyžaduje způsobila porušení těchto pokynů pro návrh. Takových případech by měl být výjimečná a je důležité, abyste měli vymazat a poutavých důvod pro vaše rozhodnutí.  
@@ -34,19 +37,19 @@ Tato část obsahuje pokyny pro návrh knihovny, které rozšiřují a interakci
  [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)  
  Obsahuje pokyny pro pojmenování sestavení, obory názvů, typy a členy v knihovny tříd.  
   
- [Typ pokynů pro návrh](../../../docs/standard/design-guidelines/type.md)  
+ [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
  Poskytuje pokyny pro používání statických a abstraktní třídy, rozhraní, výčty, struktur a dalších typů.  
   
- [Člen pokynů pro návrh](../../../docs/standard/design-guidelines/member.md)  
+ [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
  Obsahuje pokyny pro návrh a pomocí vlastnosti, metody, konstruktory, pole, operátory, události a parametry.  
   
  [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  Popisuje rozšiřitelnost mechanismy, jako je vytváření podtříd, pomocí události, virtuální členové a zpětná volání a vysvětluje, jak zvolit mechanismy, které nejlépe splňují požadavky vašeho framework.  
   
- [Pokyny pro návrh pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)  
+ [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)  
  Popisuje pokyny pro návrh pro navrhování, vyvolání a zachycení výjimky.  
   
- [Pokyny týkající se používání](../../../docs/standard/design-guidelines/usage-guidelines.md)  
+ [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)  
  Popisuje pokyny pro použití běžné typy, jako je například pole, atributy a kolekce, podporu serializace a přetížení operátory rovnosti.  
   
  [Obecné vzory návrhu](../../../docs/standard/design-guidelines/common-design-patterns.md)  

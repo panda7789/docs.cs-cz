@@ -27,11 +27,11 @@ ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
 caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 56dd7fc339c452d64eb18211337b9a7674a83e1c
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c297a84b37b455a4b30b1848aa9bdd30dc567ec1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch....Finally – příkaz (Visual Basic)
 Poskytuje způsob, jak zpracovávat některé nebo všechny možné chyby, které mohou nastat v každém bloku kódu, při stále běhu kódu.  
@@ -137,7 +137,7 @@ End Try
 ## <a name="iterators"></a>Iterátory  
  Iterator funkce nebo `Get` přistupujícího objektu provede vlastní iteraci přes kolekci. Používá iterovat [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) příkaz vrátit každý prvek kolekce, jeden v čase. Volání funkce iterator pomocí [For Each... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
- A `Yield` příkaz může být uvnitř `Try` bloku. A `Try` blok, který obsahuje `Yield` příkaz může mít `Catch` blokuje a může mít `Finally` bloku. Najdete v části "zkuste bloky v jazyce Visual Basic" [iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7) příklad.  
+ A `Yield` příkaz může být uvnitř `Try` bloku. A `Try` blok, který obsahuje `Yield` příkaz může mít `Catch` blokuje a může mít `Finally` bloku. Najdete v části "zkuste bloky v jazyce Visual Basic" [iterátory](../../programming-guide/concepts/iterators.md) příklad.  
   
  A `Yield` příkaz nemůže být uvnitř `Catch` bloku nebo `Finally` bloku.  
   
@@ -191,8 +191,8 @@ End Try
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Information.Err%2A>  
  <xref:System.Exception>  
- [Exit – příkaz](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [On Error – příkaz](../../../visual-basic/language-reference/statements/on-error-statement.md)  
+ [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Příkaz On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)  
  [Doporučené postupy pro používání fragmentů kódu](/visualstudio/ide/best-practices-for-using-code-snippets)  
- [Zpracování výjimek](../../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)  
- [Throw – příkaz](../../../visual-basic/language-reference/statements/throw-statement.md)
+ [Zpracování výjimek](../../../standard/parallel-programming/exception-handling-task-parallel-library.md)  
+ [Příkaz Throw](../../../visual-basic/language-reference/statements/throw-statement.md)

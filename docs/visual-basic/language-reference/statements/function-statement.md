@@ -35,11 +35,11 @@ ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
 caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 667ab7ceb54e1f339fd645883ca2686c0cbb72b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 52e9210f9e715b6055e6ed199ef1aa4b919c6dd6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, který definovat `Function` postupu.  
@@ -65,13 +65,13 @@ End Function
   
      Volitelné. Může být jedna z následujících akcí:  
   
-    -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)  
+    -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
-    -   [Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)  
+    -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
     -   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
-    -   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)  
+    -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
     -   `Protected Friend`  
   
@@ -81,9 +81,9 @@ End Function
   
      Volitelné. Může být jedna z následujících akcí:  
   
-    -   [Přetížení](../../../visual-basic/language-reference/modifiers/overloads.md)  
+    -   [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
-    -   [Přepsání](../../../visual-basic/language-reference/modifiers/overrides.md)  
+    -   [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
   
     -   [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
   
@@ -239,7 +239,7 @@ End Function
   
  Návratový typ funkce iterator může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.  
   
- Další informace najdete v tématu [iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7).  
+ Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá `Function` příkaz deklarovat název, parametry a kód, který vytvoří text `Function` postupu. `ParamArray` Modifikátor umožňuje funkci tak, aby přijímal proměnný počet argumentů.  
@@ -259,14 +259,14 @@ End Function
  [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Sub – příkaz](sub-statement.md)  
- [Function – procedury](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)  
+ [Příkaz Sub](sub-statement.md)  
+ [Procedury funkce](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)  
  [Seznam parametrů](parameter-list.md)  
- [Dim – příkaz](dim-statement.md)  
- [Call – příkaz](call-statement.md)  
+ [Příkaz Dim](dim-statement.md)  
+ [Příkaz Call](call-statement.md)  
  [Z](of-clause.md)  
  [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)  
- [Postupy: použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)  
- [Lambda – výrazy](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
- [Function – výraz](../../../visual-basic/language-reference/operators/function-expression.md)
+ [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [Výraz Function](../../../visual-basic/language-reference/operators/function-expression.md)

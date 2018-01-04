@@ -8,11 +8,14 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: f4870d0568c3539f296bcb3f577291cb0250cfca
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e7a111ce20039f8c87d3c3d63efdeaf38a4e1e96
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="designing-validations-in-the-domain-model-layer"></a>Navrhování ověření ve vrstvě modelu domény.
 

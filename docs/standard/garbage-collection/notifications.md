@@ -18,11 +18,14 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 41a2ed9c5d239f1570955e87bb5b749e29830bc3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ac951ad1f89d058b06280bc176ca7928a1dc65bf
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="garbage-collection-notifications"></a>Oznámení pro kolekci paměti
 Existují situace, ve kterých může kolekci úplného uvolňování paměti (který je kolekcí generace 2) podle modul common language runtime nepříznivě ovlivnit výkon. To může být problém zvláště u serverů, které zpracovávají velké objemy požadavků. v takovém případě dlouho uvolňování může způsobit časový limit požadavku. Pokud chcete zabránit úplnou kolekci z výskytu kritické období, můžete být upozorněni, kolekci úplného uvolňování paměti se blíží a pak proveďte akce přesměrování zatížení k jiné instanci serveru. Můžete může také způsobit kolekci sami, za předpokladu, že aktuální instance serveru nemusí zpracovávat žádosti.  

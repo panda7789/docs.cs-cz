@@ -22,11 +22,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a46bf111b76ef6d07fa99cc3b19684a0726b7062
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 66a297ed035f5afde06913b89f1f92dee5745f48
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="constructor-design"></a>Návrh – konstruktor
 Existují dva druhy konstruktory: Zadejte konstruktory a konstruktory instancí.  
@@ -87,5 +90,5 @@ Existují dva druhy konstruktory: Zadejte konstruktory a konstruktory instancí.
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Člen pokynů pro návrh](../../../docs/standard/design-guidelines/member.md)  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)
+ [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

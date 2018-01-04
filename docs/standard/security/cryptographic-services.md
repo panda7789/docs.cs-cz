@@ -34,11 +34,14 @@ caps.latest.revision: "34"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cbea6ab0fcf72937bc936510a89593861115f287
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1fd0df0e12149371b3403782056982784c0ca3cd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 <a name="top"></a>Veřejných sítích, jako je Internet není pro zajištění zabezpečené komunikace mezi entitami. Komunikace v těchto sítích je náchylný ke čtení nebo dokonce upravovat neoprávněným třetím stranám. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda nedošlo ke změně dat, a pomáhá poskytovat zabezpečenou komunikaci přes jinak nezabezpečené kanály. Například data mohou být šifrují pomocí šifrovacího algoritmu, přenesen šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zabrání šifrovaná data, bude obtížné dekódovat.  
@@ -317,6 +320,6 @@ ms.lasthandoff: 10/18/2017
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Kryptografický Model](../../../docs/standard/security/cryptography-model.md)|Popisuje způsob implementace kryptografie v knihovně základní třídy.|  
+|[Kryptografický model](../../../docs/standard/security/cryptography-model.md)|Popisuje způsob implementace kryptografie v knihovně základní třídy.|  
 |[Návod: Vytvoření šifrovací aplikace](../../../docs/standard/security/walkthrough-creating-a-cryptographic-application.md)|Ukazuje základní úlohy šifrování a dešifrování.|  
 |[Konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md)|Popisuje, jak k mapování názvů algoritmů na třídy kryptografických a mapování identifikátorů objektů kryptografickým algoritmům.|

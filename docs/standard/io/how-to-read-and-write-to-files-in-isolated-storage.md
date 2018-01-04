@@ -26,11 +26,14 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8d733efc3d70070dd12f55c651033e97d1792c38
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cfb1500150d2dfb500a698713c0de6b8e5518010
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-read-and-write-to-files-in-isolated-storage"></a>Postupy: Čtení a zápis do souborů v izolovaném úložišti
 Chcete-li číst nebo zapisovat do souboru v izolovaném úložišti, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> objekt s čtečku datového proudu (<xref:System.IO.StreamReader> objektu) nebo zapisovač datového proudu (<xref:System.IO.StreamWriter> objekt).  
@@ -49,4 +52,4 @@ Chcete-li číst nebo zapisovat do souboru v izolovaném úložišti, použijte 
  <xref:System.IO.StreamReader?displayProperty=nameWithType>  
  <xref:System.IO.StreamWriter?displayProperty=nameWithType>  
  [Souborová služba a datový proud I-O](../../../docs/standard/io/index.md)  
- [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)
+ [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

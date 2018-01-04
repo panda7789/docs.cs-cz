@@ -15,11 +15,11 @@ ms.assetid: c7b10086-0fa4-49db-b3c8-4ae0db5957da
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f783cc5b20c4fe6d7812a05a66cbc4cdfc0b9395
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 692681b21c243432ec8e7160bcc1eaa4e718d64d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optionstrict"></a>/optionstrict
 Vynucuje přísné typ sémantiku jako omezení typu implicitní převody.  
@@ -45,7 +45,7 @@ Vynucuje přísné typ sémantiku jako omezení typu implicitní převody.
   
 ### <a name="to-set-optionstrict-in-the-visual-studio-ide"></a>Chcete-li nastavit/optionstrict v integrovaném vývojovém prostředí sady Visual Studio  
   
-1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti.** Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti.**   
   
 2.  Klikněte **zkompilovat** kartě.  
   
@@ -64,11 +64,11 @@ vbc /optionstrict+ test.vb
   
 ## <a name="see-also"></a>Viz také  
  [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [/ optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)  
- [/ optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
- [/ optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
- [/ nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)  
+ [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)  
+ [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
+ [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
+ [/nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)  
  [/ warnaserror (Visual Basic)](../../../visual-basic/reference/command-line-compiler/warnaserror.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [Dialogové okno Možnosti výchozí hodnoty, projekty, Visual Basic](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

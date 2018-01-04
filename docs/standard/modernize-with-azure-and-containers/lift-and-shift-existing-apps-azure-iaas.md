@@ -4,11 +4,14 @@ description: "Modernizovat existující aplikace .NET s cloudu Azure a Windows k
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 7f7715bb0ec323874271a7e9ce1c666e23e33b22
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: eed17ad06c138c3a4eb85f5e023427b681488784
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="lift-and-shift-existing-apps-azure-iaas"></a>Navýšení a posunutí existující aplikace Azure IaaS
 

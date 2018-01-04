@@ -13,11 +13,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 069d3b94a0269917400e75fdbe975ec39dcfdb71
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 00b997865c614756ea5fd9567ded3baa469f4c62
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>Odkazy na entity jsou rozšířené a není zachovaná.
 Pokud je odkaz na entitu rozšířit a nahradit text reprezentuje, **XmlEntityReference** uzlu není vytvořena. Místo toho je analyzována deklarací entity a uzlů vytvořené z obsahu v deklaraci zkopírují v místě z **XmlEntityReference**. Proto v `&publisher;` například `&publisher;` nebude uložena, ale místo toho **XmlText** uzel je vytvořen.  
@@ -48,4 +51,4 @@ Stromovou strukturu pro odkazy na entity, které jsou rozšířit
  Pokud použijete čtečku entity, nelze přeložit **zatížení** metoda vyvolá výjimku, pokud se setká s odkazu na entitu.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -7,11 +7,12 @@ ms.author: mairaw
 ms.date: 11/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 5094baee77aba4d1e148f807d842a4a2d3405cf7
-ms.sourcegitcommit: 86cf9b4c7104485a9870645705b9a1a4b6ca8e2b
+ms.workload: dotnetcore
+ms.openlocfilehash: 3b1fe02aad4f78499158ecb7fa9b8521cb7d992e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-the-windows-compatibility-pack"></a>Pomocí balíčku Windows kompatibility
 

@@ -14,11 +14,14 @@ caps.latest.revision: "24"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b5394cd2e9c9fa2b0cacb93ddf2cf05b33fabc71
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ae53d5afbca15f8adafed428d4c2141312c972ed
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="thread-safe-collections"></a>Kolekce se zabezpečenými vlákny
 [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Zavádí <xref:System.Collections.Concurrent?displayProperty=nameWithType> názvů, který zahrnuje několik tříd kolekcí, které jsou bezpečné pro přístup z více vláken a škálovatelné. Více vláken může bezpečně a efektivně přidat nebo odebrat položky z těchto kolekcí, bez nutnosti další synchronizace v uživatelském kódu. Když píšete nový kód, pomocí třídy souběžných kolekce vždy, když kolekce se zápis do více vláken současně. Pokud jsou pouze čtení ze sdílené kolekce, pak můžete použít třídy v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Doporučujeme, abyste provedli třídy kolekcí verze 1.0, pokud není vyžadováno cílit na rozhraní .NET Framework 1.1 nebo starší modul runtime.  
@@ -54,12 +57,12 @@ ms.lasthandoff: 10/18/2017
 |Název|Popis|  
 |-----------|-----------------|  
 |[BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)|Popisuje funkce poskytované službou <xref:System.Collections.Concurrent.BlockingCollection%601> typu.|  
-|[Postupy: Přidání a odebrání položek v ConcurrentDictionary](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|Popisuje, jak přidávat a odebírat elementů od<xref:System.Collections.Concurrent.ConcurrentDictionary%602>|  
-|[Postupy: Přidání a odebírání jednotlivých položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)|Popisuje, jak přidat a načítat položky z blokující kolekce bez použití enumerátor jen pro čtení.|  
-|[Postupy: přidání funkcí ohraničování a blokování do kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)|Popisuje, jak chcete použít jako základní mechanismus úložiště pro všechny třídy kolekce <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> kolekce.|  
-|[Postupy: použití příkazu ForEach k odebrání položek v kolekci BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)|Popisuje způsob použití `foreach`, (`For Each` v jazyce Visual Basic) Chcete-li odebrat všechny položky v kolekci blokování.|  
-|[Postupy: použití polí blokujících kolekcí v datovém kanálu](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)|Popisuje, jak používat více blokující kolekce ve stejnou dobu implementace kanálu.|  
-|[Postupy: vytvoření fondu objektů pomocí ConcurrentBag](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|Zobrazuje způsob používání souběžného kontejneru za účelem zlepšení výkonu v situacích, kdy je možné namísto neustálého vytváření nových objektů opětovně používat stávající objekty.|  
+|[Postupy: Přidávání a odebírání položek v ConcurrentDictionary](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|Popisuje, jak přidávat a odebírat elementů od<xref:System.Collections.Concurrent.ConcurrentDictionary%602>|  
+|[Postupy: Přidávání a odebírání jednotlivých položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)|Popisuje, jak přidat a načítat položky z blokující kolekce bez použití enumerátor jen pro čtení.|  
+|[Postupy: Přidání funkcí ohraničování a blokování do kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)|Popisuje, jak chcete použít jako základní mechanismus úložiště pro všechny třídy kolekce <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> kolekce.|  
+|[Postupy: Použití příkazu ForEach k odebrání položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)|Popisuje způsob použití `foreach`, (`For Each` v jazyce Visual Basic) Chcete-li odebrat všechny položky v kolekci blokování.|  
+|[Postupy: Použití polí blokujících kolekcí v datovém kanálu](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)|Popisuje, jak používat více blokující kolekce ve stejnou dobu implementace kanálu.|  
+|[Postupy: Vytvoření fondu objektů pomocí ConcurrentBag](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|Zobrazuje způsob používání souběžného kontejneru za účelem zlepšení výkonu v situacích, kdy je možné namísto neustálého vytváření nových objektů opětovně používat stávající objekty.|  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

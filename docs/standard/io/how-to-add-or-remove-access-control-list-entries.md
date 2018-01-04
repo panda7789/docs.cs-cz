@@ -23,11 +23,14 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 16038ffbe090cfd8d2c0578f75e66db3b021cb9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 988fd354caa5fcc716107087242ead113c9a9939
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-add-or-remove-access-control-list-entries"></a>Postupy: Přidávání a odebírání položek seznamu řízení přístupu
 Přidat nebo odebrat položky seznamu řízení přístupu (ACL) do nebo ze souboru, <xref:System.Security.AccessControl.FileSecurity> nebo <xref:System.Security.AccessControl.DirectorySecurity> objekt musí být získaný soubor nebo adresář, upravit a potom se použijí zpět na soubor nebo adresář.  

@@ -17,11 +17,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c3373cb6a2c535bd7d42eb062e1f9727952f7cfb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7d94a1fa4c559552a32140fd172c0c62e033f7a8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="understanding-speedup-in-plinq"></a>Porozumění zrychlení v PLINQ
 Primárním účelem PLINQ je pro urychlení provádění LINQ na objekty dotazy spuštěním dotazu delegáty paralelně na počítačích s více jádry. Při zpracování jednotlivých prvků ve zdrojové kolekci je nezávislé, bez sdíleného stavu související se situací mezi jednotlivé delegáty se nejlépe provádí PLINQ. Tyto operace jsou obvyklé v technologii LINQ to objekty a PLINQ a se často nazývají "*delightfully paralelní*" vzhledem k tomu, že je to možné snadno plánování na více vláken. Nicméně ne všechny dotazy skládat delightfully paralelních operací; ve většině případů dotazu zahrnuje některé operátory buď nesmí být paralelizovaná málo, nebo které zpomalit paralelní provádění. A dokonce i s dotazy, které jsou zcela delightfully paralelní, musí PLINQ stále oddílu zdroj dat a plánování práce na vláken a obvykle sloučení výsledků po dokončení dotazu. Všechny tyto operace přidání do výpočetní náklady paralelizace; Tyto náklady přidávání paralelizace se nazývají *režijní náklady na*. Cílem je dosáhnout optimálního výkonu v PLINQ dotazu, maximalizovat částí, které jsou delightfully paralelní a minimalizovat částí, které vyžadují režijní náklady. Tento článek obsahuje informace, které vám pomohou psát dotazy PLINQ, které jsou co nejúčinnější při stále vracet správné výsledky.  

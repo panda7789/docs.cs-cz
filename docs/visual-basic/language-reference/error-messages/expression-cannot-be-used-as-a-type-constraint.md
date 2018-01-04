@@ -14,11 +14,11 @@ ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 054c05747491afb02601df00225a703560cbe91c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c7271018a93c97ed90dc272f7f5404c0f0a22d42
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="39ltexpressiongt39-cannot-be-used-as-a-type-constraint"></a>& č. 39; &lt;výraz&gt;& č. 39; nelze použít jako omezení typu.
 Seznam omezení obsahuje výraz, který nepředstavuje platný parametr typu omezení.  
@@ -53,4 +53,4 @@ Seznam omezení obsahuje výraz, který nepředstavuje platný parametr typu ome
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [Typy hodnot a odkazové typy](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- [NIB postupy: Přidání nebo odebrání odkazů pomocí dialogového okna Přidat odkaz](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)
+ 

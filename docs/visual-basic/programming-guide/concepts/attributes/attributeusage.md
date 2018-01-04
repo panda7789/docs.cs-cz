@@ -12,11 +12,11 @@ ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 29d227cf50fe23d5619bf5fb6f9a598ea78ef077
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5f358068d00c042a979216cdda51dcc7e07abbc5
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
 Určuje, jak lze použít třídu vlastního atributu. `AttributeUsage`je atribut, který můžete použít pro vlastní atribut definice řídit, jak můžete použít nový atribut. Výchozí nastavení se při použití explicitně vypadat například takto:  
@@ -174,7 +174,7 @@ A2
  <xref:System.Attribute>  
  <xref:System.Reflection>  
  [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)  
- [Atributy](../../../../../docs/standard/attributes/index.md)  
+ [Atributy](../../../../standard/attributes/index.md)  
  [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
  [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
  [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)  

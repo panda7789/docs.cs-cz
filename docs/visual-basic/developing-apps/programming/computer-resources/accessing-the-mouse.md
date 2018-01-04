@@ -14,11 +14,11 @@ ms.assetid: 6d31a3d2-d860-459d-9d13-3aa192d62ba2
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c4d46bbd3e432e2551c60f9e2996cadeda39c8d7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: e36652e50a9708ef523babde9372702dfcc3829c
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accessing-the-mouse-visual-basic"></a>Přístup k myši (Visual Basic)
 `My.Computer.Mouse` Objekt poskytuje způsob, jak najít informace o myši počítače, například pokud myši existuje, počet tlačítka myši a podrobnosti o kolečko myši.  
@@ -28,9 +28,9 @@ ms.lasthandoff: 10/22/2017
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Určuje, jestli má myši kolečko.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists%2A>|  
-|Určení, zda byla prohodily tlačítka vlevo a vpravo myši|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped%2A>|  
-|Nastavte posunu otočený jeden stupeň po kolečko myši.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines%2A>|  
+|Určuje, jestli má myši kolečko.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists>|  
+|Určení, zda byla prohodily tlačítka vlevo a vpravo myši|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped>|  
+|Nastavte posunu otočený jeden stupeň po kolečko myši.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines>|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Devices.Mouse>

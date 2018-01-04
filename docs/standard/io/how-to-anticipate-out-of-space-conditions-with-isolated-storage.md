@@ -32,11 +32,14 @@ caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d813522d0aeb9bf37582c167760d44268df27039
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e04b4b85b9a14e842c94226017fcd903ad1cbb40
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště
 Kód, který používá izolované úložiště je omezen [kvóty](../../../docs/standard/io/isolated-storage.md#quotas) , určuje maximální velikost datového oddílu, ve kterém izolované úložiště souborů a adresářů neexistuje. Kvóta je definován pomocí zásad zabezpečení a konfigurovat správci. Pokud maximální povolená velikost je překročena při pokusu o zápis dat, <xref:System.IO.IsolatedStorage.IsolatedStorageException> je vyvolána výjimka, a operace se nezdaří. To pomáhá zabránit nebezpečné útoky odmítnutí služby, které by mohly způsobit aplikace odmítala požadavků z důvodu zaplnění datového úložiště.  
@@ -54,5 +57,5 @@ Kód, který používá izolované úložiště je omezen [kvóty](../../../docs
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
- [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)  
- [Postupy: získávání úložišť pro izolované úložiště](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)
+ [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
+ [Postupy: Získávání úložišť pro izolované úložiště](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)

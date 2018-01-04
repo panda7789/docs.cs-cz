@@ -15,11 +15,11 @@ ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6118ca5f73a0d446842c33859e0623032082bcd8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d804ce75929592675068fdc434a1ba7429fa5373
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctype-function-visual-basic"></a>CType – funkce (Visual Basic)
 Vrátí výsledek převodu explicitně výraz zadaný datový typ, objekt, struktura, třídu nebo rozhraní.  
@@ -71,6 +71,6 @@ CType(expression, typename)
  <xref:System.InvalidCastException>  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Převodní funkce](../../../visual-basic/language-reference/functions/conversion-functions.md)  
- [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Postupy: definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
- [Převod typů v rozhraní .NET Framework](http://msdn.microsoft.com/library/ba36154f-064c-47d3-9f05-72f93a7ca96d)
+ [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
+ [Převod typů v rozhraní .NET Framework](../../../standard/base-types/type-conversion.md)

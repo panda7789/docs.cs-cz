@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 11/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: ce0f1d608eed909a7707f3c580afc5253f3eef06
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9fd09ad4e9ff36e8ab2478ff3e1d5226974a4d17
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>Navrhování vrstvu trvalosti infrastruktury
 
@@ -36,7 +39,7 @@ Jak jsme uvedli dříve, pokud používáte CQS/CQRS architekturní vzor, proved
 
 Pokud uživatel provede změny, aktualizace dat bude pocházet z klienta aplikace nebo prezentační vrstvy do vrstvy aplikace (například webového rozhraní API služby). Jakmile se zobrazí příkaz (s daty) v obslužná rutina příkazu, použijete úložiště získat data, která chcete aktualizovat z databáze. Aktualizujete v paměti s informacemi o byla dokončena s příkazy, a pak přidáte nebo aktualizujete data (domény entity) v databázi pomocí transakce.
 
-Jsme musí zdůraznil znovu, jenom jeden úložiště by měl být definovaná pro kořenovém adresáři každého agregační, jak je znázorněno v obrázek 9-17. K dosažení cíle agregační kořenové zachování transakční konzistence mezi všechny objekty v rámci agregace, měli byste nikdy vytvořit úložiště pro každou tabulku v databázi.
+Pamatovat na to, že pouze jeden úložiště by měl být definován pro každý agregační kořenový adresář, jak je znázorněno v obrázek 9-17. K dosažení cíle agregační kořenové zachování transakční konzistence mezi všechny objekty v rámci agregace, měli byste nikdy vytvořit úložiště pro každou tabulku v databázi.
 
 ![](./media/image18.png)
 
@@ -83,13 +86,13 @@ Z hlediska oddělené oblasti zájmu pro testy logika funguje na domény entity 
 
 ### <a name="the-difference-between-the-repository-pattern-and-the-legacy-data-access-class-dal-class-pattern"></a>Rozdíl mezi použitému vzoru a starší verze třídy (třídy DAL) vzor přístupu k datům
 
-Datový objekt přístup přímo provádí operace přístupu a trvalosti dat pro úložiště. Značky úložiště, které dat pomocí operace, které chcete provést v paměti jednotky práce objektu (jako EF při použití DbContext), ale tyto aktualizace nebude provedena okamžitě.
+Datový objekt přístup přímo provádí operace přístupu a trvalosti dat pro úložiště. Úložiště značky, které dat pomocí operace, které chcete provést v paměti jednotky práce objektu (jako EF při použití DbContext), ale tyto aktualizace se neprovádí okamžitě.
 
 Jednotka práce, se označuje jako jediná transakce, který zahrnuje několik vložení, aktualizaci nebo odstranění operace. Jednoduše řečeno znamená to, že pro akci konkrétního uživatele (například registrace na webu), insert, update a delete transakce jsou zpracovávány v rámci jedné transakce. Toto je efektivnější než zpracování více transakcí databáze chattier způsobem.
 
-Tyto více trvalost operace se provede později v rámci jedné akce při kódu z aplikační vrstvu příkazů ho. Rozhodnutí o provádění změn v paměti pro úložiště skutečná databáze obvykle závisí na [jednotky práce vzor](http://martinfowler.com/eaaCatalog/unitOfWork.html). V EF vzoru pracovní jednotky je implementovaný jako DBContext.
+Tyto více trvalost operací později v rámci jedné akce při kódu z aplikační vrstvu příkazů ho. Rozhodnutí o provádění změn v paměti pro úložiště skutečná databáze obvykle závisí na [jednotky práce vzor](http://martinfowler.com/eaaCatalog/unitOfWork.html). V EF vzoru pracovní jednotky je implementovaný jako DBContext.
 
-V řadě případů můžete tento vzor nebo způsob použití operace u úložiště zvýšit výkon aplikace a omezit možnost nekonzistence. Také zmenšuje transakce blokování v tabulkách databáze, protože všechny zamýšlené operace potvrzeny jako součást jedné transakce. Toto je efektivnější oproti provádění mnoho izolované operací v databázi. Vybrané ORM proto bude moct optimalizovat provádění proti dané databázi seskupením několik akcí aktualizace v rámci stejné transakci oproti spuštěních mnoho malých a samostatné transakce.
+V řadě případů můžete tento vzor nebo způsob použití operace u úložiště zvýšit výkon aplikace a omezit možnost nekonzistence. Také zmenšuje transakce blokování v tabulkách databáze, protože všechny zamýšlené operace potvrzeny jako součást jedné transakce. Toto je efektivnější oproti provádění mnoho izolované operací v databázi. Vybrané ORM tedy moci optimalizovat provádění proti dané databázi seskupením několik akcí aktualizace v rámci stejné transakci oproti spuštěních mnoho malých a samostatné transakce.
 
 ### <a name="repositories-should-not-be-mandatory"></a>Úložiště by neměl být povinné
 
@@ -101,9 +104,39 @@ Toto budete pravděpodobně Moje největších zpětnou vazbu. Nejsem skutečně
 
 Jsme užitečné úložiště, ale nemůžeme na vědomí, že nejsou důležité pro vaši DDD, způsobem, jakým jsou agregační vzor a modelu bohaté domény. Proto použití vzoru úložiště, nebo Ne, jak můžete vidět odpovídat.
 
-#### <a name="additional-resources"></a>Další zdroje
+## <a name="the-specification-pattern"></a>Specifikace vzor
 
-##### <a name="the-repository-pattern"></a>Vzor úložiště
+Vzor specifikace (plným názvem být specifikaci dotazu vzor) je vzor návrhu Domain-Driven určená jako místo, kde můžete ukládat definici dotazu s volitelné, řazení a stránkování logiku.
+
+Vzor specifikace definuje dotazu v objektu. Chcete-li zapouzdření stránkové dotaz, který hledá některé produkty, například můžete vytvořit specifikaci PagedProduct, která se mají potřebné vstupní parametry (pageNumber pageSize, filtr, atd.). Poté v libovolné metody úložiště (obvykle přetížení List()) by přijmout ISpecification a spusťte očekávané dotaz založený na této specifikaci.
+
+Existuje několik výhod tohoto přístupu:
+
+* Specifikace má název (na rozdíl od právě bunch LINQ – výrazy), který lze diskutovat o o.
+
+* Specifikace může být jednotka otestována izolace Ujistěte se, že je správný. Můžete se také snadno znovu, pokud potřebujete podobné chování. Například na akci zobrazení MVC a akce webového rozhraní API a také různé služby.
+
+* Specifikaci lze také použít k popisu tvaru data, která mají být vráceny, tak, aby dotazy mohou vracet pouze data, se vyžaduje. Tím se eliminuje potřeba opožděného načítání webových aplikací, (což je obvykle není vhodné) a pomáhá udržovat implementace úložiště z stal zaplněny, tyto podrobnosti.
+
+Následující kód je například obecné specifikace rozhraní [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb ).
+
+```csharp
+// https://github.com/dotnet-architecture/eShopOnWeb 
+public interface ISpecification<T>
+{
+    Expression<Func<T, bool>> Criteria { get; }
+    List<Expression<Func<T, object>>> Includes { get; }
+    List<string> IncludeStrings { get; }
+}
+```
+
+V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace s Entity Framework Core 2.0 a způsobu jeho použití z libovolné třídy úložiště.
+
+**Důležité upozornění:** specifikace vzor je starý vzor, který můžou se implementovat v mnoha různými způsoby, stejně jako v následujících zdrojích. Jako vzor nebo nápad jsou dobré vědět, ale pozor starší implementací, které nejsou využívat výhod moderní jazyk funkcí, jako Linq a výrazy starší přístupy.
+
+## <a name="additional-resources"></a>Další zdroje
+
+### <a name="the-repository-pattern"></a>Vzor úložiště
 
 -   **EDWARD Hieatt a Rob mi. Vzor úložiště. ** 
      [ *http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
@@ -116,7 +149,7 @@ Jsme užitečné úložiště, ale nemůžeme na vědomí, že nejsou důležit�
 
 -   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru.** (Sešit; zahrnuje diskuzi o vzoru úložiště) [ *https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
-##### <a name="unit-of-work-pattern"></a>Jednotka práce vzor
+### <a name="unit-of-work-pattern"></a>Jednotka práce vzor
 
 -   **Martin Fowler. Jednotka práce vzor. ** 
      [ *http://martinfowler.com/eaaCatalog/unitOfWork.html*](http://martinfowler.com/eaaCatalog/unitOfWork.html)
@@ -126,6 +159,15 @@ Jsme užitečné úložiště, ale nemůžeme na vědomí, že nejsou důležit�
 -   **Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC**
     [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/ Implementing-the-Repository-and-Unit-of-work-Patterns-in-an-ASP-NET-MVC-Application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
+### <a name="the-specification-pattern"></a>Specifikace vzor
+
+-   **Specifikace vzor. ** 
+     [ *http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
+
+-   **Zařízení Evans Erica (2004). Doména řízené návrhu. Addison-Wesley. p. 224.**
+
+-   **Specifikace. Martin Fowler**
+    [*https://www.martinfowler.com/apsupp/spec.pdf/*](https://www.martinfowler.com/apsupp/spec.pdf)
 
 >[!div class="step-by-step"]
 [Předchozí] (domény události návrhu implementation.md) [Další] (infrastructure-persistence-layer-implemenation-entity-framework-core.md)

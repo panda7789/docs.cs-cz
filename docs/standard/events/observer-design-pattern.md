@@ -22,11 +22,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 83663a28ac7ae19848552583f2ec39a5e96c7fdc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1650365946797e4c352421d0196b3b0e17913456
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="observer-design-pattern"></a>Návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Je vhodná pro každý scénář, který vyžaduje nabízená oznámení. Definuje vzoru *zprostředkovatele* (také označované jako *subjektu* nebo *lze zobrazit*) a nula, jednu nebo více *pozorovatelů*. Pozorovatelů zaregistrovat u zprostředkovatele a vždy, když předdefinovanou podmínku, události nebo změna stavu dojde, zprostředkovatel automaticky oznámí všechny pozorovatelů pomocí volání jeden své metody. Při volání této metody zprostředkovatele můžete také poskytnout aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, je použít návrhový vzor pozorovatel implementací obecná <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  
@@ -99,6 +102,6 @@ Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat o
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Pozorovatel osvědčené postupy pro návrhový vzor](../../../docs/standard/events/observer-design-pattern-best-practices.md)|Popisuje osvědčené postupy při vývoji aplikace, které implementují návrhový vzor pozorovatel přijmout.|  
-|[Postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)|Poskytuje podrobné implementaci zprostředkovatele pro teplotě monitorování aplikace.|  
-|[Postupy: implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)|Poskytuje podrobné implementace pozorovatele pro teplotě monitorování aplikace.|
+|[Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)|Popisuje osvědčené postupy při vývoji aplikace, které implementují návrhový vzor pozorovatel přijmout.|  
+|[Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)|Poskytuje podrobné implementaci zprostředkovatele pro teplotě monitorování aplikace.|  
+|[Postupy: Implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)|Poskytuje podrobné implementace pozorovatele pro teplotě monitorování aplikace.|

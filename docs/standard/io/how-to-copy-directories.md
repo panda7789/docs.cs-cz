@@ -22,11 +22,14 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a5602a4e227f3cd17e4a7c9a086bee69d3e3e506
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 43e9027c1dbfc831f598991374c22434e01fe7ff
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-copy-directories"></a>Postupy: Kopírování adresářů
 Tento příklad znázorňuje, jakým způsobem lze pomocí vstupně-výstupních tříd synchronně zkopírovat obsah adresáře do jiného umístění. V tomto příkladu může uživatel zadat, zda se mají kopírovat také podadresáře. Při kopírování podadresářů kopíruje metoda uvedená v tomto příkladu rekurzivně podadresáře voláním sebe sama pro jednotlivé následné podadresáře, jsou-li k dispozici.  
@@ -41,6 +44,6 @@ Tento příklad znázorňuje, jakým způsobem lze pomocí vstupně-výstupních
  <xref:System.IO.FileInfo>  
  <xref:System.IO.DirectoryInfo>  
  <xref:System.IO.FileStream>  
- [Vstupně-výstupních souborů a proudů](../../../docs/standard/io/index.md)  
- [Běžné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)  
- [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)
+ [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
+ [Obecné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)  
+ [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)

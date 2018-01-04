@@ -20,11 +20,11 @@ ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
 caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 975a86e33eb5744f94cd58efb227bf52eb07c1e8
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 33e34c63988e74be2c22cb7b1358f5e8b04048c6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
 Částečné metody umožňují vývojářům vložení vlastní logiky do kódu. Kód je obvykle součástí návrháře generované třídy. Částečné metody jsou definovány v konkrétní třídu, který byl vytvořený generátor kódu a běžně se používají k poskytování oznámení, že něco došlo ke změnám. Umožňují vývojáři určit vlastní chování v reakci na změny.  
@@ -79,9 +79,9 @@ End Sub
  `Quantity was changed to 100`  
   
 ## <a name="see-also"></a>Viz také  
- [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Sub – procedury](./sub-procedures.md)  
- [Volitelné parametry](./optional-parameters.md)  
- [Částečné](../../../../visual-basic/language-reference/modifiers/partial.md)  
- [Generování kódu v technologii LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
- [Přidání obchodní logiky pomocí částečné metody](../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)
+ [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Procedury Sub](./sub-procedures.md)  
+ [Nepovinné parametry](./optional-parameters.md)  
+ [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
+ [Generování kódu v LINQ to SQL](../../../../framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [Přidání obchodní logiky pomocí částečných metod](../../../../framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)

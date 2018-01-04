@@ -16,11 +16,14 @@ caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6e6f23c413bbefe6a29746e2f6a1887a23dd3bfa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fe09b2fa156575c7843f8b32bf758c44086b5ca8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
 Pomocí obecné kolekce je obecně nedoporučuje, protože získáte okamžitý výhodou bezpečnost typů bez nutnosti odvozovat od typu základní kolekce a implementace konkrétní typ členů. Obecné typy kolekcí také obecně poskytují lepší výkon než odpovídající typy neobecné kolekcí (a lépe než typy, které jsou odvozeny od neobecné základní kolekci typů) při elementy z kolekce jsou typy hodnot, protože s obecnými typy není potřeba pole elementy.  

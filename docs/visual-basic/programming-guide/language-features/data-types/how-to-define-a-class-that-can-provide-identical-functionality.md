@@ -35,11 +35,11 @@ ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
 caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c81d1f795b0c27f2eaf07832f2c1276b626f5ce1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c8594a23391793e1be3d969f7eacc199cbc6caa9
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy (Visual Basic).
 Můžete definice třídy, ze kterého můžete vytvořit objekty, které poskytují identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo několik *parametry typu* v definici. Třída může pak sloužit jako šablona pro objekty, které používají různé datové typy. Třídy definované tímto způsobem se nazývá *– obecná třída*.  
@@ -85,8 +85,8 @@ Můžete definice třídy, ze kterého můžete vytvořit objekty, které poskyt
 ## <a name="see-also"></a>Viz také  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
  [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../../docs/standard/language-independence-and-language-independent-components.md)  
+ [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)  
  [Z](../../../../visual-basic/language-reference/statements/of-clause.md)  
  [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)  
- [Postupy: použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+ [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

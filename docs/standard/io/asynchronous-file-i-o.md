@@ -27,11 +27,14 @@ caps.latest.revision: "23"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d8a461d79ecdcadc3f880f6a813918cf891abd45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ff9ae65e47a35f4acfade1d06c703f9e1f5f6bee
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="asynchronous-file-io"></a>Asynchronní I/O soubory
 Asynchronní operace umožňují provádět vstupně-výstupní operace náročné na prostředky bez blokování hlavního vlákna. Toto posouzení výkonu je důležité především v případě aplikací pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] nebo [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)], kde časově náročná operace může zablokovat vlákno uživatelského rozhraní a aplikace se pak jeví jako nefunkční.  
@@ -67,5 +70,5 @@ Asynchronní operace umožňují provádět vstupně-výstupní operace náročn
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO.Stream>  
- [Vstupně-výstupních souborů a proudů](../../../docs/standard/io/index.md)  
+ [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
  [Asynchronní programování pomocí modifikátoru Async a operátoru Await](http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)

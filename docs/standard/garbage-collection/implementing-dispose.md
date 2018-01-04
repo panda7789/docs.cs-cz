@@ -19,11 +19,14 @@ caps.latest.revision: "44"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b5a304c48a953b172cbcc3aa1c717a660298d36a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 90edda252c33b6f07c795b8db1a0edaf1a688445
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -176,4 +179,4 @@ Následující příklad ilustruje vzoru dispose pro třídu odvozenou `Disposab
 <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>   
 <xref:System.Object.Finalize%2A?displayProperty=nameWithType>   
 [Postupy: definování a používání tříd a struktur (C + +/ CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli)   
-[Dispose – vzor](../../../docs/standard/design-guidelines/dispose-pattern.md)
+[Vzor pro metodu Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md)

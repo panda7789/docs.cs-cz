@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 21493e0e0c9e42cf5efc42d86c8f126fbae9b392
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b6c68ddd29b8221a073b00ade87e3b9d3dc870b8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Protože na webové stránce lze zobrazit kdekoliv na světě, analyzovat a formátuje hodnoty data a času operací neměli spoléhat na výchozí formát (což je nejčastěji formát jazykové verze místní webový server) při interakci s uživatelem. Místo toho by měla webových formulářů, které zpracovávají datum a čas uživatelský vstup řetězce analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času, které má být zobrazena uživateli ve formátu, který vyhovuje jazykovou verzi uživatele. Toto téma ukazuje, jak to udělat.  
@@ -117,6 +120,6 @@ Protože na webové stránce lze zobrazit kdekoliv na světě, analyzovat a form
   
 ## <a name="see-also"></a>Viz také  
  [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)  
- [Řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
- [Řetězce formátu vlastní hodnota data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
+ [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
+ [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
  [Analýza řetězců data a času](../../../docs/standard/base-types/parsing-datetime.md)

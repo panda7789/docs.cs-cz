@@ -13,14 +13,14 @@ ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d03e12ae60b9a0145dcb58765ae00f756f84ca56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5d35a91805f6189f60803056c541ce8344c024f0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="platform-c-compiler-options"></a>/platform (Možnosti kompilátoru C#)
-Určuje, která verze common language runtime (CLR) můžete spustit sestavení.  
+Určuje, jaká verze Common Language Runtime (CLR) můžete spustit sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,11 +40,11 @@ Určuje, která verze common language runtime (CLR) můžete spustit sestavení.
   
 -   **ARM** zkompiluje vaše sestavení pro spuštění v počítači, který má procesor Advanced RISC Machine (ARM).  
   
--   **x64** zkompiluje vaše sestavení pro modul common language runtime 64-bit spustit na počítači, který podporuje AMD64 nebo EM64T sada instrukcí.  
+-   **x64** zkompiluje vaše sestavení pro 64bitové verze CLR spustit na počítači, který podporuje AMD64 nebo EM64T sada instrukcí.  
   
 -   **x86** zkompiluje vaše sestavení ke spuštění x86 kompatibilní, 32bitová verze modulu CLR.  
   
--   **Itanium** zkompiluje vaše sestavení, které se má spustit modul common language runtime 64-bit do počítače s procesorem Itanium.  
+-   **Itanium** zkompiluje vaše sestavení pro 64bitové verze CLR spustit na počítači s procesorem Itanium.  
   
  64bitová verze operačního systému Windows:  
   
@@ -80,5 +80,5 @@ csc /platform:anycpu filename.cs
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](index.md)  
+ [Možnosti kompilátoru jazyka C#](index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

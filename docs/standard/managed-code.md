@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 8649402e614f07a611947302d14e05108e1cc171
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ca2ae076229a1726d3a25a84e358f9cfb623a297
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="what-is-managed-code"></a>Co je "spravovaný kód"?
 
@@ -43,5 +46,5 @@ Podobně jako tento, C# je jeden jazyk, který umožňuje používat nespravovan
 ## <a name="more-resources"></a>Další prostředky
 
 *   [Koncepční přehled rozhraní .NET framework](https://msdn.microsoft.com/library/zw4w595w.aspx)
-*   [Nezabezpečený kód a ukazatele](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
+*   [Nebezpečný kód a ukazatele](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
 *   [Interoperabilita (Průvodce programováním C#)](https://msdn.microsoft.com/library/ms173184.aspx)

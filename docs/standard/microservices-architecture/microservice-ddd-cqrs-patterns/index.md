@@ -8,11 +8,14 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: be2d8a2fd77d65b82574efde3b9922a1176ad2f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 45f29a8d19e49685f864b7ca83e466ceb1f73a62
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
 
@@ -73,4 +76,4 @@ DDD školení
 
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / multi-container-microservice-net-applications/test-aspnet-core-services-web-apps.md) [Další] (apply-simplified-microservice-cqrs-ddd-patterns.md)
+[Předchozí] (.. / multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md) [Další] (apply-simplified-microservice-cqrs-ddd-patterns.md)

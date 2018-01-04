@@ -18,11 +18,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 651fb2ca3a3ea81a8a4e894c5f6a71bcf9ac3a50
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 34f20e45c9e4c1a165c31208220e6bae9a77b7c1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-deserialize-an-object"></a>Postupy: deserializaci objektu
 Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt datového proudu nebo souboru. Po formát přenosu je určen, můžete volat <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> nebo <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metod, podle potřeby.  
@@ -62,4 +65,4 @@ Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt da
   
 ## <a name="see-also"></a>Viz také  
  [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [Postupy: serializaci objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+ [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)

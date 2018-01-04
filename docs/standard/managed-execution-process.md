@@ -20,11 +20,14 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a47761acfabd3de77d65483d50fbe7a77f96e076
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 702ed3e73117fe01769ec9d7bf939ae8df523793
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a>Proces spravovaného spouštění zahrnuje následující kroky, které jsou podrobněji vrátíme dál v tomto tématu:  
@@ -118,9 +121,9 @@ ms.lasthandoff: 11/21/2017
  [Přehled](../../docs/framework/get-started/overview.md)  
  [Jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md)  
  [Metadata a komponenty popisující samy sebe](../../docs/standard/metadata-and-self-describing-components.md)  
- [Ilasm.exe (IL assembleru)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
+ [Ilasm.exe (IL Assembler)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
  [Zabezpečení](../../docs/standard/security/index.md)  
  [Spolupráce s nespravovaným kódem](../../docs/framework/interop/index.md)  
  [Nasazení](../../docs/framework/deployment/net-framework-applications.md)  
- [Sestavení v modulu Common Language Runtime](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Aplikační domény](../../docs/framework/app-domains/application-domains.md)

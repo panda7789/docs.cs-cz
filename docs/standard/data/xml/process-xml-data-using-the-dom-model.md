@@ -13,11 +13,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 06c8b2e130dbecaca4c08684d030c8dcef1cd5a7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: de7ca0ff08ae7183f92fd7caa1bfe977e01e616d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Zpracování dat XML pomocí modelu DOM
 XML modelu DOM (Document Object) zpracovává XML data jako standardní sadu objektů a slouží k procesu data XML v paměti. `System.Xml` Obor názvů obsahuje programový reprezentace XML dokumenty, fragmenty, uzly nebo sad uzlů. Je založena na základní úroveň 1 DOM World Wide Web Consortium (W3C) a doporučení DOM úroveň 2 jádra.  
@@ -26,13 +29,13 @@ XML modelu DOM (Document Object) zpracovává XML data jako standardní sadu obj
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)  
+-   [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)  
   
 -   [Typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md)  
   
--   [Hierarchie modelu (DOM) objekt dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md)  
+-   [Hierarchie modelu DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md)  
   
--   [Mapování hierarchie objektů na XML Data](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)  
+-   [Mapování hierarchie objektů na data XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)  
   
 -   [Vytváření dokumentů XML](../../../../docs/standard/data/xml/xml-document-creation.md)  
   
@@ -40,30 +43,30 @@ XML modelu DOM (Document Object) zpracovává XML data jako standardní sadu obj
   
 -   [Vkládání uzlů do dokumentu XML](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md)  
   
--   [Odebírání uzlů, obsah a hodnoty z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md)  
+-   [Odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md)  
   
--   [Úprava uzlů, obsah a hodnoty v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md)  
+-   [Úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md)  
   
 -   [Ověřování dokumentu XML v modelu DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
   
 -   [Ukládání a zápis dokumentu](../../../../docs/standard/data/xml/saving-and-writing-a-document.md)  
   
--   [Vyberte uzel pomocí jazyka XPath navigace](../../../../docs/standard/data/xml/select-nodes-using-xpath-navigation.md)  
+-   [Výběr uzlů pomocí navigace XPath](../../../../docs/standard/data/xml/select-nodes-using-xpath-navigation.md)  
   
--   [Řešení externí zdroje](../../../../docs/standard/data/xml/resolving-external-resources.md)  
+-   [Překlad externích prostředků](../../../../docs/standard/data/xml/resolving-external-resources.md)  
   
--   [Objekt porovnání pomocí XmlNameTable](../../../../docs/standard/data/xml/object-comparison-using-xmlnametable.md)  
+-   [Porovnání objektů pomocí XmlNameTable](../../../../docs/standard/data/xml/object-comparison-using-xmlnametable.md)  
   
--   [Uzel kolekce v NamedNodeMaps a NodeLists](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md)  
+-   [Kolekce uzlů v NamedNodeMaps a NodeLists](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md)  
   
--   [Dynamické aktualizace NodeLists a NamedNodeMaps](../../../../docs/standard/data/xml/dynamic-updates-to-nodelists-and-namednodemaps.md)  
+-   [Dynamické aktualizace pro NodeLists a NamedNodeMaps](../../../../docs/standard/data/xml/dynamic-updates-to-nodelists-and-namednodemaps.md)  
   
--   [Podpora Namespace v modelu DOM](../../../../docs/standard/data/xml/namespace-support-in-the-dom.md)  
+-   [Podpora oboru názvů v modelu DOM](../../../../docs/standard/data/xml/namespace-support-in-the-dom.md)  
   
 -   [Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs](../../../../docs/standard/data/xml/event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md)  
   
 -   [Rozšíření modelu DOM](../../../../docs/standard/data/xml/extending-the-dom.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Zpracování kódu XML dat pomocí jazyka XPath datový Model](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
  Popisuje použití zpracování XML <xref:System.Xml.XPath.XPathNavigator> třídy.

@@ -12,11 +12,14 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ccf1c585a171f2842084c1fdce639e479ce5ca8d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cb4391e0f78534146ee253f88ad2ae94aa1a11f8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="selective-serialization"></a>Selektivní serializace
 Třída často obsahuje pole, která nesmí být serializován. Můžete například předpokládat, že třída uchovává ID vlákna v členské proměnné. Pokud je třída deserializovat, vlákno uložené ID pro když byl serializován třída můžou už běžet; proto serializaci tato hodnota nemá smysl. Členské proměnné můžete zabránit jejich s označením serializována [NonSerialized](xref:System.NonSerializedAttribute) atribut následujícím způsobem.  
@@ -37,5 +40,5 @@ Přesvědčte se, pokud je to možné, objekt, který by mohl obsahovat nonseria
   
 ## <a name="see-also"></a>Viz také  
  [Binární serializace](binary-serialization.md)  
- [XML a serializace protokolu SOAP](xml-and-soap-serialization.md)  
+ [Serializace XML a SOAP](xml-and-soap-serialization.md)  
  [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

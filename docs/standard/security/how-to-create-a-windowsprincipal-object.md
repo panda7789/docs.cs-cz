@@ -21,11 +21,14 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f35c7382138c92a5f6618e388b070251516b7b0b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c4eb890696162af61f1355bfca50ce5dd2a615ad
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Postupy: Vytvoření objektu WindowsPrincipal
 Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPrincipal> objektu, v závislosti na tom, zda kód musí opakovaně provádět ověřování na základě rolí nebo musí provést pouze jednou.  
@@ -85,4 +88,4 @@ Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPri
 3.  Po vytvoření objektu zabezpečení, můžete některou z několika metod pro jeho ověření.  
   
 ## <a name="see-also"></a>Viz také  
- [Hlavní a objekty Identity](../../../docs/standard/security/principal-and-identity-objects.md)
+ [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)

@@ -18,11 +18,14 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 589bb8fc36d95a48930e4b51a096e7db18905397
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ab15fd38a467eec398f8383e40067d2135c042b5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="parallel-processing-and-concurrency-in-the-net-framework"></a>Paralelní zpracování a souběžnost v rozhraní .NET Framework
 Rozhraní .NET Framework poskytuje několik způsobů použití více vláken, která pokud chcete zachovat aplikace reaguje na uživatele při tím se maximalizuje výkon počítače uživatele.  

@@ -19,11 +19,11 @@ ms.assetid: e82ac1ad-2cd3-49b2-b985-8bcf016f3fcc
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d39b3d7cf5096e3b263938d32e017eae5708e042
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f3d4c9cd3310e0ec3943c4e2b5e28be5b9a393db
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="option-explicit-statement-visual-basic"></a>Option Explicit – příkaz (Visual Basic)
 Vynutí explicitní deklaraci všech proměnných v souboru nebo umožňuje implicitní deklarace proměnných.  
@@ -54,7 +54,7 @@ Option Explicit { On | Off }
   
 #### <a name="to-set-option-explicit-in-the-ide"></a>Chcete-li nastavit možnost explicitní v prostředí IDE  
   
-1.  V **Průzkumníku**, vyberte projektu. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  V **Průzkumníku**, vyberte projektu. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
 2.  Klikněte **zkompilovat** kartě.  
   
@@ -74,11 +74,11 @@ Option Explicit { On | Off }
  [!code-vb[VbVbalrStatements#48](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-explicit-statement_2.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
- [ReDim – příkaz](../../../visual-basic/language-reference/statements/redim-statement.md)  
- [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [/ optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)  
- [/ optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
- [/ optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)  
+ [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)  
+ [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
+ [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
  [Dialogové okno Možnosti výchozí hodnoty, projekty, Visual Basic](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

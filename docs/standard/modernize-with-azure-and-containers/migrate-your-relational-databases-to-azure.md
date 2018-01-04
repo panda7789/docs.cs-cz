@@ -4,11 +4,14 @@ description: "Modernizovat existující aplikace .NET s cloudu Azure a Windows k
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 2cd52bff0f4e812b3e701ff61eeb4526b98ec6fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 221d8c2b837fb738425e26f3af4da895e4987212
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do azure
 

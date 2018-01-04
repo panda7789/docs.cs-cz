@@ -19,11 +19,14 @@ caps.latest.revision: "24"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2602d431aada7b3e0ee226eed319903492022ae9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 23755f7b76e8cc050df8529852af9bf151472f72
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
 Soubor mapované paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi místo souboru a paměti umožňuje aplikaci, včetně více procesů, upravte soubor pro čtení a zápis přímo na paměť. Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], spravovaného kódu můžete použít pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce systému Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti v systému Win32](http://go.microsoft.com/fwlink/?linkid=180801).  

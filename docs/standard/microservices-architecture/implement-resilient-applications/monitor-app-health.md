@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: cbbad72f06bcaa882bc50083d9103b0872f51754
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 76821e27613335609527b867a6b94dac551f6235
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -24,7 +27,7 @@ V typické modelu služby odesílat zprávy o jejich stavu a zobrazují se tyto 
 
 ## <a name="implementing-health-checks-in-aspnet-core-services"></a>Implementace stavu změnami ASP.NET Core services
 
-Při vývoji aplikace ASP.NET Core mikroslužbu nebo webové aplikace, můžete použít knihovny s názvem HealthChecks od týmu ASP.NET. (Od může 2017 je dostupná na Githubu předběžnou verzi).
+Při vývoji aplikace ASP.NET Core mikroslužbu nebo webové aplikace, můžete použít knihovny s názvem `HealthChecks` od týmu ASP.NET. Předběžnou verzi je k dispozici v této [úložiště GitHub](https://github.com/dotnet-architecture/HealthChecks).
 
 Tato knihovna je snadno použitelný a poskytuje funkce, která umožňují, které jste ověřte, že žádné konkrétní externí prostředek pro vaši aplikaci (například databáze systému SQL Server nebo rozhraní API pro vzdálené) správně funguje. Při použití této knihovny, můžete také určit, co znamená, že je prostředek v pořádku, protože objasníme později.
 
@@ -34,7 +37,7 @@ Chcete-li použít tuto knihovnu, musíte nejprve použít knihovnu v vaší mik
 
 Uvidíte použití knihovny HealthChecks v eShopOnContainers ukázkovou aplikaci. Pokud chcete začít, musíte definovat, co se považuje za dobrý stav pro každý mikroslužby. V ukázkové aplikace jsou v pořádku, pokud mikroslužbu rozhraní API je přístupná prostřednictvím protokolu HTTP a jeho souvisejících databáze systému SQL Server je také k dispozici mikroslužeb.
 
-V budoucnu nebudete moct instalovat knihovně HealthChecks jako balíčku NuGet. Ale v době psaní tohoto textu, budete muset stáhnout a zkompilovat kód v rámci vašeho řešení. Zkopírujte kód, který je k dispozici na https://github.com/aspnet/HealthChecks a zkopírujte následující složky pro vaše řešení.
+V budoucnu nebudete moct instalovat knihovně HealthChecks jako balíčku NuGet. Ale v době psaní tohoto textu, budete muset stáhnout a zkompilovat kód v rámci vašeho řešení. Zkopírujte kód, který je k dispozici na https://github.com/dotnet-architecture/HealthChecks a zkopírujte do řešení pro následující složky:
 
   - src/společné
   - src/Microsoft.AspNetCore.HealthChecks

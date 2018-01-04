@@ -10,11 +10,11 @@ ms.assetid: eec43ae3-05d8-45a1-8d41-3803c6359dbe
 caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 02f98cce74f99d8a00bc916b38e5c290045926a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f17cb86c3ea0ea056291a51becd7ecf9f73d0a73
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-a-masterdetail-form-by-using-two-datarepeater-controls-visual-studio"></a>Postupy: Vytvoření hlavního a podrobného formuláře pomocí dvou ovládacích prvků DataRepeater (Visual Studio)
 Související data můžete zobrazit pomocí dvou nebo více <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládací prvky pro vytvoření hlavního a podrobného formuláře. Například můžete chtít zobrazit seznam zákazníků v jednom <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>a když uživatel vybere zákazníka, zobrazí se seznam objednávek tohoto zákazníka za sekundu <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>.  
@@ -49,7 +49,7 @@ Související data můžete zobrazit pomocí dvou nebo více <xref:Microsoft.Vis
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  
  [Úvod do ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
- [Postupy: zobrazení vázaných dat v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)  
- [Postupy: zobrazení souvisejících dat v systému Windows Forms aplikace](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd)  
+ [Postupy: Zobrazení vázaných dat v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)  
+ [Postupy: zobrazení souvisejících dat v systému Windows Forms aplikace](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio)  
  [Postupy: Změna vzhledu ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)  
- [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)
+ [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)

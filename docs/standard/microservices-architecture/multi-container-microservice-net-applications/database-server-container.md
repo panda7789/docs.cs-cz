@@ -4,15 +4,18 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 10/30/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 7e5f33c4e7edf9d0d4551c5125976fcb8fda392f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 70dd3686519fc38ae35910284948ccf95e743ef7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Pomocí databázový server, který je spuštěn jako kontejner
 
@@ -25,16 +28,17 @@ V eShopOnContainers, je kontejner s názvem sql.data definované v [docker-compo
 Kontejner v ukázkové aplikace, které lze nastavit následující kód YAML v docker-compose.yml souboru, který se spustí při spuštění systému SQL Server docker vytvořit zálohu. Všimněte si, že má kód YAML konsolidovat informace o konfiguraci ze souboru obecného docker-compose.yml a soubor docker-compose.override.yml. (By obvykle jednotlivé nastavení prostředí základní nebo statické informace související s bitovou kopii systému SQL Server.)
 
 ```yml
-sql.data:
-  image: microsoft/mssql-server-linux
-  environment:
-    - SA_PASSWORD=your@password
-    - ACCEPT_EULA=Y
-  ports:
-    - "5434:1433"
+  sql.data:
+    image: microsoft/mssql-server-linux
+    environment:
+      - MSSQL_SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Developer
+    ports:
+      - "5434:1433"
 ```
 
-Následující docker, spusťte příkaz můžete spustit tento kontejner:
+Podobným způsobem, nepoužívejte `docker-compose`, následující `docker run` příkaz můžete spustit tento kontejner:
 
 ```
   docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD= your@password' -p 1433:1433 -d microsoft/mssql-server-linux

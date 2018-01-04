@@ -4,23 +4,28 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 88decdc2f2ea945dc04cdb66402b12bd972414ce
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4b190ee9dde5628bf16fe9c483d3636539c29361
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-enumeration-classes-instead-of-enum-types"></a>Pomocí třídy výčtu místo typy výčtu
 
-[Výčty](../../../../docs/csharp/language-reference/keywords/enum.md) (*výčty* pro zkrácení) jsou dynamické jazyk obálku kolem integrální typu. Můžete chtít omezit jejich použití k když ukládáte jednu hodnotu z uzavřených sadu hodnot. Klasifikace podle pohlaví (například mužského, samičího neznámé), nebo velikosti (S, M, L, XL) jsou dobrými příklady. Pomocí výčty pro tok řízení nebo robustnější abstrakce může být [code pach](http://deviq.com/code-smells/). Tento typ využití povede k křehké kód s mnoha příkazy toku řízení kontrola hodnoty výčtového typu.
+[Výčty](../../../../docs/csharp/language-reference/keywords/enum.md) (nebo *typy výčtu* pro zkrácení) jsou dynamické jazyk obálku kolem integrální typu. Můžete chtít omezit jejich použití k když ukládáte jednu hodnotu z uzavřených sadu hodnot. Klasifikace podle pohlaví (například mužského, samičího neznámý) nebo velikosti (malé, střední, velký) jsou dobrými příklady. Pomocí výčty pro tok řízení nebo robustnější abstrakce může být [code pach](http://deviq.com/code-smells/). Tento typ využití vede k křehké kód s mnoha příkazy toku řízení kontrola hodnoty výčtového typu.
 
-Místo toho můžete vytvořit výčet tříd, které povolit všechny bohaté funkce jazyka objektově orientovaný. Ale nejedná se o kritický problém a v mnoha případech pro jednoduchost, stále můžete regulární výčty, pokud vaši volbu.
+Místo toho můžete vytvořit výčet tříd, které povolit všechny bohaté funkce jazyka objektově orientovaný.
 
-## <a name="implementing-enumeration-classes"></a>Implementace tříd – výčet
+Ale to není důležité téma a v mnoha případech pro jednoduchost, můžete pořád použít regular [typy výčtu](../../../../docs/csharp/language-reference/keywords/enum.md) , pokud vaši volbu.
+
+## <a name="implementing-an-enumeration-base-class"></a>Implementace základní třídu – výčet
 
 Řazení mikroslužbu v eShopOnContainers poskytuje implementaci základní třída výčtu ukázka, jak je znázorněno v následujícím příkladu:
 
@@ -83,7 +88,7 @@ public abstract class Enumeration : IComparable
 }
 ```
 
-Tuto třídu můžete použít jako typ v žádné entity nebo hodnota objektu jako následující třídy CardType výčtu.
+Tuto třídu můžete použít jako typ v žádné entity nebo hodnota objektu jako následující CardType výčet tříd:
 
 ```csharp
 public class CardType : Enumeration
@@ -98,7 +103,6 @@ public class CardType : Enumeration
         : base(id, name)
     {
     }
-
 
     public static IEnumerable<CardType> List()
     {

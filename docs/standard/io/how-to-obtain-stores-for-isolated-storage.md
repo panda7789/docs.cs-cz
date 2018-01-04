@@ -23,11 +23,14 @@ caps.latest.revision: "19"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bb0b877aa0f4cee36bd1f8c1cea624cf9368fbaa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 61f183398c3f8c93ead965036e1edeb200dd8cb1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Postupy: Získávání úložišť pro izolované úložiště
 Izolované úložiště zpřístupní virtuálním souborovém systému v rámci datový prostor. <xref:System.IO.IsolatedStorage.IsolatedStorageFile> Třída poskytuje několik metod pro interakci s izolované úložiště. Vytvoření a načtení úložiště, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje tři statické metody:  
@@ -66,6 +69,6 @@ Izolované úložiště zpřístupní virtuálním souborovém systému v rámci
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
  <xref:System.IO.IsolatedStorage.IsolatedStorageScope>  
- [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)  
+ [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
  [Typy izolace](../../../docs/standard/io/types-of-isolation.md)  
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

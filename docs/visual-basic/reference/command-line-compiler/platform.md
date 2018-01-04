@@ -14,11 +14,11 @@ ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4177b9da15bb89f37a7b3cbb27937e09d1c12635
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 90e2a6a0f6a7b1eb3b919cca22ae8ce37a9c00bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platform-visual-basic"></a>/platform (Visual Basic)
 Určuje, která verze modul common language runtime (CLR) platforma můžete spustit výstupní soubor.  
@@ -71,13 +71,11 @@ Určuje, která verze modul common language runtime (CLR) platforma můžete spu
   
 -   Spustitelné soubory, které jsou kompilovat s `/platform:anycpu32bitpreferred` se spustí na 32bitová verze modulu CLR.  
   
- Další informace o tom, jak vyvíjet aplikaci spustit v 64bitové verzi systému Windows najdete v tématu [64bitové aplikace](../../../../docs/framework/64-bit-apps.md).  
+ Další informace o tom, jak vyvíjet aplikaci spustit v 64bitové verzi systému Windows najdete v tématu [64bitové aplikace](../../../framework/64-bit-apps.md).  
   
 ### <a name="to-set-platform-in-the-visual-studio-ide"></a>Chcete-li nastavit/Platform v integrovaném vývojovém prostředí sady Visual Studio  
   
 1.  V **Průzkumníku řešení**, zvolte projekt, otevřete **projektu** nabídce a pak klikněte na tlačítko **vlastnosti**.  
-  
-     Další informace najdete v tématu [NIB: Správa vlastností projektu s Návrhář projektu](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e).  
   
 2.  Na **zkompilovat** kartě, zaškrtněte nebo zrušte **raději 32bitové** zaškrtávací políčko, nebo v **cílový procesor** seznamu, vyberte hodnotu.  
   

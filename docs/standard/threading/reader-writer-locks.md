@@ -16,11 +16,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: df06e83165906199774f99de4140ace9b7396cbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d005442ee74b46a0ecb1eaafe214e7190330cfe7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reader-writer-locks"></a>Zámky modulů pro čtení a zápis
 <xref:System.Threading.ReaderWriterLockSlim> Třída umožňuje více vláken současně číst prostředek, ale vyžaduje vlákna počkat, aby bylo možné zapsat do prostředku výhradní zámek.  
@@ -38,4 +41,4 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Threading.ReaderWriterLockSlim>  
  <xref:System.Threading.ReaderWriterLock>  
  [Dělení na vlákna](../../../docs/standard/threading/index.md)  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

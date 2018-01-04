@@ -13,11 +13,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 00b923edb95852d9434db1b393df68fd9d0c8a1a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 72039faef3bcde4db830d110938266c63689219e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>Úprava uzlů, obsah a hodnoty v dokumentu XML
 Existuje mnoho způsobů můžete upravit uzly a obsah v dokumentu. Můžeš:  
@@ -54,4 +57,4 @@ Existuje mnoho způsobů můžete upravit uzly a obsah v dokumentu. Můžeš:
  Je možné přidat nebo odebrat podřízený jen pro čtení z uzlu, který lze upravovat. Však vyvolá pokusí změnit samotný uzel jen pro čtení <xref:System.InvalidOperationException>. Příkladem je úprava podřízené objekty daného <xref:System.Xml.XmlEntityReference> uzlu. Podřízené objekty jsou jen pro čtení a nelze jej změnit. Žádné pokusí změnit jejich vyvolává <xref:System.InvalidOperationException>.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

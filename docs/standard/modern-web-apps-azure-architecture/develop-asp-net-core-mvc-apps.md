@@ -6,11 +6,14 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 54e7ed6fff9ac709e411d0ac1e345c63fd753201
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c10bf66dd37f0d99c038db7f95999d84986152fa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací MVC ASP.NET Core
 
@@ -388,7 +391,7 @@ Většina webových rozhraní API by měla implementovat ověřování na zákla
 > https://docs.microsoft.com/ASPNET/Core/Security/
 > - **Vynucování SSL v aplikaci ASP.NET Core**  
 > <https://docs.microsoft.com/ASPNET/Core/Security/enforcing-SSL>
-> - **Úvod do Identity**  
+> - **Úvod do systému Identity**  
 > <https://docs.microsoft.com/ASPNET/Core/Security/Authentication/identity>
 > - **Úvod do autorizace**  
 > <https://docs.microsoft.com/ASPNET/Core/Security/Authorization/Introduction>

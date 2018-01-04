@@ -18,11 +18,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a1d69c1b943d15b9ad8c80b4d7dbafebc54990ab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2804d0c60657623b558d86386c5e1043422b648c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="mutexes"></a>Mutex – třídy
 Můžete použít <xref:System.Threading.Mutex> objekt zajistit výhradní přístup k prostředku. <xref:System.Threading.Mutex> Třída používá více systémových prostředků, než <xref:System.Threading.Monitor> třídy, ale může být zařazeno napříč hranicemi domény aplikace, dá použít s více počká a může sloužit k synchronizaci vláken v jiné procesy. Porovnání mechanismů spravované synchronizace najdete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
@@ -62,6 +65,6 @@ Můžete použít <xref:System.Threading.Mutex> objekt zajistit výhradní pří
  <xref:System.Security.AccessControl.MutexSecurity>  
  <xref:System.Security.AccessControl.MutexAccessRule>  
  [Dělení na vlákna](../../../docs/standard/threading/index.md)  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
  [Monitorování](http://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
  [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)

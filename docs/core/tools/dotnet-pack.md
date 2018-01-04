@@ -7,11 +7,12 @@ ms.date: 12/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: ac1ff90cb97fa4802883e70b0abdf4e77b58dd65
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.workload: dotnetcore
+ms.openlocfilehash: 28cd05db0643097a7271fd0488354846598ba493
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-pack"></a>pack DotNet.
 

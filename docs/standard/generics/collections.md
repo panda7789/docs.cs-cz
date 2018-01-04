@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 94da20072f793e137b0b7545c1a658ed20537a7f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d7e7d11446c14cffbef1e5cade5f082874187636
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-collections-in-the-net-framework"></a>Generování kolekcí v architektuře .NET Framework
 Toto téma obsahuje přehled obecné třídy kolekcí a jiné obecné typy v rozhraní .NET Framework.  
@@ -62,5 +65,5 @@ Toto téma obsahuje přehled obecné třídy kolekcí a jiné obecné typy v roz
  <xref:System.Collections.Generic?displayProperty=nameWithType>  
  <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
  [Obecné typy](../../../docs/standard/generics/index.md)  
- [Obecní delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)  
+ [Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)  
  [Obecná rozhraní](../../../docs/standard/generics/interfaces.md)

@@ -13,11 +13,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3d2c8db03d494be13a93df06a359e4e4294c22a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9992efa209773a6e9f74050183260346f7f1f0ed
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>Zpracování kódu XML dat pomocí jazyka XPath datový Model
 <xref:System.Xml?displayProperty=nameWithType> Obor názvů poskytuje programovací reprezentace XML dokumenty, fragmenty, uzly nebo sad uzlů v paměti, pomocí <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> třídy.  
@@ -27,19 +30,19 @@ ms.lasthandoff: 11/21/2017
  Následující části popisují funkce <xref:System.Xml.XPath.XPathNavigator> třída založena na třídu, která vrátí ji.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Načítání dat XML pomocí XPathDocument a třídou XMLDocument nastavenou na](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [Načítání dat XML pomocí XPathDocument a XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
  Popisuje postup vytvoření jen pro čtení <xref:System.Xml.XPath.XPathDocument> třída objektu určeného ke čtení dokumentu XML a jak vytvořit upravitelné <xref:System.Xml.XmlDocument> objektu třídy číst a upravovat dokument XML. Toto téma také popisuje, jak návratový <xref:System.Xml.XPath.XPathNavigator> objekt z každé třídě přejděte a upravit dokument XML.  
   
- [Výběr, Evaluating a porovnávání dat XML pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
+ [Výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
  Popisuje metody <xref:System.Xml.XPath.XPathNavigator> třída používaná k vyberte uzly ve <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí dotaz XPath, hodnocení a podívejte se na výsledky výraz XPath a určit, jestli uzlu v dokumentu XML odpovídá dané XPath výraz.  
   
- [Přístup k datům XML pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [Přístup k datům XML pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
  Popisuje metody <xref:System.Xml.XPath.XPathNavigator> třída používaná přejděte uzly, extrahovat XML data a přístup k datům silného typu XML v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  
   
- [Úpravy pomocí objektem XPathNavigator nastaveným na Data XML](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
+ [Úpravy dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
  Popisuje metody <xref:System.Xml.XPath.XPathNavigator> třída používaná vložit, upravovat a odebírat uzly a hodnoty z dokumentu XML, který je součástí <xref:System.Xml.XmlDocument> objektu.  
   
- [Ověření schématu pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ [Ověření schématu pomocí XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
  Popisuje, jak ověřit obsah XML, které jsou součástí <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  
   
 ## <a name="see-also"></a>Viz také  

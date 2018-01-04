@@ -16,11 +16,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e1327ac2a3df7a84c157e4bf60d2ad63d69b1677
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b6870861541a063c56f83dcb286d21a5a970d1b1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="user-defined-functions-and-variables"></a>Uživatelem definované funkce a proměnné
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které se používají k interakci s <xref:System.Xml.XPath.XPathDocument> data. Standardní funkce jazyka XPath lze rozšířit implementací rozšíření funkce a proměnné pro použití ve výrazech dotazů XPath. <xref:System.Xml.XPath.XPathExpression.SetContext%2A> Metoda může přijmout odvozené z kontextu uživatelsky definované <xref:System.Xml.Xsl.XsltContext>. Uživatelem definované funkce se vyřeší kontext vlastní.  

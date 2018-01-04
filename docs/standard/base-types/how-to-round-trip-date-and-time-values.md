@@ -22,11 +22,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 515a29e279cfa8fc100e0612fc19df7abc6a3b36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 68667369e1c7541313a166a1066e1ad9d69b6b71
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
 V mnoha aplikacích hodnota data a času je určený pro jednoznačnou identifikaci jediný bod v čase. Toto téma ukazuje, jak k uložení a obnovení <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnota a datum a čas hodnotu s časem zónu informace tak, aby obnovená hodnota identifikuje ve stejnou dobu jako uložena hodnota.  
@@ -109,4 +112,4 @@ V mnoha aplikacích hodnota data a času je určený pro jednoznačnou identifik
 ## <a name="see-also"></a>Viz také  
  [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)  
  [Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)  
- [Řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+ [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)

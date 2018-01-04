@@ -7,11 +7,14 @@ ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.openlocfilehash: ce3368f4c34a8e4b20a7deb2a6c6e4d163927cd4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 08eeb08debdc2e71a85dbc18053bf1aac779069a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-architectural-components"></a>Součástí architektury .NET
 
@@ -87,10 +90,10 @@ Máte přístup k rozsáhlou sadu nástrojů a součásti infrastruktury, které
 
 ## <a name="see-also"></a>Viz také
 [Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace](choosing-core-framework-server.md)   
-[Standardní rozhraní .NET](net-standard.md)  
-[Příručka pro základní rozhraní .NET](../core/index.md)  
-[.NET framework – Průvodce](../framework/index.md)  
-[Průvodce v C#](../csharp/index.md)  
-[Průvodce F #](../fsharp/index.md)  
+[.NET Standard](net-standard.md)  
+[Průvodce platformou .NET Core](../core/index.md)  
+[Průvodce rozhraním .NET Framework](../framework/index.md)  
+[Průvodce jazykem C#](../csharp/index.md)  
+[Průvodce jazykem F#](../fsharp/index.md)  
 [Průvodce VB.NET](../visual-basic/index.md)  
 

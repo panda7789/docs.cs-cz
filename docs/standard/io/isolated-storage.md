@@ -28,11 +28,14 @@ caps.latest.revision: "32"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 4279e7933a88a060de52199d9ea0e9f54863fb11
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 286261e9b40e65450113128c51c7c9b384380878
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
 <a name="top"></a>Pro [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] aplikace, izolované úložiště je mechanismus úložiště dat, který poskytuje izolace a zabezpečení tak, že definujete standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.  
@@ -58,7 +61,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [Související témata](#related_topics)  
   
--   [Referenční dokumentace](#reference)  
+-   [Referenční informace](#reference)  
   
 <a name="data_compartments_and_stores"></a>   
 ## <a name="data-compartments-and-stores"></a>Datové přihrádky a úložiště dat  
@@ -166,14 +169,14 @@ ms.lasthandoff: 10/18/2017
 |Název|Popis|  
 |-----------|-----------------|  
 |[Typy izolace](../../../docs/standard/io/types-of-isolation.md)|Popisuje různé typy izolace.|  
-|[Postupy: získávání úložišť pro izolované úložiště](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|Poskytuje příklad použití <xref:System.IO.IsolatedStorage.IsolatedStorageFile> třídy pro získání úložiště izolované uživatelem a sestavení.|  
-|[Postupy: vytvoření výčtu úložišť pro izolované úložiště](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|Ukazuje, jak používat <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> metodu pro výpočet velikosti všech izolovaného úložiště pro uživatele.|  
-|[Postupy: odstraňování úložišť v izolovaném úložišti](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|Ukazuje, jak používat <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> metoda dvěma různými způsoby, chcete-li odstranit izolované úložiště.|  
-|[Postupy: předvídat podmínek na více systémů volného prostoru pomocí izolovaného úložiště](../../../docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|Zobrazuje způsob měření zbývající kapacity v izolovaném úložišti.|  
-|[Postupy: vytváření souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|Obsahuje některé příklady vytváření souborů a adresářů v izolovaném úložišti.|  
-|[Postupy: hledání existujících souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob čtení struktury adresářů a souborů v izolovaném úložišti.|  
-|[Postupy: čtení a zápis do souborů v izolovaném úložišti](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|Poskytuje příklad zápisu řetězce do souboru izolovaného úložiště a jeho zpětné čtení.|  
-|[Postupy: odstraňování souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob odstraňování souborů a adresářů izolovaného úložiště.|  
+|[Postupy: Získávání úložišť pro izolované úložiště](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|Poskytuje příklad použití <xref:System.IO.IsolatedStorage.IsolatedStorageFile> třídy pro získání úložiště izolované uživatelem a sestavení.|  
+|[Postupy: Vytvoření výčtu úložišť pro izolované úložiště](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|Ukazuje, jak používat <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> metodu pro výpočet velikosti všech izolovaného úložiště pro uživatele.|  
+|[Postupy: Odstraňování úložišť v izolovaném úložišti](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|Ukazuje, jak používat <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> metoda dvěma různými způsoby, chcete-li odstranit izolované úložiště.|  
+|[Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště](../../../docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|Zobrazuje způsob měření zbývající kapacity v izolovaném úložišti.|  
+|[Postupy: Vytváření souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|Obsahuje některé příklady vytváření souborů a adresářů v izolovaném úložišti.|  
+|[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob čtení struktury adresářů a souborů v izolovaném úložišti.|  
+|[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|Poskytuje příklad zápisu řetězce do souboru izolovaného úložiště a jeho zpětné čtení.|  
+|[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob odstraňování souborů a adresářů izolovaného úložiště.|  
 |[Souborová služba a datový proud I-O](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|  
   
 <a name="reference"></a>   

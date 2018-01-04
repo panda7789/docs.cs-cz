@@ -23,11 +23,11 @@ ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5b1a306ba694d4bbfc4719fc728112964b1ce40f
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: a3663ca5d3e0e2c94530d4a19ebff0022f495f3d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy (Visual Basic).
 Pokud jsou využívání třídu, modul nebo struktura, která má členů typů celé číslo bez znaménka, dostanete tito členové s [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
@@ -77,7 +77,7 @@ Pokud jsou využívání třídu, modul nebo struktura, která má členů typů
     ```  
   
     > [!CAUTION]
-    >  `UInteger`, `ULong`, `UShort`, A `SByte` datové typy nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../../docs/standard/language-independence-and-language-independent-components.md) CLS (), takže kompatibilní se specifikací CLS kódu nemůže využívat komponentu, používá je.  
+    >  `UInteger`, `ULong`, `UShort`, A `SByte` datové typy nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) CLS (), takže kompatibilní se specifikací CLS kódu nemůže využívat komponentu, používá je.  
   
     > [!IMPORTANT]
     >  Provádění volání nespravovaného kódu, například rozhraní (API) Windows zpřístupní kódu na potenciální rizika zabezpečení.  
@@ -87,7 +87,7 @@ Pokud jsou využívání třídu, modul nebo struktura, která má členů typů
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Integer – datový typ](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
- [Uinteger – datový typ](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
  [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

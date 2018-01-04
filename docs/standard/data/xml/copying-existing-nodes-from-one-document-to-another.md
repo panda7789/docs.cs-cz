@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0f20e5bd595c8eb49360e58f281a8cf6eda89acf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 958dccfc184857b0edd12cd1d9afe7b3b468b1e6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Kopírování existující uzly z jednoho dokumentu do jiného
 **ImportNode** metoda je mechanismus, pomocí kterého uzel nebo celý uzlu podstrom se zkopíruje z jednoho **třídou XMLDocument nastavenou na** do jiného. Uzel vrácená z volání je kopii uzlu ze zdrojového dokumentu, včetně hodnot atributů, je název uzlu, typ uzlu a všechny atributy o oboru názvů jako je například předpona, místní názvem a oborem názvů identifikátor URI (Uniform Resource). Zdrojový dokument se nezmění. Po naimportování uzlu, máte ho přidat do stromu pomocí jedné z metody použité k vložení uzlů.  
@@ -48,4 +51,4 @@ ms.lasthandoff: 10/18/2017
 >  I když DocumentType uzly lze importovat, dokument může mít pouze jeden DocumentType. Ano Jakmile před vložením do stromu, budete muset Ujistěte se, že jste importovali typu dokumentu, neexistuje žádný typ dokumentu v dokumentu. Informace o odebrání uzlů najdete v tématu [odebrání uzlů, obsah a hodnoty z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

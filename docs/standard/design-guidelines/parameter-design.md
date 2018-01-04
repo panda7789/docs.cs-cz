@@ -19,11 +19,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7d49c4263517830f46b1416684c7d9b874cda4db
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f95301bab57e8bdb6b22c54140a4c02ed208b8d3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="parameter-design"></a>Parametr návrhu
 Tato část obsahuje obecné Rady ohledně návrhu parametr, včetně oddíly s pokyny pro kontrolu argumenty. Kromě toho se seznamte s podle pokynů popsaných v [pojmenování parametry](../../../docs/standard/design-guidelines/naming-parameters.md).  
@@ -164,5 +167,5 @@ public class String {
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Člen pokynů pro návrh](../../../docs/standard/design-guidelines/member.md)  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)
+ [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

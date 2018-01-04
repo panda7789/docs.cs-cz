@@ -22,11 +22,14 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7bc068cc248e1ca8e1d3c64eaa4132682721e035
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a4a1513840d17f2e7b02acf821b5032eaac6e6fc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 <a name="Top"></a>Ve výchozím nastavení při porovnání vstupní řetězec se znaky literálu v vzor regulárního výrazu je velká a malá písmena, prázdné znaky v vzor regulárního výrazu interpretována jako literál prázdné znaky a zaznamenávání skupiny v regulárním výrazu jsou pojmenované implicitně také jako explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možnosti regulárních výrazů. Tyto možnosti, které jsou uvedené v následující tabulce, mohou být zahrnuty vložené jako součást regulární výraz nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické vzor jako odpovídající metodu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
@@ -402,4 +405,4 @@ ms.lasthandoff: 10/18/2017
  [!code-vb[Conceptual.Regex.Language.Options#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#15)]  
   
 ## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+ [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

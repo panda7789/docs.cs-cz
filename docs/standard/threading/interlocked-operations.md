@@ -20,11 +20,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 122058b7e826e27fe6c60c5b07610f7c63e64f78
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c10c1188820b7a270baa0c51696974f93a8a2990
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="interlocked-operations"></a>Propojené operace
 <xref:System.Threading.Interlocked> Třída poskytuje metody, které se synchronizují přístup k proměnné, která je sdílen více vláken. Podprocesy různé procesy můžete použít tento mechanismus, pokud je proměnná ve sdílené paměti. Propojené operace jsou atomic – celou operaci je jednotkou, která nelze přerušit jinou operací interlocked na stejnou proměnnou. To je důležité v operačních systémech s preemptivní více vláken, kde můžete vlákna pozastaví po načtení hodnotu z adresy paměti, ale před spojením šanci na změnu a uložte ho.  
@@ -68,4 +71,4 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Threading.Interlocked>  
  <xref:System.Threading.Monitor>  
  [Dělení na vlákna](../../../docs/standard/threading/index.md)  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

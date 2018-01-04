@@ -20,11 +20,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e8dcd1003b3f93db733ece4f90340d1d98867d2e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a07392ba805b5f2a3913b01a15dd0e1668f0ccf7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="event-design"></a>Návrh událostí
 Události jsou nejčastěji používané formu zpětných volání (konstrukce, které umožňují rozhraní k volání do kódu uživatele). Další mechanismy zpětné volání zahrnout členy trvá delegáti, virtuální členové a na základě rozhraní moduly plug-in. Data z použitelnost studie označit, že většina vývojářů pohodlnější použití událostí, než používají jiné mechanismy zpětné volání. Události jsou výborně integrované s Visual Studio a mnoha jazycích.  
@@ -79,5 +82,5 @@ Události jsou nejčastěji používané formu zpětných volání (konstrukce, 
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Člen pokynů pro návrh](../../../docs/standard/design-guidelines/member.md)  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)
+ [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

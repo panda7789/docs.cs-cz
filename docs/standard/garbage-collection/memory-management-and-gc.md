@@ -17,11 +17,14 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d2b9d0f8d4b09e4f95fe33134e900612c59534fb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0a9d1f2a7ad3432667cdb5ed9223cbabf4089597
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="memory-management-and-garbage-collection-in-net"></a>Správa paměti a systém uvolňování paměti v rozhraní .NET
 Tato část dokumentace obsahuje informace o správě paměti v rozhraní .NET.  

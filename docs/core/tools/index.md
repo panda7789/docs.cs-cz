@@ -7,11 +7,12 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 0f43f569cdb8b9e4be68b61ba7b5cc4686fdb871
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.workload: dotnetcore
+ms.openlocfilehash: 6dbbc2e95c613d468c7d8c7b0dc15c85849f79dc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET core nástrojů rozhraní příkazového řádku (CLI)
 
@@ -35,7 +36,7 @@ Ve výchozím nastavení instalují se následující příkazy:
 **Základní příkazy**
 
 * [new](dotnet-new.md)
-* [obnovení](dotnet-restore.md)
+* [restore](dotnet-restore.md)
 * [sestavení](dotnet-build.md)
 * [publikování](dotnet-publish.md)
 * [Spustit](dotnet-run.md)
@@ -69,7 +70,7 @@ Ve výchozím nastavení instalují se následující příkazy:
 **Základní příkazy**
 
 * [new](dotnet-new.md)
-* [obnovení](dotnet-restore.md)
+* [restore](dotnet-restore.md)
 * [sestavení](dotnet-build.md)
 * [publikování](dotnet-publish.md)
 * [Spustit](dotnet-run.md)

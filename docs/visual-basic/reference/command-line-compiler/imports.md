@@ -14,11 +14,11 @@ ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e8e9cd761263b3b61a4e6d3e33c5f7f875be7a1d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6cdb7cff2221930113d6b49a640da0844f175f1b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="imports-visual-basic"></a>/imports (Visual Basic)
 Obory názvů importuje ze zadaného sestavení.  
@@ -42,7 +42,7 @@ Obory názvů importuje ze zadaného sestavení.
   
 |Chcete-li nastavit/importuje v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Klikněte **odkazy** kartě.<br />3.  Zadejte název oboru názvů do pole vedle položky **přidat Import uživatelů** tlačítko.<br />4.  Klikněte **přidat Import uživatelů** tlačítko.|  
+|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte **odkazy** kartě.<br />3.  Zadejte název oboru názvů do pole vedle položky **přidat Import uživatelů** tlačítko.<br />4.  Klikněte **přidat Import uživatelů** tlačítko.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje při `/imports:system` je zadán.  

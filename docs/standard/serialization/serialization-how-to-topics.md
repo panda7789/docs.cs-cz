@@ -13,32 +13,35 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 75915c92390be1698f5a972901c1defc8003e096
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 462812070446e9013c2cf2c4d3e2f15831e84e70
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-how-to-topics"></a>Postupy: témata serializace
 Následující seznam obsahuje odkazy na témata s postupy v konceptuální dokumentaci k serializaci.  
   
--   [Postupy: serializaci objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+-   [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
   
--   [Postupy: deserializaci objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+-   [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
   
--   [Postupy: použití nástroje definice schématu XML pro generování tříd a dokumentech schémat XML.](../../../docs/standard/serialization/xml-schema-def-tool-gen.md)  
+-   [Postupy: Generování tříd a dokumentace ke schématu XML pomocí nástroje XML Schema Definition](../../../docs/standard/serialization/xml-schema-def-tool-gen.md)  
   
--   [Postupy: Zadejte název alternativní elementu pro datový proud XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+-   [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
   
--   [Postupy: řízení serializace odvozených tříd](../../../docs/standard/serialization/how-to-control-serialization-of-derived-classes.md)  
+-   [Postupy: Řízení serializace odvozených tříd](../../../docs/standard/serialization/how-to-control-serialization-of-derived-classes.md)  
   
--   [Postupy: určení – Element XML a názvy atributů XML](../../../docs/standard/serialization/how-to-qualify-xml-element-and-xml-attribute-names.md)  
+-   [Postupy: Kvalifikace názvů elementů a atributů XML](../../../docs/standard/serialization/how-to-qualify-xml-element-and-xml-attribute-names.md)  
   
--   [Postupy: serializaci objektu jako datový proud XML kódováním protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
+-   [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
   
--   [Postupy: potlačení serializace XML kódovaného protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
+-   [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
   
--   [Postupy: bloku serializovat Data](../../../docs/standard/serialization/how-to-chunk-serialized-data.md)  
+-   [Postupy: Rozdělení serializovaných dat do bloků](../../../docs/standard/serialization/how-to-chunk-serialized-data.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Serializace](../../../docs/standard/serialization/index.md)

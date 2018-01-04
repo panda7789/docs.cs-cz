@@ -16,11 +16,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ebe8a55cd5dd80be10553948c7765f81429c0957
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c7af29acd33ff3909f0d82e3ef7f7027dc5e44aa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu (XSD) XML s kolekci XmlSchemaCollection
 Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> ověřit dokument XML pomocí schématu XML definition language (XSD) schémat. <xref:System.Xml.Schema.XmlSchemaCollection> Díky ukládání schémata v kolekci, takže nejsou načtena do paměti dojde k ověření jednotlivých časové zvyšuje výkon. Pokud schéma existuje v kolekci schémat `schemaLocation` atribut slouží k vyhledání schématu v kolekci.  
@@ -219,4 +222,4 @@ while(vr.Read()) {
  <xref:System.Xml.XmlParserContext>  
  <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
  <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  
- [Schéma kolekci XmlSchemaCollection kompilace](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)
+ [Kompilace schématu XmlSchemaCollection](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)

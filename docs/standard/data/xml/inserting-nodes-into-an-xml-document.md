@@ -13,14 +13,17 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 62b2a0a6dea7608ab1586afbb29ada36927d7e1b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 819e1d908e011be7839dceb8d15e4ade11cda002
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="inserting-nodes-into-an-xml-document"></a>Vkládání uzlů do dokumentu XML
 Dokument můžete upravit pomocí vkládání nových uzlů. Uzly mohou být nově vytvořeny, stávající ve stejném dokumentu, nebo je můžete importovat z jiného dokumentu. Další informace o vytváření nových uzlů najdete v tématu [vytvořit nové uzly v modelu DOM](../../../../docs/standard/data/xml/create-new-nodes-in-the-dom.md). Další informace o kopírování existujících uzlů najdete v tématu [kopie stávající uzly](../../../../docs/standard/data/xml/copy-existing-nodes.md), [kopírování existující uzly jeden dokument do jiného](../../../../docs/standard/data/xml/copying-existing-nodes-from-one-document-to-another.md), nebo [kopírování fragmenty dokumentu](../../../../docs/standard/data/xml/copying-document-fragments.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

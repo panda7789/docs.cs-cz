@@ -16,11 +16,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7ce6e4b705188b9c1d0949703991633e3f450689
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3cb0db0fbffa5f42fb09f29da2976727451e3741
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="changing-namespace-prefix-properties"></a>Změna vlastností Namespace předpony
 **XmlNode** třída umožňuje změnit Předpona oboru názvů, které jsou přidružené k danému uzlu. Například následující kód ukazuje předponu elementu mění.  
@@ -41,7 +44,7 @@ e.Prefix = "b";
 Console.WriteLine(doc.InnerXml);  
 ```  
   
- **Výstup**  
+ **Output**  
   
 ```xml  
 <b:test xmlns:a="123" xmlns:b="456" />  
@@ -65,7 +68,7 @@ e.Prefix = "a";
 Console.WriteLine(doc.InnerXml);  
 ```  
   
- **Výstup**  
+ **Output**  
   
 ```xml  
 <a:test xmlns="123" xmlns:a="123" />  
@@ -74,4 +77,4 @@ Console.WriteLine(doc.InnerXml);
  Pokud byl stromu trvalé na řetězec v důsledku volání **dokumentů. InnerXml**, `xmlns:a='123'` atribut byla přidána do zachovat obor názvů `test` elementu. Byl `'123'`, a přesto zůstala `'123'`.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

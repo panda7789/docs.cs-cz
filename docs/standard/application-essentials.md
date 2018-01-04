@@ -14,11 +14,14 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 00bc12a16418038c74a5e8858a77818e66982727
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f830064c585e1024bdc304c6356327ddc8c059f3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-framework-application-essentials"></a>Základy vytváření aplikací pomocí rozhraní .NET Framework
 Tato část dokumentace rozhraní .NET Framework obsahuje informace o základních úkolech vývoje aplikací v rozhraní .NET Framework.  
@@ -48,13 +51,13 @@ Tato část dokumentace rozhraní .NET Framework obsahuje informace o základn�
  [Data, časy a časová pásma](../../docs/standard/datetime/index.md)  
  Popisuje způsob práce s časovými pásmy a jejich převody v aplikacích, které časová pásma zohledňují.  
   
- [Aplikační domény a sestavení](../../docs/framework/app-domains/index.md)  
+ [Domény a sestavení aplikací](../../docs/framework/app-domains/index.md)  
  Popisuje způsob vytváření a používání sestavení a domén aplikací.  
   
  [Serializace](../../docs/standard/serialization/index.md)  
  Popisuje proces převodu stavu objektu do podoby, kterou lze zachovat nebo přenášet.  
   
- [Prostředky v aplikacích klasické pracovní plochy](../../docs/framework/resources/index.md)  
+ [Prostředky v desktopových aplikacích](../../docs/framework/resources/index.md)  
  Popisuje podporu rozhraní .NET Framework pro vytváření a ukládání prostředků. Tato část popisuje také podporu pro lokalizované prostředky a model prostředků satelitních sestavení pro vytváření balíčků a nasazení těchto lokalizovaných prostředků.  
   
  [Globalizace a lokalizace](../../docs/standard/globalization-localization/index.md)  

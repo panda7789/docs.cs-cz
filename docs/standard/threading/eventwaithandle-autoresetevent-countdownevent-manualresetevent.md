@@ -17,11 +17,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5c0bcb27ed9c8981665a50c129dfbd824c9612f5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6c545f9ebc924c0a12ee2e76fdb6c725c25e2353
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="eventwaithandle-autoresetevent-countdownevent-manualresetevent"></a>EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent
 Obslužné rutiny čekání na událost povolit vláken pro synchronizaci aktivity podle sebe navzájem signalizace a čekání na signály druhé strany. Tyto události synchronizace jsou založená na obslužné rutiny čekání Win32 a je možné rozdělit do dvou typů: ty, které automaticky resetovat při signál a ty, které jsou ručně obnovit.  
@@ -50,5 +53,5 @@ Obslužné rutiny čekání na událost povolit vláken pro synchronizaci aktivi
  <xref:System.Threading.WaitHandle>  
  <xref:System.Threading.AutoResetEvent>  
  <xref:System.Threading.ManualResetEvent>  
- [Dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md)  
- [Dělení na spravovaná vlákna základy](../../../docs/standard/threading/managed-threading-basics.md)
+ [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)

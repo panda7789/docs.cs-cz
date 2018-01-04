@@ -17,11 +17,14 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1c034b656cf7a953ae532c12640b5916001764c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4ef7c8050b26cffeed03cc394193116f8f6797a9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, získat, aktualizovat a odebrání položek z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato třída kolekce je implementace bezpečné pro přístup z více vláken. Doporučujeme vám, že použít kdykoli více vláken může se pokusit o přístup k prvkům.  
@@ -56,4 +59,4 @@ Tento příklad ukazuje, jak přidat, získat, aktualizovat a odebrání polože
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
- [Kolekce bezpečné pro přístup z více vláken](../../../../docs/standard/collections/thread-safe/index.md)
+ [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)

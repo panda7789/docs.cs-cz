@@ -15,11 +15,11 @@ ms.assetid: 520e39cb-8ab6-46f5-aa00-08afd51b4b7c
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bc2fbb044fc839aa24abf3dc1ea864457efb0653
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aaaa7460ade00ad4232807ce11ee125e270742bf
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="a-reference-was-created-to-embedded-interop-assembly-39ltassembly1gt39-because-of-an-indirect-reference-to-that-assembly-from-assembly-39ltassembly2gt39"></a>Odkaz byl vytvořen pro vložené sestavení vzájemné spolupráce & č. 39; &lt;assembly1&gt;& č. 39; z důvodu nepřímý odkaz na sestavení z sestavení & č. 39;&lt; assembly2&gt;& č. 39;
 Odkaz byl vytvořen pro vložené sestavení vzájemné spolupráce se\<assembly1 > se z důvodu nepřímý odkaz na sestavení ze sestavení '\<assembly2 >'. Zvažte změnu vlastnost vložit zprostředkovatel komunikace s objekty typy v jednom ze sestavení.  
@@ -39,4 +39,4 @@ Odkaz byl vytvořen pro vložené sestavení vzájemné spolupráce se\<assembly
   
 ## <a name="see-also"></a>Viz také  
  [/ Link (Visual Basic)](../../../visual-basic/reference/command-line-compiler/link.md)  
- [Programování s primární spolupráce – sestavení](http://msdn.microsoft.com/en-us/306fa1d6-0703-4004-9e93-d0a57f1be81e)
+ [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)

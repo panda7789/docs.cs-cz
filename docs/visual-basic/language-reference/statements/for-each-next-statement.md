@@ -30,11 +30,11 @@ ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
 caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4aefacd33e0b3c8f64fd26929af06469136237f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 11601eb1caad1c6cc6d9898f590436a977a78fa1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů pro jednotlivé elementy v kolekci.  
@@ -73,7 +73,7 @@ Next [ element ]
   
  [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
   
- Další příklady najdete v tématu [kolekce](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b) a [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Další příklady najdete v tématu [kolekce](../../../standard/collections/index.md) a [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="nested-loops"></a>Vnořené smyčky  
  Lze vnořit `For Each` smyčky umístěním jednoho smyčky v rámci jiného.  
@@ -114,7 +114,7 @@ Next [ element ]
   
  [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
   
- Další informace najdete v tématu [iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7), [Yield – příkaz](../../../visual-basic/language-reference/statements/yield-statement.md), a [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).  
+ Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md), [Yield – příkaz](../../../visual-basic/language-reference/statements/yield-statement.md), a [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).  
   
 ## <a name="technical-implementation"></a>Technická implementace  
  Když `For Each`...`Next` příkaz spustí, Visual Basic vyhodnotí kolekce pouze jednou, před zahájením smyčky. Pokud se změní váš příkaz bloku `element` nebo `group`, tyto změny neovlivňují iteraci smyčky.  
@@ -180,12 +180,12 @@ End Sub
  [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Kolekce](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
- [Pro... Next – příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Kolekce](../../../standard/collections/index.md)  
+ [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [Struktury smyčky](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- [Chvíli... End While – příkaz](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
- [Provést... Příkaz smyčky](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
+ [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
  [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- [Inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
  [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)

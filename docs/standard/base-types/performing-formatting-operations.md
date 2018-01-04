@@ -20,30 +20,33 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8f09232080bb5c9aae4902dfc33b638bde82474c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a78c1caac318a19028472a2e4f6e8964f99abfba
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="performing-formatting-operations"></a>Provádění operací formátování
 Následující témata obsahují podrobné pokyny k provedení určitých operací formátování.  
   
--   [Postupy: zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
+-   [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
   
--   [Postupy: definice a používání vlastních poskytovatelů číselného formátu](../../../docs/standard/base-types/how-to-define-and-use-custom-numeric-format-providers.md)  
+-   [Postupy: Definování a používání vlastních poskytovatelů číselného formátu](../../../docs/standard/base-types/how-to-define-and-use-custom-numeric-format-providers.md)  
   
--   [Postupy: převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla](../../../docs/standard/base-types/how-to-convert-numeric-user-input-in-web-controls-to-numbers.md)  
+-   [Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla](../../../docs/standard/base-types/how-to-convert-numeric-user-input-in-web-controls-to-numbers.md)  
   
 -   [Postupy: extrahování dne v týdnu z konkrétního data](../../../docs/standard/base-types/how-to-extract-the-day-of-the-week-from-a-specific-date.md).  
   
--   [Postupy: hodnoty odezvy data a času](../../../docs/standard/base-types/how-to-round-trip-date-and-time-values.md)  
+-   [Postupy: Hodnoty data a času odezvy](../../../docs/standard/base-types/how-to-round-trip-date-and-time-values.md)  
   
--   [Postupy: zobrazování lokalizovaných informací data a času webovým uživatelům](../../../docs/standard/base-types/how-to-display-localized-date-and-time-information-to-web-users.md)  
+-   [Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům](../../../docs/standard/base-types/how-to-display-localized-date-and-time-information-to-web-users.md)  
   
--   [Postupy: zobrazení milisekund v hodnoty data a času](../../../docs/standard/base-types/how-to-display-milliseconds-in-date-and-time-values.md)  
+-   [Postupy: Zobrazení milisekund v hodnotách data a času](../../../docs/standard/base-types/how-to-display-milliseconds-in-date-and-time-values.md)  
   
--   [Postupy: zobrazování dat v jiném než gregoriánském kalendáři](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)  
+-   [Postupy: Zobrazování dat v jiném než gregoriánském kalendáři](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)

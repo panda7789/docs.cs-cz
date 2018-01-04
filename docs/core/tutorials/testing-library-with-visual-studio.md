@@ -13,11 +13,12 @@ ms.assetid: 069ad711-3eaa-45c6-94d7-b40249cc8b99
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7c884985873679b25831c15ef5c8b6370ecd6460
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload: dotnetcore
+ms.openlocfilehash: fb5a23ccdcacadd70a58ec6c9a35fbee86af667b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny tříd s .NET Core v Visual Studio 2017
 

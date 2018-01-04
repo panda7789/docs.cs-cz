@@ -13,11 +13,14 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6370db06cbe7ff8d46258b0315059f5c37587fea
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 33b3b0589fb9d3cdf550b8d56d82a2bd999a59f6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Čtení deklarace Entity a odkazy na Entity do modelu DOM
 Entita je deklarace, která určuje název, který se má použít v souboru XML místo obsahu nebo značek. Existují dvě části na entity. Nejdřív musíte tie název, který nahrazení obsah s použitím deklarace entity. Deklarace entity je vytvořená pomocí `<!ENTITY name "value">` syntaxe v definici typu dokumentu (DTD) nebo schématu XML. Za druhé název definovaný v deklaraci entity následně použít v souboru XML. Pokud se použije v souboru XML, nazývá odkazu na entitu. Například následující deklarace entity deklaruje entity názvu `publisher` bylo možné přidružit obsah "Společnosti Microsoft Press".  
@@ -42,7 +45,7 @@ Entita je deklarace, která určuje název, který se má použít v souboru XML
   
  rozbalení odkaz na entitu a nahraďte `&publisher;` s společnosti Microsoft Press obsah poskytuje následující rozšířené XML.  
   
- **Výstup**  
+ **Output**  
   
 ```xml  
 <author>Fred</author>  
@@ -62,4 +65,4 @@ Entita je deklarace, která určuje název, který se má použít v souboru XML
  Rozdíly jsou v rozbaleném odkazy na entity, a pokud nejsou je nějaký rozdíl v jaké uzly se generují ve stromové struktuře DOM, v paměti. Rozdíl v uzlech, které jsou generovány, najdete v tématech [odkazy na Entity se zachovají](../../../../docs/standard/data/xml/entity-references-are-preserved.md) a [odkazy na Entity jsou rozšířené a není zachovaná](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

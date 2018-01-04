@@ -16,11 +16,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ce594234e601cd8feb4723bbc383db9e3ed40522
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d21667ada5592c62824a97b4a8a9b8127abab75a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na rozhraní .NET Framework datové typy
 Pokud chcete převést řetězec na datový typ rozhraní .NET Framework, použijte **XmlConvert** metoda, která vyhovuje potřebám aplikace. Seznam všech metod pro převod k dispozici v **XmlConvert** třídy najdete v tématu <xref:System.Xml.XmlConvert>.  
@@ -56,7 +59,7 @@ DateTime date = new DateTime (2001, 08, 04);
 writer.WriteElementString("Date", XmlConvert.ToString(date));  
 ```  
   
- **Výstup**  
+ **Output**  
   
  `<Date>2001-08-04T00:00:00</Date>`.  
   
@@ -74,7 +77,7 @@ Int32 value = 200;
 writer.WriteElementString("Number", XmlConvert.ToString(value));  
 ```  
   
- **Výstup**  
+ **Output**  
   
  `<Number>200</Number>`  
   
@@ -141,5 +144,5 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Převod XML datových typů](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
+ [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
  [Převádění typů rozhraní .NET Framework na řetězce](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

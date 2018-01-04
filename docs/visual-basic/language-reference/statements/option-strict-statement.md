@@ -19,11 +19,11 @@ ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
 caps.latest.revision: "49"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 238f64001b097b86306e0ed9630bd5df2e6a189f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1a01edd918ea49c08defddb45bf23c33307e814f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
 Omezuje převody typu implicitní data do pouze rozšiřující převody zakáže pozdní vazby a zakáže implicitní zadáte, která způsobí, že `Object` typu.  
@@ -72,15 +72,15 @@ Option Strict { On | Off }
   
  Převody, které mohou způsobit chyby zahrnout implicitní převody, ke kterým dochází ve výrazech. Další informace naleznete v následujících tématech:  
   
--   [+ – Operátor](../../../visual-basic/language-reference/operators/addition-operator.md)  
+-   [+ – operátor](../../../visual-basic/language-reference/operators/addition-operator.md)  
   
--   [+= – Operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
+-   [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
   
 -   [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
   
 -   [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
   
--   [Char – datový typ](../../../visual-basic/language-reference/data-types/char-data-type.md)  
+-   [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
   
  Když zřetězení řetězců pomocí [& operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md), všechny konverze na řetězce jsou považovány za být rozšíření. Proto tyto převody nevydávají implicitní narrowing Chyba převodu, i když `Option Strict` zapnutý.  
   
@@ -116,7 +116,7 @@ Option Strict { On | Off }
 ### <a name="to-set-option-strict-in-the-ide"></a>Chcete-li nastavit možnost striktní v prostředí IDE  
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-1.  V **Průzkumníku**, vyberte projektu. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  V **Průzkumníku**, vyberte projektu. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
 2.  Na **zkompilovat** kartě, nastavte hodnotu v **možnost striktní** pole.  
   
@@ -161,12 +161,12 @@ Option Strict { On | Off }
 ## <a name="see-also"></a>Viz také  
  [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
  [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- [Stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)  
- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [Stránka Kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)  
+ [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Postupy: přístup ke členům v objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)  
+ [Postupy: Přístup ke členům v objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)  
  [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)  
  [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)  
- [Pozdní vazba v řešeních pro systém Office](https://msdn.microsoft.com/library/3xxe951d)  
- [/ optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
+ [Pozdní vazba v řešeních pro systém Office](https://msdn.microsoft.com/library/3xxe951d)  
+ [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
  [Dialogové okno Možnosti výchozí hodnoty, projekty, Visual Basic](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

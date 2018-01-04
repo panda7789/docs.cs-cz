@@ -14,11 +14,11 @@ ms.assetid: 9f148c15-0909-4cb8-a2db-777f8a8b45ae
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d98a9f3cadc42021c302915cfc5b058b41e11ec6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 53b77dec53be1d97c5f2526cb117933a2b8fe046
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="out-visual-basic"></a>/out (Visual Basic)
 Určuje název souboru výstupního souboru.  
@@ -42,7 +42,7 @@ Určuje název souboru výstupního souboru.
   
 |Chcete-li nastavit/out v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [Úvod do Návrhář projektu](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Klikněte **aplikace** kartě.<br />3.  Změňte hodnotu v **název sestavení** pole.|  
+|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte **aplikace** kartě.<br />3.  Změňte hodnotu v **název sestavení** pole.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `T2.vb` a vytvoří výstupní soubor `T2.exe`.  

@@ -13,11 +13,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 560a0866a526caf4c8fe129209d0077374306a9f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 545fd05888a556e21cea795953ba94b94f7f2e45
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xslt-security-considerations"></a>Aspekty zabezpečení XSLT
 Jazyk XSLT obsahuje bohatou sadu funkcí, které vám poskytnou značnou část výkon a flexibilitu. Obsahuje řadu funkcí, které sice užitečná, může také zneužít vnějšího zdroje. Abyste mohli bezpečně používat XSLT, musíte pochopit druhy problémy zabezpečení, které vznikají při použití XSLT a základní strategií, které můžete použít k toto riziko omezit.  
@@ -65,5 +68,5 @@ Jazyk XSLT obsahuje bohatou sadu funkcí, které vám poskytnou značnou část 
   
 ## <a name="see-also"></a>Viz také  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
- [Řešení externím prostředkům během zpracování XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
+ [Překlad externích prostředků během zpracování XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
  [Zabezpečení přístupu kódu](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)

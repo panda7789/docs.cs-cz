@@ -20,11 +20,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d63fb872382bfc0a3ba3b8637c7357ab65c58fbf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6cc65464248ec27c4bda4934408a9bafc823a80c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Postupy: Vytvoření kanálu toku dat
 Přestože je možné použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> metody pro příjem zpráv z zdroje bloky, bloky zpráv může připojit i k formuláře *kanálu toku dat*. Kanálu toku dat je několika komponent, nebo *bloků toku dat*, z nichž každá provádí konkrétní úlohu, která přispívá ke větší cíl. Každý bloku toku dat v kanálu toku dat provede práci při přijetí zprávy z jiného bloku toku dat. Analogie k tomuto je sestavení pro automobilů výrobní. Při každém vehicle průchodu řádku sestavení, jedné stanici sestaví rámečku, dalšímu nainstaluje modul a tak dále. Vzhledem sestavení řádku umožňuje více vozidel pro sestavení ve stejnou dobu, poskytuje lepší propustnost než ty dokončení vozidel jeden najednou.  
@@ -137,4 +140,4 @@ Přestože je možné použít <xref:System.Threading.Tasks.Dataflow.DataflowBlo
  Zdroj bloku toku dat může připojit i k více bloků cíl k vytvoření *toku dat sítě*. Přetížené verze <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> metoda trvá <xref:System.Predicate%601> objekt, který definuje, zda cílový blok přijímá každou zprávu na základě jeho hodnoty. Většina bloku typů toku dat, které se chovají jako zdroje nabízejí zprávy na všech připojených cíl bloky, v pořadí, ve kterém byli připojeni, dokud jeden bloků přijímá zprávy. Když použijete tento filtrování mechanismus, můžete vytvořit systémy bloků toku dat připojené, které budou řídit určitá data prostřednictvím jednu cestu a další data prostřednictvím jiné cesty. Příklad, který používá filtrování vytvořit síť toku dat, naleznete v části [návod: použití toku dat ve formulářové aplikaci Windows](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+ [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

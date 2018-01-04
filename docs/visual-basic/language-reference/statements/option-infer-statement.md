@@ -19,11 +19,11 @@ ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
 caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4634c198b5fc41a4834cbd3cd96f9d3f1863d09b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1c8bd94bc8dd379edfda8c4350428684a5cda0b1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 Umožňuje použití odvození místního typu v deklarování proměnných.  
@@ -68,7 +68,7 @@ IntelliSense při Option Infer – vypnuté
   
 #### <a name="to-set-option-infer-in-the-ide"></a>Chcete-li nastavit Option Infer – v prostředí IDE  
   
-1.  V **Průzkumníku**, vyberte projektu. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. Další informace najdete v tématu [NIB: Správa vlastností projektu s Návrhář projektu](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e).  
+1.  V **Průzkumníku**, vyberte projektu. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
 2.  Klikněte **zkompilovat** kartě.  
   
@@ -101,11 +101,11 @@ IntelliSense při Option Infer – vypnuté
  [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_2.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
  [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
+ [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [Dialogové okno Možnosti výchozí hodnoty, projekty, Visual Basic](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)  
- [/ optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
+ [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
  [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)

@@ -14,11 +14,11 @@ ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e1d9d1223b340b2172c12bd8c2f364e314e764b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cb1790d363755fe9b8bd711409734f7c3a405f3e
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-expression-visual-basic"></a>Function – výraz (Visual Basic)
 Deklaruje, parametry a kód, který definovat výraz lambda funkce.  
@@ -92,14 +92,14 @@ Dim londonCusts = db.Customers.
                   Select(Function(cust) cust)  
 ```  
   
- Další informace o metody dotazů najdete v tématu [dotazy](../../../visual-basic/language-reference/queries/queries.md). Další informace o standardních operátorů dotazu najdete v tématu [standardní přehled operátory dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
+ Další informace o metody dotazů najdete v tématu [dotazy](../../../visual-basic/language-reference/queries/queries.md). Další informace o standardních operátorů dotazu najdete v tématu [standardní přehled operátory dotazu](../../programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Lambda – výrazy](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
  [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
  [Porovnání hodnot](../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)  
  [Logické výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)  
- [Pokud operátor](../../../visual-basic/language-reference/operators/if-operator.md)  
+ [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)  
  [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)

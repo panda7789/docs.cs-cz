@@ -14,11 +14,11 @@ ms.assetid: 2e7eb2b9-eda6-4bdb-95cc-72c7f0be7528
 caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9dcf3d4bec379faa5783ca17847b91f9739df598
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b19b6439d85822c69adac0b3e0e04b2f31299836
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unable-to-emit-assembly-lterror-messagegt"></a>Sestavení nelze vygenerovat: &lt;chybová zpráva&gt;
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru volá Linker sestavení (Al.exe, také známé jako Alink) ke generování sestavení s manifestu, s linkeru reporting chybu ve fázi emisí vytváření sestavení.  
@@ -27,15 +27,15 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Prověřením uvozovkách chybové zprávy a podívejte se téma [Nástroj Al.exe chyby a upozornění](http://msdn.microsoft.com/en-us/7f125d49-0a03-47a6-9ba9-d61a679a7d4b) pro další vysvětlení a doporučení.  
+1.  Prověřením uvozovkách chybové zprávy a podívejte se téma [Al.exe](../../../framework/tools/al-exe-assembly-linker.md). Další vysvětlení a Rady, jak.  
   
-2.  Zkuste se sestavení ručně, buď pomocí [Al.exe (Linker sestavení)](https://msdn.microsoft.com/library/c405shex) nebo [Sn.exe (nástroj silným názvem)](https://msdn.microsoft.com/library/k5b5tt23).  
+2.  Zkuste se sestavení ručně, buď pomocí [Al.exe](../../../framework/tools/al-exe-assembly-linker.md) nebo [Sn.exe (nástroj silným názvem)](../../../framework/tools/sn-exe-strong-name-tool.md).  
   
 3.  Pokud potíže potrvají, shromažďovat informace o okolnostech a upozornění služby Microsoft Product Support Services.  
   
 ### <a name="to-sign-the-assembly-manually"></a>K podepsání sestavení ručně  
   
-1.  Použití [Sn.exe (nástroj silným názvem)](https://msdn.microsoft.com/library/k5b5tt23) k vytvoření souboru pár veřejného a privátního klíče.  
+1.  Použití [Sn.exe (nástroj silným názvem)][Sn.exe (nástroj silným názvem)](../../../framework/tools/sn-exe-strong-name-tool.md)) k vytvoření souboru pár veřejného a privátního klíče.  
   
      Tento soubor má příponu .snk.  
   
@@ -62,8 +62,8 @@ ms.lasthandoff: 11/21/2017
 6.  V [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], přidejte sestavení .NET odkaz na soubor, který jste právě vytvořili.  
   
 ## <a name="see-also"></a>Viz také  
- [Al.exe (Linker sestavení)](https://msdn.microsoft.com/library/c405shex)  
- [Al.exe nástroj chyby a upozornění](http://msdn.microsoft.com/en-us/7f125d49-0a03-47a6-9ba9-d61a679a7d4b)  
- [Sn.exe (nástroj pro silný název)](https://msdn.microsoft.com/library/k5b5tt23)  
- [Postupy: vytvoření páru veřejného a privátního klíče RSA](http://msdn.microsoft.com/library/05026813-f3bd-4d7c-9e0b-fc588eb3d114)  
+ 
+ [Al.exe](../../../framework/tools/al-exe-assembly-linker.md).  
+ [Sn.exe (nástroj pro silný název)] [Sn.exe (nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md))  
+ [Postupy: Vytvoření páru veřejného a soukromého klíče](../../../framework/app-domains/how-to-create-a-public-private-key-pair.md)  
  [Kontaktujte nás](/visualstudio/ide/talk-to-us)

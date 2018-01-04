@@ -16,11 +16,11 @@ ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
 caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 32f993e4b9bcd126ebb6d70310fc0781e8b137b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: df0e8ad1990fe7a1aa495e1794c942813cffb5bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
 Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozici pouze v rámci sestavení, které obsahuje jejich deklarace.  
@@ -39,7 +39,7 @@ Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozi
  Porovnání `Friend` a dalších přístup modifikátory, najdete v části [úrovně v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 > [!NOTE]
->  Můžete určit, že je sestavení přátelského sestavení, která umožňuje přístup všechny typy a členy, které jsou označeny jako `Friend`. Další informace najdete v tématu [přátelských sestavení](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).  
+>  Můžete určit, že je sestavení přátelského sestavení, která umožňuje přístup všechny typy a členy, které jsou označeny jako `Friend`. Další informace najdete v tématu [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
   
 ## <a name="example"></a>Příklad  
  Následující třídy používá `Friend` modifikátor umožňující ostatní programovací elementy v rámci stejného sestavení pro přístup k určitým členům.  
@@ -49,38 +49,38 @@ Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozi
 ## <a name="usage"></a>Použití  
  Můžete použít `Friend` modifikátor v těchto kontextech:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
- [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)  
- [Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)  
- [Privátní](../../../visual-basic/language-reference/modifiers/private.md)  
+ [Public](../../../visual-basic/language-reference/modifiers/public.md)  
+ [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
+ [Private](../../../visual-basic/language-reference/modifiers/private.md)  
  [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Postupy](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
