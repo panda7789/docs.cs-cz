@@ -25,11 +25,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f804843c248e0051582aca6d1dd6328871e1cc06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0682fd149134531781346d21245a0b1fd3fc4d43
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
 Spolupráce aplikace obvykle zahrnuje klientského sestavení .NET, jeden nebo více sestavení vzájemné spolupráce představující odlišné COM knihovny typů a jeden nebo více registrované komponenty modelu COM. Visual Studio a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] poskytují nástroje pro import a převést knihovny typů spolupráce sestavení, jak je popsáno v [Import knihovny typů jako sestavení](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md). K nasazení aplikace spolupráce dvěma způsoby:  
@@ -55,7 +56,7 @@ Struktura a registru položek adresáře pro privátní nasazení
  Sestavení, které jsou sdíleny více aplikací by měly být nainstalovány v centrálním úložišti názvem globální mezipaměti sestavení. Rozhraní .NET klienti mají přístup k stejnou kopii sestavení vzájemné spolupráce, který je podepsaný a nainstalované v globální mezipaměti sestavení. Další informace o vytváření a používání primárních sestavení vzájemné spolupráce najdete v tématu [primární zprostředkovatel komunikace s objekty sestavení](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080).  
   
 ## <a name="see-also"></a>Viz také  
- [Vystavení součástí COM v rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)  
- [Import knihovny typů jako sestavení](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)  
+ [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)  
+ [Import knihovny typů ve formě sestavení](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)  
  [Použití typy modelu COM ve spravovaném kódu](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
  [Kompilace projektu interoperability](../../../docs/framework/interop/compiling-an-interop-project.md)

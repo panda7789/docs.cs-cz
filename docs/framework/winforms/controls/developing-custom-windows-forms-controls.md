@@ -16,11 +16,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 89be7e347556c8ec34296044f17fbfd4450bc127
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d2f15dc4bb3bd4a6d1163823509f0f2c2bf2c11a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework
 Windows Forms – ovládací prvky jsou opakovaně použitelné součásti, které zapouzdřují uživatelské rozhraní funkce a se používají v aplikacích založených na systému Windows na straně klienta. Jenom Windows Forms poskytuje mnoho připravené k použití ovládacích prvků, navíc poskytuje infrastrukturu pro vývoj vlastních ovládacích prvků. Můžete kombinovat stávající ovládací prvky, rozšířit stávající ovládací prvky nebo vytvořit vlastní ovládací prvky. Tato část obsahuje základní informace a ukázky k rozvoji ovládací prvky Windows Forms.  
@@ -32,7 +33,7 @@ Windows Forms – ovládací prvky jsou opakovaně použitelné součásti, kter
  [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
  Popisuje různé druhy vlastní ovládací prvky můžete vytvořit pomocí <xref:System.Windows.Forms?displayProperty=nameWithType> oboru názvů.  
   
- [Základy vývoj ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)  
+ [Základní informace o vývoji ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)  
  Popisuje je prvním krokem při vývoji ovládacího prvku Windows Forms.  
   
  [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
@@ -44,13 +45,13 @@ Windows Forms – ovládací prvky jsou opakovaně použitelné součásti, kter
  [Atributy v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/attributes-in-windows-forms-controls.md)  
  Popisuje atributy, které můžete provést u vlastnosti nebo jinými členy vlastní ovládací prvky a součásti.  
   
- [Vlastní ovládací prvek Malování a vykreslování](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)  
+ [Malování a vykreslování vlastního ovládacího prvku](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)  
  Ukazuje, jak přizpůsobit vzhled pro vaše ovládací prvky.  
   
- [Rozložení v systému Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/layout-in-windows-forms-controls.md)  
+ [Rozložení v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/layout-in-windows-forms-controls.md)  
  Ukazuje, jak vytvořit sofistikované rozložení pro ovládací prvky a formuláře.  
   
- [Více vláken v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/multithreading-in-windows-forms-controls.md)  
+ [Multithreading v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/multithreading-in-windows-forms-controls.md)  
  Ukazuje, jak implementovat kontroly, s více vlákny.  
   
 ## <a name="reference"></a>Odkaz  

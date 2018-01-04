@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9a398bb7b951fcf2dd2449b6468a19d39a134a4a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 09617f147d1afc2d9f2ca76624b54f94e5164188
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="group-elements-in-a-sequence"></a>Prvky skupiny v pořadí
 <xref:System.Linq.Enumerable.GroupBy%2A> Operátor skupiny elementy pořadí. Následující příklady použít databázi Northwind.  
@@ -84,4 +85,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
- [Stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+ [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

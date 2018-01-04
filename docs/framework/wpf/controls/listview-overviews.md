@@ -17,19 +17,20 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 07757f28c52705ec4d5ea7ed6356c28cc68bbe86
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e6dfa0e6c772fb4623c9717c1085ab862df74ca5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listview-overviews"></a>Přehled ListView
 Témata v této části se dozvíte, jak používat <xref:System.Windows.Controls.ListView> ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [Rutina GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [Styly záhlaví sloupců GridView a Přehled šablon](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)  
+ [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [Přehled stylů záhlaví sloupců a šablon GridView](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListView>  
@@ -37,4 +38,4 @@ Témata v této části se dozvíte, jak používat <xref:System.Windows.Control
  <xref:System.Windows.Controls.GridView>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Postupy: témata](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

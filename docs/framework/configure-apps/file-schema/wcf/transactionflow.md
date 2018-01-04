@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: faf992aa50f8d705caa5f502f61a0fd18cb7ab05
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3720294ac937c6aa7ce99ab687efa76b2e860abb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttransactionflowgt"></a>&lt;transactionFlow&gt;
 Určuje podpora toku transakcí pro vlastní připojení.  
@@ -65,6 +66,6 @@ Určuje podpora toku transakcí pro vlastní připojení.
  [Konfigurace transakcí ServiceModel](../../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md)  
  [Povolení toku transakcí](../../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: eeda0c58e9b5e9f8b48e335849ce12f7e8d94a1b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 07882617e7625c07bade85c59116581e16f95121
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 Ať už vytváříte nové aplikace pro Windows pro Windows 10 nebo migrujete stávající aplikace Windows Store, můžete postupovat podle stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte takto:  
@@ -114,17 +115,17 @@ Ať už vytváříte nové aplikace pro Windows pro Windows 10 nebo migrujete st
   
  Některé konkrétní příklady zpracování výjimek a další problémy, ke kterým dochází při testování vaší aplikace najdete v části:  
   
--   [Příklad: Zpracování výjimek, pokud vazba dat](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)  
+-   [Příklad: Zpracování výjimek při vázání dat](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)  
   
--   [Příklad: Řešení potíží s dynamické programování](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)  
+-   [Příklad: Řešení potíží s dynamickým programováním](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)  
   
--   [Výjimky za běhu v nativní aplikace .NET](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
+-   [Výjimky za běhu v nativních aplikací .NET](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [NIB: .NET Native instalací a konfigurací](http://msdn.microsoft.com/en-us/7c9bc375-8b87-4c33-bede-72d513e362ec)  
- [.NET native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)  
+ [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)  
  [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)  
  [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
- [Serializace a Metadata](../../../docs/framework/net-native/serialization-and-metadata.md)  
+ [Serializace a metadata](../../../docs/framework/net-native/serialization-and-metadata.md)  
  [Migrace aplikace pro Windows Store do .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)

@@ -17,19 +17,20 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 79797aad6c26975dd2f4fa1b087d525fbaebb253
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c832a091f7c6fec185c657d104437c42a7ae4d33
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="scrollviewer-how-to-topics"></a>ScrollViewer – postupy
 Témata v této části ukazují, jak používat <xref:System.Windows.Controls.ScrollViewer> elementu, který chcete vytvořit posouvatelného oblasti ve svých aplikacích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zpracovat událost ScrollChanged](../../../../docs/framework/wpf/controls/how-to-handle-the-scrollchanged-event.md)  
- [Posuv obsahu pomocí rozhraní IScrollInfo](../../../../docs/framework/wpf/controls/how-to-scroll-content-by-using-the-iscrollinfo-interface.md)  
- [Použití metody posouvání obsahu ScrollViewer](../../../../docs/framework/wpf/controls/how-to-use-the-content-scrolling-methods-of-scrollviewer.md)  
+ [Zpracování události ScrollChanged](../../../../docs/framework/wpf/controls/how-to-handle-the-scrollchanged-event.md)  
+ [Posunutí obsahu použitím rozhraní IScrollInfo](../../../../docs/framework/wpf/controls/how-to-scroll-content-by-using-the-iscrollinfo-interface.md)  
+ [Použití metod pro posunutí obsahu prvku ScrollViewer](../../../../docs/framework/wpf/controls/how-to-use-the-content-scrolling-methods-of-scrollviewer.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
@@ -37,5 +38,5 @@ Témata v této části ukazují, jak používat <xref:System.Windows.Controls.S
  <xref:System.Windows.Controls.ScrollViewer>  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)

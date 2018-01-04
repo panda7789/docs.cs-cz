@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d6fd1bf29af743e5bfcd466ffdf7430c389635de
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 977bc032d62856673994e07a71b77d3b668ce7af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communcation-foundation-bindings"></a>Vazby WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]odděluje postup zápisu softwaru pro aplikaci z jak komunikuje s jiným softwarem. Vazby slouží k určení přenosu, kódování a podrobnosti protokolu povinné pro klienty a služby pro komunikaci mezi sebou. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vazby se používá ke generování základní síťové vyjádření koncového bodu, takže většina podrobnosti vazba musí schválit strany, které komunikují. Nejjednodušší způsob, jak dosáhnout je pro klientům služby používat stejnou vazbu, která koncový bod služby používá. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak to udělat, najdete v části [pomocí vazby na klienty a konfiguraci služby Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb).  
@@ -50,4 +51,4 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Channels.CustomBinding>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+ [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)

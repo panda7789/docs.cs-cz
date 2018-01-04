@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d373d6abc82e482a3b1df873295573f0e34eeda2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a704930f707895e7f343566fab544e2f8b32b22c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework
 Bezregistrační aktivace komponent využívajících rozhraní .NET Framework je pouze mírně složitěji, než je pro komponenty modelu COM. Instalace vyžaduje dva manifesty:  
@@ -181,7 +182,7 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
      Znovu `myresource.res` je název souboru prostředků obsahující vložený prostředek.  
   
 ## <a name="see-also"></a>Viz také  
- [Zprostředkovatel komunikace s objekty COM bez registrace](../../../docs/framework/interop/registration-free-com-interop.md)  
+ [Bezregistrační zprostředkovatel komunikace s objekty COM](../../../docs/framework/interop/registration-free-com-interop.md)  
  [Požadavky pro zprostředkovatel komunikace s objekty COM bez registrace](http://msdn.microsoft.com/en-us/0c43bc57-eecf-4e6c-8114-490141cce4da)  
  [Konfigurace komponenty modelu COM bez registrace aktivace](http://msdn.microsoft.com/en-us/bfe9b02f-d964-4784-960e-a1f94692fbfe)  
  [Bezregistrační aktivace. Na základě NET komponenty: Návod](http://go.microsoft.com/fwlink/?LinkId=158812)

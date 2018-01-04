@@ -24,11 +24,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46947e314394d56b5ef0439f33910bb493012db3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 310f90c7b95d74f1fab8ab2e9871d6c1a0937c52
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sort-and-filter-adonet-data-with-the-windows-forms-bindingsource-component"></a>Postupy: Řazení a filtrování dat ADO.NET pomocí součásti Windows Forms BindingSource
 Můžete vystavit řazení a filtrování funkce <xref:System.Windows.Forms.BindingSource> ovládat prostřednictvím <xref:System.Windows.Forms.BindingSource.Sort%2A> a <xref:System.Windows.Forms.BindingSource.Filter%2A> vlastnosti. Jednoduché řazení, pokud je základní zdroj dat můžete použít <xref:System.ComponentModel.IBindingList>, a můžete použít filtrování a rozšířené řazení, pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>. <xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost vyžaduje standardní [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] syntaxe: následuje řetězec představující název sloupce dat ve zdroji dat `ASC` nebo `DESC` indikující, zda v seznamu musí být seřazeny ve vzestupném nebo sestupném pořadí. Můžete nastavit pokročilé řazení nebo více sloupci řazení oddělením každý sloupec s oddělovačem čárkami. <xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost trvá řetězcového výrazu.  
@@ -67,4 +68,4 @@ Můžete vystavit řazení a filtrování funkce <xref:System.Windows.Forms.Bind
  <xref:System.Windows.Forms.BindingSource.Sort%2A>  
  <xref:System.Windows.Forms.BindingSource.Filter%2A>  
  [Postupy: Instalace ukázkových databází](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)  
- [BindingSource – komponenta](../../../../docs/framework/winforms/controls/bindingsource-component.md)
+ [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)

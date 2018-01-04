@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c188f1e1b76da153025041c99969be57ea8dcc20
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2760ebaee26085bfaa4c4de2d14b41ba0d70fdf0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="4806---discoverymessagewithinvalidrelatestooroperationcompleted"></a>4806 - DiscoveryMessageWithInvalidRelatesToOrOperationCompleted
 ## <a name="properties"></a>Vlastnosti  

@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5652907abc17868414c554cb5c87b0856d2c5a0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 819510c14bd67e7fcc739a19ea945f16b2a66c9a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblymetadata-structure"></a>ASSEMBLYMETADATA – struktura
 Obsahuje informace o odkazované sestavení, včetně jeho verzi a jeho úrovně podpory pro národní prostředí, procesory a operační systémy.  
@@ -70,6 +71,6 @@ typedef struct {
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Struktury metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
- [Imetadataassemblyemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  
- [Osinfo – struktura](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)
+ [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
+ [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  
+ [OSINFO – struktura](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)

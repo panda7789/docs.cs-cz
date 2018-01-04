@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5d3a554d075adb56294e4693b234ce22735fb982
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 907ba524164b1e0d167f7a88250c7d32910504f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthread2-interface1"></a>Icordebugthread2 – Interface1
 Slouží jako logické rozšíření rozhraní ICorDebugThread.  
@@ -32,11 +33,11 @@ Slouží jako logické rozšíření rozhraní ICorDebugThread.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getactivefunctions – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)|Získá pole cor_active_function – instancí, které obsahují údaje o active funkcí v podprocesu rámce.|  
-|[Getconnectionid – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getconnectionid-method.md)|Získá identifikátor připojení pro tento `ICorDebugThread2`.|  
-|[Gettaskid – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-gettaskid-method.md)|Získá identifikátor úlohy pro tento `ICorDebugThread2`.|  
-|[Getvolatileosthreadid – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getvolatileosthreadid-method.md)|Získá identifikátor operační systém pro tento `ICorDebugThread2`.|  
-|[Interceptcurrentexception – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md)|Umožňuje debugger zachytávat aktuální výjimky na vlákno.|  
+|[GetActiveFunctions – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)|Získá pole cor_active_function – instancí, které obsahují údaje o active funkcí v podprocesu rámce.|  
+|[GetConnectionID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getconnectionid-method.md)|Získá identifikátor připojení pro tento `ICorDebugThread2`.|  
+|[GetTaskID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-gettaskid-method.md)|Získá identifikátor úlohy pro tento `ICorDebugThread2`.|  
+|[GetVolatileOSThreadID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getvolatileosthreadid-method.md)|Získá identifikátor operační systém pro tento `ICorDebugThread2`.|  
+|[InterceptCurrentException – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md)|Umožňuje debugger zachytávat aktuální výjimky na vlákno.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -53,4 +54,4 @@ Slouží jako logické rozšíření rozhraní ICorDebugThread.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

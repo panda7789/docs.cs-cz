@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0b5388a680816bca6051525f5130308a3c7c2dc5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b488d4e4884f92b107b2b6be71827a2f8b4cdbf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwebhttpgt"></a>&lt;webHttp&gt;
 Určuje tento element <xref:System.ServiceModel.Description.WebHttpBehavior> v koncovém bodě prostřednictvím konfigurace. Toto chování, pokud se používá ve spojení s [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) standardní vazby umožňuje programovací model webových pro [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby.  
@@ -59,5 +60,5 @@ Určuje tento element <xref:System.ServiceModel.Description.WebHttpBehavior> v k
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.WebHttpElement>  
  <xref:System.ServiceModel.Description.WebHttpBehavior>  
- [Integrace jazyka AJAX a podpora formátu JSON](../../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
+ [Integrace jazyka AJAX a podpora JSON](../../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
  [\<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)

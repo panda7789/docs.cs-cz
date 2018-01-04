@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ac89b8dce67c95c78a5dd46e591d84730a68346
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ef9da205792823b7069024c5e4a3e9ac80d60a24
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, zda lze vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždy k dispozici po dobu 24 hodin denně. Mají počáteční a koncové vlastnosti doby, které lze nastavit, aby byly k dispozici v určitých časech den. Tuto funkci můžete použít například tak, aby vyhradil tiskárny pro výhradní použití určitých oddělení po 17: 00. Oddělení by měla mít jiné fronty obsluhy tiskárny než jiných oddělení použijte. Fronta jiných oddělení by být nastaveny na k dispozici po 17: 00, zatímco fronty pro favored oddělení může být nastaveny na vždy k dispozici.  
@@ -88,5 +89,5 @@ Tiskové fronty nejsou vždy k dispozici po dobu 24 hodin denně. Mají počáte
  <xref:System.DateTime>  
  <xref:System.Printing.PrintSystemJobInfo>  
  <xref:System.Printing.PrintQueue>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Tisk – přehled](../../../../docs/framework/wpf/advanced/printing-overview.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: edb53e6cd234a059ebd3e7ddff9aaa258ae6027b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8d9b63e4cb056cf72f2e7b4796883f3fc2873a49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="peer-channel-security"></a>Zabezpečení rovnocenného kanálu
 Rovnocenného kanálu umožňuje různé typy distribuovaných aplikací, které jsou závislé na více stran zasílání zpráv. Mezi příklady patří distribuce obsahu internetových, kde důvěryhodného zdroje distribuuje obsah (například média nebo aktualizací softwaru), skupinou přátel systému exchange, Hudba a fotografie nebo tým kolegy společně upravit dokumentu. Každý z těchto scénářů vyžaduje jedinečnou modelu. Model zabezpečení rovnocenného kanálu je určen k řešení těchto scénářů a poskytuje model zabezpečení pro na potřeby odlišnými modely identitu, ověřování a autorizace.  
@@ -44,6 +45,6 @@ Rovnocenného kanálu umožňuje různé typy distribuovaných aplikací, které
  Rovnocenného kanálu nevyžaduje konkrétní identity modelu, tak dlouho, dokud aplikace zvolí jeden z podporované typy tokenů. Aplikace úplně vlastní životní cyklus těchto identit a ověření rozhodnutí.  
   
 ## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
- [Koncepty rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)  
- [Vytvoření aplikace rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+ [Zabezpečení aplikací protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
+ [Koncepce protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)  
+ [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

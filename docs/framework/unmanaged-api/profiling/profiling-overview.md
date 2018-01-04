@@ -38,11 +38,12 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6d7918a369b5a5656fa2e059bdaaf6c211bd022c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 84688ed80d0cb1b802290176400eb45998052a34
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 <a name="top"></a>Profileru je nástroj, který monitoruje provádění jiná aplikace. Běžné profileru language runtime (CLR) je dynamická knihovna (DLL), která se skládá z funkcí, které příjem zpráv z a odeslání zpráv do modulu CLR pomocí rozhraní API pro profilaci. Profileru knihovnu DLL modulu CLR zavedená v době běhu.  
@@ -239,6 +240,6 @@ Architektura profilace
 |-----------|-----------------|  
 |[Nastavení prostředí profilace](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)|Vysvětluje, jak k inicializaci profileru, nastavení oznámení událostí a profilu služby systému Windows.|  
 |[Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)|Popisuje nespravované rozhraní, která používá profilaci API.|  
-|[Profilace globálních statických funkcí](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|Popisuje nespravované globální statické funkce, které používá profilaci API.|  
-|[Profilace výčtů](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)|Popisuje nespravovaná vyčíslení, které používá profilaci API.|  
+|[Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|Popisuje nespravované globální statické funkce, které používá profilaci API.|  
+|[Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)|Popisuje nespravovaná vyčíslení, které používá profilaci API.|  
 |[Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)|Popisuje nespravované struktury, které používá profilaci API.|

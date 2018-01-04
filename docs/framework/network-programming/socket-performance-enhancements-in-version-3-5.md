@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1d4746e2303949ddeabee36e4875e7480467f33e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 868ab986a0f7343e2efd2d4b5f7016d0554084cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Vylepšení výkonu soketu v verze 3.5
 <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třída je vylepšená v verze 3.5 pro použití aplikací, které používají vstupně-výstupní operace asynchronní sítě k dosažení nejvyšší výkon. Řadu nové třídy přidané jako součást sadu vylepšení <xref:System.Net.Sockets.Socket> třídu, která poskytují alternativní asynchronní vzor, který lze použít speciální soketu vysoce výkonné aplikace. Tato vylepšení byly navrženy speciálně pro serverové aplikace sítě, které vyžadují vysoký výkon. Aplikace můžete použít rozšířené asynchronní vzor výhradně, nebo pouze v cílové aktivní oblasti jejich aplikace (při přijímání velkého objemu dat, například).  
@@ -47,5 +48,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType>  
  <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType>  
  <xref:System.Net.Sockets.SocketAsyncOperation?displayProperty=nameWithType>  
- [Síťové programování ukázky](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Ukázka technologie soketu výkonu](http://go.microsoft.com/fwlink/?LinkID=179570)

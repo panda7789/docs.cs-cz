@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41205f7f0ec21e27b97d0b12415fca89ae526552
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7d9012d1a31eeaf50560b6166d32ac58662c5aa4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
 Základní kroky pro všechny události definované v přepsání [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] jsou identické a jsou shrnuty v následujícím seznamu.  
@@ -98,5 +99,5 @@ public class PaintEventArgs : EventArgs {
   
 ## <a name="see-also"></a>Viz také  
  [Události](../../../../docs/standard/events/index.md)  
- [Vykreslování ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)  
+ [Vykreslení ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)  
  [Definování události](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)

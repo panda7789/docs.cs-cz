@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 22d71e2cacc7ae9e1341e3f19253dad009d9b617
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17710411811fbba94f81814876903b167f97e2fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-move-through-a-dataset-with-the-windows-forms-bindingnavigator-control"></a>Postupy: Pohyb v prvku DataSet pomocí ovládacího prvku Windows Forms BindingNavigator
 Při sestavování datové aplikace, musíte se často zobrazíte kolekce dat pro uživatele. <xref:System.Windows.Forms.BindingNavigator> Ovládacího prvku ve spojení s <xref:System.Windows.Forms.BindingSource> součást, nabízí pohodlný a rozšiřitelné řešení pro procházení kolekce a zobrazování položek postupně.  
@@ -49,6 +50,6 @@ Při sestavování datové aplikace, musíte se často zobrazíte kolekce dat pr
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.BindingSource>  
- [BindingNavigator – ovládací prvek](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
- [BindingSource – komponenta](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
- [Postupy: vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)
+ [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
+ [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)

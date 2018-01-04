@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 71493eb91415b5f4695e771c7a549244629bb654
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 19fee0f90c1f460d253cfdc865035a6b8aa3db48
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-database-schema-information"></a>Načítání informací o schématu databáze
 Získání informací o schématu z databáze se provádí v procesu zjišťování schématu. Schéma zjišťování umožňuje aplikacím požádá spravovaného zprostředkovatele najít a vrátí informace o schématu databáze, také známé jako *metadata*, dané databáze. Prvky schématu jiné databázi, například tabulky, sloupce a uložených procedur se zveřejňují přes kolekcemi schémat. Každá kolekce schéma obsahuje celou řadu specifické pro použitý zprostředkovatel informace o schématu.  
@@ -29,25 +30,25 @@ Získání informací o schématu z databáze se provádí v procesu zjišťová
  Zprostředkovatel dat .NET Framework pro OLE DB také zveřejňuje informace o schématu pomocí <xref:System.Data.OleDb.OleDbConnection.GetOleDbSchemaTable%2A> metodu <xref:System.Data.OleDb.OleDbConnection> objektu. Jako argumenty **Metoda GetOleDbSchemaTable** trvá <xref:System.Data.OleDb.OleDbSchemaGuid> identifikující informace o schématu vrátit, a pole omezení pro ty vrácení sloupce. **Metoda GetOleDbSchemaTable** vrátí <xref:System.Data.DataTable> naplněn informacemi požadovaný schématu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [GetSchema a kolekcemi schémat](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)  
+ [Příkaz GetSchema a kolekce schémat](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)  
  Popisuje **GetSchema** metoda a jak může sloužit k načtení a omezit informace o schématu z databáze.  
   
  Omezení schématu  
  Popisuje schéma omezení, které lze použít s **GetSchema**.  
   
- [Společné schéma kolekce](../../../../docs/framework/data/adonet/common-schema-collections.md)  
+ [Společné kolekce schémat](../../../../docs/framework/data/adonet/common-schema-collections.md)  
  Popisuje všechny společné schéma kolekce nepodporuje všech zprostředkovatelů spravované rozhraní .NET Framework.  
   
- [Kolekcemi schémat serveru SQL](../../../../docs/framework/data/adonet/sql-server-schema-collections.md)  
+ [Kolekce schémat SQL Serveru](../../../../docs/framework/data/adonet/sql-server-schema-collections.md)  
  Popisuje kolekci schémat podporována zprostředkovatelem rozhraní .NET Framework pro SQL Server.  
   
- [Kolekce schématu Oracle](../../../../docs/framework/data/adonet/oracle-schema-collections.md)  
+ [Kolekce schémat Oracle](../../../../docs/framework/data/adonet/oracle-schema-collections.md)  
  Popisuje kolekci schémat podporována zprostředkovatelem rozhraní .NET Framework pro Oracle.  
   
- [Kolekce schématu rozhraní ODBC](../../../../docs/framework/data/adonet/odbc-schema-collections.md)  
+ [Kolekce schémat ODBC](../../../../docs/framework/data/adonet/odbc-schema-collections.md)  
  Popisuje kolekcemi schémat ovladačů ODBC.  
   
- [Kolekcemi schémat OLE DB](../../../../docs/framework/data/adonet/ole-db-schema-collections.md)  
+ [Kolekce schémat OLE DB](../../../../docs/framework/data/adonet/ole-db-schema-collections.md)  
  Popisuje kolekcemi schémat pro zprostředkovatele OLE DB.  
   
 ## <a name="reference"></a>Odkaz  
@@ -82,5 +83,5 @@ Získání informací o schématu z databáze se provádí v procesu zjišťová
  Popisuje **GetSchemaTable** metodu <xref:System.Data.SqlClient.SqlDataReader> třídy.  
   
 ## <a name="see-also"></a>Viz také  
- [Načítání a upravovat Data v technologii ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

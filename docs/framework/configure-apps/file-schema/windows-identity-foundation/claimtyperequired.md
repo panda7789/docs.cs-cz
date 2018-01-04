@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 89d42cba78eb9758d8b3491fd1bd3b25ef168f9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 491277e39b29d7c3e0a0d69ec8745b2c6718a91e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltclaimtyperequiredgt"></a>&lt;claimTypeRequired&gt;
 Určuje sadu požadované deklarací identity pro příchozí tokeny zabezpečení.  

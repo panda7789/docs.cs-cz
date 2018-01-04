@@ -12,11 +12,12 @@ ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e9dc671f0df9034410d20fdf69862884d6b3b300
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e29d0007820bb0218338394fe199e7acfd66344e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Přidat > element NameValueSectionHandler a DictionarySectionHandler
 
@@ -37,7 +38,7 @@ Přidá nastavení vlastní aplikace. Každý  **\<Přidat >** značka obsahuje 
 | Atribut | Popis |
 | --------- | ----------- |
 | **klíč**   | Požadovaný atribut.<br><br>Určuje název nastavení. |
-| **Hodnota** | Požadovaný atribut.<br><br>Určuje hodnotu nastavení. |
+| **value** | Požadovaný atribut.<br><br>Určuje hodnotu nastavení. |
 
 ## <a name="parent-element"></a>Nadřazený element
 

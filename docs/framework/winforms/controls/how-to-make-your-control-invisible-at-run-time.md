@@ -22,11 +22,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 310750df0786eb07158909eb5e322369d157d1cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6e28a682c6f3bfc52a293daebeade960c1875bb5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-your-control-invisible-at-run-time"></a>Postupy: Skrytí vlastního ovládacího prvku za běhu
 Existují situace, kdy můžete chtít vytvořit uživatelský ovládací prvek, který je v době běhu neviditelná. Ovládací prvek, který je hodiny výstrahy může být například neviditelná s výjimkou případů, kdy byl zvukově na upozornění. Toho dosahuje snadno nastavením <xref:System.Windows.Forms.Control.Visible%2A> vlastnost. Pokud <xref:System.Windows.Forms.Control.Visible%2A> vlastnost je `true`, vlastní ovládací prvek se zobrazí jako normální. Pokud `false`, bude skrytá vlastního ovládacího prvku. I když kód v vlastního ovládacího prvku může stále spustit při neviditelné, nebudete moci pracovat s ovládacím prvkem v uživatelském rozhraní. Pokud chcete vytvořit neviditelná ovládací prvek, který stále odpoví na uživatelský vstup (například kliknutí myší), měli byste vytvořit transparentní ovládacího prvku. Další informace najdete v tématu [poskytnutí vlastního ovládacího prvku průhledné pozadí](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md).  
@@ -51,5 +52,5 @@ Existují situace, kdy můžete chtít vytvořit uživatelský ovládací prvek,
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Control.Visible%2A>  
- [Vývoj vlastních Windows Forms – ovládací prvky s rozhraním .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
- [Postupy: poskytnout vlastní ovládací prvek průhledné pozadí](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md)
+ [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
+ [Postupy: Zajištění průhledného pozadí pro vlastní ovládací prvek](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md)

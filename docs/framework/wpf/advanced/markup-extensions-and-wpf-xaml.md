@@ -26,11 +26,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08cdc3dcb9e6d73b0d3b95915bf955ee27782782
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5e6dec42d40039f9cc23ba976ecf421f6471888e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jejich syntaxe pravidel, účel a objektový model třídy, který je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace rozhraní .NET XAML services. Toto téma konkrétně podrobnosti rozšíření značek pro použití v jazyce XAML WPF.  
@@ -129,9 +130,9 @@ Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jeji
   
 ## <a name="see-also"></a>Viz také  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Namespace XAML (x:) Jazykové funkce](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
+ [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [Rozšíření WPF XAML](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  
- [– Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
- [Vazby – rozšíření značek](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)  
- [– Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
- [x: Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)
+ [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
+ [Rozšíření značek datové vazby](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)  
+ [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
+ [x:Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)

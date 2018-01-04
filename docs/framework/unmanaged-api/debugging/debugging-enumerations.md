@@ -17,11 +17,12 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c24882f2bd9819043bbc786bd2e5f35129a92744
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a5e294275da45575a3aed457fb2428c4768e78d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-enumerations"></a>Ladění výčtů
 Tato část popisuje nespravovaná vyčíslení, která používá rozhraní API pro ladění.  
@@ -42,19 +43,19 @@ Tato část popisuje nespravovaná vyčíslení, která používá rozhraní API
  CorDebugChainReason  
  Označuje důvod nebo důvody pro zahájení řetěz volání.  
   
- [Výčet Cordebugcodeinvokekind](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md)  
+ [CorDebugCodeInvokeKind – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md)  
  Popisuje, jak exportované funkce vyvolá spravovaného kódu.  
   
- [Výčet Cordebugcodeinvokepurpose](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md)  
+ [CorDebugCodeInvokePurpose – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md)  
  Popisuje, proč exportované funkce volá spravovaného kódu.  
   
  CorDebugCreateProcessFlags  
  Poskytuje další možnosti ladění, které mohou být používány volání [icordebug::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) metoda.  
   
- [Výčet Cordebugdebugeventkind](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md)  
+ [CorDebugDebugEventKind – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md)  
  Určuje typ události, jejichž informace dekóduje ji [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) metoda.  
   
- [Výčet Cordebugdecodeeventflagswindows](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md)  
+ [CorDebugDecodeEventFlagsWindows – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md)  
  Poskytuje další informace o ladění událostí na platformě Windows.  
   
  CorDebugExceptionCallbackType  
@@ -102,10 +103,10 @@ Tato část popisuje nespravovaná vyčíslení, která používá rozhraní API
  [CorDebugNGenPolicy – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md)  
  Obsahuje hodnotu, která určuje, zda ladicí program načte nativní bitové kopie (NGen) z mezipaměť nativních bitových kopií.  
   
- [Výčet Cordebugplatform](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md)  
+ [CorDebugPlatform – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md)  
  Poskytuje cílové platformy hodnoty, které jsou používány [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metoda.  
   
- [Výčet Cordebugrecordformat](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+ [CorDebugRecordFormat – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
  Popisuje formát dat v bajtové pole obsahující informace o události ladění nativního výjimka.  
   
  CorDebugRegister  
@@ -114,7 +115,7 @@ Tato část popisuje nespravovaná vyčíslení, která používá rozhraní API
  [CorDebugSetContextFlag – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugsetcontextflag-enumeration.md)  
  Určuje, zda kontext je z aktivní (nebo listu) s rámečkem v zásobníku nebo je poškozený podle unwinding z jiné rámce.  
   
- [Výčet Cordebugstatechange](../../../../docs/framework/unmanaged-api/debugging/cordebugstatechange-enumeration.md)  
+ [CorDebugStateChange – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugstatechange-enumeration.md)  
  Popisuje množství uložené v mezipaměti dat, která musí být odstraněn podle změn do procesu.  
   
  CorDebugStepReason  
@@ -132,7 +133,7 @@ Tato část popisuje nespravovaná vyčíslení, která používá rozhraní API
  [CorGCReferenceType – výčet](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md)  
  Určuje zdroj objekt tak, aby se uvolňování paměti.  
   
- [Výčet Ilcodekind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md)  
+ [ILCodeKind – výčet](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md)  
  Obsahuje hodnoty, které určují, jestli je přístup k místní proměnné nebo kódu přidaném v ReJIT instrumentace profileru ladicího programu.  
   
  [LoggingLevelEnum – výčet](../../../../docs/framework/unmanaged-api/debugging/logginglevelenum-enumeration.md)  
@@ -144,14 +145,14 @@ Tato část popisuje nespravovaná vyčíslení, která používá rozhraní API
  [VariableLocationType – výčet](../../../../docs/framework/unmanaged-api/debugging/variablelocationtype-enumeration.md)  
  Označuje typ nativní umístění proměnné.  
   
- [Výčet Writeablemetadataupdatemode](../../../../docs/framework/unmanaged-api/debugging/writeablemetadataupdatemode-enumeration.md)  
+ [WriteableMetadataUpdateMode – výčet](../../../../docs/framework/unmanaged-api/debugging/writeablemetadataupdatemode-enumeration.md)  
  Obsahuje hodnoty, které určují, zda jsou viditelné pro ladicí program aktualizace v paměti pro metadata.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ladění tříd typu coclass](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
+ [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
   
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
   
- [Globální statické funkce ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
+ [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
   
  [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

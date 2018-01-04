@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d246f329f80a76d2c93190fd663c7362418385f7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1941a46a60219d9dd56d162f89baf268f220c102
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imethodmalloc-interface"></a>IMethodMalloc – rozhraní
 Poskytuje metodu pro přidělení paměti pro nový tělo funkce (MSIL intermediate language) společnosti Microsoft.  
@@ -35,7 +36,7 @@ Poskytuje metodu pro přidělení paměti pro nový tělo funkce (MSIL intermedi
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ALLOC – metoda](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Pokusí se přidělit zadanou velikost paměti pro nový tělo funkce MSIL.|  
+|[Alloc – metoda](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Pokusí se přidělit zadanou velikost paměti pro nový tělo funkce MSIL.|  
   
 ## <a name="remarks"></a>Poznámky  
  Každý allocator je modulů a zajistí, že tělo funkce bude v kladné posun od základní modulu. Paměť nad základní modulu může být drahocenný, takže přidělujícího modulu se má použít k přidělení paměti pouze pro tělo funkce.  

@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1b72a2814ee2276363152052c7bf734104d4f395
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fd864cbb5a95143f6dd7f55fc1b1fc57f9f42e98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugmanagedcallback-interface"></a>ICorDebugManagedCallback – rozhraní
 Poskytuje metody pro zpětná volání procesu ladicího programu.  
@@ -32,32 +33,32 @@ Poskytuje metody pro zpětná volání procesu ladicího programu.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[BREAK – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-break-method.md)|Upozorní ladicího programu při <xref:System.Reflection.Emit.OpCodes.Break> provedení instrukcí v datovém proudu kódu.|  
+|[Break – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-break-method.md)|Upozorní ladicího programu při <xref:System.Reflection.Emit.OpCodes.Break> provedení instrukcí v datovém proudu kódu.|  
 |[Breakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-breakpoint-method.md)|Ladicí program upozorní, když je došlo zarážky.|  
-|[Breakpointseterror – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-breakpointseterror-method.md)|Upozorní ladicího programu, modul CLR (CLR) se nepodařilo přesně vazby zarážku nastavený před funkci v běhu (JIT) zkompilovat.|  
-|[Controlctrap – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-controlctrap-method.md)|Do pasti CTRL + C v procesu laděné upozorní ladicího programu.|  
-|[Createappdomain – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createappdomain-method.md)|Upozorní ladicího programu vytvořený domény aplikace.|  
+|[BreakpointSetError – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-breakpointseterror-method.md)|Upozorní ladicího programu, modul CLR (CLR) se nepodařilo přesně vazby zarážku nastavený před funkci v běhu (JIT) zkompilovat.|  
+|[ControlCTrap – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-controlctrap-method.md)|Do pasti CTRL + C v procesu laděné upozorní ladicího programu.|  
+|[CreateAppDomain – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createappdomain-method.md)|Upozorní ladicího programu vytvořený domény aplikace.|  
 |[CreateProcess – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md)|Ladicí program upozorní, když proces byl připojen nebo při prvním spuštění.|  
 |[CreateThread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md)|Upozorní ladicí program, že vlákno byla spuštěna spravovaného kódu.|  
-|[Debuggererror – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-debuggererror-method.md)|Upozorní ladicí program, že došlo k chybě při pokusu o zpracování události z modulu CLR.|  
-|[Editandcontinueremap – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md)|Zastaralé Upozorní ladicí program, že přemapování událostí byl odeslán do prostředí IDE.|  
-|[Evalcomplete – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md)|Upozorní ladicí program dokončí zkušební verzi.|  
-|[Evalexception – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalexception-method.md)|Upozorní ladicí program, že zkušební verzi byla ukončena s k neošetřené výjimce.|  
+|[DebuggerError – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-debuggererror-method.md)|Upozorní ladicí program, že došlo k chybě při pokusu o zpracování události z modulu CLR.|  
+|[EditAndContinueRemap – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md)|Zastaralé Upozorní ladicí program, že přemapování událostí byl odeslán do prostředí IDE.|  
+|[EvalComplete – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md)|Upozorní ladicí program dokončí zkušební verzi.|  
+|[EvalException – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalexception-method.md)|Upozorní ladicí program, že zkušební verzi byla ukončena s k neošetřené výjimce.|  
 |[Exception – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exception-method.md)|Upozorní ladicí program, že byla vyvolána výjimka ze spravovaného kódu.|  
-|[Exitappdomain – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md)|Upozorní ladicí program, aby byl ukončen domény aplikace.|  
-|[Exitprocess – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md)|Upozorní ladicího programu, proces byl ukončen.|  
+|[ExitAppDomain – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md)|Upozorní ladicí program, aby byl ukončen domény aplikace.|  
+|[ExitProcess – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md)|Upozorní ladicího programu, proces byl ukončen.|  
 |[ExitThread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitthread-method.md)|Upozorní ladicí program, aby byl ukončen vláken, která byla spuštěna spravovaného kódu.|  
-|[Loadassembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadassembly-method.md)|Sestavení CLR byl úspěšně načíst upozorní ladicího programu.|  
-|[Loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md)|Načtení třídy upozorní ladicího programu.|  
+|[LoadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadassembly-method.md)|Sestavení CLR byl úspěšně načíst upozorní ladicího programu.|  
+|[LoadClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md)|Načtení třídy upozorní ladicího programu.|  
 |[LoadModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadmodule-method.md)|Upozorní ladicí program, že modul CLR byl úspěšně načten.|  
 |[LogMessage – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md)|Ladicí program upozorní, že vlákno CLR spravované volal metodu <xref:System.Diagnostics.EventLog> třída do protokolu událostí.|  
-|[Logswitch – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logswitch-method.md)|Ladicí program upozorní, že vlákno CLR spravované volal metodu <xref:System.Diagnostics.Switch> třída k vytvoření, úpravě nebo odstranění přepínač ladění nebo trasování.|  
+|[LogSwitch – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logswitch-method.md)|Ladicí program upozorní, že vlákno CLR spravované volal metodu <xref:System.Diagnostics.Switch> třída k vytvoření, úpravě nebo odstranění přepínač ladění nebo trasování.|  
 |[NameChange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-namechange-method.md)|Upozorní ladicí program, že došlo ke změně názvu domény aplikace nebo přístup z více vláken.|  
-|[Stepcomplete – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md)|Aby byla dokončena krok upozorní ladicího programu.|  
-|[Unloadassembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)|Sestavení CLR byl odpojen upozorní ladicího programu.|  
-|[Unloadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md)|Odpojení třídy upozorní ladicího programu.|  
-|[Unloadmodule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadmodule-method.md)|Modul CLR (DLL) byl odpojen upozorní ladicího programu.|  
-|[Updatemodulesymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md)|Upozorní ladicí program, že došlo ke změně symboly pro modul CLR.|  
+|[StepComplete – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md)|Aby byla dokončena krok upozorní ladicího programu.|  
+|[UnloadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)|Sestavení CLR byl odpojen upozorní ladicího programu.|  
+|[UnloadClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md)|Odpojení třídy upozorní ladicího programu.|  
+|[UnloadModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadmodule-method.md)|Modul CLR (DLL) byl odpojen upozorní ladicího programu.|  
+|[UpdateModuleSymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md)|Upozorní ladicí program, že došlo ke změně symboly pro modul CLR.|  
   
 ## <a name="remarks"></a>Poznámky  
  Všechny zpětná volání jsou serializovat, názvem ve stejném vlákně, v a volána s procesu synchronizovaného stavu.  
@@ -79,6 +80,6 @@ Poskytuje metody pro zpětná volání procesu ladicího programu.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [ICorDebug – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
- [ICorDebugManagedCallback2 – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
+ [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

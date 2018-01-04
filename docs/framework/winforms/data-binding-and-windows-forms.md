@@ -23,11 +23,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c20753aab569bf90b7db2f062050c7e185d638fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f2a4d023600456adf1e14b801ee6c24fd0a2348c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-and-windows-forms"></a>Datové vazby a rozhraní Windows Forms
 V systému Windows Forms můžete vázat na právě tradičních datových zdrojů, ale také k téměř jakoukoli struktura, která obsahuje data. Můžete vázat na pole hodnot, které vypočítat za běhu, čtení ze souboru nebo odvozena z hodnot jiných ovládacích prvků.  
@@ -66,5 +67,5 @@ V systému Windows Forms můžete vázat na právě tradičních datových zdroj
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Binding>  
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
- [Postupy: vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
- [BindingSource – komponenta](../../../docs/framework/winforms/controls/bindingsource-component.md)
+ [Postupy: Vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
+ [Komponenta BindingSource](../../../docs/framework/winforms/controls/bindingsource-component.md)

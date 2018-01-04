@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9275f1812111365ed6b0fb3be6957cd9ca883fdf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 62eb27919e762004667b3d5179c35cb04d9a9422
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Přenosy ve službě Windows Communication Foundation
 Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, konfigurace přenosu a nastavení, ladění vlastnosti.  
@@ -41,13 +42,13 @@ Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přeno
  [Konfigurace HTTP a HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)  
  Popisuje postup konfigurace elementů vazby přenosu HTTP a HTTPS.  
   
- [Postupy: nahrazení rezervace adresy URL WCF omezenou rezervací](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
+ [Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
  Popisuje způsob použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]omezený rezervace adresy URL.  
   
  [Přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md)  
  Popisuje důležité informace o nastavení kvóty, které jsou k dispozici v přenosové vrstvě.  
   
- [Práce se zařízeními NAT a brány firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
+ [Práce s překlady adres (NAT) a bránami firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
  Popisuje postup konfigurace přenosové vrstvy, když jsou zprávy odesílané nebo přijímané za bránou firewall nebo když se nachází překlad síťových adres (NAT).  
   
  [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
@@ -65,4 +66,4 @@ Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přeno
 ## <a name="related-sections"></a>Související oddíly  
  [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)  
   
- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+ [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)

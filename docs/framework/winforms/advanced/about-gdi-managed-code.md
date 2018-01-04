@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 711d25c600c2144ad4b134984501f641be24ced2
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 817f90194d73bf6608cccde0ce3917717d0b4878
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="about-gdi-managed-code"></a>Informace o spravovaném kódu GDI+
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]je část operačního systému Windows, které poskytuje dvourozměrná vektorové grafiky, vytvoření bitové kopie a typografie. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]zlepšuje na [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (grafické rozhraní zařízení zahrnutá v dřívějších verzích systému Windows) přidáním nové funkce a optimalizace stávajících funkcí.  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/22/2017
  Tato část obsahuje informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API pro programátory v jazyce pomocí spravovaného kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Čar, křivek a obrazců](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  Popisuje vektorová grafika.  
   
  [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  

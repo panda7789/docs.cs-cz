@@ -17,24 +17,25 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 427e62ad62f2d6a7ef2add5bfc77ac28eacfbb46
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0d531aad148eb060261bc1c2a703e1a003307910
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-coclasses"></a>Ladění tříd typu coclass
 Tato část popisuje nespravované typy coclass, které používá rozhraní API pro ladění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Corpubpublish – třída typu Coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)  
+ [CorpubPublish – třída typu coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)  
  Poskytuje rozhraní pro publikování informací o doménách aplikace a procesy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
   
- [Globální statické funkce ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
+ [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
   
- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+ [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
   
  [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 12599c0bdf249271e8cd28e5a7591c130b1fd920
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 978cb7dcfd132ea253fcb5f13174e14c7341f11a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-and-best-practices"></a>Směrnice a doporučené postupy
 Tento oddíl obsahuje témata, které poskytují pokyny pro vytváření [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikací.  
@@ -32,7 +33,7 @@ Tento oddíl obsahuje témata, které poskytují pokyny pro vytváření [!INCLU
  [Osvědčené postupy: Správa verzí kontraktů dat](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
  Vysvětluje, jak a kdy vytvořit kontrakty dat, které nedojde k narušení při vytvoření budoucích verzí.  
   
- [Správa verzí služeb](../../../docs/framework/wcf/service-versioning.md)  
+ [Správa verzí služby](../../../docs/framework/wcf/service-versioning.md)  
  Vysvětluje, jak vzít v úvahu správu verzí v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Po nasazení může být nutné služby (a jejich vystavit koncových bodů) se musí změnit, třeba, aby pokryl změna obchodní požadavky nebo požadavky na IT, nebo o vyřešení problémů. Každé změně zavádí novou verzi služby.  
   
  [Vyrovnávání zatížení](../../../docs/framework/wcf/load-balancing.md)  

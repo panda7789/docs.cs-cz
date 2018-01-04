@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 14f5c4bd3575b5451b7882e76c547ed722cd2b7e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a6b6fc83fe6e5e186b8d94c928c3a69c47a27818
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-services"></a>Směrovací služby
 Tato část obsahuje vzorků, které ukazují, jak používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] směrovače.  
@@ -32,7 +33,7 @@ Tato část obsahuje vzorků, které ukazují, jak používat [!INCLUDE[indigo1]
  [Rozšířené filtry](../../../../docs/framework/wcf/samples/advanced-filters.md)  
  Ukazuje, jak přizpůsobit standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázka kalkulačku komunikovat pomocí služby směrování.  
   
- [Dynamická Rekonfigurace](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md)  
+ [Dynamická rekonfigurace](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md)  
  Ukazuje, jak službu směrování můžete dynamicky překonfigurovat za běhu.  
   
  [Pokročilé zpracování chyb](../../../../docs/framework/wcf/samples/advanced-error-handling.md)  

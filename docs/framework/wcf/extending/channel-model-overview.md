@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9be7f226c331ad20c58a06b5c7497c7942db013d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7f6f45b788d825fed3c8f5d627190dd8911ec4c9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Zásobník kanál je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model závisí na několika rozhraní a dalších typů souhrnně označované jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] model kanálu. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  
@@ -81,9 +82,9 @@ ms.lasthandoff: 12/02/2017
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Služba: Moduly pro naslouchání kanálů a kanály](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)|Popisuje posluchači kanál naslouchání pro příchozí kanály v aplikaci služby.|  
-|[Klienta: Objekty pro vytváření kanálů a kanály](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)|Popisuje továren kanál vytvořit kanály pro připojení k aplikaci služby.|  
+|[Služba: Naslouchací objekty kanálů a kanály](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)|Popisuje posluchači kanál naslouchání pro příchozí kanály v aplikaci služby.|  
+|[Klient: Objekty pro vytváření kanálů a kanály](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)|Popisuje továren kanál vytvořit kanály pro připojení k aplikaci služby.|  
 |[Principy změn stavů](../../../../docs/framework/wcf/extending/understanding-state-changes.md)|Popisuje, jak <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> rozhraní modelů změny stavu v kanály.|  
-|[Výběr vzorce výměny zpráv](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)|Popisuje šest vzory exchange základní zpráv, které může podporovat kanály.|  
+|[Výběr vzoru výměny zpráv](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)|Popisuje šest vzory exchange základní zpráv, které může podporovat kanály.|  
 |[Zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)|Popisuje způsob zpracování chyb a výjimek ve vlastní kanály.|  
 |[Konfigurace a podpora metadat](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)|Popisuje postup podporují použití vlastní kanály z modelu aplikace a pro export a import metadat pomocí vazby a prvky vazeb.|

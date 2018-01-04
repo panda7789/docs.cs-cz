@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9d252dca363c952dde44b499363e285d4bb7eb82
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2f26e68b9654ccd565328003596e324558f7505f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-capabilities-with-custom-bindings"></a>Možnosti zabezpečení u vlastních vazeb
 Běžné úkoly, zabezpečení můžete provést pomocí jedné z vazby poskytované systémem. Pokud potřebujete větší kontrolu, ale můžete vytvořit vlastní vazby s <xref:System.ServiceModel.Channels.SecurityBindingElement>, jak je popsáno v těchto tématech. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vlastní vazby, najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
@@ -26,28 +27,28 @@ Běžné úkoly, zabezpečení můžete provést pomocí jedné z vazby poskytov
  [Režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)  
  Popisuje režimy ověřování, které lze prostřednictvím vlastní vazby.  
   
- [Postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  Popisuje základní kroky pro vytvoření vlastní vazby s elementem zabezpečení.  
   
- [Postupy: vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
+ [Postupy: Vytvoření SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
  Popisuje, jak vytvořit element zabezpečení pro zadaný režim ověřování.  
   
- [Postupy: zakázání zabezpečených relací u třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
+ [Postupy: Zakázání zabezpečených relací u WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
  Popisuje postup zakázání zabezpečených relací při vytváření služby federation service.  
   
  [Postupy: Povolení zjišťování opakování zpráv](../../../../docs/framework/wcf/feature-details/how-to-enable-message-replay-detection.md)  
  Popisuje, jak určit, kdy dojde k útoku formou opakovaného přehrávání.  
   
- [Postupy: vytvoření přihlašovacích údajů podpora](../../../../docs/framework/wcf/feature-details/how-to-create-a-supporting-credential.md)  
+ [Postupy: Vytvoření podpůrných přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/how-to-create-a-supporting-credential.md)  
  Popisuje, jak zadat podpůrné pověření pro služby, pokud služba vyžaduje, aby ho.  
   
- [Postupy: nastavení potvrzení podpisu](../../../../docs/framework/wcf/feature-details/how-to-set-up-a-signature-confirmation.md)  
+ [Postupy: Nastavení potvrzení podpisu](../../../../docs/framework/wcf/feature-details/how-to-set-up-a-signature-confirmation.md)  
  Popisuje postup při digitálnímu podepisování zpráv potvrďte podpisy.  
   
- [Postupy: Sada zkosení max. frekvence](../../../../docs/framework/wcf/feature-details/how-to-set-a-max-clock-skew.md)  
+ [Postupy: Nastavení hodnoty vlastnosti MaxClockSkew](../../../../docs/framework/wcf/feature-details/how-to-set-a-max-clock-skew.md)  
  Popisuje, jak nastavit maximální povolený časový rozdíl mezi službou a klienta.  
   
- [Postupy: Zakázání šifrování digitálních podpisů](../../../../docs/framework/wcf/feature-details/how-to-disable-encryption-of-digital-signatures.md)  
+ [Postupy: Zákaz šifrování digitálních podpisů](../../../../docs/framework/wcf/feature-details/how-to-disable-encryption-of-digital-signatures.md)  
  Popisuje, jak zakázáním šifrování digitálních podpisů může mít výhody výkonu.  
   
 ## <a name="reference"></a>Odkaz  

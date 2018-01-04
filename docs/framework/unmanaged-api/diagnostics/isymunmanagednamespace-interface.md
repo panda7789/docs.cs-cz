@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8500eb7a9f1762402567e9352a3ce84f5a672a45
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1acca300362162b94410aadb10b123b4ecacc664
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="isymunmanagednamespace-interface"></a>ISymUnmanagedNamespace – rozhraní
 Představuje obor názvů.  
@@ -33,11 +34,11 @@ Představuje obor názvů.
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetName – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|Získá název tohoto oboru názvů.|  
-|[Getnamespaces – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|Získá podřízené objekty daného tento obor názvů.|  
-|[Getvariables – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|Vrátí všechny proměnné definované v globálním oboru v rámci tento obor názvů.|  
+|[GetNamespaces – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|Získá podřízené objekty daného tento obor názvů.|  
+|[GetVariables – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|Vrátí všechny proměnné definované v globálním oboru v rámci tento obor názvů.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+ [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 71fdc7c68ff7e672a5adf044bbe0200563772a58
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bc5245be9b008f4bd8021c501860d789c60c73a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltbindingelementextensionsgt"></a>&lt;bindingElementExtensions&gt;
 Tato část umožňuje použití vlastní vazby element z počítače nebo konfiguračního souboru aplikace. Element vlastní vazby můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu vazby element rozšíření, a taky `name` atribut prvku vlastní vazby.  
@@ -53,4 +54,4 @@ Tato část umožňuje použití vlastní vazby element z počítače nebo konfi
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)

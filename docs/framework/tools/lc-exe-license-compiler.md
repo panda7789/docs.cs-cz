@@ -23,11 +23,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e0175b14f556a68f9c289d84d79ce10a6982ffb3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2e890ff68967d04d5c0f487508c9ce559f377e56
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (kompilátor licencí)
 License Compiler čte textové soubory, které obsahují licenční informace a vytváří binární soubor, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
@@ -53,7 +54,7 @@ License Compiler čte textové soubory, které obsahují licenční informace a 
 |**/complist:** *filename*|Určuje název souboru, který obsahuje seznam licencovaných součástí, jež chcete zahrnout do souboru .licenses. Jednotlivé komponenty se odkazují pomocí úplného názvu, vždy pouze jedna komponenta na řádek.<br /><br /> Uživatelé příkazového řádku mohou určit samostatný soubor pro každý formulář v projektu. Lc.exe akceptuje více vstupních souborů a vytváří jeden soubor .licenses.|  
 |**/h**[**nápovědu**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**i:** *modulu*|Určuje modulů, které obsahují součástí uvedených v **/complist** souboru. Chcete-li zadat více než jeden modul, použijte více **/i** příznaky.|  
-|**/ nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
+|**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**Company:** *cesta*|Určuje adresář, do kterého má být umístěn výstupní soubor .licenses.|  
 |**/ target:** *targetPE*|Určuje spustitelný soubor, pro který je generován soubor .licenses.|  
 |**/v**|Určuje režim podrobného vypisování; zobrazuje informace o průběhu kompilace.|  
@@ -104,5 +105,5 @@ lc @response.rsp
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Al.exe (Linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
+ [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

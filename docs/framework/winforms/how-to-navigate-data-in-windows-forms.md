@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c754bba18e93f63306701381f66af04b593c473
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d99d794164307cb22c5dfc89d6c9c227aa457a59
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v rozhraní Windows Forms
 V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ze zdroje dat pro vazbu <xref:System.Windows.Forms.BindingSource> součásti na zdroj dat a pak vazby ovládacích prvků <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Pomocí těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> správně. Můžete také najít položku a nastavte jej jako aktuální položky nastavením <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  
@@ -62,6 +63,6 @@ V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ze zdro
   
 ## <a name="see-also"></a>Viz také  
  [Zdroje dat podporované rozhraním Windows Forms](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)  
- [Oznámení změn v systému Windows Forms datové vazby](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
- [Datová vazba a systém Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
+ [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
+ [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)

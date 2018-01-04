@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9521d6a34d3f3d1f98d3d7618e456bbe280852a0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 105e93734c1cfd4c9e5769309ba9a0aed18f592e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="507---hostedtransportconfigurationmanagerconfiginitstart"></a>507 – HostedTransportConfigurationManagerConfigInitStart
 ## <a name="properties"></a>Vlastnosti  

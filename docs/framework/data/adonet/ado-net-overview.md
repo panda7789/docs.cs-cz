@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ae25f03a091d3a9705a2e445fec948d8c5e15e0f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e18115e460bf546c2fd6263e4671457a3da68f65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adonet-overview"></a>ADO.NET – přehled
 ADO.NET zajišťuje konzistentní přístup ke zdrojům dat, jako je například SQL Server a XML a zdroje dat, které jsou k dispozici prostřednictvím technologie OLE DB a rozhraní ODBC. Sdílení dat příjemce aplikace můžete použít technologie ADO.NET pro připojení k těmto zdrojům dat a načtení, zpracování a aktualizovat data, která obsahují.  
@@ -33,38 +34,38 @@ ADO.NET zajišťuje konzistentní přístup ke zdrojům dat, jako je například
  **Prohlášení o ochraně osobních údajů**: sestavení System.Data.dll, System.Data.Design.dll, System.Data.OracleClient.dll, System.Data.SqlXml.dll, knihovně System.Data.Linq.dll, System.Data.SqlServerCe.dll a System.Data.DataSetExtensions.dll nepodporují rozlišení mezi uživatele privátní a veřejné daty.  Tyto sestavení není shromažďování, ukládání nebo přenosu dat privátní všechny uživatele. Aplikace jiných výrobců mohou však shromažďování, ukládání nebo přenosu privátních dat uživatele pomocí těchto sestavení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Architektura technologie ADO.NET](../../../../docs/framework/data/adonet/ado-net-architecture.md)  
+ [Architektura ADO.NET](../../../../docs/framework/data/adonet/ado-net-architecture.md)  
  Poskytuje přehled o architektuře a součástí ADO.NET.  
   
- [Možnosti technologie ADO.NET a pokyny](../../../../docs/framework/data/adonet/ado-net-technology-options-and-guidelines.md)  
+ [Možnosti a pokyny pro ADO.NET](../../../../docs/framework/data/adonet/ado-net-technology-options-and-guidelines.md)  
  Popisuje produkty a technologie, které jsou součástí platformy Data Entity.  
   
  [LINQ a ADO.NET](../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
  Popisuje, jak je implementované Language-Integrated Query (LINQ) v ADO.NET a poskytuje odkazy na související témata.  
   
- [Zprostředkovatelé dat .NET framework](../../../../docs/framework/data/adonet/data-providers.md)  
+ [Zprostředkovatelé dat .NET Framework](../../../../docs/framework/data/adonet/data-providers.md)  
  Obsahuje přehled návrhu zprostředkovatel dat .NET Framework a zprostředkovatele dat rozhraní .NET Framework, které jsou součástí ADO.NET.  
   
  [Datové sady ADO.NET](../../../../docs/framework/data/adonet/ado-net-datasets.md)  
  Obsahuje přehled `DataSet` návrhu a součásti.  
   
- [Spuštění vedle sebe v technologii ADO.NET](../../../../docs/framework/data/adonet/side-by-side-execution.md)  
+ [Souběžné spouštění v ADO.NET](../../../../docs/framework/data/adonet/side-by-side-execution.md)  
  Popisuje rozdíly v ADO.NET verze a jejich vliv na spuštění vedle sebe a kompatibility aplikací.  
   
- [Příklady kódu pro technologii ADO.NET](../../../../docs/framework/data/adonet/ado-net-code-examples.md)  
+ [Příklady kódu ADO.NET](../../../../docs/framework/data/adonet/ado-net-code-examples.md)  
  Poskytuje ukázek kódu, které načtení dat pomocí zprostředkovatele dat ADO.NET.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Co je nového v technologii ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
+ [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
  Nabízí funkce, které jsou v nové [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  Popisuje postupy pro zabezpečené kódování při použití ADO.NET.  
   
- [Mapování datového typu v technologii ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
+ [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  Popisuje mapování datového typu mezi datovými typy rozhraní .NET Framework a zprostředkovatele dat .NET Framework.  
   
- [Načítání a upravovat Data v technologii ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  Popisuje, jak se připojit ke zdroji dat, načtení dat a upravovat data. To zahrnuje `DataReaders` a `DataAdapters`.  
   
 ## <a name="see-also"></a>Viz také  

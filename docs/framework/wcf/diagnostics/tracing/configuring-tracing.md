@@ -14,11 +14,12 @@ caps.latest.revision: "53"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1b3b200e26d4d615dd67c13770073b76dac78005
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3beeaec1ed9982fc49f6bf81e2717db862e7882f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasování zdrojů pro vydávání trasování a nastavte úrovně trasování, trasování aktivit sady a šíření pro podporu trasování začátku do konce korelace a nastavte trasování – moduly naslouchání pro přístup k trasování.  
@@ -191,6 +192,6 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
   
 ## <a name="see-also"></a>Viz také  
  [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Správa a Diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)  
- [Postupy: vytváření a inicializace trasování – moduly naslouchání](http://go.microsoft.com/fwlink/?LinkId=94648)  
+ [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)  
+ [Postupy: Vytváření a inicializace naslouchacích procesů trasování](http://go.microsoft.com/fwlink/?LinkId=94648)  
  [Vytváření vlastních TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239)

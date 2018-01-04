@@ -12,11 +12,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b58456fe99331a47871fbf4b1ad86cd43c53c2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ed13d7885cb8abd760aed6bd5812cb8b7c75bc02
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-workflow-architecture"></a>Architektura pracovního postupu systému Windows
 [!INCLUDE[wf](../../../includes/wf-md.md)]zvýší úroveň abstrakce pro vývoj aplikací interaktivní časově náročné. Pracovní jednotky se zapouzdřené jako aktivity. Aktivity spustit v prostředí, které poskytuje možnosti pro řízení toku, výjimek, chyb šíření, trvalosti dat o stavu, načítání a uvolňování probíhající pracovních postupů z paměti, sledování a toku transakcí.  

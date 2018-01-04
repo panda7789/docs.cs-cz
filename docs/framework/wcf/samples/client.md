@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: def4536fb40820372bf473d1752bb73d525db2e4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 11a02fc857fa3c03b11b549013550e557933820e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client"></a>Klient
 Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klientské aplikace.  
@@ -29,16 +30,16 @@ Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../i
  [Hlavičky adresy](../../../../docs/framework/wcf/samples/address-headers.md)  
  Ukazuje, jak mohou klienti předat parametry odkaz na službu pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Postup kanálu](../../../../docs/framework/wcf/samples/channel-factory.md)  
+ [Objekt pro vytváření kanálů](../../../../docs/framework/wcf/samples/channel-factory.md)  
  Ukazuje, jak klientská aplikace můžete vytvořit kanál s <xref:System.ServiceModel.ChannelFactory> třída místo generovaného klienta.  
   
  [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md)  
  Ukazuje, jak zachytit očekávané výjimky při použití typový klient.  
   
- [Načtení metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
+ [Načítání metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
  Demonstruje způsob implementace klienta, který dynamicky načítá metadata ze služby vybrat koncový bod s které ke komunikaci.  
   
- [Vyhnout se tak problémům s příkazem Using](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)  
+ [Jak se vyhnout problémům s příkazem Using](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)  
  Ukazuje, jak byste neměli používat "použití" příkaz automaticky vyčištění prostředků při použití typový klient jazyka C#.  
   
  [Typový klient](../../../../docs/framework/wcf/samples/typed-client.md)  

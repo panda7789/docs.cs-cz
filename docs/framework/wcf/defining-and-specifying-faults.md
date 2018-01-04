@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 754c938242035549b9deb94a2fe3b975b1384fc0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 713b9594ac628c2c256e8592d3894feee8029332
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-and-specifying-faults"></a>Definice a určení chyb
 Chyb SOAP nesou podmínku informace o chybě ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsahu a určit, které operace vrátit. [!INCLUDE[crabout](../../../includes/crabout-md.md)]jak služba nebo duplexní klienta, může poslat tyto chyby a jak klienta služby nebo aplikace zpracovává těchto chyb, najdete v části [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled zpracování chyb v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -102,8 +103,8 @@ End Class
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  [Určování a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
- [Chyby odesílání a přijímání](../../../docs/framework/wcf/sending-and-receiving-faults.md)  
- [Postupy: deklarace chyb v kontraktech služby](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)  
+ [Chyby při odesílání a příjmu](../../../docs/framework/wcf/sending-and-receiving-faults.md)  
+ [Postupy: Deklarace chyb v kontraktech služeb](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)  
  [Princip úrovně ochrany](../../../docs/framework/wcf/understanding-protection-level.md)  
- [Postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
+ [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
  [Určování přenosu dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

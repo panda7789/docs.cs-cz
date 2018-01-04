@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1fc1e843bb5841fcd5571bb1b57d6fb449336240
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a790ca50522adcffd5d8cd8433f1291102672430
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
 <xref:System.Diagnostics.TraceSource> Třída se používá aplikace k vytvoření trasování, které může být spojeno s aplikací. <xref:System.Diagnostics.TraceSource>poskytuje metody trasování, které vám umožňují snadno události trasování, data trasování a problém informativní trasování. Výstup trasování <xref:System.Diagnostics.TraceSource> můžete vytvořit a inicializován s nebo bez použití konfiguračních souborů. Toto téma obsahuje pokyny pro obě možnosti. Doporučujeme však používají konfigurační soubory pro usnadnění Rekonfigurace trasování vyprodukované trasování zdrojů za běhu.  

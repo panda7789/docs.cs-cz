@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7363a8f633d5f447f72e27ba03055f589564bdd2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 671fb857015a5babd388366066d282cb87462c18
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setassemblyfile2-method"></a>SetAssemblyFile2 – metoda
 Nastaví název a možnosti pro nové sestavení. Tato metoda není volána při vytvoření nepřipojeného moduly.  
@@ -59,6 +60,6 @@ HRESULT SetAssemblyFile2(
  Vyžaduje alink.h.  
   
 ## <a name="see-also"></a>Viz také  
- [Ialink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

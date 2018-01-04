@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 26efd43a05252e657626063d7dd04b1020dace18
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9361de4726b1dc58238db5ca7b5605f2cc75485d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Vystavení komponent COM pro rozhraní .NET Framework
 Tento oddíl shrnuje proces nutný k zpřístupnění existující součást COM do spravovaného kódu. Podrobnosti o zápis servery COM, která úzce integrovat s rozhraním .NET Framework, najdete v části [aspekty návrhu pro spolupráci](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689).  
@@ -49,6 +50,6 @@ Tento oddíl shrnuje proces nutný k zpřístupnění existující součást COM
 ## <a name="see-also"></a>Viz také  
  [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)  
  [Aspekty návrhu pro spolupráci](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)  
- [Ukázka zprostředkovatele komunikace s objekty COM: Klient .NET a COM Server](../../../docs/framework/interop/com-interop-sample-net-client-and-com-server.md)  
+ [Ukázka zprostředkovatele s objekty COM: klient .NET a server COM](../../../docs/framework/interop/com-interop-sample-net-client-and-com-server.md)  
  [Jazyková nezávislost a jazykově nezávislé komponenty](../../../docs/standard/language-independence-and-language-independent-components.md)  
  [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)

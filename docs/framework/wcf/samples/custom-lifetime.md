@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2538a9c483b949dfef1c60bd2225f5daf4e01117
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1cbe73468e2ce1c8a4fe81a676c819b04d2ef760
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-lifetime"></a>Vlastní doba života
 Tento příklad ukazuje, jak k zápisu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] rozšíření k poskytování služeb vlastní doba života sdílených [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] instancí služby.  

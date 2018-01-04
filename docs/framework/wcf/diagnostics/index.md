@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4aa9cacfaa966bbe37618406f4b1413dec433726
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d26386a0669c92b1b21559474c8f5f61862e6de7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="administration-and-diagnostics"></a>Správa a diagnostika
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohatou sadu funkcí, které umožňují monitorovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]taky zpřístupňuje dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). Při vyskytne chyba nebo spustí funguje nesprávně aplikace, můžete zobrazit, pokud nic významné došlo k chybě v protokolu událostí. Můžete také použít protokolování zpráv a trasování a zjistěte, jaké události jsou situaci klient server ve vaší aplikaci. Tyto funkce pomůže vývojáře a IT odborníky řešení potíží [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace při nepracuje správně.  
@@ -50,15 +51,15 @@ ms.lasthandoff: 12/02/2017
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]také poskytuje několik grafického uživatelského rozhraní a nástroje příkazového řádku snadno vytvářet, nasazovat a spravovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Nástroje služby Windows Communication Foundation](../../../../docs/framework/wcf/tools.md). Například můžete použít [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) můžete vytvářet a upravovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurační nastavení pomocí průvodce, místo přímou úpravou kódu XML. Můžete také [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) Pokud chcete zobrazit, skupiny a filtrovat zprávy trasování tak, aby lze diagnostikovat, opravte a zkontrolujte problémy s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
 ## <a name="see-also"></a>Viz také  
- [Konfigurace aplikace](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)  
+ [Konfigurace vaší aplikace](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)  
  [Nasazení služeb](../../../../docs/framework/wcf/diagnostics/deploying-services.md)  
  [Přehled výjimek](../../../../docs/framework/wcf/diagnostics/exceptions-reference/index.md)  
  [Protokolování událostí](../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
  [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
- [Nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
- [Nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
+ [Editor konfigurace (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
+ [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
  [Nástroj ServiceModelReg.exe](../../../../docs/framework/wcf/diagnostics/servicemodel-registration-tool.md)  
  [Trasování](../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md)  
+ [Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)](../../../../docs/framework/wcf/diagnostics/wmi/index.md)  
  [Čítače výkonu](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)  
- [Nástroje služby Windows Communication Foundation](../../../../docs/framework/wcf/tools.md)
+ [Nástroje Windows Communication Foundation](../../../../docs/framework/wcf/tools.md)

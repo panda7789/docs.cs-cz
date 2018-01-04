@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cf0facaa1107fcc6dcd93cbf0252024dc6f73b0a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 116a9e38b9885f0d0a5afc8f4915b9ce2b50f1dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidmanagedname-attribute"></a>GUID_ManagedName – atribut
 Definuje rozhraní pro vlastní atribut, který určuje název spravovaného oboru názvů pro knihovny součásti object model (COM).  

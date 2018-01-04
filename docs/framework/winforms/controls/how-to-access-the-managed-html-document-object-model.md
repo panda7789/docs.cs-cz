@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 284bd30a0a42f245c6b75d916853b264c7f72e6a
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 83ee8c5e0cd578a0eb821a35a27c5ff0072e5533
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-access-the-managed-html-document-object-model"></a>Postupy: Přístup k modelu spravovaného objektu dokumentu HTML
 Je dostupný spravované HTML modelu DOM (Document Object) na dva typy aplikací:  
@@ -56,4 +57,4 @@ Je dostupný spravované HTML modelu DOM (Document Object) na dva typy aplikací
 1.  Aplikace nebo <xref:System.Windows.Forms.UserControl> bude vyžadovat úplný vztah důvěryhodnosti, aby měli přístup na spravované HTML DOM Pokud nasazujete aplikaci Windows Forms pomocí [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], můžete požádat o úplný vztah důvěryhodnosti pomocí zvýšení úrovně oprávnění nebo nasazení důvěryhodných aplikací, zjistit [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications) podrobnosti.  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí modelu objektu spravovaného dokumentu HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)
+ [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

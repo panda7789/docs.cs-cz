@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fe09e2c91df0c25f070e06a39ce5e94a54062a20
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2ca8dbbffdb48c33160e3c4f7495057b9ce60c13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF
 Toto téma popisuje postupy k migraci základní služby prvku ASP.NET AJAX ekvivalentní podporou AJAXU [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Ukazuje, jak vytvořit funkčně srovnatelný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] verzi služby prvku ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe, nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby lze použít k nahrazení služba ASP.NET AJAX.  
@@ -223,4 +224,4 @@ d.Add("two", 2);
 |Uvozený znaků|Vždy s escape dopředné lomítko (/); nikdy umožňuje zrušení uvozený neplatné znaky JSON, jako je například "\n".|Pomocí escape dopředné lomítko (/) pro hodnoty data a času.|  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
+ [Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)

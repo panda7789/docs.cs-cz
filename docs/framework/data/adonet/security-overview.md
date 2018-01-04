@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d7288eeffeb642d1e897e11153802633d71747bd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2c0921e154f10abecb7cdedb23092f4341987a26
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář může zaručit, že aplikace je bezpečné ze všech útoky, protože není možné předpovědět, jaké druhy budoucím útokům nové technologie povede. Naopak právě, protože nemá nikdo nedostatky zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená žádný existují nebo mohou existovat. Budete muset plánování zabezpečení během fáze návrhu projektu a také naplánovat, jak se zachová zabezpečení během životního cyklu aplikace.  
@@ -51,7 +52,7 @@ Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář 
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Zabezpečení aplikací](/visualstudio/ide/securing-applications)|Obsahuje odkazy na témata obecné zabezpečení. Obsahuje taky odkazy na témata pro zabezpečení distribuovaných aplikací, webových aplikací, mobilní aplikace a aplikací klasické pracovní plochy.|  
+|[Zabezpečování aplikací](/visualstudio/ide/securing-applications)|Obsahuje odkazy na témata obecné zabezpečení. Obsahuje taky odkazy na témata pro zabezpečení distribuovaných aplikací, webových aplikací, mobilní aplikace a aplikací klasické pracovní plochy.|  
   
 ## <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)  
  Zabezpečení přístupu kódu (CAS) je mechanismus, který pomáhá omezit přístup k chráněným prostředkům a operace. Certifikační Autority v rozhraní .NET Framework, provádí následující funkce:  
@@ -76,7 +77,7 @@ Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář 
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Zabezpečení přístupu kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Popisuje interakce mezi zabezpečení přístupu kódu, na základě rolí zabezpečení a částečně důvěryhodného prostředí z hlediska aplikace ADO.NET.|  
+|[Zabezpečení přístupu ke kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Popisuje interakce mezi zabezpečení přístupu kódu, na základě rolí zabezpečení a částečně důvěryhodného prostředí z hlediska aplikace ADO.NET.|  
 |[Zabezpečení přístupu kódu](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)|Obsahuje odkazy na další témata s popisem certifikační Autority v rozhraní .NET Framework.|  
   
 ## <a name="database-security"></a>Zabezpečení databáze  
@@ -98,7 +99,7 @@ Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář 
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Zabezpečení SQL serveru](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Poskytuje přehled zabezpečení systému SQL Server s aplikačními scénáři, které obsahují pokyny pro vytváření aplikací pro zabezpečené ADO.NET cílených systému SQL Server.|  
+|[SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Poskytuje přehled zabezpečení systému SQL Server s aplikačními scénáři, které obsahují pokyny pro vytváření aplikací pro zabezpečené ADO.NET cílených systému SQL Server.|  
 |[Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
   
 ## <a name="security-policy-and-administration"></a>Zásady zabezpečení a správy  
@@ -114,5 +115,5 @@ Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář 
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [Připravte si kód pro rozhraní .NET Framework a zabezpečení v nativním režimu](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
- [Zabezpečení SQL serveru](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

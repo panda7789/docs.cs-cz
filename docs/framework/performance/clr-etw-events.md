@@ -17,11 +17,12 @@ caps.latest.revision: "45"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1d0619388b429bd1824a62bc29ccb222eea1ffde
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17701ee1ddbb1056c9b06b2467c4ce10b91271ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-etw-events"></a>Události ETW CLR
 Témata v této části popisují trasování událostí pro události systému Windows (ETW). Každá událost má přidružené klíčového slova a úrovně, které jsou popsány v [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md) tématu. Modul CLR má dva poskytovatelé pro události:  
@@ -36,7 +37,7 @@ Témata v této části popisují trasování událostí pro události systému 
  [Události běhových informací](../../../docs/framework/performance/runtime-information-etw-events.md)  
  Zaznamená informace o modulu runtime, SKU, číslo verze, způsobem, ve kterém byla aktivovaná modul runtime, včetně parametrů příkazového řádku, který byl spuštěn s, identifikátor GUID (pokud existuje) a další relevantní informace.  
   
- [Událost výjimky Thrown_v1](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)  
+ [Událost výjimky Thrown_V1](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)  
  Zaznamená informace o výjimkách, které jsou vydány.  
   
  [Kolizní události](../../../docs/framework/performance/contention-etw-events.md)  
@@ -51,10 +52,10 @@ Témata v této části popisují trasování událostí pro události systému 
  [Události metod](../../../docs/framework/performance/method-etw-events.md)  
  Zaznamená informace o metodách CLR pro překlad symbol.  
   
- [Události uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)  
+ [Události kolekce paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)  
  Zaznamená informace týkající se uvolňování paměti, která vám pomůžou ladění a Diagnostika.  
   
- [JIT – události trasování](../../../docs/framework/performance/jit-tracing-etw-events.md)  
+ [JIT – události trasování (CLR)](../../../docs/framework/performance/jit-tracing-etw-events.md)  
  Zaznamená informace o právě za běhu (JIT) vložené a volání tail.  
   
  [Události interoperability](../../../docs/framework/performance/interop-etw-events.md)  
@@ -73,6 +74,6 @@ Témata v této části popisují trasování událostí pro události systému 
  [Vylepšení ladění a optimalizace výkonu pomocí trasování událostí pro Windows](http://go.microsoft.com/fwlink/?LinkId=179696)  
  [Blog výkonu Windows](http://go.microsoft.com/fwlink/?LinkId=179509)  
  [Řízení přihlašování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md)  
- [CLR ETW – zprostředkovatelé](../../../docs/framework/performance/clr-etw-providers.md)  
- [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
- [Události trasování událostí v modulu Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
+ [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)  
+ [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
+ [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

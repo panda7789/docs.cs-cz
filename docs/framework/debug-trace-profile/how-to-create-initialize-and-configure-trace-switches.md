@@ -22,11 +22,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f5fa8a0fbe6dc08811162ba9b1d4198af9256fc4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 41e41f65b82061cebc52485ed08176633c45613d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Postupy: Vytváření, inicializace a konfigurace přepínačů trasování
 Trasování – přepínače umožňují povolit, zakázat a filtrovat výstup trasování.  
@@ -136,5 +137,5 @@ Trasování – přepínače umožňují povolit, zakázat a filtrovat výstup t
 ## <a name="see-also"></a>Viz také  
  [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
  [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
- [Trasování – přepínače](../../../docs/framework/debug-trace-profile/trace-switches.md)  
+ [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)  
  [Trasování a ladění schématu nastavení](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

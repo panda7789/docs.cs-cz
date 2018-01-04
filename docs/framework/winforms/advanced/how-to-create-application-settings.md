@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 481239b472ced5ef6251b665dad16e83a170607d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6d0ede88d8f9b4c15cd3e0f141870b9a5e747aa9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-application-settings"></a>Postupy: Vytváření nastavení aplikace
 Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a navázat je na vlastnosti svého formuláře nebo svého formuláře ovládací prvky, tak, aby tato nastavení jsou načteny a automaticky uloženy v době běhu.  
@@ -60,4 +61,4 @@ Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a nav�
  <xref:System.Configuration.SpecialSettingAttribute>  
  <xref:System.Configuration.LocalFileSettingsProvider>  
  [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)  
- [Postupy: ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)
+ [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)

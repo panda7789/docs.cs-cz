@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3097f5352a8f92397b80f0c20e0cc2206e1e3fee
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 50cbf6521870a54f4f87c3eeb12030d5d7f2f6bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lthttptransportgt"></a>&lt;httpTransport&gt;
 Určuje přenosového protokolu HTTP pro přenos protokolu SOAP zprávy pro vlastní vazby.  
@@ -87,6 +88,6 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
  [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)  
  [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

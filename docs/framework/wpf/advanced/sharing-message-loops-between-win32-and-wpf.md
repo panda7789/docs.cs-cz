@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dcf8baa87038bc5625d46968b39d759daae25cbc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d3122100f93d15c04c109564e1abd2dc13f37990
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a>Sdílení smyčky zpráv mezi systémem Win32 a platformou WPF
 Toto téma popisuje, jak implementovat smyčku zpráv pro spolupráci s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], buď pomocí stávající zpráva smyčky ohrožení v <xref:System.Windows.Threading.Dispatcher> nebo vytvořením smyčku samostatnou zprávu na [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] postranní součinnosti kódu.  
@@ -74,6 +75,6 @@ Toto téma popisuje, jak implementovat smyčku zpráv pro spolupráci s [!INCLUD
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Interop.ComponentDispatcher>  
  <xref:System.Windows.Interop.IKeyboardInputSink>  
- [WPF a vzájemná spolupráce Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
+ [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
  [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)

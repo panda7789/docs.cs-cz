@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0057be1457ad369b84f311008180dc7c4a3c323d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 434111cc5955c5145bf7cd6fff4d76f138aeda7c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrvalidator-interface"></a>ICLRValidator – rozhraní
 Poskytuje metody pro ověřování přenosné spustitelné bitové kopie (PE) a vytváření sestav chyby ověření.  
@@ -32,7 +33,7 @@ Poskytuje metody pro ověřování přenosné spustitelné bitové kopie (PE) a 
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Formateventinfo – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-formateventinfo-method.md)|Získá podrobná zpráva o chybě zadaný ověření.|  
+|[FormatEventInfo – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-formateventinfo-method.md)|Získá podrobná zpráva o chybě zadaný ověření.|  
 |[Validate – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md)|Ověří přenosné spustitelný soubor nebo Microsoft (MSIL intermediate language) do zadaného souboru.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -45,6 +46,6 @@ Poskytuje metody pro ověřování přenosné spustitelné bitové kopie (PE) a 
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Iclrerrorreportingmanager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Clrruntimehost – třída typu Coclass](../../../../docs/framework/unmanaged-api/hosting/clrruntimehost-coclass.md)
+ [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)  
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [CLRRuntimeHost – třída typu coclass](../../../../docs/framework/unmanaged-api/hosting/clrruntimehost-coclass.md)

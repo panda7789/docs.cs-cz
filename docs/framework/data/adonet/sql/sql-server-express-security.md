@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 2052656a524eafd7b9a137ac7d5006aba53fc075
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 77658b1c4b40090b8e532f1a0566ecb927328d65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-express-security"></a>SQL Server Express zabezpečení
 Microsoft SQL Server Express Edition (SQL Server Express) je založený na systému Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržen tak, aby nepotřebných funkcí a připojení k síti jsou vypnuté ve výchozím nastavení. Tím se snižuje oblasti prostor k útoku uživatelem se zlými úmysly.  
@@ -45,9 +46,9 @@ Microsoft SQL Server Express Edition (SQL Server Express) je založený na syst�
 |[Připojení k SQL serveru Express](http://msdn.microsoft.com/library/ms165679.aspx) v Online knihách serveru SQL|Popisuje, jak používat SQL Server Express Edition v síti.|  
 |[Microsoft SQL Server 2005 Express Edition Books Online](http://msdn.microsoft.com/library/ms165706.aspx)|Kompletní dokumentaci pro SQL Server 2005 Express Edition.|  
 |[Instance uživatele, kteří nejsou správci](http://msdn.microsoft.com/library/ms143684.aspx) v Online knihách serveru SQL|Popisuje, jak vytvářet a nasazovat uživatelské instance.|  
-|[Instance systému SQL Server Express uživatele](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Popisuje možnosti uživatele instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelskou instanci, připojte se k instanci uživatele pomocí <xref:System.Data.SqlClient.SqlConnection>, uživatelské instance životnost a scénáře instance uživatele.|  
+|[Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Popisuje možnosti uživatele instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelskou instanci, připojte se k instanci uživatele pomocí <xref:System.Data.SqlClient.SqlConnection>, uživatelské instance životnost a scénáře instance uživatele.|  
   
 ## <a name="see-also"></a>Viz také  
- [Zabezpečení SQL serveru](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Instance systému SQL Server Express uživatele](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
+ [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

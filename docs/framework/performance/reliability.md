@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bd13a09e66c865630b9db3210bbd95bab14cb214
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3329bff14d2ab395fecfde0f26942b7cb1b9640e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliability"></a>Spolehlivost
 Je důležité, aby spuštění kódu v serverových prostředích, jako je SQL Server ochranu proti asynchronní výjimky. Spolehlivost, jak je popsáno v tomto poli, není specifická pro SQL Server, ale pro zápis spolehlivého kódu pro všechny hostitele v rozhraní .NET Framework verze 2.0 prostředí. SQL Server je však první služba, která rozsáhlé používat nových funkcí verze 2.0, tak se používá jako příklad.  
@@ -37,7 +38,7 @@ Je důležité, aby spuštění kódu v serverových prostředích, jako je SQL 
  [Spolehlivost – doporučené postupy](../../../docs/framework/performance/reliability-best-practices.md)  
  Obsahuje pokyny pro psaní kódu, který splňuje požadavky na spolehlivost.  
   
- [Omezené oblasti provádění](../../../docs/framework/performance/constrained-execution-regions.md)  
+ [Oblasti omezeného provádění](../../../docs/framework/performance/constrained-execution-regions.md)  
  Popisuje funkce a chování omezené oblasti provádění (CERs).  
   
 ## <a name="reference"></a>Odkaz  

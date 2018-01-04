@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 429eae61ab311d2a7a68567c97f40e1fdc0a1f3e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7aaac046a6f5022e4b903faacd609748092d2809
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a nasazení aplikace rozhraní .NET Framework. Tato část taky poskytuje informace o technologii oblasti jako dynamické programování, vzájemná funkční spolupráce, rozšiřitelnosti, správa paměti a dělení na vlákna.  
@@ -27,7 +28,7 @@ Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a
  [Základy vytváření aplikací](../../docs/standard/application-essentials.md)  
  Poskytuje informace o základní aplikaci vývoj úloh, například programování s doménami aplikací a sestavení, pomocí atributů, formátování a analýza základních typů, pomocí kolekcí, zpracování události a výjimkami, použití souborů a datových proudů a pomocí Obecné typy.  
   
- [Data a modelování](../../docs/framework/data/index.md)  
+ [Data a modelování](../../docs/framework/data/index.md)  
  Poskytuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyk integrovaného dotazu (LINQ), služby WCF Data Services a XML.  
   
  [Klientské aplikace](../../docs/framework/develop-client-apps.md)  
@@ -36,7 +37,7 @@ Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a
  [Webové aplikace s ASP.NET](../../docs/framework/develop-web-apps-with-aspnet.md)  
  Obsahuje odkazy na informace o použití technologie ASP.NET můžete vytvářet podnikové webové aplikace s minimální kódování.  
   
- [Aplikace orientované na služby s použitím technologie WCF](../../docs/framework/wcf/index.md)  
+ [Aplikace orientované na služby s použitím technologie WCF](../../docs/framework/wcf/index.md)  
  Popisuje, jak pomocí Windows Communication Foundation (WCF) můžete vytvářet aplikace orientované na služby, které jsou zabezpečený a spolehlivý.  
   
  [Vytváření pracovních postupů s Windows Workflow Foundation](windows-workflow-foundation/index.md)     

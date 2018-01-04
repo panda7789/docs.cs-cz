@@ -16,11 +16,12 @@ caps.latest.revision: "15"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: edf1dd36fe8c0f3e6c1ae8087d1bacbc00cf307a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e8c10c9d4838a2b6c9d3a021d22d2dfd4dc865da
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Zabezpečení zpráv s anonymním klientem
 Následující příklad ukazuje klienta a služby zabezpečené [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení zpráv. Návrh cílem je používat zabezpečení zpráv, nikoli zabezpečení přenosu, tak, aby v budoucnu může podporovat model bohatší založené na deklaracích identity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí bohaté deklarace pro ověřování, najdete v tématu [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
@@ -144,6 +145,6 @@ Následující příklad ukazuje klienta a služby zabezpečené [!INCLUDE[indig
 ## <a name="see-also"></a>Viz také  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)  
- [Zabezpečení zpráv anonymní](../../../../docs/framework/wcf/samples/message-security-anonymous.md)  
+ [Zabezpečení zpráv s anonymní metodou](../../../../docs/framework/wcf/samples/message-security-anonymous.md)  
  [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

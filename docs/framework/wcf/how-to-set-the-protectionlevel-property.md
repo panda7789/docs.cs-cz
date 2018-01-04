@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6105b1b367f9f8cab1f2ba3a38b148038478c780
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a9b90df85259dfe48f071ca2b4b8404cfe8e673e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-protectionlevel-property"></a>Postupy: Nastavení vlastnosti ProtectionLevel
 Úroveň ochrany můžete nastavit tak, že použití odpovídajícího atributu a nastavení vlastnosti. Můžete nastavit ochranu na úrovni služby a ovlivňují všechny části každé zprávy nebo můžete nastavit ochranu stále podrobné úrovni, z metody části zprávy. [!INCLUDE[crabout](../../../includes/crabout-md.md)]`ProtectionLevel` vlastnost, najdete v části [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md).  

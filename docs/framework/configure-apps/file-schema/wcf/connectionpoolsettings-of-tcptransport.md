@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4b0bd7303f714847228bcd8bfed7134fe9942c1a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f0e9c4d34caa16f41e874b7a3880325a6585c230
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltconnectionpoolsettingsgt-of-lttcptransportgt"></a>&lt;connectionPoolSettings&gt; – &lt;tcpTransport&gt;
 Určuje nastavení fondu další připojení pro přenos TCP.  
@@ -69,6 +70,6 @@ Určuje nastavení fondu další připojení pro přenos TCP.
  [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)  
  [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de9740d74b87de7b81da10b458a7e935a427af98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6873de24e33876b7caaf9014ca7e9d6bc80375c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-and-deploying-wpf-applications"></a>Sestavení a nasazení aplikací WPF
 Sestavení a nasazení modelu poskytuje možnost vytvářet a nasazovat aplikace místně i vzdáleně, včetně následujících:  
@@ -34,16 +35,16 @@ Sestavení a nasazení modelu poskytuje možnost vytvářet a nasazovat aplikace
 -   ClickOnce – nasazení: publikování a nasazení systém .NET.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
  [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
- [Postupy: témata](../../../../docs/framework/wpf/app-development/build-and-deploy-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/app-development/build-and-deploy-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  MSBuild  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
-  [Windows v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
-  [Navigace – přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
-  [Přehled aplikace prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
+  [Windows ve WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
+  [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+  [Přehled aplikací Prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
   [Hostování](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)

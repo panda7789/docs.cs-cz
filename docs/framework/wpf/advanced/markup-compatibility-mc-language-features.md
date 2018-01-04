@@ -21,13 +21,14 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 550f861bc6774f13681beb27c704592d384ad9a4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 54774f2d9e854fefdafb0494ec8ca252419bd114
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-compatibility-mc-language-features"></a>Jazykové funkce kompatibility značek (mc:)
 ## <a name="in-this-section"></a>V tomto oddílu  
- [MC: Ignorovatelná atribut](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)  
-  [MC:ProcessContent atribut](../../../../docs/framework/wpf/advanced/mc-processcontent-attribute.md)
+ [mc:Ignorable – atribut](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)  
+  [mc:ProcessContent – atribut](../../../../docs/framework/wpf/advanced/mc-processcontent-attribute.md)

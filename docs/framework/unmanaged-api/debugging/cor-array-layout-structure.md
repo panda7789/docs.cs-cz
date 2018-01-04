@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 02ddd87cfaf16990ff487dfe27f30a2493cb9a01
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b936b1b2187ec68db7f5fdecb0344e6cac211ab1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corarraylayout-structure"></a>COR_ARRAY_LAYOUT – struktura
 Poskytuje informace o rozložení objektu pole v paměti.  

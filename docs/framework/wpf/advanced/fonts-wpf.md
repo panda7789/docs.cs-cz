@@ -15,23 +15,24 @@ caps.latest.revision: "82"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bc23483ee1c2b59de8c43c2a2582225d1b2c864c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b652805c921b4c1643e2c1ffcca8a361aa65541c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fonts-wpf"></a>Písma (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje podporu pro bohatou prezentace text použití [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem. Ukázka pack z [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem je součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Funkce písem OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
- [Balení písma s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)  
- [Ukázkové sadě písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/fonts-how-to-topics.md)  
+ [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [Balení písem s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)  
+ [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/fonts-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.FontStyle>  
  <xref:System.Windows.SystemFonts>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)

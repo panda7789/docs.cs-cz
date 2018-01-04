@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 51be377005913464d94ca30521f787144e051b4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 53141f2d411d544da738625200e09680d467ed6f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-a-transform-to-a-bitmapimage"></a>Postupy: Použití transformace na BitmapImage
 Tento příklad ukazuje, jak se má použít <xref:System.Windows.Media.Transform> k <xref:System.Windows.Media.Imaging.BitmapImage>.  
@@ -34,5 +35,5 @@ Tento příklad ukazuje, jak se má použít <xref:System.Windows.Media.Transfor
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Imaging.BitmapSource>  
- [Přehled vytvoření bitové kopie](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [Otočit obrázek](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)
+ [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [Otočení obrázku](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)

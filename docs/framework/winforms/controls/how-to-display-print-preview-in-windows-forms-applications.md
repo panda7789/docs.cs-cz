@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e705575b8c3acdcc3d92b985c59b60e7310dce7b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2567a564b5769abd91d34696c1a94c21ad2913ce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-print-preview-in-windows-forms-applications"></a>Postupy: Zobrazení náhledu tisku ve formulářových aplikacích Windows
 Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> řízení umožňuje uživatelům zobrazit dokumentu, často před je vytisknout.  
@@ -92,7 +93,7 @@ Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> řízení umož
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [PrintDocument – komponenta](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)  
- [Printpreviewdialog – ovládací prvek](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
- [Podpora tisku ve Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
+ [Komponenta PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)  
+ [Ovládací prvek PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
+ [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
  [Windows Forms](../../../../docs/framework/winforms/index.md)

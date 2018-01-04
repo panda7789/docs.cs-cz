@@ -22,11 +22,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f9f637589666af3723f11eb1f828d00be57793e5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 37b849ed482f76692a63c70cbb0a3b9e1bacc8ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="initdbgtransportmanager-function"></a>InitDbgTransportManager – funkce
 Inicializuje správce přenosu pro připojení k vzdálené cíle pro výčet proces a modulu runtime.  

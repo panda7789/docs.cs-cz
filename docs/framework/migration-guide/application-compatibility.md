@@ -19,11 +19,12 @@ ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e67fff19c4b187010b35519081f46e11effbad6c
-ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
+ms.workload: dotnet
+ms.openlocfilehash: 0144d75d7b158efb5ab205dfdd96884fb630eabc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Kompatibilita aplikací v rozhraní .NET Framework
 
@@ -82,11 +83,11 @@ Každý problém obsahuje následující informace:
 Pokud chcete začít, vyberte typ kompatibility změny níže:
 
 * [Odlišnosti ve změnách cílení](./retargeting/index.md)
-* [Změny v modulu runtime](./runtime/index.md)
+* [Změny v modulu runtime](./runtime/index.md)
 
 
 ## <a name="see-also"></a>Viz také
 
 * [Verze a závislosti](../../../docs/framework/migration-guide/versions-and-dependencies.md)
 * [Co je nového](../../../docs/framework/whats-new/index.md)
-* [Co je zastaralé v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)
+* [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)

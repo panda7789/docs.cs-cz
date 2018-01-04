@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b367b5133cd765fe7e160cd2706589c1773eeb59
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 470fb0788aa3407fff14d1e4df4a89180c5e079d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 Operaci hledání zjišťování se spouští pomocí klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce v zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným WS-Discovery ProbeMatch zprávy odpovědi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zjišťování zprávy, najdete v článku [specifikaci WS-Discovery](http://go.microsoft.com/fwlink/?LinkID=122347).  
@@ -76,7 +77,7 @@ Console.WriteLine("Found {0} ICalculatorService endpoint(s).", findResponse.Endp
   
 ## <a name="see-also"></a>Viz také  
  [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
- [Pomocí kanálem klienta zjišťování](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)  
+ [Použití kanálu klienta zjišťování](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)  
  [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
  [Asynchronní hledání](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)  
- [Základní](../../../../docs/framework/wcf/samples/basic-sample.md)
+ [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)

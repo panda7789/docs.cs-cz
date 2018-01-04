@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3948a4c404036235767f8de6747966709b75bc4c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6a470113dc54876937850294f6d99fc15a2cf98e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugvalue3-interface"></a>ICorDebugValue3 – rozhraní
 Rozšiřuje rozhraní "ICorDebugValue" a "Icordebugvalue2 –" poskytovat podporu pro pole, které jsou větší než 2 GB.  
@@ -32,7 +33,7 @@ Rozšiřuje rozhraní "ICorDebugValue" a "Icordebugvalue2 –" poskytovat podpor
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getsize64 – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Získá velikost v bajtech to `ICorDebugValue3` objektu.|  
+|[GetSize64 – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Získá velikost v bajtech to `ICorDebugValue3` objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
  [Icordebugvalue::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) metoda vrátí velikost objektu, který rozsahy od 0 do 2 147 483 647 bajtů. V [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], velikost pole může být vyšší než 2 GB. `ICorDebugValue3` Rozhraní umožňuje určit velikost těchto polí.  
@@ -49,5 +50,5 @@ Rozšiřuje rozhraní "ICorDebugValue" a "Icordebugvalue2 –" poskytovat podpor
 ## <a name="see-also"></a>Viz také  
     
     
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

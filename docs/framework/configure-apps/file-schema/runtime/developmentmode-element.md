@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4573c3a5e0cf64996f2a4e109736d966b754494a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a77f93a0dff198821509c2c26f67caa137073ced
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdevelopmentmodegt-element"></a>&lt;developmentmode –&gt; – Element
 Určuje, zda běhové prostředí vyhledává sestavení v zadaném proměnnou prostředí DEVPATH adresáře.  
@@ -52,7 +53,7 @@ Určuje, zda běhové prostředí vyhledává sestavení v zadaném proměnnou p
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|**Hodnota TRUE**|Vyhledá sestavení v zadaném proměnnou prostředí DEVPATH adresáře.|  
+|**true**|Vyhledá sestavení v zadaném proměnnou prostředí DEVPATH adresáře.|  
 |**false**|Nehledá sestavení v zadaném proměnnou prostředí DEVPATH adresáře. Toto je výchozí hodnota|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -82,4 +83,4 @@ Určuje, zda běhové prostředí vyhledává sestavení v zadaném proměnnou p
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Postupy: vyhledání sestavení pomocí mechanismu DEVPATH](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)
+ [Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)

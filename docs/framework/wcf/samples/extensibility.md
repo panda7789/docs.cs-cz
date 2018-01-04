@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28e6de46098a8309a17e0c264411f865fb9b1de2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d1d8ea4987d918da79dcf1f69b842f19901e63a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extensibility"></a>Rozšiřitelnost
 Tato část obsahuje ukázky, které pracují s vlastní rozšiřitelnosti a jiné funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -26,7 +27,7 @@ Tato část obsahuje ukázky, které pracují s vlastní rozšiřitelnosti a jin
  [Rozšiřitelnost kanálů](../../../../docs/framework/wcf/samples/channels-extensibility.md)  
  Představuje vlastní kanály.  
   
- [Rozšíření zjišťování](../../../../docs/framework/wcf/samples/discovery-extensibility.md)  
+ [Rozšiřitelnost zjišťování](../../../../docs/framework/wcf/samples/discovery-extensibility.md)  
  Představuje vlastní zjišťování.  
   
  [Rozšiřitelnost vytváření instancí](../../../../docs/framework/wcf/samples/instancing-extensibility.md)  
@@ -71,5 +72,5 @@ Tato část obsahuje ukázky, které pracují s vlastní rozšiřitelnosti a jin
  [Inspektoři zpráv](../../../../docs/framework/wcf/samples/message-inspectors.md)  
  Ukazuje, jak implementovat a nakonfigurovat klienta a služby inspektoři zpráv.  
   
- [WebContentTypeMapper –](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  
+ [WebContentTypeMapper](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  
  Ukazuje, jak pro nové typy obsahu k mapování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formáty text zprávy.

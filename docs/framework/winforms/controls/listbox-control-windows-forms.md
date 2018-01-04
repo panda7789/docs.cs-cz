@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d99cf3dee06141599f70016fdd1bace492b2bfb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: fdeea9139500ff9d521a722ef6bb9dac1954dd1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listbox-control-windows-forms"></a>ListBox – ovládací prvek (Windows Forms)
 Windows Forms `ListBox` zobrazí seznam položek, ze kterých uživatel může vybrat jednu nebo více.  
@@ -38,5 +39,5 @@ Windows Forms `ListBox` zobrazí seznam položek, ze kterých uživatel může v
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Windows Forms – ovládací prvky používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
+ [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
  Poskytuje seznam věcí, které můžete provést pomocí seznamu polí, pole se seznamem a zaškrtnuté seznamy.

@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9e3ff6c4ec8febda93136c5ac88223b5baf80124
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a84fdb104296cf15b5f0d2d04f4ddd7ea1419643
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Události Trasování událostí pro Windows v knihovně Task Parallel Library a PLINQ
 Knihovně Task Parallel Library a PLINQ generovat události trasování pro Windows (ETW) události, které můžete použít k profilu a řešení potíží s aplikací pomocí nástroje, jako je analyzátor výkonu systému Windows. Ve většině scénářů, nejlepší způsob, jak kód paralelní aplikace profilu je však používat [vizualizér souběžnosti](/visualstudio/profiling/concurrency-visualizer) v [!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)].  
@@ -123,6 +124,6 @@ Knihovně Task Parallel Library a PLINQ generovat události trasování pro Wind
 |QueryID|<xref:System.Int32?displayProperty=nameWithType>|Dotaz jedinečný identifikátor.|  
   
 ## <a name="see-also"></a>Viz také  
- [Události trasování událostí pro Windows v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)  
+ [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)  
  [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
  [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

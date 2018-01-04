@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 885c87439ebf7393380c7ff20165d8587f1b26f0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 84c7f870edd1c8082936b380547e181d129f529e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typu SQL CLR
 V technologii LINQ to SQL datový model relační databáze mapuje objektový model, který je vyjádřena v programovací jazyk podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL překládá dotazy language-integrated ve model objektu do SQL a odešle je do databáze pro provedení. Při databáze vrátí výsledky, znamená, že technologie LINQ to SQL výsledky zpět na objekty, které můžete pracovat v vlastní programovací jazyk.  
@@ -265,7 +266,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje objektový mo
  Technologie LINQ to SQL nepodporuje žádné jiné mapování typů pro tyto různé typy.  Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
   
 ## <a name="see-also"></a>Viz také  
- [Na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+ [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
  [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
- [Neshody typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
+ [Neshody typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)

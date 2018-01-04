@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8fd742e7fa2b7870b8988e889a0df2b18a240bd9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d3a5d06da3a398782b0285fb55807df5832cf771
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-manually-render-buffered-graphics"></a>Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti
 Pokud spravujete vlastní grafiky ve vyrovnávací paměti, musíte být schopná vytvořit a vykreslení grafiky vyrovnávací paměti. Můžete vytvořit instance <xref:System.Drawing.BufferedGraphics> třídu, která souvisí s kreslení povrchy na vaší obrazovce voláním <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A> metoda. Tato metoda vytvoří <xref:System.Drawing.BufferedGraphics> instance, který je přidružen konkrétní vykreslování prostor, jako jsou formuláře nebo ovládacího prvku. Po vytvoření <xref:System.Drawing.BufferedGraphics> instance, při kreslení grafiky do vyrovnávací paměti reprezentuje prostřednictvím <xref:System.Drawing.BufferedGraphics.Graphics%2A> vlastnost. Po provedení všech grafické operace, můžete zkopírovat obsah vyrovnávací paměti na obrazovku voláním <xref:System.Drawing.BufferedGraphics.Render%2A> metoda.  
@@ -58,5 +59,5 @@ Pokud spravujete vlastní grafiky ve vyrovnávací paměti, musíte být schopn�
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.BufferedGraphicsContext>  
  <xref:System.Drawing.BufferedGraphics>  
- [Dvojité grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
- [Postupy: ruční správa grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)
+ [Grafiky s dvojitou vyrovnávací pamětí](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
+ [Postupy: Ruční správa grafiky uložené do vyrovnávací paměti](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)

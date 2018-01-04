@@ -23,11 +23,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3c3e2a8eac4383433888c324a3d36a6e62314462
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0b924f1c1b46eb132070b6d582cf065f38a8a600
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamically-loading-and-using-types"></a>Dynamické načtení a použití typů
 Reflexe poskytuje infrastrukturu, jako používá kompilátory jazyka [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] a JScript implementovat implicitní pozdní vazba. Vazba je proces vyhledávání deklarace (tedy implementace), která odpovídá jednoznačně zadaného typu. Pokud k tomuto procesu dochází za běhu, spíše než v době kompilace, nazývá pozdní vazba. [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]umožňuje používat implicitní pozdní vazba v kódu; Visual Basic – kompilátor volá metodu helper, která používá reflexe získat typ objektu. Argumenty předávané Pomocná metoda způsobit odpovídající metodu, která má být volána v době běhu. Tyto argumenty jsou instance (objekt), na kterém má být vyvolána metoda, název vyvolaná metoda (string) a argumenty předávané vyvolaná metoda (pole objektů).  

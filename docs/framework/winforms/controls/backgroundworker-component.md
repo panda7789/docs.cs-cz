@@ -22,32 +22,33 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cbcbc786c19ad1af74114915b0fd0689d466fcbe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6d83ff69053a71626d0bf9a844d9e94235080d78
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="backgroundworker-component"></a>BackgroundWorker – komponenta
 `BackgroundWorker` Součást umožňuje formuláře nebo spuštění operace asynchronně ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [BackgroundWorker – přehled komponenty](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)  
+ [Přehled komponenty BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)  
  Popisuje `BackgroundWorker` komponenta, která vám dává možnost provádět časově náročná operace asynchronně ("v pozadí"), na vlákno, která se liší od hlavního vlákna uživatelského rozhraní aplikace.  
   
  [Návod: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
  Ukazuje, jak používat `BackgroundWorker` součásti v Návrháři ke spuštění časově náročná operace na samostatné vlákno.  
   
- [Postupy: spuštění operace na pozadí](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
+ [Postupy: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  Ukazuje, jak používat `BackgroundWorker` součásti spustit časově náročná operace na samostatné vlákno.  
   
  [Návod: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/walkthrough-implementing-a-form-that-uses-a-background-operation.md)  
  Vytvoří aplikace pomocí návrháře, která provádí matematické výpočty asynchronně.  
   
- [Postupy: implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
+ [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
  Vytvoří aplikaci, která nemá matematické výpočty asynchronně.  
   
- [Postupy: Stažení souboru na pozadí](../../../../docs/framework/winforms/controls/how-to-download-a-file-in-the-background.md)  
+ [Postupy: Stahování souboru na pozadí](../../../../docs/framework/winforms/controls/how-to-download-a-file-in-the-background.md)  
  Ukazuje, jak používat `BackgroundWorker` součásti ke stažení souboru na samostatné vlákno.  
   
 ## <a name="reference"></a>Odkaz  

@@ -15,22 +15,23 @@ caps.latest.revision: "86"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 921a9f3abd8c4cba8cfa0f59b8321ee309642dbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58f65d6c25627ba84ffe83677bbaadfc2e55e6f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="documents"></a>Dokumenty
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje univerzální sadu součástí, které umožňují vývojářům vytvářet aplikace s funkcemi pokročilé dokumentu a vylepšené čtení prostředí. Kromě široké možnosti a kvalitu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje zjednodušenou správu služby pro dokument balení, zabezpečení a úložiště.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Serializace dokumentu a úložiště](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Serializace a úložiště dokumentů](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
  [Poznámky](../../../../docs/framework/wpf/advanced/annotations.md)  
  [Obsah toku](../../../../docs/framework/wpf/advanced/flow-content.md)  
  [Typografie](../../../../docs/framework/wpf/advanced/typography.md)  
- [Tisk a tisku System Management](../../../../docs/framework/wpf/advanced/printing-and-print-system-management.md)  
+ [Tisk a správa systému tisku](../../../../docs/framework/wpf/advanced/printing-and-print-system-management.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.DocumentViewer>  

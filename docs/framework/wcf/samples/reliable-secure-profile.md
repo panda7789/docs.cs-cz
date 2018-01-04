@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 6b73565409e26456ad09067066455ef2459b2e3c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 89a6d5c2e485699a55c77797c34eaca2c9848c40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliable-secure-profile"></a>Řešení ReliableSecureProfile
 Tento příklad ukazuje, jak vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [spolehlivé profil zabezpečení](http://go.microsoft.com/fwlink/?LinkId=178140) (konfigurace). Tento příklad znázorňuje implementaci [vytvořit připojení](http://go.microsoft.com/fwlink/?LinkId=178141) kanál, který může být složené, společně s spolehlivé zasílání zpráv a volitelně zabezpečený kanál vytvořit spolehlivá zabezpečené vazby podle specifikace konfigurace.  

@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3f8e1f776a64ab1fd957fdf327eada2cb722777a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 754c380972d79343eab83b9e862e478798218ffc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework nabízí na základě rolí zabezpečení a také zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí běžnou infrastrukturu poskytl common language runtime (CLR). Na světě nespravovaného kódu většinu aplikací spustit s oprávněními uživatele nebo objekt zabezpečení. V důsledku toho počítačích může být poškozena a privátní data ohrožení zabezpečení při škodlivý nebo plný chyb softwaru je spustit uživatel, se zvýšenými oprávněními.  
@@ -208,5 +209,5 @@ Failed, as expected: Request failed.
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [Připravte si kód pro rozhraní .NET Framework a zabezpečení v nativním režimu](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
  [Zabezpečení přístupu kódu](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)  
- [Na základě rolí zabezpečení](http://msdn.microsoft.com/en-us/239442e3-5be4-4203-b7fd-793baffea803)  
+ [Zabezpečení na základě rolí](http://msdn.microsoft.com/en-us/239442e3-5be4-4203-b7fd-793baffea803)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

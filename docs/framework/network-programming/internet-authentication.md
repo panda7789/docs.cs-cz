@@ -25,11 +25,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f44bef7804e9101b2d1bc50ba53f3fc7a5fa90ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fbf25ae866b338d2f1ac0ea11570e0d535e9137c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-authentication"></a>Ověřování v Internetu
 <xref:System.Net> Třídy podporují různé mechanismy ověřování klienta, včetně standardní Internet metod ověřování basic, algoritmem digest, vyjednávání protokolu NTLM a ověřování protokolu Kerberos, a také vlastních metod, které můžete vytvořit.  
@@ -49,6 +50,6 @@ ms.lasthandoff: 11/21/2017
  Některé schémat ověřování, můžete ověřovat uživatele bez provedení první požadavek pro prostředek. Aplikace můžete ušetřit čas tím preauthenticating uživatele s hledaným prostředkem, a odstraňuje tak alespoň jeden odezvy na server. Nebo, aby byla později rychlejšího uživateli může provádět ověřování během spuštění programu. Schémat ověřování, které můžete použít sadu předběžného ověření <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> vlastnost **true**.  
   
 ## <a name="see-also"></a>Viz také  
- [Základní a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
- [Ověřování protokolu Kerberos a NTLM](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
- [Zabezpečení v síťové programování](../../../docs/framework/network-programming/security-in-network-programming.md)
+ [Základní ověřování a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
+ [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
+ [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d25f8357f5b375792e8a05833e8397085cc27b23
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 976f1e4d8a149f8104325fd5d006d245afee04a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotaz na službu Data (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny umožňuje spouštět dotazy na data služby pomocí známých [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] programování způsoby, včetně použití integrovaného dotazu jazyka (LINQ). Klientská knihovna překládá dotazu, která je definována v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třída do zprávy požadavku HTTP GET. Knihovny obdrží zprávu odpovědi a převede jej do instance třídy služeb dat klienta. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.  
@@ -134,23 +135,23 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
  Můžete také získat jenom celkový počet entit v sadě buď jako <xref:System.Int32> nebo jako <xref:System.Int64> hodnotu voláním <xref:System.Linq.Enumerable.Count%2A> nebo <xref:System.Linq.Enumerable.LongCount%2A> metody v uvedeném pořadí. Pokud tyto metody jsou volány, <xref:System.Data.Services.Client.QueryOperationResponse%601> nevrátí; je vrácena pouze hodnota počtu. Další informace najdete v tématu [postupy: určení číslo z entity vrácených dotazem](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Projekce dotazu](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)  
+ [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)  
   
- [Objekt Materialization](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
+ [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
   
  [Aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)  
   
- [Postupy: provádění dotazů služby dat](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
+ [Postupy: Provádění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
   
- [Postupy: Přidání možnosti dotazu k dotazu služby dat](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)  
+ [Postupy: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)  
   
- [Postupy: určení počtu vrácených dotazem entity](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)  
+ [Postupy: Určení počtu entit vrácených dotazem](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)  
   
- [Postupy: Zadejte pověření klienta pro žádost o službu Data](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)  
+ [Postupy: Zadání přihlašovacích údajů klienta v žádosti do datové služby](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)  
   
- [Postupy: nastavení hlavičky v požadavku klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)  
+ [Postupy: Nastavení hlaviček v klientské žádosti](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)  
   
- [Postupy: projektu výsledky dotazu](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)  
+ [Postupy: Výsledky dotazů na projekt](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

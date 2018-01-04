@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 06d52bd0348e4667f1e3ec43a371021922f12ded
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c6ba88eebb963749247b318f14ef52bb116e3f0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrgcmanagergetstats-method"></a>ICLRGCManager::GetStats – metoda
 Získá sadu aktuální statistické údaje o systém kolekce paměti modul common language runtime.  
@@ -77,11 +78,11 @@ pCLRGCManager->GetStats(&GCStats);
   
 ## <a name="see-also"></a>Viz také  
  [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)  
- [Cor_gc_stats – struktura](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)  
+ [COR_GC_STATS – struktura](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)  
  [COR_GC_STAT_TYPES – výčet](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md)  
  [Uvolňování paměti](../../../../docs/standard/garbage-collection/index.md)  
- [Iclrcontrol – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [Iclrgcmanager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)  
- [Rozhraní hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
+ [ICLRGCManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)  
+ [Rozhraní pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

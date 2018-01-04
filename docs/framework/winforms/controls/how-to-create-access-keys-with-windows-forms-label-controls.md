@@ -28,11 +28,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ad6cd99a6399adea2e69cbf844b9f134d2e592e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6a856090a76f484c21c1d9982d67e9fdf21e8451
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-access-keys-with-windows-forms-label-controls"></a>Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky můžete použít k definování přístupové klíče pro další ovládací prvky. Když definujete přístupový klíč v ovládacím prvku popisek, může uživatel stisknout klávesy ALT a znak, který určíte přesunout fokus na ovládací prvek, který následuje v pořadí. Protože popisky nemůže přijmout fokus, automaticky aktivuje na další ovládací prvek v pořadí. Tento postup slouží k přiřazení přístupových klíčů k textová pole, pole se seznamem, seznamy a datové mřížky.  
@@ -74,6 +75,6 @@ Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky můžete použ�
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: velikost Windows Forms – ovládací prvek popisek podle obsahu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
- [Přehled ovládacího prvku popisek](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)  
- [Popisek – ovládací prvek](../../../../docs/framework/winforms/controls/label-control-windows-forms.md)
+ [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
+ [Přehled ovládacího prvku Label](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)  
+ [Ovládací prvek Label](../../../../docs/framework/winforms/controls/label-control-windows-forms.md)

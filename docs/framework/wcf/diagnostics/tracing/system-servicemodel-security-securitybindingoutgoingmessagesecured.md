@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: ff6589ba01da1cf17481e3ce9d7b7a87305c4a84
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 69640bc21ac663a2556094ff9a2b7e9730a1024b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemservicemodelsecuritysecuritybindingoutgoingmessagesecured"></a>System.ServiceModel.Security.SecurityBindingOutgoingMessageSecured
 System.ServiceModel.Security.SecurityBindingOutgoingMessageSecured  
@@ -27,5 +28,5 @@ System.ServiceModel.Security.SecurityBindingOutgoingMessageSecured
   
 ## <a name="see-also"></a>Viz také  
  [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení potíží s vaší aplikace pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a Diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+ [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

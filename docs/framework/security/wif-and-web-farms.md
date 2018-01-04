@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 22c2272118c8f8a42523d9bc8ceaa2007c0b7b57
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 93c3e4251943afa383002043d9259184be82d929
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wif-and-web-farms"></a>WIF a webové farmy
 Pokud používáte Windows Identity Foundation (WIF) k zabezpečení prostředků předávající stranu aplikace, který je nasazen ve webové farmě, je nutné provést určité kroky k zajištění, že WIF může zpracovat tokeny z instancí RP aplikace spuštěné v různých počítače ve farmě. Dané zpracování zahrnuje ověřování token podpisů relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování odesílal tokeny zabezpečení.  
@@ -263,4 +264,4 @@ namespace CacheLibrary
  <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>  
  <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>  
  <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>  
- [WIF relace správy](../../../docs/framework/security/wif-session-management.md)
+ [Správa relací WIF](../../../docs/framework/security/wif-session-management.md)

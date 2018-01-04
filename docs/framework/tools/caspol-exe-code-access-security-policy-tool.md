@@ -26,11 +26,12 @@ caps.latest.revision: "44"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 71f0a8c8d0e5e09cb6f39e5b8b104c0848c4d8ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0054e77138218e83693c13727866e8e6841170f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -95,7 +96,7 @@ caspol [options]
 |**-appdir**|Určuje adresář aplikace. Pokud zadáte **– appdir** jako podmínka, členství, adresa URL důkaz kódu se porovná se aplikace directory důkazy o tento kód. Pokud jsou obě hodnoty evidence stejné, byly podmínky členství splněny. Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.ApplicationDirectoryMembershipCondition>.|  
 |**-vlastní***xmlfile* |Přidá vlastní podmínku členství. Povinné *xmlfile* argument určuje soubor .xml, který obsahuje XML serializace podmínky vlastní členství.|  
 |**-hash** *Algoritmus_hash* {**-šestnáctkových** *hashValue* &#124; **-soubor** *assembly_file* }|Určuje kód, který obsahuje zadanou hodnotu hash sestavení. Pro použití hodnoty hash jako podmínky členství ve skupině kódu je nutné zadat hodnotu hash nebo soubor sestavení. Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.HashMembershipCondition>.|  
-|**-pub** { **-cert** *cert_file_name* &#124;<br /><br /> **-soubor** *signed_file_name* &#124; **-šestnáctkových***hex_string* }  |Určuje kód, který obsahuje zadaného vydavatele softwaru, jak je označeno souborem certifikátu, podpisem na souboru nebo šestnáctkovou reprezentací certifikátu X509. Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.PublisherMembershipCondition>.|  
+|**-pub** { **-cert** *cert_file_name* &#124;<br /><br /> **-soubor** *signed_file_name* &#124; **-šestnáctkových***hex_string* }|Určuje kód, který obsahuje zadaného vydavatele softwaru, jak je označeno souborem certifikátu, podpisem na souboru nebo šestnáctkovou reprezentací certifikátu X509. Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.PublisherMembershipCondition>.|  
 |**-lokality** *webu*|Určuje kód, který obsahuje zadanou webovou stránku původu. Příklad:<br /><br /> **-lokality** www.proseware.com<br /><br /> Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.SiteMembershipCondition>.|  
 |**-silné - souboru** *název_souboru* {*název* &#124; **- noname**} {*verze* &#124; **- noversion**}|Určuje kód, který má konkrétní silným názvem, jako je určený podle názvu souboru, název sestavení jako řetězec a verze sestavení ve formátu *hlavní*. *méně závažné*. *sestavení*. *Revize*. Příklad:<br /><br /> **-silné - souboru** myAssembly.exe myAssembly 1.2.3.4<br /><br /> Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.StrongNameMembershipCondition>.|  
 |**-Adresa url** *adresy URL*|Určuje kód pocházející ze zadané adresy URL. Adresa URL musí obsahovat protokol, jako je například http:// nebo ftp://. Kromě toho zástupný znak (\*) lze zadat více sestavení z konkrétní adresu URL. **Poznámka:** protože adresu URL lze identifikovat pomocí více názvů, pomocí adresy URL jako podmínku členství není bezpečné způsob, jak zjistit identitu kódu. Kdykoli je to možné, použijte podmínku členství silného názvu, podmínku vydavatele nebo podmínku hodnoty hash. <br /><br /> Další informace o tuto podmínku členství, najdete v článku <xref:System.Security.Policy.UrlMembershipCondition>.|  

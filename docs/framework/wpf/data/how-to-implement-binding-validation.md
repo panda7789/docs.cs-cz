@@ -17,11 +17,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec860cc9cc58febd98d8642c98a50ec296592d02
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d57fb099fa364d34b7df5c5fce792eb42079a31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření připojení
 Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a aktivační události styl visual svůj názor informovat uživatele, pokud je zadaná neplatná hodnota, podle vlastního ověřovacího pravidla.  
@@ -48,5 +49,5 @@ Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Validation
  Všimněte si, že pokud nezadáte vlastní <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> výchozí šablony chyba se zobrazí k poskytnutí zpětné vazby visual pro uživatele, když dojde k chybě ověření. V části "Ověření dat" v [přehled vazby dat](../../../../docs/framework/wpf/data/data-binding-overview.md) Další informace. Navíc [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje integrované ověřovací pravidlo, které zachytí výjimky, které jsou vyvolány během aktualizace zdrojová vlastnost vazby. Další informace naleznete v tématu <xref:System.Windows.Controls.ExceptionValidationRule>.  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

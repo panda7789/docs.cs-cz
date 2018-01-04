@@ -16,11 +16,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 716774efdf62356c2e3253c588dabb51de74470c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b50d98d5f02a59a013d7577f0e312e6ffde35690
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má řadu funkcí, které podporují rychlý vývoj obousměrného obsahu, například smíšený zleva doprava a přímo na zbývajících dat ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří vynikající prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština a hebrejština mluvení uživatele.  
@@ -152,7 +153,7 @@ Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../..
 ### <a name="flowdirection-exceptions"></a>FlowDirection výjimky  
  Existuje několik případů kde <xref:System.Windows.FlowDirection> není chovat podle očekávání. Tato část obsahuje dva tyto výjimky.  
   
- **Bitové kopie**  
+ **Obrázek**  
   
  <xref:System.Windows.Controls.Image> Reprezentuje ovládací prvek, který zobrazuje bitovou kopii. V [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] dá použít s <xref:System.Windows.Controls.Image.Source%2A> vlastnost, která definuje [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] z <xref:System.Windows.Controls.Image> k zobrazení.  
   

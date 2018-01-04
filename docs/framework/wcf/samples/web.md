@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 541ddbcdaefc14c3b9915186761a7842959cd91e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 867d80ed54f4ee64f87938ac9af89e3e3b198d8c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="web"></a>Web
 Tato část obsahuje hostované webové ukázky.  
@@ -41,7 +42,7 @@ Tato část obsahuje hostované webové ukázky.
  [Podmíněné operace Get a Put](../../../../docs/framework/wcf/samples/conditional-get-and-put.md)  
  Ukazuje, jak používat nové podmíněného načíst a aktualizovat rozhraní API pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model Web HTTP.  
   
- [Koncové body HTTP a SOAP](../../../../docs/framework/wcf/samples/soap-and-http-endpoints.md)  
+ [Koncové body SOAP a HTTP](../../../../docs/framework/wcf/samples/soap-and-http-endpoints.md)  
  Ukazuje, jak implementovat služby vzdáleného volání procedur a vystavit ve formátu protokolu SOAP a pomocí formátu "Prostý formát XML" (POX) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model Web HTTP.  
   
  [Integrace mezipaměti ASP.NET](../../../../docs/framework/wcf/samples/aspnet-caching-integration.md)  

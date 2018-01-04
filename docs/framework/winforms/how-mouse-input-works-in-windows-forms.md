@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 20de05b5df3737ccc525cb50c81b51bcba766287
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 388fd8d3e7f23dc55d46c5a097be99e9f1c34ab0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-mouse-input-works-in-windows-forms"></a>Jak funguje vstup myši ve Windows Forms
 Přijímání a zpracování vstup z myši, je důležitou součástí každé aplikací systému Windows. Můžete zpracování událostí myši k provedení akce v aplikaci nebo použít informace o umístění myši provést přístupů testování nebo jiné akce. Kromě toho můžete změnit způsob ovládacích prvků ve vaší aplikaci zpracovávat vstup z myši. Toto téma popisuje tyto události myši ve podrobností a získání a nastavení systému pro myši. Další informace o dostupných pomocí myši dat jsou vyvolány události a pořadí, ve kterém události kliknutí myší, najdete v části [události myši ve Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).  
@@ -63,6 +64,6 @@ Přijímání a zpracování vstup z myši, je důležitou součástí každé a
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>|Získá počet řádků posunu při kolečka myši otočen.|  
   
 ## <a name="see-also"></a>Viz také  
- [Vstup z myši ve Windows Forms aplikace](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
+ [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
  [Zachycení myši ve Windows Forms](../../../docs/framework/winforms/mouse-capture-in-windows-forms.md)  
  [Ukazatele myši ve Windows Forms](../../../docs/framework/winforms/mouse-pointers-in-windows-forms.md)

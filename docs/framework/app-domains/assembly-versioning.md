@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a956e0c4521e4a1079b331868e811e68af2e710d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 327ef282c23fc02791eb7c531fd1ae25c6700fd4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
 Všechny verze sestavení, které používají modul common language runtime se provádí na úrovni sestavení. Konkrétní verze sestavení a verze závislé sestavení jsou popsané v manifestu sestavení. Výchozí zásada verze pro modul runtime je, že aplikace spouštět pouze s verzemi, které by byly vytvořené a testovány, není-li přepsat zásady explicitní verze v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a Správce konfigurace souboru počítače).  
@@ -82,4 +83,4 @@ Všechny verze sestavení, které používají modul common language runtime se 
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md)  
  [Nastavování atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md)  
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

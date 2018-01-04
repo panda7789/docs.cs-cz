@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1a2fbbdc2ad89c562ef6fd0e0174ef0b06a93408
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 09be97c0c875b7fd7427bc4327deb95be99984f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-data-type-mappings"></a>Mapování datového typu SQL Server
 SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy. Například rozhraní .NET Framework <xref:System.Decimal> struktura má maximální měřítkem 28, zatímco maximální měřítko 38 využívají desetinné hodnoty, číselné datové typy systému SQL Server. Zachovat integritu dat. při čtení a zápis dat, <xref:System.Data.SqlClient.SqlDataReader> zpřístupňuje SQL Server – konkrétní zadali přístupových metod, které vracejí objekty <xref:System.Data.SqlTypes> a také přístupových metod, které vracejí rozhraní .NET Framework typy. Typy systému SQL Server a rozhraní .NET Framework typy jsou také reprezentované výčty v <xref:System.Data.DbType> a <xref:System.Data.SqlDbType> třídy, které můžete použít při zadávání <xref:System.Data.SqlClient.SqlParameter> datové typy.  
@@ -65,8 +66,8 @@ SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy. Nap
  Další informace o [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] datové typy, najdete v části [datové typy (databázový stroj)](http://go.microsoft.com/fwlink/?LinkID=107468).  
   
 ## <a name="see-also"></a>Viz také  
- [Data serveru SQL typy a ADO.NET](../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
- [Binární a velké hodnoty dat systému SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- [Mapování datového typu v technologii ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
+ [Datové typy SQL Serveru a ADO.NET](../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
+ [Binární a vysoké hodnoty na SQL Serveru](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  [Konfigurace parametrů a datové typy parametrů](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

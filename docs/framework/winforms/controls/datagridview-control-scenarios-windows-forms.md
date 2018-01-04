@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 919197d8fdb40f0e0fb7b91fecae38f4e0e061bc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 38e5337f775d98f8729c62b3481c3e839bff2252
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datagridview-control-scenarios-windows-forms"></a>Scénáře ovládacího prvku DataGridView (Windows Forms)
 S <xref:System.Windows.Forms.DataGridView> řízení, můžete zobrazit tabulková data z různých datových zdrojů. Pro jednoduché používá, můžete ručně naplnění <xref:System.Windows.Forms.DataGridView> a manipulovat s daty přímo prostřednictvím ovládacího prvku. Obvykle se však budete ukládat data do externího zdroje dat a vytvořit vazbu ovládacího prvku na přes <xref:System.Windows.Forms.BindingSource> součásti.  

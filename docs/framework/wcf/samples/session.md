@@ -14,11 +14,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 01c1bc2d202080349db32452adfe549d7a6dd3cc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 46994828124452d00ae74c30142dd62c52000b39
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="session"></a>Relace
 Relace příklad znázorňuje způsob implementace kontraktu, která vyžaduje relaci. Relaci poskytuje kontext pro provádění více operací. To umožňuje službě k přidružení stavu dané relace tak, aby následných operací můžete použít stav předchozí operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje službu kalkulačky. `ICalculator` Kontrakt změnila umožňující sadu aritmetické operace, které mají být provedeny, a zajistit přitom ochranu výsledku spuštěné. Tato funkce je definována `ICalculatorSession` kontrakt. Služba udržuje stavu pro klienta jako výpočet se říká víc operací služeb. Klient může získat aktuální výsledek pomocí volání `Result()` a zrušte zaškrtnutí výsledek, který má nula voláním `Clear()`.  

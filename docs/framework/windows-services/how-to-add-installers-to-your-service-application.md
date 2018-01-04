@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 8137e41f92335849916dfc9e9ce72afeb186e73c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0dcb666f317ab285ae0156d2df16947f71665aee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Postupy: Přidání instalačních programů do aplikace služby
 Visual Studio se dodává instalace součásti, které můžete nainstalovat prostředky přidružené k vaší aplikace služby. Součásti instalace registraci jednotlivých služeb v systému, ke které se instaluje a umožní správci řízení služeb vědět, že služba existuje. Pokud pracujete s aplikací služby, můžete vybrat odkaz v okně vlastností a automaticky tak přidejte příslušné instalační programy do projektu.  
@@ -70,7 +71,7 @@ Visual Studio se dodává instalace součásti, které můžete nainstalovat pro
     >  U každé další služby ve vašem projektu, je nutné přidat další <xref:System.ServiceProcess.ServiceInstaller> komponentu do projektu `ProjectInstaller` třídy. <xref:System.ServiceProcess.ServiceProcessInstaller> Součást přidali v kroku tři funguje se všemi instalační programy jednotlivé služby v projektu.  
   
 ## <a name="see-also"></a>Viz také  
- [Úvod do aplikace služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [Postupy: spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)  
- [Postupy: určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)
+ [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [Postupy: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)

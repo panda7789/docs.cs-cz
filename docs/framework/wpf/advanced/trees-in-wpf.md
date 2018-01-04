@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56237bccb2bf61994c6114fa01d15c254267ca20
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 73c34f8edfa735e361bf294f08cefd285be3e898
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trees-in-wpf"></a>Stromy v subsystému WPF
 V mnoha technologií prvky a součásti jsou uspořádány do stromové struktury, kde vývojáři přímo upravit objekt uzly ve stromu ovlivnit vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]definování vztahů mezi elementy program také používá několik metaphors struktura stromu. Ve většině případů WPF vývojáři můžete vytvořit aplikaci v kódu nebo definovat části aplikace v jazyce XAML při koncepčně zamyšlení jedná stromu objektu, ale bude volání rozhraní API konkrétní nebo pomocí konkrétní značek udělat tak místo některé obecné objekt stromu manipulaci API například můžete použít v modelu DOM. XML WPF zpřístupní dva pomocných tříd, které poskytují jedná je stromové zobrazení <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>. Vizuálním stromu podmínky a logickém stromu používají také v dokumentaci k WPF vzhledem k tomu, že tyto stejné struktury jsou užitečné pro seznámení s chováním některých klíčových funkcí WPF. Toto téma definuje, co představují vizuální strojové struktuře a logickém stromu, popisuje, jak takový stromy vztahují k celkové stromu koncepce objektu a zavádí <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>s.  
@@ -97,8 +98,8 @@ V mnoha technologií prvky a součásti jsou uspořádány do stromové struktur
  Vyhledávání prostředků můžete také rozšířit nad rámec okamžitou logickém stromu. Pro kód aplikace vyhledávání prostředků můžete pokračujte dále slovnících prostředků na úrovni aplikace a klikněte na motiv podporu a systému hodnoty, které je odkazováno jako statické vlastnosti nebo klíče. Motivy, sami můžete také odkazu hodnoty systému mimo logického stromu motiv, pokud odkazy prostředků musí být dynamické. Další informace o slovnících prostředků a logiku vyhledávání, najdete v části [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
  [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Inicializace pro prvky objekt není ve stromu k objektu](../../../../docs/framework/wpf/advanced/initialization-for-object-elements-not-in-an-object-tree.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [Inicializace elementů objektu, které nejsou ve stromu objektů](../../../../docs/framework/wpf/advanced/initialization-for-object-elements-not-in-an-object-tree.md)  
  [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)

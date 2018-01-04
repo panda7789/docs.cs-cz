@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f963aba983379d1474c3eedc348860751306a1bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd5dc57a9e7d164ec7ca1ebcc1e6d2cc2a5a6cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-express-user-instances"></a>Instance systému SQL Server Express uživatele
 Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je k dispozici pouze při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelskou instanci je samostatnou instanci SQL serveru Express databázový stroj, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích pro připojení a připojení k databázím SQL Server Express. Každá instance běží v kontextu zabezpečení jednotlivé uživatele, na jednu instanci každého uživatele zvlášť.  

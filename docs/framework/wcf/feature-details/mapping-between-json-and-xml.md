@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9bf104af8c88413298412d3ec3a29cd934558e2d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 770be9ea5327b32286de64207a3cf07bca7449c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mapping-between-json-and-xml"></a>Mapování mezi JSON a XML
 Čtení a zápis vyprodukované <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML přes obsah JavaScript Object Notation (JSON). JSON kóduje dat pomocí podmnožinu literály objekt jazyka JavaScript. Čtení a zápis, které jsou vyprodukované tuto továrnu se také používají při obsah JSON se odesílat nebo přijímat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikací pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.  

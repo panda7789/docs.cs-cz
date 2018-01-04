@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4f41a794916c63672ca0c844f086629f77b90aa0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4b8eafeedd03097488b1493b5654db360eab94fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-security"></a>Zabezpečení SQL serveru
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]má řadu funkcí, které podporují vytváření aplikace zabezpečené databáze.  
@@ -33,13 +34,13 @@ ms.lasthandoff: 11/21/2017
  Témata v této části stručně popisují funkce zabezpečení v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] , které jsou relevantní pro vývojáře, s odkazy na související témata v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] na webu knihy Online a dalším prostředkům, které poskytují podrobnější pokrytí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled zabezpečení SQL serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  Popisuje funkce architektuře a zabezpečení [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
   
- [Scénáře zabezpečení aplikací v systému SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  Obsahuje témata pro technologii ADO.NET pojednávající o různé scénáře zabezpečení aplikací a [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] aplikace.  
   
- [SQL Server Express zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-express-security.md)  
+ [Zabezpečení SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-security.md)  
  Popisuje aspekty zabezpečení [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express.  
   
 ## <a name="related-sections"></a>Související oddíly  

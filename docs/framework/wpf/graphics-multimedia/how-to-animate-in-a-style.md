@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10cd243c633e7a7e458d2026fc5e3d91d2996427
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2aabe24b77a9016b5b8119646c80ea84eb73acb9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-in-a-style"></a>Postupy: Animace ve stylu
 Tento příklad ukazuje postup animace vlastnosti v rámci styl. Při animaci v rámci styl, pro který je definován styl jenom element framework můžete použít přímo. Pokud chcete zacílit zmrazitelné objekt, můžete musí "dot dolů" z vlastnosti stylem elementu.  

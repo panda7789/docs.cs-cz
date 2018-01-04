@@ -14,11 +14,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f9d14183092b70f0bbe1ce8894f10369aa46c31
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5a1a1bb0b1f2c5e6b42ee793f18f5ad442b1fe8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-the-channel-layer"></a>Rozšíření vrstvy kanálu
 Vrstvy kanálu je zodpovědná za výměny zpráv mezi klienty a služby. Kanál rozšíření můžete implementovat nové funkce protokolu, například zabezpečení nebo funkce přenosu, například implementace nový síťový přenos pro přenos protokolu SOAP zprávy.  

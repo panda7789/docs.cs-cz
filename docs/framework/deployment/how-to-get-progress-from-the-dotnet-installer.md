@@ -17,11 +17,12 @@ caps.latest.revision: "30"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ea2e878ca4894612dda77075d04c924c3db8e293
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c11d1c3469100b8bd0eb530a59bb3a01b152f3f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Je modul runtime redistributable. Pokud vyvíjíte aplikace pro tuto verzi rozhraní .NET Framework, můžete zahrnout (řetězec) [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalace požadovaných součástí instalace vaší aplikace. K dispozici instalace přizpůsobené nebo jednotné prostředí, můžete chtít spustit bezobslužně [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalační program a jeho průběh sledovat při zobrazování průběh instalačního programu vaší aplikace. Povolit bezobslužné sledování [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalačního programu (stažené lze sledovat) definuje protokol pomocí segment mapované paměti vstupně-výstupních operací (MMIO) ke komunikaci s vaší instalace (sledovacích procesů nebo zřetězeného souboru). Tento protokol definuje způsob, jak zřetězeného souboru získat informace o průběhu, získat podrobné výsledky, odpovězte na otázky a zrušit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalační program.  

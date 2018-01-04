@@ -22,11 +22,12 @@ caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4b95f3d70c7329efd1affcb333ac6eee08cc29d3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2507acc7ddf41d921af0b86622b1e85208191767
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -72,12 +73,12 @@ ilasm [options] filename [[options]filename...]
 |**/mSv:** `major`.`minor`|Nastaví verze datového proudu metadata, kde `major` a `minor` jsou celá čísla.|
 |**/noautoinherit**|Zakáže výchozí dědění ze <xref:System.Object> Pokud je zadán žádný základní třídy.|
 |**/nocorstub**|Potlačí generování zástupné procedury CORExeMain.|
-|**/ nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
+|**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
 |**/ výstup:**`file.ext`|Určuje název výstupního souboru a příponu. Ve výchozím nastavení je název výstupního souboru shodný s názvem prvního zdrojového souboru. Výchozí přípona je *.exe*. Pokud zadáte **/dll** možnost, je výchozí rozšíření *.dll*. **Poznámka:** zadání **/výstup**: soubor.dll nenastaví **/dll** možnost. Pokud nezadáte **/dll**, výsledkem bude spustitelný soubor s názvem *soubor.dll*.|
-|**/ optimize**|Optimalizuje dlouhé instrukce na krátké. Například `br` k `br.s`.|
+|**/optimize**|Optimalizuje dlouhé instrukce na krátké. Například `br` k `br.s`.|
 |**/pe64**|Vytvoří 64bitovou kopii (PE32+).<br /><br /> Pokud není zadaný žádný cílový procesor, výchozí hodnota je `/itanium`.|
 |**/ pdb**|Vytvoří soubor PDB bez povolení sledování informací o ladění.|
-|**/ quiet**|Určuje tichý režim, který neoznamuje průběh sestavení.|
+|**/quiet**|Určuje tichý režim, který neoznamuje průběh sestavení.|
 |**/ Resource:**`file.res`|Obsahuje soubor zadaný prostředek v \*.res formátu výsledná *.exe* nebo *.dll* souboru. S lze zadat pouze jeden soubor .res **/Resource** možnost.|
 |**/ssver:** `int`.`int`|Nastaví číslo verze podsystému ve volitelné hlavičce NT. Pro **/appcontainer** a **/arm** číslo minimální verze je 6.02.|
 |**/ stack:**`stackSize`|Nastaví hodnotu SizeOfStackReserve v hlavičce NT volitelné k `stackSize`.|
@@ -239,5 +240,5 @@ Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento
 
 [Nástroje](../../../docs/framework/tools/index.md)  
 [*Ildasm.exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)  
-[Proces spravovaného spouštění](../../../docs/standard/managed-execution-process.md)  
+[Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)  
 [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

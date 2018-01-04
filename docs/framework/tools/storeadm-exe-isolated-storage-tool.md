@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d9ae6b007fe32dfbef973105311ba929cc247e6b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8351219b8352af7de534ebc5bd6521d5cf4773e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (nástroj izolovaného úložiště)
 Nástroj izolované úložiště vypíše seznam všech existujících úložišť pro aktuálního uživatele nebo všechna existující úložiště odebere.  
@@ -45,7 +46,7 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
 |**/h**[**nápovědu**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ list**|Zobrazí všechna existující úložiště pro aktuálního uživatele. Jedná se o úložiště pro všechny aplikace nebo sestavení spuštěná tímto uživatelem.|  
 |**/ počítače**|Vybere úložiště počítače. Pomocí této možnosti se **/list** nebo **/odebrat** můžete určit, že akce by se měly používat k úložišti počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
-|**/ quiet**|Nastaví tichý režim; potlačí informační výstup tak, aby se zobrazovaly pouze chybové zprávy.|  
+|**/quiet**|Nastaví tichý režim; potlačí informační výstup tak, aby se zobrazovaly pouze chybové zprávy.|  
 |**/ Remove**|Permanentně odstraní všechna existující úložiště pro aktuálního uživatele.|  
 |**/ roamingu**|Vybere roamingové úložiště. Pomocí této možnosti se **/list** nebo **/odebrat** možností, které určují, že akce by se měly používat k úložišti roamingu.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
@@ -70,5 +71,5 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Izolovaná úložiště](../../../docs/standard/io/isolated-storage.md)  
+ [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

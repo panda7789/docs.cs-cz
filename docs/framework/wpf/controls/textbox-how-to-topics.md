@@ -17,29 +17,30 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e21053043a48b68dce229a7de20c4a7e38f7a62c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd716f4d9f072284b29958c79350d497442cf41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox-how-to-topics"></a>TextBox – postupy
 Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření ovládacího prvku Víceřádkový TextBox](../../../../docs/framework/wpf/controls/how-to-create-a-multiline-textbox-control.md)  
- [Rozpoznat, kdy došlo ke změně Text do textového pole.](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)  
- [Povolit karta znaky v ovládacím prvku TextBox](../../../../docs/framework/wpf/controls/how-to-enable-tab-characters-in-a-textbox-control.md)  
- [Získání kolekce řádků z textové pole](../../../../docs/framework/wpf/controls/how-to-get-a-collection-of-lines-from-a-textbox.md)  
- [Vytvoření ovládacího prvku textového pole jen pro čtení](../../../../docs/framework/wpf/controls/how-to-make-a-textbox-control-read-only.md)  
- [Umístěte kurzor na začátku nebo na konci textu v ovládacím prvku TextBox](../../../../docs/framework/wpf/controls/position-the-cursor-at-the-beginning-or-end-of-text.md)  
- [Načíst výběr textu](../../../../docs/framework/wpf/controls/how-to-retrieve-a-text-selection.md)  
+ [Vytvoření víceřádkového ovládacího prvku TextBox](../../../../docs/framework/wpf/controls/how-to-create-a-multiline-textbox-control.md)  
+ [Zjištění, kdy došlo ke změně textu v prvku TextBox](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)  
+ [Povolení znaků tabulátoru v ovládacím prvku TextBox](../../../../docs/framework/wpf/controls/how-to-enable-tab-characters-in-a-textbox-control.md)  
+ [Získání kolekce řádků z prvku TextBox](../../../../docs/framework/wpf/controls/how-to-get-a-collection-of-lines-from-a-textbox.md)  
+ [Nastavení ovládacího prvku TextBox jen pro čtení](../../../../docs/framework/wpf/controls/how-to-make-a-textbox-control-read-only.md)  
+ [Umístění kurzoru na začátek nebo konec textu v ovládacím prvku TextBox](../../../../docs/framework/wpf/controls/position-the-cursor-at-the-beginning-or-end-of-text.md)  
+ [Načtení výběru textu](../../../../docs/framework/wpf/controls/how-to-retrieve-a-text-selection.md)  
  [Nastavení fokusu v ovládacím prvku TextBox](../../../../docs/framework/wpf/controls/how-to-set-focus-in-a-textbox-control.md)  
- [Nastavit textového obsahu ovládacího prvku TextBox](../../../../docs/framework/wpf/controls/how-to-set-the-text-content-of-a-textbox-control.md)  
- [Povolit kontrolu ovládací prvek pro úpravy textu pravopisu](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md)  
- [Použití vlastní Kontextová nabídka s textové pole](../../../../docs/framework/wpf/controls/how-to-use-a-custom-context-menu-with-a-textbox.md)  
- [Použít kontrolu pravopisu s z kontextové nabídky](../../../../docs/framework/wpf/controls/how-to-use-spell-checking-with-a-context-menu.md)  
- [Přidání vodoznaku pro textové pole](../../../../docs/framework/wpf/controls/how-to-add-a-watermark-to-a-textbox.md)  
+ [Nastavení obsahu textu ovládacího prvku TextBox](../../../../docs/framework/wpf/controls/how-to-set-the-text-content-of-a-textbox-control.md)  
+ [Povolení kontroly pravopisu v ovládacím prvku pro úpravy textu](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md)  
+ [Použití vlastní místní nabídky s prvkem TextBox](../../../../docs/framework/wpf/controls/how-to-use-a-custom-context-menu-with-a-textbox.md)  
+ [Použití kontroly pravopisu s místní nabídkou](../../../../docs/framework/wpf/controls/how-to-use-spell-checking-with-a-context-menu.md)  
+ [Přidání vodoznaku do pole TextBox](../../../../docs/framework/wpf/controls/how-to-add-a-watermark-to-a-textbox.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.TextBox>  
@@ -52,4 +53,4 @@ Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy
   
 ## <a name="see-also"></a>Viz také  
  [Ukázka galerie ovládacích prvků grafického subsystému WPF](http://go.microsoft.com/fwlink/?LinkID=160053)  
- [Textové pole styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)
+ [TextBox – styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)

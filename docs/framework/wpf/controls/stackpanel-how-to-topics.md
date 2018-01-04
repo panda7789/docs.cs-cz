@@ -17,19 +17,20 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d010e83b0bc5a3e69f8a0c205247681d2bb3d26
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a947e1e7ccfe31ffcb638f8e09aae5cdd594b449
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stackpanel-how-to-topics"></a>StackPanel – postupy
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.StackPanel> element zásobníku obsah vodorovně nebo svisle.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Volba mezi StackPanel a DockPanel](../../../../docs/framework/wpf/controls/how-to-choose-between-stackpanel-and-dockpanel.md)  
- [Vytvoření StackPanel](../../../../docs/framework/wpf/controls/how-to-create-a-stackpanel.md)  
- [Vodorovně nebo svisle zarovnat obsah StackPanel](../../../../docs/framework/wpf/controls/how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md)  
+ [Výběr mezi elementy StackPanel a DockPanel](../../../../docs/framework/wpf/controls/how-to-choose-between-stackpanel-and-dockpanel.md)  
+ [Vytvoření elementu StackPanel](../../../../docs/framework/wpf/controls/how-to-create-a-stackpanel.md)  
+ [Vodorovné a svislé zarovnání obsahu v elementu StackPanel](../../../../docs/framework/wpf/controls/how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -49,6 +50,6 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
 ## <a name="related-sections"></a>Související oddíly  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [Návod: Můj první grafický subsystém WPF aplikace pracovní plochy](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [Přehled ScrollViewer](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

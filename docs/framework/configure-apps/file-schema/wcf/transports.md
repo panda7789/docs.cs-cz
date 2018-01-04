@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 911a770fb4dc6d11f17c1f287a53ddb6552c690a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 47799c5eb10a3274b8b5f10d4ccec96a575da949
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transports"></a>Přenosy
 Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít v [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] jsou HTTP, HTTPS, TCP a pojmenované kanály. Tato část uvádí všechny konfigurační prvky, které vám umožní nakonfigurovat různé typy přenosů.  
@@ -29,6 +30,6 @@ Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přeno
  [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)  
  [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

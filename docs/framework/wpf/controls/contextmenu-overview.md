@@ -19,11 +19,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3061b7fed225f00bf6bb91efe529de35a5a036a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0776e7960aa76a76422d01180af5fd6a089bc98b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contextmenu-overview"></a>ContextMenu – přehled
 <xref:System.Windows.Controls.ContextMenu> Třída reprezentuje element, který zveřejňuje funkce pomocí konkrétního kontextu <xref:System.Windows.Controls.Menu>. Obvykle se uživatel zpřístupní <xref:System.Windows.Controls.ContextMenu> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] kliknutím pravým tlačítkem na tlačítko myši. Toto téma představuje <xref:System.Windows.Controls.ContextMenu> elementu a obsahuje příklady použití v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kód.  
@@ -77,6 +78,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Style>  
  <xref:System.Windows.Controls.Menu>  
  <xref:System.Windows.Controls.MenuItem>  
- [ContextMenu –](../../../../docs/framework/wpf/controls/contextmenu.md)  
- [ContextMenu – styly a šablony](../../../../docs/framework/wpf/controls/contextmenu-styles-and-templates.md)  
+ [ContextMenu](../../../../docs/framework/wpf/controls/contextmenu.md)  
+ [ContextMenu – styly a šablony](../../../../docs/framework/wpf/controls/contextmenu-styles-and-templates.md)  
  [Ukázka galerie ovládacích prvků grafického subsystému WPF](http://go.microsoft.com/fwlink/?LinkID=160053)

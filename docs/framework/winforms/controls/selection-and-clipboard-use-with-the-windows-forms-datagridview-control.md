@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 888fb1cbd960c006dc2705a2b0bd66c038a926f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ceea4108f39619ccbcbf0286905a94b8236607cb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView
 `DataGridView` Řízení nabízí řadu možností pro konfiguraci, jak mohou uživatelé vybrat buněk, řádků a sloupců. Například můžete povolit výběr jednoho nebo více, výběr sloupce, když uživatelé kliknou na buňky nebo celou řádků nebo výběr celou řádků nebo sloupců jenom v případě, že uživatelé kliknou na jejich hlavičky, umožňující výběr buňky také. Pokud chcete zadat vlastní uživatelské rozhraní pro výběr, můžete zakázat obyčejnou výběr a zpracování všech výběr prostřednictvím kódu programu. Kromě toho můžete povolit kopírování vybraných hodnot do schránky.  
@@ -33,13 +34,13 @@ ms.lasthandoff: 11/21/2017
  [Režimy výběru v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/selection-modes-in-the-windows-forms-datagridview-control.md)  
  Popisuje možnosti pro uživatele a programové výběru v ovládacím prvku.  
   
- [Postupy: nastavení režimu výběru ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)  
+ [Postupy: Nastavení režimu výběru ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)  
  Popisuje postup konfigurace ovládacího prvku pro výběr jednoho řádku, když uživatel klikne buňky.  
   
- [Postupy: získání vybraných buněk, řádků a sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/selected-cells-rows-and-columns-datagridview.md)  
+ [Postupy: Získání vybraných buněk, řádků a sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/selected-cells-rows-and-columns-datagridview.md)  
  Popisuje, jak pracovat s vybrané kolekce buněk, řádků a sloupců.  
   
- [Postupy: Povolení uživatelům kopírování více buněk do schránky z Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
+ [Postupy: Povolení kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
  Popisuje, jak povolit podporu schránky v ovládacím prvku.  
   
 ## <a name="reference"></a>Odkaz  
@@ -62,5 +63,5 @@ ms.lasthandoff: 11/21/2017
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridViewSelectedColumnCollection> třídy.  
   
 ## <a name="see-also"></a>Viz také  
- [DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
- [Výchozí zpracování v ovládacím prvku Windows Forms DataGridView klávesnice a myši](../../../../docs/framework/winforms/controls/default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)
+ [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
+ [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

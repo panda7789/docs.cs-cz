@@ -15,11 +15,12 @@ ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: edd5a8e8cc32037d45d95d544f6eae5097d0c468
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 83de6036a9b86478546cdb8356ce132ef32e6be2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Framework na svých počítačích. Při vývoji nebo nasazení aplikace, může být potřeba vědět, jaké verze rozhraní .NET Framework, které jsou nainstalovány v počítači uživatele. Všimněte si, že rozhraní .NET Framework obsahuje dvě hlavní komponenty, které jsou samostatně verzí:  
@@ -134,12 +135,12 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
     |Rozhraní .NET framework 4.5.1 nainstalované s Windows 8.1|378675|
     |Rozhraní .NET framework 4.5.1 nainstalovaný na Windows 8, Windows 7 SP1 nebo Windows Vista SP2|378758|
     |.NET Framework 4.5.2|379893|
-    |[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]nainstalovaná se systémem Windows 10|393295|
-    |[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]nainstalovaná na všech ostatních verzí operačního systému Windows|393297|
-    |[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]nainstalovat na Windows 10|394254|
-    |[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]nainstalovaná na všech ostatních verzí operačního systému Windows|394271|
-    |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]nainstalovat na Windows 10 Anniversary aktualizace|394802|
-    |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]nainstalovaná na všech ostatních verzí operačního systému Windows|394806|
+    |Rozhraní .NET framework 4.6 nainstalovaná se systémem Windows 10|393295|
+    |Rozhraní .NET framework 4.6 nainstalované na všech ostatních verzí operačního systému Windows|393297|
+    |Rozhraní .NET framework 4.6.1 nainstalována ve Windows 10|394254|
+    |Rozhraní .NET framework 4.6.1, které jsou nainstalované na všech ostatních verzí operačního systému Windows|394271|
+    |Rozhraní .NET framework 4.6.2 nainstalovaný na Windows 10 Anniversary aktualizace|394802|
+    |Rozhraní .NET framework 4.6.2 nainstalované na všech ostatních verzí operačního systému Windows|394806|
     |Rozhraní .NET framework 4.7 nainstalovaný na Windows 10 Creators Update|460798|
     |4.7 rozhraní .NET framework nainstalované na všech ostatních verzí operačního systému Windows|460805|
     |Rozhraní .NET framework 4.7.1 nainstalovaný na Windows 10 patří Creators aktualizace|461308|
@@ -215,6 +216,6 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
     ```
 
 ## <a name="see-also"></a>Viz také
- [Postupy: zjištění nainstalovaných aktualizací rozhraní .NET Framework](~/docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)  
+ [Postupy: Zjištění nainstalovaných aktualizací rozhraní .NET Framework](~/docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)  
  [Nainstalujte rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)  
  [Verze a závislosti](~/docs/framework/migration-guide/versions-and-dependencies.md)

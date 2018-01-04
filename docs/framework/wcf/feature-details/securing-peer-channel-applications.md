@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 377c2425ff1647c43687aa0a5d9584930cb6b1c2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7358852ffc50576f892c70fa2b212a8102d8ab85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-peer-channel-applications"></a>Zabezpečení aplikací rovnocenného kanálu
 Jako další vazby v části [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], `NetPeerTcpBinding` má povoleno ve výchozím nastavení zabezpečení a nabízí jak zabezpečení na základě přenosu a zprávy (nebo oba). Toto téma popisuje tyto dva typy zabezpečení. Typ zabezpečení je určen podle značky režimu bezpečnostní specifikací vazba (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  
@@ -49,8 +50,8 @@ Jako další vazby v části [!INCLUDE[vstecwinfx](../../../../includes/vstecwin
  Ověřte, jestli zprávu pochází z důvěryhodného zdroje a zpráva nikdo má manipulováno během přenosu pomocí ověřování zpráv. Bez ověřování zpráv je snadné pro škodlivého klienta zfalšovat nebo manipulovat s zprávy v mřížce.  
   
 ## <a name="peer-channel-code-examples"></a>Příklady kódu rovnocenného kanálu  
- [Scénáře rovnocenných kanálů](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
+ [Scénáře protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Zabezpečení rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)  
- [Vytvoření aplikace rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+ [Zabezpečení protokolem Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)  
+ [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

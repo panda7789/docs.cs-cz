@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b6eec726342381f7e3ec71aeedd2ff012bc6c3e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: adbdd005bba9e7276a77f2e78c53be43fdceffae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
 Kód knihovny musí volat nespravovaný kód (například nativního kódu rozhraní API, jako je například Win32). Protože to znamená přechod mimo zónu zabezpečení pro spravovaný kód, přičemž se řádně upozornění je vyžadován. Pokud je váš kód zabezpečení jazykově neutrální, kód a kód, který se volá musí mít nespravovaného kódu oprávnění (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> zadaného příznaku).  
@@ -57,7 +58,7 @@ Kód knihovny musí volat nespravovaný kód (například nativního kódu rozhr
 |-------------|-----------------------------|  
 |**bezpečné**|Zcela neškodné pro libovolný kód, dokonce škodlivý kód volat. Můžete použít stejně jako ostatní spravovaného kódu. Například funkci, která se získá čas, kdy je obvykle bezpečné.|  
 |**nativní**|Zabezpečení jazykově neutrální; nespravovaný kód, který vyžaduje tedy nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, která zastaví neoprávněného volajícího.|  
-|**nezabezpečený**|Vstupní bod potenciálně nebezpečná nespravovaného kódu s zabezpečení potlačena. Vývojáři by měl použít největší opatrní při použití takových nespravovaného kódu a ujistěte se, že jiné ochrany jsou na místě, aby se zabránilo ohrožení zabezpečení. Vývojáři musí být zodpovědná, jako toto klíčové slovo přepíše systém zabezpečení.|  
+|**unsafe**|Vstupní bod potenciálně nebezpečná nespravovaného kódu s zabezpečení potlačena. Vývojáři by měl použít největší opatrní při použití takových nespravovaného kódu a ujistěte se, že jiné ochrany jsou na místě, aby se zabránilo ohrožení zabezpečení. Vývojáři musí být zodpovědná, jako toto klíčové slovo přepíše systém zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také  
  [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

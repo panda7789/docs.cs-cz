@@ -23,11 +23,12 @@ caps.latest.revision: "42"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9bd09d0da70869ba193b414d8a2ce6c25cbb6b38
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload: dotnet
+ms.openlocfilehash: 7e4d336992be216178b1237c9f43bffb3de61fba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="add-ins-and-extensibility"></a>Doplňky a rozšíření
 <a name="top"></a>Doplňky poskytují rozšířené funkce nebo služby pro hostitelskou aplikaci. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje programovací model, který mohou vývojáři k vývoji doplňky a jejich aktivaci ve svých aplikacích hostitele. Model se dosahuje pomocí vytváření komunikační kanál mezi hostitelem a doplněk. Model je implementována pomocí typy v <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>, a <xref:System.AddIn.Contract> obory názvů.  
@@ -40,7 +41,7 @@ ms.lasthandoff: 10/21/2017
   
 -   [Související témata](#related_topics)  
   
--   [Referenční dokumentace](#reference)  
+-   [Referenční informace](#reference)  
   
 > [!NOTE]
 >  Další ukázkový kód a zákazník technologie náhledy nástrojů můžete najít pro sestavování doplňku kanály v [spravované rozšiřitelnosti a Framework Add-In lokality na webu CodePlex](http://go.microsoft.com/fwlink/?LinkId=121190).  
@@ -114,7 +115,7 @@ Kanál doplňku
 |Název|Popis|  
 |-----------|-----------------|  
 |[Vývoj kanálu](../../../docs/framework/add-ins/pipeline-development.md)|Popisuje komunikační kanál segmentů z hostitelskou aplikaci pro doplněk. Obsahuje příklady kódu v tématech návod, které popisují, jak k vytvoření kanálu a postup nasazení segmenty na kanál v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].|  
-|[Aplikační domény a sestavení](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)|Popisuje vztah mezi doménami aplikací, které poskytují hranici izolace zabezpečení, spolehlivosti a správa verzí a sestavení.|  
+|[Domény a sestavení aplikací](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)|Popisuje vztah mezi doménami aplikací, které poskytují hranici izolace zabezpečení, spolehlivosti a správa verzí a sestavení.|  
   
  [Zpět na začátek](#top)  
   

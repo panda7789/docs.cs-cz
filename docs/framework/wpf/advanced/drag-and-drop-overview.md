@@ -23,11 +23,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bb803d8cf1a51acf76fb1ef264e0fe63b8a21073
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b7a69a4dcd5fc39b700bf9c3404e70d581509ebc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Přetažení myší běžně odkazuje na metodu přenosu dat, který zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, přetáhněte tyto objekty přes cíle některé požadované přetažení v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
@@ -228,6 +229,6 @@ Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_win
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Clipboard>  
- [Návod: Povolení přetažení u ovládacího prvku](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/drag-and-drop-how-to-topics.md)  
+ [Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/drag-and-drop-how-to-topics.md)  
  [Přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop.md)

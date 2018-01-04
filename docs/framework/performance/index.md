@@ -16,11 +16,12 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1d1e1de5637dbb955dd72ed0291da1f4f537ce28
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: aa4db0e3e136eee1d2037ad6041ac6945d313776
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s vysoký výkon, doporučujeme návrhu a plánování výkonu stejně jako jakékoli jiné funkce aplikace by návrhu. Můžete použít nástroje poskytované společností Microsoft k měření výkonu vaší aplikace a, v případě potřeby zlepšení využití paměti, propustnost kódu a odezvy. Toto téma obsahuje seznam nástrojů analýzy výkonu, poskytuje Microsoft a poskytuje odkazy na další témata, které se týkají výkonu pro konkrétní oblasti vývoj aplikací.  
@@ -53,7 +54,7 @@ Pokud chcete vytvářet aplikace s vysoký výkon, doporučujeme návrhu a plán
   
 |Typ aplikace|Další informace naleznete v tématu|  
 |--------------|---------|  
-|Aplikace rozhraní .NET framework pro všechny platformy|[Uvolňování paměti a výkon](../../../docs/standard/garbage-collection/performance.md)<br /><br /> [Tipy pro zvýšení výkonu](../../../docs/framework/performance/performance-tips.md)|  
+|Aplikace rozhraní .NET framework pro všechny platformy|[Kolekce paměti a výkon](../../../docs/standard/garbage-collection/performance.md)<br /><br /> [Tipy pro zvýšení výkonu](../../../docs/framework/performance/performance-tips.md)|  
 |[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]aplikace napsané v C++, C# a Visual Basic|[Osvědčené postupy z hlediska výkonu pro aplikace Windows Store pomocí C++, C# a Visual Basic](http://msdn.microsoft.com/library/windows/apps/hh750313.aspx)|  
 |Windows Phone|[Faktory ovlivňující výkon aplikace pro Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff967560\(v=vs.105\).aspx)<br /><br /> [Analýza aplikace Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/hh202934\(v=vs.105\).aspx)<br /><br /> [Získat aplikace pro Windows Phone rychlejší na webu Marketplace](http://msdn.microsoft.com/magazine/hh781024.aspx)|  
 |Windows Presentation Foundation (WPF)|[WPF – výkonnostní sada](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)|  
@@ -65,7 +66,7 @@ Pokud chcete vytvářet aplikace s vysoký výkon, doporučujeme návrhu a plán
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Ukládání do mezipaměti v aplikacích .NET Framework](../../../docs/framework/performance/caching-in-net-framework-applications.md)|Popisuje techniky pro ukládání do mezipaměti data ke zlepšení výkonu ve vaší aplikaci.|  
+|[Ukládání do vyrovnávací paměti v aplikacích .NET Framework](../../../docs/framework/performance/caching-in-net-framework-applications.md)|Popisuje techniky pro ukládání do mezipaměti data ke zlepšení výkonu ve vaší aplikaci.|  
 |[Opožděná inicializace](../../../docs/framework/performance/lazy-initialization.md)|Popisuje, jak třeba inicializovat objekty podle potřeby ke zlepšení výkonu, zejména při spuštění aplikace.|  
 |[Spolehlivost](../../../docs/framework/performance/reliability.md)|Poskytuje informace o brání asynchronní výjimky v prostředí serverů.|  
-|[Psaní velkých a pohotově reagujících rozhraní .NET Framework aplikace](../../../docs/framework/performance/writing-large-responsive-apps.md)|Poskytuje tipy pro zvýšení výkonu získané z přepisování C# a Visual Basic kompilátory ve spravovaném kódu a zahrnuje několik příkladů skutečné z kompilátoru C#.|
+|[Psaní velkých a pohotově reagujících aplikací .NET Framework](../../../docs/framework/performance/writing-large-responsive-apps.md)|Poskytuje tipy pro zvýšení výkonu získané z přepisování C# a Visual Basic kompilátory ve spravovaném kódu a zahrnuje několik příkladů skutečné z kompilátoru C#.|

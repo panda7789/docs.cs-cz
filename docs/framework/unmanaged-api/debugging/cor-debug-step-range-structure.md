@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4a696b69cf08d15ecd39a87920ecaa1934c00578
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 27b1b7b26ea788683f9b322306c55a4b3945f342
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugsteprange-structure"></a>COR_DEBUG_STEP_RANGE – struktura
 Obsahuje informace o posunu pro řadu kódu.  
@@ -56,6 +57,6 @@ typedef struct {
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Steprange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)  
+ [StepRange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)  
  [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

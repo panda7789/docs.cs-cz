@@ -37,11 +37,12 @@ caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c91195c4e70366a3feb7a96f80e4e44dda89239e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f170c3e7174b231153a9e201f617faa786291056
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>Zabalení a nasazení prostředků v aplikacích klasické pracovní plochy
 Aplikací v rozhraní .NET Framework Resource Manageru, reprezentována závisí <xref:System.Resources.ResourceManager> třída načíst lokalizované prostředky. Resource Manager předpokládá, že model hvězdicové slouží k zabalení a nasazení prostředků. Rozbočovače je hlavní sestavení, které obsahuje nelokalizovatelný, spustitelný kód a prostředky pro jednu kulturu, nazvanou neutrální nebo výchozí jazykovou verzi. Představuje výchozí jazykovou verzi záložní jazykovou verzi pro aplikaci. je jazyková verze, jejichž zdroje se použijí, pokud nelze nalézt lokalizované prostředky. Každý paprsek připojí k satelitní sestavení, které obsahuje prostředky pro jednu kulturu, ale neobsahuje žádný kód.  
@@ -192,7 +193,7 @@ Bon jour!
  Vytváření sadu prostředků pro každou subkulturu, který podporuje vaše aplikace může zabránit čas nebo rozpočtu omezení. Místo toho můžete vytvořit jedno satelitní sestavení pro nadřazenou jazykovou verzi, všechny související subkultury můžete použít. Můžete například zadat jedno anglické satelitní sestavení (cs), která jsou načítána uživatelů, kteří požadují anglické prostředky pro konkrétní oblasti a jedno německé satelitní sestavení (de) pro uživatele, kteří požadují oblast německé prostředky. Například požadavky pro němčinu jako používaný v Německu (de-DE), Rakousko (de-AT) a Švýcarska (de-CH) by vrátit zpět k německé satelitní sestavení (de). Výchozí prostředky jsou konečnou zálohou a proto by měla být prostředky, které budou vyžadovány většina uživatelů vaší aplikace, takže pečlivě zvolte tyto prostředky. Tento přístup nasadí prostředky, které jsou méně jazykově specifické, ale může výrazně snížit náklady na lokalizaci vaší aplikace.  
   
 ## <a name="see-also"></a>Viz také  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)  
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
  [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
  [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
  [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)

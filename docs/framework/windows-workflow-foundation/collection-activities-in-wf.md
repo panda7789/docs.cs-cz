@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f9d044ab9b95eb4144770a90367028b5b513a69c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 52713566419eedbb5a39153541402920479eb500
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="collection-activities-in-wf"></a>Kolekce aktivit v WF
 Kolekce aktivity se používají pro práci s objekty kolekce v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]má poskytované systémem aktivity pro přidávání a odebírání položek z kolekce, testování existence položky v kolekci a vymazání kolekce. `ExistsInCollection`a `RemoveFromCollection` mít <xref:System.Activities.OutArgument%601> typu <xref:System.Boolean>, který určuje výsledek.  
@@ -435,4 +436,4 @@ Activity wf = new Sequence
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)
+ [Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 091b83cc0d7829c8ff078e6397aa480895b7a115
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1ea1f5a832e2db63590fe5cbc3425078e17d3825
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Omezení rizik: Nové 64-bit JIT kompilátoru
 Od verze rozhraní .NET Framework 4.6, modul runtime zahrnuje nové kompilátoru JIT 64-bit pro kompilaci za běhu. Tato změna nemá vliv kompilace s 32-bit kompilátoru za běhu.  
@@ -80,5 +81,5 @@ Od verze rozhraní .NET Framework 4.6, modul runtime zahrnuje nové kompilátoru
  Vám může také dejte nám vědět o problému pomocí hlášení chyby na [Microsoft Connect](https://connect.microsoft.com/VisualStudio).  
   
 ## <a name="see-also"></a>Viz také  
- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)  
+ [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)  
  [\<useLegacyJit > elementu](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)

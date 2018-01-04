@@ -17,20 +17,21 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c34bb03e27d223c09238f658563e8a368a0c6948
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6aee3d6161d5a20a55e05e86c8479b9182d4e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="image-how-to-topics"></a>Postupy: Témata obrázku
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Image> elementu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Použití elementu obrázku](../../../../docs/framework/wpf/controls/how-to-use-the-image-element.md)  
-  [Převést bitovou kopii na stupně šedi](../../../../docs/framework/wpf/controls/how-to-convert-an-image-to-greyscale.md)  
+  [Převedení obrázku na odstíny šedi](../../../../docs/framework/wpf/controls/how-to-convert-an-image-to-greyscale.md)  
   [Oříznutí obrázku](../../../../docs/framework/wpf/controls/how-to-crop-an-image.md)  
-  [Otočit obrázek](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)  
+  [Otočení obrázku](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Image>  
@@ -40,5 +41,5 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vytvoření bitové kopie](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)
+ [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)

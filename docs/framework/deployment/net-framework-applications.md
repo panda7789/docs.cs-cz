@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: af9bacb4ba64fb4e51b6e05b3636226274c28703
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ecf0a4544b5417a548c7cc212e26c98bd1891c00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deploying-net-framework-applications"></a>Nasazení aplikací .NET Framework
 V této části dokumentace rozhraní .NET Framework poskytuje základní informace o nasazení aplikací rozhraní .NET Framework, včetně pokynů pro načtení sestavení, vyřešte odkazy na sestavení a zvýšení výkonu aplikace prostřednictvím generování nativních bitových kopií.  
@@ -29,7 +30,7 @@ V této části dokumentace rozhraní .NET Framework poskytuje základní inform
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  Popisuje, jak modul common language runtime vyhledává a váže se k sestavení, které tvoří vaši aplikaci.  
   
- [Osvědčené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
+ [Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
  Popisuje způsoby, kterými se chcete vyhnout potížím typ identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalších chyb.  
   
 ## <a name="see-also"></a>Viz také  

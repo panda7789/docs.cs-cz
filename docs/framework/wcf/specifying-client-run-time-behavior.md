@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 22d244fdc2c9fc3d3802e520d1fdd6f31bdc1c4e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a8c05dc56ec8fac0a77b1a21536d815b5b65f830
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]jako klienti, [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby, lze nakonfigurovat tak, abyste upravili chování běhové tak, aby vyhovovala klientská aplikace. Tři atributy jsou k dispozici pro určení chování klienta. Můžete použít objekty zpětné volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributy změnit jejich chování. Pro atribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, lze použít k oddělení logické cílové z cílového okamžitou síť. Kromě toho můžete použít typů zpětného volání duplexní klientů některá chování straně služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Určení chování služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
@@ -53,4 +54,4 @@ ms.lasthandoff: 12/02/2017
  Můžete použít <xref:System.ServiceModel.Description.ClientViaBehavior> chování k určení Uniform Resource Identifier, pro který by měl být vytvořen kanál přenosu. Používejte toto chování, když cílový okamžitou síť není určený procesor zprávy. To umožňuje vícenásobných konverzace, když je volající aplikace nemusí nutně vědět ultimate cílové nebo když cíl `Via` hlavičky není adresu.  
   
 ## <a name="see-also"></a>Viz také  
- [Určení chování služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
+ [Určování chování služby za běhu](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 3d5e598fea118eb340b965d605f5fdeb9c479a4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a60af220bf962e523a35bc5b8d8abca041a9fd46
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-security-with-mutual-certificates"></a>Zabezpečení zpráv vzájemnými certifikáty
 Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečené režim zabezpečení zprávy pomocí klienta a služby. Klienta a služby se ověřují pomocí certifikátů.  

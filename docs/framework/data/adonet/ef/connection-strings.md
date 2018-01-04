@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b141f7bb31374c403f8d802a5df2ff1329b1e079
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 64f2d0fbc54900443046bd2c71215cc0928c8658
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings"></a>Připojovací řetězce
 Připojovací řetězec obsahuje inicializace informace, které se předá jako parametr ze zprostředkovatele dat pro zdroj dat. Syntaxe závisí na poskytovateli dat a připojovací řetězec je analyzovat při pokusu o otevření připojení. Připojovací řetězce, které používá rozhraní Entity Framework obsahují informace používané pro připojení k základní zprostředkovatel dat ADO.NET, který podporuje rozhraní Entity Framework. Také obsahují informace o požadované modelu a mapování souborů.  
@@ -118,7 +119,7 @@ Metadata=.\
  Řešení `DataDirectory` náhradní řetězec a ~ operátor je tohoto nerekurzivního. Například když `DataDirectory` zahrnuje `~` znak, dojde k výjimce. Tím se zabrání nekonečná rekurze.  
   
 ## <a name="see-also"></a>Viz také  
- [Práce s zprostředkovatelů dat.](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)  
+ [Práce se zprostředkovateli dat](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)  
  [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
  [Správa připojení a transakce](http://msdn.microsoft.com/en-us/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
  [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)

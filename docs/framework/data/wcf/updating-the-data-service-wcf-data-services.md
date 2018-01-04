@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d51508abf27038e27b4a9d356c726bc8e15cb321
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bc8041dee12c8300e18e6321c717cbd80b93d650
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizaci dat služby (služby WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny využívat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu, knihovny překládá položek v informačním kanálu do instance třídy služeb dat klienta. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entit, které ohlásíte pomocí metody na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody povolit klientovi sledovat entity added a odstranila a taky změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny jsou odesílány zpět ke službě data jako založené na REST operace při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda.  
@@ -105,8 +106,8 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
   
 ## <a name="see-also"></a>Viz také  
  [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
- [Dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
  [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
- [Dávkování operací](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
- [Objekt Materialization](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
- [Správa služby kontextu dat](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)
+ [Operace dávkování](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
+ [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
+ [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)

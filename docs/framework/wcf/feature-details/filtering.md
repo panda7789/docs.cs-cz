@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a5b2c78ef7e675a656caf00e9d0ba0c9eb0630b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6f67a7f6ac423bd66d9d25b834edc9cf55a5d6a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="filtering"></a>Filtrování
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Filtrování systému pomocí deklarativní filtrů odpovídající zprávy a provozní rozhodnutí. Filtry můžete použít k určení toho, co dělat s zpráva prověřením část zprávy. Proces řazení do fronty, například můžete použít dotaz XPath 1.0 Zkontrolujte priority element známé hlavičky k určení, zda chcete zprávu přesunout na začátek fronty.  

@@ -17,11 +17,12 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36a751f9aac69119b539bd1008c6478f6ce71688
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f6a24cbabcad7ff534a2b3d66b2f17959c959c99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listview"></a>ListView
 <xref:System.Windows.Controls.ListView> Řízení poskytuje infrastrukturu pro zobrazení sadu datových položek v různých rozložení nebo zobrazení.  
@@ -31,8 +32,8 @@ ms.lasthandoff: 10/18/2017
  ![ListView s výstupem GridView](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled](../../../../docs/framework/wpf/controls/listview-overviews.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [Přehledy](../../../../docs/framework/wpf/controls/listview-overviews.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListView>  
@@ -40,5 +41,5 @@ ms.lasthandoff: 10/18/2017
   <xref:System.Windows.Controls.GridView>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
-  [Ukázka dat – přehled](../../../../docs/framework/wpf/data/data-templating-overview.md)
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+  [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)

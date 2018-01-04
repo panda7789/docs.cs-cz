@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dda2581ceed854fa5121076f0c7b9df414bffe52
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 97a795930eb6965bd0ed15254969a72f45700306
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>Přístup k nevystaveným členům v modelu spravovaného objektu dokumentu HTML
 Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> která zveřejňuje vlastnosti, metod a události, které mají společnou všechny elementy HTML. V některých případech ale potřebujete pro přístup k členy, kteří použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby pro přístup k nevystaveným členům, včetně [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] a VBScript funkcí definovaných v rámci webové stránky.  
@@ -82,4 +83,4 @@ Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:S
  Je možné volat jakékoli funkce skriptu definujete v stránky HTML pomocí <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A> metoda. Pokud metoda skript vrátí HTML element, můžete použít přetypování převést tento návratový výsledek, který má <xref:System.Windows.Forms.HtmlElement>. Příklad kódu a podrobnosti najdete v tématu <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí modelu objektu spravovaného dokumentu HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)
+ [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

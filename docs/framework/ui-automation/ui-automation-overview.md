@@ -17,11 +17,12 @@ caps.latest.revision: "35"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 4dde3e44778511606a2dcd2ce32cb479788c0478
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d86c70ec4421bc716b12044bac30f8f925c375f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -58,9 +59,9 @@ ms.lasthandoff: 11/21/2017
 |[Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md) (této části)|Široký přehled konceptů.|Všechny.|  
 |[Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code.md)|Přehled a postupy vám pomohou používat API poskytovatele.|Vývojáři ovládacího prvku.|  
 |[Klienti automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code.md)|Přehled a postupy vám pomohou používat klientského rozhraní API.|Vývojáři klientské aplikace.|  
-|[Vzory ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)|Informace o tom, jak by měla být implementována vzory ovládacích prvků zprostředkovatelé a jaké funkce je k dispozici pro klienty.|Všechny.|  
-|[Vzoru prvků Text pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)|Informace o tom, jak by měla být implementována textu – vzor ovládacích prvků zprostředkovatelé a jaké funkce je k dispozici pro klienty.|Všechny.|  
-|[Typy ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md)|Informace o vlastnosti a řízení vzory podporuje různé typy ovládacích prvků.|Všechny.|  
+|[Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)|Informace o tom, jak by měla být implementována vzory ovládacích prvků zprostředkovatelé a jaké funkce je k dispozici pro klienty.|Všechny.|  
+|[Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)|Informace o tom, jak by měla být implementována textu – vzor ovládacích prvků zprostředkovatelé a jaké funkce je k dispozici pro klienty.|Všechny.|  
+|[Typy ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md)|Informace o vlastnosti a řízení vzory podporuje různé typy ovládacích prvků.|Všechny.|  
   
  Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obory názvů, knihovny DLL, které obsahují a cílovou skupinu, která používá je.  
   
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
  [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
  [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md)

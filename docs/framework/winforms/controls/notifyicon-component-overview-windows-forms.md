@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d951d45232437026cc41d8e40284207ea1c64ab9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8c909537bd4c52a546faeb83c6e9291c4de76d76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="notifyicon-component-overview-windows-forms"></a>NotifyIcon – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást se obvykle používá pro zobrazení ikon pro procesy, které běží na pozadí a nezobrazovat uživateli rozhraní většinu času. Příkladem může být antivirový program, můžete dostat kliknutím na ikonu v oznamovací oblasti stav na hlavním panelu.  
@@ -39,4 +40,4 @@ Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást se obvykle použ�
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.NotifyIcon>  
- [NotifyIcon – komponenta](../../../../docs/framework/winforms/controls/notifyicon-component-windows-forms.md)
+ [Komponenta NotifyIcon](../../../../docs/framework/winforms/controls/notifyicon-component-windows-forms.md)

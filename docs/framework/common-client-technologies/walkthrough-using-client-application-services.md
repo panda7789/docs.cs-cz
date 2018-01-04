@@ -19,11 +19,12 @@ caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fba53a19810a91a2e679616e73ea8c5fc8d38da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 124c9321623fd6fe9c5414fc1eed2e41be1e75f3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-using-client-application-services"></a>Návod: Použití klientských aplikačních služeb
 Toto téma popisuje postup vytvoření aplikace Windows, která používá klientské aplikační služby k ověřování uživatelů a načítání uživatelských rolí a nastavení.  
@@ -545,7 +546,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
  Pokud chcete zvýšit zabezpečení aplikace, zajistěte, aby důkladně otestovat aplikace a server před nasazením.  
   
 ## <a name="see-also"></a>Viz také  
- [Klient aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ [Klientské aplikační služby](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
  [Postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
  [Nástroj Správa webu ASP.NET](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)  

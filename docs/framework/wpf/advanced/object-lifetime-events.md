@@ -35,11 +35,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e31997cfc1ff7500317bdfc59ac6ad12d3d27a23
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 81bd06811e428645a9a3103be457d30266a353c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="object-lifetime-events"></a>Události doby života objektu
 Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události, které označují fázích v životnost objektu vytvoření, použití a odstranění.  
@@ -85,5 +86,5 @@ Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includ
 -   <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>: [navigační přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Priorita hodnotu vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+ [Priorita hodnot vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

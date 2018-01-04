@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a71b28a1653b72d212455e99f8aa0101bb74e7a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fcd149b34282ef6ae21593e4549478bab91e0189
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-tracing-in-adonet"></a>Data trasování v technologii ADO.NET
 Funkce integrované data trasování funkce, které podporuje zprostředkovatele dat .NET pro technologii ADO.NET [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], Oracle, technologie OLE DB a rozhraní ODBC, jakož i technologie ADO.NET <xref:System.Data.DataSet>a [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] síťových protokolů.  

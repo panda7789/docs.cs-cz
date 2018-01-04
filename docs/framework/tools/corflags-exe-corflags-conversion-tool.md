@@ -17,11 +17,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ca3e9dbe5578623ccc67898c6f08213c31ad8e23
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 111c697d4d62cd52cd7913039e3c17e8a25ab50d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (CorFlags – převodní nástroj)
 Nástroj CorFlags Conversion umožňuje konfigurovat CorFlags oddíl hlavičky bitové kopie přenosného spustitelného souboru.  
@@ -53,7 +54,7 @@ CorFlags.exe assembly [options]
 |**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ILONLY+**|Nastaví příznak ILONLY.|  
 |**/ILONLY-**|Odstraní příznak ILONLY.|  
-|**/ nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
+|**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/ RevertCLRHeader**|Vrátí verzi hlavičky CLR na 2.0.|  
 |**/ UpgradeCLRHeader**|Aktualizuje verzi hlavičky CLR na 2.5. **Poznámka:** sestavení musí mít hlavička CLR verzi 2.5 nebo novější, abyste mohli spustit nativně.|  
   

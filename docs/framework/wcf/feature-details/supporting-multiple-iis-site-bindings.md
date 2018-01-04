@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bf2dbccd81b9c2e7b4ec78863d3de0227baedf92
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8dcd6a5e6204b1a629c1ee1e2ddfb9b263fa8054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Podpora víc vazeb webu IIS
 Při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v části Internetové informační služby (IIS) 7.0, můžete zadat více základní adresy, která používá stejný protokol ve stejné lokalitě. To umožňuje stejnou službu reagovat na několika různých identifikátory URI. To je užitečné, když chcete hostovat službu, která naslouchá na http://www.contoso.com a http://contoso.com. Je také užitečné k vytvoření služby, který má bázové adresy pro interní uživatele a samostatné základní adresa pro externí uživatele. Příklad: http://internal.contoso.com a http://www.contoso.com.  

@@ -17,21 +17,22 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0df1c157466fd97a66c6fda4ebbca63e5c3fd23e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: ac2c3aeec1419dbedc0d5260f77c8543919f3938
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="globalization-and-localization-how-to-topics"></a>Postupy: Témata globalizace a lokalizace
 Témata v této části popisují, jak pro vývoj aplikací připravených.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)  
- [Použití automatického rozložení pro vytvoření tlačítka](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
- [Pomocí automatického rozložení mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
- [Používání ResourceDictionary ke správě prostředků lokalizovatelný řetězec](../../../../docs/framework/wpf/advanced/how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md)  
- [Využití prostředků v možnosti lokalizace aplikací](../../../../docs/framework/wpf/advanced/how-to-use-resources-in-localizable-applications.md)  
+ [Vytvoření tlačítka pomocí automatického rozložení](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
+ [Automatické rozložení použitím mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
+ [Správa prostředků lokalizovatelných řetězců pomocí ResourceDictionary](../../../../docs/framework/wpf/advanced/how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md)  
+ [Použití prostředků v lokalizovatelných aplikacích](../../../../docs/framework/wpf/advanced/how-to-use-resources-in-localizable-applications.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Globalization>  
@@ -40,6 +41,6 @@ Témata v této části popisují, jak pro vývoj aplikací připravených.
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [XML: lang v jazyce XAML](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md)  
+ [Práce s atributem xml:lang v jazyce XAML](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md)  
   
 ## <a name="related-sections"></a>Související oddíly

@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 37cec82876edadfed5cda338ca12775ad19ae732
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 485640dc320809e9be5550d380b4fc9a2326e027
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="domainupdown-control-windows-forms"></a>DomainUpDown – ovládací prvek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.DomainUpDown> řízení vypadá jako kombinace textového pole a pár tlačítka pro přesun nahoru nebo dolů v seznamu. Ovládací prvek zobrazí a nastaví textový řetězec ze seznamu voleb. Uživatele můžete vybrat řetězec, klikněte na tlačítka pro přesouvání v seznamu nahoru a dolů, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním řetězec, který odpovídá položku v seznamu. Je možné použití tohoto ovládacího prvku pro výběr položek z abecedně seřazený seznam názvů. (Seřadíte seznam nastavit <xref:System.Windows.Forms.DomainUpDown.Sorted%2A> vlastnost `true`.) Funkce tohoto ovládacího prvku je velmi podobný pole se seznamem nebo pole se seznamem, ale zabírají velmi málo místa.  
@@ -36,10 +37,10 @@ Windows Forms <xref:System.Windows.Forms.DomainUpDown> řízení vypadá jako ko
  [Přehled ovládacího prvku DomainUpDown](../../../../docs/framework/winforms/controls/domainupdown-control-overview-windows-forms.md)  
  Představuje obecné koncepty <xref:System.Windows.Forms.DomainUpDown> řízení, které umožňuje uživatelům procházet a vyberte ze seznamu textové řetězce.  
   
- [Postupy: Přidání položky do Windows Forms DomainUpDown – ovládací prvky prostřednictvím kódu programu](../../../../docs/framework/winforms/controls/how-to-add-items-to-windows-forms-domainupdown-controls-programmatically.md)  
+ [Postupy: Programové přidávání položek do ovládacích prvků Windows Forms DomainUpDown](../../../../docs/framework/winforms/controls/how-to-add-items-to-windows-forms-domainupdown-controls-programmatically.md)  
  Popisuje, jak zadat textového řetězce <xref:System.Windows.Forms.DomainUpDown> by měl zobrazit ovládací prvek.  
   
- [Postupy: odebrání položek z rozhraní Windows Forms DomainUpDown – ovládací prvky](../../../../docs/framework/winforms/controls/how-to-remove-items-from-windows-forms-domainupdown-controls.md)  
+ [Postupy: Odebrání položek z ovládacích prvků Windows Forms DomainUpDown](../../../../docs/framework/winforms/controls/how-to-remove-items-from-windows-forms-domainupdown-controls.md)  
  Popisuje postup odstranění položek z <xref:System.Windows.Forms.DomainUpDown> ovládací prvek v kódu.  
   
 ## <a name="reference"></a>Odkaz  

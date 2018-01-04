@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 96d8e05fd6ce71536eacd909a831da0e14aa2f3d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7c772d15a3c2a6a6dd70e913c152b3bc0f682654
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-entities-serializable"></a>Postupy: Zkontrolujte serializovatelný entity
 Při generování kódu, můžete provést entity serializable. Třídy entity jsou označených pomocí <xref:System.Runtime.Serialization.DataContractAttribute> atribut a sloupce s <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  
@@ -39,4 +40,4 @@ sqlmetal /code:nwserializable.cs /language:csharp "c:\northwnd.mdf" /sprocs /fun
   
 ## <a name="see-also"></a>Viz také  
  [Serializace](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)  
- [Vytváření objektový Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+ [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

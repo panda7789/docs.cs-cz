@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 92e75f8f23bb0bc6d11e9bb6fd6e83c35559b847
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3e01f24af2b6853c7a43377bc0b7f7d338195472
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transactional-support-in-systemservicemodel"></a>Podpora transakcí v názvovém prostoru System.ServiceModel
 Témata v této části popisují transakční funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje.  
@@ -32,14 +33,14 @@ Témata v této části popisují transakční funkce [!INCLUDE[indigo1](../../.
  [Povolení toku transakcí](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)  
  Popisuje postup při povolení toku transakcí.  
   
- [Postupy: vytvoření transakční služby](../../../../docs/framework/wcf/feature-details/how-to-create-a-transactional-service.md)  
+ [Postupy: Vytvoření transakční služby](../../../../docs/framework/wcf/feature-details/how-to-create-a-transactional-service.md)  
  Demonstruje postup vytvoření transakční služby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Diagnostikování transakčních aplikací](../../../../docs/framework/wcf/feature-details/diagnosing-transactional-applications.md)  
  Popisuje, jak používat funkci správy a Diagnostika v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] řešení aplikace transakcí.  
   
- [Porovnání transakcí u modelů COM + a ServiceModel](../../../../docs/framework/wcf/feature-details/comparing-transactions-in-com-and-servicemodel.md)  
+ [Porovnání transakcí u modelů COM+ a ServiceModel](../../../../docs/framework/wcf/feature-details/comparing-transactions-in-com-and-servicemodel.md)  
  Popisuje, jak k simulaci chování transakční služby COM + s použitím atributů poskytované <xref:System.ServiceModel> oboru názvů.  
   
- [Integrace služeb Enterprise Services transakčních komponent](../../../../docs/framework/wcf/feature-details/integrating-enterprise-services-transactional-components.md)  
+ [Integrace transakčních komponent služeb Enterprise Services](../../../../docs/framework/wcf/feature-details/integrating-enterprise-services-transactional-components.md)  
  Popisuje, jak integrovat vaši [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby s kódem, který používá služba enterprise.

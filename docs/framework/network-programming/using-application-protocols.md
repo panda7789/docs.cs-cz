@@ -23,16 +23,17 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: cbbdc2f3fc326de43e9e6a066350ef28aacbec05
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b8e87e800e9f1b3a2627716d5e2116e5ba08b837
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-application-protocols"></a>Pomocí protokolů aplikací
 Rozhraní .NET Framework podporuje běžně používané Internetové protokoly aplikací. Tato část obsahuje informace o používání [HTTP](../../../docs/framework/network-programming/http.md), "TCP" a "UDP" protokoly a také informace o používání [Windows Sockets](../../../docs/framework/network-programming/sockets.md) rozhraní k implementaci vlastní protokoly.  
   
 ## <a name="see-also"></a>Viz také  
  [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
- [Síťové programování ukázky](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Ukázky sítě pro .NET na galerie kódů MSDN](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

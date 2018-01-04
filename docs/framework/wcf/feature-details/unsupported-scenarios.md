@@ -13,11 +13,12 @@ caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3bb2646a500db299f164dce34fb062a509f90047
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 96ae88fd29391bf173da33398dfb41b3a06441ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje rozhraní SSPI nebo Kerberos ověřovacích protokolů a proto [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spuštěna služba pomocí ověřování systému Windows na této platformě nepodporuje. Další mechanismy ověřování, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP nebo HTTPS jsou podporovány při spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pod Windows XP Home Edition.  
@@ -119,9 +120,9 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
  Oprava je upravit vazby přímo v klientovi po provedení importu.  
   
 ## <a name="see-also"></a>Viz také  
- [Aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [Zvýšení úrovně oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Odmítnutí služby](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [Manipulaci](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

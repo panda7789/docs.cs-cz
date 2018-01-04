@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 85ee852c868f26937494d5d340d2db4210224754
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5314f39c3012826f25fa6c64baf7eb8e42329f58
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-attached-properties-of-canvas-to-position-child-elements"></a>Postupy: Umístění podřízených elementů pomocí vlastností připojených k plátnu
 Tento příklad ukazuje, jak používat připojené vlastnosti <xref:System.Windows.Controls.Canvas> na pozici podřízené elementy.  
@@ -43,6 +44,6 @@ Tento příklad ukazuje, jak používat připojené vlastnosti <xref:System.Wind
  <xref:System.Windows.Controls.Canvas.Right%2A>  
  <xref:System.Windows.Controls.Canvas.Top%2A>  
  <xref:System.Windows.Controls.Button>  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)  
- [Přehled přidružené vlastnosti](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)  
+ [Přehled přidružených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)

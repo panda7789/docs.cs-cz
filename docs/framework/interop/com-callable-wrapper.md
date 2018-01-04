@@ -23,11 +23,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 874550511ed04427003f6fd54fdd97b3001356fc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e8c39d3c84fe24f86692c289860f22381a3cf5a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 Jakmile klient modelu COM zavolá objekt rozhraní .NET, vytvoří modul CLR (Common Language Runtime) pro daný objekt spravovaný objekt a obálku volatelnou modelem COM (CCW). Pokud nelze odkazovat na objekt rozhraní .NET přímo, budou klienti modelu COM pro spravovaný objekt používat objekt CCW jako proxy.  
@@ -188,7 +189,7 @@ public class LoanApp : IAnother {
  <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
  [Obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md)  
  [COM – obálky](../../../docs/framework/interop/com-wrappers.md)  
- [Vystavení součástí .NET Framework do modelu COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [Simulace COM – rozhraní](http://msdn.microsoft.com/en-us/ad2ab959-e2be-411b-aaff-275c3fba606c)  
  [Kvalifikace typů .NET pro spolupráci](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
  [Obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md)

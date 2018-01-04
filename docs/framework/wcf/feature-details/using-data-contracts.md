@@ -20,11 +20,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acbe1fc52cec011863dea8f3ae81492e3661cd97
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7541f04279bbe9d85b7e2ecca841d9f5a14fc9a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
 A *kontrakt dat* formální dohodu mezi službou a klienta, který abstraktně popisuje data, která mají být vyměňují. To znamená komunikovat, klient a služba nemají sdílet stejné typy stejné kontrakty dat. Přesněji definuje kontrakt dat, pro každý parametr nebo návratový typ, jaká data se serializovat (převedena na XML) k výměně.  
@@ -80,13 +81,13 @@ A *kontrakt dat* formální dohodu mezi službou a klienta, který abstraktně p
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md)  
- [Názvy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)  
+ [Názvy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)  
  [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
  [Pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md)  
  [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
- [Kontrakty dat s dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)  
+ [Kontrakty dat s dopřednou kompatibilitou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)  
  [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
- [Zpětná volání serializace tolerantní k verzi](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)  
- [Vychozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)  
- [Typy podporované systémem serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
- [Postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+ [Zpětná volání serializace tolerantní k verzím](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)  
+ [Výchozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)  
+ [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
+ [Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

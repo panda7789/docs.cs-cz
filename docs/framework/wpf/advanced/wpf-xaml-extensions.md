@@ -18,21 +18,22 @@ caps.latest.revision: "52"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ba1092b9fd4a39a3e497ec31b9fd6bb1227f827
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 42ef2d29f7364d09c35dec27e0aa6f775dbc2982
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-xaml-extensions"></a>Rozšíření WPF XAML
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vazby – rozšíření značek](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)  
-  [– Rozšíření značek ColorConvertedBitmap](../../../../docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md)  
-  [– Rozšíření značek ComponentResourceKey](../../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)  
-  [– Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
-  [RelativeSource MarkupExtension](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)  
-  [– Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
-  [– Rozšíření značek TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)  
-  [– Rozšíření značek ThemeDictionary](../../../../docs/framework/wpf/advanced/themedictionary-markup-extension.md)  
-  [Syntaxe PropertyPath XAML](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)  
-  [Atribut PresentationOptions:Freeze](../../../../docs/framework/wpf/advanced/presentationoptions-freeze-attribute.md)
+ [Rozšíření značek datové vazby](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)  
+  [Rozšíření značek ColorConvertedBitmap](../../../../docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md)  
+  [Rozšíření značek ComponentResourceKey](../../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)  
+  [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
+  [Rozšíření značek RelativeSource](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)  
+  [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
+  [Rozšíření značek TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)  
+  [Rozšíření značek ThemeDictionary](../../../../docs/framework/wpf/advanced/themedictionary-markup-extension.md)  
+  [PropertyPath – syntaxe v jazyce XAML](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)  
+  [PresentationOptions:Freeze – atribut](../../../../docs/framework/wpf/advanced/presentationoptions-freeze-attribute.md)

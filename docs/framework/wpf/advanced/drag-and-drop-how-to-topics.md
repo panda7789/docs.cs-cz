@@ -15,22 +15,23 @@ caps.latest.revision: "80"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1d1fe4245c313a7aad003b1f268a2c46fed21ef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 80b9518a7bfff1057acc76831f7def1e66f3b11a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drag-and-drop-how-to-topics"></a>Postupy: Témata přetažení
 Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] framework přetažení myší.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Otevření souboru, který je umístěný na ovládacím prvku RichTextBox](../../../../docs/framework/wpf/advanced/how-to-open-a-file-that-is-dropped-on-a-richtextbox-control.md)  
- [Vytvořit datový objekt](../../../../docs/framework/wpf/advanced/how-to-create-a-data-object.md)  
- [Určí, zda je formát dat přítomné v datovém objektu](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md)  
- [Seznam formáty dat v datovém objektu](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md)  
- [Načtení dat ve formátu konkrétní Data](../../../../docs/framework/wpf/advanced/how-to-retrieve-data-in-a-particular-data-format.md)  
- [Uložit více formátů Data v datovém objektu](../../../../docs/framework/wpf/advanced/how-to-store-multiple-data-formats-in-a-data-object.md)  
+ [Otevření souboru přetaženého na ovládací prvek RichTextBox](../../../../docs/framework/wpf/advanced/how-to-open-a-file-that-is-dropped-on-a-richtextbox-control.md)  
+ [Vytvoření datového objektu](../../../../docs/framework/wpf/advanced/how-to-create-a-data-object.md)  
+ [Určení, jestli datový objekt obsahuje formát dat](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md)  
+ [Seznam datových formátů v datovém objektu](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md)  
+ [Načtení dat v konkrétním datovém formátu](../../../../docs/framework/wpf/advanced/how-to-retrieve-data-in-a-particular-data-format.md)  
+ [Uložení několika datových formátů do datového objektu](../../../../docs/framework/wpf/advanced/how-to-store-multiple-data-formats-in-a-data-object.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Přetáhnout myší – přehled](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)
+ [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 769197b3f59c68c79f94c71c49ba4b1f4f98da2c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9e65f07fc01d0d364d7271c4f1378b968b687881
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-persistence"></a>Trvalost pracovního postupu
 Trvalost pracovního postupu je trvanlivý zaznamenávání stavu instance pracovního postupu, nezávisle na informace o procesu nebo počítače. To se provádí nabízí dobře známé bod obnovení pro instanci pracovního postupu v případě selhání systému, nebo zachovat paměti uvolnění instancí pracovního postupu, které nejsou aktivně věnovat práci nebo přesunout stav instance pracovního postupu z jednoho uzlu do jiného uzel ve farmě serverů.  
@@ -51,14 +52,14 @@ Trvalost pracovního postupu je trvanlivý zaznamenávání stavu instance praco
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Ukládání Instance pracovního postupu SQL](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)  
+-   [Úložiště instancí pracovních postupů SQL](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)  
   
--   [Instance úložiště](../../../docs/framework/windows-workflow-foundation/instance-stores.md)  
+-   [Úložiště instancí](../../../docs/framework/windows-workflow-foundation/instance-stores.md)  
   
--   [Trvalost účastníky](../../../docs/framework/windows-workflow-foundation/persistence-participants.md)  
+-   [Účastníci trvalosti](../../../docs/framework/windows-workflow-foundation/persistence-participants.md)  
   
--   [Trvalost osvědčené postupy](../../../docs/framework/windows-workflow-foundation/persistence-best-practices.md)  
+-   [Osvědčené postupy pro trvalost](../../../docs/framework/windows-workflow-foundation/persistence-best-practices.md)  
   
--   [Instance pracovního postupu netrvalé](../../../docs/framework/windows-workflow-foundation/non-persisted-workflow-instances.md)  
+-   [Netrvalé instance pracovních postupů](../../../docs/framework/windows-workflow-foundation/non-persisted-workflow-instances.md)  
   
 -   [Pozastavení a obnovení pracovního postupu](../../../docs/framework/windows-workflow-foundation/pausing-and-resuming-a-workflow.md)

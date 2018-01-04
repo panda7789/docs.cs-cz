@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8233db6bdf8c07bcc62f2e0f3819afb72dc10f5a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cc41a51a9c85b84f2f5365eb1650ebec37888652
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-core-and-open-source"></a>.NET Core a open source
 Toto téma obsahuje stručný přehled co .NET Core a ukazuje, jak můžete najít další informace. Úplný seznam témat pro .NET Core naleznete [.NET Core průvodce](../../core/index.md).
@@ -51,9 +52,9 @@ Toto téma obsahuje stručný přehled co .NET Core a ukazuje, jak můžete naj�
   
 -   [Roslyn - kompilátoru platformy .NET](https://github.com/dotnet/roslyn)  
   
--   [Jádro ASP.NET](https://github.com/aspnet/home)  
+-   [ASP.NET Core](https://github.com/aspnet/home)  
   
 ## <a name="see-also"></a>Viz také  
  [.NET core domovské stránky](https://www.microsoft.com/net/core)  
- [Příručka pro základní rozhraní .NET](../../core/index.md)  
+ [Průvodce platformou .NET Core](../../core/index.md)  
  [Dokumentace k technologii ASP.NET](/aspnet/core/)

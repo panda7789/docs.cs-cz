@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 24f1bc22e088c0198ec8a8f8183611d2b43941b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2c96aa6752feca637f89ed309d1a5c87cea4a3a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="determining-service-operation-duration"></a>Zjišťování doby provádění operací služby
 Pokud je povoleno analytické trasování v [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] aplikace, doba provádění pro operaci služby se dá snadno určit pomocí protokolu událostí.  Toto téma ukazuje, jak určit množství času, které operace služby potřebné k dokončení.  

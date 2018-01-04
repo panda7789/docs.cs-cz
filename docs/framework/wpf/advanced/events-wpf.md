@@ -18,25 +18,26 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dda7f9497751356c4c650e7fb672f7721ec3dd09
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cf622066bbfca8260670ca139f4acfe9affca07e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="events-wpf"></a>Události (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]představuje směrované události, které můžete vyvolat obslužné rutiny, které existují v různých naslouchací procesy ve stromové struktuře element aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Přehled přidružené události](../../../../docs/framework/wpf/advanced/attached-events-overview.md)  
- [Události doba života objektu](../../../../docs/framework/wpf/advanced/object-lifetime-events.md)  
- [Označení směrované události, protože zpracována a třídy zpracování](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [Přehled přidružených událostí](../../../../docs/framework/wpf/advanced/attached-events-overview.md)  
+ [Události doby života objektu](../../../../docs/framework/wpf/advanced/object-lifetime-events.md)  
+ [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
  [Události náhledu](../../../../docs/framework/wpf/advanced/preview-events.md)  
  [Události změny vlastnosti](../../../../docs/framework/wpf/advanced/property-change-events.md)  
- [Visual Basic a zpracování událostí WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)  
- [Vzory slabé událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)  
+ [Zpracování událostí v jazyku Visual Basic a WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)  
+ [Slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.RoutedEvent>  
@@ -47,12 +48,12 @@ ms.lasthandoff: 10/22/2017
   
 ## <a name="related-sections"></a>Související oddíly  
  [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [XAML v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [Základní prvky](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [Element stromu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+  [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
+  [Základní elementy](../../../../docs/framework/wpf/advanced/base-elements.md)  
+  [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
   [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
   [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
   [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
   [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)  
   [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)

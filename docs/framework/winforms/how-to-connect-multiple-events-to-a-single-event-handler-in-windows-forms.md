@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4aa22b011b895a20cefdcc5a7c9e6c1cd0531923
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bfd955b4153c7a2bc54d8b52ff1801541c3a7559
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms
 Při návrhu aplikace možná bude nutné použít více událostí jedné obslužné rutině událostí nebo mít více událostí, použijte stejný postup. Je třeba často výkonné spoustu času tak, aby měl příkaz nabídky vyvolání stejné události, jak to dělá tlačítko ve formuláři, pokud jejich zpřístupnění stejné funkce. Můžete to provést pomocí zobrazení událostí okna vlastnosti v jazyce C# nebo `Handles` – klíčové slovo a **název třídy** a **název metody** rozevíracího seznamu polí v editoru kódu jazyka Visual Basic.  
@@ -70,5 +71,5 @@ Při návrhu aplikace možná bude nutné použít více událostí jedné obslu
      Kód bude přidán do formuláře pro vazbu události pro stávající obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření obslužných rutin událostí v systému Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8d2562bb37413cd07b4548bbf2bad0b6a9aedbc5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2ef50301a5188193cc13cd0e657f53593ef0d93e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcompilergt-element"></a>&lt;kompilátoru&gt; – Element
 Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.  
@@ -110,5 +111,5 @@ Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
- [Určení úplné názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
+ [Určení úplných názvů typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
  [kompilátoru Element pro kompilátory pro kompilaci (schéma nastavení ASP.NET)](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

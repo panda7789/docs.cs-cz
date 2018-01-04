@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 393d1692526551b1eb9aa16f48d3c78c3cd6692f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 397ec40e2d8a0694e208296593687e9268546fc7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enumerate-a-subset-of-print-queues"></a>Postupy: Vyčíslení dílčí sady tiskové fronty
 Běžné situace Odborníci v oblasti technologií (IT) informace o správě společnosti sadu tiskárny, jimž je vygenerovat seznam tiskárny, které mají určité charakteristické vlastnosti. Tato funkce poskytuje <xref:System.Printing.PrintServer.GetPrintQueues%2A> metodu <xref:System.Printing.PrintServer> objektu a <xref:System.Printing.EnumeratedPrintQueueTypes> výčtu.  
@@ -51,6 +52,6 @@ Běžné situace Odborníci v oblasti technologií (IT) informace o správě spo
  <xref:System.Printing.EnumeratedPrintQueueTypes>  
  <xref:System.Printing.PrintQueue>  
  <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Tisk – přehled](../../../../docs/framework/wpf/advanced/printing-overview.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
  [Zapisovací modul dokumentů Microsoft XPS](http://go.microsoft.com/fwlink/?LinkId=147319)

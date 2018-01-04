@@ -9,11 +9,12 @@ ms.date: 10/17/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.devlang: dotnet
-ms.openlocfilehash: f0ba44b6eecb7e74f65da530f39c7db55a7f90d8
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 5a8ecaddf50969275e7de03f9b108019f423c23e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Nainstalujte rozhraní .NET Framework na Windows 8 a Windows Server 2012
 

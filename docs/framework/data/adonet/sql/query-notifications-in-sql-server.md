@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 854407d2e6d1341d5917cc78664c1f653e55fa35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d922598cb31e60b1c1648884555695c1ba089726
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-notifications-in-sql-server"></a>Oznámení dotazu v systému SQL Server
 Oznámení dotazů postavená na infrastruktuře služby Service Broker, umožňují aplikacím být upozorněni, když se data změnila. Tato funkce je obzvláště užitečná pro aplikace, které poskytují mezipaměť informací z databáze, např. webové aplikace a musí být upozorněni, když se změní zdrojová data.  
@@ -55,10 +56,10 @@ Oznámení dotazů postavená na infrastruktuře služby Service Broker, umožň
  [SqlDependency v aplikaci ASP.NET](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
  Ukazuje, jak používat oznámení dotazu z aplikace technologie ASP.NET.  
   
- [Detekce změn s SqlDependency](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
+ [Detekce změn pomocí SqlDependency](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
  Ukazuje, jak zjistit, kdy výsledky dotazu se bude lišit od těch, které původně obdrželi.  
   
- [Provádění SqlCommand s SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
+ [Provádění SqlCommand pomocí SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
  Ukazuje, konfigurace <xref:System.Data.SqlClient.SqlCommand> objekt pro práci s oznámení o dotazu.  
   
 ## <a name="reference"></a>Odkaz  

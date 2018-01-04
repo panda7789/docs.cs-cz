@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2d77d29526656da0c149ee4b8e940f4ad9e87ca3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5a94000989d30c0de7b70d1d4ef29a08a435e713
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-join-toolstrippanels"></a>Postupy: Spojení ToolStripPanels
 Toho se můžete zapojit <xref:System.Windows.Forms.ToolStrip> prvky <xref:System.Windows.Forms.ToolStripPanel> za běhu, který poskytuje flexibilitu aplikací rozhraní více dokumentů (MDI).  
@@ -44,4 +45,4 @@ Toho se můžete zapojit <xref:System.Windows.Forms.ToolStrip> prvky <xref:Syste
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.ToolStripPanel>  
- [Postupy: použití prvku ToolStripPanels pro MDI](../../../../docs/framework/winforms/controls/how-to-use-toolstrippanels-for-mdi.md)
+ [Postupy: Použití prvku ToolStripPanels pro MDI](../../../../docs/framework/winforms/controls/how-to-use-toolstrippanels-for-mdi.md)

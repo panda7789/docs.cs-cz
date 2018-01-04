@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 69b72a824e6f9468c9b3d86073243d506382e766
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8433376c9950594b57b800b401d68d849e743d85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-data-model"></a>Entity Data Model
 Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez ohledu na jeho uložené formuláře. Vychází z modelu vztah entit popsaného Petr Svoboda v 1976 jazyků EDM, ale také založený na modelu vztah entit a rozšiřuje jeho tradiční používá.  
@@ -29,47 +30,47 @@ Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez oh
 ## <a name="in-this-section"></a>V tomto oddílu  
  Témata v této části popisují koncepty datového modelu Entity. Všechny DSL, který implementuje EDM by měla obsahovat konceptů popsaných v tomto poli. Všimněte si, že [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) CSDL používá k definování konceptuálních modelech. Další informace najdete v tématu [CSDL specifikace](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md).  
   
- [Entity Data Model klíčové koncepty](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
   
- [Model Entity Data Model: obory názvů](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md)  
+ [Model EDM (Entity Data Model): Obory názvů](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md)  
   
- [Datového modelu entity: Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)  
+ [Model EDM (Entity Data Model): Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)  
   
- [Model Entity Data Model: dědičnosti](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)  
+ [Model EDM (Entity Data Model): Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)  
   
- [end přidružení](../../../../docs/framework/data/adonet/association-end.md)  
+ [association end](../../../../docs/framework/data/adonet/association-end.md)  
   
- [násobnost end přidružení](../../../../docs/framework/data/adonet/association-end-multiplicity.md)  
+ [association end multiplicity](../../../../docs/framework/data/adonet/association-end-multiplicity.md)  
   
- [Sada přidružení](../../../../docs/framework/data/adonet/association-set.md)  
+ [association set](../../../../docs/framework/data/adonet/association-set.md)  
   
- [konce přidružení sady](../../../../docs/framework/data/adonet/association-set-end.md)  
+ [association set end](../../../../docs/framework/data/adonet/association-set-end.md)  
   
- [Typ přidružení](../../../../docs/framework/data/adonet/association-type.md)  
+ [association type](../../../../docs/framework/data/adonet/association-type.md)  
   
- [komplexní typ](../../../../docs/framework/data/adonet/complex-type.md)  
+ [complex type](../../../../docs/framework/data/adonet/complex-type.md)  
   
- [kontejneru entit](../../../../docs/framework/data/adonet/entity-container.md)  
+ [entity container](../../../../docs/framework/data/adonet/entity-container.md)  
   
- [klíč entity](../../../../docs/framework/data/adonet/entity-key.md)  
+ [entity key](../../../../docs/framework/data/adonet/entity-key.md)  
   
- [sada entit](../../../../docs/framework/data/adonet/entity-set.md)  
+ [entity set](../../../../docs/framework/data/adonet/entity-set.md)  
   
- [Typ entity](../../../../docs/framework/data/adonet/entity-type.md)  
+ [entity type](../../../../docs/framework/data/adonet/entity-type.md)  
   
- [omezující vlastnost](../../../../docs/framework/data/adonet/facet.md)  
+ [facet](../../../../docs/framework/data/adonet/facet.md)  
   
- [vlastností cizího klíče](../../../../docs/framework/data/adonet/foreign-key-property.md)  
+ [foreign key property](../../../../docs/framework/data/adonet/foreign-key-property.md)  
   
- [deklarovaný modelu – funkce](../../../../docs/framework/data/adonet/model-declared-function.md)  
+ [model-declared function](../../../../docs/framework/data/adonet/model-declared-function.md)  
   
- [model definované funkce](../../../../docs/framework/data/adonet/model-defined-function.md)  
+ [model-defined function](../../../../docs/framework/data/adonet/model-defined-function.md)  
   
- [navigační vlastnost](../../../../docs/framework/data/adonet/navigation-property.md)  
+ [navigation property](../../../../docs/framework/data/adonet/navigation-property.md)  
   
- [Vlastnost](../../../../docs/framework/data/adonet/property.md)  
+ [property](../../../../docs/framework/data/adonet/property.md)  
   
- [omezení referenční integrity](../../../../docs/framework/data/adonet/referential-integrity-constraint.md)  
+ [referential integrity constraint](../../../../docs/framework/data/adonet/referential-integrity-constraint.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)  

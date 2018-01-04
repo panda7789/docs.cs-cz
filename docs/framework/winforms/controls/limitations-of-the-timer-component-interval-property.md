@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72af16b7dcb7709dd132a3748a454eda57acc168
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ec53957a61806239fdd41761de6e172681b7497b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="limitations-of-the-windows-forms-timer-component39s-interval-property"></a>Omezení součásti Windows Forms Timer & č. 39; s vlastnost intervalu
 Windows Forms <xref:System.Windows.Forms.Timer> součást obsahuje <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost, která určuje počet milisekund, po které se předají mezi jeden časovače událostí a další. Pokud je zakázána, časovač nadále přijímat <xref:System.Windows.Forms.Timer.Tick> událost v přibližně stejné časové intervaly.  
@@ -40,5 +41,5 @@ Windows Forms <xref:System.Windows.Forms.Timer> součást obsahuje <xref:System.
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Timer>  
- [Komponenta časovač](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
- [Přehled součásti časovač](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)
+ [Komponenta Timer](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
+ [Přehled komponenty Timer](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)

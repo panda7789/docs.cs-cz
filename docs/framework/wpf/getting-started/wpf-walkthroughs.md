@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c4c67033711575e0e13785fd448114a6042d8e8
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c24b5beae2a10720ee4d89b9d2d60306978d2628
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-walkthroughs"></a>Návody pro WPF
 Návody poskytují podrobné pokyny pro běžné scénáře. Díky tomu je vhodné oddělení na zahájení informací o produktu nebo oblasti určité funkce.  
@@ -41,20 +42,20 @@ Návody poskytují podrobné pokyny pro běžné scénáře. Díky tomu je vhodn
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Můj první grafický subsystém WPF aplikace pracovní plochy](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|Ukazuje vytvoření aplikace WPF pomocí řadu běžných funkcí, včetně ovládacích prvků, rozložení a datové vazby WPF.|  
-|[Tlačítko vytvořit pomocí jazyka XAML](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)|Demonstruje postup vytvoření animované tlačítko.|  
+|[Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|Ukazuje vytvoření aplikace WPF pomocí řadu běžných funkcí, včetně ovládacích prvků, rozložení a datové vazby WPF.|  
+|[Vytvoření tlačítka pomocí XAML](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)|Demonstruje postup vytvoření animované tlačítko.|  
 |[Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)|Znázorňuje proces vytvoření přizpůsobené tlačítko pomocí nástroje Microsoft Expression Blend.|  
-|[Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Ukazuje, jak načíst data z databáze systému SQL Server a zobrazit tato data v <xref:System.Windows.Controls.DataGrid> ovládacího prvku.|  
+|[Návod: Zobrazení dat z databáze serveru SQL Server v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Ukazuje, jak načíst data z databáze systému SQL Server a zobrazit tato data v <xref:System.Windows.Controls.DataGrid> ovládacího prvku.|  
   
 ## <a name="migration-and-interoperability-in-wpf"></a>Migrace a vzájemná funkční spolupráce v grafickém subsystému WPF  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Postupy: Hostování ovládacího prvku Windows Forms v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)|Ukazuje, jak k hostování Windows Forms <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> ovládací prvek v aplikaci WPF.|  
-|[Postupy: Hostování ovládacího prvku Windows Forms složené v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|Ukazuje, jak hostovat [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] složeného ovládacího prvku zadávání dat v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.|  
-|[Postupy: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|Ukazuje, jak k hostování složených prvků grafického subsystému WPF zadávání dat v aplikaci Windows Forms.|  
-|[Návod: Uspořádání ovládacích prvků Windows Forms v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)|Ukazuje, jak používat funkce rozložení WPF k uspořádání ovládacích prvků Windows Forms v hybridní aplikace.|  
-|[Návod: Vytvoření vazby na Data v hybridní aplikace](../../../../docs/framework/wpf/advanced/walkthrough-binding-to-data-in-hybrid-applications.md)|Ukazuje, jak používat datové vazby v hybridní aplikace, které obsahují ovládací prvky Windows Forms a WPF.|  
+|[Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)|Ukazuje, jak k hostování Windows Forms <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> ovládací prvek v aplikaci WPF.|  
+|[Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|Ukazuje, jak hostovat [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] složeného ovládacího prvku zadávání dat v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.|  
+|[Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|Ukazuje, jak k hostování složených prvků grafického subsystému WPF zadávání dat v aplikaci Windows Forms.|  
+|[Návod: Uspořádání ovládacích prvků Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)|Ukazuje, jak používat funkce rozložení WPF k uspořádání ovládacích prvků Windows Forms v hybridní aplikace.|  
+|[Návod: Vytvoření vazby k datům v hybridních aplikacích](../../../../docs/framework/wpf/advanced/walkthrough-binding-to-data-in-hybrid-applications.md)|Ukazuje, jak používat datové vazby v hybridní aplikace, které obsahují ovládací prvky Windows Forms a WPF.|  
   
 ## <a name="related-sections"></a>Související oddíly  
   

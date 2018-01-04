@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bda9ff0052c6dc2462f007e3febb3cbf9ca7d5ac
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 916b9ad24c2ae2334635760a520116b4c19df314
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Generování datovou sadu vztahů ze schématu XML (XSD)
 V <xref:System.Data.DataSet>, vytvoří přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřazený podřízený. Existují tři způsoby, jak představují **datovou sadu** vztahu v rámci schématu schématu XML definition language (XSD):  
@@ -91,20 +92,20 @@ msdata:childkey="" />
  Proces mapování používá **vztah** elementu, který chcete vytvořit relaci nadřazený podřízený mezi **OrderNumber** sloupec v **pořadí** tabulky a **OrderNo** sloupec v **OrderDetail** tabulky v **datovou sadu**. Proces mapování určuje pouze relace; neurčuje automaticky žádná omezení na hodnoty v těchto sloupcích, stejně jako primární klíč, cizí klíče omezení relačních databází.  
   
 ### <a name="in-this-section"></a>V tomto oddílu  
- [Mapa implicitní vztahy mezi elementy vnořené schématu](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md)  
+ [Mapování implicitních relací mezi elementy ve vnořeném schématu](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md)  
  Popisuje omezení a vztahy, které jsou implicitně vytvořené v **datovou sadu** když dojde k vnořených elementů v schématu XML.  
   
- [Mapování vztahy zadané pro vnořené prvky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-relations-specified-for-nested-elements.md)  
+ [Mapování relací zadaných pro vnořené elementy](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-relations-specified-for-nested-elements.md)  
  Popisuje, jak nastavit explicitně vztahů v **datovou sadu** pro vnořené prvky ve schématu XML.  
   
- [Určit vztahy mezi elementy s bez vnoření](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/specify-relations-between-elements-with-no-nesting.md)  
+ [Určení relací mezi elementy bez vnoření](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/specify-relations-between-elements-with-no-nesting.md)  
  Popisuje postup vytvoření vztahů v **datovou sadu** mezi elementy schématu XML, které nejsou vnořené.  
   
 ### <a name="related-sections"></a>Související oddíly  
- [Odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
  Popisuje relační struktura nebo schéma z **datovou sadu** vytvořený ze schématu XML definition language (XSD) schématu.  
   
- [Omezení (XSD) schématu XML mapování k omezení datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  Popisuje elementy schématu XML použitý k vytvoření jedinečné a cizí klíče omezení **datovou sadu**.  
   
 ## <a name="see-also"></a>Viz také  

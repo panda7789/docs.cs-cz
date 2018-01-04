@@ -19,11 +19,12 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a79744d99571fa1428da1fade8f63c4c80ae7b6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 92dac407ace9a039f5e6edc16b093fea5c485f63
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilování aplikací pomocí .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]je předkompilace technologie pro vytváření a nasazování aplikací pro Windows, která je součástí sady Visual Studio 2015 a novější verze. Zkompiluje automaticky prodejní verze aplikace, které jsou zapsány v spravovaného kódu (C# nebo Visual Basic), že cílové rozhraní .NET Framework a Windows 10 do nativního kódu.  
@@ -79,15 +80,15 @@ Ale [!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje více ne
   
     -   [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
   
-    -   [Referenční dokumentace rozhraní API reflexe](../../../docs/framework/net-native/net-native-reflection-api-reference.md)  
+    -   [Informace o rozhraní API reflexe](../../../docs/framework/net-native/net-native-reflection-api-reference.md)  
   
-    -   [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+    -   [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
   
--   [Serializace a Metadata](../../../docs/framework/net-native/serialization-and-metadata.md)  
+-   [Serializace a metadata](../../../docs/framework/net-native/serialization-and-metadata.md)  
   
 -   [Migrace aplikace pro Windows Store do .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)  
   
--   [Řešení potíží s .NET native obecné](../../../docs/framework/net-native/net-native-general-troubleshooting.md)  
+-   [Obecné řešení potíží s .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Nejčastější dotazy týkající se nativní rozhraní .NET](http://msdn.microsoft.com/vstudio/dn642499.aspx)

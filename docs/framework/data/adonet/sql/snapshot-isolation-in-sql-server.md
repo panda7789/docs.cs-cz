@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 101b8b444287102cbf8ed48891cc9d98df25283f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f7353ecd6f4e2db60db1c77c7771af43d68be760
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímku v systému SQL Server
 Izolace snímku vylepšuje souběžnosti pro OLTP aplikace.  

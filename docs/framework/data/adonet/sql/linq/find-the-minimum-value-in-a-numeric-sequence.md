@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c040b2a9a4c806d6e0f82ea2b22113b44df7d4c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a042d1b1e78afee632dea20bbafe2383e50430c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="find-the-minimum-value-in-a-numeric-sequence"></a>Vrátí minimální hodnotu číselného pořadí
 Použití <xref:System.Linq.Enumerable.Min%2A> operátor se vrátí minimální hodnotu ze posloupnost číselné hodnoty.  
@@ -83,4 +84,4 @@ Použití <xref:System.Linq.Enumerable.Min%2A> operátor se vrátí minimální 
   
 ## <a name="see-also"></a>Viz také  
  [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
- [Stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+ [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

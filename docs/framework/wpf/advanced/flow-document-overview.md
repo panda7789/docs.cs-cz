@@ -20,11 +20,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10f7eda2b6761a825dcb2b24ae9f11b2e1262d7e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a99bd2336de41366d27c15e4bc4cfb2b2aff3cd0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo je nastavená na jednu předdefinované rozložení, dokumenty toku dynamicky upravit a přeformátování obsah na základě proměnných runtime například volitelné uživatelské předvolby, řešení zařízení a velikost okna. Kromě toho dokumenty toku nabízejí dokumentu pokročilé funkce, jako je stránkování a sloupců. Toto téma obsahuje přehled toku dokumentů a postup jejich vytvoření.  
@@ -68,7 +69,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
 ## <a name="flow-document-types"></a>Tok typů dokumentů.  
  Zobrazení obsahu dokumentu toku a jak se zobrazuje je závislá na jaké objekt se používá k hostování toku obsahu. Existují čtyři ovládací prvky, které podporují zobrazení obsah toku: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, <xref:System.Windows.Controls.RichTextBox>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer>. Tyto ovládací prvky jsou popsány níže.  
   
- **Poznámka:** <xref:System.Windows.Documents.FlowDocument> je potřeba přímo hostitele toku obsahu, tak využívat všechny tyto ovládací prvky zobrazení <xref:System.Windows.Documents.FlowDocument> povolit toku obsahu hostování.  
+ **Poznámka:** <xref:System.Windows.Documents.FlowDocument> je potřeba přímo hostitele toku obsahu, tak využívat všechny tyto ovládací prvky zobrazení <xref:System.Windows.Documents.FlowDocument> povolit toku obsahu hostování.
   
 ### <a name="flowdocumentreader"></a>FlowDocumentReader  
  <xref:System.Windows.Controls.FlowDocumentReader>obsahuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení, včetně režimu zobrazení jednostránkové (-na stránkách), dva--na stránkách (formát čtení kniha) zobrazení a průběžné posouvání režimu zobrazení (neomezené). Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>. Pokud nepotřebujete schopnost dynamicky přepínání mezi režimy jiné zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují světlejšího váhy toku obsahu prohlížeče, opravené v režimu konkrétní zobrazení.  
@@ -360,10 +361,10 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
 ## <a name="see-also"></a>Viz také  
  [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
- [Typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
- [Přehled modelu TextElement obsahu](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)  
+ [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
+ [Přehled modelu obsahu TextElement](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)  
  [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Tabulka – přehled](../../../../docs/framework/wpf/advanced/table-overview.md)  
- [Přehled poznámky](../../../../docs/framework/wpf/advanced/annotations-overview.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Přehled tabulky](../../../../docs/framework/wpf/advanced/table-overview.md)  
+ [Přehled poznámek](../../../../docs/framework/wpf/advanced/annotations-overview.md)

@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4818b43c447dbe279a67f372dc846b3b07ecd998
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 345fd696559ba52d41874ff774bd46a2d37f6e6f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: vytvoření vlastní sledování účastník
 Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního postupu. Modul runtime pracovního postupu vysílá sledování záznamy, které popisují pracovního postupu události životního cyklu, události aktivit životního cyklu, obnovení záložku a chyb. Tyto záznamy o sledování jsou spotřebovávána sledování účastníky. [!INCLUDE[wf](../../../includes/wf-md.md)]obsahuje standardní sledování člena, který zapíše sledování záznamů jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje, jak vytvořit vlastní sledování účastník a sledování profil, který zaznamenat výstup `WriteLine` aktivity, aby mohly být zobrazeny pro uživatele.  

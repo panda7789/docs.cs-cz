@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 33090cd855aa41607f6d330d695f24a6f60197d6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ac7654fa041688bbd703d564f6703df9671fbaea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>Postupy: načtení metadat a implementovat kompatibilní služby
 Často stejná osoba není návrh a implementaci služby. V prostředích, kde jsou důležité spolupráce aplikace kontrakty lze určený nebo popsané v webové služby popis Language (WSDL) a vývojář musí implementovat služba, která odpovídá zadané kontrakt. Můžete také migrovat existující službu pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ale zachovat přenosový formát. Duplexní kontrakty navíc vyžadují volající implementace kontraktu zpětného volání.  
@@ -67,4 +68,4 @@ ms.lasthandoff: 12/02/2017
  [!code-xml[ClientProxyCodeSample#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/clientproxycodesample/cs/hostapplication.exe.config#20)]    
   
 ## <a name="see-also"></a>Viz také  
- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+ [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

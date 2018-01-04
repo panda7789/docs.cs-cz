@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 04bdf32ea329ff25fd62255b4512d8a9d5703b8f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a258a0e145e9a24e6e87bb511fdbd6166422a656
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="preview-events"></a>Události náhledu
 Události náhledu, také známé jako tunelování události, jsou směrované události, kde směr trasy, která přenáší z kořenového adresáře aplikace směrem k elementu, který vyvolá událost a hlásí jako zdroj v datech události. Ne všechny události scénáře podporovat nebo vyžadují události náhledu; Toto téma popisuje situace, kdy události náhledu existují, jak aplikace nebo součásti pracovat, a případy, kdy vytvoření události náhledu ve vlastních součástech nebo třídy může být vhodné.  
@@ -40,5 +41,5 @@ Události náhledu, také známé jako tunelování události, jsou směrované 
  Každý z těchto postupů má vedlejší účinky nebo omezení. Vedlejším účinkem zpracování události Preview je, že zpracování události v daném okamžiku může zakázat obslužných rutin, které očekávají, že zpracování probublávání události, a proto omezení na je, že je obvykle není vhodné k označení událostí zpracovává sice ještě na Previ část ové trasy. Omezení `handledEventsToo` technika je, že nemůžete zadat `handledEventsToo` obslužné rutiny v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jako atribut, je nutné zaregistrovat obslužné rutiny události v kódu po získání odkaz na objekt k elementu, kde má být připojen obslužná rutina.  
   
 ## <a name="see-also"></a>Viz také  
- [Označení směrované události, protože zpracována a třídy zpracování](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+ [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a53d5d4961e191ae3f3b821641e3f4b161cddf1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2a34e2726182c194882d94fe4b8d1164993d8284
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-managed-graphics-classes"></a>Použití spravovaných grafických tříd
 Následující témata popisují postup použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API v rámci spravované třídy.  
@@ -39,7 +40,7 @@ Následující témata popisují postup použití [!INCLUDE[ndptecgdiplus](../..
  [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)  
  Ukazuje, jak vytvořit a používat různé typy štětce přechodu.  
   
- [Práce s obrázky, rastrové obrázky, ikony a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)  
+ [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)  
  Ukazuje, jak vytvořit a manipulaci s obrázky.  
   
  [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)  
@@ -54,7 +55,7 @@ Následující témata popisují postup použití [!INCLUDE[ndptecgdiplus](../..
  [Sestavování a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)  
  Ukazuje, jak vytváření obrázků pomocí cesty.  
   
- [Použití transformací ve spravovaném GDI +](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
+ [Použití transformací ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
  Demonstruje maticové transformace.  
   
  [Použití grafických kontejnerů](../../../../docs/framework/winforms/advanced/using-graphics-containers.md)  
@@ -66,8 +67,8 @@ Následující témata popisují postup použití [!INCLUDE[ndptecgdiplus](../..
  [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)  
  Ukazuje různé aspekty manipulace s barvy.  
   
- [Použití kodérů a dekodérů ve spravovaném GDI +](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)  
+ [Použití kodérů a dekodérů ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)  
  Zobrazit použití kodérů a dekodérů k manipulaci s obrázky.  
   
- [Dvojité grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
+ [Grafiky s dvojitou vyrovnávací pamětí](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
  Ukazuje, jak snížit blikání pomocí dvojité vyrovnávací paměti.

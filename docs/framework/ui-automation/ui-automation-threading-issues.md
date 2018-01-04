@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: a1eaed2a7876c6e6981e7cc4172442b19800586b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9e5c38f5c4681210a4f3be552a3f08be3962bc2b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-threading-issues"></a>Potíže s vlákny při automatizaci uživatelského rozhraní
 > [!NOTE]

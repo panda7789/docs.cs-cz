@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: c49d05a9ca09a12044c0846db381368166e105bd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 86d90e4129f089a77e51e6e58233a1087fe5d0f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěn v kontextu správci řízení služeb a nikoli z v sadě Visual Studio. Z tohoto důvodu ladění služby není stejně jednoduché jako ladění jinými typy aplikací Visual Studio. K ladění služby, musíte spustit službu a pak připojit ladicí program k procesu, ve kterém je spuštěna. Potom můžete ladění aplikace s použitím všechny standardní ladění funkce sady Visual Studio.  
@@ -122,7 +123,7 @@ Služba musí být spuštěn v kontextu správci řízení služeb a nikoli z v 
  V některých případech, například pokud chcete ladit problém, který nastane pouze při spuštění systému budete muset použít ladicí program systému Windows. Nainstalujte [ladicích nástrojů pro systém Windows](http://msdn.microsoft.com/windows/hardware/hh852365) a zobrazit [ladění služby systému Windows](http://support.microsoft.com/kb/824344).  
   
 ## <a name="see-also"></a>Viz také  
- [Úvod do aplikace služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [Postupy: spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)  
  [Ladění služby](http://msdn.microsoft.com/library/windows/desktop/ms682546.aspx)

@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c59b09f6df7fdc6a7bb237ff6eafcad99329256
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2671d2790b3c5e476513cd5932d4684838aeceb6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a>Postupy: Určení uzlu TreeView označeného kliknutím (Windows Forms)
 Při práci s Windows Forms <xref:System.Windows.Forms.TreeView> řízení, běžné úlohy je určit uzel označeného a reagují odpovídajícím způsobem.  
@@ -68,4 +69,4 @@ Při práci s Windows Forms <xref:System.Windows.Forms.TreeView> řízení, bě�
     >  Jako alternativu, můžete použít <xref:System.Windows.Forms.MouseEventArgs> z <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.MouseUp> událost, která má získat <xref:System.Drawing.Point.X%2A> a <xref:System.Drawing.Point.Y%2A> koordinaci hodnoty <xref:System.Drawing.Point> kde došlo k chybě a klikněte na. Potom použít <xref:System.Windows.Forms.TreeView> ovládacího prvku <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> metoda k určení, který uzel označeného.  
   
 ## <a name="see-also"></a>Viz také  
- [TreeView – ovládací prvek](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)
+ [Ovládací prvek TreeView](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)

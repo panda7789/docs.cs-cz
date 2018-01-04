@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a3d436690108158cfd7675cf00788a564b8a1dc6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2c84f25dfd5d3066f9c5d0b62bc0b28bc98c283d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-wcf"></a>Rozšíření WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje upravit a rozšířit běhu součásti přesněji řídit a rozšířit aplikace založené na služby. Témata v této části najdete podrobněji o architektuře rozšíření. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -30,7 +31,7 @@ ms.lasthandoff: 12/02/2017
  [Rozšíření ServiceHost a vrstva modelu služby](../../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)  
  Vrstva modelu služby je zodpovědná za stahování příchozí zprávy mimo základní kanály, převedena do volání metod v kódu aplikace a odesílání výsledky zpět k volajícímu.  Rozšíření modelů služby upravit nebo jsou implementovány provádění nebo komunikace chování a funkce zahrnující dispečera funkce, vlastní chování, zprávu a parametr zachycení a další funkce rozšiřitelnost.  
   
- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)  
  Vazby jsou objekty, které popisují podrobnosti komunikace požadované pro připojení ke koncovému bodu. Vazba rozšíření nebo vlastní vazby implementovat vlastní komunikaci funkce potřebné k podpoře funkce aplikací.  
   
  [Rozšíření vrstvy kanálu](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)  
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/02/2017
  [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Systém metadat je skupina třídy a rozhraní, které představují metadata potřebnou k implementaci aplikace založené na služby. Upravit nebo rozšíření třídy nebo implementovat a nakonfigurovat rozhraní pro export a import vlastních metadat, jako je například rozšíření webové služby popis Language (WSDL) nebo vlastní WS-PolicyAttachments kontrolní výrazy.  
   
- [Rozšiřování kodérů a Serializátorů](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
+ [Rozšiřování kodérů a serializátorů](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
  Kodérů a serializátorů převede data z jednoho formátu do jiného. Témata v této části popisují, jak rozšířit zadané třídy zvláštních požadavků.  
   
 ## <a name="reference"></a>Odkaz  

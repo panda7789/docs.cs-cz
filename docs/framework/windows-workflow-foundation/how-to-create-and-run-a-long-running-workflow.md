@@ -15,11 +15,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d0e0c5b0ea05d1a0a9798e1b6f22ce06257f03b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a667c303cd1a98e0b027ca2026fe9c719e6baf4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup
 Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul runtime schopnost zachovat a uvolnit nečinnosti pracovní postupy pro databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) ukázán základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady byly uvedeny počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a opětovné záložky. K prokázání efektivně trvalost pracovního postupu, je vyžadován složitější hostitel pracovního postupu spuštění a obnovení několik instancí pracovního postupu, která podporuje. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitele formuláře systému Windows, aplikace, která podporuje spouštění a obnovení více instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce jako sledování a správa verzí, které jsou ukázáno v kurzu následné kroky.  
@@ -105,9 +106,9 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     |-------------|---------------------|  
     |**Tlačítko**|Název: NewGame<br /><br /> Umístění: 13, 13<br /><br /> Velikost: 75, 23<br /><br /> Text: Nová hra|  
     |**Popisek**|Umístění: 94, 18<br /><br /> Text: Číslo od 1 do uhodnout|  
-    |**Pole se seznamem**|Název: NumberRange<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Položek: 10, 100, 1000<br /><br /> Umístění: 228, 12<br /><br /> Velikost: 143, 21|  
+    |**ComboBox**|Název: NumberRange<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Položek: 10, 100, 1000<br /><br /> Umístění: 228, 12<br /><br /> Velikost: 143, 21|  
     |**Popisek**|Umístění: 13, 43<br /><br /> Text: Typ pracovního postupu|  
-    |**Pole se seznamem**|Název: WorkflowType<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Položky: SequentialNumberGuessWorkflow StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow,<br /><br /> Umístění: 94, 40<br /><br /> Velikost: 277, 21|  
+    |**ComboBox**|Název: WorkflowType<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Položky: SequentialNumberGuessWorkflow StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow,<br /><br /> Umístění: 94, 40<br /><br /> Velikost: 277, 21|  
     |**Popisek**|Název: WorkflowVersion<br /><br /> Umístění: 13, 362<br /><br /> Text: Verze pracovního postupu|  
     |**GroupBox**|Umístění: 13, 67<br /><br /> Velikost: 358, 287<br /><br /> Text: hra|  
   
@@ -117,12 +118,12 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     |Ovládací prvek|Vlastnost: hodnota|  
     |-------------|---------------------|  
     |**Popisek**|Umístění: 7, 20<br /><br /> Text: Id Instance pracovního postupu|  
-    |**Pole se seznamem**|Název: identifikátor InstanceId<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|  
+    |**ComboBox**|Název: identifikátor InstanceId<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|  
     |**Popisek**|Umístění: 7, 47<br /><br /> Text: uhodnout|  
-    |**Textové pole**|Název: uhodnout<br /><br /> Umístění: 50, 44<br /><br /> Velikost: 65, 20|  
+    |**TextBox**|Název: uhodnout<br /><br /> Umístění: 50, 44<br /><br /> Velikost: 65, 20|  
     |**Tlačítko**|Název: EnterGuess<br /><br /> Umístění: 121, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: Odhad zadejte|  
     |**Tlačítko**|Název: QuitGame<br /><br /> Umístění: 274, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: ukončení|  
-    |**Textové pole**|Název: argument WorkflowStatus<br /><br /> Umístění: 10, 73<br /><br /> Víceřádkových: True<br /><br /> Jen pro čtení: True<br /><br /> Posuvníky: svislé<br /><br /> Velikost: 338, 208|  
+    |**TextBox**|Název: argument WorkflowStatus<br /><br /> Umístění: 10, 73<br /><br /> Víceřádkových: True<br /><br /> Jen pro čtení: True<br /><br /> Posuvníky: svislé<br /><br /> Velikost: 338, 208|  
   
 5.  Nastavte **AcceptButton** vlastnost formuláře **EnterGuess**.  
   

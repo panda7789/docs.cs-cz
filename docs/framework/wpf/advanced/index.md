@@ -19,26 +19,27 @@ caps.latest.revision: "82"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a8935616159d2ea55e5616b6d7f4ebc4ff2c61e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2952c1c59e5a60cbc51d505d3a53e063ec3351d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="advanced-windows-presentation-foundation"></a>Rozšířené (Windows Presentation Foundation)
 Tato část popisuje některé z pokročilých oblastí v grafickém subsystému WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
- [Základní prvky](../../../../docs/framework/wpf/advanced/base-elements.md)  
- [Element stromu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+ [Základní elementy](../../../../docs/framework/wpf/advanced/base-elements.md)  
+ [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
  [Přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
  [Dokumenty](../../../../docs/framework/wpf/advanced/documents.md)  
  [Globalizace a lokalizace](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)  
- [Migrace a vzájemná funkční spolupráce](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
  [Výkon](../../../../docs/framework/wpf/advanced/performance.md)  
  [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)  
- [Přehled doplňky WPF](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)  
+ [Přehled doplňků WPF](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)  
  [Referenční dokumentace rozhraní API nespravované WPF](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)  
   
 ## <a name="related-sections"></a>Související oddíly

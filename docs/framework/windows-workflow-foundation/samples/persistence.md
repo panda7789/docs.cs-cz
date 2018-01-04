@@ -12,24 +12,25 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 47fb1a20df4217177d1742f46df16ebae0a84424
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3b326c56ce96b9b0f2d2089976b530d530d9a55b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="persistence"></a>Trvalost
 Tato část obsahuje příklady vysvětlující zachování pracovní postupy pro trvanlivého média v [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Setrvání pracovního postupu aplikace](../../../../docs/framework/windows-workflow-foundation/samples/persisting-a-workflow-application.md)  
+ [Uchování aplikace pracovního postupu](../../../../docs/framework/windows-workflow-foundation/samples/persisting-a-workflow-application.md)  
  Ukazuje, jak spouštět <xref:System.Activities.WorkflowApplication>ji uvolnit, kdy přestane nečinnosti a potom ho znovu načtěte mohla pokračovat v jeho zpracování.  
   
- [Předdefinované konfigurace](../../../../docs/framework/windows-workflow-foundation/samples/built-in-configuration.md)  
+ [Integrovaná konfigurace](../../../../docs/framework/windows-workflow-foundation/samples/built-in-configuration.md)  
  Demonstruje použití a konfigurace úložiště SQL instance pracovního postupu.  
   
  [SQLStoreExtensibility](../../../../docs/framework/windows-workflow-foundation/samples/sqlstoreextensibility.md)  
  Demonstruje použití a konfiguraci propagovaných vlastností v úložišti instance SQL pracovního postupu.  
   
- [Vlastnost povýšení aktivity](../../../../docs/framework/windows-workflow-foundation/samples/property-promotion-activity.md)  
+ [Aktivita propagace vlastnosti](../../../../docs/framework/windows-workflow-foundation/samples/property-promotion-activity.md)  
  Tato ukázka poskytuje řešení s začátku do konce, která integruje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení přímo do prostředí pro vytváření pracovních postupů.

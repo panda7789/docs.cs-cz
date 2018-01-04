@@ -29,11 +29,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4c1b751fc5fb5717ad4bf030777359bef2e69545
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b1227aa30d854d736bb24413b37d4722e729b2ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s místní zdroje v aplikacích klasické pracovní plochy rozhraní .NET Framework by v ideálním případě prostředky pro výchozí nebo neutrální jazykovou verzi balíčku s hlavní sestavení a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v následující části pro přístup k prostředkům s názvem. Pokud se rozhodnete, že není v hlavní sestavení a satelitní sestavení pro vložení vašich prostředků, můžete taky přejít binární soubory RESOURCES přímo, jak je popsáno v části [načítání prostředky z soubory .resources](#from_file) později v tomto článek.  Načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674) ve službě Windows Dev Center.  
@@ -210,7 +211,7 @@ csc Example.cs
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Resources.ResourceManager>  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)  
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
  [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674)

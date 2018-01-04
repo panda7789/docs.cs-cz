@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 52f1fc2601aca9b4d823d42ed961fcf007e5e5ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8cbbb0db657f002c189ab4db9311ca48d83c32a1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-internet-requests"></a>Vytváření žádostí o Internetu
 Vytvoření aplikace <xref:System.Net.WebRequest> instance prostřednictvím <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metoda. Toto je statickou metodu, která vytvoří třídy odvozené od **WebRequest** založené na schéma identifikátoru URI do ní předán.  
@@ -37,5 +38,5 @@ Vytvoření aplikace <xref:System.Net.WebRequest> instance prostřednictvím <xr
  Pro zpracování žádostí, které používají jiné protokoly na úrovni aplikace, potřebujete implementovat specifické třídy odvozené od **WebRequest** a **WebResponse**. Další informace najdete v tématu [programování modulární protokoly](../../../docs/framework/network-programming/programming-pluggable-protocols.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: použití třídy WebRequest Data žádosti](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
- [Požadavek na Data](../../../docs/framework/network-programming/requesting-data.md)
+ [Postupy:Vyžádání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
+ [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)

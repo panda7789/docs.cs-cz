@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: de0f11149c2ec587372b9e25f39f35f8552503c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 75ab1e733915349c64742e1a9c1142cad988ade0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-dataset"></a>LINQ na DataSet
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]umožňuje snadnější a rychlejší dotazu přes data uložená v mezipaměti <xref:System.Data.DataSet> objektu. Konkrétně [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] zjednodušuje dotazování tím, že umožňuje vývojářům psát dotazy z programovací jazyk, samostatně, místo pomocí samostatných dotazovací jazyk. To je užitečné zejména pro [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] vývojáři, kteří teď můžete využít výhod kontrolu syntaxe kompilaci, zadáním statické, a poskytuje podporu technologie IntelliSense [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] jejich dotazů.  

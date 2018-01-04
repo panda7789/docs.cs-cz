@@ -34,11 +34,12 @@ caps.latest.revision: "28"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 2bd01e697d6852b9eb50418e5b6f506a133cbc2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 32607c853506ae7339057893c10fd9931e5823be
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojáři a správci řízení a flexibilitu přes způsob aplikace spustit. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může řídit, které chráněným prostředkům aplikaci můžete přístup, jaké verze sestavení aplikace použije a kde jsou umístěné vzdálené aplikace a objekty. Vývojáři můžou pro nastavení v konfiguračních souborech, takže není nutné znovu zkompiluje aplikace pokaždé, když se změní nastavení. Tato část popisuje, co můžete nakonfigurovat a proč konfigurace aplikace mohou být užitečné.  
@@ -110,7 +111,7 @@ Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojář
 -   Konfigurační soubor uživatele zásady: %USERPROFILE%\Application data\Microsoft\CLR zabezpečení config\v*xx.xx*\Security.config  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: vyhledání sestavení pomocí mechanismu DEVPATH](../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)  
+ [Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH](../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)  
  Popisuje, jak se má nasměrovat modulu runtime při hledání sestavení pomocí mechanismu DEVPATH proměnné prostředí.  
   
  [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)  
@@ -122,7 +123,7 @@ Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojář
  [Konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md)  
  Popisuje, jak mapovat název algoritmu šifrování třídy a identifikátor objektu algoritmus šifrování.  
   
- [Postupy: vytváření zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)  
+ [Postupy: Vytváření zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)  
  Popisuje, kdy a jak měli byste přidat soubor zásad vydavatele k zadání sestavení přesměrování a kód základní nastavení.  
   
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
@@ -136,5 +137,5 @@ Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojář
  [Správa webu ASP.NET](http://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)  
  [NIB: Správa zásad zabezpečení](http://msdn.microsoft.com/en-us/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)  
  [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Vzdálených objektů](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58)

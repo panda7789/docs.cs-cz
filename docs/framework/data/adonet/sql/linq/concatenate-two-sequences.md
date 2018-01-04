@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e7230e1f53f58f37dacbb1f22fbad1593768e01e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8bcb20f5d057c3b54e49e2fac81e9799ac42b1f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="concatenate-two-sequences"></a>Řetězení dvě pořadí
 Použití <xref:System.Linq.Queryable.Concat%2A> operátor ke zřetězení dvě pořadí.  
@@ -43,4 +44,4 @@ Použití <xref:System.Linq.Queryable.Concat%2A> operátor ke zřetězení dvě 
   
 ## <a name="see-also"></a>Viz také  
  [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
- [Operátor posunutí standardní dotazu](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+ [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)

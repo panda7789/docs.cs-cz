@@ -17,20 +17,21 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 39d5f7763ac7b5923f0eaec757df13d675971789
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 399520738c53e149e7a5539a62a5d4599e26a8da
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-entry-in-the-windows-forms-datagridview-control"></a>Zadávání dat v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení poskytuje několik funkcí, která umožňují změnit jak uživatelé přidat nebo upravit dat v ovládacím prvku. Například můžete nastavit zadávání dat efektivnější tím, že poskytuje výchozí hodnoty pro nové řádky a upozornění uživatelů při výskytu chyb.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: určení režimu úprav pro Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control.md)  
+ [Postupy: Určení režimu úprav pro ovládací prvek Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control.md)  
  Popisuje, jak změnit způsob uživatelé začít upravovat buňky.  
   
- [Postupy: určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)  
+ [Postupy: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)  
  Popisuje, jak předem řádek pro nové záznamy ušetřit čas zadávání dat.  
   
  [Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md)  
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
  [Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)  
  Popisuje, jak k ověření vstupu uživatele, aby se zabránilo chybám při zadávání dat formátování.  
   
- [Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
+ [Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
  Popisuje, jak se budou zpracovávat chyby vkládání dat, které pocházejí ze zdroje dat, když se uživatel pokusí provést novou hodnotu.  
   
 ## <a name="reference"></a>Odkaz  
@@ -63,5 +64,5 @@ ms.lasthandoff: 11/21/2017
  Obsahuje témata, která popisují, jak ručně nebo z externího zdroje dat naplnit ovládací prvek s daty.  
   
 ## <a name="see-also"></a>Viz také  
- [DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
+ [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Typy sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)

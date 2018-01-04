@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ff43b9279130ed710d9d88cbf2ba5ead4a6f0ebc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6166cae86d2956ae3eec28b98fe0af864f6b708b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="diffgrams"></a>DiffGrams
 Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původní verze datové prvky. <xref:System.Data.DataSet> Používá formát DiffGram formát pro načtení a zachovat její obsah a k serializaci její obsah pro přenos přes síťové připojení. Když <xref:System.Data.DataSet> je zapsána jako formát DiffGram, vyplní formát DiffGram všechny potřebné informace přesně znovu vytvořit obsah, když není schéma služby <xref:System.Data.DataSet>, včetně hodnoty ve sloupcích i **původní** a **aktuální** verze řádku, řádku informace o chybě a pořadí řádků.  
@@ -93,7 +94,7 @@ Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původ
   
 |Poznámka|Popis|  
 |----------------|-----------------|  
-|**ID**|Použít spárovat elementů v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky elementům ve  **\<**  ***DataInstance***  **>**  bloku. Hodnoty s **diffgr:id** poznámky jsou ve tvaru *[TableName] [RowIdentifier]*. Příklad: `<Customers diffgr:id="Customers1">`.|  
+|**id**|Použít spárovat elementů v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky elementům ve  **\<**  ***DataInstance***  **>**  bloku. Hodnoty s **diffgr:id** poznámky jsou ve tvaru *[TableName] [RowIdentifier]*. Příklad: `<Customers diffgr:id="Customers1">`.|  
 |**identifikátor parentId**|Identifikuje které element z  **\<**  ***DataInstance***  **>**  blok je nadřazeného elementu aktuálního elementu. Hodnoty s **diffgr:parentId** poznámky jsou ve tvaru *[TableName] [RowIdentifier]*. Příklad: `<Orders diffgr:parentId="Customers1">`.|  
 |**haschanges –**|Identifikuje řádek  **\<**  ***DataInstance***  **>**  blokovat jako upravená. **Haschanges –** poznámky může mít jednu z následujících dvou hodnot:<br /><br /> **Vložit**<br /> Identifikuje **Added** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádek, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale zde bude žádný element s poznámkami ve  **\<**  ***DataInstance***  **>**  bloku.|  
 |**hasErrors**|Identifikuje řádek  **\<**  ***DataInstance***  **>**  blokovat s **RowError**. Chyba prvek je umístěn v  **\<diffgr:errors >** bloku.|  
@@ -142,8 +143,8 @@ Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původ
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- [Načítání datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
- [Zápis obsah datovou sadu jako XML Data](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
- [Datové sady, DataTables a DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [Kopírování obsahu datové sady jako dat XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

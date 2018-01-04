@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a2653a94992440b747371c5d8a7b9daa66b3e3ab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 26fbae0474253dc9792a0290a36dd52044d148b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dataviews"></a>DataView
 A <xref:System.Data.DataView> umožňuje vytvářet různá zobrazení dat uložených v <xref:System.Data.DataTable>, funkci, která se často používá v aplikacích datové vazby. Použití **DataView**, můžou zpřístupnit data v tabulce s různým řazením a data lze filtrovat podle řádku stavu nebo podle výraz filtru.  
@@ -29,7 +30,7 @@ A <xref:System.Data.DataView> umožňuje vytvářet různá zobrazení dat ulož
  Můžete použít <xref:System.Data.DataView.DataViewManager%2A> ke správě nastavení zobrazení pro všechny tabulky v **datovou sadu**. **DataViewManager** vám poskytne pohodlný způsob, jak spravovat výchozí nastavení zobrazení pro každou tabulku. Při vytváření vazby ovládacího prvku k více než jednu tabulku **datovou sadu**, závazný k **DataViewManager** je ideální volbou.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytváření v zobrazení DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-dataview.md)  
+ [Vytvoření zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-dataview.md)  
  Popisuje postup vytvoření **DataView** pro **DataTable**.  
   
  [Řazení a filtrování dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md)  
@@ -38,19 +39,19 @@ A <xref:System.Data.DataView> umožňuje vytvářet různá zobrazení dat ulož
  [DataRows a DataRowViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarows-and-datarowviews.md)  
  Popisuje, jak získat přístup k datům vystavené **DataView**.  
   
- [Vyhledání řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md)  
+ [Hledání řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md)  
  Popisuje, jak k vyhledání konkrétního řádku **DataView**.  
   
- [ChildViews a vztahy](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/childviews-and-relations.md)  
+ [ChildViews a relace](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/childviews-and-relations.md)  
  Popisuje postup vytvoření zobrazení dat pomocí relaci nadřazený podřízený **DataView**.  
   
- [Úprava DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/modifying-dataviews.md)  
+ [Úpravy zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/modifying-dataviews.md)  
  Popisuje, jak upravit data v podkladové **DataTable** prostřednictvím **DataView**, včetně povolení nebo zakázání aktualizací.  
   
  [Zpracování událostí zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataview-events.md)  
  Popisuje způsob použití **ListChanged** událostí pro příjem oznámení při obsah nebo pořadí **DataView** se právě aktualizuje.  
   
- [Správa DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/managing-dataviews.md)  
+ [Správa zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/managing-dataviews.md)  
  Popisuje způsob použití **DataViewManager** ke správě **DataView** nastavení pro každou tabulku v **datovou sadu**.  
   
 ## <a name="related-sections"></a>Související oddíly  
@@ -60,10 +61,10 @@ A <xref:System.Data.DataView> umožňuje vytvářet různá zobrazení dat ulož
  [Aplikace systému Windows](http://msdn.microsoft.com/en-us/a6bb2180-09b1-4738-b9fd-7fb05fc92f23)  
  Poskytuje podrobné informace o práci s Windows Forms a konzolové aplikace.  
   
- [Datové sady, DataTables a DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  Popisuje **datovou sadu** objekt a jak můžete použít ke správě dat aplikací.  
   
- [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
  Popisuje **DataTable** objekt a jak můžete použít ke správě dat aplikace, samostatně nebo jako součást **datovou sadu**.  
   
  [ADO.NET](../../../../../docs/framework/data/adonet/index.md)  

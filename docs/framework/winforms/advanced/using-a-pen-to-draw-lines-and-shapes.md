@@ -18,35 +18,36 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0913dc2745e1b244e4b03c0e6b946441a401c5b1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 35f43316e2535aae6622ccf7952f649cdb92fc81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>Kreslení čar a obrazců pomocí pera
 Použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] `Pen` objekty k vykreslení segmenty čáry, křivky a jsou podrobněji popsány dále tvarů. V této části *řádku* odkazuje na některý z těchto, není-li zadán rozumí pouze úsek čáry. Nastavte vlastnosti pera k řízení barvu, šířku, zarovnání a styl čar vykreslovány pomocí pera.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: kreslení čar pomocí pera](../../../../docs/framework/winforms/advanced/how-to-use-a-pen-to-draw-lines.md)  
+ [Postupy: Kreslení čar pomocí pera](../../../../docs/framework/winforms/advanced/how-to-use-a-pen-to-draw-lines.md)  
  Vysvětluje, jak kreslení čar.  
   
- [Postupy: kreslení obdélníků pomocí pera](../../../../docs/framework/winforms/advanced/how-to-use-a-pen-to-draw-rectangles.md)  
+ [Postupy: Kreslení obdélníků pomocí pera](../../../../docs/framework/winforms/advanced/how-to-use-a-pen-to-draw-rectangles.md)  
  Popisuje, jak kreslení obdélníků.  
   
- [Postupy: nastavení šířky a pera a zarovnání](../../../../docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md)  
+ [Postupy: Nastavení šířky a pera a zarovnání](../../../../docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md)  
  Vysvětluje, jak změnit šířku a zarovnání `Pen` objektu.  
   
- [Postupy: kreslení čáry s ukončením](../../../../docs/framework/winforms/advanced/how-to-draw-a-line-with-line-caps.md)  
+ [Postupy: Kreslení čáry s ukončením](../../../../docs/framework/winforms/advanced/how-to-draw-a-line-with-line-caps.md)  
  Popisuje postup přidání zakončení při kreslení čáry.  
   
- [Postupy: spojení čar](../../../../docs/framework/winforms/advanced/how-to-join-lines.md)  
+ [Postupy: Spojení čar](../../../../docs/framework/winforms/advanced/how-to-join-lines.md)  
  Ukazuje, jak připojit dva řádky.  
   
- [Postupy: kreslení vlastní přerušované čáry](../../../../docs/framework/winforms/advanced/how-to-draw-a-custom-dashed-line.md)  
+ [Postupy: Kreslení vlastní přerušované čáry](../../../../docs/framework/winforms/advanced/how-to-draw-a-custom-dashed-line.md)  
  Popisuje, jak k vykreslení na přerušovanou čáru.  
   
- [Postupy: kreslení čáry vyplněné texturou](../../../../docs/framework/winforms/advanced/how-to-draw-a-line-filled-with-a-texture.md)  
+ [Postupy: Kreslení čáry vyplněné texturou](../../../../docs/framework/winforms/advanced/how-to-draw-a-line-filled-with-a-texture.md)  
  Vysvětluje, jak kreslení čáry vyplněné texturou.  
   
 ## <a name="reference"></a>Odkaz  

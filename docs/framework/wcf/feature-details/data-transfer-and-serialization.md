@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29ca4041e24a99546dfb665b0ce9e695732442d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8daadec1eef20e62747cdbfcafd1fd13cfc16093
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-transfer-and-serialization"></a>Přenos a serializace dat
 V systému připojený služeb a klientů závisí na výměnu dat k provedení jakékoli úlohy. Jako vývojář služeb nebo klienta, je potřeba také pochopit, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zpracovává data a serializace dat před vytvořením aplikace, které jsou efektivní a snadno spravovat.  
@@ -47,13 +48,13 @@ V systému připojený služeb a klientů závisí na výměnu dat k provedení 
  [Filtrování](../../../../docs/framework/wcf/feature-details/filtering.md)  
  Popisuje filtrování, která umožňuje předběžné zpracování zpráv na základě různých kritérií.  
   
- [Velkého množství dat a vysílání datového proudu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
+ [Objemná data a streamování](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
  Popisuje, jak k odeslání velkého bloku dat, jako je binární soubor.  
   
- [Důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
+ [Důležité informace o zabezpečení dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
  Popisuje položky, které budou vědět, když přenos dat a serializace.  
   
- [Strukturální Přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
+ [Strukturální přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
  Popisuje zobrazení celkového návrhu přenosu dat v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ## <a name="reference"></a>Odkaz  
@@ -68,8 +69,8 @@ V systému připojený služeb a klientů závisí na výměnu dat k provedení 
  <xref:System.Xml.Serialization>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozšiřování kodérů a Serializátorů](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
+ [Rozšiřování kodérů a serializátorů](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
- [Správa verzí služeb](../../../../docs/framework/wcf/service-versioning.md)
+ [Správa verzí služby](../../../../docs/framework/wcf/service-versioning.md)

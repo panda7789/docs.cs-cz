@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: fefbd3894063c0298a7ad5110ed6867408869107
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0b29caeed4bf60a5a7ad723ffd46520a89a5bd87
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="null-comparisons"></a>Porovnávání s hodnotou Null
 A `null` hodnota ve zdroji dat znamená, že hodnota neznámý. V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, můžete zkontrolovat, že některé výpočty hodnoty null nebo porovnání se provádí pouze na řádky, které mají platný nebo jinou hodnotu než null, data. CLR sémantiku hodnotu null, ale může lišit od null sémantika zdroj dat. Většina databáze použijte verzi s hodnotou tři logiku pro zpracování porovnání null. To znamená, porovnání s hodnotou null nejsou vyhodnocena `true` nebo `false`, se vyhodnotí jako `unknown`. Často je jím implementace ANSI hodnoty Null, ale není to vždy.  
@@ -57,4 +58,4 @@ WHERE h.ShipDate IS Null
  V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], při předání kolekce, která podporuje `IQueryable` agregační funkce, agregační operací v databázi. Může docházet k rozdílům ve výsledcích dotazu, který se provádí v paměti a dotaz, který byl proveden v databázi. Pomocí dotazu v paměti Pokud nejsou nalezeny žádné shody, dotaz vrátí hodnotu 0. V databázi, stejný dotaz vrací `null`. Pokud `null` LINQ agregační funkci je předána hodnota, bude vyvolána výjimka. Tak, aby přijímal možné `null` přetypovat hodnoty, typy a vlastnosti typy, které zobrazí výsledky dotazu a typy podporující hodnoty Null.  
   
 ## <a name="see-also"></a>Viz také  
- [Výrazy v technologii LINQ to Entities dotazy](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)
+ [Výrazy v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)

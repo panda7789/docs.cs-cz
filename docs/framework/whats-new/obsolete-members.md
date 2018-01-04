@@ -13,11 +13,12 @@ ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0541ecf73fb719e7d28497492626d24fad0cc6d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9ae0e11ea5780ba7b86d097029615b0b176171e0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích, které jsou uspořádané podle sestavení. Pomocí následujících odkazů můžete zobrazit seznam zastaralé členy a doporučených alternativách v každé sestavení. Toto téma nemá seznam členů zastaralé typy. Seznam zastaralé typy najdete v tématu [zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md).  
@@ -802,5 +803,5 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:Microsoft.VisualBasic.MyServices.RegistryProxy?displayProperty=nameWithType>|<xref:Microsoft.VisualBasic.MyServices.RegistryProxy.DynData%2A>|`DynData` Klíč registru funguje pouze na systémy Windows 9 x, která není podporována touto verzí rozhraní .NET Framework. Použití `PerformanceData` místo klíče registru. Tato vlastnost se odebere z budoucích verzích rozhraní.|  
   
 ## <a name="see-also"></a>Viz také  
- [Co je zastaralé v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)  
+ [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)  
  [Zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md)

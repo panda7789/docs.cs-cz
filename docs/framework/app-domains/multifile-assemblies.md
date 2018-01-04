@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fead0a944b464ffd8f72dca6da33fd97404fe2d1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bded4fae854d10a17ddd03b8855f6096e18ab87f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="multifile-assemblies"></a>Vícesouborová sestavení
 Můžete vytvořit vícesouborového sestavení s využitím kompilátory příkazového řádku nebo [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] s Visual C++. Manifest sestavení musí obsahovat jeden soubor v sestavení. Sestavení, které spustí aplikaci musí také obsahovat vstupní bod, jako je například Main nebo WinMain – metoda.  
@@ -49,5 +50,5 @@ Můžete vytvořit vícesouborového sestavení s využitím kompilátory přík
  Jakmile vytvoříte sestavení, můžete si soubor, který obsahuje manifest sestavení (a tím i sestavení), nebo můžete poskytnout silným názvem souboru (a sestavení) a umístí jej v globální mezipaměti sestavení.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
+ [Postupy: Vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)

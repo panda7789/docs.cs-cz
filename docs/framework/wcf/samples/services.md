@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d68f1b6ecfb55a917dde97b395b4455930565409
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: edfd0670d951a07526454bc380cee91c66e4e7a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="services"></a>Služby
 Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.  
@@ -26,7 +27,7 @@ Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../i
  [Hostování](../../../../docs/framework/wcf/feature-details/hosting.md)  
  Demonstruje hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
- [Vzájemná spolupráce služeb](../../../../docs/framework/wcf/samples/service-interoperability.md)  
+ [Interoperabilita služeb](../../../../docs/framework/wcf/samples/service-interoperability.md)  
  Ukazuje interakce mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a další technologie služby.  
   
  [Chování](../../../../docs/framework/wcf/samples/behaviors.md)  
@@ -47,22 +48,22 @@ Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../i
  [Zásady rozšířené ochrany](../../../../docs/framework/wcf/samples/extended-protection-policy.md)  
  Demonstruje rozšířené ochrany initiative zabezpečení pro ochranu před útoky (typu MITM) man-in-the-middle.  
   
- [Postup konfiguračního kanálu](../../../../docs/framework/wcf/samples/configuration-channel-factory.md)  
+ [Objekt pro vytváření kanálů konfigurace](../../../../docs/framework/wcf/samples/configuration-channel-factory.md)  
  Demonstruje použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.  
   
  [Adresování](../../../../docs/framework/wcf/samples/addressing.md)  
  Ukazuje různé aspekty a funkce adresy koncových bodů.  
   
- [Imperativní](../../../../docs/framework/wcf/samples/imperative.md)  
+ [Imperativ](../../../../docs/framework/wcf/samples/imperative.md)  
  Ukazuje, jak definovat <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> pro službu pomocí kódu, místo definice `wsHttpBinding` vazby v konfiguraci.  
   
- [Víc kontraktů](../../../../docs/framework/wcf/samples/multiple-contracts.md)  
+ [Více kontraktů](../../../../docs/framework/wcf/samples/multiple-contracts.md)  
  Ukazuje, jak implementovat více než jeden kontrakt na služby a postup konfigurace koncových bodů pro komunikaci s jednotlivými implementovaná kontrakty.  
   
- [Víc koncových bodů](../../../../docs/framework/wcf/samples/multiple-endpoints.md)  
+ [Více koncových bodů](../../../../docs/framework/wcf/samples/multiple-endpoints.md)  
  Ukazuje, jak nakonfigurovat několik koncových bodů na služby a ke komunikaci se každý koncový bod z klienta.  
   
- [Víc koncových bodů na jedné adrese ListenUri](../../../../docs/framework/wcf/samples/multiple-endpoints-at-a-single-listenuri.md)  
+ [Více koncových bodů na jedné adrese ListenUri](../../../../docs/framework/wcf/samples/multiple-endpoints-at-a-single-listenuri.md)  
  Představuje službu, která hostuje víc koncových bodů na jedné `ListenUri`.  
   
  [OperationContextScope](../../../../docs/framework/wcf/samples/operationcontextscope.md)  

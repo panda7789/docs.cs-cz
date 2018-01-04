@@ -17,11 +17,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 30fc31055563db75512639bf7fb3b9119be280e6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 003b07326612f3b51390d691c7bba0ef1c1b85dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-duplex-contract"></a>Postupy: Vytvoření duplexního kontraktu
 Toto téma ukazuje základní kroky pro vytvoření metody, které používají duplexního kontraktu (obousměrné). Duplexní kontrakt umožňuje klienty a servery pro komunikaci mezi sebou nezávisle tak, aby buď můžete spustit volání na druhý. Duplexní kontrakt je jedním ze tří vzorů zprávy k dispozici pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Další dva zprávy vzory jsou jednosměrná a požadavku a odpovědi. Duplexního kontraktu se skládá ze dvou jednosměrné kontrakty mezi klientem a serverem a nevyžaduje korelaci volání metody. Tento druh kontrakt použijte, pokud vaše služba musí dotazovat klienta pro další informace nebo explicitně vyvolávání událostí na klientovi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Vytvoření aplikace klienta pro duplexního kontraktu, najdete v části [postupy: přístup k službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Ukázku práce, najdete [duplexní](../../../../docs/framework/wcf/samples/duplex.md) ukázka.  
@@ -79,8 +80,8 @@ Toto téma ukazuje základní kroky pro vytvoření metody, které používají 
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
- [Postupy: přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
- [Duplexní režim](../../../../docs/framework/wcf/samples/duplex.md)  
+ [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
+ [Duplex](../../../../docs/framework/wcf/samples/duplex.md)  
  [Navrhování a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md)  
- [Postupy: definování kontraktu služby](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
+ [Postupy: Definování kontraktu služby](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
  [Relace](../../../../docs/framework/wcf/samples/session.md)

@@ -17,19 +17,20 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 11ea55c807bdf939d2cca6fb90591f814361ce96
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a1236755a3df5074387652049847e979653eefcd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dockpanel-how-to-topics"></a>DockPanel – postupy
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.DockPanel> element na pozici podřízené elementy okraji kontejner rozložení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Získání nebo nastavení hodnotu ukotvení](../../../../docs/framework/wpf/controls/how-to-get-or-set-a-dock-value.md)  
- [Vytvoření DockPanel](../../../../docs/framework/wpf/controls/how-to-create-a-dockpanel.md)  
- [Místo oddílu pomocí prvku DockPanel](../../../../docs/framework/wpf/controls/how-to-partition-space-by-using-the-dockpanel-element.md)  
+ [Načtení a nastavení hodnoty ukotvení](../../../../docs/framework/wpf/controls/how-to-get-or-set-a-dock-value.md)  
+ [Vytvoření objektu DockPanel](../../../../docs/framework/wpf/controls/how-to-create-a-dockpanel.md)  
+ [Rozdělení prostoru pomocí elementu DockPanel](../../../../docs/framework/wpf/controls/how-to-partition-space-by-using-the-dockpanel-element.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -49,6 +50,6 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
 ## <a name="related-sections"></a>Související oddíly  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [Návod: Můj první grafický subsystém WPF aplikace pracovní plochy](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [Přehled ScrollViewer](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

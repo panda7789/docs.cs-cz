@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 3e2e36702a6c921d095199c50c73f0815346edc7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cae237b0f7b1ff9817d4c92e73b4960c1c3963e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="get-the-toggle-state-of-a-check-box-using-ui-automation"></a>Zjištění stavu přepnutí zaškrtávacího políčka pomocí automatizace uživatelského rozhraní
 > [!NOTE]

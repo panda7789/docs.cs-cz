@@ -16,11 +16,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7b7b77622ee4305dde3d126cb2e062055aa9df4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1450acd6c4b68be79ad769106dfebc7d89484525
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty, které jsou vytvořené s cílem MageUI.exe [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Při přidání nebo odebrání sestavení z manifestu nebo opětovné podepisování manifestů existující, MageUI.exe neaktualizuje manifest cíl [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Další informace najdete v tématu [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
@@ -129,7 +130,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Naplnění**|Přidá všechny soubory v adresáři aplikace a podadresáře manifest aplikace. Pokud MageUI.exe najde jeden spustitelný soubor v adresáři, automaticky označí to jako vstupní bod, který je soubor nejdřív provést při spuštění aplikace ClickOnce na straně klienta.|  
 |**Soubory aplikace**|Zobrazí seznam všech souborů v aplikaci. Každý soubor má tři upravitelné atributy, které jsou popsané níže.|  
 |**Typ souboru**|Typ souboru může být jednu ze čtyř hodnot:<br /><br /> -None.<br />-Vstupní bod. Primární spustitelný soubor aplikace. Jenom pro jeden spustitelný soubor může být označený jako vstupní bod.<br />-Datový soubor. Souboru, jako je soubor XML, který poskytuje data do aplikace.<br />-Soubor ikony. Ikony aplikace, jako například se zobrazí na ploše nebo v horním rohu okna aplikace.|  
-|**Volitelné**|Soubory označené volitelné nestahují na počáteční instalace nebo aktualizace, ale může stáhnout v době běhu pomocí rozhraní API System.Deployment na vyžádání. Další informace najdete v tématu [návod: stahování sestavení na vyžádání pomocí ClickOnce pomocí rozhraní API nasazení návrháře](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
+|**Optional**|Soubory označené volitelné nestahují na počáteční instalace nebo aktualizace, ale může stáhnout v době běhu pomocí rozhraní API System.Deployment na vyžádání. Další informace najdete v tématu [návod: stahování sestavení na vyžádání pomocí ClickOnce pomocí rozhraní API nasazení návrháře](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
 |**Skupiny**|Popisek pro sadu volitelné soubory. Můžete použít skupiny štítek na určitou sadu souborů a stáhnout dávky souborů na základě jednoho volání rozhraní API pomocí rozhraní API na vyžádání.|  
   
 ### <a name="permissions-required-tab"></a>Karta požadovaná oprávnění  
@@ -202,4 +203,4 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 ## <a name="see-also"></a>Viz také  
  [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)  
  [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)  
- [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
+ [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)

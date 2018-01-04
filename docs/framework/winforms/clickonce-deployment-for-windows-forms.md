@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 550ef4951cc7d5b0a9b25c5e7d038588b0a911f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f157ea4afcaccfffde548c26a440fa6686c87aa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clickonce-deployment-for-windows-forms"></a>ClickOnce – nasazení pro Windows Forms
 Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], technologie používá pro snadné nasazení aplikace Windows Forms do klientských počítačů.  
@@ -36,7 +37,7 @@ Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptec
  [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications)  
  Vysvětluje bezpečnostních důsledcích [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení.  
   
- [Řešení potíží s nasazením ClickOnce](/visualstudio/deployment/troubleshooting-clickonce-deployments)  
+ [Řešení potíží s nasazením ClickOnce](/visualstudio/deployment/troubleshooting-clickonce-deployments)  
  Popisuje různé problémy, ke kterým dochází při nasazování [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace a dokumenty nejvyšší úrovně chybové zprávy, která [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] může vygenerovat.  
   
  [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings)  
@@ -51,25 +52,25 @@ Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptec
  [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)  
  Demonstruje pomocí příkazového řádku a nástroje sady SDK k nasazení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace bez pomocí sady Visual Studio.  
   
- [Postupy: Přidání důvěryhodného vydavatele ke klientskému počítači pro aplikace ClickOnce](/visualstudio/deployment/how-to-add-a-trusted-publisher-to-a-client-computer-for-clickonce-applications)  
+ [Postupy: Přidání důvěryhodného vydavatele na klientský počítač pro aplikace ClickOnce](/visualstudio/deployment/how-to-add-a-trusted-publisher-to-a-client-computer-for-clickonce-applications)  
  Demonstruje jednorázovou konfiguraci klientských počítačů, které jsou potřebné pro nasazení důvěryhodné aplikace.  
   
- [Postupy: určení alternativního umístění pro aktualizace nasazení](/visualstudio/deployment/how-to-specify-an-alternate-location-for-deployment-updates)  
+ [Postupy: Určení alternativního umístění pro aktualizace nasazení](/visualstudio/deployment/how-to-specify-an-alternate-location-for-deployment-updates)  
  Ukazuje, konfigurace [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace, pomocí nástrojů sady SDK, zkontrolujte jiné umístění pro nové verze aplikace.  
   
  [Návod: Stahování sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api)  
  Ukazuje, jak pomocí volání rozhraní API k načtení času sestavení první, pokusí se načíst vaše aplikace.  
   
- [Postupy: načtení informací řetězce dotazu do Online aplikace ClickOnce](/visualstudio/deployment/how-to-retrieve-query-string-information-in-an-online-clickonce-application)  
+ [Postupy: Načtení informací řetězce dotazu do online aplikace ClickOnce](/visualstudio/deployment/how-to-retrieve-query-string-information-in-an-online-clickonce-application)  
  Demonstruje načítání parametrů z adresy URL používá ke spouštění [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace.  
   
- [ClickOnce – Přehled mezipaměti](/visualstudio/deployment/clickonce-cache-overview)  
+ [ClickOnce – přehled mezipaměti](/visualstudio/deployment/clickonce-cache-overview)  
  Popisuje mezipaměti používá k ukládání [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace v místním počítači.  
   
- [Přístup k místním i vzdáleným datům v aplikacích ClickOnce](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications)  
+ [Přístup k místním a vzdáleným datům v aplikacích ClickOnce](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications)  
  Popisuje, jak získat přístup k místní datové soubory a zdroje vzdálených dat z [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace.  
   
- [Postupy: zahrnutí datového souboru v aplikaci ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
+ [Postupy: Zahrnutí datového souboru do aplikace ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
  Ukazuje, jak označit soubor tak, aby byl k dispozici v [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] datový adresář.  
   
 ## <a name="see-also"></a>Viz také  
@@ -78,4 +79,4 @@ Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptec
  [Vytváření aplikací ClickOnce z příkazového řádku](/visualstudio/deployment/building-clickonce-applications-from-the-command-line)  
  [Ladění aplikací ClickOnce používajících System.Deployment.Application](http://msdn.microsoft.com/library/86f31948-2ca8-47c0-8e8b-c2b817bbf79f)  
  [Nasazování komponent COM s ClickOnce](/visualstudio/deployment/deploying-com-components-with-clickonce)  
- [Postupy: publikování aplikace ClickOnce pomocí Průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)
+ [Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)

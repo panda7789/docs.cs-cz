@@ -17,11 +17,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34b517366a5f143a86388abff5ae13022bc710c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9a232e1e2557bf1ecc6bb5f27f941e03a204aec6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]poskytuje výkonné prostředí pro vytváření a zobrazování dokumentů vysoké kvality.  Rozšířené funkce, které podporují – dokumenty a toku dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s efektivní 2D a 3D grafický funkce trvat [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] aplikací na novou úroveň kvality a činnost koncového uživatele.  Schopnost spravovat flexibilně reprezentaci v paměti dokumentu je klíčovou funkcí [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)], a schopnost efektivně uložení a načtení dokumenty z jiného úložiště dat je zapotřebí téměř každé aplikace.  Proces převodu dokument k úložišti externí data z interního vyjádření v paměti se říká serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit na původní instanci v paměti se říká deserializace.  
@@ -87,6 +88,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Documents.Serialization>  
  <xref:System.Windows.Xps.XpsDocumentWriter>  
  <xref:System.Windows.Xps.Packaging.XpsDocument>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Tisk – přehled](../../../../docs/framework/wpf/advanced/printing-overview.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
  [XML Paper Specification: Přehled](http://go.microsoft.com/fwlink?LinkID=106246)

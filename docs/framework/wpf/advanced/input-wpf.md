@@ -17,23 +17,24 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46e54e05d30e14ad89454a627a7436fbd3cbedbe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1a39badbd6e7ddfc445d674a719ba9fe82f554d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="input-wpf"></a>Vstup (WPF)
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]zahrnuje podporu pro několik typů vstupu. Tento vstup zahrnuje text, dotykového ovládání, myši, příkazy, fokus, dotykového ovládání, přetahování myší a digitální rukopisu. Tato část popisuje témata týkající se vstup v grafickém subsystému WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [Tvorba příkazů – přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [Fokus – přehled](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [Styly pro výběr v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
- [Návod: Vytvoření vaší první aplikace Touch](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
- [Digitálního pera](../../../../docs/framework/wpf/advanced/digital-ink.md)  
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
+ [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)  
+ [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
+ [Návod: Vytvoření první dotykové aplikace](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
+ [Rukopis](../../../../docs/framework/wpf/advanced/digital-ink.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.UIElement>  

@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c713cc8e5f3d7e81b196820e0a25fde0018b6c80
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 07892869759ac5856b26099f2421caff1ebaf74d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-data-access"></a>Zabezpečení přístupu k datům
 Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k dispozici v příslušné úložiště dat, nebo databáze. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo součásti, které vaše aplikace může obsahovat.  
@@ -35,8 +36,8 @@ Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k
 |--------------|-----------------|  
 |[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Popisuje osvědčené postupy zabezpečení a techniky pro ochranu informace o připojení, například pomocí chráněné konfigurace k zašifrování připojovací řetězce.|  
 |[Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
-|[Tvůrci řetězců pro připojení](../../../../docs/framework/data/adonet/connection-string-builders.md)|Popisuje, jak vytvořit připojovací řetězce z vstup uživatele v době běhu.|  
-|[Přehled zabezpečení SQL serveru](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Popisuje architekturu zabezpečení systému SQL Server.|  
+|[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)|Popisuje, jak vytvořit připojovací řetězce z vstup uživatele v době běhu.|  
+|[Přehled zabezpečení SQL Serveru](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Popisuje architekturu zabezpečení systému SQL Server.|  
   
 ## <a name="parameterized-commands-and-sql-injection"></a>Parametrizované příkazy a Injektáž SQL  
  Parametrizované příkazy pomáhá chránit před útoky prostřednictvím injektáže SQL, ve kterých útočník "vloží" příkaz do příkazu SQL tohoto ohrožení zabezpečení na serveru. Parametrizované příkazy chránit proti útok prostřednictvím injektáže SQL tím zajistí, že jsou hodnoty přijaté z externího zdroje předány jako pouze hodnoty a není součástí příkazu Transact-SQL. V důsledku toho nejsou ve zdroji dat spustit příkazy jazyka Transact-SQL vložit do hodnoty. Místo toho se vyhodnocují pouze jako hodnotu parametru. Kromě výhody zabezpečení parametrizované příkazy poskytují vhodnou metodu pro uspořádání hodnoty předané pomocí příkazu Transact-SQL nebo uloženou proceduru.  
@@ -45,9 +46,9 @@ Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Parametry DataAdapter](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|Popisuje, jak používat parametry s `DataAdapter`.|  
-|[Úprava dat pomocí uložené procedury](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Popisuje, jak určit parametry a získat návratovou hodnotu.|  
-|[Správa oprávnění pomocí uložené procedury v systému SQL Server](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Popisuje, jak zapouzdřit přístup k datům pomocí uložené procedury SQL serveru.|  
+|[Parametry adaptéru dat](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|Popisuje, jak používat parametry s `DataAdapter`.|  
+|[Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Popisuje, jak určit parametry a získat návratovou hodnotu.|  
+|[Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Popisuje, jak zapouzdřit přístup k datům pomocí uložené procedury SQL serveru.|  
   
 ## <a name="script-exploits"></a>Zneužití skriptu  
  Zneužití skriptu je jinou formu vkládání používající škodlivý znaků, které jsou vloženy do webové stránky. V prohlížeči neověřuje vložené znaky a je v rámci stránky zpracuje.  
@@ -102,8 +103,8 @@ Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Zabezpečení SQL serveru](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
- [Tvůrci řetězců pro připojení](../../../../docs/framework/data/adonet/connection-string-builders.md)  
+ [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

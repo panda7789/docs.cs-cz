@@ -25,11 +25,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 56cbde16eff89d25960e510e7eec2424f15e51b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 042b8a6f7c25c34fc06d5d0bfd4ebce6417b920f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trace-listeners"></a>Naslouchací procesy trasování
 Při použití **trasování**, **ladění** a <xref:System.Diagnostics.TraceSource>, musí mít mechanismus pro shromažďování a záznamem zpráv, které se odesílají. Trasovací zprávy jsou přijímány *naslouchací procesy*. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  
@@ -90,4 +91,4 @@ System.Diagnostics.Trace.Listeners.Add(
  <xref:System.Diagnostics.DefaultTraceListener>  
  <xref:System.Diagnostics.TraceListener>  
  [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
- [Trasování – přepínače](../../../docs/framework/debug-trace-profile/trace-switches.md)
+ [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)

@@ -32,11 +32,12 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7c2d95bfae212f658945904a647885ebd303cbc7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: df2f376da61f49bd00ea39783bc62015b31ba402
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
 Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načíst [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) a typů front definovaných v nich, jako například [třídy](http://msdn.microsoft.com/en-us/ad7d3561-271e-4546-82fc-e00b059f27a9), [rozhraní](http://msdn.microsoft.com/en-us/fd9d5975-5363-4bc9-b883-609f887895e5), a [typů hodnot](http://msdn.microsoft.com/en-us/c9c567f8-8ab1-4d88-834d-00f7d92418de). Reflexe můžete také použít k vytvoření instance typu za běhu a k vyvolání a přistupovat k nim. Témata o konkrétních aspektů reflexe naleznete v tématu [Příbuzná témata](#related_topics) na konci tohoto přehledu.  
@@ -85,11 +86,11 @@ Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?
 |[Reflexe a obecné typy](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)|Vysvětluje, jak reflexe zpracovává typ parametry a argumenty typu obecné typy a obecné metody.|  
 |[Důležité informace o zabezpečení pro reflexi](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)|Popisuje pravidla, která určují, do jaké míry reflexe lze zjistit typ typy informací a přístup.|  
 |[Dynamické načtení a použití typů](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md)|Popisuje rozhraní reflexe vlastní vazby, které podporuje pozdní vazbu.|  
-|[Postupy: načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Popisuje kontext načítání pouze pro reflexi. Ukazuje, jak načíst sestavení, jak otestovat kontextu a jak prozkoumat atributy použité k sestavení v kontextu pouze pro reflexi.|  
+|[Postupy: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Popisuje kontext načítání pouze pro reflexi. Ukazuje, jak načíst sestavení, jak otestovat kontextu a jak prozkoumat atributy použité k sestavení v kontextu pouze pro reflexi.|  
 |[Přístup k vlastním atributům](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)|Ukazuje, jak pomocí reflexe do atribut existence dotazu a hodnoty.|  
-|[Určení úplné názvy typů](../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)|Popisuje formát úplné názvy typů z hlediska Backus-Naur formuláře (BNF) a syntaxi pro určení speciální znaky, názvy sestavení, ukazatelů, odkazy a polí.|  
-|[Postupy: připojení delegáta pomocí reflexe](../../../docs/framework/reflection-and-codedom/how-to-hook-up-a-delegate-using-reflection.md)|Vysvětluje, jak vytvořit delegáta pro metodu a propojte delegát až událost. Vysvětluje, jak vytvořit metodu zpracování událostí v době běhu pomocí <xref:System.Reflection.Emit.DynamicMethod>.|  
-|[Emitování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Vysvětluje, jak pro generování dynamických sestavení a dynamických metod.|  
+|[Určení úplných názvů typů](../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)|Popisuje formát úplné názvy typů z hlediska Backus-Naur formuláře (BNF) a syntaxi pro určení speciální znaky, názvy sestavení, ukazatelů, odkazy a polí.|  
+|[Postupy: Připojení delegáta pomocí reflexe](../../../docs/framework/reflection-and-codedom/how-to-hook-up-a-delegate-using-reflection.md)|Vysvětluje, jak vytvořit delegáta pro metodu a propojte delegát až událost. Vysvětluje, jak vytvořit metodu zpracování událostí v době běhu pomocí <xref:System.Reflection.Emit.DynamicMethod>.|  
+|[Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Vysvětluje, jak pro generování dynamických sestavení a dynamických metod.|  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Type?displayProperty=nameWithType>  

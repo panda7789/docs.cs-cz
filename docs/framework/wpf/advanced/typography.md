@@ -18,27 +18,28 @@ caps.latest.revision: "60"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8425084b2124fc6082331c9bb87c1f1f2ad9031e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 136c7b13cf5f0e824985398564fc8f17476d64f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typography"></a>Typografie
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje podporu pro bohatou prezentace textového obsahu. Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], což zlepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje také [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, která poskytují další možnosti nad rámec těch, definované [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
- [Přehled ClearType](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
+ [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
+ [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
  [Nastavení registru ClearType](../../../../docs/framework/wpf/advanced/cleartype-registry-settings.md)  
  [Kreslení formátovaného textu](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)  
  [Pokročilé formátování textu](../../../../docs/framework/wpf/advanced/advanced-text-formatting.md)  
- [Víc písem.](../../../../docs/framework/wpf/advanced/fonts-wpf.md)  
- [Glyfů](../../../../docs/framework/wpf/advanced/glyphs.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/typography-how-to-topics.md)  
+ [Písma](../../../../docs/framework/wpf/advanced/fonts-wpf.md)  
+ [Glyfy](../../../../docs/framework/wpf/advanced/glyphs.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/typography-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Documents.Typography>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Funkce písem OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
  [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)

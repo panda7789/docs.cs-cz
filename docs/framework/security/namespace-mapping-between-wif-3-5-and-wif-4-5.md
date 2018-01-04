@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e2c8d3150f19b5790f2db7b93b3100a9becff4c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b8d27385a08c58c61983315da41f27f4dcb29368
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="namespace-mapping-between-wif-35-and-wif-45"></a>Namespace mapování mezi WIF 3.5 a WIF 4.5
 Od verze rozhraní .NET 4.5, Windows Identity Foundation (WIF) byla plně integrována do rozhraní .NET Framework. Tato integrace očekávaným na změny názvu a některé konsolidace WIF obory názvů a prostor pro rozhraní API. Toto téma obsahuje některé pokyny a obecné mapování mezi obory názvů WIF 3.5 a obory názvů WIF 4.5. Rozhraní není určeno vyčerpávající, ale místo poskytují některé obecné informace o tom, kde najít známé třídy WIF 3.5 v WIF 4.5. Podrobné informace o rozdílech mezi WIF 3.5 a WIF 4.5, najdete v části [co je nového ve Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md). Informace o tom, jak migrovat aplikace sestavené pomocí WIF 3.5 na verzi WIF 4.5, najdete v části [pokyny pro migraci aplikaci vytvořené pomocí WIF 3.5 na verzi WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md).  
@@ -54,5 +55,5 @@ Od verze rozhraní .NET 4.5, Windows Identity Foundation (WIF) byla plně integr
 |`Microsoft.IdentityModel.WindowsTokenService`|Není implementováno v WIF 4.5|-|  
   
 ## <a name="see-also"></a>Viz také  
- [Co je nového ve službě Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
- [Pokyny k migraci aplikace vyvíjené v WIF 3.5 na verzi WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)
+ [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
+ [Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)

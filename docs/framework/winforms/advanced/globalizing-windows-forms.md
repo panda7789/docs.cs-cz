@@ -19,26 +19,27 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a111a600230bda529362ac19969a8a4b7d32916
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2337de6889a92b295e0a4f3a88d2a5039e583508
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="globalizing-windows-forms"></a>Globalizace Windows Forms
 *Globalizace* je proces návrhu a vývoje softwarového produktu, který funguje pro více jazykových verzí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Kódování a globalizace Windows Forms](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
+ [Kódování a globalizace modelu Windows Forms](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
  Popisuje plná podpora kódování Unicode a jeho dopad.  
   
- [Mezinárodní písma ve Windows Forms a ovládacích prvcích](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
+ [Mezinárodní písma v modelu Windows Forms a ovládacích prvcích](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
  Vysvětluje, kdy a jak vybrat písma pro zobrazení v rozhraní Windows Forms mezinárodní znaky.  
   
  [Zobrazení asijských znaků s vlastností ImeMode](../../../../docs/framework/winforms/advanced/display-of-asian-characters-with-the-imemode-property.md)  
  Zavádí `ImeMode` vlastnosti, která se používá k řízení typ vstupu formuláře Windows nebo ovládací prvek přijímá.  
   
--   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API pomocí návrháře nasazení ClickOnce](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))  
+-   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce pomocí Návrháře](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))  
   
 -   [Lokalizace aplikací ClickOnce](http://msdn.microsoft.com/library/ms404266\(v=vs.110\))  
   
@@ -56,7 +57,7 @@ ms.lasthandoff: 10/22/2017
   
 -   [Postupy: vytvoření okna zpráv pro obousměrnou Windows Forms](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))  
   
--   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API pomocí návrháře nasazení ClickOnce](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))  
+-   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce pomocí Návrháře](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))  
   
 -   [Lokalizace aplikací ClickOnce](http://msdn.microsoft.com/library/ms404266\(v=vs.120\))  
   

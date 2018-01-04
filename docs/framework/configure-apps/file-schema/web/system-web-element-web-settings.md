@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 44a978eae9ae85e1ba12f117288a3c9ce4db75b4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 59899178fd9fc8da2334883ed62d9f8655eb335b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsystemwebgt-element-web-settings"></a>&lt;System.Web&gt; – Element (webové nastavení)
 Obsahuje informace o správě procesy chování vrstvě hostování technologie ASP.NET.  

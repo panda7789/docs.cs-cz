@@ -25,11 +25,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 774c612b09d5cb0ffdf36024a7e6a543f407cf67
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 958595cdfa521b372270d6283c7134ef0ba0ef79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-override-the-panel-onrender-method"></a>Postupy: Přetížení metody panelu OnRender
 Tento příklad ukazuje, jak lze přepsat <xref:System.Windows.Controls.Panel.OnRender%2A> metodu <xref:System.Windows.Controls.Panel> Chcete-li přidat vlastní grafické efekty do elementu rozložení.  
@@ -42,6 +43,6 @@ Tento příklad ukazuje, jak lze přepsat <xref:System.Windows.Controls.Panel.On
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.Panel>  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
  [Vlastní paprskového panelu ukázkové](http://go.microsoft.com/fwlink/?LinkID=159982)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bed850baca2d06dc0de173ab798da29fb3ec7cc5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f20e9fbcad31a3924474793d9107d6a3c4aeef27
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="support-for-queries"></a>Podpora pro dotazy
 Ukládání Instance pracovního postupu SQL zaznamenává sadu známých vlastností v úložišti. Uživatelé mohou odesílat dotazy na instancí na základě těchto vlastností. Následující seznam obsahuje některé z těchto známých vlastností:  

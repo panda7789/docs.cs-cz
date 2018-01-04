@@ -24,11 +24,12 @@ caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8eec6ff84978cdbd31dd4be307d0eb9560edde19
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bbfdb16e284fcd266bcc8ebf41a197733e92ca23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="automatic-proxy-detection"></a>Automatické rozpoznávání serveru Proxy
 Automatické rozpoznávání serveru proxy je proces, podle kterého je webový proxy server identifikovaný systému a používaný k odesílání žádostí jménem klienta. Tato funkce je také označované jako Proxy Auto-Discovery WPAD (Web). Pokud je povoleno automatické rozpoznávání serveru proxy, systém se pokusí najít skript konfigurace proxy serveru, která je odpovědná za vrácení sadu proxy servery, které lze použít pro požadavek. Pokud je nalezen skript konfigurace proxy serveru, skript stáhnout a spustit v místním počítači, když se získat informace o proxy serveru, datový proud požadavku nebo odpovědi pro požadavek, který používá zkompilovat <xref:System.Net.WebProxy> instance.  

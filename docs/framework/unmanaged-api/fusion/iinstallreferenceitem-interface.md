@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2a10143ff8fa4fd17937ec700f8ce8ed60121ceb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6dca48edebe63ae7752ad8b2256133373bcc9872
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iinstallreferenceitem-interface"></a>IInstallReferenceItem – rozhraní
 Představuje položku nainstalované v globální mezipaměti sestavení.  
@@ -32,7 +33,7 @@ Představuje položku nainstalované v globální mezipaměti sestavení.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getreference – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-getreference-method.md)|Získá odkazy `FUSION_INSTALL_REFERENCE` struktura reprezentována to `IInstallReferenceItem`.|  
+|[GetReference – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-getreference-method.md)|Získá odkazy `FUSION_INSTALL_REFERENCE` struktura reprezentována to `IInstallReferenceItem`.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -42,5 +43,5 @@ Představuje položku nainstalované v globální mezipaměti sestavení.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [Fusion_install_reference – struktura](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)
+ [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [FUSION_INSTALL_REFERENCE – struktura](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)

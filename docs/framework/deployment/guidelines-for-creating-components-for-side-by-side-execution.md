@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 054744612ec54861f675005a27a309e00024b242
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0c914b566727d882939c23a982fad5db12985de5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Pokyny pro vytváření komponent pro souběžné spouštění
 Dodržujte následující obecné pokyny k vytvoření spravované aplikace nebo součásti určené pro spuštění vedle sebe:  
@@ -71,5 +72,5 @@ Dodržujte následující obecné pokyny k vytvoření spravované aplikace nebo
  [Nástroj globální mezipaměti sestavení (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) můžete nahradit sestavení při pouze čísla verze souboru je novější. Instalační program obecně instalací sestavení Pokud číslo verze sestavení je větší.  
   
 ## <a name="see-also"></a>Viz také  
- [Spuštění vedle sebe](../../../docs/framework/deployment/side-by-side-execution.md)  
- [Postupy: povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+ [Souběžné spouštění](../../../docs/framework/deployment/side-by-side-execution.md)  
+ [Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

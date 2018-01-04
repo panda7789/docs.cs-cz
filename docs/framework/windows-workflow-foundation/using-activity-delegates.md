@@ -12,11 +12,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de37cc2a366d4a69130c68b09de78caa58cf67fc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 82aafd49528e7ce36f9cf09b7402e65d0844f797
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-activity-delegates"></a>Použití delegátů aktivity
 Delegáti aktivity povolit aktivity autorům vystavit zpětná volání s konkrétní podpisy, pro které uživatelé aktivity zadat na základě aktivity obslužné rutiny. K dispozici jsou dva typy aktivity delegáti: <xref:System.Activities.ActivityAction%601> se používá k definování delegáti aktivity, které nemají návratovou hodnotu, a <xref:System.Activities.ActivityFunc%601> se používá k definování delegáti aktivity, které mají návratovou hodnotu.  
@@ -66,4 +67,4 @@ V příkladech v tomto tématu použijte syntaxi inicializace objektu. Syntaxe i
  [!code-csharp[CFX_ActivityExample#5](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#5)]  
   
 ## <a name="see-also"></a>Viz také  
- [Vystavení a vyvolání ActivityActions](../../../docs/framework/windows-workflow-foundation/samples/exposing-and-invoking-activityactions.md)
+ [Zveřejnění a vyvolání akcí aktivit](../../../docs/framework/windows-workflow-foundation/samples/exposing-and-invoking-activityactions.md)

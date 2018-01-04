@@ -12,11 +12,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2746171c08cb5094b4ad39e753a20c595d48514e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a22cf5ae3434e0f79a4cba1b772b02316ccdb007
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="expressions"></a>Výrazy
 Tento příklad znázorňuje, jak používat základní výrazy v pracovním postupu. Skládá se z pracovního postupu, který vypočítá Základní mzda statistiky pro dva zaměstnanci fiktivní společnosti. Dvě třídy `Employee` a `SalaryStats`, jsou definovány v Employee.cs a SalaryStats.cs. Tyto třídy se používají v pracovním postupu, který ukazuje, jak provádět jednoduché aritmetické a řetězec operace na vlastnosti proměnných komplexních typů.  

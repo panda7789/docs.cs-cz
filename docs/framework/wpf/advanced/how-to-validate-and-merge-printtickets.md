@@ -21,11 +21,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a2c2929f37895f0dee5529a5bf90f84146585032
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e5cf2091d50433bb936b3d4976d1c3eabea73edc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-validate-and-merge-printtickets"></a>Postupy: Ověření a sloučení PrintTickets
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] [Tiskových schématu](http://go.microsoft.com/fwlink/?LinkId=186397) zahrnuje flexibilní a rozšiřitelný <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket> elementy. První rozepisuje možností zařízení pro tisk a druhá možnost určuje, jak má zařízení použít tyto možnosti s ohledem na konkrétní pořadí dokumenty, jednotlivý dokument nebo jednotlivých stránek.  
@@ -74,6 +75,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Printing.EnumeratedPrintQueueTypes>  
  <xref:System.Printing.PrintQueue>  
  <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Tisk – přehled](../../../../docs/framework/wpf/advanced/printing-overview.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
  [Tisk – schéma](http://go.microsoft.com/fwlink/?LinkId=186397)

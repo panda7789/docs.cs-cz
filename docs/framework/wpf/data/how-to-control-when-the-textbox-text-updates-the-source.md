@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c923a24f5abfdb059a436206a15181a67d03068f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9c503eb3300aba4a44c5a013c62942e7a171ae96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>Postupy: Určení, kdy dojde k aktualizaci textu TextBox ve zdroji
 Toto téma popisuje postup použití <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost řídit načasování vazby zdroj aktualizací. Používá tématu <xref:System.Windows.Controls.TextBox> ovládací prvek jako příklad.  
@@ -56,4 +57,4 @@ Toto téma popisuje postup použití <xref:System.Windows.Data.Binding.UpdateSou
 >  <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> Vlastnost zdroje aktualizace se zabývá a proto je platné pouze pro <xref:System.Windows.Data.BindingMode.TwoWay> nebo <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby. Pro <xref:System.Windows.Data.BindingMode.TwoWay> a <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby pracovat, je nutné objekt zdroje poskytují oznámení o změnách vlastnost. Najdete ukázky citovalo v tomto tématu pro další informace. Kromě toho můžete se podívat na [oznámení o změně vlastnost implementace](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

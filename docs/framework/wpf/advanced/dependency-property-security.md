@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c8c1dc0ea45efe32e36b649d92111fff3d5f61a7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9cd6f9d7025de9f5deb836d48a8ce9c7134973d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
 Vlastnosti závislosti by měl být obecně považuje za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému brání schopnost provádět záruky zabezpečení o hodnotu vlastnosti závislosti.  
@@ -50,4 +51,4 @@ Vlastnosti závislosti by měl být obecně považuje za veřejné vlastnosti. P
  Použití požadavku na <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> a byla očekávána chybu ověřování na požádání selhání zabránit se nastavuje vlastnost není mechanismus odpovídající zabezpečení. Nastavte hodnotu zneplatnění vynucují prostřednictvím <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> může také potlačit škodlivých volajících, pokud jsou tyto volající provozu v rámci domény aplikace.  
   
 ## <a name="see-also"></a>Viz také  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

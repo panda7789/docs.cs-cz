@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1643e5d645ec6c3ae35b2e57b8cb4f4bcb048379
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ebdee4427bd0848e75e58443fefd439acaa27f64
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loader-etw-events"></a>Události Trasování událostí pro Windows zavaděče
 <a name="top"></a>Tyto události shromažďovat informace týkající se načítání a uvolnění domény aplikace, sestavení a moduly.  
@@ -221,4 +222,4 @@ ms.lasthandoff: 10/18/2017
  Události modulu rozsah při vyvolání pod všechny úrovně ETW větší než nebo rovna hodnotě 4 a jsou klasifikovány jako informační události.  
   
 ## <a name="see-also"></a>Viz také  
- [CLR ETW – události](../../../docs/framework/performance/clr-etw-events.md)
+ [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

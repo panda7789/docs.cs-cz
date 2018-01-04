@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 117011d0ceecf04b6c73655873985dbd08768ab6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c2c1534b161f81fa90dce52c825b0417dc8fd35d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementace vašeho kontrakt služby ([implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operaci služby modulu runtime. Toto téma popisuje funkce služby poskytované systémem a operace chování a popisuje, kde najít další informace o vytvoření nové chování. Když některé chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Konfigurace aplikace služby najdete v části [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
@@ -132,4 +133,4 @@ Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů
   
 ## <a name="see-also"></a>Viz také  
  [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)  
- [Postupy: vytváření instancí služby Řízení](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)
+ [Postupy: Řízení vytváření instancí služby](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)

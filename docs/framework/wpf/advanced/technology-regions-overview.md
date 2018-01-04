@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6fb2f920928002e4ee374e36f307a537e4af593c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 142973793fd002925bbe2b4b09ce8e6d34553031
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud se používají více technologie prezentace v aplikaci, například WPF, Win32 nebo DirectX, sdílejí musí vykreslování oblasti v rámci běžných období nejvyšší úrovně. Toto téma popisuje problémy, které by mohly ovlivnit prezentace a vstup pro vaši aplikaci WPF součinnosti.  
@@ -71,6 +72,6 @@ Pokud se používají více technologie prezentace v aplikaci, například WPF, 
 -   Pokud vaše aplikace běží na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], na základě systému windows na [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] povrchy blikat při [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslí aplikace.  (Pořadí vykreslování skutečné je, že [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] skryje okno vrstveného pak [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] nevykresluje a potom [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] okno vrstveného vrátí zpět).  Jinou hodnotu než[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vrstveného windows také mít toto omezení.  
   
 ## <a name="see-also"></a>Viz také  
- [WPF a vzájemná spolupráce Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
- [Postupy: Hostování hodiny grafického subsystému WPF v Win32](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-clock-in-win32.md)  
- [Hostování obsahu Win32 v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/hosting-win32-content-in-wpf.md)
+ [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
+ [Návod: Hostování hodin WPF v systému Win32](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-clock-in-win32.md)  
+ [Hostování obsahu Win32 v subsystému WPF](../../../../docs/framework/wpf/advanced/hosting-win32-content-in-wpf.md)

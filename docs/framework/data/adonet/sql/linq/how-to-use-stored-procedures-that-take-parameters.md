@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: fbd4e0b7534a213f56c5c6ba60208d3024535bd7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28f389d7128283501291bc3220cfde3815cc0713
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-stored-procedures-that-take-parameters"></a>Postupy: pomocí uložených procedur, které provést parametry
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje výstupní parametry tak, aby odkazovaly parametry a u typů hodnot deklaruje parametr jako s možnou hodnotou Null.  
@@ -51,6 +52,6 @@ where O.CUSTOMERID = @CustomerID AND O.ORDERID = OD.ORDERID
   
 ## <a name="see-also"></a>Viz také  
  [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
- [Stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
  [Použití typů s povolenou hodnotou Null](~/docs/csharp/programming-guide/nullable-types/using-nullable-types.md)  
  [Typy hodnot s povolenou hodnotou Null](~/docs/visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

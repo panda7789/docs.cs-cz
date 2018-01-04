@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d5ec81864fca8ec9c83fd294f722e890f002e510
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6fc9a9b9e5eb739f50c8835a84c7514cf2c5038b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wif-code-sample-index"></a>Index ukázkový kód WIF
 Následují ukázky kódu pro Windows Identity Foundation 4.5:  
@@ -39,4 +40,4 @@ Následují ukázky kódu pro Windows Identity Foundation 4.5:
 -   [CustomToken](http://go.microsoft.com/fwlink/?LinkID=248412) – tento příklad ukazuje, jak vytvořit vlastní typ tokenu jednoduchých webových tokenů (SWT).  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie Windows Identity Foundation](../../../docs/framework/security/index.md)
+ [Windows Identity Foundation](../../../docs/framework/security/index.md)

@@ -16,11 +16,12 @@ ms.assetid: 6e4cc793-c526-4007-b4e9-37d56295f2cb
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c668cf3d2f2c0bcffda185cea01edfb9e55c6d6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: da9af8fd24f1bf6e6effd411ad37490a4ee08804
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuration-sections-schema"></a>Schéma konfigurace oddílů
 

@@ -16,11 +16,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 70c94d38a50425c702e382edcd7290cba3d61e91
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b10dd9be996369385ca323b0409145a9cde46a1e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Postupy: vytvoření Identity ověřovatel vlastní klienta
 *Identity* funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] umožňuje klientovi k určení předem očekávanou identitu služby. Vždy, když server se ověří na klienta, je identita kontrolovat očekávanou identitu. (Vysvětlení identit a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  
@@ -95,6 +96,6 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.ServiceAuthorizationManager>  
  <xref:System.ServiceModel.EndpointIdentity>  
  <xref:System.ServiceModel.Security.IdentityVerifier>  
- [Ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md)  
+ [Ukázka identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md)  
  [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)  
  [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)

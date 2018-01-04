@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34f99bba686ec3b2de128c0f3573ecea42110b4e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fb8f8cba76099ea83c8384e422fbf8673e1ac58e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-interoperability"></a>Interoperabilita klientů
 Tato část obsahuje příklady vysvětlující vzájemná funkční spolupráce mezi [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a další technologie.  
@@ -26,5 +27,5 @@ Tato část obsahuje příklady vysvětlující vzájemná funkční spolupráce
  [Spolupráce s webovými službami ASMX](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md)  
  Ukazuje, jak integrovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientská aplikace s existující ASMX webovou službu.  
   
- [Ukázka třídy XMLSerializer](../../../../docs/framework/wcf/samples/xmlserializer-sample.md)  
+ [Ukázka XMLSerializer](../../../../docs/framework/wcf/samples/xmlserializer-sample.md)  
  Ukazuje, jak k serializaci a deserializaci typy, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer>.

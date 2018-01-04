@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f8e8a3c9ff4ec3d6b124f95edd31e277db3eb872
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9b8859cf507fb81f07b85b055380ba86aae471b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrstrongname-interface"></a>ICLRStrongName – rozhraní
 Poskytuje základní globální statické funkce pro podepisování sestavení se silnými názvy. Všechny `ICLRStrongName` metody vrací standardní hodnoty HRESULT COM.  
@@ -32,31 +33,31 @@ Poskytuje základní globální statické funkce pro podepisování sestavení s
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Gethashfromassemblyfile – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfile-method.md)|Získá hodnotu hash souboru zadaného sestavení pomocí zadaný algoritmus hash.|  
-|[Gethashfromassemblyfilew – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)|Získá hodnotu hash souboru sestavení, který je zadán jako řetězec znaků Unicode, pomocí zadaný algoritmus hash.|  
-|[Gethashfromblob – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md)|Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadaný algoritmus hash.|  
-|[Gethashfromfile – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md)|Generuje součet hash přes obsah zadaného souboru.|  
-|[Gethashfromfilew – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md)|Generuje součet hash přes obsah soubor určený touto řetězec znaků Unicode.|  
-|[Gethashfromhandle – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromhandle-method.md)|Generuje součet hash přes obsah souboru s popisovačem zadaný soubor, použití zadaný algoritmus hash.|  
-|[Strongnamecompareassemblies – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamecompareassemblies-method.md)|Určuje, zda dva sestavení liší pouze jejich podpisy silným názvem.|  
-|[Strongnamefreebuffer – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md)|Uvolní paměť, který byl přidělen s předchozí volání metody silným názvem, jako [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md), [strongnametokenfrompublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md), nebo [strongnamesignaturegeneration – ](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md).|  
-|[Strongnamegetblob – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblob-method.md)|Vyplní zadanou vyrovnávací paměť binární reprezentace spustitelný soubor na zadané adrese.|  
-|[Strongnamegetblobfromimage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)|Získá binární reprezentace sestavení image na adrese zadaná paměťová.|  
-|[Strongnamegetpublickey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)|Získá veřejný klíč z páru soukromého a veřejného klíče.|  
-|[Strongnamehashsize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md)|Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash, pomocí zadaný algoritmus hash.|  
-|[Strongnamekeydelete – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeydelete-method.md)|Odstraní zadaný kontejner klíčů.|  
-|[Strongnamekeygen – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)|Vytvoří nový pár veřejného a privátního klíče pro silné jméno použití.|  
-|[Strongnamekeygenex – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)|Generuje nový pár veřejného a privátního klíče pomocí zadané velikost klíče pro použití silným názvem.|  
-|[Strongnamekeyinstall – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeyinstall-method.md)|Importuje pár veřejného a privátního klíče do kontejneru.|  
-|[Strongnamesignaturegeneration – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)|Podpis silného názvu generuje pro zadané sestavení.|  
-|[Strongnamesignaturegenerationex – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)|Generuje pro zadané sestavení, podle zadaného příznaky podpis silného názvu.|  
-|[Strongnamesignaturesize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturesize-method.md)|Vrátí velikost podpis silného názvu.|  
-|[Strongnamesignatureverification – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)|Získá hodnotu označující, zda manifest sestavení v zadaná cesta obsahuje podpis silného názvu, který bude ověřen podle zadaného příznaky.|  
-|[Strongnamesignatureverificationex – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationex-method.md)|Získá hodnotu označující, zda manifest sestavení v zadaná cesta obsahuje podpis silného názvu.|  
-|[Strongnamesignatureverificationfromimage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md)|Ověřuje, že je sestavení, které už je namapovaný na paměť pro přidružené veřejný klíč platný.|  
-|[Strongnametokenfromassembly – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassembly-method.md)|Vytvoří token silným názvem ze zadaného souboru sestavení.|  
-|[Strongnametokenfromassemblyex – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassemblyex-method.md)|Vytvoří token silným názvem ze zadaného souboru sestavení a vrátí veřejný klíč.|  
-|[Strongnametokenfrompublickey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)|Získá token představující veřejný klíč.|  
+|[GetHashFromAssemblyFile – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfile-method.md)|Získá hodnotu hash souboru zadaného sestavení pomocí zadaný algoritmus hash.|  
+|[GetHashFromAssemblyFileW – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)|Získá hodnotu hash souboru sestavení, který je zadán jako řetězec znaků Unicode, pomocí zadaný algoritmus hash.|  
+|[GetHashFromBlob – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md)|Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadaný algoritmus hash.|  
+|[GetHashFromFile – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md)|Generuje součet hash přes obsah zadaného souboru.|  
+|[GetHashFromFileW – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md)|Generuje součet hash přes obsah soubor určený touto řetězec znaků Unicode.|  
+|[GetHashFromHandle – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromhandle-method.md)|Generuje součet hash přes obsah souboru s popisovačem zadaný soubor, použití zadaný algoritmus hash.|  
+|[StrongNameCompareAssemblies – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamecompareassemblies-method.md)|Určuje, zda dva sestavení liší pouze jejich podpisy silným názvem.|  
+|[StrongNameFreeBuffer – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md)|Uvolní paměť, který byl přidělen s předchozí volání metody silným názvem, jako [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md), [strongnametokenfrompublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md), nebo [strongnamesignaturegeneration – ](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md).|  
+|[StrongNameGetBlob – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblob-method.md)|Vyplní zadanou vyrovnávací paměť binární reprezentace spustitelný soubor na zadané adrese.|  
+|[StrongNameGetBlobFromImage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)|Získá binární reprezentace sestavení image na adrese zadaná paměťová.|  
+|[StrongNameGetPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)|Získá veřejný klíč z páru soukromého a veřejného klíče.|  
+|[StrongNameHashSize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md)|Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash, pomocí zadaný algoritmus hash.|  
+|[StrongNameKeyDelete – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeydelete-method.md)|Odstraní zadaný kontejner klíčů.|  
+|[StrongNameKeyGen – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)|Vytvoří nový pár veřejného a privátního klíče pro silné jméno použití.|  
+|[StrongNameKeyGenEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)|Generuje nový pár veřejného a privátního klíče pomocí zadané velikost klíče pro použití silným názvem.|  
+|[StrongNameKeyInstall – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeyinstall-method.md)|Importuje pár veřejného a privátního klíče do kontejneru.|  
+|[StrongNameSignatureGeneration – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)|Podpis silného názvu generuje pro zadané sestavení.|  
+|[StrongNameSignatureGenerationEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)|Generuje pro zadané sestavení, podle zadaného příznaky podpis silného názvu.|  
+|[StrongNameSignatureSize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturesize-method.md)|Vrátí velikost podpis silného názvu.|  
+|[StrongNameSignatureVerification – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)|Získá hodnotu označující, zda manifest sestavení v zadaná cesta obsahuje podpis silného názvu, který bude ověřen podle zadaného příznaky.|  
+|[StrongNameSignatureVerificationEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationex-method.md)|Získá hodnotu označující, zda manifest sestavení v zadaná cesta obsahuje podpis silného názvu.|  
+|[StrongNameSignatureVerificationFromImage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md)|Ověřuje, že je sestavení, které už je namapovaný na paměť pro přidružené veřejný klíč platný.|  
+|[StrongNameTokenFromAssembly – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassembly-method.md)|Vytvoří token silným názvem ze zadaného souboru sestavení.|  
+|[StrongNameTokenFromAssemblyEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassemblyex-method.md)|Vytvoří token silným názvem ze zadaného souboru sestavení a vrátí veřejný klíč.|  
+|[StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)|Získá token představující veřejný klíč.|  
   
 ## <a name="remarks"></a>Poznámky  
  Můžete získat instanci `ICLRStrongName` voláním [iclrruntimeinfo::getinterface –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) metoda pomocí `CLSID_CLRStrongName` a `IID_ICLRStrongName` jako parametry.  
@@ -71,5 +72,5 @@ Poskytuje základní globální statické funkce pro podepisování sestavení s
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

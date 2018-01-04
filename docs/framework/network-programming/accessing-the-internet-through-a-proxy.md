@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 9e2be47cfd1ce56df7a0ad926166f8224a812449
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 55bc8b3ef02238c217f03e8a3f0b554e13521e37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k Internetu prostřednictvím proxy serveru
 Pokud váš web používá proxy pro poskytnutí přístupu k Internetu, musíte nakonfigurovat proxy instance k aktivaci aplikace ke komunikaci s webový proxy server.  
@@ -35,12 +36,12 @@ Pokud váš web používá proxy pro poskytnutí přístupu k Internetu, musíte
   
 -   [Konfigurace proxy serveru](../../../docs/framework/network-programming/proxy-configuration.md)  
   
--   [Automatické rozpoznávání serveru Proxy](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
+-   [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
   
--   [Postupy: povolení WebRequest ke komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
+-   [Postupy: Povolení žádosti WebRequest, aby používal proxy server pro komunikaci s internetem](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
--   [Postupy: potlačení výběr globální Proxy](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
+-   [Postupy: Přepsání globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí protokolů aplikací](../../../docs/framework/network-programming/using-application-protocols.md)  
+ [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)  
  [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)

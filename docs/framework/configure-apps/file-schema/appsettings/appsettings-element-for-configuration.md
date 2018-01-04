@@ -12,11 +12,12 @@ ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cb59120d88816ea193bd8588b152d6b848b682d2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cebb9ba7ebeb483233276324289a4ddc5a0bc381
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="appsettings-element-for-configuration"></a>\<appSettings > elementu pro \<konfigurace >
 
@@ -55,7 +56,7 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 ## <a name="remarks"></a>Poznámky
 
-**\<AppSettings >** element ukládá informace o konfiguraci vlastní aplikaci, například databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo jiných vlastní konfigurační informace pro aplikace. Páry klíč – hodnota zadaná v  **\<appSettings >** element probíhal v kódu pomocí <xref:System.Configuration.ConfigurationSettings> – třída.
+ **\<AppSettings >** element ukládá informace o konfiguraci vlastní aplikaci, například databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo jiných vlastní konfigurační informace pro aplikace. Páry klíč – hodnota zadaná v  **\<appSettings >** element probíhal v kódu pomocí <xref:System.Configuration.ConfigurationSettings> – třída.
 
 Můžete použít **soubor** atribut  **\<appSettings >** element *Web.config* a konfigurační soubory aplikace. Tento atribut určuje konfigurační soubor, který poskytuje další nastavení nebo přepíše nastavení zadaná  **\<appSettings >** element. **Souboru** atribut lze použít v týmu vývoj scénářích správy zdrojového kódu, například když uživatel chce pro přepsání nastavení projektu zadané v konfiguračním souboru aplikace.
 

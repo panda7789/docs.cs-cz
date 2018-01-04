@@ -23,11 +23,12 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 082d84fe0ac4193f3da5ac9be52789432bde76aa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4df092afd4d60811683b4187df78f27ad971cf89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trace-switches"></a>Přepínače trasování
 Trasování – přepínače umožňují povolit, zakázat a filtrovat výstup trasování. Jsou objekty, které existují ve vašem kódu a možné externě nakonfigurovat pomocí souboru .config. Existují tři typy trasování – přepínače zadaný v rozhraní .NET Framework: <xref:System.Diagnostics.BooleanSwitch> třídy, <xref:System.Diagnostics.TraceSwitch> třída a <xref:System.Diagnostics.SourceSwitch> třídy. <xref:System.Diagnostics.BooleanSwitch> Třída slouží jako přepínač přepnutí, povolení nebo zakázání celou řadu příkazů trasování. <xref:System.Diagnostics.TraceSwitch> a <xref:System.Diagnostics.SourceSwitch> třídy možné povolit přepínače trasování pro konkrétní trasování úroveň tak, aby <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.TraceSource> zadané pro tuto úroveň a nižší úrovně všechny zprávy se zobrazují. Pokud zakážete přepínač, nebude se zobrazovat trasovací zprávy. Všechny tyto třídy jsou odvozeny od abstraktní (**MustInherit**) třídy **přepínač**, jako by všechny uživatele vyvinuté přepínače.  
@@ -92,6 +93,6 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
  Kromě **BooleanSwitch** a **TraceSwitch**, můžete definovat vlastní přepínače dědění ze **přepínač** třídy a přepsáním metody třídy base s vlastní metody. Další informace o vytváření definované vývojáře přepínačů najdete v tématu <xref:System.Diagnostics.Switch> třídy v odkazu rozhraní .NET Framework.  
   
 ## <a name="see-also"></a>Viz také  
- [Trasování – moduly naslouchání](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
+ [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
  [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
  [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

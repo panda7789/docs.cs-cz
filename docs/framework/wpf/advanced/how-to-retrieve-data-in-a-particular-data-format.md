@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8e6513fd6d8d443b76059626c0e40991e35830c6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 884b017a69e55cfccc9201ad2d101017b0c290b4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-retrieve-data-in-a-particular-data-format"></a>Postupy: Načtení dat v konkrétním datovém formátu
 Následující příklady ukazují, jak k načtení dat z objektu dat v zadaném formátu.  
@@ -49,4 +50,4 @@ Následující příklady ukazují, jak k načtení dat z objektu dat v zadaném
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.IDataObject>  
- [Přetáhnout myší – přehled](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)
+ [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

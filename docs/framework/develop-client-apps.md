@@ -24,11 +24,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: daf09f94b4c0854365274773f8c426cc07e8c6dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f90cbac0e7f78d8965a75df281c0db6b213d9e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací s použitím rozhraní .NET Framework
 K vývoji aplikací systému Windows, s rozhraním .NET framework, které běží místně na počítače uživatelů nebo zařízení několika způsoby. Tento oddíl obsahuje témata, které popisují, jak vytvářet aplikace pro systém Windows pomocí Windows Presentation Foundation (WPF) nebo pomocí Windows Forms. Můžete však také vytvořit webových aplikací pomocí rozhraní .NET Framework a klientské aplikace pro počítače nebo zařízení, které dáte k dispozici prostřednictvím Windows Store nebo Windows Phone Store.  
@@ -40,7 +41,7 @@ K vývoji aplikací systému Windows, s rozhraním .NET framework, které běž�
  [Windows Forms](../../docs/framework/winforms/index.md)  
  Poskytuje informace o vývoji aplikací s použitím Windows Forms.  
   
- [Běžné technologie klienta](../../docs/framework/common-client-technologies/index.md)  
+ [Technologie CCT (Common Client Technologies)](../../docs/framework/common-client-technologies/index.md)  
  Poskytuje informace o další technologie, které lze použít při vývoji klientských aplikací.  
   
 ## <a name="related-sections"></a>Související oddíly  

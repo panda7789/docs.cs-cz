@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 68550646f806b30f072b4270a336698011db54d6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4f5f81617a8962eeb8748e2c5c35ea34f7a1705f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-security-with-windows-authentication"></a>Zabezpečení přenosu pomocí ověřování systému Windows
 Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby Zabezpečené zabezpečení systému Windows. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]programování, najdete v části [postupy: zabezpečení služby s pověřeními Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
@@ -129,5 +130,5 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
   
 ## <a name="see-also"></a>Viz také  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Postupy: zabezpečení služby pomocí pověření systému Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)  
+ [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)  
  [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

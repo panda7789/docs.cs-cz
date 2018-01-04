@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 417fea4dcbb5a8d0a27f9605be19de5921aaf0ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ece6a5d2123bb118f11940081e3c1d939815a8ce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku zdrojů rozsahu aplikace
 Tento příklad ukazuje, jak definovat a používat slovníku vlastní prostředek oboru aplikace.  
@@ -55,4 +56,4 @@ Tento příklad ukazuje, jak definovat a používat slovníku vlastní prostřed
  <xref:System.Windows.ResourceDictionary>  
  <xref:System.Windows.Application.Resources%2A>  
  [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Slovnících sloučené prostředků](../../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)
+ [Slovníky sloučených prostředků](../../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "37"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 74a2e5c15b25dc9958b74ddeb0abf9adcad10bc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c4c6ecbfc3407e3ebc321e92cd9e78dc2d80a3a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]je SOAP na základě zpráv distribuované programovací platforma a zabezpečení zpráv mezi klienty a služby je důležité chránit data. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje platformu univerzální a vzájemná spolupráce pro výměnu zabezpečených zpráv na základě existující infrastruktura zabezpečení a standardy rozpoznaný zabezpečení protokolu SOAP zprávy.  
@@ -117,7 +118,7 @@ ms.lasthandoff: 11/21/2017
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
  [Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
  [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Informace o zabezpečení a doporučené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  [Konfigurace služeb pomocí konfiguračních souborů](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
  [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)  

@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d9e4bdc26815feab7910e7518f7cd691a1f4dece
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9e248071a0d35c5552976e5e4663094b76ee162e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reflection-and-net-native"></a>Reflexe a .NET Native
 Ke správě podporuje vývoj metaprogramování prostřednictvím rozhraní API reflexe v rozhraní .NET Framework. Reflexe umožňuje zkontrolovat objekty v aplikaci, volat metody pro objekty zjištěné prostřednictvím kontroly, generování nových typů v době běhu a podporuje mnoho dalších scénářů dynamický kód. Podporuje také serializace a deserializace, což umožňuje objektu hodnoty polí jako trvalý, a později obnovit. Všechny tyto scénáře vyžadují rozhraní .NET Framework za běhu (JIT) kompilátor ke generování nativního kódu na základě metadat k dispozici.  
@@ -37,10 +38,10 @@ Ke správě podporuje vývoj metaprogramování prostřednictvím rozhraní API 
   
 -   [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
   
--   [Referenční dokumentace rozhraní API reflexe](../../../docs/framework/net-native/net-native-reflection-api-reference.md)  
+-   [Informace o rozhraní API reflexe](../../../docs/framework/net-native/net-native-reflection-api-reference.md)  
   
--   [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+-   [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Kompilování aplikací pomocí .NET Native](../../../docs/framework/net-native/index.md)  
- [.NET native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)
+ [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)

@@ -13,20 +13,21 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f52ab1be62f6e196bc1c8aa8874d5aa440ba606f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f9afc2798a4d23425f7308445f96dc87b5159c97
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-framework-data-providers"></a>Zprostředkovatelé dat Entity Framework
 Tato část obsahuje informace o zprostředkovatelé dat, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zprostředkovatel EntityClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)  
+ [Zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)  
  Popisuje data zprostředkovatel EntityClient. Tento zprostředkovatel transformuje dotazy pro datový model do stromu kanonický příkazů. Pak strom příkazů mohou být využívány službou [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
- [SqlClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
+ [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
  Popisuje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat, která podporuje [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] pro použití s [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] databáze.  
   
 ## <a name="related-sections"></a>Související oddíly  
@@ -37,4 +38,4 @@ Tato část obsahuje informace o zprostředkovatelé dat, které podporují [!IN
  Seznam poskytovatelů dat třetích stran, která je aktuálně k dispozici rozhraní Entity Framework.  
   
 ## <a name="see-also"></a>Viz také  
- [Práce s zprostředkovatelů dat.](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)
+ [Práce se zprostředkovateli dat](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)

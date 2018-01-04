@@ -17,11 +17,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ff548f490d76215305d2e22878bc35a54e3bd009
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 87b7b8491fe07f5ab1f93ba332e50333a366f109
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="native-wpf-browser-hosting-support-apis"></a>Nativní Prohlížeč WPF – rozhraní API pro podporu hostování
 Hostování [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] aplikací ve webové prohlížeče je usnadněno serveru aktivní dokument (také označované jako DocObject) zaregistrovaný mimo WPF hostitele. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]můžete přímo aktivovat a integraci s aktivní dokument. Pro hostování aplikace XBAP a ztratit XAML dokumentů v prohlížečích Mozilla [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] poskytuje modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí k [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] server pro aktivní dokument jako [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nepodporuje. Ale nejjednodušší praktický způsob, jak hostovat aplikace XBAP a XAML dokumenty v dalších prohlížečích a samostatné aplikace je prostřednictvím ovládacího prvku webový prohlížeč Internet Explorer. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru aktivní dokument, ale umožňuje vlastním hostiteli přizpůsobit a rozšířit prostředí a komunikovat přímo s aktuálním objektem aktivní dokument.  

@@ -1,5 +1,5 @@
 ---
-title: "Referenční dokumentace jazyka SQL entity"
+title: "Referenční dokumentace jazyka Entity SQL"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -13,21 +13,22 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 438ad3af6f6913a2c9529d0cf5bafbda89251fab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c966c19ea4de9d2e95f7c614e5d09432e0958876
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="entity-sql-language-reference"></a>Referenční dokumentace jazyka SQL entity
+# <a name="entity-sql-language-reference"></a>Referenční dokumentace jazyka Entity SQL
 Tato část obsahuje podrobnou dokumentaci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)]a modelování a mapování jazyky používané [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [CSDL, SSDL a specifikace MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)  
+ [Specifikace CSDL, SSDL a MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)  
   
- [Technologie LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
+ [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
   
- [Jazyk SQL entity](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
+ [Jazyk Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
   
  [Kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/index.md)  
   

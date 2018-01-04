@@ -13,20 +13,21 @@ caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 93e631d8f8cc32943f7563495d9846a80822245f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 33b41121ff70eaba07e5d3e14f3b828a3d35d34c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET je sada tříd, které zveřejňují služby data access services pro programátory v jazyce rozhraní .NET Framework. ADO.NET poskytuje bohatou sadu součásti pro vytváření aplikací pro distribuované, sdílení dat. Je nedílnou součástí rozhraní .NET Framework, poskytuje přístup k relační, XML a data aplikací. ADO.NET podporuje celou řadu vývoj potřeby, včetně vytváření front-endovou databázi klienti a objekty, střední vrstvu obchodní aplikace, nástroje, jazyky nebo internetových prohlížečů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Co je nového v technologii ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
+ [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
  Nabízí funkce, které nově jsou v technologii ADO.NET.  
   
- [ADO.NET – přehled](../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
  Poskytuje úvod do návrhu a součástí ADO.NET.  
   
  [Entity Framework](http://go.microsoft.com/fwlink/?LinkID=213876)  
@@ -35,16 +36,16 @@ ADO.NET je sada tříd, které zveřejňují služby data access services pro pr
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  Popisuje postupy pro zabezpečené kódování při použití ADO.NET.  
   
- [Mapování datového typu v technologii ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
+ [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  Popisuje mapování datového typu mezi datovými typy rozhraní .NET Framework a zprostředkovatele dat .NET Framework.  
   
- [Datové sady, DataTables a DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  Popisuje, jak vytvořit a použít `DataSets`, typu `DataSets`, `DataTables`, a `DataViews`.  
   
- [LINQ na DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md)  
+ [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md)  
  Poskytuje informace o LINQ do datové sady, včetně programování příklady.  
   
- [Načítání a upravovat Data v technologii ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  Popisuje, jak se připojit ke zdroji dat a jak načíst a upravit data pomocí `Commands`, `DataReaders` a `DataAdapters`.  
   
  [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
@@ -60,7 +61,7 @@ ADO.NET je sada tříd, které zveřejňují služby data access services pro pr
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  Obsahuje odkazy na témata LINQ a ukázky.  
   
- [Datové služby WCF 4.5](../../../../docs/framework/data/wcf/index.md)  
+ [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
  Popisuje způsob použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] k nasazení služeb dat na webu nebo v intranetu, které implementují Open Data Protocol (OData).  
   
  [Základní vývoj technologie](https://msdn.microsoft.com/library/csxbhtye.aspx)  

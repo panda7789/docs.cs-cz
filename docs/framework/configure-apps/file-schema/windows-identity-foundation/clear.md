@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 38f9680fe1b4c1bbd62cec1d40b86c0cba55b416
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2f7d600369a1aedf6b946b8c5b1a5bb8195c4e54
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt"></a>&lt;Vymazat&gt;
 Vymaže všechny rutiny tokenu zabezpečení z aktuální kolekce obslužná rutina tokenu.  

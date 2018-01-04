@@ -17,11 +17,12 @@ caps.latest.revision: "61"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: e521f07048e37533e052dc8a43fb2c522750f92a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 658c5aca3dc8d70400cdd26d9e0af1e253e175c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-control-types"></a>Typy ovládacích prvků pro automatizaci uživatelského rozhraní
 **Poznámka:** Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
@@ -29,23 +30,23 @@ ms.lasthandoff: 10/18/2017
  Tato část obsahuje informace o podpoře pro typy ovládacích prvků v [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled typů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
+ [Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku tlačítko](../../../docs/framework/ui-automation/ui-automation-support-for-the-button-control-type.md)  
- [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku Kalendář](../../../docs/framework/ui-automation/ui-automation-support-for-the-calendar-control-type.md)  
+ [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku kalendář](../../../docs/framework/ui-automation/ui-automation-support-for-the-calendar-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku CheckBox](../../../docs/framework/ui-automation/ui-automation-support-for-the-checkbox-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ComboBox](../../../docs/framework/ui-automation/ui-automation-support-for-the-combobox-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataGrid](../../../docs/framework/ui-automation/ui-automation-support-for-the-datagrid-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-dataitem-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku dokument](../../../docs/framework/ui-automation/ui-automation-support-for-the-document-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku úprav](../../../docs/framework/ui-automation/ui-automation-support-for-the-edit-control-type.md)  
- [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku Skupina](../../../docs/framework/ui-automation/ui-automation-support-for-the-group-control-type.md)  
+ [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku skupina](../../../docs/framework/ui-automation/ui-automation-support-for-the-group-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku záhlaví](../../../docs/framework/ui-automation/ui-automation-support-for-the-header-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku HeaderItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-headeritem-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz](../../../docs/framework/ui-automation/ui-automation-support-for-the-hyperlink-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku obrázek](../../../docs/framework/ui-automation/ui-automation-support-for-the-image-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku seznam](../../../docs/framework/ui-automation/ui-automation-support-for-the-list-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ListItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-listitem-control-type.md)  
- [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku Menu](../../../docs/framework/ui-automation/ui-automation-support-for-the-menu-control-type.md)  
+ [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku nabídka](../../../docs/framework/ui-automation/ui-automation-support-for-the-menu-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-menubar-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-menuitem-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku podokno](../../../docs/framework/ui-automation/ui-automation-support-for-the-pane-control-type.md)  
@@ -60,10 +61,10 @@ ms.lasthandoff: 10/18/2017
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku karta](../../../docs/framework/ui-automation/ui-automation-support-for-the-tab-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TabItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-tabitem-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku tabulka](../../../docs/framework/ui-automation/ui-automation-support-for-the-table-control-type.md)  
- [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku Text](../../../docs/framework/ui-automation/ui-automation-support-for-the-text-control-type.md)  
+ [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku text](../../../docs/framework/ui-automation/ui-automation-support-for-the-text-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku jezdec](../../../docs/framework/ui-automation/ui-automation-support-for-the-thumb-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TitleBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-titlebar-control-type.md)  
- [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku panel nástrojů](../../../docs/framework/ui-automation/ui-automation-support-for-the-toolbar-control-type.md)  
+ [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ToolBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-toolbar-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ToolTip](../../../docs/framework/ui-automation/ui-automation-support-for-the-tooltip-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku strom](../../../docs/framework/ui-automation/ui-automation-support-for-the-tree-control-type.md)  
  [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TreeItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-treeitem-control-type.md)  
@@ -73,4 +74,4 @@ ms.lasthandoff: 10/18/2017
  <xref:System.Windows.Automation.ControlType>  
   
 ## <a name="see-also"></a>Viz také  
- [Vzory ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)
+ [Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)

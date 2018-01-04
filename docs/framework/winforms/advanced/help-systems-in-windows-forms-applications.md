@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 45d3385d008f823050f213252fdc2e1851cf422b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b2f5d067d487bbd5b91576927aee21a9a44fde0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="help-systems-in-windows-forms-applications"></a>Systémy nápovědy ve formulářových aplikacích Windows
 Jeden z nejdůležitějších courtesies, jako vývojář aplikací, můžete poskytnout uživatelům bez je příslušný systém nápovědy. Toto je, kde bude zapnout když stát nerozumíte nebo disoriented. Poskytnutí systému nápovědy v aplikaci systému Windows se snadno provádí pomocí [HelpProvider – komponenta](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md).  
@@ -34,8 +35,8 @@ Jeden z nejdůležitějších courtesies, jako vývojář aplikací, můžete po
  Soubory nápovědy HTML 1.x s pracoviště Nápověda HTML můžete vygenerovat. Další informace o HTML – Nápověda najdete v části "HTML pomůže pracoviště" nebo na další témata "HTML – Nápověda" na webu MSDN.  
   
 ## <a name="see-also"></a>Viz také  
- [Integrace uživatelské nápovědy do formulářů Windows](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
- [HelpProvider – komponenta](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)  
- [ToolTip – komponenta](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)  
+ [Integrace uživatelské nápovědy v modelu Windows Forms](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
+ [Komponenta HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)  
+ [Komponenta ToolTip](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)  
  [Přehled produktu Windows Forms](../../../../docs/framework/winforms/windows-forms-overview.md)  
  [Windows Forms](../../../../docs/framework/winforms/index.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 37d8571624272f62c6ce327b0ed25e082c5cf713
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c92048374941f735568bcd758ed475eba78b81e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>Postupy: Seskupení ovládacích prvků Windows Forms RadioButton do funkce v podobě skupiny
 Windows Forms <xref:System.Windows.Forms.RadioButton> ovládací prvky jsou navrženy umožnit uživateli vybrat mezi dva nebo více nastavení, ve kterých lze přiřadit pouze jeden postup nebo objekt. Například skupina <xref:System.Windows.Forms.RadioButton> ovládací prvky se může zobrazovat vybrat balíček prostředníci pro pořadí, ale pouze jedna prostředníci se použije. Proto pouze jeden <xref:System.Windows.Forms.RadioButton> najednou lze vybrat, i když je součástí skupiny funkčnosti.  
@@ -38,7 +39,7 @@ Windows Forms <xref:System.Windows.Forms.RadioButton> ovládací prvky jsou navr
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.RadioButton>  
  [Přehled ovládacího prvku RadioButton](../../../../docs/framework/winforms/controls/radiobutton-control-overview-windows-forms.md)  
- [Přehled ovládacího prvku panel](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku Panel](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  
  [Přehled ovládacího prvku GroupBox](../../../../docs/framework/winforms/controls/groupbox-control-overview-windows-forms.md)  
  [Přehled ovládacího prvku CheckBox](../../../../docs/framework/winforms/controls/checkbox-control-overview-windows-forms.md)  
- [RadioButton – ovládací prvek](../../../../docs/framework/winforms/controls/radiobutton-control-windows-forms.md)
+ [Ovládací prvek RadioButton](../../../../docs/framework/winforms/controls/radiobutton-control-windows-forms.md)

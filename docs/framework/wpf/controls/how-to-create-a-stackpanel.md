@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b5ba089c671fe54afe1c97da0a7bd786949cb5c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9226ac10e4f221cc381b7c59179b2667e20aa757
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-stackpanel"></a>Postupy: Vytvoření objektu StackPanel
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>.  
@@ -54,5 +55,5 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.StackPanel>  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)

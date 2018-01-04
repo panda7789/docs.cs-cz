@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ea3db4a6e035a0a17d078908e06a7997d7c87ad6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8739a939e3ad5ce8c3277120755fb72f77b3e175
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="convert-a-sequence-to-an-array"></a>Převod na pole sekvenci
 Použití <xref:System.Linq.Enumerable.ToArray%2A> pro vytvoření pole z řady.  

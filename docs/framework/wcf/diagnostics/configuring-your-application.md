@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 064f396d0a757e5b2f5f12c4a2a836b74f5e66a6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 72fd6dba860906fb87d67e19148f13b70dc64136
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-your-application"></a>Konfigurace vaší aplikace
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá konfigurační systém .NET a umožňuje vám nakonfigurovat služby v oboru počítače a aplikace.  
@@ -40,6 +41,6 @@ ms.lasthandoff: 12/02/2017
 >  Pokud chcete upravit konfigurační soubor [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] projekt webové služby v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] kliknutím pravým tlačítkem myši v **Průzkumníku řešení**, Všimněte si, že **upravit konfigurace WCF** chybí položky kontextové nabídky . Chcete-li vyřešit tento problém, klikněte na tlačítko **nástroje** nabídce a zvolte **Editor konfigurace služby WCF**. Potom můžete klikněte pravým tlačítkem na soubor konfigurace a použít **upravit konfigurace WCF** položky kontextové nabídky.  
   
 ## <a name="see-also"></a>Viz také  
- [Nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
+ [Editor konfigurace (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
  [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)  
  [\<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2af5d75145b9fdd2d370b76f798c5e350d8bec50
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45fa4afebda00cb2549a5c18ba81c6bb4e8210e0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugremotetargetgethostname-method"></a>ICorDebugRemoteTarget::GetHostName – metoda
 Vrátí plně kvalifikovaný název domény nebo adresu IPv4 vzdáleného ladění cílového počítače. Protokol IPV6 není podporován v tuto chvíli.  
@@ -70,5 +71,5 @@ HRESULT GetHostName (
  **Verze rozhraní .NET framework:** 3.5 SP1  
   
 ## <a name="see-also"></a>Viz také  
- [ICorDebugRemoteTarget – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
- [ICorDebug – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+ [ICorDebugRemoteTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
+ [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)

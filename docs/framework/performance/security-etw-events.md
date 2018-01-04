@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a7e28eeabecfe0f1043328618f6e1be143f198a6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: abf6e6896267b6d1c8449b020230381923f38f1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-etw-events"></a>Události Trasování událostí pro Windows zabezpečení
 <a name="top"></a>Události zabezpečení jsou vyvolány během ověřování silných názvů a ověření Authenticode.  
@@ -82,4 +83,4 @@ ms.lasthandoff: 10/18/2017
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ## <a name="see-also"></a>Viz také  
- [CLR ETW – události](../../../docs/framework/performance/clr-etw-events.md)
+ [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

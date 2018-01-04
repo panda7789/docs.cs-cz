@@ -14,11 +14,12 @@ ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c8ed8b0211c8366d799fe158d91dcb42f92ad0cf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4e7de6e5ce6415c58deeca14df74c26e24957054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="section-element"></a>\<část > elementu
 
@@ -56,7 +57,7 @@ Následující atributy se dají použít jenom pro aplikace ASP.NET. Konfigura�
 |                     | Popis |
 | ------------------- | ----------- |
 | **allowDefinition** | Určuje, který soubor konfigurace mohou být používány v části. Použijte jednu z následujících hodnot:<br><br>**Everywhere**<br>Umožňuje oddílu, který má být používány všechny konfigurační soubor. Toto nastavení je výchozí.<br>**MachineOnly**<br>Umožňuje oddílu, který má být použita pouze v konfiguračním souboru počítače (*Machine.config*).<br>**MachineToApplication**<br>Umožňuje oddílu, který má být použit v konfiguračním souboru počítače nebo v konfiguračním souboru aplikace. |
-| **allowLocation**   | Určuje, jestli je možné použít v části v rámci  **\<umístění >** element. Použijte jednu z následujících hodnot:<br><br>**Hodnota TRUE**<br>Umožňuje oddílu, který má být použit  **\<umístění >** element. Toto nastavení je výchozí.<br>**false**<br>Neumožňuje oddílu, který má být použit  **\<umístění >** element. |
+| **allowLocation**   | Určuje, jestli je možné použít v části v rámci  **\<umístění >** element. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje oddílu, který má být použit  **\<umístění >** element. Toto nastavení je výchozí.<br>**false**<br>Neumožňuje oddílu, který má být použit  **\<umístění >** element. |
 
 ## <a name="parent-elements"></a>Nadřazené prvky
 

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d5586e28e784c43488245db814abf32d863232fc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 68a28e25cf07ec3d84cc7bb12734594ca55e7e0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-customize-entity-classes-by-using-the-code-editor"></a>Postupy: přizpůsobení tříd entit pomocí editoru kódu
 Vývojáře, kteří používají [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] vytvořit nebo upravit jejich tříd entit.  
@@ -26,43 +27,43 @@ Vývojáře, kteří používají [!INCLUDE[vs_current_short](../../../../../../
   
  Témata v této části popisují postup přizpůsobení modelu objektu.  
   
- [Postupy: Zadejte názvy databází](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-names.md)  
+ [Postupy: Zadání databázových názvů](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-names.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>.  
   
- [Postupy: představují tabulky jako třídy](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-tables-as-classes.md)  
+ [Postupy: Znázornění tabulek jako tříd](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-tables-as-classes.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.TableAttribute>.  
   
- [Postupy: představují sloupce jako členy třídy](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-class-members.md)  
+ [Postupy: Znázornění sloupců jako členů tříd](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-class-members.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute>.  
   
- [Postupy: představují primární klíče](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-primary-keys.md)  
+ [Postupy: Znázornění primárních klíčů](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-primary-keys.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>.  
   
- [Postupy: mapování relace databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)  
+ [Postupy: Mapování databázových relace](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)  
  Obsahuje příklady použití <xref:System.Data.Linq.Mapping.AssociationAttribute> atribut.  
   
- [Postupy: představují sloupce jako generované databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-database-generated.md)  
+ [Postupy: Znázornění sloupců jako generovaných databází](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-database-generated.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>.  
   
- [Postupy: představují sloupce jako časové razítko nebo verze sloupce](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-timestamp-or-version-columns.md)  
+ [Postupy: Znázornění sloupců jako sloupců časového razítka nebo verze ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-timestamp-or-version-columns.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>.  
   
- [Postupy: určení typů dat databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-data-types.md)  
+ [Postupy: Zadání datových typů v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-data-types.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>.  
   
- [Postupy: představují vypočítaného sloupce](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-computed-columns.md)  
+ [Postupy: Znázornění vypočítaných sloupců](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-computed-columns.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>.  
   
- [Postupy: Zadejte privátní úložiště polí](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-private-storage-fields.md)  
+ [Postupy: Zadání polí privátního úložiště](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-private-storage-fields.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>.  
   
- [Postupy: představují sloupce tak, aby umožňoval hodnoty Null](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-allowing-null-values.md)  
+ [Postupy: Znázornění sloupců jako povolujících hodnoty null](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-allowing-null-values.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>.  
   
- [Postupy: mapování hierarchie dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md)  
+ [Postupy: Mapování hierarchií dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md)  
  Popisuje mapování zapotřebí zadat hierarchie dědičnosti.  
   
- [Postupy: Zadejte Kontrola konfliktu souběžnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-concurrency-conflict-checking.md)  
+ [Postupy: Zadání kontroly konfliktů souběžnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-concurrency-conflict-checking.md)  
  Popisuje způsob použití <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>.  
   
 ## <a name="see-also"></a>Viz také  

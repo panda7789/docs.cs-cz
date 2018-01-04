@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 763ce6d47b0fe40eb2d27b2e062d46cfd9e1b8a2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 68335627f18a65cb7922170dda6584eb383a0e66
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstripcontainer-control"></a>ToolStripContainer – ovládací prvek
 <xref:System.Windows.Forms.ToolStrip>ovládací prvky funkce vestavěný rafting (sdílení vodorovné nebo svislé prostor v rámci oblasti nástroje, pokud je ukotveno) pomocí <xref:System.Windows.Forms.ToolStripContainer>.  
@@ -52,4 +53,4 @@ ms.lasthandoff: 10/18/2017
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

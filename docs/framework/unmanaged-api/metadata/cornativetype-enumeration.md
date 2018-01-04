@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1c17abfc501b0d44981d2ed6cf7d69d60d9948b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6be442dd74f6a71494e140b76357be1bc9e1b747
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cornativetype-enumeration"></a>CorNativeType – výčet
 Obsahuje hodnoty, které popisují nativní nespravované typy.  
@@ -150,4 +151,4 @@ typedef enum CorNativeType {
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.InteropServices.UnmanagedType>  
- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+ [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 47ed4518ec4e703df3af380916cc3756a460e4d1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d085e4e382727cc91aa82603d64d2f567afdd126
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-chain-bitmapsource-objects-together"></a>Postupy: Vzájemné zřetězení objektů BitmapSource
 Tento příklad ukazuje, jak můžete použít různé efekty na zdroj bitové kopie s řetězení více <xref:System.Windows.Media.Imaging.BitmapSource> odvozené objekty společně.  

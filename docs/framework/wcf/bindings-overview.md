@@ -14,11 +14,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eb2d66217202ee43fb2377f4a8ef26a47b676c11
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4bc4fc7559872a808c2de87e4926075614351030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které slouží k zadání podrobností komunikace, které jsou potřebné pro připojení ke koncovému bodu [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby. Každý koncový bod v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba vyžaduje, aby vazba být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti definující vazby elementů vazby, které vazby jsou součástí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], a jak lze zadat vazbu pro koncový bod.  

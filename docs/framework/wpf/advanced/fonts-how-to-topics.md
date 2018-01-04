@@ -15,21 +15,22 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f0ff080218b459625bb98803216fae88c3aadd1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8e4df7bac45abe367f985167b354b515f247ae90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fonts-how-to-topics"></a>Postupy: Témata písem
 Témata v této části ukazují, jak používat funkce písma součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zobrazení výčtu systému písem](../../../../docs/framework/wpf/advanced/how-to-enumerate-system-fonts.md)  
+ [Výčet systémových písem](../../../../docs/framework/wpf/advanced/how-to-enumerate-system-fonts.md)  
  [Použití třídy FontSizeConverter](../../../../docs/framework/wpf/advanced/how-to-use-the-fontsizeconverter-class.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.FontStyle>  
  <xref:System.Windows.SystemFonts>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: cf9889f53ca4b7079e762725d1f61eba4987e61e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 57922a9f0ca431a2e2f070f34670d6f7f6d76635
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="asynchronous-server-socket-example"></a>Příklad soketu asynchronní serveru
 V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů. Server je vytvořené s asynchronní soketu a spuštění aplikace server není pozastaven, kdy čeká připojení z klienta. Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.  
@@ -305,6 +306,6 @@ public class AsynchronousSocketListener {
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Příklad soketu asynchronní klienta](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)  
- [Pomocí soketu asynchronní serveru](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
- [Příklady kódu soketů](../../../docs/framework/network-programming/socket-code-examples.md)
+ [Příklad asynchronního klientského soketu](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)  
+ [Použití asynchronního serverového soketu](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)

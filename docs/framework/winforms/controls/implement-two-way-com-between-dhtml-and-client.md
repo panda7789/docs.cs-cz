@@ -25,11 +25,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2ad99683f0e41e64a42032a9d64e589723fa8ed4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 63291cddc294b6ad8003636d6d79169f2d0852e3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-two-way-communication-between-dhtml-code-and-client-application-code"></a>Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace
 Můžete použít <xref:System.Windows.Forms.WebBrowser> řízení přidat existující dynamické kódu HTML (DHTML) webové aplikace do aplikace Windows Forms klienta. To je užitečné, když investovaly významné vývoj čas při vytváření ovládacích prvků na základě DHTML a chcete využít výhod možnosti bohaté uživatelské rozhraní Windows Forms bez přepsání existujícího kódu.  
@@ -121,4 +122,4 @@ Můžete použít <xref:System.Windows.Forms.WebBrowser> řízení přidat exist
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.Document%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A?displayProperty=nameWithType>  
- [WebBrowser – ovládací prvek](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)
+ [Ovládací prvek WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)

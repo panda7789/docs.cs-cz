@@ -16,17 +16,18 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 94296e623407aad2fecb52b9e6ece7500778931b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 70eb72b8755b24e0ee91c2a77b562984422b0c99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-accessibility"></a>Usnadnění v produktu Windows Forms
 Funkce usnadnění systému Windows Forms umožňuje zpřístupnit vaše aplikace k široké škále uživatelů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Návod: Vytvoření dostupné aplikace systému Windows](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)  
+ [Návod: Vytvoření přístupné aplikace Windows](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)  
  Popisuje všechny funkce by měly podporovat zvýšit usnadnění.  
   
 ## <a name="reference"></a>Odkaz  
@@ -37,7 +38,7 @@ Funkce usnadnění systému Windows Forms umožňuje zpřístupnit vaše aplikac
  Poskytuje informace, které aplikace usnadnění slouží k úpravě aplikace uživatelské rozhraní (UI) pro uživatele s postižením.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Poskytování informací o usnadnění pro ovládací prvky na formuláři Windows](../../../../docs/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form.md)  
+ [Poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows Forms](../../../../docs/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form.md)  
  Popisuje, jak zadat informace, které můžete použít ovládací prvky Windows Forms pomoci uživatelům s postižením.  
   
  [Automatická změna měřítka ve Windows Forms](../../../../docs/framework/winforms/automatic-scaling-in-windows-forms.md)  

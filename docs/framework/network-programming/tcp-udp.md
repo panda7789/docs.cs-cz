@@ -26,11 +26,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 04a3bb1c7499a60175aaaa9715e780ea5ddceb31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f62475e8b44d9cdda13322dc223509572c4ae541
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tcp-udp"></a>TCP UDP
 Aplikace můžete použít protokol TCP (Transmission Control) a protokolu UDP (User Datagram) služby pomocí <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, a <xref:System.Net.Sockets.UdpClient> třídy. Tyto třídy protokolu jsou postavený na <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídy a postará o podrobnosti o přenosu dat.  
@@ -42,9 +43,9 @@ Aplikace můžete použít protokol TCP (Transmission Control) a protokolu UDP (
  **UdpClient** třída používá pro uložení datagramů UDP pole bajtů. Můžete použít <xref:System.Net.Sockets.UdpClient.Send%2A> metodu pro odeslání dat do sítě a <xref:System.Net.Sockets.UdpClient.Receive%2A> metodu datagramu příchozí.  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí služby TCP](../../../docs/framework/network-programming/using-tcp-services.md)  
- [Pomocí služby UDP](../../../docs/framework/network-programming/using-udp-services.md)  
- [Pomocí datových proudů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
- [Pomocí soketu asynchronní serveru](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
- [Pomocí soketu asynchronní klienta](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
- [Pomocí protokolů aplikací](../../../docs/framework/network-programming/using-application-protocols.md)
+ [Použití služeb TCP](../../../docs/framework/network-programming/using-tcp-services.md)  
+ [Použití služeb UDP](../../../docs/framework/network-programming/using-udp-services.md)  
+ [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
+ [Použití asynchronního serverového soketu](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Použití asynchronního klientského soketu](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
+ [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)

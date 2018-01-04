@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 57b285ef5b2d3f8342b473f09650e6db7ec1693d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 77e97e31a20c392eebae1b373bb1af53f87c23e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugeval-interface1"></a>ICorDebugEval Interface1
 Poskytuje metody povolující ladicímu programu spouštět kód v kontextu laděného kódu.  
@@ -34,14 +35,14 @@ Poskytuje metody povolující ladicímu programu spouštět kód v kontextu lad�
 |------------|-----------------|  
 |[Abort – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md)|Zruší výpočet to `ICorDebugEval` právě provádí objektu.|  
 |[CallFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md)|Nastaví volání zadanou funkci. (Zastaralé v rozhraní .NET Framework verze 2.0, pomocí [icordebugeval2::callparameterizedfunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) místo.)|  
-|[Createvalue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md)|Získá ukazatele rozhraní na "ICorDebugValue" objekt zadaného typu, s počáteční hodnotou nula nebo hodnotu null. (Zastaralé v rozhraní .NET Framework 2.0, pomocí [icordebugeval2::createvaluefortype –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) místo.)|  
+|[CreateValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md)|Získá ukazatele rozhraní na "ICorDebugValue" objekt zadaného typu, s počáteční hodnotou nula nebo hodnotu null. (Zastaralé v rozhraní .NET Framework 2.0, pomocí [icordebugeval2::createvaluefortype –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) místo.)|  
 |[GetResult – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getresult-method.md)|Získá ukazatele rozhraní k `ICorDebugValue` obsahující výsledky hodnocení.|  
-|[Getthread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getthread-method.md)|Získá ukazatele rozhraní umožňuje "ICorDebugThread", kde toto testování provádí nebo spustí.|  
+|[GetThread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getthread-method.md)|Získá ukazatele rozhraní umožňuje "ICorDebugThread", kde toto testování provádí nebo spustí.|  
 |[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-isactive-method.md)|Získá hodnotu, která určuje, jestli to `ICorDebugEval` objekt právě probíhá.|  
 |[NewArray – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newarray-method.md)|Přiděluje nový pole typu zadaného elementu a dimenze. (Zastaralé v rozhraní .NET Framework 2.0, pomocí [icordebugeval2::newparameterizedarray –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) místo.)|  
 |[NewObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobject-method.md)|Přidělí nové instance objektu a volá metodu zadané konstruktor. (Zastaralé v rozhraní .NET Framework 2.0, pomocí [icordebugeval2::newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) místo.)|  
-|[Newobjectnoconstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobjectnoconstructor-method.md)|Bez pokus o volání metody konstruktoru přiděluje novou instanci objektu zadaného typu. (Zastaralé v rozhraní .NET Framework 2.0, pomocí [icordebugeval2::newparameterizedobjectnoconstructor –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) místo.)|  
-|[Newstring – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newstring-method.md)|Přiděluje nový objekt řetězce s zadaný obsah.|  
+|[NewObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobjectnoconstructor-method.md)|Bez pokus o volání metody konstruktoru přiděluje novou instanci objektu zadaného typu. (Zastaralé v rozhraní .NET Framework 2.0, pomocí [icordebugeval2::newparameterizedobjectnoconstructor –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) místo.)|  
+|[NewString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newstring-method.md)|Přiděluje nový objekt řetězce s zadaný obsah.|  
   
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugEval` Objekt se vytvoří v rámci konkrétní vlákno, které se používá k provádění hodnocení. Všechny objekty a typy používaných v daném vyhodnocení se musí nacházet ve stejné doméně aplikace. Tuto doménu aplikace nemusí být stejný jako aktuální doménu aplikace vlákna. Hodnocení mohou být použity.  
@@ -68,4 +69,4 @@ Poskytuje metody povolující ladicímu programu spouštět kód v kontextu lad�
     
     
     
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

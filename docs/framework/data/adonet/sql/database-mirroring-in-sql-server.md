@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0ec0b25976b1b54c91fcdebbc80bc048d2b48823
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6956d48163f9b9da66258c0dbb3452beab5420d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="database-mirroring-in-sql-server"></a>V systému SQL Server zrcadlení databáze
 Zrcadlení databáze v systému SQL Server, můžete ponechat kopii nebo zrcadlení databáze systému SQL Server na pohotovostní server. Zrcadlení zajišťuje, že dvě samostatné kopie dat existují na všechny časy tím vysokou dostupnost a redundanci dat dokončit. Zprostředkovatel dat .NET pro SQL Server podporuje implicitní zrcadlení databáze, tak, aby vývojář není nutné provádět žádnou akci nebo psaní jakéhokoli kódu, jakmile byla nakonfigurována pro databázi systému SQL Server. Kromě toho <xref:System.Data.SqlClient.SqlConnection> objekt podporuje režim explicitní spojení umožňující poskytuje název serveru partnera převzetí služeb při selhání v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  

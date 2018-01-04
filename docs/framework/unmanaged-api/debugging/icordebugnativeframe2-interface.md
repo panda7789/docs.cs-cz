@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c33eaa36313f0cf6aae904761fb40bb2dbf9d753
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f501d49f007e22c6f7db0e759ee19b40f87b4b33
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugnativeframe2-interface"></a>ICorDebugNativeFrame2 – rozhraní
 Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.  
@@ -32,9 +33,9 @@ Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Ischild – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Určuje, zda je aktuální snímek podřízeného rámce.|  
-|[Ismatchingparentframe – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Určuje, zda je zadaný rámečku nadřazeného aktuální snímek.|  
-|[Getstackparametersize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Vrátí celková velikost všech parametrů v zásobníku na x86 operační systémy.|  
+|[IsChild – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Určuje, zda je aktuální snímek podřízeného rámce.|  
+|[IsMatchingParentFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Určuje, zda je zadaný rámečku nadřazeného aktuální snímek.|  
+|[GetStackParameterSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Vrátí celková velikost všech parametrů v zásobníku na x86 operační systémy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní logicky rozšiřuje rozhraní "ICorDebugNativeFrame".  
@@ -53,5 +54,5 @@ Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.
   
 ## <a name="see-also"></a>Viz také  
     
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

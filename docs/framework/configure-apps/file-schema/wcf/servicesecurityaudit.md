@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: f0c708c19761f6086e1b5c2fdd15904c76fe3de9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e36019cd6d010e25292fa50ed3bf795dfca15f73
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 Určuje nastavení, které povolení auditování událostí zabezpečení během operací služby.  
@@ -92,5 +93,5 @@ Určuje nastavení, které povolení auditování událostí zabezpečení běhe
  <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
  [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
  [Auditování](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Postupy: auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
- [Chování auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)
+ [Postupy: Auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
+ [Chování při auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)

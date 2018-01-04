@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 007bb5990ec750dccc678a208d755136ea67a05c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 173ebcd2b97b3b542a8ea96338a9c6b59b5dc6d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corprfcodeinfo-structure"></a>COR_PRF_CODE_INFO – struktura
 Představuje jeden souvislý blok nativního kódu, které jsou uložené v paměti.  

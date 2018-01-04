@@ -20,11 +20,12 @@ caps.latest.revision: "56"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: eee16adfaa38b9a616f47d8489d99d0d9714cbaa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c88aabf046ac720d14db3e68c8e04092188a7ef1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 Tento článek pomáhá začít pracovat, nasazení rozhraní .NET Framework s vaší aplikací. Většinu informací je určený pro vývojáře, výrobci OEM a správcům. Přečtěte si uživatelé, kteří chtějí nainstalovat rozhraní .NET Framework na svých počítačích [instalace rozhraní .NET Framework](~/docs/framework/install/index.md).  
@@ -50,7 +51,7 @@ Tento článek pomáhá začít pracovat, nasazení rozhraní .NET Framework s v
   
     -   [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
   
-    -   [Řešení potíží s blokované rozhraní .NET Framework a odinstalacemi](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+    -   [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
   
 -   Nasazení rozhraní .NET Framework s klientskou aplikaci (pro vývojáře):  
   
@@ -164,15 +165,15 @@ Tento článek pomáhá začít pracovat, nasazení rozhraní .NET Framework s v
 |Název|Popis|  
 |-----------|-----------------|  
 |[Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Popisuje, jak modul common language runtime určuje sestavení, které použít ke splnění požadavku vazby.|  
-|[Osvědčené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Popisuje způsoby, kterými se chcete vyhnout potížím typ identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalších chyb.|  
+|[Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Popisuje způsoby, kterými se chcete vyhnout potížím typ identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalších chyb.|  
 |[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Popisuje správce restartovat, aby se zabránilo restartuje, pokud je to možné a vysvětluje, jak aplikace, které instalaci rozhraní .NET Framework, můžete využít výhod ho.|  
-|[Průvodce nasazením pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)|Vysvětluje, jak správce systému můžete nasadit rozhraní .NET Framework a jeho závislé součásti systému přes síť pomocí System Center Configuration Manager (SCCM).|  
+|[Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)|Vysvětluje, jak správce systému můžete nasadit rozhraní .NET Framework a jeho závislé součásti systému přes síť pomocí System Center Configuration Manager (SCCM).|  
 |[Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Vysvětluje, jak vývojáři můžete nainstalovat rozhraní .NET Framework na své uživatele, počítače s aplikací.|  
-|[Nasazení aplikací, služeb a komponent](/visualstudio/deployment/deploying-applications-services-and-components)|Popisuje možnosti nasazení v sadě Visual Studio, včetně pokynů pro publikování aplikace pomocí technologie ClickOnce a instalační služba systému Windows.| 
+|[Nasazení aplikací, služeb a komponent](/visualstudio/deployment/deploying-applications-services-and-components)|Popisuje možnosti nasazení v sadě Visual Studio, včetně pokynů pro publikování aplikace pomocí technologie ClickOnce a instalační služba systému Windows.| 
 |[Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Popisuje, jak chcete balíček aplikace Windows Forms a nasaďte ho s ClickOnce do klientských počítačů v síti.|  
 |[Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Popisuje hvězdicové model, který používá rozhraní .NET Framework pro zabalení a nasazení prostředků; popisuje konvence, nouzové procesy a balení alternativních názvů prostředků.|  
 |[Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)|Vysvětluje, jak dodávat a nainstalujte zprostředkovatele komunikace s objekty aplikace, které obvykle obsahují sestavení klienta .NET Framework, jeden nebo více sestavení vzájemné spolupráce představující odlišné knihovny typů modelu COM, a jedna nebo více komponent COM registrované.|  
-|[Postupy: získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Popisuje, jak bezobslužná spustit a sledovat proces instalace rozhraní .NET Framework při zobrazování zobrazení průběh instalačního programu.|  
+|[Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Popisuje, jak bezobslužná spustit a sledovat proces instalace rozhraní .NET Framework při zobrazování zobrazení průběh instalačního programu.|  
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce vývojem](../../../docs/framework/development-guide.md)

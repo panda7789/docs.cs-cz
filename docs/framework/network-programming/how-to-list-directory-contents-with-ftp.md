@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f5f74b215fb753d8d5a12a3e203b8598fc258053
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b3c0a5090709999ee5ab17e857bb5334d6982954
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-list-directory-contents-with-ftp"></a>Postupy: seznam obsah adresáře s FTP
 Tento příklad ukazuje, jak zobrazit obsah adresáře serveru FTP.  

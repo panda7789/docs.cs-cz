@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c1e0eb19946ef2231b5a58df4b8d0b2e40e8e99f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9b808d10cd393d84ed29cb5e1cccfcff9c6c098d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="effects-of-modifying-a-base-form39s-appearance"></a>Účinky úpravy základní formulář & č. 39; s vzhledu
 Během vývoje aplikace může často potřebujete změnit vzhled základní formulář, ze kterého jsou dědění jiných formulářů v projektu (nebo jiné projekty).  
@@ -36,6 +37,6 @@ Během vývoje aplikace může často potřebujete změnit vzhled základní for
  Změny provedené v době běhu základní formulář mít žádný vliv na zděděné formuláře, které jsou již vytvořeny.  
   
 ## <a name="see-also"></a>Viz také  
- [základní](~/docs/csharp/language-reference/keywords/base.md)  
- [Postupy: dědění formulářů Windows](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)  
- [Vizuální dědění Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)
+ [base](~/docs/csharp/language-reference/keywords/base.md)  
+ [Postupy: Dědění v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)  
+ [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)

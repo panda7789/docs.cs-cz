@@ -16,11 +16,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f93247a96501359bcda8d2956308e6570c597f93
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d08fcb955c972ffbd7ef0a48625f1005ab366dd0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-one-way-contract"></a>Postupy: Vytvoření jednosměrného kontraktu
 Toto téma ukazuje základní kroky pro vytvoření metody, které používají jednosměrného kontraktu. Tyto metody vyvolání operací na [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby z klienta, ale Nečekejte na odpověď. Tento typ smlouvy můžete použít například k publikování oznámení pro mnoho odběratele. Jednosměrné kontrakty můžete také použít při vytváření duplexního kontraktu (obousměrné), která umožňuje klientům a serverům ke komunikaci mezi sebou nezávisle tak, aby buď můžete spustit volání na druhý. Můžete to umožní na konkrétní server jednosměrný volání klientovi, který klient může považovat za události. Podrobné informace o zadávání jednosměrné metody najdete v tématu <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost a <xref:System.ServiceModel.OperationContractAttribute> třídy.  
@@ -45,6 +46,6 @@ Toto téma ukazuje základní kroky pro vytvoření metody, které používají 
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
  [Navrhování a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md)  
- [Postupy: definování kontraktu služby](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
+ [Postupy: Definování kontraktu služby](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
  [Relace](../../../../docs/framework/wcf/samples/session.md)  
- [Postupy: vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
+ [Postupy: Vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)

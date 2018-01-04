@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 06fc335e4b8011afd92e698b20e4b84572b153c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 133d48baa9613ea698b6d6a21f0dfe88a798859c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows kolekci paměti
 <a name="top"></a>Tyto události shromažďovat informace týkající se uvolňování paměti. Mohou pomoci v diagnostice a ladění, včetně určení, jak často uvolňování byla provedena, kolik paměti byl uvolněn při uvolňování paměti a tak dále.  
@@ -74,7 +75,7 @@ ms.lasthandoff: 10/18/2017
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|Win: UInt32|*n* Tý uvolňování paměti.|  
+|Počet|Win: UInt32| *n* Tý uvolňování paměti.|  
 |Hloubka|Win: UInt32|Generování, jež jsou shromažďována.|  
 |Důvod|Win: UInt32|Proč byla aktivována uvolnění paměti:<br /><br /> 0x0 - přidělení haldy malé objektu.<br /><br /> 0x1 - vyvolané.<br /><br /> 0x2 - nedostatek paměti.<br /><br /> 0x3 - prázdný.<br /><br /> 0x4 - přidělení haldy velkého objektu.<br /><br /> 0x5 – volné místo (pro malé objektu haldy).<br /><br /> 0x6 – volné místo (pro velkého objektu haldy).<br /><br /> 0x7 - vyvolané ale nejsou vynucené jako blokování.|  
 |Typ|Win: UInt32|došlo k blokování uvolňování 0x0 - mimo kolekce paměti na pozadí.<br /><br /> 0x1 – kolekce paměti na pozadí.<br /><br /> 0x2 – uvolňování paměti blokování došlo k chybě během kolekce paměti na pozadí.|  
@@ -100,7 +101,7 @@ ms.lasthandoff: 10/18/2017
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|Win: UInt32|*n* Tý uvolňování paměti.|  
+|Počet|Win: UInt32| *n* Tý uvolňování paměti.|  
 |Hloubka|Win: UInt32|Generování, která nebyla shromážděna.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
@@ -375,4 +376,4 @@ ms.lasthandoff: 10/18/2017
  Žádná data.  
   
 ## <a name="see-also"></a>Viz také  
- [CLR ETW – události](../../../docs/framework/performance/clr-etw-events.md)
+ [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

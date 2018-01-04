@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b2bb7251b87356361844e075831c95885879476
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2c606406fb47d6297e70bfa3db5fc17631969e4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="checkedlistbox-control-overview-windows-forms"></a>CheckedListBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.CheckedListBox> ovládací prvek rozšiřuje <xref:System.Windows.Forms.ListBox> ovládacího prvku. Nemá téměř vše, pole se seznamem nemá a také můžete zobrazit zatržení vedle položky v seznamu. Další rozdíly mezi dvěma ovládací prvky jsou který zkontrolovat seznam oknech podporovat pouze <xref:System.Windows.Forms.DrawMode.Normal?displayProperty=nameWithType>; a který zkontrolovat seznamy může mít pouze jednu položku nebo není vybrán žádný. Upozorňujeme, že vybraná položka je zvýrazněn na formuláři a není stejný jako položku zaškrtnuté.  
@@ -34,5 +35,5 @@ Windows Forms <xref:System.Windows.Forms.CheckedListBox> ovládací prvek rozši
  <xref:System.Windows.Forms.CheckedListBox.Items%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.ListControl.DataSource%2A?displayProperty=nameWithType>  
  [Přehled ovládacího prvku ListBox](../../../../docs/framework/winforms/controls/listbox-control-overview-windows-forms.md)  
- [Windows Forms – ovládací prvky používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
- [Postupy: určení zaškrtnutých položek v systému Windows Forms CheckedListBox – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control.md)
+ [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
+ [Postupy: Určení zaškrtnutých položek v ovládacím prvku Windows Forms CheckedListBox](../../../../docs/framework/winforms/controls/how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control.md)

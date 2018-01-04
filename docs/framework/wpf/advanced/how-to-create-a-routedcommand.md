@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dad0cd8aaa81e6a458307ec69ec60ed369ca6b03
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 449b55d07aa0119ff23c8642ca83b0989f5b1d4b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-routedcommand"></a>Postupy: Vytvoření objektu RoutedCommand
 Tento příklad ukazuje, jak vytvořit vlastní <xref:System.Windows.Input.RoutedCommand> a implementaci vlastního příkazu tak, že vytvoříte <xref:System.Windows.Input.ExecutedRoutedEventHandler> a <xref:System.Windows.Input.CanExecuteRoutedEventHandler> a jejich připojení <xref:System.Windows.Input.CommandBinding>.  Další informace o tvorba příkazů najdete v tématu [tvorba příkazů přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
@@ -58,4 +59,4 @@ Tento příklad ukazuje, jak vytvořit vlastní <xref:System.Windows.Input.Route
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Input.RoutedCommand>  
- [Tvorba příkazů – přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+ [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)

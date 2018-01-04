@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b4422b165f06b60dedff95fc3de58e5627db7fac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1c4d777d601866ca9600a7e2b88aca8854f32a17
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugdebugevent-interface"></a>Rozhraní ICorDebugDebugEvent
 Definuje základní rozhraní, ze kterého jsou všechny `ICorDebug` odvozena ladění událostí.  
@@ -26,8 +27,8 @@ Definuje základní rozhraní, ze kterého jsou všechny `ICorDebug` odvozena la
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Metoda GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md)|Určuje, jaký druh událostí to `ICorDebugDebugEvent` objekt představuje.|  
-|[Getthread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-getthread-method.md)|Získá vláken, na kterém došlo k události.|  
+|[GetEventKind – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md)|Určuje, jaký druh událostí to `ICorDebugDebugEvent` objekt představuje.|  
+|[GetThread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-getthread-method.md)|Získá vláken, na kterém došlo k události.|  
   
 ## <a name="remarks"></a>Poznámky  
  Následující rozhraní jsou odvozeny od `ICorDebugDebugEvent` rozhraní:  
@@ -49,5 +50,5 @@ Definuje základní rozhraní, ze kterého jsou všechny `ICorDebug` odvozena la
  **Verze rozhraní .NET framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

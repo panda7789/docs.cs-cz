@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7dfcd092cb7b21e31ec1098df5e9534cd27cfc9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b962452b6127d259733418969f1fb7b5036b1e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]implementuje počet protokoly webových služeb. Mnoho z těchto protokolů obsahuje mnoho možností a bodů rozšiřitelnosti ponechány na uvážení implementátor. Toto téma obsahuje seznam webové protokoly služeb [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje. Další témata v této části poskytují podrobné informace o nasazení pro každý protokol podporována.  
@@ -75,7 +76,7 @@ ms.lasthandoff: 12/02/2017
 |WS zabezpečené konverzace|[Webové služby zabezpečené konverzace jazyk](http://go.microsoft.com/fwlink/?LinkId=95317)|  
 |WS-Trust 1.4|[Webové služby důvěřovat jazyk](http://go.microsoft.com/fwlink/?LinkId=169514)|  
 |WS-SecurityPolicy 2005/07|[Webové služby zabezpečené konverzace jazyk](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Ve znění chybující odeslána OASIS WS-SX technický výbor.<br /><br /> [ws-sx zpráv](http://go.microsoft.com/fwlink/?LinkId=96700)|  
-|WS-ReliableMessaging 1.1|[Spolehlivé zasílání zpráv protokolu verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
+|WS-ReliableMessaging 1.1|[Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
   
  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>podporuje specifikace v následující tabulce.  
   
@@ -111,12 +112,12 @@ ms.lasthandoff: 12/02/2017
 -   [Základní zabezpečení profilu 1.0 pracovní konceptu](http://go.microsoft.com/fwlink/?LinkId=96711)  
   
 ## <a name="see-also"></a>Viz také  
- [Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+ [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
  [Protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)  
- [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
+ [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
  [WSDL a zásady](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)  
  [Protokoly zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md)  
- [Spolehlivé zasílání zpráv protokol verze 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)  
- [Spolehlivé zasílání zpráv protokolu verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)  
+ [Protokol spolehlivého zasílání zpráv verze 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)  
+ [Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)  
  [Protokoly transakcí](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)  
  [Protokol kontextové výměny](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)

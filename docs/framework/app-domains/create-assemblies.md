@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f5aa4b8fa5422ae126a6027c5fe3358925873782
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2168cbcd19437c1e275da7a01aa0c75ab47600eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-assemblies"></a>Vytváření sestavení
 Můžete vytvořit jeden soubor nebo vícesouborového sestavení pomocí rozhraní IDE, jako třeba [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)], nebo kompilátory a nástroje poskytované subsystémem [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. Nejjednodušší sestavení je jeden soubor, který má jednoduchý název a je načteno do domény jednu aplikaci. Toto sestavení nemůže být odkazován ostatních sestavení mimo adresář aplikace a není podstoupili kontrolu verze. Pro odinstalaci aplikace skládá z sestavení, jednoduše odstranit adresář, ve kterém se nachází. Sestavení se tyto funkce pro celá řada vývojářů je všechno, co je potřeba k nasazení aplikace.  
@@ -56,7 +57,7 @@ Můžete vytvořit jeden soubor nebo vícesouborového sestavení pomocí rozhra
 ## <a name="see-also"></a>Viz také  
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)  
- [Postupy: vytvoření jednoho souboru sestavení](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
- [Postupy: vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
+ [Postupy: Vytváření sestavení s jediným souborem](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
+ [Postupy: Vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Vícesouborová sestavení](../../../docs/framework/app-domains/multifile-assemblies.md)

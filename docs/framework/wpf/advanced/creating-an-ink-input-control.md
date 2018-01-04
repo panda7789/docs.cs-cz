@@ -25,11 +25,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cfc6553fe9dd176d2aa557df906141c13a5f425
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7054728e8bf54a7cf7b71ea1224cab6a352176d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-an-ink-input-control"></a>Vytvoření ovládacího prvku vstupu inkoustu
 Můžete vytvořit vlastní ovládací prvek, dynamicky a staticky vykreslí rukopisu. To znamená vykreslit element ink jako uživatel nevykresluje tah, způsobuje rukopisu se objeví "toku" z pera a zobrazí rukopisu po jeho se přidá do ovládacího prvku, buď pomocí pera, vložené ze schránky, nebo načíst ze souboru. Chcete-li dynamicky vykreslit rukopisu, musíte použít vlastní ovládací prvek <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. K vykreslení staticky rukopisu, je nutné přepsat metodu pera událostí (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, a <xref:System.Windows.UIElement.OnStylusUp%2A>) ke shromažďování <xref:System.Windows.Input.StylusPoint> data, vytvořte tahy a přidat je do <xref:System.Windows.Controls.InkPresenter> (která vykreslí element ink na ovládací prvek).  
@@ -109,5 +110,5 @@ Můžete vytvořit vlastní ovládací prvek, dynamicky a staticky vykreslí ruk
  Můžete vytvořit ovládací prvek, který shromažďuje a vykreslí element ink přepsáním metody pera události. Vytvořením vlastního ovládacího prvku odvozování vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a jejich vložení na do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, můžete implementovat prakticky libovolný chování vůbec digitální barvou. Máte přístup k <xref:System.Windows.Input.StylusPoint> data, jako je generován, budete moci přizpůsobit <xref:System.Windows.Input.Stylus> vstup a vykreslit ho na obrazovce podle potřeby pro vaši aplikaci. Vzhledem k tomu, že máte takový nízké úrovně přístup k <xref:System.Windows.Input.StylusPoint> data, můžete implementovat rozpoznávání rukopisu a vykreslit ho s optimální výkon pro vaši aplikaci.  
   
 ## <a name="see-also"></a>Viz také  
- [Pokročilé rukopisu zpracování](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
+ [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
  [Přístup k informacím a manipulace s vstup pomocí pera](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

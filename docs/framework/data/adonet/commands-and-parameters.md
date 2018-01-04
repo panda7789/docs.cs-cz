@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e1bfd3e88df4bd90cbcebfa645c2a50159f836db
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f28f4ed728ee429a691a0a19b3fc143ac0e832ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="commands-and-parameters"></a>Příkazy a parametry
 Po navázání připojení ke zdroji dat, můžete provést příkazy a vrácení výsledků z zdroje dat pomocí <xref:System.Data.Common.DbCommand> objektu. Můžete vytvořit příkaz pomocí některé z konstruktorů příkaz zprostředkovatel dat .NET Framework, které pracujete. Konstruktory může trvat volitelné argumenty, jako je například příkazu SQL k provedení ve zdroji dat <xref:System.Data.Common.DbConnection> objekt, nebo <xref:System.Data.Common.DbTransaction> objektu. Tyto objekty můžete také nakonfigurovat jako vlastnosti příkazu. Můžete také vytvořit příkaz pro konkrétní připojení pomocí <xref:System.Data.Common.DbConnection.CreateCommand%2A> metodu `DbConnection` objektu. Příkaz jazyka SQL, který je vykonáván příkaz můžete nakonfigurovat pomocí <xref:System.Data.Common.DbCommand.CommandText%2A> vlastnost.  
@@ -25,7 +26,7 @@ Po navázání připojení ke zdroji dat, můžete provést příkazy a vrácen�
  Má každý zprostředkovatel dat .NET Framework je součástí rozhraní .NET Framework `Command` objektu. Zahrnuje zprostředkovatel dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro ODBC <xref:System.Data.Odbc.OdbcCommand> objektu a rozhraní .NET Framework Zprostředkovatel dat pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleCommand> objektu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Spouštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)  
+ [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)  
  Popisuje technologie ADO.NET `Command` objekt a způsobu jeho použití k provedení dotazy a příkazy pro datový zdroj.  
   
  [Konfigurace parametrů a datové typy parametrů](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
@@ -34,14 +35,14 @@ Po navázání připojení ke zdroji dat, můžete provést příkazy a vrácen�
  [Generování příkazů s CommandBuilders](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md)  
  Popisuje, jak používat příkaz počítačů k automatickému generování příkazy INSERT, UPDATE a DELETE pro `DataAdapter` má vyberte příkaz jedné tabulky.  
   
- [Získání jednu hodnotu z databáze](../../../../docs/framework/data/adonet/obtaining-a-single-value-from-a-database.md)  
+ [Získání jedné hodnoty z databáze](../../../../docs/framework/data/adonet/obtaining-a-single-value-from-a-database.md)  
  Popisuje postup použití `ExecuteScalar` metodu `Command` objekt, který chcete vrátit jednu hodnotu z dotazu databáze.  
   
- [Příkazy ke změně dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
  Popisuje postup použití zprostředkovatele dat pro spuštění uložené procedury nebo data (příkazy DDL definition language).  
   
 ## <a name="see-also"></a>Viz také  
- [DataAdapters a DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Datové sady, DataTables a DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -17,21 +17,22 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7da9f53b291fb5a8f89c5e9ac15ffc082c976cdb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f80b73952dc8949aac7b9106ab42388ddf2b4d40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="canvas-how-to-topics"></a>Postupy: Témata plátna
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Canvas> element na pozici absolutně podřízené elementy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zabalení ohraničení okolo obsah na plátno](../../../../docs/framework/wpf/controls/how-to-wrap-a-border-around-the-content-of-a-canvas.md)  
- [Získání nebo nastavení plátno vlastnosti umístění](../../../../docs/framework/wpf/controls/how-to-get-or-set-canvas-positioning-properties.md)  
- [Vytvořit a použít na plátno](../../../../docs/framework/wpf/controls/how-to-create-and-use-a-canvas.md)  
- [Použití připojené vlastnosti plátno pozice podřízené elementy](../../../../docs/framework/wpf/controls/how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md)  
- [Změna velikosti na plátno pomocí jezdec](../../../../docs/framework/wpf/controls/how-to-resize-a-canvas-by-using-a-thumb.md)  
+ [Zalomení ohraničení kolem obsahu plátna](../../../../docs/framework/wpf/controls/how-to-wrap-a-border-around-the-content-of-a-canvas.md)  
+ [Načtení nebo nastavení vlastností umístění plátna](../../../../docs/framework/wpf/controls/how-to-get-or-set-canvas-positioning-properties.md)  
+ [Vytvoření a použití plátna](../../../../docs/framework/wpf/controls/how-to-create-and-use-a-canvas.md)  
+ [Umístění podřízených elementů pomocí vlastností přidružených k plátnu](../../../../docs/framework/wpf/controls/how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md)  
+ [Změna velikosti plátna použitím jezdce](../../../../docs/framework/wpf/controls/how-to-resize-a-canvas-by-using-a-thumb.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -51,6 +52,6 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
 ## <a name="related-sections"></a>Související oddíly  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [Návod: Můj první grafický subsystém WPF aplikace pracovní plochy](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [Přehled ScrollViewer](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

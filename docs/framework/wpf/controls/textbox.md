@@ -17,18 +17,19 @@ caps.latest.revision: "74"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41dd8700f6e6ad3ecf7343e9b1804fe5bba8e0b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 59df0c1f3ac82f4e353fe185319f5d4c00a29ff6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox"></a>TextBox
 <xref:System.Windows.Controls.TextBox> Řízení poskytuje podporu pro zadávání textu basic v aplikacích WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [TextBox – přehled](../../../../docs/framework/wpf/controls/textbox-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.TextBox>  
@@ -41,4 +42,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Ukázka galerie ovládacích prvků grafického subsystému WPF](http://go.microsoft.com/fwlink/?LinkID=160053)  
- [Textové pole styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)
+ [TextBox – styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)

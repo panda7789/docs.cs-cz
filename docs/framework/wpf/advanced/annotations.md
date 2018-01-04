@@ -17,18 +17,19 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ad5825c63672f0cadd30b7a57d81427407e5097e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 67f0a1f4a032a5175406dedcf282ed695f58e51e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="annotations"></a>Poznámky
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]obsahuje zobrazení ovládacích prvků, které podporují obsah dokumentu zadávání poznámek k dokumentu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled poznámky](../../../../docs/framework/wpf/advanced/annotations-overview.md)  
-  [Schéma poznámky](../../../../docs/framework/wpf/advanced/annotations-schema.md)  
+ [Přehled poznámek](../../../../docs/framework/wpf/advanced/annotations-overview.md)  
+  [Schéma poznámek](../../../../docs/framework/wpf/advanced/annotations-schema.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Annotations.Annotation>  
@@ -36,5 +37,5 @@ ms.lasthandoff: 10/22/2017
   <xref:System.Windows.Controls.DocumentViewer>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
-  [Přehled toku dokumentu](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+  [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 968727dbdc8897ebe3f88af2f7b7c28c481d8783
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 20bee2f0d6821c8abec08231e9ab0b8fdb211854
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-get-interface-and-protocol-information"></a>Postupy: získání rozhraní a informace o protokolu
 Tato ukázka ukazuje, jak číst statistik protokolu TCP pro síťové rozhraní.  

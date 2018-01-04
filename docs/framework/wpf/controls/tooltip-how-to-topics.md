@@ -17,16 +17,17 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cad3fd6a1bdecf9d6187f3592fe4771bbb0b0e98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 214fdff11b5b64c78b2719e66813b5210884e318
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tooltip-how-to-topics"></a>ToolTip – postupy
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Popisek pozice](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)  
-  [Použijte vlastnost BetweenShowDelay](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)  
+ [Umístění prvku ToolTip](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)  
+  [Používání vlastnosti BetweenShowDelay](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ToolTip>  
@@ -36,6 +37,6 @@ ms.lasthandoff: 10/22/2017
  <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled místní nabídka](../../../../docs/framework/wpf/controls/popup-overview.md)  
+ [Přehled prvku Popup](../../../../docs/framework/wpf/controls/popup-overview.md)  
   
- [Postupy: témata](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)

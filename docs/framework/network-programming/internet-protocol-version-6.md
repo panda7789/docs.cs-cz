@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e8ac63cae9d70f0249533848fa472da77f04b807
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 333fbb452cb1f24b5e62d1106eff4560b26267b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-protocol-version-6"></a>Protokol IP verze 6
 Internet Protocol version 6 (IPv6) je nová sada standardních protokolů pro síťovou vrstvou sítě Internet. Protokol IPv6 je proto, aby vyřešila mnohé z problémů aktuální verze sady Internet Protocol (známé jako IPv4) s ohledem na adrese spotřebovávat, zabezpečení, automatická konfigurace, rozšíření a tak dále. IPv6 rozšíří možnosti Internetu povolit nové typy aplikací, včetně peer-to-peer a mobilních aplikací. Tady jsou hlavní problémy aktuální protokolu IPv4:  
@@ -68,5 +69,5 @@ Internet Protocol version 6 (IPv6) je nová sada standardních protokolů pro s�
   
 ## <a name="see-also"></a>Viz také  
  [Ukázka Sockets IPv6](http://go.microsoft.com/fwlink/?LinkID=179568)  
- [Síťové programování ukázky](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Sokety](../../../docs/framework/network-programming/sockets.md)

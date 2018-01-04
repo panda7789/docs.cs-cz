@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e83a6e4ac64d4b47400a3cbb495169ae46298980
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fe8851e0b6e521a293612c140ab8d23e579a6b28
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorpublishappdomain-interface"></a>ICorPublishAppDomain – rozhraní
 Představuje a poskytuje informace o aplikační doméně.  
@@ -32,7 +33,7 @@ Představuje a poskytuje informace o aplikační doméně.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getid – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|Získá jedinečný identifikátor pro tento `ICorPublishAppDomain`.|  
+|[GetID – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|Získá jedinečný identifikátor pro tento `ICorPublishAppDomain`.|  
 |[GetName – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getname-method.md)|Získá název domény aplikace odkazuje toto `ICorPublishAppDomain`.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -45,5 +46,5 @@ Představuje a poskytuje informace o aplikační doméně.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Corpubpublish – třída typu Coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [CorpubPublish – třída typu coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: de93298062c7f99fcca3688efbd0b546d3c04c0e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6bc9a754325f7d01ee36622a23efde1cbc7c4812
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="distributed-transactions"></a>Distribuované transakce
 Transakce je sada souvisejících úloh, které buď (Potvrdit) úspěšná nebo neúspěšná (přerušení) jako jednotku, mimo jiné. A *distribuované transakce* je transakci, která ovlivňuje několik prostředků. Pro distribuované transakce potvrzení musí všechny účastníky zaručit, že všechny změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud jeden účastník neprovede tento záruka, selže celá transakce a všechny změny dat v rámci oboru transakce jsou vráceny zpět.  
@@ -59,5 +60,5 @@ Transakce je sada souvisejících úloh, které buď (Potvrdit) úspěšná nebo
   
 ## <a name="see-also"></a>Viz také  
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [System.Transactions – integrace s SQL serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
+ [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

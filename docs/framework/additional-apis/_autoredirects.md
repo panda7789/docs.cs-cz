@@ -12,11 +12,12 @@ ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9e5bf480cb8f0303604c3c5d17e837d8d7eea149
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 56bad5b9d9a1de0001113b8c4cf8845d21582f17
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="httpwebrequestautoredirects-field"></a>HttpWebRequest. \_AutoRedirects pole
 

@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: db507bf4f90d875960408857c7e6b1e3aa145730
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ebbe1addf47bc76903e362cfb353ade359a1c8ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loading-a-dataset-from-xml"></a>Načítání datové sady z XML
 Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML nebo dokumentu. Kromě toho s rozhraním .NET Framework máte flexibilitu přes načtení informací ze souboru XML a jak schéma nebo relační struktura <xref:System.Data.DataSet> je vytvořena.  
@@ -31,7 +32,7 @@ Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového p
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**Automaticky**|Toto nastavení je výchozí. Prozkoumá XML a vybere nejvíc příslušnou možnost v následujícím pořadí:<br /><br /> – Pokud XML je prvek formátu DiffGram **formát DiffGram** se používá.<br />-Pokud <xref:System.Data.DataSet> obsahuje schéma nebo XML obsahuje vložené schéma, **ReadSchema** se používá.<br />-Pokud <xref:System.Data.DataSet> neobsahuje schéma a soubor XML neobsahuje vložené schéma, **InferSchema** se používá.<br /><br /> Pokud znáte formát XML, který je čten, pro nejlepší výkon doporučujeme, abyste nastavili explicitního **XmlReadMode**, spíš než přijmout **automaticky** výchozí.|  
+|**Auto**|Toto nastavení je výchozí. Prozkoumá XML a vybere nejvíc příslušnou možnost v následujícím pořadí:<br /><br /> – Pokud XML je prvek formátu DiffGram **formát DiffGram** se používá.<br />-Pokud <xref:System.Data.DataSet> obsahuje schéma nebo XML obsahuje vložené schéma, **ReadSchema** se používá.<br />-Pokud <xref:System.Data.DataSet> neobsahuje schéma a soubor XML neobsahuje vložené schéma, **InferSchema** se používá.<br /><br /> Pokud znáte formát XML, který je čten, pro nejlepší výkon doporučujeme, abyste nastavili explicitního **XmlReadMode**, spíš než přijmout **automaticky** výchozí.|  
 |**ReadSchema**|Načte všechny vložené schéma a načte dat a schématu.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, přidat nové tabulky z vloženého schématu existující schéma v <xref:System.Data.DataSet>. Pokud žádné tabulky v vloženého schématu již existuje v <xref:System.Data.DataSet>, je vyvolána výjimka. Nebudete moct změnit schéma existující tabulky pomocí **XmlReadMode.ReadSchema**.<br /><br /> Pokud <xref:System.Data.DataSet> neobsahuje schématu a neexistuje žádný vložené schéma, nenačtou žádná data.<br /><br /> Vložené schéma lze definovat pomocí schématu XML definition language (XSD) schématu. Podrobnosti o zápis vloženého schématu jako schématu XML najdete v tématu [odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).|  
 |**IgnoreSchema**|Ignoruje všechny vložené schéma a načte data do existující <xref:System.Data.DataSet> schématu. Všechna data, která neodpovídá existující schéma se zahodí. Pokud neexistuje žádné schéma v <xref:System.Data.DataSet>, je načtena žádná data.<br /><br /> Pokud jsou data formát DiffGram **IgnoreSchema** má stejné funkce jako **formát DiffGram** *.*|  
 |**InferSchema**|Ignoruje všechny vložené schéma a odvodí, že schéma za strukturu dat XML a pak načte data.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, je aktuální schéma rozšířeno přidáním sloupce do existující tabulky. Navíc tabulky se nepřidají, pokud nejsou existující tabulky. Pokud odvozené tabulky s jiný obor názvů již existuje, nebo pokud žádné odvozené sloupce v konfliktu s existující sloupce, je vyvolána výjimka.<br /><br /> Podrobnosti o **ReadXmlSchema** odvodí schématu z dokumentu XML, najdete na stránce [odvození datovou sadu relační struktura z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md).|  
@@ -127,10 +128,10 @@ foreach (DataTable dataTable in dataSet.Tables)
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataSet.Merge%2A?displayProperty=nameWithType>  
- [Pomocí XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md)  
- [Odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- [Odvození relační strukturu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
- [Načítání informací o schématu sady dat z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
- [Datové sady, DataTables a DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
+ [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

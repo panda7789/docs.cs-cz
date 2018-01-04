@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 80edbd452be52e77a464ab29347dbe5d4067d0e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6707a434f64838467033966c9093e1e415b1fb31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Pokyny pro návrh ovládacích prvků s podporou stylů
 Tento dokument shrnuje sadu osvědčené postupy vzít v úvahu při navrhování řídit, která chcete být snadno stylable a templatable. Jsme byla do této skupiny prostřednictvím spoustu omyl a osvědčené postupy při práci s styly ovládacího prvku motivu pro integrované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sadou ovládacích prvků. Jsme zjistili, že úspěšné stylů je tolik funkcí dobře navrženou objektový model jako je styl sám sebe. Předpokládanou cílovou skupinou pro tento dokument je ovládací prvek autora, ne Autor styl.  
@@ -129,5 +130,5 @@ Tento dokument shrnuje sadu osvědčené postupy vzít v úvahu při navrhován�
 -   **Styly motivů nemusíte mít konzistentní "rozložení" sémantiku přes všechny motivy**. Například výchozí styl nemusí zaručit, že bude ovládacího prvku zabírají stejnou úroveň velikost ve všech motivy nebo zaručit, že ovládacího prvku budou mít stejné obsahu okraje / odsazení mezi všechny motivů.  
   
 ## <a name="see-also"></a>Viz také  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)

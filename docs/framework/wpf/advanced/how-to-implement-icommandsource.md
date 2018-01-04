@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bdff5ebeb51daff4e8848e9a7c8282c2eee6f208
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d82a211f59fbdecdc932b7e57b242274e91cd5b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-icommandsource"></a>Postupy: Implementace rozhraní ICommandSource
 Tento příklad ukazuje, jak vytvořit zdroj příkaz implementací <xref:System.Windows.Input.ICommandSource>.  Příkaz zdroj je objekt, který umí vyvolání příkazu.  <xref:System.Windows.Input.ICommandSource> Rozhraní zveřejňuje tři členy: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, a <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A>je příkaz, který bude vyvolán. <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> Je uživatelský datový typ, který je předán ze zdroje příkaz metodu, která zpracovává příkaz. <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> Je objekt, který se spouští na příkaz.  
@@ -71,4 +72,4 @@ Tento příklad ukazuje, jak vytvořit zdroj příkaz implementací <xref:System
  <xref:System.Windows.Input.ICommandSource>  
  <xref:System.Windows.Input.ICommand>  
  <xref:System.Windows.Input.RoutedCommand>  
- [Tvorba příkazů – přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+ [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)

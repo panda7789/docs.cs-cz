@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c520a8a06a593d8937ca840602ba5bcc7b2d44b4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6c5d359e05e04a98e0c5855ba4d78e8e63c1e6a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltbehaviorextensionsgt"></a>&lt;behaviorExtensions&gt;
 Chování rozšíření zajistit, aby uživatel k vytváření prvků uživatelem definované chování. Tyto prvky můžete použít spolu s standardní elementy chování Windows Communication Foundation (WCF). `behaviorExtensions` Oddíl definuje element tak, že můžete použít v konfiguraci. Tady je příklad typické chování rozšíření.  
@@ -58,4 +59,4 @@ Chování rozšíření zajistit, aby uživatel k vytváření prvků uživatele
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>  
- [Konfigurace a rozšíření modulu Runtime s chováním](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+ [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

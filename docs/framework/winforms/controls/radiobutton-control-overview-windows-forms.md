@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ac0a04c506919ef807a3f8c5ed5aa75ee998f64a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 67befd973dec38628f97a0d3153c399d48c18305
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="radiobutton-control-overview-windows-forms"></a>RadioButton – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.RadioButton> ovládacích prvků k dispozici dvě nebo více vzájemně se vylučujících voleb pro uživatele. A přepínací tlačítka a zaškrtávací políčka mohou být zobrazeny, podobně jako funkci, je důležitý rozdíl: když uživatel vybere přepínače, přepínací tlačítka ve stejné skupině není k dispozici také. Naopak můžete vybrat libovolný počet zaškrtávací políčka. Definování skupina přepínacích tlačítek informuje uživatele, "Zde je sada parametrů, ze kterých můžete vybrat pouze jeden."  
@@ -35,10 +36,10 @@ Windows Forms <xref:System.Windows.Forms.RadioButton> ovládacích prvků k disp
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.RadioButton>  
- [Přehled ovládacího prvku panel](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku Panel](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  
  [Přehled ovládacího prvku GroupBox](../../../../docs/framework/winforms/controls/groupbox-control-overview-windows-forms.md)  
  [Přehled ovládacího prvku CheckBox](../../../../docs/framework/winforms/controls/checkbox-control-overview-windows-forms.md)  
- [Postupy: vytváření přístupových klíčů pro ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md)  
- [Postupy: nastavení textu zobrazovaného prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
- [Postupy: seskupení ovládacích prvků Windows Forms RadioButton do funkce jako sada](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)  
- [RadioButton – ovládací prvek](../../../../docs/framework/winforms/controls/radiobutton-control-windows-forms.md)
+ [Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md)  
+ [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
+ [Postupy: Seskupení ovládacích prvků Windows Forms RadioButton do funkce v podobě sady](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)  
+ [Ovládací prvek RadioButton](../../../../docs/framework/winforms/controls/radiobutton-control-windows-forms.md)

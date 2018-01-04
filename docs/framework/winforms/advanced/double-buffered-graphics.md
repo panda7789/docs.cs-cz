@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 89413e0958366dd39c62bfaedb7e36471123bc22
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e7e4445b0a729eb1f826d17340db02f0c56149b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="double-buffered-graphics"></a>Grafiky s dvojitou vyrovnávací pamětí
 Blikání problém je běžný, při programování grafiky. Grafické operace, které vyžadují více operací komplexní Malování může způsobit vykreslené obrázky, které chcete blikat nebo mají v opačném případě nemůže být přijata vzhled. Chcete-li tyto problémy vyřešit, rozhraní .NET Framework poskytuje přístup k dvojité ukládání do vyrovnávací paměti.  
@@ -46,7 +47,7 @@ Blikání problém je běžný, při programování grafiky. Grafické operace, 
  <xref:System.Drawing.BufferedGraphics>  
  <xref:System.Drawing.BufferedGraphicsContext>  
  <xref:System.Drawing.BufferedGraphicsManager>  
- [Postupy: ruční zobrazení grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)  
- [Postupy: omezení blikání grafiky pomocí dvojité vyrovnávací paměti pro formuláře a ovládací prvky](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)  
- [Postupy: ruční správa grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)  
- [Grafika a kreslení v systému Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+ [Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)  
+ [Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)  
+ [Postupy: Ruční správa grafiky uložené do vyrovnávací paměti](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)  
+ [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

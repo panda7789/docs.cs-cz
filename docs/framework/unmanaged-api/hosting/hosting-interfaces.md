@@ -17,11 +17,12 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a3cad92c204fa10f72d7a9a61460f1234206cb39
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 46208d6db716f7e1e7a443d958c059b22f74c46f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-interfaces"></a>Rozhraní hostování
 Tato část popisuje rozhraní, která nespravované hostitelů můžete integrovat common language runtime (CLR) do svých aplikací.  
@@ -33,21 +34,21 @@ Tato část popisuje rozhraní, která nespravované hostitelů můžete integro
  [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Hostingu rozhraní mají přednost před rozhraní .NET Framework 2.0.
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zastaralé rozhraní a třídy typu coclass hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
+ [Zastaralá rozhraní a třídy typu Coclass pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
  Popisuje rozhraní hostování byla zavedená v rozhraní .NET Framework verze 1.0 a 1.1.  
   
- [Rozhraní hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
+ [Rozhraní pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
  Popisuje rozhraní hostování byla zavedená v rozhraní .NET Framework verze 2.0.  
   
- [Rozhraní hostování CLR přidaná v rozhraní .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
+ [Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
  Popisuje rozhraní hostování počínaje [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Třídy typu coclass hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
+ [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
   
- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
   
- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
+ [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
   
  [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
   

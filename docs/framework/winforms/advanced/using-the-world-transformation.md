@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b5b2a8de0644e71a5e6ae1a5ca796f580f0c4f23
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e8599f2e154e05fd2d43b094041989c4a3a5dbc0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-the-world-transformation"></a>Použití světové transformace
 Světové transformace je vlastnost <xref:System.Drawing.Graphics> třídy. Čísla, které určují Světové transformace jsou uložené v <xref:System.Drawing.Drawing2D.Matrix> objekt, který představuje matici 3 x 3. <xref:System.Drawing.Drawing2D.Matrix> a <xref:System.Drawing.Graphics> třídy mají několik metod pro nastavení čísla v transformační matice world.  
@@ -54,4 +55,4 @@ Světové transformace je vlastnost <xref:System.Drawing.Graphics> třídy. Čí
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Drawing2D.Matrix>  
  [Systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
- [Použití transformací ve spravovaném GDI +](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)
+ [Použití transformací ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

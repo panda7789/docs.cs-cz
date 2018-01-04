@@ -13,11 +13,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 184c4a5c31969ee060f72d937ab02af733340ca4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: aa762df1dbfe92102f8cd719613099b23986ed0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discovery-with-scopes-sample"></a>Ukázka zjišťování pomocí oborů
 Tento příklad ukazuje způsob použití obory zařadit do kategorií zjistitelný koncových bodů a jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> pro asynchronní vyhledávání pro koncové body. Tato ukázka na službu, ukazuje, jak přizpůsobit přidáním koncový bod zjišťování chování a jej použijete k přidání oboru ke koncovému bodu, stejně jako řízení možnosti rozpoznání pro koncový bod zjišťování pro každý koncový bod. Na straně klienta vzorku prochází přes jak klienti mohou vytvářet <xref:System.ServiceModel.Discovery.DiscoveryClient> a optimalizovat vyhledávání parametry, které zahrnují obory přidáním oborů, které chcete <xref:System.ServiceModel.Discovery.FindCriteria>. Tento příklad také ukazuje, jak klienti může omezit odpovědi přidáním kritéria ukončení.  

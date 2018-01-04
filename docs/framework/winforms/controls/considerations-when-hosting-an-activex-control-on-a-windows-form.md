@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3ec828ca0b2bd8231d0baca72bf97bef566f2651
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e35679245d93a98b76bff31d97c6111146348a00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
 I když Windows Forms jsou optimalizovány na hostitele Windows Forms – ovládací prvky, můžete dál používat ovládací prvky ActiveX. Při plánování aplikace, která používá ovládací prvky ActiveX, mít na paměti následující aspekty:  
@@ -39,8 +40,8 @@ I když Windows Forms jsou optimalizovány na hostitele Windows Forms – ovlád
     >  Pokud název člena ovládacího prvku ActiveX odpovídá názvu definované v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], pak bude import ovládacích prvků ActiveX předpony název člena s **Ctl** při vytvoří <xref:System.Windows.Forms.AxHost> odvozené třídy. Například, pokud má vlastní ovládací prvek ActiveX člen s názvem **rozložení**, bude přejmenován **CtlLayout** ve třídě odvozené AxHost protože **rozložení** událost je definována v rámci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: Přidání ovládacích prvků ActiveX do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
+ [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
  [Zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security.md)  
  [Ovládací prvky a programovatelný objekty porovnání v různých jazycích a knihovny](http://msdn.microsoft.com/en-us/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
- [Umístění ovládacích prvků ve formulářích Windows](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
- [Ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/index.md)
+ [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
+ [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)

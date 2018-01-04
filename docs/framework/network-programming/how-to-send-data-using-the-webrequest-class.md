@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 2102fce150f512a49093eb2b214258ac35e276e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b4cc524b3b3c1dbe42f3fe3926ed44c1e917e871
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-send-data-using-the-webrequest-class"></a>Postupy: odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky, které používají k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webové stránce.  
@@ -265,8 +266,8 @@ End Namespace
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření žádostí o Internetu](../../../docs/framework/network-programming/creating-internet-requests.md)  
- [Pomocí datových proudů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
- [Přístup k Internetu prostřednictvím proxy serveru](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
- [Požadavek na Data](../../../docs/framework/network-programming/requesting-data.md)  
- [Postupy: použití třídy WebRequest Data žádosti](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+ [Vytváření internetových žádostí](../../../docs/framework/network-programming/creating-internet-requests.md)  
+ [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
+ [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)  
+ [Postupy:Vyžádání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)

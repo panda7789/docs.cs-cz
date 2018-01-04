@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7bd381706c9ceb7c1c8f80002cee3b857b695372
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 81803df493d53b94a57720755f9bc351404b7d49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reference"></a>Odkaz
 Tato část obsahuje referenční informace pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vývojáři.  
@@ -28,10 +29,10 @@ Tato část obsahuje referenční informace pro [!INCLUDE[vbtecdlinq](../../../.
  [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
  Popisuje, jak common language runtime (CLR) konstrukce mít odpovídající výrazy v SQL pouze tehdy, pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] explicitně poskytl převod v rámci stroje překlad.  
   
- [Na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+ [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  Popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přístup na základě atributů k mapování [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model pro databázi systému SQL Server.  
   
- [Generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [Generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
  Popisuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] získá metainformace z databáze a poté generuje soubory kódu.  
   
  [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
@@ -40,14 +41,14 @@ Tato část obsahuje referenční informace pro [!INCLUDE[vbtecdlinq](../../../.
  [Nejčastější dotazy](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)  
  Poskytuje odpovědi na časté otázky ohledně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
- [SQL Server Compact a technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/sql-server-compact-and-linq-to-sql.md)  
+ [SQL Server Compact a LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/sql-server-compact-and-linq-to-sql.md)  
  Popisuje, jak [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] se liší od [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace.  
   
- [Operátor posunutí standardní dotazu](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)  
+ [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)  
  Popisuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překládá příkazy SQL standardní operátory dotazu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)  
  Poskytuje portál pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] témata.  
   
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  

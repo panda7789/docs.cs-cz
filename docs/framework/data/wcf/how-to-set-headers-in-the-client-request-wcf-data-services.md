@@ -17,11 +17,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a2eb85c2adacbe22defe821398168a3f20378acd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b4e923966e3c2a84ad032e546733f00c7672536a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-headers-in-the-client-request-wcf-data-services"></a>Postupy: nastavení hlavičky v požadavku klienta (služby WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny pro přístup ke službě data, která podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)], klientské knihovny automaticky nastaví požadované hlavičky HTTP v žádosti o zprávy odeslané do služby data. Klientská knihovna však neví nastavit hlavičky zpráv, které jsou potřeba v některých případech, například když službu data vyžaduje ověřování založené na deklaracích nebo soubory cookie. Další informace najdete v tématu [zabezpečení služby WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md#clientAuthentication). V těchto případech musíte ručně nastavit hlavičky zpráv ve zprávě požadavku, před odesláním. V příkladu v tomto tématu ukazuje způsob zpracování <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> událost, která má-li přidat nový hlavičku do zprávu požadavku, před odesláním do služby data.  
@@ -44,5 +45,5 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
  [!code-vb[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#onsendingrequest)]  
   
 ## <a name="see-also"></a>Viz také  
- [Zabezpečení součásti WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
+ [Zabezpečení datových služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
  [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

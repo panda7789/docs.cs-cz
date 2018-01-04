@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 19116aba3049dce6612ca1a7170030f7ced6705e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 81506cfb0c08bbbd99d76dc76010fdb933623e0d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what39s-new-in-windows-identity-foundation-45"></a>Jaký & č. 39; s ve Windows Identity Foundation 4.5
 První verze technologie Windows Identity Foundation (WIF) byla uvedena na trh jako samostatný produkt ke stažení a je známa pod označením WIF 3.5, protože byla uvedena ve stejném období jako technologie .NET 3.5 SP1. Počínaje verzí .NET 4.5 je technologie WIF součástí rozhraní .NET Framework. S přímo k dispozici v rámci třídy WIF umožňuje mnohem hlubší integrace založené na deklaracích identity v rozhraní .NET, což usnadňuje používat deklarace identity. Aplikace napsané pro WIF 3.5 bude nutné upravit, aby bylo možné využívat výhod nového modelu; informace najdete v tématu [pokyny pro migraci aplikaci vytvořené pomocí WIF 3.5 na verzi WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md).  
@@ -66,7 +67,7 @@ První verze technologie Windows Identity Foundation (WIF) byla uvedena na trh j
      Při použití **identita a přístup pro sadu Visual Studio 2012** (najdete v části **změny prostředí Visual Studio** výše), nástroj přidá `<serviceCredentials>` element s `useIdentityConfiguration` atribut nastaven na konfigurační soubor pro vás. Také přidá odpovídající [ \<system.identityModel >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) element, který obsahuje konfigurační nastavení WIF a přidá vazbu a další nastavení, které jsou nezbytné pro externí ověřování pro vaši vybranou služby tokenů zabezpečení.  
   
 ## <a name="see-also"></a>Viz také  
- [Pokyny k migraci aplikace vyvíjené v WIF 3.5 na verzi WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)  
- [Namespace mapování mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
- [Referenční dokumentace rozhraní API WIF](../../../docs/framework/security/wif-api-reference.md)  
- [Referenci na konfigurační WIF](../../../docs/framework/security/wif-configuration-reference.md)
+ [Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)  
+ [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
+ [Referenční dokumentace k rozhraní API WIF](../../../docs/framework/security/wif-api-reference.md)  
+ [Referenční dokumentace ke konfiguraci WIF](../../../docs/framework/security/wif-configuration-reference.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "44"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a64ca2f0da2e10a3042b5f9c30baf3caa37534e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 457b7e76b16e42c71d1e2d1986d58b2708396e22
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstvu vykreslování definuje úroveň grafiky schopnost hardwaru a výkon pro zařízení, které běží [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -144,5 +145,5 @@ Hlavní okno nástroje pro diagnostiku DirectX
  <xref:System.Windows.Media.RenderOptions>  
  [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [WPF – výkonnostní sada](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)  
- [Nastavení registru vykreslování grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
- [Animace tipy a triky](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+ [Nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
+ [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

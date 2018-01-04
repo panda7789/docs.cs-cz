@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15bb435269ca67e8de67e8e768e98d5832556f02
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0826881bac88f2bfa933ae71b798186dafc55303
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
 Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce správy a diagnostických nástrojů k řešení potíží s transakční aplikace.  
@@ -131,6 +132,6 @@ Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/ind
      To také umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] trasování, jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také využívá <xref:System.Transactions> infrastruktury.  
   
 ## <a name="see-also"></a>Viz také  
- [Správa a Diagnostika](../../../../docs/framework/wcf/diagnostics/index.md)  
+ [Správa a diagnostika](../../../../docs/framework/wcf/diagnostics/index.md)  
  [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+ [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

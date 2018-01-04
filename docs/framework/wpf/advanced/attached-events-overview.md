@@ -23,11 +23,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87df4a79ec288323fff3dda5789fbbd90c0e88e9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fcfe0d97b86a27859d79685e035d8f3f765a965b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="attached-events-overview"></a>Přehled připojených událostí
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]Definuje součást jazyk a typ události volána *přidružená událost*. Koncept přidružená událost umožňuje přidat obslužnou rutinu události pro libovolný element místo na element, který ve skutečnosti definuje nebo dědí události. V takovém případě ani objekt potenciálně vyvolá událost ani cílový zpracování instance definuje nebo jinak "vlastní" události.  
@@ -102,6 +103,6 @@ ms.lasthandoff: 11/21/2017
  Ale pokud definujete vlastní přidružená událost na základě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] model založenou na přidružené události <xref:System.Windows.RoutedEvent>, můžete použít <xref:System.Windows.UIElement.RaiseEvent%2A> pro vyvolání připojené události z libovolného <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>. Vyvolání směrované události (připojený, nebo ne) vyžaduje, že deklarujete určitý element ve stromové struktuře element jako zdroj událostí; Tento zdroj se hlásí jako <xref:System.Windows.UIElement.RaiseEvent%2A> volajícího. Určení, který element hlášení jako zdroj ve stromu je vaše služba odpovědnosti  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Syntaxe jazyka XAML podrobně](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
- [XAML a vlastní třídy pro grafický subsystém WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
+ [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

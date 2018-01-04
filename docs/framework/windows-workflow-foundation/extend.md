@@ -16,18 +16,19 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e3640e69a46596d4675d7744c6e43fe9a499cb99
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0d7657c56191d8f28e71fca2fd2960bd69559ecf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-windows-workflow-foundation"></a>Rozšíření modelu Windows Workflow Foundation
 Následující část popisuje, jak rozšířit [!INCLUDE[wf](../../../includes/wf-md.md)] u vlastních aktivit a návrhářů, v prostředích opětovné hostování nástroje mimo [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přizpůsobení prostředí návrhu pracovních postupů](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)  
+ [Přizpůsobení prostředí pro návrh pracovního postupu](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)  
  Určuje, jak scénáře pro navrhování vlastních aktivit a opětovného hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly značně zjednodušené [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Vývoj a nasazení jsou teď jednodušší a flexibilnější vzhledem k tomu, že nový návrháře programovací model aktivita je založena na [!INCLUDE[avalon1](../../../includes/avalon1-md.md)].  
 
 ## <a name="see-also"></a>Viz také
- [Modelu Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/index.md)
+ [Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/index.md)

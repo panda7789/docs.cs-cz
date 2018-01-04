@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 0d1588dd6c1dacc70401c5143f53e8da1784c7e3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 980ab21355e9f9fb130a7d17453861ae1daf626c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="full-code-listings"></a>Výpis úplného kódu
 Toto téma obsahuje výpis pro aplikaci, která používá celý kód [manipulace a nečinnosti](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md) procesory.  
@@ -38,8 +39,8 @@ Toto téma obsahuje výpis pro aplikaci, která používá celý kód [manipulac
  [!code-csharp[ManipulationXNA#_Game1Class](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/game1.cs#_game1class)]  
   
 ## <a name="see-also"></a>Viz také  
- [Manipulace a nečinnosti](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
+ [Manipulace a nečinnost](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
  [Použití manipulace a nečinnosti v aplikaci XNA](../../../docs/framework/common-client-technologies/use-manipulations-and-inertia-in-an-xna-application.md)  
- [Vytvoření třídy Gamepiece](../../../docs/framework/common-client-technologies/creating-the-gamepiece-class.md)  
- [Vytvoření třídy Gamepiececollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md)  
+ [Vytvoření třídy GamePiece](../../../docs/framework/common-client-technologies/creating-the-gamepiece-class.md)  
+ [Vytvoření třídy GamePieceCollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md)  
  [Vytvoření třídy Game1](../../../docs/framework/common-client-technologies/creating-the-game1-class.md)

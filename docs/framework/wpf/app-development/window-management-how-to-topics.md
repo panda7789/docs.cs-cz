@@ -15,28 +15,29 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dd3771e0fcbf83b00f52d78a5c63793dae116e4e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7fea4c74fc837181e1b0a007fb83ddce1c4cd52a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="window-management-how-to-topics"></a>Postupy: témata okno správy
 Následující témata ukazují, jak spravovat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Automaticky velikost okna podle jeho obsahu](../../../../docs/framework/wpf/app-development/how-to-automatically-size-a-window-to-fit-its-content.md)  
-  [Získání všech oken v aplikaci](../../../../docs/framework/wpf/app-development/how-to-get-all-windows-in-an-application.md)  
-  [Získání a nastavení hlavní okno aplikace](../../../../docs/framework/wpf/app-development/how-to-get-and-set-the-main-application-window.md)  
-  [Otevřete dialogové okno](../../../../docs/framework/wpf/app-development/how-to-open-a-dialog-box.md)  
-  [Otevřete okno se zprávou](../../../../docs/framework/wpf/app-development/how-to-open-a-message-box.md)  
-  [Otevřete okno](../../../../docs/framework/wpf/app-development/how-to-open-a-window.md)  
-  [Vrácení výsledku pole dialogové okno](../../../../docs/framework/wpf/app-development/how-to-return-a-dialog-box-result.md)  
+ [Automatické nastavení velikosti okna podle jeho obsahu](../../../../docs/framework/wpf/app-development/how-to-automatically-size-a-window-to-fit-its-content.md)  
+  [Získání všech objektů Window v aplikaci](../../../../docs/framework/wpf/app-development/how-to-get-all-windows-in-an-application.md)  
+  [Získání a nastavení hlavního okna aplikace](../../../../docs/framework/wpf/app-development/how-to-get-and-set-the-main-application-window.md)  
+  [Otevření dialogového okna](../../../../docs/framework/wpf/app-development/how-to-open-a-dialog-box.md)  
+  [Otevření okna se zprávou](../../../../docs/framework/wpf/app-development/how-to-open-a-message-box.md)  
+  [Otevření okna](../../../../docs/framework/wpf/app-development/how-to-open-a-window.md)  
+  [Vrácení výsledku dialogového okna](../../../../docs/framework/wpf/app-development/how-to-return-a-dialog-box-result.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
   
- [Navigace – přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+ [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
   
  [Hostování](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)  
   

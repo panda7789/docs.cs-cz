@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c97279b553a615feda1dd3a195ad033744d82983
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a7e7187eb6ed444ba2c28aa301ce4b3b16129030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>Migrace WSE 3.0 Web Services do WCF
 Výhody migrace WSE 3.0 webových služeb pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnují lepší výkon a podporuje další přenosy, další bezpečnostní scénáře a WS-* specifikace. Webová služba, která je migrována z WSE 3.0, která [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] může mít až 200 až 400 % výkonu v přírůstcích. Další informace o přenosech nepodporuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Seznam scénáře podporované nástrojem [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Seznam specifikace, které jsou podporovány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [Průvodce interoperabilitou protokolů webových služeb](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md).  
@@ -135,5 +136,5 @@ Výhody migrace WSE 3.0 webových služeb pro [!INCLUDE[indigo1](../../../../inc
 ## <a name="see-also"></a>Viz také  
  [Základní programovací životní cyklus](../../../../docs/framework/wcf/basic-programming-lifecycle.md)  
  [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [Postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Postupy: vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+ [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [Postupy: Vytvoření SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

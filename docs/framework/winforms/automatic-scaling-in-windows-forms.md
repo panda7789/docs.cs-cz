@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4eefab1dccc295557d95485d6f38add41e634fa4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 519053576aac0f55dfbfa4c87dbed6096f45abca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 Automatické škálování umožňuje formulář a jeho ovládacích prvků, navržená tak, na jeden počítač se určité zobrazení řešení nebo systém písmo, správně zobrazený na jiný počítač s jiným zobrazením řešení nebo systém písmo. Zaručuje, formulář a jeho ovládacích prvků bude inteligentně velikosti být v souladu s nativní windows a další aplikace na počítače uživatelů i ostatní vývojáři. Podporu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro automatické škálování a vizuální styly umožňuje [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace udržovat konzistentní vzhled a chování ve srovnání s nativní aplikace systému Windows na počítači každého uživatele.
@@ -112,5 +113,5 @@ Windows Forms teď používá následující logice automaticky škálovat formu
  <xref:System.Windows.Forms.Control.Scale%2A>  
  <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>  
  <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A>  
- [Vykreslení ovládacích prvků s vizuálními styly](./controls/rendering-controls-with-visual-styles.md)  
- [Postupy: zvýšení výkonu zabráněním automatické škálování](./advanced/how-to-improve-performance-by-avoiding-automatic-scaling.md)
+ [Vykreslování ovládacích prvků s vizuálními styly](./controls/rendering-controls-with-visual-styles.md)  
+ [Postupy: Zvýšení výkonu zabráněním automatické změně měřítka](./advanced/how-to-improve-performance-by-avoiding-automatic-scaling.md)

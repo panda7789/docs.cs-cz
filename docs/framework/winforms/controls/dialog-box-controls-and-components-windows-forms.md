@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7ce4e6a62097fc673268f38a6db660b3bc9cba7b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3dbf95e54cbb2b6a729265ab39e99332d1cc1871
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dialog-box-controls-and-components-windows-forms"></a>Ovládací prvky a součásti dialogového okna (Windows Forms)
 Následující Windows Forms – ovládací prvky a součásti k dispozici standardní dialogová okna. Pomocí odkazů pro další informace o funkcích dostupných v každém poli dialogové okno.  
@@ -50,31 +51,31 @@ Následující Windows Forms – ovládací prvky a součásti k dispozici stand
  Poskytuje referenční informace o <xref:System.Windows.Forms.SaveFileDialog> třídy a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dialogová okna v rozhraní Windows Forms](../../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
+ [Dialogová okna ve Windows Forms](../../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
  Popisuje postup vytvoření dialogového okna pro formuláře systému Windows.  
   
- [ColorDialog – přehled komponenty](../../../../docs/framework/winforms/controls/colordialog-component-overview-windows-forms.md)  
+ [Přehled komponenty ColorDialog](../../../../docs/framework/winforms/controls/colordialog-component-overview-windows-forms.md)  
  Umožňuje uživateli vybrat barvu z palety v dialogovém okně předem nakonfigurované a pro přidání do této palety vlastních barev.  
   
- [FolderBrowserDialog – přehled komponenty (Windows Forms)](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-overview-windows-forms.md)  
+ [Přehled komponenty FolderBrowserDialog (Windows Forms)](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-overview-windows-forms.md)  
  Umožňuje uživatelům procházet a vybrat složky.  
   
- [FontDialog – přehled komponenty](../../../../docs/framework/winforms/controls/fontdialog-component-overview-windows-forms.md)  
+ [Přehled komponenty FontDialog](../../../../docs/framework/winforms/controls/fontdialog-component-overview-windows-forms.md)  
  Zpřístupní písma, které jsou aktuálně nainstalovány v systému.  
   
- [OpenFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/openfiledialog-component-overview-windows-forms.md)  
+ [Přehled komponenty OpenFileDialog](../../../../docs/framework/winforms/controls/openfiledialog-component-overview-windows-forms.md)  
  Umožňuje uživatelům otevírat soubory pomocí předem nakonfigurovaných dialogové okno.  
   
- [PageSetupDialog – přehled komponenty](../../../../docs/framework/winforms/controls/pagesetupdialog-component-overview-windows-forms.md)  
+ [Přehled komponenty PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-overview-windows-forms.md)  
  Nastaví stránka Podrobnosti pro tisk přes dialogové okno předem nakonfigurovaná.  
   
- [PrintDialog – přehled komponenty](../../../../docs/framework/winforms/controls/printdialog-component-overview-windows-forms.md)  
+ [Přehled komponenty PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-overview-windows-forms.md)  
  Vybere tiskárnu, vybere stránky tisknout a určí další nastavení související s tiskem.  
   
- [Printpreviewdialog – ovládací prvek – přehled](../../../../docs/framework/winforms/controls/printpreviewdialog-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-overview-windows-forms.md)  
  Zobrazí dokument, jak se zobrazí po vytištění.  
   
- [SaveFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md)  
+ [Přehled komponenty SaveFileDialog](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md)  
  Vybere soubory uložit a kam je chcete uložit.  
   
  Viz také [dialogová okna v rozhraní Windows Forms](http://msdn.microsoft.com/library/2chz8edb\(v=vs.110\)).

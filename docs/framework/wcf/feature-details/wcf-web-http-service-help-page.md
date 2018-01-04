@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a2059a5918a7b24b69d047de652eab6fa6616385
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cdd05397990c2b1bfc89493235804e14f6d41a1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]poskytuje automatickou stránku nápovědy pro služby WCF WEB HTTP. Tato stránka nápovědy obsahuje popis každé operace, požadavku a odpovědi formátů a schémata. Tato funkce je ve výchozím nastavení vypnutý. Když uživatel přejde k služby WCF WEB HTTP a připojí "/ Help" na konec adresy URL, například http://localhost: 8000/zákazníků nebo potřebujete pomoc, zobrazí se stránka nápovědy podobně jako tento.  

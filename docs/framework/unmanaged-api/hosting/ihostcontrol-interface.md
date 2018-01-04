@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7e72ad562a73faf5682204c2ae2583b71cb3c05e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d0eaecef4cc34549c7d37953a5c8144bdd983692
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostcontrol-interface"></a>IHostControl – rozhraní
 Poskytuje metody pro konfiguraci načítání sestavení a určení, kterou rozhraní hostitel podporuje.  
@@ -32,8 +33,8 @@ Poskytuje metody pro konfiguraci načítání sestavení a určení, kterou rozh
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Gethostmanager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-gethostmanager-method.md)|Získá ukazatele rozhraní hostitele implementaci rozhraní se zadaným `IID`.|  
-|[Setappdomainmanager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-setappdomainmanager-method.md)|Upozorní hostitele vytvořený domény aplikace.|  
+|[GetHostManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-gethostmanager-method.md)|Získá ukazatele rozhraní hostitele implementaci rozhraní se zadaným `IID`.|  
+|[SetAppDomainManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-setappdomainmanager-method.md)|Upozorní hostitele vytvořený domény aplikace.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -46,6 +47,6 @@ Poskytuje metody pro konfiguraci načítání sestavení a určení, kterou rozh
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.AppDomainManager>  
- [Iclrruntimehost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)  
- [Iclrcontrol – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+ [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)  
+ [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

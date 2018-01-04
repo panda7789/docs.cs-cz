@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1bbcd4a1058c4202a3de7b8eecb05caad7730ce5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 90e840fc24361735b65879702293daadce0bc90e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="disconnectedcontext-mda"></a>disconnectedContext – pomocník spravovaného ladění (MDA)
 `disconnectedContext` Pomocník spravovaného ladění (MDA) se aktivuje, když se modul CLR pokusí o přechod do odpojeného oddílu nebo kontextu během obsluhy žádost týkající se objektu COM.  

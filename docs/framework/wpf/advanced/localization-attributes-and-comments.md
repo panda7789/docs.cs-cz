@@ -16,11 +16,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5a603c854d389076d0054a43ebeb26f19145fa8e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 85584c17675167d374c595aa26288f550a033efb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]lokalizace komentáře jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, poskytuje vývojářům poskytovat pravidly a tipy pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]lokalizace komentáře obsahovat dvě sady informace: atributy lokalizovatelnost a lokalizace vlastní komentáře. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které jsou lokalizovat. Vlastní komentáře jsou veškeré informace, které chce zahrnují vytváření aplikací.  
@@ -110,7 +111,7 @@ ms.lasthandoff: 11/21/2017
  Localization.Comments obsahuje řetězce volného formátu týkající se cílové hodnoty. Vývojáři aplikací můžete přidat informace, které poskytují překladatelům při lokalizaci pomocné parametry o tom, jak překladu textu aplikace. Formát komentáře může být libovolný řetězec obklopená "("). Použití "\\, abyste se vyhnuli znaků.  
   
 ## <a name="see-also"></a>Viz také  
- [Globalizace pro grafický subsystém WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
- [Použití automatického rozložení pro vytvoření tlačítka](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
- [Pomocí automatického rozložení mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
+ [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
+ [Vytvoření tlačítka pomocí automatického rozložení](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
+ [Automatické rozložení použitím mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
  [Lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)

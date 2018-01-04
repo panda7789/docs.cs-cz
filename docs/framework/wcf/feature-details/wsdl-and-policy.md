@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f502d24f98c9229d064be3de0e0edc081664dd03
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dd52e36199fc2412abb003d530dd5614cda8049b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wsdl-and-policy"></a>WSDL a zásady
 Toto téma popisuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WSDL 1.1, WS-zásady a WS-PolicyAttachment podrobnosti implementace, a také další služby WS-Policy kontrolní výrazy a rozšíření WSDL 1.1 zaváděné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  

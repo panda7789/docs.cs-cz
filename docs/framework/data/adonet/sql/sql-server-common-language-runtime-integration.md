@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3705db8b9d359ce83c6c47bef58de327745bed44
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: de415a6282b1d27d803d448bd3225355c08e011b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-common-language-runtime-integration"></a>SQL Server Common Language Runtime Integration
 SQL Server 2005 zavedl integrace součást společné language runtime (CLR) rozhraní .NET Framework pro Microsoft Windows. To znamená, že můžete napsat uložené procedury, triggery, uživatelem definované typy, uživatelem definované funkce, uživatelem definovaných agregacích a streamování funkce vracející tabulku pomocí žádný jazyk rozhraní .NET Framework, včetně Microsoft Visual Basic .NET a společnosti Microsoft Visual C#. <xref:Microsoft.SqlServer.Server> Obor názvů obsahuje sadu nové aplikačními programovacími rozhraními (API) tak, aby spravovaný kód můžete spolupracovat s prostředím Microsoft SQL Server.  
@@ -31,7 +32,7 @@ SQL Server 2005 zavedl integrace součást společné language runtime (CLR) roz
 1.  [Běžné koncepty programování integrace Language Runtime (CLR)](http://go.microsoft.com/fwlink/?LinkId=115240)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Úvod do integrace modulu CLR SQL serveru](../../../../../docs/framework/data/adonet/sql/introduction-to-sql-server-clr-integration.md)  
+ [Úvod k integraci modulu CLR na SQL Serveru](../../../../../docs/framework/data/adonet/sql/introduction-to-sql-server-clr-integration.md)  
  Poskytuje úvod do integrace modulu CLR SQL serveru. Obsahuje odkazy na další témata.  
   
  [Uživatelem definované funkce CLR](../../../../../docs/framework/data/adonet/sql/clr-user-defined-functions.md)  
@@ -40,16 +41,16 @@ SQL Server 2005 zavedl integrace součást společné language runtime (CLR) roz
  [Uživatelem definované typy CLR](../../../../../docs/framework/data/adonet/sql/clr-user-defined-types.md)  
  Popisuje, jak k implementaci a použití uživatelem definované typy CLR. Obsahuje odkazy na další témata.  
   
- [CLR uložené procedury](../../../../../docs/framework/data/adonet/sql/clr-stored-procedures.md)  
+ [Uložené procedury CLR](../../../../../docs/framework/data/adonet/sql/clr-stored-procedures.md)  
  Popisuje, jak k implementaci a použití CLR uložené procedury. Obsahuje odkazy na další témata.  
   
- [Aktivační procedury modulu CLR](../../../../../docs/framework/data/adonet/sql/clr-triggers.md)  
+ [Aktivační procedury CLR](../../../../../docs/framework/data/adonet/sql/clr-triggers.md)  
  Popisuje, jak implementovat a použít aktivační procedury modulu CLR. Obsahuje odkazy na další témata.  
   
- [Připojení kontextu](../../../../../docs/framework/data/adonet/sql/the-context-connection.md)  
+ [Kontextové připojení](../../../../../docs/framework/data/adonet/sql/the-context-connection.md)  
  Popisuje připojení kontextu.  
   
- [SQL Server v specifické pro proces chování ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-in-process-specific-behavior-of-adonet.md)  
+ [Chování ADO.NET specifické pro proces SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-in-process-specific-behavior-of-adonet.md)  
  Popisuje konkrétní rozšíření systému SQL Server v rámci procesu ADO.NET a připojení kontextu. Obsahuje odkazy na další témata.  
   
 ## <a name="see-also"></a>Viz také  

@@ -21,11 +21,12 @@ caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 16c43545b24f8c0290bfe993d91b7e4203ac11fa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: acbdf1ff1f2827bf607c2f838685d5161af61fd0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Čítače výkonu a vnitroprocesorové souběžné aplikace
 Použití nástroje Sledování výkonu (Perfmon.exe), je možné rozlišit čítače výkonu na základě za běhu. Toto téma popisuje změnu registru potřebné pro tuto funkci povolit.  

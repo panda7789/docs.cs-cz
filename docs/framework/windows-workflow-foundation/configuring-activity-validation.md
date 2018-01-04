@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 440f3ee85fe24707c6bb433736bf6104d9e0dfc5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d75f03a9af5caa5569cbfd4d1d09cda8936f6562
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-activity-validation"></a>Konfigurace ověření aktivity
 Aktivita ověření umožňuje autorům aktivity a uživatelé identifikovat a zprávy o chybách v konfiguraci aktivity před jeho spuštění. [!INCLUDE[wf](../../../includes/wf-md.md)]poskytuje následující tři typy ověření aktivity:  
@@ -30,16 +31,16 @@ Aktivita ověření umožňuje autorům aktivity a uživatelé identifikovat a z
  `RequiredArgument`a `OverloadGroup` atributy označuje, že některé argumenty u aktivit je požadovaná. Imperativní ověření založené na kódu poskytuje jednoduchý způsob, jak aktivity pro ověřování o samotné a deklarativní omezení povolit ověření o aktivity a jeho relace s obsažený pracovní postup. Pokud aktivita není správně nakonfigurována podle požadavků ověřování, vrátí se chyby ověření a upozornění. Pokud obsažený pracovní postup je vytvořený pomocí návrháře pracovních postupů, všechny chyby ověření a upozornění se zobrazí v návrháři. Pokud pracovní postup je vytvořen mimo návrháře pracovních postupů jsou vráceny všechny chyby ověření při vyvolání pracovního postupu. Bez ohledu na to, jak byl vytvořen pracovní postup nemá nikdy pracovního postupu se chyby ověření provést. Tato část obsahuje přehled těchto typů ověřování aktivity a způsob volání ověření aktivity.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vyžaduje argumenty a skupiny přetížení](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md)  
+ [Povinné argumenty a skupiny přetížení](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md)  
  Popisuje postup použití `RequiredArgument` a `OverloadGroup` atributy pro ověřování.  
   
- [Imperativní ověření založené na kódu](../../../docs/framework/windows-workflow-foundation/imperative-code-based-validation.md)  
+ [Ověřování na základě imperativního kódu](../../../docs/framework/windows-workflow-foundation/imperative-code-based-validation.md)  
  Popisuje, jak používat ověřování založené na kódu <xref:System.Activities.CodeActivity> a <xref:System.Activities.NativeActivity> na základě aktivity.  
   
  [Deklarativní omezení](../../../docs/framework/windows-workflow-foundation/declarative-constraints.md)  
  Popisuje, jak používat deklarativní omezení pro ověřování komplexní aktivity.  
   
- [Volání ověření aktivity](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md)  
+ [Vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md)  
  Popisuje při ověření aktivity se automaticky vyvolá a explicitně vyvolat ověřování.  
   
 ## <a name="reference"></a>Odkaz  

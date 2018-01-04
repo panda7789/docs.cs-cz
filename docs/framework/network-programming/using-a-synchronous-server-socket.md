@@ -27,11 +27,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ce50fa5cf8664f93753312ee5f1db2b3058c3fd9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 03f6dc6ea517aba410430fea69113b64dccc6ff6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-synchronous-server-socket"></a>Pomocí soket synchronního serveru
 Synchronní serveru sockets pozastavit provádění aplikace, dokud obdrží žádost o připojení soketu. Sokety synchronní serveru nejsou vhodné pro aplikace, které hodně využívají sítě v jejich operaci, ale mohou být vhodný pro jednoduché síťových aplikací.  
@@ -85,6 +86,6 @@ handler.Close();
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí soketu asynchronní serveru](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
- [Příklad soketu synchronní serveru](../../../docs/framework/network-programming/synchronous-server-socket-example.md)  
- [Naslouchání s Sockets](../../../docs/framework/network-programming/listening-with-sockets.md)
+ [Použití asynchronního serverového soketu](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Příklad synchronního serverového soketu](../../../docs/framework/network-programming/synchronous-server-socket-example.md)  
+ [Naslouchání pomocí soketů](../../../docs/framework/network-programming/listening-with-sockets.md)

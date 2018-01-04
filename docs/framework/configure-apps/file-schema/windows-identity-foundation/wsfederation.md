@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e4779baa24e172affad2ed5e04451ad791d7cdf5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7fd4e12d77380942204d37b59644c46aed3a0148
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwsfederationgt"></a>&lt;wsFederation&gt;
 Obsahuje konfiguraci <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).  

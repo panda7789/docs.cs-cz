@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 39fbd38549a791a761c633dca90dbdeeeefce10b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f3a087f296a742bc9f0f5672d9bf0cb73c836121
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-and-using-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 <a name="top"></a>Silné jméno se skládá z identity sestavení – jeho jednoduchý textový název, číslo verze a informace o jazykové verzi (Pokud je zadáno) – plus veřejného klíče a digitální podpis. Generuje se ze souboru sestavení pomocí odpovídajícího privátního klíče. (Soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, které tvoří sestavení.)  
@@ -82,12 +83,12 @@ ms.lasthandoff: 10/18/2017
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Postupy: vytvoření páru veřejného a privátního klíče RSA](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)|Popisuje postup vytvoření páru kryptografických klíčů pro podepsání sestavení.|  
-|[Postupy: podepsání sestavení se silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)|Popisuje, jak vytvořit sestavení se silným názvem.|  
+|[Postupy: Vytvoření páru veřejného a soukromého klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)|Popisuje postup vytvoření páru kryptografických klíčů pro podepsání sestavení.|  
+|[Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)|Popisuje, jak vytvořit sestavení se silným názvem.|  
 |[Vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Popisuje vylepšení silné názvy v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
-|[Postupy: referenční sestavení se silným názvem](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|Popisuje, jak odkazovat typy nebo prostředky v sestavení se silným názvem v době kompilace nebo čas spuštění.|  
+|[Postupy: Odkazování na sestavení se silným názvem](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|Popisuje, jak odkazovat typy nebo prostředky v sestavení se silným názvem v době kompilace nebo čas spuštění.|  
 |[Postupy: Zákaz funkce obejití silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)|Popisuje, jak zakázat funkci obchází ověřování podpisů silného názvu. Tuto funkci můžete zakázat pro všechny nebo pro konkrétní aplikace.|  
 |[Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)|Poskytuje přehled o jeden soubor a vícesouborového sestavení.|  
 |[Postup zpoždění podepsání sestavení v sadě Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Vysvětluje, jak pro podepsání sestavení silným názvem, po vytvoření sestavení.|  
 |[Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)|Popisuje nástroje dodávaná v rozhraní .NET Framework, který vám pomůže vytvořit sestavení se silnými názvy. Tento nástroj poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.|  
-|[Al.exe (Linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)|Popisuje nástroje dodávaná v rozhraní .NET Framework, který generuje soubor, který má manifest z modulů nebo zdrojových souborů sestavení.|
+|[Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)|Popisuje nástroje dodávaná v rozhraní .NET Framework, který generuje soubor, který má manifest z modulů nebo zdrojových souborů sestavení.|

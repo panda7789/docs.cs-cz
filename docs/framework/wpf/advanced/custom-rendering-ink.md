@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 90d2ab68f76bef8d8f437a7dd6096011889303fa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 481990acdf2f5b8f798144d36434569b9e2cd481
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> Vlastnost tahu umožňuje určit vzhled tahu, například jeho velikost, barvu a tvar, ale může nastat situace, které chcete přizpůsobit vzhled nad rámec co <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> povolit. Můžete přizpůsobit vzhled rukopisu vykreslování v vzhled štětce letecké, těžba ropy Malování a mnoho dalších účinky. [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Umožňuje, abyste vlastní vykreslení rukopisu implementací vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a <xref:System.Windows.Ink.Stroke> objektu.  
@@ -102,4 +103,4 @@ ms.lasthandoff: 10/22/2017
  Můžete přizpůsobit vzhled rukopisu odvozování vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, <xref:System.Windows.Ink.Stroke>, a <xref:System.Windows.Controls.InkCanvas> třídy. Společně tyto třídy zajistěte, aby byl vzhled tahu konzistentní když uživatel nakreslí tahu a po shromáždění zpracovat.  
   
 ## <a name="see-also"></a>Viz také  
- [Pokročilé rukopisu zpracování](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+ [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)

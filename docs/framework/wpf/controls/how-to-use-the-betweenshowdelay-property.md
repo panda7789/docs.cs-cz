@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dca6dc7c6238ef4accc921818090237d17ce1cbd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dfd4bb4c9e26361e5b8f573d06449b090497acd6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-betweenshowdelay-property"></a>Postupy: Použití vlastnosti BetweenShowDelay
 Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> čas vlastnost tak, aby rychle zobrazí popisy tlačítek – s minimální nebo žádnou zpožděním – Pokud uživatel přesune ukazatel myši z jednoho popisku přímo na jiný.  
@@ -40,5 +41,5 @@ Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.ToolTipSer
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.ToolTip>  
  <xref:System.Windows.Controls.ToolTipService>  
- [Postupy: témata](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
  [ToolTip – přehled](../../../../docs/framework/wpf/controls/tooltip-overview.md)

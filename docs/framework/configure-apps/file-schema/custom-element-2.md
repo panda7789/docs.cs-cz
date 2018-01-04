@@ -10,11 +10,12 @@ ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a9722493ec62952d7cbc07d478687b8495d24f95
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2154e2a178050e5bafa7d19f37a766141d0a5838
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Vlastní element NameValueSectionHandler a DictionarySectionHandler
 
@@ -43,7 +44,7 @@ Definuje nastavení pro vlastní konfiguračních oddílů, které používají 
 
 ## <a name="remarks"></a>Poznámky
 
-**\<SectionName >** element je vlastní definované  **\<části >** značky v  **\<configSections >**elementu.
+ **\<SectionName >** element je vlastní definované  **\<části >** značky v  **\<configSections >**elementu.
 
 Následující tabulka uvádí, že typ objektu ConfigurationSettings.GetConfig metoda vrátí pro každou obslužnou rutinu konfiguračního oddílu:
 

@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3629778ded2b690f8169223101d89cb551e1449
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db8f79fcdc1398b891933f5fef9f07410e5de11e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Práce s víc verzemi současně ve třídě WorkflowServiceHost
 <xref:System.ServiceModel.Activities.WorkflowServiceHost> Vedle sebe verze byla zavedená v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] poskytuje možnosti pro hostování více verzí služby pracovních postupů na jeden koncový bod. Souběžně sdílená funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu se vytvářejí pomocí nové definice pracovního postupu, při spuštění instance dokončení pomocí stávající definici pracovního postupu služby. Toto téma obsahuje přehled používání vedle sebe spuštění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  

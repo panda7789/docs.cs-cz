@@ -17,23 +17,24 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bea43192d7f9a5bd875914633118dd6609c7804b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a013eac5b3306339c82abaa62f97e4aad7d8ed76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="audio-and-video-how-to-topics"></a>Postupy: Témata audia a videa
 Následující témata ukazují, jak používat <xref:System.Windows.Controls.MediaElement> integrovat audio a video obsahu ve svých aplikacích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: dynamicky přidat Element](http://msdn.microsoft.com/en-us/d00f258a-7973-4de7-bc54-a3fc1f638419)  
- [Řízení MediaElement (Play, pozastavení, zastavení, svazku a rychlost)](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
- [Řízení MediaElement pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
- [Přehrávání médií aktivační událost s událostí uživatele](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  
- [Opakované přehrávání média](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-media-playback.md)  
- [Přehrání médium s animací](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-with-animations.md)  
- [Použití transformací na MediaElement](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-transforms-on-a-mediaelement.md)  
+ [Řízení elementu MediaElement (Přehrát, Pozastavit, Zastavit, Hlasitost a Rychlost)](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
+ [Řízení elementu MediaElement pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
+ [Spuštění přehrání média pomocí události uživatele](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  
+ [Opětovné přehrání média](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-media-playback.md)  
+ [Přehrání média pomocí animací](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-with-animations.md)  
+ [Použití transformací na elementu MediaElement](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-transforms-on-a-mediaelement.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.MediaElement>  

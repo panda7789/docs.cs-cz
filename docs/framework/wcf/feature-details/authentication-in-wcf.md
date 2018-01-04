@@ -16,29 +16,30 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9a08627e213196c2d5fb296f458a5d3a8c7bb1a0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 432ed9debeffad82125b567508ed46b46d4b8821
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="authentication-in-wcf"></a>Ověřování ve WCF
 Následující témata ukazují počet různých mechanismech [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] , poskytovat ověřování, například, ověřování systému Windows, certifikáty X.509 a uživatelského jména a hesla.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: použití poskytovatele členství prostředí ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
+ [Postupy: Používání poskytovatele členství ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
  Funkce ASP.NET zahrnují členství a zprostředkovatele rolí, databázi k ukládání páry uživatelské jméno a heslo pro ověřování a role uživatele pro ověřování. Toto téma vysvětluje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby můžete použít stejnou databázi k ověřování a autorizaci uživatelů.  
   
- [Postupy: použití vlastního uživatelského jména a hesla validátoru](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
+ [Postupy: Použití validátoru vlastního uživatelského jména a hesla](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
  Ukazuje, jak integrovat validátor vlastní uživatelské jméno a heslo.  
   
  [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  Jako další ochranná, klient může ověřit službu zadáním očekávané *identity* služby. Pokud očekávaný identity a identity vrácený službou neshodují, ověření se nezdaří.  
   
- [Zabezpečení vyjednávání a časové limity](../../../../docs/framework/wcf/feature-details/security-negotiation-and-timeouts.md)  
+ [Vyjednávání a časové limity zabezpečení](../../../../docs/framework/wcf/feature-details/security-negotiation-and-timeouts.md)  
  Popisuje způsob použití <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.NegotiationTimeout%2A> vlastnost v <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> třídy.  
   
- [Ladění chyb ověřování systému Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
+ [Ladění chyb u ověřování Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
  Zaměřuje se na běžné problémy při použití ověřování systému Windows.  
   
 ## <a name="reference"></a>Odkaz  

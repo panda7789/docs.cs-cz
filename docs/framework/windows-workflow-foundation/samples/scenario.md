@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 91ef5c2c0d581575f60456e19920185a285cab07
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 50efd36e1d54bd456e184c42d62aded14e510947
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="scenario"></a>Scénář
 Tato část obsahuje příklady [!INCLUDE[wf](../../../../includes/wf-md.md)] scénáře.  
@@ -31,14 +32,14 @@ Tato část obsahuje příklady [!INCLUDE[wf](../../../../includes/wf-md.md)] sc
  [Transakce](../../../../docs/framework/windows-workflow-foundation/samples/transactions.md)  
  Obsahuje ukázky, která ukazují scénáře použití transakcí.  
   
- [Automatické potvrďte vzor](../../../../docs/framework/windows-workflow-foundation/samples/auto-confirm-pattern.md)  
+ [Vzor automatického potvrzení](../../../../docs/framework/windows-workflow-foundation/samples/auto-confirm-pattern.md)  
  Se skládá ze tří scénářů, které spustit ilustrující vlastní `AutoConfirmScope` aktivity.  
   
- [Pomocí kombinace vývojový diagram a vybrat scénář StateMachine](../../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
+ [Scénář stavového stroje s využitím kombinace FlowChart a Pick](../../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
  Ukazuje, jak implementovat pomocí kombinace scénář jednoduchého stopky <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Pick> aktivity.  
   
- [WPF a integrace WF v jazyce XAML](../../../../docs/framework/windows-workflow-foundation/samples/wpf-and-wf-integration-in-xaml.md)  
+ [Integrace WPF a WF v XAML](../../../../docs/framework/windows-workflow-foundation/samples/wpf-and-wf-integration-in-xaml.md)  
  Ukazuje, jak vytvořit aplikaci, která používá [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] a [!INCLUDE[wf](../../../../includes/wf-md.md)] funkce do jednoho dokumentu XAML. K tomu Ukázka používá [!INCLUDE[wf](../../../../includes/wf-md.md)] a rozšiřitelnost XAML.  
   
- [Externí Ruleset Toolkit](../../../../docs/framework/windows-workflow-foundation/samples/external-ruleset-toolkit.md)  
+ [Sada nástrojů pro externí sadu pravidel](../../../../docs/framework/windows-workflow-foundation/samples/external-ruleset-toolkit.md)  
  Ukazuje, jak spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu.

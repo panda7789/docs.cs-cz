@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2fe0ad62a55c6536b0054aa23ac556b896b02be4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d55b0085552f0baf826380340aaf9f1117ab3307
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 Při odesílání velkých zpráv pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], je často žádoucí omezit množství paměti k přechodnému ukládání těchto zpráv. Jedním z možných řešení je k vysílání datového proudu tělo zprávy (za předpokladu, že hromadné dat je v textu). Ale vyžadují některé protokoly ukládání do vyrovnávací paměti celé zprávy. Spolehlivé zasílání zpráv a zabezpečení jsou dva příklady takových. Další možnou příčinou je zdola nahoru velké zprávy do menších zpráv názvem bloky dat, najednou odeslat jeden blok tyto bloků a rekonstruovat velké zprávy na straně příjmu. Vlastní aplikace udělat toto rozdělování a zrušte rozdělování nebo použít vlastní kanál to udělat. Bloku dat kanál příklad ukazuje, jak vlastního protokolu nebo vrstveného kanál slouží k rozdělování a zrušte rozdělování libovolně velké zpráv.  

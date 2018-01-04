@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 24560a1e9b663a3145b589b5a03af8a8b72236ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ee2885868c07b00f16290b6414e7f7bdd64fd68c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-listview-contents-by-using-a-gridview"></a>Postupy: Zobrazení obsahu ListView použitím GridView
 Tento příklad ukazuje, jak definovat <xref:System.Windows.Controls.GridView> režim zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku.  
@@ -38,5 +39,5 @@ Tento příklad ukazuje, jak definovat <xref:System.Windows.Controls.GridView> r
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  
  [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [Rutina GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c8b30b09aeb39123776ba5b0c27ae4ac3b062631
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 565f0fa2dd81237fae11a3d872238faff09f3d23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-rotate-an-image"></a>Postupy: Otočení obrázku
 Tento příklad ukazuje, jak otočit 90 stupňů bitovou kopii pomocí <xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapImage>.  

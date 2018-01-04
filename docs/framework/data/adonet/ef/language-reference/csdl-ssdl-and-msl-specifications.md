@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d4a11afef526d013e5674b172377ecb9db9b0e1c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b78ebfef10897769e78b3dc34d6f8b75ab750b32
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="csdl-ssdl-and-msl-specifications"></a>CSDL, SSDL a specifikace MSL
 [Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef) lokalita je momentálně hlavní umístění pro obsah Entity Framework.  

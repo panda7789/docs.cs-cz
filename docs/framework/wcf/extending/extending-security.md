@@ -14,11 +14,12 @@ caps.latest.revision: "23"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: a3950b156ede806382bbe4e013db5d94a8b20a23
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ecbbaac0023ca528967abe2cb60c3d790772fb2e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
 Abychom vyhověli nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Témata v této části ukazují, jak to provést.  
@@ -27,22 +28,22 @@ Abychom vyhověli nové typy deklarací identity a vlastní tokeny, můžete roz
  [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)  
  Provede architektura [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení systému.  
   
- [Vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
+ [Vlastní přihlašovací údaje a jejich ověřování](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
  Vysvětluje, jak modelem Identity se používá při ověření vlastní pověření.  
   
  [Vlastní tokeny](../../../../docs/framework/wcf/extending/custom-tokens.md)  
  Vystavené tokeny z zabezpečení tokenu služby (STS) jsou obvykle tokeny SAML. Toto téma vysvětluje, jak vytvořit vlastní typ tokenu.  
   
- [Autorizace uživatele](../../../../docs/framework/wcf/extending/custom-authorization.md)  
+ [Vlastní autorizace](../../../../docs/framework/wcf/extending/custom-authorization.md)  
  Vysvětluje, jak implementovat vlastní autorizace.  
   
- [Přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
+ [Přepsání identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
  Popisuje, jak k přepsání identity služby kvůli ověřování.  
   
- [Postupy: vytvoření Identity ověřovatel vlastní klienta](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
  Ukazuje, jak ověřit identitu vlastní koncový bod.  
   
- [Postupy: použití samostatných certifikátů X.509 pro podepisování a šifrování](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
+ [Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
  Zprávy jsou obvykle podepsat a zašifrovat s jeden certifikát. Toto téma vysvětluje, jak dva certifikáty lze použít, když se vyžaduje.  
   
  [Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  

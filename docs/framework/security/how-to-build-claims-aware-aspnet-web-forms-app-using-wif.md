@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d5b81e20ed1b39c7750329718729905484eb7fa1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 70d503448946b60f1d6b63bf850d8d62fb63acc2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Postupy: Vytvoření aplikace deklaracemi rozhraní ASP.NET Web Forms pomocí WIF
 ## <a name="applies-to"></a>Platí pro  

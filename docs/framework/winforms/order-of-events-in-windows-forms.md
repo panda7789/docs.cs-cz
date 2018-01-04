@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f822133b44f0f32224402463b4332811f8cd52b5
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 03d2661752e5c0acb36fe76a8fa72b0638b4ad54
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="order-of-events-in-windows-forms"></a>Řazení událostí ve Windows Forms
 Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zajímají hlavně o vývojáři nevadí, každá z těchto událostí zase zpracování. Když stav vyžaduje pečlivou zpracování události, například když jsou překreslování části formuláře, je nutné je třeba znát přesné pořadí, ve kterém jsou vyvolány události za běhu. Toto téma obsahuje některé podrobnosti v řádu události během několika fázích důležité v životního cyklu aplikací a ovládací prvky. Konkrétní podrobnosti o pořadí vstupních událostech myši najdete v tématu [události myši ve Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md). Přehled událostí ve Windows Forms najdete v tématu [Přehled událostí](../../../docs/framework/winforms/events-overview-windows-forms.md). Podrobnosti o způsob vytvoření obslužných rutin událostí najdete v tématu [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  
@@ -91,4 +92,4 @@ Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zaj
 -   <xref:System.Windows.Forms.Control.Validated>  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření obslužných rutin událostí v systému Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
+ [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)

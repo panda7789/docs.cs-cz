@@ -24,11 +24,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 160a9597ff22ffc044cf3a35d345ba7d7e1606e4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ea9e12140e351bb5cc2b51ac2efca8a24e94bf2b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
 <xref:System.Runtime.InteropServices> Obor názvů obsahuje tři kategorie atributů specifický pro spolupráci: uplatnil v době návrhu, jaké používají vůči nástroje zprostředkovatele komunikace s objekty COM a rozhraní API během procesu převodu a jsou použita buď vy nebo zprostředkovatel komunikace s objekty COM.  
@@ -77,7 +78,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.InteropServices>  
- [Vystavení součástí .NET Framework do modelu COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [Atributy](../../../docs/standard/attributes/index.md)  
  [Kvalifikace typů .NET pro spolupráci](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
- [Balení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+ [Zabalení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)

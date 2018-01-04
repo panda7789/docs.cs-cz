@@ -17,11 +17,12 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9800541fdb91993118aa4c2cc63a7849a3f2dbb9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6eec7f0ceefee88fe20f987d5887c32b284ec8d2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess7-interface"></a>Rozhraní ICorDebugProcess7
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Metoda SetWriteableMetadataUpdateMode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)|Nastaví hodnotu, která určuje, jak ladicí program zpracovává v paměti aktualizace metadat v rámci tento cílový proces.|  
+|[SetWriteableMetadataUpdateMode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)|Nastaví hodnotu, která určuje, jak ladicí program zpracovává v paměti aktualizace metadat v rámci tento cílový proces.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -46,5 +47,5 @@ ms.lasthandoff: 11/21/2017
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

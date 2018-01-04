@@ -17,20 +17,21 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1013b7567fbd80d8d1ee55ac81e00c7b29635bac
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c790ec775740bf53e3c68a1c8834df9e13339c38
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="digital-ink-how-to-topics"></a>Postupy: Témata digitálního inkoustu
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Výběr rukopisu z vlastního ovládacího prvku](../../../../docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)  
-  [Přidání vlastních dat k Ink dat](../../../../docs/framework/wpf/advanced/how-to-add-custom-data-to-ink-data.md)  
-  [Vymazání rukopisu na vlastního ovládacího prvku](../../../../docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)  
-  [Rozpoznat gesta aplikace](../../../../docs/framework/wpf/advanced/how-to-recognize-application-gestures.md)  
-  [Přetáhnout myší rukopisu](../../../../docs/framework/wpf/advanced/how-to-drag-and-drop-ink.md)  
-  [Vazbě dat na InkCanvas](../../../../docs/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas.md)  
-  [Analýza rukopisu Analysis nápovědu](../../../../docs/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints.md)  
-  [Otočit element Ink](../../../../docs/framework/wpf/advanced/how-to-rotate-ink.md)  
-  [Zakázat objekt RealTimeStylus pro aplikace WPF](../../../../docs/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications.md)
+ [Výběr rukopisu pomocí vlastního ovládacího prvku](../../../../docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)  
+  [Přidání vlastních dat do dat rukopisu](../../../../docs/framework/wpf/advanced/how-to-add-custom-data-to-ink-data.md)  
+  [Smazání rukopisu na vlastním ovládacím prvku](../../../../docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)  
+  [Rozlišení gest aplikací](../../../../docs/framework/wpf/advanced/how-to-recognize-application-gestures.md)  
+  [Přetažení rukopisu](../../../../docs/framework/wpf/advanced/how-to-drag-and-drop-ink.md)  
+  [Datová vazba k objektu InkCanvas](../../../../docs/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas.md)  
+  [Analýza rukopisu pomocí tipů analýzy](../../../../docs/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints.md)  
+  [Otočení rukopisu](../../../../docs/framework/wpf/advanced/how-to-rotate-ink.md)  
+  [Zákaz objektu RealTimeStylus pro aplikace WPF](../../../../docs/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications.md)

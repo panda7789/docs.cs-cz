@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bf04af2baa037b2df9e2980cc2347460de961c39
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4d29fda788aa4ec79ad4278beefa16ee14208832
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a>Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje dvě paralelní mechanismy pro změnu vzhled ovládacího prvku, když obdrží fokus klávesnice. První mechanizmus se pomocí nastavením vlastností pro vlastnosti, jako například <xref:System.Windows.UIElement.IsKeyboardFocused%2A> v rámci styl nebo šabloně, která se použije k ovládacímu prvku. Druhý mechanismus je poskytnout samostatné styl jako hodnotu <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost; "zaměřit vizuální styl" vytvoří samostatné vizuálním stromu pro adorner, který se vykreslí nad ovládacího prvku, nemusíte měnit vizuálním stromu ovládací prvek nebo jiných uživatelského rozhraní Element nahrazením ho. Toto téma popisuje scénáře, kde každý z těchto mechanismů je vhodné.  
@@ -88,6 +89,6 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Fokus – přehled](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)  
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)

@@ -26,11 +26,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3df78be14da96d0bb7b8875a5c7532c003d1dbc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 25c033ae46abc65040c00b6beb105c8ebb6b1d90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-client-sockets"></a>Použití klienta soketů
 Před spuštěním konverzace prostřednictvím <xref:System.Net.Sockets.Socket>, je nutné vytvořit datového kanálu mezi vaší aplikací a vzdálená zařízení. I když existují další rodiny adres sítě a protokoly, tento příklad ukazuje postup vytvoření připojení TCP/IP k vzdálené služby.  
@@ -87,7 +88,7 @@ try {
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí soket synchronního klienta](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
- [Pomocí soketu asynchronní klienta](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
- [Postupy: vytvoření soket](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
+ [Použití synchronního klientského soketu](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
+ [Použití asynchronního klientského soketu](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
+ [Postupy: Vytvoření soketu](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [Sokety](../../../docs/framework/network-programming/sockets.md)

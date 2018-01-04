@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bd787373b869c31727cfc0d027b6b98774b0d630
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a20061c551f5cb1a19c64a2f92b8180465f58eb2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v technologii ADO.NET
 Rozhraní .NET Framework 2.0 zavedl nové funkce pro práci s připojovací řetězce, včetně zavedení nových klíčových slov do Tvůrce třídy řetězec připojení, které usnadňují vytváření řetězců platné připojení v době běhu.  
@@ -35,13 +36,13 @@ Rozhraní .NET Framework 2.0 zavedl nové funkce pro práci s připojovací řet
  K řešení těchto problémů, ADO.NET 2.0 zavedl nový Tvůrci řetězců pro připojení pro každého zprostředkovatele dat .NET Framework. Klíčová slova jsou zveřejněné jako vlastnosti, povolení syntaxi připojovacího řetězce k ověření před odesláním ke zdroji dat.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Tvůrci řetězců pro připojení](../../../../docs/framework/data/adonet/connection-string-builders.md)  
+ [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  Ukazuje, jak používat `ConnectionStringBuilder` třídy vytvořit platný připojovací řetězce na dobu běhu.  
   
  [Připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)  
  Demonstruje způsob ukládání a načítání připojovací řetězce v konfiguračních souborech.  
   
- [Syntaxi připojovacího řetězce](../../../../docs/framework/data/adonet/connection-string-syntax.md)  
+ [Syntaxe připojovacího řetězce](../../../../docs/framework/data/adonet/connection-string-syntax.md)  
  Popisuje postup konfigurace specifický pro zprostředkovatele připojovací řetězce pro `SqlClient`, `OracleClient`, `OleDb`, a `Odbc`.  
   
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  

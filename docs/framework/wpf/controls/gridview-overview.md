@@ -17,11 +17,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 44574b5737873371f9a7bc9be2d851a8ae1e101b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 099584ff5149891f406d5ad24a28a6b3e3faafb4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="gridview-overview"></a>GridView – přehled
 <xref:System.Windows.Controls.GridView>režim zobrazení je jeden z režimů zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku. <xref:System.Windows.Controls.GridView> Třídy a jeho podpůrné povolit vás a uživatele zobrazit položky kolekce v tabulce, která tlačítka se většinou používá jako záhlaví sloupců interaktivní. Toto téma představuje <xref:System.Windows.Controls.GridView> třídy a popisuje jeho použití.  
@@ -147,5 +148,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
  <xref:System.Windows.Controls.ViewBase>  
  [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [Seřadit sloupec GridView při kliknutí na záhlaví](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ [Řazení sloupce GridView při kliknutí na záhlaví](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 526544118432eb263cc856931d9f4943b9918d93
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4e3d86153d4192e04e55fb9e99ef588b45511560
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Služba publikování vám usnadní pokročíte z časná vývojového prostředí poskytované [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta ve skutečnosti nasazení aplikace do produkčního prostředí pro účely testování. Než provedete na plán konečné nasazení, můžete použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] službu publikování ověřte, že vaše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba provádí správně a je připravena k publikování. Můžete také nasadit vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby knihovny na různé cílové umístění pro testování.  
@@ -81,6 +82,6 @@ ms.lasthandoff: 12/02/2017
  Publikování do místní služby IIS vyžaduje oprávnění správce, protože služba IIS vyžaduje spuštění v účtu správce. Pokud uživatel bez oprávnění správce otevře [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] publikování služby, služby IIS není k dispozici jako cílové umístění. Publikování v systému souborů nebo server FTP funguje bez oprávnění správce.  
   
 ## <a name="see-also"></a>Viz také  
- [Šablony sady Visual Studio WCF](../../../docs/framework/wcf/wcf-vs-templates.md)  
+ [Šablony sady Visual Studio pro WCF](../../../docs/framework/wcf/wcf-vs-templates.md)  
  [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
- [Testovacího klienta WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+ [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

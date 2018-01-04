@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a8a2d5a13cac97063bf2a04969928c859a5954d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c020e5f7306e73ee97dff0b492b04b5a153059cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-fill-open-figures"></a>Postupy: Vyplňování otevřených obrázků
 Cestu můžete vyplnit předáním <xref:System.Drawing.Drawing2D.GraphicsPath> do objektu <xref:System.Drawing.Graphics.FillPath%2A> metoda. <xref:System.Drawing.Graphics.FillPath%2A> Metoda doplní cestu podle režim vyplnění (alternativní nebo vinutí) nastaveno pro cestu. Pokud cesta obsahuje všech otevřených obrázků, cesta vyplněno jako v případě, že tyto údaje nebyly zavřeny. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]Zavře obrázek podle kreslení přímku z koncového bodu pro výchozí bod.  
@@ -43,4 +44,4 @@ Cestu můžete vyplnit předáním <xref:System.Drawing.Drawing2D.GraphicsPath> 
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Drawing2D.GraphicsPath>  
- [Cesty grafiky v GDI +](../../../../docs/framework/winforms/advanced/graphics-paths-in-gdi.md)
+ [Grafické cesty v GDI+](../../../../docs/framework/winforms/advanced/graphics-paths-in-gdi.md)

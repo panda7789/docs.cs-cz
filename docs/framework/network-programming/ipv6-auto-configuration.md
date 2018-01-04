@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0332bca146041aa955ea000cfeee78d3f5287036
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b116e3aa88f919b850d6f79754d25ee10ac974f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ipv6-auto-configuration"></a>Automatické konfigurace protokolu IPv6
 Jeden cíl důležité pro protokol IPv6 je podpora uzlu technologie Plug and Play. To znamená musí být možné připojit k síti IPv6 uzlu a automaticky konfigurace bez lidského zásahu.  
@@ -34,5 +35,5 @@ Jeden cíl důležité pro protokol IPv6 je podpora uzlu technologie Plug and Pl
  Jak narůstá počet mobilních zařízení, zavádí nový požadavek: zařízení musí být schopen libovolně změnit umístění na Internetu s protokolem IPv6 a přitom zachovat stávající připojení. Tuto funkčnost poskytovaly mobilní uzlu přiřazena domovské adresy, kde ji můžete vždy dostupný. Když mobilní uzlu v domácnostech, připojí k odkaz na domovskou a používá svůj domácí adresu. Po mimo domov uzlu Mobilní domácí agenta, který je obvykle směrovač, předává zprávy mezi mobilní uzlů a uzly, se kterými je komunikaci.  
   
 ## <a name="see-also"></a>Viz také  
- [Protokol IP verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
+ [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
  [Sokety](../../../docs/framework/network-programming/sockets.md)

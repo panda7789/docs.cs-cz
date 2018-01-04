@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 89de6bcbb44ca70592697ccf891099446b230ce6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7cf6bb08dc6607bf6c5b9e283ce449b603cb38d3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
 Tento příklad ukazuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Je základní program "Hello World", který ukazuje základy objektový model a jak nastavit na [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.  
@@ -104,5 +105,5 @@ foreach (SyndicationItem i in feed.Items)
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\DiagnosticsFeed`  
   
 ## <a name="see-also"></a>Viz také  
- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
+ [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
  [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)

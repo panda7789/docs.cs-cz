@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 17fe1a073a2c8fe6b800ce353b23ca43059d3454
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f9b1d2f957c54d1e91d7d14cd35c328d4a6666e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ajax"></a>AJAX
 Tato část obsahuje příklady vysvětlující funkce asynchronní JavaScript a XML.  
@@ -32,7 +33,7 @@ Tato část obsahuje příklady vysvětlující funkce asynchronní JavaScript a
  [Základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md)  
  Ukazuje, jak používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vytvoření základní služby ASP.NET asynchronní JavaScript a XML (AJAX).  
   
- [AJAX služby pomocí HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)  
+ [Služba AJAX využívající HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)  
  Ukazuje, jak používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vytvořit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] asynchronní JavaScript a XML (AJAX) službu, která používá HTTP POST.  
   
  [Služba AJAX bez konfigurace](../../../../docs/framework/wcf/samples/ajax-service-without-configuration.md)  

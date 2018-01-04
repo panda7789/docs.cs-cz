@@ -14,11 +14,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ceeedf3d6b73d08ce8aeade74288dc797d462123
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 47410b2a0259e81e7009d547b0c2d6c742b15f25
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="changing-the-appearance-of-windows-forms"></a>Změna vzhledu Windows Forms 
 Můžete přizpůsobit vzhled aplikace Windows Forms v mnoha různými způsoby, například Změna ohraničení, krytí, tvaru, styl nebo nastavení obrázek pozadí pro aplikaci Windows Forms.  
@@ -50,7 +51,7 @@ Můžete přizpůsobit vzhled aplikace Windows Forms v mnoha různými způsoby,
  [Úprava velikosti a měřítka Windows Forms](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)  
  Obsahuje odkazy na témata, která ukazují postup změny velikosti a měřítka ve tvaru.  
   
- [Grafika a kreslení v systému Windows Forms](../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
+ [Grafika a kreslení v modelu Windows Forms](../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  Obsahuje odkazy na témata, které popisují, jak provádět vlastní kreslení v rozhraní Windows Forms.  
   
  [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)  

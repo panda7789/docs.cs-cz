@@ -17,11 +17,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29de47eceae4b8927f2701ca0bbda2ecc7243919
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 002e75542c1dbbe1cfaa122898801dd5babf054f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-height-of-a-window-from-a-page"></a>Postupy: nastavení výšku okna ze stránky
 Tento příklad ukazuje, jak nastavit výšku v okně <xref:System.Windows.Controls.Page>.  

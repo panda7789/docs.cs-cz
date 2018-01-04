@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 057612bfb28333df0aebaa5ca19555f4c4951687
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 02dfe1cb494df91a2a3ef3a6bba533306d61edef
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a>Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView
 Někdy je užitečné k prozkoumání každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek, aby bylo možné provést některé výpočet hodnot uzlu. Tuto operaci lze provést pomocí postupu rekurzivní (rekurzivní metody v jazyce C# a C++), který iteruje každý uzel v každé z kolekcí stromu.  
@@ -134,5 +135,5 @@ Někdy je užitečné k prozkoumání každý uzel ve Windows Forms <xref:System
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [TreeView – ovládací prvek](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
+ [Ovládací prvek TreeView](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
  [Rekurzivní procedury](~/docs/visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)

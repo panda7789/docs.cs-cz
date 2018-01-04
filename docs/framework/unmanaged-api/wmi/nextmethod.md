@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d9b14424bb914be3ba127670e1b6490f79854d6e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 6b886b3ecbd1d5b5b8d212846b2bd8291fa43909
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="nextmethod-function"></a>NextMethod – funkce
 Načte metodu další v výčet, který začíná volání [BeginMethodEnumeration](beginmethodenumeration.md).  

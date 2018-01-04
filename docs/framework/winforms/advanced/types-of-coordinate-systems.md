@@ -26,11 +26,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be89584ee8e7a82c405bf8664bfad18ced6d989a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 287b1c9eddef882041d9e4eac44a06190f3585a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="types-of-coordinate-systems"></a>Typy souřadnicových systémů
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]používá tři souřadnice mezery: world, stránky a zařízení. Souřadnice World jsou použita k modelování konkrétní grafické world souřadnice a souřadnice, které můžete předat metody v rozhraní .NET Framework. Stránka souřadnice naleznete souřadnicový systém používán kreslicí plochy, jako jsou formuláře nebo ovládacího prvku. Souřadnice zařízení jsou souřadnice používané fyzického zařízení přitahuje, jako je obrazovky nebo list papíru. Pokud provedete volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v prostoru souřadnic world. Před [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete nakreslení čáry na obrazovce, souřadnice předávat posloupnost transformace. Jeden transformace, názvem Světové transformace převede world souřadnice jiného a jiné transformace, názvem transformace stránky převede souřadnice stránky na zařízení souřadnice.  

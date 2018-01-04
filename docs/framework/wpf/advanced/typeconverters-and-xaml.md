@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 073730382f98a6c3d61ebdadf4f1f74411ba4e63
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b7ee4b3b00a675cfafc884d41079b76656bdf49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma představuje účelem převodu typu z řetězce jako obecné funkce jazyka XAML. V rozhraní .NET Framework <xref:System.ComponentModel.TypeConverter> třída slouží jako součást implementace pro spravované vlastní třídu, která lze použít jako hodnoty vlastností v použití atributu XAML určitý účel. Pokud můžete psát vlastní třídu a chcete instancí vaší třídy možné používat jako hodnoty nastavit atribut XAML, může se mají použít <xref:System.ComponentModel.TypeConverterAttribute> na třídu, zápis vlastní <xref:System.ComponentModel.TypeConverter> třídy, nebo obojí.  
@@ -127,4 +128,4 @@ Toto téma představuje účelem převodu typu z řetězce jako obecné funkce j
  <xref:System.ComponentModel.TypeConverter>  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [Syntaxe jazyka XAML podrobně](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
+ [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)

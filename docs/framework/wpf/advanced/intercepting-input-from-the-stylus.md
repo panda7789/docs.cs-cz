@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 611a2d2de56025e2f1b5add6106294834586f9af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5fde62e2e1ab17b26c91051f68b7d4225450c60
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení přes <xref:System.Windows.Input.Stylus> vstup a vytvoření digitálního <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použijte ho pro datový proud dat pocházejících z pera zařízení k zajištění optimálního výkonu.  
@@ -81,5 +82,5 @@ ms.lasthandoff: 11/21/2017
  Odvozením vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a jejich vložení do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> kolekcí, může výrazně zvýšit chování digitálního pera. Máte přístup k <xref:System.Windows.Input.StylusPoint> data, jako je generován, budete moci přizpůsobit <xref:System.Windows.Input.Stylus> vstupní. Vzhledem k tomu, že máte takový nízké úrovně přístup k <xref:System.Windows.Input.StylusPoint> data, rozpoznávání rukopisu a vykreslování s optimální výkon můžete implementovat pro vaši aplikaci.  
   
 ## <a name="see-also"></a>Viz také  
- [Pokročilé rukopisu zpracování](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
+ [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
  [Přístup k informacím a manipulace s vstup pomocí pera](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

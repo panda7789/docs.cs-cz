@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc39a282cbb12b014c0749b3eb807f3248fca16e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d520a46bc3380fc5dff76f5df866ae3411d5a6a7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuration-based-activation"></a>Aktivace podle konfigurace
 Tento příklad ukazuje, jak aktivovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby bez nutnosti .svc souboru.  

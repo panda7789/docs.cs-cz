@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: dd5366b4110d9ec2290e2669919575e07e8ec98a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a98d1d21d7df4e88c668262e60397029fe44c5a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltipv6gt-element-network-settings"></a>&lt;IPv6&gt; – Element (nastavení sítě)
 Umožňuje Internet Protocol version 6 (IPv6) odpovědí z zastaralé členy <xref:System.Net.Dns> třídy.  

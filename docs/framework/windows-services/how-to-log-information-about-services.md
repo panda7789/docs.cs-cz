@@ -23,11 +23,12 @@ caps.latest.revision: "17"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 612b983f53f147102ddf7bab03d4ec6783dc4026
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2dabc20c3cd3a97ed86dc45436eaad5e7a07c91a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-log-information-about-services"></a>Postupy: Zaznamenávání informací o službách
 Všechny projekty služby systému Windows ve výchozím nastavení, mají možnost využívat v protokolu událostí aplikace a do něj zapisovat informace a výjimky. Můžete použít <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost označující, zda chcete tuto funkci v aplikaci. Ve výchozím nastavení je protokolování zapnuto služby, které vytvoříte pomocí šablony projektu služby systému Windows. Můžete použít statické formu <xref:System.Diagnostics.EventLog> třída pro psaní informace o službě do protokolů, aniž by bylo nutné vytvořit instanci <xref:System.Diagnostics.EventLog> součást nebo ručně zaregistrovat zdroj.  
@@ -79,4 +80,4 @@ Všechny projekty služby systému Windows ve výchozím nastavení, mají možn
     [!code-vb[VbRadconService#15](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#15)]  
   
 ## <a name="see-also"></a>Viz také  
- [Úvod do aplikace služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+ [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f4f518b1676e998cf8a3fd93f893398342cba6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d28f55ddd550e95d9859258d89b4910cf320e3cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-client-application-services"></a>Postupy: Konfigurace klientských aplikačních služeb
 Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **Návrhář projektu** povolit a nakonfigurovat klientské aplikační služby. Klient aplikačních služeb můžete použít k ověření uživatelů a načítání uživatelských rolí a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
@@ -150,11 +151,11 @@ Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Klient aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ [Klientské aplikační služby](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
- [Stránka služby, Návrhář projektu](https://msdn.microsoft.com/library/bb398109)  
- [Rozšířená nastavení pro dialogové okno služby](/visualstudio/ide/reference/advanced-settings-for-services-dialog-box)  
- [Postupy: implementace přihlášení uživatele u klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
+ [Stránka Služby, Návrhář projektu](https://msdn.microsoft.com/library/bb398109)  
+ [Dialogové okno Pokročilé nastavení služeb](/visualstudio/ide/reference/advanced-settings-for-services-dialog-box)  
+ [Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
  [Návod: Použití klientských aplikačních služeb](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)  
  [Implementace zprostředkovatele členství](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)  
  [Implementace zprostředkovatele rolí](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)  

@@ -18,11 +18,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d68f71c7963903d1a56620329c1ad95ea82f7561
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4712728a27ada0d6e8f5045b1727b73b857cdde3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="diagnostics-symbol-store-structures"></a>Struktury úložiště symbolů diagnostiky
 Toto téma popisuje nespravované struktury, která používá úložiště symbolů diagnostiky rozhraní API.  
@@ -31,15 +32,15 @@ Toto téma popisuje nespravované struktury, která používá úložiště symb
  [CALL_ID – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md)  
  Poskytuje informace o funkci, která je volána ladicí program.  
   
- [Symlinedelta – struktura](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md)  
+ [SYMLINEDELTA – struktura](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md)  
  Obsahuje informace, které obslužná rutina symbol o metodách, které byly přesunuty v důsledku úpravy.  
   
- [User_thread – struktura](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md)  
+ [USER_THREAD – struktura](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md)  
  Poskytuje informace o ladicí program o vlákna.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
+ [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
   
- [Výčty úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)  
+ [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)  
   
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

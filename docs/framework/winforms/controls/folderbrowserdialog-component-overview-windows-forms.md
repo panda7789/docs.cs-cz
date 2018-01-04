@@ -18,11 +18,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d7fab1dbe01c5b21e510841b1541150f6152ab0b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 26d2b6294a503edd25b499da2ab67739cdf87174
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="folderbrowserdialog-component-overview-windows-forms"></a>FolderBrowserDialog – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> součást je modální dialogové okno, které se používá k procházení a výběru složek. V nástroji lze také vytvořit nové složky <xref:System.Windows.Forms.FolderBrowserDialog> součásti.  
@@ -36,5 +37,5 @@ Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> součást je modá
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.FolderBrowserDialog>  
- [Postupy: Výběr složek pomocí ovládacího prvku Windows Forms FolderBrowserDialog – komponenta](../../../../docs/framework/winforms/controls/how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)  
- [FolderBrowserDialog – komponenta](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)
+ [Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog](../../../../docs/framework/winforms/controls/how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)  
+ [Komponenta FolderBrowserDialog](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)

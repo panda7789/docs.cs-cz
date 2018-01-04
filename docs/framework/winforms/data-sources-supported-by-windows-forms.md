@@ -26,11 +26,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b02e492d0357c80776df0a1d0bd01ce228fa0b04
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d2c1c021759c7032257e95eb2cad202a461dc05
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Datová vazba tradičně, už je použité v aplikacích využít dat uložených v databázích. S Windows Forms – datová vazba, můžete přístup k datům z databáze a také data v jiných struktur, jako je například pole a kolekcí, tak dlouho, dokud byly splněny určité minimální požadavky.  
@@ -68,6 +69,6 @@ Datová vazba tradičně, už je použité v aplikacích využít dat uloženýc
 -   <xref:System.Data.DataViewManager>. A <xref:System.Data.DataViewManager> je přizpůsobené zobrazení na celou <xref:System.Data.DataSet>, podobá <xref:System.Data.DataView>, ale s vztahy, které jsou zahrnuty. S <xref:System.Data.DataViewManager.DataViewSettings%2A> kolekce, můžete nastavit výchozí filtrů a řazení možnosti pro všechna zobrazení, <xref:System.Data.DataViewManager> má pro danou tabulku.  
   
 ## <a name="see-also"></a>Viz také  
- [Oznámení změn v systému Windows Forms datové vazby](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
- [Datová vazba a systém Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
+ [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
+ [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)

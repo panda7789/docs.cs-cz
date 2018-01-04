@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f55cfb6afa8ad533aac84b391a7cd6fef83d72d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f68642eb5f996722097976e042006afbf366ae39
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="label-control-overview-windows-forms"></a>Přehled ovládacího prvku Popisek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky slouží k zobrazení textu nebo obrázků, které uživatel nemůže upravovat. Slouží k identifikaci objektů ve formuláři – zadejte popis co určité ovládacího prvku budou dělat, když klikli, například nebo zobrazit informace v reakci na události spuštění nebo proces v aplikaci. Můžete například použít popisky Pokud chcete přidat popisný titulky textová pole, seznamy, pole se seznamem a tak dále. Můžete také psát kód, který změní text zobrazený popiskem v reakci na události v době běhu. Například pokud vaše aplikace trvá několik minut, než se zpracovat změnu, můžete zobrazit zprávu o stavu zpracování v popisku.  
@@ -34,5 +35,5 @@ Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky slouží k zobr
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Label>  
- [Postupy: velikost Windows Forms – ovládací prvek popisek podle obsahu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
- [Postupy: vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label](../../../../docs/framework/winforms/controls/how-to-create-access-keys-with-windows-forms-label-controls.md)
+ [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
+ [Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label](../../../../docs/framework/winforms/controls/how-to-create-access-keys-with-windows-forms-label-controls.md)

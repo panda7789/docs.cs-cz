@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 44aebb701eb7222773c030994fbaa9c0109dce70
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5d4559f177b05f7d238c9f30649a5b01af7fb6f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *Vytváření instancí* odkazuje na řízení životnost služby uživatelem definované objekty a jejich související <xref:System.ServiceModel.InstanceContext> objekty. *Concurrency* je termín určený k ovládacímu prvku počet vláken, které jsou prováděny v době <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  
@@ -119,8 +120,8 @@ public class CalculatorService : ICalculatorConcurrency
   
 ## <a name="see-also"></a>Viz také  
  [Použití relací](../../../../docs/framework/wcf/using-sessions.md)  
- [Postupy: vytvoření služby vyžadující relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
- [Postupy: vytváření instancí služby Řízení](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  
- [Souběžnosti](../../../../docs/framework/wcf/samples/concurrency.md)  
+ [Postupy: Vytvoření služby vyžadující relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
+ [Postupy: Řízení vytváření instancí služby](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  
+ [Souběžnost](../../../../docs/framework/wcf/samples/concurrency.md)  
  [Vytváření instancí](../../../../docs/framework/wcf/samples/instancing.md)  
  [Relace](../../../../docs/framework/wcf/samples/session.md)

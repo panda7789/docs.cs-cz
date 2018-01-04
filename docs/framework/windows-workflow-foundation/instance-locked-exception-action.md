@@ -12,11 +12,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3a52550624e93fb9d262f7df2d2e922369c90a8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b221b0eef1e132789ef04fb59b56126f023bc43
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="instance-locked-exception-action"></a>Instance uzamčení výjimka akce
 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A> Vlastnost úložiště Instance pracovního postupu SQL umožňuje určit, jakou akci zprostředkovatele SQL trvalost má provést, pokud obdrží <xref:System.Runtime.DurableInstancing.InstanceLockedException>. Zprostředkovatel trvalost obdrží tuto výjimku při pokusu o uzamčení instance služby pracovního postupu, který je aktuálně uzamčen jiného hostitele služby. Hodnoty pro tuto vlastnost jsou <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.NoRetry>, <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.BasicRetry>, a <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.AggressiveRetry>. Výchozí hodnota je <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.NoRetry>. Následující seznam popisuje tři možnosti:  

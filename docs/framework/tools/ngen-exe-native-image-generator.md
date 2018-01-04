@@ -29,11 +29,12 @@ caps.latest.revision: "57"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: af79c4309dfd048562b2ee14a71c6da791040397
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 074b5aae9d92b83d310a003e85709a4ba8e40c46
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).  
@@ -187,7 +188,7 @@ ngen /? | /help
   
     -   [Neplatné obrázky](#InvalidImages)  
   
--   [Řešení potíží](#Troubleshooting)  
+-   [Odstraňování potíží](#Troubleshooting)  
   
     -   [Vazba sestavení – Prohlížeč protokolu](#Fusion)  
   
@@ -596,6 +597,6 @@ ngen executeQueuedItems
  [Služba nativních bitových kopií](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)  
  [Úloha nativních bitových kopií](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Proces spravovaného spouštění](../../../docs/standard/managed-execution-process.md)  
+ [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c0a7d5390681e7270381df109601d269f12a707a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fa545e812de8c87191d6bba7df5cc5a5a494af3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-metadata"></a>Používání metadat
 Metadata služby obsahuje strojově čitelným popis služby. Metadata služby obsahuje popisy koncové body služby, vazby, kontrakty, operace a zprávy. Metadata služby můžete použít pro jiné účely, včetně automatického generování klienta pro využívání služby, implementace popis služby a dynamicky aktualizuje vazbu pro klienta.  
@@ -26,7 +27,7 @@ Metadata služby obsahuje strojově čitelným popis služby. Metadata služby o
  [Principy generovaného klientského kódu](../../../../docs/framework/wcf/feature-details/understanding-generated-client-code.md)  
  Popisuje různé třídy a rozhraní Svcutil.exe nástroj, který generuje.  
   
- [Postupy: načtení metadat a implementovat kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
+ [Postupy: Načítání metadat a implementace kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
  Ukazuje, jak načíst metadata pomocí Svcutil.exe a implementaci služby kompatibilní.  
   
  [Generování klienta WCF z metadat služby](../../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)  

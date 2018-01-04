@@ -19,11 +19,12 @@ caps.latest.revision: "31"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b6c95613cdc7ac656e8beafcf9a685e51eddf5a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 49d2154b1af4350c3145f2cb9be30505e0967a4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 Spravované profil na základě optimalizace nástroj (Mpgo.exe) je nástroj příkazového řádku, který používá běžné scénáře koncových uživatelů k optimalizaci sestavení nativních bitových kopií, které jsou vytvořené pomocí [generátor (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). Tento nástroj umožňuje spustit trénovací scénáře, které generují data profilu. [Generátor (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) tato data používá k optimalizaci jeho sestavení aplikace generované nativních bitových kopií. Trénovací scénář je zkušební spuštění očekávaného použití aplikace. Nástroj Mpgo.exe je k dispozici v sadě Visual Studio Ultimate 2012 a vyšší. Počínaje [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], Mpgo.exe můžete také použít k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
@@ -134,7 +135,7 @@ mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyT
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
+ [Ngen.exe (generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
  [Zlepšení výkonu spuštění desktopových aplikací](http://go.microsoft.com/fwlink/p/?LinkId=248943)  
  [Základní informace o vylepšení výkonu v rozhraní .NET 4.5](http://go.microsoft.com/fwlink/p/?LinkId=249131)

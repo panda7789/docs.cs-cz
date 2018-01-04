@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b42c06b9507894568a4299f23b62010e44076194
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1218cda46a6a901c3dbf9fb11333b04d0133df42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-client-applications"></a>Zabezpečení klientské aplikace
 Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněné z chyb zabezpečení, které může dojít ke ztrátě dat nebo jinak ohrozit zabezpečení systému. Vytvoření zabezpečeného uživatelského rozhraní můžete zabránit mnoho problémů s blokováním útočníci před přístupem dat nebo dostatek systémových prostředků.  
@@ -46,7 +47,7 @@ Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněn
  [Windows Forms – zabezpečení](../../../../docs/framework/winforms/windows-forms-security.md)  
  Popisuje, jak zabezpečit aplikace Windows Forms a poskytuje odkazy na související témata.  
   
- [Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
+ [Model Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Popisuje, jak pracovat s nespravovaných aplikací v aplikaci Windows Forms.  
   
  [Aplikace ClickOnce – nasazení pro systém Windows Forms](http://msdn.microsoft.com/en-us/34d8c770-48f2-460c-8d67-4ea5684511df)  
@@ -78,6 +79,6 @@ Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněn
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
- [Zabezpečení aplikací](/visualstudio/ide/securing-applications)  
+ [Zabezpečování aplikací](/visualstudio/ide/securing-applications)  
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

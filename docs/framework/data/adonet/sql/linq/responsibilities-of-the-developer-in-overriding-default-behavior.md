@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4792967bb21912e475c32c0f37149b89a838b133
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 232f57890e70e5be0ec60408587a622fafd1ba7e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="responsibilities-of-the-developer-in-overriding-default-behavior"></a>Odpovědnosti pro vývojáře přepisování výchozího chování
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nevynucuje následující požadavky, ale není definován chování, pokud nejsou splněny tyto požadavky.  
@@ -37,4 +38,4 @@ ms.lasthandoff: 10/18/2017
 -   Nakonec přepsání metoda očekává se stanovené operaci provést. Sémantika [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] operací, jako je přes načítání, odložené načítání, a <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) vyžadují přepsání poskytnout stanovené službu. Například zatížení přepsat, který právě vrátí prázdnou kolekci bez kontroly, že obsah v databázi pravděpodobně povede k nekonzistentní data.  
   
 ## <a name="see-also"></a>Viz také  
- [Přizpůsobení vložit, aktualizovat a odstraňovat operací](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)
+ [Přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)

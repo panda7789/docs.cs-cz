@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0e75ec53a769099e199b60f5466eeb4037b86862
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a07337e99e985bfbc0a5dbc5f2d231ee36cf1422
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-up-notification-of-binding-updates"></a>Postupy: Nastavení oznámení pro aktualizace připojení
 Tento příklad ukazuje, jak nastavit tak, aby být upozorněni, když byla aktualizována vazby cíle (target) nebo vlastnost vazby zdroj (zdroj) vazby.  
@@ -43,5 +44,5 @@ Tento příklad ukazuje, jak nastavit tak, aby být upozorněni, když byla aktu
  Parametry události lze zjistit podrobnosti o vlastnosti, který změnil (například typ nebo konkrétní elementu, pokud obslužná rutina stejné je připojena k více než jeden element), což může být užitečné, pokud nejsou k dispozici více vázané vlastnosti na jeden element.  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

@@ -19,30 +19,31 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 61e2bc470641279b594b8f77eb924a47d8a063ac
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6a1b3e78bac5c388bbca4afa6354e5f9aee02c65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="properties-wpf"></a>Vlastnosti (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje sadu služeb, které slouží k rozšíření funkcí [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost. Souhrnně tyto služby jsou obvykle označuje jako vlastnost systém WPF. Vlastnosti, které je založeno [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Přehled přidružené vlastnosti](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
- [Zpětná volání vlastnost závislosti a ověření](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Metadata vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [Metadata vlastnosti Framework](../../../../docs/framework/wpf/advanced/framework-property-metadata.md)  
- [Priorita hodnotu vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)  
- [Vlastnosti jen pro čtení závislostí](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)  
- [Hodnota dědičnost vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)  
- [Závislost vlastnost zabezpečení](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
- [Bezpečné konstruktor vzory pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)  
- [Typ kolekce vlastností závislostí](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
- [Načítání XAML a vlastností závislostí](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)  
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Přehled přidružených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
+ [Zpětné volání a ověření vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)  
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [Metadata vlastnosti architektury](../../../../docs/framework/wpf/advanced/framework-property-metadata.md)  
+ [Priorita hodnot vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)  
+ [Vlastnosti závislosti jen pro čtení](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)  
+ [Dědičnost hodnoty vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)  
+ [Zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
+ [Zabezpečené vzory konstruktoru pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)  
+ [Vlastnosti závislostí typu kolekce](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
+ [Vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.DependencyProperty>  
@@ -55,9 +56,9 @@ ms.lasthandoff: 10/22/2017
   
 ## <a name="related-sections"></a>Související oddíly  
  [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [XAML v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [Základní prvky](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [Element stromu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+  [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
+  [Základní elementy](../../../../docs/framework/wpf/advanced/base-elements.md)  
+  [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
   [Události](../../../../docs/framework/wpf/advanced/events-wpf.md)  
   [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
   [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  

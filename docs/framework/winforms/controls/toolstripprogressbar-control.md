@@ -18,11 +18,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1bb7a1e74f1687a1549ab0780e2e2e773382f193
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 13dcd324772393e3746a6ea5c5cadca02d9a1bab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstripprogressbar-control"></a>ToolStripProgressBar – ovládací prvek
 <xref:System.Windows.Forms.ToolStripProgressBar> Kombinuje <xref:System.Windows.Forms.ToolStrip> vykreslování a rafting funkce s jeho typické funkce sledování procesu.  
@@ -39,4 +40,4 @@ ms.lasthandoff: 10/22/2017
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripProgressBar> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

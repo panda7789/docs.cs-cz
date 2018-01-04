@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 544e505dd182d331179d9a6d3da4815b849fdd95
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e616f989416fcee77caa9b9a5d87cfa6812eab32
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transaction-protocols-version-10"></a>Protokoly transakce verze 1.0
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]verze 1 implementuje verze 1.0 protokoly WS-Atomic Transactions a WS-spolupráce. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]verze 1.1, najdete v části [protokoly transakcí](../../../../docs/framework/wcf/feature-details/transaction-protocols.md).  

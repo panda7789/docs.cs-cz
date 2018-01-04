@@ -12,11 +12,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 638ad75155bae30f3cd1d126d27e8e0542026ab0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4608a91c905122a1ec4698990debbf5038599801
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-workflow-instance-store"></a>Ukládání Instance pracovního postupu SQL
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL úložiště Instance pracovního postupu, která umožňuje pracovní postupy pro zachování stavu informace o instancí pracovních postupů v databázi systému SQL Server 2005 nebo SQL Server 2008. Tato funkce je primárně implementována ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třídy, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídu rozhraní trvalost. Funkci SQL ukládání Instance pracovního postupu se považuje za trvalost zprostředkovatele SQL, který je konkrétní implementaci trvalost rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště.  
@@ -31,19 +32,19 @@ ms.lasthandoff: 12/02/2017
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Vlastnosti úložiště Instance pracovního postupu SQL](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md)  
+-   [Vlastnosti úložiště instancí pracovních postupů SQL](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md)  
   
--   [Postupy: povolení trvalost SQL pro pracovní postupy a služeb pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)  
+-   [Postupy: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)  
   
--   [Instance aktivace](../../../docs/framework/windows-workflow-foundation/instance-activation.md)  
+-   [Aktivace instance](../../../docs/framework/windows-workflow-foundation/instance-activation.md)  
   
 -   [Podpora pro dotazy](../../../docs/framework/windows-workflow-foundation/support-for-queries.md)  
   
--   [Rozšíření úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)  
+-   [Rozšiřitelnost úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)  
   
 -   [Zabezpečení](../../../docs/framework/windows-workflow-foundation/security.md)  
   
--   [Trvalost databáze systému SQL Server](../../../docs/framework/windows-workflow-foundation/sql-server-persistence-database.md)  
+-   [Databáze trvalosti SQL Serveru](../../../docs/framework/windows-workflow-foundation/sql-server-persistence-database.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Trvalost ukázky](http://go.microsoft.com/fwlink/?LinkID=177735)

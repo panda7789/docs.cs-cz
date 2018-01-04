@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 503683de875b8853e219139800eef2a5417a1574
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 001d0ec45ad990ef366e7fc1216a7370aade9cb7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-style-for-a-dragged-gridview-column-header"></a>Postupy: Vytvoření stylu pro přetahované záhlaví sloupce GridView
 Tento příklad ukazuje, jak změnit vzhled taženou <xref:System.Windows.Controls.GridViewColumnHeader> když uživatel změní pozici sloupce.  
@@ -44,6 +45,6 @@ Tento příklad ukazuje, jak změnit vzhled taženou <xref:System.Windows.Contro
  <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  
- [Postupy: témata](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
  [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [Rutina GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)
+ [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)

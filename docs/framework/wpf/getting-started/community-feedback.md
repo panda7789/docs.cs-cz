@@ -22,11 +22,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cec4326c8ae93507ee94c0b9573e679c8584a77
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 82f176a5c4d0f3e371993c9b2273bb045fe6df1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-community-feedback"></a>Zpětná vazba komunity WPF
 [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)]zveřejňuje řadu komunitní zdroje pro další informace o, popisují a poskytnout zpětnou vazbu na [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)], včetně blogy vyprodukované [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Seskupit členy a žebříčky komunity, fóra a [!INCLUDE[TLA2#tla_ms](../../../../includes/tla2sharptla-ms-md.md)] Center produktu zpětnou vazbu. Každý prostředek, komunity nabízí jinou sadu výhody. Tyto výhody jsou tu popsané, jak jsou sady osvědčené postupy pro použití každou, abyste zajistili nejlepší odpovědi od komunity ve velkém a [!INCLUDE[TLA2#tla_ms](../../../../includes/tla2sharptla-ms-md.md)] na konkrétní.  

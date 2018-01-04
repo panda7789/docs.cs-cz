@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3e8a05b6f37f7686f18a6200e009aabe7eed5537
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 04b86579f45c5a357f8759bf36ae41f7a5c6e98b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-new-setting-at-design-time"></a>Postupy: Vytvoření nového nastavení při návrhu
 Můžete vytvořit nové nastavení v době návrhu pomocí Návrháře nastavení. Návrhář nastavení je rozhraní stylu mřížky, které vám umožní vytvořit nové nastavení a zadejte vlastnosti pro toto nastavení. Musíte zadat název, hodnotu, typ a obor pro nové nastavení. Po vytvoření nastavení je dostupné v kódu.  
@@ -42,6 +43,6 @@ Můžete vytvořit nové nastavení v době návrhu pomocí Návrháře nastaven
 3.  V Návrháři nastavení nastavte název, hodnotu, typ a obor pro vaše nastavení. Každý řádek představuje jeden nastavení.  
   
 ## <a name="see-also"></a>Viz také  
- [Použití nastavení aplikace a nastavení uživatele](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
+ [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
  [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)  
- [Postupy: Změna hodnoty existujícího nastavení v době návrhu](../../../../docs/framework/winforms/advanced/how-to-change-the-value-of-an-existing-setting-at-design-time.md)
+ [Postupy: Změna hodnoty existujícího nastavení při návrhu](../../../../docs/framework/winforms/advanced/how-to-change-the-value-of-an-existing-setting-at-design-time.md)

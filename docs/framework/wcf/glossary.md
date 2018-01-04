@@ -16,11 +16,12 @@ caps.latest.revision: "243"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 49ed554c7bfea024acce6a6dc6d32db44a6e91f5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 76cc8f456701d65b675ce7b89436da5213ea9430
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-glossary-for-net-framework-45"></a>Glosář služby Windows Communication Foundation pro .NET Framework 4.5
 Následující termíny jsou definovány pro dokumentaci k Windows Communication Foundation.  
@@ -49,7 +50,7 @@ Následující termíny jsou definovány pro dokumentaci k Windows Communication
 |Inicializace operace|Operace, která je volána jako první operace novou relaci. Inicializaci jiné operace lze volat pouze po nejméně jednu operaci Inicializace byla volána.|  
 |vytváření instancí modelu|Služba má model zřizování instancí. Existují tři zřizování instancí modely: &quot;jeden,&quot; ve kterém jeden objekt CLR služeb všech klientů. &quot;za volání&quot; ve kterém se vytvoří nový objekt CLR pro zpracování jednotlivých volání klienta; a &quot;relace,&quot; v které sadu CLR objekty, vytváří, jeden pro každou samostatné relaci. Volba zřizování instancí modelu závisí na požadavky na aplikace a vzoru očekávané využití služby.|  
 |– zpráva|Zpráva je samostatná jednotka data, která může obsahovat několik částí, včetně text a záhlaví.|  
-|kontrakt zprávy|Kontakt zpráva popisuje formát zprávy. Například deklaruje, zda zpráva prvky by měli přejít v záhlaví a text, jakou úroveň zabezpečení má být použita na jaké elementy zprávu, a tak dále.|  
+|kontrakt zprávy|Kontrakt zprávy popisuje formát zprávy. Například deklaruje, zda zpráva prvky by měli přejít v záhlaví a text, jakou úroveň zabezpečení má být použita na jaké elementy zprávu, a tak dále.|  
 |režim zabezpečení zpráv|Režim zabezpečení zprávy určuje, že zabezpečení poskytuje implementace jeden nebo více bezpečnostní specifikací. Každá zpráva obsahuje nezbytné mechanismů pro zabezpečení během jeho přenosu a umožňuje příjemci, chcete-li zjistit případnou manipulaci a k dešifrování zpráv. V této smysl je zabezpečení zapouzdřený v rámci každé zprávy, zajištění zabezpečení začátku do konce napříč více segmenty směrování. Protože informace o zabezpečení stane součástí zprávy, je také možné zahrnout více druhů přihlašovací údaje se zprávou (to se označují jako deklarace identity). Tento přístup také nabízí výhodu v podobě povolení zprávu, která se bezpečně procházet přes všechny přenos, včetně více přenosy mezi jeho původní a cílové. Nevýhodou tohoto přístupu je složitosti kryptografických mechanismů zaměstnání, což vede k ovlivnit výkon.|  
 |metadata|Metadata služby jsou popsané charakteristiky služby, která externí entity je potřeba pochopit ke komunikaci se službou. Metadata mohou být spotřebovávána ServiceModel Metadata Utility Tool (Svcutil.exe) pro generování klienta WCF a doprovodné konfigurace, který klientská aplikace můžete použít k interakci se službou.  Metadata vystavené služba zahrnuje dokumentech schémat XML, které definují kontrakt dat služby, a WSDL dokumenty, které popisují metody služby.  Když je povolené, metadata pro službu automaticky generuje služba WCF zkontrolováním služba a její koncové body. K publikování metadat ze služby, je potřeba explicitně povolit chování metadat.|  
 |operace kontraktu|Operaci kontrakt definuje parametry a návratový typ operace. Při vytváření rozhraní, které definuje kontrakt služby, souhlasíte s použitím atribut T:System.ServiceModel.OperationContractAttribute na každou definici metody, která je součástí smlouvy operaci kontrakt. Operace můžete modelován jako přepnutím do jedné zprávy a vrátilo se do jedné zprávy, nebo jako trvá sadu typů a vrácení typu. V takovém případě systém určí formát zprávy, které se vyměňují pro tuto operaci.|  

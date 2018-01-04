@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8483c53ed8b35fd3948ec42b14859146afa8ce42
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 894d3295b83a1971792e6da845f276be486a4ea5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess3-interface"></a>ICorDebugProcess3 – rozhraní
 Řídí vlastní oznámení ladicího programu.  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Setenablecustomnotification – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-setenablecustomnotification-method.md)|Povolí nebo zakáže oznámení vlastní ladicí program zadaného typu.|  
+|[SetEnableCustomNotification – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-setenablecustomnotification-method.md)|Povolí nebo zakáže oznámení vlastní ladicí program zadaného typu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní logicky rozšiřuje ICorDebugProcess a icordebugprocess2 – rozhraní.  
@@ -50,5 +51,5 @@ ms.lasthandoff: 11/21/2017
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

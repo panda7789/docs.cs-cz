@@ -17,20 +17,21 @@ caps.latest.revision: "67"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8991a8f839520196addc235c4731246e448dcfa8
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cd1cc6914a8bd22d1cc8787a45328716a6c4c97f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listbox-how-to-topics"></a>ListBox – postupy
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.ListBox> zobrazte volitelný seznam položek ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření vazby ListBox k datům](../../../../docs/framework/wpf/controls/how-to-bind-a-listbox-to-data.md)  
- [Získání ListBoxItem](../../../../docs/framework/wpf/controls/how-to-get-a-listboxitem.md)  
+ [Svázání prvku ListBox s daty](../../../../docs/framework/wpf/controls/how-to-bind-a-listbox-to-data.md)  
+ [Načtení položky ListBoxItem](../../../../docs/framework/wpf/controls/how-to-get-a-listboxitem.md)  
  [Postupy: přidání dat do ItemsControl](http://msdn.microsoft.com/en-us/271e52ce-0f44-4b1f-a7da-0bc72bd9ed65)  
- [Posouvání výkon ListBox](../../../../docs/framework/wpf/controls/how-to-improve-the-scrolling-performance-of-a-listbox.md)  
+ [Zvýšení výkonu posunování prvku ListBox](../../../../docs/framework/wpf/controls/how-to-improve-the-scrolling-performance-of-a-listbox.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListBox>  

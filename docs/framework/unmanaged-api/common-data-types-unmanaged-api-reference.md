@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 03350825b3de4515a0d30e8644f34df71efa25db
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a565ec6ded0a82ed4ab3c0fd03b082d996369ddc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="common-data-types-unmanaged-api-reference"></a>Běžné typy dat (referenční dokumentace nespravovaného rozhraní API)
 Toto téma obsahuje seznam jednoduché datové typy používané nespravovaná rozhraní API pro rozhraní .NET Framework, které jsou definovány pomocí jazyka C/C++ `typedef` příkazy. Tyto datové typy jsou obvykle aliasy pro C/C++ primitivní datové typy. Hodnoty tyto datové typy jsou obvykle neprůhledného; To znamená jsou vrácena určitou funkci nebo metodu tak, aby se dá předat do jiné funkce nebo metody bez úprav.  
@@ -45,4 +46,4 @@ Toto téma obsahuje seznam jednoduché datové typy používané nespravovaná r
 |ID podprocesu|`typedef UINT_PTR ThreadID;`|corprof.h|Identifikátor spravované vlákno.|  
   
 ## <a name="see-also"></a>Viz také  
- [Referenční dokumentace nespravovaného rozhraní API](../../../docs/framework/unmanaged-api/index.md)
+ [Referenční informace o nespravovaném rozhraní API](../../../docs/framework/unmanaged-api/index.md)

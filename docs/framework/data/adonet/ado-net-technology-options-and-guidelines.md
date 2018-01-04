@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7f679cdf65d30b47037c1d94a1e7fb6eba3572c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 11ca23427460ed4c469fc45e43f3b32e4ec5eb25
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Možnosti technologie ADO.NET a pokyny
 Platforma dat ADO.NET je více verzí strategie pro snížit množství kódování a údržby, které jsou potřeba pro vývojáře je povolením programu na modely dat koncepční entity. Tato platforma obsahuje ADO.NET Entity Framework a souvisejících technologiích.  
@@ -50,6 +51,6 @@ Platforma dat ADO.NET je více verzí strategie pro snížit množství kódová
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nasadí data services na webu nebo v síti intranet. Strukturovaná data jako entity a vztahy podle specifikací modelu Entity Data Model. Data pro tento model nasazení je adresovat pomocí standardní protokol HTTP. Další informace najdete v tématu [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md).  
   
 ## <a name="see-also"></a>Viz také  
- [ADO.NET – přehled](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Co je nového v technologii ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
+ [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f74a90952c6ac780c53441af472faeb999febbb2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7611bfa0c06bc254a720ce9bc39935aa209d52e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugvalue2-interface"></a>ICorDebugValue2 – rozhraní
 Rozšiřuje rozhraní "ICorDebugValue" poskytovat podporu pro objekty "ICorDebugType".  
@@ -32,7 +33,7 @@ Rozšiřuje rozhraní "ICorDebugValue" poskytovat podporu pro objekty "ICorDebug
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getexacttype – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md)|Získá ukazatele rozhraní k `ICorDebugType` objekt, který reprezentuje <xref:System.Type> této hodnoty.|  
+|[GetExactType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md)|Získá ukazatele rozhraní k `ICorDebugType` objekt, který reprezentuje <xref:System.Type> této hodnoty.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -49,6 +50,6 @@ Rozšiřuje rozhraní "ICorDebugValue" poskytovat podporu pro objekty "ICorDebug
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
     
- [ICorDebugValue3 – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)
+ [ICorDebugValue3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)

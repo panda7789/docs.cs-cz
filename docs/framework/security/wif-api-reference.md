@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d7ae7ef82d12c024441d01ef420bc9366e3c589d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e3209ac32314e2ac3f4e3e1920991ed29f956832
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wif-api-reference"></a>Referenční dokumentace rozhraní API WIF
 Třídy Windows Identity Foundation (WIF) jsou rozdělit do následujících sestavení: `mscorlib` (mscorlib.dll), `System.IdentityModel` (System.IdentityModel.dll), `System.IdentityModel.Services` (System.IdentityModel.Services.dll), a `System.ServiceModel` () System.ServiceModel.dll). Toto téma obsahuje odkazy na obory názvů WIF a stručné vysvětlení tříd, které obsahuje každý obor názvů.  
@@ -56,5 +57,5 @@ Třídy Windows Identity Foundation (WIF) jsou rozdělit do následujících ses
  Obsahuje třídy, které představují WCF kontrakty, kanály, hostitelé služeb a jiných artefaktů, které se používají ve scénářích active (WS-Trust). Tento obor názvů také obsahuje třídy, které jsou specifické pro Windows Communication Foundation (WCF) a které nejsou používána WIF.  
   
 ## <a name="see-also"></a>Viz také  
- [Referenci na konfigurační WIF](../../../docs/framework/security/wif-configuration-reference.md)  
- [Namespace mapování mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)
+ [Referenční dokumentace ke konfiguraci WIF](../../../docs/framework/security/wif-configuration-reference.md)  
+ [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c4beb386528829bace92be6add471b87fb434d74
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2c2776bda3cebfbe0d614666ce234c10a1ab466b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bitmap-effects"></a>Bitmapové efekty
 Témata v této části popisují, jak použít vizuálních efektů rastrové obrázky pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -32,7 +33,7 @@ Témata v této části popisují, jak použít vizuálních efektů rastrové o
 >  V [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] nebo novější, <xref:System.Windows.Media.Effects.BitmapEffect> třída je zastaralá. Pokud se pokusíte použít <xref:System.Windows.Media.Effects.BitmapEffect> třída, zobrazí se výjimku zastaralé. Aktuální alternativa k <xref:System.Windows.Media.Effects.BitmapEffect> třída je <xref:System.Windows.Media.Effects.Effect> třídy. Ve většině případů <xref:System.Windows.Media.Effects.Effect> třída je výrazně rychlejší.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled důsledky rastrového obrázku](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)  
+ [Přehled efektů bitmap](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Media.Effects.BitmapEffect>  
@@ -42,4 +43,4 @@ Témata v této části popisují, jak použít vizuálních efektů rastrové o
 ## <a name="related-sections"></a>Související oddíly  
  [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
   
- [Přehled vytvoření bitové kopie](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+ [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)

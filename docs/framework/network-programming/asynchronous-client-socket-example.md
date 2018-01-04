@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1a159f2a761acd85e963f34d3d9622b43b3a3aeb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 323250f7aae44d07aed8e79654335f29e53438bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="asynchronous-client-socket-example"></a>Příklad soketu asynchronní klienta
 V následujícím příkladu programu vytvoří klienta, který se připojuje k serveru. Klient je vytvořené s nástroji asynchronní soketu a spuštění aplikace klienta není pozastaven, když server vrátí odpověď. Aplikace odešle řetězec na server a potom zobrazí řetězec vrácená serverem v konzole.  
@@ -331,6 +332,6 @@ public class AsynchronousClient {
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Příklad soketu asynchronní serveru](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
- [Pomocí soket synchronního serveru](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [Příklady kódu soketů](../../../docs/framework/network-programming/socket-code-examples.md)
+ [Příklad asynchronního serverového soketu](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
+ [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)

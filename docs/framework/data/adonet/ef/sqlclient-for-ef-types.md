@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c8a3a3e794941c2713af0e5b098bd7f8d783eb4c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b04a7199fefc5df93d5e3472163d16c66e9279c1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-for-entity-frameworktypes"></a>SqlClient pro Entity FrameworkTypes
 Zprostředkovatel dat .NET Framework pro soubor manifestu zprostředkovatele SQL Server (SqlClient) obsahuje seznam primitivní typy zprostředkovatele omezující vlastnosti pro každý typ mapování mezi koncepční a primitivních typů modelu úložiště a povýšení a převod pravidla mezi typy primitivní modelu koncepční a úložiště.  
@@ -61,4 +62,4 @@ Zprostředkovatel dat .NET Framework pro soubor manifestu zprostředkovatele SQL
 |`xml`|Porovnatelný z hlediska rovnosti: False<br /><br /> Porovnatelný z hlediska pořadí: False|`Edm.String`|Hodnota MaxLength:<br /><br /> -Výchozí: 1073741823<br /><br /> -Konstantní: True<br /><br /> Unicode:<br /><br /> -Výchozí: True<br /><br /> -Konstantní: True<br /><br /> Řetězci FixedLength:<br /><br /> -Výchozí: False<br /><br /> -Konstantní: True|  
   
 ## <a name="see-also"></a>Viz také  
- [CSDL, SSDL a specifikace MSL](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+ [Specifikace CSDL, SSDL a MSL](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

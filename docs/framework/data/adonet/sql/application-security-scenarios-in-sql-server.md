@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d3791ea4084a6ae568fef1e76680f91434284639
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8576ba3ae26788076fedf71a1f8028afbd263378
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>Scénáře zabezpečení aplikací v systému SQL Server
 Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečený klientskou aplikaci SQL Server. Každá aplikace je jedinečné v jeho požadavky na prostředí pro nasazení a počet uživatelů. Aplikace, která je přiměřeně zabezpečen po počátečním nasazení se může stát méně zabezpečené v čase. Není možné předpovědět žádné přesnost co hrozeb můžou vznikat v budoucnu.  
@@ -45,29 +46,29 @@ Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečený klients
  Vždy přiřazujte silné heslo, které `sa` účtu, i když se používá ověřování systému Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Správa oprávnění pomocí uložené procedury v systému SQL Server](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
+ [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
  Popisuje, jak spravovat oprávnění a řídit přístup k datům pomocí uložených procedur. Použití uložených procedur je efektivní způsob, jak reagovat na mnoho bezpečnostní hrozby.  
   
- [Zápis zabezpečené dynamické SQL v systému SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
+ [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
  Popisuje postupy pro psaní zabezpečené dynamické SQL pomocí uložené procedury.  
   
- [Podepisování uložené procedury v systému SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
+ [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
  Popisuje, jak se přihlásit pomocí certifikátu umožňuje uživatelům pracovat s daty, které nemají přímý přístup k uložené procedury. To umožňuje uložené procedury k provádění operací, které volající nemá oprávnění k provedení přímo.  
   
- [Přizpůsobení oprávnění s zosobnění v systému SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
+ [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
  Popisuje způsob použití EXECUTE AS klauzule zosobňovat jiného uživatele. Zosobnění přepínačů kontext provádění volající, který má zadaný uživatel.  
   
- [Udělení oprávnění na úrovni řádků v systému SQL Server](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
+ [Udělení oprávnění na úrovni řádků na SQL Serveru](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
  Popisuje, jak implementovat oprávnění na úrovni řádku omezit přístup k datům.  
   
- [Vytváření aplikací rolí v systému SQL Server](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
+ [Vytváření rolí aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
  Popisuje funkce a funkce aplikační role.  
   
- [Povolení přístupu mezi databáze v systému SQL Server](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
+ [Povolení přístupu mezi databázemi na SQL Serveru](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
  Popisuje, jak povolit přístup k databázi mezi bez ohrožující zabezpečení.  
   
 ## <a name="see-also"></a>Viz také  
- [Zabezpečení SQL serveru](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Přehled zabezpečení SQL serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

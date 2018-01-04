@@ -25,11 +25,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6f96463b4f9cb7e61c403cfd77f747c8aefd99a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6b799f57644420653b371ac0e65b414c807008b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listening-with-sockets"></a>Naslouchání s Sockets
 Naslouchací proces nebo server sockets otevřít port v síti a potom počkejte, než pro klienta pro připojení k tomuto portu. I když existují další rodiny adres sítě a protokoly, tento příklad ukazuje postup vytvoření vzdálené služby pro sítě TCP/IP.  
@@ -69,8 +70,8 @@ listener.Listen(100);
  **Naslouchání** metoda přebírá jediný parametr, který určuje, kolik čeká na připojení k **soketu** jsou povoleny před připojujícího se klienta se vrátí zaneprázdněn chybu serveru. V takovém případě až 100 klientů jsou umístěny ve frontě připojení před zaneprázdněn odpověď serveru je vrácen do klienta číslem 101.  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí soket synchronního serveru](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [Pomocí soketu asynchronní serveru](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
- [Použití klienta soketů](../../../docs/framework/network-programming/using-client-sockets.md)  
- [Postupy: vytvoření soket](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
+ [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [Použití asynchronního serverového soketu](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Použití klientských soketů](../../../docs/framework/network-programming/using-client-sockets.md)  
+ [Postupy: Vytvoření soketu](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [Sokety](../../../docs/framework/network-programming/sockets.md)

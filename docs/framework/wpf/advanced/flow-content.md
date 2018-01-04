@@ -17,20 +17,21 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ad42bc9d6a2b925ab6724acb61e345ca2ba4223
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 918afb4ada6d47824cfa5184e4071ba4dbac06f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flow-content"></a>Obsah toku
 Tok obsahu elementy poskytují stavební bloky pro vytvoření vhodný pro hostování v toku obsahu <xref:System.Windows.Documents.FlowDocument>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled toku dokumentu](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [Přehled modelu TextElement obsahu](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)  
- [Tabulka – přehled](../../../../docs/framework/wpf/advanced/table-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
+ [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [Přehled modelu obsahu TextElement](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)  
+ [Přehled tabulky](../../../../docs/framework/wpf/advanced/table-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Documents.FlowDocument>  
@@ -48,4 +49,4 @@ Tok obsahu elementy poskytují stavební bloky pro vytvoření vhodný pro hosto
   <xref:System.Windows.Documents.ListItem>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)

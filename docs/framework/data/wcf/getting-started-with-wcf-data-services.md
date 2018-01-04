@@ -14,11 +14,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 75cb32ac55bfa397d12f4ec514488f6b2a159e3d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7f3593b6d7f8778ae8d74e779d3446403b99b655
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-wcf-data-services"></a>Začínáme se službou WCF Data Services
 Témata v této části vám pomůžou rychle pochopit [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] a jak používat [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály pomocí vysvětlením základní technologie. Tato část obsahuje oba koncepční obsah a [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) kurzu.  
@@ -26,13 +27,13 @@ Témata v této části vám pomůžou rychle pochopit [!INCLUDE[ssODataFull](..
 ## <a name="in-this-section"></a>V tomto oddílu  
  Následující témata popisují, jak vytvořit datové služby pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Vystavení dat jako službu](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
+ [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
  Popisuje kroky, které jsou nutné k vytvoření datové služby pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Přístup k prostředkům služby dat](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
+ [Přístup k prostředkům datové služby](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
  Popisuje, jak pracovat s [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály.  
   
- [V aplikaci klienta pomocí datové služby](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
+ [Použití datové služby v klientské aplikaci](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
  Popisuje, jak pracovat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v aplikaci klienta rozhraní .NET Framework.  
   
  [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  

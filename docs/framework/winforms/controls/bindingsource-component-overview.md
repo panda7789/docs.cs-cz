@@ -18,11 +18,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cf46a3d5207f3414bc8abd5fd7bdb904e91f07d2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 291ceb32d7128a63ba9a251ce916c18adb100100
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource – přehled komponenty
 <xref:System.Windows.Forms.BindingSource> Součásti je určen ke zjednodušení procesu vytvoření vazby ovládacích prvků pro příslušný zdroj dat. <xref:System.Windows.Forms.BindingSource> Součást funguje jako kanál a zdroj dat pro další ovládací prvky pro vazbu. Poskytuje abstrakci svého formuláře datové připojení při předávání pomocí příkazů do seznamu základní data. Kromě toho můžete data přidat do něj tak, aby sám komponentou funguje jako zdroj dat.  
@@ -70,8 +71,8 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingNavigator>  
- [Architektura součásti BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)  
- [BindingSource – komponenta](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
- [BindingNavigator – ovládací prvek](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
+ [Architektura komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)  
+ [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
  [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

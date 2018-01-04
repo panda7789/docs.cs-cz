@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b53501e2f1e10cb3f8936434b63557d221c91bbc
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9a7cbd5226bc1ff1a92b7eb8af5f5241c32ce399
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-regions"></a>Použití oblastí
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region> Třída umožňuje definovat vlastní obrazce. Tvar, který může být vytvořena řádky, mnohoúhelníky a křivek.  
@@ -28,10 +29,10 @@ ms.lasthandoff: 10/22/2017
  Dvě běžné používá pro oblasti jsou dosáhl testování a výstřižek. Testování přístupů je určení, zda v určité oblasti obrazovky označeného kliknutím myší. Výstřižek se omezení do určité oblasti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: použití nárazového testování s oblastí](../../../../docs/framework/winforms/advanced/how-to-use-hit-testing-with-a-region.md)  
+ [Postupy: Použití testování průchodu s oblastí](../../../../docs/framework/winforms/advanced/how-to-use-hit-testing-with-a-region.md)  
  Ukazuje, jak používat <xref:System.Drawing.Region> k provedení testu přístupů.  
   
- [Postupy: použití oříznutí s oblastí](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)  
+ [Postupy: Použití oříznutí s oblastí](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)  
  Vysvětluje, jak nastavit pro oblast ořezu <xref:System.Drawing.Graphics> objektu.  
   
 ## <a name="reference"></a>Odkaz  

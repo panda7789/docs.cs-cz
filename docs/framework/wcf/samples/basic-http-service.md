@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9da2addce9c837499783664bb3b1417d30b937b0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 687eba2a346b3f554c8a7618bebe2e9c04f4d5b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
 Tento příklad ukazuje, jak implementovat založené na protokolu HTTP, na základě vzdáleného volání Procedur služby - často se používá označuje jako "POX" (prostý formát XML) služby – pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST programovací model. Tato ukázka se skládá ze dvou komponent: vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba HTTP (Service.cs) a konzolovou aplikaci (Program.cs), která vytvoří službu a provádí volání do ní.  

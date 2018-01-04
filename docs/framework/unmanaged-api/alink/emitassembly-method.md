@@ -21,11 +21,12 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3471c4ad2d06443e0f05dc344be5f791817f2d2f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f012ea89fec0e64bc1639e6c47fb79249c25411a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="emitassembly-method"></a>EmitAssembly – metoda
 Vytvoří sestavení. Volejte tuto metodu po zavřeny všechny ostatní soubory s výjimkou souboru sestavení. Tato metoda není volána při vytváření nevázaný moduly.  
@@ -49,6 +50,6 @@ HRESULT EmitAssembly(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také  
- [Ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Ialink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

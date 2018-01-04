@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 545096292f34566b4bb6c3c44bb20ddac426af26
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 824abc79ae8d7ddd36b907977057a659aca86f20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí služby dat (služby WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Můžete vytvořit datové služby tak, aby klienti přístup k datům jako prostředky pomocí identifikátory URI, které jsou založeny na datový model. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje také definice operací služby. Po počátečním nasazení a potenciálně několikrát během své životnosti, tato data services bude pravděpodobně nutné změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musí se zvážit, zda chcete definovat novou verzi dat služby a jak nejlepší minimalizaci dopadů na existující klientské aplikace. Toto téma obsahuje pokyny k kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpracovává exchange mezi klienty a datové služby, které podporují různé verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu.  
@@ -84,5 +85,5 @@ ms.lasthandoff: 12/02/2017
  `DataServices` Také obsahuje element vrácený metadat `DataServiceVersion` atribut, který má stejnou hodnotu jako `DataServiceVersion` záhlaví ve zprávě s odpovědí. Klientské aplikace, jako **přidat odkaz na službu** dialogovém okně [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], tyto informace slouží k vytvoření klienta data služby tříd, které fungují správně s verzí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] který hostovat službu data. Další informace najdete v tématu [OData: Správa verzí protokolu](http://go.microsoft.com/fwlink/?LinkId=186071).  
   
 ## <a name="see-also"></a>Viz také  
- [Zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
- [Definování datových služeb WCF](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+ [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+ [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

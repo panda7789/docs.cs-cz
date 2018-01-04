@@ -19,11 +19,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e0886e387b6de34673cd4990ef8b61e08674b531
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 62144217199a62da3e41bf381162c94c91d00e72
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listview-overview"></a>ListView – přehled
 <xref:System.Windows.Controls.ListView> Řízení poskytuje infrastrukturu pro zobrazení sadu datových položek v různých rozložení nebo zobrazení. Uživatel například může chtít, k zobrazení datových položek v tabulce a také řadit její sloupce.  
@@ -98,6 +99,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.ListViewItem>  
  <xref:System.Windows.Data.Binding>  
- [Rutina GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
  [Ovládací prvky](../../../../docs/framework/wpf/advanced/optimizing-performance-controls.md)

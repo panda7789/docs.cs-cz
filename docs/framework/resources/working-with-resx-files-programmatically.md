@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 46c00bc73e586c7bcfaca95d3998cbe100c6f3c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17c2cee97c3347a98a015e8526e436815378eed0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-resx-files-programmatically"></a>Práce se soubory .resx programově
 Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML, včetně hlavičku, která musí odpovídat určitému schématu následuje data v dvojice název/hodnota, můžete zjistit, že ruční vytvoření těchto souborů je k chybám. Jako alternativu můžete vytvořit soubory .resx programově pomocí typy a členy v knihovně tříd rozhraní .NET Framework. Knihovna tříd rozhraní .NET Framework můžete použít také k načtení prostředků, které jsou uložené v soubory RESX. Toto téma vysvětluje, jak můžete použít typy a členy v <xref:System.Resources> obor názvů pro práci se soubory .resx.  
@@ -94,5 +95,5 @@ Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML,
   
 ## <a name="see-also"></a>Viz také  
  [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
- [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)  
- [Al.exe (Linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+ [Resgen.exe (generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)  
+ [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)

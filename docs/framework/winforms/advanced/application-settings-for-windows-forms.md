@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 382d20c66728869ce006c35a1e44e3a56217e1c2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 63248009497152a41a6313a50ed6e7544ac62cbe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-settings-for-windows-forms"></a>Nastavení aplikace pro Windows Forms
 Funkce nastavení aplikace Windows Forms umožňuje snadno vytvářet, ukládat a udržovat vlastní aplikaci a uživatelské předvolby v klientovi. Pomocí nastavení aplikace můžete uložit pouze data aplikací, jako je například databázové připojovací řetězce, ale také uživatelská data, jako třeba pozic panelu nástrojů a naposledy použít seznamy.  
@@ -39,10 +40,10 @@ Funkce nastavení aplikace Windows Forms umožňuje snadno vytvářet, ukládat 
  [Nastavení aplikace pro vlastní ovládací prvky](~/docs/framework/winforms/advanced/application-settings-for-custom-controls.md)  
  Popisuje, co je třeba provést poskytnout vlastní ovládací prvky umožňuje zachovat nastavení aplikace, když jsou hostované v aplikacích třetích stran.  
   
- [Postupy: vytvoření nastavení aplikace](~/docs/framework/winforms/advanced/how-to-create-application-settings.md)  
+ [Postupy: Vytváření nastavení aplikace](~/docs/framework/winforms/advanced/how-to-create-application-settings.md)  
  Ukazuje vytvoření nové nastavení aplikace, které jsou nastavené jako trvalé mezi relacemi aplikace.  
   
- [Postupy: ověření nastavení aplikace](~/docs/framework/winforms/advanced/how-to-validate-application-settings.md)  
+ [Postupy: Ověření nastavení aplikace](~/docs/framework/winforms/advanced/how-to-validate-application-settings.md)  
  Ukazuje nastavení ověřování aplikace předtím, než jsou nastavené jako trvalé.  
   
 ## <a name="related-topics"></a>Související témata

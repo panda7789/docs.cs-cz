@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 67b9e239c8b60511caf3989c0b3a1a5d6dcc9b26
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 30d6035e04f09ae1169ef8e89bcfb38470be9d12
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-data-type-classes-from-xml"></a>Generování tříd datových typů z XML
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]zahrnuje nové funkce, která negeneruje třídy datového typu XML. Toto téma popisuje, jak automaticky generovat datové typy pro informačního kanálu RSS blogu .NET.  

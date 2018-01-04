@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50d29de04b4e221105bb02e58de01344f13af69f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7ecdb7b8682b13f93f59d1de21552abfa91b8f50
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a>Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms GroupBox
 Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky slouží k seskupení další ovládací prvky. Existují tři důvodů, proč seskupování ovládacích prvků:  
@@ -44,4 +45,4 @@ Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky slouží k s
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.GroupBox>  
- [Groupbox – ovládací prvek](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)
+ [Ovládací prvek GroupBox](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)

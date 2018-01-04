@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1116093ddcd95c99deac8a1e1b14fef3b0a458f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 50e36192198c172843d79a4195e894b848f84c90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox-overview"></a>TextBox – přehled
 <xref:System.Windows.Controls.TextBox> Vám umožňuje zobrazit nebo upravit neformátovaný text. Běžně se používají <xref:System.Windows.Controls.TextBox> upravuje neformátovaný text ve formuláři. Například formulář žádostí o uživatelské jméno, telefonní číslo atd využije <xref:System.Windows.Controls.TextBox> ovládací prvky pro zadávání textu. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a obsahuje příklady použití v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)].  
@@ -78,5 +79,5 @@ ms.lasthandoff: 11/21/2017
  Obvykle <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> událost se má použít k detekci vždy, když text v <xref:System.Windows.Controls.TextBox> nebo <xref:System.Windows.Controls.RichTextBox> změní, místo pak <xref:System.Windows.UIElement.KeyDown> podle očekávání. V tématu [zjistit při textu v textového pole došlo ke změně](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md) příklad.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: témata](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
  [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

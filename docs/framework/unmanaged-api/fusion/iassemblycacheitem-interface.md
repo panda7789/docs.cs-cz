@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e61b8dd90bb9311c1314a4cb4d68d75e0cd511c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 323b501efbdf309d5e0d595137407dd8289de17a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iassemblycacheitem-interface"></a>IAssemblyCacheItem – rozhraní
 Představuje jednoho sestavení v globální mezipaměti sestavení.  
@@ -32,9 +33,9 @@ Představuje jednoho sestavení v globální mezipaměti sestavení.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Abortitem – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-abortitem-method.md)|Umožňuje provádět operace čištění před uvolněním sestavení v globální mezipaměti sestavení.|  
+|[AbortItem – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-abortitem-method.md)|Umožňuje provádět operace čištění před uvolněním sestavení v globální mezipaměti sestavení.|  
 |[Commit – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-commit-method.md)|Potvrdí odkaz na sestavení v mezipaměti paměti.|  
-|[Createstream – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-createstream-method.md)|Vytvoří datový proud se zadaným názvem a formát.|  
+|[CreateStream – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-createstream-method.md)|Vytvoří datový proud se zadaným názvem a formát.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -44,6 +45,6 @@ Představuje jednoho sestavení v globální mezipaměti sestavení.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
  [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)  
- [Iassemblycache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+ [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 43a38406a3c9cc171944448fce2fa2f70c483baa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: db1b7f47ef135b1a174eecef7e53b41e6996256d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
 Konstruktory – třída obecně platí, by neměl volání zpětná volání, jako je například virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializace konstruktory odvozené třídy. Zadání virtuální může být provedena do stavu neúplná inicializace libovolného objektu. Ale samotného systému vlastnost volá a zveřejňuje zpětná volání interně v rámci systému vlastnost závislosti. Jednoduché operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> volání potenciálně zahrnuje zpětné volání někde pro zjišťování. Z tohoto důvodu byste měli být opatrní při nastavení hodnoty vlastností v textu konstruktor, který se může stát problematické, pokud váš typ se používá jako základní třída závislostí. Je určitý vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktory, které zabraňuje konkrétních problémů s stavy vlastnost závislosti a vyplývajících zpětná volání, které jsou zde uvedeny.  
@@ -125,6 +126,6 @@ public MyClass : SomeBaseClass {
  Tyto stejné vzory použít, pokud nastavíte vlastnost, která nepodporuje mít obálka pro vlastnost nastavení pohodlí a nastavit hodnoty s <xref:System.Windows.DependencyObject.SetValue%2A>. Vaše volání <xref:System.Windows.DependencyObject.SetValue%2A> této předávání konstruktor parametry měli také zavolat třídu výchozí konstruktor pro inicializaci.  
   
 ## <a name="see-also"></a>Viz také  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Závislost vlastnost zabezpečení](../../../../docs/framework/wpf/advanced/dependency-property-security.md)
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md)

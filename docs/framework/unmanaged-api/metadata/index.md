@@ -17,27 +17,28 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: fb9ec08840fa4156cab95752536de6129eef0e50
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 727bb5261889c2dbb5ccd182d8feb085f4e80da5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-unmanaged-api-reference"></a>Metadata (referenční dokumentace nespravovaného rozhraní API)
 Metadat rozhraní API umožňuje klientovi, jako je například kompilátor, ke generování nebo získat přístup k metadatům komponenty bez typy načítá modulem common language runtime (CLR).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
+ [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  Popisuje nespravovaná rozhraní, které poskytují přístup k metadatům vystavené typy rozhraní .NET Framework, metody, pole a tak dále.  
   
- [Globální statické funkce metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
+ [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
  Popisuje nespravované globální statické funkce, které používá metadat rozhraní API.  
   
- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+ [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
  Popisuje nespravovaná vyčíslení, které používá metadat rozhraní API.  
   
- [Struktury metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
+ [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
  Popisuje nespravované struktury, která používá metadat rozhraní API.  
   
- [Sjednocení metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)  
+ [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)  
  Popisuje nespravovaná sjednocení, které používá metadat rozhraní API.

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a8577c10dd4d3e2118a4b4dca8b22766a54fc854
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 37dfeec82339ed4381d158b1bd5ac442223bfe50
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Technologie LINQ to SQL N-vrstvá s webovými službami
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je určený pro použití na střední vrstvy v vrstva přístupu k datům volně vázány (DAL), třeba webové služby. Pokud prezentační vrstvou se webovou stránku ASP.NET, pak použijete <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru ke správě přenosů dat mezi uživatelské rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstvou není stránku ASP.NET, pak střední vrstvě a prezentační vrstvou musí používat ke správě serializace a deserializace dat některé další kroky.  
@@ -47,5 +48,5 @@ ms.lasthandoff: 11/21/2017
  Další informace najdete v tématu [operace vytvoření ve víceúrovňových aplikacích (technologie LINQ to SQL) a načítání dat ze](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).  
   
 ## <a name="see-also"></a>Viz také  
- [N-vrstvá a vzdálené aplikace s dotazy LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
+ [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
  [NIB: LinqDataSource webového serveru – Přehled ovládacího prvku](http://msdn.microsoft.com/en-us/104cfc3f-7385-47d3-8a51-830dfa791136)

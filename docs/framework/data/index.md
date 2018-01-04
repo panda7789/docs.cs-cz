@@ -17,11 +17,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4fab5868556d5b7ba3a63cbc06780b0102783910
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 27e9391b72ccb65e50ce3154cf7a1c97d796ebd7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
 Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyk integrovaného dotazu (LINQ), služby WCF Data Services a XML.  
@@ -36,10 +37,10 @@ Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO
  [Zpracování transakcí](../../../docs/framework/data/transactions/index.md)  
  Popisuje podporu rozhraní .NET Framework pro transakce.  
   
- [Datové služby WCF 4.5](../../../docs/framework/data/wcf/index.md)  
+ [WCF Data Services 4.5](../../../docs/framework/data/wcf/index.md)  
  Poskytuje informace o tom, jak používat služby WCF Data Services k nasazení služeb dat na webu nebo v intranetu.  
   
- [XML – dokumenty a Data](../../../docs/standard/data/xml/index.md)  
+ [Dokumenty a data XML](../../../docs/standard/data/xml/index.md)  
  Poskytuje přehled globální a integrované sadu tříd, které pracují s dokumenty XML a data v rozhraní .NET Framework.  
   
  [Referenční dokumentace XML standardy](http://msdn.microsoft.com/en-us/79c78508-c9d0-423a-a00f-672e855de401)  

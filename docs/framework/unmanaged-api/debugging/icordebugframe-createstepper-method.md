@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a6f575febc488d01700c32198d4c00916dd5e249
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 93f6741a030e72406fb8099c6373896d14cb9332
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugframecreatestepper-method"></a>ICorDebugFrame::CreateStepper – metoda
 Získá krokovač, které umožňuje provádět operace taktování relativně k této ICorDebugFrame ladicího programu.  

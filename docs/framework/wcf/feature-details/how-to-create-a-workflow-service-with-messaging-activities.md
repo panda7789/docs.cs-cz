@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b57139fdf2a07f2d37bc337a041704eee174328e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 24456bbbefe305a3e9620e5396c8d300163e00d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Postup: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami
 Toto téma popisuje postup vytvoření jednoduchého pracovního postupu služby pomocí aktivity zasílání zpráv. Toto téma se zaměřuje na mechanismů vytvoření služby pracovního postupu, kde se služba se skládá pouze z aktivity zasílání zpráv. Ve službě reálného pracovní postup obsahuje mnoho dalších aktivit. Služba se implementuje jedna operace s názvem odezvu, která přebírá řetězec a vrátí řetězec volajícímu. Toto téma je první v řadě dvou tématech. Dalším tématu [postupy: přístup z pracovní postup aplikace služby](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) popisuje, jak vytvořit aplikaci pracovního postupu, která můžete volat službě vytvořené v tomto tématu.  

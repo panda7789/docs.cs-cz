@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e563e0ed46bfdadca9923b582f2c30e12701d992
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4b1fa6895e015ab7123bf454aac435812e4a23da
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="convert-a-sequence-to-a-generic-list"></a>Převést na seznam obecná posloupnost
 Použití <xref:System.Linq.Enumerable.ToList%2A> můžete vytvořit seznam obecné z řady.  

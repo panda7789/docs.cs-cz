@@ -25,11 +25,12 @@ caps.latest.revision: "18"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: faeeabeda89ea233e67b66b8848f5bbb665d3804
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6e59ae7b0c26106f19f5b14290047deb9b5f30c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="link-demands"></a>Požadavky na odkaz
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  

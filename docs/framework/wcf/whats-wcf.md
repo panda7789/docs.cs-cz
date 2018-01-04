@@ -17,11 +17,12 @@ caps.latest.revision: "51"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a24f1bd921de848cb75a2c9f35fa3dd279bc741
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f5301bf3a2fed35dbdd0046e01eb2acb9083a290
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], může odesílat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  
@@ -47,7 +48,7 @@ ms.lasthandoff: 12/02/2017
   
      Jedním z důsledků standardy WS je, že [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje vytvářet *služby zaměřené na konkrétní* aplikace. Architektura orientovaná na služby (SOA) je závislá na webové služby pro odesílat a přijímat data. Služeb mají obecné výhodou se volně vázány místo pevně z jedné aplikace do jiné. Vztah volně vázány znamená, že libovolného klienta vytvořili na jakékoli platformě může připojit k žádné službě tak dlouho, dokud základní kontrakty jsou splněny.  
   
--   **Vzájemná funkční spolupráce**  
+-   **Interoperabilita**  
   
      [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]implementuje moderní oborových standardů interoperability webové služby. [!INCLUDE[crabout](../../../includes/crabout-md.md)]najdete v části Podporované standardy [vzájemná spolupráce a integrace](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 12/02/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel>  
- [Základní Windows Communication Foundation koncepty](../../../docs/framework/wcf/fundamental-concepts.md)  
+ [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)  
  [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)  
  [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
  [Kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md)  

@@ -21,11 +21,12 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f60668f1bdac6607383b2ddf5c5ab1e41e31862b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d3860aff69b0e4e7a3dc624898cc6b1daa0dd092
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma obsahuje základní informace o na balíček písma s vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -187,5 +188,5 @@ Toto téma obsahuje základní informace o na balíček písma s vaší [!INCLUD
  <xref:System.Windows.Media.FontFamily>  
  [Typografii Microsoft: Odkazy, novinky a kontakty](http://www.microsoft.com/typography/links/)  
  [Specifikace OpenType](http://www.microsoft.com/typography/otspec/)  
- [Funkce písem OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
- [Ukázkové sadě písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)
+ [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)

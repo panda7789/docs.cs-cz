@@ -19,11 +19,12 @@ caps.latest.revision: "26"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 7446c43deff85e1a15288c0c847c9e3646870b72
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8abf7868312883e264848b0de1aa803ce3be5839
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 Můžete přesměrovat kompilaci vazby odkazy na sestavení rozhraní .NET Framework, sestavení třetích stran nebo sestavení vlastní aplikace. Můžete přesměrovat aplikace používat jinou verzi sestavení v mnoha různými způsoby: pomocí zásad vydavatele prostřednictvím konfigurační soubor aplikace; nebo prostřednictvím konfiguračním souboru počítače. Tento článek popisuje, jak funguje sestavení – vazby v rozhraní .NET Framework a jak může být nakonfigurován.  
@@ -162,14 +163,14 @@ Můžete přesměrovat kompilaci vazby odkazy na sestavení rozhraní .NET Frame
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
+ [Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
  [\<bindingRedirect – > elementu](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  
  [Bezpečnostní oprávnění k přesměrování vazby sestavení](../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)  
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md)  
  [Konfigurace aplikací rozhraní .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
  [Schéma nastavení běhového prostředí](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
- [Postupy: vytváření zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)
+ [Postupy: Vytváření zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)

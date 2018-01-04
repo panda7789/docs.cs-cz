@@ -17,21 +17,22 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f09c1aac387d26d44398331d62b25e588d4bbdc1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d9bec0b3edd6a5ab3997c42e3b8154f0c41531d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-customization"></a>Přizpůsobení ovládacího prvku
 Tato kategorie zahrnuje různé základní třídy, rozhraní a další prvky a koncepty používané při vytváření plně funkční [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
- [Pokyny pro návrh Stylable ovládací prvky](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)  
- [Ozdobného prvku](../../../../docs/framework/wpf/controls/adorners.md)  
- [Styly ovládacího prvku a šablony](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [Automatizace uživatelského rozhraní grafického subsystému WPF vlastního ovládacího prvku](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
+ [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [Pokyny pro návrh ovládacích prvků s podporou stylů](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)  
+ [Doplňky pro úpravy](../../../../docs/framework/wpf/controls/adorners.md)  
+ [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)

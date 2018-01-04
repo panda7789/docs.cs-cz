@@ -19,11 +19,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b025ec31e3797fec3ac184929f1274cb5f68501b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a8b51cf4297c1ccadbef8730c06148263d310e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrgcmanager2-interface"></a>ICLRGCManager2 – rozhraní
 Poskytuje metody, které umožňují hostitele k interakci s systém kolekce paměti modul common language runtime.  
@@ -32,7 +33,7 @@ Poskytuje metody, které umožňují hostitele k interakci s systém kolekce pam
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Setgcstartuplimitsex – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md)|Nastaví velikost segment kolekce paměti a maximální velikost systém kolekce paměti generace 0. Umožňuje 0. generace a velikost segmentu větší než `DWORD`.|  
+|[SetGCStartupLimitsEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md)|Nastaví velikost segment kolekce paměti a maximální velikost systém kolekce paměti generace 0. Umožňuje 0. generace a velikost segmentu větší než `DWORD`.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní dědí z [iclrgcmanager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md).  
@@ -50,8 +51,8 @@ Poskytuje metody, které umožňují hostitele k interakci s systém kolekce pam
   
 ## <a name="see-also"></a>Viz také  
  [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)  
- [Cor_gc_stats – struktura](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)  
- [Iclrcontrol – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [Rozhraní hostování CLR přidaná v rozhraní .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [COR_GC_STATS – struktura](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)  
+ [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
+ [Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

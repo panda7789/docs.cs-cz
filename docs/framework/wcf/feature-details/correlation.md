@@ -13,17 +13,18 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc1608cc4e746af56e7d89237f0c1f5e6cc3bc7e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0a0be008eae45ca5bbe6ca77383bde433931b72e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="correlation"></a>Korelace
 Když aplikace služby pracovního postupu komunikovat s jinými službami, je důležité, aby zpráv mezi nimi jsou odesílány do instance příslušné pracovního postupu. Korelace poskytuje mechanismus pro tento. Témata v této části poskytují přehled korelace a způsobu jeho použití v různých pracovních postupech služby.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Korelace – přehled](../../../../docs/framework/wcf/feature-details/correlation-overview.md)  
+ [Přehled korelace](../../../../docs/framework/wcf/feature-details/correlation-overview.md)  
  Poskytuje přehled typů korelace, které jsou k dispozici v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
   
  [Kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)  
@@ -35,10 +36,10 @@ Když aplikace služby pracovního postupu komunikovat s jinými službami, je d
  [Na základě obsahu](../../../../docs/framework/wcf/feature-details/content-based-correlation.md)  
  Popisuje korelace na základě obsahu.  
   
- [Požadavek odpověď](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md)  
+ [Žádost a odpověď](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md)  
  Popisuje korelace požadavku a odpovědi.  
   
- [Řešení potíží – korelace](../../../../docs/framework/wcf/feature-details/troubleshooting-correlation.md)  
+ [Řešení problémů s korelací](../../../../docs/framework/wcf/feature-details/troubleshooting-correlation.md)  
  Poskytuje metody pro řešení potíží – korelace.  
   
 ## <a name="see-also"></a>Viz také  
@@ -47,4 +48,4 @@ Když aplikace služby pracovního postupu komunikovat s jinými službami, je d
  <xref:System.ServiceModel.Activities.Receive>  
  <xref:System.ServiceModel.CorrelationQuery>  
  [Korelace na základě obsahu](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
- [Korelační kalkulačky](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)
+ [Korelovaná kalkulačka](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)

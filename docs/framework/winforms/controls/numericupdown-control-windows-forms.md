@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c674fec227e765213edfe2f2827543024cceac7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0d57bccb12bfa9b0b193967a5a2ce3830dd6ef7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="numericupdown-control-windows-forms"></a>NumericUpDown – ovládací prvek (Windows Forms)
 Windows Forms `NumericUpDown` řízení vypadá kombinací textového pole a dvojice šipek, které uživatel můžete kliknutím na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu voleb. Uživatel může zvýšit a snížit počet kliknutím tlačítka nahoru a dolů, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla. Kliknutím na tlačítko šipka nahoru přesune hodnotu směrem k jeho maximální; Kliknutím na tlačítko šipka dolů přesune na minimum. Je například kde tento druh řízení může být užitečné pro ovládání hlasitosti na hudební přehrávač. Číselné ovládací prvky typu číselník – se používají v některých aplikacích ovládací panely systému Windows.  
@@ -33,10 +34,10 @@ Windows Forms `NumericUpDown` řízení vypadá kombinací textového pole a dvo
  [Přehled ovládacího prvku NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)  
  Představuje obecné koncepty `NumericUpDown` řízení, které umožňuje uživatelům procházet a vyberte ze seznamu číselné hodnoty.  
   
- [Postupy: nastavení a vracení číselných hodnot pomocí ovládacího prvku Windows Forms NumericUpDown – ovládací prvek](../../../../docs/framework/winforms/controls/set-and-return-numeric-values-with-wf-numericupdown-control.md)  
+ [Postupy: Nastavení a vracení číselných hodnot pomocí ovládacího prvku Windows Forms NumericUpDown](../../../../docs/framework/winforms/controls/set-and-return-numeric-values-with-wf-numericupdown-control.md)  
  Popisuje postup testování pro hodnotu ovládacího prvku.  
   
- [Postupy: nastavení formátu pro Windows Forms NumericUpDown – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
+ [Postupy: Nastavení formátu pro ovládací prvek Windows Forms NumericUpDown](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
  Popisuje, jak nakonfigurovat způsob zobrazení hodnot v ovládacím prvku.  
   
 ## <a name="reference"></a>Odkaz  
@@ -44,8 +45,8 @@ Windows Forms `NumericUpDown` řízení vypadá kombinací textového pole a dvo
  Referenční informace týkající se <xref:System.Windows.Forms.NumericUpDown> třídy a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
   
- [DomainUpDown – ovládací prvek](../../../../docs/framework/winforms/controls/domainupdown-control-windows-forms.md)  
+ [Ovládací prvek DomainUpDown](../../../../docs/framework/winforms/controls/domainupdown-control-windows-forms.md)  
  Zavádí ovládacího prvku podobná <xref:System.Windows.Forms.NumericUpDown>kromě toho, že <xref:System.Windows.Forms.DomainUpDown> ovládací prvek zobrazí řetězce místo číselné hodnoty.

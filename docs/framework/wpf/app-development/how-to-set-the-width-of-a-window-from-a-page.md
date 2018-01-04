@@ -17,11 +17,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7354a6c3f1b913494da9ad45181a0c7741a1cfa2
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: fc9843d4a0f76547b76698a9686b5c4936baa322
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-width-of-a-window-from-a-page"></a>Postupy: nastavení šířky okna ze stránky
 Tento příklad ukazuje, jak nastavit šířku v okně <xref:System.Windows.Controls.Page>.  

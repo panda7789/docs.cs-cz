@@ -26,11 +26,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc5f0fab7c380268dfc041d6105595858c2fed93
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7fd38f6246d44bd24753d9c86a5b0b08819d3db7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu
 Při vytváření vlastního ovládacího prvku často zjistíte, je nezbytné k ladění její chování v době návrhu. To platí hlavně vytváříte-li vlastní návrháře pro vaše vlastní ovládací prvek. Podrobnosti najdete v tématu [návod: vytváření funkce systému Windows Forms ovládací prvek, trvá využít nástroje Visual Studio návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
@@ -183,6 +184,6 @@ Při vytváření vlastního ovládacího prvku často zjistíte, je nezbytné k
 -   Můžete napsat vlastní návrháře pro vaše vlastní ovládací prvek. To vám dává úplnou kontrolu nad prostředí návrhu pomocí extensible návrháře infrastruktury vystavené Visual Studio. Podrobnosti najdete v tématu [návod: vytváření funkce systému Windows Forms ovládací prvek, trvá využít nástroje Visual Studio návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
+ [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
  [Postupy: přístup ke službám v době návrhu](http://msdn.microsoft.com/library/c186c4b6-076c-438d-9ed3-f13da29c8c1f)  
  [Postupy: přístup k podpoře návrhu v systému Windows Forms](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)

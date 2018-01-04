@@ -18,11 +18,12 @@ caps.latest.revision: "37"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 71600e0771c31392f568e11a7f51fc258ac5b362
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 830c141a13f2a7676e120600e05d786093a5ff44
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 
@@ -72,7 +73,7 @@ Můžete zadat následující `options`; je nutné zadat **/out**.
 |**/ keyf [fil]:**`filename`|Určuje soubor (`filename`) obsahující pár klíčů nebo jenom veřejný klíč pro podepsání sestavení. Kompilátor vloží veřejný klíč do manifestu sestavení a poté podepíše konečné sestavení soukromým klíčem. Najdete v článku [Strong Name Tool (*Sn.exe*)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) informace o generování soubory klíčů a instalaci páry klíčů do kontejnery klíčů.<br /><br /> Při použití zpožděného podepisování bude tento soubor obvykle mít veřejný klíč, ale ne soukromý klíč.<br /><br /> Údaje o veřejném klíči (z dvojice klíčů) se zobrazí v poli .publickey sestavení.<br /><br /> Tuto možnost můžete také určit jako vlastní atribut (<xref:System.Reflection.AssemblyKeyFileAttribute>) ve zdrojovém kódu pro libovolný modul MSIL.<br /><br /> Pokud oba **/keyfile** a **/keyname** jsou zadány (pomocí parametru příkazového řádku nebo pomocí vlastního atributu) ve stejné kompilaci *Al.exe* se nejdřív pokusí použít kontejneru Zadaný **/keyname**. Pokud je tato operace úspěšná, sestavení je podepsáno informacemi z kontejneru klíčů. Pokud *Al.exe* nenajde kontejner klíčů, pokusí se použít soubor určený **/keyfile**. Pokud tato operace úspěšná, sestavení je podepsaná pomocí informací v souboru klíče a informace o klíči budou nainstalováni v kontejneru klíčů (podobně jako -i možnost [ *Sn.exe*](../../../docs/framework/tools/sn-exe-strong-name-tool.md)) tak, aby při příštím kompilace, **/keyname** možnost nebude platný.|
 |**/ keyn [ame]:**`text`|Určuje kontejner obsahující pár klíčů. Toto podepíše sestavení (dá sestavení silný název) tak, že vloží veřejný klíč do manifestu sestavení. *Al.exe* bude poté přihlašovací konečné sestavení s privátním klíčem.<br /><br /> Použití *Sn.exe* Generování páru klíčů.<br /><br /> Informace o klíči se zobrazí v poli .publickey sestavení.<br /><br /> Místní `text` v uvozovkách ("") je-li vložený místa.<br /><br /> Tuto možnost můžete také určit jako vlastní atribut (<xref:System.Reflection.AssemblyKeyNameAttribute>) ve zdrojovém kódu pro libovolný modul MSIL.|
 |**/ main:**`method`|Určuje plně kvalifikovaný název (`class`.`method`) metody, které chcete použít jako vstupní bod při převodu modulu na spustitelný soubor.|
-|**/ nologo**|Potlačí nápis nebo logo, které se zobrazí na příkazovém řádku při vyvolání *Al.exe*.|
+|**/nologo**|Potlačí nápis nebo logo, které se zobrazí na příkazovém řádku při vyvolání *Al.exe*.|
 |**/ out:**`filename`|Určuje název souboru vyprodukované *Al.exe*. Tato možnost je povinná.|
 |**/ Platform:**`text`|Omezuje platformy, na kterých lze tento kód spustit. Musí být jedna z možností x86, Itanium, x64, anycpu (výchozí) nebo anycpu32bitpreferred.|
 |**/ prod [uct]:**`text`|Určuje řetězec pro **produktu** pole v sestavení. Umístěte řetězec v uvozovkách ("") Pokud `text` obsahuje mezery. Tento řetězec je vlastní atribut sestavení a lze ho zobrazit pomocí reflexe.<br /><br /> Pokud nezadáte **/win32res**, **/product** se zobrazí v Průzkumníku souborů jako Win32 **název produktu** prostředků.<br /><br /> Pokud je řetězec prázdný, Win32 text **název produktu** prostředků se zobrazí jako jedna mezera.<br /><br /> Pokud zadáte **/win32res**, **/product** nebude mít vliv na informace o prostředcích Win32.<br /><br /> Tuto možnost můžete také určit jako vlastní atribut (<xref:System.Reflection.AssemblyProductAttribute>) ve zdrojovém kódu pro libovolný modul MSIL.|

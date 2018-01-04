@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1d39d1666f63d7d6f7a6154a124280486c3fccce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0235a63a24f81968718d526ff676b023c060b9a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad
 Několik sad Active výsledek (MARS) je funkce, která spolupracuje se serverem SQL Server k provádění více jednoho připojení. Pokud MARS je povoleno pro použití se systémem SQL Server, přidá každý objekt příkazu používá relaci připojení.  
@@ -122,5 +123,5 @@ string connectionString = "Data Source=MSSQL1;" +
  Aplikace můžete zkontrolovat pro MARS podporují přečíst `SqlConnection.ServerVersion` hodnotu. Hlavní číslo by mělo být 9 pro SQL Server 2005 a 10 pro SQL Server 2008.  
   
 ## <a name="see-also"></a>Viz také  
- [Více sad výsledků dotazu Active (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
+ [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

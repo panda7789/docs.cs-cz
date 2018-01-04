@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d637dfaa4b3639d1e47280c423489735844a2a47
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b0faa62d75c506fd93c17c6a67aaecdd22bc8c4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Vytvoření vlastní hlavičky, která je podepsaná a- nebo šifrovaná
 Při volání služby bez WCF pomocí klienta WCF je někdy nutné použít vlastní hlavičky SOAP. Ve službě WCF, který brání vlastní hlavičky, které jsou podepsat a zašifrovat práce služby bez WCF je kanonizace chyba. Problém je způsoben nesprávnou interpretaci výchozí obory názvů XML. Toto je pouze problematické, pokud volání služby bez WCF s vlastní hlavičky, které jsou podepsané a/nebo šifrovaná.  Když služba obdrží zprávu obsahující podepsaný držitelem nebo šifrované Vlastní hlavička se nepodařilo ověřit podpis. Toto řešení zabraňuje kanonizace chyb, umožňuje vzájemnou spolupráci s služby bez WCF, ale nezabrání vzájemná funkční spolupráce s služby WCF.  

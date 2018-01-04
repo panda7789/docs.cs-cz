@@ -16,20 +16,21 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 589e31bc8fe4044306e5ba2b5223608a61863cb4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b5b648f74d3b69a49950eb4e4c9419287aafa3f3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.SaveFileDialog> součást je předem nakonfigurovaný dialogové okno. Je stejný jako standardní dialogových oken Uložit soubor používaná systémem Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [SaveFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md)  
+ [Přehled komponenty SaveFileDialog](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md)  
  Představuje obecné koncepty <xref:System.Windows.Forms.SaveFileDialog> komponenta, která umožňuje zobrazit dialog s předem nakonfigurovaná, pomocí tohoto uživatele můžete použít k uložení souboru do zadaného umístění.  
   
- [Postupy: ukládání souborů pomocí součásti SaveFileDialog](../../../../docs/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component.md)  
+ [Postupy: Ukládání souborů pomocí komponenty SaveFileDialog](../../../../docs/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component.md)  
  Vysvětluje, jak uložit soubor prostřednictvím instance <xref:System.Windows.Forms.SaveFileDialog> součásti v době běhu.  
   
 ## <a name="reference"></a>Odkaz  
@@ -37,10 +38,10 @@ Windows Forms <xref:System.Windows.Forms.SaveFileDialog> součást je předem na
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
   
- [Dialogové okno – Ovládací prvky a součásti](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
+ [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
  Popisuje sadu ovládacích prvků a komponent, které můžou uživatelé provést standardní interakce s aplikace nebo systému.  
   
  [Nepostradatelný kód pro Windows Forms dialogových oken](http://go.microsoft.com/fwlink/?LinkID=102575)  

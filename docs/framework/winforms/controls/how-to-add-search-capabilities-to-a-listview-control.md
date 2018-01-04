@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd6c3011b234f9d281a68a51fa8d9ef9d610816c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 111fc6e4945998c99e63560afab6104f4daf89e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-search-capabilities-to-a-listview-control"></a>Postupy: Přidání schopností vyhledávání do prvku ListView
 Často při práci s velké položek v seznamu <xref:System.Windows.Forms.ListView> ovládací prvek, můžete chtít nabízet možnosti vyhledávání pro uživatele. <xref:System.Windows.Forms.ListView> Řízení nabízí tato funkce dvěma různými způsoby: porovnávání text a hledání umístění.  
@@ -61,6 +62,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Forms.ListView>  
  <xref:System.Windows.Forms.ListView.FindItemWithText%2A>  
  <xref:System.Windows.Forms.ListView.FindNearestItem%2A>  
- [ListView – ovládací prvek](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
+ [Ovládací prvek ListView](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
  [Přehled ovládacího prvku ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)  
- [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
+ [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)

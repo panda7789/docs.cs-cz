@@ -12,26 +12,27 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9064f56dab2c7a2b36394f6f77ded77edc0b387b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7d83731fcf9bde8642dcdc0291142885068d532b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-custom-activity-designers-and-templates"></a>Pomocí Návrháře vlastních aktivit a šablony
 Tento oddíl obsahuje témata popisující, jak vytvářet Návrháře vlastních aktivit a šablony vlastní aktivity.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: vytvoření vlastního návrháře aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)  
+ [Postupy: Vytvoření vlastního návrháře aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)  
  Popisuje, jak vytvořit vlastní aktivity návrháře Pokud Designer zadaná v tomto pracovním postupu nejsou vhodné pro úkoly návrhu.  
   
- [Postupy: vytvoření vlastní aktivity šablony](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-template.md)  
+ [Postupy: Vytvoření vlastní šablony aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-template.md)  
  Popisuje, jak používat šablony, vlastní aktivitu, a předkonfiguroval aktivity tak, aby uživatelé nebudou mít k vytvoření jednotlivě každou aktivitu a nakonfigurovat jejich vlastnosti a další nastavení ručně.  
   
- [Pomocí typem ModelItem úpravy kontextu](../../../docs/framework/windows-workflow-foundation/using-the-modelitem-editing-context.md)  
+ [Použití kontextu úprav ModelItem](../../../docs/framework/windows-workflow-foundation/using-the-modelitem-editing-context.md)  
  Popisuje, jak používat funkce úpravy kontextu typem ModelItem umožňující návrháře pro interakci s hostitelem.  
   
- [Vazba vlastnost vlastní aktivity do ovládacího prvku návrháře](../../../docs/framework/windows-workflow-foundation/binding-a-custom-activity-property-to-a-designer-control.md)  
+ [Vazba vlastnosti vlastní aktivity s ovládacím prvkem návrháře](../../../docs/framework/windows-workflow-foundation/binding-a-custom-activity-property-to-a-designer-control.md)  
  Popisuje, jak vytvořit vazbu ovládacího prvku listview vlastnost aktivity v návrháři.  
   
 ## <a name="reference"></a>Odkaz  
@@ -46,7 +47,7 @@ Tento oddíl obsahuje témata popisující, jak vytvářet Návrháře vlastníc
  <xref:System.Activities.Presentation.Model.ModelTreeManager>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Opětovného hostování návrháře pracovních postupů](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
   
 ## <a name="external-resources"></a>Externí zdroje  
  [Vlastní aktivity](../../../docs/framework/windows-workflow-foundation/samples/custom-activities.md)

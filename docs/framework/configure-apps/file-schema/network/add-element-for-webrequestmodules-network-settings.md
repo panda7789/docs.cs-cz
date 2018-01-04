@@ -21,11 +21,12 @@ caps.latest.revision: "16"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: fd407f77e75bce4bdbc37acd5f28bbe39f92d564
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9b7d2c0f52ea42fcb98be149ab005cd67c2db46a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a>&lt;Přidat&gt; Element pro webRequestModules – (nastavení sítě)
 Přidá vlastní modul žádost webové aplikaci.  

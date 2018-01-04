@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bd2356845c76e81ce2efe87bdf247de293d6115d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a502cb309bce3a1a2fb55c9e5477b7a6a395960
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltstartupgt-element"></a>&lt;spuštění&gt; – Element
 Určuje common language runtime spuštění informace.  
@@ -69,7 +70,7 @@ Určuje common language runtime spuštění informace.
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
- **\<SupportedRuntime >** element má být používána všechny aplikace vytvořené pomocí verze 1.1 nebo novější modulu runtime. Musíte použít aplikace založené na podporu pouze verze 1.0 modulu runtime  **\<requiredRuntime >** element.  
+  **\<SupportedRuntime >** element má být používána všechny aplikace vytvořené pomocí verze 1.1 nebo novější modulu runtime. Musíte použít aplikace založené na podporu pouze verze 1.0 modulu runtime  **\<requiredRuntime >** element.  
   
  Kód spuštění aplikace hostované v aplikaci Internet Explorer ignoruje  **\<spuštění >** elementu a jeho podřízené elementy.  
   
@@ -99,8 +100,8 @@ Určuje common language runtime spuštění informace.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Spuštění – schéma nastavení](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
+ [Schéma nastavení spouštění](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<PaveOver > Zadání kterou verzi modulu Runtime pro použití](http://msdn.microsoft.com/en-us/c376208d-980d-42b4-865b-fbe0d9cc97c2)  
  [Spuštění vedle sebe zprostředkovatel komunikace s objekty COM](http://msdn.microsoft.com/en-us/4302318c-3586-49bf-8620-b9a39cdf4a32)  
- [Proces spuštění vedle sebe](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)
+ [Vnitroprocesové souběžné provádění](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)

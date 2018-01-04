@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aedf7c59533458b6c7ba97b9e921382e29460d06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d41c1506081a2e227c5f21096c0e0bb60d2ddb91
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-split-a-window-horizontally-using-the-designer"></a>Postupy: Vodorovné rozdělení okna pomocí Návrháře
 Tento příklad vytvoří rozdělovače, která rozdělí <xref:System.Windows.Forms.SplitContainer> vodorovných ovládacího prvku.  
@@ -35,4 +36,4 @@ Tento příklad vytvoří rozdělovače, která rozdělí <xref:System.Windows.F
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.SplitContainer>  
- [SplitContainer – ovládací prvek](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
+ [Ovládací prvek SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)

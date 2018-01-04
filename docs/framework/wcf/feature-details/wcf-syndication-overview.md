@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f1595cbb1d225e3dd4e73a354028745d4cd0428
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: acc7131d02f1f4e3cde0df152bdfbc591724b600
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-syndication-overview"></a>Syndikace WCF – přehled
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje podporu pro informační kanály syndikace z vystavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Syndikace je mechanismus integrace aplikací, ve kterém server zpřístupní data některých aplikací ve formátu, který umožňuje vzájemnou spolupráci známé jako informačního kanálu. Informační kanál je kolekce dat aplikací, která se skládá z některé informačního kanálu úroveň metadat (název, Autor, adresy URL a další metadata) a řadu položky informačních kanálů. V informačním kanálu položky informačních kanálů jsou obvykle čas seřazené v obráceném chronologickém pořadí. Položka informačního obsahuje standardní sadu úrovni položky metadat (název, URL, datum vytvoření, kategorie a další metadata na úrovni položek) a libovolné množství dat v konkrétní aplikaci. Jsou dvě nejběžnějších typů informační kanály syndikace skutečně jednoduché syndikace (RSS) 2.0 a Atom 1.0, které jsou podporovány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -32,4 +33,4 @@ ms.lasthandoff: 12/02/2017
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Syndikace platforma podporuje RSS 2.0 a Atom 1.0.  
   
 ## <a name="see-also"></a>Viz také  
- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+ [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

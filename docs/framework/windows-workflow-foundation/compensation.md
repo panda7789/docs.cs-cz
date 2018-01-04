@@ -12,11 +12,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 248af9c669687d0ab4d41f0ac93985d0d9a17678
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7dd56b41b7b661b58446219d426be1a19edba059
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compensation"></a>kompenzace
 Náhrada v [!INCLUDE[wf](../../../includes/wf-md.md)] mechanismus, pomocí kterého dříve dokončené práce odvolat nebo kompenzované (následující logiky definované aplikací.) Pokud dojde k následující chybě. Tato část popisuje postup použití kompenzace v pracovních postupech.  
@@ -336,4 +337,4 @@ Activity wf = new Sequence()
  <xref:System.Activities.Statements.Compensate>  
  <xref:System.Activities.Statements.Confirm>  
  <xref:System.Activities.Statements.CompensationToken>  
- [Compensable aktivity](../../../docs/framework/windows-workflow-foundation/samples/compensable-activity-sample.md)
+ [Kompenzovatelná aktivita](../../../docs/framework/windows-workflow-foundation/samples/compensable-activity-sample.md)

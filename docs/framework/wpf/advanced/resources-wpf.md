@@ -18,28 +18,29 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7bebc19f06044ca2360d7f0c48d5ab1c51c1b62
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a0f55a8811380abd32f4c25fe83c16e62616f283
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resources-wpf"></a>Zdroje (WPF)
 Prostředek je objekt, který lze znovu použít na různých místech v aplikaci. WPF podporuje různé typy prostředků. Tyto prostředky jsou primárně dva typy prostředků: XAML prostředků a prostředků datových souborů. Příklady prostředků XAML: štětce a stylů. Soubory prostředků data jsou jiný spustitelný soubor datové soubory, které aplikace potřebuje.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Prostředek aplikace WPF, obsahu a datových souborů](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)  
- [Identifikátory URI Pack v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
+ [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)  
+ [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.ResourceDictionary>  
   
- [– Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
+ [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
   
- [– Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
+ [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
   
- [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md)  
+ [x:Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [XAML v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)
+ [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)

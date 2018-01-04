@@ -26,11 +26,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 923eb7d1b1b5b442ce897619253a958019b239a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28b0467c8b589882fe5afd7e884d0de55d8ca564
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-respond-to-windows-forms-button-clicks"></a>Postupy: Reakce na kliknutí na tlačítko Windows Forms
 Nejzákladnější použití Windows Forms <xref:System.Windows.Forms.Button> ovládacího prvku je při kliknutí na tlačítko spouštět nějaký kód.  
@@ -66,6 +67,6 @@ Nejzákladnější použití Windows Forms <xref:System.Windows.Forms.Button> ov
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled ovládacího prvku tlačítko](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku Button](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
  [Metody výběru ovládacího prvku Windows Forms Button](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
- [Tlačítko – ovládací prvek](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)
+ [Ovládací prvek Button](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: edb48bd9cb0ff00c733af2d6ff4e616655a62b26
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df3af6ae9fcd0c4539998357b3ab87b11dd13494
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V následujících částech zodpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -210,6 +211,6 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
  A. Jen pro čtení režimu vypne schopnost kontext sledování změn.  
   
 ## <a name="see-also"></a>Viz také  
- [Referenční dokumentace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
- [Řešení potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)  
- [Zabezpečení v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)
+ [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
+ [Odstraňování potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)  
+ [Zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)

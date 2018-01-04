@@ -12,11 +12,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4fb8454d3e1e679154bc016e37b83c3ac4ff6768
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8a6d0338b7c460d7053af9264527a6cd6d263673
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sendmail-custom-activity"></a>SendMail vlastní aktivity
 Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která je odvozena od <xref:System.Activities.AsyncCodeActivity> k odesílání pošty přes protokol SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronně odesílat e-mailu a odesílat e-maily s ověřováním. Poskytuje také některé funkce koncového uživatele jako testování režim tokenu nahrazení, soubor šablony a otestovat rozevírací cestu.  
@@ -45,7 +46,7 @@ Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která je odvozena od 
 ## <a name="solution-contents"></a>Obsah řešení  
  Řešení obsahuje dva projekty.  
   
-|Project|Popis|Důležité soubory|  
+|Projekt|Popis|Důležité soubory|  
 |-------------|-----------------|---------------------|  
 |SendMail|SendMail aktivity|1.  SendMail.cs: implementace pro hlavní aktivitu<br />2.  SendMailDesigner.xaml a SendMailDesigner.xaml.cs: návrháře SendMail aktivity<br />3.  MailTemplateBody.htm: Šablona e-mailu mají být odeslány.|  
 |SendMailTestClient|Klient k testování SendMail aktivity.  Tento projekt ukazuje dva způsoby vyvolání aktivity SendMail: deklarativně a programově.|1.  Sequence1.XAML: pracovní postup, který vyvolá SendMail aktivity.<br />2.  Program.cs: vyvolá Sequence1 a vytvoří také prostřednictvím kódu programu, používá SendMail pracovního postupu.|  

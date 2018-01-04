@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5531689a3a4ba66fddfc98cadec7dc8d51c8629a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c7110ea2e39411d65d70ea14992959cdddc1d3bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugheapvalue3-interface"></a>ICorDebugHeapValue3 – rozhraní
 Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozšiřuje icordebugheapvalue – a icordebugheapvalue2 – rozhraní.  
@@ -32,8 +33,8 @@ Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozši�
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getthreadowningmonitorlock – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-getthreadowningmonitorlock-method.md)|Vrátí spravované vlákno, které vlastní monitorování zámek na tomto objektu.|  
-|[Getmonitoreventwaitlist – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-getmonitoreventwaitlist-method.md)|Poskytuje seřazený seznam vláken, které jsou zařazeny do fronty na událost, která souvisí s monitorování zámku.|  
+|[GetThreadOwningMonitorLock – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-getthreadowningmonitorlock-method.md)|Vrátí spravované vlákno, které vlastní monitorování zámek na tomto objektu.|  
+|[GetMonitorEventWaitList – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-getmonitoreventwaitlist-method.md)|Poskytuje seřazený seznam vláken, které jsou zařazeny do fronty na událost, která souvisí s monitorování zámku.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -50,5 +51,5 @@ Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozši�
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

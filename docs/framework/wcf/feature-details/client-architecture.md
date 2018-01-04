@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e749594d7a37b89d5dbf02013b2f667d923af7ed
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6418c3b5c82ac42fb7e6d3ce85913896a3f76442
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-architecture"></a>Architektura klienta
 Aplikace používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] objekty klienta k vyvolání operace služby. Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta kanály a jejich vztahů s základní architektury kanálu. Pro základní přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta, najdete v části [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vrstvy kanálu, najdete v části [rozšíření vrstvy kanálu](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  

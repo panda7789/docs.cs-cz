@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 143447020f41368a3553a0c8cda78e80806b75ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0424a92f2308c21404cf35cd59c797498e6af992
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-adonet-applications"></a>Zabezpečení aplikací ADO.NET
 Zápis zabezpečené aplikace ADO.NET zahrnuje více než zabraňující běžné kódování nástrahy například není ověřování uživatelského vstupu. Aplikace, která přistupuje k datům má mnoho potenciální body selhání, které může útočník zneužít k načtení, manipulaci nebo destroy citlivá data. Proto je důležité si uvědomit, všechny aspekty zabezpečení, z procesu modelování během fáze návrhu vaší aplikace, jeho případné nasazení a následné údržbě hrozeb.  
@@ -30,23 +31,23 @@ Zápis zabezpečené aplikace ADO.NET zahrnuje více než zabraňující běžn�
  [Přehled zabezpečení](../../../../docs/framework/data/adonet/security-overview.md)  
  Poskytuje doporučení pro navrhování zabezpečených aplikací ADO.NET.  
   
- [Zabezpečení přístupu k datům](../../../../docs/framework/data/adonet/secure-data-access.md)  
+ [Zabezpečený přístup k datům](../../../../docs/framework/data/adonet/secure-data-access.md)  
  Popisuje, jak pracovat s daty ze zdroje zabezpečená data.  
   
- [Zabezpečení klientské aplikace](../../../../docs/framework/data/adonet/secure-client-applications.md)  
+ [Zabezpečené klientské aplikace](../../../../docs/framework/data/adonet/secure-client-applications.md)  
  Popisuje důležité informace o zabezpečení pro klientské aplikace.  
   
- [Zabezpečení přístupu kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)  
+ [Zabezpečení přístupu ke kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)  
  Popisuje, jak certifikační Autority může pomoct chránit kód ADO.NET. Také popisuje, jak pracovat s částečnou důvěryhodností.  
   
  [Ochrana osobních údajů a zabezpečení dat](../../../../docs/framework/data/adonet/privacy-and-data-security.md)  
  Popisuje možnosti šifrování pro technologii ADO.NET aplikace.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Zabezpečení SQL serveru](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  Popisuje funkce zabezpečení systému SQL Server z hlediska pro vývojáře.  
   
- [Aspekty zabezpečení](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+ [Důležité informace o zabezpečení](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
  Popisuje zabezpečení pro aplikace rozhraní Entity Framework.  
   
  [Zabezpečení](../../../../docs/standard/security/index.md)  

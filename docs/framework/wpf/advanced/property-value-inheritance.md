@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 538b2e9cc1ce11dc336a8d90ec84ba504baa6f2b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eac3e03cfc0ca8bbb6f61f1bc6663c67fd6303f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
 Dědičnost hodnota vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému. Dědičnost vlastnosti hodnota umožňuje podřízené elementy ve stromu elementů získat hodnotu konkrétní vlastnosti z nadřazené elementy, dědění tuto hodnotu, protože byl nastaven kdekoli v nejbližší nadřazený element. Nadřazený element může také mít získat jeho hodnota prostřednictvím dědičnost hodnotu vlastnosti, tak systému potenciálně recurses úplně do kořenového adresáře stránky. Dědičnost hodnota vlastnosti není výchozí chování systému vlastnosti; Vlastnost je nutné vytvořit s nastavením konkrétní metadata, aby způsobit, že vlastnost zahájíte dědičnost hodnotu vlastnosti na podřízené elementy.  
@@ -52,6 +53,6 @@ Dědičnost hodnota vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../.
  Dědičnost vlastnosti funguje tak, že procházení stromu elementů. Tento strom je často paralelní k logickém stromu. Vždy, když však zahrnete objekt na úrovni základní grafického subsystému WPF v kód, který definuje k element stromu, jako například <xref:System.Windows.Media.Brush>, jste vytvořili nespojitým logickém stromu. Hodnota true, logického stromu neprodlužuje koncepčně prostřednictvím <xref:System.Windows.Media.Brush>, protože je koncept úrovni rozhraní WPF, logickém stromu. To se projeví ve výsledcích při použití metody uvidíte <xref:System.Windows.LogicalTreeHelper>. Však dědičnost hodnotu vlastnosti dokáže Přemostit tato mezera v logickém stromu a stále zděděné hodnoty předat prostřednictvím, tak dlouho, dokud vlastnost zděditelné byl zaregistrován jako přidružená vlastnost a žádné úmyslné blokování dědičnosti hranic (například <xref:System.Windows.Controls.Frame>) je došlo.  
   
 ## <a name="see-also"></a>Viz také  
- [Metadata vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [Přehled přidružené vlastnosti](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
- [Priorita hodnotu vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)
+ [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [Přehled přidružených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
+ [Priorita hodnot vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)

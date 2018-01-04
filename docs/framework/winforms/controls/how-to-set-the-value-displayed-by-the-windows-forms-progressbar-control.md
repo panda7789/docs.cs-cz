@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d3fd66e10515e5135545f6fcfa64546141346519
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f6ebca02e2084fdb7a76a9a9d711a0b0180f7a7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a>Postupy: Nastavení hodnoty zobrazované ovládacím prvkem Windows Forms ProgressBar
 > [!IMPORTANT]
@@ -238,4 +239,4 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Forms.ProgressBar>  
  <xref:System.Windows.Forms.ToolStripProgressBar>  
  [Přehled ovládacího prvku ProgressBar](../../../../docs/framework/winforms/controls/progressbar-control-overview-windows-forms.md)  
- [ProgressBar – ovládací prvek](../../../../docs/framework/winforms/controls/progressbar-control-windows-forms.md)
+ [Ovládací prvek ProgressBar](../../../../docs/framework/winforms/controls/progressbar-control-windows-forms.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f614e244293d08cd836edaf82496ca9e7b51423e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 41895974b7e6c128d979e362f2dcef1c68e0a5c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-a-focusvisualstyle-to-a-control"></a>Postupy: Použití FocusVisualStyle na ovládací prvek
 Tento příklad ukazuje, jak vytvořit vizuální styl fokusu v prostředky a použít styl do ovládacího prvku pomocí <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost.  
@@ -38,5 +39,5 @@ Tento příklad ukazuje, jak vytvořit vizuální styl fokusu v prostředky a po
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Styly pro výběr v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)

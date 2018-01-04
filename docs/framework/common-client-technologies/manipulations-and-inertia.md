@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 45f36483477c9f6f670de0ac3f44a446f7ae4ee4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d8bcc561ec5bf35385ca48ffd78ccd7fda8a99eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="manipulations-and-inertia"></a>Manipulace a nečinnost
 *Manipulace* a *nečinnosti* procesor třídy pomůže aplikace při přesouvání prvky uživatelského rozhraní (UI) na obrazovce přirozené a intuitivní způsobem. Manipulace povolit uživatelům přesunout, otáčení a změna velikosti součásti pomocí manipulátory, například zařízení myši, pera, nebo (v přímé dotykovým ovládáním scénář) jejich prsty. *Nečinnosti* emuluje chování skutečných pro prvky uživatelského rozhraní, které jsou v provozu tak, že simuluje třecí vynutí u elementů. To umožňuje elementy postupně zpomalit jejich přesun (lineární i úhlová) před přicházející na určeném místě.  

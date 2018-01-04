@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a1771f5c69442ea4e95925339c28204663f78eb2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0725c4f4275853cce958072a57d7f6ca4059e8cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Koncové body Windows Communication Foundation
 Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nabídky služeb.  
@@ -46,13 +47,13 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
  [Zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
  Popisuje, jak komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby dojde k prostřednictvím koncových bodů.  
   
- [Postupy: vytvoření koncového bodu služby v konfiguraci](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  Demonstruje postup vytvoření koncového bodu služby v konfiguraci.  
   
- [Postupy: vytvoření koncového bodu služby v kódu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ [Postupy: Vytvoření koncového bodu služby v kódu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  Demonstruje postup vytvoření koncového bodu služby v kódu.  
   
- [Publikování kocových bodů metadat](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  
+ [Publikování koncových bodů metadat](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  
  Demonstruje postup publikování metadat pomocí publikování kocových bodů metadat v konfiguraci a v kódu.  
   
 ## <a name="reference"></a>Odkaz  

@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 923a6b6cf1523c8a11cb509679443b9658e07ce5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: acc68fd36d2887e5e951f9ba5adc20e8cfd87fd2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Datové sady a XmlDataDocument synchronizace
 Technologie ADO.NET <xref:System.Data.DataSet> vám poskytne relační znázornění dat. Hierarchický přístup k datům můžete použít k dispozici v rozhraní .NET Framework XML třídy. Tyto dvě reprezentace dat v minulosti, již byly použity samostatně. Ale rozhraní .NET Framework umožňuje v reálném čase, synchronní přístup k hierarchické a relační reprezentace dat prostřednictvím **datovou sadu** objektu a <xref:System.Xml.XmlDataDocument> objektu v uvedeném pořadí.  
@@ -100,23 +101,23 @@ Technologie ADO.NET <xref:System.Data.DataSet> vám poskytne relační znázorn�
  Při synchronizaci **datovou sadu** s **XmlDataDocument**, výsledky se můžou lišit v závislosti na tom, jestli vaše <xref:System.Data.DataRelation> jsou vnořené objekty. Další informace najdete v tématu [vnoření DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Synchronizace s XmlDataDocument datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)  
+ [Synchronizace datové sady s datovým dokumentem XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)  
  Demonstruje synchronizaci silného typu **datovou sadu**, s minimálním schématu s **XmlDataDocument**.  
   
- [Provádění dotazu XPath na datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/performing-an-xpath-query-on-a-dataset.md)  
+ [Provedení dotazu XPath u datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/performing-an-xpath-query-on-a-dataset.md)  
  Demonstruje provádění dotazu XPath na obsah **datovou sadu**.  
   
- [Použití transformaci XSLT na datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
+ [Použití transformace XSLT u datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
  Demonstruje použití transformaci XSLT na obsah **datovou sadu**.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Pomocí XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  Popisuje, jak **datovou sadu** komunikuje s XML jako zdroj dat, včetně načítání a zachování obsahu **datovou sadu** jako XML data.  
   
- [DataRelations vnoření](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
+ [Vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
  Popisuje význam vnořené **DataRelation** objekty při představující obsah **datovou sadu** jako data XML a popisuje, jak vytvořit tyto vztahy.  
   
- [Datové sady, DataTables a DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  Popisuje **datovou sadu** a způsobu jeho použití spravovat data aplikací a komunikovat s zdrojů dat včetně relačních databází a XML.  
   
  <xref:System.Xml.XmlDataDocument>  

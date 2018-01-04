@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ca2bac983e25ab7453230a6718fe7eaa98e82275
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bcf06f4dc0d8c70ae85d5add5a2fee078238d5e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-control-development-basics"></a>Základní informace o vývoji ovládacích prvků Windows Forms
 Ovládacího prvku Windows Forms je třída, která je odvozena přímo nebo nepřímo z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>. Následující seznam popisuje běžné scénáře pro vývoj Windows Forms – ovládací prvky:  
@@ -41,7 +42,7 @@ Ovládacího prvku Windows Forms je třída, která je odvozena přímo nebo nep
  Základní třída pro ovládací prvky Windows Forms, <xref:System.Windows.Forms.Control>, poskytuje vložení požadované pro visual zobrazení na straně klienta aplikace pro systém Windows. <xref:System.Windows.Forms.Control>poskytuje popisovač okna, zpracovává směrování zpráv a poskytuje události myši a klávesnice, jakož i mnoho dalších uživatel událostí rozhraní. Poskytuje pokročilé rozložení a má vlastnosti specifické pro visual zobrazení, jako například <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, <xref:System.Windows.Forms.Control.Width%2A>a mnohé další. Kromě toho poskytuje zabezpečení, dělení na vlákna podporu a vzájemná funkční spolupráce s ovládacími prvky ActiveX. Protože mnoho infrastruktury od základní třídy, je poměrně snadné ho vyvíjet vlastní ovládací prvky Windows Forms.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vývoj ovládacího prvku jednoduché Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
- [Vývoj ovládacího prvku složené Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  
- [Postupy: vytvoření ovládacího prvku Windows Forms zobrazujícího průběh](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md)  
+ [Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
+ [Vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  
+ [Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md)  
  [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

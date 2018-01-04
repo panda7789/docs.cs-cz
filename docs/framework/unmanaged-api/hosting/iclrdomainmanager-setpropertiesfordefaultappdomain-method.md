@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fabf42c16dc41e29ca3d14e00e76797fa8f2a9e7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: de72568f5908dc89c9a4105c927cfba6c7366b80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrdomainmanagersetpropertiesfordefaultappdomain-method"></a>ICLRDomainManager::SetPropertiesForDefaultAppDomain – metoda
 Nastaví vlastnosti, které se použijí k chybě při inicializaci výchozí doméně aplikace.  
@@ -71,4 +72,4 @@ HRESULT SetPropertiesForDefaultAppDomain(
   
 ## <a name="see-also"></a>Viz také  
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)  
- [Iclrdomainmanager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-interface.md)
+ [ICLRDomainManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-interface.md)

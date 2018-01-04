@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1a0675777f6ba5e353715e22b40a62f9cac0e32
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 07025b43b690d576b71f6f5cb7d846deccf55028
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-contracts"></a>Kontrakty zpráv
 Tato část obsahuje příklady vysvětlující kontrakty zpráv v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -32,8 +33,8 @@ Tato část obsahuje příklady vysvětlující kontrakty zpráv v [!INCLUDE[ind
  [Nerozbalené zprávy](../../../../docs/framework/wcf/samples/unwrapped-messages.md)  
  Demonstruje nerozbalené zprávy. Ve výchozím nastavení tělo zprávy je naformátován tak, že jsou zabalené parametry, které chcete operaci služby.  
   
- [Nastavení použití a vlastnosti stylu](../../../../docs/framework/wcf/samples/setting-the-use-and-style-properties.md)  
+ [Nastavení vlastností Use a Style](../../../../docs/framework/wcf/samples/setting-the-use-and-style-properties.md)  
  Ukazuje, jak používat použití a stylu vlastnosti na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>.  
   
- [Ukázka třídy XmlReader](../../../../docs/framework/wcf/samples/xmlreader-sample.md)  
+ [Ukázka XmlReader](../../../../docs/framework/wcf/samples/xmlreader-sample.md)  
  Demonstruje zpracování textu zprávy pomocí <xref:System.Xml.XmlReader>.

@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 905d010c1ecdab1fc7b2c99e6d720b85ad40be32
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b78cfbd63687fc7288c945ebcbec790150efed61
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Datové vazby v klientovi Windows Forms
 Tento příklad znázorňuje způsob vytvoření vazby na data vrácená [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v aplikaci Windows Forms.  

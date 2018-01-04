@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7367cabecc18f32860e0a391ce5cf48d54503dc6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4059fa401d082f4408080cf5fd13f1331314a2d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-contract-equivalence"></a>Ekvivalence kontraktů dat
 Pro klienta k úspěšnému odeslání dat určitého typu služby nebo k službě úspěšně posílat data do klienta odeslané typ nemusí nutně existovat na koncové straně příjmu. Jediným požadavkem je, že kontrakty dat obou typů být ekvivalentní. (V některých případech striktní ekvivalenční se nevyžaduje, jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).)  
@@ -74,4 +75,4 @@ Pro klienta k úspěšnému odeslání dat určitého typu služby nebo k služb
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  [Pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md)  
  [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
- [Názvy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)
+ [Názvy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)

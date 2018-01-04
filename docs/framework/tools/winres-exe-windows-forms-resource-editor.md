@@ -21,11 +21,12 @@ caps.latest.revision: "23"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8009f832434d6bbad2ad7bee9cbfd62c81d623c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: efdb5055197611baf56fdc25fe7c0700c1a06dfd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="winresexe-windows-forms-resource-editor"></a>Winres.exe (editor prostředků Windows Forms)
 Windows Forms Resource Editor (Winres.exe) je nástroj pro tvorbu vizuálního rozložení, který pomáhá odborníkům přes lokalizaci lokalizovat prostředky uživatelského rozhraní (UI) nástroje Windows Forms používané formuláři. Soubor prostředků .resx nebo .resources sloužící jako vstup do nástroje Winres.exe lze vytvořit pomocí prostředí pro vizuální návrh, jako je například sada Microsoft Visual Studio. Informace o nasazení prostředků v aplikacích rozhraní .NET Framework, najdete v části [prostředků v aplikacích plochy](../../../docs/framework/resources/index.md).  
@@ -148,5 +149,5 @@ winres /?
  <xref:System.Resources.ResourceReader>  
  <xref:System.Resources.ResourceWriter>  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)  
+ [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
  [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a4df12d196c02b1d868d395a10ca17abafaa0fb9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 83a95d2c1aa9f1704f143ae9095cb38596d2c1a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control"></a>Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker
 Aktuálně vybrané data a času v systému Windows Forms <xref:System.Windows.Forms.DateTimePicker> je dáno ovládacího prvku <xref:System.Windows.Forms.DateTimePicker.Value%2A> vlastnost. Můžete nastavit <xref:System.Windows.Forms.DateTimePicker.Value%2A> předtím, než se zobrazí ovládací prvek (například v době návrhu nebo formuláře <xref:System.Windows.Forms.Form.Load> událostí) k určení, datum, pro které bude zpočátku vybrali v ovládacím prvku. Ve výchozím nastavení, ovládacího prvku na <xref:System.Windows.Forms.DateTimePicker.Value%2A> nastavena na aktuální datum. Pokud změníte ovládacího prvku <xref:System.Windows.Forms.DateTimePicker.Value%2A> v kódu, se automaticky aktualizuje ovládací prvek na formuláři, aby odrážela nové nastavení.  
@@ -83,5 +84,5 @@ Aktuálně vybrané data a času v systému Windows Forms <xref:System.Windows.F
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [DateTimePicker – ovládací prvek](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)  
- [Postupy: zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)
+ [Ovládací prvek DateTimePicker](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)  
+ [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)

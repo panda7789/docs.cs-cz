@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 22034b575dee2840cb89b949f5c663df27cefc4b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dfc632849249c437769ce547b2b7facfd97333e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corargtype-enumeration"></a>CorArgType – výčet
 Obsahuje hodnoty, které popisují nativní typ popisovače modulu runtime.  
@@ -56,4 +57,4 @@ typedef enum CorArgType {
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+ [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

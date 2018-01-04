@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a861c4293cfa64776d2f5c9ea7880a1bd781189b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b270125ae5acc63094c3aa6be6e93e46f9433a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting"></a>Hostování
 Tato část obsahuje příklady vysvětlující hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.  
@@ -26,13 +27,13 @@ Tato část obsahuje příklady vysvětlující hostování [!INCLUDE[indigo1](.
  [Aktivace procesu Windows](../../../../docs/framework/wcf/samples/windows-process-activation.md)  
  Demonstruje aktivace služby prostřednictvím síťových protokolů.  
   
- [Aktivace podle konfigurace](../../../../docs/framework/wcf/samples/configuration-based-activation.md)  
+ [Aktivace na základě konfigurace](../../../../docs/framework/wcf/samples/configuration-based-activation.md)  
  Demonstruje aktivace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby bez nutnosti .svc souboru.  
   
  [Ukázka integrace SystemWebRouting](../../../../docs/framework/wcf/samples/systemwebrouting-integration-sample.md)  
  Demonstruje hostování vrstvě integrace s třídy v <xref:System.Web.Routing> oboru názvů.  
   
- [Režim kompatibility ASP.NET](../../../../docs/framework/wcf/samples/aspnet-compatibility.md)  
+ [Kompatibilita rozhraní ASP.NET](../../../../docs/framework/wcf/samples/aspnet-compatibility.md)  
  Ukazuje, jak povolit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Hostování IIS pomocí vloženého kódu](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  

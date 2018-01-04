@@ -19,11 +19,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0625d5272b4c3ae4f21793d0b0fc8645158e6a2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a18afd8ba06b5bcc70ca5a6febc10be8050891b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-event-handlers-in-windows-forms"></a>Vytváření obslužných rutin událostí ve Windows Forms
 Obslužné rutiny události je procedura ve vašem kódu, který určuje, jaké akce provede, když dojde k události, například když uživatel klikne na tlačítko nebo fronta zpráv přijme nějakou zprávu. Pokud se vyvolá událost, jsou spustit obslužnou rutinu události nebo obslužné rutiny, které přijímají události. Události lze přiřadit k více obslužných rutin a metody, které zpracovávají konkrétní události lze změnit dynamicky. Návrhář formulářů Windows můžete také použít k vytvoření obslužné rutiny událostí.  
@@ -35,13 +36,13 @@ Obslužné rutiny události je procedura ve vašem kódu, který určuje, jaké 
  [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)  
  Popisuje postup zpracování událostí.  
   
- [Postupy: vytváření obslužných rutin událostí v době běhu pro Windows Forms](../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md)  
+ [Postupy: Vytváření obslužných rutin událostí v době běhu pro Windows Forms](../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md)  
  Poskytuje pokyny pro dynamicky reagování na události systému nebo uživatele.  
   
- [Postupy: připojení více událostí k jedné obslužné rutině událostí ve Windows Forms](../../../docs/framework/winforms/how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md)  
+ [Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms](../../../docs/framework/winforms/how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md)  
  Poskytuje pokyny pro přiřazení k více ovládacích prvků prostřednictvím událostí stejné funkce.  
   
- [Pořadí událostí ve Windows Forms](../../../docs/framework/winforms/order-of-events-in-windows-forms.md)  
+ [Řazení událostí ve Windows Forms](../../../docs/framework/winforms/order-of-events-in-windows-forms.md)  
  Popisuje pořadí, ve kterém jsou vyvolány události v ovládacích prvcích Windows Forms.  
   
  [Postupy: vytváření obslužných rutin událostí pomocí návrháře](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2)  

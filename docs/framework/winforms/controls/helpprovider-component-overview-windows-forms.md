@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 42a788e44fde80662748e19a7244ce77bb26118f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 23a9db5f7c5286eaab50f2499845f7294af878ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="helpprovider-component-overview-windows-forms"></a>HelpProvider – přehled komponenty (Windows Forms)
 Windows Forms [HelpProvider –](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md) součást je použito k přidružení soubor nápovědy HTML – Nápověda 1.x (soubor CHM. vytvořeného s pracoviště Nápověda HTML nebo soubor HTM) s aplikací pro Windows. Můžete poskytnutí nápovědy v mnoha různými způsoby:  
@@ -46,4 +47,4 @@ Windows Forms [HelpProvider –](../../../../docs/framework/winforms/controls/he
 >  Můžete setkat s problémy pomocí relativní cesty při zadání cestu k souboru nápovědy v <xref:System.Windows.Forms.Help.ShowHelp%2A> metoda nebo <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost <xref:System.Windows.Forms.HelpProvider> ovládacího prvku. Jako takový je nutné použít absolutní cestu k souboru k určení v souboru nápovědy.  
   
 ## <a name="see-also"></a>Viz také  
- [Systémy nápovědy v aplikacích Windows Forms](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md)
+ [Systémy nápovědy ve formulářových aplikacích Windows](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md)

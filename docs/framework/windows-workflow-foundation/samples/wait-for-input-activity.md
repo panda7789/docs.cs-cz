@@ -12,11 +12,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d877c147a19635782b652d96031644b3be42448a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ac05054d56c424ab3f4d1fdfd9c3590aac8b00bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wait-for-input-activity"></a>Počkejte aktivity pro vstup
 Tento příklad znázorňuje postup vytvoření pojmenovaného záložky v pracovním postupu. [!INCLUDE[wf](../../../../includes/wf-md.md)]pro vytvoření deklarativní záložku neposkytuje aktivitu. Proto pokud chcete vytvořit záložku v pracovní postup, musíte napsat vlastní aktivity, která ji vytvoří. `WaitForInput` Aktivity definované v této ukázce tuto funkci zajišťuje, aby uživatelé mohou vytvářet záložky deklarativně v pracovním postupu.  

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 220416aa4e282cb342ee6080d9040f9f4818fbf0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6fe20fd26b78bde19ed73e2415b1b5c283a0d1f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queries-in-linq-to-entities"></a>Dotazy v technologii LINQ to Entities
 Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk, například SQL pro relační databáze a XQuery pro formát XML. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která dotazy. Language-Integrated Query (LINQ) nabízí jednodušší a konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V dotazu LINQ vždy pracujete s programováním objekty.  
@@ -34,49 +35,49 @@ Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyj�
 ### <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu  
  Výrazy dotazů jsou syntaxe deklarativní dotazu. Tuto syntaxi umožňuje vývojáři psát dotazy v jazyce vysoké úrovně, který je naformátovaný podobná Transact-SQL. Pomocí syntaxe výrazu dotazu, můžete provést i komplexní filtrování, řazení a seskupování operací na zdroje dat s minimálním kódu. Další informace najdete [základní operace dotazů (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/linq/basic-query-operations.md). Příklady, které ukazují, jak pomocí syntaxe výrazu dotazu najdete v následujících tématech:  
   
--   [Příklady syntaxe výrazu dotazu: projekce](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-projection.md)  
+-   [Příklady syntaxe výrazů dotazů: Projekce](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-projection.md)  
   
--   [Příklady syntaxe výrazu dotazu: filtrování](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-filtering.md)  
+-   [Příklady syntaxe výrazů dotazů: Filtrování](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-filtering.md)  
   
--   [Příklady syntaxe výrazu dotazu: řazení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-ordering.md)  
+-   [Příklady syntaxe výrazů dotazů: Řazení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-ordering.md)  
   
--   [Příklady syntaxe výrazu dotazu: Agregační operátory](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-aggregate-operators.md)  
+-   [Příklady syntaxe výrazů dotazů: Agregační operátory](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-aggregate-operators.md)  
   
--   [Příklady syntaxe výrazu dotazu: vytváření oddílů](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-partitioning.md)  
+-   [Příklady syntaxe výrazů dotazů: Dělení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-partitioning.md)  
   
--   [Příklady syntaxe výrazu dotazu: Operátory spojení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-join-operators.md)  
+-   [Příklady syntaxe výrazů dotazů: Operátory spojení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-join-operators.md)  
   
--   [Příklady syntaxe výrazu dotazu: Operátory Element](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-element-operators.md)  
+-   [Příklady syntaxe výrazů dotazů: Operátory elementů](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-element-operators.md)  
   
--   [Příklady syntaxe výrazu dotazu: seskupování](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-grouping.md)  
+-   [Příklady syntaxe výrazů dotazů: Seskupení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-grouping.md)  
   
--   [Příklady syntaxe výrazu dotazu: Navigace relací](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-navigating-relationships.md)  
+-   [Příklady syntaxe výrazů dotazů: Navigace v relacích](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-navigating-relationships.md)  
   
 ### <a name="method-based-query-syntax"></a>Syntaxe dotazu na základě – metoda  
  Jiný způsob, jak vytvořit [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy je pomocí dotazů na základě metod. Syntaxe dotazu na základě metod je posloupnost přímá metoda volání metod operátor LINQ, předávání výrazy lambda jako parametry. Další informace najdete v tématu [výrazy Lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md). Příklady, které ukazují, jak na základě metod syntaxí najdete v následujících tématech:  
   
--   [Příklady syntaxe dotazů metoda: projekce](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-projection.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Projekce](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-projection.md)  
   
--   [Příklady syntaxe dotazů metoda: filtrování](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-filtering.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Filtrování](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-filtering.md)  
   
--   [Příklady syntaxe dotazů metoda: řazení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-ordering.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Řazení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-ordering.md)  
   
--   [Příklady syntaxe dotazu na základě metod: Agregační operátory](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-aggregate-operators.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Agregační operátory](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-aggregate-operators.md)  
   
--   [Příklady syntaxe dotazů metoda: vytváření oddílů](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-partitioning.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Dělení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-partitioning.md)  
   
--   [Příklady syntaxe dotazů metoda: převod](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-conversion.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Převod](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-conversion.md)  
   
--   [Příklady syntaxe dotazu na základě metod: Operátory spojení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-join-operators.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Operátory spojení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-join-operators.md)  
   
--   [Příklady syntaxe dotazu na základě metod: Operátory Element](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-element-operators.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Operátory elementů](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-element-operators.md)  
   
--   [Příklady syntaxe dotazů metoda: seskupování](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Seskupení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
   
--   [Příklady syntaxe dotazů metoda: Navigace relací](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Navigace v relacích](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
- [Začínáme s dotazy LINQ v jazyku C#](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
+ [Začínáme s dotazy LINQ v jazyce C#](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [Začínáme s dotazy LINQ v jazyku Visual Basic](~/docs/visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [Rozhraní Entity Framework možnosti sloučení a zkompilovat dotazy](http://go.microsoft.com/fwlink/?LinkId=199591)

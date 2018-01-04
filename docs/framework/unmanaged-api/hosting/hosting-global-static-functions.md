@@ -17,25 +17,26 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 105ba4dd213542e6dd441bb774ebb76123366304
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d4955da9abe91d10af70934a24e4d2bda954b487
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-global-static-functions"></a>Hostování globálních statických funkcí
 Tato část popisuje nespravované hostování funkce používané v rozhraní .NET Framework, který je hostitelem rozhraní API.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rozhraní .NET framework 4 – hostování globálních statických funkcí](../../../../docs/framework/unmanaged-api/hosting/net-framework-4-hosting-global-static-functions.md)  
+ [Globální statické funkce .NET Framework 4 pro hostování](../../../../docs/framework/unmanaged-api/hosting/net-framework-4-hosting-global-static-functions.md)  
  Popisuje funkce, zavedená v rozhraní .NET Framework 4.  
   
- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
  Popisuje funkce, zavedená v rozhraní .NET Framework 1.1 a 2.0, která jsou v nepoužívá [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Třídy typu coclass hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
+ [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
   
- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
+ [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
   
  [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

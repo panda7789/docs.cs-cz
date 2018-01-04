@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 808d29292e176af8d3af1fc0f4a02c48ee05ea35
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c3b750e6ee21c8347d3896ec290f0ff564cc0a2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-the-opacity-of-an-element-or-brush"></a>Postupy: Animace krytí elementu nebo štětce
 Chcete-li element framework objevovat a deaktivovat zobrazení, použije animaci jeho <xref:System.Windows.UIElement.Opacity%2A> vlastnost nebo je můžete animace <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost <xref:System.Windows.Media.Brush> (nebo štětce) použita k vyplnění ho. Animace elementu krytí a její podřízené položky objevovat a deaktivovat zobrazení se však animace štětce použita k vyplnění elementu umožňuje být užší zmenšuje jaká část elementu. Například může animace krytí štětce použita k vyplnění tlačítkem na pozadí. To by způsobilo a odhlašování vykreslit zobrazení, a nechat textu jeho plně neprůhledného pozadí na tlačítko.  

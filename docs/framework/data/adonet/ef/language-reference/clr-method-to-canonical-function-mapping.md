@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5d1e6a1cc362663be3aa6c6084f658eba25dfe54
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 53acc5745b3b80cd4c124dc3f9a74173bb118158
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>Metoda CLR pro mapování kanonické funkce
 Rozhraní Entity Framework poskytuje sadu kanonické funkce, které implementují funkce, které jsou společné napříč mnoha systémy databáze, jako je například zacházení s řetězci a matematické funkce. To umožňuje vývojářům cíle širokou škálu databázovými systémy. Při volání z dotazování technologii, jako je technologie LINQ to Entities, tyto kanonické funkce jsou převedeny na správné odpovídající funkce úložiště pro použitý zprostředkovatel. To umožňuje volání funkce vyjádřeno v běžné formuláře napříč datových zdrojů, zajištění konzistentní dotazu prostředí napříč zdroje dat. Bitové operace AND, OR, NOT a XOR operátory jsou taky namapovaný na funkce kanonický po operand číselného typu. Pro logickou operandy, bitové operace AND, OR a NOT, a operátory XOR výpočetní logické AND, OR, ne a operace XOR operandy. Další informace najdete v tématu [kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).  
@@ -207,4 +208,4 @@ icrosoft. VisualBasic.DateAndTime.Day (data a času `TimeValue`)|Day()||
 |Guid.NewGuid()|NewGuid()|  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)
+ [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)

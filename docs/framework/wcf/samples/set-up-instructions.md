@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e88737d50b24f524e4a33fd51ee16678c1928b1a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cfbd4769d1fc974369093e3b5253f9853a9ef730
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="set-up-instructions"></a>Pokyny k instalaci
 Témata popisuje postup nastavení služby, které jsou nutné ke spuštění [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.  
@@ -32,19 +33,19 @@ Témata popisuje postup nastavení služby, které jsou nutné ke spuštění [!
  [Pokyny k bráně firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md)  
  Popisuje kroky potřebné k nastavení brány Windows Firewall umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb na funkce.  
   
- [Internetové informace o pokyny k hostování služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
  Popisuje kroky potřebné k nastavení služby IIS.  
   
- [Internetová informační služba (IIS) pokyny k instalaci certifikátu serveru](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)  
+ [Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)  
  Popisuje postup instalace certifikátů serveru pro službu IIS.  
   
  [Pokyny k instalaci virtuálního adresáře](../../../../docs/framework/wcf/samples/virtual-directory-setup-instructions.md)  
  Popisuje kroky potřebné k vytvoření virtuálního adresáře.  
   
- [Vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
+ [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
  Popisuje kroky pro vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky.  
   
- [Spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)  
+ [Spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)  
  Popisuje kroky pro spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky na stejném počítači a mezi počítači.  
   
  [Povolení služeb Peer to Peer](http://msdn.microsoft.com/library/e7a0fcf4-b0e5-4b26-a7e3-f0f37b60a1f9)  

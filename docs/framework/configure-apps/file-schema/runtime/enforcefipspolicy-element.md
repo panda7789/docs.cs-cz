@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9bd593c17d752b35919985aad37f675c62e6ce34
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fb8cb1ea4d011eb25aee14ddd53d3dc882f75d8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltenforcefipspolicygt-element"></a>&lt;enforcefipspolicy –&gt; – Element
 Určuje, jestli vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu s na zpracování standardů FIPS (Federal Information).  
@@ -82,4 +83,4 @@ Určuje, jestli vynutit požadavek konfigurace počítače, že kryptografické 
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Kryptografický Model](../../../../../docs/standard/security/cryptography-model.md)
+ [Kryptografický model](../../../../../docs/standard/security/cryptography-model.md)

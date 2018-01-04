@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2738856f0abada9b7fcd5f2a1d457508c8a0dc3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 213cf8df3694ec3020057de65006ff6351961cc0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje různé způsoby, kterými k manipulaci s <xref:System.Windows.Forms.DataGridView> sloupců pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewColumn> třídy.  
@@ -47,4 +48,4 @@ Následující příklad kódu ukazuje různé způsoby, kterými k manipulaci s
  <xref:System.Windows.Forms.DataGridViewBand>  
  <xref:System.Windows.Forms.DataGridViewRow>  
  <xref:System.Windows.Forms.DataGridViewColumn>  
- [Programování s buněk, řádků a sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)
+ [Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)

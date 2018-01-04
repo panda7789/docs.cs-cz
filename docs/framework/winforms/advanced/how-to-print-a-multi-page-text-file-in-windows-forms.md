@@ -21,11 +21,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cfb196a7c3eba665d6ad145323fe18bb00b15bca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4576e969ba917b845cc8fbd6420741e2b24062fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-print-a-multi-page-text-file-in-windows-forms"></a>Postupy: Tisk vícestránkového textového souboru ve Windows Forms
 Je velmi běžné aplikace založené na systému Windows k vytištění textu. <xref:System.Drawing.Graphics> Třída poskytuje metody pro kreslení objekty (grafiky nebo text) na zařízení, jako je například obrazovky nebo tiskárny.  
@@ -73,4 +74,4 @@ Je velmi běžné aplikace založené na systému Windows k vytištění textu. 
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Graphics>  
  <xref:System.Drawing.Brush>  
- [Podpora tisku ve Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+ [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

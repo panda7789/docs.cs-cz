@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 61048a8db67986c55e1a1b07d62d5142069dd63e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5eec8646a48f94fb9ffdcad14849416732618a06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-handle-the-contextmenuopening-event"></a>Postupy: Zpracování události ContextMenuOpening
 <xref:System.Windows.FrameworkElement.ContextMenuOpening> Události lze zpracovat v aplikaci buď upravit existující kontextové nabídky před zobrazit nebo potlačit v nabídce, která by jinak zobrazí nastavením <xref:System.Windows.RoutedEventArgs.Handled%2A> vlastnost `true` v datech události. Typické důvod nastavení <xref:System.Windows.RoutedEventArgs.Handled%2A> k `true` události dat je nahradit nabídku zcela nový <xref:System.Windows.Controls.ContextMenu> objektu, který někdy vyžaduje zrušení operace a spuštění nové otevřete. Pokud píšete obslužné rutiny pro <xref:System.Windows.FrameworkElement.ContextMenuOpening> událostí, byste měli vědět o problémy načasování mezi <xref:System.Windows.Controls.ContextMenu> řízení a službou, která je odpovědná za otevírání a obecně umístění kontextové nabídky pro ovládací prvky. Toto téma popisuje některé techniky kódu pro různé kontextovou nabídku otevírání scénáře a znázorňuje případ kterých časové potíže pocházejí do play.  
@@ -67,5 +68,5 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.ContextMenu>  
  <xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>  
- [Přehled základní prvky](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
+ [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
  [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md)

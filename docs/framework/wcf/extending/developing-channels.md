@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 231948af1a0bfe7840ffbde2ab162ceea33698ca
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 42c89ae71078a3ddfbe7e85273a6f62879781c80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-channels"></a>Vývoj kanálů
 K vývoji pro protokol nebo přenos kanálu, který lze použít s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikační vrstvu, vyžaduje několik kroků. Toto téma popisuje kroky a bodů na konkrétní témata pro další informace. Zjistit model kanálu a různé typy, které jsou uvedené v tomto tématu najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md). Kanál ukázku dokončení přenosu, najdete [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md).  
@@ -44,4 +45,4 @@ K vývoji pro protokol nebo přenos kanálu, který lze použít s [!INCLUDE[ind
 4.  Přidáte oddíl vazby a konfigurace prvku vazby ke zveřejnění vazby ke konfiguraci systému. Další informace najdete v tématu [konfigurace a podpora metadat](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+ [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)

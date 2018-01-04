@@ -18,11 +18,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4b29ed1c3659b1705640888ded5fe21432dc6ada
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28203dc428db6a2dd06e9c1e85b64ef80e81ffbe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="type-equivalence-and-embedded-interop-types"></a>Ekvivalence typů a vestavěné typy spolupráce
 Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], běžné podporuje runtime jazyka vložení informací o typu pro typy modelu COM přímo do spravované sestavení, místo aby spravované sestavení, které chcete získat informace o typu pro typy modelu COM z spolupráce – sestavení. Informace o vložených typu zahrnuje jenom typy a členy, které jsou spravované sestavení. ve skutečnosti používány, a proto může mít dva spravované sestavení velmi různá zobrazení stejného typu COM. Každé spravované sestavení má jiné <xref:System.Type> objekt představující jeho zobrazení typu modelu COM. Modul common language runtime podporuje ekvivalence typů mezi tyto různá zobrazení pro rozhraní, struktury, výčty a delegáti.  
@@ -61,4 +62,4 @@ Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], běžn�
 ## <a name="see-also"></a>Viz také  
  <xref:System.Type.IsEquivalentTo%2A>  
  [Použití typy modelu COM ve spravovaném kódu](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
- [Import knihovny typů jako sestavení](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)
+ [Import knihovny typů ve formě sestavení](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)

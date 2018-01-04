@@ -13,17 +13,18 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 545717c1aa620644203bf6adaa866cec3e8e7fed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d44e6375209f6ad9c733d1c4412ee605b439d992
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="multiple-active-result-sets-mars"></a>Více sad výsledků dotazu Active (MARS)
 Několik sad Active výsledek (MARS) je funkce, která umožňuje provádění více u jednoho připojení. V předchozích verzích se může provést pouze jeden batch najednou proti jednoho připojení. Provádění více s MARS neznamená souběžné provádění operací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Povolení více aktivních sad](../../../../../docs/framework/data/adonet/sql/enabling-multiple-active-result-sets.md)  
+ [Povolení více aktivních sad výsledků](../../../../../docs/framework/data/adonet/sql/enabling-multiple-active-result-sets.md)  
  Popisuje, jak používat MARS se systémem SQL Server.  
   
  [Manipulace s daty](../../../../../docs/framework/data/adonet/sql/manipulating-data.md)  

@@ -17,23 +17,24 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c1dd0cfd8062274d4e2ad9ce75ae41ed69e703d4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0dbebd020d4512b90215dae781f359a3a633c609
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="errorprovider-component-windows-forms"></a>ErrorProvider – komponenta (Windows Forms)
 Windows Forms `ErrorProvider` komponenta se používá k zobrazení uživatele nevtíravým způsobem, že je něco špatně. Se obvykle používá ve spojení s ověřování uživatelského vstupu ve formuláři, nebo zobrazení chyb v rámci datové sady.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ErrorProvider – přehled komponenty](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
+ [Přehled komponenty ErrorProvider](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
  Vysvětluje, co je tato součást a jeho klíčové funkce a vlastnosti.  
   
- [Postupy: zobrazení ikon chyby pro ověřování formuláře pomocí ovládacího prvku Windows Forms ErrorProvider – komponenta](../../../../docs/framework/winforms/controls/display-error-icons-for-form-validation-with-wf-errorprovider.md)  
+ [Postupy: Zobrazení ikon chyb pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider](../../../../docs/framework/winforms/controls/display-error-icons-for-form-validation-with-wf-errorprovider.md)  
  Poskytuje pokyny pro ověřování uživatelského vstupu s komponentu chyby zprostředkovatele.  
   
- [Postupy: zobrazení chyb v prvku DataSet pomocí ovládacího prvku Windows Forms ErrorProvider – komponenta](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)  
+ [Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)  
  Poskytuje pokyny pro zobrazení chyb dat pomocí komponentu chyby zprostředkovatele.  
   
 ## <a name="reference"></a>Odkaz  
@@ -41,5 +42,5 @@ Windows Forms `ErrorProvider` komponenta se používá k zobrazení uživatele n
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.

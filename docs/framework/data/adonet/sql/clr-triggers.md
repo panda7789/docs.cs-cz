@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7c0f93a5c4e515db937945d374ee7cbe8d9b3cf8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cfe6a2137b3f3c9b5bcde6de0f0c692904bd7529
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-triggers"></a>Aktivační procedury modulu CLR
 Aktivační událost je zvláštní druh uložené procedury, jež se spustí automaticky při jazyk událost spuštěna. Díky integraci systému Microsoft SQL Server pomocí rozhraní .NET Framework common language runtime (CLR) můžete použít jakýkoli jazyk rozhraní .NET Framework pro vytvoření aktivační procedury modulu CLR.  
@@ -26,7 +27,7 @@ Aktivační událost je zvláštní druh uložené procedury, jež se spustí au
   
  **SQL Server Books Online**  
   
-1.  [Aktivační procedury modulu CLR](http://go.microsoft.com/fwlink/?LinkId=115397)  
+1.  [Aktivační procedury CLR](http://go.microsoft.com/fwlink/?LinkId=115397)  
   
 ## <a name="see-also"></a>Viz také  
  [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](http://msdn.microsoft.com/en-us/5358a825-e19b-49aa-8214-674ce5fed1da)  

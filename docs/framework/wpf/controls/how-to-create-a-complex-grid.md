@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2c0008a7379feefd9b3fe719f85b3205a72fb51d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b9dfb913407622f3cbd9a067a94cc6400b501e2f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-complex-grid"></a>Postupy: Vytvoření komplexní mřížky
 Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Grid> pro vytvoření rozložení, který může vypadat měsíční kalendář.  
@@ -36,6 +37,6 @@ Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Grid> pro 
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.Grid>  
  <xref:System.Windows.Documents.TableCell>  
- [Malování s plnou barvy a přechody – přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Tabulka – přehled](../../../../docs/framework/wpf/advanced/table-overview.md)
+ [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Přehled tabulky](../../../../docs/framework/wpf/advanced/table-overview.md)

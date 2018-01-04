@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 02f29ec698584ebe8b2ca1b5d438ac06ba6503b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 58392fc71508c3cf6ad7178396a927cf0e84c98f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltbindingextensionsgt"></a>&lt;bindingExtensions&gt;
 Tato část umožňuje použití definované uživatelem vazby z počítače nebo konfiguračního souboru aplikace. Můžete přidat definované uživatelem vazby k této kolekci pomocí `add` – klíčové slovo a nastavení `type` atribut elementu uživatelem definované vazby, společně s `name` vazby definován atribut na jméno uživatele.  
@@ -50,4 +51,4 @@ Tato část umožňuje použití definované uživatelem vazby z počítače neb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)

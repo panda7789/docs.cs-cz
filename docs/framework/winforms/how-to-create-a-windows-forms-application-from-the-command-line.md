@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e6ddb27f724e30071be339ac753cfd85599ccd86
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 22acab6ea3912488ae1382ffb42ca5383a7311af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: vytvoření aplikace Windows Forms z příkazového řádku
 Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace Windows Forms z příkazového řádku. Rozsáhlá podpora pro tyto postupy v sadě Visual Studio není k dispozici.  Viz také [návod: vytvoření jednoduché formuláře Windows](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\)).  
@@ -121,5 +122,5 @@ Následující postupy popisují základní kroky, které je třeba provést k v
  <xref:System.Windows.Forms.Form>  
  <xref:System.Windows.Forms.Control>  
  [Změna vzhledu Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
- [Rozšiřování formulářových aplikací Windows](../../../docs/framework/winforms/advanced/index.md)  
- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)
+ [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)  
+ [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)

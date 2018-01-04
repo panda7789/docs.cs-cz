@@ -17,22 +17,23 @@ caps.latest.revision: "74"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4403d508f0a99b4cefd3ef59e6d1caf746f31fec
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 38da15eee931d2519efa0c502cfaa61ed0691a8f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resources-how-to-topics"></a>Postupy: Témata zdrojů
 Témata v této části popisují, jak používat [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] prostředky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Definování a odkazovat na prostředek](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)  
- [Použít prostředky aplikace](../../../../docs/framework/wpf/advanced/how-to-use-application-resources.md)  
- [Použití SystemFonts](../../../../docs/framework/wpf/advanced/how-to-use-systemfonts.md)  
- [Používejte klíče písem systému](../../../../docs/framework/wpf/advanced/how-to-use-system-fonts-keys.md)  
- [Použití SystemParameters](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)  
- [Používejte klíče parametry systému](../../../../docs/framework/wpf/advanced/how-to-use-system-parameters-keys.md)  
+ [Definice a odkaz prostředku](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)  
+ [Použití prostředků aplikace](../../../../docs/framework/wpf/advanced/how-to-use-application-resources.md)  
+ [Používání třídy SystemFonts](../../../../docs/framework/wpf/advanced/how-to-use-systemfonts.md)  
+ [Použití klíčů systémových písem](../../../../docs/framework/wpf/advanced/how-to-use-system-fonts-keys.md)  
+ [Používání třídy SystemParameters](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)  
+ [Použití klíčů systémových parametrů](../../../../docs/framework/wpf/advanced/how-to-use-system-parameters-keys.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.FrameworkTemplate.Resources%2A>  

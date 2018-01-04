@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fbf351f0d71893457419d3b8b0e2cfb9c96ad0b0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2aa8adc0ce197c3776b8314009fcaa061bed884d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-feature-details"></a>Podrobnosti o funkcích WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]základní programování, viz [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -30,7 +31,7 @@ ms.lasthandoff: 12/02/2017
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  Popisuje, jak vytvořit a nakonfigurovat služby pracovních postupů.  
   
- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
  Popisuje, jak řídit několik aspektů služby.  
   
  [Přenos a serializace dat](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
@@ -51,7 +52,7 @@ ms.lasthandoff: 12/02/2017
  [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)  
  Popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení vám pomůže vytvořit aplikace, které mají utajení a integrity. Ověřování a autorizace je taky dostupné, jako jsou funkce auditování.  
   
- [Sítě peer-to-Peer](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [Síť rovnocenných počítačů](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
  Podrobné informace o tom, jak vytvořit sdílené služeb a klientů.  
   
  [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)  
@@ -63,16 +64,16 @@ ms.lasthandoff: 12/02/2017
  [Hostování](../../../../docs/framework/wcf/feature-details/hosting.md)  
  Popisuje, který je hostitelem. Služby mohou být hostovány systémem jiná aplikace, nebo může být vlastním hostováním.  
   
- [Vzájemná spolupráce a integrace](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
+ [Interoperabilita a integrace](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
  Popisuje způsob použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání, pokud máte významné investice v logiku aplikace založené na součást hostované v modelu COM +.  
   
- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
+ [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
  Popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model Web, který umožňuje vývojářům vystavit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby operace do koncových bodů protokolu SOAP.  
   
  [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)  
  Popisuje podporu snadno vystavit informační kanály syndikace z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
- [Integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
+ [Integrace jazyka AJAX a podpora JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
  Popisuje podporu pro ASP.NET asynchronní JavaScript a XML (AJAX) a formát dat JavaScript Object Notation (JSON), které povoluje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby vystavit operations klientům AJAX.  
   
  [Zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  

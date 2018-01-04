@@ -27,11 +27,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f192081d9b7e30f10373342aef39443ff49e9931
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2e49c9c3a8f2b133337ee3c153841a7daeff178
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="backgroundworker-component-overview"></a>BackgroundWorker – přehled komponenty
 Existuje mnoho běžně provádět operace, které může trvat dlouhou dobu spuštění. Příklad:  
@@ -71,4 +72,4 @@ Existuje mnoho běžně provádět operace, které může trvat dlouhou dobu spu
   
 ## <a name="see-also"></a>Viz také  
  [NENÍ v sestavení: Více vláken v jazyce Visual Basic](http://msdn.microsoft.com/en-us/c731a50c-09c1-4468-9646-54c86b75d269)  
- [Postupy: implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+ [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: da99c43d9142ee754b2b48db45ca070d1ab7c4e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ee356fc3e7d6e1279e0cba8014d6d285620add3b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="edm-generator-edmgenexe"></a>Generátor EDM (EdmGen.exe)
 EdmGen.exe je nástroj příkazového řádku používané pro práci s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] modelu a mapování souborů. Nástroj EdmGen.exe můžete provést následující akce:  
@@ -75,13 +76,13 @@ EdmGen /mode:choice [options]
 |`/targetversion:`\<řetězec >|Verze rozhraní .NET Framework, který se použije kompilace generovaného kódu. Podporované verze jsou 4 a 4.5. Výchozí hodnota je 4.|  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: použití EdmGen.exe pro generování modelu a soubory mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)  
+ [Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)  
   
- [Postupy: použití EdmGen.exe ke generování kódu na objektové vrstvě](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md)  
+ [Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstvě](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md)  
   
- [Postupy: použití EdmGen.exe pro ověření modelu a soubory mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)  
+ [Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)  
- [Datového modelu entity](../../../../../docs/framework/data/adonet/entity-data-model.md)  
- [CSDL, SSDL a specifikace MSL](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+ [Model EDM (Entity Data Model)](../../../../../docs/framework/data/adonet/entity-data-model.md)  
+ [Specifikace CSDL, SSDL a MSL](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

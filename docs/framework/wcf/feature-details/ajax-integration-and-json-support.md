@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 98efc62a133b86ab71e34671bc6385a5a94897ea
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cd5c84250349f4adaaac68a302d771280328a4e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ajax-integration-and-json-support"></a>Integrace jazyka AJAX a podpora formátu JSON
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Podporu pro ASP.NET asynchronní JavaScript a XML (AJAX) a data formátu JavaScript Object Notation (JSON) umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby vystavit operations klientům AJAX. Klienti AJAX jsou webové stránky spuštění kódu JavaScript a přístup k tyto [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby používající požadavky HTTP. Témata v této části poskytují informace o tuto podporu a o tom, jak ho implementovat.  
@@ -32,12 +33,12 @@ ms.lasthandoff: 12/02/2017
  [Vytváření služeb WCF AJAX bez ASP.NET](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md)  
  Popisuje postup vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu bez použití technologie ASP.NET.  
   
- [Podpora formátu JSON a další Data formátů přenosu](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)  
+ [Podpora JSON a dalších formátů přenosu dat](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)  
  Popisuje podporu formátu JSON, který je obvykle používá (namísto XML) pro zasílání zpráv pomocí prvku ASP.NET AJAX služby.  
   
- [Postupy: migrace technologie AJAX webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
+ [Postupy: Migrace webových služeb ASP.NET s podporou AJAX na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
  Popisuje, jak migrovat služby technologie AJAX technologie ASP.NET můžete [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webové služby.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>  
- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+ [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: affc9ed8f9e16834af8d7281ce9a7eaedd7d5e8e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8e4b0a724653f5366d6da96f511fac9e62f64816
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata"></a>Metadata
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Poskytuje infrastrukturu pro export, publikování, načítání a import metadat služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby používají metadata k popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, může automaticky generovat kód klienta pro přístup k službě.  
@@ -39,10 +40,10 @@ ms.lasthandoff: 12/02/2017
  [Načítání metadat](../../../../docs/framework/wcf/feature-details/retrieving-metadata.md)  
  Popisuje různé způsoby, jak načíst metadata.  
   
- [Pomocí metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
  Popisuje různé způsoby použití metadata služby.  
   
- [Aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
+ [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
  Popisuje důležité informace o zabezpečení při plánování práce s metadata služby.  
   
 ## <a name="see-also"></a>Viz také  

@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9bc4dee8f0b2eef76e5769ae7da3a13edf7c3300
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d63e66b2458fa4ff21a227bdc2898d97e5eb30f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-a-dependency-property"></a>Postupy: Implementace vlastnosti závislosti
 Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost s <xref:System.Windows.DependencyProperty> pole, proto definování vlastnost závislosti. Když definovat vlastní vlastnosti a mají podporovat mnoho aspektů [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkcí, včetně styly, vazby dat, dědičnosti, animace a výchozí hodnoty, měli byste implementovat jako vlastnost závislosti.  
@@ -43,5 +44,5 @@ Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../inclu
  Další informace o tom, a důvod, proč k implementaci vlastnost závislosti, oproti právě zálohování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost s soukromé pole, najdete v části [přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)

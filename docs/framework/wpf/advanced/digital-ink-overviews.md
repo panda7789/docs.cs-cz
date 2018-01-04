@@ -17,17 +17,18 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 33a2e7200a1154bbe79190809511401e6f12b370
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 378dac360e94d07bf8475286559e6aeed5321bbc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="digital-ink-overviews"></a>Přehled digitálního inkoustu
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Začínáme s rukopisu](../../../../docs/framework/wpf/advanced/getting-started-with-ink.md)  
-  [Shromažďování rukopisu](../../../../docs/framework/wpf/advanced/collecting-ink.md)  
-  [Rozpoznávání rukopisu](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)  
-  [Ukládání rukopisu](../../../../docs/framework/wpf/advanced/storing-ink.md)  
-  [Objekt modelu rukopisu: Windows Forms a rozhraní COM a WPF](../../../../docs/framework/wpf/advanced/the-ink-object-model-windows-forms-and-com-versus-wpf.md)  
-  [Pokročilé rukopisu zpracování](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+ [Začínáme s rukopisem](../../../../docs/framework/wpf/advanced/getting-started-with-ink.md)  
+  [Shromáždění rukopisu](../../../../docs/framework/wpf/advanced/collecting-ink.md)  
+  [Rozpoznávání textu psaného rukou](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)  
+  [Uložení rukopisu](../../../../docs/framework/wpf/advanced/storing-ink.md)  
+  [Model objektů rukopisu: Windows Forms a COM vzhledem k platformě WPF](../../../../docs/framework/wpf/advanced/the-ink-object-model-windows-forms-and-com-versus-wpf.md)  
+  [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)

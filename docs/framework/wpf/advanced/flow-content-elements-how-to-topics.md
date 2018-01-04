@@ -17,31 +17,32 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e58fbb6a577354f862d4b4d79e947e7618bd75a0
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 472bb286f57701342be82d4a981714236e147932
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flow-content-elements-how-to-topics"></a>Postupy: Témata elementů obsahu toku
 Témata v této části popisují, jak provádět běžné úlohy pomocí různé prvky toku obsahu a souvisejících funkcí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Upravit mezery mezi odstavců](../../../../docs/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs.md)  
- [Vytvoření tabulky prostřednictvím kódu programu](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
- [Změnit FlowDirection obsahu prostřednictvím kódu programu](../../../../docs/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically.md)  
- [Změnit vlastnosti TextWrapping prostřednictvím kódu programu](../../../../docs/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically.md)  
- [Definovat tabulku s XAML](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
- [Příkaz ALTER typografii textu](../../../../docs/framework/wpf/advanced/how-to-alter-the-typography-of-text.md)  
- [Povolit oříznutí textu](../../../../docs/framework/wpf/advanced/how-to-enable-text-trimming.md)  
- [Vložte Element do textu prostřednictvím kódu programu](../../../../docs/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically.md)  
- [Manipulace s toku obsahu prvků prostřednictvím vlastnost bloky](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
- [Manipulace s prvky toku obsahu prostřednictvím vlastnosti Inlines](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property.md)  
- [Manipulace s FlowDocument prostřednictvím vlastnosti bloky](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
- [Manipulace se sloupci tabulky pomocí vlastnosti sloupce](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
- [Manipulaci se skupinami řádek tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
- [Použít toku obsahu elementy](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)  
- [Použít dělicí sloupec FlowDocument atributy](../../../../docs/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes.md)  
+ [Úprava mezer mezi odstavci](../../../../docs/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs.md)  
+ [Sestavení tabulky z programu](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
+ [Změna FlowDirection obsahu z programu](../../../../docs/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically.md)  
+ [Změna vlastnosti TextWrapping z programu](../../../../docs/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically.md)  
+ [Definice tabulky pomocí XAML](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
+ [Změna typografie textu](../../../../docs/framework/wpf/advanced/how-to-alter-the-typography-of-text.md)  
+ [Povolení ořezávání textu](../../../../docs/framework/wpf/advanced/how-to-enable-text-trimming.md)  
+ [Vložení elementu do textu z programu](../../../../docs/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically.md)  
+ [Zpracování elementů obsahu toku prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
+ [Zpracování elementů obsahu toku prostřednictvím vlastnosti Inlines](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property.md)  
+ [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
+ [Zpracování sloupců tabulky prostřednictvím vlastnosti Columns](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
+ [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
+ [Použití elementů obsahu toku](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)  
+ [Použití atributů pro oddělení sloupců FlowDocument](../../../../docs/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Documents.FlowDocument>  
@@ -49,4 +50,4 @@ Témata v této části popisují, jak provádět běžné úlohy pomocí různ�
   <xref:System.Windows.Documents.Inline>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)

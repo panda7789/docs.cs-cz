@@ -20,11 +20,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f51505a2b532da47591f2be4d767247c519aec40
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f5f3bb1856a83309483119ded600396218b81fb7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-styles-and-templates"></a>Styly a šablony ovládacích prvků
 Ovládací prvky v systému Windows Presentation Foundation (WPF) mají <xref:System.Windows.Controls.ControlTemplate> , který obsahuje vizuální strojové struktuře tohoto ovládacího prvku. Struktura a vzhledu ovládacího prvku můžete změnit úpravou <xref:System.Windows.Controls.ControlTemplate> tohoto ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálním stromu ovládacího prvku; Chcete-li změnit vizuální strojové struktuře ovládacího prvku, je nutné nastavit <xref:System.Windows.Controls.Control.Template%2A> vlastnost ovládacího prvku a jeho nové dokončení <xref:System.Windows.Controls.ControlTemplate>.  
@@ -43,38 +44,38 @@ Ovládací prvky v systému Windows Presentation Foundation (WPF) mají <xref:Sy
 |Aero.NormalColor.xaml|Výchozí motiv na operační systém Windows Vista.|  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Styly tlačítek a šablony](../../../../docs/framework/wpf/controls/button-styles-and-templates.md)  
- [Styly kalendáře a šablony](../../../../docs/framework/wpf/controls/calendar-styles-and-templates.md)  
- [Zaškrtávací políčko styly a šablony](../../../../docs/framework/wpf/controls/checkbox-styles-and-templates.md)  
- [ComboBox – styly a šablony](../../../../docs/framework/wpf/controls/combobox-styles-and-templates.md)  
- [ContextMenu – styly a šablony](../../../../docs/framework/wpf/controls/contextmenu-styles-and-templates.md)  
- [DataGrid – styly a šablony](../../../../docs/framework/wpf/controls/datagrid-styles-and-templates.md)  
+ [Styly a šablony tlačítek](../../../../docs/framework/wpf/controls/button-styles-and-templates.md)  
+ [Styly a šablony kalendáře](../../../../docs/framework/wpf/controls/calendar-styles-and-templates.md)  
+ [CheckBox – styly a šablony](../../../../docs/framework/wpf/controls/checkbox-styles-and-templates.md)  
+ [ComboBox – styly a šablony](../../../../docs/framework/wpf/controls/combobox-styles-and-templates.md)  
+ [ContextMenu – styly a šablony](../../../../docs/framework/wpf/controls/contextmenu-styles-and-templates.md)  
+ [DataGrid – styly a šablony](../../../../docs/framework/wpf/controls/datagrid-styles-and-templates.md)  
  [Ovládací prvek DatePicker Syles a šablony](../../../../docs/framework/wpf/controls/datepicker-styles-and-templates.md)  
- [Třídy DocumentViewer styly a šablony](../../../../docs/framework/wpf/controls/documentviewer-styles-and-templates.md)  
- [Styly Expander a šablony](../../../../docs/framework/wpf/controls/expander-styles-and-templates.md)  
- [Styly rámce a šablony](../../../../docs/framework/wpf/controls/frame-styles-and-templates.md)  
- [Groupbox – styly a šablony](../../../../docs/framework/wpf/controls/groupbox-styles-and-templates.md)  
- [Popisek styly a šablony](../../../../docs/framework/wpf/controls/label-styles-and-templates.md)  
- [ListBox – styly a šablony](../../../../docs/framework/wpf/controls/listbox-styles-and-templates.md)  
- [ListView styly a šablony](../../../../docs/framework/wpf/controls/listview-styles-and-templates.md)  
- [Styly nabídky a šablony](../../../../docs/framework/wpf/controls/menu-styles-and-templates.md)  
- [Styly okně navigace a šablony](../../../../docs/framework/wpf/controls/navigationwindow-styles-and-templates.md)  
- [Položka PasswordBox Syles a šablony](../../../../docs/framework/wpf/controls/passwordbox-syles-and-templates.md)  
- [ProgressBar – styly a šablony](../../../../docs/framework/wpf/controls/progressbar-styles-and-templates.md)  
- [RadioButton styly a šablony](../../../../docs/framework/wpf/controls/radiobutton-styles-and-templates.md)  
- [RepeatButton Syles a šablony](../../../../docs/framework/wpf/controls/repeatbutton-syles-and-templates.md)  
- [ScrollBar – styly a šablony](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)  
- [Styly ScrollViewer a šablony](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)  
- [Posuvník – styly a šablony](../../../../docs/framework/wpf/controls/slider-styles-and-templates.md)  
- [Stavový řádek styly a šablony](../../../../docs/framework/wpf/controls/statusbar-styles-and-templates.md)  
- [TabControl styly a šablony](../../../../docs/framework/wpf/controls/tabcontrol-styles-and-templates.md)  
- [Textové pole styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)  
- [Jezdec Syles a šablony](../../../../docs/framework/wpf/controls/thumb-syles-and-templates.md)  
- [Přepínací tlačítko Syles a šablony](../../../../docs/framework/wpf/controls/togglebutton-syles-and-templates.md)  
- [ToolBar – styly prvků a šablony](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md)  
- [Popisek styly a šablony](../../../../docs/framework/wpf/controls/tooltip-styles-and-templates.md)  
- [TreeView – styly a šablony](../../../../docs/framework/wpf/controls/treeview-styles-and-templates.md)  
- [Styly oken a šablony](../../../../docs/framework/wpf/controls/window-styles-and-templates.md)  
+ [DocumentViewer – styly a šablony](../../../../docs/framework/wpf/controls/documentviewer-styles-and-templates.md)  
+ [Styly a šablony rozšíření](../../../../docs/framework/wpf/controls/expander-styles-and-templates.md)  
+ [Styly a šablony rámců](../../../../docs/framework/wpf/controls/frame-styles-and-templates.md)  
+ [GroupBox – styly a šablony](../../../../docs/framework/wpf/controls/groupbox-styles-and-templates.md)  
+ [Styly a šablony popisků](../../../../docs/framework/wpf/controls/label-styles-and-templates.md)  
+ [ListBox – styly a šablony](../../../../docs/framework/wpf/controls/listbox-styles-and-templates.md)  
+ [ListView – styly a šablony](../../../../docs/framework/wpf/controls/listview-styles-and-templates.md)  
+ [Styly a šablony nabídky](../../../../docs/framework/wpf/controls/menu-styles-and-templates.md)  
+ [NavigationWindow – styly a šablony](../../../../docs/framework/wpf/controls/navigationwindow-styles-and-templates.md)  
+ [PasswordBox – styly a šablony](../../../../docs/framework/wpf/controls/passwordbox-syles-and-templates.md)  
+ [ProgressBar – styly a šablony](../../../../docs/framework/wpf/controls/progressbar-styles-and-templates.md)  
+ [RadioButton – styly a šablony](../../../../docs/framework/wpf/controls/radiobutton-styles-and-templates.md)  
+ [RepeatButton – styly a šablony](../../../../docs/framework/wpf/controls/repeatbutton-syles-and-templates.md)  
+ [ScrollBar – styly a šablony](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)  
+ [ScrollViewer – styly a šablony](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)  
+ [Styly a šablony posuvníku](../../../../docs/framework/wpf/controls/slider-styles-and-templates.md)  
+ [StatusBar – styly a šablony](../../../../docs/framework/wpf/controls/statusbar-styles-and-templates.md)  
+ [TabControl – styly a šablony](../../../../docs/framework/wpf/controls/tabcontrol-styles-and-templates.md)  
+ [TextBox – styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)  
+ [Styly a šablony jezdce](../../../../docs/framework/wpf/controls/thumb-syles-and-templates.md)  
+ [ToggleButton – styly a šablony](../../../../docs/framework/wpf/controls/togglebutton-syles-and-templates.md)  
+ [ToolBar – styly a šablony](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md)  
+ [ToolTip – styly a šablony](../../../../docs/framework/wpf/controls/tooltip-styles-and-templates.md)  
+ [TreeView – styly a šablony](../../../../docs/framework/wpf/controls/treeview-styles-and-templates.md)  
+ [Styly a šablony oken](../../../../docs/framework/wpf/controls/window-styles-and-templates.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls>  
@@ -82,6 +83,6 @@ Ovládací prvky v systému Windows Presentation Foundation (WPF) mají <xref:Sy
  <xref:System.Windows.Controls.ControlTemplate>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
   
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)

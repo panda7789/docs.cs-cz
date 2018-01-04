@@ -23,11 +23,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ca4a0000d85c8fbac9a723beeda51f9c7886ed8c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d8f13b75d0558c002fd29938ce98d85f358acc9a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="network-settings-schema"></a>Schéma nastavení sítě
 Nastavení sítě určete, jak rozhraní .NET Framework připojuje k Internetu. Následující tabulka popisuje funkci jednotlivých podřízených prvků konfigurace v části [ \<system.Net > elementu (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md).  
@@ -51,5 +52,5 @@ Nastavení sítě určete, jak rozhraní .NET Framework připojuje k Internetu. 
 |[\<schemeSettings > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> bude analyzovat pro konkrétní schémat.|  
   
 ## <a name="see-also"></a>Viz také  
- [Konfigurace Internetové aplikace](../../../../../docs/framework/network-programming/configuring-internet-applications.md)  
+ [Konfigurace internetových aplikací](../../../../../docs/framework/network-programming/configuring-internet-applications.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bc2a6da9a43e29091c4ff9d086e9259594a01718
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5b85acf2e3c4d885988e92948481182b7cf8c32c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="persistence-participants"></a>Trvalost účastníky
 Trvalost účastník účastnit aktivovány hostitele aplikace operaci trvalost (Uložit nebo zatížení). [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává s dvěma abstraktní třídy **PersistenceParticipant** a **PersistenceIOParticipant**, který můžete použít k vytvoření účastník trvalost. Trvalost účastník je odvozena z jedné z těchto tříd, implementuje metody, které vás zajímají a potom přidá instanci třídy, která má <xref:System.ServiceModel.Activities.WorkflowServiceHost.WorkflowExtensions%2A> kolekce na <xref:System.ServiceModel.Activities.WorkflowServiceHost> . Hostitele aplikací může vyhledávat taková rozšíření pracovního postupu při zachování instanci pracovního postupu a volat metody odpovídající na účastníků trvalost v příslušnou dobu.  
@@ -67,7 +68,7 @@ Trvalost účastník účastnit aktivovány hostitele aplikace operaci trvalost 
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Postupy: vytvoření vlastního účastník](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-persistence-participant.md)  
+-   [Postupy: Vytvoření vlastního účastníka trvalosti](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-persistence-participant.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Rozšíření úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)
+ [Rozšiřitelnost úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)

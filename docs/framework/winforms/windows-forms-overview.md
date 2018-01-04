@@ -16,11 +16,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bcb666c41f849ac39386c3eaf85bbaf8b19053e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bc9ff97583566bd950486d96bd100f05ef651c7e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 V následujícím přehledu popisuje výhody inteligentní klientské aplikace, hlavní funkce programování modelu Windows Forms a použití Windows Forms k vytvoření inteligentní klienti, které naplňují potřeby pro podniky a koncoví uživatelé je aktuální.  
@@ -51,10 +52,10 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
   
 |Popis|Téma nápovědy|  
 |-----------------|----------------|  
-|Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|  
-|Pomocí <xref:System.Windows.Forms.ToolStrip> ovládací prvek|[Postupy: vytvoření základního prvku ToolStrip se standardními položkami pomocí návrháře](../../../docs/framework/winforms/controls/create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)|  
+|Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|  
+|Pomocí <xref:System.Windows.Forms.ToolStrip> ovládací prvek|[Postupy: Vytvoření základního prvku ToolStrip se standardními položkami pomocí Návrháře](../../../docs/framework/winforms/controls/create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)|  
 |Vytváření grafických s<xref:System.Drawing>|[Začínáme s programováním grafiky](../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
-|Vytváření vlastních ovládacích prvků|[Postupy: dědění ze třídy UserControl](../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
+|Vytváření vlastních ovládacích prvků|[Postupy: Dědění ze třídy UserControl](../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ### <a name="displaying-and-manipulating-data"></a>Zobrazení a manipulace s daty  
  Mnoho aplikací musí zobrazit data z databáze, soubor XML, webové služby XML nebo jiný zdroj dat. Windows Forms poskytuje flexibilní ovládací prvek s názvem <xref:System.Windows.Forms.DataGridView> ovládací prvek pro zobrazení tabulkových data v tradiční řádků a sloupců formátu, tak, aby každá část data nacházela vlastní buňku. Při použití <xref:System.Windows.Forms.DataGridView>, můžete přizpůsobit vzhled jednotlivých buněk, uzamknout libovolné řádků a sloupců v umístit a zobrazit komplexní ovládacích prvků do buněk mezi další funkce.  
@@ -70,10 +71,10 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
   
 |Popis|Téma nápovědy|  
 |-----------------|----------------|  
-|Pomocí <xref:System.Windows.Forms.BindingSource> součásti|[Postupy: vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
-|Práce s [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] zdroje dat|[Postupy: řazení a filtrování dat ADO.NET pomocí součásti Windows Forms BindingSource](../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|  
+|Pomocí <xref:System.Windows.Forms.BindingSource> součásti|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře](../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
+|Práce s [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí komponenty Windows Forms BindingSource](../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|  
 |Pomocí okna zdroje dat|[Návod: Zobrazování dat ve formuláři Windows](http://msdn.microsoft.com/library/f6e08c2c-c792-43de-adf3-3e52c0100225)|  
-|Pomocí nastavení aplikace|[Postupy: vytvoření nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)|  
+|Pomocí nastavení aplikace|[Postupy: Vytváření nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)|  
   
 ### <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
  Poté, co jste napsali vaší aplikace, je nutné odeslat aplikace uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Při použití [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] technologie, můžete nasadit v rámci aplikace z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] nástrojem pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
@@ -87,9 +88,9 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
   
 |Popis|Téma nápovědy|  
 |-----------------|----------------|  
-|Nasazení aplikace s použitím[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: publikování aplikace ClickOnce pomocí Průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|Nasazení aplikace s použitím[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
 |Aktualizace [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení|[Postupy: Správa aktualizací pro aplikaci ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
-|Správa zabezpečení pomocí[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
+|Správa zabezpečení pomocí[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ### <a name="other-controls-and-features"></a>Další ovládací prvky a funkce  
  Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úlohy rychlý a snadný, jako je podpora pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho využívá robustní zabezpečení systému Windows Forms [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. K tomuto systému můžete vydat bezpečnější aplikací pro vaše zákazníky.  
@@ -99,14 +100,14 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
   
 |Popis|Téma nápovědy|  
 |-----------------|----------------|  
-|Tisk obsahu formuláře|[Postupy: tisk grafiky ve Windows Forms](../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v systému Windows Forms](../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|  
-|Další informace o zabezpečení Windows Forms|[Zabezpečení ve Windows Forms – přehled](../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
+|Tisk obsahu formuláře|[Postupy: Tisk grafiky v modelu Windows Forms](../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|  
+|Další informace o zabezpečení Windows Forms|[Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
- [Vytvoření nového formuláře Windows](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
+ [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
+ [Vytvoření nového formuláře Windows Forms](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
  [Přehled ovládacího prvku ToolStrip](../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
  [Přehled ovládacího prvku DataGridView](../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)  
- [BindingSource – přehled komponenty](../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  
+ [Přehled komponenty BindingSource](../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  
  [Přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md)  
  [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)

@@ -12,11 +12,12 @@ caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 696aeb619f14a5ebe9a760cbd78a0d0fa876edc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df0281d3be467309d2ee7a44af8f897885a8b2bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-modify-the-computer-configuration-file-to-enable-ipv6-support"></a>Postupy: Upravte konfigurační soubor počítače. Chcete-li povolit podporu IPv6
 Následující příklad kódu ukazuje, jak upravit konfigurační soubor na počítači, *machine.config*, chcete-li povolit podporu IPv6. *Machine.config* soubor je uložen v *%Windir%\Microsoft.NET\Framework* složku v adresáři, kde byl nainstalován systém Windows. Je samostatný *machine.config* ze souborů v části *%Windir%\Microsoft.NET\Framework* pro každou verzi rozhraní .NET Framework na počítači nainstalovaná (třeba *C:\ WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config*).  
@@ -45,6 +46,6 @@ Následující příklad kódu ukazuje, jak upravit konfigurační soubor na po�
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [IPv6 adresy](../../../docs/framework/network-programming/ipv6-addressing.md)  
+ [Adresování IPv6](../../../docs/framework/network-programming/ipv6-addressing.md)  
  [Schéma nastavení sítě](../../../docs/framework/configure-apps/file-schema/network/index.md)  
  [\<IPv6 > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)

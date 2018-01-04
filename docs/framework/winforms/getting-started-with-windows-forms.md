@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7735e721917c5f78b791a200a670599fe3cff310
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d5d81497872e231fb1b235d9707b9a36505d3165
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-windows-forms"></a>Začínáme s Windows Forms
 S Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Následující témata popisují podrobný postup plně využívat Windows Forms k zobrazení dat, zpracování uživatelského vstupu a nasazení aplikací, jednoduše a s rozšířeným zabezpečením.  
@@ -32,10 +33,10 @@ S Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Násl
  [Přehled produktu Windows Forms](../../../docs/framework/winforms/windows-forms-overview.md)  
  Obsahuje přehled Windows Forms a inteligentní klientské aplikace.  
   
- [Vytvoření nového formuláře Windows](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
+ [Vytvoření nového formuláře Windows Forms](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
  Obsahuje odkazy na témata, která popisují základní koncepty pro vytváření aplikací pro Windows Forms.  
   
- [Vytváření obslužných rutin událostí v systému Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  Obsahuje odkazy na témata, která popisují postup vytváření obslužných rutin událostí pro Windows Forms.  
   
  [Úprava velikosti a měřítka Windows Forms](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)  
@@ -44,13 +45,13 @@ S Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Násl
  [Změna vzhledu Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
  Obsahuje odkazy na témata, která ukazují, jak změnit vzhled formulářových aplikací Windows.  
   
- [Ovládací prvky Windows Forms](../../../docs/framework/winforms/controls/index.md)  
+ [Windows Forms – ovládací prvky](../../../docs/framework/winforms/controls/index.md)  
  Obsahuje odkazy na témata, která popisují a ukazují, jak pomocí Windows Forms – ovládací prvky a součásti.  
   
  [Uživatelský vstup ve Windows Forms](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
  Obsahuje odkazy na témata, která popisují a ukazují, jak zpracovat vstup od uživatele v aplikacích Windows Forms.  
   
- [Dialogová okna v rozhraní Windows Forms](../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
+ [Dialogová okna ve Windows Forms](../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
  Obsahuje odkazy na témata, která popisují různé dialogových oken pro použití v systému Windows Forms.  
   
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
@@ -62,9 +63,9 @@ S Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Násl
  [ClickOnce – nasazení pro Windows Forms](../../../docs/framework/winforms/clickonce-deployment-for-windows-forms.md)  
  Obsahuje odkazy na témata, které popisují, jak snadno nasadit formulářových aplikací Windows.  
   
- [Postupy: přístup kolekcím s klíči ve Windows Forms](../../../docs/framework/winforms/how-to-access-keyed-collections-in-windows-forms.md)  
+ [Postupy: Přístup ke kolekcím s klíči ve Windows Forms](../../../docs/framework/winforms/how-to-access-keyed-collections-in-windows-forms.md)  
  Demonstruje způsob přístupu k kolekce s klíče spíše než indexy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozšiřování formulářových aplikací Windows](../../../docs/framework/winforms/advanced/index.md)  
+ [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)  
  Obsahuje odkazy na témata, která popisují pokročilejší koncepty pro vytváření aplikací pro Windows Forms.

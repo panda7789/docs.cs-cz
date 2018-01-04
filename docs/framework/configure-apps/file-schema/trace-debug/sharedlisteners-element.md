@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 7ab96ad43248517dca99bff176be7edfab8d3ced
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: aef29e6107a2f441d8c1a6826b16f0f0c0b56973
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsharedlistenersgt-element"></a>&lt;sharedListeners –&gt; – Element
 Obsahuje naslouchací procesy, které může odkazovat všechny zdroje nebo element trasování.  Tyto moduly pro naslouchání neobdrží ve výchozím nastavení všechny trasování a není možné načíst tyto moduly pro naslouchání v době běhu. Moduly pro naslouchání identifikovány jako sdílené moduly pro naslouchání mohou být přidány do zdroje nebo trasování podle názvu.  
@@ -101,4 +102,4 @@ Obsahuje naslouchací procesy, které může odkazovat všechny zdroje nebo elem
 ## <a name="see-also"></a>Viz také  
  <xref:System.Diagnostics.TraceListener>  
  [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [Trasování – moduly naslouchání](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+ [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

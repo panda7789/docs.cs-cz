@@ -13,34 +13,35 @@ caps.latest.revision: "15"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 92f070a919363e373cd898682c37ac7a199d2463
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4650cdaaffbe7e4e5818fb8cbd20f901ced26900
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-identity-foundation"></a>Windows Identity Foundation
--   [Co je nového ve službě Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
+-   [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
   
--   [Přehled technologie Windows Identity Foundation 4.5](../../../docs/framework/security/wif-overview.md)  
+-   [Přehled Windows Identity Foundation 4.5](../../../docs/framework/security/wif-overview.md)  
   
-    -   [Model na základě deklarace Identity](../../../docs/framework/security/claims-based-identity-model.md)  
+    -   [Model deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md)  
   
-    -   [Deklarace identity na základě autorizaci s použitím WIF](../../../docs/framework/security/claims-based-authorization-using-wif.md)  
+    -   [Autorizace deklarovaných identit pomocí WIF](../../../docs/framework/security/claims-based-authorization-using-wif.md)  
   
-    -   [Deklarace identity WIF programovací Model](../../../docs/framework/security/wif-claims-programming-model.md)  
+    -   [Programovací model deklarovaných identit WIF](../../../docs/framework/security/wif-claims-programming-model.md)  
   
--   [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)  
+-   [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)  
   
-    -   [Vytváření Můj první deklaracemi webové aplikace ASP.NET](../../../docs/framework/security/building-my-first-claims-aware-aspnet-web-app.md)  
+    -   [Sestavení první webové aplikace ASP.NET pracující s deklaracemi](../../../docs/framework/security/building-my-first-claims-aware-aspnet-web-app.md)  
   
-    -   [Vytváření Můj první službu WCF používající deklarace identity](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)  
+    -   [Sestavení první služby WCF pracující s deklaracemi](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)  
   
--   [Funkce WIF](../../../docs/framework/security/wif-features.md)  
+-   [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)  
   
-    -   [Identita a přístup pro sadu Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)  
+    -   [Nástroj Identita a přístup pro Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)  
   
-    -   [WIF relace správy](../../../docs/framework/security/wif-session-management.md)  
+    -   [Správa relací WIF](../../../docs/framework/security/wif-session-management.md)  
   
     -   [WIF a webové farmy](../../../docs/framework/security/wif-and-web-farms.md)  
   
@@ -48,40 +49,40 @@ ms.lasthandoff: 10/18/2017
   
     -   [WSTrustChannelFactory a WSTrustChannel](../../../docs/framework/security/wstrustchannelfactory-and-wstrustchannel.md)  
   
--   [WIF jak – do této indexu](../../../docs/framework/security/wif-how-tos-index.md)  
+-   [Rejstřík návodů pro WIF](../../../docs/framework/security/wif-how-tos-index.md)  
   
-    -   [Postupy: Vytvoření deklaracemi rozhraní ASP.NET MVC webové aplikace pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)  
+    -   [Postupy: Sestavení webové aplikace ASP.NET MVC pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)  
   
-    -   [Postupy: Vytvoření aplikace deklaracemi rozhraní ASP.NET Web Forms pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)  
+    -   [Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)  
   
-    -   [Postupy: Vytvoření aplikace ASP.NET deklaracemi pomocí ověřování pomocí formulářů](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)  
+    -   [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním pomocí formulářů](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)  
   
-    -   [Postupy: Vytvoření aplikace ASP.NET deklaracemi pomocí ověřování systému Windows](../../../docs/framework/security/how-to-build-claims-aware-aspnet-app-using-windows-authentication.md)  
+    -   [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním Windows](../../../docs/framework/security/how-to-build-claims-aware-aspnet-app-using-windows-authentication.md)  
   
-    -   [Postupy: Ladění deklaracemi identity aplikace a služby pomocí WIF trasování](../../../docs/framework/security/how-to-debug-claims-aware-applications-and-services-using-wif-tracing.md)  
+    -   [Postupy: Ladění aplikací a služeb pracujících s deklaracemi s trasováním WIF](../../../docs/framework/security/how-to-debug-claims-aware-applications-and-services-using-wif-tracing.md)  
   
-    -   [Postupy: Zobrazení přihlášení pomocí WIF stav](../../../docs/framework/security/how-to-display-signed-in-status-using-wif.md)  
+    -   [Postupy: Zobrazení stavu přihlášení pomocí WIF](../../../docs/framework/security/how-to-display-signed-in-status-using-wif.md)  
   
-    -   [Postupy: Povolení rozpoznání opětovného přehrání tokenu](../../../docs/framework/security/how-to-enable-token-replay-detection.md)  
+    -   [Postupy: Povolení zjišťování opakování tokenů](../../../docs/framework/security/how-to-enable-token-replay-detection.md)  
   
-    -   [Postupy: Povolení WIF trasování](../../../docs/framework/security/how-to-enable-wif-tracing.md)  
+    -   [Postupy: Povolení trasování WIF](../../../docs/framework/security/how-to-enable-wif-tracing.md)  
   
-    -   [Postupy: Povolení WIF pro webovou aplikaci služby WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md)  
+    -   [Postupy: Povolení WIF pro aplikaci webové služby WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md)  
   
-    -   [Postupy: Transformovat příchozí deklarace identity](../../../docs/framework/security/how-to-transform-incoming-claims.md)  
+    -   [Postupy: Transformace příchozích deklarací identit](../../../docs/framework/security/how-to-transform-incoming-claims.md)  
   
--   [WIF pokyny](../../../docs/framework/security/wif-guidelines.md)  
+-   [Pokyny pro WIF](../../../docs/framework/security/wif-guidelines.md)  
   
-    -   [Pokyny k migraci aplikace vyvíjené v WIF 3.5 na verzi WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)  
+    -   [Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)  
   
-    -   [Namespace mapování mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
+    -   [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
   
--   [Index ukázkový kód WIF](../../../docs/framework/security/wif-code-sample-index.md)  
+-   [Index ukázkového kódu WIF](../../../docs/framework/security/wif-code-sample-index.md)  
   
--   [WIF – rozšíření](../../../docs/framework/security/wif-extensions.md)  
+-   [Rozšíření WIF](../../../docs/framework/security/wif-extensions.md)  
   
--   [Referenční dokumentace rozhraní API WIF](../../../docs/framework/security/wif-api-reference.md)  
+-   [Referenční dokumentace k rozhraní API WIF](../../../docs/framework/security/wif-api-reference.md)  
   
--   [Referenci na konfigurační WIF](../../../docs/framework/security/wif-configuration-reference.md)  
+-   [Referenční dokumentace ke konfiguraci WIF](../../../docs/framework/security/wif-configuration-reference.md)  
   
-    -   [WIF konfigurace schématu konvence](../../../docs/framework/security/wif-configuration-schema-conventions.md)
+    -   [Převody schématu konfigurace WIF](../../../docs/framework/security/wif-configuration-schema-conventions.md)

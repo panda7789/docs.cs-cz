@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 906d45ccba7185e82aed82626a13034f2e97422d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 57b40493d0e9bcbbaaf1366c74ff116343f6ee96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-impersonation-with-transport-security"></a>Použití zosobnění se zabezpečením přenosu
 *Zosobnění* přístup je schopnost serverová aplikace na identitu klienta. Je běžné pro služby použít zosobnění při ověření přístupu k prostředkům. Aplikace bude spuštěna pomocí účtu služby, ale když server přijme připojení klienta, zosobňuje klienta tak, aby kontroly přístupu se provádí pomocí pověření klienta. Zabezpečení přenosu je mechanizmus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s funkcí zosobnění. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zabezpečení zpráv pomocí zosobnění najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
@@ -67,5 +68,5 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
- [Postupy: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
+ [Postupy: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
  [Princip ověřování HTTP](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)

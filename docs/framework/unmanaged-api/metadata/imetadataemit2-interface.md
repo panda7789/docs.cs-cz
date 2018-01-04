@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 235134c66395f04a87ed4f3325f5cc4cd9fecfc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 94180a1f844ac43d8a42be59ac4fca807a70ec70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imetadataemit2-interface"></a>IMetaDataEmit2 – rozhraní
 Rozšiřuje [imetadataemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní hlavně kvůli umožňují pracovat s obecné typy.  
@@ -32,14 +33,14 @@ Rozšiřuje [imetadataemit –](../../../../docs/framework/unmanaged-api/metadat
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Definegenericparam – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md)|Vytvoří definici pro parametr obecného typu a získá token pro tento parametr obecného typu.|  
-|[Definemethodspec – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definemethodspec-method.md)|Vytvoří instanci obecné metody a získá token k definici.|  
-|[Getdeltasavesize – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-getdeltasavesize-method.md)|Získá hodnotu, která určuje rozdíl ve velikosti dat, který je potřeba express změny pro aktuální relaci upravit a pokračovat.|  
-|[Resetenclog – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-resetenclog-method.md)|Obnoví protokol upravit a pokračovat a spustí novou relaci.|  
-|[Savedelta – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedelta-method.md)|Uloží změny z aktuální relace upravit a pokračovat do zadaného souboru.|  
-|[Savedeltatomemory – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)|Uloží změny do paměti z aktuální relace upravit a pokračovat.|  
-|[Savedeltatostream – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatostream-method.md)|Uloží změny do zadaného datového proudu z aktuální relace upravit a pokračovat.|  
-|[Setgenericparamprops – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-setgenericparamprops-method.md)|Nastaví hodnoty vlastností pro definici obecný parametr odkazuje zadaný token.|  
+|[DefineGenericParam – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md)|Vytvoří definici pro parametr obecného typu a získá token pro tento parametr obecného typu.|  
+|[DefineMethodSpec – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definemethodspec-method.md)|Vytvoří instanci obecné metody a získá token k definici.|  
+|[GetDeltaSaveSize – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-getdeltasavesize-method.md)|Získá hodnotu, která určuje rozdíl ve velikosti dat, který je potřeba express změny pro aktuální relaci upravit a pokračovat.|  
+|[ResetENCLog – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-resetenclog-method.md)|Obnoví protokol upravit a pokračovat a spustí novou relaci.|  
+|[SaveDelta – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedelta-method.md)|Uloží změny z aktuální relace upravit a pokračovat do zadaného souboru.|  
+|[SaveDeltaToMemory – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)|Uloží změny do paměti z aktuální relace upravit a pokračovat.|  
+|[SaveDeltaToStream – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatostream-method.md)|Uloží změny do zadaného datového proudu z aktuální relace upravit a pokračovat.|  
+|[SetGenericParamProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-setgenericparamprops-method.md)|Nastaví hodnoty vlastností pro definici obecný parametr odkazuje zadaný token.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -51,5 +52,5 @@ Rozšiřuje [imetadataemit –](../../../../docs/framework/unmanaged-api/metadat
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- [Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+ [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
+ [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

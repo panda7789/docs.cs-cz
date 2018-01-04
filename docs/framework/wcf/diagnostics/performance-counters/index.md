@@ -14,11 +14,12 @@ caps.latest.revision: "37"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3f9834e99fb7fa98e2f986a1ce5460aa387143f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: be4ffac8444f6365dacb2b20db6abbb6792c2239
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace.  
@@ -148,4 +149,4 @@ ServiceName@ServiceBaseAddress
  Další informace o tom, jak počítadla přístup prostřednictvím kódu programu najdete v tématu [architektura programování čítače výkonu](http://go.microsoft.com/fwlink/?LinkId=95179).  
   
 ## <a name="see-also"></a>Viz také  
- [Správa a Diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+ [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

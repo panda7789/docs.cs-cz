@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f1fd1c21fc4f156bfe7a5abf9f76bd341e2d0f10
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2835d2064f1845b55dd3a33abb086c5af0fb9e6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comparison-semantics-entity-sql"></a>Porovnání sémantiku (entita SQL)
 Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory zahrnuje porovnání instance typu:  
@@ -76,7 +77,7 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
 ## <a name="supported-combinations"></a>Podporované kombinace  
  Následující tabulka uvádí podporované kombinace operátory porovnání pro jednotlivé typy typu:  
   
-|**Typ**|**=**<br /><br /> **!=**|**SESKUPIT PODLE**<br /><br /> **ODLIŠNÉ**|**SJEDNOCENÍ**<br /><br /> **INTERSECT**<br /><br /> **S VÝJIMKOU**<br /><br /> **NASTAVENÍ**<br /><br /> **PŘEKRYTÍ.**|**V**|**<   <=**<br /><br /> **>   >=**|**ŘADIT PODLE**|**MÁ HODNOTU NULL.**<br /><br /> **NEMÁ HODNOTU NULL**|  
+|**Typ**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **ODLIŠNÉ**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**MÁ HODNOTU NULL.**<br /><br /> **NEMÁ HODNOTU NULL**|  
 |-|-|-|-|-|-|-|-|  
 |Typ entity|REF<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|REF<sup>1</sup>|  
 |Komplexní typ|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
@@ -113,4 +114,4 @@ WHERE p1 != REF(p2)
  <sup>5</sup>všechny jednotlivé elementy odkazy jsou porovnávány (to zahrnuje název sady entit a všechny vlastnosti klíče typu entity).  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled SQL entity](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+ [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

@@ -17,26 +17,27 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 057bc7bbfb9c1653fd4857ccc43fb6fc324e4c92
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 15c68f2772357da0828bae367a80f1324b89a5bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-brush-to-fill-shapes"></a>Použití štětce k vyplnění obrazců
 A [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Brush> objekt se používá k vyplnění vnitřek uzavřený obrazec. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]definuje několik styly výplně: plnou barvou, nesouvislého vzoru, textury a přechod barev.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: vyplnění obrazce plnou barvou](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-solid-color.md)  
+ [Postupy: Vyplnění obrazce plnou barvou](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-solid-color.md)  
  Popisuje, jak používat ucelený color štětce k vyplnění obrazců.  
   
- [Postupy: vyplnění obrazce pomocí nesouvislého vzoru](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-hatch-pattern.md)  
+ [Postupy: Vyplnění obrazce pomocí nesouvislého vzoru](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-hatch-pattern.md)  
  Ukazuje, jak používat šrafování štětce k vyplnění obrazců.  
   
- [Postupy: vyplnění obrazce pomocí textury](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-an-image-texture.md)  
+ [Postupy: Vyplnění obrazce pomocí textury](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-an-image-texture.md)  
  Vysvětluje, jak používat texture štětce k vyplnění obrazců.  
   
- [Postupy: dlaždicové vyplnění obrazce pomocí obrázku](../../../../docs/framework/winforms/advanced/how-to-tile-a-shape-with-an-image.md)  
+ [Postupy: Dlaždicové vyplnění obrazce pomocí obrázku](../../../../docs/framework/winforms/advanced/how-to-tile-a-shape-with-an-image.md)  
  Popisuje, jak dlaždici bitovou kopii v obrazce.  
   
 ## <a name="reference"></a>Odkaz  

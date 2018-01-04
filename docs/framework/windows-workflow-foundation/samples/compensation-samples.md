@@ -12,17 +12,18 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 669e94dbc7434074d705fd05de0ece6729c31c5b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4b32ab84a3585fc7c1a4638851f5f78eebd41358
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compensation-samples"></a>Kompenzace (Ukázky)
 Tato část obsahuje ukázky související s kompenzace v [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Compensable aktivity](../../../../docs/framework/windows-workflow-foundation/samples/compensable-activity-sample.md)  
+ [Kompenzovatelná aktivita](../../../../docs/framework/windows-workflow-foundation/samples/compensable-activity-sample.md)  
  Ukazuje, jak používat <xref:System.Activities.Statements.CompensableActivity> aktivity k definování práce, kterou je třeba udělat pro danou akci během normálního spouštění a práci, kterou je potřeba provést odpovídajícím způsobem této akce v případě potřeby později.  
   
  [Vlastní kompenzace](../../../../docs/framework/windows-workflow-foundation/samples/custom-compensation-sample.md)  
@@ -31,5 +32,5 @@ Tato část obsahuje ukázky související s kompenzace v [!INCLUDE[wf](../../..
  [Potvrzení](../../../../docs/framework/windows-workflow-foundation/samples/confirmation.md)  
  Demonstruje čtyři běžné scénáře, které obaluje použití <xref:System.Activities.Statements.CompensableActivity> a potvrzení hesla.  
   
- [Obslužná rutina zrušení Compensable aktivita](../../../../docs/framework/windows-workflow-foundation/samples/cancellation-handler-on-compensable-activity.md)  
+ [Obslužná rutina zrušení u kompenzovatelné aktivity](../../../../docs/framework/windows-workflow-foundation/samples/cancellation-handler-on-compensable-activity.md)  
  Demonstruje použití obslužnou rutinu zrušení na <xref:System.Activities.Statements.CompensableActivity>.

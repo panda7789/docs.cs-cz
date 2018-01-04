@@ -24,11 +24,12 @@ caps.latest.revision: "28"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 21032358c9edb1b79d9e170e477502670f781fc3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4368ce1256e1e0637907768b3698ca7dab97c5f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-tracing-and-profiling"></a>Ladění, trasování a profilace
 K ladění aplikací rozhraní .NET Framework, je nutné nakonfigurovat kompilátoru a prostředí runtime umožňující ladicí program pro připojení k aplikaci a k vytvoření symboly a řádku mapy, pokud je to možné, aplikace a jeho odpovídající společnosti Microsoft zprostředkující jazyk (MSIL). Po spravované aplikace byla ladit, může být profilovaným pro zvýšení výkonu. Profilace vyhodnotí a popisuje řádky zdrojového kódu, které generování nejčastěji spuštění kódu a kolik času ho trvá k jejich vyřízení.  
@@ -36,7 +37,7 @@ K ladění aplikací rozhraní .NET Framework, je nutné nakonfigurovat kompilá
  .NET framework – aplikace se snadno ladí pomocí sady Visual Studio, která zpracovává mnoho podrobností konfigurace. Pokud není nainstalované sady Visual Studio, můžete zkontrolovat a zlepšit výkon aplikací rozhraní .NET Framework pomocí třídy ladění v rozhraní .NET Framework <xref:System.Diagnostics> oboru názvů. Tento obor názvů obsahuje <xref:System.Diagnostics.Trace>, <xref:System.Diagnostics.Debug>, a <xref:System.Diagnostics.TraceSource> třídy pro trasování provádění toku a <xref:System.Diagnostics.Process>, <xref:System.Diagnostics.EventLog>, a <xref:System.Diagnostics.PerformanceCounter> třídy pro profilace kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Povolení JIT – připojené ladění](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
+ [Povolení JIT – ladění Attach](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
  Ukazuje, jak nakonfigurovat registr JIT – připojené ladění modulu k aplikaci .NET Framework.  
   
  [Usnadnění ladění obrázku](../../../docs/framework/debug-trace-profile/making-an-image-easier-to-debug.md)  

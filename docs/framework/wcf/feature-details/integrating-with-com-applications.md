@@ -20,36 +20,37 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bfe452b41c39598e237633490d09cd267fda04ec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 130a7cda170721f34a5b44f3361bd591d6375267
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrating-with-com-applications"></a>Integrace s aplikacemi modelu COM
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]služby lze integrovat přímo do existujícího kódu pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] monikeru služby. Monikeru služby lze použít z celý na základě rozsahu COM vývojových prostředí, například Office VBA, Visual Basic 6.0 nebo Visual C++ verze 6.0.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Integrace s přehled aplikace modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)  
+ [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)  
  Poskytuje přehled hlavních součástí procesu integrace.  
   
- [Postupy: registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)  
+ [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)  
  Použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby Přezdívka v rámci aplikace modelu COM, požadované s atributy typy zaregistrovat u modelu COM a konfiguraci aplikace modelu COM a Přezdívka s konfigurací požadovaná vazba.  
   
- [Postupy: použití Monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
+ [Postupy: Použití monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
  Vysvětluje, jak získat definici kontraktu ve formě dokumentu definice jazyka WSDL (Web Services) nebo z koncového bodu WS-MetadataExchange.  
   
- [Postupy: použití Monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)  
+ [Postupy: Použití monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)  
  Popisuje, jak volat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázkové pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Přezdívka WSDL.  
   
- [Postupy: použití Monikeru služby s kontrakty Metadata Exchange](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-metadata-exchange-contracts.md)  
+ [Postupy: Použití monikeru služby u kontraktů výměny metadat](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-metadata-exchange-contracts.md)  
  Popisuje, jak volat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázkové pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přezdívka, která určuje koncový bod Mex.  
   
- [Postupy: Zadejte pověření zabezpečení kanálu](../../../../docs/framework/wcf/feature-details/how-to-specify-channel-security-credentials.md)  
+ [Postupy: Určení přihlašovacích údajů pro zabezpečení kanálu](../../../../docs/framework/wcf/feature-details/how-to-specify-channel-security-credentials.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Služby podporuje Přezdívka `IChannelCredentials` rozhraní, které umožňuje řadu alternativní metody pro zadání přihlašovacích údajů kanálu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel>  
   
 ## <a name="see-also"></a>Viz také  
- [Integrace s aplikacemi modelu COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+ [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)

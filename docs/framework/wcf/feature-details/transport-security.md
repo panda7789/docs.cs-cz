@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d9576321ca44d568633fcba40e56f9582d3f5db5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 364326e2ded11f7174adc891a5fd9bcdd3c98334
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-security"></a>Zabezpečení přenosu
 Zabezpečení přenosu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] závisí na vybrané vazby. Přenos, který implementuje vazby určuje skutečné zabezpečení. Témata v této části popisují mechanismy, které jsou implementovány a jejich možnosti.  
@@ -35,7 +36,7 @@ Zabezpečení přenosu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] z
  [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
  Popisuje pět úrovní zosobnění, které lze prostřednictvím režim zabezpečení přenosu.  
   
- [Postupy: Konfigurace portu certifikát protokolu SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
  Provede základy konfigurace portu na počítači s certifikátem X.509 pro zabezpečení SSL (transport).  
   
 ## <a name="reference"></a>Odkaz  

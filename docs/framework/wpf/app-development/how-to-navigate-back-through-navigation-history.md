@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c715bda86fe6a4a010d80000db89619fc8bf8b7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e3bfc809dbe76c17859cb3fcd83f8a293a24b308
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-back-through-navigation-history"></a>Postupy: přejděte zpátky pomocí historie navigace
 Tento příklad ukazuje, jak přejděte na položky zpět v historii navigace.  

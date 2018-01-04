@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 82456bf5b892bc32a6eba0d3cf074b4adc76a305
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0df2c3eea706bae92a9cbef9165c374e8efb368a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-custom-type-mappings"></a>Mapování vlastních typů SQL CLR
 Typ mapování mezi systému SQL Server a modul CLR (CLR) je zadána automaticky, pokud použijete na SQLMetal nástroj příkazového řádku, Návrhář relací objektů (Návrhář relací objektů).  
@@ -42,5 +43,5 @@ Typ mapování mezi systému SQL Server a modul CLR (CLR) je zadána automaticky
  Pokud vaše změny v databázi, musíte aktualizovat soubor DBML tak, aby odrážela tyto změny. Jeden ze způsobů, jak provést toto je automaticky vytvořit nový soubor DBML a pak znovu proveďte vlastní nastavení mapování typu. Alternativně můžete porovnat rozdíly mezi nového souboru DBML a upravený soubor DBML a aktualizace vašeho vlastního souboru DBML ručně, aby odrážely změny databáze.  
   
 ## <a name="see-also"></a>Viz také  
- [Mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
- [Generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
+ [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
+ [Generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)

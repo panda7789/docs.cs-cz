@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: acf15eb79fab479036f182c58b8ec94d3ac43ea0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 897f094f512e423f055f0abea04d5403552ba31c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="networkinformation"></a>NetworkInformation
 <xref:System.Net.NetworkInformation> Obor názvů umožňuje shromažďovat informace o události sítě, změny, statistiky a vlastnosti. Můžete také určit, zda je vzdálený hostitel dosažitelný pomocí <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> třídy.  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
  Můžete použít <xref:System.Net.NetworkInformation.Ping> třídu k určení, zda je vzdálený hostitel nahoru, v síti a dostupný. Další informace najdete v tématu [postup: příkaz Ping hostitele](../../../docs/framework/network-programming/how-to-ping-a-host.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Síťové programování ukázky](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Ukázka technologie informace o síti](http://go.microsoft.com/fwlink/?LinkID=179564)  
  [Ukázkový nástroj NetStat technologie](http://go.microsoft.com/fwlink/?LinkID=179562)  
  [Ukázka technologie ping klienta](http://go.microsoft.com/fwlink/?LinkID=179565)

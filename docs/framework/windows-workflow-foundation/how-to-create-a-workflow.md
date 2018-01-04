@@ -12,11 +12,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b20ca4258204f938d611f431abc5668b88f167b1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8e619fa7fa6437b60b1d3cd6b50a2a68229899f5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-workflow"></a>Postupy: vytvoření pracovního postupu
 Pracovní postupy lze sestavit z předdefinovaných aktivit a také z vlastních aktivit. Tato témata v této části kroku procesem vytvoření pracovního postupu, který používá obě zabudované aktivity, jako <xref:System.Activities.Statements.Flowchart> aktivity a vlastní aktivity z předchozí [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu. Pracovní postup modelů číslo hádání hru. Pouze jeden témat v této části je vyžadováno k dokončení tohoto kurzu; měli byste vybrat styl, které vás zajímají a postupujte podle tohoto kroku. Je však může provést všechna témata v případě potřeby.  
@@ -31,11 +32,11 @@ Pracovní postupy lze sestavit z předdefinovaných aktivit a také z vlastních
  [Postupy: Vytvoření sekvenčního pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-sequential-workflow.md)  
  Popisuje postup vytvoření sekvenční pracovní postup pomocí <xref:System.Activities.Statements.Sequence> aktivity.  
   
- [Postupy: vytvoření vývojový diagram pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-flowchart-workflow.md)  
+ [Postupy: Vytvoření pracovního postupu vývojového diagramu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-flowchart-workflow.md)  
  Popisuje, jak vytvořit vývojový diagram pracovního postupu pomocí <xref:System.Activities.Statements.Flowchart> aktivity.  
   
- [Postupy: vytvoření pracovního postupu stavu počítače](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md)  
+ [Postupy: Vytvoření pracovního postupu stavového stroje](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md)  
  Popisuje postup vytvoření stavu počítače pracovního postupu pomocí <xref:System.Activities.Statements.StateMachine> aktivity.  
   
 ## <a name="see-also"></a>Viz také  
- [Windows Workflow Foundation programování](../../../docs/framework/windows-workflow-foundation/programming.md)
+ [Programování Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/programming.md)

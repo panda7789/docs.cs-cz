@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 63eb1b7aec0c65192f67035fc7bc624fa1d2ae81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: daea7d382d64e768c9ec681e1c2041c4c80c255e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datagrid"></a>DataGrid
 <xref:System.Windows.Controls.DataGrid> Řízení umožňuje zobrazit a upravit data z mnoha různých zdrojů, například z databáze SQL, dotaz LINQ nebo jakýkoli jiný zdroj dat pro vazbu. Další informace najdete v tématu [vazby Přehled zdrojů](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
@@ -59,17 +60,17 @@ ms.lasthandoff: 11/21/2017
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak nastavit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
-|[Postupy: Přidání podrobnosti řádku do ovládacího prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-add-row-details-to-a-datagrid-control.md)|Popisuje, jak vytvořit řádek podrobnosti <xref:System.Windows.Controls.DataGrid>.|  
-|[Postupy: implementace ověřování pomocí ovládacího prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-implement-validation-with-the-datagrid-control.md)|Popisuje, jak ověřit hodnoty v <xref:System.Windows.Controls.DataGrid> buněk a řádků a zobrazení ověření zpětnou vazbu.|  
-|[Výchozí klávesnice a myši chování v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Popisuje, jak pracovat s <xref:System.Windows.Controls.DataGrid> ovládacího prvku pomocí klávesnice a myši.|  
-|[Postupy: skupina, řazení a filtrování dat v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|Popisuje postup zobrazení dat v <xref:System.Windows.Controls.DataGrid> seskupování, řazení a filtrování dat různými způsoby.|  
+|[Návod: Zobrazení dat z databáze serveru SQL Server v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak nastavit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
+|[Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-add-row-details-to-a-datagrid-control.md)|Popisuje, jak vytvořit řádek podrobnosti <xref:System.Windows.Controls.DataGrid>.|  
+|[Postupy: Implementace ověření pomocí ovládacího prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-implement-validation-with-the-datagrid-control.md)|Popisuje, jak ověřit hodnoty v <xref:System.Windows.Controls.DataGrid> buněk a řádků a zobrazení ověření zpětnou vazbu.|  
+|[Výchozí chování klávesnice a myši v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Popisuje, jak pracovat s <xref:System.Windows.Controls.DataGrid> ovládacího prvku pomocí klávesnice a myši.|  
+|[Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|Popisuje postup zobrazení dat v <xref:System.Windows.Controls.DataGrid> seskupování, řazení a filtrování dat různými způsoby.|  
 |[Možnosti změny velikosti v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)|Popisuje, jak řídit absolutní a Automatická změna velikosti v <xref:System.Windows.Controls.DataGrid>.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.DataGrid>  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Ukázka dat – přehled](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)  
  [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)  
  [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)

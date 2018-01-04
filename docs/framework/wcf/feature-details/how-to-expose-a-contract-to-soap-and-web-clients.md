@@ -16,11 +16,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5c04da670c84aaecf3587e6620c70e94c6b7350e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0f13ba797b0c0e5c8b0d1eef271baf62f920f199
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>Postupy: vystavení kontraktu protokolu SOAP a webovými klienty
 Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] umožňuje koncové body k dispozici pouze na klienty protokolu SOAP. V [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), koncový bod je k dispozici pro klienty protokolu SOAP. Může nastat situace, kdy chcete zpřístupnit stejné smlouvy obou směrech, a to jako koncový bod webové a jako koncový bod protokolu SOAP. Toto téma ukazuje příklad toho, jak to udělat.  
@@ -116,4 +117,4 @@ Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
  <xref:System.ServiceModel.Web.WebServiceHost>  
  <xref:System.ServiceModel.ChannelFactory>  
  <xref:System.ServiceModel.Description.WebHttpBehavior>  
- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+ [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

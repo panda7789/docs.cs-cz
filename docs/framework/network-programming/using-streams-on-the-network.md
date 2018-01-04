@@ -27,11 +27,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f9e011b304a7f6c7d0d07761677c0368efcfcf4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9f6cf68115f69e7238d2bec226258ab06c417d7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-streams-on-the-network"></a>Pomocí datových proudů v síti
 Síťové prostředky jsou v rozhraní .NET Framework vyjádřené datových proudů. Rozhraní .NET Framework tak, že obecně považuje datové proudy, nabízí následující možnosti:  
@@ -112,5 +113,5 @@ sr.Close()
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: použití třídy WebRequest Data žádosti](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
- [Požadavek na Data](../../../docs/framework/network-programming/requesting-data.md)
+ [Postupy:Vyžádání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
+ [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)

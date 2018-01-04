@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0c656cbad746e044a6dbf187ce86fd4738d6ef98
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6f1ee4855745573a4b73b409279d70906191bfd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Práce se sestaveními a s globální pamětí sestavení
 Pokud máte v úmyslu sdílet sestavení mezi více aplikacemi, můžete ji nainstalovat do globální mezipaměti sestavení. Každý počítač, kde je nainstalován modul common language runtime má tato mezipaměť strojový kód. Globální mezipaměti sestavení uchovává sestavení konkrétně určená ke sdílení více aplikacemi v počítači. Sestavení musí mít silným názvem být nainstalovaný v globální mezipaměti sestavení.  
@@ -57,13 +58,13 @@ Pokud máte v úmyslu sdílet sestavení mezi více aplikacemi, můžete ji nain
  [Postupy: Instalace sestavení do globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
  Popisuje způsoby instalace sestavení do globální mezipaměti sestavení.  
   
- [Postupy: zobrazení obsahu globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
+ [Postupy: Zobrazení obsahu globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
  Vysvětluje, jak používat [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) zobrazení obsahu globální mezipaměti sestavení.  
   
- [Postupy: odebrání sestavení z globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
+ [Postupy: Odebrání sestavení z globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
  Vysvětluje, jak používat [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pro odebrání sestavení z globální mezipaměti sestavení.  
   
- [Používání obsluhovaných komponent s globální mezipaměti sestavení](../../../docs/framework/app-domains/use-serviced-components-with-the-gac.md)  
+ [Používání obsluhovaných komponent s globální pamětí sestavení](../../../docs/framework/app-domains/use-serviced-components-with-the-gac.md)  
  Vysvětluje, proč obsluhované komponenty (spravované komponenty modelu COM +) musí být umístěny v globální mezipaměti sestavení.  
   
 ## <a name="related-sections"></a>Související oddíly  
@@ -73,7 +74,7 @@ Pokud máte v úmyslu sdílet sestavení mezi více aplikacemi, můžete ji nain
  [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
  Popisuje globální mezipaměti sestavení.  
   
- [Postupy: zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
+ [Postupy: Zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
  Vysvětluje, jak používat [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pro zobrazení informací (MSIL intermediate language) Microsoft v sestavení.  
   
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  

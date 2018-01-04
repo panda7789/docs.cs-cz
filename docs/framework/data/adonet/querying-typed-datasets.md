@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bd78b4f47d7f48d7b4cbacdf53140758a05b7869
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c232ca2888c957bea33d06c84a62b00fdc7fd80c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="querying-typed-datasets"></a>Dotazování typové datové sady
 Pokud schéma <xref:System.Data.DataSet> je známý v době návrhu aplikace, doporučujeme použít typem <xref:System.Data.DataSet> při použití [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Představuje zadaný <xref:System.Data.DataSet> je třída, která je odvozena z <xref:System.Data.DataSet>. Jako takový dědí všechny metody, události a vlastnosti <xref:System.Data.DataSet>. Kromě toho typové <xref:System.Data.DataSet> poskytuje silného typu metody, události a vlastnosti. To znamená, že máte přístup tabulky a sloupce, podle názvu, namísto použití metody založené na kolekcích. Díky tomu dotazy jednodušší a srozumitelnější. Další informace najdete v tématu [typové datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
@@ -67,6 +68,6 @@ Next
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Dotazování datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
- [Dotazy křížové tabulky](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
- [Dotazy na jedné tabulky](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)
+ [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
+ [Dotazy na křížovou tabulku](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
+ [Dotazy na jednu tabulku](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)

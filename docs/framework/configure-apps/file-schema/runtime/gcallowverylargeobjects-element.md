@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 49046c343ef749e597402f7e19a08fe1f2c98ca0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5db777f147e2eca7644d5b5f1a4bc18c8401ca8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltgcallowverylargeobjectsgt-element"></a>&lt;gcallowverylargeobjects –&gt; – Element
 Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).  

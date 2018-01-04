@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 227bef975a54676ceda5f922ed02f98c27fc8759
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2916321ff51f335b40a2cc4eef90cdccdfc25bda
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adonet-architecture"></a>Architektura technologie ADO.NET
 Zpracování dat má tradičně účinné především založeného na připojení, dvouvrstvá modelu. Jako zpracování dat stále používá vícevrstvé architektury, jsou programátory přepnutí do odpojeného přístup zajistit lepší škálovatelnost pro své aplikace.  
@@ -67,5 +68,5 @@ Architektura technologie ADO.NET
  [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]a třídy XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sloučit v `DataSet` objektu. `DataSet` Možné naplnit dat z XML zdroje, ať už je do souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní XML World Wide Web Consortium (W3C), která bude obsahovat schématem schématu definition language (XSD) schématu XML, bez ohledu na zdroji dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` formátu XML, je vynikající střední pro přesun dat mezi vrstvami, což `DataSet` na optimální volbu pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML – dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
   
 ## <a name="see-also"></a>Viz také  
- [ADO.NET – přehled](../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

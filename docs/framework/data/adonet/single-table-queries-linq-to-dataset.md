@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f157bb172d173872aa7b792035b653976a9c1c0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 103c7cde61350a1efaf0784964c3f31cc7d55e4b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="single-table-queries-linq-to-dataset"></a>Dotazy jedné tabulky (LINQ na DataSet)
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]dotazy fungují v zdroje dat, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. <xref:System.Data.DataTable> Třída neimplementuje buď rozhraní, takže je třeba volat <xref:System.Data.DataTableExtensions.AsEnumerable%2A> metoda, pokud chcete použít <xref:System.Data.DataTable> jako zdroj v `From` klauzuli [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu.  
@@ -41,6 +42,6 @@ ms.lasthandoff: 11/21/2017
  Všimněte si, že datový typ zadaný v parametru Obecné `T` z <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda musí shodovat s typem základní hodnoty nebo <xref:System.InvalidCastException> bude vyvolána. Zadaný název sloupce taky musí shodovat s názvem sloupce v <xref:System.Data.DataSet> nebo <xref:System.ArgumentException> bude vyvolána. V obou případech je vyvolána výjimka v výčet datového běhu při spuštění dotazu.  
   
 ## <a name="see-also"></a>Viz také  
- [Dotazy křížové tabulky](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
- [Dotazování typové datové sady](../../../../docs/framework/data/adonet/querying-typed-datasets.md)  
- [Obecné pole a SetField metody](../../../../docs/framework/data/adonet/generic-field-and-setfield-methods-linq-to-dataset.md)
+ [Dotazy na křížovou tabulku](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
+ [Dotazy na typové datové sady](../../../../docs/framework/data/adonet/querying-typed-datasets.md)  
+ [Obecné pole a metody SetField](../../../../docs/framework/data/adonet/generic-field-and-setfield-methods-linq-to-dataset.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8ac4bec06f2d5c7f8876c8e4e18a9d5c59f094fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0980488f3093bfcaedc730bac126b1b5b6505187
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-custom-attributes"></a>Přístup k vlastním atributům
 Po atributy nejsou spojené s prvky programu, reflexe můžete použít k dotazování jejich existence a hodnoty. V rozhraní .NET Framework verze 1.0 a 1.1 vlastní atributy jsou zkoumány v kontextu spuštění. Poskytuje rozhraní .NET Framework verze 2.0 nový kontext načítání pouze pro reflexi kontext, který můžete použít k prozkoumání kód, který nelze načíst pro provedení.  

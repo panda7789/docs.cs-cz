@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fb6f832b77404b57ab22e4ac472e7707f0e10dd5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 60135c09f63bd98f753e151c515938cbf13e70ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-in-a-windows-forms-application"></a>Uživatelský vstup ve formulářové aplikaci Windows
 V systému Windows Forms uživatelský vstup se odesílají do aplikace ve formě zpráv systému Windows. Řadu přepisovatelné metody zpracování těchto zpráv v aplikaci, formuláře a řídit úroveň. Tyto metody přijímat zprávy myši a klávesnice, vyvolají události, které může být zpracována pro získání informací o myši nebo klávesové vstup. V mnoha případech bude schopna zpracovat veškerý vstup uživatele jednoduše tak, že zpracování těchto událostí formulářových aplikací Windows. V ostatních případech možná muset aplikaci přepsat jednu z metod, které zpracovávají zprávy, aby bylo možné zachytit určité zprávy dřív, než je přijat aplikace, formulář nebo ovládací prvek.  
@@ -41,5 +42,5 @@ V systému Windows Forms uživatelský vstup se odesílají do aplikace ve form�
   
 ## <a name="see-also"></a>Viz také  
  [Uživatelský vstup ve Windows Forms](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
- [Vstup z klávesnice ve Windows Forms aplikace](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
- [Vstup z myši ve Windows Forms aplikace](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+ [Vstup z klávesnice v aplikaci Windows Forms](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
+ [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

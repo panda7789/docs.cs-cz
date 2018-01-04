@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: fd8e7d18ca72cbeb558876eefcde17ebdc6c095f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 490e58d4514667c5ec781dd76644012b0c97509d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;Přidat&gt; Element pro &lt;sharedListeners&gt;
 Přidá naslouchací proces a `sharedListeners` kolekce. `sharedListeners`je to všechny kolekce naslouchacího procesu [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) , můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou uloženy do `Listeners` kolekce. Je nutné je přidat název, který [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat posluchače v `sharedListeners` kolekce v kódu v době běhu.  
@@ -118,4 +119,4 @@ Přidá naslouchací proces a `sharedListeners` kolekce. `sharedListeners`je to 
  <xref:System.Diagnostics.TraceSource>  
  <xref:System.Diagnostics.TraceListener>  
  [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [Trasování – moduly naslouchání](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+ [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

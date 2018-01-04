@@ -27,11 +27,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 721839e0e27682477f7ba3739d3c666208fae417
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 24ec39798f5f31cf20cc5c84714efaae6ccbed52
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-socket"></a>Postupy: vytvoření soket
 Než použijete soket pro komunikaci se vzdáleným zařízením soket musí být inicializován s informace o protokolu a síťových adres. V konstruktoru pro <xref:System.Net.Sockets.Socket> třída má parametrů, které určují rodina adres, typ soketu a typ protokolu, který soketu používá k vytvoření připojení.  
@@ -70,5 +71,5 @@ Dim s as New Socket(AddressFamily.InterNetwork, _
  Po **soketu** je vytvořen, ho můžete iniciovat připojení k vzdálený koncový bod nebo přijímat připojení ze vzdálených zařízení.  
   
 ## <a name="see-also"></a>Viz také  
- [Použití klienta soketů](../../../docs/framework/network-programming/using-client-sockets.md)  
- [Naslouchání s Sockets](../../../docs/framework/network-programming/listening-with-sockets.md)
+ [Použití klientských soketů](../../../docs/framework/network-programming/using-client-sockets.md)  
+ [Naslouchání pomocí soketů](../../../docs/framework/network-programming/listening-with-sockets.md)

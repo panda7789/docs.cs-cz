@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 7065455e3459ad37a8e296107ca8c6991334b328
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 39364f06cec35b1a5417540dfa29b0cac24fbdb6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>Postupy: Vytvoření deklaracemi rozhraní ASP.NET MVC webové aplikace pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
@@ -227,4 +228,4 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="related-items"></a>Související položky  
   
--   [Postupy: Vytvoření aplikace deklaracemi rozhraní ASP.NET Web Forms pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
+-   [Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)

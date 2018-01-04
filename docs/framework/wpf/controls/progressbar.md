@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 871b81d8b1acff8a4c133251847cb143bc878450
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 403c95f77916742ccedc48ab002106c844313b5c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="progressbar"></a>ProgressBar
 A <xref:System.Windows.Controls.ProgressBar> označuje průběh operace. <xref:System.Windows.Controls.ProgressBar> Řízení se skládá z okno, které je vyplněn barva zvýraznění systému v průběhu operace.  

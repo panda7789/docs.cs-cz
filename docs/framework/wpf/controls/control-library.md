@@ -17,11 +17,12 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4d1ea41597f0bba7aed61854119ee33136ed07d5
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: bc2186c4b1acaf06ec7c6adf0d5ef8460957869b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-library"></a>Knihovna ovládacích prvků
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Ovládací prvek knihovna obsahuje informace o ovládací prvky poskytované [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)], uvedené podle abecedy.  
@@ -30,31 +31,31 @@ ms.lasthandoff: 10/22/2017
  [Ohraničení](../../../../docs/framework/wpf/controls/border.md)  
  [BulletDecorator](../../../../docs/framework/wpf/controls/bulletdecorator.md)  
  [Tlačítko](../../../../docs/framework/wpf/controls/button.md)  
- [Kalendáře](../../../../docs/framework/wpf/controls/calendar.md)  
+ [Kalendář](../../../../docs/framework/wpf/controls/calendar.md)  
  [Plátno](../../../../docs/framework/wpf/controls/canvas.md)  
- [Zaškrtávací políčko](../../../../docs/framework/wpf/controls/checkbox.md)  
- [Pole se seznamem](../../../../docs/framework/wpf/controls/combobox.md)  
- [ContextMenu –](../../../../docs/framework/wpf/controls/contextmenu.md)  
+ [CheckBox](../../../../docs/framework/wpf/controls/checkbox.md)  
+ [ComboBox](../../../../docs/framework/wpf/controls/combobox.md)  
+ [ContextMenu](../../../../docs/framework/wpf/controls/contextmenu.md)  
  [DataGrid](../../../../docs/framework/wpf/controls/datagrid.md)  
- [Ovládací prvek DatePicker](../../../../docs/framework/wpf/controls/datepicker.md)  
+ [DatePicker](../../../../docs/framework/wpf/controls/datepicker.md)  
  [DockPanel](../../../../docs/framework/wpf/controls/dockpanel.md)  
- [Třídy DocumentViewer](../../../../docs/framework/wpf/controls/documentviewer.md)  
- [Expander](../../../../docs/framework/wpf/controls/expander.md)  
+ [DocumentViewer](../../../../docs/framework/wpf/controls/documentviewer.md)  
+ [Rozšíření](../../../../docs/framework/wpf/controls/expander.md)  
  [FlowDocumentPageViewer](../../../../docs/framework/wpf/controls/flowdocumentpageviewer.md)  
- [FlowDocumentReader s](../../../../docs/framework/wpf/controls/flowdocumentreader.md)  
- [Třídy FlowDocumentScrollViewer](../../../../docs/framework/wpf/controls/flowdocumentscrollviewer.md)  
- [Rámce](../../../../docs/framework/wpf/controls/frame.md)  
- [Mřížky](../../../../docs/framework/wpf/controls/grid.md)  
+ [FlowDocumentReader](../../../../docs/framework/wpf/controls/flowdocumentreader.md)  
+ [FlowDocumentScrollViewer](../../../../docs/framework/wpf/controls/flowdocumentscrollviewer.md)  
+ [Rámec](../../../../docs/framework/wpf/controls/frame.md)  
+ [Mřížka](../../../../docs/framework/wpf/controls/grid.md)  
  [GridSplitter](../../../../docs/framework/wpf/controls/gridsplitter.md)  
  [GroupBox](../../../../docs/framework/wpf/controls/groupbox.md)  
- [Bitové kopie](../../../../docs/framework/wpf/controls/image.md)  
+ [Obrázek](../../../../docs/framework/wpf/controls/image.md)  
  [Popisek](../../../../docs/framework/wpf/controls/label.md)  
  [ListBox](../../../../docs/framework/wpf/controls/listbox.md)  
  [ListView](../../../../docs/framework/wpf/controls/listview.md)  
- [Nabídky](../../../../docs/framework/wpf/controls/menu.md)  
+ [Nabídka](../../../../docs/framework/wpf/controls/menu.md)  
  [Panel](../../../../docs/framework/wpf/controls/panel.md)  
- [Položka PasswordBox](../../../../docs/framework/wpf/controls/passwordbox.md)  
- [Místní nabídka](../../../../docs/framework/wpf/controls/popup.md)  
+ [PasswordBox](../../../../docs/framework/wpf/controls/passwordbox.md)  
+ [Popup](../../../../docs/framework/wpf/controls/popup.md)  
  [ProgressBar](../../../../docs/framework/wpf/controls/progressbar.md)  
  [PrintDialog](../../../../docs/framework/wpf/controls/printdialog.md)  
  [RadioButton](../../../../docs/framework/wpf/controls/radiobutton.md)  
@@ -66,12 +67,12 @@ ms.lasthandoff: 10/22/2017
  [Oddělovač](../../../../docs/framework/wpf/controls/separator.md)  
  [Posuvník](../../../../docs/framework/wpf/controls/slider.md)  
  [StackPanel](../../../../docs/framework/wpf/controls/stackpanel.md)  
- [Stavový řádek](../../../../docs/framework/wpf/controls/statusbar.md)  
+ [StatusBar](../../../../docs/framework/wpf/controls/statusbar.md)  
  [TabControl](../../../../docs/framework/wpf/controls/tabcontrol.md)  
  [TextBlock](../../../../docs/framework/wpf/controls/textblock.md)  
- [Textové pole](../../../../docs/framework/wpf/controls/textbox.md)  
- [Panel nástrojů](../../../../docs/framework/wpf/controls/toolbar.md)  
- [Popisek](../../../../docs/framework/wpf/controls/tooltip.md)  
+ [TextBox](../../../../docs/framework/wpf/controls/textbox.md)  
+ [ToolBar](../../../../docs/framework/wpf/controls/toolbar.md)  
+ [ToolTip](../../../../docs/framework/wpf/controls/tooltip.md)  
  [TreeView](../../../../docs/framework/wpf/controls/treeview.md)  
  [WrapPanel](../../../../docs/framework/wpf/controls/wrappanel.md)  
  [Viewbox](../../../../docs/framework/wpf/controls/viewbox.md)  

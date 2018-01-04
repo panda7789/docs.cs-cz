@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ff0a4432f6de8458e89132bbf46bab7568a04b60
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9f0623ed4c84247cc1759a203e3b95dd895cee2e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="expander-overview"></a>Přehled rozšíření
 <xref:System.Windows.Controls.Expander> Řízení poskytuje způsob pro poskytování obsahu v rozšíření oblasti, která vypadá přibližně takto: okno a obsahuje hlavičku.  
@@ -72,4 +73,4 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.Expander>  
  <xref:System.Windows.Controls.ExpandDirection>  
- [Postupy: témata](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)

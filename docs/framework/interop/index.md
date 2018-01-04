@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2db5b8c2425637e24086f54e8ef69b0e5aac3633
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f475877bcb7a794d1a58ef9202735e016363678b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem
 Rozhraní .NET Framework zvýší úroveň interakci s COM komponenty modelu COM + služby, knihovny externích typů a mnoho služeb operačního systému. Datové typy, metoda podpisy a zpracování chyb mechanismy liší mezi spravovanými a nespravovanými objektové modely. Pro zjednodušení vzájemná spolupráce mezi součástmi rozhraní .NET Framework a nespravovaného kódu a usnadňují cesty migrace, modul common language runtime ukrývá od klientů a serverů rozdíly v těchto modelů objektu.  
@@ -36,10 +37,10 @@ Rozhraní .NET Framework zvýší úroveň interakci s COM komponenty modelu COM
  [Spolupráce s nespravovaným kódem postupy](http://msdn.microsoft.com/en-us/ec21c6e1-e233-4cd9-95ae-b9b9cf807f9d)  
  Obsahuje odkazy na všechny postupy v rámcová dokumentace pro spolupráce s nespravovaným kódem.  
   
- [Vystavení součástí COM v rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)  
+ [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)  
  Popisuje, jak komponenty modelu COM v aplikacích rozhraní .NET Framework.  
   
- [Vystavení součástí .NET Framework do modelu COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  Popisuje způsob použití součásti rozhraní .NET Framework z aplikace modelu COM.  
   
  [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
@@ -51,7 +52,7 @@ Rozhraní .NET Framework zvýší úroveň interakci s COM komponenty modelu COM
  [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)  
  Popisuje zařazování pro vyvolání zprostředkovatel komunikace s objekty COM a platformu.  
   
- [Postupy: mapování výsledků HRESULT a výjimek](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)  
+ [Postupy: Mapování výsledků HRESULT a výjimek](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)  
  Popisuje mapování mezi výjimky a jejich hodnoty HRESULT.  
   
  [Spolupráce pomocí obecných typů](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58)  

@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9c41b9c0c9abe3fc80d16dbd847c35c8b2da7038
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7703d9fb612ead13140d010b1670abb209c5acb7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wif-session-management"></a>WIF relace správy
 Když klient se poprvé pokusí o přístup k chráněnému prostředku, který je hostován předávající strana, klient musí je nejdřív ověřit samotné služby tokenů zabezpečení (STS), která je důvěryhodná předávající stranou. Služba tokenů zabezpečení pak vydá token zabezpečení do klienta. Klient uvede tento token pro předávající stranu, která pak uděluje klientský přístup k chráněnému prostředku. Ale nechcete, aby klient tak, aby měl znovu provést ověření na službu STS pro každý požadavek zvlášť, protože i nemusí být ve stejném počítači nebo ve stejné doméně jako předávající strany. Místo toho Windows Identity Foundation (WIF) má klienta a vytvořit relaci, ve které klient použije token zabezpečení relace k vlastnímu ověření předávající stranu pro všechny požadavky po prvním požadavku předávající strany. Předávající strana můžete použít tento token zabezpečení relace, který je uložený v souboru cookie, k rekonstrukci klienta <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>.  

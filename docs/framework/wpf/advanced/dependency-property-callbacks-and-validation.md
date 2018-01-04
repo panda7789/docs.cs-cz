@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d1b62c7f49653627c626bce2583b2799df931dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 15ba7f3315b2ce71357bd4735e2dfca1b3de616d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-callbacks-and-validation"></a>Zpětné volání a ověření vlastností závislostí
 Toto téma popisuje postup vytvoření vlastností závislostí pomocí alternativní vlastních implementací vlastnosti související s funkcí, jako jsou ověřování rozhodnutí, zpětná volání, které jsou spuštěny po změně platnou hodnotu vlastnosti a přepsáním Chcete-li to možné mimo vlivy na hodnotu rozhodnutí. Toto téma taky popisuje scénáře, kde rozšíření na výchozí chování systému vlastnost s použitím těchto postupů je vhodné.  
@@ -91,6 +92,6 @@ Toto téma popisuje postup vytvoření vlastností závislostí pomocí alternat
  Vlastnost systém bude považovat všechny <xref:System.Windows.CoerceValueCallback> , vrátí hodnotu <xref:System.Windows.DependencyProperty.UnsetValue> zvláštním způsobem. Tento zvláštní případ znamená, že změnu vlastnosti, jejichž výsledkem <xref:System.Windows.CoerceValueCallback> volané odmítl vlastnosti systému, a vlastnost systému měli místo toho sestavy jakékoli předchozí hodnotu vlastnosti měl. Tento mechanismus může být vhodné, zkontrolujte, jestli jsou stále platné pro aktuální stav objektu změny vlastnosti, které byly zahájeny asynchronně a není-li potlačit změny. Další možný způsob je můžete selektivně potlačit hodnotu podle toho, která komponenta vlastnosti je zodpovědná za hodnotu nehlásí hodnota rozhodnutí. K tomuto účelu můžete použít <xref:System.Windows.DependencyProperty> předaná zpětného volání a identifikátor vlastnosti jako vstup pro <xref:System.Windows.DependencyPropertyHelper.GetValueSource%2A>a pak zpracování <xref:System.Windows.ValueSource>.  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Metadata vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

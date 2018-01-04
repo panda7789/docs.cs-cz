@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f001f4f8fac2e0366aa705d1998fe33d6dc4438
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 89fb080a890ee866ab16882065bd35495fadfddb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-binding"></a>Základní vazby
 Tato část obsahuje základní ukázky, která demonstruje použití atribut vazby elementu koncový bod.  
@@ -26,8 +27,8 @@ Tato část obsahuje základní ukázky, která demonstruje použití atribut va
  [Ukázka zabezpečení zpráv](../../../../docs/framework/wcf/samples/message-security-sample.md)  
  Ukazuje, jak implementovat aplikaci, která používá `basicHttpBinding` a zabezpečení zpráv.  
   
- [Základní vazby u zabezpečení přenosu](../../../../docs/framework/wcf/samples/basicbinding-with-transport-security.md)  
+ [BasicBinding se zabezpečením přenosu](../../../../docs/framework/wcf/samples/basicbinding-with-transport-security.md)  
  Demonstruje použití protokolu SSL zabezpečení přenosu s základní vazby.  
   
- [Základní vazby](../../../../docs/framework/wcf/samples/basicbinding.md)  
+ [BasicBinding](../../../../docs/framework/wcf/samples/basicbinding.md)  
  Demonstruje použití `basicHttpBinding` , poskytuje HTTP komunikace a maximální vzájemnou funkční spolupráci s první - a second - generation webové služby.

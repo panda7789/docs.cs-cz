@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c0b4c128667cab04ca8ed015b44dae60d11b474
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a6edc48c93f83611bdc2be5b7398ab0abe843407
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-render-images-with-gdi"></a>Postupy: Vykreslení obrázků pomocí GDI+
 Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] vykreslování obrázků, které existují jako soubory ve svých aplikacích. To uděláte tak, že vytvoříte nový objekt <xref:System.Drawing.Image> – třída (například <xref:System.Drawing.Bitmap>), vytváření <xref:System.Drawing.Graphics> objektu, který odkazuje na kreslicí plochy, kterou chcete použít a volání <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu. Obrázek se vykresluje do kreslicí plochy reprezentována graphics – třída. Můžete použít Editor obrázků můžete vytvářet a upravovat soubory obrázků v době návrhu a vykreslit pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] za běhu. Další informace najdete v tématu [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons).  
@@ -93,9 +94,9 @@ Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
- [Postupy: vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
- [Pera, čáry a obdélníky v GDI +](../../../../docs/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi.md)  
- [Postupy: kreslení textu ve formuláři Windows](../../../../docs/framework/winforms/advanced/how-to-draw-text-on-a-windows-form.md)  
- [Grafika a kreslení v systému Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
+ [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
+ [Pera, čáry a obdélníky v GDI+](../../../../docs/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi.md)  
+ [Postupy: Kreslení textu ve formuláři Windows](../../../../docs/framework/winforms/advanced/how-to-draw-text-on-a-windows-form.md)  
+ [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [Kreslení čar nebo uzavřených obrázků](/cpp/windows/drawing-lines-or-closed-figures-image-editor-for-icons)  
  [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons)

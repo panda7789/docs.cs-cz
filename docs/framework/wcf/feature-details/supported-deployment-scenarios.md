@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5886b327f1ea6d2866b9fc76bb29031ee870934e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3e6039567e4fad7fe4c014665dd3ae0c3082a9d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 Podmnožinu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkcí podporovaných pro použití v částečně důvěryhodné aplikace slouží ke splnění požadavků některé, ale ne všechny scénáře použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Na serveru [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] splňuje požadavky na internetových sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] oprávnění na úrovni Medium Trust nastavit z bezpečnostních důvodů. Na straně klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporu částečné důvěryhodnosti je tak, aby splnily požadavky na nasazení technologie, jako [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]na aplikace prohlížeče XAML technologii, která umožňují plynulé a bezpečné nasazení aplikací klasické pracovní plochy umístěné na serverech.  

@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b612cb2fb8b2a84555ccf36a8537ebecff673d47
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d87303fbe95804b458a42ed43b65f29233814977
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebuginternalframe2-interface"></a>ICorDebugInternalFrame2 – rozhraní
 Poskytuje informace o interní rámce, včetně adres zásobníku a pozice ve vztahu k ICorDebugFrame objekty.  
@@ -32,8 +33,8 @@ Poskytuje informace o interní rámce, včetně adres zásobníku a pozice ve vz
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getframeaddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Vrátí adresu zásobníku vnitřní rámečku.|  
-|[Isclosertoleaf – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Kontroluje, zda `this` interní rámečku je blíž ke listu než zadaný objekt ICorDebugFrame.|  
+|[GetFrameAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Vrátí adresu zásobníku vnitřní rámečku.|  
+|[IsCloserToLeaf – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Kontroluje, zda `this` interní rámečku je blíž ke listu než zadaný objekt ICorDebugFrame.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní rozšiřuje icordebuginternalframe – rozhraní.  
@@ -51,5 +52,5 @@ Poskytuje informace o interní rámce, včetně adres zásobníku a pozice ve vz
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

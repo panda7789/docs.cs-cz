@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: aec29ed6836671831130226a601358d5f6a1d3dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 654ada55d30ad95937fa05475ebcbf23ca86652d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a>&lt;Přidat&gt; Element pro connectionManagement – (nastavení sítě)
 Přidá do seznamu pro správu připojení IP adresu nebo název DNS.  

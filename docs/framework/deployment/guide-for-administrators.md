@@ -16,11 +16,12 @@ caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d208867789fc78a82a2e339596a5692280d95ff3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3af5e301e57350b72ac0ea50448c7a46ca6c5387
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho závislé součásti systému přes síť pomocí Microsoft System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam softwarové a hardwarové požadavky pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], najdete v části [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -33,13 +34,13 @@ Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCL
  Toto téma obsahuje následující oddíly:  
   
  [Proces nasazení](#the_deployment_process)  
- [Nasazení .NET Framework](#deploying_in_a_test_environment)  
+ [Nasazení rozhraní .NET Framework](#deploying_in_a_test_environment)  
  [Vytvoření kolekce](#creating_a_collection)  
  [Vytvoření balíčku a programu](#creating_a_package)  
  [Vyberte distribuční bod](#select_dist_point)  
  [Nasazení balíčku](#deploying_package)  
 [Prostředky](#resources)  
-[Řešení potíží](#troubleshooting)  
+[Odstraňování potíží](#troubleshooting)  
   
 <a name="the_deployment_process"></a>   
 ## <a name="the-deployment-process"></a>Proces nasazení  

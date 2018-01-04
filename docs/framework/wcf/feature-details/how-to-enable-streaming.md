@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea506499cf6678beb51195654739f2537b98a188
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b75fe67d99fa611f248c8d5dbb779f47e2bc717d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]můžete odesílat zprávy pomocí ve vyrovnávací paměti nebo přenášené datovými proudy přenosů. Ve výchozím režimu přenosu do vyrovnávací paměti zprávy musí být zcela doručována předtím, než příjemce může číst. Při streamování režim přenosu, můžete začít příjemce zprávu zpracovat, než je zcela doručit. Streamování režimu je užitečné, když informace, které se předá je náročná a může být zpracována sériově. Streamování režimu je také užitečné, pokud zpráva je moc velká, aby se zcela do vyrovnávací paměti.  
@@ -85,5 +86,5 @@ ms.lasthandoff: 12/02/2017
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
 ## <a name="see-also"></a>Viz také  
- [Velkého množství dat a vysílání datového proudu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
- [Datový proud](../../../../docs/framework/wcf/samples/stream.md)
+ [Objemná data a streamování](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
+ [Stream](../../../../docs/framework/wcf/samples/stream.md)

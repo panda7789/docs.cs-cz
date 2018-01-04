@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d71be02173bfcfeace5412e22e51f4fc0b247a5f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6b0e0eda77ebe3d980a99340db8366533e601687
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamic-programming-in-the-net-framework"></a>Dynamické programování v rozhraní .NET Framework
 Tato část dokumentace obsahuje informace o dynamické programování v rozhraní .NET Framework.  
@@ -29,13 +30,13 @@ Tato část dokumentace obsahuje informace o dynamické programování v rozhran
  [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Popisuje, jak pracovat s objekty v době běhu pomocí reflexe.  
   
- [Emitování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
+ [Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
  Popisuje, jak vytvořit metod a sestavení v době běhu pomocí Reflection.Emit.  
   
- [Přehled Dynamic Language Runtime](../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
+ [Přehled DLR (Dynamic Language Runtime)](../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
  Popisuje funkce dynamické language runtime.  
   
- [Generování dynamických zdrojového kódu a kompilace](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)  
+ [Dynamické vytváření a kompilování zdrojového kódu](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)  
  Popisuje postup generování a kompilace dynamické zdrojového kódu.  
   
 ## <a name="related-sections"></a>Související oddíly  

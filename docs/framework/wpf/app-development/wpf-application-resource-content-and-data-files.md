@@ -28,11 +28,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 19fd82daabd5ed12776b2deee6bc850529a6ef23
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 284c3b6788fd43a10d65cfa8bd6c032e4b1e1cd6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]aplikace často závisí na soubory, které obsahují data spustitelný soubor, jako například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]nabízí zvláštní podporu pro konfiguraci, identifikace a použití těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se pohybuje kolem konkrétní sadu typy souborů dat aplikace, včetně:  
@@ -249,4 +250,4 @@ ms.lasthandoff: 10/22/2017
  Po provedení změny sestavení typ datového souboru aplikace, budete muset znovu sestavte celé aplikace k zajištění, že tyto změny se použijí. Pokud vytvoříte pouze aplikace, nejsou použity změny.  
   
 ## <a name="see-also"></a>Viz také  
- [Identifikátory URI Pack v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)
+ [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)

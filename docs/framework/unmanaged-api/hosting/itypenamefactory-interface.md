@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a843e8f307b50f375133287c2593ebb0a3580a05
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dcc7d7293bc95fce95994acb986844c983aaca4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="itypenamefactory-interface"></a>ITypeNameFactory – rozhraní
 Poskytuje metody pro deconstructing název typu.  
@@ -40,5 +41,5 @@ Poskytuje metody pro deconstructing název typu.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Typenamefactory – třída typu Coclass](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [TypeNameFactory – třída typu coclass](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)

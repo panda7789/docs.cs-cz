@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3738b484321a9c6a3cbcb2a59854bb91770bf8bf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c7383d899af741e4a6c85b40e2316a6b759aa416
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-tracking-and-tracing"></a>Pracovní postup sledování a trasování
 Sledování pracovní postup systému je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o spuštění pracovního postupu. Poskytuje sledování infrastruktury ke sledování provádění instanci pracovního postupu. Sledování infrastruktury WF instruments transparentně pracovního postupu pro vydávání záznamy odrážející klíče události během provádění. Tato funkce je dostupná ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Je potřeba provést žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování proběhnout. Je pouze stačit rozhodnutí, jaké množství dat sledování, které chcete dostávat. Pokud instance pracovního postupu spustí nebo dokončí zpracování sledování jsou vygenerované záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například pokud pracovní postup představuje pořadí zpracování systému, pořadí ID lze extrahovat spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování usnadňuje diagnostiku nebo obchodní analytická data nelze přistupovat ze spuštění pracovního postupu.  
@@ -47,19 +48,19 @@ Sledování pracovní postup systému je [!INCLUDE[netfx_current_long](../../../
  [Sledování záznamů](../../../docs/framework/windows-workflow-foundation/tracking-records.md)  
  Popisuje sledování záznamy, které vysílá modulu runtime pracovního postupu.  
   
- [Sledování profily](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ [Sledování profilů](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
  Popisuje, jak se používají sledování profily.  
   
- [Sledování účastníků](../../../docs/framework/windows-workflow-foundation/tracking-participants.md)  
+ [Účastníci sledování](../../../docs/framework/windows-workflow-foundation/tracking-participants.md)  
  Popisuje postup použití účastník poskytované systémem sledování nebo jak vytvořit vlastní sledování účastníky.  
   
- [Konfigurace sledování pro pracovní postup](../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)  
+ [Konfigurace sledování pracovního postupu](../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)  
  Popisuje postup konfigurace sledování pro pracovní postup.  
   
- [Pracovní postup trasování](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md)  
+ [Trasování pracovních postupů](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md)  
  Popisuje dva způsoby, jak povolit trasování ladění pro pracovní postup.  
   
- [Určení dobu trvání provádění pracovního postupu pomocí trasování](../../../docs/framework/windows-workflow-foundation/determining-workflow-execution-duration-using-tracing.md)  
+ [Určení doby trvání provádění pracovního postupu pomocí trasování](../../../docs/framework/windows-workflow-foundation/determining-workflow-execution-duration-using-tracing.md)  
  Popisuje, jak používat zprávy trasování určete dobu trvání provádění pracovního postupu.  
   
 ## <a name="see-also"></a>Viz také  

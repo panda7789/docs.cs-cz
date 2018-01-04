@@ -12,11 +12,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 51f11beb474758f16c6de0c47444e0467cac8bec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e551a2a5253232ca7e504ea484601fb935901da4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Pomocí aktivity WF rozhraní .NET Framework 3.0 v rozhraní .NET Framework 4 s spolupráce aktivity
 <xref:System.Activities.Statements.Interop> Aktivita [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] aktivity (WF 4.5), která zabalí [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] (WF 3.5) aktivitu v rámci [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Aktivita WF 3 může být aktivitu jednoho typu nebo celý strom aktivit. Provádění (včetně zrušení a zpracování výjimek) a perzistence [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivita provedena v kontextu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] instance pracovního postupu, který spouští.  
@@ -64,4 +65,4 @@ ms.lasthandoff: 12/02/2017
 4.  Vlastní aktivity WF 3 přístup k datům pomocí fronty pracovního postupu prostředí součinnosti stejným způsobem jako v modulu runtime pracovního postupu WF 3. Nejsou vyžadovány žádné změny kódu vlastní aktivity. Na hostiteli, data, je zařazených do fronty, do fronty pracovní postup WF 3 obnovení <xref:System.Activities.Bookmark>. Název záložky je řetězec formátu <xref:System.IComparable> název fronty pracovního postupu.  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí rozhraní .NET Framework 3.0 nebo rozhraní .NET Framework 3.5 aktivity v pracovním postupu rozhraní .NET Framework 4.5](../../../docs/framework/windows-workflow-foundation/samples/using-a-net-3-0-or-net-3-5-activity-in-a-net-4-5-workflow.md)
+ [Použití aktivity rozhraní .NET Framework 3.0 nebo .NET Framework 3.5 v pracovním postupu rozhraní .NET Framework 4.5](../../../docs/framework/windows-workflow-foundation/samples/using-a-net-3-0-or-net-3-5-activity-in-a-net-4-5-workflow.md)
