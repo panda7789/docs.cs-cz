@@ -19,48 +19,49 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0f023dbc3049f558acfc0fb83056f462d390fa7b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 73a4f362be1612658e6911b7e7ea7a6c3e670e01
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ltcryptographysettingsgt-element"></a><span data-ttu-id="53968-102">&lt;cryptographySettings –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="53968-102">&lt;cryptographySettings&gt; Element</span></span>
-<span data-ttu-id="53968-103">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="53968-103">Contains cryptography settings.</span></span>  
+# <a name="ltcryptographysettingsgt-element"></a><span data-ttu-id="1868c-102">&lt;cryptographySettings –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="1868c-102">&lt;cryptographySettings&gt; Element</span></span>
+<span data-ttu-id="1868c-103">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="1868c-103">Contains cryptography settings.</span></span>  
   
- <span data-ttu-id="53968-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="53968-104">\<configuration></span></span>  
-<span data-ttu-id="53968-105">\<mscorlib ></span><span class="sxs-lookup"><span data-stu-id="53968-105">\<mscorlib></span></span>  
-<span data-ttu-id="53968-106">\<cryptographySettings – ></span><span class="sxs-lookup"><span data-stu-id="53968-106">\<cryptographySettings></span></span>  
+ <span data-ttu-id="1868c-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="1868c-104">\<configuration></span></span>  
+<span data-ttu-id="1868c-105">\<mscorlib ></span><span class="sxs-lookup"><span data-stu-id="1868c-105">\<mscorlib></span></span>  
+<span data-ttu-id="1868c-106">\<cryptographySettings – ></span><span class="sxs-lookup"><span data-stu-id="1868c-106">\<cryptographySettings></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="53968-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="53968-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1868c-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1868c-107">Syntax</span></span>  
   
 ```xml  
       <cryptographySettings>   
 </cryptographySettings>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="53968-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="53968-108">Attributes and Elements</span></span>  
- <span data-ttu-id="53968-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="53968-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="1868c-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="1868c-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="1868c-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="1868c-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="53968-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="53968-110">Attributes</span></span>  
- <span data-ttu-id="53968-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="53968-111">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="1868c-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="1868c-110">Attributes</span></span>  
+ <span data-ttu-id="1868c-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="1868c-111">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="53968-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="53968-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="1868c-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="1868c-112">Child Elements</span></span>  
   
-|<span data-ttu-id="53968-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="53968-113">Element</span></span>|<span data-ttu-id="53968-114">Popis</span><span class="sxs-lookup"><span data-stu-id="53968-114">Description</span></span>|  
+|<span data-ttu-id="1868c-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="1868c-113">Element</span></span>|<span data-ttu-id="1868c-114">Popis</span><span class="sxs-lookup"><span data-stu-id="1868c-114">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="53968-115">\<cryptoNameMapping ></span><span class="sxs-lookup"><span data-stu-id="53968-115">\<cryptoNameMapping></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|<span data-ttu-id="53968-116">Obsahuje mapování třídy popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="53968-116">Contains mappings of classes to friendly names.</span></span>|  
-|[<span data-ttu-id="53968-117">\<oidmap – ></span><span class="sxs-lookup"><span data-stu-id="53968-117">\<oidMap></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|<span data-ttu-id="53968-118">Obsahuje ASN.1 objektu (OID) identifikátor mapování třídy.</span><span class="sxs-lookup"><span data-stu-id="53968-118">Contains ASN.1 object identifier (OID) mappings to classes.</span></span>|  
+|[<span data-ttu-id="1868c-115">\<cryptoNameMapping ></span><span class="sxs-lookup"><span data-stu-id="1868c-115">\<cryptoNameMapping></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|<span data-ttu-id="1868c-116">Obsahuje mapování třídy popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="1868c-116">Contains mappings of classes to friendly names.</span></span>|  
+|[<span data-ttu-id="1868c-117">\<oidmap – ></span><span class="sxs-lookup"><span data-stu-id="1868c-117">\<oidMap></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|<span data-ttu-id="1868c-118">Obsahuje ASN.1 objektu (OID) identifikátor mapování třídy.</span><span class="sxs-lookup"><span data-stu-id="1868c-118">Contains ASN.1 object identifier (OID) mappings to classes.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="53968-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="53968-119">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="1868c-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="1868c-119">Parent Elements</span></span>  
   
-|<span data-ttu-id="53968-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="53968-120">Element</span></span>|<span data-ttu-id="53968-121">Popis</span><span class="sxs-lookup"><span data-stu-id="53968-121">Description</span></span>|  
+|<span data-ttu-id="1868c-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="1868c-120">Element</span></span>|<span data-ttu-id="1868c-121">Popis</span><span class="sxs-lookup"><span data-stu-id="1868c-121">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="53968-122">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="53968-122">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`mscorlib`|<span data-ttu-id="53968-123">Obsahuje `cryptographySettings` elementu.</span><span class="sxs-lookup"><span data-stu-id="53968-123">Contains the `cryptographySettings` element.</span></span>|  
+|`configuration`|<span data-ttu-id="1868c-122">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1868c-122">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`mscorlib`|<span data-ttu-id="1868c-123">Obsahuje `cryptographySettings` elementu.</span><span class="sxs-lookup"><span data-stu-id="1868c-123">Contains the `cryptographySettings` element.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="53968-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="53968-124">Example</span></span>  
- <span data-ttu-id="53968-125">Následující příklad ukazuje, jak používat  **\<cryptographySettings – >** element tak, aby obsahovala kryptografie název mapování a mapování OID.</span><span class="sxs-lookup"><span data-stu-id="53968-125">The following example shows how use the **\<cryptographySettings>** element to contain cryptography name mappings and OID mappings.</span></span> <span data-ttu-id="53968-126">Tento příklad konfiguruje modul runtime, aby <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> vrátí `MyHashClass` objektu a `MyCryptoClass` třídy map k identifikátoru objektu 1.3.36.2.1.</span><span class="sxs-lookup"><span data-stu-id="53968-126">This example configures the runtime so that <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> returns a `MyHashClass` object and the `MyCryptoClass` class maps to the object identifier 1.3.36.2.1.</span></span>  
+## <a name="example"></a><span data-ttu-id="1868c-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="1868c-124">Example</span></span>  
+ <span data-ttu-id="1868c-125">Následující příklad ukazuje, jak používat  **\<cryptographySettings – >** element tak, aby obsahovala kryptografie název mapování a mapování OID.</span><span class="sxs-lookup"><span data-stu-id="1868c-125">The following example shows how use the **\<cryptographySettings>** element to contain cryptography name mappings and OID mappings.</span></span> <span data-ttu-id="1868c-126">Tento příklad konfiguruje modul runtime, aby <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> vrátí `MyHashClass` objektu a `MyCryptoClass` třídy map k identifikátoru objektu 1.3.36.2.1.</span><span class="sxs-lookup"><span data-stu-id="1868c-126">This example configures the runtime so that <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> returns a `MyHashClass` object and the `MyCryptoClass` class maps to the object identifier 1.3.36.2.1.</span></span>  
   
 ```xml  
 <configuration>  
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="53968-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="53968-127">See Also</span></span>  
- [<span data-ttu-id="53968-128">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="53968-128">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [<span data-ttu-id="53968-129">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="53968-129">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
- [<span data-ttu-id="53968-130">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="53968-130">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a><span data-ttu-id="1868c-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="1868c-127">See Also</span></span>  
+ [<span data-ttu-id="1868c-128">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="1868c-128">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="1868c-129">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="1868c-129">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
+ [<span data-ttu-id="1868c-130">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="1868c-130">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)

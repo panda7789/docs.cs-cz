@@ -21,16 +21,17 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 75b8c4d5551c9624852f1e0f730d1215236608de
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ece07fcffbc0d0e6b8cf06cc04866c1b651e6a01
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugnativeframegetlocaldoubleregistervalue-method"></a><span data-ttu-id="42973-102">ICorDebugNativeFrame::GetLocalDoubleRegisterValue – metoda</span><span class="sxs-lookup"><span data-stu-id="42973-102">ICorDebugNativeFrame::GetLocalDoubleRegisterValue Method</span></span>
-<span data-ttu-id="42973-103">Získá hodnotu argumentu nebo místní proměnné, která je uložená v dvě zaregistruje zadaný pro tento nativní rámce.</span><span class="sxs-lookup"><span data-stu-id="42973-103">Gets the value of an argument or local variable that is stored in the two specified registers for this native frame.</span></span>  
+# <a name="icordebugnativeframegetlocaldoubleregistervalue-method"></a><span data-ttu-id="d23ca-102">ICorDebugNativeFrame::GetLocalDoubleRegisterValue – metoda</span><span class="sxs-lookup"><span data-stu-id="d23ca-102">ICorDebugNativeFrame::GetLocalDoubleRegisterValue Method</span></span>
+<span data-ttu-id="d23ca-103">Získá hodnotu argumentu nebo místní proměnné, která je uložená v dvě zaregistruje zadaný pro tento nativní rámce.</span><span class="sxs-lookup"><span data-stu-id="d23ca-103">Gets the value of an argument or local variable that is stored in the two specified registers for this native frame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="42973-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="42973-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d23ca-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d23ca-104">Syntax</span></span>  
   
 ```  
 HRESULT GetLocalDoubleRegisterValue (  
@@ -42,33 +43,33 @@ HRESULT GetLocalDoubleRegisterValue (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="42973-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="42973-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d23ca-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d23ca-105">Parameters</span></span>  
  `highWordReg`  
- <span data-ttu-id="42973-106">[v] Hodnota výčtu "CorDebugRegister", který určuje registrace obsahující slovo vysoké hodnoty.</span><span class="sxs-lookup"><span data-stu-id="42973-106">[in] A value of the "CorDebugRegister" enumeration that specifies the register containing the high word of the value.</span></span>  
+ <span data-ttu-id="d23ca-106">[v] Hodnota výčtu "CorDebugRegister", který určuje registrace obsahující slovo vysoké hodnoty.</span><span class="sxs-lookup"><span data-stu-id="d23ca-106">[in] A value of the "CorDebugRegister" enumeration that specifies the register containing the high word of the value.</span></span>  
   
  `lowWordReg`  
- <span data-ttu-id="42973-107">[v] Hodnota `CorDebugRegister` výčet, který určuje registru obsahujícího nízkou slovo hodnoty.</span><span class="sxs-lookup"><span data-stu-id="42973-107">[in] A value of the `CorDebugRegister` enumeration that specifies the register containing the low word of the value.</span></span>  
+ <span data-ttu-id="d23ca-107">[v] Hodnota `CorDebugRegister` výčet, který určuje registru obsahujícího nízkou slovo hodnoty.</span><span class="sxs-lookup"><span data-stu-id="d23ca-107">[in] A value of the `CorDebugRegister` enumeration that specifies the register containing the low word of the value.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="42973-108">[v] Celé číslo, které určuje velikost podpis binární metadat, který se odkazuje `pvSigBlob` parametr.</span><span class="sxs-lookup"><span data-stu-id="42973-108">[in] An integer that specifies the size of the binary metadata signature which is referenced by the `pvSigBlob` parameter.</span></span>  
+ <span data-ttu-id="d23ca-108">[v] Celé číslo, které určuje velikost podpis binární metadat, který se odkazuje `pvSigBlob` parametr.</span><span class="sxs-lookup"><span data-stu-id="d23ca-108">[in] An integer that specifies the size of the binary metadata signature which is referenced by the `pvSigBlob` parameter.</span></span>  
   
  `pvSigBlob`  
- <span data-ttu-id="42973-109">[v] A `PCCOR_SIGNATURE` hodnotu, která ukazuje na binární metadata podpis hodnotu typu.</span><span class="sxs-lookup"><span data-stu-id="42973-109">[in] A `PCCOR_SIGNATURE` value that points to the binary metadata signature of the value's type.</span></span>  
+ <span data-ttu-id="d23ca-109">[v] A `PCCOR_SIGNATURE` hodnotu, která ukazuje na binární metadata podpis hodnotu typu.</span><span class="sxs-lookup"><span data-stu-id="d23ca-109">[in] A `PCCOR_SIGNATURE` value that points to the binary metadata signature of the value's type.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="42973-110">[out] Ukazatel na adresu "ICorDebugValue" objekt, který reprezentuje načtené hodnoty uložené v zadané Registry.</span><span class="sxs-lookup"><span data-stu-id="42973-110">[out] A pointer to the address of an "ICorDebugValue" object representing the retrieved value that is stored in the specified registers.</span></span>  
+ <span data-ttu-id="d23ca-110">[out] Ukazatel na adresu "ICorDebugValue" objekt, který reprezentuje načtené hodnoty uložené v zadané Registry.</span><span class="sxs-lookup"><span data-stu-id="d23ca-110">[out] A pointer to the address of an "ICorDebugValue" object representing the retrieved value that is stored in the specified registers.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="42973-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="42973-111">Remarks</span></span>  
- <span data-ttu-id="42973-112">`GetLocalDoubleRegisterValue` Metodu lze použít buď v nativní rámce nebo v běhu (JIT)-zkompilovat rámce.</span><span class="sxs-lookup"><span data-stu-id="42973-112">The `GetLocalDoubleRegisterValue` method can be used either in a native frame or a just-in-time (JIT)-compiled frame.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d23ca-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d23ca-111">Remarks</span></span>  
+ <span data-ttu-id="d23ca-112">`GetLocalDoubleRegisterValue` Metodu lze použít buď v nativní rámce nebo v běhu (JIT)-zkompilovat rámce.</span><span class="sxs-lookup"><span data-stu-id="d23ca-112">The `GetLocalDoubleRegisterValue` method can be used either in a native frame or a just-in-time (JIT)-compiled frame.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="42973-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="42973-113">Requirements</span></span>  
- <span data-ttu-id="42973-114">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="42973-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d23ca-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d23ca-113">Requirements</span></span>  
+ <span data-ttu-id="d23ca-114">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d23ca-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="42973-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="42973-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="d23ca-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d23ca-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="42973-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="42973-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="d23ca-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d23ca-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="42973-117">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="42973-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="d23ca-117">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d23ca-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="42973-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="42973-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d23ca-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="d23ca-118">See Also</span></span>  
  

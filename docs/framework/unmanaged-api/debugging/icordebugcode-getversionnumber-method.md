@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cd467f047131bbb078c72db9daca2cbc5a87a7be
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6efcfa60a6254081ea28aeb9d51f41410ab5049e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugcodegetversionnumber-method"></a><span data-ttu-id="b6be0-102">ICorDebugCode::GetVersionNumber – metoda</span><span class="sxs-lookup"><span data-stu-id="b6be0-102">ICorDebugCode::GetVersionNumber Method</span></span>
-<span data-ttu-id="b6be0-103">Získá počet základem jedna, která identifikuje verzi kód, který představuje tuto "ICorDebugCode".</span><span class="sxs-lookup"><span data-stu-id="b6be0-103">Gets the one-based number that identifies the version of the code that this "ICorDebugCode" represents.</span></span>  
+# <a name="icordebugcodegetversionnumber-method"></a><span data-ttu-id="63a1d-102">ICorDebugCode::GetVersionNumber – metoda</span><span class="sxs-lookup"><span data-stu-id="63a1d-102">ICorDebugCode::GetVersionNumber Method</span></span>
+<span data-ttu-id="63a1d-103">Získá počet základem jedna, která identifikuje verzi kód, který představuje tuto "ICorDebugCode".</span><span class="sxs-lookup"><span data-stu-id="63a1d-103">Gets the one-based number that identifies the version of the code that this "ICorDebugCode" represents.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b6be0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6be0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="63a1d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="63a1d-104">Syntax</span></span>  
   
 ```  
 HRESULT GetVersionNumber (  
@@ -38,21 +39,21 @@ HRESULT GetVersionNumber (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b6be0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b6be0-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="63a1d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="63a1d-105">Parameters</span></span>  
  `nVersion`  
- <span data-ttu-id="b6be0-106">[out] Ukazatel na číslo verze kódu.</span><span class="sxs-lookup"><span data-stu-id="b6be0-106">[out] A pointer to the version number of the code.</span></span>  
+ <span data-ttu-id="63a1d-106">[out] Ukazatel na číslo verze kódu.</span><span class="sxs-lookup"><span data-stu-id="63a1d-106">[out] A pointer to the version number of the code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b6be0-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b6be0-107">Remarks</span></span>  
- <span data-ttu-id="b6be0-108">Číslo verze se zvýší pokaždé, když probíhá operace upravit a pokračovat (Šif) kódu.</span><span class="sxs-lookup"><span data-stu-id="b6be0-108">The version number is incremented each time an edit-and-continue (EnC) operation is performed on the code.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="63a1d-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="63a1d-107">Remarks</span></span>  
+ <span data-ttu-id="63a1d-108">Číslo verze se zvýší pokaždé, když probíhá operace upravit a pokračovat (Šif) kódu.</span><span class="sxs-lookup"><span data-stu-id="63a1d-108">The version number is incremented each time an edit-and-continue (EnC) operation is performed on the code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b6be0-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b6be0-109">Requirements</span></span>  
- <span data-ttu-id="b6be0-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b6be0-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="63a1d-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="63a1d-109">Requirements</span></span>  
+ <span data-ttu-id="63a1d-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="63a1d-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b6be0-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b6be0-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="63a1d-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="63a1d-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b6be0-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b6be0-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="63a1d-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="63a1d-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b6be0-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b6be0-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="63a1d-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="63a1d-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b6be0-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="b6be0-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="63a1d-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="63a1d-114">See Also</span></span>  
  

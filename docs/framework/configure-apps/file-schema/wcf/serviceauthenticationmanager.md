@@ -13,22 +13,23 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 077878ae1746008532c3bee6b12913f98afc343f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b46df4f069259ae4bb2d2769e20c6ad9e6090c00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ltserviceauthenticationmanagergt"></a><span data-ttu-id="f89dc-102">&lt;serviceAuthenticationManager&gt;</span><span class="sxs-lookup"><span data-stu-id="f89dc-102">&lt;serviceAuthenticationManager&gt;</span></span>
-<span data-ttu-id="f89dc-103">Poskytuje prvek konfigurace pracovního postupu, který stanoví platnosti přenosu, původce nebo zpráv na úrovni služby...</span><span class="sxs-lookup"><span data-stu-id="f89dc-103">Provides a workflow configuration element that establishes at the service level the validity of a transmission, message, or originator..</span></span>  
+# <a name="ltserviceauthenticationmanagergt"></a><span data-ttu-id="a582b-102">&lt;serviceAuthenticationManager&gt;</span><span class="sxs-lookup"><span data-stu-id="a582b-102">&lt;serviceAuthenticationManager&gt;</span></span>
+<span data-ttu-id="a582b-103">Poskytuje prvek konfigurace pracovního postupu, který stanoví platnosti přenosu, původce nebo zpráv na úrovni služby...</span><span class="sxs-lookup"><span data-stu-id="a582b-103">Provides a workflow configuration element that establishes at the service level the validity of a transmission, message, or originator..</span></span>  
   
-<span data-ttu-id="f89dc-104">\<systém. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="f89dc-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="f89dc-105">\<chování ></span><span class="sxs-lookup"><span data-stu-id="f89dc-105">\<behaviors></span></span>  
-<span data-ttu-id="f89dc-106">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="f89dc-106">\<serviceBehaviors></span></span>  
-<span data-ttu-id="f89dc-107">\<chování ></span><span class="sxs-lookup"><span data-stu-id="f89dc-107">\<behavior></span></span>  
-<span data-ttu-id="f89dc-108">\<serviceAuthenticationManager ></span><span class="sxs-lookup"><span data-stu-id="f89dc-108">\<serviceAuthenticationManager></span></span>  
+<span data-ttu-id="a582b-104">\<systém. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="a582b-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="a582b-105">\<chování ></span><span class="sxs-lookup"><span data-stu-id="a582b-105">\<behaviors></span></span>  
+<span data-ttu-id="a582b-106">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="a582b-106">\<serviceBehaviors></span></span>  
+<span data-ttu-id="a582b-107">\<chování ></span><span class="sxs-lookup"><span data-stu-id="a582b-107">\<behavior></span></span>  
+<span data-ttu-id="a582b-108">\<serviceAuthenticationManager ></span><span class="sxs-lookup"><span data-stu-id="a582b-108">\<serviceAuthenticationManager></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f89dc-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f89dc-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a582b-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a582b-109">Syntax</span></span>  
   
 ```xml  
 <behaviors>
@@ -40,23 +41,23 @@ ms.lasthandoff: 12/02/2017
 </behaviors>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="f89dc-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="f89dc-110">Attributes and Elements</span></span>  
- <span data-ttu-id="f89dc-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="f89dc-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a582b-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="a582b-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="a582b-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="a582b-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="f89dc-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="f89dc-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="a582b-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="a582b-112">Attributes</span></span>  
   
-|<span data-ttu-id="f89dc-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="f89dc-113">Attribute</span></span>|<span data-ttu-id="f89dc-114">Popis</span><span class="sxs-lookup"><span data-stu-id="f89dc-114">Description</span></span>|  
+|<span data-ttu-id="a582b-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="a582b-113">Attribute</span></span>|<span data-ttu-id="a582b-114">Popis</span><span class="sxs-lookup"><span data-stu-id="a582b-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="f89dc-115">serviceAuthenticationManagerType</span><span class="sxs-lookup"><span data-stu-id="f89dc-115">serviceAuthenticationManagerType</span></span>|<span data-ttu-id="f89dc-116">Řetězec, který určuje typ zásady ověřování pro aktuální chování.</span><span class="sxs-lookup"><span data-stu-id="f89dc-116">A string that specifies the type of the authentication policy for the current behavior.</span></span>|  
+|<span data-ttu-id="a582b-115">serviceAuthenticationManagerType</span><span class="sxs-lookup"><span data-stu-id="a582b-115">serviceAuthenticationManagerType</span></span>|<span data-ttu-id="a582b-116">Řetězec, který určuje typ zásady ověřování pro aktuální chování.</span><span class="sxs-lookup"><span data-stu-id="a582b-116">A string that specifies the type of the authentication policy for the current behavior.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="f89dc-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="f89dc-117">Child Elements</span></span>  
- <span data-ttu-id="f89dc-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="f89dc-118">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="a582b-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="a582b-117">Child Elements</span></span>  
+ <span data-ttu-id="a582b-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="a582b-118">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="f89dc-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f89dc-119">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="a582b-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="a582b-119">Parent Elements</span></span>  
   
-|<span data-ttu-id="f89dc-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="f89dc-120">Element</span></span>|<span data-ttu-id="f89dc-121">Popis</span><span class="sxs-lookup"><span data-stu-id="f89dc-121">Description</span></span>|  
+|<span data-ttu-id="a582b-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="a582b-120">Element</span></span>|<span data-ttu-id="a582b-121">Popis</span><span class="sxs-lookup"><span data-stu-id="a582b-121">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="f89dc-122">\<chování ></span><span class="sxs-lookup"><span data-stu-id="f89dc-122">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="f89dc-123">Určuje chování element.</span><span class="sxs-lookup"><span data-stu-id="f89dc-123">Specifies a behavior element.</span></span>|  
+|[<span data-ttu-id="a582b-122">\<chování ></span><span class="sxs-lookup"><span data-stu-id="a582b-122">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="a582b-123">Určuje chování element.</span><span class="sxs-lookup"><span data-stu-id="a582b-123">Specifies a behavior element.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="f89dc-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="f89dc-124">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="a582b-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="a582b-124">See Also</span></span>  
  <xref:System.ServiceModel.Configuration.ServiceAuthenticationElement>

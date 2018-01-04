@@ -19,16 +19,17 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d93002fe5460bfdb36d4e11c74410677b46a98d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 50533ce25812ad49d538c5a6a6c814d7a9704053
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="userthread-structure"></a><span data-ttu-id="7524e-102">USER_THREAD – struktura</span><span class="sxs-lookup"><span data-stu-id="7524e-102">USER_THREAD Structure</span></span>
-<span data-ttu-id="7524e-103">Poskytuje informace o ladicí program o vlákna.</span><span class="sxs-lookup"><span data-stu-id="7524e-103">Provides information to a debugger about a thread.</span></span> <span data-ttu-id="7524e-104">Další informace najdete v tématu [inotifysource2::setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="7524e-104">For more information, see the [INotifySource2::SetNotifyFilter](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) method.</span></span>  
+# <a name="userthread-structure"></a><span data-ttu-id="3ea63-102">USER_THREAD – struktura</span><span class="sxs-lookup"><span data-stu-id="3ea63-102">USER_THREAD Structure</span></span>
+<span data-ttu-id="3ea63-103">Poskytuje informace o ladicí program o vlákna.</span><span class="sxs-lookup"><span data-stu-id="3ea63-103">Provides information to a debugger about a thread.</span></span> <span data-ttu-id="3ea63-104">Další informace najdete v tématu [inotifysource2::setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="3ea63-104">For more information, see the [INotifySource2::SetNotifyFilter](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7524e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7524e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3ea63-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3ea63-105">Syntax</span></span>  
   
 ```  
 typedef struct tagUSER_THREAD  
@@ -39,17 +40,17 @@ typedef struct tagUSER_THREAD
 } USER_THREAD;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="7524e-106">Členové</span><span class="sxs-lookup"><span data-stu-id="7524e-106">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="3ea63-106">Členové</span><span class="sxs-lookup"><span data-stu-id="3ea63-106">Members</span></span>  
   
-|<span data-ttu-id="7524e-107">Člen</span><span class="sxs-lookup"><span data-stu-id="7524e-107">Member</span></span>|<span data-ttu-id="7524e-108">Popis</span><span class="sxs-lookup"><span data-stu-id="7524e-108">Description</span></span>|  
+|<span data-ttu-id="3ea63-107">Člen</span><span class="sxs-lookup"><span data-stu-id="3ea63-107">Member</span></span>|<span data-ttu-id="3ea63-108">Popis</span><span class="sxs-lookup"><span data-stu-id="3ea63-108">Description</span></span>|  
 |------------|-----------------|  
-|`pSidBuffer`|<span data-ttu-id="7524e-109">Adresa vyrovnávací paměti pro přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="7524e-109">Address of thread buffer.</span></span>|  
-|`dwSidLen`|<span data-ttu-id="7524e-110">Délka vyrovnávací paměti přístup z více vláken v bajtech.</span><span class="sxs-lookup"><span data-stu-id="7524e-110">Length of thread buffer, in bytes.</span></span>|  
-|`dwTid`|<span data-ttu-id="7524e-111">ID vlákna.</span><span class="sxs-lookup"><span data-stu-id="7524e-111">Thread ID.</span></span>|  
+|`pSidBuffer`|<span data-ttu-id="3ea63-109">Adresa vyrovnávací paměti pro přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="3ea63-109">Address of thread buffer.</span></span>|  
+|`dwSidLen`|<span data-ttu-id="3ea63-110">Délka vyrovnávací paměti přístup z více vláken v bajtech.</span><span class="sxs-lookup"><span data-stu-id="3ea63-110">Length of thread buffer, in bytes.</span></span>|  
+|`dwTid`|<span data-ttu-id="3ea63-111">ID vlákna.</span><span class="sxs-lookup"><span data-stu-id="3ea63-111">Thread ID.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="7524e-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7524e-112">Requirements</span></span>  
- <span data-ttu-id="7524e-113">**Záhlaví:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="7524e-113">**Header:** ProtocolNotify2.idl</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3ea63-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3ea63-112">Requirements</span></span>  
+ <span data-ttu-id="3ea63-113">**Záhlaví:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="3ea63-113">**Header:** ProtocolNotify2.idl</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7524e-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="7524e-114">See Also</span></span>  
- [<span data-ttu-id="7524e-115">Setnotifyfilter – metoda</span><span class="sxs-lookup"><span data-stu-id="7524e-115">SetNotifyFilter Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)  
- [<span data-ttu-id="7524e-116">Struktury úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="7524e-116">Diagnostics Symbol Store Structures</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+## <a name="see-also"></a><span data-ttu-id="3ea63-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="3ea63-114">See Also</span></span>  
+ [<span data-ttu-id="3ea63-115">SetNotifyFilter – metoda</span><span class="sxs-lookup"><span data-stu-id="3ea63-115">SetNotifyFilter Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)  
+ [<span data-ttu-id="3ea63-116">Struktury pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="3ea63-116">Diagnostics Symbol Store Structures</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

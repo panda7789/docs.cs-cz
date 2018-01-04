@@ -19,14 +19,15 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1a159f2a761acd85e963f34d3d9622b43b3a3aeb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 323250f7aae44d07aed8e79654335f29e53438bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="787de-102">Příklad soketu asynchronní klienta</span><span class="sxs-lookup"><span data-stu-id="787de-102">Asynchronous Client Socket Example</span></span>
-<span data-ttu-id="787de-103">V následujícím příkladu programu vytvoří klienta, který se připojuje k serveru.</span><span class="sxs-lookup"><span data-stu-id="787de-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="787de-104">Klient je vytvořené s nástroji asynchronní soketu a spuštění aplikace klienta není pozastaven, když server vrátí odpověď.</span><span class="sxs-lookup"><span data-stu-id="787de-104">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="787de-105">Aplikace odešle řetězec na server a potom zobrazí řetězec vrácená serverem v konzole.</span><span class="sxs-lookup"><span data-stu-id="787de-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
+# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="d335b-102">Příklad soketu asynchronní klienta</span><span class="sxs-lookup"><span data-stu-id="d335b-102">Asynchronous Client Socket Example</span></span>
+<span data-ttu-id="d335b-103">V následujícím příkladu programu vytvoří klienta, který se připojuje k serveru.</span><span class="sxs-lookup"><span data-stu-id="d335b-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="d335b-104">Klient je vytvořené s nástroji asynchronní soketu a spuštění aplikace klienta není pozastaven, když server vrátí odpověď.</span><span class="sxs-lookup"><span data-stu-id="d335b-104">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="d335b-105">Aplikace odešle řetězec na server a potom zobrazí řetězec vrácená serverem v konzole.</span><span class="sxs-lookup"><span data-stu-id="d335b-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -330,7 +331,7 @@ public class AsynchronousClient {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="787de-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="787de-106">See Also</span></span>  
- [<span data-ttu-id="787de-107">Příklad soketu asynchronní serveru</span><span class="sxs-lookup"><span data-stu-id="787de-107">Asynchronous Server Socket Example</span></span>](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
- [<span data-ttu-id="787de-108">Pomocí soket synchronního serveru</span><span class="sxs-lookup"><span data-stu-id="787de-108">Using a Synchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [<span data-ttu-id="787de-109">Příklady kódu soketů</span><span class="sxs-lookup"><span data-stu-id="787de-109">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
+## <a name="see-also"></a><span data-ttu-id="d335b-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="d335b-106">See Also</span></span>  
+ [<span data-ttu-id="d335b-107">Příklad asynchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="d335b-107">Asynchronous Server Socket Example</span></span>](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
+ [<span data-ttu-id="d335b-108">Použití synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="d335b-108">Using a Synchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [<span data-ttu-id="d335b-109">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="d335b-109">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)

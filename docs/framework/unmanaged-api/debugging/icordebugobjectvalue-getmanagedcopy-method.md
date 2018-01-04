@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f25f1ca70e07fe8db50417b0d12ea6e988410706
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6a65cf1cbfffdb9abacd987a2417b000a464b527
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugobjectvaluegetmanagedcopy-method"></a><span data-ttu-id="b265e-102">ICorDebugObjectValue::GetManagedCopy – metoda</span><span class="sxs-lookup"><span data-stu-id="b265e-102">ICorDebugObjectValue::GetManagedCopy Method</span></span>
-<span data-ttu-id="b265e-103">`GetManagedCopy`je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="b265e-103">`GetManagedCopy` is obsolete.</span></span> <span data-ttu-id="b265e-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="b265e-104">Do not call this method.</span></span>  
+# <a name="icordebugobjectvaluegetmanagedcopy-method"></a><span data-ttu-id="b2d96-102">ICorDebugObjectValue::GetManagedCopy – metoda</span><span class="sxs-lookup"><span data-stu-id="b2d96-102">ICorDebugObjectValue::GetManagedCopy Method</span></span>
+<span data-ttu-id="b2d96-103">`GetManagedCopy`je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="b2d96-103">`GetManagedCopy` is obsolete.</span></span> <span data-ttu-id="b2d96-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="b2d96-104">Do not call this method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b265e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b265e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b2d96-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b2d96-105">Syntax</span></span>  
   
 ```  
 HRESULT GetManagedCopy (  
@@ -38,9 +39,9 @@ HRESULT GetManagedCopy (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="b265e-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b265e-106">Requirements</span></span>  
- <span data-ttu-id="b265e-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b265e-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b2d96-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b2d96-106">Requirements</span></span>  
+ <span data-ttu-id="b2d96-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b2d96-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b265e-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="b265e-108">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="b2d96-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="b2d96-108">See Also</span></span>  
     
  

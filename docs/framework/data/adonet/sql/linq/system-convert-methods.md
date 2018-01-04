@@ -13,18 +13,19 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7f4ed9cc6ae4668fe978b0e7f685e360f1044e6b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 88193d7d8ca1544ad8db0947ff670f30ebddaa7d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemconvert-methods"></a><span data-ttu-id="09968-102">Metodu System.Convert metody</span><span class="sxs-lookup"><span data-stu-id="09968-102">System.Convert Methods</span></span>
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="09968-103">nepodporuje následující <xref:System.Convert> metody.</span><span class="sxs-lookup"><span data-stu-id="09968-103"> does not support the following <xref:System.Convert> methods.</span></span>  
+# <a name="systemconvert-methods"></a><span data-ttu-id="bb829-102">Metodu System.Convert metody</span><span class="sxs-lookup"><span data-stu-id="bb829-102">System.Convert Methods</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="bb829-103">nepodporuje následující <xref:System.Convert> metody.</span><span class="sxs-lookup"><span data-stu-id="bb829-103"> does not support the following <xref:System.Convert> methods.</span></span>  
   
--   <span data-ttu-id="09968-104">Verze <xref:System.IFormatProvider> parametr.</span><span class="sxs-lookup"><span data-stu-id="09968-104">Versions with an <xref:System.IFormatProvider> parameter.</span></span>  
+-   <span data-ttu-id="bb829-104">Verze <xref:System.IFormatProvider> parametr.</span><span class="sxs-lookup"><span data-stu-id="bb829-104">Versions with an <xref:System.IFormatProvider> parameter.</span></span>  
   
--   <span data-ttu-id="09968-105">Metody, které zahrnují char pole nebo pole bajtů:</span><span class="sxs-lookup"><span data-stu-id="09968-105">Methods that involve char arrays or byte arrays:</span></span>  
+-   <span data-ttu-id="bb829-105">Metody, které zahrnují char pole nebo pole bajtů:</span><span class="sxs-lookup"><span data-stu-id="bb829-105">Methods that involve char arrays or byte arrays:</span></span>  
   
     -   <xref:System.Convert.FromBase64CharArray%2A>  
   
@@ -34,19 +35,19 @@ ms.lasthandoff: 10/18/2017
   
     -   <xref:System.Convert.ToBase64String%2A>  
   
--   <span data-ttu-id="09968-106">Následující metody:</span><span class="sxs-lookup"><span data-stu-id="09968-106">The following methods:</span></span>  
+-   <span data-ttu-id="bb829-106">Následující metody:</span><span class="sxs-lookup"><span data-stu-id="bb829-106">The following methods:</span></span>  
   
-    -   <span data-ttu-id="09968-107">`public static <Type2> To<Type2>(<Type1> value);`kde</span><span class="sxs-lookup"><span data-stu-id="09968-107">`public static <Type2> To<Type2>(<Type1> value);` where</span></span>  
+    -   <span data-ttu-id="bb829-107">`public static <Type2> To<Type2>(<Type1> value);`kde</span><span class="sxs-lookup"><span data-stu-id="bb829-107">`public static <Type2> To<Type2>(<Type1> value);` where</span></span>  
   
-         <span data-ttu-id="09968-108">`Type1`a `Type2` jsou jednotlivé `sbyte`, `uint`, `ulong`, nebo `ushort`.</span><span class="sxs-lookup"><span data-stu-id="09968-108">`Type1` and `Type2` are each one of `sbyte`, `uint`, `ulong`, or `ushort`.</span></span>  
+         <span data-ttu-id="bb829-108">`Type1`a `Type2` jsou jednotlivé `sbyte`, `uint`, `ulong`, nebo `ushort`.</span><span class="sxs-lookup"><span data-stu-id="bb829-108">`Type1` and `Type2` are each one of `sbyte`, `uint`, `ulong`, or `ushort`.</span></span>  
   
-    -   <span data-ttu-id="09968-109">C#:</span><span class="sxs-lookup"><span data-stu-id="09968-109">C#:</span></span>  
+    -   <span data-ttu-id="bb829-109">C#:</span><span class="sxs-lookup"><span data-stu-id="bb829-109">C#:</span></span>  
   
          `int To<int type>(string value, int fromBase),`  
   
          `ToString(... value, int toBase)`  
   
-    -   <span data-ttu-id="09968-110">Visual Basic:</span><span class="sxs-lookup"><span data-stu-id="09968-110">Visual Basic:</span></span>  
+    -   <span data-ttu-id="bb829-110">Visual Basic:</span><span class="sxs-lookup"><span data-stu-id="bb829-110">Visual Basic:</span></span>  
   
          `Function To(Of [Numeric])(value as String, fromBase As Integer)`  
   
@@ -58,5 +59,5 @@ ms.lasthandoff: 10/18/2017
   
     -   <xref:System.Convert.ChangeType%2A>  
   
-## <a name="see-also"></a><span data-ttu-id="09968-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="09968-111">See Also</span></span>  
- [<span data-ttu-id="09968-112">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="09968-112">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a><span data-ttu-id="bb829-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="bb829-111">See Also</span></span>  
+ [<span data-ttu-id="bb829-112">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="bb829-112">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

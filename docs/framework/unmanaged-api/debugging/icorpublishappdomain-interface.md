@@ -19,31 +19,32 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e83a6e4ac64d4b47400a3cbb495169ae46298980
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fe8851e0b6e521a293612c140ab8d23e579a6b28
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorpublishappdomain-interface"></a><span data-ttu-id="a9d50-102">ICorPublishAppDomain – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a9d50-102">ICorPublishAppDomain Interface</span></span>
-<span data-ttu-id="a9d50-103">Představuje a poskytuje informace o aplikační doméně.</span><span class="sxs-lookup"><span data-stu-id="a9d50-103">Represents and provides information about an application domain.</span></span>  
+# <a name="icorpublishappdomain-interface"></a><span data-ttu-id="6afac-102">ICorPublishAppDomain – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6afac-102">ICorPublishAppDomain Interface</span></span>
+<span data-ttu-id="6afac-103">Představuje a poskytuje informace o aplikační doméně.</span><span class="sxs-lookup"><span data-stu-id="6afac-103">Represents and provides information about an application domain.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="a9d50-104">Metody</span><span class="sxs-lookup"><span data-stu-id="a9d50-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="6afac-104">Metody</span><span class="sxs-lookup"><span data-stu-id="6afac-104">Methods</span></span>  
   
-|<span data-ttu-id="a9d50-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="a9d50-105">Method</span></span>|<span data-ttu-id="a9d50-106">Popis</span><span class="sxs-lookup"><span data-stu-id="a9d50-106">Description</span></span>|  
+|<span data-ttu-id="6afac-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="6afac-105">Method</span></span>|<span data-ttu-id="6afac-106">Popis</span><span class="sxs-lookup"><span data-stu-id="6afac-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="a9d50-107">Getid – metoda</span><span class="sxs-lookup"><span data-stu-id="a9d50-107">GetID Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|<span data-ttu-id="a9d50-108">Získá jedinečný identifikátor pro tento `ICorPublishAppDomain`.</span><span class="sxs-lookup"><span data-stu-id="a9d50-108">Gets the unique identifier for this `ICorPublishAppDomain`.</span></span>|  
-|[<span data-ttu-id="a9d50-109">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="a9d50-109">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getname-method.md)|<span data-ttu-id="a9d50-110">Získá název domény aplikace odkazuje toto `ICorPublishAppDomain`.</span><span class="sxs-lookup"><span data-stu-id="a9d50-110">Gets the name of the application domain referenced by this `ICorPublishAppDomain`.</span></span>|  
+|[<span data-ttu-id="6afac-107">GetID – metoda</span><span class="sxs-lookup"><span data-stu-id="6afac-107">GetID Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|<span data-ttu-id="6afac-108">Získá jedinečný identifikátor pro tento `ICorPublishAppDomain`.</span><span class="sxs-lookup"><span data-stu-id="6afac-108">Gets the unique identifier for this `ICorPublishAppDomain`.</span></span>|  
+|[<span data-ttu-id="6afac-109">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="6afac-109">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getname-method.md)|<span data-ttu-id="6afac-110">Získá název domény aplikace odkazuje toto `ICorPublishAppDomain`.</span><span class="sxs-lookup"><span data-stu-id="6afac-110">Gets the name of the application domain referenced by this `ICorPublishAppDomain`.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="a9d50-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a9d50-111">Requirements</span></span>  
- <span data-ttu-id="a9d50-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a9d50-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6afac-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6afac-111">Requirements</span></span>  
+ <span data-ttu-id="6afac-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6afac-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a9d50-113">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="a9d50-113">**Header:** CorPub.idl, CorPub.h</span></span>  
+ <span data-ttu-id="6afac-113">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="6afac-113">**Header:** CorPub.idl, CorPub.h</span></span>  
   
- <span data-ttu-id="a9d50-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a9d50-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="6afac-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6afac-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a9d50-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a9d50-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="6afac-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6afac-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a9d50-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="a9d50-116">See Also</span></span>  
- [<span data-ttu-id="a9d50-117">Ladění v rozhraní</span><span class="sxs-lookup"><span data-stu-id="a9d50-117">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [<span data-ttu-id="a9d50-118">Corpubpublish – třída typu Coclass</span><span class="sxs-lookup"><span data-stu-id="a9d50-118">CorpubPublish Coclass</span></span>](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)
+## <a name="see-also"></a><span data-ttu-id="6afac-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="6afac-116">See Also</span></span>  
+ [<span data-ttu-id="6afac-117">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="6afac-117">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [<span data-ttu-id="6afac-118">CorpubPublish – třída typu coclass</span><span class="sxs-lookup"><span data-stu-id="6afac-118">CorpubPublish Coclass</span></span>](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)

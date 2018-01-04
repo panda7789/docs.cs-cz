@@ -21,26 +21,27 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 626b5c1f9bb43f1853a4052dc170c674b7644954
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9128189cd1eedeebf348f55500f1db37fc34d29f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebughandlevaluedispose-method"></a><span data-ttu-id="a144e-102">ICorDebugHandleValue::Dispose – metoda</span><span class="sxs-lookup"><span data-stu-id="a144e-102">ICorDebugHandleValue::Dispose Method</span></span>
-<span data-ttu-id="a144e-103">Uvolní popisovač odkazuje tento objekt icordebughandlevalue – bez explicitně uvolnění ukazatel rozhraní.</span><span class="sxs-lookup"><span data-stu-id="a144e-103">Releases the handle referenced by this ICorDebugHandleValue object without explicitly releasing the interface pointer.</span></span>  
+# <a name="icordebughandlevaluedispose-method"></a><span data-ttu-id="04653-102">ICorDebugHandleValue::Dispose – metoda</span><span class="sxs-lookup"><span data-stu-id="04653-102">ICorDebugHandleValue::Dispose Method</span></span>
+<span data-ttu-id="04653-103">Uvolní popisovač odkazuje tento objekt icordebughandlevalue – bez explicitně uvolnění ukazatel rozhraní.</span><span class="sxs-lookup"><span data-stu-id="04653-103">Releases the handle referenced by this ICorDebugHandleValue object without explicitly releasing the interface pointer.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a144e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a144e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="04653-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="04653-104">Syntax</span></span>  
   
 ```  
 HRESULT Dispose ();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="a144e-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a144e-105">Requirements</span></span>  
- <span data-ttu-id="a144e-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a144e-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="04653-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="04653-105">Requirements</span></span>  
+ <span data-ttu-id="04653-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="04653-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a144e-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a144e-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="04653-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="04653-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a144e-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a144e-108">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="04653-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="04653-108">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a144e-109">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a144e-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="04653-109">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="04653-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

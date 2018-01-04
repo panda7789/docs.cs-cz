@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0ef0df7caad2e903e9325eb692fd318bec0c2c78
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dd15407e0e2866cf7b177c936b172d06ba76d83b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugthread2getvolatileosthreadid-method"></a><span data-ttu-id="a7432-102">ICorDebugThread2::GetVolatileOSThreadID – metoda</span><span class="sxs-lookup"><span data-stu-id="a7432-102">ICorDebugThread2::GetVolatileOSThreadID Method</span></span>
-<span data-ttu-id="a7432-103">Získá identifikátor operačního systému pro tento icordebugthread2 –.</span><span class="sxs-lookup"><span data-stu-id="a7432-103">Gets the operating system thread identifier for this ICorDebugThread2.</span></span>  
+# <a name="icordebugthread2getvolatileosthreadid-method"></a><span data-ttu-id="f7df1-102">ICorDebugThread2::GetVolatileOSThreadID – metoda</span><span class="sxs-lookup"><span data-stu-id="f7df1-102">ICorDebugThread2::GetVolatileOSThreadID Method</span></span>
+<span data-ttu-id="f7df1-103">Získá identifikátor operačního systému pro tento icordebugthread2 –.</span><span class="sxs-lookup"><span data-stu-id="f7df1-103">Gets the operating system thread identifier for this ICorDebugThread2.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a7432-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a7432-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f7df1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7df1-104">Syntax</span></span>  
   
 ```  
 HRESULT GetVolatileOSThreadID (  
@@ -38,15 +39,15 @@ HRESULT GetVolatileOSThreadID (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="a7432-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a7432-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="f7df1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f7df1-105">Parameters</span></span>  
  `pdwTid`  
- <span data-ttu-id="a7432-106">[out] Identifikátor vlákno operační systém pro tento přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="a7432-106">[out] The operating system thread identifier for this thread.</span></span>  
+ <span data-ttu-id="f7df1-106">[out] Identifikátor vlákno operační systém pro tento přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="f7df1-106">[out] The operating system thread identifier for this thread.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a7432-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a7432-107">Requirements</span></span>  
- <span data-ttu-id="a7432-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a7432-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f7df1-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f7df1-107">Requirements</span></span>  
+ <span data-ttu-id="f7df1-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f7df1-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a7432-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a7432-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f7df1-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f7df1-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a7432-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a7432-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f7df1-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f7df1-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a7432-111">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a7432-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="f7df1-111">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f7df1-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

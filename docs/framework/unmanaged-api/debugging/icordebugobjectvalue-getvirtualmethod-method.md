@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b61cdd4cc543f32a720c9066540d3a72c489d81b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 893c21e024d5888467ee25bc32cdb27d7e980d99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugobjectvaluegetvirtualmethod-method"></a><span data-ttu-id="e0228-102">ICorDebugObjectValue::GetVirtualMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="e0228-102">ICorDebugObjectValue::GetVirtualMethod Method</span></span>
-<span data-ttu-id="e0228-103">`GetVirtualMethod`v této verzi rozhraní .NET Framework není implementováno.</span><span class="sxs-lookup"><span data-stu-id="e0228-103">`GetVirtualMethod` is not implemented in this version of the .NET Framework.</span></span>  
+# <a name="icordebugobjectvaluegetvirtualmethod-method"></a><span data-ttu-id="aac65-102">ICorDebugObjectValue::GetVirtualMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="aac65-102">ICorDebugObjectValue::GetVirtualMethod Method</span></span>
+<span data-ttu-id="aac65-103">`GetVirtualMethod`v této verzi rozhraní .NET Framework není implementováno.</span><span class="sxs-lookup"><span data-stu-id="aac65-103">`GetVirtualMethod` is not implemented in this version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e0228-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e0228-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="aac65-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aac65-104">Syntax</span></span>  
   
 ```  
 HRESULT GetVirtualMethod (  
@@ -39,9 +40,9 @@ HRESULT GetVirtualMethod (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="e0228-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e0228-105">Requirements</span></span>  
- <span data-ttu-id="e0228-106">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e0228-106">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="aac65-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aac65-105">Requirements</span></span>  
+ <span data-ttu-id="aac65-106">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="aac65-106">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e0228-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="e0228-107">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="aac65-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="aac65-107">See Also</span></span>  
     
  

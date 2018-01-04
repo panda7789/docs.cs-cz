@@ -16,20 +16,21 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 2f02b09cc5389a90ea42a0dd851579327972c20c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9d51ac97611379cc6c47ef698bc635bbf46d1e5f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-filter-related-data"></a><span data-ttu-id="037d8-102">Postupy: filtrování dat v relaci</span><span class="sxs-lookup"><span data-stu-id="037d8-102">How to: Filter Related Data</span></span>
-<span data-ttu-id="037d8-103">Použití <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> metody určíte, poddotazech, chcete-li omezit množství načíst data.</span><span class="sxs-lookup"><span data-stu-id="037d8-103">Use the <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> method to specify sub-queries to limit the amount of retrieved data.</span></span>  
+# <a name="how-to-filter-related-data"></a><span data-ttu-id="d424b-102">Postupy: filtrování dat v relaci</span><span class="sxs-lookup"><span data-stu-id="d424b-102">How to: Filter Related Data</span></span>
+<span data-ttu-id="d424b-103">Použití <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> metody určíte, poddotazech, chcete-li omezit množství načíst data.</span><span class="sxs-lookup"><span data-stu-id="d424b-103">Use the <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> method to specify sub-queries to limit the amount of retrieved data.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="037d8-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="037d8-104">Example</span></span>  
- <span data-ttu-id="037d8-105">V následujícím příkladu <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> metoda omezení `Orders` načíst na ty, které nebyly dodány dnes.</span><span class="sxs-lookup"><span data-stu-id="037d8-105">In the following example, the <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> method limits the `Orders` retrieved to those that have not been shipped today.</span></span> <span data-ttu-id="037d8-106">Bez tohoto přístupu všechny `Orders` by byly získány, i když se požaduje jenom podmnožina.</span><span class="sxs-lookup"><span data-stu-id="037d8-106">Without this approach, all `Orders` would have been retrieved even though only a subset is desired.</span></span>  
+## <a name="example"></a><span data-ttu-id="d424b-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="d424b-104">Example</span></span>  
+ <span data-ttu-id="d424b-105">V následujícím příkladu <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> metoda omezení `Orders` načíst na ty, které nebyly dodány dnes.</span><span class="sxs-lookup"><span data-stu-id="d424b-105">In the following example, the <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> method limits the `Orders` retrieved to those that have not been shipped today.</span></span> <span data-ttu-id="d424b-106">Bez tohoto přístupu všechny `Orders` by byly získány, i když se požaduje jenom podmnožina.</span><span class="sxs-lookup"><span data-stu-id="d424b-106">Without this approach, all `Orders` would have been retrieved even though only a subset is desired.</span></span>  
   
  [!code-csharp[System.Data.Linq.DataLoadOptions#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/system.data.linq.dataloadoptions/cs/program.cs#1)]
  [!code-vb[System.Data.Linq.DataLoadOptions#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.dataloadoptions/vb/module1.vb#1)]  
   
-## <a name="see-also"></a><span data-ttu-id="037d8-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="037d8-107">See Also</span></span>  
- [<span data-ttu-id="037d8-108">Dotaz na databázi</span><span class="sxs-lookup"><span data-stu-id="037d8-108">Querying the Database</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+## <a name="see-also"></a><span data-ttu-id="d424b-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="d424b-107">See Also</span></span>  
+ [<span data-ttu-id="d424b-108">Dotazování na databázi</span><span class="sxs-lookup"><span data-stu-id="d424b-108">Querying the Database</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)

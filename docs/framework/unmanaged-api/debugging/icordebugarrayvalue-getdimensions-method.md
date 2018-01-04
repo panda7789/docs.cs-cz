@@ -21,16 +21,17 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 364035a0b6e26f5649ef9be5839d096be2fb02dc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1769969d411d66417d2b2df7ddc9f810bd7f48ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugarrayvaluegetdimensions-method"></a><span data-ttu-id="820fc-102">ICorDebugArrayValue::GetDimensions – metoda</span><span class="sxs-lookup"><span data-stu-id="820fc-102">ICorDebugArrayValue::GetDimensions Method</span></span>
-<span data-ttu-id="820fc-103">Získá počet elementů v Každá dimenze toto pole.</span><span class="sxs-lookup"><span data-stu-id="820fc-103">Gets the number of elements in each dimension of this array.</span></span>  
+# <a name="icordebugarrayvaluegetdimensions-method"></a><span data-ttu-id="bd238-102">ICorDebugArrayValue::GetDimensions – metoda</span><span class="sxs-lookup"><span data-stu-id="bd238-102">ICorDebugArrayValue::GetDimensions Method</span></span>
+<span data-ttu-id="bd238-103">Získá počet elementů v Každá dimenze toto pole.</span><span class="sxs-lookup"><span data-stu-id="bd238-103">Gets the number of elements in each dimension of this array.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="820fc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="820fc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bd238-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bd238-104">Syntax</span></span>  
   
 ```  
 HRESULT GetDimensions (  
@@ -40,20 +41,20 @@ HRESULT GetDimensions (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="820fc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="820fc-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="bd238-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bd238-105">Parameters</span></span>  
  `cdim`  
- <span data-ttu-id="820fc-106">[v] Počet dimenzí tohoto objektu ICorDebugArrayValue.</span><span class="sxs-lookup"><span data-stu-id="820fc-106">[in] The number of dimensions of this ICorDebugArrayValue object.</span></span>  
+ <span data-ttu-id="bd238-106">[v] Počet dimenzí tohoto objektu ICorDebugArrayValue.</span><span class="sxs-lookup"><span data-stu-id="bd238-106">[in] The number of dimensions of this ICorDebugArrayValue object.</span></span>  
   
- <span data-ttu-id="820fc-107">Tato hodnota je také velikost `dims` pole, protože jeho velikost se rovná počet rozměrů `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="820fc-107">This value is also the size of the `dims` array because its size is equal to the number of dimensions of the `ICorDebugArrayValue` object.</span></span>  
+ <span data-ttu-id="bd238-107">Tato hodnota je také velikost `dims` pole, protože jeho velikost se rovná počet rozměrů `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="bd238-107">This value is also the size of the `dims` array because its size is equal to the number of dimensions of the `ICorDebugArrayValue` object.</span></span>  
   
  `dims`  
- <span data-ttu-id="820fc-108">[out] Pole celých čísel, z nichž každý určuje počet elementů v dimenzi v tomto `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="820fc-108">[out] An array of integers, each of which specifies the number of elements in a dimension in this `ICorDebugArrayValue` object.</span></span>  
+ <span data-ttu-id="bd238-108">[out] Pole celých čísel, z nichž každý určuje počet elementů v dimenzi v tomto `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="bd238-108">[out] An array of integers, each of which specifies the number of elements in a dimension in this `ICorDebugArrayValue` object.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="820fc-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="820fc-109">Requirements</span></span>  
- <span data-ttu-id="820fc-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="820fc-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bd238-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bd238-109">Requirements</span></span>  
+ <span data-ttu-id="bd238-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bd238-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="820fc-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="820fc-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="bd238-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bd238-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="820fc-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="820fc-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bd238-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bd238-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="820fc-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="820fc-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="bd238-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bd238-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

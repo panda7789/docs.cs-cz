@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2fccfaeb346d59f5cf565f47a9a64e732706adad
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 15383198da740f536061f1568fb06f042117b19c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugfunctiongetnativecode-method"></a><span data-ttu-id="e6521-102">ICorDebugFunction::GetNativeCode – metoda</span><span class="sxs-lookup"><span data-stu-id="e6521-102">ICorDebugFunction::GetNativeCode Method</span></span>
-<span data-ttu-id="e6521-103">Získá nativní kód pro funkce, která je reprezentována tuto instanci ICorDebugFunction.</span><span class="sxs-lookup"><span data-stu-id="e6521-103">Gets the native code for the function that is represented by this ICorDebugFunction instance.</span></span>  
+# <a name="icordebugfunctiongetnativecode-method"></a><span data-ttu-id="7ff2b-102">ICorDebugFunction::GetNativeCode – metoda</span><span class="sxs-lookup"><span data-stu-id="7ff2b-102">ICorDebugFunction::GetNativeCode Method</span></span>
+<span data-ttu-id="7ff2b-103">Získá nativní kód pro funkce, která je reprezentována tuto instanci ICorDebugFunction.</span><span class="sxs-lookup"><span data-stu-id="7ff2b-103">Gets the native code for the function that is represented by this ICorDebugFunction instance.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e6521-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e6521-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7ff2b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ff2b-104">Syntax</span></span>  
   
 ```  
 HRESULT GetNativeCode (  
@@ -38,18 +39,18 @@ HRESULT GetNativeCode (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="e6521-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e6521-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="7ff2b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7ff2b-105">Parameters</span></span>  
  `ppCode`  
- <span data-ttu-id="e6521-106">[out] Ukazatel na ICorDebugCode instanci, která reprezentuje nativní kód pro tuto funkci, nebo hodnota null, pokud je tato funkce Microsoft (MSIL intermediate language) kód, který nebyl v běhu (JIT) zkompilovat.</span><span class="sxs-lookup"><span data-stu-id="e6521-106">[out] A pointer to the ICorDebugCode instance that represents the native code for this function, or null, if this function is Microsoft intermediate language (MSIL) code that has not been just-in-time (JIT) compiled.</span></span>  
+ <span data-ttu-id="7ff2b-106">[out] Ukazatel na ICorDebugCode instanci, která reprezentuje nativní kód pro tuto funkci, nebo hodnota null, pokud je tato funkce Microsoft (MSIL intermediate language) kód, který nebyl v běhu (JIT) zkompilovat.</span><span class="sxs-lookup"><span data-stu-id="7ff2b-106">[out] A pointer to the ICorDebugCode instance that represents the native code for this function, or null, if this function is Microsoft intermediate language (MSIL) code that has not been just-in-time (JIT) compiled.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e6521-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e6521-107">Remarks</span></span>  
- <span data-ttu-id="e6521-108">Pokud funkce, která je reprezentována to `ICorDebugFunction` instance byl kompilována více než jednou, jako v případě obecné typy `GetNativeCode` vrátí objekt náhodných nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="e6521-108">If the function that is represented by this `ICorDebugFunction` instance has been JIT-compiled more than once, as in the case of generic types, `GetNativeCode` returns a random native code object.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7ff2b-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7ff2b-107">Remarks</span></span>  
+ <span data-ttu-id="7ff2b-108">Pokud funkce, která je reprezentována to `ICorDebugFunction` instance byl kompilována více než jednou, jako v případě obecné typy `GetNativeCode` vrátí objekt náhodných nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="7ff2b-108">If the function that is represented by this `ICorDebugFunction` instance has been JIT-compiled more than once, as in the case of generic types, `GetNativeCode` returns a random native code object.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e6521-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e6521-109">Requirements</span></span>  
- <span data-ttu-id="e6521-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e6521-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7ff2b-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7ff2b-109">Requirements</span></span>  
+ <span data-ttu-id="7ff2b-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7ff2b-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e6521-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e6521-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="7ff2b-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="7ff2b-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e6521-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e6521-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="7ff2b-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7ff2b-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e6521-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e6521-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="7ff2b-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7ff2b-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

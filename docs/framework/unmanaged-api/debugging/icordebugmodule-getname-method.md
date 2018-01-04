@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0b10e0eed3c2df8781aa7085cc43157894cc6e2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 64be936277b0ebe04248ae2913a882b628ee363f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugmodulegetname-method"></a><span data-ttu-id="30656-102">ICorDebugModule::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="30656-102">ICorDebugModule::GetName Method</span></span>
-<span data-ttu-id="30656-103">Získá název souboru modulu.</span><span class="sxs-lookup"><span data-stu-id="30656-103">Gets the file name of the module.</span></span>  
+# <a name="icordebugmodulegetname-method"></a><span data-ttu-id="3abba-102">ICorDebugModule::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="3abba-102">ICorDebugModule::GetName Method</span></span>
+<span data-ttu-id="3abba-103">Získá název souboru modulu.</span><span class="sxs-lookup"><span data-stu-id="3abba-103">Gets the file name of the module.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="30656-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="30656-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3abba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3abba-104">Syntax</span></span>  
   
 ```  
 HRESULT GetName(  
@@ -40,28 +41,28 @@ HRESULT GetName(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="30656-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="30656-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="3abba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3abba-105">Parameters</span></span>  
  `cchname`  
- <span data-ttu-id="30656-106">[v] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="30656-106">[in] The size of the `szName` array.</span></span>  
+ <span data-ttu-id="3abba-106">[v] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="3abba-106">[in] The size of the `szName` array.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="30656-107">[v] Ukazatel na délku vrácený název.</span><span class="sxs-lookup"><span data-stu-id="30656-107">[in] A pointer to the length of the returned name.</span></span>  
+ <span data-ttu-id="3abba-107">[v] Ukazatel na délku vrácený název.</span><span class="sxs-lookup"><span data-stu-id="3abba-107">[in] A pointer to the length of the returned name.</span></span>  
   
  `szName`  
- <span data-ttu-id="30656-108">[out] Pole, které ukládá vrácený název.</span><span class="sxs-lookup"><span data-stu-id="30656-108">[out] An array that stores the returned name.</span></span>  
+ <span data-ttu-id="3abba-108">[out] Pole, které ukládá vrácený název.</span><span class="sxs-lookup"><span data-stu-id="3abba-108">[out] An array that stores the returned name.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="30656-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="30656-109">Remarks</span></span>  
- <span data-ttu-id="30656-110">`GetName` Metoda vrátí S_OK HRESULT, pokud název souboru modulu odpovídá názvu na disku.</span><span class="sxs-lookup"><span data-stu-id="30656-110">The `GetName` method returns an S_OK HRESULT if the module's file name matches the name on disk.</span></span> <span data-ttu-id="30656-111">`GetName`Vrátí S_FALSE HRESULT, pokud je název kovodělných, například pro modul dynamické nebo v paměti.</span><span class="sxs-lookup"><span data-stu-id="30656-111">`GetName` returns an S_FALSE HRESULT if the name is fabricated, such as for a dynamic or in-memory module.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3abba-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3abba-109">Remarks</span></span>  
+ <span data-ttu-id="3abba-110">`GetName` Metoda vrátí S_OK HRESULT, pokud název souboru modulu odpovídá názvu na disku.</span><span class="sxs-lookup"><span data-stu-id="3abba-110">The `GetName` method returns an S_OK HRESULT if the module's file name matches the name on disk.</span></span> <span data-ttu-id="3abba-111">`GetName`Vrátí S_FALSE HRESULT, pokud je název kovodělných, například pro modul dynamické nebo v paměti.</span><span class="sxs-lookup"><span data-stu-id="3abba-111">`GetName` returns an S_FALSE HRESULT if the name is fabricated, such as for a dynamic or in-memory module.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="30656-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="30656-112">Requirements</span></span>  
- <span data-ttu-id="30656-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="30656-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3abba-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3abba-112">Requirements</span></span>  
+ <span data-ttu-id="3abba-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3abba-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="30656-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="30656-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="3abba-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="3abba-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="30656-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="30656-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="3abba-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3abba-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="30656-116">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="30656-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="3abba-116">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3abba-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="30656-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="30656-117">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="3abba-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="3abba-117">See Also</span></span>  
     
  

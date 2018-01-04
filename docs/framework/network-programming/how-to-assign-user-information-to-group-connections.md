@@ -15,20 +15,21 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: c9a89b8164fce02f74ddbabae3d54eb8af830dec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 27cc8c14bc0c4418cd7ffbb4eb606c0b2cd7500c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-assign-user-information-to-group-connections"></a><span data-ttu-id="f44f5-102">Postupy: informace o uživateli přiřadit skupiny připojení</span><span class="sxs-lookup"><span data-stu-id="f44f5-102">How to: Assign User Information to Group Connections</span></span>
+# <a name="how-to-assign-user-information-to-group-connections"></a><span data-ttu-id="05b19-102">Postupy: informace o uživateli přiřadit skupiny připojení</span><span class="sxs-lookup"><span data-stu-id="05b19-102">How to: Assign User Information to Group Connections</span></span>
 
   
- <span data-ttu-id="f44f5-103">Následující příklad ukazuje, jak přiřadit informace uživatele do skupiny připojení za předpokladu, že aplikace nastaví proměnné *uživatelské jméno*, *SecurelyStoredPassword*, a  *Domény* předtím, než se nazývá této části kódu a že *uživatelské jméno* je jedinečný.</span><span class="sxs-lookup"><span data-stu-id="f44f5-103">The following example demonstrates how to assign user information to group connections, assuming that the application sets the variables *UserName*, *SecurelyStoredPassword*, and *Domain* before this section of code is called and that *UserName* is unique.</span></span>  
+ <span data-ttu-id="05b19-103">Následující příklad ukazuje, jak přiřadit informace uživatele do skupiny připojení za předpokladu, že aplikace nastaví proměnné *uživatelské jméno*, *SecurelyStoredPassword*, a  *Domény* předtím, než se nazývá této části kódu a že *uživatelské jméno* je jedinečný.</span><span class="sxs-lookup"><span data-stu-id="05b19-103">The following example demonstrates how to assign user information to group connections, assuming that the application sets the variables *UserName*, *SecurelyStoredPassword*, and *Domain* before this section of code is called and that *UserName* is unique.</span></span>  
   
-### <a name="to-assign-user-information-to-a-group-connection"></a><span data-ttu-id="f44f5-104">Informace o uživateli přiřadit skupiny připojení</span><span class="sxs-lookup"><span data-stu-id="f44f5-104">To assign user information to a group connection</span></span>  
+### <a name="to-assign-user-information-to-a-group-connection"></a><span data-ttu-id="05b19-104">Informace o uživateli přiřadit skupiny připojení</span><span class="sxs-lookup"><span data-stu-id="05b19-104">To assign user information to a group connection</span></span>  
   
-1.  <span data-ttu-id="f44f5-105">Vytvořte skupinu název připojení.</span><span class="sxs-lookup"><span data-stu-id="f44f5-105">Create a connection group name.</span></span>  
+1.  <span data-ttu-id="05b19-105">Vytvořte skupinu název připojení.</span><span class="sxs-lookup"><span data-stu-id="05b19-105">Create a connection group name.</span></span>  
   
     ```csharp  
     SHA1Managed Sha1 = new SHA1Managed();  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
     Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
     ```  
   
-2.  <span data-ttu-id="f44f5-106">Vytvořte žádost pro konkrétní adresy URL.</span><span class="sxs-lookup"><span data-stu-id="f44f5-106">Create a request for a specific URL.</span></span> <span data-ttu-id="f44f5-107">Například následující kód vytvoří žádost pro adresu URL`http://www.contoso.com.`</span><span class="sxs-lookup"><span data-stu-id="f44f5-107">For example, the following code creates a request for the URL `http://www.contoso.com.`</span></span>  
+2.  <span data-ttu-id="05b19-106">Vytvořte žádost pro konkrétní adresy URL.</span><span class="sxs-lookup"><span data-stu-id="05b19-106">Create a request for a specific URL.</span></span> <span data-ttu-id="05b19-107">Například následující kód vytvoří žádost pro adresu URL`http://www.contoso.com.`</span><span class="sxs-lookup"><span data-stu-id="05b19-107">For example, the following code creates a request for the URL `http://www.contoso.com.`</span></span>  
   
     ```csharp  
     WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
@@ -52,7 +53,7 @@ ms.lasthandoff: 11/21/2017
     Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ```  
   
-3.  <span data-ttu-id="f44f5-108">Nastavte přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** načíst **WebResponse** objektu.</span><span class="sxs-lookup"><span data-stu-id="f44f5-108">Set the credentials and Connection GroupName for the Web request, and call **GetResponse** to retrieve a **WebResponse** object.</span></span>  
+3.  <span data-ttu-id="05b19-108">Nastavte přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** načíst **WebResponse** objektu.</span><span class="sxs-lookup"><span data-stu-id="05b19-108">Set the credentials and Connection GroupName for the Web request, and call **GetResponse** to retrieve a **WebResponse** object.</span></span>  
   
     ```csharp  
     myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
     Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
     ```  
   
-4.  <span data-ttu-id="f44f5-109">Po použití objektu WebRespose zavřete datového proudu odpovědi.</span><span class="sxs-lookup"><span data-stu-id="f44f5-109">Close the response stream after using the WebRespose object.</span></span>  
+4.  <span data-ttu-id="05b19-109">Po použití objektu WebRespose zavřete datového proudu odpovědi.</span><span class="sxs-lookup"><span data-stu-id="05b19-109">Close the response stream after using the WebRespose object.</span></span>  
   
     ```csharp  
     MyWebResponse.Close();  
@@ -78,7 +79,7 @@ ms.lasthandoff: 11/21/2017
     MyWebResponse.Close()  
     ```  
   
- <span data-ttu-id="f44f5-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="f44f5-110">Example</span></span>  
+ <span data-ttu-id="05b19-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="05b19-110">Example</span></span>  
   
 ```csharp  
 // Create a connection group name.  
@@ -117,6 +118,6 @@ Dim myWebResponse As WebResponse = myWebRequest.GetResponse()
 MyWebResponse.Close()  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f44f5-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="f44f5-111">See Also</span></span>  
- [<span data-ttu-id="f44f5-112">Správa připojení</span><span class="sxs-lookup"><span data-stu-id="f44f5-112">Managing Connections</span></span>](../../../docs/framework/network-programming/managing-connections.md)  
- [<span data-ttu-id="f44f5-113">Seskupení připojení</span><span class="sxs-lookup"><span data-stu-id="f44f5-113">Connection Grouping</span></span>](../../../docs/framework/network-programming/connection-grouping.md)
+## <a name="see-also"></a><span data-ttu-id="05b19-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="05b19-111">See Also</span></span>  
+ [<span data-ttu-id="05b19-112">Správa připojení</span><span class="sxs-lookup"><span data-stu-id="05b19-112">Managing Connections</span></span>](../../../docs/framework/network-programming/managing-connections.md)  
+ [<span data-ttu-id="05b19-113">Seskupení připojení</span><span class="sxs-lookup"><span data-stu-id="05b19-113">Connection Grouping</span></span>](../../../docs/framework/network-programming/connection-grouping.md)

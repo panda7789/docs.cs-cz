@@ -21,16 +21,17 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1124eac951e32dbf1cedb7926f582ec6abb99007
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8da6de0271ddce5b956e667420a206c09cc291d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedwriter3openmethod2-method"></a><span data-ttu-id="90d25-102">ISymUnmanagedWriter3::OpenMethod2 – metoda</span><span class="sxs-lookup"><span data-stu-id="90d25-102">ISymUnmanagedWriter3::OpenMethod2 Method</span></span>
-<span data-ttu-id="90d25-103">Otevře metodu a poskytuje její skutečné části posun v bitové kopii.</span><span class="sxs-lookup"><span data-stu-id="90d25-103">Opens a method and provides its real section offset in the image.</span></span>  
+# <a name="isymunmanagedwriter3openmethod2-method"></a><span data-ttu-id="62c6c-102">ISymUnmanagedWriter3::OpenMethod2 – metoda</span><span class="sxs-lookup"><span data-stu-id="62c6c-102">ISymUnmanagedWriter3::OpenMethod2 Method</span></span>
+<span data-ttu-id="62c6c-103">Otevře metodu a poskytuje její skutečné části posun v bitové kopii.</span><span class="sxs-lookup"><span data-stu-id="62c6c-103">Opens a method and provides its real section offset in the image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="90d25-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="90d25-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="62c6c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="62c6c-104">Syntax</span></span>  
   
 ```  
 HRESULT OpenMethod2(   
@@ -39,22 +40,22 @@ HRESULT OpenMethod2(
     [in] ULONG32 offset);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="90d25-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="90d25-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="62c6c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="62c6c-105">Parameters</span></span>  
  `method`  
- <span data-ttu-id="90d25-106">[v] Token metadata pro metodu chcete otevřít.</span><span class="sxs-lookup"><span data-stu-id="90d25-106">[in] The metadata token for the method to be opened.</span></span>  
+ <span data-ttu-id="62c6c-106">[v] Token metadata pro metodu chcete otevřít.</span><span class="sxs-lookup"><span data-stu-id="62c6c-106">[in] The metadata token for the method to be opened.</span></span>  
   
  `isect`  
- <span data-ttu-id="90d25-107">[v] Část posun v bitové kopii.</span><span class="sxs-lookup"><span data-stu-id="90d25-107">[in] The section offset in the image.</span></span>  
+ <span data-ttu-id="62c6c-107">[v] Část posun v bitové kopii.</span><span class="sxs-lookup"><span data-stu-id="62c6c-107">[in] The section offset in the image.</span></span>  
   
  `offset`  
- <span data-ttu-id="90d25-108">[v] Posun v bitové kopii.</span><span class="sxs-lookup"><span data-stu-id="90d25-108">[in] The offset in the image.</span></span>  
+ <span data-ttu-id="62c6c-108">[v] Posun v bitové kopii.</span><span class="sxs-lookup"><span data-stu-id="62c6c-108">[in] The offset in the image.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="90d25-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="90d25-109">Return Value</span></span>  
- <span data-ttu-id="90d25-110">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="90d25-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="62c6c-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="62c6c-109">Return Value</span></span>  
+ <span data-ttu-id="62c6c-110">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="62c6c-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="90d25-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="90d25-111">Requirements</span></span>  
- <span data-ttu-id="90d25-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="90d25-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="62c6c-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="62c6c-111">Requirements</span></span>  
+ <span data-ttu-id="62c6c-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="62c6c-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="90d25-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="90d25-113">See Also</span></span>  
- [<span data-ttu-id="90d25-114">ISymUnmanagedWriter3 – rozhraní rozhraní</span><span class="sxs-lookup"><span data-stu-id="90d25-114">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)  
- [<span data-ttu-id="90d25-115">Openmethod – metoda</span><span class="sxs-lookup"><span data-stu-id="90d25-115">OpenMethod Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)
+## <a name="see-also"></a><span data-ttu-id="62c6c-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="62c6c-113">See Also</span></span>  
+ [<span data-ttu-id="62c6c-114">ISymUnmanagedWriter3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="62c6c-114">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)  
+ [<span data-ttu-id="62c6c-115">OpenMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="62c6c-115">OpenMethod Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)
