@@ -17,25 +17,26 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 79797aad6c26975dd2f4fa1b087d525fbaebb253
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c832a091f7c6fec185c657d104437c42a7ae4d33
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="scrollviewer-how-to-topics"></a><span data-ttu-id="c9a60-102">ScrollViewer – postupy</span><span class="sxs-lookup"><span data-stu-id="c9a60-102">ScrollViewer How-to Topics</span></span>
-<span data-ttu-id="c9a60-103">Témata v této části ukazují, jak používat <xref:System.Windows.Controls.ScrollViewer> elementu, který chcete vytvořit posouvatelného oblasti ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="c9a60-103">The topics in this section demonstrate how to use the <xref:System.Windows.Controls.ScrollViewer> element to create scrollable regions in your applications.</span></span>  
+# <a name="scrollviewer-how-to-topics"></a><span data-ttu-id="c4779-102">ScrollViewer – postupy</span><span class="sxs-lookup"><span data-stu-id="c4779-102">ScrollViewer How-to Topics</span></span>
+<span data-ttu-id="c4779-103">Témata v této části ukazují, jak používat <xref:System.Windows.Controls.ScrollViewer> elementu, který chcete vytvořit posouvatelného oblasti ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="c4779-103">The topics in this section demonstrate how to use the <xref:System.Windows.Controls.ScrollViewer> element to create scrollable regions in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="c9a60-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c9a60-104">In This Section</span></span>  
- [<span data-ttu-id="c9a60-105">Zpracovat událost ScrollChanged</span><span class="sxs-lookup"><span data-stu-id="c9a60-105">Handle the ScrollChanged Event</span></span>](../../../../docs/framework/wpf/controls/how-to-handle-the-scrollchanged-event.md)  
- [<span data-ttu-id="c9a60-106">Posuv obsahu pomocí rozhraní IScrollInfo</span><span class="sxs-lookup"><span data-stu-id="c9a60-106">Scroll Content by Using the IScrollInfo Interface</span></span>](../../../../docs/framework/wpf/controls/how-to-scroll-content-by-using-the-iscrollinfo-interface.md)  
- [<span data-ttu-id="c9a60-107">Použití metody posouvání obsahu ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="c9a60-107">Use the Content-Scrolling Methods of ScrollViewer</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-content-scrolling-methods-of-scrollviewer.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c4779-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c4779-104">In This Section</span></span>  
+ [<span data-ttu-id="c4779-105">Zpracování události ScrollChanged</span><span class="sxs-lookup"><span data-stu-id="c4779-105">Handle the ScrollChanged Event</span></span>](../../../../docs/framework/wpf/controls/how-to-handle-the-scrollchanged-event.md)  
+ [<span data-ttu-id="c4779-106">Posunutí obsahu použitím rozhraní IScrollInfo</span><span class="sxs-lookup"><span data-stu-id="c4779-106">Scroll Content by Using the IScrollInfo Interface</span></span>](../../../../docs/framework/wpf/controls/how-to-scroll-content-by-using-the-iscrollinfo-interface.md)  
+ [<span data-ttu-id="c4779-107">Použití metod pro posunutí obsahu prvku ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="c4779-107">Use the Content-Scrolling Methods of ScrollViewer</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-content-scrolling-methods-of-scrollviewer.md)  
   
-## <a name="reference"></a><span data-ttu-id="c9a60-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c9a60-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c4779-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c4779-108">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   
  <xref:System.Windows.Controls.ScrollViewer>  
   
-## <a name="see-also"></a><span data-ttu-id="c9a60-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="c9a60-109">See Also</span></span>  
- [<span data-ttu-id="c9a60-110">Přehled panelů</span><span class="sxs-lookup"><span data-stu-id="c9a60-110">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [<span data-ttu-id="c9a60-111">Rozložení</span><span class="sxs-lookup"><span data-stu-id="c9a60-111">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)
+## <a name="see-also"></a><span data-ttu-id="c4779-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="c4779-109">See Also</span></span>  
+ [<span data-ttu-id="c4779-110">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="c4779-110">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [<span data-ttu-id="c4779-111">Rozložení</span><span class="sxs-lookup"><span data-stu-id="c4779-111">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)

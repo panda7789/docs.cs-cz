@@ -17,17 +17,18 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 33a2e7200a1154bbe79190809511401e6f12b370
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 378dac360e94d07bf8475286559e6aeed5321bbc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="digital-ink-overviews"></a><span data-ttu-id="f112c-102">Přehled digitálního inkoustu</span><span class="sxs-lookup"><span data-stu-id="f112c-102">Digital Ink Overviews</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="f112c-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f112c-103">In This Section</span></span>  
- [<span data-ttu-id="f112c-104">Začínáme s rukopisu</span><span class="sxs-lookup"><span data-stu-id="f112c-104">Getting Started with Ink</span></span>](../../../../docs/framework/wpf/advanced/getting-started-with-ink.md)  
-  [<span data-ttu-id="f112c-105">Shromažďování rukopisu</span><span class="sxs-lookup"><span data-stu-id="f112c-105">Collecting Ink</span></span>](../../../../docs/framework/wpf/advanced/collecting-ink.md)  
-  [<span data-ttu-id="f112c-106">Rozpoznávání rukopisu</span><span class="sxs-lookup"><span data-stu-id="f112c-106">Handwriting Recognition</span></span>](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)  
-  [<span data-ttu-id="f112c-107">Ukládání rukopisu</span><span class="sxs-lookup"><span data-stu-id="f112c-107">Storing Ink</span></span>](../../../../docs/framework/wpf/advanced/storing-ink.md)  
-  [<span data-ttu-id="f112c-108">Objekt modelu rukopisu: Windows Forms a rozhraní COM a WPF</span><span class="sxs-lookup"><span data-stu-id="f112c-108">The Ink Object Model: Windows Forms and COM versus WPF</span></span>](../../../../docs/framework/wpf/advanced/the-ink-object-model-windows-forms-and-com-versus-wpf.md)  
-  [<span data-ttu-id="f112c-109">Pokročilé rukopisu zpracování</span><span class="sxs-lookup"><span data-stu-id="f112c-109">Advanced Ink Handling</span></span>](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+# <a name="digital-ink-overviews"></a><span data-ttu-id="d8406-102">Přehled digitálního inkoustu</span><span class="sxs-lookup"><span data-stu-id="d8406-102">Digital Ink Overviews</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="d8406-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d8406-103">In This Section</span></span>  
+ [<span data-ttu-id="d8406-104">Začínáme s rukopisem</span><span class="sxs-lookup"><span data-stu-id="d8406-104">Getting Started with Ink</span></span>](../../../../docs/framework/wpf/advanced/getting-started-with-ink.md)  
+  [<span data-ttu-id="d8406-105">Shromáždění rukopisu</span><span class="sxs-lookup"><span data-stu-id="d8406-105">Collecting Ink</span></span>](../../../../docs/framework/wpf/advanced/collecting-ink.md)  
+  [<span data-ttu-id="d8406-106">Rozpoznávání textu psaného rukou</span><span class="sxs-lookup"><span data-stu-id="d8406-106">Handwriting Recognition</span></span>](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)  
+  [<span data-ttu-id="d8406-107">Uložení rukopisu</span><span class="sxs-lookup"><span data-stu-id="d8406-107">Storing Ink</span></span>](../../../../docs/framework/wpf/advanced/storing-ink.md)  
+  [<span data-ttu-id="d8406-108">Model objektů rukopisu: Windows Forms a COM vzhledem k platformě WPF</span><span class="sxs-lookup"><span data-stu-id="d8406-108">The Ink Object Model: Windows Forms and COM versus WPF</span></span>](../../../../docs/framework/wpf/advanced/the-ink-object-model-windows-forms-and-com-versus-wpf.md)  
+  [<span data-ttu-id="d8406-109">Pokročilé zpracování rukopisu</span><span class="sxs-lookup"><span data-stu-id="d8406-109">Advanced Ink Handling</span></span>](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)

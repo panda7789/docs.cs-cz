@@ -17,29 +17,30 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0df1c157466fd97a66c6fda4ebbca63e5c3fd23e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: ac2c3aeec1419dbedc0d5260f77c8543919f3938
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="globalization-and-localization-how-to-topics"></a><span data-ttu-id="41bd6-102">Postupy: Témata globalizace a lokalizace</span><span class="sxs-lookup"><span data-stu-id="41bd6-102">Globalization and Localization How-to Topics</span></span>
-<span data-ttu-id="41bd6-103">Témata v této části popisují, jak pro vývoj aplikací připravených.</span><span class="sxs-lookup"><span data-stu-id="41bd6-103">The topics in this section describe how to develop world-ready applications.</span></span>  
+# <a name="globalization-and-localization-how-to-topics"></a><span data-ttu-id="9a1fb-102">Postupy: Témata globalizace a lokalizace</span><span class="sxs-lookup"><span data-stu-id="9a1fb-102">Globalization and Localization How-to Topics</span></span>
+<span data-ttu-id="9a1fb-103">Témata v této části popisují, jak pro vývoj aplikací připravených.</span><span class="sxs-lookup"><span data-stu-id="9a1fb-103">The topics in this section describe how to develop world-ready applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="41bd6-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="41bd6-104">In This Section</span></span>  
- [<span data-ttu-id="41bd6-105">Lokalizace aplikace</span><span class="sxs-lookup"><span data-stu-id="41bd6-105">Localize an Application</span></span>](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)  
- [<span data-ttu-id="41bd6-106">Použití automatického rozložení pro vytvoření tlačítka</span><span class="sxs-lookup"><span data-stu-id="41bd6-106">Use Automatic Layout to Create a Button</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
- [<span data-ttu-id="41bd6-107">Pomocí automatického rozložení mřížky</span><span class="sxs-lookup"><span data-stu-id="41bd6-107">Use a Grid for Automatic Layout</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
- [<span data-ttu-id="41bd6-108">Používání ResourceDictionary ke správě prostředků lokalizovatelný řetězec</span><span class="sxs-lookup"><span data-stu-id="41bd6-108">Use a ResourceDictionary to Manage Localizable String Resources</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md)  
- [<span data-ttu-id="41bd6-109">Využití prostředků v možnosti lokalizace aplikací</span><span class="sxs-lookup"><span data-stu-id="41bd6-109">Use Resources in Localizable Applications</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-resources-in-localizable-applications.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9a1fb-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9a1fb-104">In This Section</span></span>  
+ [<span data-ttu-id="9a1fb-105">Lokalizace aplikace</span><span class="sxs-lookup"><span data-stu-id="9a1fb-105">Localize an Application</span></span>](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)  
+ [<span data-ttu-id="9a1fb-106">Vytvoření tlačítka pomocí automatického rozložení</span><span class="sxs-lookup"><span data-stu-id="9a1fb-106">Use Automatic Layout to Create a Button</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
+ [<span data-ttu-id="9a1fb-107">Automatické rozložení použitím mřížky</span><span class="sxs-lookup"><span data-stu-id="9a1fb-107">Use a Grid for Automatic Layout</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
+ [<span data-ttu-id="9a1fb-108">Správa prostředků lokalizovatelných řetězců pomocí ResourceDictionary</span><span class="sxs-lookup"><span data-stu-id="9a1fb-108">Use a ResourceDictionary to Manage Localizable String Resources</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md)  
+ [<span data-ttu-id="9a1fb-109">Použití prostředků v lokalizovatelných aplikacích</span><span class="sxs-lookup"><span data-stu-id="9a1fb-109">Use Resources in Localizable Applications</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-resources-in-localizable-applications.md)  
   
-## <a name="reference"></a><span data-ttu-id="41bd6-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="41bd6-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="9a1fb-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="9a1fb-110">Reference</span></span>  
  <xref:System.Globalization>  
   
  <xref:System.Windows.FrameworkElement.FlowDirection%2A>  
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [<span data-ttu-id="41bd6-111">XML: lang v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="41bd6-111">xml:lang Handling in XAML</span></span>](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md)  
+ [<span data-ttu-id="9a1fb-111">Práce s atributem xml:lang v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="9a1fb-111">xml:lang Handling in XAML</span></span>](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="41bd6-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="41bd6-112">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="9a1fb-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="9a1fb-112">Related Sections</span></span>

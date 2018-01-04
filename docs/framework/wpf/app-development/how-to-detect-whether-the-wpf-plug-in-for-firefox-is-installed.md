@@ -19,20 +19,21 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3012afc118420a83c869785d26c28f1eee969cb3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87e821bd95679372fd169b7880e969fd10b5d03c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a><span data-ttu-id="31634-102">Postupy: Zjištění instalovaného modulu plugin WPF pro Firefox</span><span class="sxs-lookup"><span data-stu-id="31634-102">How to: Detect Whether the WPF Plug-In for Firefox Is Installed</span></span>
-<span data-ttu-id="31634-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Modulu plug-in pro Firefox umožňuje [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a ztrátě souborů XAML pro spouštění v prohlížeči Mozilla Firefox.</span><span class="sxs-lookup"><span data-stu-id="31634-103">The [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] plug-in for Firefox enables [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] and loose XAML files to run in the Mozilla Firefox browser.</span></span> <span data-ttu-id="31634-104">Toto téma obsahuje skript napsaný v HTML a JavaScript, který mohou správci zjistit, zda je nainstalována WPF modulu plug-in pro Firefox.</span><span class="sxs-lookup"><span data-stu-id="31634-104">This topic provides a script written in HTML and JavaScript that administrators can use to determine whether the WPF plug-in for Firefox is installed.</span></span>  
+# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a><span data-ttu-id="d54ae-102">Postupy: Zjištění instalovaného modulu plugin WPF pro Firefox</span><span class="sxs-lookup"><span data-stu-id="d54ae-102">How to: Detect Whether the WPF Plug-In for Firefox Is Installed</span></span>
+<span data-ttu-id="d54ae-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Modulu plug-in pro Firefox umožňuje [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a ztrátě souborů XAML pro spouštění v prohlížeči Mozilla Firefox.</span><span class="sxs-lookup"><span data-stu-id="d54ae-103">The [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] plug-in for Firefox enables [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] and loose XAML files to run in the Mozilla Firefox browser.</span></span> <span data-ttu-id="d54ae-104">Toto téma obsahuje skript napsaný v HTML a JavaScript, který mohou správci zjistit, zda je nainstalována WPF modulu plug-in pro Firefox.</span><span class="sxs-lookup"><span data-stu-id="d54ae-104">This topic provides a script written in HTML and JavaScript that administrators can use to determine whether the WPF plug-in for Firefox is installed.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="31634-105">Další informace o instalaci, nasazování a zjišťování [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], najdete v části [instalaci rozhraní .NET Framework pro vývojáře](../../../../docs/framework/install/guide-for-developers.md).</span><span class="sxs-lookup"><span data-stu-id="31634-105">For more information about installing, deploying, and detecting the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], see [Install the .NET Framework for developers](../../../../docs/framework/install/guide-for-developers.md).</span></span>  
+>  <span data-ttu-id="d54ae-105">Další informace o instalaci, nasazování a zjišťování [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], najdete v části [instalaci rozhraní .NET Framework pro vývojáře](../../../../docs/framework/install/guide-for-developers.md).</span><span class="sxs-lookup"><span data-stu-id="d54ae-105">For more information about installing, deploying, and detecting the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], see [Install the .NET Framework for developers](../../../../docs/framework/install/guide-for-developers.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="31634-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="31634-106">Example</span></span>  
- <span data-ttu-id="31634-107">Když [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je nainstalovaná, klientský počítač je nakonfigurován v grafickém subsystému WPF, která se modul plug-in pro Firefox.</span><span class="sxs-lookup"><span data-stu-id="31634-107">When the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, the client computer is configured with a WPF plug-in for Firefox.</span></span> <span data-ttu-id="31634-108">Následující ukázkový skript kontroluje pro modul plug-in WPF Firefox a poté zobrazí zprávu příslušný stav.</span><span class="sxs-lookup"><span data-stu-id="31634-108">The following example script checks for the WPF plug-in for Firefox and then displays an appropriate status message.</span></span>  
+## <a name="example"></a><span data-ttu-id="d54ae-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="d54ae-106">Example</span></span>  
+ <span data-ttu-id="d54ae-107">Když [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je nainstalovaná, klientský počítač je nakonfigurován v grafickém subsystému WPF, která se modul plug-in pro Firefox.</span><span class="sxs-lookup"><span data-stu-id="d54ae-107">When the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, the client computer is configured with a WPF plug-in for Firefox.</span></span> <span data-ttu-id="d54ae-108">Následující ukázkový skript kontroluje pro modul plug-in WPF Firefox a poté zobrazí zprávu příslušný stav.</span><span class="sxs-lookup"><span data-stu-id="d54ae-108">The following example script checks for the WPF plug-in for Firefox and then displays an appropriate status message.</span></span>  
   
 ```  
 <HTML>  
@@ -64,15 +65,15 @@ ms.lasthandoff: 11/21/2017
 </HTML>  
 ```  
   
- <span data-ttu-id="31634-109">Pokud kontrolu pro modul plug-in WPF Firefox úspěšné, se zobrazí následující zprávu:</span><span class="sxs-lookup"><span data-stu-id="31634-109">If the check for the WPF plug-in for Firefox is successful, the following status message is displayed:</span></span>  
+ <span data-ttu-id="d54ae-109">Pokud kontrolu pro modul plug-in WPF Firefox úspěšné, se zobrazí následující zprávu:</span><span class="sxs-lookup"><span data-stu-id="d54ae-109">If the check for the WPF plug-in for Firefox is successful, the following status message is displayed:</span></span>  
   
  `The WPF plug-in for Firefox is installed.`  
   
- <span data-ttu-id="31634-110">Jinak se zobrazí následující zprávu:</span><span class="sxs-lookup"><span data-stu-id="31634-110">Otherwise, the following status message is displayed:</span></span>  
+ <span data-ttu-id="d54ae-110">Jinak se zobrazí následující zprávu:</span><span class="sxs-lookup"><span data-stu-id="d54ae-110">Otherwise, the following status message is displayed:</span></span>  
   
  `The WPF plug-in for Firefox is not installed. Please install or reinstall the .NET Framework 3.5.`  
   
-## <a name="see-also"></a><span data-ttu-id="31634-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="31634-111">See Also</span></span>  
- [<span data-ttu-id="31634-112">Zjistit, zda je nainstalována rozhraní .NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="31634-112">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
- [<span data-ttu-id="31634-113">Zjistit, zda je nainstalována rozhraní .NET Framework 3.5</span><span class="sxs-lookup"><span data-stu-id="31634-113">Detect Whether the .NET Framework 3.5 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
- [<span data-ttu-id="31634-114">Přehled aplikace prohlížeče WPF XAML</span><span class="sxs-lookup"><span data-stu-id="31634-114">WPF XAML Browser Applications Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)
+## <a name="see-also"></a><span data-ttu-id="d54ae-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="d54ae-111">See Also</span></span>  
+ [<span data-ttu-id="d54ae-112">Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="d54ae-112">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
+ [<span data-ttu-id="d54ae-113">Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5</span><span class="sxs-lookup"><span data-stu-id="d54ae-113">Detect Whether the .NET Framework 3.5 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
+ [<span data-ttu-id="d54ae-114">Přehled aplikací Prohlížeče WPF XAML</span><span class="sxs-lookup"><span data-stu-id="d54ae-114">WPF XAML Browser Applications Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)

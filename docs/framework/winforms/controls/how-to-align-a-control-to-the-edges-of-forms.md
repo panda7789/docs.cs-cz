@@ -21,29 +21,30 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a55212ac4d770848355ace1b0ef3fff3cc50f871
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7979b58d52c6df7341259af50a39e104781dd148
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-align-a-control-to-the-edges-of-forms"></a><span data-ttu-id="be9c4-102">Postupy: Zarovnávání ovládacího prvku k okrajům formulářů</span><span class="sxs-lookup"><span data-stu-id="be9c4-102">How to: Align a Control to the Edges of Forms</span></span>
-<span data-ttu-id="be9c4-103">Můžete provést kontrolu nad zarovnání na hranu svých formulářů podle nastavení <xref:System.Windows.Forms.Control.Dock%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="be9c4-103">You can make your control align to the edge of your forms by setting the <xref:System.Windows.Forms.Control.Dock%2A> property.</span></span> <span data-ttu-id="be9c4-104">Tato vlastnost určuje, kde vlastní ovládací prvek nachází ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="be9c4-104">This property designates where your control resides in the form.</span></span> <span data-ttu-id="be9c4-105"><xref:System.Windows.Forms.Control.Dock%2A> Vlastnost lze nastavit následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="be9c4-105">The <xref:System.Windows.Forms.Control.Dock%2A> property can be set to the following values:</span></span>  
+# <a name="how-to-align-a-control-to-the-edges-of-forms"></a><span data-ttu-id="13ae8-102">Postupy: Zarovnávání ovládacího prvku k okrajům formulářů</span><span class="sxs-lookup"><span data-stu-id="13ae8-102">How to: Align a Control to the Edges of Forms</span></span>
+<span data-ttu-id="13ae8-103">Můžete provést kontrolu nad zarovnání na hranu svých formulářů podle nastavení <xref:System.Windows.Forms.Control.Dock%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="13ae8-103">You can make your control align to the edge of your forms by setting the <xref:System.Windows.Forms.Control.Dock%2A> property.</span></span> <span data-ttu-id="13ae8-104">Tato vlastnost určuje, kde vlastní ovládací prvek nachází ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="13ae8-104">This property designates where your control resides in the form.</span></span> <span data-ttu-id="13ae8-105"><xref:System.Windows.Forms.Control.Dock%2A> Vlastnost lze nastavit následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="13ae8-105">The <xref:System.Windows.Forms.Control.Dock%2A> property can be set to the following values:</span></span>  
   
-|<span data-ttu-id="be9c4-106">Nastavení</span><span class="sxs-lookup"><span data-stu-id="be9c4-106">Setting</span></span>|<span data-ttu-id="be9c4-107">Vliv na vlastní ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="be9c4-107">Effect on your control</span></span>|  
+|<span data-ttu-id="13ae8-106">Nastavení</span><span class="sxs-lookup"><span data-stu-id="13ae8-106">Setting</span></span>|<span data-ttu-id="13ae8-107">Vliv na vlastní ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="13ae8-107">Effect on your control</span></span>|  
 |-------------|----------------------------|  
-|<xref:System.Windows.Forms.DockStyle.Bottom>|<span data-ttu-id="be9c4-108">Překladišť k dolní části formuláře.</span><span class="sxs-lookup"><span data-stu-id="be9c4-108">Docks to the bottom of the form.</span></span>|  
-|<xref:System.Windows.Forms.DockStyle.Fill>|<span data-ttu-id="be9c4-109">Doplní veškerý zbývající prostor ve tvaru.</span><span class="sxs-lookup"><span data-stu-id="be9c4-109">Fills all remaining space in the form.</span></span>|  
-|<xref:System.Windows.Forms.DockStyle.Left>|<span data-ttu-id="be9c4-110">Přepraviště na levé straně formuláře.</span><span class="sxs-lookup"><span data-stu-id="be9c4-110">Docks to the left side of the form.</span></span>|  
-|<xref:System.Windows.Forms.DockStyle.None>|<span data-ttu-id="be9c4-111">Nepodporuje není ukotvení odkudkoli a zobrazí se v umístění určeném pomocí jeho <xref:System.Windows.Forms.Control.Location%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="be9c4-111">Does not dock anywhere, and it appears at the location specified by its <xref:System.Windows.Forms.Control.Location%2A> property.</span></span>|  
-|<xref:System.Windows.Forms.DockStyle.Right>|<span data-ttu-id="be9c4-112">Přepraviště na pravé straně formuláře.</span><span class="sxs-lookup"><span data-stu-id="be9c4-112">Docks to the right side of the form.</span></span>|  
-|<xref:System.Windows.Forms.DockStyle.Top>|<span data-ttu-id="be9c4-113">Překladišť k horní části formuláře.</span><span class="sxs-lookup"><span data-stu-id="be9c4-113">Docks to the top of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Bottom>|<span data-ttu-id="13ae8-108">Překladišť k dolní části formuláře.</span><span class="sxs-lookup"><span data-stu-id="13ae8-108">Docks to the bottom of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Fill>|<span data-ttu-id="13ae8-109">Doplní veškerý zbývající prostor ve tvaru.</span><span class="sxs-lookup"><span data-stu-id="13ae8-109">Fills all remaining space in the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Left>|<span data-ttu-id="13ae8-110">Přepraviště na levé straně formuláře.</span><span class="sxs-lookup"><span data-stu-id="13ae8-110">Docks to the left side of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.None>|<span data-ttu-id="13ae8-111">Nepodporuje není ukotvení odkudkoli a zobrazí se v umístění určeném pomocí jeho <xref:System.Windows.Forms.Control.Location%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="13ae8-111">Does not dock anywhere, and it appears at the location specified by its <xref:System.Windows.Forms.Control.Location%2A> property.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Right>|<span data-ttu-id="13ae8-112">Přepraviště na pravé straně formuláře.</span><span class="sxs-lookup"><span data-stu-id="13ae8-112">Docks to the right side of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Top>|<span data-ttu-id="13ae8-113">Překladišť k horní části formuláře.</span><span class="sxs-lookup"><span data-stu-id="13ae8-113">Docks to the top of the form.</span></span>|  
   
- <span data-ttu-id="be9c4-114">Není poskytována podpora návrhu pro tuto funkci v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="be9c4-114">There is design-time support for this feature in Visual Studio.</span></span>  
+ <span data-ttu-id="13ae8-114">Není poskytována podpora návrhu pro tuto funkci v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="13ae8-114">There is design-time support for this feature in Visual Studio.</span></span>  
   
-### <a name="to-set-the-dock-property-for-your-control-at-run-time"></a><span data-ttu-id="be9c4-115">Nastavit vlastnost ukotvení pro ovládací prvek v době běhu</span><span class="sxs-lookup"><span data-stu-id="be9c4-115">To set the Dock property for your control at run time</span></span>  
+### <a name="to-set-the-dock-property-for-your-control-at-run-time"></a><span data-ttu-id="13ae8-115">Nastavit vlastnost ukotvení pro ovládací prvek v době běhu</span><span class="sxs-lookup"><span data-stu-id="13ae8-115">To set the Dock property for your control at run time</span></span>  
   
-1.  <span data-ttu-id="be9c4-116">Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost na odpovídající hodnotu v kódu.</span><span class="sxs-lookup"><span data-stu-id="be9c4-116">Set the <xref:System.Windows.Forms.Control.Dock%2A> property to the appropriate value in code.</span></span>  
+1.  <span data-ttu-id="13ae8-116">Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost na odpovídající hodnotu v kódu.</span><span class="sxs-lookup"><span data-stu-id="13ae8-116">Set the <xref:System.Windows.Forms.Control.Dock%2A> property to the appropriate value in code.</span></span>  
   
     ```vb  
     ' To set the Dock property internally.  
@@ -59,10 +60,10 @@ ms.lasthandoff: 11/21/2017
     UserControl1.Dock = DockStyle.Top;  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="be9c4-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="be9c4-117">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="13ae8-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="13ae8-117">See Also</span></span>  
  <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType>  
- [<span data-ttu-id="be9c4-118">Vývoj vlastních Windows Forms – ovládací prvky s rozhraním .NET Framework</span><span class="sxs-lookup"><span data-stu-id="be9c4-118">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
- [<span data-ttu-id="be9c4-119">Postupy: ukotvení a dokování podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="be9c4-119">How to: Anchor and Dock Child Controls in a FlowLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
- [<span data-ttu-id="be9c4-120">Postupy: ukotvení a dokování podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="be9c4-120">How to: Anchor and Dock Child Controls in a TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
- [<span data-ttu-id="be9c4-121">Přehled vlastnosti AutoSize</span><span class="sxs-lookup"><span data-stu-id="be9c4-121">AutoSize Property Overview</span></span>](../../../../docs/framework/winforms/controls/autosize-property-overview.md)
+ [<span data-ttu-id="13ae8-118">Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="13ae8-118">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
+ [<span data-ttu-id="13ae8-119">Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="13ae8-119">How to: Anchor and Dock Child Controls in a FlowLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
+ [<span data-ttu-id="13ae8-120">Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="13ae8-120">How to: Anchor and Dock Child Controls in a TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [<span data-ttu-id="13ae8-121">Přehled vlastnosti AutoSize</span><span class="sxs-lookup"><span data-stu-id="13ae8-121">AutoSize Property Overview</span></span>](../../../../docs/framework/winforms/controls/autosize-property-overview.md)

@@ -15,28 +15,29 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d99817976d37d4da4429d79032e66fb2908b6c99
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 512fdb59998961013a3412c3c85820d1cff2eab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="base-elements-how-to-topics"></a><span data-ttu-id="8ee68-102">Postupy: Základní elementy</span><span class="sxs-lookup"><span data-stu-id="8ee68-102">Base Elements How-to Topics</span></span>
-<span data-ttu-id="8ee68-103">Témata v této části popisují, jak použít čtyři základní prvky WPF: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>.</span><span class="sxs-lookup"><span data-stu-id="8ee68-103">The topics in this section describe how to use the four WPF base elements: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.FrameworkContentElement>.</span></span>  
+# <a name="base-elements-how-to-topics"></a><span data-ttu-id="cbc0e-102">Postupy: Základní elementy</span><span class="sxs-lookup"><span data-stu-id="cbc0e-102">Base Elements How-to Topics</span></span>
+<span data-ttu-id="cbc0e-103">Témata v této části popisují, jak použít čtyři základní prvky WPF: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>.</span><span class="sxs-lookup"><span data-stu-id="cbc0e-103">The topics in this section describe how to use the four WPF base elements: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.FrameworkContentElement>.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="8ee68-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8ee68-104">In This Section</span></span>  
- [<span data-ttu-id="8ee68-105">Zajistěte, aby prvků uživatelského rozhraní transparentní nebo poloprůhlednost</span><span class="sxs-lookup"><span data-stu-id="8ee68-105">Make a UIElement Transparent or Semi-Transparent</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-a-uielement-transparent-or-semi-transparent.md)  
- [<span data-ttu-id="8ee68-106">Velikost FrameworkElement animace</span><span class="sxs-lookup"><span data-stu-id="8ee68-106">Animate the Size of a FrameworkElement</span></span>](../../../../docs/framework/wpf/advanced/how-to-animate-the-size-of-a-frameworkelement.md)  
- [<span data-ttu-id="8ee68-107">Určení, zda zmrazitelné nereaguje</span><span class="sxs-lookup"><span data-stu-id="8ee68-107">Determine Whether a Freezable Is Frozen</span></span>](../../../../docs/framework/wpf/advanced/how-to-determine-whether-a-freezable-is-frozen.md)  
- [<span data-ttu-id="8ee68-108">Zpracování načíst události</span><span class="sxs-lookup"><span data-stu-id="8ee68-108">Handle a Loaded Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-a-loaded-event.md)  
- [<span data-ttu-id="8ee68-109">Nastavení okrajů elementy a ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="8ee68-109">Set Margins of Elements and Controls</span></span>](../../../../docs/framework/wpf/advanced/how-to-set-margins-of-elements-and-controls.md)  
- [<span data-ttu-id="8ee68-110">Zkontrolujte a zmrazitelné jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="8ee68-110">Make a Freezable Read-Only</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-a-freezable-read-only.md)  
- [<span data-ttu-id="8ee68-111">Získat zapisovatelné kopie jen pro čtení zmrazitelné</span><span class="sxs-lookup"><span data-stu-id="8ee68-111">Obtain a Writable Copy of a Read-Only Freezable</span></span>](../../../../docs/framework/wpf/advanced/how-to-obtain-a-writable-copy-of-a-read-only-freezable.md)  
- [<span data-ttu-id="8ee68-112">Překlopit prvků uživatelského rozhraní vodorovně nebo svisle</span><span class="sxs-lookup"><span data-stu-id="8ee68-112">Flip a UIElement Horizontally or Vertically</span></span>](../../../../docs/framework/wpf/advanced/how-to-flip-a-uielement-horizontally-or-vertically.md)  
- [<span data-ttu-id="8ee68-113">Použití objektu ThicknessConverter</span><span class="sxs-lookup"><span data-stu-id="8ee68-113">Use a ThicknessConverter Object</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-a-thicknessconverter-object.md)  
- [<span data-ttu-id="8ee68-114">Zpracovat událost ContextMenuOpening</span><span class="sxs-lookup"><span data-stu-id="8ee68-114">Handle the ContextMenuOpening Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-the-contextmenuopening-event.md)  
+## <a name="in-this-section"></a><span data-ttu-id="cbc0e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="cbc0e-104">In This Section</span></span>  
+ [<span data-ttu-id="cbc0e-105">Vytvoření průhledného nebo poloprůhledného elementu UIElement</span><span class="sxs-lookup"><span data-stu-id="cbc0e-105">Make a UIElement Transparent or Semi-Transparent</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-a-uielement-transparent-or-semi-transparent.md)  
+ [<span data-ttu-id="cbc0e-106">Animace velikosti FrameworkElement</span><span class="sxs-lookup"><span data-stu-id="cbc0e-106">Animate the Size of a FrameworkElement</span></span>](../../../../docs/framework/wpf/advanced/how-to-animate-the-size-of-a-frameworkelement.md)  
+ [<span data-ttu-id="cbc0e-107">Určení, jestli je zablokovatelné zablokováno</span><span class="sxs-lookup"><span data-stu-id="cbc0e-107">Determine Whether a Freezable Is Frozen</span></span>](../../../../docs/framework/wpf/advanced/how-to-determine-whether-a-freezable-is-frozen.md)  
+ [<span data-ttu-id="cbc0e-108">Zpracování načtené události</span><span class="sxs-lookup"><span data-stu-id="cbc0e-108">Handle a Loaded Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-a-loaded-event.md)  
+ [<span data-ttu-id="cbc0e-109">Nastavení okrajů elementů a ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="cbc0e-109">Set Margins of Elements and Controls</span></span>](../../../../docs/framework/wpf/advanced/how-to-set-margins-of-elements-and-controls.md)  
+ [<span data-ttu-id="cbc0e-110">Nastavení zablokovatelného objektu jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="cbc0e-110">Make a Freezable Read-Only</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-a-freezable-read-only.md)  
+ [<span data-ttu-id="cbc0e-111">Získání zapisovatelné kopie zablokovatelného objektu jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="cbc0e-111">Obtain a Writable Copy of a Read-Only Freezable</span></span>](../../../../docs/framework/wpf/advanced/how-to-obtain-a-writable-copy-of-a-read-only-freezable.md)  
+ [<span data-ttu-id="cbc0e-112">Překlopení prvku UIElement vodorovně nebo svisle</span><span class="sxs-lookup"><span data-stu-id="cbc0e-112">Flip a UIElement Horizontally or Vertically</span></span>](../../../../docs/framework/wpf/advanced/how-to-flip-a-uielement-horizontally-or-vertically.md)  
+ [<span data-ttu-id="cbc0e-113">Použití objektu ThicknessConverter</span><span class="sxs-lookup"><span data-stu-id="cbc0e-113">Use a ThicknessConverter Object</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-a-thicknessconverter-object.md)  
+ [<span data-ttu-id="cbc0e-114">Zpracování události ContextMenuOpening</span><span class="sxs-lookup"><span data-stu-id="cbc0e-114">Handle the ContextMenuOpening Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-the-contextmenuopening-event.md)  
   
-## <a name="reference"></a><span data-ttu-id="8ee68-115">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8ee68-115">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="cbc0e-115">Odkaz</span><span class="sxs-lookup"><span data-stu-id="cbc0e-115">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.ContentElement>  
@@ -45,5 +46,5 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.FrameworkContentElement>  
   
-## <a name="related-sections"></a><span data-ttu-id="8ee68-116">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8ee68-116">Related Sections</span></span>  
- [<span data-ttu-id="8ee68-117">Základní prvky</span><span class="sxs-lookup"><span data-stu-id="8ee68-117">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)
+## <a name="related-sections"></a><span data-ttu-id="cbc0e-116">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="cbc0e-116">Related Sections</span></span>  
+ [<span data-ttu-id="cbc0e-117">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="cbc0e-117">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)

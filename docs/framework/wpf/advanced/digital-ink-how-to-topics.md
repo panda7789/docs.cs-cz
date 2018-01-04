@@ -17,20 +17,21 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1013b7567fbd80d8d1ee55ac81e00c7b29635bac
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c790ec775740bf53e3c68a1c8834df9e13339c38
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="digital-ink-how-to-topics"></a><span data-ttu-id="806e6-102">Postupy: Témata digitálního inkoustu</span><span class="sxs-lookup"><span data-stu-id="806e6-102">Digital Ink How-to Topics</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="806e6-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="806e6-103">In This Section</span></span>  
- [<span data-ttu-id="806e6-104">Výběr rukopisu z vlastního ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="806e6-104">Select Ink from a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)  
-  [<span data-ttu-id="806e6-105">Přidání vlastních dat k Ink dat</span><span class="sxs-lookup"><span data-stu-id="806e6-105">Add Custom Data to Ink Data</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-custom-data-to-ink-data.md)  
-  [<span data-ttu-id="806e6-106">Vymazání rukopisu na vlastního ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="806e6-106">Erase Ink on a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)  
-  [<span data-ttu-id="806e6-107">Rozpoznat gesta aplikace</span><span class="sxs-lookup"><span data-stu-id="806e6-107">Recognize Application Gestures</span></span>](../../../../docs/framework/wpf/advanced/how-to-recognize-application-gestures.md)  
-  [<span data-ttu-id="806e6-108">Přetáhnout myší rukopisu</span><span class="sxs-lookup"><span data-stu-id="806e6-108">Drag and Drop Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-drag-and-drop-ink.md)  
-  [<span data-ttu-id="806e6-109">Vazbě dat na InkCanvas</span><span class="sxs-lookup"><span data-stu-id="806e6-109">Data Bind to an InkCanvas</span></span>](../../../../docs/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas.md)  
-  [<span data-ttu-id="806e6-110">Analýza rukopisu Analysis nápovědu</span><span class="sxs-lookup"><span data-stu-id="806e6-110">Analyze Ink with Analysis Hints</span></span>](../../../../docs/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints.md)  
-  [<span data-ttu-id="806e6-111">Otočit element Ink</span><span class="sxs-lookup"><span data-stu-id="806e6-111">Rotate Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-rotate-ink.md)  
-  [<span data-ttu-id="806e6-112">Zakázat objekt RealTimeStylus pro aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="806e6-112">Disable the RealTimeStylus for WPF Applications</span></span>](../../../../docs/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications.md)
+# <a name="digital-ink-how-to-topics"></a><span data-ttu-id="a1c6c-102">Postupy: Témata digitálního inkoustu</span><span class="sxs-lookup"><span data-stu-id="a1c6c-102">Digital Ink How-to Topics</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="a1c6c-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a1c6c-103">In This Section</span></span>  
+ [<span data-ttu-id="a1c6c-104">Výběr rukopisu pomocí vlastního ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="a1c6c-104">Select Ink from a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)  
+  [<span data-ttu-id="a1c6c-105">Přidání vlastních dat do dat rukopisu</span><span class="sxs-lookup"><span data-stu-id="a1c6c-105">Add Custom Data to Ink Data</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-custom-data-to-ink-data.md)  
+  [<span data-ttu-id="a1c6c-106">Smazání rukopisu na vlastním ovládacím prvku</span><span class="sxs-lookup"><span data-stu-id="a1c6c-106">Erase Ink on a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)  
+  [<span data-ttu-id="a1c6c-107">Rozlišení gest aplikací</span><span class="sxs-lookup"><span data-stu-id="a1c6c-107">Recognize Application Gestures</span></span>](../../../../docs/framework/wpf/advanced/how-to-recognize-application-gestures.md)  
+  [<span data-ttu-id="a1c6c-108">Přetažení rukopisu</span><span class="sxs-lookup"><span data-stu-id="a1c6c-108">Drag and Drop Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-drag-and-drop-ink.md)  
+  [<span data-ttu-id="a1c6c-109">Datová vazba k objektu InkCanvas</span><span class="sxs-lookup"><span data-stu-id="a1c6c-109">Data Bind to an InkCanvas</span></span>](../../../../docs/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas.md)  
+  [<span data-ttu-id="a1c6c-110">Analýza rukopisu pomocí tipů analýzy</span><span class="sxs-lookup"><span data-stu-id="a1c6c-110">Analyze Ink with Analysis Hints</span></span>](../../../../docs/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints.md)  
+  [<span data-ttu-id="a1c6c-111">Otočení rukopisu</span><span class="sxs-lookup"><span data-stu-id="a1c6c-111">Rotate Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-rotate-ink.md)  
+  [<span data-ttu-id="a1c6c-112">Zákaz objektu RealTimeStylus pro aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="a1c6c-112">Disable the RealTimeStylus for WPF Applications</span></span>](../../../../docs/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications.md)

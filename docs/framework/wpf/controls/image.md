@@ -17,25 +17,26 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 769c40434ecb0ac1bbae63f1697e5005c0de875b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 096773fd8cb303cc504bc956d500e8f1e55cda00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="image"></a><span data-ttu-id="135a4-102">Image</span><span class="sxs-lookup"><span data-stu-id="135a4-102">Image</span></span>
-<span data-ttu-id="135a4-103"><xref:System.Windows.Controls.Image> Element se používá k zobrazení obrázků rastrový obrázek v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="135a4-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
+# <a name="image"></a><span data-ttu-id="bcec2-102">Image</span><span class="sxs-lookup"><span data-stu-id="bcec2-102">Image</span></span>
+<span data-ttu-id="bcec2-103"><xref:System.Windows.Controls.Image> Element se používá k zobrazení obrázků rastrový obrázek v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="bcec2-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="135a4-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="135a4-104">In This Section</span></span>  
- [<span data-ttu-id="135a4-105">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="135a4-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/image-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="bcec2-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="bcec2-104">In This Section</span></span>  
+ [<span data-ttu-id="bcec2-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="bcec2-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/image-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="135a4-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="135a4-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="bcec2-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="bcec2-106">Reference</span></span>  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a><span data-ttu-id="135a4-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="135a4-107">See Also</span></span>  
- [<span data-ttu-id="135a4-108">Přehled vytvoření bitové kopie</span><span class="sxs-lookup"><span data-stu-id="135a4-108">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [<span data-ttu-id="135a4-109">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="135a4-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="bcec2-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="bcec2-107">See Also</span></span>  
+ [<span data-ttu-id="bcec2-108">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="bcec2-108">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [<span data-ttu-id="bcec2-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="bcec2-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)

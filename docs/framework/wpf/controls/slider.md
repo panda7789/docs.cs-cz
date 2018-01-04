@@ -17,23 +17,24 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0390a8c19cf14ef3fa7ce08bdfb30592b5294377
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7516dfafeb4ff5a2adcbf6b2bb51efd07945cb35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="slider"></a><span data-ttu-id="f4370-102">Posuvník</span><span class="sxs-lookup"><span data-stu-id="f4370-102">Slider</span></span>
-<span data-ttu-id="f4370-103"><xref:System.Windows.Controls.Slider> Umožňuje vybrat z rozsahu hodnot přesunutím <xref:System.Windows.Controls.Primitives.Thumb> společně <xref:System.Windows.Controls.Primitives.Track>.</span><span class="sxs-lookup"><span data-stu-id="f4370-103">The <xref:System.Windows.Controls.Slider> allows you select from a range of values by moving a <xref:System.Windows.Controls.Primitives.Thumb> along a <xref:System.Windows.Controls.Primitives.Track>.</span></span>  
+# <a name="slider"></a><span data-ttu-id="38fe4-102">Posuvník</span><span class="sxs-lookup"><span data-stu-id="38fe4-102">Slider</span></span>
+<span data-ttu-id="38fe4-103"><xref:System.Windows.Controls.Slider> Umožňuje vybrat z rozsahu hodnot přesunutím <xref:System.Windows.Controls.Primitives.Thumb> společně <xref:System.Windows.Controls.Primitives.Track>.</span><span class="sxs-lookup"><span data-stu-id="38fe4-103">The <xref:System.Windows.Controls.Slider> allows you select from a range of values by moving a <xref:System.Windows.Controls.Primitives.Thumb> along a <xref:System.Windows.Controls.Primitives.Track>.</span></span>  
   
- <span data-ttu-id="f4370-104">Následující obrázek znázorňuje příklad vodorovného <xref:System.Windows.Controls.Slider> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="f4370-104">The following illustration shows an example of a horizontal <xref:System.Windows.Controls.Slider> control.</span></span>  
+ <span data-ttu-id="38fe4-104">Následující obrázek znázorňuje příklad vodorovného <xref:System.Windows.Controls.Slider> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="38fe4-104">The following illustration shows an example of a horizontal <xref:System.Windows.Controls.Slider> control.</span></span>  
   
- <span data-ttu-id="f4370-105">![Vodorovné posuvník s osové značky](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span><span class="sxs-lookup"><span data-stu-id="f4370-105">![Horizontal slider with tick marks](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span></span>  
+ <span data-ttu-id="38fe4-105">![Vodorovné posuvník s osové značky](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span><span class="sxs-lookup"><span data-stu-id="38fe4-105">![Horizontal slider with tick marks](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f4370-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f4370-106">In This Section</span></span>  
- [<span data-ttu-id="f4370-107">Přizpůsobení rysky na jezdce</span><span class="sxs-lookup"><span data-stu-id="f4370-107">Customize the Ticks on a Slider</span></span>](../../../../docs/framework/wpf/controls/how-to-customize-the-ticks-on-a-slider.md)  
+## <a name="in-this-section"></a><span data-ttu-id="38fe4-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="38fe4-106">In This Section</span></span>  
+ [<span data-ttu-id="38fe4-107">Přizpůsobení dílků na posuvníku</span><span class="sxs-lookup"><span data-stu-id="38fe4-107">Customize the Ticks on a Slider</span></span>](../../../../docs/framework/wpf/controls/how-to-customize-the-ticks-on-a-slider.md)  
   
-## <a name="reference"></a><span data-ttu-id="f4370-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f4370-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="38fe4-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="38fe4-108">Reference</span></span>  
  <xref:System.Windows.Controls.Slider>  
   <xref:System.Windows.Controls.Primitives.Track>  
   <xref:System.Windows.Controls.Primitives.Thumb>

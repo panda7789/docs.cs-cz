@@ -17,36 +17,37 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e58fbb6a577354f862d4b4d79e947e7618bd75a0
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 472bb286f57701342be82d4a981714236e147932
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="flow-content-elements-how-to-topics"></a><span data-ttu-id="440df-102">Postupy: Témata elementů obsahu toku</span><span class="sxs-lookup"><span data-stu-id="440df-102">Flow Content Elements How-to Topics</span></span>
-<span data-ttu-id="440df-103">Témata v této části popisují, jak provádět běžné úlohy pomocí různé prvky toku obsahu a souvisejících funkcí.</span><span class="sxs-lookup"><span data-stu-id="440df-103">The topics in this section describe how to accomplish common tasks using various flow content elements and related features.</span></span>  
+# <a name="flow-content-elements-how-to-topics"></a><span data-ttu-id="662dc-102">Postupy: Témata elementů obsahu toku</span><span class="sxs-lookup"><span data-stu-id="662dc-102">Flow Content Elements How-to Topics</span></span>
+<span data-ttu-id="662dc-103">Témata v této části popisují, jak provádět běžné úlohy pomocí různé prvky toku obsahu a souvisejících funkcí.</span><span class="sxs-lookup"><span data-stu-id="662dc-103">The topics in this section describe how to accomplish common tasks using various flow content elements and related features.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="440df-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="440df-104">In This Section</span></span>  
- [<span data-ttu-id="440df-105">Upravit mezery mezi odstavců</span><span class="sxs-lookup"><span data-stu-id="440df-105">Adjust Spacing Between Paragraphs</span></span>](../../../../docs/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs.md)  
- [<span data-ttu-id="440df-106">Vytvoření tabulky prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="440df-106">Build a Table Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
- [<span data-ttu-id="440df-107">Změnit FlowDirection obsahu prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="440df-107">Change the FlowDirection of Content Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically.md)  
- [<span data-ttu-id="440df-108">Změnit vlastnosti TextWrapping prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="440df-108">Change the TextWrapping Property Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically.md)  
- [<span data-ttu-id="440df-109">Definovat tabulku s XAML</span><span class="sxs-lookup"><span data-stu-id="440df-109">Define a Table with XAML</span></span>](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
- [<span data-ttu-id="440df-110">Příkaz ALTER typografii textu</span><span class="sxs-lookup"><span data-stu-id="440df-110">Alter the Typography of Text</span></span>](../../../../docs/framework/wpf/advanced/how-to-alter-the-typography-of-text.md)  
- [<span data-ttu-id="440df-111">Povolit oříznutí textu</span><span class="sxs-lookup"><span data-stu-id="440df-111">Enable Text Trimming</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-text-trimming.md)  
- [<span data-ttu-id="440df-112">Vložte Element do textu prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="440df-112">Insert an Element Into Text Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically.md)  
- [<span data-ttu-id="440df-113">Manipulace s toku obsahu prvků prostřednictvím vlastnost bloky</span><span class="sxs-lookup"><span data-stu-id="440df-113">Manipulate Flow Content Elements through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
- [<span data-ttu-id="440df-114">Manipulace s prvky toku obsahu prostřednictvím vlastnosti Inlines</span><span class="sxs-lookup"><span data-stu-id="440df-114">Manipulate Flow Content Elements through the Inlines Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property.md)  
- [<span data-ttu-id="440df-115">Manipulace s FlowDocument prostřednictvím vlastnosti bloky</span><span class="sxs-lookup"><span data-stu-id="440df-115">Manipulate a FlowDocument through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
- [<span data-ttu-id="440df-116">Manipulace se sloupci tabulky pomocí vlastnosti sloupce</span><span class="sxs-lookup"><span data-stu-id="440df-116">Manipulate a Table's Columns through the Columns Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
- [<span data-ttu-id="440df-117">Manipulaci se skupinami řádek tabulky pomocí vlastnosti RowGroups</span><span class="sxs-lookup"><span data-stu-id="440df-117">Manipulate a Table's Row Groups through the RowGroups Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
- [<span data-ttu-id="440df-118">Použít toku obsahu elementy</span><span class="sxs-lookup"><span data-stu-id="440df-118">Use Flow Content Elements</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)  
- [<span data-ttu-id="440df-119">Použít dělicí sloupec FlowDocument atributy</span><span class="sxs-lookup"><span data-stu-id="440df-119">Use FlowDocument Column-Separating Attributes</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes.md)  
+## <a name="in-this-section"></a><span data-ttu-id="662dc-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="662dc-104">In This Section</span></span>  
+ [<span data-ttu-id="662dc-105">Úprava mezer mezi odstavci</span><span class="sxs-lookup"><span data-stu-id="662dc-105">Adjust Spacing Between Paragraphs</span></span>](../../../../docs/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs.md)  
+ [<span data-ttu-id="662dc-106">Sestavení tabulky z programu</span><span class="sxs-lookup"><span data-stu-id="662dc-106">Build a Table Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
+ [<span data-ttu-id="662dc-107">Změna FlowDirection obsahu z programu</span><span class="sxs-lookup"><span data-stu-id="662dc-107">Change the FlowDirection of Content Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically.md)  
+ [<span data-ttu-id="662dc-108">Změna vlastnosti TextWrapping z programu</span><span class="sxs-lookup"><span data-stu-id="662dc-108">Change the TextWrapping Property Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically.md)  
+ [<span data-ttu-id="662dc-109">Definice tabulky pomocí XAML</span><span class="sxs-lookup"><span data-stu-id="662dc-109">Define a Table with XAML</span></span>](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
+ [<span data-ttu-id="662dc-110">Změna typografie textu</span><span class="sxs-lookup"><span data-stu-id="662dc-110">Alter the Typography of Text</span></span>](../../../../docs/framework/wpf/advanced/how-to-alter-the-typography-of-text.md)  
+ [<span data-ttu-id="662dc-111">Povolení ořezávání textu</span><span class="sxs-lookup"><span data-stu-id="662dc-111">Enable Text Trimming</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-text-trimming.md)  
+ [<span data-ttu-id="662dc-112">Vložení elementu do textu z programu</span><span class="sxs-lookup"><span data-stu-id="662dc-112">Insert an Element Into Text Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically.md)  
+ [<span data-ttu-id="662dc-113">Zpracování elementů obsahu toku prostřednictvím vlastnosti Blocks</span><span class="sxs-lookup"><span data-stu-id="662dc-113">Manipulate Flow Content Elements through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
+ [<span data-ttu-id="662dc-114">Zpracování elementů obsahu toku prostřednictvím vlastnosti Inlines</span><span class="sxs-lookup"><span data-stu-id="662dc-114">Manipulate Flow Content Elements through the Inlines Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property.md)  
+ [<span data-ttu-id="662dc-115">Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks</span><span class="sxs-lookup"><span data-stu-id="662dc-115">Manipulate a FlowDocument through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
+ [<span data-ttu-id="662dc-116">Zpracování sloupců tabulky prostřednictvím vlastnosti Columns</span><span class="sxs-lookup"><span data-stu-id="662dc-116">Manipulate a Table's Columns through the Columns Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
+ [<span data-ttu-id="662dc-117">Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups</span><span class="sxs-lookup"><span data-stu-id="662dc-117">Manipulate a Table's Row Groups through the RowGroups Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
+ [<span data-ttu-id="662dc-118">Použití elementů obsahu toku</span><span class="sxs-lookup"><span data-stu-id="662dc-118">Use Flow Content Elements</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)  
+ [<span data-ttu-id="662dc-119">Použití atributů pro oddělení sloupců FlowDocument</span><span class="sxs-lookup"><span data-stu-id="662dc-119">Use FlowDocument Column-Separating Attributes</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes.md)  
   
-## <a name="reference"></a><span data-ttu-id="440df-120">Odkaz</span><span class="sxs-lookup"><span data-stu-id="440df-120">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="662dc-120">Odkaz</span><span class="sxs-lookup"><span data-stu-id="662dc-120">Reference</span></span>  
  <xref:System.Windows.Documents.FlowDocument>  
   <xref:System.Windows.Documents.Block>  
   <xref:System.Windows.Documents.Inline>  
   
-## <a name="related-sections"></a><span data-ttu-id="440df-121">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="440df-121">Related Sections</span></span>  
- [<span data-ttu-id="440df-122">Dokumenty v grafickém subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="440df-122">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="662dc-121">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="662dc-121">Related Sections</span></span>  
+ [<span data-ttu-id="662dc-122">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="662dc-122">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)

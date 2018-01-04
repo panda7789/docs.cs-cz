@@ -15,29 +15,30 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dd3771e0fcbf83b00f52d78a5c63793dae116e4e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7fea4c74fc837181e1b0a007fb83ddce1c4cd52a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="window-management-how-to-topics"></a><span data-ttu-id="306e3-102">Postupy: témata okno správy</span><span class="sxs-lookup"><span data-stu-id="306e3-102">Window Management How-to Topics</span></span>
-<span data-ttu-id="306e3-103">Následující témata ukazují, jak spravovat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému windows.</span><span class="sxs-lookup"><span data-stu-id="306e3-103">The following topics show how to manage [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] windows.</span></span>  
+# <a name="window-management-how-to-topics"></a><span data-ttu-id="f33f8-102">Postupy: témata okno správy</span><span class="sxs-lookup"><span data-stu-id="f33f8-102">Window Management How-to Topics</span></span>
+<span data-ttu-id="f33f8-103">Následující témata ukazují, jak spravovat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému windows.</span><span class="sxs-lookup"><span data-stu-id="f33f8-103">The following topics show how to manage [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] windows.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="306e3-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="306e3-104">In This Section</span></span>  
- [<span data-ttu-id="306e3-105">Automaticky velikost okna podle jeho obsahu</span><span class="sxs-lookup"><span data-stu-id="306e3-105">Automatically Size a Window to Fit Its Content</span></span>](../../../../docs/framework/wpf/app-development/how-to-automatically-size-a-window-to-fit-its-content.md)  
-  [<span data-ttu-id="306e3-106">Získání všech oken v aplikaci</span><span class="sxs-lookup"><span data-stu-id="306e3-106">Get all Windows in an Application</span></span>](../../../../docs/framework/wpf/app-development/how-to-get-all-windows-in-an-application.md)  
-  [<span data-ttu-id="306e3-107">Získání a nastavení hlavní okno aplikace</span><span class="sxs-lookup"><span data-stu-id="306e3-107">Get and Set the Main Application Window</span></span>](../../../../docs/framework/wpf/app-development/how-to-get-and-set-the-main-application-window.md)  
-  [<span data-ttu-id="306e3-108">Otevřete dialogové okno</span><span class="sxs-lookup"><span data-stu-id="306e3-108">Open a Dialog Box</span></span>](../../../../docs/framework/wpf/app-development/how-to-open-a-dialog-box.md)  
-  [<span data-ttu-id="306e3-109">Otevřete okno se zprávou</span><span class="sxs-lookup"><span data-stu-id="306e3-109">Open a Message Box</span></span>](../../../../docs/framework/wpf/app-development/how-to-open-a-message-box.md)  
-  [<span data-ttu-id="306e3-110">Otevřete okno</span><span class="sxs-lookup"><span data-stu-id="306e3-110">Open a Window</span></span>](../../../../docs/framework/wpf/app-development/how-to-open-a-window.md)  
-  [<span data-ttu-id="306e3-111">Vrácení výsledku pole dialogové okno</span><span class="sxs-lookup"><span data-stu-id="306e3-111">Return a Dialog Box Result</span></span>](../../../../docs/framework/wpf/app-development/how-to-return-a-dialog-box-result.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f33f8-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f33f8-104">In This Section</span></span>  
+ [<span data-ttu-id="f33f8-105">Automatické nastavení velikosti okna podle jeho obsahu</span><span class="sxs-lookup"><span data-stu-id="f33f8-105">Automatically Size a Window to Fit Its Content</span></span>](../../../../docs/framework/wpf/app-development/how-to-automatically-size-a-window-to-fit-its-content.md)  
+  [<span data-ttu-id="f33f8-106">Získání všech objektů Window v aplikaci</span><span class="sxs-lookup"><span data-stu-id="f33f8-106">Get all Windows in an Application</span></span>](../../../../docs/framework/wpf/app-development/how-to-get-all-windows-in-an-application.md)  
+  [<span data-ttu-id="f33f8-107">Získání a nastavení hlavního okna aplikace</span><span class="sxs-lookup"><span data-stu-id="f33f8-107">Get and Set the Main Application Window</span></span>](../../../../docs/framework/wpf/app-development/how-to-get-and-set-the-main-application-window.md)  
+  [<span data-ttu-id="f33f8-108">Otevření dialogového okna</span><span class="sxs-lookup"><span data-stu-id="f33f8-108">Open a Dialog Box</span></span>](../../../../docs/framework/wpf/app-development/how-to-open-a-dialog-box.md)  
+  [<span data-ttu-id="f33f8-109">Otevření okna se zprávou</span><span class="sxs-lookup"><span data-stu-id="f33f8-109">Open a Message Box</span></span>](../../../../docs/framework/wpf/app-development/how-to-open-a-message-box.md)  
+  [<span data-ttu-id="f33f8-110">Otevření okna</span><span class="sxs-lookup"><span data-stu-id="f33f8-110">Open a Window</span></span>](../../../../docs/framework/wpf/app-development/how-to-open-a-window.md)  
+  [<span data-ttu-id="f33f8-111">Vrácení výsledku dialogového okna</span><span class="sxs-lookup"><span data-stu-id="f33f8-111">Return a Dialog Box Result</span></span>](../../../../docs/framework/wpf/app-development/how-to-return-a-dialog-box-result.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="306e3-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="306e3-112">Related Sections</span></span>  
- [<span data-ttu-id="306e3-113">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="306e3-113">Application Management Overview</span></span>](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="f33f8-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f33f8-112">Related Sections</span></span>  
+ [<span data-ttu-id="f33f8-113">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="f33f8-113">Application Management Overview</span></span>](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
   
- [<span data-ttu-id="306e3-114">Navigace – přehled</span><span class="sxs-lookup"><span data-stu-id="306e3-114">Navigation Overview</span></span>](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+ [<span data-ttu-id="f33f8-114">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="f33f8-114">Navigation Overview</span></span>](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
   
- [<span data-ttu-id="306e3-115">Hostování</span><span class="sxs-lookup"><span data-stu-id="306e3-115">Hosting</span></span>](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)  
+ [<span data-ttu-id="f33f8-115">Hostování</span><span class="sxs-lookup"><span data-stu-id="f33f8-115">Hosting</span></span>](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)  
   
- [<span data-ttu-id="306e3-116">Sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="306e3-116">Build and Deploy</span></span>](../../../../docs/framework/wpf/app-development/building-and-deploying-wpf-applications.md)
+ [<span data-ttu-id="f33f8-116">Sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="f33f8-116">Build and Deploy</span></span>](../../../../docs/framework/wpf/app-development/building-and-deploying-wpf-applications.md)

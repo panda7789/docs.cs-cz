@@ -17,25 +17,26 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cad3fd6a1bdecf9d6187f3592fe4771bbb0b0e98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 214fdff11b5b64c78b2719e66813b5210884e318
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="tooltip-how-to-topics"></a><span data-ttu-id="ad0e6-102">ToolTip – postupy</span><span class="sxs-lookup"><span data-stu-id="ad0e6-102">ToolTip How-to Topics</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="ad0e6-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ad0e6-103">In This Section</span></span>  
- [<span data-ttu-id="ad0e6-104">Popisek pozice</span><span class="sxs-lookup"><span data-stu-id="ad0e6-104">Position a ToolTip</span></span>](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)  
-  [<span data-ttu-id="ad0e6-105">Použijte vlastnost BetweenShowDelay</span><span class="sxs-lookup"><span data-stu-id="ad0e6-105">Use the BetweenShowDelay Property</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)  
+# <a name="tooltip-how-to-topics"></a><span data-ttu-id="53bd1-102">ToolTip – postupy</span><span class="sxs-lookup"><span data-stu-id="53bd1-102">ToolTip How-to Topics</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="53bd1-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="53bd1-103">In This Section</span></span>  
+ [<span data-ttu-id="53bd1-104">Umístění prvku ToolTip</span><span class="sxs-lookup"><span data-stu-id="53bd1-104">Position a ToolTip</span></span>](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)  
+  [<span data-ttu-id="53bd1-105">Používání vlastnosti BetweenShowDelay</span><span class="sxs-lookup"><span data-stu-id="53bd1-105">Use the BetweenShowDelay Property</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)  
   
-## <a name="reference"></a><span data-ttu-id="ad0e6-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ad0e6-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="53bd1-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="53bd1-106">Reference</span></span>  
  <xref:System.Windows.Controls.ToolTip>  
   
  <xref:System.Windows.Controls.ToolTipService>  
   
  <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="ad0e6-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ad0e6-107">Related Sections</span></span>  
- [<span data-ttu-id="ad0e6-108">Přehled místní nabídka</span><span class="sxs-lookup"><span data-stu-id="ad0e6-108">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="53bd1-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="53bd1-107">Related Sections</span></span>  
+ [<span data-ttu-id="53bd1-108">Přehled prvku Popup</span><span class="sxs-lookup"><span data-stu-id="53bd1-108">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
   
- [<span data-ttu-id="ad0e6-109">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="ad0e6-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
+ [<span data-ttu-id="53bd1-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="53bd1-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)

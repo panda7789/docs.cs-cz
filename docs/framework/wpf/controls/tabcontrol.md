@@ -17,22 +17,23 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eed0485fd823caea1f332262edd9bcd8817bc31a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cc7e81e3735baff267b09ae59b80f53f80170354
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="tabcontrol"></a><span data-ttu-id="26af4-102">TabControl</span><span class="sxs-lookup"><span data-stu-id="26af4-102">TabControl</span></span>
-<span data-ttu-id="26af4-103"><xref:System.Windows.Controls.TabControl>elementy zobrazit obsah na samostatné stránky získat přístup tak, že vyberete příslušnou kartu. Obsahuje každé kartě <xref:System.Windows.Controls.TabItem>.</span><span class="sxs-lookup"><span data-stu-id="26af4-103"><xref:System.Windows.Controls.TabControl> elements display content on discrete pages accessed by selecting the appropriate tab. Each tab contains a <xref:System.Windows.Controls.TabItem>.</span></span>  
+# <a name="tabcontrol"></a><span data-ttu-id="5e6eb-102">TabControl</span><span class="sxs-lookup"><span data-stu-id="5e6eb-102">TabControl</span></span>
+<span data-ttu-id="5e6eb-103"><xref:System.Windows.Controls.TabControl>elementy zobrazit obsah na samostatné stránky získat přístup tak, že vyberete příslušnou kartu. Obsahuje každé kartě <xref:System.Windows.Controls.TabItem>.</span><span class="sxs-lookup"><span data-stu-id="5e6eb-103"><xref:System.Windows.Controls.TabControl> elements display content on discrete pages accessed by selecting the appropriate tab. Each tab contains a <xref:System.Windows.Controls.TabItem>.</span></span>  
   
- <span data-ttu-id="26af4-104">Následující obrázek znázorňuje <xref:System.Windows.Controls.TabControl>.</span><span class="sxs-lookup"><span data-stu-id="26af4-104">The following illustration shows a <xref:System.Windows.Controls.TabControl>.</span></span>  
+ <span data-ttu-id="5e6eb-104">Následující obrázek znázorňuje <xref:System.Windows.Controls.TabControl>.</span><span class="sxs-lookup"><span data-stu-id="5e6eb-104">The following illustration shows a <xref:System.Windows.Controls.TabControl>.</span></span>  
   
- <span data-ttu-id="26af4-105">![Kartě řízení](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span><span class="sxs-lookup"><span data-stu-id="26af4-105">![Tab control](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span></span>  
-<span data-ttu-id="26af4-106">Typické TabControl</span><span class="sxs-lookup"><span data-stu-id="26af4-106">Typical TabControl</span></span>  
+ <span data-ttu-id="5e6eb-105">![Kartě řízení](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span><span class="sxs-lookup"><span data-stu-id="5e6eb-105">![Tab control](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span></span>  
+<span data-ttu-id="5e6eb-106">Typické TabControl</span><span class="sxs-lookup"><span data-stu-id="5e6eb-106">Typical TabControl</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="26af4-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="26af4-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="5e6eb-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="5e6eb-107">Reference</span></span>  
  <xref:System.Windows.Controls.TabControl>  
   <xref:System.Windows.Controls.TabItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="26af4-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="26af4-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="5e6eb-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="5e6eb-108">Related Sections</span></span>

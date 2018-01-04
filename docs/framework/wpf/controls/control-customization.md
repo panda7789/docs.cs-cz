@@ -17,21 +17,22 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f09c1aac387d26d44398331d62b25e588d4bbdc1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d9bec0b3edd6a5ab3997c42e3b8154f0c41531d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="control-customization"></a><span data-ttu-id="53948-102">Přizpůsobení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="53948-102">Control Customization</span></span>
-<span data-ttu-id="53948-103">Tato kategorie zahrnuje různé základní třídy, rozhraní a další prvky a koncepty používané při vytváření plně funkční [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="53948-103">This category covers the various base classes, interfaces and other elements and concepts used in creating a fully functional [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] control.</span></span>  
+# <a name="control-customization"></a><span data-ttu-id="c8ee8-102">Přizpůsobení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="c8ee8-102">Control Customization</span></span>
+<span data-ttu-id="c8ee8-103">Tato kategorie zahrnuje různé základní třídy, rozhraní a další prvky a koncepty používané při vytváření plně funkční [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c8ee8-103">This category covers the various base classes, interfaces and other elements and concepts used in creating a fully functional [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="53948-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="53948-104">In This Section</span></span>  
- [<span data-ttu-id="53948-105">Vytváření – Přehled ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="53948-105">Control Authoring Overview</span></span>](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
- [<span data-ttu-id="53948-106">Pokyny pro návrh Stylable ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="53948-106">Guidelines for Designing Stylable Controls</span></span>](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)  
- [<span data-ttu-id="53948-107">Ozdobného prvku</span><span class="sxs-lookup"><span data-stu-id="53948-107">Adorners</span></span>](../../../../docs/framework/wpf/controls/adorners.md)  
- [<span data-ttu-id="53948-108">Styly ovládacího prvku a šablony</span><span class="sxs-lookup"><span data-stu-id="53948-108">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [<span data-ttu-id="53948-109">Automatizace uživatelského rozhraní grafického subsystému WPF vlastního ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="53948-109">UI Automation of a WPF Custom Control</span></span>](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c8ee8-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c8ee8-104">In This Section</span></span>  
+ [<span data-ttu-id="c8ee8-105">Přehled vytváření ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="c8ee8-105">Control Authoring Overview</span></span>](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [<span data-ttu-id="c8ee8-106">Pokyny pro návrh ovládacích prvků s podporou stylů</span><span class="sxs-lookup"><span data-stu-id="c8ee8-106">Guidelines for Designing Stylable Controls</span></span>](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)  
+ [<span data-ttu-id="c8ee8-107">Doplňky pro úpravy</span><span class="sxs-lookup"><span data-stu-id="c8ee8-107">Adorners</span></span>](../../../../docs/framework/wpf/controls/adorners.md)  
+ [<span data-ttu-id="c8ee8-108">Styly a šablony ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="c8ee8-108">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="c8ee8-109">Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF</span><span class="sxs-lookup"><span data-stu-id="c8ee8-109">UI Automation of a WPF Custom Control</span></span>](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
   
-## <a name="see-also"></a><span data-ttu-id="53948-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="53948-110">See Also</span></span>  
- [<span data-ttu-id="53948-111">Stylů a ukázka</span><span class="sxs-lookup"><span data-stu-id="53948-111">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a><span data-ttu-id="c8ee8-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="c8ee8-110">See Also</span></span>  
+ [<span data-ttu-id="c8ee8-111">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="c8ee8-111">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

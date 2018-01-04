@@ -17,25 +17,26 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46e54e05d30e14ad89454a627a7436fbd3cbedbe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1a39badbd6e7ddfc445d674a719ba9fe82f554d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="input-wpf"></a><span data-ttu-id="abd1e-102">Vstup (WPF)</span><span class="sxs-lookup"><span data-stu-id="abd1e-102">Input (WPF)</span></span>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="abd1e-103">zahrnuje podporu pro několik typů vstupu.</span><span class="sxs-lookup"><span data-stu-id="abd1e-103"> includes support for several types of input.</span></span> <span data-ttu-id="abd1e-104">Tento vstup zahrnuje text, dotykového ovládání, myši, příkazy, fokus, dotykového ovládání, přetahování myší a digitální rukopisu.</span><span class="sxs-lookup"><span data-stu-id="abd1e-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="abd1e-105">Tato část popisuje témata týkající se vstup v grafickém subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="abd1e-105">This section describes topics related to input in WPF.</span></span>  
+# <a name="input-wpf"></a><span data-ttu-id="a2892-102">Vstup (WPF)</span><span class="sxs-lookup"><span data-stu-id="a2892-102">Input (WPF)</span></span>
+[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="a2892-103">zahrnuje podporu pro několik typů vstupu.</span><span class="sxs-lookup"><span data-stu-id="a2892-103"> includes support for several types of input.</span></span> <span data-ttu-id="a2892-104">Tento vstup zahrnuje text, dotykového ovládání, myši, příkazy, fokus, dotykového ovládání, přetahování myší a digitální rukopisu.</span><span class="sxs-lookup"><span data-stu-id="a2892-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="a2892-105">Tato část popisuje témata týkající se vstup v grafickém subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="a2892-105">This section describes topics related to input in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="abd1e-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="abd1e-106">In This Section</span></span>  
- [<span data-ttu-id="abd1e-107">Vstupní – přehled</span><span class="sxs-lookup"><span data-stu-id="abd1e-107">Input Overview</span></span>](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [<span data-ttu-id="abd1e-108">Tvorba příkazů – přehled</span><span class="sxs-lookup"><span data-stu-id="abd1e-108">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [<span data-ttu-id="abd1e-109">Fokus – přehled</span><span class="sxs-lookup"><span data-stu-id="abd1e-109">Focus Overview</span></span>](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [<span data-ttu-id="abd1e-110">Styly pro výběr v ovládacích prvcích a FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="abd1e-110">Styling for Focus in Controls, and FocusVisualStyle</span></span>](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
- [<span data-ttu-id="abd1e-111">Návod: Vytvoření vaší první aplikace Touch</span><span class="sxs-lookup"><span data-stu-id="abd1e-111">Walkthrough: Creating Your First Touch Application</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
- [<span data-ttu-id="abd1e-112">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="abd1e-112">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
- [<span data-ttu-id="abd1e-113">Digitálního pera</span><span class="sxs-lookup"><span data-stu-id="abd1e-113">Digital Ink</span></span>](../../../../docs/framework/wpf/advanced/digital-ink.md)  
+## <a name="in-this-section"></a><span data-ttu-id="a2892-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a2892-106">In This Section</span></span>  
+ [<span data-ttu-id="a2892-107">Přehled vstupu</span><span class="sxs-lookup"><span data-stu-id="a2892-107">Input Overview</span></span>](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [<span data-ttu-id="a2892-108">Přehled příkazů</span><span class="sxs-lookup"><span data-stu-id="a2892-108">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
+ [<span data-ttu-id="a2892-109">Přehled fokusu</span><span class="sxs-lookup"><span data-stu-id="a2892-109">Focus Overview</span></span>](../../../../docs/framework/wpf/advanced/focus-overview.md)  
+ [<span data-ttu-id="a2892-110">Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="a2892-110">Styling for Focus in Controls, and FocusVisualStyle</span></span>](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
+ [<span data-ttu-id="a2892-111">Návod: Vytvoření první dotykové aplikace</span><span class="sxs-lookup"><span data-stu-id="a2892-111">Walkthrough: Creating Your First Touch Application</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
+ [<span data-ttu-id="a2892-112">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="a2892-112">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
+ [<span data-ttu-id="a2892-113">Rukopis</span><span class="sxs-lookup"><span data-stu-id="a2892-113">Digital Ink</span></span>](../../../../docs/framework/wpf/advanced/digital-ink.md)  
   
-## <a name="reference"></a><span data-ttu-id="abd1e-114">Odkaz</span><span class="sxs-lookup"><span data-stu-id="abd1e-114">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="a2892-114">Odkaz</span><span class="sxs-lookup"><span data-stu-id="a2892-114">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  
@@ -50,6 +51,6 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.Input.FocusManager>  
   
-## <a name="related-sections"></a><span data-ttu-id="abd1e-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="abd1e-115">Related Sections</span></span>  
- [<span data-ttu-id="abd1e-116">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="abd1e-116">Controls</span></span>](../../../../docs/framework/wpf/controls/index.md)  
-  [<span data-ttu-id="abd1e-117">Události</span><span class="sxs-lookup"><span data-stu-id="abd1e-117">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="a2892-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a2892-115">Related Sections</span></span>  
+ [<span data-ttu-id="a2892-116">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="a2892-116">Controls</span></span>](../../../../docs/framework/wpf/controls/index.md)  
+  [<span data-ttu-id="a2892-117">Události</span><span class="sxs-lookup"><span data-stu-id="a2892-117">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)

@@ -17,23 +17,24 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2770f1a0c965dc956e837c5c362e5767d0c9cea
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5256c0ffffb219776a8705dfee0409ebde07a7ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="gridsplitter-how-to-topics"></a><span data-ttu-id="ee3ad-102">GridSplitter – postupy</span><span class="sxs-lookup"><span data-stu-id="ee3ad-102">GridSplitter How-to Topics</span></span>
-<span data-ttu-id="ee3ad-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.GridSplitter> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="ee3ad-103">The topics in this section describe how to use the <xref:System.Windows.Controls.GridSplitter> control.</span></span>  
+# <a name="gridsplitter-how-to-topics"></a><span data-ttu-id="caa32-102">GridSplitter – postupy</span><span class="sxs-lookup"><span data-stu-id="caa32-102">GridSplitter How-to Topics</span></span>
+<span data-ttu-id="caa32-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.GridSplitter> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="caa32-103">The topics in this section describe how to use the <xref:System.Windows.Controls.GridSplitter> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ee3ad-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ee3ad-104">In This Section</span></span>  
- [<span data-ttu-id="ee3ad-105">Změnit velikost řádky s GridSplitter</span><span class="sxs-lookup"><span data-stu-id="ee3ad-105">Resize Rows with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)  
- [<span data-ttu-id="ee3ad-106">Změna velikosti sloupců s GridSplitter</span><span class="sxs-lookup"><span data-stu-id="ee3ad-106">Resize Columns with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)  
- [<span data-ttu-id="ee3ad-107">Ujistěte se, že GridSplitter viditelná</span><span class="sxs-lookup"><span data-stu-id="ee3ad-107">Make Sure That a GridSplitter Is Visible</span></span>](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md)  
+## <a name="in-this-section"></a><span data-ttu-id="caa32-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="caa32-104">In This Section</span></span>  
+ [<span data-ttu-id="caa32-105">Změna velikosti řádků pomocí prvku GridSplitter</span><span class="sxs-lookup"><span data-stu-id="caa32-105">Resize Rows with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)  
+ [<span data-ttu-id="caa32-106">Změna velikosti sloupců pomocí objektu GridSplitter</span><span class="sxs-lookup"><span data-stu-id="caa32-106">Resize Columns with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)  
+ [<span data-ttu-id="caa32-107">Kontrola viditelnosti objektu GridSplitter</span><span class="sxs-lookup"><span data-stu-id="caa32-107">Make Sure That a GridSplitter Is Visible</span></span>](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md)  
   
-## <a name="reference"></a><span data-ttu-id="ee3ad-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ee3ad-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="caa32-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="caa32-108">Reference</span></span>  
  <xref:System.Windows.Controls.GridSplitter>  
   
  <xref:System.Windows.Controls.Grid>  
   
-## <a name="related-sections"></a><span data-ttu-id="ee3ad-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ee3ad-109">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="caa32-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="caa32-109">Related Sections</span></span>

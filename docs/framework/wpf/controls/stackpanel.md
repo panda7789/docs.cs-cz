@@ -18,19 +18,20 @@ caps.latest.revision: "68"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e50c6abac6e949245c89b8f25a093ba72a3eb530
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a473b9972cd300dc45212e47292b73c3ca2c2221
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="stackpanel"></a><span data-ttu-id="87d1f-102">StackPanel</span><span class="sxs-lookup"><span data-stu-id="87d1f-102">StackPanel</span></span>
-<span data-ttu-id="87d1f-103"><xref:System.Windows.Controls.StackPanel> Element se používá k zásobníku podřízené elementy vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="87d1f-103">The <xref:System.Windows.Controls.StackPanel> element is used to stack child elements horizontally or vertically.</span></span>  
+# <a name="stackpanel"></a><span data-ttu-id="84f86-102">StackPanel</span><span class="sxs-lookup"><span data-stu-id="84f86-102">StackPanel</span></span>
+<span data-ttu-id="84f86-103"><xref:System.Windows.Controls.StackPanel> Element se používá k zásobníku podřízené elementy vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="84f86-103">The <xref:System.Windows.Controls.StackPanel> element is used to stack child elements horizontally or vertically.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="87d1f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="87d1f-104">In This Section</span></span>  
- [<span data-ttu-id="87d1f-105">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="87d1f-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="84f86-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="84f86-104">In This Section</span></span>  
+ [<span data-ttu-id="84f86-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="84f86-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="87d1f-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="87d1f-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="84f86-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="84f86-106">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -45,9 +46,9 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="87d1f-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="87d1f-107">Related Sections</span></span>  
- [<span data-ttu-id="87d1f-108">Rozložení</span><span class="sxs-lookup"><span data-stu-id="87d1f-108">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="84f86-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="84f86-107">Related Sections</span></span>  
+ [<span data-ttu-id="84f86-108">Rozložení</span><span class="sxs-lookup"><span data-stu-id="84f86-108">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="87d1f-109">Návod: Můj první grafický subsystém WPF aplikace pracovní plochy</span><span class="sxs-lookup"><span data-stu-id="87d1f-109">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="84f86-109">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="84f86-109">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="87d1f-110">Přehled ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="87d1f-110">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="84f86-110">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="84f86-110">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

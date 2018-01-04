@@ -15,23 +15,24 @@ caps.latest.revision: "82"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bc23483ee1c2b59de8c43c2a2582225d1b2c864c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b652805c921b4c1643e2c1ffcca8a361aa65541c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="fonts-wpf"></a><span data-ttu-id="861db-102">Písma (WPF)</span><span class="sxs-lookup"><span data-stu-id="861db-102">Fonts (WPF)</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="861db-103">zahrnuje podporu pro bohatou prezentace text použití [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem.</span><span class="sxs-lookup"><span data-stu-id="861db-103"> includes support for rich presentation of text using [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts.</span></span> <span data-ttu-id="861db-104">Ukázka pack z [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem je součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span><span class="sxs-lookup"><span data-stu-id="861db-104">A sample pack of [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts is included with the [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span></span>  
+# <a name="fonts-wpf"></a><span data-ttu-id="16c05-102">Písma (WPF)</span><span class="sxs-lookup"><span data-stu-id="16c05-102">Fonts (WPF)</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="16c05-103">zahrnuje podporu pro bohatou prezentace text použití [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem.</span><span class="sxs-lookup"><span data-stu-id="16c05-103"> includes support for rich presentation of text using [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts.</span></span> <span data-ttu-id="16c05-104">Ukázka pack z [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem je součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span><span class="sxs-lookup"><span data-stu-id="16c05-104">A sample pack of [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts is included with the [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="861db-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="861db-105">In This Section</span></span>  
- [<span data-ttu-id="861db-106">Funkce písem OpenType</span><span class="sxs-lookup"><span data-stu-id="861db-106">OpenType Font Features</span></span>](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
- [<span data-ttu-id="861db-107">Balení písma s aplikacemi</span><span class="sxs-lookup"><span data-stu-id="861db-107">Packaging Fonts with Applications</span></span>](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)  
- [<span data-ttu-id="861db-108">Ukázkové sadě písem OpenType</span><span class="sxs-lookup"><span data-stu-id="861db-108">Sample OpenType Font Pack</span></span>](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)  
- [<span data-ttu-id="861db-109">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="861db-109">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/fonts-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="16c05-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="16c05-105">In This Section</span></span>  
+ [<span data-ttu-id="16c05-106">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="16c05-106">OpenType Font Features</span></span>](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [<span data-ttu-id="16c05-107">Balení písem s aplikacemi</span><span class="sxs-lookup"><span data-stu-id="16c05-107">Packaging Fonts with Applications</span></span>](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)  
+ [<span data-ttu-id="16c05-108">Ukázková sada písem OpenType</span><span class="sxs-lookup"><span data-stu-id="16c05-108">Sample OpenType Font Pack</span></span>](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)  
+ [<span data-ttu-id="16c05-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="16c05-109">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/fonts-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="861db-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="861db-110">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="16c05-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="16c05-110">See Also</span></span>  
  <xref:System.Windows.FontStyle>  
  <xref:System.Windows.SystemFonts>  
- [<span data-ttu-id="861db-111">Dokumenty v grafickém subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="861db-111">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [<span data-ttu-id="861db-112">Typografii v grafickém subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="861db-112">Typography in WPF</span></span>](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)
+ [<span data-ttu-id="16c05-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="16c05-111">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="16c05-112">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="16c05-112">Typography in WPF</span></span>](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)

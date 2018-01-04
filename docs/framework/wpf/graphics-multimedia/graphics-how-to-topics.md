@@ -18,24 +18,25 @@ caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8717e4e1e54e07109d2e00d9bbf13dbd9d8dde8b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 03caea0247c387c7787838080cd473ccf2b49b4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="graphics-how-to-topics"></a><span data-ttu-id="890b7-102">Postupy: Témata grafiky</span><span class="sxs-lookup"><span data-stu-id="890b7-102">Graphics How-to Topics</span></span>
-<span data-ttu-id="890b7-103">Následující témata ukazují, jak použít grafické možnosti [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="890b7-103">The following topics demonstrate how to use the graphic capabilities of the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="graphics-how-to-topics"></a><span data-ttu-id="78e7c-102">Postupy: Témata grafiky</span><span class="sxs-lookup"><span data-stu-id="78e7c-102">Graphics How-to Topics</span></span>
+<span data-ttu-id="78e7c-103">Následující témata ukazují, jak použít grafické možnosti [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="78e7c-103">The following topics demonstrate how to use the graphic capabilities of the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="890b7-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="890b7-104">In This Section</span></span>  
- [<span data-ttu-id="890b7-105">Animace obdélníku</span><span class="sxs-lookup"><span data-stu-id="890b7-105">Animate a Rectangle</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-rectangle.md)  
- [<span data-ttu-id="890b7-106">Animace pozici objektu pomocí PointAnimation</span><span class="sxs-lookup"><span data-stu-id="890b7-106">Animate the Position of an Object by Using PointAnimation</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-of-an-object-by-using-pointanimation.md)  
- [<span data-ttu-id="890b7-107">Transformace body a vektory</span><span class="sxs-lookup"><span data-stu-id="890b7-107">Transform Points and Vectors</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-points-and-vectors.md)  
- [<span data-ttu-id="890b7-108">Rozšíření rámce pohotovostní do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="890b7-108">Extend Glass Frame Into a WPF Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/extend-glass-frame-into-a-wpf-application.md)  
- [<span data-ttu-id="890b7-109">Postupy: zlepšení výkonu vykreslování pomocí ukládání do mezipaměti Element</span><span class="sxs-lookup"><span data-stu-id="890b7-109">How to: Improve Rendering Performance by Caching an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-improve-rendering-performance-by-caching-an-element.md)  
- [<span data-ttu-id="890b7-110">Postupy: použijte Element v mezipaměti jako štětce</span><span class="sxs-lookup"><span data-stu-id="890b7-110">How to: Use a Cached Element as a Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush.md)  
+## <a name="in-this-section"></a><span data-ttu-id="78e7c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="78e7c-104">In This Section</span></span>  
+ [<span data-ttu-id="78e7c-105">Animace obdélníku</span><span class="sxs-lookup"><span data-stu-id="78e7c-105">Animate a Rectangle</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-rectangle.md)  
+ [<span data-ttu-id="78e7c-106">Animace umístění objektu pomocí PointAnimation</span><span class="sxs-lookup"><span data-stu-id="78e7c-106">Animate the Position of an Object by Using PointAnimation</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-of-an-object-by-using-pointanimation.md)  
+ [<span data-ttu-id="78e7c-107">Body a vektory transformace</span><span class="sxs-lookup"><span data-stu-id="78e7c-107">Transform Points and Vectors</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-points-and-vectors.md)  
+ [<span data-ttu-id="78e7c-108">Rozšíření skleněného rámečku do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="78e7c-108">Extend Glass Frame Into a WPF Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/extend-glass-frame-into-a-wpf-application.md)  
+ [<span data-ttu-id="78e7c-109">Postupy: Zvýšení výkonu vykreslování uložením elementu do mezipaměti</span><span class="sxs-lookup"><span data-stu-id="78e7c-109">How to: Improve Rendering Performance by Caching an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-improve-rendering-performance-by-caching-an-element.md)  
+ [<span data-ttu-id="78e7c-110">Postupy: Použití elementu uloženého v mezipaměti jako štětce</span><span class="sxs-lookup"><span data-stu-id="78e7c-110">How to: Use a Cached Element as a Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush.md)  
   
-## <a name="see-also"></a><span data-ttu-id="890b7-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="890b7-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="78e7c-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="78e7c-111">See Also</span></span>  
  <xref:System.Windows.Shapes.Shape>  
  <xref:System.Windows.Media.Transform>  
  <xref:System.Windows.Media.Imaging.BitmapImage>  
@@ -43,5 +44,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Media.Drawing>  
  <xref:System.Windows.Media.Brush>  
  <xref:System.Windows.Media.Effects.BitmapEffect>  
- [<span data-ttu-id="890b7-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="890b7-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [<span data-ttu-id="890b7-113">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="890b7-113">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+ [<span data-ttu-id="78e7c-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="78e7c-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+ [<span data-ttu-id="78e7c-113">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="78e7c-113">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

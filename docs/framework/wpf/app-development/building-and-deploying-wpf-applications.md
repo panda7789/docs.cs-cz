@@ -18,32 +18,33 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de9740d74b87de7b81da10b458a7e935a427af98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6873de24e33876b7caaf9014ca7e9d6bc80375c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="building-and-deploying-wpf-applications"></a><span data-ttu-id="83f59-102">Sestavení a nasazení aplikací WPF</span><span class="sxs-lookup"><span data-stu-id="83f59-102">Building and Deploying WPF Applications</span></span>
-<span data-ttu-id="83f59-103">Sestavení a nasazení modelu poskytuje možnost vytvářet a nasazovat aplikace místně i vzdáleně, včetně následujících:</span><span class="sxs-lookup"><span data-stu-id="83f59-103">The build and deployment model provides the capability to build and deploy applications locally and remotely, including the following:</span></span>  
+# <a name="building-and-deploying-wpf-applications"></a><span data-ttu-id="7d5a6-102">Sestavení a nasazení aplikací WPF</span><span class="sxs-lookup"><span data-stu-id="7d5a6-102">Building and Deploying WPF Applications</span></span>
+<span data-ttu-id="7d5a6-103">Sestavení a nasazení modelu poskytuje možnost vytvářet a nasazovat aplikace místně i vzdáleně, včetně následujících:</span><span class="sxs-lookup"><span data-stu-id="7d5a6-103">The build and deployment model provides the capability to build and deploy applications locally and remotely, including the following:</span></span>  
   
--   <span data-ttu-id="83f59-104">MSBuild: sestavení .NET systému nachází v oboru názvů Microsoft.Build.Tasks.Windows.</span><span class="sxs-lookup"><span data-stu-id="83f59-104">MSBuild: the .NET build system located in the Microsoft.Build.Tasks.Windows namespace.</span></span>  
+-   <span data-ttu-id="7d5a6-104">MSBuild: sestavení .NET systému nachází v oboru názvů Microsoft.Build.Tasks.Windows.</span><span class="sxs-lookup"><span data-stu-id="7d5a6-104">MSBuild: the .NET build system located in the Microsoft.Build.Tasks.Windows namespace.</span></span>  
   
--   <span data-ttu-id="83f59-105">Prostředky: práci s prostředky uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="83f59-105">Resources: working with UI resources.</span></span>  
+-   <span data-ttu-id="7d5a6-105">Prostředky: práci s prostředky uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7d5a6-105">Resources: working with UI resources.</span></span>  
   
--   <span data-ttu-id="83f59-106">ClickOnce – nasazení: publikování a nasazení systém .NET.</span><span class="sxs-lookup"><span data-stu-id="83f59-106">ClickOnce Deployment: the .NET publishing and deployment system.</span></span>  
+-   <span data-ttu-id="7d5a6-106">ClickOnce – nasazení: publikování a nasazení systém .NET.</span><span class="sxs-lookup"><span data-stu-id="7d5a6-106">ClickOnce Deployment: the .NET publishing and deployment system.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="83f59-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="83f59-107">In This Section</span></span>  
- [<span data-ttu-id="83f59-108">Vytvoření aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="83f59-108">Building a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
- [<span data-ttu-id="83f59-109">Nasazení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="83f59-109">Deploying a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
- [<span data-ttu-id="83f59-110">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="83f59-110">How-to Topics</span></span>](../../../../docs/framework/wpf/app-development/build-and-deploy-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="7d5a6-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="7d5a6-107">In This Section</span></span>  
+ [<span data-ttu-id="7d5a6-108">Sestavení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="7d5a6-108">Building a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="7d5a6-109">Nasazení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="7d5a6-109">Deploying a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="7d5a6-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="7d5a6-110">How-to Topics</span></span>](../../../../docs/framework/wpf/app-development/build-and-deploy-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="83f59-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="83f59-111">Reference</span></span>  
- <span data-ttu-id="83f59-112">MSBuild</span><span class="sxs-lookup"><span data-stu-id="83f59-112">MSBuild</span></span>  
+## <a name="reference"></a><span data-ttu-id="7d5a6-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="7d5a6-111">Reference</span></span>  
+ <span data-ttu-id="7d5a6-112">MSBuild</span><span class="sxs-lookup"><span data-stu-id="7d5a6-112">MSBuild</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="83f59-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="83f59-113">Related Sections</span></span>  
- [<span data-ttu-id="83f59-114">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="83f59-114">Application Management Overview</span></span>](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
-  [<span data-ttu-id="83f59-115">Windows v grafickém subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="83f59-115">Windows in WPF</span></span>](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
-  [<span data-ttu-id="83f59-116">Navigace – přehled</span><span class="sxs-lookup"><span data-stu-id="83f59-116">Navigation Overview</span></span>](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
-  [<span data-ttu-id="83f59-117">Přehled aplikace prohlížeče WPF XAML</span><span class="sxs-lookup"><span data-stu-id="83f59-117">WPF XAML Browser Applications Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
-  [<span data-ttu-id="83f59-118">Hostování</span><span class="sxs-lookup"><span data-stu-id="83f59-118">Hosting</span></span>](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)
+## <a name="related-sections"></a><span data-ttu-id="7d5a6-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="7d5a6-113">Related Sections</span></span>  
+ [<span data-ttu-id="7d5a6-114">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="7d5a6-114">Application Management Overview</span></span>](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
+  [<span data-ttu-id="7d5a6-115">Windows ve WPF</span><span class="sxs-lookup"><span data-stu-id="7d5a6-115">Windows in WPF</span></span>](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
+  [<span data-ttu-id="7d5a6-116">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="7d5a6-116">Navigation Overview</span></span>](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+  [<span data-ttu-id="7d5a6-117">Přehled aplikací Prohlížeče WPF XAML</span><span class="sxs-lookup"><span data-stu-id="7d5a6-117">WPF XAML Browser Applications Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
+  [<span data-ttu-id="7d5a6-118">Hostování</span><span class="sxs-lookup"><span data-stu-id="7d5a6-118">Hosting</span></span>](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)

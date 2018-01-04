@@ -17,23 +17,24 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7da9f53b291fb5a8f89c5e9ac15ffc082c976cdb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f80b73952dc8949aac7b9106ab42388ddf2b4d40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="canvas-how-to-topics"></a><span data-ttu-id="0b372-102">Postupy: Témata plátna</span><span class="sxs-lookup"><span data-stu-id="0b372-102">Canvas How-to Topics</span></span>
-<span data-ttu-id="0b372-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.Canvas> element na pozici absolutně podřízené elementy.</span><span class="sxs-lookup"><span data-stu-id="0b372-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Canvas> element to absolutely position child elements.</span></span>  
+# <a name="canvas-how-to-topics"></a><span data-ttu-id="0a1c7-102">Postupy: Témata plátna</span><span class="sxs-lookup"><span data-stu-id="0a1c7-102">Canvas How-to Topics</span></span>
+<span data-ttu-id="0a1c7-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.Canvas> element na pozici absolutně podřízené elementy.</span><span class="sxs-lookup"><span data-stu-id="0a1c7-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Canvas> element to absolutely position child elements.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="0b372-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0b372-104">In This Section</span></span>  
- [<span data-ttu-id="0b372-105">Zabalení ohraničení okolo obsah na plátno</span><span class="sxs-lookup"><span data-stu-id="0b372-105">Wrap a Border Around the Content of a Canvas</span></span>](../../../../docs/framework/wpf/controls/how-to-wrap-a-border-around-the-content-of-a-canvas.md)  
- [<span data-ttu-id="0b372-106">Získání nebo nastavení plátno vlastnosti umístění</span><span class="sxs-lookup"><span data-stu-id="0b372-106">Get or Set Canvas Positioning Properties</span></span>](../../../../docs/framework/wpf/controls/how-to-get-or-set-canvas-positioning-properties.md)  
- [<span data-ttu-id="0b372-107">Vytvořit a použít na plátno</span><span class="sxs-lookup"><span data-stu-id="0b372-107">Create and Use a Canvas</span></span>](../../../../docs/framework/wpf/controls/how-to-create-and-use-a-canvas.md)  
- [<span data-ttu-id="0b372-108">Použití připojené vlastnosti plátno pozice podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="0b372-108">Use the Attached Properties of Canvas to Position Child Elements</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md)  
- [<span data-ttu-id="0b372-109">Změna velikosti na plátno pomocí jezdec</span><span class="sxs-lookup"><span data-stu-id="0b372-109">Resize a Canvas by Using a Thumb</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-a-canvas-by-using-a-thumb.md)  
+## <a name="in-this-section"></a><span data-ttu-id="0a1c7-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0a1c7-104">In This Section</span></span>  
+ [<span data-ttu-id="0a1c7-105">Zalomení ohraničení kolem obsahu plátna</span><span class="sxs-lookup"><span data-stu-id="0a1c7-105">Wrap a Border Around the Content of a Canvas</span></span>](../../../../docs/framework/wpf/controls/how-to-wrap-a-border-around-the-content-of-a-canvas.md)  
+ [<span data-ttu-id="0a1c7-106">Načtení nebo nastavení vlastností umístění plátna</span><span class="sxs-lookup"><span data-stu-id="0a1c7-106">Get or Set Canvas Positioning Properties</span></span>](../../../../docs/framework/wpf/controls/how-to-get-or-set-canvas-positioning-properties.md)  
+ [<span data-ttu-id="0a1c7-107">Vytvoření a použití plátna</span><span class="sxs-lookup"><span data-stu-id="0a1c7-107">Create and Use a Canvas</span></span>](../../../../docs/framework/wpf/controls/how-to-create-and-use-a-canvas.md)  
+ [<span data-ttu-id="0a1c7-108">Umístění podřízených elementů pomocí vlastností přidružených k plátnu</span><span class="sxs-lookup"><span data-stu-id="0a1c7-108">Use the Attached Properties of Canvas to Position Child Elements</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md)  
+ [<span data-ttu-id="0a1c7-109">Změna velikosti plátna použitím jezdce</span><span class="sxs-lookup"><span data-stu-id="0a1c7-109">Resize a Canvas by Using a Thumb</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-a-canvas-by-using-a-thumb.md)  
   
-## <a name="reference"></a><span data-ttu-id="0b372-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="0b372-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="0a1c7-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="0a1c7-110">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -48,9 +49,9 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="0b372-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="0b372-111">Related Sections</span></span>  
- [<span data-ttu-id="0b372-112">Rozložení</span><span class="sxs-lookup"><span data-stu-id="0b372-112">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="0a1c7-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="0a1c7-111">Related Sections</span></span>  
+ [<span data-ttu-id="0a1c7-112">Rozložení</span><span class="sxs-lookup"><span data-stu-id="0a1c7-112">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="0b372-113">Návod: Můj první grafický subsystém WPF aplikace pracovní plochy</span><span class="sxs-lookup"><span data-stu-id="0b372-113">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="0a1c7-113">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="0a1c7-113">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="0b372-114">Přehled ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="0b372-114">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="0a1c7-114">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="0a1c7-114">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

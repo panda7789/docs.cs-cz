@@ -19,32 +19,33 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 61e2bc470641279b594b8f77eb924a47d8a063ac
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6a1b3e78bac5c388bbca4afa6354e5f9aee02c65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="properties-wpf"></a><span data-ttu-id="5efcd-102">Vlastnosti (WPF)</span><span class="sxs-lookup"><span data-stu-id="5efcd-102">Properties (WPF)</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="5efcd-103">poskytuje sadu služeb, které slouží k rozšíření funkcí [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost.</span><span class="sxs-lookup"><span data-stu-id="5efcd-103"> provides a set of services that can be used to extend the functionality of a [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] property.</span></span> <span data-ttu-id="5efcd-104">Souhrnně tyto služby jsou obvykle označuje jako vlastnost systém WPF.</span><span class="sxs-lookup"><span data-stu-id="5efcd-104">Collectively, these services are typically referred to as the WPF property system.</span></span> <span data-ttu-id="5efcd-105">Vlastnosti, které je založeno [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti.</span><span class="sxs-lookup"><span data-stu-id="5efcd-105">A property that is backed by the [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] property system is known as a dependency property.</span></span>  
+# <a name="properties-wpf"></a><span data-ttu-id="a9d8b-102">Vlastnosti (WPF)</span><span class="sxs-lookup"><span data-stu-id="a9d8b-102">Properties (WPF)</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="a9d8b-103">poskytuje sadu služeb, které slouží k rozšíření funkcí [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost.</span><span class="sxs-lookup"><span data-stu-id="a9d8b-103"> provides a set of services that can be used to extend the functionality of a [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] property.</span></span> <span data-ttu-id="a9d8b-104">Souhrnně tyto služby jsou obvykle označuje jako vlastnost systém WPF.</span><span class="sxs-lookup"><span data-stu-id="a9d8b-104">Collectively, these services are typically referred to as the WPF property system.</span></span> <span data-ttu-id="a9d8b-105">Vlastnosti, které je založeno [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti.</span><span class="sxs-lookup"><span data-stu-id="a9d8b-105">A property that is backed by the [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] property system is known as a dependency property.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5efcd-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5efcd-106">In This Section</span></span>  
- [<span data-ttu-id="5efcd-107">Přehled vlastností závislostí</span><span class="sxs-lookup"><span data-stu-id="5efcd-107">Dependency Properties Overview</span></span>](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [<span data-ttu-id="5efcd-108">Přehled přidružené vlastnosti</span><span class="sxs-lookup"><span data-stu-id="5efcd-108">Attached Properties Overview</span></span>](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
- [<span data-ttu-id="5efcd-109">Zpětná volání vlastnost závislosti a ověření</span><span class="sxs-lookup"><span data-stu-id="5efcd-109">Dependency Property Callbacks and Validation</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)  
- [<span data-ttu-id="5efcd-110">Vlastnosti vlastní závislosti</span><span class="sxs-lookup"><span data-stu-id="5efcd-110">Custom Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [<span data-ttu-id="5efcd-111">Metadata vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="5efcd-111">Dependency Property Metadata</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [<span data-ttu-id="5efcd-112">Metadata vlastnosti Framework</span><span class="sxs-lookup"><span data-stu-id="5efcd-112">Framework Property Metadata</span></span>](../../../../docs/framework/wpf/advanced/framework-property-metadata.md)  
- [<span data-ttu-id="5efcd-113">Priorita hodnotu vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="5efcd-113">Dependency Property Value Precedence</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)  
- [<span data-ttu-id="5efcd-114">Vlastnosti jen pro čtení závislostí</span><span class="sxs-lookup"><span data-stu-id="5efcd-114">Read-Only Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)  
- [<span data-ttu-id="5efcd-115">Hodnota dědičnost vlastnosti</span><span class="sxs-lookup"><span data-stu-id="5efcd-115">Property Value Inheritance</span></span>](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)  
- [<span data-ttu-id="5efcd-116">Závislost vlastnost zabezpečení</span><span class="sxs-lookup"><span data-stu-id="5efcd-116">Dependency Property Security</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
- [<span data-ttu-id="5efcd-117">Bezpečné konstruktor vzory pro DependencyObjects</span><span class="sxs-lookup"><span data-stu-id="5efcd-117">Safe Constructor Patterns for DependencyObjects</span></span>](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)  
- [<span data-ttu-id="5efcd-118">Typ kolekce vlastností závislostí</span><span class="sxs-lookup"><span data-stu-id="5efcd-118">Collection-Type Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
- [<span data-ttu-id="5efcd-119">Načítání XAML a vlastností závislostí</span><span class="sxs-lookup"><span data-stu-id="5efcd-119">XAML Loading and Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
- [<span data-ttu-id="5efcd-120">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="5efcd-120">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="a9d8b-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a9d8b-106">In This Section</span></span>  
+ [<span data-ttu-id="a9d8b-107">Přehled vlastností závislosti</span><span class="sxs-lookup"><span data-stu-id="a9d8b-107">Dependency Properties Overview</span></span>](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [<span data-ttu-id="a9d8b-108">Přehled přidružených vlastností</span><span class="sxs-lookup"><span data-stu-id="a9d8b-108">Attached Properties Overview</span></span>](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
+ [<span data-ttu-id="a9d8b-109">Zpětné volání a ověření vlastností závislostí</span><span class="sxs-lookup"><span data-stu-id="a9d8b-109">Dependency Property Callbacks and Validation</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)  
+ [<span data-ttu-id="a9d8b-110">Vlastní vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="a9d8b-110">Custom Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [<span data-ttu-id="a9d8b-111">Metadata vlastností závislosti</span><span class="sxs-lookup"><span data-stu-id="a9d8b-111">Dependency Property Metadata</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [<span data-ttu-id="a9d8b-112">Metadata vlastnosti architektury</span><span class="sxs-lookup"><span data-stu-id="a9d8b-112">Framework Property Metadata</span></span>](../../../../docs/framework/wpf/advanced/framework-property-metadata.md)  
+ [<span data-ttu-id="a9d8b-113">Priorita hodnot vlastností závislosti</span><span class="sxs-lookup"><span data-stu-id="a9d8b-113">Dependency Property Value Precedence</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)  
+ [<span data-ttu-id="a9d8b-114">Vlastnosti závislosti jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="a9d8b-114">Read-Only Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)  
+ [<span data-ttu-id="a9d8b-115">Dědičnost hodnoty vlastnosti</span><span class="sxs-lookup"><span data-stu-id="a9d8b-115">Property Value Inheritance</span></span>](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)  
+ [<span data-ttu-id="a9d8b-116">Zabezpečení vlastností závislosti</span><span class="sxs-lookup"><span data-stu-id="a9d8b-116">Dependency Property Security</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
+ [<span data-ttu-id="a9d8b-117">Zabezpečené vzory konstruktoru pro DependencyObjects</span><span class="sxs-lookup"><span data-stu-id="a9d8b-117">Safe Constructor Patterns for DependencyObjects</span></span>](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)  
+ [<span data-ttu-id="a9d8b-118">Vlastnosti závislostí typu kolekce</span><span class="sxs-lookup"><span data-stu-id="a9d8b-118">Collection-Type Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
+ [<span data-ttu-id="a9d8b-119">Vlastnosti závislostí a načítání XAML</span><span class="sxs-lookup"><span data-stu-id="a9d8b-119">XAML Loading and Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
+ [<span data-ttu-id="a9d8b-120">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="a9d8b-120">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="5efcd-121">Odkaz</span><span class="sxs-lookup"><span data-stu-id="5efcd-121">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="a9d8b-121">Odkaz</span><span class="sxs-lookup"><span data-stu-id="a9d8b-121">Reference</span></span>  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  
@@ -53,13 +54,13 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.DependencyObject>  
   
-## <a name="related-sections"></a><span data-ttu-id="5efcd-122">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="5efcd-122">Related Sections</span></span>  
- [<span data-ttu-id="5efcd-123">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="5efcd-123">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [<span data-ttu-id="5efcd-124">XAML v grafickém subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="5efcd-124">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [<span data-ttu-id="5efcd-125">Základní prvky</span><span class="sxs-lookup"><span data-stu-id="5efcd-125">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [<span data-ttu-id="5efcd-126">Element stromu a serializace</span><span class="sxs-lookup"><span data-stu-id="5efcd-126">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [<span data-ttu-id="5efcd-127">Události</span><span class="sxs-lookup"><span data-stu-id="5efcd-127">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [<span data-ttu-id="5efcd-128">Vstup</span><span class="sxs-lookup"><span data-stu-id="5efcd-128">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [<span data-ttu-id="5efcd-129">Prostředky</span><span class="sxs-lookup"><span data-stu-id="5efcd-129">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [<span data-ttu-id="5efcd-130">Model obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="5efcd-130">WPF Content Model</span></span>](../../../../docs/framework/wpf/controls/wpf-content-model.md)  
-  [<span data-ttu-id="5efcd-131">Model vláken</span><span class="sxs-lookup"><span data-stu-id="5efcd-131">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)
+## <a name="related-sections"></a><span data-ttu-id="a9d8b-122">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a9d8b-122">Related Sections</span></span>  
+ [<span data-ttu-id="a9d8b-123">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="a9d8b-123">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
+  [<span data-ttu-id="a9d8b-124">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="a9d8b-124">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
+  [<span data-ttu-id="a9d8b-125">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="a9d8b-125">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)  
+  [<span data-ttu-id="a9d8b-126">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="a9d8b-126">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+  [<span data-ttu-id="a9d8b-127">Události</span><span class="sxs-lookup"><span data-stu-id="a9d8b-127">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)  
+  [<span data-ttu-id="a9d8b-128">Vstup</span><span class="sxs-lookup"><span data-stu-id="a9d8b-128">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
+  [<span data-ttu-id="a9d8b-129">Prostředky</span><span class="sxs-lookup"><span data-stu-id="a9d8b-129">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
+  [<span data-ttu-id="a9d8b-130">Model obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="a9d8b-130">WPF Content Model</span></span>](../../../../docs/framework/wpf/controls/wpf-content-model.md)  
+  [<span data-ttu-id="a9d8b-131">Model vláken</span><span class="sxs-lookup"><span data-stu-id="a9d8b-131">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)

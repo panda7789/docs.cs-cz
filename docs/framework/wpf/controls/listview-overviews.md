@@ -17,24 +17,25 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 07757f28c52705ec4d5ea7ed6356c28cc68bbe86
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e6dfa0e6c772fb4623c9717c1085ab862df74ca5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="listview-overviews"></a><span data-ttu-id="c423c-102">Přehled ListView</span><span class="sxs-lookup"><span data-stu-id="c423c-102">ListView Overviews</span></span>
-<span data-ttu-id="c423c-103">Témata v této části se dozvíte, jak používat <xref:System.Windows.Controls.ListView> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c423c-103">The topics in this section show you how to use a <xref:System.Windows.Controls.ListView> control.</span></span>  
+# <a name="listview-overviews"></a><span data-ttu-id="6b69a-102">Přehled ListView</span><span class="sxs-lookup"><span data-stu-id="6b69a-102">ListView Overviews</span></span>
+<span data-ttu-id="6b69a-103">Témata v této části se dozvíte, jak používat <xref:System.Windows.Controls.ListView> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="6b69a-103">The topics in this section show you how to use a <xref:System.Windows.Controls.ListView> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="c423c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c423c-104">In This Section</span></span>  
- [<span data-ttu-id="c423c-105">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="c423c-105">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [<span data-ttu-id="c423c-106">Rutina GridView – přehled</span><span class="sxs-lookup"><span data-stu-id="c423c-106">GridView Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [<span data-ttu-id="c423c-107">Styly záhlaví sloupců GridView a Přehled šablon</span><span class="sxs-lookup"><span data-stu-id="c423c-107">GridView Column Header Styles and Templates Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="6b69a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="6b69a-104">In This Section</span></span>  
+ [<span data-ttu-id="6b69a-105">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="6b69a-105">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [<span data-ttu-id="6b69a-106">GridView – přehled</span><span class="sxs-lookup"><span data-stu-id="6b69a-106">GridView Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [<span data-ttu-id="6b69a-107">Přehled stylů záhlaví sloupců a šablon GridView</span><span class="sxs-lookup"><span data-stu-id="6b69a-107">GridView Column Header Styles and Templates Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)  
   
-## <a name="reference"></a><span data-ttu-id="c423c-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c423c-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="6b69a-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="6b69a-108">Reference</span></span>  
  <xref:System.Windows.Controls.ListView>  
   
  <xref:System.Windows.Controls.GridView>  
   
-## <a name="related-sections"></a><span data-ttu-id="c423c-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c423c-109">Related Sections</span></span>  
- [<span data-ttu-id="c423c-110">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="c423c-110">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+## <a name="related-sections"></a><span data-ttu-id="6b69a-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="6b69a-109">Related Sections</span></span>  
+ [<span data-ttu-id="6b69a-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="6b69a-110">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

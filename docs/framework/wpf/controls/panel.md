@@ -18,20 +18,21 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a73772ddb9d9344e53bf4df71775f1f17e179342
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1a74bf246a66f54e274833c2c9f04f8da0f48a0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="panel"></a><span data-ttu-id="db208-102">Panel</span><span class="sxs-lookup"><span data-stu-id="db208-102">Panel</span></span>
-<span data-ttu-id="db208-103"><xref:System.Windows.Controls.Panel>je základní třída pro všechny elementy, které podporují rozložení aplikace v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="db208-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="panel"></a><span data-ttu-id="4c91e-102">Panel</span><span class="sxs-lookup"><span data-stu-id="4c91e-102">Panel</span></span>
+<span data-ttu-id="4c91e-103"><xref:System.Windows.Controls.Panel>je základní třída pro všechny elementy, které podporují rozložení aplikace v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4c91e-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="db208-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="db208-104">In This Section</span></span>  
- [<span data-ttu-id="db208-105">Přehled panelů</span><span class="sxs-lookup"><span data-stu-id="db208-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [<span data-ttu-id="db208-106">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="db208-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="4c91e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4c91e-104">In This Section</span></span>  
+ [<span data-ttu-id="4c91e-105">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="4c91e-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [<span data-ttu-id="4c91e-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="4c91e-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="db208-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="db208-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="4c91e-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4c91e-107">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -46,9 +47,9 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="db208-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="db208-108">Related Sections</span></span>  
- [<span data-ttu-id="db208-109">Rozložení</span><span class="sxs-lookup"><span data-stu-id="db208-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="4c91e-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4c91e-108">Related Sections</span></span>  
+ [<span data-ttu-id="4c91e-109">Rozložení</span><span class="sxs-lookup"><span data-stu-id="4c91e-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="db208-110">Návod: Můj první grafický subsystém WPF aplikace pracovní plochy</span><span class="sxs-lookup"><span data-stu-id="db208-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="4c91e-110">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="4c91e-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="db208-111">Přehled ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="db208-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="4c91e-111">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="4c91e-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

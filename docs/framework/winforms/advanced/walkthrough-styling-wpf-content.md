@@ -17,76 +17,77 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5ae28df17e17e81814cb8cba8b2630751707f354
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0fa4772ebb321f927087fe13d0d50a6ae8145e55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="walkthrough-styling-wpf-content"></a><span data-ttu-id="47280-102">Návod: Určení stylu obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="47280-102">Walkthrough: Styling WPF Content</span></span>
-<span data-ttu-id="47280-103">Tento názorný postup ukazují, jak použít stylů do ovládacího prvku Windows Presentation Foundation (WPF) hostované ve formuláři Windows.</span><span class="sxs-lookup"><span data-stu-id="47280-103">This walkthrough show you how to apply styling to a Windows Presentation Foundation (WPF) control hosted on a Windows Form.</span></span>  
+# <a name="walkthrough-styling-wpf-content"></a><span data-ttu-id="d64bd-102">Návod: Určení stylu obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-102">Walkthrough: Styling WPF Content</span></span>
+<span data-ttu-id="d64bd-103">Tento názorný postup ukazují, jak použít stylů do ovládacího prvku Windows Presentation Foundation (WPF) hostované ve formuláři Windows.</span><span class="sxs-lookup"><span data-stu-id="d64bd-103">This walkthrough show you how to apply styling to a Windows Presentation Foundation (WPF) control hosted on a Windows Form.</span></span>  
   
- <span data-ttu-id="47280-104">V tomto návodu můžete provádět následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="47280-104">In this walkthrough, you perform the following tasks:</span></span>  
+ <span data-ttu-id="d64bd-104">V tomto návodu můžete provádět následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="d64bd-104">In this walkthrough, you perform the following tasks:</span></span>  
   
--   <span data-ttu-id="47280-105">Vytvoření projektu.</span><span class="sxs-lookup"><span data-stu-id="47280-105">Create the project.</span></span>  
+-   <span data-ttu-id="d64bd-105">Vytvoření projektu.</span><span class="sxs-lookup"><span data-stu-id="d64bd-105">Create the project.</span></span>  
   
--   <span data-ttu-id="47280-106">Vytvořte typ ovládacího prvku WPF.</span><span class="sxs-lookup"><span data-stu-id="47280-106">Create the WPF control type.</span></span>  
+-   <span data-ttu-id="d64bd-106">Vytvořte typ ovládacího prvku WPF.</span><span class="sxs-lookup"><span data-stu-id="d64bd-106">Create the WPF control type.</span></span>  
   
--   <span data-ttu-id="47280-107">Použijte styl pro ovládací prvek WPF.</span><span class="sxs-lookup"><span data-stu-id="47280-107">Apply a style to the WPF control.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="47280-108">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="47280-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="47280-109">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="47280-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="47280-110">Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="47280-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
-  
-## <a name="prerequisites"></a><span data-ttu-id="47280-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="47280-111">Prerequisites</span></span>  
- <span data-ttu-id="47280-112">K dokončení tohoto návodu budete potřebovat následující komponenty:</span><span class="sxs-lookup"><span data-stu-id="47280-112">You need the following components to complete this walkthrough:</span></span>  
-  
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="47280-113">.</span><span class="sxs-lookup"><span data-stu-id="47280-113">.</span></span>  
-  
-## <a name="creating-the-project"></a><span data-ttu-id="47280-114">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="47280-114">Creating the Project</span></span>  
- <span data-ttu-id="47280-115">Prvním krokem je vytvoření projektu modelu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="47280-115">The first step is to create the Windows Forms project.</span></span>  
+-   <span data-ttu-id="d64bd-107">Použijte styl pro ovládací prvek WPF.</span><span class="sxs-lookup"><span data-stu-id="d64bd-107">Apply a style to the WPF control.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="47280-116">Pokud hostování obsahu subsystému WPF, jsou podporovány pouze projekty C# a Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="47280-116">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>  
+>  <span data-ttu-id="d64bd-108">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="d64bd-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="d64bd-109">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="d64bd-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="d64bd-110">Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="d64bd-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-#### <a name="to-create-the-project"></a><span data-ttu-id="47280-117">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="47280-117">To create the project</span></span>  
+## <a name="prerequisites"></a><span data-ttu-id="d64bd-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d64bd-111">Prerequisites</span></span>  
+ <span data-ttu-id="d64bd-112">K dokončení tohoto návodu budete potřebovat následující komponenty:</span><span class="sxs-lookup"><span data-stu-id="d64bd-112">You need the following components to complete this walkthrough:</span></span>  
   
--   <span data-ttu-id="47280-118">Vytvořte nový projekt aplikace Windows Forms v jazyce Visual Basic a Visual C# s názvem `StylingWpfContent`.</span><span class="sxs-lookup"><span data-stu-id="47280-118">Create a new Windows Forms Application project in Visual Basic or Visual C# named `StylingWpfContent`.</span></span>  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="d64bd-113">.</span><span class="sxs-lookup"><span data-stu-id="d64bd-113">.</span></span>  
   
-## <a name="creating-the-wpf-control-types"></a><span data-ttu-id="47280-119">Vytváření typy ovládacích prvků grafického subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="47280-119">Creating the WPF Control Types</span></span>  
- <span data-ttu-id="47280-120">Po přidání typu ovládacího prvku WPF do projektu, je možné hostovat v <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="47280-120">After you add a WPF control type to the project, you can host it in an <xref:System.Windows.Forms.Integration.ElementHost> control.</span></span>  
+## <a name="creating-the-project"></a><span data-ttu-id="d64bd-114">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="d64bd-114">Creating the Project</span></span>  
+ <span data-ttu-id="d64bd-115">Prvním krokem je vytvoření projektu modelu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="d64bd-115">The first step is to create the Windows Forms project.</span></span>  
   
-#### <a name="to-create-wpf-control-types"></a><span data-ttu-id="47280-121">Chcete-li vytvořit typy ovládacích prvků grafického subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="47280-121">To create WPF control types</span></span>  
+> [!NOTE]
+>  <span data-ttu-id="d64bd-116">Pokud hostování obsahu subsystému WPF, jsou podporovány pouze projekty C# a Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="d64bd-116">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>  
   
-1.  <span data-ttu-id="47280-122">Přidat nové WPF <xref:System.Windows.Controls.UserControl> projektu k řešení.</span><span class="sxs-lookup"><span data-stu-id="47280-122">Add a new WPF <xref:System.Windows.Controls.UserControl> project to the solution.</span></span> <span data-ttu-id="47280-123">Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`.</span><span class="sxs-lookup"><span data-stu-id="47280-123">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="47280-124">Další informace najdete v tématu [návod: vytvoření nové WPF obsahu v aplikaci Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="47280-124">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>  
+#### <a name="to-create-the-project"></a><span data-ttu-id="d64bd-117">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="d64bd-117">To create the project</span></span>  
   
-2.  <span data-ttu-id="47280-125">V návrhovém zobrazení, ujistěte se, že `UserControl1` je vybrána.</span><span class="sxs-lookup"><span data-stu-id="47280-125">In Design view, make sure that `UserControl1` is selected.</span></span> <span data-ttu-id="47280-126">Další informace najdete v tématu [postup: vyberte a přesunout elementů na návrhovou plochu](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span><span class="sxs-lookup"><span data-stu-id="47280-126">For more information, see [How to: Select and Move Elements on the Design Surface](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span></span>  
+-   <span data-ttu-id="d64bd-118">Vytvořte nový projekt aplikace Windows Forms v jazyce Visual Basic a Visual C# s názvem `StylingWpfContent`.</span><span class="sxs-lookup"><span data-stu-id="d64bd-118">Create a new Windows Forms Application project in Visual Basic or Visual C# named `StylingWpfContent`.</span></span>  
   
-3.  <span data-ttu-id="47280-127">V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti, které chcete `200`.</span><span class="sxs-lookup"><span data-stu-id="47280-127">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to `200`.</span></span>  
+## <a name="creating-the-wpf-control-types"></a><span data-ttu-id="d64bd-119">Vytváření typy ovládacích prvků grafického subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-119">Creating the WPF Control Types</span></span>  
+ <span data-ttu-id="d64bd-120">Po přidání typu ovládacího prvku WPF do projektu, je možné hostovat v <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="d64bd-120">After you add a WPF control type to the project, you can host it in an <xref:System.Windows.Forms.Integration.ElementHost> control.</span></span>  
   
-4.  <span data-ttu-id="47280-128">Přidat <xref:System.Windows.Controls.Button?displayProperty=nameWithType> řídit k <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **zrušit**.</span><span class="sxs-lookup"><span data-stu-id="47280-128">Add a <xref:System.Windows.Controls.Button?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.ContentControl.Content%2A> property to **Cancel**.</span></span>  
+#### <a name="to-create-wpf-control-types"></a><span data-ttu-id="d64bd-121">Chcete-li vytvořit typy ovládacích prvků grafického subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-121">To create WPF control types</span></span>  
   
-5.  <span data-ttu-id="47280-129">Přidejte druhý <xref:System.Windows.Controls.Button?displayProperty=nameWithType> řídit k <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **OK**.</span><span class="sxs-lookup"><span data-stu-id="47280-129">Add a second <xref:System.Windows.Controls.Button?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.ContentControl.Content%2A> property to **OK**.</span></span>  
+1.  <span data-ttu-id="d64bd-122">Přidat nové WPF <xref:System.Windows.Controls.UserControl> projektu k řešení.</span><span class="sxs-lookup"><span data-stu-id="d64bd-122">Add a new WPF <xref:System.Windows.Controls.UserControl> project to the solution.</span></span> <span data-ttu-id="d64bd-123">Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`.</span><span class="sxs-lookup"><span data-stu-id="d64bd-123">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="d64bd-124">Další informace najdete v tématu [návod: vytvoření nové WPF obsahu v aplikaci Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="d64bd-124">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>  
   
-6.  <span data-ttu-id="47280-130">Sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="47280-130">Build the project.</span></span>  
+2.  <span data-ttu-id="d64bd-125">V návrhovém zobrazení, ujistěte se, že `UserControl1` je vybrána.</span><span class="sxs-lookup"><span data-stu-id="d64bd-125">In Design view, make sure that `UserControl1` is selected.</span></span> <span data-ttu-id="d64bd-126">Další informace najdete v tématu [postup: vyberte a přesunout elementů na návrhovou plochu](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span><span class="sxs-lookup"><span data-stu-id="d64bd-126">For more information, see [How to: Select and Move Elements on the Design Surface](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span></span>  
   
-## <a name="applying-a-style-to-a-wpf-control"></a><span data-ttu-id="47280-131">Použití styl pro ovládací prvek WPF</span><span class="sxs-lookup"><span data-stu-id="47280-131">Applying a Style to a WPF Control</span></span>  
- <span data-ttu-id="47280-132">Můžete použít různé styly pro ovládací prvek WPF změnit vzhled a chování.</span><span class="sxs-lookup"><span data-stu-id="47280-132">You can apply different styling to a WPF control to change its appearance and behavior.</span></span>  
+3.  <span data-ttu-id="d64bd-127">V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti, které chcete `200`.</span><span class="sxs-lookup"><span data-stu-id="d64bd-127">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to `200`.</span></span>  
   
-#### <a name="to-apply-a-style-to-a-wpf-control"></a><span data-ttu-id="47280-133">Pokud chcete použít styl pro ovládací prvek WPF</span><span class="sxs-lookup"><span data-stu-id="47280-133">To apply a style to a WPF control</span></span>  
+4.  <span data-ttu-id="d64bd-128">Přidat <xref:System.Windows.Controls.Button?displayProperty=nameWithType> řídit k <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **zrušit**.</span><span class="sxs-lookup"><span data-stu-id="d64bd-128">Add a <xref:System.Windows.Controls.Button?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.ContentControl.Content%2A> property to **Cancel**.</span></span>  
   
-1.  <span data-ttu-id="47280-134">Otevřete `Form1` v Návrháři formulářů.</span><span class="sxs-lookup"><span data-stu-id="47280-134">Open `Form1` in the Windows Forms Designer.</span></span>  
+5.  <span data-ttu-id="d64bd-129">Přidejte druhý <xref:System.Windows.Controls.Button?displayProperty=nameWithType> řídit k <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **OK**.</span><span class="sxs-lookup"><span data-stu-id="d64bd-129">Add a second <xref:System.Windows.Controls.Button?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.ContentControl.Content%2A> property to **OK**.</span></span>  
   
-2.  <span data-ttu-id="47280-135">V **sada nástrojů**, dvakrát klikněte na `UserControl1` k vytvoření instance `UserControl1` na formuláři.</span><span class="sxs-lookup"><span data-stu-id="47280-135">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` on the form.</span></span>  
+6.  <span data-ttu-id="d64bd-130">Sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="d64bd-130">Build the project.</span></span>  
   
-     <span data-ttu-id="47280-136">Instance `UserControl1` je hostován v nové <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek s názvem `elementHost1`.</span><span class="sxs-lookup"><span data-stu-id="47280-136">An instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>  
+## <a name="applying-a-style-to-a-wpf-control"></a><span data-ttu-id="d64bd-131">Použití styl pro ovládací prvek WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-131">Applying a Style to a WPF Control</span></span>  
+ <span data-ttu-id="d64bd-132">Můžete použít různé styly pro ovládací prvek WPF změnit vzhled a chování.</span><span class="sxs-lookup"><span data-stu-id="d64bd-132">You can apply different styling to a WPF control to change its appearance and behavior.</span></span>  
   
-3.  <span data-ttu-id="47280-137">V panelu inteligentních značek pro `elementHost1`, klikněte na tlačítko **upravit hostované obsah** z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="47280-137">In the smart tag panel for `elementHost1`, click **Edit Hosted Content** from the drop-down list.</span></span>  
+#### <a name="to-apply-a-style-to-a-wpf-control"></a><span data-ttu-id="d64bd-133">Pokud chcete použít styl pro ovládací prvek WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-133">To apply a style to a WPF control</span></span>  
   
-     <span data-ttu-id="47280-138">`UserControl1`Otevře se v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="47280-138">`UserControl1` opens in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>  
+1.  <span data-ttu-id="d64bd-134">Otevřete `Form1` v Návrháři formulářů.</span><span class="sxs-lookup"><span data-stu-id="d64bd-134">Open `Form1` in the Windows Forms Designer.</span></span>  
   
-4.  <span data-ttu-id="47280-139">V zobrazení jazyka XAML, vložte následující XAML po `<UserControl>` počáteční značce.</span><span class="sxs-lookup"><span data-stu-id="47280-139">In XAML view, insert the following XAML after the `<UserControl>` opening tag.</span></span>  
+2.  <span data-ttu-id="d64bd-135">V **sada nástrojů**, dvakrát klikněte na `UserControl1` k vytvoření instance `UserControl1` na formuláři.</span><span class="sxs-lookup"><span data-stu-id="d64bd-135">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` on the form.</span></span>  
   
-     <span data-ttu-id="47280-140">Tato XAML vytvoří přechod s kontrastní přechodu ohraničení.</span><span class="sxs-lookup"><span data-stu-id="47280-140">This XAML creates a gradient with a contrasting gradient border.</span></span> <span data-ttu-id="47280-141">Při kliknutí na ovládací prvek přechody se mění ke generování stisknutého tlačítka podívejte.</span><span class="sxs-lookup"><span data-stu-id="47280-141">When the control is clicked, the gradients are changed to generate a pressed button look.</span></span> <span data-ttu-id="47280-142">Další informace najdete v tématu [stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span><span class="sxs-lookup"><span data-stu-id="47280-142">For more information, see [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span></span>  
+     <span data-ttu-id="d64bd-136">Instance `UserControl1` je hostován v nové <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek s názvem `elementHost1`.</span><span class="sxs-lookup"><span data-stu-id="d64bd-136">An instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>  
+  
+3.  <span data-ttu-id="d64bd-137">V panelu inteligentních značek pro `elementHost1`, klikněte na tlačítko **upravit hostované obsah** z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="d64bd-137">In the smart tag panel for `elementHost1`, click **Edit Hosted Content** from the drop-down list.</span></span>  
+  
+     <span data-ttu-id="d64bd-138">`UserControl1`Otevře se v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d64bd-138">`UserControl1` opens in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>  
+  
+4.  <span data-ttu-id="d64bd-139">V zobrazení jazyka XAML, vložte následující XAML po `<UserControl>` počáteční značce.</span><span class="sxs-lookup"><span data-stu-id="d64bd-139">In XAML view, insert the following XAML after the `<UserControl>` opening tag.</span></span>  
+  
+     <span data-ttu-id="d64bd-140">Tato XAML vytvoří přechod s kontrastní přechodu ohraničení.</span><span class="sxs-lookup"><span data-stu-id="d64bd-140">This XAML creates a gradient with a contrasting gradient border.</span></span> <span data-ttu-id="d64bd-141">Při kliknutí na ovládací prvek přechody se mění ke generování stisknutého tlačítka podívejte.</span><span class="sxs-lookup"><span data-stu-id="d64bd-141">When the control is clicked, the gradients are changed to generate a pressed button look.</span></span> <span data-ttu-id="d64bd-142">Další informace najdete v tématu [stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span><span class="sxs-lookup"><span data-stu-id="d64bd-142">For more information, see [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span></span>  
   
 ```xaml  
 <UserControl.Resources>  
@@ -136,34 +137,34 @@ ms.lasthandoff: 11/21/2017
 </UserControl.Resources>  
 ```  
   
-1.  <span data-ttu-id="47280-143">Použít `SimpleButton` styl definované v předchozím kroku na tlačítko Storno vložením následující XAML v `<Button>` značky na tlačítko Storno.</span><span class="sxs-lookup"><span data-stu-id="47280-143">Apply the `SimpleButton` style defined in the previous step to the Cancel button by inserting the following XAML in the `<Button>` tag of the Cancel button.</span></span>  
+1.  <span data-ttu-id="d64bd-143">Použít `SimpleButton` styl definované v předchozím kroku na tlačítko Storno vložením následující XAML v `<Button>` značky na tlačítko Storno.</span><span class="sxs-lookup"><span data-stu-id="d64bd-143">Apply the `SimpleButton` style defined in the previous step to the Cancel button by inserting the following XAML in the `<Button>` tag of the Cancel button.</span></span>  
   
     ```  
     Style="{StaticResource SimpleButton}  
     ```  
   
-     <span data-ttu-id="47280-144">Vaše tlačítko deklarace bude připomínat následující XAML.</span><span class="sxs-lookup"><span data-stu-id="47280-144">Your button declaration will resemble the following XAML.</span></span>  
+     <span data-ttu-id="d64bd-144">Vaše tlačítko deklarace bude připomínat následující XAML.</span><span class="sxs-lookup"><span data-stu-id="d64bd-144">Your button declaration will resemble the following XAML.</span></span>  
   
 ```xaml  
 <Button Height="23" Margin="41,52,98,0" Name="button1" VerticalAlignment="Top"  
                 Style="{StaticResource SimpleButton}">Cancel</Button>  
 ```  
   
-1.  <span data-ttu-id="47280-145">Sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="47280-145">Build the project.</span></span>  
+1.  <span data-ttu-id="d64bd-145">Sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="d64bd-145">Build the project.</span></span>  
   
-2.  <span data-ttu-id="47280-146">Otevřete `Form1` v Návrháři formulářů.</span><span class="sxs-lookup"><span data-stu-id="47280-146">Open `Form1` in the Windows Forms Designer.</span></span>  
+2.  <span data-ttu-id="d64bd-146">Otevřete `Form1` v Návrháři formulářů.</span><span class="sxs-lookup"><span data-stu-id="d64bd-146">Open `Form1` in the Windows Forms Designer.</span></span>  
   
-3.  <span data-ttu-id="47280-147">Nový styl je použit do ovládacího prvku tlačítko.</span><span class="sxs-lookup"><span data-stu-id="47280-147">The new style is applied to the button control.</span></span>  
+3.  <span data-ttu-id="d64bd-147">Nový styl je použit do ovládacího prvku tlačítko.</span><span class="sxs-lookup"><span data-stu-id="d64bd-147">The new style is applied to the button control.</span></span>  
   
-4.  <span data-ttu-id="47280-148">Z **ladění** nabídce vyberte možnost **spustit ladění** ke spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="47280-148">From the **Debug** menu, select **Start Debugging** to run the application.</span></span>  
+4.  <span data-ttu-id="d64bd-148">Z **ladění** nabídce vyberte možnost **spustit ladění** ke spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="d64bd-148">From the **Debug** menu, select **Start Debugging** to run the application.</span></span>  
   
-5.  <span data-ttu-id="47280-149">Klepnutím na tlačítko OK a zrušit a zobrazit rozdíly.</span><span class="sxs-lookup"><span data-stu-id="47280-149">Click the OK and Cancel buttons and view the differences.</span></span>  
+5.  <span data-ttu-id="d64bd-149">Klepnutím na tlačítko OK a zrušit a zobrazit rozdíly.</span><span class="sxs-lookup"><span data-stu-id="d64bd-149">Click the OK and Cancel buttons and view the differences.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="47280-150">Viz také</span><span class="sxs-lookup"><span data-stu-id="47280-150">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d64bd-150">Viz také</span><span class="sxs-lookup"><span data-stu-id="d64bd-150">See Also</span></span>  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
- [<span data-ttu-id="47280-151">Migrace a vzájemná funkční spolupráce</span><span class="sxs-lookup"><span data-stu-id="47280-151">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
- [<span data-ttu-id="47280-152">Pomocí ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="47280-152">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
- [<span data-ttu-id="47280-153">Návrhář WPF</span><span class="sxs-lookup"><span data-stu-id="47280-153">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
- [<span data-ttu-id="47280-154">Přehled XAML (WPF)</span><span class="sxs-lookup"><span data-stu-id="47280-154">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [<span data-ttu-id="47280-155">Stylů a ukázka</span><span class="sxs-lookup"><span data-stu-id="47280-155">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+ [<span data-ttu-id="d64bd-151">Migrace a interoperabilita</span><span class="sxs-lookup"><span data-stu-id="d64bd-151">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [<span data-ttu-id="d64bd-152">Používání ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-152">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [<span data-ttu-id="d64bd-153">Návrhář WPF</span><span class="sxs-lookup"><span data-stu-id="d64bd-153">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [<span data-ttu-id="d64bd-154">Přehled XAML (WPF)</span><span class="sxs-lookup"><span data-stu-id="d64bd-154">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [<span data-ttu-id="d64bd-155">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="d64bd-155">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

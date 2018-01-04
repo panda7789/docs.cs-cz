@@ -24,18 +24,19 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ddcf6941f90556db26e2945c6b4460dfa585dbf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 400e367581ea773d88320e593aa525d812ea0238
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-access-specific-items-in-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a><span data-ttu-id="caf87-102">Postupy: Přístup ke konkrétním položkám v ovládacím prvku Windows Forms ComboBox, ListBox nebo CheckedListBox</span><span class="sxs-lookup"><span data-stu-id="caf87-102">How to: Access Specific Items in a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>
-<span data-ttu-id="caf87-103">Přístup ke konkrétní položky ve Windows Forms – pole se seznamem, seznamu nebo pole se seznamem zaškrtnuté je nezbytné úlohy.</span><span class="sxs-lookup"><span data-stu-id="caf87-103">Accessing specific items in a Windows Forms combo box, list box, or checked list box is an essential task.</span></span> <span data-ttu-id="caf87-104">Umožňuje programu určit, co je v seznamu, na dané pozici.</span><span class="sxs-lookup"><span data-stu-id="caf87-104">It enables you to programmatically determine what is in a list, at any given position.</span></span>  
+# <a name="how-to-access-specific-items-in-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a><span data-ttu-id="cf944-102">Postupy: Přístup ke konkrétním položkám v ovládacím prvku Windows Forms ComboBox, ListBox nebo CheckedListBox</span><span class="sxs-lookup"><span data-stu-id="cf944-102">How to: Access Specific Items in a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>
+<span data-ttu-id="cf944-103">Přístup ke konkrétní položky ve Windows Forms – pole se seznamem, seznamu nebo pole se seznamem zaškrtnuté je nezbytné úlohy.</span><span class="sxs-lookup"><span data-stu-id="cf944-103">Accessing specific items in a Windows Forms combo box, list box, or checked list box is an essential task.</span></span> <span data-ttu-id="cf944-104">Umožňuje programu určit, co je v seznamu, na dané pozici.</span><span class="sxs-lookup"><span data-stu-id="cf944-104">It enables you to programmatically determine what is in a list, at any given position.</span></span>  
   
-### <a name="to-access-a-specific-item"></a><span data-ttu-id="caf87-105">Pro přístup k určité položce</span><span class="sxs-lookup"><span data-stu-id="caf87-105">To access a specific item</span></span>  
+### <a name="to-access-a-specific-item"></a><span data-ttu-id="cf944-105">Pro přístup k určité položce</span><span class="sxs-lookup"><span data-stu-id="cf944-105">To access a specific item</span></span>  
   
-1.  <span data-ttu-id="caf87-106">Dotaz `Items` kolekce s použitím indexu konkrétní položky:</span><span class="sxs-lookup"><span data-stu-id="caf87-106">Query the `Items` collection using the index of the specific item:</span></span>  
+1.  <span data-ttu-id="cf944-106">Dotaz `Items` kolekce s použitím indexu konkrétní položky:</span><span class="sxs-lookup"><span data-stu-id="cf944-106">Query the `Items` collection using the index of the specific item:</span></span>  
   
     ```vb  
     Private Function GetItemText(i As Integer) As String  
@@ -61,8 +62,8 @@ ms.lasthandoff: 11/21/2017
        }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="caf87-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="caf87-107">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="cf944-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="cf944-107">See Also</span></span>  
  <xref:System.Windows.Forms.ComboBox>  
  <xref:System.Windows.Forms.ListBox>  
  <xref:System.Windows.Forms.CheckedListBox>  
- [<span data-ttu-id="caf87-108">Windows Forms – ovládací prvky používané k výpisu možností</span><span class="sxs-lookup"><span data-stu-id="caf87-108">Windows Forms Controls Used to List Options</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
+ [<span data-ttu-id="cf944-108">Ovládací prvky Windows Forms používané k výpisu možností</span><span class="sxs-lookup"><span data-stu-id="cf944-108">Windows Forms Controls Used to List Options</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

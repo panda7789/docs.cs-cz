@@ -17,17 +17,18 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 447c836b7df937abf347f65acdd3ee4e2710e55b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 62a8e11ec654b0db232cc71021b7b94d5c0d2fd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="flowdocumentpageviewer"></a><span data-ttu-id="5ea77-102">FlowDocumentPageViewer</span><span class="sxs-lookup"><span data-stu-id="5ea77-102">FlowDocumentPageViewer</span></span>
-<span data-ttu-id="5ea77-103"><xref:System.Windows.Controls.FlowDocumentPageViewer> Řízení se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránce.</span><span class="sxs-lookup"><span data-stu-id="5ea77-103">The <xref:System.Windows.Controls.FlowDocumentPageViewer> control is used to view <xref:System.Windows.Documents.FlowDocument> content on a per page basis.</span></span> <span data-ttu-id="5ea77-104">Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která uvede <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.</span><span class="sxs-lookup"><span data-stu-id="5ea77-104">Contrast with the <xref:System.Windows.Controls.FlowDocumentScrollViewer>, which presents <xref:System.Windows.Documents.FlowDocument> content in a scrolling viewer.</span></span>  
+# <a name="flowdocumentpageviewer"></a><span data-ttu-id="7e5e1-102">FlowDocumentPageViewer</span><span class="sxs-lookup"><span data-stu-id="7e5e1-102">FlowDocumentPageViewer</span></span>
+<span data-ttu-id="7e5e1-103"><xref:System.Windows.Controls.FlowDocumentPageViewer> Řízení se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránce.</span><span class="sxs-lookup"><span data-stu-id="7e5e1-103">The <xref:System.Windows.Controls.FlowDocumentPageViewer> control is used to view <xref:System.Windows.Documents.FlowDocument> content on a per page basis.</span></span> <span data-ttu-id="7e5e1-104">Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která uvede <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.</span><span class="sxs-lookup"><span data-stu-id="7e5e1-104">Contrast with the <xref:System.Windows.Controls.FlowDocumentScrollViewer>, which presents <xref:System.Windows.Documents.FlowDocument> content in a scrolling viewer.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5ea77-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="5ea77-105">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="7e5e1-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="7e5e1-105">See Also</span></span>  
  <xref:System.Windows.Documents.FlowDocument>  
- [<span data-ttu-id="5ea77-106">Přehled toku dokumentu</span><span class="sxs-lookup"><span data-stu-id="5ea77-106">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [<span data-ttu-id="5ea77-107">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="5ea77-107">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
- [<span data-ttu-id="5ea77-108">Dokumenty v grafickém subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="5ea77-108">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+ [<span data-ttu-id="7e5e1-106">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="7e5e1-106">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [<span data-ttu-id="7e5e1-107">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="7e5e1-107">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
+ [<span data-ttu-id="7e5e1-108">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="7e5e1-108">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
