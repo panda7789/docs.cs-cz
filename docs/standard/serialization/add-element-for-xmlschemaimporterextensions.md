@@ -15,47 +15,50 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd73d6dfe6659cd973054a14d0d4e5e73d3cd8d7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dc01f0ed6b5b1bac5131e6262db5d3a2847a65ab
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="ltaddgt-element-for-ltxmlschemaimporterextensionsgt"></a><span data-ttu-id="e4448-102">&lt;Přidat&gt; Element pro &lt;xmlSchemaImporterExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="e4448-102">&lt;add&gt; Element for &lt;xmlSchemaImporterExtensions&gt;</span></span>
-<span data-ttu-id="e4448-103">Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="e4448-103">Adds types used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping XSD types to .NET Framework types.</span></span> <span data-ttu-id="e4448-104">Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="e4448-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
+# <a name="ltaddgt-element-for-ltxmlschemaimporterextensionsgt"></a><span data-ttu-id="a33dc-102">&lt;Přidat&gt; Element pro &lt;xmlSchemaImporterExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="a33dc-102">&lt;add&gt; Element for &lt;xmlSchemaImporterExtensions&gt;</span></span>
+<span data-ttu-id="a33dc-103">Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="a33dc-103">Adds types used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping XSD types to .NET Framework types.</span></span> <span data-ttu-id="a33dc-104">Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="a33dc-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
   
- <span data-ttu-id="e4448-105">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="e4448-105">\<configuration></span></span>  
-<span data-ttu-id="e4448-106">\<System.XML.Serialization ></span><span class="sxs-lookup"><span data-stu-id="e4448-106">\<system.xml.serialization></span></span>  
-<span data-ttu-id="e4448-107">\<XmlSchemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="e4448-107">\<XmlSchemaImporterExtensions></span></span>  
-<span data-ttu-id="e4448-108">\<Přidat ></span><span class="sxs-lookup"><span data-stu-id="e4448-108">\<add></span></span>  
+ <span data-ttu-id="a33dc-105">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="a33dc-105">\<configuration></span></span>  
+<span data-ttu-id="a33dc-106">\<System.XML.Serialization ></span><span class="sxs-lookup"><span data-stu-id="a33dc-106">\<system.xml.serialization></span></span>  
+<span data-ttu-id="a33dc-107">\<XmlSchemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="a33dc-107">\<XmlSchemaImporterExtensions></span></span>  
+<span data-ttu-id="a33dc-108">\<Přidat ></span><span class="sxs-lookup"><span data-stu-id="a33dc-108">\<add></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e4448-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e4448-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a33dc-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a33dc-109">Syntax</span></span>  
   
 ```xml  
 <add name = "typeName" type="fully qualified type [,Version=version number] [,Culture=culture] [,PublicKeyToken= token]"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="e4448-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="e4448-110">Attributes and Elements</span></span>  
- <span data-ttu-id="e4448-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="e4448-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a33dc-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="a33dc-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="a33dc-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="a33dc-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="e4448-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="e4448-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="a33dc-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="a33dc-112">Attributes</span></span>  
   
-|<span data-ttu-id="e4448-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="e4448-113">Attribute</span></span>|<span data-ttu-id="e4448-114">Popis</span><span class="sxs-lookup"><span data-stu-id="e4448-114">Description</span></span>|  
+|<span data-ttu-id="a33dc-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="a33dc-113">Attribute</span></span>|<span data-ttu-id="a33dc-114">Popis</span><span class="sxs-lookup"><span data-stu-id="a33dc-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="e4448-115">**Jméno**</span><span class="sxs-lookup"><span data-stu-id="e4448-115">**name**</span></span>|<span data-ttu-id="e4448-116">Jednoduchý název, který je použit k vyhledání instance.</span><span class="sxs-lookup"><span data-stu-id="e4448-116">A simple name that is used to find the instance.</span></span>|  
-|<span data-ttu-id="e4448-117">**Typ**</span><span class="sxs-lookup"><span data-stu-id="e4448-117">**type**</span></span>|<span data-ttu-id="e4448-118">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="e4448-118">Required.</span></span> <span data-ttu-id="e4448-119">Určuje třídu rozšíření schématu k přidání.</span><span class="sxs-lookup"><span data-stu-id="e4448-119">Specifies the schema  extension class to add.</span></span> <span data-ttu-id="e4448-120">**Typ** hodnota atributu musí být na jednom řádku a zahrnout plně kvalifikovaný název typu.</span><span class="sxs-lookup"><span data-stu-id="e4448-120">The **type** attribute value must be on one line, and include the fully qualified type name.</span></span> <span data-ttu-id="e4448-121">Při sestavení je umístěn v globální mezipaměti sestavení (GAC), musí také zahrnovat verze, jazykovou verzi a token veřejného klíče podepsané sestavení.</span><span class="sxs-lookup"><span data-stu-id="e4448-121">When the assembly is placed in the Global Assembly Cache (GAC), it must also include the version, culture, and public key token of the signed assembly.</span></span>|  
+|<span data-ttu-id="a33dc-115">**Jméno**</span><span class="sxs-lookup"><span data-stu-id="a33dc-115">**name**</span></span>|<span data-ttu-id="a33dc-116">Jednoduchý název, který je použit k vyhledání instance.</span><span class="sxs-lookup"><span data-stu-id="a33dc-116">A simple name that is used to find the instance.</span></span>|  
+|<span data-ttu-id="a33dc-117">**Typ**</span><span class="sxs-lookup"><span data-stu-id="a33dc-117">**type**</span></span>|<span data-ttu-id="a33dc-118">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="a33dc-118">Required.</span></span> <span data-ttu-id="a33dc-119">Určuje třídu rozšíření schématu k přidání.</span><span class="sxs-lookup"><span data-stu-id="a33dc-119">Specifies the schema  extension class to add.</span></span> <span data-ttu-id="a33dc-120">**Typ** hodnota atributu musí být na jednom řádku a zahrnout plně kvalifikovaný název typu.</span><span class="sxs-lookup"><span data-stu-id="a33dc-120">The **type** attribute value must be on one line, and include the fully qualified type name.</span></span> <span data-ttu-id="a33dc-121">Při sestavení je umístěn v globální mezipaměti sestavení (GAC), musí také zahrnovat verze, jazykovou verzi a token veřejného klíče podepsané sestavení.</span><span class="sxs-lookup"><span data-stu-id="a33dc-121">When the assembly is placed in the Global Assembly Cache (GAC), it must also include the version, culture, and public key token of the signed assembly.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="e4448-122">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="e4448-122">Child Elements</span></span>  
- <span data-ttu-id="e4448-123">Žádné</span><span class="sxs-lookup"><span data-stu-id="e4448-123">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="a33dc-122">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="a33dc-122">Child Elements</span></span>  
+ <span data-ttu-id="a33dc-123">Žádné</span><span class="sxs-lookup"><span data-stu-id="a33dc-123">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="e4448-124">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="e4448-124">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="a33dc-124">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="a33dc-124">Parent Elements</span></span>  
   
-|<span data-ttu-id="e4448-125">Prvek</span><span class="sxs-lookup"><span data-stu-id="e4448-125">Element</span></span>|<span data-ttu-id="e4448-126">Popis</span><span class="sxs-lookup"><span data-stu-id="e4448-126">Description</span></span>|  
+|<span data-ttu-id="a33dc-125">Prvek</span><span class="sxs-lookup"><span data-stu-id="a33dc-125">Element</span></span>|<span data-ttu-id="a33dc-126">Popis</span><span class="sxs-lookup"><span data-stu-id="a33dc-126">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="e4448-127">\<xmlSchemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="e4448-127">\<xmlSchemaImporterExtensions></span></span>|<span data-ttu-id="e4448-128">Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter>.</span><span class="sxs-lookup"><span data-stu-id="e4448-128">Contains the types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter>.</span></span>|  
+|<span data-ttu-id="a33dc-127">\<xmlSchemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="a33dc-127">\<xmlSchemaImporterExtensions></span></span>|<span data-ttu-id="a33dc-128">Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter>.</span><span class="sxs-lookup"><span data-stu-id="a33dc-128">Contains the types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter>.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="e4448-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="e4448-129">Example</span></span>  
- <span data-ttu-id="e4448-130">Následující příklad kódu přidá typ rozšíření, která XmlSchemaImporter můžete použít, když mapování typů.</span><span class="sxs-lookup"><span data-stu-id="e4448-130">The following code example adds an extension type that the XmlSchemaImporter can use when mapping types.</span></span>  
+## <a name="example"></a><span data-ttu-id="a33dc-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="a33dc-129">Example</span></span>  
+ <span data-ttu-id="a33dc-130">Následující příklad kódu přidá typ rozšíření, která XmlSchemaImporter můžete použít, když mapování typů.</span><span class="sxs-lookup"><span data-stu-id="a33dc-130">The following code example adds an extension type that the XmlSchemaImporter can use when mapping types.</span></span>  
   
 ```xml  
 <configuration>  
@@ -69,7 +72,7 @@ ms.lasthandoff: 12/02/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e4448-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="e4448-131">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="a33dc-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="a33dc-131">See Also</span></span>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
- [<span data-ttu-id="e4448-132">\<System.XML.Serialization > elementu</span><span class="sxs-lookup"><span data-stu-id="e4448-132">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)  
- [<span data-ttu-id="e4448-133">\<schemaImporterExtensions > elementu</span><span class="sxs-lookup"><span data-stu-id="e4448-133">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+ [<span data-ttu-id="a33dc-132">\<System.XML.Serialization > elementu</span><span class="sxs-lookup"><span data-stu-id="a33dc-132">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)  
+ [<span data-ttu-id="a33dc-133">\<schemaImporterExtensions > elementu</span><span class="sxs-lookup"><span data-stu-id="a33dc-133">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)

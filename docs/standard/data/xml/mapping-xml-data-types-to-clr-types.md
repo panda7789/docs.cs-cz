@@ -13,21 +13,24 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3b6e67d27de33e61f5d5190249e90ac48e1aaaec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a90e7e58eba3938e8869ed48a118b44f47c2bf4e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="mapping-xml-data-types-to-clr-types"></a><span data-ttu-id="6e0b9-102">Mapování datové typy XML pro typy CLR</span><span class="sxs-lookup"><span data-stu-id="6e0b9-102">Mapping XML Data Types to CLR Types</span></span>
-<span data-ttu-id="6e0b9-103">Následující tabulka popisuje výchozí mapování mezi datové typy XML a běžné typy language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="6e0b9-103">The following table describes the default mapping between the XML data types and the common language runtime (CLR) types.</span></span>  
+# <a name="mapping-xml-data-types-to-clr-types"></a><span data-ttu-id="bd6f3-102">Mapování datové typy XML pro typy CLR</span><span class="sxs-lookup"><span data-stu-id="bd6f3-102">Mapping XML Data Types to CLR Types</span></span>
+<span data-ttu-id="bd6f3-103">Následující tabulka popisuje výchozí mapování mezi datové typy XML a běžné typy language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="bd6f3-103">The following table describes the default mapping between the XML data types and the common language runtime (CLR) types.</span></span>  
   
-## <a name="the-following-table-describes-the-default-mappings-of-an-xml-data-type-to-a-clr-type"></a><span data-ttu-id="6e0b9-104">Následující tabulka popisuje výchozí mapování datového typu XML na typ CLR.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-104">The following table describes the default mappings of an XML data type to a CLR type.</span></span>  
+## <a name="the-following-table-describes-the-default-mappings-of-an-xml-data-type-to-a-clr-type"></a><span data-ttu-id="bd6f3-104">Následující tabulka popisuje výchozí mapování datového typu XML na typ CLR.</span><span class="sxs-lookup"><span data-stu-id="bd6f3-104">The following table describes the default mappings of an XML data type to a CLR type.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="6e0b9-105">`xs` a `xdt` předpony jsou namapované http://www.w3.org/2001/XMLSchema a obor názvů http://www.w3.org/2003/05/xpath-datatypes identifikátory URI.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-105">The `xs` and the `xdt` prefixes are mapped to the http://www.w3.org/2001/XMLSchema and the http://www.w3.org/2003/05/xpath-datatypes namespace URIs respectively.</span></span>  
+>  <span data-ttu-id="bd6f3-105">`xs` a `xdt` předpony jsou namapované http://www.w3.org/2001/XMLSchema a obor názvů http://www.w3.org/2003/05/xpath-datatypes identifikátory URI.</span><span class="sxs-lookup"><span data-stu-id="bd6f3-105">The `xs` and the `xdt` prefixes are mapped to the http://www.w3.org/2001/XMLSchema and the http://www.w3.org/2003/05/xpath-datatypes namespace URIs respectively.</span></span>  
   
-|<span data-ttu-id="6e0b9-106">Typ XML</span><span class="sxs-lookup"><span data-stu-id="6e0b9-106">XML Type</span></span>|<span data-ttu-id="6e0b9-107">Typ CLR</span><span class="sxs-lookup"><span data-stu-id="6e0b9-107">CLR Type</span></span>|  
+|<span data-ttu-id="bd6f3-106">Typ XML</span><span class="sxs-lookup"><span data-stu-id="bd6f3-106">XML Type</span></span>|<span data-ttu-id="bd6f3-107">Typ CLR</span><span class="sxs-lookup"><span data-stu-id="bd6f3-107">CLR Type</span></span>|  
 |--------------|--------------|  
 |`xs:anyURI`|<xref:System.Uri>|  
 |`xs:base64Binary`|`Byte[]`|  
@@ -78,13 +81,13 @@ ms.lasthandoff: 10/18/2017
 |`xdt:untypedAtomic`|<xref:System.String>|  
 |`xdt:anyAtomicType`|<xref:System.Object>|  
 |`xs:anySimpleType`|<xref:System.String>|  
-|<span data-ttu-id="6e0b9-108">Uzel dokumentu</span><span class="sxs-lookup"><span data-stu-id="6e0b9-108">Document node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
-|<span data-ttu-id="6e0b9-109">Element uzlu</span><span class="sxs-lookup"><span data-stu-id="6e0b9-109">Element node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
-|<span data-ttu-id="6e0b9-110">Uzlu atributu.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-110">Attribute node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
-|<span data-ttu-id="6e0b9-111">Namespace uzlu</span><span class="sxs-lookup"><span data-stu-id="6e0b9-111">Namespace node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
-|<span data-ttu-id="6e0b9-112">Textový uzel</span><span class="sxs-lookup"><span data-stu-id="6e0b9-112">Text node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
-|<span data-ttu-id="6e0b9-113">Uzel komentáře</span><span class="sxs-lookup"><span data-stu-id="6e0b9-113">Comment node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
-|<span data-ttu-id="6e0b9-114">Zpracování instrukcí uzlu</span><span class="sxs-lookup"><span data-stu-id="6e0b9-114">Processing instruction node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-108">Uzel dokumentu</span><span class="sxs-lookup"><span data-stu-id="bd6f3-108">Document node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-109">Element uzlu</span><span class="sxs-lookup"><span data-stu-id="bd6f3-109">Element node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-110">Uzlu atributu.</span><span class="sxs-lookup"><span data-stu-id="bd6f3-110">Attribute node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-111">Namespace uzlu</span><span class="sxs-lookup"><span data-stu-id="bd6f3-111">Namespace node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-112">Textový uzel</span><span class="sxs-lookup"><span data-stu-id="bd6f3-112">Text node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-113">Uzel komentáře</span><span class="sxs-lookup"><span data-stu-id="bd6f3-113">Comment node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
+|<span data-ttu-id="bd6f3-114">Zpracování instrukcí uzlu</span><span class="sxs-lookup"><span data-stu-id="bd6f3-114">Processing instruction node</span></span>|<xref:System.Xml.XPath.XPathNavigator>|  
   
-## <a name="see-also"></a><span data-ttu-id="6e0b9-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="6e0b9-115">See Also</span></span>  
- [<span data-ttu-id="6e0b9-116">Podpora typu v System.Xml třídy</span><span class="sxs-lookup"><span data-stu-id="6e0b9-116">Type Support in the System.Xml Classes</span></span>](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)
+## <a name="see-also"></a><span data-ttu-id="bd6f3-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="bd6f3-115">See Also</span></span>  
+ [<span data-ttu-id="bd6f3-116">Podpora typu v třídách System.Xml</span><span class="sxs-lookup"><span data-stu-id="bd6f3-116">Type Support in the System.Xml Classes</span></span>](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

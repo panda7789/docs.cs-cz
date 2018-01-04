@@ -18,27 +18,28 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d93b60a4172f7acebb5c9ec533efdff9a61d959c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cb882dbdc8b394fe416b0e173129c745977566db
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="treeview"></a><span data-ttu-id="54623-102">TreeView</span><span class="sxs-lookup"><span data-stu-id="54623-102">TreeView</span></span>
-<span data-ttu-id="54623-103"><xref:System.Windows.Controls.TreeView> Ovládací prvek zobrazí informace v hierarchická struktura pomocí sbalitelné uzly.</span><span class="sxs-lookup"><span data-stu-id="54623-103">The <xref:System.Windows.Controls.TreeView> control displays information in a hierarchical structure by using collapsible nodes.</span></span>  
+# <a name="treeview"></a><span data-ttu-id="c1883-102">TreeView</span><span class="sxs-lookup"><span data-stu-id="c1883-102">TreeView</span></span>
+<span data-ttu-id="c1883-103"><xref:System.Windows.Controls.TreeView> Ovládací prvek zobrazí informace v hierarchická struktura pomocí sbalitelné uzly.</span><span class="sxs-lookup"><span data-stu-id="c1883-103">The <xref:System.Windows.Controls.TreeView> control displays information in a hierarchical structure by using collapsible nodes.</span></span>  
   
- <span data-ttu-id="54623-104">Na následujícím obrázku je příkladem <xref:System.Windows.Controls.TreeView> ovládací prvek, který má vnořené <xref:System.Windows.Controls.TreeViewItem> ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="54623-104">The following illustration is an example of a <xref:System.Windows.Controls.TreeView> control that has nested <xref:System.Windows.Controls.TreeViewItem> controls.</span></span>  
+ <span data-ttu-id="c1883-104">Na následujícím obrázku je příkladem <xref:System.Windows.Controls.TreeView> ovládací prvek, který má vnořené <xref:System.Windows.Controls.TreeViewItem> ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="c1883-104">The following illustration is an example of a <xref:System.Windows.Controls.TreeView> control that has nested <xref:System.Windows.Controls.TreeViewItem> controls.</span></span>  
   
- <span data-ttu-id="54623-105">![TreeView – obrázek](../../../../docs/framework/wpf/controls/media/treeviewillustration.JPG "TreeViewIllustration")</span><span class="sxs-lookup"><span data-stu-id="54623-105">![TreeView illustration](../../../../docs/framework/wpf/controls/media/treeviewillustration.JPG "TreeViewIllustration")</span></span>  
+ <span data-ttu-id="c1883-105">![TreeView – obrázek](../../../../docs/framework/wpf/controls/media/treeviewillustration.JPG "TreeViewIllustration")</span><span class="sxs-lookup"><span data-stu-id="c1883-105">![TreeView illustration](../../../../docs/framework/wpf/controls/media/treeviewillustration.JPG "TreeViewIllustration")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="54623-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="54623-106">In This Section</span></span>  
- [<span data-ttu-id="54623-107">TreeView – přehled</span><span class="sxs-lookup"><span data-stu-id="54623-107">TreeView Overview</span></span>](../../../../docs/framework/wpf/controls/treeview-overview.md)  
- [<span data-ttu-id="54623-108">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="54623-108">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c1883-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c1883-106">In This Section</span></span>  
+ [<span data-ttu-id="c1883-107">TreeView – přehled</span><span class="sxs-lookup"><span data-stu-id="c1883-107">TreeView Overview</span></span>](../../../../docs/framework/wpf/controls/treeview-overview.md)  
+ [<span data-ttu-id="c1883-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="c1883-108">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="54623-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="54623-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c1883-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c1883-109">Reference</span></span>  
  <xref:System.Windows.Controls.TreeView>  
   <xref:System.Windows.Controls.TreeViewItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="54623-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="54623-110">Related Sections</span></span>  
- [<span data-ttu-id="54623-111">Přehled vazba dat</span><span class="sxs-lookup"><span data-stu-id="54623-111">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
-  [<span data-ttu-id="54623-112">Ukázka dat – přehled</span><span class="sxs-lookup"><span data-stu-id="54623-112">Data Templating Overview</span></span>](../../../../docs/framework/wpf/data/data-templating-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="c1883-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c1883-110">Related Sections</span></span>  
+ [<span data-ttu-id="c1883-111">Přehled datových vazeb</span><span class="sxs-lookup"><span data-stu-id="c1883-111">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+  [<span data-ttu-id="c1883-112">Přehled datových šablon</span><span class="sxs-lookup"><span data-stu-id="c1883-112">Data Templating Overview</span></span>](../../../../docs/framework/wpf/data/data-templating-overview.md)
