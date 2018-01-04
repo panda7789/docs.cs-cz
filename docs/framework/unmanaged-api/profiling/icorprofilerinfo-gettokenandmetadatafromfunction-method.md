@@ -21,16 +21,17 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 585b28161814045777cf2294f78bafc3229bfae9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 33522d55383b1137d8591c74c988903655eba5f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilerinfogettokenandmetadatafromfunction-method"></a><span data-ttu-id="e85a1-102">ICorProfilerInfo::GetTokenAndMetadataFromFunction – metoda</span><span class="sxs-lookup"><span data-stu-id="e85a1-102">ICorProfilerInfo::GetTokenAndMetadataFromFunction Method</span></span>
-<span data-ttu-id="e85a1-103">Získá token metadat a instanci rozhraní metadat, které můžete použít u tokenu pro zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="e85a1-103">Gets the metadata token and a metadata interface instance that can be used against the token for the specified function.</span></span>  
+# <a name="icorprofilerinfogettokenandmetadatafromfunction-method"></a><span data-ttu-id="eb73f-102">ICorProfilerInfo::GetTokenAndMetadataFromFunction – metoda</span><span class="sxs-lookup"><span data-stu-id="eb73f-102">ICorProfilerInfo::GetTokenAndMetadataFromFunction Method</span></span>
+<span data-ttu-id="eb73f-103">Získá token metadat a instanci rozhraní metadat, které můžete použít u tokenu pro zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="eb73f-103">Gets the metadata token and a metadata interface instance that can be used against the token for the specified function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e85a1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e85a1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="eb73f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eb73f-104">Syntax</span></span>  
   
 ```  
 HRESULT GetTokenAndMetaDataFromFunction(  
@@ -40,27 +41,27 @@ HRESULT GetTokenAndMetaDataFromFunction(
     [out] mdToken    *pToken);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="e85a1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e85a1-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="eb73f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="eb73f-105">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="e85a1-106">[v] ID funkce, pro které chcete získat token metadat a metadat rozhraní.</span><span class="sxs-lookup"><span data-stu-id="e85a1-106">[in] The ID of the function for which to get the metadata token and metadata interface.</span></span>  
+ <span data-ttu-id="eb73f-106">[v] ID funkce, pro které chcete získat token metadat a metadat rozhraní.</span><span class="sxs-lookup"><span data-stu-id="eb73f-106">[in] The ID of the function for which to get the metadata token and metadata interface.</span></span>  
   
  `riid`  
- <span data-ttu-id="e85a1-107">[v] ID odkazu rozhraní metadata získat instanci.</span><span class="sxs-lookup"><span data-stu-id="e85a1-107">[in] The reference ID of the metadata interface to get the instance of.</span></span>  
+ <span data-ttu-id="eb73f-107">[v] ID odkazu rozhraní metadata získat instanci.</span><span class="sxs-lookup"><span data-stu-id="eb73f-107">[in] The reference ID of the metadata interface to get the instance of.</span></span>  
   
  `ppImport`  
- <span data-ttu-id="e85a1-108">[out] Ukazatel na adresu instanci rozhraní metadata, která můžete použít u tokenu pro zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="e85a1-108">[out] A pointer to the address of the metadata interface instance that can be used against the token for the specified function.</span></span>  
+ <span data-ttu-id="eb73f-108">[out] Ukazatel na adresu instanci rozhraní metadata, která můžete použít u tokenu pro zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="eb73f-108">[out] A pointer to the address of the metadata interface instance that can be used against the token for the specified function.</span></span>  
   
  `pToken`  
- <span data-ttu-id="e85a1-109">[out] Ukazatel na token metadata pro zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="e85a1-109">[out] A pointer to the metadata token for the specified function.</span></span>  
+ <span data-ttu-id="eb73f-109">[out] Ukazatel na token metadata pro zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="eb73f-109">[out] A pointer to the metadata token for the specified function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e85a1-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e85a1-110">Requirements</span></span>  
- <span data-ttu-id="e85a1-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e85a1-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="eb73f-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eb73f-110">Requirements</span></span>  
+ <span data-ttu-id="eb73f-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eb73f-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e85a1-112">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="e85a1-112">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="eb73f-112">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="eb73f-112">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="e85a1-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e85a1-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="eb73f-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="eb73f-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e85a1-114">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e85a1-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="eb73f-114">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eb73f-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e85a1-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="e85a1-115">See Also</span></span>  
- [<span data-ttu-id="e85a1-116">Icorprofilerinfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e85a1-116">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="eb73f-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="eb73f-115">See Also</span></span>  
+ [<span data-ttu-id="eb73f-116">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eb73f-116">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

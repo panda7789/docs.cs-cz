@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d8ca0482437840a0259934dafea4ff494d45ccac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8bdebc05c67cca0d037a2b178a7ee373d3c93052
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelconfigurationisreadonly"></a><span data-ttu-id="a1f2d-102">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="a1f2d-102">System.ServiceModel.ConfigurationIsReadOnly</span></span>
-<span data-ttu-id="a1f2d-103">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="a1f2d-103">System.ServiceModel.ConfigurationIsReadOnly</span></span>  
+# <a name="systemservicemodelconfigurationisreadonly"></a><span data-ttu-id="a261f-102">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="a261f-102">System.ServiceModel.ConfigurationIsReadOnly</span></span>
+<span data-ttu-id="a261f-103">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="a261f-103">System.ServiceModel.ConfigurationIsReadOnly</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a1f2d-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a1f2d-104">Description</span></span>  
- <span data-ttu-id="a1f2d-105">Konfigurace je jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="a1f2d-105">The configuration is read-only.</span></span>  
+## <a name="description"></a><span data-ttu-id="a261f-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a261f-104">Description</span></span>  
+ <span data-ttu-id="a261f-105">Konfigurace je jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="a261f-105">The configuration is read-only.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a1f2d-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="a1f2d-106">See Also</span></span>  
- [<span data-ttu-id="a1f2d-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="a1f2d-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a1f2d-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="a1f2d-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a1f2d-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="a1f2d-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a261f-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="a261f-106">See Also</span></span>  
+ [<span data-ttu-id="a261f-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="a261f-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a261f-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="a261f-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a261f-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="a261f-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

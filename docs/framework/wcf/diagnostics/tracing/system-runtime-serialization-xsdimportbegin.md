@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 73707c7b1867aa71991d1031a30999a94dd3a2b1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8193d79a31bb9cafc7a3de69c129ecbd78619962
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemruntimeserializationxsdimportbegin"></a><span data-ttu-id="9935c-102">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="9935c-102">System.Runtime.Serialization.XsdImportBegin</span></span>
-<span data-ttu-id="9935c-103">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="9935c-103">System.Runtime.Serialization.XsdImportBegin</span></span>  
+# <a name="systemruntimeserializationxsdimportbegin"></a><span data-ttu-id="0ff1e-102">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="0ff1e-102">System.Runtime.Serialization.XsdImportBegin</span></span>
+<span data-ttu-id="0ff1e-103">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="0ff1e-103">System.Runtime.Serialization.XsdImportBegin</span></span>  
   
-## <a name="description"></a><span data-ttu-id="9935c-104">Popis</span><span class="sxs-lookup"><span data-stu-id="9935c-104">Description</span></span>  
- <span data-ttu-id="9935c-105">Počáteční import schématu.</span><span class="sxs-lookup"><span data-stu-id="9935c-105">Starting schema import.</span></span>  
+## <a name="description"></a><span data-ttu-id="0ff1e-104">Popis</span><span class="sxs-lookup"><span data-stu-id="0ff1e-104">Description</span></span>  
+ <span data-ttu-id="0ff1e-105">Počáteční import schématu.</span><span class="sxs-lookup"><span data-stu-id="0ff1e-105">Starting schema import.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9935c-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="9935c-106">See Also</span></span>  
- [<span data-ttu-id="9935c-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="9935c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="9935c-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="9935c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="9935c-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="9935c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="0ff1e-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="0ff1e-106">See Also</span></span>  
+ [<span data-ttu-id="0ff1e-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="0ff1e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="0ff1e-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="0ff1e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="0ff1e-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="0ff1e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,16 +13,17 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3ba95d94f720cacbad9733a243f14f00da8e22a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 44b675ad4d4b9cf33a3869722c1ff1c97abcea3f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="clientviabehavior"></a><span data-ttu-id="d4996-102">ClientViaBehavior</span><span class="sxs-lookup"><span data-stu-id="d4996-102">ClientViaBehavior</span></span>
-<span data-ttu-id="d4996-103">ClientViaBehavior</span><span class="sxs-lookup"><span data-stu-id="d4996-103">ClientViaBehavior</span></span>  
+# <a name="clientviabehavior"></a><span data-ttu-id="04418-102">ClientViaBehavior</span><span class="sxs-lookup"><span data-stu-id="04418-102">ClientViaBehavior</span></span>
+<span data-ttu-id="04418-103">ClientViaBehavior</span><span class="sxs-lookup"><span data-stu-id="04418-103">ClientViaBehavior</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d4996-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d4996-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="04418-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="04418-104">Syntax</span></span>  
   
 ```  
 class ClientViaBehavior : Behavior  
@@ -31,24 +32,24 @@ class ClientViaBehavior : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="d4996-105">Metody</span><span class="sxs-lookup"><span data-stu-id="d4996-105">Methods</span></span>  
- <span data-ttu-id="d4996-106">Třída ClientViaBehavior nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="d4996-106">The ClientViaBehavior class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="04418-105">Metody</span><span class="sxs-lookup"><span data-stu-id="04418-105">Methods</span></span>  
+ <span data-ttu-id="04418-106">Třída ClientViaBehavior nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="04418-106">The ClientViaBehavior class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="d4996-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="d4996-107">Properties</span></span>  
- <span data-ttu-id="d4996-108">Třída ClientViaBehavior má následující vlastnost:</span><span class="sxs-lookup"><span data-stu-id="d4996-108">The ClientViaBehavior class has the following property:</span></span>  
+## <a name="properties"></a><span data-ttu-id="04418-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="04418-107">Properties</span></span>  
+ <span data-ttu-id="04418-108">Třída ClientViaBehavior má následující vlastnost:</span><span class="sxs-lookup"><span data-stu-id="04418-108">The ClientViaBehavior class has the following property:</span></span>  
   
-### <a name="uri"></a><span data-ttu-id="d4996-109">identifikátor URI</span><span class="sxs-lookup"><span data-stu-id="d4996-109">Uri</span></span>  
- <span data-ttu-id="d4996-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="d4996-110">Data type: string</span></span>  
+### <a name="uri"></a><span data-ttu-id="04418-109">identifikátor URI</span><span class="sxs-lookup"><span data-stu-id="04418-109">Uri</span></span>  
+ <span data-ttu-id="04418-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="04418-110">Data type: string</span></span>  
   
- <span data-ttu-id="d4996-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="d4996-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="04418-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="04418-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="d4996-112">ViaUri.</span><span class="sxs-lookup"><span data-stu-id="d4996-112">The ViaUri.</span></span>  
+ <span data-ttu-id="04418-112">ViaUri.</span><span class="sxs-lookup"><span data-stu-id="04418-112">The ViaUri.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d4996-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d4996-113">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="04418-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="04418-113">Requirements</span></span>  
   
-|<span data-ttu-id="d4996-114">MOF</span><span class="sxs-lookup"><span data-stu-id="d4996-114">MOF</span></span>|<span data-ttu-id="d4996-115">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="d4996-115">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="04418-114">MOF</span><span class="sxs-lookup"><span data-stu-id="04418-114">MOF</span></span>|<span data-ttu-id="04418-115">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="04418-115">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="d4996-116">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="d4996-116">Namespace</span></span>|<span data-ttu-id="d4996-117">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="d4996-117">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="04418-116">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="04418-116">Namespace</span></span>|<span data-ttu-id="04418-117">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="04418-117">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="d4996-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="d4996-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="04418-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="04418-118">See Also</span></span>  
  <xref:System.ServiceModel.Description.ClientViaBehavior>

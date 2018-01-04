@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 39607533fb94f8ed86bd0678e1eccb49032b2f67
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 84ae810106cfd5406cebf489be7a17695696c6c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3394---streamedmessagewrittenbyencoder"></a><span data-ttu-id="5e219-102">3394 – StreamedMessageWrittenByEncoder</span><span class="sxs-lookup"><span data-stu-id="5e219-102">3394 - StreamedMessageWrittenByEncoder</span></span>
-## <a name="properties"></a><span data-ttu-id="5e219-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="5e219-103">Properties</span></span>  
+# <a name="3394---streamedmessagewrittenbyencoder"></a><span data-ttu-id="80df6-102">3394 – StreamedMessageWrittenByEncoder</span><span class="sxs-lookup"><span data-stu-id="80df6-102">3394 - StreamedMessageWrittenByEncoder</span></span>
+## <a name="properties"></a><span data-ttu-id="80df6-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="80df6-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="5e219-104">ID</span><span class="sxs-lookup"><span data-stu-id="5e219-104">ID</span></span>|<span data-ttu-id="5e219-105">3394</span><span class="sxs-lookup"><span data-stu-id="5e219-105">3394</span></span>|  
-|<span data-ttu-id="5e219-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="5e219-106">Keywords</span></span>|<span data-ttu-id="5e219-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="5e219-107">Channel</span></span>|  
-|<span data-ttu-id="5e219-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="5e219-108">Level</span></span>|<span data-ttu-id="5e219-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="5e219-109">Information</span></span>|  
-|<span data-ttu-id="5e219-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="5e219-110">Channel</span></span>|<span data-ttu-id="5e219-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="5e219-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="80df6-104">ID</span><span class="sxs-lookup"><span data-stu-id="80df6-104">ID</span></span>|<span data-ttu-id="80df6-105">3394</span><span class="sxs-lookup"><span data-stu-id="80df6-105">3394</span></span>|  
+|<span data-ttu-id="80df6-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="80df6-106">Keywords</span></span>|<span data-ttu-id="80df6-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="80df6-107">Channel</span></span>|  
+|<span data-ttu-id="80df6-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="80df6-108">Level</span></span>|<span data-ttu-id="80df6-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="80df6-109">Information</span></span>|  
+|<span data-ttu-id="80df6-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="80df6-110">Channel</span></span>|<span data-ttu-id="80df6-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="80df6-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="5e219-112">Popis</span><span class="sxs-lookup"><span data-stu-id="5e219-112">Description</span></span>  
- <span data-ttu-id="5e219-113">Tato událost je vygenerované při přenášené datovými proudy zpráv byla zapsána pomocí kodéru.</span><span class="sxs-lookup"><span data-stu-id="5e219-113">This event is emitted when the streamed message was written by the encoder.</span></span>  
+## <a name="description"></a><span data-ttu-id="80df6-112">Popis</span><span class="sxs-lookup"><span data-stu-id="80df6-112">Description</span></span>  
+ <span data-ttu-id="80df6-113">Tato událost je vygenerované při přenášené datovými proudy zpráv byla zapsána pomocí kodéru.</span><span class="sxs-lookup"><span data-stu-id="80df6-113">This event is emitted when the streamed message was written by the encoder.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="5e219-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="5e219-114">Message</span></span>  
- <span data-ttu-id="5e219-115">Kodér napsal přenášené datovými proudy zpráv.</span><span class="sxs-lookup"><span data-stu-id="5e219-115">A streamed message was written by the encoder.</span></span>  
+## <a name="message"></a><span data-ttu-id="80df6-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="80df6-114">Message</span></span>  
+ <span data-ttu-id="80df6-115">Kodér napsal přenášené datovými proudy zpráv.</span><span class="sxs-lookup"><span data-stu-id="80df6-115">A streamed message was written by the encoder.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="5e219-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="5e219-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="80df6-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="80df6-116">Details</span></span>

@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36dc0a86d521b25d05b19550a9626703a4422be6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 32bd5e52ce79043e0e795cd97968183d02e187f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelactivationmessagequeueunregistersucceeded"></a><span data-ttu-id="a5e07-102">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span><span class="sxs-lookup"><span data-stu-id="a5e07-102">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span></span>
-<span data-ttu-id="a5e07-103">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span><span class="sxs-lookup"><span data-stu-id="a5e07-103">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span></span>  
+# <a name="systemservicemodelactivationmessagequeueunregistersucceeded"></a><span data-ttu-id="9eacc-102">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span><span class="sxs-lookup"><span data-stu-id="9eacc-102">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span></span>
+<span data-ttu-id="9eacc-103">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span><span class="sxs-lookup"><span data-stu-id="9eacc-103">System.ServiceModel.Activation.MessageQueueUnregisterSucceeded</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a5e07-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a5e07-104">Description</span></span>  
- <span data-ttu-id="a5e07-105">Fronta zpráv registraci úspěšně.</span><span class="sxs-lookup"><span data-stu-id="a5e07-105">Message queue unregister succeeded.</span></span>  
+## <a name="description"></a><span data-ttu-id="9eacc-104">Popis</span><span class="sxs-lookup"><span data-stu-id="9eacc-104">Description</span></span>  
+ <span data-ttu-id="9eacc-105">Fronta zpráv registraci úspěšně.</span><span class="sxs-lookup"><span data-stu-id="9eacc-105">Message queue unregister succeeded.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a5e07-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="a5e07-106">See Also</span></span>  
- [<span data-ttu-id="a5e07-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="a5e07-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a5e07-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="a5e07-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a5e07-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="a5e07-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="9eacc-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="9eacc-106">See Also</span></span>  
+ [<span data-ttu-id="9eacc-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="9eacc-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="9eacc-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="9eacc-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="9eacc-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="9eacc-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

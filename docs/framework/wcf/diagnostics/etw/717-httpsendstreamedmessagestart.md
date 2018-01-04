@@ -13,26 +13,27 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3949723459d13c804076bb757f6cc40ec2ff240e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2842844bef6352fabd73d720d20bdee70e0ecb4c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="717---httpsendstreamedmessagestart"></a><span data-ttu-id="6aba8-102">717 – HttpSendStreamedMessageStart</span><span class="sxs-lookup"><span data-stu-id="6aba8-102">717 - HttpSendStreamedMessageStart</span></span>
-## <a name="properties"></a><span data-ttu-id="6aba8-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="6aba8-103">Properties</span></span>  
+# <a name="717---httpsendstreamedmessagestart"></a><span data-ttu-id="30a88-102">717 – HttpSendStreamedMessageStart</span><span class="sxs-lookup"><span data-stu-id="30a88-102">717 - HttpSendStreamedMessageStart</span></span>
+## <a name="properties"></a><span data-ttu-id="30a88-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="30a88-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="6aba8-104">ID</span><span class="sxs-lookup"><span data-stu-id="6aba8-104">ID</span></span>|<span data-ttu-id="6aba8-105">717</span><span class="sxs-lookup"><span data-stu-id="6aba8-105">717</span></span>|  
-|<span data-ttu-id="6aba8-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="6aba8-106">Keywords</span></span>|<span data-ttu-id="6aba8-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="6aba8-107">HTTP</span></span>|  
-|<span data-ttu-id="6aba8-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="6aba8-108">Level</span></span>|<span data-ttu-id="6aba8-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="6aba8-109">Information</span></span>|  
-|<span data-ttu-id="6aba8-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="6aba8-110">Channel</span></span>|<span data-ttu-id="6aba8-111">Aplikaci Microsoft Windows Server – aplikace nebo analytické</span><span class="sxs-lookup"><span data-stu-id="6aba8-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
+|<span data-ttu-id="30a88-104">ID</span><span class="sxs-lookup"><span data-stu-id="30a88-104">ID</span></span>|<span data-ttu-id="30a88-105">717</span><span class="sxs-lookup"><span data-stu-id="30a88-105">717</span></span>|  
+|<span data-ttu-id="30a88-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="30a88-106">Keywords</span></span>|<span data-ttu-id="30a88-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="30a88-107">HTTP</span></span>|  
+|<span data-ttu-id="30a88-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="30a88-108">Level</span></span>|<span data-ttu-id="30a88-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="30a88-109">Information</span></span>|  
+|<span data-ttu-id="30a88-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="30a88-110">Channel</span></span>|<span data-ttu-id="30a88-111">Aplikaci Microsoft Windows Server – aplikace nebo analytické</span><span class="sxs-lookup"><span data-stu-id="30a88-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="6aba8-112">Popis</span><span class="sxs-lookup"><span data-stu-id="6aba8-112">Description</span></span>  
- <span data-ttu-id="6aba8-113">Tato událost je vygenerované při spuštění přenášené datovými proudy zpráv Http odeslání.</span><span class="sxs-lookup"><span data-stu-id="6aba8-113">This event is emitted when Http Send streamed message starts.</span></span>  
+## <a name="description"></a><span data-ttu-id="30a88-112">Popis</span><span class="sxs-lookup"><span data-stu-id="30a88-112">Description</span></span>  
+ <span data-ttu-id="30a88-113">Tato událost je vygenerované při spuštění přenášené datovými proudy zpráv Http odeslání.</span><span class="sxs-lookup"><span data-stu-id="30a88-113">This event is emitted when Http Send streamed message starts.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="6aba8-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="6aba8-114">Message</span></span>  
- <span data-ttu-id="6aba8-115">Odeslání HTTP přenášené datovými proudy zpráva spuštěna.</span><span class="sxs-lookup"><span data-stu-id="6aba8-115">Http Send streamed message started.</span></span>  
+## <a name="message"></a><span data-ttu-id="30a88-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="30a88-114">Message</span></span>  
+ <span data-ttu-id="30a88-115">Odeslání HTTP přenášené datovými proudy zpráva spuštěna.</span><span class="sxs-lookup"><span data-stu-id="30a88-115">Http Send streamed message started.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="6aba8-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="6aba8-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="30a88-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="30a88-116">Details</span></span>

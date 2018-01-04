@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a286b5f12635d2a4444b5dd5ec7888864a211366
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 143cff3fce6786429e2d2658014e85f22bf097b4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelwarnhelppageenablednobaseaddress"></a><span data-ttu-id="95bd4-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="95bd4-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>
-<span data-ttu-id="95bd4-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="95bd4-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>  
+# <a name="systemservicemodelwarnhelppageenablednobaseaddress"></a><span data-ttu-id="60165-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="60165-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>
+<span data-ttu-id="60165-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="60165-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>  
   
-## <a name="description"></a><span data-ttu-id="95bd4-104">Popis</span><span class="sxs-lookup"><span data-stu-id="95bd4-104">Description</span></span>  
- <span data-ttu-id="95bd4-105">Stránka nápovědy ServiceDebugBehavior je povolena na relativní adrese a nelze vytvořit, protože neexistuje žádná základní adresa.</span><span class="sxs-lookup"><span data-stu-id="95bd4-105">The ServiceDebugBehavior Help Page is enabled at a relative address and cannot be created because there is no base address.</span></span>  
+## <a name="description"></a><span data-ttu-id="60165-104">Popis</span><span class="sxs-lookup"><span data-stu-id="60165-104">Description</span></span>  
+ <span data-ttu-id="60165-105">Stránka nápovědy ServiceDebugBehavior je povolena na relativní adrese a nelze vytvořit, protože neexistuje žádná základní adresa.</span><span class="sxs-lookup"><span data-stu-id="60165-105">The ServiceDebugBehavior Help Page is enabled at a relative address and cannot be created because there is no base address.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="95bd4-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="95bd4-106">See Also</span></span>  
- [<span data-ttu-id="95bd4-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="95bd4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="95bd4-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="95bd4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="95bd4-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="95bd4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="60165-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="60165-106">See Also</span></span>  
+ [<span data-ttu-id="60165-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="60165-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="60165-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="60165-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="60165-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="60165-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

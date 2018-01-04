@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cfa4f5592e15f3cd9f76e35c02d12e038da3d422
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 19dd42c0ca019fe5ebcf86ef0d580dc49471f315
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelshttpchannelunexpectedresponse"></a><span data-ttu-id="c74b5-102">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span><span class="sxs-lookup"><span data-stu-id="c74b5-102">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span></span>
-<span data-ttu-id="c74b5-103">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span><span class="sxs-lookup"><span data-stu-id="c74b5-103">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span></span>  
+# <a name="systemservicemodelchannelshttpchannelunexpectedresponse"></a><span data-ttu-id="fc9f1-102">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span><span class="sxs-lookup"><span data-stu-id="fc9f1-102">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span></span>
+<span data-ttu-id="fc9f1-103">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span><span class="sxs-lookup"><span data-stu-id="fc9f1-103">System.ServiceModel.Channels.HttpChannelUnexpectedResponse</span></span>  
   
-## <a name="description"></a><span data-ttu-id="c74b5-104">Popis</span><span class="sxs-lookup"><span data-stu-id="c74b5-104">Description</span></span>  
- <span data-ttu-id="c74b5-105">Přijata chybná odpověď HTTP.</span><span class="sxs-lookup"><span data-stu-id="c74b5-105">Received a bad HTTP response.</span></span>  
+## <a name="description"></a><span data-ttu-id="fc9f1-104">Popis</span><span class="sxs-lookup"><span data-stu-id="fc9f1-104">Description</span></span>  
+ <span data-ttu-id="fc9f1-105">Přijata chybná odpověď HTTP.</span><span class="sxs-lookup"><span data-stu-id="fc9f1-105">Received a bad HTTP response.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c74b5-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="c74b5-106">See Also</span></span>  
- [<span data-ttu-id="c74b5-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="c74b5-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="c74b5-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="c74b5-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="c74b5-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="c74b5-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="fc9f1-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="fc9f1-106">See Also</span></span>  
+ [<span data-ttu-id="fc9f1-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="fc9f1-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="fc9f1-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="fc9f1-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="fc9f1-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="fc9f1-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

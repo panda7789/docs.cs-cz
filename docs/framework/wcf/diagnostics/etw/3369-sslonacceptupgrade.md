@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e4e96d4bc5a1205aea054118dd6618472f71d490
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 45d2276132ca27cc5faa8b545d1867b34adbae4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3369---sslonacceptupgrade"></a><span data-ttu-id="8b68a-102">3369 – SslOnAcceptUpgrade</span><span class="sxs-lookup"><span data-stu-id="8b68a-102">3369 - SslOnAcceptUpgrade</span></span>
-## <a name="properties"></a><span data-ttu-id="8b68a-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="8b68a-103">Properties</span></span>  
+# <a name="3369---sslonacceptupgrade"></a><span data-ttu-id="ae534-102">3369 – SslOnAcceptUpgrade</span><span class="sxs-lookup"><span data-stu-id="ae534-102">3369 - SslOnAcceptUpgrade</span></span>
+## <a name="properties"></a><span data-ttu-id="ae534-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="ae534-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="8b68a-104">ID</span><span class="sxs-lookup"><span data-stu-id="8b68a-104">ID</span></span>|<span data-ttu-id="8b68a-105">3369</span><span class="sxs-lookup"><span data-stu-id="8b68a-105">3369</span></span>|  
-|<span data-ttu-id="8b68a-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="8b68a-106">Keywords</span></span>|<span data-ttu-id="8b68a-107">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="8b68a-107">Security</span></span>|  
-|<span data-ttu-id="8b68a-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="8b68a-108">Level</span></span>|<span data-ttu-id="8b68a-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="8b68a-109">Verbose</span></span>|  
-|<span data-ttu-id="8b68a-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="8b68a-110">Channel</span></span>|<span data-ttu-id="8b68a-111">Aplikaci Microsoft Windows Server – aplikace nebo analytické</span><span class="sxs-lookup"><span data-stu-id="8b68a-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
+|<span data-ttu-id="ae534-104">ID</span><span class="sxs-lookup"><span data-stu-id="ae534-104">ID</span></span>|<span data-ttu-id="ae534-105">3369</span><span class="sxs-lookup"><span data-stu-id="ae534-105">3369</span></span>|  
+|<span data-ttu-id="ae534-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="ae534-106">Keywords</span></span>|<span data-ttu-id="ae534-107">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="ae534-107">Security</span></span>|  
+|<span data-ttu-id="ae534-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="ae534-108">Level</span></span>|<span data-ttu-id="ae534-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="ae534-109">Verbose</span></span>|  
+|<span data-ttu-id="ae534-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="ae534-110">Channel</span></span>|<span data-ttu-id="ae534-111">Aplikaci Microsoft Windows Server – aplikace nebo analytické</span><span class="sxs-lookup"><span data-stu-id="ae534-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="8b68a-112">Popis</span><span class="sxs-lookup"><span data-stu-id="8b68a-112">Description</span></span>  
- <span data-ttu-id="8b68a-113">Tato událost je vygenerované s SslOnAcceptUpgrade zastavení.</span><span class="sxs-lookup"><span data-stu-id="8b68a-113">This event is emitted with the SslOnAcceptUpgrade stop.</span></span>  
+## <a name="description"></a><span data-ttu-id="ae534-112">Popis</span><span class="sxs-lookup"><span data-stu-id="ae534-112">Description</span></span>  
+ <span data-ttu-id="ae534-113">Tato událost je vygenerované s SslOnAcceptUpgrade zastavení.</span><span class="sxs-lookup"><span data-stu-id="ae534-113">This event is emitted with the SslOnAcceptUpgrade stop.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="8b68a-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="8b68a-114">Message</span></span>  
- <span data-ttu-id="8b68a-115">SslOnAcceptUpgradeStop</span><span class="sxs-lookup"><span data-stu-id="8b68a-115">SslOnAcceptUpgradeStop</span></span>  
+## <a name="message"></a><span data-ttu-id="ae534-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="ae534-114">Message</span></span>  
+ <span data-ttu-id="ae534-115">SslOnAcceptUpgradeStop</span><span class="sxs-lookup"><span data-stu-id="ae534-115">SslOnAcceptUpgradeStop</span></span>  
   
-## <a name="details"></a><span data-ttu-id="8b68a-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="8b68a-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="ae534-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="ae534-116">Details</span></span>

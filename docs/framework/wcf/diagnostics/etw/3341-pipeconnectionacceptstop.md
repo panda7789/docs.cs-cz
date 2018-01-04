@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f9009773219a2f846309a83efb334d6ef69fd50
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7972a478418836d8e6eaf8fb63f7cfa7b5e22185
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3341---pipeconnectionacceptstop"></a><span data-ttu-id="8d3fc-102">3341 – PipeConnectionAcceptStop</span><span class="sxs-lookup"><span data-stu-id="8d3fc-102">3341 - PipeConnectionAcceptStop</span></span>
-## <a name="properties"></a><span data-ttu-id="8d3fc-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="8d3fc-103">Properties</span></span>  
+# <a name="3341---pipeconnectionacceptstop"></a><span data-ttu-id="5cfca-102">3341 – PipeConnectionAcceptStop</span><span class="sxs-lookup"><span data-stu-id="5cfca-102">3341 - PipeConnectionAcceptStop</span></span>
+## <a name="properties"></a><span data-ttu-id="5cfca-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="5cfca-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="8d3fc-104">ID</span><span class="sxs-lookup"><span data-stu-id="8d3fc-104">ID</span></span>|<span data-ttu-id="8d3fc-105">3341</span><span class="sxs-lookup"><span data-stu-id="8d3fc-105">3341</span></span>|  
-|<span data-ttu-id="8d3fc-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="8d3fc-106">Keywords</span></span>|<span data-ttu-id="8d3fc-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="8d3fc-107">Channel</span></span>|  
-|<span data-ttu-id="8d3fc-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="8d3fc-108">Level</span></span>|<span data-ttu-id="8d3fc-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="8d3fc-109">Verbose</span></span>|  
-|<span data-ttu-id="8d3fc-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="8d3fc-110">Channel</span></span>|<span data-ttu-id="8d3fc-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="8d3fc-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="5cfca-104">ID</span><span class="sxs-lookup"><span data-stu-id="5cfca-104">ID</span></span>|<span data-ttu-id="5cfca-105">3341</span><span class="sxs-lookup"><span data-stu-id="5cfca-105">3341</span></span>|  
+|<span data-ttu-id="5cfca-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="5cfca-106">Keywords</span></span>|<span data-ttu-id="5cfca-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="5cfca-107">Channel</span></span>|  
+|<span data-ttu-id="5cfca-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="5cfca-108">Level</span></span>|<span data-ttu-id="5cfca-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="5cfca-109">Verbose</span></span>|  
+|<span data-ttu-id="5cfca-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="5cfca-110">Channel</span></span>|<span data-ttu-id="5cfca-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="5cfca-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="8d3fc-112">Popis</span><span class="sxs-lookup"><span data-stu-id="8d3fc-112">Description</span></span>  
- <span data-ttu-id="8d3fc-113">Tato událost je vygenerované při připojení kanálu přijmout zastaví.</span><span class="sxs-lookup"><span data-stu-id="8d3fc-113">This event is emitted when the pipe connection accept stops.</span></span>  
+## <a name="description"></a><span data-ttu-id="5cfca-112">Popis</span><span class="sxs-lookup"><span data-stu-id="5cfca-112">Description</span></span>  
+ <span data-ttu-id="5cfca-113">Tato událost je vygenerované při připojení kanálu přijmout zastaví.</span><span class="sxs-lookup"><span data-stu-id="5cfca-113">This event is emitted when the pipe connection accept stops.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="8d3fc-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="8d3fc-114">Message</span></span>  
- <span data-ttu-id="8d3fc-115">Přijaté připojení kanálu.</span><span class="sxs-lookup"><span data-stu-id="8d3fc-115">Pipe connection accepted.</span></span>  
+## <a name="message"></a><span data-ttu-id="5cfca-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="5cfca-114">Message</span></span>  
+ <span data-ttu-id="5cfca-115">Přijaté připojení kanálu.</span><span class="sxs-lookup"><span data-stu-id="5cfca-115">Pipe connection accepted.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="8d3fc-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="8d3fc-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="5cfca-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="5cfca-116">Details</span></span>

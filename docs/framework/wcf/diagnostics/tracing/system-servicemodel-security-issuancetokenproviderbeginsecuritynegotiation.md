@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: ee638ef31325d2e9758d5cced21e5d79b06a7d7a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b316ffe44d86ef6946f989994085840a09e3e421
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecurityissuancetokenproviderbeginsecuritynegotiation"></a><span data-ttu-id="54fb3-102">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span><span class="sxs-lookup"><span data-stu-id="54fb3-102">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span></span>
-<span data-ttu-id="54fb3-103">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span><span class="sxs-lookup"><span data-stu-id="54fb3-103">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span></span>  
+# <a name="systemservicemodelsecurityissuancetokenproviderbeginsecuritynegotiation"></a><span data-ttu-id="e1ed4-102">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span><span class="sxs-lookup"><span data-stu-id="e1ed4-102">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span></span>
+<span data-ttu-id="e1ed4-103">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span><span class="sxs-lookup"><span data-stu-id="e1ed4-103">System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation</span></span>  
   
-## <a name="description"></a><span data-ttu-id="54fb3-104">Popis</span><span class="sxs-lookup"><span data-stu-id="54fb3-104">Description</span></span>  
- <span data-ttu-id="54fb3-105">Poskytovatel IssuanceTokenProvider spustil nové vyjednávání zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="54fb3-105">The IssuanceTokenProvider has started a new security negotiation.</span></span>  
+## <a name="description"></a><span data-ttu-id="e1ed4-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e1ed4-104">Description</span></span>  
+ <span data-ttu-id="e1ed4-105">Poskytovatel IssuanceTokenProvider spustil nové vyjednávání zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="e1ed4-105">The IssuanceTokenProvider has started a new security negotiation.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="54fb3-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="54fb3-106">See Also</span></span>  
- [<span data-ttu-id="54fb3-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="54fb3-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="54fb3-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="54fb3-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="54fb3-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="54fb3-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e1ed4-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="e1ed4-106">See Also</span></span>  
+ [<span data-ttu-id="e1ed4-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="e1ed4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e1ed4-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e1ed4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e1ed4-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="e1ed4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

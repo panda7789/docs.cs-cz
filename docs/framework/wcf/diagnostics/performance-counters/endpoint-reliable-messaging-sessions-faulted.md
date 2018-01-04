@@ -13,14 +13,15 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8b69108dc70eeb3331bbcd6cc42e1fbc23136fe3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5283522ac0e3868960b439ed012b6862b8a5cbaa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="endpoint-reliable-messaging-sessions-faulted"></a><span data-ttu-id="ccf77-102">Koncový bod: Počet nezdařených relací spolehlivého zasílání zpráv</span><span class="sxs-lookup"><span data-stu-id="ccf77-102">Endpoint: Reliable Messaging Sessions Faulted</span></span>
-<span data-ttu-id="ccf77-103">Název čítače: Relací spolehlivého zasílání zpráv s chybou za sekundu.</span><span class="sxs-lookup"><span data-stu-id="ccf77-103">Counter Name: Reliable Messaging Sessions Faulted Per Second.</span></span>  
+# <a name="endpoint-reliable-messaging-sessions-faulted"></a><span data-ttu-id="2d25e-102">Koncový bod: Počet nezdařených relací spolehlivého zasílání zpráv</span><span class="sxs-lookup"><span data-stu-id="2d25e-102">Endpoint: Reliable Messaging Sessions Faulted</span></span>
+<span data-ttu-id="2d25e-103">Název čítače: Relací spolehlivého zasílání zpráv s chybou za sekundu.</span><span class="sxs-lookup"><span data-stu-id="2d25e-103">Counter Name: Reliable Messaging Sessions Faulted Per Second.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="ccf77-104">Popis</span><span class="sxs-lookup"><span data-stu-id="ccf77-104">Description</span></span>  
- <span data-ttu-id="ccf77-105">Počet relací spolehlivého zasílání zpráv, které se nezdařily na tento koncový bod za sekundu.</span><span class="sxs-lookup"><span data-stu-id="ccf77-105">Number of reliable messaging sessions that are faulted at this endpoint in a second.</span></span>
+## <a name="description"></a><span data-ttu-id="2d25e-104">Popis</span><span class="sxs-lookup"><span data-stu-id="2d25e-104">Description</span></span>  
+ <span data-ttu-id="2d25e-105">Počet relací spolehlivého zasílání zpráv, které se nezdařily na tento koncový bod za sekundu.</span><span class="sxs-lookup"><span data-stu-id="2d25e-105">Number of reliable messaging sessions that are faulted at this endpoint in a second.</span></span>

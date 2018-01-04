@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f84cb084031dc05e2dea07f29b4c585f954d7829
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8cc368d5574d6e21a8bcaa5384f9d139038cfaff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodeldiagnosticsunhandledexception"></a><span data-ttu-id="3506b-102">System.ServiceModel.Diagnostics.UnhandledException</span><span class="sxs-lookup"><span data-stu-id="3506b-102">System.ServiceModel.Diagnostics.UnhandledException</span></span>
-<span data-ttu-id="3506b-103">System.ServiceModel.Diagnostics.UnhandledException</span><span class="sxs-lookup"><span data-stu-id="3506b-103">System.ServiceModel.Diagnostics.UnhandledException</span></span>  
+# <a name="systemservicemodeldiagnosticsunhandledexception"></a><span data-ttu-id="64681-102">System.ServiceModel.Diagnostics.UnhandledException</span><span class="sxs-lookup"><span data-stu-id="64681-102">System.ServiceModel.Diagnostics.UnhandledException</span></span>
+<span data-ttu-id="64681-103">System.ServiceModel.Diagnostics.UnhandledException</span><span class="sxs-lookup"><span data-stu-id="64681-103">System.ServiceModel.Diagnostics.UnhandledException</span></span>  
   
-## <a name="description"></a><span data-ttu-id="3506b-104">Popis</span><span class="sxs-lookup"><span data-stu-id="3506b-104">Description</span></span>  
- <span data-ttu-id="3506b-105">Neošetřená výjimka.</span><span class="sxs-lookup"><span data-stu-id="3506b-105">Unhandled exception.</span></span>  
+## <a name="description"></a><span data-ttu-id="64681-104">Popis</span><span class="sxs-lookup"><span data-stu-id="64681-104">Description</span></span>  
+ <span data-ttu-id="64681-105">Neošetřená výjimka.</span><span class="sxs-lookup"><span data-stu-id="64681-105">Unhandled exception.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3506b-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="3506b-106">See Also</span></span>  
- [<span data-ttu-id="3506b-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="3506b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="3506b-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="3506b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="3506b-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="3506b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="64681-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="64681-106">See Also</span></span>  
+ [<span data-ttu-id="64681-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="64681-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="64681-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="64681-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="64681-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="64681-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

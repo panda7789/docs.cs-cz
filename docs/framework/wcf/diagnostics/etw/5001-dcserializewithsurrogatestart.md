@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 066d0175d0ddee30b1375b3edc18a3fcb750849e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 649c700664384d5b4da84ba18ba5c52cf78c1f5f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="5001---dcserializewithsurrogatestart"></a><span data-ttu-id="a3bf4-102">5001 - DCSerializeWithSurrogateStart</span><span class="sxs-lookup"><span data-stu-id="a3bf4-102">5001 - DCSerializeWithSurrogateStart</span></span>
-## <a name="properties"></a><span data-ttu-id="a3bf4-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="a3bf4-103">Properties</span></span>  
+# <a name="5001---dcserializewithsurrogatestart"></a><span data-ttu-id="9bc2a-102">5001 - DCSerializeWithSurrogateStart</span><span class="sxs-lookup"><span data-stu-id="9bc2a-102">5001 - DCSerializeWithSurrogateStart</span></span>
+## <a name="properties"></a><span data-ttu-id="9bc2a-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="9bc2a-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="a3bf4-104">ID</span><span class="sxs-lookup"><span data-stu-id="a3bf4-104">ID</span></span>|<span data-ttu-id="a3bf4-105">5001</span><span class="sxs-lookup"><span data-stu-id="a3bf4-105">5001</span></span>|  
-|<span data-ttu-id="a3bf4-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="a3bf4-106">Keywords</span></span>|<span data-ttu-id="a3bf4-107">Serializace</span><span class="sxs-lookup"><span data-stu-id="a3bf4-107">Serialization</span></span>|  
-|<span data-ttu-id="a3bf4-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="a3bf4-108">Level</span></span>|<span data-ttu-id="a3bf4-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="a3bf4-109">Verbose</span></span>|  
-|<span data-ttu-id="a3bf4-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="a3bf4-110">Channel</span></span>|<span data-ttu-id="a3bf4-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="a3bf4-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="9bc2a-104">ID</span><span class="sxs-lookup"><span data-stu-id="9bc2a-104">ID</span></span>|<span data-ttu-id="9bc2a-105">5001</span><span class="sxs-lookup"><span data-stu-id="9bc2a-105">5001</span></span>|  
+|<span data-ttu-id="9bc2a-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="9bc2a-106">Keywords</span></span>|<span data-ttu-id="9bc2a-107">Serializace</span><span class="sxs-lookup"><span data-stu-id="9bc2a-107">Serialization</span></span>|  
+|<span data-ttu-id="9bc2a-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="9bc2a-108">Level</span></span>|<span data-ttu-id="9bc2a-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="9bc2a-109">Verbose</span></span>|  
+|<span data-ttu-id="9bc2a-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="9bc2a-110">Channel</span></span>|<span data-ttu-id="9bc2a-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="9bc2a-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="a3bf4-112">Popis</span><span class="sxs-lookup"><span data-stu-id="a3bf4-112">Description</span></span>  
- <span data-ttu-id="a3bf4-113">Tato událost je vygenerované při serializaci kontraktu s náhrady spustí.</span><span class="sxs-lookup"><span data-stu-id="a3bf4-113">This event is emitted when the DataContract serialize with surrogates starts.</span></span>  
+## <a name="description"></a><span data-ttu-id="9bc2a-112">Popis</span><span class="sxs-lookup"><span data-stu-id="9bc2a-112">Description</span></span>  
+ <span data-ttu-id="9bc2a-113">Tato událost je vygenerované při serializaci kontraktu s náhrady spustí.</span><span class="sxs-lookup"><span data-stu-id="9bc2a-113">This event is emitted when the DataContract serialize with surrogates starts.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="a3bf4-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="a3bf4-114">Message</span></span>  
- <span data-ttu-id="a3bf4-115">Kontraktu serializovat %1 s náhrady start.</span><span class="sxs-lookup"><span data-stu-id="a3bf4-115">DataContract serialize %1 with surrogates start.</span></span>  
+## <a name="message"></a><span data-ttu-id="9bc2a-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="9bc2a-114">Message</span></span>  
+ <span data-ttu-id="9bc2a-115">Kontraktu serializovat %1 s náhrady start.</span><span class="sxs-lookup"><span data-stu-id="9bc2a-115">DataContract serialize %1 with surrogates start.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="a3bf4-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="a3bf4-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="9bc2a-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="9bc2a-116">Details</span></span>

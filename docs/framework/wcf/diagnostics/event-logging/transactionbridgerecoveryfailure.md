@@ -13,22 +13,23 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8d60d6061a8b6af00b38922dfbc3c1f2e1a1dcf0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 03eed22efe7c0c81faaa24239384e84427e7996d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="transactionbridgerecoveryfailure"></a><span data-ttu-id="29c5b-102">TransactionBridgeRecoveryFailure</span><span class="sxs-lookup"><span data-stu-id="29c5b-102">TransactionBridgeRecoveryFailure</span></span>
-<span data-ttu-id="29c5b-103">ID: 146</span><span class="sxs-lookup"><span data-stu-id="29c5b-103">Id: 146</span></span>  
+# <a name="transactionbridgerecoveryfailure"></a><span data-ttu-id="5577f-102">TransactionBridgeRecoveryFailure</span><span class="sxs-lookup"><span data-stu-id="5577f-102">TransactionBridgeRecoveryFailure</span></span>
+<span data-ttu-id="5577f-103">ID: 146</span><span class="sxs-lookup"><span data-stu-id="5577f-103">Id: 146</span></span>  
   
- <span data-ttu-id="29c5b-104">Závažnost: Chyba</span><span class="sxs-lookup"><span data-stu-id="29c5b-104">Severity: Error</span></span>  
+ <span data-ttu-id="5577f-104">Závažnost: Chyba</span><span class="sxs-lookup"><span data-stu-id="5577f-104">Severity: Error</span></span>  
   
- <span data-ttu-id="29c5b-105">Kategorie: TransactionBridge</span><span class="sxs-lookup"><span data-stu-id="29c5b-105">Category: TransactionBridge</span></span>  
+ <span data-ttu-id="5577f-105">Kategorie: TransactionBridge</span><span class="sxs-lookup"><span data-stu-id="5577f-105">Category: TransactionBridge</span></span>  
   
-## <a name="description"></a><span data-ttu-id="29c5b-106">Popis</span><span class="sxs-lookup"><span data-stu-id="29c5b-106">Description</span></span>  
- <span data-ttu-id="29c5b-107">Tato událost označuje, že služba MSDTC TransactionBridge došlo k chybě během obnovení.</span><span class="sxs-lookup"><span data-stu-id="29c5b-107">This event indicates that the MSDTC TransactionBridge failed during recovery.</span></span> <span data-ttu-id="29c5b-108">Toto je závažná, takže služba MSDTC byla ukončena.</span><span class="sxs-lookup"><span data-stu-id="29c5b-108">This is a fatal condition, so the MSDTC service has terminated.</span></span> <span data-ttu-id="29c5b-109">Uvádí události výjimky, název procesu a ID procesu.</span><span class="sxs-lookup"><span data-stu-id="29c5b-109">The event lists the exception, process name and process ID.</span></span> <span data-ttu-id="29c5b-110">.</span><span class="sxs-lookup"><span data-stu-id="29c5b-110">.</span></span>  
+## <a name="description"></a><span data-ttu-id="5577f-106">Popis</span><span class="sxs-lookup"><span data-stu-id="5577f-106">Description</span></span>  
+ <span data-ttu-id="5577f-107">Tato událost označuje, že služba MSDTC TransactionBridge došlo k chybě během obnovení.</span><span class="sxs-lookup"><span data-stu-id="5577f-107">This event indicates that the MSDTC TransactionBridge failed during recovery.</span></span> <span data-ttu-id="5577f-108">Toto je závažná, takže služba MSDTC byla ukončena.</span><span class="sxs-lookup"><span data-stu-id="5577f-108">This is a fatal condition, so the MSDTC service has terminated.</span></span> <span data-ttu-id="5577f-109">Uvádí události výjimky, název procesu a ID procesu.</span><span class="sxs-lookup"><span data-stu-id="5577f-109">The event lists the exception, process name and process ID.</span></span> <span data-ttu-id="5577f-110">.</span><span class="sxs-lookup"><span data-stu-id="5577f-110">.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="29c5b-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="29c5b-111">See Also</span></span>  
- [<span data-ttu-id="29c5b-112">Protokolování událostí</span><span class="sxs-lookup"><span data-stu-id="29c5b-112">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [<span data-ttu-id="29c5b-113">Události Obecné referenční informace</span><span class="sxs-lookup"><span data-stu-id="29c5b-113">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="5577f-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="5577f-111">See Also</span></span>  
+ [<span data-ttu-id="5577f-112">Protokolování událostí</span><span class="sxs-lookup"><span data-stu-id="5577f-112">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="5577f-113">Události – obecné referenční informace</span><span class="sxs-lookup"><span data-stu-id="5577f-113">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

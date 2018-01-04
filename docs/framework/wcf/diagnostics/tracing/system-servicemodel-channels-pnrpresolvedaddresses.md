@@ -13,19 +13,20 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9e565606a1f844ef3c269a784dbdd0f2a916f78b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 27b9f4b5ad080c93aca29812e8c68bf0b7c40865
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelspnrpresolvedaddresses"></a><span data-ttu-id="e6032-102">System.ServiceModel.Channels.PnrpResolvedAddresses</span><span class="sxs-lookup"><span data-stu-id="e6032-102">System.ServiceModel.Channels.PnrpResolvedAddresses</span></span>
-<span data-ttu-id="e6032-103">Překladač Pnrp dokončit operace řešení.</span><span class="sxs-lookup"><span data-stu-id="e6032-103">The Pnrp Resolver completed a resolve operation.</span></span>  
+# <a name="systemservicemodelchannelspnrpresolvedaddresses"></a><span data-ttu-id="a3a1d-102">System.ServiceModel.Channels.PnrpResolvedAddresses</span><span class="sxs-lookup"><span data-stu-id="a3a1d-102">System.ServiceModel.Channels.PnrpResolvedAddresses</span></span>
+<span data-ttu-id="a3a1d-103">Překladač Pnrp dokončit operace řešení.</span><span class="sxs-lookup"><span data-stu-id="a3a1d-103">The Pnrp Resolver completed a resolve operation.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e6032-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e6032-104">Description</span></span>  
- <span data-ttu-id="e6032-105">Trasování upozornění označuje, že překladač Pnrp nelze najít žádné adresy.</span><span class="sxs-lookup"><span data-stu-id="e6032-105">This warning trace indicates that the Pnrp Resolver could not find any addresses.</span></span> <span data-ttu-id="e6032-106">Trasování nastane během operace vyřešit pomocí překladače PNRP.</span><span class="sxs-lookup"><span data-stu-id="e6032-106">This trace occurs during a Resolve Operation by the PNRP Resolver.</span></span>  
+## <a name="description"></a><span data-ttu-id="a3a1d-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a3a1d-104">Description</span></span>  
+ <span data-ttu-id="a3a1d-105">Trasování upozornění označuje, že překladač Pnrp nelze najít žádné adresy.</span><span class="sxs-lookup"><span data-stu-id="a3a1d-105">This warning trace indicates that the Pnrp Resolver could not find any addresses.</span></span> <span data-ttu-id="a3a1d-106">Trasování nastane během operace vyřešit pomocí překladače PNRP.</span><span class="sxs-lookup"><span data-stu-id="a3a1d-106">This trace occurs during a Resolve Operation by the PNRP Resolver.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e6032-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="e6032-107">See Also</span></span>  
- [<span data-ttu-id="e6032-108">Trasování</span><span class="sxs-lookup"><span data-stu-id="e6032-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="e6032-109">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e6032-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="e6032-110">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="e6032-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a3a1d-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="a3a1d-107">See Also</span></span>  
+ [<span data-ttu-id="a3a1d-108">Trasování</span><span class="sxs-lookup"><span data-stu-id="a3a1d-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a3a1d-109">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="a3a1d-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a3a1d-110">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="a3a1d-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

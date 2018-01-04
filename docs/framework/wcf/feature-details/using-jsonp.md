@@ -13,23 +13,24 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b1eedacf6e98d8c6cb71b1cb62b41ce3ef7fcb47
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f3cd0d20f619444b2a00fccafdf63557b5e09e21
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="using-jsonp"></a><span data-ttu-id="0c818-102">Používání JSONP</span><span class="sxs-lookup"><span data-stu-id="0c818-102">Using JSONP</span></span>
+# <a name="using-jsonp"></a><span data-ttu-id="7a688-102">Používání JSONP</span><span class="sxs-lookup"><span data-stu-id="7a688-102">Using JSONP</span></span>
 
-<span data-ttu-id="0c818-103">Odsazení JSON (JSONP) je mechanismus, který umožňuje podporu webů skriptování v webových prohlížečů.</span><span class="sxs-lookup"><span data-stu-id="0c818-103">JSON Padding (JSONP) is a mechanism that enables cross-site scripting support in Web browsers.</span></span> <span data-ttu-id="0c818-104">JSONP je uspořádaná kolem webových prohlížečů schopnost načíst skripty z lokality rozdílné aktuální načtený dokument byla načtena z.</span><span class="sxs-lookup"><span data-stu-id="0c818-104">JSONP is designed around the ability of Web browsers to load scripts from a site different from the one the current loaded document was retrieved from.</span></span> <span data-ttu-id="0c818-105">Tento mechanismus funguje odsazením datové části JSON s názvem uživatelské zpětné volání funkce, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="0c818-105">The mechanism works by padding the JSON payload with a user-defined callback function name, as shown in the following example.</span></span>
+<span data-ttu-id="7a688-103">Odsazení JSON (JSONP) je mechanismus, který umožňuje podporu webů skriptování v webových prohlížečů.</span><span class="sxs-lookup"><span data-stu-id="7a688-103">JSON Padding (JSONP) is a mechanism that enables cross-site scripting support in Web browsers.</span></span> <span data-ttu-id="7a688-104">JSONP je uspořádaná kolem webových prohlížečů schopnost načíst skripty z lokality rozdílné aktuální načtený dokument byla načtena z.</span><span class="sxs-lookup"><span data-stu-id="7a688-104">JSONP is designed around the ability of Web browsers to load scripts from a site different from the one the current loaded document was retrieved from.</span></span> <span data-ttu-id="7a688-105">Tento mechanismus funguje odsazením datové části JSON s názvem uživatelské zpětné volání funkce, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="7a688-105">The mechanism works by padding the JSON payload with a user-defined callback function name, as shown in the following example.</span></span>
 
 ```javascript
 callback({"a" = \\"b\\"});
 ```
 
-<span data-ttu-id="0c818-106">V předchozím příkladu datové části JSON `{"a" = \\"b\\"}`, je uzavřen do volání funkce `callback`.</span><span class="sxs-lookup"><span data-stu-id="0c818-106">In the preceding example the JSON payload, `{"a" = \\"b\\"}`, is wrapped in a function call, `callback`.</span></span> <span data-ttu-id="0c818-107">Funkce zpětného volání musí být definovány již v aktuální webové stránky.</span><span class="sxs-lookup"><span data-stu-id="0c818-107">The callback function must already be defined in the current Web page.</span></span> <span data-ttu-id="0c818-108">Typ obsahu odpovědi JSONP `application/javascript`.</span><span class="sxs-lookup"><span data-stu-id="0c818-108">The content type of a JSONP response is `application/javascript`.</span></span>
+<span data-ttu-id="7a688-106">V předchozím příkladu datové části JSON `{"a" = \\"b\\"}`, je uzavřen do volání funkce `callback`.</span><span class="sxs-lookup"><span data-stu-id="7a688-106">In the preceding example the JSON payload, `{"a" = \\"b\\"}`, is wrapped in a function call, `callback`.</span></span> <span data-ttu-id="7a688-107">Funkce zpětného volání musí být definovány již v aktuální webové stránky.</span><span class="sxs-lookup"><span data-stu-id="7a688-107">The callback function must already be defined in the current Web page.</span></span> <span data-ttu-id="7a688-108">Typ obsahu odpovědi JSONP `application/javascript`.</span><span class="sxs-lookup"><span data-stu-id="7a688-108">The content type of a JSONP response is `application/javascript`.</span></span>
 
-<span data-ttu-id="0c818-109">JSONP není povolené automaticky.</span><span class="sxs-lookup"><span data-stu-id="0c818-109">JSONP is not automatically enabled.</span></span> <span data-ttu-id="0c818-110">Chcete-li ji povolit, nastavte `javascriptCallbackEnabled` atribut `true` na jednom ze standardních koncových bodů protokolu HTTP (<xref:System.ServiceModel.Description.WebHttpEndpoint> nebo <xref:System.ServiceModel.Description.WebScriptEndpoint>), jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="0c818-110">To enable it, set the `javascriptCallbackEnabled` attribute to `true` on one of the HTTP standard endpoints (<xref:System.ServiceModel.Description.WebHttpEndpoint> or <xref:System.ServiceModel.Description.WebScriptEndpoint>), as shown in the following example.</span></span>
+<span data-ttu-id="7a688-109">JSONP není povolené automaticky.</span><span class="sxs-lookup"><span data-stu-id="7a688-109">JSONP is not automatically enabled.</span></span> <span data-ttu-id="7a688-110">Chcete-li ji povolit, nastavte `javascriptCallbackEnabled` atribut `true` na jednom ze standardních koncových bodů protokolu HTTP (<xref:System.ServiceModel.Description.WebHttpEndpoint> nebo <xref:System.ServiceModel.Description.WebScriptEndpoint>), jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="7a688-110">To enable it, set the `javascriptCallbackEnabled` attribute to `true` on one of the HTTP standard endpoints (<xref:System.ServiceModel.Description.WebHttpEndpoint> or <xref:System.ServiceModel.Description.WebScriptEndpoint>), as shown in the following example.</span></span>
 
 ```xml
 <system.serviceModel>
@@ -41,17 +42,17 @@ callback({"a" = \\"b\\"});
 </system.serviceModel>
 ```
 
-<span data-ttu-id="0c818-111">Název funkce zpětného volání může být zadán v dotazu proměnné s názvem zpětného volání, jak je znázorněno v následující adresu URL.</span><span class="sxs-lookup"><span data-stu-id="0c818-111">The name of the callback function can be specified in a query variable called callback as shown in the following URL.</span></span>
+<span data-ttu-id="7a688-111">Název funkce zpětného volání může být zadán v dotazu proměnné s názvem zpětného volání, jak je znázorněno v následující adresu URL.</span><span class="sxs-lookup"><span data-stu-id="7a688-111">The name of the callback function can be specified in a query variable called callback as shown in the following URL.</span></span>
 
 `http://baseaddress/Service/RestService?callback=functionName`
 
-<span data-ttu-id="0c818-112">Po vyvolání službu odešle odpověď podobně jako tento.</span><span class="sxs-lookup"><span data-stu-id="0c818-112">When invoked, the service sends a response like the following.</span></span>
+<span data-ttu-id="7a688-112">Po vyvolání službu odešle odpověď podobně jako tento.</span><span class="sxs-lookup"><span data-stu-id="7a688-112">When invoked, the service sends a response like the following.</span></span>
 
 ```javascript
 functionName({"root":"Something"});
 ```  
 
-<span data-ttu-id="0c818-113">Můžete také zadat název funkce zpětného volání při použití <xref:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute> k třídě služby, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="0c818-113">You can also specify the callback function name by applying the <xref:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute> to the service class, as shown in the following example.</span></span>
+<span data-ttu-id="7a688-113">Můžete také zadat název funkce zpětného volání při použití <xref:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute> k třídě služby, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="7a688-113">You can also specify the callback function name by applying the <xref:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute> to the service class, as shown in the following example.</span></span>
 
 ```csharp
 [ServiceContract]
@@ -66,34 +67,34 @@ public class Service1
 }
 ```
 
-<span data-ttu-id="0c818-114">Pro službu uvedený výše žádost o vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="0c818-114">For the service shown previously, a request looks like the following.</span></span>
+<span data-ttu-id="7a688-114">Pro službu uvedený výše žádost o vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="7a688-114">For the service shown previously, a request looks like the following.</span></span>
 
 `http://baseaddress/Service/RestService?$callback=anotherFunction`
 
-<span data-ttu-id="0c818-115">Po vyvolání službu odpoví následující.</span><span class="sxs-lookup"><span data-stu-id="0c818-115">When invoked, the service responds with the following.</span></span>
+<span data-ttu-id="7a688-115">Po vyvolání službu odpoví následující.</span><span class="sxs-lookup"><span data-stu-id="7a688-115">When invoked, the service responds with the following.</span></span>
 
 ```javascript
 anotherFunction ({"root":"Something"});
 ```
 
-## <a name="http-status-codes"></a><span data-ttu-id="0c818-116">Stavové kódy HTTP</span><span class="sxs-lookup"><span data-stu-id="0c818-116">HTTP Status Codes</span></span>
+## <a name="http-status-codes"></a><span data-ttu-id="7a688-116">Stavové kódy HTTP</span><span class="sxs-lookup"><span data-stu-id="7a688-116">HTTP Status Codes</span></span>
 
-<span data-ttu-id="0c818-117">JSONP odpovědi s stavové kódy HTTP než 200 zahrnují druhý parametr s číselnému znázornění stavový kód protokolu HTTP, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="0c818-117">JSONP responses with HTTP status codes other than 200 include a second parameter with the numeric representation of the HTTP status code, as shown in the following example.</span></span>
+<span data-ttu-id="7a688-117">JSONP odpovědi s stavové kódy HTTP než 200 zahrnují druhý parametr s číselnému znázornění stavový kód protokolu HTTP, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="7a688-117">JSONP responses with HTTP status codes other than 200 include a second parameter with the numeric representation of the HTTP status code, as shown in the following example.</span></span>
 
 ```javascript
 anotherFunction ({"root":"Something"}, 201);
 ```
 
-## <a name="validations"></a><span data-ttu-id="0c818-118">Ověření</span><span class="sxs-lookup"><span data-stu-id="0c818-118">Validations</span></span>
+## <a name="validations"></a><span data-ttu-id="7a688-118">Ověření</span><span class="sxs-lookup"><span data-stu-id="7a688-118">Validations</span></span>
 
-<span data-ttu-id="0c818-119">Pokud je povolen formát JSONP, jsou prováděny následující ověření:</span><span class="sxs-lookup"><span data-stu-id="0c818-119">The following validations are performed when JSONP is enabled:</span></span>
+<span data-ttu-id="7a688-119">Pokud je povolen formát JSONP, jsou prováděny následující ověření:</span><span class="sxs-lookup"><span data-stu-id="7a688-119">The following validations are performed when JSONP is enabled:</span></span>
 
-- <span data-ttu-id="0c818-120">Infrastruktura WCF vyvolá výjimku, pokud `javascriptCallback` je povoleno, je k dispozici v požadavku parametr řetězce dotazu zpětného volání a formát odpovědi je nastaven na JSON.</span><span class="sxs-lookup"><span data-stu-id="0c818-120">The WCF infrastructure throws an exception if `javascriptCallback` is enabled, a callback query-string parameter is present in the request and the response format is set to JSON.</span></span>
+- <span data-ttu-id="7a688-120">Infrastruktura WCF vyvolá výjimku, pokud `javascriptCallback` je povoleno, je k dispozici v požadavku parametr řetězce dotazu zpětného volání a formát odpovědi je nastaven na JSON.</span><span class="sxs-lookup"><span data-stu-id="7a688-120">The WCF infrastructure throws an exception if `javascriptCallback` is enabled, a callback query-string parameter is present in the request and the response format is set to JSON.</span></span>
 
-- <span data-ttu-id="0c818-121">Pokud požadavek obsahuje parametr řetězce dotazu zpětného volání, ale není operaci HTTP GET, parametr zpětné volání je ignorován.</span><span class="sxs-lookup"><span data-stu-id="0c818-121">If the request contains the callback query string parameter but the operation is not an HTTP GET, the callback parameter is ignored.</span></span>
+- <span data-ttu-id="7a688-121">Pokud požadavek obsahuje parametr řetězce dotazu zpětného volání, ale není operaci HTTP GET, parametr zpětné volání je ignorován.</span><span class="sxs-lookup"><span data-stu-id="7a688-121">If the request contains the callback query string parameter but the operation is not an HTTP GET, the callback parameter is ignored.</span></span>
 
-- <span data-ttu-id="0c818-122">Pokud je název zpětné volání `null` prázdný řetězec odpovědi není naformátovaná jako JSONP.</span><span class="sxs-lookup"><span data-stu-id="0c818-122">If the callback name is `null` or empty string the response is not formatted as JSONP.</span></span>
+- <span data-ttu-id="7a688-122">Pokud je název zpětné volání `null` prázdný řetězec odpovědi není naformátovaná jako JSONP.</span><span class="sxs-lookup"><span data-stu-id="7a688-122">If the callback name is `null` or empty string the response is not formatted as JSONP.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="0c818-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="0c818-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a688-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="7a688-123">See also</span></span>
 
-[<span data-ttu-id="0c818-124">Přehled modelu programování WCF Web HTTP</span><span class="sxs-lookup"><span data-stu-id="0c818-124">WCF Web HTTP Programming Model Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+[<span data-ttu-id="7a688-124">Přehled programovacího modelu webových služeb HTTP WCF</span><span class="sxs-lookup"><span data-stu-id="7a688-124">WCF Web HTTP Programming Model Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)

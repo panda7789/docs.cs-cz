@@ -13,14 +13,15 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 5dae370d90082c9efe89f9d523740fc25ece21ab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bd3e118d6e657ce03d8ccdf0d68d1b12b84d50bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="service-security-calls-not-authorized"></a><span data-ttu-id="c9d45-102">Služba: Počet neautorizovaných volání zabezpečení</span><span class="sxs-lookup"><span data-stu-id="c9d45-102">Service: Security Calls Not Authorized</span></span>
-<span data-ttu-id="c9d45-103">Název čítače: Neautorizovaných volání zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="c9d45-103">Counter Name: Security Calls Not Authorized.</span></span>  
+# <a name="service-security-calls-not-authorized"></a><span data-ttu-id="2fc08-102">Služba: Počet neautorizovaných volání zabezpečení</span><span class="sxs-lookup"><span data-stu-id="2fc08-102">Service: Security Calls Not Authorized</span></span>
+<span data-ttu-id="2fc08-103">Název čítače: Neautorizovaných volání zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="2fc08-103">Counter Name: Security Calls Not Authorized.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="c9d45-104">Popis</span><span class="sxs-lookup"><span data-stu-id="c9d45-104">Description</span></span>  
- <span data-ttu-id="c9d45-105">Hodnota tohoto čítače se zvýší, když <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> metoda vrátí `false`.</span><span class="sxs-lookup"><span data-stu-id="c9d45-105">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span> <span data-ttu-id="c9d45-106">Znamená příchozí zprávu od platného uživatele a správně chráněný, ale uživatel není autorizovaný k provést určité úlohy.</span><span class="sxs-lookup"><span data-stu-id="c9d45-106">It indicates that the incoming message is from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>
+## <a name="description"></a><span data-ttu-id="2fc08-104">Popis</span><span class="sxs-lookup"><span data-stu-id="2fc08-104">Description</span></span>  
+ <span data-ttu-id="2fc08-105">Hodnota tohoto čítače se zvýší, když <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> metoda vrátí `false`.</span><span class="sxs-lookup"><span data-stu-id="2fc08-105">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span> <span data-ttu-id="2fc08-106">Znamená příchozí zprávu od platného uživatele a správně chráněný, ale uživatel není autorizovaný k provést určité úlohy.</span><span class="sxs-lookup"><span data-stu-id="2fc08-106">It indicates that the incoming message is from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>

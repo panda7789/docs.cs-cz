@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 03c2e5dd413ae2523e9fb288d14a2bfc64670807
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8fa17d63f8448a3f35aa85f0784c4b23af2b8d9a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemruntimeserializationxsdexportbegin"></a><span data-ttu-id="eedcc-102">System.Runtime.Serialization.XsdExportBegin</span><span class="sxs-lookup"><span data-stu-id="eedcc-102">System.Runtime.Serialization.XsdExportBegin</span></span>
-<span data-ttu-id="eedcc-103">System.Runtime.Serialization.XsdExportBegin</span><span class="sxs-lookup"><span data-stu-id="eedcc-103">System.Runtime.Serialization.XsdExportBegin</span></span>  
+# <a name="systemruntimeserializationxsdexportbegin"></a><span data-ttu-id="cd80d-102">System.Runtime.Serialization.XsdExportBegin</span><span class="sxs-lookup"><span data-stu-id="cd80d-102">System.Runtime.Serialization.XsdExportBegin</span></span>
+<span data-ttu-id="cd80d-103">System.Runtime.Serialization.XsdExportBegin</span><span class="sxs-lookup"><span data-stu-id="cd80d-103">System.Runtime.Serialization.XsdExportBegin</span></span>  
   
-## <a name="description"></a><span data-ttu-id="eedcc-104">Popis</span><span class="sxs-lookup"><span data-stu-id="eedcc-104">Description</span></span>  
- <span data-ttu-id="eedcc-105">Výchozí schéma export.</span><span class="sxs-lookup"><span data-stu-id="eedcc-105">Starting schema export.</span></span>  
+## <a name="description"></a><span data-ttu-id="cd80d-104">Popis</span><span class="sxs-lookup"><span data-stu-id="cd80d-104">Description</span></span>  
+ <span data-ttu-id="cd80d-105">Výchozí schéma export.</span><span class="sxs-lookup"><span data-stu-id="cd80d-105">Starting schema export.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eedcc-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="eedcc-106">See Also</span></span>  
- [<span data-ttu-id="eedcc-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="eedcc-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="eedcc-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="eedcc-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="eedcc-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="eedcc-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="cd80d-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="cd80d-106">See Also</span></span>  
+ [<span data-ttu-id="cd80d-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="cd80d-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="cd80d-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="cd80d-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="cd80d-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="cd80d-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

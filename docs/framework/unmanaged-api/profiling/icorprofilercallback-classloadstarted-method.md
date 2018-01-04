@@ -21,37 +21,38 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8f1622fdbbeb1f200f996e49c432600165a029aa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 22b6d4ca72b0ee95af1c7baae63223cb09435971
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilercallbackclassloadstarted-method"></a><span data-ttu-id="456aa-102">ICorProfilerCallback::ClassLoadStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="456aa-102">ICorProfilerCallback::ClassLoadStarted Method</span></span>
-<span data-ttu-id="456aa-103">Upozorní profileru, že třída je právě načítán.</span><span class="sxs-lookup"><span data-stu-id="456aa-103">Notifies the profiler that a class is being loaded.</span></span>  
+# <a name="icorprofilercallbackclassloadstarted-method"></a><span data-ttu-id="3481a-102">ICorProfilerCallback::ClassLoadStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="3481a-102">ICorProfilerCallback::ClassLoadStarted Method</span></span>
+<span data-ttu-id="3481a-103">Upozorní profileru, že třída je právě načítán.</span><span class="sxs-lookup"><span data-stu-id="3481a-103">Notifies the profiler that a class is being loaded.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="456aa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="456aa-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3481a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3481a-104">Syntax</span></span>  
   
 ```  
 HRESULT ClassLoadStarted(  
     [in] ClassID classId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="456aa-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="456aa-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="3481a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3481a-105">Parameters</span></span>  
  `classId`  
- <span data-ttu-id="456aa-106">[v] Určuje třídu, která je právě načítán.</span><span class="sxs-lookup"><span data-stu-id="456aa-106">[in] Identifies the class that is being loaded.</span></span>  
+ <span data-ttu-id="3481a-106">[v] Určuje třídu, která je právě načítán.</span><span class="sxs-lookup"><span data-stu-id="3481a-106">[in] Identifies the class that is being loaded.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="456aa-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="456aa-107">Remarks</span></span>  
- <span data-ttu-id="456aa-108">Hodnota `classId` není platná pro požadavek informace, dokud [icorprofilercallback::classloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="456aa-108">The value of `classId` is not valid for an information request until the [ICorProfilerCallback::ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) method is called.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3481a-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3481a-107">Remarks</span></span>  
+ <span data-ttu-id="3481a-108">Hodnota `classId` není platná pro požadavek informace, dokud [icorprofilercallback::classloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="3481a-108">The value of `classId` is not valid for an information request until the [ICorProfilerCallback::ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) method is called.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="456aa-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="456aa-109">Requirements</span></span>  
- <span data-ttu-id="456aa-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="456aa-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3481a-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3481a-109">Requirements</span></span>  
+ <span data-ttu-id="3481a-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3481a-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="456aa-111">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="456aa-111">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="3481a-111">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="3481a-111">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="456aa-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="456aa-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="3481a-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3481a-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="456aa-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="456aa-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="3481a-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3481a-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="456aa-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="456aa-114">See Also</span></span>  
- [<span data-ttu-id="456aa-115">Icorprofilercallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="456aa-115">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="3481a-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="3481a-114">See Also</span></span>  
+ [<span data-ttu-id="3481a-115">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3481a-115">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

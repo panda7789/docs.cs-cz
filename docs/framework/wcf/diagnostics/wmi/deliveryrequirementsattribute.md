@@ -13,16 +13,17 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 172f7df4f028c1ddc0f5565e95291e857ee6fa1d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e297bfc0499ea3ee8d3dd8395165ca22b2baa1de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="deliveryrequirementsattribute"></a><span data-ttu-id="cf05a-102">DeliveryRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="cf05a-102">DeliveryRequirementsAttribute</span></span>
-<span data-ttu-id="cf05a-103">DeliveryRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="cf05a-103">DeliveryRequirementsAttribute</span></span>  
+# <a name="deliveryrequirementsattribute"></a><span data-ttu-id="45624-102">DeliveryRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="45624-102">DeliveryRequirementsAttribute</span></span>
+<span data-ttu-id="45624-103">DeliveryRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="45624-103">DeliveryRequirementsAttribute</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cf05a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cf05a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="45624-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="45624-104">Syntax</span></span>  
   
 ```  
 class DeliveryRequirementsAttribute : Behavior  
@@ -33,38 +34,38 @@ class DeliveryRequirementsAttribute : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="cf05a-105">Metody</span><span class="sxs-lookup"><span data-stu-id="cf05a-105">Methods</span></span>  
- <span data-ttu-id="cf05a-106">Třída Atribut DeliveryRequirementsAttribute nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="cf05a-106">The DeliveryRequirementsAttribute class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="45624-105">Metody</span><span class="sxs-lookup"><span data-stu-id="45624-105">Methods</span></span>  
+ <span data-ttu-id="45624-106">Třída Atribut DeliveryRequirementsAttribute nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="45624-106">The DeliveryRequirementsAttribute class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="cf05a-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="cf05a-107">Properties</span></span>  
- <span data-ttu-id="cf05a-108">Atribut DeliveryRequirementsAttribute třída má následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="cf05a-108">The DeliveryRequirementsAttribute class has the following properties:</span></span>  
+## <a name="properties"></a><span data-ttu-id="45624-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="45624-107">Properties</span></span>  
+ <span data-ttu-id="45624-108">Atribut DeliveryRequirementsAttribute třída má následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="45624-108">The DeliveryRequirementsAttribute class has the following properties:</span></span>  
   
-### <a name="queueddeliveryrequirements"></a><span data-ttu-id="cf05a-109">Atribut QueuedDeliveryRequirements</span><span class="sxs-lookup"><span data-stu-id="cf05a-109">QueuedDeliveryRequirements</span></span>  
- <span data-ttu-id="cf05a-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="cf05a-110">Data type: string</span></span>  
+### <a name="queueddeliveryrequirements"></a><span data-ttu-id="45624-109">Atribut QueuedDeliveryRequirements</span><span class="sxs-lookup"><span data-stu-id="45624-109">QueuedDeliveryRequirements</span></span>  
+ <span data-ttu-id="45624-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="45624-110">Data type: string</span></span>  
   
- <span data-ttu-id="cf05a-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="cf05a-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="45624-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="45624-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="cf05a-112">Určuje, zda vazby pro službu podporuje kontrakty.</span><span class="sxs-lookup"><span data-stu-id="cf05a-112">Specifies whether the binding for a service supports contracts.</span></span>  
+ <span data-ttu-id="45624-112">Určuje, zda vazby pro službu podporuje kontrakty.</span><span class="sxs-lookup"><span data-stu-id="45624-112">Specifies whether the binding for a service supports contracts.</span></span>  
   
-### <a name="requireordereddelivery"></a><span data-ttu-id="cf05a-113">RequireOrderedDelivery</span><span class="sxs-lookup"><span data-stu-id="cf05a-113">RequireOrderedDelivery</span></span>  
- <span data-ttu-id="cf05a-114">Datový typ: logická hodnota</span><span class="sxs-lookup"><span data-stu-id="cf05a-114">Data type: boolean</span></span>  
+### <a name="requireordereddelivery"></a><span data-ttu-id="45624-113">RequireOrderedDelivery</span><span class="sxs-lookup"><span data-stu-id="45624-113">RequireOrderedDelivery</span></span>  
+ <span data-ttu-id="45624-114">Datový typ: logická hodnota</span><span class="sxs-lookup"><span data-stu-id="45624-114">Data type: boolean</span></span>  
   
- <span data-ttu-id="cf05a-115">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="cf05a-115">Access type: Read-only</span></span>  
+ <span data-ttu-id="45624-115">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="45624-115">Access type: Read-only</span></span>  
   
- <span data-ttu-id="cf05a-116">Určuje, zda vazby podporuje seřazené zprávy.</span><span class="sxs-lookup"><span data-stu-id="cf05a-116">Specifies whether the binding supports ordered messages.</span></span>  
+ <span data-ttu-id="45624-116">Určuje, zda vazby podporuje seřazené zprávy.</span><span class="sxs-lookup"><span data-stu-id="45624-116">Specifies whether the binding supports ordered messages.</span></span>  
   
-### <a name="targetcontract"></a><span data-ttu-id="cf05a-117">TargetContract</span><span class="sxs-lookup"><span data-stu-id="cf05a-117">TargetContract</span></span>  
- <span data-ttu-id="cf05a-118">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="cf05a-118">Data type: string</span></span>  
+### <a name="targetcontract"></a><span data-ttu-id="45624-117">TargetContract</span><span class="sxs-lookup"><span data-stu-id="45624-117">TargetContract</span></span>  
+ <span data-ttu-id="45624-118">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="45624-118">Data type: string</span></span>  
   
- <span data-ttu-id="cf05a-119">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="cf05a-119">Access type: Read-only</span></span>  
+ <span data-ttu-id="45624-119">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="45624-119">Access type: Read-only</span></span>  
   
- <span data-ttu-id="cf05a-120">Kontrakt, na který se vztahuje.</span><span class="sxs-lookup"><span data-stu-id="cf05a-120">The contract to which it applies.</span></span>  
+ <span data-ttu-id="45624-120">Kontrakt, na který se vztahuje.</span><span class="sxs-lookup"><span data-stu-id="45624-120">The contract to which it applies.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cf05a-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cf05a-121">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="45624-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="45624-121">Requirements</span></span>  
   
-|<span data-ttu-id="cf05a-122">MOF</span><span class="sxs-lookup"><span data-stu-id="cf05a-122">MOF</span></span>|<span data-ttu-id="cf05a-123">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="cf05a-123">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="45624-122">MOF</span><span class="sxs-lookup"><span data-stu-id="45624-122">MOF</span></span>|<span data-ttu-id="45624-123">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="45624-123">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="cf05a-124">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="cf05a-124">Namespace</span></span>|<span data-ttu-id="cf05a-125">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="cf05a-125">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="45624-124">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="45624-124">Namespace</span></span>|<span data-ttu-id="45624-125">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="45624-125">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="cf05a-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="cf05a-126">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="45624-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="45624-126">See Also</span></span>  
  <xref:System.ServiceModel.DeliveryRequirementsAttribute>

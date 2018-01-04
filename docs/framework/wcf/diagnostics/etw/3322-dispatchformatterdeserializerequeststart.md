@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ff3eeeff0bc4814d39d3113abf6bc36d79704bbf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: df0060e4d569c0df67be4f9f7a730c3e74da4c20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3322---dispatchformatterdeserializerequeststart"></a><span data-ttu-id="6fcb2-102">3322 – DispatchFormatterDeserializeRequestStart</span><span class="sxs-lookup"><span data-stu-id="6fcb2-102">3322 - DispatchFormatterDeserializeRequestStart</span></span>
-## <a name="properties"></a><span data-ttu-id="6fcb2-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="6fcb2-103">Properties</span></span>  
+# <a name="3322---dispatchformatterdeserializerequeststart"></a><span data-ttu-id="2c878-102">3322 – DispatchFormatterDeserializeRequestStart</span><span class="sxs-lookup"><span data-stu-id="2c878-102">3322 - DispatchFormatterDeserializeRequestStart</span></span>
+## <a name="properties"></a><span data-ttu-id="2c878-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="2c878-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="6fcb2-104">ID</span><span class="sxs-lookup"><span data-stu-id="6fcb2-104">ID</span></span>|<span data-ttu-id="6fcb2-105">3322</span><span class="sxs-lookup"><span data-stu-id="6fcb2-105">3322</span></span>|  
-|<span data-ttu-id="6fcb2-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="6fcb2-106">Keywords</span></span>|<span data-ttu-id="6fcb2-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="6fcb2-107">ServiceModel</span></span>|  
-|<span data-ttu-id="6fcb2-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="6fcb2-108">Level</span></span>|<span data-ttu-id="6fcb2-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="6fcb2-109">Verbose</span></span>|  
-|<span data-ttu-id="6fcb2-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="6fcb2-110">Channel</span></span>|<span data-ttu-id="6fcb2-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="6fcb2-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="2c878-104">ID</span><span class="sxs-lookup"><span data-stu-id="2c878-104">ID</span></span>|<span data-ttu-id="2c878-105">3322</span><span class="sxs-lookup"><span data-stu-id="2c878-105">3322</span></span>|  
+|<span data-ttu-id="2c878-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="2c878-106">Keywords</span></span>|<span data-ttu-id="2c878-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="2c878-107">ServiceModel</span></span>|  
+|<span data-ttu-id="2c878-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="2c878-108">Level</span></span>|<span data-ttu-id="2c878-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="2c878-109">Verbose</span></span>|  
+|<span data-ttu-id="2c878-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="2c878-110">Channel</span></span>|<span data-ttu-id="2c878-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="2c878-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="6fcb2-112">Popis</span><span class="sxs-lookup"><span data-stu-id="6fcb2-112">Description</span></span>  
- <span data-ttu-id="6fcb2-113">Tato událost je vygenerované při spuštění dispečera deserializace zprávu požadavku.</span><span class="sxs-lookup"><span data-stu-id="6fcb2-113">This event is emitted when the dispatcher started deserialization of the request message.</span></span>  
+## <a name="description"></a><span data-ttu-id="2c878-112">Popis</span><span class="sxs-lookup"><span data-stu-id="2c878-112">Description</span></span>  
+ <span data-ttu-id="2c878-113">Tato událost je vygenerované při spuštění dispečera deserializace zprávu požadavku.</span><span class="sxs-lookup"><span data-stu-id="2c878-113">This event is emitted when the dispatcher started deserialization of the request message.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="6fcb2-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="6fcb2-114">Message</span></span>  
- <span data-ttu-id="6fcb2-115">Dispečer spuštění deserializace zprávu požadavku.</span><span class="sxs-lookup"><span data-stu-id="6fcb2-115">Dispatcher started deserialization the request message.</span></span>  
+## <a name="message"></a><span data-ttu-id="2c878-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="2c878-114">Message</span></span>  
+ <span data-ttu-id="2c878-115">Dispečer spuštění deserializace zprávu požadavku.</span><span class="sxs-lookup"><span data-stu-id="2c878-115">Dispatcher started deserialization the request message.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="6fcb2-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="6fcb2-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="2c878-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="2c878-116">Details</span></span>

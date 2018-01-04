@@ -13,16 +13,17 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 966f1ae06f5d7e0dacb8b7d450463c75f783ef1f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3f1e026296745f6fc40171866c81f91818789e01
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="textmessageencodingbindingelement"></a><span data-ttu-id="4d878-102">TextMessageEncodingBindingElement</span><span class="sxs-lookup"><span data-stu-id="4d878-102">TextMessageEncodingBindingElement</span></span>
-<span data-ttu-id="4d878-103">TextMessageEncodingBindingElement</span><span class="sxs-lookup"><span data-stu-id="4d878-103">TextMessageEncodingBindingElement</span></span>  
+# <a name="textmessageencodingbindingelement"></a><span data-ttu-id="c5af1-102">TextMessageEncodingBindingElement</span><span class="sxs-lookup"><span data-stu-id="c5af1-102">TextMessageEncodingBindingElement</span></span>
+<span data-ttu-id="c5af1-103">TextMessageEncodingBindingElement</span><span class="sxs-lookup"><span data-stu-id="c5af1-103">TextMessageEncodingBindingElement</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4d878-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4d878-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c5af1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c5af1-104">Syntax</span></span>  
   
 ```  
 class TextMessageEncodingBindingElement : MessageEncodingBindingElement  
@@ -34,45 +35,45 @@ class TextMessageEncodingBindingElement : MessageEncodingBindingElement
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="4d878-105">Metody</span><span class="sxs-lookup"><span data-stu-id="4d878-105">Methods</span></span>  
- <span data-ttu-id="4d878-106">Třída TextMessageEncodingBindingElement nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="4d878-106">The TextMessageEncodingBindingElement class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="c5af1-105">Metody</span><span class="sxs-lookup"><span data-stu-id="c5af1-105">Methods</span></span>  
+ <span data-ttu-id="c5af1-106">Třída TextMessageEncodingBindingElement nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="c5af1-106">The TextMessageEncodingBindingElement class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="4d878-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="4d878-107">Properties</span></span>  
- <span data-ttu-id="4d878-108">Třída TextMessageEncodingBindingElement má následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="4d878-108">The TextMessageEncodingBindingElement class has the following properties:</span></span>  
+## <a name="properties"></a><span data-ttu-id="c5af1-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="c5af1-107">Properties</span></span>  
+ <span data-ttu-id="c5af1-108">Třída TextMessageEncodingBindingElement má následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="c5af1-108">The TextMessageEncodingBindingElement class has the following properties:</span></span>  
   
-### <a name="encoding"></a><span data-ttu-id="4d878-109">Kódování</span><span class="sxs-lookup"><span data-stu-id="4d878-109">Encoding</span></span>  
- <span data-ttu-id="4d878-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="4d878-110">Data type: string</span></span>  
+### <a name="encoding"></a><span data-ttu-id="c5af1-109">Kódování</span><span class="sxs-lookup"><span data-stu-id="c5af1-109">Encoding</span></span>  
+ <span data-ttu-id="c5af1-110">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="c5af1-110">Data type: string</span></span>  
   
- <span data-ttu-id="4d878-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="4d878-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="c5af1-111">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="c5af1-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="4d878-112">Kódování znakové sady, který se má použít pro vysílání zpráv v vazby.</span><span class="sxs-lookup"><span data-stu-id="4d878-112">The character set encoding to be used for emitting messages on the binding.</span></span>  
+ <span data-ttu-id="c5af1-112">Kódování znakové sady, který se má použít pro vysílání zpráv v vazby.</span><span class="sxs-lookup"><span data-stu-id="c5af1-112">The character set encoding to be used for emitting messages on the binding.</span></span>  
   
-### <a name="maxreadpoolsize"></a><span data-ttu-id="4d878-113">maxReadPoolSize</span><span class="sxs-lookup"><span data-stu-id="4d878-113">MaxReadPoolSize</span></span>  
- <span data-ttu-id="4d878-114">Datový typ: sint32</span><span class="sxs-lookup"><span data-stu-id="4d878-114">Data type: sint32</span></span>  
+### <a name="maxreadpoolsize"></a><span data-ttu-id="c5af1-113">maxReadPoolSize</span><span class="sxs-lookup"><span data-stu-id="c5af1-113">MaxReadPoolSize</span></span>  
+ <span data-ttu-id="c5af1-114">Datový typ: sint32</span><span class="sxs-lookup"><span data-stu-id="c5af1-114">Data type: sint32</span></span>  
   
- <span data-ttu-id="4d878-115">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="4d878-115">Access type: Read-only</span></span>  
+ <span data-ttu-id="c5af1-115">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="c5af1-115">Access type: Read-only</span></span>  
   
- <span data-ttu-id="4d878-116">Celé číslo, které definuje počet zpráv lze číst souběžně bez přidělení nového čtečky.</span><span class="sxs-lookup"><span data-stu-id="4d878-116">An integer that defines how many messages can be read simultaneously without allocating new readers.</span></span>  
+ <span data-ttu-id="c5af1-116">Celé číslo, které definuje počet zpráv lze číst souběžně bez přidělení nového čtečky.</span><span class="sxs-lookup"><span data-stu-id="c5af1-116">An integer that defines how many messages can be read simultaneously without allocating new readers.</span></span>  
   
-### <a name="maxwritepoolsize"></a><span data-ttu-id="4d878-117">maxWritePoolSize</span><span class="sxs-lookup"><span data-stu-id="4d878-117">MaxWritePoolSize</span></span>  
- <span data-ttu-id="4d878-118">Datový typ: sint32</span><span class="sxs-lookup"><span data-stu-id="4d878-118">Data type: sint32</span></span>  
+### <a name="maxwritepoolsize"></a><span data-ttu-id="c5af1-117">maxWritePoolSize</span><span class="sxs-lookup"><span data-stu-id="c5af1-117">MaxWritePoolSize</span></span>  
+ <span data-ttu-id="c5af1-118">Datový typ: sint32</span><span class="sxs-lookup"><span data-stu-id="c5af1-118">Data type: sint32</span></span>  
   
- <span data-ttu-id="4d878-119">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="4d878-119">Access type: Read-only</span></span>  
+ <span data-ttu-id="c5af1-119">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="c5af1-119">Access type: Read-only</span></span>  
   
- <span data-ttu-id="4d878-120">Celé číslo, které definuje počet zpráv lze najednou odeslat bez přiděluje nový zapisovače.</span><span class="sxs-lookup"><span data-stu-id="4d878-120">An integer that defines how many messages can be sent simultaneously without allocating new writers.</span></span>  
+ <span data-ttu-id="c5af1-120">Celé číslo, které definuje počet zpráv lze najednou odeslat bez přiděluje nový zapisovače.</span><span class="sxs-lookup"><span data-stu-id="c5af1-120">An integer that defines how many messages can be sent simultaneously without allocating new writers.</span></span>  
   
-### <a name="readerquotas"></a><span data-ttu-id="4d878-121">ReaderQuotas</span><span class="sxs-lookup"><span data-stu-id="4d878-121">ReaderQuotas</span></span>  
- <span data-ttu-id="4d878-122">Datový typ: XmlDictionaryReaderQuotas, který</span><span class="sxs-lookup"><span data-stu-id="4d878-122">Data type: XmlDictionaryReaderQuotas</span></span>  
+### <a name="readerquotas"></a><span data-ttu-id="c5af1-121">ReaderQuotas</span><span class="sxs-lookup"><span data-stu-id="c5af1-121">ReaderQuotas</span></span>  
+ <span data-ttu-id="c5af1-122">Datový typ: XmlDictionaryReaderQuotas, který</span><span class="sxs-lookup"><span data-stu-id="c5af1-122">Data type: XmlDictionaryReaderQuotas</span></span>  
   
- <span data-ttu-id="4d878-123">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="4d878-123">Access type: Read-only</span></span>  
+ <span data-ttu-id="c5af1-123">Přístup k typu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="c5af1-123">Access type: Read-only</span></span>  
   
- <span data-ttu-id="4d878-124">Kvóty čtečky.</span><span class="sxs-lookup"><span data-stu-id="4d878-124">The quotas of the readers.</span></span>  
+ <span data-ttu-id="c5af1-124">Kvóty čtečky.</span><span class="sxs-lookup"><span data-stu-id="c5af1-124">The quotas of the readers.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4d878-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4d878-125">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c5af1-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c5af1-125">Requirements</span></span>  
   
-|<span data-ttu-id="4d878-126">MOF</span><span class="sxs-lookup"><span data-stu-id="4d878-126">MOF</span></span>|<span data-ttu-id="4d878-127">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="4d878-127">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="c5af1-126">MOF</span><span class="sxs-lookup"><span data-stu-id="c5af1-126">MOF</span></span>|<span data-ttu-id="c5af1-127">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="c5af1-127">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="4d878-128">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="4d878-128">Namespace</span></span>|<span data-ttu-id="4d878-129">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="4d878-129">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="c5af1-128">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="c5af1-128">Namespace</span></span>|<span data-ttu-id="c5af1-129">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="c5af1-129">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="4d878-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d878-130">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c5af1-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="c5af1-130">See Also</span></span>  
  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>

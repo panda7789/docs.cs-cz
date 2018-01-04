@@ -13,21 +13,22 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 16323348a0e914cb72e70e7a8fd9086a3981d043
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: adf00c99860361b117f825b426d6d56f519f954b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmessagesent"></a><span data-ttu-id="272a6-102">System.ServiceModel.Channels.MessageSent</span><span class="sxs-lookup"><span data-stu-id="272a6-102">System.ServiceModel.Channels.MessageSent</span></span>
-<span data-ttu-id="272a6-103">System.ServiceModel.Channels.MessageSent</span><span class="sxs-lookup"><span data-stu-id="272a6-103">System.ServiceModel.Channels.MessageSent</span></span>  
+# <a name="systemservicemodelchannelsmessagesent"></a><span data-ttu-id="0627d-102">System.ServiceModel.Channels.MessageSent</span><span class="sxs-lookup"><span data-stu-id="0627d-102">System.ServiceModel.Channels.MessageSent</span></span>
+<span data-ttu-id="0627d-103">System.ServiceModel.Channels.MessageSent</span><span class="sxs-lookup"><span data-stu-id="0627d-103">System.ServiceModel.Channels.MessageSent</span></span>  
   
-## <a name="description"></a><span data-ttu-id="272a6-104">Popis</span><span class="sxs-lookup"><span data-stu-id="272a6-104">Description</span></span>  
- <span data-ttu-id="272a6-105">Odeslání zprávy přes kanál.</span><span class="sxs-lookup"><span data-stu-id="272a6-105">Sent a message over a channel.</span></span>  
+## <a name="description"></a><span data-ttu-id="0627d-104">Popis</span><span class="sxs-lookup"><span data-stu-id="0627d-104">Description</span></span>  
+ <span data-ttu-id="0627d-105">Odeslání zprávy přes kanál.</span><span class="sxs-lookup"><span data-stu-id="0627d-105">Sent a message over a channel.</span></span>  
   
- <span data-ttu-id="272a6-106">Trasování je vygenerované při [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] je odeslána zpráva, pokud `System.ServiceModel` zdroj trasování je povoleno na podrobné úrovni nebo informace.</span><span class="sxs-lookup"><span data-stu-id="272a6-106">This trace is emitted when a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] message is sent if the `System.ServiceModel` trace source is enabled at information or verbose level.</span></span> <span data-ttu-id="272a6-107">Trasování je nutné zobrazíte šipka korelace zprávy v zobrazení grafu aktivity.</span><span class="sxs-lookup"><span data-stu-id="272a6-107">This trace is necessary to see the message correlation arrow in the activity graph view.</span></span>  
+ <span data-ttu-id="0627d-106">Trasování je vygenerované při [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] je odeslána zpráva, pokud `System.ServiceModel` zdroj trasování je povoleno na podrobné úrovni nebo informace.</span><span class="sxs-lookup"><span data-stu-id="0627d-106">This trace is emitted when a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] message is sent if the `System.ServiceModel` trace source is enabled at information or verbose level.</span></span> <span data-ttu-id="0627d-107">Trasování je nutné zobrazíte šipka korelace zprávy v zobrazení grafu aktivity.</span><span class="sxs-lookup"><span data-stu-id="0627d-107">This trace is necessary to see the message correlation arrow in the activity graph view.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="272a6-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="272a6-108">See Also</span></span>  
- [<span data-ttu-id="272a6-109">Trasování</span><span class="sxs-lookup"><span data-stu-id="272a6-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="272a6-110">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="272a6-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="272a6-111">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="272a6-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="0627d-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="0627d-108">See Also</span></span>  
+ [<span data-ttu-id="0627d-109">Trasování</span><span class="sxs-lookup"><span data-stu-id="0627d-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="0627d-110">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="0627d-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="0627d-111">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="0627d-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
