@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 4dc4cd317e0e540aaa774cbf9c4c7a2a2ffa40be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 38c2c495bc88dadae2d71b1b3710f30998023516
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imetadataemitdefinememberref-method"></a><span data-ttu-id="5e278-102">IMetaDataEmit::DefineMemberRef – metoda</span><span class="sxs-lookup"><span data-stu-id="5e278-102">IMetaDataEmit::DefineMemberRef Method</span></span>
-<span data-ttu-id="5e278-103">Definuje odkaz na člena modulu mimo aktuální obor a získá token pro tuto referenční definice.</span><span class="sxs-lookup"><span data-stu-id="5e278-103">Defines a reference to a member of a module outside the current scope, and gets a token to that reference definition.</span></span>  
+# <a name="imetadataemitdefinememberref-method"></a><span data-ttu-id="45a1e-102">IMetaDataEmit::DefineMemberRef – metoda</span><span class="sxs-lookup"><span data-stu-id="45a1e-102">IMetaDataEmit::DefineMemberRef Method</span></span>
+<span data-ttu-id="45a1e-103">Definuje odkaz na člena modulu mimo aktuální obor a získá token pro tuto referenční definice.</span><span class="sxs-lookup"><span data-stu-id="45a1e-103">Defines a reference to a member of a module outside the current scope, and gets a token to that reference definition.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5e278-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5e278-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="45a1e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="45a1e-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineMemberRef (   
@@ -42,31 +43,31 @@ HRESULT DefineMemberRef (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="5e278-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5e278-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="45a1e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="45a1e-105">Parameters</span></span>  
  `tkImport`  
- <span data-ttu-id="5e278-106">[v] Token pro člena cílové třídy nebo rozhraní, pokud člen není globální; Pokud je člen globální, `mdModuleRef` tokenu pro tento druhý soubor.</span><span class="sxs-lookup"><span data-stu-id="5e278-106">[in] Token for the target member's class or interface, if the member is not global; if the member is global, the `mdModuleRef` token for that other file.</span></span>  
+ <span data-ttu-id="45a1e-106">[v] Token pro člena cílové třídy nebo rozhraní, pokud člen není globální; Pokud je člen globální, `mdModuleRef` tokenu pro tento druhý soubor.</span><span class="sxs-lookup"><span data-stu-id="45a1e-106">[in] Token for the target member's class or interface, if the member is not global; if the member is global, the `mdModuleRef` token for that other file.</span></span>  
   
  `szName`  
- <span data-ttu-id="5e278-107">[v] Název člena cíl.</span><span class="sxs-lookup"><span data-stu-id="5e278-107">[in] The name of the target member.</span></span>  
+ <span data-ttu-id="45a1e-107">[v] Název člena cíl.</span><span class="sxs-lookup"><span data-stu-id="45a1e-107">[in] The name of the target member.</span></span>  
   
  `pvSigBlob`  
- <span data-ttu-id="5e278-108">[v] Podpis cíl člena.</span><span class="sxs-lookup"><span data-stu-id="5e278-108">[in] The signature of the target member.</span></span>  
+ <span data-ttu-id="45a1e-108">[v] Podpis cíl člena.</span><span class="sxs-lookup"><span data-stu-id="45a1e-108">[in] The signature of the target member.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="5e278-109">[v] Počet bajtů v `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="5e278-109">[in] The count of bytes in `pvSigBlob`.</span></span>  
+ <span data-ttu-id="45a1e-109">[v] Počet bajtů v `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="45a1e-109">[in] The count of bytes in `pvSigBlob`.</span></span>  
   
  `pmr`  
- <span data-ttu-id="5e278-110">[out] `mdMemberRef` Token přiřazený.</span><span class="sxs-lookup"><span data-stu-id="5e278-110">[out] The `mdMemberRef` token assigned.</span></span>  
+ <span data-ttu-id="45a1e-110">[out] `mdMemberRef` Token přiřazený.</span><span class="sxs-lookup"><span data-stu-id="45a1e-110">[out] The `mdMemberRef` token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5e278-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5e278-111">Requirements</span></span>  
- <span data-ttu-id="5e278-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5e278-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="45a1e-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="45a1e-111">Requirements</span></span>  
+ <span data-ttu-id="45a1e-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="45a1e-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5e278-113">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="5e278-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="45a1e-113">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="45a1e-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="5e278-114">**Knihovna:** používat jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5e278-114">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="45a1e-114">**Knihovna:** používat jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="45a1e-114">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="5e278-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5e278-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="45a1e-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="45a1e-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e278-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="5e278-116">See Also</span></span>  
- [<span data-ttu-id="5e278-117">Imetadataemit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e278-117">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [<span data-ttu-id="5e278-118">Imetadataemit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e278-118">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="45a1e-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="45a1e-116">See Also</span></span>  
+ [<span data-ttu-id="45a1e-117">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="45a1e-117">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
+ [<span data-ttu-id="45a1e-118">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="45a1e-118">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

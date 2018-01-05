@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: bbb08391ef1f3a9faf7f9afa9fa073b6ff48277f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d31178587037126be71a934028db45a415e95000
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecurityspnegoservicenegotiationcompleted"></a><span data-ttu-id="080f4-102">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span><span class="sxs-lookup"><span data-stu-id="080f4-102">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span></span>
-<span data-ttu-id="080f4-103">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span><span class="sxs-lookup"><span data-stu-id="080f4-103">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span></span>  
+# <a name="systemservicemodelsecurityspnegoservicenegotiationcompleted"></a><span data-ttu-id="b2d00-102">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span><span class="sxs-lookup"><span data-stu-id="b2d00-102">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span></span>
+<span data-ttu-id="b2d00-103">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span><span class="sxs-lookup"><span data-stu-id="b2d00-103">System.ServiceModel.Security.SpnegoServiceNegotiationCompleted</span></span>  
   
-## <a name="description"></a><span data-ttu-id="080f4-104">Popis</span><span class="sxs-lookup"><span data-stu-id="080f4-104">Description</span></span>  
- <span data-ttu-id="080f4-105">Ověřovatel SpnegoTokenAuthenticator dokončil vyjednávání SSPI.</span><span class="sxs-lookup"><span data-stu-id="080f4-105">The SpnegoTokenAuthenticator completed SSPI negotiation.</span></span>  
+## <a name="description"></a><span data-ttu-id="b2d00-104">Popis</span><span class="sxs-lookup"><span data-stu-id="b2d00-104">Description</span></span>  
+ <span data-ttu-id="b2d00-105">Ověřovatel SpnegoTokenAuthenticator dokončil vyjednávání SSPI.</span><span class="sxs-lookup"><span data-stu-id="b2d00-105">The SpnegoTokenAuthenticator completed SSPI negotiation.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="080f4-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="080f4-106">See Also</span></span>  
- [<span data-ttu-id="080f4-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="080f4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="080f4-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="080f4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="080f4-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="080f4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="b2d00-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="b2d00-106">See Also</span></span>  
+ [<span data-ttu-id="b2d00-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="b2d00-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="b2d00-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="b2d00-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="b2d00-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="b2d00-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

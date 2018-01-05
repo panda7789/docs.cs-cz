@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c8efb3574716e39bf0376447ab48ab4c43db45f3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4f2e26e9b3541251b1ebebaa3deb08bd0a356f83
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelactivationmessagequeueduplicatedpipe"></a><span data-ttu-id="a1ebc-102">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="a1ebc-102">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span></span>
-<span data-ttu-id="a1ebc-103">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="a1ebc-103">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span></span>  
+# <a name="systemservicemodelactivationmessagequeueduplicatedpipe"></a><span data-ttu-id="e5c02-102">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="e5c02-102">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span></span>
+<span data-ttu-id="e5c02-103">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="e5c02-103">System.ServiceModel.Activation.MessageQueueDuplicatedPipe</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a1ebc-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a1ebc-104">Description</span></span>  
- <span data-ttu-id="a1ebc-105">Popisovač pojmenovaný kanál byla duplicitní.</span><span class="sxs-lookup"><span data-stu-id="a1ebc-105">A named pipe handle was duplicated.</span></span>  
+## <a name="description"></a><span data-ttu-id="e5c02-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e5c02-104">Description</span></span>  
+ <span data-ttu-id="e5c02-105">Popisovač pojmenovaný kanál byla duplicitní.</span><span class="sxs-lookup"><span data-stu-id="e5c02-105">A named pipe handle was duplicated.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a1ebc-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="a1ebc-106">See Also</span></span>  
- [<span data-ttu-id="a1ebc-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="a1ebc-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a1ebc-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="a1ebc-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a1ebc-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="a1ebc-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e5c02-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="e5c02-106">See Also</span></span>  
+ [<span data-ttu-id="e5c02-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="e5c02-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e5c02-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e5c02-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e5c02-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="e5c02-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0c15c6039f116597ee4f2c0f83bed4c5550b30a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd42c54990fd8aad1b9e6325d59ac7ccc5d6a3fc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imetadataemitdefinepinvokemap-method"></a><span data-ttu-id="cf216-102">IMetaDataEmit::DefinePinvokeMap – metoda</span><span class="sxs-lookup"><span data-stu-id="cf216-102">IMetaDataEmit::DefinePinvokeMap Method</span></span>
-<span data-ttu-id="cf216-103">Nastaví funkce PInvoke podpis metody odkazuje zadaný token.</span><span class="sxs-lookup"><span data-stu-id="cf216-103">Sets features of the PInvoke signature of the method referenced by the specified token.</span></span>  
+# <a name="imetadataemitdefinepinvokemap-method"></a><span data-ttu-id="d7604-102">IMetaDataEmit::DefinePinvokeMap – metoda</span><span class="sxs-lookup"><span data-stu-id="d7604-102">IMetaDataEmit::DefinePinvokeMap Method</span></span>
+<span data-ttu-id="d7604-103">Nastaví funkce PInvoke podpis metody odkazuje zadaný token.</span><span class="sxs-lookup"><span data-stu-id="d7604-103">Sets features of the PInvoke signature of the method referenced by the specified token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cf216-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cf216-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d7604-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d7604-104">Syntax</span></span>  
   
 ```  
 HRESULT DefinePinvokeMap (   
@@ -41,28 +42,28 @@ HRESULT DefinePinvokeMap (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="cf216-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cf216-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d7604-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d7604-105">Parameters</span></span>  
  `tk`  
- <span data-ttu-id="cf216-106">[v] Token pro cílové metody.</span><span class="sxs-lookup"><span data-stu-id="cf216-106">[in] The token for the target method.</span></span>  
+ <span data-ttu-id="d7604-106">[v] Token pro cílové metody.</span><span class="sxs-lookup"><span data-stu-id="d7604-106">[in] The token for the target method.</span></span>  
   
  `dwMappingFlags`  
- <span data-ttu-id="cf216-107">[v] Příznaky použité PInvoke udělat mapování.</span><span class="sxs-lookup"><span data-stu-id="cf216-107">[in] Flags used by PInvoke to do the mapping.</span></span>  
+ <span data-ttu-id="d7604-107">[v] Příznaky použité PInvoke udělat mapování.</span><span class="sxs-lookup"><span data-stu-id="d7604-107">[in] Flags used by PInvoke to do the mapping.</span></span>  
   
  `szImportName`  
- <span data-ttu-id="cf216-108">[v] Název cílového exportovat metoda v nespravované knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="cf216-108">[in] The name of the target export method in an unmanaged DLL.</span></span>  
+ <span data-ttu-id="d7604-108">[v] Název cílového exportovat metoda v nespravované knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="d7604-108">[in] The name of the target export method in an unmanaged DLL.</span></span>  
   
  `mrImportDLL`  
- <span data-ttu-id="cf216-109">[v] Token pro cíl nativní knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="cf216-109">[in] The token for the target native DLL.</span></span>  
+ <span data-ttu-id="d7604-109">[v] Token pro cíl nativní knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="d7604-109">[in] The token for the target native DLL.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cf216-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cf216-110">Requirements</span></span>  
- <span data-ttu-id="cf216-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cf216-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d7604-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d7604-110">Requirements</span></span>  
+ <span data-ttu-id="d7604-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d7604-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cf216-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="cf216-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="d7604-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="d7604-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="cf216-113">**Knihovna:** používat jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="cf216-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="d7604-113">**Knihovna:** používat jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d7604-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="cf216-114">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cf216-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="d7604-114">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d7604-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cf216-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="cf216-115">See Also</span></span>  
- [<span data-ttu-id="cf216-116">Imetadataemit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cf216-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [<span data-ttu-id="cf216-117">Imetadataemit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cf216-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="d7604-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="d7604-115">See Also</span></span>  
+ [<span data-ttu-id="d7604-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d7604-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
+ [<span data-ttu-id="d7604-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d7604-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

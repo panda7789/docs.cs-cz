@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 3d34ef9c88cb3db6afc0a01fa5bda3580c529ef9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b05d1c898fe3a0292eb667e2269008aac0451280
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityserversessionkeyupdated"></a><span data-ttu-id="e7596-102">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span><span class="sxs-lookup"><span data-stu-id="e7596-102">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span></span>
-<span data-ttu-id="e7596-103">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span><span class="sxs-lookup"><span data-stu-id="e7596-103">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span></span>  
+# <a name="systemservicemodelsecuritysecurityserversessionkeyupdated"></a><span data-ttu-id="e77b3-102">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span><span class="sxs-lookup"><span data-stu-id="e77b3-102">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span></span>
+<span data-ttu-id="e77b3-103">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span><span class="sxs-lookup"><span data-stu-id="e77b3-103">System.ServiceModel.Security.SecurityServerSessionKeyUpdated</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e7596-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e7596-104">Description</span></span>  
- <span data-ttu-id="e7596-105">Klíč relace zabezpečení byla aktualizována serverem.</span><span class="sxs-lookup"><span data-stu-id="e7596-105">The security session key was updated by the server.</span></span>  
+## <a name="description"></a><span data-ttu-id="e77b3-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e77b3-104">Description</span></span>  
+ <span data-ttu-id="e77b3-105">Klíč relace zabezpečení byla aktualizována serverem.</span><span class="sxs-lookup"><span data-stu-id="e77b3-105">The security session key was updated by the server.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e7596-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="e7596-106">See Also</span></span>  
- [<span data-ttu-id="e7596-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="e7596-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="e7596-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e7596-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="e7596-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="e7596-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e77b3-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="e77b3-106">See Also</span></span>  
+ [<span data-ttu-id="e77b3-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="e77b3-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e77b3-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e77b3-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e77b3-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="e77b3-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

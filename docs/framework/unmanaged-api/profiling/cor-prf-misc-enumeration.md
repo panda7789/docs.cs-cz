@@ -19,16 +19,17 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 75e740a6ca17135a3de2e945e205f4581b2f32e0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: da858ecf9fc002061d663e8c8f4d4036ef134d5a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="corprfmisc-enumeration"></a><span data-ttu-id="38ba8-102">COR_PRF_MISC – výčet</span><span class="sxs-lookup"><span data-stu-id="38ba8-102">COR_PRF_MISC Enumeration</span></span>
-<span data-ttu-id="38ba8-103">Obsahuje konstantní hodnoty, které určují speciální identifikátory.</span><span class="sxs-lookup"><span data-stu-id="38ba8-103">Contains constant values that specify special identifiers.</span></span>  
+# <a name="corprfmisc-enumeration"></a><span data-ttu-id="811c3-102">COR_PRF_MISC – výčet</span><span class="sxs-lookup"><span data-stu-id="811c3-102">COR_PRF_MISC Enumeration</span></span>
+<span data-ttu-id="811c3-103">Obsahuje konstantní hodnoty, které určují speciální identifikátory.</span><span class="sxs-lookup"><span data-stu-id="811c3-103">Contains constant values that specify special identifiers.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="38ba8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="38ba8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="811c3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="811c3-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -38,22 +39,22 @@ typedef enum {
 } COR_PRF_MISC;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="38ba8-105">Členové</span><span class="sxs-lookup"><span data-stu-id="38ba8-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="811c3-105">Členové</span><span class="sxs-lookup"><span data-stu-id="811c3-105">Members</span></span>  
   
-|<span data-ttu-id="38ba8-106">Člen</span><span class="sxs-lookup"><span data-stu-id="38ba8-106">Member</span></span>|<span data-ttu-id="38ba8-107">Popis</span><span class="sxs-lookup"><span data-stu-id="38ba8-107">Description</span></span>|  
+|<span data-ttu-id="811c3-106">Člen</span><span class="sxs-lookup"><span data-stu-id="811c3-106">Member</span></span>|<span data-ttu-id="811c3-107">Popis</span><span class="sxs-lookup"><span data-stu-id="811c3-107">Description</span></span>|  
 |------------|-----------------|  
-|`PROFILER_PARENT_UNKNOWN`|<span data-ttu-id="38ba8-108">Výchozí identifikátor používané [icorprofilerinfo::getmoduleinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) pro modul, který ještě nebyl přidán do sestavení.</span><span class="sxs-lookup"><span data-stu-id="38ba8-108">The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.</span></span>|  
-|`PROFILER_GLOBAL_CLASS`|<span data-ttu-id="38ba8-109">Identifikátor třídy výchozí globální konstanty, které nepatří do třídy.</span><span class="sxs-lookup"><span data-stu-id="38ba8-109">The default class identifier for global constants that do not belong to a class.</span></span>|  
-|`PROFILER_GLOBAL_MODULE`|<span data-ttu-id="38ba8-110">Identifikátor výchozí modul pro globální objekty, které nepatří do modulu.</span><span class="sxs-lookup"><span data-stu-id="38ba8-110">The default module identifier for global objects that do not belong to a module.</span></span>|  
+|`PROFILER_PARENT_UNKNOWN`|<span data-ttu-id="811c3-108">Výchozí identifikátor používané [icorprofilerinfo::getmoduleinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) pro modul, který ještě nebyl přidán do sestavení.</span><span class="sxs-lookup"><span data-stu-id="811c3-108">The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.</span></span>|  
+|`PROFILER_GLOBAL_CLASS`|<span data-ttu-id="811c3-109">Identifikátor třídy výchozí globální konstanty, které nepatří do třídy.</span><span class="sxs-lookup"><span data-stu-id="811c3-109">The default class identifier for global constants that do not belong to a class.</span></span>|  
+|`PROFILER_GLOBAL_MODULE`|<span data-ttu-id="811c3-110">Identifikátor výchozí modul pro globální objekty, které nepatří do modulu.</span><span class="sxs-lookup"><span data-stu-id="811c3-110">The default module identifier for global objects that do not belong to a module.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="38ba8-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="38ba8-111">Requirements</span></span>  
- <span data-ttu-id="38ba8-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="38ba8-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="811c3-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="811c3-111">Requirements</span></span>  
+ <span data-ttu-id="811c3-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="811c3-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="38ba8-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="38ba8-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="811c3-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="811c3-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="38ba8-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="38ba8-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="811c3-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="811c3-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="38ba8-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="38ba8-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="811c3-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="811c3-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="38ba8-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="38ba8-116">See Also</span></span>  
- [<span data-ttu-id="38ba8-117">Profilace výčtů</span><span class="sxs-lookup"><span data-stu-id="38ba8-117">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="811c3-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="811c3-116">See Also</span></span>  
+ [<span data-ttu-id="811c3-117">Výčty pro profilaci</span><span class="sxs-lookup"><span data-stu-id="811c3-117">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

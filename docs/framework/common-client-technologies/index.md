@@ -13,18 +13,19 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8c36d3577d46136d98b3cbcc9aefd19b30960a0b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a408cbfd085f0693ab27087b529fe0ee296225b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="common-client-technologies-in-the-net-framework"></a><span data-ttu-id="4c766-102">Technologie CCT (Common Client Technologies) v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="4c766-102">Common Client Technologies in the .NET Framework</span></span>
-<span data-ttu-id="4c766-103">Tato část popisuje různé technologie, které můžete použít v klientských aplikacích.</span><span class="sxs-lookup"><span data-stu-id="4c766-103">This section describes different technologies that you can use in your client applications.</span></span>  
+# <a name="common-client-technologies-in-the-net-framework"></a><span data-ttu-id="80e90-102">Technologie CCT (Common Client Technologies) v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="80e90-102">Common Client Technologies in the .NET Framework</span></span>
+<span data-ttu-id="80e90-103">Tato část popisuje různé technologie, které můžete použít v klientských aplikacích.</span><span class="sxs-lookup"><span data-stu-id="80e90-103">This section describes different technologies that you can use in your client applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4c766-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4c766-104">In This Section</span></span>  
- [<span data-ttu-id="4c766-105">Manipulace a nečinnosti</span><span class="sxs-lookup"><span data-stu-id="4c766-105">Manipulations and Inertia</span></span>](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
- <span data-ttu-id="4c766-106">Popisuje způsob použití manipulace a nečinnosti procesoru třídy v různých rozhraní uživatelského rozhraní, jako je například Microsoft Windows Presentation Foundation (WPF) nebo Microsoft XNA.</span><span class="sxs-lookup"><span data-stu-id="4c766-106">Describes how to use manipulations and inertia processor classes in different UI frameworks, such as Microsoft Windows Presentation Foundation (WPF) or Microsoft XNA.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="80e90-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="80e90-104">In This Section</span></span>  
+ [<span data-ttu-id="80e90-105">Manipulace a nečinnost</span><span class="sxs-lookup"><span data-stu-id="80e90-105">Manipulations and Inertia</span></span>](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
+ <span data-ttu-id="80e90-106">Popisuje způsob použití manipulace a nečinnosti procesoru třídy v různých rozhraní uživatelského rozhraní, jako je například Microsoft Windows Presentation Foundation (WPF) nebo Microsoft XNA.</span><span class="sxs-lookup"><span data-stu-id="80e90-106">Describes how to use manipulations and inertia processor classes in different UI frameworks, such as Microsoft Windows Presentation Foundation (WPF) or Microsoft XNA.</span></span>  
   
- [<span data-ttu-id="4c766-107">Klient aplikačních služeb</span><span class="sxs-lookup"><span data-stu-id="4c766-107">Client Application Services</span></span>](../../../docs/framework/common-client-technologies/client-application-services.md)  
- <span data-ttu-id="4c766-108">Popisuje způsob použití pomocí [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a profil aplikace služby zahrnuté v rozšíření Microsoft ASP.NET 2.0 AJAX v aplikacích založených na systému Windows.</span><span class="sxs-lookup"><span data-stu-id="4c766-108">Describes how to use use the [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] login, roles, and profile application services included in the Microsoft ASP.NET 2.0 AJAX Extensions in your Windows-based applications.</span></span>
+ [<span data-ttu-id="80e90-107">Klientské aplikační služby</span><span class="sxs-lookup"><span data-stu-id="80e90-107">Client Application Services</span></span>](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ <span data-ttu-id="80e90-108">Popisuje způsob použití pomocí [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a profil aplikace služby zahrnuté v rozšíření Microsoft ASP.NET 2.0 AJAX v aplikacích založených na systému Windows.</span><span class="sxs-lookup"><span data-stu-id="80e90-108">Describes how to use use the [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] login, roles, and profile application services included in the Microsoft ASP.NET 2.0 AJAX Extensions in your Windows-based applications.</span></span>

@@ -21,16 +21,17 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bb21ee1396a9dd0426b9b91711c2345ef66c09f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cc7709ef060642f12a8bc7d048e520427a5c674
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="emitassemblycustomattribute-method"></a><span data-ttu-id="b5df7-102">EmitAssemblyCustomAttribute – metoda</span><span class="sxs-lookup"><span data-stu-id="b5df7-102">EmitAssemblyCustomAttribute Method</span></span>
-<span data-ttu-id="b5df7-103">Volání nastavení úrovně sestavení vlastní atributy.</span><span class="sxs-lookup"><span data-stu-id="b5df7-103">Call to set assembly-level custom attributes.</span></span>  
+# <a name="emitassemblycustomattribute-method"></a><span data-ttu-id="e58fb-102">EmitAssemblyCustomAttribute – metoda</span><span class="sxs-lookup"><span data-stu-id="e58fb-102">EmitAssemblyCustomAttribute Method</span></span>
+<span data-ttu-id="e58fb-103">Volání nastavení úrovně sestavení vlastní atributy.</span><span class="sxs-lookup"><span data-stu-id="e58fb-103">Call to set assembly-level custom attributes.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b5df7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5df7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e58fb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e58fb-104">Syntax</span></span>  
   
 ```  
 HRESULT EmitAssemblyCustomAttribute(  
@@ -44,35 +45,35 @@ HRESULT EmitAssemblyCustomAttribute(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b5df7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b5df7-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="e58fb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e58fb-105">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="b5df7-106">ID sestavení.</span><span class="sxs-lookup"><span data-stu-id="b5df7-106">ID of the assembly.</span></span>  
+ <span data-ttu-id="e58fb-106">ID sestavení.</span><span class="sxs-lookup"><span data-stu-id="e58fb-106">ID of the assembly.</span></span>  
   
  `FileToken`  
- <span data-ttu-id="b5df7-107">Soubor, který defiles atribut.</span><span class="sxs-lookup"><span data-stu-id="b5df7-107">File that defiles the attribute.</span></span> <span data-ttu-id="b5df7-108">Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.</span><span class="sxs-lookup"><span data-stu-id="b5df7-108">Can be NULL if `AssemblyID` does not indicate an unbound netmodule.</span></span>  
+ <span data-ttu-id="e58fb-107">Soubor, který defiles atribut.</span><span class="sxs-lookup"><span data-stu-id="e58fb-107">File that defiles the attribute.</span></span> <span data-ttu-id="e58fb-108">Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.</span><span class="sxs-lookup"><span data-stu-id="e58fb-108">Can be NULL if `AssemblyID` does not indicate an unbound netmodule.</span></span>  
   
  `tkType`  
- <span data-ttu-id="b5df7-109">Typ vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="b5df7-109">Type of the custom attribute.</span></span>  
+ <span data-ttu-id="e58fb-109">Typ vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="e58fb-109">Type of the custom attribute.</span></span>  
   
  `pCustomValue`  
- <span data-ttu-id="b5df7-110">Vlastní hodnota data.</span><span class="sxs-lookup"><span data-stu-id="b5df7-110">Custom value data.</span></span>  
+ <span data-ttu-id="e58fb-110">Vlastní hodnota data.</span><span class="sxs-lookup"><span data-stu-id="e58fb-110">Custom value data.</span></span>  
   
  `cbCustomValue`  
- <span data-ttu-id="b5df7-111">Délka dat vlastní hodnotu.</span><span class="sxs-lookup"><span data-stu-id="b5df7-111">Length of custom value data.</span></span>  
+ <span data-ttu-id="e58fb-111">Délka dat vlastní hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e58fb-111">Length of custom value data.</span></span>  
   
  `bSecurity`  
- <span data-ttu-id="b5df7-112">Hodnota TRUE, pokud vlastní atribut má vztah k podepsání sestavení.</span><span class="sxs-lookup"><span data-stu-id="b5df7-112">TRUE if the custom attribute is related to assembly signing.</span></span>  
+ <span data-ttu-id="e58fb-112">Hodnota TRUE, pokud vlastní atribut má vztah k podepsání sestavení.</span><span class="sxs-lookup"><span data-stu-id="e58fb-112">TRUE if the custom attribute is related to assembly signing.</span></span>  
   
  `bAllowMulti`  
- <span data-ttu-id="b5df7-113">Hodnota TRUE, pokud mají být vygenerované více atributů.</span><span class="sxs-lookup"><span data-stu-id="b5df7-113">TRUE if multiple attributes are to be emitted.</span></span>  
+ <span data-ttu-id="e58fb-113">Hodnota TRUE, pokud mají být vygenerované více atributů.</span><span class="sxs-lookup"><span data-stu-id="e58fb-113">TRUE if multiple attributes are to be emitted.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b5df7-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b5df7-114">Return Value</span></span>  
- <span data-ttu-id="b5df7-115">Vrátí S_OK, pokud metoda bude úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b5df7-115">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e58fb-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e58fb-114">Return Value</span></span>  
+ <span data-ttu-id="e58fb-115">Vrátí S_OK, pokud metoda bude úspěšná.</span><span class="sxs-lookup"><span data-stu-id="e58fb-115">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b5df7-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5df7-116">Requirements</span></span>  
- <span data-ttu-id="b5df7-117">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="b5df7-117">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e58fb-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e58fb-116">Requirements</span></span>  
+ <span data-ttu-id="e58fb-117">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="e58fb-117">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5df7-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="b5df7-118">See Also</span></span>  
- [<span data-ttu-id="b5df7-119">Ialink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5df7-119">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [<span data-ttu-id="b5df7-120">Ialink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5df7-120">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [<span data-ttu-id="b5df7-121">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="b5df7-121">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a><span data-ttu-id="e58fb-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="e58fb-118">See Also</span></span>  
+ [<span data-ttu-id="e58fb-119">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e58fb-119">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [<span data-ttu-id="e58fb-120">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e58fb-120">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [<span data-ttu-id="e58fb-121">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="e58fb-121">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

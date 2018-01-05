@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dca6edd3bf44a3051d01d4fc90314f6aef452eac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d1263bdca7a791a88ed1ba3b2c7956d0d56e7001
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemidentitymodelselectorsstoredeleting"></a><span data-ttu-id="c67d5-102">System.IdentityModel.Selectors.StoreDeleting</span><span class="sxs-lookup"><span data-stu-id="c67d5-102">System.IdentityModel.Selectors.StoreDeleting</span></span>
-<span data-ttu-id="c67d5-103">System.IdentityModel.Selectors.StoreDeleting</span><span class="sxs-lookup"><span data-stu-id="c67d5-103">System.IdentityModel.Selectors.StoreDeleting</span></span>  
+# <a name="systemidentitymodelselectorsstoredeleting"></a><span data-ttu-id="326e4-102">System.IdentityModel.Selectors.StoreDeleting</span><span class="sxs-lookup"><span data-stu-id="326e4-102">System.IdentityModel.Selectors.StoreDeleting</span></span>
+<span data-ttu-id="326e4-103">System.IdentityModel.Selectors.StoreDeleting</span><span class="sxs-lookup"><span data-stu-id="326e4-103">System.IdentityModel.Selectors.StoreDeleting</span></span>  
   
-## <a name="description"></a><span data-ttu-id="c67d5-104">Popis</span><span class="sxs-lookup"><span data-stu-id="c67d5-104">Description</span></span>  
- <span data-ttu-id="c67d5-105">Odstranění zadaného úložiště.</span><span class="sxs-lookup"><span data-stu-id="c67d5-105">Deleting the specified store.</span></span>  
+## <a name="description"></a><span data-ttu-id="326e4-104">Popis</span><span class="sxs-lookup"><span data-stu-id="326e4-104">Description</span></span>  
+ <span data-ttu-id="326e4-105">Odstranění zadaného úložiště.</span><span class="sxs-lookup"><span data-stu-id="326e4-105">Deleting the specified store.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c67d5-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="c67d5-106">See Also</span></span>  
- [<span data-ttu-id="c67d5-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="c67d5-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="c67d5-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="c67d5-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="c67d5-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="c67d5-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="326e4-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="326e4-106">See Also</span></span>  
+ [<span data-ttu-id="326e4-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="326e4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="326e4-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="326e4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="326e4-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="326e4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

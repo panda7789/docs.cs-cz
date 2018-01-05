@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e9584735c427ef00a4e17a2c033571a3cb42fd78
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ab8afd2527991ed5c0d288bb68e6f0472c2c378c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationservicehoststoppingservice"></a><span data-ttu-id="8885b-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span><span class="sxs-lookup"><span data-stu-id="8885b-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span></span>
-<span data-ttu-id="8885b-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span><span class="sxs-lookup"><span data-stu-id="8885b-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationservicehoststoppingservice"></a><span data-ttu-id="e6483-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span><span class="sxs-lookup"><span data-stu-id="e6483-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span></span>
+<span data-ttu-id="e6483-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span><span class="sxs-lookup"><span data-stu-id="e6483-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStoppingService</span></span>  
   
-## <a name="description"></a><span data-ttu-id="8885b-104">Popis</span><span class="sxs-lookup"><span data-stu-id="8885b-104">Description</span></span>  
- <span data-ttu-id="8885b-105">ComPlus: Zastavení služby.</span><span class="sxs-lookup"><span data-stu-id="8885b-105">ComPlus: Stopping service.</span></span>  
+## <a name="description"></a><span data-ttu-id="e6483-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e6483-104">Description</span></span>  
+ <span data-ttu-id="e6483-105">ComPlus: Zastavení služby.</span><span class="sxs-lookup"><span data-stu-id="e6483-105">ComPlus: Stopping service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8885b-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="8885b-106">See Also</span></span>  
- [<span data-ttu-id="8885b-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="8885b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="8885b-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="8885b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="8885b-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="8885b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e6483-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="e6483-106">See Also</span></span>  
+ [<span data-ttu-id="e6483-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="e6483-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e6483-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e6483-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e6483-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="e6483-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

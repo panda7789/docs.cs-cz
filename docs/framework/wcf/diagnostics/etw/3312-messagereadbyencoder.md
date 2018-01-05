@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a54ff855bbaf746c8d845fa454e36584e4ec1b8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b3bc21270991a0676827779944c7a66f65774bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3312---messagereadbyencoder"></a><span data-ttu-id="2086d-102">3312 – MessageReadByEncoder</span><span class="sxs-lookup"><span data-stu-id="2086d-102">3312 - MessageReadByEncoder</span></span>
-## <a name="properties"></a><span data-ttu-id="2086d-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="2086d-103">Properties</span></span>  
+# <a name="3312---messagereadbyencoder"></a><span data-ttu-id="fe1d5-102">3312 – MessageReadByEncoder</span><span class="sxs-lookup"><span data-stu-id="fe1d5-102">3312 - MessageReadByEncoder</span></span>
+## <a name="properties"></a><span data-ttu-id="fe1d5-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="fe1d5-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="2086d-104">ID</span><span class="sxs-lookup"><span data-stu-id="2086d-104">ID</span></span>|<span data-ttu-id="2086d-105">3312</span><span class="sxs-lookup"><span data-stu-id="2086d-105">3312</span></span>|  
-|<span data-ttu-id="2086d-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="2086d-106">Keywords</span></span>|<span data-ttu-id="2086d-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="2086d-107">Channel</span></span>|  
-|<span data-ttu-id="2086d-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="2086d-108">Level</span></span>|<span data-ttu-id="2086d-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="2086d-109">Information</span></span>|  
-|<span data-ttu-id="2086d-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="2086d-110">Channel</span></span>|<span data-ttu-id="2086d-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="2086d-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="fe1d5-104">ID</span><span class="sxs-lookup"><span data-stu-id="fe1d5-104">ID</span></span>|<span data-ttu-id="fe1d5-105">3312</span><span class="sxs-lookup"><span data-stu-id="fe1d5-105">3312</span></span>|  
+|<span data-ttu-id="fe1d5-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="fe1d5-106">Keywords</span></span>|<span data-ttu-id="fe1d5-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="fe1d5-107">Channel</span></span>|  
+|<span data-ttu-id="fe1d5-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="fe1d5-108">Level</span></span>|<span data-ttu-id="fe1d5-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="fe1d5-109">Information</span></span>|  
+|<span data-ttu-id="fe1d5-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="fe1d5-110">Channel</span></span>|<span data-ttu-id="fe1d5-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="fe1d5-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="2086d-112">Popis</span><span class="sxs-lookup"><span data-stu-id="2086d-112">Description</span></span>  
- <span data-ttu-id="2086d-113">Tato událost je vygenerované při encorder byl číst zprávy.</span><span class="sxs-lookup"><span data-stu-id="2086d-113">This event is emitted when the message was read by encorder.</span></span>  
+## <a name="description"></a><span data-ttu-id="fe1d5-112">Popis</span><span class="sxs-lookup"><span data-stu-id="fe1d5-112">Description</span></span>  
+ <span data-ttu-id="fe1d5-113">Tato událost je vygenerované při encorder byl číst zprávy.</span><span class="sxs-lookup"><span data-stu-id="fe1d5-113">This event is emitted when the message was read by encorder.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="2086d-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="2086d-114">Message</span></span>  
- <span data-ttu-id="2086d-115">Za zprávou s vlastností '%1' velikost v bajtech byl načten pomocí kodéru.</span><span class="sxs-lookup"><span data-stu-id="2086d-115">A message with size '%1' bytes was read by the encoder.</span></span>  
+## <a name="message"></a><span data-ttu-id="fe1d5-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="fe1d5-114">Message</span></span>  
+ <span data-ttu-id="fe1d5-115">Za zprávou s vlastností '%1' velikost v bajtech byl načten pomocí kodéru.</span><span class="sxs-lookup"><span data-stu-id="fe1d5-115">A message with size '%1' bytes was read by the encoder.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="2086d-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="2086d-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="fe1d5-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="fe1d5-116">Details</span></span>

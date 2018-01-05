@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c71f093bd663fb2622dbfc212671fad8f19ca4a9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4ca35246b82ed4adc982b6e7b157398d230dabe4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="iclrdatatargetgetpointersize-method"></a><span data-ttu-id="886f5-102">ICLRDataTarget::GetPointerSize – metoda</span><span class="sxs-lookup"><span data-stu-id="886f5-102">ICLRDataTarget::GetPointerSize Method</span></span>
-<span data-ttu-id="886f5-103">Získá velikost v bajtech je ukazatel typu, který používá tento cílový proces.</span><span class="sxs-lookup"><span data-stu-id="886f5-103">Gets the size, in bytes, of the pointer type that the target process uses.</span></span> <span data-ttu-id="886f5-104">Tato metoda je volána běžné data přístupu služby modulu runtime jazyka.</span><span class="sxs-lookup"><span data-stu-id="886f5-104">This method is called by the common language runtime data access services.</span></span>  
+# <a name="iclrdatatargetgetpointersize-method"></a><span data-ttu-id="f808d-102">ICLRDataTarget::GetPointerSize – metoda</span><span class="sxs-lookup"><span data-stu-id="f808d-102">ICLRDataTarget::GetPointerSize Method</span></span>
+<span data-ttu-id="f808d-103">Získá velikost v bajtech je ukazatel typu, který používá tento cílový proces.</span><span class="sxs-lookup"><span data-stu-id="f808d-103">Gets the size, in bytes, of the pointer type that the target process uses.</span></span> <span data-ttu-id="f808d-104">Tato metoda je volána běžné data přístupu služby modulu runtime jazyka.</span><span class="sxs-lookup"><span data-stu-id="f808d-104">This method is called by the common language runtime data access services.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="886f5-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="886f5-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f808d-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f808d-105">Syntax</span></span>  
   
 ```  
 HRESULT GetPointerSize (  
@@ -38,21 +39,21 @@ HRESULT GetPointerSize (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="886f5-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="886f5-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="f808d-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f808d-106">Parameters</span></span>  
  `pointerSize`  
- <span data-ttu-id="886f5-107">[out] Ukazatel na celočíselnou hodnotu, která určuje velikost v bajtech ukazatel na tento cílový proces.</span><span class="sxs-lookup"><span data-stu-id="886f5-107">[out] A pointer to an integer value that specifies the size, in bytes, of a pointer on the target process.</span></span>  
+ <span data-ttu-id="f808d-107">[out] Ukazatel na celočíselnou hodnotu, která určuje velikost v bajtech ukazatel na tento cílový proces.</span><span class="sxs-lookup"><span data-stu-id="f808d-107">[out] A pointer to an integer value that specifies the size, in bytes, of a pointer on the target process.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="886f5-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="886f5-108">Remarks</span></span>  
- <span data-ttu-id="886f5-109">Tato metoda je implementována zapisovačem ladění aplikace.</span><span class="sxs-lookup"><span data-stu-id="886f5-109">This method is implemented by the writer of the debugging application.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f808d-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f808d-108">Remarks</span></span>  
+ <span data-ttu-id="f808d-109">Tato metoda je implementována zapisovačem ladění aplikace.</span><span class="sxs-lookup"><span data-stu-id="f808d-109">This method is implemented by the writer of the debugging application.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="886f5-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="886f5-110">Requirements</span></span>  
- <span data-ttu-id="886f5-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="886f5-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f808d-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f808d-110">Requirements</span></span>  
+ <span data-ttu-id="f808d-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f808d-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="886f5-112">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="886f5-112">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="f808d-112">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="f808d-112">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="886f5-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="886f5-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f808d-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f808d-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="886f5-114">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="886f5-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="f808d-114">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f808d-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="886f5-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="886f5-115">See Also</span></span>  
- [<span data-ttu-id="886f5-116">ICLRDataTarget – rozhraní rozhraní</span><span class="sxs-lookup"><span data-stu-id="886f5-116">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a><span data-ttu-id="f808d-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="f808d-115">See Also</span></span>  
+ [<span data-ttu-id="f808d-116">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f808d-116">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

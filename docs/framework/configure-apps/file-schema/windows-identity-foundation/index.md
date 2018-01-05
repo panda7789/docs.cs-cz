@@ -1,5 +1,5 @@
 ---
-title: "Schéma konfigurace aplikace Windows Identity Foundation"
+title: "Konfigurační schéma pro Windows Identity Foundation"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -13,14 +13,15 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: b2ac7e97627eba85013e1effdc4f856f3df79089
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2000ae86f38ff2fd06dbe7424cbfdd74781c6c3c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="windows-identity-foundation-configuration-schema"></a><span data-ttu-id="3d748-102">Schéma konfigurace aplikace Windows Identity Foundation</span><span class="sxs-lookup"><span data-stu-id="3d748-102">Windows Identity Foundation Configuration Schema</span></span>
-<span data-ttu-id="3d748-103">Témata v této části poskytují informace o schématu konfigurace Windows Identity Foundation (WIF).</span><span class="sxs-lookup"><span data-stu-id="3d748-103">The topics in this section provide information about the Windows Identity Foundation (WIF) configuration schema.</span></span> <span data-ttu-id="3d748-104">Můžete také nakonfigurovat aplikaci technologii WIF používají prostřednictvím třídy vystavené rozhraní framework.</span><span class="sxs-lookup"><span data-stu-id="3d748-104">You can also configure an application to use WIF through classes exposed by the framework,.</span></span> <span data-ttu-id="3d748-105">Tyto třídy jsou uvedené v následujících částech považovat relevantní elementy ve schématu.</span><span class="sxs-lookup"><span data-stu-id="3d748-105">These classes are noted in the sections that treat relevant elements in the schema.</span></span> <span data-ttu-id="3d748-106">Následují základní XML označit struktura vystavené WIF schématu konfigurace.</span><span class="sxs-lookup"><span data-stu-id="3d748-106">The following shows the basic XML tag structure exposed by the WIF configuration schema.</span></span> <span data-ttu-id="3d748-107">Atributy byly vynechány.</span><span class="sxs-lookup"><span data-stu-id="3d748-107">Attributes are omitted.</span></span> <span data-ttu-id="3d748-108">Zvýrazněná komentáře znamenat hlavní součásti schématu.</span><span class="sxs-lookup"><span data-stu-id="3d748-108">Highlighted comments indicate major components of the schema.</span></span>  
+# <a name="windows-identity-foundation-configuration-schema"></a><span data-ttu-id="a8b5b-102">Konfigurační schéma pro Windows Identity Foundation</span><span class="sxs-lookup"><span data-stu-id="a8b5b-102">Windows Identity Foundation Configuration Schema</span></span>
+<span data-ttu-id="a8b5b-103">Témata v této části poskytují informace o schématu konfigurace Windows Identity Foundation (WIF).</span><span class="sxs-lookup"><span data-stu-id="a8b5b-103">The topics in this section provide information about the Windows Identity Foundation (WIF) configuration schema.</span></span> <span data-ttu-id="a8b5b-104">Můžete také nakonfigurovat aplikaci technologii WIF používají prostřednictvím třídy vystavené rozhraní framework.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-104">You can also configure an application to use WIF through classes exposed by the framework,.</span></span> <span data-ttu-id="a8b5b-105">Tyto třídy jsou uvedené v následujících částech považovat relevantní elementy ve schématu.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-105">These classes are noted in the sections that treat relevant elements in the schema.</span></span> <span data-ttu-id="a8b5b-106">Následují základní XML označit struktura vystavené WIF schématu konfigurace.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-106">The following shows the basic XML tag structure exposed by the WIF configuration schema.</span></span> <span data-ttu-id="a8b5b-107">Atributy byly vynechány.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-107">Attributes are omitted.</span></span> <span data-ttu-id="a8b5b-108">Zvýrazněná komentáře znamenat hlavní součásti schématu.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-108">Highlighted comments indicate major components of the schema.</span></span>  
   
 ```xml  
 <system.identityModel>  
@@ -115,10 +116,10 @@ ms.lasthandoff: 10/18/2017
 </system.identityModel.services>  
 ```  
   
-## <a name="in-this-section"></a><span data-ttu-id="3d748-109">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3d748-109">In This Section</span></span>  
- <span data-ttu-id="3d748-110">[\<system.identityModel >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) možnosti konfigurace poskytuje pro povolení WIF v aplikacích.</span><span class="sxs-lookup"><span data-stu-id="3d748-110">[\<system.identityModel>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) Provides configuration for enabling WIF options in applications.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="a8b5b-109">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a8b5b-109">In This Section</span></span>  
+ <span data-ttu-id="a8b5b-110">[\<system.identityModel >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) možnosti konfigurace poskytuje pro povolení WIF v aplikacích.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-110">[\<system.identityModel>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) Provides configuration for enabling WIF options in applications.</span></span>  
   
- <span data-ttu-id="3d748-111">[\<system.identityModel.services >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) konfigurace poskytuje pro pasivní federace pomocí WIF.</span><span class="sxs-lookup"><span data-stu-id="3d748-111">[\<system.identityModel.services>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) Provides configuration for passive federation using WIF.</span></span> <span data-ttu-id="3d748-112">Nakonfiguruje modul relace ověřování (SAM) a modul federovaného ověřování (WSFAM).</span><span class="sxs-lookup"><span data-stu-id="3d748-112">Configures the Session Authentication Module (SAM) and the Federated Authentication Module (WSFAM).</span></span>  
+ <span data-ttu-id="a8b5b-111">[\<system.identityModel.services >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) konfigurace poskytuje pro pasivní federace pomocí WIF.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-111">[\<system.identityModel.services>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) Provides configuration for passive federation using WIF.</span></span> <span data-ttu-id="a8b5b-112">Nakonfiguruje modul relace ověřování (SAM) a modul federovaného ověřování (WSFAM).</span><span class="sxs-lookup"><span data-stu-id="a8b5b-112">Configures the Session Authentication Module (SAM) and the Federated Authentication Module (WSFAM).</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="3d748-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="3d748-113">Related Sections</span></span>  
- <span data-ttu-id="3d748-114">[Správa a konfigurace, správa,](http://msdn.microsoft.com/en-us/1e03c389-de2c-4096-aaff-86b087e1bea0) popisuje, jak konfigurovat a spravovat WIF aplikací a služeb.</span><span class="sxs-lookup"><span data-stu-id="3d748-114">[Configuration, Administration, And Management](http://msdn.microsoft.com/en-us/1e03c389-de2c-4096-aaff-86b087e1bea0) Describes how to configure and manage WIF applications and services.</span></span>
+## <a name="related-sections"></a><span data-ttu-id="a8b5b-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a8b5b-113">Related Sections</span></span>  
+ <span data-ttu-id="a8b5b-114">[Správa a konfigurace, správa,](http://msdn.microsoft.com/en-us/1e03c389-de2c-4096-aaff-86b087e1bea0) popisuje, jak konfigurovat a spravovat WIF aplikací a služeb.</span><span class="sxs-lookup"><span data-stu-id="a8b5b-114">[Configuration, Administration, And Management](http://msdn.microsoft.com/en-us/1e03c389-de2c-4096-aaff-86b087e1bea0) Describes how to configure and manage WIF applications and services.</span></span>

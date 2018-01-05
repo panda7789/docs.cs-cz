@@ -21,16 +21,17 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1e59853f8f0ac61f89fc0efe0fb63f4ad7e6e0e7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 90cc41abd01f7cbef7037ee2b28465dc85de5131
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugmanagedcallbackloadassembly-method"></a><span data-ttu-id="24fe9-102">ICorDebugManagedCallback::LoadAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="24fe9-102">ICorDebugManagedCallback::LoadAssembly Method</span></span>
-<span data-ttu-id="24fe9-103">Běžné sestavení modulu runtime (CLR) jazyk byl úspěšně načíst upozorní ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="24fe9-103">Notifies the debugger that a common language runtime (CLR) assembly has been successfully loaded.</span></span>  
+# <a name="icordebugmanagedcallbackloadassembly-method"></a><span data-ttu-id="70e77-102">ICorDebugManagedCallback::LoadAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="70e77-102">ICorDebugManagedCallback::LoadAssembly Method</span></span>
+<span data-ttu-id="70e77-103">Běžné sestavení modulu runtime (CLR) jazyk byl úspěšně načíst upozorní ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="70e77-103">Notifies the debugger that a common language runtime (CLR) assembly has been successfully loaded.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="24fe9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="24fe9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70e77-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70e77-104">Syntax</span></span>  
   
 ```  
 HRESULT LoadAssembly (  
@@ -39,22 +40,22 @@ HRESULT LoadAssembly (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="24fe9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="24fe9-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="70e77-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="70e77-105">Parameters</span></span>  
  `pAppDomain`  
- <span data-ttu-id="24fe9-106">[v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, do kterého má sestavení bylo načteno.</span><span class="sxs-lookup"><span data-stu-id="24fe9-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain into which the assembly has been loaded.</span></span>  
+ <span data-ttu-id="70e77-106">[v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, do kterého má sestavení bylo načteno.</span><span class="sxs-lookup"><span data-stu-id="70e77-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain into which the assembly has been loaded.</span></span>  
   
  `pAssembly`  
- <span data-ttu-id="24fe9-107">[v] Ukazatel na ICorDebugAssembly objekt, který představuje sestavení.</span><span class="sxs-lookup"><span data-stu-id="24fe9-107">[in] A pointer to an ICorDebugAssembly object that represents the assembly.</span></span>  
+ <span data-ttu-id="70e77-107">[v] Ukazatel na ICorDebugAssembly objekt, který představuje sestavení.</span><span class="sxs-lookup"><span data-stu-id="70e77-107">[in] A pointer to an ICorDebugAssembly object that represents the assembly.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="24fe9-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="24fe9-108">Requirements</span></span>  
- <span data-ttu-id="24fe9-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="24fe9-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70e77-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70e77-108">Requirements</span></span>  
+ <span data-ttu-id="70e77-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="70e77-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="24fe9-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="24fe9-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="70e77-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="70e77-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="24fe9-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="24fe9-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="70e77-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="70e77-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="24fe9-112">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="24fe9-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="70e77-112">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="70e77-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="24fe9-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="24fe9-113">See Also</span></span>  
- [<span data-ttu-id="24fe9-114">Unloadassembly – metoda</span><span class="sxs-lookup"><span data-stu-id="24fe9-114">UnloadAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)  
- [<span data-ttu-id="24fe9-115">ICorDebugManagedCallback – rozhraní rozhraní</span><span class="sxs-lookup"><span data-stu-id="24fe9-115">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="70e77-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="70e77-113">See Also</span></span>  
+ [<span data-ttu-id="70e77-114">UnloadAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="70e77-114">UnloadAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)  
+ [<span data-ttu-id="70e77-115">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70e77-115">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

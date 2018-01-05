@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 356900a86d7362816cd16e4ed5341cfa11d6f8f6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5161e9522a3d0ee04df8e6a1c336ed6e1d65cd8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritytokenprovideropened"></a><span data-ttu-id="8f460-102">System.ServiceModel.Security.SecurityTokenProviderOpened</span><span class="sxs-lookup"><span data-stu-id="8f460-102">System.ServiceModel.Security.SecurityTokenProviderOpened</span></span>
-<span data-ttu-id="8f460-103">System.ServiceModel.Security.SecurityTokenProviderOpened</span><span class="sxs-lookup"><span data-stu-id="8f460-103">System.ServiceModel.Security.SecurityTokenProviderOpened</span></span>  
+# <a name="systemservicemodelsecuritysecuritytokenprovideropened"></a><span data-ttu-id="dd063-102">System.ServiceModel.Security.SecurityTokenProviderOpened</span><span class="sxs-lookup"><span data-stu-id="dd063-102">System.ServiceModel.Security.SecurityTokenProviderOpened</span></span>
+<span data-ttu-id="dd063-103">System.ServiceModel.Security.SecurityTokenProviderOpened</span><span class="sxs-lookup"><span data-stu-id="dd063-103">System.ServiceModel.Security.SecurityTokenProviderOpened</span></span>  
   
-## <a name="description"></a><span data-ttu-id="8f460-104">Popis</span><span class="sxs-lookup"><span data-stu-id="8f460-104">Description</span></span>  
- <span data-ttu-id="8f460-105">Byl otevřen poskytovatele tokenu zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="8f460-105">A security token provider was opened.</span></span>  
+## <a name="description"></a><span data-ttu-id="dd063-104">Popis</span><span class="sxs-lookup"><span data-stu-id="dd063-104">Description</span></span>  
+ <span data-ttu-id="dd063-105">Byl otevřen poskytovatele tokenu zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="dd063-105">A security token provider was opened.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8f460-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="8f460-106">See Also</span></span>  
- [<span data-ttu-id="8f460-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="8f460-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="8f460-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="8f460-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="8f460-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="8f460-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="dd063-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="dd063-106">See Also</span></span>  
+ [<span data-ttu-id="dd063-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="dd063-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="dd063-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="dd063-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="dd063-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="dd063-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

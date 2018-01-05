@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2258a32f5eb3a0d4b01845fcba6d82c826367f04
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9cddb2209fd6958fbca8018603b7d15b36aff575
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqfoundbaseaddress"></a><span data-ttu-id="a69e9-102">System.ServiceModel.Channels.MsmqFoundBaseAddress</span><span class="sxs-lookup"><span data-stu-id="a69e9-102">System.ServiceModel.Channels.MsmqFoundBaseAddress</span></span>
-<span data-ttu-id="a69e9-103">System.ServiceModel.Channels.MsmqFoundBaseAddress</span><span class="sxs-lookup"><span data-stu-id="a69e9-103">System.ServiceModel.Channels.MsmqFoundBaseAddress</span></span>  
+# <a name="systemservicemodelchannelsmsmqfoundbaseaddress"></a><span data-ttu-id="66d6e-102">System.ServiceModel.Channels.MsmqFoundBaseAddress</span><span class="sxs-lookup"><span data-stu-id="66d6e-102">System.ServiceModel.Channels.MsmqFoundBaseAddress</span></span>
+<span data-ttu-id="66d6e-103">System.ServiceModel.Channels.MsmqFoundBaseAddress</span><span class="sxs-lookup"><span data-stu-id="66d6e-103">System.ServiceModel.Channels.MsmqFoundBaseAddress</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a69e9-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a69e9-104">Description</span></span>  
- <span data-ttu-id="a69e9-105">Hostitelské prostředí nalezen základní adresa pro službu.</span><span class="sxs-lookup"><span data-stu-id="a69e9-105">The hosting environment found the base address for the service.</span></span>  
+## <a name="description"></a><span data-ttu-id="66d6e-104">Popis</span><span class="sxs-lookup"><span data-stu-id="66d6e-104">Description</span></span>  
+ <span data-ttu-id="66d6e-105">Hostitelské prostředí nalezen základní adresa pro službu.</span><span class="sxs-lookup"><span data-stu-id="66d6e-105">The hosting environment found the base address for the service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a69e9-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="a69e9-106">See Also</span></span>  
- [<span data-ttu-id="a69e9-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="a69e9-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a69e9-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="a69e9-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a69e9-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="a69e9-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="66d6e-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="66d6e-106">See Also</span></span>  
+ [<span data-ttu-id="66d6e-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="66d6e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="66d6e-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="66d6e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="66d6e-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="66d6e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

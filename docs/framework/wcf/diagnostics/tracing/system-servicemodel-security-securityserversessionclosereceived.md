@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: b3cd4f3ea65102bc6068d24992171689dda48a54
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 78156e1c99e9772d296a486e1c5e0a6d1caf36bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityserversessionclosereceived"></a><span data-ttu-id="474cf-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span><span class="sxs-lookup"><span data-stu-id="474cf-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span></span>
-<span data-ttu-id="474cf-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span><span class="sxs-lookup"><span data-stu-id="474cf-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span></span>  
+# <a name="systemservicemodelsecuritysecurityserversessionclosereceived"></a><span data-ttu-id="d627a-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span><span class="sxs-lookup"><span data-stu-id="d627a-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span></span>
+<span data-ttu-id="d627a-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span><span class="sxs-lookup"><span data-stu-id="d627a-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span></span>  
   
-## <a name="description"></a><span data-ttu-id="474cf-104">Popis</span><span class="sxs-lookup"><span data-stu-id="474cf-104">Description</span></span>  
- <span data-ttu-id="474cf-105">Relace zabezpečení serveru přijala zprávu Zavřít odpověď z klienta.</span><span class="sxs-lookup"><span data-stu-id="474cf-105">The server security session received a Close response message from client.</span></span>  
+## <a name="description"></a><span data-ttu-id="d627a-104">Popis</span><span class="sxs-lookup"><span data-stu-id="d627a-104">Description</span></span>  
+ <span data-ttu-id="d627a-105">Relace zabezpečení serveru přijala zprávu Zavřít odpověď z klienta.</span><span class="sxs-lookup"><span data-stu-id="d627a-105">The server security session received a Close response message from client.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="474cf-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="474cf-106">See Also</span></span>  
- [<span data-ttu-id="474cf-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="474cf-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="474cf-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="474cf-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="474cf-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="474cf-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="d627a-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="d627a-106">See Also</span></span>  
+ [<span data-ttu-id="d627a-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="d627a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="d627a-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="d627a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="d627a-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="d627a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

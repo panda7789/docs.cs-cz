@@ -19,16 +19,17 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 14d6f28c2e5fa356c7f406ffb4c2787f0ace500a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2045c2edd129c2e4154d24b43d96f6ea8ad64cab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="cordebuggctype-enumeration"></a><span data-ttu-id="d6c84-102">CorDebugGCType – výčet</span><span class="sxs-lookup"><span data-stu-id="d6c84-102">CorDebugGCType Enumeration</span></span>
-<span data-ttu-id="d6c84-103">Určuje, zda má systém uvolňování běží na pracovní stanici nebo na serveru.</span><span class="sxs-lookup"><span data-stu-id="d6c84-103">Indicates whether the garbage collector is running on a workstation or a server.</span></span>  
+# <a name="cordebuggctype-enumeration"></a><span data-ttu-id="fb08f-102">CorDebugGCType – výčet</span><span class="sxs-lookup"><span data-stu-id="fb08f-102">CorDebugGCType Enumeration</span></span>
+<span data-ttu-id="fb08f-103">Určuje, zda má systém uvolňování běží na pracovní stanici nebo na serveru.</span><span class="sxs-lookup"><span data-stu-id="fb08f-103">Indicates whether the garbage collector is running on a workstation or a server.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d6c84-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d6c84-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fb08f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fb08f-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugGCType {  
@@ -37,25 +38,25 @@ typedef enum CorDebugGCType {
 } CorDebugGCType;  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d6c84-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d6c84-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="fb08f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fb08f-105">Parameters</span></span>  
   
-## <a name="members"></a><span data-ttu-id="d6c84-106">Členové</span><span class="sxs-lookup"><span data-stu-id="d6c84-106">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="fb08f-106">Členové</span><span class="sxs-lookup"><span data-stu-id="fb08f-106">Members</span></span>  
   
-|<span data-ttu-id="d6c84-107">Název členu</span><span class="sxs-lookup"><span data-stu-id="d6c84-107">Member name</span></span>|<span data-ttu-id="d6c84-108">Popis</span><span class="sxs-lookup"><span data-stu-id="d6c84-108">Description</span></span>|  
+|<span data-ttu-id="fb08f-107">Název členu</span><span class="sxs-lookup"><span data-stu-id="fb08f-107">Member name</span></span>|<span data-ttu-id="fb08f-108">Popis</span><span class="sxs-lookup"><span data-stu-id="fb08f-108">Description</span></span>|  
 |-----------------|-----------------|  
-|`CorDebugWorkstationGC`|<span data-ttu-id="d6c84-109">Uvolňování paměti běží na pracovní stanici.</span><span class="sxs-lookup"><span data-stu-id="d6c84-109">The garbage collector is running on a workstation.</span></span>|  
-|`CorDebugServerGC`|<span data-ttu-id="d6c84-110">Uvolňování paměti běží na serveru.</span><span class="sxs-lookup"><span data-stu-id="d6c84-110">The garbage collector is running on a server.</span></span>|  
+|`CorDebugWorkstationGC`|<span data-ttu-id="fb08f-109">Uvolňování paměti běží na pracovní stanici.</span><span class="sxs-lookup"><span data-stu-id="fb08f-109">The garbage collector is running on a workstation.</span></span>|  
+|`CorDebugServerGC`|<span data-ttu-id="fb08f-110">Uvolňování paměti běží na serveru.</span><span class="sxs-lookup"><span data-stu-id="fb08f-110">The garbage collector is running on a server.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="d6c84-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d6c84-111">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="fb08f-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fb08f-111">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d6c84-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d6c84-112">Requirements</span></span>  
- <span data-ttu-id="d6c84-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d6c84-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fb08f-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fb08f-112">Requirements</span></span>  
+ <span data-ttu-id="fb08f-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fb08f-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d6c84-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d6c84-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="fb08f-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="fb08f-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d6c84-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d6c84-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="fb08f-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fb08f-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d6c84-116">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d6c84-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="fb08f-116">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fb08f-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d6c84-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="d6c84-117">See Also</span></span>  
- [<span data-ttu-id="d6c84-118">Ladění výčtů</span><span class="sxs-lookup"><span data-stu-id="d6c84-118">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="fb08f-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="fb08f-117">See Also</span></span>  
+ [<span data-ttu-id="fb08f-118">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="fb08f-118">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

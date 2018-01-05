@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d722bec49aff557a10e14a8d38bd7fde72783f7b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db9fd5f37d4e1d9b9b6187149729a7d580f0149e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3821---routingserviceclosefailed"></a><span data-ttu-id="60d4a-102">3821 – RoutingServiceCloseFailed</span><span class="sxs-lookup"><span data-stu-id="60d4a-102">3821 - RoutingServiceCloseFailed</span></span>
-## <a name="properties"></a><span data-ttu-id="60d4a-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="60d4a-103">Properties</span></span>  
+# <a name="3821---routingserviceclosefailed"></a><span data-ttu-id="e9300-102">3821 – RoutingServiceCloseFailed</span><span class="sxs-lookup"><span data-stu-id="e9300-102">3821 - RoutingServiceCloseFailed</span></span>
+## <a name="properties"></a><span data-ttu-id="e9300-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="e9300-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="60d4a-104">ID</span><span class="sxs-lookup"><span data-stu-id="60d4a-104">ID</span></span>|<span data-ttu-id="60d4a-105">3821</span><span class="sxs-lookup"><span data-stu-id="60d4a-105">3821</span></span>|  
-|<span data-ttu-id="60d4a-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="60d4a-106">Keywords</span></span>|<span data-ttu-id="60d4a-107">RoutingServices</span><span class="sxs-lookup"><span data-stu-id="60d4a-107">RoutingServices</span></span>|  
-|<span data-ttu-id="60d4a-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="60d4a-108">Level</span></span>|<span data-ttu-id="60d4a-109">Upozornění</span><span class="sxs-lookup"><span data-stu-id="60d4a-109">Warning</span></span>|  
-|<span data-ttu-id="60d4a-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="60d4a-110">Channel</span></span>|<span data-ttu-id="60d4a-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="60d4a-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="e9300-104">ID</span><span class="sxs-lookup"><span data-stu-id="e9300-104">ID</span></span>|<span data-ttu-id="e9300-105">3821</span><span class="sxs-lookup"><span data-stu-id="e9300-105">3821</span></span>|  
+|<span data-ttu-id="e9300-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="e9300-106">Keywords</span></span>|<span data-ttu-id="e9300-107">RoutingServices</span><span class="sxs-lookup"><span data-stu-id="e9300-107">RoutingServices</span></span>|  
+|<span data-ttu-id="e9300-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="e9300-108">Level</span></span>|<span data-ttu-id="e9300-109">Upozornění</span><span class="sxs-lookup"><span data-stu-id="e9300-109">Warning</span></span>|  
+|<span data-ttu-id="e9300-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="e9300-110">Channel</span></span>|<span data-ttu-id="e9300-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="e9300-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="60d4a-112">Popis</span><span class="sxs-lookup"><span data-stu-id="60d4a-112">Description</span></span>  
- <span data-ttu-id="60d4a-113">Tato událost je vygenerované při směrovací služby se nezdařilo při zavírání odchozí klienta.</span><span class="sxs-lookup"><span data-stu-id="60d4a-113">This event is emitted when the Routing Service has failed while closing outbound client.</span></span>  
+## <a name="description"></a><span data-ttu-id="e9300-112">Popis</span><span class="sxs-lookup"><span data-stu-id="e9300-112">Description</span></span>  
+ <span data-ttu-id="e9300-113">Tato událost je vygenerované při směrovací služby se nezdařilo při zavírání odchozí klienta.</span><span class="sxs-lookup"><span data-stu-id="e9300-113">This event is emitted when the Routing Service has failed while closing outbound client.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="60d4a-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="60d4a-114">Message</span></span>  
- <span data-ttu-id="60d4a-115">Směrovací služby se nezdařilo při zavírání odchozí klienta '%1'.</span><span class="sxs-lookup"><span data-stu-id="60d4a-115">The Routing Service failed while closing outbound client '%1'.</span></span>  
+## <a name="message"></a><span data-ttu-id="e9300-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="e9300-114">Message</span></span>  
+ <span data-ttu-id="e9300-115">Směrovací služby se nezdařilo při zavírání odchozí klienta '%1'.</span><span class="sxs-lookup"><span data-stu-id="e9300-115">The Routing Service failed while closing outbound client '%1'.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="60d4a-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="60d4a-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="e9300-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="e9300-116">Details</span></span>

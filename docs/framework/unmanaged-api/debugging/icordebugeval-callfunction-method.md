@@ -21,18 +21,19 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 72713d81931b53e8d61fb39cee146fd30a59bfcc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3c2d5582c9ac69692546e9a2310c4d0c9cdde83e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugevalcallfunction-method"></a><span data-ttu-id="4ee8d-102">ICorDebugEval::CallFunction – metoda</span><span class="sxs-lookup"><span data-stu-id="4ee8d-102">ICorDebugEval::CallFunction Method</span></span>
-<span data-ttu-id="4ee8d-103">Nastaví volání zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-103">Sets up a call to the specified function.</span></span>  
+# <a name="icordebugevalcallfunction-method"></a><span data-ttu-id="b38ab-102">ICorDebugEval::CallFunction – metoda</span><span class="sxs-lookup"><span data-stu-id="b38ab-102">ICorDebugEval::CallFunction Method</span></span>
+<span data-ttu-id="b38ab-103">Nastaví volání zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="b38ab-103">Sets up a call to the specified function.</span></span>  
   
- <span data-ttu-id="4ee8d-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="4ee8d-105">Použití [icordebugeval2::callparameterizedfunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) místo.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-105">Use [ICorDebugEval2::CallParameterizedFunction](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) instead.</span></span>  
+ <span data-ttu-id="b38ab-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="b38ab-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="b38ab-105">Použití [icordebugeval2::callparameterizedfunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) místo.</span><span class="sxs-lookup"><span data-stu-id="b38ab-105">Use [ICorDebugEval2::CallParameterizedFunction](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4ee8d-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ee8d-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b38ab-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b38ab-106">Syntax</span></span>  
   
 ```  
 HRESULT CallFunction (  
@@ -42,27 +43,27 @@ HRESULT CallFunction (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="4ee8d-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="4ee8d-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="b38ab-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="b38ab-107">Parameters</span></span>  
  `pFunction`  
- <span data-ttu-id="4ee8d-108">[v] Ukazatel na ICorDebugFunction objekt, který určuje funkce, která má být volána.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-108">[in] Pointer to an ICorDebugFunction object that specifies the function to be called.</span></span>  
+ <span data-ttu-id="b38ab-108">[v] Ukazatel na ICorDebugFunction objekt, který určuje funkce, která má být volána.</span><span class="sxs-lookup"><span data-stu-id="b38ab-108">[in] Pointer to an ICorDebugFunction object that specifies the function to be called.</span></span>  
   
  `nArgs`  
- <span data-ttu-id="4ee8d-109">[v] Počet argumentů pro funkci.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-109">[in] The number of arguments for the function.</span></span>  
+ <span data-ttu-id="b38ab-109">[v] Počet argumentů pro funkci.</span><span class="sxs-lookup"><span data-stu-id="b38ab-109">[in] The number of arguments for the function.</span></span>  
   
  `ppArgs`  
- <span data-ttu-id="4ee8d-110">[v] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugValue, který určuje argument mají být předány funkce.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-110">[in] An array of pointers, each of which points to an ICorDebugValue object that specifies an argument to be passed to the function.</span></span>  
+ <span data-ttu-id="b38ab-110">[v] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugValue, který určuje argument mají být předány funkce.</span><span class="sxs-lookup"><span data-stu-id="b38ab-110">[in] An array of pointers, each of which points to an ICorDebugValue object that specifies an argument to be passed to the function.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4ee8d-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4ee8d-111">Remarks</span></span>  
- <span data-ttu-id="4ee8d-112">Pokud je virtuální, funkce `CallFunction` provede virtuální odesílání.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-112">If the function is virtual, `CallFunction` will perform virtual dispatch.</span></span> <span data-ttu-id="4ee8d-113">Pokud je v doméně jinou aplikaci, přechod dojde, pokud jsou všechny argumenty také v této doméně.</span><span class="sxs-lookup"><span data-stu-id="4ee8d-113">If the function is in a different application domain, a transition will occur as long as all arguments are also in that application domain.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b38ab-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b38ab-111">Remarks</span></span>  
+ <span data-ttu-id="b38ab-112">Pokud je virtuální, funkce `CallFunction` provede virtuální odesílání.</span><span class="sxs-lookup"><span data-stu-id="b38ab-112">If the function is virtual, `CallFunction` will perform virtual dispatch.</span></span> <span data-ttu-id="b38ab-113">Pokud je v doméně jinou aplikaci, přechod dojde, pokud jsou všechny argumenty také v této doméně.</span><span class="sxs-lookup"><span data-stu-id="b38ab-113">If the function is in a different application domain, a transition will occur as long as all arguments are also in that application domain.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4ee8d-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4ee8d-114">Requirements</span></span>  
- <span data-ttu-id="4ee8d-115">**Platformy:** WindowSee [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4ee8d-115">**Platforms:** WindowSee [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b38ab-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b38ab-114">Requirements</span></span>  
+ <span data-ttu-id="b38ab-115">**Platformy:** WindowSee [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b38ab-115">**Platforms:** WindowSee [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4ee8d-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4ee8d-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b38ab-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b38ab-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="4ee8d-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4ee8d-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b38ab-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b38ab-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="4ee8d-118">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="4ee8d-118">**.NET Framework Versions:** 1.1, 1.0</span></span>  
+ <span data-ttu-id="b38ab-118">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="b38ab-118">**.NET Framework Versions:** 1.1, 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4ee8d-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="4ee8d-119">See Also</span></span>  
- [<span data-ttu-id="4ee8d-120">Callparameterizedfunction – metoda</span><span class="sxs-lookup"><span data-stu-id="4ee8d-120">CallParameterizedFunction Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)
+## <a name="see-also"></a><span data-ttu-id="b38ab-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="b38ab-119">See Also</span></span>  
+ [<span data-ttu-id="b38ab-120">CallParameterizedFunction – metoda</span><span class="sxs-lookup"><span data-stu-id="b38ab-120">CallParameterizedFunction Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)

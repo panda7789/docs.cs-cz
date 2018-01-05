@@ -21,16 +21,17 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4a29bb5b8a21a9d8082564ec377edc20cd62378a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2363b3159bef4453eb3eeb910d3d304806c56e6e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugappdomainenumeratebreakpoints-method"></a><span data-ttu-id="16622-102">ICorDebugAppDomain::EnumerateBreakpoints – metoda</span><span class="sxs-lookup"><span data-stu-id="16622-102">ICorDebugAppDomain::EnumerateBreakpoints Method</span></span>
-<span data-ttu-id="16622-103">Získá enumerátor pro všechny aktivní zarážky v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="16622-103">Gets an enumerator for all active breakpoints in the application domain.</span></span>  
+# <a name="icordebugappdomainenumeratebreakpoints-method"></a><span data-ttu-id="ae1e6-102">ICorDebugAppDomain::EnumerateBreakpoints – metoda</span><span class="sxs-lookup"><span data-stu-id="ae1e6-102">ICorDebugAppDomain::EnumerateBreakpoints Method</span></span>
+<span data-ttu-id="ae1e6-103">Získá enumerátor pro všechny aktivní zarážky v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="ae1e6-103">Gets an enumerator for all active breakpoints in the application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="16622-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="16622-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ae1e6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ae1e6-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateBreakpoints (  
@@ -38,18 +39,18 @@ HRESULT EnumerateBreakpoints (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="16622-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="16622-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="ae1e6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ae1e6-105">Parameters</span></span>  
  `ppBreakpoints`  
- <span data-ttu-id="16622-106">[out] Ukazatel na adresu ICorDebugBreakpointEnum objekt, který je enumerátor pro všechny aktivní zarážky v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="16622-106">[out] A pointer to the address of an ICorDebugBreakpointEnum object that is the enumerator for all active breakpoints in the application domain.</span></span>  
+ <span data-ttu-id="ae1e6-106">[out] Ukazatel na adresu ICorDebugBreakpointEnum objekt, který je enumerátor pro všechny aktivní zarážky v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="ae1e6-106">[out] A pointer to the address of an ICorDebugBreakpointEnum object that is the enumerator for all active breakpoints in the application domain.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="16622-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="16622-107">Remarks</span></span>  
- <span data-ttu-id="16622-108">Enumerátor zahrnuje všechny typy zarážky, včetně funkce zarážky a data zarážky.</span><span class="sxs-lookup"><span data-stu-id="16622-108">The enumerator includes all types of breakpoints, including function breakpoints and data breakpoints.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ae1e6-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ae1e6-107">Remarks</span></span>  
+ <span data-ttu-id="ae1e6-108">Enumerátor zahrnuje všechny typy zarážky, včetně funkce zarážky a data zarážky.</span><span class="sxs-lookup"><span data-stu-id="ae1e6-108">The enumerator includes all types of breakpoints, including function breakpoints and data breakpoints.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="16622-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="16622-109">Requirements</span></span>  
- <span data-ttu-id="16622-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="16622-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ae1e6-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ae1e6-109">Requirements</span></span>  
+ <span data-ttu-id="ae1e6-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ae1e6-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="16622-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="16622-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="ae1e6-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="ae1e6-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="16622-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="16622-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="ae1e6-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ae1e6-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="16622-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16622-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="ae1e6-113">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ae1e6-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 60f6e4116768d2d855edd941df796167754b3ab4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9fe38cf5f53c2514b845238c1d52fa12df526fdd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugprocessistransitionstub-method"></a><span data-ttu-id="536e9-102">ICorDebugProcess::IsTransitionStub – metoda</span><span class="sxs-lookup"><span data-stu-id="536e9-102">ICorDebugProcess::IsTransitionStub Method</span></span>
-<span data-ttu-id="536e9-103">Získá hodnotu, která určuje, zda je adresa uvnitř se zakázaným inzerováním, které způsobí přechod do spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="536e9-103">Gets a value that indicates whether an address is inside a stub that will cause a transition to managed code.</span></span>  
+# <a name="icordebugprocessistransitionstub-method"></a><span data-ttu-id="573d8-102">ICorDebugProcess::IsTransitionStub – metoda</span><span class="sxs-lookup"><span data-stu-id="573d8-102">ICorDebugProcess::IsTransitionStub Method</span></span>
+<span data-ttu-id="573d8-103">Získá hodnotu, která určuje, zda je adresa uvnitř se zakázaným inzerováním, které způsobí přechod do spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="573d8-103">Gets a value that indicates whether an address is inside a stub that will cause a transition to managed code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="536e9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="536e9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="573d8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="573d8-104">Syntax</span></span>  
   
 ```  
 HRESULT IsTransitionStub(  
@@ -38,23 +39,23 @@ HRESULT IsTransitionStub(
     [out] BOOL *pbTransitionStub);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="536e9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="536e9-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="573d8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="573d8-105">Parameters</span></span>  
  `address`  
- <span data-ttu-id="536e9-106">[v] A `CORDB_ADDRESS` hodnotu, která určuje adresu nejistá.</span><span class="sxs-lookup"><span data-stu-id="536e9-106">[in] A `CORDB_ADDRESS` value that specifies the address in question.</span></span>  
+ <span data-ttu-id="573d8-106">[v] A `CORDB_ADDRESS` hodnotu, která určuje adresu nejistá.</span><span class="sxs-lookup"><span data-stu-id="573d8-106">[in] A `CORDB_ADDRESS` value that specifies the address in question.</span></span>  
   
  `pbTransitionStub`  
- <span data-ttu-id="536e9-107">[out] Ukazatel na logickou hodnotu, která je `true` Pokud zadaná adresa je uvnitř se zakázaným inzerováním, které způsobí přechod do spravovaného kódu; v opačném případě *`pbTransitionStub` je `false`.</span><span class="sxs-lookup"><span data-stu-id="536e9-107">[out] A pointer to a Boolean value that is `true` if the specified address is inside a stub that will cause a transition to managed code; otherwise *`pbTransitionStub` is `false`.</span></span>  
+ <span data-ttu-id="573d8-107">[out] Ukazatel na logickou hodnotu, která je `true` Pokud zadaná adresa je uvnitř se zakázaným inzerováním, které způsobí přechod do spravovaného kódu; v opačném případě *`pbTransitionStub` je `false`.</span><span class="sxs-lookup"><span data-stu-id="573d8-107">[out] A pointer to a Boolean value that is `true` if the specified address is inside a stub that will cause a transition to managed code; otherwise *`pbTransitionStub` is `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="536e9-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="536e9-108">Remarks</span></span>  
- <span data-ttu-id="536e9-109">`IsTransitionStub` Metoda lze pomocí nespravovaného kódu taktování při rozhodování, kdy se vraťte do spravovaných krokovač taktování ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="536e9-109">The `IsTransitionStub` method can be used by unmanaged stepping code to decide when to return stepping control to the managed stepper.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="573d8-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="573d8-108">Remarks</span></span>  
+ <span data-ttu-id="573d8-109">`IsTransitionStub` Metoda lze pomocí nespravovaného kódu taktování při rozhodování, kdy se vraťte do spravovaných krokovač taktování ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="573d8-109">The `IsTransitionStub` method can be used by unmanaged stepping code to decide when to return stepping control to the managed stepper.</span></span>  
   
- <span data-ttu-id="536e9-110">Můžete také zástupných procedur přechod identity prohlížením informace do přenosného spustitelného souboru (PE).</span><span class="sxs-lookup"><span data-stu-id="536e9-110">You can also identity transition stubs by looking at information in the portable executable (PE) file.</span></span>  
+ <span data-ttu-id="573d8-110">Můžete také zástupných procedur přechod identity prohlížením informace do přenosného spustitelného souboru (PE).</span><span class="sxs-lookup"><span data-stu-id="573d8-110">You can also identity transition stubs by looking at information in the portable executable (PE) file.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="536e9-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="536e9-111">Requirements</span></span>  
- <span data-ttu-id="536e9-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="536e9-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="573d8-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="573d8-111">Requirements</span></span>  
+ <span data-ttu-id="573d8-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="573d8-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="536e9-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="536e9-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="573d8-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="573d8-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="536e9-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="536e9-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="573d8-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="573d8-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="536e9-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="536e9-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="573d8-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="573d8-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

@@ -19,16 +19,17 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0f117d64673729113d917d700e3a26f9723b5a6e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3fe418b1f8a5d5a6d3c2d36184ca76d5ef9989bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="exporttypeforwarder-method"></a><span data-ttu-id="49048-102">ExportTypeForwarder – metoda</span><span class="sxs-lookup"><span data-stu-id="49048-102">ExportTypeForwarder Method</span></span>
-<span data-ttu-id="49048-103">Předávání typů přidá do tabulky typu zadaného sestavení.</span><span class="sxs-lookup"><span data-stu-id="49048-103">Adds a type forwarder to the type table of the given assembly.</span></span>  
+# <a name="exporttypeforwarder-method"></a><span data-ttu-id="ccb54-102">ExportTypeForwarder – metoda</span><span class="sxs-lookup"><span data-stu-id="ccb54-102">ExportTypeForwarder Method</span></span>
+<span data-ttu-id="ccb54-103">Předávání typů přidá do tabulky typu zadaného sestavení.</span><span class="sxs-lookup"><span data-stu-id="ccb54-103">Adds a type forwarder to the type table of the given assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="49048-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="49048-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ccb54-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ccb54-104">Syntax</span></span>  
   
 ```  
 HRESULT ExportTypeForwarder(  
@@ -39,26 +40,26 @@ HRESULT ExportTypeForwarder(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="49048-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="49048-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="ccb54-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ccb54-105">Parameters</span></span>  
  `tkAssemblyRef`  
- <span data-ttu-id="49048-106">Odkaz na sestavení, na který odkazuje typ předávání.</span><span class="sxs-lookup"><span data-stu-id="49048-106">Reference to the assembly to which the type forwarder refers.</span></span>  
+ <span data-ttu-id="ccb54-106">Odkaz na sestavení, na který odkazuje typ předávání.</span><span class="sxs-lookup"><span data-stu-id="ccb54-106">Reference to the assembly to which the type forwarder refers.</span></span>  
   
  `pszTypename`  
- <span data-ttu-id="49048-107">Úplný název typu pro export.</span><span class="sxs-lookup"><span data-stu-id="49048-107">Fully qualified type name to export.</span></span>  
+ <span data-ttu-id="ccb54-107">Úplný název typu pro export.</span><span class="sxs-lookup"><span data-stu-id="ccb54-107">Fully qualified type name to export.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="49048-108">`ComType`Flags – například `tdPublic` nebo `tdNested`.</span><span class="sxs-lookup"><span data-stu-id="49048-108">`ComType` flags such as `tdPublic` or `tdNested`.</span></span> <span data-ttu-id="49048-109">Tato hodnota může být předaný [defineexportedtype – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).</span><span class="sxs-lookup"><span data-stu-id="49048-109">This value may be passed to [DefineExportedType Method](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).</span></span>  
+ <span data-ttu-id="ccb54-108">`ComType`Flags – například `tdPublic` nebo `tdNested`.</span><span class="sxs-lookup"><span data-stu-id="ccb54-108">`ComType` flags such as `tdPublic` or `tdNested`.</span></span> <span data-ttu-id="ccb54-109">Tato hodnota může být předaný [defineexportedtype – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).</span><span class="sxs-lookup"><span data-stu-id="ccb54-109">This value may be passed to [DefineExportedType Method](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).</span></span>  
   
  `pType`  
- <span data-ttu-id="49048-110">Přijme token exportovaný typu.</span><span class="sxs-lookup"><span data-stu-id="49048-110">Receives the token of the exported type.</span></span> <span data-ttu-id="49048-111">To je nezbytné pouze pro generování vnořené typy.</span><span class="sxs-lookup"><span data-stu-id="49048-111">This is necessary only for emitting nested types.</span></span>  
+ <span data-ttu-id="ccb54-110">Přijme token exportovaný typu.</span><span class="sxs-lookup"><span data-stu-id="ccb54-110">Receives the token of the exported type.</span></span> <span data-ttu-id="ccb54-111">To je nezbytné pouze pro generování vnořené typy.</span><span class="sxs-lookup"><span data-stu-id="ccb54-111">This is necessary only for emitting nested types.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="49048-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="49048-112">Return Value</span></span>  
- <span data-ttu-id="49048-113">Vrátí S_OK, pokud metoda bude úspěšná.</span><span class="sxs-lookup"><span data-stu-id="49048-113">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ccb54-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ccb54-112">Return Value</span></span>  
+ <span data-ttu-id="ccb54-113">Vrátí S_OK, pokud metoda bude úspěšná.</span><span class="sxs-lookup"><span data-stu-id="ccb54-113">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="49048-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="49048-114">Requirements</span></span>  
- <span data-ttu-id="49048-115">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="49048-115">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ccb54-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ccb54-114">Requirements</span></span>  
+ <span data-ttu-id="ccb54-115">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="ccb54-115">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="49048-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="49048-116">See Also</span></span>  
- [<span data-ttu-id="49048-117">Ialink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="49048-117">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [<span data-ttu-id="49048-118">Ialink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="49048-118">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [<span data-ttu-id="49048-119">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="49048-119">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a><span data-ttu-id="ccb54-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="ccb54-116">See Also</span></span>  
+ [<span data-ttu-id="ccb54-117">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ccb54-117">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [<span data-ttu-id="ccb54-118">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ccb54-118">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [<span data-ttu-id="ccb54-119">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="ccb54-119">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

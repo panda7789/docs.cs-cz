@@ -21,16 +21,17 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a5a25f24fd1f09ebc1cda0442e41fde9eef059d7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3e1907fa3be4992573f84b4810f7504f3af78397
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="iassemblycacheitemcommit-method"></a><span data-ttu-id="3c8d5-102">IAssemblyCacheItem::Commit – metoda</span><span class="sxs-lookup"><span data-stu-id="3c8d5-102">IAssemblyCacheItem::Commit Method</span></span>
-<span data-ttu-id="3c8d5-103">Potvrdí odkaz na sestavení v mezipaměti paměti.</span><span class="sxs-lookup"><span data-stu-id="3c8d5-103">Commits the cached assembly reference to memory.</span></span>  
+# <a name="iassemblycacheitemcommit-method"></a><span data-ttu-id="100aa-102">IAssemblyCacheItem::Commit – metoda</span><span class="sxs-lookup"><span data-stu-id="100aa-102">IAssemblyCacheItem::Commit Method</span></span>
+<span data-ttu-id="100aa-103">Potvrdí odkaz na sestavení v mezipaměti paměti.</span><span class="sxs-lookup"><span data-stu-id="100aa-103">Commits the cached assembly reference to memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3c8d5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3c8d5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="100aa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="100aa-104">Syntax</span></span>  
   
 ```  
 HRESULT Commit (  
@@ -39,19 +40,19 @@ HRESULT Commit (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="3c8d5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3c8d5-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="100aa-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="100aa-105">Parameters</span></span>  
  `dwFlags`  
- <span data-ttu-id="3c8d5-106">[v] Příznaky definované v Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="3c8d5-106">[in] Flags defined in Fusion.idl.</span></span>  
+ <span data-ttu-id="100aa-106">[v] Příznaky definované v Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="100aa-106">[in] Flags defined in Fusion.idl.</span></span>  
   
  `pulDisposition`  
- <span data-ttu-id="3c8d5-107">[na víc systémů, volitelné] Hodnota, která určuje výsledek operace.</span><span class="sxs-lookup"><span data-stu-id="3c8d5-107">[out, optional] A value that indicates the result of the operation.</span></span>  
+ <span data-ttu-id="100aa-107">[na víc systémů, volitelné] Hodnota, která určuje výsledek operace.</span><span class="sxs-lookup"><span data-stu-id="100aa-107">[out, optional] A value that indicates the result of the operation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3c8d5-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3c8d5-108">Requirements</span></span>  
- <span data-ttu-id="3c8d5-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3c8d5-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="100aa-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="100aa-108">Requirements</span></span>  
+ <span data-ttu-id="100aa-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="100aa-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3c8d5-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="3c8d5-110">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="100aa-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="100aa-110">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="3c8d5-111">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3c8d5-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="100aa-111">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="100aa-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3c8d5-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="3c8d5-112">See Also</span></span>  
- [<span data-ttu-id="3c8d5-113">Iassemblycacheitem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3c8d5-113">IAssemblyCacheItem Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)
+## <a name="see-also"></a><span data-ttu-id="100aa-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="100aa-112">See Also</span></span>  
+ [<span data-ttu-id="100aa-113">IAssemblyCacheItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="100aa-113">IAssemblyCacheItem Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)

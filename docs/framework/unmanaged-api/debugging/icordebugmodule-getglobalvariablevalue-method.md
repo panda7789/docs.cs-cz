@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 00fb56353652e2fdeac7d7b42c030d9105cc9aca
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ad31c3108b1ec8f32640d67a511935599f99515a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugmodulegetglobalvariablevalue-method"></a><span data-ttu-id="b4585-102">ICorDebugModule::GetGlobalVariableValue – metoda</span><span class="sxs-lookup"><span data-stu-id="b4585-102">ICorDebugModule::GetGlobalVariableValue Method</span></span>
-<span data-ttu-id="b4585-103">Získá hodnotu zadaného globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="b4585-103">Gets the value of the specified global variable.</span></span>  
+# <a name="icordebugmodulegetglobalvariablevalue-method"></a><span data-ttu-id="c35f3-102">ICorDebugModule::GetGlobalVariableValue – metoda</span><span class="sxs-lookup"><span data-stu-id="c35f3-102">ICorDebugModule::GetGlobalVariableValue Method</span></span>
+<span data-ttu-id="c35f3-103">Získá hodnotu zadaného globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="c35f3-103">Gets the value of the specified global variable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b4585-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b4585-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c35f3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c35f3-104">Syntax</span></span>  
   
 ```  
 HRESULT GetGlobalVariableValue(  
@@ -39,18 +40,18 @@ HRESULT GetGlobalVariableValue(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b4585-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b4585-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c35f3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c35f3-105">Parameters</span></span>  
  `fieldDef`  
- <span data-ttu-id="b4585-106">[v] `mdFieldDef` Token, který odkazuje na metadat, která popisují globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="b4585-106">[in] An `mdFieldDef` token that references the metadata describing the global variable.</span></span>  
+ <span data-ttu-id="c35f3-106">[v] `mdFieldDef` Token, který odkazuje na metadat, která popisují globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="c35f3-106">[in] An `mdFieldDef` token that references the metadata describing the global variable.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="b4585-107">[out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu zadanou globální proměnnou.</span><span class="sxs-lookup"><span data-stu-id="b4585-107">[out] A pointer to the address of an ICorDebugValue object that represents the value of the specified global variable.</span></span>  
+ <span data-ttu-id="c35f3-107">[out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu zadanou globální proměnnou.</span><span class="sxs-lookup"><span data-stu-id="c35f3-107">[out] A pointer to the address of an ICorDebugValue object that represents the value of the specified global variable.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b4585-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b4585-108">Requirements</span></span>  
- <span data-ttu-id="b4585-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b4585-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c35f3-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c35f3-108">Requirements</span></span>  
+ <span data-ttu-id="c35f3-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c35f3-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b4585-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b4585-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c35f3-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c35f3-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b4585-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b4585-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c35f3-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c35f3-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b4585-112">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b4585-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="c35f3-112">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c35f3-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

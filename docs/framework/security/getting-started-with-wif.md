@@ -13,16 +13,17 @@ caps.latest.revision: "2"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 4e521e06920d06383f75c4dc40ec88b862112aef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 93af3c68ccb60bbef8870ea2fc3dc8d4807b3493
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="getting-started-with-wif"></a><span data-ttu-id="4ea11-102">Začínáme s WIF</span><span class="sxs-lookup"><span data-stu-id="4ea11-102">Getting Started With WIF</span></span>
--   [<span data-ttu-id="4ea11-103">Vytváření Můj první deklaracemi webové aplikace ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4ea11-103">Building My First Claims-Aware ASP.NET Web Application</span></span>](../../../docs/framework/security/building-my-first-claims-aware-aspnet-web-app.md)  
+# <a name="getting-started-with-wif"></a><span data-ttu-id="b1a5f-102">Začínáme s WIF</span><span class="sxs-lookup"><span data-stu-id="b1a5f-102">Getting Started With WIF</span></span>
+-   [<span data-ttu-id="b1a5f-103">Sestavení první webové aplikace ASP.NET pracující s deklaracemi</span><span class="sxs-lookup"><span data-stu-id="b1a5f-103">Building My First Claims-Aware ASP.NET Web Application</span></span>](../../../docs/framework/security/building-my-first-claims-aware-aspnet-web-app.md)  
   
--   [<span data-ttu-id="4ea11-104">Vytváření Můj první službu WCF používající deklarace identity</span><span class="sxs-lookup"><span data-stu-id="4ea11-104">Building My First Claims-Aware WCF Service</span></span>](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)  
+-   [<span data-ttu-id="b1a5f-104">Sestavení první služby WCF pracující s deklaracemi</span><span class="sxs-lookup"><span data-stu-id="b1a5f-104">Building My First Claims-Aware WCF Service</span></span>](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)  
   
-## <a name="see-also"></a><span data-ttu-id="4ea11-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="4ea11-105">See Also</span></span>  
- [<span data-ttu-id="4ea11-106">Technologie Windows Identity Foundation</span><span class="sxs-lookup"><span data-stu-id="4ea11-106">Windows Identity Foundation</span></span>](../../../docs/framework/security/index.md)
+## <a name="see-also"></a><span data-ttu-id="b1a5f-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="b1a5f-105">See Also</span></span>  
+ [<span data-ttu-id="b1a5f-106">Windows Identity Foundation</span><span class="sxs-lookup"><span data-stu-id="b1a5f-106">Windows Identity Foundation</span></span>](../../../docs/framework/security/index.md)

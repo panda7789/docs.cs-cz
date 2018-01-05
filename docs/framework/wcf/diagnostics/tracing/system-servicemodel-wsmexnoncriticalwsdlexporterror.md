@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 27a6564daa1f9343273f7cb88f53f1d98b6208ec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 911aa6692e5d9c33456309c690a3277565c05aab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelwsmexnoncriticalwsdlexporterror"></a><span data-ttu-id="7be76-102">System.ServiceModel.WsmexNonCriticalWsdlExportError</span><span class="sxs-lookup"><span data-stu-id="7be76-102">System.ServiceModel.WsmexNonCriticalWsdlExportError</span></span>
-<span data-ttu-id="7be76-103">System.ServiceModel.WsmexNonCriticalWsdlExportError</span><span class="sxs-lookup"><span data-stu-id="7be76-103">System.ServiceModel.WsmexNonCriticalWsdlExportError</span></span>  
+# <a name="systemservicemodelwsmexnoncriticalwsdlexporterror"></a><span data-ttu-id="3f63a-102">System.ServiceModel.WsmexNonCriticalWsdlExportError</span><span class="sxs-lookup"><span data-stu-id="3f63a-102">System.ServiceModel.WsmexNonCriticalWsdlExportError</span></span>
+<span data-ttu-id="3f63a-103">System.ServiceModel.WsmexNonCriticalWsdlExportError</span><span class="sxs-lookup"><span data-stu-id="3f63a-103">System.ServiceModel.WsmexNonCriticalWsdlExportError</span></span>  
   
-## <a name="description"></a><span data-ttu-id="7be76-104">Popis</span><span class="sxs-lookup"><span data-stu-id="7be76-104">Description</span></span>  
- <span data-ttu-id="7be76-105">Méně závažné chyby nebo upozornění při exportu WSDL došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="7be76-105">A non-critical error or warning occurred during WSDL export.</span></span>  
+## <a name="description"></a><span data-ttu-id="3f63a-104">Popis</span><span class="sxs-lookup"><span data-stu-id="3f63a-104">Description</span></span>  
+ <span data-ttu-id="3f63a-105">Méně závažné chyby nebo upozornění při exportu WSDL došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="3f63a-105">A non-critical error or warning occurred during WSDL export.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7be76-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="7be76-106">See Also</span></span>  
- [<span data-ttu-id="7be76-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="7be76-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="7be76-108">Řešení potíží s vaší aplikace pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="7be76-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="7be76-109">Správa a Diagnostika</span><span class="sxs-lookup"><span data-stu-id="7be76-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="3f63a-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="3f63a-106">See Also</span></span>  
+ [<span data-ttu-id="3f63a-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="3f63a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="3f63a-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="3f63a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="3f63a-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="3f63a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

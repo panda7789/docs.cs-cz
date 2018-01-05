@@ -21,32 +21,33 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 76c43a09b58d7e28c52bb048e33d8b79b2e206cc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 32fc5a6b32361b0d99dd10555d71873ac89cd7c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilermoduleenumreset-method"></a><span data-ttu-id="986ad-102">ICorProfilerModuleEnum::Reset – metoda</span><span class="sxs-lookup"><span data-stu-id="986ad-102">ICorProfilerModuleEnum::Reset Method</span></span>
-<span data-ttu-id="986ad-103">Přesune tento enumerátor kurzor na počáteční pozice pořadí.</span><span class="sxs-lookup"><span data-stu-id="986ad-103">Moves this enumerator's cursor to the starting position of the sequence.</span></span>  
+# <a name="icorprofilermoduleenumreset-method"></a><span data-ttu-id="51d3d-102">ICorProfilerModuleEnum::Reset – metoda</span><span class="sxs-lookup"><span data-stu-id="51d3d-102">ICorProfilerModuleEnum::Reset Method</span></span>
+<span data-ttu-id="51d3d-103">Přesune tento enumerátor kurzor na počáteční pozice pořadí.</span><span class="sxs-lookup"><span data-stu-id="51d3d-103">Moves this enumerator's cursor to the starting position of the sequence.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="986ad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="986ad-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="51d3d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="51d3d-104">Syntax</span></span>  
   
 ```  
 HRESULT Reset();  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="986ad-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="986ad-105">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="51d3d-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="51d3d-105">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="986ad-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="986ad-106">Requirements</span></span>  
- <span data-ttu-id="986ad-107">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="986ad-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="51d3d-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51d3d-106">Requirements</span></span>  
+ <span data-ttu-id="51d3d-107">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="51d3d-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="986ad-108">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="986ad-108">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="51d3d-108">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="51d3d-108">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="986ad-109">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="986ad-109">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="51d3d-109">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="51d3d-109">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="986ad-110">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="986ad-110">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="51d3d-110">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="51d3d-110">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="986ad-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="986ad-111">See Also</span></span>  
- [<span data-ttu-id="986ad-112">Icorprofilermoduleenum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="986ad-112">ICorProfilerModuleEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)  
- [<span data-ttu-id="986ad-113">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="986ad-113">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="51d3d-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="51d3d-111">See Also</span></span>  
+ [<span data-ttu-id="51d3d-112">ICorProfilerModuleEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="51d3d-112">ICorProfilerModuleEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)  
+ [<span data-ttu-id="51d3d-113">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="51d3d-113">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

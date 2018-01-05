@@ -21,16 +21,17 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8a4fff5ce5cdcde35c8483136cf4c3cd75854f6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a5467f7d500719e8849b85a57195e98c6eeb7fb3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanageddocumentfindclosestline-method"></a><span data-ttu-id="0004f-102">ISymUnmanagedDocument::FindClosestLine – metoda</span><span class="sxs-lookup"><span data-stu-id="0004f-102">ISymUnmanagedDocument::FindClosestLine Method</span></span>
-<span data-ttu-id="0004f-103">Vrátí nejbližší řádek, který je bod pořadí na základě řádku v tomto dokumentu, který může nebo nemusí být bodu sekvence.</span><span class="sxs-lookup"><span data-stu-id="0004f-103">Returns the closest line that is a sequence point, given a line in this document that may or may not be a sequence point.</span></span>  
+# <a name="isymunmanageddocumentfindclosestline-method"></a><span data-ttu-id="d2fa8-102">ISymUnmanagedDocument::FindClosestLine – metoda</span><span class="sxs-lookup"><span data-stu-id="d2fa8-102">ISymUnmanagedDocument::FindClosestLine Method</span></span>
+<span data-ttu-id="d2fa8-103">Vrátí nejbližší řádek, který je bod pořadí na základě řádku v tomto dokumentu, který může nebo nemusí být bodu sekvence.</span><span class="sxs-lookup"><span data-stu-id="d2fa8-103">Returns the closest line that is a sequence point, given a line in this document that may or may not be a sequence point.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0004f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0004f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d2fa8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d2fa8-104">Syntax</span></span>  
   
 ```  
 HRESULT FindClosestLine(  
@@ -38,15 +39,15 @@ HRESULT FindClosestLine(
     [out, retval] ULONG32*  pRetVal);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="0004f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0004f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d2fa8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d2fa8-105">Parameters</span></span>  
  `line`  
- <span data-ttu-id="0004f-106">[v] Řádek v tomto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="0004f-106">[in] A line in this document.</span></span>  
+ <span data-ttu-id="d2fa8-106">[v] Řádek v tomto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="d2fa8-106">[in] A line in this document.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="0004f-107">[out] Ukazatel na proměnnou, která přijímá řádku.</span><span class="sxs-lookup"><span data-stu-id="0004f-107">[out] A pointer to a variable that receives the line.</span></span>  
+ <span data-ttu-id="d2fa8-107">[out] Ukazatel na proměnnou, která přijímá řádku.</span><span class="sxs-lookup"><span data-stu-id="d2fa8-107">[out] A pointer to a variable that receives the line.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0004f-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0004f-108">Return Value</span></span>  
- <span data-ttu-id="0004f-109">S_OK, pokud metoda úspěšně. jinak kód chyby.</span><span class="sxs-lookup"><span data-stu-id="0004f-109">S_OK if the method succeeds; otherwise, an error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d2fa8-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d2fa8-108">Return Value</span></span>  
+ <span data-ttu-id="d2fa8-109">S_OK, pokud metoda úspěšně. jinak kód chyby.</span><span class="sxs-lookup"><span data-stu-id="d2fa8-109">S_OK if the method succeeds; otherwise, an error code.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0004f-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="0004f-110">See Also</span></span>  
- [<span data-ttu-id="0004f-111">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0004f-111">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+## <a name="see-also"></a><span data-ttu-id="d2fa8-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="d2fa8-110">See Also</span></span>  
+ [<span data-ttu-id="d2fa8-111">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d2fa8-111">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
