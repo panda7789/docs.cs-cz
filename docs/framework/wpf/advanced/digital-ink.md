@@ -17,18 +17,19 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b0c283c58f2c39087c3d08b235b9056040971330
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 395d1a8d0536445cc1bcbc33b13d40c2bfc27fc8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="digital-ink"></a><span data-ttu-id="0a64f-102">Digitální inkoust</span><span class="sxs-lookup"><span data-stu-id="0a64f-102">Digital Ink</span></span>
-<span data-ttu-id="0a64f-103">Tato část popisuje použití digitální ručně vytvořených objektů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0a64f-103">This section discusses the use of digital ink in the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="0a64f-104">Tradičně nachází pouze v sadě SDK Tablet PC, digitální rukopisu je teď dostupná v jádra Windows Presentation Foundation.</span><span class="sxs-lookup"><span data-stu-id="0a64f-104">Traditionally found only in the Tablet PC SDK, digital ink is now available in the core Windows Presentation Foundation.</span></span> <span data-ttu-id="0a64f-105">To znamená, že plnohodnotný Tablet PC aplikace teď můžete vyvíjet pomocí možnosti Windows Presentation Foundation.</span><span class="sxs-lookup"><span data-stu-id="0a64f-105">This means you can now develop full-fledged Tablet PC applications by using the power of Windows Presentation Foundation.</span></span>  
+# <a name="digital-ink"></a><span data-ttu-id="7656f-102">Digitální inkoust</span><span class="sxs-lookup"><span data-stu-id="7656f-102">Digital Ink</span></span>
+<span data-ttu-id="7656f-103">Tato část popisuje použití digitální ručně vytvořených objektů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7656f-103">This section discusses the use of digital ink in the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="7656f-104">Tradičně nachází pouze v sadě SDK Tablet PC, digitální rukopisu je teď dostupná v jádra Windows Presentation Foundation.</span><span class="sxs-lookup"><span data-stu-id="7656f-104">Traditionally found only in the Tablet PC SDK, digital ink is now available in the core Windows Presentation Foundation.</span></span> <span data-ttu-id="7656f-105">To znamená, že plnohodnotný Tablet PC aplikace teď můžete vyvíjet pomocí možnosti Windows Presentation Foundation.</span><span class="sxs-lookup"><span data-stu-id="7656f-105">This means you can now develop full-fledged Tablet PC applications by using the power of Windows Presentation Foundation.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="0a64f-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0a64f-106">In This Section</span></span>  
- [<span data-ttu-id="0a64f-107">Přehled</span><span class="sxs-lookup"><span data-stu-id="0a64f-107">Overviews</span></span>](../../../../docs/framework/wpf/advanced/digital-ink-overviews.md)  
-  [<span data-ttu-id="0a64f-108">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="0a64f-108">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/digital-ink-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="7656f-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="7656f-106">In This Section</span></span>  
+ [<span data-ttu-id="7656f-107">Přehledy</span><span class="sxs-lookup"><span data-stu-id="7656f-107">Overviews</span></span>](../../../../docs/framework/wpf/advanced/digital-ink-overviews.md)  
+  [<span data-ttu-id="7656f-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="7656f-108">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/digital-ink-how-to-topics.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="0a64f-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="0a64f-109">Related Sections</span></span>  
- [<span data-ttu-id="0a64f-110">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="0a64f-110">Windows Presentation Foundation</span></span>](../../../../docs/framework/wpf/index.md)
+## <a name="related-sections"></a><span data-ttu-id="7656f-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="7656f-109">Related Sections</span></span>  
+ [<span data-ttu-id="7656f-110">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="7656f-110">Windows Presentation Foundation</span></span>](../../../../docs/framework/wpf/index.md)

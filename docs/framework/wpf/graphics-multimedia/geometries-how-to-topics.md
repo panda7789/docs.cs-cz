@@ -15,34 +15,35 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9540de6140a9dbfdb0d7dd4ab5d9e461caec5268
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e0c75871074bc7e2bae4789a9f77525b9f09c61f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="geometries-how-to-topics"></a><span data-ttu-id="69163-102">Postupy: Geometrie</span><span class="sxs-lookup"><span data-stu-id="69163-102">Geometries How-to Topics</span></span>
-<span data-ttu-id="69163-103">Témata v této části ukazují, jak používat <xref:System.Windows.Media.Geometry> objekty ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="69163-103">The topics in this section demonstrate how to use <xref:System.Windows.Media.Geometry> objects in your applications.</span></span>  
+# <a name="geometries-how-to-topics"></a><span data-ttu-id="34738-102">Postupy: Geometrie</span><span class="sxs-lookup"><span data-stu-id="34738-102">Geometries How-to Topics</span></span>
+<span data-ttu-id="34738-103">Témata v této části ukazují, jak používat <xref:System.Windows.Media.Geometry> objekty ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="34738-103">The topics in this section demonstrate how to use <xref:System.Windows.Media.Geometry> objects in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="69163-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="69163-104">In This Section</span></span>  
- [<span data-ttu-id="69163-105">Animace Objekt EllipseGeometry</span><span class="sxs-lookup"><span data-stu-id="69163-105">Animate an EllipseGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-ellipsegeometry.md)  
- [<span data-ttu-id="69163-106">Animace velikost ArcSegment</span><span class="sxs-lookup"><span data-stu-id="69163-106">Animate the Size of an ArcSegment</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-size-of-an-arcsegment.md)  
- [<span data-ttu-id="69163-107">Ovládací prvek výplň kompozitních tvaru</span><span class="sxs-lookup"><span data-stu-id="69163-107">Control the Fill of a Composite Shape</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-the-fill-of-a-composite-shape.md)  
- [<span data-ttu-id="69163-108">Vytvoření kombinované geometrie</span><span class="sxs-lookup"><span data-stu-id="69163-108">Create a Combined Geometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-combined-geometry.md)  
- [<span data-ttu-id="69163-109">Vytváření kompozitních tvaru</span><span class="sxs-lookup"><span data-stu-id="69163-109">Create a Composite Shape</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md)  
- [<span data-ttu-id="69163-110">Vytvoření krychlový Bézierovu křivku</span><span class="sxs-lookup"><span data-stu-id="69163-110">Create a Cubic Bezier Curve</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md)  
- [<span data-ttu-id="69163-111">Vytvořte pomocí Objekt LineGeometry řádek</span><span class="sxs-lookup"><span data-stu-id="69163-111">Create a Line Using a LineGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-line-using-a-linegeometry.md)  
- [<span data-ttu-id="69163-112">Vytvořte objekt LineSegment v Objekt PathGeometry</span><span class="sxs-lookup"><span data-stu-id="69163-112">Create a LineSegment in a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)  
- [<span data-ttu-id="69163-113">Vytvoření obrazce pomocí Objekt PathGeometry</span><span class="sxs-lookup"><span data-stu-id="69163-113">Create a Shape by Using a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-by-using-a-pathgeometry.md)  
- [<span data-ttu-id="69163-114">Vytvoření pomocí StreamGeometry obrazce</span><span class="sxs-lookup"><span data-stu-id="69163-114">Create a Shape Using a StreamGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md)  
- [<span data-ttu-id="69163-115">Vytvoření kvadratické Bézierovy křivky</span><span class="sxs-lookup"><span data-stu-id="69163-115">Create a Quadratic Bezier Curve</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-quadratic-bezier-curve.md)  
- [<span data-ttu-id="69163-116">Vytvoření eliptické oblouk</span><span class="sxs-lookup"><span data-stu-id="69163-116">Create an Elliptical Arc</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md)  
- [<span data-ttu-id="69163-117">Vytvoření více dílčích cest v rámci Objekt PathGeometry</span><span class="sxs-lookup"><span data-stu-id="69163-117">Create Multiple Subpaths Within a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-multiple-subpaths-within-a-pathgeometry.md)  
- [<span data-ttu-id="69163-118">Definovat pomocí Objekt RectangleGeometry obdélníku</span><span class="sxs-lookup"><span data-stu-id="69163-118">Define a Rectangle Using a RectangleGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-rectangle-using-a-rectanglegeometry.md)  
- [<span data-ttu-id="69163-119">Zaokrouhlí rozích Objekt RectangleGeometry</span><span class="sxs-lookup"><span data-stu-id="69163-119">Round the Corners of a RectangleGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-round-the-corners-of-a-rectanglegeometry.md)  
+## <a name="in-this-section"></a><span data-ttu-id="34738-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="34738-104">In This Section</span></span>  
+ [<span data-ttu-id="34738-105">Animace EllipseGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-105">Animate an EllipseGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-ellipsegeometry.md)  
+ [<span data-ttu-id="34738-106">Animace velikosti ArcSegment</span><span class="sxs-lookup"><span data-stu-id="34738-106">Animate the Size of an ArcSegment</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-size-of-an-arcsegment.md)  
+ [<span data-ttu-id="34738-107">Řízení výplně složeného tvaru</span><span class="sxs-lookup"><span data-stu-id="34738-107">Control the Fill of a Composite Shape</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-the-fill-of-a-composite-shape.md)  
+ [<span data-ttu-id="34738-108">Vytvoření kombinované geometrie</span><span class="sxs-lookup"><span data-stu-id="34738-108">Create a Combined Geometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-combined-geometry.md)  
+ [<span data-ttu-id="34738-109">Vytvoření složeného tvaru</span><span class="sxs-lookup"><span data-stu-id="34738-109">Create a Composite Shape</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md)  
+ [<span data-ttu-id="34738-110">Vytvoření kubické Bézierovy křivky</span><span class="sxs-lookup"><span data-stu-id="34738-110">Create a Cubic Bezier Curve</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md)  
+ [<span data-ttu-id="34738-111">Vytvoření čáry pomocí LineGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-111">Create a Line Using a LineGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-line-using-a-linegeometry.md)  
+ [<span data-ttu-id="34738-112">Vytvoření LineSegment v PathGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-112">Create a LineSegment in a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)  
+ [<span data-ttu-id="34738-113">Vytvoření tvaru pomocí PathGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-113">Create a Shape by Using a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-by-using-a-pathgeometry.md)  
+ [<span data-ttu-id="34738-114">Vytvoření tvaru pomocí StreamGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-114">Create a Shape Using a StreamGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md)  
+ [<span data-ttu-id="34738-115">Vytvoření kvadratické Bézierovy křivky</span><span class="sxs-lookup"><span data-stu-id="34738-115">Create a Quadratic Bezier Curve</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-quadratic-bezier-curve.md)  
+ [<span data-ttu-id="34738-116">Vytvoření oblouku elipsy</span><span class="sxs-lookup"><span data-stu-id="34738-116">Create an Elliptical Arc</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md)  
+ [<span data-ttu-id="34738-117">Vytvoření několika dílčích cest v rámci PathGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-117">Create Multiple Subpaths Within a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-multiple-subpaths-within-a-pathgeometry.md)  
+ [<span data-ttu-id="34738-118">Definice obdélníku pomocí RectangleGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-118">Define a Rectangle Using a RectangleGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-rectangle-using-a-rectanglegeometry.md)  
+ [<span data-ttu-id="34738-119">Zaoblení rohů RectangleGeometry</span><span class="sxs-lookup"><span data-stu-id="34738-119">Round the Corners of a RectangleGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-round-the-corners-of-a-rectanglegeometry.md)  
   
-## <a name="see-also"></a><span data-ttu-id="69163-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="69163-120">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="34738-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="34738-120">See Also</span></span>  
  <xref:System.Windows.Media.Brushes>  
  <xref:System.Windows.Shapes.Shape>  
- [<span data-ttu-id="69163-121">Tvarů a základní kreslení v přehledu WPF</span><span class="sxs-lookup"><span data-stu-id="69163-121">Shapes and Basic Drawing in WPF Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [<span data-ttu-id="69163-122">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="69163-122">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ [<span data-ttu-id="34738-121">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="34738-121">Shapes and Basic Drawing in WPF Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
+ [<span data-ttu-id="34738-122">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="34738-122">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)

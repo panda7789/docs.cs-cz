@@ -17,25 +17,26 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a3619f26e8c447340e005c0d44be9018f2746f10
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4f1f042894f96cafc36944be7b18d5777e5f3c10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="treeview-how-to-topics"></a><span data-ttu-id="be86a-102">TreeView – postupy</span><span class="sxs-lookup"><span data-stu-id="be86a-102">TreeView How-to Topics</span></span>
-<span data-ttu-id="be86a-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.TreeView> ovládací prvek pro zobrazení informací v hierarchická struktura.</span><span class="sxs-lookup"><span data-stu-id="be86a-103">The topics in this section describe how to use the <xref:System.Windows.Controls.TreeView> control to display information in a hierarchical structure.</span></span>  
+# <a name="treeview-how-to-topics"></a><span data-ttu-id="863c6-102">TreeView – postupy</span><span class="sxs-lookup"><span data-stu-id="863c6-102">TreeView How-to Topics</span></span>
+<span data-ttu-id="863c6-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.TreeView> ovládací prvek pro zobrazení informací v hierarchická struktura.</span><span class="sxs-lookup"><span data-stu-id="863c6-103">The topics in this section describe how to use the <xref:System.Windows.Controls.TreeView> control to display information in a hierarchical structure.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="be86a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="be86a-104">In This Section</span></span>  
- [<span data-ttu-id="be86a-105">Vytvoření jednoduché nebo komplexní TreeViews</span><span class="sxs-lookup"><span data-stu-id="be86a-105">Create Simple or Complex TreeViews</span></span>](../../../../docs/framework/wpf/controls/how-to-create-simple-or-complex-treeviews.md)  
-  [<span data-ttu-id="be86a-106">Použít SelectedValue, SelectedValuePath a SelectedItem</span><span class="sxs-lookup"><span data-stu-id="be86a-106">Use SelectedValue, SelectedValuePath, and SelectedItem</span></span>](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)  
-  [<span data-ttu-id="be86a-107">Vazby na Data, která má Indeterminable hloubka elementu TreeView</span><span class="sxs-lookup"><span data-stu-id="be86a-107">Bind a TreeView to Data That Has an Indeterminable Depth</span></span>](../../../../docs/framework/wpf/controls/how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth.md)  
-  [<span data-ttu-id="be86a-108">Zlepšit výkon elementu TreeView</span><span class="sxs-lookup"><span data-stu-id="be86a-108">Improve the Performance of a TreeView</span></span>](../../../../docs/framework/wpf/controls/how-to-improve-the-performance-of-a-treeview.md)  
-  [<span data-ttu-id="be86a-109">Najít TreeViewItem v elementu TreeView</span><span class="sxs-lookup"><span data-stu-id="be86a-109">Find a TreeViewItem in a TreeView</span></span>](../../../../docs/framework/wpf/controls/how-to-find-a-treeviewitem-in-a-treeview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="863c6-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="863c6-104">In This Section</span></span>  
+ [<span data-ttu-id="863c6-105">Vytvoření jednoduchého nebo složitého zobrazení TreeViews</span><span class="sxs-lookup"><span data-stu-id="863c6-105">Create Simple or Complex TreeViews</span></span>](../../../../docs/framework/wpf/controls/how-to-create-simple-or-complex-treeviews.md)  
+  [<span data-ttu-id="863c6-106">Použití SelectedValue, SelectedValuePath a SelectedItem</span><span class="sxs-lookup"><span data-stu-id="863c6-106">Use SelectedValue, SelectedValuePath, and SelectedItem</span></span>](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)  
+  [<span data-ttu-id="863c6-107">Připojení TreeView k datům nezjistitelné hloubky</span><span class="sxs-lookup"><span data-stu-id="863c6-107">Bind a TreeView to Data That Has an Indeterminable Depth</span></span>](../../../../docs/framework/wpf/controls/how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth.md)  
+  [<span data-ttu-id="863c6-108">Zvýšení výkonu TreeView</span><span class="sxs-lookup"><span data-stu-id="863c6-108">Improve the Performance of a TreeView</span></span>](../../../../docs/framework/wpf/controls/how-to-improve-the-performance-of-a-treeview.md)  
+  [<span data-ttu-id="863c6-109">Hledání TreeViewItem v objektu TreeView</span><span class="sxs-lookup"><span data-stu-id="863c6-109">Find a TreeViewItem in a TreeView</span></span>](../../../../docs/framework/wpf/controls/how-to-find-a-treeviewitem-in-a-treeview.md)  
   
-## <a name="reference"></a><span data-ttu-id="be86a-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="be86a-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="863c6-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="863c6-110">Reference</span></span>  
  <xref:System.Windows.Controls.TreeView>  
   
  <xref:System.Windows.Controls.TreeViewItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="be86a-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="be86a-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="863c6-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="863c6-111">Related Sections</span></span>

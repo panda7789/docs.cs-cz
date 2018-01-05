@@ -12,17 +12,18 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d7637a9d49100d3a46ceb3c49769cacae14b5e8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e51235105e9d2cdb1cad3847fb00ad5604061564
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="pausing-and-resuming-a-workflow"></a><span data-ttu-id="5fd99-102">Pozastavení a obnovení pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="5fd99-102">Pausing and Resuming a Workflow</span></span>
-<span data-ttu-id="5fd99-103">Pracovní postupy budou pozastavení a obnovení v reakci na záložky a blokování aktivity, jako <xref:System.Activities.Statements.Delay>, ale pracovní postup může také být explicitně pozastavena, odpojeno a obnovit pomocí trvalosti.</span><span class="sxs-lookup"><span data-stu-id="5fd99-103">Workflows will pause and resume in response to bookmarks and blocking activities such as <xref:System.Activities.Statements.Delay>, but a workflow can also be explicitly paused, unloaded, and resumed by using persistence.</span></span>  
+# <a name="pausing-and-resuming-a-workflow"></a><span data-ttu-id="a7137-102">Pozastavení a obnovení pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="a7137-102">Pausing and Resuming a Workflow</span></span>
+<span data-ttu-id="a7137-103">Pracovní postupy budou pozastavení a obnovení v reakci na záložky a blokování aktivity, jako <xref:System.Activities.Statements.Delay>, ale pracovní postup může také být explicitně pozastavena, odpojeno a obnovit pomocí trvalosti.</span><span class="sxs-lookup"><span data-stu-id="a7137-103">Workflows will pause and resume in response to bookmarks and blocking activities such as <xref:System.Activities.Statements.Delay>, but a workflow can also be explicitly paused, unloaded, and resumed by using persistence.</span></span>  
   
-## <a name="pausing-a-workflow"></a><span data-ttu-id="5fd99-104">Pozastavení pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="5fd99-104">Pausing a Workflow</span></span>  
- <span data-ttu-id="5fd99-105">Chcete-li pozastavení pracovního postupu, použijte <xref:System.Activities.WorkflowApplication.Unload%2A>.</span><span class="sxs-lookup"><span data-stu-id="5fd99-105">To pause a workflow, use <xref:System.Activities.WorkflowApplication.Unload%2A>.</span></span>  <span data-ttu-id="5fd99-106">Tato metoda požadavky pracovního postupu zachovat a uvolnit a vyvolá výjimku <xref:System.TimeoutException> Pokud pracovní postup neuvolní 30 sekund.</span><span class="sxs-lookup"><span data-stu-id="5fd99-106">This method requests that the workflow persist and unload, and will throw a <xref:System.TimeoutException> if the workflow does not unload in 30 seconds.</span></span>  
+## <a name="pausing-a-workflow"></a><span data-ttu-id="a7137-104">Pozastavení pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="a7137-104">Pausing a Workflow</span></span>  
+ <span data-ttu-id="a7137-105">Chcete-li pozastavení pracovního postupu, použijte <xref:System.Activities.WorkflowApplication.Unload%2A>.</span><span class="sxs-lookup"><span data-stu-id="a7137-105">To pause a workflow, use <xref:System.Activities.WorkflowApplication.Unload%2A>.</span></span>  <span data-ttu-id="a7137-106">Tato metoda požadavky pracovního postupu zachovat a uvolnit a vyvolá výjimku <xref:System.TimeoutException> Pokud pracovní postup neuvolní 30 sekund.</span><span class="sxs-lookup"><span data-stu-id="a7137-106">This method requests that the workflow persist and unload, and will throw a <xref:System.TimeoutException> if the workflow does not unload in 30 seconds.</span></span>  
   
 ```csharp  
 try  
@@ -36,8 +37,8 @@ catch (TimeoutException e)
 }  
 ```  
   
-## <a name="resuming-a-workflow"></a><span data-ttu-id="5fd99-107">Obnovení pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="5fd99-107">Resuming a Workflow</span></span>  
- <span data-ttu-id="5fd99-108">Chcete-li obnovit dříve pozastaveno, odpojen pracovního postupu, použijte <xref:System.Activities.WorkflowApplication.Load%2A>.</span><span class="sxs-lookup"><span data-stu-id="5fd99-108">To resume a previously paused and unloaded workflow, use <xref:System.Activities.WorkflowApplication.Load%2A>.</span></span> <span data-ttu-id="5fd99-109">Tato metoda načte pracovního postupu z úložiště trvalosti do paměti.</span><span class="sxs-lookup"><span data-stu-id="5fd99-109">This method loads a workflow from a persistence store into memory.</span></span>  
+## <a name="resuming-a-workflow"></a><span data-ttu-id="a7137-107">Obnovení pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="a7137-107">Resuming a Workflow</span></span>  
+ <span data-ttu-id="a7137-108">Chcete-li obnovit dříve pozastaveno, odpojen pracovního postupu, použijte <xref:System.Activities.WorkflowApplication.Load%2A>.</span><span class="sxs-lookup"><span data-stu-id="a7137-108">To resume a previously paused and unloaded workflow, use <xref:System.Activities.WorkflowApplication.Load%2A>.</span></span> <span data-ttu-id="a7137-109">Tato metoda načte pracovního postupu z úložiště trvalosti do paměti.</span><span class="sxs-lookup"><span data-stu-id="a7137-109">This method loads a workflow from a persistence store into memory.</span></span>  
   
 ```csharp  
 WorkflowApplication application = new WorkflowApplication(activity);  
@@ -45,8 +46,8 @@ application.InstanceStore = instanceStore;
 application.Load(id);  
 ```  
   
-## <a name="example"></a><span data-ttu-id="5fd99-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="5fd99-110">Example</span></span>  
- <span data-ttu-id="5fd99-111">Následující příklad kódu ukazuje, jak pozastavení a obnovení pracovního postupu pomocí trvalosti.</span><span class="sxs-lookup"><span data-stu-id="5fd99-111">The following code sample demonstrates how to pause and resume a workflow by using persistence.</span></span>  
+## <a name="example"></a><span data-ttu-id="a7137-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="a7137-110">Example</span></span>  
+ <span data-ttu-id="a7137-111">Následující příklad kódu ukazuje, jak pozastavení a obnovení pracovního postupu pomocí trvalosti.</span><span class="sxs-lookup"><span data-stu-id="a7137-111">The following code sample demonstrates how to pause and resume a workflow by using persistence.</span></span>  
   
 ```csharp  
 static string bkName = "bkName";  

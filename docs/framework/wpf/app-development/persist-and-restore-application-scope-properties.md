@@ -23,17 +23,18 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6a7a2d3f2ee1be613cf10efe913b21d4b04912c9
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 815efbe0a4adcacddeb4c1a70cc3c1fef21fed05
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-persist-and-restore-application-scope-properties-across-application-sessions"></a><span data-ttu-id="09794-102">Postupy: Zachování a obnovení vlastností v rozsahu aplikace mezi jednotlivými relacemi aplikace</span><span class="sxs-lookup"><span data-stu-id="09794-102">How to: Persist and Restore Application-Scope Properties Across Application Sessions</span></span>
-<span data-ttu-id="09794-103">Tento příklad ukazuje, jak se zachovat vlastnosti oboru aplikace při vypnutí aplikace a jak obnovit vlastnosti oboru aplikace po další aplikace spustit.</span><span class="sxs-lookup"><span data-stu-id="09794-103">This example shows how to persist application-scope properties when an application shuts down, and how to restore application-scope properties when an application is next launch.</span></span>  
+# <a name="how-to-persist-and-restore-application-scope-properties-across-application-sessions"></a><span data-ttu-id="b28b5-102">Postupy: Zachování a obnovení vlastností v rozsahu aplikace mezi jednotlivými relacemi aplikace</span><span class="sxs-lookup"><span data-stu-id="b28b5-102">How to: Persist and Restore Application-Scope Properties Across Application Sessions</span></span>
+<span data-ttu-id="b28b5-103">Tento příklad ukazuje, jak se zachovat vlastnosti oboru aplikace při vypnutí aplikace a jak obnovit vlastnosti oboru aplikace po další aplikace spustit.</span><span class="sxs-lookup"><span data-stu-id="b28b5-103">This example shows how to persist application-scope properties when an application shuts down, and how to restore application-scope properties when an application is next launch.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="09794-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="09794-104">Example</span></span>  
- <span data-ttu-id="09794-105">Aplikace ukládá vlastnosti oboru aplikace k a obnoví je z izolovaného úložiště.</span><span class="sxs-lookup"><span data-stu-id="09794-105">The application persists application-scope properties to, and restores them from, isolated storage.</span></span> <span data-ttu-id="09794-106">Izolované úložiště je chráněný úložiště, které můžete použít bezpečně aplikací bez oprávnění k souboru.</span><span class="sxs-lookup"><span data-stu-id="09794-106">Isolated storage is a protected storage area that can safely be used by applications without file access permission.</span></span>  
+## <a name="example"></a><span data-ttu-id="b28b5-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="b28b5-104">Example</span></span>  
+ <span data-ttu-id="b28b5-105">Aplikace ukládá vlastnosti oboru aplikace k a obnoví je z izolovaného úložiště.</span><span class="sxs-lookup"><span data-stu-id="b28b5-105">The application persists application-scope properties to, and restores them from, isolated storage.</span></span> <span data-ttu-id="b28b5-106">Izolované úložiště je chráněný úložiště, které můžete použít bezpečně aplikací bez oprávnění k souboru.</span><span class="sxs-lookup"><span data-stu-id="b28b5-106">Isolated storage is a protected storage area that can safely be used by applications without file access permission.</span></span>  
   
  [!code-xaml[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesXAML1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#persistrestoreappscopepropertiesxaml1)]  
 [!code-xaml[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesXAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#persistrestoreappscopepropertiesxaml2)]  

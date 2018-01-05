@@ -17,29 +17,30 @@ caps.latest.revision: "76"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1dbec8435c82e795d48544a366eeced2419f6d8c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 301532e640273073a884d62d24363557b4ce1e04
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="input-and-commands-how-to-topics"></a><span data-ttu-id="df5a0-102">Postupy: Témata vstupu a příkazů</span><span class="sxs-lookup"><span data-stu-id="df5a0-102">Input and Commands How-to Topics</span></span>
-<span data-ttu-id="df5a0-103">Témata v této části popisují, jak používat vstupní a řídicího infrastruktury v [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="df5a0-103">The topics in this section describe how to use the input and commanding infrastructure in [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].</span></span>  
+# <a name="input-and-commands-how-to-topics"></a><span data-ttu-id="bae8b-102">Postupy: Témata vstupu a příkazů</span><span class="sxs-lookup"><span data-stu-id="bae8b-102">Input and Commands How-to Topics</span></span>
+<span data-ttu-id="bae8b-103">Témata v této části popisují, jak používat vstupní a řídicího infrastruktury v [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="bae8b-103">The topics in this section describe how to use the input and commanding infrastructure in [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="df5a0-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="df5a0-104">In This Section</span></span>  
- [<span data-ttu-id="df5a0-105">Povolit příkaz</span><span class="sxs-lookup"><span data-stu-id="df5a0-105">Enable a Command</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)  
- [<span data-ttu-id="df5a0-106">Změnit typ kurzoru</span><span class="sxs-lookup"><span data-stu-id="df5a0-106">Change the Cursor Type</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-cursor-type.md)  
- [<span data-ttu-id="df5a0-107">Změnit barvu elementu s použitím fokus události</span><span class="sxs-lookup"><span data-stu-id="df5a0-107">Change the Color of an Element Using Focus Events</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-color-of-an-element-using-focus-events.md)  
- [<span data-ttu-id="df5a0-108">Použít FocusVisualStyle do ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="df5a0-108">Apply a FocusVisualStyle to a Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-apply-a-focusvisualstyle-to-a-control.md)  
- [<span data-ttu-id="df5a0-109">Zjistit, že když zadejte není stisknuta klávesa</span><span class="sxs-lookup"><span data-stu-id="df5a0-109">Detect When the Enter Key is Pressed</span></span>](../../../../docs/framework/wpf/advanced/how-to-detect-when-the-enter-key-pressed.md)  
- [<span data-ttu-id="df5a0-110">Vytvoření efektu výměny pomocí událostí</span><span class="sxs-lookup"><span data-stu-id="df5a0-110">Create a Rollover Effect Using Events</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-rollover-effect-using-events.md)  
- [<span data-ttu-id="df5a0-111">Zkontrolujte objekt sledování ukazatele myši</span><span class="sxs-lookup"><span data-stu-id="df5a0-111">Make an Object Follow the Mouse Pointer</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-an-object-follow-the-mouse-pointer.md)  
- [<span data-ttu-id="df5a0-112">Vytvoření RoutedCommand</span><span class="sxs-lookup"><span data-stu-id="df5a0-112">Create a RoutedCommand</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-routedcommand.md)  
- [<span data-ttu-id="df5a0-113">Implementace ICommandSource</span><span class="sxs-lookup"><span data-stu-id="df5a0-113">Implement ICommandSource</span></span>](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
- [<span data-ttu-id="df5a0-114">Propojte příkaz do ovládacího prvku bez podpory příkaz</span><span class="sxs-lookup"><span data-stu-id="df5a0-114">Hook Up a Command to a Control with No Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
- [<span data-ttu-id="df5a0-115">Propojte příkaz do ovládacího prvku s podporou příkaz</span><span class="sxs-lookup"><span data-stu-id="df5a0-115">Hook Up a Command to a Control with Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)  
+## <a name="in-this-section"></a><span data-ttu-id="bae8b-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="bae8b-104">In This Section</span></span>  
+ [<span data-ttu-id="bae8b-105">Povolení příkazu</span><span class="sxs-lookup"><span data-stu-id="bae8b-105">Enable a Command</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)  
+ [<span data-ttu-id="bae8b-106">Změna typu kurzoru</span><span class="sxs-lookup"><span data-stu-id="bae8b-106">Change the Cursor Type</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-cursor-type.md)  
+ [<span data-ttu-id="bae8b-107">Změna barvy elementu použitím událostí fokusu</span><span class="sxs-lookup"><span data-stu-id="bae8b-107">Change the Color of an Element Using Focus Events</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-color-of-an-element-using-focus-events.md)  
+ [<span data-ttu-id="bae8b-108">Použití FocusVisualStyle na ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="bae8b-108">Apply a FocusVisualStyle to a Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-apply-a-focusvisualstyle-to-a-control.md)  
+ [<span data-ttu-id="bae8b-109">Detekce stisknuté klávesy Enter</span><span class="sxs-lookup"><span data-stu-id="bae8b-109">Detect When the Enter Key is Pressed</span></span>](../../../../docs/framework/wpf/advanced/how-to-detect-when-the-enter-key-pressed.md)  
+ [<span data-ttu-id="bae8b-110">Vytvoření efektu přechodu použitím událostí</span><span class="sxs-lookup"><span data-stu-id="bae8b-110">Create a Rollover Effect Using Events</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-rollover-effect-using-events.md)  
+ [<span data-ttu-id="bae8b-111">Nastavení objektu tak, aby následoval ukazatel myši</span><span class="sxs-lookup"><span data-stu-id="bae8b-111">Make an Object Follow the Mouse Pointer</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-an-object-follow-the-mouse-pointer.md)  
+ [<span data-ttu-id="bae8b-112">Vytvoření objektu RoutedCommand</span><span class="sxs-lookup"><span data-stu-id="bae8b-112">Create a RoutedCommand</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-routedcommand.md)  
+ [<span data-ttu-id="bae8b-113">Implementace rozhraní ICommandSource</span><span class="sxs-lookup"><span data-stu-id="bae8b-113">Implement ICommandSource</span></span>](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
+ [<span data-ttu-id="bae8b-114">Propojení příkazu s ovládacím prvkem bez podpory příkazů</span><span class="sxs-lookup"><span data-stu-id="bae8b-114">Hook Up a Command to a Control with No Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
+ [<span data-ttu-id="bae8b-115">Propojení příkazu s ovládacím prvkem s podporou příkazů</span><span class="sxs-lookup"><span data-stu-id="bae8b-115">Hook Up a Command to a Control with Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)  
   
-## <a name="reference"></a><span data-ttu-id="df5a0-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="df5a0-116">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="bae8b-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="bae8b-116">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  
@@ -54,4 +55,4 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.Input.FocusManager>  
   
-## <a name="related-sections"></a><span data-ttu-id="df5a0-117">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="df5a0-117">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="bae8b-117">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="bae8b-117">Related Sections</span></span>

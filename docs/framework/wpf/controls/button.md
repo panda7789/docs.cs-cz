@@ -17,21 +17,22 @@ caps.latest.revision: "80"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 551813a2e5209d1c0ed9fdd124586f98508a0f42
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 65243113b0d186d6f391b2e39d776141ffa9922f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="button"></a><span data-ttu-id="5e1e5-102">Tlačítko</span><span class="sxs-lookup"><span data-stu-id="5e1e5-102">Button</span></span>
-<span data-ttu-id="5e1e5-103">A <xref:System.Windows.Controls.Button> řízení reaguje na uživatelský vstup z myši, klávesnice, pera, nebo jiné vstupní zařízení a vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.</span><span class="sxs-lookup"><span data-stu-id="5e1e5-103">A <xref:System.Windows.Controls.Button> control reacts to user input from a mouse, keyboard, stylus, or other input device and raises a <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event.</span></span> <span data-ttu-id="5e1e5-104">A <xref:System.Windows.Controls.Button> je základní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] komponenty, která může obsahovat jednoduchý obsah, jako je text a může také obsahovat komplexní obsah, například bitové kopie a <xref:System.Windows.Controls.Panel> ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="5e1e5-104">A <xref:System.Windows.Controls.Button> is a basic [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] component that can contain simple content, such as text, and can also contain complex content, such as images and <xref:System.Windows.Controls.Panel> controls.</span></span>  
+# <a name="button"></a><span data-ttu-id="96ae5-102">Tlačítko</span><span class="sxs-lookup"><span data-stu-id="96ae5-102">Button</span></span>
+<span data-ttu-id="96ae5-103">A <xref:System.Windows.Controls.Button> řízení reaguje na uživatelský vstup z myši, klávesnice, pera, nebo jiné vstupní zařízení a vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.</span><span class="sxs-lookup"><span data-stu-id="96ae5-103">A <xref:System.Windows.Controls.Button> control reacts to user input from a mouse, keyboard, stylus, or other input device and raises a <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event.</span></span> <span data-ttu-id="96ae5-104">A <xref:System.Windows.Controls.Button> je základní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] komponenty, která může obsahovat jednoduchý obsah, jako je text a může také obsahovat komplexní obsah, například bitové kopie a <xref:System.Windows.Controls.Panel> ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="96ae5-104">A <xref:System.Windows.Controls.Button> is a basic [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] component that can contain simple content, such as text, and can also contain complex content, such as images and <xref:System.Windows.Controls.Panel> controls.</span></span>  
   
- <span data-ttu-id="5e1e5-105">![Tlačítko stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-buttons.bmp "SS_CTL_buttons")</span><span class="sxs-lookup"><span data-stu-id="5e1e5-105">![Button states](../../../../docs/framework/wpf/controls/media/ss-ctl-buttons.bmp "SS_CTL_buttons")</span></span>  
+ <span data-ttu-id="96ae5-105">![Tlačítko stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-buttons.bmp "SS_CTL_buttons")</span><span class="sxs-lookup"><span data-stu-id="96ae5-105">![Button states](../../../../docs/framework/wpf/controls/media/ss-ctl-buttons.bmp "SS_CTL_buttons")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5e1e5-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5e1e5-106">In This Section</span></span>  
- [<span data-ttu-id="5e1e5-107">Vytvoření tlačítka, které má obrázek</span><span class="sxs-lookup"><span data-stu-id="5e1e5-107">Create a Button That Has an Image</span></span>](../../../../docs/framework/wpf/controls/how-to-create-a-button-that-has-an-image.md)  
+## <a name="in-this-section"></a><span data-ttu-id="96ae5-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="96ae5-106">In This Section</span></span>  
+ [<span data-ttu-id="96ae5-107">Vytvoření tlačítka s obrázkem</span><span class="sxs-lookup"><span data-stu-id="96ae5-107">Create a Button That Has an Image</span></span>](../../../../docs/framework/wpf/controls/how-to-create-a-button-that-has-an-image.md)  
   
-## <a name="reference"></a><span data-ttu-id="5e1e5-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="5e1e5-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="96ae5-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="96ae5-108">Reference</span></span>  
  <xref:System.Windows.Controls.Button>  
  <xref:System.Windows.Controls.Primitives.ButtonBase>  
  <xref:System.Windows.Controls.RadioButton>  

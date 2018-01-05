@@ -13,17 +13,18 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aefe0bc0e0be17c2585499e4c943b43672907dfc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e360bed1cbdd11920d983c08cd7f3955b7432a96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="datacontractresolver"></a><span data-ttu-id="393e9-102">DataContractResolver</span><span class="sxs-lookup"><span data-stu-id="393e9-102">DataContractResolver</span></span>
-<span data-ttu-id="393e9-103">Tento příklad ukazuje, jak lze přizpůsobit procesy serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy.</span><span class="sxs-lookup"><span data-stu-id="393e9-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="393e9-104">Tento příklad ukazuje způsob použití DataContractResolver pro mapování typů CLR do a z reprezentaci xsi: type během serializace a deserializace.</span><span class="sxs-lookup"><span data-stu-id="393e9-104">This sample shows how to use a DataContractResolver to map CLR types to and from an xsi:type representation during serialization and deserialization.</span></span>  
+# <a name="datacontractresolver"></a><span data-ttu-id="a8247-102">DataContractResolver</span><span class="sxs-lookup"><span data-stu-id="a8247-102">DataContractResolver</span></span>
+<span data-ttu-id="a8247-103">Tento příklad ukazuje, jak lze přizpůsobit procesy serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy.</span><span class="sxs-lookup"><span data-stu-id="a8247-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="a8247-104">Tento příklad ukazuje způsob použití DataContractResolver pro mapování typů CLR do a z reprezentaci xsi: type během serializace a deserializace.</span><span class="sxs-lookup"><span data-stu-id="a8247-104">This sample shows how to use a DataContractResolver to map CLR types to and from an xsi:type representation during serialization and deserialization.</span></span>  
   
-## <a name="sample-details"></a><span data-ttu-id="393e9-105">Ukázka podrobnosti</span><span class="sxs-lookup"><span data-stu-id="393e9-105">Sample Details</span></span>  
- <span data-ttu-id="393e9-106">Ukázka definuje následující typy CLR.</span><span class="sxs-lookup"><span data-stu-id="393e9-106">The sample defines the following CLR types.</span></span>  
+## <a name="sample-details"></a><span data-ttu-id="a8247-105">Ukázka podrobnosti</span><span class="sxs-lookup"><span data-stu-id="a8247-105">Sample Details</span></span>  
+ <span data-ttu-id="a8247-106">Ukázka definuje následující typy CLR.</span><span class="sxs-lookup"><span data-stu-id="a8247-106">The sample defines the following CLR types.</span></span>  
   
 ```csharp  
 using System;  
@@ -57,13 +58,13 @@ namespace Types
 }  
 ```  
   
- <span data-ttu-id="393e9-107">Ukázka načte sestavení, extrahuje každý z těchto typů a poté serializuje a deserializuje je.</span><span class="sxs-lookup"><span data-stu-id="393e9-107">The sample loads the assembly, extracts each of these types, and then serializes and deserializes them.</span></span> <span data-ttu-id="393e9-108"><xref:System.Runtime.Serialization.DataContractResolver> Je připojeno do procesu serializace předáním instance <xref:System.Runtime.Serialization.DataContractResolver>-odvozené třídy <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="393e9-108">The <xref:System.Runtime.Serialization.DataContractResolver> is plugged into the serialization process by passing an instance of the <xref:System.Runtime.Serialization.DataContractResolver>-derived class to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, as shown in the following example.</span></span>  
+ <span data-ttu-id="a8247-107">Ukázka načte sestavení, extrahuje každý z těchto typů a poté serializuje a deserializuje je.</span><span class="sxs-lookup"><span data-stu-id="a8247-107">The sample loads the assembly, extracts each of these types, and then serializes and deserializes them.</span></span> <span data-ttu-id="a8247-108"><xref:System.Runtime.Serialization.DataContractResolver> Je připojeno do procesu serializace předáním instance <xref:System.Runtime.Serialization.DataContractResolver>-odvozené třídy <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a8247-108">The <xref:System.Runtime.Serialization.DataContractResolver> is plugged into the serialization process by passing an instance of the <xref:System.Runtime.Serialization.DataContractResolver>-derived class to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, as shown in the following example.</span></span>  
   
 ```csharp  
 this.serializer = new DataContractSerializer(typeof(Object), null, int.MaxValue, false, true, null, new MyDataContractResolver(assembly));  
 ```  
   
- <span data-ttu-id="393e9-109">Ukázka poté Serializuje typy CLR, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="393e9-109">The sample then serializes the CLR types as shown in the following code example.</span></span>  
+ <span data-ttu-id="a8247-109">Ukázka poté Serializuje typy CLR, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="a8247-109">The sample then serializes the CLR types as shown in the following code example.</span></span>  
   
 ```csharp  
 Assembly assembly = Assembly.Load(new AssemblyName("Types"));  
@@ -92,7 +93,7 @@ public void serialize(Type type)
 }  
 ```  
   
- <span data-ttu-id="393e9-110">Ukázka pak deserializuje xsi:types, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="393e9-110">The sample then deserializes the xsi:types as shown in the following code example.</span></span>  
+ <span data-ttu-id="a8247-110">Ukázka pak deserializuje xsi:types, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="a8247-110">The sample then deserializes the xsi:types as shown in the following code example.</span></span>  
   
 ```csharp  
 public void deserialize(Type type)  
@@ -107,9 +108,9 @@ public void deserialize(Type type)
 }  
 ```  
   
- <span data-ttu-id="393e9-111">Od vlastní <xref:System.Runtime.Serialization.DataContractResolver> je předán <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> je volána v průběhu serializace pro mapování typu CLR na ekvivalentní `xsi:type`.</span><span class="sxs-lookup"><span data-stu-id="393e9-111">Since the custom <xref:System.Runtime.Serialization.DataContractResolver> is passed in to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, the <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> is called during serialization to map a CLR type to an equivalent `xsi:type`.</span></span> <span data-ttu-id="393e9-112">Podobně jako <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> volá se během deserializace pro mapování `xsi:type` ekvivalentní typ CLR.</span><span class="sxs-lookup"><span data-stu-id="393e9-112">Similarly the <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> is called during deserialization to map the `xsi:type` to an equivalent CLR type.</span></span> <span data-ttu-id="393e9-113">V této ukázce <xref:System.Runtime.Serialization.DataContractResolver> je definovaný jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="393e9-113">In this sample, the <xref:System.Runtime.Serialization.DataContractResolver> is defined as shown in the following example.</span></span>  
+ <span data-ttu-id="a8247-111">Od vlastní <xref:System.Runtime.Serialization.DataContractResolver> je předán <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> je volána v průběhu serializace pro mapování typu CLR na ekvivalentní `xsi:type`.</span><span class="sxs-lookup"><span data-stu-id="a8247-111">Since the custom <xref:System.Runtime.Serialization.DataContractResolver> is passed in to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, the <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> is called during serialization to map a CLR type to an equivalent `xsi:type`.</span></span> <span data-ttu-id="a8247-112">Podobně jako <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> volá se během deserializace pro mapování `xsi:type` ekvivalentní typ CLR.</span><span class="sxs-lookup"><span data-stu-id="a8247-112">Similarly the <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> is called during deserialization to map the `xsi:type` to an equivalent CLR type.</span></span> <span data-ttu-id="a8247-113">V této ukázce <xref:System.Runtime.Serialization.DataContractResolver> je definovaný jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a8247-113">In this sample, the <xref:System.Runtime.Serialization.DataContractResolver> is defined as shown in the following example.</span></span>  
   
- <span data-ttu-id="393e9-114">Následující příklad kódu je třída odvozování z <xref:System.Runtime.Serialization.DataContractResolver>.</span><span class="sxs-lookup"><span data-stu-id="393e9-114">The following code example is a class deriving from <xref:System.Runtime.Serialization.DataContractResolver>.</span></span>  
+ <span data-ttu-id="a8247-114">Následující příklad kódu je třída odvozování z <xref:System.Runtime.Serialization.DataContractResolver>.</span><span class="sxs-lookup"><span data-stu-id="a8247-114">The following code example is a class deriving from <xref:System.Runtime.Serialization.DataContractResolver>.</span></span>  
   
 ```  
 class MyDataContractResolver : DataContractResolver  
@@ -158,22 +159,22 @@ class MyDataContractResolver : DataContractResolver
 }  
 ```  
   
- <span data-ttu-id="393e9-115">Typy projektu jako součást ukázku, generuje sestavení s všechny typy, které se používají v této ukázce.</span><span class="sxs-lookup"><span data-stu-id="393e9-115">As part of the sample, the Types project generates the assembly with all the types that are used in this sample.</span></span> <span data-ttu-id="393e9-116">Pomocí tohoto projektu přidat, odebrat nebo změnit typy, které budou serializovány.</span><span class="sxs-lookup"><span data-stu-id="393e9-116">Use this project to add, remove or modify the types that will be serialized.</span></span>  
+ <span data-ttu-id="a8247-115">Typy projektu jako součást ukázku, generuje sestavení s všechny typy, které se používají v této ukázce.</span><span class="sxs-lookup"><span data-stu-id="a8247-115">As part of the sample, the Types project generates the assembly with all the types that are used in this sample.</span></span> <span data-ttu-id="a8247-116">Pomocí tohoto projektu přidat, odebrat nebo změnit typy, které budou serializovány.</span><span class="sxs-lookup"><span data-stu-id="a8247-116">Use this project to add, remove or modify the types that will be serialized.</span></span>  
   
-#### <a name="to-use-this-sample"></a><span data-ttu-id="393e9-117">Pro fungování této ukázky</span><span class="sxs-lookup"><span data-stu-id="393e9-117">To use this sample</span></span>  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="a8247-117">Pro fungování této ukázky</span><span class="sxs-lookup"><span data-stu-id="a8247-117">To use this sample</span></span>  
   
-1.  <span data-ttu-id="393e9-118">Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete soubor řešení DCRSample.sln.</span><span class="sxs-lookup"><span data-stu-id="393e9-118">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the DCRSample.sln solution file.</span></span>  
+1.  <span data-ttu-id="a8247-118">Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete soubor řešení DCRSample.sln.</span><span class="sxs-lookup"><span data-stu-id="a8247-118">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the DCRSample.sln solution file.</span></span>  
   
-2.  <span data-ttu-id="393e9-119">Pokud chcete spustit řešení, stisknutím klávesy F5</span><span class="sxs-lookup"><span data-stu-id="393e9-119">To run the solution, press F5</span></span>  
+2.  <span data-ttu-id="a8247-119">Pokud chcete spustit řešení, stisknutím klávesy F5</span><span class="sxs-lookup"><span data-stu-id="a8247-119">To run the solution, press F5</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="393e9-120">Ukázky může být již nainstalována na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="393e9-120">The samples may already be installed on your machine.</span></span> <span data-ttu-id="393e9-121">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="393e9-121">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="a8247-120">Ukázky může být již nainstalována na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="a8247-120">The samples may already be installed on your machine.</span></span> <span data-ttu-id="a8247-121">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="a8247-121">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="393e9-122">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="393e9-122">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="393e9-123">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="393e9-123">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="a8247-122">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="a8247-122">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="a8247-123">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="a8247-123">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractResolver`  
   
-## <a name="see-also"></a><span data-ttu-id="393e9-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="393e9-124">See Also</span></span>  
- [<span data-ttu-id="393e9-125">Použití překladače kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="393e9-125">Using a Data Contract Resolver</span></span>](../../../../docs/framework/wcf/feature-details/using-a-data-contract-resolver.md)
+## <a name="see-also"></a><span data-ttu-id="a8247-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="a8247-124">See Also</span></span>  
+ [<span data-ttu-id="a8247-125">Použití překladače kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="a8247-125">Using a Data Contract Resolver</span></span>](../../../../docs/framework/wcf/feature-details/using-a-data-contract-resolver.md)

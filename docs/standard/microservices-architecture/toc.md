@@ -41,6 +41,7 @@
 ### [Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí](multi-container-microservice-net-applications/rabbitmq-event-bus-development-test-environment.md)
 ### [Přihlášení k odběru událostí](multi-container-microservice-net-applications/subscribe-events.md)
 ### [Testování služeb a webových aplikací ASP.NET Core](multi-container-microservice-net-applications/test-aspnet-core-services-web-apps.md)
+### [Implementace úloh na pozadí v rámci mikroslužeb pomocí rozhraní IHostedService](multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md)
 ## [Zvládnutí firemní složitosti v mikroslužbě pomocí vzorů DDD a CQRS](microservice-ddd-cqrs-patterns/index.md)
 ### [Použití zjednodušených vzorů CQRS a DDD v mikroslužbě](microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns.md)
 ### [Použití přístupu CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers](microservice-ddd-cqrs-patterns/eshoponcontainers-cqrs-ddd-microservice.md)

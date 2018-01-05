@@ -18,24 +18,25 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e5098672b52f54ac618731a7007758a5dd516379
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0a917a74650893aa7e8a4a10758aab48e164b822
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="contextmenu"></a><span data-ttu-id="c110f-102">ContextMenu</span><span class="sxs-lookup"><span data-stu-id="c110f-102">ContextMenu</span></span>
-<span data-ttu-id="c110f-103"><xref:System.Windows.Controls.ContextMenu> Umožňuje ovládacího prvku k zobrazení <xref:System.Windows.Controls.Menu> týkající se kontextu ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c110f-103">The <xref:System.Windows.Controls.ContextMenu> allows a control to display a <xref:System.Windows.Controls.Menu> that is specific to the context of the control.</span></span> <span data-ttu-id="c110f-104">Obvykle <xref:System.Windows.Controls.ContextMenu> je zpřístupněná [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] prostřednictvím pravým tlačítkem myši nebo nabídky tlačítka na klávesnici.</span><span class="sxs-lookup"><span data-stu-id="c110f-104">Typically, the <xref:System.Windows.Controls.ContextMenu> is exposed in the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] through the right mouse button or through the keyboard’s menu button.</span></span>  
+# <a name="contextmenu"></a><span data-ttu-id="2711d-102">ContextMenu</span><span class="sxs-lookup"><span data-stu-id="2711d-102">ContextMenu</span></span>
+<span data-ttu-id="2711d-103"><xref:System.Windows.Controls.ContextMenu> Umožňuje ovládacího prvku k zobrazení <xref:System.Windows.Controls.Menu> týkající se kontextu ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="2711d-103">The <xref:System.Windows.Controls.ContextMenu> allows a control to display a <xref:System.Windows.Controls.Menu> that is specific to the context of the control.</span></span> <span data-ttu-id="2711d-104">Obvykle <xref:System.Windows.Controls.ContextMenu> je zpřístupněná [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] prostřednictvím pravým tlačítkem myši nebo nabídky tlačítka na klávesnici.</span><span class="sxs-lookup"><span data-stu-id="2711d-104">Typically, the <xref:System.Windows.Controls.ContextMenu> is exposed in the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] through the right mouse button or through the keyboard’s menu button.</span></span>  
   
- <span data-ttu-id="c110f-105">Následující obrázek ukazuje <xref:System.Windows.Controls.ContextMenu> ve dvou různých stavů: výchozí stav a otevřeném stavu.</span><span class="sxs-lookup"><span data-stu-id="c110f-105">The following figure illustrates a <xref:System.Windows.Controls.ContextMenu> in two different states: the default state and the open state.</span></span> <span data-ttu-id="c110f-106">Ve výchozím stavu sbalena ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c110f-106">In the default state, the control is collapsed.</span></span> <span data-ttu-id="c110f-107">Při stisknutí tlačítka pravého tlačítka myši nad nadřazeného v nabídce, ovládacího prvku se rozbalí a zobrazí položky nabídky.</span><span class="sxs-lookup"><span data-stu-id="c110f-107">When the right mouse button is pressed over the parent of the menu, the control expands and displays the menu items.</span></span>  
+ <span data-ttu-id="2711d-105">Následující obrázek ukazuje <xref:System.Windows.Controls.ContextMenu> ve dvou různých stavů: výchozí stav a otevřeném stavu.</span><span class="sxs-lookup"><span data-stu-id="2711d-105">The following figure illustrates a <xref:System.Windows.Controls.ContextMenu> in two different states: the default state and the open state.</span></span> <span data-ttu-id="2711d-106">Ve výchozím stavu sbalena ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="2711d-106">In the default state, the control is collapsed.</span></span> <span data-ttu-id="2711d-107">Při stisknutí tlačítka pravého tlačítka myši nad nadřazeného v nabídce, ovládacího prvku se rozbalí a zobrazí položky nabídky.</span><span class="sxs-lookup"><span data-stu-id="2711d-107">When the right mouse button is pressed over the parent of the menu, the control expands and displays the menu items.</span></span>  
   
- <span data-ttu-id="c110f-108">![ContextMenu – stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-contextmenu.png "SS_CTL_contextmenu")</span><span class="sxs-lookup"><span data-stu-id="c110f-108">![ContextMenu states](../../../../docs/framework/wpf/controls/media/ss-ctl-contextmenu.png "SS_CTL_contextmenu")</span></span>  
-<span data-ttu-id="c110f-109">ContextMenu – v různých stavů</span><span class="sxs-lookup"><span data-stu-id="c110f-109">ContextMenu in different states</span></span>  
+ <span data-ttu-id="2711d-108">![ContextMenu – stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-contextmenu.png "SS_CTL_contextmenu")</span><span class="sxs-lookup"><span data-stu-id="2711d-108">![ContextMenu states](../../../../docs/framework/wpf/controls/media/ss-ctl-contextmenu.png "SS_CTL_contextmenu")</span></span>  
+<span data-ttu-id="2711d-109">ContextMenu – v různých stavů</span><span class="sxs-lookup"><span data-stu-id="2711d-109">ContextMenu in different states</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="c110f-110">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c110f-110">In This Section</span></span>  
- [<span data-ttu-id="c110f-111">ContextMenu – přehled</span><span class="sxs-lookup"><span data-stu-id="c110f-111">ContextMenu Overview</span></span>](../../../../docs/framework/wpf/controls/contextmenu-overview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="2711d-110">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2711d-110">In This Section</span></span>  
+ [<span data-ttu-id="2711d-111">ContextMenu – přehled</span><span class="sxs-lookup"><span data-stu-id="2711d-111">ContextMenu Overview</span></span>](../../../../docs/framework/wpf/controls/contextmenu-overview.md)  
   
-## <a name="reference"></a><span data-ttu-id="c110f-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c110f-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="2711d-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="2711d-112">Reference</span></span>  
  <xref:System.Windows.Controls.ContextMenu>  
   
-## <a name="related-sections"></a><span data-ttu-id="c110f-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c110f-113">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="2711d-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="2711d-113">Related Sections</span></span>

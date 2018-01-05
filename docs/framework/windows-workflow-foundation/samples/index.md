@@ -1,5 +1,5 @@
 ---
-title: "Ukázky pracovního postupu (WF) Windows"
+title: "Ukázky Windows Workflow"
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.topic: article
@@ -8,30 +8,31 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 806e31f3d5c0998e7a30dfbb9d1fdec9a1a50269
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 193f8ce60d8675832955b0e153af7f61b28d2707
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="windows-workflow-wf-samples"></a><span data-ttu-id="728ed-102">Ukázky pracovního postupu (WF) Windows</span><span class="sxs-lookup"><span data-stu-id="728ed-102">Windows Workflow (WF) Samples</span></span>
-<span data-ttu-id="728ed-103">Tyto ukázky poskytují pokyny o různých aspektech [!INCLUDE[wf](../../../../includes/wf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="728ed-103">These samples provide instruction on various aspects of [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
+# <a name="windows-workflow-wf-samples"></a><span data-ttu-id="12ad8-102">Ukázky Windows Workflow</span><span class="sxs-lookup"><span data-stu-id="12ad8-102">Windows Workflow (WF) Samples</span></span>
+<span data-ttu-id="12ad8-103">Tyto ukázky poskytují pokyny o různých aspektech [!INCLUDE[wf](../../../../includes/wf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="12ad8-103">These samples provide instruction on various aspects of [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
   
-<span data-ttu-id="728ed-104">Ukázky si můžete stáhnout z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span><span class="sxs-lookup"><span data-stu-id="728ed-104">The samples can be downloaded from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span></span>  
+<span data-ttu-id="12ad8-104">Ukázky si můžete stáhnout z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span><span class="sxs-lookup"><span data-stu-id="12ad8-104">The samples can be downloaded from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="728ed-105">Tyto ukázky byly vytvořeny s [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] a [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], ale jsou kompatibilní s [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] a [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="728ed-105">These samples were created with [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], but are compatible with [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] and [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span></span> <span data-ttu-id="728ed-106">Další ukázky pro [!INCLUDE[wf2](../../../../includes/wf2-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] naleznete na [kód MSDN](http://aka.ms/WF45Samples).</span><span class="sxs-lookup"><span data-stu-id="728ed-106">Additional samples for [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] can be found on [Code MSDN](http://aka.ms/WF45Samples).</span></span>
+>  <span data-ttu-id="12ad8-105">Tyto ukázky byly vytvořeny s [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] a [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], ale jsou kompatibilní s [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] a [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="12ad8-105">These samples were created with [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], but are compatible with [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] and [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span></span> <span data-ttu-id="12ad8-106">Další ukázky pro [!INCLUDE[wf2](../../../../includes/wf2-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] naleznete na [kód MSDN](http://aka.ms/WF45Samples).</span><span class="sxs-lookup"><span data-stu-id="12ad8-106">Additional samples for [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] can be found on [Code MSDN](http://aka.ms/WF45Samples).</span></span>
   
-## <a name="in-this-section"></a><span data-ttu-id="728ed-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="728ed-107">In this section</span></span>  
- [<span data-ttu-id="728ed-108">Aplikace</span><span class="sxs-lookup"><span data-stu-id="728ed-108">Application</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
- <span data-ttu-id="728ed-109">Poskytuje ukázky, které se vztahují k aplikacím pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="728ed-109">Provides samples that are related to workflow applications.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="12ad8-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="12ad8-107">In this section</span></span>  
+ [<span data-ttu-id="12ad8-108">Aplikace</span><span class="sxs-lookup"><span data-stu-id="12ad8-108">Application</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
+ <span data-ttu-id="12ad8-109">Poskytuje ukázky, které se vztahují k aplikacím pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="12ad8-109">Provides samples that are related to workflow applications.</span></span>  
   
- [<span data-ttu-id="728ed-110">Základní</span><span class="sxs-lookup"><span data-stu-id="728ed-110">Basic</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
- <span data-ttu-id="728ed-111">Poskytuje ukázky, která ukazují basic [!INCLUDE[wf](../../../../includes/wf-md.md)] funkce.</span><span class="sxs-lookup"><span data-stu-id="728ed-111">Provides samples that demonstrate basic [!INCLUDE[wf](../../../../includes/wf-md.md)] functionality.</span></span>  
+ [<span data-ttu-id="12ad8-110">Základy</span><span class="sxs-lookup"><span data-stu-id="12ad8-110">Basic</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
+ <span data-ttu-id="12ad8-111">Poskytuje ukázky, která ukazují basic [!INCLUDE[wf](../../../../includes/wf-md.md)] funkce.</span><span class="sxs-lookup"><span data-stu-id="12ad8-111">Provides samples that demonstrate basic [!INCLUDE[wf](../../../../includes/wf-md.md)] functionality.</span></span>  
   
- [<span data-ttu-id="728ed-112">Scénář</span><span class="sxs-lookup"><span data-stu-id="728ed-112">Scenario</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  
- <span data-ttu-id="728ed-113">Obsahuje příklady [!INCLUDE[wf](../../../../includes/wf-md.md)] scénáře.</span><span class="sxs-lookup"><span data-stu-id="728ed-113">Provides examples of [!INCLUDE[wf](../../../../includes/wf-md.md)] scenarios.</span></span>  
+ [<span data-ttu-id="12ad8-112">Scénář</span><span class="sxs-lookup"><span data-stu-id="12ad8-112">Scenario</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  
+ <span data-ttu-id="12ad8-113">Obsahuje příklady [!INCLUDE[wf](../../../../includes/wf-md.md)] scénáře.</span><span class="sxs-lookup"><span data-stu-id="12ad8-113">Provides examples of [!INCLUDE[wf](../../../../includes/wf-md.md)] scenarios.</span></span>  
   
- <span data-ttu-id="728ed-114">Ujistěte se, obsažené v této části ukázky použití nových funkcí v C# 3.0.</span><span class="sxs-lookup"><span data-stu-id="728ed-114">The samples contained in this section make use of new features in C# 3.0.</span></span> <span data-ttu-id="728ed-115">Podrobnosti o některé nové funkce jazyka C# 3.0, který může být obeznámeni, najdete [C# 3.0 přehled](http://go.microsoft.com/fwlink/?LinkId=193972).</span><span class="sxs-lookup"><span data-stu-id="728ed-115">For details on some new features of C# 3.0 that may be unfamiliar, please see the [C# 3.0 Overview](http://go.microsoft.com/fwlink/?LinkId=193972).</span></span>  
+ <span data-ttu-id="12ad8-114">Ujistěte se, obsažené v této části ukázky použití nových funkcí v C# 3.0.</span><span class="sxs-lookup"><span data-stu-id="12ad8-114">The samples contained in this section make use of new features in C# 3.0.</span></span> <span data-ttu-id="12ad8-115">Podrobnosti o některé nové funkce jazyka C# 3.0, který může být obeznámeni, najdete [C# 3.0 přehled](http://go.microsoft.com/fwlink/?LinkId=193972).</span><span class="sxs-lookup"><span data-stu-id="12ad8-115">For details on some new features of C# 3.0 that may be unfamiliar, please see the [C# 3.0 Overview](http://go.microsoft.com/fwlink/?LinkId=193972).</span></span>  
   
- <span data-ttu-id="728ed-116">Ukázky si můžete stáhnout z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span><span class="sxs-lookup"><span data-stu-id="728ed-116">The samples can be downloaded from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span></span>
+ <span data-ttu-id="12ad8-116">Ukázky si můžete stáhnout z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span><span class="sxs-lookup"><span data-stu-id="12ad8-116">The samples can be downloaded from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span></span>

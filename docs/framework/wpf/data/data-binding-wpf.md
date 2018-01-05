@@ -17,23 +17,24 @@ caps.latest.revision: "79"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 809f63d0057dd55d092343578d2952b2abdc0812
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 23fba12742943720f5b73db708015e798f0ac886
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="data-binding-wpf"></a><span data-ttu-id="65909-102">Datová vazba (WPF)</span><span class="sxs-lookup"><span data-stu-id="65909-102">Data Binding (WPF)</span></span>
-<span data-ttu-id="65909-103">Datová vazba Windows Presentation Foundation (WPF) poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici.</span><span class="sxs-lookup"><span data-stu-id="65909-103">Windows Presentation Foundation (WPF) data binding provides a simple and consistent way for applications to present and interact with data.</span></span> <span data-ttu-id="65909-104">Elementy mohou být vázány na data z různých zdrojů dat ve formuláři common language runtime (CLR) objektů a XML.</span><span class="sxs-lookup"><span data-stu-id="65909-104">Elements can be bound to data from a variety of data sources in the form of common language runtime (CLR) objects and XML.</span></span>  
+# <a name="data-binding-wpf"></a><span data-ttu-id="1c32f-102">Datová vazba (WPF)</span><span class="sxs-lookup"><span data-stu-id="1c32f-102">Data Binding (WPF)</span></span>
+<span data-ttu-id="1c32f-103">Datová vazba Windows Presentation Foundation (WPF) poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici.</span><span class="sxs-lookup"><span data-stu-id="1c32f-103">Windows Presentation Foundation (WPF) data binding provides a simple and consistent way for applications to present and interact with data.</span></span> <span data-ttu-id="1c32f-104">Elementy mohou být vázány na data z různých zdrojů dat ve formuláři common language runtime (CLR) objektů a XML.</span><span class="sxs-lookup"><span data-stu-id="1c32f-104">Elements can be bound to data from a variety of data sources in the form of common language runtime (CLR) objects and XML.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="65909-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="65909-105">In This Section</span></span>  
- [<span data-ttu-id="65909-106">Přehled vazba dat</span><span class="sxs-lookup"><span data-stu-id="65909-106">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [<span data-ttu-id="65909-107">Přehled zdrojů vazby</span><span class="sxs-lookup"><span data-stu-id="65909-107">Binding Sources Overview</span></span>](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
- [<span data-ttu-id="65909-108">Ukázka dat – přehled</span><span class="sxs-lookup"><span data-stu-id="65909-108">Data Templating Overview</span></span>](../../../../docs/framework/wpf/data/data-templating-overview.md)  
- [<span data-ttu-id="65909-109">Přehled deklarace vazby</span><span class="sxs-lookup"><span data-stu-id="65909-109">Binding Declarations Overview</span></span>](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
- [<span data-ttu-id="65909-110">Postupy: témata</span><span class="sxs-lookup"><span data-stu-id="65909-110">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1c32f-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1c32f-105">In This Section</span></span>  
+ [<span data-ttu-id="1c32f-106">Přehled datových vazeb</span><span class="sxs-lookup"><span data-stu-id="1c32f-106">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="1c32f-107">Přehled zdrojů vazby</span><span class="sxs-lookup"><span data-stu-id="1c32f-107">Binding Sources Overview</span></span>](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
+ [<span data-ttu-id="1c32f-108">Přehled datových šablon</span><span class="sxs-lookup"><span data-stu-id="1c32f-108">Data Templating Overview</span></span>](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [<span data-ttu-id="1c32f-109">Přehled deklarací vazeb</span><span class="sxs-lookup"><span data-stu-id="1c32f-109">Binding Declarations Overview</span></span>](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
+ [<span data-ttu-id="1c32f-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="1c32f-110">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="65909-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="65909-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="1c32f-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="1c32f-111">Reference</span></span>  
  <xref:System.Windows.Data>  
   
  <xref:System.Windows.Data.Binding>  
@@ -42,9 +43,9 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.Controls.DataTemplateSelector>  
   
-## <a name="related-sections"></a><span data-ttu-id="65909-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="65909-112">Related Sections</span></span>  
- [<span data-ttu-id="65909-113">Přetažení</span><span class="sxs-lookup"><span data-stu-id="65909-113">Drag and Drop</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
+## <a name="related-sections"></a><span data-ttu-id="1c32f-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1c32f-112">Related Sections</span></span>  
+ [<span data-ttu-id="1c32f-113">Přetažení</span><span class="sxs-lookup"><span data-stu-id="1c32f-113">Drag and Drop</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
   
- [<span data-ttu-id="65909-114">Datová vazba</span><span class="sxs-lookup"><span data-stu-id="65909-114">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="1c32f-114">Datová vazba</span><span class="sxs-lookup"><span data-stu-id="1c32f-114">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
   
- [<span data-ttu-id="65909-115">Návod: Ukládání dat aplikací v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="65909-115">Walkthrough: Caching Application Data in a WPF Application</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+ [<span data-ttu-id="1c32f-115">Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="1c32f-115">Walkthrough: Caching Application Data in a WPF Application</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)

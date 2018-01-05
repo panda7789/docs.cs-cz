@@ -371,6 +371,9 @@
             - name: Koncepty
               tocHref: /dotnet/csharp/concepts/
               topicHref: /dotnet/csharp/concepts/index
+            - name: Sada .NET Compiler Platform SDK
+              tocHref: /dotnet/csharp/roslyn-sdk/
+              topicHref: /dotnet/csharp/roslyn-sdk/index
             - name: Průvodce programováním
               tocHref: /dotnet/csharp/programming-guide/
               topicHref: /dotnet/csharp/programming-guide/index
@@ -414,7 +417,7 @@
                 - name: Main() a argumenty příkazového řádku
                   tocHref: /dotnet/csharp/programming-guide/main-and-command-args/
                   topicHref: /dotnet/csharp/programming-guide/main-and-command-args/index
-                - name: Obory názvů
+                - name: Jmenné prostory
                   tocHref: /dotnet/csharp/programming-guide/namespaces/
                   topicHref: /dotnet/csharp/programming-guide/namespaces/index
                 - name: "Typy s\_povolenou hodnotou Null"

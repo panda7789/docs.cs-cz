@@ -19,28 +19,29 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6a2ec81fa63b07a33f79a54b500ae3d7e62f367f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0159848e8add1f66ca7690c0fc692522102e74d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="transformations-how-to-topics"></a><span data-ttu-id="0d1e2-102">Postupy: Témata transformace</span><span class="sxs-lookup"><span data-stu-id="0d1e2-102">Transformations How-to Topics</span></span>
-<span data-ttu-id="0d1e2-103">Témata v této části popisují postup použít jiný transformace objektů.</span><span class="sxs-lookup"><span data-stu-id="0d1e2-103">The topics in this section describe how to apply different transformations to objects.</span></span>  
+# <a name="transformations-how-to-topics"></a><span data-ttu-id="d393c-102">Postupy: Témata transformace</span><span class="sxs-lookup"><span data-stu-id="d393c-102">Transformations How-to Topics</span></span>
+<span data-ttu-id="d393c-103">Témata v této části popisují postup použít jiný transformace objektů.</span><span class="sxs-lookup"><span data-stu-id="d393c-103">The topics in this section describe how to apply different transformations to objects.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="0d1e2-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0d1e2-104">In This Section</span></span>  
- [<span data-ttu-id="0d1e2-105">Používání transformace pro Element, když dojde k události</span><span class="sxs-lookup"><span data-stu-id="0d1e2-105">Apply a Transform to an Element When an Event Occurs</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-an-element-when-an-event-occurs.md)  
- [<span data-ttu-id="0d1e2-106">Použití více transformací k objektu</span><span class="sxs-lookup"><span data-stu-id="0d1e2-106">Apply Multiple Transforms to an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)  
- [<span data-ttu-id="0d1e2-107">Ujistěte se, typu elementu číselník na místě</span><span class="sxs-lookup"><span data-stu-id="0d1e2-107">Make an Element Spin in Place</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-make-an-element-spin-in-place.md)  
- [<span data-ttu-id="0d1e2-108">Otočení objektu</span><span class="sxs-lookup"><span data-stu-id="0d1e2-108">Rotate an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)  
- [<span data-ttu-id="0d1e2-109">Změnit velikost elementu</span><span class="sxs-lookup"><span data-stu-id="0d1e2-109">Scale an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)  
- [<span data-ttu-id="0d1e2-110">Zkreslit Element</span><span class="sxs-lookup"><span data-stu-id="0d1e2-110">Skew an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)  
- [<span data-ttu-id="0d1e2-111">Zadejte počátek transformace pomocí relativní hodnoty</span><span class="sxs-lookup"><span data-stu-id="0d1e2-111">Specify the Origin of a Transform by Using Relative Values</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-the-origin-of-a-transform-by-using-relative-values.md)  
- [<span data-ttu-id="0d1e2-112">Převede Element</span><span class="sxs-lookup"><span data-stu-id="0d1e2-112">Translate an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)  
- [<span data-ttu-id="0d1e2-113">Použít MatrixTransform k vytvoření vlastních transformací</span><span class="sxs-lookup"><span data-stu-id="0d1e2-113">Use a MatrixTransform to Create Custom Transforms</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d393c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d393c-104">In This Section</span></span>  
+ [<span data-ttu-id="d393c-105">Použití transformace na element při výskytu události</span><span class="sxs-lookup"><span data-stu-id="d393c-105">Apply a Transform to an Element When an Event Occurs</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-an-element-when-an-event-occurs.md)  
+ [<span data-ttu-id="d393c-106">Použití několika transformací na objekt</span><span class="sxs-lookup"><span data-stu-id="d393c-106">Apply Multiple Transforms to an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)  
+ [<span data-ttu-id="d393c-107">Otáčení elementu na místě</span><span class="sxs-lookup"><span data-stu-id="d393c-107">Make an Element Spin in Place</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-make-an-element-spin-in-place.md)  
+ [<span data-ttu-id="d393c-108">Otočení objektu</span><span class="sxs-lookup"><span data-stu-id="d393c-108">Rotate an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)  
+ [<span data-ttu-id="d393c-109">Změna velikosti elementu</span><span class="sxs-lookup"><span data-stu-id="d393c-109">Scale an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)  
+ [<span data-ttu-id="d393c-110">Zkosení elementu</span><span class="sxs-lookup"><span data-stu-id="d393c-110">Skew an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)  
+ [<span data-ttu-id="d393c-111">Určení počátku transformace použitím relativních hodnot</span><span class="sxs-lookup"><span data-stu-id="d393c-111">Specify the Origin of a Transform by Using Relative Values</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-the-origin-of-a-transform-by-using-relative-values.md)  
+ [<span data-ttu-id="d393c-112">Překlad elementu</span><span class="sxs-lookup"><span data-stu-id="d393c-112">Translate an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)  
+ [<span data-ttu-id="d393c-113">Vytvoření vlastních transformací pomocí MatrixTransform</span><span class="sxs-lookup"><span data-stu-id="d393c-113">Use a MatrixTransform to Create Custom Transforms</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)  
   
-## <a name="see-also"></a><span data-ttu-id="0d1e2-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="0d1e2-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d393c-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="d393c-114">See Also</span></span>  
  <xref:System.Windows.Media.Transform>  
- [<span data-ttu-id="0d1e2-115">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="0d1e2-115">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [<span data-ttu-id="0d1e2-116">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="0d1e2-116">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [<span data-ttu-id="0d1e2-117">Rozložení</span><span class="sxs-lookup"><span data-stu-id="0d1e2-117">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)
+ [<span data-ttu-id="d393c-115">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="d393c-115">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+ [<span data-ttu-id="d393c-116">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="d393c-116">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="d393c-117">Rozložení</span><span class="sxs-lookup"><span data-stu-id="d393c-117">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)

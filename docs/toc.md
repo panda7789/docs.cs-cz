@@ -17,13 +17,13 @@
 ### [Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET](standard/microservices-architecture/)
 ## [Volba mezi .NET Core a .NET Framework pro serverové aplikace](standard/choosing-core-framework-server.md)
 ## [Co je spravovaný kód?](standard/managed-code.md)
-### [Automatická správa paměti](standard/automatic-memory-management.md) 
+### [Automatická správa paměti](standard/automatic-memory-management.md)
 ## [Common Language Runtime (CLR)](standard/clr.md)
 ## [Jazyková nezávislost](standard/language-independence.md)
 ### [Jazyková nezávislost a jazykově nezávislé komponenty](standard/language-independence-and-language-independent-components.md)
 ## [Knihovny architektury](standard/framework-libraries.md)
-### [Přehled knihovny tříd](standard/class-library-overview.md)  
-### [Základní typy](standard/base-types/)  
+### [Přehled knihovny tříd](standard/class-library-overview.md)
+### [Základní typy](standard/base-types/)
 ## [Knihovny tříd .NET](standard/class-libraries.md)
 ## [Analyzátor přenositelnosti](standard/portability-analyzer.md)
 ## [Zpracování a vyvolání výjimek](standard/exceptions/)
@@ -99,12 +99,17 @@
 ### [Úvod k .NET a Dockeru](core/docker/intro-net-docker.md)
 ### [Základy Dockeru s .NET Core](core/docker/docker-basics-dotnet-core.md)
 ### [Vytváření imagí Dockeru pro aplikace .NET Core](core/docker/building-net-docker-images.md)
-### [Visual Studio Tools for Docker](/aspnet/core/publishing/visual-studio-tools-for-docker)
+### [Nástroje sady Visual Studio pro Docker](/aspnet/core/publishing/visual-studio-tools-for-docker)
 ## [Testování částí](core/testing/index.md)
-### [Testování částí pomocí příkazu dotnet test a xUnit](core/testing/unit-testing-with-dotnet-test.md)
-### [Testování částí pomocí příkazu dotnet test a MSTest](core/testing/unit-testing-with-mstest.md)
-### [Testování částí F# pomocí příkazu dotnet test a xUnit](core/testing/unit-testing-fsharp-with-dotnet-test.md)
-### [Testování částí F# pomocí příkazu dotnet test a MSTest](core/testing/unit-testing-fsharp-with-mstest.md)
+### [Testy jednotek v C# s použitím xUnit](core/testing/unit-testing-with-dotnet-test.md)
+### [Testy jednotek v C# s použitím NUnit](core/testing/unit-testing-with-nunit.md)
+### [Testy jednotek v C# s použitím MSTest](core/testing/unit-testing-with-mstest.md)
+### [Testy jednotek v F# s použitím xUnit](core/testing/unit-testing-fsharp-with-dotnet-test.md)
+### [Testy jednotek v F# s použitím NUnit](core/testing/unit-testing-fsharp-with-nunit.md)
+### [Testy jednotek v F# s použitím MSTest](core/testing/unit-testing-fsharp-with-mstest.md)
+### [Testy jednotek ve Visual Basicu s použitím xUnit](core/testing/unit-testing-visual-basic-with-dotnet-test.md)
+### [Testy jednotek ve Visual Basicu s použitím NUnit](core/testing/unit-testing-visual-basic-with-nunit.md)
+### [Testy jednotek ve Visual Basicu s použitím MSTest](core/testing/unit-testing-visual-basic-with-mstest.md)
 ### [Spouštění selektivních testů jednotek](core/testing/selective-unit-tests.md)
 ### [Publikovaný výstup testování částí](core/testing/unit-testing-published-output.md)
 ### [Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio](/visualstudio/test/live-unit-testing-start)
@@ -204,7 +209,7 @@
 ## [Prohlídka jazyka C#](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
-## [Co je nového v jazyce C#](csharp/whats-new/index.md) 
+## [Co je nového v jazyce C#](csharp/whats-new/index.md)
 ### [Co je nového v jazyce C# 7.2](csharp/whats-new/csharp-7-2.md)
 ### [Co je nového v jazyce C# 7.1](csharp/whats-new/csharp-7-1.md)
 ### [Co je nového v jazyce C# 7](csharp/whats-new/csharp-7.md)
@@ -212,8 +217,6 @@
 ### [Historie verzí jazyka C#](csharp/whats-new/csharp-version-history.md)
 ### [Vztahy mezi jazykem a architekturou](csharp/whats-new/relationships-between-language-and-library.md)
 <!-- End What's New -->
-<!--## [🔧 C# Interactive](csharp/interactive/)-->
-<!-- Do this section later, once master redirects are in place -->
 ## Koncepty jazyka C#
 ### [Systém typů jazyka C#](csharp/programming-guide/types/index.md)
 ### [Obory názvů](csharp/programming-guide/namespaces/index.md)
@@ -223,8 +226,7 @@
 ### [Řazené kolekce členů](csharp/tuples.md)
 ### [Dekonstrukce řazených kolekcí členů a dalších typů](csharp/deconstruct.md)
 ### [Rozhraní](csharp/programming-guide/interfaces/index.md)
-<!--### [🔧 Methods and Lambda Expressions](csharp/methods-lambda-expressions.md)-->
-### [Metody](csharp/methods.md)
+#### [Metody](csharp/methods.md)
 #### [Výrazy lambda](csharp/lambda-expressions.md)
 ### [Vlastnosti](csharp/properties.md)
 ### [Indexery](csharp/indexers.md)
@@ -242,7 +244,6 @@
 #### [Rozlišování delegátů a událostí](csharp/distinguish-delegates-events.md)
 ### [LINQ (Language Integrated Query)](csharp/linq/)
 ### [Asynchronní programování](csharp/async.md)
-<!--### [🔧 Parallel programming](csharp/parallel.md)-->
 ### [Porovnávání vzorů](csharp/pattern-matching.md)
 ### [Referenční sémantika s typy hodnot](csharp/reference-semantics-with-value-types.md)
 ### [Stromy výrazů](csharp/expression-trees.md)
@@ -254,11 +255,10 @@
 #### [Překlad výrazů](csharp/expression-trees-translating.md)
 #### [Shrnutí](csharp/expression-trees-summary.md)
 ### [Nativní interoperabilita](csharp/programming-guide/interop/index.md)
-<!--### [🔧 Reflection & code generation](csharp/reflection.md)-->
 ### [Dokumentace kódu](csharp/codedoc.md)
 ### [Správa verzí](csharp/versioning.md)
 <!-- End of C# Concepts section -->
-<!--## [🔧 Using the .NET Compiler Platform](csharp/roslyn/index.md)-->
+## [Sada .NET Compiler Platform SDK (rozhraní Roslyn API)](csharp/roslyn-sdk/)
 ## [Průvodce programováním v jazyce C#](csharp/programming-guide/)
 ## [Referenční dokumentace jazyka](csharp/language-reference/)
 ## [Návody](csharp/walkthroughs.md)
@@ -366,7 +366,7 @@
 ### [Parametry a argumenty](fsharp/language-reference/parameters-and-arguments.md)
 ### [Přetížení operátoru](fsharp/language-reference/operator-overloading.md)
 ### [Flexibilní typy](fsharp/language-reference/flexible-types.md)
-### [Delegáty](fsharp/language-reference/delegates.md)
+### [Delegáti](fsharp/language-reference/delegates.md)
 ### [Objektové výrazy](fsharp/language-reference/object-expressions.md)
 ### [Kopírování a aktualizace výrazů záznamů](fsharp/language-reference/copy-and-update-record-expressions.md)
 ### [Přetypování a převody](fsharp/language-reference/casting-and-conversions.md)

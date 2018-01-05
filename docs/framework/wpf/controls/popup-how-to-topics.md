@@ -17,21 +17,22 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6853b915cb133b2ea1cbc0579f3eb59e1e956f5e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: dfe53e4782fda95142a9eaa8ab10227f5353612b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="popup-how-to-topics"></a><span data-ttu-id="32dce-102">Postupy: Témata překryvných objektů</span><span class="sxs-lookup"><span data-stu-id="32dce-102">Popup How-to Topics</span></span>
-<span data-ttu-id="32dce-103">Témata v této části popisují, jak používat <xref:System.Windows.Controls.Primitives.Popup> řízení k zobrazení obsahu v samostatném okně, které překrývat okna aktuální aplikace.</span><span class="sxs-lookup"><span data-stu-id="32dce-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Primitives.Popup> control to display content in a separate window that floats over the current application window.</span></span>  
+# <a name="popup-how-to-topics"></a><span data-ttu-id="d105c-102">Postupy: Témata překryvných objektů</span><span class="sxs-lookup"><span data-stu-id="d105c-102">Popup How-to Topics</span></span>
+<span data-ttu-id="d105c-103">Témata v této části popisují, jak používat <xref:System.Windows.Controls.Primitives.Popup> řízení k zobrazení obsahu v samostatném okně, které překrývat okna aktuální aplikace.</span><span class="sxs-lookup"><span data-stu-id="d105c-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Primitives.Popup> control to display content in a separate window that floats over the current application window.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="32dce-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="32dce-104">In This Section</span></span>  
- [<span data-ttu-id="32dce-105">Animace místní okno</span><span class="sxs-lookup"><span data-stu-id="32dce-105">Animate a Popup</span></span>](../../../../docs/framework/wpf/controls/how-to-animate-a-popup.md)  
- [<span data-ttu-id="32dce-106">Zadejte vlastní místní pozice</span><span class="sxs-lookup"><span data-stu-id="32dce-106">Specify a Custom Popup Position</span></span>](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d105c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d105c-104">In This Section</span></span>  
+ [<span data-ttu-id="d105c-105">Animace prvku Popup</span><span class="sxs-lookup"><span data-stu-id="d105c-105">Animate a Popup</span></span>](../../../../docs/framework/wpf/controls/how-to-animate-a-popup.md)  
+ [<span data-ttu-id="d105c-106">Určení vlastního umístění prvku Popup</span><span class="sxs-lookup"><span data-stu-id="d105c-106">Specify a Custom Popup Position</span></span>](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)  
   
-## <a name="reference"></a><span data-ttu-id="32dce-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="32dce-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="d105c-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="d105c-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="32dce-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="32dce-108">Related Sections</span></span>  
- [<span data-ttu-id="32dce-109">Přehled místní nabídka</span><span class="sxs-lookup"><span data-stu-id="32dce-109">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="d105c-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="d105c-108">Related Sections</span></span>  
+ [<span data-ttu-id="d105c-109">Přehled prvku Popup</span><span class="sxs-lookup"><span data-stu-id="d105c-109">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)
