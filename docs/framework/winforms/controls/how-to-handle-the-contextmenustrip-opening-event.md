@@ -22,11 +22,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 354631e514d9e2ece39d16bf7f259c36e4f90c32
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5de244abd35c83bce329882d679df8303ef3a833
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-handle-the-contextmenustrip-opening-event"></a>Postupy: Zpracování události otevření ContextMenuStrip
 Můžete přizpůsobit chování vaší <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku ve zpracování <xref:System.Windows.Forms.ToolStripDropDown.Opening> událostí.  
@@ -43,4 +44,4 @@ Můžete přizpůsobit chování vaší <xref:System.Windows.Forms.ContextMenuSt
  <xref:System.Windows.Forms.ContextMenuStrip>  
  <xref:System.ComponentModel.CancelEventArgs.Cancel%2A>  
  <xref:System.Windows.Forms.ToolStripDropDown>  
- [ToolStrip – ovládací prvek](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
+ [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)

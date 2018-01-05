@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ac462f3b49788fd909f9d9f4fc785db74704ff6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0a7c9920b321f15f3f01a64fbfc80693042a025
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Zdroje aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Umožňuje sdílet prostředky aplikace, takže může podporovat konzistentní vzhled a chování napříč podobné typované elementy. Toto téma obsahuje několik doporučení v této oblasti, která vám může pomoct zlepšit výkon aplikací.  
@@ -57,8 +58,8 @@ ms.lasthandoff: 11/21/2017
  [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
  [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
- [2D grafika a vytvoření bitové kopie](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Chování objektů](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
  [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
- [Další doporučení výkonu](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+ [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7df149ab75d2e3f1e9167f66ef8ec3c40b73c827
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 57fc01b77379389ca4d86d241ec8f3d672b519b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>Určování a zpracování chyb v kontraktech a službách
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]aplikace zpracování chyby situacích mapování objektů spravovaných výjimek na protokolu SOAP selhání objekty a objekty chybu protokolu SOAP na objekty spravovaných výjimek. Témata v této části popisují postup návrhu kontrakty vystavit chyba podmínek jako vlastní chyb SOAP, jak vracet tyto chyby v rámci implementace služby a jak klienti catch takové chyby.  

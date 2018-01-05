@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a64c72a8f69abc220a311c2a204074ea83d0f58
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b9f1c57f067fa7c8bece3acaf0d51303b31d13bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-the-nettcp-port-sharing-service"></a>Postupy: povolení služby Sdílení portů Net.TCP
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá službu systému Windows s názvem služba Net.TCP Port Sharing usnadňuje sdílení portů TCP více procesy. Tato služba nainstaluje jako součást [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], ale služba není povolena ve výchozím nastavení jako bezpečnostní opatření a, musí se zapnout ručně před prvním použití. Toto téma popisuje, jak nakonfigurovat službu Net TCP Port Sharing pomocí modulu snap-In konzoly Microsoft Management Console (MMC).  
@@ -45,4 +46,4 @@ ms.lasthandoff: 12/02/2017
   
 ## <a name="see-also"></a>Viz také  
  [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
- [Konfigurace služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)
+ [Konfigurace služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)

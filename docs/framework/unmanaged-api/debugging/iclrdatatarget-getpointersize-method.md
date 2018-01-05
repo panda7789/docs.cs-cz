@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c71f093bd663fb2622dbfc212671fad8f19ca4a9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4ca35246b82ed4adc982b6e7b157398d230dabe4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize – metoda
 Získá velikost v bajtech je ukazatel typu, který používá tento cílový proces. Tato metoda je volána běžné data přístupu služby modulu runtime jazyka.  
@@ -55,4 +56,4 @@ HRESULT GetPointerSize (
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+ [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

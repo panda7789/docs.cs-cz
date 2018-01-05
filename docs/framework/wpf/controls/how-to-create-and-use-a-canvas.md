@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8925b9b6cd6cea1a29592f591f9c1c89d32d49e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 562531f75d6a800ff93a02709a053b790de52ea2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-and-use-a-canvas"></a>Postupy: Vytvoření a použití plátna
 Tento příklad ukazuje, jak vytvořit a použít instanci <xref:System.Windows.Controls.Canvas>.  
@@ -45,5 +46,5 @@ Tento příklad ukazuje, jak vytvořit a použít instanci <xref:System.Windows.
  <xref:System.Windows.Controls.Canvas.SetLeft%2A>  
  <xref:System.Windows.Controls.Canvas.Top%2A>  
  <xref:System.Windows.Controls.Canvas.Left%2A>  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)

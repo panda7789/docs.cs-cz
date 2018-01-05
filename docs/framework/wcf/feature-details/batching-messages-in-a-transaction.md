@@ -14,11 +14,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d9effe9b44a8e6f786103162930852de80ab4f8d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0587624dd3b9bc12c6e421343ad2cdc1da6b970f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="batching-messages-in-a-transaction"></a>Dávkování zpráv v transakci
 Zkontrolujte správnost a spolehlivé doručování zpráv ve frontě aplikací pomocí transakce. Transakce, ale jsou náročná operace a může výrazně snížit propustnost zpráv. Jeden způsob, jak zlepšit propustnost zpráva má mít aplikaci, čtení a zpracování více zpráv v rámci jedné transakce. Je nejvhodnější poměr mezi výkonem a obnovení: jak zvyšuje počet zpráv v dávce, takže nemá množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relace. A *relace* je seskupení související zprávy, které jsou zpracovávány jednu aplikaci a potvrzené jako na jednu jednotku. Relace se běžně používají, pokud skupina související zprávy musí být zpracován jako společně. Příkladem je nákupní webový server s online. *Dávky* se používají ke zpracování více, které nejsou v relaci zprávy způsobem, že zpráva zvyšuje propustnost. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]relace, viz [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracovává jednu aplikaci a potvrzené jako na jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zprávy v dávce. Dávkování zpráv v transakci je optimalizace, která se nezmění, jak je aplikace spuštěná.  
@@ -92,5 +93,5 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+ [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 22bd851ded9b2aa3fd6d5b6bdf43bbf0be5b45af
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d7b6ec470fae6adb76a9b78fdab9b871edc0ca49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorthreadpool-interface"></a>ICorThreadpool – rozhraní
 Poskytuje metody pro přístup k fondu vláken.  
@@ -35,17 +36,17 @@ Poskytuje metody pro přístup k fondu vláken.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Corregisterwaitforsingleobject – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corregisterwaitforsingleobject-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corunregisterwait – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corunregisterwait-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corqueueuserworkitem – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corcreatetimer – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corcreatetimer-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corchangetimer – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corchangetimer-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Cordeletetimer – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-cordeletetimer-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corbindiocompletioncallback – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corbindiocompletioncallback-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corcallorqueueuserworkitem – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corcallorqueueuserworkitem-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorRegisterWaitForSingleObject – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corregisterwaitforsingleobject-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorUnregisterWait – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corunregisterwait-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorQueueUserWorkItem – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorCreateTimer – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corcreatetimer-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorChangeTimer – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corchangetimer-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorDeleteTimer – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-cordeletetimer-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorBindIoCompletionCallback – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corbindiocompletioncallback-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorCallOrQueueUserWorkItem – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corcallorqueueuserworkitem-method.md)|Vyhrazeno pouze pro interní použití.|  
 |[CorSetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corsetmaxthreads-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corgetmaxthreads – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetmaxthreads-method.md)|Vyhrazeno pouze pro interní použití.|  
-|[Corgetavailablethreads – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetavailablethreads-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorGetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetmaxthreads-method.md)|Vyhrazeno pouze pro interní použití.|  
+|[CorGetAvailableThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetavailablethreads-method.md)|Vyhrazeno pouze pro interní použití.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -57,4 +58,4 @@ Poskytuje metody pro přístup k fondu vláken.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

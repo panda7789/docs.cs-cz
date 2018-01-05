@@ -22,11 +22,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4bd345981e81cc2fec120ba0f33c32e5c8217109
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: bd297730cff3905a233d46244f5652d389287241
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-write-metadata-to-a-bitmap"></a>Postupy: Zápis metadat do bitmapy
 Tento příklad ukazuje, jak napsat metadata pro rastrový obrázek pomocí dotazovacího jazyka pro metadata.  

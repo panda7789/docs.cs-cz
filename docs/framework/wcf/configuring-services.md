@@ -14,11 +14,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de970bf27fdf3365daa0ac515852a68d01a246eb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 857ec77e54d6a55bde1a94fd9fd5758ef7a24309
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-services"></a>Konfigurace služeb
 Jakmile určené a implementovat vaše kontrakt služby, jste připraveni ke konfiguraci služby. Toto je, kde definice a přizpůsobení, jak je vystaven služby pro klienty, včetně zadání adresy, kde se nachází, zprávy, který se používá k odesílání a přijímání zpráv a typ zabezpečení, která vyžaduje kódování a přenos.  
@@ -41,7 +42,7 @@ Jakmile určené a implementovat vaše kontrakt služby, jste připraveni ke kon
  [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)  
  Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a existující mechanismy zabezpečení, můžete implementovat důvěrnost, integritu, ověřování a autorizace do jakékoli služby. Také můžete auditovat pro zabezpečení úspěchy a selhání.  
   
- [Vytváření WS-I Basic Profile 1.1 interoperabilní služby](../../../docs/framework/wcf/creating-ws-i-basic-profile-1-1-interoperable-services.md)  
+ [Vytváření interoperabilních služeb WS-I Basic Profile 1.1](../../../docs/framework/wcf/creating-ws-i-basic-profile-1-1-interoperable-services.md)  
  Požadavky na nasazení služby, který je vzájemná spolupráce s služeb a klientů na všechny platformy a operačního systému jsou uvedeny v WS-I Basic Profile 1.1 specifikace.  
   
 ## <a name="reference"></a>Odkaz  
@@ -60,9 +61,9 @@ Jakmile určené a implementovat vaše kontrakt služby, jste připraveni ke kon
   
  [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
   
- [Úvod do rozšíření](../../../docs/framework/wcf/introduction-to-extensibility.md)  
+ [Úvod do rozšířitelnosti](../../../docs/framework/wcf/introduction-to-extensibility.md)  
   
- [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
+ [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)  

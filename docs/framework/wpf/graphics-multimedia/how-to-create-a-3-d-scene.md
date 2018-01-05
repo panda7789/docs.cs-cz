@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dd84a95bf793b3da9970b605b2f02509e3938ab0
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f52642a1764a7db01d4ca330f3bf25bdca10fa06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-3-d-scene"></a>Postupy: Vytvoření 3D scény
 Tento příklad ukazuje postup vytvoření 3D objekt, který vypadá jako plochý list dokumentu, který otočený. A <xref:System.Windows.Controls.Viewport3D> společně s následující součásti, které se používají k vytvoření tohoto jednoduchého 3D scény:  

@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 9a445d7e730ecb743d5e4086ec682b12a7bf3ff9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 25aac1d4478279561cbcdda6c1cf912c3c3b2cde
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
 Toto téma popisuje běžné atributy modulu runtime (CLR) jazyk, které jsou definované rozhraní .NET Framework XAML Services. Popisuje také jiné CLR atributy, které jsou definovány v rozhraní .NET Framework s scénáři související s jazykem XAML pro aplikaci na sestavení nebo typy. Zapisujících sestavení, typy a členy s těmito atributy CLR poskytuje XAML typ systémové informace související s vaší typy. Informace jsou poskytovány na všechny XAML příjemce, který používá rozhraní .NET Framework XAML Services pro zpracování datový proud uzlu XAML přímo nebo prostřednictvím vyhrazené čteček XAML a XAML zapisovače.  
@@ -279,4 +280,4 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyk, které jsou de
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Attribute>  
- [Definování vlastních typů pro použití s rozhraní .NET Framework XAML Services](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)
+ [Definování vlastních typů pro práci s technologií .NET Framework XAML Services](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)

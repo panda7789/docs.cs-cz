@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 18e580a67d5a983d61ab3c0b71cfc7d294468010
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 32dad99e8d5caa7d88fa302a1bea8b83847bfde3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>Předávání typů v modulu Common Language Runtime
 Předávání typů umožňuje přesunout typu do jiného sestavení bez nutnosti její kompilace aplikace, které používají původní sestavení.  
@@ -56,5 +57,5 @@ Předávání typů umožňuje přesunout typu do jiného sestavení bez nutnost
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>  
- [Předávání typů (C + +/ CLI)](/cpp/windows/type-forwarding-cpp-cli)  
+ [Předávání typů (C++/CLI)](/cpp/windows/type-forwarding-cpp-cli)  
  [#using – direktiva](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a)

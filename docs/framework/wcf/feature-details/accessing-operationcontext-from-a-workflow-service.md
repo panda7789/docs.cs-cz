@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 445a7c5e9b0665fcf57138144c8cf3445f2d15f2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f63c2e2305eab5a97cf547bf607fbe97bb573376
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>Přístup k informacím OperationContext ze služby pracovních postupů
 Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby pracovních postupů, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. Přepsání <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda, která se předá odkaz na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace tato vlastnost provádění načíst vlastní hlavičky, jakož i vlastní aktivity, který bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> informace budou načteny.  Toto téma také ukazuje, jak získat přístup na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí hlavičky prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  
@@ -851,5 +852,5 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
   
 ## <a name="see-also"></a>Viz také  
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [Přístup k informacím OperationContext](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
- [Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)
+ [Přístup k OperationContext](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
+ [Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

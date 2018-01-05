@@ -18,11 +18,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0f2ef91986cb5ad31560c4a7f418218a168f1b2f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ce66f98f064ec5c9460dd1909f8eb7bc44c26f76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 Nástroj ServiceModel Metadata Utility slouží ke generování kódu služby model z metadat dokumenty a dokumenty metadat z kódu modelu služby.  
@@ -36,10 +37,10 @@ Nástroj ServiceModel Metadata Utility slouží ke generování kódu služby mo
 |Úloha|Téma|  
 |----------|-----------|  
 |Generuje kód od spuštění služby nebo dokumenty statické metadat.|[Generování klienta WCF z metadat služby](../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)|  
-|Exportuje dokumenty metadat z zkompilovaný kód.|[Postupy: použití Svcutil.exe pro Export metadat z kompilovaného kódu služby](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|  
-|Ověří kompilovaného kódu služby.|[Postupy: použití Svcutil.exe pro ověření kompilovaného kódu služby](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|  
-|Soubory ke stažení dokumentů metadat od spuštění služby.|[Postupy: stažení dokumentů metadat pomocí Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|  
-|Generuje kód serializace.|[Postupy: zlepšení spuštění čas klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|  
+|Exportuje dokumenty metadat z zkompilovaný kód.|[Postupy: Použití nástroje Svcutil.exe k exportu metadat z kompilovaného kódu služby](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|  
+|Ověří kompilovaného kódu služby.|[Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|  
+|Soubory ke stažení dokumentů metadat od spuštění služby.|[Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|  
+|Generuje kód serializace.|[Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|  
   
 > [!CAUTION]
 >  Svcutil přepíše stávající soubory na disku, pokud jsou identické názvy zadané jako parametry. To může zahrnovat soubory kódu, konfiguračními zásadami nebo soubory metadat. Chcete-li předejít při generování kódu a konfigurace čarou, použijte `/mergeConfig` přepínače.  
@@ -274,4 +275,4 @@ Nástroj ServiceModel Metadata Utility slouží ke generování kódu služby mo
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
- [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
+ [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)

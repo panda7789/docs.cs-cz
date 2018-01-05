@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 869861ce1e2ba4456c8e8fbd06f9ff590fb3576a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: de5f1c858b9018071489354441cab197bf5db6e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="standard-endpoints"></a>Standardní koncové body
 Koncové body jsou definovány zadáním adresy, vazby a kontraktu. Další parametry, které může být nastaven na koncový bod patří konfigurace chování, záhlaví a naslouchání identifikátory URI.  Pro určité typy koncových bodů tyto hodnoty se nezmění. Například vždy použít koncové body metadat systému exchange <xref:System.ServiceModel.Description.IMetadataExchange> kontrakt. Další koncové body, jako například <xref:System.ServiceModel.Description.WebHttpEndpoint> vždy vyžadují chování zadaný koncový bod. Tak, že jsou koncové body pomocí výchozí hodnoty pro vlastnosti běžně používané koncového bodu je možné zlepšit použitelnost koncový bod. Standardní koncové body umožňují vývojáři definovat koncový bod, který má výchozí hodnoty nebo kde vlastnosti jeden nebo více koncového bodu se nemění.  Tyto koncové body umožňují používat takové koncového bodu bez nutnosti zadávat informace, které statické. Standardní koncové body lze použít pro infrastrukturu a aplikaci koncové body.  

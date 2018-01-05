@@ -12,11 +12,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1e4bb05f1b5f14554ff5183b42bbc8884cb114f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 669e1bd1daeb8f2569a851e21d10f250d1bc2204
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>Pomocí WorkflowInvoker a WorkflowApplication
 [!INCLUDE[wf](../../../includes/wf-md.md)]poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker>poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication>poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost>poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  

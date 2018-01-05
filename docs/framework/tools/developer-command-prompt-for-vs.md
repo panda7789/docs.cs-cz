@@ -21,11 +21,12 @@ caps.latest.revision: "45"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e93a1d116ac0480c80e259ddbadbc65fd9539389
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d8bd7baec77e6e776f93a2a13156d66c1199f918
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Příkazový řádek vývojáře pro sadu Visual Studio
 Příkazový řádek vývojáře pro sadu Visual Studio automaticky nastaví proměnné prostředí, které vám umožní snadno používat nástroje rozhraní .NET Framework. Do příkazového řádku vývojáře se instaluje s plná nebo komunity edice sady Visual Studio. Není nainstalovaná verze Express sady Visual Studio.  

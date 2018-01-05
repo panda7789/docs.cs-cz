@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bd717b24eaf161145249e175425bd5296f3ef727
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9f10b3895fcdea0c3ab80617acd9874953b7665e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
 Zprávy ve frontě může selhat doručení. Tyto zprávy se nezdařila se zaznamenávají do fronty nedoručených zpráv. Selhání doručení může být způsobeno z důvodů, například selhání sítě, odstraněné fronty, plné frontě, selhání ověřování nebo selhání při doručení na času.  
@@ -84,6 +85,6 @@ Zprávy ve frontě může selhat doručení. Tyto zprávy se nezdařila se zazna
   
   
 ## <a name="see-also"></a>Viz také  
- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
- [Postupy: výměna zpráv pomocí koncových bodů WCF zařazených do fronty.](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [Postupy: Výměna zpráv zařazených do fronty s koncovými body WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

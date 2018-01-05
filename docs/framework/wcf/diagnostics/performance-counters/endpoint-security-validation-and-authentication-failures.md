@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 7d1f05ddc4b0fcf93c87e69932f860f3c7e2ff85
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5bd38ae0e3506397378b7c59976c6c692045054d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endpoint-security-validation-and-authentication-failures"></a>Koncový bod: Počet chyb ověřování zabezpečení
 Název čítače: počet chyb ověření zabezpečení  

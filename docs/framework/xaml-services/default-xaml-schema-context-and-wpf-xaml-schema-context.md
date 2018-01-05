@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: ccb89b67b222c11695131a1aa8423b89df1c9a70
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9ee7c83868934f1a524bb0068ea5e749e6cbfab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>Výchozí kontext schématu XAML a kontext WPF schématu XAML
 Kontext schématu XAML je koncepční entita, která kvalifikují jak provozní XAML používající konkrétní termínů XAML komunikuje s objektem zápis chování, včetně způsobu mapování typu řeší, jak se načíst sestavení, jak určitá čtení a zápis nastavení se interpretují. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružená výchozí kontext schématu XAML, který je založený na systému typu CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro grafický subsystém WPF.  
@@ -99,4 +100,4 @@ Kontext schématu XAML je koncepční entita, která kvalifikují jak provozní 
     -   Použít krátký název + tokenu veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také  
- [Principy struktur datový proud uzlu XAML a koncepty](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)
+ [Principy struktur a koncepcí streamu uzlů XAML](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)

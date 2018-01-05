@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a4f58c5124e229f1692dabbb0abded0e21a346f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a7214a14b11ae1f91906c8d2140bc82836988390
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-service"></a>Směrovací služba
 Služba Směrování je obecný prostředník SOAP, který funguje jako směrovač zpráv. Základní funkce služby směrování je umožňuje směrovat zprávy na základě obsahu zprávy, která umožňuje zprávu, která se předají do koncového bodu klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.  
@@ -116,6 +117,6 @@ Služba Směrování je obecný prostředník SOAP, který funguje jako směrova
 -   Dynamické konfigurace  
   
 ## <a name="see-also"></a>Viz také  
- [Směrování – Úvod](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  
+ [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  
  [Kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
  [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)

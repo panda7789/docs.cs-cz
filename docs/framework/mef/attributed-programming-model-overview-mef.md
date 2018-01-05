@@ -15,11 +15,12 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 16ffe789635ee13c118c63c30ef255cc9b264a9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 565cd9384e150f707b2e5e72342579d95c3a096e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Přehled modelu programování s přidělenými atributy (MEF)
 V Managed Extensibility Framework (MEF), *programovací model* je konkrétní metoda definování sady koncepční objektů, na kterých pracuje MEF. Tyto rámcové objekty zahrnují části, import a export. MEF používá tyto objekty, ale neurčuje, jak by měly být zastoupeny. Proto je možné, včetně přizpůsobit programovací modely celou řadu programovacích modelů.  

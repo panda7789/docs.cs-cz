@@ -17,11 +17,14 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0b5f242b9586c4ea3b045daf8f10b84127b81085
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2a83d638255d27317ba5d566ab46b83526659365
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Asynchronní vzor založený na událostech (EAP)
 Existuje několik způsobů, jak vystavit asynchronní funkce kódu klienta. Asynchronní vzor založený na událostech stanovuje jedním ze způsobů pro třídy nabídne asynchronní chování.  
@@ -45,7 +48,7 @@ Existuje několik způsobů, jak vystavit asynchronní funkce kódu klienta. Asy
  [Návod: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)  
  Ukazuje, jak vytvořit komponentu, která implementuje asynchronní vzor založený na událostech. Je implementována pomocí pomocné třídy z <xref:System.ComponentModel?displayProperty=nameWithType> obor názvů, které zajišťuje, že součást funguje správně v rámci modelu všechny aplikace.  
   
- [Postupy: použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
+ [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
  Popisuje způsob použití komponenty, která podporuje asynchronní vzor založený na událostech.  
   
 ## <a name="reference"></a>Odkaz  
@@ -69,7 +72,7 @@ Existuje několik způsobů, jak vystavit asynchronní funkce kódu klienta. Asy
  Popisuje funkce více vláken v jazycích C# a Visual Basic.  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na spravovaná vlákna osvědčené postupy](../../../docs/standard/threading/managed-threading-best-practices.md)  
+ [Doporučené postupy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-best-practices.md)  
  [Události](../../../docs/standard/events/index.md)  
  [Více vláken v součásti](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
  [Asynchronní vzory návrhu programování](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

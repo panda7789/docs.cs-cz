@@ -22,11 +22,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9efad2da27f4003632b643b9f5f0602be0d55480
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 060f411dfc7c3153fdf0e0d6e19781f0d60b141b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute
 Vlastní ovládací prvky někdy zveřejní kolekci jako vlastnost. Tento návod ukazuje, jak používat <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> třída řídit, jak je kolekce serializovat v době návrhu. Použití <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> hodnotu pro vlastnost vaší kolekce zajistí, že vlastnost budou serializována.  
@@ -61,7 +62,7 @@ Vlastní ovládací prvky někdy zveřejní kolekci jako vlastnost. Tento návod
     |**Víceřádkového výrazu**|`true`|  
     |**Ukotvení**|<xref:System.Windows.Forms.DockStyle.Fill>|  
     |**Posuvníky**|<xref:System.Windows.Forms.ScrollBars.Vertical>|  
-    |**Jen pro čtení**|`true`|  
+    |**ReadOnly**|`true`|  
   
 6.  V **Editor kódu**, deklarovat pole řetězce pole s názvem `stringsValue` v `SerializationDemoControl`.  
   
@@ -145,10 +146,10 @@ Vlastní ovládací prvky někdy zveřejní kolekci jako vlastnost. Tento návod
   
 -   [Přehled Návrháře serializace](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
   
--   [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
+-   [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>  
  [Přehled Návrháře serializace](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
  [Postupy: serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)  
- [Návod: Automatické vyplnění nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+ [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

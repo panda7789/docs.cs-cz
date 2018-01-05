@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 23cfa64aa698643f30409119e162b815e58e2379
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2444488418b7647111cf4b89db0c41a8e66470d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-clients"></a>Rozšíření klientů
 V volající aplikace je zodpovědná za překladu volání metod v kódu aplikace do odchozí zprávy, když zavedete je základní kanály, překladu výsledky zpět do návratové hodnoty a výstupní parametry v vrstva modelu služby kód aplikace a vrací výsledky zpět na volajícího. Rozšíření modelů služby upravit nebo jsou implementovány provádění nebo komunikace chování a funkce zahrnující klienta nebo dispečera funkce, vlastní chování, zprávu a parametr zachycení a další funkce rozšiřitelnost.  
@@ -126,5 +127,5 @@ V volající aplikace je zodpovědná za překladu volání metod v kódu aplika
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Dispatcher.ClientRuntime>  
  <xref:System.ServiceModel.Dispatcher.ClientOperation>  
- [Postupy: Kontrola nebo úprava zprávy na straně klienta](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-messages-on-the-client.md)  
+ [Postupy: Kontrola a změny zpráv v klientovi](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-messages-on-the-client.md)  
  [Postupy: Kontrola nebo úprava parametrů](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)

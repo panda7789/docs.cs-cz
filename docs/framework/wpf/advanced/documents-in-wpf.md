@@ -21,11 +21,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 659c30105be7826aba4bbad49d68bdb94ddb0efc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 02f65d68cdaad8824905c4545239f5b607c672d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]nabízí širokou škálu funkcí dokumentu, které umožňují vytváření zachováním obsahu, který je navržený jako snadněji přístupu a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě široké možnosti a kvalitu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  
@@ -153,6 +154,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.IO.Packaging.PackageRelationship>  
  <xref:System.Windows.Controls.DocumentViewer>  
  [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
- [Přehled toku dokumentu](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [Tisk – přehled](../../../../docs/framework/wpf/advanced/printing-overview.md)  
- [Serializace dokumentu a úložiště](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)
+ [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
+ [Serializace a úložiště dokumentů](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)

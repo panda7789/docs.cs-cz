@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3fd3e7e1d9efc5f96ffa044275fb1d76c490be0d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 77e0e5b162be875a7d37d32e4b5a08b19315b9ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost"></a>Postupy: Zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost
 <xref:System.Windows.Forms.ToolStripControlHost>umožňuje hostování libovolný ovládacích prvků Windows Forms pomocí <xref:System.Windows.Forms.ToolStripControlHost> konstruktor nebo tím, že rozšíří <xref:System.Windows.Forms.ToolStripControlHost> sám sebe. Je snazší zalomení ovládacího prvku tím, že rozšíří <xref:System.Windows.Forms.ToolStripControlHost> a implementace vlastnosti a metody, které zveřejňují často použít vlastnosti a metody ovládacího prvku. Mohou také vystavovat události pro ovládací prvek v <xref:System.Windows.Forms.ToolStripControlHost> úroveň.  
@@ -79,4 +80,4 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Forms.ToolStripControlHost>  
  [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
  [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
- [Souhrn technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+ [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

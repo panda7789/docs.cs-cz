@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 754518901c7db7266fef663a6f31bf2ca01b7242
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 277c26c181865e88a307f36661abf794f591cf7d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-contextmenustrip-check-margins-and-image-margins"></a>Postupy: Konfigurace okrajů pro zaškrtnutí a okrajů pro obrázek ovládacího prvku ContextMenuStrip
 Můžete přizpůsobit <xref:System.Windows.Forms.ContextMenuStrip> nastavením <xref:System.Windows.Forms.ToolStripDropDownMenu.ShowImageMargin%2A> a <xref:System.Windows.Forms.ToolStripDropDownMenu.ShowCheckMargin%2A> vlastnosti v různých kombinacích.  
@@ -47,5 +48,5 @@ Můžete přizpůsobit <xref:System.Windows.Forms.ContextMenuStrip> nastavením 
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.ContextMenuStrip>  
  <xref:System.Windows.Forms.ToolStripDropDown>  
- [ToolStrip – ovládací prvek](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
- [Postupy: povolení okrajů pro zaškrtnutí a okrajů obrázků v ovládacích prvcích ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-enable-check-margins-and-image-margins-in-contextmenustrip-controls.md)
+ [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
+ [Postupy: Povolení okrajů pro zaškrtnutí a okrajů obrázků v ovládacích prvcích ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-enable-check-margins-and-image-margins-in-contextmenustrip-controls.md)

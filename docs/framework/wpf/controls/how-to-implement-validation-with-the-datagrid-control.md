@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8c611919b5702877db34e9a02e367312678a1b27
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 78846e2b6a1d73e011441b0ccb46b8aad365d5dd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>Postupy: Implementace ověření pomocí ovládacího prvku DataGrid
 <xref:System.Windows.Controls.DataGrid> Řízení umožňuje provést ověření na úrovni buněk i řádek. S ověřováním na úrovni buněk ověřit jednotlivé vlastnosti vázaný datový objekt když uživatel aktualizuje hodnotu. S ověřováním na úrovni řádků ověřit celé datové objekty když uživatel provede změny na řádek. Můžete také poskytnout vlastní visual zpětnou vazbu pro chyby ověření, nebo použít výchozí vizuální zpětnou vazbu, <xref:System.Windows.Controls.DataGrid> řízení.  
@@ -105,4 +106,4 @@ ms.lasthandoff: 11/21/2017
  [DataGrid](../../../../docs/framework/wpf/controls/datagrid.md)  
  [Datová vazba](../../../../docs/framework/wpf/data/data-binding-wpf.md)  
  [Implementace ověření vazby](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)  
- [Implementovat logiku ověření pro vlastní objekty](../../../../docs/framework/wpf/data/how-to-implement-validation-logic-on-custom-objects.md)
+ [Implementace logiky ověření na vlastních objektech](../../../../docs/framework/wpf/data/how-to-implement-validation-logic-on-custom-objects.md)

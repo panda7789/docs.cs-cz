@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 35dc7ad932ea114e2751fa86ceb757dc795795f5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7ece2585287f6e2767e64c2ec03c75adcfe161c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] konfigurace klienta a zadejte adresy, vazby chování, smlouvy, "ABC" vlastnosti klienta koncového bodu, který používají klienti k připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<endpoint >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jehož atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsané v části "Konfigurace koncových bodů" v tomto tématu.  
@@ -104,5 +105,5 @@ Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] konfig
  [ \<Metadata >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element se používá k určení nastavení použitá pro zaregistrování metadata importovat rozšíření. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]rozšíření systému metadat, najdete v části[rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
- [Konfigurace chování klientů](../../../../docs/framework/wcf/configuring-client-behaviors.md)
+ [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [Konfigurace chování klienta](../../../../docs/framework/wcf/configuring-client-behaviors.md)

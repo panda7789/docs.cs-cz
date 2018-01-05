@@ -1,5 +1,5 @@
 ---
-title: "Ukázky pracovního postupu (WF) Windows"
+title: "Ukázky Windows Workflow"
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.topic: article
@@ -8,13 +8,14 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 806e31f3d5c0998e7a30dfbb9d1fdec9a1a50269
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 193f8ce60d8675832955b0e153af7f61b28d2707
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="windows-workflow-wf-samples"></a>Ukázky pracovního postupu (WF) Windows
+# <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 Tyto ukázky poskytují pokyny o různých aspektech [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
 Ukázky si můžete stáhnout z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).  
@@ -26,7 +27,7 @@ Ukázky si můžete stáhnout z [Microsoft Download Center](http://go.microsoft.
  [Aplikace](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
  Poskytuje ukázky, které se vztahují k aplikacím pracovního postupu.  
   
- [Základní](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
+ [Základy](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
  Poskytuje ukázky, která ukazují basic [!INCLUDE[wf](../../../../includes/wf-md.md)] funkce.  
   
  [Scénář](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  

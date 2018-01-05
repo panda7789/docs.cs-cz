@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 16c675491a378d72d82a252d79a73379f494893c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fd3982cf8eeeb88a162e77a3ef4b9d6e75e19fc6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Data serveru SQL typy a ADO.NET
 SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy, které může mít za následek ztrátu dat. Chcete-li zachovat integritu dat, zprostředkovatel dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje typu přístupového objektu metody pro práci s daty na serveru SQL. Můžete použít výčtů ve <xref:System.Data.SqlDbType> třídy k určení <xref:System.Data.SqlClient.SqlParameter> datové typy.  
@@ -33,22 +34,22 @@ SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy, kte
 1.  [Datové typy (databázový stroj)](http://go.microsoft.com/fwlink/?LinkID=107468)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [SqlTypes a datové sady](../../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md)  
+ [SqlTypes a datová sada](../../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md)  
  Popisuje typ podporu pro `SqlTypes` v `DataSet`.  
   
- [Zpracování hodnot Null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md)  
+ [Zpracování hodnot null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md)  
  Ukazuje, jak pracovat s hodnotami null a s hodnotou tři logiku.  
   
- [Porovnáním různých GUID a hodnoty uniqueidentifier](../../../../../docs/framework/data/adonet/sql/comparing-guid-and-uniqueidentifier-values.md)  
+ [Porovnání hodnoty GUID a uniqueidentifier](../../../../../docs/framework/data/adonet/sql/comparing-guid-and-uniqueidentifier-values.md)  
  Ukazuje, jak pracovat s hodnotami GUID a uniqueidentifier v systému SQL Server a rozhraní .NET Framework.  
   
- [Datum a čas dat](../../../../../docs/framework/data/adonet/sql/date-and-time-data.md)  
+ [Kalendářní a časová data](../../../../../docs/framework/data/adonet/sql/date-and-time-data.md)  
  Popisuje postup použití nových typech dat Datum a čas byla zavedená v systému SQL Server 2008.  
   
- [Velké UDT](../../../../../docs/framework/data/adonet/sql/large-udts.md)  
+ [Velké uživatelsky definované typy](../../../../../docs/framework/data/adonet/sql/large-udts.md)  
  Ukazuje, jak k načtení dat z velké hodnoty UDT byla zavedená v systému SQL Server 2008.  
   
- [Data XML v systému SQL Server](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [Data XML na SQL Serveru](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
  Popisuje, jak pracovat s daty XML načíst ze serveru SQL.  
   
 ## <a name="reference"></a>Odkaz  
@@ -65,8 +66,8 @@ SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy, kte
  Popisuje `DbType` výčet a všechny její členy.  
   
 ## <a name="see-also"></a>Viz také  
- [Mapování datového typu SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
  [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
- [Parametry s hodnotou tabulky](../../../../../docs/framework/data/adonet/sql/table-valued-parameters.md)  
- [Binární a velké hodnoty dat systému SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Parametry s hodnotami v tabulkách](../../../../../docs/framework/data/adonet/sql/table-valued-parameters.md)  
+ [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

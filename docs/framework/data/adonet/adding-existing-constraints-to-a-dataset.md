@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0e457113eff471c620ccdbf78337d2013d7a62bb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fd760cf51aa0f3e89e49831b1aa165e62b321d20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adding-existing-constraints-to-a-dataset"></a>Přidání existující omezení datové sady
 **Vyplnění** metodu **DataAdapter** doplní <xref:System.Data.DataSet> pouze se sloupci a řádky ze zdroje dat; tabulky ale omezení jsou běžně nastavit zdroj dat **vyplnění** metoda nepřidá tyto informace schématu **datovou sadu** ve výchozím nastavení. K naplnění **datovou sadu** s stávající informace o omezení primárního klíče ze zdroje dat, můžete buď volání **FillSchema** metodu **DataAdapter**, nebo nastavte **MissingSchemaAction** vlastnost **DataAdapter** k **AddWithKey** před voláním **vyplnění**. Tím bude zajištěno, že primární klíč omezení **datovou sadu** odrážejí hodnoty ve zdroji dat. Informace o omezení cizího klíče nezahrnuje a musí být vytvořen explicitně, jak je znázorněno v [DataTable omezení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md).  
@@ -71,7 +72,7 @@ custAdapter.Fill(custDataSet, "Customers");
 >  Pokud **FillSchema** metodu **třídy OleDbDataAdapter** objektu se říká pro příkaz, který vrátí více sad výsledků dotazu, je vrácena pouze informace o schématu z první sadu výsledků dotazu. Při vrácení informací o schématu pro více výsledek nastaví pomocí **třídy OleDbDataAdapter**, doporučuje se, zda jste zadali **MissingSchemaAction** z **AddWithKey** a získat informace o schématu při volání metody **vyplnění** metoda.  
   
 ## <a name="see-also"></a>Viz také  
- [DataAdapters a DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Datové sady, DataTables a DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [Načítání a upravovat Data v technologii ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

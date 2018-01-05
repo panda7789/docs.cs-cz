@@ -13,11 +13,14 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e9761afe8b56e15edba6e0319cce9a02501a6bb0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7901f4bf88215f84445c1d222e6582e0a063c25a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přidružit předdefinované a vlastní identifikátory URI názvy prvků a atributů v dokumentu XML. Chcete-li vytvořit těchto přidružení, definice předpony oboru názvů identifikátory URI a používání předpon, k vyfiltrování názvy prvků a atributů v datech XML. Obory názvů zabránit elementu a atributu kolize názvů a povolte elementů a atributů se stejným názvem, zpracovávají a ověřit jinak.  
@@ -88,4 +91,4 @@ Obory názvů XML přidružit předdefinované a vlastní identifikátory URI n�
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.XmlNamespaceManager>  
- [XML – dokumenty a Data](../../../../docs/standard/data/xml/index.md)
+ [Dokumenty a data XML](../../../../docs/standard/data/xml/index.md)

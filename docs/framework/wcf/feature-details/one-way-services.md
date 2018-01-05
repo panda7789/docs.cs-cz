@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 12913a9afc0003b041b260379a55e469273c5910
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0d023d3623777a93cf72715410aed87fe8a63ee5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="one-way-services"></a>Jednosměrné služby
 Výchozí chování operace služby je vzor požadavku a odpovědi. V požadavku a odpovědi vzor, klient počká zprávy s odpovědí, i když představuje operaci služby v kódu jako `void` metoda. S Jednosměrná operace se přenášejí pouze jednu zprávu. Příjemce neodesílá zprávu odpovědi, ani nebude odesílatel očekávat jeden.  
@@ -65,4 +66,4 @@ public interface IOneWayCalculator
  Doporučujeme, místo toho zkontrolujte různé ovládací prvky služby, a také na straně klienta a pak scénáře aplikace k určení optimální konfiguraci na obou stranách otestovat. Například pokud použití relací blokuje zpracování zpráv vaší služby, můžete nastavit <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.InstanceContextMode.PerCall> tak, aby každou zprávu zpracovává instanci různé služby a nastavte <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> k <xref:System.ServiceModel.ConcurrencyMode.Multiple> Chcete-li povolit více než jedno vlákno k odesílání zpráv v čase. Další možností je zvýšit čtení kvóty vazeb klienta a služby.  
   
 ## <a name="see-also"></a>Viz také  
- [Jednosměrné](../../../../docs/framework/wcf/samples/one-way.md)
+ [Jednosměrný](../../../../docs/framework/wcf/samples/one-way.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b658cc481d3ca5e87b5b9e2aab6b7561be2c65b1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dbbaefbd32048924434342dc3f902c99a3c2448c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discovery-binding-element-sample"></a>Zjišťování – ukázka prvky vazby
 Tento příklad znázorňuje způsob použití prvku vazby klienta zjišťování pro zjišťování služby. Tato funkce umožňuje vývojářům přidat kanálem klienta zjišťování do své existující zásobníku kanálu klienta provedení programovací model velmi intuitivní. Po otevření přiřazený kanál adresu služby, se vyřeší, pomocí zjišťování. Tato ukázka se skládá z následujících projektech:  

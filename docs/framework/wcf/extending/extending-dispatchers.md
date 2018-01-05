@@ -14,11 +14,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a79a9c3362bd2a186d09f7337c0f742b91871c9e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4240a19401d97cd0636d13a94fd07ad4ef753388
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní kanály, převedena do volání metod v kódu aplikace a odesílání výsledky zpět k volajícímu. Rozšíření dispečerů umožňují upravit zpracování.  Můžete implementovat zprávy nebo parametr kontroly, které zkontrolovat nebo upravit obsah zprávy nebo parametry.  Můžete změnit způsob zprávy jsou směrovány do operace nebo zadejte některé další funkce.  
@@ -141,4 +142,4 @@ Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní
  <xref:System.ServiceModel.Dispatcher.DispatchOperation>  
  [Postupy: Kontrola a změny zpráv ve službě](../../../../docs/framework/wcf/extending/how-to-inspect-and-modify-messages-on-the-service.md)  
  [Postupy: Kontrola nebo úprava parametrů](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)  
- [Postupy: uzamčení koncových bodů v podnikové síti](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)
+ [Postupy: Uzamknutí koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)

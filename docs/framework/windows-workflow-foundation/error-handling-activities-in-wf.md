@@ -12,11 +12,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8b7ed6837e9ee88e85324ed5d7a2b9ff3e419a9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 96a868cd28823c3185d1297f7709dcfdc28a14a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="error-handling-activities-in-wf"></a>Zpracování chyb aktivity v WF
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]poskytuje několik poskytované systémem aktivity pro implementace zpracování chyb a obnovení. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Výjimky](../../../docs/framework/windows-workflow-foundation/exceptions.md).  

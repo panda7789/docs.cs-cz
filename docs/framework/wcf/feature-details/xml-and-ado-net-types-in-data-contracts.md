@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c5395797dd2ebba467448b90be139d750bbcc6b6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c4641815687f2c510aa664a287a79f64dc86d769
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>Typy XML a ADO.NET v kontraktech dat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Modelu kontraktu dat podporuje určité typy, které představují XML přímo. Když jsou tyto typy serializován do formátu XML, serializátoru, který zapíše obsah XML z těchto typů bez dalšího zpracování. Podporované typy jsou <xref:System.Xml.XmlElement>, pole <xref:System.Xml.XmlNode> (ale ne `XmlNode` zadejte sám sebe), stejně jako typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Data.DataSet> a <xref:System.Data.DataTable> typu, jakož i typové datové sady, běžně se používají při programování pro databázi. Tyto typy implementovat `IXmlSerializable` rozhraní a jsou proto serializovatelný v datech smlouvy modelu. Na konci tohoto tématu jsou uvedeny některé důležité informace pro tyto typy.  
@@ -216,4 +217,4 @@ ms.lasthandoff: 12/02/2017
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Xml.Serialization.IXmlSerializable>  
  [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Typy podporované systémem serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+ [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)

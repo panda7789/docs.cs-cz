@@ -13,27 +13,28 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e1d533a1f559044caf3bc711e9401b75703254bc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1d3ca06c2e702ef64a05834116e1c89b4872b32b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-a-peer-channel-application"></a>Vytvoření aplikace rovnocenného kanálu
 Následující části obsahují pokyny týkající se vývoje aplikací rovnocenného kanálu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Převedení aplikace NetTcpBinding na aplikaci rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/converting-a-nettcpbinding-application-to-a-peer-channel-application.md)  
+ [Převedení aplikace NetTcpBinding na aplikaci protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/converting-a-nettcpbinding-application-to-a-peer-channel-application.md)  
  Popisuje za k převedení aplikace NetTcpBinding na aplikaci aplikace kanálu sdílené.  
   
  [Omezení distribuce zpráv](../../../../docs/framework/wcf/feature-details/limiting-message-distribution.md)  
  Popisuje použití počet směrování, šíření filtru zpráv, filtrem místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu OK a poskytuje obecné pokyny pro výběr přístup.  
   
- [Přidání Online a Offline stavu](../../../../docs/framework/wcf/feature-details/adding-online-and-offline-status.md)  
+ [Přidání online a offline stavu](../../../../docs/framework/wcf/feature-details/adding-online-and-offline-status.md)  
  Popisuje postup použití <xref:System.ServiceModel.IOnlineStatus> rozhraní monitorovat konkrétní podrobnosti o stavu online a offline připojení k rovnocenného kanálu.  
   
- [Zabezpečení aplikací rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
+ [Zabezpečení aplikací protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
  Popisuje zabezpečení na základě přenosu a na základě zpráv a osvědčené postupy pro zabezpečení aplikací rovnocenného kanálu.  
   
 ## <a name="see-also"></a>Viz také  
- [Koncepty rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
+ [Koncepce protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)

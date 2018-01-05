@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 02fb14b84341d594f35885be220027631999d202
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a913de1a6808c7e600a4f28ed58dedf93506466b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imagelist-component-overview-windows-forms"></a>ImageList – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ImageList> komponenta se používá k ukládání Image, které pak lze zobrazit pomocí ovládacích prvků. Seznam obrázků můžete napsat kód pro jeden a konzistentní katalog bitové kopie. Například můžete otáčení obrázků, na které se zobrazí <xref:System.Windows.Forms.Button> řízení jednoduše tak, že změna na tlačítko <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> nebo <xref:System.Windows.Forms.ButtonBase.ImageKey%2A> vlastnost. Stejný seznam bitové kopie můžete taky přidružit více ovládacích prvků. Například, pokud používáte obě <xref:System.Windows.Forms.ListView> řízení a <xref:System.Windows.Forms.TreeView> ovládací prvek zobrazí stejný seznam souborů, změna na ikonu v seznamu obrázků, které způsobí, že na ikonu Nový se zobrazí v obou zobrazeních.  
@@ -37,4 +38,4 @@ Windows Forms <xref:System.Windows.Forms.ImageList> komponenta se používá k u
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.ImageList>  
- [Postupy: Přidání nebo odebrání obrázků pomocí ovládacího prvku Windows Forms ImageList – komponenta](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)
+ [Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)

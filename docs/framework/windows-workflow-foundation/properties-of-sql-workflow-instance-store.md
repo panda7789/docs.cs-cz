@@ -12,26 +12,27 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d4b890b80880638fae62c1ae79f8d2f436ef309
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 368e6a4514eafdf4d3c5b38c5e31ff21e56f67e6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti úložiště Instance pracovního postupu SQL
 Témata v této části poskytují informace o vlastnostech SQL úložiště Instance pracovního postupu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Kódování možnost instance](../../../docs/framework/windows-workflow-foundation/instance-encoding-option.md)  
+-   [Možnost kódování instance](../../../docs/framework/windows-workflow-foundation/instance-encoding-option.md)  
   
--   [Instance dokončení akce](../../../docs/framework/windows-workflow-foundation/instance-completion-action.md)  
+-   [Akce dokončení instance](../../../docs/framework/windows-workflow-foundation/instance-completion-action.md)  
   
--   [Instance uzamčení výjimka akce](../../../docs/framework/windows-workflow-foundation/instance-locked-exception-action.md)  
+-   [Akce uzamčené výjimky instance](../../../docs/framework/windows-workflow-foundation/instance-locked-exception-action.md)  
   
--   [Interval obnovování hostitele zámku](../../../docs/framework/windows-workflow-foundation/host-lock-renewal-period.md)  
+-   [Interval obnovování zámku hostitele](../../../docs/framework/windows-workflow-foundation/host-lock-renewal-period.md)  
   
--   [Období detekce spustitelného instancí](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md)  
+-   [Interval detekce spustitelných instancí](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md)  
   
 -   [Připojovací řetězec a název připojovacího řetězce](../../../docs/framework/windows-workflow-foundation/connection-string-and-connection-string-name.md)  
   

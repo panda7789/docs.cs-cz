@@ -14,11 +14,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26c054e3cc9dbf920ab280df43d97acdb90ca055
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bc27663904371991855b2fe7d96b4a15827d1180
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-framework-provider-wcf-data-services"></a>Zprostředkovatel Entity Framework (služby WCF Data Services)
 Jako [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], ADO.NET Entity Framework je založena na Entity Data Model, který je typu modelu vztah entit. Rozhraní Entity Framework překládá operace u jeho implementace modelu Entity Data Model, který se nazývá *konceptuálního modelu*, do ekvivalentní operací zdroj dat a. Díky rozhraní Entity Framework poskytovatele ideální pro data služby, které jsou založeny na relační data a všechny databáze, který má zprostředkovatele dat, který podporuje rozhraní Entity Framework lze použít s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Seznam zdrojů dat, které aktuálně podporují rozhraní Entity Framework najdete v tématu [poskytovatelů třetích stran pro rozhraní Entity Framework](http://go.microsoft.com/fwlink/?LinkId=143699).  
@@ -30,6 +31,6 @@ Jako [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], ADO.NET Entity
  Další informace o rozhraní Entity Framework najdete v tématu [Entity Framework přehled](../../../../docs/framework/data/adonet/ef/overview.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
- [Reflexe zprostředkovatele](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)  
- [Datového modelu entity](../../../../docs/framework/data/adonet/entity-data-model.md)
+ [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+ [Zprostředkovatel reflexe](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)  
+ [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

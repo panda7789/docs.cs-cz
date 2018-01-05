@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5a846bc321aab19cb1d04ba55ca4cca4b7188bcd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3c58dbd35c2c203450960118b58da49518098ed7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inferring-dataset-relational-structure-from-xml"></a>Odvození relační strukturu datové sady z XML
 Relační struktura nebo schéma z <xref:System.Data.DataSet> se skládá z tabulky, sloupce, omezení a vztahů. Při načítání <xref:System.Data.DataSet> ze souboru XML, můžete předem definovaná schématu, ale mohou být vytvořeny, explicitně nebo prostřednictvím odvozená z XML načítá. Další informace o načítání schématu a obsah <xref:System.Data.DataSet> ze souboru XML, najdete v části [načítání datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [načítání datovou sadu informace o schématu z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  
@@ -29,16 +30,16 @@ Relační struktura nebo schéma z <xref:System.Data.DataSet> se skládá z tabu
  Všechny atributy, které se nachází v dokumentu XML by měl být součástí procesu odvození. Namespace kvalifikovaný atributy mohou zahrnovat metadata, která je důležité pro dokument XML, ale ne <xref:System.Data.DataSet> schématu. Pomocí <xref:System.Data.DataSet.InferXmlSchema%2A>, můžete určit obory názvů, který se má ignorovat během procesu odvození. Další informace najdete v tématu [načítání datovou sadu informace o schématu z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Souhrn procesu odvození schéma datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/summary-of-the-dataset-schema-inference-process.md)  
+ [Souhrn procesu odvození schématu datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/summary-of-the-dataset-schema-inference-process.md)  
  Poskytuje shrnutí pravidel pro odvození schéma <xref:System.Data.DataSet> ze souboru XML.  
   
- [Odvození tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-tables.md)  
+ [Odvozování tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-tables.md)  
  Popisuje elementy XML, které jsou odvozené jako tabulky <xref:System.Data.DataSet>.  
   
- [Odvození sloupce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-columns.md)  
+ [Odvozování sloupců](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-columns.md)  
  Popisuje elementy XML a atributů, které jsou odvozené jako sloupců tabulky.  
   
- [Odvození relace](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-relationships.md)  
+ [Odvozování relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-relationships.md)  
  Popisuje <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty vytvořené pro vnořený, odvozené tabulky.  
   
  [Odvození textu elementu](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-element-text.md)  
@@ -48,13 +49,13 @@ Relační struktura nebo schéma z <xref:System.Data.DataSet> se skládá z tabu
  Popisuje omezení odvození schématu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Pomocí XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  Popisuje, jak <xref:System.Data.DataSet> objekt komunikuje se službou XML data.  
   
- [Odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
  Popisuje relační struktura nebo schéma z <xref:System.Data.DataSet> vytvořený ze schématu XML definition language (XSD) schématu.  
   
- [ADO.NET – přehled](../../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)  
  Popisuje technologie ADO.NET architektura a komponenty a jak je používat pro přístup k existující zdroje dat a spravovat data aplikací.  
   
 ## <a name="see-also"></a>Viz také  

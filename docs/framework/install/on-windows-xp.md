@@ -8,11 +8,12 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.devlang: dotnet
-ms.openlocfilehash: f79ae387b123527b3795a2e12a68bd153b308f81
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 83def2091cf1fdc7d3d359c98aa3116a009d465d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Nainstalujte rozhraní .NET Framework na systém Windows XP a Windows Server 2003
 

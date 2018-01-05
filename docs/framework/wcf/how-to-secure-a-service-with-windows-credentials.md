@@ -17,11 +17,12 @@ caps.latest.revision: "26"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 09e15fcb1f18a91961ee77a57dd8eed80f3faf6a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6a5225f25ca921407d64f579bbc7c204917ff260
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí pověření systému Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služba, která se nachází v doméně systému Windows a je volána klienty ve stejné doméně. [!INCLUDE[crabout](../../../includes/crabout-md.md)]v tomto scénáři najdete v části [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
@@ -158,7 +159,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSHttpBinding>  
- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
- [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
+ [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
+ [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
  [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)  
  [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)

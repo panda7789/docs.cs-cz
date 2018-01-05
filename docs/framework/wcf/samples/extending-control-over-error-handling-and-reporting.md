@@ -13,11 +13,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a4284f07a21a9bb176a78a8a2abefe7c7c7c6b66
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0ab2e105c9055760bbeaeef5e56a8cb18c538306
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
 Tento příklad ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidat ke službě se budou zpracovávat chyby. Klient vynutí několik chybové stavy. Služba zachytí chyby a zaznamenává je do souboru.  

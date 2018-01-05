@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4da623c34b4c3b84dee0f02d631d032eb1c061d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8f03fd8cea706e2927ed8e14b4f89a94a208e266
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-an-ellipse-or-a-circle"></a>Postupy: Vykreslení elipsy nebo kruhu
 Tento příklad ukazuje, jak k vykreslení tři tečky a kroužky pomocí <xref:System.Windows.Shapes.Ellipse> elementu. Kreslení elipsy, vytvořit <xref:System.Windows.Shapes.Ellipse> elementu a zadejte jeho <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>. Použijte jeho <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnosti k určení, <xref:System.Windows.Media.Brush> sloužící k vyplnění vnitřku se třemi tečkami. Použijte jeho <xref:System.Windows.Shapes.Shape.Stroke%2A> vlastnosti k určení, <xref:System.Windows.Media.Brush> sloužící k vyplnění obrys se třemi tečkami. <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> Vlastnost určuje Tloušťka obrysu třemi tečkami.  

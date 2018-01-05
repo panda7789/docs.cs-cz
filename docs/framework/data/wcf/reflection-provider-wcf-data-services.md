@@ -14,11 +14,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 52fe7e777cfea04b6da2a04c0badfe92b2a0a756
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 617754fcd9515f080dc6cf8ae923c2c6fc34ad3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reflection-provider-wcf-data-services"></a>Reflexe zprostředkovatele (služby WCF Data Services)
 Kromě úniku dat z datového modelu prostřednictvím rozhraní Entity Framework [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] můžou zpřístupnit data, která není definován výhradně ve model na základě entity. Zprostředkovatel reflexe poskytuje data v třídy, které návratové typy, které implementují <xref:System.Linq.IQueryable%601> rozhraní. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]odvození datový model pro tyto třídy pomocí reflexe a může překládat adresy vytvářet dotazy na prostředky do jazyka integrovaného dotazu (LINQ) – na základě dotazů vůči zveřejněné <xref:System.Linq.IQueryable%601> typy.  
@@ -104,4 +105,4 @@ Kromě úniku dat z datového modelu prostřednictvím rozhraní Entity Framewor
  Protože ve výchozím nastavení jsou nativně podporovány rozhraní Entity Framework, je zprostředkovatel doporučené dat pro použití relačních dat s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Můžete ale poskytovateli reflexe třídy SQL se službou dat pomocí LINQ. <xref:System.Data.Linq.Table%601> Způsobit sad, které se vrátí pomocí metody na <xref:System.Data.Linq.DataContext> generované LINQ to SQL Návrhář relací objektů (Návrhář relací objektů) implementace <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje reflexe zprostředkovatele, který má přístup k tyto metody a vrátit entity data ze systému SQL Server pomocí generované třídy LINQ to SQL. Ale protože neimplementuje technologie LINQ to SQL <xref:System.Data.Services.IUpdatable> rozhraní, je nutné přidat konkrétní třídu, která rozšiřuje existující <xref:System.Data.Linq.DataContext> třídu přidat <xref:System.Data.Services.IUpdatable> implementace. Další informace najdete v tématu [postupy: vytvoření službu dat pomocí LINQ to SQL zdroj dat](../../../../docs/framework/data/wcf/create-a-data-service-using-linq-to-sql-wcf.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
+ [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5117d2aba6fe368a7a17e3d35d8c4887582267e3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4870e5f3a71f51cb788eae1aa2a1884f5084ad40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
 Před zavedením z více Active výsledek sady (MARS) vývojáři bylo nutné použít více připojení nebo kurzory na straně serveru k řešení určité scénáře. Kromě toho, když v situaci, transakční používaly více připojení, vázaný připojení (s **proceduru sp_getbindtoken** a **procedury sp_bindsession**) nebyly potřeba. Následující scénáře ukazují, jak používat připojení s MARS místo více připojení.  
@@ -413,5 +414,5 @@ private static string GetConnectionString()
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Více sad výsledků dotazu Active (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
+ [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

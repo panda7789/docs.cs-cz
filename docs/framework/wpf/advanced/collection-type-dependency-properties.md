@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 11927efee2b8375550767d119e6b4a95b3ef7bd8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e572bf7d404d0d824d3127789190ce81d4c98998
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="collection-type-dependency-properties"></a>Vlastnosti závislostí typu kolekce
 Toto téma obsahuje pokyny a navrhované vzory pro implementaci vlastnost závislosti, kde je typ vlastnosti typu kolekce.  
@@ -68,8 +69,8 @@ Toto téma obsahuje pokyny a navrhované vzory pro implementaci vlastnost závis
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.FreezableCollection%601>  
- [XAML a vlastní třídy pro grafický subsystém WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Metadata vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)
+ [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)

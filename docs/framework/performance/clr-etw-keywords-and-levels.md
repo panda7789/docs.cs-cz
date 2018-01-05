@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7f5dcdd969619526c52a9ae44014030a9f0c6dc5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 72775d4cb478b6d9c9d2e65119c63f8a34ae47d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
 <a name="top"></a>Trasování událostí pro Windows (ETW) události lze filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) povolit filtrování událostí podle kategorie; se používají v kombinacích runtime a rundown zprostředkovatele. [Úrovně událostí](#levels) jsou identifikovány příznaky.  
@@ -131,6 +132,6 @@ ms.lasthandoff: 11/21/2017
  0x0 - LogAlways  
   
 ## <a name="see-also"></a>Viz také  
- [CLR ETW – zprostředkovatelé](../../../docs/framework/performance/clr-etw-providers.md)  
- [CLR ETW – události](../../../docs/framework/performance/clr-etw-events.md)  
- [Události trasování událostí v modulu Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
+ [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)  
+ [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)  
+ [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

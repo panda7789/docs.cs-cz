@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 886ef6c8c9df9d14b5c2a805da2e3948d5e55f69
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8142125eae26b15f12652d28fdf0c34f19d49c4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-considerations-for-direct3d9-and-wpf-interoperability"></a>Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF
 Je možné hostovat procesu Direct3D9 obsahu pomocí <xref:System.Windows.Interop.D3DImage> třídy. Hostování procesu Direct3D9 obsahu může ovlivnit výkon aplikace. Toto téma popisuje osvědčené postupy za účelem optimalizace výkonu při hostování procesu Direct3D9 obsahu v aplikaci Windows Presentation Foundation (WPF). Tyto doporučené postupy zahrnují použití <xref:System.Windows.Interop.D3DImage> a osvědčené postupy, pokud používáte systém Windows Vista, Windows XP, a zobrazí se více monitorování.  
@@ -71,6 +72,6 @@ Je možné hostovat procesu Direct3D9 obsahu pomocí <xref:System.Windows.Intero
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Interop.D3DImage>  
- [WPF a vzájemná spolupráce procesu Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
- [Návod: Vytvoření procesu Direct3D9 obsah pro hostování v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
- [Postupy: Hostování procesu Direct3D9 obsahu v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+ [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
+ [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
+ [Návod: Hostování obsahu Direct3D9 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

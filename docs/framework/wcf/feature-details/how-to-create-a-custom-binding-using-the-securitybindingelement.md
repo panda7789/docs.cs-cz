@@ -17,11 +17,12 @@ caps.latest.revision: "19"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 0042ae642d8e3a5936c316921b2f9377a0eac17a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e230c02d53f8222034dfd79872cde9c540c31963
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech zabezpečení možnostech, které [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření vlastních vazeb, najdete v části [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
@@ -120,5 +121,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
  <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)

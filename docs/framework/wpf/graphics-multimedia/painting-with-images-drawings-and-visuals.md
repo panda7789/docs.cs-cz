@@ -23,11 +23,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 16c3184c329fa83ddf091326c97d6faf2e2c88f5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 01939eb8735e6764e0f0cba811091c7fdbd6797f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>Kreslení pomocí obrázků, kreseb a vizuálních objektů
 Toto téma popisuje postup použití <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> objekty k vyplnění oblast s bitovou kopii, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>.  
@@ -149,11 +150,11 @@ Součástí TileBrush s více dlaždice
  <xref:System.Windows.Media.DrawingBrush>  
  <xref:System.Windows.Media.VisualBrush>  
  <xref:System.Windows.Media.TileBrush>  
- [Přehled TileBrush](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)  
- [Přehled štětce WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)  
- [Přehled vytvoření bitové kopie](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [Kreslení objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
- [Přehled masek krytí](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)  
+ [TileBrush – přehled](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)  
+ [Přehled štětců WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)  
+ [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
+ [Přehled masek neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)  
  [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
  [Objekt ImageBrush ukázka](http://go.microsoft.com/fwlink/?LinkID=160005)  
  [Ukázka VisualBrush](http://go.microsoft.com/fwlink/?LinkID=160049)

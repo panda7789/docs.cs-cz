@@ -13,11 +13,12 @@ caps.latest.revision: "23"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: f338eff156646a2df063da84eead274a34a39159
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 19d67d99ddf6bab69aa1e5f993917142a4378105
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chování při spuštění na úrovni služby, nebo na úrovni koncového bodu. ([!INCLUDE[crabout](../../../../includes/crabout-md.md)] chování obecně naleznete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* kontrolu nad přihlašovací údaje, ověřování, autorizaci a auditování protokoly. Chování můžete použít buď programování, nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcí zabezpečení:  

@@ -21,11 +21,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 52726a770e33bec4b5ec9b24f33deb44ed6379b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fabe176ade1ae94a20100162ab7ab6fadfb2999f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-open-files-using-the-openfiledialog-component"></a>Postupy: Otevírání souborů pomocí součásti OpenFileDialog
 <xref:System.Windows.Forms.OpenFileDialog> Součást umožňuje uživatelům procházet složky jejich počítače nebo všechny počítače v síti a vyberte jeden nebo více souborů otevřete. Dialogové okno vrátí cestu a název souboru, vyberte v dialogovém okně vyberte uživatele.  
@@ -185,4 +186,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.OpenFileDialog>  
- [OpenFileDialog – komponenta](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)
+ [Komponenta OpenFileDialog](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)

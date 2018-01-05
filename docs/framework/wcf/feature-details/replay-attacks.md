@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cd96404adea7fb8e7d59dcea322b2d3832f2bfe4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: df2a7a78e876ec3228491569c918ad9add2e080d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="replay-attacks"></a>Útoky opakováním
 A *přehráním útoku* nastane, když útočník zkopíruje datového proudu zpráv mezi dvěma účastníky a replays datový proud na jeden nebo více stran. Pokud omezeny, počítače podřízené útoku zpracovat datového proudu jako legitimní zprávy, což vede k řadu chybný důsledky, jako je například redundantní objednávky položky.  
@@ -47,9 +48,9 @@ A *přehráním útoku* nastane, když útočník zkopíruje datového proudu zp
 -   Nakonfigurujte službu, která používá zabezpečení na úrovni přenosu.  
   
 ## <a name="see-also"></a>Viz také  
- [Aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [Zvýšení úrovně oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Odmítnutí služby](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [Manipulaci](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

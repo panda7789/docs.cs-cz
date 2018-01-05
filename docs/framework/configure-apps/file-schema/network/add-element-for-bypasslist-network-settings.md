@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: eae909e2f70cfa045dd9a5c6b7496f112a59dc45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bed3abd5522b748a2bd24ba03c7be5d991deae9a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-bypasslist-network-settings"></a>&lt;Přidat&gt; Element pro bypasslist – (nastavení sítě)
 Přidá IP adresy nebo názvu DNS na seznam obcházení proxy.  

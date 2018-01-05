@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 157d157eceaa83893df3acf5efc9a8d4c1b27200
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e34a0b267e9a1dc7cf545ae981211cabf220e0d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
 Pole je typu odkazu ve spravovaném kódu, který obsahuje jeden či více elementů stejného typu. I když pole jsou odkazové typy, je jsou předat jako parametry k nespravovaným funkcím. Toto chování je konzistentní způsob spravovaných polí jsou předávány spravovaných objektů, což je jako vstupně -výstupní parametry. Další podrobnosti najdete v tématu [kopírování a přichycování](../../../docs/framework/interop/copying-and-pinning.md).  

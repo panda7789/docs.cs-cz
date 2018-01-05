@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acc757d899da3ff737b2884131b77135265fd197
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cd9bfb187f77f1cff344aaeabebd36aec1312e30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Postupy: Diagnostika problematické tiskové úlohy
 Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohatá sada vlastností tiskových úloh v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] z [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] poskytují způsob pro provádění rychlé vzdálenou diagnostiku tiskových úloh.  
@@ -97,5 +98,5 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
  <xref:System.FlagsAttribute>  
  <xref:System.Printing.PrintQueue>  
  [& – Operátor (referenční dokumentace jazyka C#)](~/docs/csharp/language-reference/operators/and-operator.md)  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Tisk – přehled](../../../../docs/framework/wpf/advanced/printing-overview.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)

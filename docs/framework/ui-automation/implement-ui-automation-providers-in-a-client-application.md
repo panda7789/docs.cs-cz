@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: ae7b478ec8d836f1e0772d81185b9bb0119c0fa8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c099cd74b14160ca69bda5b353c7bbd7e3327cd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implement-ui-automation-providers-in-a-client-application"></a>Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích
 > [!NOTE]

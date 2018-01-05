@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5c8299a3f4885618601c8087a61c21dc5d989813
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d68d829e5543b1c299668493c11b62ccb11d81af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-resize-columns-with-a-gridsplitter"></a>Postupy: Změna velikosti sloupců pomocí objektu GridSplitter
 Tento příklad ukazuje postup vytvoření svislého <xref:System.Windows.Controls.GridSplitter> Chcete-li znovu distribuovat mezeru mezi dvěma sloupci v <xref:System.Windows.Controls.Grid> bez změnit rozměry <xref:System.Windows.Controls.Grid>.  
@@ -46,4 +47,4 @@ Tento příklad ukazuje postup vytvoření svislého <xref:System.Windows.Contro
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.GridSplitter>  
- [Postupy: témata](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)

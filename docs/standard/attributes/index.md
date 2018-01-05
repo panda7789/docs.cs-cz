@@ -22,11 +22,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8151fd7738dd41ee6ae330a90f3814ec2cc9eb62
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ae399e5213c95b29736c54fcc48ac45a778ba25b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="extending-metadata-using-attributes"></a>Rozšiřování metadat pomocí atributů
 Modul common language runtime umožňuje přidat popisné deklarace podobné klíčovým slovům volá atributy umožňuje anotaci elementům programování, jako jsou typy, pole, metod a vlastností. Při kompilaci kódu pro modul runtime, je převést na Microsoft (MSIL intermediate language) a umístěn uvnitř přenosné spustitelný soubor (PE) společně s generované kompilátorem metadat. Atributy umožňují umístit další popisné informace do metadat, které mohou být extrahovány pomocí reflexe služby modulu runtime. Kompilátor vytvoří atributy, když je deklarovat instance speciálních tříd, které jsou odvozeny od <xref:System.Attribute?displayProperty=nameWithType>.  
@@ -41,7 +44,7 @@ Modul common language runtime umožňuje přidat popisné deklarace podobné kl�
 |[Zápis vlastních atributů](../../../docs/standard/attributes/writing-custom-attributes.md)|Popisuje, jak navrhnout vlastní třídy atributů.|  
 |[Načítání informací uložených v atributech](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)|Popisuje, jak získat vlastní atributy pro kód, který je načten do kontextu spuštění.|  
 |[Metadata a komponenty popisující samy sebe](../../../docs/standard/metadata-and-self-describing-components.md)|Poskytuje přehled metadat a popisuje, jak jsou implementované v rozhraní .NET Framework přenosné spustitelný soubor (PE) souboru.|  
-|[Postupy: načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Vysvětluje, jak načíst informace o vlastních atributů v kontextu pouze pro reflexi.|  
+|[Postupy: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Vysvětluje, jak načíst informace o vlastních atributů v kontextu pouze pro reflexi.|  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Attribute?displayProperty=nameWithType>

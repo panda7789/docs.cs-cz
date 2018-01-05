@@ -22,23 +22,24 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0908dd50c870c26284c1ef90d8433122b00e7be1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ee98461fdd7a74a752d21a2f4ce5c810477cd4d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-in-network-programming"></a>Zabezpečení v síťové programování
 Rozhraní .NET Framework <xref:System.Net> obor názvů třídy poskytují integrovanou podporu pro oblíbené Internet ověřovací mechanismy a přístupová oprávnění kódu rozhraní .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Pomocí zabezpečené sokety vrstvy](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
+ [Použití protokolu SSL (Secure Sockets Layer)](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
  Popisuje, jak používat připojení Secure Sockets Layer (SSL).  
   
- [Ověřování v Internetu](../../../docs/framework/network-programming/internet-authentication.md)  
+ [Ověřování v internetu](../../../docs/framework/network-programming/internet-authentication.md)  
  Popisuje, jak vytvořit ověřené připojení k serverům HTTP pomocí metody ověřování protokolu HTTP.  
   
- [Webové a soketu oprávnění](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
+ [Oprávnění pro web a sokety](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
  Popisuje postup nastavení zabezpečení přístupu kódu pro aplikace, které používají připojení k Internetu.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8b170c9247b2415c724c1306a4c21d067c823b4c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cd3363a1afb8658ed3bb27359259cb752464507d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="why-transformation-order-is-significant"></a>Proč je důležité pořadí transformace
 Jediný <xref:System.Drawing.Drawing2D.Matrix> objekt můžete uložit jednu transformaci nebo posloupnost transformace. K tomu se nazývá složený transformace. Matice složené transformace vynásobením matic jednotlivé transformací.  
@@ -51,4 +52,4 @@ Jediný <xref:System.Drawing.Drawing2D.Matrix> objekt můžete uložit jednu tra
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Drawing2D.Matrix>  
  [Systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
- [Použití transformací ve spravovaném GDI +](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)
+ [Použití transformací ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

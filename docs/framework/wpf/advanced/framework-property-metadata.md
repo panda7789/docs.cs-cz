@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7b516a3b979570c5b3cb3f6fd1edaa038167f1a5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4fec11a973572dce9e8d6f77bf65ce31ee77eb41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="framework-property-metadata"></a>Metadata vlastnosti rozhraní .NET Framework
 Možnosti metadat vlastností Framework jsou hlášeny vlastností elementů objekt považuje za na rozhraní WPF v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektura. Obecné označení úrovni rozhraní WPF zahrnuje této funkce jako je například vykreslování, datové vazby, a vlastnost systému obecnější jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a spustitelné soubory. Metadata vlastnosti Framework je dotazován tak, že tyto systémy pro stanovení konkrétních funkcí vlastností určitý element vlastnosti.  
@@ -84,6 +85,6 @@ Možnosti metadat vlastností Framework jsou hlášeny vlastností elementů obj
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.DependencyProperty.GetMetadata%2A>  
- [Metadata vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+ [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

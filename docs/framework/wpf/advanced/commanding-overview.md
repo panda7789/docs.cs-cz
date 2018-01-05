@@ -24,11 +24,12 @@ caps.latest.revision: "35"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b75319b5a07ac2ee1601f30394da641eb2b781c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1af7d9dba986c3775dc3625d1e7a874f6b26c97d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
 <a name="introduction"></a>Tvorba příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] která poskytuje vstup zpracování více sémantického úrovni, než zařízení vstup. Příklady příkazů **kopie**, **Vyjmout**, a **vložení** nalézt operace v mnoha aplikacích.  
@@ -198,8 +199,8 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Input.CommandBinding>  
  <xref:System.Windows.Input.InputBinding>  
  <xref:System.Windows.Input.CommandManager>  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Implementace ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [Implementace rozhraní ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
  [Postupy: přidání příkazu do MenuItem](http://msdn.microsoft.com/en-us/013d68a0-5373-4a68-bd91-5de574307370)  
  [Vytvořit vlastní RoutedCommand vzorek](http://go.microsoft.com/fwlink/?LinkID=159980)

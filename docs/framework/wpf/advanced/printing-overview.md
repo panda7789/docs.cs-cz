@@ -26,11 +26,12 @@ caps.latest.revision: "35"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: da7234dfd3c1a80ebd2c21d3748bc3281573bb4f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 91ccf1f98d9e1e2f5784246cf30995b689a0b94b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printing-overview"></a>Přehled tisku
 S [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)], vývojáři aplikace pomocí [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] mít širokou škálu nového systému správy tisku a tiskového [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskový systém jsou také k dispozici pro vývojáře vytváření [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikací a vývojáře, kteří používají nespravovaného kódu. Základem tato nová funkce je nové [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tiskové cestu.  
@@ -152,8 +153,8 @@ Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes
  <xref:System.Printing.PrintCapabilities>  
  <xref:System.Printing.PrintServer>  
  <xref:System.Printing.PrintQueue>  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/printing-how-to-topics.md)  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/printing-how-to-topics.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [XPS](http://www.microsoft.com/xps)  
- [Serializace dokumentu a úložiště](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
+ [Serializace a úložiště dokumentů](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
  [Převaděč (MXDC) modul dokumentů Microsoft XPS](https://msdn.microsoft.com/library/windows/desktop/ff686803.aspx)

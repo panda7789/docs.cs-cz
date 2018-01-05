@@ -40,11 +40,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0aa85c9ec6e6b911444b07a4169dc769ac4df816
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88e66210fd8066e82a11d07ea0cfeb83808d646c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje termíny, které se používají k popisu elementů XAML syntaxe. Tyto podmínky se často používají v dalších částech této dokumentace pro dokumentace WPF, konkrétně a pro ostatní rozhraní, využívající XAML nebo se základními koncepty XAML ve podporu jazyka XAML na úrovni System.Xaml povolené. Toto téma rozšíří na základní terminologii zavedená v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
@@ -327,8 +328,8 @@ Toto téma definuje termíny, které se používají k popisu elementů XAML syn
   
 ## <a name="see-also"></a>Viz také  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Namespace XAML (x:) Jazykové funkce](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
+ [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [Rozšíření WPF XAML](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [TypeConverters a XAML](../../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)  
- [XAML a vlastní třídy pro grafický subsystém WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+ [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

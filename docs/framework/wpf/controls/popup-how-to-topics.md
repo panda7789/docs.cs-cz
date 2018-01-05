@@ -17,21 +17,22 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6853b915cb133b2ea1cbc0579f3eb59e1e956f5e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: dfe53e4782fda95142a9eaa8ab10227f5353612b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="popup-how-to-topics"></a>Postupy: Témata překryvných objektů
 Témata v této části popisují, jak používat <xref:System.Windows.Controls.Primitives.Popup> řízení k zobrazení obsahu v samostatném okně, které překrývat okna aktuální aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace místní okno](../../../../docs/framework/wpf/controls/how-to-animate-a-popup.md)  
- [Zadejte vlastní místní pozice](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)  
+ [Animace prvku Popup](../../../../docs/framework/wpf/controls/how-to-animate-a-popup.md)  
+ [Určení vlastního umístění prvku Popup](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled místní nabídka](../../../../docs/framework/wpf/controls/popup-overview.md)
+ [Přehled prvku Popup](../../../../docs/framework/wpf/controls/popup-overview.md)

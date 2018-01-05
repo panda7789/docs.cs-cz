@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e29ae3a0374f6ee027180835629eacceaa928d2f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 70575732e7840d243373fd1512f788c776f17ceb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-transport-security-and-message-credentials"></a>Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv
 Zabezpečení služby přenosu a zpráva pověření používá nejlepší režimy zabezpečení přenosu a zpráv v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Transport layer security poskytuje v sum, integrity a důvěrnosti, zatímco zpráva vrstvy zabezpečení poskytuje přihlašovací údaje, které nejsou možné pomocí mechanismy zabezpečení striktní přenosu. Toto téma ukazuje základní kroky pro implementaci přenosu zpráv přihlašovací údaje pomocí <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]nastavení režimu zabezpečení, najdete v části [postupy: nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
@@ -170,6 +171,6 @@ Zabezpečení služby přenosu a zpráva pověření používá nejlepší reži
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md)  
+ [Postupy: Nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md)  
  [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)  
  [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

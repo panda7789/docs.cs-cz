@@ -12,11 +12,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d2f387ddc6671c640ce47759050f27dbdaf7146
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8f28c0c4956c5e32dac204a99967ddd4b6352484
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="state-machine-workflows"></a>Pracovní postupy stavu počítače
 Stavový stroj je dobře známé zlepší pro vývoj programy. <xref:System.Activities.Statements.StateMachine> Aktivity, spolu s <xref:System.Activities.Statements.State>, <xref:System.Activities.Statements.Transition>, a dalších aktivit můžete použít k sestavení stavu počítače pracovního postupu programy. Toto téma obsahuje přehled vytváření pracovních postupů stav počítače.  
@@ -110,7 +111,7 @@ Stavový stroj je dobře známé zlepší pro vývoj programy. <xref:System.Acti
  Stav, který představuje dokončení stav stavového stroje.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vytvoření pracovního postupu stavu počítače](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md)  
+ [Postupy: Vytvoření pracovního postupu stavového stroje](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md)  
  [Návrhář aktivity StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer)  
  [Návrhář aktivity State](/visualstudio/workflow-designer/state-activity-designer)  
  [Návrhář aktivity FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)  

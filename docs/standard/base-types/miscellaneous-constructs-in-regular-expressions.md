@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9b33d196a7af9bc5a1f81c1624bbd98fea074319
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7a7c577c617ca8f40d64548f9f0f2d103c5887e1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Různé konstrukce v regulárních výrazech
 Regulární výrazy v rozhraní .NET zahrnují tři různé jazykové konstrukty. Jedno umožňuje povolit nebo zakázat určité možnosti porovnávání uprostřed vzor regulárního výrazu. Zbývající dvě umožňují zahrnout komentáře v regulárním výrazu.  
@@ -110,4 +113,4 @@ Regulární výrazy v rozhraní .NET zahrnují tři různé jazykové konstrukty
  Všimněte si, že, místo `(?x)` vytvořit v regulárním výrazu komentář může být také rozpoznán voláním <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metoda a předání <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> hodnota výčtu.  
   
 ## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+ [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

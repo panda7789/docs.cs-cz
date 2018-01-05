@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: cf17253478def72fe4fdc24de0a67c26fcbba0bd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 612f667020522d94b53c3f7e715b9a2ad1177836
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>SqlClient podporu pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupiny dostupnosti AlwaysOn.  Funkce skupin dostupnosti AlwaysOn byla přidána do [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012. Další informace o skupinách dostupnosti AlwaysOn najdete v tématu [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] na webu knihy Online.  
@@ -104,5 +105,5 @@ Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../.
  Jen pro čtení směrování může trvat déle než připojení na primární, protože čtení pouze směrování poprvé připojí k primární a pak hledá nejlépe dostupné čitelný sekundární. Z toho důvodu měli zvýšit limit vaše přihlášení.  
   
 ## <a name="see-also"></a>Viz také  
- [Funkce SQL serveru a technologie ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
+ [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

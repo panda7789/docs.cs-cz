@@ -19,22 +19,23 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d226040e531b8e14ff3dae9df2d6353acbbead3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c7fb96bd78f2462ece3e1a7cb9f0dc8c5c0988f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="shapes-how-to-topics"></a>Postupy: Témata tvarů
 Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Shape> objektů pro kreslení základních tvarů na obrazovku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Kreslení uzavřený obrazec pomocí elementu mnohoúhelníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
- [Kreslení elipsy nebo kruh](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-an-ellipse-or-a-circle.md)  
- [Kreslení čáry](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-line.md)  
- [Kreslení čar pomocí elementu lomené čáry](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-polyline-by-using-the-polyline-element.md)  
- [Kreslení v obdélníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-rectangle.md)  
- [Upravit zakončení na konci řádku nebo segmentu](../../../../docs/framework/wpf/graphics-multimedia/how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
+ [Vykreslení zavřeného tvaru pomocí mnohoúhelníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
+ [Vykreslení elipsy nebo kruhu](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-an-ellipse-or-a-circle.md)  
+ [Vykreslení čáry](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-line.md)  
+ [Vykreslení lomené čáry pomocí elementu lomené čáry](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-polyline-by-using-the-polyline-element.md)  
+ [Vykreslení obdélníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-rectangle.md)  
+ [Změna zakončení na konci čáry nebo segmentu](../../../../docs/framework/wpf/graphics-multimedia/how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Shapes.Shape>  

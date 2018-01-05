@@ -22,11 +22,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7f8ee49861902002e69af96168def5883d73c3a5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5405b6fc080696b7e507e70dd8b04f8ddcc4bbb2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="automatic-memory-management"></a>Automatická správa paměti
 Automatická správa paměti je jednou ze služby, které poskytuje modul Common Language Runtime během [spravované provádění](../../docs/standard/managed-execution-process.md). Uvolňování paměti Common Language Runtime spravuje přidělování a uvolňování paměti pro aplikaci. Pro vývojáře to znamená, že nemáte napsat kód pro provedení paměti, že úlohy správy při vývoji spravované aplikace. Automatická správa paměti může eliminovat běžné problémy, jako je například zapomenutí volného objektu a způsobuje nevracení paměti nebo pokusu o přístup k paměti pro objekt, který již byl uvolněn. Tato část popisuje, jak má systém uvolňování přiděluje a uvolní paměť.  
@@ -61,4 +64,4 @@ Automatická správa paměti je jednou ze služby, které poskytuje modul Common
 ## <a name="see-also"></a>Viz také  
  <xref:System.GC>  
  [Uvolňování paměti](../../docs/standard/garbage-collection/index.md)  
- [Proces spravovaného spouštění](../../docs/standard/managed-execution-process.md)
+ [Proces spravovaného spuštění](../../docs/standard/managed-execution-process.md)

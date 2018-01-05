@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5f248ec73bcaba1a1713c5cce0b8f273094483fd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 42a9dc55c558eaf9269e2ee21f678953b1f25b6f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="3351---servermaxpooledconnectionsquotareached"></a>3351 – ServerMaxPooledConnectionsQuotaReached
 ## <a name="properties"></a>Vlastnosti  

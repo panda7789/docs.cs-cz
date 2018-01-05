@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f91e4ac7b74b0ee3ab92e8ae59fe0f20e8f66287
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 34ea3b412af75f136255c7e95cc4f321bafe075b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-directive-syntax"></a>Syntaxe direktivy WCF
 Určuje nastavení používané [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] direktivy v souborů .svc pro přímé kompilátory. Každý – direktiva může obsahovat jeden nebo více atributů (spárovat s hodnotami), které jsou specifických pro danou direktivu. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]je k dispozici pouze [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) – direktiva.  
@@ -27,13 +28,13 @@ Určuje nastavení používané [!INCLUDE[indigo1](../../../../../includes/indig
  Definuje používané kompilátoru .svc atributy specifické pro stránku. Můžou být součástí jenom souborů .svc.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Postupy: hostování služby WCF ve službě IIS](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
+ [Postupy: Hostování služby WCF v IIS](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
  Popisuje, jak @ServiceHost je použita při hostování služby v Internetové informační služby (IIS)  
   
- [Postupy: hostování služby WCF ve WAS](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
+ [Postupy: Hostování služby WCF ve WAS](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
  Popisuje, jak @ServiceHost je použita při hostování služby v procesu aktivace služby WAS (Windows)  
   
 ## <a name="see-also"></a>Viz také  
  [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)  
  [Hostování v Internetové informační službě](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
- [Hostování v aktivační službě procesů systému Windows](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)
+ [Hostování v Aktivační službě procesů systému Windows](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)

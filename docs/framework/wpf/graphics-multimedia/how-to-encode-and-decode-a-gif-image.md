@@ -24,11 +24,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7832e4197ef5c3a764da265a393b654db013876
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9d098faf45edade4a37a4d8a6004d1e7b8acbd86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-encode-and-decode-a-gif-image"></a>Postupy: Kódování a dekódování obrázku GIF
 Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TLA#tla_gif](../../../../includes/tlasharptla-gif-md.md)] bitovou kopii pomocí konkrétní <xref:System.Windows.Media.Imaging.GifBitmapDecoder> a <xref:System.Windows.Media.Imaging.GifBitmapEncoder> objekty.  
@@ -48,4 +49,4 @@ Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TL
  [!code-vb[GifBitmapDecoderEncoder#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GifBitmapDecoderEncoder/VB/GifEncoderDecoder.vb#4)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vytvoření bitové kopie](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+ [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d006c8d0937a454dcbe092dcc3e35c4644088e59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 647bfed7b321a949090f6da047f9b8105d335101
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
 Každá entita kód statické podle hodnoty, která je definována v odkazuje [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsob. Statické vlastnosti, která se odkazuje slouží k poskytování hodnotou vlastnosti v jazyce XAML.  
@@ -87,5 +88,5 @@ Každá entita kód statické podle hodnoty, která je definována v odkazuje [!
  Další informace o tom, jak používat předpony a obory názvů jazyka XAML pro grafický subsystém WPF najdete v tématu [obory názvů jazyka XAML a Namespace mapování pro jazyk XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také  
- [x: Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
- [Typy migrované z grafického subsystému WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+ [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
+ [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

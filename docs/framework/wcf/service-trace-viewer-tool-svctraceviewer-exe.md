@@ -13,11 +13,12 @@ caps.latest.revision: "55"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7832060a29ceb2dc58feac9ce2fc97f58caf70f0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9c739db4db5afad8fc379a5da4764cb9ab6804fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Nástroj Prohlížeč trasování služby umožňuje analyzovat diagnostické trasování, které jsou generovány nástrojem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrovat zprávy trasování v protokolu, aby mohli diagnostikovat, opravit a ověřte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby problémy.  
@@ -460,6 +461,6 @@ ms.lasthandoff: 12/02/2017
  Pokud otevřete protokolu trasování vytvořený Arabic operačního systému, můžete si všimnout, době filtru nefunguje. Například roce 2005 odpovídá roce 1427 v Arabic kalendáři. Časové rozmezí filtr nástroj prohlížeče trasování služeb podporuje však nepodporuje starší než 1752 datum. To můžete neznamená, že zatím nejste moct vybrat správné datum ve filtru. Chcete-li vyřešit tento problém, můžete vytvořit vlastní filtr (**zobrazení nebo vlastní filtry**) pomocí výrazu jazyka XPath mají být zahrnuty za určité časové období.  
   
 ## <a name="see-also"></a>Viz také  
- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení potíží](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
+ [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [Trasování aktivit a šíření pro trasování začátku do konce korelace](http://msdn.microsoft.com/en-us/2c11a905-64f8-47b5-bae5-a74fc666137e)

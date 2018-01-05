@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d40fe3601cb8ad7c4f77cf50825da1deace5644e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ebbd6e77c2c47754054a81f4b07d3d845cdcac00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a>Vytvoření aktivity za běhu s DynamicActivity
 <xref:System.Activities.DynamicActivity>je třída konkrétní, zapečetěné s veřejný konstruktor. <xref:System.Activities.DynamicActivity>slouží ke kompilaci aktivita funkce za běhu pomocí aktivity modelu DOM.  
@@ -106,5 +107,5 @@ ms.lasthandoff: 12/02/2017
 8.  Klikněte pravým tlačítkem na soubor Workflow1.xaml v **Průzkumníku řešení** a vyberte **kód zobrazení**. Všimněte si, že třídy aktivity je vytvořena s `x:Class` a vlastnost je vytvořena s `x:Property`.  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)  
- [Vytvoření DynamicActivity](../../../docs/framework/windows-workflow-foundation/samples/dynamicactivity-creation.md)
+ [Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)  
+ [Vytvoření dynamické aktivity](../../../docs/framework/windows-workflow-foundation/samples/dynamicactivity-creation.md)

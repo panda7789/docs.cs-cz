@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ceb77b12fc8c946eea03d865509db20d72a1900a
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1ae6fb9a0aa6552459b2847243047244d0806db2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="groupbox-control-overview-windows-forms"></a>GroupBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky používané k zajištění osobní seskupení pro další ovládací prvky. Obvykle použijete, skupinové rámečky dále dělit formuláře podle funkce. Například můžete mít formulář objednávky, který určuje poštovní možnosti, například které přes noc poskytovatel používat. Seskupování všechny možnosti v skupinový rámeček umožňuje uživateli logické vizuální upozornění a v době návrhu lze snadno přesunout všechny ovládací prvky – při přesunutí jedné <xref:System.Windows.Forms.GroupBox> řídit, všechny její obsažené ovládací prvky příliš přesunout.  
@@ -32,4 +33,4 @@ Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky používané
  <xref:System.Windows.Forms.GroupBox> Ovládací prvek je podobný <xref:System.Windows.Forms.Panel> řízení; však pouze <xref:System.Windows.Forms.GroupBox> zobrazí popisek a jenom <xref:System.Windows.Forms.Panel> ovládací prvek může mít posuvníky.  
   
 ## <a name="see-also"></a>Viz také  
- [Groupbox – ovládací prvek](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)
+ [Ovládací prvek GroupBox](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)

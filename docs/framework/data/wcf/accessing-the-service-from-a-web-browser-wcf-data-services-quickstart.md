@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 49deb2e209127f92a333195e9fcd0d1e1bece7d8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 71beb254bf258da97207f14afca73cd68c6927ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Přístupu ke službě z webového prohlížeče (rychlý start WCF Data Services)
 V této úloze se spustí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] z [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] a volitelně zakázat kanál čtení ve webovém prohlížeči. Můžete se pak načtení dokumentu definice služby a také přístup k prostředkům služby data odesláním požadavky HTTP GET prostřednictvím webového prohlížeče na zveřejněné prostředky.  
@@ -81,7 +82,7 @@ V této úloze se spustí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md
 ## <a name="next-steps"></a>Další kroky  
  Úspěšně jste získali přístup [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] z webového prohlížeče, pomocí prohlížeče vydání HTTP GET požadavky do zadané prostředky. Webový prohlížeč poskytuje snadný způsob, jak experimentovat s adresování syntaxe požadavků a zobrazit výsledky. Datové služby produkční není však přístup obecně touto metodou. Obvykle aplikace komunikovat se službou data prostřednictvím aplikace kód nebo skriptovací jazyky. V dalším kroku vytvoříte klientská aplikace, která používá klientské knihovny pro přístup k prostředkům služby data, jako kdyby byly běžně používané objekty language runtime (CLR):  
   
- [Vytvoření aplikace klienta rozhraní .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
+ [Vytvoření klientské aplikace .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Přístup k prostředkům služby dat](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)
+ [Přístup k prostředkům datové služby](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)

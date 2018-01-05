@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a65ce815cbf958d898c26433fede931c5e3db6f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fd75dd054fd16278a1b908eecbfc3f2d03e762ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endpoint-reliable-messaging-sessions-faulted-per-second"></a>Koncový bod: Počet nezdařených relací spolehlivého zasílání zpráv za sekundu
 Název čítače: Relací spolehlivého zasílání zpráv s chybou za sekundu.  

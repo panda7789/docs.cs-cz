@@ -24,11 +24,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0fbe77f16ed022458a036b6627b82f80d194276c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 81e6eaa83baab67f54a1b1ce46d616be7e6fdd62
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo – funkce
 Získá poslední kód chyby, která byla vygenerována jedna z funkcí silným názvem.  

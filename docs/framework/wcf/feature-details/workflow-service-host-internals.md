@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cf12cac374759c1cb45a7086ac771a982758e78f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6761c044f166105a2e463d0f89ed0b3813d4b97a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-service-host-internals"></a>Interní informace o hostiteli služby pracovního postupu
 <xref:System.ServiceModel.WorkflowServiceHost>poskytuje hostitele pro služby pracovních postupů. Zodpovídá za naslouchání pro příchozí zprávy a směrování je v instanci služby odpovídající pracovní postup, se řídí uvolnění a zachování nečinnosti pracovních postupů a další. Toto téma popisuje, jak hostitele služby pracovního postupu zpracovává příchozí zprávy.  
@@ -63,7 +64,7 @@ ms.lasthandoff: 12/02/2017
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [Hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services.md)  
  [Kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md)  
- [Ukázka koncový bod správy pracovního postupu](../../../../docs/framework/windows-workflow-foundation/samples/workflow-management-endpoint-sample.md)  
- [Postupy: Konfigurace pracovního postupu neošetřená výjimka chování pomocí třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md)  
+ [Ukázka koncového bodu správy pracovního postupu](../../../../docs/framework/windows-workflow-foundation/samples/workflow-management-endpoint-sample.md)  
+ [Postupy: Konfigurace chování neošetřené výjimky pracovního postupu pomocí WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md)  
  [Vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)  
  [Trvalost pracovního postupu](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)

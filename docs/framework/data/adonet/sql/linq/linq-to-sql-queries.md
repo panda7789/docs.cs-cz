@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a080dd13f4e9950c9e65b8031ffc77ddf18eaf9d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 533786ffe1fa39928f90d94bbb0d80584bf85b8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-sql-queries"></a>Dotazy LINQ to SQL
 Můžete definovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy pomocí stejnou syntaxi jako v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]. Jediným rozdílem je, že odkazované v dotazech objekty jsou namapované na elementy v databázi. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
@@ -45,4 +46,4 @@ Můžete definovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-m
  [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
  [Základní operace dotazů LINQ](~/docs/csharp/programming-guide/concepts/linq/basic-linq-query-operations.md)  
  [Vztahy typů v operacích dotazu LINQ](~/docs/csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)  
- [Koncepty dotazu](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
+ [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

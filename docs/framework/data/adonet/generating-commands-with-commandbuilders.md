@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0e945b4b6c646a0210f781d1ba43b5cd931cfef6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0227da6029f1c565f44c46a08d786149d6da5086
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-commands-with-commandbuilders"></a>Generování příkazů s CommandBuilders
 Když `SelectCommand` dynamicky zadána vlastnost za běhu, například pomocí nástroje dotazu, který přebírá textový příkaz od uživatele, nemusí být možné zadat příslušné `InsertCommand`, `UpdateCommand`, nebo `DeleteCommand` v době návrhu. Pokud vaše <xref:System.Data.DataTable> mapuje nebo se vygeneruje z jedné tabulky databáze, můžete využít výhod <xref:System.Data.Common.DbCommandBuilder> objekt, který má automaticky generovat `DeleteCommand`, `InsertCommand`, a `UpdateCommand` z <xref:System.Data.Common.DbDataAdapter>.  
@@ -120,6 +121,6 @@ adapter.Fill(custDS, "Customers");
   
 ## <a name="see-also"></a>Viz také  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [Spouštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)  
- [Připojení DbConnection, DbCommand a dbexception –](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  
+ [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)  
+ [DbConnection, DbCommand a DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

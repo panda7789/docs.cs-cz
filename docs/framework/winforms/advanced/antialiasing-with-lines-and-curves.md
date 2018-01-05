@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d69d635fbdd8720937cd189826c1496b8126ddef
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b8552f185a93b688555dbcfab3da9d28d9bfde6d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="antialiasing-with-lines-and-curves"></a>Vyhlazení u čar a křivek
 Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení čáry, zadejte výchozí bod a koncový bod řádku, ale není nutné poskytovat žádné informace o jednotlivých pixelů na řádek. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]funguje ve spojení s software ovladače zobrazení k určení, které pixelů bude zapnuto zobrazíte řádek na konkrétní zobrazení zařízení.  
@@ -56,5 +57,5 @@ Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=nameWithType>  
- [Čar, křivek a obrazců](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Postupy: použití vyhlazení s textem](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)
+ [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [Postupy: Použití vyhlazení u textu](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)

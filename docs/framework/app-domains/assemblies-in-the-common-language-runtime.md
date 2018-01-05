@@ -23,11 +23,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7dfa8bab1d142462d49524495e3e5dc0b4960a4d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a4123ea28b317d432f9a36ea0c084d7fdacc7ffe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>Sestavení v modulu CLR (Common Language Runtime)
 Sestavení jsou stavební bloky aplikací rozhraní .NET Framework. Tvoří základní jednotku nasazení, správy verzí, opětovného použití, rozsahu platnosti při aktivaci a oprávnění zabezpečení. Sestavení je kolekce typů a prostředků, které jsou vytvořeny tak, aby vzájemně spolupracovaly a tvořily logickou jednotku funkčnosti. Sestavení poskytuje modulu CLR (Common Language Runtime) informace, které požaduje pro zjištění typu implementace. V modulu runtime neexistuje typ mimo kontext sestavení.  
@@ -63,9 +64,9 @@ Sestavení jsou stavební bloky aplikací rozhraní .NET Framework. Tvoří zák
 |[Důležité informace o zabezpečení sestavení](../../../docs/framework/app-domains/assembly-security-considerations.md)|Zabývá se funkcí zabezpečení pro sestavení.|  
 |[Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)|Poskytuje přehled zásad správy verzí rozhraní .NET Framework.|  
 |[Umístění sestavení](../../../docs/framework/app-domains/assembly-placement.md)|Popisuje způsob vyhledání sestavení.|  
-|[Sestavení a spuštění vedle sebe](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md)|Poskytuje přehled o současném použití více verzí modulu runtime nebo sestavení.|  
+|[Sestavení a souběžné spouštění](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md)|Poskytuje přehled o současném použití více verzí modulu runtime nebo sestavení.|  
 |[Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)|Popisuje způsob vytváření, podepisování a nastavení atributů v rámci sestavení.|  
-|[Emitování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Popisuje způsob vytváření dynamických sestavení.|  
+|[Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Popisuje způsob vytváření dynamických sestavení.|  
 |[Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Popisuje způsob, jakým rozhraní .NET Framework překládá odkazy na sestavení v době spuštění.|  
   
 ## <a name="reference"></a>Odkaz  

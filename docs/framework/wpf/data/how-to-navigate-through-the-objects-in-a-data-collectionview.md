@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f20881ed452f1ec78381d17a32b4cc2c77305e0e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 215e3583d50567a2bfec8226e006bc7398628299
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-through-the-objects-in-a-data-collectionview"></a>Postupy: Navigace prostřednictvím objektů v datech CollectionView
 Zobrazení povolit stejné shromažďování dat lze zobrazit v různými způsoby v závislosti na třídění, filtrování nebo seskupování. Zobrazení také poskytují aktuální záznamů ukazatele koncept a povolit ukazatele. Tento příklad ukazuje, jak získat aktuální objekt a také procházet objekty v kolekci dat pomocí funkce, které jsou součástí <xref:System.Windows.Data.CollectionView> třídy.  
@@ -40,8 +41,8 @@ Zobrazení povolit stejné shromažďování dat lze zobrazit v různými způso
  [!code-vb[CollectionView#OnButton](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CollectionView/VisualBasic/Page1.xaml.vb#onbutton)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [Řazení dat v zobrazení](../../../../docs/framework/wpf/data/how-to-sort-data-in-a-view.md)  
  [Filtrování dat v zobrazení](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)  
- [Řazení a seskupování dat pomocí zobrazení v jazyce XAML](../../../../docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Řazení a seskupení dat pomocí zobrazení XAML](../../../../docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

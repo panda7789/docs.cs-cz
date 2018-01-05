@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26b638b81f6402748b261e0766c18a6e9b3489d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5d5f67790abad5dcf6311de1817b4ea093e703d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu přetížena systému.  
@@ -89,10 +90,10 @@ Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se 
  Toto riziko lze nastavit tento limit pro maximální počet aktivních relací a maximální doba života pro relaci a nastavením <xref:System.ServiceModel.Channels.SecurityBindingElement> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
   
 ## <a name="see-also"></a>Viz také  
- [Aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [Zvýšení úrovně oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Odmítnutí služby](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
- [Manipulaci](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

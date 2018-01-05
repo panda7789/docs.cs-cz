@@ -13,11 +13,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1b507769ba6868a4cd841ca463900b126cfb5b90
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 15648a3dfc115e55dd78eb1f074b9c4235b89f34
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mitigation-product-versioning"></a>Zmírňující opatření: Správa verzí produktu
 V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a novější, Správa verzí produktu se změnil z předchozích verzí rozhraní .NET Framework (rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2).  
@@ -48,5 +49,5 @@ V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a novější, Správa ver
 -   Chcete-li získat verze CLR, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType> metoda.   Pro rozhraní .NET Framework 4 a jeho bod uvolní (rozhraní .NET Framework 4.5, 4.5.1, 4.5.2, a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1, 4.6.2 a 4.7), vrátí řetězec `v4.0.30319`.  
   
 ## <a name="see-also"></a>Viz také  
- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+ [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
  

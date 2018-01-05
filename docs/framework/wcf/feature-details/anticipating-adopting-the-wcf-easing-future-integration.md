@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ccf6e5363da872d3902c12713bd19f5820370428
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8dbb50af9d5655a76abb3827cd2f512eab0fd662
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-integration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace
 Pokud jste ještě dnes pomocí technologie ASP.NET a předvídat pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v budoucnu, toto téma obsahuje pokyny k zajištění, že nové rozhraní ASP.NET Web services bude fungovat dobře společně s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace.  
@@ -54,4 +55,4 @@ public interface IEcho
  Nepoužívejte možnosti ověřování zadané Internetové informační služby (IIS). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]klienti nepodporují je. Pokud služba musí být zabezpečené, pomocí možnosti poskytované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], protože tyto možnosti jsou bohatší a je založený na standardních protokolů.  
   
 ## <a name="see-also"></a>Viz také  
- [Očekávání přechodu služby Windows Communication Foundation: usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
+ [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)

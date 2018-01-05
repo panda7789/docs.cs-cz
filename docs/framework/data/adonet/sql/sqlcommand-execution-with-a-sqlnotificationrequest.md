@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: fdd76820ee0758492fab1364c7561920c549a412
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 509c25f5c6d1108b76028af5cfd8f2a090c92137
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlcommand-execution-with-a-sqlnotificationrequest"></a>Provádění SqlCommand s SqlNotificationRequest
 A <xref:System.Data.SqlClient.SqlCommand> může být nakonfigurováno pro generování oznámení při změně dat po získána ze serveru a sadu výsledků dotazu by být různé, pokud byly znovu spustit dotaz. To je užitečné pro scénáře, ve které chcete používat vlastní oznámení fronty na serveru nebo pokud není chcete zachovat živé objekty.  
@@ -81,5 +82,5 @@ command.ExecuteReader();
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Oznámení dotazu v systému SQL Server](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)  
+ [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

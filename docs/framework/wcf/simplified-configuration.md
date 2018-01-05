@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2e9d851d083f0b3a1bd00bafe5b0805a55635158
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3ff1dee5a57b0c134c25631ce5c694b1b6b2c006
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
 Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby může být složité úlohy. Existuje mnoho různých možností a není vždy snadno určit nastavení, které jsou vyžadovány. Při konfigurační soubory zvýšit flexibilitu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, také se zdroji pro mnoho vyhledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]řeší tyto problémy a poskytuje způsob, jak snížit velikost a složitost konfigurace služby.  

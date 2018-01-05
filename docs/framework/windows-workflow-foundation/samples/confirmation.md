@@ -12,11 +12,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a686a07ed41aafd476dbb1934c178558d90d948
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 42d9fad968b471c63dbdac2145bb9e84afed183b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="confirmation"></a>Potvrzení
 Tento příklad ukazuje čtyři běžné scénáře, které obaluje použití <xref:System.Activities.Statements.CompensableActivity> a potvrzení hesla. Ukázka spustí čtyři pracovní postupy pro zobrazení potvrzení. Tato ukázka je dostupná v deklarativní a imperativní verze.  

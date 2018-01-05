@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15e24e0350071fabd32342402abdf497937ee90d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45dab820072b3eb0bcc448ce32251e3ff5a3e622
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládací prvek a jeho přidružené třídy zadejte společná architektura pro kombinování prvky uživatelského rozhraní na panely nástrojů, stavové řádky a nabídky. <xref:System.Windows.Forms.ToolStrip>ovládací prvky nabízí bohaté prostředí návrhu, která zahrnuje aktivace na místě a úpravy, vlastní rozložení a rafting, což je možnost panelů nástrojů sdílet vodorovné nebo svislé místa.  

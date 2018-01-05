@@ -19,11 +19,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15eeb27d493cd1138b0d3d41b55a57228a226a11
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 118d63bbbcd0cbb52d092af7002df2538df7790b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animation-overview"></a>Přehled animace
 <a name="introduction"></a>
@@ -341,21 +342,21 @@ ms.lasthandoff: 10/22/2017
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Animace a časování přehled systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)|Popisuje, jak se používá systém časování <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvořit animace.|  
-|[Animace tipy a triky](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)|Uvádí užitečné tipy pro řešení problémů s animací, jako je například výkon.|  
-|[Přehled vlastní animace](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)|Popisuje, jak rozšířit systém animace pomocí klíčových snímků, animace třídy nebo zpětná volání za rámce.|  
+|[Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)|Popisuje, jak se používá systém časování <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvořit animace.|  
+|[Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)|Uvádí užitečné tipy pro řešení problémů s animací, jako je například výkon.|  
+|[Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)|Popisuje, jak rozšířit systém animace pomocí klíčových snímků, animace třídy nebo zpětná volání za rámce.|  
 |Přehled animace od/komu/kým|Popisuje postup vytvoření animace, která přechází mezi dvěma hodnotami.|  
-|[Přehled animací jednotlivých klíč](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)|Popisuje postup vytvoření s více hodnotami Cíl, včetně možnosti řízení metodu interpolace animace.|  
-|[Funkce usnadnění](../../../../docs/framework/wpf/graphics-multimedia/easing-functions.md)|Vysvětluje, jak chcete použít pro své animace realistické chování, například skákání matematické vzorce.|  
-|[Přehled animací cesta](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)|Popisuje, jak přesunout nebo otočení objektu podél komplexní cesty.|  
-|[Vlastnost animace techniky – přehled](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)|Popisuje vlastnost animace pomocí scénářů, místní animací, hodiny a animací za snímků.|  
+|[Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)|Popisuje postup vytvoření s více hodnotami Cíl, včetně možnosti řízení metodu interpolace animace.|  
+|[Funkce uvolnění](../../../../docs/framework/wpf/graphics-multimedia/easing-functions.md)|Vysvětluje, jak chcete použít pro své animace realistické chování, například skákání matematické vzorce.|  
+|[Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)|Popisuje, jak přesunout nebo otočení objektu podél komplexní cesty.|  
+|[Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)|Popisuje vlastnost animace pomocí scénářů, místní animací, hodiny a animací za snímků.|  
 |[Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)|Popisuje, jak vytvořit komplexní animace pomocí scénářů s více časových os.|  
 |[Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)|Popisuje <xref:System.Windows.Media.Animation.Timeline> typy a vlastnosti používané ve animace.|  
 |[Přehled událostí časování](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)|Popisuje, k dispozici na události <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty pro spouštění kódu v bodech v časové ose, jako třeba začít, pozastavení, obnovení, přeskočit nebo zastavit.|  
-|[Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animace a časové osy v aplikaci.|  
-|[Postupy: témata hodiny](../../../../docs/framework/wpf/graphics-multimedia/clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití <xref:System.Windows.Media.Animation.Clock> objektu ve vaší aplikaci.|  
-|[Postupy: témata klíč rámce](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací jednotlivých klíč ve vaší aplikaci.|  
-|[Postupy: témata cesta animace](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití cesty animací ve vaší aplikaci.|  
+|[Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animace a časové osy v aplikaci.|  
+|[Postupy: Témata hodin](../../../../docs/framework/wpf/graphics-multimedia/clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití <xref:System.Windows.Media.Animation.Clock> objektu ve vaší aplikaci.|  
+|[Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací jednotlivých klíč ve vaší aplikaci.|  
+|[Postupy: Témata animace cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití cesty animací ve vaší aplikaci.|  
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Odkaz  

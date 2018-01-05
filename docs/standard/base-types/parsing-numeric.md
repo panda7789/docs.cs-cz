@@ -21,11 +21,14 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3c9bb58b0d7b45ca197653742844be01ac3bbe41
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f84fcba0ef37fa45c3dd0fb3ba56f5f912bfc2f1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analýza číselných řetězců v NET
 Všechny číselné typy mají dvě statické metody analýzy `Parse` a `TryParse`, že můžete převést řetězcové vyjádření čísla do číselného typu. Tyto metody umožňují analyzovat řetězce, které byly vytvořeny pomocí řetězce formátu zdokumentována [standardní číselných řetězců formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md) a [vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md). Ve výchozím nastavení `Parse` a `TryParse` metody můžete převést úspěšně řetězce, které obsahují pouze na celé číslo hodnoty integrální desetinných míst. Úspěšně se můžete převést řetězce, které obsahují celých a desetinných desítková číslice, oddělovače skupin a oddělovač desetinných na hodnoty s plovoucí desetinnou čárkou. `Parse` Metoda vyvolá výjimku pokud operace selže, zatímco `TryParse` metoda vrátí `false`.  

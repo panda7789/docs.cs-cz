@@ -12,11 +12,12 @@ helpviewer_keywords: what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4886dad94d3a67e78525241a1538c06b9fe4b0be
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
+ms.workload: dotnet
+ms.openlocfilehash: 9fe4b24f14dd8f08d1168cc26b91e04faa4bf183
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v usnadnění v rozhraní .NET Framework
 

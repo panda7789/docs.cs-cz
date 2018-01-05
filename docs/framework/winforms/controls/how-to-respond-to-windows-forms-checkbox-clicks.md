@@ -23,11 +23,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f15adb84f92c9434d6835e80f08bf1d9bd500ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fe7826d1081f69bae1d220c22447886511cf58e3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-respond-to-windows-forms-checkbox-clicks"></a>Postupy: Reakce na kliknutí na prvek Windows Forms CheckBox
 Vždy, když uživatel klikne na tlačítko Windows Forms <xref:System.Windows.Forms.CheckBox> ovládací prvek, <xref:System.Windows.Forms.Control.Click> dojde k události. Můžete naprogramovat aplikace provádět některé akce v závislosti na stavu zaškrtávacího políčka.  
@@ -148,5 +149,5 @@ Vždy, když uživatel klikne na tlačítko Windows Forms <xref:System.Windows.F
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.CheckBox>  
  [Přehled ovládacího prvku CheckBox](../../../../docs/framework/winforms/controls/checkbox-control-overview-windows-forms.md)  
- [Postupy: nastavení možností pomocí Windows Forms ovládacích prvků CheckBox](../../../../docs/framework/winforms/controls/how-to-set-options-with-windows-forms-checkbox-controls.md)  
- [CheckBox – ovládací prvek](../../../../docs/framework/winforms/controls/checkbox-control-windows-forms.md)
+ [Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox](../../../../docs/framework/winforms/controls/how-to-set-options-with-windows-forms-checkbox-controls.md)  
+ [Ovládací prvek CheckBox](../../../../docs/framework/winforms/controls/checkbox-control-windows-forms.md)

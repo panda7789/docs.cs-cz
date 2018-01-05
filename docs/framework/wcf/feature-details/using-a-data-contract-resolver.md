@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46a532b45024321a6885fa3e45d172c054d18c1c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 28bba68c985191b69fea3b7ab85812917a827b30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-data-contract-resolver"></a>Použití překladače kontraktů dat
 Překladače kontraktů dat umožňuje nakonfigurovat známé typy dynamicky. Známé typy jsou potřeba při serializaci nebo deserializaci typu kontraktu dat není očekávaný. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]známé typy, najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle zadat staticky. To znamená, budete muset znát možné typy operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to není PRAVDA a schopnost určit známé typy dynamicky je důležité.  
@@ -99,5 +100,5 @@ SerializerBehavior.DataContractResolver = new MyCustomerResolver();
   
 ## <a name="see-also"></a>Viz také  
  [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
- [Ukázka třídy DataContractSerializer](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)  
+ [Ukázka DataContractSerializer](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)  
  [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)

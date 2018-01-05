@@ -27,11 +27,14 @@ caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d187096fee5119a22d886029cd63173e4ca1c8ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a4b92cd9d6b880f23d6acaf9e38e685184ec3bfe
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 <a name="top"></a>.NET poskytuje rozsáhlou podporu pro vývoj lokalizovaných a globálních aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo konkrétní jazykové verze při provádění běžných operací, jako je například řazení a zobrazování řetězců. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například řetězce, které jsou používány interně aplikaci obvykle zpracování stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězcová data, jako je například XML značky HTML značky, uživatelská jména, cesty k souborům a názvy objektů systému jsou interpretovány, jako kdyby byly zohledňující jazykovou verzi, může jemně chyb, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
@@ -375,4 +378,4 @@ ms.lasthandoff: 10/18/2017
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Manipulace s řetězci](../../../docs/standard/base-types/manipulating-strings.md)
+ [Práce s řetězci](../../../docs/standard/base-types/manipulating-strings.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1ffa3cb853a02af21ca1dd528174e560b8d830a5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f4998cc0c836cf46d79d854ad9a85e7eacf70d7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že je její vytvoření odložení dokud nejprve se používá. (Pro toto téma podmínky *opožděné inicializace* a *opožděné konkretizaci* jsou shodné.) Opožděná inicializace slouží především zvyšování výkonu, vyhněte se plýtvání výpočtů a snížit požadavky na paměť programu. Jedná se o nejběžnějších scénářů:  
@@ -160,7 +161,7 @@ ms.lasthandoff: 11/21/2017
  V tomto příkladu Všimněte si, že proces inicializace je vyvolán v každé iteraci smyčky. Ve scénářích s více procesy první vlákno k vyvolání procedury inicializace je ten, jehož hodnota je vidět všechna vlákna. Novější vláken také vyvolat proceduru inicializace, ale nepoužívají se jejich výsledky. Pokud tento druh možný spor není přijatelné, použijte přetížení <xref:System.Threading.LazyInitializer.EnsureInitialized%2A?displayProperty=nameWithType> , která má logická hodnota argumentu a objekt synchronizace.  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na spravovaná vlákna základy](../../../docs/standard/threading/managed-threading-basics.md)  
+ [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)  
  [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)  
  [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
- [Postupy: provádění opožděné inicializace objektů](../../../docs/framework/performance/how-to-perform-lazy-initialization-of-objects.md)
+ [Postupy: Provádění opožděné inicializace objektů](../../../docs/framework/performance/how-to-perform-lazy-initialization-of-objects.md)

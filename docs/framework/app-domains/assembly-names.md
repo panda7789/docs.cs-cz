@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 624cc6ad264f32b9a43917d9bae751f57b4421a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: da2137a9ab979d9e610d033324a87939a9777a97
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat jiná aplikace. Sestavení se silným názvem má plně kvalifikovaný název, který obsahuje název sestavení, jazykovou verzi, veřejný klíč a číslo verze. To se často označuje jako zobrazovaný název a pro načíst sestavení můžete získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  
@@ -66,7 +67,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 >  Když vložíte sestavení se silným názvem v globální mezipaměti sestavení, název souboru sestavení musí odpovídat název sestavení (včetně není příponu názvu souboru, jako je například .exe nebo .dll). Například pokud je název souboru sestavení myAssembly.dll, název sestavení musí být myAssembly. Soukromá sestavení nasadit jenom v kořenovém adresáři aplikace může mít název sestavení, který se liší od názvu souboru.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: určení plně kvalifikovaný název sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+ [Postupy: Určení plně kvalifikovaného názvu sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
  [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)  
  [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)  
  [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  

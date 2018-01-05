@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b69c17b9fcb14bbd70b60c32965fb1163c22e765
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db0a304a908e906b635672eed1a84f0277284ad7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
 Autorizace je proces zjišťování entit, které mají oprávnění změnit, zobrazení nebo jinak přístup k prostředkům počítače. Například v obchodu, pouze správci mohou mít přístup k soubory své zaměstnance. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus vám umožňuje řídit autorizaci s použitím stávající společné jazykové konstrukty runtime (CLR). Druhá je model na základě deklarace označuje jako *modelu Identity*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]pomocí modelu Identity vytvoří deklarace identity ze příchozí zprávy; Třídy modelu identity lze rozšířit pro podporu nových typů deklarací identity pro schémata autorizace. Toto téma obsahuje přehled hlavní koncepty programování modelu Identity funkce, jakož i seznam nejdůležitější tříd, které používá funkci.  
@@ -180,12 +181,12 @@ Autorizace je proces zjišťování entit, které mají oprávnění změnit, zo
  <xref:System.IdentityModel.Policy>  
  <xref:System.IdentityModel.Tokens>  
  <xref:System.IdentityModel.Selectors>  
- [Deklarace a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)  
- [Deklarace a odepření přístupu k prostředkům](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)  
- [Vytvoření nároku a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
- [Postupy: vytvoření vlastních deklarací identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
- [Postupy: porovnávání deklarací](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
- [Postupy: vytvoření vlastní zásady autorizace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
- [Postupy: vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
+ [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)  
+ [Deklarace identity a odepření přístupu k prostředkům](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)  
+ [Vytvoření deklarace identity a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
+ [Postupy: Vytvoření vlastní deklarace identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
+ [Postupy: Porovnávání deklarací identity](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
+ [Postupy: Vytvoření vlastních zásad autorizace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
+ [Postupy: Vytvoření vlastního správce autorizace pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)

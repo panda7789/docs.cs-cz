@@ -26,11 +26,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 04566d96fe9031821b904df3bf9ec93244b62cfe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3921c15de59deaa68b63d7dbfbfeb18c776d31f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-link-to-an-object-or-web-page-with-the-windows-forms-linklabel-control"></a>Postupy: Odkázání na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel
 Windows Forms <xref:System.Windows.Forms.LinkLabel> řízení vám umožní vytvořit odkazy ve stylu webového formuláře. Při kliknutí na odkaz, můžete změnit její barvu, která indikuje, že navštívil odkaz. Další informace o změně barvu najdete v tématu [postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md).  
@@ -190,6 +191,6 @@ Windows Forms <xref:System.Windows.Forms.LinkLabel> řízení vám umožní vytv
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>  
- [Linklabel – ovládací prvek – přehled](../../../../docs/framework/winforms/controls/linklabel-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-overview-windows-forms.md)  
  [Postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)  
- [Linklabel – ovládací prvek](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)
+ [Ovládací prvek LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)

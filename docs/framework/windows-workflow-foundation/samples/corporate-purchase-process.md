@@ -12,11 +12,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 61a5ecdf05fed6c171a84c4f30f50e9a468a414d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bbbed0209eec95ec452385b6c78b1beb2ddfcd75
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corporate-purchase-process"></a>Podnikové nákupní proces
 Tento příklad ukazuje postup vytvoření velmi základní požadavek pro návrhy (RFP) na základě nákupní proces s automatické nejlepší výběru návrhu. Spojuje v sobě <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastních aktivit k vytvoření pracovního postupu, který představuje proces.  
@@ -87,7 +88,7 @@ Tento příklad ukazuje postup vytvoření velmi základní požadavek pro návr
 ## <a name="projects-in-this-sample"></a>Projekty v této ukázce  
  Tato ukázka obsahuje následující projekty.  
   
-|Project|Popis|  
+|Projekt|Popis|  
 |-------------|-----------------|  
 |Běžné|Objekty entity v rámci procesu (žádost o návrhu, dodavatele a návrh dodavatele).|  
 |WfDefinition|Definice procesu (jako [!INCLUDE[wf1](../../../../includes/wf1-md.md)] programu) a hostitele (`PurchaseProcessHost`) použít v klientských aplikacích pro vytváření a používání instancí pracovního postupu procesu nákupu.|  

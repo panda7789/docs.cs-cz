@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7097f5bd58573315681c61d0380e58638a4c4fb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 65553e18fc66825c9c0a991aba600b4b90d0d4c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
 Funkce multimédií [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám umožní integrovat audio a video do svých aplikací k vylepšení zkušeností uživatelů. Toto téma představuje multimédií funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -125,4 +126,4 @@ Funkce multimédií [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.DrawingGroup>  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)

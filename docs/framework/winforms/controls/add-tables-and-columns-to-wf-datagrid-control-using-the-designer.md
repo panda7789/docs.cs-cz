@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c80bd12db83284c30f637f48dfc09e7de22280b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 48471427baccfa9fb8e7c3aedbb9576ab0d34243
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid pomocí Návrháře
 > [!NOTE]
@@ -67,5 +68,5 @@ ms.lasthandoff: 11/21/2017
 5.  V **vlastnosti** pole editor kolekcí, vyberte <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> hodnotu pro sloupec, který chcete zobrazit.  
   
 ## <a name="see-also"></a>Viz také  
- [DataGrid – ovládací prvek](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
- [Postupy: odstranění či skrytí sloupců v systému Windows Forms DataGrid – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+ [Ovládací prvek DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
+ [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

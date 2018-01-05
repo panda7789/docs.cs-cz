@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d52b71fe783764dcdbf5acd2ffe0e0ee1e7e56d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3f6282dfbf5e67f91167e5abf0640641000994d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-msmq-binding"></a>Vazby Net MSMQ
 Tato část obsahuje příklady vysvětlující pomocí atributů vazby služby MSMQ elementu koncový bod.  
@@ -32,7 +33,7 @@ Tato část obsahuje příklady vysvětlující pomocí atributů vazby služby 
  [Fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
  Demonstruje způsob zpracování a zpracování zpráv, které selhaly doručení.  
   
- [Zacházení s nezpracovatelnými zprávami v MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md)  
+ [Zacházení s nezpracovatelnými zprávami ve službě MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md)  
  Ukazuje, jak provádět zpracování ve službě pomocí služby MSMQ 4.0 poškozených zpráv.  
   
  [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  

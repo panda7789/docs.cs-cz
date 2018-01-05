@@ -25,11 +25,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 51d9b6e444cfa49bfbf7854ee7f33f5a45d80e31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c97b64c9e042706fedabac435b8982aed65a8be4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="programming-pluggable-protocols"></a>Modulární protokoly programování
 Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základ pro připojitelné protokoly. Odvozené třídy specifické pro protokol z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, můžete data žádosti z internetových prostředků a přečíst odpověď bez zadání protokol používá aplikace.  
@@ -41,7 +42,7 @@ Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy
  Chcete využít výhod modulární protokoly, vaše <xref:System.Net.WebRequest> následníky musíte zadat výchozí požadavků a odpovědí transakci, která nevyžaduje vlastnosti specifické pro protokol nastavení. Například <xref:System.Net.HttpWebRequest> třídy, které implementuje <xref:System.Net.WebRequest> třídy pro protokol HTTP, poskytuje `GET` požadavku ve výchozím nastavení a vrátí <xref:System.Net.HttpWebResponse> obsahující datový proud vrácený z webového serveru.  
   
 ## <a name="see-also"></a>Viz také  
- [Odvozování z WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)  
- [Odvozování z WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)  
+ [Odvození ze žádosti WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)  
+ [Odvození z odpovědi WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)  
  [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
- [Postupy: přiřazení typu WebRequest na specifické vlastnosti protokolu přístupu](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)
+ [Postupy: Zadání žádosti WebRequest pro přístup k vlastnostem specifickým pro protokol](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)

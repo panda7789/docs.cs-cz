@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8cd80805eee58db16f5865683cbd322a49c554a8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ecb8ae5edfb35ccaffecbfb4e960d3f4a46bad0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Řízení spotřeby prostředků a zlepšení výkonu
 Toto téma popisuje různé vlastnosti v jiné oblasti [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architekturu, která pracují pro řízení spotřeby prostředků a ovlivnit metriky výkonu.  
@@ -57,5 +58,5 @@ Toto téma popisuje různé vlastnosti v jiné oblasti [!INCLUDE[indigo1](../../
  Když je služba WCF hostované na IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit nároky na propustnost a paměti služby WCF.  [!INCLUDE[crabout](../../../includes/crabout-md.md)]Výkonu technologie ASP.NET, najdete v části [zlepšení výkonu technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, která může mít nežádoucích důsledků je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud vaše aplikace má pevnou nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 může poskytovat nárůst propustnosti na počítači s více procesory, který má využití procesoru blíží 100 %. Toto zvýšení výkonu dodává se s náklady: také způsobí nárůst využití paměti, které by mohly snížit škálovatelnost.  
   
 ## <a name="see-also"></a>Viz také  
- [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
- [Velkého množství dat a vysílání datového proudu](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
+ [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
+ [Objemná data a streamování](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)

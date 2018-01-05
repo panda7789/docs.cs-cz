@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7ef0886fe5319d2ddd8c4c4be1b61f629f2aa6f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 829635bd7fd73b58004c59862f4d589e95f67f9b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]lze považovat za infrastrukturu zasílání zpráv. Může přijímat zprávy, jejich zpracování a jejich odesílání do uživatelského kódu pro další akce nebo můžete vytvořit zprávy z data zadána pomocí uživatelského kódu a jejich doručování do cílového umístění. Toto téma, které je určeno pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a obsahují data. Jednodušší, orientované na úlohy zobrazení jak odesílat a přijímat data, najdete v části [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  

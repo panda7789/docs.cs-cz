@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e7216f14fb0b8da27b870fc8e66b24f6d87fcaad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b3dea98a381bf468182f24dff27af50e46ad38ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="serialization-and-metadata"></a>Serializace a metadata
 Pokud vaše aplikace serializuje a deserializuje objekty, budete muset přidat položky do vaší direktivy modulu runtime (. rd.xml) souboru a zajistit tak potřeby metadata nachází v době běhu. Existují dvě kategorie serializátorů a každý vyžaduje jiný zpracování v souboru direktivy modulu runtime:  
@@ -73,7 +74,7 @@ Pokud vaše aplikace serializuje a deserializuje objekty, budete muset přidat p
  Informace o syntaxi použitých v tomto příkladu najdete v tématu [ \<typ > elementu](../../../docs/framework/net-native/type-element-net-native.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [\<Typ > elementu](../../../docs/framework/net-native/type-element-net-native.md)  
  [\<Namespace > elementu](../../../docs/framework/net-native/namespace-element-net-native.md)

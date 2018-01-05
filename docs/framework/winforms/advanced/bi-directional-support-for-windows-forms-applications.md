@@ -13,11 +13,12 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 09ed8b59e9682b45f3f3720335686002761f7bce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a8ae0e958c842c2f3cf3fbb788cad1cde6e6cc2b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Můžete použít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvoření aplikace pro systém Windows podporující obousměrných jazycích (vpravo zprava doleva) jako je například arabština a hebrejština. To zahrnuje standardní formulářů, dialogová okna, MDI formuláře a všechny ovládací prvky můžete pracovat v tyto formuláře – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
@@ -122,4 +123,4 @@ Můžete použít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvo�
   
 ## <a name="see-also"></a>Viz také  
  [Obousměrná podpora pro webových aplikací ASP.NET](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
- [Globalizace Windows Forms](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)
+ [Globalizace modelu Windows Forms](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)

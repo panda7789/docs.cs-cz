@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d3847d06c77a92eb6e63542f03405ca0cb9c9560
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2f1a80d1d79fce952a7071abd5e435604824d00e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iinstallreferenceenum-interface"></a>IInstallReferenceEnum – rozhraní
 Představuje enumerátor pro odkazované sestavení nainstalované v globální mezipaměti sestavení.  
@@ -44,7 +45,7 @@ interface IInstallReferenceEnum : IUnknown {
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getnextinstallreferenceitem – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Získá ukazatel na další `IInstallReferenceItem` obsažené v tomto `IInstallReferenceEnum`.|  
+|[GetNextInstallReferenceItem – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Získá ukazatel na další `IInstallReferenceItem` obsažené v tomto `IInstallReferenceEnum`.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -54,5 +55,5 @@ interface IInstallReferenceEnum : IUnknown {
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Rozhraní fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [Iinstallreferenceitem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)
+ [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [IInstallReferenceItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)

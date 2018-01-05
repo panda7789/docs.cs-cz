@@ -16,11 +16,12 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 04de29891bcf5d8cdbac32ffc85d64a4003e3184
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0fbed530a1b968bb049ee20262eb2b8fa9ba13c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte logiku aplikace založené na součást hostované v modelu COM +, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání. Obvyklým scénářem je, když chcete vystavit existující modelu COM + nebo podnikové služby obchodní logiky přes webové služby.  
@@ -112,4 +113,4 @@ ms.lasthandoff: 12/02/2017
  Funkce recyklace procesu modelu COM + nelze použít na integrovaných aplikací. Pokud aplikace je nakonfigurovaná pro použití recyklace procesů a komponenty běží v procesu hostované modelu COM +, službu nepodaří spustit. Tento požadavek nezahrnuje služby pomocí režimu Web hostovaný v rámci procesu, protože proces recyklace nastavení se nepoužijí.  
   
 ## <a name="see-also"></a>Viz také  
- [Integrace s přehled aplikace modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)
+ [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

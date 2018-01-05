@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f2789c6756d8e22dae9eb3189dfb616d162ad906
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e3d2de4dd5510b212e030ea537cea0be3dce24f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tento příklad znázorňuje postup správy informační kanály syndikace, které obsahují velkým počtem položek. Na serveru, ukázky ukazuje, jak zpoždění vytvoření jednotlivé <xref:System.ServiceModel.Syndication.SyndicationItem> objekty v rámci kanálu dokud okamžitě, než položka se zapíše do datového proudu sítě.  

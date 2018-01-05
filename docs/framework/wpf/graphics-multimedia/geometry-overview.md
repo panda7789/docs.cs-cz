@@ -19,11 +19,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a10e74342141f8ef6664cc424552dc173d9b0f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e58e3ea00a00b24e476fd158beb3b0515e607f9d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="geometry-overview"></a>Přehled geometrie
 Tento přehled popisuje postup použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> třídy k popisu tvarů. V tomto tématu jsou také uvedeny rozdíly mezi <xref:System.Windows.Media.Geometry> objekty a <xref:System.Windows.Shapes.Shape> elementy.  
@@ -126,7 +127,7 @@ Objekt EllipseGeometry používá k oříznutí ovládacího prvku obrázek
 |------------------|-----------------|-------------|  
 |<xref:System.Windows.Media.ArcSegment>|Vytvoří oblouk eliptické mezi dva body.|[Vytvoření eliptické oblouk](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md).|  
 |<xref:System.Windows.Media.BezierSegment>|Vytvoří krychlový Bézierovu křivku mezi dva body.|[Vytvoření krychlový Bézierovu křivku](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md).|  
-|<xref:System.Windows.Media.LineSegment>|Vytvoří řádek mezi dva body.|[Vytvořte objekt LineSegment v Objekt PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)|  
+|<xref:System.Windows.Media.LineSegment>|Vytvoří řádek mezi dva body.|[Vytvoření LineSegment v PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)|  
 |<xref:System.Windows.Media.PolyBezierSegment>|Vytvoří řadu krychlový Bézierových křivek.|Najdete v článku <xref:System.Windows.Media.PolyBezierSegment> typ stránky.|  
 |<xref:System.Windows.Media.PolyLineSegment>|Vytvoří řadu řádky.|Najdete v článku <xref:System.Windows.Media.PolyLineSegment> typ stránky.|  
 |<xref:System.Windows.Media.PolyQuadraticBezierSegment>|Vytvoří řadu kvadratické Bézierovy křivky.|Najdete v článku <xref:System.Windows.Media.PolyQuadraticBezierSegment> stránky.|  
@@ -231,9 +232,9 @@ PathGeometry s více obrázků
  <xref:System.Windows.Media.PathGeometry>  
  <xref:System.Windows.Shapes.Path>  
  <xref:System.Windows.Media.GeometryDrawing>  
- [2D grafika a vytvoření bitové kopie](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Syntaxe cesty značek](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/geometries-how-to-topics.md)  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Tvarů a základní kreslení v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [Kreslení objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)
+ [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [Syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/geometries-how-to-topics.md)  
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
+ [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)

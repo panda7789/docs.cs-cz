@@ -17,22 +17,23 @@ caps.latest.revision: "54"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1dcda3888df64e95704e726db118bf75c92deaa8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1c1eeb859ecb39c5c2bb7eaef480e32c17d391cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="path-animation-how-to-topics"></a>Postupy: Témata animace cesty
 Témata v této části ukazují, jak animace objekt podél cesty.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace objekt podél cesty (dvojité animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-double-animation.md)  
- [Animace objekt podél cesty (animace bodu)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-point-animation.md)  
- [Animace objekt podél cesty (matice animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-matrix-animation.md)  
- [Animace objekt podél cesty (matice animace s posunutí akumulace)](../../../../docs/framework/wpf/graphics-multimedia/animate-an-object-along-a-path-matrix-animation-with-offset.md)  
- [Otočení objektu pomocí cesty geometrickou (matice animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation.md)  
- [Otočení objektu pomocí cesty geometrickou](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object-by-using-a-geometric-path.md)  
+ [Animace objektu podél cesty (dvojitá animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-double-animation.md)  
+ [Animace objektu podél cesty (bodová animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-point-animation.md)  
+ [Animace objektu podél cesty (animace matice)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-matrix-animation.md)  
+ [Animace objektu podél cesty (animace matice s akumulací posunu)](../../../../docs/framework/wpf/graphics-multimedia/animate-an-object-along-a-path-matrix-animation-with-offset.md)  
+ [Otočení objektu pomocí geometrické cesty (animace matice)](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation.md)  
+ [Otočení objektu pomocí geometrické cesty](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object-by-using-a-geometric-path.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Media.Animation.PathAnimationSource>  
@@ -41,5 +42,5 @@ Témata v této části ukazují, jak animace objekt podél cesty.
   
 ## <a name="see-also"></a>Viz také  
  [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled animací jednotlivých klíč](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)

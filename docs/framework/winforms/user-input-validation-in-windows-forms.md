@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 48a28db24731f9aa248bb149c9f19a57cf76bbf1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1eba92d764e73360b1cd58957ea5318c5b263b8b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Při zadávání dat do aplikace, můžete ověřit platnost data předtím, než je vaše aplikace používá. Může vyžadovat určité textová pole nesmí být nulová délka, naformátovat pole jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo že řetězec neobsahuje žádné nebezpečné znaky, které by mohly být použity k ohrožení zabezpečení databáze. Windows Forms poskytuje několik způsobů ověření vstupu ve vaší aplikaci.  
@@ -104,5 +105,5 @@ Při zadávání dat do aplikace, můžete ověřit platnost data předtím, ne�
  <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
  <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>  
- [MaskedTextBox – ovládací prvek](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)  
+ [Ovládací prvek MaskedTextBox](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)  
  [Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)

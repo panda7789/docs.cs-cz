@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ffafaff2355e89e2127742f2fba5c005492b4580
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 827e93ad779dfeb2dd398a2fc031fcb99a77a39c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a>Oznámení změn v datové vazbě rozhraní Windows Forms
 Jedním z nejdůležitějších konceptů Windows Forms – datová vazba je *upozornění na změnu*. Aby se zajistilo, že zdroj dat a vázané ovládací prvky vždy mít nejnovější data, je nutné přidat oznámení o změně pro datovou vazbu. Konkrétně chcete zajistit, že jsou vázané ovládací prvky upozorněni na změny, které byly provedeny k jejich zdroji dat a zdroj dat je upozornění na změny, které byly provedeny na vázané vlastnosti ovládacího prvku.  
@@ -48,4 +49,4 @@ Jedním z nejdůležitějších konceptů Windows Forms – datová vazba je *up
  <xref:System.ComponentModel.BindingList%601>  
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
  [Zdroje dat podporované rozhraním Windows Forms](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)  
- [Datová vazba a systém Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
+ [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

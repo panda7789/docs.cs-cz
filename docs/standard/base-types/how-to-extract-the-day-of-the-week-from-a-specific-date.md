@@ -32,11 +32,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3accb01eb8c5edb8b3e245020b43c5a94a8bb4cd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e0628dfefb8da5c11e9927ab5ec98c2feb3fe89f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu z konkrétního data
 Rozhraní .NET Framework usnadňuje určení pořadí dne v týdnu pro konkrétní datum a zobrazí se název lokalizované den v týdnu pro konkrétní datum. Výčtová hodnota určující, den v týdnu odpovídající konkrétní datum je k dispozici prostřednictvím <xref:System.DateTime.DayOfWeek%2A> nebo <xref:System.DateTimeOffset.DayOfWeek%2A> vlastnost. Načítání názvu den v týdnu je naopak operaci formátování, které lze provést pomocí volání metody pro formátování, jako je například hodnota data a času `ToString` metoda nebo <xref:System.String.Format%2A?displayProperty=nameWithType> metoda. Toto téma ukazuje, jak provést tyto operace formátování.  
@@ -109,5 +112,5 @@ Rozhraní .NET Framework usnadňuje určení pořadí dne v týdnu pro konkrétn
   
 ## <a name="see-also"></a>Viz také  
  [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)  
- [Řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
- [Řetězce formátu vlastní hodnota data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+ [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
+ [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

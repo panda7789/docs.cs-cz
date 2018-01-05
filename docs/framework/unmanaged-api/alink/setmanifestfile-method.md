@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 807452326193d193f3bc603ebc7b74a5a0f1c281
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cf48153454fbb2c24dc3f1cfe1f82deefa4ee723
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setmanifestfile-method"></a>SetManifestFile – metoda
 Umožňuje zadat nebo obnovit soubor manifestu, který linkeru používá při vytváření sestavení.  
@@ -51,7 +52,7 @@ HRESULT SetManifestFile(
  Vyžaduje aLink.h  
   
 ## <a name="see-also"></a>Viz také  
- [Ialink3 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
+ [IALink3 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
  [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)  
- [Ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Al.exe (Linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+ [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87a074b96583f44e8655c9efde145e28b490f6e9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 34fd9bc3bf16446505caf12c6cfa4192ffb391c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Vývoj a nasazení služby WCF Data Services
 Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pro další základní informace o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], najdete v části [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) a [přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  
@@ -130,6 +131,6 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
 -   Protože [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace, můžete použít Windows Server AppFabric monitorovat datové služby nasadit do IIS a běžící v systému Windows Server. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí sledování na data služby Windows Server AppFabric najdete v příspěvku [sledování služby WCF Data Services s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005).  
   
 ## <a name="see-also"></a>Viz také  
- [Hostující službu Data](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  
- [Zabezpečení součásti WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
- [Definování datových služeb WCF](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+ [Hostování datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  
+ [Zabezpečení datových služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
+ [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

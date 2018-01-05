@@ -15,11 +15,12 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bb852719e3312b78b86621e3cb69fa8bf7267856
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b106dd7a6853e5af6aa53bcc8a66ae1d949f0f0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mitigation-wcf-services-and-certificate-authentication"></a>Omezení rizik: Služby WCF a ověřování pomocí certifikátu
 Rozhraní .NET Framework 4.6 přidá do seznamu výchozích protokol WCF SSL protokoly TLS 1.1 a TLS 1.2. Když klientské a serverové počítače nainstalována rozhraní .NET Framework 4.6 nebo vyšší, použije se pro vyjednávání protokolu TLS 1.2.  
@@ -64,4 +65,4 @@ Rozhraní .NET Framework 4.6 přidá do seznamu výchozích protokol WCF SSL pro
     >  Toto řešení se nedoporučuje, protože certifikát se algoritmus hash MD5 považuje za nezabezpečené.  
   
 ## <a name="see-also"></a>Viz také  
- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+ [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

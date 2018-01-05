@@ -14,11 +14,12 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2def27790a1727bda524b8c14a93f7b78127a569
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a2af80ddb558959171c255a61fae460729306e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="marshaling-data-with-com-interop"></a>Zařazování dat se spoluprací COM
 Zprostředkovatel komunikace s objekty COM poskytuje podporu pro používání objektů COM ze spravovaného kódu i vystavení spravovaných objektů modelu COM. Podpora zařazování dat do a z modelu COM je rozsáhlá a poskytuje téměř vždy správné chování zařazování.  
@@ -35,7 +36,7 @@ Zprostředkovatel komunikace s objekty COM poskytuje podporu pro používání o
 [Postupy: ruční vytváření obálek](how-to-create-wrappers-manually.md)   
 Popisuje, jak ručně vytvořit obálky COM v spravované zdrojového kódu. 
  
- [Postupy: migrace spravovaného kódu DCOM do WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)  
+ [Postup: Migrace spravovaného kódu DCOM do WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)  
  Popisuje postup migrace spravovaného kódu DCOM do WCF nejbezpečnější řešení.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08c722ad9256f16ead8947e793e64cef9763c512
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 94ff7c693824e721b17c79b921f4380dba7d04e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="scenario"></a>Scénář
 Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] scénáře.  
@@ -32,11 +33,11 @@ Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../i
  [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)  
  Demonstruje federované zabezpečení.  
   
- [Slabě typovaná serializace JSON (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md)  
+ [Serializace JSON slabého typu (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md)  
  Ukazuje, jak povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojářům pracovat s objekty JSON deserializovat, libovolný bez vytvoření uživatelem definované typy.  
   
- [Důvěryhodná služba Facade](../../../../docs/framework/wcf/samples/trusted-facade-service.md)  
+ [Důvěryhodná služba facade](../../../../docs/framework/wcf/samples/trusted-facade-service.md)  
  Ukazuje, jak přenést informace identitu volajícího jedna služba jiné pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení.  
   
- [Vzory návrhu: Na základě seznamu publikování a odběru](../../../../docs/framework/wcf/samples/design-patterns-list-based-publish-subscribe.md)  
+ [Vzory návrhu: publikování–odběr založený na seznamu](../../../../docs/framework/wcf/samples/design-patterns-list-based-publish-subscribe.md)  
  Ukazuje implementovaný jako vzor na základě seznamu publikování a odběru [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] program.

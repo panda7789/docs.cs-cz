@@ -23,11 +23,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c5455007e407bf4320355aebfd043bfc056d6d56
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0019b739c794cbffa62b49749371c2a19f752267
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
 <a name="introduction"></a>A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální strukturu a visual chování ovládacího prvku. Můžete přizpůsobit vzhled ovládacího prvku tím, že it a nové <xref:System.Windows.Controls.ControlTemplate>. Při vytváření <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhled ovládacího prvku existující beze změny jeho funkci. Například můžete provést tlačítka ve vaší aplikaci zaokrouhlí místo výchozí odmocnina tvar, ale bude stále vyvolat tlačítko <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
@@ -272,4 +273,4 @@ Tlačítko, které používá šablonu vlastního ovládacího prvku ve stavu p�
  [!code-xaml[VSMButtonTemplate#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#3)]  
   
 ## <a name="see-also"></a>Viz také  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 05a110318bbe92f18d0bc6becb453a5d7851821c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 017d3e51022ad9980dc8f058415697c80a2a6b35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="federation-and-issued-tokens"></a>Federace a vystavené tokeny
 S [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], můžete vytvořit klientů komunikujících bezpečně s služby, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytnout mechanismy, které umožňují ověřování a autorizace mezi různé důvěryhodnosti sfér pomocí XML, protokolu SOAP a webové služby popis Language (WSDL).  
@@ -33,25 +34,25 @@ S [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], můžete vytvořit kl
  [Federace a důvěryhodnost](../../../../docs/framework/wcf/feature-details/federation-and-trust.md)  
  Jsou uvedené problémy návrhu znát při vytvoření federovaného služby nebo klientů.  
   
- [Postupy: vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
  Popisuje základní informace o vytvoření federovaného klienta s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Postupy: Konfigurace pověření ve službě Federation](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [Postupy: Konfigurace přihlašovacích údajů ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
  Popisuje kroky k vytvoření federované služby.  
   
- [Postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [Postupy: Vytvoření WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
  Popisuje postup konfigurace klientů a služeb, které používají `WSFederationHttpBinding`.  
   
- [Postupy: vytvoření služby tokenů zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-token-service.md)  
+ [Postupy: Vytvoření služby tokenů zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-token-service.md)  
  Popisuje kroky k vytvoření služby tokenů zabezpečení.  
   
- [Zabezpečení Assertions Markup Language (SAML) tokenů a deklaracích identity](../../../../docs/framework/wcf/feature-details/saml-tokens-and-claims.md)  
+ [Tokeny a deklarace identity jazyka SAML (Security Assertions Markup Language)](../../../../docs/framework/wcf/feature-details/saml-tokens-and-claims.md)  
  Popisuje tokeny zabezpečení kontrolní výrazy Markup Language (SAML), které jsou rozšiřitelný a povolit vytvářet bohaté typy deklarací identity.  
   
  [Postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
  Popisuje postup vytvoření místního vystavitele tokenů zabezpečení.  
   
- [Postupy: zakázání zabezpečených relací u třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
+ [Postupy: Zakázání zabezpečených relací u WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
  Popisuje postup zakázání zabezpečených relací na `WSFederationHttpBinding`. Zakázání zabezpečených relací je nezbytné, při vytváření webové farmy, která vyžaduje relaci pro každého klienta.  
   
 ## <a name="reference"></a>Odkaz  

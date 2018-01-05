@@ -17,22 +17,23 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f7b95489259a914eec14c79b8e391f2a3795b2b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2d903eb1a7c47902aeda522264037384bd1f56d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textblock"></a>TextBlock
 <xref:System.Windows.Controls.TextBlock> Řízení poskytuje flexibilní text podporu pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Element je určena především basic [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, které nevyžadují více než jeden odstavec textu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled TextBlock](../../../../docs/framework/wpf/controls/textblock-overview.md)  
+ [TextBlock – přehled](../../../../docs/framework/wpf/controls/textblock-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Label>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
   
- [Přehled toku dokumentu](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+ [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

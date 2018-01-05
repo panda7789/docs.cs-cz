@@ -16,11 +16,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f241b99f97cad081a65fd8654169e444a1b588cb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1ee53343a68a2c2169baefaebc68a817159d0313
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="basic-string-operations-in-net"></a>Základní operace s řetězci v .NET
 Aplikace často odpovídají uživatelům sestavením zpráv založených na vstup uživatele. Například neobvyklé pro weby reagovat na nově přihlášený uživatel s specializované pozdravu, která obsahuje jméno uživatele. Několik metod v <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy umožňují dynamicky vytvářet vlastní řetězce k zobrazení v uživatelském rozhraní. Tyto metody také můžete provést některé základní operace s řetězci jako je vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.  
@@ -44,7 +47,7 @@ Aplikace často odpovídají uživatelům sestavením zpráv založených na vst
  [Používání třídy StringBuilder](../../../docs/standard/base-types/stringbuilder.md)  
  Popisuje, jak vytvářet a upravovat objekty dynamického řetězce <xref:System.Text.StringBuilder> třídy.  
   
- [Postup: provedení manipulace s řetězci základní](../../../docs/standard/base-types/basic-manipulations.md)  
+ [Postupy: Základní manipulace s řetězci](../../../docs/standard/base-types/basic-manipulations.md)  
  Demonstruje použití základní operace s řetězci.  
   
 ## <a name="related-sections"></a>Související oddíly  

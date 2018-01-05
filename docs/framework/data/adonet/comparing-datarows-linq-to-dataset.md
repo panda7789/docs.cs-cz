@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9f17a73d2d6349d4fc35668d7251877034e5e29f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5634a20c51dd86bd383286735ee094d8746615d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comparing-datarows-linq-to-dataset"></a>Porovnání DataRows (LINQ na DataSet)
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]definuje různé operátory set k porovnání zdrojové elementy, které chcete zobrazit, pokud jsou stejné. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]poskytuje následující sadu operátory:  
@@ -50,5 +51,5 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataRowComparer>  
- [Načítání dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
- [LINQ na DataSet příklady](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+ [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
+ [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

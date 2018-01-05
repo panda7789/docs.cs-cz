@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 7ae79ad13b360a61e1d9b10f94dff5a37aae1d89
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3ef101a9a5f78e1b85ac7cb983b4766088b83317
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-scenarios"></a>Scénáře směrování
 I službu Směrování je vysoce přizpůsobitelné, může být výzvy k návrhu logiku efektivní směrování, při vytváření nové konfigurace od začátku.  Existují však několik běžných scénářů, které následují většina konfigurace služby směrování. Při těchto scénářích se přímo na konkrétní konfiguraci nemusí vztahovat, pochopení konfigurace služby směrování pro zpracování těchto scénářích se pomoci při Princip služby směrování.  
@@ -77,7 +78,7 @@ I službu Směrování je vysoce přizpůsobitelné, může být výzvy k návrh
  Pokyny slouží ke konfiguraci zpracování chyb, najdete v části [postupy: zpracování chyb](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md). Příklad implementace zpracování chyb, naleznete v části [přemostění a zpracování chyb](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md) a [pokročilé zpracování chyb](../../../../docs/framework/wcf/samples/advanced-error-handling.md) ukázky.  
   
 ### <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Verze služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [Postupy: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
   
  [Postupy: Vytvoření oddílů dat služby](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
   
@@ -86,4 +87,4 @@ I službu Směrování je vysoce přizpůsobitelné, může být výzvy k návrh
  [Postupy: Zpracování chyb](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Směrování – Úvod](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+ [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

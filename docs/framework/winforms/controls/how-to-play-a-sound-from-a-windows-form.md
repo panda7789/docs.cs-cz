@@ -22,11 +22,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3ed5335108e010ed61d8a96e3169353133e9ddd0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 31c9495e22af0e06869d54f02d4ce0e866e28dbb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-play-a-sound-from-a-windows-form"></a>Postupy: Přehrávání zvuku z formuláře Windows
 Tento příklad hraje zvuk, který v dané cestě za běhu.  
@@ -76,5 +77,5 @@ private void playSimpleSound()
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Media.SoundPlayer>  
- [Postupy: načítání zvuku asynchronně ve formuláři Windows](../../../../docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md)  
+ [Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms](../../../../docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md)  
  

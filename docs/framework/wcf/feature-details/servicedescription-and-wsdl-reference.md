@@ -13,11 +13,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 850432b21d971055ce51b247482db3fc7b94e41b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7eadfaaae920071092f569fe2b8882875ed9497f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicedescription-and-wsdl-reference"></a>ServiceDescription and WSDL Reference
 Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] mapuje webové služby popis Language (WSDL) dokumenty do a z <xref:System.ServiceModel.Description.ServiceDescription> instance.  

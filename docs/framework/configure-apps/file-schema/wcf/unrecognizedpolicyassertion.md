@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f648862829301679dc4bcf3636298398d0dc0325
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bab0625bf6787522cc042b764d3714eada29eb94
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltunrecognizedpolicyassertiongt"></a>&lt;unrecognizedPolicyAssertion&gt;
 Představuje element vazby, který určuje výraz zásad. Tento element nemá žádný atribut a je k dispozici jako prázdný přepínač.  
@@ -55,6 +56,6 @@ Představuje element vazby, který určuje výraz zásad. Tento element nemá ž
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

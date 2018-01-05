@@ -25,11 +25,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 76da7be50f9e12454e16e08ec4db494585fae613
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 56feadd3bb5300376a16cc1d06d9af73ad77b565
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-vertical-text-on-a-windows-form"></a>Postupy: Kreslení svislého textu v rozhraní Windows Forms
 Následující příklad kódu ukazuje, jak kreslení svislého textu ve formuláři pomocí <xref:System.Drawing.Graphics.DrawString%2A> metodu <xref:System.Drawing.Graphics>.  

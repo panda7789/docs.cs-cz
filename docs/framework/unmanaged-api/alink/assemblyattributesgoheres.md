@@ -21,11 +21,12 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8ed5e0ee6559747604a3bd060386c65548460b37
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac8f25632521f2e8abe5209608e42632293feb4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblyattributesgoheres"></a>AssemblyAttributesGoHereS
 Používá ALink jako zástupný znak k uložení informací o vlastní atributy.  
@@ -47,6 +48,6 @@ AssemblyAttributesGoHereS
  mscorlib.dll  
   
 ## <a name="see-also"></a>Viz také  
- [Assemblyattributesgohere –](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)  
- [Assemblyattributesgoherem –](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoherem.md)  
- [Assemblyattributesgoheresm –](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheresm.md)
+ [AssemblyAttributesGoHere](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)  
+ [AssemblyAttributesGoHereM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoherem.md)  
+ [AssemblyAttributesGoHereSM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheresm.md)

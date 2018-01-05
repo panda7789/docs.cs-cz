@@ -27,11 +27,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f3a8900aca9ebfa14fbf49d4d3634bc486793c0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a4d0ca3b6aed1213405dc24f322b53a21dbd4fbe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-connections"></a>Správa připojení
 Aplikace, které používají protokol HTTP pro připojení k prostředkům dat můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a pomáhá jim dosáhnout optimálního škálování a výkon.  
@@ -75,4 +76,4 @@ sp.ConnectionLimit = newLimit
   
 ## <a name="see-also"></a>Viz také  
  [Seskupení připojení](../../../docs/framework/network-programming/connection-grouping.md)  
- [Pomocí protokolů aplikací](../../../docs/framework/network-programming/using-application-protocols.md)
+ [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)

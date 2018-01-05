@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 640cb07e6f553a75cd29515418adbbe6842d6504
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d3a41aac16c912eb2a040d9d28f896f3c8f1d22b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="508---hostedtransportconfigurationmanagerconfiginitstop"></a>508 - HostedTransportConfigurationManagerConfigInitStop
 ## <a name="properties"></a>Vlastnosti  

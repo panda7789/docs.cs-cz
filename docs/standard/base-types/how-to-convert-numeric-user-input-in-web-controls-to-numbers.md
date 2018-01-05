@@ -23,11 +23,14 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 92e28e3b303a7523b9da69b7eb283e0261fc681c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c93f1cda765b5f25fccddcfc27442b857262605f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
 Protože na webové stránce lze zobrazit kdekoliv na světě, uživatelé mohou vložit číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku skoro neomezený počet formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Pokud jste analyzovat uživatelský vstup, lze následně použít formátování konvence definované jazykovou verzi a národní prostředí uživatele.  

@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 05fe983832eb3931549bbda5ee7db7c70766cd3c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 21339d071ac26f073d0495814744535bd84f3a22
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="addressing"></a>Adresování
 Ukázka Addressing ukazuje různé aspekty a funkce adresy koncových bodů. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce se hostuje sama službu. Službu a klienta jsou konzolové aplikace. Služby definuje víc koncových bodů pomocí kombinace adresy relativní a absolutní koncových bodů.  

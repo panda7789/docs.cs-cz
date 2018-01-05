@@ -17,11 +17,12 @@ caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 649fc2572e809238977ca3deb5740ada2dd5dc14
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 182e82eec107c170a793d0d48bcfe5493c04d618
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Témata obsažené v této části jsou určeny tak, abyste získali rychlý vystavení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klientské aplikace. Služba vystavuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby specifikuje adresu, kde můžete najít službu, vazbu, která obsahuje informace, které popisují, jak klient musí komunikovat s službu a kontrakt, který definuje funkci poskytovaný službou svým klientům.  
@@ -40,22 +41,22 @@ Témata obsažené v této části jsou určeny tak, abyste získali rychlý vys
  Další podrobné informace o vytváření služeb a klientů najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
+ [Postupy: Definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
  Popisuje postup vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] sbalit pomocí uživatelské rozhraní. Kontrakt definuje funkce vystavené službou.  
   
- [Postupy: implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
+ [Postupy: Implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
  Popisuje způsob implementace kontraktu služby. Jakmile kontraktu definovat, musí být implementované pomocí třídy služby.  
   
- [Postupy: hostování a spuštění základní služby](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md)  
+ [Postupy: Hostování a spuštění základní služby](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md)  
  Popisuje postup konfigurace koncového bodu služby v kódu a k hostování služby v konzolové aplikaci. Stane aktivní, musí být služba nakonfigurována a hostovaným v rámci běhové prostředí. Toto prostředí vytvoří službu a ovládací prvky jeho kontextu a doba platnosti.  
   
- [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
+ [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
  Popisuje, jak načíst metadata použít k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy serveru klienta z [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Tento proces používá funkci Přidat odkaz na službu v rámci sady Visual Studio 2011.  
   
  [Postupy: Konfigurace klienta](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)  
  Popisuje postup konfigurace službou WCF klienta Konfigurace klienta vyžaduje zadání koncového bodu, který klient používá k přístupu ke službě.  
   
- [Postupy: používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)  
+ [Postupy: Používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)  
  Popisuje postup použití [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy server klienta k vyvolání operace služby.  
   
 ## <a name="reference"></a>Odkaz  

@@ -12,11 +12,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f089abdf4c534a5016185e5a6f52067f46693604
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f22fc7dc53f52b47be2da3313f678825d4362750
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="invoking-activity-validation"></a>Volání ověření aktivity
 Aktivita ověření poskytuje metodu, jak identifikovat a zprávy o chybách v konfiguraci libovolné aktivity před jeho spuštění. Ověření nastane, když pracovní postup se mění v Návrháři pracovních postupů a všechny chyby ověření nebo upozornění se zobrazí v Návrháři pracovních postupů. Ověřování také dochází za běhu, při vyvolání pracovního postupu, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověření výchozí vyvolá výjimku. [!INCLUDE[wf](../../../includes/wf-md.md)]poskytuje <xref:System.Activities.Validation.ActivityValidationServices> třídu, která lze použít aplikace pracovního postupu a nástrojů vývojáři explicitně ověření aktivity. Toto téma popisuje postup použití <xref:System.Activities.Validation.ActivityValidationServices> k provedení ověření aktivity.  

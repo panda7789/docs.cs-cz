@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 71a4962029c0056287e97ea56dc02ae6cef8b603
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 24ae6da0b32cf15ee9104bd10ba5fe6bb03a9763
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NET Framework aplikace funkce prototypů ve spravovaném kódu, který představuje nespravované funkce. Chcete-li vytvořit prototyp, která umožňuje platformy vyvolání zařazování dat správně, musíte provést následující:  
@@ -42,15 +43,15 @@ Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NE
 |--------------------------------|-------------------------------|------------------------|-----------------|  
 |**POPISOVAČ**|**void\***|<xref:System.IntPtr?displayProperty=nameWithType>|32bitová verze na 32bitové operační systémy Windows, 64 bitů v operačních systémech Windows 64-bit.|  
 |**BAJTŮ**|**unsigned char**|<xref:System.Byte?displayProperty=nameWithType>|8 bitů|  
-|**KRÁTKÝ**|**krátký**|<xref:System.Int16?displayProperty=nameWithType>|16 bitů|  
-|**APLIKACE WORD**|**short bez znaménka**|<xref:System.UInt16?displayProperty=nameWithType>|16 bitů|  
-|**CELÁ ČÍSLA**|**celá čísla**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
+|**KRÁTKÝ**|**short**|<xref:System.Int16?displayProperty=nameWithType>|16 bitů|  
+|**WORD**|**short bez znaménka**|<xref:System.UInt16?displayProperty=nameWithType>|16 bitů|  
+|**CELÁ ČÍSLA**|**int**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
 |**UINT**|**int bez znaménka**|<xref:System.UInt32?displayProperty=nameWithType>|32bitová verze|  
-|**DLOUHÁ**|**dlouhá**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
-|**BOOL**|**dlouhá**|<xref:System.Byte>|32bitová verze|  
+|**DLOUHÁ**|**long**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
+|**BOOL**|**long**|<xref:System.Byte>|32bitová verze|  
 |**DWORD**|**dlouho bez znaménka**|<xref:System.UInt32?displayProperty=nameWithType>|32bitová verze|  
 |**ULONG –**|**dlouho bez znaménka**|<xref:System.UInt32?displayProperty=nameWithType>|32bitová verze|  
-|**CHAR –**|**Char**|<xref:System.Char?displayProperty=nameWithType>|Uspořádání s ANSI.|  
+|**CHAR –**|**char**|<xref:System.Char?displayProperty=nameWithType>|Uspořádání s ANSI.|  
 |**WCHAR**|**wchar_t**|<xref:System.Char?displayProperty=nameWithType>|Uspořádání pomocí kódování Unicode.|  
 |**LPSTR**|**Char\***|<xref:System.String?displayProperty=nameWithType>nebo<xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|  
 |**LPCSTR**|**Const char\***|<xref:System.String?displayProperty=nameWithType>nebo<xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|  

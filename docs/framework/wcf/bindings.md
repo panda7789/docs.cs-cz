@@ -14,17 +14,18 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36924bdc79a9789a991befb53c0025b7ea1fd601
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e878aadf1c7df6042323c008ff52a4be8a9d817f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-bindings"></a>Vazby WCF
 Zadejte vazby jak [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] koncový bod služby komunikuje s další koncové body. Ve své nejzákladnější musíte zadat vazbu přenosu (například HTTP nebo TCP), který je použít. Můžete také nastavit další vlastnosti, například zabezpečení a transakce podporují pomocí vazby.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vazby WCF – přehled](../../../docs/framework/wcf/bindings-overview.md)  
+ [Přehled vazeb WCF](../../../docs/framework/wcf/bindings-overview.md)  
  Přehled o [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] provést vazby, které vazby poskytuje v systému a jak lze definovat nebo upravit.  
   
  [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)  
@@ -40,7 +41,7 @@ Zadejte vazby jak [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] koncový 
  <xref:System.ServiceModel.Channels>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Koncové body: Adresy, vazby a kontrakty](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [Koncové body: adresy, vazby a kontrakty](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
   
  [Vazby](../../../docs/framework/wcf/feature-details/bindings.md)  
   

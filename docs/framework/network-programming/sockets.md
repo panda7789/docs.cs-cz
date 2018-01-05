@@ -25,11 +25,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: de5778e398a9a7205e99cc810d0b672ac247da08
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9050c7bdae8f08601259e865742016f188d3e0af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sockets"></a>Sokety
 <xref:System.Net.Sockets> Obor názvů obsahuje spravovanou implementaci rozhraní Windows Sockets. Všechny ostatní-přístup k síti třídy v <xref:System.Net> obor názvů jsou postavená na tuto implementaci soketů.  
@@ -39,6 +40,6 @@ ms.lasthandoff: 11/21/2017
  **Soketu** třída podporuje dva základní režimy synchronní a asynchronní. V synchronním režimu, zavolá na funkce, které provádějí síťových operací (například <xref:System.Net.Sockets.Socket.Send%2A> a <xref:System.Net.Sockets.Socket.Receive%2A>) počkejte na dokončení operace před vrácením volací program ovládacího prvku. Tyto volání v asynchronním režimu, vrátí okamžitě.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vytvoření soket](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
+ [Postupy: Vytvoření soketu](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
     
- [Pomocí protokolů aplikací](../../../docs/framework/network-programming/using-application-protocols.md)
+ [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)

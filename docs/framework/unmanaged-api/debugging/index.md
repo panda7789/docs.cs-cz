@@ -17,26 +17,27 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dfe29b9d66bf332c8df359abe01b3b4edc1c7c55
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 62110d07903b05e68ddfc72c297a785bad72c87f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-unmanaged-api-reference"></a>Ladění (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro ladění umožňuje ladicí program k ladění kódu, který běží v prostředí běžné language runtime (CLR). Chcete ladit kód mohou být jakéhokoli typu kódu, který podporuje modulu CLR.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Ladění tříd typu coclass](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
+ [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
  Popisuje nespravované typy coclass, které používá rozhraní API pro ladění.  
   
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  Popisuje nespravovaná rozhraní, které umožňují ladění programu, který je vykonáván modulu CLR.  
   
- [Globální statické funkce ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
+ [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
  Popisuje nespravované globální statické funkce, které používá rozhraní API pro ladění.  
   
- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+ [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
  Popisuje nespravovaná vyčíslení, která používá rozhraní API pro ladění.  
   
  [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  

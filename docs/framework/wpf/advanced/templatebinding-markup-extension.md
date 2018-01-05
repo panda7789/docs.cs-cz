@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5ab8645de78a79f4bd47fa436699af002db99b9b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 959cad0d53b12c3093b95b19ff56ed55eec7eb4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding – rozšíření značek
 Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vlastnosti ovládacího prvku bez vizuálního vzhledu.  
@@ -73,8 +74,8 @@ Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vl
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Style>  
  <xref:System.Windows.Controls.ControlTemplate>  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [RelativeSource MarkupExtension](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)  
- [Vazby – rozšíření značek](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)
+ [Rozšíření značek RelativeSource](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)  
+ [Rozšíření značek datové vazby](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)

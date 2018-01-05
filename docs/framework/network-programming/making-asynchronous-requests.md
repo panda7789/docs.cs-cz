@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: d0ed1eea11049a1e6f026c71a2eb41134f87fd8d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3bd739a4d8fd5995855b51902a9f101546745dd3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="making-asynchronous-requests"></a>Vytváření asynchronních požadavků
 <xref:System.Net> Třídy používat rozhraní .NET Framework standardní asynchronní programovací model pro asynchronní přístup k internetovým prostředkům. <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody <xref:System.Net.WebRequest> třídy zahájení a dokončení asynchronní požadavky na internetové prostředky.  
@@ -344,4 +345,4 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Požadavek na Data](../../../docs/framework/network-programming/requesting-data.md)
+ [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 39d59e23b407a01e91f68022a1b67e590858235e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 495088463a6a7463ce1452588dc55d35110f0092
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Hostitel služby (WcfSvcHost.exe) umožňuje spustit [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] ladicí program (F5) automaticky hostování a testovat službu byla implementována. Potom můžete otestovat pomocí služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) nebo vlastního klienta najít a opravit všechny potenciální chyby.  
@@ -121,4 +122,4 @@ netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
  Další informace o netsh.exe, najdete v části "[jak pomocí nástroje Netsh.exe a přepínače příkazového řádku](http://go.microsoft.com/fwlink/?LinkId=97877)".  
   
 ## <a name="see-also"></a>Viz také  
- [Testovacího klienta WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+ [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

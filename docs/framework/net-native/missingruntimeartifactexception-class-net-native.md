@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e477a870107a8d4d8fbac9a3d4fb10a285158280
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e41e6c6d47d7057e2482a48e6f48c33a1325294c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>Třída MissingRuntimeArtifactException (.NET Native)
 **Aplikace .NET pro Windows pro systém Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] pouze**  
@@ -89,5 +90,5 @@ ms.lasthandoff: 11/21/2017
  `MissingRuntimeArtifactException` Třída neobsahuje žádné členy jedinečný; všechny její členy se dědí z její základní třída <xref:System.MemberAccessException>.  
   
 ## <a name="see-also"></a>Viz také  
- [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

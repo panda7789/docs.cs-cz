@@ -20,23 +20,24 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5cdac074b873d3a627e6971d440fdd1f98952b08
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f45d0fb6a2ffb2e20cc23e67de4cac6a2f2c81bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-security"></a>Windows Forms – zabezpečení
 Windows Forms funkce model zabezpečení, které je založené na kódu (zabezpečení, které úrovně jsou nastavené na kód, bez ohledu na to uživatel, který spouští kód). Toto je kromě všech schémata zabezpečení, které mohou být v místě již v systému. Může jít o programů v prohlížeče (například na základě zóny zabezpečení k dispozici v aplikaci Internet Explorer) nebo operačního systému (například zabezpečení na základě přihlašovacích údajů systému Windows NT).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zabezpečení ve Windows Forms – přehled](../../../docs/framework/winforms/security-in-windows-forms-overview.md)  
+ [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)  
  Stručně popisuje model zabezpečení rozhraní .NET Framework a základními kroky, které jsou nezbytné pro zajištění Windows Forms v aplikaci jsou zabezpečené.  
   
- [Bezpečnější souborové služby a přístup k datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)  
+ [Zabezpečenější přístup k souborům a datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)  
  Popisuje, jak přístup k souborům a data v prostředí s polovičním důvěryhodné.  
   
- [Bezpečnější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)  
+ [Zabezpečenější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)  
  Popisuje, jak chcete dostat ke službám tisku v prostředí s polovičním důvěryhodné.  
   
  [Dodatečné informace o zabezpečení ve Windows Forms](../../../docs/framework/winforms/additional-security-considerations-in-windows-forms.md)  

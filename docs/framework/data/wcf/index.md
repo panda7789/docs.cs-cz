@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8a0ab816aa21082cf98462f5f9d7ffd20e4dcfd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9b6b9ddd27422c09f21833548634afd7945afa89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-data-services-45"></a>Datové služby WCF 4.5
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)](dříve označované jako "ADO.NET Data Services") je součástí rozhraní .NET Framework, který umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantika [representational stavu Transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919). [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Data se získat přístup a změnit pomocí standardních operací protokolu HTTP z GET, PUT, POST a odstranění. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]používá pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které jsou spojené přidružení.  
@@ -46,9 +47,9 @@ ms.lasthandoff: 12/02/2017
  Právě ukázat nějaký kód...  
  -   [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
   
--   [Postupy: provádění dotazů služby dat](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
+-   [Postupy: Provádění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
   
--   [Postupy: vytvoření vazby dat na Windows Presentation Foundation elementy](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)  
+-   [Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)  
   
  Chci vědět více o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]...  
  -   [Dokument White Paper: Úvod OData](http://go.microsoft.com/fwlink/?LinkId=220867)  
@@ -74,9 +75,9 @@ ms.lasthandoff: 12/02/2017
 -   [OData: SDK](http://go.microsoft.com/fwlink/?LinkID=185248)  
   
  Jak zajistíte jejich integraci se sadou Visual Studio?  
- -   [Generování dat služby klientské knihovny](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
+ -   [Generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
   
--   [Vytváření datové služby](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
+-   [Vytvoření datové služby](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
   
 -   [Zprostředkovatel Entity Framework](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)  
   
@@ -100,11 +101,11 @@ ms.lasthandoff: 12/02/2017
 -   [Klient Open Data Protocol (OData) pro Windows Phone](http://go.microsoft.com/fwlink/?LinkID=208749)  
   
  Chcete použít LINQ...  
- -   [Dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ -   [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
   
 -   [Aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)  
   
--   [Postupy: provádění dotazů služby dat](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
+-   [Postupy: Provádění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
   
  Potřebuji některé další informace...  
  -   [Blog týmu služby WCF Data](http://go.microsoft.com/fwlink/?LinkID=150511)  
@@ -125,7 +126,7 @@ ms.lasthandoff: 12/02/2017
  [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
  Popisuje, jak vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Definování datových služeb WCF](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
+ [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
  Popisuje, jak vytvořit a nakonfigurovat službu data, která zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály.  
   
  [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  

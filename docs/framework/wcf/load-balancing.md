@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 699a770e1ff1ec8cebf904a72338f400236b737a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5874d7237608331e5d8284a4ad1cd94ba6fb3451
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
 Jeden ze způsobů, jak zvýšit kapacitu [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikací je odhlašování škálovat podle jejich nasazení do Vyrovnávání zatížení sítě serverové farmy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]aplikace může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.  
@@ -101,4 +102,4 @@ Jeden ze způsobů, jak zvýšit kapacitu [!INCLUDE[indigo1](../../../includes/i
  Chcete-li dosáhnout optimálního výkonu ve scénářích s vyrovnáváním zatížení, zvažte použití <xref:System.ServiceModel.NetTcpSecurity> (buď <xref:System.ServiceModel.SecurityMode.Transport> nebo <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>).  
   
 ## <a name="see-also"></a>Viz také  
- [Doporučené postupy hostování internetové informační služby](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+ [Osvědčené postupy hostování Internetové informační služby](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)

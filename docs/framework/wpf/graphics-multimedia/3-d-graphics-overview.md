@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 979cc7580471f616d39056f541b8374b372e8e88
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58b756c24c1ca7e3f5b6b3f13c314363daf35443
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="3-d-graphics-overview"></a>Přehled 3D grafiky
 <a name="introduction"></a>[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] umožňuje vývojářům kreslení, transformace a použije animaci 3D grafický v značek a procedurální kódu. Mohou vývojáři kombinovat [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] a [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] grafické vytvořit bohaté ovládací prvky, poskytují komplexní ilustrace dat nebo vylepšit uživatele prostředí rozhraní aplikace. [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] není určená k poskytnutí herní vývojové platformy plně funkční. Toto téma obsahuje přehled [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] funkce v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafika systému.  
@@ -184,8 +185,8 @@ Perspektivy a pravoúhlé projekce
  <xref:System.Windows.Media.Media3D.PerspectiveCamera>  
  <xref:System.Windows.Media.Media3D.DirectionalLight>  
  <xref:System.Windows.Media.Media3D.Material>  
- [Přehled 3D transformace](../../../../docs/framework/wpf/graphics-multimedia/3-d-transformations-overview.md)  
- [Maximalizovat výkon 3D grafický subsystém WPF](../../../../docs/framework/wpf/graphics-multimedia/maximize-wpf-3d-performance.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-how-to-topics.md)  
- [Tvarů a základní kreslení v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [Malování s obrázky, kresby a vizuální prvky](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+ [Přehled 3D transformací](../../../../docs/framework/wpf/graphics-multimedia/3-d-transformations-overview.md)  
+ [Maximalizace výkonu WPF 3D](../../../../docs/framework/wpf/graphics-multimedia/maximize-wpf-3d-performance.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-how-to-topics.md)  
+ [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
+ [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

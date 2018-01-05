@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0298462db5897e955bf0a2551cca7fc81bb27d89
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4d44565907904509a1b8f670453db5d7aa4e2583
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-animations-to-text"></a>Postupy: Použití animací na text
 Animace můžete změnit vzhled textu v aplikaci a zobrazení. Následující příklady používají různé typy animací ovlivnit zobrazení textu v <xref:System.Windows.Controls.TextBlock> ovládacího prvku.  
@@ -48,4 +49,4 @@ Změna z 1,00 na 0,00 krytí textu
  [!code-xaml[TextAnimationSample#TextAnimationSample4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample4)]  
   
 ## <a name="see-also"></a>Viz také  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

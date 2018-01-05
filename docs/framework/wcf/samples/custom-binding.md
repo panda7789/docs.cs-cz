@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c2abc3afa1d7f0116d1f6a87bb2df36b5275ccf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2a5206887c154292194f790f8cf9c49798cf57c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-binding"></a>Vlastní vazba
 Tato část obsahuje ukázky, která ukazují použití vlastní vazby atributu elementu koncový bod.  
@@ -26,10 +27,10 @@ Tato část obsahuje ukázky, která ukazují použití vlastní vazby atributu 
  [Imperativní vlastní vazby](../../../../docs/framework/wcf/samples/custom-binding-imperative.md)  
  Ukazuje, jak napsat kód imperativní pro definice a používání vlastních vazeb bez použití konfiguračního souboru nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] generované klienta.  
   
- [A přenos vlastní vazby kódování](../../../../docs/framework/wcf/samples/custom-binding-transport-and-encoding.md)  
+ [Přenos a kódování vlastní vazby](../../../../docs/framework/wcf/samples/custom-binding-transport-and-encoding.md)  
  Ukazuje, jak nakonfigurovat vlastní vazby s různými přenosu a elementy kódování zprávy.  
   
- [Spolehlivá relace vlastních vazeb](../../../../docs/framework/wcf/samples/custom-binding-reliable-session.md)  
+ [Spolehlivá relace s vlastními vazbami](../../../../docs/framework/wcf/samples/custom-binding-reliable-session.md)  
  Ukazuje, jak nakonfigurovat vlastní vazby s různými přenosu a zpráva kódování elementy, zejména povolení spolehlivé relace.  
   
  [Spolehlivá relace vlastních vazeb přes HTTPS](../../../../docs/framework/wcf/samples/custom-binding-reliable-session-over-https.md)  

@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ba2475175fb6e25829c6ffd4d7393b3e7be7f8a1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a6e215b423847151639b8e1b32b9a343afca750f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltendpointbehaviorsgt"></a>&lt;endpointBehaviors&gt;
 Tento konfigurační oddíl představuje všechny chování definované pro konkrétní koncový bod. Další informace o konfiguraci klienta chování najdete v tématu [zadání běhového chování klienta](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md) a [konfigurace chování klientů](../../../../../docs/framework/wcf/configuring-client-behaviors.md).  
@@ -25,5 +26,5 @@ Tento konfigurační oddíl představuje všechny chování definované pro konk
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.EndpointBehaviorElementCollection>  
  <xref:System.ServiceModel.Configuration.EndpointBehaviorElement>  
- [Určení chování klienta](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)  
- [Konfigurace chování klientů](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
+ [Nastavení chování klienta za běhu](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)  
+ [Konfigurace chování klienta](../../../../../docs/framework/wcf/configuring-client-behaviors.md)

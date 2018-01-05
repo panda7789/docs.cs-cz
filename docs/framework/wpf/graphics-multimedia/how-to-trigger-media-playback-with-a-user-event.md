@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 39d50fc23be4a5cdf4df90cd6fa96466acc738aa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: aa93b757f0af38bc6b08d87ac5485e2bf0f45a1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-trigger-media-playback-with-a-user-event"></a>Postupy: Spuštění přehrání média pomocí události uživatele
 Tento příklad ukazuje, jak synchronizovat přehrávání médií s událostí.  
@@ -37,5 +38,5 @@ Tento příklad ukazuje, jak synchronizovat přehrávání médií s událostí.
  <xref:System.Windows.Media.MediaTimeline>  
  <xref:System.Windows.EventTrigger.RoutedEvent%2A>  
  <xref:System.Windows.Media.Animation.Storyboard>  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)  
  [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)

@@ -8,11 +8,12 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.devlang: dotnet
-ms.openlocfilehash: de9306e0ca29470aa532e1bbf6e14b1086e46306
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 5dc89529cdd3c5ab1f35e30a7ff601be88667de7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="install-the-net-framework-on-windows-vista-and-windows-server-2008"></a>Nainstalujte rozhraní .NET Framework na Windows Vista a Windows Server 2008
 

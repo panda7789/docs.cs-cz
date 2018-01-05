@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a63a8080c71ad026664e2e14fc1762fcdd4bdb36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e601fb5895460e52aa21836c542d0b1367527f09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments – direktiva
 Předává chovaly zadejte argumenty obecného do konstruktoru objektu obecného typu.  
@@ -92,7 +93,7 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  V grafickém subsystému WPF a pokud je cílem [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít funkce jazyka XAML 2009 společně s `x:TypeArguments` , ale pouze u přijít XAML (XAML, který zkompiluje značek není). Zkompilovaný kód XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova jazyka XAML 2009 a funkce. Pokud třeba chcete značek zkompilujete XAML, musí pracovat v rámci omezení uvedených v části "XAML 2006 a WPF obecného XAML použití".  
   
 ## <a name="see-also"></a>Viz také  
- [x: Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
- [x: Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
+ [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
+ [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
  [Předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)  
- [Obecné typy v jazyce XAML](../../../docs/framework/xaml-services/generics-in-xaml.md)
+ [Obecné typy v jazyku XAML](../../../docs/framework/xaml-services/generics-in-xaml.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 36f84796b9682411d7907cfc10d584d772ef00a7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8755173b9c64a6457b94e689204c6a5aabc971cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="calling-a-dll-function"></a>Volání funkce DLL
 Přestože volání nespravovaných funkcí knihovny DLL je téměř shodná volání jiných spravovaného kódu, jsou rozdíly, které můžou vypadat matoucí funkcí knihovny DLL na první. Tato část obsahuje témata, která popisují některá z neobvyklého problémy související s volání.  
@@ -38,7 +39,7 @@ Přestože volání nespravovaných funkcí knihovny DLL je téměř shodná vol
  [Funkce zpětného volání](../../../docs/framework/interop/callback-functions.md)  
  Poskytuje základní informace o funkce zpětného volání.  
   
- [Postupy: implementace funkcí zpětného volání](../../../docs/framework/interop/how-to-implement-callback-functions.md)  
+ [Postupy: Implementace funkcí zpětného volání](../../../docs/framework/interop/how-to-implement-callback-functions.md)  
  Popisuje způsob implementace funkcí zpětného volání ve spravovaném kódu.  
   
 ## <a name="related-sections"></a>Související oddíly  

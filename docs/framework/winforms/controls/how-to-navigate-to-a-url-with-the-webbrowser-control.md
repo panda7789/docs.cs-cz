@@ -22,11 +22,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28ceb5e465b8737d047c9c0e65bd9efc8cd3c8ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a447d69eb6dafbff75ddd9d161abd4f78c607cdd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>Postupy: Přechod na adresu URL pomocí ovládacího prvku WebBrowser
 Následující příklad kódu ukazuje, jak se orientovat <xref:System.Windows.Forms.WebBrowser> řízení konkrétní adresy URL.  
@@ -55,5 +56,5 @@ this.webBrowser1.Navigate("http://www.microsoft.com");
  <xref:System.Windows.Forms.WebBrowser.DocumentCompleted?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.WebBrowser.Navigating?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>  
- [WebBrowser – ovládací prvek](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
- [Postupy: tisk pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)
+ [Ovládací prvek WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
+ [Postupy: Tisk pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)

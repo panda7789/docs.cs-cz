@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 13763e0487314fdbe7ab6fcb8b7b8711715e7a6e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df87170b05f830916ef2f77fd4cb5a4abab42faa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-layout-and-design"></a>Optimalizace výkonu: Rozložení a návrh
 Návrh vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace může mít vliv na jeho výkon vytvořením nárokům v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu může ovlivnit výkonové charakteristiky vaší aplikace.  
@@ -83,10 +84,10 @@ Návrh vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-w
  [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
- [2D grafika a vytvoření bitové kopie](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Chování objektů](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
  [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
  [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
- [Další doporučení výkonu](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)  
+ [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)

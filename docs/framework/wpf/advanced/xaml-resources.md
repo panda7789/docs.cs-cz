@@ -18,11 +18,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f9d0ff535d0784343b36d0b2df48b123ff3beef
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2d58802bcdfa57bb7689e7406651fcc9829a7e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
 Prostředek je objekt, který lze znovu použít na různých místech v aplikaci. Příklady prostředků: štětce a stylů. Tento přehled popisuje, jak používat prostředky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo zcela zaměnitelným významem mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md).  
@@ -166,9 +167,9 @@ Prostředek je objekt, který lze znovu použít na různých místech v aplikac
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.ResourceDictionary>  
  [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Prostředky a kódu](../../../../docs/framework/wpf/advanced/resources-and-code.md)  
- [Definování a odkazovat na prostředek](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)  
+ [Prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md)  
+ [Definice a odkaz prostředku](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)  
  [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
- [x: Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)  
- [– Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
- [– Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)
+ [x:Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)  
+ [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
+ [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)

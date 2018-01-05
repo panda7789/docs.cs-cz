@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 3fcf99bf52f6870ba4c8dcbab30a86b70c32491b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 30d94534f0da0e3946d036fd8e0db59971615c0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xamlservices-class-and-basic-xaml-reading-or-writing"></a>Třída XAMLServices a základní čtení a zápis v jazyku XAML
 <xref:System.Xaml.XamlServices>je třída poskytuje rozhraní .NET Framework XAML Services, který můžete používat k adresování XAML scénáře, které nevyžadují konkrétním přístup k datový proud uzlu XAML, nebo XAML typ system informacemi získanými z těchto uzlů. <xref:System.Xaml.XamlServices>Rozhraní API jde vyhodnotit takto: `Load` nebo `Parse` pro podporu cestu zatížení XAML, `Save` pro podporu XAML cestu, uložení a `Transform` k poskytování technik, které připojuje cestu zatížení a uložit cestu. `Transform`Umožňuje změnit z jednoho schématu XAML do jiného. Toto téma shrnuje každý z těchto rozhraní API klasifikací a popisuje rozdíly mezi přetížení konkrétní metody.  

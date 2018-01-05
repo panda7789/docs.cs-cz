@@ -18,11 +18,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 21da853d442a86eb42d04ff4f32d9f2798e14477
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b2762080c66c3c9451e7c7c3d4621d8cb9d4846e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 Nástroj Assembly Registration načte metadata v rámci sestavení a přidá nezbytné položky registru, které umožní klientům modelu COM transparentní vytvoření tříd rozhraní .NET Framework. Jakmile je třída zaregistrována, může ji libovolný klient COM použít jako třídu COM. Třída je registrována pouze jednou, při instalaci sestavení. Instance tříd z modelu COM v rámci sestavení nelze vytvořit, dokud nedojde k jejich registraci.  
@@ -48,12 +49,12 @@ regasm assemblyFile [options]
 |**/ základu kódu**|Vytvoří položku základu kódu v registru. Položka základu kódu určuje cestu k souboru sestavení, které není nainstalováno v globální mezipaměti sestavení (GAC). Tuto možnost byste neměli zadávat, pokud následně instalujete sestavení, které budete registrovat do globální mezipaměti sestavení (GAC). *AssemblyFile* argument, který zadáte pomocí **/ základu kódu** možnost musí být [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).|  
 |**/ registrované**|Určuje, že tento nástroj bude odkazovat pouze na knihovny typů, které již byly zaregistrovány.|  
 |**/asmpath:Directory**|Určuje adresář obsahující odkazy na sestavení. Musí být použit s **/regfile** možnost.|  
-|**/ nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
+|**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/RegFile** [**:** *regFile*]|Generuje soubor .reg určený pro sestavení, která obsahují potřebné položky registru. Použití této možnosti nezmění registr. Tuto možnost s nelze použít **/u** nebo **/TLB** možnosti.|  
 |**/ tichou** nebo **/s**|Potlačí zobrazování zpráv o úspěšném dokončení.|  
 |**/ TLB** [**:** *typeLibFile*]|Ze zadaného sestavení vytvoří knihovnu typů obsahující definice dostupných typů definovaných v rámci sestavení.|  
 |**/ unregister** nebo **/u**|Zruší registraci nalezené v vytvořitelné třídy *assemblyFile*. Vynechání této možnosti způsobí, že nástroj Regasm.exe zaregistruje vytvořitelné třídy v rámci sestavení.|  
-|**/ verbose**|Určuje podrobný režim; Zobrazí seznam všech odkazovaná sestavení, pro které je třeba vytvořit, pokud zadaný knihovny typů **/TLB** možnost.|  
+|**/verbose**|Určuje podrobný režim; Zobrazí seznam všech odkazovaná sestavení, pro které je třeba vytvořit, pokud zadaný knihovny typů **/TLB** možnost.|  
 |**/?** nebo   **/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 > [!NOTE]
@@ -91,7 +92,7 @@ regasm myTest.dll /tlb:myTest.tlb
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Tlbexp.exe (Exportér knihovny)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
- [Tlbimp.exe (Importér knihovny)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
- [Registrace sestavení modelu COM](../../../docs/framework/interop/registering-assemblies-with-com.md)  
+ [Tlbexp.exe (exportér knihovny typů)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
+ [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
+ [Registrování sestav pomocí modelu COM](../../../docs/framework/interop/registering-assemblies-with-com.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

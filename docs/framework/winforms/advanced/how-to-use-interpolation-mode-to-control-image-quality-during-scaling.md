@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10a0ef4e7fd8514245a7659dd515d8f363a716ff
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e8bbc17b8344fca496dcf8f4077a69b6db1453c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-interpolation-mode-to-control-image-quality-during-scaling"></a>Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka
 Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Image měřítka (úsecích a zmenší). <xref:System.Drawing.Drawing2D.InterpolationMode> Výčet definuje několik režimy interpolace, z nichž některé jsou uvedeny v následujícím seznamu:  
@@ -58,4 +59,4 @@ Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob [!IN
   
 ## <a name="see-also"></a>Viz také  
  [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
- [Práce s obrázky, rastrové obrázky, ikony a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+ [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f5eba773a290f1100fcea411919c5c16558e01ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4c4c2c3b9cabb630b5762fdc49f6cb62eef28f71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje, jak použít z/do nebo podle animací pro animaci vlastností závislostí. From/k/podle animace vytvoří přechod mezi dvěma hodnotami.  
@@ -153,9 +154,9 @@ Toto téma popisuje, jak použít z/do nebo podle animací pro animaci vlastnost
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Animation.Timeline>  
  <xref:System.Windows.Media.Animation.Storyboard>  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
- [Přehled animací jednotlivých klíč](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Přehled animací cesta](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)  
- [Přehled vlastní animace](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)  
+ [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)  
+ [Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)  
  [Z, k a ukázkové hodnoty Target animace](http://go.microsoft.com/fwlink/?LinkID=159988)

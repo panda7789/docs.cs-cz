@@ -12,11 +12,12 @@ ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 10202a38d54e4c9744dbd20fb5f226fa41f5dab5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2e803561ef20bb17ed7c637eb487027466b65077
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="remove-element-for-appsettings"></a>\<Odebrat > elementu pro \<appSettings >
 

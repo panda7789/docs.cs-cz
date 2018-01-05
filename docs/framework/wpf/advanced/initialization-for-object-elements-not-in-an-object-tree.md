@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a2a4dd10b664dc349b0c413d7abac03280f8fb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e5d617176852e72b4b46e48ff9a4528bec373272
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="initialization-for-object-elements-not-in-an-object-tree"></a>Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů
 Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] inicializace odložit procesy, které se zpravidla spoléhají na daný element připojené k logického stromu nebo vizuálním stromu. Toto téma popisuje kroky, které může být nutné za účelem inicializace element, který není připojen k buď stromu.  
@@ -53,6 +54,6 @@ Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-
  [!code-vb[InitializeElements#Main](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InitializeElements/VisualBasic/initializeelements.vb#main)]  
   
 ## <a name="see-also"></a>Viz také  
- [Stromy v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
+ [Stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
  [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

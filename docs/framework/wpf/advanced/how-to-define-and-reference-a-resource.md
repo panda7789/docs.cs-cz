@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 322ac3e5ebfe2d820a4711d877396b9a1a2759a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 173be3048f7bf082db2eef2ea21eb1e0319f9a43
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-and-reference-a-resource"></a>Postupy: Definice a odkaz zdroje
 Tento příklad ukazuje, jak definovat prostředku a odkazovat pomocí atributu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -36,4 +37,4 @@ Tento příklad ukazuje, jak definovat prostředku a odkazovat pomocí atributu 
   
 ## <a name="see-also"></a>Viz také  
  [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)

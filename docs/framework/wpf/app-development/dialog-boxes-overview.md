@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d14d3bb167fc3e027371c28147720cf2a098c136
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 112a9badaf9a64b2c6d3f73d64c27fbc36ec48a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, přes které aplikace funguje a zpřístupňuje funkci pro zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy jako řádky nabídek, panely nástrojů a stavové řádky. Netriviální aplikace může také zobrazit další okna udělat následující:  
@@ -355,6 +356,6 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
 [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind2)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled místní nabídka](../../../../docs/framework/wpf/controls/popup-overview.md)  
+ [Přehled prvku Popup](../../../../docs/framework/wpf/controls/popup-overview.md)  
  [Dialogové okno pole ukázka](http://go.microsoft.com/fwlink/?LinkID=159984)  
  [Ukázka ColorPicker vlastního ovládacího prvku](http://go.microsoft.com/fwlink/?LinkID=159977)

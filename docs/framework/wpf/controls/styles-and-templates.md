@@ -17,18 +17,19 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2bc4dc0721ad0fb756a5449d0af65fd2aae22381
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 37f4084b5874c49ed1de8d215d53767ab5a21c5b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="styles-and-templates"></a>– styly a šablony
 Windows Presentation Foundation (WPF) stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují aplikace, dokument nebo návrhář uživatelského rozhraní (UI) pro vytvoření vizuálně byly atraktivní aplikace a do standardizovat na konkrétní vzhled jejich produktu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [Postupy: vyhledání prvky generované ControlTemplate](../../../../docs/framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)  
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+  [Postupy: Vyhledávání elementů generovaných objektem ControlTemplate](../../../../docs/framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Style>  
@@ -36,6 +37,6 @@ Windows Presentation Foundation (WPF) stylů a ukázka odkazují na sadu funkcí
   <xref:System.Windows.DataTemplate>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Upřesnit](../../../../docs/framework/wpf/advanced/index.md)  
+ [Pokročilé](../../../../docs/framework/wpf/advanced/index.md)  
   [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)  
   [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)

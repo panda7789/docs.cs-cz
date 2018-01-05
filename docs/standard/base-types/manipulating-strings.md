@@ -16,17 +16,20 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f56dbd878012019f5cab68f2836286d9a6c2f548
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b1db77672928ebf4a03b69b4bef1af80f04124b5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="manipulating-strings-in-net"></a>Manipulace s řetězci v .NET
 Rozhraní .NET poskytuje rozsáhlou sadu rutin, které umožňují efektivně vytvářet, porovnat a upravovat řetězce a také rychle analyzovat velké objemy dat pro vyhledávání, odeberte a nahraďte textové vzory a text.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Osvědčené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)  
+ [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)  
  Prozkoumá řazení řetězců, porovnání a metody velká a malá písmena v rozhraní .NET a poskytuje doporučení pro výběr metody zpracování řetězců.  
   
  [Regulární výrazy rozhraní .NET](../../../docs/standard/base-types/regular-expressions.md)  

@@ -15,20 +15,21 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 18b393ca5048d9b96c6803cd536110ea2261daae
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 89c2e2fb12a91e06b3c4347b6f65c6fa91636911
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="base-elements"></a>Základní elementy
 Čtyři klíč třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>– implementace významné procento běžné funkce element, která je k dispozici v programování WPF. Tyto čtyři třídy jsou uvedené v této sadě SDK jako element základní třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled základní prvky](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [Zmrazitelné objekty – přehled](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [Zarovnání, okraje a odsazení – přehled](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)  
+ [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
+ [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
+ [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.UIElement>  
@@ -41,11 +42,11 @@ ms.lasthandoff: 10/22/2017
   
 ## <a name="related-sections"></a>Související oddíly  
  [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [XAML v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [Element stromu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+  [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
+  [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
   [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
   [Události](../../../../docs/framework/wpf/advanced/events-wpf.md)  
   [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
   [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
   [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)

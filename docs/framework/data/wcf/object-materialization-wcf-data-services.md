@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8f20023e158b388ddd71e518ebcaa48c214252c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b093fce50de6a0437456f4fb0e025e3c853777e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="object-materialization-wcf-data-services"></a>Objekt Materialization (služby WCF Data Services)
 Při použití **přidat odkaz na službu** dialogovém okně můžete využívat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v aplikaci klienta na základě rozhraní .NET Framework, ke každému typu entity v datovém modelu, který je zveřejněný prostřednictvím informačního kanálu se generují ekvivalentní datové třídy. Další informace najdete v tématu [generování dat služby klientské knihovny](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Data entity, který je vrácen dotazu je vyhodnocena do instance jednoho z těchto tříd služby data generovaného klienta. Informace o možnostech sloučení a řešení identity sledovaných objektů najdete v tématu [Správa služby kontextu dat](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).  
@@ -57,5 +58,5 @@ Při použití **přidat odkaz na službu** dialogovém okně můžete využíva
 5.  Klientská knihovna připojí objekt, který má <xref:System.Data.Services.Client.DataServiceContext>. Objekt není připojený, kdy <xref:System.Data.Services.Client.MergeOption> je <xref:System.Data.Services.Client.MergeOption.NoTracking>.  
   
 ## <a name="see-also"></a>Viz také  
- [Dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
- [Projekce dotazu](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+ [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)

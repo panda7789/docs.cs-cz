@@ -21,11 +21,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 90f0d27f3bf5adffe8a9b47940451e71fda082b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 676f7f696fda26ee9d86d14f06dc7b70e2565157
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xname-directive"></a>x:Name – direktiva
 Jednoznačně identifikuje elementů XAML definované v XAML namescope. XAML namescopes a jejich jedinečnost modely je použít pro vytvořených objektů architektury poskytují rozhraní API nebo implementaci chování, které přístup k objektu vytvořeny XAML grafu v době běhu.  
@@ -79,4 +80,4 @@ Jednoznačně identifikuje elementů XAML definované v XAML namescope. XAML nam
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>  
  <xref:System.Windows.FrameworkContentElement.Name%2A?displayProperty=nameWithType>  
- [Stromy v grafickém subsystému WPF](../../../docs/framework/wpf/advanced/trees-in-wpf.md)
+ [Stromy v subsystému WPF](../../../docs/framework/wpf/advanced/trees-in-wpf.md)

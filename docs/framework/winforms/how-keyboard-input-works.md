@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f45d01da6f9a851a0e51f9d614e84a3fba91e4d3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 43b92051b6524a730735fea98d64ee64578b4e06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
 Windows Forms zpracovává vstup z klávesnice ve vyvolání události klávesnice v reakci na zpráv systému Windows. Většina aplikací Windows Forms zpracovat vstup z klávesnice výhradně pomocí zpracování události klávesnice. Nicméně budete muset pochopili, jak funguje zprávy klávesnice, můžete implementovat pokročilejší scénáře vstupu klávesnice, jako je například brání klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíčová data, že Windows Forms rozpozná a poskytuje přehled o tom, jak se směrují klávesnice zprávy. Informace o události klávesnice najdete v tématu [události klávesnice s použitím](../../../docs/framework/winforms/using-keyboard-events.md).  
@@ -82,6 +83,6 @@ Windows Forms zpracovává vstup z klávesnice ve vyvolání události klávesni
  <xref:System.Windows.Forms.Keys>  
  <xref:System.Windows.Forms.Control.WndProc%2A>  
  <xref:System.Windows.Forms.Control.PreProcessMessage%2A>  
- [My.Computer.Keyboard – objekt](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)  
+ [Objekt My.Computer.Keyboard](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)  
  [Přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)  
  [Použití událostí klávesnice](../../../docs/framework/winforms/using-keyboard-events.md)

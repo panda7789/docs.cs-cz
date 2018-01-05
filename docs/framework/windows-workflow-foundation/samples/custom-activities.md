@@ -12,24 +12,25 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acd8d5925e1aea82f53d222daf9ccc8063ae7841
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 24655f8e230cf2286dc451ab8a26f1a4ccf445a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-activities"></a>Vlastní aktivity
 Tato část obsahuje vzorků, které ukazují, jak vytvořit vlastní aktivity v [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vozidlo kódu](../../../../docs/framework/windows-workflow-foundation/samples/code-bodied.md)  
+ [Začlenění do kódu](../../../../docs/framework/windows-workflow-foundation/samples/code-bodied.md)  
  Obsahuje vlastní aktivity ukázky deklarativně vytvořené v kódu.  
   
- [Složené](../../../../docs/framework/windows-workflow-foundation/samples/composite.md)  
+ [Skládání](../../../../docs/framework/windows-workflow-foundation/samples/composite.md)  
  Obsahuje vlastní aktivity ukázky skládá z jiné aktivity.  
   
  [Návrháři vlastních aktivit](../../../../docs/framework/windows-workflow-foundation/samples/custom-activity-designers.md)  
  Obsahuje ukázky aktivity, které používají vlastní Designer pro zobrazení v Návrháři pracovních postupů.  
   
- [Ověření](../../../../docs/framework/windows-workflow-foundation/samples/validation.md)  
+ [Ověřování](../../../../docs/framework/windows-workflow-foundation/samples/validation.md)  
  Obsahuje ukázky, která ukazují ověření doby návrhu aktivity.

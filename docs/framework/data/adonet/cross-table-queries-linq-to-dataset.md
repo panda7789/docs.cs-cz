@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d0b829840257dc2b3b4bbf0b8c3a294a77060e2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 059dd39f3583c3b8fcf6736e514b9cc4870d3ad6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cross-table-queries-linq-to-dataset"></a>Dotazy křížové tabulky (LINQ na DataSet)
 Kromě dotazování na jednotlivé tabulky, můžete také provést křížové tabulky dotazy v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. To se provádí pomocí *spojení*. Spojení je přidružení objektů v jeden zdroj dat s objekty, které sdílejí společný atribut ve zdroji dat, jako je produkt nebo se obraťte na ID. Relace mezi objekty jsou v objektově orientované programování poměrně snadno přejít, protože každý objekt má člena, který odkazuje na jiný objekt. V tabulkách externí databáze ale navigace relací není stejně jednoduché. Databázové tabulky neobsahuje předdefinovaný vztahy. V těchto případech operace spojení lze tak, aby odpovídaly elementy z každého zdroje. Například zadány dvě tabulky, které obsahují informace o produktu a informace o prodeji, můžete použít operace spojení tak, aby odpovídaly informace o prodeji a produktů pro stejné prodeje pořadí.  
@@ -40,8 +41,8 @@ Kromě dotazování na jednotlivé tabulky, můžete také provést křížové 
  [!code-vb[DP LINQ to DataSet Examples#Join](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#join)]  
   
 ## <a name="see-also"></a>Viz také  
- [Dotazování datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
- [Dotazy na jedné tabulky](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)  
- [Dotazování typové datové sady](../../../../docs/framework/data/adonet/querying-typed-datasets.md)  
+ [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
+ [Dotazy na jednu tabulku](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)  
+ [Dotazy na typové datové sady](../../../../docs/framework/data/adonet/querying-typed-datasets.md)  
  [Operace sjednocení](http://msdn.microsoft.com/library/442d176d-028c-4beb-8d22-407d4ef89107)  
- [LINQ na DataSet příklady](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+ [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

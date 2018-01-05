@@ -15,27 +15,28 @@ caps.latest.revision: "90"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2ecb85c1cb6bca654433ccddfb895bc361a4e2b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd866c67a5885a378dace6e14e280b5efe630695
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typography-how-to-topics"></a>Postupy: Témata typografie
 Témata v této části popisují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporu pro bohatou prezentace textu ve svých aplikacích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření textové dekorace](../../../../docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)  
- [Zadejte, že zda hypertextový odkaz jsou podtržené.](../../../../docs/framework/wpf/advanced/how-to-specify-whether-a-hyperlink-is-underlined.md)  
- [Použití transformace na Text](../../../../docs/framework/wpf/advanced/how-to-apply-transforms-to-text.md)  
- [Použít animací na Text](../../../../docs/framework/wpf/advanced/how-to-apply-animations-to-text.md)  
- [Vytvoření textu s stín](../../../../docs/framework/wpf/advanced/how-to-create-text-with-a-shadow.md)  
- [Vytvoření popsané textu](../../../../docs/framework/wpf/advanced/how-to-create-outlined-text.md)  
- [Kreslení textu na pozadí ovládacího prvku](../../../../docs/framework/wpf/advanced/how-to-draw-text-to-a-control-background.md)  
- [Kreslení textu k zobrazení](../../../../docs/framework/wpf/advanced/how-to-draw-text-to-a-visual.md)  
- [Použít speciální znaky v jazyce XAML](../../../../docs/framework/wpf/advanced/how-to-use-special-characters-in-xaml.md)  
+ [Vytvoření dekorace textu](../../../../docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)  
+ [Určení podtržení hypertextového odkazu](../../../../docs/framework/wpf/advanced/how-to-specify-whether-a-hyperlink-is-underlined.md)  
+ [Použití transformací na text](../../../../docs/framework/wpf/advanced/how-to-apply-transforms-to-text.md)  
+ [Použití animací na text](../../../../docs/framework/wpf/advanced/how-to-apply-animations-to-text.md)  
+ [Vytvoření textu se stínem](../../../../docs/framework/wpf/advanced/how-to-create-text-with-a-shadow.md)  
+ [Vytvoření obrysového textu](../../../../docs/framework/wpf/advanced/how-to-create-outlined-text.md)  
+ [Vykreslení textu na pozadí ovládacího prvku](../../../../docs/framework/wpf/advanced/how-to-draw-text-to-a-control-background.md)  
+ [Vykreslení textu do vizuálního objektu](../../../../docs/framework/wpf/advanced/how-to-draw-text-to-a-visual.md)  
+ [Použití speciálních znaků v kódu XAML](../../../../docs/framework/wpf/advanced/how-to-use-special-characters-in-xaml.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Documents.Typography>  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Funkce písem OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)

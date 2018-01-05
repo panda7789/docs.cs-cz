@@ -25,11 +25,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1ee7c7b4e21d147bad1cd8e4b854c0ff4fe13aa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 588ab00d61a701dc43e2af5978a6023a93f367f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 Toto téma popisuje důvody, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojáři aplikací a součástí autoři může být potřeba vytvořit vlastnost vlastní závislosti a popisuje kroky implementace, jakož i některé možnosti implementace, které může zlepšit výkon, použitelnost, nebo všestrannost vlastnost.  
@@ -168,10 +169,10 @@ Toto téma popisuje důvody, [!INCLUDE[TLA#tla_winclient](../../../../includes/t
  Je zásadně ve spravovaném kódu programování (často vynucuje nástrojů pro analýzu kódu například FxCop), které třídy konstruktory by neměl volat virtuální metody. Je to proto může být konstruktory volána jako základní inicializace konstruktoru odvozené třídy a zadáním virtuální metody prostřednictvím konstruktoru může dojít ve stavu neúplná inicializace vytvářen instance objektu. Pokud odvozujete od všechny třídy, která již je odvozena z <xref:System.Windows.DependencyObject>, je třeba si uvědomit, že systém vlastnost samotné volá a zpřístupní virtuální metody interně. Tyto virtuální metody jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systémových služeb. Přepsání metody umožňuje odvozených tříd se účastnit hodnota rozhodnutí. Chcete-li předejít problémům s inicializace modulu runtime, by neměl nastavíte závislostí hodnoty vlastností v rámci konstruktory tříd, pokud podle vzoru velmi konkrétní konstruktor. Podrobnosti najdete v tématu [bezpečné konstruktor vzory pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Metadata vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [Vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
- [Typ kolekce vlastností závislostí](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
- [Závislost vlastnost zabezpečení](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
- [Načítání XAML a vlastností závislostí](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
- [Bezpečné konstruktor vzory pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)
+ [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [Vlastnosti závislostí typu kolekce](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
+ [Zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
+ [Vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
+ [Zabezpečené vzory konstruktoru pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)

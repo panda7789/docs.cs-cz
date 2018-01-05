@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a6c9ced35b68cf1c3bbb216f0b34b6eabe9dba1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 318ad936a5977f8a2dcb0a9de7cf1c5c3f7b52b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contextmenustrip-control"></a>ContextMenuStrip – ovládací prvek
 <xref:System.Windows.Forms.ContextMenuStrip> Řízení poskytuje místní nabídky, která můžete přidružit k ovládacímu prvku.  
@@ -30,19 +31,19 @@ ms.lasthandoff: 10/18/2017
  [Přehled ovládacího prvku ContextMenuStrip](../../../../docs/framework/winforms/controls/contextmenustrip-control-overview.md)  
  Vysvětluje, co je ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
- [Postupy: přidružení prvku ContextMenuStrip k ovládacímu prvku](../../../../docs/framework/winforms/controls/how-to-associate-a-contextmenustrip-with-a-control.md)  
+ [Postupy: Přidružení prvku ContextMenuStrip k ovládacímu prvku](../../../../docs/framework/winforms/controls/how-to-associate-a-contextmenustrip-with-a-control.md)  
  Popisuje provádění <xref:System.Windows.Forms.ContextMenuStrip> místní nabídku pro určitý ovládací prvek.  
   
- [Postupy: přidání položek nabídky do ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-add-menu-items-to-a-contextmenustrip.md)  
+ [Postupy: Přidání položek nabídky do ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-add-menu-items-to-a-contextmenustrip.md)  
  Popisuje postup přidání vybrat možnosti <xref:System.Windows.Forms.ContextMenuStrip>.  
   
- [Postupy: Konfigurace ContextMenuStrip kontrola okraje a okrajů obrázků](../../../../docs/framework/winforms/controls/how-to-configure-contextmenustrip-check-margins-and-image-margins.md)  
+ [Postupy: Konfigurace okrajů pro zaškrtnutí a okrajů pro obrázek ovládacího prvku ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-configure-contextmenustrip-check-margins-and-image-margins.md)  
  Popisuje, jak přizpůsobit <xref:System.Windows.Forms.ContextMenuStrip> nastavením vlastnosti okraje zaškrtnutí a obrázků různými způsoby.  
   
- [Postupy: povolení okrajů pro zaškrtnutí a okrajů obrázků v ovládacích prvcích ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-enable-check-margins-and-image-margins-in-contextmenustrip-controls.md)  
+ [Postupy: Povolení okrajů pro zaškrtnutí a okrajů obrázků v ovládacích prvcích ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-enable-check-margins-and-image-margins-in-contextmenustrip-controls.md)  
  Popisuje, jak zapnout <xref:System.Windows.Forms.ContextMenuStrip> Zkontrolujte okraje zapnout a vypnout.  
   
- [Postupy: zpracování události otevření ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-handle-the-contextmenustrip-opening-event.md)  
+ [Postupy: Zpracování události otevření ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-handle-the-contextmenustrip-opening-event.md)  
  Popisuje, jak přizpůsobit chování <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku ve zpracování <xref:System.Windows.Forms.ToolStripDropDown.Opening> událostí.  
   
  Viz také [dialogové okno úloh ContextMenuStrip](http://msdn.microsoft.com/library/ms233646\(v=vs.110\)) nebo [Editor kolekce položek ContextMenuStrip](http://msdn.microsoft.com/library/ms233641\(v=vs.110\)).  
@@ -58,5 +59,5 @@ ms.lasthandoff: 10/18/2017
  Popisuje funkce <xref:System.Windows.Forms.ToolStripMenuItem> třídy, která představuje volitelný možnost zobrazí na <xref:System.Windows.Forms.MenuStrip> nebo <xref:System.Windows.Forms.ContextMenuStrip>.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.

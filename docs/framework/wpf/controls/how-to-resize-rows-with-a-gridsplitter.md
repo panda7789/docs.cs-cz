@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6621cc0048270b97c42ff4c4e646b0ddd9ca3477
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d4cf06a86a1da7bb34074623f8f19f4bda7a724
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-resize-rows-with-a-gridsplitter"></a>Postupy: Změna velikosti řádků pomocí prvku GridSplitter
 Tento příklad ukazuje, jak používat vodorovných <xref:System.Windows.Controls.GridSplitter> mezery mezi dva řádky v znovu distribuovat <xref:System.Windows.Controls.Grid> bez změnit rozměry <xref:System.Windows.Controls.Grid>.  
@@ -48,4 +49,4 @@ Tento příklad ukazuje, jak používat vodorovných <xref:System.Windows.Contro
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.GridSplitter>  
- [Postupy: témata](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)

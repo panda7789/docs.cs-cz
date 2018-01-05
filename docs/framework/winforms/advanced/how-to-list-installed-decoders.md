@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 17cbdebfa6cbb0cacacd923de4bd22125c812938
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a7993345a39a24c770fdd717580d428968dae836
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-list-installed-decoders"></a>Postupy: Vypsání seznamu instalovaných dekodérů
 Můžete k zobrazení seznamu dekodérů bitové kopie k dispozici v počítačích k určení, jestli vaše aplikace může číst konkrétní TIFF. <xref:System.Drawing.Imaging.ImageCodecInfo> Třída poskytuje <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageDecoders%2A> statických metod, aby mohla určit, která image dekódovací moduly jsou k dispozici. <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageDecoders%2A>Vrátí pole <xref:System.Drawing.Imaging.ImageCodecInfo> objekty.  
@@ -42,5 +43,5 @@ Můžete k zobrazení seznamu dekodérů bitové kopie k dispozici v počítač�
 -   A <xref:System.Windows.Forms.PaintEventArgs>, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vypsání seznamu instalovaných kodérů](../../../../docs/framework/winforms/advanced/how-to-list-installed-encoders.md)  
- [Použití kodérů a dekodérů ve spravovaném GDI +](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)
+ [Postupy: Vypsání seznamu instalovaných kodérů](../../../../docs/framework/winforms/advanced/how-to-list-installed-encoders.md)  
+ [Použití kodérů a dekodérů ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)

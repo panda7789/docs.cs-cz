@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08ded27d60bdfcd9b9b1de4ba719c2f5b6018df1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c066b3c6c84d89a74b18e90ac3a6aa80c63a9b0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="graphics-overview-windows-forms"></a>Přehled grafiky (Windows Forms)
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]je rozhraní grafiky zařízení, která umožňuje programátorům pro psaní aplikací nezávislé na zařízení. Služby [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] se zveřejňují přes sadu spravované třídy.  

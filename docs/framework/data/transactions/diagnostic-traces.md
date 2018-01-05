@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ddbc445d86024c077ebbc0049d12bfb8a21dfcdb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2cb16bb2d492caca7957e6d58eadddf9bf1568b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="diagnostic-traces"></a>Diagnostické trasování
 Trasování jsou publikování určitých zpráv, které jsou generovány během spuštění aplikace. Při použití trasování, musí mít mechanismus pro shromažďování a zaznamenávání zpráv, které jsou odeslány. Trasovací zprávy jsou přijímány naslouchací procesy. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  

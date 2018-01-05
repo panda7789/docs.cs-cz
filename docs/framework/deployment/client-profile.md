@@ -20,11 +20,12 @@ caps.latest.revision: "44"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0c93019b2024029fd27d78ac191f0f99bc9b0ce9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f05290486b107f325e61cfffad052311258eee3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 Profil klienta rozhraní .NET je podmnožinou rozhraní .NET Framework, který byl poskytnut s [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starší verze a je optimalizovaný pro klientské aplikace. Rozhraní .NET Framework je platforma pro vývoj pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovna tříd rozhraní .NET Framework. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starší verze k dispozici dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
@@ -37,6 +38,6 @@ Profil klienta rozhraní .NET je podmnožinou rozhraní .NET Framework, který b
   
 ## <a name="see-also"></a>Viz také  
  [Profil klienta rozhraní .NET framework (rozhraní .NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
- [Cílení na více verzí sady Visual Studio – přehled](http://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)  
- [Řešení potíží s cílením rozhraní .NET Framework](http://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)  
- [Postupy: cílení na verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)
+ [Přehled cílení na více verzí sady Visual Studio](http://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)  
+ [Řešení potíží s cílením na rozhraní .NET Framework](http://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)  
+ [Postupy: Cílení na verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)

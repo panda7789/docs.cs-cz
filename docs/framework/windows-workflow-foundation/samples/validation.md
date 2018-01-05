@@ -12,17 +12,18 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: caff98a6cd0ace0f34cf1c2b839bb6291a77da1d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d8f0f6d30fe03117cddbc4faea63b36955854ba5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="validation"></a>Ověřování
 Tato část obsahuje příklady vysvětlující ověření aktivity.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Ověření externích aktivity](../../../../docs/framework/windows-workflow-foundation/samples/external-activity-validation.md)  
+ [Ověřování externích aktivit](../../../../docs/framework/windows-workflow-foundation/samples/external-activity-validation.md)  
  Tento příklad ukazuje, jak přidat logiku ověření do předdefinovaných aktivity, která nejsou autora.  
   
  [Základní ověřování](../../../../docs/framework/windows-workflow-foundation/samples/basic-validation.md)  
@@ -31,5 +32,5 @@ Tato část obsahuje příklady vysvětlující ověření aktivity.
  [OverloadGroups](../../../../docs/framework/windows-workflow-foundation/samples/overloadgroups.md)  
  Ukazuje, aktivity, `CreateLocation`, který vyžaduje argumenty a volitelné argumenty a umožňuje uživateli rozhodnout pro poskytnutí jednou ze dvou různých sad argumentů.  
   
- [Ověření vztahy aktivity](../../../../docs/framework/windows-workflow-foundation/samples/activity-relationships-validation.md)  
+ [Ověřování relací mezi aktivitami](../../../../docs/framework/windows-workflow-foundation/samples/activity-relationships-validation.md)  
  Ukazuje, jak ověřit vztahy mezi aktivitami.

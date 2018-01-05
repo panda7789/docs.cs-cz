@@ -12,11 +12,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d9f153d212e1180e5de92a6299d2fbb2d6864c42
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5da4423b5f6106bde106de739a8a33e351d17c3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>Odebrání stav zobrazení návrháře přidá do souboru XAML
 Tento příklad ukazuje, jak vytvořte třídu, která je odvozena z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazení stavu ze souboru XAML. [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]zapisuje informace do dokumentu XAML, která se označuje jako stav zobrazení. Stav zobrazení odkazuje na informace, který je požadován v době návrhu, jako je například umístění rozložení, který není nutný za běhu. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)]Vloží do dokumentu XAML tyto informace, jako je upravit. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)]zapisuje do souboru XAML s stav zobrazení `mc:Ignorable` atributů, takže tyto informace není načíst, pokud modul runtime načte souboru XAML. Tento příklad ukazuje, jak vytvořte třídu, která odebere této informace o stavu zobrazení při zpracování uzlů XAML.  

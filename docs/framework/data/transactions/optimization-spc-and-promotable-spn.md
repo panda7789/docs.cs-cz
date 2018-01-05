@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 38c3d10eaefe4608084a5e5f6ad417446200799b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6f85dabc8a447db13173a672db37b327ba4a9fe6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimalizace pomocí jednoho potvrdit fáze a možné zvýšit jedné fáze oznámení
 Toto téma popisuje mechanismy poskytované <xref:System.Transactions> infrastruktury za účelem optimalizace výkonu.  
@@ -70,5 +71,5 @@ Toto téma popisuje mechanismy poskytované <xref:System.Transactions> infrastru
  Pokud existuje jenom jeden volatile zařazení a žádné trvanlivý zařazení, volatile zařazení obdrží oznámení SPC.  Pokud existují jakékoli Nestálá zařazení a pouze jeden trvanlivý zařazení, zobrazí se Nestálá zařazení 2PC. Po dokončení, trvalý zařazení obdrží certifikát SPC.  
   
 ## <a name="see-also"></a>Viz také  
- [Uvedení prostředky jako účastníky v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
- [Potvrzení transakce v jednofázové a více fáze](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)
+ [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [Potvrzení transakce v jedné fázi a více fázích](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)

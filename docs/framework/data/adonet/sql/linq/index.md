@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c68e00930b518a637a42e99c422e4acf7982f5f1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 78fbd1bde6727490e789ba22232af3f17af20d75
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-sql"></a>Technologie LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je součástí [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] verze 3.5, který poskytuje běhové infrastrukturu pro správu relačních dat jako objekty.  
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/18/2017
  [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
  Popisuje kroky pro mapování, dotazování, aktualizaci, ladění a podobných úloh.  
   
- [Referenční dokumentace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
+ [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
  Poskytuje referenční informace o několik aspektů [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Témata zahrnují mapování typu SQL CLR, operátor překlad dotazu na standardní a další.  
   
  [Ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md)  
@@ -57,7 +58,7 @@ ms.lasthandoff: 10/18/2017
  [Technologie LINQ to SQL návody](http://msdn.microsoft.com/en-us/308e66ac-f704-4e00-9b4e-7af0045a2374)  
  Uvádí postupy, které jsou k dispozici pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
- [Stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
  Popisuje, jak stáhnout ukázkové databáze používají v dokumentaci.  
   
  [Přehled technologie LinqDataSource](http://msdn.microsoft.com/en-us/104cfc3f-7385-47d3-8a51-830dfa791136)  

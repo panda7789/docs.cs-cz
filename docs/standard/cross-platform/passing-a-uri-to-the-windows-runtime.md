@@ -19,11 +19,14 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 4ef77fb9e196abf046e0d4648a49b5d4d3fad47e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 78ba02fa227bd5c10337da0ef8b65ceab476c1ed
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="passing-a-uri-to-the-windows-runtime"></a>Předávání identifikátorů URI do prostředí Windows Runtime
 Prostředí Windows Runtime metody přijímají pouze absolutní identifikátory URI. Pokud předáte relativní identifikátor URI k [!INCLUDE[wrt](../../../includes/wrt-md.md)] metody <xref:System.ArgumentException> je vyvolána výjimka. Tady je důvod, proč: při použití [!INCLUDE[wrt](../../../includes/wrt-md.md)] v rozhraní .NET Framework kódu [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376) třídy se zobrazí jako <xref:System.Uri?displayProperty=nameWithType> v Intellisense. <xref:System.Uri?displayProperty=nameWithType> Třída umožňuje relativní identifikátory URI, ale [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376) třída neexistuje. To platí také pro metody vystavit v [!INCLUDE[wrt](../../../includes/wrt-md.md)] součásti. Pokud příslušné součásti zpřístupní metodu, která přebírá identifikátor URI, zahrnuje podpis ve vašem kódu <xref:System.Uri?displayProperty=nameWithType>. Ale uživatelům vaší součásti, obsahuje podpis [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376). Identifikátor URI, který je předán do příslušné součásti musí být absolutní identifikátor URI.  
@@ -45,4 +48,4 @@ Prostředí Windows Runtime metody přijímají pouze absolutní identifikátory
  Další informace o těchto režimů najdete v tématu [schémata identifikátoru URI](http://msdn.microsoft.com/library/windows/apps/jj655406.aspx) ve službě Windows Dev Center.  
   
 ## <a name="see-also"></a>Viz také  
- [Podpora v rozhraní .NET framework pro aplikace pro Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+ [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

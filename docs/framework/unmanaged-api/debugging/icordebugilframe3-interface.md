@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fe6affcf82a16a4fd51a5e5a4bf33b247dae0688
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1096942775dd579fa530415873694b3e6e67a74a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugilframe3-interface"></a>ICorDebugILFrame3 – rozhraní
 Poskytuje metodu, která zapouzdřuje vrácenou hodnotu funkce. `ICorDebugILFrame3`je logické rozšíření ICorDebugILFrame a ICorDebugILFrame2 rozhraní.  
@@ -30,7 +31,7 @@ Poskytuje metodu, která zapouzdřuje vrácenou hodnotu funkce. `ICorDebugILFram
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getreturnvalueforiloffset – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md)|Získá objekt ICorDebugValue, který zapouzdří návratovou hodnotu funkce.|  
+|[GetReturnValueForILOffset – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md)|Získá objekt ICorDebugValue, který zapouzdří návratovou hodnotu funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -47,5 +48,5 @@ Poskytuje metodu, která zapouzdřuje vrácenou hodnotu funkce. `ICorDebugILFram
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Icordebugcode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [ICorDebugCode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

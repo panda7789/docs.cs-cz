@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 4cf1d2013a51985f9d7772ac0ef86e5dbb120be9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 19bcb64beb7b022d20bbde1210ae6d844690d891
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltschemesettingsgt-element-uri-settings"></a>&lt;schemeSettings&gt; – Element (nastavení Uri)
 Určuje, jak <xref:System.Uri> bude analyzovat pro konkrétní schémat.  
@@ -43,9 +44,9 @@ Určuje, jak <xref:System.Uri> bude analyzovat pro konkrétní schémat.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Přidat](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-schemesettings-uri-settings.md)|Přidá nastavení schéma pro název schématu.|  
+|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-schemesettings-uri-settings.md)|Přidá nastavení schéma pro název schématu.|  
 |[Vymazat](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-schemesettings-uri-settings.md)|Vymaže všechna existující nastavení schéma.|  
-|[odebrat](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-schemesettings-uri-settings.md)|Odebere schéma nastavení pro název schématu.|  
+|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-schemesettings-uri-settings.md)|Odebere schéma nastavení pro název schématu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

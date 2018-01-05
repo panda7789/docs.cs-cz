@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5587300edf739eedb99084735eda81538ab61ef7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cae680c8958c86dc57a2aff3c2d567e1fdac981d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server připojení k síti často nemají přímou a otevřete cestu pro komunikaci. Pakety jsou filtrovány, směrovat, analyzovat a transformovat na počítačích, koncový bod a zprostředkující počítače v síti. Sítě překlady adres (NAT) a brány firewall jsou běžných příkladů zprostředkující aplikací, které se můžou zapojit síťové komunikace.  

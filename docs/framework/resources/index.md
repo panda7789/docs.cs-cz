@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 24b23d3fd4d3c318fd2fad36bbbbe0cb065db453
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d8fa1521a5516a4be18352c1bce6abf93e40287f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resources-in-desktop-apps"></a>Prostředky v aplikacích klasické pracovní plochy
 Téměř každý produkční kvality aplikace má využívat prostředky. Prostředek je nespustitelná část dat, který je logicky nasazen s aplikací. Prostředek mohou být zobrazeny v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředků může obsahovat data v různých formách, včetně řetězce, Image a trvalé objekty. (K zápisu do souboru prostředků trvalé objekty, tyto objekty musí být serializovatelný.) Ukládání dat do souboru prostředků, můžete změnit data bez nutnosti rekompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje potřebu spoléhají na pevně data uložená na více místech.  

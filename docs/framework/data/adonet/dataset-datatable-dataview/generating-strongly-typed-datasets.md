@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 61836196d9e11d3c87c43d4faaaeff54125bf706
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 867c6f5fa918b0886d8d618e89c62201cd92b213
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-strongly-typed-datasets"></a>Generování silného typu datové sady
 Zadané schéma XML, který odpovídá schématu XML definice jazyka (XSD) standard, můžete vygenerovat silného typu <xref:System.Data.DataSet> pomocí nástroje XSD.exe součástí [!INCLUDE[winsdklong](../../../../../includes/winsdklong-md.md)].  
@@ -108,5 +109,5 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
  <xref:System.Data.DataColumnCollection>  
  <xref:System.Data.DataSet>  
  [Typové datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
- [Datové sady, DataTables a DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

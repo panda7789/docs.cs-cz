@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f747d921e9c131edaa8a1749c5adc5eae14623c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5f79ed7af91f2e54edbc2174da2afa1b3cb56557
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-an-assembly39s-location"></a>Určení sestavení & č. 39; s umístění
 K určení umístění sestavení dvěma způsoby:  
@@ -53,7 +54,7 @@ K určení umístění sestavení dvěma způsoby:
 </configuration>  
 ```  
   
- **Verze** atribut je požadován pro všechny sestavení se silným názvem však by měl být vynechán pro sestavení, které nejsou silným názvem. **\<CodeBase >** prvek vyžaduje **href** atribut. Nelze zadat rozsahy verze v  **\<codeBase >** element.  
+ **Verze** atribut je požadován pro všechny sestavení se silným názvem však by měl být vynechán pro sestavení, které nejsou silným názvem.  **\<CodeBase >** prvek vyžaduje **href** atribut. Nelze zadat rozsahy verze v  **\<codeBase >** element.  
   
 > [!NOTE]
 >  Pokud jsou poskytuje základní nápovědu kód pro sestavení, které není silným názvem, pomocný parametr musí odkazovat na základní aplikace a podadresář základnímu adresáři aplikace.  
@@ -76,7 +77,7 @@ K určení umístění sestavení dvěma způsoby:
  **PrivatePath** atribut obsahuje adresáře, které modul runtime program hledat sestavení. Pokud aplikace se nachází v C:\Program Files\MyApp, modul runtime bude hledat sestavení, které neurčují C:\Program Files\MyApp\Bin, C:\Program Files\MyApp\Bin2\Subbin a C:\Program Files\MyApp\Bin3 základu kódu. Adresáře, určené v **privatePath** musí být základní adresáře aplikace.  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Konfigurace aplikací rozhraní .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)

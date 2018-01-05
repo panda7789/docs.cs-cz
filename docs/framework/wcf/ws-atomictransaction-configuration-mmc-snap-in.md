@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 66e6114b5fca84188f69be8d16782d5fdc1588cb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 73db4b201aba6e07891803aa86c56403f135f863
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 Modul Snap-in konzoly MMC WS-AtomicTransaction Configuration slouží ke konfiguraci hodnot nastavení, WS-AtomicTransaction na místních i vzdálených počítačích.  
@@ -97,6 +98,6 @@ regasm.exe /codebase WsatUI.dll
  [!INCLUDE[crabout](../../../includes/crabout-md.md)]trasování a protokolování, najdete v části [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Konfigurace podpory protokolu WS-Atomic Transactions](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)  
- [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
- [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md)
+ [Konfigurace podpory protokolu WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)  
+ [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
+ [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)

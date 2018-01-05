@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 360b453b2a25b6822485f18cc81cb43e313949eb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e413a7ddf7e256538e56876712a54f875392b59a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku
 Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, které mohou být zahrnuty v přenos dat se přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -347,4 +348,4 @@ Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, kte
      ![Přetahování kruh stiskněte klávesu CTRL](../../../../docs/framework/wpf/advanced/media/dragdrop-paneldrop.png "DragDrop_PanelDrop")  
   
 ## <a name="see-also"></a>Viz také  
- [Přetáhnout myší – přehled](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)
+ [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

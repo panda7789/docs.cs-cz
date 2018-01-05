@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 057d8af46325321360039af000ad8ce68bde39d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fe94566f666d3936dc4d1a39017b1628c0e7e37a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="picturebox-control-overview-windows-forms"></a>PictureBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PictureBox> řízení se používá k zobrazení grafiky ve formátu rastrového obrázku, GIF, JPEG, metafile nebo ikonu.  
@@ -32,7 +33,7 @@ Windows Forms <xref:System.Windows.Forms.PictureBox> řízení se používá k z
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.PictureBox>  
- [Postupy: načtení obrázku pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)  
+ [Postupy: Načtení obrázku pomocí Návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)  
  [Postupy: Změna velikosti či umístění obrázku za běhu](../../../../docs/framework/winforms/controls/how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)  
- [Postupy: nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)  
- [PictureBox – ovládací prvek](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)
+ [Postupy: Nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)  
+ [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)

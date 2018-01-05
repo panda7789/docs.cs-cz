@@ -5,11 +5,14 @@ keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: d7a24633f5857bc5b72ebab42020627c645f4302
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 717675170f19f18fb48c4cea3ddd15bcd9648d71
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)
 

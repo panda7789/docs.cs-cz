@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31bbc3da54c10304e52f93d38365a8d9ed005505
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b031b0dce8e1fd06399ded0b6d612a23323ae837
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-text-with-a-shadow"></a>Postupy: Vytvoření textu se stínem
 Příklady v této části ukazují, jak vytvořit efekt stínu pro zobrazený text.  

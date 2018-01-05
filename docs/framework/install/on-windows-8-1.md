@@ -9,11 +9,12 @@ ms.date: 10/22/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.devlang: dotnet
-ms.openlocfilehash: fcc60b5ade7090c423590d652a13949c6c425213
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 7bfdd0c4ac28873647a119d5446373fee98c345f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Nainstalujte rozhraní .NET Framework na Windows 8.1 a Windows Server 2012 R2
 

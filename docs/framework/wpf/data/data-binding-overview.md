@@ -21,11 +21,12 @@ caps.latest.revision: "78"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fbf731504022cb25e0cdeff5e0a557b67b987fd4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 817a7ba73c37c15afa1be402da38e828d2aba426
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]Datová vazba poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici. Elementy lze vázat na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mít integrovanou funkci, aby flexibilní stylů jeden datových položek, nebo kolekce datových položek. Třídění, filtrování a zobrazení skupiny lze vygenerovat nad data.  
@@ -185,9 +186,9 @@ ms.lasthandoff: 11/21/2017
   
  A <xref:System.Windows.Data.BindingExpression> objekt můžete získat prostřednictvím návratovou hodnotu volání <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> na objekt vázané na data. Následující témata ukazují některé z použití <xref:System.Windows.Data.BindingExpression> třídy:  
   
--   [Získání objektu vazby z vázané cílovou vlastnost](../../../../docs/framework/wpf/data/how-to-get-the-binding-object-from-a-bound-target-property.md)  
+-   [Získání objektu vazby ze svázané cílové vlastnosti](../../../../docs/framework/wpf/data/how-to-get-the-binding-object-from-a-bound-target-property.md)  
   
--   [Ovládací prvek, když TextBox Text aktualizuje zdroj](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)  
+-   [Určení, kdy dojde k aktualizaci zdroje textem TextBox](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)  
   
 <a name="data_conversion"></a>   
 ## <a name="data-conversion"></a>Převod dat  
@@ -441,9 +442,9 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.DataErrorValidationRule>  
- [Co je nového ve verzi WPF 4.5](../../../../docs/framework/wpf/getting-started/whats-new.md)  
- [Vazby do výsledků dotazu LINQ](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)  
+ [Novinky ve verzi 4.5 grafického subsystému WPF](../../../../docs/framework/wpf/getting-started/whats-new.md)  
+ [Vytvoření vazby k výsledkům dotazu LINQ](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)  
  [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [Ukázku datové vazby](http://go.microsoft.com/fwlink/?LinkID=163703)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
  [Vytvoření vazby ke zdroji dat ADO.NET](../../../../docs/framework/wpf/data/how-to-bind-to-an-ado-net-data-source.md)

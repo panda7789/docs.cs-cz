@@ -8,11 +8,12 @@ ms.date: 11/30/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 887f562803226d99901a6ee13175c1a43956b0cd
-ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
+ms.workload: dotnetcore
+ms.openlocfilehash: dc93e0554d422ddf42ac54dd94223f0285451e85
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-restore"></a>obnovení DotNet.
 

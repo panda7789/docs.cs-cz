@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f4ff3e41608c9b879bd64e004fcae5e87599e0b4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a9e321a3ea972208bb136c76e52168d89da8d162
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-wcf-ajax-services-without-aspnet"></a>Vytváření služeb WCF AJAX bez ASP.NET
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Služby AJAX je přístupná z webové stránky povolen jazyk JavaScript, bez nutnosti prvku ASP.NET AJAX. Toto téma popisuje, jak vytvořit, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  

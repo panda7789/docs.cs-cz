@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 386e58c5b04ed82f9ee42c7f04eacd4610c2a598
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d63871f45fc8e209eb562fec7b208b10f67414b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Může být obeznámeni některé z technologiím použitým když hovoříte o zabezpečení. Toto téma poskytuje krátké vysvětlení některých termínů zabezpečení, ale není určená k poskytování komplexní dokumentaci pro každou položku.  
@@ -192,6 +193,6 @@ Může být obeznámeni některé z technologiím použitým když hovoříte o 
  Mezinárodní úrovni rozpoznaný standard pro certifikáty definující jejich požadované součásti.  
   
 ## <a name="see-also"></a>Viz také  
- [Základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md)  
+ [Základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)  
  [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

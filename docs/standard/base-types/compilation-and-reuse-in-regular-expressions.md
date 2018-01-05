@@ -22,11 +22,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 76acdf2d0d2f7805ec78ea44136bfc63441b9bc9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 230a1b8b083362c149b5b7e64f708bd09ab21788
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Kompilace a opětovné používání v regulárních výrazech
 Můžete optimalizovat výkon aplikací, které rozsáhlé používání regulárních výrazů pochopení, jak modul regulárních výrazů zkompiluje výrazy a vysvětlení, jak běžných výrazů v mezipaměti. Toto téma popisuje kompilace a ukládání do mezipaměti.  

@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 05eaab4497949231d32ceab0ba696b9f252d67ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0e5bfb4f327028f09e8c898cf07e5fec9a5f789
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generics-in-xaml"></a>Obecné typy v jazyku XAML
 Rozhraní .NET Framework XAML Services jak jsou implementované ve System.Xaml poskytuje podporu pro použití obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucující omezení voláním odpovídající `Add` metoda pro obecnou kolekci případy. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v jazyce XAML.  
@@ -52,6 +53,6 @@ Rozhraní .NET Framework XAML Services jak jsou implementované ve System.Xaml p
  Vlastní pracovní postupy v [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] není podporována Obecná použití XAML.  
   
 ## <a name="see-also"></a>Viz také  
- [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md)  
- [x: Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
+ [x:TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md)  
+ [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
  [Předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)

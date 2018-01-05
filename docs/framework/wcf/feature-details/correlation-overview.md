@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56b6252188854374b9e0eddd7aca53daba6f6086
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 094c962e2576653fc8c9de4c0dece912fcaa07f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="correlation-overview"></a>Korelace – přehled
 Korelace je mechanismus pro související zprávy služby pracovního postupu k sobě navzájem nebo stav instance aplikace, jako je například odpovědět na požadavek počáteční nebo konkrétní pořadí ID trvalého stavu pracovním postupu pořadí zpracování. Toto téma obsahuje přehled korelace. Na další témata v této části poskytují další informace pro každý typ korelace.  
@@ -37,6 +38,6 @@ Korelace je mechanismus pro související zprávy služby pracovního postupu k 
   
 ## <a name="see-also"></a>Viz také  
  [Korelace na základě obsahu](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
- [Korelační kalkulačky](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)  
+ [Korelovaná kalkulačka](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)  
  [Trvanlivý duplexní přenos &#91; Ukázky WF &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
  [NetContextExchangeCorrelation](http://msdn.microsoft.com/en-us/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)

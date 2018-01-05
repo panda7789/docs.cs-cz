@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8311083b4b82d4ab4827e8d0a2cf958c67347014
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 21bb0dc8a38f8b49a4f5372c9dfc1e17e5114d6a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-detect-when-the-enter-key-pressed"></a>Postupy: Detekce stisknuté klávesy Enter
 Tento příklad ukazuje, jak zjistit, kdy <xref:System.Windows.Input.Key.Enter> není stisknuta klávesa na klávesnici.  
@@ -43,5 +44,5 @@ Tento příklad ukazuje, jak zjistit, kdy <xref:System.Windows.Input.Key.Enter> 
  [!code-vb[keydown#KeyDownSample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/KeyDown/VisualBasic/Window1.xaml.vb#keydownsample)]  
   
 ## <a name="see-also"></a>Viz také  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

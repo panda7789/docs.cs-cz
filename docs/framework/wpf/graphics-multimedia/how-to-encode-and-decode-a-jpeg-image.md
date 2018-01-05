@@ -24,11 +24,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fb432c4609fc873014c39a95e0029584e4d44f93
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2e982c09a27789bcf4a679fd9d237bf1a2b113f7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-encode-and-decode-a-jpeg-image"></a>Postupy: Kódování a dekódování obrázku JPEG
 Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TLA#tla_jpeg](../../../../includes/tlasharptla-jpeg-md.md)] bitovou kopii pomocí konkrétní <xref:System.Windows.Media.Imaging.JpegBitmapDecoder> a <xref:System.Windows.Media.Imaging.JpegBitmapEncoder> objekty.  
@@ -50,4 +51,4 @@ Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TL
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vytvoření bitové kopie](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+ [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)

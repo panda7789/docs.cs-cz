@@ -18,26 +18,27 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b5ad51e27c3d31ece1d11831c953023bedba3a97
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4d83846dcded620b74f7d276fd241a302cce1b60
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-double-buffering"></a>Použití dvojitého ukládání do vyrovnávací paměti
 Grafiky s dvojitou vyrovnávací pamětí můžete použít ke snížení blikání v aplikacích, které obsahují komplexní vykreslovací operace. Rozhraní .NET Framework obsahuje integrovanou podporu pro dvojité ukládání do vyrovnávací paměti, nebo můžete spravovat a vykreslení grafiky ručně.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Dvojité grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
+ [Grafiky s dvojitou vyrovnávací pamětí](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
  Představuje dvojité vyrovnávací paměti koncept a jsou podrobněji popsány dále rozhraní .NET Framework podporu.  
   
- [Postupy: omezení blikání grafiky pomocí dvojité vyrovnávací paměti pro formuláře a ovládací prvky](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)  
+ [Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)  
  Ukazuje, jak použít výchozí dvojité ukládání do vyrovnávací paměti podpora v rozhraní .NET Framework.  
   
- [Postupy: ruční správa grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)  
+ [Postupy: Ruční správa grafiky uložené do vyrovnávací paměti](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)  
  Ukazuje, jak spravovat dvojité vyrovnávací paměti v aplikacích.  
   
- [Postupy: ruční zobrazení grafiky uložené do vyrovnávací](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)  
+ [Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)  
  Ukazuje, jak k vykreslení grafiky s dvojitou vyrovnávací pamětí.  
   
 ## <a name="reference"></a>Odkaz  

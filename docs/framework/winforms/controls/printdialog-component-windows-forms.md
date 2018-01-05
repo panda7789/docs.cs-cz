@@ -19,20 +19,21 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c64715fbc976af5c765da2efe563acdc3d2ae13c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4f62b4538b5f91c2f57cab52fa7563680016903a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printdialog-component-windows-forms"></a>PrintDialog – komponenta (Windows Forms)
 Windows Forms `PrintDialog` součást je předem nakonfigurovaný dialogové okno umožňuje vybrat tiskárnu, zvolte stránky tisknout a určit další nastavení související s tiskem v aplikacích založených na systému Windows. Použijte jako jednoduchým řešením pro tiskárny a výběr nastavení související s tiskem místo dialogové okno Vlastní konfigurace. Můžete povolit uživatelům tisknout mnoho částí své dokumenty: tisk všechny, vytisknout určeném rozsahu nebo výběr. Podle standardní dialogová okna Windows, můžete vytvořit aplikace, jehož základní funkce je dobře obeznámeni uživatele.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [PrintDialog – přehled komponenty](../../../../docs/framework/winforms/controls/printdialog-component-overview-windows-forms.md)  
+ [Přehled komponenty PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-overview-windows-forms.md)  
  Představuje obecné koncepty `PrintDialog` komponenta, která umožňuje zobrazit předem nakonfigurovaná dialogové okno, které uživatelé mohou používat pro výběr tiskárny, zvolte stránek při tisku a určit nastavení související s tiskem.  
   
- [Postupy: zobrazení součásti PrintDialog](../../../../docs/framework/winforms/controls/how-to-display-the-printdialog-component.md)  
+ [Postupy: Zobrazení komponenty PrintDialog](../../../../docs/framework/winforms/controls/how-to-display-the-printdialog-component.md)  
  Vysvětluje, jak zobrazit dialogové okno a kam je uloží vlastnosti.  
   
 ## <a name="reference"></a>Odkaz  
@@ -40,5 +41,5 @@ Windows Forms `PrintDialog` součást je předem nakonfigurovaný dialogové okn
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.

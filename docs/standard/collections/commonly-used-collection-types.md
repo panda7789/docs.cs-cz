@@ -22,11 +22,14 @@ caps.latest.revision: "29"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ff8ae4475bde934258e4d3f97451e598a53fb6c5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cdc4e0660c5eae0a9550cf73d273d394ed71b823
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="commonly-used-collection-types"></a>Běžně používané typy kolekcí
 Typy kolekcí jsou běžné varianty kolekcí dat, jako je například hash – tabulky, fronty, zásobníky, sáčky, slovníky a seznamy.  
@@ -44,7 +47,7 @@ Typy kolekcí jsou běžné varianty kolekcí dat, jako je například hash – 
 |Název|Popis|  
 |-----------|-----------------|  
 |[Kolekce a datové struktury](../../../docs/standard/collections/index.md)|Popisuje různé typy kolekce, která je k dispozici v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], včetně zásobníky, fronty, seznamy, pole a slovník.|  
-|[Slovník typy kolekce Hashtable a](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce pro obecné a neobecné slovník na základě hodnoty hash typů.|  
+|[Typy kolekce Hashtable a Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce pro obecné a neobecné slovník na základě hodnoty hash typů.|  
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje třídy, které poskytují funkce řazení pro seznamy a sad.|  
 |[Obecné typy](../../../docs/standard/generics/index.md)|Popisuje funkce obecných typů, včetně obecné kolekce, delegáti a rozhraní poskytované [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Obsahuje odkazy na dokumentaci funkcí jazyka C#, Visual Basic a Visual C++ a podpůrné technologie, jako je například reflexe.|  
   

@@ -19,11 +19,14 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ac5ddfb0ac7ae83537717e9bd0cd46eb629641fe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c875fee667639923faf44c79afd6488cfc205e20
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární výraz objekt přiřazení vzorce která zahrnuje modul tradiční Nedeterministická konečné Automaton (NFA) jako je například použité Perl, Python, Emacs a Tcl. To je odlišné z rychlejší, ale omezenější, čistý regulární výraz moduly deterministický konečné Automaton (DFA) jako aplikace awk, egrep nebo lex. To je také odlišné od standardizované, ale pomalejší, k zařízení NFAs POSIX. Následující část popisuje tři typy modulů regulární výraz a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovaná pomocí modul tradiční NFA.  
@@ -158,7 +161,7 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
 |[Regulární výrazy rozhraní .NET framework](../../../docs/standard/base-types/regular-expressions.md)|Poskytuje přehled programovací jazyk aspektů regulární výrazy.|  
 |[Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Poskytuje informace a příklady kódu znázorňující způsob použití třídy regulárních výrazů.|  
 |[Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)|Obsahuje příklady kódu, které ilustrují použití regulárních výrazů v běžné aplikace.|  
-|[Jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Poskytuje informace o sadě znaků, operátory a konstrukce, které můžete použít k definování regulární výrazy.|  
+|[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Poskytuje informace o sadě znaků, operátory a konstrukce, které můžete použít k definování regulární výrazy.|  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

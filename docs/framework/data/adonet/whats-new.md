@@ -13,11 +13,12 @@ caps.latest.revision: "25"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9c0c9eb02cb95522d04765f454cd870f01a633f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3944fb6d68ed054feb8d7ddec149745b78810ee2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what39s-new-in-adonet"></a>Jaký & č. 39; s nového v technologii ADO.NET
 Následující funkce jsou v nové [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
@@ -62,7 +63,7 @@ Následující funkce jsou v nové [!INCLUDE[vstecado](../../../../includes/vste
   
 ## <a name="see-also"></a>Viz také  
  [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
- [ADO.NET – přehled](../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
  [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
  [Co je nového ve službě WCF Data Services](http://msdn.microsoft.com/en-us/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

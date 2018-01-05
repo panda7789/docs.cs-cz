@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cd0e55cab6f0fdb7f971d7cf06e5703340e32307
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4d8827821deaeda311a42855737ecf53ab635a02
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="addimport-method1"></a>Addimport – Method1
 Přidá importy sestavení.  
@@ -61,6 +62,6 @@ HRESULT AddImport(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také  
- [Ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Ialink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

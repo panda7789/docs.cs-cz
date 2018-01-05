@@ -32,11 +32,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 372f681fbdd4808b5f6a0012cf6ad01e278e05c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3cc7ad6b6270b74e2eb6aa4a2cc3a540175d540b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introducing-pluggable-protocols"></a>Představení modulární protokoly
 Rozhraní Microsoft .NET Framework poskytuje implementaci vrstev, rozšiřitelný a spravovaných služeb Internetu, které může být integrovaná rychle a snadno do svých aplikací. Přístup k Internetu třídy v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů lze použít k implementaci webové i internetové aplikace.  
@@ -76,7 +77,7 @@ Rozhraní Microsoft .NET Framework poskytuje implementaci vrstev, rozšiřiteln�
  Vývojáři, kteří znají rozhraní Windows Sockets nebo ty, kteří potřebují ovládacího prvku poskytované programování na úrovni soketu se stát, že **System.Net.Sockets** třídy podle jejich potřeb. **System.Net.Sockets** třídy jsou bod přechod ze spravovaných do nativního kódu v rámci **System.Net** třídy. Ve většině případů **System.Net.Sockets** třídy zařazování dat do jejich protějšky v systému Windows 32-bit, jakož i zpracování kontroluje všechny potřeby zabezpečení.  
   
 ## <a name="see-also"></a>Viz také  
- [Modulární protokoly programování](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
+ [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
  [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
- [Síťové programování ukázky](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Ukázky sítě pro .NET na galerie kódů MSDN](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f820ad757fa6bf5b8367c5c39beff5cc680e519a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c97d98415e1b303c5849f15c4a7bfcca6fd285a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-data-model-key-concepts"></a>Entity Data Model klíčové koncepty
 Entity Data Model (EDM) používá tři klíčové koncepty k popisu struktury dat: *typ entity*, *typ přidružení*, a *vlastnost*. Jedná se o nejdůležitějších konceptů v popisující strukturu dat v jakékoli použití EDM.  
@@ -49,4 +50,4 @@ Entity Data Model (EDM) používá tři klíčové koncepty k popisu struktury d
  [!code-xml[EDM_Example_Model#EDMExampleCSDL](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#edmexamplecsdl)]  
   
 ## <a name="see-also"></a>Viz také  
- [Datového modelu entity](../../../../docs/framework/data/adonet/entity-data-model.md)
+ [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

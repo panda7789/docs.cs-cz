@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1677ab1be071eeabd72b29c7ce61d01aaf6164a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dc980a2c61be736e2c1d8e52d8f13d0ea5ed09f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="navigation-property"></a>navigační vlastnost
 A *navigační vlastnost* je volitelná vlastnost na [typ entity](../../../../docs/framework/data/adonet/entity-type.md) umožňuje pro navigaci z jednoho [end](../../../../docs/framework/data/adonet/association-end.md) z [přidružení](../../../../docs/framework/data/adonet/association-type.md) na druhém konci. Na rozdíl od jiných [vlastnosti](../../../../docs/framework/data/adonet/property.md), navigačních vlastností nepřenášejí data.  
@@ -46,5 +47,5 @@ A *navigační vlastnost* je volitelná vlastnost na [typ entity](../../../../do
  Všimněte si, že XML atributy se používají ke komunikaci informace potřebné k definování navigační vlastnost: atribut `Name` obsahuje název vlastnosti, `Relationship` obsahuje název tohoto přidružení se odkazuje, a `FromRole` a `ToRole` obsahovat konce přidružení.  
   
 ## <a name="see-also"></a>Viz také  
- [Entity Data Model klíčové koncepty](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [Datového modelu entity](../../../../docs/framework/data/adonet/entity-data-model.md)
+ [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

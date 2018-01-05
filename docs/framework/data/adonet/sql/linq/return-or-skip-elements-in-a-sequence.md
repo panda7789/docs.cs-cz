@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f8fed70e5eafb096ae2e7b2da882e1e4f6c8ed63
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d588ad393d6077d5b6e5279a1212f69da9a7d64c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrátí nebo přeskočit elementy v pořadí
 Použití <xref:System.Linq.Queryable.Take%2A> operátor a vrátí zadaný počet elementů v pořadí a pak přeskočit zbytek.  
@@ -90,4 +91,4 @@ ORDER BY [t0].[CustomerID]
   
 ## <a name="see-also"></a>Viz také  
  [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
- [Operátor posunutí standardní dotazu](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+ [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)

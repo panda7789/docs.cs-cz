@@ -13,11 +13,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3145df6517df9db580bfcc5d67edd9d1a61f290b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2b8135a55c537f480e0d595e127c2cad55e977ca
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="namespace-support-in-the-dom"></a>Podpora Namespace v modelu DOM
 XML modelu DOM (Document Object) je zcela clustery pro obor názvů. Jsou podporovány pouze deklaracemi obor názvů XML dokumenty. World Wide Web Consortium (W3C) určuje, že může být jiný obor názvů s deklaracemi DOM aplikace, které implementují úrovně 1 a DOM Level 2 funkce jsou clustery pro obor názvů. Všechny funkce v modelu DOM XML jsou však obor názvů deklaracemi bez ohledu na to, pokud je metoda z úrovně 1 nebo úrovně 2 DOM doporučení.  
@@ -33,4 +36,4 @@ XML modelu DOM (Document Object) je zcela clustery pro obor názvů. Jsou podpor
 -   Pokud se najde dvojtečkou název rozdělit na dvě části na základě pozice prvního znaku dvojtečkou. Předpona, která je nastavena na nalezen před dvojtečkou řetězec a místní název je nastaven na řetězec nalezen po dvojtečkou. Pro metody, které nepřebírají hodnotu NamespaceURI NamespaceURI není vyřešený a zůstane nastavit na prázdný řetězec. NamespaceURI, jinak hodnota nastavena na řetězec předaný metodě. Pokud předponu není definován, pak se **Uložit** metoda a **InnerXml** a **OuterXml** vlastnosti služeb při selhání.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f3907888ebcda9c5c6c498cbff39956391f7e213
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ccdadc22728c28c8dea80f168a98cb985b2572a7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
 Při ladění aplikace během vývoje, vaše trasování a ladění výstupu přejít do okna výstupu v sadě Visual Studio. Zahrnout trasování funkce nasazené aplikace, musí však zkompilovat instrumentovaného aplikací s **trasování** kompilátoru direktiva povolena. To umožňuje trasování kódu ke kompilaci do verzi vaší aplikace. Pokud nepovolíte **trasování** direktivy, všechny trasování kódu se ignoruje při kompilaci a není součástí spustitelného kódu, kterou chcete nasadit.  
@@ -105,9 +106,9 @@ Při ladění aplikace během vývoje, vaše trasování a ladění výstupu př
   
 ## <a name="see-also"></a>Viz také  
  [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
- [Postupy: vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
- [Trasování – přepínače](../../../docs/framework/debug-trace-profile/trace-switches.md)  
- [Trasování – moduly naslouchání](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
+ [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
+ [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)  
+ [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
  [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
- [Postupy: nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)  
- [Postupy: volání kompilátoru příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)
+ [Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)  
+ [Postupy: Volání kompilátoru příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)

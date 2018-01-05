@@ -29,11 +29,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: a72635cb77f23e2b87abb54f3f6a4438a3019f22
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7ca66a65c05da3d515358c0fdb26682fa4ec1438
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-and-digest-authentication"></a>Základní a ověřování algoritmem Digest
 <xref:System.Net> Implementace basic a ověřování algoritmem digest splňuje RFC2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest (k dispozici na webu World Wide Web Consortium na www.w3.org).  
@@ -56,5 +57,5 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
 >  Data odeslaná s Basic a ověřování algoritmem Digest nejsou šifrována, takže nežádoucí osoba může zobrazit data. Kromě toho základní ověřovací pověření (uživatelské jméno a heslo) se odesílají v nešifrované a mohou být zachyceny.  
   
 ## <a name="see-also"></a>Viz také  
- [Ověřování protokolu Kerberos a NTLM](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
- [Ověřování v Internetu](../../../docs/framework/network-programming/internet-authentication.md)
+ [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
+ [Ověřování v internetu](../../../docs/framework/network-programming/internet-authentication.md)

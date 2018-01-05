@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 70b89ff741d2a2036d5684ebc4526a6cb7ec49d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b6e8606b8dbc0733632c2a6dc6aeb039f5277990
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="version-tolerant-serialization-callbacks"></a>Zpětná volání serializace tolerantní k verzím
 Programovací model kontraktu dat plně podporuje metody zpětného volání serializace tolerantní k verzi, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy podpory.  
@@ -57,4 +58,4 @@ Programovací model kontraktu dat plně podporuje metody zpětného volání ser
  <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
  <xref:System.Runtime.Serialization.OnDeserializedAttribute>  
  <xref:System.Runtime.Serialization.StreamingContext>  
- [Verze serializace](../../../../docs/standard/serialization/version-tolerant-serialization.md)
+ [Serializace tolerantní vůči verzím (VTS)](../../../../docs/standard/serialization/version-tolerant-serialization.md)

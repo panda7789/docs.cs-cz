@@ -24,11 +24,14 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1beceb2b2d32c500e73cd7786c480fcd84c3001c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6e3ef01abdb615b2850b5a9d07e1208ee22eda95
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v rozhraní .NET
 Analýza metody převést řetězcovou reprezentaci data a času na ekvivalentní <xref:System.DateTime> objektu. <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.TryParse%2A> převádí jakýkoli z několika běžných vyjádření data a času. <xref:System.DateTime.ParseExact%2A> a <xref:System.DateTime.TryParseExact%2A> metody převést řetězcové vyjádření, která vyhovuje vzoru určeného řetězce formátu data a času. (Najdete v tématech na [řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) a [vlastní datum a čas řetězce formátu](../../../docs/standard/base-types/custom-date-and-time-format-strings.md).)  

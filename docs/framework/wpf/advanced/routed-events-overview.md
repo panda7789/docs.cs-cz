@@ -26,11 +26,12 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be4447570f89637910506b6257c092c86f24991b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 22ce2611afa2a3b2b06b7d378479e5ffd2f744f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrované události v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrované události, popisuje, jak jsou směrované události směrován přes stromu elementů, shrnuje, jak zpracovávat směrované události a jak vytvořit vlastní směrované událostí zavádí.
@@ -258,9 +259,9 @@ Vstupní událost šíření a tunelové propojení
  <xref:System.Windows.EventManager>  
  <xref:System.Windows.RoutedEvent>  
  <xref:System.Windows.RoutedEventArgs>  
- [Označení směrované události, protože zpracována a třídy zpracování](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
- [Vstupní – přehled](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [Tvorba příkazů – přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Stromy v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
- [Vzory slabé událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)
+ [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
+ [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [Stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
+ [Slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)

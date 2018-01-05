@@ -24,11 +24,12 @@ caps.latest.revision: "97"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d7dce942499984c24f982e321d976982e404978
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4c2fb9d69e7b0ccfc2b87aea0cda5e7b4804f416
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-presentation-foundation"></a>Windows Presentation Foundation
 Windows Presentation Foundation (WPF) v sadě Visual Studio 2015 poskytuje vývojářům jednotný programovací model pro vytváření moderních aplikací klasické pracovní plochy-obchodní v systému Windows.  
@@ -36,7 +37,7 @@ Windows Presentation Foundation (WPF) v sadě Visual Studio 2015 poskytuje vývo
 > [!NOTE]
 >  V prohlížeči Mozilla Firefox zakáže Microsoft Framework pomocníka rozšíření. V tématu [jak odebrat rozhraní .NET Framework Pomocníka pro Firefox](https://support.microsoft.com/en-us/kb/963707) informace o tom, jak odebrat rozšíření z Firefox.  
   
- [Vytvoření moderních aplikací klasické pracovní plochy s Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
+ [Vytvoření moderních desktopových aplikací pomocí Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
   
  [Navrhování XAML v sadě Visual Studio a nástroj Blend for Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  
   

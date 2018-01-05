@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0e7d7a0a1f641603887675ed0c1faebd5c06b273
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 91ff476ed8f6060975c6adc1fe01a6db9c199969
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-examples"></a>Příklady dotazů
 Tato část obsahuje [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] a C# Příklady typických [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy. Vývojáře, kteří používají [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] najdete mnoho další příklady v ukázkové řešení, která je k dispozici v části Ukázky. Další informace najdete v tématu [ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).  
@@ -29,56 +30,56 @@ Tato část obsahuje [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]
  [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
  Popisuje způsob použití <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, a tak dále.  
   
- [Vrátí první prvek v pořadí](../../../../../../docs/framework/data/adonet/sql/linq/return-the-first-element-in-a-sequence.md)  
+ [Vrácení prvního prvku v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-the-first-element-in-a-sequence.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.First%2A>.  
   
- [Vrátí nebo přeskočit elementy v pořadí](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
+ [Vrácení nebo přeskočení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A>.  
   
- [Řazení elementů v pořadí](../../../../../../docs/framework/data/adonet/sql/linq/sort-elements-in-a-sequence.md)  
+ [Řazení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/sort-elements-in-a-sequence.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.OrderBy%2A>.  
   
- [Prvky skupiny v pořadí](../../../../../../docs/framework/data/adonet/sql/linq/group-elements-in-a-sequence.md)  
+ [Seskupení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/group-elements-in-a-sequence.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.GroupBy%2A>.  
   
- [Odstranit elementy s duplicitním z řady](../../../../../../docs/framework/data/adonet/sql/linq/eliminate-duplicate-elements-from-a-sequence.md)  
+ [Odstranění duplicitních prvků z posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/eliminate-duplicate-elements-from-a-sequence.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.Distinct%2A>.  
   
- [Určit, zda některé nebo všechny elementy v pořadí nesplňuje podmínku](../../../../../../docs/framework/data/adonet/sql/linq/determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition.md)  
+ [Určení, jestli některé nebo všechny elementy v sekvenci nesplňují podmínku](../../../../../../docs/framework/data/adonet/sql/linq/determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.All%2A> a <xref:System.Linq.Enumerable.Any%2A>.  
   
- [Řetězení dvě pořadí](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
+ [Zřetězení dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.Concat%2A>.  
   
- [Vrátí množinových rozdílů mezi dvěma pořadí](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
+ [Vrácení rozdílů množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.Except%2A>.  
   
- [Vrátí sadu průnik dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
+ [Vrácení průniku množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.Intersect%2A>.  
   
- [Vrátí sadu sjednocení dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)  
+ [Vrácení sjednocení množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.Union%2A>.  
   
- [Převod na pole sekvenci](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-an-array.md)  
+ [Převod sekvence na pole](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-an-array.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.ToArray%2A>.  
   
- [Převést na seznam obecná posloupnost](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-a-generic-list.md)  
+ [Převod sekvence na obecný seznam](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-a-generic-list.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.ToList%2A>.  
   
- [Převést typ na obecný IEnumerable](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-type-to-a-generic-ienumerable.md)  
+ [Převod typu na obecnou položku IEnumerable](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-type-to-a-generic-ienumerable.md)  
  Obsahuje příklady použití <xref:System.Linq.Enumerable.AsEnumerable%2A>.  
   
- [Formulovali spojení a dotazy smíšený produkt](../../../../../../docs/framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)  
+ [Formulování spojení a dotazů napříč produkty](../../../../../../docs/framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)  
  Obsahuje příklady použití navigační cizího klíče v `from`, `where`, a `select` klauzule.  
   
- [Formulovali projekce](../../../../../../docs/framework/data/adonet/sql/linq/formulate-projections.md)  
+ [Formulování projekcí](../../../../../../docs/framework/data/adonet/sql/linq/formulate-projections.md)  
  Obsahuje příklady kombinování `select` s jinými funkcemi (například *anonymní typy*) do formuláře dotazu projekce.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled standardních operátorů dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
  Popisuje koncept standardní operátory dotazu.  
   
- [Koncepty dotazu](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
+ [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
  Vysvětluje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá koncepty, které platí pro dotazy.  
   
  [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  

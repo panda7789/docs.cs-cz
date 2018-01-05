@@ -35,11 +35,14 @@ caps.latest.revision: "43"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 816337ead810be405339a0616798a06689b97315
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 31cb95b20369eaef85f280497acb99e294e97faa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="formatting-types-in-net"></a>Typy formátování v rozhraní .NET
 <a name="Introduction"></a>Formátování je proces převodu instance třídy, struktury nebo výčtové hodnoty na řetězcovou reprezentaci, často tak, aby výsledný řetězec, můžete se uživatelům zobrazí nebo deserializovat k obnovení původního datového typu. Tento převod může představovat určité problémy:  
@@ -87,7 +90,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [Související témata](#RelatedTopics)  
   
--   [Referenční dokumentace](#Reference)  
+-   [Referenční informace](#Reference)  
   
 <a name="NetFormatting"></a>   
 ## <a name="formatting-in-net"></a>Formátování v rozhraní .NET  
@@ -265,10 +268,10 @@ ms.lasthandoff: 10/18/2017
   
 |Název|Definice|  
 |-----------|----------------|  
-|[Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové reprezentace číselné hodnoty.|  
+|[Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové reprezentace číselné hodnoty.|  
 |[Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro číselné hodnoty.|  
-|[Řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové vyjádření <xref:System.DateTime> hodnoty.|  
-|[Řetězce formátu vlastní hodnota data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro <xref:System.DateTime> hodnoty.|  
+|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové vyjádření <xref:System.DateTime> hodnoty.|  
+|[Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro <xref:System.DateTime> hodnoty.|  
 |[Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové vyjádření časové intervaly.|  
 |[Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro časové intervaly.|  
 |[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|Popisuje standardní formát řetězce, které se používají k vytvoření řetězcové vyjádření hodnot výčtu.|  
@@ -412,10 +415,10 @@ ms.lasthandoff: 10/18/2017
   
 |Název|Definice|  
 |-----------|----------------|  
-|[Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové reprezentace číselné hodnoty.|  
+|[Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové reprezentace číselné hodnoty.|  
 |[Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro číselné hodnoty.|  
-|[Řetězce formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové vyjádření <xref:System.DateTime> hodnoty.|  
-|[Řetězce formátu vlastní hodnota data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro <xref:System.DateTime> hodnoty.|  
+|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové vyjádření <xref:System.DateTime> hodnoty.|  
+|[Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro <xref:System.DateTime> hodnoty.|  
 |[Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)|Popisuje standardní formát řetězce, které vytvářejí běžně používané řetězcové vyjádření časové intervaly.|  
 |[Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)|Popisuje řetězců vlastního formátu, které vytvářejí formáty specifické pro aplikaci pro časové intervaly.|  
 |[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|Popisuje standardní formát řetězce, které se používají k vytvoření řetězcové vyjádření hodnot výčtu.|  

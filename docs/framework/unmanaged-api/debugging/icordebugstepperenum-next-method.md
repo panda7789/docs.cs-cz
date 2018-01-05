@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a0ad2e3361387875178e8261fad4159a3064da1b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 42a7a2323e25d149f5c8e2a1c3d2278557571938
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugstepperenumnext-method"></a>ICorDebugStepperEnum::Next – metoda
 Získá zadaný počet instancí ICorDebugStepper z výčtu, počínaje na aktuální pozici.  

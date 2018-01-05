@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec334ff65095e11855d706f445fda1d4b7ea1472
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: deee6eb0bb15535425e0e90963b9bd72dc955477
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-choose-the-printers-attached-to-a-user39s-computer-in-windows-forms"></a>Postupy: volba tiskáren připojených k uživatele & č. 39; s počítači v systému Windows Forms
 Často uživatelé chtějí zvolte jiné než výchozí tiskárny pro tisk na tiskárnu. Můžete povolit uživatelům zvolit některou tiskárnu aktuálně nainstalované pomocí <xref:System.Windows.Forms.PrintDialog> součásti. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> součásti, <xref:System.Windows.Forms.DialogResult> z <xref:System.Windows.Forms.PrintDialog> součásti bude zachycen a použit k výběru tiskárny.  
@@ -117,4 +118,4 @@ ms.lasthandoff: 10/22/2017
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Podpora tisku ve Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+ [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

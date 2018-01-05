@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0abc1ac1cea6c9799c3d6bb349869b77f1d0b7c3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4b7ffdc00a7723fd6b514fbb5577c48da15d719c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-host-a-non-service-workflow-in-iis"></a>Postupy: hostování bez služby pracovního postupu ve službě IIS
 Pracovní postupy, které nejsou služby pracovního postupu může být hostovaný v rámci služby IIS / byla. To je užitečné, pokud budete potřebovat k hostování pracovní postup zapsaných správcem někdo jiný. Například pokud opětovným hostováním návrháře pracovních postupů a povolit uživatelům vytvářet své vlastní pracovní postupy.  Hostování pracovních bez služby ve službě IIS poskytuje podporu pro funkce, například recyklace, nečinnosti ukončení procesu, monitorování stavu procesu a aktivaci na základě zpráv. Pracovní postup služby hostované ve službě IIS obsahovat <xref:System.ServiceModel.Activities.Receive> aktivity a jsou aktivovat, pokud služba IIS přijme zprávu. Jiné než služba pracovní postupy neobsahují aktivity zasílání zpráv a ve výchozím nastavení nelze aktivovat odesláním zprávy.  Musí být odvozen od třídy <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> a definování kontraktu služby, který obsahuje operace vytvoření instance pracovního postupu. Toto téma vás provede procesem vytvoření jednoduchého pracovního postupu, definování kontraktu služby klienta můžete použít k aktivaci pracovního postupu a odvození třídy z <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> , který používá kontrakt služby tak, aby naslouchala pro vytváření žádostí o pracovní postup.  
@@ -685,9 +686,9 @@ namespace CreationClient
 ## <a name="see-also"></a>Viz také  
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
- [Doporučené postupy hostování internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
- [Internetové informace o pokyny k hostování služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
- [Architektura pracovního postupu systému Windows](../../../../docs/framework/windows-workflow-foundation/architecture.md)  
- [Obnovit WorkflowHostingEndpoint záložek](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)  
- [Opětovného hostování návrháře pracovních postupů](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
- [Přehled pracovního postupu systému Windows](../../../../docs/framework/windows-workflow-foundation/overview.md)
+ [Osvědčené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
+ [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [Architektura Windows Workflow](../../../../docs/framework/windows-workflow-foundation/architecture.md)  
+ [Záložka pro obnovení WorkflowHostingEndpoint](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)  
+ [Změna hostování Návrháře postupu provádění](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [Přehled Windows Workflow](../../../../docs/framework/windows-workflow-foundation/overview.md)

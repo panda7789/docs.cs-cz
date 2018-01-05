@@ -21,11 +21,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 1828ef3614cc1f3a81d8aeff62c15ed5accfe380
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b894a56caa3644bae140e7ec37cf5b55ab093a59
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xclass-directive"></a>x:Class – direktiva
 Nakonfiguruje kompilace kódu XAML pro připojení částečné třídy mezi značek a kódu. Třídu kódu je definována v samostatném souboru kódu v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] jazyka, zatímco třídu kód se obvykle vytvoří pomocí generování kódu během kompilace XAML.  
@@ -71,7 +72,7 @@ Nakonfiguruje kompilace kódu XAML pro připojení částečné třídy mezi zna
  `x:Class`pro Silverlight je popsána samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081).  
   
 ## <a name="see-also"></a>Viz také  
- [x: Subclass – direktiva](../../../docs/framework/xaml-services/x-subclass-directive.md)  
- [XAML a vlastní třídy pro grafický subsystém WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
- [x: ClassModifier – direktiva](../../../docs/framework/xaml-services/x-classmodifier-directive.md)  
- [Typy migrované z grafického subsystému WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+ [x:Subclass – direktiva](../../../docs/framework/xaml-services/x-subclass-directive.md)  
+ [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
+ [x:ClassModifier – direktiva](../../../docs/framework/xaml-services/x-classmodifier-directive.md)  
+ [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ca18b35b90b028054e68a0a14fecc819a6c20b9
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 967b4a0e883338c756aceef37d11edecfb978527
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="properties-on-windows-forms-controls-that-support-accessibility-guidelines"></a>Vlastnosti v ovládacích prvcích Windows Forms, jež podporují pokyny pro usnadnění přístupu
 Ovládací prvky na standardní sada nástrojů pro Windows Forms podporují řadu s pokyny, včetně vystavení fokus klávesnice a vystavení prvky obrazovky.  
@@ -41,4 +42,4 @@ Ovládací prvky na standardní sada nástrojů pro Windows Forms podporují řa
 |BackgroundImage|Tuto vlastnost nezadáte tak čitelnost textu.|  
   
 ## <a name="see-also"></a>Viz také  
- [Návod: Vytvoření dostupné aplikace systému Windows](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)
+ [Návod: Vytvoření přístupné aplikace Windows](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)

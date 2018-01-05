@@ -17,11 +17,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bbc5caeab5a77518e160bacb9722e50ff7abbfb4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7390c8c84caa17b984d5a16b7ac6b9704b8f3c6e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
 Toto téma obsahuje přehled vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, která jsou distribuované s [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Podporu je víc písem. ukázka rozšířené [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které mohou být využívána [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -65,5 +66,5 @@ Zobrazení Písmo Lindsey
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Documents.Typography>  
- [Funkce písem OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
- [Balení písma s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)
+ [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [Balení písem s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)

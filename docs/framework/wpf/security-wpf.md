@@ -24,11 +24,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b7abab8747272fcf23611539c29ab476c5bed48
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fae5c8553cc395268b1c6afb1b64727014756975
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a>Při vývoji [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] samostatné a webové aplikace, musíte zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]spuštění samostatné aplikace s neomezená oprávnění ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sadě oprávnění), jestli nasadit pomocí Instalační služby systému Windows (.msi), XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce není podporováno. Plné důvěryhodnosti hostitelskou aplikaci však můžete vytvořit s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [WPF doplňky přehled](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
@@ -279,12 +280,12 @@ ms.lasthandoff: 11/21/2017
 |Spravovaný kód|[Vzory a postupy doprovodné materiály zabezpečení pro aplikace](http://go.microsoft.com/fwlink/?LinkId=117426)|  
 |[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)|  
 |[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)|  
-|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečná důvěryhodnost zabezpečení WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
+|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
   
 ## <a name="see-also"></a>Viz také  
- [Částečná důvěryhodnost zabezpečení WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
- [Strategie zabezpečení WPF - platformy zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
- [Strategie zabezpečení WPF - inženýrství zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)  
+ [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
+ [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
+ [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)  
  [Vzory a postupy doprovodné materiály zabezpečení pro aplikace](http://go.microsoft.com/fwlink/?LinkId=117426)  
  [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)  
  [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)  

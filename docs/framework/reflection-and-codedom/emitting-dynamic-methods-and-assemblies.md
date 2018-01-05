@@ -17,11 +17,12 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 91b0cc4614834f2ad8f7b54d9364d484ca9a6990
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c724620c987b2ee871dc282bca0dd3da1a5031bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
 Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> obor názvů, který povolí kompilátoru nebo nástroj pro vydávání metadata a Microsoft (MSIL intermediate language) v době běhu a volitelně generovat soubor přenosné spustitelný soubor (PE) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části, funkce poskytované <xref:System.Reflection.Emit> obor názvů se označuje jako reflexe emitování.  
@@ -78,5 +79,5 @@ Představuje collectible sestavení, které jsou dynamická sestavení, které m
  [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Vysvětluje, jak prozkoumat metadata a spravovaného kódu.  
   
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  Poskytuje přehled o sestavení v rozhraní .NET implementace.

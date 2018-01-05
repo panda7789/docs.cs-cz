@@ -23,11 +23,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e5c2fb155508ca2a86dbc5e63caabb25be71bcfc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88654b603b457c5f64bf6462b3370b8e54b7c89f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-reflect-data-source-updates-in-a-windows-forms-control-with-the-bindingsource"></a>Postupy: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource
 Pokud používáte ovládací prvky vázané na data, máte někdy odpověď na změny ve zdroji dat, pokud zdroj dat není vyvolávání událostí seznam změnil. Při použití <xref:System.Windows.Forms.BindingSource> součást k vytvoření vazby zdroje dat do ovládacího prvku Windows Forms uvědomí ovládací prvek, který zdroje dat došlo ke změně voláním <xref:System.Windows.Forms.BindingSource.ResetBindings%2A> metoda.  
@@ -50,5 +51,5 @@ Pokud používáte ovládací prvky vázané na data, máte někdy odpověď na 
  <xref:System.Windows.Forms.BindingNavigator>  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.BindingSource>  
- [BindingSource – komponenta](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
- [Postupy: vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)
+ [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)

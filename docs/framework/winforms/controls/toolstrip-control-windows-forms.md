@@ -16,11 +16,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1ce887d47e82a3981eb745f23c881d54c38927e1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3f5f8ca82cf128647e7dd80676cad629f8480a48
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstrip-control-windows-forms"></a>ToolStrip – ovládací prvek (Windows Forms)
 <xref:System.Windows.Forms.ToolStrip>ovládací prvky jsou panely nástrojů, které může být hostitelem nabídek, ovládacích prvků a uživatelské ovládací prvky v aplikacích Windows Forms.  
@@ -32,64 +33,64 @@ ms.lasthandoff: 10/18/2017
  [Postupy: Správa přetečení ToolStrip](../../../../docs/framework/winforms/controls/how-to-manage-toolstrip-overflow-in-windows-forms.md)  
  Ukazuje, jak povolit přetečení funkce a řízení chování přetečení.  
   
- [Postupy: povolení změny pořadí položek ToolStrip za běhu](../../../../docs/framework/winforms/controls/how-to-enable-reordering-of-toolstrip-items-at-run-time-in-windows-forms.md)  
+ [Postupy: Povolení změny pořadí položek ToolStrip za běhu](../../../../docs/framework/winforms/controls/how-to-enable-reordering-of-toolstrip-items-at-run-time-in-windows-forms.md)  
  Ukazuje, jak povolit změnu uspořádání běhu <xref:System.Windows.Forms.ToolStripItem> ovládací prvky.  
   
- [Postupy: povolení AutoComplete v ovládacích prvcích ToolStrip](../../../../docs/framework/winforms/controls/how-to-enable-autocomplete-in-toolstrip-controls-in-windows-forms.md)  
+ [Postupy: Povolení AutoComplete v ovládacích prvcích ToolStrip](../../../../docs/framework/winforms/controls/how-to-enable-autocomplete-in-toolstrip-controls-in-windows-forms.md)  
  Předvádí funkce automatického dokončování v <xref:System.Windows.Forms.ToolStripComboBox>.  
   
  [Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms.md)  
  Popisuje různé způsoby, jak uspořádat <xref:System.Windows.Forms.ToolStripItem>s na <xref:System.Windows.Forms.ToolStrip>.  
   
- [Postupy: Změna vzhledu textu a obrázků ve Windows Forms ToolStrip](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-toolstrip-text-and-images-in-windows-forms.md)  
+ [Postupy: Změna vzhledu textu a obrázků ToolStrip ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-toolstrip-text-and-images-in-windows-forms.md)  
  Popisuje, jak definovat a změna uspořádání textu a obrázků na <xref:System.Windows.Forms.ToolStripItem> ovládací prvky.  
   
- [Postupy: zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md)  
+ [Postupy: Zabalení ovládacího prvku Windows Forms pomocí ToolStripControlHost](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md)  
  Demonstruje hostování <xref:System.Windows.Forms.MonthCalendar> řídit ve <xref:System.Windows.Forms.ToolStripControlHost>.  
   
- [Postupy: vytvoření a nastavení vlastní zobrazovací jednotky pro ovládací prvek ToolStrip ve Windows Forms](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
+ [Postupy: Vytvoření a nastavení vlastního rendereru pro ovládací prvek ToolStrip ve Windows Forms](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
  Popisuje, jak dosáhnout standardní a vlastní malování v <xref:System.Windows.Forms.ToolStrip> ovládací prvky.  
   
- [Postupy: vlastní vykreslení ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-custom-draw-a-toolstrip-control.md)  
+ [Postupy: Vlastní vykreslení ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-custom-draw-a-toolstrip-control.md)  
  Popisuje různé aspekty vlastní (Vlastník) kreslení v <xref:System.Windows.Forms.ToolStrip> ovládací prvky.  
   
- [Postupy: vytváření přepínacích tlačítek v ovládacích prvcích ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-toggle-buttons-in-toolstrip-controls.md)  
+ [Postupy: Vytváření přepínacích tlačítek v ovládacích prvcích ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-toggle-buttons-in-toolstrip-controls.md)  
  Popisuje vytvoření přepnutím <xref:System.Windows.Forms.ToolStripButton>.  
   
- [Postupy: použití prvku ToolTips v ovládacích prvcích ToolStrip](../../../../docs/framework/winforms/controls/how-to-use-tooltips-in-toolstrip-controls.md)  
+ [Postupy: Použití prvku ToolTips v ovládacích prvcích ToolStrip](../../../../docs/framework/winforms/controls/how-to-use-tooltips-in-toolstrip-controls.md)  
  Popisuje definující popisy pro <xref:System.Windows.Forms.ToolStrip> položky.  
   
- [Postupy: Přesunutí ToolStrip mimo prvek ToolStripContainer formuláře](../../../../docs/framework/winforms/controls/how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md)  
+ [Postupy: Přesunutí ToolStrip mimo prvek ToolStripContainer ve formuláři](../../../../docs/framework/winforms/controls/how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md)  
  Popisuje, jak získat <xref:System.Windows.Forms.ToolStrip> s žádné kontejneru ale formuláře.  
   
- [Postupy: umístění prvku ToolStripItem do prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-position-a-toolstripitem-on-a-toolstrip.md)  
+ [Postupy: Umístění prvku ToolStripItem do prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-position-a-toolstripitem-on-a-toolstrip.md)  
  Popisuje, jak na pozici <xref:System.Windows.Forms.ToolStripButton> na konci nejvíce vlevo nebo vpravo <xref:System.Windows.Forms.ToolStrip>.  
   
- [Postupy: Povolení klávesy TAB pro přesun mimo ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/how-to-enable-the-tab-key-to-move-out-of-a-toolstrip-control.md)  
+ [Postupy: Povolení přesunu klávesy TAB mimo ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/how-to-enable-the-tab-key-to-move-out-of-a-toolstrip-control.md)  
  Popisuje, jak v rámci kartě <xref:System.Windows.Forms.ToolStrip> a karta mimo ho na další ovládací prvek v pořadí.  
   
- [Postupy: rozpoznat, kdy je ukazatel myši nad ToolStripItem](../../../../docs/framework/winforms/controls/how-to-detect-when-the-mouse-pointer-is-over-a-toolstripitem.md)  
+ [Postupy: Zjištění umístění ukazatele myši nad ToolStripItem](../../../../docs/framework/winforms/controls/how-to-detect-when-the-mouse-pointer-is-over-a-toolstripitem.md)  
  Popisuje, jak nastavit <xref:System.Windows.Forms.ToolStrip> položky tak, aby zjistí při přesunutí myši nad nimi bez nutnosti synchronizaci různými událostí myši.  
   
- [Postupy: vytvoření formuláře MDI s ovládacími prvky ToolStripPanel](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-toolstrippanel-controls.md)  
+ [Postupy: Vytvoření formuláře MDI s ovládacími prvky ToolStripPanel](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-toolstrippanel-controls.md)  
  Popisuje postup vytvoření více formuláře rozhraní (MDI) dokumentu s <xref:System.Windows.Forms.ToolStripPanel> ovládací prvky.  
   
- [Postupy: vytvoření formuláře MDI s Menu Merging a ToolStrip – ovládací prvky](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)  
+ [Postupy: Vytvoření formuláře MDI s ovládacími prvky Menu Merging a ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)  
  Popisuje postup vytvoření formuláře MDI, který podporuje <xref:System.Windows.Forms.ToolStrip> ovládací prvky a slučování nabídek.  
   
- [Postupy: vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md)  
+ [Postupy: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md)  
  Popisuje postup použití <xref:System.Windows.Forms.ToolStripProfessionalRenderer> třídy za účelem vytvoření složeného ovládacího prvku, která napodobuje **navigačním podokně** poskytované Microsoft® Outlook®.  
   
- [Postupy: implementace vlastního prvku ToolStripRenderer](../../../../docs/framework/winforms/controls/how-to-implement-a-custom-toolstriprenderer.md)  
+ [Postupy: Implementace vlastního prvku ToolStripRenderer](../../../../docs/framework/winforms/controls/how-to-implement-a-custom-toolstriprenderer.md)  
  Popisuje, jak přizpůsobit vzhled <xref:System.Windows.Forms.ToolStrip> řízení implementací třídu odvozenou z <xref:System.Windows.Forms.ToolStripRenderer>.  
   
 -   [Postupy: vytvoření prvku základní služby Windows Forms ToolStrip se standardními položkami pomocí návrháře](http://msdn.microsoft.com/library/571c1z99\(v=vs.110\))  
   
--   [Postupy: Přesunutí ToolStrip mimo prvek ToolStripContainer formuláře](http://msdn.microsoft.com/library/ms171701\(v=vs.110\))  
+-   [Postupy: Přesunutí ToolStrip mimo prvek ToolStripContainer ve formuláři](http://msdn.microsoft.com/library/ms171701\(v=vs.110\))  
   
 -   [Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem](http://msdn.microsoft.com/library/ms233664\(v=vs.110\))  
   
--   [Návod: Vytvoření formuláře MDI se slučováním nabídek a ovládacích prvcích ToolStrip](http://msdn.microsoft.com/library/ms233676\(v=vs.110\))  
+-   [Návod: Vytvoření formuláře MDI se slučováním nabídek a s ovládacími prvky ToolStrip](http://msdn.microsoft.com/library/ms233676\(v=vs.110\))  
   
 -   [Dialogové okno úloh ToolStrip](http://msdn.microsoft.com/library/ms233648\(v=vs.110\))  
   
@@ -106,5 +107,5 @@ ms.lasthandoff: 10/18/2017
  Popisuje <xref:System.Windows.Forms.ToolStripItem> třídy a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f2b7939371d99f8b503ac779f07b34f5fff497a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dda704e70fc7927f382e851189073ffa5dececb9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="system-functions"></a>Funkce systému
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje následující funkce systému:  
@@ -27,7 +28,7 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje násle
 |`CHECKSUM (` `value`, [`value`, [`value`]]`)`|Vrátí hodnotu kontrolního součtu. `CHECKSUM`je určena pro použití při vytváření indexy hash.<br /><br /> **Argumenty**<br /><br /> `value`: A `Boolean`, `Byte`, `Int16`, `Int32`, `Int64`, `Single`, `Decimal`, `Double`, `DateTime`, `String`, `Binary`, nebo `Guid`. Můžete zadat jednu, dvě nebo tři hodnoty.<br /><br /> **Návratová hodnota**<br /><br /> Absolutní hodnota, z určeného výrazu.<br /><br /> **Příklad**<br /><br /> `SqlServer.CHECKSUM(10,100,1000.0)`|  
 |`CURRENT_TIMESTAMP ()`|Vytvoří aktuální datum a čas v interním formátu SQL serveru pro `DateTime` hodnoty s přesností 7 v systému SQL Server 2008 a s přesností na 3 v systému SQL Server 2005.<br /><br /> **Návratová hodnota**<br /><br /> Aktuální systémový datum a čas jako `DateTime`.<br /><br /> **Příklad**<br /><br /> `SqlServer.CURRENT_TIMESTAMP()`|  
 |`CURRENT_ USER``()`|Vrací název aktuálního uživatele.<br /><br /> **Návratová hodnota**<br /><br /> ASCII `String`.<br /><br /> **Příklad**<br /><br /> `SqlServer.CURRENT_USER()`|  
-|`DATALENGTH``(``expression``)`|Vrátí počet bajtů, které představují jakýkoli výraz.<br /><br /> **Argumenty**<br /><br /> `expression`: A `Boolean`, `Byte`, `Int16`, `Int32`, `Int64`, `Single`, `Decimal`, `Double`, `DateTime`, `Time`, `DateTimeOffset`, `String`, `Binary`, nebo `Guid`.<br /><br /> **Návratová hodnota**<br /><br /> Velikost vlastnosti jako `Int32`.<br /><br /> **Příklad**<br /><br /> `SELECT VALUE SqlServer.DATALENGTH(P.Name)FROM`<br /><br /> `AdventureWorksEntities.Product AS P`|  
+|`DATALENGTH` `(` `expression` `)`|Vrátí počet bajtů, které představují jakýkoli výraz.<br /><br /> **Argumenty**<br /><br /> `expression`: A `Boolean`, `Byte`, `Int16`, `Int32`, `Int64`, `Single`, `Decimal`, `Double`, `DateTime`, `Time`, `DateTimeOffset`, `String`, `Binary`, nebo `Guid`.<br /><br /> **Návratová hodnota**<br /><br /> Velikost vlastnosti jako `Int32`.<br /><br /> **Příklad**<br /><br /> `SELECT VALUE SqlServer.DATALENGTH(P.Name)FROM`<br /><br /> `AdventureWorksEntities.Product AS P`|  
 |`HOST_NAME()`|Vrací název pracovní stanice.<br /><br /> **Návratová hodnota**<br /><br /> Unicode `String`.<br /><br /> **Příklad**<br /><br /> `SqlServer.HOST_NAME()`|  
 |`ISDATE(` `expression` `)`|Určuje, zda je vstupní výraz platné datum.<br /><br /> **Argumenty**<br /><br /> `expression`: A `Boolean`, `Byte`, `Int16`, `Int32`, `Int64`, `Single`, `Decimal`, `Double`, `DateTime`, `Time`, `DateTimeOffset`, `String`, `Binary`, nebo `Guid`.<br /><br /> **Návratová hodnota**<br /><br /> `Int32`. Jedna (1) Pokud je vstupní výraz platné datum. Nula (0) jinak.<br /><br /> **Příklad**<br /><br /> `SqlServer.ISDATE('1/1/2006')`|  
 |`ISNUMERIC(` `expression` `)`|Určuje, zda výraz platný číselného typu.<br /><br /> **Argumenty**<br /><br /> `expression`: A `Boolean`, `Byte`, `Int16`, `Int32`, `Int64`, `Single`, `Decimal`, `Double`, `DateTime`, `Time`, `DateTimeOffset`, `String`, `Binary`, nebo `Guid`.<br /><br /> **Návratová hodnota**<br /><br /> `Int32`. Jedna (1) Pokud je vstupní výraz platné datum. Nula (0) jinak.<br /><br /> **Příklad**<br /><br /> `SqlServer.ISNUMERIC('21')`|  
@@ -41,5 +42,5 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje násle
 |[Systém funkce Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115918)|[Systém funkce Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115917)|[Funkce systému (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115919)|  
   
 ## <a name="see-also"></a>Viz také  
- [Jazyk SQL entity](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
+ [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
  [SqlClient pro funkce Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)

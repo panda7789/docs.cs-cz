@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8d339d3146a8a9214c3518eac6c31ed5222f9b31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9adeec14e102ef575f24566980477a285f87ba40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugcomobjectvalue-interface"></a>ICorDebugComObjectValue – rozhraní
 Poskytuje metody k načtení informací, které jsou přidružené obálka volatelná na za běhu (RCW).  
@@ -32,8 +33,8 @@ Poskytuje metody k načtení informací, které jsou přidružené obálka volat
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getcachedinterfacepointers – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Získá ukazatele nezpracovaná rozhraní v aktuální RCW mezipaměti.|  
-|[Getcachedinterfacetypes – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Poskytuje enumerátor pro typy rozhraní, aby byla použita k nebo použít jako aktuální objekt.|  
+|[GetCachedInterfacePointers – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Získá ukazatele nezpracovaná rozhraní v aktuální RCW mezipaměti.|  
+|[GetCachedInterfaceTypes – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Poskytuje enumerátor pro typy rozhraní, aby byla použita k nebo použít jako aktuální objekt.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud chcete zkontrolovat, zda instanci rozhraní "ICorDebugValue" představuje RCW, ladicí program volá `QueryInterface` na "ICorDebugValue" s `IID_ICorDebugComObjectValue`.  
@@ -48,5 +49,5 @@ Poskytuje metody k načtení informací, které jsou přidružené obálka volat
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

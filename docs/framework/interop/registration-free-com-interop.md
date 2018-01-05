@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 28ecb3419bddcc8e9a192b240a7bf90474314c1f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1eee55b2036028dd491dc82f9bce7c51aca878fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spoluprací COM bez registrace se aktivuje komponentu bez uložení informací o sestavení pomocí registru systému Windows. Místo registrace komponenty v počítači během nasazení, vytvoření souborů manifestu Win32 stylu v době návrhu, které obsahují informace o aktivaci a vazeb. Tyto soubory manifestu, nikoli klíče registru přímé aktivace objektu.  
@@ -63,4 +64,4 @@ Spoluprací COM bez registrace se aktivuje komponentu bez uložení informací o
     >  Souběžného zpracování se funkce rozhraní .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a součástí, které používají verzi modulu runtime ve stejnou dobu běžela na stejném počítači. Spuštění vedle sebe a souběžně sdílená sestavení jsou různé mechanismy pro zajištění funkcí vedle sebe.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: Konfigurace Bezregistrační aktivace rozhraní .NET Framework na základě COM – součásti](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)
+ [Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)

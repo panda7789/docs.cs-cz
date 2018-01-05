@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 59a9f0638855206f390ee7fbace580ba37e25e23
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 08efa127ed06ffc8cff3c7bb83af7be929329794
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="conditional-get-and-put"></a>Podmíněné operace Get a Put
 Tento příklad znázorňuje, jak používat nové podmíněného načtení a aktualizace rozhraní API pro programovací model WCF REST. Protože podmíněného načtení a aktualizace jsou nejvhodnější pro orientované prostředků a rozšiřuje služby REST, tato ukázka [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka. Tato ukázka se zaměřuje na přidání podpory pro podmíněné načtení a proveďte aktualizaci [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázkové pomocí nových rozhraní API byla zavedená v [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)].  

@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 46a9c11f3545e5d2b9f91572a87ee2614810e4d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 86dd0c4349dce8dd9e50fdd44c38a08ec39d90bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="making-an-image-easier-to-debug"></a>Usnadnění ladění obrázku
 Při kompilaci nespravovaného kódu je možné nakonfigurovat spustitelnou bitovou kopii pro ladění nastavením přepínačů IDE nebo parametrů příkazového řádku. Například můžete použít nebo**Zi** možnost příkazového řádku v jazyce Visual C++ a požádejte ho pro vydávání soubory ladění symbolu (.pdb přípona souboru). Podobně /**Od** říká možnost příkazového řádku kompilátoru zakázat optimalizace. Výsledný kód pracuje pomaleji, ale je snadnější v něm v případě potřeby provádět ladění.  
@@ -65,5 +66,5 @@ AllowOptimize=0
   
 ## <a name="see-also"></a>Viz také  
  [Ladění, trasování a profilace](../../../docs/framework/debug-trace-profile/index.md)  
- [Povolení JIT – připojené ladění](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
+ [Povolení JIT – ladění Attach](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
  [Povolení profilace](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)

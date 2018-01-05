@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d0f15339b829335798d7ee21dcc90b81cb536cf2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8264e49b29f5a790e37c97c3683d7bf09e850c3e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-manipulate-a-table39s-columns-through-the-columns-property"></a>Postupy: manipulace s tabulku & č. 39; sloupce s prostřednictvím vlastnosti sloupce
 Tento příklad ukazuje některé z nejčastěji operací, které lze provést na sloupce tabulky prostřednictvím <xref:System.Windows.Documents.Table.Columns%2A> vlastnost.  
@@ -76,9 +77,9 @@ Tento příklad ukazuje některé z nejčastěji operací, které lze provést n
  [!code-vb[TableSnippets2#_Table_Columns_Clear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_columns_clear)]  
   
 ## <a name="see-also"></a>Viz také  
- [Tabulka – přehled](../../../../docs/framework/wpf/advanced/table-overview.md)  
- [Definovat tabulku s XAML](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
- [Vytvoření tabulky prostřednictvím kódu programu](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
- [Manipulaci se skupinami řádek tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
- [Manipulace s FlowDocument prostřednictvím vlastnosti bloky](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
- [Manipulaci se skupinami řádek tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
+ [Přehled tabulky](../../../../docs/framework/wpf/advanced/table-overview.md)  
+ [Definice tabulky pomocí XAML](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
+ [Sestavení tabulky z programu](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
+ [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
+ [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
+ [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)

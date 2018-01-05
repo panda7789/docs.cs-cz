@@ -27,11 +27,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e050a3e5d3207f883be915aa6f00d527023f561e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c06692f19fe31bfcf2ae1f9778d847f412a007e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-ensure-the-selected-row-in-a-child-table-remains-at-the-correct-position"></a>Postupy: Zajistěte, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici
 Často při práci s datové vazby v systému Windows Forms, se zobrazí data v co se říká nadřazený podřízený nebo hlavní/podrobnosti zobrazení. Vztahuje se k datové vazby scénář, kde se zobrazí data z jednoho zdroje ve dvou ovládacích prvků. Změna výběru v ovládacím prvku jeden způsobí, že data zobrazená v ovládacím prvku druhý změnit. První prvek může například obsahovat seznam zákazníků a druhý seznam objednávek související s vybraného zákazníka v prvním ovládacím.  
@@ -94,6 +95,6 @@ ms.lasthandoff: 11/21/2017
  Informace o tom, jak vytvořit tento příklad z příkazového řádku pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] nebo [!INCLUDE[csprcs](../../../includes/csprcs-md.md)], najdete v části [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). V tomto příkladu můžete také vytvořit [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: Zajistěte více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  
- [BindingSource – komponenta](../../../docs/framework/winforms/controls/bindingsource-component.md)  
- [Datová vazba a systém Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
+ [Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  
+ [Komponenta BindingSource](../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

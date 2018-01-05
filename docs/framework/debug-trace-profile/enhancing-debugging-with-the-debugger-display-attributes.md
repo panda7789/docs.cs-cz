@@ -24,11 +24,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c396a794cd3afa394cbb6b2393257a3103c6239d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac5097326ae76a8790569c13fd8b1285b0cfeec0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Rozšíření ladění pomocí atributů zobrazení ladicího programu
 Atributů zobrazení ladicího programu povolit vývojář typu, který určuje a nejlépe rozumí modul runtime chování tohoto typu, také určit, co daný typ bude vypadat, který se zobrazí v ladicí program. Kromě toho ladicí program atributy, které poskytují zobrazení `Target` vlastnost lze použít na úrovni sestavení uživatelé bez vědomí zdrojového kódu. <xref:System.Diagnostics.DebuggerDisplayAttribute> Atribut ovládací prvky zobrazení typ nebo člen v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerBrowsableAttribute> Atribut určuje, zda a jak pole nebo vlastnost je zobrazena v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerTypeProxyAttribute> Atribut určuje typ substitute nebo proxy server, pro typ a mění způsob přidělování typ se zobrazí v ladicího programu. Při zobrazení proměnné, která má proxy server, nebo nahraďte typ proxy serveru znamená původní typ v okně zobrazení ladicího programu**.** Zadejte pouze veřejné členy proxy proměnné windowdisplays ladicí program. Soukromé členy nejsou zobrazeny.  

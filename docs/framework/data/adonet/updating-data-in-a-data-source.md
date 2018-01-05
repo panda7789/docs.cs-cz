@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 91e6a5f2b956816b5e001701a7fbe4a40e7866e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c83b137f0de5ee165d110706dc286d13a084427c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat
 SQL příkazy, které upravují data (například INSERT, UPDATE nebo DELETE) nevrátí řádků. Podobně mnoho uložené procedury provedení akce, ale nevrátí řádků. Chcete-li provést příkazy, které nevracejí řádky, vytvořte **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Spusťte příkaz se **ExecuteNonQuery** metodu **příkaz** objektu.  
@@ -102,7 +103,7 @@ Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Příkazy ke změně dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
- [Aktualizace zdrojů dat s DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
+ [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

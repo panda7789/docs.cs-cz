@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5eb97ea9db0fa7132b1ed4320bf73d124452c201
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fc3e7d545a502c040e7e3ee5140d385b60e82d5c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Streamování zprostředkovatele (služby WCF Data Services)
 Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato binární data může představovat datové proudy videa a audia, bitové kopie, soubory dokumentů nebo jiných typů médií binární. Pokud entitu v datovém modelu obsahuje jeden nebo více binárních vlastností, vrátí službu data tato binární data kódovaná jako kódování base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velké binární data tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načtení binární data nezávisle na entity, do které patří. Toho dosahuje tím, že oddělíte binární data z entity do jednoho nebo více datových proudů.  
@@ -62,7 +63,7 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
   
  [!INCLUDE[crexample](../../../../includes/crexample-md.md)]Služba data, která využívá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele a zveřejňuje mediálního zdroje, najdete v příspěvku [datové služby streamování zprostředkovatele řady: implementace poskytovatele streamování (část 1)](http://go.microsoft.com/fwlink/?LinkID=198989).  
   
- **Reflexe zprostředkovatele**  
+ **Zprostředkovatel reflexe**  
  Chcete-li znamenat, že entita záznamu odkazu na média, přidejte <xref:System.Data.Services.Common.HasStreamAttribute> na třídu, která definuje typ entity ve zprostředkovateli reflexe.  
   
  **Poskytovatel služeb vlastních dat**  
@@ -140,6 +141,6 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
  Další informace najdete v tématu [verze datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
- [Poskytovatelé služeb vlastních dat](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)  
- [Práce s binární Data](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)
+ [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+ [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)  
+ [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)

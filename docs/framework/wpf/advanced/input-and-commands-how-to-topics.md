@@ -17,27 +17,28 @@ caps.latest.revision: "76"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1dbec8435c82e795d48544a366eeced2419f6d8c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 301532e640273073a884d62d24363557b4ce1e04
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="input-and-commands-how-to-topics"></a>Postupy: Témata vstupu a příkazů
 Témata v této části popisují, jak používat vstupní a řídicího infrastruktury v [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Povolit příkaz](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)  
- [Změnit typ kurzoru](../../../../docs/framework/wpf/advanced/how-to-change-the-cursor-type.md)  
- [Změnit barvu elementu s použitím fokus události](../../../../docs/framework/wpf/advanced/how-to-change-the-color-of-an-element-using-focus-events.md)  
- [Použít FocusVisualStyle do ovládacího prvku](../../../../docs/framework/wpf/advanced/how-to-apply-a-focusvisualstyle-to-a-control.md)  
- [Zjistit, že když zadejte není stisknuta klávesa](../../../../docs/framework/wpf/advanced/how-to-detect-when-the-enter-key-pressed.md)  
- [Vytvoření efektu výměny pomocí událostí](../../../../docs/framework/wpf/advanced/how-to-create-a-rollover-effect-using-events.md)  
- [Zkontrolujte objekt sledování ukazatele myši](../../../../docs/framework/wpf/advanced/how-to-make-an-object-follow-the-mouse-pointer.md)  
- [Vytvoření RoutedCommand](../../../../docs/framework/wpf/advanced/how-to-create-a-routedcommand.md)  
- [Implementace ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
- [Propojte příkaz do ovládacího prvku bez podpory příkaz](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
- [Propojte příkaz do ovládacího prvku s podporou příkaz](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)  
+ [Povolení příkazu](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)  
+ [Změna typu kurzoru](../../../../docs/framework/wpf/advanced/how-to-change-the-cursor-type.md)  
+ [Změna barvy elementu použitím událostí fokusu](../../../../docs/framework/wpf/advanced/how-to-change-the-color-of-an-element-using-focus-events.md)  
+ [Použití FocusVisualStyle na ovládací prvek](../../../../docs/framework/wpf/advanced/how-to-apply-a-focusvisualstyle-to-a-control.md)  
+ [Detekce stisknuté klávesy Enter](../../../../docs/framework/wpf/advanced/how-to-detect-when-the-enter-key-pressed.md)  
+ [Vytvoření efektu přechodu použitím událostí](../../../../docs/framework/wpf/advanced/how-to-create-a-rollover-effect-using-events.md)  
+ [Nastavení objektu tak, aby následoval ukazatel myši](../../../../docs/framework/wpf/advanced/how-to-make-an-object-follow-the-mouse-pointer.md)  
+ [Vytvoření objektu RoutedCommand](../../../../docs/framework/wpf/advanced/how-to-create-a-routedcommand.md)  
+ [Implementace rozhraní ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
+ [Propojení příkazu s ovládacím prvkem bez podpory příkazů](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
+ [Propojení příkazu s ovládacím prvkem s podporou příkazů](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.UIElement>  

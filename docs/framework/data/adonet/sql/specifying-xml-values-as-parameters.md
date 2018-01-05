@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4d48cc329644873be268606409c154ffe832cd91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5957dee03d7f3cd54b3fdacd0d38dead5bbc077d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Zadání hodnoty XML jako parametry
 Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec v kódu XML, vývojáři mohou zadat tuto hodnotu pomocí instance **SqlXml** datového typu. Neexistují žádné triky; skutečně Sloupce XML v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přijmout parametr hodnoty stejným způsobem jako jiné datové typy.  
@@ -171,5 +172,5 @@ class Class1
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.SqlTypes.SqlXml>  
- [Data XML v systému SQL Server](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [Data XML na SQL Serveru](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

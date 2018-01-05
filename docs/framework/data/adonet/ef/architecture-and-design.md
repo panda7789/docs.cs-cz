@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f0dcad5d6287d5399dac6cea38b10984781770f9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 48b80856242730a5412cd9d5d8dd2c7f857304ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
 Modul generování SQL v [ukázka zprostředkovatele](http://go.microsoft.com/fwlink/?LinkId=180616) je implementovaný jako návštěvníka na strom výrazu, který představuje strom příkazů. Generování probíhá v jednom průchodu přes strom výrazu.  
@@ -425,4 +426,4 @@ IsEmpty(inut) = Not Exists(input)
  K vytvoření jedinečné názvy pro rozsah aliasy i pro sloupce, použijte _n < existing_name >, kde n je nejmenší alias, který nebyl dosud použit. Globální seznam všechny aliasy zvyšuje potřebu kaskádových přejmenuje.  
   
 ## <a name="see-also"></a>Viz také  
- [Generování SQL ve zprostředkovateli ukázka](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)
+ [Generování SQL ve zprostředkovateli ukázek](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

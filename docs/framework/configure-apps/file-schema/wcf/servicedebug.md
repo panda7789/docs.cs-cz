@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 85a980191e727ec1a20cca618504d1d9cbc2c277
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8cdd5d8a05354ad6f0df8343d546fd6cd1e8eac4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
 Určuje funkce informace o ladění a nápovědu pro [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby.  
@@ -83,4 +84,4 @@ Určuje funkce informace o ladění a nápovědu pro [!INCLUDE[indigo1](../../..
  <xref:System.ServiceModel.Description.ServiceDebugBehavior>  
  [Určování a zpracování chyb v kontraktech a službách](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
  [Zpracování výjimek a chyb](../../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)  
- [Chování ladění služby](../../../../../docs/framework/wcf/samples/service-debug-behavior.md)
+ [Chování při ladění služby](../../../../../docs/framework/wcf/samples/service-debug-behavior.md)

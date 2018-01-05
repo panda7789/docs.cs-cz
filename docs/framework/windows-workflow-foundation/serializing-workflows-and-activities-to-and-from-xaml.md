@@ -12,11 +12,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3be1c85a87896c176d5e81d2938418194d28b93b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6c1954f02aef13599f7bd24f8e2d136f0f876256
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="serializing-workflows-and-activities-to-and-from-xaml"></a>Serializace pracovních postupů a aktivit do a z XAML
 Kromě se zkompiluje do typy, které jsou součástí sestavení, definice pracovního postupu také serializovat lze do jazyka XAML. Tyto serializovaných definice můžete znovu pro úpravy nebo kontroly, předaný systém sestavení pro kompilaci, nebo načíst a volána. Toto téma poskytuje přehled o serializaci definice pracovního postupu a práce s XAML pracovního postupu definice.  

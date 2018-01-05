@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 917707135f2159b020d9d3c7afb7d70ae466e3e0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a57043f100b1cce35139d753d12707c2c2c349f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugmoduleenumnext-method"></a>ICorDebugModuleEnum::Next – metoda
 Získá počet instancí "ICorDebugModule" určeného `celt` z výčtu, počínaje na aktuální pozici.  

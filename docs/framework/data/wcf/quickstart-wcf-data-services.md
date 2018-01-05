@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08296be1002ee50e18a45c546645f4cc117d6bb5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fa6711ef5591110c74a1da95358aac4d8a8da655
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="quickstart-wcf-data-services"></a>Rychlý start (služby WCF Data Services)
 Tento rychlý Start umožňuje seznámit se s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] prostřednictvím řadu úloh, které podporují témata v [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).  
@@ -38,13 +39,13 @@ Tento rychlý Start umožňuje seznámit se s [!INCLUDE[ssAstoria](../../../../i
 -   Ukázkovou databázi Northwind Stažení této ukázkové databáze, najdete v článku stránce pro stažení [ukázkové databáze systému SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).  
   
 ## <a name="wcf-data-services-quickstart-tasks"></a>Rychlé spuštění úlohy služeb WCF Data Services  
- [Vytváření datové služby](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
+ [Vytvoření datové služby](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
  Definování [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, definovat datového modelu, vytvořit službu data a povolení přístupu k prostředkům.  
   
- [Přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
+ [Přístup ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
  Spusťte službu z [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] a přístup ke službě odesláním požadavky HTTP GET prostřednictvím webového prohlížeče do zveřejněné informačního kanálu.  
   
- [Vytvoření aplikace klienta rozhraní .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
+ [Vytvoření klientské aplikace .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
  Vytvoření [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] klientská aplikace používat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu, vazby dat k ovládacím prvkům Windows, změnit data vázané ovládací prvky a potom odešlete změny zpátky na službu data.  
   
 > [!NOTE]

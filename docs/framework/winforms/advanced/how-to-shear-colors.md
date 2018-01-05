@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 35f89bb5d87ef58c5ecda7be4cb9fb41da08e8a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0a32e6c1901f84c276c071402dac641d45566717
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-shear-colors"></a>Postupy: Zkosení barev
 Zkosení zvyšuje nebo snižuje komponentu Barva o částku úměrná jiné barevnou složku. Představte si třeba transformaci, kde komponentu red vzroste polovina hodnotou modré součásti. V části transformace by stát barvu (0,2, 0,5, 1) (0,7, 0,5, 1). Novou red součást je 0,2 + (1/2)(1) = 0,7.  
@@ -53,5 +54,5 @@ Zkosení zvyšuje nebo snižuje komponentu Barva o částku úměrná jiné bare
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Imaging.ColorMatrix>  
  <xref:System.Drawing.Imaging.ImageAttributes>  
- [Grafika a kreslení v systému Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
+ [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)

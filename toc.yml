@@ -241,7 +241,7 @@
                   topicHref: /dotnet/framework/unmanaged-api/authenticode/index
                 - name: Ladění (referenční dokumentace nespravovaného rozhraní API)
                   tocHref: /dotnet/framework/unmanaged-api/debugging/
-                  topicHref: /dotnet/framework/unmanaged-api/debuggin/index
+                  topicHref: /dotnet/framework/unmanaged-api/debugging/index
                 - name: Úložiště symbolů diagnostiky (referenční dokumentace nespravovaného rozhraní API)
                   tocHref: /dotnet/framework/unmanaged-api/diagnostics/
                   topicHref: /dotnet/framework/unmanaged-api/diagnostics/index
@@ -360,8 +360,8 @@
               tocHref: /dotnet/csharp/tutorials/
               topicHref: /dotnet/csharp/tutorials/index
             - name: Prohlídka
-              tocHref: /dotnet/csharp/tour/
-              topicHref: /dotnet/csharp/tour/index
+              tocHref: /dotnet/csharp/tour-of-csharp/
+              topicHref: /dotnet/csharp/tour-of-csharp/index
             - name: Co je nového
               tocHref: /dotnet/csharp/whats-new/
               topicHref: /dotnet/csharp/whats-new/index
@@ -371,6 +371,9 @@
             - name: Koncepty
               tocHref: /dotnet/csharp/concepts/
               topicHref: /dotnet/csharp/concepts/index
+            - name: Sada .NET Compiler Platform SDK
+              tocHref: /dotnet/csharp/roslyn-sdk/
+              topicHref: /dotnet/csharp/roslyn-sdk/index
             - name: Průvodce programováním
               tocHref: /dotnet/csharp/programming-guide/
               topicHref: /dotnet/csharp/programming-guide/index
@@ -392,7 +395,7 @@
                   topicHref: /dotnet/csharp/programming-guide/events/index
                 - name: Výjimky a jejich zpracování
                   tocHref: /dotnet/csharp/programming-guide/exceptions/
-                  topicHref: /dotnet/csharp/programming-guide/èxceptions/index
+                  topicHref: /dotnet/csharp/programming-guide/exceptions/index
                 - name: Systém souborů a registr
                   tocHref: /dotnet/csharp/programming-guide/file-system/
                   topicHref: /dotnet/csharp/programming-guide/file-system/index
@@ -407,14 +410,14 @@
                   topicHref: /dotnet/csharp/programming-guide/interfaces/index
                 - name: Interoperabilita
                   tocHref: /dotnet/csharp/programming-guide/interop/
-                  topicHref: /dotnet/csharp/programming-guide/ìnterop/index
+                  topicHref: /dotnet/csharp/programming-guide/interop/index
                 - name: LINQ
                   tocHref: /dotnet/csharp/programming-guide/linq/
                   topicHref: /dotnet/csharp/programming-guide/linq/index
                 - name: Main() a argumenty příkazového řádku
                   tocHref: /dotnet/csharp/programming-guide/main-and-command-args/
                   topicHref: /dotnet/csharp/programming-guide/main-and-command-args/index
-                - name: Obory názvů
+                - name: Jmenné prostory
                   tocHref: /dotnet/csharp/programming-guide/namespaces/
                   topicHref: /dotnet/csharp/programming-guide/namespaces/index
                 - name: "Typy s\_povolenou hodnotou Null"
@@ -438,7 +441,7 @@
                       topicHref: /dotnet/csharp/programming-guide/concepts/covariance-contravariance/index
                     - name: Stromy výrazů
                       tocHref: /dotnet/csharp/programming-guide/concepts/expression-trees/
-                      topicHref: /dotnet/csharp/programming-guide/concepts/èxpression-trees/index
+                      topicHref: /dotnet/csharp/programming-guide/concepts/expression-trees/index
                     - name: LINQ
                       tocHref: /dotnet/csharp/programming-guide/concepts/linq/
                       topicHref: /dotnet/csharp/programming-guide/concepts/linq/index
@@ -513,7 +516,7 @@
                   topicHref: /dotnet/visual-basic/programming-guide/concepts/attributes/index
                 - name: Stromy výrazů
                   tocHref: /dotnet/visual-basic/programming-guide/concepts/expression-trees/
-                  topicHref: /dotnet/visual-basic/programming-guide/concepts/èxpression-trees/index
+                  topicHref: /dotnet/visual-basic/programming-guide/concepts/expression-trees/index
                 - name: LINQ
                   tocHref: /dotnet/visual-basic/programming-guide/concepts/linq/
                   topicHref: /dotnet/visual-basic/programming-guide/concepts/linq/index
@@ -570,7 +573,7 @@
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/procedures/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/procedures/index
                 - name: Řetězce
-                  tocHref: /dotnet/visual-basic/programming-guide/language-features/`strings/
+                  tocHref: /dotnet/visual-basic/programming-guide/language-features/strings/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/strings/index
                 - name: Proměnné
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/variables/

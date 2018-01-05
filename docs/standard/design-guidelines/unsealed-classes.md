@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f950d8de2681868fe28e09e4b51bd8156cd12e94
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ec66fb3dea74e6f738ec308ce0f88945526a0a77
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="unsealed-classes"></a>Nezapečetěné třídy
 Zapečetěné třídy nelze zděděno z a zabraňují rozšíření. Třídy, které je možné zdědit z se nazývají naproti nezapečetěných třídy.  
@@ -37,6 +40,6 @@ Zapečetěné třídy nelze zděděno z a zabraňují rozšíření. Třídy, kt
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
- [Pokyny pro návrh Framework](../../../docs/standard/design-guidelines/index.md)  
+ [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
  [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  [Zapečetění](../../../docs/standard/design-guidelines/sealing.md)

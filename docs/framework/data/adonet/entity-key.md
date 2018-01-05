@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d0d7df7ff1a0e8e732688e10befb4bffa86599d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 184a55c3c5479f1999057e55dcc761a250051e5e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-key"></a>klíč entity
 *Klíč entity* je [vlastnost](../../../../docs/framework/data/adonet/property.md) nebo sada vlastností [typ entity](../../../../docs/framework/data/adonet/entity-type.md) , se používají k určení identity. Vlastnosti, které tvoří klíč entity, jsou vybraná v době návrhu. Hodnoty vlastnosti klíče entity musí jednoznačně identifikovat instance typu entity v rámci [sady entit](../../../../docs/framework/data/adonet/entity-set.md) za běhu. Vlastnosti, které tvoří klíč entity je třeba zvolit zaručovat jedinečnost instancí v sadu entit.  
@@ -50,5 +51,5 @@ ms.lasthandoff: 11/21/2017
  Pomocí `Name` a `Address` pro entitu klíč je vhodná volba, protože je nepravděpodobné, že za provozu na stejnou adresu dva autoři se stejným názvem. Tato volba pro klíč entity, ale v absolutně nezaručuje klíče jedinečné entity v sadu entit. Přidání vlastnosti, jako například `AuthorId`, který může použít k jednoznačné identifikaci Autor doporučenou v tomto případě.  
   
 ## <a name="see-also"></a>Viz také  
- [Entity Data Model klíčové koncepty](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [Datového modelu entity](../../../../docs/framework/data/adonet/entity-data-model.md)
+ [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

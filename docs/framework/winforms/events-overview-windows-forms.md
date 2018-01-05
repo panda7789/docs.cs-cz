@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4989a13ef16445bc19b3dc3c6d265d943a464c62
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f73a336da5b61de90a67a8392b5cfc8f28619254
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="events-overview-windows-forms"></a>Přehled událostí (Windows Forms)
 Událost je akci, která může reagovat, nebo "zpracování" v kódu. Události může být generována akci uživatele, jako je například kliknutí myši nebo stisknutím klávesy; v kódu programu; nebo v systému.  
@@ -54,5 +55,5 @@ Událost je akci, která může reagovat, nebo "zpracování" v kódu. Události
  Vazba používáno s delegáti je dynamický: delegáta mohou být vázány v době běhu na libovolné metody, jejichž podpis odpovídá obslužné rutiny události. Pomocí této funkce můžete nastavit nebo změnit metodu vazby v závislosti na podmínce a dynamicky připojit obslužné rutiny událostí do ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření obslužných rutin událostí v systému Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)

@@ -16,11 +16,14 @@ caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8921321191a68899e114613f8469e1552fff34bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2bb115e14f8ff5d1065d87335d4d9021bd32ddd1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>Řešení externím prostředkům během zpracování XSLT
 Existují několikrát během transformace XSLT, kdy budete muset vyřešit externím prostředkům.  

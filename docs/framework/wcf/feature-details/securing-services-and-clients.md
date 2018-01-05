@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: ed37992b5488d33b9292bdd54eef47f9eb12f225
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 52e07a83f5a1b84abc46f00e6fd6e80e4b9a2622
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-services-and-clients"></a>Zabezpečení služeb a klientů
 Informace v této části se zaměřuje na programování zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Obecně platí jedná se o výběr odpovídající vazby poskytované systémem, nastavení vlastností prvku zabezpečení a pak nastavení vlastnosti chování služby, které řídí, jak načíst přihlašovací údaje pro použití služby nebo klient. Tyto postupy zahrnují požadavky na zabezpečení většiny uživatelů pro většinu scénářů, jak je znázorněno v [běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Pokud váš scénář vyžaduje další možnosti, nejprve v tématu [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md); Pokud řešení není zřejmá, najdete v části [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md). Pokud vytváříte (nebo spolupráce s) systému, který používá bohaté deklarace identity, najdete v tématech v [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  

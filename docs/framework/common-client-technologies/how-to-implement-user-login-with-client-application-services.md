@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 909fbaa4e7dc1d384b5085d71cec346bde44cf14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2bf073b6db0a69cfda0c69ae34df0396f5dea35c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-user-login-with-client-application-services"></a>Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb
 Klient aplikačních služeb můžete použít k ověření uživatelů pomocí stávající [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby. Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby najdete v tématu [použití ověřování pomocí formulářů s Microsoft Ajax](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e).  
@@ -65,7 +66,7 @@ Klient aplikačních služeb můžete použít k ověření uživatelů pomocí 
  Ukázkový kód v tomto tématu ukazuje nejjednodušší použití ověřování v aplikaci klienta systému Windows. Při volání `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> metoda s klientskou aplikaci služby a ověřování pomocí formulářů, ale můžete vyvolat kódu <xref:System.Net.WebException>. To znamená, že ověřovací služby není k dispozici. Příklad způsobu zpracování této výjimky, naleznete v části [návod: použití klientských aplikačních služeb](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Klient aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ [Klientské aplikační služby](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
  [Postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
  [Návod: Použití klientských aplikačních služeb](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)  

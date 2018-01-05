@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2573f342530e59fa05e7f24342f251990b2ce47d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 227ad36e87c3deceb7fefe3cd19013fc8e76c686
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Postupy: Zajistěte, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných
 Často při práci s datové vazby v systému Windows Forms, jsou svázané více ovládacích prvků na stejném datovém zdroji. V některých případech může být nutné provést další kroky k zajištění, aby zůstaly synchronizované s sebe navzájem a zdroj dat vázané vlastnosti ovládacích prvků. Tyto kroky jsou nutné ve dvou situacích:  
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/21/2017
 -   Formulář s <xref:System.Windows.Forms.Form.Load> zpracovává události a volání `InitializeControlsAndDataSource` metoda v příkladu z formuláře <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: sdílení připojených dat mezi formuláři pomocí součásti BindingSource](../../../docs/framework/winforms/controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)  
- [Oznámení změn v systému Windows Forms datové vazby](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
+ [Postupy: Sdílení vázaných dat mezi formuláři pomocí komponenty BindingSource](../../../docs/framework/winforms/controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)  
+ [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
  [Rozhraní související s datovou vazbou](../../../docs/framework/winforms/interfaces-related-to-data-binding.md)  
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)

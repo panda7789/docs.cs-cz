@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ccea982c45ab22a4b2ab81bc80c16dd472144bbe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e62fc49a8a08c79138df080246b99b6fe891162e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trackbar-control-overview-windows-forms"></a>TrackBar – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.TrackBar> ovládací prvek (také někdy nazývané "posuvník") se používá pro procházení velké množství informací nebo vizuálně úpravě číselné nastavení. <xref:System.Windows.Forms.TrackBar> Řízení má dvě části: jezdce, také známé jako jezdce a značek. Jezdce je část, která se dá upravit. Odpovídá jeho umístění <xref:System.Windows.Forms.TrackBar.Value%2A> vlastnost. Značky jsou visual indikátory, které jsou rozmístěny v pravidelných intervalech. Pozice přesouvají v krocích, které můžete zadat a lze zarovnávat vodorovně nebo svisle. Panelu sledování můžete například použít k řízení rychlost blikání kurzoru míry nebo myš pro systém.  
@@ -34,4 +35,4 @@ Windows Forms <xref:System.Windows.Forms.TrackBar> ovládací prvek (také někd
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.TrackBar>  
- [TrackBar – ovládací prvek](../../../../docs/framework/winforms/controls/trackbar-control-windows-forms.md)
+ [Ovládací prvek TrackBar](../../../../docs/framework/winforms/controls/trackbar-control-windows-forms.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b241e9a2dbe84833f43dadb2e979e5ee079706a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f9d20fb5b16fbf44bdf8431ae32afee105af7676
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který mohou být hostovány systémem [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá ze stránek, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a nejsnadnější v hypertextové odkazy. Struktura stránek a způsoby, ve kterém se lze procházet, podle definice hypertextové odkazy, se označuje jako topologii navigace. Takové topologii vyhovuje celou řadu typů aplikací, zejména ty, které procházení dokumentů. Pro tyto aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli mít žádné konkrétní informace o dalších.  
@@ -181,4 +182,4 @@ Obsah, který mohou být hostovány systémem [!INCLUDE[TLA#tla_xbap](../../../.
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Navigation.PageFunction%601>  
  <xref:System.Windows.Navigation.NavigationService>  
- [Přehled topologie navigace](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)
+ [Přehled topologií navigace](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)

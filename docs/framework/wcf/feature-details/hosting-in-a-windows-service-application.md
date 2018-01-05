@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f411e0280a1f663e5e001e471eb836208083160
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d1a39162097c21f20c0dd04f3911442602871436
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby systému Windows (dříve označované jako služby systému Windows NT) zadejte procesu modelu zvlášť vhodné pro aplikace, které musí za provozu v spustitelný soubor dlouho běžící a nezobrazovat jakoukoli formu uživatelské rozhraní. Doba platnosti procesu systému Windows služby aplikaci spravuje správce řízení služeb (SCM), která umožňuje spustit, zastavit a pozastavit aplikace služby systému Windows. Můžete nakonfigurovat službu procesů systému Windows spustit automaticky při spuštění počítače, takže je vhodné hostitelské prostředí pro aplikace "always on". [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Aplikace služby systému Windows, najdete v části [aplikace služby systému Windows](http://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -48,8 +49,8 @@ Služby systému Windows (dříve označované jako služby systému Windows NT)
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceProcess>  
- [Návod: Vytvoření aplikace služby systému Windows v Návrháři součástí](http://go.microsoft.com/fwlink/?LinkId=94875)  
- [Postupy: hostování služby WCF ve spravované službě Windows](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  
+ [Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](http://go.microsoft.com/fwlink/?LinkId=94875)  
+ [Postupy: Hostování služby WCF ve spravované službě Windows](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  
  [Hostitel služby Windows](../../../../docs/framework/wcf/samples/windows-service-host.md)  
  [Architektura programování aplikace služby](http://go.microsoft.com/fwlink/?LinkId=94876)  
  [Hostování funkcí systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)

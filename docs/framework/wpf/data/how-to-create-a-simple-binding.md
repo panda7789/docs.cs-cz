@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a61844f917539f5d5e7c99299c8a33f4aa18450f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 108b532e3aea27571c8a3b1290d931e2b0769be9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-simple-binding"></a>Postupy: Vytváření jednoduchých připojení
 Tento příklad ukazuje, jak vytvořit jednoduchou <xref:System.Windows.Data.Binding>.  
@@ -42,5 +43,5 @@ Tento příklad ukazuje, jak vytvořit jednoduchou <xref:System.Windows.Data.Bin
  V důsledku toho <xref:System.Windows.Controls.TextBlock> se zobrazí s hodnotou "Jan".  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d00f8847e64e30b42490f319ea3e1df5e5a1850d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c87e384b3186a1dd4b53ba6c21d92bf4d0e6a8c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
 Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporu pro fronty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje podporu pro službu Řízení front s využitím Microsoft služby Řízení front zpráv (dříve označované jako MSMQ) jako přenosového mechanismu a umožňuje následující scénáře:  
@@ -34,16 +35,16 @@ Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo
  Použití funkce fronty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, můžete použít jednu standardní vazby, nebo můžete vytvořit vlastní vytvoření vazby, pokud jedna z vazeb standardní nevyhovuje vašim požadavkům. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]relevantní standardní vazby a jak zvolit jednu, najdete v části [postup: Exchange zpráv pomocí koncových bodů WCF a aplikace služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření vlastních vazeb, najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
  Přehled konceptů služby Řízení front zpráv.  
   
- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  Přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fronty podpory.  
   
- [Postupy: výměna zpráv pomocí koncových bodů WCF zařazených do fronty.](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [Postupy: Výměna zpráv zařazených do fronty s koncovými body WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  Vysvětluje, jak používat <xref:System.ServiceModel.NetMsmqBinding> třídy ke komunikaci mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
- [Postupy: výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  Vysvětluje, jak používat <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ke komunikaci mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a aplikace služby Řízení front zpráv.  
   
  [Seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)  
@@ -58,16 +59,16 @@ Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo
  [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)  
  Vysvětluje, jak pro zpracování poškozených zpráv (zpráv, které překročily maximální počet pokusů o doručení přijímající aplikaci).  
   
- [Rozdíly funkcí front zpráv v systému Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
+ [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
  Shrnuje rozdíly v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fronty funkci mezi [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
  [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  Popisuje, jak zabezpečit zprávy ve frontě pomocí zabezpečení přenosu.  
   
- [Zabezpečení zpráv pomocí zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
+ [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
  Popisuje, jak používat zabezpečení zpráv zabezpečit zprávy ve frontě.  
   
- [Řešení potíží s zasílání zpráv ve frontě](../../../../docs/framework/wcf/feature-details/troubleshooting-queued-messaging.md)  
+ [Řešení problémů se zasíláním zpráv zařazovaných do front](../../../../docs/framework/wcf/feature-details/troubleshooting-queued-messaging.md)  
  Vysvětluje, jak řešit běžné problémy s front zpráv.  
   
  [Osvědčené postupy pro komunikaci ve frontě](../../../../docs/framework/wcf/feature-details/best-practices-for-queued-communication.md)  

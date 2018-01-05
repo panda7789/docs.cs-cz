@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f39a26d52d7002e793935135e0c5d5e8f11c3d8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b387e100ff881c5394b6a77716a733b3928eae9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak k migraci aplikace, která používá .NET Remoting používat Windows Communication Foundation (WCF). Porovnává podobné koncepty mezi tyto produkty a pak popisuje, jak provést několik běžných scénářů vzdálené komunikace v WCF.  
@@ -112,7 +113,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
   
  Existuje mnoho způsobů, jak nakonfigurovat a hostování služeb WCF. Toto je pouze jeden z příkladů, označuje jako "samoobslužně hostovaná". Další informace naleznete v následujících tématech:  
   
--   [Postupy: definování kontraktu služby](how-to-define-a-wcf-service-contract.md)  
+-   [Postupy: Definování kontraktu služby](how-to-define-a-wcf-service-contract.md)  
   
 -   [Konfigurace služeb pomocí konfiguračních souborů](configuring-services-using-configuration-files.md)  
   
@@ -155,7 +156,7 @@ Console.WriteLine(String.Format("  Customer {0} {1} received.",
   
  Tento příklad ukazuje, programování na úrovni kanálu, protože je nejvíce podobně jako v příkladu vzdálenou komunikaci. Je také k dispozici **přidat odkaz na službu** přístup v sadě Visual Studio, který generuje kód pro zjednodušení programování klienta. Další informace naleznete v následujících tématech:  
   
--   [Programování na úrovni kanálu klienta](./extending/client-channel-level-programming.md)  
+-   [Programování klienta na úrovni kanálu](./extending/client-channel-level-programming.md)  
   
 -   [Postupy: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   

@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4c11b826a51cc4f1563729728626fb8041e31ee1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ff16c00f1e0e87c9f046c1f5944e11a9111f6e1a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Výsledků buď zpracování přímo, uložena v umístění <xref:System.Data.DataSet> Chcete-li zpřístupnit pro uživatele podle potřeby, kombinované s daty z více zdrojů nebo používat vzdáleně mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatelé dat jsou lightweight, vytváření minimální vrstva mezi zdroji dat a kód, zvýšení výkonu bez omezení funkčnosti.  
@@ -168,6 +169,6 @@ using System.Data.OracleClient;
  Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework dat zprostředkovatele není komunikovat přímo se zdrojem dat. Místo toho ke komunikaci s základní poskytovatel dat používá Entity SQL. Další informace najdete v tématu [EntityClient a Entity SQL](http://msdn.microsoft.com/en-us/49202ab9-ac98-4b4b-a05c-140e422bf527).  
   
 ## <a name="see-also"></a>Viz také  
- [ADO.NET – přehled](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Načítání a upravovat Data v technologii ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

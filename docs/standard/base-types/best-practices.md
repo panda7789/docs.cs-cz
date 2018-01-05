@@ -19,11 +19,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4d140c8bf88b296d4ad7d6de368117dfb310b4fa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f19d6b5907fe85ae96eeafe6c5ee68bf6c7856d6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v rozhraní .NET
 <a name="top"></a>Modul regulárních výrazů v .NET je výkonný, plně vybavený nástroj, který zpracuje text na základě vzor odpovídá nikoli na shodu literálu text a porovnání. Ve většině případů provádí porovnání vzorů rychle a efektivně. V některých případech se však může zdát, že je modul regulárních výrazů velmi pomalý. V extrémních případech se může dokonce zdát, že přestal při zpracování relativně malého vstupu odpovídat po dobu hodin nebo dokonce dní.  
@@ -303,4 +306,4 @@ ms.lasthandoff: 10/18/2017
 |-----------|-----------------|  
 |[Podrobnosti k chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Prozkoumá implementace modul regulárních výrazů v .NET. Téma se zaměřuje na flexibilitu regulárních výrazů a objasňuje odpovědnost vývojáře za zajištění efektivity a výkonnosti modulu regulárních výrazů.|  
 |[Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Vysvětluje princip zpětného navracení a vliv tohoto mechanismu na výkon regulárních výrazů a zkoumá prvky jazyka, které nabízí alternativu zpětného navracení.|  
-|[Jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Popisuje elementy jazyk regulárních výrazů v .NET a poskytuje odkazy na podrobná dokumentace pro jednotlivé elementy jazyka.|
+|[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Popisuje elementy jazyk regulárních výrazů v .NET a poskytuje odkazy na podrobná dokumentace pro jednotlivé elementy jazyka.|

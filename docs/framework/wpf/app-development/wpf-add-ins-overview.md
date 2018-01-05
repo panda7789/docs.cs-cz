@@ -23,11 +23,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 290682542a0accaf38408127f7358625abca14af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76a836e2699617803b78f76f90b27452bd0cdd0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a>[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zahrnuje přidat model, vývojáři mohou použít k vytvoření aplikace, které podporují doplňku rozšíření. Tento model doplňku umožňuje vytváření doplňků, které integrovat a rozšířit funkce aplikace. V některých scénářích aplikací také potřebovat zobrazit [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] jsou poskytovány doplňků. Toto téma ukazuje, jak [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit tyto scénáře, architektura hlouběji, její výhody a její omezení.  
@@ -298,4 +299,4 @@ ms.lasthandoff: 11/21/2017
  [Aplikační domény](../../../../docs/framework/app-domains/application-domains.md)  
  [Přehled vzdálené komunikace rozhraní .NET framework](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
  [Provedení učinit vzdáleným objekty](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a)  
- [Postupy: témata](../../../../docs/framework/wpf/app-development/how-to-topics.md)
+ [Témata s postupy](../../../../docs/framework/wpf/app-development/how-to-topics.md)

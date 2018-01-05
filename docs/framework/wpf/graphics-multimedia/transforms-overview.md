@@ -23,11 +23,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd4e0f65d404e70f441cf2918fd6c50e08ebec79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4992b5be4243d8d29b6075c0ad746494dc2eb168
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transforms-overview"></a>Přehled transformace
 Toto téma popisuje postup použití [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> třídy otočit, škálování, přejděte (přeložit) a zkosení <xref:System.Windows.FrameworkElement> objekty.  
@@ -61,16 +62,16 @@ Toto téma popisuje postup použití [!INCLUDE[TLA#tla_2d](../../../../includes/
 |Třída|Popis|Příklad|Obrázek|  
 |-----------|-----------------|-------------|------------------|  
 |<xref:System.Windows.Media.RotateTransform>|Otočí element k zadanému <xref:System.Windows.Media.RotateTransform.Angle%2A>.|[Otočení objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)|![Otočit obrázek](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-rotate.png "graphicsmm_thumbnails_rotate")|  
-|<xref:System.Windows.Media.ScaleTransform>|Škáluje element k zadanému <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> objemy.|[Změnit velikost elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)|![Škálování obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-scale.png "graphicsmm_thumbnails_scale")|  
-|<xref:System.Windows.Media.SkewTransform>|Zkosí element o zadaný <xref:System.Windows.Media.SkewTransform.AngleX%2A> a <xref:System.Windows.Media.SkewTransform.AngleY%2A> objemy.|[Zkreslit Element](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)|![Obrázek zkreslit](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-skew.png "graphicsmm_thumbnails_skew")|  
-|<xref:System.Windows.Media.TranslateTransform>|Přesune (překládá) elementu k zadanému <xref:System.Windows.Media.TranslateTransform.X%2A> a <xref:System.Windows.Media.TranslateTransform.Y%2A> objemy.|[Převede Element](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)|![Převede obrázek](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-translate.png "graphicsmm_thumbnails_translate")|  
+|<xref:System.Windows.Media.ScaleTransform>|Škáluje element k zadanému <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> objemy.|[Změna velikosti elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)|![Škálování obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-scale.png "graphicsmm_thumbnails_scale")|  
+|<xref:System.Windows.Media.SkewTransform>|Zkosí element o zadaný <xref:System.Windows.Media.SkewTransform.AngleX%2A> a <xref:System.Windows.Media.SkewTransform.AngleY%2A> objemy.|[Zkosení elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)|![Obrázek zkreslit](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-skew.png "graphicsmm_thumbnails_skew")|  
+|<xref:System.Windows.Media.TranslateTransform>|Přesune (překládá) elementu k zadanému <xref:System.Windows.Media.TranslateTransform.X%2A> a <xref:System.Windows.Media.TranslateTransform.Y%2A> objemy.|[Překlad elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)|![Převede obrázek](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-translate.png "graphicsmm_thumbnails_translate")|  
   
  Pro vytvoření složitější transformace [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] poskytuje následující dvě třídy:  
   
 |Třída|Popis|Příklad|  
 |-----------|-----------------|-------------|  
-|<xref:System.Windows.Media.TransformGroup>|Skupiny více <xref:System.Windows.Media.TransformGroup> objekty do jednoho <xref:System.Windows.Media.Transform> , lze následně použít k transformaci vlastnosti.|[Použití více transformací k objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)|  
-|<xref:System.Windows.Media.MatrixTransform>|Vytvoří vlastní transformace, které nejsou k dispozici jinými <xref:System.Windows.Media.Transform> třídy. Při použití <xref:System.Windows.Media.MatrixTransform>, zpracovávají matice přímo.|[Použít MatrixTransform k vytvoření vlastních transformací](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)|  
+|<xref:System.Windows.Media.TransformGroup>|Skupiny více <xref:System.Windows.Media.TransformGroup> objekty do jednoho <xref:System.Windows.Media.Transform> , lze následně použít k transformaci vlastnosti.|[Použití několika transformací na objekt](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)|  
+|<xref:System.Windows.Media.MatrixTransform>|Vytvoří vlastní transformace, které nejsou k dispozici jinými <xref:System.Windows.Media.Transform> třídy. Při použití <xref:System.Windows.Media.MatrixTransform>, zpracovávají matice přímo.|[Vytvoření vlastních transformací pomocí MatrixTransform](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)|  
   
  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]také poskytuje [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] transformace. Další informace najdete v tématu <xref:System.Windows.Media.Media3D.Transform3D> třídy.  
   
@@ -162,5 +163,5 @@ LayoutTransform umožňuje otočit tlačítko
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Transform>  
  <xref:System.Windows.Media.Matrix>  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  
  [Ukázka 2-D transformací](http://go.microsoft.com/fwlink/?LinkID=158252)

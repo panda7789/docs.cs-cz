@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b899ae870fe92b31d7f4fcd088531f63694bd233
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9e9f934d6bff2c9ff3733551bca89b43920f3104
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="load-data-from-a-reader"></a>Načtení dat z čtečka čipových karet
 Pokud dokument XML je načíst pomocí <xref:System.Xml.XmlDocument.Load%2A> metoda a parametr <xref:System.Xml.XmlReader>, jsou rozdíly v chování, k níž dojde v porovnání s chování načítání dat z jiných formátů. Pokud čtečka je ve stavu počáteční <xref:System.Xml.XmlDocument.Load%2A> využívá celý obsah ze čtečky a vytvoří kódu XML modelu DOM (Document Object) ze všech dat ve čtečce.  
@@ -37,4 +40,4 @@ Pokud dokument XML je načíst pomocí <xref:System.Xml.XmlDocument.Load%2A> met
  Ve výchozím nastavení <xref:System.Xml.XmlDocument.Load%2A> neověřuje, zda je platný, pomocí definice typu dokumentu (DTD) nebo ověřování schématu XML. Pouze ověřuje, zda je soubor XML ve správném formátu. Aby k ověření, je potřeba vytvořit <xref:System.Xml.XmlReader> pomocí <xref:System.Xml.XmlReaderSettings> třídy. <xref:System.Xml.XmlReader> Třídy můžete vynutit pomocí DTD nebo schéma definition language (XSD) schématu ověření. <xref:System.Xml.ValidationType> Vlastnost <xref:System.Xml.XmlReaderSettings> Určuje třídu zda <xref:System.Xml.XmlReader> instance vynucuje ověřování. Další informace o ověření XML data, najdete v části poznámky <xref:System.Xml.XmlReader> stránka s referencemi k.  
   
 ## <a name="see-also"></a>Viz také  
- [XML Document Object Model (DOM).](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

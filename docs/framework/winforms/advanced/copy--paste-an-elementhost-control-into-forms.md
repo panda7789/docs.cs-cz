@@ -18,11 +18,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 65882925c6fbe3e9b393b139a937bc9a1f95ed04
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 579bce312296d9799f9f7c739f740e2c9111ccff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-copying-and-pasting-an-elementhost-control-into-separate-windows-forms"></a>Návod: Zkopírování a vložení ovládacího prvku ElementHost do samostatného formuláře Windows
 Tento návod ukazuje, jak kopírovat ovládacího prvku Windows Presentation Foundation (WPF) z jednoho formuláře Windows do jiného.  
@@ -77,6 +78,6 @@ Tento návod ukazuje, jak kopírovat ovládacího prvku Windows Presentation Fou
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
- [Migrace a vzájemná funkční spolupráce](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
- [Pomocí ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [Používání ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
  [Návrhář WPF](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)

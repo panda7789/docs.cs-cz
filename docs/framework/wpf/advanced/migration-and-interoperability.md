@@ -23,19 +23,20 @@ caps.latest.revision: "41"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3d469d5f53b97ec05e8714cff1ea663dda827a1a
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 28d1fd13c6f189010f676dad6a1e2c4b700da161
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migration-and-interoperability"></a>Migrace a interoperabilita
 Tato stránka obsahuje odkazy na dokumenty, které popisují, jak implementovat vzájemná spolupráce mezi [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací a dalších typů [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [WPF a vzájemná spolupráce Windows Forms](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)  
- [WPF a vzájemná spolupráce Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
- [WPF a vzájemná spolupráce procesu Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
+ [Vzájemná spolupráce subsystémů WPF a Windows Forms](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)  
+ [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
+ [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
   
 ## <a name="reference"></a>Odkaz  
   

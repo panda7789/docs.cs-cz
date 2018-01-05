@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0bf5f8dbf8718cb6a30883395d54c5cbc6bafaff
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 80503cd6fc2fc1c624cdd2aeb1ca3f699ffd9832
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-designate-a-windows-forms-button-as-the-accept-button"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout
 Na všechny formuláře Windows, můžete určit <xref:System.Windows.Forms.Button> ovládacího prvku tlačítko Přijmout, také známé jako výchozího tlačítka. Vždy, když uživatel stiskne klávesu ENTER, výchozí je stisknuto tlačítko bez ohledu na to, které další ovládací prvek na formuláři fokus.  
@@ -61,8 +62,8 @@ Na všechny formuláře Windows, můžete určit <xref:System.Windows.Forms.Butt
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Form.AcceptButton%2A>  
- [Přehled ovládacího prvku tlačítko](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku Button](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
  [Metody výběru ovládacího prvku Windows Forms Button](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
- [Postupy: reakce na kliknutí na tlačítko Windows Forms](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
- [Postupy: určení tlačítka Windows Forms tlačítka Storno](../../../../docs/framework/winforms/controls/how-to-designate-a-windows-forms-button-as-the-cancel-button.md)  
- [Tlačítko – ovládací prvek](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)
+ [Postupy: Reakce na kliknutí na tlačítko Windows Forms](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
+ [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit](../../../../docs/framework/winforms/controls/how-to-designate-a-windows-forms-button-as-the-cancel-button.md)  
+ [Ovládací prvek Button](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)

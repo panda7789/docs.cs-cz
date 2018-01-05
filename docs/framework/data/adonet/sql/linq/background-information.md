@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b10845bb985e1461ddc5e09c4a87e1a673899ad6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c504d86a44437c81aa7ff556947b6ddaff6f9de7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="background-information"></a>Základní informace
 Témata v této části se týkají koncepty a postupy, které přesahují základní informace o používání [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -31,13 +32,13 @@ Témata v této části se týkají koncepty a postupy, které přesahují zákl
 -   Prostudovali v dokumentu White Paper podrobně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie kompletní s [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] a příklady kódu pro C#. Další informace najdete v tématu [technologie LINQ to SQL: .NET Language-Integrated dotaz na relační Data](http://go.microsoft.com/fwlink/?LinkId=93205).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ADO.NET a technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/ado-net-and-linq-to-sql.md)  
+ [ADO.NET a LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/ado-net-and-linq-to-sql.md)  
  Popisuje vztah [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
- [Analýza technologie LINQ to SQL zdrojového kódu](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md)  
+ [Analýza zdrojového kódu LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md)  
  Popisuje, jak analyzovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapování generování a zobrazením zdrojového kódu z ukázková databáze Northwind.  
   
- [Přizpůsobení vložit, aktualizovat a odstraňovat operací](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)  
+ [Přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)  
  Popisuje postup přidání ověřovacího kódu a další přizpůsobení.  
   
  [Datová vazba](../../../../../../docs/framework/data/adonet/sql/linq/data-binding.md)  
@@ -46,31 +47,31 @@ Témata v této části se týkají koncepty a postupy, které přesahují zákl
  [Podpora dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md)  
  Popisuje roli dědičnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model a jak používat související operátorů v dotazech.  
   
- [Volání Local – metoda](../../../../../../docs/framework/data/adonet/sql/linq/local-method-calls.md)  
+ [Volání místních metod](../../../../../../docs/framework/data/adonet/sql/linq/local-method-calls.md)  
  Popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporu pro volání metod místní.  
   
- [N-vrstvá a vzdálené aplikace s dotazy LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
+ [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
  Obsahuje podrobné informace o vícevrstvé aplikace, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
- [Identity – objekt](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
+ [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
  Popisuje identity objektu v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektu modelu a vysvětluje, jak se tato funkce se liší od identity objektu v databázi.  
   
- [Technologie LINQ to SQL objektový Model](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)  
+ [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)  
  Popisuje model objektu a jeho relace pro relační datový model.  
   
  [Stavy objektů a sledování změn](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md)  
  Poskytuje podrobné informace o tom [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sleduje změny.  
   
- [Optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)  
+ [Optimistická metoda souběžného zpracování: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)  
  Popisuje optimistickou metodu souběžného a definuje termíny.  
   
- [Koncepty dotazu](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
+ [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
  Popisuje aspekty dotazů v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] které se liší od dotazy v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
   
- [Načítání objektů z mezipaměti Identity](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md)  
+ [Načítání objektů z mezipaměti identit](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md)  
  Popisuje typy dotazů, které načtení objektů z mezipaměti identity.  
   
- [Zabezpečení v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)  
+ [Zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)  
  Popisuje správný přístup k zabezpečení připojení databáze.  
   
  [Serializace](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)  
@@ -82,10 +83,10 @@ Témata v této části se týkají koncepty a postupy, které přesahují zákl
  [Podpora transakcí](../../../../../../docs/framework/data/adonet/sql/linq/transaction-support.md)  
  Popisuje tři modely transakce, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje.  
   
- [Neshody typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)  
+ [Neshody typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)  
  Popisuje výzvám identitě systémy jiného typu.  
   
- [Mapování vlastních typů SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)  
+ [Mapování vlastních typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)  
  Obsahuje pokyny k přizpůsobení mapování typů.  
   
  [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)  

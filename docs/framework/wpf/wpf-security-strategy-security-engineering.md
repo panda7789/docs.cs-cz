@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c9237ed7467e87cd3e6ba72418c6964ce918751c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f5b26e63b7671e3ea37c150055f9aa646ec8293c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativa Microsoft pro zajištění provozní zabezpečené kódu. Je klíčovým prvkem iniciativy Trustworthy Computing [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Engineering postupem, který se používá ve spojení s standardní technického procesu usnadňuje doručování zabezpečený kód je. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Se skládá z deset fází, které se zkombinovat osvědčené postupy s oblast, measurability a další struktura, včetně:  
@@ -101,8 +102,8 @@ Trustworthy Computing je iniciativa Microsoft pro zajištění provozní zabezpe
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)  
- [Částečná důvěryhodnost zabezpečení WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
- [Strategie zabezpečení WPF - platformy zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
+ [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
+ [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
  [Trustworthy Computing](http://www.microsoft.com/mscorp/twc/default.mspx)  
  [Modelování aplikace hrozeb](http://msdn.microsoft.com/security/securecode/threatmodeling/acetm/)  
  [Pokyny pro zabezpečení: Rozhraní .NET Framework 2.0](http://msdn.microsoft.com/library/default.asp?url=/library/dnpag2/html/PAGGuidelines0003.asp)

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8a8a5ed3758f6d0b1a013f3a4b43d5deda946c0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: aee10810b705c032d63d7e6d33891f9d2cae2ecc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="4804---discoverymessagereceivedafteroperationcompleted"></a>4804 – DiscoveryMessageReceivedAfterOperationCompleted
 ## <a name="properties"></a>Vlastnosti  

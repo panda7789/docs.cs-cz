@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: de808e333506858d6591dab6c7c06e6a3e9ddabd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fdf3f12b325282b048420f57befa752f3f3f6803
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Příklad: Řešení potíží s dynamické programování
 > [!NOTE]
@@ -70,4 +71,4 @@ AppViewModel.Current.LayoutVM.PageMap
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)  
- [Příklad: Zpracování výjimek, pokud vazba dat](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)
+ [Příklad: Zpracování výjimek při vázání dat](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)

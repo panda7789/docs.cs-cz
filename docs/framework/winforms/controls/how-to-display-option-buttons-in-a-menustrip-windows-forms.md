@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15f2d1492148a4b00a4b96844f546a4dc968eef6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f0de3b8596bc06c79f391141ef85fec65ac343d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-option-buttons-in-a-menustrip-windows-forms"></a>Postupy: Zobrazení tlačítek možností v MenuStrip (Windows Forms)
 Přepínače, také známé jako přepínače, jsou podobná zaškrtněte políčka s tím rozdílem, že uživatelé mohou vybrat vždy pouze jednu. I když ve výchozím nastavení <xref:System.Windows.Forms.ToolStripMenuItem> třída nenabízí možnost tlačítko chování, třída poskytuje chování zaškrtávací políčko, kterou si můžete přizpůsobit pro implementaci – tlačítko chování položek nabídky v <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
@@ -99,5 +100,5 @@ Přepínače, také známé jako přepínače, jsou podobná zaškrtněte polí�
  <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.RadioButtonRenderer>  
- [MenuStrip – ovládací prvek](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)  
- [Postupy: implementace vlastního prvku ToolStripRenderer](../../../../docs/framework/winforms/controls/how-to-implement-a-custom-toolstriprenderer.md)
+ [Ovládací prvek MenuStrip](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)  
+ [Postupy: Implementace vlastního prvku ToolStripRenderer](../../../../docs/framework/winforms/controls/how-to-implement-a-custom-toolstriprenderer.md)

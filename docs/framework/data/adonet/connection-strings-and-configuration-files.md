@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: fe56dc279471f77a3f9ae014f65faaa99a113624
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87406da2c591f9f3a8f47adb2029bf1e239cc64e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení zabezpečení a problémy při údržbě. Nezašifrované připojovací řetězce zkompilovat do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Navíc pokud se připojovací řetězec někdy změní, musí zopakovat vaší aplikace. Z těchto důvodů doporučujeme ukládání připojovacích řetězců v konfiguračním souboru aplikace.  
@@ -180,7 +181,7 @@ Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení 
  Další informace zabezpečení aplikace ASP.NET najdete v tématu [NIB: zabezpečení ASP.NET](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d) a [postupy zabezpečení ASP.NET 2.0 na první pohled](http://go.microsoft.com/fwlink/?LinkId=59997) v Centru pro vývojáře technologie ASP.NET.  
   
 ## <a name="see-also"></a>Viz také  
- [Tvůrci řetězců pro připojení](../../../../docs/framework/data/adonet/connection-string-builders.md)  
+ [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [Pomocí třídy konfigurace](http://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)  
  [Konfigurace aplikací](../../../../docs/framework/configure-apps/index.md)  

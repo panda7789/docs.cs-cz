@@ -16,17 +16,18 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1c3f5a197be1ace2fc4f039baf783492db77bed7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d50ab37a90df418b031cb8aba5d84f0bbac9a1d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-clients"></a>Sestavování klientů
 Témata v této části ukazují, jak vytvořit a použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] klienta.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Klienti WCF – přehled](../../../docs/framework/wcf/wcf-client-overview.md)  
+ [Přehled klientů WCF](../../../docs/framework/wcf/wcf-client-overview.md)  
  Obsahuje přehled [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klientů a jejich funkce.  
   
  [Přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  

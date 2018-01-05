@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b5e467c86a95316ddb88cc0d580fbde04ff2fc25
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c59ea9a41e0d33661841080a9820430e6e359eeb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endpoint-call-duration"></a>Koncový bod: Doba volání
 Průměrná doba volání k tomuto koncovému bodu.  Průměrná doba se počítá podle této rovnice: (N1-N0)/(D1-D0).  

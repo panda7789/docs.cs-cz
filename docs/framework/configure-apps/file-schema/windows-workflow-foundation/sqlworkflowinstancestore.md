@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d412e13dc42107d2bfe11c94e51e9690d0c5206b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 530d515c3913bb103fcc1b5f0c76670db03b71b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsqlworkflowinstancestoregt"></a>&lt;sqlWorkflowInstanceStore&gt;
 Chování služby, který umožňuje nakonfigurovat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci, která podporuje zachování informací o stavu pro instance služby pracovního postupu do databáze systému SQL Server 2005 nebo SQL Server 2008. Další informace o této funkci najdete v tématu [úložiště Instance pracovního postupu SQL](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).  
@@ -72,4 +73,4 @@ Chování služby, který umožňuje nakonfigurovat <xref:System.Activities.Dura
  <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>  
  <xref:System.ServiceModel.Activities.Configuration.SqlWorkflowInstanceStoreElement>  
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>  
- [Ukládání Instance pracovního postupu SQL](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)
+ [Úložiště instancí pracovních postupů SQL](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)

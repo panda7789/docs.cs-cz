@@ -14,11 +14,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc42aa130ce5da05739af43d287441d1644d55c3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a8890cc05ec6b0b889dafcb787e216b50a681876
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-architecture-overview"></a>Přehled architektury metadat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohaté infrastrukturu pro export, publikování, načítání a Import metadata služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby používají metadata k popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, může automaticky generovat kód klienta pro přístup k službě.  
@@ -102,6 +103,6 @@ ms.lasthandoff: 12/02/2017
  [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)  
  [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
  [Načítání metadat](../../../../docs/framework/wcf/feature-details/retrieving-metadata.md)  
- [Pomocí metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [Aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
+ [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
  [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)

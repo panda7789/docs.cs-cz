@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2773042c695320ab1e90d4c5d341e2df5f0f778f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1cd58c53deec0a895ae6f67cccf26d2c8c2530be
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostthreadpoolmanager-interface"></a>IHostThreadPoolManager – rozhraní
 Poskytuje metody, které umožní modul CLR (CLR) ke konfiguraci fondu vláken a do fronty pracovních položek pro fond vláken.  
@@ -32,12 +33,12 @@ Poskytuje metody, které umožní modul CLR (CLR) ke konfiguraci fondu vláken a
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Getavailablethreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getavailablethreads-method.md)|Získá počet vláken ve fondu vláken, která nejsou aktuálně zpracování pracovní položky.|  
-|[Getmaxthreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)|Získá maximální počet vláken, která udržuje hostitele současně ve fondu vláken.|  
-|[Getminthreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getminthreads-method.md)|Získá minimální počet nečinných vláken, která udržuje hostitele v předvídání požadavků.|  
+|[GetAvailableThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getavailablethreads-method.md)|Získá počet vláken ve fondu vláken, která nejsou aktuálně zpracování pracovní položky.|  
+|[GetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)|Získá maximální počet vláken, která udržuje hostitele současně ve fondu vláken.|  
+|[GetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getminthreads-method.md)|Získá minimální počet nečinných vláken, která udržuje hostitele v předvídání požadavků.|  
 |[QueueUserWorkItem – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md)|Funkce pro spuštění front a poskytuje objekt obsahující data, která má být používána funkce.|  
 |[SetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setmaxthreads-method.md)|Nastaví maximální počet vláken, které hostitele může udržují ve fondu vláken.|  
-|[Setminthreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)|Nastaví minimální počet nečinných vláken, která musí zachovat hostitele v předvídání požadavků.|  
+|[SetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)|Nastaví minimální počet nečinných vláken, která musí zachovat hostitele v předvídání požadavků.|  
   
 ## <a name="remarks"></a>Poznámky  
  Hostitel není potřeba konfigurovat fond vláken pomocí hodnoty zadané ve volání `SetMaxThreads` a `SetMinThreads` metody. V takovém případě by měl vrátit hostitele má hodnotu HRESULT E_NOTIMPL z těchto metod.  
@@ -54,4 +55,4 @@ Poskytuje metody, které umožní modul CLR (CLR) ke konfiguraci fondu vláken a
 ## <a name="see-also"></a>Viz také  
  <xref:System.Threading>  
  <xref:System.Threading.ThreadPool>  
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

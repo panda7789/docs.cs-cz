@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 082dbff66c8a0f06635936011f802c99b88e41df
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dd2162cd2b538b5c6277991fab0ce40762f6c07d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pagesetupdialog-component-overview-windows-forms"></a>PageSetupDialog – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PageSetupDialog> součást je předem nakonfigurovaný dialogové okno, použije se k nastavení stránky podrobnosti pro tisk v aplikacích založených na systému Windows. Použijte je v rámci aplikace systému Windows jako jednoduchým řešením pro uživatele k nastavení předvoleb stránky místo dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí stránky a výšku nebo na šířku. Podle standardní dialogová okna Windows, můžete vytvořit aplikace, jehož základní funkce je dobře obeznámeni uživatele.  
@@ -33,4 +34,4 @@ Windows Forms <xref:System.Windows.Forms.PageSetupDialog> součást je předem n
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.PageSetupDialog>  
- [PageSetupDialog – komponenta](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)
+ [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)

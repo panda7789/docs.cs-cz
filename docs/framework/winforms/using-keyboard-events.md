@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 19bad48188a039baeeb6365a2cd38671f83fca4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 394ebc503338ad73001aa9859e0aa0d9c3fa42b4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-keyboard-events"></a>Použití událostí klávesnice
 Zpracování události klávesnice zpracování většiny programů Windows Forms vstup z klávesnice. Toto téma obsahuje základní informace o události klávesnice, včetně podrobnosti o použití každé události a data, která je zadána pro každou jednotlivou událost.  Viz také [Přehled obslužných rutin událostí (Windows Forms)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\)), [Přehled událostí (Windows Forms)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\)).  
@@ -49,6 +50,6 @@ Zpracování události klávesnice zpracování většiny programů Windows Form
 |<xref:System.Windows.Forms.Control.KeyUp>|Tato událost se vyvolá, když uživatel uvolní fyzické klíč.|Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyUp> obdrží:<br /><br /> <ul><li>A <xref:System.Windows.Forms.KeyEventArgs> parametr:<br /><br /> <ul><li>Který nabízí <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> (který určuje fyzické klávesnice tlačítko).</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> Vlastnost (SHIFT, CTRL nebo ALT).</li><li><xref:System.Globalization.SortKey.KeyData%2A> (Který spojuje klíče kódu a modifikátor).</li></ul></li></ul>|  
   
 ## <a name="see-also"></a>Viz také  
- [Vstup z klávesnice ve Windows Forms aplikace](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
+ [Vstup z klávesnice v aplikaci Windows Forms](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
  [Jak funguje vstup z klávesnice](../../../docs/framework/winforms/how-keyboard-input-works.md)  
- [Vstup z myši ve Windows Forms aplikace](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+ [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

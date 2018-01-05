@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cbc0fc790ce6ed9de2a920c851ee6656fa3abaa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9f534bab962e83f76dab7e411cc3c2ca14779df9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttcptransportgt"></a>&lt;tcpTransport&gt;
 Definuje přenos TCP, který lze použít pro vlastní vazby pomocí kanálu pro přenos zpráv.  
@@ -99,6 +100,6 @@ Definuje přenos TCP, který lze použít pro vlastní vazby pomocí kanálu pro
  [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)  
  [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

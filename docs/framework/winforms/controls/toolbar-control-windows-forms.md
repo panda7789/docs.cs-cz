@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 18fc87d4ebccd101bec47abd39805746d0b9ef81
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 204c4229852d4e91d2af7a27163c7418b9a1e9b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolbar-control-windows-forms"></a>ToolBar – ovládací prvek (Windows Forms)
 > [!NOTE]
@@ -32,16 +33,16 @@ ms.lasthandoff: 10/18/2017
 >  `ToolBar` Ovládacího prvku <xref:System.Windows.Forms.ToolBarButton.DropDownMenu%2A> vlastnost přijímá instanci <xref:System.Windows.Forms.ContextMenu> třída jako odkaz. Pečlivě zvažte, předáte při implementaci této řazení tlačítka na panely nástrojů v aplikaci jako vlastnost bude přijímat všechny objektu, který dědí z odkazu <xref:System.Windows.Forms.Menu> třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku panel nástrojů](../../../../docs/framework/winforms/controls/toolbar-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku ToolBar](../../../../docs/framework/winforms/controls/toolbar-control-overview-windows-forms.md)  
  Představuje obecné koncepty `ToolBar` řízení, které je možné vytvořit vlastní panely nástrojů, které vaši uživatelé můžete pracovat.  
   
- [Postupy: přidávání tlačítek do ovládacího prvku panel nástrojů](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  
+ [Postupy: Přidání tlačítek do ovládacího prvku ToolBar](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  
  Popisuje postup přidání tlačítek `ToolBar` ovládacího prvku.  
   
- [Postupy: definování ikony pro tlačítko panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
+ [Postupy: Definování ikony pro tlačítko ToolBar](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
  Popisuje, jak zobrazit ikony v rámci `ToolBar` ovládacího prvku tlačítka.  
   
- [Postupy: spouštění událostí nabídky pro tlačítka panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)  
+ [Postupy: Spouštění událostí nabídky pro tlačítka panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)  
  Poskytuje pokyny na psaní kódu interpretovat, které tlačítko uživatel klikne v `ToolBar` ovládacího prvku.  
   
  Viz také [postupy: definování ikony pro panelu nástrojů tlačítko pomocí návrháře](http://msdn.microsoft.com/library/ms233659\(v=vs.110\)), [postupy: přidání tlačítek na panelu nástrojů ovládacího prvku pomocí návrháře](http://msdn.microsoft.com/library/ms233650\(v=vs.110\)).  
@@ -51,8 +52,8 @@ ms.lasthandoff: 10/18/2017
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
   
- [ToolStrip – ovládací prvek](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
+ [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
  Popisuje panely nástrojů, které může být hostitelem nabídek, ovládacích prvků a uživatelské ovládací prvky v aplikacích Windows Forms.

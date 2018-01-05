@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1133db68d233032b64d113a09e367781cf73321e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 876ebeb5568ffff0a10aa5a54ce96c256d237d86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="large-udts"></a>Velké UDT
 Uživatelem definované typy (UDT) umožňují vývojář rozšíření systému skalárního typu serveru uložením běžně používané objekty language runtime (CLR) v databázi systému SQL Server. UDT může obsahovat více elementů a může mít chování, na rozdíl od tradičních alias datové typy, které se skládají z jedné typ dat systému SQL Server.  
@@ -143,7 +144,7 @@ End Using
   
 ## <a name="see-also"></a>Viz také  
  [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
- [Načítání informací o schématu databáze](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [Mapování datového typu SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- [Binární a velké hodnoty dat systému SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Načítání informací o databázovém schématu](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

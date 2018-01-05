@@ -15,11 +15,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3c898dc24c9a4418e3af45fce507e6befcf905a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ed071a4d38a0167ac9414ee7d383736dd38a62a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printpreviewdialog-control-overview-windows-forms"></a>PrintPreviewDialog – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> řízení je předem nakonfigurovaný dialogové okno slouží k zobrazení jak [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) se zobrazí při tisku. Ji použijte v rámci aplikace systému Windows jako simple řešení namísto dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, přiblížení, zobrazení jednu nebo více stránek a zavření dialogového okna.  
@@ -31,6 +32,6 @@ Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> řízení je přede
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.PrintPreviewDialog>  
- [Printpreviewcontrol – ovládací prvek – přehled](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-overview-windows-forms.md)  
- [Printpreviewdialog – ovládací prvek](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
- [Dialogové okno – Ovládací prvky a součásti](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)
+ [Přehled ovládacího prvku PrintPreviewControl](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-overview-windows-forms.md)  
+ [Ovládací prvek PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
+ [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)

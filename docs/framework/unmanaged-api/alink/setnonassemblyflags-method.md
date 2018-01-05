@@ -19,11 +19,12 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c5f8761259e89b4befd0eeaf893ffbe5d4142350
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7e944f285ee0925b76fdd9b95c824deee38cead2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setnonassemblyflags-method"></a>SetNonAssemblyFlags – metoda
 Nastaví příznaky, které nejsou specifické pro sestavení.  
@@ -47,6 +48,6 @@ HRESULT SetNonAssemblyFlags(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také  
- [Ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Ialink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

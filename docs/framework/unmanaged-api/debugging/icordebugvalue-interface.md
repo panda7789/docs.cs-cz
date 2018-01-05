@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 01c94df1d8e6ddef0110268461a2b28f594201b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c3464b4ad963b2fe764cefc5868440b7748f8c4d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugvalue-interface1"></a>ICorDebugValue Interface1
 Reprezentuje hodnotu v procesu laděné. Hodnota může být pro čtení nebo zápisu hodnotu.  
@@ -32,10 +33,10 @@ Reprezentuje hodnotu v procesu laděné. Hodnota může být pro čtení nebo z�
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Createbreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-createbreakpoint-method.md)|Tato metoda není implementována aktuálně.|  
-|[Getaddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getaddress-method.md)|Získá adresu tohoto `ICorDebugValue` objekt, který je právě probíhá ladit.|  
-|[Getsize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md)|Získá velikost v bajtech to `ICorDebugValue` objektu.|  
-|[GETTYPE – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md)|Získá primitivní typ tohoto objektu `ICorDebugValue` objektu.|  
+|[CreateBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-createbreakpoint-method.md)|Tato metoda není implementována aktuálně.|  
+|[GetAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getaddress-method.md)|Získá adresu tohoto `ICorDebugValue` objekt, který je právě probíhá ladit.|  
+|[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md)|Získá velikost v bajtech to `ICorDebugValue` objektu.|  
+|[GetType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md)|Získá primitivní typ tohoto objektu `ICorDebugValue` objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Obecně platí vlastnictví objekt hodnoty se předá, když se vrátí. Pro odebrání odkaz z objektu po dokončení s daným objektem zodpovídá příjemce.  
@@ -59,5 +60,5 @@ Reprezentuje hodnotu v procesu laděné. Hodnota může být pro čtení nebo z�
     
     
     
- [ICorDebugValue3 – rozhraní rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [ICorDebugValue3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)  
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

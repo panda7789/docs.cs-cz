@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f1eb17af8fef96f42973e65859bd17b1e835fa98
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a74d25372b83c848621a44f6ea32a455a0f18ccf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Dynamické vytváření a kompilování zdrojového kódu
 Mechanismus volat Code Document Object Model (CodeDOM), která umožňuje vývojářům programy, které emitování zdrojového kódu ke generování zdrojového kódu ve více programovacích jazyků v době běhu na základě jednoho modelu, který představuje kód zahrnuje rozhraní .NET Framework k vykreslení.  
@@ -45,10 +46,10 @@ Mechanismus volat Code Document Object Model (CodeDOM), která umožňuje vývoj
  [Generování zdrojového kódu a kompilace programu z grafu modelu CodeDOM](../../../docs/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph.md)  
  Popisuje, jak generovat zdrojový kód a kompilace generovaného kódu s externí kompilátoru pomocí třídy definované v `System.CodeDom.Compiler` oboru názvů.  
   
- [Postupy: vytváření souborů dokumentace XML pomocí modelu CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-an-xml-documentation-file-using-codedom.md)  
+ [Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-an-xml-documentation-file-using-codedom.md)  
  Popisuje postup generování kódu s XML – dokumentační komentáře a kompilace generovaného kódu tak, aby vytvoří výstupní dokumentace XML pomocí modelu CodeDOM.  
   
- [Postupy: vytváření třídy pomocí modelu CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-a-class-using-codedom.md)  
+ [Postupy: Vytváření třídy pomocí modelu CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-a-class-using-codedom.md)  
  Popisuje, jak můžete vygenerovat třída obsahující pole, vlastností, metoda, konstruktor a vstupního bodu pomocí modelu CodeDOM.  
   
 ## <a name="reference"></a>Odkaz  

@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7fab2d0f7dfe94857a3c6c5cb6e8414360d3078e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9129b9c2776f46a719f42b74131b2b37146e930c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-dockpanel"></a>Postupy: Vytvoření objektu DockPanel
 ## <a name="example"></a>Příklad  
@@ -35,4 +36,4 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.DockPanel>  
  <xref:System.Windows.Controls.Dock>  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)

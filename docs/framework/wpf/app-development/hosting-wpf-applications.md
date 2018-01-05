@@ -18,23 +18,24 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2c61c4fd5651b8915971f67addeb162aca50108
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 051f37b0a7098cad5ac43766877cd973ca86e5b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-wpf-applications"></a>Hostování aplikací WPF
 WPF aplikace prohlížeče XAML (XBAP) jsou bohaté klientských aplikací, které můžete nasadit na webový server a spustit v prohlížeči. WPF hostitele (PresentationHost.exe) je zaregistrován jako prostředí a obslužné rutiny MIME pro soubory XBAP a XAML. Proto aplikace Internet Explorer zná zahájíte hostitele WPF při spuštění XBAP. Firefox uživatelé mohou nainstalovat Firefox doplňky, které umožňují Firefox hostitele XBAP také. XBAP je možné hostovat v jiné prohlížeče nebo samostatné aplikace pomocí nativní prohlížeče poskytuje hostování rozhraní API pomocí grafického subsystému WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled aplikace prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
-   [WPF hostitele (PresentationHost.exe)](../../../../docs/framework/wpf/app-development/wpf-host-presentationhost-exe.md)  
-  [Firefox doplňky pro podporu nasazení aplikace .NET](../../../../docs/framework/wpf/app-development/firefox-add-ons-to-support-net-application-deployment.md)  
-  [Nativní WPF prohlížeče hostování podporu rozhraní API](../../../../docs/framework/wpf/app-development/native-wpf-browser-hosting-support-apis.md)  
+ [Přehled aplikací Prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
+   [Hostitel WPF (PresentationHost.exe)](../../../../docs/framework/wpf/app-development/wpf-host-presentationhost-exe.md)  
+  [Doplňky Firefox pro podporu nasazení aplikace .NET](../../../../docs/framework/wpf/app-development/firefox-add-ons-to-support-net-application-deployment.md)  
+  [Nativní Prohlížeč WPF – rozhraní API pro podporu hostování](../../../../docs/framework/wpf/app-development/native-wpf-browser-hosting-support-apis.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
-  [Windows v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
-  [Navigace – přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+  [Windows ve WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
+  [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
   [Sestavení a nasazení](../../../../docs/framework/wpf/app-development/building-and-deploying-wpf-applications.md)

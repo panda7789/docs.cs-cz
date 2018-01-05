@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 244ea215b6668685920a454c1bd9da065076f38b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 36321606fe208233fb6114fe9568b655f0e1b400
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fusioninstallreference-structure"></a>FUSION_INSTALL_REFERENCE – struktura
 Představuje odkaz, který umožňuje aplikaci na sestavení, který má aplikace nainstalované v globální mezipaměti sestavení.  
@@ -58,5 +59,5 @@ typedef struct _FUSION_INSTALL_REFERENCE_ {
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Struktury fúzí](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
+ [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
  [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)

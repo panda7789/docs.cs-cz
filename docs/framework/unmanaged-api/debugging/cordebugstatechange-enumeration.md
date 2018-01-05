@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: caf49621342be0ff85ac3cb56b95bb87f524c3be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: da9d2bb793340aa4736e0b26ab9bf9d5ec7c546a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugstatechange-enumeration"></a>Výčet CorDebugStateChange
 Popisuje množství uložené v mezipaměti dat, která musí být odstraněn podle změn do procesu.  
@@ -59,5 +60,5 @@ typedef enum CorDebugStateChange
  **Verze rozhraní .NET framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+ [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
  [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

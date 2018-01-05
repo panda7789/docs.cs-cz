@@ -22,11 +22,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8a8d858228630147e1fbcdfab6a52fba5a63a566
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e7cd45c85f155da975ca17961ca49a5dc89800a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="varieties-of-custom-controls"></a>Typy vlastních ovládacích prvků
 S rozhraním .NET Framework můžete vytvořit a provádět nové ovládací prvky. Stejně jako stávající ovládací prvky prostřednictvím dědičnosti můžete rozšířit funkce známé uživatelského ovládacího prvku. Můžete také psát vlastní ovládací prvky, které provádějí vlastní Malování.  
@@ -117,8 +118,8 @@ S rozhraním .NET Framework můžete vytvořit a provádět nové ovládací prv
  Použití <xref:System.ComponentModel.DesignerAttribute> přidružit vašeho návrháře vlastního ovládacího prvku. Další informace najdete v tématu [rozšíření podpory návrhu](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2) a [postupy: vytvoření funkce systému Windows Forms ovládací prvek, trvá výhod z návrhu](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c).  
   
 ## <a name="see-also"></a>Viz také  
- [Vývoj vlastních Windows Forms – ovládací prvky s rozhraním .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
- [Postupy: vývoj ovládacího prvku jednoduché Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
- [Vývoj ovládacího prvku složené Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  
+ [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
+ [Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
+ [Vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  
  [Rozšíření podpory návrhu](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)  
  [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)

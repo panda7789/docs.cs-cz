@@ -13,18 +13,19 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be20fa22484cb002792a5bc714f2009fb342f644
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7b82c1821362b874f38f9419269708a7f61ab690
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exceptions-reference"></a>Přehled výjimek
 Tato část uvádí všechny výjimky v těchto oblastech generované [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]:  
   
- [IdentityModel](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/identitymodel-exceptions.md)  
+ [Model identit](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/identitymodel-exceptions.md)  
   
- [Integrace COM +](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/com-integration.md)  
+ [Integrace modelu COM+](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/com-integration.md)  
   
  [Konfigurace](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/configuration.md)  
   
@@ -34,15 +35,15 @@ Tato část uvádí všechny výjimky v těchto oblastech generované [!INCLUDE[
   
  Základní komunikace: Protokolu HTTP nebo HTTPS přenosové kanály  
   
- [Základní komunikace: Vnitřní duplexní režim přenosové kanály](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-internal-duplex-transport-channels.md)  
+ [Základní komunikace: Interní duplexní přenosové kanály](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-internal-duplex-transport-channels.md)  
   
  [Základní komunikace: Přenosové kanály pojmenovaného kanálu](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-named-pipe-transport-channels.md)  
   
- [Základní komunikace: TCP přenosové kanály](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-tcp-transport-channels.md)  
+ [Základní komunikace: Přenosové kanály TCP](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-tcp-transport-channels.md)  
   
- [Základní komunikace: Transportní rozhraní](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-transport-framework.md)  
+ [Základní komunikace: Transportní architektura](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-transport-framework.md)  
   
- [Základní komunikace: nástroje](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-utilities.md)  
+ [Základní komunikace: Nástroje](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-utilities.md)  
   
  [Základní komunikace: Podpora webového hostitele](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-webhost-support.md)  
   
@@ -50,9 +51,9 @@ Tato část uvádí všechny výjimky v těchto oblastech generované [!INCLUDE[
   
  [Hostování](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/hosting-exceptions.md)  
   
- [Rovnocenného kanálu](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/peer-channel.md)  
+ [Protokol Peer Channel](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/peer-channel.md)  
   
- [Transport integrace MSMQ](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/msmq-integration-transport.md)  
+ [Přenos integrace MSMQ](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/msmq-integration-transport.md)  
   
  [Přenos MSMQ](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/msmq-transport.md)  
   

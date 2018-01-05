@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7acca633a5a2b98d7c4b6dd64355996e763d6df
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d514b20381b44102076c776d12181df3838e4eaf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve formulářích Windows
 Pořadí je v pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný, stisknutím klávesy TAB. Každý formulář má svou vlastní pořadí. Výchozí pořadí je stejný jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí číslování začíná nula.  
@@ -65,7 +66,7 @@ Pořadí je v pořadí, ve kterém uživatel přesune fokus z jednoho ovládací
     >  Skupina přepínacích tlačítek má do jedné karty zastavit v době běhu. Vybrané tlačítko (to znamená, tlačítko s jeho <xref:System.Windows.Forms.RadioButton.Checked%2A> vlastnost nastavena na hodnotu `true`) má jeho <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavena na `true`, zatímco jiné tlačítka mají jejich <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost nastavena na hodnotu `false`. Další informace o seskupení <xref:System.Windows.Forms.RadioButton> najdete v části ovládací prvky, [seskupení Windows Forms RadioButton – ovládací prvky funkce jako sada](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/index.md)  
- [Uspořádání ovládacích prvků ve formulářích Windows](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- [Windows Forms – ovládací prvky podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+ [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
+ [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

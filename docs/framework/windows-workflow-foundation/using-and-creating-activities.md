@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b9330efdfdb9a92449e155a265d1c2c18cd3a310
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 699a8315cc300a241cc7004901fde9e207e56603
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-and-creating-activities"></a>Pomocí a vytvoření aktivity
 Témata v této části popisují aktivity poskytované systémem, které jsou k dispozici v [!INCLUDE[wf](../../../includes/wf-md.md)].  
@@ -26,5 +27,5 @@ Témata v této části popisují aktivity poskytované systémem, které jsou k
  [Knihovna předdefinovaných aktivit](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)  
  Popisuje aktivity poskytované systémem, které jsou k dispozici v [!INCLUDE[wf1](../../../includes/wf1-md.md)].  
   
- [Navrhování a implementace vlastních aktivit](../../../docs/framework/windows-workflow-foundation/designing-and-implementing-custom-activities.md)  
+ [Návrh a implementace vlastních aktivit](../../../docs/framework/windows-workflow-foundation/designing-and-implementing-custom-activities.md)  
  Popisuje, jak vytvořit vlastní aktivity se <xref:System.Activities.CodeActivity> nebo <xref:System.Activities.NativeActivity> metody.

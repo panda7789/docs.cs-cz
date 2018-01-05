@@ -14,11 +14,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08ebb19cb7fab8221ac1eb534777afffa0bad328
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: aac52f3c542f88adbca40c6cbbdddc734e12903b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-transaction-attributes"></a>Atributy transakce ServiceModel
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytne vlastnosti, na tři standard <xref:System.ServiceModel> atributy, které vám umožní nakonfigurovat chování transakce [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby:  

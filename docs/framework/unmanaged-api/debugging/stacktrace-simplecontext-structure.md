@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 87ce3d50d6da6a7c23b13fa10123033efbb6c52c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 756c1d4129aebedea46443613d286a51562a3896
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stacktracesimplecontext-structure"></a>StackTrace_SimpleContext – struktura
 Poskytuje jednoduché kontext, který jde použít místo úplné `CONTEXT` struktura.  

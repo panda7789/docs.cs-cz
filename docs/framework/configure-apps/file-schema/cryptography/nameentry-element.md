@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 507c71b5c13deeb7c1a81b6a4dd9604c3bd919f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7c9a4b4532d98b7dfc2484dab1bb57e5a26fa392
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnameentrygt-element"></a>&lt;nameEntry –&gt; – Element
 Mapuje název třídy algoritmus popisný název, který umožňuje jednu třídu k mít mnoho popisné názvy.  
@@ -48,7 +49,7 @@ Mapuje název třídy algoritmus popisný název, který umožňuje jednu tříd
 |Atribut|Popis|  
 |---------------|-----------------|  
 |**Jméno**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který implementuje třídu šifrování.|  
-|**– Třída**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md) element.|  
+|**class**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md) element.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

@@ -20,11 +20,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9decba052589bfcc3ecd7b2861dad51e9c51378a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 00c43ff4ca418d272dc00132907c5bcbc0c5bc8b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-complete-windows-forms-print-jobs"></a>Postupy: Dokončení tiskových úloh Windows Forms
 Textové editory a dalších aplikací, které zahrnují tisk často, bude poskytují možnost zobrazit zprávu uživatelům, tisková úloha je dokončena. Tuto funkci můžete zadat v systému Windows Forms pomocí zpracování <xref:System.Drawing.Printing.PrintDocument.EndPrint> události <xref:System.Drawing.Printing.PrintDocument> součásti.  
@@ -92,4 +93,4 @@ Textové editory a dalších aplikací, které zahrnují tisk často, bude posky
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Drawing.Printing.PrintDocument>  
- [Podpora tisku ve Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+ [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

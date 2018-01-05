@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 368021062a3ad49d2c63f92797c59b8c0f1cddfc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 46cc7d1be867ff94ca25d0d6ffaaf46a6dc9514b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="programming-with-assemblies"></a>Programování se sestaveními
 Sestavení jsou stavebními bloky rozhraní .NET Framework; tvoří základní jednotku nasazení, Správa verzí, opakované použití, aktivaci oborů a oprávnění zabezpečení. Sestavení poskytuje modulu CLR (Common Language Runtime) informace, které požaduje pro zjištění typu implementace. Jedná se o kolekci typů a prostředků, které jsou vytvořeny a společně tvoří logickou jednotku funkčnosti. V modulu runtime neexistuje typ mimo kontext sestavení.  
@@ -37,22 +38,22 @@ Sestavení jsou stavebními bloky rozhraní .NET Framework; tvoří základní j
  [Názvy sestavení](../../../docs/framework/app-domains/assembly-names.md)  
  Poskytuje přehled o pojmenování sestavení.  
   
- [Postupy: určení plně kvalifikovaný název sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+ [Postupy: Určení plně kvalifikovaného názvu sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
  Popisuje, jak určit plně kvalifikovaný název sestavení.  
   
- [Spouštění intranetových aplikací v režimu plné důvěryhodnosti](../../../docs/framework/app-domains/running-intranet-applications-in-full-trust.md)  
+ [Spouštění internetových aplikací v režimu plné důvěryhodnosti](../../../docs/framework/app-domains/running-intranet-applications-in-full-trust.md)  
  Popisuje, jak zadat starší verze zásad zabezpečení pro sestavení plné důvěryhodnosti ve sdílené složce intranetu.  
   
  [Umístění sestavení](../../../docs/framework/app-domains/assembly-location.md)  
  Poskytuje přehled o umístění sestavení.  
   
- [Postupy: vytvoření jednoho souboru sestavení](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
+ [Postupy: Vytváření sestavení s jediným souborem](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
  Popisuje, jak vytvořit jeden soubor sestavení.  
   
  [Vícesouborová sestavení](../../../docs/framework/app-domains/multifile-assemblies.md)  
  Popisuje důvody pro vytváření vícesouborového sestavení.  
   
- [Postupy: vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
+ [Postupy: Vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
  Popisuje postup vytvoření vícesouborového sestavení.  
   
  [Nastavování atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md)  
@@ -64,10 +65,10 @@ Sestavení jsou stavebními bloky rozhraní .NET Framework; tvoří základní j
  [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)  
  Popisuje postup zpoždění podepsání sestavení.  
   
- [Práce se sestaveními a globální mezipaměti sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  
+ [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  
  Popisuje, jak a proč přidat sestavení do globální mezipaměti sestavení a obsahuje témata s postupy.  
   
- [Postupy: zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
+ [Postupy: Zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
  Popisuje, jak používat MSIL Disassembler (Ildasm.exe) k zobrazení obsahu sestavení.  
   
  [Předávání typů v modulu Common Language Runtime](../../../docs/framework/app-domains/type-forwarding-in-the-common-language-runtime.md)  
@@ -78,10 +79,10 @@ Sestavení jsou stavebními bloky rozhraní .NET Framework; tvoří základní j
  Třída rozhraní .NET Framework, která představuje sestavení.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Postupy: získání typ a informace o členech ze sestavení](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
+ [Postupy: Získávání informací o typu a členu ze sestavení](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
  Popisuje, jak programově získat typ a další informace z sestavení.  
   
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  Poskytuje koncepční přehled common language runtime sestavení.  
   
  [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)  

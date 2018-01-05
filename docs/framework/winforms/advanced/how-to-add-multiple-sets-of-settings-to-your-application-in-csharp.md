@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec541a8f83990eec79226be7fb4880ef8dda639d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1d9bd7d0721aae8691fdbca4d7b934f820666536
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>Postupy: Přidání více množin nastavení do vaší aplikace v C# #
 V některých případech můžete chtít mít více sad nastavení v aplikaci. Například pokud vyvíjíte aplikace kde je očekávána určité skupiny nastavení, chcete-li změnit často, může být vhodné k oddělení všechny do jednoho souboru tak, aby soubor můžete nahradit velkoobchodních, a další nastavení neovlivní. Visual Studio můžete k přidání více množin nastavení do projektu. Další sad nastavení je možné přistupovat prostřednictvím objektu Properties.Settings.  
@@ -36,5 +37,5 @@ V některých případech můžete chtít mít více sad nastavení v aplikaci. 
 4.  Přidat a používat nastavení v tomto souboru, stejně jako jakýkoli jiný soubor nastavení. Tato skupina nastavení prostřednictvím objektu Properties.Settings můžete přistupovat.  
   
 ## <a name="see-also"></a>Viz také  
- [Použití nastavení aplikace a nastavení uživatele](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
+ [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
  [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)

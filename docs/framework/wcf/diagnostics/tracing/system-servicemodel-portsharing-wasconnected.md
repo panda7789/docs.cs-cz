@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 651a60639a0b938009dace9b82202d862f294544
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e906a7c2ceefb08d7b2bd99c77fdc6aa7080f9bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemservicemodelportsharingwasconnected"></a>System.ServiceModel.PortSharing.WasConnected
 System.ServiceModel.PortSharing.WasConnected  
@@ -27,5 +28,5 @@ System.ServiceModel.PortSharing.WasConnected
   
 ## <a name="see-also"></a>Viz také  
  [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení potíží s vaší aplikace pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a Diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+ [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

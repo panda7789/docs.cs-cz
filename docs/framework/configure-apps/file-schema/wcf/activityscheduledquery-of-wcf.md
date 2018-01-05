@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 260b77789df6a03b640895ed158c94bfd1533f9b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: afb421993c39e66e437a0ecbb35091532df61716
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltactivityscheduledquerygt-of-wcf"></a>&lt;activityScheduledQuery&gt; služby WCF
 Představuje kolekci dotazů, které se používají ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru záznamů aktivit naplánována.  
@@ -59,5 +60,5 @@ Představuje kolekci dotazů, které se používají ke sledování aktivitu nap
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityScheduledQueryElement>     
  <xref:System.Activities.Tracking.ActivityScheduledQuery>     
- [Pracovní postup sledování a trasování](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [Sledování profily](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+ [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

@@ -17,11 +17,12 @@ ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a7069762dd95636399c53c98e8bdef6f00be62c1
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 9836d8d02bb81fc19a5b3a1714e32fcefeb8791d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unmanaged-api-reference"></a>Nespravované rozhraní API
 Tato část obsahuje informace o nespravovaného rozhraní API, které je možné spravovat-související s kódem aplikace, jako je modulu runtime, kompilátory, disassemblers, obfuscators, ladicí programy a profilery.  
@@ -48,7 +49,7 @@ Tato část obsahuje informace o nespravovaného rozhraní API, které je možn�
  [Úložiště symbolů diagnostiky](../../../docs/framework/unmanaged-api/diagnostics/index.md)  
  Popisuje úložiště symbolů diagnostiky rozhraní API, která umožňuje kompilátoru ke generování informací o symbolu za účelem použití ladicí program.  
   
- [Fusion](../../../docs/framework/unmanaged-api/fusion/index.md)  
+ [Fúze](../../../docs/framework/unmanaged-api/fusion/index.md)  
  Popisuje rozhraní API fusion, která umožňuje hostitele modulu runtime pro přístup k vlastnostem prostředky aplikace, aby bylo možné najít správnou verzí tyto prostředky pro aplikaci.  
   
  [Hostování](../../../docs/framework/unmanaged-api/hosting/index.md)  
@@ -60,13 +61,13 @@ Tato část obsahuje informace o nespravovaného rozhraní API, které je možn�
  [Profilace](../../../docs/framework/unmanaged-api/profiling/index.md)  
  Popisuje profilování rozhraní API, které umožňuje profileru ke sledování provádění programu pomocí modulu CLR.  
   
- [Silné názvy](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
+ [Vytváření silných názvů](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
  Popisuje silné pojmenování API, která umožňuje klientovi ke správě podepsání sestavení silným názvem.  
 
- [Rozhraní WMI a čítače výkonu](wmi/index.md)  
+ [WMI a čítače výkonu](wmi/index.md)  
  Popisuje rozhraní API, která zabalení volání knihovny Windows Management Instrumentation (WMI).
   
- [Podpůrné funkce Tlbexp](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
+ [Pomocné funkce Tlbexp](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  Popisuje dvou pomocných funkcí a rozhraní používá Exportér knihovny typů (Tlbexp.exe) během procesu převodu sestavení na typu knihovny.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b759580a93f6b0ab0e3d84295b7ab8a0c48a7bb7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a29ceb6dd90645bc34c440117bafcd8afd774422
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discovery-samples"></a>Zjišťování (ukázky)
 Tato část obsahuje ukázky související s funkcí zjišťování.  
@@ -29,25 +30,25 @@ Tato část obsahuje ukázky související s funkcí zjišťování.
  [Asynchronní hledání](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)  
  Ukazuje, jak provést asynchronního hledání pro vyhledání všech služeb kalkulačky.  
   
- [Základní](../../../../docs/framework/wcf/samples/basic-sample.md)  
+ [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)  
  Ukazuje, jak zjistitelnost služby prostřednictvím kódu programu a také hledat pomocí této služby <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  
   
  [Konfigurace](../../../../docs/framework/wcf/samples/configuration-sample.md)  
  Ukazuje, jak pomocí konfiguračního souboru zjistitelnost služby a také jak používat <xref:System.ServiceModel.Discovery.DynamicEndpoint> prostřednictvím konfigurace a hledat v této službě.  
   
- [Zjišťování – ukázka prvky vazby](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)  
+ [Ukázka elementu vazby zjišťování](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)  
  Demonstruje postup přidá prvek ke zjišťování vazby na vlastní vazby. To umožňuje klientům zjišťování služby po otevření kanálu.  
   
- [Ukázka proxy serveru zjišťování](../../../../docs/framework/wcf/samples/discovery-proxy-sample.md)  
+ [Ukázka proxy zjišťování](../../../../docs/framework/wcf/samples/discovery-proxy-sample.md)  
  Ukazuje, jak vytvořit implementace zjišťování proxy k uložení informací o existujících služeb a jak se klienti mohou odesílat dotazy tento proxy server pro informace.  
   
- [Zjišťování služby s ukázka listenurimode nastavenou na Unique](../../../../docs/framework/wcf/samples/discover-a-service-with-unique-listen-uri-mode-sample.md)  
+ [Ukázka zjišťování služby s vlastností ListenUriMode nastavenou na Unique](../../../../docs/framework/wcf/samples/discover-a-service-with-unique-listen-uri-mode-sample.md)  
  Ukazuje, jak zjistit službu, která má <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> vlastnost nastavena na hodnotu <xref:System.ServiceModel.Description.ListenUriMode.Unique>.  
   
  [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
  Ukazuje, jak pomocí oborů zařadit do kategorií zjistitelný koncových bodů a jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> pro asynchronní vyhledávání pro koncové body.  
   
- [Vlastní kritérium hledání](../../../../docs/framework/wcf/samples/custom-find-criteria.md)  
+ [Vlastní kritéria hledání](../../../../docs/framework/wcf/samples/custom-find-criteria.md)  
  Ukazuje, jak vytvořit vlastní rozsah odpovídající pomocí logiky a jak implementovat vlastní zjišťování služby.  
   
  [Ukázka zjišťování pracovního postupu](../../../../docs/framework/wcf/samples/workflow-discovery-sample.md)  

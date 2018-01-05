@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 17f5c8ede620a061bb80f98652497de0a165b06c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 35251c5e2a713463510b3ff8b65e9096385c6bcf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformaci XSLT na datové sady
 **WriteXml** metodu <xref:System.Data.DataSet> umožňuje psát obsah **datovou sadu** jako XML data. Běžné úlohy je pak transformace této XML do jiného formátu použití transformací XSL (XSLT). Ale synchronizace **datovou sadu** s <xref:System.Xml.XmlDataDocument> umožňuje použít šablonu stylů XSLT k obsahu **datovou sadu** bez nutnosti nejprve psaní obsah  **Datová sada** jako data XML pomocí **WriteXml**.  
@@ -134,5 +135,5 @@ writer.Close();
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Datové sady a XmlDataDocument synchronizace](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
+ [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

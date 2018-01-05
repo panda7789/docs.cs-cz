@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9a260143e36939f4201d7949f5783f80e5c20ba7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c36688af3ab8941a7004061add8598a480f3e202
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilerinfogetinprocinspectionithisthread-method"></a>ICorProfilerInfo::GetInprocInspectionIThisThread – metoda
 Získá objekt, který může být dotazován pro rozhraní ICorDebugThread. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.  
@@ -54,4 +55,4 @@ HRESULT GetInprocInspectionIThisThread(
  **Verze rozhraní .NET framework:** 1.0  
   
 ## <a name="see-also"></a>Viz také  
- [Icorprofilerinfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+ [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

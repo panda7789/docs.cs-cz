@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e5f06d155972846b3c04a60d448b300d8cdc5d1c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f6d1eb698dbb9168bf5de6d3982e19e69d170ac0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="statusstrip-control-overview"></a>StatusStrip – přehled ovládacího prvku
 A <xref:System.Windows.Forms.StatusStrip> ovládací prvek zobrazí informace o objektu se zobrazit na <xref:System.Windows.Forms.Form>, součásti objektu nebo kontextové informace, která má vztah k operaci tento objekt v rámci vaší aplikace. Obvykle <xref:System.Windows.Forms.StatusStrip> řízení se skládá z <xref:System.Windows.Forms.ToolStripStatusLabel> objekty, z nichž každý zobrazí text, ikonu nebo obojí. <xref:System.Windows.Forms.StatusStrip> Může také obsahovat <xref:System.Windows.Forms.ToolStripDropDownButton>, <xref:System.Windows.Forms.ToolStripSplitButton>, a <xref:System.Windows.Forms.ToolStripProgressBar> ovládací prvky.  

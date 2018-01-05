@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2e3a9701bab27764803442a3cd0c24c4e412deaf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: fe034d2bc6d70e820fa3ad5de8140afa9a19a6bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map – metoda
 Mapuje vztah mezi sestavení pomocí metadat podpisy.  
@@ -59,4 +60,4 @@ HRESULT Map (
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Imaptoken – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)
+ [IMapToken – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)

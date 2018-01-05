@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3621b05f1faae671d93106f50dfef1311959e48e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c1c11ca487003e57a499b3ff46178350e6aad404
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resizing-columns-and-rows-in-the-windows-forms-datagridview-control"></a>Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení poskytuje mnoho možností pro přizpůsobení chování nastavení velikosti řádků a sloupců. Obvykle `DataGridView` není změna velikosti buněk podle jejich obsah. Místo toho oříznutí zobrazovanou hodnotu, která je větší než buňky. Pokud obsah může být zobrazena jako řetězec, zobrazí se buňky v popisu tlačítka.  
@@ -37,13 +38,13 @@ ms.lasthandoff: 10/22/2017
  [Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)  
  Režim vyplnění sloupce podrobně popisuje a poskytuje ukázkový kód, který můžete experimentovat s režim vyplnění sloupce a další režimy.  
   
- [Postupy: nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
+ [Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
  Popisuje postup konfigurace režimů změny velikosti pro běžné účely.  
   
- [Postupy: programové Změna velikosti buněk podle obsahu v systému Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
+ [Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
  Poskytuje ukázkový kód, který můžete experimentovat s Programová změna velikosti.  
   
- [Postupy: Automatická změna velikosti buněk při obsahu změny v systému Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
+ [Postupy: Automatická změna velikosti buněk při změně obsahu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
  Poskytuje ukázkový kód, který můžete experimentovat s režimy Automatická změna velikosti.  
   
 ## <a name="reference"></a>Odkaz  
@@ -51,4 +52,4 @@ ms.lasthandoff: 10/22/2017
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také  
- [DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
+ [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d7637a9d49100d3a46ceb3c49769cacae14b5e8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e51235105e9d2cdb1cad3847fb00ad5604061564
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pausing-and-resuming-a-workflow"></a>Pozastavení a obnovení pracovního postupu
 Pracovní postupy budou pozastavení a obnovení v reakci na záložky a blokování aktivity, jako <xref:System.Activities.Statements.Delay>, ale pracovní postup může také být explicitně pozastavena, odpojeno a obnovit pomocí trvalosti.  

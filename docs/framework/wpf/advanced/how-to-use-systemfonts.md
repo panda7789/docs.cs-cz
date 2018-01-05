@@ -20,11 +20,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ce82724a4e9a547b8441628f43621f29eab6307
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2579926dfc71028590e09993e2773ee2cfac1505
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání tipů SystemFonts
 Tento příklad ukazuje, jak používat statické prostředky <xref:System.Windows.SystemFonts> třídy za účelem styl nebo na tlačítko Přizpůsobit.  
@@ -48,10 +49,10 @@ Tento příklad ukazuje, jak používat statické prostředky <xref:System.Windo
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.SystemFonts>  
- [Malovat oblast štětcem systému](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
- [Použití SystemParameters](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)  
- [Používejte klíče písem systému](../../../../docs/framework/wpf/advanced/how-to-use-system-fonts-keys.md)  
- [Postupy: témata](../../../../docs/framework/wpf/advanced/resources-how-to-topics.md)  
- [x: Static – rozšíření značek](../../../../docs/framework/xaml-services/x-static-markup-extension.md)  
+ [Vykreslení oblasti systémovým štětcem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
+ [Používání třídy SystemParameters](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)  
+ [Použití klíčů systémových písem](../../../../docs/framework/wpf/advanced/how-to-use-system-fonts-keys.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/advanced/resources-how-to-topics.md)  
+ [x:Static – rozšíření značek](../../../../docs/framework/xaml-services/x-static-markup-extension.md)  
  [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [– Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)
+ [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)

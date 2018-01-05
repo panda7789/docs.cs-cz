@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50521591af6f77b98e52aa4a847216f63186d78b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fad26de46f3af04ae0340da6aa02bbe454e77e6f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>Postupy: Dědění formulářů pomocí dialogového okna Výběr dědičnosti
 Nejjednodušší způsob, jak dědit formuláře nebo jiného objektu je použití **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
@@ -67,7 +68,7 @@ Nejjednodušší způsob, jak dědit formuláře nebo jiného objektu je použit
     >  Když zkombinujete s standardní ovládací prvky a součásti v rozhraní Windows Forms zděděné ovládací prvky a součásti, můžete se setkat je v konfliktu s pořadí z-ordering. Můžete to vyřešit změnou pořadí, které se provádí v kliknete na **formátu** nabídky, přejdete na příkaz **pořadí**a pak levým na **přenést dopředu** nebo  **Přenést do pozadí**. Další informace o pořadí vykreslování ovládacích prvků najdete v tématu [postup: vrstva objektů ve formulářích Windows](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Inherits – příkaz](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
- [pomocí](~/docs/csharp/language-reference/keywords/using.md)  
+ [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
+ [using](~/docs/csharp/language-reference/keywords/using.md)  
  [Účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)  
- [Vizuální dědění Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)
+ [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)

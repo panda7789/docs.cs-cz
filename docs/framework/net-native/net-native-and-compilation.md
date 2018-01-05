@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5a15ac314590b9b7e240e759b9482eafb7071cd3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d86d8a740aa0597a21c6665ee722f4a601dec9bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-native-and-compilation"></a>.NET Native a kompilace
 Aplikace Windows 8.1 a Windows Desktop aplikace, které cílí na rozhraní.NET Framework jsou napsané v konkrétní programovací jazyk a zkompilovat do převodní jazyk (IL). V době běhu kompilátor za běhu (JIT) zodpovídá za kompilace IL do nativního kódu pro místní počítač, těsně před je metoda spuštěna poprvé. Naproti tomu řetězu .NET Native nástroj převede zdrojového kódu do nativního kódu v době kompilace. Toto téma porovnává .NET Native s jinými technologiemi kompilace k dispozici pro aplikace .NET Framework a také poskytuje praktické přehled o tom, jak .NET Native vytváří nativní kód, který vám může pomoct pochopit, proč výjimky, které se objeví v kódu kompilovat s .NET Nativní se nevyskytují v kompilována kódu.  
@@ -112,4 +113,4 @@ Aplikace Windows 8.1 a Windows Desktop aplikace, které cílí na rozhraní.NET 
  [Metadata a komponenty popisující samy sebe](../../../docs/standard/metadata-and-self-describing-components.md)  
  [Uvnitř .NET Native (Video na kanálu 9)](http://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)  
  [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)  
- [Řešení potíží s .NET native obecné](../../../docs/framework/net-native/net-native-general-troubleshooting.md)
+ [Obecné řešení potíží s .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)

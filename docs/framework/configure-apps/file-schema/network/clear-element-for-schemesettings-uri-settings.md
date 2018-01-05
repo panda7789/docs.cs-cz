@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: a2a4841635b5d6bcaa49d024dd92241573473036
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ffbe875e99376a7c782f177438709bcbb0ccb528
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-schemesettings-uri-settings"></a>&lt;Vymazat&gt; Element pro schemeSettings (nastavení Uri)
 Vymaže všechna existující nastavení schéma.  

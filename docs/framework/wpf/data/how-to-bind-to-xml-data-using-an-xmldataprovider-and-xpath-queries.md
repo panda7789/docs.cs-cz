@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 06a515b266b2787c24e95b461075d9059e4311dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 92037be2280eaa248951ff9bad82b7a1581a4fd9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath
 Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] dat pomocí <xref:System.Windows.Data.XmlDataProvider>.  
@@ -70,8 +71,8 @@ Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Data.ObjectDataProvider>  
- [Vytvořit vazbu na XDocument, XElement nebo LINQ na výsledky dotazu XML](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)  
- [Použití vzoru seznam podrobnosti s daty hierarchické XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
+ [Vytvoření vazby k XDocument, XElement nebo LINQ pro výsledky XQuery](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)  
+ [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
  [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

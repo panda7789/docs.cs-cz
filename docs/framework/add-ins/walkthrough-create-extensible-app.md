@@ -22,11 +22,12 @@ caps.latest.revision: "32"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6609f30844421f94965fbe05114db96ed8edbb31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac4b6fc2ae36d848306178f281cceeeb0654ec03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Návod: Vytváření rozšiřitelné aplikace
 Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché Kalkulačka funkcí. Nepředvádí scénářem z reálného prostředí; Místo toho ukazuje základní funkce kanálu a jak doplňku poskytuje služby pro hostitele.  
@@ -327,7 +328,7 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
   
 1.  Pro každý projekt v řešení použít **sestavení** kartě **vlastnosti projektu** ( **zkompilovat** karta v jazyce Visual Basic) nastavit hodnotu **výstupní cesta**  ( **výstupní cesta sestavení** v jazyce Visual Basic). Pokud název vaší aplikace složky `MyApp`, například by vašich projektů sestavení do následující složky:  
   
-    |Project|Cesta|  
+    |Projekt|Cesta|  
     |-------------|----------|  
     |AddInCalcV1|MyApp\Pipeline\AddIns\CalcV1|  
     |Calc1AddInSideAdapter|MyApp\Pipeline\AddInSideAdapters|  

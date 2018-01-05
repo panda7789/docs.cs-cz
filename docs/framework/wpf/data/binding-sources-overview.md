@@ -17,11 +17,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 806a62d57e1099bb9d7cdcca657be500c33b0df1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88f1a22fc15e85e687c7b7eeb0a6e01445277d09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-sources-overview"></a>Přehled zdrojů připojení
 V datové vazbě zdrojového objektu vazby odkazuje na objekt, který je získat data z. Toto téma popisuje typy objektů, které můžete použít jako zdroj vazby.  
@@ -107,8 +108,8 @@ V datové vazbě zdrojového objektu vazby odkazuje na objekt, který je získat
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Data.ObjectDataProvider>  
  <xref:System.Windows.Data.XmlDataProvider>  
- [Zadejte zdroj vazby](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
- [Datové vazby WPF s technologií LINQ to XML – přehled](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)  
+ [Určení zdroje vazby](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)  
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+ [Přehled datové vazby WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)  
  [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)

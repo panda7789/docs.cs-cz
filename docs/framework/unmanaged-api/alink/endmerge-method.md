@@ -21,11 +21,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7f29abf03c636fc552fe550534ca1b1395b43aae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58e9cecae43fb69f1ce2e90eb9d6551d287ca7b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endmerge-method"></a>EndMerge – metoda
 Označuje, že byly všechny vlastní atributy sloučeny do oboru vysílat.  
@@ -49,6 +50,6 @@ HRESULT EndMerge(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také  
- [Ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Ialink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

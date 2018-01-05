@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 52cb3a5391d6e24643b03a880d3695a11baceca3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7d708674682ffd7b0d13c9cbe828e28bbc26e260
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-content-model"></a>Model obsahu WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]je prezentace platforma, která poskytuje mnoho ovládací prvky a typy jako ovládací prvek, jehož primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek odvození od, byste měli porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládacího prvku.  
@@ -263,4 +264,4 @@ TextBlock, který má ohraničení
  <xref:System.Windows.Documents.TextElement>a jeho souvisejících tříd umožňují formátování textu. <xref:System.Windows.Documents.TextElement>objekty obsahovat a formátování textu v <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty. Oba typy primární <xref:System.Windows.Documents.TextElement> objekty jsou <xref:System.Windows.Documents.Block> elementy a <xref:System.Windows.Documents.Inline> elementy. A <xref:System.Windows.Documents.Block> element reprezentuje blok textu, například odstavce nebo seznamu. <xref:System.Windows.Documents.Inline> Element reprezentuje část textu v bloku. Mnoho <xref:System.Windows.Documents.Inline> třídy zadejte formátování textu, do které se použijí. Každý <xref:System.Windows.Documents.TextElement> má svou vlastní modelu obsahu. Další informace najdete v tématu [přehled modelu obsahu TextElement](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Upřesnit](../../../../docs/framework/wpf/advanced/index.md)
+ [Pokročilé](../../../../docs/framework/wpf/advanced/index.md)

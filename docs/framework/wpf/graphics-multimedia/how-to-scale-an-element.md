@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 23b3086452526e804bfdbe50bb0c134f33158f5d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d2bff810dc9b44b25db93c8565da27acc4f0ccc3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-scale-an-element"></a>Postupy: Změna velikosti elementu
 Tento příklad ukazuje, jak používat <xref:System.Windows.Media.ScaleTransform> škálování elementu.  
@@ -50,5 +51,5 @@ Dvě metody ScaleTransform operace s identické hodnoty ScaleX a ScaleY ale jin�
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Transform>  
  <xref:System.Windows.Media.ScaleTransform>  
- [Transformuje – přehled](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)
+ [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)

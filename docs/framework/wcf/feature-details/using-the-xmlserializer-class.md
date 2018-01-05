@@ -17,11 +17,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6d47add27fb1170ae1bc14b99342ea0222be3549
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bc1ede649a68747461882dfe607214bfb06b2ec3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Chcete-li data v aplikaci do souboru XML, která se přenášejí mezi klienty a službách, procesu označovaného jako serializace můžete použít dvě různé serializace technologie.  
@@ -221,4 +222,4 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.MessageHeaderArrayAttribute>  
  [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
  [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Postupy: zlepšení spuštění čas klientských aplikací WCF pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+ [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)

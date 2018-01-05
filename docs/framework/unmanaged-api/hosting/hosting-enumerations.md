@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f415b4f3062a83f97d2bf186981289cf16e555a4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cc6b5df39c9fad6182f0ee6e4ff95638e9aaf448
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-enumerations"></a>Výčty hostování
 Tato část popisuje nespravovaná vyčíslení, které používá rozhraní API hostování.  
@@ -118,10 +119,10 @@ Tato část popisuje nespravovaná vyčíslení, které používá rozhraní API
  Určuje akci, kterou hostitele by měla provést, pokud operace požadoval bloky CLR.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Třídy typu coclass hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
+ [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
   
- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
   
- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
   
  [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

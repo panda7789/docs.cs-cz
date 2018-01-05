@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 905f30d8b7e6d7c10a0e2b32109076e2950a99ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2b82943a2382fd18a2ddbcee69707a02b97661ef
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Obecní delegáty pro manipulaci s poli a seznamy
 Toto téma obsahuje přehled obecní delegáti převody, predikáty vyhledávání a akce, které budou provedeny na elementy pole nebo kolekce.  
@@ -52,6 +55,6 @@ Toto téma obsahuje přehled obecní delegáti převody, predikáty vyhledáván
  <xref:System.Collections.Generic?displayProperty=nameWithType>  
  <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
  [Obecné typy](../../../docs/standard/generics/index.md)  
- [Obecné kolekce v rozhraní .NET Framework](../../../docs/standard/generics/collections.md)  
+ [Generování kolekcí v architektuře .NET Framework](../../../docs/standard/generics/collections.md)  
  [Obecná rozhraní](../../../docs/standard/generics/interfaces.md)  
  [Kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md)

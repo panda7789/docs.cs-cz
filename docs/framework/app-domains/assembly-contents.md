@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b51380126de164a4e0934068c7e0de55f5f3d92e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6a0af2a90d4951b72f8c5100affd6d78ac7f31ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assembly-contents"></a>Obsah sestavení
 Obecně platí statické sestavení se může skládat ze čtyř prvků:  
@@ -57,6 +58,6 @@ Vícesouborová sestavení
  Při navrhování aktuálně vašeho zdrojového kódu, provedete explicitní rozhodnutí o tom, jak oddílu funkci vaší aplikace do jednoho nebo více souborů. Při navrhování kódu rozhraní .NET Framework, budou podobné rozhodnutí o tom, jak oddílu funkce do jednoho nebo více sestavení.  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavení v modulu Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Manifest sestavení](../../../docs/framework/app-domains/assembly-manifest.md)  
  [Důležité informace o zabezpečení sestavení](../../../docs/framework/app-domains/assembly-security-considerations.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ddd937ec891f5e00410b74fffd152e23431652f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dd7f50d591232feda0259ecefdb5b9e39514ccb2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
 Instalační nástroj .NET Services vykonává tyto akce:  
@@ -64,12 +65,12 @@ Instalační nástroj .NET Services vykonává tyto akce:
 |**/FC**|Vyhledá nebo vytvoří cílovou aplikaci.|  
 |**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/noreconfig**|Znovu nekonfiguruje existující cílovou aplikaci.|  
-|**/ nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
+|**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/parname:** *název*|Určuje název nebo ID aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
 |**/reconfig**|Znovu nakonfiguruje existující cílovou aplikaci. Toto nastavení je výchozí.|  
 |**/ TLB:** *typelibraryfile*|Určuje soubor knihovny typů instalace, který se má nainstalovat.|  
 |**/u**|Odinstaluje cílovou aplikaci.|  
-|**/ quiet**|Určuje použití tichého režimu; potlačí zobrazování loga a zpráv o úspěchu.|  
+|**/quiet**|Určuje použití tichého režimu; potlačí zobrazování loga a zpráv o úspěchu.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -96,5 +97,5 @@ regsvcs /appname:myTargetApp /tlb:newTest.tlb myTest.dll
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Postupy: podepsání sestavení se silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
+ [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

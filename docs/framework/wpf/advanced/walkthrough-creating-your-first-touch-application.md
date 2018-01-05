@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ee85a5d8764fc27205cf09e1af43069b25096ef1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 502fb9ae0c488f5f3e438a3ae0a7087538183f1b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]umožňuje aplikacím reagovat na touch. Například můžete pracovat s aplikací pomocí jedné nebo více prsty, které na zařízení touch-velká a malá písmena, například dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživatelům přesunout, změnit velikost nebo otočení jednoho objektu pomocí touch.  

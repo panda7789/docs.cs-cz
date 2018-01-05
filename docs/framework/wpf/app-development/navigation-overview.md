@@ -35,11 +35,12 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 73bb3a2f43c5bd91d7a107a0a053381ca7bc0559
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3a3b7d865a503189ebb5b3adadc7258603461c9b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]podporuje navigační stylu prohlížeče, který lze použít v dva typy aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. Obsah balíčku pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít na jednom <xref:System.Windows.Controls.Page> do jiného deklarativně, pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, pomocí <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]využívá deník pamatovat stránek, které byly zpřístupněny z a přejděte zpět na ně.  
@@ -743,8 +744,8 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Application.SetCookie%2A>  
  <xref:System.Windows.Application.GetCookie%2A>  
  [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
- [Identifikátory URI Pack v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
- [Strukturované navigační – přehled](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)  
- [Přehled topologie navigace](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/app-development/navigation-how-to-topics.md)  
+ [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
+ [Přehled strukturované navigace](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)  
+ [Přehled topologií navigace](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/app-development/navigation-how-to-topics.md)  
  [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)

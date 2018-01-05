@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a5048cbad1d2ea914d041ac3c87a43223b208c3a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8b8356cdb47b6b834e8d9a6bb84b26445af6d865
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmlspace-handling-in-xaml"></a>Práce s atributem xml:space v jazyce XAML
 `xml:space` Se atribut definované XML, který deklaruje chování významný mezerový znak zpracování v rámci elementu objektu. Toto chování je relevantní pro veškerý obsah (vnitřní text) obsažených v elementu kde `xml:space` je deklarován a také rozsahy pro podřízené elementy.  
@@ -51,5 +52,5 @@ ms.lasthandoff: 11/21/2017
  Úplné informace o zpracování prázdných znaků v jazyce XAML, najdete v části [zpracování prázdných znaků v jazyce XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Zpracování prázdných znaků v jazyce XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)  
+ [Zpracování prázdných znaků v jazyku XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)  
  [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

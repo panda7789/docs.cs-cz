@@ -13,20 +13,21 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9182c95b9770cac94b2a747e277fcd0cc02b387f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a125aa0968abbd69580cab46f3231a6536eff9c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="behavior-security"></a>Zabezpečení chování
 Tato část obsahuje příklady vysvětlující konfigurace zabezpečení pro chování služby.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Chování auditování služby](../../../../docs/framework/wcf/samples/service-auditing-behavior.md)  
+ [Chování při auditování služby](../../../../docs/framework/wcf/samples/service-auditing-behavior.md)  
  Tento příklad znázorňuje způsob použití <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> povolení auditování událostí zabezpečení během operací služby.  
   
- [Členství a poskytovatel rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)  
+ [Členství a zprostředkovatel rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)  
  Tento příklad ukazuje, jak můžete použít službu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství a rolí k ověřování a autorizaci klientů.  
   
  [Autorizace přístupu k operacím služby](../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  

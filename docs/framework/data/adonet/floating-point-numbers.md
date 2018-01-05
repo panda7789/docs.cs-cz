@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c3e8ac8b5a97c62bb173fba57ac8aeb26a1dad42
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f041fc4e42d2b1e18ef701cd80396e92e571bff0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="floating-point-numbers"></a>Čísla s plovoucí desetinnou čárkou
 Toto téma popisuje některé problémy, které vývojáři často dojde, když pracují s plovoucí desetinnou čárkou v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Tyto problémy jsou způsobena tím, že počítače ukládat čísla s plovoucí desetinnou čárkou a nejsou specifické pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> nebo <xref:System.Data.OracleClient>.  
@@ -29,5 +30,5 @@ Toto téma popisuje některé problémy, které vývojáři často dojde, když 
  Chcete-li vyřešit problémy s porovnání rovnosti, zvažte kódování aplikace tak, aby se ignorují rozdíly v minimálně platných číslic. Například místo porovnávání zobrazíte, zda jsou si rovny dvou čísel, odečte jedno číslo z jiné číslo. V případě, že rozdíl je v rámci přijatelné okraji zaokrouhlení, můžete aplikaci zacházet čísla jako v případě, že jsou stejné.  
   
 ## <a name="see-also"></a>Viz také  
- [Proč čísla s plovoucí desetinnou čárkou mohou ztratit přesnost](http://msdn.microsoft.com/library/1acb1add-ac06-4134-a2fd-aff13d8c4c15)  
+ [Proč čísla s plovoucí desetinnou čárkou můžou ztratit přesnost](http://msdn.microsoft.com/library/1acb1add-ac06-4134-a2fd-aff13d8c4c15)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

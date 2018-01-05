@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d3ef21d4ab431ea4e1e1ac0392b3f088a7053c80
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 496c1191ebb55181ddb999a5a4327d5ff699828c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="peer-to-peer-networking"></a>Síť rovnocenných počítačů
 Rovnocenného kanálu je technologie komunikace více stran, peer-to-peer (P2P) v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Poskytuje zabezpečené a škálovatelné na základě zpráv P2P komunikační kanál pro vývojáře aplikací. Jedním z příkladů běžných více stran aplikace, které mohou těžit z rovnocenného kanálu je spolupráce aplikaci, například chat, kde skupinu osob chat sebou způsobem peer-to-peer bez serverů. Rovnocenného kanálu umožňuje P2P spolupráce, distribuce obsahu, Vyrovnávání zatížení a distribuované zpracování spotřebních a podnikových scénářích.  

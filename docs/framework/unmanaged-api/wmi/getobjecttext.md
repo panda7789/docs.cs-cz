@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 27e25a7ab7131f5b1c995c9367de6fe5a6fae592
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 0b47dc73bb9da71b0c8593aa5758179327d7572d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getobjecttext-function"></a>GetObjectText – funkce
 Vrátí textovou vykreslit objekt ve formátu MOF (Managed Object) syntaxe.

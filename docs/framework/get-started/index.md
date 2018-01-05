@@ -12,11 +12,12 @@ ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a7d84b55abd6c7d72c3a74d17b4f24d00e117a0c
-ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
+ms.workload: dotnet
+ms.openlocfilehash: 3295d17b0ef4650c38f264dfc785eee7a452be86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="get-started-with-the-net-framework"></a>Začínáme s rozhraním .NET Framework
 
@@ -84,11 +85,11 @@ Další informace o vývoji aplikací, které cílí na rozhraní .NET Framework
 | ----- |------------ |
 | [Přehled](../../../docs/framework/get-started/overview.md) | Poskytuje podrobné informace pro vývojáře, kteří vytvářejí aplikace cílených rozhraní .NET Framework. |
 | [Průvodce instalací](../../../docs/framework/install/index.md) | Poskytuje informace o instalaci rozhraní .NET Framework. |  
-| [Rozhraní .NET Framework a Out-of-Band verze](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md) | Popisuje rozhraní .NET Framework verze vzdálené správy a jejich použití ve vaší aplikaci. |
+| [Rozhraní .NET Framework a nesvázaná vydání](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md) | Popisuje rozhraní .NET Framework verze vzdálené správy a jejich použití ve vaší aplikaci. |
 | [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md) | Uvádí požadavky na hardware a software pro spuštění rozhraní .NET Framework. |
-| [.NET core a Open Source](../../../docs/framework/get-started/net-core-and-open-source.md) | Popisuje .NET Core ve vztahu k rozhraní .NET Framework a jak získat přístup k projektům .NET Core open source. |
+| [.NET Core a open source](../../../docs/framework/get-started/net-core-and-open-source.md) | Popisuje .NET Core ve vztahu k rozhraní .NET Framework a jak získat přístup k projektům .NET Core open source. |
 | [Dokumentace k .NET core](https://docs.microsoft.com/dotnet/) | Poskytuje koncepční a referenční dokumentace rozhraní API pro .NET Core. |
-| [Standardní rozhraní .NET](~/docs/standard/net-standard.md) | Popisuje standardní .NET verzí specifikace, které podporují jednotlivé implementace rozhraní .NET zaručit, že jsou k dispozici na několika platformách konzistentní sada rozhraní API.
+| [.NET Standard](~/docs/standard/net-standard.md) | Popisuje standardní .NET verzí specifikace, které podporují jednotlivé implementace rozhraní .NET zaručit, že jsou k dispozici na několika platformách konzistentní sada rozhraní API.
 
 ## <a name="see-also"></a>Viz také
 

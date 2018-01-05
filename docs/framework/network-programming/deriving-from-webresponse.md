@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3f732f60afeba71d26391ba5fb6484ab7562654a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2c0c70719e3f149ddf1f1e22cee8158e31fccf3c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deriving-from-webresponse"></a>Odvozování z WebResponse
 <xref:System.Net.WebResponse> Třída je abstraktní základní třída, která poskytuje základní metody a vlastnosti pro vytvoření odpovědi specifické pro protokol, který nejlépe odpovídá modulární protokol model rozhraní .NET Framework. Aplikace, které používají <xref:System.Net.WebRequest> třídy data žádosti z prostředků přijímat odpovědi v **WebResponse**. Specifické pro protokol **WebResponse** následníků musí implementovat abstraktní členy **WebResponse** třídy.  
@@ -50,5 +51,5 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Net.WebResponse>  
  <xref:System.Net.HttpWebResponse>  
  <xref:System.Net.FileWebResponse>  
- [Modulární protokoly programování](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
- [Odvozování z WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)
+ [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
+ [Odvození ze žádosti WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)

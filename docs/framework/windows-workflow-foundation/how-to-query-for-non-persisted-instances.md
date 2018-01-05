@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b1957db5af18a571e209c62332e95d844fa866f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bde3ab1049edf6cb52a221225321f1e505a2491b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-query-for-non-persisted-instances"></a>Postupy: dotaz pro netrvalé instance
 Když je vytvořena nová instance služby a služby má chování ukládání Instance pracovního postupu SQL definovaný, hostitel služby vytvoří počáteční záznam pro tuto instanci služby v úložišti instance. Následně při prvním potrvají instance služby, chování ukládání Instance pracovního postupu SQL uloží aktuální stav instance společně s další data, která je požadována pro aktivaci, obnovení a řízení.  

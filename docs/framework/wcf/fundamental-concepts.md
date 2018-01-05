@@ -18,11 +18,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e44ded58e7c48fae281030b5757d0d891d5600e6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0c05aa44a46b934a78af38c33ee34dd03f69e56d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument poskytuje podrobný pohled [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architektura. Je určena k vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verze [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klienta, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programování, najdete v části [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  

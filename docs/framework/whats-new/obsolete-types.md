@@ -17,11 +17,12 @@ caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 659028e56849af1404768afff2de3ae95fb3aba8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f30b9e245ad38b0e861590e9b2ca3658a2b5e967
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a>V tabulkách v tomto článku jsou uvedeny typy, které jsou v zastaralé [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], uspořádány sestavením. Pomocí následujících odkazů můžete zobrazit seznam zastaralé typy a doporučených alternativách v každé sestavení. Protože tyto typy jsou zastaralé, jsou jejich členové také zastaralé. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework, naleznete v části [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).  
@@ -785,5 +786,5 @@ ms.lasthandoff: 11/21/2017
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll je zastaralé sestavení a existuje pouze pro zpětné kompatibility.|  
   
 ## <a name="see-also"></a>Viz také  
- [Co je zastaralé v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)  
+ [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)  
  [Zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md)

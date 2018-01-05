@@ -17,35 +17,36 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 42762812c9d27073fac34b20df5011b386f05740
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b29c63ea9dfbd69863aad1afa712444405be763e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="profiling-structures"></a>Struktury pro profilaci
 Tato část popisuje nespravované struktury, které používá profilaci API.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Struktura COR_PRF_ASSEMBLY_REFERENCE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)  
+ [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)  
  Poskytuje modul common language runtime s informacemi o odkaz na sestavení, které ho měli zvážit při procházení uzavření odkaz na sestavení.  
   
- [Cor_prf_code_info – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md)  
+ [COR_PRF_CODE_INFO – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md)  
  Představuje jeden souvislý blok nativního kódu, které jsou uložené v paměti.  
   
- [Cor_prf_ex_clause_info – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-ex-clause-info-structure.md)  
+ [COR_PRF_EX_CLAUSE_INFO – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-ex-clause-info-structure.md)  
  Obsahuje informace o instanci klauzule určité výjimky a jeho přidružené rámečku.  
   
- [Cor_prf_function – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-structure.md)  
+ [COR_PRF_FUNCTION – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-structure.md)  
  Poskytuje jedinečný reprezentace funkce kombinací jeho ID s ID jeho Rekompilované verze.  
   
- [Cor_prf_function_argument_info – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md)  
+ [COR_PRF_FUNCTION_ARGUMENT_INFO – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md)  
  Představuje argumenty funkcí v pořadí zleva doprava.  
   
- [Cor_prf_function_argument_range – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md)  
+ [COR_PRF_FUNCTION_ARGUMENT_RANGE – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md)  
  Představuje blok argumenty funkce souvisle uložené v pořadí zleva doprava v paměti.  
   
- [Cor_prf_gc_generation_range – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md)  
+ [COR_PRF_GC_GENERATION_RANGE – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md)  
  Popisuje rozsah (blok) paměti, která probíhá uvolňování paměti.  
   
 ## <a name="related-sections"></a>Související oddíly  
@@ -57,6 +58,6 @@ Tato část popisuje nespravované struktury, které používá profilaci API.
   
  [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
   
- [Profilace globálních statických funkcí](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
+ [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
   
- [Profilace výčtů](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+ [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

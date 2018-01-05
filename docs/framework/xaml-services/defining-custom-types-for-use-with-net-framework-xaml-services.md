@@ -14,11 +14,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 0b35c35be7351fdf45157153ce6ca55fc763c3ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c7cce479c7c7a5f6c7112f08f1e15f3bc7e4d366
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, které nemají závislost na konkrétní architektury, existují některé osvědčené postupy pro jazyk XAML můžete provést. Pokud budete postupovat podle těchto postupech, můžete zjistit charakteristiky XAML vašeho typu a dejte mu odpovídající reprezentace v datový proud uzlu XAML pomocí systému XAML typ rozhraní .NET Framework XAML Services a jeho XAML čtení a zápis XAML. Toto téma popisuje osvědčené postupy pro definice typů, člen definice a CLR zapisujících typů nebo členy.  
@@ -124,5 +125,5 @@ Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, kt
  V terminologii WPF XAML *interní typ* je typ, který je definován pomocí stejného sestavení, která zahrnuje i odkazující XAML. Takové typ se dá namapovat prostřednictvím oboru názvů jazyka XAML, který úmyslně vynechá sestavení = část mapování, například `xmlns:local="clr-namespace:WPFApplication1"`.  Pokud BAML odkazuje na interní typ a že má typ `internal` přístup úrovni, tím se vygeneruje `GeneratedInternalTypeHelper` třídu pro sestavení. Pokud chcete, aby se zabránilo `GeneratedInternalTypeHelper`, buď musíte použít `public` přístup úroveň, nebo musí zohlednit příslušné třídě do samostatné sestavení a ujistěte se, že sestavení závislé.  
   
 ## <a name="see-also"></a>Viz také  
- [Atributy CLR související s jazykem XAML pro vlastní typy a knihovny](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)  
+ [Atributy CLR související s jazykem XAML pro vlastní typy a knihovny](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)  
  [XAML Services](../../../docs/framework/xaml-services/index.md)

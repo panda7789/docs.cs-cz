@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7998b96d6c699e2b46444ba19a22c5d71701c8ab
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4335f49bb9e78e7cfeda96c80c8783afe427592a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unhandledstatemachineexceptionrecorddescription"></a>UnhandledStateMachineExceptionRecordDescription
 ID: 136  
@@ -31,4 +32,4 @@ ID: 136
   
 ## <a name="see-also"></a>Viz také  
  [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [Události Obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+ [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

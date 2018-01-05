@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 42f208d10b1c111f98af3c803148590466baddf0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e9e486058850616c2304ce0032c35baa855fdf2f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-drawn-controls"></a>Ovládací prvky vykreslované uživatelem
 Rozhraní .NET Framework poskytuje možnost snadno vyvíjet vlastní ovládací prvky. Můžete vytvořit uživatelský ovládací prvek, což je sada standardních ovládacích prvků spojuje kód, nebo můžete navrhnout vlastní ovládací prvek od základů nahoru. Dědičnost i slouží k vytvoření ovládacího prvku, který dědí z existujícího ovládacího prvku a přidejte do jeho vyplývajících funkce. Libovolnou metodu použijete, rozhraní .NET Framework poskytuje funkce pro kreslení vlastní grafické rozhraní pro libovolný ovládací prvek, který vytvoříte.  
@@ -91,6 +92,6 @@ SetStyle(ControlStyles.ResizeRedraw, true);
  <xref:System.Drawing.Graphics>  
  <xref:System.Windows.Forms.Control.OnPaint%2A>  
  <xref:System.Windows.Forms.PaintEventArgs>  
- [Postupy: vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
+ [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
  [Základní ovládací prvky](../../../../docs/framework/winforms/controls/constituent-controls.md)  
  [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

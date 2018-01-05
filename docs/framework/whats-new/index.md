@@ -13,11 +13,12 @@ ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2c8c7f8c4d4c7c882f4f295b13fa4add3a11582f
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.workload: dotnet
+ms.openlocfilehash: 410b885daac00cd6da949b285721c206facb7079
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -57,7 +58,7 @@ Rozhraní .NET Framework 4.7.1 v sadě Visual Studio 2012 nebo později po insta
 
 Rozhraní .NET Framework 4.7.1 obsahuje nové funkce v těchto oblastech:
  
-- [Základní](#core471)
+- [Jádro](#core471)
 - [Modul common language runtime (CLR)](#clr)
 - [Síťové služby](#net471)
 - [TECHNOLOGIE ASP.NET](#asp-net471) 
@@ -141,7 +142,7 @@ V rozhraní .NET Framework 4.7 a starší verze povolené ASP.NET vývojářům 
 
 Rozhraní .NET Framework 4.7 obsahuje nové funkce v těchto oblastech:
 
-- [Základní](#Core47)
+- [Jádro](#Core47)
 - [Síťové služby](#net47)
 - [TECHNOLOGIE ASP.NET](#ASP-NET47)
 - [Windows Communication Foundation (WCF)](#wcf47)
@@ -672,7 +673,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 - [Windows Presentation Foundation (WPF)](#WPF461)
 
-- [Modelu Windows Workflow Foundation](#WWF461)
+- [Windows Workflow Foundation](#WWF461)
 
 - [Profilace](#Profile461)
 
@@ -1455,5 +1456,5 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
  [Rozhraní .NET Framework a Out-of-Band verze](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)   
  [Co je nového v usnadnění v rozhraní .NET Framework](whats-new-in-accessibility.md)   
  [Co je nového ve Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)   
- [TECHNOLOGIE ASP.NET](/aspnet)   
+ [ASP.NET](/aspnet)   
  [Co je nového v jazyce Visual C++](/cpp/what-s-new-for-visual-cpp-in-visual-studio) 

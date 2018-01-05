@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3032f46843c6d8efc53c45a927feae7068c3eb5c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 157bc01e23c304531f04b0a1cc7a66bad4bb3934
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-reflection"></a>Postupy: Vytvoření reflexe
 Tento příklad ukazuje, jak používat <xref:System.Windows.Media.VisualBrush> k vytvoření reflexe. Protože <xref:System.Windows.Media.VisualBrush> , můžete zobrazit stávající visual této funkci můžete použít k vytvoření zajímavé vizuální efekty, jako je například odrazů a zvětšení.  
@@ -43,4 +44,4 @@ Zrcadlený vizuální objekt
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.VisualBrush>  
- [Malování s obrázky, kresby a vizuální prvky](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+ [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

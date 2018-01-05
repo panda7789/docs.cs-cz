@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6657556ffb49c19e6ffc3ef5462de341a93112b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 685a62b885469a9cac8884cc045b67bac02bea80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="system-information-and-windows-forms"></a>Systémové informace a Windows Forms
 Někdy je nutné shromažďovat informace o počítači, který vaše aplikace běží na tak, aby rozhodnutí v kódu. Například můžete mít funkce, které platí pouze při připojení k doméně konkrétní síť; v takovém případě musíte způsob, jak určit domény a zakázat funkce, pokud doména není k dispozici.  
@@ -54,4 +55,4 @@ MessageBox.Show("Good morning " + User + ". You are connected to " _
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.SystemInformation>  
- [Řízení spotřeby v systému Windows Forms](../../../../docs/framework/winforms/advanced/power-management-in-windows-forms.md)
+ [Správa výkonu v modelu Windows Forms](../../../../docs/framework/winforms/advanced/power-management-in-windows-forms.md)

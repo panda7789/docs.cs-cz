@@ -12,11 +12,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fffc934bbbd1fc707e0bf5c0afbf79a40fc8c633
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 991f3d25a81e90ab779936c993ec7dd09a71b794
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře pracovních postupů
 Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] aplikace.  
@@ -131,6 +132,6 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
 10. V tématu [úloha 3: vytvoření sady nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) se dozvíte, jak přidat **sada nástrojů** a **PropertyGrid** podporu do vaší opětovné hostování nástroje pracovního postupu návrháře.  
   
 ## <a name="see-also"></a>Viz také  
- [Opětovného hostování návrháře pracovních postupů](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
- [Úloha 1: Vytvořte novou aplikaci Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
- [Úloha 3: Vytvoření sady nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)
+ [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
+ [Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

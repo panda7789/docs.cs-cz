@@ -26,11 +26,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f17ec5f48115f3e85852f33ea926657df172a2da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 745a5b87119bbce3211332eee9f23d80c15c9c28
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
 <a name="introduction"></a>Obecně platí Internetové aplikace by měla být omezeno mají přímý přístup k důležitým systémovým prostředkům, aby nedošlo k poškození škodlivý. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a skriptovací jazyky klienta nejsou mít přístup k důležitým systémovým prostředkům. Protože [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] webové aplikace může být spuštěn z prohlížeče, by měl odpovídat podobnou sadu omezení. K vynucení těchto omezení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spoléhá na obou [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)] a [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] (najdete v části [strategie zabezpečení WPF - platformy zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované prohlížečem žádostí zóně Internet [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] sadu oprávnění, bez ohledu na to, jestli jsou spouštěny z Internetu, místní intranet nebo místního počítače. Aplikace, které používají něco menší než úplnou sadu oprávnění jsou uvedená, aby byl spuštěn s částečnou důvěryhodností.  
@@ -175,5 +176,5 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)  
- [Strategie zabezpečení WPF - platformy zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
- [Strategie zabezpečení WPF - inženýrství zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)
+ [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
+ [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)

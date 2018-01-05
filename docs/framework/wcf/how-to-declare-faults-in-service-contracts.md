@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f53f8396dc16f9f4538b772d376287cc1695ff47
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bcf707e58586673097c89e0e0f4d72ea68ef7247
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>Postupy: deklarace chyb v kontraktech služby
 Ve spravovaném kódu jsou výjimky vyvolány, když dojde k chybové stavy. V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, ale kontraktů služby určit, jaké informace o chybě vrátí klientům deklarace chyb protokolu SOAP v kontrakt služby. Přehled o vztah mezi výjimek a chyb naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  

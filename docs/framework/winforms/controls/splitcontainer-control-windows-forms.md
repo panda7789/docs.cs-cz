@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 336243cc4db7039225ba272cac1ba7a3f173f361
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 66eb0e8fc630696c86c8b85c85b67023bd568dc1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="splitcontainer-control-windows-forms"></a>SplitContainer – ovládací prvek (Windows Forms)
 Windows Forms `SplitContainer` řízení lze považovat za složené; je dva panely oddělených mobilní panelu. Když ukazatel myši nad panelu, změní tvar, který má zobrazit, že je na panelu mobilní.  
@@ -34,13 +35,13 @@ Windows Forms `SplitContainer` řízení lze považovat za složené; je dva pan
  [Přehled ovládacího prvku SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-overview-windows-forms.md)  
  Zavádí `SplitContainer` řízení a popisuje běžně používané vlastnosti, metod a události.  
   
- [Postupy: definování změny velikosti a polohování v rozděleném okně chování](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
+ [Postupy: Definování chování změny velikosti a polohování v rozděleném okně](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
  Popisuje, jak řídit rozdělovače v rámci `SplitContainer` ovládacího prvku.  
   
- [Postupy: vodorovné rozdělení okna](../../../../docs/framework/winforms/controls/how-to-split-a-window-horizontally.md)  
+ [Postupy: Vodorovné rozdělení okna](../../../../docs/framework/winforms/controls/how-to-split-a-window-horizontally.md)  
  Popisuje, jak řídit orientace Rozdělovače v rámci `SplitContainer` ovládacího prvku.  
   
- [Postupy: vytváření více podokny uživatelského rozhraní s Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
+ [Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Vytvoří více podokně uživatelské rozhraní, které je podobné použít v aplikaci Microsoft Outlook.  
   
  Také najdete v části [postupy: rozdělení a okno vodorovně pomocí návrháře](http://msdn.microsoft.com/library/ms233667\(v=vs.110\)), [postup: vytváření rozhraní stylu Průzkumníku Windows ve formuláři Windows](http://msdn.microsoft.com/library/zh2fe5a5\(v=vs.110\)), [postupy: vytváření uživatelského rozhraní s více podokny s Windows Forms pomocí návrháře](http://msdn.microsoft.com/library/ms233661\(v=vs.110\)).  
@@ -50,8 +51,8 @@ Windows Forms `SplitContainer` řízení lze považovat za složené; je dva pan
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/index.md)  
+ [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
  Obsahuje odkazy na témata o ovládacích prvcích navrženy speciálně pro práci s Windows Forms.  
   
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.

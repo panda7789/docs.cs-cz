@@ -17,17 +17,18 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1660bf08f10a7d4e0db4b7ae8d58fd631986974c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b8f493013744ffa7819d4cb554f794d9a591a371
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dialog-boxes-in-windows-forms"></a>Dialogová okna ve Windows Forms
 Dialogová okna se používají k interakci s uživatelem a načíst informace. Jednoduše řečeno, dialogové okno je formulář se jeho <xref:System.Windows.Forms.FormBorderStyle> výčet vlastností nastavenou na `FixedDialog`. Můžete vytvořit vlastní vlastní dialogových oken pomocí Windows Forms designerem v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]. Přidání ovládacích prvků, jako `Label`, `Textbox`, a `Button` přizpůsobit dialogová okna vašim konkrétním potřebám. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také obsahuje předdefinovaných dialogových oken, jako například **otevřít soubor** a okna zpráv, které můžete přizpůsobit pro vlastní aplikace. Další informace najdete v tématu [– dialogové okno Ovládací prvky a součásti](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: zobrazování dialogových oken pro Windows Forms](../../../docs/framework/winforms/how-to-display-dialog-boxes-for-windows-forms.md)  
+ [Postupy: Zobrazování dialogových oken pro Windows Forms](../../../docs/framework/winforms/how-to-display-dialog-boxes-for-windows-forms.md)  
  Poskytuje pokyny pro zobrazení dialogových oken.  
   
 -   [Postupy: načtení informací o dialogové okno pole selektivně pomocí více vlastností](http://msdn.microsoft.com/library/56taefba\(v=vs.110\))  
@@ -47,7 +48,7 @@ Dialogová okna se používají k interakci s uživatelem a načíst informace. 
 -   [Postupy: zobrazení oken zpráv](http://msdn.microsoft.com/library/3tt9e94f\(v=vs.110\))  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dialogové okno – Ovládací prvky a součásti](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
+ [Ovládací prvky a součásti dialogového okna](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
  Zobrazí ovládací prvky předdefinované dialogové okno.  
   
  [Změna vzhledu Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  

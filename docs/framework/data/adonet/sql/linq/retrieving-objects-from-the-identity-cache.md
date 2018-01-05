@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d078476e881c3823d7772a9db4cdbdb23dac8bb4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8497f728019c97bb59162d39a9f77e34e4e6f3c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Načítání objektů z mezipaměti Identity
 Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipaměti identity, které spravuje <xref:System.Data.Linq.DataContext>.  
@@ -34,9 +35,9 @@ Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipamět
   
  Dotaz musí být v jednom z následujících podob obecné načíst objekt z mezipaměti identity:  
   
--   <xref:System.Data.Linq.Table%601>`.Function1(``predicate``)`  
+-   <xref:System.Data.Linq.Table%601> `.Function1(` `predicate` `)`  
   
--   <xref:System.Data.Linq.Table%601>`.Function1(``predicate``).Function2()`  
+-   <xref:System.Data.Linq.Table%601> `.Function1(` `predicate` `).Function2()`  
   
  V těchto obecné forms `Function1`, `Function2`, a `predicate` jsou definovány takto.  
   
@@ -75,7 +76,7 @@ Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipamět
  [!code-vb[L2S_QueryCache#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/l2s_querycache/vb/module1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také  
- [Koncepty dotazu](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
- [Identity – objekt](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
+ [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
+ [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
  [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
- [Identity – objekt](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
+ [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)

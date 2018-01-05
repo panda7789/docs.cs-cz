@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 006cafafdf8e3c3f4da77394d6155fa52e113b58
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 08b55bc2bd5af78eb6c3d0f5adce3ec39d288a9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bindingsource-component"></a>BindingSource – komponenta
 Zapouzdří zdroj dat pro vytvoření vazby na ovládací prvky.  
@@ -31,40 +32,40 @@ Zapouzdří zdroj dat pro vytvoření vazby na ovládací prvky.
  Druhý, <xref:System.Windows.Forms.BindingSource> součást může fungovat jako zdroj dat silného typu. Přidání typu k <xref:System.Windows.Forms.BindingSource> součásti s <xref:System.Windows.Forms.BindingSource.Add%2A> metoda vytvoří seznam daného typu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [BindingSource – přehled komponenty](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  
+ [Přehled komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  
  Představuje obecné koncepty <xref:System.Windows.Forms.BindingSource> komponenta, která umožňuje svázat zdroj dat k ovládacímu prvku.  
   
- [Postupy: vytvoření vazby ovládacích prvků Windows Forms k hodnotám databáze DBNull](../../../../docs/framework/winforms/controls/how-to-bind-windows-forms-controls-to-dbnull-database-values.md)  
+ [Postupy: Vytvoření vazby ovládacích prvků Windows Forms k hodnotám databáze DBNull](../../../../docs/framework/winforms/controls/how-to-bind-windows-forms-controls-to-dbnull-database-values.md)  
  Ukazuje, jak zpracovat <xref:System.DBNull> hodnotu ze zdroje dat pomocí <xref:System.Windows.Forms.BindingSource> součásti.  
   
- [Postupy: řazení a filtrování dat ADO.NET pomocí součásti Windows Forms BindingSource](../../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)  
+ [Postupy: Řazení a filtrování dat ADO.NET pomocí komponenty Windows Forms BindingSource](../../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)  
  Ukazuje, jak pomocí <xref:System.Windows.Forms.BindingSource> součást použít seřadí a filtrů zobrazená data.  
   
- [Postupy: připojení k webové službě pomocí Windows Forms BindingSource](../../../../docs/framework/winforms/controls/how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource.md)  
+ [Postupy: Vytvoření vazby k webové službě pomocí Windows Forms BindingSource](../../../../docs/framework/winforms/controls/how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource.md)  
  Ukazuje, jak používat <xref:System.Windows.Forms.BindingSource> součásti pro připojení k webové službě.  
   
- [Postupy: zpracování chyb a výjimek, ke kterým dochází s datovou vazbou](../../../../docs/framework/winforms/controls/how-to-handle-errors-and-exceptions-that-occur-with-databinding.md)  
+ [Postupy: Zpracování chyb a výjimek, k nimž došlo v souvislosti s datovou vazbou](../../../../docs/framework/winforms/controls/how-to-handle-errors-and-exceptions-that-occur-with-databinding.md)  
  Ukazuje, jak pomocí <xref:System.Windows.Forms.BindingSource> součásti pro pohodlné zpracování chyb vzniklých v operaci vazby na data.  
   
- [Postupy: vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)  
+ [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)  
  Ukazuje, jak pomocí <xref:System.Windows.Forms.BindingSource> součásti pro vazbu na typ.  
   
- [Postupy: vytvoření vazby ovládacího prvku Windows Forms k objektu Factory](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-factory-object.md)  
+ [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k objektu factory](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-factory-object.md)  
  Ukazuje, jak pomocí <xref:System.Windows.Forms.BindingSource> součást vytvořit vazbu objekt factory nebo metoda.  
   
- [Postupy: přizpůsobení přidávání položek pomocí Windows Forms BindingSource](../../../../docs/framework/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource.md)  
+ [Postupy: Přizpůsobení přidávání položek pomocí Windows Forms BindingSource](../../../../docs/framework/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource.md)  
  Ukazuje, jak pomocí <xref:System.Windows.Forms.BindingSource> součást je přidejte do zdroje dat a vytvořit nové položky.  
   
- [Postupy: vytváření oznámení o změnách pomocí metody BindingSource ResetItem](../../../../docs/framework/winforms/controls/how-to-raise-change-notifications-using-the-bindingsource-resetitem-method.md)  
+ [Postupy: Vytváření oznámení o změnách pomocí metody BindingSource ResetItem](../../../../docs/framework/winforms/controls/how-to-raise-change-notifications-using-the-bindingsource-resetitem-method.md)  
  Ukazuje, jak pomocí <xref:System.Windows.Forms.BindingSource> součást umožňuje aktivovat události upozornění na změnu pro oznámení o změně zdroje dat, které nepodporují.  
   
- [Postupy: vytváření oznámení o změnách pomocí BindingSource a INotifyPropertyChanged rozhraní](../../../../docs/framework/winforms/controls/raise-change-notifications--bindingsource.md)  
+ [Postupy: Vytváření oznámení o změnách pomocí rozhraní BindingSource a INotifyPropertyChanged](../../../../docs/framework/winforms/controls/raise-change-notifications--bindingsource.md)  
  Ukazuje, jak používat typ, který dědí z <xref:System.ComponentModel.INotifyPropertyChanged> s <xref:System.Windows.Forms.BindingSource> ovládacího prvku.  
   
- [Postupy: uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](../../../../docs/framework/winforms/controls/reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md)  
+ [Postupy: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](../../../../docs/framework/winforms/controls/reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md)  
  Ukazuje, jak reagovat na změny v zdroje dat pomocí <xref:System.Windows.Forms.BindingSource> součásti.  
   
- [Postupy: sdílení připojených dat mezi formuláři pomocí součásti BindingSource](../../../../docs/framework/winforms/controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)  
+ [Postupy: Sdílení vázaných dat mezi formuláři pomocí komponenty BindingSource](../../../../docs/framework/winforms/controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)  
  Ukazuje, jak používat <xref:System.Windows.Forms.BindingSource> k vytvoření vazby formuláře více stejný zdroj dat.  
   
 ## <a name="reference"></a>Odkaz  

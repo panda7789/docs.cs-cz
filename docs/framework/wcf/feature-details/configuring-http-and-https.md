@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5868e03ee05a744be3f1c3782613e11e71352024
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 50d4f92273a3e105fb83705bc138b06350910ccf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Konfigurace nastavení protokolu HTTP nebo HTTPS pomocí Internetové informační služby (IIS), nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované v části Nastavení služby IIS protokolu HTTP nebo HTTPS lze konfigurovat v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud služby WCF s vlastním hostováním, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  
@@ -101,4 +102,4 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSDualHttpBinding>  
- [Postupy: Konfigurace portu certifikát protokolu SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
+ [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)

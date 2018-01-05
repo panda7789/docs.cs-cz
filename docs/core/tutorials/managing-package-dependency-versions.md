@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
-ms.openlocfilehash: b0d4082d020da782b334a5b3999905f7de744e64
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.workload: dotnetcore
+ms.openlocfilehash: 2bb55f3bcd6678a127f099afbb9461cafe1a9c94
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>Správa verze závislosti balíčku pro .NET Core 1.0
 

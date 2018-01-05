@@ -20,11 +20,12 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f1a4fd55688f03cbd9de2ceb815c49423aff5fad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97a56a095c1b0c080cd3df329fce0085dd01af23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikace rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledá a váže k sestavení, které tvoří vaši aplikaci. Ve výchozím modulu runtime pokusí vytvořit vazbu s přesnou verzi sestavení, která byla vytvořena s. Toto výchozí chování můžete přepsat pomocí souboru nastavení konfigurace.  
@@ -256,5 +257,5 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
  Například pokud Assembly1 odkazuje Assembly2 a Assembly1 byl stažen z http://www.code.microsoft.com/utils, toto umístění se považuje za nápovědu o tom, kde najít Assembly2.dll. Modul runtime pak hledá sestavení v http://www.code.microsoft.com/utils/Assembly2.dll a http://www.code.microsoft.com/utils/Assembly2/Assembly2.dll. Pokud Assembly2 nebyl nalezen v žádném z těchto umístění, dotáže se modul runtime Instalační služby systému Windows.  
   
 ## <a name="see-also"></a>Viz také  
- [Osvědčené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
+ [Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
  [Nasazení](../../../docs/framework/deployment/index.md)

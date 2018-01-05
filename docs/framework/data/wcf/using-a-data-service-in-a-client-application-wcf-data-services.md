@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 79c4f7e066f4961caa66d3fd19dee9eb0f21ada4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c802342f352652e24e53b70c730ddb4c5b8973a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Pomocí služby dat v aplikaci klienta (služby WCF Data Services)
 Službě, která zveřejňuje se můžete dostat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu zadáním identifikátor URI pro webový prohlížeč. Identifikátor URI poskytuje adresu prostředku a tyto adresy přístup, nebo změňte základní data, která představuje prostředek se posílají zprávy požadavku. Prohlížeč vydá příkaz HTTP GET a vrátí jako požadovaný prostředek [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
@@ -62,5 +63,5 @@ Službě, která zveřejňuje se můžete dostat [!INCLUDE[ssODataFull](../../..
  Nejsou k dispozici, můžete využívat programovací knihovny [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v jiné druhy klientské aplikace. Další informace najdete v tématu [OData SDK](http://go.microsoft.com/fwlink/?LinkId=185796).  
   
 ## <a name="see-also"></a>Viz také  
- [Přístup k prostředkům služby dat](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
+ [Přístup k prostředkům datové služby](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
  [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

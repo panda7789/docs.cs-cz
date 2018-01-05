@@ -20,11 +20,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bb9edf0439c985af015d6badd11c026449a82f57
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 922faa06456a1aa86ffd0c805ab33577280ccf4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="table-overview"></a>Přehled tabulky
 <xref:System.Windows.Documents.Table>je úrovně blokovém elementu, které podporuje předložení mřížky obsah dokumentu toku. Flexibilita tohoto elementu je velmi užitečná, ale také umožňuje složitěji, pochopit a používat správně.  
@@ -186,7 +187,7 @@ ms.lasthandoff: 11/21/2017
  [!code-vb[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddfooterrow)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled toku dokumentu](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [Definovat tabulku s XAML](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
- [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Použít toku obsahu elementy](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)
+ [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [Definice tabulky pomocí XAML](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
+ [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Použití elementů obsahu toku](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)

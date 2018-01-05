@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 81de172df01879af97aa66b0892a97505178c93c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4f046f26391d581bc1663e9a7041225ede99bd31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
 Oblasti omezeného provádění (CER) je součástí mechanismus pro vytváření spolehlivé spravovaného kódu. CER definuje oblast, ve kterém je omezené common language runtime (CLR) z vyvolání out-of-band výjimek, které by bránily provádění v celé jeho šíři kód v oblasti. V rámci oblasti je ve spouštění kódu, který by mělo za následek vyvolání výjimky out-of-band omezené uživatelského kódu. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Metoda musí předcházet okamžitě `try` bloku a označí `catch`, `finally`, a `fault` bloky jako omezené oblasti provádění. Jakmile označeno v omezené oblasti, kód musí volat pouze s kontrakty spolehlivosti silné jiný kód a kód by neměl přidělit nebo provádět virtuální volání metod neupravený nebo nespolehlivé, pokud kód je připravený pro zpracování chyby. Vlákno zpoždění CLR zruší pro kód, který spouští v CER.  

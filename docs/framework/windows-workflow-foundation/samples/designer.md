@@ -12,24 +12,25 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6f544a92aa0e8df154ba5e165ce9a940b6120950
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 532dc0a0ab765a90facd2fb8eae14a221dd3fe79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="designer"></a>Návrhář
 Tato část obsahuje vzorků, které ukazují, jak používat [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Odebrání stav zobrazení návrháře přidá do souboru XAML](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
+ [Odebrání stavu zobrazení, který návrhář přidá do souboru XAML](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
  Ukazuje, jak vytvořit třídu, která pochází z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazení stavu ze souboru XAML.  
   
- [Programování modelu položka stromu](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md)  
+ [Strom položek programovacího modelu](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md)  
  Ukazuje, jak se orientovat <xref:System.Activities.Presentation.Model.ModelItem> stromu pomocí vazby deklarativní data z [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] stromové zobrazení.  
   
- [Vlastnost Extensibliity mřížky](../../../../docs/framework/windows-workflow-foundation/samples/property-grid-extensibliity.md)  
+ [Rozšiřitelnost mřížky vlastností](../../../../docs/framework/windows-workflow-foundation/samples/property-grid-extensibliity.md)  
  Ukazuje, jak přizpůsobit mřížku vlastností, které se zobrazí, pokud je vybrána danou aktivitu v návrháři.  
   
- [Sada nástrojů služby](../../../../docs/framework/windows-workflow-foundation/samples/toolbox-service.md)  
+ [Služba sady nástrojů](../../../../docs/framework/windows-workflow-foundation/samples/toolbox-service.md)  
  Ukazuje, jak aktualizovat [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] sada nástrojů aktivit na základě kontextu pracovního postupu.

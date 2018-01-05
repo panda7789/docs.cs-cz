@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.openlocfilehash: 780c2655b6d6a660939fb79ea58bec463ec97aa9
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.workload: dotnetcore
+ms.openlocfilehash: cb78a66a3a6a7158a86a76d62e5230c75b51a416
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>V .NET Core a .NET Standard testování částí
 

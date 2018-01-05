@@ -8,11 +8,12 @@ keywords: "Rozhraní .NET framework, instalace"
 ms.date: 10/17/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.openlocfilehash: ac9116da40618d9a6f4bc2bb5f031bd8ffeec7b3
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 9056a07859b388d2fa4c1992c270eaa4788f194c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Nainstalujte rozhraní .NET Framework na Windows 7 SP1 a Windows Server 2008 R2
 

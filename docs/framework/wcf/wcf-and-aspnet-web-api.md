@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 932db4ef12666d20ba497cc8f6d78b43c7670373
-ms.sourcegitcommit: 5126483ef09c487296801bbac368dd8a55a6b709
+ms.workload: dotnet
+ms.openlocfilehash: 1270eb202a1e8cbf1a297a13593dd0aa6046cb6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF a ASP.NET Web API
 WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby společnosti Microsoft. Umožňuje vývojářům vytvářet bezpečné, spolehlivé a zpracovaných řešení, které integrovat do různých platforem a zajistit vzájemnou funkční spolupráci s stávajících investic. [Rozhraní ASP.NET Web API](http://www.asp.net/web-api) je rozhraní, které usnadňuje sestavování služeb HTTP, které využity širokou škálou klientů včetně prohlížečů a mobilních zařízení. Rozhraní ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  
@@ -38,4 +39,4 @@ WCF je jednotný programovací model pro vytváření aplikací orientovaných n
   
 ## <a name="see-also"></a>Viz také  
  [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)  
- [Základní Windows Communication Foundation koncepty](../../../docs/framework/wcf/fundamental-concepts.md)  
+ [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)  

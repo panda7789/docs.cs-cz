@@ -17,11 +17,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bf50346cc179a5aae860a7651d28e104bac3c2ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6e5f6b3d0a185754bc0d8d8ee726ca13443ccdc1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="treeview-overview"></a>TreeView – přehled
 <xref:System.Windows.Controls.TreeView> Řízení poskytuje způsob, jak zobrazit informace v hierarchická struktura pomocí sbalitelné uzly. Toto téma představuje <xref:System.Windows.Controls.TreeView> a <xref:System.Windows.Controls.TreeViewItem> ovládací prvky a poskytuje jednoduché příklady, jak jejich použití.  
@@ -86,5 +87,5 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.TreeView>  
  <xref:System.Windows.Controls.TreeViewItem>  
- [Postupy: témata](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)  
  [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)

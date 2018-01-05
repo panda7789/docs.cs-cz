@@ -7,11 +7,12 @@ ms.date: 09/01/2017
 ms.topic: article
 dev_langs: vb
 ms.prod: .net-core
-ms.openlocfilehash: b5078a78ea7dae3465680797531e0ff81b9b5845
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.workload: dotnetcore
+ms.openlocfilehash: c21fe2633262dc38ceeeeb4ea7078c70fb16749e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-mstest"></a>Knihovny jazyka Visual Basic .NET Core pomocí testovacích dotnet a Mstestu testování částí
 

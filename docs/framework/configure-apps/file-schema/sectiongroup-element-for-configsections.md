@@ -12,11 +12,12 @@ ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5c5c040a322c38da319f2e964519f94d761327e0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 654a6e639a24120e1e0c993ebe36f14e75b46a12
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sectiongroup-element-for-configsections"></a>\<sectionGroup > elementu pro \<configSections >
 

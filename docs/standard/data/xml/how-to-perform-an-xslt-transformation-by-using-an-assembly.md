@@ -16,11 +16,14 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f236296d604bc465973d17d63883e7b212b7f02d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d14c4338290856c09ca1d23ec6acc895450f83ea
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postup: provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metoda.  
@@ -190,6 +193,6 @@ xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Xsl.XslCompiledTransform>  
- [Kompilátoru XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
- [Sestavování pomocí csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+ [Sestavování pomocí programu csc.exe v příkazovém řádku](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

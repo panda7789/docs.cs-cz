@@ -18,11 +18,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b2e8bde5d1c2904723282f03a815f17c5cc7622d
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 8ae9810b10a7357f7f8d00783335335a391a5211
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="graphics-and-drawing-in-windows-forms"></a>Grafika a kreslení v rozhraní Windows Forms
 Pokročilé implementace rozhraní Windows grafiky zařízení používá modul common language runtime ([!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]) názvem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. S [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete vytvořit grafiky, kreslení textu a manipulaci s grafickým rozhraním obrázky jako objekty. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]je určená k poskytování výkonu a snadného použití. Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] k vykreslení grafické Image na Windows Forms a ovládacích prvků. I když nelze použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] přímo na webových formulářů, můžete zobrazit grafické obrázky prostřednictvím ovládacího prvku Obrázek webového serveru.  
@@ -35,7 +36,7 @@ Pokročilé implementace rozhraní Windows grafiky zařízení používá modul 
  [Přehled grafiky](../../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
  Poskytuje úvod do související grafika spravované třídy.  
   
- [O GDI + spravovaný kód](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)  
+ [Informace o spravovaném kódu GDI+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)  
  Poskytuje informace o spravovaný [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] třídy.  
   
  [Použití spravovaných grafických tříd](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)  
@@ -58,5 +59,5 @@ Pokročilé implementace rozhraní Windows grafiky zařízení používá modul 
  Poskytuje funkce, tisku.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Vlastní ovládací prvek Malování a vykreslování](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)  
+ [Malování a vykreslování vlastního ovládacího prvku](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)  
  Podrobnosti, jak poskytnout kód pro vykreslování ovládacích prvků.

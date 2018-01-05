@@ -22,11 +22,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 01bac8fc020955e78e7648db72492014acc19944
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 70301cd3d357ab90ac6e7ed6d76a902107ef5e4a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-save-files-using-the-savefiledialog-component"></a>Postupy: Ukládání souborů pomocí součásti SaveFileDialog
 <xref:System.Windows.Forms.SaveFileDialog> Součást umožňuje uživatelům procházet systému souborů a vyberte soubory uložit. Dialogové okno vrátí cestu a název souboru, který uživatel vybral v dialogovém okně. Ale musíte napsat kód, který ve skutečnosti zapisovat soubory na disk.  
@@ -189,4 +190,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.SaveFileDialog>  
- [SaveFileDialog – komponenta](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)
+ [Komponenta SaveFileDialog](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)

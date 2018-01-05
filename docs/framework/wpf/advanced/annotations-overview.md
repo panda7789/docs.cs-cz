@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dc4ef4473a200a424134a16d64655a5acf1488b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fe3f0caa8f23a3b68f1017254a770af766f83f81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámky nebo komentáře na tištěných dokumentů je takové běžná aktivita, jsme téměř vzít pro udělena. Tyto poznámky nebo komentáře jsou "Poznámky" přidáme do dokumentu. Chcete-li příznak informace nebo chcete zvýraznit položky, které vás zajímají pro pozdější použití. Zápis poznámky na tištěných dokumentů je snadné a běžné, možnost přidávat komentáře osobní do elektronických dokumentů sice obvykle velmi omezená, pokud je k dispozici na všech.  
@@ -81,8 +82,8 @@ Zápis poznámky nebo komentáře na tištěných dokumentů je takové běžná
  <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
  <xref:System.Windows.Controls.FlowDocumentReader>  
  <xref:System.Windows.Annotations.IAnchorInfo>  
- [Schéma poznámky](../../../../docs/framework/wpf/advanced/annotations-schema.md)  
+ [Schéma poznámek](../../../../docs/framework/wpf/advanced/annotations-schema.md)  
  [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md)  
- [Tvorba příkazů – přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [Přehled toku dokumentu](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
+ [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
  [Postupy: přidání příkazu do MenuItem](http://msdn.microsoft.com/en-us/013d68a0-5373-4a68-bd91-5de574307370)

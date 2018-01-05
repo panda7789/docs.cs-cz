@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50d523fdd0498aef7e662af5f4dc41b2394dcf42
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c993a4f09a7187b45331f6beb71a9637da87d20f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>Správa služby kontextu dat (služby WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány službě zadaná data. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou bezstavové služby, není kontextu. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakce s službu data za účelem podpory funkcí, jako například Správa změn. Tato třída také spravuje identit a sleduje změny.  
@@ -48,6 +49,6 @@ ms.lasthandoff: 12/02/2017
   
 ## <a name="see-also"></a>Viz také  
  [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
- [Aktualizaci datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
+ [Aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
  [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
- [Dávkování operací](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)
+ [Operace dávkování](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "27"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 933f62e1921fe12255965567bbec0faf651e0ba2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cb8f112c71c743fd6650baf04b8db55ceaeef4ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] může protokolovat události zabezpečení (úspěch, chyba nebo obě) se funkci auditování. Události se zapisují do protokolu událostí systému Windows a může být prověřen pomocí prohlížeče událostí.  
@@ -112,7 +113,7 @@ Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] m
  <xref:System.ServiceModel.AuditLogLocation>  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)  
- [Postupy: auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
+ [Postupy: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
  [\<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)  
  [\<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
  [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

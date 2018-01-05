@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b60cffd357022454de001986a48ef06bdd1fe3f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 804acd77887c1cf05caa2004e75ef01110909490
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="aggregate-functions-sqlclient-for-entity-framework"></a>Agregační funkce (SqlClient rozhraní Entity Framework)
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agregační funkce. Agregační funkce provádět výpočty na sadě vstupní hodnoty a vrátit hodnotu. Tyto funkce jsou v oboru názvů SQL Server, která je k dispozici při použití SqlClient. Umožňuje vlastnost obor názvů zprostředkovatele Entity Frameworku chcete zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce.  
@@ -56,5 +57,5 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agrega
 |[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
   
 ## <a name="see-also"></a>Viz také  
- [Jazyk SQL entity](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
- [Kanonické agregační funkce](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)
+ [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
+ [Agregační kanonické funkce](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)

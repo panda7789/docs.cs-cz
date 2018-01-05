@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29e4fb590733392ebae10fe1ad18781653c0d202
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: caff90b66007310c7b3ad24f2f084cc2282a7021
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-service-host-extensibility"></a>Rozšíření hostitele služby pracovního postupu
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]poskytuje <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídu pro hostování služeb pracovních postupů. Tato třída se používá, když jsou vlastní hostování služby pracovního postupu ve spravované aplikaci nebo službu systému Windows. Tato třída se používá také při hostování služby pracovního postupu pomocí Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS). <xref:System.ServiceModel.Activities.WorkflowServiceHost> Třída poskytuje rozšíření body, které vám umožní přidat vlastní rozšíření, změňte chování při nečinnosti a hostitele bez služby pracovních postupů (pracovní postupy, které nepoužívají zasílání zpráv aktivity).  

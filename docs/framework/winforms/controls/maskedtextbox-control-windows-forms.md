@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 668d1b2184c2ae3e089c9996854eef9c28b5a5f4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f4e1beb6311604de5d0c59a29de2d1b6c50c2993
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="maskedtextbox-control-windows-forms"></a>MaskedTextBox – ovládací prvek (Windows Forms)
 Toto téma obsahuje odkazy na jiné o `MaskedTextBox` ovládacího prvku.  
@@ -32,7 +33,7 @@ Toto téma obsahuje odkazy na jiné o `MaskedTextBox` ovládacího prvku.
  [Návod: Práce s ovládacím prvkem MaskedTextBox](../../../../docs/framework/winforms/controls/walkthrough-working-with-the-maskedtextbox-control.md)  
  Klíčové funkce ukazuje `MaskedTextBox` ovládacího prvku.  
   
- [Postupy: vytvoření vazby dat k ovládacímu prvku MaskedTextBox](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-maskedtextbox-control.md)  
+ [Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-maskedtextbox-control.md)  
  Ukazuje, jak k opakovanému formátování data, když data v databázi není ve formátu očekávanou svou definici. maska.  
   
 ## <a name="reference"></a>Odkaz  
@@ -40,5 +41,5 @@ Toto téma obsahuje odkazy na jiné o `MaskedTextBox` ovládacího prvku.
  Primární třídou pro implementaci maskované textové pole.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.

@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 34e6e7c505dab135452664fdb815ee3e905a2ad0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b2739cc5eaa6a1e43c06849e1b00f7ac8bd531e7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;Vymazat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;trasování&gt;
 Vymaže `Listeners` kolekce pro trasování.  
@@ -93,4 +94,4 @@ Vymaže `Listeners` kolekce pro trasování.
  <xref:System.Diagnostics.TraceSource>  
  [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [\<Odebrat >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)  
- [Trasování – moduly naslouchání](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+ [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

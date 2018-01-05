@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d9fe72090de3722137c2b0c2190c11f190be5fbc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 25a45626564bb58950b251ae5e9041609d96a207
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-a-resource-manager"></a>Implementace Resource Manager
 Každý prostředek, který používá v transakci spravuje správce prostředků, jejichž akce jsou koordinovaný správcem transakcí. Správci prostředků pracují ve spolupráci se správcem transakcí k poskytování aplikací s zárukou atomicitu a izolaci. Microsoft SQL Server, fronty zpráv trvalý, tabulky hodnot hash v paměti jsou všechny příklady správci prostředků.  
@@ -44,15 +45,15 @@ Každý prostředek, který používá v transakci spravuje správce prostředk�
 ## <a name="in-this-section"></a>V tomto oddílu  
  V následujících tématech jsou uvedeny kroky obvykle následuje správce prostředků.  
   
- [Uvedení prostředky jako účastníky v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
   
  Popisuje, jak lze prostředek trvalé nebo přechodné zařazení v transakci.  
   
- [Potvrzení transakce v jednofázové a více fáze](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [Potvrzení transakce v jedné fázi a více fázích](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  Popisuje, jak správce prostředků reaguje na potvrzení oznámení a připravit potvrzení.  
   
- [Obnovení](../../../../docs/framework/data/transactions/performing-recovery.md)  
+ [Provedení obnovení](../../../../docs/framework/data/transactions/performing-recovery.md)  
   
  Popisuje, jak obnoví správce trvalý prostředků z selhání.  
   
@@ -60,6 +61,6 @@ Každý prostředek, který používá v transakci spravuje správce prostředk�
   
  Popisuje, jak tři úrovně důvěryhodnosti pro System.Transactions omezit přístup k studijních materiálech, které <xref:System.Transactions> zveřejňuje.  
   
- [Optimalizace pomocí jednoho potvrdit fáze a možné zvýšit jedné fáze oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
   
  Popisuje postupy pro optimalizaci implementace správce prostředků k dispozici.

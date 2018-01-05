@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f6a05f838e37d5cd56a572dc73b032bec2d2abea
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 25106bffe6d541a89c786035db3d3266d861fd5b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemservicemodeltxcompletionstatuscompletedforerror"></a>System.ServiceModel.TxCompletionStatusCompletedForError
 Zadanou transakci pro zadanou operaci byla dokončena z důvodu nezpracované výjimce provádění.  
@@ -30,5 +31,5 @@ Zadanou transakci pro zadanou operaci byla dokončena z důvodu nezpracované v�
   
 ## <a name="see-also"></a>Viz také  
  [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení potíží s vaší aplikace pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a Diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+ [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

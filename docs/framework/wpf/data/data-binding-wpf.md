@@ -17,21 +17,22 @@ caps.latest.revision: "79"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 809f63d0057dd55d092343578d2952b2abdc0812
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 23fba12742943720f5b73db708015e798f0ac886
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-wpf"></a>Datová vazba (WPF)
 Datová vazba Windows Presentation Foundation (WPF) poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici. Elementy mohou být vázány na data z různých zdrojů dat ve formuláři common language runtime (CLR) objektů a XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
- [Ukázka dat – přehled](../../../../docs/framework/wpf/data/data-templating-overview.md)  
- [Přehled deklarace vazby](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+ [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [Přehled deklarací vazeb](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Data>  
@@ -47,4 +48,4 @@ Datová vazba Windows Presentation Foundation (WPF) poskytuje jednoduchý a konz
   
  [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
   
- [Návod: Ukládání dat aplikací v aplikaci WPF](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+ [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)

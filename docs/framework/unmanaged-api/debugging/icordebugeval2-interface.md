@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fbcf36ff7aca84299c55083b4ae135ce0a9ec4f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ac816d2b2dce6c9c76813bf4247bac7ca40da5f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugeval2-interface1"></a>ICorDebugEval2 Interface1
 Rozšiřuje "ICorDebugEval" kvůli zajištění podpory pro obecné typy.  
@@ -32,13 +33,13 @@ Rozšiřuje "ICorDebugEval" kvůli zajištění podpory pro obecné typy.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Callparameterizedfunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)|Nastaví volání zadaný "ICorDebugFunction", který může být vnořena ve typu jehož konstruktor přijímá parametry typu nebo sám přijmout parametry typu.|  
-|[Createvaluefortype – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md)|Získá ukazatel nové "ICorDebugValue" zadaného typu, s počáteční hodnotou null nebo nula.|  
-|[Newparameterizedarray – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md)|Přiděluje nový pole typu zadaného elementu a dimenze.|  
-|[Newparameterizedobject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)|Vytvoří nový objekt parametrizované typu a volá konstruktor metodu objektu.|  
-|[Newparameterizedobjectnoconstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md)|Vytvoří nový objekt parametrizované typ zadané třídy bez pokus o volání metody konstruktoru|  
-|[Newstringwithlength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newstringwithlength-method.md)|Vytvoří nový řetězec určené délky zadaný obsah.|  
-|[Rudeabort – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-rudeabort-method.md)|Zruší výpočet které tento `ICorDebugEval2` právě provádí.|  
+|[CallParameterizedFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)|Nastaví volání zadaný "ICorDebugFunction", který může být vnořena ve typu jehož konstruktor přijímá parametry typu nebo sám přijmout parametry typu.|  
+|[CreateValueForType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md)|Získá ukazatel nové "ICorDebugValue" zadaného typu, s počáteční hodnotou null nebo nula.|  
+|[NewParameterizedArray – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md)|Přiděluje nový pole typu zadaného elementu a dimenze.|  
+|[NewParameterizedObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)|Vytvoří nový objekt parametrizované typu a volá konstruktor metodu objektu.|  
+|[NewParameterizedObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md)|Vytvoří nový objekt parametrizované typ zadané třídy bez pokus o volání metody konstruktoru|  
+|[NewStringWithLength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newstringwithlength-method.md)|Vytvoří nový řetězec určené délky zadaný obsah.|  
+|[RudeAbort – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-rudeabort-method.md)|Zruší výpočet které tento `ICorDebugEval2` právě provádí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -55,4 +56,4 @@ Rozšiřuje "ICorDebugEval" kvůli zajištění podpory pro obecné typy.
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

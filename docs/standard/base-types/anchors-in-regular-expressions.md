@@ -25,11 +25,14 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 453776c97ec0531cea94ecf44c31216cf5b17a3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 648c86c71de3c92825af3cfdd4ac2ca023f5e027
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a>Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí dojít ke shodě. Pokud použijete na ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo využívat znaků; Vypadá to shody na určené pozici. Například `^` Určuje, že porovnávání musí začít na začátku řádku nebo řetězec. Proto s regulárním výrazem `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. Následující tabulka uvádí ukotvení podporované regulární výrazy v rozhraní .NET.  
@@ -182,5 +185,5 @@ ms.lasthandoff: 11/21/2017
 |`\w+`|Porovná jeden nebo více znaků slova.|  
   
 ## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
+ [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
  [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7eb8e0853adbc24deb43fc1006804d7707d9a4b8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2ea157ea1ac73a287ba39c1468e7e9a5781d40a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
 Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která kontrolují a ověření konfigurace služby nebo změňte chování za běhu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a aplikaci služby. Toto téma popisuje chování rozhraní, jak pro jejich implementaci a jak je přidáte do popisu služby (v aplikaci služby) nebo koncový bod (v aplikaci klienta) prostřednictvím kódu programu, nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [zadání běhového chování klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  

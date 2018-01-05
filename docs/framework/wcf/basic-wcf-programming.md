@@ -19,11 +19,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 83404a56de68de8f8aec271c28e9896c4fa8702b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dfcd0a09f247077f299d8b9c14a07bdc667245b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-wcf-programming"></a>Základní programování WCF
 Tato část představuje základy pro vytvoření [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace.  
@@ -44,10 +45,10 @@ Tato část představuje základy pro vytvoření [!INCLUDE[indigo1](../../../in
  [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
  Popisuje, jak získat metadata ze služeb, která na převod [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kód klienta, popisovač problémy se zabezpečením a sestavení, konfiguraci a hostitele [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta.  
   
- [Úvod do rozšíření](../../../docs/framework/wcf/introduction-to-extensibility.md)  
+ [Úvod do rozšířitelnosti](../../../docs/framework/wcf/introduction-to-extensibility.md)  
  Popisuje, jak rozšířit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] při vytváření vlastních řešení.  
   
- [Rychlý start řešení potíží s WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
+ [Řešení problémů s WCF – úvodní příručka](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
  Popisuje některé z nejběžnějších problémů, ke kterým došlo, co můžete dělat je můžete vyřešit a kde najít další informace o problému.  
   
  [WCF a ASP.NET Web API](../../../docs/framework/wcf/wcf-and-aspnet-web-api.md)  
@@ -69,7 +70,7 @@ Tato část představuje základy pro vytvoření [!INCLUDE[indigo1](../../../in
   
  [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
   
- [Nástroje služby Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
+ [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
   
  [Ukázky Windows Communication Foundation](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
   

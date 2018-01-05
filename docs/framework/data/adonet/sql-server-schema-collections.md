@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c2f03065ee6f1292f72a33a72b1d43b1fed0c8f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76d9b8fab965523852adafb6b7d858c34e72d408
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-schema-collections"></a>Kolekcemi schémat serveru SQL
 Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě běžných kolekcemi schémat. Schéma kolekce mírně lišit podle verze systému SQL Server, kterou používáte. Pokud chcete určit seznam podporovaných schématu kolekcí, volání **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají.  
@@ -266,5 +267,5 @@ Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuj
 |Permission_set_desc|String|Popisný název oprávnění set nebo-úroveň zabezpečení pro sestavení.|  
   
 ## <a name="see-also"></a>Viz také  
- [Načítání informací o schématu databáze](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

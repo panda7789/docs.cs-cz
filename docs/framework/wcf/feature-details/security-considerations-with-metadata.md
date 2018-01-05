@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 75191aa28be76da549d38403c4a6f019c6f54bc2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 098b31e479322d9de3a299f06652e819a5388c42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-with-metadata"></a>Informace o zabezpečení pro metadata
 Když pomocí metadat funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vezměte v úvahu bezpečnostních důsledcích publikování, načítání a pomocí služby metadat.  
@@ -49,5 +50,5 @@ Když pomocí metadat funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.
  Konfigurační soubor aplikace služby může řídit způsob a zda je publikována metadat. Je vhodné k ochraně konfiguračního souboru aplikace pomocí seznamů řízení odpovídající přístupu (ACL) zajišťující, že útočník nelze upravit taková nastavení.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)  
+ [Postupy: Zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)  
  [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)

@@ -22,11 +22,12 @@ caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bfea438ec19303c35ad9d7a2816cb7b9473a00c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dffff7fefa80f420e61045b21b0e0c1a170e2911
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linkedconfiguration-element"></a>\<linkedconfiguration – > elementu
 
@@ -60,10 +61,10 @@ Určuje konfigurační soubor pro zahrnout.
 
 ## <a name="remarks"></a>Poznámky
 
-**\<Linkedconfiguration – >** element zjednodušuje údržbu sestavení součástí. Pokud jeden nebo více aplikací používat sestavení, který má konfigurační soubor umístěný v dobře známé umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfiguračního souboru sestavení, nikoli přímo včetně informace o konfiguraci. Při sestavení součástí je údržba, aktualizace konfiguračního souboru běžné poskytuje aktualizovaný konfigurační informace pro všechny aplikace, které používají sestavení.
+ **\<Linkedconfiguration – >** element zjednodušuje údržbu sestavení součástí. Pokud jeden nebo více aplikací používat sestavení, který má konfigurační soubor umístěný v dobře známé umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfiguračního souboru sestavení, nikoli přímo včetně informace o konfiguraci. Při sestavení součástí je údržba, aktualizace konfiguračního souboru běžné poskytuje aktualizovaný konfigurační informace pro všechny aplikace, které používají sestavení.
 
 > [!NOTE]
-> **\<Linkedconfiguration – >** element není podporován pro aplikace s manifesty Windows vedle sebe.
+>  **\<Linkedconfiguration – >** element není podporován pro aplikace s manifesty Windows vedle sebe.
 
 Následující pravidla budou řídit použití propojené konfigurační soubory:
 
@@ -75,7 +76,7 @@ Následující pravidla budou řídit použití propojené konfigurační soubor
 
 - Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako u chování `#include` direktivy v jazyce C/C++.
 
-- **\<Linkedconfiguration – >** element je povolena pouze v konfigurační soubory aplikace; je ignorován v *Machine.config*.
+-  **\<Linkedconfiguration – >** element je povolena pouze v konfigurační soubory aplikace; je ignorován v *Machine.config*.
 
 - Cyklické odkazy jsou zjištěna a byla ukončena. To znamená pokud  **\<linkedconfiguration – >** elementy řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.
 

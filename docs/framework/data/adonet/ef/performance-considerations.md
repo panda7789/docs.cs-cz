@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: dd42175234418ebd260a85c87bfeae6cf59ceb4a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0b12703343480c58024d91ee87f001373552f66a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-considerations-entity-framework"></a>Faktory ovlivňující výkon (rozhraní Entity Framework)
 Toto téma popisuje výkonové charakteristiky ADO.NET Entity Framework a poskytuje některé aspekty určené k pomoct zlepšit výkon aplikací rozhraní Entity Framework.  
@@ -164,4 +165,4 @@ Toto téma popisuje výkonové charakteristiky ADO.NET Entity Framework a poskyt
 -   [Porovnání výkonu technologie ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkID=123913)  
   
 ## <a name="see-also"></a>Viz také  
- [Vývoj a aspekty nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)
+ [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

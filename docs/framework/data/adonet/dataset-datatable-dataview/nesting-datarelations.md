@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: db7df753bf6066d3a89c46a82b66e47281076f95
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 264ce39902a23f0f7136a2fa1b49d83d0ce2736b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="nesting-datarelations"></a>DataRelations vnoření
 Jednotlivé tabulky v znázornění relační data obsahují řádky, které se vztahují na sebe navzájem pomocí sloupec nebo sadu sloupců. V technologie ADO.NET <xref:System.Data.DataSet>, relace mezi tabulkami je implementovaná pomocí <xref:System.Data.DataRelation>. Při vytváření **DataRelation**, vztahy podřízenosti sloupců, které lze spravovat pouze prostřednictvím vztah. Tabulky a sloupce jsou samostatné entity. V hierarchické reprezentace dat, který obsahuje XML vztahů nadřazenosti a podřízenosti reprezentována nadřazené elementy, které obsahují vnořené podřízené elementy.  
@@ -142,7 +143,7 @@ customerOrders.Nested = true;
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Pomocí XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- [Přidání DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)  
- [Datové sady, DataTables a DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Přidání datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)  
+ [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

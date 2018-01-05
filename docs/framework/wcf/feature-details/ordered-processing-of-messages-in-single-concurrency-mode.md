@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c677ed869c0e5dd0df1288de48668ba403df5aa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c50381c678a84f5602d08342d02dbf44316994c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ordered-processing-of-messages-in-single-concurrency-mode"></a>Uspořádané zpracování zpráv v režimu jedné souběžnosti
 WCF umožňuje žádné záruky o pořadí, ve kterém jsou zpracovány zprávy, není-li základní kanál relacemi.  Pro instanci služby WCF, který používá MsmqInputChannel, která není kanál s relacemi, se nezdaří zpracování zpráv v pořadí. Existují některé okolnosti, kdy může vývojář má v pořadí zpracování chování ale použít relací. Toto téma popisuje postupy pro konfiguraci tohoto chování, když služba běží v režimu jedné souběžnosti.  
@@ -37,4 +38,4 @@ WCF umožňuje žádné záruky o pořadí, ve kterém jsou zpracovány zprávy,
   
 ## <a name="see-also"></a>Viz také  
  [Relace, vytváření instancí a souběžnost](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)  
- [Souběžnosti](../../../../docs/framework/wcf/samples/concurrency.md)
+ [Souběžnost](../../../../docs/framework/wcf/samples/concurrency.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f603f795682c7ea1f48e5d9356af6e0477246da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 820c36abda104bbf748e5b3a7838f3c7715048e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltparametergt-element-net-native"></a>Element &lt;Parameter&gt; (.NET Native)
 Reflexe zásada se vztahuje na typ argument předaný metodě.  
@@ -83,6 +84,6 @@ Reflexe zásada se vztahuje na typ argument předaný metodě.
   
 ## <a name="see-also"></a>Viz také  
  [\<Metoda > elementu](../../../docs/framework/net-native/method-element-net-native.md)  
- [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
  [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)

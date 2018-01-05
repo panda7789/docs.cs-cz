@@ -26,11 +26,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 198ec8b8cb0b27e009f01f8e60a47e8086a7dbc7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 570a065d3f28befe8db4887ff908c3bd60a639a1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
 Funkce usnadnění můžete použít vlastní matematické vzorce pro své animace. Například můžete objekt reálně kolísají nebo chovat, jako by šlo na pružiny. Můžete použít klíč rámce, nebo i z/do nebo podle animací sblížit těchto důsledcích, ale bude potřeba významné množství práce a animace bude přesností menší než pomocí matematické vzorce.  

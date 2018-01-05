@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e986c79887ad19c77761b5ce134e4a3d68200d1f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5f190fb101a3ff666d194d854c9ce152657ebf85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-inherit-windows-forms"></a>Postupy: Dědění formulářů Windows
 Vytvoření nové Windows Forms pomocí dědění z podkladové formuláře je užitečný způsob, jak duplicitní maximální úsilí bez průchodu přes proces pokaždé, když to vyžadují zcela nové vytvoření formuláře.  
@@ -51,8 +52,8 @@ Vytvoření nové Windows Forms pomocí dědění z podkladové formuláře je u
  Při dědění formulářů, mějte na paměti, která mohou se vyskytnout potíže se s ohledem na obslužné rutiny událostí se volala dvakrát, protože každé události je zpracovanou základní třídy a zděděné třídy. Další informace o tom, jak zamezit tomuto problému najdete v tématu [řešení potíží s zděděná obslužné rutiny událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Inherits – příkaz](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
- [Imports – příkaz (Namespace .NET a typ)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [pomocí](~/docs/csharp/language-reference/keywords/using.md)  
+ [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
+ [Příkaz Imports (obor názvů a typ .NET)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [using](~/docs/csharp/language-reference/keywords/using.md)  
  [Účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)  
- [Vizuální dědění Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)
+ [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)

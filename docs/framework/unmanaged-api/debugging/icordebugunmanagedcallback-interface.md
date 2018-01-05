@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: aa104bee5171b3b28731cf18a4d26e32f49169ed
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e2a0dc561010ead94f1b2ffcd306a6067a04d7e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugunmanagedcallback-interface"></a>ICorDebugUnmanagedCallback – rozhraní
 Poskytuje oznámení nativní události, které přímo nesouvisejí s common language runtime (CLR).  
@@ -32,7 +33,7 @@ Poskytuje oznámení nativní události, které přímo nesouvisejí s common la
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Debugevent – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md)|Upozorní ladicí program, že nativní událostí je aktivován.|  
+|[DebugEvent – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md)|Upozorní ladicí program, že nativní událostí je aktivován.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -49,4 +50,4 @@ Poskytuje oznámení nativní události, které přímo nesouvisejí s common la
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

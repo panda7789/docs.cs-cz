@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b2c8b85c2920133e21e7659ca0c27e28ab4a8eae
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5605c90d5f63e0ed80ac5a47b36781c45b687cba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapování koncových bodů služby do fronty. Připomínáme, následující obrázek znázorňuje classic [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zařazených do fronty nasazení aplikace.  
@@ -115,4 +116,4 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
  Všimněte si, že nemůžete použít net.msmq:// adresování s `MsmqIntegrationBinding`. Protože `MsmqIntegrationBinding` podporuje vlastní MSMQ formát název adresy, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, která používá tuto vazbu funkce vícesměrového vysílání a distribučního seznamu používat služby MSMQ. Jedinou výjimkou je zadání `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí být typu net.msmq:// formuláře, podobně jako na to, jak je zadán pomocí `NetMsmqBinding`.  
   
 ## <a name="see-also"></a>Viz také  
- [Webhosting Frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+ [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

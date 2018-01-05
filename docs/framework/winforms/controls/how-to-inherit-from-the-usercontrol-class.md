@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fbeb2712742ae4c500ccd14a19c397d5d411c73a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c8d04eb3c0f9ad3ef9f316bf156a9cc9568e7f8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-inherit-from-the-usercontrol-class"></a>Postupy: Dědění ze třídy UserControl
 Chcete-li funkci jeden nebo více ovládacích prvků Windows Forms kombinovat s vlastní kód, můžete vytvořit *uživatelský ovládací prvek*. Uživatelské ovládací prvky kombinovat vývoj rychlé ovládacího prvku, funkce a všestrannost vlastní vlastnosti a metody ovládací prvek standardní Windows Forms. Když začnete vytvoření uživatelského ovládacího prvku, máte k ruce viditelné designer, na který můžete umístit standardní ovládací prvky Windows Forms. Tyto ovládací prvky zachovat všechny jejich vyplývajících funkce, jakož i vzhled a chování (vzhled a chování) standardní ovládací prvky. Jakmile tyto ovládací prvky jsou součástí uživatelského ovládacího prvku, ale jsou již k dispozici prostřednictvím kódu. Uživatelský ovládací prvek nepodporuje svůj vlastní Malování a také zpracovává všechny základní funkce související s ovládacími prvky.  
@@ -46,8 +47,8 @@ Chcete-li funkci jeden nebo více ovládacích prvků Windows Forms kombinovat s
   
 ## <a name="see-also"></a>Viz také  
  [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
- [Postupy: dědění ze třídy Control](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-control-class.md)  
- [Postupy: dědění ze stávajícího systému Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)  
- [Postupy: vytváření ovládacích prvků pro Windows Forms](../../../../docs/framework/winforms/controls/how-to-author-controls-for-windows-forms.md)  
+ [Postupy: Dědění ze třídy Control](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-control-class.md)  
+ [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)  
+ [Postupy: Vytváření ovládacích prvků pro Windows Forms](../../../../docs/framework/winforms/controls/how-to-author-controls-for-windows-forms.md)  
  [Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)  
- [Postupy: testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+ [Postupy: Otestování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)

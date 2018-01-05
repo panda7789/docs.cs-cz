@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d1b768292811a752e7a319f853ca8eff85f1bb08
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 1379adbce449ac3255c359249b0296da96a659a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endmethodenumeration-function"></a>EndMethodEnumeration – funkce
 Ukončí v sekvenci výčtu začít s volání [BeginMethodEnumeration funkce](beginmethodenumeration.md).  

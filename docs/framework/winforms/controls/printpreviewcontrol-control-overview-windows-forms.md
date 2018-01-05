@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 47bef441b01d8bdcf9a365c341005cff28c64f27
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d50e772cf870d47314a25347f4909367062ffb94
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printpreviewcontrol-control-overview-windows-forms"></a>PrintPreviewControl – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PrintPreviewControl> se používá k zobrazení [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) jak se zobrazí při tisku. Tento ovládací prvek má žádné tlačítka nebo další prvky uživatelského rozhraní, takže obvykle použijete <xref:System.Windows.Forms.PrintPreviewControl> pouze v případě, že chcete napsat vlastní náhledu uživatelské rozhraní. Pokud chcete standardní uživatelské rozhraní, použijte <xref:System.Windows.Forms.PrintPreviewDialog> řízení; viz [printpreviewdialog – Přehled ovládacího prvku](../../../../docs/framework/winforms/controls/printpreviewdialog-control-overview-windows-forms.md) Přehled.  
@@ -31,6 +32,6 @@ Windows Forms <xref:System.Windows.Forms.PrintPreviewControl> se používá k zo
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.PrintPreviewControl>  
- [Printpreviewdialog – ovládací prvek – přehled](../../../../docs/framework/winforms/controls/printpreviewdialog-control-overview-windows-forms.md)  
- [Printpreviewcontrol – ovládací prvek](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-windows-forms.md)  
- [Dialogové okno – Ovládací prvky a součásti](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)
+ [Přehled ovládacího prvku PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-overview-windows-forms.md)  
+ [Ovládací prvek PrintPreviewControl](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-windows-forms.md)  
+ [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)

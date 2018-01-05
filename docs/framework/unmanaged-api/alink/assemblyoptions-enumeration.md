@@ -21,11 +21,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ccbbcabd3fbb372322ca6334f6ab6db4fdafc2f1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6ad4f9e02ed0d22009fcb8a5ac078231f2cb22e3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblyoptions-enumeration"></a>AssemblyOptions – výčet
 Vytvoří výčet možností sestavení.  
@@ -88,4 +89,4 @@ typedef enum _AssemblyOptions {
  **Knihovna**: alink.dll  
   
 ## <a name="see-also"></a>Viz také  
- [Al.exe (Linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+ [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

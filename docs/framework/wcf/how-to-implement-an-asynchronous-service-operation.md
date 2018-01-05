@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cd208cf361b78da7f755bbe77070d440fe07b4ac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 276dd3cc84c15c66adeab30f86583e6d9eec4144
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>Postupy: Implementace operace asynchronní služby
 V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, služby operaci lze provést synchronně nebo asynchronně bez diktování klientovi jejich volání. Například operace asynchronní služby můžete volání synchronně, a operací synchronní služby je možné volat asynchronně. Příklad, který ukazuje, jak asynchronní volání operace v aplikaci klienta, naleznete v části [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]synchronní a asynchronní operace, najdete v části [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md) a [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md). Toto téma popisuje základní strukturu operace asynchronní služby, kód není úplný. Kompletní příklad, jak si služba a klient strany najdete v části [asynchronního](http://msdn.microsoft.com/en-us/833db946-f511-4f64-a26f-2759a11217c7).  

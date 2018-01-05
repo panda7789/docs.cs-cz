@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 14be34b5d988a51a4785defbfcec95a4a073cc2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 907761184256b7cf51c7c0f20fa43ee603e0ab12
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-concepts"></a>Koncepty dotazu
 Tato část popisuje klíčové koncepty pro návrh [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -29,17 +30,17 @@ Tato část popisuje klíčové koncepty pro návrh [!INCLUDE[vbteclinq](../../.
  [Dotazování napříč relacemi](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)  
  Vysvětluje, jak použít atributy Association v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model.  
   
- [Vzdálené vs. Místní spuštění](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)  
+ [Vzdálené vs. místní spuštění](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)  
  Vysvětluje, jak určit, kam chcete dotaz spustit.  
   
- [Odložení versus okamžitou načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)  
+ [Odložené versus okamžité načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)  
  Popisuje, jak zadat, když jsou načtena související objekty.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
  Obsahuje odkazy na témata, které vysvětlují [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie.  
   
- [Identity – objekt](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
+ [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
  Popisuje koncept identity objektu v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  

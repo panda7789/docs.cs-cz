@@ -31,11 +31,12 @@ caps.latest.revision: "23"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 5973c67b26e07bba69383cc625ff34493d825a41
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6b325c931579606f6d1d90eb821766a4110acfd5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro speciální znaky. Toto téma popisuje některé konkrétní znak entit a obecné požadavky na dalších konceptech XML v jazyce XAML.  
@@ -56,11 +57,11 @@ XAML používá entity znaků, které jsou definované v kódu XML pro speciáln
   
 |Znak|Entity|Poznámky|  
 |---------------|------------|-----------|  
-|& (ampersand)|&amp;|Musí použít u hodnot atributů i obsahu elementu.|  
-|> (větší – než znak)|&gt;|Je nutné použít hodnotu atributu, ale > je přijatelné jako obsah stejně dlouho jako element < není předcházet.|  
-|< (menší – než znak)|&lt;|Je nutné použít hodnotu atributu, ale \< je přijatelné jako obsah elementu stejně dlouho jako > nedodrží ho.|  
-|"(dvojité uvozovky)|&quot;|Je nutné použít hodnotu atributu, ale dvojité uvozovky (") se dá použít jako obsahu elementu. Všimněte si, že hodnoty atributu může být uzavřená pomocí přímých apostrof (') nebo pomocí dvojité uvozovky ("); podle toho, která znak zobrazí první definuje skříni hodnotu atributu a alternativní uvozovky lze jako literál v hodnotě.|  
-|' (jednoduché uvozovky)|&apos;|Je nutné použít hodnotu atributu, ale je přijatelné jako obsah elementu přímých apostrof ('). Všimněte si, že hodnoty atributu může být uzavřená pomocí přímých apostrof (') nebo pomocí dvojité uvozovky ("); podle toho, která znak zobrazí první definuje skříni hodnotu atributu a alternativní uvozovky lze jako literál v hodnotě.|  
+|& (ampersand)|\&amp;|Musí použít u hodnot atributů i obsahu elementu.|  
+|> (větší – než znak)|\&gt;|Je nutné použít hodnotu atributu, ale > je přijatelné jako obsah stejně dlouho jako element < není předcházet.|  
+|< (menší – než znak)|\&lt;|Je nutné použít hodnotu atributu, ale \< je přijatelné jako obsah elementu stejně dlouho jako > nedodrží ho.|  
+|"(dvojité uvozovky)|\&Automatické formátování výše.|Je nutné použít hodnotu atributu, ale dvojité uvozovky (") se dá použít jako obsahu elementu. Všimněte si, že hodnoty atributu může být uzavřená pomocí přímých apostrof (') nebo pomocí dvojité uvozovky ("); podle toho, která znak zobrazí první definuje skříni hodnotu atributu a alternativní uvozovky lze jako literál v hodnotě.|  
+|' (jednoduché uvozovky)|\&APOS;|Je nutné použít hodnotu atributu, ale je přijatelné jako obsah elementu přímých apostrof ('). Všimněte si, že hodnoty atributu může být uzavřená pomocí přímých apostrof (') nebo pomocí dvojité uvozovky ("); podle toho, která znak zobrazí první definuje skříni hodnotu atributu a alternativní uvozovky lze jako literál v hodnotě.|  
 |(čísla mapování)|&#*[celé číslo]* ; nebo & #x*[šestnáctkových]*;|XAML podporuje mapování čísla do kódování, které je aktivní.|  
 |(pevná místa)|&\#160; (za předpokladu, že kódování UTF-8)|Pro prvky toku dokumentu nebo prvky, které trvat text například WPF <xref:System.Windows.Controls.TextBox>, pevné mezery nejsou normalized mimo značku, i pro `xml:space="default"`. (Další informace najdete v tématu [zpracování prázdných znaků v jazyce XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).)|  
   
@@ -76,4 +77,4 @@ XAML používá entity znaků, které jsou definované v kódu XML pro speciáln
  [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
  [XamlName – gramatika](../../../docs/framework/xaml-services/xamlname-grammar.md)  
- [Zpracování prázdných znaků v jazyce XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)
+ [Zpracování prázdných znaků v jazyku XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)

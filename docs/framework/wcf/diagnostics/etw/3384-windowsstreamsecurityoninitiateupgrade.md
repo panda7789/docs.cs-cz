@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a75c4650fd27d0124985f899e5d1a29d8fe1b78c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 927a93af123949ad19400430ff3dc74b6aea4af8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="3384---windowsstreamsecurityoninitiateupgrade"></a>3384 – WindowsStreamSecurityOnInitiateUpgrade
 ## <a name="properties"></a>Vlastnosti  

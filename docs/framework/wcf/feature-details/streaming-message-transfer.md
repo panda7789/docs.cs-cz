@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0ff5fbf570c826f5c430109d9f79b3d5f39382f6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a751245f0a933fda649d5919bab86abf2969dbf6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-message-transfer"></a>Streamování přenosu zpráv
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]přenosy podporují dva režimy pro přenos zpráv:  
@@ -57,4 +58,4 @@ ms.lasthandoff: 12/02/2017
  Změna režimu přenosu z vyrovnávací paměti pro streamování také změní tvar nativní kanálu TCP a přenosy pojmenovaný kanál. Pro přenosy ve vyrovnávací paměti, je tvar nativní kanálu <xref:System.ServiceModel.Channels.IDuplexSessionChannel>. Pro přenášené datovými proudy přenosy jsou nativní kanály <xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>. Změna režimu přenosu v existující aplikaci, která používá tyto přenosy, přímo (tedy ne prostřednictvím smlouvy o poskytování služeb) vyžaduje změna tvaru očekávané kanál pro kanál továrny a naslouchací procesy.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+ [Postupy: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

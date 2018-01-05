@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: faa74e982fb114d041468c53dde2f978bb3faa35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0feef370e6b09d2f58a33f2142bd654e1d7e3402
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek jsou techniku XAML pro získání hodnotu, která není primitivní ani konkrétní typ jazyka XAML. Pro použití atributu, použít rozšíření značek pořadí známé znak otevření složené závorky `{` k zadání oboru rozšíření značek a složené závorky ukončovací `}` ukončíte. Pokud používáte rozhraní .NET Framework XAML Services, můžete některé z předdefinovaných rozšíření značek jazyka XAML z System.Xaml sestavení. Můžete také podtřídou z <xref:System.Windows.Markup.MarkupExtension> třídy definované v System.Xaml a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek definované určité rozhraní, pokud jsou již odkazující na dané platformy.  

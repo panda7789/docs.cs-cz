@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9451504b64ddaa8dc0ea6b3a0754257b2c8b3824
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 61e1dbdcf919ee6aa2150e6a57cb88a8aa859efe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Vystavení komponent architektury .NET Framework pro COM
 Zápis typ formátu .NET a využívání tohoto typu z nespravovaného kódu jsou odlišné aktivity pro vývojáře. Tato část popisuje několik tipy pro vytvoření spravovaného kódu, které spolupracuje s klienty COM:  
@@ -60,4 +61,4 @@ Zápis typ formátu .NET a využívání tohoto typu z nespravovaného kódu jso
   
 ## <a name="see-also"></a>Viz také  
  [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)  
- [Ukázka zprostředkovatele komunikace s objekty COM: Klient COM a .NET serveru](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)
+ [Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)

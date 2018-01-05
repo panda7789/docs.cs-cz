@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0740bb4f4ce5a5e801f14ceb50c68d57b9986969
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9512116356720d40c7d3835713a41964d8020597
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-position-a-toolstripitem-on-a-toolstrip"></a>Postupy: Umístění prvku ToolStripItem do prvku ToolStrip
 Můžete přesunout nebo přidat <xref:System.Windows.Forms.ToolStripItem> levé nebo pravé straně <xref:System.Windows.Forms.ToolStrip>.  

@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 740ba87fd247e05b1bc32e3732819514ba2806ae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d6e5ab22ff2fe382fa2a266e3180cb34f970cc48
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="composition-analysis-tool-mefx"></a>Nástroj pro analýzu sestavení (Mefx)
 Nástroj pro analýzu sestavení (sestavení Mefx) je aplikace příkazového řádku, která analyzuje knihovny (DLL.dll) a soubory aplikace (.exe) obsahující části Managed Extensibility Framework (MEF). Primárním účelem Mefx je vývojáři poskytnout způsob, jak diagnostikovat chyby složení ve svých aplikacích MEF bez nutnosti přidání komplikované trasování kódu do vlastní aplikace. Také může být užitečné při pochopit částí z knihovny od třetích stran. Toto téma popisuje, jak používat Mefx a poskytuje odkaz pro její syntaxe.  

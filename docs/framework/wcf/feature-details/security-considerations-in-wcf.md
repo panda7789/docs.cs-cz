@@ -17,11 +17,12 @@ caps.latest.revision: "49"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: c0af5a5d96f20b2ba5118909a3f0c5ba405bdb11
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f35bd56bdc69f8c57a7e46984778051b57b7a06a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-in-wcf"></a>Důležité informace o zabezpečení ve službě WCF
 Témata v této části seznamu různé položky související se zabezpečením vzít v úvahu při navrhování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace.  
@@ -30,13 +31,13 @@ Témata v této části seznamu různé položky související se zabezpečením
  [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
  Popisuje různé způsoby, že informace mohou být odhalena nebo napadení a toto riziko lze snížit.  
   
- [Zvýšení úrovně oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
  Popisuje účinky udělíte oprávnění autorizace útočník nad rámec těch, původně udělena a jak toto riziko lze snížit.  
   
- [Odmítnutí služby](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  Popisuje, co se stane, když nelze správně zpracovat zprávy systému a jak ji zmírnit.  
   
- [Manipulaci](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
  Popisuje změnu zprávy nebo doručení zpráv a jak ji zmírnit.  
   
  [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
@@ -58,7 +59,7 @@ Témata v této části seznamu různé položky související se zabezpečením
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Informace o zabezpečení a doporučené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)

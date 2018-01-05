@@ -23,11 +23,14 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a26f6750f68609b40e6917fc5b257e43d95c3c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 557d639cc8a4e7ade2cfbd1f5d7264bca226d273
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="multithreaded-programming-with-the-event-based-asynchronous-pattern"></a>Vícevláknové programování s asynchronním vzorem založeným na událostech
 Existuje několik způsobů, jak vystavit asynchronní funkce kódu klienta. Asynchronní vzor založený na událostech stanovuje doporučený způsob pro třídy nabídne asynchronní chování.  
@@ -48,7 +51,7 @@ Existuje několik způsobů, jak vystavit asynchronní funkce kódu klienta. Asy
  [Návod: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)  
  Ukazuje, jak vytvořit komponentu, která implementuje asynchronní vzor založený na událostech. Je implementována pomocí pomocné třídy z <xref:System.ComponentModel?displayProperty=nameWithType> obor názvů, které zajišťuje, že součást funguje správně v rámci modelu všechny aplikace.  
   
- [Postupy: použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
+ [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
  Popisuje způsob použití komponenty, která podporuje asynchronní vzor založený na událostech.  
   
 ## <a name="reference"></a>Odkaz  
@@ -62,7 +65,7 @@ Existuje několik způsobů, jak vystavit asynchronní funkce kódu klienta. Asy
  Popisuje <xref:System.ComponentModel.BackgroundWorker> součásti a obsahuje odkazy na všechny její členy.  
   
 ## <a name="see-also"></a>Viz také  
- [Dělení na spravovaná vlákna osvědčené postupy](../../../docs/standard/threading/managed-threading-best-practices.md)  
+ [Doporučené postupy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-best-practices.md)  
  [Události](../../../docs/standard/events/index.md)  
  [Více vláken v součásti](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
  [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

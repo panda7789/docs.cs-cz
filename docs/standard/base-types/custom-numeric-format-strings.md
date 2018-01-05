@@ -26,11 +26,14 @@ caps.latest.revision: "54"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a391ee54aaeaf007afcb6aacdb9376820950e89e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ec33a093e4f7f8ccda1992f26563bcd63853e634
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní číselný formátovací řetězec je formátovací řetězec, který není [standardního řetězce formátu čísel](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
@@ -238,6 +241,6 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
 ## <a name="see-also"></a>Viz také  
  <xref:System.Globalization.NumberFormatInfo>  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- [Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
- [Postupy: zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
+ [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
+ [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
  [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

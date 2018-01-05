@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5e61a15a7a249a90ce9eca035ebe6fd67275bb74
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f7ade624f57f58a5ec91a5d993375c73d1cc26fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-loop-a-sound-playing-on-a-windows-form"></a>Postupy: Opakované přehrávání zvuku ve formuláři Windows
 Následující příklad kódu opakovaného hraje zvuku. Když kód v `stopPlayingButton_Click` spuštění obslužné rutiny události, zvuk, který se aktuálně přehrávání zastaví. Pokud žádné přehrávání zvuku, nedojde k žádné akci.  
@@ -65,5 +66,5 @@ Následující příklad kódu opakovaného hraje zvuku. Když kód v `stopPlayi
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Media.SoundPlayer.PlayLooping%2A>  
- [Postupy: přehrávání zvuku z formuláře Windows](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)  
+ [Postupy: Přehrávání zvuku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)  
  [Přehled třídy SoundPlayer](../../../../docs/framework/winforms/controls/soundplayer-class-overview.md)

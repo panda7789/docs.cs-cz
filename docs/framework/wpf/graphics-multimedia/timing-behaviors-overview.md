@@ -16,11 +16,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ac6671033a439051b062ddae70649a63bacd4979
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9305b69927a1ed0ad4f154ab972316f3dee951e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="timing-behaviors-overview"></a>Přehled chování časování
 Toto téma popisuje chování časování animace a jiných <xref:System.Windows.Media.Animation.Timeline> objekty.  
@@ -133,8 +134,8 @@ Toto téma popisuje chování časování animace a jiných <xref:System.Windows
 -   <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>-Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy stráví zpomaluje. Příklad, naleznete v části [postupy: zvýšení nebo snížení hardwarové akcelerace animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Animace a časování přehled systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
  [Přehled událostí časování](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)  
  [Ukázka chování časování animace](http://go.microsoft.com/fwlink/?LinkID=159970)

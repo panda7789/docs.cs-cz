@@ -12,11 +12,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9fb46dfee70cdcf136578a32709f3ceddddbeb81
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6fe13a8aae93548eedac2647e2429d66121377aa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="suppress-transaction-scope"></a>Potlačit oboru transakce
 Ukázka ukazuje, jak vytvořit vlastní `SuppressTransactionScope` aktivity k potlačení vedlejším spuštění transakce, pokud je k dispozici.  

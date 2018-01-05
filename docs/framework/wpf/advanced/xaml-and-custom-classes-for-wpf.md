@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c494b386cc52786c5adfbcbbea78b912bbf9887d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: da599afc94fba617d4df17c57679d8ee4bb05c61
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 XAML, jak jsou implementované ve [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] rozhraní podporuje schopnost definovat vlastní třídu nebo strukturu v žádném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyka a poté přístup pomocí značek XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vaše vlastní typy v rámci stejného souboru značek, obvykle mapování vlastních typů na předponu oboru názvů jazyka XAML. Toto téma popisuje požadavky, které vlastní třídu, musí vyhovovat možné používat jako XAML element.  
@@ -124,7 +125,7 @@ XAML, jak jsou implementované ve [!INCLUDE[TLA#tla_clr](../../../../includes/tl
   
 ## <a name="see-also"></a>Viz také  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Vlastnosti vlastní závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
- [Přehled základní prvky](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [Načítání XAML a vlastností závislostí](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)
+ [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
+ [Vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)

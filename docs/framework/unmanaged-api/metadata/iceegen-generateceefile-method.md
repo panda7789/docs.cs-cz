@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e0fed28024ac931cdc44b1b7d6bb82fcc7f1089b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 10b579a3d0ff8cbe02a3b47231114521486d8e2b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iceegengenerateceefile-method"></a>ICeeGen::GenerateCeeFile – metoda
 Generuje soubor základu kódu, který obsahuje kód základní momentálně načtených do této [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.  
@@ -51,4 +52,4 @@ HRESULT GenerateCeeFile ();
  **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Iceegen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+ [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

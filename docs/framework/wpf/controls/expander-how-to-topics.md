@@ -17,20 +17,21 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d926970046b96029ee253c10a5abcc8b8e0602bc
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 885cd77ed3d65fdb1173b695c50b9d6d26a8acb1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="expander-how-to-topics"></a>Postupy: Témata rozšíření
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Expander> ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření Expander s ScrollViewer](../../../../docs/framework/wpf/controls/how-to-create-an-expander-with-a-scrollviewer.md)  
+ [Vytvoření rozšíření pomocí prvku ScrollViewer](../../../../docs/framework/wpf/controls/how-to-create-an-expander-with-a-scrollviewer.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Expander>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled Expander](../../../../docs/framework/wpf/controls/expander-overview.md)
+ [Přehled rozšíření](../../../../docs/framework/wpf/controls/expander-overview.md)

@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
-ms.openlocfilehash: 1d46992d9f5666c87522630c7a4926aaac82475a
-ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.workload: dotnetcore
+ms.openlocfilehash: 599f46253a29db5dfd21d0d44ecf67654b6d2eb3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, Metapackages a architektury
 

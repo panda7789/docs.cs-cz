@@ -23,11 +23,14 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2bc9db7317c7a73f70a2cb83322b8b3a4c3771b9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c6da140ea82fc3c6d3f5f3001f37711ffe861370
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Regulární výraz příklad: Vyhledávání atributů href
 Následující příklad prohledá vstupní řetězec a zobrazí všechny href = "..." a jejich umístění v řetězci.  

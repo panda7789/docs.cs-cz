@@ -19,25 +19,26 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6a2ec81fa63b07a33f79a54b500ae3d7e62f367f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0159848e8add1f66ca7690c0fc692522102e74d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transformations-how-to-topics"></a>Postupy: Témata transformace
 Témata v této části popisují postup použít jiný transformace objektů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Používání transformace pro Element, když dojde k události](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-an-element-when-an-event-occurs.md)  
- [Použití více transformací k objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)  
- [Ujistěte se, typu elementu číselník na místě](../../../../docs/framework/wpf/graphics-multimedia/how-to-make-an-element-spin-in-place.md)  
+ [Použití transformace na element při výskytu události](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-an-element-when-an-event-occurs.md)  
+ [Použití několika transformací na objekt](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)  
+ [Otáčení elementu na místě](../../../../docs/framework/wpf/graphics-multimedia/how-to-make-an-element-spin-in-place.md)  
  [Otočení objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)  
- [Změnit velikost elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)  
- [Zkreslit Element](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)  
- [Zadejte počátek transformace pomocí relativní hodnoty](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-the-origin-of-a-transform-by-using-relative-values.md)  
- [Převede Element](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)  
- [Použít MatrixTransform k vytvoření vlastních transformací](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)  
+ [Změna velikosti elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)  
+ [Zkosení elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)  
+ [Určení počátku transformace použitím relativních hodnot](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-the-origin-of-a-transform-by-using-relative-values.md)  
+ [Překlad elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)  
+ [Vytvoření vlastních transformací pomocí MatrixTransform](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Transform>  

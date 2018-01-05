@@ -17,11 +17,12 @@ caps.latest.revision: "28"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 509da8b697f38ea75d9509a8243f3e9e09cc661b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2b8e84fe75f812cdcb97dcc24a0edad2d238515b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se skládá ze dvou primární požadavky: přenos zabezpečení a autorizaci. (Třetí požadavek, auditování událostí zabezpečení, je popsaný v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno zabezpečení přenosu zahrnuje ověření (ověření identity služby a klient), důvěrnost (šifrování zpráv) a integrita (digitální podepisování, které zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení jenom mohou uživatelé s oprávněním ke čtení souboru. Pomocí funkce [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], jsou požadavky na dva primární snadno implementovat.  
@@ -119,10 +120,10 @@ Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se sk
  [Navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)  
  [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)  
  [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
- [Postupy: zabezpečení služby pomocí pověření systému Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)  
- [Postupy: nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)  
- [Postupy: určení typu pověření klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)  
- [Postupy: omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)  
- [Postupy: zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
- [Postupy: prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md)
+ [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
+ [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)  
+ [Postupy: Nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)  
+ [Postupy: Určení typu přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)  
+ [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)  
+ [Postupy: Zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
+ [Postupy: Prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md)

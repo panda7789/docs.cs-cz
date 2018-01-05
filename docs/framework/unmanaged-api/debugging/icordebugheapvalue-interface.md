@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7868fc84ba3003909992334d1a66e1ed243eca18
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d2ab132b73369526204f8fd811e1567b07b4a9b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugheapvalue-interface1"></a>Icordebugheapvalue – Interface1
 Podtřídou třídy "ICorDebugValue", který představuje objekt, který se shromáždily systémem common language runtime (CLR) uvolňování.  
@@ -32,7 +33,7 @@ Podtřídou třídy "ICorDebugValue", který představuje objekt, který se shro
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Createrelocbreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-createrelocbreakpoint-method.md)|Není implementováno.|  
+|[CreateRelocBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-createrelocbreakpoint-method.md)|Není implementováno.|  
 |[IsValid – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-isvalid-method.md)|Získá hodnotu, která určuje, zda objekt reprezentovaný tímto objektem `ICorDebugHeapValue` je platný, nebo má bylo uvolněno modulem garbage collector. Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -53,4 +54,4 @@ Podtřídou třídy "ICorDebugValue", který představuje objekt, který se shro
     
     
     
- [Ladění v rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

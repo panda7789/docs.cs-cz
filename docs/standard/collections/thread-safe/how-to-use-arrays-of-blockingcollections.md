@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ab60561372f2c30055aed95ff60599ea80da1eb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 753c58686e943f5753c76a8d695f4401c4a69952
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-arrays-of-blocking-collections-in-a-pipeline"></a>Postupy: Použití polí blokujících kolekcí v datovém kanálu
 Následující příklad ukazuje způsob použití pole <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> objekty s statické metody, jako <xref:System.Collections.Concurrent.BlockingCollection%601.TryAddToAny%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTakeFromAny%2A> implementovat data rychlé a flexibilní přenos mezi součástmi.  
@@ -34,4 +37,4 @@ Následující příklad ukazuje způsob použití pole <xref:System.Collections
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
- [Kolekce bezpečné pro přístup z více vláken](../../../../docs/standard/collections/thread-safe/index.md)
+ [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)

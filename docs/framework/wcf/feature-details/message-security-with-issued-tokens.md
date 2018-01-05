@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: bb5b5728d8d1f01eb5073b4309f92684d754f5fa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5badab7ed0773be30ba72045ebf97974e062629c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-security-with-issued-tokens"></a>Zabezpeční zpráv pomocí vydaných tokenů
 Vystavený token klientovi umožňuje scénáře federované zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

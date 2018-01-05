@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 497d7242b581a61aa156741a8c2f0ea278fe2372
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7bfa4ab0696083c78578517748cfdc2e79e001d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních metadat WS Exchange vazby
 Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje čtyři metadata definovaná systémem vazby, ale můžete metadat pomocí žádné vazby, které chcete publikovat. Toto téma vám ukáže, jak publikovat pomocí metadat `wsHttpBinding`. Tato vazba vám dává možnost vystavení metadata zabezpečené způsobem. Kód v tomto článku je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -124,8 +125,8 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Chování publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)  
- [Načtení metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
+ [Chování při publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)  
+ [Načítání metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
  [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)  
  [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
- [Publikování kocových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)
+ [Publikování koncových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)

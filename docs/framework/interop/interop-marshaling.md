@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 381eccc42d5abb85cde618f4710f044f172295d5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5bfd5ca9d42c654882c77efafed82aec7e4f0c9b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a>Zařazování spolupráce řídí, jak se data předávají v metoda argumentů a návratové hodnoty mezi spravovanými a nespravovanými paměti během volání. Zařazování spolupráce je aktivita běhu zajišťuje služba zařazování modul common language runtime.  
@@ -40,7 +41,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [Související témata](#related_topics)  
   
--   [Referenční dokumentace](#reference)  
+-   [Referenční informace](#reference)  
   
 <a name="platform_invoke_and_com_interop_models"></a>   
 ## <a name="platform-invoke-and-com-interop-models"></a>Vyvolání platformy a modely zprostředkovatele komunikace s objekty COM  
@@ -156,8 +157,8 @@ Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel
 |[Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)|Popisuje pravidla, která používá službu zařazování spolupráce zařazování dat.|  
 |[Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)|Popisuje, jak deklarace parametry metody a předání argumentů funkce exportované sadou nespravované knihovny.|  
 |[Zařazování dat se spoluprací COM](../../../docs/framework/interop/marshaling-data-with-com-interop.md)|Popisuje, jak přizpůsobit COM – obálky ke změně chování zařazování.|  
-|[Postupy: migrace spravovaného kódu DCOM do WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje, jak migrovat z modelu DCOM do WCF.|  
-|[Postupy: mapování výsledků HRESULT a výjimek](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky pro hodnoty HRESULT a poskytuje kompletní mapování z každé HRESULT do své třídy porovnatelný z hlediska výjimek v rozhraní .NET Framework.|  
+|[Postup: Migrace spravovaného kódu DCOM do WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje, jak migrovat z modelu DCOM do WCF.|  
+|[Postupy: Mapování výsledků HRESULT a výjimek](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky pro hodnoty HRESULT a poskytuje kompletní mapování z každé HRESULT do své třídy porovnatelný z hlediska výjimek v rozhraní .NET Framework.|  
 |[Spolupráce pomocí obecných typů](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58)|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilita modelů COM.|  
 |[Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)|Popisuje vzájemná funkční spolupráce služeb poskytovaných tímto modul common language runtime.|  
 |[Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Obsahuje odkazy na další informace o zahrnutí komponenty modelu COM do své aplikace rozhraní .NET Framework.|  

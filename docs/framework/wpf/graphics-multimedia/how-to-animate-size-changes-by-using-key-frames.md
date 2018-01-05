@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9577f9f08fa1d19aa214bda5a1aef997c2cfa2a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 30ee897efd01712bf4313da87e1050c5a16e4523
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-size-changes-by-using-key-frames"></a>Postupy: Animace změn velikosti použitím klíčových snímků
 Tento příklad ukazuje, jak pomocí klíčových snímků animace změny velikosti.  
@@ -46,5 +47,5 @@ Tento příklad ukazuje, jak pomocí klíčových snímků animace změny veliko
  <xref:System.Windows.Media.Animation.LinearSizeKeyFrame>  
  <xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame>  
  <xref:System.Windows.Media.Animation.SplineSizeKeyFrame>  
- [Přehled animací jednotlivých klíč](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Postupy: témata klíč rámce](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+ [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

@@ -17,21 +17,22 @@ caps.latest.revision: "66"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 877367098baf6e50b18ecfba2e6b20cdbe29313d
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 8b3fca74adb89ba46d2be2a4cba83cc5458396c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="panel-how-to-topics"></a>Témata panelu postupů
 Témata v této části popisují, jak používat <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: použití LayoutTransform elementu](http://msdn.microsoft.com/en-us/8221db67-d99f-4783-b65e-a6c5a52c03ab)  
- [Vytvořit vlastní Panel prvek](../../../../docs/framework/wpf/controls/how-to-create-a-custom-panel-element.md)  
- [Potlačí metodu OnRender panelu](../../../../docs/framework/wpf/controls/how-to-override-the-panel-onrender-method.md)  
- [Nastavte vlastnosti Výška elementu](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)  
- [Nastavte vlastnosti Šířka elementu](../../../../docs/framework/wpf/controls/how-to-set-the-width-properties-of-an-element.md)  
+ [Vytvoření vlastního elementu panelu](../../../../docs/framework/wpf/controls/how-to-create-a-custom-panel-element.md)  
+ [Přepsání metody panelu OnRender](../../../../docs/framework/wpf/controls/how-to-override-the-panel-onrender-method.md)  
+ [Nastavení vlastností výšky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)  
+ [Nastavení vlastností šířky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-width-properties-of-an-element.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -51,6 +52,6 @@ Témata v této části popisují, jak používat <xref:System.Windows.Controls.
 ## <a name="related-sections"></a>Související oddíly  
  [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [Návod: Můj první grafický subsystém WPF aplikace pracovní plochy](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [Přehled ScrollViewer](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

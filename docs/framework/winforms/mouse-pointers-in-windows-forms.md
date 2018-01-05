@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4fb0e193ccbced719f30ede91cb59cd51dd349a9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: aaca18bff265fafbb5bad26adfe2a8c490d85132
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Ukazatele myši ve Windows Forms
 Myš *ukazatel*, která se někdy označuje jako kurzor, je rastrového obrázku, který určuje bod fokus na obrazovce na vstup uživatele pomocí myši. Toto téma obsahuje přehled ukazatele myši ve Windows Forms a popisuje některé z způsobů, jak upravit a ovládat ukazatel myši.  
@@ -42,5 +43,5 @@ Myš *ukazatel*, která se někdy označuje jako kurzor, je rastrového obrázku
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Cursor>  
- [Vstup z myši ve Windows Forms aplikace](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
- [A přetažení funkce ve Windows Forms](../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)
+ [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
+ [Funkce přetažení ve Windows Forms](../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)

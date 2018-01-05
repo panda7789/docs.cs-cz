@@ -7,11 +7,12 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: bba8d77cda7538bf008dc0f510f9279d3c695c3d
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.workload: dotnetcore
+ms.openlocfilehash: 6db2bb6003e630aab900222eb20e33af287cf9c5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-command"></a>příkaz DotNet.
 
@@ -121,35 +122,35 @@ Vytiskne verzi rozhraní .NET Core SDK používá.
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
-| [sestavení DotNet.](dotnet-build.md)     | Sestavení aplikace .NET Core.                                     |
-| [Vyčištění DotNet.](dotnet-clean.md)     | Čistá sestavení výstupy.                                              |
-| [Nápověda DotNet.](dotnet-help.md)       | Zobrazí podrobnější online dokumentaci pro příkaz.           |
-| [migrace DotNet.](dotnet-migrate.md) | Migruje platný Preview 2 projektu na .NET Core SDK 1.0 projekt.  |
-| [msbuild DotNet.](dotnet-msbuild.md) | Poskytuje přístup k MSBuild příkazového řádku.                        |
-| [nové DotNet.](dotnet-new.md)         | Inicializuje jazyka C# nebo projekt F # pro dané šablony.                |
-| [pack DotNet.](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
-| [publikování DotNet.](dotnet-publish.md) | Publikuje aplikace rozhraní .NET framework závislé nebo úplný a samostatný. |
-| [obnovení DotNet.](dotnet-restore.md) | Obnoví závislosti pro dané aplikaci.                  |
-| [Spustit DotNet.](dotnet-run.md)         | Spustí aplikaci ze zdroje.                                   |
-| [SLN – DotNet.](dotnet-sln.md)         | Možnosti pro přidání, odebrání a seznam projekty v řešení souboru.       |
-| [úložiště DotNet.](dotnet-store.md)     | Uchovává sestavení v úložišti balíček modulu runtime.                     |
-| [test DotNet.](dotnet-test.md)       | Spustí testy použitím nástroje test runner.                                     |
+| [dotnet build](dotnet-build.md)     | Sestavení aplikace .NET Core.                                     |
+| [dotnet clean](dotnet-clean.md)     | Čistá sestavení výstupy.                                              |
+| [dotnet help](dotnet-help.md)       | Zobrazí podrobnější online dokumentaci pro příkaz.           |
+| [dotnet migrate](dotnet-migrate.md) | Migruje platný Preview 2 projektu na .NET Core SDK 1.0 projekt.  |
+| [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k MSBuild příkazového řádku.                        |
+| [dotnet new](dotnet-new.md)         | Inicializuje jazyka C# nebo projekt F # pro dané šablony.                |
+| [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
+| [dotnet publish](dotnet-publish.md) | Publikuje aplikace rozhraní .NET framework závislé nebo úplný a samostatný. |
+| [dotnet restore](dotnet-restore.md) | Obnoví závislosti pro dané aplikaci.                  |
+| [dotnet run](dotnet-run.md)         | Spustí aplikaci ze zdroje.                                   |
+| [dotnet run](dotnet-sln.md)         | Možnosti pro přidání, odebrání a seznam projekty v řešení souboru.       |
+| [dotnet restore](dotnet-store.md)     | Uchovává sestavení v úložišti balíček modulu runtime.                     |
+| [dotnet test](dotnet-test.md)       | Spustí testy použitím nástroje test runner.                                     |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
-| [sestavení DotNet.](dotnet-build.md)     | Sestavení aplikace .NET Core.                                     |
-| [Vyčištění DotNet.](dotnet-clean.md)     | Čistá sestavení výstupy.                                              |
-| [migrace DotNet.](dotnet-migrate.md) | Migruje platný Preview 2 projektu na .NET Core SDK 1.0 projekt.  |
-| [msbuild DotNet.](dotnet-msbuild.md) | Poskytuje přístup k MSBuild příkazového řádku.                        |
-| [nové DotNet.](dotnet-new.md)         | Inicializuje jazyka C# nebo projekt F # pro dané šablony.                |
-| [pack DotNet.](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
-| [publikování DotNet.](dotnet-publish.md) | Publikuje aplikace rozhraní .NET framework závislé nebo úplný a samostatný. |
-| [obnovení DotNet.](dotnet-restore.md) | Obnoví závislosti pro dané aplikaci.                  |
-| [Spustit DotNet.](dotnet-run.md)         | Spustí aplikaci ze zdroje.                                   |
-| [SLN – DotNet.](dotnet-sln.md)         | Možnosti pro přidání, odebrání a seznam projekty v řešení souboru.       |
-| [test DotNet.](dotnet-test.md)       | Spustí testy použitím nástroje test runner.                                     |
+| [dotnet build](dotnet-build.md)     | Sestavení aplikace .NET Core.                                     |
+| [dotnet clean](dotnet-clean.md)     | Čistá sestavení výstupy.                                              |
+| [dotnet migrate](dotnet-migrate.md) | Migruje platný Preview 2 projektu na .NET Core SDK 1.0 projekt.  |
+| [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k MSBuild příkazového řádku.                        |
+| [dotnet new](dotnet-new.md)         | Inicializuje jazyka C# nebo projekt F # pro dané šablony.                |
+| [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
+| [dotnet publish](dotnet-publish.md) | Publikuje aplikace rozhraní .NET framework závislé nebo úplný a samostatný. |
+| [dotnet restore](dotnet-restore.md) | Obnoví závislosti pro dané aplikaci.                  |
+| [dotnet run](dotnet-run.md)         | Spustí aplikaci ze zdroje.                                   |
+| [dotnet run](dotnet-sln.md)         | Možnosti pro přidání, odebrání a seznam projekty v řešení souboru.       |
+| [dotnet test](dotnet-test.md)       | Spustí testy použitím nástroje test runner.                                     |
 
 ---
 
@@ -157,24 +158,24 @@ Vytiskne verzi rozhraní .NET Core SDK používá.
 
 Příkaz | Funkce
 --- | ---
-[Přidat odkaz DotNet.](dotnet-add-reference.md) | Přidáte odkaz na projekt.
-[referenční seznam DotNet.](dotnet-list-reference.md) | Zobrazí seznam odkazů projektu.
-[Odebrat odkaz DotNet.](dotnet-remove-reference.md) | Odeberte odkaz na projekt.
+[dotnet add reference](dotnet-add-reference.md) | Přidáte odkaz na projekt.
+[dotnet list reference](dotnet-list-reference.md) | Zobrazí seznam odkazů projektu.
+[dotnet remove reference](dotnet-remove-reference.md) | Odeberte odkaz na projekt.
 
 ### <a name="nuget-packages"></a>Balíčky NuGet
 
 Příkaz | Funkce
 --- | ---
-[Přidejte balíček DotNet.](dotnet-add-package.md) | Přidejte balíček NuGet.
-[Odebrat balíček DotNet.](dotnet-remove-package.md) | Odebrání balíčku NuGet.
+[dotnet add package](dotnet-add-package.md) | Přidejte balíček NuGet.
+[dotnet remove package](dotnet-remove-package.md) | Odebrání balíčku NuGet.
 
 ### <a name="nuget-commands"></a>Příkazy pro balíčky NuGet
 
 Příkaz | Funkce
 --- | ---
-[odstranění nuget DotNet.](dotnet-nuget-delete.md) | Odstraní nebo unlists balíčku ze serveru.
-[místní hodnoty nuget DotNet.](dotnet-nuget-locals.md) | Vymaže nebo vypíše místní prostředky NuGet například mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému.
-[nabízená nuget DotNet.](dotnet-nuget-push.md) | Nabízených oznámení balíček na server a vydává je.
+[dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo unlists balíčku ze serveru.
+[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo vypíše místní prostředky NuGet například mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému.
+[dotnet nuget push](dotnet-nuget-push.md) | Nabízených oznámení balíček na server a vydává je.
 
 ## <a name="examples"></a>Příklady
 

@@ -20,11 +20,12 @@ caps.latest.revision: "32"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bdc1a4f9afb8b1d7cf56b74a329353100accc46d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd4655524c74175d03191cbf7065177c10e3ddda
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-transparent-code-level-1"></a>Kód transparentní pro zabezpečení, úroveň 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  

@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b89453b427e6a9552416f95c488f0c2a575b5cb4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d44805021f0070109ce67f28126d59d36e4175f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="coordinate-systems-and-transformations"></a>Systém souřadnic a transformace
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]poskytuje Světové transformace a transformace stránky, které můžete převést (Otočit, škálovat, převede a tak dále) položek nakreslení. Dvě transformace také umožňují fungovat v různých systém souřadnic.  
@@ -41,8 +42,8 @@ ms.lasthandoff: 10/22/2017
  Zapouzdří afinní přehled 3 3, který představuje geometrickou transformace.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Použití transformací ve spravovaném GDI +](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
+ [Použití transformací ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
  Poskytuje seznam témat, která poskytují další informace o tom, jak používat maticové transformace.  
   
- [O GDI + spravovaný kód](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)  
+ [Informace o spravovaném kódu GDI+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)  
  Obsahuje seznam témat popisující konstrukce grafiky, které můžete použít v rozhraní .NET Framework.

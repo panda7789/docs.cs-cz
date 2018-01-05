@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 969b2468b9b627d9b69f02209f30362edbbcce3c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 698e8ef926740f33f8a0a192680b5cebb45c9d79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="runtime-directive-policy-settings"></a>Nastavení zásad direktivy modulu runtime
 > [!NOTE]
@@ -136,5 +137,5 @@ ms.lasthandoff: 11/21/2017
 |`Required All`|Vyžaduje řetězu nástroj chránit všechny typy a členy, jestli používají a umožňuje zásady pro ně.|✓||  
   
 ## <a name="see-also"></a>Viz také  
- [Odkaz na soubor konfigurace modulu runtime direktivy (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)

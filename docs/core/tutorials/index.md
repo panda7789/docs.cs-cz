@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
-ms.openlocfilehash: 9932555d5a5b029b4faaf3edcaa3ab523eebe77e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 8b1e80023139a4ebc3c961c47c06b9afd0370014
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-core-tutorials"></a>.NET core kurzy
 
@@ -50,9 +51,9 @@ Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 ## <a name="other"></a>Ostatní
 - [Testování částí v .NET Core pomocí testu dotnet.](../testing/unit-testing-with-dotnet-test.md)
 - [Testování částí pomocí Mstestu a .NET Core](../testing/unit-testing-with-mstest.md)
-- [Vývoj knihovny s křížové nástrojů platformy](libraries.md)
-- [Správa verze závislosti balíčku pro .NET Core 1.0](managing-package-dependency-versions.md)
-- [Hostování rozhraní .NET Core z nativního kódu](netcore-hosting.md)
-- [Vytvoření nové vlastní šablony pro dotnet.](create-custom-template.md)
+- [Vývoj knihoven pomocí nástrojů pro různé platformy](libraries.md)
+- [Správa verzí závislosti balíčků pro .NET Core 1.0](managing-package-dependency-versions.md)
+- [Hostování .NET Core z nativního kódu](netcore-hosting.md)
+- [Vytvoření vlastní šablony pro dotnet new](create-custom-template.md)
 
 Pro kurzy o vývoji ASP.NET Core webové aplikace najdete [ASP.NET Core dokumentaci](/aspnet/core/).

@@ -22,11 +22,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 58ef8c008eea4c10228ebb10ceadb5806dfbc0f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2e58e49ecc852b87d03d4112208354e608248984
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-a-transform-to-an-element-when-an-event-occurs"></a>Postupy: Použití transformace na element při výskytu události
 Tento příklad ukazuje, jak se má použít <xref:System.Windows.Media.ScaleTransform> při výskytu události. Koncept, které se zobrazí tady je stejný, který používáte pro použití jiné typy transformace. Další informace o dostupných typech transformace najdete v tématu <xref:System.Windows.Media.Transform> třídy nebo [transformuje přehled](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).  
@@ -48,6 +49,6 @@ Tento příklad ukazuje, jak se má použít <xref:System.Windows.Media.ScaleTra
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Transform>  
  <xref:System.Windows.Media.ScaleTransform>  
- [Transformuje – přehled](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
- [Postupy: témata](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  
- [Přehled směrované události](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+ [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
+ [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  
+ [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

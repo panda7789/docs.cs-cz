@@ -15,11 +15,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26385d91b4201820a5f6ba77b512e7bcfd5372c3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4a3b9698d6a060120addff52e6600916a2de19fc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
 Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Logika spuštění aktivity můžete implementují ve spravovaném kódu nebo se dá implementovat pomocí jiné aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchý aktivity, která používá kód k implementaci jeho logiku spouštění. Implementace druhá aktivita je definována pomocí jiné aktivity. Tyto aktivity se používají v následující kroky v tomto kurzu.  
@@ -118,7 +119,7 @@ Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.CodeActivity>  
  <xref:System.Activities.NativeActivity%601>  
- [Navrhování a implementace vlastních aktivit](../../../docs/framework/windows-workflow-foundation/designing-and-implementing-custom-activities.md)  
+ [Návrh a implementace vlastních aktivit](../../../docs/framework/windows-workflow-foundation/designing-and-implementing-custom-activities.md)  
  [Kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
- [Postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md)  
- [Pomocí ExpressionTextBox v Návrháři vlastní aktivity](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)
+ [Postupy: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md)  
+ [Použití ExpressionTextBox v návrháři vlastní aktivity](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

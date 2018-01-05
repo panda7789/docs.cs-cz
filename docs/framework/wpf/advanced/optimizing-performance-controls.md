@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b414aee19082196ab242706c7730c031cf3a76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b8008d104437454f36f6f425634c40968d5481a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-controls"></a>Optimalizace výkonu: Ovládací prvky
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje celou řadu běžných součásti uživatelského rozhraní (UI), které se používají v většina aplikací systému Windows. Toto téma obsahuje postupy pro zvýšení výkonu uživatelské rozhraní.  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
 -   Nastavení <xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A> k `false`.  
   
--   Nastavení <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A>--> `IsVirtualizing` k `false`.    
+-   Nastavení <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A>--> `IsVirtualizing` k `false`.  
   
  Důležitá poznámka při virtualizaci kontejnery položek je, jestli máte další stav informace spojené s kontejner položek, které patří k položce. V takovém případě je nutné uložit další stav. Například můžete mít položka obsažená v <xref:System.Windows.Controls.Expander> řízení a <xref:System.Windows.Controls.Expander.IsExpanded%2A> stavu je vázán položky kontejneru a nikoli samotnou položku. Když se znovu použije kontejneru pro novou položku, aktuální hodnota <xref:System.Windows.Controls.Expander.IsExpanded%2A> se používá pro novou položku. Kromě toho ztratí správný starou položku <xref:System.Windows.Controls.Expander.IsExpanded%2A> hodnotu.  
   
@@ -90,5 +91,5 @@ ms.lasthandoff: 11/21/2017
  [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
  [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Návod: Ukládání dat aplikací v aplikaci WPF](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)

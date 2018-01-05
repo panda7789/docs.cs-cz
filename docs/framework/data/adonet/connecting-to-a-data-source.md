@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0d21c571b659e9d7aef65893db18b034d614e2af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 01a7342d6e081bec88aeef2c55461be2d936e4a7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>Připojení ke zdroji dat v technologii ADO.NET
 V technologii ADO.NET použijete **připojení** objekt, který chcete připojit ke zdroji dat konkrétní zadáním informace nezbytné ověřování v připojovacím řetězci. **Připojení** objekt použijete, závisí na typu zdroje dat.  
@@ -28,13 +29,13 @@ V technologii ADO.NET použijete **připojení** objekt, který chcete připojit
  [Navazování připojení](../../../../docs/framework/data/adonet/establishing-the-connection.md)  
  Popisuje způsob použití **připojení** objekt, který chcete vytvořit připojení ke zdroji dat.  
   
- [Připojení událostí](../../../../docs/framework/data/adonet/connection-events.md)  
+ [Události připojení](../../../../docs/framework/data/adonet/connection-events.md)  
  Popisuje, jak používat **InfoMessage** na načíst informační zprávy ze zdroje dat události.  
   
 ## <a name="see-also"></a>Viz také  
  [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
  [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [DataAdapters a DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

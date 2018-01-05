@@ -49,11 +49,12 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5ed637cd5d173e12114f436b739ce3c114bb420f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ad218e8f87c2a04a9df6f67a918097de20296d0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliability-best-practices"></a>Spolehlivost – doporučené postupy
 Následující pravidla spolehlivost jsou orientované na SQL Server; však také použijí na všechny aplikace založené na hostiteli serveru. Je velmi důležité, aby servery, jako je SQL Server není úniku prostředky a nesmí být snížila.  Nicméně, nelze provést napsáním zálohující kód pro každou metodu, která mění stav daného objektu.  Cílem je nechcete napsat 100 procent spolehlivé spravovaný kód, který bude zotavit všechny chyby v každé umístění zálohující kód.  Který by složitý úkol s menší riziko úspěch.  Modul CLR (CLR) nelze snadno poskytnout dostatečně silné záruky do spravovaného kódu, aby zápis ideální kódu v rámci výpočetních procesů.  Všimněte si, že na rozdíl od ASP.NET, používá systém SQL Server pouze jeden proces, který nemůže být recyklována bez nutnosti převádět databáze nepřijatelně dlouhou dobu.  

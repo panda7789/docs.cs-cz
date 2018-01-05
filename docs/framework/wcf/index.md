@@ -12,17 +12,18 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 184a5b8eeafd68907c76655cfed82634de106185
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b21dc040cc464495c06e8c824354563307622ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a>Vývoj aplikací orientovaných na služby s použitím technologie WCF
 Tato část dokumentace obsahuje informace o Windows Communication Foundation (WCF), což je jednotná programovací model pro vytváření aplikací orientovaných na služby. Umožňuje vývojářům vytvářet bezpečné, spolehlivé a zpracovaných řešení, které integrovat do různých platforem a zajistit vzájemnou funkční spolupráci s stávajících investic.
  
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Co je nového ve službě Windows Communication Foundation 4.5](../../../docs/framework/wcf/whats-new.md)  
+ [Novinky ve Windows Communication Foundation 4.5](../../../docs/framework/wcf/whats-new.md)  
  Popisuje funkce nové do Windows Communication Foundation.  
   
  [Funkce zjednodušení WCF](../../../docs/framework/wcf/wcf-simplification-features.md)  
@@ -49,7 +50,7 @@ Tato část dokumentace obsahuje informace o Windows Communication Foundation (W
  [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
  Obsahuje pokyny pro vytváření aplikací pro Windows Communication Foundation (WCF).  
   
- [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
+ [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
  Popisuje diagnostické funkce služby WCF  
   
  [Požadavky na systém](../../../docs/framework/wcf/wcf-system-requirements.md)  
@@ -58,22 +59,22 @@ Tato část dokumentace obsahuje informace o Windows Communication Foundation (W
  [Prostředky operačního systému požadované službou WCF](../../../docs/framework/wcf/operating-system-resources-required-by-wcf.md)  
  Popisuje prostředky operačního systému požadované službou WCF  
   
- [Řešení potíží s instalací](../../../docs/framework/wcf/troubleshooting-setup-issues.md)  
+ [Řešení problémů s instalací](../../../docs/framework/wcf/troubleshooting-setup-issues.md)  
  Obsahuje pokyny k opravě potíže s instalací WCF  
   
- [Migrace z .NET Remoting do WCF](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md)  
+ [Migrace ze vzdálené komunikace .NET na WCF](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md)  
  Porovná .NET Remoting do WCF a obsahuje migrace pokyny pro běžné scénáře.  
   
  [Používání vývojářských nástrojů WCF](../../../docs/framework/wcf/using-the-wcf-development-tools.md)  
  Popisuje nástroje Visual Studio Windows Communication Foundation vývoj, které vám může pomoci při vývoji vaší WCFservice.  
   
- [Nástroje služby Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
+ [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
  Popisuje WCF navrženy nástroje, které usnadňují vytváření, nasazení a správě aplikací služby WCF  
   
  [Ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)  
  Ukázky, které poskytují instrukce v různých aspektů Windows Communication Foundation  
   
- [Glosář služby Windows Communication Foundation](../../../docs/framework/wcf/glossary.md)  
+ [Glosář Windows Communication Foundation](../../../docs/framework/wcf/glossary.md)  
  Zobrazuje seznam termínů specifických pro[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]  
   
  [Obecné referenční informace](../../../docs/framework/wcf/general-reference.md)  

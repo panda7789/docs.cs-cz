@@ -14,11 +14,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4777136c80f7dba368c85fac7d7dd1db9c945c5b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a4c7c9c78b821f7457f193d24bae031d49b301ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-transaction-behavior"></a>Chování transakce služby
 Tento příklad znázorňuje použití transakce koordinované klienta a nastavení ServiceBehaviorAttribute a OperationBehaviorAttribute pro řízení chování transakce služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) které implementuje službu kalkulačky, ale je rozšířeno udržování protokolu serveru provádět operace v tabulce databáze a stateful, Mezisoučet pro operace kalkulačky. Trvalý provede zápis do tabulky protokolu serveru jsou závislé na výsledek transakce klienta koordinované -, pokud klientská transakce nedokončí, transakce webové služby zajistí, že nejsou potvrdit aktualizace do databáze.  

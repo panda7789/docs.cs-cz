@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 58e5f9ede15edfbc6627ba8f4e9055fb673db806
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f233c7fc7d7edd020a750938a45351bb028524d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltargumentsgt"></a>&lt;argumenty&gt;
 Představuje kolekci argumentů přidruženého k dotazu stavu aktivity.  
@@ -86,5 +87,5 @@ Představuje kolekci argumentů přidruženého k dotazu stavu aktivity.
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.ArgumentElementCollection?displayProperty=nameWithType>       
  <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>       
- [Pracovní postup sledování a trasování](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [Sledování profily](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+ [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

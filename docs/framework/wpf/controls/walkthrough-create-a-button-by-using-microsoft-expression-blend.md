@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1371fdc3582e2ebe052442b15ecb2d5cf0b2865a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76025da208cc0929a20c379f76106d7e101c3358
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>Návod: Vytvoření tlačítka použitím nástroje Microsoft Expression Blend
 Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] přizpůsobené tlačítko pomocí Microsoft Expression Blend.  
@@ -258,8 +259,8 @@ Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf]
 -   Různé: vytvoření přechodu, přidejte BitmapEffects, použijte transformací a nastavit základní vlastnosti objektů.  
   
 ## <a name="see-also"></a>Viz také  
- [Tlačítko vytvořit pomocí jazyka XAML](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)  
- [Stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Animace – přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Malování s plnou barvy a přechody – přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Přehled důsledky rastrového obrázku](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)
+ [Vytvoření tlačítka pomocí XAML](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)  
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [Přehled efektů bitmap](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)

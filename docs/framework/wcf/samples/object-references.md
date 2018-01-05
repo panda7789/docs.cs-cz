@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e734f7909265b4e811b462f81d471b24b6330d6a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a86b442ffeeeb77a0c124b9b3e3441ba24d68e4a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="object-references"></a>Odkazy na objekty
 Tento příklad znázorňuje, jak předat objekty podle odkazů mezi serverem a klientem. Ukázka použití simulated *sociálních sítí*. Sociální sítě se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých je každý friend instance `Person` třída, s vlastní seznamu přátel. Tím se vytvoří graf objektů. Službu zpřístupní operace v těchto sociálních sítích.  

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 52c9cfeab362a1603c1d18a9caa1601cd76711b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b3cc18f481a0e66d52f021b7bf6b76938fc5018
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-using-only-stored-procedures-c"></a>Návod: Použití pouze uložené procedury (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům spuštěním uložené procedury jenom. Tento přístup se často používá databázi správci omezit, jak přistupovat k úložišti dat.  
@@ -198,5 +199,5 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
  Tento projekt můžete zvýšit tak, že některé změny. Můžete například seznam dostupných uložené procedury v seznamu a mít uživatele, vyberte který postup provést. Výstup sestavy do textového souboru může také datového proudu.  
   
 ## <a name="see-also"></a>Viz také  
- [Učení dle návody](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
+ [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
  [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

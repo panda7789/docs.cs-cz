@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8c2836d841215ed3ca8e04461b1298cd41287de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 33d5491feccacba7f7b010b57e890ff7543a46f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
 S Windows Forms – datová vazba, můžete ho naformátovat data zobrazená v ovládacím prvku vázané na data pomocí **formátování a rozšířené vazby** dialogové okno.  
@@ -65,6 +66,6 @@ S Windows Forms – datová vazba, můžete ho naformátovat data zobrazená v o
 8.  Klikněte na tlačítko **OK** zavřete **formátování a rozšířené vazby** dialogové okno a vraťte se do okna vlastností.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vytvoření jednoduše připojeného ovládacího prvku ve formuláři Windows](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
+ [Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
  [Ověřování uživatelského vstupu ve Windows Forms](../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)  
  [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)

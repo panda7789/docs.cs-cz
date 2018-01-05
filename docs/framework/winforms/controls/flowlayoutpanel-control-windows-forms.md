@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f901377af4faf907a9640c6931d10fc1710aa71a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d038790f47ab405504faed7fb8a1bc7948c9ea82
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flowlayoutpanel-control-windows-forms"></a>FlowLayoutPanel – ovládací prvek (Windows Forms)
 `FlowLayoutPanel` Řízení uspořádá jeho obsah v směr toku vodorovně nebo svisle. Jeho obsah může být uzavřen z jeden řádek na další, nebo z jednoho sloupce na další. Alternativně může být jeho obsah oříznut místo uzavřen.  
@@ -32,7 +33,7 @@ ms.lasthandoff: 10/18/2017
  [Přehled ovládacího prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/flowlayoutpanel-control-overview.md)  
  Představuje obecné koncepty `FlowLayoutPanel` řízení, které vám umožní vytvořit rozložení, který toků vodorovně nebo svisle.  
   
- [Postupy: ukotvení a dokování podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
+ [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
  Vysvětluje, jak používat <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti a ukotvení podřízených ovládacích prvků v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
   
  Viz také [návod: uspořádání ovládacích prvků ve Windows Forms pomocí ovládacího prvku FlowLayoutPanel](http://msdn.microsoft.com/library/z9w7ek2f\(v=vs.110\)).  

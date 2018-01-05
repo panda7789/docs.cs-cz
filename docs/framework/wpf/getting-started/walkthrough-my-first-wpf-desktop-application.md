@@ -19,11 +19,12 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f9818231a68f5c2ac2a6852f27e4876baa9728e7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3667d507f4c35174c1e888c9781b5f74ffd496a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Můj první grafický subsystém WPF aplikace pracovní plochy
 Tento názorný postup obsahuje úvod do vývoje [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace, která obsahuje prvky, které jsou společné pro většinu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace: [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] značek, kódu, definice aplikace, ovládací prvky, rozložení Datová vazba a stylů. 
@@ -445,7 +446,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
 -   [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
   
--   [Přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+-   [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
   
 -   [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
   
@@ -455,14 +456,14 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
 -   [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)  
   
--   [Přehled vazba dat](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+-   [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
   
 -   [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
   
--   [Dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+-   [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Ukázka dat – přehled](../../../../docs/framework/wpf/data/data-templating-overview.md)  
- [Vytvoření aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styles-and-templates.md)
+ [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [Styly a šablony](../../../../docs/framework/wpf/controls/styles-and-templates.md)
