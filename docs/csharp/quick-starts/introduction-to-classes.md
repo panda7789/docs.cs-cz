@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: b7598309f48cbccf2d270be53a4b40dae11e8df8
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: 44ee6a3d2dd800f91b5066ea578f4b37852ff295
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="introduction-to-classes"></a>Úvod do třídy
 
@@ -69,7 +69,7 @@ namespace classes
         {
         }
 
-        public void MakeWithdrawal(decimal amount, DateTime date, string payee, string note)
+        public void MakeWithdrawal(decimal amount, DateTime date, string note)
         {
         }
     }
@@ -97,7 +97,7 @@ public BankAccount(string name, decimal initialBalance)
 Konstruktory jsou volány při vytvoření objektu pomocí [ `new` ](../language-reference/keywords/new.md). Nahraďte řádku `Console.WriteLine("Hello World!");` v ***program.cs*** tento řádek (Nahraďte `<name>` nahraďte názvem):
 
 ```csharp
-var account = new BankAccount("<name", 1000);
+var account = new BankAccount("<name>", 1000);
 Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
 ```
 
@@ -169,9 +169,11 @@ V dalším kroku testovací, že jsou zachytávání chybové stavy tak, že zku
 
 ```csharp
 // Test that the initial balances must be positive:
-try {
+try
+{
     var invalidAccount = new BankAccount("invalid", -55);
-} catch (ArgumentOutOfRangeException e)
+}
+catch (ArgumentOutOfRangeException e)
 {
     Console.WriteLine("Exception caught creating account with negative balance");
     Console.WriteLine(e.ToString());
@@ -182,9 +184,11 @@ Můžete použít [ `try` a `catch` příkazy](../language-reference/keywords/tr
 
 ```csharp
 // Test for a negative balance
-try {
+try
+{
     account.MakeWithdrawal(750, DateTime.Now, "Attempt to overdraw");
-} catch (InvalidOperationException e)
+}
+catch (InvalidOperationException e)
 {
     Console.WriteLine("Exception caught trying to overdraw");
     Console.WriteLine(e.ToString());

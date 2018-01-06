@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.workload: dotnetcore
-ms.openlocfilehash: 1a698516ae2aea9242fe929cd213e9dac0b1119d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ec08d9fa3ad672400b61c269da0c6a70ed9ef2f5
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -212,6 +212,12 @@ Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NE
 
 3. Nastavte balíček hostitele požadovanou verzi kanálu.
 
+   **Ubuntu 17.10**
+
+   ```bash
+   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list'
+   sudo apt-get update
+   ```
    **Ubuntu č. 17.04**
 
    ```bash
@@ -236,7 +242,7 @@ Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NE
 4. Nainstalujte .NET Core.
 
    ```bash
-   sudo apt-get install dotnet-sdk-2.0.0
+   sudo apt-get install dotnet-sdk-2.1.3
    ```
 
 4. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.

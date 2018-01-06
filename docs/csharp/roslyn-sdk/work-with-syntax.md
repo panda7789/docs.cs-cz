@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: dceb7fe4829dc891d06221e7234b4d2ad26a008d
-ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
+ms.openlocfilehash: fa3b7af871380d4f18ebe7ef4f5bc5963cc247c4
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="work-with-syntax"></a>Práce s syntaxe
 
@@ -85,7 +85,7 @@ Příklad:
       }
 ```
 
-Příkaz uzel uvnitř bloku má rozpětí indikován jeden svislé čáry (|). Obsahuje znaky `throw new Exception(“Not right.”);`. Úplná značka span je indikován dvojité svislé čáry (|). Obsahuje stejné znaky jako rozpětí a přidružené trivia úvodní a koncové znaky.
+Příkaz uzel uvnitř bloku má rozpětí indikován jeden svislé čáry (|). Obsahuje znaky `throw new Exception("Not right.");`. Úplná značka span je indikován dvojité svislé čáry (|). Obsahuje stejné znaky jako rozpětí a přidružené trivia úvodní a koncové znaky.
 
 ## <a name="kinds"></a>Typy
 

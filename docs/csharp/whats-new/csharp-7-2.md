@@ -8,11 +8,11 @@ ms.date: 08/16/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: cc861f186bea681bb32a2f8041a7155026679987
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 9e7fefde6763dbd5c73c01e45e5652d9f207c213
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v C# 7.2
 
@@ -25,7 +25,7 @@ C# 7.2 používá [výběr verze jazyka](csharp-7-1.md#language-version-selectio
 
 Mezi nové jazykové funkce v této verzi jsou:
 
-* [Odkaz na sémantiku s typy hodnot](#reference-semantics-with-value-types)
+* [Referenční sémantika s typy hodnot](#reference-semantics-with-value-types)
   - Kombinace syntaxe vylepšení, které umožňují práci s typy hodnot pomocí sémantiky odkaz.
 * [Bez koncové pojmenované argumenty](#non-trailing-named-arguments)
   - Pojmenované argumenty může následovat poziční argumenty.
@@ -59,7 +59,7 @@ Příklad:
 int binaryValue = 0b_0101_0101;
 ```
 
-## `private protected`
+## <a name="private-protected-access-modifier"></a>_privátní chráněné_ – modifikátor přístupu
 
 Nakonec novou modifikátor přístupu složené: `private protected` znamená, že může být členem přistupovat pomocí obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Při `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení `private protected` omezuje přístup na odvozené typy deklarován ve stejném sestavení.
 

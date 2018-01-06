@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 92dac407ace9a039f5e6edc16b093fea5c485f63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dec4d465b53f939f8fa711950ba6a000bd304e13
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilování aplikací pomocí .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]je předkompilace technologie pro vytváření a nasazování aplikací pro Windows, která je součástí sady Visual Studio 2015 a novější verze. Zkompiluje automaticky prodejní verze aplikace, které jsou zapsány v spravovaného kódu (C# nebo Visual Basic), že cílové rozhraní .NET Framework a Windows 10 do nativního kódu.  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 -   Optimalizovat využití paměti v aplikaci.  
 
 > [!IMPORTANT]
-> Valná většina scénáře a aplikace .NET Native nabízí výrazně rychlejší spouštění a vynikající výkon ve srovnání s zkompilovat IL nebo bitovou kopii NGEN aplikace. Výsledky se však mohou lišit. Aby se zajistilo, že vaše aplikace využívaly vylepšení výkonu systému .NET Native, byste měli porovnat jeho výkon s u jiných - .NET Native verzi vaší aplikace. Další informace najdete v tématu [přehled výkonnostní relace](https:/docs.microsoft.com/visualstudio/profiling/performance-session-overview).
+> Valná většina scénáře a aplikace .NET Native nabízí výrazně rychlejší spouštění a vynikající výkon ve srovnání s zkompilovat IL nebo bitovou kopii NGEN aplikace. Výsledky se však mohou lišit. Aby se zajistilo, že vaše aplikace využívaly vylepšení výkonu systému .NET Native, byste měli porovnat jeho výkon s u jiných - .NET Native verzi vaší aplikace. Další informace najdete v tématu [přehled výkonnostní relace](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview).
  
 Ale [!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje více než kompilace nativního kódu. Ho transformuje způsobu, jakým jsou vytvořené a provést aplikací rozhraní .NET Framework. Zejména:  
   

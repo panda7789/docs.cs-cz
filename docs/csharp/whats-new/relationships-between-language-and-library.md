@@ -8,11 +8,11 @@ ms.date: 07/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: 93fd26a72743fcf45df3904cb8d0c787d8a228a8
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: b7de4fdb4356e8822dba6aaaf67d615980ff09cd
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="relationships-between-language-features-and-library-types"></a>Vztahy mezi funkce jazyka a knihovny typů
 
@@ -32,7 +32,7 @@ Tým návrhu jazyk pracuje na minimalizujte možnosti útoku typů a členů vy�
 
 ## <a name="managing-your-dependencies"></a>Správa závislostmi
 
-Nástroje pro kompilátor jazyka C# jsou nyní odpojené od vydání cyklus na knihovny .NET na podporovaných platformách. Ve skutečnosti různé knihovny .NET mít jinou verzi cykly: rozhraní .NET Framework v systému Windows je relesed jako Windows Update, .NET Core dodávky samostatné plán a Xamarin verzích lodě aktualizace knihovny nástroje Xamarin pro každou cílovou platformu.
+Nástroje pro kompilátor jazyka C# jsou nyní odpojené od vydání cyklus na knihovny .NET na podporovaných platformách. Ve skutečnosti různé knihovny .NET mít jinou verzi cykly: rozhraní .NET Framework v systému Windows je vydané jako Windows Update, .NET Core dodávky samostatné plán a Xamarin verzích lodě aktualizace knihovny nástroje Xamarin pro každou cílovou platformu.
 
 Většinu doby, nebude zjistíte, tyto změny. Při práci s novější verzí jazyka, který vyžaduje funkce není ještě v na knihovny .NET na této platformě, ale budete odkazovat balíčky NuGet k poskytování těchto nových typů.
 Jako platforem, vaše aplikace podporuje jsou aktualizované o nové instalace framework můžete odebrat odkaz na další.

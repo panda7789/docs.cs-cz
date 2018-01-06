@@ -10,15 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: 6cdc4eb0d0fea93b5210532210ad0c928e35a7a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d399cdce81350356b71e21d879a4f5b5079f98d8
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="microservices-hosted-in-docker"></a>Mikroslužeb hostované v Docker
-
-## <a name="introduction"></a>Úvod
 
 V tomto kurzu podrobnosti o úlohách, které jsou nezbytné pro vytváření a nasazení ASP.NET Core mikroslužbu v kontejner Docker. V průběhu tohoto kurzu se dozvíte:
 
@@ -56,13 +54,13 @@ V tomto okamžiku musíte nainstalovat několik nástrojů příkazového řádk
 
 `npm install -g yo bower grunt-cli gulp`
 
-`-g` Možnost znamená, že je globální instalace, a tyto nástroje jsou k dispozici celý systém. (Místní instalace rozsahy balíčku, který má jeden projekt). Jakmile tyto základní nástroje jste nainstalovali, musíte nainstalovat generátory šablony yeoman asp.net:
+`-g` Možnost znamená, že je globální instalace, a tyto nástroje jsou k dispozici celý systém. (Místní instalace rozsahy balíčku, který má jeden projekt). Jakmile tyto základní nástroje jste nainstalovali, musíte nainstalovat generátory yeoman ASP.NET šablony:
 
 `npm install -g generator-aspnet`
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci asp.net core. Pokud chcete používat generátor příkazového řádku, spusťte následující příkaz yeoman ve své oblíbené prostředí:
+Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci ASP.NET Core. Pokud chcete používat generátor příkazového řádku, spusťte následující příkaz yeoman ve své oblíbené prostředí:
 
 `yo aspnet`
 
@@ -70,12 +68,12 @@ Tento příkaz zobrazí výzva k výběru jaký typ aplikace, kterou chcete vytv
 
 Šablona pro vás vytvoří osm soubory:
 
-* .Gitignore přizpůsobené pro aplikace asp.net core.
+* .Gitignore přizpůsobené pro aplikace ASP.NET Core.
 * Soubor Startup.cs. Tato položka obsahuje základ aplikace.
 * Soubor Program.cs. Tato položka obsahuje vstupní bod aplikace.
 * Soubor WeatherMicroservice.csproj. Toto je soubor sestavení pro aplikaci.
 * Soubor Docker. Tento skript vytvoří bitovou kopii Docker pro aplikaci.
-* README.md. Tato položka obsahuje odkazy na další zdroje základní technologie asp.net.
+* README.md. Tato položka obsahuje odkazy na další zdroje ASP.NET Core.
 * Soubor web.config. Tato položka obsahuje informace o základní konfiguraci.
 * Soubor runtimeconfig.template.json. Tato položka obsahuje ladění nastavení, které používají integrovaného vývojového prostředí.
 
@@ -113,7 +111,7 @@ Uzlu 'architektury' Určuje verze a konfigurace rozhraní .NET Framework, který
 
 Aplikace je implementovaná v souboru Startup.cs. Tento soubor obsahuje třídu pro spuštění.
 
-Tyto dvě metody jsou volány asp.net základní infrastruktury pro konfiguraci a spuštění aplikace. `ConfigureServices` Metoda popisuje služby, které jsou nutné pro tuto aplikaci. Kterou sestavujete štíhlého mikroslužbu, takže není nutné nakonfigurovat všechny závislosti. `Configure` Metoda konfiguruje obslužných rutin pro příchozí požadavky HTTP. Šablona generuje jednoduchá obslužná rutina, která reaguje na každou žádost s text "Hello, World!".
+Tyto dvě metody jsou volány ASP.NET základní infrastruktury pro konfiguraci a spuštění aplikace. `ConfigureServices` Metoda popisuje služby, které jsou nutné pro tuto aplikaci. Kterou sestavujete štíhlého mikroslužbu, takže není nutné nakonfigurovat všechny závislosti. `Configure` Metoda konfiguruje obslužných rutin pro příchozí požadavky HTTP. Šablona generuje jednoduchá obslužná rutina, která reaguje na každou žádost s text "Hello, World!".
 
 ## <a name="build-a-microservice"></a>Sestavení mikroslužbu
 
@@ -227,7 +225,7 @@ A ***kontejner Docker*** představuje spuštěné instance Docker bitové kopie.
 
 Obdobně, si můžete představit *Docker Image* jako *třída*a *kontejner Docker* jako objekt nebo instance této třídy.  
 
-Soubor Docker vytvořených šablonou asp.net bude sloužit pro naše účely. Vraťme se přes jeho obsah.
+Soubor Docker vytvořených šablonou ASP.NET bude sloužit pro naše účely. Vraťme se přes jeho obsah.
 
 První řádek určuje zdrojové bitové kopie:
 
@@ -259,7 +257,7 @@ RUN dotnet publish -c Release -o out
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-To bude zkopírujte soubor projektu do docker virtuálních počítačů z aktuálního adresáře a obnovte všechny balíčky. Pomocí rozhraní příkazového řádku dotnet znamená, že Docker image musí obsahovat .NET Core SDK. Poté se zkopírují zbytek vaší aplikace a dotnet publikování příkaz sestavení a balíčky aplikace.
+To se zkopírovat soubor projektu z aktuálního adresáře na virtuální počítač Docker a obnovit všechny balíčky. Pomocí rozhraní příkazového řádku dotnet znamená, že Docker image musí obsahovat .NET Core SDK. Poté se zkopírují zbytek vaší aplikace a dotnet publikování příkaz sestavení a balíčky aplikace.
 
 Poslední řádek souboru spustí aplikaci:
 
@@ -267,7 +265,7 @@ Poslední řádek souboru spustí aplikaci:
 ENTRYPOINT ["dotnet", "out/WeatherMicroservice.dll", "--server.urls", "http://0.0.0.0:5000"]
 ```
 
-Tento port nakonfigurovaný odkazuje `--server.urls` argument `dotnet` na posledním řádku soubor Docker. `ENTRYPOINT` Příkaz informuje Docker, jaké možnosti příkazu a příkazového řádku spusťte službu. 
+Tento port nakonfigurovaný odkazuje `--server.urls` argument `dotnet` na posledním řádku soubor Docker. `ENTRYPOINT` Příkaz informuje Docker jaké příkaz a možnosti příkazového řádku spusťte službu. 
 
 ## <a name="building-and-running-the-image-in-a-container"></a>Vytváření a spouštění bitovou kopii v kontejneru.
 
@@ -279,7 +277,7 @@ obj/*
 out/*
 ```
 
-Můžete vytvořit bitovou kopii pomocí příkazu docker sestavení. Spusťte následující příkaz z adresáře, která obsahuje váš kód.
+Sestavování pomocí bitové kopie `docker build` příkaz. Spusťte následující příkaz z adresáře, která obsahuje váš kód.
 
 ```console
 docker build -t weather-microservice .
@@ -320,7 +318,7 @@ docker attach --sig-proxy=false hello-docker
 `--sig-proxy=false` Argument znamená, že `Ctrl-C` příkazy get neodešle do procesu kontejneru, ale spíš Zastavit `docker attach` příkaz. Konečný argument je daný název kontejneru v `docker run` příkaz. 
 
 > [!NOTE]
-> Můžete taky docker přiřazeno ID kontejneru odkazovat na žádné kontejneru. Pokud jste nezadali název vašeho kontejneru v `docker run` musíte použít id kontejneru.
+> Můžete taky Docker přiřazeno ID kontejneru odkazovat na žádné kontejneru. Pokud jste nezadali název vašeho kontejneru v `docker run` musíte použít id kontejneru.
 
 Otevřete prohlížeč a přejděte do služby. Uvidíte diagnostické zprávy v systému windows příkaz z připojených spuštěné kontejneru.
 
@@ -346,8 +344,8 @@ docker rmi weather-microservice
 
 ## <a name="conclusion"></a>Závěr 
 
-V tomto kurzu vytvořené mikroslužbu jádro asp.net a přidat několik jednoduchých funkce.
+V tomto kurzu vytvořené mikroslužbu ASP.NET Core a přidat několik jednoduchých funkce.
 
-Vytvořené docker kontejneru bitovou kopii pro tuto službu a byl spuštěn kontejneru na váš počítač. Připojit ke službě okno terminálu a viděli diagnostické zprávy z vaší služby.
+Vytvořené Docker kontejneru bitovou kopii pro tuto službu a byl spuštěn kontejneru na váš počítač. Připojit ke službě okno terminálu a viděli diagnostické zprávy z vaší služby.
 
 Přitom jste viděli několik funkcí jazyka C# v akci.

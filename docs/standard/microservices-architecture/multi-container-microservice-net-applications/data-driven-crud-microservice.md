@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1fa9f3ad2e08b68fcdc60375ab164cb87a3eeb91
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: be8644e45be8db88c99332476e74c5c968764c74
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduchého mikroslužbu CRUD řízené daty
 
@@ -318,9 +318,7 @@ Hlavních důvodů pro generování metadat Swagger pro vaše rozhraní API jsou
 
 **Možnost pro ostatní produkty automaticky využívat a integrovat vaše rozhraní API**. Desítek produktů a [komerční nástroje](http://swagger.io/commercial-tools/) a mnoho [knihoven a architektur](http://swagger.io/open-source-integrations/) podporu Swagger. Microsoft má vysoké úrovně produktů a nástroje, které mohou automaticky používat rozhraní API na základě Swagger, například následující:
 
--   [AutoRest](https://github.com/Azure/AutoRest). Může automaticky vygenerovat třídy klienta rozhraní .NET pro volání Swagger. To
-
--   Nástroj můžete použít z rozhraní příkazového řádku a je integrován se sadou Visual Studio pro snadné použití prostřednictvím grafického uživatelského rozhraní.
+-   [AutoRest](https://github.com/Azure/AutoRest). Může automaticky vygenerovat třídy klienta rozhraní .NET pro volání Swagger. Tento nástroj můžete použít z rozhraní příkazového řádku a je integrován se sadou Visual Studio pro snadné použití prostřednictvím grafického uživatelského rozhraní.
 
 -   [Tok Microsoft](https://flow.microsoft.com/en-us/). Můžete automaticky [používat a integrovat vaše rozhraní API](https://flow.microsoft.com/en-us/blog/integrating-custom-api/) do vysoké úrovně pracovního postupu Microsoft Flow, programování bez znalosti vyžaduje.
 

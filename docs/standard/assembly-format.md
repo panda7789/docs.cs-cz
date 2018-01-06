@@ -13,15 +13,15 @@ ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 94f102c85ffdda5345a3ef3f0a8485b18b0b6893
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cdd76558852992a5c2f6b7def83e30fb004f93b6
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="net-assembly-file-format"></a>Formát souboru sestavení rozhraní .NET
 
-Rozhraní .NET definuje binárního souboru formátu – "sestavení" -, který se používá k plně popisují a obsahovat programy .NET. Sestavení se používají pro samotné programy a také všechny závislé knihovny. Program rozhraní .NET můžete provést, protože jeden z více sestavení, s žádné další požadované artefakty, nad rámec odpovídající implementace rozhraní .NET. Nativní závislosti, včetně operačního systému rozhraní API, jsou samostatné problém a nejsou obsaženy v rámci formátu sestavení .NET, i když jsou popsány někdy se tento formát (například WinRT).
+Rozhraní .NET definuje binárního souboru formátu – "sestavení" -, který se používá k plně popisují a obsahovat programy .NET. Sestavení se používají pro samotné programy a také všechny závislé knihovny. Program rozhraní .NET můžete provést, protože jeden nebo více sestavení s žádné další požadované artefakty, nad rámec odpovídající implementace rozhraní .NET. Nativní závislosti, včetně operačního systému rozhraní API, jsou samostatné problém a nejsou obsaženy v rámci formátu sestavení .NET, i když jsou popsány někdy se tento formát (například WinRT).
 
 > Jednotlivé komponenty rozhraní příkazového řádku představuje metadata pro deklarace, implementace a odkazy na specifické pro danou součást. Proto metadata specifická pro součást se označuje jako součást metadata a výsledné komponenty říká, že je možné popisující samy sebe – od ECMA 335 I.9.1, komponenty a sestavení.
 

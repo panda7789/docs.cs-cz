@@ -13,11 +13,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b7fd2b0ce2a8f5ab77fd654863a1e68baad6a41e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa26531b1d2573b4bef49ec93f4205716227e25b
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="transaction-fundamentals"></a>Základy transakce
 Transakce vazby společně více úloh. Představte si například, že aplikace provede dvě úlohy. Nejprve vytvoří nové tabulky v databázi. Dále volá specializovanou objekt ke sběru, formátování a data vložit do nové tabulky. Tyto dvě úlohy jsou související a dokonce i vzájemně závislé, tak, že chcete se vyhnout, vytvářet nové tabulky, není-li vyplní jej s daty. Provádění oba úkoly v rámci jedné transakce vynucuje mezi nimi spojení. Pokud jako druhý krok nezdaří, prvního úkolu je vrátit zpět do bodu předtím, než byla vytvořena nová tabulka.  
@@ -30,7 +30,7 @@ Transakce vazby společně více úloh. Představte si například, že aplikace
   
  Pokud vyvíjíte transakční aplikace pomocí tříd poskytovaných <xref:System.Transactions>, není nutné starat o jaký typ transakcí, které potřebujete, nebo jejich zapojení správce transakcí. <xref:System.Transactions> Infrastruktury automaticky spravuje tyto pro vás.  
   
- Při vytváření transakcí, můžete určit úroveň izolace, která se použije pro transakce. Úroveň izolace, určené <xref:System.Transactions.IsolationLevel> třídy, určuje, jakou úroveň přístupu ostatní transakce bude mít k datům ovlivněno vaši transakci.  
+ Při vytváření transakcí, můžete určit úroveň izolace, která se použije pro transakce. Úroveň izolace, definované <xref:System.Transactions.IsolationLevel> výčtu, určuje úroveň přístupu dalších transakcí nebude mít k datům vliv na vaše transakce.  
   
  Můžete vytvořit pomocí ADO.NET, transakce <xref:System.EnterpriseServices>, nebo transakční programovací model poskytované <xref:System.Transactions> oboru názvů. [Funkce poskytované službou System.Transactions –](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md) téma popisuje funkce, které můžete použít k zápisu, transakční aplikace pomocí <xref:System.Transactions> oboru názvů.  
   

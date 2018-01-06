@@ -15,15 +15,15 @@ ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
 caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe79d8932fa238c94f770f5402fa356f49ba9581
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cfbd9c903cdc0d355dd234ac10f21485a2d447a6
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="c-special-characters"></a>Speciální znaky jazyka C#
 
-Speciální znaky jsou předdefinované, kontextové znaky, které upraví prvek program (řetězcového literálu, je identifikátor nebo název atributu) do které budou se přidá jako předpona. C# podporuje následující speciální znaky: 
+Speciální znaky jsou předdefinované, kontextové znaky, které pro které budou se přidá jako předpona změnit program elementu (řetězcového literálu, identifikátor nebo název atributu). C# podporuje následující speciální znaky: 
 
 - [@](../../../csharp/language-reference/tokens/verbatim.md), typu verbatim identifikátor znak. 
 
@@ -31,5 +31,5 @@ Speciální znaky jsou předdefinované, kontextové znaky, které upraví prvek
 
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 

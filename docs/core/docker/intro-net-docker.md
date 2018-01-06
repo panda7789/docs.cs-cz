@@ -13,11 +13,11 @@ ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
 ms.workload: dotnetcore
-ms.openlocfilehash: 9935578f750e75c2261e1206cb6cc3292d16a049
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e5f420df6c5cf4f9d517dd6ce2c6b33d3d3479d1
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 
@@ -104,7 +104,7 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 **Rozhraní .NET framework 4.7**
 
-[ [Dotnet – ukázka framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "text hello world" použití [4.7 rozhraní .NET Framework](../../framework/whats-new/index.md#v47). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.7 docker image](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile).
+[Dotnet – ukázka framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "text hello world" použití [4.7 rozhraní .NET Framework](../../framework/whats-new/index.md#v47). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.7 docker image](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile).
 
 **Rozhraní .NET framework 4.6.2**
 

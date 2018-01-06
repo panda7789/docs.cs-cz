@@ -14,11 +14,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 410b885daac00cd6da949b285721c206facb7079
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e2aa6e67fc45aa02421433a295fdbf5657e4e551
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/22/2017
 [Rozhraní .NET 2015 a rozhraní .NET Framework 4.6](#v46)   
 [Rozhraní .NET framework 4.5.2](#v452)   
 [Rozhraní .NET framework 4.5.1](#v451)   
-[Rozhraní .NET framework 4.5](#core)   
+[Rozhraní .NET framework 4.5](#v45)   
 
 Tento článek neposkytuje komplexní informace o každé nové funkce a mohou podléhat změnám. Obecné informace o rozhraní .NET Framework najdete v tématu [Začínáme](../../../docs/framework/get-started/index.md). Podporované platformy, najdete v části [požadavky na systém](~/docs/framework/get-started/system-requirements.md). Odkazy na stažení a pokyny k instalaci najdete v tématu [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md).
 
@@ -1243,7 +1243,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
  [Zpět na začátek](#introduction)
 
-<a name="core"></a> 
+<a name="v45"></a> 
 ## <a name="whats-new-in-the-net-framework-45"></a>Co je nového v rozhraní .NET Framework 4.5
 
 ### <a name="core-new-features-and-improvements"></a>Hlavní nové funkce a vylepšení

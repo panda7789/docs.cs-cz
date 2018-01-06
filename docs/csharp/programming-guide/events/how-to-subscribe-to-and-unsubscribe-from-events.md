@@ -12,11 +12,11 @@ ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: deeed6f6b572e04780f0eda1e7e42f1dd6233567
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5555cc8913bff953601c54aa7430143dc22173c0
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlášení a odhlášení odběru událostí (Průvodce programováním v C#)
 Přihlášení k odběru na událost, která se publikuje jinou třídou, když chcete napsat vlastní kód, který je volána, když se vyvolá tuto událost. Například může přihlásíte k odběru na tlačítko `click` událostí, aby bylo možné aplikaci dělat něco užitečné, když uživatel klikne na tlačítko.  
@@ -35,7 +35,7 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
   
      Řádek kódu, který je požadován k odběru události je také automaticky generovány v `InitializeComponent` metoda v souboru Form1.Designer.cs ve vašem projektu. Vypadá takto:  
   
-    ```  
+    ```csharp
     this.Load += new System.EventHandler(this.Form1_Load);  
     ```  
   
@@ -43,7 +43,7 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
   
 1.  Definujte metodu obslužné rutiny události, jejichž podpis odpovídá delegáta pro událost. Například, pokud je na základě události <xref:System.EventHandler> se zakázaným inzerováním metoda představuje typ delegáta, následující kód:  
   
-    ```  
+    ```csharp
     void HandleCustomEvent(object sender, CustomEventArgs a)  
     {  
        // Do something useful here.  
@@ -52,19 +52,19 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
   
 2.  Použít operátor přiřazení sčítání (`+=`) připojit vaší obslužné rutiny události pro událost. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent`. Všimněte si, že třídě odběratele potřebuje odkaz na třídě vydavatele Chcete-li se přihlásit k jeho události odběru.  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent += HandleCustomEvent;  
     ```  
   
      Všimněte si, že předchozí syntaxe jazyka C# 2.0 nové. Je přesně odpovídá syntaxe jazyka C# 1.0, ve kterém musí být explicitně vytvořen zapouzdřením delegát pomocí `new` – klíčové slovo:  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
      Obslužné rutiny události lze také přidat pomocí výrazu lambda:  
   
-    ```  
+    ```csharp
     public Form1()  
     {  
         InitializeComponent();  
@@ -80,7 +80,7 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
   
 -   Pokud nebudete mít k odhlášení odběru událostí později, můžete použít operátor přiřazení sčítání (`+=`) pro připojení anonymní metody k události. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent` a že `CustomEventArgs` třída definována také k provedení nějaký druh informací o specializované události. Všimněte si, že třída odběratele musí odkaz na `publisher` Chcete-li se přihlásit k jeho události odběru.  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent += delegate(object o, CustomEventArgs e)  
     {  
       string s = o.ToString() + " " + e.ToString();  
@@ -97,7 +97,7 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
   
 -   Operátor přiřazení odčítání (`-=`) k odhlášení odběru událostí:  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent -= HandleCustomEvent;  
     ```  
   
@@ -105,7 +105,7 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
   
 ## <a name="see-also"></a>Viz také  
  [Události](../../../csharp/programming-guide/events/index.md)  
- [události](../../../csharp/language-reference/keywords/event.md)  
- [Postupy: publikování událostí odpovídajících směrnicím rozhraní .NET Framework pokyny](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
+ [event](../../../csharp/language-reference/keywords/event.md)  
+ [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
  [-= – Operátor (referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)  
- [+= – Operátor](../../../csharp/language-reference/operators/addition-assignment-operator.md)
+ [+= – operátor](../../../csharp/language-reference/operators/addition-assignment-operator.md)

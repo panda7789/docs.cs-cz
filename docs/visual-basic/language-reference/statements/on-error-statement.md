@@ -29,16 +29,16 @@ ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e1039359145902bffe3f91aa654a43790d16b887
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96baa5d91d0a600b84ed832fb1e3b1ed71a9d89d
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error – příkaz (Visual Basic)
 Umožňuje rutiny zpracování chyb a určuje umístění rutiny v rámci procedury; Můžete také použít zakázat rutiny chyba zpracování.  
   
- Bez `On Error` prohlášení, je závažné chyby spuštění, ke kterému dochází: Zobrazí se chybová zpráva a provádění zastaví.  
+ Bez zpracování chyb, je chyba, ke kterému dochází při spuštění jakékoli závažné: Zobrazí se chybová zpráva a provádění zastaví.  
   
  Pokud je to možné, doporučujeme použít strukturovaného výjimek zpracování ve vašem kódu, nikoli pomocí nestrukturovaných výjimek a `On Error` příkaz. Další informace najdete v tématu [zkuste... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
@@ -129,8 +129,8 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  <xref:Microsoft.VisualBasic.ErrObject.Number%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.Description%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>  
- [End – příkaz](../../../visual-basic/language-reference/statements/end-statement.md)  
- [Exit – příkaz](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [Resume – příkaz](../../../visual-basic/language-reference/statements/resume-statement.md)  
+ [Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)  
+ [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Příkaz Resume](../../../visual-basic/language-reference/statements/resume-statement.md)  
  [Chybové zprávy](../../../visual-basic/language-reference/error-messages/index.md)  
- [Try... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+ [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

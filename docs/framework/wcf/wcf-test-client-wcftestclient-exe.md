@@ -14,16 +14,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 28098a4e598d1c3bede3b05e3afe1001c3944d42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18866260c5d14cf27634afcd8391b159abac1dd1
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Testovacího klienta (WcfTestClient.exe) je nástroj grafickým uživatelským rozhraním, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazit odpověď zpět odeslaná službě. Poskytuje bezproblémové služby testování prostředí při kombinaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby.  
   
- Můžete najít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) v následujícím umístění: C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\  
+ Obvykle můžete najít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) v následujícím umístění: C:\Program Files (x86) \Microsoft Visual Studio\2017\Community\Common7\IDE - komunity může mít jednu z "Podniku", "Professional" nebo "Komunit" v závislosti na tom, který je nainstalován úroveň sady Visual Studio.
   
 ## <a name="scenarios-for-using-test-client"></a>Scénáře použití testovacího klienta  
  Následující části popisují nejběžnější scénáře, ve kterých se dá použít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta zefektivnění vývojových procesech.  

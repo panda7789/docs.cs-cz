@@ -4,16 +4,16 @@ description: "Zjistěte, jak nainstalovat rozhraní .NET Framework na Windows 10
 author: rlander
 ms.author: mairaw
 keywords: "Rozhraní .NET framework, instalace"
-ms.date: 11/17/2017
+ms.date: 12/20/2017
 ms.topic: article
 ms.custom: updateeachrelease
 ms.prod: .net-framework
 ms.workload: dotnet
-ms.openlocfilehash: f18049ddae661e9f0ac34d250074814f0bd15432
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bd588dff62e5d4ac1c1059e697a07598ba272042
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Nainstalujte rozhraní .NET Framework na Windows 10 a Windows Server 2016
 
@@ -28,7 +28,7 @@ Může se zobrazila na této stránce po pokusu o spuštění aplikace a zobrazu
 Rozhraní .NET Framework 4.7.1 je součástí:
 
 * [Windows 10 patří Creators Update (verze. 1709)](https://www.microsoft.com/software-download/windows10)
-* [Windows Server 2016 (verze. 1709)](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709)
+* [Windows Server, verze. 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709)
 
 > [!div class="button"]
 [.NET Framework 4.7.1 stáhnout](https://www.microsoft.com/net/download/thank-you/net471?utm_source=ms-docs&utm_medium=referral)

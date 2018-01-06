@@ -8,11 +8,11 @@ ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 36bb31975523055962fa9572109dab7e2ed47336
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4fe9a9250e0a87ecaa02258526b7cc796de8e387
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refaktoring do čistého funkcí (C#)
 
@@ -35,21 +35,21 @@ Důležitým aspektem čistý funkční transformace je naučit se Refaktorovat 
  Následující příklady kontrastu dvě-čistý funkce a čistou funkci.  
   
 ### <a name="non-pure-function-that-changes-a-class-member"></a>Čistý funkce, která změní člena třídy  
- V následujícím kódu `HypenatedConcat` funkce není čistou funkci, protože upravuje `aMember` – datový člen třídy:  
+ V následujícím kódu `HyphenatedConcat` funkce není čistou funkci, protože upravuje `aMember` – datový člen třídy:  
   
 ```csharp  
 public class Program  
 {  
     private static string aMember = "StringOne";  
   
-    public static void HypenatedConcat(string appendStr)  
+    public static void HyphenatedConcat(string appendStr)  
     {  
         aMember += '-' + appendStr;  
     }  
   
     public static void Main()  
     {  
-        HypenatedConcat("StringTwo");  
+        HyphenatedConcat("StringTwo");  
         Console.WriteLine(aMember);  
     }  
 }  
@@ -69,7 +69,7 @@ StringOne-StringTwo
 ```csharp  
 public class Program  
 {  
-    public static void HypenatedConcat(StringBuilder sb, String appendStr)  
+    public static void HyphenatedConcat(StringBuilder sb, String appendStr)  
     {  
         sb.Append('-' + appendStr);  
     }  
@@ -77,19 +77,19 @@ public class Program
     public static void Main()  
     {  
         StringBuilder sb1 = new StringBuilder("StringOne");  
-        HypenatedConcat(sb1, "StringTwo");  
+        HyphenatedConcat(sb1, "StringTwo");  
         Console.WriteLine(sb1);  
     }  
 }  
 ```  
   
- Tato verze programu vytváří stejný výstup jako první verze, protože `HypenatedConcat` funkce změnila hodnota (stav) její první parametr vyvoláním <xref:System.Text.StringBuilder.Append%2A> – členská funkce. Všimněte si, že dojde k této změnou i přes tato skutečnost, `HypenatedConcat` používá předávání volání hodnotu parametru.  
+ Tato verze programu vytváří stejný výstup jako první verze, protože `HyphenatedConcat` funkce změnila hodnota (stav) její první parametr vyvoláním <xref:System.Text.StringBuilder.Append%2A> – členská funkce. Všimněte si, že dojde k této změnou i přes tato skutečnost, `HyphenatedConcat` používá předávání volání hodnotu parametru.  
   
 > [!IMPORTANT]
 >  U typů odkazu Pokud předáte parametr podle hodnoty, výsledkem kopii odkaz na objekt předávány. Tato kopie je stále spojena se stejná data jako odkaz na původní instanci (dokud proměnnou odkaz je přiřazen k vytvoření nového objektu). Volání odkazem není nezbytně nutné pro funkci, kterou chcete upravit parametr.  
   
 ### <a name="pure-function"></a>Čistý – funkce  
-Tato další verze programu ukazuje, jak implementovat `HypenatedConcat` fungovat jako čistou funkci.  
+Tato další verze programu ukazuje, jak implementovat `HyphenatedConcat` fungovat jako čistou funkci.  
   
 ```csharp  
 class Program  
