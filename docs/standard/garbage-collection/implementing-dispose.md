@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 90edda252c33b6f07c795b8db1a0edaf1a688445
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 404fdece284accf305ef3cf2324be2e37a8da4b6
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -117,7 +117,7 @@ Tady je obecný vzor pro implementaci vzoru dispose pro základní třídu, kter
 
 Třída odvozená z třídy, která implementuje <xref:System.IDisposable> by neměly implementovat rozhraní <xref:System.IDisposable>, protože základní třídy implementace <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> zdědí jejich odvozené třídy. Pokud chcete namísto toho implementovat pro odvozenou třídu vzor Dispose, musíte poskytnout následující:  
   
-* A `protected``Dispose(Boolean)` metodu, která přepíše metodu základní třídy a provádí samotnou práci uvolnění prostředků odvozené třídy. Tato metoda by měla také zavolat `Dispose(Boolean)` metoda základní třídy a předejte ji hodnotu `true` pro *uvolnění* argument.  
+* A `protected Dispose(Boolean)` metodu, která přepíše metodu základní třídy a provádí samotnou práci uvolnění prostředků odvozené třídy. Tato metoda by měla také zavolat `Dispose(Boolean)` metoda základní třídy a předejte ji hodnotu `true` pro *uvolnění* argument.  
   
 * Buď třída odvozená z <xref:System.Runtime.InteropServices.SafeHandle> který zabalí nespravovaný prostředek (doporučeno) nebo přepsání pro <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metoda. <xref:System.Runtime.InteropServices.SafeHandle> Třída poskytuje finalizační metodu, která s kódu, jeden není. Pokud zadáte finalizační metody by měly volat `Dispose(Boolean)` přetížení s *uvolnění* argument `false`.  
   

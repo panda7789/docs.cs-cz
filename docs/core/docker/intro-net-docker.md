@@ -13,11 +13,11 @@ ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
 ms.workload: dotnetcore
-ms.openlocfilehash: e5f420df6c5cf4f9d517dd6ce2c6b33d3d3479d1
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 8c6daabb3040998d3376ad022790c16b9629233f
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 
@@ -42,7 +42,7 @@ Můžete buď vytvořit vlastní [na základě bitové kopie](https://docs.docke
 * [Vytváření Imagí Dockeru pro aplikace .NET Core](../docker/building-net-docker-images.md)
 
 
-### <a name="getting-net-docker-images"></a>Získávání Imagí Dockeru rozhraní .NET
+### <a name="getting-net-docker-images"></a>Získávání imagí Dockeru rozhraní .NET
 
 Oficiální Docker .NET bitové kopie se vytváří a optimalizované společností Microsoft. Jsou veřejně dostupné v Microsoft úložiště na úložiště Docker Hub. Každý úložiště může obsahovat více bitových kopií, v závislosti na rozhraní .NET verze a na verze operačního systému. Většina úložiště image poskytují rozsáhlé označení vám pomohou vybrat konkrétní framework verze a operační systém (verze Windows nebo Linux distro).
 
@@ -205,4 +205,3 @@ Teď, když jste se naučili o Docker platformy a jiné imagí Dockeru, dalším
 
 * [Základy Dockeru s .NET Core](docker-basics-dotnet-core.md)
 * [Vytváření bitových kopií Docker .NET Core](building-net-docker-images.md)
-\

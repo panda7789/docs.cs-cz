@@ -30,11 +30,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 074b5aae9d92b83d310a003e85709a4ba8e40c46
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b13da21709bb85ddf376f84df4fe2c7ae9f1a513
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).  
@@ -59,7 +59,7 @@ Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výko
   
  V systému Windows 8, najdete v části [nativní bitové kopie úloh](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb).  
   
- Další informace o používání Ngen.exe a služba nativních bitových kopií naleznete v části [nativní bitové kopie služby](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).  
+ Další informace o používání Ngen.exe a služba nativních bitových kopií naleznete v části [nativní bitové kopie služby][Native Image Service].  
   
 > [!NOTE]
 >  Ngen.exe syntaxi pro verze 1.0 a 1.1 rozhraní .NET Framework naleznete v [generátor (Ngen.exe) zastaralé syntaxe](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324).  
@@ -105,7 +105,7 @@ ngen /? | /help
 |--------------|-----------------|  
 |`1`|Nativní bitové kopie jsou generovány a nainstalovány okamžitě, nečeká se na nečinnost počítače.|  
 |`2`|Nativní bitové kopie jsou generovány a instalovány bez čekání na nečinnost počítače, ale až po dokončení všech akcí s prioritou 1 (a jejich závislostí).|  
-|`3`|Nativní bitové kopie jsou nainstalovány ve chvíli, kdy služba nativních bitových kopií zjistí, že je počítač nečinný. V tématu [nativních bitových kopií služby](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).|  
+|`3`|Nativní bitové kopie jsou nainstalovány ve chvíli, kdy služba nativních bitových kopií zjistí, že je počítač nečinný. V tématu [nativních bitových kopií služby][Native Image Service].|  
   
 <a name="ScenarioTable"></a>   
 ## <a name="scenarios"></a>Scénáře  
@@ -322,7 +322,7 @@ using namespace System::Runtime::CompilerServices;
   
 <a name="Deferred"></a>   
 ## <a name="deferred-processing"></a>Odložené zpracování  
- Generování nativních bitových kopií pro velmi velké aplikace může být časově náročné. Obdobně změny sdílené komponenty nebo změny nastavení počítače mohou vyžadovat aktualizaci mnoha nativních bitových kopií. `install` a `update` mají akce `/queue` možnost, která fronty operaci pro odložené provedení službou nativních bitových kopií. Kromě toho má Ngen.exe `queue` a `executeQueuedItems` akce, které poskytuje určitou kontrolu nad službu. Další informace najdete v tématu [nativní bitové kopie služby](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).  
+ Generování nativních bitových kopií pro velmi velké aplikace může být časově náročné. Obdobně změny sdílené komponenty nebo změny nastavení počítače mohou vyžadovat aktualizaci mnoha nativních bitových kopií. `install` a `update` mají akce `/queue` možnost, která fronty operaci pro odložené provedení službou nativních bitových kopií. Kromě toho má Ngen.exe `queue` a `executeQueuedItems` akce, které poskytuje určitou kontrolu nad službu. Další informace najdete v tématu [nativní bitové kopie služby][Native Image Service].  
   
 <a name="JITCompilation"></a>   
 ## <a name="native-images-and-jit-compilation"></a>Nativní bitové kopie a JIT – kompilace  
@@ -479,7 +479,7 @@ ngen display "myAssembly, version=1.0.0.0"
 ngen update  
 ```  
   
- Aktualizace všech bitových kopií může být časově náročný proces. Aktualizace pro spuštění pomocí služby nativních bitových kopií můžete fronty pomocí `/queue` možnost. Další informace o `/queue` možnost a instalace priority, najdete v části [nativní bitové kopie služby](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).  
+ Aktualizace všech bitových kopií může být časově náročný proces. Aktualizace pro spuštění pomocí služby nativních bitových kopií můžete fronty pomocí `/queue` možnost. Další informace o `/queue` možnost a instalace priority, najdete v části [nativní bitové kopie služby][Native Image Service].  
   
 ```  
 ngen update /queue  
@@ -520,7 +520,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
   
  Stejně jako u `install` akce, poskytuje rozšíření vyžaduje buď provádění Ngen.exe z adresáře, který obsahuje sestavení nebo zadat úplnou cestu.  
   
- Příklady týkající se služby nativních bitových kopií naleznete v tématu [nativní bitové kopie služby](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).  
+ Příklady týkající se služby nativních bitových kopií naleznete v tématu [nativní bitové kopie služby][Native Image Service].  
   
 ## <a name="native-image-task"></a>Úloha pro nativní bitové kopie  
  Úloha nativních bitových kopií je úloh systému Windows, která vytváří a udržuje nativní bitové kopie. Úloha nativních bitových kopií generuje a získá nativní bitové kopie automaticky pro podporované scénáře. (Viz [vytváření nativní bitové kopie](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418).) Umožňuje také instalační programy používat [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) k vytváření a aktualizaci nativní bitové kopie odložené najednou.  
@@ -532,7 +532,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
 |NET Framework NGEN v4.0.30319|Ano|Ano|  
 |NET Framework NGEN v4.0.30319 64|Ne|Ano|  
   
- Tato úloha nativních bitových kopií je je k dispozici v rozhraní .NET Framework 4.5 a novějších verzích, při spuštění v systému Windows 8 nebo novější. V dřívějších verzích systému Windows, používá rozhraní .NET Framework [nativní bitové kopie služby](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).  
+ Tato úloha nativních bitových kopií je je k dispozici v rozhraní .NET Framework 4.5 a novějších verzích, při spuštění v systému Windows 8 nebo novější. V dřívějších verzích systému Windows, používá rozhraní .NET Framework [nativní bitové kopie služby][Native Image Service].  
   
 ### <a name="task-lifetime"></a>Doba platnosti úloh  
  Obecně platí plánovače úloh systému Windows spustí úlohu nativních bitových kopií každou noc, když je počítač v nečinnosti. Úloha zkontroluje všechny odložené práci, kterou je zařazena ve frontě instalační programy aplikací, všechny žádosti o aktualizaci odložené nativních bitových kopií a vytvoření všechny automatické bitové kopie. Úloha dokončení zbývajících pracovní položky a pak se ukončí. Pokud se počítač zastaví nečinnosti, když je spuštěn úkol, zastaví úlohu.  
@@ -594,9 +594,9 @@ ngen executeQueuedItems
  V rozhraní .NET Framework verze 2.0 je jediná interakce s nativních bitových kopií služby pomocí nástroje příkazového řádku Ngen.exe. Pomocí nástroje příkazového řádku ve skriptech instalace do fronty akce pro službu nativních bitových kopií a komunikovat se službou.  
   
 ## <a name="see-also"></a>Viz také  
- [Služba nativních bitových kopií](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)  
- [Úloha nativních bitových kopií](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)  
  [Nástroje](../../../docs/framework/tools/index.md)  
  [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+
+[Native Image Service]: #native-image-service

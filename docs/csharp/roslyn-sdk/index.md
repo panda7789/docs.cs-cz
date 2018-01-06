@@ -1,5 +1,5 @@
 ---
-title: "Kompilátoru platformy .NET SDK | Microsoft Docs"
+title: "Kompilátoru platformy .NET SDK (Roslyn rozhraní API)"
 description: "Naučte se používat sadu .NET SDK platformy kompilátoru (také nazývané Roslyn rozhraní API) a pochopit kód .NET, odhalit chyby, opravte tyto chyby."
 keywords: "roslyn, analyzátor kódu oprava"
 author: billwagner
@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 01553376cbfbcbafb74c836ea632342e23dfba0e
-ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
+ms.openlocfilehash: 8bebb739805f28bdc192aef7678e762d0aa51016
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kompilátoru platformy .NET SDK
 
@@ -67,10 +67,10 @@ Sada SDK kompilátoru platformu .NET zahrnuje nejnovější objektové modely ja
 
 Podrobnější informace o konceptech v sadě SDK pro platformu .NET kompilátoru v těchto tématech čtyři:
 
- - [Pochopení model kompilátoru rozhraní API](compiler-api-model.md)
- - [Práce s syntaxe](work-with-syntax.md)
- - [Práce s sémantiku](work-with-semantics.md)
- - [Práce s pracovním prostoru](work-with-workspace.md)
+ - [Pochopení modelu rozhraní API kompilátoru](compiler-api-model.md)
+ - [Práce se syntaxí](work-with-syntax.md)
+ - [Práce se sémantikou](work-with-semantics.md)
+ - [Práce s pracovním prostorem](work-with-workspace.md)
 
 <!--
 
