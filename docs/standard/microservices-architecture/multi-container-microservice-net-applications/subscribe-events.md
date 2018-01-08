@@ -4,26 +4,36 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: fe17b53a39ff2964cd60183e291e2936d3ba28df
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 97035f297743626c5d9b306712cefdbd8a086c51
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
 Prvním krokem pro používání sběrnici událostí je přihlášení k odběru mikroslužeb k událostem, které chtějí přijímat. Která se má provést v mikroslužeb příjemce.
 
-Následující jednoduchý kód ukazuje, co každý příjemce mikroslužbu musí implementovat při spouštění služby (to znamená, ve spuštění třídy), přihlásí se k událostem, které se vyžaduje. Mikroslužbu basket.api, musí k odběru ProductPriceChangedIntegrationEvent zprávy. To provede mikroslužbu věděli o všech změnách cena produktu a umožňuje ji upozornit uživatele o změnu, pokud tento produkt je v koši uživatele.
+Následující jednoduchý kód ukazuje, co každý příjemce mikroslužbu musí implementovat při spouštění služby (který je v `Startup` třída), přihlásí se k událostem, které se vyžaduje. V takovém případě `basket.api` mikroslužbu musí přihlásit k odběru `ProductPriceChangedIntegrationEvent` a `OrderStartedIntegrationEvent` zprávy. 
+
+Například když se přihlásíte k odběru `ProductPriceChangedIntegrationEvent` událost, která umožňuje mikroslužbu košík vědět, všechny změny cena produktu a umožňuje ji upozornit uživatele o změnu, pokud tento produkt je v koši uživatele.
 
 ```csharp
 var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-eventBus.Subscribe<ProductPriceChangedIntegrationEvent>(
-    ProductPriceChangedIntegrationEventHandler);
+
+eventBus.Subscribe<ProductPriceChangedIntegrationEvent, 
+                   ProductPriceChangedIntegrationEventHandler>();
+
+eventBus.Subscribe<OrderStartedIntegrationEvent, 
+                   OrderStartedIntegrationEventHandler>();
+
 ```
 
 Po spuštění tohoto kódu mikroslužbu odběratele se naslouchání prostřednictvím RabbitMQ kanálů. Pokud dorazí jakékoli zprávy typu ProductPriceChangedIntegrationEvent, vyvolá kód obslužné rutiny události, který je předán a zpracovává událost.
@@ -83,7 +93,10 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem product)
 }
 ```
 
-V takovém případě je tento kód jednoduché mikroslužbu CRUD totiž mikroslužbu počátek umístěna vpravo do kontroleru webového rozhraní API. V rozšířené mikroslužeb se může implementovat ve třídě commandhandler – správné po potvrdit původní data.
+V takovém případě je tento kód jednoduché mikroslužbu CRUD totiž mikroslužbu počátek umístěna vpravo do kontroleru webového rozhraní API. 
+ 
+V pokročilejší mikroslužeb, jako při použití CQRS přístupy, můžou se implementovat v `CommandHandler` třídy uvnitř `Handle()` metoda. 
+
 
 ### <a name="designing-atomicity-and-resiliency-when-publishing-to-the-event-bus"></a>Navrhování nedělitelnost a odolnost proti chybám při publikování ke sběrnici událostí
 
@@ -152,57 +165,60 @@ Pro přehlednost následující příklad ukazuje celého procesu v jeden úsek 
 ```csharp
 // Update Product from the Catalog microservice
 //
-public async Task<IActionResult>
-    UpdateProduct([FromBody]CatalogItem productToUpdate)
+public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem productToUpdate) 
 {
-    var catalogItem = await _catalogContext.CatalogItems
-        .SingleOrDefaultAsync(i => i.Id == productToUpdate.Id);
+  var catalogItem = 
+       await _catalogContext.CatalogItems.SingleOrDefaultAsync(i => i.Id == 
+                                                               productToUpdate.Id); 
+  if (catalogItem == null) return NotFound();
 
-    if (catalogItem == null) return NotFound();
+  bool raiseProductPriceChangedEvent = false; 
+  IntegrationEvent priceChangedEvent = null; 
 
-    bool raiseProductPriceChangedEvent = false;
+  if (catalogItem.Price != productToUpdate.Price) 
+          raiseProductPriceChangedEvent = true; 
 
-    IntegrationEvent priceChangedEvent = null;
+  if (raiseProductPriceChangedEvent) // Create event if price has changed
+  {
+      var oldPrice = catalogItem.Price; 
+      priceChangedEvent = new ProductPriceChangedIntegrationEvent(catalogItem.Id,
+                                                                  productToUpdate.Price, 
+                                                                  oldPrice); 
+  }
+  // Update current product
+  catalogItem = productToUpdate; 
 
-    if (catalogItem.Price != productToUpdate.Price)
-        raiseProductPriceChangedEvent = true;
+  // Just save the updated product if the Product's Price hasn't changed.
+  if !(raiseProductPriceChangedEvent) 
+  {
+      await _catalogContext.SaveChangesAsync();
+  }
+  else  // Publish to event bus only if product price changed
+  {
+        // Achieving atomicity between original DB and the IntegrationEventLog 
+        // with a local transaction
+        using (var transaction = _catalogContext.Database.BeginTransaction())
+        {
+           _catalogContext.CatalogItems.Update(catalogItem); 
+           await _catalogContext.SaveChangesAsync();
 
-    if (raiseProductPriceChangedEvent) // Create event if price has changed
-    {
-        var oldPrice = catalogItem.Price;
-        priceChangedEvent = new ProductPriceChangedIntegrationEvent(catalogItem.Id,
-            productToUpdate.Price,
-            oldPrice);
-    }
+           // Save to EventLog only if product price changed
+           if(raiseProductPriceChangedEvent) 
+               await _integrationEventLogService.SaveEventAsync(priceChangedEvent); 
 
-    // Update current product
-    catalogItem = productToUpdate;
-    // Achieving atomicity between original DB and the IntegrationEventLog
-    // with a local transaction
+           transaction.Commit();
+        }   
 
-    using (var transaction = _catalogContext.Database.BeginTransaction())
-    {
-        _catalogContext.CatalogItems.Update(catalogItem);
+      // Publish the intergation event through the event bus
+      _eventBus.Publish(priceChangedEvent); 
 
-        await _catalogContext.SaveChangesAsync();
+      integrationEventLogService.MarkEventAsPublishedAsync(
+                                                priceChangedEvent); 
+  }
 
-        // Save to EventLog only if product price changed
-        if(raiseProductPriceChangedEvent)
-            await _integrationEventLogService.SaveEventAsync(priceChangedEvent);
-        transaction.Commit();
-   }
-
-   // Publish to event bus only if product price changed
-
-   if (raiseProductPriceChangedEvent)
-   {
-       _eventBus.Publish(priceChangedEvent);
-       integrationEventLogService.MarkEventAsPublishedAsync(
-           priceChangedEvent);
-   }
-
-   return Ok();
+  return Ok();
 }
+
 ```
 
 Po vytvoření události integrace ProductPriceChangedIntegrationEvent transakce, která ukládá původní operace domény (aktualizace položka katalogu, kterou) také zahrnuje trvalost události v protokolu událostí tabulce. Díky tomu jedné transakci a vždy bude moct zkontrolovat, zda byly odeslány zprávy o událostech.
@@ -306,6 +322,9 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 
 ### <a name="additional-resources"></a>Další zdroje
 
+-   **Forked eShopOnContainers pomocí NServiceBus (určitého softwaru)**
+    [*http://go.particular.net/eShopOnContainers*](http://go.particular.net/eShopOnContainers)
+
 -   **Řízené zasílání zpráv událostí**
     [*http://soapatterns.org/design\_vzory/událost\_řízené\_zasílání zpráv*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
@@ -316,7 +335,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
 -   **Komunikace mezi ohraničenou kontexty**
-    [*https://msdn.microsoft.com/en-us/library/jj591572.aspx*](https://msdn.microsoft.com/en-us/library/jj591572.aspx)
+    [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **Konzistence typu případné**
     [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
@@ -331,7 +350,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
     [*http://microservices.io/patterns/data/event-sourcing.html*](http://microservices.io/patterns/data/event-sourcing.html)
 
 -   **Představení událostí Sourcing**
-    [*https://msdn.microsoft.com/en-us/library/jj591559.aspx*](https://msdn.microsoft.com/en-us/library/jj591559.aspx)
+    [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
 
 -   **Databáze úložiště událostí**. Oficiální web.
     [*https://geteventstore.com/*](https://geteventstore.com/)
@@ -346,7 +365,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
      [ *https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
 
 -   **Úvod do konzistence dat**
-    [*https://msdn.microsoft.com/en-us/library/dn589800.aspx*](https://msdn.microsoft.com/en-us/library/dn589800.aspx)
+    [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
 -   **Rick Saling. Věta Zakončení: Proč "Vše, co je různé" s cloudu a Internetu**
     [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
@@ -354,7 +373,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Erica Brewer. Zakončení 12 letech později: jak "Pravidla" změnily**
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
--   **Účastní transakcí (DTC) externí** (MSMQ) [ *https://msdn.microsoft.com/en-us/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/en-us/library/ms978430.aspx%23bdadotnetasync2_topic3c)
+-   **Účastní transakcí (DTC) externí** (MSMQ) [ *https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
 -   **Azure Service Bus. Zprostředkované zasílání zpráv: Duplicitní detekce**
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
