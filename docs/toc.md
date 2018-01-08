@@ -257,6 +257,7 @@
 ### [Nativní interoperabilita](csharp/programming-guide/interop/index.md)
 ### [Dokumentace kódu](csharp/codedoc.md)
 ### [Správa verzí](csharp/versioning.md)
+## [Témata s postupy k C#](csharp/how-to/index.md)
 <!-- End of C# Concepts section -->
 ## [Sada .NET Compiler Platform SDK (rozhraní Roslyn API)](csharp/roslyn-sdk/)
 ## [Průvodce programováním v jazyce C#](csharp/programming-guide/)
