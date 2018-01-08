@@ -12,11 +12,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3e1237c0732b5422034db7c83c665c57c48486d7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 244cea33b684a8674681c4d1974d5d857c4c402b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-promotion-activity"></a>Vlastnost povýšení aktivity
 Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení přímo do pracovního postupu pro tvorbu prostředí. Soubor konfigurace – elementy, aktivity pracovního postupu a pracovní postup rozšíření, které usnadňují používání funkce povýšení jsou k dispozici. Kromě toho vzorek obsahuje jednoduché pracovní postup, který ukazuje, jak lze pomocí této kolekce.  
@@ -73,7 +74,7 @@ Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activ
   
 -   **PropertyPromotionActivity** je knihovna tříd, který obsahuje konfigurační prvky, aktivity pracovního postupu a pracovní postup rozšíření, **CounterServiceApplication** používá.  
   
--   **PropertyPromotionActivitySQLSample.sql** vytvoří a přidá zobrazení [dbo]. [ CounterService] do databáze.  
+-   **PropertyPromotionActivitySQLSample.sql** vytvoří a přidá zobrazení [dbo].[CounterService] do databáze.  
   
 ### <a name="counterserviceapplication"></a>CounterServiceApplication  
   

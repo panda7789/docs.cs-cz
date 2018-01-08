@@ -19,11 +19,12 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 23a1d8c638b198c31d7c83aaf3f216b465f01453
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 47867a82432ec6abe2245a0421d800c242d92b2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>Postupy: Instalace sestavení do globální mezipaměti sestavení
 Existují dva způsoby instalace sestavení se silným názvem do globální mezipaměti sestavení (GAC):  
@@ -86,8 +87,8 @@ gacutil -i hello.dll
     4.  Přetáhněte soubor v kroku c **soubory v cílovém počítači** podokně (nebo použijte **kopie** a **vložení** příkazy z místní nabídky souboru).  
   
 ## <a name="see-also"></a>Viz také  
- [Práce se sestaveními a globální mezipaměti sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  
- [Postupy: odebrání sestavení z globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
+ [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  
+ [Postupy: Odebrání sestavení z globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
  [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  
- [Postupy: podepsání sestavení se silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
+ [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
  [Instalační služba systému Windows](http://msdn.microsoft.com/en-us/121be21b-b916-43e2-8f10-8b080516d2a0)
