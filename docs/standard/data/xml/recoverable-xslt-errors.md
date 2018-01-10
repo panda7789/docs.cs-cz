@@ -16,11 +16,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d75bb34b6258819290a5d2dd8c33b37945cce5c6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4564530cd173793519471c78105d0394595f6d5c
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="recoverable-xslt-errors"></a>Chyby obnovitelné XSLT
 Doporučení W3C XSL transformace XSLT () verze 1.0 zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelné chování. Například části 7.3 vytváření zpracování pokynů, XSLT 1.0 doporučení stavy, jedná se o chybu, pokud vytváření instancí obsah `xsl:processing-instruction` vytvoří uzly kromě textové uzly. Některé problémy je třeba 1.0 XSLT doporučení označuje, co decision provést pokud procesor rozhodne zotavit z chyby. Pro problém uveden v části 7.3 W3C říká, že můžete implementace obnovit z této chyby, bez ohledu na uzlech a jejich obsah.  
@@ -32,7 +32,7 @@ Doporučení W3C XSL transformace XSLT () verze 1.0 zahrnuje oblasti, ve kterýc
   
 -   Chyba označuje, že je pro tuto podmínku vyvolána výjimka.  
   
--   Odkazy na části lze nalézt v [W3C XSL transformace XSLT () verze 1.0 doporučení](http://go.microsoft.com/fwlink/?LinkId=49919) a [W3C XSL transformace XSLT () verze 1.0 specifikace chybující](http://go.microsoft.com/fwlink/?LinkId=49917).  
+-   Odkazy na části lze nalézt v [W3C XSL transformace XSLT () verze 1.0 doporučení](http://www.w3.org/TR/xslt) a [W3C XSL transformace XSLT () verze 1.0 specifikace chybující](http://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
   
 |Podmínka XSLT|Část|Chování XslCompiledTransform|  
 |--------------------|-------------|-----------------------------------|  

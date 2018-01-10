@@ -23,11 +23,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 80f95099644552aed34553385544f21d07b29114
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 49355c4271efc37a40c025c0f8275ec42e13723e
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegátů následuje návrhový vzor pozorovatel, která umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Události odesílatele doručí oznámení, že došlo k události a přijímače událostí přijetí tohoto oznámení a definuje odpověď na něj. Tento článek popisuje hlavní součásti modelu delegáta, jak zpracovávat události v aplikacích a postupy implementace událostí v kódu.  
@@ -102,6 +102,6 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
  <xref:System.EventHandler%601>  
  <xref:System.EventArgs>  
  <xref:System.Delegate>  
- [Události a přehled směrované události (pro Windows store aplikace)](http://go.microsoft.com/fwlink/?LinkId=261485)  
+ [Události a přehled směrované události (aplikace UWP)](/windows/uwp/xaml-platform/events-and-routed-events-overview)  
  [Události (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
  [Události (programování průvodce v C#)](../../csharp/programming-guide/events/index.md)

@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7e176ebf6660e1c517e5ef7a505c259666bb30a0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 63f0e001280773c55f18f0604ca93986acbb9674
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>Globalizace a lokalizace aplikací .NET Framework
 Vývoj [aplikací připravených](http://msdn.microsoft.com/goglobal/bb978433.aspx), včetně aplikace, která je možné lokalizovat do jednoho nebo více jazyků, zahrnuje tři kroky: globalizace, lokalizovatelnosti a lokalizace.  
@@ -50,7 +50,7 @@ Vývoj [aplikací připravených](http://msdn.microsoft.com/goglobal/bb978433.as
   
  Rozhraní .NET Framework poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací. Mnoho členů typů v knihovně tříd rozhraní .NET Framework podporuje globalizaci vrácením hodnot, které odpovídají konvencím aktuální jazykové verze nebo specifické jazykové verze uživatele. Rozhraní .NET Framework podporuje také satelitní sestavení, která usnadňují proces lokalizace aplikace.  
   
- Další informace najdete v tématu [přejděte globální středisku pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=235015).  
+ Další informace najdete v tématu [globalizace dokumentaci](/globalization/).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Globalizace](../../../docs/standard/globalization-localization/globalization.md)  

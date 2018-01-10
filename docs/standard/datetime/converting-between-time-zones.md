@@ -25,11 +25,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 58ed01520a9bbed53d32fc10e48a479e68f6ef7c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: eabe0c1511e6fd42798f1a879e9e8d526d543a29
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="converting-times-between-time-zones"></a>Převádění časových údajů mezi časovými pásmy
 
@@ -37,7 +37,7 @@ Se stává stále důležité pro každou aplikaci, která funguje s daty a čas
 
 ## <a name="converting-to-coordinated-universal-time"></a>Převádění na koordinovaný světový čas
 
-Koordinovaný světový čas (UTC) je standardní vysokou přesnost, atomic doba. Časová pásma na světě jsou vyjádřené jako kladné nebo záporné posun od času UTC. UTC tak poskytuje druh časových pásem volné nebo neutrální času časového pásma. Použití čas UTC se doporučuje, když datum a časové přenositelnost mezi počítači je důležité. (Podrobnosti a ostatní osvědčené postupy, pomocí data a časy najdete v tématu [kódování osvědčených postupů pomocí data a času v rozhraní .NET Framework](http://go.microsoft.com/fwlink/?LinkId=92342).) Převod jednotlivých časových pásem na čas UTC usnadňuje porovnávání času.
+Koordinovaný světový čas (UTC) je standardní vysokou přesnost, atomic doba. Časová pásma na světě jsou vyjádřené jako kladné nebo záporné posun od času UTC. UTC tak poskytuje druh časových pásem volné nebo neutrální času časového pásma. Použití čas UTC se doporučuje, když datum a časové přenositelnost mezi počítači je důležité. (Podrobnosti a ostatní osvědčené postupy, pomocí data a časy najdete v tématu [kódování osvědčených postupů pomocí data a času v rozhraní .NET Framework](https://msdn.microsoft.com/library/ms973825.aspx).) Převod jednotlivých časových pásem na čas UTC usnadňuje porovnávání času.
 
 > [!NOTE]
 > Můžete také serializovat <xref:System.DateTimeOffset> struktury pro jednoznačné určení jediný bod v čase. Protože <xref:System.DateTimeOffset> objekty ukládání hodnot data a času společně s její posun od času UTC, vždy představují do konkrétního bodu v čase ve vztahu k UTC.
@@ -74,7 +74,7 @@ Všechny tyto metody trvat <xref:System.DateTime> hodnoty jako parametry a vrať
 
 Převést na místní čas UTC, najdete v části "převod na místní čas UTC", který následuje dále. Chcete-li převést UTC na čas v časovém pásmu, který určíte, volejte <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A> metoda. Metoda přebírá dva parametry:
 
-* Chcete-li převést na UTC. Tato hodnota musí být <xref:System.DateTime> hodnotu jehož <xref:System.DateTime.Kind%2A> je nastavena na <xref:System.DateTimeKind?displayProperty=nameWithType> nebo <xref:System.DateTimeKind?displayProperty=nameWithType>.
+* Chcete-li převést na UTC. Tato hodnota musí být <xref:System.DateTime> hodnotu jehož <xref:System.DateTime.Kind%2A> je nastavena na `Unspecified` nebo `Utc`.
 
 * Časové pásmo a převádět na UTC.
 

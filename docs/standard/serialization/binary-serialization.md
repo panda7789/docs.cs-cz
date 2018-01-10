@@ -1,6 +1,6 @@
 ---
 title: "Binární serializace"
-ms.date: 11/20/2017
+ms.date: 01/02/2018
 ms.prod: .net
 ms.topic: article
 helpviewer_keywords:
@@ -17,11 +17,11 @@ ms.author: mairaw
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8ae76c100cdf448bd0e9625e6b3378b6b9e25324
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5547322759dcafb25e9f1c8541fa67876d0cd401
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="binary-serialization"></a>Binární serializace
 
@@ -186,6 +186,7 @@ Povaha binární serializace umožňuje úpravy soukromé členy uvnitř objekt 
 - <xref:System.DuplicateWaitObjectException?displayProperty=nameWithType>(k dispozici v .NET Core verze 2.0.4 a novější)
 - <xref:System.EntryPointNotFoundException?displayProperty=nameWithType>(k dispozici v .NET Core verze 2.0.4 a novější)
 - <xref:System.Enum?displayProperty=nameWithType>   
+- <xref:System.EventArgs?displayProperty=nameWithType>(k dispozici v .NET Core 2.0.6 a novější)
 - <xref:System.Exception?displayProperty=nameWithType>   
 - <xref:System.ExecutionEngineException?displayProperty=nameWithType>(k dispozici v .NET Core verze 2.0.4 a novější)
 - <xref:System.FieldAccessException?displayProperty=nameWithType>(k dispozici v .NET Core verze 2.0.4 a novější)

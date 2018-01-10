@@ -31,17 +31,17 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 286261e9b40e65450113128c51c7c9b384380878
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0048c1946e5df59340bed211c5dbb81075047260
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
 <a name="top"></a>Pro [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] aplikace, izolované úložiště je mechanismus úložiště dat, který poskytuje izolace a zabezpečení tak, že definujete standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.  
   
 > [!IMPORTANT]
->  Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Místo toho použít třídy data aplikací v `Windows.Storage` obory názvů, které jsou součástí [!INCLUDE[wrt](../../../includes/wrt-md.md)] rozhraní API pro uložení místního data a soubory. Další informace najdete v tématu [data aplikací](http://go.microsoft.com/fwlink/?LinkId=229175) ve službě Windows Dev Center.  
+>  Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Místo toho použít třídy data aplikací v `Windows.Storage` obory názvů, které jsou součástí [!INCLUDE[wrt](../../../includes/wrt-md.md)] rozhraní API pro uložení místního data a soubory. Další informace najdete v tématu [data aplikací](/previous-versions/windows/apps/hh464917(v=win.10)) ve službě Windows Dev Center.  
   
  Toto téma obsahuje následující oddíly:  
   

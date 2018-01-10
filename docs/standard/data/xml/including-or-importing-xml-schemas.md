@@ -20,11 +20,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ce86969bb9dc4a8db4359afa333d1f003c767895
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a8c9b513f47fcb07f987b1e17f0b7f485cef3143
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="including-or-importing-xml-schemas"></a>Včetně nebo import schémat XML
 Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine />` elementy. Tyto prvky schématu naleznete v dalších schémat XML, které lze použít k doplnění strukturu schématu, která zahrnuje nebo importuje je. <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> a <xref:System.Xml.Schema.XmlSchemaRedefine> třídy, mapování na tyto prvky ve Model model (schématu objektu SOM) rozhraní API.  
@@ -108,7 +108,7 @@ Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine 
 </schema>  
 ```  
   
- Další informace o `<xs:import />`, `<xs:include />`, a `<xs:redefine />` elementy a <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> a <xref:System.Xml.Schema.XmlSchemaRedefine> třídách naleznete v tématu [schématu XML W3C](http://go.microsoft.com/fwlink/?LinkId=45242) a <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů třída referenční dokumentaci.  
+ Další informace o `<xs:import />`, `<xs:include />`, a `<xs:redefine />` elementy a <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> a <xref:System.Xml.Schema.XmlSchemaRedefine> třídách naleznete v tématu [schématu XML W3C](http://www.w3.org/XML/Schema) a <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů třída referenční dokumentaci.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  

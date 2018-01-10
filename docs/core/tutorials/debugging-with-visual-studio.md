@@ -1,21 +1,21 @@
 ---
-title: "Ladění aplikace C# Hello, World s Visual Studio 2017"
-description: "Postup ladění aplikace Hello World napsané v C# a Visual Studio 2017."
+title: "Ladění jazyka C# nebo Visual Basic Hello World .NET Core aplikace s Visual Studio 2017"
+description: "Postup ladění aplikace Hello World napsané v C# nebo Visual Basic s Visual Studio 2017."
 keywords: ".NET core, .NET Core Konzolová aplikace, ladění v rozhraní .NET Core"
 author: BillWagner
 ms.author: wiwagn
-ms.date: 08/07/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: cb213625-cc60-438b-9b9e-49aed0e4a974
 ms.workload: dotnetcore
-ms.openlocfilehash: 3ab19566acb36cb96e0572931ba39f2ae99a3ca7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6c8e1de4e0053ae6f74dc6c74fe37b6d7661932e
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Ladění aplikace Hello World s Visual Studio 2017
 
@@ -33,17 +33,12 @@ Vždy začít testování váš program v režimu ladění. Ladění režimu vyp
 
 Spustit program v režimu ladění a zkuste několik ladění funkcí:
 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. A *zarážek* dočasně přeruší provádění aplikace *před* řádek se zarážkou spustí. 
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
    Nastavte zarážky v řádku, který čte `Console.WriteLine($"\nHello, {name}, on {date:d} at {date:t}!");` kliknutím na levém okraji okna kódu na tomto řádku nebo výběrem **ladění** > **Přepnout zarážku** položky nabídky řádek Vybrat. Jak ukazuje následující obrázek, označuje Visual Studio na řádku, na kterém je nastaven breakpoint zvýraznění ho a zobrazením červené kolečko jeho levého okraje.
 
    ![Visual Studio Program okno sadou zarážek](./media/debugging-with-visual-studio/setbreakpoint.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-   Nastavte zarážky v řádku, který čte `Console.WriteLine(vbCrLf + $"Hello, {name}, on {currentDate:d} at {currentDate:t}!")` kliknutím na levém okraji okna kódu na tomto řádku nebo výběrem **ladění** > **Přepnout zarážku** položky nabídky řádek Vybrat. Jak ukazuje následující obrázek, označuje Visual Studio na řádku, na kterém je nastaven breakpoint zvýraznění ho a zobrazením červené kolečko jeho levého okraje.
-
-   <a name="visual-studio-program-window-with-breakpoint-setmediadebugging-with-visual-studiovb-setbreakpointpng"></a>![Visual Studio Program okno sadou zarážek](./media/debugging-with-visual-studio/vb-setbreakpoint.png)
----
 
 1. Spusťte program v režimu ladění výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů Stisknutím F5 nebo výběrem položky **ladění** > **spustit ladění**.
 
@@ -51,36 +46,50 @@ Spustit program v režimu ladění a zkuste několik ladění funkcí:
 
 1. Spuštění programu zastaví, když se dosáhne zarážce a před `Console.WriteLine` metody. **Automobily** zobrazuje hodnoty proměnných, které se používají kolem aktuálního řádku. **Místní hodnoty –** okno (které můžete zobrazit kliknutím **místní hodnoty –** kartě) zobrazuje hodnoty proměnných, které jsou definovány v metodě aktuálně spuštěné.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
    ![Okno aplikace Visual Studio](./media/debugging-with-visual-studio/break.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-   <a name="visual-studio-application-windowmediadebugging-with-visual-studiovb-breakpng"></a>![Okno aplikace Visual Studio](./media/debugging-with-visual-studio/vb-break.png)
----
 
 1. Můžete změnit hodnotu proměnné, které chcete zjistit, jak ho ovlivní vašeho programu. Pokud **hodnot proměnných** nezobrazuje, zobrazit a vybrat **ladění** > **Windows** > **Immediate**položku nabídky. **Hodnot proměnných** umožňuje pracovat s aplikací, kterou ladíte.
 
 1. Můžete interaktivně změnit hodnoty proměnných. Zadejte `name = "Gracie"` v **hodnot proměnných** a stiskněte klávesu Enter.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. Zadejte `date = new DateTime(2016,11,01,11,59,00)` v **hodnot proměnných** a stiskněte klávesu Enter.
 
    **Hodnot proměnných** zobrazí hodnotu proměnné řetězce a vlastnosti <xref:System.DateTime> hodnotu. Kromě toho se aktualizuje hodnotu proměnné v **automobily** a **místní hodnoty –** systému windows.
 
    ![Automatické hodnoty – okno a příkazové podokno](./media/debugging-with-visual-studio/autosimmediate.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-1. Zadejte `currentDate = new DateTime(2016,11,01,11,59,00)` v **hodnot proměnných** a stiskněte klávesu Enter.
-
-<!-- The **Immediate Window** displays the value of the string variable and the properties of the <xref:System.DateTime> value. In addition, the value of the variables is updated in the **Autos** and **Locals** windows.
-
-   ![Autos window and Immediate Window](./media/debugging-with-visual-studio/vb-autosimmediate.png)
--->
----
 
 1. Pokračujte výběrem spuštění programu **pokračovat** tlačítka na panelu nástrojů nebo výběrem **ladění** > **pokračovat** položku nabídky. Hodnoty zobrazené v okně konzoly odpovídají změny provedené v **hodnot proměnných**.
 
    ![Okno konzoly zobrazující zadanou hodnotou konektoru na to, co je název vaší? řádek následovaný Hello Gracie 11/1/2016 v 11:59 am](./media/debugging-with-visual-studio/changed.png)
 
 1. Stisknutím libovolné klávesy, chcete-li ukončit režim ladění aplikace a end.
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+1. A *zarážek* dočasně přeruší provádění aplikace *před* řádek se zarážkou spustí. 
+
+   Nastavte zarážky v řádku, který čte `Console.WriteLine(vbCrLf + $"Hello, {name}, on {currentDate:d} at {currentDate:t}!")` kliknutím na levém okraji okna kódu na tomto řádku nebo výběrem **ladění** > **Přepnout zarážku** položky nabídky řádek Vybrat. Jak ukazuje následující obrázek, označuje Visual Studio na řádku, na kterém je nastaven breakpoint zvýraznění ho a zobrazením červené kolečko jeho levého okraje.
+
+   ![Visual Studio Program okno sadou zarážek](./media/debugging-with-visual-studio/vb-setbreakpoint.png)
+
+1. Spusťte program v režimu ladění výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů Stisknutím F5 nebo výběrem položky **ladění** > **spustit ladění**.
+
+1. Zadejte řetězec v okně konzoly, když program vyzve k zadání názvu a stiskněte klávesu Enter.
+
+1. Spuštění programu zastaví, když se dosáhne zarážce a před `Console.WriteLine` metody. **Automobily** zobrazuje hodnoty proměnných, které se používají kolem aktuálního řádku. **Místní hodnoty –** okno (které můžete zobrazit kliknutím **místní hodnoty –** kartě) zobrazuje hodnoty proměnných, které jsou definovány v metodě aktuálně spuštěné.
+
+   ![Okno aplikace Visual Studio](./media/debugging-with-visual-studio/vb-break.png)
+
+1. Můžete změnit hodnotu proměnné, které chcete zjistit, jak ho ovlivní vašeho programu. Pokud **hodnot proměnných** nezobrazuje, zobrazit a vybrat **ladění** > **Windows** > **Immediate**položku nabídky. **Hodnot proměnných** umožňuje pracovat s aplikací, kterou ladíte.
+
+1. Můžete interaktivně změnit hodnoty proměnných. Zadejte `name = "Gracie"` v **hodnot proměnných** a stiskněte klávesu Enter.
+
+1. Zadejte `currentDate = new DateTime(2016,11,01,11,59,00)` v **hodnot proměnných** a stiskněte klávesu Enter.
+
+1. Pokračujte výběrem spuštění programu **pokračovat** tlačítka na panelu nástrojů nebo výběrem **ladění** > **pokračovat** položku nabídky. Hodnoty zobrazené v okně konzoly odpovídají změny provedené v **hodnot proměnných**.
+
+   ![Okno konzoly zobrazující změněné hodnoty zadané v příkazové podokno](./media/debugging-with-visual-studio/changed.png)
+
+1. Stisknutím libovolné klávesy, chcete-li ukončit režim ladění aplikace a end.
+---
 
 ## <a name="setting-a-conditional-breakpoint"></a>Nastavení podmíněné zarážky
 
@@ -98,17 +107,6 @@ Pro nastavení podmíněné zarážky a testování, co se stane, když uživate
    ```csharp
    String.IsNullOrEmpty(name)
    ```
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-1. Klikněte pravým tlačítkem myši na červenou tečku, který představuje bod přerušení. V místní nabídce vyberte **podmínky** otevřete **nastavení zarážek** dialogové okno. Zaškrtněte políčko pro **podmínky**.
-
-   ![Panel nastavení zarážek](./media/debugging-with-visual-studio/vb-breakpointsettings.png)
-
-1. Pro **podmíněným výrazem** nahradit "například x = 5" s následující:
-
-   ```vb
-   String.IsNullOrEmpty(name)
-   ```
----
 
    Testujete kód podmínku, který `String.IsNullOrEmpty(name)` volání metody, které je `true` buď protože *název* nemá přiřazenu hodnotu nebo proto, že jeho hodnota může být prázdný řetězec (""). Můžete také zadat *počet volání*, které přerušení spuštění programu před příkaz provést zadaného počtu opakování, nebo *podmínka filtru*, který přerušení program provádění například podle atributy jako identifikátor přístup z více vláken, název procesu nebo názvu vlákna.
 
@@ -122,7 +120,6 @@ Pro nastavení podmíněné zarážky a testování, co se stane, když uživate
 
 1. Vyberte **místní hodnoty –** okna, která zobrazuje hodnoty proměnných, které jsou místní vzhledem k aktuálně prováděné metoda, která je `Main` metoda v programu. Sledovat, která hodnota `name` proměnná `""`, nebo <xref:System.String.Empty?displayProperty=nameWithType>.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. Potvrďte hodnota je prázdný řetězec zadáním následujícího příkazu v **hodnot proměnných**. Výsledkem je `true`.
 
    ```csharp
@@ -130,21 +127,47 @@ Pro nastavení podmíněné zarážky a testování, co se stane, když uživate
    ```
 
    ![Vrací hodnotu true, po provedení příkazu příkazové podokno](./media/debugging-with-visual-studio/emptystring.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-1. Potvrďte hodnota je prázdný řetězec zadáním následujícího příkazu v **hodnot proměnných**. Výsledkem je `true`.
-
-   ```vb
-   ? String.IsNullOrEmpty(name)
-   ```
-  ![Vrací hodnotu true, po provedení příkazu příkazové podokno](./media/debugging-with-visual-studio/vb-emptystring.png)
----
 
 1. Vyberte **pokračovat** tlačítka na panelu nástrojů pro pokračování v provádění programu.
 
 1. Stisknutím libovolné klávesy zavřete okno konzoly a ukončení režimu ladění.
 
 1. Zrušte zaškrtnutí zarážce kliknutím na tečky na levém okraji okna kódu nebo výběrem **ladění > Přepnout zarážku** položky nabídky řádek vybraný.
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+1. Klikněte pravým tlačítkem myši na červenou tečku, který představuje bod přerušení. V místní nabídce vyberte **podmínky** otevřete **nastavení zarážek** dialogové okno. Zaškrtněte políčko pro **podmínky**.
 
+   ![Panel nastavení zarážek](./media/debugging-with-visual-studio/vb-breakpointsettings.png)
+
+1. Pro **podmíněným výrazem** nahradit "například x = 5" s následující:
+
+   ```vb
+   String.IsNullOrEmpty(name)
+   ```
+
+   Testujete kód podmínku, který `String.IsNullOrEmpty(name)` volání metody, které je `True` buď protože *název* nemá přiřazenu hodnotu nebo proto, že jeho hodnota může být prázdný řetězec (""). Můžete také zadat *počet volání*, které přerušení spuštění programu před příkaz provést zadaného počtu opakování, nebo *podmínka filtru*, který přerušení program provádění například podle atributy jako identifikátor přístup z více vláken, název procesu nebo názvu vlákna.
+
+1. Vyberte **zavřete** tlačítko zavřete dialogové okno.
+
+1. Spusťte program v režimu ladění.
+
+1. V okně konzoly stiskněte klávesu Enter po zobrazení výzvy zadejte své jméno.
+
+1. Vzhledem k tomu, že jsme zadaná podmínka, `name` je buď `null` nebo <xref:System.String.Empty?displayProperty=nameWithType>, byly splněny, spuštění programu zastaví, když se dosáhne zarážce a před `Console.WriteLine` metody.
+
+1. Vyberte **místní hodnoty –** okna, která zobrazuje hodnoty proměnných, které jsou místní vzhledem k aktuálně prováděné metoda, která je `Main` metoda v programu. Sledovat, která hodnota `name` proměnná `""`, nebo <xref:System.String.Empty?displayProperty=nameWithType>.
+
+1. Potvrďte hodnota je prázdný řetězec zadáním následujícího příkazu v **hodnot proměnných**. Výsledkem je `true`.
+
+   ```vb
+   ? String.IsNullOrEmpty(name)
+   ```
+  ![Vrací hodnotu true, po provedení příkazu příkazové podokno](./media/debugging-with-visual-studio/vb-emptystring.png)
+
+1. Vyberte **pokračovat** tlačítka na panelu nástrojů pro pokračování v provádění programu.
+
+1. Stisknutím libovolné klávesy zavřete okno konzoly a ukončení režimu ladění.
+
+1. Zrušte zaškrtnutí zarážce kliknutím na tečky na levém okraji okna kódu nebo výběrem **ladění > Přepnout zarážku** položky nabídky řádek vybraný.
 ---
 ## <a name="stepping-through-a-program"></a>Procházení program
 
@@ -160,19 +183,8 @@ Visual Studio také umožňuje krok řádek po řádku prostřednictvím program
 1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args`zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
 
    ![Visual Studio – okno](./media/debugging-with-visual-studio/stepinto2.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-1. Na řádku nabídek zvolte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio klade důraz a zobrazuje šipku vedle položky na další řádek provádění.
 
-   ![Visual Studio – okno](./media/debugging-with-visual-studio/vb-stepinto1.png)
-
-   Na tento bod, protože nebyly předána žádných argumentů příkazového řádku programu, **automobily** okno ukazuje, že hodnota `args` proměnné je pole prázdný řetězec. Kromě toho Visual Studio otevřel okna konzoly prázdné.
-
-1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args`zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
-
-   ![Visual Studio – okno](./media/debugging-with-visual-studio/vb-stepinto2.png)
----
-
-1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio označuje příkaz, který obsahuje `name` přiřazení proměnné. **Automobily** okno ukazuje, že `name` je `null` (v jazyku C#) nebo `Nothing` (v jazyku Visual Basic), a v okně konzoly zobrazí řetězec "Jaký je název vaší?".
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio označuje příkaz, který obsahuje `name` přiřazení proměnné. **Automobily** okno ukazuje, že `name` je `null`, a v okně konzoly zobrazí řetězec "Jaký je název vaší?".
 
 1. Odpověď na výzvu zadáte řetězec v okně konzoly a stisknutím klávesy Enter. Konzole je reagovat a zadáte řetězec nezobrazuje v okně konzoly ale <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> metoda jasném zaznamená váš vstup.
 
@@ -185,6 +197,31 @@ Visual Studio také umožňuje krok řádek po řádku prostřednictvím program
 1. Vyberte **ladění** > **Krokovat s Vystoupením** nebo stiskněte klávesu Shift a F11 klíč. To zastaví podrobné provádění. V okně konzoly zobrazí zprávu a čeká na stisknutí klávesy.
 
 1. Stisknutím libovolné klávesy zavřete okno konzoly a ukončení režimu ladění.
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+1. Na řádku nabídek zvolte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio klade důraz a zobrazuje šipku vedle položky na další řádek provádění.
+
+   ![Visual Studio – okno](./media/debugging-with-visual-studio/vb-stepinto1.png)
+
+   Na tento bod, protože nebyly předána žádných argumentů příkazového řádku programu, **automobily** okno ukazuje, že hodnota `args` proměnné je pole prázdný řetězec. Kromě toho Visual Studio otevřel okna konzoly prázdné.
+
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args`zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
+
+   ![Visual Studio – okno](./media/debugging-with-visual-studio/vb-stepinto2.png)
+
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio označuje příkaz, který obsahuje `name` přiřazení proměnné. **Automobily** okno ukazuje, že `name` je `Nothing`, a v okně konzoly zobrazí řetězec "Jaký je název vaší?".
+
+1. Odpověď na výzvu zadáte řetězec v okně konzoly a stisknutím klávesy Enter. Konzole je reagovat a zadáte řetězec nezobrazuje v okně konzoly ale <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> metoda jasném zaznamená váš vstup.
+
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio označuje příkaz, který obsahuje `date` (v jazyku C#) nebo `currentDate` (v jazyce Visual Basic) přiřazení proměnné. **Automobily** okno ukazuje <xref:System.DateTime.Now?displayProperty=nameWithType> hodnotu vlastnosti a hodnoty vrácené volání <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> metoda. V okně konzoly zobrazí také řetězec zadá, když konzole, budete vyzváni k zadání vstupu.
+
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. **Automobily** v okně se zobrazí hodnota `date` proměnné po přiřazení z <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost. V okně konzoly se nezmění.
+
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Volání sady Visual Studio <xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=nameWithType> metoda. Hodnoty `date` (nebo `currentDate`) a `name` proměnné se zobrazují v **automobily** okno a v okně konzoly zobrazí formátovaný řetězec.
+
+1. Vyberte **ladění** > **Krokovat s Vystoupením** nebo stiskněte klávesu Shift a F11 klíč. To zastaví podrobné provádění. V okně konzoly zobrazí zprávu a čeká na stisknutí klávesy.
+
+1. Stisknutím libovolné klávesy zavřete okno konzoly a ukončení režimu ladění.
+---
 
 ## <a name="building-a-release-version"></a>Vytváření prodejní verzi
 

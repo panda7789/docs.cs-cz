@@ -1,7 +1,7 @@
 ---
 title: "V rozhraní .NET kódování znaků"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 12/22/2017
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
@@ -23,11 +23,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 29296261deb2cd94db339595464e3dcdf245fc82
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bf07665f0f7e79affd0b34b8faba94a56dd7d1d2
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="character-encoding-in-net"></a>V rozhraní .NET kódování znaků
 Znaky jsou abstraktní entit, které může být reprezentován v mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v znakovou sadu podporovaných s určitou hodnotu, která představuje tento znak. Například morseovkou je kódování této páry každý znak v latinku pomocí vzoru teček znaků a pomlčky, které jsou vhodné pro přenos přes telegrafní řádky. Kódování pro dvojice počítače každý znak v znakovou sadu podporovaných s číselnou hodnotu, která představuje tento znak znaků. Kódování znaků má dvě odlišné součásti:  
@@ -70,7 +70,7 @@ Znaky jsou abstraktní entit, které může být reprezentován v mnoha různým
 > [!NOTE]
 >  Standardu Unicode přiřadí každému znaku v každé podporované skriptu bod kódu (číslo) a název. Znak "A" je například reprezentována bod kódu U + 0041 a název "LATIN velké písmeno A". Kódování Unicode Transformation Format (UTF) definovat jak kódování tohoto bodu kódu do sekvenci jeden nebo více bajtů. Schéma kódování Unicode usnadňuje vývoj aplikací připravených, protože umožňuje znaky z libovolného znaku nastaven a nelze v jednom kódování. Vývojáři aplikací mít už ke sledování schéma kódování, které se používají k vytvoření znaků pro konkrétní jazyk nebo zápis systému a data mohou být sdílená mezi systémy mezinárodní úrovni bez poškození.  
 >   
->  Rozhraní .NET podporuje tři kódování definované ve standardu Unicode: UTF-8, UTF-16 a UTF-32. Další informace najdete v tématu ve standardu Unicode na [Unicode domovskou stránku](http://go.microsoft.com/fwlink/?LinkId=37123).  
+>  Rozhraní .NET podporuje tři kódování definované ve standardu Unicode: UTF-8, UTF-16 a UTF-32. Další informace najdete v tématu ve standardu Unicode na [Unicode domovskou stránku](http://www.unicode.org/).  
   
  Informace o všech kódování, které jsou k dispozici v rozhraní .NET můžete načíst pomocí volání <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> metoda. Rozhraní .NET podporuje kódování systémů uvedených v následující tabulce znaků.  
   
@@ -154,7 +154,10 @@ Znaky jsou abstraktní entit, které může být reprezentován v mnoha různým
 > [!NOTE]
 >  Teoreticky kódování Unicode třídy zadaný v rozhraní .NET (<xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding>, a <xref:System.Text.UTF32Encoding>) podporují každý znak v každé znaková sada, takže je můžete použít k vyloučení přizpůsobený záložní problémy.  
   
- Přizpůsobená strategie lišit pro různé znakové stránky, a nejsou podrobně popsáno. Například pro některé znakové stránky znaky latinky s plnou šířkou mapu, která častější poloviční šířkou Latinské znaky. Toto mapování není provedeno pro jiné znakové stránky. I v rámci agresivní přizpůsobený strategie neexistuje žádný vůbec přizpůsobení pro některé znaky v některé kódování. Například čínština znak nemá žádné přiměřené mapování na znaková stránka 1252. V takovém případě se používá náhradní řetězec. Ve výchozím nastavení je tento řetězec pouze jeden OTAZNÍK (U + 003F).  
+ Přizpůsobená strategie lišit pro různé znakové stránky. Například pro některé znakové stránky znaky latinky s plnou šířkou mapu, která častější poloviční šířkou Latinské znaky. Toto mapování není provedeno pro jiné znakové stránky. I v rámci agresivní přizpůsobený strategie neexistuje žádný vůbec přizpůsobení pro některé znaky v některé kódování. Například čínština znak nemá žádné přiměřené mapování na znaková stránka 1252. V takovém případě se používá náhradní řetězec. Ve výchozím nastavení je tento řetězec pouze jeden OTAZNÍK (U + 003F).  
+  
+> [!NOTE]
+>  Přizpůsobená strategie nejsou podrobně popsaná v. Však několik znakové stránky jsou popsané na stránce [Unicode Consortium](http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/) webu. Přečtěte si **readme.txt** soubor v této složce popis toho, jak interpretovat soubory mapování.
   
  Následující příklad používá znaková stránka 1252 (kódové stránky systému Windows pro západní Evropské jazyky) pro ilustraci přizpůsobený mapování a jeho nevýhody. <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> Metoda se používá k načtení objektu kódování pro znaková stránka 1252. Ve výchozím nastavení použije přizpůsobený mapování znaky kódování Unicode nepodporuje. Tento příklad vytvoří řetězec, který obsahuje tři jiné znaky než ASCII – v KROUŽKU velké písmeno LATINKY S (U + 24C 8), horní index PĚT (U + 2075) a INFINITY (U + 221E) - oddělené mezerami. Jak ukazuje výstup z příkladu, pokud řetězec s kódováním tři původní není mezera znaky jsou nahrazovány OTAZNÍK (U + 003F), PĚT ČÍSLIC (U + 0035) a OSMI ČÍSLICE (U + 0038). ČÍSLICE OSM je zvláště nízký náhradní server pro nepodporovaný znak INFINITY a OTAZNÍK znamená, že byla k dispozici pro původní znak žádné mapování.  
   

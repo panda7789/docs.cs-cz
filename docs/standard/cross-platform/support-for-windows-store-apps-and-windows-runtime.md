@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6dccf9d70772c4eaa8818388ad662b1f93804431
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f11daa93aa4e1cbddd0fa0e9f065295f42c820d5
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Podporuje různé scénáře vývoj softwaru pomocí [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Tyto scénáře spadají do tří kategorií:  
@@ -160,5 +160,5 @@ ms.lasthandoff: 12/23/2017
 |[Plán pro aplikace Windows Store pomocí jazyka C# nebo Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=242212)|Poskytuje klíče materiály, které vám pomůžou začít s vývojem [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí jazyka C# nebo Visual Basic, včetně mnoha témata rychlý start, pokyny a osvědčené postupy. (Na webu Windows Dev Center.)|  
 |[Vývoj aplikací pro Windows Store (VB / c / C++ a XAML)](http://go.microsoft.com/fwlink/p/?LinkId=238311)|Poskytuje klíče materiály, které vám pomůžou začít s vývojem [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí jazyka C# nebo Visual Basic, včetně mnoha témata rychlý start, pokyny a osvědčené postupy. (Na webu Windows Dev Center.)|  
 |[Vytváření modulu Runtime součásti systému Windows v C# a Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=238313)|Popisuje postup vytvoření [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty pomocí rozhraní .NET Framework, vysvětluje, jak můžete použít jako součást [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace vytvořená pro systém Windows pomocí jazyka JavaScript a popisuje, jak ladit kombinace pomocí sady Visual Studio. (Na webu Windows Dev Center.)|  
-|[Odkaz na prostředí Windows Runtime](http://go.microsoft.com/fwlink/?LinkId=238319)|V referenční dokumentaci [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Na webu Windows Dev Center.)|  
+|[Odkaz na prostředí Windows Runtime](/uwp/api/)|V referenční dokumentaci [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Na webu Windows Dev Center.)|  
 |[Předávání identifikátorů URI do prostředí Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md)|Popisuje problém, který mohou nastat při předání identifikátoru URI ze spravovaného kódu na [!INCLUDE[wrt](../../../includes/wrt-md.md)]a jak tomu zamezit.|
