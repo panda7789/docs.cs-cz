@@ -1,7 +1,7 @@
 ---
 title: "&lt;AppContextSwitchOverrides&gt; – Element"
 ms.custom: 
-ms.date: 10/17/2017
+ms.date: 01/08/2018
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9cc68f4be869a4773b8a6b932d1f6363855fe584
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 71888febdc42f0ee65bdcd55a761700eda065bc1
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; – Element
 Definuje jeden nebo více přepínač používaný <xref:System.AppContext> třídy poskytují mechanismus vyjádření výslovného nesouhlasu pro nové funkce.  
@@ -79,6 +79,7 @@ Definuje jeden nebo více přepínač používaný <xref:System.AppContext> tř�
 |`Switch.System.Activities.`<br/>`UseMD5CryptoServiceProviderForWFDebugger`|Pokud nastavíte hodnotu `false`, umožňuje ladění projektů založených na XAML pracovního postupu pomocí sady Visual Studio, pokud je povoleno FIPS. Bez něj <xref:System.NullReferenceException> je vyvolána ve voláních metod v sestavení systém.|Rozhraní .NET framework 4.7|
 |`Switch.System.Activities.`<br/>`UseMD5ForWFDebugger`|Určuje, zda kontrolního součtu pro instanci pracovního postupu v ladicím programu používá algoritmus MD5 nebo SHA1. | Rozhraní .NET framework 4.7|
 |`Switch.System.Drawing.`<br/>`DontSupportPngFramesInIcons`|Ovládací prvky jestli <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> metoda výjimku při <xref:System.Drawing.Icon> objekt má rámce PNG. Další informace najdete v tématu [omezení rizik: PNG rámce v objektech ikonu](~/docs/framework/migration-guide/mitigation-png-frames-in-icon-objects.md).|.NET Framework 4.6|  
+|`Switch.System.Drawing.Printing.`</br>`OptimizePrintPreview`|Ovládací prvky zda výkon <xref:System.Windows.Forms.PrintPreviewDialog> je optimalizovaná pro síťové tiskárny. Další informace najdete v tématu [printpreviewdialog – Přehled ovládacího prvku](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md).|.NET Framework 4.6|
 |`Switch.System.Globalization.NoAsyncCurrentCulture`|Určuje, zda z kontextu volající vlákno není toku asynchronní operace. Další informace najdete v tématu [CurrentCulture a CurrentUICulture tok napříč úlohy](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#currentculture-and-currentuiculture-flow-across-tasks).|.NET Framework 4.6|  
 |`Switch.System.IdentityModel.`<br/>`DisableMultipleDNSEntriesInSANCertificate`|Ovládací prvky jestli <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí o porovnání typ deklarace identity jenom s poslední položky DNS. Další informace najdete v tématu [omezení rizik: metoda X509CertificateClaimSet.FindClaims](~/docs/framework/migration-guide/mitigation-x509certificateclaimset-findclaims-method.md).|.NET Framework 4.6.1|  
 |`Switch.System.IO.BlockLongPaths`|Ovládací prvky zda cesty delší než `MAX_PATH` throw (260 znaků) <xref:System.IO.PathTooLongException>. Další informace najdete v tématu [dlouhá cesta podporu](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#long-path-support).|.NET Framework 4.6.2|  

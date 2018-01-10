@@ -23,11 +23,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c3fe36e93cdea1315ee92f2dfdf76953511309a2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9a42c9aeb3295cd90fb6796e36b840daff843aac
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a>V common language runtime (CLR) bude systém uvolňování slouží jako správce automatické paměti. Poskytuje následující výhody:  
@@ -108,7 +108,7 @@ ms.lasthandoff: 12/23/2017
   
  Je spravovaná halda pro každý spravovaný proces. Všechna vlákna v procesu přidělit paměť pro objekty v haldě stejné.  
   
- Můžete vyhradit paměť, bude systém uvolňování volání Win32 [VirtualAlloc](http://go.microsoft.com/fwlink/?LinkId=179047) funkce a jeden segment rezervy paměti v době spravovaných aplikací. Uvolňování paměti také si vyhrazuje segmenty podle potřeby a uvolní segmenty zpět do operačního systému (po vymazání je všechny objekty) voláním Win32 [virtualfree –](http://go.microsoft.com/fwlink/?LinkId=179050) funkce.  
+ Můžete vyhradit paměť, bude systém uvolňování volání Win32 [VirtualAlloc](https://msdn.microsoft.com/library/aa366887.aspx) funkce a jeden segment rezervy paměti v době spravovaných aplikací. Uvolňování paměti také si vyhrazuje segmenty podle potřeby a uvolní segmenty zpět do operačního systému (po vymazání je všechny objekty) voláním Win32 [virtualfree –](https://msdn.microsoft.com/library/aa366892.aspx) funkce.  
   
 > [!IMPORTANT]
 >  Velikost segmentů přidělené modulem garbage collector závisí na implementaci a mohou podléhat změnám kdykoli, včetně v pravidelné aktualizace. Vaše aplikace by nikdy Zkontrolujte předpoklady o nebo závisí na velikosti určitý segment, ani pokusit nakonfigurovat množství paměti k dispozici pro přidělení segmentu.  
