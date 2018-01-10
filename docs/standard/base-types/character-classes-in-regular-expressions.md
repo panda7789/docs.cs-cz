@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f488990232448e69ba2fa0d7c7a730df57d170fc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dfcb0d0ace4bd42d89fe7b4c2dc04098858c2945
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 <a name="Top"></a>Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu. Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:  
@@ -408,7 +408,7 @@ ms.lasthandoff: 12/23/2017
   
 <a name="SupportedUnicodeGeneralCategories"></a>   
 ## <a name="supported-unicode-general-categories"></a>Podporované obecné kategorie sady Unicode  
- Sada Unicode definuje obecné kategorie uvedené v následující tabulce. Další informace najdete v tématu "Formát souboru UCD" a "Hodnoty obecné kategorie" v tématu na [databáze znaků Unicode](http://go.microsoft.com/fwlink/?LinkId=57650).  
+ Sada Unicode definuje obecné kategorie uvedené v následující tabulce. Další informace najdete v tématu "Formát souboru UCD" a "Hodnoty obecné kategorie" v tématu na [databáze znaků Unicode](http://www.unicode.org/reports/tr44/).  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  

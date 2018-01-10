@@ -33,11 +33,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 866d31662b8ae7d5c887af7d86007cb93a57d88f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c4e460c11e0e78d56a54da1dd178b3f8e9f381b6
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="cryptographic-signatures"></a>Kryptografické podpisy
 <a name="top"></a>Kryptografické digitální podpisy zajistit integritu dat použít algoritmy s veřejným klíčem. Při podepisování dat pomocí digitálního podpisu někdo lze ověřit podpis a může prokázat, že data pochází od vás a nebyla změněna poté, co jste se přihlásili ho. Další informace o digitálních podpisů najdete v tématu [šifrovacím službám](../../../docs/standard/security/cryptographic-services.md).  
@@ -115,7 +115,7 @@ class Class1
 ### <a name="signing-xml-files"></a>Podpis souborů XML  
  Poskytuje rozhraní .NET Framework <xref:System.Security.Cryptography.Xml> názvů, což vám umožní přihlásit XML. Podpis XML je důležité, pokud chcete ověřit, že soubor XML pocházejí z určitého zdroje. Například pokud používáte služby akcií, který se používá soubor XML, můžete ověřit zdroj XML je podepsaný.  
   
- Postupujte podle třídy v tomto oboru názvů [syntaxe podpisu XML a doporučení zpracování](http://go.microsoft.com/fwlink/?LinkId=136777) z World Wide Web Consortium.  
+ Postupujte podle třídy v tomto oboru názvů [syntaxe podpisu XML a doporučení zpracování](http://www.w3.org/TR/xmldsig-core/) z World Wide Web Consortium.  
   
  [Zpět na začátek](#top)  
   
