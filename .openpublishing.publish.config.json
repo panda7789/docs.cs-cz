@@ -15,6 +15,11 @@
       "Pdf",
       "Intellisense"
     ],
+    "live-sxs": [
+      "Publish",
+      "Pdf",
+      "Intellisense"
+    ],
     "master": [
       "Publish",
       "Pdf"
