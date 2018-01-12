@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: da1a05a6003d93727efd5749aac9a055c8c80d38
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cc12a90025a1862fc6c588fe4425f3f8341da313
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít rozhraní .NET Framework [Přenosná knihovna tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) implementovat vzor Model-View-View Model (modelem MVVM) a sdílení sestavení napříč různými platformami.  
@@ -35,7 +35,7 @@ Můžete použít rozhraní .NET Framework [Přenosná knihovna tříd](../../..
   
  ![Přenosné s modelem MVVM diagram](../../../docs/standard/cross-platform/media/portablemvvmdiagram.png "PortableMVVMdiagram")  
   
- Toto téma neposkytuje obecné informace o rozhraní MVVM vzor. Pouze poskytuje informace o tom, jak používat [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] implementovat rozhraní MVVM. Další informace o rozhraní MVVM najdete v tématu [rychlý start modelem MVVM](http://go.microsoft.com/fwlink/?LinkId=234934).  
+ Toto téma neposkytuje obecné informace o rozhraní MVVM vzor. Pouze poskytuje informace o tom, jak používat [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] implementovat rozhraní MVVM. Další informace o rozhraní MVVM najdete v tématu [rychlý start modelem MVVM](https://msdn.microsoft.com/library/gg430869(v=PandP.40).aspx).  
   
 ## <a name="classes-that-support-mvvm"></a>Třídy, které podporují rozhraní MVVM  
  Pokud cílíte [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], Silverlight, nebo Windows Phone 7.5 pro vaše [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu následující třídy jsou k dispozici pro implementaci rozhraní MVVM vzoru:  

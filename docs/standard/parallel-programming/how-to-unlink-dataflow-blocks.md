@@ -1,12 +1,8 @@
 ---
 title: "Postupy: Zrušení propojení bloků toku dat"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,25 +12,23 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, unlinking dataflow blocks
 ms.assetid: 40f0208d-4618-47f7-85cf-4913d07d2d7d
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8f75c1d3dfeb28f55dbb198315b9bd314b70843c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: db3c0d3a6d94e2e9eb65046267f14feff0c056cb
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-unlink-dataflow-blocks"></a>Postupy: Zrušení propojení bloků toku dat
-Tento dokument popisuje, jak zrušení propojení cíl bloku toku dat z její zdroj.  
-  
-> [!TIP]
->  Knihovna toku dat TPL (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> oboru názvů) není distribuované s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online `Microsoft.Tpl.Dataflow` balíčku.  
-  
+Tento dokument popisuje, jak zrušení propojení cíl bloku toku dat z její zdroj.
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
+
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří tři <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> objekty, každý o voláních, která `TrySolution` metoda k výpočtu hodnoty. Tento příklad vyžaduje pouze výsledky z prvního volání `TrySolution` ukončíte.  
   
@@ -55,8 +49,6 @@ Tento dokument popisuje, jak zrušení propojení cíl bloku toku dat z její zd
  [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]  
   
  **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowReceiveAny.vb**  
-  
-## <a name="robust-programming"></a>Robustní programování  
-  
+
 ## <a name="see-also"></a>Viz také  
  [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

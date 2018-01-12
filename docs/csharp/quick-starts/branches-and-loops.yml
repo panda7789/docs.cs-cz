@@ -6,15 +6,17 @@ metadata:
   audience: Developer
   level: Beginner
   ms.custom: mvc
+  ms.prod: .net
+  ms.technology: devlang-csharp
   displayType: two-column
   interactive: csharp
   nextTutorialHref: list-collection
   nextTutorialTitle: Collections in C#
-  ms.openlocfilehash: 2778a363e50354b79dd0a5b3651e36d94e636961
-  ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+  ms.openlocfilehash: fdaf016f9ed09a69724e76bb1bdcdefc785fd8a7
+  ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/13/2017
+  ms.lasthandoff: 01/10/2018
 items:
 - durationInMinutes: 1
   content: >

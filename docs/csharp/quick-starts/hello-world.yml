@@ -10,11 +10,13 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: e0ba04029605db719a06babedb989b189a478f54
-  ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+  ms.prod: .net
+  ms.technology: devlang-csharp
+  ms.openlocfilehash: d7ae501d1ff456ea6e34f8fb2f7f73513a77fca7
+  ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/13/2017
+  ms.lasthandoff: 01/10/2018
 items:
 - durationInMinutes: 1
   content: >

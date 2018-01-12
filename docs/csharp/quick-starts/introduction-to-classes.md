@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 44ee6a3d2dd800f91b5066ea578f4b37852ff295
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 55d6050d7573b9088b361fb571b96425533bda1f
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="introduction-to-classes"></a>Úvod do třídy
 
@@ -40,7 +40,7 @@ namespace classes
 
 V této úvodní se chystáte vytvořit nové typy, které představují účet bank. Vývojáři obvykle definujte každá třída v různých textového souboru. Tím je snazší správa růstem program velikost.  Vytvořte nový soubor s názvem **BankAccount.cs** v **třídy** adresáře. 
 
-Tento soubor bude obsahovat deefinition z ***bankovní účet***. Objekt Oriented programování organizuje kód tak, že vytvoříte typy ve formě ***třídy***. Tyto třídy obsahovat kód, který představuje konkrétní entitu. `BankAccount` Třída reprezentuje účet bank. Kód implementuje konkrétní operací prostřednictvím metody a vlastnosti. V této úvodní bankovní účet podporuje toto chování:
+Tento soubor bude obsahovat definice ***bankovní účet***. Objekt Oriented programování organizuje kód tak, že vytvoříte typy ve formě ***třídy***. Tyto třídy obsahovat kód, který představuje konkrétní entitu. `BankAccount` Třída reprezentuje účet bank. Kód implementuje konkrétní operací prostřednictvím metody a vlastnosti. V této úvodní bankovní účet podporuje toto chování:
 
 1. Má 10 číslice, která jednoznačně identifikuje účet bank.
 1. Obsahuje řetězec, který ukládá název nebo názvy vlastníky.

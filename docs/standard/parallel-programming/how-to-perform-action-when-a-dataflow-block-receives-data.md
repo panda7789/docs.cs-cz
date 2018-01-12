@@ -1,12 +1,8 @@
 ---
 title: "Postupy: Provádění akcí po přijetí dat do bloku toku dat"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,25 +11,23 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, receiving data
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 58adf778986883b5aac823fc5e69d0a2308304dc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4aee0462e641e755830b63d3d708bf51b22cd797
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Postupy: Provádění akcí po přijetí dat do bloku toku dat
 *Spouštění bloku toku dat* typy volání delegáta zadaný uživatelem, když získají data. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>, A <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> třídy jsou typy bloku toku dat provádění. Můžete použít `delegate` – klíčové slovo (`Sub` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), <xref:System.Action%601>, <xref:System.Func%602>, nebo ve výrazu lambda, když poskytují pracovní funkce, která se bloku toku dat provádění. Tento dokument popisuje, jak používat <xref:System.Func%602> a výrazy lambda k provedení akce v blocích provádění.  
-  
-> [!TIP]
->  Knihovna toku dat TPL (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> oboru názvů) není distribuované s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online `Microsoft.Tpl.Dataflow` balíčku.  
-  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
+
 ## <a name="example"></a>Příklad  
  Následující příklad používá toku dat pro čtení souboru z disku a vypočítá počet bajtů v tomto souboru, které jsou rovna hodnotě nula. Používá <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> ke čtení souboru a vypočte se počet nula bajtů a <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> Tisknout počet nula bajtů ke konzole. <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> Určuje objekt <xref:System.Func%602> objekt pro práci při na bloky přijímat data. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> Objekt tisk do konzoly počet nulový počet bajtů, které se načítají pomocí výrazu lambda.  
   

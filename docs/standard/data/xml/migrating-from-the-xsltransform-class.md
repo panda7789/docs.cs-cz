@@ -19,11 +19,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1fe2848deadd8de4494f485d792604663515686e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3b9bc281127213a81d39a6e82c35afcb684a2f25
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z XslTransform – třída
 Architektura XSLT byla změněna v [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] verzi. <xref:System.Xml.Xsl.XslTransform> Třída nahradila <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
@@ -36,7 +36,7 @@ Architektura XSLT byla změněna v [!INCLUDE[vsprvslong](../../../../includes/vs
  <xref:System.Xml.Xsl.XslCompiledTransform> Třída také obsahuje další optimalizace, které mnohem rychlejší než <xref:System.Xml.Xsl.XslTransform> třídy.  
   
 > [!NOTE]
->  I když celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třída je lepší, než <xref:System.Xml.Xsl.XslTransform> třídy, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslCompiledTransform> třída může provádět další pomalu než <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslTransform> třída první, když je volána na transformaci. Je to proto, že soubor XSLT musí být zkompilovány, než je načten. Další informace najdete v příspěvku blogu: [XslCompiledTransform nižší než XslTransform?](http://go.microsoft.com/fwlink/?LinkId=130590)  
+>  I když celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třída je lepší, než <xref:System.Xml.Xsl.XslTransform> třídy, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslCompiledTransform> třída může provádět další pomalu než <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslTransform> třída první, když je volána na transformaci. Je to proto, že soubor XSLT musí být zkompilovány, než je načten. Další informace najdete v příspěvku blogu: [XslCompiledTransform nižší než XslTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)  
   
 ## <a name="security"></a>Zabezpečení  
  Ve výchozím nastavení <xref:System.Xml.Xsl.XslCompiledTransform> třída zakáže podporu pro XSLT `document()` funkce a embedded skriptování. Tyto funkce se dá nastavit tak, že vytvoříte <xref:System.Xml.Xsl.XsltSettings> objekt, který má funkce povolena a předání do <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda. Následující příklad ukazuje, jak povolit skriptování a provedení transformace XSLT.  

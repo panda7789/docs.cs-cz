@@ -23,14 +23,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 33d33826037197a0c679dacfff57eb77de5f5341
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9ddb94119d009d61e8126724df2a4b852b7ad3f5
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
-Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework [System.IO](http://go.microsoft.com/fwlink/?LinkId=231142) obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na datové proudy a souborů. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
+Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na datové proudy a souborů. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
   
  Soubor je uspořádaná a pojmenovaná kolekce bajtů s trvalým úložištěm. Pracujete-li se soubory, pracujete s cestami adresářů, diskovým úložištěm a názvy souborů a adresářů. Naproti tomu datový proud je posloupnost bajtů, kterou lze použít ke čtení nebo zápisu na záložní úložiště, jímž může být jedno nebo více úložných médií (například disky nebo paměť). Stejně jako existuje několik záložních úložišť jiných než disky, existuje několik druhů datových proudů jiných než datové proudy souborů, například proudy sítí, pamětí nebo kanálů.  
   
@@ -51,7 +51,7 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Kromě použití těchto tříd, uživatelé jazyka Visual Basic můžete použít metody a vlastnosti poskytované <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> třídu pro vstupně-výstupní.  
   
- Najdete v části [postupy: kopírování adresářů](../../../docs/standard/io/how-to-copy-directories.md), [postupy: vytvoření adresářů](http://msdn.microsoft.com/en-us/4d2772b1-b991-4532-a8a6-6ef733277e69), a [postupy: výčet adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
+ Najdete v části [postupy: kopírování adresářů](../../../docs/standard/io/how-to-copy-directories.md), [postupy: vytvoření adresářů](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69), a [postupy: výčet adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
   
 ## <a name="streams"></a>Datové proudy  
  Abstraktní základní třída <xref:System.IO.Stream> podporuje čtení a zápisu bajtů. Dědí všechny třídy, které představují datové proudy <xref:System.IO.Stream> třídy. <xref:System.IO.Stream> Třídy a jejich odvozené třídy poskytují běžné zobrazení zdroje dat a úložiště a izolovat programátorů z konkrétní podrobnosti základní zařízení a operační systém.  
@@ -128,7 +128,7 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
 ## <a name="isolated-storage"></a>Izolované úložiště  
  Izolované úložiště je mechanismus pro ukládání dat poskytující izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Úložiště poskytuje virtuální systém souborů izolovaný uživatelem, sestavením a (volitelně) doménou. Izolované úložiště je obzvláště užitečné, nemá-li aplikace oprávnění k přístupu k uživatelským souborům. Lze tak ukládat nastavení nebo soubory aplikace způsobem řízeným zásadami zabezpečení daného počítače.  
   
- Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace; místo toho použijte aplikaci datové třídy v [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) oboru názvů. Další informace najdete v tématu [data aplikací](http://go.microsoft.com/fwlink/?LinkId=229175) ve službě Windows Dev Center.  
+ Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace; místo toho použijte aplikaci datové třídy v [Windows.Storage](/uwp/api/Windows.Storage) oboru názvů. Další informace najdete v tématu [data aplikací](/previous-versions/windows/apps/hh464917(v=win.10)) ve službě Windows Dev Center.  
   
  Při implementaci izolovaného úložiště jsou běžně používány následující třídy:  
   
@@ -147,7 +147,7 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
 -   Typy související s operací se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) obor názvů [!INCLUDE[wrt](../../../includes/wrt-md.md)], jako například [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) a [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
   
--   Izolované úložiště není k dispozici. Místo toho použijte [data aplikací](http://go.microsoft.com/fwlink/?LinkId=229175).  
+-   Izolované úložiště není k dispozici. Místo toho použijte [data aplikací](/previous-versions/windows/apps/hh464917(v=win.10)).  
   
 -   Použít asynchronní metody, jako například <xref:System.IO.Stream.ReadAsync%2A> a <xref:System.IO.Stream.WriteAsync%2A>, aby se zabránilo blokování vlákna uživatelského rozhraní.  
   
@@ -160,7 +160,7 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
 ## <a name="io-and-security"></a>Vstupně-výstupní operace a zabezpečení  
  Při použití třídy v <xref:System.IO?displayProperty=nameWithType> obor názvů, je třeba postupovat podle požadavky na zabezpečení operačního systému jako seznamy řízení přístupu (ACL) pro řízení přístupu k souborů a adresářů. Tento požadavek je kromě žádné <xref:System.Security.Permissions.FileIOPermission> požadavky. Seznamy ACL lze spravovat programově. Další informace najdete v tématu [postupy: Přidání nebo odebrání položek seznamu řízení přístupu](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  
   
- Výchozí zásady zabezpečení zabraňují internetovým a intranetovým aplikacím v přístupu k souborům na počítači uživatele. Proto při psaní kódu, který bude stažen přes internet nebo intranet, nepoužívejte vstupně-výstupní třídy požadující cestu k fyzickému souboru. Místo toho použijte [izolované úložiště](../../../docs/standard/io/isolated-storage.md) pro tradiční aplikací rozhraní .NET Framework, nebo použijte [data aplikací](http://go.microsoft.com/fwlink/?LinkId=229175) pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
+ Výchozí zásady zabezpečení zabraňují internetovým a intranetovým aplikacím v přístupu k souborům na počítači uživatele. Proto při psaní kódu, který bude stažen přes internet nebo intranet, nepoužívejte vstupně-výstupní třídy požadující cestu k fyzickému souboru. Místo toho použijte [izolované úložiště](../../../docs/standard/io/isolated-storage.md) pro tradiční aplikací rozhraní .NET Framework, nebo použijte [data aplikací](/previous-versions/windows/apps/hh464917(v=win.10)) pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
   
  Kontrola zabezpečení se provádí pouze při konstrukci datového proudu. Proto neotevírejte datový proud a poté jej nepředávejte méně důvěryhodnému kódu nebo doménám aplikace.  
   

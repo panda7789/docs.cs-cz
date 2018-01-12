@@ -1,12 +1,8 @@
 ---
 title: "Postupy: Vytvoření bloku toku dat vlastního typu"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,27 +12,25 @@ helpviewer_keywords:
 - TPL dataflow library, creating custom dataflow blocks
 - dataflow blocks, creating custom in TPL
 ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1a17bdf149d3a263b064f96feae8c660be34d375
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 54882ce5f646e9e790703e0951459a9fceac3bb6
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Postupy: Vytvoření bloku toku dat vlastního typu
 Přestože knihovna toku dat TPL poskytuje několik typů bloku toku dat, které umožňují celou řadu funkcí, můžete také vytvořit vlastní bloku typy. Tento dokument popisuje, jak vytvořit typ bloku toku dat, který implementuje vlastní chování.  
   
 ## <a name="prerequisites"></a>Požadavky  
  Čtení [toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) před čtením tohoto dokumentu.  
-  
-> [!TIP]
->  Knihovna toku dat TPL (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> oboru názvů) není distribuované s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online `Microsoft.Tpl.Dataflow` balíčku.  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
 ## <a name="defining-the-sliding-window-dataflow-block"></a>Definování posuvné okno bloku toku dat  
  Vezměte v úvahu toku dat aplikace, která vyžaduje, aby vstupní hodnoty se uloží do vyrovnávací paměti a ve výstupu posuvné okno způsobem. Například pro vstupní hodnoty {0, 1, 2, 3, 4, 5} a velikosti okna tří posuvné okno bloku toku dat vytváří pole výstup {0, 1, 2}, {1, 2, 3}, {2, 3, 4} a {3, 4, 5}. Následující části popisují dva způsoby, jak vytvořit typ bloku toku dat, který implementuje toto vlastní chování. První způsob využívá <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> metoda kombinovat funkce <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> objektu a <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> objektu do bloku jeden Šiřitel. Druhý způsob spočívá definuje třídu, která je odvozena z <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602> a kombinuje stávající funkce provádět vlastní chování.  
@@ -73,8 +67,6 @@ Přestože knihovna toku dat TPL poskytuje několik typů bloku toku dat, které
  [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]  
   
  **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll SlidingWindowBlock.vb**  
-  
-## <a name="next-steps"></a>Další kroky  
-  
+
 ## <a name="see-also"></a>Viz také  
  [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

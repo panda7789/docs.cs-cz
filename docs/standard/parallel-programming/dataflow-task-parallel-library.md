@@ -1,12 +1,8 @@
 ---
 title: Tok dat (Task Parallel Library)
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,26 +11,24 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
-caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5c49217023f5c43f445d9e6b7f022ef4beefef24
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b48e580d078ec6bb736ac762d505583cf632a8bd
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
 <a name="top"></a>Task Parallel Library (TPL) poskytuje součásti toku dat a pomáhá tak zvýšit robustnost aplikací s povolenými souběžnosti. Tyto součásti toku dat se souhrnně označují jako *knihovna toku dat TPL*. Tento model toku dat podporuje programování založené na objektu actor pomocí poskytnete zprávy v procesu předávání pro hrubý toku dat a paralelní zpracování úlohy. Komponenty toku dat sestavení pro typy a plánování infrastruktury TPL a integrovat jazyka C#, [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]a F # jazyková podpora pro asynchronní programování. Tyto součásti toku dat jsou užitečné, pokud máte více operací, které musí vzájemnou komunikaci asynchronně, nebo pokud chcete zpracovat data, jakmile je k dispozici. Představte si třeba aplikaci, která zpracovává data bitové kopie z webové kamery. Pomocí modelu toku dat je aplikace dokáže zpracovat rámce bitové kopie, jakmile budou k dispozici. Pokud aplikace vylepšuje rámce bitové kopie, například provedením světla oprava nebo červených snížení, můžete vytvořit *kanálu* toku dat komponent. Každá fáze v kanálu může používat další funkce hrubý paralelismus, jako jsou funkce, která zajišťuje TPL k transformaci bitovou kopii.  
   
  Tento dokument obsahuje přehled knihovna toku dat TPL. Popisuje programovací model, typy bloku předdefinované toku dat a postup konfigurace bloků toku dat podle specifických požadavků vaší aplikace.  
-  
-> [!TIP]
->  Knihovna toku dat TPL (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> oboru názvů) není distribuované s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online `Microsoft.Tpl.Dataflow` balíčku.  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
  Tento dokument obsahuje následující části:  
   

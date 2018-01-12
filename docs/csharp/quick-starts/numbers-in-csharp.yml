@@ -10,11 +10,13 @@ metadata:
   nextTutorialTitle: Branches and loops in C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 655cc4e4a8575ebd194911490dafd8e7da241c7b
-  ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+  ms.prod: .net
+  ms.technology: devlang-csharp
+  ms.openlocfilehash: 8c89963107a770e27c9345ee38ed6249a8177f02
+  ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/13/2017
+  ms.lasthandoff: 01/10/2018
 items:
 - durationInMinutes: 1
   content: >

@@ -1,12 +1,8 @@
 ---
 title: "Postupy: Zrušení bloku toku dat"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,26 +12,24 @@ helpviewer_keywords:
 - dataflow blocks, canceling in TPL
 - TPL dataflow library,canceling dataflow blocks
 ms.assetid: fbddda0d-da3b-4ec8-a1d6-67ab8573fcd7
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 321b4a01b4ce6445ac43cffcc14cb68f29db050d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3ef7fa62513072e1ee0dc7a8fecf3e600f9c26f2
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Postupy: Zrušení bloku toku dat
 Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příklad používá Windows Forms k zobrazení, kde jsou aktivní v kanálu toku dat a také důsledky zrušení pracovních položek.  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
-> [!TIP]
->  Knihovna toku dat TPL (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> oboru názvů) není distribuované s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online `Microsoft.Tpl.Dataflow` balíčku.  
-  
-### <a name="to-create-the-windows-forms-application"></a>K vytvoření Windows Forms aplikace  
+## <a name="to-create-the-windows-forms-application"></a>K vytvoření Windows Forms aplikace  
   
 1.  Vytvoření C# nebo Visual Basic **formulářové aplikace Windows** projektu. V následujících krocích projektu jmenuje `CancellationWinForms`.  
   
@@ -50,7 +44,7 @@ Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příkla
 ## <a name="creating-the-dataflow-pipeline"></a>Vytvoření kanálu toku dat  
  Tato část popisuje postup vytvoření kanálu toku dat, který zpracovává pracovních položek a aktualizuje indikátory průběhu.  
   
-#### <a name="to-create-the-dataflow-pipeline"></a>K vytvoření kanálu toku dat  
+### <a name="to-create-the-dataflow-pipeline"></a>K vytvoření kanálu toku dat  
   
 1.  Ve vašem projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
   
@@ -81,7 +75,7 @@ Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příkla
 ## <a name="connecting-the-dataflow-pipeline-to-the-user-interface"></a>Připojování k uživatelské rozhraní kanálu toku dat  
  Tato část popisuje postup připojení kanálu toku dat s uživatelským rozhraním. Vytvoření kanálu i přidávání pracovních položek do kanálu jsou řízeny obslužné rutiny události pro **přidat pracovní položky** tlačítko. Zrušení se spouští pomocí **zrušit** tlačítko. Po kliknutí na tato tlačítka, je v asynchronním režimu inicioval příslušnou akci.  
   
-#### <a name="to-connect-the-dataflow-pipeline-to-the-user-interface"></a>Pro připojení kanálu toku dat s uživatelským rozhraním  
+### <a name="to-connect-the-dataflow-pipeline-to-the-user-interface"></a>Pro připojení kanálu toku dat s uživatelským rozhraním  
   
 1.  V návrháři formuláře pro hlavní formulář vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **přidat pracovní položky** tlačítko.  
   
@@ -106,8 +100,6 @@ Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příkla
  Následující obrázek znázorňuje běžící aplikaci.  
   
  ![Windows Forms aplikace](../../../docs/standard/parallel-programming/media/tpldataflow-cancellation.png "TPLDataflow_Cancellation")  
-  
-## <a name="robust-programming"></a>Robustní programování  
-  
+
 ## <a name="see-also"></a>Viz také  
  [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

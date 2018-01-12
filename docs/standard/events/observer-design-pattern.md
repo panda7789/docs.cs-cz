@@ -25,11 +25,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1650365946797e4c352421d0196b3b0e17913456
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c13424ad817ae73b5019f0ce5a7cda54c84adc71
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="observer-design-pattern"></a>Návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Je vhodná pro každý scénář, který vyžaduje nabízená oznámení. Definuje vzoru *zprostředkovatele* (také označované jako *subjektu* nebo *lze zobrazit*) a nula, jednu nebo více *pozorovatelů*. Pozorovatelů zaregistrovat u zprostředkovatele a vždy, když předdefinovanou podmínku, události nebo změna stavu dojde, zprostředkovatel automaticky oznámí všechny pozorovatelů pomocí volání jeden své metody. Při volání této metody zprostředkovatele můžete také poskytnout aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, je použít návrhový vzor pozorovatel implementací obecná <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  
@@ -56,7 +56,7 @@ Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat o
 -   Objekt, který obsahuje data, která odešle zprostředkovatel jeho pozorovatelů. Typ tohoto objektu odpovídá parametr obecného typu <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. I když tento objekt může být stejný jako <xref:System.IObservable%601> implementace nejčastěji je samostatný typu.  
   
 > [!NOTE]
->  Kromě implementace návrhový vzor pozorovatel, vás může zajímat zkoumat knihovny, které jsou vytvořené pomocí <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. Například [reaktivní rozšíření pro platformu .NET (Rx)](http://go.microsoft.com/fwlink/?LinkId=186345) obsahují sadu metod rozšíření a operátory standardní pořadí LINQ pro podporu asynchronní programování.  
+>  Kromě implementace návrhový vzor pozorovatel, vás může zajímat zkoumat knihovny, které jsou vytvořené pomocí <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. Například [reaktivní rozšíření pro platformu .NET (Rx)](https://msdn.microsoft.com/library/hh242985.aspx) obsahují sadu metod rozšíření a operátory standardní pořadí LINQ pro podporu asynchronní programování.  
   
 ## <a name="implementing-the-pattern"></a>Implementace vzoru  
  Následující příklad používá návrhový vzor pozorovatel k implementaci informace systému letiště sobě deklarace identity. A `BaggageInfo` třída poskytuje informace o které letů a karusely, kde je k dispozici pro vyzvednutí sobě z každý let. Zobrazí se v následujícím příkladu.  

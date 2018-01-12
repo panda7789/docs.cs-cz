@@ -9,11 +9,11 @@ ms.assetid: a1ad761e-42f7-41dd-a62f-452a2de26b9d
 caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ec4fe9cc9fe7bf868fcc8afe4dc4e4234241e352
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 61baf26c9f942a59e3787ca55a2ac6a824410608
+ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-generics-c-programming-guide"></a>Úvod do obecných typů (Průvodce programováním v C#)
 Obecné třídy a metody kombinovat – opětovné použití, bezpečnost typů a efektivitu způsobem, který nelze jejich neobecné protějšky. Obecné typy jsou nejčastěji používá s kolekcí a metody, které pracovat s nimi. Knihovna tříd rozhraní .NET Framework verze 2.0 poskytuje nový obor názvů, <xref:System.Collections.Generic>, která obsahuje několik nové třídy kolekcí založených na obecné. Je doporučeno, všechny aplikace, která cílí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 2.0 a vyšší použít nové třídy obecnou kolekci místo starší svými protějšky neobecnou například <xref:System.Collections.ArrayList>. Další informace najdete v tématu [obecné typy v knihovně tříd rozhraní .NET Framework](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md).  
@@ -22,9 +22,9 @@ Obecné třídy a metody kombinovat – opětovné použití, bezpečnost typů 
   
 -   Jako typ parametru metody v `AddHead` metoda.  
   
--   Jako návratový typ veřejná metoda `GetNext` a `Data` vlastnost vnořeného `Node` třídy.  
+-   Jako návratový typ `Data` vlastnost vnořeného `Node` třídy.  
   
--   Jako typ privátního člena dat ve vnořené třídy.  
+-   Jako typ privátního člena `data` ve vnořené třídy.  
   
  Upozorňujeme, že je k dispozici pro vnořeného T `Node` třídy. Když `GenericList<T>` je vytvořena s konkrétní typu, například jako `GenericList<int>`, každý výskyt `T` nahradí `int`.  
   
@@ -36,5 +36,5 @@ Obecné třídy a metody kombinovat – opětovné použití, bezpečnost typů 
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Generic>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Obecné typy](../../../csharp/programming-guide/generics/index.md)

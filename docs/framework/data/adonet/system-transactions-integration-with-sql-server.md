@@ -17,18 +17,18 @@ author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
 ms.workload: dotnet
-ms.openlocfilehash: 7765779187156866c20374b60a4b541d36ac9a5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3b56d61593aed1a0cdce2fd45d902d9f4ac00cda
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>System.Transactions – integrace s SQL serverem
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Verze 2.0 zavedená rozhraní transakce, které je přístupné prostřednictvím <xref:System.Transactions> oboru názvů. Toto rozhraní zpřístupní transakce způsobem, který je v plně integrovaná [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], včetně [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
  Kromě těchto vylepšení programovatelnosti <xref:System.Transactions> a [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] můžou spolupracovat a koordinovat optimalizace při práci s transakce. Je možné zvýšit transakce lightweight (místní) transakci, která bude automaticky povýšen na plně distribuovanou transakci na podle potřeby.  
   
- Počínaje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0, <xref:System.Data.SqlClient> podporuje možné zvýšit transakce při práci s [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Možné zvýšit transakce nevyvolá přidaném starat se o distribuované transakce Pokud přidaném režie není nutné. Jsou možné zvýšit transakce automatické vyžadují bez zásahu od vývojáře.  
+ Počínaje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0, <xref:System.Data.SqlClient> podporuje možné zvýšit transakce při práci s [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Možné zvýšit transakce nevyvolá přidaném starat se o distribuované transakce Pokud přidaném režie není nutné. Možné zvýšit transakce jsou automatické a nevyžadují žádný zásah od vývojáře.  
   
  Možné zvýšit transakce jsou k dispozici pouze při použití [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (`SqlClient`) s [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
   

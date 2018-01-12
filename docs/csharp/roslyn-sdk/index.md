@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 8bebb739805f28bdc192aef7678e762d0aa51016
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: 260efa9810e6587224bddb196b4a746d15f785e2
+ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kompilátoru platformy .NET SDK
 
-Kompilátory sestavení podrobné model kódu aplikace podle jejich ověření syntaxe a sémantiku tento kód. Použití to model sestavení spustitelný výstup zdrojového kódu. Platforma kompilátoru .NET SDK poskytuje přístup k tomuto modelu. Stále, spoléháme na integrované vývojové prostředí (IDE) funkce, jako je technologie IntelliSense, refaktoring, inteligentního přejmenování "Najít všechny odkazy na" a "Přechod na definici" zvýšení naše produktivity. Spoléháme na nástrojů pro analýzu kódu ke zlepšení našeho kvality kódu a generátory kódu, které pomáhají při vytváření aplikace. Jak tyto nástroje lépe, třeba na další a další modelu, který pouze kompilátory vytvořit, protože budou zpracovávat kód aplikace přístup. To je zvláště jádra rozhraní API Roslyn: otevření až do černé polí a povolení nástrojů a koncovým uživatelům sdílet v rozsáhlých kompilátory informace mají o našem kódu.
+Kompilátory sestavení podrobné model kódu aplikace podle jejich ověření syntaxe a sémantiku tento kód. Tento model používají k vytvoření spustitelného souboru výstup zdrojového kódu. Platforma kompilátoru .NET SDK poskytuje přístup k tomuto modelu. Stále, spoléháme na integrované vývojové prostředí (IDE) funkce, jako je technologie IntelliSense, refaktoring, inteligentního přejmenování "Najít všechny odkazy na" a "Přechod na definici" zvýšení naše produktivity. Spoléháme na nástrojů pro analýzu kódu ke zlepšení našeho kvality kódu a generátory kódu, které pomáhají při vytváření aplikace. Jak tyto nástroje lépe, třeba na další a další modelu, který pouze kompilátory vytvořit, protože budou zpracovávat kód aplikace přístup. To je zvláště jádra rozhraní API Roslyn: otevření až do černé polí a povolení nástrojů a koncovým uživatelům sdílet v rozsáhlých kompilátory informace mají o našem kódu.
 Namísto neprůhledného zdrojového kódu- a objekt kódu překladatelé prostřednictvím Roslyn, kompilátory stát platformy: rozhraní API, které můžete použít pro úlohy související s kódem v nástrojů a aplikací.
 
 ## <a name="net-compiler-platform-sdk-concepts"></a>Koncepty SDK pro platformu .NET kompilátoru

@@ -20,11 +20,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 893bbc94d909d5c94b7f8727912a298575617c2c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ea0a111727093cb65a98e48255b06b3c4516d258
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj napříč platformami pomocí přenosné knihovny tříd
 Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual Studio vám usnadní vytváření aplikací pro různé platformy a knihovny pro platformy Microsoft snadno a rychle.  
@@ -57,7 +57,7 @@ Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual 
   
 |Visual Studio SKU|Podpora pro vytvoření přenosné knihovny tříd|  
 |-----------------------|---------------------------------------------------|  
-|Visual Studio 2010, Professional, Premium nebo Ultimate|Ano, když instalujete [přenosné knihovny nástroje](http://go.microsoft.com/fwlink/?LinkId=210823).|  
+|Visual Studio 2010, Professional, Premium nebo Ultimate|Ano, když instalujete [přenosné knihovny nástroje](https://marketplace.visualstudio.com/items?itemName=BCLTeam.PortableLibraryTools2).|  
 |Verze Visual Studio Express 2010.|Ne.|  
 |Visual Studio 2012 Professional, Premium nebo Ultimate|Ano. Pro telefonickou podporu, nainstalujte [Windows Phone SDK 8.0](http://go.microsoft.com/fwlink/?LinkId=265772).|  
 |Visual Studio Express 2012 verze|Ne.|  
@@ -171,7 +171,7 @@ Dialogové okno cíle změny v sadě Visual Studio 2012
   
  Přenosná knihovna tříd například obsahuje typy související s uživatelského rozhraní, pouze v případě, že cílové Windows 8.1 a Windows Phone 8.1. Omezení mohou také nastat, pokud cílíte na platformy (třeba Xbox, rozhraní .NET Framework 4 a Windows Phone 7), které byly vydané dřív než zavedení Přenosná knihovna tříd. Rozhraní .NET Framework verze balíčky prostřednictvím balíčku NuGet, který zlepšuje podpory knihovny přenosných tříd pro některé z těchto starších platformách. Seznam balíčků NuGet a další informace najdete v tématu [rozhraní .NET Framework a Out-of-Band verze](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).  
   
- Pokud člen je podporován v přenosné knihovny tříd a pro vybrané cíle, zobrazí se ve vašem projektu v technologii IntelliSense. Kromě toho ikonu Přenosná knihovna tříd ![nepodporuje přenosné knihovny](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon") se zobrazí v tabulkách členy v [rozhraní .NET Framework – knihovna tříd](http://go.microsoft.com/fwlink/?LinkId=211358) další podporované členy. Například následující členy tabulka ukazuje, že <xref:System.String.Chars%2A> vlastnost <xref:System.String> třída je podporována v Přenosná knihovna tříd:  
+ Pokud člen je podporován v přenosné knihovny tříd a pro vybrané cíle, zobrazí se ve vašem projektu v technologii IntelliSense. Kromě toho ikonu Přenosná knihovna tříd ![nepodporuje přenosné knihovny](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon") se zobrazí v tabulkách členy v [rozhraní .NET Framework – knihovna tříd](https://msdn.microsoft.com/library/mt472912.aspx) další podporované členy. Například následující členy tabulka ukazuje, že <xref:System.String.Chars%2A> vlastnost <xref:System.String> třída je podporována v Přenosná knihovna tříd:  
   
  ![Ikona podporované člen](../../../docs/standard/cross-platform/media/plibsupportedmemberlist.png "PlibSupportedMemberList")  
 Ikona knihovny přenosných tříd  

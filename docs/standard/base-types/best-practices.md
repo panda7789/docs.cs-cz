@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f19d6b5907fe85ae96eeafe6c5ee68bf6c7856d6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4064e3f9bd9be425108baf934817645fc7fa51c2
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v rozhraní .NET
 <a name="top"></a>Modul regulárních výrazů v .NET je výkonný, plně vybavený nástroj, který zpracuje text na základě vzor odpovídá nikoli na shodu literálu text a porovnání. Ve většině případů provádí porovnání vzorů rychle a efektivně. V některých případech se však může zdát, že je modul regulárních výrazů velmi pomalý. V extrémních případech se může dokonce zdát, že přestal při zpracování relativně malého vstupu odpovídat po dobu hodin nebo dokonce dní.  
@@ -77,7 +77,7 @@ ms.lasthandoff: 12/23/2017
   
 -   Při vytváření vzoru je třeba zvážit, jakým způsobem mechanismus zpětného navracení může ovlivnit výkon modulu regulárních výrazů, především tehdy, pokud je regulární výraz navržen pro zpracování vstupu bez omezení. Další informace najdete v tématu [trvat poplatků z zpětné navracení](#Backtracking) části.  
   
--   Regulární výraz je nutné důkladně odzkoušet pomocí neplatných vstupů, téměř platných vstupů a také platných vstupů. Chcete-li vygenerovat náhodně vstup pro konkrétní regulární výraz, můžete použít [Rex](http://go.microsoft.com/fwlink/?LinkId=210756), což je nástroj zkoumání regulární výraz z Microsoft Research.  
+-   Regulární výraz je nutné důkladně odzkoušet pomocí neplatných vstupů, téměř platných vstupů a také platných vstupů. Chcete-li vygenerovat náhodně vstup pro konkrétní regulární výraz, můžete použít [Rex](https://www.microsoft.com/en-us/research/project/rex-regular-expression-exploration/), což je nástroj zkoumání regulární výraz z Microsoft Research.  
   
  [Zpět na začátek](#top)  
   
@@ -86,7 +86,7 @@ ms.lasthandoff: 12/23/2017
  Jádrem. Model objektu regulárního výrazu na NET je <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> třídy, která představuje modul regulárních výrazů. Často jeden největší faktor, který ovlivňuje výkon regulární výraz je způsob, ve kterém <xref:System.Text.RegularExpressions.Regex> modul se používá. Definování regulárního výrazu zahrnuje pevné párování modulu regulárních výrazů se vzorem regulárního výrazu. Aby spojovacích procesu, jestli se týká vytváření instancí <xref:System.Text.RegularExpressions.Regex> objektu předáním jeho konstruktoru vzor regulárního výrazu nebo volání statickou metodu předáním vzor regulárního výrazu společně s řetězec, který má být analyzován, je nezbytné nákladné jedné.  
   
 > [!NOTE]
->  Podrobnější informace o výkonu důsledky použití interpretovaný a kompilované regulární výrazy, najdete v části [optimalizace výkonu regulární výraz, část II: pořízení poplatků z zpětné navracení](http://go.microsoft.com/fwlink/?LinkId=211566) v blogu týmu BCL.  
+>  Podrobnější informace o výkonu důsledky použití interpretovaný a kompilované regulární výrazy, najdete v části [optimalizace výkonu regulární výraz, část II: pořízení poplatků z zpětné navracení](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) v blogu týmu BCL.  
   
  Modul regulárních výrazů lze spárovat s konkrétním vzorem regulárního výrazu a následně modul použít pro porovnání textu několika různými způsoby:  
   
@@ -185,7 +185,7 @@ ms.lasthandoff: 12/23/2017
  Pro posouvání ve vstupním řetězci a porovnání řetězce se vzorem regulárního výrazu používá regulární výraz většinou lineární posloupnost. Ale když neurčitém kvantifikátory jako `*`, `+`, a `?` se používají v vzor regulárního výrazu může modul regulárních výrazů uvolňovat část úspěšné shodují jen částečně a vrátit do předchozího uloženého stavu Chcete-li vyhledat úspěšné shoda pro celý vzor. Tento proces se označuje jako zpětné navracení.  
   
 > [!NOTE]
->  Další informace o zpětné navracení najdete v tématu [podrobnosti o regulární výraz chování](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) a [Backtracking](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Podrobnou diskuzi o zpětné navracení, najdete v části [optimalizace výkonu regulární výraz, část II: pořízení poplatků z zpětné navracení](http://go.microsoft.com/fwlink/?LinkId=211567) v blogu týmu BCL.  
+>  Další informace o zpětné navracení najdete v tématu [podrobnosti o regulární výraz chování](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) a [Backtracking](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Podrobnou diskuzi o zpětné navracení, najdete v části [optimalizace výkonu regulární výraz, část II: pořízení poplatků z zpětné navracení](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) v blogu týmu BCL.  
   
  Podpora zpětného navracení zajišťuje regulárním výrazům výkon a flexibilitu. Zároveň přenáší odpovědnost za řízení provozu modulu regulárních výrazů do rukou vývojáře regulárních výrazů. Vzhledem k tomu, že vývojáři si často tuto odpovědnost neuvědomují, jejich špatný způsob používání mechanismu navracení nebo přílišné používání tohoto mechanismu hraje nejdůležitější roli při snížení výkonu regulárních výrazů. V nejhorším případě se doba provádění může s každým dalším znakem ve vstupním řetězci zdvojnásobit. Přílišným používáním mechanismu navracení je vlastně velmi snadné vytvořit programový ekvivalent nekonečné smyčky, pokud se vstup téměř shoduje se vzorem regulárního výrazů; modulu regulárních výrazů může trvat hodiny, nebo dokonce dny, než zpracuje relativně krátký vstupní řetězec.  
   

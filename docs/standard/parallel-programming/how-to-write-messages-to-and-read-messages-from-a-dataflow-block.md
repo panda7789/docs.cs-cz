@@ -1,12 +1,8 @@
 ---
 title: "Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,24 +11,22 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, reading and writing messages
 ms.assetid: 1a9bf078-aa82-46eb-b95a-f87237f028c5
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4f4f68cfd5abb319a453ab209c4161476e775534
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b64ef07c6ef28377c11dc879ad17f7c806e9f66a
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat
 Tento dokument popisuje, jak používat knihovna toku dat TPL čtení zpráv z bloku toku dat a zápis zpráv do. Knihovna toku dat TPL poskytuje synchronní a asynchronní metody pro zápis zprávy a čtení zpráv z bloku toku dat. Používá tento dokument <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType> třídy. <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> Třída vyrovnávacích pamětí zpráv a chová jako zdroj zprávy a jako cíl zprávy.  
-  
-> [!TIP]
->  Knihovna toku dat TPL ( <xref:System.Threading.Tasks.Dataflow> oboru názvů) není distribuované s rozhraním .NET Framework. K instalaci <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v sadě Visual Studio, zvolte **spravovat balíčky NuGet** z **projektu** nabídce a vyhledejte online `System.Threading.Tasks.Dataflow` balíčku.  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="writing-to-and-reading-from-a-dataflow-block-synchronously"></a>Zápis do a čtení synchronně z bloku toku dat  
  Následující příklad používá <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> metoda k zápisu <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> bloku toku dat a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A> metoda číst ze stejného objektu.  

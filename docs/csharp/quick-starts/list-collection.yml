@@ -8,11 +8,13 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 666f7a966dbe7307a1ced303ad6117bbb8370bcb
-  ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+  ms.prod: .net
+  ms.technology: devlang-csharp
+  ms.openlocfilehash: a27e81de92bbae58fc72e9033a20f46bbe296bbe
+  ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/13/2017
+  ms.lasthandoff: 01/10/2018
 items:
 - durationInMinutes: 1
   content: >

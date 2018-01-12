@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: 4ca87c8410a04e9198e9dd6c379760e7b6596585
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: db481c18a79f55b079ec2558b884ce288e2a9933
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="executing-expression-trees"></a>Provádění stromů výrazů
 
@@ -28,7 +28,7 @@ Typ výrazu `Expression<TDelegate>` se pouze konkrétní příklad v rozhraní .
 
 Ve většině případů tím se vytvoří jednoduchý mapování mezi výrazu a jeho odpovídající delegáta. Například strom výrazu, která je reprezentována `Expression<Func<int>>` bude převedena na delegáta typu `Func<int>`. Výraz lambda veškeré návratový typ a seznam argumentů existuje typ delegáta, který je typ cíle pro spustitelný kód reprezentována této lamdba výrazem.
 
-`LamdbaExpression` Typ obsahuje `Compile` a `CompileToMethod` členy, které byste použili převést strom výrazu spustitelného kódu. `Compile` Metoda vytvoří delegáta. `ConmpileToMethod` Metoda aktualizace `MethodBuilder` objekt s IL představující kompilované výstup strom výrazu. Všimněte si, že `CompileToMethod` dostupný jen na úplné desktopového rozhraní, nikoli na rozhraní .NET Core.
+`LamdbaExpression` Typ obsahuje `Compile` a `CompileToMethod` členy, které byste použili převést strom výrazu spustitelného kódu. `Compile` Metoda vytvoří delegáta. `CompileToMethod` Metoda aktualizace `MethodBuilder` objekt s IL představující kompilované výstup strom výrazu. Všimněte si, že `CompileToMethod` dostupný jen na úplné desktopového rozhraní, nikoli na rozhraní .NET Core.
 
 Volitelně můžete zadat taky `DebugInfoGenerator` , se zobrazí symbol ladicí informace pro objekt generovaného delegáta. To umožňuje převést strom výrazu do objektu delegáta a mít úplné ladicí informace o generovaného delegáta.
 

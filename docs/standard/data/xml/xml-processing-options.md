@@ -16,11 +16,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2619842bedef2c28e792969dfbd5c724375122bf
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2f270b58d20b3fe9dbc514657def90776bdfe2b5
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="xml-processing-options"></a>Možnosti pro zpracování XML
 Projděte si následující tabulky seznam technologiích společnosti Microsoft, které můžete použít pro proces XML data.  
@@ -40,8 +40,8 @@ Projděte si následující tabulky seznam technologiích společnosti Microsoft
   
 |**Možnost**|**Popis**|  
 |----------------|---------------------|  
-|[Analyzátor XmlLite](http://go.microsoft.com/fwlink/?LinkId=93723)|-A rychlé, zabezpečení, bez ukládání do mezipaměti, dopředné analyzátor XML, který vám pomůže vytvořit výkonné při XML aplikace.<br />-Funguje s jakýkoli jazyk, který můžete použít dynamické knihovny (DLL); Doporučujeme používat C++.|  
-|[MSXML](http://go.microsoft.com/fwlink/?LinkId=93722)|-Založená na modelu COM technologie pro zpracování XML, který je součástí operačního systému Windows.<br />-Poskytuje nativní implementaci modelu DOM s podporou jazyka XPath a XSLT.<br />-Obsahuje SAX2 Analyzátor založený na událostech.|  
+|[Analyzátor XmlLite](https://msdn.microsoft.com/library/ms752872.aspx)|-A rychlé, zabezpečení, bez ukládání do mezipaměti, dopředné analyzátor XML, který vám pomůže vytvořit výkonné při XML aplikace.<br />-Funguje s jakýkoli jazyk, který můžete použít dynamické knihovny (DLL); Doporučujeme používat C++.|  
+|[MSXML](https://msdn.microsoft.com/library/ms763742.aspx)|-Založená na modelu COM technologie pro zpracování XML, který je součástí operačního systému Windows.<br />-Poskytuje nativní implementaci modelu DOM s podporou jazyka XPath a XSLT.<br />-Obsahuje SAX2 Analyzátor založený na událostech.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zpracování dat XML pomocí modelu DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
