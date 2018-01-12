@@ -1,23 +1,25 @@
 ### YamlMime:Tutorial
-title: <span data-ttu-id="53e3d-101">Kolekce v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="53e3d-101">Collections in C#</span></span>
+title: <span data-ttu-id="86a15-101">Kolekce v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="86a15-101">Collections in C#</span></span>
 metadata:
-  title: "<span data-ttu-id=\"53e3d-102\">Kolekce v jazyce C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-102\">Collections in C#.</span></span> <span data-ttu-id=\"53e3d-103\">Naučte se používat pořadí a kolekcí v jazyku C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-103\">Learn to use sequences and collections in C#.</span></span>"
-  description: "<span data-ttu-id=\"53e3d-104\">V tomto kurzu budete používat prohlížeč další C# interaktivně.</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-104\">In this tutorial, you'll use your browser to learn C# interactively.</span></span> <span data-ttu-id=\"53e3d-105\">Psaní kódu jazyka C# a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči.</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-105\">You write C# code and see the results of compiling and running your code directly in the browser.</span></span>"
+  title: "<span data-ttu-id=\"86a15-102\">Kolekce v jazyce C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-102\">Collections in C#.</span></span> <span data-ttu-id=\"86a15-103\">Naučte se používat pořadí a kolekcí v jazyku C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-103\">Learn to use sequences and collections in C#.</span></span>"
+  description: "<span data-ttu-id=\"86a15-104\">V tomto kurzu budete používat prohlížeč další C# interaktivně.</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-104\">In this tutorial, you'll use your browser to learn C# interactively.</span></span> <span data-ttu-id=\"86a15-105\">Psaní kódu jazyka C# a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči.</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-105\">You write C# code and see the results of compiling and running your code directly in the browser.</span></span>"
   audience: Developer
   ms.custom: mvc
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 666f7a966dbe7307a1ced303ad6117bbb8370bcb
-  ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+  ms.prod: .net
+  ms.technology: devlang-csharp
+  ms.openlocfilehash: a27e81de92bbae58fc72e9033a20f46bbe296bbe
+  ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/13/2017
+  ms.lasthandoff: 01/10/2018
 items:
 - durationInMinutes: 1
   content: >
     This quick start teaches you C# interactively, using your browser to write C# code and see the results of compiling and running your code. It contains a series of lessons that create, modify and explore collections and arrays.
-- title: "<span data-ttu-id=\"53e3d-106\">Vytváření seznamů</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-106\">Create lists</span></span>"
+- title: "<span data-ttu-id=\"86a15-106\">Vytváření seznamů</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-106\">Create lists</span></span>"
   durationInMinutes: 2
   content: >
     Run the following code in the interactive window. To do that, type the following code block in the interactive window (replace "<name>" with your name) and click the **Run** button:
@@ -50,7 +52,7 @@ items:
     > [!NOTE]
 
     > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
-- title: "<span data-ttu-id=\"53e3d-107\">Změna seznamu obsahu</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-107\">Modify list contents</span></span>"
+- title: "<span data-ttu-id=\"86a15-107\">Změna seznamu obsahu</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-107\">Modify list contents</span></span>"
   durationInMinutes: 3
   content: >
     The collection you created uses the <xref:System.Collections.Generic.List%601> type. This type stores sequences of elements. You specify the type of the elements between the angle brackets.
@@ -109,7 +111,7 @@ items:
     > [!NOTE]
 
     > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
-- title: "<span data-ttu-id=\"53e3d-108\">Seznamy hledání a řazení.</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-108\">Search and sort lists</span></span>"
+- title: "<span data-ttu-id=\"86a15-108\">Seznamy hledání a řazení.</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-108\">Search and sort lists</span></span>"
   durationInMinutes: 5
   content: >
     Our samples use relatively small lists, but your applications may often create lists with many more elements, sometimes numbering in the thousands. To find elements in these larger collections, you need to search the list for different items. The <xref:System.Collections.Generic.List%601.IndexOf%2A> method searches for an item and returns the index of the item. Try this to see how it works.  Add the following code below what you've written so far:
@@ -149,7 +151,7 @@ items:
     > [!NOTE]
 
     > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
-- title: "<span data-ttu-id=\"53e3d-109\">Seznam dalších typů</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-109\">Lists of other types</span></span>"
+- title: "<span data-ttu-id=\"86a15-109\">Seznam dalších typů</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-109\">Lists of other types</span></span>"
   durationInMinutes: 5
   content: >
     You've been using the `string` type in lists so far. Let's make a <xref:System.Collections.Generic.List%601> using a different type. Let's build a set of numbers. Delete the code you wrote so far, and replace it with this:
@@ -186,7 +188,7 @@ items:
     > [!NOTE]
 
     > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
-- title: "<span data-ttu-id=\"53e3d-110\">výzvy</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-110\">Challenge</span></span>"
+- title: "<span data-ttu-id=\"86a15-110\">výzvy</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-110\">Challenge</span></span>"
   durationInMinutes: 10
   content: >
     See if you can put together some of the concepts from this and earlier lessons. Expand on what you've built so far with Fibonacci Numbers. Try and write the code to generate the first 20 numbers in the sequence. (As a hint, the 20th Fibonacci number is 6765.)
@@ -195,7 +197,7 @@ items:
     > [!NOTE]
 
     > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
-- title: "<span data-ttu-id=\"53e3d-111\">Dokončení výzvy</span><span class=\"sxs-lookup\"><span data-stu-id=\"53e3d-111\">Complete challenge</span></span>"
+- title: "<span data-ttu-id=\"86a15-111\">Dokončení výzvy</span><span class=\"sxs-lookup\"><span data-stu-id=\"86a15-111\">Complete challenge</span></span>"
   durationInMinutes: 3
   content: "Did you come up with something like this?\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nWith each iteration of the loop, you're taking the last two integers in the list, summing them, and adding that value to the list. The loop repeats until you've added 20 items to the list.\n\n> [!NOTE]\n> This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).\n"
 - content: "You've completed the list quick start. This quick start is the final interactive quick start. You can continue these quick starts on your own development environment. Learn the basics of [local development](local-environment.md) and then pick a quick start. You can try this same exercise, move directly to the next quick start, or start again at with the [numbers in C#](numbers-in-csharp-local.md) quickstart.\n\nYou can learn more about working with the `List` type in the\n[.NET Guide](../../standard/index.md) topic on [collections](../../standard/collections/index.md). You'll also learn about many other collection types.\0"
