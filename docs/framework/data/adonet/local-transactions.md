@@ -17,11 +17,11 @@ author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
 ms.workload: dotnet
-ms.openlocfilehash: f7b002c1439a95929ca177aeced91164430220c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d9498454cfee02e5749a7ed87783b5476469b8d
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="local-transactions"></a>Místní transakce
 Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete svázat více úkolů společně, aby se spustit jako na jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve se informace o objednávce aktualizuje tabulku. Druhý aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazené. Pokud selže buď úlohu, pak oba aktualizace jsou vrácena zpět.  
@@ -29,7 +29,7 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
 ## <a name="determining-the-transaction-type"></a>Určení typu transakce  
  Transakce se považuje za místní transakce, když je jednofázové transakce a je zpracovává databázi přímo. Transakce se považuje za distribuovanou transakci, při monitorování transakce koordinuje a používá pohotovostního mechanismy (například dvoufázový zápis) pro rozlišení transakce.  
   
- Každý z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat má svou vlastní `Transaction` objekt pro provedení místní transakce. Pokud budete potřebovat transakce, které budou provedeny v databázi systému SQL Server, vyberte <xref:System.Data.SqlClient> transakce. Pro transakci Oracle, použijte <xref:System.Data.OracleClient> zprostředkovatele. Kromě toho je nový <xref:System.Data.Common.DbTransaction> třída, která je k dispozici pro psaní kódu nezávislé na zprostředkovatele, který vyžaduje transakce.  
+ Každý z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat má svou vlastní `Transaction` objekt pro provedení místní transakce. Pokud budete potřebovat transakce, které budou provedeny v databázi systému SQL Server, vyberte <xref:System.Data.SqlClient> transakce. Pro transakci Oracle, použijte <xref:System.Data.OracleClient> zprostředkovatele. Kromě toho je <xref:System.Data.Common.DbTransaction> třída, která je k dispozici pro psaní kódu nezávislé na zprostředkovatele, který vyžaduje transakce.  
   
 > [!NOTE]
 >  Transakce jsou nejúčinnější, když se provádí na serveru. Pokud pracujete s databází systému SQL Server, která využívá celou explicitních transakcí, vezměte v úvahu jejich zápis jako uložené procedury pomocí příkazu Transact-SQL BEGIN TRANSACTION. Další informace o provedení transakce na straně serveru najdete v části SQL Server Books Online.  

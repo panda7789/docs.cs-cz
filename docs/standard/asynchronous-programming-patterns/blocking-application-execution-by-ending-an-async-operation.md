@@ -24,20 +24,20 @@ dev_langs:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d9e7a80a9012e85038b72f429e2da569cc43f0bf
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3ec7bfe6fe2cef20a6d74030802113a47e8679e1
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="blocking-application-execution-by-ending-an-async-operation"></a>Blokování provádění aplikace ukončením asynchronní operace
 Aplikace, které nelze nadále provádět další činnosti při čekání na výsledky asynchronní operace musí blok, dokud se operace nedokončí. Blokování hlavního vlákna aplikace při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  
   
--   Volání asynchronních operací **End** *OperationName* metoda. Tento přístup je ukázáno v tomto tématu.  
+-   Volání asynchronních operací **End *** OperationName* metoda. Tento přístup je ukázáno v tomto tématu.  
   
--   Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operaci **začít** *OperationName* metoda. Příklad, který představuje tuto metodu, najdete v části [blokování aplikace provádění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
+-   Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operaci **začít *** OperationName* metoda. Příklad, který představuje tuto metodu, najdete v části [blokování aplikace provádění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
   
- Aplikace, které používají **End** *OperationName* bude obvykle volání metody blokování až do dokončení asynchronní operaci **začít**  *OperationName* metody provedení veškerou práci, kterou lze provést bez výsledky operace a pak zavolají **End** *OperationName*.  
+ Aplikace, které používají **End *** OperationName* bude obvykle volání metody blokování až do dokončení asynchronní operaci **začít *** OperationName* metoda, provádět veškerou práci, kterou lze provést bez výsledky operace a pak volání **End *** OperationName*.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje použití asynchronních metod v <xref:System.Net.Dns> třída načíst informace o systému názvů domény pro počítač zadaného uživatelem. Všimněte si, že `null` (`Nothing` v jazyce Visual Basic) je pro předán <xref:System.Net.Dns.BeginGetHostByName%2A> `requestCallback` a `stateObject` parametry vzhledem k tomu, že tyto argumenty nejsou povinné, při použití tohoto přístupu.  

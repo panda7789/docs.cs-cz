@@ -31,11 +31,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5349bc9eada177a65cdfefd9a1f33c1c63e7fed6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a3e69ea3de0ac418956d51c6e942e33d90575c1d
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="walkthrough-implementing-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Návod: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třídu s některé operace, které může vést k významnému zpoždění, zvažte, udělíte tím, že implementujete asynchronní funkce [na základě událostí přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -70,7 +70,7 @@ Pokud píšete třídu s některé operace, které může vést k významnému z
 -   Vytvoření třídy s názvem `PrimeNumberCalculator` který dědí z <xref:System.ComponentModel.Component>.  
   
 ## <a name="defining-public-asynchronous-events-and-delegates"></a>Definování veřejné asynchronní události a delegáti  
- Příslušné součásti komunikuje s klienty, kteří používají události. *MethodName* `Completed` upozornění na událost zahození klientům dokončení asynchronní úlohu a *MethodName* `ProgressChanged` událostí informuje klienti průběh asynchronní úlohu.  
+ Příslušné součásti komunikuje s klienty, kteří používají události. *MethodName *** dokončeno** upozornění na událost zahození klientům dokončení asynchronní úlohu a *MethodName *** ProgressChanged** událostí informuje klienti průběh asynchronní úlohu.  
   
 #### <a name="to-define-asynchronous-events-for-clients-of-your-component"></a>Chcete-li definovat asynchronní události pro klienty příslušné součásti:  
   

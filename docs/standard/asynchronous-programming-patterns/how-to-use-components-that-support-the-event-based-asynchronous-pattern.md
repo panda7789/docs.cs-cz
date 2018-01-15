@@ -31,16 +31,16 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cff126734dbaee315382d20cd43ded45d9f8e885
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dd5371c8ce80383e2929099c9d9658694858f8df
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech
 Celá řada komponent poskytují možnost provedení práci asynchronně. <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> součásti, například umožňuje načíst vyznívá a bitové kopie "v pozadí", zatímco hlavní vlákno stále spuštěna bez přerušení.  
   
- Použití asynchronních metod na třídu, která podporuje [na základě událostí přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md) může být stejně jednoduché jako obslužné rutiny události se připojuje k součásti *MethodName* `Completed` události stejně jako ostatní události. Při volání *MethodName* `Async` metoda, vaše aplikace bude dál běžet bez přerušení, dokud *MethodName* `Completed` událost se vyvolá. V obslužné rutině událostí, můžete zkontrolovat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr k určení, pokud asynchronní operace úspěšně dokončena, nebo pokud byla zrušena.  
+ Použití asynchronních metod na třídu, která podporuje [na základě událostí přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md) může být stejně jednoduché jako obslužné rutiny události se připojuje k součásti *MethodName *** dokončeno** události stejně jako ostatní události. Při volání *MethodName *** asynchronní** metoda, vaše aplikace bude dál běžet bez přerušení, dokud *MethodName *** dokončeno** událost se vyvolá. V obslužné rutině událostí, můžete zkontrolovat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr k určení, pokud asynchronní operace úspěšně dokončena, nebo pokud byla zrušena.  
   
  Další informace o používání obslužných rutin událostí najdete v tématu [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  
   
