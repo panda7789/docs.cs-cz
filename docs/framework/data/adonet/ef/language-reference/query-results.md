@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: bcd7b699-4e50-4523-8c33-2f54a103d94e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5ff674cbbe0a5d52a4bc4b4de55e0ae3c49395d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2e8dc70007a0f3a411c4c8e48015f98c23da573
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="query-results"></a>Výsledky dotazu
 Po [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu je převést na strom příkazů a provést, výsledky dotazu jsou obvykle vrátí jako jednu z následujících:  

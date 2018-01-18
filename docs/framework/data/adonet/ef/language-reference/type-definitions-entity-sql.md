@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 306b204a-ade5-47ef-95b5-c785d2da4a7e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 269d0b7942a949b899a445af0fc15502e0ae3f7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3a1321ae85b1f4952334672e7333e80094ad2e31
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="type-definitions-entity-sql"></a>Definice typů (entita SQL)
 Definice typu se používá v deklaraci prohlášení o [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vložená funkce.  
@@ -48,7 +48,7 @@ Definice typu se používá v deklaraci prohlášení o [!INCLUDE[esql](../../..
   
 -   `IdentifierName`ŘÁDEK (`property_definition`), nebo  
   
--   `IdentifierName`REF (`supported_entity_type`)  
+-   `IdentifierName` REF(`supported_entity_type`)  
   
  Možnost definice vlastnost je `IdentifierName type_definition`.  
   

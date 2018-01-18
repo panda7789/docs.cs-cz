@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e7d24213-471d-4807-b85e-570375df89b5
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e7255110a9118c3a31c84e3262fd5b1490d546e7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a132968c69320cdae1824bebdf51b764202084b1
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="ampamp-and-entity-sql"></a>&amp;&amp;(A) (Entita SQL)
 Vrátí `true` Pokud jsou oba výrazy `true`, jinak hodnota `false` nebo `NULL`.  

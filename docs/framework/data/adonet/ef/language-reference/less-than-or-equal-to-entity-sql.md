@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7c46da5c-fa09-4d90-adcc-c7e1b769d8e6
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ca900cde1845083e515fa4e8e884b57f8ae689a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c6ad4e03a2221491276ae64cf292df8ce3ccd53d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="lt-less-than-or-equal-to-entity-sql"></a>&lt;= (Je menší než nebo rovno) (entita SQL)
 Porovná dva výrazy a určit, zda levý výraz má hodnotu menší než nebo rovna pravý výraz.  

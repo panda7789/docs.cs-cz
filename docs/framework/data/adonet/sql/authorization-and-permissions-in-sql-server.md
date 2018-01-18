@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0d476b3fc3cce1bcb283f740f734ae285e55e192
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9b5dd162aad85ea28e7d05cbfd2e72e7fc2fb235
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění v systému SQL Server
 Při vytváření databázových objektů, je třeba explicitně udělit oprávnění, aby byly dostupné pro uživatele. Všechny zabezpečitelné objekty má oprávnění, která lze udělit oprávnění příkazy using objekt zabezpečení.  
@@ -45,7 +45,7 @@ Při vytváření databázových objektů, je třeba explicitně udělit oprávn
 |Příkaz oprávnění|Popis|  
 |--------------------------|-----------------|  
 |UDĚLENÍ|Uděluje oprávnění.|  
-|ODVOLÁNÍ.|Odvolá oprávnění. Toto je výchozí stav nového objektu. Oprávnění odvolává pro uživatele nebo roli stále možné zdědit z jiné skupiny nebo role, ke kterým je přiřazen k objektu zabezpečení.|  
+|REVOKE|Odvolá oprávnění. Toto je výchozí stav nového objektu. Oprávnění odvolává pro uživatele nebo roli stále možné zdědit z jiné skupiny nebo role, ke kterým je přiřazen k objektu zabezpečení.|  
 |ODEPŘÍT|ODEPŘÍT odvolá oprávnění tak, aby nelze zdědit. ODEPŘÍT má přednost před všechna oprávnění, kromě ODEPŘÍT se nevztahuje na objekt vlastníky nebo členové `sysadmin`. Pokud ODEPŘETE oprávnění na objekt tak, aby `public` role pro všechny uživatele a role kromě vlastníky objektu se nezdařilo a `sysadmin` členy.|  
   
 -   Příkaz GRANT můžete přiřadit oprávnění do skupiny nebo role, která může být zděděn uživatele databáze. ODEPŘÍT příkaz však má přednost před jiné příkazy oprávnění. Proto uživatel, který bylo odepřeno oprávnění nemůže Zdědit ji z jiné role.  

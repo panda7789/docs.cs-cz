@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1a670c63-0a29-4738-80e6-101f66af05c3
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 467277a1697f9f6ca4da7278045cbec34202eed5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 44abbcf90ec2607824d75ce89284c356e6096af2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="flatten-entity-sql"></a>VYROVNÁNÍ (entita SQL)
 Převede kolekci plochou kolekce kolekcí. Nová kolekce obsahuje všechny stejné prvky, jako původní kolekce, ale bez vnořené struktury.  

@@ -7,11 +7,11 @@ ms.date: 12/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: 04c780980ef0665b40a0c3a698193fc9fa738424
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: cfe7115717fcca834d87b7bcdc64ddd1df8ef843
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-c"></a>Postup (C#)
 
@@ -57,7 +57,7 @@ Tyto články vám pomohou při práci s kolekcí dat.
 - [Porovnávání řetězců](../programming-guide/strings/how-to-compare-strings.md).
 - [Změna obsahu řetězce](../programming-guide/strings/how-to-modify-string-contents.md).
 - [Určení, pokud řetězec reprezentuje číslo](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md).
-- [Použití <xref:System.String.Split%2A> k oddělení řetězců](../programming-guide/strings/how-to-parse-strings-using-string-split.md).
+- [Použití `String.Split` k oddělení řetězců](parse-strings-using-split.md).
 - [Sloučit více řetězce do jednoho](../programming-guide/strings/how-to-concatenate-multiple-strings.md).
 - [Hledání textu v řetězci](../programming-guide/strings/how-to-search-strings-using-string-methods.md).
 - [Vyhledávání řetězců pomocí regulárních výrazů](../programming-guide/strings/how-to-search-strings-using-regular-expressions.md).

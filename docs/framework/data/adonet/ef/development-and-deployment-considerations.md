@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 535e6611-02de-484c-b5ff-6ffeed04d740
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 594d0516a739986580d37e86eab32da14c359e99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6c494354532ffdeffdc714f748c5b009511443a
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="development-and-deployment-considerations"></a>Vývoj a aspekty nasazení
 Témata v této části řeší problémy vzít v úvahu při vývoji a nasazení aplikace, která je založena na technologii ADO.NET Entity Framework.  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
 caps.latest.revision: "9"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c462b7c2e888ed0f6394435e0de2131e26dbef08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa9a23f00e7ce3b52c2ff64c8b22e1b4b8727b97
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v systému SQL Server
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]podporuje dva režimy ověřování a smíšený režim a režim ověřování systému Windows.  
