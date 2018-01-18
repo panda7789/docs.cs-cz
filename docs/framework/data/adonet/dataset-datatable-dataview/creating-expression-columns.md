@@ -13,28 +13,28 @@ dev_langs:
 - vb
 ms.assetid: 0af3bd64-92a2-4b47-ae62-f5df35f131a6
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c1b0b7be8be6bec0c5a8850029bd3336d107f0a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 03c049ea3fb4b0f75418de4f9e8318512c198f41
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="creating-expression-columns"></a><span data-ttu-id="626a2-102">Vytváření výraz sloupce</span><span class="sxs-lookup"><span data-stu-id="626a2-102">Creating Expression Columns</span></span>
-<span data-ttu-id="626a2-103">Můžete definovat výraz pro sloupec, mu umožní obsahovat hodnotu vypočítat z jiné hodnoty sloupců na stejném řádku nebo z hodnoty ve sloupcích více řádků v tabulce.</span><span class="sxs-lookup"><span data-stu-id="626a2-103">You can define an expression for a column, enabling it to contain a value calculated from other column values in the same row or from the column values of multiple rows in the table.</span></span> <span data-ttu-id="626a2-104">Chcete-li definovat výraz, který se vyhodnotí, použijte <xref:System.Data.DataColumn.Expression%2A> vlastnost cílového sloupce použijte <xref:System.Data.DataColumn.ColumnName%2A> vlastnost, která má odkazovat na jiné sloupce ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="626a2-104">To define the expression to be evaluated, use the <xref:System.Data.DataColumn.Expression%2A> property of the target column, and use the <xref:System.Data.DataColumn.ColumnName%2A> property to refer to other columns in the expression.</span></span> <span data-ttu-id="626a2-105"><xref:System.Data.DataColumn.DataType%2A> Sloupec musí být výraz odpovídající hodnotu, která vrací výraz.</span><span class="sxs-lookup"><span data-stu-id="626a2-105">The <xref:System.Data.DataColumn.DataType%2A> for the expression column must be appropriate for the value that the expression returns.</span></span>  
+# <a name="creating-expression-columns"></a><span data-ttu-id="d0ca9-102">Vytváření výraz sloupce</span><span class="sxs-lookup"><span data-stu-id="d0ca9-102">Creating Expression Columns</span></span>
+<span data-ttu-id="d0ca9-103">Můžete definovat výraz pro sloupec, mu umožní obsahovat hodnotu vypočítat z jiné hodnoty sloupců na stejném řádku nebo z hodnoty ve sloupcích více řádků v tabulce.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-103">You can define an expression for a column, enabling it to contain a value calculated from other column values in the same row or from the column values of multiple rows in the table.</span></span> <span data-ttu-id="d0ca9-104">Chcete-li definovat výraz, který se vyhodnotí, použijte <xref:System.Data.DataColumn.Expression%2A> vlastnost cílového sloupce použijte <xref:System.Data.DataColumn.ColumnName%2A> vlastnost, která má odkazovat na jiné sloupce ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-104">To define the expression to be evaluated, use the <xref:System.Data.DataColumn.Expression%2A> property of the target column, and use the <xref:System.Data.DataColumn.ColumnName%2A> property to refer to other columns in the expression.</span></span> <span data-ttu-id="d0ca9-105"><xref:System.Data.DataColumn.DataType%2A> Sloupec musí být výraz odpovídající hodnotu, která vrací výraz.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-105">The <xref:System.Data.DataColumn.DataType%2A> for the expression column must be appropriate for the value that the expression returns.</span></span>  
   
- <span data-ttu-id="626a2-106">Následující tabulka uvádí několik možných používá pro výraz sloupce v tabulce.</span><span class="sxs-lookup"><span data-stu-id="626a2-106">The following table lists several possible uses for expression columns in a table.</span></span>  
+ <span data-ttu-id="d0ca9-106">Následující tabulka uvádí několik možných používá pro výraz sloupce v tabulce.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-106">The following table lists several possible uses for expression columns in a table.</span></span>  
   
-|<span data-ttu-id="626a2-107">Typ výrazu</span><span class="sxs-lookup"><span data-stu-id="626a2-107">Expression type</span></span>|<span data-ttu-id="626a2-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="626a2-108">Example</span></span>|  
+|<span data-ttu-id="d0ca9-107">Typ výrazu</span><span class="sxs-lookup"><span data-stu-id="d0ca9-107">Expression type</span></span>|<span data-ttu-id="d0ca9-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="d0ca9-108">Example</span></span>|  
 |---------------------|-------------|  
-|<span data-ttu-id="626a2-109">Srovnání</span><span class="sxs-lookup"><span data-stu-id="626a2-109">Comparison</span></span>|<span data-ttu-id="626a2-110">"Celkový > = 500"</span><span class="sxs-lookup"><span data-stu-id="626a2-110">"Total >= 500"</span></span>|  
-|<span data-ttu-id="626a2-111">Výpočet</span><span class="sxs-lookup"><span data-stu-id="626a2-111">Computation</span></span>|<span data-ttu-id="626a2-112">"UnitPrice * množství"</span><span class="sxs-lookup"><span data-stu-id="626a2-112">"UnitPrice * Quantity"</span></span>|  
-|<span data-ttu-id="626a2-113">Agregace</span><span class="sxs-lookup"><span data-stu-id="626a2-113">Aggregation</span></span>|<span data-ttu-id="626a2-114">Výraz sum(price)</span><span class="sxs-lookup"><span data-stu-id="626a2-114">Sum(Price)</span></span>|  
+|<span data-ttu-id="d0ca9-109">Srovnání</span><span class="sxs-lookup"><span data-stu-id="d0ca9-109">Comparison</span></span>|<span data-ttu-id="d0ca9-110">"Celkový > = 500"</span><span class="sxs-lookup"><span data-stu-id="d0ca9-110">"Total >= 500"</span></span>|  
+|<span data-ttu-id="d0ca9-111">Výpočet</span><span class="sxs-lookup"><span data-stu-id="d0ca9-111">Computation</span></span>|<span data-ttu-id="d0ca9-112">"UnitPrice \* množství"</span><span class="sxs-lookup"><span data-stu-id="d0ca9-112">"UnitPrice \* Quantity"</span></span>|  
+|<span data-ttu-id="d0ca9-113">Agregace</span><span class="sxs-lookup"><span data-stu-id="d0ca9-113">Aggregation</span></span>|<span data-ttu-id="d0ca9-114">Výraz sum(price)</span><span class="sxs-lookup"><span data-stu-id="d0ca9-114">Sum(Price)</span></span>|  
   
- <span data-ttu-id="626a2-115">Můžete nastavit **výraz** vlastnost na existujícím **DataColumn** objekt, nebo můžete zahrnout vlastnost jako třetí argument předaný <xref:System.Data.DataColumn> konstruktoru, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="626a2-115">You can set the **Expression** property on an existing **DataColumn** object, or you can include the property as the third argument passed to the <xref:System.Data.DataColumn> constructor, as shown in the following example.</span></span>  
+ <span data-ttu-id="d0ca9-115">Můžete nastavit **výraz** vlastnost na existujícím **DataColumn** objekt, nebo můžete zahrnout vlastnost jako třetí argument předaný <xref:System.Data.DataColumn> konstruktoru, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-115">You can set the **Expression** property on an existing **DataColumn** object, or you can include the property as the third argument passed to the <xref:System.Data.DataColumn> constructor, as shown in the following example.</span></span>  
   
 ```vb  
 workTable.Columns.Add("Total",Type.GetType("System.Double"))  
@@ -47,12 +47,12 @@ workTable.Columns.Add("Total", typeof(Double));
 workTable.Columns.Add("SalesTax", typeof(Double), "Total * 0.086");  
 ```  
   
- <span data-ttu-id="626a2-116">Výrazy mohou odkazovat na jiné výrazu sloupce; Cyklický odkaz, ve kterém dvou výrazů odkazovat na sebe, ale vygeneruje výjimku.</span><span class="sxs-lookup"><span data-stu-id="626a2-116">Expressions can reference other expression columns; however, a circular reference, in which two expressions reference each other, will generate an exception.</span></span> <span data-ttu-id="626a2-117">Pravidla o zapisují se výrazy, najdete v článku <xref:System.Data.DataColumn.Expression%2A> vlastnost **DataColumn** třídy.</span><span class="sxs-lookup"><span data-stu-id="626a2-117">For rules about writing expressions, see the <xref:System.Data.DataColumn.Expression%2A> property of the **DataColumn** class.</span></span>  
+ <span data-ttu-id="d0ca9-116">Výrazy mohou odkazovat na jiné výrazu sloupce; Cyklický odkaz, ve kterém dvou výrazů odkazovat na sebe, ale vygeneruje výjimku.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-116">Expressions can reference other expression columns; however, a circular reference, in which two expressions reference each other, will generate an exception.</span></span> <span data-ttu-id="d0ca9-117">Pravidla o zapisují se výrazy, najdete v článku <xref:System.Data.DataColumn.Expression%2A> vlastnost **DataColumn** třídy.</span><span class="sxs-lookup"><span data-stu-id="d0ca9-117">For rules about writing expressions, see the <xref:System.Data.DataColumn.Expression%2A> property of the **DataColumn** class.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="626a2-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="626a2-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d0ca9-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="d0ca9-118">See Also</span></span>  
  <xref:System.Data.DataColumn>  
  <xref:System.Data.DataSet>  
  <xref:System.Data.DataTable>  
- [<span data-ttu-id="626a2-119">Definice schématu datové tabulky</span><span class="sxs-lookup"><span data-stu-id="626a2-119">DataTable Schema Definition</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
- [<span data-ttu-id="626a2-120">Datové tabulky</span><span class="sxs-lookup"><span data-stu-id="626a2-120">DataTables</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
- [<span data-ttu-id="626a2-121">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="626a2-121">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [<span data-ttu-id="d0ca9-119">Definice schématu datové tabulky</span><span class="sxs-lookup"><span data-stu-id="d0ca9-119">DataTable Schema Definition</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
+ [<span data-ttu-id="d0ca9-120">Datové tabulky</span><span class="sxs-lookup"><span data-stu-id="d0ca9-120">DataTables</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [<span data-ttu-id="d0ca9-121">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="d0ca9-121">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

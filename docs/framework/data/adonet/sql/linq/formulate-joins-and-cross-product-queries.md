@@ -13,82 +13,82 @@ dev_langs:
 - vb
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b21bee335c5856c961c5abc21ad03c5d1f2c2307
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f652f25d04480afb3df1f623347eee23d3ed258
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="formulate-joins-and-cross-product-queries"></a><span data-ttu-id="07453-102">Formulovali spojení a dotazy smíšený produkt</span><span class="sxs-lookup"><span data-stu-id="07453-102">Formulate Joins and Cross-Product Queries</span></span>
-<span data-ttu-id="07453-103">Následující příklady ukazují, jak kombinují výsledky z více tabulek.</span><span class="sxs-lookup"><span data-stu-id="07453-103">The following examples show how to combine results from multiple tables.</span></span>  
+# <a name="formulate-joins-and-cross-product-queries"></a><span data-ttu-id="8224f-102">Formulovali spojení a dotazy smíšený produkt</span><span class="sxs-lookup"><span data-stu-id="8224f-102">Formulate Joins and Cross-Product Queries</span></span>
+<span data-ttu-id="8224f-103">Následující příklady ukazují, jak kombinují výsledky z více tabulek.</span><span class="sxs-lookup"><span data-stu-id="8224f-103">The following examples show how to combine results from multiple tables.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="07453-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-104">Example</span></span>  
- <span data-ttu-id="07453-105">Následující příklad používá cizího klíče navigace ve `From` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` klauzule v jazyce C#) a vyberte všechny objednávky zákazníků v Londýně.</span><span class="sxs-lookup"><span data-stu-id="07453-105">The following example uses foreign key navigation in the `From` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` clause in C#) to select all orders for customers in London.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-104">Example</span></span>  
+ <span data-ttu-id="8224f-105">Následující příklad používá cizího klíče navigace ve `From` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` klauzule v jazyce C#) a vyberte všechny objednávky zákazníků v Londýně.</span><span class="sxs-lookup"><span data-stu-id="8224f-105">The following example uses foreign key navigation in the `From` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` clause in C#) to select all orders for customers in London.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#47](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#47)]
  [!code-vb[DLinqQueryExamples#47](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#47)]  
   
-## <a name="example"></a><span data-ttu-id="07453-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-106">Example</span></span>  
- <span data-ttu-id="07453-107">Následující příklad používá cizího klíče navigace ve `Where` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`where` klauzule v jazyce C#) Chcete-li filtrovat na více systémů stock `Products` jehož `Supplier` je ve Spojených státech amerických.</span><span class="sxs-lookup"><span data-stu-id="07453-107">The following example uses foreign key navigation in the `Where` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`where` clause in C#) to filter for out-of-stock `Products` whose `Supplier` is in the United States.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-106">Example</span></span>  
+ <span data-ttu-id="8224f-107">Následující příklad používá cizího klíče navigace ve `Where` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`where` klauzule v jazyce C#) Chcete-li filtrovat na více systémů stock `Products` jehož `Supplier` je ve Spojených státech amerických.</span><span class="sxs-lookup"><span data-stu-id="8224f-107">The following example uses foreign key navigation in the `Where` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`where` clause in C#) to filter for out-of-stock `Products` whose `Supplier` is in the United States.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#48](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#48)]
  [!code-vb[DLinqQueryExamples#48](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#48)]  
   
-## <a name="example"></a><span data-ttu-id="07453-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-108">Example</span></span>  
- <span data-ttu-id="07453-109">Následující příklad používá cizího klíče navigace ve `From` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` klauzule v jazyce C#) k filtrování pro zaměstnance v Praze tak, aby jejich teritoria.</span><span class="sxs-lookup"><span data-stu-id="07453-109">The following example uses foreign key navigation in the `From` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` clause in C#) to filter for employees in Seattle and to list their territories.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-108">Example</span></span>  
+ <span data-ttu-id="8224f-109">Následující příklad používá cizího klíče navigace ve `From` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` klauzule v jazyce C#) k filtrování pro zaměstnance v Praze tak, aby jejich teritoria.</span><span class="sxs-lookup"><span data-stu-id="8224f-109">The following example uses foreign key navigation in the `From` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` clause in C#) to filter for employees in Seattle and to list their territories.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#49](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#49)]  
   
-## <a name="example"></a><span data-ttu-id="07453-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-110">Example</span></span>  
- <span data-ttu-id="07453-111">Následující příklad používá cizího klíče navigace ve `Select` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`select` klauzule v jazyce C#) Chcete-li filtrovat páry zaměstnanců, kde jeden zaměstnanec sestavy na druhý a kde jsou obě zaměstnanci ze stejné `City`.</span><span class="sxs-lookup"><span data-stu-id="07453-111">The following example uses foreign key navigation in the `Select` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`select` clause in C#) to filter for pairs of employees where one employee reports to the other and where both employees are from the same `City`.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-110">Example</span></span>  
+ <span data-ttu-id="8224f-111">Následující příklad používá cizího klíče navigace ve `Select` klauzuli v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`select` klauzule v jazyce C#) Chcete-li filtrovat páry zaměstnanců, kde jeden zaměstnanec sestavy na druhý a kde jsou obě zaměstnanci ze stejné `City`.</span><span class="sxs-lookup"><span data-stu-id="8224f-111">The following example uses foreign key navigation in the `Select` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`select` clause in C#) to filter for pairs of employees where one employee reports to the other and where both employees are from the same `City`.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#50](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#50)]
  [!code-vb[DLinqQueryExamples#50](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50)]  
   
-## <a name="example"></a><span data-ttu-id="07453-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-112">Example</span></span>  
- <span data-ttu-id="07453-113">Následující [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] příkladu vypadá pro všechny zákazníky a objednávky, zajišťuje, že budou odpovídat objednávky zákazníků a zaručuje, že pro každý zákazník v tomto seznamu, jméno kontaktní osoby je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="07453-113">The following [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] example looks for all customers and orders, makes sure that the orders are matched to customers, and guarantees that for every customer in that list, a contact name is provided.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-112">Example</span></span>  
+ <span data-ttu-id="8224f-113">Následující [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] příkladu vypadá pro všechny zákazníky a objednávky, zajišťuje, že budou odpovídat objednávky zákazníků a zaručuje, že pro každý zákazník v tomto seznamu, jméno kontaktní osoby je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="8224f-113">The following [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] example looks for all customers and orders, makes sure that the orders are matched to customers, and guarantees that for every customer in that list, a contact name is provided.</span></span>  
   
  [!code-vb[DLinqQueryExamples#50v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50v)]  
   
-## <a name="example"></a><span data-ttu-id="07453-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-114">Example</span></span>  
- <span data-ttu-id="07453-115">Následující příklad explicitně spojení dvou tabulek a projekty výsledky z obou tabulek.</span><span class="sxs-lookup"><span data-stu-id="07453-115">The following example explicitly joins two tables and projects results from both tables.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-114">Example</span></span>  
+ <span data-ttu-id="8224f-115">Následující příklad explicitně spojení dvou tabulek a projekty výsledky z obou tabulek.</span><span class="sxs-lookup"><span data-stu-id="8224f-115">The following example explicitly joins two tables and projects results from both tables.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#51](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#51)]
  [!code-vb[DLinqQueryExamples#51](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#51)]  
   
-## <a name="example"></a><span data-ttu-id="07453-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-116">Example</span></span>  
- <span data-ttu-id="07453-117">Následující příklad explicitně spojí tři tabulky a projekty výsledky z každého z nich.</span><span class="sxs-lookup"><span data-stu-id="07453-117">The following example explicitly joins three tables and projects results from each of them.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-116">Example</span></span>  
+ <span data-ttu-id="8224f-117">Následující příklad explicitně spojí tři tabulky a projekty výsledky z každého z nich.</span><span class="sxs-lookup"><span data-stu-id="8224f-117">The following example explicitly joins three tables and projects results from each of them.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#52](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#52)]
  [!code-vb[DLinqQueryExamples#52](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#52)]  
   
-## <a name="example"></a><span data-ttu-id="07453-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-118">Example</span></span>  
- <span data-ttu-id="07453-119">Následující příklad ukazuje, jak dosáhnout `LEFT OUTER JOIN` pomocí `DefaultIfEmpty()`.</span><span class="sxs-lookup"><span data-stu-id="07453-119">The following example shows how to achieve a `LEFT OUTER JOIN` by using `DefaultIfEmpty()`.</span></span> <span data-ttu-id="07453-120">`DefaultIfEmpty()` Metoda vrátí hodnotu null, pokud není žádná `Order` pro `Employee`.</span><span class="sxs-lookup"><span data-stu-id="07453-120">The `DefaultIfEmpty()` method returns null when there is no `Order` for the `Employee`.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-118">Example</span></span>  
+ <span data-ttu-id="8224f-119">Následující příklad ukazuje, jak dosáhnout `LEFT OUTER JOIN` pomocí `DefaultIfEmpty()`.</span><span class="sxs-lookup"><span data-stu-id="8224f-119">The following example shows how to achieve a `LEFT OUTER JOIN` by using `DefaultIfEmpty()`.</span></span> <span data-ttu-id="8224f-120">`DefaultIfEmpty()` Metoda vrátí hodnotu null, pokud není žádná `Order` pro `Employee`.</span><span class="sxs-lookup"><span data-stu-id="8224f-120">The `DefaultIfEmpty()` method returns null when there is no `Order` for the `Employee`.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#53](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#53)]
  [!code-vb[DLinqQueryExamples#53](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#53)]  
   
-## <a name="example"></a><span data-ttu-id="07453-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-121">Example</span></span>  
- <span data-ttu-id="07453-122">Následující příklad projekty `let` výraz výsledkem spojení.</span><span class="sxs-lookup"><span data-stu-id="07453-122">The following example projects a `let` expression resulting from a join.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-121">Example</span></span>  
+ <span data-ttu-id="8224f-122">Následující příklad projekty `let` výraz výsledkem spojení.</span><span class="sxs-lookup"><span data-stu-id="8224f-122">The following example projects a `let` expression resulting from a join.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#54](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#54)]
  [!code-vb[DLinqQueryExamples#54](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#54)]  
   
-## <a name="example"></a><span data-ttu-id="07453-123">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-123">Example</span></span>  
- <span data-ttu-id="07453-124">Následující příklad ukazuje `join` s složený klíč.</span><span class="sxs-lookup"><span data-stu-id="07453-124">The following example shows a `join` with a composite key.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-123">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-123">Example</span></span>  
+ <span data-ttu-id="8224f-124">Následující příklad ukazuje `join` s složený klíč.</span><span class="sxs-lookup"><span data-stu-id="8224f-124">The following example shows a `join` with a composite key.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#55](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#55)]
  [!code-vb[DLinqQueryExamples#55](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#55)]  
   
-## <a name="example"></a><span data-ttu-id="07453-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="07453-125">Example</span></span>  
- <span data-ttu-id="07453-126">Následující příklad ukazuje, jak vytvořit `join` kde jedné straně může mít hodnotu Null a druhý není.</span><span class="sxs-lookup"><span data-stu-id="07453-126">The following example shows how to construct a `join` where one side is nullable and the other is not.</span></span>  
+## <a name="example"></a><span data-ttu-id="8224f-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="8224f-125">Example</span></span>  
+ <span data-ttu-id="8224f-126">Následující příklad ukazuje, jak vytvořit `join` kde jedné straně může mít hodnotu Null a druhý není.</span><span class="sxs-lookup"><span data-stu-id="8224f-126">The following example shows how to construct a `join` where one side is nullable and the other is not.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#56](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#56)]
  [!code-vb[DLinqQueryExamples#56](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#56)]  
   
-## <a name="see-also"></a><span data-ttu-id="07453-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="07453-127">See Also</span></span>  
- [<span data-ttu-id="07453-128">Příklady dotazů</span><span class="sxs-lookup"><span data-stu-id="07453-128">Query Examples</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+## <a name="see-also"></a><span data-ttu-id="8224f-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="8224f-127">See Also</span></span>  
+ [<span data-ttu-id="8224f-128">Příklady dotazů</span><span class="sxs-lookup"><span data-stu-id="8224f-128">Query Examples</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

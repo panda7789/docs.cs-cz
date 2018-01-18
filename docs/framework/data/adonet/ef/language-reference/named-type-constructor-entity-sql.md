@@ -10,65 +10,65 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 549dea04-d93d-4c87-a292-f81b1598dbfd
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ab743f3132dc15548735771b13967898b4c3f15f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b572d09b812d43fa64e30a3058da9af01d29b747
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="named-type-constructor-entity-sql"></a><span data-ttu-id="72692-102">Konstruktor typu s názvem (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="72692-102">Named Type Constructor (Entity SQL)</span></span>
-<span data-ttu-id="72692-103">Použít k vytvoření instance konceptuálního modelu nominální například Entity nebo komplexní typy.</span><span class="sxs-lookup"><span data-stu-id="72692-103">Used to create instances of conceptual model nominal types such as Entity or Complex types.</span></span>  
+# <a name="named-type-constructor-entity-sql"></a><span data-ttu-id="3d846-102">Konstruktor typu s názvem (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="3d846-102">Named Type Constructor (Entity SQL)</span></span>
+<span data-ttu-id="3d846-103">Použít k vytvoření instance konceptuálního modelu nominální například Entity nebo komplexní typy.</span><span class="sxs-lookup"><span data-stu-id="3d846-103">Used to create instances of conceptual model nominal types such as Entity or Complex types.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="72692-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="72692-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3d846-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3d846-104">Syntax</span></span>  
   
 ```  
 [{identifier. }] identifier( [expression [{, expression }]] )  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="72692-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="72692-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="3d846-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="3d846-105">Arguments</span></span>  
  `identifier`  
- <span data-ttu-id="72692-106">Hodnota, která je identifikátor jednoduchý nebo uvozovkách.</span><span class="sxs-lookup"><span data-stu-id="72692-106">Value that is a simple or quoted identifier.</span></span> <span data-ttu-id="72692-107">Další informace najdete v tématu [identifikátory](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md)</span><span class="sxs-lookup"><span data-stu-id="72692-107">For more information see, [Identifiers](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md)</span></span>  
+ <span data-ttu-id="3d846-106">Hodnota, která je identifikátor jednoduchý nebo uvozovkách.</span><span class="sxs-lookup"><span data-stu-id="3d846-106">Value that is a simple or quoted identifier.</span></span> <span data-ttu-id="3d846-107">Další informace najdete v tématu [identifikátory](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md)</span><span class="sxs-lookup"><span data-stu-id="3d846-107">For more information see, [Identifiers](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md)</span></span>  
   
  `expression`  
- <span data-ttu-id="72692-108">Atributy typu, které se předpokládá, že se ve stejném pořadí, jak se zobrazují v deklaraci typu.</span><span class="sxs-lookup"><span data-stu-id="72692-108">Attributes of the type that are assumed to be in the same order as they appear in the declaration of the type.</span></span>  
+ <span data-ttu-id="3d846-108">Atributy typu, které se předpokládá, že se ve stejném pořadí, jak se zobrazují v deklaraci typu.</span><span class="sxs-lookup"><span data-stu-id="3d846-108">Attributes of the type that are assumed to be in the same order as they appear in the declaration of the type.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="72692-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="72692-109">Return Value</span></span>  
- <span data-ttu-id="72692-110">Instance s názvem komplexní typy a typy entit.</span><span class="sxs-lookup"><span data-stu-id="72692-110">Instances of named complex types and entity types.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="3d846-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3d846-109">Return Value</span></span>  
+ <span data-ttu-id="3d846-110">Instance s názvem komplexní typy a typy entit.</span><span class="sxs-lookup"><span data-stu-id="3d846-110">Instances of named complex types and entity types.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="72692-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="72692-111">Remarks</span></span>  
- <span data-ttu-id="72692-112">Následující příklady ukazují, jak vytvořit nominální a komplexní typy:</span><span class="sxs-lookup"><span data-stu-id="72692-112">The following examples show how to construct nominal and complex types:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3d846-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3d846-111">Remarks</span></span>  
+ <span data-ttu-id="3d846-112">Následující příklady ukazují, jak vytvořit nominální a komplexní typy:</span><span class="sxs-lookup"><span data-stu-id="3d846-112">The following examples show how to construct nominal and complex types:</span></span>  
   
- <span data-ttu-id="72692-113">Následující výraz vytvoří instanci `Person` typu:</span><span class="sxs-lookup"><span data-stu-id="72692-113">The expression below creates an instance of a `Person` type:</span></span>  
+ <span data-ttu-id="3d846-113">Následující výraz vytvoří instanci `Person` typu:</span><span class="sxs-lookup"><span data-stu-id="3d846-113">The expression below creates an instance of a `Person` type:</span></span>  
   
  `Person("abc", 12)`  
   
- <span data-ttu-id="72692-114">Následující výraz vytvoří instanci komplexního typu:</span><span class="sxs-lookup"><span data-stu-id="72692-114">The expression below creates an instance of a complex type:</span></span>  
+ <span data-ttu-id="3d846-114">Následující výraz vytvoří instanci komplexního typu:</span><span class="sxs-lookup"><span data-stu-id="3d846-114">The expression below creates an instance of a complex type:</span></span>  
   
  `MyModel.ZipCode(‘98118’, ‘4567’)`  
   
- <span data-ttu-id="72692-115">Následující výraz vytvoří instanci vnořené komplexního typu:</span><span class="sxs-lookup"><span data-stu-id="72692-115">The expression below creates an instance of a nested complex type:</span></span>  
+ <span data-ttu-id="3d846-115">Následující výraz vytvoří instanci vnořené komplexního typu:</span><span class="sxs-lookup"><span data-stu-id="3d846-115">The expression below creates an instance of a nested complex type:</span></span>  
   
  `MyModel.AddressInfo('My street address', 'Seattle', 'WA', MyModel.ZipCode('98118', '4567'))`  
   
- <span data-ttu-id="72692-116">Následující výraz vytvoří instanci entity s vnořené komplexního typu:</span><span class="sxs-lookup"><span data-stu-id="72692-116">The expression below creates an instance of an entity with a nested complex type:</span></span>  
+ <span data-ttu-id="3d846-116">Následující výraz vytvoří instanci entity s vnořené komplexního typu:</span><span class="sxs-lookup"><span data-stu-id="3d846-116">The expression below creates an instance of an entity with a nested complex type:</span></span>  
   
  `MyModel.Person("Bill", MyModel.AddressInfo('My street address', 'Seattle', 'WA', MyModel.ZipCode('98118', '4567')))`  
   
- <span data-ttu-id="72692-117">Následující příklad ukazuje, jak k chybě při inicializaci vlastnosti pro komplexní typ na hodnotu null:`MyModel.ZipCode(‘98118’, null)`</span><span class="sxs-lookup"><span data-stu-id="72692-117">The following example shows how to initialize a property of a complex type to null:`MyModel.ZipCode(‘98118’, null)`</span></span>  
+ <span data-ttu-id="3d846-117">Následující příklad ukazuje, jak k chybě při inicializaci vlastnosti pro komplexní typ na hodnotu null:`MyModel.ZipCode(‘98118’, null)`</span><span class="sxs-lookup"><span data-stu-id="3d846-117">The following example shows how to initialize a property of a complex type to null:`MyModel.ZipCode(‘98118’, null)`</span></span>  
   
-## <a name="example"></a><span data-ttu-id="72692-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="72692-118">Example</span></span>  
- <span data-ttu-id="72692-119">Následující dotaz Entity SQL konstruktor s názvem typu používá k vytvoření instance typu koncepčního modelu.</span><span class="sxs-lookup"><span data-stu-id="72692-119">The following Entity SQL query uses the named type constructor to create an instance of a conceptual model type.</span></span> <span data-ttu-id="72692-120">Dotaz je založen na modelu prodej AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="72692-120">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="72692-121">Pro zkompilování a spuštění tohoto dotazu, postupujte takto:</span><span class="sxs-lookup"><span data-stu-id="72692-121">To compile and run this query, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="3d846-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="3d846-118">Example</span></span>  
+ <span data-ttu-id="3d846-119">Následující dotaz Entity SQL konstruktor s názvem typu používá k vytvoření instance typu koncepčního modelu.</span><span class="sxs-lookup"><span data-stu-id="3d846-119">The following Entity SQL query uses the named type constructor to create an instance of a conceptual model type.</span></span> <span data-ttu-id="3d846-120">Dotaz je založen na modelu prodej AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="3d846-120">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="3d846-121">Pro zkompilování a spuštění tohoto dotazu, postupujte takto:</span><span class="sxs-lookup"><span data-stu-id="3d846-121">To compile and run this query, follow these steps:</span></span>  
   
-1.  <span data-ttu-id="72692-122">Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="72692-122">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
+1.  <span data-ttu-id="3d846-122">Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="3d846-122">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
   
-2.  <span data-ttu-id="72692-123">Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metoda:</span><span class="sxs-lookup"><span data-stu-id="72692-123">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
+2.  <span data-ttu-id="3d846-123">Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metoda:</span><span class="sxs-lookup"><span data-stu-id="3d846-123">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#NAMED_TYPE_CONSTRUCTOR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#named_type_constructor)]  
   
-## <a name="see-also"></a><span data-ttu-id="72692-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="72692-124">See Also</span></span>  
- [<span data-ttu-id="72692-125">Vytváření typů</span><span class="sxs-lookup"><span data-stu-id="72692-125">Constructing Types</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)  
- [<span data-ttu-id="72692-126">Reference k Entity SQL</span><span class="sxs-lookup"><span data-stu-id="72692-126">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a><span data-ttu-id="3d846-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="3d846-124">See Also</span></span>  
+ [<span data-ttu-id="3d846-125">Vytváření typů</span><span class="sxs-lookup"><span data-stu-id="3d846-125">Constructing Types</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)  
+ [<span data-ttu-id="3d846-126">Reference k Entity SQL</span><span class="sxs-lookup"><span data-stu-id="3d846-126">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
