@@ -9,15 +9,15 @@ dev_langs:
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
 caps.latest.revision: "7"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 61de1bf5f3e5eb16718f2af7fa29325dc94770d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea26b4297f587a449b8484947257081e0d11906c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="adonet-code-examples"></a>Příklady kódu pro technologii ADO.NET
 Příklady kódu v tomto tématu ukazují, jak načíst data z databáze pomocí následující technologie ADO.NET:
@@ -28,7 +28,7 @@ Příklady kódu v tomto tématu ukazují, jak načíst data z databáze pomocí
 
   - [OleDb](#oledb) (`System.Data.OleDb`)
 
-  - [ODBC](#odbc) (`System.Data.Odbc`)
+  - [Odbc](#odbc) (`System.Data.Odbc`)
 
   - [OracleClient](#oracleclient) (`System.Data.OracleClient`)
 
@@ -57,7 +57,7 @@ Kód v tomto příkladu se předpokládá, zda se můžete připojit k ukázkov�
  [!code-csharp[DataWorks SampleApp.OleDb#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.OleDb/CS/source.cs#1)]
  [!code-vb[DataWorks SampleApp.OleDb#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.OleDb/VB/source.vb#1)]
 
-### <a name="odbc"></a>Rozhraní ODBC
+### <a name="odbc"></a>Odbc
 Kód v tomto příkladu se předpokládá, zda se můžete připojit k ukázkové databázi Northwind přístup společnosti Microsoft. Kód vytvoří <xref:System.Data.Odbc.OdbcCommand> pro výběr řádků z tabulky produktů, přidávání <xref:System.Data.Odbc.OdbcParameter> omezit výsledky na řádky s UnitPrice větší než je zadaná hodnota parametru, v takovém případě 5. <xref:System.Data.Odbc.OdbcConnection> Je otevřen uvnitř `using` blok, který zajišťuje, že jsou prostředky uzavřený a uvolněno při ukončení kód. Kód spustí příkaz pomocí <xref:System.Data.Odbc.OdbcDataReader>a zobrazí výsledky v okně konzoly.
 
 [!code-csharp[DataWorks SampleApp.Odbc#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.Odbc/CS/source.cs#1)] 

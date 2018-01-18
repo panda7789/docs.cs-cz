@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f7ab9d1043fdd1d4d78ec09390f227f297e471c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 30425680333bfebddcd7a34ac1cd2a07b1556d91
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="handling-datatable-events"></a>Zpracování událostí DataTable
 <xref:System.Data.DataTable> Objekt poskytuje řadu událostí, které může zpracovat aplikace. Následující tabulka popisuje `DataTable` události.  

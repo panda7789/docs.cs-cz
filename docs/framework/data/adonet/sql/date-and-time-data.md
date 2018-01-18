@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
 caps.latest.revision: "7"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a547bbb38d58d5b4c22e78bfd64fef4094865143
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a146cf50639351479d42bff684ea7db21ecf5d3b
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="date-and-time-data"></a>Datum a čas dat
 SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové typy dat zahrnují rozšířené datové typy s větší rozsah, přesnost a časové pásmo a samostatné typy pro datum a čas. Počínaje verzí rozhraní .NET Framework 3.5 Service Pack (SP) 1, zprostředkovatel dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje úplnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro použití s SqlClient tyto nové funkce.  
@@ -85,7 +85,7 @@ SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a
 |Datum|System.DateTime|Datum|Datum|  
 |čas|System.TimeSpan|Čas|Čas|  
 |datetime2|System.DateTime|DateTime2|DateTime2|  
-|Datový typ DateTimeOffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
+|datetimeoffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
 |Data a času|System.DateTime|DateTime|DateTime|  
 |smalldatetime|System.DateTime|DateTime|DateTime|  
   
@@ -194,10 +194,10 @@ command.Parameters.AddWithValue( _
   
  Následující tabulka uvádí, které `SqlDbTypes` jsou odvozené z které typy CLR:  
   
-|Typ CLR|Odvozené SqlDbType|  
+|Typ CLR|Inferred SqlDbType|  
 |--------------|------------------------|  
 |DateTime|SqlDbType.DateTime|  
-|Časový interval|SqlDbType.Time|  
+|TimeSpan|SqlDbType.Time|  
 |DateTimeOffset|SqlDbType.DateTimeOffset|  
   
 ## <a name="retrieving-date-and-time-data"></a>Načítání datum a čas dat  

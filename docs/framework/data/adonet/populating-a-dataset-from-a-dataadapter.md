@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6df0b6a06240a5f59c888ddcfb2b34764fd888fa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c0991398a28e491d381d10dea8a14ed463c67c89
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z modul DataAdapter
 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Je rezidentní reprezentace data, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat. `DataSet` Představuje kompletní sadu dat, který obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat, `DataSet` může obsahovat data místní aplikace a data z více zdrojů dat. Interakce s existujícími zdroji dat jsou řízeny prostřednictvím `DataAdapter`.  
@@ -128,7 +128,7 @@ foreach (DataRow pRow in customerOrders.Tables["Customers"].Rows)
 }  
 ```  
   
-## <a name="sql-server-decimal-type"></a>Decimal – typ SQL serveru  
+## <a name="sql-server-decimal-type"></a>SQL Server Decimal Type  
  Ve výchozím nastavení `DataSet` ukládá data pomocí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] datové typy. Pro většinu aplikací tyto poskytují pohodlný reprezentace informace o zdroji dat. Tento zápis však může způsobit problém, když je typ dat ve zdroji dat desítkový nebo číselný datový typ SQL serveru. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] `decimal` Datový typ povoluje maximálně 28 platných číslic, zatímco SQL Server `decimal` datový typ umožňuje 38 platných číslic. Pokud `SqlDataAdapter` určuje během `Fill` operace, přesnost systému SQL Server `decimal` pole je větší než 28 znaků, že aktuálnímu řádku není přidáno do `DataTable`. Místo toho `FillError` dojde k události, které umožňuje určit, zda bude ztrátu přesnosti dojít a reagují odpovídajícím způsobem. Další informace o `FillError` událostí, najdete v části [zpracování události DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md). Získat systému SQL Server `decimal` hodnotu, můžete použít také <xref:System.Data.SqlClient.SqlDataReader> objekt a volání <xref:System.Data.SqlClient.SqlDataReader.GetSqlDecimal%2A> metoda.  
   
  [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]2.0 zavedená rozšířenou podporu <xref:System.Data.SqlTypes> v `DataSet`. Další informace najdete v tématu [SqlTypes a datovou sadu](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
@@ -178,10 +178,10 @@ adapter.Fill(customers, "Customers");
   
 ### <a name="tablename-customers"></a>Název tabulky: zákazníků  
   
-|CustomerID|NázevSpolečnosti|Objednávky|  
+|CustomerID|CompanyName|Objednávky|  
 |----------------|-----------------|------------|  
 |ALFKI|Alfreds Futterkiste|0|  
-|ANATR|ANA Trujillo Emparedados y helados|1|  
+|ANATR|Ana Trujillo Emparedados y helados|1|  
   
 ### <a name="tablename-customersorders"></a>Název tabulky: CustomersOrders  
   

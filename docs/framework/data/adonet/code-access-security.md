@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 754c380972d79343eab83b9e862e478798218ffc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2181682fcdf0468a978dd939dbbcbb4a18cdd38b
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework nabízí na základě rolí zabezpečení a také zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí běžnou infrastrukturu poskytl common language runtime (CLR). Na světě nespravovaného kódu většinu aplikací spustit s oprávněními uživatele nebo objekt zabezpečení. V důsledku toho počítačích může být poškozena a privátní data ohrožení zabezpečení při škodlivý nebo plný chyb softwaru je spustit uživatel, se zvýšenými oprávněními.  

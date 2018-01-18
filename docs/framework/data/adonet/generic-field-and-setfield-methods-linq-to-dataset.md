@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7f71a6e380730ce3d622437b28a3722793524968
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6281f2fdd00f210f09c97861d2ea723d259af004
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a SetField metody (LINQ na DataSet)
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]poskytuje rozšiřující metody pro <xref:System.Data.DataRow> třídy pro přístup k hodnot sloupce: <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] používá podpora s možnou hodnotou Null typu počínaje [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste návratový objekt na příslušný typ přetypování. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně zkontrolovala pro hodnotu null protože vrácení <xref:System.DBNull.Value> a ho implicitně přetypování na jiný typ vyvolává <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A> metoda nebyla použita k vyhledání hodnotu null, by být vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value> a pokusil vysílat <xref:System.String>.  

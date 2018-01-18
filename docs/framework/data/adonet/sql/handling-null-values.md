@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8467d1748cec216c01756049d889ea29f02c3c7c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 23a502cc3a286ed5cb47c7bbe21253f312722409
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot Null
 Hodnotu null v relační databázi se používá, pokud je hodnota ve sloupci neznámý nebo chybí. Null není prázdný řetězec (pro datové typy znaků nebo data a času) ani hodnotu nula (pro číselné datové typy). Specifikace ANSI SQL-92 stavy s hodnotou null musí být stejné pro všechny typy dat, tak, aby všechny hodnoty Null zpracovává konzistentně. <xref:System.Data.SqlTypes> Obor názvů obsahuje hodnotu null sémantiku implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy v <xref:System.Data.SqlTypes> má svou vlastní `IsNull` vlastnost a `Null` hodnotu, která lze přiřadit k instanci daného datového typu.  
@@ -32,7 +32,7 @@ Hodnotu null v relační databázi se používá, pokud je hodnota ve sloupci ne
 ## <a name="nulls-and-three-valued-logic"></a>Hodnoty Null a s hodnotou tři logiky  
  Povolení hodnoty null v definicích sloupce zavádí s hodnotou tři logiku do vaší aplikace. Porovnání lze vyhodnotit na jednu ze tří podmínek:  
   
--   Hodnota TRUE  
+-   True  
   
 -   False  
   

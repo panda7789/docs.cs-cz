@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 262d8e60-8e71-42d7-8340-1b5276a0ad35
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 15267a40b70ee37d6f8f51af74d90ccb5b77fd2e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9db930ff506b55d0e5878d441f68b0b27bd7aea8
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="debugging-support"></a>Podpora ladění
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]poskytuje obecné ladění podporu pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projekty.  Viz také [ladění LINQ](http://msdn.microsoft.com/library/Bb385795\(v=vs.110\)) nebo [ladění LINQ](http://msdn.microsoft.com/library/Bb385795\(v=vs.120\)).  

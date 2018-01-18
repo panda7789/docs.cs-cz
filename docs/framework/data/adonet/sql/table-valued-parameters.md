@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ce210e1da2002fe599a3703ec90374afba843c3c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6e881213979d32cb9335f01d2804c35c19856b5e
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotou tabulky
 Parametry s hodnotou tabulky představují snadný způsob, jak zařazování více řádků dat z klientskou aplikaci, aby [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] bez nutnosti více odezev nebo speciální logiku na straně serveru pro zpracování dat. Parametry s hodnotou tabulky můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Příchozí data řádky jsou uložené v proměnné tabulky, která lze poté ho zpracovat. pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  

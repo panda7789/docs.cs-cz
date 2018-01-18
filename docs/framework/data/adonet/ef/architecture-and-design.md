@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 48b80856242730a5412cd9d5d8dd2c7f857304ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ce16e89e697a7865a65d86b408e49b5ad671bae1
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
 Modul generování SQL v [ukázka zprostředkovatele](http://go.microsoft.com/fwlink/?LinkId=180616) je implementovaný jako návštěvníka na strom výrazu, který představuje strom příkazů. Generování probíhá v jednom průchodu přes strom výrazu.  
@@ -63,7 +63,7 @@ internal sealed class SqlBuilder : ISqlFragment {
 ```  
   
 #### <a name="sqlselectstatement"></a>SqlSelectStatement  
- SqlSelectStatement představuje kanonický příkazu SQL SELECT tvaru vyberte..." Z... KDE... SESKUPIT PODLE... ŘADIT PODLE".  
+ SqlSelectStatement představuje kanonický příkazu SQL SELECT tvaru vyberte..." FROM  .. KDE... SESKUPIT PODLE... ŘADIT PODLE".  
   
  Každý z klauzule SQL je reprezentována StringBuilder. Kromě toho sleduje, zda byla zadána klauzule Distinct, a jestli je nejhornější příkaz. Pokud příkaz není nejhornější, klauzule ORDER by je vynechán, pokud příkaz také obsahuje klauzuli TOP.  
   
@@ -304,7 +304,7 @@ ORDER BY sk1, sk2, ...
   
 -   DbJoinExpression  
   
--   Objekt DbCrossJoinExpression  
+-   DbCrossJoinExpression  
   
  Tady jsou kroky najdete:  
   
@@ -399,7 +399,7 @@ Any(input, x) => Exists(Filter(input,x))
 All(input, x) => Not Exists(Filter(input, not(x))  
 ```  
   
-### <a name="dbnotexpression"></a>Třída DbNotExpression  
+### <a name="dbnotexpression"></a>DbNotExpression  
  V některých případech je možné sbalit překlad DbNotExpression s jeho vstupní výraz. Příklad:  
   
 ```  

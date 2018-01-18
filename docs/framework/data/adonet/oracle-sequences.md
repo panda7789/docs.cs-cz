@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: bf4c41906d67bc97547ea24af3dd30ed4fa998ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c2fc6e357f37e86b135e81c1f7e99cfddbe3bb5a
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-sequences"></a>Pořadí Oracle
 Zprostředkovatel dat .NET Framework pro Oracle poskytuje podporu pro načítání hodnoty klíče generované serverem Oracle pořadí po provedení vložení pomocí <xref:System.Data.OracleClient.OracleDataAdapter>.  

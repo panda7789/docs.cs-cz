@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3c912a97c0d362fa475ae93127b84cb4a680125c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d8d47b578d60d2c53aaa4b1f47e86430d3495ed1
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je sada technologií v ADO.NET, které podporují vývoj aplikací orientovaných na data softwaru. Architekty a vývojáře aplikací orientovaných na data jste měli problémy s potřeba dosáhnout dva velmi různé cíle. Se musí modelu entity, vztahy a logiku z obchodních problémů, které jsou v řešení problémů a také musí pracovat s moduly data používá k ukládání a načítání dat. Data může span více úložných systémů, každou s vlastní protokoly; i aplikace, které pracují s systémem jedno úložiště, musíte vyvážit požadavky na úložiště systému podle požadavků zápisu kódu aplikace efektivní a udržovatelný.  

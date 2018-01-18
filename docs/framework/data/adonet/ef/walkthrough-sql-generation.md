@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c3d952c2a9e8f1199fa8ef4b6181dabcfbcc4012
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 272d0b8bc58094737d157abfff9f3f026a0f5953
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-sql-generation"></a>Návod: Generování SQL
 Toto téma ukazuje, jak SQL generace dojde v [ukázka zprostředkovatele](http://go.microsoft.com/fwlink/?LinkId=180616). Následující dotaz Entity SQL používá model, který je součástí ukázkového zprostředkovatele:  

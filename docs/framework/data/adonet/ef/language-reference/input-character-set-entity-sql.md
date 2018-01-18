@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 13d291d3-e6bc-4719-b953-758b61a590b6
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1a830d9df1f94bd21689cba9a9893cb9c344dfdb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8d75d8c96d1cc028bed8beea16e2728e5654a12c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="input-character-set-entity-sql"></a>Vstupní znakovou sadu (entita SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]přijme kódovaný v UTF-16 znaků UNICODE.  

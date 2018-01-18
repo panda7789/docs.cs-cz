@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f3e80b5bb62cc785c220e2baeb773e6990c5fee1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e478f145511266a919b1bc948e3218b60f3de993
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
@@ -72,7 +72,7 @@ Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporuj�
 ## <a name="provider-manifest-discoverability"></a>Vyhledání manifestu zprostředkovatele  
  Manifest nepřímo používá několik typů součásti v Entity služby (například nástroje nebo dotazu), ale informace přímo využít metadat prostřednictvím data ukládat zavaděč metadat.  
   
- ![dfb3d02b & č. 45; 7a8c & č. 45; 4d 51 & č. 45; ac5a & č. 45; a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
+ ![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
   
  Různých obchodů nebo různé verze stejného úložiště může však podporovat daného zprostředkovatele. Proto musí zprostředkovatele nahlásit různých manifestu pro každé podporované datové úložiště.  
   
@@ -88,7 +88,7 @@ Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporuj�
 ## <a name="provider-manifest-programming-model"></a>Model programování manifestu zprostředkovatele  
  Poskytovatelé jsou odvozeny od <xref:System.Data.Common.DbXmlEnabledProviderManifest>, což umožňuje jejich zadejte jejich manifesty deklarativně. Následující obrázek znázorňuje hierarchie tříd zprostředkovatele:  
   
- ![Žádný](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
+ ![None](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
   
 ### <a name="discoverability-api"></a>Možnosti rozpoznání rozhraní API  
  Manifest zprostředkovatele je načíst zavaděčem ukládání metadat (StoreItemCollection), buď pomocí dat uložení připojení nebo tokenu manifestu zprostředkovatele.  
@@ -262,7 +262,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Název|String|Ano|není k dispozici|Název typu specifický pro zprostředkovatele dat|  
-|Hodnota typu PrimitiveTypeKind|Hodnota typu PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
+|PrimitiveTypeKind|PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
   
 ###### <a name="function-node"></a>Uzel – funkce  
  Jednotlivé funkce definuje jedinou funkci k dispozici prostřednictvím poskytovatele.  
@@ -270,12 +270,12 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Název|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
-|Vlastnost ReturnType|String|Ne|Void|Návratový typ EDM funkce|  
+|ReturnType|String|Ne|Void|Návratový typ EDM funkce|  
 |Aggregate|Boolean|Ne|False|Hodnota TRUE, pokud je funkce agregační funkce|  
-|Předdefinované|Boolean|Ne|Hodnota TRUE|Hodnota TRUE, pokud je funkce integrovaná v úložišti dat.|  
-|StoreFunctionName|String|Ne|\<Name >|Název funkce v úložišti dat.  Umožňuje pro úroveň přesměrování názvy funkcí.|  
+|Předdefinované|Boolean|Ne|True|Hodnota TRUE, pokud je funkce integrovaná v úložišti dat.|  
+|StoreFunctionName|String|Ne|\<Name>|Název funkce v úložišti dat.  Umožňuje pro úroveň přesměrování názvy funkcí.|  
 |NiladicFunction|Boolean|Ne|False|Hodnota TRUE, pokud funkce nevyžaduje, parametry a je volána bez parametrů|  
-|ParameterType<br /><br /> Sémantika|ParameterSemantics|Ne|AllowImplicit<br /><br /> Převod|Volba jak by se měl kanálu dotazu zabývat nahrazování parametru typu:<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
+|ParameterType<br /><br /> Sémantika|ParameterSemantics|Ne|AllowImplicit<br /><br /> Převod|Volba jak by se měl kanálu dotazu zabývat nahrazování parametru typu:<br /><br /> -   ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
   
  **Parametry uzlu**  
   

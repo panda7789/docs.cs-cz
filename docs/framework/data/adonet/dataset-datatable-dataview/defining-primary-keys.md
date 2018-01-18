@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: dffced0e3d8cd28699d41ea6bb286e3d59f16bb2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abd1dc4b515121343b2ca9674b263c327d153fad
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="defining-primary-keys"></a>Definování primárních klíčů
 Tabulka databáze běžně má sloupec nebo skupiny sloupců, která jednoznačně identifikuje každý řádek v tabulce. Toto identifikační sloupec nebo skupiny sloupců se nazývá primární klíč.  

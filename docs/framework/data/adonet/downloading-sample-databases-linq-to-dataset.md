@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: eb42a7af-d410-4b7f-b4a8-13c72ce6fd09
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b984fdef7f7f43e266ec4ba42b04990aced159c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c8c1c2dabb13393764ca8b1fd9c1a717b9e2527e
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>Stažení ukázkové databáze (LINQ na DataSet)
 Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace použít ukázkovou databázi AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu Microsoft download. Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace použít jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bezplatně, můžete také použít jako úložiště dat místo systému SQL Server.  
@@ -27,7 +27,7 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
   
 #### <a name="to-download-and-install-the-adventureworks-sample-database-for-sql-server"></a>Chcete-li stáhnout a nainstalovat ukázkovou databázi AdventureWorks pro SQL Server  
   
-1.  Otevřete Internet Explorer.  
+1.  Open Internet Explorer.  
   
 2.  Přejděte na [SQL Server 2005 ukázky a ukázkové databáze](http://go.microsoft.com/fwlink/?linkid=31046) webu.  
   

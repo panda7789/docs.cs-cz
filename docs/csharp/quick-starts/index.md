@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 4443609c9494ca93cbc5934dd62fedf434599962
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: 7847d21e3529de1a84ef17486710d10256003ce9
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="c-quick-starts"></a>C# rychlý start #
 
@@ -39,6 +39,12 @@ Tento rychlý start se předpokládá, že dokončení [Hello, world](hello-worl
 [Větve a smyčky](branches-and-loops.yml) rychlý start se dozvíte, jaké základní informace o výběru různé cesty provádění kódu na základě hodnot, které jsou uložené v proměnné. Dozvíte základní informace o toku řízení, což je základ jak programů rozhodnutí a zvolte různé akce. Tento rychlý start je k dispozici také [místně do vašeho počítače](branches-and-loops-local.md).
 
 Tato počáteční lekce předpokládá, že dokončení [Hello, World](hello-world.yml) a [čísla v jazyce C#](numbers-in-csharp.yml) lekce.
+
+## <a name="interpolated-stringsinterpolated-stringsyml"></a>[Interpolované řetězce](interpolated-strings.yml)
+
+[Interpolované řetězce](interpolated-strings.yml) rychlý start se dozvíte, jak vložení výraz do větší řetězec. Dozvíte se, jak definovat výraz interpolované, jak vytvořit řetězec výsledek z interpolované řetězce, který má jeden nebo více výrazů interpolované a postup řízení formátování, šířka sloupce a zarovnání výrazů ve výsledku řetězec. 
+
+Tato počáteční lekce předpokládá, že dokončení [Hello, World](hello-world.yml), [čísla v jazyce C#](numbers-in-csharp.yml), a [větve a smyčky](branches-and-loops.yml) lekce.
 
 ## <a name="list-collectionlist-collectionyml"></a>[Kolekce seznamu](list-collection.yml)
 

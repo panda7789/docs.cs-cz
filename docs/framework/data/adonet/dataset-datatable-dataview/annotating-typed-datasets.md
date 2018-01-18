@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4528393d3d9491d9c1f12a867eb093e75d028f3d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc09f3f9b43b70b7f9b302d7a9d75428b5a0e6c7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="annotating-typed-datasets"></a>Zadávání poznámek k typové datové sady
 Poznámky umožňují změnit názvy elementů v váš zadaný <xref:System.Data.DataSet> beze změny základní schéma. Úprava názvy elementů v základní schéma by způsobilo zadaného objektu **datovou sadu** k odkazování na objekty, které není neexistuje ve zdroji dat, a také dojít ke ztrátě odkaz na objekty, které existují v datovém zdroji.  
@@ -56,7 +56,7 @@ Poznámky umožňují změnit názvy elementů v váš zadaný <xref:System.Data
   
 |Poznámka|Popis|  
 |----------------|-----------------|  
-|**TypedName služby Active Directory**|Název objektu.|  
+|**typedName**|Název objektu.|  
 |**typedPlural**|Název kolekce objektů.|  
 |**typedParent**|Název objektu při uvedených v nadřazené vztahy.|  
 |**typedChildren**|Název metody, které mají být vráceny od vztahu podřízené objekty.|  
@@ -77,7 +77,7 @@ Poznámky umožňují změnit názvy elementů v váš zadaný <xref:System.Data
 |---------------------------|-------------|----------------|  
 |**DataTable**|TableNameDataTable|typedPlural|  
 |**DataTable** metody|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|TypedName služby Active Directory|  
-|**Kolekci DataRowCollection**|Název tabulky|typedPlural|  
+|**Kolekci DataRowCollection**|TableName|typedPlural|  
 |**DataRow**|TableNameRow|TypedName služby Active Directory|  
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
 |**Vlastnost**|PropertyName|TypedName služby Active Directory|  

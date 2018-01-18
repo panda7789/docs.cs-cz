@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
 caps.latest.revision: "14"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 99b5af9f33fa92c6e635ee0190893e377724d970
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f870bab357db7a425378afcfb0bedd19b0359ce1
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
 Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] a aplikací (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumentů, bitové kopie a mediálních souborů). A [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] databáze může uchovávat binární rozsáhlé objekty (objekty BLOB), ale načítání objektů BLOB můžete použít velké množství paměti.  
@@ -64,19 +64,19 @@ Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversi
   
  Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream>:  
   
--   **Binární**  
+-   **Binary**  
   
 -   **VarBinary**  
   
  Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.TextReader>:  
   
--   **Char –**  
+-   **Char**  
   
 -   **NChar**  
   
 -   **NVarChar**  
   
--   **XML**  
+-   **Xml**  
   
  **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typ bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.Xml.XmlReader>.  
   

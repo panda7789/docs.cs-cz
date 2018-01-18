@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2573ff7ff4a03d5ec8a56ef311a3c065d040ccf9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17fc714acd85b065dbbfa6812d3b55970d5523a2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Podporované a nepodporované LINQ metody (LINQ to Entities)
 Tato část obsahuje informace o operátorech standardní dotaz Language-Integrated Query (LINQ), které jsou podporována nebo není podporována v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Mnoho LINQ standardní operátory dotazu má přetížené verze, která přijímá argument celé číslo. Argument celé číslo odpovídá index počítaný od nuly v pořadí, které pracuje, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto verze přetížené operátory standardní dotaz LINQ nepodporuje a pokus o použití je vyvolá výjimku.  

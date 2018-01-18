@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 51662950-ee01-4857-b7b9-311dd8515966
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 00d5a309a68ad7c1c5f363d6df3cca7a0e90ce81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d32e5012b4acbf0ecd6830f549de5dccf79bb38b
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="in-entity-sql"></a>V (entita SQL)
 Určuje, zda hodnota odpovídá libovolná hodnota v kolekci.  
@@ -33,7 +33,7 @@ value [ NOT ] IN expression
  `value`  
  Libovolný platný výraz, který vrací hodnotu tak, aby odpovídaly.  
   
- [NOT]  
+ [ NOT ]  
  Určuje, že `Boolean` být Negované výsledek IN.  
   
  `expression`  

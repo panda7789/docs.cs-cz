@@ -11,15 +11,15 @@ ms.topic: article
 dev_langs: vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2eed4db8ee76d6f7bea8b0628219e858a1db9695
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 800cc7d6a1e4aa836ebe75afcbe29a3532ee173a
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Návod: Použití pouze uložené procedury (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům pomocí uložené procedury jenom. Tento přístup se často používá databázi správci omezit, jak přistupovat k úložišti dat.  
@@ -87,7 +87,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-the-linq-to-sql-assembly-reference"></a>Přidávání do odkaz sestavení SQL LINQ  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Sestavení není součástí standardní šablona formulářové aplikace Windows. Budete muset přidat sestavení sami, jak je popsáno v následujících krocích:  
   
-#### <a name="to-add-systemdatalinqdll"></a>Chcete-li přidat knihovně System.Data.Linq.dll  
+#### <a name="to-add-systemdatalinqdll"></a>To add System.Data.Linq.dll  
   
 1.  V **Průzkumníku řešení**, klikněte na tlačítko **zobrazit všechny soubory**.  
   

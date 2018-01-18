@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: bf0af444-890d-43e2-aeca-98589dd74ddf
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8739a939e3ad5ce8c3277120755fb72f77b3e175
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c4846a45b0a49de102cab05857a69476680198a0
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="convert-a-sequence-to-an-array"></a>Převod na pole sekvenci
 Použití <xref:System.Linq.Enumerable.ToArray%2A> pro vytvoření pole z řady.  

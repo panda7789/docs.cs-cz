@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 24e335b0-984e-4825-8721-0a91b533b7c3
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6b28c6f9626919ee52be2a42eb2f68aecc9acbf6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 547d9f245d41fac2e2d65877ddbb2a8660d73c42
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="compute-the-sum-of-values-in-a-numeric-sequence"></a>Výpočetní součet hodnot v číselného pořadí
 Použití <xref:System.Linq.Enumerable.Sum%2A> operátor vypočítat součet číselných hodnot v pořadí.  

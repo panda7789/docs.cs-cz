@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 76767e7c-0607-4e1d-9ca2-a94f311f45eb
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8bcb20f5d057c3b54e49e2fac81e9799ac42b1f2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a73ace484c3ca519f250069063a9222b75ef6c17
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="concatenate-two-sequences"></a>Řetězení dvě pořadí
 Použití <xref:System.Linq.Queryable.Concat%2A> operátor ke zřetězení dvě pořadí.  

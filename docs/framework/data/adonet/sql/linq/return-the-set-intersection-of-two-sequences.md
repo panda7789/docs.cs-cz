@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: d09c344e-3548-4944-a3ed-051880e3f5b8
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7ad505356c883969ddd044d89b5a33f5a2428f86
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dea534ef48b1b37d2f603e9c02d015ab1abe9dac
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="return-the-set-intersection-of-two-sequences"></a>Vrátí sadu průnik dvou sekvencí
 Použití <xref:System.Linq.Queryable.Intersect%2A> operátor vrátit sadu průnik dvou sekvencí.  

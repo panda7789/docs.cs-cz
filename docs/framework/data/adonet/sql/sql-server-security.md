@@ -1,5 +1,5 @@
 ---
-title: "Zabezpečení SQL serveru"
+title: SQL Server Security
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -10,17 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9053724d-a1fb-4f0f-b9dc-7f6dd893e8ff
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4b8eafeedd03097488b1493b5654db360eab94fb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abb7c9322a9b7ddfd3e0add4d8b9be6941c5e240
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="sql-server-security"></a>Zabezpečení SQL serveru
+# <a name="sql-server-security"></a>SQL Server Security
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]má řadu funkcí, které podporují vytváření aplikace zabezpečené databáze.  
   
  Společné aspekty zabezpečení, jako je krádež dat nebo vandalismu, platí bez ohledu na verzi [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] používáte. Integritu dat by měly být považovány porušení zabezpečení. Pokud data nejsou chráněna, je možné, že by se mohly stát nemá, pokud je povoleno manipulaci s daty ad hoc a data jsou nechtěně nebo neoprávněnému změnit nesprávné hodnoty nebo odstraní celý. Navíc často existují právní požadavky, které, musí být použito, jako je například správné úložiště důvěrné informace. Ukládání některé druhy osobních údajů je proscribed zcela, v závislosti na právního, které se vztahují v konkrétní příslušnosti.  

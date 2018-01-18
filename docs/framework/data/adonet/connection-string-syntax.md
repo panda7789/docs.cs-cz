@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
 caps.latest.revision: "11"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3be73589897bf4ffeb3d80a82bf2b560e814a4a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9c7edc59ecb71c4b201b77c993fc839f5700abe3
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="connection-string-syntax"></a>Syntaxi připojovacího řetězce
 Má každý zprostředkovatel dat .NET Framework `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxi konkrétní připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. Následující tabulka uvádí zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  
@@ -70,7 +70,7 @@ Má každý zprostředkovatel dat .NET Framework `Connection` objekt, který dě
     database=AdventureWorks;server=(local)"  
 ```  
   
-### <a name="sql-server-logins"></a>Přihlášení serveru SQL  
+### <a name="sql-server-logins"></a>SQL Server Logins  
  Ověřování systému Windows je upřednostňovaný pro připojení k systému SQL Server. Ale pokud je požadováno ověřování serveru SQL, použijte následující syntaxi a zadat uživatelské jméno a heslo. V tomto příkladu hvězdičky slouží k reprezentaci platné uživatelské jméno a heslo.  
   
 ```  

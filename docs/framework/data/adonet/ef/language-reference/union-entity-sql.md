@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: df98a4db-b00d-4c8b-bd74-0d285f27e1df
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5e8b3c28fa7b320b1bbf0f3d7621a587812a6e89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 067c3fedb1e03741158209751de9a13a00c23c35
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="union-entity-sql"></a>SJEDNOCENÍ (entita SQL)
 Kombinuje výsledky dvou nebo více dotazů do jedné kolekce.  
@@ -38,7 +38,7 @@ expression
  UNION  
  Určuje, že více kolekcí jsou kombinaci a vrátí jako jedinou kolekci.  
   
- VŠECHNY  
+ ALL  
  Určuje, že více kolekcí jsou kombinaci a vrátí jako jedinou kolekci, včetně duplicitní položky. Pokud není zadaný, duplicitní položky se odeberou z kolekce výsledek.  
   
 ## <a name="return-value"></a>Návratová hodnota  

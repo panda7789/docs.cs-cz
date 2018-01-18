@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 6e3fb8b5-373b-4f9e-ab03-a22693df8e91
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0227da6029f1c565f44c46a08d786149d6da5086
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f250f74303fb3f2835781318e655b435e748153
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="generating-commands-with-commandbuilders"></a>Generování příkazů s CommandBuilders
 Když `SelectCommand` dynamicky zadána vlastnost za běhu, například pomocí nástroje dotazu, který přebírá textový příkaz od uživatele, nemusí být možné zadat příslušné `InsertCommand`, `UpdateCommand`, nebo `DeleteCommand` v době návrhu. Pokud vaše <xref:System.Data.DataTable> mapuje nebo se vygeneruje z jedné tabulky databáze, můžete využít výhod <xref:System.Data.Common.DbCommandBuilder> objekt, který má automaticky generovat `DeleteCommand`, `InsertCommand`, a `UpdateCommand` z <xref:System.Data.Common.DbDataAdapter>.  

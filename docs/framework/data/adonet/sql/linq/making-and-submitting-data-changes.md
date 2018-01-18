@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d68c2dc3-99b3-49ab-b547-2ca5b386429a
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d2b121bdadcc231d2ea3a2c1d2ebdab40306c5ea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d4f1a2a3f64302e1ef65bb341d56832a5fd93e82
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="making-and-submitting-data-changes"></a>Vytvoření a odeslání změn dat
 Témata v této části popisují postup vytvoření a přenést změny v databázi a způsobu řešení konfliktů optimistickou metodu souběžného.  

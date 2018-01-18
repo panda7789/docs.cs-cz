@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 92f2aa2aea721c424ba59af913b868907be36317
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f7eb1a8afe87caece18432c66a8d8a268ce9fbd2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, objekt je ve `Unchanged` stavu. Nový objekt, který sami vytvoříte nezná <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které zná [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou v `Deleted` stavu a nelze jej použít v tom, že <xref:System.Data.Linq.DataContext> instance.)  

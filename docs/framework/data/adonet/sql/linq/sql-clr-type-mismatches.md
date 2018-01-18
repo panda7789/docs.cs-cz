@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 20031092f5109fef1bf7167eccab949e2e7c5b39
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a027bd898409708dd6800908a6736f5853058df
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sql-clr-type-mismatches"></a>Neshody typu SQL CLR
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]umožňuje automatizovat většinu překlad mezi objektový model a SQL Server. Nicméně některých situacích zabránit přesný překlad. Tyto klíče neshody mezi běžné typy language runtime (CLR) a typy databáze systému SQL Server jsou shrnuty v následující části. Můžete najít další podrobnosti o konkrétní typ mapování a funkce překladu v [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) a [datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md).  
@@ -44,7 +44,7 @@ Select DateOfBirth From Customer Where CustomerId = @id
   
     -   **Logická hodnota**. Tyto typy lze mapovat na bit nebo větší číselnou nebo řetězec. Literál lze mapovat na výraz, který se vyhodnotí na stejnou hodnotu (například `1=1` v SQL pro `True` ve CLS).  
   
-    -   **Časový interval**. Tento typ reprezentuje rozdíl mezi dvěma `DateTime` hodnoty a nemusí odpovídat `timestamp` systému SQL Server. Modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> také mapovat k systému SQL Server `TIME` typu v některých případech. SQL Server `TIME` typu byla určena pouze kladné hodnoty představují méně než 24 hodin. Modul CLR <xref:System.TimeSpan> má mnohem větší rozsah.  
+    -   **TimeSpan**. Tento typ reprezentuje rozdíl mezi dvěma `DateTime` hodnoty a nemusí odpovídat `timestamp` systému SQL Server. Modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> také mapovat k systému SQL Server `TIME` typu v některých případech. SQL Server `TIME` typu byla určena pouze kladné hodnoty představují méně než 24 hodin. Modul CLR <xref:System.TimeSpan> má mnohem větší rozsah.  
   
     > [!NOTE]
     >  Specifické pro službu SQL Server [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] typy v <xref:System.Data.SqlTypes> nejsou součástí Toto porovnání.  

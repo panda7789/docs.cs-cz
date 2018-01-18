@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 40494916-c25a-4cb8-8f7c-fcb8d378464e
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 43fb2d8e42aeae5340874ab082f33257b197eac3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 035d619574707ec7944c80b95d5b7a6ea0de1899
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="executing-a-command"></a>Spouštění příkazu
 Zprostředkovatel dat .NET Framework, jednotlivých součástí rozhraní .NET Framework má svou vlastní objekt příkazu, který dědí z <xref:System.Data.Common.DbCommand>. Zahrnuje zprostředkovatel dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro ODBC <xref:System.Data.Odbc.OdbcCommand> objektu a rozhraní .NET Framework Zprostředkovatel dat pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleCommand> objektu. Každá z těchto metod zpřístupňuje objekty pro provádění příkazů na základě typu příkazu a potřeby návratovou hodnotu, jak je popsáno v následující tabulce.  
@@ -35,7 +35,7 @@ Zprostředkovatel dat .NET Framework, jednotlivých součástí rozhraní .NET F
   
  Každý objekt silného typu příkazu podporuje také <xref:System.Data.CommandType> výčet, který určuje, jak se interpretují příkazového řetězce, jak je popsáno v následující tabulce.  
   
-|Typ příkazu CommandType|Popis|  
+|CommandType|Popis|  
 |-----------------|-----------------|  
 |`Text`|Příkaz SQL definování příkazy ve zdroji dat spouštění.|  
 |`StoredProcedure`|Název uložené procedury. Můžete použít `Parameters` vlastnost příkaz, který má přístup k vstupní a výstupní parametry a návratové hodnoty, bez ohledu na to, které `Execute` metoda je volána. Při použití `ExecuteReader`, návratové hodnoty a výstupní parametry nebudou přístupné, dokud `DataReader` je uzavřený.|  

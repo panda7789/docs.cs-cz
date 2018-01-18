@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
 caps.latest.revision: "9"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7808f2e60902eeb2fce0ac53010e329e4252a24e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6c8027e3cbf7bcef3bbe36ba381a08b650516bc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Vytváření aplikací rolí v systému SQL Server
 Role aplikace poskytují způsob, jak přiřadit oprávnění k aplikaci místo databázové role nebo uživatele. Uživatele můžete připojit k databázi, aktivujte roli aplikace a předpokládá oprávnění udělená aplikaci. Oprávnění udělená role aplikace jsou platné po dobu trvání připojení.  

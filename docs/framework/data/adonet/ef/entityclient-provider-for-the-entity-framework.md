@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8c5db787-78e6-4a34-8dc1-188bca0aca5e
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1adaa5b116c579a6d74a950efbe3fc8c428c0ee3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eaccace7a333903e236107a72dbc17e19dc8d48a
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient rozhraní Entity Framework
 Zprostředkovatel EntityClient je zprostředkovatele dat používaných aplikacemi Entity Framework pro přístup k datům, které jsou popsané v konceptuálním modelu. Informace o konceptuálních modelech najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md). Zprostředkovatel EntityClient používá pro přístup ke zdroji dat jiných poskytovatelů dat rozhraní .NET Framework. Například EntityClient používá zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) při přístupu k databázi systému SQL Server. Informace o poskytovateli SqlClient najdete v tématu [SqlClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementována ve <xref:System.Data.EntityClient> oboru názvů.  

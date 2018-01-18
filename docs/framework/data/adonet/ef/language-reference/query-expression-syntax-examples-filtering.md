@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: c27cb89c-1c1d-4988-9f38-950eda3cb275
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a523ca74ff7d26d1e2b8a3fc7a1f0d56873ffadd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6914fea5c1901cefd18a195d40e9166576b7bedf
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="query-expression-syntax-examples-filtering"></a>Příklady syntaxe výrazu dotazu: filtrování
 V příkladech v tomto tématu ukazují, jak používat `Where` a `Where…Contains` metody k dotazování [Model prodeje společnosti AdventureWorks](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe výrazu dotazu. Všimněte si, kam...`Contains` nelze použít jako součást [zkompilován dotaz](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 9781d97a133a39a7768c853ce80f7524db87df39
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d55185153e3d03ddb2b1726ed25566d6b5f396ae
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy, musíte použít dva (nebo více) programovacích jazyků: vysoké úrovně jazyk pro obchodní logiky a prezentační vrstvy (například [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] nebo [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]) a dotazovacího jazyka pro interakci s databází (například [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). To vyžaduje vývojáři být znalosti v několika jazycích účinný a také způsobí, že jazyk neshody ve vývojovém prostředí. Například aplikace, která používá přístup k datům rozhraní API při spuštění dotazu oproti databázi Určuje dotaz jako řetězcový literál pomocí uvozovek. Tento řetězec dotazu je zrušení čitelná kompilátoru a není zaškrtnuto políčko pro chyby, jako je například Neplatná syntaxe nebo jestli skutečně existuje sloupců a řádků, které odkazuje. Neexistuje žádný typ kontroly parametry dotazu ale žádné `IntelliSense` buď podporují.  

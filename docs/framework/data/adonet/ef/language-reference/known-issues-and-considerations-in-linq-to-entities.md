@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b4517f34f3c7753b2aa0ee0ba576765f0d7cf83e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dd45bc4f2229237c50e9bfda36e5fb18512f9ef0
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Známé problémy a aspekty v technologii LINQ to Entities
 Tato část obsahuje informace o známých problémech s [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  

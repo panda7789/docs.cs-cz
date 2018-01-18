@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ae0b5aeb658b67434cea187839833e24007ee77e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c95a84bafcb32861e299135feb0b89b931d11165
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET a technologie LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je součástí [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] rodiny technologií. Je založena na služeb poskytovaných [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] zprostředkovatele modelu. Proto je možné kombinovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kód s existujícím [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] aplikace a migrovat aktuální [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řešení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Následující obrázek poskytuje podrobný pohled relace.  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 27afce86-9b1d-45fb-8e0b-636bf671a236
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 37f96338868183e8bf0397d9c0d09719fa3f7049
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb6f8683ce49c8115b6dce477d0e61369d7abeef
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="creating-the-object-model"></a>Vytváření objektový Model
 Můžete vytvořit objektový model z existující databáze a použít model ve svém výchozím stavu. Můžete také upravit mnoho aspektů modelu a její chování.  

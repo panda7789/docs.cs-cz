@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0bb04c18-4a14-42a4-baa9-a63d556c9f49
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a9907876c92a815df7b1a3b449076823465745de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 95e1ac617015f494f3ff6d555217c3ab95ce6570
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-framework-resources"></a>Prostředky Entity Framework
 Následující externí zdroje obsahují informace a podpora pro vytváření aplikací rozhraní Entity Framework.  
@@ -26,7 +26,7 @@ Následující externí zdroje obsahují informace a podpora pro vytváření ap
  [Středisko pro vývojáře dat](http://go.microsoft.com/fwlink/?LinkId=213876)  
  Centrální umístění pro vývoj dat s technologiemi společnosti Microsoft.  
   
- [Blog týmu ADO.NET](http://go.microsoft.com/fwlink/?LinkId=91905)  
+ [ADO.NET Team Blog](http://go.microsoft.com/fwlink/?LinkId=91905)  
  Blog obsahující aktualizace a diskuzi o ADO.NET a funkcí.  
   
  [Blog návrhu Entity Framework](http://go.microsoft.com/fwlink/?LinkId=186888)  

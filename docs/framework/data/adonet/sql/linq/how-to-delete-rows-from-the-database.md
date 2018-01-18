@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 2144c99b-8055-4080-a5c6-1ea14335e2a3
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ac81e4e18c578f11a5c6f36203e15b5363c54e71
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0af9bc56ca3a3dd3128c9f052674343c592fdd8
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-delete-rows-from-the-database"></a>Postupy: odstranění řádků z databáze
 Odstraněním řádků v databázi odebráním odpovídající [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty z kolekce jejich související tabulky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]přeloží všechny změny příslušné SQL `DELETE` příkazy.  

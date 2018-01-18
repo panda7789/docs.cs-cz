@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d588ad393d6077d5b6e5279a1212f69da9a7d64c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5d52fd3326448c428dac16c210321889f83ea23
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrátí nebo přeskočit elementy v pořadí
 Použití <xref:System.Linq.Queryable.Take%2A> operátor a vrátí zadaný počet elementů v pořadí a pak přeskočit zbytek.  

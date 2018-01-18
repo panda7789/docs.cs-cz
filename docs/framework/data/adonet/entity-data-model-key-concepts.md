@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c635a16d-6674-45aa-9344-dcb7df992bab
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c97d98415e1b303c5849f15c4a7bfcca6fd285a4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f75a4fc0e529b602aca91aa3cfd2dff35e4fe640
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-data-model-key-concepts"></a>Entity Data Model klíčové koncepty
 Entity Data Model (EDM) používá tři klíčové koncepty k popisu struktury dat: *typ entity*, *typ přidružení*, a *vlastnost*. Jedná se o nejdůležitějších konceptů v popisující strukturu dat v jakékoli použití EDM.  

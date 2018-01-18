@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1988b79c-3bfc-4c5c-a08a-86cf638bbe17
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ee1016a6dc20e58bfafc434617a36f8f8703a3bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 942313f87f19345b3656ec241e4c673d3f12601d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-resolve-conflicts-by-merging-with-database-values"></a>Postupy: řešení konfliktů sloučením s hodnotami databáze
 Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních databáze, než se pokusíte odeslat znovu provedené změny, můžete použít <xref:System.Data.Linq.RefreshMode.KeepChanges> sloučit hodnot v databázi s aktuální hodnoty členů klienta. Další informace najdete v tématu [optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
@@ -35,7 +35,7 @@ Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních dat
 ||Správce|Pomocník pro|Oddělení|  
 |------|-------------|---------------|----------------|  
 |Při dotazu uživatel1 a uživatel2 původního stavu databáze.|Alfreds|Marie|Prodeje|  
-|Uživatel1 připraví odešle tyto změny.|Alfred||Marketingové|  
+|Uživatel1 připraví odešle tyto změny.|Alfred||Marketing|  
 |Uživatel2 již odeslána tyto změny.||Marie|Služba|  
   
  Uživatel1 rozhodne na tento konflikt vyřešte sloučením hodnot v databázi s aktuální hodnoty členů klienta. Výsledkem bude, že databáze, které hodnoty budou přepsána jenom v případě, že aktuální změn také změnil tuto hodnotu.  
@@ -44,7 +44,7 @@ Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních dat
   
 ||Správce|Pomocník pro|Oddělení|  
 |------|-------------|---------------|----------------|  
-|Nový stav po řešení konfliktů.|Alfred<br /><br /> (z uživatel1)|Marie<br /><br /> (z uživatel2)|Marketingové<br /><br /> (z uživatel1)|  
+|Nový stav po řešení konfliktů.|Alfred<br /><br /> (z uživatel1)|Marie<br /><br /> (z uživatel2)|Marketing<br /><br /> (z uživatel1)|  
   
  Následující příklad ukazuje způsob sloučení hodnot v databázi s aktuální hodnoty členů klienta (Pokud klient změnil tuto hodnotu). Dojde k žádné kontroly nebo vlastní zpracování konfliktů jednotlivými členy.  
   

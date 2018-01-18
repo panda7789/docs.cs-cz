@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2ac06c78670b4113ab718c06423c04c0ea27c208
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4f199a0fc0939bd5fae4fefb7440c46bd471e4b6
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-schema-collections"></a>Kolekce schématu Oracle
 Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následující kolekce konkrétní schématu kromě běžných kolekcemi schémat:  
@@ -166,8 +166,8 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |----------------|--------------|-----------------|  
 |SEQUENCE_OWNER|String|Název majitele pořadí.|  
 |SEQUENCE_NAME|String|Název pořadí.|  
-|MIN_VALUE –|Desetinné číslo|Minimální hodnota pořadí.|  
-|MAX_VALUE –|Desetinné číslo|Maximální hodnota pořadí.|  
+|MIN_VALUE|Desetinné číslo|Minimální hodnota pořadí.|  
+|MAX_VALUE|Desetinné číslo|Maximální hodnota pořadí.|  
 |INCREMENT_BY|Desetinné číslo|Hodnota, podle kterého se zvýší pořadí.|  
 |CYCLE_FLAG|String|Pořadí wrap kolem v dosažení limitu.|  
 |ORDER_FLAG|String|Generují pořadová čísla v pořadí.|  
@@ -209,7 +209,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |TEXT_LENGTH|Desetinné číslo|Délka textu zobrazení.|  
 |TEXT|String|Text ze zobrazení.|  
 |TYPE_TEXT_LENGTH|Desetinné číslo|Délka klauzuli typ typu zobrazení.|  
-|TYP|String|Typ klauzule typu zobrazení.|  
+|TYPE_TEXT|String|Typ klauzule typu zobrazení.|  
 |OID_TEXT_LENGTH|Desetinné číslo|Délka klauzuli OID s typem zobrazení.|  
 |OID_TEXT|String|S klauzulí OID typu zobrazení.|  
 |VIEW_TYPE_OWNER|String|Vlastník na typu zobrazení, pokud je zobrazení aktuálního zobrazení.|  
@@ -301,7 +301,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |DEFERRABLE|String|Zda je deferrable omezení.|  
 |OVĚŘIT|String|Jestli všechna data dodržuje omezení (ověřit nebo nebyl OVĚŘEN.).|  
 |GENERUJE|String|Jestli název omezení je uživatel nebo vygenerované systémem.|  
-|ŠPATNÉ|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
+|BAD|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
 |VYUŽÍVAJÍ|String|Toho, jestli povolené omezení vynucené nebo nevynucené.|  
 |LAST_CHANGE|DateTime|Pokud bylo povoleno nebo zakázáno omezení poslední|  
 |INDEX_OWNER|String|Jméno uživatele, který je vlastníkem index|  
@@ -322,7 +322,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |DEFERRABLE|String|Zda je deferrable omezení.|  
 |OVĚŘIT|String|Jestli všechna data dodržuje omezení (ověřit nebo nebyl OVĚŘEN.).|  
 |GENERUJE|String|Jestli název omezení je uživatel nebo vygenerované systémem.|  
-|ŠPATNÉ|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
+|BAD|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
 |VYUŽÍVAJÍ|String|Toho, jestli povolené omezení vynucené nebo nevynucené.|  
 |LAST_CHANGE|DateTime|Pokud bylo omezení poslední povoleno nebo zakázáno.|  
 |INDEX_OWNER|String|Jméno uživatele, který vlastní index.|  
@@ -380,7 +380,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |DATA_LENGTH|Desetinné číslo|Délka sloupce (v bajtech).|  
 |DATA_PRECISION|Desetinné číslo|Délka v číslice desítkové soustavy (NUMBER) nebo binární číslic (FLOAT).|  
 |DATA_SCALE|Desetinné číslo|Číslic vpravo od desetinné čárky v číslo.|  
-|ZÁKLAD –|Desetinné číslo|Základ – argument pro číslo.|  
+|RADIX|Desetinné číslo|Základ – argument pro číslo.|  
 |CHARACTER_SET_NAME|String|Znaková sada název pro argument.|  
 |TYPE_OWNER|String|Vlastník typ argumentu.|  
 |TYPE_NAME|String|Název typu argumentu. Pokud je typ místního typu balíčku (to znamená, že je deklarovaná ve specifikaci balíčku), pak v tomto sloupci se zobrazuje název balíčku.|  

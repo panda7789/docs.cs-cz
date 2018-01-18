@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0cd77b63c54b926c21641024c7688476cef2fdcf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4cc1ac0446f13bcc6bc1c8262eae5716302c3e2d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="optimistic-concurrency"></a>Optimistickou metodu souběžného zpracování
 V prostředí, jsou dva modely pro aktualizace dat v databázi: optimistickou metodu souběžného a pesimistické souběžnosti. <xref:System.Data.DataSet> Objekt je navržen pro podporu použití optimistickou metodu souběžného pro dlouho běžící aktivity, jako je vzdálené komunikace dat a práce s daty.  
@@ -48,7 +48,7 @@ V prostředí, jsou dva modely pro aktualizace dat v databázi: optimistickou me
 |Název sloupce|Původní hodnotu|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Příjmení|Smith|Smith|Smith|  
+|LastName|Smith|Smith|Smith|  
 |FirstName|Bob|Bob|Bob|  
   
  V 13:01:00 uživatel2 přečte na stejném řádku.  
@@ -58,7 +58,7 @@ V prostředí, jsou dva modely pro aktualizace dat v databázi: optimistickou me
 |Název sloupce|Původní hodnotu|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Příjmení|Smith|Smith|Smith|  
+|LastName|Smith|Smith|Smith|  
 |FirstName|Bob|Robert|Bob|  
   
  Aktualizace úspěšná, protože původní hodnoty, které má uživatel2 shodují s hodnotami v databázi v době aktualizace.  
@@ -68,7 +68,7 @@ V prostředí, jsou dva modely pro aktualizace dat v databázi: optimistickou me
 |Název sloupce|Původní hodnotu|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Příjmení|Smith|Smith|Smith|  
+|LastName|Smith|Smith|Smith|  
 |FirstName|Bob|James|Robert|  
   
  V tomto okamžiku uživatel1 zaznamená porušení optimistickou metodu souběžného, protože hodnota v databázi ("Robert") už odpovídá původní hodnotu Uživatel1 byl očekáván ("Bob"). Porušení souběžnosti jednoduše umožňuje vědět, že aktualizace se nezdařila. Teď rozhodnutí musí být zda přepsat změny poskytl uživatel2 se změnami poskytl uživatel1, nebo zrušit změny provedené User1.  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e4ef6edfc56fe73cd509d466fcc26cdb24069c9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4321c5fd3f173b209d99e096ec0ebf8788437c3d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="order-by-entity-sql"></a>Řadit podle (entita SQL)
 Určuje pořadí řazení použít u objektů, vrátí se v příkazu SELECT.  
@@ -52,7 +52,7 @@ Určuje pořadí řazení použít u objektů, vrátí se v příkazu SELECT.
  LIMIT`n`  
  Pouze první `n` budou vybrány položky.  
   
- PŘESKOČIT`n`  
+ SKIP `n`  
  Přeskočí první `n` položky.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -94,9 +94,9 @@ ORDER BY ...
   
 -   ÚPLNÁ  
   
--   KLÍČ  
+-   KEY  
   
--   VLEVO  
+-   LEFT  
   
 -   POŘADÍ  
   

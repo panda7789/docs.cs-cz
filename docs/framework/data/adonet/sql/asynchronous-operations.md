@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e7d32c3c-bf78-4bfc-a357-c9e82e4a4b3c
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6f631d785698ae59370053c4e35307514c44087c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 293f1ff1fad193c019a42372a30ae6466c074515
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="asynchronous-operations"></a>Asynchronní operace
 Některé operace databáze, například spuštění příkazu může trvat déle k dokončení. V takovém případě musíte aplikace blokovat dalších operací a počkejte na dokončení, než bude moci pokračovat své vlastní operace příkazu. Naproti tomu bude možné přiřadit operaci dlouho běžící vlákna na pozadí umožňuje vlákno popředí zůstala aktivní v průběhu operace. V aplikaci pro Windows například delegování dlouho běžící operace vlákna na pozadí umožňuje uživatelské rozhraní vlákno zůstat přizpůsobivý při provádí operaci.  

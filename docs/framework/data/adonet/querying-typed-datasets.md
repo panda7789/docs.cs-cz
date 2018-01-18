@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: ad712fa1-2baf-462a-b163-574cce6d376a
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c232ca2888c957bea33d06c84a62b00fdc7fd80c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fff678a54416e72f4be8c3fdfdcacec5a7d90af7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="querying-typed-datasets"></a>Dotazování typové datové sady
 Pokud schéma <xref:System.Data.DataSet> je známý v době návrhu aplikace, doporučujeme použít typem <xref:System.Data.DataSet> při použití [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Představuje zadaný <xref:System.Data.DataSet> je třída, která je odvozena z <xref:System.Data.DataSet>. Jako takový dědí všechny metody, události a vlastnosti <xref:System.Data.DataSet>. Kromě toho typové <xref:System.Data.DataSet> poskytuje silného typu metody, události a vlastnosti. To znamená, že máte přístup tabulky a sloupce, podle názvu, namísto použití metody založené na kolekcích. Díky tomu dotazy jednodušší a srozumitelnější. Další informace najdete v tématu [typové datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  

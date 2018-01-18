@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 18aff4d8-bde8-461b-9960-ccabb24e9d22
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f7b9adc9d8bde80a3e888ce873a611f01f69fd9d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 780ac9087a235cee1539dfcb591d99542c68efbb
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-retrieve-many-objects-at-once"></a>Postupy: načtení mnoho objektů najednou
 Mnoho objektů v jednom dotazu můžete načíst pomocí <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  

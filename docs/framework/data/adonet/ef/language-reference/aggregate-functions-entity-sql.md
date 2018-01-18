@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: acfd3149-f519-4c6e-8fe1-b21d243a0e58
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a7c5675645591ff467d983155e61fb21615a6171
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e1ed9a7532269a149f6f522e8fe9c6161e1aae27
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="aggregate-functions-entity-sql"></a>Agregační funkce (entita SQL)
 Agregace je jazyk konstruktor, který zestruční jako součást skupiny operace kolekci do skalární hodnota. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]agregace má ve dvou formách:  

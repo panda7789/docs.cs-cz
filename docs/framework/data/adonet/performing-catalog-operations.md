@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: e60f542f-6271-495b-a9e4-48553481c2a3
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 841f4e126a475799e7cc66f6f7afbcc9318a1096
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5ac8d5522b599eb1d426314eda1d7d9e406da90
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="performing-catalog-operations"></a>Provádění operací katalogu
 K provedení příkazu k úpravě databáze nebo katalogu, jako je například příkaz CREATE TABLE nebo CREATE PROCEDURE vytvořit **příkaz** pomocí příslušné příkazy SQL a **připojení** objektu. Spusťte příkaz se **ExecuteNonQuery** metodu **příkaz** objektu.  

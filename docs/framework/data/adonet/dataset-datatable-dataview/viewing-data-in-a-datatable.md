@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ab7a60b4195f3d8976a61e3909682b3748e30341
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2576c95ad7739d28e2ca822fd13fb6f176900814
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="viewing-data-in-a-datatable"></a>Zobrazení dat v DataTable
 Můžete přistupovat k obsahu <xref:System.Data.DataTable> pomocí **řádky** a **sloupce** kolekce **DataTable**. Můžete také <xref:System.Data.DataTable.Select%2A> metoda vrátí podmnožiny dat v **DataTable** podle kritérií, včetně kritéria hledání, pořadí řazení a řádku stavu. Kromě toho můžete použít <xref:System.Data.DataRowCollection.Find%2A> metodu **kolekci DataRowCollection** při hledání konkrétního řádku pomocí hodnotu primárního klíče.  
@@ -42,7 +42,7 @@ Můžete přistupovat k obsahu <xref:System.Data.DataTable> pomocí **řádky** 
 |**Přidat**|Nový řádek.|  
 |**None**|Žádné|  
 |**OriginalRows**|Původní řádky, včetně beze změny a odstranit řádky.|  
-|**Beze změny**|Beze změny řádků.|  
+|**Unchanged**|Beze změny řádků.|  
   
  V následujícím příkladu **datovou sadu** objektu je filtrované tak, že pouze pracujete s řádky jehož **DataViewRowState** je nastaven na **CurrentRows**.  
   

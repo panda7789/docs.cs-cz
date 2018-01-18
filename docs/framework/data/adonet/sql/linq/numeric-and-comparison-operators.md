@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 25b4a26a-06f2-4f80-87a9-76705ed46197
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0b89555bc71d95291c096d2e694c315720cfb41c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 56558e790b8aee300da0a75ade7c0ac451a0eca1
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="numeric-and-comparison-operators"></a>Číselné a relační operátory
 Porovnání a aritmetické operátory fungovat podle očekávání v common language runtime (CLR) s výjimkou následujícím způsobem:  
@@ -44,7 +44,7 @@ Porovnání a aritmetické operátory fungovat podle očekávání v common lang
   
     -   Dělení celého čísla v jazyce Visual Basic (`\`)  
   
-    -   `%`(Visual Basic `Mod`)  
+    -   `%` (Visual Basic `Mod`)  
   
     -   `<<`  
   
@@ -58,7 +58,7 @@ Porovnání a aritmetické operátory fungovat podle očekávání v common lang
   
     -   Visual Basic `<>` a C#`!=`  
   
-    -   Visual Basic`Is/IsNot`  
+    -   Visual Basic `Is/IsNot`  
   
     -   `<`  
   

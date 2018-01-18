@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 2b224a84-bad5-4843-adcc-14e784d280f5
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 844b9cc43755041ebccae63f477b4f1b21bd69c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3f3196b07c84ac5c63d883eef35d29b450c3b285
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="eliminate-duplicate-elements-from-a-sequence"></a>Odstranit elementy s duplicitním z řady
 Použití <xref:System.Linq.Queryable.Distinct%2A> operátor eliminovat elementy s duplicitním z řady.  

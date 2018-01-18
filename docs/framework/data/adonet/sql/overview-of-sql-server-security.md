@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ae66dd75-5c16-4cc0-9e12-774dd26d3fb9
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ff0a78a852bdbf2fa1eb075273cad317c21fb182
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a8f44b69f177584bb3680f68c50ff054c6b805ed
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="overview-of-sql-server-security"></a>Přehled zabezpečení SQL serveru
 Strategie obrany zabezpečení s překrývajícími se úrovní zabezpečení, je nejlepší způsob, jak čítač bezpečnostní hrozby. SQL Server poskytuje zabezpečení architekturu, která je navržena k umožnění správce databáze a vývojářům vytvářet aplikace zabezpečené databáze a čítač hrozeb. Každá verze nástroje SQL Server je vylepšený v dřívějších verzích systému SQL Server se zavedením nové funkce a funkce. V poli se však nedodává zabezpečení. Každá aplikace je jedinečné požadavky zabezpečení. Vývojáři muset vědět, která kombinace funkce a funkce jsou nejvhodnější pro čítače známé hrozby a předvídat hrozeb, které může způsobit v budoucnu.  

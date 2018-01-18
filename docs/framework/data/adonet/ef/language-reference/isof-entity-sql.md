@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5b2b0d34-d0a7-4bcd-baf2-58aa8456d00b
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3e3f58608f6ef872f0000bc2d887cfd548589e17
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 24abe7be9acb01b81f4d2a76d74c2f75bdb7786f
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="isof-entity-sql"></a>ISOF (entita SQL)
 Určuje, zda typ výrazu je zadaného typu nebo jeden z jeho podtypech.  
@@ -55,7 +55,7 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
 |Null není pro (EntityType)|Vyvolá|  
 |NULL je z (ComplexType)|Vyvolá|  
 |NULL je z (RowType)|Vyvolá|  
-|ZPRACOVÁVAT (null AS EntityType) je pro (EntityType)|Vrátí DBNull|  
+|ZPRACOVÁVAT (null AS EntityType) je pro (EntityType)|Returns DBNull|  
 |ZPRACOVÁVAT (null AS ComplexType) je z (ComplexType)|Vyvolá|  
 |ZPRACOVÁVAT (null AS RowType) je z (RowType)|Vyvolá|  
 |JE typ entity (typu ENTITYTYPE)|Vrátí hodnotu true nebo false|  

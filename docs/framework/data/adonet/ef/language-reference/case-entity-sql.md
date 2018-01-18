@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: df86e69684a111effc29a2663d18310b276f4b83
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9afc5e3bbf8e6fe732aca9e65c8ba5bd5f620c85
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="case-entity-sql"></a>PŘÍPAD (entita SQL)
 Vyhodnotí sadu `Boolean` výrazy k určení výsledku.  
@@ -42,7 +42,7 @@ END
  POTOM`result_expression`  
  Výraz dochází při `Boolean_expression` vyhodnocuje `true`. `result expression`je jakýkoli platný výraz.  
   
- ELSE`else_result_expression`  
+ ELSE `else_result_expression`  
  Je výraz vrácena, pokud žádná operace porovnání vyhodnocen `true`. Pokud je tento argument vynechán a žádná operace porovnání se vyhodnocuje `true`, případě vrátí hodnotu null. `else_result_expression`je jakýkoli platný výraz. Datové typy `else_result_expression` a jakýkoli `result_expression` musí být stejné nebo musí být implicitní převod.  
   
  KDY`Boolean_expression`  

@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 2e6642c9-bfc6-425c-b3a7-e4912ffa6c1f
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a56cae8b8e300b22a07184cdb69f2c876b101f72
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c37c33f5deda2d16e24fab77f394d97749ae63e
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="row-states-and-row-versions"></a>Stavy řádků a verze řádku
 ADO.NET spravuje řádků v tabulkách pomocí stavy řádků a verze. Stav řádek označuje stav řádku. verze řádku udržovat hodnotami uloženými v řádku, jako je upravená, včetně aktuální a původní, výchozí hodnoty. Například po provedení změny na sloupec v řádku, řádku bude mít řádek stavu `Modified`, a dvě verze řádku: `Current`, která obsahuje aktuální hodnoty řádků a `Original`, obsahující hodnoty řádků před sloupci upravit.  

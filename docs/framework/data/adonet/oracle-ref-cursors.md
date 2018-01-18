@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c6b25b8b-0bdd-41b2-9c7c-661f070c2247
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 27351c1d47d4ad40940e5b64f257e6a59fc7403a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f01ace7bc7dfe1191dac8990210032b60e16f255
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-ref-cursors"></a>Kurzory REF Oracle
 Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF kurzor** datového typu. Při použití zprostředkovatele dat pro práci s kurzory REF Oracle, měli byste zvážit následující chování.  

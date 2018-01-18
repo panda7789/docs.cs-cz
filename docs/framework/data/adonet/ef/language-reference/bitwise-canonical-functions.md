@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 993868ca-16e3-47b6-9915-c29cd63b0a21
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a4311b610859b36f1587e5e3f85e2a5f06503e1d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d703b2467d508324f3eb39b822c239484ac1c6e
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="bitwise-canonical-functions"></a>Bitový kanonické funkce
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]zahrnuje bitové kanonické funkce.  

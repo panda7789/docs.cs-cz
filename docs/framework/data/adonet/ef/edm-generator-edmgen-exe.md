@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ee356fc3e7d6e1279e0cba8014d6d285620add3b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aea41a58697acaad0b089f8e35b9f870e8bf841d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="edm-generator-edmgenexe"></a>Generátor EDM (EdmGen.exe)
 EdmGen.exe je nástroj příkazového řádku používané pro práci s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] modelu a mapování souborů. Nástroj EdmGen.exe můžete provést následující akce:  
@@ -57,16 +57,16 @@ EdmGen /mode:choice [options]
 |`/p[roject]:`\<řetězec >|Určuje název projektu se má použít. Název projektu se používá jako výchozí pro obor názvů, název modelu a mapování souborů, názvu souboru zdrojového objektu a název souboru zdroje generování zobrazení nastavení. Název kontejneru entit nastaven na \<Projekt > kontextu.|  
 |`/prov[ider]:`\<řetězec >|Název [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat, který se má použít pro generování souboru modelu (ssdl) úložiště. Výchozí zprostředkovatel je [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|  
 |`/c[onnectionstring]:`\<připojovací řetězec >|Určuje řetězec, který se používá k připojení ke zdroji dat.|  
-|`/incsdl:`\<Soubor >|Určuje .csdl soubor nebo adresář, kde jsou umístěny soubory .csdl. Tento argument může být zadána vícekrát, ve kterém můžete zadat několik adresářů a souborů .csdl. Zadání několik adresářů, může být užitečná pro generování tříd (`/mode:EntityClassGeneration`) a zobrazení (`/mode:ViewGeneration`) Pokud je konceptuální model rozdělit do několika souborů. To může být také užitečné, pokud chcete ověřit více modelů (`/mode:ValidateArtifacts`).|  
-|`/refcsdl:`\<Soubor >|Určuje další .csdl soubor nebo soubory používané se vyřešit všechny odkazy na ve zdrojovém .csdl souboru. (Zdrojový soubor .csdl je soubor určený touto `/incsdl` možnost). `/refcsdl` Soubor obsahuje typy, které je závislá na zdrojový soubor .csdl. Tento argument může být zadána vícekrát.|  
-|`/inmsl:`\<Soubor >|Určuje .msl soubor nebo adresář, kde jsou umístěny soubory .msl. Tento argument může být zadána vícekrát, ve kterém můžete zadat několik adresáře nebo .msl soubory. Určení několik adresářů, může být užitečná pro generování zobrazení (`/mode:ViewGeneration`) Pokud je konceptuální model rozdělit do několika souborů. To může být také užitečné, pokud chcete ověřit více modelů (`/mode:ValidateArtifacts`).|  
-|`/inssdl:`\<Soubor >|Určuje .ssdl soubor nebo adresář, kde je umístěn soubor ssdl. Tento argument může být zadána vícekrát, ve kterém můžete zadat několik adresářů a souborů ssdl. To může být užitečné, pokud chcete ověřit více modelů `(/mode:ValidateArtifacts)`.|  
-|`/outcsdl:`\<Soubor >|Určuje název souboru .csdl, který bude vytvořen.|  
-|`/outmsl:`\<Soubor >|Určuje název souboru .msl, který bude vytvořen.|  
-|`/outssdl:`\<Soubor >|Určuje název souboru ssdl, který bude vytvořen.|  
-|`/outobjectlayer:`\<Soubor >|Určuje název souboru zdrojového kódu, který obsahuje objekty generované ze souboru .csdl.|  
-|`/outviews:`\<Soubor >|Určuje název souboru zdrojového kódu, který obsahuje zobrazení, které byly vygenerovány.|  
-|`/language:`[VB &#124; CSharp]|Určuje jazyk pro soubory generované zdrojového kódu. Výchozí hodnoty jazyka C#.|  
+|`/incsdl:`\<file>|Určuje .csdl soubor nebo adresář, kde jsou umístěny soubory .csdl. Tento argument může být zadána vícekrát, ve kterém můžete zadat několik adresářů a souborů .csdl. Zadání několik adresářů, může být užitečná pro generování tříd (`/mode:EntityClassGeneration`) a zobrazení (`/mode:ViewGeneration`) Pokud je konceptuální model rozdělit do několika souborů. To může být také užitečné, pokud chcete ověřit více modelů (`/mode:ValidateArtifacts`).|  
+|`/refcsdl:`\<file>|Určuje další .csdl soubor nebo soubory používané se vyřešit všechny odkazy na ve zdrojovém .csdl souboru. (Zdrojový soubor .csdl je soubor určený touto `/incsdl` možnost). `/refcsdl` Soubor obsahuje typy, které je závislá na zdrojový soubor .csdl. Tento argument může být zadána vícekrát.|  
+|`/inmsl:`\<file>|Určuje .msl soubor nebo adresář, kde jsou umístěny soubory .msl. Tento argument může být zadána vícekrát, ve kterém můžete zadat několik adresáře nebo .msl soubory. Určení několik adresářů, může být užitečná pro generování zobrazení (`/mode:ViewGeneration`) Pokud je konceptuální model rozdělit do několika souborů. To může být také užitečné, pokud chcete ověřit více modelů (`/mode:ValidateArtifacts`).|  
+|`/inssdl:`\<file>|Určuje .ssdl soubor nebo adresář, kde je umístěn soubor ssdl. Tento argument může být zadána vícekrát, ve kterém můžete zadat několik adresářů a souborů ssdl. To může být užitečné, pokud chcete ověřit více modelů `(/mode:ValidateArtifacts)`.|  
+|`/outcsdl:`\<file>|Určuje název souboru .csdl, který bude vytvořen.|  
+|`/outmsl:`\<file>|Určuje název souboru .msl, který bude vytvořen.|  
+|`/outssdl:`\<file>|Určuje název souboru ssdl, který bude vytvořen.|  
+|`/outobjectlayer:`\<file>|Určuje název souboru zdrojového kódu, který obsahuje objekty generované ze souboru .csdl.|  
+|`/outviews:`\<file>|Určuje název souboru zdrojového kódu, který obsahuje zobrazení, které byly vygenerovány.|  
+|`/language:`[VB&#124;CSharp]|Určuje jazyk pro soubory generované zdrojového kódu. Výchozí hodnoty jazyka C#.|  
 |`/namespace:`\<řetězec >|Určuje obor názvů modelu používat. Obor názvů je nastaveno v souboru .csdl, při spuštění `/mode:FullGeneration` nebo `/mode:FromSSDLGeneration`. Obor názvů se nepoužívá při spuštění `/mode:EntityClassGeneration`.|  
 |`/entitycontainer:`\<řetězec >|Určuje název, který chcete použít `<EntityContainer>` element v souborech mapování a generovaný model.|  
 |`/pl[uralize]`|Použije Anglická pravidla pro singulars a množné číslo na `Entity`, `EntitySet`, a `NavigationProperty` názvy v konceptuálním modelu. Tato možnost provede následující akce:<br /><br /> – Zkontrolujte všechny `EntityType` názvy singulární.<br />– Zkontrolujte všechny `EntitySet` názvy v množném čísle.<br />– Pro každou `NavigationProperty` , který vrací maximálně jedna entita, zkontrolujte název singulární.<br />– Pro každou `NavigationProperty` , který vrací více než jedna entita, zkontrolujte název množném čísle.|  

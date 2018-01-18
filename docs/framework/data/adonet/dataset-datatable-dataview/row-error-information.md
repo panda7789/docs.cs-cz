@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 8b1f9070-d032-48c7-b030-bd8fbb2ca59a
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8600e7d1d14de9474bf3f9cfadb25e06f52b0b1e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e8b2e486f33cbe3851b0d24911f5976a1a4b3c6
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="row-error-information"></a>Informace o chybě řádek
 Abyste se vyhnuli nutnosti reagovat na řádek chyby při úpravě hodnoty v <xref:System.Data.DataTable>, informace o chybě můžete přidat na řádek pro pozdější použití. <xref:System.Data.DataRow> Objekt poskytuje <xref:System.Data.DataRow.RowError%2A> vlastnost na každý řádek pro tento účel. Přidání dat do **RowError** vlastnost **DataRow** nastaví <xref:System.Data.DataRow.HasErrors%2A> vlastnost **DataRow** k **true**. Pokud **DataRow** je součástí **DataTable**, a **DataRow.HasErrors** je **true**, **DataTable.HasErrors** vlastnost je také **true**. To platí také pro **datovou sadu** ke kterému **DataTable** patří. Při testování pro nalezení chyb, můžete zkontrolovat **HasErrors** vlastnosti k určení, zda informace o chybě byl přidán k žádnému z řádků. Pokud **HasErrors** je **true**, můžete použít <xref:System.Data.DataTable.GetErrors%2A> metodu **DataTable** a vrátit pouze sloupce s chybami, zkontrolujte, jak je znázorněno v následujícím příkladu.  

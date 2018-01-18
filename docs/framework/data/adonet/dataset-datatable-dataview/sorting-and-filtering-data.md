@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f514095e551967928d610451cfcaa9a829c0989f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2411307623c714ae521d00dcffca05d3569a656e
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sorting-and-filtering-data"></a>Řazení a filtrování dat
 <xref:System.Data.DataView> Nabízí několik způsobů řazení a filtrování dat v <xref:System.Data.DataTable>:  
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/22/2017
     |**ModifiedOriginal**|**Původní** verze řádku všech **změněné** řádků.|  
     |**None**|Žádné řádky.|  
     |**OriginalRows**|**Původní** verze řádku všech **Unchanged**, **změněné**, a **odstraněné** řádků.|  
-    |**Beze změny**|**Aktuální** verze řádku všech **Unchanged** řádků.|  
+    |**Unchanged**|**Aktuální** verze řádku všech **Unchanged** řádků.|  
   
  Další informace o stavy řádků a řádek verzích najdete v tématu [stavy řádků a verze řádku](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
   

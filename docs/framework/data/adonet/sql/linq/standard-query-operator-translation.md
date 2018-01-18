@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a30adbc060ead6eb1805f85bd563021ba7530c36
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fc99fea9b722f6c3395f6bade625a09c6e97eb08
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="standard-query-operator-translation"></a>Operátor posunutí standardní dotazu
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Standardní operátory dotazu překládá příkazy SQL. Procesor dotazů databáze určuje sémantika provádění překlad SQL.  
@@ -151,7 +151,7 @@ ORDER BY [t0].[CustomerID]
 |||||  
 |-|-|-|-|  
 |ToBoolean|ToSByte|ToByte|ToChar|  
-|ToCharArrayRankOne|Do data|ToDecimal|ToDouble|  
+|ToCharArrayRankOne|ToDate|ToDecimal|ToDouble|  
 |ToInteger|ToUInteger|ToLong|ToULong|  
 |ToShort|ToUShort|ToSingle|ToString|  
   
@@ -165,7 +165,7 @@ ORDER BY [t0].[CustomerID]
   
  Operátory, `is` a `as`a `GetType` metoda nejsou omezeni `Select` operátor. Použitím v jiné operátory dotazu také.  
   
-## <a name="sql-server-2008-support"></a>Podpora serveru SQL Server 2008  
+## <a name="sql-server-2008-support"></a>SQL Server 2008 Support  
  Od verze rozhraní .NET Framework 3.5 SP1, technologie LINQ to SQL podporuje mapování na nové datum a čas typy, které se poprvé objevila v systému SQL Server 2008. Ale existují určitá omezení pro LINQ to SQL operátory dotazu, které můžete použít při fungování s hodnotami, které jsou namapované na tyto nové typy.  
   
 ### <a name="unsupported-query-operators"></a>Operátory nepodporované dotazu  
@@ -183,7 +183,7 @@ ORDER BY [t0].[CustomerID]
   
  Další informace o mapování pro tyto typy datum a čas systému SQL Server najdete v tématu [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
   
-## <a name="sql-server-2005-support"></a>Podpora serveru SQL Server 2005  
+## <a name="sql-server-2005-support"></a>SQL Server 2005 Support  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje následující funkce SQL Server 2005:  
   
 -   Uložené procedury napsané pro SQL CLR.  
@@ -192,7 +192,7 @@ ORDER BY [t0].[CustomerID]
   
 -   Funkce dotazů XML.  
   
-## <a name="sql-server-2000-support"></a>Podpora serveru SQL Server 2000  
+## <a name="sql-server-2000-support"></a>SQL Server 2000 Support  
  Následující [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] omezení (ve srovnání s [!INCLUDE[sqprsqext](../../../../../../includes/sqprsqext-md.md)]) ovlivnit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.  
   
 ### <a name="cross-apply-and-outer-apply-operators"></a>Křížové použít a vnější použít operátory  

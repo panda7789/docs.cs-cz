@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 184a55c3c5479f1999057e55dcc761a250051e5e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1f2f50f5306904a2a1b42a3abbe9071c33847c66
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-key"></a>klíč entity
 *Klíč entity* je [vlastnost](../../../../docs/framework/data/adonet/property.md) nebo sada vlastností [typ entity](../../../../docs/framework/data/adonet/entity-type.md) , se používají k určení identity. Vlastnosti, které tvoří klíč entity, jsou vybraná v době návrhu. Hodnoty vlastnosti klíče entity musí jednoznačně identifikovat instance typu entity v rámci [sady entit](../../../../docs/framework/data/adonet/entity-set.md) za běhu. Vlastnosti, které tvoří klíč entity je třeba zvolit zaručovat jedinečnost instancí v sadu entit.  

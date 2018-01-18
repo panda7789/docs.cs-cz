@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: dc20a8fb-03f6-4b68-9c2b-7f7299e3070b
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 00b5d9ddd248c8a6bd54c77bd930eb56a4fa6057
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0295ff475367b0867ff0a5b0dd85f7a686e343bc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="linq-to-dataset-overview"></a>LINQ na DataSet přehled
 <xref:System.Data.DataSet> Je jedním z více často používaný součástí [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Je důležitou součástí odpojeném programování modelu, který [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] vychází z, a umožňuje explicitně ukládat data do mezipaměti z různých zdrojů. Pro prezentační vrstvy <xref:System.Data.DataSet> je úzce integrovaná s grafickým uživatelským rozhraním ovládací prvky pro datovou vazbu. Pro střední vrstvě poskytuje mezipaměti, který zachovává relační tvaru dat a zahrnuje rychle jednoduchý dotaz a hierarchii navigační služby. Běžné metoda používaná k snížit počet požadavků na databázi, které se má používat <xref:System.Data.DataSet> pro ukládání do mezipaměti ve střední vrstvě. Zvažte například řízené daty [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace. Podstatnou část dat aplikací často nemění příliš často a je společná pro relací nebo uživatele. Tato data je možné mít v paměti na webovém serveru, která omezuje počet požadavků v databázi a urychluje interakce uživatele. Další užitečné aspekt <xref:System.Data.DataSet> je, že umožňuje aplikaci tím podmnožiny dat z jedné nebo více zdroje dat do prostoru aplikace. Aplikace pak můžete upravit na data v paměti, při zachování jejich relačního modelu.  

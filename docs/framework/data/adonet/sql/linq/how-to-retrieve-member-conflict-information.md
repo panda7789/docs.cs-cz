@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e9dd92ad1b5c91798923296def8f207637b4bad2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fab9111bb14b41244fab3bcd9c2ea0b0f91d72ce
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>Postupy: načtení informací o konflikt člena
 Můžete použít <xref:System.Data.Linq.MemberChangeConflict> třídy k načtení informací o jednotlivé členy v konfliktu. V tomto kontextu stejné můžete zadat vlastní zpracování chyb jsou v konfliktu u člena. Další informace najdete v tématu [optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  

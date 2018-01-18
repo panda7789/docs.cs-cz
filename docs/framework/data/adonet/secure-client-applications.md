@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1218cda46a6a901c3dbf9fb11333b04d0133df42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 190e64945658f81400c2cc68beff82ccc38144f5
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="secure-client-applications"></a>Zabezpečení klientské aplikace
 Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněné z chyb zabezpečení, které může dojít ke ztrátě dat nebo jinak ohrozit zabezpečení systému. Vytvoření zabezpečeného uživatelského rozhraní můžete zabránit mnoho problémů s blokováním útočníci před přístupem dat nebo dostatek systémových prostředků.  

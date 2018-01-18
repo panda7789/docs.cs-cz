@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3b3f23be3be6d0c50f015be95b10938178f198bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0ee361c27bd14f0266b2b86f315f9c091e049c12
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="security-in-linq-to-sql"></a>Zabezpečení v technologii LINQ to SQL
 Rizika zabezpečení jsou vždy k dispozici, při připojení k databázi. I když technologie LINQ to SQL může zahrnovat některých nových způsobech pracovat s daty v systému SQL Server, neposkytuje žádné další bezpečnostní mechanismy.  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f888a682510dbf768e5eab2ffdd530e2ac7cf635
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e364efe0856a5291fc8157ef6ab185c2438a3347
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapa keyref omezení schématu XML (XSD) k omezení datové sady
 **Keyref** element umožňuje vytváření propojení mezi prvky dokumentu. Toto je podobná relace cizího klíče v relační databázi. Pokud schéma určuje **keyref** elementu, element je převést během procesu schéma mapování na odpovídající omezení cizího klíče u sloupců v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení **keyref** element také vytváří vztah, se **ParentTable**, **tabulka**, **ParentColumn**a  **ChildColumn** na vztah byly zadány vlastnosti.  
@@ -27,11 +27,11 @@ ms.lasthandoff: 12/22/2017
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**MSDATA:ConstraintOnly**|Pokud **ConstraintOnly = "true"** je zadaný na **keyref** element ve schématu omezení je vytvořen, ale je vytvořen žádný vztah. Pokud tento atribut nezadá (nebo je nastaven na **False**), omezení a vztah se vytvoří v **datovou sadu**.|  
-|**MSDATA:ConstraintName**|Pokud **ConstraintName** zadán atribut, jeho hodnota se používá jako název omezení. Jinak **název** atribut **keyref** element ve schématu poskytuje název omezení v **datovou sadu**.|  
-|**MSDATA:UpdateRule**|Pokud **UpdateRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **UpdateRule** vlastnost omezení  **Datová sada**. V opačném případě **UpdateRule** je nastavena na **Cascade**.|  
-|**MSDATA:DeleteRule**|Pokud **DeletRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **DeletRule** vlastnost omezení  **Datová sada**. V opačném případě **DeletRule** je nastavena na **Cascade**.|  
-|**MSDATA:AcceptRejectRule**|Pokud **AcceptRejectRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **AcceptRejectRule** vlastnost omezení  **Datová sada**. V opačném případě **AcceptRejectRule** je nastavena na **žádné**.|  
+|**msdata:ConstraintOnly**|Pokud **ConstraintOnly = "true"** je zadaný na **keyref** element ve schématu omezení je vytvořen, ale je vytvořen žádný vztah. Pokud tento atribut nezadá (nebo je nastaven na **False**), omezení a vztah se vytvoří v **datovou sadu**.|  
+|**msdata:ConstraintName**|Pokud **ConstraintName** zadán atribut, jeho hodnota se používá jako název omezení. Jinak **název** atribut **keyref** element ve schématu poskytuje název omezení v **datovou sadu**.|  
+|**msdata:UpdateRule**|Pokud **UpdateRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **UpdateRule** vlastnost omezení  **Datová sada**. V opačném případě **UpdateRule** je nastavena na **Cascade**.|  
+|**msdata:DeleteRule**|Pokud **DeletRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **DeletRule** vlastnost omezení  **Datová sada**. V opačném případě **DeletRule** je nastavena na **Cascade**.|  
+|**msdata:AcceptRejectRule**|Pokud **AcceptRejectRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **AcceptRejectRule** vlastnost omezení  **Datová sada**. V opačném případě **AcceptRejectRule** je nastavena na **žádné**.|  
   
  Následující příklad obsahuje schéma, které určuje **klíč** a **keyref** vztahy mezi **OrderNumber** podřízený element **pořadí**  elementu a **OrderNo** podřízený element **OrderDetail** element.  
   

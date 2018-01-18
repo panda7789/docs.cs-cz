@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 99aa438c64fdb8f2d14207e6afb06afa8e5f014a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb7562c2f6fab7ce496fd87ecdd891531589abfa
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="data-binding"></a>Datová vazba
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje vytvoření vazby na běžné ovládací prvky, jako je například ovládací prvky mřížky. Konkrétně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] definuje základních sekvencí pro vytvoření vazby na data mřížky a zpracování vazba seznam podrobnosti, jak s ohledem na zobrazení a aktualizace.  
@@ -86,7 +86,7 @@ ms.lasthandoff: 12/22/2017
   
  Pokud pomocí System.Windows.Forms.BindingSource a nastavte vlastnost BindingSource.DataMember a nastavte BindingSource.DataSource na třídu, která má vlastnost s názvem v BindingSource.DataMember, který zveřejňuje EntitySet\<TEntity >, můžete není nutné volat EntitySet\<Tentity >. GetNewBindingList aktualizovat BindingSource.List ale dojít ke ztrátě schopnosti řazení.  
   
-## <a name="caching"></a>Ukládání do mezipaměti  
+## <a name="caching"></a>Caching  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]implementovat dotazy <xref:System.ComponentModel.IListSource.GetList%2A>. Pokud třída Windows Forms BindingSource splňuje toto rozhraní, zavolá GetList() po třech čas pro jedno připojení. Chcete-li vyřešit tuto situaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implementuje mezipaměti na jednu instanci k ukládání a vždy vrátí stejné generované kolekce.  
   
 ## <a name="cancellation"></a>Zrušení  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 818a505b-a196-41dd-aaac-2ccd5f7a2f1a
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 333ae9a6b7d85298e02364f583903c2cd4b03d51
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b68bce0e3f1139b48446200decca5beb0a1a1a71
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="type-system-entity-sql"></a>Systém typů (entita SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje několik typů:  

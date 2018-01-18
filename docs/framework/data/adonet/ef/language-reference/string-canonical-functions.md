@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5e2cbebd-5df3-47c7-b0e2-49a17ab22bfb
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 89e1d99b5573f36fab4f2cfe675ab95e57a8fd2c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2eef6928098f762274ecd19272b34cce6ab41920
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="string-canonical-functions"></a>Kanonické funkce řetězce
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]zahrnuje kanonické funkce řetězec.  

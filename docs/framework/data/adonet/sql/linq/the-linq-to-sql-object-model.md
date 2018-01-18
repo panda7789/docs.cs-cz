@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 81dd0c37-e2a4-4694-83b0-f2e49e693810
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1ecccda5b9570519f69cadc9214daded16edbc89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0bfaf7b08b3725f1c1cc2f0985c7612aa47a6cb4
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="the-linq-to-sql-object-model"></a>Technologie LINQ to SQL objektový Model
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vyjádřené v programovací jazyk vývojář objektový model je namapována na datový model relační databáze. Operace s daty jsou pak provedeny podle modelu objektu.  

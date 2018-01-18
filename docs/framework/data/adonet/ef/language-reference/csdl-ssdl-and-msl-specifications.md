@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bbdc9237-ff4c-4441-9565-31ebc29743e9
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b78ebfef10897769e78b3dc34d6f8b75ab750b32
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17f16ee0657e5e7c1bd04dc64b74ad109f590061
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="csdl-ssdl-and-msl-specifications"></a>CSDL, SSDL a specifikace MSL
 [Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef) lokalita je momentálně hlavní umístění pro obsah Entity Framework.  

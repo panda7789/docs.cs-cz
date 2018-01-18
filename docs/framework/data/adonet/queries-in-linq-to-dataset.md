@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f41a55cce6834b58526c84d9a82fb38e10f46b42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 906e92e0e440c7f4d9fb5d385cb36a341b45df17
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ na DataSet
 Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk, například SQL pro relační databáze a XQuery pro formát XML. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]nabízí jednodušší a konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotaz, vždy pracujete s programováním objekty.  

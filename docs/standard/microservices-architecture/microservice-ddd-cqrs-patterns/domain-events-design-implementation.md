@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 607ca2977f382a3af20dac7470e970f483133756
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 54d512261261eff0c09bb96fb963ea8b452ae77f
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -64,7 +64,7 @@ Na druhé straně Pokud používáte události domény, můžete vytvořit podro
 1.  Odeslání příkazu (například CreateOrder).
 2.  Zobrazí příkaz v obslužná rutina příkazu.
     -   Spusťte jeden agregace transakce.
-    -   (Volitelné) Vyvolávání událostí domény pro vedlejší efekty (například OrderStartedDomainDvent).
+    -   (Volitelné) Vyvolávání událostí domény pro vedlejší efekty (například OrderStartedDomainEvent).
 1.  Zpracování událostí domény (v rámci aktuální proces), které budou spuštěny otevřete počet vedlejší účinky v několika agregace nebo se akce aplikace. Příklad:
     -   Ověřte nebo vytvořte kupujících a způsobu platby.
     -   Vytvoření a odeslání událostí související integrace ke sběrnici událostí k rozšíří stavy na mikroslužeb nebo aktivační událost externí akcí jako odběratel odesílání e-mailu.
@@ -340,34 +340,34 @@ Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší �
 -   **Gregu Young. Co je událost domény? ** 
      [ *http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
 
--   **Jan Stenberg. Události domény a konzistence typu případné**
+-   **Jan Stenberg. Domain Events and Eventual Consistency**
     [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
 
--   **Jimmy Bogard. Lepší vzor události domény**
+-   **Jimmy Bogard. A better domain events pattern**
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
 -   **Vaughn Vernon. Efektivní agregační návrhu část II: Provedení agregace pracovní společně**
     [*http://dddcommunity.org/wp-content/uploads/files/pdf\_články/Vernon\_2011\_ 2. pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
--   **Jimmy Bogard. Posílení vaší domény: domény události**
-    *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/>*
+-   **Jimmy Bogard. Strengthening your domain: Domain Events**
+    *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
--   **ADAM Truong. Události domény vzor příklad**
+-   **ADAM Truong. Domain Events Pattern Example**
     [*http://www.tonytruong.net/domain-events-pattern-example/*](http://www.tonytruong.net/domain-events-pattern-example/)
 
--   **UDI Dahan. Postup vytvoření plně zapouzdřené domény modely**
+-   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
--   **UDI Dahan. Události domény – trvat 2**
+-   **Udi Dahan. Domain Events – Take 2**
     [*http://udidahan.com/2008/08/25/domain-events-take-2/*](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
 
--   **UDI Dahan. Události domény – Salvation**
+-   **Udi Dahan. Domain Events – Salvation**
     [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
 
 -   **Jan Kronquist. Nemáte publikovat události domény, obnoví v nich! ** 
      [ *https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
--   **Cesaru členka Torre. Domény události vs. Integrace události v případě architektur se DDD a mikroslužeb**
+-   **Cesaru členka Torre. Domain Events vs. Integrace události v případě architektur se DDD a mikroslužeb**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1d8f959980be1c765a3eacba97992f42d9231201
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 33c8b500002b46d720533f681807889955de5982
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="math-canonical-functions"></a>Matematické funkce kanonickém tvaru
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]zahrnuje matematické funkce kanonickém tvaru.  

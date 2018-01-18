@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 04bcb259-59d3-4fd7-894d-4f0dd0c68069
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 546f4c2e1d6c0a35daf74efacebd7bba4aff8d05
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 407f194a8530f9b9e4241a6bdb4d26a4b891aa46
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="ole-db-data-type-mappings"></a>Mapování datového typu OLE DB
 V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ pro datové typy z zprostředkovatel dat .NET Framework pro ADO a OLE DB (<xref:System.Data.OleDb>). Typové přístupových metod pro <xref:System.Data.OleDb.OleDbDataReader> jsou také uvedeny.  
@@ -26,11 +26,11 @@ V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../
 |Typ ADO|Typ OLE DB|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Typ|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]typy přistupujícího objektu|  
 |--------------|-----------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|  
 |adBigInt|DBTYPE_I8|Int64|GetInt64()|  
-|adBinary|DBTYPE_BYTES|Byte]|GetBytes()|  
+|adBinary|DBTYPE_BYTES|Byte[]|GetBytes()|  
 |adBoolean|DBTYPE_BOOL|Boolean|GetBoolean()|  
-|adBSTR|DBTYPE_BSTR|String|Funkci GetString()|  
+|adBSTR|DBTYPE_BSTR|String|GetString()|  
 |adChapter|DBTYPE_HCHAPTER|Podporované prostřednictvím `DataReader`. V tématu [načítání dat pomocí DataReader](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).|GetValue()|  
-|adChar|TYPEM DBTYPE_STR|String|Funkci GetString()|  
+|adChar|DBTYPE_STR|String|GetString()|  
 |adCurrency|DBTYPE_CY|Desetinné číslo|GetDecimal()|  
 |adDate|DBTYPE_DATE|DateTime|GetDateTime()|  
 |adDBDate|DBTYPE_DBDATE|DateTime|GetDateTime()|  
@@ -52,9 +52,9 @@ V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../
 |adUnsignedBigInt|DBTYPE_UI8|UInt64|GetValue()|  
 |adUnsignedInt|DBTYPE_UI4|UInt32|GetValue()|  
 |adUnsignedSmallInt|DBTYPE_UI2|UInt16|GetValue()|  
-|adUnsignedTinyInt|DBTYPE_UI1.|Byte|GetByte()|  
+|adUnsignedTinyInt|DBTYPE_UI1|Byte|GetByte()|  
 |adVariant|DBTYPE_VARIANT|Objekt|GetValue()|  
-|adWChar|DBTYPE_WSTR|String|Funkci GetString()|  
+|adWChar|DBTYPE_WSTR|String|GetString()|  
 |adUserDefined|DBTYPE_UDT|Nepodporuje se||  
 |adVarNumeric|DBTYPE_VARNUMERIC|Nepodporuje se||  
   

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bb07282c-161d-47e8-856d-b2374ba18181
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c966c19ea4de9d2e95f7c614e5d09432e0958876
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b9611ef66525545c1babe087b1a5e6c7842ef871
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-sql-language-reference"></a>Referenční dokumentace jazyka Entity SQL
 Tato část obsahuje podrobnou dokumentaci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)]a modelování a mapování jazyky používané [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  

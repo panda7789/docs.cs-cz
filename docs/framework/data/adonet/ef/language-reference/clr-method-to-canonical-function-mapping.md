@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e3363261-2cb8-4b54-9555-2870be99b929
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 53acc5745b3b80cd4c124dc3f9a74173bb118158
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 29f0c8e663dad2eaa849137e1d02d24b9cef398b
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>Metoda CLR pro mapování kanonické funkce
 Rozhraní Entity Framework poskytuje sadu kanonické funkce, které implementují funkce, které jsou společné napříč mnoha systémy databáze, jako je například zacházení s řetězci a matematické funkce. To umožňuje vývojářům cíle širokou škálu databázovými systémy. Při volání z dotazování technologii, jako je technologie LINQ to Entities, tyto kanonické funkce jsou převedeny na správné odpovídající funkce úložiště pro použitý zprostředkovatel. To umožňuje volání funkce vyjádřeno v běžné formuláře napříč datových zdrojů, zajištění konzistentní dotazu prostředí napříč zdroje dat. Bitové operace AND, OR, NOT a XOR operátory jsou taky namapovaný na funkce kanonický po operand číselného typu. Pro logickou operandy, bitové operace AND, OR a NOT, a operátory XOR výpočetní logické AND, OR, ne a operace XOR operandy. Další informace najdete v tématu [kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).  
@@ -36,25 +36,25 @@ Rozhraní Entity Framework poskytuje sadu kanonické funkce, které implementuj�
 |Logická hodnota IsNullOrEmpty (řetězec `value`)|(IsNull (`value`)) nebo délka (`value`) = 0|  
 |Logická hodnota op_Equality (řetězec `a`, řetězec `b`)|= – operátor|  
 |Op_inequality – logická hodnota (řetězec `a` , řetězec `b`)|!= – operátor|  
-|Microsoft.VisualBasic.Strings.Trim (řetězec `str`)|Trim (`str`)|  
-|Microsoft.VisualBasic.Strings.LTrim (řetězec `str`)|LTrim (`str`)|  
-|Microsoft.VisualBasic.Strings.RTrim (řetězec `str`)|RTrim (`str`)|  
-|Microsoft.VisualBasic.Strings.Len (řetězec `expression`)|Délka (`expression`)|  
-|Microsoft.VisualBasic.Strings.Left (řetězec `str`, Int32 `Length`)|Doleva (`str`, `Length`)|  
-|Microsoft.VisualBasic.Strings.Mid (řetězec `str`, Int32 `Start`, Int32 `Length`)|Substring (`str`, `Start`, `Length`)|  
-|Microsoft.VisualBasic.Strings.Right (řetězec `str`, Int32 `Length`)|Vpravo (`str`, `Length`)|  
-|Microsoft.VisualBasic.Strings.UCase (řetězec `Value`)|ToUpper (`Value`)|  
-|Microsoft.VisualBasic.Strings.LCase (řetězcovou hodnotu)|ToLower (`Value`)|  
+|Microsoft.VisualBasic.Strings.Trim(String `str`)|Trim (`str`)|  
+|Microsoft.VisualBasic.Strings.LTrim(String `str`)|LTrim (`str`)|  
+|Microsoft.VisualBasic.Strings.RTrim(String `str`)|RTrim (`str`)|  
+|Microsoft.VisualBasic.Strings.Len(String `expression`)|Délka (`expression`)|  
+|Microsoft.VisualBasic.Strings.Left(String `str`, Int32 `Length`)|Left(`str`, `Length`)|  
+|Microsoft.VisualBasic.Strings.Mid(String `str`, Int32 `Start`, Int32 `Length`)|Substring (`str`, `Start`, `Length`)|  
+|Microsoft.VisualBasic.Strings.Right(String `str`, Int32 `Length`)|Vpravo (`str`, `Length`)|  
+|Microsoft.VisualBasic.Strings.UCase(String `Value`)|ToUpper (`Value`)|  
+|Microsoft.VisualBasic.Strings.LCase(String Value)|ToLower (`Value`)|  
   
 ## <a name="systemstring-method-instance-mapping"></a>Metoda System.String (Instance) mapování  
   
 |Metoda System.String (instance)|Kanonické funkce|Poznámky|  
 |---------------------------------------|------------------------|-----------|  
 |Obsahuje logickou hodnotu (řetězec `value`)|`this`NAPŘÍKLAD ' %`value`%.|Pokud `value` není konstantní, to jsou mapovány na IndexOf (`this`, `value`) > 0|  
-|Logická hodnota EndsWith (řetězec `value`)|`this`JAKO `'` % `value`.|Pokud `value` není konstantní, pak to mapuje vpravo (`this`, délka (`value`)) = `value`.|  
+|Logická hodnota EndsWith (řetězec `value`)|`this` LIKE `'`%`value`'|Pokud `value` není konstantní, pak to mapuje vpravo (`this`, délka (`value`)) = `value`.|  
 |Logická hodnota StartsWith (řetězec `value`)|`this`NAPŘÍKLAD '`value`%.|Pokud `value` není konstantní, to jsou mapovány na IndexOf (`this`, `value`) = 1.|  
 |Délka|Délka (`this`)||  
-|Int32 IndexOf (řetězec `value`)|IndexOf (`this`, `value`) – 1||  
+|Int32 IndexOf (řetězec `value`)|IndexOf(`this`, `value`) - 1||  
 |System.String Insert(Int32 `startIndex`, String `value`)|Concat (Concat (Substring (`this`, 1, `startIndex`), `value`), Substring (`this`, `startIndex`+ 1, délka (`this`)- `startIndex`))||  
 |System.String Remove(Int32 `startIndex`)|Substring (`this`, 1, `startIndex`)||  
 |System.String Remove(Int32 `startIndex`, Int32 `count`)|Concat (Substring (`this`, 1, `startIndex`), Substring (`this`, `startIndex`  +  `count` + 1, délka (`this`) – (`startIndex` + `count`)))|Odebrat (`startIndex`, `count`) je podporována pouze v případě `count` je celé číslo větší než nebo rovna 0.|  
@@ -80,15 +80,15 @@ ystém. Nahraďte řetězec (String `oldValue`, řetězec `newValue`)|Nahraďte 
 |Op_greaterthanorequal – logická hodnota (data a času `t1`, data a času `t2`)|>= – operátor||  
 |Op_inequality – logická hodnota (data a času `t1`, data a času `t2`)|!= – operátor||  
 |Op_lessthan – logická hodnota (data a času `t1`, data a času `t2`)|< – operátor||  
-|Op_lessthanorequal – logická hodnota (data a času `t1`, data a času `t2`)|<= – operátor||  
-|Microsoft.VisualBasic.DateAndTime.DatePart (_<br /><br /> ByVal `Interval` jako DateInterval,\_<br /><br /> ByVal `DateValue` jako DateTime,\_<br /><br /> Volitelné ByVal `FirstDayOfWeekValue` jako FirstDayOfWeek = VbSunday,\_<br /><br /> Volitelné ByVal `FirstWeekOfYearValue` jako První_týden_v_roce = VbFirstJan1\_<br /><br /> ) Jako celé číslo||Další informace v části Funkce DatePart.|  
+|Boolean op_LessThanOrEqual(DateTime `t1`, DateTime `t2`)|<= – operátor||  
+|Microsoft.VisualBasic.DateAndTime.DatePart( _<br /><br /> ByVal `Interval` jako DateInterval,\_<br /><br /> ByVal `DateValue` jako DateTime,\_<br /><br /> Volitelné ByVal `FirstDayOfWeekValue` jako FirstDayOfWeek = VbSunday,\_<br /><br /> Volitelné ByVal `FirstWeekOfYearValue` jako První_týden_v_roce = VbFirstJan1\_<br /><br /> ) Jako celé číslo||Další informace v části Funkce DatePart.|  
 |Microsoft.VisualBasic.DateAndTime.Now|CurrentDateTime()||  
-|Microsoft.VisualBasic.DateAndTime.Year (data a času `TimeValue`)|Year()||  
-|Microsoft.VisualBasic.DateAndTime.Month (data a času `TimeValue`)|Month()||  
-icrosoft. VisualBasic.DateAndTime.Day (data a času `TimeValue`)|Day()||  
-|Microsoft.VisualBasic.DateAndTime.Hour (data a času `TimeValue`)|Hour()||  
-|Microsoft.VisualBasic.DateAndTime.Minute (data a času `TimeValue`)|MINUTE()||  
-|Microsoft.VisualBasic.DateAndTime.Second (data a času `TimeValue`)|Second()||  
+|Microsoft.VisualBasic.DateAndTime.Year(DateTime `TimeValue`)|Year()||  
+|Microsoft.VisualBasic.DateAndTime.Month(DateTime `TimeValue`)|Month()||  
+icrosoft.VisualBasic.DateAndTime.Day(DateTime `TimeValue`)|Day()||  
+|Microsoft.VisualBasic.DateAndTime.Hour(DateTime `TimeValue`)|Hour()||  
+|Microsoft.VisualBasic.DateAndTime.Minute(DateTime `TimeValue`)|MINUTE()||  
+|Microsoft.VisualBasic.DateAndTime.Second(DateTime `TimeValue`)|Second()||  
   
 ## <a name="systemdatetime-method-instance-mapping"></a>Metoda System.DateTime (Instance) mapování  
   
@@ -155,9 +155,9 @@ icrosoft. VisualBasic.DateAndTime.Day (data a času `TimeValue`)|Day()||
   
 |CLR – metoda|Kanonické funkce|  
 |----------------|------------------------|  
-|System.Decimal.Ceiling (Decimal `d`)|CEILING (`d`)|  
-|System.Decimal.Floor (Decimal `d`)|Floor (`d`)|  
-|System.Decimal.Round (Decimal `d`)|Zaokrouhlí (`d`)|  
+|System.Decimal.Ceiling(Decimal `d`)|CEILING (`d`)|  
+|System.Decimal.Floor(Decimal `d`)|Floor (`d`)|  
+|System.Decimal.Round(Decimal `d`)|Zaokrouhlí (`d`)|  
 |System.Math.Ceiling (Decimal `d`)|CEILING (`d`)|  
 |System.Math.Floor (Decimal `d`)|Floor (`d`)|  
 |System.Math.Round (Decimal `d`)|Zaokrouhlí (`d`)|  

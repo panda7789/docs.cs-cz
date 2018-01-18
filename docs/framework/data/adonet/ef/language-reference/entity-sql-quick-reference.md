@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 14d666624ac4572956364b3db3fd5ee7aad8799b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 81fd76d09f9cc02e89ac34d5f8fa74bd7f9d92f9
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-sql-quick-reference"></a>Stručná referenční entity SQL
 Toto téma obsahuje Stručná referenční příručka pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy. Dotazy v tomto tématu jsou založené na modelu prodeje společnosti AdventureWorks.  
@@ -98,7 +98,7 @@ SELECT VALUE row (product.ProductID as ProductID, product.Name
 |---------------|----------|  
 |1|Upravit soupeření|  
 |879|Všechny účely kolo úsporný režim|  
-|712|AWC Logo zakončení|  
+|712|AWC Logo Cap|  
 |...|...|  
   
 ### <a name="multiset"></a>MULTIMNOŽINA  
@@ -171,7 +171,7 @@ SELECT VALUE REF(p).Name FROM
 |-----------|  
 |Upravit soupeření|  
 |Všechny účely kolo úsporný režim|  
-|AWC Logo zakončení|  
+|AWC Logo Cap|  
 |...|  
   
 ### <a name="deref"></a>DEREF  
@@ -190,7 +190,7 @@ SELECT VALUE DEREF(REF(p)).Name FROM
 |-----------|  
 |Upravit soupeření|  
 |Všechny účely kolo úsporný režim|  
-|AWC Logo zakončení|  
+|AWC Logo Cap|  
 |...|  
   
 ### <a name="createref-and-key"></a>CREATEREF A KLÍČ  
@@ -233,7 +233,7 @@ SELECT Length(c. FirstName) As NameLen FROM
 |6|  
 |5|  
   
-### <a name="microsoft-provider-specific"></a>Zprostředkovatel specifické pro společnost Microsoft  
+### <a name="microsoft-provider-specific"></a>Microsoft Provider-Specific  
  [Funkce specifické pro zprostředkovatele Microsoft](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md) v `SqlServer` oboru názvů.  
   
  Příklad:  
@@ -341,7 +341,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
 |----------|  
 |Upravit soupeření|  
 |Všechny účely kolo úsporný režim|  
-|AWC Logo zakončení|  
+|AWC Logo Cap|  
 |...|  
   
 ### <a name="select"></a>VYBERTE  
@@ -355,7 +355,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
 |----------|---------------|  
 |Upravit soupeření|1|  
 |Všechny účely kolo úsporný režim|879|  
-|AWC Logo zakončení|712|  
+|AWC Logo Cap|712|  
 |...|...|  
   
 ## <a name="case-expression"></a>VÝRAZ CASE  

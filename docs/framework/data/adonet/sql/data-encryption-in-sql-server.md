@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 83b992f7-b351-4678-b4b9-f4ffd58134cc
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4ea062a65f250a3532249783b0c7b147ed460317
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7784ac319785babbc4d7715e13fb157b3b15b04
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="data-encryption-in-sql-server"></a>Šifrování dat v systému SQL Server
 SQL Server poskytuje funkce pro šifrování a dešifrování dat pomocí certifikátu, asymetrického klíče nebo symetrického klíče. Spravuje všechny tyto v úložišti vnitřní certifikát. Úložiště používá k šifrování hierarchii, který zabezpečuje certifikáty a klíče na jedné úrovni vrstva nad ním v hierarchii. Tato oblast funkcí systému SQL Server se nazývá tajný klíč úložiště.  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 054f76b9-1737-43f0-8160-84a00a387217
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: cb21a71a548766ee5439c6a558ea7f23d1f45364
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 75a42962b0f4c8cd19f1cce5f9223d82e32ff369
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="system-requirements-for-the-net-framework-data-provider-for-oracle"></a>Požadavky na systém pro zprostředkovatel dat .NET Framework pro Oracle
 Zprostředkovatel dat .NET Framework pro Oracle vyžaduje Microsoft Data Access Components (MDAC) verze 2.6 nebo novější. Doporučuje se MDAC 2.8 SP1.  

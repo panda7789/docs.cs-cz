@@ -11,15 +11,15 @@ ms.topic: article
 dev_langs: vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d202aa7b014b457b3990153e9af470c3d0e5b03b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9d72c0e1f432679f4dc818703dafb813ab8ebd19
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Návod: Jednoduché objektový Model a dotazů (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář s minimálním složité kroky. Vytvoří třídu entity modelů tabulku zákazníků v ukázkové databázi Northwind. Pak vytvoříte jednoduchý dotaz seznamu zákazníkům, kteří jsou umístěny v Londýně.  
@@ -69,7 +69,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, které nemusí být nainstalovány ve výchozím nastavení ve vašem projektu. Pokud `System.Data.Linq` není uvedena jako odkaz ve vašem projektu (klikněte na tlačítko **zobrazit všechny soubory** v **Průzkumníku řešení** a rozbalte **odkazy** uzlu), přidat, jak je popsáno v Následující kroky.  
   
-#### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
+#### <a name="to-add-systemdatalinq"></a>To add System.Data.Linq  
   
 1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na **přidat odkaz na**.  
   

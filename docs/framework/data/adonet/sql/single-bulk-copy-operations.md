@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 5e7ff0be-3f23-4996-a92c-bd54d65c3836
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 03b255f92ed7123c14116e148f23571d21561bfb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 961981fcdf9709a336d76df99c8f65448e76b98a
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="single-bulk-copy-operations"></a>Jeden hromadné operace kopírování
 Nejjednodušším přístupem při provádění operace hromadného kopírování systému SQL Server je provést najednou proti databázi. Ve výchozím nastavení, se provádí operace hromadného kopírování jako izolované operaci: způsobem, beztransakční, dojde k kopírování s distribucí nebude mít možnost zpět.  

@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 4f5639bf-bb7f-4982-bb1d-c7caa4348888
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b3e85387f0a3721d01c56d2ea916712f76c0dd8e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dcba8f7c4517090b61f9b72c9b28e4e151ff9bee
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-execute-a-parameterized-stored-procedure-using-entitycommand"></a>Postup: provedení parametrizované uložené procedury pomocí objekt EntityCommand
 Toto téma ukazuje, jak provést parametrizované uložené procedury pomocí <xref:System.Data.EntityClient.EntityCommand> třídy.  

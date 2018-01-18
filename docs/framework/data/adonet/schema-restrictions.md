@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4a3cc1f0c27af1ad41e14374b4c155e6b8620f28
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f5b004b70716c61af8ac37fef76f660c488e5a74
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="schema-restrictions"></a>Omezení schématu
 Druhý parametr volitelný **GetSchema** je metoda vrátí omezení, které se používají k omezení množství informací o schématu, a je předán **GetSchema** metoda jako pole řetězců. . Určuje pozici v poli hodnoty, které můžete předat a jde o ekvivalent číslo omezení.  
@@ -30,7 +30,7 @@ Druhý parametr volitelný **GetSchema** je metoda vrátí omezení, které se p
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Name|TABLE_NAME|3|  
 |TableType|@TableType|TABLE_TYPE|4|  
@@ -141,14 +141,14 @@ class Program
 }  
 ```  
   
-## <a name="sql-server-schema-restrictions"></a>SQL Server schématu omezení  
+## <a name="sql-server-schema-restrictions"></a>SQL Server Schema Restrictions  
  V následujících tabulkách najdete omezení pro kolekce schématu systému SQL Server.  
   
 ### <a name="users"></a>Uživatelé  
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Uživatelské_jméno|@Name|name|1|  
+|User_Name|@Name|name|1|  
   
 ### <a name="databases"></a>Databáze  
   
@@ -160,7 +160,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Name|TABLE_NAME|3|  
 |TableType|@TableType|TABLE_TYPE|4|  
@@ -169,7 +169,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
@@ -178,7 +178,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
@@ -187,7 +187,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
   
@@ -195,7 +195,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|VIEW_CATALOG|1|  
+|Catalog|@Catalog|VIEW_CATALOG|1|  
 |Vlastník|@Owner|VIEW_SCHEMA|2|  
 |Tabulka|@Table|VIEW_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
@@ -204,7 +204,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|SPECIFIC_CATALOG|1|  
+|Catalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Vlastník|@Owner|SPECIFIC_SCHEMA|2|  
 |Název|@Name|SPECIFIC_NAME|3|  
 |Parametr|@Parameter|PARAMETER_NAME|4|  
@@ -213,7 +213,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|SPECIFIC_CATALOG|1|  
+|Catalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Vlastník|@Owner|SPECIFIC_SCHEMA|2|  
 |Název|@Name|SPECIFIC_NAME|3|  
 |Typ|@Type|ROUTINE_TYPE|4|  
@@ -222,17 +222,17 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|db_name()|1|  
+|Catalog|@Catalog|db_name()|1|  
 |Vlastník|@Owner|user_name()|2|  
 |Tabulka|@Table|o.Name|3|  
-|ConstraintName|@ConstraintName|x.Name|4|  
+|ConstraintName|@ConstraintName|x.name|4|  
 |Sloupec|@Column|c.Name|5|  
   
 ### <a name="indexes"></a>Indexy  
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|db_name()|1|  
+|Catalog|@Catalog|db_name()|1|  
 |Vlastník|@Owner|user_name()|2|  
 |Tabulka|@Table|o.Name|3|  
   
@@ -240,26 +240,26 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|assembly_name|@AssemblyName|Assemblies.Name|1|  
-|udt_name|@UDTName|Types.assembly_class|2|  
+|assembly_name|@AssemblyName|assemblies.name|1|  
+|udt_name|@UDTName|types.assembly_class|2|  
   
 ### <a name="foreignkeys"></a>ForeignKeys  
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|CONSTRAINT_CATALOG|1|  
+|Catalog|@Catalog|CONSTRAINT_CATALOG|1|  
 |Vlastník|@Owner|CONSTRAINT_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Název|@Name|CONSTRAINT_NAME|4|  
   
-## <a name="sql-server-2008-schema-restrictions"></a>SQL Server 2008 schématu omezení  
+## <a name="sql-server-2008-schema-restrictions"></a>SQL Server 2008 Schema Restrictions  
  V následujících tabulkách najdete omezení pro SQL Server 2008 kolekcemi schémat. Tato omezení jsou platné od verze verze systému SQL Server 2008 a rozhraní .NET Framework 3.5 SP1. Nejsou podporovány v dřívějších verzích rozhraní .NET Framework a SQL Server.  
   
 ### <a name="columnsetcolumns"></a>ColumnSetColumns  
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
   
@@ -267,7 +267,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Počet omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Katalogu|@Catalog|TABLE_CATALOG|1|  
+|Catalog|@Catalog|TABLE_CATALOG|1|  
 |Vlastník|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  

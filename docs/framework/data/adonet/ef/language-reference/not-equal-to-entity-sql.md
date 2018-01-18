@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3b4a02ad-ddfc-4c42-8dfa-676234461312
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 81643b9a4a1cd49e950010c0023b27108d34180c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 237dae641c272260e37fa7757792247700784d17
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="-not-equal-to-entity-sql"></a>! = (Nerovná se) (entita SQL)
 Porovnává dva výrazy k určení, zda levý výraz není rovno pravý výraz. ! = – Operátor (není rovno) je funkčně srovnatelný <> operátor.  

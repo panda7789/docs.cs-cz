@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 6c804e4d-f348-4afd-9f63-d3f0f24bc6a9
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d639297764333b99675cb9e076e816314f3567c7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7a713c22b307f10ef529de5c78c002e8d67a38e8
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-call-model-defined-functions-in-queries"></a>Postupy: volání modelu definované funkce v dotazech.
 Toto téma popisuje, jak volat funkce, které jsou definované v konceptuálním modelu uvnitř [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  

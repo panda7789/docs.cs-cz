@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 338f0c26-8aee-43eb-bd1a-ec0849a376b9
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a20759300c44c8255427272cfa6034a877c4f6da
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba371840cf5c3b19ee232be0934557d87e7c343f
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="string-functions"></a>Funkce řetězce
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje `String` funkce, které provádění operací na vstup `String` a vrátit `String` nebo výsledek číselná hodnota. Tyto funkce jsou v oboru názvů SQL Server, která je k dispozici při použití SqlClient. Umožňuje vlastnost obor názvů zprostředkovatele Entity Frameworku chcete zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce.  

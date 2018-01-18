@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: fe93dc09019938e86279fd6996cd396b290ea3d4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e816339770cfea66e65157ddbb230d0aeeff35be
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="introduction-to-sql-server-clr-integration"></a>Úvod do integrace modulu CLR SQL serveru
 Common language runtime (CLR) jsou srdcem rozhraní Microsoft .NET Framework a poskytuje prostředí pro spuštění pro všechny kód rozhraní .NET Framework. Kód, který běží v rámci modulu CLR se označuje jako spravovaného kódu. Modul CLR poskytuje různé funkce a služby jsou nezbytné pro spuštění programu, včetně kompilace za běhu (JIT), přidělování a správě paměti, vynucování bezpečnost typů, výjimek, vlákno správy a zabezpečení.  

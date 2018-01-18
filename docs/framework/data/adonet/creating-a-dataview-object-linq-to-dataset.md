@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 76057508-e12d-4779-a707-06a4c2568acf
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2b8a4a1f0dc004957b64e3adb5d106c2cd4f413a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 895f692bc07e8e48904e0829e322788f2aa45337
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ na DataSet)
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Můžete vytvořit <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz přes <xref:System.Data.DataTable>, nebo si můžete vytvořit z představuje zadaný nebo beztypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není zkonstruovatelný přímo v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu.  

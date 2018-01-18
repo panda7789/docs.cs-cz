@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ae006fa9-997e-45bb-8a04-a7f62026171e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3f294088e92951e964c3daa2a105b767bca1d288
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 29b0aa7f6f155de2c55f88b4c796ecc482d1cb84
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="nullable-structured-types-entity-sql"></a>Strukturované typy s možnou hodnotou Null (entita SQL)
 A `null` instance strukturovaného typu je instanci, která neexistuje. Tento proces se liší z existující instance, ve kterém mají všechny vlastnosti `null` hodnoty.  

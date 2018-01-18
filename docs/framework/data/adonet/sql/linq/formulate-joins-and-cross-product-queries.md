@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b21bee335c5856c961c5abc21ad03c5d1f2c2307
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f652f25d04480afb3df1f623347eee23d3ed258
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="formulate-joins-and-cross-product-queries"></a>Formulovali spojení a dotazy smíšený produkt
 Následující příklady ukazují, jak kombinují výsledky z více tabulek.  

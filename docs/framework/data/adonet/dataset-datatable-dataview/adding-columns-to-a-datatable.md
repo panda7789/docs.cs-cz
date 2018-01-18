@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 423b9ed389a5a3750c8e9b0339e0887d6b650741
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6340baa434467ec4ccde501b4bb11d55a72c069b
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="adding-columns-to-a-datatable"></a>Přidávání sloupců do DataTable
 A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazuje **sloupce** vlastnosti tabulky. Tato kolekce sloupců, společně s omezeními, definuje schéma a struktura tabulky.  

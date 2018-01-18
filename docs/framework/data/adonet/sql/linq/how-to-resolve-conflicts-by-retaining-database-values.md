@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: b475cf72-9e64-4f6e-99c1-af7737bc85ef
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1271d7b287dacdae0dd46f084ba21d0dc901bd49
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0747a4318fdab76c5fbd920f7291346d4d8ff58d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-resolve-conflicts-by-retaining-database-values"></a>Postupy: řešení konfliktů zachováním hodnot v databázi
 Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních databáze, než se pokusíte odeslat znovu provedené změny, můžete použít <xref:System.Data.Linq.RefreshMode.OverwriteCurrentValues> uchovat na hodnoty zjištěné v databázi. Aktuální hodnoty v objektu model se pak přepíší. Další informace najdete v tématu [optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
@@ -35,7 +35,7 @@ Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních dat
 ||Správce|Pomocník pro|Oddělení|  
 |------|-------------|---------------|----------------|  
 |Při dotazu uživatel1 a uživatel2 původního stavu databáze.|Alfreds|Marie|Prodeje|  
-|Uživatel1 připraví odešle tyto změny.|Alfred||Marketingové|  
+|Uživatel1 připraví odešle tyto změny.|Alfred||Marketing|  
 |Uživatel2 již odeslána tyto změny.||Marie|Služba|  
   
  Uživatel1 rozhodne na tento konflikt vyřešit tak, že novější hodnot v databázi přepsat aktuální hodnoty v objektu modelu.  

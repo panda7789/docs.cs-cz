@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 84a72642636be2238a81f1b9c00e3ac4e7037272
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6cdf1a859595c82b8eea60311c3c96353849e3dc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace vytvoření ve víceúrovňových aplikacích (technologie LINQ to SQL) a načtení dat
 Při serializaci objektů entity například zákazníků nebo objednávky klienta přes síť, jsou tyto entity odpojit od jejich data kontextu. Data kontextu už sleduje, jejich změny nebo jejich přidružení s jinými objekty. Nejedná se o problém, dokud klienti jsou jen ke čtení dat. Také je poměrně jednoduché umožníte klientům přidat nové řádky k databázi. Ale pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je potřeba přiřadit entity nový kontext data před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Kromě toho pokud používáte kontrola optimistickou metodu souběžného s původní hodnoty, pak je také nutné způsob, jak poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metod jsou uvedeny umožnit entity vložena nový kontext dat po nějaké době odpojit.  

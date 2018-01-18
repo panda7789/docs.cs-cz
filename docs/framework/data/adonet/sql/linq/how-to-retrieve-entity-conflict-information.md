@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 9a02b608-e7bb-4041-a452-a7fed26fd008
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e43ca054477b75b5737a8ef8f05fc1874d870ac5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 885c411491564244c26123a0dc8abcad47b31b62
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-retrieve-entity-conflict-information"></a>Postupy: načtení informací o konflikt Entity
 Můžete použít objekty <xref:System.Data.Linq.ObjectChangeConflict> třídy lze zadat informace o zjištěné při konfliktu <xref:System.Data.Linq.ChangeConflictException> výjimky. Další informace najdete v tématu [optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  

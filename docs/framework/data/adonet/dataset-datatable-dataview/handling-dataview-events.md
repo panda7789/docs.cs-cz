@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: e5675663-fc91-4e0d-87a9-481b25b64c0f
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1f12dc41421090615e640fac4cc7bfb0fa08bb00
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bf3b02227de5068a031cedb73269148c7d5262a0
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="handling-dataview-events"></a>Zpracování událostí zobrazení dat
 Můžete použít <xref:System.Data.DataView.ListChanged> události <xref:System.Data.DataView> k určení, zda byl aktualizován zobrazení. Aktualizace, které vyvolání události zahrnují přidání, odstranění nebo úprava řádek v podkladové tabulce; Přidání nebo odstranění sloupce schématu základní tabulky; a změnu ve vztahu nadřazené nebo podřízené. **ListChanged** událostí taky upozorní, zda seznam řádků prohlížíte významně změnil z důvodu aplikace nové pořadí řazení nebo filtru.  

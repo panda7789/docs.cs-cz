@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9a33bd0d-ded1-41e7-ba3c-305502755e3b
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6e8c985436649af396c4fe9dc4dbbb484618c214
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26d62b4ccab71d1d21a8f65f7feacb8cec727a94
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="select-entity-sql"></a>Vyberte (entita SQL)
 Určuje prvky vrácených dotazem.  
@@ -33,10 +33,10 @@ SELECT VALUE [ ALL | DISTINCT ] [ topSubclause ] expr FROM fromClause [ WHERE wh
 ```  
   
 ## <a name="arguments"></a>Arguments  
- VŠECHNY  
+ ALL  
  Určuje, že duplicitní může zobrazit v sadě výsledků dotazu. VŠECHNY je výchozí.  
   
- ODLIŠNÉ  
+ DISTINCT  
  Určuje, že můžete pouze jedinečné výsledky se zobrazí v sadě výsledků dotazu.  
   
  HODNOTA  
@@ -50,7 +50,7 @@ SELECT VALUE [ ALL | DISTINCT ] [ topSubclause ] expr FROM fromClause [ WHERE wh
  `aliasedExpr`  
  Výraz ve tvaru:  
   
- `expr`jako `identifier` &#124;`expr`  
+ `expr` as `identifier` &#124; `expr`  
   
  `expr`  
  Literál nebo výraz.  

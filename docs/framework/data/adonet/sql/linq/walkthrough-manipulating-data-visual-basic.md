@@ -11,15 +11,15 @@ ms.topic: article
 dev_langs: vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: abb5fd319630392f38effa21f351c1b656727bd7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b4bc7baee8e95243cf05a52f49c37aa2d8916666
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Kopie v ukázkové databázi Northwind použije k přidání zákazníka, změňte název zákazníka a odstranění objednávky.  
@@ -78,7 +78,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, které nemusí být nainstalovány ve výchozím nastavení ve vašem projektu. Pokud `System.Data.Linq` není uvedena jako odkaz ve vašem projektu (klikněte na tlačítko **zobrazit všechny soubory** v **Průzkumníku řešení** a rozbalte **odkazy** uzlu), přidat, jak je popsáno v Následující kroky.  
   
-#### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
+#### <a name="to-add-systemdatalinq"></a>To add System.Data.Linq  
   
 1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na **přidat odkaz na**.  
   

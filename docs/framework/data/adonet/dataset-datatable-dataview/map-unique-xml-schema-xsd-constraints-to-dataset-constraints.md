@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 56da90bf-21d3-4d1a-8bb8-de908866b78d
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5276697ebdc065965d970afc4ac2ef6be61c8f20
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3700e4010176abed05677043469476fe34cd564c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="map-unique-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování jedinečná omezení schématu XML (XSD) na omezení datové sady
 Ve schématu XML definition language (XSD) schématu **jedinečný** element určuje omezení jedinečnosti k elementu nebo atributu. Probíhá proces překladu schématu XML na relační schéma, jedinečné omezení zadaný na element nebo atribut ve schématu XML se mapuje na jedinečné omezení v <xref:System.Data.DataTable> do odpovídajícího <xref:System.Data.DataSet> generovanou.  
@@ -27,8 +27,8 @@ Ve schématu XML definition language (XSD) schématu **jedinečný** element ur�
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**MSDATA:ConstraintName**|Pokud tento atribut je určen, jeho hodnota se používá jako název omezení. Jinak **název** atribut poskytuje hodnota název omezení.|  
-|**MSDATA:PrimaryKey**|Pokud `PrimaryKey="true"` je k dispozici v **jedinečný** element, jedinečné omezení je vytvořen s **IsPrimaryKey** vlastnost nastavena na hodnotu **true**.|  
+|**msdata:ConstraintName**|Pokud tento atribut je určen, jeho hodnota se používá jako název omezení. Jinak **název** atribut poskytuje hodnota název omezení.|  
+|**msdata:PrimaryKey**|Pokud `PrimaryKey="true"` je k dispozici v **jedinečný** element, jedinečné omezení je vytvořen s **IsPrimaryKey** vlastnost nastavena na hodnotu **true**.|  
   
  Následující příklad ukazuje schéma XML, který používá **jedinečný** elementu, který chcete zadat omezení jedinečnosti.  
   

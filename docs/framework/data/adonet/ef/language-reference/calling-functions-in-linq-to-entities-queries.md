@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 12a525a9-727c-4464-a0c7-71a0ef541792
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b4989fcce44f6081dba52cd17d0349c87197d508
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dd81543f3a89f4f673f999b1fa80575de6d64654
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="calling-functions-in-linq-to-entities-queries"></a>Volání funkcí v technologii LINQ to Entities dotazy
 Témata v této části popisují, jak volat funkce v technologii LINQ dotazy entity.  

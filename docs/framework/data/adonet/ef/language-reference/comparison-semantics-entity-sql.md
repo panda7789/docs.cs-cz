@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2835d2064f1845b55dd3a33abb086c5af0fb9e6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c6d22b72e05e6293a7fd3bcf7ddfba6e116e441f
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="comparison-semantics-entity-sql"></a>Porovnání sémantiku (entita SQL)
 Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory zahrnuje porovnání instance typu:  
@@ -49,7 +49,7 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
 ## <a name="explicit-distinction"></a>Explicitní rozdíl  
  Rovnost rozdíl:  
   
--   ODLIŠNÉ  
+-   DISTINCT  
   
 -   SESKUPIT PODLE  
   
@@ -77,13 +77,13 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
 ## <a name="supported-combinations"></a>Podporované kombinace  
  Následující tabulka uvádí podporované kombinace operátory porovnání pro jednotlivé typy typu:  
   
-|**Typ**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **ODLIŠNÉ**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**MÁ HODNOTU NULL.**<br /><br /> **NEMÁ HODNOTU NULL**|  
+|**Typ**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**MÁ HODNOTU NULL.**<br /><br /> **NEMÁ HODNOTU NULL**|  
 |-|-|-|-|-|-|-|-|  
-|Typ entity|REF<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|REF<sup>1</sup>|  
+|Typ entity|Ref<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Ref<sup>1</sup>|  
 |Komplexní typ|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
 |Řádek|Všechny vlastnosti<sup>4</sup>|Všechny vlastnosti<sup>4</sup>|Všechny vlastnosti<sup>4</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Všechny vlastnosti<sup>4</sup>|Throw<sup>3</sup>|  
 |primitivní typ|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|  
-|Multimnožina|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
+|Multiset|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
 |REF|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|Throw|Throw|Ano<sup>5</sup>|  
 |Přidružení<br /><br /> – typ|Throw<sup>3</sup>|Throw|Throw|Throw|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
   

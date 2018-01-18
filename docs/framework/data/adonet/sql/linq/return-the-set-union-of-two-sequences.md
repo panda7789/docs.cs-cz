@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a9f1ba281c1c7bd6a6a0d96746caa512c6c208b1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 24a3c7e7ee33d616afdbc9651850c10716a0547c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="return-the-set-union-of-two-sequences"></a>Vrátí sadu sjednocení dvou sekvencí
 Použití <xref:System.Linq.Queryable.Union%2A> operátor vrátit sadu sjednocení dvou pořadí.  

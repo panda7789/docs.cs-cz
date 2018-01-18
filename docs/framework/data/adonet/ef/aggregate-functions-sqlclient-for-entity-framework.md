@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 03303f01-b591-4efc-9875-f9c608edff0b
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 804acd77887c1cf05caa2004e75ef01110909490
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11779c07661edb8bfecda3b8ef955c35989294be
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="aggregate-functions-sqlclient-for-entity-framework"></a>Agregační funkce (SqlClient rozhraní Entity Framework)
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agregační funkce. Agregační funkce provádět výpočty na sadě vstupní hodnoty a vrátit hodnotu. Tyto funkce jsou v oboru názvů SQL Server, která je k dispozici při použití SqlClient. Umožňuje vlastnost obor názvů zprostředkovatele Entity Frameworku chcete zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce.  
@@ -54,7 +54,7 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agrega
   
 |SQL Server 2000|SQL Server 2005|SQL Server 2008|  
 |---------------------|---------------------|---------------------|  
-|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
+|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
   
 ## <a name="see-also"></a>Viz také  
  [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  

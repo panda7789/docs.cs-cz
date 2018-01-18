@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: e491b9bf-741a-4296-9f51-76c25ddf6a82
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e8bbeb0d7ce040387b263486b947e793eca39d29
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 000a7c50edacbae09675a9f9069f56aa6cd211f6
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-directly-execute-sql-queries"></a>Postupy: přímo provádění dotazů SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Přeloží dotazy, které zapisovat do parametrizované dotazy SQL (v textové podobě) a odešle je k systému SQL server pro zpracování.  

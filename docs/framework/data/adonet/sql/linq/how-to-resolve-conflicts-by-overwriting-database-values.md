@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: fd6db0b8-c29c-48ff-b768-31d28e7a148c
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f3155eca2344e32913aaacbd0e2671603824aaf4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e1dd9a6be51ad1723aab7c3102387a42d1c24996
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-resolve-conflicts-by-overwriting-database-values"></a>Postupy: řešení konfliktů přepsáním hodnot v databázi
 Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních databáze, než se pokusíte odeslat znovu provedené změny, můžete použít <xref:System.Data.Linq.RefreshMode.KeepCurrentValues> přepsat hodnot v databázi. Další informace najdete v tématu [optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
@@ -35,7 +35,7 @@ Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních dat
 ||Správce|Pomocník pro|Oddělení|  
 |------|-------------|---------------|----------------|  
 |Při dotazu uživatel1 a uživatel2 původního stavu databáze.|Alfreds|Marie|Prodeje|  
-|Uživatel1 připraví odešle tyto změny.|Alfred||Marketingové|  
+|Uživatel1 připraví odešle tyto změny.|Alfred||Marketing|  
 |Uživatel2 již odeslána tyto změny.||Marie|Služba|  
   
  Uživatel1 rozhodne na tento konflikt vyřešit tak, že přepíše hodnot v databázi s aktuální hodnoty členů klienta.  
@@ -44,7 +44,7 @@ Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních dat
   
 ||Správce|Pomocník pro|Oddělení|  
 |------|-------------|---------------|----------------|  
-|Nový stav po řešení konfliktů.|Alfred<br /><br /> (z uživatel1)|Marie<br /><br /> (původní)|Marketingové<br /><br /> (z uživatel1)|  
+|Nový stav po řešení konfliktů.|Alfred<br /><br /> (z uživatel1)|Marie<br /><br /> (původní)|Marketing<br /><br /> (z uživatel1)|  
   
  Následující příklad kódu ukazuje, jak chcete přepsat aktuální hodnoty členů klienta hodnot v databázi. (Bez kontroly nebo vlastní zpracování konfliktů jednotlivými členy nastane.)  
   

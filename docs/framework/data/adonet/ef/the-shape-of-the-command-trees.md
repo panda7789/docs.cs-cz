@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 13e2e154a96b46d630b6df11fe3ae024d799c8e6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d7e2b25788b088d9da49bad206f8f2f11d0104a2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="the-shape-of-the-command-trees"></a>Obrazec stromy příkazů
 Modul generování SQL je zodpovědný za generování back-end konkrétní dotaz SQL na základě výrazu stromu příkaz daný vstupní dotaz. Tato část popisuje vlastnosti, vlastnosti a struktura stromy příkazů dotazu.  
@@ -52,9 +52,9 @@ Modul generování SQL je zodpovědný za generování back-end konkrétní dota
 ### <a name="expression-types-not-present-in-output-query-command-trees"></a>Typy výrazů není k dispozici v stromy příkazů výstup dotazu  
  Následující typy výrazů nejsou platné ve stromu příkazů výstupu dotazu a není potřeba ji zpracovat zprostředkovatele:  
   
- Objekt DbDerefExpression  
+ DbDerefExpression  
   
- Třída DbEntityRefExpression  
+ DbEntityRefExpression  
   
  Třída DbRefKeyExpression  
   

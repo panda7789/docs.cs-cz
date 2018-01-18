@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1c59d9d3-6ff9-411b-8b29-b1494d80fdf1
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a556bf85e68cc123bd16feb1020c341ab2a74a59
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7e1703dc8b9ae3c98bcc1d73e15b09cf3e66878
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="clr-user-defined-functions"></a>Uživatelem definované funkce CLR
 Uživatelem definované funkce jsou rutiny, které můžete provést parametry, provádět výpočty nebo jiné akce a vrácení výsledku. Uživatelem definované funkce můžete napsat v žádné rozhraní Microsoft .NET Framework programovací jazyk, jako je například Microsoft Visual Basic .NET nebo Microsoft Visual C#.  

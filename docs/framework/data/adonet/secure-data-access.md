@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 07892869759ac5856b26099f2421caff1ebaf74d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 428dd4cfb9533dbf57b984c8bc1c557f37bb7d15
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="secure-data-access"></a>Zabezpečení přístupu k datům
 Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k dispozici v příslušné úložiště dat, nebo databáze. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo součásti, které vaše aplikace může obsahovat.  

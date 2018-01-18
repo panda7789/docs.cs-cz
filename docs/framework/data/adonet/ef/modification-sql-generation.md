@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4ed5c6fd4e8bdbf148a57401163936631236b46b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6696d80246d61cc2eac47266837d79661141b9b0
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="modification-sql-generation"></a>Generování SQL úpravy
 Tato část popisuje, jak vyvíjet modul úpravy SQL generování pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překladu stromu příkazů změny do příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  
@@ -89,9 +89,9 @@ The elements of the list are specified as type DbModificationClause, which speci
   
 -   Objekt DbAndExpression  
   
--   Třída DbNotExpression  
+-   DbNotExpression  
   
--   Třída DbOrExpression  
+-   DbOrExpression  
   
 ## <a name="modification-sql-generation-in-the-sample-provider"></a>Generování SQL změny ve zprostředkovateli ukázka  
  [Zprostředkovatele Entity Framework ukázka](http://go.microsoft.com/fwlink/?LinkId=180616) ukazuje součástí zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Jeho cílem databáze systému SQL Server 2005 a je implementovaný jako obálku nad System.Data.SqlClient ADO.NET 2.0 dat zprostředkovatele.  
@@ -103,7 +103,7 @@ The elements of the list are specified as type DbModificationClause, which speci
   
  Tyto informace se věnuje návštěvou typy konkrétní výrazů (uzly s trivial překlady byly vynechány).  
   
-### <a name="dbcomparisonexpression"></a>Objekt DbComparisonExpression  
+### <a name="dbcomparisonexpression"></a>DbComparisonExpression  
  Pokud je ExpressionTranslator vytvořený pomocí preserveMemberValues = true, a když konstanta vpravo DbConstantExpression (namísto DbNullExpression) se přidruží levý operand (DbPropertyExpressions), DbConstantExpression. Který se používá, pokud je třeba vytvořit pro identifikaci příslušného řádku vyberte příkaz return.  
   
 ### <a name="dbconstantexpression"></a>DbConstantExpression  

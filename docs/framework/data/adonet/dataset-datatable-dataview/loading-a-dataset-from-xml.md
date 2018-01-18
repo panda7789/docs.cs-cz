@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ebbe1addf47bc76903e362cfb353ade359a1c8ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d0c98224b8b508fec5fe584388872757a9dfdf3
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="loading-a-dataset-from-xml"></a>Načítání datové sady z XML
 Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML nebo dokumentu. Kromě toho s rozhraním .NET Framework máte flexibilitu přes načtení informací ze souboru XML a jak schéma nebo relační struktura <xref:System.Data.DataSet> je vytvořena.  
@@ -36,7 +36,7 @@ Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového p
 |**ReadSchema**|Načte všechny vložené schéma a načte dat a schématu.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, přidat nové tabulky z vloženého schématu existující schéma v <xref:System.Data.DataSet>. Pokud žádné tabulky v vloženého schématu již existuje v <xref:System.Data.DataSet>, je vyvolána výjimka. Nebudete moct změnit schéma existující tabulky pomocí **XmlReadMode.ReadSchema**.<br /><br /> Pokud <xref:System.Data.DataSet> neobsahuje schématu a neexistuje žádný vložené schéma, nenačtou žádná data.<br /><br /> Vložené schéma lze definovat pomocí schématu XML definition language (XSD) schématu. Podrobnosti o zápis vloženého schématu jako schématu XML najdete v tématu [odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).|  
 |**IgnoreSchema**|Ignoruje všechny vložené schéma a načte data do existující <xref:System.Data.DataSet> schématu. Všechna data, která neodpovídá existující schéma se zahodí. Pokud neexistuje žádné schéma v <xref:System.Data.DataSet>, je načtena žádná data.<br /><br /> Pokud jsou data formát DiffGram **IgnoreSchema** má stejné funkce jako **formát DiffGram** *.*|  
 |**InferSchema**|Ignoruje všechny vložené schéma a odvodí, že schéma za strukturu dat XML a pak načte data.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, je aktuální schéma rozšířeno přidáním sloupce do existující tabulky. Navíc tabulky se nepřidají, pokud nejsou existující tabulky. Pokud odvozené tabulky s jiný obor názvů již existuje, nebo pokud žádné odvozené sloupce v konfliktu s existující sloupce, je vyvolána výjimka.<br /><br /> Podrobnosti o **ReadXmlSchema** odvodí schématu z dokumentu XML, najdete na stránce [odvození datovou sadu relační struktura z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md).|  
-|**Formát DiffGram**|Načte prvek formátu DiffGram a přidá data na aktuální schéma. **Formát DiffGram** nové řádky s existující kde jedinečný identifikátor hodnoty shodují, řádky sloučí. Najdete v části "Slučování dat z XML" na konci tohoto tématu. Další informace o DiffGrams najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).|  
+|**DiffGram**|Načte prvek formátu DiffGram a přidá data na aktuální schéma. **Formát DiffGram** nové řádky s existující kde jedinečný identifikátor hodnoty shodují, řádky sloučí. Najdete v části "Slučování dat z XML" na konci tohoto tématu. Další informace o DiffGrams najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).|  
 |**Fragment**|Pokračuje, dokud nebude dosaženo konce datový proud čtení více fragmentů kódu XML. Fragmenty, které odpovídají <xref:System.Data.DataSet> schématu se připojí k příslušné tabulky. Fragmenty, které neodpovídají <xref:System.Data.DataSet> schématu se zahodí.|  
   
 > [!NOTE]

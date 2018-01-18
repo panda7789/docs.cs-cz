@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6166cae86d2956ae3eec28b98fe0af864f6b708b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 81cf30367808a3f198514c0d72fa86a617a5ff13
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="diffgrams"></a>DiffGrams
 Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původní verze datové prvky. <xref:System.Data.DataSet> Používá formát DiffGram formát pro načtení a zachovat její obsah a k serializaci její obsah pro přenos přes síťové připojení. Když <xref:System.Data.DataSet> je zapsána jako formát DiffGram, vyplní formát DiffGram všechny potřebné informace přesně znovu vytvořit obsah, když není schéma služby <xref:System.Data.DataSet>, včetně hodnoty ve sloupcích i **původní** a **aktuální** verze řádku, řádku informace o chybě a pořadí řádků.  
@@ -95,8 +95,8 @@ Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původ
 |Poznámka|Popis|  
 |----------------|-----------------|  
 |**id**|Použít spárovat elementů v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky elementům ve  **\<**  ***DataInstance***  **>**  bloku. Hodnoty s **diffgr:id** poznámky jsou ve tvaru *[TableName] [RowIdentifier]*. Příklad: `<Customers diffgr:id="Customers1">`.|  
-|**identifikátor parentId**|Identifikuje které element z  **\<**  ***DataInstance***  **>**  blok je nadřazeného elementu aktuálního elementu. Hodnoty s **diffgr:parentId** poznámky jsou ve tvaru *[TableName] [RowIdentifier]*. Příklad: `<Orders diffgr:parentId="Customers1">`.|  
-|**haschanges –**|Identifikuje řádek  **\<**  ***DataInstance***  **>**  blokovat jako upravená. **Haschanges –** poznámky může mít jednu z následujících dvou hodnot:<br /><br /> **Vložit**<br /> Identifikuje **Added** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádek, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale zde bude žádný element s poznámkami ve  **\<**  ***DataInstance***  **>**  bloku.|  
+|**parentId**|Identifikuje které element z  **\<**  ***DataInstance***  **>**  blok je nadřazeného elementu aktuálního elementu. Hodnoty s **diffgr:parentId** poznámky jsou ve tvaru *[TableName] [RowIdentifier]*. Příklad: `<Orders diffgr:parentId="Customers1">`.|  
+|**hasChanges**|Identifikuje řádek  **\<**  ***DataInstance***  **>**  blokovat jako upravená. **Haschanges –** poznámky může mít jednu z následujících dvou hodnot:<br /><br /> **Vložit**<br /> Identifikuje **Added** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádek, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale zde bude žádný element s poznámkami ve  **\<**  ***DataInstance***  **>**  bloku.|  
 |**hasErrors**|Identifikuje řádek  **\<**  ***DataInstance***  **>**  blokovat s **RowError**. Chyba prvek je umístěn v  **\<diffgr:errors >** bloku.|  
 |**Chyba**|Obsahuje text **RowError** pro konkrétní prvek,  **\<diffgr:errors >** bloku.|  
   
@@ -105,7 +105,7 @@ Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původ
 |Poznámka|Popis|  
 |----------------|-----------------|  
 |**Atributu RowOrder**|Zachová řádek pořadí původní data a identifikuje index v řádku v konkrétní <xref:System.Data.DataTable>.|  
-|**Skryté**|Určuje sloupec tak, že má **ColumnMapping** vlastnost nastavena na hodnotu **MappingType.Hidden**. Atribut je zapsaný ve formátu **msdata: Skrytá** *[ColumnName]*= "*hodnotu*". Příklad: `<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">`.<br /><br /> Všimněte si, že skrytých sloupců zapíšou jenom jako atribut formátu DiffGram pokud obsahují data. Jinak jsou ignorovány.|  
+|**Hidden**|Určuje sloupec tak, že má **ColumnMapping** vlastnost nastavena na hodnotu **MappingType.Hidden**. Atribut je zapsaný ve formátu **msdata: Skrytá** *[ColumnName]*= "*hodnotu*". Příklad: `<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">`.<br /><br /> Všimněte si, že skrytých sloupců zapíšou jenom jako atribut formátu DiffGram pokud obsahují data. Jinak jsou ignorovány.|  
   
 ## <a name="sample-diffgram"></a>Formát DiffGram ukázka  
  Níže je uveden příklad formátu DiffGram formátu. Tento příklad ukazuje výsledek aktualizace na řádek v tabulce, než změny byly potvrzeny. Řádek s CustomerID "ALFKI" byla upravena, ale neaktualizuje. V důsledku toho je **aktuální** řádek s **diffgr:id** z označena "jako Zákazníci1" v  **\<**  ***DataInstance***  **>**  bloku a **původní** řádek s **diffgr:id** z označena "jako Zákazníci1" v  **\<diffgr: před >**bloku. Obsahuje řádek s CustomerID "ANATR" **RowError**, takže je opatřen poznámkou `diffgr:hasErrors="true"` a související prvek,  **\<diffgr:errors >** bloku.  

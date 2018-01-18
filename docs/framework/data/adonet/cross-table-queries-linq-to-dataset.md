@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 6819a16f-8656-41af-a54d-dfec0cb66366
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 059dd39f3583c3b8fcf6736e514b9cc4870d3ad6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0ede3cef32fc752239dfbed6a05adbdb1cc5bfbe
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="cross-table-queries-linq-to-dataset"></a>Dotazy křížové tabulky (LINQ na DataSet)
 Kromě dotazování na jednotlivé tabulky, můžete také provést křížové tabulky dotazy v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. To se provádí pomocí *spojení*. Spojení je přidružení objektů v jeden zdroj dat s objekty, které sdílejí společný atribut ve zdroji dat, jako je produkt nebo se obraťte na ID. Relace mezi objekty jsou v objektově orientované programování poměrně snadno přejít, protože každý objekt má člena, který odkazuje na jiný objekt. V tabulkách externí databáze ale navigace relací není stejně jednoduché. Databázové tabulky neobsahuje předdefinovaný vztahy. V těchto případech operace spojení lze tak, aby odpovídaly elementy z každého zdroje. Například zadány dvě tabulky, které obsahují informace o produktu a informace o prodeji, můžete použít operace spojení tak, aby odpovídaly informace o prodeji a produktů pro stejné prodeje pořadí.  

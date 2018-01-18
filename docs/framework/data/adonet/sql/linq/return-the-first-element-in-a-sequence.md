@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: ccdc3777-b2c2-44e3-a627-abef8d79a555
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 476b8863d05f0c2d77b1b90c8795b85449ed3160
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bbdfe78f15490ce2c6722c83a4615ca29cbc5863
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="return-the-first-element-in-a-sequence"></a>Vrátí první prvek v pořadí
 Použití <xref:System.Linq.Enumerable.First%2A> operátor vrátit první prvek v pořadí. Dotazy, které používají <xref:System.Linq.Enumerable.First%2A> okamžitě prováděny.  

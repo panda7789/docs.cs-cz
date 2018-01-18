@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 15505cd7-0df2-427a-9f86-e0f96f60ee2e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0b596a16a6bf11982ba6edd4a646b46fa22d3e3b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7ff6bf048b5303565cd8c6c1c7448a47a89fc22
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-filter-at-the-datacontext-level"></a>Postupy: filtru na úrovni DataContext
 Můžete filtrovat `EntitySets` na `DataContext` úroveň. Tyto filtry platí pro všechny dotazy pracovat, <xref:System.Data.Linq.DataContext> instance.  

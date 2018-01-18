@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f77d5c98c96bd4b6085c30b6d1dd713bd324fbad
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 529c98b0ea9b9d4ec3587ce138af8af981f1e008
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-and-adonet"></a>Oracle a ADO.NET
 > [!NOTE]

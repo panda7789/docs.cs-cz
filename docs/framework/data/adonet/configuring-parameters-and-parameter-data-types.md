@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0f5aed56ba4958d44e0628f55115308751afae55
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a71ba7ed12196184b7e826ed70c92a9873efdb0c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 Příkaz objekty používají parametry k předání hodnoty do příkazů SQL nebo uložené procedury, kontrola typu a ověření. Na rozdíl od text příkazu parametr vstup považovat za literálovou hodnotou, ne jako spustitelný kód. To pomáhá chránit před útoky "Injektáž SQL", ve kterých útočník vloží příkaz tohoto ohrožení zabezpečení na serveru do příkazu SQL.  
@@ -55,7 +55,7 @@ Příkaz objekty používají parametry k předání hodnoty do příkazů SQL n
   
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Datový typ zprostředkovatele `Parameter` objektu je odvozeno z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ `Value` z `Parameter` objekt, nebo z `DbType` z `Parameter` objektu. V následující tabulce jsou uvedeny odvozené `Parameter` typ založen na objekt předaný jako `Parameter` hodnotu nebo zadaný `DbType`.  
   
-|Typ rozhraní .NET Framework|Hodnota DbType|SqlDbType|OleDbType|OdbcType:|OracleType|  
+|Typ rozhraní .NET Framework|DbType|SqlDbType|OleDbType|OdbcType|OracleType|  
 |-------------------------|------------|---------------|---------------|--------------|----------------|  
 |<xref:System.Boolean>|Boolean|Bit|Boolean|Bit|Byte|  
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|  

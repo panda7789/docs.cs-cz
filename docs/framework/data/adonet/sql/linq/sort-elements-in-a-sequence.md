@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: d59b93a9-50c8-4770-a114-d902f6a0ea76
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7a0dd445254d0434fe0825a5da0134084fbddbab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f296565beb284095dce2520cd545f8af61dc6b48
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sort-elements-in-a-sequence"></a>Řazení elementů v pořadí
 Použití <xref:System.Linq.Enumerable.OrderBy%2A> operátor seřadit pořadí podle jeden či více klíčů.  

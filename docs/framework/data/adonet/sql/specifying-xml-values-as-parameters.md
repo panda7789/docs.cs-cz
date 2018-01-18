@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5957dee03d7f3cd54b3fdacd0d38dead5bbc077d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7514d2d19b6691fc5a25e17e7ad483d108fe4aa2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Zadání hodnoty XML jako parametry
 Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec v kódu XML, vývojáři mohou zadat tuto hodnotu pomocí instance **SqlXml** datového typu. Neexistují žádné triky; skutečně Sloupce XML v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přijmout parametr hodnoty stejným způsobem jako jiné datové typy.  

@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 7954475616b122f8bb96ad00d05b476b3beeb52c
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: ee52b8246b48d9305b0c966f944944767631a4fc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 
@@ -254,7 +254,7 @@ Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Měli byste obdrž
 
 Po dokončení "větví a cyklu" rychlý start.
 
-Můžete pokračovat [pole a kolekce](arrays-and-collections.md) úvodní ve vašem vývojovém prostředí.
+Můžete pokračovat [interpolované řetězce](interpolated-strings-local.md) úvodní ve vašem vývojovém prostředí.
 
 Další informace o těchto konceptech v těchto tématech:
 

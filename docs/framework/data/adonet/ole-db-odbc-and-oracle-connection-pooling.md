@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7ee991417daa4636cd87c7a3655138d066c261f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d30b28e2a875e64e2c0d1cad43f101cf5fa2f489
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>OLE DB, rozhraní ODBC a Oracle připojení sdružování
 Sdružování připojení může výrazně zvýšit výkon a škálovatelnost vaší aplikace. Tato část popisuje sdružování pro zprostředkovatele dat .NET Framework pro OLE DB, rozhraní ODBC a Oracle.  
@@ -76,10 +76,10 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 |Název|Výchozí|Popis|  
 |----------|-------------|-----------------|  
 |`Connection Lifetime`|0|Pokud připojení se vrátí do fondu, doba jejího vytvoření je porovnána s aktuální čas a zničen připojení, pokud tento časový interval (v sekundách) překročí hodnotu zadanou pomocí `Connection Lifetime`. To je užitečné v clusterovaných konfiguracích vynutit vyrovnávání zátěže mezi spuštěný server a server právě uvést do režimu online.<br /><br /> Hodnota nula (0) způsobí, že ve fondu připojení tak, aby měl maximální časový limit.|  
-|`Enlist`|hodnotu true.|Když `true`, pro sdružování automaticky využívá připojení v aktuálním kontextu transakce vytvoření vlákna, pokud existuje kontextu transakce.|  
+|`Enlist`|'true'|Když `true`, pro sdružování automaticky využívá připojení v aktuálním kontextu transakce vytvoření vlákna, pokud existuje kontextu transakce.|  
 |`Max Pool Size`|100|Maximální počet připojení povolených ve fondu.|  
 |`Min Pool Size`|0|Minimální počet připojení udržují ve fondu.|  
-|`Pooling`|hodnotu true.|Když `true`, je připojení čerpají z odpovídajícímu fondu adres, nebo v případě potřeby vytvořen a přidán do fondu vhodné.|  
+|`Pooling`|'true'|Když `true`, je připojení čerpají z odpovídajícímu fondu adres, nebo v případě potřeby vytvořen a přidán do fondu vhodné.|  
   
 ## <a name="see-also"></a>Viz také  
  [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)  

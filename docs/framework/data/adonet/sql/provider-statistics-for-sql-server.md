@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 87f3dfbb3af6e638207d68540217f7134b95c354
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 43cafc8feb6cee761baffcb2efe41aec18e98abb
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="provider-statistics-for-sql-server"></a>Statistiky Provider pro SQL Server
 Od verze rozhraní .NET Framework verze 2.0, zprostředkovatel dat .NET Framework pro SQL Server podporuje spuštění statistiky. Je nutné povolit statistiky nastavením <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> vlastnost <xref:System.Data.SqlClient.SqlConnection> do objektu `True` po máte platné připojení objekt vytvořený. Po statistiky jsou povolené, můžete zkontrolovat, je jako "snímek v čase" načtením <xref:System.Collections.IDictionary> odkazovat pomocí <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu. Pomocí seznamu pro výčet jako sada položky slovníku dvojice název hodnota. Tyto páry název/hodnota neuspořádaného. Kdykoli můžete volat <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objekt, který chcete reset počítadla. Pokud není povolený statistiky shromažďování, není vygeneruje výjimku. Kromě toho pokud <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> je volána bez <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> nutnosti nejprve zavolat, jsou hodnoty získané počáteční hodnoty pro každou položku. Pokud povolíte statistiky, spusťte aplikaci nějakou dobu a pak zakažte statistiky, hodnoty získané se projeví až do chvíle, kdy byly zakázány statistiky shromážděné hodnoty. Všechny statistické hodnoty získané jsou na základě jednotlivých připojení.  
@@ -42,7 +42,7 @@ Od verze rozhraní .NET Framework verze 2.0, zprostředkovatel dat .NET Framewor
 |`BytesSent`|Vrátí počet bajtů dat odeslaných k systému SQL Server v paketech TDS po aplikace bylo zahájeno pomocí zprostředkovatele a jestli má povolenou statistiky.|  
 |`ConnectionTime`|Množství času (v milisekundách), které bylo připojení otevřené po povolili statistiky (celková doba připojení, pokud statistiky byly povoleny před otevřením připojení).|  
 |`CursorOpens`|Vrátí počet opakovaných kurzoru byla otevřena prostřednictvím připojení, jakmile se aplikace bylo zahájeno pomocí zprostředkovatele a povolil statistiky.<br /><br /> Všimněte si, že jen pro čtení jen nebo předání výsledky vrácené příkazů SELECT nejsou považovány za kurzory a proto neovlivní tento čítač.|  
-|`ExecutionTime`|Vrátí kumulativní množství času (v milisekundách), že má zprostředkovatel strávený zpracováváním po povolili statistiky, včetně doby čekání pro odpovědi ze serveru, jakož i čas strávený provádění kódu ve zprostředkovateli sám sebe.<br /><br /> Třídy, které zahrnují časování kódu jsou:<br /><br /> SqlConnection<br /><br /> SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> Pokud chcete zachovat výkon kritické členy co nejmenší, nejsou vypršel časový limit následující členy:<br /><br /> SqlDataReader<br /><br /> Tento [] – operátor (všechny přetížení)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> Getguid –<br /><br /> Getint16 –<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName –<br /><br /> Getordinal –<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString –<br /><br /> IsDBNull|  
+|`ExecutionTime`|Vrátí kumulativní množství času (v milisekundách), že má zprostředkovatel strávený zpracováváním po povolili statistiky, včetně doby čekání pro odpovědi ze serveru, jakož i čas strávený provádění kódu ve zprostředkovateli sám sebe.<br /><br /> Třídy, které zahrnují časování kódu jsou:<br /><br /> SqlConnection<br /><br /> SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> Pokud chcete zachovat výkon kritické členy co nejmenší, nejsou vypršel časový limit následující členy:<br /><br /> SqlDataReader<br /><br /> Tento [] – operátor (všechny přetížení)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> Getguid –<br /><br /> GetInt16<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName<br /><br /> Getordinal –<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString –<br /><br /> IsDBNull|  
 |`IduCount`|Vrátí celkový počet příkazy INSERT, odstranění a aktualizaci provést prostřednictvím připojení, jakmile se aplikace bylo zahájeno pomocí zprostředkovatele a povolil statistiky.|  
 |`IduRows`|Vrátí celkový počet řádků, které jsou ovlivněné příkazy INSERT, odstranění a aktualizaci provést prostřednictvím připojení, jakmile se aplikace bylo zahájeno pomocí zprostředkovatele a povolil statistiky.|  
 |`NetworkServerTime`|Vrátí kumulativní množství času (v milisekundách), který zprostředkovatel stráví čekáním na odpovědi ze serveru, jakmile aplikace bylo zahájeno pomocí zprostředkovatele a jestli má povolenou statistiky.|  

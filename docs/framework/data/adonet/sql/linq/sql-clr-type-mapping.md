@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 84c7f870edd1c8082936b380547e181d129f529e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc6a3d38b8534c9727562cb3fb82f96fa60db7ec
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typu SQL CLR
 V technologii LINQ to SQL datový model relační databáze mapuje objektový model, který je vyjádřena v programovací jazyk podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL překládá dotazy language-integrated ve model objektu do SQL a odešle je do databáze pro provedení. Při databáze vrátí výsledky, znamená, že technologie LINQ to SQL výsledky zpět na objekty, které můžete pracovat v vlastní programovací jazyk.  
@@ -98,7 +98,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje objektový mo
 ## <a name="numeric-mapping"></a>Číselné mapování  
  Technologie LINQ to SQL umožňuje mapovat číselnými typy mnoho CLR a SQL Server. Následující tabulka uvádí typy CLR, Návrhář relací objektů a SQLMetal vyberte, když vytváříte objektový model, nebo externí mapování souboru na základě vaší databáze.  
   
-|Typ serveru SQL|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`BIT`|<xref:System.Boolean?displayProperty=nameWithType>|  
 |`TINYINT`|<xref:System.Int16?displayProperty=nameWithType>|  
@@ -139,7 +139,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje objektový mo
 ## <a name="text-and-xml-mapping"></a>Text a mapování XML  
  Existují také mnoho založený na textu a typy XML, které můžete namapovat s technologie LINQ to SQL. Následující tabulka uvádí typy CLR, Návrhář relací objektů a SQLMetal vyberte, když vytváříte objektový model, nebo externí mapování souboru na základě vaší databáze.  
   
-|Typ serveru SQL|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`CHAR`|<xref:System.String?displayProperty=nameWithType>|  
 |`NCHAR`|<xref:System.String?displayProperty=nameWithType>|  
@@ -183,7 +183,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje objektový mo
 ## <a name="date-and-time-mapping"></a>Datum a čas mapování  
  Pomocí technologie LINQ to SQL můžete namapovat mnoho typů systému SQL Server data a času. Následující tabulka uvádí typy CLR, Návrhář relací objektů a SQLMetal vyberte, když vytváříte objektový model, nebo externí mapování souboru na základě vaší databáze.  
   
-|Typ serveru SQL|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`SMALLDATETIME`|<xref:System.DateTime?displayProperty=nameWithType>|  
 |`DATETIME`|<xref:System.DateTime?displayProperty=nameWithType>|  
@@ -219,7 +219,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje objektový mo
 ## <a name="binary-mapping"></a>Binární mapování  
  Existuje mnoho typů systému SQL Server, které lze mapovat na typ CLR <xref:System.Data.Linq.Binary?displayProperty=nameWithType>. V následující tabulce jsou uvedeny typy systému SQL Server, které způsobit Návrhář relací objektů a SQLMetal k definování CLR <xref:System.Data.Linq.Binary?displayProperty=nameWithType> zadat, když vytváříte objektový model, nebo soubor externí mapování založené na vaší databáze.  
   
-|Typ serveru SQL|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`BINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`VARBINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
@@ -251,7 +251,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje objektový mo
 ## <a name="miscellaneous-mapping"></a>Různé mapování  
  Následující tabulka uvádí výchozí typ mapování pro některé různé typy, které nebyly ještě zmíněny. Následující tabulka uvádí typy CLR, Návrhář relací objektů a SQLMetal vyberte, když vytváříte objektový model, nebo externí mapování souboru na základě vaší databáze.  
   
-|Typ serveru SQL|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používané Návrhář relací objektů a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`UNIQUEIDENTIFIER`|<xref:System.Guid?displayProperty=nameWithType>|  
 |`SQL_VARIANT`|<xref:System.Object?displayProperty=nameWithType>|  

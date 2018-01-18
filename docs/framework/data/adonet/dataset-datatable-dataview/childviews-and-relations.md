@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: d475d356-6abb-4701-8fd1-2906fb93dfba
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3730c0ca81506b2fbd1e827d34969a12d2bd065c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b42cd2e825e6d5ab9470bc0cc264b7cd98a1f1ce
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="childviews-and-relations"></a>ChildViews a vztahy
 Pokud existuje relace mezi tabulkami <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky z tabulky souvisejících podřízených pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> řádků v nadřazené tabulce. Například následující kód zobrazí **kategorie** a jejich související **produkty** v abecedním pořadí seřazené podle **CategoryName** a **ProductName** .  

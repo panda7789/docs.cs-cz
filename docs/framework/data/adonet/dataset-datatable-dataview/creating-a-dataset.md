@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 57629d8f-393e-4677-8b83-29ffde27f5fc
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8ae997822d71a0a0a4276b8b32b963149a8ed67a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 565d407dda3a3ac403dc92ad294af8fd1b5dfd70
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="creating-a-dataset"></a>Vytvoření datové sady
 Vytvoření instance <xref:System.Data.DataSet> voláním <xref:System.Data.DataSet> konstruktor. Volitelně můžete zadáte název argument. Pokud nezadáte název <xref:System.Data.DataSet>, název nastavena na "NewDataSet".  

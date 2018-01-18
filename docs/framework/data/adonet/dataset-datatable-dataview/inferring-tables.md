@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: dacf3518f77067a34b0da3a8e6438b813fca3912
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2c00dd11d4d93e5d3b0e2f1c3b75765056a10cab
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="inferring-tables"></a>Odvození tabulky
 Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET nejdřív zjistí, které elementy XML představují tabulky. Následující struktury XML výsledkem tabulka pro **datovou sadu** schématu:  
@@ -48,7 +48,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 |attr1|Element1_Text|  
 |-----------|--------------------|  
 |value1||  
-|Value2|Text1|  
+|value2|Text1|  
   
 ## <a name="elements-with-child-elements"></a>Elementy podřízené elementy  
  Prvky, které mají výsledek podřízené elementy v odvozené tabulky. Zvažte například následující kód XML:  
@@ -106,7 +106,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
   
 |attr1|attr2|  
 |-----------|-----------|  
-|value1|Value2|  
+|value1|value2|  
   
 ## <a name="repeating-elements"></a>Opakující se elementy  
  Prvky, které opakujte výsledek v jedné odvozené tabulky. Zvažte například následující kód XML:  

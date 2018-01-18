@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ac02ea6c07797c600fe9ce9c7b197a95fc84da61
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60724967cccd1209aeec1bf53b4e6d4fa5051996
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Návod: Manipulace s daty (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Kopie v ukázkové databázi Northwind použije k přidání zákazníka, změňte název zákazníka a odstranění objednávky.  
@@ -40,7 +40,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
      Tento soubor můžete vygenerovat pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo na SQLMetal nástroj. Tento názorný postup byla zapsána pomocí nástroje SQLMetal s následující příkazový řádek:  
   
-     **SqlMetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" / pluralizovat**  
+     **sqlmetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" /pluralize**  
   
      Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
@@ -79,7 +79,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, které nemusí být nainstalovány ve výchozím nastavení ve vašem projektu. Pokud System.Data.Linq není uvedena jako odkaz v projektu, přidejte ho, jak je popsáno v následujících krocích:  
   
-#### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
+#### <a name="to-add-systemdatalinq"></a>To add System.Data.Linq  
   
 1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na **přidat odkaz na**.  
   

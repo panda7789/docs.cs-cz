@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 379ec77c5a291ff0fcfa535b808f8976bb416d15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a018447b790dde047bd76e1319a13aa3f77ffc61
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
 Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o zprostředkovatele dat pro <xref:System.Data.Common.DbProviderFactories> třídy. Na základě těchto informací <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří objekt pro vytváření zprostředkovatele silného typu. Chcete-li například vytvořit <xref:System.Data.SqlClient.SqlClientFactory>, můžete předat `GetFactory` řetězec s název zprostředkovatele, který je určený jako "System.Data.SqlClient". Další přetížení `GetFactory` trvá <xref:System.Data.DataRow>. Jakmile vytvoříte objekt pro vytváření zprostředkovatelů, pak můžete jeho metody vytvořit další objekty. Některé z metod `SqlClientFactory` zahrnují <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
@@ -55,7 +55,7 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
 |0|**Jméno**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
 |1|**Popis**|Zprostředkovatel dat .net framework pro SQL Server|Čitelný Popis zprostředkovatele dat|  
 |2|**InvariantName**|System.Data.SqlClient|Název, které je možné programově odkazovat na poskytovatele dat.|  
-|3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory System.Data, verze = 2.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089|Plně kvalifikovaný název objektu pro vytváření třídy, která obsahuje dostatek informací pro vytvoření instance objektu|  
+|3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Plně kvalifikovaný název objektu pro vytváření třídy, která obsahuje dostatek informací pro vytvoření instance objektu|  
   
  To `DataTable` umožňuje povolit uživateli vybrat <xref:System.Data.DataRow> za běhu. Vybraný `DataRow` může být předána do <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metodu pro vytvoření silného typu <xref:System.Data.Common.DbProviderFactory>. Vybrané <xref:System.Data.DataRow> lze předat `GetFactory` metodu pro vytvoření požadovanou `DbProviderFactory` objektu.  
   

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 59ec6ab0-88e5-4d25-b112-7a4eccbe61f0
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 9d0cef0247c36f3c7819e37f8144635ebdbf610b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 050c73d3fd9146c8eee83baf1bd504acc18c8718
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-set"></a>sada entit
 *Sady entit* je logický kontejner pro instance [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a instancí jakéhokoli typu odvozeného z tohoto typu entity. (Informace o odvozené typy najdete v tématu [datového modelu Entity: dědičnosti](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sadu entit je podobná vztah mezi řádek a tabulku v relační databázi: řádek, jako je typ entity popisuje strukturu dat a jako tabulku, obsahuje sadu entit instance dané struktury. Sadu entit není dat modelování konstrukce; Struktura dat nepopisuje. Místo toho sadu entit poskytuje konstrukt pro hostování nebo úložiště prostředí (například databáze SQL serveru nebo modul common language runtime) k instancím typu entity skupiny tak, aby se můžete namapovat k úložišti dat.  

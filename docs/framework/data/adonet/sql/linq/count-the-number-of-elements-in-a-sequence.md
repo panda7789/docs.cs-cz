@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: ccbe5d54-c9eb-4b14-b0ab-f628483c5f99
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f6d1403384b8725720abbe9a81f98cbbfdb9c6e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bc2747167893e5c9bed76a118a528089fbe93a02
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="count-the-number-of-elements-in-a-sequence"></a>Počet elementů v pořadí
 Použití <xref:System.Linq.Enumerable.Count%2A> operátor počítat počet elementů v pořadí.  

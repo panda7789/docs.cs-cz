@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
 caps.latest.revision: "13"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ff16c00f1e0e87c9f046c1f5944e11a9111f6e1a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ec484bc544f2889d6f37055cb9863b4806ec20c8
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Výsledků buď zpracování přímo, uložena v umístění <xref:System.Data.DataSet> Chcete-li zpřístupnit pro uživatele podle potřeby, kombinované s daty z více zdrojů nebo používat vzdáleně mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatelé dat jsou lightweight, vytváření minimální vrstva mezi zdroji dat a kód, zvýšení výkonu bez omezení funkčnosti.  
@@ -89,7 +89,7 @@ using System.Data.SqlClient;
   
 |Ovladače|Zprostředkovatel|  
 |------------|--------------|  
-|ZPROSTŘEDKOVATEL SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
+|SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
 |MSDAORA|Zprostředkovatel Microsoft OLE DB pro Oracle|  
 |Microsoft.Jet.OLEDB.4.0|Zprostředkovatel OLE DB pro Microsoft Jet|  
   
@@ -119,7 +119,7 @@ using System.Data.OleDb;
 |------------|  
 |[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
 |Microsoft ODBC pro Oracle|  
-|Ovladače Microsoft Access (*.mdb)|  
+|Microsoft Access Driver (*.mdb)|  
   
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro ODBC – třídy se nacházejí v <xref:System.Data.Odbc> oboru názvů.  
   

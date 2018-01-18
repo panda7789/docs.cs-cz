@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 9d98a7be-b110-4edb-8eba-bed10f250b6d
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ccc54df7a69db8186c653afb415a5679b65ab50d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 328284ce07a0361dbfd25b0d765000b497156ff7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="constant-expressions"></a>Výrazy konstant
 Konstantní výraz se skládá z konstantní hodnotu. Konstantní hodnoty jsou přímo převést na příkaz konstantní výrazy stromu, bez překladu na straně klienta. To zahrnuje výrazy, jejichž výsledkem konstantní hodnotu. Chování zdroje dat by měl být tedy, že pro všechny výrazy zahrnující konstanty. To může mít za následek chování, které se liší od chování CLR.  

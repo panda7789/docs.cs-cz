@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d58a5edd-7b5c-48e1-b5d7-a326ff426aa4
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ebae7ad633273a9c33aa7ddcad1b11ad76d9046c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18bfb654a6f116f87ae7eeb6059fe994b9084c19
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="identifiers-entity-sql"></a>Identifikátory (entita SQL)
 Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představují aliasy výraz dotazu, odkazy na proměnné, vlastnosti objektů, funkce a tak dále. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]nabízí dva typy identifikátorů: jednoduché identifikátory a identifikátory v uvozovkách.  
@@ -37,7 +37,7 @@ Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esq
   
 -   Karty.  
   
--   BACKSPACE.  
+-   Backspace.  
   
 -   Další hranaté závorky (tedy hranaté závorky v rámci hranaté závorky, které zobrazit identifikátor).  
   

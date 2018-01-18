@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 73c218c6-1c44-4402-a167-4f6262629a91
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f041fc4e42d2b1e18ef701cd80396e92e571bff0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9a090d02b9c2ce63bd265996d237aab5c30f61bf
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="floating-point-numbers"></a>Čísla s plovoucí desetinnou čárkou
 Toto téma popisuje některé problémy, které vývojáři často dojde, když pracují s plovoucí desetinnou čárkou v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Tyto problémy jsou způsobena tím, že počítače ukládat čísla s plovoucí desetinnou čárkou a nejsou specifické pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> nebo <xref:System.Data.OracleClient>.  

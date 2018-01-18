@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 58f30c4c2c220660b62b03ea4eb052bd2cf015eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f92fbcf1aaa8f5d2c856fe1acdbc6d3886fa0c25
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-sql-reference"></a>Odkaz na entitu SQL
 Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] referenční témata. Toto téma shrnuje a skupin [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory podle kategorie.  
@@ -60,9 +60,9 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |[JE &#91; NE &#93; HODNOTU NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|Určuje, pokud má hodnotu null výrazu dotazu.|  
 |[< (Méně než)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|Porovná dva výrazy a určit, zda má hodnotu menší, než pravý výraz levý výraz.|  
 |[<= (Méně než nebo rovno)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|Porovná dva výrazy a určit, zda levý výraz má hodnotu menší než nebo rovna pravý výraz.|  
-|[&#91; NE &#93; MEZI](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|Určuje, zda výraz výsledkem hodnota v zadaném rozsahu.|  
+|[&#91;NOT&#93; BETWEEN](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|Určuje, zda výraz výsledkem hodnota v zadaném rozsahu.|  
 |[!= (Nerovná se)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-equal-to-entity-sql.md)|Porovnává dva výrazy k určení, zda levý výraz není rovno pravý výraz.|  
-|[&#91; NE &#93; JAKO](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|Určuje, zda řetězec znaků konkrétní odpovídá zadanému vzoru.|  
+|[&#91;NOT&#93; LIKE](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|Určuje, zda řetězec znaků konkrétní odpovídá zadanému vzoru.|  
   
 ## <a name="logical-and-case-expression-operators"></a>Výraz případu a logické operátory  
  Logické operátory Testování pravdivosti podmínky. Výraz CASE vyhodnotí sadu logických výrazů k určení výsledku. Následující tabulka uvádí logické a případu výraz operátory.  
@@ -109,9 +109,9 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |--------------|---------|  
 |[ANYELEMENT](../../../../../../docs/framework/data/adonet/ef/language-reference/anyelement-entity-sql.md)|Extrahuje element z kolekce s více hodnotami.|  
 |[EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)|Vrátí kolekci všech jedinečných hodnot z výrazu dotazu nalevo od operand EXCEPT nejsou také vrácená z dotazu výrazu napravo od EXCEPT operand.|  
-|[&#91; NE &#93; EXISTUJE](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|Určuje, zda kolekce je prázdný.|  
+|[&#91;NOT&#93; EXISTS](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|Určuje, zda kolekce je prázdný.|  
 |[FLATTEN](../../../../../../docs/framework/data/adonet/ef/language-reference/flatten-entity-sql.md)|Převede kolekci plochou kolekce kolekcí.|  
-|[&#91; NE &#93; V](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|Určuje, zda hodnota odpovídá libovolná hodnota v kolekci.|  
+|[&#91;NOT&#93; IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|Určuje, zda hodnota odpovídá libovolná hodnota v kolekci.|  
 |[INTERSECT](../../../../../../docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)|Vrátí kolekci všech jedinečných hodnot, které jsou vráceny ve výrazech dotazů na levé straně a pravé straně operandu INTERSECT.|  
 |[OVERLAPS](../../../../../../docs/framework/data/adonet/ef/language-reference/overlaps-entity-sql.md)|Určuje, zda mají dvě kolekce společné prvky.|  
 |[SET](../../../../../../docs/framework/data/adonet/ef/language-reference/set-entity-sql.md)|Použít k převedení na kolekci objektů do sady podle je novou kolekci s odebrat všechny duplicitní prvky.|  

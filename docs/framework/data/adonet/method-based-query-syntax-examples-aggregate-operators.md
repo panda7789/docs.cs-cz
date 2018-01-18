@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 5ed5f01d-acb2-4dd4-be60-f04c2d570fa8
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: bfb558c1904af7ba5f0cbfeaf63ee02b1c736553
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 56188c42fabc678c2f5689f0ca09136c5556f189
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="method-based-query-syntax-examples-aggregate-operators-linq-to-dataset"></a>Příklady syntaxe dotazů metoda: Agregační operátory (LINQ na DataSet)
 V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Aggregate%2A>, <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.LongCount%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Sum%2A> operátory k dotazování <xref:System.Data.DataSet> a agregace dat pomocí dotazu – metoda syntaxe.  
@@ -105,7 +105,7 @@ V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumer
  [!code-csharp[DP LINQ to DataSet Examples#LongCountSimple](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#longcountsimple)]
  [!code-vb[DP LINQ to DataSet Examples#LongCountSimple](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#longcountsimple)]  
   
-## <a name="max"></a>maximální počet  
+## <a name="max"></a>Max  
   
 ### <a name="example"></a>Příklad  
  Tento příklad používá <xref:System.Linq.Enumerable.Max%2A> metoda získat největší celkový splatnosti.  

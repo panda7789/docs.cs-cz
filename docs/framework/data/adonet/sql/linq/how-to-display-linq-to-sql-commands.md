@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1decb05e-37ad-4ed6-ab2f-071eb4c4f628
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 343cf07ead03ccba82606d918a3a5d0106f5b0e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 36bb6fee607b4a020dec3fd55765f7d8a01c8577
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-display-linq-to-sql-commands"></a>Postupy: zobrazení LINQ SQL příkazy
 Použití <xref:System.Data.Linq.DataContext.GetCommand%2A> zobrazíte příkazy SQL a další informace.  
