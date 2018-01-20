@@ -13,23 +13,23 @@ ms.assetid: 141b003e-1ddb-4e1c-bcb2-e1c3870e6a51
 caps.latest.revision: "41"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f5382b0050b81ed3bb1a075a042bdc4034a3975d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6f7c80acdb3815af4b5d545297894778029a9104
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typů (Průvodce programováním v C#)
 Při definování obecné třídy, můžete použít omezení na typy typy, které kód klienta můžete použít pro argumenty typu při třídě. Pokud kód klienta se pokusí vytvořit třídu pomocí typu, která není povolena omezení, výsledkem je chyba kompilace. Tato omezení se nazývají omezení. Omezení zadávají pomocí `where` kontextové klíčové slovo. Následující tabulka uvádí šest typy omezení:  
   
 |Omezení|Popis|  
 |----------------|-----------------|  
-|kde T: – struktura|Argument typu musí být typ hodnoty. Některé hodnoty typ s výjimkou <xref:System.Nullable> lze zadat. V tématu [pomocí typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/using-nullable-types.md) Další informace.|  
-|kde T: – Třída|Argument typu musí být odkazového typu; To platí také pro třídu, rozhraní, delegát nebo typ pole.|  
-|kde T: new()|Argument typu musí mít konstruktor public bez parametrů. Při použití spolu s jiná omezení `new()` omezení musí být uvedený jako poslední.|  
-|kde T: \<název základní třídy >|Argument typu musí být nebo odvozena od zadané základní třídy.|  
-|kde T: \<název rozhraní >|Argument typu musí být nebo implementovat rozhraní zadaný. Je možné zadat více omezení rozhraní. Omezení rozhraní může být také obecné.|  
-|kde T: U|Argument typu zadaná pro T musí být nebo odvozena od argument zadaný pro U.|  
+|`where T: struct`|Argument typu musí být typ hodnoty. Některé hodnoty typ s výjimkou <xref:System.Nullable> lze zadat. V tématu [pomocí typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/using-nullable-types.md) Další informace.|  
+|`where T : class`|Argument typu musí být odkazového typu; To platí také pro třídu, rozhraní, delegát nebo typ pole.|  
+|`where T : new()`|Argument typu musí mít konstruktor public bez parametrů. Při použití spolu s jiná omezení `new()` omezení musí být uvedený jako poslední.|  
+|`where T : `*\<Název základní třídy >*|Argument typu musí být nebo odvozena od zadané základní třídy.|  
+|`where T : `*\<Název rozhraní >*|Argument typu musí být nebo implementovat rozhraní zadaný. Je možné zadat více omezení rozhraní. Omezení rozhraní může být také obecné.|  
+|`where T : U`|Argument typu zadaná pro T musí být nebo odvozena od argument zadaný pro U.|  
   
 ## <a name="why-use-constraints"></a>Proč používat omezení  
  Pokud chcete prozkoumat položky v seznamu obecné k určení, zda je platný a porovnejte je s některé jiné položky, musí mít kompilátor, některé zaručit, že operátor nebo metody, kterou musí volání bude podporovat některý argument typ, který může být určena co klienta Německo. Tato záruka se získávají použitím jeden nebo více omezení na vaší definice – obecná třída. Například omezení základní třídy říká kompilátoru, že pouze objekty tohoto typu nebo odvozené z tohoto typu se použije jako argumenty typu. Jakmile kompilátor tento záruka, můžete povolit metod k volání ve třídě obecného typu. Omezení se aplikují pomocí kontextové klíčové slovo `where`. Následující příklad kódu ukazuje funkci můžete přidáme `GenericList<T>` – třída (v [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)) použitím omezení základní třídy.  
@@ -79,7 +79,7 @@ Při definování obecné třídy, můžete použít omezení na typy typy, kter
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Generic>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
  [Obecné třídy](../../../csharp/programming-guide/generics/generic-classes.md)  
- [New – omezení](../../../csharp/language-reference/keywords/new-constraint.md)
+ [new – omezení](../../../csharp/language-reference/keywords/new-constraint.md)

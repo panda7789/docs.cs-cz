@@ -16,38 +16,38 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 77886cef1a8dbd320223526b86f86fa9cee6a9f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4b0967790f2bbf8fa9a889c56fa9c5168f7523bd
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; – Element
+
 Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje. Tento prvek by měl být použit všemi aplikacemi sestavenými pomocí rozhraní .NET Framework 1.1 a staršími verzemi.  
   
 [\<Konfigurace >](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
-
-[\<spuštění >](../../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
+&nbsp;&nbsp;[\<spuštění >](../../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime>**  
   
-**\<supportedRuntime >**  
-  
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntaxe
   
 ```xml  
 <supportedRuntime version="runtime version" sku="sku id"/>  
 ```  
   
-## <a name="attributes"></a>Atributy  
+## <a name="attributes"></a>Atributy
   
 |Atribut|Popis|  
 |---------------|-----------------|  
 |**verze**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Platné hodnoty z `version` atributů najdete v tématu [hodnoty "runtime verze"](#version) části. **Poznámka:** prostřednictvím rozhraní .NET Framework 3.5 "*verzi modulu runtime*" hodnota má podobu *hlavní*. *méně závažné*. *sestavení*. Od verze [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pouze čísla hlavní verze a podverze jsou vyžadována (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|  
-|**SKU**|Nepovinný atribut.<br /><br /> Hodnotu řetězce, který určuje skladové jednotky (SKU), který naopak určuje, jaké verze rozhraní .NET Framework podporuje tuto aplikaci.<br /><br /> Od verze rozhraní .NET Framework 4.0, použití `sku` se doporučuje atribut.  Pokud jsou k dispozici, znamená to verzi rozhraní .NET Framework, že cílem aplikace.<br /><br /> Platné hodnoty atributu, sku, najdete v článku [hodnoty "sku id"](#sku) části.|  
+|**sku**|Nepovinný atribut.<br /><br /> Hodnotu řetězce, který určuje skladové jednotky (SKU), který naopak určuje, jaké verze rozhraní .NET Framework podporuje tuto aplikaci.<br /><br /> Od verze rozhraní .NET Framework 4.0, použití `sku` se doporučuje atribut.  Pokud jsou k dispozici, znamená to verzi rozhraní .NET Framework, že cílem aplikace.<br /><br /> Platné hodnoty atributu, sku, najdete v článku [hodnoty "sku id"](#sku) části.|  
   
-## <a name="remarks"></a>Poznámky  
+## <a name="remarks"></a>Poznámky
+
 Pokud  **\<supportedRuntime >** element není k dispozici v konfiguračním souboru aplikace, je použít verzi modulu runtime použitý k sestavení aplikace.  
 
- **\<SupportedRuntime >** element má být používána všechny aplikace vytvořené pomocí verze 1.1 nebo novější modulu runtime. Musíte použít aplikace založené na podporu pouze verze 1.0 modulu runtime [ \<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) element.  
+**\<SupportedRuntime >** element má být používána všechny aplikace vytvořené pomocí verze 1.1 nebo novější modulu runtime. Musíte použít aplikace založené na podporu pouze verze 1.0 modulu runtime [ \<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) element.  
   
 > [!NOTE]
 >  Pokud použijete [corbindtoruntimebycfg –](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md) funkce zadat konfigurační soubor, je nutné použít `<requiredRuntime>` element pro všechny verze modulu runtime. `<supportedRuntime>` Element se ignoruje, pokud používáte [corbindtoruntimebycfg –](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
@@ -72,9 +72,9 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |3.5|"v2.0.50727"|  
 |4.0-4.7.1|"v4.0"|  
 
-  
 <a name="sku"></a>   
-## <a name="sku-id-values"></a>hodnoty "sku id"  
+## <a name="sku-id-values"></a>hodnoty "sku id"
+
 `sku` Atribut target framework Přezdívka (TFM) používá k označení verzi rozhraní .NET Framework, který cílí a vyžaduje ke spuštění aplikace. Následující tabulka uvádí platné hodnoty, které jsou podporovány `sku` atribut od verze rozhraní .NET Framework 4.
   
 |Verze rozhraní .NET Framework|`sku`atribut|  
@@ -94,7 +94,7 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |4.6.1|". NETFramework, verze = v4.6.1 "|  
 |4.6.2|". NETFramework, verze = v4.6.2 "|  
 |4.7|". NETFramework, verze = v4.7 "|
-|4.7.1|". NETFramework, verze = 4.7.1"|
+|4.7.1|". NETFramework, verze = v4.7.1 "|
 
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak určit verzi podporované runtime v konfiguračním souboru. Konfigurační soubor označuje, že aplikace cílí rozhraní .NET Framework 4.7.  
@@ -107,10 +107,12 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 </configuration>  
 ```  
   
-## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element lze použít v konfiguračním souboru aplikace.  
-  
-## <a name="see-also"></a>Viz také  
+## <a name="configuration-file"></a>Konfigurační soubor
+
+Tento element lze použít v konfiguračním souboru aplikace.
+
+## <a name="see-also"></a>Viz také
+
  [Schéma nastavení spouštění](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Vnitroprocesové souběžné provádění](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)
+ [Vnitroprocesové souběžné provádění](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)  

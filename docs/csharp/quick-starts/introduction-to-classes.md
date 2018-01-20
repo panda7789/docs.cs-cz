@@ -4,16 +4,16 @@ description: "Vytvoření vaší první programu C# a prozkoumat objektově orie
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/11/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 55d6050d7573b9088b361fb571b96425533bda1f
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 4e15b1b12b9420ca1781eca3f2578fa24c9ec82a
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="introduction-to-classes"></a>Úvod do třídy
 

@@ -4,16 +4,16 @@ description: "V této úvodní o větve a smyčky psaní kódu jazyka C# a prozk
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/31/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: ee52b8246b48d9305b0c966f944944767631a4fc
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 609c8625b19025a20c1da1e767870eafbab4c4a0
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 

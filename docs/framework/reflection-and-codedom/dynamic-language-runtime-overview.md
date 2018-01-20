@@ -1,12 +1,8 @@
 ---
 title: "Dynamic Language Runtime přehled | Microsoft Docs"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - dynamic language runtime
@@ -19,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 78de2016e02c242fcf6ec454a56a4beff41c2d12
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 54ea1f9f071d749058450487d25bdff13ca04549
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 *Dynamické běhové* (DLR) je prostředí runtime, který přidává sadu služeb pro dynamické jazyky do common language runtime (CLR). DLR usnadňuje vývoj dynamických jazyků pro spuštění na rozhraní .NET Framework a přidat dynamické funkce do staticky zadávané jazyky.  
@@ -52,10 +48,10 @@ ms.lasthandoff: 12/22/2017
   
  `scriptobj.Count += 1;`  
   
- Jako modulu CLR DLR je součástí rozhraní .NET Framework a je součástí instalačních balíčků rozhraní .NET Framework a Visual Studio. Open-source verze DLR je také k dispozici ke stažení na [webu CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) webu.  
+ Jako modulu CLR DLR je součástí rozhraní .NET Framework a je součástí instalačních balíčků rozhraní .NET Framework a Visual Studio. Open-source verze DLR je také k dispozici ke stažení na [IronLanguages/dlr](https://github.com/IronLanguages/dlr) úložišti na Githubu.  
   
 > [!NOTE]
->  Open-source verze DLR obsahuje všechny funkce DLR, která je obsažena v sadě Visual Studio a rozhraní .NET Framework. Poskytuje také další podporu pro jazyk implementátory informačních technologií. Další informace najdete v dokumentaci na [webu CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) webu.  
+>  Open-source verze DLR obsahuje všechny funkce DLR, která je obsažena v sadě Visual Studio a rozhraní .NET Framework. Poskytuje také další podporu pro jazyk implementátory informačních technologií. Další informace najdete v dokumentaci na [IronLanguages/dlr](https://github.com/IronLanguages/dlr) úložišti na Githubu. 
   
  Příklady jazyky vyvinuté pomocí DLR zahrnují následující:  
   
@@ -98,7 +94,7 @@ Architektura DLR
  DLR používá vazače v lokalitách volání komunikovat pouze s rozhraním .NET Framework, ale s dalšími infrastruktury a službami, včetně Silverlight a COM. Vazače zapouzdření sémantiku tohoto jazyka a určete, jak k provádění operací na volání webu pomocí stromů výrazů. To umožňuje dynamické a jazyky, které používají DLR do sdílené složky knihovny a získání přístupu k všechny technologie, které podporuje DLR staticky zadali.  
   
 ## <a name="dlr-documentation"></a>DLR dokumentace  
- Další informace o tom, jak používat s otevřeným zdrojem verzi DLR přidat dynamické chování pro jazyk, nebo o tom, jak povolit použití dynamické jazyka s rozhraním .NET Framework, najdete v dokumentaci na [webu CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) webu.  
+ Další informace o tom, jak používat s otevřeným zdrojem verzi DLR přidat dynamické chování pro jazyk, nebo o tom, jak povolit použití dynamické jazyka s rozhraním .NET Framework, najdete v dokumentaci na [IronLanguages/dlr](https://github.com/IronLanguages/dlr/tree/master/Docs) úložišti na Githubu.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Dynamic.ExpandoObject>  

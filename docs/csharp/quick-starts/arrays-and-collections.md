@@ -5,16 +5,16 @@ keywords: "C#, začít, kurz, kolekcí, seznamu"
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/13/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 6f559c7a3290e7db2266e10ec792c283394fb904
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: 44e79432c0a1970313cba21778e2bf439f8a4388
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="c-quick-start-collections"></a>C# rychlý start: kolekce #
 

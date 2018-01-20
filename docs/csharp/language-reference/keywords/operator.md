@@ -12,17 +12,17 @@ ms.assetid: 59218cce-e90e-42f6-a6bb-30300981b86a
 caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8fae5487d5daa5ada52d45919598d1abd217aee9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1d035319318a710ccee62a0c64ce5981767a21ca
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="operator-c-reference"></a>operator (Referenční dokumentace jazyka C#)
 Použití `operator` – klíčové slovo k přetížení předdefinované operátor nebo poskytovat převodu z uživatelem definované v třídě nebo struktuře deklaraci.  
   
 ## <a name="example"></a>Příklad  
- Zde je velmi zjednodušené třídu desetinná čísla. Ho přetížení + a * operátory k provedení zlomkové sčítání a násobení a také operátor převodu, který převádí typu zlomek typu double.  
+ Zde je velmi zjednodušené třídu desetinná čísla. Ho přetížení `+` a `*` operátory k provedení zlomkové sčítání a násobení a také poskytuje operátora převodu které převádí `Fraction` typ, který má `double` typu.  
   
  [!code-csharp[csrefKeywordsConversion#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/operator_1.cs)]  
   
@@ -31,8 +31,8 @@ Použití `operator` – klíčové slovo k přetížení předdefinované oper�
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [implicitní](../../../csharp/language-reference/keywords/implicit.md)  
- [explicitní](../../../csharp/language-reference/keywords/explicit.md)  
- [Postupy: implementace uživatelem definovaných převodů mezi strukturami](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+ [implicit](../../../csharp/language-reference/keywords/implicit.md)  
+ [explicit](../../../csharp/language-reference/keywords/explicit.md)  
+ [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)

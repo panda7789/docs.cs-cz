@@ -4,16 +4,16 @@ description: "V této úvodní o interpolované řetězce psaní kódu jazyka C#
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/11/2018
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: f210f7afcd79729e1d3d53b1412ed919aa5d79fb
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 14185dd4e364f12756541ac6401d1c6ff3206fe9
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="interpolated-strings"></a>Interpolované řetězce
 

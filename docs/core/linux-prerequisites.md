@@ -4,17 +4,17 @@ description: "Podporované verze systému Linux a závislostí .NET Core k vývo
 keywords: Debian, ubuntu Linux, .NET, .NET core RHEL, centOS,
 author: jralexander
 ms.author: johalex
-ms.date: 09/07/2017
+ms.date: 12/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.workload: dotnetcore
-ms.openlocfilehash: ec08d9fa3ad672400b61c269da0c6a70ed9ef2f5
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: d3c5dde443f848831f7c0585633339c35213357b
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -25,7 +25,7 @@ Tento článek ukazuje závislosti potřebné k vývoji aplikací .NET Core v sy
 
 ## <a name="supported-linux-versions"></a>Podporované verze systému Linux
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 Rozhraní .NET 2.0 základní považuje za jeden operační systém Linux. Neexistuje jeden Linux sestavení (podle architektura procesoru) pro podporovaných distribucích systému Linux.
 
@@ -70,11 +70,11 @@ Následující by měla být příklady. Přesné verze a názvy se mohou mírn�
 Ubuntu distribuce vyžadovat nainstalované následující knihovny:
 
 * libunwind8
-* liblttng ust0
+* liblttng-ust0
 * libcurl3
 * libssl1.0.0
 * libuuid1
-* libkrb5
+* libkrb5-3
 * zlib1g
 * libicu52 (pro 14.X)
 * libicu55 (pro 16.X)
@@ -144,7 +144,7 @@ Instalace .NET Core na RHEL 7:
     
 3. Instalace .NET Core
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 Nainstalujte základní rozhraní .NET 2.0 SDK a modulu Runtime:
 
@@ -201,7 +201,7 @@ Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NE
 
 1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 2. Registrovat Microsoft Product key jako důvěryhodné.
 
@@ -302,7 +302,7 @@ Instalace .NET Core na Debian 8 nebo Debian 9 (64 bitů):
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 2. Instalace komponent systému.
 
@@ -395,7 +395,7 @@ Chcete-li nainstalovat .NET Core 2.x na Fedora 26 nebo Fedora 25 nebo .NET Core 
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 **Fedora 26 nebo Fedora 25**
 
@@ -470,7 +470,7 @@ Chcete-li nainstalovat .NET Core pro CentOS 7.1 (64 bitů) a Oracle Linux 7.1 (6
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 2. Zaregistrujte klíč podpisu společnosti Microsoft.
 
@@ -574,7 +574,7 @@ Chcete-li nainstalovat .NET Core 2.x openSUSE nebo .NET Core 1.x pro openSUSE (6
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 2. Zaregistrujte klíč podpisu společnosti Microsoft.
 

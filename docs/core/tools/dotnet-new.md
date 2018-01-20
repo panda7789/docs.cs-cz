@@ -11,11 +11,11 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
 ms.workload: dotnetcore
-ms.openlocfilehash: f5815e1ad2a36a8ef3279f6ff83465dba9ec5d50
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cf65dc80f135badcb1580726a12a9ae9d94ae3d7
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
@@ -54,53 +54,53 @@ Příkaz volání [modulu šablon](https://github.com/dotnet/templating) vytvoř
 
 Šablona pro vytvoření instance při vyvolání příkazu. Každá šablona může mít specifické možnosti, které lze předat. Další informace najdete v tématu [možnosti šablony](#template-options).
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalované .NET Core 2.0 SDK. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
-|Popis šablony                          | Název šablony  | Jazyky     |
-|----------------------------------------------|----------------|---------------|
-| Konzolová aplikace                          | konzola        | [C#], F #, VB  |
-| Knihovna tříd                                | classlib       | [C#], F #, VB  |
-| Projektu testování částí                            | mstestu         | [C#], F #, VB  |
-| xUnit testovacího projektu                           | xunit          | [C#], F #, VB  |
-| ASP.NET Core prázdný                           | webové            | [C#], F #      |
-| Webové aplikace ASP.NET Core (Model-View-Controller) | MVC            | [C#], F #      |
-| Webové aplikace ASP.NET Core                         | syntaxe Razor          | [C#]          |
-| ASP.NET Core s úhlová                    | úhlová        | [C#]          |
-| ASP.NET Core s React.js                   | Reagovat          | [C#]          |
-| ASP.NET Core s React.js a – obnovení         | reactredux     | [C#]          |
-| Jádro ASP.NET Web API                         | webapi         | [C#], F #      |
-| soubor Global.JSON                             | globaljson     |               |
-| Konfigurace Nuget                                 | nugetconfig    |               |
-| Webové konfigurace                                   | WebConfig      |               |
-| Soubor řešení                                | SLN –            |               |
-| Stránky Razor                                   | stránka           |               |
-| MVC nebo ViewImports                              | viewimports    |               |
-| MVC ViewStart                                | viewstart      |               |
+|Popis šablony                          | Název šablony | Jazyky     |
+|----------------------------------------------|---------------|---------------|
+| Konzolová aplikace                          | `console`     | [C#], F#, VB  |
+| Knihovna tříd                                | `classlib`    | [C#], F#, VB  |
+| Projektu testování částí                            | `mstest`      | [C#], F#, VB  |
+| xUnit testovacího projektu                           | `xunit`       | [C#], F#, VB  |
+| ASP.NET Core prázdný                           | `web`         | [C#], F #      |
+| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`         | [C#], F #      |
+| Webové aplikace ASP.NET Core                         | `razor`       | [C#]          |
+| ASP.NET Core s úhlová                    | `angular`     | [C#]          |
+| ASP.NET Core s React.js                   | `react`       | [C#]          |
+| ASP.NET Core s React.js a – obnovení         | `reactredux`  | [C#]          |
+| Jádro ASP.NET Web API                         | `webapi`      | [C#], F #      |
+| global.json file                             | `globaljson`  |               |
+| Konfigurace Nuget                                 | `nugetconfig` |               |
+| Webové konfigurace                                   | `webconfig`   |               |
+| Soubor řešení                                | `sln`         |               |
+| Stránky Razor                                   | `page`        |               |
+| MVC/ViewImports                              | `viewimports` |               |
+| MVC ViewStart                                | `viewstart`   |               |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
 Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -all` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalované .NET Core 1.x SDK. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
-|Popis šablony  | Název šablony  | Jazyky |
-|----------------------|----------------|-----------|
-| Konzolová aplikace  | konzola        | [C#], F #  |
-| Knihovna tříd        | classlib       | [C#], F #  |
-| Projektu testování částí    | mstestu         | [C#], F #  |
-| xUnit testovacího projektu   | xunit          | [C#], F #  |
-| ASP.NET Core prázdný   | webové            | [C#]      |
-| Webové aplikace ASP.NET Core | MVC            | [C#], F #  |
-| Jádro ASP.NET Web API | webapi         | [C#]      |
-| Konfigurace Nuget         | nugetconfig    |           |
-| Webové konfigurace           | WebConfig      |           |
-| Soubor řešení        | SLN –            |           |
+|Popis šablony  | Název šablony | Jazyky |
+|----------------------|---------------|-----------|
+| Konzolová aplikace  | `console`     | [C#], F #  |
+| Knihovna tříd        | `classlib`    | [C#], F #  |
+| Projektu testování částí    | `mstest`      | [C#], F #  |
+| xUnit testovacího projektu   | `xunit`       | [C#], F #  |
+| ASP.NET Core prázdný   | `web`         | [C#]      |
+| Webové aplikace ASP.NET Core | `mvc`         | [C#], F #  |
+| Jádro ASP.NET Web API | `webapi`      | [C#]      |
+| Konfigurace Nuget         | `nugetconfig` |           |
+| Webové konfigurace           | `webconfig`   |           |
+| Soubor řešení        | `sln`         |           |
 
 ---
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 `--force`
 
@@ -174,7 +174,7 @@ Umístění pro generovaný výstup. Výchozí je aktuální adresář.
 
 Každá šablona projektu může mít další možnosti, které jsou k dispozici. Základní šablony mají následující možnosti:
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 **konzole úhlová, reagovat, reactredux**
 
@@ -186,7 +186,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 `--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
-**mstestu xunit**
+**mstest, xunit**
 
 `-p|--enable-pack`– Umožňuje vytváření balíčků pro projekt pomocí [dotnet pack](dotnet-pack.md).
 
@@ -196,7 +196,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 `--sdk-version <VERSION_NUMBER>`-Určuje verzi rozhraní .NET Core SDK pro použití v *global.json* souboru.
 
-**webové**
+**web**
 
 `--use-launch-settings`-Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
 
@@ -282,7 +282,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
-**konzola, xunit, mstestu, web, webapi**
+**console, xunit, mstest, web, webapi**
 
 `-f|--framework`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
@@ -290,7 +290,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 `-f|--framework`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0`, `netcoreapp1.1`, nebo `netstandard1.0` k `netstandard1.6`. Výchozí hodnota je `netstandard1.4`.
 
-**MVC**
+**mvc**
 
 `-f|--framework`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
@@ -326,5 +326,5 @@ Seznam všech šablon, které jsou k dispozici pro MVC:
 
 [Vlastní šablony pro nové dotnet.](custom-templates.md)  
 [Vytvoření vlastní šablony pro dotnet new](~/docs/core/tutorials/create-custom-template.md)  
-[úložiště GitHub DotNet/dotnet šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
+[dotnet/dotnet-template-samples GitHub repo](https://github.com/dotnet/dotnet-template-samples)  
 [Dostupné šablony pro nové dotnet.](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new)

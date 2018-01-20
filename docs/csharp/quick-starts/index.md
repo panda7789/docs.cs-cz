@@ -5,16 +5,16 @@ keywords: "C#, začněte, lekci, interaktivní"
 author: billwagner
 ms.author: wiwagn
 ms.date: 09/18/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 7847d21e3529de1a84ef17486710d10256003ce9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1218e8cf877ae102e927a591b38d4c0732e5288d
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="c-quick-starts"></a>C# rychlý start #
 
