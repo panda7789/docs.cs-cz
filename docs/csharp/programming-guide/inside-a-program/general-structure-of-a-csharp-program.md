@@ -9,11 +9,11 @@ ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
 caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8886f7601ce4d1de4a6b277a803ff87eb67bee78
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ac9b0ad47dc9608c3082167493caa7c4bc966497
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Obecná struktura programu v C# (Průvodce programováním v C#)
 Programy C# se může skládat z jedné nebo více souborů. Každý soubor může obsahovat nula nebo více oborů názvů. Obor názvů může obsahovat typy, jako jsou třídy, struktury, rozhraní, výčty a delegáti kromě jiných oborech názvů. Toto je kostře programu C#, který obsahuje všechny z těchto elementů.  
@@ -37,7 +37,7 @@ Programy C# se může skládat z jedné nebo více souborů. Každý soubor mů�
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [V programu v C#](../../../csharp/programming-guide/inside-a-program/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [V programu v jazyce C#](../../../csharp/programming-guide/inside-a-program/index.md)  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [\<paveover > C# ukázkové aplikace](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)
+ [\<paveover > C# ukázkové aplikace](http://msdn.microsoft.com/library/9a9d7aaa-51d3-4224-b564-95409b0f3e15)

@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1933d216f991b78e21a56ec67826dce0b4a7b24a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7bb9f60340915f27c451d05bfbc28e1670c9d83
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] přenosu. Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], pomocí rozhraní kanálu a následující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] osvědčené postupy. Postup vytvoření vlastního přenosu jsou následující:  
@@ -51,7 +51,7 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
   
      V této MEP je odeslána zpráva a odpoví. Vzor se skládá z dvojice požadavků a odpovědí. Volání požadavků a odpovědí příklady vzdálených volání procedur (RPC) a prohlížeč získá. Tento vzor se také označuje jako poloduplexní. V této MEP klienta kanály implementovat <xref:System.ServiceModel.Channels.IRequestChannel> a implementaci služby kanály <xref:System.ServiceModel.Channels.IReplyChannel>.  
   
--   Duplexní režim (IDuplexChannel)  
+-   Duplex (IDuplexChannel)  
   
      Duplexní MEP umožňuje libovolný počet zpráv, které mají být odeslány klientem a přijaté v libovolném pořadí. Duplexní MEP je třeba je telefonní hovor, kde je jednotlivých slov použitém zprávu. Vzhledem k tomu, že na obou stranách můžete odesílat a přijímat v této MEP, rozhraní implementované kanály klienta a služby je <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
@@ -119,7 +119,7 @@ ArraySegment<byte> messageBuffer = EncodeMessage(message);
 this.socket.SendTo(messageBuffer.Array, messageBuffer.Offset, messageBuffer.Count, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
-### <a name="the-udpchannellistener"></a>UdpChannelListener  
+### <a name="the-udpchannellistener"></a>The UdpChannelListener  
  '' UdpChannelListener, který implementuje ukázce je odvozena z <xref:System.ServiceModel.Channels.ChannelListenerBase> třídy. Pro jediný soket UDP používá pro příjem datagramy. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčce. Data jsou potom převedou do zprávy pomocí rozhraní kódování zprávy.  
   
 ```csharp
@@ -405,7 +405,7 @@ protected override void OnApplyConfiguration(string configurationName)
 ```  
   
 ## <a name="the-udp-test-service-and-client"></a>Služba Test UDP a klienta  
- Testovacího kódu pro použití přenosu Tato ukázka je dostupná v adresáři UdpTestService a UdpTestClient. Kód služby se skládá ze dvou testy – jeden test nastaví vazby a koncových bodů z kódu a dalších nemá prostřednictvím konfigurace. Oba testy používají dva koncové body. Používá jeden koncový bod `SampleUdpProfileBinding` s [ \<reliableSession >](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `true`. Jiný koncový bod používá vlastní vazby s `UdpTransportBindingElement`. Jde o ekvivalent pomocí `SampleUdpProfileBinding` s [ \<reliableSession >](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `false`. Oba testy vytvoření služby, přidat koncový bod pro každou vazbu, otevřete službu a potom počkejte uživatelům před jeho zavřením službu stiskněte ENTER.  
+ Testovacího kódu pro použití přenosu Tato ukázka je dostupná v adresáři UdpTestService a UdpTestClient. Kód služby se skládá ze dvou testy – jeden test nastaví vazby a koncových bodů z kódu a dalších nemá prostřednictvím konfigurace. Oba testy používají dva koncové body. Používá jeden koncový bod `SampleUdpProfileBinding` s [ \<reliableSession >](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `true`. Jiný koncový bod používá vlastní vazby s `UdpTransportBindingElement`. Jde o ekvivalent pomocí `SampleUdpProfileBinding` s [ \<reliableSession >](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `false`. Oba testy vytvoření služby, přidat koncový bod pro každou vazbu, otevřete službu a potom počkejte uživatelům před jeho zavřením službu stiskněte ENTER.  
   
  Když spustíte testovací aplikaci služby byste měli vidět následující výstup.  
   

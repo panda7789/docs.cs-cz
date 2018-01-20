@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 95e1ac617015f494f3ff6d555217c3ab95ce6570
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 81553f8d99bf58c87035aca02fcaee712635bc0a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="entity-framework-resources"></a>Prostředky Entity Framework
 Následující externí zdroje obsahují informace a podpora pro vytváření aplikací rozhraní Entity Framework.  
@@ -42,4 +42,4 @@ Následující externí zdroje obsahují informace a podpora pro vytváření ap
  [Přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)  
  [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
  [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)  
- [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)
+ [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)

@@ -16,19 +16,19 @@ ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
 caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d4c7e4e646e6796cff6bbfbe05038ff361fa80c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 273437a4250a393274fa20ad4c02b61dce35ed34
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="define-c-compiler-options"></a>/define (Možnosti kompilátoru C#)
-**/ Define** možnost definuje `name` jako symbol v kódu všechny zdrojové soubory vašeho programu.  
+# <a name="-define-c-compiler-options"></a>-definovat (možnosti kompilátoru C#)
+**-Definovat** možnost definuje `name` jako symbol v kódu všechny zdrojové soubory vašeho programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/define:name[;name2]  
+-define:name[;name2]  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -36,16 +36,16 @@ ms.lasthandoff: 11/21/2017
  Název jeden nebo více znaky, které chcete definovat.  
   
 ## <a name="remarks"></a>Poznámky  
- **/ Define** možnost má stejný účinek jako použití [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) direktivy preprocesoru s tím rozdílem, že možnost kompilátoru platí pro všechny soubory v projektu. Symbol zůstává definované ve zdrojovém souboru až [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md) – direktiva ve zdrojovém souboru odebere definici. Při použití / define – možnost, `#undef` – direktiva v jednom souboru nemá žádný vliv na jiné soubory zdrojového kódu v projektu.  
+ **-Definovat** možnost má stejný účinek jako použití [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) direktivy preprocesoru s tím rozdílem, že možnost kompilátoru platí pro všechny soubory v projektu. Symbol zůstává definované ve zdrojovém souboru až [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md) – direktiva ve zdrojovém souboru odebere definici. Při použití-define – možnost, `#undef` – direktiva v jednom souboru nemá žádný vliv na jiné soubory zdrojového kódu v projektu.  
   
  Můžete použít symboly, které jsou vytvořené pomocí této možnosti [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md), [#else](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md), [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md), a [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) Podmíněná kompilace zdrojové soubory.  
   
- **/d** je zkratka pro **/ define**.  
+ **-d** je zkratka pro **-definovat**.  
   
- Můžete definovat více symbolů s **/ define** pomocí středníkem nebo čárkou jednotlivé názvy symbolů. Příklad:  
+ Můžete definovat více symbolů s **-definovat** pomocí středníkem nebo čárkou jednotlivé názvy symbolů. Příklad:  
   
 ```console  
-/define:DEBUG;TUESDAY  
+-define:DEBUG;TUESDAY  
 ```  
   
  Kompilátor jazyka C#, samotné definuje žádné symboly nebo makra, které můžete použít ve zdrojovém kódu; všechny definice symbolu musí být definovaný uživatelem.  
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/21/2017
   
 ```csharp  
 // preprocessor_define.cs  
-// compile with: /define:xx  
+// compile with: -define:xx  
 // or uncomment the next line  
 // #define xx  
 using System;  
@@ -83,5 +83,5 @@ public class Test
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

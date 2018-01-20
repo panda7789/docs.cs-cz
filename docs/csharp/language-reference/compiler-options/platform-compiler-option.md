@@ -13,19 +13,19 @@ ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5d35a91805f6189f60803056c541ce8344c024f0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6a7a505f955f1faf73198b3670754dbb492ff638
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="platform-c-compiler-options"></a>/platform (Možnosti kompilátoru C#)
+# <a name="-platform-c-compiler-options"></a>-platform (možnosti kompilátoru C#)
 Určuje, jaká verze Common Language Runtime (CLR) můžete spustit sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/platform:string  
+-platform:string  
 ```  
   
 #### <a name="parameters"></a>Parametry  
@@ -48,13 +48,13 @@ Určuje, jaká verze Common Language Runtime (CLR) můžete spustit sestavení.
   
  64bitová verze operačního systému Windows:  
   
--   Sestavení kompilovat s **/platform:x 86** spustit na 32bitová verze modulu CLR spuštěna pod WOW64.  
+-   Sestavení kompilovat s **-platformy: x 86** spustit na 32bitová verze modulu CLR spuštěna pod WOW64.  
   
--   Knihovny DLL kompilovat s **/platform:anycpu** spouští ve stejném modulu CLR jako proces, do kterého je načten.  
+-   Knihovny DLL kompilovat s **-platform: anycpu** spouští ve stejném modulu CLR jako proces, do kterého je načten.  
   
--   Spustitelné soubory, které jsou kompilovat s **/platform:anycpu** spustit na 64-bit CLR.  
+-   Spustitelné soubory, které jsou kompilovat s **-platform: anycpu** spustit na 64-bit CLR.  
   
--   Spustitelné soubory kompilovat s **/platform:anycpu32bitpreferred** spustit na 32bitová verze modulu CLR.  
+-   Spustitelné soubory kompilovat s **-platformy: anycpu32bitpreferred** spustit na 32bitová verze modulu CLR.  
   
  **Anycpu32bitpreferred** nastavení je platná pouze pro spustitelný soubor (. Soubory EXE) ale vyžaduje rozhraní .NET Framework 4.5.  
   
@@ -68,15 +68,15 @@ Určuje, jaká verze Common Language Runtime (CLR) můžete spustit sestavení.
   
 3.  Změnit **Cílová platforma** vlastnost a pro projekty, které cílí na rozhraní .NET Framework 4.5, zaškrtněte nebo zrušte **raději 32bitové** zaškrtávací políčko.  
   
- **Všimněte si, / Platform** není k dispozici ve vývojovém prostředí Visual C# Express.  
+ **Poznámka: - platformy** není k dispozici ve vývojovém prostředí Visual C# Express.  
   
  Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat **/Platform** můžete určit, že aplikace měly být spuštěny pomocí modulu CLR 64bitová verze 64bitová verze operačního systému Windows.  
+ Následující příklad ukazuje, jak používat **-platformy** můžete určit, že aplikace měly být spuštěny pomocí modulu CLR 64bitová verze 64bitová verze operačního systému Windows.  
   
 ```console  
-csc /platform:anycpu filename.cs  
+csc -platform:anycpu filename.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  

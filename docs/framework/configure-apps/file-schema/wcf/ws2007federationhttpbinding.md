@@ -1,5 +1,5 @@
 ---
-title: "&lt;– ws2007FederationHttpBinding&gt;"
+title: '&lt;ws2007FederationHttpBinding&gt;'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 28e4cc9189c144404bcfe2b7f8e255a74eef76c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b1f85d4cc45075f82035fa5b8c0c95341ba142d6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="ltws2007federationhttpbindinggt"></a>&lt;– ws2007FederationHttpBinding&gt;
+# <a name="ltws2007federationhttpbindinggt"></a>&lt;ws2007FederationHttpBinding&gt;
 Zabezpečení a vzájemná spolupráce vazbu, která je odvozena z [ \<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a podporuje federované zabezpečení.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
-\<– ws2007FederationHttpBinding >  
+\<ws2007FederationHttpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -91,8 +91,8 @@ Zabezpečení a vzájemná spolupráce vazbu, která je odvozena z [ \<– wsFed
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento element je typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.|  
-|[\<readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[reliableSession](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|Určuje, zda jsou určeny spolehlivé relace mezi koncovými body kanálu.|  
+|[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[reliableSession](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|Určuje, zda jsou určeny spolehlivé relace mezi koncovými body kanálu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -101,7 +101,7 @@ Zabezpečení a vzájemná spolupráce vazbu, která je odvozena z [ \<– wsFed
 |[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje kolekci standardní a vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Federace se nachází možnost identity sdílet mezi více podniky nebo vztahu důvěryhodnosti domény pro ověřování a autorizaci. Protokol WS-Trust používá k mapování reprezentace identity z jednom vztahu důvěryhodnosti domény do druhého. Federované vazby HTTP podporuje zabezpečení protokolu SOAP, jakož i ve smíšeném režimu zabezpečení, ale nepodporuje zabezpečení přenosu. Nakonfigurované s touto vazbou služby musíte použít přenos HTTP. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][ \<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+ Federace se nachází možnost identity sdílet mezi více podniky nebo vztahu důvěryhodnosti domény pro ověřování a autorizaci. Protokol WS-Trust používá k mapování reprezentace identity z jednom vztahu důvěryhodnosti domény do druhého. Federované vazby HTTP podporuje zabezpečení protokolu SOAP, jakož i ve smíšeném režimu zabezpečení, ale nepodporuje zabezpečení přenosu. Nakonfigurované s touto vazbou služby musíte použít přenos HTTP. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -139,8 +139,8 @@ Zabezpečení a vzájemná spolupráce vazbu, která je odvozena z [ \<– wsFed
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WS2007FederationHttpBinding>  
  <xref:System.ServiceModel.Configuration.WS2007FederationHttpBindingElement>  
- [\<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)  
+ [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)

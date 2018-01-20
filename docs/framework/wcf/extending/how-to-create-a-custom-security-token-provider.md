@@ -18,11 +18,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: e776b04c626fac134e2fc9c1b9fd0ae63a50b5d3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 37e7f9541457c475bfe187485520df63a84f7555
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření zprostředkovatele tokenu vlastní zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlastní zabezpečení a postup pro integraci zprostředkovatele tokenu správce vlastní zabezpečení.  
@@ -34,7 +34,7 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlas
   
  Další informace o vlastní pověření a Správce tokenů zabezpečení najdete v článku [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
- Další informace o pověření zabezpečení tokenu správce, zprostředkovatele a ověřovací třídách naleznete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).  
+ Další informace o pověření zabezpečení tokenu správce, zprostředkovatele a ověřovací třídách naleznete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ### <a name="to-create-a-custom-security-token-provider"></a>Chcete-li vytvořit poskytovatele tokenu vlastní zabezpečení  
   
@@ -71,4 +71,4 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlas
  <xref:System.IdentityModel.Tokens.X509SecurityToken>  
  [Návod: Vytvoření vlastních přihlašovacích údajů klienta a služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
  [Postupy: Vytvoření vlastních ověřovacích dat tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
- [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

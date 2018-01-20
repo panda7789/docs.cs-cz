@@ -12,11 +12,11 @@ ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
 caps.latest.revision: "9"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d4dc8c81a9afd60add4c2a62be6804a0f6446124
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fbb95e0619857f38260ae74366ba4bb860779530
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="-c-compiler-options"></a>@ (Možnosti kompilátoru C#)
 @ Možnost umožňuje zadat soubor, který obsahuje – možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.  
@@ -46,7 +46,7 @@ ms.lasthandoff: 10/18/2017
   
  Kompilátor zpracovává příkazy možností, jak se vyskytují. Argumenty příkazového řádku. proto můžete přepsat výše uvedených možností v souborech odpovědi. Možnosti v souboru odpovědí naopak přepíše možnosti uvedené dříve v příkazovém řádku nebo v jiné soubory odpovědi.  
   
- C# poskytuje souboru csc.rsp, který se nachází ve stejném adresáři jako soubor csc.exe. V tématu [/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) Další informace o souboru csc.rsp.  
+ C# poskytuje souboru csc.rsp, který se nachází ve stejném adresáři jako soubor csc.exe. V tématu [- noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) Další informace o souboru csc.rsp.  
   
  Tato možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio, ani ji není možné změnit prostřednictvím kódu programu.  
   
@@ -55,8 +55,8 @@ ms.lasthandoff: 10/18/2017
   
 ```console  
 # build the first output file  
-/target:exe /out:MyExe.exe source1.cs source2.cs  
+-target:exe -out:MyExe.exe source1.cs source2.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

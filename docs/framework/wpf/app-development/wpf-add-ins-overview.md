@@ -24,11 +24,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 76a836e2699617803b78f76f90b27452bd0cdd0f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffd45957b41cdfd8488aedd865aa70ef5b2634b2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a>[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zahrnuje přidat model, vývojáři mohou použít k vytvoření aplikace, které podporují doplňku rozšíření. Tento model doplňku umožňuje vytváření doplňků, které integrovat a rozšířit funkce aplikace. V některých scénářích aplikací také potřebovat zobrazit [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] jsou poskytovány doplňků. Toto téma ukazuje, jak [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit tyto scénáře, architektura hlouběji, její výhody a její omezení.  
@@ -111,7 +111,7 @@ ms.lasthandoff: 12/22/2017
 -   Má <xref:System.SerializableAttribute> atribut použitý.  
   
 > [!NOTE]
->  Další informace týkající se vytváření učinit vzdáleným [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty, najdete v části [provedení učinit vzdáleným objekty](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a).  
+>  Další informace týkající se vytváření učinit vzdáleným [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty, najdete v části [provedení učinit vzdáleným objekty](http://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a).  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Typy nejsou učinit vzdáleným. K vyřešení problému, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vytvořené doplňky zobrazený z hostitele aplikací. Tato podpora je k dispozici ve [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dva typy: <xref:System.AddIn.Contract.INativeHandleContract> rozhraní a dvě statické metody implementované <xref:System.AddIn.Pipeline.FrameworkElementAdapters> – třída: <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> a <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>. Na vysoké úrovni se používají tyto typy a metody následujícím způsobem:  
   
@@ -297,6 +297,6 @@ ms.lasthandoff: 12/22/2017
  <xref:System.LoaderOptimizationAttribute>  
  [Doplňky a rozšíření](../../../../docs/framework/add-ins/index.md)  
  [Aplikační domény](../../../../docs/framework/app-domains/application-domains.md)  
- [Přehled vzdálené komunikace rozhraní .NET framework](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
- [Provedení učinit vzdáleným objekty](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a)  
+ [Přehled vzdálené komunikace rozhraní .NET framework](http://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
+ [Provedení učinit vzdáleným objekty](http://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a)  
  [Témata s postupy](../../../../docs/framework/wpf/app-development/how-to-topics.md)

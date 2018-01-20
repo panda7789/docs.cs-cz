@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6b70ab9ee04ff2a060f3c66173a3628032afc0b6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b1f04c692b7549c4d7d8d431591eeb867b673d9a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="publickeyblob-structure"></a>PublicKeyBlob – struktura
 Představuje veřejný klíč pár veřejného a privátního klíče v binárním formátu.  
@@ -55,7 +55,7 @@ typedef struct {
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Header:** StrongName.h  
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
@@ -64,4 +64,4 @@ typedef struct {
 ## <a name="see-also"></a>Viz také  
  [StrongNameGetPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md)  
  [StrongNameSignatureGeneration – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)  
- [Silné názvy struktury](http://msdn.microsoft.com/en-us/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)
+ [Silné názvy struktury](http://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)

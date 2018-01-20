@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 065a3bcd64500323de7bc37c5896b13acb459fb1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 75d78c505c81ce688e0ba0110c76712c71db1c4f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="securing-adonet-applications"></a>Zabezpečení aplikací ADO.NET
 Zápis zabezpečené aplikace ADO.NET zahrnuje více než zabraňující běžné kódování nástrahy například není ověřování uživatelského vstupu. Aplikace, která přistupuje k datům má mnoho potenciální body selhání, které může útočník zneužít k načtení, manipulaci nebo destroy citlivá data. Proto je důležité si uvědomit, všechny aspekty zabezpečení, z procesu modelování během fáze návrhu vaší aplikace, jeho případné nasazení a následné údržbě hrozeb.  
@@ -53,10 +53,10 @@ Zápis zabezpečené aplikace ADO.NET zahrnuje více než zabraňující běžn�
  [Zabezpečení](../../../../docs/standard/security/index.md)  
  Obsahuje odkazy na témata s popisem všechny aspekty zabezpečení v rozhraní .NET Framework.  
   
- [Nástroje zabezpečení](http://msdn.microsoft.com/en-us/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
+ [Nástroje zabezpečení](http://msdn.microsoft.com/library/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
  Rozhraní .NET framework – nástroje pro zabezpečení a správu zásad zabezpečení.  
   
- [Prostředky pro vytvoření zabezpečených aplikací](http://msdn.microsoft.com/en-us/0ebf5f69-76f2-498a-a2df-83cf3443e132)  
+ [Prostředky pro vytvoření zabezpečených aplikací](http://msdn.microsoft.com/library/0ebf5f69-76f2-498a-a2df-83cf3443e132)  
  Poskytuje odkazy na témata pro vytváření zabezpečených aplikací.  
   
  [Bibliografie k zabezpečení](/visualstudio/ide/security-bibliography)  

@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fc3e7d545a502c040e7e3ee5140d385b60e82d5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f965bc46c62742c0e2ffb0a7f8ae2e09eca5dc1c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Streamování zprostředkovatele (služby WCF Data Services)
 Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato binární data může představovat datové proudy videa a audia, bitové kopie, soubory dokumentů nebo jiných typů médií binární. Pokud entitu v datovém modelu obsahuje jeden nebo více binárních vlastností, vrátí službu data tato binární data kódovaná jako kódování base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velké binární data tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načtení binární data nezávisle na entity, do které patří. Toho dosahuje tím, že oddělíte binární data z entity do jednoho nebo více datových proudů.  
@@ -100,7 +100,7 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
   
  Další informace najdete v tématu [streamování přenosu zpráv](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md) a [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md).  
   
- Ve výchozím nastavení Internetové informační služby (IIS) také omezuje velikost žádostí o 4 MB volného místa. Pro povolení služby data získat větší než 4 MB volného místa pro datové proudy při spuštění ve službě IIS, je třeba také nastavit `maxRequestLength` atribut [httpRuntime Element (schéma nastavení ASP.NET)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369) v `<system.web />` konfigurační oddíl jako vidět v následujícím příkladu:  
+ Ve výchozím nastavení Internetové informační služby (IIS) také omezuje velikost žádostí o 4 MB volného místa. Pro povolení služby data získat větší než 4 MB volného místa pro datové proudy při spuštění ve službě IIS, je třeba také nastavit `maxRequestLength` atribut [httpRuntime Element (schéma nastavení ASP.NET)](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369) v `<system.web />` konfigurační oddíl jako vidět v následujícím příkladu:  
   
   
   
@@ -130,7 +130,7 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
   
 -   Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>, <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>, nebo <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> metody, musíte použít eTag a Content-Type hodnoty, které jsou zadané jako parametry metody. Nenastavujte značka eTag nebo hlavičky Content-Type v vaší <xref:System.Data.Services.Providers.IDataServiceStreamProvider> implementace zprostředkovatele.  
   
--   Ve výchozím nastavení klient odešle velké binární proudy pomocí bloku HTTP Transfer-Encoding. Protože [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server nepodporuje tento typ kódování, tohoto webového serveru nelze použít k hostování streamování služba dat, která musí přijmout velký binární datové proudy. Další informace o [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server, najdete v části [webové servery v sadě Visual Studio pro webové projekty ASP.NET](http://msdn.microsoft.com/en-us/31d4f588-df59-4b7e-b9ea-e1f2dd204328).  
+-   Ve výchozím nastavení klient odešle velké binární proudy pomocí bloku HTTP Transfer-Encoding. Protože [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server nepodporuje tento typ kódování, tohoto webového serveru nelze použít k hostování streamování služba dat, která musí přijmout velký binární datové proudy. Další informace o [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server, najdete v části [webové servery v sadě Visual Studio pro webové projekty ASP.NET](http://msdn.microsoft.com/library/31d4f588-df59-4b7e-b9ea-e1f2dd204328).  
   
 <a name="versioning"></a>   
 ## <a name="versioning-requirements"></a>Požadavky na Správa verzí  

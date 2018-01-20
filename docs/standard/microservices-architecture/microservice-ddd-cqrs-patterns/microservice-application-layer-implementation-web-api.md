@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d1e14f2ab26360792b34fee48b7e180346064e46
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cfca93dca0ec9d05936f4be676e27135c581de94
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
 
@@ -176,7 +176,7 @@ Typ oboru instance Určuje, jak sdílet instanci mezi požadavky pro stejné slu
     [*https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection*](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)
 
 -   **Autofac.** Oficiální dokumentaci.
-    [*http://docs.autofac.org/en/Latest/*](http://docs.autofac.org/en/latest/)
+    [*http://docs.autofac.org/en/latest/*](http://docs.autofac.org/en/latest/)
 
 -   **Porovnávání životnosti služby kontejner IoC jádro ASP.NET s obory instance kontejner Autofac IoC - Cesaru členka Torre. ** 
      [ *https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
@@ -223,7 +223,7 @@ Následující příklad ukazuje zjednodušený CreateOrderCommand třídy. Toto
 // http://cqrs.nu/Faq
 // https://docs.spine3.org/motivation/immutability.html
 // http://blog.gauffin.org/2012/06/griffin-container-introducing-command-support/
-// https://msdn.microsoft.com/en-us/library/bb383979.aspx
+// https://msdn.microsoft.com/library/bb383979.aspx
 [DataContract]
 public class CreateOrderCommand
     :IAsyncRequest<bool>
@@ -407,10 +407,10 @@ Toto jsou obslužná rutina příkazu by měl provést další kroky:
 -   **Obslužná rutina příkazu k čemu slouží? ** 
      [ *http://cqrs.nu/Faq/command-handlers*](http://cqrs.nu/Faq/command-handlers)
 
--   **Jimmy Bogard. Vzory příkaz domény – obslužné rutiny**
+-   **Jimmy Bogard. Domain Command Patterns – Handlers**
     [*https://jimmybogard.com/domain-command-patterns-handlers/*](https://jimmybogard.com/domain-command-patterns-handlers/)
 
--   **Jimmy Bogard. Vzory příkaz domény – ověření**
+-   **Jimmy Bogard. Domain Command Patterns – Validation**
     [*https://jimmybogard.com/domain-command-patterns-validation/*](https://jimmybogard.com/domain-command-patterns-validation/)
 
 ## <a name="the-command-process-pipeline-how-to-trigger-a-command-handler"></a>Příkaz proces kanálu: spouštění obslužná rutina příkazu
@@ -858,7 +858,7 @@ Podobným způsobem může implementovat jiného chování pro další aspekty n
 -   **CQRS a REST: ideální doplněk**
     [*https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/*](https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/)
 
--   **Příklady MediatR kanálu**
+-   **MediatR Pipeline Examples**
     [*https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/*](https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/)
 
 -   **Svislé řez testovací zařízení pro MediatR a ASP.NET Core**
@@ -869,7 +869,7 @@ Podobným způsobem může implementovat jiného chování pro další aspekty n
 
 ##### <a name="fluent-validation"></a>Fluent ověření
 
--   **Jirka Skinner. FluentValidation.** Úložiště GitHub.
+-   **Jeremy Skinner. FluentValidation.** Úložiště GitHub.
     [*https://github.com/JeremySkinner/FluentValidation*](https://github.com/JeremySkinner/FluentValidation)
 
 >[!div class="step-by-step"]

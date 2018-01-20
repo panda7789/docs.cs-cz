@@ -19,11 +19,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5014bcc0696a8650bed1d00d1224c892660c041e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11739d35d3a6d845feb1f6d9544f6ea347a9942d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 Při zařazování dat, spolupráce vláken můžete zkopírovat nebo kód pin se zařazené data. Kopírování dat umístí kopii dat z jednoho umístění paměti v jiném umístění paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typ hodnoty a kopírování typu předaná odkaz ze spravované na nespravované paměti.  
@@ -88,6 +88,6 @@ Odkazové typy předán podle hodnoty a podle reference
   
 ## <a name="see-also"></a>Viz také  
  [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [Správa paměti s spolupráce zařazování vláken](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)  
- [Směrovou atributy](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
+ [Správa paměti s spolupráce zařazování vláken](http://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee)  
+ [Směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
  [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

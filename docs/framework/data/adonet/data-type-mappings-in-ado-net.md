@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 45061ed18d5854092db4a8d90bc18d48e2e6e6db
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a75914e032adf5b160724e17966b683a119b69a7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-type-mappings-in-adonet"></a>Mapování datového typu v technologii ADO.NET
 Rozhraní .NET Framework je založena na obecný systém typů, který definuje, jak jsou typy deklarovat, používat a spravovat v modulu runtime. Obsahuje typy hodnot a odkazové typy, které jsou odvozeny od <xref:System.Object> základní typ. Při práci se zdrojem dat, je datový typ odvodit z poskytovatele dat, pokud není explicitně zadané. Například <xref:System.Data.DataSet> je nezávislý na libovolný zdroj dat pro konkrétní objekt. Data v `DataSet` se načítají ze zdroje dat a zachováním změn zpět do zdroje dat pomocí `DataAdapter`. To znamená, že pokud `DataAdapter` doplní <xref:System.Data.DataTable> v `DataSet` s hodnotami ze zdroje dat, výsledné datové typy sloupce v `DataTable` jsou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy místo typy, které jsou specifické pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dat Zprostředkovatel, který se používá k připojení ke zdroji dat.  
@@ -51,5 +51,5 @@ Rozhraní .NET Framework je založena na obecný systém typů, který definuje,
  [Konfigurace parametrů a datové typy parametrů](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
  [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [Obecný systém typů](../../../../docs/standard/base-types/common-type-system.md)  
- [Převádění typů](http://msdn.microsoft.com/en-us/6038316e-bdaf-4f55-8006-407f591ce156)  
+ [Převádění typů](http://msdn.microsoft.com/library/6038316e-bdaf-4f55-8006-407f591ce156)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

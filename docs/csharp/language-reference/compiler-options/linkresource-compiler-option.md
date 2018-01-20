@@ -16,19 +16,19 @@ ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
 caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d478c42141288cc3a1478ecf43f50c961a9d2246
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7da5a55fa96c11d79f8c616cf0f1f4e0ed109bfa
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="linkresource-c-compiler-options"></a>/linkresource (Možnosti kompilátoru C#)
-Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. Souboru prostředků nebyla přidána do výstupního souboru. Tím se liší od [/Resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) možnost, která vložení zdrojového souboru do výstupního souboru.  
+# <a name="-linkresource-c-compiler-options"></a>-linkresource (možnosti kompilátoru C#)
+Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. Souboru prostředků nebyla přidána do výstupního souboru. Tím se liší od [– prostředek](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) možnost, která vložení zdrojového souboru do výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/linkresource:filename[,identifier[,accessibility-modifier]]  
+-linkresource:filename[,identifier[,accessibility-modifier]]  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -44,13 +44,13 @@ Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. 
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení jsou propojené prostředky při jejich vytváření pomocí kompilátor jazyka C# veřejné v sestavení. Chcete-li prostředky privátní, zadejte `private` jako modifikátor dostupnosti. Žádný jiný modifikátor kromě `public` nebo `private` je povolen.  
   
- **/ linkresource** vyžaduje jednu z [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) možnosti jiné než **/target: Module**.  
+ **-linkresource** vyžaduje jednu z [-cíl](../../../csharp/language-reference/compiler-options/target-compiler-option.md) možnosti jiné než **-target: module**.  
   
  Pokud `filename` je soubor prostředků rozhraní .NET Framework, který je vytvořen, například pomocí [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí k němu se členy v <xref:System.Resources> oboru názvů. Další informace naleznete v tématu <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. U všech ostatních prostředků, použijte `GetManifestResource` metody v <xref:System.Reflection.Assembly> třídy pro přístup k prostředku v době běhu.  
   
  V souboru určeném v `filename` může být libovolného formátu. Například můžete chtít nativní knihovny DLL součástí sestavení, ujistěte se, aby mohli být nainstalován do globální mezipaměti sestavení a získat přístup ze spravovaného kódu v sestavení. Druhý následující příklady ukazuje, jak to udělat. Můžete to samé v Linker sestavení. Třetí následující příklady ukazuje, jak to udělat. Další informace najdete v tématu [Al.exe (Linker sestavení)](../../../framework/tools/al-exe-assembly-linker.md) a [práce se sestaveními a globální mezipaměť sestavení](../../../framework/app-domains/working-with-assemblies-and-the-gac.md).  
   
- **/ linkres** je zkratka pro **/linkresource**.  
+ **-linkres** je zkratka pro **- linkresource**.  
   
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   
@@ -58,14 +58,14 @@ Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. 
  Kompilace `in.cs` a odkaz na soubor prostředků `rf.resource`:  
   
 ```console  
-csc /linkresource:rf.resource in.cs  
+csc -linkresource:rf.resource in.cs  
 ```  
   
 ## <a name="example"></a>Příklad  
  Kompilace `A.cs` do knihovny DLL, odkaz tuto knihovnu nativní knihovny DLL knihovnou n.dll a umístí výstup v globální mezipaměti sestavení (GAC). V tomto příkladu bude A.dll i N.dll nacházet v mezipaměti GAC.  
   
 ```console  
-csc /linkresource:N.dll /t:library A.cs  
+csc -linkresource:N.dll -t:library A.cs  
 gacutil -i A.dll  
 ```  
   
@@ -73,13 +73,13 @@ gacutil -i A.dll
  Tento příklad provede stejnou akci, jako předchozí, ale s použitím možnosti Linker sestavení.  
   
 ```console  
-csc /t:module A.cs  
-al /out:A.dll A.netmodule /link:N.dll   
+csc -t:module A.cs  
+al -out:A.dll A.netmodule -link:N.dll   
 gacutil -i A.dll  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Al.exe (Linker sestavení)](../../../framework/tools/al-exe-assembly-linker.md)  
- [Práce se sestaveními a globální mezipaměti sestavení](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Al.exe (linker sestavení)](../../../framework/tools/al-exe-assembly-linker.md)  
+ [Práce se sestaveními a s globální pamětí sestavení](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

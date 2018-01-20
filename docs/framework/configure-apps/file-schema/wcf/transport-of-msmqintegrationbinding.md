@@ -14,21 +14,21 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 03cd07681c111f51a4ea02ac46354fa9a19f42d3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2dc4f3cb08436f0f1af2e559c924446faa7b870c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="lttransportgt-of-ltmsmqintegrationbindinggt"></a>&lt;transport&gt; – &lt;msmqIntegrationBinding&gt;
 Definuje nastavení zabezpečení pro transport integrace služby Řízení front zpráv.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
 msmqIntegrationBinding  
 \<Vazba >  
 \<zabezpečení >  
-\<přenos >  
+\<transport>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,7 +51,7 @@ msmqIntegrationBinding
 |`msmqAuthenticationMode`|Určuje, jak ověřit zprávu přenos MSMQ. Pokud je nastavena v `None`, hodnota `msmqProtectionLevel` musí být také nastaven `None`.<br /><br /> Platné hodnoty patří:<br /><br /> -None: Bez ověřování.<br />-Třídy WindowsDomain: Ověřovací mechanismus používá služby Active Directory k získání certifikátu X.509 SID přidružené ke zprávě. Používá se potom zkontrolujte, že seznamu ACL fronty, aby uživatel má oprávnění k zápisu do fronty.<br />-Certifikát: Kanál získá certifikát z úložiště certifikátů.<br /><br /> Výchozí hodnota je třídy WindowsDomain. Tento atribut je typu <xref:System.ServiceModel.MsmqAuthenticationMode>.|  
 |`msmqEncryptionAlgorithm`|Určuje algoritmus, který se má použít pro šifrování zpráv v drátové síti při přenosu zpráv mezi správci fronty zpráv. Platné hodnoty patří:<br /><br /> -RC4Stream<br />-AES<br /><br /> Výchozí hodnota je RC4Stream. Tento atribut je typu <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
 |`msmqProtectionLevel`|Určuje, jak jsou zprávy zabezpečená na úrovni přenosu služby MSMQ. Šifrování zajistíte integritu zpráva při EncryptAndSign zajišťuje zpráva integrity a nepopiratelnosti; To znamená zpráva skutečně pochází z odesílatele a odesílatele je, kdo říká, že se.<br /><br /> -Platné hodnoty patří:<br />-None: Žádná ochrana.<br />-Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou šifrovaný a podepsaný.<br /><br /> Výchozí hodnota je přihlášení. Tento atribut je typu ProtectionLevel.|  
-|`msmqSecureHashAlgorithm`|-Určuje algoritmus, který se má použít v oblasti výpočetních daný výtah jako součást podpisy. Platné hodnoty patří:<br />-MD5<br />-SHA1<br />-SHA256<br />-SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.|  
+|`msmqSecureHashAlgorithm`|-Určuje algoritmus, který se má použít v oblasti výpočetních daný výtah jako součást podpisy. Platné hodnoty patří:<br />-   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -74,5 +74,5 @@ msmqIntegrationBinding
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)

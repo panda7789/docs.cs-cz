@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ca474b4a63ed907c73306e7b7f1fb39c948f12d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f9290c249ed85ffc1fe98878daf2c2f0777786f5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] model řízení výrazně snižuje potřebu vytvářet nový ovládací prvek. Ale v některých případech může stále potřebujete vytvořit vlastní ovládací prvek. Toto téma popisuje funkce, které minimalizovat vašim potřebám k vytvoření vlastního ovládacího prvku a jiné řízení vytváření modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Toto téma ukazuje, jak vytvořit nový ovládací prvek.  
@@ -183,7 +183,7 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
  Další informace o vazbě dat najdete v tématu [přehled vazby dat](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
 ### <a name="design-for-designers"></a>Návrh pro návrháře  
- Pokud chcete získat podporu pro vlastní ovládacích prvků WPF v [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] (například v okně Vlastnosti pro úpravy vlastností), postupujte podle následujících pokynů.  Další informace o vývoji pro [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)], najdete v části [WPF Designer](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26).  
+ Pokud chcete získat podporu pro vlastní ovládacích prvků WPF v [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] (například v okně Vlastnosti pro úpravy vlastností), postupujte podle následujících pokynů.  Další informace o vývoji pro [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)], najdete v části [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26).  
   
 #### <a name="dependency-properties"></a>Vlastnosti závislosti  
  Je nutné implementovat [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] `get` a `set` přístupových objektů, jak je popsáno dříve, v "Použití závislostí vlastnosti." Návrháři mohou používat obálku pro zjištění přítomnosti vlastnost závislosti, ale jejich, jako je třeba [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a klienti ovládacího prvku, není nutné volat přístupové objekty při získání nebo nastavení vlastnosti.  
@@ -280,6 +280,6 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
  [!code-vb[CustomControlNumericUpDown#ThemesSection](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/my project/assemblyinfo.vb#themessection)]  
   
 ## <a name="see-also"></a>Viz také  
- [Návrhář WPF](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
  [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)

@@ -14,42 +14,42 @@ ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
 caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4666f0305fc2de35c1fa594ccef3dd3a64c0f67c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 44dd99ef834f98a1a918c659d3057f8f6f91805a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="target-c-compiler-options"></a>/target (Možnosti kompilátoru C#)
-**/Target** – možnost kompilátoru lze zadat v jedné ze čtyř podob:  
+# <a name="-target-c-compiler-options"></a>-target (možnosti kompilátoru C#)
+**-Cíl** – možnost kompilátoru lze zadat v jedné ze čtyř podob:  
   
- [/ target: appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)  
+ [-target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)  
  Chcete-li vytvořit soubor .exe pro [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] aplikace.  
   
- [/ target: exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md)  
+ [-target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md)  
  Chcete-li vytvořit soubor s příponou .exe.  
   
- [/ target: library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md)  
+ [-target:library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md)  
  K vytvoření knihovny kódu.  
   
- [/ target: module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md)  
+ [-target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md)  
  Chcete-li vytvořit modul.  
   
- [/ target: winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md)  
+ [-target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md)  
  K vytvoření programu systému Windows.  
   
- [/ target: winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)  
+ [-target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)  
  Vytvořit soubor zprostředkující .winmdobj.  
   
- Pokud nezadáte **/target: Module**, **/target** způsobí umístit do výstupního souboru manifestu sestavení rozhraní .NET Framework. Další informace najdete v tématu [sestavení v modulu Common Language Runtime](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md) a [běžné atributy](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Pokud nezadáte **-target: module**, **-cíl** způsobí umístit do výstupního souboru manifestu sestavení rozhraní .NET Framework. Další informace najdete v tématu [sestavení v modulu Common Language Runtime](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md) a [běžné atributy](../../programming-guide/concepts/attributes/common-attributes.md).  
   
  Manifest sestavení je umístěn v první výstupní soubor .exe v kompilace nebo v první knihovny DLL, pokud není dostupný žádný výstupní soubor .exe. Například v příkazovém řádku následující manifest bude uložena v umístění `1.exe`:  
   
 ```console  
-csc /out:1.exe t1.cs /out:2.netmodule t2.cs  
+csc -out:1.exe t1.cs -out:2.netmodule t2.cs  
 ```  
   
- Kompilátor vytvoří pouze jeden manifest sestavení kompilace. Informace o všechny soubory v kompilaci je umístěn v manifestu sestavení. Všechny soubory kromě těch vytvořené pomocí výstup **/target: Module** může obsahovat manifest sestavení. Při vytváření více výstupních souborů na příkazovém řádku, lze vytvořit pouze jeden manifest sestavení a musí být umístěn do prvního výstupního souboru zadat na příkazovém řádku. Bez ohledu na to, co je první výstupní soubor (**/target: exe**, **/target: winexe**, **/target: library** nebo **/target: Module**) ani jiné výstupní soubory vytvořené ve stejné kompilaci musí být moduly (**/target: Module**).  
+ Kompilátor vytvoří pouze jeden manifest sestavení kompilace. Informace o všechny soubory v kompilaci je umístěn v manifestu sestavení. Všechny soubory kromě těch vytvořené pomocí výstup **-target: module** může obsahovat manifest sestavení. Při vytváření více výstupních souborů na příkazovém řádku, lze vytvořit pouze jeden manifest sestavení a musí být umístěn do prvního výstupního souboru zadat na příkazovém řádku. Bez ohledu na to, co je první výstupní soubor (**-target: exe**, **-target: winexe**, **-target: library** nebo **-target: module**) ani jiné výstupní soubory vytvořené ve stejné kompilaci musí být moduly (**-target: module**).  
   
  Pokud vytvoříte sestavení, můžete určit, že nebo jeho část kódu je kompatibilní se specifikací CLS <xref:System.CLSCompliantAttribute> atribut.  
   
@@ -67,6 +67,6 @@ public class TestClass
  Další informace o nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
- [/ subsystemversion (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)
+ [-subsystemversion (C# Compiler Options)](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)

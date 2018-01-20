@@ -14,21 +14,21 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 575bd9491573be949a2a8ea0d0b6a22cb399b977
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7c6c0cf1b6eef441958931e4d722ba97980e5682
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="lttransportgt-of-ltbasichttpbindinggt"></a>&lt;transport&gt; – &lt;basicHttpBinding&gt;
 Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
-\<basicHttpBinding >  
+\<basicHttpBinding>  
 \<Vazba >  
 \<zabezpečení >  
-\<přenos >  
+\<transport>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -70,7 +70,7 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.
 |Žádné|Zprávy není zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování.|  
 |Ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.|  
-|NTLM|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
+|Ntlm|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
 |Windows|Určuje integrované ověřování systému Windows.|  
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType atribut  
@@ -80,7 +80,7 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.
 |Žádné|-Zprávy není zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování podle definice dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest.|  
 |Ověřování algoritmem Digest|Ověřování hodnotou hash podle určuje RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest.|  
-|NTLM|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
+|Ntlm|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
 |Windows|Určuje integrované ověřování systému Windows.|  
 |certifikát|Provede používá certifikát ověření klienta. Tato možnost funguje jenom v případě `Mode` atribut nadřazené `security` elementu je nastaven na přenos a nebude fungovat, pokud je nastavena na možnost TransportCredentialOnly.|  
   
@@ -136,5 +136,5 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)

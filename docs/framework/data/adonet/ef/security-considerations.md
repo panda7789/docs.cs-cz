@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1c68fc09ca1ca50ec544e79ec6fb8bf00a1b09ee
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 68b077ec6c7edd30882c9c84a10aa14060a589e8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="security-considerations-entity-framework"></a>Aspekty zabezpečení (rozhraní Entity Framework)
 Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace. Také postupujte podle doporučení pro vytvoření zabezpečeného [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikace. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -109,7 +109,7 @@ Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, n
   
      Útok prostřednictvím injektáže SQL mohou být prováděny v [!INCLUDE[esql](../../../../../includes/esql-md.md)] zadáním škodlivého zadání hodnoty, které jsou použity v predikátu dotazu a názvy parametrů. Aby nedošlo k ohrožení Injektáž SQL, doporučujeme, abyste nikdy zkombinovali vstup uživatele s [!INCLUDE[esql](../../../../../includes/esql-md.md)] text příkazu.  
   
-     [!INCLUDE[esql](../../../../../includes/esql-md.md)]dotazy přijmout všude, kde parametry, že jsou přijaty literály. Parametrizované dotazy byste měli používat místo vložení literály z externí agenta přímo do dotazu. Měli byste také zvážit použití metody Tvůrce dotazů bezpečně vytvořit [Entity SQL](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0).  
+     [!INCLUDE[esql](../../../../../includes/esql-md.md)]dotazy přijmout všude, kde parametry, že jsou přijaty literály. Parametrizované dotazy byste měli používat místo vložení literály z externí agenta přímo do dotazu. Měli byste také zvážit použití metody Tvůrce dotazů bezpečně vytvořit [Entity SQL](http://msdn.microsoft.com/library/05685434-05e6-41c2-8d5e-8933b88a40b0).  
   
 -   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]vkládání útoků:  
   
@@ -143,7 +143,7 @@ Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, n
  Při vytváření a práci s typy entit, platí následující aspekty zabezpečení.  
   
 #### <a name="do-not-share-an-objectcontext-across-application-domains"></a>Mezi doménami aplikace nesdílejí objektu ObjectContext.  
- Sdílení <xref:System.Data.Objects.ObjectContext> s více než jednu aplikaci může domény zveřejnění informací v připojovacím řetězci. Místo toho by měla přenos serializovaných objektů nebo grafy objekt do jiné domény aplikace a pak připojte těchto objektů do <xref:System.Data.Objects.ObjectContext> v této doméně. Další informace najdete v tématu [serializaci objektů](http://msdn.microsoft.com/en-us/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
+ Sdílení <xref:System.Data.Objects.ObjectContext> s více než jednu aplikaci může domény zveřejnění informací v připojovacím řetězci. Místo toho by měla přenos serializovaných objektů nebo grafy objekt do jiné domény aplikace a pak připojte těchto objektů do <xref:System.Data.Objects.ObjectContext> v této doméně. Další informace najdete v tématu [serializaci objektů](http://msdn.microsoft.com/library/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
   
 #### <a name="prevent-type-safety-violations"></a>Nedošlo k narušení bezpečnosti typu.  
  Pokud je typ zabezpečení došlo k porušení, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] nemůže zaručit integritu dat v objektech. Typ porušení zabezpečení mohlo dojít, pokud povolíte nedůvěryhodných aplikací ke spuštění s zabezpečení přístupu kódu plné důvěryhodnosti.  

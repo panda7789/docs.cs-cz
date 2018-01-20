@@ -13,31 +13,31 @@ ms.assetid: bda5717d-1b91-4848-956b-fcf85c30e432
 caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b66ab51b30e17ab2f34f88158c3f6095e185468d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 515359b7a8a76e20896389b308df34db03f3798d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="targetexe-c-compiler-options"></a>/target:exe (Možnosti kompilátoru C#)
-**/Target: exe** možnost způsobí, že kompilátor vytvořit spustitelný soubor (EXE), konzolová aplikace.  
+# <a name="-targetexe-c-compiler-options"></a>-target: exe (možnosti kompilátoru C#)
+**-Target: exe** možnost způsobí, že kompilátor vytvořit spustitelný soubor (EXE), konzolová aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/target:exe  
+-target:exe  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- **/Target: exe** možnost ve výchozím nastavení je v platnosti. Vytvoří se spustitelný soubor s příponou .exe.  
+ **-Target: exe** možnost ve výchozím nastavení je v platnosti. Vytvoří se spustitelný soubor s příponou .exe.  
   
- Použití [/target: winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md) pro vytvoření spustitelného souboru programu systému Windows.  
+ Použití [-target: winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md) pro vytvoření spustitelného souboru programu systému Windows.  
   
- Pokud není uvedeno jinak s [/out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) možnost, název výstupního souboru využívá název souboru vstupního souboru, který obsahuje [hlavní](../../../csharp/programming-guide/main-and-command-args/index.md) metoda.  
+ Pokud není uvedeno jinak s [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) možnost, název výstupního souboru využívá název souboru vstupního souboru, který obsahuje [hlavní](../../../csharp/programming-guide/main-and-command-args/index.md) metoda.  
   
- Pokud je zadán v příkazovém řádku, všechny soubory až do dalšího **/out** nebo **/target: Module** možnost slouží k vytvoření souboru .exe  
+ Pokud je zadán v příkazovém řádku, všechny soubory až do dalšího **-out** nebo **-target: module** možnost slouží k vytvoření souboru .exe  
   
- Pouze jeden **hlavní** metoda je vyžadována v soubory zdrojového kódu, které jsou zkompilovány do souboru s příponou .exe. [/Main](../../../csharp/language-reference/compiler-options/main-compiler-option.md) – možnost kompilátoru umožňuje určit, která třída obsahuje **hlavní** metoda v případech, kdy váš kód obsahuje více než jednu třídu s **hlavní** metoda.  
+ Pouze jeden **hlavní** metoda je vyžadována v soubory zdrojového kódu, které jsou zkompilovány do souboru s příponou .exe. [– Hlavní](../../../csharp/language-reference/compiler-options/main-compiler-option.md) – možnost kompilátoru umožňuje určit, která třída obsahuje **hlavní** metoda v případech, kdy váš kód obsahuje více než jednu třídu s **hlavní** metoda.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -53,10 +53,10 @@ ms.lasthandoff: 11/21/2017
  Každý z následujících příkazových řádků zkompiluje `in.cs`, vytváření `in.exe`:  
   
 ```console  
-csc /target:exe in.cs  
+csc -target:exe in.cs  
 csc in.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [/ target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+ [-target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

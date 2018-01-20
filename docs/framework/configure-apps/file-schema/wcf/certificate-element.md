@@ -14,20 +14,20 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: bfc971cae9c09a75c43f568ccbf1b4608704be30
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9a52eb5f9fc9dc8fadc8bd599ebdd24fec5dbb57
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltcertificategt-element"></a>Element &lt;certificate&gt;
 Určuje certifikát X.509, který chcete použít pro podepisování a šifrování zpráv pro klienty peer-to-peer.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<endpointBehaviors >  
 \<chování >  
-\<clientCredentials >  
+\<clientCredentials>  
 \<sdílené >  
 \<certifikátu >  
   
@@ -61,7 +61,7 @@ storeLocation="LocalMachine/CurrentUser"
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<sdílené >](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje pověření použitá při ověřování klientů peer-to-peer.|  
+|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje pověření použitá při ověřování klientů peer-to-peer.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element konfigurace obsahuje instanci X509Certificate2 použít při ověřování okolí sdílené v mřížce.  
@@ -93,6 +93,6 @@ storeLocation="LocalMachine/CurrentUser"
  <xref:System.ServiceModel.Security.PeerCredential.Certificate%2A>  
  [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- [Ověřování zpráv rovnocenného kanálu](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
- [Vlastní ověřování rovnocenného kanálu](http://msdn.microsoft.com/en-us/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
+ [Ověřování zpráv rovnocenného kanálu](http://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
+ [Vlastní ověřování rovnocenného kanálu](http://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
  [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

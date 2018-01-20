@@ -13,19 +13,19 @@ ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 332e369b6fe2de79c9063daa9e6d5c0e83f0bcc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8ca85293086f8747cc4aaff02e7d9b5628b1e88a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="out-c-compiler-options"></a>/out (Možnosti kompilátoru C#)
-**/Out** možnost určuje název souboru výstupního souboru.  
+# <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
+**-Out** možnost určuje název souboru výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/out:filename  
+-out:filename  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/21/2017
  Název výstupního souboru vytvořené kompilátoru.  
   
 ## <a name="remarks"></a>Poznámky  
- Na příkazovém řádku je možné zadat více výstupní soubory pro kompilaci. Kompilátor očekává, že jeden nebo více zdrojových souborů následující **/out** možnost. Potom všechny soubory zdrojového kódu se zkompiluje do výstupního souboru, který určeného **/out** možnost.  
+ Na příkazovém řádku je možné zadat více výstupní soubory pro kompilaci. Kompilátor očekává, že jeden nebo více zdrojových souborů následující **-out** možnost. Potom všechny soubory zdrojového kódu se zkompiluje do výstupního souboru, který určeného **-out** možnost.  
   
  Zadejte úplný název a příponu souboru, který chcete vytvořit.  
   
@@ -45,11 +45,11 @@ ms.lasthandoff: 11/21/2017
   
  Soubor zdrojového kódu použít zkompilovat jednu výstupní soubor nelze použít ve stejné kompilaci pro kompilaci jiného výstupního souboru.  
   
- Při vytváření více výstupních souborů v kompilaci příkazového řádku, mějte na paměti, že pouze jeden výstupních souborů může být sestavení a pouze první výstupní soubor zadaný (implicitně nebo explicitně s **/out**) může být sestavení .  
+ Při vytváření více výstupních souborů v kompilaci příkazového řádku, mějte na paměti, že pouze jeden výstupních souborů může být sestavení a pouze první výstupní soubor zadaný (implicitně nebo explicitně s **-out**) může být sestavení .  
   
  Všechny moduly, vytvořené jako součást kompilace stát soubory přidružené k žádné sestavení také vytvořené ve kompilaci. Použití [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) zobrazíte manifest sestavení zobrazíte přidružené soubory.  
   
- / Out – možnost kompilátoru je nutná pro exe jako cíl přátelského sestavení. Další informace najdete v části [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
+ -Out – možnost kompilátoru je nutná pro exe jako cíl přátelského sestavení. Další informace najdete v části [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -65,10 +65,10 @@ ms.lasthandoff: 11/21/2017
  Kompilace `t.cs` a vytvoření výstupního souboru `t.exe`, a také sestavení `t2.cs` a vytvoření výstupního souboru modulu `mymodule.netmodule`:  
   
 ```console  
-csc t.cs /out:mymodule.netmodule /target:module t2.cs  
+csc t.cs -out:mymodule.netmodule -target:module t2.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Přátelská sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

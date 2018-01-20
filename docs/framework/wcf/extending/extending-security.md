@@ -15,17 +15,17 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: ecbbaac0023ca528967abe2cb60c3d790772fb2e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cdd9b91ba7ff9b1e431f7d9107e72df084ba8af3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
 Abychom vyhověli nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Témata v této části ukazují, jak to provést.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)  
+ [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
  Provede architektura [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení systému.  
   
  [Vlastní přihlašovací údaje a jejich ověřování](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  

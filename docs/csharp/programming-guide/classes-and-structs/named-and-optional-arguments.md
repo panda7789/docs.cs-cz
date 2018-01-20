@@ -19,11 +19,11 @@ ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
 caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e6fceb569a79b5988171f06ae6c09d86b5fc667d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e4c57efa4027af5dd6b0476eb65845a39fc0b691
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]představuje pojmenované a nepovinné argumenty. *Pojmenované argumenty* vám umožní zadat argument pro konkrétní parametr tím, že přidružíte argument s názvem parametru a nikoli s parametru pozici v seznamu parametrů. *Nepovinné argumenty* umožňují vynechejte argumenty pro některé parametry. Obě tyto metody lze pomocí metody, indexery, konstruktory a delegáti.  
@@ -106,7 +106,7 @@ Volitelné parametry v ExampleMethod
 ## <a name="com-interfaces"></a>COM – rozhraní  
  Pojmenované a nepovinné argumenty, společně s podporou pro dynamické objekty a další rozšíření dojít k výraznému zlepšení spolupráce se rozhraní API modelu COM, jako je například Office automatizace rozhraní API.  
   
- Například [automatický formát](http://go.microsoft.com/fwlink/?LinkId=148201) metoda v aplikaci Microsoft Office Excel [rozsah](http://go.microsoft.com/fwlink/?LinkId=148196) rozhraní má sedm parametry, které jsou volitelné. Tyto parametry se zobrazí na následujícím obrázku.  
+ Například [automatický formát](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.autoformat(v=office.15).aspx) metoda v aplikaci Microsoft Office Excel [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range(v=office.15).aspx) rozhraní má sedm parametry, které jsou volitelné. Tyto parametry se zobrazí na následujícím obrázku.  
   
  ![Rychlé informace technologie IntelliSense pro metodu automatické formátování. ] (../../../csharp/programming-guide/classes-and-structs/media/autoformat_parameters.png "AutoFormat_Parameters")  
 Automatický formát parametrů  
@@ -134,7 +134,7 @@ Automatický formát parametrů
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: použití pojmenovaných a nepovinných argumentů v programování pro Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)  
+ [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)  
  [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
  [Použití konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  
  [Použití indexerů](../../../csharp/programming-guide/indexers/using-indexers.md)

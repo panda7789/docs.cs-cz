@@ -1,7 +1,7 @@
 ---
 title: "C# Správa verzí – Průvodce v C#"
 description: "Pochopit, jak funguje správa verzí v C# a rozhraní .NET"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
+keywords: .NET, .NET Core, C#
 author: BillWagner
 manager: wpickett
 ms.date: 01/08/2017
@@ -10,11 +10,11 @@ ms.prod: visual-studio-dev-14
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 0b671333019c00abafcfb72533e30936f8fc6ad7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 153e7d115b34e6659f6a8ca23014441b86847796
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C# #
 
@@ -57,7 +57,7 @@ Tím snadnější provedete ji pro uživatele k upgradu na novou verzi knihovny,
 
 ### <a name="application-configuration-file"></a>Konfigurační soubor aplikace
 
-Jako vývojář .NET existuje velmi vysoká pravděpodobnost byla zjištěna [ `app.config` souboru](https://msdn.microsoft.com/en-us/library/1fk1t1t0(v=vs.110).aspx) ve většině typy projektů.
+Jako vývojář .NET existuje velmi vysoká pravděpodobnost byla zjištěna [ `app.config` souboru](https://msdn.microsoft.com/library/1fk1t1t0(v=vs.110).aspx) ve většině typy projektů.
 Tento jednoduchý konfigurační soubor můžete vyhledat celou do zlepšení zavedení nových aktualizací. Měli byste obecně navrhnout knihovnách tak, že jsou informace, které pravděpodobně se změní pravidelně uložena v `app.config` souboru, tak při aktualizaci tyto informace do konfiguračního souboru starší verze právě je nutné vyměnit novým bez nutnosti rekompilace knihovny.
 
 ## <a name="consuming-libraries"></a>Použití knihovny
@@ -68,7 +68,7 @@ Jako vývojář, který využívá knihovny .NET vytvořené jinými vývojáři
 
 ### <a name="assembly-binding-redirection"></a>Sestavení – přesměrování vazby
 
-Můžete použít `app.config` soubor aktualizovat verzi knihovny vaše aplikace používá. Přidáním, co se nazývá [ *přesměrování vazby* ](https://msdn.microsoft.com/en-us/library/7wd6ex19(v=vs.110).aspx) vaše můžete použít na novou verzi knihovny bez nutnosti její kompilace aplikace. Následující příklad ukazuje, jak by aktualizovat vaše aplikace `app.config` soubor se má použít `1.0.1` oprav verze `ReferencedLibrary` místo `1.0.0` verze byla původně kompilovat s.
+Můžete použít `app.config` soubor aktualizovat verzi knihovny vaše aplikace používá. Přidáním, co se nazývá [ *přesměrování vazby* ](https://msdn.microsoft.com/library/7wd6ex19(v=vs.110).aspx) vaše můžete použít na novou verzi knihovny bez nutnosti její kompilace aplikace. Následující příklad ukazuje, jak by aktualizovat vaše aplikace `app.config` soubor se má použít `1.0.1` oprav verze `ReferencedLibrary` místo `1.0.0` verze byla původně kompilovat s.
 
 ```xml
 <dependentAssembly>
@@ -89,7 +89,7 @@ Proveďte v následujícím příkladu:
 
 [!code-csharp[Sample usage of the 'new' modifier](../../samples/csharp/versioning/new/Program.cs#sample)]
 
-**Výstup**
+**Output**
 
 ```
 A base method
@@ -107,7 +107,7 @@ Pokud ne `new` Modifikátor je zadán, bude ve výchozím nastavení do odvozen�
 
 [!code-csharp[Sample usage of the 'override' modifier](../../samples/csharp/versioning/override/Program.cs#sample)]
 
-**Výstup**
+**Output**
 
 ```
 Base Method One: Method One

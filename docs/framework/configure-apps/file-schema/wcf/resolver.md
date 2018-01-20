@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fc6e919600fbea15937a61eaa65299b3a372caaf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db95b6f9a988c133a6b4afd55849fc6fb650c24c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltresolvergt"></a>&lt;Řešitel&gt;
 Určuje sdílené překladače, který se používá k překladu sdílené OK ID sítě pro sadu adres partnerských uzlů, která představuje několik uzlů, které jsou součástí OK.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
-\<netpeerbinding – >  
+\<netPeerBinding>  
 \<Vazba >  
 \<překladač >  
   
@@ -51,7 +51,7 @@ Určuje sdílené překladače, který se používá k překladu sdílené OK ID
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<hlavičky >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Určuje nastavení pro vlastní sdílené služby překladač.|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Určuje nastavení pro vlastní sdílené služby překladač.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -69,4 +69,4 @@ Určuje sdílené překladače, který se používá k překladu sdílené OK ID
  <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>  
  <xref:System.ServiceModel.Configuration.PeerResolverElement>  
  [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)  
- [Přidání vlastní překladač do PeerChannel aplikace](http://msdn.microsoft.com/en-us/12aa3787-2962-439c-ad27-46523c8b0419)
+ [Přidání vlastní překladač do PeerChannel aplikace](http://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)

@@ -24,11 +24,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 668edf8cacc4d675592c776b0a24923f447d8810
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fe2d8ea8be2781e747398e18cc99cc6ce6cf6dc5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="application-domains"></a>Aplikační domény
 Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolování aplikací. Tato izolace je nutné zajistit, že kód spuštěný v jedné aplikaci nemůže mít nepříznivý vliv na jiné nesouvisející aplikace.  
@@ -64,7 +64,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
     > [!NOTE]
     >  Nelze uvolnit samostatná sestavení nebo typy. Pouze úplná doména může být odpojen.  
   
--   Kód spuštěný v jedné aplikaci nelze přímo přístupového kódu nebo prostředky z jiné aplikace. Modul common language runtime vynucuje tato izolace brání přímá volání mezi objekty v různých doménách aplikace. Objekty, které předávají mezi doménami jsou zkopírovány nebo zpřístupněny pomocí proxy serveru. Pokud je objekt zkopírován, je místní volání objektu. To znamená volající a odkazovaný objekt jsou ve stejné doméně aplikace. Pokud objekt přistupuje prostřednictvím proxy serveru, volání objektu je vzdálený. V takovém případě volající a odkazovaný objekt jsou v různých doménách aplikace. Volání mezi doménami používat stejnou infrastrukturu vzdálené volání jako volání mezi dvěma procesy nebo mezi dvěma počítači. Metadata pro objekt, který se na ně odkazovat jako takový musí být k dispozici pro obě domény aplikace umožňující volání metody, které chcete být kompilována správně. Pokud volání domény nemá přístup k metadatům pro volaný objekt, kompilace může selhat s výjimkou typu **System.IO.FileNotFound**. V tématu [vzdálených objektů](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58) další podrobnosti. Tento mechanismus pro určení, jak jsou objekty přístupná napříč doménami je určen podle objektu. Další informace naleznete v tématu <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+-   Kód spuštěný v jedné aplikaci nelze přímo přístupového kódu nebo prostředky z jiné aplikace. Modul common language runtime vynucuje tato izolace brání přímá volání mezi objekty v různých doménách aplikace. Objekty, které předávají mezi doménami jsou zkopírovány nebo zpřístupněny pomocí proxy serveru. Pokud je objekt zkopírován, je místní volání objektu. To znamená volající a odkazovaný objekt jsou ve stejné doméně aplikace. Pokud objekt přistupuje prostřednictvím proxy serveru, volání objektu je vzdálený. V takovém případě volající a odkazovaný objekt jsou v různých doménách aplikace. Volání mezi doménami používat stejnou infrastrukturu vzdálené volání jako volání mezi dvěma procesy nebo mezi dvěma počítači. Metadata pro objekt, který se na ně odkazovat jako takový musí být k dispozici pro obě domény aplikace umožňující volání metody, které chcete být kompilována správně. Pokud volání domény nemá přístup k metadatům pro volaný objekt, kompilace může selhat s výjimkou typu **System.IO.FileNotFound**. V tématu [vzdálených objektů](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58) další podrobnosti. Tento mechanismus pro určení, jak jsou objekty přístupná napříč doménami je určen podle objektu. Další informace naleznete v tématu <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 -   Chování kódu je určeno aplikací, ve které běží. Jinými slovy doménu aplikace obsahuje nastavení konfigurace, jako jsou například zásady verze aplikací, umístění žádné vzdálené sestavení, který přistupuje k a informace o tom, kde najít sestavení, která jsou načtena do domény.  
   

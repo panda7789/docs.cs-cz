@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0ad577145c26b9c43e8b7fb3b61f27f374ff9298
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 33646bbd7b0043cb5fc036b9b11aa4cf37cd537f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="pipeline-development"></a>Vývoj kanálu
 Kanál doplňku je cesta kanálu segmentů, které hostitelskou aplikaci a její add-in musí používat ke komunikaci mezi sebou.  
@@ -41,14 +41,14 @@ Kanál doplňku
   
  Pokud hostitel a doplněk načíst do samostatné aplikační domény, musíte hranici izolace, která odděluje portál oboru hostitelskou aplikaci z oboru add-in. Kontrakt je pouze sestavení, který je načten do hostitele a domény doplňku aplikace. Hostitele a doplněk každý se vztahují pouze jejich zobrazení metod kontrakt. Proto jsou odděleny úroveň abstrakce ze smlouvy.  
   
- Vývoj kanálu segmenty, musíte vytvořit strukturu adresáře, která bude obsahovat. Další informace o požadavky na vývoj a oboru pokyny najdete v tématu [požadavky na vývoj kanálu](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+ Vývoj kanálu segmenty, musíte vytvořit strukturu adresáře, která bude obsahovat. Další informace o požadavky na vývoj a oboru pokyny najdete v tématu [požadavky na vývoj kanálu](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
  Následující obrázek znázorňuje typy, které tvoří segmenty kanálu. Názvy typů znázorněno na obrázku jsou libovolný, ale všechny typy s výjimkou hostitele a hostitele zobrazení atributů vyžadovat add-in, může být zjištěny pomocí metody, které vytvořit úložišti informace.  
   
  ![Přidat & č. 45; v modelu s povinné atributy pro typy. ] (../../../docs/framework/add-ins/media/addin-model.png "AddIn_Model")  
 Doplněk s typy  
   
- Následující tabulka popisuje segmenty kanálu pro aktivaci doplňku. Další informace o tyto segmenty najdete v tématu [kontrakty, zobrazení a adaptéry](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c).  
+ Následující tabulka popisuje segmenty kanálu pro aktivaci doplňku. Další informace o tyto segmenty najdete v tématu [kontrakty, zobrazení a adaptéry](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c).  
   
 |Segment kanálu|Popis|  
 |----------------------|-----------------|  
@@ -89,14 +89,14 @@ Aktivační cesta z v doplňku na hostitele
   
      Popisuje doplněk kalkulačky, který provádí sčítání, odčítání, násobení a dělení výpočty pro hostitele.  
   
--   [Návod: Povolení zpětné kompatibility jako hostitele změny](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
+-   [Návod: Povolení zpětné kompatibility jako hostitele změny](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
   
      Popisuje doplněk kalkulačky s možnostmi rozšířené výpočtu a postupy zachování kompatibility s první kalkulačky v aplikaci.  
   
--   [Návod: Předávání kolekce mezi hostiteli a doplňky](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
+-   [Návod: Předávání kolekce mezi hostiteli a doplňky](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)  
   
      Popisuje, jak předat kolekce dat přes kanál pomocí scénáři adresáře úložiště.  
   
 ## <a name="see-also"></a>Viz také  
- [Scénáře kanál doplňku](http://msdn.microsoft.com/en-us/feb70e0b-8734-494c-aeaf-b567f014043e)  
+ [Scénáře kanál doplňku](http://msdn.microsoft.com/library/feb70e0b-8734-494c-aeaf-b567f014043e)  
  [Doplňky a rozšíření](../../../docs/framework/add-ins/index.md)

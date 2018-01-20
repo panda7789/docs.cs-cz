@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: fb8cf2c9f763ea32bb7c7907111fea80e542a7f7
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5fe09601be7173fd1a9228dc090732ded7afdd90
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="datasets-datatables-and-dataviews"></a>Datové sady, datové tabulky a datová zobrazení
 Technologie ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace data, která zajišťuje konzistentní relační programovací model bez ohledu na zdroj dat obsahuje. A <xref:System.Data.DataSet> představuje kompletní sadu dat včetně tabulek, které obsahují, řazení a omezit data, jakož i relace mezi tabulkami.  
@@ -31,7 +31,7 @@ Technologie ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace data,
   
 -   Načtení a zachovat <xref:System.Data.DataSet> obsah pomocí XML. Další informace najdete v tématu [pomocí XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md).  
   
- Silného typu <xref:System.Data.DataSet> můžete také přenosu pomocí webové služby XML. Návrh <xref:System.Data.DataSet> je ideální pro přenos dat pomocí webové služby XML. Přehled webové služby XML, najdete v části [Přehled webové služby XML](http://msdn.microsoft.com/en-us/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d). Příklad použití <xref:System.Data.DataSet> z webové služby XML, najdete na stránce [využívání datové sady z webové služby XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/consuming-a-dataset-from-an-xml-web-service.md).  
+ Silného typu <xref:System.Data.DataSet> můžete také přenosu pomocí webové služby XML. Návrh <xref:System.Data.DataSet> je ideální pro přenos dat pomocí webové služby XML. Přehled webové služby XML, najdete v části [Přehled webové služby XML](http://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d). Příklad použití <xref:System.Data.DataSet> z webové služby XML, najdete na stránce [využívání datové sady z webové služby XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/consuming-a-dataset-from-an-xml-web-service.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vytvoření datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-dataset.md)  

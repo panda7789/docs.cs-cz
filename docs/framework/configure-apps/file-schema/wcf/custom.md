@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9bcab1e8361448abfe14db8ac38a924c656b9065
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9ba9c8f6fa5bf574bdcaa9cb46b6c666e7117a9a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltcustomgt"></a>&lt;vlastní&gt;
 Určuje nastavení pro vlastní sdílené služby překladač.  
   
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<vazby >  
-\<netpeerbinding – >  
+\<netPeerBinding>  
 \<Vazba >  
 \<překladač >  
 \<vlastní >  
@@ -55,16 +55,16 @@ Určuje nastavení pro vlastní sdílené služby překladač.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu pro vlastní sdílené překladače nakonfigurovaný s tímto elementem. Tento element je typu <xref:System.ServiceModel.Configuration.IdentityElement>.|  
-|[\<hlavičky >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce adres hlavičky SOAP pro zprávy zpracovávaných překladač vlastní sdílené.|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce adres hlavičky SOAP pro zprávy zpracovávaných překladač vlastní sdílené.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<překladač >](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Překladač partnera, který se používá k překladu sdílené OK ID pro sadu adres partnerských uzlů, která představuje několik uzlů, které jsou součástí OK.|  
+|[\<resolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Překladač partnera, který se používá k překladu sdílené OK ID pro sadu adres partnerských uzlů, která představuje několik uzlů, které jsou součástí OK.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento element definuje základního nastavení pro vlastní sdílené překladač služby, včetně adresa koncového bodu partnerského uzlu hostování služby a nastavení konkrétní vazby. Další informace o vytvoření vlastní překladač najdete v tématu [přidání vlastní překladač do aplikace PeerChannel](http://msdn.microsoft.com/en-us/12aa3787-2962-439c-ad27-46523c8b0419).  
+ Tento element definuje základního nastavení pro vlastní sdílené překladač služby, včetně adresa koncového bodu partnerského uzlu hostování služby a nastavení konkrétní vazby. Další informace o vytvoření vlastní překladač najdete v tématu [přidání vlastní překladač do aplikace PeerChannel](http://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>  
@@ -72,4 +72,4 @@ Určuje nastavení pro vlastní sdílené služby překladač.
  <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>  
  <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>  
  [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)  
- [Přidání vlastní překladač do PeerChannel aplikace](http://msdn.microsoft.com/en-us/12aa3787-2962-439c-ad27-46523c8b0419)
+ [Přidání vlastní překladač do PeerChannel aplikace](http://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)

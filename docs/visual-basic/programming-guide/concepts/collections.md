@@ -11,11 +11,11 @@ ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
 caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: aac9ed655982ff4618e0bdb7fd2af16aaa546719
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d0ea3b45803bc37f35d516260a57db422827f1e1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="collections-visual-basic"></a>Kolekce (Visual Basic)
 Mnoho aplikací budete chtít vytvořit a spravovat skupiny související objekty. Existují dva způsoby do objektů skupiny: vytvořením pole objektů a vytvořením kolekce objektů.  
@@ -470,7 +470,7 @@ End Class
   
 <a name="BKMK_CustomCollection"></a> 
 ## <a name="defining-a-custom-collection"></a>Definice vlastní kolekce  
- Kolekce můžete definovat implementací <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.IEnumerable> rozhraní. Další informace najdete v tématu [vytváření výčtu kolekce](http://msdn.microsoft.com/en-us/71807ea7-9180-48a6-916f-35a5251d477f).  
+ Kolekce můžete definovat implementací <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.IEnumerable> rozhraní. Další informace najdete v tématu [vytváření výčtu kolekce](http://msdn.microsoft.com/library/71807ea7-9180-48a6-916f-35a5251d477f).  
   
  I když můžete definovat vlastní kolekce, je obvykle lepší místo toho použít kolekce, které jsou zahrnuty v rozhraní .NET Framework, která jsou popsaná v [typy kolekcí](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b) výše v tomto tématu.  
   
@@ -581,11 +581,11 @@ End Function
 ## <a name="see-also"></a>Viz také  
  [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
  [Programování konceptů (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [LINQ na objekty (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
  [Kolekce a datové struktury](../../../standard/collections/index.md)  
- [Vytváření a manipulace s kolekcí](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [Vytváření a manipulace s kolekcí](http://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)  
  [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)  
  [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)

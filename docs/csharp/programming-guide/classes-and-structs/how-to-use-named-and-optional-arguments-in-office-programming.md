@@ -12,16 +12,16 @@ ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
 caps.latest.revision: "34"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: a453699591397224435fba1e602c305f18e84a11
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: fc3c0f6910238ba20582280426b4a40e68b95dd8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)
 Pojmenované argumenty a volitelné argumenty, počínaje [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], zvýšení pohodlí, flexibilitu a čitelnost v C# – programování. Kromě toho tyto funkce výrazně usnadnit přístup k rozhraní modelu COM, jako je například Microsoft Office automatizace rozhraní API.  
   
- V následujícím příkladu metoda [ConvertToTable](http://go.microsoft.com/fwlink/?LinkId=145378) má šestnáct parametry, které představují vlastností tabulky jako počet sloupců a řádků, formátování, ohraničení, písma a barvy. Všechny šestnáct parametry jsou volitelné, protože ve většině případů nechcete zadat konkrétní hodnoty pro všechny z nich. Ale bez pojmenované a nepovinné argumenty, hodnotu nebo hodnotu zástupného symbolu je třeba zadat pro jednotlivé parametry. Pomocí pojmenovaných a nepovinných argumentů je určit pouze hodnoty parametrů, které jsou požadovány pro svůj projekt.  
+ V následujícím příkladu metoda [ConvertToTable](https://msdn.microsoft.com/library/bb216993.aspx) má šestnáct parametry, které představují vlastností tabulky jako počet sloupců a řádků, formátování, ohraničení, písma a barvy. Všechny šestnáct parametry jsou volitelné, protože ve většině případů nechcete zadat konkrétní hodnoty pro všechny z nich. Ale bez pojmenované a nepovinné argumenty, hodnotu nebo hodnotu zástupného symbolu je třeba zadat pro jednotlivé parametry. Pomocí pojmenovaných a nepovinných argumentů je určit pouze hodnoty parametrů, které jsou požadovány pro svůj projekt.  
   
  Musíte mít aplikaci Microsoft Office Word v počítači nainstalována k provedení těchto postupů.  
   
@@ -63,7 +63,7 @@ Pojmenované argumenty a volitelné argumenty, počínaje [!INCLUDE[csharp_dev10
   
 ### <a name="to-display-text-in-a-word-document"></a>Zobrazení textu v dokument aplikace Word  
   
-1.  V `Program` třídy v souboru Program.cs, přidejte následující metodu pro vytvoření aplikace Word a dokument aplikace Word. [Přidat](http://go.microsoft.com/fwlink/?LinkId=145381) metoda má čtyři volitelné parametry. Tento příklad používá výchozí hodnoty. Proto jsou nezbytné v volání příkazu žádné argumenty.  
+1.  V `Program` třídy v souboru Program.cs, přidejte následující metodu pro vytvoření aplikace Word a dokument aplikace Word. [Přidat](https://msdn.microsoft.com/library/microsoft.office.interop.word.documents.add.aspx) metoda má čtyři volitelné parametry. Tento příklad používá výchozí hodnoty. Proto jsou nezbytné v volání příkazu žádné argumenty.  
   
      [!code-csharp[csProgGuideNamedAndOptional#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_2.cs)]  
   
@@ -102,7 +102,7 @@ Parametry ConvertToTable
   
      [!code-csharp[csProgGuideNamedAndOptional#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_7.cs)]  
   
-2.  Pro určení předdefinované formátu pro tabulku, nahraďte na posledním řádku `DisplayInWord` s následující příkaz a pak zadejte CTRL + F5. Formát může být libovolná z [WdTableFormat](http://go.microsoft.com/fwlink/?LinkId=145382) konstanty.  
+2.  Pro určení předdefinované formátu pro tabulku, nahraďte na posledním řádku `DisplayInWord` s následující příkaz a pak zadejte CTRL + F5. Formát může být libovolná z [WdTableFormat](https://msdn.microsoft.com/library/microsoft.office.interop.word.wdtableformat.aspx) konstanty.  
   
      [!code-csharp[csProgGuideNamedAndOptional#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_8.cs)]  
   

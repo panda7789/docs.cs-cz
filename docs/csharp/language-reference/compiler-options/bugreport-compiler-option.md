@@ -13,19 +13,19 @@ ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
 caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d1341383d48a28966a0873f3124cdc3567ec3f76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d2a6c27454cc8f95b9662d6ae688471849c5cee0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="bugreport-c-compiler-options"></a>/bugreport (Možnosti kompilátoru C#)
+# <a name="-bugreport-c-compiler-options"></a>-bugreport (možnosti kompilátoru C#)
 Určuje, že informace o ladění mají být umístěny v souboru pro pozdější analýzu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/bugreport:file  
+-bugreport:file  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -33,7 +33,7 @@ Určuje, že informace o ladění mají být umístěny v souboru pro pozdějš�
  Název souboru, který má obsahovat sestavy chyb.  
   
 ## <a name="remarks"></a>Poznámky  
- **/Bugreport** možnost určuje, že tyto informace mají být umístěny v `file`:  
+ **- Bugreport** možnost určuje, že tyto informace mají být umístěny v `file`:  
   
 -   Kopírovat všechny soubory zdrojového kódu v kompilace.  
   
@@ -49,7 +49,7 @@ Určuje, že informace o ladění mají být umístěny v souboru pro pozdějš�
   
 -   Popis jak domníváte, že problém je třeba stanovit, které jste vyzváni k.  
   
- Pokud tato možnost se používá s **/errorreport:prompt** nebo **/errorreport:send**, informace v souboru budou odeslány společnosti Microsoft Corporation.  
+ Pokud tato možnost se používá s **- errorreport: řádku** nebo **- errorreport: Odeslat**, informace v souboru budou odeslány společnosti Microsoft Corporation.  
   
  Protože kopii všechny soubory zdrojového kódu budou umístěny v `file`, můžete chtít reprodukovat možného kód do nejkratší programu.  
   
@@ -58,6 +58,6 @@ Určuje, že informace o ladění mají být umístěny v souboru pro pozdějš�
  Všimněte si, že obsah vygenerovaný soubor vystavit zdrojový kód, který by mohl vést k neúmyslnému zpřístupnění informací.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
- [/ errorreport (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [-errorreport (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

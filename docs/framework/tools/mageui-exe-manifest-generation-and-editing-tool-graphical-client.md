@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1450acd6c4b68be79ad769106dfebc7d89484525
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ec4ac8d89d2d3a7d0dce11e5057db80190e7b963
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty, které jsou vytvořené s cílem MageUI.exe [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Při přidání nebo odebrání sestavení z manifestu nebo opětovné podepisování manifestů existující, MageUI.exe neaktualizuje manifest cíl [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Další informace najdete v tématu [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
@@ -40,7 +40,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |-------------|----------|--------------|-----------------|  
 |**Manifest aplikace**|**Soubor, nové**||Vytvoří nový manifest aplikace.|  
 |**Manifest nasazení**|**Soubor, nové**||Vytvoří nový manifest nasazení.|  
-|**Otevřete**|**Soubor**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
+|**Open**|**Soubor**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
 |**Zavřete**|**Soubor**|CTRL+F4|Zavře otevřený soubor.<br /><br /> Upravíte-li soubor před jeho uzavřením, požádá nástroj MageUI.exe o opětovné podepsání souboru veřejným klíčem, párem klíčů nebo uloženým certifikátem.|  
 |**Uložit**|**Soubor**|CTRL+S|Uloží soubor, na který je aktuálně zaměřen uživatelský vstup, na disk.|  
 |**Uložit jako**|**Soubor**||Uloží soubor na disk a umožní zadat název souboru nebo jeho umístění.|  
@@ -51,7 +51,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Kopírování**|**Upravit**|CTRL+C|Zkopíruje aktuálně vybraný text do schránky.|  
 |**Vložení**|**Upravit**|CTRL+V|Vloží text ze schránky do aktuálního textového prvku.|  
 |**Odstranit**|**Upravit**||Odstraní aktuálně vybrané v seznamu, jako je například vztah důvěryhodnosti licenci na element **Manifest nasazení** kartě.|  
-|**Zavřete všechny**|**Okno**||Zavře všechny soubory otevřené v nástroji MageUI.exe. Pokud je zapotřebí některé ze souborů uložit, vyzve nástroj MageUI.exe k jejich uložení. Nástroj MageUI.exe také vyžaduje výběr podepsaného klíče pro každý nepodepsaný nebo změněný soubor.|  
+|**Zavřete všechny**|**Window**||Zavře všechny soubory otevřené v nástroji MageUI.exe. Pokud je zapotřebí některé ze souborů uložit, vyzve nástroj MageUI.exe k jejich uložení. Nástroj MageUI.exe také vyžaduje výběr podepsaného klíče pro každý nepodepsaný nebo změněný soubor.|  
 |**O**|**Pomoc**||Zobrazuje verzi a informace o autorských právech nástroje MageUI.exe.|  
   
 ## <a name="preferences-dialog-box"></a>Dialogové okno Předvolby  
@@ -73,7 +73,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Podepsat soubor certifikátu**|Podepíše manifest digitálním certifikátem uloženým v systému souborů.|  
 |**Soubor**|Poskytuje prostor pro zadání cesty k souboru .pfx představujícímu certifikát.|  
 |**...**|Otevře **zvolit soubor** dialogové okno pro výběr existující soubor .pfx.|  
-|**Nový**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech certifikátů používaných pro podpis [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v části [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).|  
+|**New**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech certifikátů používaných pro podpis [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v části [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Heslo**|Poskytuje prostor pro zadání hesla použitého k podepisování certifikátů. Pokud není použito, může být ponecháno prázdné.|  
 |**Přihlaste se s uložený certifikát**|Zobrazí seznam s vlastním výběrem digitálních certifikátů uložených v úložišti certifikátů počítače.|  
 |**Identifikátor URI pro vytvoření časového razítka**|Zobrazí adresu Uniform Resource Locator (URI) služby digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepisovat v případě, že digitální certifikát vyprší ještě před nasazením další verze aplikace. Další informace najdete v tématu [Windows root programu Certificate](http://go.microsoft.com/fwlink/?LinkId=159000) a [ClickOnce a kód Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
@@ -111,7 +111,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Vydavatele**|Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
+|**Publisher**|Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
 |**Produktu**|Úplný název produktu. Pokud jste vybrali **nainstalovat místně** pro **typ aplikace** elementu na **možnosti nasazení** kartě manifest nasazení, tento název bude, co se zobrazí v **Spustit** odkaz nabídky a v **přidat nebo odebrat programy** pro tuto aplikaci.|  
 |**Podpora umístění**|Adresa URL, ze kterého můžete získat zákazníkům nápovědě a podpoře pro aplikaci.|  
   
@@ -138,7 +138,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Typ sady oprávnění**|Sada minimální oprávnění, které vyžadují tuto aplikaci spustit v klientském počítači. Popis těchto sady oprávnění a oprávnění, která nemají nebo není potřebují, najdete v části [NIB: s názvem nastaví oprávnění](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).|  
+|**Typ sady oprávnění**|Sada minimální oprávnění, které vyžadují tuto aplikaci spustit v klientském počítači. Popis těchto sady oprávnění a oprávnění, která nemají nebo není potřebují, najdete v části [NIB: s názvem nastaví oprávnění](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).|  
 |**Podrobnosti**|Soubor XML pro manifest aplikace vytvořit představují oprávnění nastavit. Pokud nemáte dostatečné povědomí o manifest aplikace formátu XML, byste neměli upravovat tento XML ručně. Další informace najdete v tématu [Manifest aplikace ClickOnce](/visualstudio/deployment/clickonce-application-manifest).|  
   
 ### <a name="deployment-manifest-tab"></a>Karta manifestu nasazení  
@@ -167,7 +167,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Vydavatele**|Požadováno. Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
+|**Publisher**|Požadováno. Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
 |**Produktu**|Požadováno. Úplný název produktu. Pokud jste vybrali **nainstalovat místně** pro **typ aplikace** elementu na **možnosti nasazení** kartě, bude tento název, co se zobrazí v **spustit** odkaz nabídky a v **přidat nebo odebrat programy** pro tuto aplikaci.|  
 |**Podpora umístění**|Volitelné. Adresa URL, ze kterého můžete získat zákazníkům nápovědě a podpoře pro aplikaci.|  
   

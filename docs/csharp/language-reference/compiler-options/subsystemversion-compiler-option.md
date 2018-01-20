@@ -8,22 +8,22 @@ ms.assetid: a99fce81-9d92-4813-9874-bee777041445
 caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bfb398c960d3aa1aa8c9c6638e1bd8fe5dba4a98
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 3a6fee8f140a0c2e81f9904d5ceea7e290d48275
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="subsystemversion-c-compiler-options"></a>/subsystemversion (Možnosti kompilátoru C#)
+# <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (možnosti kompilátoru C#)
 Určuje minimální verze subsystému, ve kterém můžete spustit vygenerovaný spustitelný soubor, a určení verze systému Windows, ve kterém můžete spustit spustitelný soubor. Nejčastěji tato možnost zajistí, že spustitelný soubor můžete využít funkce konkrétní zabezpečení, které nejsou k dispozici se staršími verzemi Windows.  
   
 > [!NOTE]
->  Pokud chcete zadat subsystém sám sebe, použijte [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) – možnost kompilátoru.  
+>  Pokud chcete zadat subsystém sám sebe, použijte [-cíl](../../../csharp/language-reference/compiler-options/target-compiler-option.md) – možnost kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/subsystemversion:major.minor  
+-subsystemversion:major.minor  
 ```  
   
 #### <a name="parameters"></a>Parametry  
@@ -46,22 +46,22 @@ Určuje minimální verze subsystému, ve kterém můžete spustit vygenerovaný
 |[!INCLUDE[win8](~/includes/win8-md.md)]|6.02|  
   
 ## <a name="default-values"></a>Výchozí hodnoty  
- Výchozí hodnota **/subsystemversion** – možnost kompilátoru závisí na podmínkách v následujícím seznamu:  
+ Výchozí hodnota **- subsystemversion** – možnost kompilátoru závisí na podmínkách v následujícím seznamu:  
   
 -   Výchozí hodnota je 6.02, pokud je nastavená žádné – možnost kompilátoru v následujícím seznamu:  
   
-    -   [/ target: appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)  
+    -   [-target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)  
   
-    -   [/ target: winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)  
+    -   [-target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)  
   
-    -   [/Platform:arm](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)  
+    -   [-platform: arm](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)  
   
 -   Výchozí hodnota je 6.00, pokud používáte nástroje MSBuild, jste cílení [!INCLUDE[net_v45](~/includes/net-v45-md.md)], a jste nenastavili některé z možností kompilátoru, která jste zadali dříve v tomto seznamu.  
   
 -   Výchozí hodnota je 4.00, pokud žádná z předchozích podmínek.  
   
 ## <a name="setting-this-option"></a>Nastavení této možnosti  
- Chcete-li nastavit **/subsystemversion** – možnost kompilátoru ve Visual Studiu otevřete soubor .csproj a zadejte hodnotu pro `SubsystemVersion` vlastnost v souboru XML MSBuild. Tuto možnost nelze nastavit v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu "Výchozí hodnoty" dříve v tomto tématu nebo [běžné vlastnosti projektu nástroje MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).  
+ Chcete-li nastavit **- subsystemversion** – možnost kompilátoru ve Visual Studiu otevřete soubor .csproj a zadejte hodnotu pro `SubsystemVersion` vlastnost v souboru XML MSBuild. Tuto možnost nelze nastavit v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu "Výchozí hodnoty" dříve v tomto tématu nebo [běžné vlastnosti projektu nástroje MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

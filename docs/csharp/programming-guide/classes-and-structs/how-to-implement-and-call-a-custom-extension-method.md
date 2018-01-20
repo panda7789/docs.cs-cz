@@ -9,14 +9,14 @@ ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7de999c53f02fcc2bde4a8ccf504ba2b1d032638
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a277412c69d26f20721381d9cfa839c7f082f2f2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Postupy: Implementace a volání vlastní metody rozšíření (Průvodce programováním v C#)
-Toto téma ukazuje, jak implementovat vlastní rozšiřující metody pro libovolného typu v [knihovna tříd rozhraní .NET Framework](http://go.microsoft.com/fwlink/?LinkID=217856), nebo jakýkoli jiný typ rozhraní .NET, který chcete rozšířit. Kód klienta můžete použít rozšiřující metody přidat odkaz na knihovnu DLL, která je obsahuje, a přidáním [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktiva, která určuje obor názvů, ve kterém jsou definovány rozšiřující metody.  
+Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkoli typ rozhraní .NET. Kód klienta můžete použít rozšiřující metody přidat odkaz na knihovnu DLL, která je obsahuje, a přidáním [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktiva, která určuje obor názvů, ve kterém jsou definovány rozšiřující metody.  
   
 ## <a name="to-define-and-call-the-extension-method"></a>K definování a volání metody rozšíření  
   
@@ -46,12 +46,12 @@ Toto téma ukazuje, jak implementovat vlastní rozšiřující metody pro libovo
  Rozšiřující metody k dispozici žádná konkrétní bezpečnostní ohrožení zabezpečení. Se nikdy slouží k zosobnění existující metody podle typu, protože jsou vyřešeny všechny kolize názvů považuje instance nebo statickou metodu definované vlastní typ. Rozšiřující metody nelze přístup k žádným privátní datům ve třídě rozšířené.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Metody rozšíření](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)  
- [chráněný](../../../csharp/language-reference/keywords/protected.md)  
- [interní](../../../csharp/language-reference/keywords/internal.md)  
- [veřejné](../../../csharp/language-reference/keywords/public.md)  
- [Tento](../../../csharp/language-reference/keywords/this.md)  
- [obor názvů](../../../csharp/language-reference/keywords/namespace.md)
+ [protected](../../../csharp/language-reference/keywords/protected.md)  
+ [internal](../../../csharp/language-reference/keywords/internal.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
+ [this](../../../csharp/language-reference/keywords/this.md)  
+ [namespace](../../../csharp/language-reference/keywords/namespace.md)

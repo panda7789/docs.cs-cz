@@ -13,11 +13,11 @@ ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
 caps.latest.revision: "30"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d037e17ef48ebfdd5cfd860efbacf195e7b6a76d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2aacad0e8004e60471a59ebef695ddae5f7a2a7d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>Postupy: Použití vyvolání platformy pro přehrání souboru wave (Průvodce programováním v C#)
 Následující příklad kódu C#, ukazuje, jak používat platformu vyvolání služby pro přehrání souboru wave zvukové operačního systému Windows.  
@@ -49,8 +49,8 @@ Následující příklad kódu C#, ukazuje, jak používat platformu vyvolání 
  Další informace najdete v tématu [zabezpečení rozhraní .NET Framework](http://go.microsoft.com/fwlink/?LinkId=37122).  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Přehled interoperability](../../../csharp/programming-guide/interop/interoperability-overview.md)  
  [Přehled interoperability](../../../csharp/programming-guide/interop/interoperability-overview.md)  
- [Vyvolání bližší pohled na platformy](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
+ [Vyvolání bližší pohled na platformy](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
  [Zařazování dat s voláním platformy](../../../framework/interop/marshaling-data-with-platform-invoke.md)

@@ -12,11 +12,11 @@ ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
 caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 65c50311548667ab5fdc685b70b6ab9e88376067
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5897dd1c843633d38707112850a4be1151626185
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 Vždy, když [třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá jeho konstruktoru. Třídě nebo struktuře může mít několik konstruktory, které nepřebírají různých argumenty. Konstruktory povolit programátorů nastavit výchozí hodnoty, omezení vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady naleznete v tématu [pomocí konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md) a [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
@@ -58,11 +58,11 @@ Další informace a příklady naleznete v tématu [statické konstruktory](../.
   
  [Statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)  
   
- [Postupy: zápis kopírovacího konstruktoru](../../../csharp/programming-guide/classes-and-structs/how-to-write-a-copy-constructor.md)  
+ [Postupy: Zápis kopírovacího konstruktoru](../../../csharp/programming-guide/classes-and-structs/how-to-write-a-copy-constructor.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
- [statické](../../../csharp/language-reference/keywords/static.md)  
- [Proč inicializátory spustit v opačném pořadí jako konstruktory? První část](http://go.microsoft.com/fwlink/?LinkId=112374)
+ [static](../../../csharp/language-reference/keywords/static.md)  
+ [Proč inicializátory spustit v opačném pořadí jako konstruktory? První část](https://blogs.msdn.microsoft.com/ericlippert/2008/02/15/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)

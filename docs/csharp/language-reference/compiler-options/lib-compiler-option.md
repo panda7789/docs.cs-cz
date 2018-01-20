@@ -13,19 +13,19 @@ ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
 caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 476bc43987b5ac8fa222b767b068a9ca14537bc2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 58203570119676e0737b0142b7a7a5fbf23f1ae2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="lib-c-compiler-options"></a>/lib (Možnosti kompilátoru C#)
-**/Lib** možnost určuje umístění sestavení odkazovaných pomocí možnosti [/Reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  
+# <a name="-lib-c-compiler-options"></a>-lib (možnosti kompilátoru C#)
+**-Lib** možnost určuje umístění sestavení odkazovaných pomocí možnosti [/Reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/lib:dir1[,dir2]  
+-lib:dir1[,dir2]  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -42,15 +42,15 @@ ms.lasthandoff: 11/21/2017
   
 2.  Common language runtime systémového adresáře.  
   
-3.  Adresáře určené **/lib**.  
+3.  Adresáře určené **-lib**.  
   
 4.  Adresáře určené proměnná prostředí LIB.  
   
- Použití **/reference** zadat odkaz na sestavení.  
+ Použití **– referenční dokumentace** zadat odkaz na sestavení.  
   
- **/ lib** je sčítání; zadání je více než jednou připojí k jakékoli předchozí hodnoty.  
+ **-lib** je sčítání; zadání je více než jednou připojí k jakékoli předchozí hodnoty.  
   
- Alternativu k použití **/lib** je zkopírovat do pracovního adresáře potřebné sestavení; to vám umožní jednoduše předat název sestavení do **/reference**. Potom můžete odstranit sestavení z pracovní adresář. Vzhledem k tomu, že cesta k závislého sestavení není zadané v manifestu sestavení, aplikaci lze spustit na cílovém počítači a vyhledá a použití sestavení v globální mezipaměti sestavení.  
+ Alternativu k použití **-lib** je zkopírovat do pracovního adresáře potřebné sestavení; to vám umožní jednoduše předat název sestavení do **– referenční dokumentace**. Potom můžete odstranit sestavení z pracovní adresář. Vzhledem k tomu, že cesta k závislého sestavení není zadané v manifestu sestavení, aplikaci lze spustit na cílovém počítači a vyhledá a použití sestavení v globální mezipaměti sestavení.  
   
  Protože kompilátor, můžete odkazovat sestavení neznamená, že modul CLR bude moct najít a načíst sestavení za běhu. V tématu [jak modul Runtime vyhledává sestavení](../../../framework/deployment/how-the-runtime-locates-assemblies.md) podrobnosti o vyhledávání odkazovaná sestavení modulu runtime.  
   
@@ -68,9 +68,9 @@ ms.lasthandoff: 11/21/2017
  Zkompiluje t2.cs a vytvoří soubor s příponou .exe. Kompilátor bude hledat v pracovní adresář a v kořenovém adresáři jednotky C odkazy na sestavení.  
   
 ```console  
-csc /lib:c:\ /reference:t2.dll t2.cs  
+csc -lib:c:\ -reference:t2.dll t2.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7ee0f555fc1e3412032e0a7dda3a747bbfef6f4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01bc858aeeff750baa3f54e813dea5c9779143f8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltwebsocketsettingsgt"></a>&lt;webSocketSettings&gt;
 Element konfigurace slouží k zadání nastavení Websocket.  
   
-\<systém. ServiceModel >  
+\<system.ServiceModel>  
 \<vazby >  
-\<netHttpBinding >  
+\<netHttpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -75,7 +75,7 @@ Element konfigurace slouží k zadání nastavení Websocket.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|\<netHttpBinding >|Určuje vazeb NetHttpBinding|  
+|\<netHttpBinding>|Určuje vazeb NetHttpBinding|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak používat \<webSocketSettings > elementu.  
@@ -103,5 +103,5 @@ Element konfigurace slouží k zadání nastavení Websocket.
  <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)

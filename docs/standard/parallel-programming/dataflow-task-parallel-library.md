@@ -17,11 +17,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b48e580d078ec6bb736ac762d505583cf632a8bd
-ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
+ms.openlocfilehash: f91100303cb0970ed430eebe2a377a487017b47d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
 <a name="top"></a>Task Parallel Library (TPL) poskytuje součásti toku dat a pomáhá tak zvýšit robustnost aplikací s povolenými souběžnosti. Tyto součásti toku dat se souhrnně označují jako *knihovna toku dat TPL*. Tento model toku dat podporuje programování založené na objektu actor pomocí poskytnete zprávy v procesu předávání pro hrubý toku dat a paralelní zpracování úlohy. Komponenty toku dat sestavení pro typy a plánování infrastruktury TPL a integrovat jazyka C#, [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]a F # jazyková podpora pro asynchronní programování. Tyto součásti toku dat jsou užitečné, pokud máte více operací, které musí vzájemnou komunikaci asynchronně, nebo pokud chcete zpracovat data, jakmile je k dispozici. Představte si třeba aplikaci, která zpracovává data bitové kopie z webové kamery. Pomocí modelu toku dat je aplikace dokáže zpracovat rámce bitové kopie, jakmile budou k dispozici. Pokud aplikace vylepšuje rámce bitové kopie, například provedením světla oprava nebo červených snížení, můžete vytvořit *kanálu* toku dat komponent. Každá fáze v kanálu může používat další funkce hrubý paralelismus, jako jsou funkce, která zajišťuje TPL k transformaci bitovou kopii.  
@@ -84,7 +84,7 @@ ms.lasthandoff: 01/10/2018
  [!code-csharp[TPLDataflow_Overview#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#11)]
  [!code-vb[TPLDataflow_Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#11)]  
   
- Můžete také použít vlastnosti jako <xref:System.Threading.Tasks.Task.IsCanceled%2A> v těle úkolů pokračování určit další informace o stavu dokončení bloku toku dat. Další informace o úlohách pokračování a jak se vztahují k zrušení a zpracování chyb najdete v tématu [řetězení úloh pomocí úloh pokračování pomocí](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md), [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md), [výjimky Zpracování](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md), a [NIB: postupy: zpracování výjimek vyvolaných úlohami](http://msdn.microsoft.com/en-us/d6c47ec8-9de9-4880-beb3-ff19ae51565d).  
+ Můžete také použít vlastnosti jako <xref:System.Threading.Tasks.Task.IsCanceled%2A> v těle úkolů pokračování určit další informace o stavu dokončení bloku toku dat. Další informace o úlohách pokračování a jak se vztahují k zrušení a zpracování chyb najdete v tématu [řetězení úloh pomocí úloh pokračování pomocí](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md), [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md), [výjimky Zpracování](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md), a [NIB: postupy: zpracování výjimek vyvolaných úlohami](http://msdn.microsoft.com/library/d6c47ec8-9de9-4880-beb3-ff19ae51565d).  
   
  [[přejděte do horní části](#top)]  
   

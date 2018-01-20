@@ -13,29 +13,29 @@ ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 28c2cdc26d32d98e617a0c4b8cd282d2fbc87f4d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0127f8982d4b8c487a7e243025052e3eb9a5ff75
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="warnaserror-c-compiler-options"></a>/warnaserror (Možnosti kompilátoru C#)
-**/Warnaserror+** možnost zpracovává všech upozornění jako chyby  
+# <a name="-warnaserror-c-compiler-options"></a>-warnaserror (možnosti kompilátoru C#)
+**- Warnaserror +** možnost zpracovává všech upozornění jako chyby  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/warnaserror[<U>+</U> | -][:warning-list]  
+-warnaserror[<U>+</U> | -][:warning-list]  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
  Všechny zprávy, které by obvykle hlášeny jako upozornění jsou hlášeny jako chyby a procesu sestavení je zastaveno (žádný výstup, které jsou vytvořené soubory).  
   
- Ve výchozím nastavení **/warnaserror-** je v platnosti, což způsobí, že upozornění nezabrání generování výstupní soubor. **/ warnaserror**, což je stejný jako **/warnaserror+**, způsobí, že upozornění jsou považovány za chyby.  
+ Ve výchozím nastavení **- warnaserror –** je v platnosti, což způsobí, že upozornění nezabrání generování výstupní soubor. **-warnaserror**, což je stejný jako **- warnaserror +**, způsobí, že upozornění jsou považovány za chyby.  
   
  Případně pokud chcete pouze několik konkrétní upozornění jsou považovány za chyby, můžete určit seznam oddělený čárkami čísel upozornění považovat za chyby.  
   
- Použití [/ warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) k určení úrovně upozornění, která má kompilátor zobrazovat. Použití [/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat některé upozornění.  
+ Použití [-warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) k určení úrovně upozornění, která má kompilátor zobrazovat. Použití [- nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat některé upozornění.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -51,10 +51,10 @@ ms.lasthandoff: 11/21/2017
  Kompilace `in.cs` kompilátor zobrazovat žádná upozornění:  
   
 ```console  
-csc /warnaserror in.cs  
-csc /warnaserror:642,649,652 in.cs  
+csc -warnaserror in.cs  
+csc -warnaserror:642,649,652 in.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

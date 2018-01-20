@@ -11,11 +11,11 @@ ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
 caps.latest.revision: "28"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5ac357ab20f44de4e0613a7af863ad6789e84ec8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5fe7b735977b0cde0bed266815987b773be6bdbe
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="command-line-build-with-cscexe"></a>Sestavení příkazového řádku pomocí csc.exe
 Kompilátor jazyka C# můžete vyvolat zadáním názvu jeho spustitelného souboru (*csc.exe*) na příkazovém řádku.
@@ -70,42 +70,42 @@ csc File.cs
 - Zkompiluje *File.cs* generovala *souboru File.dll*:
 
 ```console
-csc /target:library File.cs
+csc -target:library File.cs
 ```
 
 - Zkompiluje *File.cs* a vytvoří *My.exe*:
 
 ```console
-csc /out:My.exe File.cs
+csc -out:My.exe File.cs
 ```
 
 - Kompiluje všechny C# soubory v aktuálním adresáři s povolenými optimalizacemi a definuje symboly pro ladění. Výstupem je *File2.exe*:
 
 ```console
-csc /define:DEBUG /optimize /out:File2.exe *.cs
+csc -define:DEBUG -optimize -out:File2.exe *.cs
 ```
 
 - Kompiluje všechny C# soubory v aktuálním adresáři ladicí verze *File2.dll pro ladění*. Zobrazí se žádná upozornění ani logo:
 
 ```console
-csc /target:library /out:File2.dll /warn:0 /nologo /debug *.cs
+csc -target:library -out:File2.dll -warn:0 -nologo -debug *.cs
 ```
 
 - Kompiluje všechny C# soubory v aktuálním adresáři na *Something.xyz* (DLL):
 
 ```console
-csc /target:library /out:Something.xyz *.cs
+csc -target:library -out:Something.xyz *.cs
 ```
 
 ## <a name="differences-between-c-compiler-and-c-compiler-output"></a>Rozdíly mezi kompilátor jazyka C# a výstup kompilátoru C++
 Neexistují žádné objektu (*.obj*) v důsledku volání do kompilátoru jazyka C# vytvoří soubory; výstupní soubory vytvářené přímo. V důsledku toho nemusí kompilátor jazyka C# linkeru.
 
 ## <a name="see-also"></a>Viz také
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Možnosti kompilátoru C# uvedené podle abecedy](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
- [Možnosti kompilátoru C# uvedené podle kategorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)  
- [Main() a argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C# (abecední pořadí)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
+ [Možnosti kompilátoru jazyka C# uvedené podle kategorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)  
+ [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
  [Argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)  
  [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
- [Postupy: přístup příkazového řádku argumenty pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
+ [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
  [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)

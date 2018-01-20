@@ -17,19 +17,19 @@ ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
 caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ab5748f43777ec545e76100543473785894461cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6a1f2c55aa078adb213a93dc5aff7ced40793bfa
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="warn-c-compiler-options"></a>/warn (Možnosti kompilátoru C#)
-**/ Warn** možnost určuje úroveň pro upozornění pro kompilátor zobrazovat.  
+# <a name="-warn-c-compiler-options"></a>-warn (možnosti kompilátoru C#)
+**-Warn** možnost určuje úroveň pro upozornění pro kompilátor zobrazovat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/warn:option  
+-warn:option  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -47,9 +47,9 @@ ms.lasthandoff: 11/21/2017
 ## <a name="remarks"></a>Poznámky  
  Chcete-li získat informace o chybě nebo upozornění, můžete vyhledat kód chyby v rejstříku nápovědy. Další způsoby, jak získat informace o chybě nebo upozornění, naleznete v části [chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md).  
   
- Použití [/warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) zachází všech upozornění jako chyby. Použití [/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat některé upozornění.  
+ Použití [- warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) zachází všech upozornění jako chyby. Použití [- nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat některé upozornění.  
   
- **/w** je zkratka pro **/ warn**.  
+ **-w** je zkratka pro **-warn**.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -65,9 +65,9 @@ ms.lasthandoff: 11/21/2017
  Kompilace `in.cs` kompilátor zobrazuje pouze upozornění úrovně 1:  
   
 ```console  
-csc /warn:1 in.cs  
+csc -warn:1 in.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -14,32 +14,32 @@ ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
 caps.latest.revision: "11"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d2b15853cdd6ee9fe12b8b3ba3388a74e49c9701
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1004f70547ca3a841c59338a1344235132af3fa7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="noconfig-c-compiler-options"></a>/noconfig (Možnosti kompilátoru C#)
-**/Noconfig** říká kompilátoru nechcete kompilovat bez souboru csc.rsp, který je umístěn a načíst ze stejného adresáře jako soubor csc.exe.  
+# <a name="-noconfig-c-compiler-options"></a>-noconfig (možnosti kompilátoru C#)
+**- Noconfig** říká kompilátoru nechcete kompilovat bez souboru csc.rsp, který je umístěn a načíst ze stejného adresáře jako soubor csc.exe.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/noconfig  
+-noconfig  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
  Soubor csc.rsp odkazuje všechna sestavení součástí rozhraní .NET Framework. Skutečné odkazy, které zahrnuje vývojového prostředí sady Visual Studio .NET závisí na typu projektu.  
   
- Můžete upravit soubor csc.rsp a určit další kompilátoru možnosti, které mají být zahrnuty v každé kompilaci z příkazového řádku pomocí csc.exe (s výjimkou **/noconfig** možnost).  
+ Můžete upravit soubor csc.rsp a určit další kompilátoru možnosti, které mají být zahrnuty v každé kompilaci z příkazového řádku pomocí csc.exe (s výjimkou **- noconfig** možnost).  
   
  Kompilátor zpracovává možnosti předaný **csc** poslední příkaz. Jakákoliv možnost, na příkazovém řádku proto přepíše nastavení stejné možnosti v souboru csc.rsp.  
   
- Pokud nechcete, aby kompilátoru vyhledejte a použijte nastavení v souboru csc.rsp, zadejte **/noconfig**.  
+ Pokud nechcete, aby kompilátoru vyhledejte a použijte nastavení v souboru csc.rsp, zadejte **- noconfig**.  
   
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

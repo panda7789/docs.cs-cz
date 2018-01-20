@@ -13,13 +13,13 @@ ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
 caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bc8720662fb4c91953e2d399f08613f5055b1158
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 6d2fcb3f0bf4491de23b70c8beebf7ae495b2aa0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="errorreport-c-compiler-options"></a>/errorreport (Možnosti kompilátoru C#)
+# <a name="-errorreport-c-compiler-options"></a>-errorreport (možnosti kompilátoru C#)
 Tato možnost nabízí pohodlný způsob, jak chybu interní kompilátoru C# nahlásit společnosti Microsoft.  
   
 > [!NOTE]
@@ -28,26 +28,26 @@ Tato možnost nabízí pohodlný způsob, jak chybu interní kompilátoru C# nah
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/errorreport:{ none | prompt | queue | send }  
+-errorreport:{ none | prompt | queue | send }  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  **None**  
  Zprávy o chybách interní kompilátoru nebudou shromažďovány nebo odesílány do společnosti Microsoft.  
   
- **řádku**  
+ **prompt**  
  Dotaz, zda chcete poslat zprávu, když obdrží vnitřní chyby kompilátoru. **řádku** je výchozí hodnota při kompilaci aplikace ve vývojovém prostředí.  
   
- **fronty**  
+ **queue**  
  Fronty zprávy o chybách. Při přihlášení s přihlašovacími údaji správce může hlásit případných selhání od posledního přihlášení. Nebudou vyzváni k odeslání zpráv o selhání více než jednou za tři dny. **fronty** při kompilaci aplikace na příkazovém řádku je výchozí hodnota.  
   
  **Odeslat**  
- Zprávy o chybách interní kompilátoru automaticky odesílá společnosti Microsoft. Chcete-li tuto možnost, musíte nejprve souhlasit s zásad shromažďování dat Microsoft. Při prvním zadáte **/errorreport:send** v počítači, bude zpráva kompilátoru odkáže na web, který obsahuje zásady shromažďování dat společnosti Microsoft.  
+ Zprávy o chybách interní kompilátoru automaticky odesílá společnosti Microsoft. Chcete-li tuto možnost, musíte nejprve souhlasit s zásad shromažďování dat Microsoft. Při prvním zadáte **- errorreport: Odeslat** v počítači, bude zpráva kompilátoru odkáže na web, který obsahuje zásady shromažďování dat Microsoft.  
     
 ## <a name="remarks"></a>Poznámky  
  Vnitřní chyba kompilátoru (LED) nastává kompilátor nemůže zpracovat soubor zdrojového kódu. Když dojde LED, kompilátor nevytváří výstupní soubor nebo užitečnou diagnostiku, můžete použít k opravě kódu.  
   
- V předchozích verzích při přijetí LED, jste vyzváni ke kontaktování oddělení Microsoft Product Support Services nahlásit problém. Pomocí **/errorreport**, můžete zadat informace LED týmu Visual C#. Zprávy o chybách může pomoct zlepšit budoucí vydání kompilátoru.  
+ V předchozích verzích při přijetí LED, jste vyzváni ke kontaktování oddělení Microsoft Product Support Services nahlásit problém. Pomocí **- errorreport**, můžete zadat informace LED týmu Visual C#. Zprávy o chybách může pomoct zlepšit budoucí vydání kompilátoru.  
   
  Schopnost uživatele odesílat zprávy závisí na oprávnění zásad počítače a uživatele.  
   
@@ -66,4 +66,4 @@ Tato možnost nabízí pohodlný způsob, jak chybu interní kompilátoru C# nah
  Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.ErrorReport%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f1ada694ed8bdb8aea4551a24f423f896ba1bd61
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2c5e33490a94346880986fdf66a4c5907084c8cd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavit data jako informačního kanálu. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entity a vztahy do formátu XML, který může být zahrnutý v textu zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Definuje výchozí vlastnost entity mapování mezi data, která je součástí entity a elementy Atom. Další informace najdete v tématu [OData: formát Atom](http://go.microsoft.com/fwlink/?LinkID=185794).  
@@ -53,7 +53,7 @@ ms.lasthandoff: 12/22/2017
  Další informace najdete v tématu [postupy: přizpůsobení kanály pomocí zprostředkovatele Entity Framework](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md).  
   
 > [!NOTE]
->  Vzhledem k tomu, že rozšíření do datového modelu Entity Designer nepodporuje, je nutné ručně upravit soubor XML, který obsahuje datový model. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]soubor EDMX, který je generovaný [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje, viz [.edmx souboru přehled](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4).  
+>  Vzhledem k tomu, že rozšíření do datového modelu Entity Designer nepodporuje, je nutné ručně upravit soubor XML, který obsahuje datový model. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]soubor EDMX, který je generovaný [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje, viz [.edmx souboru přehled](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).  
   
 ### <a name="custom-feed-attributes"></a>Vlastní kanál atributy  
  V následující tabulce jsou uvedeny atributy XML, které přizpůsobit informační kanály, které můžete přidat do konceptuálního schématu definice language (CSDL), která definuje datový model. Tyto atributy odpovídají vlastnosti <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> použití se zprostředkovatelem reflexe.  

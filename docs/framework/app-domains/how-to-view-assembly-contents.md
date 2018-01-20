@@ -26,11 +26,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 8903f7da1c945ff927ad6dfe0a92650849a36439
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b9c12c4811e8b23e86fca3960acdb4da06e38fbe
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
 Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pro zobrazení informací (MSIL intermediate language) Microsoft v souboru. Pokud se jedná o prohlížení je sestavení, můžete tyto informace zahrnují sestavení atributy, stejně jako odkazy na jiné moduly a sestavení. Tato informace může být užitečné při určování, zda je soubor sestavení nebo součástí sestavení, a zda má soubor odkazy na další moduly nebo sestavení.  
@@ -92,12 +92,12 @@ Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/i
 |**algoritmus .hash \<**  *hodnota int32***>**|Určuje použitý algoritmus hash.|  
 |**ver \<**  *číslo verze***>**|Určuje číslo verze sestavení.|  
 |**.Module \<**  *název souboru***>**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá z pouze jeden soubor.|  
-|**.Subsystem \<**  *hodnotu***>**|Určuje prostředí aplikace, které jsou potřebné pro program. V tomto příkladu hodnota 3 značí, že se tento spustitelný soubor spustit z konzoly.|  
+|**.subsystem \<** *value* **>**|Určuje prostředí aplikace, které jsou potřebné pro program. V tomto příkladu hodnota 3 značí, že se tento spustitelný soubor spustit z konzoly.|  
 |**.corflags**|Aktuálně rezervované pole v metadatech.|  
   
  Manifest sestavení může obsahovat několik různých direktivy, v závislosti na obsahu sestavení. Rozsáhlého seznamu direktiv v manifestu sestavení najdete v dokumentaci ECMA, zejména "Oddílu II: Metadata definice a sémantiku" a "Oddílu III: soubor CIL instrukce nastavení". Dokumentace je k dispozici online; v tématu [ECMA C# a společné jazykové infrastruktury normy](http://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a [standardní standardy ECMA-335 - společné jazykové infrastruktury (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) na webu Ecma mezinárodní.  
   
 ## <a name="see-also"></a>Viz také  
- [Domény a sestavení aplikací](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)  
+ [Domény a sestavení aplikací](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)  
  [Témata s návody k doménám a sestavením aplikací](../../../docs/framework/app-domains/application-domains-and-assemblies-how-to-topics.md)  
  [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)

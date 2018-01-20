@@ -21,17 +21,17 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f6d9269261c6c0ce7573e0a8e298111971ae591c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 894445657c938d381a8585c5e9c7440c694aa5b1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Zařazování delegáta jako metody zpětného volání
 Tento příklad znázorňuje, jak předat delegáti nespravované funkce byl očekáván ukazatelů na funkce. Delegát je třída, která může pojmout odkazu na třídu metodě a je ekvivalentní ukazatel na funkci zajišťující bezpečnost typů nebo funkce zpětného volání.  
   
 > [!NOTE]
->  Při použití delegáta uvnitř volání modul common language runtime chrání delegát nebudou uvolnění z paměti po dobu trvání tohoto volání. Ale pokud nespravované funkce ukládá delegát používat po dokončení volání, je nutné ručně zabránit uvolňování paměti, dokud nebude dokončeno nespravované funkce s delegátem. Další informace najdete v tématu [HandleRef ukázka](http://msdn.microsoft.com/en-us/ab23b04e-1d53-4ec7-b27a-e892d9298959) a [GCHandle ukázka](http://msdn.microsoft.com/en-us/6acce798-0385-4ded-a790-77da842c113f).  
+>  Při použití delegáta uvnitř volání modul common language runtime chrání delegát nebudou uvolnění z paměti po dobu trvání tohoto volání. Ale pokud nespravované funkce ukládá delegát používat po dokončení volání, je nutné ručně zabránit uvolňování paměti, dokud nebude dokončeno nespravované funkce s delegátem. Další informace najdete v tématu [HandleRef ukázka](http://msdn.microsoft.com/library/ab23b04e-1d53-4ec7-b27a-e892d9298959) a [GCHandle ukázka](http://msdn.microsoft.com/library/6acce798-0385-4ded-a790-77da842c113f).  
   
  Zpětné volání – Ukázka používá následující nespravované funkce s jejich původní deklarace funkce:  
   
@@ -47,7 +47,7 @@ Tento příklad znázorňuje, jak předat delegáti nespravované funkce byl oč
     void TestCallBack2(FPTR2 pf2, char* value);  
     ```  
   
- [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614) vlastní nespravované knihovnu, která obsahuje implementaci výše uvedených funkcí.  
+ [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614) vlastní nespravované knihovnu, která obsahuje implementaci výše uvedených funkcí.  
   
  V této ukázce `LibWrap` třída obsahuje spravovaných prototypy pro `TestCallBack` a `TestCallBack2` metody. Obě metody předání delegáta zpětného volání funkce jako parametr. Podpis delegáta, musí odpovídat podpis metody, na které odkazuje. Například `FPtr` a `FPtr2` delegáti mít podpisy, které jsou stejné jako `DoSomething` a `DoSomething2` metody.  
   
@@ -62,6 +62,6 @@ Tento příklad znázorňuje, jak předat delegáti nespravované funkce byl oč
  [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]  
   
 ## <a name="see-also"></a>Viz také  
- [Různé zařazování ukázky](http://msdn.microsoft.com/en-us/a915c948-54e9-4d0f-a525-95a77fd8ed70)  
- [Datové typy vyvolání platformy](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
+ [Různé zařazování ukázky](http://msdn.microsoft.com/library/a915c948-54e9-4d0f-a525-95a77fd8ed70)  
+ [Datové typy vyvolání platformy](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)

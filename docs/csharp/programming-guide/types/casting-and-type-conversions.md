@@ -15,11 +15,11 @@ ms.assetid: 568df58a-d292-4b55-93ba-601578722878
 caps.latest.revision: "52"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8729677b0c7bee60f0ebeb07439b1c0e71508aa8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1361a7f115e2bae4b2d1f6271fa9020706581691
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typů (Průvodce programováním v C#)
 Protože C# je staticky zadali v době kompilace po proměnné je deklarovaná, nemůže být znovu deklarován nebo používat k ukládání hodnoty jiného typu, pokud je tento typ převést na typ proměnné. Není třeba žádný převod z celé číslo na libovolný libovolný řetězec. Proto po deklarovat `i` jako celé číslo, nelze přiřadit řetězec "Hello", jak je znázorněno v následujícím kódu.  
@@ -89,12 +89,12 @@ Giraffe g2 = (Giraffe) a;
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
 
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Typy](../../../csharp/programming-guide/types/index.md)  
- [() – Operátor](../../../csharp/language-reference/operators/invocation-operator.md)  
- [explicitní](../../../csharp/language-reference/keywords/explicit.md)  
- [implicitní](../../../csharp/language-reference/keywords/implicit.md)  
+ [() – operátor](../../../csharp/language-reference/operators/invocation-operator.md)  
+ [explicit](../../../csharp/language-reference/keywords/explicit.md)  
+ [implicit](../../../csharp/language-reference/keywords/implicit.md)  
  [Operátory převodu](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)  
  [Převod zobecněný typů](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)  
- [Převod exportovaný typů](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)  
- [Postupy: převedení řetězce na číslo.](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)
+ [Převod exportovaný typů](http://msdn.microsoft.com/library/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)  
+ [Postupy: Převedení řetězce na číslo](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)

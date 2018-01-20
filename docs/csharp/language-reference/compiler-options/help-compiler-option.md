@@ -18,20 +18,20 @@ ms.assetid: 8d53f6ba-5c3b-4183-976e-9c0f26fd3680
 caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1d03556f4c8d0f4910f8b07f0dce4d4c7dced744
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fd841e22e8baf59ba702bc3b1ba4d056dbecb530
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="help--c-compiler-options"></a>/help, /? (Možnosti kompilátoru C#)
+# <a name="-help---c-compiler-options"></a>-help,-? (Možnosti kompilátoru C#)
 Tato možnost odešle do stdout seznam – možnosti kompilátoru a stručný popis jednotlivých možností.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/help  
-/?  
+-help  
+-?  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
@@ -40,5 +40,5 @@ Tato možnost odešle do stdout seznam – možnosti kompilátoru a stručný po
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

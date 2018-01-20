@@ -12,11 +12,11 @@ ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
 caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 785c23294abdbfa0684560a38fbd0279200a7d02
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bd26583c42302d8ce9ba4dd22119713548111236
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="abstract-c-reference"></a>abstract (Referenční dokumentace jazyka C#)
 `abstract` Modifikátor znamená, že je věcí upravována má implementace chybí nebo jsou neúplné. Abstraktní modifikátor lze použít s tříd, metod, vlastností, indexery a události. Použití `abstract` modifikátor v deklaraci třídy k označení, že třída je určen pouze k být základní třídy jiné třídy. Členy označené jako abstraktní, nebo součástí abstraktní třídu, musí být implementované třídy, které jsou odvozeny od abstraktní třídy.  
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
 -   Vzhledem k tomu, že deklarace abstraktní metody poskytuje žádný skutečný implementaci, není žádná metoda textu; deklarace metody jednoduše končí středníkem a neexistují žádné složené závorky ({}), následující podpis. Příklad:  
   
-    ```  
+    ```csharp  
     public abstract void MyMethod();  
     ```  
   
@@ -75,19 +75,19 @@ ms.lasthandoff: 11/21/2017
   
  V předchozím příkladu, pokud se pokusíte vytvořit instanci abstraktní třídy za použití příkazu takto:  
   
-```  
+```csharp
 BaseClass bc = new BaseClass();   // Error  
 ```  
   
- Zobrazí se chyba s oznámením, že kompilátor nelze vytvořit instanci abstraktní třídy 'Baseclass –'.  
+Zobrazí se chyba s oznámením, že kompilátor nelze vytvořit instanci abstraktní třídy 'Baseclass –'.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
- [virtuální](../../../csharp/language-reference/keywords/virtual.md)  
- [přepsání](../../../csharp/language-reference/keywords/override.md)  
+ [virtual](../../../csharp/language-reference/keywords/virtual.md)  
+ [override](../../../csharp/language-reference/keywords/override.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)

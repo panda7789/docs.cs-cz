@@ -13,19 +13,19 @@ ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
 caps.latest.revision: "33"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7d3d59f63102ccf3c1d54e4028635c8daad56164
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 11aab223ee70ff69d8c3470e747738bfe44540ea
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="langversion-c-compiler-options"></a>/langversion (Možnosti kompilátoru C#)
+# <a name="-langversion-c-compiler-options"></a>-langversion (možnosti kompilátoru C#)
 Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součástí vybrané specifikace jazyka C#.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/langversion:option  
+-langversion:option  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -42,7 +42,7 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
 |5|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 5.0 nebo nižší <sup id="TCS5"> [CS5](#FCS5)</sup>|
 |6|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 6.0 nebo nižší <sup id="TCS6"> [CS6](#FCS6)</sup>|
 |7|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 7.0 nebo nižší <sup id="TCS7"> [CS7](#FCS7)</sup>|
-|Nejnovější|Kompilátor přijímá všechny platné syntaxe jazyka, jakou může podporovat. <sup id="TLatest">[Nejnovější](#FLatest)</sup>|
+|Nejnovější|Kompilátor přijímá všechny platné syntaxe jazyka, jakou může podporovat. <sup id="TLatest">[Latest](#FLatest)</sup>|
 <!--- Uncomment and move these above
 |latest| once they're officially released
 |7.1|The compiler accepts only syntax that is included in C# 7.1 or lower <sup id="TCS71">[CS71](#FCS71)</sup>|
@@ -52,13 +52,13 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
 
   
 ## <a name="remarks"></a>Poznámky  
- Metadata odkazuje aplikace C# není podléhají **/langversion** – možnost kompilátoru.  
+ Metadata odkazuje aplikace C# není podléhají **- langversion** – možnost kompilátoru.  
   
- Protože každá verze kompilátoru jazyka C# obsahuje rozšíření pro specifikaci jazyka **/langversion** nezískáte ekvivalentní funkce kompilátoru starší verze.  
+ Protože každá verze kompilátoru jazyka C# obsahuje rozšíření pro specifikaci jazyka **- langversion** nezískáte ekvivalentní funkce kompilátoru starší verze.  
  
  Kromě toho při aktualizace verzí jazyka C# obecně neshoduje se hlavní rozhraní .net Framework verze, nové syntaxe a funkce nejsou se nevztahuje na danou verzi konkrétní framework. Při nových funkcí bude vyžadovat výborný nové aktualizace kompilátoru, která je také vydané spolu s revize C#, každou konkrétní funkci má svou vlastní minimální rozhraní API .net nebo běžné požadavky modulu runtime jazyka, které může povolit jeho spuštění v nižší úrovně rozhraní pomocí včetně balíčky NuGet, nebo jiné knihovny.
   
- Bez ohledu na to, které **/langversion** nastavení použijete, bude použita aktuální verzí common language runtime pro vytvoření .exe nebo .dll. Jedinou výjimkou je přátelských sestavení a [/moduleassemblyname (možnost kompilátoru C#)](../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md), které pracovní pod **/langversion:ISO-1**.  
+ Bez ohledu na to, které **- langversion** nastavení použijete, bude použita aktuální verzí common language runtime pro vytvoření .exe nebo .dll. Jedinou výjimkou je přátelských sestavení a [- moduleassemblyname (možnost kompilátoru C#)](../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md), které pracovní pod **- langversion: ISO-1**.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -73,7 +73,7 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
  Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>.  
     
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
  
 ### <a name="c-language-specification"></a>Specifikace jazyka C#

@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7ba7f09e189cd6d58ba9e84c4b668b871eb25dcb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 116ddb44655f0a9708a6496cbe7fb4fbc608300b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace mikroslužbu
 
@@ -104,7 +104,7 @@ Proto jednotky nasazení pro mikroslužeb (a to i pro databáze v této aplikaci
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **eShopOnContainers úložiště GitHub. Zdrojový kód pro odkaz na aplikaci**
+-   **eShopOnContainers GitHub repo. Zdrojový kód pro odkaz na aplikaci**
     *https://aka.ms/eShopOnContainers/*
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Výhody řešení na základě mikroslužbu
@@ -173,7 +173,7 @@ Existuje mnoho architektury vzory používané softwarové architekty a vývojá
 
 -   Jednoduché CRUD, oddělených, jednou vrstvou.
 
--   [Tradiční N vrstvami](https://msdn.microsoft.com/en-us/library/ee658109.aspx#Layers).
+-   [Tradiční N vrstvami](https://msdn.microsoft.com/library/ee658109.aspx#Layers).
 
 -   [Domény řízené návrhu vrstvený N](https://blogs.msdn.microsoft.com/cesardelatorre/2011/07/03/published-first-alpha-version-of-domain-oriented-n-layered-architecture-v2-0/).
 

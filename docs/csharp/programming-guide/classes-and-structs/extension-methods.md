@@ -12,11 +12,11 @@ ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
 caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 34a80e4bf129c6104d50a8a0877271136c0c4198
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 4c94e6cd2894959d64fe463c85b4460893f2bf96
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro klienta kód napsaný v jazyce C#, F # a Visual Basic není žádný zřejmá rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definované v typu.  
@@ -87,11 +87,11 @@ using System.Linq;
  Chcete-li zamezit zvýšení čísla verze sestavení, neměli byste pro implementovanou knihovnu metody rozšíření používat. Pokud chcete přidat významné funkce do knihovny, jejíž zdrojový kód vlastníte, měli byste postupovat podle standardních pokynů pro rozhraní .NET Framework pro správu verzí sestavení. Další informace najdete v tématu [Správa verzí sestavení](../../../../docs/framework/app-domains/assembly-versioning.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Paralelní programování ukázky (patří sem mnoho příklad rozšiřující metody)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
- [Lambda – výrazy](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [Přehled standardních operátorů dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
- [Převod pravidel pro instanci parametrů a jejich dopad](http://go.microsoft.com/fwlink/?LinkId=112385)  
- [Rozšiřující metody vzájemná funkční spolupráce mezi jazyky](http://go.microsoft.com/fwlink/?LinkId=112386)  
- [Rozšiřující metody a Curryfikované delegáti](http://go.microsoft.com/fwlink/?LinkId=112387)  
- [Metody rozšíření vazby a zasílání zpráv o chybách](http://go.microsoft.com/fwlink/?LinkId=112388)
+ [Převod pravidel pro instanci parametrů a jejich dopad](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/conversion-rules-for-instance-parameters-and-their-impact)  
+ [Rozšiřující metody vzájemná funkční spolupráce mezi jazyky](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/extension-methods-interoperability-between-languages)  
+ [Rozšiřující metody a Curryfikované delegáti](https://blogs.msdn.microsoft.com/sreekarc/2007/05/01/extension-methods-and-curried-delegates)  
+ [Metody rozšíření vazby a zasílání zpráv o chybách](https://blogs.msdn.microsoft.com/sreekarc/2007/04/26/extension-method-binding-and-error-reporting)

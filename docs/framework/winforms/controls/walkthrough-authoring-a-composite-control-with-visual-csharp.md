@@ -20,17 +20,17 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 725dc47ce1bda753717c1aac813b8a692ce58001
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 880effb930943fcb8715dbc10c9676fae0bd903c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual C# #
 Složené ovládací prvky poskytují prostředky, pomocí kterého lze vytvořit vlastní grafické rozhraní a znovu použít. Složeného ovládacího prvku je v podstatě součást s vizuální reprezentace. Takto může obsahovat jeden nebo více Windows Forms – ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou vlastností zobrazení nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky můžete umístit v rozhraní Windows Forms stejným způsobem jako další ovládací prvky. V první části tohoto návodu, vytvořte jednoduché složeného ovládacího prvku názvem `ctlClock`. V druhé části tohoto průvodce, můžete rozšířit funkce `ctlClock` prostřednictvím dědičnosti.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Když vytvoříte nový projekt, je třeba zadat jeho název nastavení kořenového oboru názvů, název sestavení a název projektu a ujistěte se, že komponentu výchozí bude ve správném oboru názvů.  
@@ -67,7 +67,7 @@ Složené ovládací prvky poskytují prostředky, pomocí kterého lze vytvoři
     |--------------|---------------|  
     |**Jméno**|`lblDisplay`|  
     |**Text**|`(blank space)`|  
-    |**Zarovnání textu**|`MiddleCenter`|  
+    |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
   
 4.  V **sada nástrojů**, rozbalte **součásti** uzel a poté dvojitým kliknutím **časovače**.  
@@ -260,7 +260,7 @@ Složené ovládací prvky poskytují prostředky, pomocí kterého lze vytvoři
     |--------------|-------------|  
     |**Jméno**|`lblAlarm`|  
     |**Text**|**Varování!**|  
-    |**Zarovnání textu**|`MiddleCenter`|  
+    |**TextAlign**|`MiddleCenter`|  
     |**Viditelné**|`false`|  
   
 ### <a name="adding-the-alarm-functionality"></a>Přidání funkce výstrahy  

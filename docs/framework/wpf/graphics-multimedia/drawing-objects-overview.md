@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: abdc98a6fbf48a30f2f5702e7c2d78396381de6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c9b77b47a3f3ade27f2ba86304b1868a8d388482
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="drawing-objects-overview"></a>Přehled vykreslovaných objektů
 Toto téma představuje <xref:System.Windows.Media.Drawing> objekty a popisuje, jak je použít k efektivní kreslení tvarů, rastrové obrázky, text a média. Použít <xref:System.Windows.Media.Drawing> objekty, když vytvoříte klip obrázky, Malování <xref:System.Windows.Media.DrawingBrush>, nebo použijte <xref:System.Windows.Media.Visual> objekty.  
@@ -191,12 +191,12 @@ Pořadí operací DrawingGroup
   
 |Vlastnost|Popis|Obrázek|  
 |--------------|-----------------|------------------|  
-|<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>|Mění krytí vybraných částí <xref:System.Windows.Media.DrawingGroup> obsah. Příklad, naleznete v části [postupy: řízení krytí výkresu](http://msdn.microsoft.com/en-us/68580652-7d32-4d27-93cc-a5148cf4d5ee).|![Objekt DrawingGroup s masky krytí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opmask.png "graphicsmm_opmask")|  
-|<xref:System.Windows.Media.DrawingGroup.Opacity%2A>|Jednotná změní krytí <xref:System.Windows.Media.DrawingGroup> obsah. Chcete-li tuto vlastnost používat <xref:System.Windows.Media.Drawing> průhledných nebo částečně transparentní. Příklad, naleznete v části [postupy: použití masky krytí do výkresu](http://msdn.microsoft.com/en-us/d77b420b-9be2-479c-a45e-82f4da30eb9f).|![Objekty DrawingGroup s různým nastavením neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opacity.png "graphicsmm_opacity")|  
-|<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>|Se vztahuje <xref:System.Windows.Media.Effects.BitmapEffect> k <xref:System.Windows.Media.DrawingGroup> obsah. Příklad, naleznete v části [postupy: použití BitmapEffect do výkresu](http://msdn.microsoft.com/en-us/c5b1de83-8d09-47fb-96db-5f174471f4b5).|![DrawingGroup s BlurBitmapEffect](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-bitmap.png "graphicsmm_bitmap")|  
-|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|Klipů <xref:System.Windows.Media.DrawingGroup> obsah do oblasti můžete popsat pomocí <xref:System.Windows.Media.Geometry>. Příklad, naleznete v části [postupy: oříznutí kreslení](http://msdn.microsoft.com/en-us/1f7d8a2c-c3c2-42cb-a542-e6796f9fb058) .|![DrawingGroup s definovanou oblastí oříznutí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipgeom.png "graphicsmm_clipgeom")|  
+|<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>|Mění krytí vybraných částí <xref:System.Windows.Media.DrawingGroup> obsah. Příklad, naleznete v části [postupy: řízení krytí výkresu](http://msdn.microsoft.com/library/68580652-7d32-4d27-93cc-a5148cf4d5ee).|![Objekt DrawingGroup s masky krytí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opmask.png "graphicsmm_opmask")|  
+|<xref:System.Windows.Media.DrawingGroup.Opacity%2A>|Jednotná změní krytí <xref:System.Windows.Media.DrawingGroup> obsah. Chcete-li tuto vlastnost používat <xref:System.Windows.Media.Drawing> průhledných nebo částečně transparentní. Příklad, naleznete v části [postupy: použití masky krytí do výkresu](http://msdn.microsoft.com/library/d77b420b-9be2-479c-a45e-82f4da30eb9f).|![Objekty DrawingGroup s různým nastavením neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opacity.png "graphicsmm_opacity")|  
+|<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>|Se vztahuje <xref:System.Windows.Media.Effects.BitmapEffect> k <xref:System.Windows.Media.DrawingGroup> obsah. Příklad, naleznete v části [postupy: použití BitmapEffect do výkresu](http://msdn.microsoft.com/library/c5b1de83-8d09-47fb-96db-5f174471f4b5).|![DrawingGroup s BlurBitmapEffect](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-bitmap.png "graphicsmm_bitmap")|  
+|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|Klipů <xref:System.Windows.Media.DrawingGroup> obsah do oblasti můžete popsat pomocí <xref:System.Windows.Media.Geometry>. Příklad, naleznete v části [postupy: oříznutí kreslení](http://msdn.microsoft.com/library/1f7d8a2c-c3c2-42cb-a542-e6796f9fb058) .|![DrawingGroup s definovanou oblastí oříznutí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipgeom.png "graphicsmm_clipgeom")|  
 |<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>|Připnutí pixelů zařízení nezávislé na zařízení pixelů podél zadaná pravidla. Tato vlastnost je užitečná pro zajištění prudce vykreslení jemně podrobné grafiky na nízkou hodnotou DPI zobrazí. Příklad, naleznete v části [použít vlastností GuidelineSet do výkresu](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-guidelineset-to-a-drawing.md).|![Objekt DrawingGroup s i bez vlastností GuidelineSet](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm_drawinggroup_guidelineset")|  
-|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|Transformuje <xref:System.Windows.Media.DrawingGroup> obsah. Příklad, naleznete v části [postupy: použití transformace na výkres](http://msdn.microsoft.com/en-us/0d525f2b-682d-4d67-9660-cf46929fbabd).|![A otáčet DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rotate.png "graphicsmm_rotate")|  
+|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|Transformuje <xref:System.Windows.Media.DrawingGroup> obsah. Příklad, naleznete v části [postupy: použití transformace na výkres](http://msdn.microsoft.com/library/0d525f2b-682d-4d67-9660-cf46929fbabd).|![A otáčet DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rotate.png "graphicsmm_rotate")|  
   
 <a name="usingimagedrawing"></a>   
 ## <a name="display-a-drawing-as-an-image"></a>Zobrazení kreslení jako obrázek  

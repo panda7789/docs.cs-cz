@@ -21,11 +21,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 969ab4f3c63571488c66c8a505df3969fcd788e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fdd26f335fb2f9b8072103def5b00d91a6740817
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
@@ -56,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="use-a-persistent-path-to-return-to-a-previously-identified-automationelement"></a>Použijte trvalé cestu se vraťte do dříve zjištěné AutomationElement  
   
--   Klientské aplikace, z jednoduchá testovací skriptů a robustní záznam a přehrávání nástrojů může vyžadovat přístup k elementům, které nejsou instanci aktuálně, například soubor otevřete dialogové okno nebo položku nabídky a proto nejsou k dispozici ve stromu automatizace uživatelského rozhraní. Tyto prvky se dá jenom vytvořit instance reprodukci, nebo "přehrávání", konkrétní posloupnost [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] akce prostřednictvím [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, například AutomationID vzory ovládacích prvků a naslouchacích procesů událostí. V tématu [testování ukázka skriptu generátor](http://msdn.microsoft.com/en-us/028467fd-2980-4691-9522-0131dcef23a0) pro příklad, který používá [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] ke generování skriptů testovací podle interakce uživatele s [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
+-   Klientské aplikace, z jednoduchá testovací skriptů a robustní záznam a přehrávání nástrojů může vyžadovat přístup k elementům, které nejsou instanci aktuálně, například soubor otevřete dialogové okno nebo položku nabídky a proto nejsou k dispozici ve stromu automatizace uživatelského rozhraní. Tyto prvky se dá jenom vytvořit instance reprodukci, nebo "přehrávání", konkrétní posloupnost [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] akce prostřednictvím [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, například AutomationID vzory ovládacích prvků a naslouchacích procesů událostí. V tématu [testování ukázka skriptu generátor](http://msdn.microsoft.com/library/028467fd-2980-4691-9522-0131dcef23a0) pro příklad, který používá [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] ke generování skriptů testovací podle interakce uživatele s [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
   
  [!code-csharp[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#uiaworkerthread)]
  [!code-vb[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#uiaworkerthread)]  

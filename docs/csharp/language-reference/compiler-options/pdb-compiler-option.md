@@ -13,19 +13,19 @@ ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
 caps.latest.revision: "8"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 108244d7de49c2ff4df1ac7202e77958743b32df
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7528283765c2b6f4a9d5e84015526a95938a6281
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="pdb-c-compiler-options"></a>/pdb (Možnosti kompilátoru C#)
-**/PDB** – možnost kompilátoru Určuje název a umístění souboru pro symboly ladění.  
+# <a name="-pdb-c-compiler-options"></a>-pdb (možnosti kompilátoru C#)
+**- Pdb** – možnost kompilátoru Určuje název a umístění souboru pro symboly ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/pdb:filename  
+-pdb:filename  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -33,9 +33,9 @@ ms.lasthandoff: 11/21/2017
  Název a umístění souboru pro symboly ladění.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud zadáte [/Debug (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/debug-compiler-option.md), kompilátor vytvoří soubor .pdb ve stejném adresáři, kde bude vytvořen výstupní soubor (.exe nebo .dll) s názvem souboru, který je stejný jako název výstupního souboru.  
+ Pokud zadáte [-debug (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/debug-compiler-option.md), kompilátor vytvoří soubor .pdb ve stejném adresáři, kde bude vytvořen výstupní soubor (.exe nebo .dll) s názvem souboru, který je stejný jako název výstupního souboru.  
   
- **/ pdb** vám umožní určit jiné než výchozí název souboru a umístění souboru pdb.  
+ **-pdb** vám umožní určit jiné než výchozí název a umístění souboru pdb.  
   
  Tato možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio, ani ji není možné změnit prostřednictvím kódu programu.  
   
@@ -43,9 +43,9 @@ ms.lasthandoff: 11/21/2017
  Kompilace `t.cs` a vytvoří soubor .pdb s názvem tt.pdb:  
   
 ```console  
-csc /debug /pdb:tt t.cs  
+csc -debug -pdb:tt t.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

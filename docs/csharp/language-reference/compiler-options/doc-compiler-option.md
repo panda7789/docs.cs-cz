@@ -18,19 +18,19 @@ ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
 caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ae3d6e1ffdaaa3245a51005070b16041c16dadae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c668c79ca2c68d1a497521581857085e57c71f5c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="doc-c-compiler-options"></a>/doc (Možnosti kompilátoru C#)
-**/Doc** možnost vám umožňuje umístit dokumentační komentáře v souboru XML.  
+# <a name="-doc-c-compiler-options"></a>-doc (možnosti kompilátoru C#)
+**-Doc** možnost vám umožňuje umístit dokumentační komentáře v souboru XML.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/doc:file  
+-doc:file  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -48,10 +48,10 @@ ms.lasthandoff: 11/21/2017
   
  Chcete použít soubor .xml vygenerovaný pro použití s [IntelliSense](/visualstudio/ide/using-intellisense) funkci, ponechte název souboru .xml být stejný jako název sestavení, které chcete podporovat a zkontrolujte soubor .xml nachází ve stejném adresáři jako sestavení. Proto při odkazování na sestavení v sadě Visual Studio projektu, soubor .xml nalezen také. V tématu [podporované komentáře kódu](/visualstudio/ide/supplying-xml-code-comments) a další informace.  
   
- Pokud je kompilovat s [/target: Module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), `file` bude obsahovat \<sestavení >\</assembly > značky zadáním názvu souboru, který obsahuje manifest sestavení pro výstupní soubor kompilace.  
+ Pokud je kompilovat s [-target: module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), `file` bude obsahovat \<sestavení >\</assembly > značky zadáním názvu souboru, který obsahuje manifest sestavení pro výstupní soubor kompilace.  
   
 > [!NOTE]
->  / DOC možnost se vztahuje na všechny vstupní soubory; nebo, pokud v nastavení projektu, všechny soubory v projektu. Chcete-li zakázat upozornění související s dokumentační komentáře pro konkrétní soubor nebo části kódu, použijte [#pragma – upozornění](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md).  
+>  -Doc možnost se vztahuje na všechny vstupní soubory; nebo, pokud v nastavení projektu, všechny soubory v projektu. Chcete-li zakázat upozornění související s dokumentační komentáře pro konkrétní soubor nebo části kódu, použijte [#pragma – upozornění](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md).  
   
  V tématu [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md) pro způsoby, jak generovat dokumentaci z komentářů v kódu.  
   
@@ -66,5 +66,5 @@ ms.lasthandoff: 11/21/2017
  Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

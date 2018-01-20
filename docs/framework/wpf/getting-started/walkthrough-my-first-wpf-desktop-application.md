@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3667d507f4c35174c1e888c9781b5f74ffd496a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 16ed99181f8462e805638b5d3881464b16f21177
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Můj první grafický subsystém WPF aplikace pracovní plochy
 Tento názorný postup obsahuje úvod do vývoje [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace, která obsahuje prvky, které jsou společné pro většinu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace: [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] značek, kódu, definice aplikace, ovládací prvky, rozložení Datová vazba a stylů. 
@@ -56,7 +56,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
 ## <a name="creating-the-application-project"></a>Vytvoření projektu aplikace  
  V této části vytvoříte infrastrukturu aplikace, která zahrnuje definice aplikace, dvě stránky a bitovou kopii. 
   
-1. Vytvořte nový projekt aplikace WPF v jazyce Visual Basic a Visual C# s názvem `ExpenseIt`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82). 
+1. Vytvořte nový projekt aplikace WPF v jazyce Visual Basic a Visual C# s názvem `ExpenseIt`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82). 
   
     > [!NOTE]
     >  Tento návod používá <xref:System.Windows.Controls.DataGrid> ovládací prvek, který je k dispozici v rozhraní .NET Framework 4. Být jisti, že cílem vašeho projektu je .NET Framework 4 nebo novější. Další informace najdete v tématu[postupy: cílení na verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework). 
@@ -73,7 +73,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
     [!code-xaml[ExpenseIt#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/App.xaml#1)]  
   
-3. Otevřete MainWindow.xaml. 
+3. Open MainWindow.xaml. 
   
      To [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je hlavním okně aplikace a zobrazí obsah vytvořený v stránky. <xref:System.Windows.Window> Třídy definuje vlastnosti časového období, například jeho název, velikost nebo ikonu a zpracovává události, například zavření nebo skrytí. 
   
@@ -115,11 +115,11 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
 ## <a name="adding-files-to-the-application"></a>Přidávání souborů do aplikace  
  V této části přidáte dvě stránky a bitovou kopii do aplikace. 
   
-1. Přidat nové stránky (WPF) do projektu s názvem `ExpenseItHome.xaml`. Další informace najdete v tématu [postupy: přidání nových položek do projektu WPF](http://msdn.microsoft.com/en-us/17e6b238-fc32-4385-98ef-2f66ca09d9ad). 
+1. Přidat nové stránky (WPF) do projektu s názvem `ExpenseItHome.xaml`. Další informace najdete v tématu [postupy: přidání nových položek do projektu WPF](http://msdn.microsoft.com/library/17e6b238-fc32-4385-98ef-2f66ca09d9ad). 
   
      Tato stránka je první stránka, která se zobrazí, když je aplikace spuštěna. Zobrazí seznam uživatelů, ze kterého může uživatel vybrat uživatele, který bude zobrazit sestavu výdajů pro. 
   
-2. Otevřete ExpenseItHome.xaml. 
+2. Open ExpenseItHome.xaml. 
   
 3. Nastavte <xref:System.Windows.Controls.Page.Title%2A> k "ExpenseIt – - domovské". 
   
@@ -131,7 +131,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
     [!code-xaml[ExpenseIt#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml#6)]  
   
-4. Otevřete MainWindow.xaml. 
+4. Open MainWindow.xaml. 
   
 5. Nastavte <xref:System.Windows.Navigation.NavigationWindow.Source%2A> vlastnost <xref:System.Windows.Navigation.NavigationWindow> na "ExpenseItHome.xaml". 
   
@@ -147,7 +147,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
      Tato stránka se zobrazí vyúčtování pro osobě, která je vybrána na ExpenseItHome.xaml. 
   
-7. Otevřete ExpenseReportPage.xaml. 
+7. Open ExpenseReportPage.xaml. 
   
 8. Nastavte <xref:System.Windows.Controls.Page.Title%2A> k "ExpenseIt – - zobrazení výdajů". 
   
@@ -171,7 +171,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
     [!code-csharp[ExpenseIt#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml.cs#5)]
     [!code-vb[ExpenseIt#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]  
   
-10. Přidejte bitovou kopii s názvem watermark.png do projektu. Můžete vytvořit vlastní image, nebo zkopírovat soubor z ukázkového kódu. Další informace najdete v tématu [NIB: postupy: Přidání existujících položek do projektu](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3). 
+10. Přidejte bitovou kopii s názvem watermark.png do projektu. Můžete vytvořit vlastní image, nebo zkopírovat soubor z ukázkového kódu. Další informace najdete v tématu [NIB: postupy: Přidání existujících položek do projektu](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3). 
 
 ## <a name="building-and-running-the-application"></a>Vytváření a spouštění aplikace  
  V této části sestavíte a spustíte aplikaci. 
@@ -206,7 +206,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
  V části vytvoříte tabulku s jedním sloupcem s tři řádky a okraj 10 pixelů přidáním sloupce a řádku definice, které <xref:System.Windows.Controls.Grid> v ExpenseItHome.xaml. 
   
-1. Otevřete ExpenseItHome.xaml. 
+1. Open ExpenseItHome.xaml. 
   
 2. Nastavte <xref:System.Windows.FrameworkElement.Margin%2A> vlastnost <xref:System.Windows.Controls.Grid> element "10,0,10,10", který odpovídá na levé straně, horní, pravé a dolní okraj. 
   
@@ -233,7 +233,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
  Každý ovládací prvek je umístěn v řádek <xref:System.Windows.Controls.Grid> nastavením <xref:System.Windows.Controls.Grid.Row%2A?displayProperty=nameWithType> přidružená vlastnost. Další informace o přidružené vlastnosti najdete v tématu [připojen přehled vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md). 
   
-1. Otevřete ExpenseItHome.xaml. 
+1. Open ExpenseItHome.xaml. 
   
 2. Přidejte následující [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mezi <xref:System.Windows.Controls.Grid> značky. 
   
@@ -248,7 +248,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
 ## <a name="adding-an-image-and-a-title"></a>Přidání obrázku a název  
  V této části se na domovskou stránku [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se aktualizují bitovou kopii a název stránky. 
   
-1. Otevřete ExpenseItHome.xaml. 
+1. Open ExpenseItHome.xaml. 
   
 2. Přidejte jiný sloupec pro <xref:System.Windows.Controls.Grid.ColumnDefinitions%2A> s pevným <xref:System.Windows.Controls.ColumnDefinition.Width%2A> 230 pixelů. 
   
@@ -278,9 +278,9 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
 ## <a name="adding-code-to-handle-events"></a>Přidání kódu ke zpracování událostí  
   
-1. Otevřete ExpenseItHome.xaml. 
+1. Open ExpenseItHome.xaml. 
   
-2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužná rutina události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [postupy: vytvoření jednoduché obslužné rutiny události](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480). 
+2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužná rutina události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [postupy: vytvoření jednoduché obslužné rutiny události](http://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480). 
   
     [!code-xaml[ExpenseIt#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]  
   
@@ -294,7 +294,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
 ## <a name="creating-the-ui-for-expensereportpage"></a>Vytvoření uživatelského rozhraní pro ExpenseReportPage  
  ExpenseReportPage.xaml zobrazí vyúčtování osoby, která byla vybrána na ExpenseItHome.xaml. Tato část přidá ovládací prvky a vytvoří [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro ExpenseReportPage.xaml. Tato část také přidá barvy pozadí a výplně na různé [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementy. 
   
-1. Otevřete ExpenseReportPage.xaml. 
+1. Open ExpenseReportPage.xaml. 
   
 2. Přidejte následující XAML mezi <xref:System.Windows.Controls.Grid> značky. 
   
@@ -340,7 +340,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
      Všimněte si, že stylů jsou prostředky a podřízené objekty <xref:System.Windows.Application.Resources%2A?displayProperty=nameWithType> element vlastnosti. V tomto umístění stylů platí pro všechny elementy v aplikaci. Příklad použití prostředků v [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] aplikace, najdete v části [prostředky aplikace použijte](../../../../docs/framework/wpf/advanced/how-to-use-application-resources.md). 
   
-3. Otevřete ExpenseItHome.xaml. 
+3. Open ExpenseItHome.xaml. 
   
 4. Nahraďte všechno mezi <xref:System.Windows.Controls.Grid> prvky s následující XAML. 
   
@@ -348,7 +348,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
   
      Vlastnosti, jako <xref:System.Windows.VerticalAlignment> a <xref:System.Windows.Media.FontFamily> které definují, jak vypadá každý ovládací prvek se odeberou a nahrazuje použití stylů. Například `headerTextStyle` se použije pro "Zobrazení vyúčtování" <xref:System.Windows.Controls.Label>. 
   
-5. Otevřete ExpenseReportPage.xaml. 
+5. Open ExpenseReportPage.xaml. 
   
 6. Nahraďte všechno mezi <xref:System.Windows.Controls.Grid> prvky s následující XAML. 
   
@@ -363,7 +363,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
 ## <a name="binding-data-to-a-control"></a>Vazba dat k ovládacímu prvku  
  V této části vytvoříte [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] data, která je vázána na různé ovládací prvky. 
   
-1. Otevřete ExpenseItHome.xaml. 
+1. Open ExpenseItHome.xaml. 
   
 2. Po otevření <xref:System.Windows.Controls.Grid> elementu, přidejte následující XAML pro vytvoření <xref:System.Windows.Data.XmlDataProvider> obsahující data pro každou osobu. 
   
@@ -405,7 +405,7 @@ Další informace o instalaci nejnovější verze sady Visual Studio najdete v t
 ## <a name="styling-data-with-data-templates"></a>Data stylů se šablonami dat  
  V této části můžete aktualizovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro každou položku v datech vázaný seznamy pomocí šablon data. 
   
-1. Otevřete ExpenseReportPage.xaml. 
+1. Open ExpenseReportPage.xaml. 
   
 2. Vytvoření vazby obsah "Název" a "Oddělení" <xref:System.Windows.Controls.Label> vlastnost zdroje elementy, aby příslušná data. Další informace o vazbě dat najdete v tématu [přehled vazby dat](../../../../docs/framework/wpf/data/data-binding-overview.md). 
   

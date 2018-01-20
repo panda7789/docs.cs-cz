@@ -8,22 +8,23 @@ f1_keywords: /refonly
 helpviewer_keywords:
 - /refonly compiler option [C#]
 - -refonly compiler option [C#]
+- refonly compiler option [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c4c745416bda56f5f1b1b4ab8267274d972a990d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 25b0f6e024e194dff641fd5069755d0ea112a50b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="refonly-c-compiler-options"></a>/refonly (možnosti kompilátoru C#)
+# <a name="-refonly-c-compiler-options"></a>-refonly (možnosti kompilátoru C#)
 
-**/Refonly** možnost označuje, že referenční sestavení by se měly zobrazovat místo implementace sestavení, jako primární výstup. `/refonly` Parametr bezobslužně zakáže výstup vytvořeného soubory PDB, jako referenční sestavení nelze provést.
+**- Refonly** možnost označuje, že referenční sestavení by se měly zobrazovat místo implementace sestavení, jako primární výstup. `-refonly` Parametr bezobslužně zakáže výstup vytvořeného soubory PDB, jako referenční sestavení nelze provést.
 
 ## <a name="syntax"></a>Syntaxe
 
 ```console
-/refonly
+-refonly
 ```
 
 ## <a name="remarks"></a>Poznámky
@@ -40,8 +41,8 @@ Referenční sestavení další odebrání pouze metadata sestavení metadat (so
 - Všechny virtuální metody jsou zachovány. Explicitní implementace rozhraní jsou zachovány. – Explicitně implementovaná vlastností a událostí jsou zachovány, jako jsou virtuální jejich přístupových objektů (a jsou proto v).
 - Všechna pole struktury jsou zachovány. (Toto je kandidátem pro metodu post-C#-7.1 upřesnění)
 
-`/refonly` a [ `/refout` ](refout-compiler-option.md) možnosti se vzájemně vylučují.
+`-refonly` a [ `-refout` ](refout-compiler-option.md) možnosti se vzájemně vylučují.
 
 ## <a name="see-also"></a>Viz také
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

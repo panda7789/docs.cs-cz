@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 957c31d3262e5c97d576d444748bd1979aee0ce0
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 308a1c72706b0896ac45c39ff1c6b746861debb1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="function-entity-sql"></a>FUNKCE (entita SQL)
 Definuje funkci v oboru příkaz dotazu Entity SQL.  
@@ -72,7 +72,7 @@ FUNCTION function-name
   
  `A()`  
   
- Další informace najdete v tématu [postupy: volání funkce definované uživatelem](http://msdn.microsoft.com/en-us/ad131b86-8b4e-4747-8605-d4fc64fb9d02).  
+ Další informace najdete v tématu [postupy: volání funkce definované uživatelem](http://msdn.microsoft.com/library/ad131b86-8b4e-4747-8605-d4fc64fb9d02).  
   
  Funkce lze deklarovat také v přímo pro model. Funkce, které jsou deklarované v modelu se stejným způsobem provést, protože funkce deklarované vložené v příkazu. Další informace najdete v tématu [funkce definované uživatelem](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).  
   

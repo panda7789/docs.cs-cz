@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d28f55ddd550e95d9859258d89b4910cf320e3cd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bac21a0c9535326becfe94610db33869da89c471
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-configure-client-application-services"></a>Postupy: Konfigurace klientských aplikačních služeb
 Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **Návrhář projektu** povolit a nakonfigurovat klientské aplikační služby. Klient aplikačních služeb můžete použít k ověření uživatelů a načítání uživatelských rolí a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
@@ -75,7 +75,7 @@ Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-
   
 2.  Vyberte nebo zrušte **uložit hodnoty hash hesla místně pro povolení offline přihlášení**. Když vyberete tuto možnost, šifrovaném formátu hesla uživatele bude do mezipaměti místně. To je užitečné, pokud budete implementovat offline režimu pro vaši aplikaci. Tuto možnost, můžete ověřit uživatele i v případě <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> vlastnost byla nastavena na `true`.  
   
-3.  Vyberte nebo zrušte **vyžadovat, aby se znovu přihlaste vždy, když vyprší platnost souboru cookie serveru uživatelé**. Ověřovacího souboru cookie je nakonfigurován na vzdálené služby a určuje, jak dlouho zůstane aktivní přihlášení uživatele. Další informace o tom, jak nakonfigurovat soubor cookie najdete v tématu `timeout` atribut [forms Element pro ověřování (schéma nastavení ASP.NET)](http://msdn.microsoft.com/en-us/8163b8b5-ea6c-46c8-b5a9-c4c3de31c0b3).  
+3.  Vyberte nebo zrušte **vyžadovat, aby se znovu přihlaste vždy, když vyprší platnost souboru cookie serveru uživatelé**. Ověřovacího souboru cookie je nakonfigurován na vzdálené služby a určuje, jak dlouho zůstane aktivní přihlášení uživatele. Další informace o tom, jak nakonfigurovat soubor cookie najdete v tématu `timeout` atribut [forms Element pro ověřování (schéma nastavení ASP.NET)](http://msdn.microsoft.com/library/8163b8b5-ea6c-46c8-b5a9-c4c3de31c0b3).  
   
      Pokud vyberete tuto možnost, pokusu o přístup k vzdálené role nebo vyvolá výjimku webové nastavení služby po vypršení platnosti souboru cookie pro ověřování <xref:System.Net.WebException>. Může zpracovat výjimku a zobrazit dialogové okno přihlášení s znovu ověřit uživatele. Příklad toto chování, naleznete v části [návod: použití klientských aplikačních služeb](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md). Tato možnost je užitečná pro aplikace nasazené na veřejných místech, abyste měli jistotu, že uživatelé, kteří nechte aplikace spuštěna po použití zůstat ověří po neomezenou dobu.  
   

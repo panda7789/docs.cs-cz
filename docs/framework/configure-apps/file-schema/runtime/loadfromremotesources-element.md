@@ -17,21 +17,21 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: efb968d40e54c7552fba0a592e759f9e83c92309
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 13b42405a0faf721c46476aadaa0cff8163883c1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltloadfromremotesourcesgt-element"></a>&lt;loadfromremotesources –&gt; – Element
 Určuje, zda sestavení ze vzdáleného zdroje udělení úplný vztah důvěryhodnosti.  
   
 > [!NOTE]
->  Jestliže byly pokyn k tomuto tématu, z důvodu chybovou zprávu v seznamu chyb projektu sady Visual Studio nebo chybě sestavení, najdete v části [postupy: použití sestavení z webu v sadě Visual Studio](http://msdn.microsoft.com/en-us/d8635b63-89a0-41aa-90f4-f351b2111070).  
+>  Jestliže byly pokyn k tomuto tématu, z důvodu chybovou zprávu v seznamu chyb projektu sady Visual Studio nebo chybě sestavení, najdete v části [postupy: použití sestavení z webu v sadě Visual Studio](http://msdn.microsoft.com/library/d8635b63-89a0-41aa-90f4-f351b2111070).  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<loadfromremotesources – >  
+\<loadFromRemoteSources>  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -20,17 +20,17 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 669811b20fd9980b6876683ec7eff4c235a676ef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c50bf9e882ade86e70db217a75fef2a893c45572
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltperformancecountergt-element-network-settings"></a>&lt;performanceCounter&gt; – Element (nastavení sítě)
 Povolí nebo zakáže sítě čítače výkonu.  
   
  \<Konfigurace >  
-\<System.NET >  
+\<system.net>  
 \<Nastavení >  
 \<čítače výkonu >  
   
@@ -63,7 +63,7 @@ Povolí nebo zakáže sítě čítače výkonu.
 ## <a name="remarks"></a>Poznámky  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
   
- Čítače výkonu sítě je nutné povolit v konfiguračním souboru má být použit. Všechny síťové čítače výkonu jsou zapnutá nebo vypnutá s jedním nastavením v konfiguračním souboru. Nelze povolit nebo zakázat jednotlivé čítače výkonu sítě. Další informace o konkrétní síťové čítače výkonu, najdete v části [sítě čítače výkonu](http://msdn.microsoft.com/en-us/d1860235-f643-46ae-846c-ff0ed8b0e3cd).  
+ Čítače výkonu sítě je nutné povolit v konfiguračním souboru má být použit. Všechny síťové čítače výkonu jsou zapnutá nebo vypnutá s jedním nastavením v konfiguračním souboru. Nelze povolit nebo zakázat jednotlivé čítače výkonu sítě. Další informace o konkrétní síťové čítače výkonu, najdete v části [sítě čítače výkonu](http://msdn.microsoft.com/library/d1860235-f643-46ae-846c-ff0ed8b0e3cd).  
   
  Výchozí hodnota je tento výkon sítě, které čítače jsou zakázány.  
   
@@ -88,4 +88,4 @@ Povolí nebo zakáže sítě čítače výkonu.
  <xref:System.Net.Configuration.PerformanceCountersElement?displayProperty=nameWithType>  
  <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>  
  [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)  
- [Čítače výkonu sítě](http://msdn.microsoft.com/en-us/d1860235-f643-46ae-846c-ff0ed8b0e3cd)
+ [Čítače výkonu sítě](http://msdn.microsoft.com/library/d1860235-f643-46ae-846c-ff0ed8b0e3cd)

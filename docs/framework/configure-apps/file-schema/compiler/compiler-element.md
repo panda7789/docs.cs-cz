@@ -22,19 +22,19 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 2ef50301a5188193cc13cd0e657f53593ef0d93e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 547c08e324066b872abb8df8b8b780ab3e4644a7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltcompilergt-element"></a>&lt;kompilátoru&gt; – Element
 Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.  
   
  \<konfigurace elementu >  
-\<System.CodeDom – Element >  
-\<Kompilátory elementu >  
-\<kompilátoru > elementu  
+\<system.codedom Element>  
+\<compilers Element>  
+\<compiler> Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -65,15 +65,15 @@ Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Hodnota providerOption > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|Určuje atributy verze kompilátoru jazyka zprostředkovatele.|  
+|[\<providerOption> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|Určuje atributy verze kompilátoru jazyka zprostředkovatele.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|[\<System.CodeDom – > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje kompilátor – nastavení konfigurace pro zprostředkovatele dostupný jazyk.|  
-|[\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více `<compiler>` elementy.|  
+|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje kompilátor – nastavení konfigurace pro zprostředkovatele dostupný jazyk.|  
+|[\<compilers> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více `<compiler>` elementy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Každý `<compiler>` element určuje kompilátor – konfigurační atributy pro konkrétní jazyk zprostředkovatele. Zprostředkovatel rozšiřuje <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> třídy pro konkrétní jazyk; `<compiler>` element definuje kompilátoru a nastavení generátor kódu pro jazyk zprostředkovatele.  
@@ -110,6 +110,6 @@ Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.
  <xref:System.CodeDom.Compiler.CompilerInfo>  
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [\<compilers> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
  [Určení úplných názvů typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
- [kompilátoru Element pro kompilátory pro kompilaci (schéma nastavení ASP.NET)](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+ [kompilátoru Element pro kompilátory pro kompilaci (schéma nastavení ASP.NET)](http://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

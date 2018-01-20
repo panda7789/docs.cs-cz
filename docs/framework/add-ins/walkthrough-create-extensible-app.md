@@ -23,11 +23,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ac4b6fc2ae36d848306178f281cceeeb0654ec03
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cee99346d19c632739bcc6540c43f1a35217a2f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Návod: Vytváření rozšiřitelné aplikace
 Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché Kalkulačka funkcí. Nepředvádí scénářem z reálného prostředí; Místo toho ukazuje základní funkce kanálu a jak doplňku poskytuje služby pro hostitele.  
@@ -52,11 +52,11 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
   
 -   Spuštění hostitelskou aplikaci.  
   
- Tento kanál předá pouze Serializovatelné typy (<xref:System.Double> a <xref:System.String>), mezi hostitelem a doplněk. Příklad, který ukazuje, jak předat kolekce komplexními datovými typy, naleznete v části [návod: předávání kolekce mezi hostiteli a doplňky](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5).  
+ Tento kanál předá pouze Serializovatelné typy (<xref:System.Double> a <xref:System.String>), mezi hostitelem a doplněk. Příklad, který ukazuje, jak předat kolekce komplexními datovými typy, naleznete v části [návod: předávání kolekce mezi hostiteli a doplňky](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5).  
   
  Definuje smlouvu pro tento kanál objektový model čtyři aritmetických operací: přidat, odečíst, násobit a dělit. Hostitel poskytuje doplněk rovnici k výpočtu, jako je například 2 + 2, a v doplňku vrátí výsledek na hostitele.  
   
- Verze 2-in kalkulačky poskytuje více výpočtu možnosti a předvádí správy verzí. Je popsán v [návod: povolení zpětné kompatibility jako vaše změny hostitele](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
+ Verze 2-in kalkulačky poskytuje více výpočtu možnosti a předvádí správy verzí. Je popsán v [návod: povolení zpětné kompatibility jako vaše změny hostitele](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
 ## <a name="prerequisites"></a>Požadavky  
  Budete potřebovat k dokončení tohoto názorného postupu:  
@@ -73,7 +73,7 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
 2.  Název řešení `CalculatorV1`.  
   
 ## <a name="creating-the-pipeline-directory-structure"></a>Vytvoření kanálu adresářové struktury  
- Model doplněk vyžaduje sestavení segment kanálu, které chcete umístit do struktury určeného adresáře. Další informace o struktuře kanálu najdete v tématu [požadavky na vývoj kanálu](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+ Model doplněk vyžaduje sestavení segment kanálu, které chcete umístit do struktury určeného adresáře. Další informace o struktuře kanálu najdete v tématu [požadavky na vývoj kanálu](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
 #### <a name="to-create-the-pipeline-directory-structure"></a>Chcete-li vytvořit strukturu adresáře kanálu  
   
@@ -92,10 +92,10 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
       HostSideAdapters  
     ```  
   
-     Není nutné uvést struktura složek kanálu ve složce aplikace; se provádí zde pouze ke zvýšení pohodlí. V příslušné kroku průvodce vysvětluje, jak změnit kód v případě struktura složek kanálu je v jiném umístění. Přečtěte si diskuzi o kanálu directory požadavky v [požadavky na vývoj kanálu](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+     Není nutné uvést struktura složek kanálu ve složce aplikace; se provádí zde pouze ke zvýšení pohodlí. V příslušné kroku průvodce vysvětluje, jak změnit kód v případě struktura složek kanálu je v jiném umístění. Přečtěte si diskuzi o kanálu directory požadavky v [požadavky na vývoj kanálu](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
     > [!NOTE]
-    >  `CalcV2` Složky není použit v tomto návodu, je zástupný symbol pro [návod: povolení zpětné kompatibility jako vaše změny hostitele](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
+    >  `CalcV2` Složky není použit v tomto návodu, je zástupný symbol pro [návod: povolení zpětné kompatibility jako vaše změny hostitele](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
 ## <a name="creating-the-contract-and-views"></a>Vytvoření kontraktu a zobrazení  
  Definuje kontrakt segmentu pro tento kanál `ICalc1Contract` rozhraní, které definuje čtyři metody: `add`, `subtract`, `multiply`, a `divide`.  
@@ -204,7 +204,7 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
   
  U tohoto kanálu v doplňku poskytuje službu na hostiteli a typy toku z doplněk k hostiteli. Protože žádné typy toku z hostitele na doplněk, nemáte zahrnují adaptér zobrazení kontrakt.  
   
- Chcete-li implementovat správu životního cyklu, použijte <xref:System.AddIn.Pipeline.ContractHandle> objekt, který chcete přiřadit kontrakt doba platnosti tokenu. Odkaz na tento popisovač musí zůstat v pořadí pro správu životního cyklu pro práci. Po použití tokenu žádné další programování není nutná, protože v systému může odstranění objektů při jejich se již nepoužívají a zpřístupnit pro uvolňování paměti. Další informace najdete v tématu [správu životního cyklu](http://msdn.microsoft.com/en-us/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
+ Chcete-li implementovat správu životního cyklu, použijte <xref:System.AddIn.Pipeline.ContractHandle> objekt, který chcete přiřadit kontrakt doba platnosti tokenu. Odkaz na tento popisovač musí zůstat v pořadí pro správu životního cyklu pro práci. Po použití tokenu žádné další programování není nutná, protože v systému může odstranění objektů při jejich se již nepoužívají a zpřístupnit pro uvolňování paměti. Další informace najdete v tématu [správu životního cyklu](http://msdn.microsoft.com/library/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
   
 #### <a name="to-create-the-host-side-adapter"></a>Chcete-li vytvořit adaptér straně hostitele  
   
@@ -339,7 +339,7 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
     |Calc1HVA|Moje aplikace|  
   
     > [!NOTE]
-    >  Pokud jste se rozhodli vrátit strukturu kanálu složku v umístění než složce aplikace, musíte upravit cesty uvedené v tabulce odpovídajícím způsobem. Přečtěte si diskuzi o kanálu directory požadavky v [požadavky na vývoj kanálu](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+    >  Pokud jste se rozhodli vrátit strukturu kanálu složku v umístění než složce aplikace, musíte upravit cesty uvedené v tabulce odpovídajícím způsobem. Přečtěte si diskuzi o kanálu directory požadavky v [požadavky na vývoj kanálu](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
 2.  Sestavte řešení sady Visual Studio.  
   
@@ -348,7 +348,7 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
     > [!NOTE]
     >  Pokud jste nezměnili **místní kopie** k **False** pro `Calc1AddInView` odkaz v projektu `AddInCalcV1` projektu, problémů kontextu zavaděč zabrání v doplňku by byly umístěny.  
   
-     Informace o nasazení do kanálu najdete v tématu [požadavky na vývoj kanálu](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+     Informace o nasazení do kanálu najdete v tématu [požadavky na vývoj kanálu](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
 ## <a name="running-the-host-application"></a>Spuštění aplikace hostitele  
  Nyní jste připraveni ke spuštění hostitele a interakci s doplněk.  
@@ -364,8 +364,8 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
 4.  Typ **ukončete** a stiskněte klávesu **Enter** klíč aplikace se zavře.  
   
 ## <a name="see-also"></a>Viz také  
- [Návod: Povolení zpětné kompatibility jako hostitele změny](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
- [Návod: Předávání kolekce mezi hostiteli a doplňky](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
- [Požadavky na vývoj kanálu](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
- [Kontrakty, zobrazení a adaptéry](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c)  
+ [Návod: Povolení zpětné kompatibility jako hostitele změny](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
+ [Návod: Předávání kolekce mezi hostiteli a doplňky](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)  
+ [Požadavky na vývoj kanálu](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
+ [Kontrakty, zobrazení a adaptéry](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c)  
  [Vývoj kanálu](../../../docs/framework/add-ins/pipeline-development.md)

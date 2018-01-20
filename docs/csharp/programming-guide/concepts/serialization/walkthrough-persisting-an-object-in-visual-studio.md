@@ -11,11 +11,11 @@ ms.assetid: a544ce46-ee25-49da-afd4-457a3d59bf63
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: efdf4694c1a1b6df2e9531a2bb4c813b536a330e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7b1a3fc377875ee25baa0718a25b5ac509822154
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-c"></a>Návod: Uchování objektu v sadě Visual Studio (C#)
 I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrhu, všechny hodnoty zadané v době běhu jsou ztraceny, když objekt zničena. Serializace můžete použít k uchování dat objektu mezi instance, které umožňuje ukládat hodnoty a je načtou při příštím vytvoření instance objektu.  
@@ -29,7 +29,7 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
 >  Tento příklad ukládá data v binárním formátu souboru. Tyto formáty by nemělo být použito pro citlivých dat, třeba hesla nebo informace o kreditní kartě.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, klikněte na tlačítko **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, klikněte na tlačítko **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-loan-object"></a>Vytvoření objektu úvěr  
  Prvním krokem je vytvoření `Loan` třídy a testovací aplikace, který používá třídu.  
@@ -221,5 +221,5 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
  V tomto okamžiku můžete znovu sestavit a spustit aplikaci. Do textových polí v počátečním stavu, zobrazí výchozí hodnoty. Zkuste změnit hodnoty a zadejte název do textového pole čtvrtý. Zavřete aplikaci a znovu jej spusťte. Všimněte si, že nové hodnoty se nyní zobrazí v textových polích.  
   
 ## <a name="see-also"></a>Viz také  
- [Serializace (C#)](../../../../csharp/programming-guide/concepts/serialization/index.md)  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)
+ [Serializace (C# )](../../../../csharp/programming-guide/concepts/serialization/index.md)  
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

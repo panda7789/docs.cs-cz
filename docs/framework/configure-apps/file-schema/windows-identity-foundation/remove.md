@@ -14,19 +14,19 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: 15c2561487eecb44cf3542768de0a77d1dd6713d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb62bbe8b52032708dddd62dd895e61ba8c1c5e9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltremovegt"></a>&lt;remove&gt;
 Odebere zadaný zabezpečení obslužná rutina tokenu z kolekce obslužná rutina tokenu.  
   
- \<system.identityModel >  
+ \<system.identityModel>  
 \<identityConfiguration >  
-\<securityTokenHandlers >  
-\<Odebrat >  
+\<securityTokenHandlers>  
+\<remove>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,7 +48,7 @@ Odebere zadaný zabezpečení obslužná rutina tokenu z kolekce obslužná ruti
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Název typu CLR obslužná rutina tokenu odeberou. Další informace o tom, jak zadat `type` atributů najdete v tématu [odkazy na typ vlastní](http://msdn.microsoft.com/en-us/7286d2e3-c63d-49fd-abdc-ce2705f22c24). Požadováno.|  
+|– typ|Název typu CLR obslužná rutina tokenu odeberou. Další informace o tom, jak zadat `type` atributů najdete v tématu [odkazy na typ vlastní](http://msdn.microsoft.com/library/7286d2e3-c63d-49fd-abdc-ce2705f22c24). Požadováno.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,7 +57,7 @@ Odebere zadaný zabezpečení obslužná rutina tokenu z kolekce obslužná ruti
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.|  
+|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód XML ukazuje použití `<add>` a `<remove>` elementy nahradit výchozí obslužnou rutinu tokenu relace obslužnou rutinu tokenu vlastní relaci. Soubor XML je převzat ze `ClaimsAwareWebFarm` ukázka.  

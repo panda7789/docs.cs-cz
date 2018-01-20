@@ -17,11 +17,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 70119b3067342dc9bc93e0fb8a43a3242f2dacc8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d75e9eedf42523301b3c1745c05d90bcdafbdbf5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltapplicationpoolgt-element-web-settings"></a>&lt;applicationPool&gt; – Element (webové nastavení)
 Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě procesy chování, když aplikace ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
@@ -30,7 +30,7 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
 >  Tento prvek a funkci podporuje funguje jenom v případě, že je vaše aplikace ASP.NET hostované na [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze.  
   
  \<Konfigurace >  
-\<System.Web > elementu (webové nastavení)  
+\<system.web> Element (Web Settings)  
 \<applicationPool > – Element (webové nastavení)  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -60,7 +60,7 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<System.Web >](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace o spolupráci ASP.NET s hostitelskou aplikaci.|  
+|[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace o spolupráci ASP.NET s hostitelskou aplikaci.|  
   
 ## <a name="remarks"></a>Poznámky  
  Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace element vám umožní nakonfigurovat jak ASP.NET spravuje vláken a fronty požadavků, když je aplikace hostované ve fondu aplikací služby IIS. Je-li spustit služby IIS 6 nebo ji spustit [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] v klasickém režimu nebo v režimu ISAPI, tato nastavení ignorují.  
@@ -72,7 +72,7 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
   
  Pro `maxConcurrentRequestsPerCPU` nastavení, výchozí nastavení "5 000" v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] omezení požadavků efektivně vypne řízené ASP.NET, pokud máte ve skutečnosti 5000 nebo další požadavky na procesor. Výchozí nastavení, místo toho závisí na CLR-fondu vláken automaticky spravovat souběžnosti za využití procesoru. Aplikace, které usnadňují rozsáhlé používání asynchronní zpracování požadavků nebo které mají mnoho požadavků dlouho běžící zablokovaných v síti vstupně-výstupních operací, bude využívat vyšší výchozí limit v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]. Nastavení `maxConcurrentRequestsPerCPU` na nulové vypne používání spravovaných vláken pro zpracování požadavků ASP.NET. Když aplikace běží v fond aplikací služby IIS, požadavky Zůstaňte na vlákno vstupně-výstupních operací služby IIS a proto je omezené souběžnosti vláken nastavení služby IIS.  
   
- `requestQueueLimit` Nastavení funguje stejným způsobem jako `requestQueueLimit` atribut [processModel](http://msdn.microsoft.com/en-us/4b8fe20e-74c8-4566-b72c-ce5f83c8e32d) element, který je nastaven v souborech Web.config pro aplikace ASP.NET. Ale `requestQueueLimit` přepíše nastavení v souboru aspnet.config `requestQueueLimit` nastavení v souboru Web.config. Jinými slovy Pokud jsou oba atributy (ve výchozím nastavení, to je true), `requestQueueLimit` přednost má nastavení v souboru Soubor aspnet.config.  
+ `requestQueueLimit` Nastavení funguje stejným způsobem jako `requestQueueLimit` atribut [processModel](http://msdn.microsoft.com/library/4b8fe20e-74c8-4566-b72c-ce5f83c8e32d) element, který je nastaven v souborech Web.config pro aplikace ASP.NET. Ale `requestQueueLimit` přepíše nastavení v souboru aspnet.config `requestQueueLimit` nastavení v souboru Web.config. Jinými slovy Pokud jsou oba atributy (ve výchozím nastavení, to je true), `requestQueueLimit` přednost má nastavení v souboru Soubor aspnet.config.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak nakonfigurovat chování procesy ASP.NET v souboru aspnet.config v následujících případech:  
@@ -101,9 +101,9 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
 |||  
 |-|-|  
 |Obor názvů||  
-|Název schématu||  
+|Schema Name||  
 |Ověření souboru||  
 |Může být prázdný||  
   
 ## <a name="see-also"></a>Viz také  
- [\<System.Web > elementu (webové nastavení)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)
+ [\<system.web> Element (Web Settings)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)

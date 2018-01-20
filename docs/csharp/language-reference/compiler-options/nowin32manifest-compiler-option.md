@@ -13,19 +13,19 @@ ms.assetid: 6f06365b-b87b-46a2-b187-b3bfeaf4862d
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1e0d4697e0e14c84c4bc642521cf4f9cdf6a4ed6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7682a3e1ecf483b8495d817ef01e57093ae0f987
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="nowin32manifest-c-compiler-options"></a>/nowin32manifest (Možnosti kompilátoru C#)
-Použití **/nowin32manifest** – možnost kompilátoru není pro vložení jakýkoli manifest aplikace do spustitelného souboru.  
+# <a name="-nowin32manifest-c-compiler-options"></a>-nowin32manifest (možnosti kompilátoru C#)
+Použití **-nowin32manifest** – možnost kompilátoru není pro vložení jakýkoli manifest aplikace do spustitelného souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/nowin32manifest  
+-nowin32manifest  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
@@ -33,8 +33,8 @@ Použití **/nowin32manifest** – možnost kompilátoru není pro vložení jak
   
  V sadě Visual Studio, nastavte tuto možnost **vlastnosti aplikace** stránky tak, že vyberete **vytvořit aplikaci bez manifestu** možnost **Manifest** rozevíracím seznamu. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (C#)](/visualstudio/ide/reference/application-page-project-designer-csharp).  
   
- Další informace o vytváření manifestu najdete v tématu [/win32manifest (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md).  
+ Další informace o vytváření manifestu najdete v tématu [-win32manifest (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

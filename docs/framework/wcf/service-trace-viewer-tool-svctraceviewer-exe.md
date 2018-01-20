@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9c739db4db5afad8fc379a5da4764cb9ab6804fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7526f5cda302618b2f240e5ae1c126e60b9ab5e6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Nástroj Prohlížeč trasování služby umožňuje analyzovat diagnostické trasování, které jsou generovány nástrojem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrovat zprávy trasování v protokolu, aby mohli diagnostikovat, opravit a ověřte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby problémy.  
@@ -67,7 +67,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="opening-and-viewing-wcf-trace-files"></a>Otevření a zobrazení souborů trasování WCF  
  Prohlížeče trasování služeb podporuje tři typy souborů:  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Trasování souboru (.svcLog)  
+-   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Tracing File (.svcLog)  
   
 -   Události trasování souboru (ETL)  
   
@@ -415,15 +415,15 @@ ms.lasthandoff: 12/22/2017
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Upozornění trasování](../../../docs/framework/wcf/media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-bada-bcb27409da58")|Trasování upozornění: trasování, které jsou vydávány na úrovni upozornění|  
-|![Chyba trasování](../../../docs/framework/wcf/media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Chyba trasování: trasování, které jsou vydávány na úrovni chyby.|  
+|![Warning trace](../../../docs/framework/wcf/media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-bada-bcb27409da58")|Trasování upozornění: trasování, které jsou vydávány na úrovni upozornění|  
+|![Error trace](../../../docs/framework/wcf/media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Chyba trasování: trasování, které jsou vydávány na úrovni chyby.|  
 |![Trasování spuštění aktivit:](../../../docs/framework/wcf/media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-afe8-0b6acd6e0317")|Trasování spuštění aktivit: trasování, který označuje začátek aktivitu. Obsahuje název aktivity. Jako návrháře aplikací nebo vývojáře byste měli definovat jednu aktivitu spustit trasování podle id aktivity podle procesu nebo přístup z více vláken.<br /><br /> Pokud je id aktivity rozšíří napříč zdrojů trasování pro trasování korelace, můžete se podívat, více spuštění stejné id aktivity (jeden na každý zdroj trasování). Spuštění trasování jsou vydávány, pokud je pro zdroj trasování povoleno ActivityTracing.|  
 |![Trasování aktivit zastavení](../../../docs/framework/wcf/media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Zastavit trasování aktivit: trasování, který označuje konec aktivity. . Obsahuje název aktivity. Jako návrháře aplikací nebo vývojáře byste měli definovat jednu aktivitu Zastavit trasování podle id aktivity na zdroj trasování. Po zastavení vysílaných tento zdroj trasování, s výjimkou Pokud členitost času trasování není dostatečně malé aktivity zobrazit žádné trasování z daného trasování zdroje. Pokud k tomu dojde, může být dvou trasování s stejnou dobu, včetně zastavení, prokládaný. při zobrazení. Pokud je id aktivity rozšíří napříč zdrojů trasování pro trasování korelace, uvidíte více zastaví pro stejné id aktivity (jeden na každý zdroj trasování). Zastavit trasování jsou vydávány, pokud je ActivityTracing zdroj trasování.|  
 |![Aktivita Suspend trasování](../../../docs/framework/wcf/media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Aktivita Suspend trasování: trasování, který označuje čas aktivitu je pozastavena. Žádné trasování jsou vygenerované v pozastavenou aktivity, dokud obnoví aktivity. Aktivitu pozastavenou označuje, že žádné zpracování se děje v aktivity v rámci oboru zdroj trasování. Pozastavení nebo obnovení činnosti trasování jsou užitečné pro vytváření profilů. Pozastavit trasování jsou vydávány, pokud je ActivityTracing zdroj trasování.|  
 |![Aktivita obnovit trasování](../../../docs/framework/wcf/media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4e0a-9988-cdc2f7030f17")|Aktivita obnovit trasování: trasování, který označuje čas aktivitu je obnoven po bylo pozastaveno. Trasování může znovu vygenerované v aktivity. Pozastavení nebo obnovení činnosti trasování jsou užitečné pro vytváření profilů. Obnovit trasování jsou vydávány, pokud je ActivityTracing zdroj trasování.|  
-|![Přenos](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Přenos: Trasování, který je vygenerované při převodu logické řízení toku z jedné aktivity do jiného. Aktivitu, kterou přenos pochází z může pokračovat v práci paralelní aktivity, které přenos přejde na. Přenos trasování jsou vydávány, pokud je ActivityTracing zdroj trasování.|  
-|![Přenos z](../../../docs/framework/wcf/media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Přenos z: Trasování, která definuje přenos z jiné aktivity do aktuální aktivita.|  
-|![Přenést do](../../../docs/framework/wcf/media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Přenos do: Trasování, která definuje přenos logické řízení toku z aktuální aktivita pro jinou aktivitu.|  
+|![Transfer](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Přenos: Trasování, který je vygenerované při převodu logické řízení toku z jedné aktivity do jiného. Aktivitu, kterou přenos pochází z může pokračovat v práci paralelní aktivity, které přenos přejde na. Přenos trasování jsou vydávány, pokud je ActivityTracing zdroj trasování.|  
+|![Transfer From](../../../docs/framework/wcf/media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Přenos z: Trasování, která definuje přenos z jiné aktivity do aktuální aktivita.|  
+|![Transfer To](../../../docs/framework/wcf/media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Přenos do: Trasování, která definuje přenos logické řízení toku z aktuální aktivita pro jinou aktivitu.|  
   
 ### <a name="wcf-traces"></a>Trasování WCF  
   
@@ -437,7 +437,7 @@ ms.lasthandoff: 12/22/2017
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Aktivita](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Aktivita: Označuje, že je aktuální aktivita obecné aktivity.|  
+|![Activity](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Aktivita: Označuje, že je aktuální aktivita obecné aktivity.|  
 |![Kořenová aktivita](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Kořenová aktivita: označuje kořenové aktivity procesu.|  
   
 ### <a name="wcf-activities"></a>Aktivity WCF  
@@ -463,4 +463,4 @@ ms.lasthandoff: 12/22/2017
 ## <a name="see-also"></a>Viz také  
  [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [Trasování aktivit a šíření pro trasování začátku do konce korelace](http://msdn.microsoft.com/en-us/2c11a905-64f8-47b5-bae5-a74fc666137e)
+ [Trasování aktivit a šíření pro trasování začátku do konce korelace](http://msdn.microsoft.com/library/2c11a905-64f8-47b5-bae5-a74fc666137e)

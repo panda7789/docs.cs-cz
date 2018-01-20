@@ -24,11 +24,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7e4d336992be216178b1237c9f43bffb3de61fba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 030b84245a5cec09dac3133b04235c65f7bb2d80
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="add-ins-and-extensibility"></a>Doplňky a rozšíření
 <a name="top"></a>Doplňky poskytují rozšířené funkce nebo služby pro hostitelskou aplikaci. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje programovací model, který mohou vývojáři k vývoji doplňky a jejich aktivaci ve svých aplikacích hostitele. Model se dosahuje pomocí vytváření komunikační kanál mezi hostitelem a doplněk. Model je implementována pomocí typy v <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>, a <xref:System.AddIn.Contract> obory názvů.  
@@ -81,7 +81,7 @@ Kanál doplňku
 ### <a name="discovery-and-activation"></a>Zjišťování a aktivace  
  Doplněk, můžete aktivovat pomocí tokenu z kolekce, která představuje doplňků nalezených v úložišti informace. Doplňky najdete vyhledáním typ, který definuje zobrazení hostitele add-in. Můžete také získat konkrétní doplněk podle typu, který definuje doplněk. Úložiště informací se skládá ze dvou souborů z mezipaměti: kanálu store a Windows store.  
   
- Informace o aktualizaci a znovu sestavit úložiště informací najdete v tématu [Add-in zjišťování](http://msdn.microsoft.com/en-us/5d268dde-11df-4c4d-a022-f58d88bbc421). Informace o aktivaci doplňků najdete v tématu [aktivace Add-in](http://msdn.microsoft.com/en-us/bedcbcdf-5964-4215-b5f3-3299798b2b3f) a [postupy: Aktivace doplňky s jinou izolace a zabezpečení](http://msdn.microsoft.com/en-us/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
+ Informace o aktualizaci a znovu sestavit úložiště informací najdete v tématu [Add-in zjišťování](http://msdn.microsoft.com/library/5d268dde-11df-4c4d-a022-f58d88bbc421). Informace o aktivaci doplňků najdete v tématu [aktivace Add-in](http://msdn.microsoft.com/library/bedcbcdf-5964-4215-b5f3-3299798b2b3f) a [postupy: Aktivace doplňky s jinou izolace a zabezpečení](http://msdn.microsoft.com/library/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
   
 ### <a name="isolation-levels-and-external-processes"></a>Úrovně izolace a externí procesy  
  Model doplňku podporuje několik úrovní izolace mezi-in a jeho hostitel nebo mezi doplňků. Od nejméně izolované, tyto úrovně jsou následující:  
@@ -96,10 +96,10 @@ Kanál doplňku
   
 -   Každý doplněk načíst výhradně do vlastní domény aplikace v externím procesu. Toto je nejvíce izolované scénář.  
   
- Další informace o použití externí procesů najdete v tématu [postupy: Aktivace doplňky s jinou izolace a zabezpečení](http://msdn.microsoft.com/en-us/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
+ Další informace o použití externí procesů najdete v tématu [postupy: Aktivace doplňky s jinou izolace a zabezpečení](http://msdn.microsoft.com/library/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
   
 ### <a name="lifetime-management"></a>Správa po dobu platnosti  
- Vzhledem k tomu, že model doplňku zahrnuje aplikace domény a proces hranice, uvolňování paměti sám o sobě není dostatečná pro verzi a uvolnění objektů. Model doplňku poskytuje mechanismus správy životního cyklu, který používá tokeny a počítání odkazů a obvykle nevyžaduje další programování. Další informace najdete v tématu [správu životního cyklu](http://msdn.microsoft.com/en-us/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
+ Vzhledem k tomu, že model doplňku zahrnuje aplikace domény a proces hranice, uvolňování paměti sám o sobě není dostatečná pro verzi a uvolnění objektů. Model doplňku poskytuje mechanismus správy životního cyklu, který používá tokeny a počítání odkazů a obvykle nevyžaduje další programování. Další informace najdete v tématu [správu životního cyklu](http://msdn.microsoft.com/library/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
   
  [Zpět na začátek](#top)  
   
@@ -115,7 +115,7 @@ Kanál doplňku
 |Název|Popis|  
 |-----------|-----------------|  
 |[Vývoj kanálu](../../../docs/framework/add-ins/pipeline-development.md)|Popisuje komunikační kanál segmentů z hostitelskou aplikaci pro doplněk. Obsahuje příklady kódu v tématech návod, které popisují, jak k vytvoření kanálu a postup nasazení segmenty na kanál v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].|  
-|[Domény a sestavení aplikací](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)|Popisuje vztah mezi doménami aplikací, které poskytují hranici izolace zabezpečení, spolehlivosti a správa verzí a sestavení.|  
+|[Domény a sestavení aplikací](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)|Popisuje vztah mezi doménami aplikací, které poskytují hranici izolace zabezpečení, spolehlivosti a správa verzí a sestavení.|  
   
  [Zpět na začátek](#top)  
   

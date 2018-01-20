@@ -8,11 +8,11 @@ ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
 caps.latest.revision: "6"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4955b3d7048b4dfee23fbcf6eeaed995ebf4f1be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 271939b869433742f8b5720ba05955169ea5c410
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 Mnoho aplikací budete chtít vytvořit a spravovat skupiny související objekty. Existují dva způsoby do objektů skupiny: vytvořením pole objektů a vytvořením kolekce objektů.  
@@ -583,12 +583,12 @@ private static IEnumerable<int> EvenSequence(
 ## <a name="see-also"></a>Viz také  
  [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
  [Programování konceptů (C#)](../../../csharp/programming-guide/concepts/index.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [LINQ na objekty (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
  [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
  [Kolekce a datové struktury](../../../standard/collections/index.md)  
- [Vytváření a manipulace s kolekcí](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [Vytváření a manipulace s kolekcí](http://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)  
  [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)  
  [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)  
- [Postupy: přístup ke třídě kolekce pomocí příkazu foreach](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)
+ [Postupy: Přístup ke třídě kolekce pomocí příkazu foreach](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)
