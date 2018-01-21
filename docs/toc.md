@@ -258,6 +258,7 @@
 ### [Dokumentace kódu](csharp/codedoc.md)
 ### [Správa verzí](csharp/versioning.md)
 ## [Témata s postupy k C#](csharp/how-to/index.md)
+### [Jak parsovat řetězce metodou `String.Split`](csharp/how-to/parse-strings-using-split.md)
 <!-- End of C# Concepts section -->
 ## [Sada .NET Compiler Platform SDK (rozhraní Roslyn API)](csharp/roslyn-sdk/)
 ## [Průvodce programováním v jazyce C#](csharp/programming-guide/)
