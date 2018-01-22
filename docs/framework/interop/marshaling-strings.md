@@ -23,11 +23,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 89dace5ba946f2c6bd1384f23ffcff797e99bdd4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a4d53cd4072ab3f9ff52729f122c0a0ecab400df
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="marshaling-strings"></a>Zařazování řetězců
 Vyvolání platformy parametrů řetězce kopie, převod je z formátu rozhraní .NET Framework (Unicode) na nespravované formát (ANSI), v případě potřeby. Protože jsou neměnné spravované řetězce, vyvolání platformy je zpět z nespravované paměti spravované paměti při nekopíruje funkce vrátí hodnotu.  
@@ -36,20 +36,20 @@ Vyvolání platformy parametrů řetězce kopie, převod je z formátu rozhraní
   
 |String|Popis|Ukázka|  
 |------------|-----------------|------------|  
-|Podle hodnoty.|Předá řetězce jako parametry.|[MsgBox –](../../../docs/framework/interop/msgbox-sample.md)|  
-|Jako výsledek.|Vrátí řetězce z nespravovaného kódu.|[Řetězce](http://msdn.microsoft.com/en-us/be9e82a3-dc95-4aaa-9396-61b66e467e02)|  
-|Odkazem.|Předá řetězce jako vstup/výstup parametry s využitím <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](http://msdn.microsoft.com/en-us/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5)|  
-|Ve struktuře hodnotou.|Předá řetězce ve struktuře, která je v parametru.|[Struktury](http://msdn.microsoft.com/en-us/96a62265-dcf9-4608-bc0a-1f762ab9f48e)|  
-|Ve struktuře odkazem **(char\*)**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává ukazatel na znak vyrovnávací paměť a velikost vyrovnávací paměti je členem strukturu.|[Řetězce](http://msdn.microsoft.com/en-us/be9e82a3-dc95-4aaa-9396-61b66e467e02)|  
-|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[Osinfo –](http://msdn.microsoft.com/en-us/69d89067-507b-41fe-859d-30bf3ff29455)|  
-|Ve třídě hodnotou **(char\*)**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává ukazatel na znak.|[OpenFileDlg](http://msdn.microsoft.com/en-us/b7dea792-cb92-4baf-ac7b-6a24803e6c75)|  
-|Ve třídě hodnotou **(char[])**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[Osinfo –](http://msdn.microsoft.com/en-us/69d89067-507b-41fe-859d-30bf3ff29455)|  
+|Podle hodnoty.|Předá řetězce jako parametry.|[MsgBox](../../../docs/framework/interop/msgbox-sample.md)|  
+|Jako výsledek.|Vrátí řetězce z nespravovaného kódu.|[Řetězce](http://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02)|  
+|Odkazem.|Předá řetězce jako vstup/výstup parametry s využitím <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5)|  
+|Ve struktuře hodnotou.|Předá řetězce ve struktuře, která je v parametru.|[Struktury](http://msdn.microsoft.com/library/96a62265-dcf9-4608-bc0a-1f762ab9f48e)|  
+|Ve struktuře odkazem **(char\*)**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává ukazatel na znak vyrovnávací paměť a velikost vyrovnávací paměti je členem strukturu.|[Řetězce](http://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02)|  
+|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[OSInfo](http://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455)|  
+|Ve třídě hodnotou **(char\*)**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává ukazatel na znak.|[OpenFileDlg](http://msdn.microsoft.com/library/b7dea792-cb92-4baf-ac7b-6a24803e6c75)|  
+|Ve třídě hodnotou **(char[])**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[OSInfo](http://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455)|  
 |Jako pole řetězců hodnotou.|Vytvoří pole řetězců, je předaná hodnota.|[Pole](../../../docs/framework/interop/marshaling-different-types-of-arrays.md)|  
 |Jako pole struktury, které obsahují hodnotu řetězce.|Vytvoří pole struktury, která obsahují řetězce a pole je předaná hodnota.|[Pole](../../../docs/framework/interop/marshaling-different-types-of-arrays.md)|  
   
 ## <a name="see-also"></a>Viz také  
  [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
- [Datové typy vyvolání platformy](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
+ [Datové typy vyvolání platformy](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [Zařazování tříd, struktur a sjednocení](../../../docs/framework/interop/marshaling-classes-structures-and-unions.md)  
- [Zařazování pole typů](http://msdn.microsoft.com/en-us/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)  
- [Různé zařazování ukázky](http://msdn.microsoft.com/en-us/a915c948-54e9-4d0f-a525-95a77fd8ed70)
+ [Zařazování pole typů](http://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)  
+ [Různé zařazování ukázky](http://msdn.microsoft.com/library/a915c948-54e9-4d0f-a525-95a77fd8ed70)

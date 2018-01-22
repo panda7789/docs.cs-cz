@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3149a0629fab704dbcae92095b3ef62dc5f9c36c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b990c0a6084f3d2866c16aed3a390fdf7717596
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-forms-controls"></a>Ovládací prvky Windows Forms
 Při navrhování a upravit uživatelské rozhraní Windows Forms aplikací, musíte se k přidání, Zarovnat a umístění ovládacích prvků. Ovládací prvky jsou objekty, které jsou obsažené v objektech formuláře. Každý typ ovládacího prvku má svou vlastní sadu vlastností, metod a události, které vhodný pro určitý účel. Můžete pracovat s ovládací prvky v návrháři a napsat kód pro přidání ovládacích prvků dynamicky za běhu.  
@@ -50,5 +50,5 @@ Při navrhování a upravit uživatelské rozhraní Windows Forms aplikací, mus
  [Klientské aplikace](../../../../docs/framework/develop-client-apps.md)  
  Poskytuje přehled o vývoj aplikací systému Windows.  
   
- [Windows Forms návody](http://msdn.microsoft.com/en-us/fd44d13d-4733-416f-aefc-32592e59e5d9)  
+ [Windows Forms návody](http://msdn.microsoft.com/library/fd44d13d-4733-416f-aefc-32592e59e5d9)  
  Obsahuje seznam témat návod o Windows Forms a ovládacích prvků.

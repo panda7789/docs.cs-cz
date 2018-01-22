@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b2e9bdb08d4b1607dfea34babbe7fd14627decff
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 80b7fa75344f8737baacfba6462a03b436fdf6a8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
@@ -110,10 +110,10 @@ public class PrimeWebDefaultRequestShould
     [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test)
 
 -   **xUnit.net**. Oficiální web.
-    [*https://xunit.github.IO/*](https://xunit.github.io/)
+    [*https://xunit.github.io/*](https://xunit.github.io/)
 
--   **Testování částí. ** 
-     [ *https://msdn.microsoft.com/en-us/library/hh694602.aspx*](https://msdn.microsoft.com/en-us/library/hh694602.aspx)
+-   **Unit Test Basics.**
+    [*https://msdn.microsoft.com/library/hh694602.aspx*](https://msdn.microsoft.com/library/hh694602.aspx)
 
 -   **Moq**. Úložiště GitHub.
     [*https://github.com/moq/moq*](https://github.com/moq/moq)
@@ -130,4 +130,4 @@ Existuje několik přístupů, které můžete použít. V soubor docker-compose
 Jakmile vytvářené aplikace spuštěná, můžete využít výhod zarážky a výjimky, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu vaší konfigurace v sadě Visual Studio Team Services nebo všechny ostatní systémy CI/CD, který podporuje Docker kontejnery.
 
 >[!div class="step-by-step"]
-[Předchozí] (přihlášení k odběru events.md) [Další] (.. /microservice-ddd-cqrs-Patterns/index.MD)
+[Previous] (subscribe-events.md) [Next] (../microservice-ddd-cqrs-patterns/index.md)

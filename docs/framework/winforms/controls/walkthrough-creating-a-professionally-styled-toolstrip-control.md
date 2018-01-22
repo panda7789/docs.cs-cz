@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f3d47f285643f0b989db9419392eed736d0efbea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab9adb72a174da25298b6ea104b002914de0cc40
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem
 Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování vytvořením vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.  
@@ -44,7 +44,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
  Zkopírujte kód v tomto tématu v jednom seznamu, najdete v části [postupy: vytvoření profesionálním ve ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu, budete potřebovat:  
@@ -60,7 +60,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 2.  V **Průzkumníku**, odstraňte výchozí řízení projektu odstraněním zdrojového souboru s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk.  
   
-     Další informace najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+     Další informace najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
   
 3.  Přidejte nový <xref:System.Windows.Forms.UserControl> položkou **StackViewLibrary** projektu. Zadejte základní název nové zdrojový soubor `StackView`.  
   
@@ -132,7 +132,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 8.  Přejmenujte `mailStackButton_Click` obslužné rutiny události pro `stackButton_Click`.  
   
-     Další informace najdete v tématu [postupy: přejmenování identifikátor (Visual Basic)](http://msdn.microsoft.com/en-us/e5a5edf8-3dba-4119-81f4-fc2aba180e0c).  
+     Další informace najdete v tématu [postupy: přejmenování identifikátor (Visual Basic)](http://msdn.microsoft.com/library/e5a5edf8-3dba-4119-81f4-fc2aba180e0c).  
   
 9. Vložte následující kód do `stackButton_Click` obslužné rutiny události.  
   
@@ -146,7 +146,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
 12. Opakujte kroky 10 a 11 pro `contactsStackButton` a `tasksStackButton` ovládací prvky.  
   
 ## <a name="defining-icons"></a>Definování ikony  
- Každý `StackView` tlačítko obsahuje přidružené ikonu. Pro usnadnění práce, každá ikona je reprezentována jako řetězec s kódováním base64, pomocí kterého se deserializovat před <xref:System.Drawing.Bitmap> se vytvoří z něj. V produkčním prostředí ukládat data bitmapy jako prostředek a ikon v Návrháři formulářů. Další informace najdete v tématu [postupy: Přidání obrázky na pozadí do Windows Forms](http://msdn.microsoft.com/en-us/7a509ba2-055c-4ae6-b88a-54625c6d9aff).  
+ Každý `StackView` tlačítko obsahuje přidružené ikonu. Pro usnadnění práce, každá ikona je reprezentována jako řetězec s kódováním base64, pomocí kterého se deserializovat před <xref:System.Drawing.Bitmap> se vytvoří z něj. V produkčním prostředí ukládat data bitmapy jako prostředek a ikon v Návrháři formulářů. Další informace najdete v tématu [postupy: Přidání obrázky na pozadí do Windows Forms](http://msdn.microsoft.com/library/7a509ba2-055c-4ae6-b88a-54625c6d9aff).  
   
 #### <a name="to-define-icons"></a>K definování ikony  
   

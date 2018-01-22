@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 502fb9ae0c488f5f3e438a3ae0a7087538183f1b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 08f4004329d15b527a889cd7b437a7f18278fc79
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]umožňuje aplikacím reagovat na touch. Například můžete pracovat s aplikací pomocí jedné nebo více prsty, které na zařízení touch-velká a malá písmena, například dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživatelům přesunout, změnit velikost nebo otočení jednoho objektu pomocí touch.  
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-the-application"></a>K vytvoření aplikace  
   
-1.  Vytvořte nový projekt aplikace WPF v jazyce Visual Basic a Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
+1.  Vytvořte nový projekt aplikace WPF v jazyce Visual Basic a Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
   
 2.  Nahraďte obsah MainWindow.xaml následující XAML.  
   

@@ -14,11 +14,11 @@ author: BillWagner
 ms.author: wiwagn
 manager: wpickett
 ms.workload: wiwagn
-ms.openlocfilehash: ac4052773044e44f546894a54dc21728dbd6634a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a33e065d9daa886c27cde31c8f16f9b9eaa45938
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek obsahuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework, nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházet z přepisování C# a Visual Basic kompilátory ve spravovaném kódu a tento článek obsahuje několik příkladů skutečné z kompilátoru C#.  
@@ -47,7 +47,7 @@ Tento článek obsahuje tipy pro zvýšení výkonu velkých aplikací rozhraní
  By měl nastavit výkonnostní cíle pro klíče zákazníka prostředí nebo scénářů, ve vaší aplikaci a zápis testů k měření výkonu.  Prozkoumat selhání testů s použitím metodu exponenciální: použití profilů k vás, můžete předpokládat, co může být problém a testování vaší předpoklad s experimentu nebo kód změnit.  Vytvořte měření výkonu standardních hodnot v čase s regulární testování, můžete izolovat změny, které způsobí regresí výkonu.  Blíží výkonu pracovní přísných způsobem, budete muset plýtvání časem při s aktualizacemi kódu, které nepotřebujete.  
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: Dobrý nástroje usnadňují všechny rozdílu  
- Dobrý nástroje umožňují rychle rozbalit největších problémů s výkonem (procesoru, paměti nebo disk) a nápovědy, vyhledejte kód, který způsobí, že tyto kritická místa.  Microsoft, jako dodává celou řadu nástrojů výkonu [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling), [nástroj pro analýzu Windows Phone](http://msdn.microsoft.com/en-us/e67e3199-ea43-4d14-ab7e-f7f19266253f), a [nástroje PerfView](http://www.microsoft.com/download/details.aspx?id=28567).  
+ Dobrý nástroje umožňují rychle rozbalit největších problémů s výkonem (procesoru, paměti nebo disk) a nápovědy, vyhledejte kód, který způsobí, že tyto kritická místa.  Microsoft, jako dodává celou řadu nástrojů výkonu [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling), [nástroj pro analýzu Windows Phone](http://msdn.microsoft.com/library/e67e3199-ea43-4d14-ab7e-f7f19266253f), a [nástroje PerfView](http://www.microsoft.com/download/details.aspx?id=28567).  
   
  Nástroje PerfView je bezplatná a amazingly výkonný nástroj, který pomáhá zaměřit se na hloubkové problémy, jako je/v diskových operací GC – události a paměti.  Můžete zaznamenat související s výkonem [trasování událostí pro Windows](../../../docs/framework/wcf/samples/etw-tracing.md) událostí (ETW) a zobrazení snadno jednu aplikaci, podle procesu, na zásobníku a na vláken informace.  Nástroje PerfView ukazuje, kolik a jaký druh paměti přidělí vaší aplikace, a které funkce nebo volání zásobníky přispívat kolik k přidělení paměti. Podrobnosti najdete v tématu bohaté témata nápovědy, ukázky a videa, které jsou součástí nástroje (například [nástroje PerfView kurzy](http://channel9.msdn.com/Series/PerfView-Tutorial) na webu Channel 9).  
   

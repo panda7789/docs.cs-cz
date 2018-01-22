@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3add191250a10d1d6016263ada0ba53fc8082717
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c749cdd56f0c964b84788b05470406234ef3eb0a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: vytvoření LINQ na DataSet projekt v sadě Visual Studio
 Různé typy [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] projekty vyžadovat určité importovaných oborů názvů (Visual Basic) nebo `using` direktivy (C#) a odkazy. Minimální požadavek je odkaz na System.Core.dll a `using` direktivy pro <xref:System.Linq>. Ve výchozím nastavení, tyto se zadávají v případě, že vytvoříte novou [!INCLUDE[csharp_orcas_long](../../../../includes/csharp-orcas-long-md.md)] projektu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]také vyžaduje odkaz na System.Data.dll a System.Data.DataSetExtensions.dll a `Imports` (Visual Basic) nebo `using` – direktiva (C#).  
@@ -62,4 +62,4 @@ Různé typy [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] projekt
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)  
- [Začínáme s jazykem LINQ](http://msdn.microsoft.com/en-us/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)
+ [Začínáme s jazykem LINQ](http://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)

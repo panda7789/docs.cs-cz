@@ -17,11 +17,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 91edc97794f66edd3a3db7892d57ef5f0c8265c7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 723f724663cb7f08814327a04193f96db7f02ed0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
 [!INCLUDE[wrt](../../../includes/wrt-md.md)] Metadata nástroj pro Export (Winmdexp.exe) transformuje modul rozhraní .NET Framework na soubor, který obsahuje [!INCLUDE[wrt](../../../includes/wrt-md.md)] metadat. I když sestavení rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] soubory metadat použít stejný fyzický formát, jsou rozdíly v obsahu tabulky metadat, což znamená, že sestavení rozhraní .NET Framework nejsou automaticky použitelné jako [!INCLUDE[wrt](../../../includes/wrt-md.md)] součásti . Proces zapnutí modul do rozhraní .NET Framework [!INCLUDE[wrt](../../../includes/wrt-md.md)] součást se označuje jako *export*. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], bude výsledný soubor metadat (.winmd) systému Windows obsahuje metadata a implementace.  
@@ -63,4 +63,4 @@ winmdexp [options] winmdmodule
  [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)  
  [Vytváření modulu Runtime součásti systému Windows v C# a Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=238313)  
  [Chybové zprávy nástroje Winmdexp.exe](../../../docs/framework/tools/winmdexp-exe-error-messages.md)  
- [Sestavení, nasazení a nástroje pro konfiguraci (rozhraní .NET Framework)](http://msdn.microsoft.com/en-us/b8c921be-6012-4181-b8d4-ab15813fc9a7)
+ [Sestavení, nasazení a nástroje pro konfiguraci (rozhraní .NET Framework)](http://msdn.microsoft.com/library/b8c921be-6012-4181-b8d4-ab15813fc9a7)

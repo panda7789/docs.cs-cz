@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b9c401532fa7a5f09462cf12084f32bca3f721cf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 89aa2d57e7990bb2b0016fa4936cf1487578db01
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-change-the-windows-forms-monthcalendar-control39s-appearance"></a>Postupy: Změna ovládacího prvku Windows Forms MonthCalendar & č. 39; s vzhledu
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> řízení umožňuje přizpůsobení vzhledu kalendáře mnoha způsoby. Můžete například nastavit barevné schéma a vyberte k zobrazení nebo skrytí čísla týdne a aktuálním datem.  
@@ -53,7 +53,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> řízení umožňuje př
     ```  
   
     > [!NOTE]
-    >  Spouští se systémem Windows Vista a v závislosti na motiv, nastavení některé vlastnosti nemusí Změna vzhledu kalendáře. Například pokud Windows je nastavena pro použití motivu Aero, nastavení <xref:System.Windows.Forms.MonthCalendar.BackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> vlastnosti nemá žádný vliv. Je to proto, že je aktualizovaná verze kalendáře vykreslen vzhledově odvozený v době běhu z aktuálního motivu operačního systému. Pokud chcete použít tyto vlastnosti a povolit v předchozích verzích kalendáře, můžete zakázat vizuální styly pro vaši aplikaci. Zakázání vizuální styly může ovlivnit vzhled a chování další ovládací prvky v aplikaci. Zakázání stylů v jazyce Visual Basic, otevřete v Návrháři projektu a zrušte zaškrtnutí políčka **vizuální styly XP povolit** zaškrtávací políčko. Chcete-li zakázat vizuální styly v jazyce C#, otevřete Program.cs a komentář `Application.EnableVisualStyles();`. Další informace o vizuální styly najdete v tématu [postupy: povolení vizuální styly XP Windows](http://msdn.microsoft.com/en-us/0a038ade-31cf-4e56-9cfe-7a1e6b83b57f).  
+    >  Spouští se systémem Windows Vista a v závislosti na motiv, nastavení některé vlastnosti nemusí Změna vzhledu kalendáře. Například pokud Windows je nastavena pro použití motivu Aero, nastavení <xref:System.Windows.Forms.MonthCalendar.BackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> vlastnosti nemá žádný vliv. Je to proto, že je aktualizovaná verze kalendáře vykreslen vzhledově odvozený v době běhu z aktuálního motivu operačního systému. Pokud chcete použít tyto vlastnosti a povolit v předchozích verzích kalendáře, můžete zakázat vizuální styly pro vaši aplikaci. Zakázání vizuální styly může ovlivnit vzhled a chování další ovládací prvky v aplikaci. Zakázání stylů v jazyce Visual Basic, otevřete v Návrháři projektu a zrušte zaškrtnutí políčka **vizuální styly XP povolit** zaškrtávací políčko. Chcete-li zakázat vizuální styly v jazyce C#, otevřete Program.cs a komentář `Application.EnableVisualStyles();`. Další informace o vizuální styly najdete v tématu [postupy: povolení vizuální styly XP Windows](http://msdn.microsoft.com/library/0a038ade-31cf-4e56-9cfe-7a1e6b83b57f).  
   
 ### <a name="to-display-the-current-date-at-the-bottom-of-the-control"></a>Chcete-li zobrazit aktuální datum v dolní části ovládacího prvku  
   

@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3b423158cc3c38e92897d0dc5e48c22cf28396ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0aeed7e1beac1a290aebec46a356952ddf994ed7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak integrovat s zprostředkovatele tokenu vlastní zabezpečovací a ověřovací data. Kompletní příklad najdete v článku [vlastní tokenu](../../../../docs/framework/wcf/samples/custom-token.md) ukázka.  
@@ -41,7 +41,7 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
   
  Najdete v článku <xref:System.IdentityModel.Tokens> obor názvů pro více tříd, které představují tokeny zabezpečení.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]přihlašovací údaje Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací, viz [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]přihlašovací údaje Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací, viz [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## <a name="procedures"></a>Procedury  
  Klientská aplikace je třeba zadat způsob, jak určit informace o platební karty pro zabezpečení infrastruktury. Tyto informace je k dispozici pro aplikaci třídou přihlašovací údaje vlastního klienta. Prvním krokem je vytvoření třídy představující informace o kreditní kartě pro přihlašovací údaje vlastního klienta.  
@@ -176,4 +176,4 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
  [Návod: Vytvoření vlastních přihlašovacích údajů klienta a služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
  [Postupy: Vytvoření vlastních ověřovacích dat tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
  [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
- [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

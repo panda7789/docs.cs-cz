@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6019f6025b3a3996c9b86a6c9e61a3dd345c1b12
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 24591b54af97eaad705e4914764c7b2c21e5ed0e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="-string-concatenation-entity-sql"></a>+ (Zřetězení) (entita SQL)
 Zřetězí dva řetězce.  
@@ -47,4 +47,4 @@ expression + expression
   
 ## <a name="see-also"></a>Viz také  
  [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [Typy konceptuálního modelu (CSDL)](http://msdn.microsoft.com/en-us/987b995f-e429-4569-9559-b4146744def4)
+ [Typy konceptuálního modelu (CSDL)](http://msdn.microsoft.com/library/987b995f-e429-4569-9559-b4146744def4)

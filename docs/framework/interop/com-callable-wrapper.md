@@ -24,11 +24,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e8c39d3c84fe24f86692c289860f22381a3cf5a3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 65d09b33982f62b965d6907902ded98f87d9a97e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 Jakmile klient modelu COM zavolá objekt rozhraní .NET, vytvoří modul CLR (Common Language Runtime) pro daný objekt spravovaný objekt a obálku volatelnou modelem COM (CCW). Pokud nelze odkazovat na objekt rozhraní .NET přímo, budou klienti modelu COM pro spravovaný objekt používat objekt CCW jako proxy.  
@@ -58,7 +58,7 @@ Rozhraní COM a obálka volatelná aplikacemi COM
   
 |Rozhraní|Popis|  
 |---------------|-----------------|  
-|**IDispatch**|Poskytuje mechanismus pro pozdní vazbu na typ.|  
+|**Idispatch**|Poskytuje mechanismus pro pozdní vazbu na typ.|  
 |**IerrorInfo**|Obsahuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro rozhraní .NET třídy).|  
 |**IprovideClassInfo**|Umožňuje klientům získat přístup k modelu COM **ITypeInfo** rozhraní implementované spravovanou třídou.|  
 |**IsupportErrorInfo**|Umožňuje klientovi COM, abyste zjistili, jestli podporuje spravovaného objektu **IErrorInfo** rozhraní. Pokud ano, umožňuje klientům získat ukazatele na nejnovější objekt výjimky. Všechny typy podpora spravovaného **IErrorInfo** rozhraní.|  
@@ -190,6 +190,6 @@ public class LoanApp : IAnother {
  [Obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md)  
  [COM – obálky](../../../docs/framework/interop/com-wrappers.md)  
  [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
- [Simulace COM – rozhraní](http://msdn.microsoft.com/en-us/ad2ab959-e2be-411b-aaff-275c3fba606c)  
+ [Simulace COM – rozhraní](http://msdn.microsoft.com/library/ad2ab959-e2be-411b-aaff-275c3fba606c)  
  [Kvalifikace typů .NET pro spolupráci](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
  [Obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md)

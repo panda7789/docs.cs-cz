@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8b363105f0dd6978d4e59678fb7cd1b3f1d721df
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: dc2642df7cfe0f0a4b56537d0b2ebeae34304145
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="working-with-data-definition-language"></a>Práce s Data Definition Language
 Od verze [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] verze 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje jazyk definice dat (DDL). To vám umožňuje vytvořit nebo odstranit instanci databáze na základě připojovací řetězec a metadata modelu úložiště (SSDL).  
@@ -51,11 +51,11 @@ Od verze [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] verz
   
 2.  Přidání existujícího modelu do aplikace.  
   
-    1.  Přidat prázdný model s názvem `SchoolModel`. Pokud chcete vytvořit prázdný model, přečtěte si téma [postup: vytvoření nové .edmx souboru](http://msdn.microsoft.com/en-us/beb8189e-e51c-4051-839c-9902c224abf2) tématu.  
+    1.  Přidat prázdný model s názvem `SchoolModel`. Pokud chcete vytvořit prázdný model, přečtěte si téma [postup: vytvoření nové .edmx souboru](http://msdn.microsoft.com/library/beb8189e-e51c-4051-839c-9902c224abf2) tématu.  
   
      Soubor SchoolModel.edmx je přidán do projektu.  
   
-    1.  Zkopírujte koncepční, úložiště a mapování obsahu pro model školní ze [školní modelu](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac) tématu.  
+    1.  Zkopírujte koncepční, úložiště a mapování obsahu pro model školní ze [školní modelu](http://msdn.microsoft.com/library/859a9587-81ea-4a45-9bc0-f8d330e1adac) tématu.  
   
     2.  Otevřete soubor SchoolModel.edmx a vložte obsah v rámci `edmx:Runtime` značky.  
   

@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 14b7691b1c105ceb3e209c5d86bda455657a4198
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f5f6df22918dedf32738a8cb9d73af2e625923a4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-sessions"></a>Použití relací
 V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korelaci skupinu zpráv k konverzaci. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]relace se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací a jejich použití.  
@@ -147,7 +147,7 @@ V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korela
  Je interakci mezi <xref:System.ServiceModel.SessionMode> výčet ve kontraktu a <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnosti, která řídí přidružení mezi kanály a objekty konkrétní služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Relace, vytváření instancí a souběžnost](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md).  
   
 ### <a name="sharing-instancecontext-objects"></a>Sdílení InstanceContext objekty  
- Můžete taky řídit, které na bázi relací kanál nebo volání je přidružen který <xref:System.ServiceModel.InstanceContext> objektu tak, že provedete toto přidružení sami. Úplný příklad najdete v tématu [InstanceContextSharing](http://msdn.microsoft.com/en-us/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230).  
+ Můžete taky řídit, které na bázi relací kanál nebo volání je přidružen který <xref:System.ServiceModel.InstanceContext> objektu tak, že provedete toto přidružení sami. Úplný příklad najdete v tématu [InstanceContextSharing](http://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230).  
   
 ## <a name="sessions-and-streaming"></a>Relace a vysílání datového proudu  
  Pokud máte velké množství dat pro přenos datových proudů režim přenosu v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vhodný alternativu, která umožňuje výchozí chování ukládání do vyrovnávací paměti a zpracování zpráv v paměti jako celek. Při volání streamování s vazbou na bázi relací, může dojít k neočekávanému chování. Všechna volání streamování jsou provedeny prostřednictvím jednoho kanálu (kanál datagram), který nepodporuje relace, i v případě, že je vazba používá nakonfigurovaný na použití relací. Pokud více klientů volání streamování ke stejnému objektu služby přes vazbu na bázi relací a objektu služby souběžný režim je nastavena na jednou a jeho instance kontextu režim je nastaven `PerSession`, všechna volání musí procházet přes kanál datagram a tak najednou je zpracovat pouze jedno volání. Jeden nebo více klientů může pak vypršení časového limitu. Tento problém můžete vyřešit nastavením objektu služby `InstanceContextMode` k `PerCall` nebo souběžnosti násobek.  

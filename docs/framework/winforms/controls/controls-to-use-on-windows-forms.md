@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: caee828d2379aaa2d6c6c80359d16c89b9b4aa42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9958af954675784e9cbdec4c26605fb83ffa0005
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje abecední seznam ovládací prvky a součásti, které lze použít v aplikaci Windows Forms. Kromě ovládací prvky Windows Forms uvedenými v této části můžete přidat ActiveX a vlastních ovládacích prvků do formulářů Windows. Pokud nenajdete, že tady ovládacího prvku, které potřebujete, můžete také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj ovládacích prvků Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku potřebovat, najdete v části [ovládacích prvků Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md).  
@@ -239,7 +239,7 @@ Následuje abecední seznam ovládací prvky a součásti, které lze použít v
  [Vývoj ovládacích prvků Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
  Obsahuje odkazy na témata krok za krokem, doporučení pro typ ovládacího prvku k vytvoření a další informace o vytváření vlastního ovládacího prvku.  
   
- [Ovládací prvky a programovatelný objekty porovnání v různých jazycích a knihovny](http://msdn.microsoft.com/en-us/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
+ [Ovládací prvky a programovatelný objekty porovnání v různých jazycích a knihovny](http://msdn.microsoft.com/library/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
  Poskytuje tabulku, která mapuje ovládacích prvků v jazyce Visual Basic 6.0 na odpovídající ovládacího prvku [!INCLUDE[vbprvblong](../../../../includes/vbprvblong-md.md)]. Všimněte si, že ovládací prvky jsou nyní třídy v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
  [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  

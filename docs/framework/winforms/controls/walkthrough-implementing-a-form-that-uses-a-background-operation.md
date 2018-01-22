@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c12892c4761f0158153c87464066dd727c83bfc3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aaee6f1d650e6af57ab05ad56b5578e094ee50ef
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete vaše uživatelské rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třída k provedení operace na jiné vlákno.  
@@ -51,14 +51,14 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
  Úplný seznam všech kód v tomto příkladu používá, najdete v části [postupy: implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu a nastavte formulář.  
   
 #### <a name="to-create-a-form-that-uses-a-background-operation"></a>Chcete-li vytvořit formulář, který používá operaci na pozadí  
   
-1.  Vytvořte projekt aplikace pro systém Windows s názvem `BackgroundWorkerExample`. Podrobnosti najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+1.  Vytvořte projekt aplikace pro systém Windows s názvem `BackgroundWorkerExample`. Podrobnosti najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 2.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Form1** a vyberte **přejmenovat** z místní nabídky. Změňte název souboru `FibonacciCalculator`. Klikněte **Ano** tlačítko po zobrazení dotazu, pokud chcete přejmenovat všechny odkazy na tento element kódu '`Form1`'.  
   
@@ -68,7 +68,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 5.  Přejmenujte první <xref:System.Windows.Forms.Button> řízení `startAsyncButton` a nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Start Async`. Přejmenujte druhý <xref:System.Windows.Forms.Button> řízení `cancelAsyncButton`a nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Cancel Async`. Nastavte její <xref:System.Windows.Forms.Control.Enabled%2A> vlastnost `false`.  
   
-6.  Vytvoření obslužné rutiny události pro obě <xref:System.Windows.Forms.Button> ovládací prvky se <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [postupy: vytvoření události obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2).  
+6.  Vytvoření obslužné rutiny události pro obě <xref:System.Windows.Forms.Button> ovládací prvky se <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [postupy: vytvoření události obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 7.  Přetáhněte <xref:System.Windows.Forms.Label> řídit z **sada nástrojů** do formuláře a přejmenujte ji `resultLabel`.  
   
@@ -86,7 +86,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 #### <a name="to-implement-asynchronous-event-handlers"></a>Chcete-li implementovat asynchronní obslužné rutiny  
   
-1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> komponentu vybranou, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> události pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí najdete v tématu [postupy: vytvoření události obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2).  
+1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> komponentu vybranou, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> události pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí najdete v tématu [postupy: vytvoření události obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 2.  Vytvoření nové metody, názvem `ComputeFibonacci`, do formuláře. Tato metoda nepodporuje samotnou práci a poběží na pozadí. Tento kód ukazuje implementaci rekurzivní algoritmus Fibonacciho, což je zejména neefektivní, pro větší počty trvá exponenciálnímu delší dobu pro dokončení. Použije se zde pro ilustraci, chcete-li zobrazit operace, která můžou vést k prodlevám v aplikaci.  
   
@@ -178,7 +178,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
  <xref:System.ComponentModel.BackgroundWorker>  
  [Doporučené postupy dělení na spravovaná vlákna](../../../../docs/standard/threading/managed-threading-best-practices.md)  
  [Více vláken v součásti](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
- [NENÍ v sestavení: Více vláken v jazyce Visual Basic](http://msdn.microsoft.com/en-us/c731a50c-09c1-4468-9646-54c86b75d269)  
+ [NENÍ v sestavení: Více vláken v jazyce Visual Basic](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
  [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
  [Návod: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
  [Komponenta BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component.md)

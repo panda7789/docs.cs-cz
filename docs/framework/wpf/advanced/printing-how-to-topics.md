@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: dd76921059222c9c5b8958ce8e1761a3f04cb037
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9647ce04528df390620dba67619a538d96aa7068
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
 Témata v této části ukazují, jak používat tisk a funkce správy tiskový systém součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a také nové [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] tiskové cestu.  
@@ -42,7 +42,7 @@ Témata v této části ukazují, jak používat tisk a funkce správy tiskový 
  [Výčet dílčí sady tiskové fronty](../../../../docs/framework/wpf/advanced/how-to-enumerate-a-subset-of-print-queues.md)  
  Pokyny pro generování seznam tiskárny, které mají určité charakteristické vlastnosti.  
   
- [NOTINBUILD: Postupy: rozšíření schématu tisku a vytvořit nové třídy tiskový systém](http://msdn.microsoft.com/en-us/a3600218-1ea5-478a-9853-6560464f2885)  
+ [NOTINBUILD: Postupy: rozšíření schématu tisku a vytvořit nové třídy tiskový systém](http://msdn.microsoft.com/library/a3600218-1ea5-478a-9853-6560464f2885)  
  Rozšířené diskuzi o jak spravovaného kódu programátory můžete rozšířit schéma tiskových speciální tisková zařízení nebo tiskárny s funkcemi nové nebo neobvyklé.  
   
  [Načtení vlastností systémového objektu tisku bez reflexe](../../../../docs/framework/wpf/advanced/how-to-get-print-system-object-properties-without-reflection.md)  

@@ -17,18 +17,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c14da85b377b3ef80d6accbc8b0319959a75bcd5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5e616019d53648058d51a3d0df457b1380aaf3b1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-wpf-controls"></a>Používání ovládacích prvků WPF
 Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svých aplikacích pomocí formulářů Windows. I když jsou tyto dvě technologie jiné zobrazení, budou spolupracovat bez problémů.  
   
  Návrhář formulářů Windows poskytuje prostředí visual návrhu pro hostování ovládacích prvků Windows Presentation Foundation. Ovládací prvek WPF hostován ve speciální ovládacího prvku Windows Forms, který je pojmenován <xref:System.Windows.Forms.Integration.ElementHost>. Tento ovládací prvek umožňuje ovládací prvek WPF zapojit se do rozvržení a aby se zprávy klávesnici a myš. V době návrhu, můžete uspořádat <xref:System.Windows.Forms.Integration.ElementHost> řízení stejně jako libovolný ovládací prvek Windows Forms.  
   
- Windows Forms – ovládací prvky můžete použít také v aplikacích grafického subsystému WPF. Další informace najdete v tématu [WPF Designer](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26).  
+ Windows Forms – ovládací prvky můžete použít také v aplikacích grafického subsystému WPF. Další informace najdete v tématu [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Zkopírování a vložení ovládacího prvku ElementHost během návrhu](../../../../docs/framework/winforms/advanced/how-to-copy-and-paste-an-elementhost-control-at-design-time.md)  
@@ -63,5 +63,5 @@ Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svý
  [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
  Popisuje vzájemná spolupráce mezi technologie Windows Presentation Foundation a systém Windows Forms.  
   
- [Návrhář WPF](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  Popisuje postup návrhu Windows Presentation Foundation ovládacích prvků v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].

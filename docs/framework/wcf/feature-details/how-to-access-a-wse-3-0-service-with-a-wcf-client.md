@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c70b7df47cb3f367318fb388ceda2163f538cb32
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 49ff6378bcd35ab2d4e2adf3783a1c4e73025d3a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Microsoft .NET služeb, když jsou klienti úroveň kompatibilní s Web Services vylepšení (WSE) 3.0 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienti jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing. Však služby WSE 3.0 nepodporuje protokol exchange (MEX) metadata, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta se nepoužije nastavení zabezpečení generovaný objekt [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Proto je třeba zadat nastavení zabezpečení, které WSE 3.0 služba vyžaduje, aby po [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient je generován.  
@@ -38,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  Vytvořte třídu, která představuje vazbu, který může komunikovat s WSE 3.0 Web services.  
   
-     Následující třídy je součástí [spolupráce s WSE](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41) ukázka:  
+     Následující třídy je součástí [spolupráce s WSE](http://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41) ukázka:  
   
     1.  Vytvořte třídu, která je odvozena od třídy <xref:System.ServiceModel.Channels.Binding>.  
   
@@ -75,4 +75,4 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels.Binding>  
- [Spolupráce s WSE](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41)
+ [Spolupráce s WSE](http://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41)

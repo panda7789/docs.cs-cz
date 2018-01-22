@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 182e82eec107c170a793d0d48bcfe5493c04d618
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 74a322730c5e9fc205097da310a8db1fd7c50f82
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Témata obsažené v této části jsou určeny tak, abyste získali rychlý vystavení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klientské aplikace. Služba vystavuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby specifikuje adresu, kde můžete najít službu, vazbu, která obsahuje informace, které popisují, jak klient musí komunikovat s službu a kontrakt, který definuje funkci poskytovaný službou svým klientům.  
@@ -36,7 +36,7 @@ Témata obsažené v této části jsou určeny tak, abyste získali rychlý vys
 > [!NOTE]
 >  Pokud používáte [!INCLUDE[wv](../../../includes/wv-md.md)] nebo novější verze operačního systému Windows, musíte spustit [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] přechodem do nabídky Start a kliknutím pravým tlačítkem na Visual Studio 2011 a výběrem **spustit jako správce**. Vždy Visual Studio 2011 spustíte jako správce můžete vytvořit krátké vyjmutí, klikněte pravým tlačítkem na krátké vyjmutí, vyberte vlastnosti, vyberte **kompatibility** a zkontrolujte **spuštění tohoto programu jako správce** zaškrtávací políčko. Při spuštění sady Visual Studio 2011 s touto klávesovou, bude vždy spustit jako správce.  
   
- Ukázkové aplikace, které lze stáhnout na pevný disk a spusťte, najdete v tématech v [ukázky Windows Communication Foundation](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91). Pro toto téma, najdete v tématu, zejména [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md).  
+ Ukázkové aplikace, které lze stáhnout na pevný disk a spusťte, najdete v tématech v [ukázky Windows Communication Foundation](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91). Pro toto téma, najdete v tématu, zejména [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
  Další podrobné informace o vytváření služeb a klientů najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
   
@@ -65,7 +65,7 @@ Témata obsažené v této části jsou určeny tak, abyste získali rychlý vys
  <xref:System.ServiceModel.OperationContractAttribute>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ukázky Windows Communication Foundation](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
+ [Ukázky Windows Communication Foundation](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
   
  [Základní programovací životní cyklus](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
   

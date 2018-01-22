@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e413a7ddf7e256538e56876712a54f875392b59a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d87872d3009b46878b7b614c1aef728d5b1d511d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku
 Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, které mohou být zahrnuty v přenos dat se přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -51,9 +51,9 @@ Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, kte
   
 ### <a name="to-create-the-project"></a>Vytvoření projektu  
   
-1.  Vytvořte nový projekt aplikace WPF v jazyce Visual Basic a Visual C# s názvem `DragDropExample`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
+1.  Vytvořte nový projekt aplikace WPF v jazyce Visual Basic a Visual C# s názvem `DragDropExample`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
   
-2.  Otevřete MainWindow.xaml.  
+2.  Open MainWindow.xaml.  
   
 3.  Přidejte následující kód mezi počáteční a koncovou <xref:System.Windows.Controls.Grid> značky.  
   
@@ -72,7 +72,7 @@ Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, kte
   
      Circle.XAML a jeho kódu se přidá do projektu.  
   
-3.  Otevřete Circle.xaml.  
+3.  Open Circle.xaml.  
   
      Tento soubor bude obsahovat prvky uživatelského rozhraní uživatelského ovládacího prvku.  
   
@@ -91,7 +91,7 @@ Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, kte
   
 ### <a name="to-add-the-user-control-to-the-main-window"></a>Chcete-li přidat uživatelský ovládací prvek do hlavního okna  
   
-1.  Otevřete MainWindow.xaml.  
+1.  Open MainWindow.xaml.  
   
 2.  Přidejte následující XAML pro otevření <xref:System.Windows.Window> značka vytvořit odkaz na obor názvů XML pro aktuální aplikaci.  
   
@@ -177,7 +177,7 @@ Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, kte
   
 ### <a name="to-enable-the-user-control-to-be-a-drop-target"></a>Chcete-li povolit uživatelského ovládacího prvku jako cíle přetažení  
   
-1.  Otevřete Circle.xaml.  
+1.  Open Circle.xaml.  
   
 2.  Při otevírání <xref:System.Windows.Controls.UserControl> značky, přidejte <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost a nastavte ji na `true`.  
   
@@ -297,13 +297,13 @@ Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, kte
   
 ### <a name="to-enable-the-panel-to-be-a-drop-target"></a>Chcete-li povolit panelu jako cíle přetažení  
   
-1.  Otevřete MainWindow.xaml.  
+1.  Open MainWindow.xaml.  
   
 2.  Jak je znázorněno v následujícím XAML, v každém <xref:System.Windows.Controls.StackPanel> přidejte obslužné rutiny pro ovládací prvky, <xref:System.Windows.UIElement.DragOver> a <xref:System.Windows.UIElement.Drop> události. Název <xref:System.Windows.UIElement.DragOver> obslužné rutiny události, `panel_DragOver`a název <xref:System.Windows.UIElement.Drop> obslužné rutiny události, `panel_Drop`.  
   
      [!code-xaml[DragDropWalkthrough#PanelsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml#panelsxaml)]  
   
-3.  Otevřete MainWindows.xaml.cs nebo MainWindow.xaml.vb.  
+3.  Open MainWindows.xaml.cs or MainWindow.xaml.vb.  
   
 4.  Přidejte následující kód pro <xref:System.Windows.UIElement.DragOver> obslužné rutiny události.  
   

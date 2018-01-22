@@ -19,11 +19,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 83022c879abe324287d821cec90f65f1865f8281
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f9e7ceb40167d970b1886aec17b93f4bcf08f631
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="xslt-stylesheet-scripting-using-ltmsxslscriptgt"></a>Pomocí skriptování šablony stylů XSLT &lt;msxsl:script&gt;
 <xref:System.Xml.Xsl.XslTransform> Třída podporuje použití vloženého skriptu `script` elementu.  
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/23/2017
   
  Důkaz z vaší sestavení, použijte `this.GetType().Assembly.Evidence`. Důkaz z identifikátor URI (Uniform Resource), použijte `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`.  
   
- Pokud používáte <xref:System.Xml.Xsl.XslTransform.Load%2A> metod, které berou <xref:System.Xml.XmlResolver> , ale žádné `Evidence`, výchozí nastavení zóny zabezpečení pro sestavení úplný vztah důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.SecurityZone> a [pojmenované sady oprávnění](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).  
+ Pokud používáte <xref:System.Xml.Xsl.XslTransform.Load%2A> metod, které berou <xref:System.Xml.XmlResolver> , ale žádné `Evidence`, výchozí nastavení zóny zabezpečení pro sestavení úplný vztah důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.SecurityZone> a [pojmenované sady oprávnění](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).  
   
  Funkce můžete deklarované v rámci `msxsl:script` elementu. V následující tabulce jsou obory názvů, které jsou podporovány ve výchozím nastavení. Můžete třídy mimo uvedené obory názvů. Tyto třídy však musí být úplná.  
   
@@ -68,7 +68,7 @@ ms.lasthandoff: 12/23/2017
 |System.Xml|Základní třídy XML.|  
 |System.Xml.Xsl|Třídy XSLT.|  
 |System.Xml.XPath|Třídy XML Path Language (XPath).|  
-|Microsoft.VisualBasic –|Třídy pro skripty jazyka Microsoft Visual Basic.|  
+|Microsoft.VisualBasic|Třídy pro skripty jazyka Microsoft Visual Basic.|  
   
  Pokud je deklarovaná funkci, je obsažený v bloku skriptu. Šablony stylů může obsahovat více skriptu bloků, každý operační nezávisle na sobě. To znamená, že pokud spouštění uvnitř bloku skriptu nelze volat funkci, která jste definovali v jiného bloku skriptu, pokud je deklarovaná do mají stejný obor názvů a stejný skriptovací jazyk. Protože každý blok skriptu může být v jeho vlastní jazyk a bloku je analyzována podle pravidel gramatika objektů tohoto analyzátoru jazyka, musíte použít správnou syntaxi pro jazyk používán. Například pokud jste v bloku skriptu jazyka C#, je použít uzel komentáře XML k chybě `<!-- an XML comment -->` v bloku.  
   
@@ -177,7 +177,7 @@ public class Sample
 ```  
   
 ## <a name="input"></a>Vstup  
- Number.XML  
+ number.xml  
   
 ```xml  
 <?xml version='1.0'?>  

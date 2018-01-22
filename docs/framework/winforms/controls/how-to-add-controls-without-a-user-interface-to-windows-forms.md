@@ -25,27 +25,27 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1008de7e32143ae41658566f5c596f4112a88a27
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3abbf931cff9ad459e8c9221f91430ecccefa9cc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do formulářů Windows
 Nevizuální ovládací prvek (nebo součást) poskytuje funkce, které vaše aplikace. Na rozdíl od jiných ovládacích prvků součástí neposkytují uživatelské rozhraní pro uživatele a proto není nutné zobrazit na povrchu Návrhář formulářů Windows. Když součást je přidán do formuláře, zobrazí Návrhář formulářů Windows s možností změny velikosti panelu v dolní části formuláře, kde jsou zobrazeny všechny součásti. Po přidání ovládacího prvku do komponent, můžete vybrat součásti a nastavit jeho vlastnosti, stejně jako další ovládací prvek na formuláři.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ### <a name="to-add-a-component-to-a-windows-form"></a>Chcete-li přidat součást na formuláři Windows  
   
-1.  Otevřete formulář. Podrobnosti najdete v tématu [postupy: zobrazení Windows Forms v návrháři](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
+1.  Otevřete formulář. Podrobnosti najdete v tématu [postupy: zobrazení Windows Forms v návrháři](http://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
   
 2.  V **sada nástrojů**, klikněte na komponentu a přetáhněte ji do svého formuláře.  
   
      Na hlavním panelu součást se zobrazí příslušné součásti.  
   
- Kromě toho součásti lze přidat do formuláře za běhu. Toto je běžný scénář, zvlášť, protože součásti nemají výraz visual, na rozdíl od ovládací prvky, které mají uživatelské rozhraní. V příkladu níže <xref:System.Windows.Forms.Timer> přidání komponenty v době běhu. (Všimněte si, že [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] obsahuje řadu různých časovače; v takovém případě pomocí Windows Forms <xref:System.Windows.Forms.Timer> součásti. Další informace o různých časovače v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], najdete v části [Úvod do serverové časovače](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)  
+ Kromě toho součásti lze přidat do formuláře za běhu. Toto je běžný scénář, zvlášť, protože součásti nemají výraz visual, na rozdíl od ovládací prvky, které mají uživatelské rozhraní. V příkladu níže <xref:System.Windows.Forms.Timer> přidání komponenty v době běhu. (Všimněte si, že [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] obsahuje řadu různých časovače; v takovém případě pomocí Windows Forms <xref:System.Windows.Forms.Timer> součásti. Další informace o různých časovače v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], najdete v části [Úvod do serverové časovače](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)  
   
 > [!CAUTION]
 >  Součásti mají často prvek specifické vlastnosti, které musejí být nastaveny pro součást efektivní fungování. U <xref:System.Windows.Forms.Timer> níže uvedené součásti, nastavíte `Interval` vlastnost. Ujistěte se, při přidávání součástí do projektu, že nastavíte vlastnosti potřebné pro tuto součást.  

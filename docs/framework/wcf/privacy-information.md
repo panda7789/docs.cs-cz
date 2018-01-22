@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f66f773551f45f9e4c5978ef09bbe4061a3326bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d0172b91393e4e9e373a247c33be938a3160e14
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Při vytváření aplikace pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], verze 3.0, vaše aplikace může mít vliv na vaši koncoví uživatelé o ochraně osobních údajů. Například aplikace může shromažďovat explicitně kontaktní informace o uživateli, nebo může požádat nebo poslat informace přes Internet na webové stránky. Pokud vložíte technologie společnosti Microsoft v aplikaci, že technologie může mít svůj vlastní chování, které by mohly ovlivnit ochranu osobních údajů. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]neodesílá žádné informace společnosti Microsoft z vaší aplikace Pokud jste nebo koncový uživatel se rozhodnete odeslat do us.  
@@ -138,13 +138,13 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Klíče, které jsou odebrány:  
   
- \-Pro xmlns:wst = "http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns:wst = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- For xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" and xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  WSt:BinarySecret  
   
  WSt:Entropy  
   
- \-Pro xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- For xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" and xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -152,7 +152,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Potenciálně osobní údaje, které byly odstraněny:  
   
- \-Pro xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- For xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" and xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:username  
   
@@ -162,11 +162,11 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Kontrolní výraz  
   
- MajorVersion = "1"  
+ MajorVersion="1"  
   
- MinorVersion = "1"  
+ MinorVersion="1"  
   
- AssertionId = "[ID]"  
+ AssertionId="[ID]"  
   
  Vystavitel = "[řetězec]"  
   
@@ -174,15 +174,15 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  >  
   
- \<Podmínky neplatí před = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
+ \<Conditions NotBefore="[dateTime]" NotOnOrAfter="[dateTime]">  
   
- \<AudienceRestrictionCondition >  
+ \<AudienceRestrictionCondition>  
   
- \<Cílová skupina > [uri]\</Audience > +  
+ \<Audience>[uri]\</Audience>+  
   
- \</ AudienceRestrictionCondition > *  
+ \</AudienceRestrictionCondition>*  
   
- \<DoNotCacheCondition / > *  
+ \<DoNotCacheCondition />*  
   
  <\!--abstraktní základní typ  
   
@@ -194,9 +194,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Rady, jak >  
   
- \<AssertionIDReference > [ID]\</AssertionIDReference > *  
+ \<AssertionIDReference>[ID]\</AssertionIDReference>*  
   
- \<Kontrolní výraz > [assertion]\</Assertion > *  
+ \<Assertion>[assertion]\</Assertion>*  
   
  [žádné] *  
   
@@ -228,11 +228,11 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<SubjectConfirmationData > [žádné]\</SubjectConfirmationData >?  
   
- \<DS:KeyInfo >... \</ds:KeyInfo >?  
+ \<ds:KeyInfo>...\</ds:KeyInfo>?  
   
  \</ SubjectConfirmation >?  
   
- \</ Předmět >  
+ \</Subject>  
   
  \</ SubjectStatement > *  
   
@@ -274,15 +274,15 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Atribut  
   
- AttributeName = "[řetězec]"  
+ AttributeName="[string]"  
   
- AttributeNamespace = "[uri]"  
+ AttributeNamespace="[uri]"  
   
  >  
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</ Atribut > +  
+ \</Attribute>+  
   
  \</ AttributeStatement > *  
   
@@ -290,7 +290,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Prostředek = "[uri]"  
   
- Rozhodnutí = "[povolení &#124; odepřít &#124; neurčitém]"  
+ Decision="[Permit&#124;Deny&#124;Indeterminate]"  
   
  >  
   
@@ -298,17 +298,17 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Akce Namespace = "[uri]" > [řetězec]\</Action > +  
   
- \<Důkaz >  
+ \<Evidence>  
   
- \<AssertionIDReference > [ID]\</AssertionIDReference > +  
+ \<AssertionIDReference>[ID]\</AssertionIDReference>+  
   
- \<Kontrolní výraz > [assertion]\</Assertion > +  
+ \<Assertion>[assertion]\</Assertion>+  
   
  \</ Důkazy >?  
   
  \</ AuthorizationDecisionStatement > *  
   
- \</ Kontrolní výraz >  
+ \</Assertion>  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informace z těla zprávy odstraněny, až protokolování dešifrovat nebo bez šifrování zprávy  
  Jak už bylo popsáno, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče a známé potenciálně osobní informace ze záhlaví zprávy zprávy zaznamenané dešifrovat nebo bez šifrování. Kromě toho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče a známé potenciálně osobní údaje z těla zprávy pro prvky těla a akce v následujícím seznamu, které popisují zabezpečení zprávy, které jsou zahrnuté v výměny klíčů.  
@@ -319,7 +319,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Pro tyto elementy textu, které zahrnují výměny klíčů jsou odebrány informace:  
   
- WSt:RequestSecurityToken  
+ wst:RequestSecurityToken  
   
  WSt:RequestSecurityTokenResponse  
   
@@ -331,9 +331,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue  
   
- http://schemas.xmlsoap.org/ws/2005/02/trust/RST/renew  
+ http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Renew  
   
- http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/renew  
+ http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Renew  
   
  http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Cancel  
   
@@ -351,21 +351,21 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/SCT/Amend  
   
- http://schemas.xmlsoap.org/ws/2005/02/trust/RST/SCT/renew  
+ http://schemas.xmlsoap.org/ws/2005/02/trust/RST/SCT/Renew  
   
- http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/SCT/renew  
+ http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/SCT/Renew  
   
  http://schemas.xmlsoap.org/ws/2005/02/trust/RST/SCT/Cancel  
   
  http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/SCT/Cancel  
   
- http://schemas.xmlsoap.org/ws/2004/04/Security/Trust/RST/SCT  
+ http://schemas.xmlsoap.org/ws/2004/04/security/trust/RST/SCT  
   
- http://schemas.xmlsoap.org/ws/2004/04/Security/Trust/RSTR/SCT  
+ http://schemas.xmlsoap.org/ws/2004/04/security/trust/RSTR/SCT  
   
- http://schemas.xmlsoap.org/ws/2004/04/Security/Trust/RST/SCT-Amend  
+ http://schemas.xmlsoap.org/ws/2004/04/security/trust/RST/SCT-Amend  
   
- http://schemas.xmlsoap.org/ws/2004/04/Security/Trust/RSTR/SCT-Amend  
+ http://schemas.xmlsoap.org/ws/2004/04/security/trust/RSTR/SCT-Amend  
   
 #### <a name="no-information-is-removed-from-application-specific-headers-and-body-data"></a>Žádné informace se odebere z hlavičky specifické pro aplikace a Data textu  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]nesleduje osobní informace hlavičky specifické pro aplikaci (například řetězce dotazu) nebo text data (například číslo platební karty).  
@@ -413,5 +413,5 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Webové služby popis Language (WSDL) obsahuje definici portu. Každý z portů má adresu koncového bodu a vazbu, která představuje služby, které aplikace používá. Vystavení WSDL může být vypnuto pomocí konfigurace. Žádné informace se uchovávají v počítači.  
   
 ## <a name="see-also"></a>Viz také  
- [Windows Communication Foundation](http://msdn.microsoft.com/en-us/fd327ade-0260-4c40-adbe-b74645ba3277)  
+ [Windows Communication Foundation](http://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)  
  [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)

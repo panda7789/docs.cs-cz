@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 27e9391b72ccb65e50ce3154cf7a1c97d796ebd7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfeacc0d4fb736c523538896246b0f406f995fa7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
 Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyk integrovaného dotazu (LINQ), služby WCF Data Services a XML.  
@@ -31,7 +31,7 @@ Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO
  [ADO.NET](../../../docs/framework/data/adonet/index.md)  
  Popisuje architekturu ADO.NET a jak pomocí třídy ADO.NET spravovat data aplikací a využívat zdroje dat, včetně Microsoft SQL Server, zdroje dat OLE DB a XML.  
   
- [Portál LINQ](http://msdn.microsoft.com/en-us/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
+ [Portál LINQ](http://msdn.microsoft.com/library/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
  Obsahuje odkazy na příslušné dokumentaci pro jazyk integrovaného dotazu (LINQ).  
   
  [Zpracování transakcí](../../../docs/framework/data/transactions/index.md)  
@@ -43,7 +43,7 @@ Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO
  [Dokumenty a data XML](../../../docs/standard/data/xml/index.md)  
  Poskytuje přehled globální a integrované sadu tříd, které pracují s dokumenty XML a data v rozhraní .NET Framework.  
   
- [Referenční dokumentace XML standardy](http://msdn.microsoft.com/en-us/79c78508-c9d0-423a-a00f-672e855de401)  
+ [Referenční dokumentace XML standardy](http://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
  Obsahuje referenční informace o XML standardů, které společnost Microsoft podporuje.  
   
 ## <a name="related-sections"></a>Související oddíly  

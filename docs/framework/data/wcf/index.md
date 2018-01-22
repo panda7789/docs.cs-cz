@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9b6b9ddd27422c09f21833548634afd7945afa89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5b27a51dcec17f72b86e77a7ee2ab773aec1dc3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-data-services-45"></a>Datové služby WCF 4.5
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)](dříve označované jako "ADO.NET Data Services") je součástí rozhraní .NET Framework, který umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantika [representational stavu Transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919). [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Data se získat přístup a změnit pomocí standardních operací protokolu HTTP z GET, PUT, POST a odstranění. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]používá pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které jsou spojené přidružení.  
@@ -91,7 +91,7 @@ ms.lasthandoff: 12/22/2017
  Chci používat Silverlight...  
  -   [Rychlý start Silverlight](http://go.microsoft.com/fwlink/?LinkID=192782)  
   
--   [Datové služby WCF (Silverlight)](http://go.microsoft.com/fwlink/?LinkID=143149)  
+-   [WCF Data Services (Silverlight)](http://go.microsoft.com/fwlink/?LinkID=143149)  
   
 -   [Začínáme s programem Silverlight](http://go.microsoft.com/fwlink/?LinkId=148366)  
   
@@ -120,7 +120,7 @@ ms.lasthandoff: 12/22/2017
  [Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)  
  Poskytuje přehled funkcí a funkcí, které jsou k dispozici v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Co je nového ve službě WCF Data Services](http://msdn.microsoft.com/en-us/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
+ [Co je nového ve službě WCF Data Services](http://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
  Popisuje nové funkce [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a podporu pro nové [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] funkce.  
   
  [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  

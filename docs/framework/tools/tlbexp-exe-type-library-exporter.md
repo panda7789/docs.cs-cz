@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a76d85fa19fc7869ff4298867286592583e86a12
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 47710b81de79a9dfbb6bddd39035be2986350b0e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportér knihovny typů)
 Exportér knihovny typů generuje knihovny typů, které popisují typy definované v sestavení Common Language Runtime.  
@@ -48,7 +48,7 @@ tlbexp assemblyName [options]
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/asmpath:** *adresáře*|Určuje umístění, ve kterém se mají hledat sestavení. Pokud použijete tuto možnost, musíte explicitně zadat umístění, ve kterém se mají hledat odkazovaná sestavení, včetně aktuálního adresáře.<br /><br /> Při použití **asmpath** možnost, knihovna typů – Exportér nebude hledat sestavení v globální mezipaměti sestavení (GAC).|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ názvy:** *filename*|Určuje velikost písmen názvů v knihovně typů. *Filename* argument je textový soubor. Každý řádek v souboru určuje velikost písmen jednoho názvu v knihovně typů.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/oldnames**|Donutí Tlbexp.exe exportovat upravené názvy typů, jestliže dojde ke konfliktu názvu typů. Toto bylo výchozí chování ve verzích rozhraní .NET Framework nižších než 2.0.|  
@@ -56,9 +56,9 @@ tlbexp assemblyName [options]
 |**/ nečinnosti:**`warningnumber`|Potlačí zobrazení konkrétního upozornění. Tuto možnost nelze použít s **/tichou**.|  
 |**/ tichou**|Potlačí zobrazování zpráv o úspěšném dokončení. Tuto možnost nelze použít s **/ticho**.|  
 |**/tlbreference:** *typelibraryname*|Donutí Tlbexp.exe explicitně vyřešit odkazy typu knihovny bez konzultace s registrem. Například, pokud sestavení B odkazuje na sestavení A, můžete použít tuto možnost k poskytnutí explicitního odkazu na knihovnu typů a nespoléhat se na knihovnu typů zadanou v registru. Tlbexp.exe provádí kontroly verze pro zajištění, že verze knihovny typů bude odpovídat verzi sestavení; pokud verze knihovny neodpovídá, dojde k chybě.<br /><br /> Všimněte si, že **tlbreference** možnost stále zajímají registru v případech, kde <xref:System.Runtime.InteropServices.ComImportAttribute> je použit atribut rozhraní, které je pak realizován pomocí jiného typu.|  
-|**/tlbrefpath:** *cesta*|Plně kvalifikovaná cesta na odkazovanou knihovnu typů.|  
-|**/Win32**|Při kompilaci na 64bitovém počítači tato možnost určuje, že Tlbexp.exe vygeneruje 32bitovou knihovnu typů.|  
-|**/Win64**|Při kompilaci na 32bitovém počítači tato možnost určuje, že Tlbexp.exe vygeneruje 64bitovou knihovnu typů.|  
+|**/tlbrefpath:** *path*|Plně kvalifikovaná cesta na odkazovanou knihovnu typů.|  
+|**/win32**|Při kompilaci na 64bitovém počítači tato možnost určuje, že Tlbexp.exe vygeneruje 32bitovou knihovnu typů.|  
+|**/win64**|Při kompilaci na 32bitovém počítači tato možnost určuje, že Tlbexp.exe vygeneruje 64bitovou knihovnu typů.|  
 |**/verbose**|Určuje režim podrobného vypisování; zobrazí seznam všech odkazovaných sestavení, pro která je třeba vytvořit knihovnu typů.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
@@ -99,7 +99,7 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
   
  Všimněte si, že ignoruje Tlbexp.exe <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType> pole.  
   
- Vzhledem k tomu, že knihovny typů nemohou pojmout všechny informace, které jsou součástí sestavení, nástroj Tlbexp.exe může zrušit některá data během exportu. Proces transformace vysvětlení a identifikaci zdroje jednotlivé informace vygenerované do knihovny typů najdete v tématu [sestavení souhrn konverze typu knihovny](http://msdn.microsoft.com/en-us/3a37eefb-a76c-4000-9080-7dbbf66a4896).  
+ Vzhledem k tomu, že knihovny typů nemohou pojmout všechny informace, které jsou součástí sestavení, nástroj Tlbexp.exe může zrušit některá data během exportu. Proces transformace vysvětlení a identifikaci zdroje jednotlivé informace vygenerované do knihovny typů najdete v tématu [sestavení souhrn konverze typu knihovny](http://msdn.microsoft.com/library/3a37eefb-a76c-4000-9080-7dbbf66a4896).  
   
  Všimněte si, že knihovna typů – Exportér exportuje metody, které mají <xref:System.TypedReference> parametry jako `VARIANT`, i když <xref:System.TypedReference> objekt nemá význam v nespravovaném kódu. Při exportu metody, které mají <xref:System.TypedReference> parametry, knihovna typů – Exportér nebude generovat upozornění nebo chyby a nespravovaného kódu, který používá knihovnu výsledný typ nebude pracovat správně.  
   
@@ -142,6 +142,6 @@ tlbexp Sample.dll
  <xref:System.Runtime.InteropServices.TypeLibExporterFlags>  
  [Nástroje](../../../docs/framework/tools/index.md)  
  [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)  
- [Sestavení na typ souhrn konverze knihovny](http://msdn.microsoft.com/en-us/3a37eefb-a76c-4000-9080-7dbbf66a4896)  
+ [Sestavení na typ souhrn konverze knihovny](http://msdn.microsoft.com/library/3a37eefb-a76c-4000-9080-7dbbf66a4896)  
  [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

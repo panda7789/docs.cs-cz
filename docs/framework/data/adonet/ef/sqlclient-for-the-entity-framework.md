@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e2d95b1c63cf751a694051e5def09e20dd7ab7a9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 08f662d41f1a147970ae7611f4fe061dd86bac1f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sqlclient-for-the-entity-framework"></a>SqlClient rozhraní Entity Framework
 Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlClient), která umožňuje rozhraní Entity Framework pracovat prostřednictvím systému Microsoft SQL Server.  
@@ -29,7 +29,7 @@ Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlCl
  Chcete-li použít SqlClient, přiřadit řetězec "System.Data.SqlClient" `Provider` atribut `Schema` elementu.  
   
 ## <a name="providermanifesttoken-schema-attribute"></a>ProviderManifestToken Schema Attribute  
- `ProviderManifestToken`je požadovaný atribut `Schema` element v SSDL. Tento token slouží k načtení manifestu zprostředkovatele pro scénáře v režimu offline. Další informace o `ProviderManifestToken` atributů najdete v tématu [Element schématu (SSDL)](http://msdn.microsoft.com/en-us/fec75ae4-7f16-4421-9265-9dac61509222).  
+ `ProviderManifestToken`je požadovaný atribut `Schema` element v SSDL. Tento token slouží k načtení manifestu zprostředkovatele pro scénáře v režimu offline. Další informace o `ProviderManifestToken` atributů najdete v tématu [Element schématu (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222).  
   
  SqlClient lze použít jako zprostředkovatele dat pro různé verze [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]. Tyto verze mají různé možnosti. Například [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] nepodporuje `varchar(max)` a `nvarchar(max)` typy, které byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].  
   
@@ -40,7 +40,7 @@ Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlCl
 |2000|2005|2008|  
   
 > [!NOTE]
->  Počínaje [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] 2010, [nástrojů modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527) nepodporují systém SQL Server 2000.  
+>  Počínaje [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] 2010, [nástrojů modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) nepodporují systém SQL Server 2000.  
   
 ## <a name="provider-namespace-name"></a>Název zprostředkovatele Namespace  
  Všichni poskytovatelé musí specifikovat obor názvů. Tato vlastnost určuje Entity Framework, která předpona je používána poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce. Obor názvů pro manifesty SqlClient zprostředkovatele je `SqlServer`. Další informace o oborech názvů najdete v tématu [obory názvů](../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md).  

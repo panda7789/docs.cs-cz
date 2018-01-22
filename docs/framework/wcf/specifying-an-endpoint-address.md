@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 21b15fb2b3f3d204ebd5b59f5a93f8e53a89ff71
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 403ff897de4dc9ee95a854d9658bdee344755d59
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby dojde k prostřednictvím své koncové body. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operací, které jsou k dispozici. Vazba Určuje, jak se komunikovat se službou a adresu určuje, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje identifikátor URI (Uniform Resource) představující adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, který představuje identitu zabezpečení služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelné záhlaví obsahují podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncovým bodem. Například záhlaví můžete určit, jak zpracovávat příchozí zprávy, kde má koncový bod odeslat zprávu odpovědi nebo které instanci služby pro použití ke zpracování příchozí zprávy z určitého uživatele, když jsou k dispozici více instancí.  
@@ -38,7 +38,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
   
 -   (Volitelné) Port: 322  
   
--   Cesta: /mathservice.svc/secureEndpoint  
+-   Path: /mathservice.svc/secureEndpoint  
   
  Součást EPR modelu je, že každý koncový bod odkaz přenášet některé odkaz parametry, které přidat velmi identifikační informace. V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], tyto parametry odkaz jsou modelovat jako instance <xref:System.ServiceModel.Channels.AddressHeader> třídy.  
   
@@ -49,7 +49,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
  Při hostování službou IIS, kterou spravujete <xref:System.ServiceModel.ServiceHost> instance sami. Základní adresa je vždy adresu určenou v souboru .svc pro službu při hostování ve službě IIS. Proto je nutné použít relativní koncový bod adresy pro koncové body služby hostované službou IIS. Poskytuje adresu plně kvalifikovaný koncového bodu může vést k chybám v nasazení služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Nasazení WCF hostované Internetovou informační službou](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).  
   
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Definování adresy koncových bodů v konfiguraci  
- Chcete-li definovat koncový bod v konfiguračním souboru, použijte [ \<endpoint >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
+ Chcete-li definovat koncový bod v konfiguračním souboru, použijte [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
   
  [!code-xml[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]  
   

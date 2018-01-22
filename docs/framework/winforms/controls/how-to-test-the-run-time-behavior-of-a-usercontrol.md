@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9ccf386acd50338f1743bbf8f6be38b3267a7103
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 48b7c47a14f27439c60280a5c4202e9f4af76397
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Postupy: Otestování běhového chování UserControl
 Když budete vyvíjet <xref:System.Windows.Forms.UserControl>, je potřeba provést testování její chování. Můžete vytvořit projekt samostatné aplikace systému Windows a umístěte ovládací prvek na formuláři testu, ale tento postup je nepohodlná. Je rychlejší a jednodušší způsob použití **UserControl – kontejner testů** poskytované sadě Visual Studio. Tento kontejner testů spustí přímo z projektu knihovny ovládacího prvku systému Windows.  
@@ -33,14 +33,14 @@ Když budete vyvíjet <xref:System.Windows.Forms.UserControl>, je potřeba prov�
 >  Pro kontejner testů načíst vaše <xref:System.Windows.Forms.UserControl>, ovládacího prvku musí mít alespoň jeden veřejný konstruktor.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 > [!NOTE]
 >  Visual C++ ovládacího prvku nelze testovat pomocí **UserControl – kontejner testů**.  
   
 ### <a name="to-test-the-run-time-behavior-of-a-usercontrol"></a>K otestování běhového chování UserControl  
   
-1.  Vytvoření projektu knihovny ovládacího prvku Windows názvem **TestContainerExample**. Podrobnosti najdete v tématu [šablona knihovny ovládacího prvku Windows](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
+1.  Vytvoření projektu knihovny ovládacího prvku Windows názvem **TestContainerExample**. Podrobnosti najdete v tématu [šablona knihovny ovládacího prvku Windows](http://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
   
 2.  V **Návrhář formulářů Windows**, přetáhněte <xref:System.Windows.Forms.Label> řídit z **sada nástrojů** na návrhovou plochu ovládacího prvku.  
   
@@ -52,7 +52,7 @@ Když budete vyvíjet <xref:System.Windows.Forms.UserControl>, je potřeba prov�
   
 6.  Zavřete testovací kontejneru.  
   
-7.  Přidat další uživatelský ovládací prvek na **TestContainerExample** projektu. Podrobnosti najdete v tématu [NIB: postupy: Přidání existujících položek do projektu](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).  
+7.  Přidat další uživatelský ovládací prvek na **TestContainerExample** projektu. Podrobnosti najdete v tématu [NIB: postupy: Přidání existujících položek do projektu](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).  
   
 8.  V **Návrhář formulářů Windows**, přetáhněte <xref:System.Windows.Forms.Button> řídit z **sada nástrojů** na návrhovou plochu ovládacího prvku.  
   
@@ -65,7 +65,7 @@ Když budete vyvíjet <xref:System.Windows.Forms.UserControl>, je potřeba prov�
   
 #### <a name="to-test-user-controls-from-another-project"></a>K testování uživatelských ovládacích prvků z jiného projektu  
   
-1.  Vytvoření projektu knihovny ovládacího prvku Windows názvem **TestContainerExample2**. Podrobnosti najdete v tématu [šablona knihovny ovládacího prvku Windows](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
+1.  Vytvoření projektu knihovny ovládacího prvku Windows názvem **TestContainerExample2**. Podrobnosti najdete v tématu [šablona knihovny ovládacího prvku Windows](http://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
   
 2.  V **Návrhář formulářů Windows**, přetáhněte <xref:System.Windows.Forms.RadioButton> řídit z **sada nástrojů** na návrhovou plochu ovládacího prvku.  
   
@@ -82,4 +82,4 @@ Když budete vyvíjet <xref:System.Windows.Forms.UserControl>, je potřeba prov�
  [Postupy: Vytváření složených ovládacích prvků](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
  [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
  [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
- [Uživatel Designer ovládacího prvku](http://msdn.microsoft.com/en-us/2abb9eec-ba32-45cb-b73d-8b52a8bd6bf1)
+ [Uživatel Designer ovládacího prvku](http://msdn.microsoft.com/library/2abb9eec-ba32-45cb-b73d-8b52a8bd6bf1)

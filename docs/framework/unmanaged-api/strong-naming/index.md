@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2127cdb1178da37bcfe77a0e1a02ccd34be2d800
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ce89e27089ea2f0c918d0fe37c4eea141698f9be
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Silné názvy (referenční dokumentace nespravovaného rozhraní API)
 Silné pojmenování rozhraní API umožňuje klientovi ke správě podepsání sestavení silným názvem.  
@@ -30,7 +30,7 @@ Silné pojmenování rozhraní API umožňuje klientovi ke správě podepsání 
  Podepisování sestavení se silným názvem přidá veřejný šifrovací klíče do souboru, který obsahuje manifest sestavení. Silné jméno podepisování pomáhá ověřit jedinečnost názvu, zabraňuje falšování a poskytuje volající jedinečnou identitu, kdy odkaz je vyřešený. Žádná úroveň důvěryhodnosti však souvisí se silným názvem.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Silné pojmenování globálních statických funkcí](http://msdn.microsoft.com/en-us/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
+ [Silné pojmenování globálních statických funkcí](http://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
  Popisuje nespravované globální statické funkce, které používá silné pojmenování rozhraní API.  
   
 > [!NOTE]
@@ -114,7 +114,7 @@ Silné pojmenování rozhraní API umožňuje klientovi ke správě podepsání 
  [StrongNameTokenFromPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md)  
  Získá token představující veřejný klíč. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
   
- [Struktura silné názvy](http://msdn.microsoft.com/en-us/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
+ [Struktura silné názvy](http://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
  Popisuje strukturu nespravované silné pojmenování API používá ke správě podepsání sestavení silným názvem...  
   
  [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  

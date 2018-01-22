@@ -19,11 +19,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1473fa07b57dcd19ea192db6cdb0a395f119b159
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 39466115e3835361c76361d3cfc04f76161e7dd5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="registering-assemblies-with-com"></a>Registrování sestav pomocí modelu COM
 Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci sestavení (Regasm.exe)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití v modelu COM. RegAsm.exe informace o třídě přidá do registru systému, klienti COM můžete použít třídu rozhraní .NET Framework transparentně. <xref:System.Runtime.InteropServices.RegistrationServices> Třída poskytuje ekvivalentní funkce.  
@@ -32,10 +32,10 @@ Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci 
   
 |GUID|Popis|Klíč registru|  
 |----------|-----------------|------------------|  
-|CLSID|Identifikátor třídy|HKEY_CLASSES_ROOT\CLSID\\{000... 000}|  
-|IDENTIFIKÁTORY IID|Identifikátor rozhraní|HKEY_CLASSES_ROOT\Interface\\{000... 000}|  
-|ID KNIHOVNY|Identifikátor knihovny|HKEY_CLASSES_ROOT\TypeLib\\{000... 000}|  
-|ProgID|Programový identifikátor|HKEY_CLASSES_ROOT\000... 000|  
+|CLSID|Identifikátor třídy|HKEY_CLASSES_ROOT\CLSID\\{000…000}|  
+|IID|Identifikátor rozhraní|HKEY_CLASSES_ROOT\Interface\\{000…000}|  
+|LIBID|Identifikátor knihovny|HKEY_CLASSES_ROOT\TypeLib\\{000…000}|  
+|ProgID|Programový identifikátor|HKEY_CLASSES_ROOT\000…000|  
   
  V části HKCR\CLSID\\{0000... 0000} klíč, výchozí hodnota je nastavena na ProgID třídy a přidají dva nové pojmenovaných hodnot, třídy a sestavení. Modul runtime čte hodnotu sestavení z registru a předá je do překladač sestavení za běhu. Překladač sestavení se pokusí najít sestavení, na základě informací o sestavení, jako je například číslo název a verze. Sestavení pro překladač sestavení, který se má najít sestavení, musí být v jednom z následujících umístění:  
   
@@ -55,5 +55,5 @@ Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci 
 ## <a name="see-also"></a>Viz také  
  [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [Postupy: Odkazování na typy .NET z modelu COM](../../../docs/framework/interop/how-to-reference-net-types-from-com.md)  
- [Volání metody objekt .NET.](http://msdn.microsoft.com/en-us/40c9626c-aea6-4bad-b8f0-c1de462efd33)  
- [Nasazení aplikace pro přístup COM](http://msdn.microsoft.com/en-us/fb63564c-c1b9-4655-a094-a235625882ce)
+ [Volání metody objekt .NET.](http://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33)  
+ [Nasazení aplikace pro přístup COM](http://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce)

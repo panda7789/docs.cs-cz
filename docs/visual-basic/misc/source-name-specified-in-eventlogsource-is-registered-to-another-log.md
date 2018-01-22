@@ -8,11 +8,11 @@ ms.assetid: 7317e100-098b-408d-86e5-7c74cf8558c7
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c190caa7634760c2e4dc4a2bb7a9a09f532eb0ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e0a100789486dda403f483489e73accbf219374c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="source-name-specified-in-eventlogsource-is-registered-to-a-log-other-than-that-specified-in-eventlogname"></a>Zadaný v EventLogSource název zdroje je registrován protokolu stanovené v EventLogName
 `EventLog` Se pokouší o odkazovat na zdroj, který je zaregistrován jiný protokol. Pokud píšete položky do protokolu událostí, je nutné zadat <xref:System.Diagnostics.EventLog.Source%2A> vlastnost. <xref:System.Diagnostics.EventLog.Source%2A> Vlastnost zaregistruje příslušné součásti se v protokolu událostí jako platný zdroj položek. Jednoho zdroje může být přidružen k (a tedy zapisovat položky k) jenom jeden protokol událostí v čase.  
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/21/2017
 -   Zkontrolujte, zda že zdroj je zaregistrován v správné protokolu. Chcete-li to provést, použijte <xref:System.Diagnostics.EventLog.CreateEventSource%2A> metoda nebo jednoho z jeho přetížení pro zadejte řetězec, který jednoznačně identifikuje příslušné součásti do protokolu událostí.  
   
 ## <a name="see-also"></a>Viz také  
- [Správa protokolů událostí](http://msdn.microsoft.com/en-us/35f53238-bdd2-417b-acd8-2fd9f7397f18)  
- [Odkazy v protokolu událostí](http://msdn.microsoft.com/en-us/4af0661c-6c96-49f4-961d-b26ed9bc3e87)  
- [Postupy: Přidání aplikace jako zdroj položek protokolu událostí](http://msdn.microsoft.com/en-us/948ff920-a739-4e66-a191-ee951512d42c)  
- [Postupy: odebrání zdroje událostí](http://msdn.microsoft.com/en-us/bc66c900-4b8a-426a-b8e2-17031a20167e)
+ [Správa protokolů událostí](http://msdn.microsoft.com/library/35f53238-bdd2-417b-acd8-2fd9f7397f18)  
+ [Odkazy v protokolu událostí](http://msdn.microsoft.com/library/4af0661c-6c96-49f4-961d-b26ed9bc3e87)  
+ [Postupy: Přidání aplikace jako zdroj položek protokolu událostí](http://msdn.microsoft.com/library/948ff920-a739-4e66-a191-ee951512d42c)  
+ [Postupy: odebrání zdroje událostí](http://msdn.microsoft.com/library/bc66c900-4b8a-426a-b8e2-17031a20167e)

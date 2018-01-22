@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bfa7a3b732c67b568f0d68b1811a1ce9bb336a7e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 50ab0be6b92304eee4bc46643c867ee2827fc805
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace založené na události komunikace mezi mikroslužeb (integrace událostí)
 
@@ -82,7 +82,7 @@ V [vzor pozorovatel](https://en.wikipedia.org/wiki/Observer_pattern), primární
 
 ### <a name="publish-subscribe-pubsub-pattern"></a>Vzor publikování a odběru (Pub nebo Sub) 
 
-Účelem [Pub nebo Sub vzor](https://msdn.microsoft.com/en-us/library/ff649664.aspx) je stejný jako vzor pozorovatel: chcete zasílat oznámení jiných služeb, při provádění určité události. Ale je důležitý rozdíl mezi vzorce pozorovatele a Pub nebo Sub. Ve vzoru pozorovatel vysílání se provádí přímo z lze zobrazit pozorovatelů, takže "věděli," navzájem. Ale pokud používáte protokol Pub nebo Sub vzor, je třetí součást, volá zprostředkovatele nebo zprávy zprostředkovatele nebo událost sběrnice, která se označuje vydavatele a odběratele. Proto při použití vzoru Pub nebo Sub vydavatele a odběratele, kteří jsou přesněji odpojené díky uvedených událostí sběrnice nebo zprávy zprostředkovatele.
+Účelem [Pub nebo Sub vzor](https://msdn.microsoft.com/library/ff649664.aspx) je stejný jako vzor pozorovatel: chcete zasílat oznámení jiných služeb, při provádění určité události. Ale je důležitý rozdíl mezi vzorce pozorovatele a Pub nebo Sub. Ve vzoru pozorovatel vysílání se provádí přímo z lze zobrazit pozorovatelů, takže "věděli," navzájem. Ale pokud používáte protokol Pub nebo Sub vzor, je třetí součást, volá zprostředkovatele nebo zprávy zprostředkovatele nebo událost sběrnice, která se označuje vydavatele a odběratele. Proto při použití vzoru Pub nebo Sub vydavatele a odběratele, kteří jsou přesněji odpojené díky uvedených událostí sběrnice nebo zprávy zprostředkovatele.
 
 ### <a name="the-middleman-or-event-bus"></a>Sběrnici prostředník nebo událostí 
 
@@ -135,4 +135,4 @@ public interface IEventBus
 
 
 >[!div class="step-by-step"]
-[Předchozí] (database-server-container.md) [Další] (rabbitmq-event-bus-development-test-environment.md)
+[Previous] (database-server-container.md) [Next] (rabbitmq-event-bus-development-test-environment.md)

@@ -20,14 +20,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a2e068b38c12d37755bee4c7da8c1ca8e5036c74
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: fb1c39d3eb2c0b68182f49d8aa5dcc4e652f9215
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-speed-up-small-loop-bodies"></a>Postupy: Zrychlení malých smyček
-Když <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> smyčky má malé tělo, jako například může pomaleji než ekvivalentní sekvenční smyčka, proveďte [pro](~/docs/csharp/language-reference/keywords/for.md) smyčky v jazyce C# a [pro](http://msdn.microsoft.com/en-us/c470a263-9b49-4308-8fd6-8592b84a7980) v jazyce Visual Basic. Pomalejší výkon je způsobená režie spojená s dělení dat a náklady na vyvolání delegáta na každé iteraci smyčky. Chcete-li vyřešit takových scénářů <xref:System.Collections.Concurrent.Partitioner> třída poskytuje <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> metoda, která umožňuje poskytovat sekvenční smyčka pro tělo delegáta, tak, aby delegáta je jenom jednou vyvolána na oddíl, namísto jednou za iteraci. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  
+Když <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> smyčky má malé tělo, jako například může pomaleji než ekvivalentní sekvenční smyčka, proveďte [pro](~/docs/csharp/language-reference/keywords/for.md) smyčky v jazyce C# a [pro](http://msdn.microsoft.com/library/c470a263-9b49-4308-8fd6-8592b84a7980) v jazyce Visual Basic. Pomalejší výkon je způsobená režie spojená s dělení dat a náklady na vyvolání delegáta na každé iteraci smyčky. Chcete-li vyřešit takových scénářů <xref:System.Collections.Concurrent.Partitioner> třída poskytuje <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> metoda, která umožňuje poskytovat sekvenční smyčka pro tělo delegáta, tak, aby delegáta je jenom jednou vyvolána na oddíl, namísto jednou za iteraci. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[TPL_Partitioners#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_partitioners/cs/partitioner01.cs#01)]

@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0c05aa44a46b934a78af38c33ee34dd03f69e56d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 651515095a0c9f9e970fff2d77421cfa804fa701
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument poskytuje podrobný pohled [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architektura. Je určena k vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verze [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klienta, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programování, najdete v části [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -166,4 +166,4 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 ## <a name="see-also"></a>Viz také  
  [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)  
  [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)  
- [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

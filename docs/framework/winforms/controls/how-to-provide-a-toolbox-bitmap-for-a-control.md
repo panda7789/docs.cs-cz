@@ -21,14 +21,14 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 947ac4f8783b388135cf9e8147bb48eda93cfa08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 446e0f830e916e7f4118a7374c66f238a60fda02
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-provide-a-toolbox-bitmap-for-a-control"></a>Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek
-Pokud chcete mít speciální ikonu pro ovládací prvek zobrazí v **sada nástrojů**, můžete zadat určitou bitovou kopii pomocí <xref:System.Drawing.ToolboxBitmapAttribute>. Tato třída je *atribut*, zvláštní druh třídy můžete připojit k jiné třídy. Další informace o atributech najdete v tématu [NOT IN sestavení: Přehled atributy v jazyce Visual Basic](http://msdn.microsoft.com/en-us/0d0cff64-892d-4f57-83bd-bef388553d4f) pro [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] a [atributy](http://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205) pro [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)].  
+Pokud chcete mít speciální ikonu pro ovládací prvek zobrazí v **sada nástrojů**, můžete zadat určitou bitovou kopii pomocí <xref:System.Drawing.ToolboxBitmapAttribute>. Tato třída je *atribut*, zvláštní druh třídy můžete připojit k jiné třídy. Další informace o atributech najdete v tématu [NOT IN sestavení: Přehled atributy v jazyce Visual Basic](http://msdn.microsoft.com/library/0d0cff64-892d-4f57-83bd-bef388553d4f) pro [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] a [atributy](http://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205) pro [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)].  
   
  Pomocí <xref:System.Drawing.ToolboxBitmapAttribute>, můžete zadat řetězec, který označuje název a cesta k souboru pro rastrový obrázek 16 × 16 pixelů. Tento rastrový obrázek se pak zobrazí vedle vlastního ovládacího prvku, když je přidán do **sada nástrojů**. Můžete také zadat <xref:System.Type>, v takovém případě je načtena rastrový obrázek přidružených k tomuto typu. Pokud zadáte oba <xref:System.Type> a řetězec, ovládacího prvku hledá prostředek obrázku s názvem zadaným parametrem řetězec v sestavení obsahující v typu zadaném pomocí <xref:System.Type> parametr.  
   

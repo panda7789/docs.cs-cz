@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 367da11fd0af9673a60d9acff20aef5969c98aae
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1fbdbe2596f44a6efda35b8c3e3aace303d79364
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Doporučené postupy pro vývoj aplikací připravených k použití
 Tato část popisuje osvědčené postupy při vývoji aplikací připravených.  
@@ -102,7 +102,7 @@ Tato část popisuje osvědčené postupy při vývoji aplikací připravených.
   
 4.  Zadejte hodnoty pro atributy requestEncoding, responseEncoding, fileEncoding, culture a uiCulture v následujících třech místech v aplikaci ASP.NET:  
   
-    -   V sekci globalizace v souboru Web.config. Tento soubor je externí aplikaci ASP.NET. Další informace najdete v tématu [ \<globalizace > Element](http://msdn.microsoft.com/en-us/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7).  
+    -   V sekci globalizace v souboru Web.config. Tento soubor je externí aplikaci ASP.NET. Další informace najdete v tématu [ \<globalizace > Element](http://msdn.microsoft.com/library/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7).  
   
     -   V direktivě stránky. Všimněte si, že když aplikace na stránce, soubor je již přečtena. Proto je příliš pozdě zadat fileEncoding a requestEncoding. V direktivě stránky lze zadat pouze uiCulture, Culture a responseEncoding.  
   

@@ -18,16 +18,16 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: eedb351e5651ffc2637c413450db40ff5a59d516
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4415edbe9f04cb56cefadcb3ae521994fac28ffb
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení
 Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpečení a postup při integraci s tokenu správce vlastní zabezpečení. Ověřovací data tokenu zabezpečení ověří obsah token zabezpečení, která je součástí příchozí zprávy. Pokud je ověření úspěšné, ověřovacích vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instance, při hodnocení, vrátí sadu deklarací identity.  
   
- Použít vlastního ověřovacího modulu tokenu zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], musíte nejdřív vytvořit vlastní pověření a zabezpečení implementace Správce tokenu. Další informace o vytváření vlastních přihlašovacích údajů a zabezpečení Správce tokenu najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací najdete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).  
+ Použít vlastního ověřovacího modulu tokenu zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], musíte nejdřív vytvořit vlastní pověření a zabezpečení implementace Správce tokenu. Další informace o vytváření vlastních přihlašovacích údajů a zabezpečení Správce tokenu najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací najdete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## <a name="procedures"></a>Procedury  
   
@@ -75,4 +75,4 @@ Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpe�
  <xref:System.IdentityModel.Tokens.UserNameSecurityToken>  
  [Návod: Vytvoření vlastních přihlašovacích údajů klienta a služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
  [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
- [Architektura zabezpečení](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

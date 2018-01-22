@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7ffc74fdbec204b798ee93a8ee2c91db992a83cb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bab723e4e52db9936e635f1348dff86d75de274d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ukázky jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresáře. Tento postup jednorázové instalační program vytvoří složku na disku; také přidá virtuální adresář pro službu IIS s názvem **ServiceModelSamples**.  
@@ -36,7 +36,7 @@ Většina [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ukázky jsou h
   
 3.  Pokud [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] není nainstalovaná, a operačního systému není Windows Server 2008 SP2 nebo novější, nainstalujte [251798 opravu Hotfix](http://go.microsoft.com/fwlink/?LinkId=184693).  
   
-4.  Spusťte následující příkazy. Další informace o proč musíte spustit tyto příkazy najdete v tématu [IIS hostované služby nezdaří](http://msdn.microsoft.com/en-us/ee5499fc-1b10-4cda-a9b1-13dba70f05f8).  
+4.  Spusťte následující příkazy. Další informace o proč musíte spustit tyto příkazy najdete v tématu [IIS hostované služby nezdaří](http://msdn.microsoft.com/library/ee5499fc-1b10-4cda-a9b1-13dba70f05f8).  
   
     > [!WARNING]
     >  Pokud se znovu nainstaluje službu IIS, následující příkazy bude muset znovu spustit.  

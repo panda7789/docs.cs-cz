@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d2a444440af9dfaa2b084a55db9348fa48df7b54
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4f6ede253f52682cfe5a698cf4fb02841dc4c1e0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>SqlClient podporu pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupiny dostupnosti AlwaysOn.  Funkce skupin dostupnosti AlwaysOn byla přidána do [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012. Další informace o skupinách dostupnosti AlwaysOn najdete v tématu [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] na webu knihy Online.  
@@ -41,6 +41,9 @@ Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../.
 1.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent%2A>  
   
 2.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
+
+> [!NOTE]
+>  Nastavení `MultiSubnetFailover` k `true` není povinné s [!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)]) nebo novější verze.
   
 ## <a name="connecting-with-multisubnetfailover"></a>Propojení s MultiSubnetFailover  
  Vždycky zadat `MultiSubnetFailover=True` při připojování k [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 naslouchací proces skupiny dostupnosti nebo [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Instance clusteru převzetí služeb při selhání. `MultiSubnetFailover`umožňuje rychlejší převzetí služeb při selhání pro všechny skupiny dostupnosti a nebo Instance clusteru převzetí služeb při selhání v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 a budou výrazně zkrátit čas převzetí služeb při selhání pro jeden a více podsítí AlwaysOn topologie. Během převzetí služeb více podsítí se klient pokusí připojení paralelně. Při selhání podsíť bude intenzivně pokus o připojení protokolu TCP.  

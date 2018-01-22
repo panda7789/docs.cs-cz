@@ -1,6 +1,6 @@
 ---
 title: "Analyzátor přenositelnost .NET - rozhraní .NET"
-description: "Naučte se používat nástroj Analyzátor přenositelnost .NET vyhodnotit, jak přenosné váš kód je mezi různé implementace rozhraní .NET."
+description: "Naučte se používat nástroj Analyzátor přenositelnost .NET vyhodnotit, jak přenosné váš kód je mezi různé implementace rozhraní .NET, včetně .NET Core, .NET Standard, UWP a Xamarin."
 keywords: "Rozhraní .NET, .NET core"
 author: blackdwarf
 ms.author: mairaw
@@ -13,15 +13,15 @@ ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: fef0ddb05cd95c2db5492004c46951bb69ea01d8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b4e19734bc1b7f394864a44ca0489c669cd63a61
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnost rozhraní .NET
 
-Chcete vytvořit více platformami knihovnách? Chcete zobrazit, kolik práce je nutná ke správnému aplikace kompatibilní s jiným implementacím .NET? [.NET přenositelnost analyzátor](http://go.microsoft.com/fwlink/?LinkID=507467) je nástroj, který vám poskytne podrobnou zprávu o tom, jak flexibilní váš program je v rámci implementace rozhraní .NET analýzou sestavení. Přenositelnost Analyzátor je nabízena jako rozšíření Visual Studio a jako konzolové aplikace.
+Chcete vytvořit více platformami knihovnách? Chcete zobrazit, kolik práce je požadováno, aby vaše aplikace kompatibilní s jinými implementace rozhraní .NET a profily, včetně .NET Core, .NET Standard, UWP a Xamarin pro iOS, Android a Mac? [.NET přenositelnost analyzátor](http://go.microsoft.com/fwlink/?LinkID=507467) je nástroj, který vám poskytne podrobnou zprávu o tom, jak flexibilní váš program je v rámci implementace rozhraní .NET analýzou sestavení. Přenositelnost Analyzátor je nabízena jako rozšíření Visual Studio a jako konzolové aplikace.
 
 ## <a name="new-targets"></a>Nové cíle
 

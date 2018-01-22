@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 157b5648af4ef429a73fe71a924e15ad3973f7f5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b49575bb7f16b942a56a48e9ad3f5a44edfb373a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="default-marshaling-for-objects"></a>Výchozí zařazování pro objekty
 Parametry a pole zadán jako <xref:System.Object?displayProperty=nameWithType> mohou být zpřístupněny nespravovaného kódu jako jeden z následujících typů:  
@@ -160,7 +160,7 @@ struct ObjectHolder {
 |<xref:System.Runtime.InteropServices.ErrorWrapper?displayProperty=nameWithType>|**VT_ERROR**|  
 |<xref:System.Reflection.Missing?displayProperty=nameWithType>|**VT_ERROR** s **E_PARAMNOTFOUND**|  
 |<xref:System.Runtime.InteropServices.DispatchWrapper?displayProperty=nameWithType>|**VT_DISPATCH**|  
-|<xref:System.Runtime.InteropServices.UnknownWrapper?displayProperty=nameWithType>|**HODNOTA VT_UNKNOWN**|  
+|<xref:System.Runtime.InteropServices.UnknownWrapper?displayProperty=nameWithType>|**VT_UNKNOWN**|  
 |<xref:System.Runtime.InteropServices.CurrencyWrapper?displayProperty=nameWithType>|**VT_CY**|  
 |<xref:System.Boolean?displayProperty=nameWithType>|**VT_BOOL**|  
 |<xref:System.SByte?displayProperty=nameWithType>|**VT_I1**|  
@@ -174,7 +174,7 @@ struct ObjectHolder {
 |<xref:System.Single?displayProperty=nameWithType>|**VT_R4**|  
 |<xref:System.Double?displayProperty=nameWithType>|**VT_R8**|  
 |<xref:System.Decimal?displayProperty=nameWithType>|**VT_DECIMAL**|  
-|<xref:System.DateTime?displayProperty=nameWithType>|**VT_DATE –**|  
+|<xref:System.DateTime?displayProperty=nameWithType>|**VT_DATE**|  
 |<xref:System.String?displayProperty=nameWithType>|**VT_BSTR**|  
 |<xref:System.IntPtr?displayProperty=nameWithType>|**VT_INT**|  
 |<xref:System.UIntPtr?displayProperty=nameWithType>|**VT_UINT**|  
@@ -235,10 +235,10 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
   
  V následující tabulce jsou uvedeny možné hodnoty **typ objektu TypeCode** výčet a odpovídající typ varianty COM pro každou hodnotu.  
   
-|Typ objektu TypeCode|Typ varianty COM|  
+|TypeCode|Typ varianty COM|  
 |--------------|----------------------|  
 |**TypeCode.Empty**|**VT_EMPTY**|  
-|**TypeCode.Object**|**HODNOTA VT_UNKNOWN**|  
+|**TypeCode.Object**|**VT_UNKNOWN**|  
 |**TypeCode.DBNull**|**VT_NULL**|  
 |**TypeCode.Boolean**|**VT_BOOL**|  
 |**TypeCode.Char**|**VT_UI2**|  
@@ -253,12 +253,12 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 |**TypeCode.Single**|**VT_R4**|  
 |**TypeCode.Double**|**VT_R8**|  
 |**TypeCode.Decimal**|**VT_DECIMAL**|  
-|**TypeCode.DateTime**|**VT_DATE –**|  
+|**TypeCode.DateTime**|**VT_DATE**|  
 |**TypeCode.String**|**VT_BSTR**|  
 |Není podporováno.|**VT_INT**|  
 |Není podporováno.|**VT_UINT**|  
 |Není podporováno.|**VT_ARRAY**|  
-|Není podporováno.|**VT_RECORD TYPU**|  
+|Není podporováno.|**VT_RECORD**|  
 |Není podporováno.|**VT_CY**|  
 |Není podporováno.|**VT_VARIANT**|  
   
@@ -273,7 +273,7 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 |**VT_EMPTY**|Odkaz na objekt s hodnotou Null (**nic** v jazyce Visual Basic).|  
 |**VT_NULL**|<xref:System.DBNull?displayProperty=nameWithType>|  
 |**VT_DISPATCH**|**System.__ComObject** nebo hodnota null, pokud (pdispVal == null)|  
-|**HODNOTA VT_UNKNOWN**|**System.__ComObject** nebo hodnota null, pokud (punkVal == null)|  
+|**VT_UNKNOWN**|**System.__ComObject** nebo hodnota null, pokud (punkVal == null)|  
 |**VT_ERROR**|<xref:System.UInt32?displayProperty=nameWithType>|  
 |**VT_BOOL**|<xref:System.Boolean?displayProperty=nameWithType>|  
 |**VT_I1**|<xref:System.SByte?displayProperty=nameWithType>|  
@@ -287,13 +287,13 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 |**VT_R4**|<xref:System.Single?displayProperty=nameWithType>|  
 |**VT_R8**|<xref:System.Double?displayProperty=nameWithType>|  
 |**VT_DECIMAL**|<xref:System.Decimal?displayProperty=nameWithType>|  
-|**VT_DATE –**|<xref:System.DateTime?displayProperty=nameWithType>|  
+|**VT_DATE**|<xref:System.DateTime?displayProperty=nameWithType>|  
 |**VT_BSTR**|<xref:System.String?displayProperty=nameWithType>|  
 |**VT_INT**|<xref:System.Int32?displayProperty=nameWithType>|  
 |**VT_UINT**|<xref:System.UInt32?displayProperty=nameWithType>|  
-|**VT_ARRAY** &#124; **TYP VT_\***|<xref:System.Array?displayProperty=nameWithType>|  
+|**VT_ARRAY** &#124; **VT_\***|<xref:System.Array?displayProperty=nameWithType>|  
 |**VT_CY**|<xref:System.Decimal?displayProperty=nameWithType>|  
-|**VT_RECORD TYPU**|Odpovídající typ zabalené hodnoty.|  
+|**VT_RECORD**|Odpovídající typ zabalené hodnoty.|  
 |**VT_VARIANT**|Není podporováno.|  
   
  Variant typy předat z COM pro spravovaný kód a potom zpět do modelu COM nemusí zachovat stejný typ varianty po dobu trvání volání. Zvažte, co se stane, když hodnotu typu variant typu **VT_DISPATCH** předaný z COM rozhraní .NET Framework. Při zařazování, varianta jsou převedeny na <xref:System.Object?displayProperty=nameWithType>. Pokud **objekt** byl následně předán zpět do modelu COM, je zařazené zpět na hodnotu typu variant typu **VT_UNKNOWN**. Není zaručeno, že bude variant vytváří, když je objekt zařazené ze spravovaného kódu do modelu COM stejného typu jako typ variant původně použitý k vytvoření objektu.  
@@ -336,11 +336,11 @@ Variant předán podle hodnoty a podle reference
 |**Objekt***o* |**Variant***v* |Nikdy|  
 |**Variant*****\*****pv* |**REF objekt***o* |Vždy|  
 |**REF objekt***o* |**Variant*****\*****pv* |Vždy|  
-|**Variant***v* **(VT_BYREF** *&#124;* **Typ VT_\*)** |**Objekt***o* |Nikdy|  
-|**Variant***v* **(VT_BYREF** *&#124;* **Typ VT_)** |**REF objekt***o* |Pouze v případě, že typ nebyl změněn.|  
+|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Objekt***o* |Nikdy|  
+|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_)**|**REF objekt***o* |Pouze v případě, že typ nebyl změněn.|  
   
 ## <a name="see-also"></a>Viz také  
  [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  
  [Přenositelné a nepřenositelné typy](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [Směrovou atributy](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
+ [Směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
  [Kopírování a přichycování](../../../docs/framework/interop/copying-and-pinning.md)

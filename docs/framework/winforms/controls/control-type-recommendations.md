@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 638a439a663925be6eea230984310f7b86b81030
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a126d3b21ddd4bd31e168726c3538de21fb7d956
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="control-type-recommendations"></a>Doporučení ohledně typu ovládacího prvku
 Rozhraní .NET Framework poskytuje power vývoji a implementovat nové ovládací prvky. Kromě známých uživatelského ovládacího prvku teď zjistíte, že budete moci napsat vlastní ovládací prvky, které provedení vlastní Malování a dokonce můžou rozšířit funkce existujících ovládacích prvků prostřednictvím dědičnosti. Rozhodnutí, jaké typy ovládacích prvků k vytvoření může být matoucí. V této části jsou zdůrazněné rozdílům mezi různé typy ovládacích prvků, ze kterého může dědit vlastnosti a poskytuje důležité informace týkající se typu vybrat pro váš projekt.  
@@ -60,7 +60,7 @@ Rozhraní .NET Framework poskytuje power vývoji a implementovat nové ovládac�
   
 -   [Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/ms171731\(v=vs.110\))  
   
--   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](http://msdn.microsoft.com/en-us/library/5h0k2e6x\(v=vs.110\))  
+-   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](http://msdn.microsoft.com/library/5h0k2e6x\(v=vs.110\))  
   
 -   [Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](http://msdn.microsoft.com/library/4wk1wc0a\(v=vs.110\))  
   
@@ -82,7 +82,7 @@ Rozhraní .NET Framework poskytuje power vývoji a implementovat nové ovládac�
   
 -   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](http://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
   
--   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](http://msdn.microsoft.com/en-us/library/a6h7e207\(v=vs.110\))  
+-   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](http://msdn.microsoft.com/library/a6h7e207\(v=vs.110\))  
   
 -   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](http://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
   

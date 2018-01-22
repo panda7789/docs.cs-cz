@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 358bc0428a53817e85d5a5e278d8da4e1a8b6927
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 447b2d6c0e5eeafeaff89aa1d6430eec72d59a4d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení zabezpečení a problémy při údržbě. Nezašifrované připojovací řetězce zkompilovat do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Navíc pokud se připojovací řetězec někdy změní, musí zopakovat vaší aplikace. Z těchto důvodů doporučujeme ukládání připojovacích řetězců v konfiguračním souboru aplikace.  
@@ -156,7 +156,7 @@ Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení 
  <xref:System.Configuration> Obor názvů obsahuje třídy pro práci s nastavením konfigurace prostřednictvím kódu programu. <xref:System.Configuration.ConfigurationManager> Třída poskytuje přístup k počítači, aplikace a uživatele konfigurační soubory. Pokud chcete vytvořit aplikaci ASP.NET, můžete použít <xref:System.Web.Configuration.WebConfigurationManager> třídy, která poskytuje stejné funkce, zatímco také umožňuje přístup k nastavení, která jsou jedinečná pro aplikace ASP.NET, jako jsou součástí  **\< System.Web >**.  
   
 > [!NOTE]
->  <xref:System.Security.Cryptography> Obor názvů obsahuje třídy, které poskytují další možnosti pro šifrování a dešifrování dat. Tyto třídy použijte, pokud budete potřebovat šifrovacím službám, které nejsou k dispozici pomocí chráněné konfigurace. Některé z těchto tříd jsou obálek pro nespravované Microsoft CryptoAPI, zatímco jiné jsou čistě spravované implementace. Další informace najdete v tématu [šifrovacím službám](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781).  
+>  <xref:System.Security.Cryptography> Obor názvů obsahuje třídy, které poskytují další možnosti pro šifrování a dešifrování dat. Tyto třídy použijte, pokud budete potřebovat šifrovacím službám, které nejsou k dispozici pomocí chráněné konfigurace. Některé z těchto tříd jsou obálek pro nespravované Microsoft CryptoAPI, zatímco jiné jsou čistě spravované implementace. Další informace najdete v tématu [šifrovacím službám](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781).  
   
 ### <a name="appconfig-example"></a>Příklad souboru app.config  
  Tento příklad ukazuje, jak k přepnutí šifrování **connectionStrings** kapitoly **app.config** soubor pro aplikaci systému Windows. V tomto příkladu, které procedura používá název aplikace jako argument, například "MyApplication.exe". **App.config** soubor pak bude šifrované a zkopírovány do složky, která obsahuje spustitelný soubor pod názvem "MyApplication.exe.config".  
@@ -178,7 +178,7 @@ Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení 
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- Další informace zabezpečení aplikace ASP.NET najdete v tématu [NIB: zabezpečení ASP.NET](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d) a [postupy zabezpečení ASP.NET 2.0 na první pohled](http://go.microsoft.com/fwlink/?LinkId=59997) v Centru pro vývojáře technologie ASP.NET.  
+ Další informace zabezpečení aplikace ASP.NET najdete v tématu [NIB: zabezpečení ASP.NET](http://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d) a [postupy zabezpečení ASP.NET 2.0 na první pohled](http://go.microsoft.com/fwlink/?LinkId=59997) v Centru pro vývojáře technologie ASP.NET.  
   
 ## <a name="see-also"></a>Viz také  
  [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)  

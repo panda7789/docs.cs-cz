@@ -30,11 +30,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b13da21709bb85ddf376f84df4fe2c7ae9f1a513
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: 20c120323356171d78da35a490488f4654baece6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).  
@@ -57,12 +57,12 @@ Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výko
   
 -   Některé příčiny zneplatnění bitové kopie byly odstraněny.  
   
- V systému Windows 8, najdete v části [nativní bitové kopie úloh](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb).  
+ V systému Windows 8, najdete v části [nativní bitové kopie úloh](http://msdn.microsoft.com/library/9b1f7590-4e0d-4737-90ef-eaf696932afb).  
   
  Další informace o používání Ngen.exe a služba nativních bitových kopií naleznete v části [nativní bitové kopie služby][Native Image Service].  
   
 > [!NOTE]
->  Ngen.exe syntaxi pro verze 1.0 a 1.1 rozhraní .NET Framework naleznete v [generátor (Ngen.exe) zastaralé syntaxe](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324).  
+>  Ngen.exe syntaxi pro verze 1.0 a 1.1 rozhraní .NET Framework naleznete v [generátor (Ngen.exe) zastaralé syntaxe](http://msdn.microsoft.com/library/5a69fc7a-103f-4afc-8ab4-606adcb46324).  
   
  Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
@@ -523,7 +523,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
  Příklady týkající se služby nativních bitových kopií naleznete v tématu [nativní bitové kopie služby][Native Image Service].  
   
 ## <a name="native-image-task"></a>Úloha pro nativní bitové kopie  
- Úloha nativních bitových kopií je úloh systému Windows, která vytváří a udržuje nativní bitové kopie. Úloha nativních bitových kopií generuje a získá nativní bitové kopie automaticky pro podporované scénáře. (Viz [vytváření nativní bitové kopie](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418).) Umožňuje také instalační programy používat [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) k vytváření a aktualizaci nativní bitové kopie odložené najednou.  
+ Úloha nativních bitových kopií je úloh systému Windows, která vytváří a udržuje nativní bitové kopie. Úloha nativních bitových kopií generuje a získá nativní bitové kopie automaticky pro podporované scénáře. (Viz [vytváření nativní bitové kopie](http://msdn.microsoft.com/library/2bc8b678-dd8d-4742-ad82-319e9bf52418).) Umožňuje také instalační programy používat [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) k vytváření a aktualizaci nativní bitové kopie odložené najednou.  
   
  Jakmile pro každý procesor architektura podporovaný na počítači, aby kompilace pro aplikace, že cíl každou architekturu registraci nativních bitových kopií úlohy:  
   

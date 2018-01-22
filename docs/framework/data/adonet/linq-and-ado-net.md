@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d55185153e3d03ddb2b1726ed25566d6b5f396ae
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b020b3df627fcb220f4227d76fdf8eb3d60e80e4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy, musíte použít dva (nebo více) programovacích jazyků: vysoké úrovně jazyk pro obchodní logiky a prezentační vrstvy (například [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] nebo [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]) a dotazovacího jazyka pro interakci s databází (například [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). To vyžaduje vývojáři být znalosti v několika jazycích účinný a také způsobí, že jazyk neshody ve vývojovém prostředí. Například aplikace, která používá přístup k datům rozhraní API při spuštění dotazu oproti databázi Určuje dotaz jako řetězcový literál pomocí uvozovek. Tento řetězec dotazu je zrušení čitelná kompilátoru a není zaškrtnuto políčko pro chyby, jako je například Neplatná syntaxe nebo jestli skutečně existuje sloupců a řádků, které odkazuje. Neexistuje žádný typ kontroly parametry dotazu ale žádné `IntelliSense` buď podporují.  
@@ -33,7 +33,7 @@ V současné době celá řada vývojářů firmy, musíte použít dva (nebo v�
   
  ![Technologie LINQ to ADO.NET přehled](../../../../docs/framework/data/adonet/media/dpue-linqtoadonetoverview-bpuedev11.gif "DPUE_LinqToAdoNetOverview_bpuedev11")  
   
- Obecné informace o funkcích jazyka LINQ najdete v tématu [Úvod do LINQ](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e). Informace o použití LINQ ve svých aplikacích najdete v tématu [NOT IN sestavení: Obecné LINQ Průvodce programováním](http://msdn.microsoft.com/en-us/609c7a6b-cbdd-429d-99f3-78d13d3bc049), který obsahuje podrobné informace o tom, jak používat technologie LINQ.  
+ Obecné informace o funkcích jazyka LINQ najdete v tématu [Úvod do LINQ](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e). Informace o použití LINQ ve svých aplikacích najdete v tématu [NOT IN sestavení: Obecné LINQ Průvodce programováním](http://msdn.microsoft.com/library/609c7a6b-cbdd-429d-99f3-78d13d3bc049), který obsahuje podrobné informace o tom, jak používat technologie LINQ.  
   
  Následující části obsahují další informace o [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)].  
   

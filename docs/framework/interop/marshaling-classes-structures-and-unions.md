@@ -30,11 +30,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3ddb5abeee9c1cad12e40b84f2e5c81295cbed9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6fb682d898de8cb6bc166426c3a1accbda452c83
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 Třídy a struktury jsou podobné v rozhraní .NET Framework. Mají obě můžete polí, vlastnosti a události. Může mít také statické a nestatické metody. Jeden pozoruhodný rozdíl je, že jsou typy hodnot struktury a třídy jsou odkazové typy.  
@@ -77,7 +77,7 @@ Třídy a struktury jsou podobné v rozhraní .NET Framework. Mají obě můžet
     void TestArrayInStruct( MYARRAYSTRUCT* pStruct );  
     ```  
   
- [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614) vlastní nespravované knihovnu, která obsahuje implementace pro výše uvedených funkcí a čtyři struktury: **MYPERSON**, **MYPERSON2**,  **MYPERSON3**, a **MYARRAYSTRUCT**. Tyto struktury obsahovat tyto prvky:  
+ [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614) vlastní nespravované knihovnu, která obsahuje implementace pro výše uvedených funkcí a čtyři struktury: **MYPERSON**, **MYPERSON2**,  **MYPERSON3**, a **MYARRAYSTRUCT**. Tyto struktury obsahovat tyto prvky:  
   
 ```  
 typedef struct _MYPERSON  
@@ -138,7 +138,7 @@ typedef struct _MYARRAYSTRUCT
  [!code-vb[Conceptual.Interop.Marshaling#24](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/structures.vb#24)]  
   
 ## <a name="findfile-sample"></a>FindFile – ukázka  
- Tento příklad znázorňuje, jak předat strukturu, která obsahuje strukturu, druhý, vložené do nespravované funkce. Také ukazuje, jak používat <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut pevnou délkou pole v rámci strukturu deklarovat. V této ukázce jsou elementy vložené struktury přidat pro nadřazenou strukturu. Ukázka vložené struktury, která se nesloučí, najdete v části [ukázka struktury](http://msdn.microsoft.com/en-us/96a62265-dcf9-4608-bc0a-1f762ab9f48e).  
+ Tento příklad znázorňuje, jak předat strukturu, která obsahuje strukturu, druhý, vložené do nespravované funkce. Také ukazuje, jak používat <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut pevnou délkou pole v rámci strukturu deklarovat. V této ukázce jsou elementy vložené struktury přidat pro nadřazenou strukturu. Ukázka vložené struktury, která se nesloučí, najdete v části [ukázka struktury](http://msdn.microsoft.com/library/96a62265-dcf9-4608-bc0a-1f762ab9f48e).  
   
  Ukázka FindFile používá následující nespravované funkce, zobrazí se jeho původní funkce deklaraci:  
   
@@ -191,7 +191,7 @@ typedef struct _WIN32_FIND_DATA
     void TestUnion(MYUNION u, int type);  
     ```  
   
- [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614) vlastní nespravované knihovnu, která obsahuje implementaci pro funkci výše uvedených a dvě sjednocení **MYUNION** a **MYUNION2**. Sjednocení obsahovat tyto prvky:  
+ [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614) vlastní nespravované knihovnu, která obsahuje implementaci pro funkci výše uvedených a dvě sjednocení **MYUNION** a **MYUNION2**. Sjednocení obsahovat tyto prvky:  
   
 ```  
 union MYUNION  
@@ -251,7 +251,7 @@ typedef struct _SYSTEMTIME {
   
  V této ukázce `SystemTime` třída obsahuje prvky původní struktura reprezentován jako členové třídy. <xref:System.Runtime.InteropServices.StructLayoutAttribute> Je nastavena na hodnotu zabezpečit, aby členové jsou uspořádány v paměti postupně, v pořadí, ve kterém jsou zobrazeny.  
   
- `LibWrap` Třída obsahuje spravované prototyp `GetSystemTime` metodu, která předá `SystemTime` třída jako ve vstupně -výstupnímu parametru ve výchozím nastavení. Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> atributů, protože jsou třídy, které jsou odkazové typy, předat jako parametry ve výchozím nastavení. Pro volající získat výsledky tyto [směrovou atributy](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2) musí být explicitně použity. `App` Vytvoří novou instanci třídy `SystemTime` třídy a přistupuje k jeho datová pole.  
+ `LibWrap` Třída obsahuje spravované prototyp `GetSystemTime` metodu, která předá `SystemTime` třída jako ve vstupně -výstupnímu parametru ve výchozím nastavení. Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> atributů, protože jsou třídy, které jsou odkazové typy, předat jako parametry ve výchozím nastavení. Pro volající získat výsledky tyto [směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2) musí být explicitně použity. `App` Vytvoří novou instanci třídy `SystemTime` třídy a přistupuje k jeho datová pole.  
   
 ### <a name="code-samples"></a>Ukázky kódu  
  [!code-cpp[Conceptual.Interop.Marshaling#25](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/systime.cpp#25)]
@@ -263,7 +263,7 @@ typedef struct _SYSTEMTIME {
   
  Tento příklad ukazuje způsob volání nativní funkce pomocí <xref:System.Runtime.InteropServices.Marshal> třídy a pomocí nezabezpečený kód.  
   
- Tato ukázka používá funkce obálky a vyvolá platformy definovaný v [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614), také zadaný ve zdrojových souborech. Použije `TestOutArrayOfStructs` funkce a `MYSTRSTRUCT2` struktury. Struktura obsahuje následující prvky:  
+ Tato ukázka používá funkce obálky a vyvolá platformy definovaný v [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614), také zadaný ve zdrojových souborech. Použije `TestOutArrayOfStructs` funkce a `MYSTRSTRUCT2` struktury. Struktura obsahuje následující prvky:  
   
 ```  
 typedef struct _MYSTRSTRUCT2  
@@ -299,6 +299,6 @@ typedef struct _MYSTRSTRUCT2
   
 ## <a name="see-also"></a>Viz také  
  [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
- [Datové typy vyvolání platformy](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
+ [Datové typy vyvolání platformy](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [Zařazování řetězců](../../../docs/framework/interop/marshaling-strings.md)  
- [Zařazování pole typů](http://msdn.microsoft.com/en-us/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)
+ [Zařazování pole typů](http://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)

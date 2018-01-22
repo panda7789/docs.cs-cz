@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f5301bf3a2fed35dbdd0046e01eb2acb9083a290
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ae43f65c104376ea1e7cfc036a57c728c90ac12
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], může odesílat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  
@@ -111,4 +111,4 @@ ms.lasthandoff: 12/22/2017
  [Kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md)  
  [Průvodce dokumentací](../../../docs/framework/wcf/guide-to-the-documentation.md)  
  [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)  
- [Ukázky Windows Communication Foundation](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)
+ [Ukázky Windows Communication Foundation](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)

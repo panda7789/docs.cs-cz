@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1813fe80ad4f84d891986123538dd9037f3fd945
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 752c4cceada2bf0649facbfd46c36c26dc666d29
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="designing-a-microservice-domain-model"></a>Navržení modelu mikroslužbu domény
 
@@ -63,15 +63,15 @@ Někteří uživatelé říkají, že model anemic domény je proti vzor. Ve sku
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **DevIQ. Entita domény**
+-   **DevIQ. Domain Entity**
     [*http://deviq.com/entity/*](http://deviq.com/entity/)
 
--   **Martin Fowler. Model domény**
+-   **Martin Fowler. The Domain Model**
     [*https://martinfowler.com/eaaCatalog/domainModel.html*](https://martinfowler.com/eaaCatalog/domainModel.html)
 
 -   **Martin Fowler. Model Anemic domény**
 
-    <https://martinfowler.com/bliki/AnemicDomainModel.HTML>
+    <https://martinfowler.com/bliki/AnemicDomainModel.html>
 
 ### <a name="the-value-object-pattern"></a>Vzor hodnota objektu
 
@@ -87,10 +87,10 @@ Hodnota objekty jsou obtížné spravovat v relačních databází a ORMs jako E
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Martin Fowler. Hodnota objektu vzor**
+-   **Martin Fowler. Value Object pattern**
     [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
 
--   **Hodnota objektu**
+-   **Value Object**
     [*http://deviq.com/value-object/*](http://deviq.com/value-object/)
 
 -   **Hodnota objekty v Test-Driven vývoj**
@@ -108,7 +108,7 @@ Identifikace agregace může být složité. Agregace je pro skupinu objektů, k
 
 ### <a name="the-aggregate-root-or-root-entity-pattern"></a>Vzor agregační kořenovou nebo kořenové Entity
 
-Agregace se skládá z nejméně jedna entita: agregační kořenový adresář, označovaný taky jako kořenové entity nebo primární ientity. Kromě toho může mít více podřízených entit a hodnota objekty s všechny entity a objekty, které pracují společně k implementaci požadované chování a transakce.
+Agregace se skládá z nejméně jedna entita: agregační kořenový adresář, označovaný taky jako kořenové entity nebo primární entity. Kromě toho může mít více podřízených entit a hodnota objekty s všechny entity a objekty, které pracují společně k implementaci požadované chování a transakce.
 
 Účelem agregační kořenové je zajištění konzistence agregace; je nutné pouze vstupní bod pro aktualizace agregace prostřednictvím metody nebo operace v souhrnném kořenová třída. Entity v rámci agregace pouze prostřednictvím kořenu agregační měli provádět změny. Je na agregaci konzistence ochrany, vezme v úvahu výstupních podmínek a konzistence pravidla, která může být nutné v souladu se ve vašem agregace. Pokud změníte podřízený objekt entity nebo hodnota nezávisle, kořenu agregační nelze zajistěte, aby byl agregace v platném stavu. Je jako tabulku s přijít větev. Údržba konzistence je hlavním účelem agregační kořenu.
 
@@ -148,10 +148,10 @@ Identifikace a práci s agregace vyžaduje výzkum a prostředí. Další inform
 -   **Vaughn Vernon. Efektivní agregační návrh – část III: Získání přehledu prostřednictvím zjišťování**
     *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf>*
 
--   **Sergey Grybniak. Vzory návrhu taktické DDD**
+-   **Sergey Grybniak. DDD Tactical Design Patterns**
     [*https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part*](https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part)
 
--   **Jan Ryšánková. Vývoj transakční Mikroslužeb používající agregované hodnoty**
+-   **Jan Ryšánková. Developing Transactional Microservices Using Aggregates**
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson)
 
 -   **DevIQ. Agregační vzor**
@@ -159,4 +159,4 @@ Identifikace a práci s agregace vyžaduje výzkum a prostředí. Další inform
 
 
 >[!div class="step-by-step"]
-[Předchozí] (ddd-zaměřené na konkrétní microservice.md) [Další] (net – základní – mikroslužbu domain-model.md)
+[Previous] (ddd-oriented-microservice.md) [Next] (net-core-microservice-domain-model.md)

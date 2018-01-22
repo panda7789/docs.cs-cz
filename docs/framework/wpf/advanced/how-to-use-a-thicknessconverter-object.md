@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 311998595cb1584c276afc28510e1750c770ae93
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c2445eba7556822c8265337ec97c2f0a9f1d5042
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-a-thicknessconverter-object"></a>Postupy: Použití objektu ThicknessConverter
 ## <a name="example"></a>Příklad  
@@ -41,6 +41,6 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Thickness>  
  <xref:System.Windows.ThicknessConverter>  
  <xref:System.Windows.Controls.Border>  
- [Postupy: změnit Margin – vlastnost](http://msdn.microsoft.com/en-us/8a313efd-5f99-4097-b4c1-8fa49d8379a2)  
- [Postupy: převod ListBoxItem na nový datový typ.](http://msdn.microsoft.com/en-us/7a080b88-184e-4b27-bb61-d42bafba9727)  
+ [Postupy: změnit Margin – vlastnost](http://msdn.microsoft.com/library/8a313efd-5f99-4097-b4c1-8fa49d8379a2)  
+ [Postupy: převod ListBoxItem na nový datový typ.](http://msdn.microsoft.com/library/7a080b88-184e-4b27-bb61-d42bafba9727)  
  [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)

@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 11229a5677341db05223116c932f13b1f567e712
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 93dc8119e76f5c9cbff5c91a7e5d0cde3b0072f2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfiguračním souborem vám umožní poskytovat chování data koncový bod a služby v okamžiku nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
@@ -79,7 +79,7 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
 ### <a name="the-services-element"></a>\<Services > – Element  
  `services` Element obsahuje specifikace pro všechny služby hostitelů aplikací. Počínaje zjednodušené konfigurační model v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], v této části je volitelný.  
   
- [\<služby >](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
+ [\<services>](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
   
 ### <a name="the-service-element"></a>\<Služby > elementu  
  Každá služba má tyto atributy:  
@@ -88,7 +88,7 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
   
 -   `behaviorConfiguration`. Určuje název jednoho z `behavior` elementy v nalezen `behaviors` element. Zadané chování řídí akce, například zda služba umožňuje zosobnění. Pokud je jeho hodnota prázdná název nebo Ne `behaviorConfiguration` je k dispozici potom sadu výchozí chování služby je přidán ke službě.  
   
--   [\<služby >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+-   [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
   
 ### <a name="the-endpoint-element"></a>\<Endpoint > – Element  
  Každý koncový bod vyžaduje adresy, vazby a kontraktu, které jsou reprezentované pomocí následující atributy:  
@@ -101,7 +101,7 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
   
 -   `contract`. Určuje rozhraní, které definuje kontrakt. Toto je rozhraní implementované v běžné typ language runtime (CLR) určeného `name` atribut `service` elementu.  
   
--   [\<koncový bod > odkaz na element](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
+-   [\<koncový bod > odkaz na element](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
   
 ### <a name="the-bindings-element"></a>\<Vazby > elementu  
  `bindings` Element obsahuje specifikace pro všechny vazby, které můžete používat libovolný koncový bod definované v jakékoli služby.  
@@ -111,19 +111,19 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
 ### <a name="the-binding-element"></a>\<Vazby > elementu  
  `binding` Elementů obsažených v `bindings` prvek může být buď jedné vazby poskytované systémem (najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md)) nebo vlastní vazby (najdete v části [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md)). `binding` Element má `name` atribut, který korelaci vazba s zadaného v koncového bodu `bindingConfiguration` atribut `endpoint` elementu. Pokud není zadán žádný název, potom vazbou odpovídá na výchozí hodnoty tohoto typu vazby.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]Konfigurace služeb a klientů, najdete v části [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]Konfigurace služeb a klientů, najdete v části [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
   
  [\<Vazba >](../../../docs/framework/misc/binding.md)  
   
 ### <a name="the-behaviors-element"></a>\<Chování > elementu  
  Toto je kontejnerový element pro `behavior` prvky, které definují chování pro službu.  
   
- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
   
 ### <a name="the-behavior-element"></a>\<Chování > elementu  
  Každý `behavior` element je identifikována `name` atribut a poskytuje buď poskytované systémem chování, například <`throttling`>, nebo vlastní chování. Pokud není zadán název tohoto chování prvku odpovídá výchozí chování služba nebo koncový bod.  
   
- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
+ [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
 ## <a name="how-to-use-binding-and-behavior-configurations"></a>Jak používat vazby a konfigurace chování  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]umožňuje snadno sdílet konfigurace mezi koncovými body pomocí referenčního systému v konfiguraci. Namísto přímo přiřazení hodnoty konfigurace pro koncový bod, konfigurace související se vazby hodnoty jsou seskupené v `bindingConfiguration` elementů v `<binding>` oddílu. Konfigurace vazeb je pojmenovanou skupinu nastavení u vazby. Koncové body pak můžete odkazovat `bindingConfiguration` podle názvu.  
@@ -274,6 +274,6 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
   
 ## <a name="see-also"></a>Viz také  
  [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)  
- [Konfigurace aplikací pro Windows Communication Foundation](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
- [\<služby >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+ [Konfigurace aplikací pro Windows Communication Foundation](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
+ [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
  [\<Vazba >](../../../docs/framework/misc/binding.md)

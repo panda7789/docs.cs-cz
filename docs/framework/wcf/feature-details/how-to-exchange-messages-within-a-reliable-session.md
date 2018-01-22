@@ -14,17 +14,17 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: aad62d8532fff09157d53f8307fb2b9dcd506cd1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba3948ef52e6ce527b0bdba77652949e43d05eb2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Postupy: Výměna zpráv ve spolehlivých relacích
 
 Toto téma popisuje kroky potřebné k povolení spolehlivé relace pomocí jedné vazby poskytované systémem, které podporují tyto relace, ale není ve výchozím nastavení. Povolit spolehlivé relace imperativní pomocí kódu nebo deklarativně v konfiguračním souboru. Tento postup používá konfigurační soubory klienta a služby, povolte spolehlivé relace a stanovení, zda doručení zpráv ve stejném pořadí, ve které byly odeslány.
 
-Část klíče tohoto postupu je, že element konfigurace koncového bodu obsahovat `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `Binding1`. [  **\<Vazby >** ](../../../../docs/framework/misc/binding.md) konfigurační prvek odkazuje tento název pro nastavení Povolit spolehlivé relace `enabled` atribut [  **\<reliableSession >** ](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) element `true`. Zadejte záruky doručení pro spolehlivé relace nastavením `ordered` atribut `true`.
+Část klíče tohoto postupu je, že element konfigurace koncového bodu obsahovat `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `Binding1`. [  **\<Vazby >** ](../../../../docs/framework/misc/binding.md) konfigurační prvek odkazuje tento název pro nastavení Povolit spolehlivé relace `enabled` atribut [  **\<reliableSession >** ](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) element `true`. Zadejte záruky doručení pro spolehlivé relace nastavením `ordered` atribut `true`.
 
 Zdroj kopírování tohoto příkladu, najdete v části [spolehlivá relace WS](../../../../docs/framework/wcf/samples/ws-reliable-session.md).
 

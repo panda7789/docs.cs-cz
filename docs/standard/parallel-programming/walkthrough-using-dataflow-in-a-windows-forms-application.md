@@ -15,11 +15,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: e5389b1a9d608ad8aae002f3ef9b00420f998b76
-ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
+ms.openlocfilehash: 8c0d44ca7933626c95603ccc81102889ba4c23cb
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Postupy: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -87,7 +87,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
     > [!NOTE]
-    >  C# verzi `CreateCompositeBitmap` metoda používá ukazatele umožňující efektivní zpracování <xref:System.Drawing.Bitmap?displayProperty=nameWithType> objekty. Proto je nutné povolit **povolit nezabezpečený kód** možnost ve vašem projektu, aby bylo možné používat [unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) – klíčové slovo. Další informace o tom, jak povolit nezabezpečený kód [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] projektu najdete v tématu [stránku sestavení, Návrhář projektu (C#)] https://msdn.microsoft.com/library/kb4wyys2).  
+    >  C# verzi `CreateCompositeBitmap` metoda používá ukazatele umožňující efektivní zpracování <xref:System.Drawing.Bitmap?displayProperty=nameWithType> objekty. Proto je nutné povolit **povolit nezabezpečený kód** možnost ve vašem projektu, aby bylo možné používat [unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) – klíčové slovo. Další informace o tom, jak povolit nezabezpečený kód [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] projektu najdete v tématu [stránka sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
  Následující tabulka popisuje členy sítě.  
   

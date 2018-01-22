@@ -25,11 +25,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 14d003c36fd3733c329aad1362c01e91f108ec2f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 335e9487468522abb3a18f51f9a089d25519e71c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Využívá oprávnění k ochraně prostředkům a datům. Kde vaše aplikace můžou číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí s částečnou důvěryhodností, pravděpodobně nebudete mít přístup k datům nebo možná budete muset změnit způsob přístupu k datům.  
@@ -362,7 +362,7 @@ public void Write()
 ## <a name="database-access"></a>Přístup k databázi  
  Oprávnění požadovaná pro přístup k databázi lišit v závislosti na poskytovateli databáze; pouze aplikace, které běží s příslušnými oprávněními ale může přístup k databázi prostřednictvím datového připojení. Další informace o oprávněních, která jsou nutné pro přístup k databázi najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../../../docs/framework/data/adonet/code-access-security.md).  
   
- Pokud databázi nelze přistupovat přímo, protože chcete, aby aplikace na spouštění v částečné důvěryhodnosti, můžete jako alternativní prostředek pro přístup k datům webové služby. Webová služba je softwarového produktu, který lze programově přistupovat přes síť. S webovými službami můžou aplikace sdílet data mezi zón skupiny kódu. Ve výchozím nastavení je aplikace v místním intranetu a Internetu zón uděleno oprávnění k přístupu k jejich lokality původu, která umožňuje, aby volání webové služby hostované na stejném serveru. Další informace najdete v části [webových služeb v rozhraní ASP.NET AJAX](http://msdn.microsoft.com/en-us/8290e543-7eff-47a4-aace-681f3c07229b) nebo [Windows Communication Foundation](http://msdn.microsoft.com/library/ms735119.aspx).  
+ Pokud databázi nelze přistupovat přímo, protože chcete, aby aplikace na spouštění v částečné důvěryhodnosti, můžete jako alternativní prostředek pro přístup k datům webové služby. Webová služba je softwarového produktu, který lze programově přistupovat přes síť. S webovými službami můžou aplikace sdílet data mezi zón skupiny kódu. Ve výchozím nastavení je aplikace v místním intranetu a Internetu zón uděleno oprávnění k přístupu k jejich lokality původu, která umožňuje, aby volání webové služby hostované na stejném serveru. Další informace najdete v části [webových služeb v rozhraní ASP.NET AJAX](http://msdn.microsoft.com/library/8290e543-7eff-47a4-aace-681f3c07229b) nebo [Windows Communication Foundation](http://msdn.microsoft.com/library/ms735119.aspx).  
   
 ## <a name="registry-access"></a>Přístup k registru  
  <xref:System.Security.Permissions.RegistryPermission> Třída řídí přístup k registru operačního systému. Ve výchozím nastavení můžete jenom aplikace, které běží místně přistupovat k registru.  <xref:System.Security.Permissions.RegistryPermission>aplikaci jenom uděluje práva k zkuste přístup k registru; se nezaručuje, že přístup bude úspěšné, protože operační systém stále vynucuje zabezpečení v registru.  

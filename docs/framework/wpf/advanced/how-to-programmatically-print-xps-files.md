@@ -20,16 +20,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 402568a78ccb2f56c6adb108536edfb121440642
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b58e617fb04ecaba45ed655dc650459e89453dd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS z programu
 Můžete použít jeden přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez nutnosti otevírání <xref:System.Windows.Controls.PrintDialog> nebo, pokud v zásadě žádné [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  
   
- Můžete také vytisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory pomocí mnoho <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace o tom [tisk dokumentu XPS](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c).  
+ Můžete také vytisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory pomocí mnoho <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace o tom [tisk dokumentu XPS](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c).  
   
  Dalším způsobem, jak tisk [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] , je použít <xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> nebo <xref:System.Windows.Controls.PrintDialog.PrintVisual%2A> metody <xref:System.Windows.Controls.PrintDialog> ovládacího prvku. V tématu [vyvolat dialogové okno tisku](../../../../docs/framework/wpf/advanced/how-to-invoke-a-print-dialog.md).  
   
@@ -61,7 +61,7 @@ Můžete použít jeden přetížení <xref:System.Printing.PrintQueue.AddJob%2A
   
  Vzhledem k tomu, že původně bude několik XPSDrv tiskárny k dispozici ihned po vydání [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] a [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)], musíte ke skrytí bez XPSDrv tiskárny jako XPSDrv tiskárny. Uděláte to tak, přidejte do seznamu souborů v následujícím klíči registru počítače se systémem aplikace Pipelineconfig.xml:  
   
- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Drivers\Version-3\\*\<PseudoXPSPrinter >*\DependentFiles  
+ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Drivers\Version-3\\*\<PseudoXPSPrinter>*\DependentFiles  
   
  kde  *\<PseudoXPSPrinter >* je všechny tiskové fronty. Je pak nutné počítač restartovat.  
   
@@ -75,8 +75,8 @@ Můžete použít jeden přetížení <xref:System.Printing.PrintQueue.AddJob%2A
  <xref:System.Threading.ApartmentState>  
  <xref:System.STAThreadAttribute>  
  [XPS](http://www.microsoft.com/xps)  
- [Tisk dokumentu XPS](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
- [Spravovaná a nespravovaná vlákna](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5)  
+ [Tisk dokumentu XPS](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
+ [Spravovaná a nespravovaná vlákna](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5)  
  [isXPS.exe (kontrolu shody nástroj)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)  
  [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)

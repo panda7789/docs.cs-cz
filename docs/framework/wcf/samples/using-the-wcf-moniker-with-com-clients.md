@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: dbda85f056d7e8a465127bff948dcaaaf41094d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18633ab7c7d54b4feafc22f6b598acc564084f4a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tento příklad znázorňuje způsob použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] monikeru služby pro integraci webových služeb do založená na modelu COM vývojových prostředí, jako je například Microsoft Office Visual Basic pro aplikace (Office VBA) nebo Visual Basic 6.0. Tato ukázka se skládá z klienta Windows Script Host (.vbs), podporující klientské knihovny DLL (.dll) a služby knihovny (DLL) hostované Internetové informační služby (IIS). Služba je služba kalkulačky a klient COM volá matematické operace – přidat, odečíst, násobit a dělit – ve službě. Činnost klienta je viditelný v systému windows pole zpráva.  
@@ -158,7 +158,7 @@ WScript.Echo "WSDL service moniker: 145 - 76.54 = " & wsdlServiceMoniker.Subtrac
   
  Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje volání modelu COM pomocí Přezdívka kontraktu WSDL ke komunikaci s klient COM [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
-## <a name="metadata-exchange-contract"></a>Metadata Exchange kontraktu  
+## <a name="metadata-exchange-contract"></a>Metadata Exchange Contract  
  Pokud chcete používat Přezdívka s MEX kontraktu, stejně jako u kontraktů WSDL, není požadována žádná registrace klienta. V době provedení prostřednictvím interní použití systému Metadata Exchange se načítají, kontrakt služby.  
   
  Klientská aplikace ComCalcClient.vbs znovu používá `GetObject` funkce vytvořit proxy server pro službu.  
@@ -216,7 +216,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 2.  Spusťte ComCalcClient.vbs z \client získáte složky pro konkrétní jazyk. Činnost klienta se zobrazí ve windows pole zpráva.  
   
-3.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky mezi počítači  
   

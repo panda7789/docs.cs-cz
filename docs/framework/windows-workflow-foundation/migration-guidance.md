@@ -13,11 +13,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 96a8b8321239e3f01b30bcbe0400930a292a8f41
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e04c63754960dca44558d888b8ce357220562ea7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migration-guidance"></a>Pokyny pro migraci
 V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost Microsoft vydává druhý hlavní verzi [!INCLUDE[wf](../../../includes/wf-md.md)]. [!INCLUDE[wf1](../../../includes/wf1-md.md)]byla vydána v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (to zahrnuté typy v oborech názvů System.Workflow.* barvy; nyní označuje jako WF3) a rozšířené v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. WF3 je také součástí [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], ale existuje existuje souběžně s novou technologií pracovního postupu (typy v systém.\* obory názvů; označuje jako WF4). Při určování, kdy se mají přijmout WF4, je potřeba nejdřív rozpoznat řídit načasování.  
@@ -45,7 +45,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost 
  [WF pokyny: Stav počítače](http://go.microsoft.com/fwlink/?LinkId=153855)  
  Popisuje tok řízení WF4 modelování chybí aktivitu stav počítače.  
   
- Všimněte si, že v tomto návodu se aplikuje jenom na projekty workflow, které cílí na rozhraní .NET Framework 4. Pracovní postupy stavu počítače byly přidány v rozhraní .NET 4.0.1 s vydáním Platform Update 1 a byly součástí rozhraní .NET Framework 4.5. [!INCLUDE[crabout](../../../includes/crabout-md.md)]stav počítače pracovních postupů v rozhraní .NET 4.0.1 - 4.0.3 a rozhraní .NET Framework 4.5, najdete v části [aktualizace 4.0.1 pro rozhraní Microsoft .NET Framework 4 funkce](http://msdn.microsoft.com/en-us/de3297bd-c3e1-4126-95be-2ed7fe2a98fc) a [stavu počítače pracovních](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md).  
+ Všimněte si, že v tomto návodu se aplikuje jenom na projekty workflow, které cílí na rozhraní .NET Framework 4. Pracovní postupy stavu počítače byly přidány v rozhraní .NET 4.0.1 s vydáním Platform Update 1 a byly součástí rozhraní .NET Framework 4.5. [!INCLUDE[crabout](../../../includes/crabout-md.md)]stav počítače pracovních postupů v rozhraní .NET 4.0.1 - 4.0.3 a rozhraní .NET Framework 4.5, najdete v části [aktualizace 4.0.1 pro rozhraní Microsoft .NET Framework 4 funkce](http://msdn.microsoft.com/library/de3297bd-c3e1-4126-95be-2ed7fe2a98fc) a [stavu počítače pracovních](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md).  
   
  [WF kuchařka migrace: Vlastní aktivity](http://go.microsoft.com/fwlink/?LinkId=153856)  
  Poskytuje pokyny pro přepracování WF3 vlastní aktivity na WF4 a příklady.  

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: cecb38e13a9539dcf92f1dcc7eecbd35c493a3f9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: cebd146505cd714a77c30cffe8fd3440c2d9f3cb
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET je sada tříd, které zveřejňují služby data access services pro programátory v jazyce rozhraní .NET Framework. ADO.NET poskytuje bohatou sadu součásti pro vytváření aplikací pro distribuované, sdílení dat. Je nedílnou součástí rozhraní .NET Framework, poskytuje přístup k relační, XML a data aplikací. ADO.NET podporuje celou řadu vývoj potřeby, včetně vytváření front-endovou databázi klienti a objekty, střední vrstvu obchodní aplikace, nástroje, jazyky nebo internetových prohlížečů.  
@@ -55,7 +55,7 @@ ADO.NET je sada tříd, které zveřejňují služby data access services pro pr
  Popisuje funkce a chování, které jsou specifické pro zprostředkovatele dat .NET Framework pro Oracle.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Připravte si kód pro rozhraní .NET Framework a zabezpečení v nativním režimu](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
+ [Připravte si kód pro rozhraní .NET Framework a zabezpečení v nativním režimu](http://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
  Obsahuje odkazy na témata týkající se zabezpečení pro Visual Studio, rozhraní .NET Framework a šifrování.  
   
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  

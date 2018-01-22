@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0717e3b7f4dc72c2e5a75149b88f1f1d1285dad1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0969a9e88dee4a8d7e298ff4510211f49e8a6e35
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="combobox"></a>ComboBox
 <xref:System.Windows.Controls.ComboBox> Řízení předkládá uživatelům seznam možností. V seznamu se zobrazí a skrytý ovládací prvek rozšíří a sbalí. Ve svém výchozím stavu v seznamu sbalena, zobrazení pouze jednu možnost. Uživatel klikne tlačítko Zobrazit seznam možností.  
@@ -33,7 +33,7 @@ ms.lasthandoff: 12/22/2017
 Sbalené a rozbalené  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: získání ComboBoxItem](http://msdn.microsoft.com/en-us/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
+ [Postupy: získání ComboBoxItem](http://msdn.microsoft.com/library/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ComboBox>

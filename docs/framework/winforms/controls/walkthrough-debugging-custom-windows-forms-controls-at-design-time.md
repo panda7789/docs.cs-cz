@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7fd38f6246d44bd24753d9c86a5b0b08819d3db7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4dfdc102a5aeb2e3eaccde28a8ce57a1878141e4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu
 Při vytváření vlastního ovládacího prvku často zjistíte, je nezbytné k ladění její chování v době návrhu. To platí hlavně vytváříte-li vlastní návrháře pro vaše vlastní ovládací prvek. Podrobnosti najdete v tématu [návod: vytváření funkce systému Windows Forms ovládací prvek, trvá využít nástroje Visual Studio návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
@@ -55,14 +55,14 @@ Při vytváření vlastního ovládacího prvku často zjistíte, je nezbytné k
  Jakmile budete hotovi, budete mít k pochopení úlohy plánování pro ladění v době návrhu chování vlastního ovládacího prvku.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu aplikace. Tento projekt použije k vytvoření aplikace, který je hostitelem vlastního ovládacího prvku.  
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
--   Vytvořte projekt aplikace pro systém Windows s názvem "DebuggingExample". Podrobnosti najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+-   Vytvořte projekt aplikace pro systém Windows s názvem "DebuggingExample". Podrobnosti najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 ## <a name="creating-a-control-library-project"></a>Vytvoření projektu knihovny ovládacího prvku  
  Dalším krokem je vytvoření projektu knihovny řízení a nastavení vlastního ovládacího prvku.  
@@ -71,9 +71,9 @@ Při vytváření vlastního ovládacího prvku často zjistíte, je nezbytné k
   
 1.  Přidat **knihovny ovládacích prvků Windows** projektu k řešení.  
   
-2.  Přidejte nový **UserControl** položky k DebugControlLibrary projektu. Podrobnosti najdete v tématu [NIB: postupy: Přidání nové položky projektu](http://msdn.microsoft.com/en-us/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Zadejte základní název "DebugControl" nové zdrojový soubor.  
+2.  Přidejte nový **UserControl** položky k DebugControlLibrary projektu. Podrobnosti najdete v tématu [NIB: postupy: Přidání nové položky projektu](http://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Zadejte základní název "DebugControl" nové zdrojový soubor.  
   
-3.  Pomocí **Průzkumníku řešení**, odstraňte výchozí řízení projektu odstraněním souboru kódu s základní název "`UserControl1`". Podrobnosti najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+3.  Pomocí **Průzkumníku řešení**, odstraňte výchozí řízení projektu odstraněním souboru kódu s základní název "`UserControl1`". Podrobnosti najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
   
 4.  Sestavte řešení.  
   

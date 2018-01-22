@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: accbc05018644e3ead4ee0c08f44ec39cad8f036
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c43c195411b07467f1041ecc5ed55239a1327dc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]úvodní témata najdete v následujících umístěních. Mnoho z těchto témat také obsahují odkazy na související témata, které obsahují podrobnější informace.  
@@ -33,7 +33,7 @@ ms.lasthandoff: 12/22/2017
  [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
  Poskytuje přístup založený na úlohách k vytvoření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace, které přístup [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály.  
   
- [Visual Studio a .NET Framework – glosář](http://msdn.microsoft.com/en-us/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
+ [Visual Studio a .NET Framework – glosář](http://msdn.microsoft.com/library/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
  Zahrnuje termínů používaných v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dokumentace.  
   
 ## <a name="external-resources"></a>Externí zdroje  

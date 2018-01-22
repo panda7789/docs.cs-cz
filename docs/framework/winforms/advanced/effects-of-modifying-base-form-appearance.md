@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9b808d10cd393d84ed29cb5e1cccfcff9c6c098d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c5121238341afac46ad1c999710d51b5c203a1b6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="effects-of-modifying-a-base-form39s-appearance"></a>Účinky úpravy základní formulář & č. 39; s vzhledu
 Během vývoje aplikace může často potřebujete změnit vzhled základní formulář, ze kterého jsou dědění jiných formulářů v projektu (nebo jiné projekty).  
@@ -32,7 +32,7 @@ Během vývoje aplikace může často potřebujete změnit vzhled základní for
  V době návrhu, změny vzhledu základního formuláře (ať už, nastavení vlastnosti nebo přidání a odčítání ovládacích prvků) se projeví na zděděné formuláře při sestavení projektu obsahující základní formulář. Není dostatek můžete jednoduše uložit změny do základní formulář. Pokud chcete vytvořit projekt, vyberte **sestavení** z **sestavení** nabídky.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
  Změny provedené v době běhu základní formulář mít žádný vliv na zděděné formuláře, které jsou již vytvořeny.  
   

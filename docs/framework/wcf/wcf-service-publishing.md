@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4e3d86153d4192e04e55fb9e99ef588b45511560
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Služba publikování vám usnadní pokročíte z časná vývojového prostředí poskytované [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta ve skutečnosti nasazení aplikace do produkčního prostředí pro účely testování. Než provedete na plán konečné nasazení, můžete použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] službu publikování ověřte, že vaše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba provádí správně a je připravena k publikování. Můžete také nasadit vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby knihovny na různé cílové umístění pro testování.  
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Knihovna syndikace Service.  
   
- Tyto šablony služby můžete najít tak, že zvolíte **soubor** -> **nový projekt** -> **jazyka Visual Basic** nebo **Visual C#**  ->  **WCF**. Pro další šablony WCF v tomto umístění (včetně aplikace pracovního postupu služby WCF a aplikace služby WCF) můžete publikovat pomocí [jedním kliknutím publikování pro webové aplikace](https://msdn.microsoft.com/en-us/library/dd465337\(v=vs.110\).aspx).  
+ Tyto šablony služby můžete najít tak, že zvolíte **soubor** -> **nový projekt** -> **jazyka Visual Basic** nebo **Visual C#**  ->  **WCF**. Pro další šablony WCF v tomto umístění (včetně aplikace pracovního postupu služby WCF a aplikace služby WCF) můžete publikovat pomocí [jedním kliknutím publikování pro webové aplikace](https://msdn.microsoft.com/library/dd465337\(v=vs.110\).aspx).  
   
  Služby mohou být publikovány do následujícího umístění target.  
   
@@ -66,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="svc-file"></a>. Soubor SVC  
  Operaci publikování vygeneruje pro každý soubor *.svc [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, zda soubor existuje nebo Ne, aby platnosti verze. Existují dva různé typy souborů svc: jeden pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovny služby a knihovna syndikace Service a další pro sekvenční a stav počítače pracovního postupu služby knihovny. Generovaný objekt \*.svc soubor zkopírován do kořenové složky v cílovém umístění.  
   
-### <a name="webconfig-file"></a>Soubor Web.config  
+### <a name="webconfig-file"></a>Web.config File  
  Pokaždé, když pro konkrétní cílové umístění, publikování projektu služby se vytvoří soubor Web.config.  
   
  Vygenerovaný soubor Web.config obsahuje webové části, které jsou užitečné pro hostování webů a obsah souboru App.config pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovny služby s následujícími změnami:  

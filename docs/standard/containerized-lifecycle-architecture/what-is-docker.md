@@ -8,11 +8,11 @@ ms.date: 09/21/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7e84e12d57aab853645297db84953160c4ee1141
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c75b2fa87e5aad93693c76c3bbd135044b36525f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -28,13 +28,13 @@ Vývojáři mohou použít vývojové prostředí v systému Windows, Linux nebo
 
 Pro hostování kontejnery ve vývojovém prostředí a poskytnout další vývojářské nástroje, dodává Docker [Docker Community Edition (CE)](https://www.docker.com/community-edition) pro systém Windows nebo pro systému macOS. Tyto produkty nainstalujte nezbytné virtuálního počítače (Docker hostitele) k hostování kontejnerů. Docker také zpřístupní [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), který je určený pro vývoj enterprise a je používána týmy IT, kteří sestavení, odeslání a spusťte velké důležitými obchodními aplikacemi v produkčním prostředí.
 
-Ke spuštění [Windows kontejnery](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview), existují dva typy moduly Runtime:
+Ke spuštění [Windows kontejnery](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview), existují dva typy moduly Runtime:
 
 -   **Windows Server kontejneru** tento modul runtime poskytuje izolace aplikací prostřednictvím technologie izolace, proces a obor názvů. Kontejner Windows serveru sdílí jádro s hostitelem kontejneru a všechny kontejnery spuštěných na hostiteli.
 
 -   **Technologie Hyper-V kontejneru** tím se rozšíří na izolaci poskytované Windows Server kontejnery spuštěním každý kontejner ve vysoce optimalizovaného virtuálního počítače. V této konfiguraci není jádra hostitele kontejneru sdílet s kontejnery technologie Hyper-V, poskytuje lepší izolace.
 
-Pro obrázky těchto kontejnerů, vytvoří se stejným způsobem a stejné funkce. Rozdíl je v tom, jak se kontejner vytvoří z bitové kopie – spuštění kontejner technologie Hyper-V vyžaduje další parametr. Podrobnosti najdete v tématu [kontejnery technologie Hyper-V](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview).
+Pro obrázky těchto kontejnerů, vytvoří se stejným způsobem a stejné funkce. Rozdíl je v tom, jak se kontejner vytvoří z bitové kopie – spuštění kontejner technologie Hyper-V vyžaduje další parametr. Podrobnosti najdete v tématu [kontejnery technologie Hyper-V](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview).
 
 ## <a name="comparing-docker-containers-with-vms"></a>Porovnání Docker kontejnery s virtuálními počítači
 

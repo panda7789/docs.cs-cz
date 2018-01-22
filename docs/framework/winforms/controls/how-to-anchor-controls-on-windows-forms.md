@@ -24,11 +24,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7fcc672dea63bc74980b4829129f530de9cc72ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ceaacc250d48e7199d7224f95aa91ed976c097e0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-anchor-controls-on-windows-forms"></a>Postupy: Ukotvování ovládacích prvků ve Windows Forms
 Při návrhu formuláře, který uživatel může změnit velikost za běhu, ovládací prvky na formuláři by měla velikost a změnit umístění správně. Změna velikosti ovládacích prvků dynamicky pomocí formuláře, můžete použít <xref:System.Windows.Forms.Control.Anchor%2A> vlastnosti ovládacích prvků Windows Forms. <xref:System.Windows.Forms.Control.Anchor%2A> Vlastnost definuje pozice ukotvení pro ovládací prvek. Když je ukotven ovládacího prvku na formulář a formulář se změnila velikost, ovládacího prvku udržuje vzdálenost mezi ovládacího prvku a pozice ukotvení. Pokud máte například <xref:System.Windows.Forms.TextBox> ovládací prvek, který je ukotven k levé, pravé a dolního okraje formuláře, při změně velikosti formuláře <xref:System.Windows.Forms.TextBox> vodorovně řízení změní velikost tak, aby udržuje stejnou vzdálenost od pravé a levé straně formuláře. Kromě toho ovládacího prvku umisťuje samotné svisle tak, aby jeho umístění je vždy stejnou vzdálenost od dolní části formuláře. Pokud není ukotven ovládacího prvku a formuláře, dojde ke změně pozice ovládacího prvku vůči okrajům formuláře.  
@@ -36,7 +36,7 @@ Při návrhu formuláře, který uživatel může změnit velikost za běhu, ovl
  <xref:System.Windows.Forms.Control.Anchor%2A> Vlastnost komunikuje s <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost. Další informace najdete v tématu [přehled vlastnosti AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ### <a name="to-anchor-a-control-on-a-form"></a>Ukotvení ovládacího prvku ve formuláři  
   

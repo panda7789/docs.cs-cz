@@ -18,14 +18,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9361de4726b1dc58238db5ca7b5605f2cc75485d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d7cbef9247b82268b8006d640b967ffd03ae6717
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Vystavení komponent COM pro rozhraní .NET Framework
-Tento oddíl shrnuje proces nutný k zpřístupnění existující součást COM do spravovaného kódu. Podrobnosti o zápis servery COM, která úzce integrovat s rozhraním .NET Framework, najdete v části [aspekty návrhu pro spolupráci](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689).  
+Tento oddíl shrnuje proces nutný k zpřístupnění existující součást COM do spravovaného kódu. Podrobnosti o zápis servery COM, která úzce integrovat s rozhraním .NET Framework, najdete v části [aspekty návrhu pro spolupráci](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689).  
   
  Existující součásti COM jsou cenné prostředky ve spravovaném kódu jako střední vrstvu obchodní aplikace nebo jako izolované funkce. Ideální součást má primární spolupracující sestavení a úzce vyhovuje standardům programovací způsobené COM.  
   
@@ -35,7 +35,7 @@ Tento oddíl shrnuje proces nutný k zpřístupnění existující součást COM
   
      Modul common language runtime požaduje metadata pro všechny typy, včetně typy modelu COM. Existuje několik způsobů, jak získat sestavení obsahující typy modelu COM importován jako metadata.  
   
-2.  [Vytvoření typů COM ve spravovaném kódu](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66).  
+2.  [Vytvoření typů COM ve spravovaném kódu](http://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66).  
   
      Můžete zkontrolovat typy modelu COM, aktivovat instancí a vyvolání metody pro objekt COM stejným způsobem jako u jakékoli spravovaného typu.  
   
@@ -49,7 +49,7 @@ Tento oddíl shrnuje proces nutný k zpřístupnění existující součást COM
   
 ## <a name="see-also"></a>Viz také  
  [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)  
- [Aspekty návrhu pro spolupráci](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)  
+ [Aspekty návrhu pro spolupráci](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)  
  [Ukázka zprostředkovatele s objekty COM: klient .NET a server COM](../../../docs/framework/interop/com-interop-sample-net-client-and-com-server.md)  
  [Jazyková nezávislost a jazykově nezávislé komponenty](../../../docs/standard/language-independence-and-language-independent-components.md)  
  [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)

@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0ab311974b1fe8cbc2707ee0818806d6264a1573
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ee22feab20e2c96f3e708a277f9048f739213520
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="context-exchange-correlation"></a>Korelace kontextové výměny
 Korelace kontextu je založené na mechanismu exchange kontext, který je popsané v [Exchange kontextu .NET – specifikace protokolu](http://go.microsoft.com/fwlink/?LinkId=166059). Korelace kontextové používá dobře známé kontextu hlavičky nebo soubor cookie k úpravě zprávy na správnou instanci. Použít korelace kontextu, na základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding>, nebo <xref:System.ServiceModel.NetTcpContextBinding> na zadaný pro koncový bod se musí použít <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Toto téma vysvětluje, jak používat kontextu korelace aktivitách zasílání zpráv ve službě pracovního postupu.  
@@ -109,6 +109,6 @@ Send request2 = new Send
 };  
 ```  
   
- Všimněte si, že se v těchto příkladech, korelace kontextu explicitně nakonfigurovaný. Pokud pracovní postup klienta není hostují taky v <xref:System.ServiceModel.Activities.WorkflowServiceHost>, pak korelace musí být explicitně nakonfigurovaný, pokud aktivity jsou obsaženy v rámci <xref:System.ServiceModel.Activities.CorrelationScope> aktivity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace kontextu, najdete v článku [NetContextExchangeCorrelation](http://msdn.microsoft.com/en-us/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) ukázka.  
+ Všimněte si, že se v těchto příkladech, korelace kontextu explicitně nakonfigurovaný. Pokud pracovní postup klienta není hostují taky v <xref:System.ServiceModel.Activities.WorkflowServiceHost>, pak korelace musí být explicitně nakonfigurovaný, pokud aktivity jsou obsaženy v rámci <xref:System.ServiceModel.Activities.CorrelationScope> aktivity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace kontextu, najdete v článku [NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) ukázka.  
   
  Pokud klienta, která volá služby pracovního postupu není pracovního postupu, poté ji opakovaných volání uskutečnit tak dlouho, dokud ji explicitně předá zpět kontext, který je vrácen z prvního volání služby pracovního postupu. Proxy vygenerovala přidáním odkazu na službu v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ukládat a předat ve výchozím nastavení tento kontext.

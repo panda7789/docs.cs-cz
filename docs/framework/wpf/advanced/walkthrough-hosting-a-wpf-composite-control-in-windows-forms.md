@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 965136c94b696fc182537b60dde71ee4f02afe7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 129d699455467679c86c803e6d3124e6a7dfa1f9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte významné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být efektivnější rozšířit stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spíše než přepsání od začátku. Obvyklým scénářem je, když chcete vložit jeden nebo více ovládacích prvků implementováno s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci vaší [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] aplikace. Další informace o přizpůsobení ovládacích prvků WPF najdete v tématu [přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md).  
@@ -142,7 +142,7 @@ namespace MyControls
   
  První třída `MyControl1`, je konkrétní třídu obsahující kód, který implementuje funkce [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] definované v MyControl1.xaml. Při analýze MyControl1.xaml [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou převedeny na stejnou třídu, a dva částečné třídy jsou sloučeny do kompilovaného ovládacího prvku. Z tohoto důvodu název třídy v souboru kódu na pozadí musí odpovídat názvu třídy přiřazené MyControl1.xaml a musí dědit z kořenového elementu ovládacího prvku. Druhé třídy `MyControlEventArgs`, je třída argumentů události, která se používá k odesílání dat zpět na hostitele.  
   
- Otevřete MyControl1.xaml.cs. Změnit existující deklaraci třídy tak, aby má následující název a dědí z <xref:System.Windows.Controls.Grid>.  
+ Open MyControl1.xaml.cs. Změnit existující deklaraci třídy tak, aby má následující název a dědí z <xref:System.Windows.Controls.Grid>.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#21](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml.cs#21)]  
   
@@ -278,7 +278,7 @@ WPF složeného ovládacího prvku hostované v aplikaci Windows Forms
     |groupBox7|lblAddress|Poštovní adresa:|  
     |groupBox7|lblCity|Město:|  
     |groupBox7|lblState|Stav:|  
-    |groupBox7|lblZip|ZIP:|  
+    |groupBox7|lblZip|Zip:|  
   
 ### <a name="initializing-the-form"></a>Inicializace formuláře  
  Obecně implementovat hostování kódu v formuláře <xref:System.Windows.Forms.Form.Load> obslužné rutiny události. Následující kód ukazuje <xref:System.Windows.Forms.Form.Load> obslužné rutiny události, obslužné rutiny pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku <xref:System.Windows.FrameworkElement.Loaded> událostí a deklarace pro několik globálních proměnných, které se používají později.  
@@ -334,6 +334,6 @@ WPF složeného ovládacího prvku hostované v aplikaci Windows Forms
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
- [Návrhář WPF](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
  [Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)

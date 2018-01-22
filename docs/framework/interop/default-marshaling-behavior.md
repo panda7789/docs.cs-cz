@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f4cd38d8e026b3cf4bb0bf224f81be9bdab23e06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0e66caf800fd49b4822ee22326b8a5cf712d99bb
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech že tu určují chování data související s parametry metody jak předává mezi spravovanými a nespravovanými paměti. Tyto vestavěné pravidla řízení takové zařazování aktivitám v podobě transformace typu dat, zda volaný můžete změnit data do ní předán a tyto změny vrátit volajícímu, a pod kterým okolností zařazování poskytuje optimalizace výkonu.  
@@ -33,7 +33,7 @@ Zařazování spolupráce funguje v pravidlech že tu určují chování data so
  Tato část identifikuje výchozí chování charakteristika zprostředkovatel komunikace s objekty zařazování služby. Představuje podrobné informace o zařazování polí, logická hodnota typy, typy char, delegáti, tříd, objekty, řetězce a struktury.  
   
 > [!NOTE]
->  Zařazování obecných typů není podporována. Další informace najdete v tématu [spolupráce pomocí obecných typů](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58).  
+>  Zařazování obecných typů není podporována. Další informace najdete v tématu [spolupráce pomocí obecných typů](http://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58).  
   
 ## <a name="memory-management-with-the-interop-marshaler"></a>Správa paměti s spolupráce zařazování vláken  
  Zařazování spolupráce se vždy pokusí volné paměti přidělené nespravovaného kódu. Toto chování je v souladu s COM pravidla správy paměti, ale se liší od pravidla, která řídí nativní C++.  
@@ -50,10 +50,10 @@ BSTR MethodOne (BSTR b) {
   
  Ale pokud definujete metodu jako vyvolání prototypu platformy, nahraďte, každý **BSTR** zadejte s <xref:System.String> zadejte a volání `MethodOne`, modul se pokusí volné `b` dvakrát. Chování zařazování můžete změnit pomocí <xref:System.IntPtr> typy místo **řetězec** typy.  
   
- Modul runtime vždy používá **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyl přiřazen paměti, že pracujete s **CoTaskMemAlloc** metodu, musíte použít **IntPtr** a volné paměti ručně pomocí odpovídající metodu. Podobně se můžete vyhnout automatické paměti uvolňování v situacích, kde by nikdy uvolnit paměť, například jako při použití **GetCommandLine** funkce z Kernel32.dll, který vrací ukazatel na paměti jádra. Podrobnosti o ručně uvolnění paměti najdete v tématu [vyrovnávací paměti ukázka](http://msdn.microsoft.com/en-us/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5).  
+ Modul runtime vždy používá **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyl přiřazen paměti, že pracujete s **CoTaskMemAlloc** metodu, musíte použít **IntPtr** a volné paměti ručně pomocí odpovídající metodu. Podobně se můžete vyhnout automatické paměti uvolňování v situacích, kde by nikdy uvolnit paměť, například jako při použití **GetCommandLine** funkce z Kernel32.dll, který vrací ukazatel na paměti jádra. Podrobnosti o ručně uvolnění paměti najdete v tématu [vyrovnávací paměti ukázka](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5).  
   
 ## <a name="default-marshaling-for-classes"></a>Výchozí zařazování pro třídy  
- Třídy mohou být zařazena pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždycky zařazené jako rozhraní. V některých případech rozhraní sloužící k zařazování třídy se nazývá rozhraní třídy. Informace o přepsání třídy rozhraní s rozhraním zvoleného najdete v tématu [představení rozhraní třídy](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
+ Třídy mohou být zařazena pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždycky zařazené jako rozhraní. V některých případech rozhraní sloužící k zařazování třídy se nazývá rozhraní třídy. Informace o přepsání třídy rozhraní s rozhraním zvoleného najdete v tématu [představení rozhraní třídy](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
   
 ### <a name="passing-classes-to-com"></a>Předávání tříd do modelu COM  
  Když spravovanou třídou předána do modelu COM, spolupráce vláken automaticky zabalí třídy pomocí modelu COM serveru proxy a předá rozhraní třída vyprodukované proxy server a volání metody COM. Proxy server pak deleguje všechna volání na rozhraní třída zpět do spravovaného objektu. Proxy server taky zpřístupňuje další rozhraní, která nejsou explicitně implementované v třídě. Proxy server, jako automaticky implementuje rozhraní **IUnknown** a **IDispatch** jménem třídy.  
@@ -388,7 +388,7 @@ interface _Graphics {
 |-----------------------|--------------|  
 |<xref:System.DateTime?displayProperty=nameWithType>|**DATUM**|  
 |<xref:System.Decimal?displayProperty=nameWithType>|**DECIMAL**|  
-|<xref:System.Guid?displayProperty=nameWithType>|**IDENTIFIKÁTOR GUID**|  
+|<xref:System.Guid?displayProperty=nameWithType>|**GUID**|  
 |<xref:System.Drawing.Color?displayProperty=nameWithType>|**OLE_COLOR**|  
   
  Následující kód ukazuje definici nespravované typy **datum**, **GUID**, **DECIMAL**, a **OLE_COLOR** v Stdole2 typu Knihovna.  

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d8d47b578d60d2c53aaa4b1f47e86430d3495ed1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2bfccccbcfa41f8ed67cb309a0e4a3dd9dda6b90
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je sada technologií v ADO.NET, které podporují vývoj aplikací orientovaných na data softwaru. Architekty a vývojáře aplikací orientovaných na data jste měli problémy s potřeba dosáhnout dva velmi různé cíle. Se musí modelu entity, vztahy a logiku z obchodních problémů, které jsou v řešení problémů a také musí pracovat s moduly data používá k ukládání a načítání dat. Data může span více úložných systémů, každou s vlastní protokoly; i aplikace, které pracují s systémem jedno úložiště, musíte vyvážit požadavky na úložiště systému podle požadavků zápisu kódu aplikace efektivní a udržovatelný.  
@@ -98,7 +98,7 @@ ms.lasthandoff: 01/17/2018
  Následující témata umožňují další informace o [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]:  
   
  [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
- Zadejte informace o tom, jak zprovoznění a rychle používá [rychlý Start](http://msdn.microsoft.com/en-us/0bc534be-789f-4819-b9f6-76e51d961675), který ukazuje, jak vytvořit jednoduchou [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
+ Zadejte informace o tom, jak zprovoznění a rychle používá [rychlý Start](http://msdn.microsoft.com/library/0bc534be-789f-4819-b9f6-76e51d961675), který ukazuje, jak vytvořit jednoduchou [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
   
  [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)  
  Definuje řadu podmínek, které jsou zavedené službou datového modelu Entity a [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a které se používají v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci.  

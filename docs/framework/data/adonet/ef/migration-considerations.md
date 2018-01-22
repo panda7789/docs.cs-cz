@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: da287ea76e2300abf1b00f3bbab5897520eb0828
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 8e4c1b06e5a3a7717b99379fd9bca2c5a8a14a6a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migration-considerations-entity-framework"></a>Posouzení migrace (rozhraní Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do existující aplikace. Jedním z nejčastěji důležitá z těchto výhod je schopnost používat konceptuální model k oddělení používá aplikace ze schématu ve zdroji dat datové struktury. To umožňuje vám umožní snadno provádět budoucí změny do úložiště modelu nebo ke zdroji dat bez zušlechtěných změn do aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], najdete v části [Entity Framework přehled](../../../../../docs/framework/data/adonet/ef/overview.md) a [datového modelu Entity](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/17/2018
  Cesta k migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] závisí na typu aplikace i na stávající strategie přístupu data. Však musí vždy provést následující úlohy při migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
 > [!NOTE]
->  Všechny tyto úlohy se provádí automaticky při použití nástroje modelu Entity Data Model počínaje [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)]. Další informace najdete v tématu [postupy: použití průvodce Entity Data Model](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d).  
+>  Všechny tyto úlohy se provádí automaticky při použití nástroje modelu Entity Data Model počínaje [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)]. Další informace najdete v tématu [postupy: použití průvodce Entity Data Model](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
 1.  Upgrade aplikace.  
   
@@ -48,12 +48,12 @@ ms.lasthandoff: 01/17/2018
   
 2.  Definujte modely a mapování.  
   
-     Model a mapování souborů definovat entity v konceptuálním modelu; struktury v zdroji dat, jako jsou tabulky, uložené procedury a zobrazení; a mapování mezi struktury zdrojové entity a data. Další informace najdete v tématu [postupy: ruční definování modelu a mapování souborů](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a).  
+     Model a mapování souborů definovat entity v konceptuálním modelu; struktury v zdroji dat, jako jsou tabulky, uložené procedury a zobrazení; a mapování mezi struktury zdrojové entity a data. Další informace najdete v tématu [postupy: ruční definování modelu a mapování souborů](http://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a).  
   
-     Typy, které jsou definované v modelu úložiště musí odpovídat názvu objektů v datovém zdroji. Pokud stávající aplikace zpřístupní data jako objekty, je třeba zajistit, že entit a vlastnosti, které jsou definované v konceptuálním modelu odpovídat názvům těchto existující datové třídy a vlastnosti. Další informace najdete v tématu [postupy: přizpůsobení modelování a mapování souborů na práci s objekty vlastní](http://msdn.microsoft.com/en-us/bb40c4db-0121-4e45-a167-8fb06707a708).  
+     Typy, které jsou definované v modelu úložiště musí odpovídat názvu objektů v datovém zdroji. Pokud stávající aplikace zpřístupní data jako objekty, je třeba zajistit, že entit a vlastnosti, které jsou definované v konceptuálním modelu odpovídat názvům těchto existující datové třídy a vlastnosti. Další informace najdete v tématu [postupy: přizpůsobení modelování a mapování souborů na práci s objekty vlastní](http://msdn.microsoft.com/library/bb40c4db-0121-4e45-a167-8fb06707a708).  
   
     > [!NOTE]
-    >  Entity Data Model Designer můžete použít k přejmenování entity v konceptuálním modelu tak, aby odpovídala stávající objekty. Další informace najdete v tématu [Entity Data Model Designer](http://msdn.microsoft.com/en-us/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf).  
+    >  Entity Data Model Designer můžete použít k přejmenování entity v konceptuálním modelu tak, aby odpovídala stávající objekty. Další informace najdete v tématu [Entity Data Model Designer](http://msdn.microsoft.com/library/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf).  
   
 3.  Definujte připojovací řetězec.  
   
@@ -61,10 +61,10 @@ ms.lasthandoff: 01/17/2018
   
 4.  Konfigurace [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] projektu.  
   
-     Odkazuje na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] projektu. Tyto soubory mapování můžete přidat do projektu zajistit, aby byly nasazené aplikace v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [postupy: ruční konfigurace projektu Entity Framework](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
+     Odkazuje na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] projektu. Tyto soubory mapování můžete přidat do projektu zajistit, aby byly nasazené aplikace v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [postupy: ruční konfigurace projektu Entity Framework](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>Důležité informace pro aplikace s existující objekty  
- Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "prostý starý" objekty CLR (objektů POCO), které ignorují trvalost objekty nazývané také. Ve většině případů můžete pracovat stávající objekty [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entity objektů POCO](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3). Můžete také migrovat aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a používat datové třídy, které jsou generovány nástrojem nástroje Entity Framework. Další informace najdete v tématu [postupy: použití průvodce Entity Data Model](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d).  
+ Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "prostý starý" objekty CLR (objektů POCO), které ignorují trvalost objekty nazývané také. Ve většině případů můžete pracovat stávající objekty [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entity objektů POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3). Můžete také migrovat aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a používat datové třídy, které jsou generovány nástrojem nástroje Entity Framework. Další informace najdete v tématu [postupy: použití průvodce Entity Data Model](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>Důležité informace týkající se aplikací, které používají zprostředkovatele ADO.NET  
  [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]poskytovatelé, například SqlClient, umožňují dotaz na zdroj dat vrátit tabulkové data. Je také možné načíst data do [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] datovou sadu. Následující seznam popisuje důležité informace týkající se upgradu aplikace, která používá stávající [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele:  
@@ -85,7 +85,7 @@ ms.lasthandoff: 01/17/2018
   
  Pokud vaše aplikace zobrazí výsledky dotazu pro zobrazení dat v <xref:System.Windows.Forms.DataGridView> nebo jiný typ ovládacího prvku, který podporuje datovou vazbu, můžete upravit aplikaci k vytvoření vazby ovládacího prvku na výsledek <xref:System.Data.Objects.ObjectQuery%601>.  
   
- Další informace najdete v tématu [vazby objektů k ovládacím prvkům](http://msdn.microsoft.com/en-us/2fd34855-929b-4303-a91e-4bb69d958f2b).  
+ Další informace najdete v tématu [vazby objektů k ovládacím prvkům](http://msdn.microsoft.com/library/2fd34855-929b-4303-a91e-4bb69d958f2b).  
   
  [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]ovládací prvky datových zdrojů.  
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje ovládací prvek zdroje dat, který je navržená tak, aby se zjednodušila datové vazby v [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] webové aplikace. Další informace najdete v tématu [ovládacího prvku zdroje dat Entity Framework](http://msdn.microsoft.com/library/1f09af00-9578-4744-a029-765710a3c83f).  
@@ -94,17 +94,17 @@ ms.lasthandoff: 01/17/2018
  Níže jsou uvedeny důležité informace, které se mohou vztahovat při migraci konkrétní typy aplikací, aby rozhraní Entity Framework.  
   
  Aplikace, které zveřejňují datové služby.  
- Webové služby a aplikace, které jsou založené na Windows Communication Foundation (WCF) získal data z příslušný zdroj dat ve formátu XML požadavků a odpovědí zasílání zpráv. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje pomocí XML, binární serializace objektů entit nebo kontraktů dat WCF serializace. Binární a serializace WCF podporovat úplné serializace objektu grafy. Další informace najdete v tématu [vytváření víceúrovňových aplikací](http://msdn.microsoft.com/en-us/9439d2ba-6b5f-44e8-be65-8a442d922cbb).  
+ Webové služby a aplikace, které jsou založené na Windows Communication Foundation (WCF) získal data z příslušný zdroj dat ve formátu XML požadavků a odpovědí zasílání zpráv. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje pomocí XML, binární serializace objektů entit nebo kontraktů dat WCF serializace. Binární a serializace WCF podporovat úplné serializace objektu grafy. Další informace najdete v tématu [vytváření víceúrovňových aplikací](http://msdn.microsoft.com/library/9439d2ba-6b5f-44e8-be65-8a442d922cbb).  
   
  Aplikace, které používají XML data.  
  Serializace objektu umožňuje vytvářet [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] datové služby. Tyto služby poskytovat data pro aplikace, které využívají data XML, jako je například na základě AJAX Internetové aplikace. V těchto případech, zvažte použití [!INCLUDE[ssAstoria](../../../../../includes/ssastoria-md.md)]. Tyto datové služby jsou založené na Entity Data Model a zadejte dynamické přístup k datům entity pomocí standardní přenosu REST (Representational State) HTTP akcí, jako například GET, PUT a POST. Další informace najdete v tématu [WCF Data Services 4.5](../../../../../docs/framework/data/wcf/index.md).  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nepodporuje datový typ XML nativní. To znamená, že při entita je namapovaná na tabulku s sloupec XML, je vlastnost ekvivalentní entity pro sloupec typu XML řetězec. Objekty, můžete odpojení a serializovanou jako XML. Další informace najdete v tématu [serializaci objektů](http://msdn.microsoft.com/en-us/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nepodporuje datový typ XML nativní. To znamená, že při entita je namapovaná na tabulku s sloupec XML, je vlastnost ekvivalentní entity pro sloupec typu XML řetězec. Objekty, můžete odpojení a serializovanou jako XML. Další informace najdete v tématu [serializaci objektů](http://msdn.microsoft.com/library/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
   
  Pokud vaše aplikace vyžaduje schopnost dotazovat XML data, můžete přesto využít výhod dotazů LINQ s použitím technologie LINQ to XML. Další informace najdete v tématu [technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13).  
   
  Aplikace, které udržují stavu.  
- [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Webové aplikace musí často Udržovat stav webové stránky nebo uživatelské relace. Objekty v <xref:System.Data.Objects.ObjectContext> instance dají uložená v zobrazení stavu klienta, nebo ve stavu relace na serveru a později načíst a znovu připojit ke nový kontext objektu. Další informace najdete v tématu [Attaching a odpojení objekty](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
+ [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Webové aplikace musí často Udržovat stav webové stránky nebo uživatelské relace. Objekty v <xref:System.Data.Objects.ObjectContext> instance dají uložená v zobrazení stavu klienta, nebo ve stavu relace na serveru a později načíst a znovu připojit ke nový kontext objektu. Další informace najdete v tématu [Attaching a odpojení objekty](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
 ## <a name="see-also"></a>Viz také  
  [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  

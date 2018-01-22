@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ec484bc544f2889d6f37055cb9863b4806ec20c8
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a78654f5c8de480b1eb38fbf25fbc923a30a0d25
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Výsledků buď zpracování přímo, uložena v umístění <xref:System.Data.DataSet> Chcete-li zpřístupnit pro uživatele podle potřeby, kombinované s daty z více zdrojů nebo používat vzdáleně mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatelé dat jsou lightweight, vytváření minimální vrstva mezi zdroji dat a kód, zvýšení výkonu bez omezení funkčnosti.  
@@ -166,7 +166,7 @@ using System.Data.OracleClient;
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]"Zprostředkovatele dat pro databázi Oracle|Doporučuje pro střední a Jednoúrovňové aplikace, které používají zdroje dat Oracle.|  
   
 ## <a name="entityclient-provider"></a>Zprostředkovatel EntityClient  
- Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework dat zprostředkovatele není komunikovat přímo se zdrojem dat. Místo toho ke komunikaci s základní poskytovatel dat používá Entity SQL. Další informace najdete v tématu [EntityClient a Entity SQL](http://msdn.microsoft.com/en-us/49202ab9-ac98-4b4b-a05c-140e422bf527).  
+ Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework dat zprostředkovatele není komunikovat přímo se zdrojem dat. Místo toho ke komunikaci s základní poskytovatel dat používá Entity SQL. Další informace najdete v tématu [EntityClient a Entity SQL](http://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  

@@ -15,18 +15,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2d20faaee94363a1f54cf398d72955f376087b36
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a890243ee12202efa9743a6151255525c7f78be2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltnetpeertcpbindinggt"></a>&lt;netPeerTcpBinding&gt;
 Definuje vazbu pro sdílené kanál konkrétní TCP zasílání zpráv.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
-\<netPeerTcpBinding >  
+\<netPeerTcpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -69,8 +69,8 @@ Definuje vazbu pro sdílené kanál konkrétní TCP zasílání zpráv.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<překladač >](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Určuje sdílené překladač použité v této vazbě přeložit sdílené OK ID sítě na koncový bod IP adresy uzlů v rámci sdílené OK.|  
+|[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<resolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Určuje sdílené překladač použité v této vazbě přeložit sdílené OK ID sítě na koncový bod IP adresy uzlů v rámci sdílené OK.|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netpeerbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento element je typu <xref:System.ServiceModel.Configuration.PeerSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -83,7 +83,7 @@ Definuje vazbu pro sdílené kanál konkrétní TCP zasílání zpráv.
  Tato vazba poskytuje podporu pro vytváření aplikací peer-to-peer nebo více stran použití sdílené přenosu přes protokol TCP. Každý uzel sdílené může být hostitelem více typů komunikačních kanálů sdílené, které jsou definované s tímto typem vazby.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje použití NetPeerTcpBinding vazby, který poskytuje více stran komunikaci pomocí rovnocenného kanálu. Podrobné scénář použití tuto vazbu, najdete v části [Net sdílené TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae).  
+ Následující příklad ukazuje použití NetPeerTcpBinding vazby, který poskytuje více stran komunikaci pomocí rovnocenného kanálu. Podrobné scénář použití tuto vazbu, najdete v části [Net sdílené TCP](http://msdn.microsoft.com/library/31f4db66-edb2-40a6-b92a-14098e92acae).  
   
 ```xml  
 <configuration>  
@@ -116,7 +116,7 @@ Definuje vazbu pro sdílené kanál konkrétní TCP zasílání zpráv.
  <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement>  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)  
- [NET sdílené TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)  
+ [NET sdílené TCP](http://msdn.microsoft.com/library/31f4db66-edb2-40a6-b92a-14098e92acae)  
  [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)

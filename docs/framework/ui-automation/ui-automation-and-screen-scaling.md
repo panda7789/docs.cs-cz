@@ -22,11 +22,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 5198de558d24770c8fdd4bfc10ce4a9199eeff47
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb33d3175cf9e43797125b47c811042771e45782
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
-     Díky této funkci celý proces [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-vědět, což znamená, že jsou všechny systémy windows, které patří do procesu bez měřítka. V [zvýraznění ukázka](http://msdn.microsoft.com/en-us/19ba4577-753e-4efd-92cc-c02ee67c1b69), například jsou umístěné na fyzické souřadnice získané z čtyři windows, které tvoří rámeček zvýraznění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], není logické souřadnice. Pokud nebyly v ukázkovém [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-vědět, zvýraznění by vyznačovat logické souřadnice na ploše, což by způsobilo nesprávné umístění v jiný-96 - [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] prostředí.  
+     Díky této funkci celý proces [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-vědět, což znamená, že jsou všechny systémy windows, které patří do procesu bez měřítka. V [zvýraznění ukázka](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69), například jsou umístěné na fyzické souřadnice získané z čtyři windows, které tvoří rámeček zvýraznění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], není logické souřadnice. Pokud nebyly v ukázkovém [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-vědět, zvýraznění by vyznačovat logické souřadnice na ploše, což by způsobilo nesprávné umístění v jiný-96 - [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] prostředí.  
   
 2.  Chcete-li získat souřadnice kurzoru, volejte [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] funkce `GetPhysicalCursorPos`. Následující příklad ukazuje, jak deklarace a používání této funkce.  
   
@@ -87,4 +87,4 @@ ms.lasthandoff: 12/22/2017
  Pokud vaše aplikace provede přímou komunikaci mezi procesy s jinou hodnotu než [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-aplikací, může mít převedete mezi logické a fyzické souřadnice pomocí [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] funkce `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázka zvýraznění](http://msdn.microsoft.com/en-us/19ba4577-753e-4efd-92cc-c02ee67c1b69)
+ [Ukázka zvýraznění](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)

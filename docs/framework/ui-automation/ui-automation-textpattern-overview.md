@@ -18,11 +18,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 610b2d44fca43f2745b7b423a5cdb73c5a7d74d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dbf3e125d911a407be3b07d0ce93d5c17bd8a0b7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ui-automation-textpattern-overview"></a>Přehled prvku TextPattern automatizace uživatelského rozhraní
 > [!NOTE]
@@ -33,12 +33,12 @@ ms.lasthandoff: 12/22/2017
  Vystavení textový obsah ovládacího prvku se provádí prostřednictvím <xref:System.Windows.Automation.TextPattern> – vzor ovládacích prvků, která představuje obsah kontejneru text jako datový proud text. Pak <xref:System.Windows.Automation.TextPattern> vyžaduje podporu <xref:System.Windows.Automation.Text.TextPatternRange> třída vystavit formátu a stylu atributy. <xref:System.Windows.Automation.Text.TextPatternRange>podporuje <xref:System.Windows.Automation.TextPattern> podle představující souvislý nebo několika nesouvislé rozpětí textu v zásobníku textu s kolekcí <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> a <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncové body. <xref:System.Windows.Automation.Text.TextPatternRange>podporuje funkce, jako je výběr, porovnání, načítání a traversal.  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.TextPattern> Neposkytují znamená vložit nebo upravit text. Nicméně, v závislosti na ovládací prvek, to může udělat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.ValuePattern> nebo prostřednictvím přímé klávesnice vstup. Najdete v článku [ukázkový Text vložte TextPattern](http://msdn.microsoft.com/en-us/67353f93-7ee2-42f2-ab76-5c078cf6ca16) příklad.  
+>  <xref:System.Windows.Automation.TextPattern> Neposkytují znamená vložit nebo upravit text. Nicméně, v závislosti na ovládací prvek, to může udělat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.ValuePattern> nebo prostřednictvím přímé klávesnice vstup. Najdete v článku [ukázkový Text vložte TextPattern](http://msdn.microsoft.com/library/67353f93-7ee2-42f2-ab76-5c078cf6ca16) příklad.  
   
  Funkce popsané v tomto přehledu je životně důležité technologie usnadnění dodavatele a své koncové uživatele. Technologie pro usnadnění můžete použít [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] shromažďovat informace o uživateli formátování textu, dokončení a poskytují programový navigaci a výběr textu pomocí <xref:System.Windows.Automation.Text.TextUnit> (znak, word, řádek nebo odstavce).  
   
 <a name="UI_Automation_TextPattern_vs__Cicero"></a>   
-## <a name="ui-automation-textpattern-vs-text-services-framework"></a>TextPattern automatizace uživatelského rozhraní vs. Text Services Framework  
+## <a name="ui-automation-textpattern-vs-text-services-framework"></a>UI Automation TextPattern vs. Text Services Framework  
  [!INCLUDE[TLA#tla_tsf](../../../includes/tlasharptla-tsf-md.md)]je jednoduchý a škálovatelné systému rozhraní, které umožňuje službám přirozeného jazyka a pokročilé textový vstup na ploše a v aplikacích. Kromě rozhraní pro aplikace ke zveřejnění jejich úložiště text také podporuje metadata pro toto úložiště text.  
   
  Ale [!INCLUDE[TLA2#tla_tsf](../../../includes/tla2sharptla-tsf-md.md)] byl navržený pro aplikace, které je třeba vložit vstup do kontextově scénáře, zatímco <xref:System.Windows.Automation.TextPattern> je jen pro čtení řešení (s omezenou řešení uvedených výše) určená k poskytování optimalizované přístupu k úložišti text pro čtečky obrazovky a Braillovo písmo zařízení.  
@@ -132,7 +132,7 @@ ms.lasthandoff: 12/22/2017
  ![Výčty TextPatternRangeEndpoint &#40; počáteční a koncové &#41;. ] (../../../docs/framework/ui-automation/media/uia-textpattern-endpoints.PNG "UIA_TextPattern_Endpoints")  
 Následující znázorňuje sadu počáteční a koncový bod.  
   
- **Rozsahu TextRange**  
+ **TextRange**  
  Reprezentace rozpětí textu, počáteční a koncový bod, v textu kontejneru, včetně všech přidružených atributů a funkce.  
   
  <xref:System.Windows.Automation.Text.TextUnit>  

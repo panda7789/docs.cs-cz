@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 094c962e2576653fc8c9de4c0dece912fcaa07f1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a29f761b4a3718293c1786d23d425265603f8c84
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="correlation-overview"></a>Korelace – přehled
 Korelace je mechanismus pro související zprávy služby pracovního postupu k sobě navzájem nebo stav instance aplikace, jako je například odpovědět na požadavek počáteční nebo konkrétní pořadí ID trvalého stavu pracovním postupu pořadí zpracování. Toto téma obsahuje přehled korelace. Na další témata v této části poskytují další informace pro každý typ korelace.  
@@ -31,7 +31,7 @@ Korelace je mechanismus pro související zprávy služby pracovního postupu k 
 ## <a name="protocol-based-correlation"></a>Založené na protokolu korelace  
  Založené na protokolu korelace používá přenosový mechanismus k související zprávy do sebe navzájem a příslušné instanci. Některé poskytované systémem protokol korelací zahrnují korelace požadavku a odpovědi a korelace na základě kontextu. Korelace požadavku a odpovědi slouží ke sladění jeden pár zasílání zpráv aktivit a vytvoří obousměrný operace, například <xref:System.ServiceModel.Activities.Send> spárované s <xref:System.ServiceModel.Activities.ReceiveReply>, nebo <xref:System.ServiceModel.Activities.Receive> spárované s <xref:System.ServiceModel.Activities.SendReply>. [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Návrhář postupu provádění také poskytuje sadu šablony aktivit k rychlé implementaci tohoto vzoru. Korelace základě kontextu je založené na mechanismu exchange kontext, který je popsané v [Exchange kontextu .NET – specifikace protokolu](http://go.microsoft.com/fwlink/?LinkID=166059). Použít na základě kontextu korelace základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding> nebo <xref:System.ServiceModel.NetTcpContextBinding> na koncový bod se musí použít.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]protokol korelace najdete v tématu [kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md), [trvanlivý duplexní](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md), a [požadavku a odpovědi](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] šablony aktivit v Návrháři pracovních postupů, najdete v části [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md). Ukázkový kód, najdete [trvanlivý duplexní &#91; Ukázky WF &#93; ](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md) a [NetContextExchangeCorrelation](http://msdn.microsoft.com/en-us/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) ukázky.  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]protokol korelace najdete v tématu [kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md), [trvanlivý duplexní](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md), a [požadavku a odpovědi](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] šablony aktivit v Návrháři pracovních postupů, najdete v části [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md). Ukázkový kód, najdete [trvanlivý duplexní &#91; Ukázky WF &#93; ](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md) a [NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) ukázky.  
   
 ## <a name="content-based-correlation"></a>Korelace na základě obsahu  
  Korelace na základě obsahu používá některá část informace ve zprávě k její přidružení ke konkrétní instanci. Na rozdíl od založené na protokolu korelace na základě obsahu korelace vyžaduje vytváření aplikací do explicitně stavu, kde tato data lze nalézt v každé související zprávy. Aktivity, které používají korelace na základě obsahu zadat tato zpráva data pomocí <xref:System.ServiceModel.MessageQuerySet>. Korelace na základě obsahu je užitečné při komunikaci s služby, které nepoužívají jeden z kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace na základě obsahu najdete v části [na základě obsahu](../../../../docs/framework/wcf/feature-details/content-based-correlation.md). Ukázkový kód, najdete [korelace na základě obsahu](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md) a [korelační kalkulačky](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md) ukázky.  
@@ -39,5 +39,5 @@ Korelace je mechanismus pro související zprávy služby pracovního postupu k 
 ## <a name="see-also"></a>Viz také  
  [Korelace na základě obsahu](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
  [Korelovaná kalkulačka](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)  
- [Trvanlivý duplexní přenos &#91; Ukázky WF &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
- [NetContextExchangeCorrelation](http://msdn.microsoft.com/en-us/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)
+ [Durable Duplex &#91;WF Samples&#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
+ [NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)

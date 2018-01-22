@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 34fd9bc3bf16446505caf12c6cfa4192ffb391c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8abe23aebefadc68268aa1dada8474336b1f87e7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Vývoj a nasazení služby WCF Data Services
 Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pro další základní informace o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], najdete v části [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) a [přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  
@@ -55,7 +55,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
     > [!NOTE]
     >  Je nutné spustit [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] s právy správce umožňující vývoj prostředí tak, aby konfigurovat místní server služby IIS.  
   
-2.  **Vývojový Server sady Visual Studio**  
+2.  **Visual Studio Development Server**  
   
      [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]zahrnuje integrovaného webového serveru, [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] vývojový Server, který je výchozí webový server pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekty. Tento webový server je určená ke spuštění [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekty v místním počítači během vývoje. [Rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) ukazuje, jak vytvořit službu data, která běží v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] vývojový Server.  
   
@@ -63,7 +63,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
     -   Tento server je přístupný pouze v místním počítači.  
   
-    -   Tento server naslouchá na `localhost` a na konkrétní port, nikoli na portu 80, což je výchozí port pro zprávy HTTP. Další informace najdete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](http://msdn.microsoft.com/en-us/31d4f588-df59-4b7e-b9ea-e1f2dd204328).  
+    -   Tento server naslouchá na `localhost` a na konkrétní port, nikoli na portu 80, což je výchozí port pro zprávy HTTP. Další informace najdete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](http://msdn.microsoft.com/library/31d4f588-df59-4b7e-b9ea-e1f2dd204328).  
   
     -   Tento server spouští datovou službu v kontextu aktuálního uživatelského účtu. Například, pokud používáte jako uživatel s právy na úrovni správce dat služby spuštěné [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] vývojový Server bude mít oprávnění na úrovni správce. To může vést k tomu, že datová služba bude mít přístup k prostředkům, ke kterým nemá při nasazení na server služby IIS přístupová práva.  
   
@@ -89,22 +89,22 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
 -   Při ladění datové služby může být užitečné získat o chybě z datové služby více informace než v běžném provozu. Další informace o chybě můžete získat od služby data podle nastavení <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnost v <xref:System.Data.Services.DataServiceConfiguration> k `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior> atribut na data služby třídu `true`. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v příspěvku [ladění služby WCF Data Services](http://go.microsoft.com/fwlink/?LinkId=201868). Můžete také povolit trasování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zobrazíte výjimek vyvolaných ve vrstvě zasílání zpráv protokolu HTTP. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
--   Datové služby je obvykle vyvinutý jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekt aplikace, ale můžete také vytvořit je služba data jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webový projekt v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Informace o rozdílech mezi těmito dvěma typy projektů najdete v tématu [NIB: projekty webových aplikací a webových projektů v sadě Visual Studio](http://msdn.microsoft.com/en-us/2861815e-f5a2-4378-a2f8-b8a86dc012f5).  
+-   Datové služby je obvykle vyvinutý jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekt aplikace, ale můžete také vytvořit je služba data jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webový projekt v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Informace o rozdílech mezi těmito dvěma typy projektů najdete v tématu [NIB: projekty webových aplikací a webových projektů v sadě Visual Studio](http://msdn.microsoft.com/library/2861815e-f5a2-4378-a2f8-b8a86dc012f5).  
   
 -   Při vytváření datové služby pomocí **přidat novou položku** dialogovém okně [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], hostitelem je služba data [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ve službě IIS. Při [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a služby IIS je výchozího hostitele pro datové služby, jsou podporovány další možnosti hostování. Další informace najdete v tématu [hostující službu Data](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md).  
   
 ## <a name="deploying-wcf-data-services"></a>Nasazení služeb WCF Data Services  
  Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je hostitelem datové služby. Můžete použít [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] nasazení služby data na následujících platformách:  
   
--   **Hostované službou IIS webový Server**  
+-   **IIS-Hosted Web Server**  
   
      Když je služba data vyvinutý jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, mohou být nasazeny na webovém serveru IIS pomocí standardní [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] procesů nasazení.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]poskytuje následující technologie nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], v závislosti na druhu systému [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekt, který hostuje službu dat, kterou nasazujete.  
   
     -   **Technologie nasazení pro webové aplikace ASP.NET**  
   
-        -   [Balíčku pro nasazení webu](http://msdn.microsoft.com/en-us/1f9713c8-9540-494c-b80d-9893b970ad6f)  
+        -   [Balíčku pro nasazení webu](http://msdn.microsoft.com/library/1f9713c8-9540-494c-b80d-9893b970ad6f)  
   
-        -   [Publikování jedním kliknutím](http://msdn.microsoft.com/en-us/59226246-99ad-4aec-975d-7c61e8a8911c)  
+        -   [Publikování jedním kliknutím](http://msdn.microsoft.com/library/59226246-99ad-4aec-975d-7c61e8a8911c)  
   
     -   **Nasazení technologie pro weby technologie ASP.NET**  
   
@@ -114,7 +114,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
         -   [XCopy](http://msdn.microsoft.com/library/4312c651-2119-49be-bbeb-ee28bdbfe71e)  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Možnosti nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, najdete v části [Přehled nasazení webu pro Visual Studio a ASP.NET](http://msdn.microsoft.com/en-us/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Možnosti nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, najdete v části [Přehled nasazení webu pro Visual Studio a ASP.NET](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).  
   
     > [!TIP]
     >  Než datovou službu nasadíte do služby IIS, nezapomeňte otestovat nasazení na webový server, na kterém je spuštěna služba IIS. Další informace najdete v tématu [postup: vývoj WCF Data Service spuštěna ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).  
@@ -126,7 +126,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
 ### <a name="deployment-considerations"></a>Důležité informace o nasazení  
  Při nasazování datových služeb je vhodné zvážit následující faktory:  
   
--   Pokud nasadíte službu data, která používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset rozšířit datové struktury, data, nebo obě s daty nasazení služby. [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]umožňuje automatické vytvoření skriptů (soubory .sql) k tomu v cílové databázi, a tyto skripty může být zahrnutý v balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [NIB: postupy: nasazení databáze s projekt webové aplikace](http://msdn.microsoft.com/en-us/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, můžete to provedete pomocí **Průvodce publikováním databáze** v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Další informace najdete v tématu [nasazení databáze pomocí Průvodce publikováním databáze](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).  
+-   Pokud nasadíte službu data, která používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset rozšířit datové struktury, data, nebo obě s daty nasazení služby. [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]umožňuje automatické vytvoření skriptů (soubory .sql) k tomu v cílové databázi, a tyto skripty může být zahrnutý v balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [NIB: postupy: nasazení databáze s projekt webové aplikace](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, můžete to provedete pomocí **Průvodce publikováním databáze** v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Další informace najdete v tématu [nasazení databáze pomocí Průvodce publikováním databáze](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).  
   
 -   Protože [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace, můžete použít Windows Server AppFabric monitorovat datové služby nasadit do IIS a běžící v systému Windows Server. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí sledování na data služby Windows Server AppFabric najdete v příspěvku [sledování služby WCF Data Services s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005).  
   

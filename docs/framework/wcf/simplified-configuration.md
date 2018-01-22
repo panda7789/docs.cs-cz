@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3ff1dee5a57b0c134c25631ce5c694b1b6b2c006
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 334dfce44b1f0a7b6b38f509f2f0a346ef90630f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
 Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby může být složité úlohy. Existuje mnoho různých možností a není vždy snadno určit nastavení, které jsou vyžadovány. Při konfigurační soubory zvýšit flexibilitu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, také se zdroji pro mnoho vyhledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]řeší tyto problémy a poskytuje způsob, jak snížit velikost a složitost konfigurace služby.  
@@ -126,5 +126,5 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby může 
  [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)  
- [Konfigurace aplikací pro Windows Communication Foundation](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
+ [Konfigurace aplikací pro Windows Communication Foundation](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
  [Konfigurace služeb WCF v kódu](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)

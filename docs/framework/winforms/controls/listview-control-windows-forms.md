@@ -23,11 +23,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9bc771b81e1db87f3d881dc2a0ab84f7aad93247
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8328bc705349ffeaa78d95e95ed0955ac6faa5c3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="listview-control-windows-forms"></a>ListView – ovládací prvek (Windows Forms)
 Windows Forms `ListView` ovládací prvek zobrazí seznam položky s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je v pravém podokně Průzkumníka Windows.  
@@ -93,7 +93,7 @@ Windows Forms `ListView` ovládací prvek zobrazí seznam položky s ikonami. Zo
  [Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Poskytuje pokyny pro vytvoření rozložení formuláře Windows s více podokny.  
   
- [Funkce systému Windows XP a Windows Forms – ovládací prvky](http://msdn.microsoft.com/en-us/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)  
+ [Funkce systému Windows XP a Windows Forms – ovládací prvky](http://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)  
  Vysvětluje, jak využívat funkce specifické pro systém Windows XP, která se týkají <xref:System.Windows.Forms.ListView> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také  

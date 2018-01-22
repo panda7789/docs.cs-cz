@@ -38,11 +38,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 56e2effec282900101fc0cbe489c76b523184ab2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b99dacb5a30cd7b12a5a5dd96bf9fe25b32ab984
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Generování a kompilace zdrojového kódu z grafu modelu CodeDOM
 <xref:System.CodeDom.Compiler> Obor názvů poskytuje rozhraní pro generování zdrojového kódu z objektu grafů CodeDOM a pro správu kompilace pomocí podporovaných kompilátory. Zprostředkovatel kódu může vytvářet zdrojový kód v konkrétní programovací jazyk podle grafu modelu CodeDOM. Třída odvozená z <xref:System.CodeDom.Compiler.CodeDomProvider> obvykle poskytne metody pro generování a kompilace kódu pro jazyk zprostředkovatel podporuje.  
@@ -106,4 +106,4 @@ ms.lasthandoff: 12/22/2017
  <xref:System.CodeDom>  
  <xref:System.CodeDom.Compiler>  
  [Dynamické vytváření a kompilování zdrojového kódu](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)  
- [Stručná referenční příručka modelu codeDOM](http://msdn.microsoft.com/en-us/c77b8bfd-0a32-4e36-b59a-4f687f32c524)
+ [Stručná referenční příručka modelu codeDOM](http://msdn.microsoft.com/library/c77b8bfd-0a32-4e36-b59a-4f687f32c524)

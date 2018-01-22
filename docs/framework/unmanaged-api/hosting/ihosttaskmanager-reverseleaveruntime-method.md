@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fa16e640cade9304916650c4ea13231cacb967f2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 634465e2d78dbac41b8791d5be44b2821744f07d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ihosttaskmanagerreverseleaveruntime-method"></a>IHostTaskManager::ReverseLeaveRuntime – metoda
 Hostitele upozorní, že je ovládací prvek ponechat common language runtime (CLR) a zadáním nespravované funkci, která byla, pak volané ze spravovaného kódu.  
@@ -55,7 +55,7 @@ HRESULT ReverseLeaveRuntime ();
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Header:** MSCorEE.h  
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
@@ -69,4 +69,4 @@ HRESULT ReverseLeaveRuntime ();
  [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
  [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
  [LeaveRuntime – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md)  
- [Vyvolání bližší pohled na platformy](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)
+ [Vyvolání bližší pohled na platformy](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)

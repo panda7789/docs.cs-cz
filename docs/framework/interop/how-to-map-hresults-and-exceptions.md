@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6b2c19e6076be6364f6a14159a5376a0c8c45731
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 736e86e3013f34997be7ecf73ff4436675d4c05f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
 Metody modelu COM zprávy o chybách vrácením hodnoty HRESULT; metod rozhraní .NET je sestavy vyvoláním výjimek. Modul runtime zpracovává přechod mezi nimi. Každá třída výjimky v rozhraní .NET Framework mapuje HRESULT.  
@@ -67,10 +67,10 @@ CMyClass::MethodThatThrows
   
 |HRESULT|Výjimky rozhraní .NET|  
 |-------------|--------------------|  
-|**MSEE_E_APPDOMAINUNLOADED**|**Appdomainunloadedexception –**|  
+|**MSEE_E_APPDOMAINUNLOADED**|**AppDomainUnloadedException**|  
 |**COR_E_APPLICATION**|**ApplicationException –**|  
 |**COR_E_ARGUMENT nebo E_INVALIDARG**|**ArgumentException –**|  
-|**COR_E_ARGUMENTOUTOFRANGE**|**Výjimka ArgumentOutOfRangeException**|  
+|**COR_E_ARGUMENTOUTOFRANGE**|**ArgumentOutOfRangeException**|  
 |**COR_E_ARITHMETIC nebo ERROR_ARITHMETIC_OVERFLOW**|**Arithmeticexception –**|  
 |**COR_E_ARRAYTYPEMISMATCH**|**ArrayTypeMismatchException**|  
 |**COR_E_BADIMAGEFORMAT nebo ERROR_BAD_FORMAT**|**BadImageFormatException**|  
@@ -82,7 +82,7 @@ CMyClass::MethodThatThrows
 |**COR_E_DIVIDEBYZERO**|**DivideByZeroException**|  
 |**COR_E_DUPLICATEWAITOBJECT**|**DuplicateWaitObjectException**|  
 |**COR_E_ENDOFSTREAM**|**EndOfStreamException**|  
-|**COR_E_TYPELOAD**|**Entrypointnotfoundexception –**|  
+|**COR_E_TYPELOAD**|**EntryPointNotFoundException**|  
 |**COR_E_EXCEPTION**|**Výjimka**|  
 |**COR_E_EXECUTIONENGINE**|**ExecutionEngineException –**|  
 |**COR_E_FIELDACCESS**|**FieldAccessException**|  
@@ -90,9 +90,9 @@ CMyClass::MethodThatThrows
 |**COR_E_FORMAT**|**FormatException**|  
 |**COR_E_INDEXOUTOFRANGE**|**IndexOutOfRangeException**|  
 |**COR_E_INVALIDCAST nebo E_NOINTERFACE**|**InvalidCastException**|  
-|**COR_E_INVALIDCOMOBJECT**|**InvalidComObjectException –**|  
-|**COR_E_INVALIDFILTERCRITERIA**|**Invalidfiltercriteriaexception –**|  
-|**COR_E_INVALIDOLEVARIANTTYPE**|**Invalidolevarianttypeexception –**|  
+|**COR_E_INVALIDCOMOBJECT**|**InvalidComObjectException**|  
+|**COR_E_INVALIDFILTERCRITERIA**|**InvalidFilterCriteriaException**|  
+|**COR_E_INVALIDOLEVARIANTTYPE**|**InvalidOleVariantTypeException**|  
 |**COR_E_INVALIDOPERATION**|**InvalidOperationException**|  
 |**COR_E_IO**|**Výjimka vstupu/výstupu**|  
 |**COR_E_MEMBERACCESS**|**AccessException**|  
@@ -101,7 +101,7 @@ CMyClass::MethodThatThrows
 |**COR_E_MISSINGMANIFESTRESOURCE**|**Missingmanifestresourceexception –**|  
 |**COR_E_MISSINGMEMBER**|**MissingMemberException**|  
 |**COR_E_MISSINGMETHOD**|**MissingMethodException**|  
-|**COR_E_MULTICASTNOTSUPPORTED**|**Multicastnotsupportedexception –**|  
+|**COR_E_MULTICASTNOTSUPPORTED**|**MulticastNotSupportedException**|  
 |**COR_E_NOTFINITENUMBER**|**Notfinitenumberexception –**|  
 |**E_NOTIMPL**|**NotImplementedException –**|  
 |**COR_E_NOTSUPPORTED**|**NotSupportedException**|  
@@ -116,16 +116,16 @@ CMyClass::MethodThatThrows
 |**COR_E_SECURITY**|**Výjimka zabezpečení**|  
 |**COR_E_SERIALIZATION**|**Serializationexception –**|  
 |**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException**|  
-|**COR_E_SYNCHRONIZATIONLOCK**|**Synchronizationlockexception –**|  
+|**COR_E_SYNCHRONIZATIONLOCK**|**SynchronizationLockException**|  
 |**COR_E_SYSTEM**|**SystemException –**|  
 |**COR_E_TARGET**|**Targetexception –**|  
 |**COR_E_TARGETINVOCATION**|**Targetinvocationexception –**|  
-|**COR_E_TARGETPARAMCOUNT**|**Targetparametercountexception –**|  
-|**COR_E_THREADABORTED**|**Výjimka ThreadAbortException**|  
-|**COR_E_THREADINTERRUPTED**|**Threadinterruptedexception –**|  
-|**COR_E_THREADSTATE**|**Threadstateexception –**|  
+|**COR_E_TARGETPARAMCOUNT**|**TargetParameterCountException**|  
+|**COR_E_THREADABORTED**|**ThreadAbortException**|  
+|**COR_E_THREADINTERRUPTED**|**ThreadInterruptedException**|  
+|**COR_E_THREADSTATE**|**ThreadStateException**|  
 |**COR_E_THREADSTOP**|**ThreadStopException**|  
-|**COR_E_TYPELOAD**|**TypeLoadException –**|  
+|**COR_E_TYPELOAD**|**TypeLoadException**|  
 |**COR_E_TYPEINITIALIZATION**|**Typeinitializationexception –**|  
 |**COR_E_VERIFICATION**|**VerificationException**|  
 |**COR_E_WEAKREFERENCE**|**WeakReferenceException**|  
@@ -145,11 +145,11 @@ CMyClass::MethodThatThrows
 |**Ve vlastnosti InnerException**|Vždy odkaz s hodnotou null (**nic** v jazyce Visual Basic).|  
 |**Zpráva**|Řetězec vrácený z **IErrorInfo -> GetDescription**.|  
 |**Zdroj**|Řetězec vrácený z **IErrorInfo -> GetSource**.|  
-|**Trasování zásobníku**|Trasování zásobníku.|  
+|**StackTrace**|Trasování zásobníku.|  
 |**TargetSite**|Název metody, která vrátila selhání HRESULT.|  
   
  Výjimka pole, jako například **zpráva**, **zdroj**, a **trasování zásobníku** nejsou k dispozici pro **StackOverflowException**.  
   
 ## <a name="see-also"></a>Viz také  
- [Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
+ [Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [Výjimky](../../../docs/standard/exceptions/index.md)

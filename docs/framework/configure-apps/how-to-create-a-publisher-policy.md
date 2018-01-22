@@ -19,11 +19,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 182882d33772054c7ac4208ca9571fa8018c2a07
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ccd490f6d31ad1d20128497e5115147eddb3df4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 Dodavatelé sestavení může stavu, že aplikace by měly používat na novější verzi sestavení zahrnutím souboru zásad vydavatele s upgradovaná sestavením. Soubor zásad vydavatele určuje sestavení – přesměrování a základní nastavení kódu a používá stejný formát jako konfiguračního souboru aplikace. Soubor zásad vydavatele je zkompilován do sestavení a umístit do globální mezipaměti sestavení.  
@@ -72,7 +72,7 @@ Dodavatelé sestavení může stavu, že aplikace by měly používat na nověj�
   
     -   *PublisherPolicyAssemblyFile* argument je název sestavení zásady vydavatele, který je výsledkem tohoto příkazu. Název souboru sestavení musí mít formát:  
   
-         **zásady.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
+         **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
     -   *KeyPairFile* argument je název souboru, který obsahuje pár klíčů. Musíte se odhlásit sestavení a sestavení zásady vydavatele pomocí stejného páru klíčů.  
   
@@ -115,7 +115,7 @@ Dodavatelé sestavení může stavu, že aplikace by měly používat na nověj�
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md)  
- [Konfigurace aplikací rozhraní .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [Konfigurace aplikací rozhraní .NET Framework](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
  [Schéma nastavení běhového prostředí](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
  [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

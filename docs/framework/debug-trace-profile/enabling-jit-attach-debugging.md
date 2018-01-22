@@ -17,11 +17,11 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ae0b692c99f6682c6854292c230490637ad45727
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 71b2e95076edbda3a67a84c9185d8b689c158e12
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="enabling-jit-attach-debugging"></a>Povolení JIT – ladění Attach 
 JIT – připojené ladění je fráze používají k popisu připojení ladicího programu procesu, když dojde k chybám, nebo ji můžete aktivovat konkrétní metody nebo funkce.  
@@ -47,4 +47,4 @@ JIT – připojené ladění je fráze používají k popisu připojení ladicí
 ## <a name="see-also"></a>Viz také  
  [Ladění, trasování a profilace](../../../docs/framework/debug-trace-profile/index.md)  
  [Usnadnění ladění obrázku](../../../docs/framework/debug-trace-profile/making-an-image-easier-to-debug.md)  
- [Povolení profilace](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)
+ [Povolení profilace](http://msdn.microsoft.com/library/3b669676-f0e0-4ebf-8674-68986dd2020d)

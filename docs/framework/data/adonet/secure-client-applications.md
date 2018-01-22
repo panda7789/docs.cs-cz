@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 190e64945658f81400c2cc68beff82ccc38144f5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 100def5fdf531527705fb0c1aebdc20674e0ce60
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="secure-client-applications"></a>Zabezpečení klientské aplikace
 Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněné z chyb zabezpečení, které může dojít ke ztrátě dat nebo jinak ohrozit zabezpečení systému. Vytvoření zabezpečeného uživatelského rozhraní můžete zabránit mnoho problémů s blokováním útočníci před přístupem dat nebo dostatek systémových prostředků.  
@@ -50,7 +50,7 @@ Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněn
  [Model Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Popisuje, jak pracovat s nespravovaných aplikací v aplikaci Windows Forms.  
   
- [Aplikace ClickOnce – nasazení pro systém Windows Forms](http://msdn.microsoft.com/en-us/34d8c770-48f2-460c-8d67-4ea5684511df)  
+ [Aplikace ClickOnce – nasazení pro systém Windows Forms](http://msdn.microsoft.com/library/34d8c770-48f2-460c-8d67-4ea5684511df)  
  Popisuje způsob použití `ClickOnce` nasazení v aplikaci Windows Forms a popisuje bezpečnostní důsledky.  
   
 ## <a name="aspnet-and-xml-web-services"></a>Technologie ASP.NET a webové služby XML  
@@ -62,23 +62,23 @@ Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněn
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[NIB: Zabezpečení ASP.NET](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d)|Popisuje, jak zabezpečit aplikace ASP.NET.|  
-|[Zabezpečení webové služby XML vytvořených pomocí technologie ASP.NET](http://msdn.microsoft.com/en-us/354b2ab1-2782-4542-b32a-dc560178b90c)|Popisuje, jak implementovat zabezpečení pro webové služby ASP.NET.|  
+|[NIB: Zabezpečení ASP.NET](http://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d)|Popisuje, jak zabezpečit aplikace ASP.NET.|  
+|[Zabezpečení webové služby XML vytvořených pomocí technologie ASP.NET](http://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c)|Popisuje, jak implementovat zabezpečení pro webové služby ASP.NET.|  
 |[Přehled zneužití skriptu](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)|Popisuje, jak chránit proti útoku zneužití skriptu, která se pokusí vložit škodlivý znaků do webové stránky.|  
-|[NIB: základní postupy zabezpečení pro webové aplikace ASP.NET](http://msdn.microsoft.com/en-us/94a52ab8-731d-417e-b997-721baf43df38)|Obecné informace zabezpečení a odkazy na další informace|  
+|[NIB: základní postupy zabezpečení pro webové aplikace ASP.NET](http://msdn.microsoft.com/library/94a52ab8-731d-417e-b997-721baf43df38)|Obecné informace zabezpečení a odkazy na další informace|  
   
 ## <a name="remoting"></a>Vzdálená komunikace  
  .NET remoting umožňuje snadno vytvořit široce distribuované aplikace zda součástí aplikace jsou všechny v jednom počítači nebo rozloženy celého světa. Můžete vytvořit klienta aplikace, které používají objekty v jiných procesech na stejném počítači nebo na jiný počítač, který je dosažitelný prostřednictvím své sítě. Můžete taky .NET remoting ke komunikaci s ostatními doménami aplikací v rámci jednoho procesu.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Konfigurace vzdálené aplikace](http://msdn.microsoft.com/en-us/92c0c097-d984-4315-835b-7490ecdf1097)|Popisuje postup konfigurace aplikací vzdálené komunikace, aby se zabránilo běžné problémy.|  
-|[Zabezpečení vzdálené komunikace](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)|Popisuje ověřování a šifrování, jakož i další bezpečnostní témata, které jsou relevantní pro vzdálenou komunikaci.|  
+|[Konfigurace vzdálené aplikace](http://msdn.microsoft.com/library/92c0c097-d984-4315-835b-7490ecdf1097)|Popisuje postup konfigurace aplikací vzdálené komunikace, aby se zabránilo běžné problémy.|  
+|[Zabezpečení vzdálené komunikace](http://msdn.microsoft.com/library/9574262c-d4b1-41c5-8600-24ff147c0add)|Popisuje ověřování a šifrování, jakož i další bezpečnostní témata, které jsou relevantní pro vzdálenou komunikaci.|  
 |[Zabezpečení a důležité informace o vzdálené komunikace](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením s chráněných objektech a překročení domény aplikace.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
+ [Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)  
  [Zabezpečování aplikací](/visualstudio/ide/securing-applications)  
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

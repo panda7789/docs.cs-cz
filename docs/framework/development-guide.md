@@ -15,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7aaac046a6f5022e4b903faacd609748092d2809
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d7950ae39ada3e1e0e070967f8d578fc3371126
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a nasazení aplikace rozhraní .NET Framework. Tato část taky poskytuje informace o technologii oblasti jako dynamické programování, vzájemná funkční spolupráce, rozšiřitelnosti, správa paměti a dělení na vlákna.  
@@ -73,7 +73,7 @@ Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a
  [Výkon](../../docs/framework/performance/index.md)  
  Poskytuje informace o ukládání do mezipaměti, opožděné inicializace, spolehlivosti a události trasování událostí.  
   
- <!--zz [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
+ <!--zz [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
  Provides information about advanced development tasks and techniques in the .NET Framework, including extensibility, interoperability, and reflection. Also includes the reference topics for unmanaged APIs that can be used by managed apps, such as runtime hosts, compilers, disassemblers, debuggers, and profilers.  --> 
   
 ## <a name="reference"></a>Odkaz  
@@ -90,5 +90,5 @@ Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a
  [Nástroje](../../docs/framework/tools/index.md)  
  Popisuje nástroje, které vám pomohou vyvíjet, konfigurovat a nasazovat aplikace pomocí technologie .NET Framework.  
   
- [.NET framework – ukázky](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ [.NET framework – ukázky](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  Obsahuje odkazy na ukázky galerie kódů MSDN ukázkových aplikací, které ukazují technologie .NET Framework.

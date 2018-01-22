@@ -15,16 +15,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 59c1c6be1f02477c7ad2d4c90d09173f9296d1e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0715952077db755386a0381f68ccc6e33705a031
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt;
 Definuje vazbu, která poskytuje služby Řízení front podporu tím, že směrování zpráv prostřednictvím služby MSMQ.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
 msmqIntegrationBinding  
   
@@ -78,7 +78,7 @@ msmqIntegrationBinding
 |retryCycleDelay|Hodnota časového rozpětí, který určuje prodlevu mezi opakování cyklů při pokusu o doručení zprávy, která nelze doručit okamžitě. Hodnota definuje jen minimální doba čekání, protože skutečná čekací dobu může být delší. Výchozí hodnota je 00:30:00. Další informace naleznete v tématu <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>.|  
 |sendTimeout|A <xref:System.TimeSpan> hodnotu, která určuje interval čas zadaný pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |serializationFormat|Definuje formát použitý pro serializaci textu zprávy. Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
-|TimeToLive|Hodnota časového rozpětí, která určuje, jak dlouho zprávy jsou platné předtím, než se platnost a zařazena do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `DeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
+|timeToLive|Hodnota časového rozpětí, která určuje, jak dlouho zprávy jsou platné předtím, než se platnost a zařazena do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `DeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
 |useMsmqTracing|Logická hodnota, která určuje, zda zprávy zpracovávané touto vazbou má trasovat. Výchozí hodnota je `false`. Pokud je povoleno sledování, sestava zprávy se vytváří a odesílají do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítači služby Řízení front zpráv.|  
 |useSourceJournal|Logická hodnota, která určuje kopie zprávy zpracovávané touto vazbou by měl být uložen v deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Ve frontě aplikací, které chcete zachovat záznam zprávy, které mají zbývající počítače fronty odesílaných zpráv můžete zkopírovat do deníku fronty zpráv. Jakmile zprávu opustí fronty odesílaných zpráv a je obdržena potvrzení, že zpráva byla přijata v cílovém počítači, je udržováno kopie zprávy ve frontě deníku odesílající počítač systému.|  
   
@@ -147,5 +147,5 @@ msmqIntegrationBinding
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: fd5d812fbedcbef0f6ce10b324d60961eba804cf
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2aab11481bb23228f9ad920c5d01ef7d345e05d3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-call-custom-database-functions"></a>Postupy: volání funkce vlastní databáze
 Toto téma popisuje, jak volat vlastní funkce, které jsou definovány v databázi z v rámci LINQ dotazy entity.  
@@ -38,14 +38,14 @@ Toto téma popisuje, jak volat vlastní funkce, které jsou definovány v datab�
   
 2.  Funkce v jazyce definici schématu (SSDL) úložiště souboru .edmx deklarujte. Název funkce musí být stejný jako název funkce deklarované v databázi.  
   
-     Další informace najdete v tématu [funkce elementu (SSDL)](http://msdn.microsoft.com/en-us/b60cfc3d-8b93-423e-8c99-b867256640a4).  
+     Další informace najdete v tématu [funkce elementu (SSDL)](http://msdn.microsoft.com/library/b60cfc3d-8b93-423e-8c99-b867256640a4).  
   
 3.  Přidat odpovídající metodu do třídy v kódu aplikace a aplikovat <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metodě Všimněte si, že <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu jsou název oboru názvů konceptuálního modelu a název funkce v konceptuálním model v uvedeném pořadí. Funkce překladu názvů u LINQ je malá a velká písmena.  
   
 4.  Volání metody v dotazu LINQ to Entities.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak volat funkci vlastní databázi z v rámci LINQ entity dotazu. V příkladu školní modelu. Informace o modelu školní najdete v tématu [vytváření ukázkovou databázi školy](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) a [generování školní .edmx souboru](http://msdn.microsoft.com/en-us/c48b3907-a8be-4fe6-884c-e95af1852758).  
+ Následující příklad ukazuje, jak volat funkci vlastní databázi z v rámci LINQ entity dotazu. V příkladu školní modelu. Informace o modelu školní najdete v tématu [vytváření ukázkovou databázi školy](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) a [generování školní .edmx souboru](http://msdn.microsoft.com/library/c48b3907-a8be-4fe6-884c-e95af1852758).  
   
  Následující kód přidá `AvgStudentGrade` funkce ukázkovou databázi školy.  
   
@@ -72,5 +72,5 @@ Toto téma popisuje, jak volat vlastní funkce, které jsou definovány v datab�
  [!code-vb[DP L2E MapToDBFunction#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e maptodbfunction/vb/module1.vb#4)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled souboru EDMX](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+ [Přehled souboru EDMX](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
  [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

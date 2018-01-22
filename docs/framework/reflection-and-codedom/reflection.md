@@ -33,14 +33,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: df2f376da61f49bd00ea39783bc62015b31ba402
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9b131b8b66315ffbb769eab059142f729cfaf2a2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
-Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načíst [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) a typů front definovaných v nich, jako například [třídy](http://msdn.microsoft.com/en-us/ad7d3561-271e-4546-82fc-e00b059f27a9), [rozhraní](http://msdn.microsoft.com/en-us/fd9d5975-5363-4bc9-b883-609f887895e5), a [typů hodnot](http://msdn.microsoft.com/en-us/c9c567f8-8ab1-4d88-834d-00f7d92418de). Reflexe můžete také použít k vytvoření instance typu za běhu a k vyvolání a přistupovat k nim. Témata o konkrétních aspektů reflexe naleznete v tématu [Příbuzná témata](#related_topics) na konci tohoto přehledu.  
+Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načíst [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) a typů front definovaných v nich, jako například [třídy](http://msdn.microsoft.com/library/ad7d3561-271e-4546-82fc-e00b059f27a9), [rozhraní](http://msdn.microsoft.com/library/fd9d5975-5363-4bc9-b883-609f887895e5), a [typů hodnot](http://msdn.microsoft.com/library/c9c567f8-8ab1-4d88-834d-00f7d92418de). Reflexe můžete také použít k vytvoření instance typu za běhu a k vyvolání a přistupovat k nim. Témata o konkrétních aspektů reflexe naleznete v tématu [Příbuzná témata](#related_topics) na konci tohoto přehledu.  
   
  [Modul common language runtime](../../../docs/standard/clr.md) spravuje zavaděč [aplikační domény](../../../docs/framework/app-domains/application-domains.md), které tvoří definované hranice kolem objekty, které mají stejný obor aplikace. Tato správa zahrnuje načítání každé sestavení do domény příslušné aplikace a řízení rozložení paměti hierarchii typů v rámci každé sestavení.  
   

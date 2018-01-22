@@ -18,11 +18,11 @@ author: tdykstra
 ms.author: tdykstra
 manager: wpickett
 ms.workload: tdykstra
-ms.openlocfilehash: d72099543292a89f930135689358b37f87aac44f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9429a1a1eeef82c7587ef573f6413e45a4e97a91
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikací můžete získat data z mezipaměti nutné načíst z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc díky ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.  
@@ -64,7 +64,7 @@ Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý př�
 >  Při vývoji nových aplikací doporučujeme používat <xref:System.Runtime.Caching.MemoryCache> třídy. Rozhraní API, která je součástí <xref:System.Runtime.Caching> obor názvů je jako rozhraní API, která je součástí <xref:System.Web.Caching.Cache> oboru názvů. Rozhraní API proto bude známé, pokud jste použili ukládání do mezipaměti v předchozích verzích technologie ASP.NET. Příklad použití ukládání do mezipaměti v aplikacích ASP.NET naleznete v části [návod: ukládání dat aplikací technologie ASP.NET](http://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23).  
   
 ### <a name="output-caching"></a>Ukládání výstupu do mezipaměti  
- Ručně data do mezipaměti aplikace, můžete použít <xref:System.Runtime.Caching.MemoryCache> třídy v prostředí ASP.NET. Technologie ASP.NET také podporuje ukládání výstupu do mezipaměti, která ukládá generovaný výstup stránky, ovládací prvky a odpovědi protokolu HTTP v paměti. Můžete nakonfigurovat ukládání výstupu do mezipaměti deklarativně na webovou stránku ASP.NET nebo pomocí nastavení v souboru Web.config. Další informace najdete v tématu [outputCache Element pro ukládání do mezipaměti (schéma nastavení ASP.NET)](http://msdn.microsoft.com/en-us/47cd2b47-316f-4dfd-bbf8-539be3066fee).  
+ Ručně data do mezipaměti aplikace, můžete použít <xref:System.Runtime.Caching.MemoryCache> třídy v prostředí ASP.NET. Technologie ASP.NET také podporuje ukládání výstupu do mezipaměti, která ukládá generovaný výstup stránky, ovládací prvky a odpovědi protokolu HTTP v paměti. Můžete nakonfigurovat ukládání výstupu do mezipaměti deklarativně na webovou stránku ASP.NET nebo pomocí nastavení v souboru Web.config. Další informace najdete v tématu [outputCache Element pro ukládání do mezipaměti (schéma nastavení ASP.NET)](http://msdn.microsoft.com/library/47cd2b47-316f-4dfd-bbf8-539be3066fee).  
   
  Technologie ASP.NET umožňuje rozšířit ukládání výstupu do mezipaměti tak, že vytvoříte vlastní zprostředkovatelé výstupní mezipaměti. Pomocí vlastních poskytovatelů můžete ukládat obsah uložený v mezipaměti pomocí jiných zařízení úložiště například disky, cloudového úložiště a distribuované mezipaměti moduly. Pokud chcete vytvořit poskytovatel vlastní výstupní mezipaměti, můžete vytvořit třídu odvozenou z <xref:System.Web.Caching.OutputCacheProvider> třídy a nakonfigurovat aplikaci, aby používala poskytovatel vlastní výstupní mezipaměti.  
   

@@ -14,17 +14,17 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5c645b493a1ffb99f4d60f8011bc05f275b5d10f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 002d4411e4fee10044ea5dc1d04d7a29cdcd6584
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="privacy-and-data-security"></a>Ochrana osobních údajů a zabezpečení dat
 Zabezpečení a správa citlivých informací v aplikaci ADO.NET je závislé na základní produkty a technologie použitá k jeho vytvoření. ADO.NET přímo neposkytuje služby pro zabezpečení nebo šifrovat data.  
   
 ## <a name="cryptography-and-hash-codes"></a>Šifrování a kódů Hash  
- Třídy v rozhraní .NET Framework <xref:System.Security.Cryptography> oboru názvů lze ze svých aplikací ADO.NET zamezí dat se přečíst nebo upravit neoprávněným třetím stranám. Některé třídy jsou obálek pro nespravované Microsoft CryptoAPI, zatímco jiné jsou spravované implementace. [Šifrovacím službám](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781) téma obsahuje přehled kryptografie v rozhraní .NET Framework, popisuje, jak je implementována cryptograph a jak můžete provádět konkrétní kryptografické úlohy.  
+ Třídy v rozhraní .NET Framework <xref:System.Security.Cryptography> oboru názvů lze ze svých aplikací ADO.NET zamezí dat se přečíst nebo upravit neoprávněným třetím stranám. Některé třídy jsou obálek pro nespravované Microsoft CryptoAPI, zatímco jiné jsou spravované implementace. [Šifrovacím službám](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781) téma obsahuje přehled kryptografie v rozhraní .NET Framework, popisuje, jak je implementována cryptograph a jak můžete provádět konkrétní kryptografické úlohy.  
   
  Na rozdíl od kryptografie, která umožňuje šifrované a pak dešifrování dat, data algoritmu hash je jednosměrný proces. Použití algoritmu hash dat je užitečné, když chcete zabránit manipulaci kontrolou, že data nikdo nezměnil: zadána identické vstupní řetězce délkami algoritmů hash vždy vytvořila identické krátký výstupní hodnoty, které lze snadno porovnat. [Zajištění Integrity dat pomocí hodnot hash](../../../../docs/standard/security/ensuring-data-integrity-with-hash-codes.md) popisuje, jak můžete vytvořit a ověřit hodnoty hash.  
   

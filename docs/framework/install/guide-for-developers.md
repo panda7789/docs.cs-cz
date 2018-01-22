@@ -15,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: cad3f3d813d6882b83a7e9db7ce212fba66e44ea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4be70c047566416b40da3fd34d1e8b8f479af7c5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="install-the-net-framework-for-developers"></a>Nainstalujte rozhraní .NET Framework pro vývojáře
 
@@ -41,9 +41,9 @@ Následující tabulku použijte k rychlé odkazy nebo pro čtení Další podro
   
 |Verze rozhraní .NET Framework|Instalace pro vývojáře|Redistributable instalace|Podpora platformy|  
 |----------------------------|----------------------------|----------------------------------|----------------------|  
-|**4.7.1**|[NET Framework 4.7.1 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[Na stránce 4.7.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Na stránce 4.7.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=852107)|Součástí: <br/>Aktualizovat Creators patří Windows 10<br/>Windows Server, verze. 1709<br /><br /> Můžete nainstalovat na:<br/> Aktualizace Windows 10 tvůrcům <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.7**|[NET Framework 4.7 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 web instalační program](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stažení stránky pro 4.7 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=825303)|Součástí: <br/>Aktualizace Windows 10 tvůrcům<br /><br /> Můžete nainstalovat na:<br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.6.2**|[NET Framework 4.6.2 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=780617)|[Na stránce 4.6.2 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Na stránce 4.6.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=780601)|Součástí: <br /> Windows 10 Anniversary Update<br /><br /> Můžete nainstalovat na:<br /> Aktualizace Windows 10 listopadu <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
+|**4.7.1**|[NET Framework 4.7.1 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[Na stránce 4.7.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Na stránce 4.7.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=852107)|Součástí: <br/>Windows 10 Fall Creators Update<br/>Windows Server, version 1709<br /><br /> Můžete nainstalovat na:<br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.7**|[NET Framework 4.7 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 web instalační program](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stažení stránky pro 4.7 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=825303)|Součástí: <br/>Windows 10 Creators Update<br /><br /> Můžete nainstalovat na:<br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.6.2**|[NET Framework 4.6.2 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=780617)|[Na stránce 4.6.2 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Na stránce 4.6.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=780601)|Součástí: <br /> Windows 10 Anniversary Update<br /><br /> Můžete nainstalovat na:<br /> Windows 10 November Update <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 |**4.6.1**|[NET Framework 4.6.1 Dev Pack](http://go.microsoft.com/fwlink/?LinkId=690706)|[Na stránce 4.6.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=671729)<br /><br /> [Na stránce 4.6.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=671744)|Můžete nainstalovat na:<br /> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 |**4.6**|Součástí [!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)]. Další informace najdete v tématu [Vítá vás Visual Studio 2015](http://msdn.microsoft.com/library/dd831853\(v=vs.140\).aspx).<br /><br /> [Microsoft .NET Framework 4.6 cílení aktualizací Service pack](http://go.microsoft.com/fwlink/?LinkId=528261)|[Stáhněte si stránku pro 4.6 web instalační program](http://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [Stažení stránky pro 4.6 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=528233)|Součástí: <br /> Windows 10 <br />[!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)]<br /><br /> Můžete taky nainstalovat na:<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|  
 |**4.5.2**|[Rozhraní Microsoft .NET Framework 4.5.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=397702)<br /><br /> Pro použití s [Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=325532), Visual Studio 2012 nebo jiné integrovaného vývojového prostředí|[Na stránce 4.5.2 stahování webový instalační program](http://go.microsoft.com/fwlink/p/?LinkId=397703)<br /><br /> [Na stránce 4.5.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=397706)|Můžete nainstalovat na:<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|  
@@ -74,8 +74,6 @@ Sada pro vývojáře pro rozhraní .NET Framework 4.5.1 nebo 4.5.2, cílení pac
 - [Rozhraní Microsoft .NET Framework 4.7.1 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=852105)
 
 - [Rozhraní Microsoft .NET Framework 4.7 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=825319)
-
-- [Rozhraní Microsoft .NET Framework 4.6.2 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=780617)  
   
 - [Rozhraní Microsoft .NET Framework 4.6.2 Dev aktualizací Service Pack](http://go.microsoft.com/fwlink/?LinkId=780617)  
   
@@ -187,24 +185,24 @@ Následující tabulka uvádí podporované jazyky.
 | Arabština                | ar      |
 | Čeština                 | cs      |
 | Dánština                | da      |
-| Holandština                 | NL      |
-| Finština               | Fi      |
-| Francouzština                | FR      |
+| Holandština                 | nl      |
+| Finština               | fi      |
+| Francouzština                | fr      |
 | Němčina                | Německo      |
-| Řečtina                 | El      |
-| Hebrejština                | mu      |
+| Řečtina                 | el      |
+| Hebrew                | mu      |
 | Maďarština             | HU      |
-| Italština               | ho      |
-| Japonština              | Japonsko      |
+| Italština               | it      |
+| Japonština              | ja      |
 | Korejština                | Ko      |
 | Norština             | Ne      |
-| Polština                | PL      |
+| Polština                | pl      |
 | Portugalština (Brazílie)   | pt-BR   |
-| Portugalština (Portugalsko) | PT-PT   |
+| Portugalština (Portugalsko) | pt-PT   |
 | Ruština               | RU      |
 | Zjednodušená čínština    | zh-CHS  |
 | Španělština               | ES      |
-| Švédština               | Sv      |
+| Švédština               | sv      |
 | Tradiční čínština   | zh-CHT  |
 | Turečtina               | tr      |
 | Čeština            | en US   |

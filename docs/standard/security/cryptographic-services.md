@@ -37,11 +37,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1f95193e4ac90df0d0abe5a46ade08d799bdf6b2
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 653ffbf9597be9c82300b2be69ed6a7f9412769d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 <a name="top"></a>Veřejných sítích, jako je Internet není pro zajištění zabezpečené komunikace mezi entitami. Komunikace v těchto sítích je náchylný ke čtení nebo dokonce upravovat neoprávněným třetím stranám. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda nedošlo ke změně dat, a pomáhá poskytovat zabezpečenou komunikaci přes jinak nezabezpečené kanály. Například data mohou být šifrují pomocí šifrovacího algoritmu, přenesen šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zabrání šifrovaná data, bude obtížné dekódovat.  
@@ -206,7 +206,7 @@ ms.lasthandoff: 01/09/2018
   
 -   Alice odesílá do zprávy ve formátu prostého textu a hodnotu hash zprávy (digitální podpis). Bob obdrží hashuje zprávy a porovnává hodnotu hash s hodnotou, kterou obdržel od Alice hodnotě hash. Pokud jsou hodnoty hash shodné, zpráva nebyla změněna. Pokud tyto hodnoty nebudou stejné, zpráva byla změněna po ho napsal Alice.  
   
-     Tato metoda bohužel nevytváří pravost odesílatele. Každý, kdo může zosobnit Alice a odeslání zprávy do Bob. Používají stejnou algoritmus hash k podepsání své zprávy a všechny, které můžete určit Bob se, zda zpráva odpovídá jeho podpis. Toto je jednu formu útok man-in-the-middle. V tématu [NIB: Příklad zabezpečené komunikace Kryptografické služby nové generace (CNG)](http://msdn.microsoft.com/en-us/8048e94e-054a-417b-87c6-4f5e26710e6e) Další informace.  
+     Tato metoda bohužel nevytváří pravost odesílatele. Každý, kdo může zosobnit Alice a odeslání zprávy do Bob. Používají stejnou algoritmus hash k podepsání své zprávy a všechny, které můžete určit Bob se, zda zpráva odpovídá jeho podpis. Toto je jednu formu útok man-in-the-middle. V tématu [NIB: Příklad zabezpečené komunikace Kryptografické služby nové generace (CNG)](http://msdn.microsoft.com/library/8048e94e-054a-417b-87c6-4f5e26710e6e) Další informace.  
   
 -   Alice odešle zprávu ve formátu prostého textu Bobovi přes nezabezpečený kanál veřejné. Odešle hodnotu hash zprávy Bobovi přes zabezpečený kanál privátní. Robert obdrží zprávu ve formátu prostého textu, rozdělí a porovná součet hash k soukromě výměně hash. Pokud se klíče hash shodují, Bob ví dvě věci:  
   

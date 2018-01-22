@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6adbaafe170cf3f5398677d5df3b3d2ff0a95abe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 72b75451d69e107b78152b301027f902ff77a25d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Generování dat služby klientské knihovny (služby WCF Data Services)
 Služba data, která implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] může vrátit dokument metadat služby, který popisuje datový model vystavené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [OData: dokument metadat služby](http://go.microsoft.com/fwlink/?LinkId=186070). Můžete použít **přidat odkaz na službu** dialogové okno v sadě Visual Studio se přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby. Při použití tohoto nástroje se přidat odkaz na metadata vrácený [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v projektu klienta, provede následující akce:  
@@ -32,7 +32,7 @@ Služba data, která implementuje [!INCLUDE[ssODataFull](../../../../includes/ss
     > [!NOTE]
     >  Vrácená metadata se ukládají do projektu klienta do souboru .edmx. Tento soubor EDMX nelze otevřít pomocí návrháře datového modelu Entity, protože nemá stejný formátu souboru .edmx používá rozhraní Entity Framework. Tento soubor metadat můžete zobrazit pomocí editoru XML nebo libovolného textového editoru. Další informace najdete v tématu [ \[MC EDMX\]: datového modelu Entity pro formát dat služby balení](http://go.microsoft.com/fwlink/?LinkID=178833) specifikace  
   
--   Generuje reprezentaci služby jako třída kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>. Tato třída kontejneru generovaného entity se podobá kontejneru entit, který generovat nástroje modelu Entity Data Model. Další informace najdete v tématu [přehled služeb objektů (rozhraní Entity Framework)](http://msdn.microsoft.com/en-us/43014cf9-c9cb-4538-bfbb-197820b60038).  
+-   Generuje reprezentaci služby jako třída kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>. Tato třída kontejneru generovaného entity se podobá kontejneru entit, který generovat nástroje modelu Entity Data Model. Další informace najdete v tématu [přehled služeb objektů (rozhraní Entity Framework)](http://msdn.microsoft.com/library/43014cf9-c9cb-4538-bfbb-197820b60038).  
   
 -   V metadatech service generuje datové třídy pro datové typy modelu, které zjistí.  
   

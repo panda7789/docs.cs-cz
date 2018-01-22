@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2d2c1c021759c7032257e95eb2cad202a461dc05
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5a0a4c2bca136377b9c6812008189dae009e195f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Datová vazba tradičně, už je použité v aplikacích využít dat uložených v databázích. S Windows Forms – datová vazba, můžete přístup k datům z databáze a také data v jiných struktur, jako je například pole a kolekcí, tak dlouho, dokud byly splněny určité minimální požadavky.  
@@ -48,7 +48,7 @@ Datová vazba tradičně, už je použité v aplikacích využít dat uloženýc
  Windows Forms podporuje ovládací prvek vlastnosti datové vazby k veřejné vlastnosti na instanci objektu pomocí <xref:System.Windows.Forms.Binding> typu. Windows Forms také podporuje vazba ovládacích prvků na základě seznamu, například <xref:System.Windows.Forms.ListControl> k objektu instance, kdy <xref:System.Windows.Forms.BindingSource> se používá.  
   
  pole nebo kolekce  
- Tak, aby fungoval jako zdroj dat, musí implementovat seznam <xref:System.Collections.IList> rozhraní; jeden Příkladem může být pole, které je instance <xref:System.Array> třídy. Další informace o pole najdete v tématu [postupy: vytvoření objekty z pole (Visual Basic)](http://msdn.microsoft.com/en-us/6b64e069-0387-400c-9081-3bdc581020c3).  
+ Tak, aby fungoval jako zdroj dat, musí implementovat seznam <xref:System.Collections.IList> rozhraní; jeden Příkladem může být pole, které je instance <xref:System.Array> třídy. Další informace o pole najdete v tématu [postupy: vytvoření objekty z pole (Visual Basic)](http://msdn.microsoft.com/library/6b64e069-0387-400c-9081-3bdc581020c3).  
   
  Obecně platí, měli byste použít <xref:System.ComponentModel.BindingList%601> při vytváření seznamů objektů pro datovou vazbu. <xref:System.ComponentModel.BindingList%601>je obecná verze <xref:System.ComponentModel.IBindingList> rozhraní. <xref:System.ComponentModel.IBindingList> Rozšiřuje rozhraní <xref:System.Collections.IList> rozhraní přidáním vlastnosti, metod a události, které jsou nezbytné pro dvoucestné datovou vazbu.  
   

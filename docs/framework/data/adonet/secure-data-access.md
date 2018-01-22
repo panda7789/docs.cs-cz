@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 428dd4cfb9533dbf57b984c8bc1c557f37bb7d15
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c26854af585fc026ba9abee77bc3b8a95bcaba79
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="secure-data-access"></a>Zabezpečení přístupu k datům
 Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k dispozici v příslušné úložiště dat, nebo databáze. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo součásti, které vaše aplikace může obsahovat.  
@@ -35,7 +35,7 @@ Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Popisuje osvědčené postupy zabezpečení a techniky pro ochranu informace o připojení, například pomocí chráněné konfigurace k zašifrování připojovací řetězce.|  
-|[Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
+|[Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
 |[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)|Popisuje, jak vytvořit připojovací řetězce z vstup uživatele v době běhu.|  
 |[Přehled zabezpečení SQL Serveru](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Popisuje architekturu zabezpečení systému SQL Server.|  
   
@@ -89,7 +89,7 @@ Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Na základě rolí zabezpečení modelu COM + a rozhraní .NET Framework](http://msdn.microsoft.com/en-us/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|Popisuje postup pro integraci zabezpečení služby COM + spravovaného kódu.|  
+|[Na základě rolí zabezpečení modelu COM + a rozhraní .NET Framework](http://msdn.microsoft.com/library/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|Popisuje postup pro integraci zabezpečení služby COM + spravovaného kódu.|  
   
 ## <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem  
  Rozhraní .NET Framework poskytuje pro interakci s nespravovaným kódem, včetně COM komponenty modelu COM + služby, knihovny externích typů a mnoho služeb operačního systému. Práce s nespravovaným kódem zahrnuje předávány mimo hraniční zabezpečení pro spravovaný kód. Váš kód a kód, který volá ho musí mít nespravovaného kódu oprávnění (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> zadaného příznaku). Nespravovaný kód můžou vést k ohrožení zabezpečení nezamýšleným do vaší aplikace. Proto byste neměli spolupráce s nespravovaným kódem, pokud to není nezbytně nutné.  
@@ -99,12 +99,12 @@ Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)|Obsahuje témata popisující, jak k vystavení součástí COM v rozhraní .NET Framework a postup vystavení součástí .NET Framework do modelu COM.|  
-|[Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Obsahuje Pokročilá témata například primární spolupracující sestavení, vlákna a vlastní zařazování.|  
+|[Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Obsahuje Pokročilá témata například primární spolupracující sestavení, vlákna a vlastní zařazování.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
+ [Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)  
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

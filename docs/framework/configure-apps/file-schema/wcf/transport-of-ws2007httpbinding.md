@@ -14,21 +14,21 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fc60e72ae810578edb71b73b39e756a951b1f425
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3a0aa0e4dacafc4c81fa324529dfa3551fcc9c8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="lttransportgt-of-ltws2007httpbindinggt"></a>&lt;transport&gt; – &lt;ws2007HttpBinding&gt;
 Definuje nastavení ověřování pro přenos HTTP.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
-\<– ws2007HttpBinding >  
+\<ws2007HttpBinding>  
 \<Vazba >  
 \<zabezpečení >  
-\<přenos >  
+\<transport>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,7 +60,7 @@ transport clientCredentialType =
 |Žádné|Zabezpečení je vypnuté.|  
 |Základní|Používá základní ověřování.|  
 |Ověřování algoritmem Digest|Použití ověřování algoritmem digest.|  
-|NTLM|Ověřování protokolem NTLM se používá jako nouzové řešení s doménou systému Windows.|  
+|Ntlm|Ověřování protokolem NTLM se používá jako nouzové řešení s doménou systému Windows.|  
 |Windows|Používá integrované ověřování systému Windows.|  
 |certifikát|K ověření klienta používá certifikáty X.509.|  
   
@@ -71,7 +71,7 @@ transport clientCredentialType =
 |Žádné|Zabezpečení je vypnuté.|  
 |Základní|Používá základní ověřování.|  
 |Ověřování algoritmem Digest|Použití ověřování algoritmem digest.|  
-|NTLM|Používá protokol NTLM jako nouzové řešení s doménou systému Windows.|  
+|Ntlm|Používá protokol NTLM jako nouzové řešení s doménou systému Windows.|  
 |Windows|Používá integrované ověřování systému Windows.|  
 |certifikát|K ověření klienta používá certifikáty X.509.|  
   
@@ -92,5 +92,5 @@ transport clientCredentialType =
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)

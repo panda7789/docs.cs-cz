@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f45d0fb6a2ffb2e20cc23e67de4cac6a2f2c81bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8bd9b87fdfa54a6f9bf53e4fa897106257b4c625
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-forms-security"></a>Windows Forms – zabezpečení
 Windows Forms funkce model zabezpečení, které je založené na kódu (zabezpečení, které úrovně jsou nastavené na kód, bez ohledu na to uživatel, který spouští kód). Toto je kromě všech schémata zabezpečení, které mohou být v místě již v systému. Může jít o programů v prohlížeče (například na základě zóny zabezpečení k dispozici v aplikaci Internet Explorer) nebo operačního systému (například zabezpečení na základě přihlašovacích údajů systému Windows NT).  
@@ -44,10 +44,10 @@ Windows Forms funkce model zabezpečení, které je založené na kódu (zabezpe
  Popisuje provádění okno manipulaci, použití schránky a volání nespravovaného kódu v prostředí s polovičním důvěryhodné.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [NIB: Výchozí zásady zabezpečení](http://msdn.microsoft.com/en-us/2c086873-0894-4f4d-8f7e-47427c1a3b55)  
+ [NIB: Výchozí zásady zabezpečení](http://msdn.microsoft.com/library/2c086873-0894-4f4d-8f7e-47427c1a3b55)  
  Uvádí výchozí oprávnění udělená oprávnění sad úplný vztah důvěryhodnosti, místního intranetu a Internetu.  
   
- [NIB: Správa obecných zásad zabezpečení](http://msdn.microsoft.com/en-us/5121fe35-f0e3-402c-94ab-4f35b0a87b4b)  
+ [NIB: Správa obecných zásad zabezpečení](http://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b)  
  Poskytuje informace o správě zásad zabezpečení rozhraní .NET Framework a zvyšování oprávnění.  
   
  [Správa nebezpečných oprávnění a zásad](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md)  
@@ -56,7 +56,7 @@ Windows Forms funkce model zabezpečení, které je založené na kódu (zabezpe
  [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)  
  Odkazy na témata, které popisují doporučené postupy pro bezpečné psaní kódu pro rozhraní .NET Framework.  
   
- [NIB: Vyžadování oprávnění](http://msdn.microsoft.com/en-us/0447c49d-8cba-45e4-862c-ff0b59bebdc2)  
+ [NIB: Vyžadování oprávnění](http://msdn.microsoft.com/library/0447c49d-8cba-45e4-862c-ff0b59bebdc2)  
  Popisuje použití atributů, které chcete dát modulu runtime vědět, jaká oprávnění kódu je potřeba spustit.  
   
  [Klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md)  
@@ -65,8 +65,8 @@ Windows Forms funkce model zabezpečení, které je založené na kódu (zabezpe
  [Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md)  
  Popisuje základní informace o práci s rozhraním .NET Framework spustit čas zásady zabezpečení.  
   
- [NIB: Určení, kdy upravit zásady zabezpečení](http://msdn.microsoft.com/en-us/af749b17-e461-409d-84b9-a3d44789db16)  
+ [NIB: Určení, kdy upravit zásady zabezpečení](http://msdn.microsoft.com/library/af749b17-e461-409d-84b9-a3d44789db16)  
  Vysvětluje, jak k určení, kdy aplikace potřebují vycházející z výchozí zásady zabezpečení.  
   
- [NIB: Nasazení zásad zabezpečení](http://msdn.microsoft.com/en-us/f936c1e5-033b-4bd9-a3bd-a39ba733a681)  
+ [NIB: Nasazení zásad zabezpečení](http://msdn.microsoft.com/library/f936c1e5-033b-4bd9-a3bd-a39ba733a681)  
  Popisuje nejlepší způsob pro nasazení změny zásad zabezpečení.

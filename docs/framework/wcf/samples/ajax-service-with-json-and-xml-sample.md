@@ -14,16 +14,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 665e05907f837887a7dd0375e540b6e9167a820e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7d831d4663031419977b75c6cfe183ac4bd52a86
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>Ukázka služby AJAX s protokoly JSON a XML
 Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] k vytvoření služby asynchronní JavaScript a XML (AJAX), který vrací data JavaScript Object Notation (JSON) nebo XML. Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka.  
   
- Na rozdíl od jiných AJAX ukázky, tato ukázka nepoužívá prvku ASP.NET AJAX a <xref:System.Web.UI.ScriptManager> ovládacího prvku. S určitou další konfiguraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby AJAX lze přistupovat z libovolné stránce HTML pomocí jazyka JavaScript a tento scénář je zobrazen v tomto poli. Příklad použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí prvku ASP.NET AJAX, najdete v části [AJAX ukázky](http://msdn.microsoft.com/en-us/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
+ Na rozdíl od jiných AJAX ukázky, tato ukázka nepoužívá prvku ASP.NET AJAX a <xref:System.Web.UI.ScriptManager> ovládacího prvku. S určitou další konfiguraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby AJAX lze přistupovat z libovolné stránce HTML pomocí jazyka JavaScript a tento scénář je zobrazen v tomto poli. Příklad použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí prvku ASP.NET AJAX, najdete v části [AJAX ukázky](http://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
   
  Tento příklad ukazuje, jak přepínat typ odpovědi operace mezi JSON a XML. Tato funkce je k dispozici bez ohledu na to, zda je služba nakonfigurována pro přistupovat pomocí prvku ASP.NET AJAX nebo stránku HTML/JavaScript klienta.  
   

@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c24b5beae2a10720ee4d89b9d2d60306978d2628
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6407ccb093d6bdba4e3953ffa1117cf4b56c119
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-walkthroughs"></a>Návody pro WPF
 Návody poskytují podrobné pokyny pro běžné scénáře. Díky tomu je vhodné oddělení na zahájení informací o produktu nebo oblasti určité funkce.  
@@ -32,11 +32,11 @@ Návody poskytují podrobné pokyny pro běžné scénáře. Díky tomu je vhodn
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Vytvoření jednoduché WPF aplikace pomocí Návrháře WPF](http://msdn.microsoft.com/en-us/2d412231-dbdf-4e69-b060-4f2b246c2027)|Ukazuje, jak vytvořit jednoduchou aplikaci WPF s [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].|  
-|[Návod: Vytváření dynamické rozložení](http://msdn.microsoft.com/en-us/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|Ukazuje vytvoření dynamické rozložení pomocí <xref:System.Windows.Controls.Grid> panelu ovládacího prvku.|  
-|[Návod: Vytvoření jednoduché aplikace s možností změny velikosti pomocí Návrháře WPF](http://msdn.microsoft.com/en-us/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|Demonstruje postup vytvoření rozložení oken, které jsou umožňující změnu velikosti uživatelem v době běhu.|  
-|[Návod: Vytvoření datové vazby pomocí Návrháře WPF](http://msdn.microsoft.com/en-us/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|Ukazuje, jak používat [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] k vytvoření vazby dat, které připojení dat k ovládacímu prvku.|  
-|[Návod: Použití DesignInstance vázat na Data v Návrháři](http://msdn.microsoft.com/en-us/a4d3747a-bd43-42bc-b66d-477856a6769c)|Ukazuje, jak používat [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] k vytvoření vazby na data v době návrhu pro kontext data, která je přiřazena za běhu.|  
+|[Návod: Vytvoření jednoduché WPF aplikace pomocí Návrháře WPF](http://msdn.microsoft.com/library/2d412231-dbdf-4e69-b060-4f2b246c2027)|Ukazuje, jak vytvořit jednoduchou aplikaci WPF s [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].|  
+|[Návod: Vytváření dynamické rozložení](http://msdn.microsoft.com/library/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|Ukazuje vytvoření dynamické rozložení pomocí <xref:System.Windows.Controls.Grid> panelu ovládacího prvku.|  
+|[Návod: Vytvoření jednoduché aplikace s možností změny velikosti pomocí Návrháře WPF](http://msdn.microsoft.com/library/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|Demonstruje postup vytvoření rozložení oken, které jsou umožňující změnu velikosti uživatelem v době běhu.|  
+|[Návod: Vytvoření datové vazby pomocí Návrháře WPF](http://msdn.microsoft.com/library/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|Ukazuje, jak používat [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] k vytvoření vazby dat, které připojení dat k ovládacímu prvku.|  
+|[Návod: Použití DesignInstance vázat na Data v Návrháři](http://msdn.microsoft.com/library/a4d3747a-bd43-42bc-b66d-477856a6769c)|Ukazuje, jak používat [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] k vytvoření vazby na data v době návrhu pro kontext data, která je přiřazena za běhu.|  
   
 ## <a name="wpf-walkthroughs"></a>Návody pro WPF  
   
@@ -61,4 +61,4 @@ Návody poskytují podrobné pokyny pro běžné scénáře. Díky tomu je vhodn
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návody pro Visual Studio](http://msdn.microsoft.com/en-us/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Poskytuje související seznam návody pro všechny oblasti programování v sadě Visual Studio.|
+|[Návody pro Visual Studio](http://msdn.microsoft.com/library/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Poskytuje související seznam návody pro všechny oblasti programování v sadě Visual Studio.|

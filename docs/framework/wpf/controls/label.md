@@ -18,23 +18,23 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1ffb1a826bb37bddeefae9862e34f59096826685
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8f8e38dc9560e2e5a35c709572333d0f84f38cda
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="label"></a>Popisek
 <xref:System.Windows.Controls.Label>ovládací prvky obvykle poskytování informací v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  V minulosti <xref:System.Windows.Controls.Label> má obsahovala pouze text, ale protože <xref:System.Windows.Controls.Label> který se dodává s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je <xref:System.Windows.Controls.ContentControl>, může obsahovat buď text nebo <xref:System.Windows.UIElement>.  
   
  A <xref:System.Windows.Controls.Label> poskytuje funkční i visual podporu pro přístupové klíče. Často se používá umožňující rychlé klávesnice přístup k ovládacím prvkům <xref:System.Windows.Controls.TextBox>. Přiřadit <xref:System.Windows.Controls.Label> k <xref:System.Windows.Controls.Control>, nastavte <xref:System.Windows.Controls.Label.Target%2A?displayProperty=nameWithType> vlastnosti do ovládacího prvku, který by měl fokus, když uživatel stiskne přístupový klíč.  
   
- Na následujícím obrázku <xref:System.Windows.Controls.Label> "Motivy", které cílí <xref:System.Windows.Controls.ComboBox>.  Když uživatel stiskne, <xref:System.Windows.Controls.ComboBox> obdrží fokus.  Další informace najdete v tématu [postup: nastavte vlastnost Target tohoto štítku](http://msdn.microsoft.com/en-us/b24c6977-ebcb-4855-a9bb-3fd4435af8f8).  
+ Na následujícím obrázku <xref:System.Windows.Controls.Label> "Motivy", které cílí <xref:System.Windows.Controls.ComboBox>.  Když uživatel stiskne, <xref:System.Windows.Controls.ComboBox> obdrží fokus.  Další informace najdete v tématu [postup: nastavte vlastnost Target tohoto štítku](http://msdn.microsoft.com/library/b24c6977-ebcb-4855-a9bb-3fd4435af8f8).  
   
  ![Zobrazení vlastností ukazuje označené podle využití](../../../../docs/framework/wpf/controls/media/labeledby.JPG "LabeledBy")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: nastavte vlastnost Target tohoto štítku](http://msdn.microsoft.com/en-us/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)  
+ [Postupy: nastavte vlastnost Target tohoto štítku](http://msdn.microsoft.com/library/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Label>

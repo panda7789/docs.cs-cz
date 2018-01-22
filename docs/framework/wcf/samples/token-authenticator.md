@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d635a1d5122319e228feb4d8a362b7609129c9de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 76f3913f5cf6166793cb6f95ef3658c24e2453b4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ověřovací data tokenu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] slouží k ověřování použít se zprávou, že je konzistentní a ověřování identity přidružené k tokenu ověření tokenu.  
@@ -350,7 +350,7 @@ static void DisplayIdentityInformation()
   
 3.  Spusťte client.exe z \client\bin. Činnost klienta se zobrazí na klientskou aplikaci konzoly.  
   
-4.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky mezi počítači  
   
@@ -372,7 +372,7 @@ static void DisplayIdentityInformation()
   
 9. Na klientském počítači spusťte z příkazového řádku Client.exe.  
   
-10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
   

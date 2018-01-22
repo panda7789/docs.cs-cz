@@ -19,11 +19,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: de9d94c9b4dfbdccb4ea5b3a7281715460d076a9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffe4670ef07b0a9b541bf2099958aa943bba2f68
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 
@@ -96,7 +96,7 @@ Jak by uživatel očekával od objektově orientované třídy knihovny, typy ro
 
 - Aplikace orientované na služby, pomocí služby Windows Communication Foundation (WCF). V tématu [aplikace orientované na služby s použitím technologie WCF](../../../docs/framework/wcf/index.md).
 
-- Aplikace podporující pracovní postupy, pomocí Windows Workflow Foundation (WF). V tématu [vytváření pracovních postupů v rozhraní .NET Framework](http://msdn.microsoft.com/en-us/cbf3880f-dc7b-466d-b808-1109b1223f4a).
+- Aplikace podporující pracovní postupy, pomocí Windows Workflow Foundation (WF). V tématu [vytváření pracovních postupů v rozhraní .NET Framework](http://msdn.microsoft.com/library/cbf3880f-dc7b-466d-b808-1109b1223f4a).
 
 Windows Forms třídy jsou komplexní sadu opakovaně použitelných typů, které významně zjednodušují vývoj grafického uživatelského rozhraní systému Windows. Pokud píšete aplikaci webového formuláře ASP.NET, můžete použít třídy webových formulářů.
 
@@ -106,5 +106,5 @@ Windows Forms třídy jsou komplexní sadu opakovaně použitelných typů, kter
 [Průvodce instalací](../../../docs/framework/install/index.md)   
 [Průvodce vývojem](../../../docs/framework/development-guide.md)   
 [Nástroje](../../../docs/framework/tools/index.md)   
-[.NET framework – ukázky](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)   
+[.NET framework – ukázky](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)   
 [Knihovna tříd rozhraní .NET framework](http://go.microsoft.com/fwlink/?LinkID=227195)

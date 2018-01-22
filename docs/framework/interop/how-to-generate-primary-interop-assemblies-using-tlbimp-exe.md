@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d459ac318f2c4a3911830d08e26b31ae5366e896
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4dfbf3c2282e60ec45cb136f52fb115a8d769678
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe
 Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:  
@@ -55,7 +55,7 @@ Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:
   
  Závislé sestavení primární spolupráce s číslem verze, která se liší od původního knihovny typů není zjistitelný při instalaci v aktuálním adresáři. Musíte zaregistrovat závislé sestavení primární spolupráce v registru systému Windows nebo pomocí **/reference** možnost Ujistěte se, že vyhledá Tlbimp.exe závislé knihovny DLL.  
   
- Můžete také zabalit několik verzí knihovny typů. Pokyny najdete v tématu [postupy: zabalení více verzí z knihovny typů](http://msdn.microsoft.com/en-us/79eefe04-a770-4bc3-8ea2-e90ddb8ec31f).  
+ Můžete také zabalit několik verzí knihovny typů. Pokyny najdete v tématu [postupy: zabalení více verzí z knihovny typů](http://msdn.microsoft.com/library/79eefe04-a770-4bc3-8ea2-e90ddb8ec31f).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad importuje knihovny typů COM `LibUtil.tlb` a podepisuje sestavení `LibUtil.dll` se silným názvem pomocí souboru klíče `CompanyA.snk`. Díky vynechání název konkrétní oboru názvů, tento příklad vytvoří výchozí obor názvů `LibUtil`.  

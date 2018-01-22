@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a18afd8ba06b5bcc70ca5a6febc10be8050891b0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2a2fc73ee5e9f9e0a2f8351f8d38311801ebfb34
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-event-handlers-in-windows-forms"></a>Vytváření obslužných rutin událostí ve Windows Forms
 Obslužné rutiny události je procedura ve vašem kódu, který určuje, jaké akce provede, když dojde k události, například když uživatel klikne na tlačítko nebo fronta zpráv přijme nějakou zprávu. Pokud se vyvolá událost, jsou spustit obslužnou rutinu události nebo obslužné rutiny, které přijímají události. Události lze přiřadit k více obslužných rutin a metody, které zpracovávají konkrétní události lze změnit dynamicky. Návrhář formulářů Windows můžete také použít k vytvoření obslužné rutiny událostí.  
@@ -45,7 +45,7 @@ Obslužné rutiny události je procedura ve vašem kódu, který určuje, jaké 
  [Řazení událostí ve Windows Forms](../../../docs/framework/winforms/order-of-events-in-windows-forms.md)  
  Popisuje pořadí, ve kterém jsou vyvolány události v ovládacích prvcích Windows Forms.  
   
- [Postupy: vytváření obslužných rutin událostí pomocí návrháře](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2)  
+ [Postupy: vytváření obslužných rutin událostí pomocí návrháře](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2)  
  Popisuje, jak používat návrhář formulářů Windows k vytváření obslužných rutin událostí.  
   
 ## <a name="related-sections"></a>Související oddíly  

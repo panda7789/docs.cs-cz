@@ -14,16 +14,16 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 490a0e4395e27aee15ca2d649e114a4c8b7eeeb9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d38f90822746c08d576879ab35fa0984e439640b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="deployment-considerations-entity-framework"></a>Důležité informace o nasazení (rozhraní Entity Framework)
 Toto téma obsahuje informace o nasazení aplikace, které používají ADO.NET Entity Framework pro přístup k datům. Další informace o rozhraní Entity Framework najdete v tématu [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md).  
   
- Rozhraní Entity Framework poskytuje sadu nástrojů, které integrovat a usnadňují vývoj v sadě Visual Studio. Další informace najdete v tématu [nástrojů modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527). Toto téma nepopisuje použití určitých technologií nasazení aplikace rozhraní Entity Framework.  
+ Rozhraní Entity Framework poskytuje sadu nástrojů, které integrovat a usnadňují vývoj v sadě Visual Studio. Další informace najdete v tématu [nástrojů modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527). Toto téma nepopisuje použití určitých technologií nasazení aplikace rozhraní Entity Framework.  
   
  Visual Studio poskytuje zařízení pro distribuci a nasazení aplikací, jako je například ClickOnce – nasazení. Další informace najdete v tématu [nasazení aplikací a součástí](/visualstudio/deployment/deploying-applications-services-and-components) v dokumentaci sady Visual Studio.  
   
@@ -31,7 +31,7 @@ Toto téma obsahuje informace o nasazení aplikace, které používají ADO.NET 
   
 -   Rozhraní Entity Framework je součástí rozhraní .NET Framework od verze rozhraní .NET Framework 3.5 Service Pack 1 (SP1). Musí se ujistěte, že rozhraní .NET Framework 3.5 SP1 nebo novější verze nainstalovaný při nasazování aplikace rozhraní Entity Framework.  
   
--   Když konceptuálního modelu je generován průvodci Entity Data Model, vytvoří se připojovací řetězec v konfiguračním souboru aplikace. Soubory mapování a modelu lze vložit jako prostředky aplikace nebo může být zkopírován do výstupního adresáře. Ve výchozím nastavení jsou nasazeny jako prostředky embedded aplikace. Použití `Metadata Artifact Processing` vlastnost souboru Entity Designer vyberte jednu z těchto možností. Další informace najdete v tématu [postupy: kopírování modelu a mapování soubory do výstupního adresáře](http://msdn.microsoft.com/en-us/e2c9820f-1705-457e-9fdb-8b289f3179b4).  
+-   Když konceptuálního modelu je generován průvodci Entity Data Model, vytvoří se připojovací řetězec v konfiguračním souboru aplikace. Soubory mapování a modelu lze vložit jako prostředky aplikace nebo může být zkopírován do výstupního adresáře. Ve výchozím nastavení jsou nasazeny jako prostředky embedded aplikace. Použití `Metadata Artifact Processing` vlastnost souboru Entity Designer vyberte jednu z těchto možností. Další informace najdete v tématu [postupy: kopírování modelu a mapování soubory do výstupního adresáře](http://msdn.microsoft.com/library/e2c9820f-1705-457e-9fdb-8b289f3179b4).  
   
 -   Ujistěte se, že model a mapování informace (vyjádřeno v konceptuálního schématu definition language (CSDL), store schema definition language (SSDL) a specifikace jazyka mapování (MSL)) se nasazují společně s aplikace a v umístění Zadaný připojovací řetězec. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md).  
   

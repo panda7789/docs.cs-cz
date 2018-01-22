@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c894d431aa31e32b4a8cb7ff02d39d5aa5e95381
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0f4f410f0f6c209dbc43642a15ae85a788390f4a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Vytvoření nové aplikace prohlížeče XAML (XBAP)  
- Nejjednodušší způsob, jak vytvořit nový projekt XBAP je s [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]. Při vytváření nového projektu, vyberte **aplikace prohlížeče WPF** ze seznamu šablon. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace prohlížeče WPF](http://msdn.microsoft.com/en-us/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
+ Nejjednodušší způsob, jak vytvořit nový projekt XBAP je s [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]. Při vytváření nového projektu, vyberte **aplikace prohlížeče WPF** ze seznamu šablon. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace prohlížeče WPF](http://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
   
  Když spouštíte projekt XBAP, otevře se v okně prohlížeče namísto samostatného okna. Když ladíte XBAP z [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], aplikace spustí s oprávněním pro zónu Internetu a proto throw výjimky zabezpečení, pokud se překročí tato oprávnění. Další informace najdete v tématu [zabezpečení](../../../../docs/framework/wpf/security-wpf.md) a [WPF částečné důvěryhodnosti zabezpečení](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   

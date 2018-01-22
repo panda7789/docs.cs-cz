@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 81c5f7f4a19be06b1d2b6094dce95ee852d34b34
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: fc8980f4c232f5368ff48c2ee57e5001239041f0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-linq-to-dataset"></a>Začínáme (LINQ na DataSet)
 Tato část obsahuje úvodní informace o programování s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  
@@ -44,6 +44,6 @@ Tato část obsahuje úvodní informace o programování s [!INCLUDE[linq_datase
  <xref:System.Data.DataTableExtensions>  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to ADO.NET](http://msdn.microsoft.com/en-us/be3297b9-1b54-4d4c-82a8-add0d79c2006)  
+ [Technologie LINQ to ADO.NET](http://msdn.microsoft.com/library/be3297b9-1b54-4d4c-82a8-add0d79c2006)  
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
- [Začínáme s jazykem LINQ](http://msdn.microsoft.com/en-us/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)
+ [Začínáme s jazykem LINQ](http://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)

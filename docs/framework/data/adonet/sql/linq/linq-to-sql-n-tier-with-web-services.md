@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a24b8fe5d0da4b3fa3a13db15bd91be83f102dcf
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 79b9b1270f99720dec6b6369706f8a2f601d249e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Technologie LINQ to SQL N-vrstvá s webovými službami
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je určený pro použití na střední vrstvy v vrstva přístupu k datům volně vázány (DAL), třeba webové služby. Pokud prezentační vrstvou se webovou stránku ASP.NET, pak použijete <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru ke správě přenosů dat mezi uživatelské rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstvou není stránku ASP.NET, pak střední vrstvě a prezentační vrstvou musí používat ke správě serializace a deserializace dat některé další kroky.  
@@ -49,4 +49,4 @@ ms.lasthandoff: 01/17/2018
   
 ## <a name="see-also"></a>Viz také  
  [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
- [NIB: LinqDataSource webového serveru – Přehled ovládacího prvku](http://msdn.microsoft.com/en-us/104cfc3f-7385-47d3-8a51-830dfa791136)
+ [NIB: LinqDataSource webového serveru – Přehled ovládacího prvku](http://msdn.microsoft.com/library/104cfc3f-7385-47d3-8a51-830dfa791136)

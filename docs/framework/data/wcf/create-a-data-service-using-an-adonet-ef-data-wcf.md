@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9362aa6ea02f5878d2419ee7cbaab349cae27038
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e90b11800685707460171e5e2d250ef757979c44
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: vytvoření služby Data pomocí zdroje dat ADO.NET Entity Framework (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]zpřístupní entity data jako datové služby. Tato data entity zajišťuje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Pokud zdroj dat je relační databáze. Toto téma ukazuje, jak vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]– na základě datového modelu v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] webovou aplikaci, která je založena na existující databázi a použít tento datový model pro vytvoření nové datové služby.  
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
 9. Klikněte na tlačítko **Dokončit** dokončete průvodce.  
   
-     Tím se vytvoří výchozí datový model založena na konkrétní databázi. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Umožňuje přizpůsobit datový model. Další informace najdete v tématu [úlohy](http://msdn.microsoft.com/en-us/7166f1f1-4de8-4bd4-86b5-5e20a2ebaccb).  
+     Tím se vytvoří výchozí datový model založena na konkrétní databázi. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Umožňuje přizpůsobit datový model. Další informace najdete v tématu [úlohy](http://msdn.microsoft.com/library/7166f1f1-4de8-4bd4-86b5-5e20a2ebaccb).  
   
 ### <a name="to-create-the-data-service-by-using-the-new-data-model"></a>Chcete-li vytvořit službu data pomocí nového datového modelu  
   

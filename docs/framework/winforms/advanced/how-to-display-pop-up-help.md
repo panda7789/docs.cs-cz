@@ -23,11 +23,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4d139c283d002ac76005f22385d83190144c5082
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3ec4401bb3465f72e4ef732e7554dc64603d700c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-display-pop-up-help"></a>Postupy: Zobrazení místní nápovědy
 Je možné zobrazit nápovědu pro Windows Forms pomocí **pomoci** tlačítko, které se nachází na pravé straně záhlaví, přístupný prostřednictvím <xref:System.Windows.Forms.Form.HelpButton%2A> vlastnost. Tento typ zobrazení nápovědy je vhodné pro použití s dialogová okna. Dialogová okna zobrazí modálně (s <xref:System.Windows.Forms.Form.ShowDialog%2A> metoda) mít potíže při vyvolání externí nápovědy systémy, protože modálních dialogových oken, musí se napřed zavřít fokus můžete přesune na další okno. Kromě toho používání **pomoci** tlačítko vyžaduje, aby byl žádné **minimalizaci** tlačítko nebo **Maximalizovat** tlačítko zobrazené v záhlaví. Jedná se o standardní dialogové konvenci, zatímco forms obvykle mají **minimalizaci** a **Maximalizovat** tlačítka.  
@@ -35,7 +35,7 @@ Je možné zobrazit nápovědu pro Windows Forms pomocí **pomoci** tlačítko, 
  Uvědomte si, že můžete také použít <xref:System.Windows.Forms.HelpProvider> součást propojení ovládacích prvků do souborů v systému nápovědy, i v případě, že jste implementovali automaticky otevírané okno nápovědy. Další informace najdete v tématu [poskytnutí nápovědy v aplikaci Windows](../../../../docs/framework/winforms/advanced/how-to-provide-help-in-a-windows-application.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ### <a name="to-display-pop-up-help"></a>K zobrazení místní nápovědy  
   

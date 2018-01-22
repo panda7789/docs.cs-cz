@@ -17,16 +17,16 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1d0c98224b8b508fec5fe584388872757a9dfdf3
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1d17bb97811bb3a2ae979e5a05b8d39baf2b9c63
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="loading-a-dataset-from-xml"></a>Načítání datové sady z XML
 Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML nebo dokumentu. Kromě toho s rozhraním .NET Framework máte flexibilitu přes načtení informací ze souboru XML a jak schéma nebo relační struktura <xref:System.Data.DataSet> je vytvořena.  
   
- K vyplnění <xref:System.Data.DataSet> s daty ze souboru XML, použijte **ReadXml** metodu <xref:System.Data.DataSet> objektu. **ReadXml** metoda čte z soubor datového proudu, nebo **XmlReader**a jako argumenty trvá zdroj XML plus volitelný **XmlReadMode** argument. (Další informace o **XmlReader**, najdete v části [NIB: čtení dat XML s XmlTextReader](http://msdn.microsoft.com/en-us/762c069b-b50c-41b8-936e-39eacfb0d540).) **ReadXml** metoda načte obsah datový proud XML nebo dokumentu a zatížení <xref:System.Data.DataSet> s daty. Vytvoří také relační schéma <xref:System.Data.DataSet> v závislosti na tom **XmlReadMode** zadaný a jestli relační schéma už existuje.  
+ K vyplnění <xref:System.Data.DataSet> s daty ze souboru XML, použijte **ReadXml** metodu <xref:System.Data.DataSet> objektu. **ReadXml** metoda čte z soubor datového proudu, nebo **XmlReader**a jako argumenty trvá zdroj XML plus volitelný **XmlReadMode** argument. (Další informace o **XmlReader**, najdete v části [NIB: čtení dat XML s XmlTextReader](http://msdn.microsoft.com/library/762c069b-b50c-41b8-936e-39eacfb0d540).) **ReadXml** metoda načte obsah datový proud XML nebo dokumentu a zatížení <xref:System.Data.DataSet> s daty. Vytvoří také relační schéma <xref:System.Data.DataSet> v závislosti na tom **XmlReadMode** zadaný a jestli relační schéma už existuje.  
   
  Následující tabulka popisuje možnosti **XmlReadMode** argument.  
   

@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ff15e43156293a3bdd4c48b82fba224444d1885a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d9dd82926385ee97b05694d954b94d7821a1e638
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace služby dat (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit datové služby, které zveřejňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Data v těchto kanálů mohou pocházet z různých datových zdrojů. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Zprostředkovatelé dat používá ke zveřejnění těchto dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Zahrnout tyto zprostředkovatele [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, zprostředkovatele reflexe a sadu rozhraní poskytovatele služeb vlastní data. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  
@@ -79,7 +79,7 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvoři
 |`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|Nepodporováno|  
 |`/Customers('ALFKI')?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> - a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nepodporováno|Nepodporováno|Nepodporováno|Nepodporováno|  
   
- <sup>1</sup> v tomto příkladu `Address` představuje vlastnost komplexního typu `Customers` entity, který má vlastnost s názvem `StreetAddress`. Model používaný službami data Northwind explicitně nedefinuje tohohle komplexního typu. Když datový model je definována pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, můžete použít [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje k definování komplexního typu. Další informace najdete v tématu [postupy: vytvoření a úprava komplexní typy](http://msdn.microsoft.com/en-us/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
+ <sup>1</sup> v tomto příkladu `Address` představuje vlastnost komplexního typu `Customers` entity, který má vlastnost s názvem `StreetAddress`. Model používaný službami data Northwind explicitně nedefinuje tohohle komplexního typu. Když datový model je definována pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, můžete použít [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje k definování komplexního typu. Další informace najdete v tématu [postupy: vytvoření a úprava komplexní typy](http://msdn.microsoft.com/library/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
   
  <sup>2</sup> tento identifikátor URI je podporovaná, když vlastnosti, která vrací binární rozsáhlý objekt (binární rozsáhlý OBJEKT) je definován jako mediální prostředek, který patří do entity, která je položka odkaz média, který v tomto případě je `Customers`. Další informace najdete v tématu [streamování zprostředkovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
   

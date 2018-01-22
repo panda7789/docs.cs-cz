@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d61dbe2051109273a8616336e0efb46f7bd20864
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 94a024081acfcf4b1926f485c6dbfc2f394b418c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Standardní operátory dotazu v technologii LINQ to Entities dotazy
 V dotazu zadejte informace, které chcete načíst z datového zdroje. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupené a ve tvaru před vrácením. LINQ poskytuje sadu metod standardní dotazu, které můžete použít v dotazu. Většina z nich pracovat pořadí; v tomto kontextu posloupnost je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkci dotazu standardní operátory dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé Čím více často používají standardní dotazu, operátory mít vyhrazený syntaxe – klíčové slovo, tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je jiné, srozumitelnější způsoby, jak vyjádřit dotaz než ekvivalentní na základě metod. Klauzule výraz dotazu jsou převedeny do volání metody dotazů v době kompilace. Seznam standardních operátorů dotazu s klauzulí výraz ekvivalentní dotazu najdete v tématu [standardní přehled operátory dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
@@ -78,7 +78,7 @@ V dotazu zadejte informace, které chcete načíst z datového zdroje. Dotaz mů
 |`Sum`|Vrátí hodnotu null.|Vrátí hodnotu null.|Vrátí součet hodnotu než null v pořadí.|Vypočítá součet posloupnosti číselné hodnoty.|  
   
 ## <a name="type-methods"></a>Typ metody  
- Tyto dvě metody LINQ, které pracují s převod typů a testování jsou podporované v kontextu [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. To znamená, že se pouze na podporované typy, které mapují na odpovídající [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] typu. Seznam těchto typů najdete v tématu [konceptuálního modelu typy (CSDL)](http://msdn.microsoft.com/en-us/987b995f-e429-4569-9559-b4146744def4). Typ metody `Convert` a `OfType`.  
+ Tyto dvě metody LINQ, které pracují s převod typů a testování jsou podporované v kontextu [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. To znamená, že se pouze na podporované typy, které mapují na odpovídající [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] typu. Seznam těchto typů najdete v tématu [konceptuálního modelu typy (CSDL)](http://msdn.microsoft.com/library/987b995f-e429-4569-9559-b4146744def4). Typ metody `Convert` a `OfType`.  
   
  `OfType`je podporován pro typy entit. `Convert`je podporován pro koncepční model primitivní typy.  C# `is` a `as` metody jsou také podporovány.  
   

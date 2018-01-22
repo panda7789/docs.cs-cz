@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 975c5ea5d5b3ab81d37b713e84f273e4c2c1c0b5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba057a0b96d393a5efbaf054e75c34f446c7dde6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF
 Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klientem a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, i když služba není k dispozici v době komunikace. Následující postupy ukazují, jak zajistit trvanlivý komunikace mezi klientem a služby pomocí standardní zařazených do fronty závazný při implementaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
@@ -52,7 +52,7 @@ Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klien
      [!code-csharp[S_Msmq_Transacted#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#4)]
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
-5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, kterou určuje adresu služby a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace, najdete v části [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, kterou určuje adresu služby a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace, najdete v části [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
   
   
   
@@ -101,6 +101,6 @@ Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klien
  [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  [Z Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
  [Instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
- [Ukázky vazby integrace služby Řízení front zpráv](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)  
+ [Ukázky vazby integrace služby Řízení front zpráv](http://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)  
  [Ze služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

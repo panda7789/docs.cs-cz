@@ -21,17 +21,17 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ece6a5d2123bb118f11940081e3c1d939815a8ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 04dbcfb0fa16ceb4d6778ef611e926894d7840e9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku zdrojů rozsahu aplikace
 Tento příklad ukazuje, jak definovat a používat slovníku vlastní prostředek oboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Application>zpřístupní úložišti oboru aplikace pro sdílené prostředky: <xref:System.Windows.Application.Resources%2A>. Ve výchozím nastavení <xref:System.Windows.Application.Resources%2A> se vlastnost inicializuje instanci <xref:System.Windows.ResourceDictionary> typu. Použít tuto instanci při získání a nastavení vlastností oboru aplikace pomocí <xref:System.Windows.Application.Resources%2A>. Další informace najdete v tématu [postupy: získání a nastavení prostředek oboru aplikace](http://msdn.microsoft.com/en-us/39e0420c-c9fc-47dc-8956-fdd95b214095).
+ <xref:System.Windows.Application>zpřístupní úložišti oboru aplikace pro sdílené prostředky: <xref:System.Windows.Application.Resources%2A>. Ve výchozím nastavení <xref:System.Windows.Application.Resources%2A> se vlastnost inicializuje instanci <xref:System.Windows.ResourceDictionary> typu. Použít tuto instanci při získání a nastavení vlastností oboru aplikace pomocí <xref:System.Windows.Application.Resources%2A>. Další informace najdete v tématu [postupy: získání a nastavení prostředek oboru aplikace](http://msdn.microsoft.com/library/39e0420c-c9fc-47dc-8956-fdd95b214095).
   
  Pokud máte více prostředků, které můžete nastavit pomocí <xref:System.Windows.Application.Resources%2A>, místo toho můžete vlastní prostředek slovník pro ukládání tyto prostředky a nastavení <xref:System.Windows.Application.Resources%2A> s ním místo. Následující příklad zobrazuje, jak deklarovat slovník vlastních prostředků s použitím jazyka XAML.
   

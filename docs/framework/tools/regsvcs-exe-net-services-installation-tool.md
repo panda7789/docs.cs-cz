@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: dd7f50d591232feda0259ecefdb5b9e39514ccb2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bfe7c3e34c2ceaf01f89c1e54f930991ee7e0a2b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
 Instalační nástroj .NET Services vykonává tyto akce:  
@@ -62,8 +62,8 @@ Instalační nástroj .NET Services vykonává tyto akce:
 |**0}, nejsou**|Nakonfiguruje pouze součásti; ignoruje metody a rozhraní.|  
 |**/exapp**|Určuje, že nástroj má očekávat existující aplikaci.|  
 |**/extlb**|Použije existující knihovnu typů.|  
-|**/FC**|Vyhledá nebo vytvoří cílovou aplikaci.|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/fc**|Vyhledá nebo vytvoří cílovou aplikaci.|  
+|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/noreconfig**|Znovu nekonfiguruje existující cílovou aplikaci.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/parname:** *název*|Určuje název nebo ID aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
@@ -76,7 +76,7 @@ Instalační nástroj .NET Services vykonává tyto akce:
 ## <a name="remarks"></a>Poznámky  
  RegSvcs.exe vyžaduje zdrojového souboru sestavení určeného *assemblyFile.dll*. Toto sestavení musí být podepsáno silným názvem. Další informace o podepisování silným názvem naleznete v tématu [podepsání sestavení se silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md). Názvy cílové aplikace a souboru knihovny typů jsou volitelné. *ApplicationName* argument může být generována ze zdrojového souboru sestavení a vytvoří Regsvcs.exe, pokud ještě neexistuje. *Typelibraryfile* argument můžete zadat název typu knihovny. Pokud název knihovny typů nezadáte, nástroj Regsvcs.exe použije jako výchozí název sestavení.  
   
- Při Regsvcs.exe zaregistruje komponenty metody, je podléhají [požadavky](http://msdn.microsoft.com/en-us/e5283e28-2366-4519-b27d-ef5c1ddc1f48) a [požadavky na propojení](../../../docs/framework/misc/link-demands.md) na těchto metod. Vzhledem k tomu, že se nástroj spouští v plně důvěryhodném prostředí, většina požadavků na oprávnění je splněna. Regsvcs.exe však nelze zaregistrovat součásti pomocí metod, které jsou chráněny požadavku na vyžádání nebo odkaz pro <xref:System.Security.Permissions.StrongNameIdentityPermission> nebo <xref:System.Security.Permissions.PublisherIdentityPermission>.  
+ Při Regsvcs.exe zaregistruje komponenty metody, je podléhají [požadavky](http://msdn.microsoft.com/library/e5283e28-2366-4519-b27d-ef5c1ddc1f48) a [požadavky na propojení](../../../docs/framework/misc/link-demands.md) na těchto metod. Vzhledem k tomu, že se nástroj spouští v plně důvěryhodném prostředí, většina požadavků na oprávnění je splněna. Regsvcs.exe však nelze zaregistrovat součásti pomocí metod, které jsou chráněny požadavku na vyžádání nebo odkaz pro <xref:System.Security.Permissions.StrongNameIdentityPermission> nebo <xref:System.Security.Permissions.PublisherIdentityPermission>.  
   
  Pro použití Regsvcs.exe musíte mít administrátorská oprávnění na místním počítači.  
   

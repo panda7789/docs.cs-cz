@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 37b8ff108cb9ddb0df8ff4cb365ae543959546cb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d0bcd7d08a698a2a839094204dcc5f7105ef8f6b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, se kterými se zákazníci spustili do při vývoj klienti WCF a služeb. Pokud problém, který běží na není v tomto seznamu, doporučujeme že konfigurovat trasování pro služby. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče soubor trasování a získat podrobné informace o výjimkách, který může vyskytovat v rámci služby. Další informace o konfiguraci trasování najdete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči soubor trasování najdete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -113,7 +113,7 @@ public class MyServiceHost : ServiceHost
   
 -   Možná budete muset otevřít port, který se aplikace. Podrobnosti najdete v tématu [pokyny k bráně Firewall](../../../docs/framework/wcf/samples/firewall-instructions.md) z ukázky SDK.  
   
--   Další možných problémů naleznete v tématu ukázky [spuštění ukázky v pracovní skupině a počítačů přes](http://msdn.microsoft.com/en-us/a451a525-e7ce-452d-9da9-620221260113).  
+-   Další možných problémů naleznete v tématu ukázky [spuštění ukázky v pracovní skupině a počítačů přes](http://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113).  
   
 -   Pokud je váš klient je pomocí pověření systému Windows a výjimky <xref:System.ServiceModel.Security.SecurityNegotiationException>, následujícím způsobem konfigurace protokolu Kerberos.  
   
@@ -149,7 +149,7 @@ public class MyServiceHost : ServiceHost
   
 -   [Registrace pomocí ovladače Http.sys hlavní názvy služby protokolu Kerberos](http://go.microsoft.com/fwlink/?LinkId=86943)  
   
--   [Vysvětlení protokolu Kerberos](http://go.microsoft.com/fwlink/?LinkId=86946)  
+-   [Kerberos Explained](http://go.microsoft.com/fwlink/?LinkId=86946)  
   
 <a name="BKMK_q5"></a>   
 ## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>I když throw FaultException\<výjimka > typ jsou výjimku, bylo vždycky přijímat obecného typu FaultException na straně klienta a není obecného typu. Co se děje?  

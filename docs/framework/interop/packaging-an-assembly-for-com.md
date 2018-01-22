@@ -28,11 +28,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 72b9237a8abeee936070799c5087abc6b45ff3b5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 79c0d8ff3d6f66ad3abf23cd371f86bb74edf78e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
 COM vývojáři mohou využít následující informace o spravovaných typů, že chtějí začlenit ve svých aplikacích:  
@@ -47,7 +47,7 @@ COM vývojáři mohou využít následující informace o spravovaných typů, �
   
      Spravované třídy, které implementují rozhraní třídy (rozhraní modelu COM generované zprostředkovatel komunikace s objekty) se vztahují omezení Správa verzí.  
   
-     Na pomocí třídy rozhraní, naleznete na adrese [představení rozhraní třídy](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
+     Na pomocí třídy rozhraní, naleznete na adrese [představení rozhraní třídy](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
   
 -   Pokyny k nasazení  
   
@@ -69,7 +69,7 @@ COM vývojáři mohou využít následující informace o spravovaných typů, �
   
      Bez ohledu na to mechanismus, který zvolíte jsou zahrnuty pouze veřejné typy definované v sestavení, ve kterém zadáte v knihovně generovaného typu.  
   
-     Můžete balíček knihovny typů jako samostatný soubor nebo vložit jako zdrojového souboru Win32 v rámci. Aplikace založené na Asp.net. Microsoft Visual Basic 6.0 provést tuto úlohu pro vás automaticky. ale při použití [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)], je nutné ručně vložit vaší knihovny typů. Pokyny najdete v tématu [postupy: vložení knihovny typů jako Win32 prostředky v. Aplikace založené na NET](http://msdn.microsoft.com/en-us/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44).  
+     Můžete balíček knihovny typů jako samostatný soubor nebo vložit jako zdrojového souboru Win32 v rámci. Aplikace založené na Asp.net. Microsoft Visual Basic 6.0 provést tuto úlohu pro vás automaticky. ale při použití [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)], je nutné ručně vložit vaší knihovny typů. Pokyny najdete v tématu [postupy: vložení knihovny typů jako Win32 prostředky v. Aplikace založené na NET](http://msdn.microsoft.com/library/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44).  
   
 <a name="cpconpackagingassemblyforcomanchor1"></a>   
 ## <a name="type-library-exporter"></a>knihovna typů – exportér  
@@ -94,8 +94,8 @@ COM vývojáři mohou využít následující informace o spravovaných typů, �
  <xref:System.Runtime.InteropServices.ITypeLibConverter>  
  [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [Kvalifikace typů .NET pro spolupráci](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
- [Představení rozhraní – třída](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)  
+ [Představení rozhraní – třída](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024)  
  [Důležité informace o zabezpečení sestavení](../../../docs/framework/app-domains/assembly-security-considerations.md)  
  [Tlbexp.exe (exportér knihovny typů)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
  [Registrování sestav pomocí modelu COM](../../../docs/framework/interop/registering-assemblies-with-com.md)  
- [Postupy: vložení knihovny typů jako Win32 prostředky v aplikacích](http://msdn.microsoft.com/en-us/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)
+ [Postupy: vložení knihovny typů jako Win32 prostředky v aplikacích](http://msdn.microsoft.com/library/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)

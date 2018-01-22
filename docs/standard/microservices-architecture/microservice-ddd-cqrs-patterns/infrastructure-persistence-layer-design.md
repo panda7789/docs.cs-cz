@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9fd09ad4e9ff36e8ab2478ff3e1d5226974a4d17
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 76db5388c75d4eb3b5cc23c1e57cc391a15f2934
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>Navrhování vrstvu trvalosti infrastruktury
 
@@ -142,7 +142,7 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
      [ *http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
 
 -   **Vzor úložiště**
-    [*https://msdn.microsoft.com/en-us/library/ff649690.aspx*](https://msdn.microsoft.com/en-us/library/ff649690.aspx)
+    [*https://msdn.microsoft.com/library/ff649690.aspx*](https://msdn.microsoft.com/library/ff649690.aspx)
 
 -   **Použitému vzoru: Data abstrakce**
     [*http://deviq.com/repository-pattern/*](http://deviq.com/repository-pattern/)
@@ -164,7 +164,7 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
 -   **Specifikace vzor. ** 
      [ *http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
 
--   **Zařízení Evans Erica (2004). Doména řízené návrhu. Addison-Wesley. p. 224.**
+-   **Zařízení Evans Erica (2004). Domain Driven Design. Addison-Wesley. p. 224.**
 
 -   **Specifikace. Martin Fowler**
     [*https://www.martinfowler.com/apsupp/spec.pdf/*](https://www.martinfowler.com/apsupp/spec.pdf)

@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: db68fba51cd7ef9bad9ba6f7c4ba8d05a31c4371
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7cca363be57e5c5022c70c62d876f62cebc6e9c0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postupy: Volání (s bezpečným vlákny) ovládacích prvků Windows Forms
 Pokud používáte více vláken zlepšit výkon aplikací Windows Forms, ujistěte se, abyste vytvořili volání pro vaše ovládací prvky způsobem bezpečné pro přístup z více vláken.  
@@ -415,7 +415,7 @@ private:
  Následující příklad kódu je kompletní aplikace Windows Forms, která se skládá z formulář, který má tři tlačítka a jedno textové pole. Na první tlačítko ukazuje unsafe přístupu mezi vlákny, druhý tlačítko ukazuje bezpečný přístup pomocí <xref:System.Windows.Forms.Control.Invoke%2A>, a třetí tlačítko ukazuje bezpečný přístup pomocí <xref:System.ComponentModel.BackgroundWorker>.  
   
 > [!NOTE]
->  Pokyny o tom, jak spustit v příkladu najdete v tématu [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/en-us/cc447f7e-4c3b-4397-9d05-aeba3ca49416). Tento příklad vyžaduje odkazy na sestavení System.Drawing a System.Windows.Forms.  
+>  Pokyny o tom, jak spustit v příkladu najdete v tématu [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/cc447f7e-4c3b-4397-9d05-aeba3ca49416). Tento příklad vyžaduje odkazy na sestavení System.Drawing a System.Windows.Forms.  
   
 ```csharp  
 using System;  

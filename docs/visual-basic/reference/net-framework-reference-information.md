@@ -12,11 +12,11 @@ ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b52323cb5c7049f87b27c24a987fcb7ba1834b6a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 320d9c88bde76ec27fa23c97de78122d88cb6824
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Referenční dokumentace rozhraní .NET Framework (Visual Basic)
 Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.  
@@ -34,7 +34,7 @@ Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshor
  [Nástroje](../../framework/tools/index.md)  
  Popisuje nástroje, které můžete použít k vývoji, konfigurovat a nasazovat aplikace pomocí technologie .NET Framework.  
   
- [.NET framework – ukázky](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ [.NET framework – ukázky](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  Obsahuje odkazy na ukázkové aplikace, která ukazují technologie .NET Framework.  
   
  [Knihovna tříd rozhraní .NET framework](http://go.microsoft.com/fwlink/?LinkID=227195)  

@@ -15,11 +15,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: a30f42c88e2478341737b99ad239d37c87a1063e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 611272f9d0369a89d401315e9b6379d2e8cd27c0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], služba určuje požadavky na zabezpečení pro klienty. To znamená službu určuje jakém režimu zabezpečení používat a jestli klient musí poskytnout přihlašovací údaje. Proces zabezpečení klienta, proto je jednoduchý: použijte metadata získat ze služby (Pokud je publikována) a sestavení klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadejte pověření, je nutné získat přihlašovací údaje, které vyhovuje požadavku. Toto téma popisuje proces podrobněji. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Vytvoření zabezpečeného služby, najdete v části [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
@@ -117,7 +117,7 @@ V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], služba určuje požadav
 </configuration>  
 ```  
   
- Chcete-li nastavit pověření klienta v konfiguraci, přidejte [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) element konfiguračního souboru. Kromě toho musí být propojena element přidané chování koncovému bodu služby pomocí `behaviorConfiguration` atribut [ \<koncový bod >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jak je znázorněno v následujícím příkladu. Hodnota `behaviorConfiguration` atributu musí odpovídat hodnotě chování `name` atribut.  
+ Chcete-li nastavit pověření klienta v konfiguraci, přidejte [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) element konfiguračního souboru. Kromě toho musí být propojena element přidané chování koncovému bodu služby pomocí `behaviorConfiguration` atribut [ \<koncový bod >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jak je znázorněno v následujícím příkladu. Hodnota `behaviorConfiguration` atributu musí odpovídat hodnotě chování `name` atribut.  
   
  `<configuration>`  
   

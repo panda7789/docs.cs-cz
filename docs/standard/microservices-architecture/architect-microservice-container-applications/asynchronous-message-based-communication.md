@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ed0f12c5eca1ed45dabe94661f84216e07476ebd
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7469c41afa16bf96bc81a36c571e3e005c50d904
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikaci na základě zpráv
 
@@ -83,7 +83,7 @@ Výzvy při implementaci architekturu událostmi řízené napříč více mikro
 
 -   Pomocí [transakce protokolu dolování](http://www.scoop.it/t/sql-server-transaction-log-mining).
 
--   Pomocí úplného [Sourcing událostí](https://msdn.microsoft.com/en-us/library/dn589792.aspx) vzor.
+-   Pomocí úplného [Sourcing událostí](https://msdn.microsoft.com/library/dn589792.aspx) vzor.
 
 -   Pomocí [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/): transakční databázové tabulky jako fronta zpráv, které se bude základ pro komponentu creator událost, která by vytvoření události a jeho publikování.
 
@@ -91,25 +91,25 @@ Další témata vzít v úvahu při použití asynchronní komunikaci jsou zprá
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Řízené zasílání zpráv událostí**
-    [*http://soapatterns.org/design\_vzory/událost\_řízené\_zasílání zpráv*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **Event Driven Messaging**
+    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **Publikování a přihlášení k odběru kanálu**
+-   **Publish/Subscribe Channel**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **UDI Dahan. Vyjasněno, CQRS**
+-   **Udi Dahan. Clarified CQRS**
     [*http://udidahan.com/2009/12/09/clarified-cqrs/*](http://udidahan.com/2009/12/09/clarified-cqrs/)
 
 -   **Příkaz a dotazování odpovědnost oddělení (CQRS)**
     [*https://docs.microsoft.com/azure/architecture/patterns/cqrs*](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 
--   **Komunikace mezi ohraničenou kontexty**
+-   **Communicating Between Bounded Contexts**
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **Konzistence typu případné**
     [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **Jimmy Bogard. Refaktoring směrem odolnost: Vyhodnocení párování**
+-   **Jimmy Bogard. Refactoring Towards Resilience: Evaluating Coupling**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
 

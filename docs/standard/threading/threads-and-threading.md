@@ -20,11 +20,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 91db5cf75053f7a9b343036345a97d8084ae38fb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 114fb704a622d92ab8e92fa866fa0fc9bebf4e58
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="threads-and-threading"></a>Vlákna a dělení na vlákna
 Operační systémy pomocí procesů k oddělení různých aplikací, které jsou spuštěny. Vláken je základní jednotkou, které operační systém přiděluje čas procesoru a víc než jedno vlákno může provádění kódu uvnitř tohoto procesu. Každé vlákno udržuje obslužné rutiny výjimek, plánování prioritu a sadu struktury, které používá systém uložit kontext přístup z více vláken, dokud je naplánována. Kontext vlákno obsahuje všechny informace, které vlákno je potřeba bezproblémově pokračovat v provádění, včetně vlákna sadu registrů CPU a zásobník v adresním prostoru procesu hostitele vlákna.  
@@ -36,7 +36,7 @@ Operační systémy pomocí procesů k oddělení různých aplikací, které js
  Délka časového intervalu závisí na operační systém a procesoru. Protože každý řez čas je malá, více vláken pravděpodobně provedl ve stejnou dobu, i když je pouze jeden procesor. Toto je ve skutečnosti případu v systémech s více procesory, kde jsou spustitelné vláken distribuovány mezi dostupných procesorů.  
   
 ## <a name="when-to-use-multiple-threads"></a>Kdy použít více vláken  
- Software, který vyžaduje zásah uživatele musí reagovat na aktivity uživatele co nejrychleji a poskytuje bohaté uživatelské prostředí. Ve stejnou dobu ale musíte postupovat výpočty potřebné pro zobrazení dat tak rychlé nejblíže uživatele. Pokud vaše aplikace používá pouze jedno vlákno provádění, můžete kombinovat [asynchronní programování](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md) s[vzdálené komunikace rozhraní .NET Framework](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462) nebo [webové služby XML](http://msdn.microsoft.com/en-us/1e64af78-d705-4384-b08d-591a45f4379c) vytvořený ASP .NET pomocí bude čas zpracování dalších počítačů kromě u vlastního zvýšit rychlost odezvy pro uživatele a snižte dobu zpracování dat aplikace. Pokud provádíte náročné práce vstupu a výstupu, můžete taky vstupně-výstupních operací dokončení porty zvýšit rychlost reakce aplikace.  
+ Software, který vyžaduje zásah uživatele musí reagovat na aktivity uživatele co nejrychleji a poskytuje bohaté uživatelské prostředí. Ve stejnou dobu ale musíte postupovat výpočty potřebné pro zobrazení dat tak rychlé nejblíže uživatele. Pokud vaše aplikace používá pouze jedno vlákno provádění, můžete kombinovat [asynchronní programování](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md) s[vzdálené komunikace rozhraní .NET Framework](http://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462) nebo [webové služby XML](http://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c) vytvořený ASP .NET pomocí bude čas zpracování dalších počítačů kromě u vlastního zvýšit rychlost odezvy pro uživatele a snižte dobu zpracování dat aplikace. Pokud provádíte náročné práce vstupu a výstupu, můžete taky vstupně-výstupních operací dokončení porty zvýšit rychlost reakce aplikace.  
   
 ### <a name="advantages-of-multiple-threads"></a>Výhody více vláken  
  Použití více než jedno vlákno, je však nejúčinnějších technik, které jsou k dispozici pro zvýšení rychlosti reakce na uživatele a zpracovat data potřebná k provedení úlohy téměř stejnou dobu. Na počítači s jeden procesor můžete vytvořit více vláken tento platit, využívat výhod malé období mezi uživatelem události ke zpracování dat na pozadí. Uživatel například můžete upravit tabulkou, zatímco jiné vlákno je přepočítání dalších částí tabulky v rámci stejné aplikaci.  

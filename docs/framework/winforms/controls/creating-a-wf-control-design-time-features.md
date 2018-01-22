@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f7c875721436f0d6fe3f0cc57140a275e8d218f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a4e84c665897159d08cec36b0f35b4f5f2674445
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu
 Možnosti návrhu vlastního ovládacího prvku se dá vylepšit vytvářením přidružený vlastní designer.  
@@ -74,7 +74,7 @@ Možnosti návrhu vlastního ovládacího prvku se dá vylepšit vytvářením p
  Výpis úplného kódu, najdete v části [postupy: vytvoření funkce systému Windows Forms ovládací prvek, trvá výhod z návrhu](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu, budete potřebovat:  
@@ -86,7 +86,7 @@ Možnosti návrhu vlastního ovládacího prvku se dá vylepšit vytvářením p
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
--   Vytvořte projekt Formulářové aplikace Windows s názvem "MarqueeControlTest." Další informace najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+-   Vytvořte projekt Formulářové aplikace Windows s názvem "MarqueeControlTest." Další informace najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 ## <a name="creating-a-control-library-project"></a>Vytvoření projektu knihovny ovládacího prvku  
  Dalším krokem je vytvoření projektu knihovny ovládacího prvku. Vytvořte nové vlastní ovládací prvek a jeho odpovídající vlastní designer.  
@@ -95,11 +95,11 @@ Možnosti návrhu vlastního ovládacího prvku se dá vylepšit vytvářením p
   
 1.  Přidejte projektu knihovny ovládacích prvků Windows Forms k řešení. Název projektu "MarqueeControlLibrary."  
   
-2.  Pomocí **Průzkumníku**, odstraňte výchozí řízení projektu odstraněním zdrojového souboru s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk. Další informace najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+2.  Pomocí **Průzkumníku**, odstraňte výchozí řízení projektu odstraněním zdrojového souboru s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk. Další informace najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
   
 3.  Přidejte nový <xref:System.Windows.Forms.UserControl> položkou `MarqueeControlLibrary` projektu. Zadejte nový zdrojový soubor základní název typu "MarqueeControl".  
   
-4.  Pomocí **Průzkumníku řešení**, vytvořte novou složku v `MarqueeControlLibrary` projektu. Další informace najdete v tématu [NIB: postupy: Přidání nové položky projektu](http://msdn.microsoft.com/en-us/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Název nové složky "Návrhu."  
+4.  Pomocí **Průzkumníku řešení**, vytvořte novou složku v `MarqueeControlLibrary` projektu. Další informace najdete v tématu [NIB: postupy: Přidání nové položky projektu](http://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Název nové složky "Návrhu."  
   
 5.  Klikněte pravým tlačítkem myši **návrhu** složky a přidejte novou třídu. Zadejte zdrojový soubor základní název "MarqueeControlRootDesigner."  
   

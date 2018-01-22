@@ -14,11 +14,11 @@ ms.assetid: 9c042880-aa16-432e-9ccb-cd00abda9ae3
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c799794b319843b0239ce9589e0c556c603c8617
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9def5da754d9075a8b498ac80e624caae5c97b96
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>Postupy: Vytváření řetězců pomocí StringBuilder v jazyce Visual Basic
 Tento příklad vytvoří dlouhý řetězec z mnoha menší řetězců pomocí <xref:System.Text.StringBuilder> třídy. <xref:System.Text.StringBuilder> Třída je efektivnější než `&=` operátor pro zřetězení mnoha řetězců.  
@@ -30,8 +30,8 @@ Tento příklad vytvoří dlouhý řetězec z mnoha menší řetězců pomocí <
   
 ## <a name="see-also"></a>Viz také  
  [Používání třídy StringBuilder](../../../../standard/base-types/stringbuilder.md)  
- [& = – operátor](../../../../visual-basic/language-reference/operators/and-assignment-operator.md)  
+ [&= – operátor](../../../../visual-basic/language-reference/operators/and-assignment-operator.md)  
  [Řetězce](../../../../visual-basic/programming-guide/language-features/strings/index.md)  
  [Vytváření nových řetězců](../../../../standard/base-types/creating-new.md)  
- [Manipulace s řetězci](../../../../standard/base-types/manipulating-strings.md)  
- [Ukázka řetězce](http://msdn.microsoft.com/en-us/be9e82a3-dc95-4aaa-9396-61b66e467e02)
+ [Práce s řetězci](../../../../standard/base-types/manipulating-strings.md)  
+ [Ukázka řetězce](http://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02)

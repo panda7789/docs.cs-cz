@@ -14,11 +14,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: 975014007ed57cc7e4b1035972923f61753c6d4e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bd6b0983dcb4a0f7cdbabc5b391cca2000f9d16d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="token-provider"></a>Zprostředkovatel tokenu
 Tento příklad znázorňuje způsob implementace vlastního zprostředkovatele tokenu. Zprostředkovatel tokenu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]také se dodává s [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
@@ -276,7 +276,7 @@ static void DisplayIdentityInformation()
   
 5.  Heslo řádku použijte stejný řetězec, který byl zadán pro výzvu uživatelské jméno.  
   
-6.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+6.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky mezi počítači  
   
@@ -298,7 +298,7 @@ static void DisplayIdentityInformation()
   
 9. Na klientském počítači spusťte `Client.exe` z okna příkazového řádku.  
   
-10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
   

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: eaccace7a333903e236107a72dbc17e19dc8d48a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4ffb3071e9788ef4442127118c00e23c8a11530b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient rozhraní Entity Framework
 Zprostředkovatel EntityClient je zprostředkovatele dat používaných aplikacemi Entity Framework pro přístup k datům, které jsou popsané v konceptuálním modelu. Informace o konceptuálních modelech najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md). Zprostředkovatel EntityClient používá pro přístup ke zdroji dat jiných poskytovatelů dat rozhraní .NET Framework. Například EntityClient používá zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) při přístupu k databázi systému SQL Server. Informace o poskytovateli SqlClient najdete v tématu [SqlClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementována ve <xref:System.Data.EntityClient> oboru názvů.  
@@ -51,7 +51,7 @@ Zprostředkovatel EntityClient je zprostředkovatele dat používaných aplikace
 ## <a name="managing-transactions"></a>Správa transakcí  
  Rozhraní Entity Framework, existují dva způsoby, jak používat transakce: automatické a explicitní. Použít automatické transakce <xref:System.Transactions> použít obor názvů a explicitních transakcí <xref:System.Data.EntityClient.EntityTransaction> třídy.  
   
- Aktualizace dat, který je zveřejněný prostřednictvím konceptuálního modelu; v tématu [postupy: Správa transakce v rozhraní Entity Framework](http://msdn.microsoft.com/en-us/4a55eb7f-f826-4a48-9df1-aebe2352ebef).  
+ Aktualizace dat, který je zveřejněný prostřednictvím konceptuálního modelu; v tématu [postupy: Správa transakce v rozhraní Entity Framework](http://msdn.microsoft.com/library/4a55eb7f-f826-4a48-9df1-aebe2352ebef).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)  
@@ -75,6 +75,6 @@ Zprostředkovatel EntityClient je zprostředkovatele dat používaných aplikace
  [Postupy: Procházení relací pomocí navigačního operátoru](../../../../../docs/framework/data/adonet/ef/how-to-navigate-relationships-with-the-navigate-operator.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Správa připojení a transakce](http://msdn.microsoft.com/en-us/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
+ [Správa připojení a transakce](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
  [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)  
  [Referenční dokumentace jazyka](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)

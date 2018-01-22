@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5605c90d5f63e0ed80ac5a47b36781c45b687cba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8488e802ee191c261b65388d48bd26aa37d18206
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapování koncových bodů služby do fronty. Připomínáme, následující obrázek znázorňuje classic [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zařazených do fronty nasazení aplikace.  
@@ -41,7 +41,7 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Adresování fronty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle vzoru následující:  
   
- NET.MSMQ: / / \< *název hostitele*> / [privátní /] \< *název fronty*>  
+ net.msmq: // \<*host-name*> / [private/] \<*queue-name*>  
   
  kde:  
   
@@ -57,7 +57,7 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Adresa fronty se používá jako identifikátor URI naslouchání naslouchací proces ke čtení zpráv z. Jinými slovy adresa fronty je ekvivalentní naslouchání portu TCP soketu.  
   
- Koncový bod, který čte z fronty, musíte zadat adresu fronty pomocí stejné schéma při otevření hostitele ServiceHost zadali dřív. Příklady najdete v tématu [vazby Net MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md) a [zpráv služby Řízení front integrace vazby ukázky](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a).  
+ Koncový bod, který čte z fronty, musíte zadat adresu fronty pomocí stejné schéma při otevření hostitele ServiceHost zadali dřív. Příklady najdete v tématu [vazby Net MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md) a [zpráv služby Řízení front integrace vazby ukázky](http://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a).  
   
 ### <a name="multiple-contracts-in-a-queue"></a>Víc kontraktů ve frontě  
  Zprávy ve frontě můžete implementovat různé smlouvy. V takovém případě je nezbytné, že je hodnota true, má-li úspěšně číst a zpracovávat všechny zprávy jednu z následujících:  
@@ -83,9 +83,9 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
 |Adresa WCF URI na základě fronty|Použijte vlastnost služby Active Directory|Vlastnost fronty přenosu protokolu|Výsledný názvy ve formátu služby MSMQ|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|NET.MSMQ://\<název počítače >/privátní/abc|NEPRAVDA (výchozí)|Nativní (výchozí)|DIRECT = OS:machine-name\private$ \abc|  
-|NET.MSMQ://\<název počítače >/privátní/abc|False|SRMP|DIRECT = http://machine/msmq/private$ / abc|  
-|NET.MSMQ://\<název počítače >/privátní/abc|Hodnota TRUE|Nativní|VEŘEJNÉ = některá guid (identifikátor GUID fronty)|  
+|Net.msmq://\<machine-name>/private/abc|NEPRAVDA (výchozí)|Nativní (výchozí)|DIRECT=OS:machine-name\private$\abc|  
+|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
+|Net.msmq://\<machine-name>/private/abc|True|Nativní|VEŘEJNÉ = některá guid (identifikátor GUID fronty)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Čtení zpráv z fronty nedoručených zpráv nebo Poison zprávy fronty  
  Chcete-li čtení zpráv z fronty poison zpráva, která je dílčí fronta cílové fronty, otevřete `ServiceHost` s adresou dílčí fronta.  
@@ -98,14 +98,14 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Pokud používáte vlastní frontu nedoručených zpráv, Všimněte si, že frontu nedoručených zpráv musí nacházet na místním počítači. Identifikátor URI pro frontu nedoručených zpráv jako takový je omezen na formulář:  
   
- NET.MSMQ: //localhost/ [privátní /] \< *vlastní zpráv písmeno fronty name*>.  
+ net.msmq: //localhost/ [private/]  \<*custom-dead-letter-queue-name*>.  
   
  A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby ověřuje, že všechny zprávy obdrží byla provedena do konkrétní fronty naslouchá na. Pokud cílovou frontu zprávy fronty, kterou je ve službě neodpovídá, službu nezpracovává zprávy. Jedná se o problém, který služby naslouchání do fronty nedoručených zpráv musí řešit, protože jakékoli zprávy do fronty nedoručených zpráv byl určen pro doručena jinde. Ke čtení zpráv z fronty nedoručených zpráv nebo z poškozených fronty, `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr je nutné použít. Příklad, naleznete v části [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding a adresování služeb  
  `MsmqIntegrationBinding` Se používá ke komunikaci s tradiční aplikacím služby MSMQ. K usnadnění vzájemná spolupráce pomocí stávající aplikaci služby MSMQ, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje pouze formátu název adresy. Proto musí odpovídat zprávy odeslané používá tuto vazbu schéma identifikátoru URI:  
   
- MSMQ.formatname:\<*název formátu MSMQ*>>  
+ msmq.formatname:\<*MSMQ-format-name*>>  
   
  Název formátu MSMQ je ve formátu zadaný službou MSMQ v [o služby Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=94837).  
   

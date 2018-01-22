@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e37714f2c317456935f7b8694a083468dfa43a72
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 125e3f1c32c5186cce0b28aa3f8d1eff1ef95a09
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživatelem a programu. Ovládací prvek můžete poskytnout nebo zpracování dat, přijímají vstup uživatele, reakce na události nebo proveďte libovolný počet dalších funkcí, které připojit aplikaci a uživatele. Protože ovládací prvek je v podstatě komponenta s grafickým rozhraním, může posloužit všechny funkce, která neobsahuje komponentu, a jejich interakci s uživatelem. Vytvoření ovládacích prvků k obsluze konkrétní účely a vytváření ovládacích prvků je jenom další programovacích úloh. Následující kroky si uvědomit, představují Přehled ovládacího prvku procesu vytváření. Odkazy poskytují další informace o jednotlivých kroků.  
@@ -30,7 +30,7 @@ Ovládací prvek představuje grafické propojení mezi uživatelem a programu. 
 > [!NOTE]
 >  Pokud chcete vytvořit vlastní ovládací prvek použít na webových formulářů, najdete v článku [vývoj vlastních serverových ovládacích prvků ASP.NET](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).  
 >   
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ### <a name="to-author-a-control"></a>K vytváření ovládacího prvku  
   

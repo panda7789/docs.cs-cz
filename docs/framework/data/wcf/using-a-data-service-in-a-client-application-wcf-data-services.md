@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c802342f352652e24e53b70c730ddb4c5b8973a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 91edecf9b500c316b915e908bbbd412a47d86dac
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Pomocí služby dat v aplikaci klienta (služby WCF Data Services)
 Službě, která zveřejňuje se můžete dostat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu zadáním identifikátor URI pro webový prohlížeč. Identifikátor URI poskytuje adresu prostředku a tyto adresy přístup, nebo změňte základní data, která představuje prostředek se posílají zprávy požadavku. Prohlížeč vydá příkaz HTTP GET a vrátí jako požadovaný prostředek [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
@@ -56,7 +56,7 @@ Službě, která zveřejňuje se můžete dostat [!INCLUDE[ssODataFull](../../..
  Formát zprávy datové části je požadována v záhlaví zprávy požadavku HTTP. Další informace najdete v tématu [OData: operace](http://go.microsoft.com/fwlink/?LinkID=185792).  
   
 ## <a name="accessing-and-changing-data-using-client-libraries"></a>Přístup k a změna dat pomocí klientské knihovny  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]zahrnuje knihovny klienta, které vám umožní snadno využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu z rozhraní .NET Framework a založená na technologii Silverlight klientské aplikace. Tyto knihovny zjednodušují odesílání a přijímání zpráv protokolu HTTP. Také se převede datové části zprávy do CLR objektů, které představují entity data. Knihovny klienta funkce dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy umožňují dotazování datové služby a pak pracovat s daty vrácenou entitu jako objekty CLR. Další informace najdete v tématu [WCF Data Services klientské knihovny](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md) a [datové služby WCF (Silverlight)](http://msdn.microsoft.com/en-us/c0cd9f4b-1372-48e4-9935-c8421239da30).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]zahrnuje knihovny klienta, které vám umožní snadno využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu z rozhraní .NET Framework a založená na technologii Silverlight klientské aplikace. Tyto knihovny zjednodušují odesílání a přijímání zpráv protokolu HTTP. Také se převede datové části zprávy do CLR objektů, které představují entity data. Knihovny klienta funkce dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy umožňují dotazování datové služby a pak pracovat s daty vrácenou entitu jako objekty CLR. Další informace najdete v tématu [WCF Data Services klientské knihovny](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md) a [datové služby WCF (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30).  
   
  Můžete použít **přidat odkaz na službu** dialogové okno v sadě Visual Studio se přidat odkaz na datové služby. Tento nástroj požaduje metadata služby z odkazovaného datové služby a vygeneruje <xref:System.Data.Services.Client.DataServiceContext> která představuje datové služby, a také vygeneruje třídy klienta dat služby, které představují entity. Další informace najdete v tématu [generování dat služby klientské knihovny](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md).  
   

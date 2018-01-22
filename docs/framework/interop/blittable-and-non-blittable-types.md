@@ -17,11 +17,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 68e1d66b615db7369d71f56b402c13ce41ad5e54
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 10e9f4be3d02ac24c70c4a370ed96ff0dada130a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="blittable-and-non-blittable-types"></a>Přenositelné a nepřenositelné typy
 Většina typy dat mají společné reprezentaci v spravované i nespravované paměti a nevyžadují žádná zvláštní zpracování pomocí zprostředkovatele komunikace s objekty vláken. Tyto typy jsou označovány jako *přenositelné typy* vzhledem k tomu, že jsou předávány mezi nevyžadují převodu spravovaných a nespravovaných kódu.  
@@ -58,7 +58,7 @@ Většina typy dat mají společné reprezentaci v spravované i nespravované p
   
 -   Jednorozměrná pole přenositelné typy, jako je například pole celých čísel. Typ, který obsahuje proměnné pole přenositelné typy není však samotné přenositelné.  
   
--   Formátovaná hodnota typů, které obsahují pouze přenositelné typy (a třídy, pokud jsou zařazené jako formátovaný typy). Další informace o typech formátovanou hodnotu najdete v tématu [výchozí zařazování pro typy hodnot](http://msdn.microsoft.com/en-us/4d9a876c-e05a-40ba-bd85-bd22877f984a).  
+-   Formátovaná hodnota typů, které obsahují pouze přenositelné typy (a třídy, pokud jsou zařazené jako formátovaný typy). Další informace o typech formátovanou hodnotu najdete v tématu [výchozí zařazování pro typy hodnot](http://msdn.microsoft.com/library/4d9a876c-e05a-40ba-bd85-bd22877f984a).  
   
  Odkazy na objekty nejsou typu blittable. To zahrnuje pole odkazy na objekty, které jsou přenositelné samy o sobě. Například můžete definovat strukturu, která je typu blittable, ale nelze definovat typu blittable, který obsahuje řadu odkazů na tyto struktury.  
   
@@ -66,18 +66,18 @@ Většina typy dat mají společné reprezentaci v spravované i nespravované p
   
  Některé spravované datové typy vyžadují různé reprezentace v nespravované prostředí. Tyto datové typy nepřenositelné musí být převedeny na formulář, který může být zařazen. Například spravované řetězce jsou nepřenositelné typy, protože se musí před převést do řetězce objekty může být zařazeno.  
   
- Následující tabulka uvádí nepřenositelné typy z <xref:System> oboru názvů. [Delegáti](http://msdn.microsoft.com/en-us/d176ee76-f982-494b-b03d-92e4118896e2), které jsou datové struktury, které odkazují na statickou metodu nebo instanci třídy jsou také nepřenositelné.  
+ Následující tabulka uvádí nepřenositelné typy z <xref:System> oboru názvů. [Delegáti](http://msdn.microsoft.com/library/d176ee76-f982-494b-b03d-92e4118896e2), které jsou datové struktury, které odkazují na statickou metodu nebo instanci třídy jsou také nepřenositelné.  
   
 |Přenositelné bez typu|Popis|  
 |-------------------------|-----------------|  
 |[System.Array](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Převede pole stylu jazyka C nebo `SAFEARRAY`.|  
-|[System.Boolean](http://msdn.microsoft.com/en-us/d4c00537-70f7-4ca6-8197-bfc1ec037ff9)|Převede na 1, 2 nebo 4 bajtů hodnotu s `true` -1 nebo 1.|  
-|[System.Char](http://msdn.microsoft.com/en-us/cecc87c1-075e-4cde-aa56-33d189f66feb)|Převede na znak Unicode nebo ANSI.|  
-|[System.Class](http://msdn.microsoft.com/en-us/fe334af5-0123-43d8-be84-26f6f023ddb6)|Převede na třídu rozhraní.|  
+|[System.Boolean](http://msdn.microsoft.com/library/d4c00537-70f7-4ca6-8197-bfc1ec037ff9)|Převede na 1, 2 nebo 4 bajtů hodnotu s `true` -1 nebo 1.|  
+|[System.Char](http://msdn.microsoft.com/library/cecc87c1-075e-4cde-aa56-33d189f66feb)|Převede na znak Unicode nebo ANSI.|  
+|[System.Class](http://msdn.microsoft.com/library/fe334af5-0123-43d8-be84-26f6f023ddb6)|Převede na třídu rozhraní.|  
 |[System.Object](../../../docs/framework/interop/default-marshaling-for-objects.md)|Převede hodnotu typu variant nebo rozhraní.|  
 |[System.Mdarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Převede pole stylu jazyka C nebo `SAFEARRAY`.|  
 |[System.String](../../../docs/framework/interop/default-marshaling-for-strings.md)|Převede řetězec ukončuje v odkaz s hodnotou null nebo BSTR.|  
-|[Typ System.Valuetype](http://msdn.microsoft.com/en-us/4d9a876c-e05a-40ba-bd85-bd22877f984a)|Převede na struktura s pevnou paměti rozložení.|  
+|[System.Valuetype](http://msdn.microsoft.com/library/4d9a876c-e05a-40ba-bd85-bd22877f984a)|Převede na struktura s pevnou paměti rozložení.|  
 |[System.Szarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Převede pole stylu jazyka C nebo `SAFEARRAY`.|  
   
  Typy tříd a objektů jsou podporovány pouze zprostředkovatel komunikace s objekty COM. Pro odpovídající typy v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C# a C++, najdete [– přehled knihovny tříd](../../../docs/standard/class-library-overview.md).  

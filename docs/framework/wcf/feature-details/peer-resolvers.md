@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e946066a352fb29c593a7d84fd6e728c226a3175
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 79c26ca9e167455dfbd664ea96e574c130cdc3d2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
 Aby bylo možné připojit k mřížku, vyžaduje uzlem sdílené IP adresy dalších uzlů. IP adresy jsou získány kontaktováním překladač služby, která přebírá ID OK a vrátí seznam adres odpovídající do uzlů, které jsou registrovány ID tohoto konkrétního OK. Překladač udržuje seznam registrovaných adresy, které vytvoří tak, že každý uzel v mřížce zaregistrovat službu.  
@@ -43,7 +43,7 @@ Aby bylo možné připojit k mřížku, vyžaduje uzlem sdílené IP adresy dal�
 > [!NOTE]
 >  Pokud používáte místní a režimu sítí s vlastní překladač, se důrazně doporučuje, aby aplikace pomocí nebo podpora propojení nebo režimu sítě patří třeba logiky, která vybere jedna adresa specifická pro připojení použít při připojení. Tím se zabrání nepochopení potenciálně způsobené počítače s více adresami specifická pro připojení. V souladu s tím rovnocenného kanálu podporuje pouze pomocí jedné adresy specifická pro připojení v daném okamžiku. Můžete určit tato adresa se `ListenIpAddress` vlastnost <xref:System.ServiceModel.NetPeerTcpBinding>.  
   
- Ukázka, jak implementovat vlastní překladač, najdete v části [kanál uživatelského sdílené synchronního](http://msdn.microsoft.com/en-us/5b75a2bb-7ff1-4a14-abe7-3debf0537d23).  
+ Ukázka, jak implementovat vlastní překladač, najdete v části [kanál uživatelského sdílené synchronního](http://msdn.microsoft.com/library/5b75a2bb-7ff1-4a14-abe7-3debf0537d23).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Uvnitř CustomPeerResolverService: registrace klientů](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md)  

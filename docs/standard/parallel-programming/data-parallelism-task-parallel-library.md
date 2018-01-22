@@ -20,11 +20,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7fa35e58ed142e6a957326893613ac465e668c45
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0644e2d9e7a52dd5747c9442a4771aa7400cdcb0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Datový paralelismus (Task Parallel Library)
 *Datový paralelismus* popisuje scénáře, ve kterých stejné operace se provádí současně (paralelně) u elementů ve zdrojové kolekci nebo pole. Zdrojové kolekci je v paralelních operací dat, na oddíly tak, aby více vláken může fungovat v různých segmentech současně.  
@@ -54,7 +54,7 @@ ms.lasthandoff: 12/23/2017
 |-----------|-----------------|  
 |[Postupy: Zápis jednoduché smyčky Parallel.For](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.For%2A> smyčky přes žádné pole nebo indexovanou <xref:System.Collections.Generic.IEnumerable%601> zdroje kolekce.|  
 |[Postupy: Zápis jednoduché smyčky Parallel.ForEach](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.ForEach%2A> žádné opakovací smyčku <xref:System.Collections.Generic.IEnumerable%601> zdroje kolekce.|  
-|[Postupy: zastavení nebo přerušení smyčky Parallel.For](http://msdn.microsoft.com/en-us/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)|Popisuje, jak pro zastavení nebo přerušení paralelní smyčky tak, aby všechna vlákna informovány o akci.|  
+|[Postupy: zastavení nebo přerušení smyčky Parallel.For](http://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)|Popisuje, jak pro zastavení nebo přerušení paralelní smyčky tak, aby všechna vlákna informovány o akci.|  
 |[Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.For%2A> smyčky, ve kterém každé vlákno udržuje soukromé proměnné, která není viditelná pro žádné další podprocesy a jak synchronizovat výsledky ze všech vláken po dokončení smyčky.|  
 |[Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky, ve kterém každé vlákno udržuje soukromé proměnné, která není viditelná pro žádné další podprocesy a jak synchronizovat výsledky ze všech vláken po dokončení smyčky.|  
 |[Postupy: Zrušení smyčky Parallel.For nebo ForEach](../../../docs/standard/parallel-programming/how-to-cancel-a-parallel-for-or-foreach-loop.md)|Popisuje, jak zrušit paralelní smyčky pomocí<xref:System.Threading.CancellationToken?displayProperty=nameWithType>|  

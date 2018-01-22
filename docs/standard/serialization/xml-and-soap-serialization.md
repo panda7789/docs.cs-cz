@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 006727e70c58834a4e628f584a28302a62363844
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1ac5e83d6daf9654c541dcd8a748717be3ed05d0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="xml-and-soap-serialization"></a>XML a serializace protokolu SOAP
 Převede serializace XML (serializuje) veřejné polí a vlastností objektu, nebo parametry a návratovými hodnotami metod do datový proud XML, který odpovídá určitého dokumentu definition language (XSD) schématu XML. Serializace XML výsledkem silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na sériového formátu (v tomto případě XML) pro uložení nebo přenos.  
@@ -80,23 +80,23 @@ Převede serializace XML (serializuje) veřejné polí a vlastností objektu, ne
  [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
  Seznam atributů, které se používají k řízení kódováním SOAP serializace.  
   
- [\<System.XML.Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)  
+ [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)  
  Element konfigurace nejvyšší úrovně pro řízení serializace XML.  
   
- [\<dateTimeSerialization > elementu](../../../docs/standard/serialization/datetimeserialization-element.md)  
+ [\<dateTimeSerialization> Element](../../../docs/standard/serialization/datetimeserialization-element.md)  
  Určuje režim serializace <xref:System.DateTime> objekty.  
   
- [\<schemaImporterExtensions > elementu](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [\<schemaImporterExtensions> Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
  Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.  
   
- [\<Přidat > elementu pro \<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
+ [\<add> Element for \<xmlSchemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
  Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Vývoj pro pokročilé technologie](http://msdn.microsoft.com/en-us/c4a7e341-f0c6-4df4-a74f-223387ac6e4e)  
+ [Vývoj pro pokročilé technologie](http://msdn.microsoft.com/library/c4a7e341-f0c6-4df4-a74f-223387ac6e4e)  
  Obsahuje odkazy na další informace o sofistikované vývojářské úlohy a techniky v rozhraní .NET Framework.  
   
- [Webové služby XML vytvořený pomocí technologie ASP.NET a klienty webové služby XML](http://msdn.microsoft.com/en-us/1e64af78-d705-4384-b08d-591a45f4379c)  
+ [Webové služby XML vytvořený pomocí technologie ASP.NET a klienty webové služby XML](http://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)  
  Obsahuje témata, která popisují a popisují, jak program webové služby XML pomocí technologie ASP.NET.  
   
 ## <a name="see-also"></a>Viz také  

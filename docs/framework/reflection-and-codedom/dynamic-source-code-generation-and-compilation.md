@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a74d25372b83c848621a44f6ea32a455a0f18ccf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 535a60aa1a174319a4db3403a64c3998784bbb58
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Dynamické vytváření a kompilování zdrojového kódu
 Mechanismus volat Code Document Object Model (CodeDOM), která umožňuje vývojářům programy, které emitování zdrojového kódu ke generování zdrojového kódu ve více programovacích jazyků v době běhu na základě jednoho modelu, který představuje kód zahrnuje rozhraní .NET Framework k vykreslení.  
@@ -60,5 +60,5 @@ Mechanismus volat Code Document Object Model (CodeDOM), která umožňuje vývoj
  Definuje rozhraní pro generování a kompilace kódu v době běhu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Stručná referenční příručka modelu codeDOM](http://msdn.microsoft.com/en-us/c77b8bfd-0a32-4e36-b59a-4f687f32c524)  
+ [Stručná referenční příručka modelu codeDOM](http://msdn.microsoft.com/library/c77b8bfd-0a32-4e36-b59a-4f687f32c524)  
  Poskytuje rychlý způsob pro vývojáře k vyhledání CodeDOM prvky, které představují elementy zdrojového kódu.

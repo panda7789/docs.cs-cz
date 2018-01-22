@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b115b8d52f904fef41a2e85c1192a18e5c3d3e08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1280c49c2eea6a06eca10ebd8896b0722e321547
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost – rozhraní
 Poskytuje metody, které umožní hostitele spuštění a zastavení common language runtime (CLR) explicitně, vytvořte a nakonfigurujte aplikační domény, pro přístup k výchozí doméně a chcete získat výčet všech domén, které jsou spuštěné v procesu.  
@@ -58,7 +58,7 @@ Poskytuje metody, které umožní hostitele spuštění a zastavení common lang
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Header:** MSCorEE.h  
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
@@ -68,6 +68,6 @@ Poskytuje metody, které umožní hostitele spuštění a zastavení common lang
  <xref:System.AppDomain>  
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)  
  [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)  
- [Modulu runtime](http://msdn.microsoft.com/en-us/99d9246a-b994-4fe5-985c-8588d1d59998)  
+ [Modulu runtime](http://msdn.microsoft.com/library/99d9246a-b994-4fe5-985c-8588d1d59998)  
  [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [CorRuntimeHost – třída typu coclass](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)

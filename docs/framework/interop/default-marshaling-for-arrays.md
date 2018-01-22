@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: cb66908c28a54d4dc24cb77bd82c59862a7fd789
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 91df17448a57f7495dc95fb2b4ab1fa63dd8a27f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V aplikaci, která obsahuje jenom spravovaného kódu modul common language runtime předá typy polí jako vstupně -výstupní parametry. Naproti tomu spolupráce vláken předá pole jako parametry ve výchozím nastavení.  
@@ -100,7 +100,7 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- Multidimenzionální nebo nenulové hodnoty svázané bezpečné pole, může být zařazeno do spravovaného kódu, pokud metoda podpis vyprodukované Tlbimp.exe je upravit tak, aby označuje typ elementu **ELEMENT_TYPE_ARRAY** místo **ELEMENT_ TYPE_SZARRAY**. Alternativně můžete použít **/sysarray** přepínač s Tlbimp.exe k importu všech polí jako <xref:System.Array?displayProperty=nameWithType> objekty. V případech, kde je znám být multidimenzionální pole předávány můžete upravit Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak ji znovu zkompilovat. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be).  
+ Multidimenzionální nebo nenulové hodnoty svázané bezpečné pole, může být zařazeno do spravovaného kódu, pokud metoda podpis vyprodukované Tlbimp.exe je upravit tak, aby označuje typ elementu **ELEMENT_TYPE_ARRAY** místo **ELEMENT_ TYPE_SZARRAY**. Alternativně můžete použít **/sysarray** přepínač s Tlbimp.exe k importu všech polí jako <xref:System.Array?displayProperty=nameWithType> objekty. V případech, kde je znám být multidimenzionální pole předávány můžete upravit Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak ji znovu zkompilovat. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](http://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be).  
   
 ### <a name="c-style-arrays"></a>Pole stylu jazyka C  
  Pokud pole ve stylu jazyka je importované z knihovny typů do sestavení .NET, pole je převést na **ELEMENT_TYPE_SZARRAY**.  
@@ -164,7 +164,7 @@ void New2(ref double ar);
 void New3(ref String ar);   
 ```  
   
- Zařazování můžete poskytnout velikost pole úpravou Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak kompilovat znovu. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be). Pokud chcete zadat počet prvků v poli, použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> typ pro parametr pole spravované metoda definice v jednom z následujících způsobů:  
+ Zařazování můžete poskytnout velikost pole úpravou Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak kompilovat znovu. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](http://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be). Pokud chcete zadat počet prvků v poli, použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> typ pro parametr pole spravované metoda definice v jednom z následujících způsobů:  
   
 -   Identifikujte jiný parametr, který obsahuje počet prvků v poli. Parametry jsou identifikovány pozice, počínaje první parametr jako číslo 0.     
   
@@ -384,5 +384,5 @@ public struct MyStruct {
 ## <a name="see-also"></a>Viz také  
  [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  
  [Přenositelné a nepřenositelné typy](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [Směrovou atributy](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
+ [Směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
  [Kopírování a přichycování](../../../docs/framework/interop/copying-and-pinning.md)

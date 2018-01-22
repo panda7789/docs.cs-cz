@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1659e6352fa195bae56b764c80a08dee56b4c9e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e5a95d677588beaa41e94f12550ba8647202ffe3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltcustombindinggt"></a>&lt;customBinding&gt;
 Poskytuje plnou kontrolu nad zasílání zpráv zásobníku pro uživatele.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
+\<customBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -202,13 +202,13 @@ Poskytuje plnou kontrolu nad zasílání zpráv zásobníku pro uživatele.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<compositeDuplex >](../../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)|Určuje obousměrný zasílání zpráv na vlastní vazby. Používá se s přenosy, které neumožňují duplexní komunikace nativně, například HTTP. TCP, naopak umožňuje duplexní komunikace nativně a nevyžaduje použití tohoto elementu vazby pro službu k odesílání zpráv zpět do klienta.<br /><br /> Klient musí vystavit adresu pro službu, aby kontaktovat a navázat připojení. Tato adresa klienta poskytuje `ClientBaseAddress` atribut.<br /><br /> Tento element je typu <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|  
-|[\<pnrpPeerResolver >](../../../../../docs/framework/configure-apps/file-schema/wcf/pnrppeerresolver.md)|Určuje název překladač sdílené řešení protokolu PNRP (Peer Name). Tento element je typu <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|  
-|[\<reliableSession >](../../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md)|Určuje nastavení pro WS-spolehlivé zasílání zpráv. Pokud tento element je přidat do vlastní vazby, výsledná kanál může podporovat přesně-jednou záruky doručení. Tento element je typu <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|  
+|[\<compositeDuplex>](../../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)|Určuje obousměrný zasílání zpráv na vlastní vazby. Používá se s přenosy, které neumožňují duplexní komunikace nativně, například HTTP. TCP, naopak umožňuje duplexní komunikace nativně a nevyžaduje použití tohoto elementu vazby pro službu k odesílání zpráv zpět do klienta.<br /><br /> Klient musí vystavit adresu pro službu, aby kontaktovat a navázat připojení. Tato adresa klienta poskytuje `ClientBaseAddress` atribut.<br /><br /> Tento element je typu <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|  
+|[\<pnrpPeerResolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/pnrppeerresolver.md)|Určuje název překladač sdílené řešení protokolu PNRP (Peer Name). Tento element je typu <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|  
+|[\<reliableSession>](../../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md)|Určuje nastavení pro WS-spolehlivé zasílání zpráv. Pokud tento element je přidat do vlastní vazby, výsledná kanál může podporovat přesně-jednou záruky doručení. Tento element je typu <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení vlastní vazby. Tento element je typu <xref:System.ServiceModel.Configuration.SecurityElement>.|  
-|[\<sslStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)|Určuje nastavení zabezpečení pro vazbu SSL datového proudu. Tento element je typu <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|  
-|[\<transactionFlow >](../../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)|Určuje, že vazba podporuje toku transakcí a protokol, který se použije `transactionProtocol` atribut. Tento element je typu <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|  
-|[\<windowsStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)|Určuje možnosti pro streamování zabezpečení vlastních vazeb. Tento element je typu <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|  
+|[\<sslStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)|Určuje nastavení zabezpečení pro vazbu SSL datového proudu. Tento element je typu <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|  
+|[\<transactionFlow>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)|Určuje, že vazba podporuje toku transakcí a protokol, který se použije `transactionProtocol` atribut. Tento element je typu <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|  
+|[\<windowsStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)|Určuje možnosti pro streamování zabezpečení vlastních vazeb. Tento element je typu <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -317,4 +317,4 @@ Poskytuje plnou kontrolu nad zasílání zpráv zásobníku pro uživatele.
  [customBinding – Element](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)

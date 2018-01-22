@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d1d85e85079504e28a5b0ae78dc8be3a4b928ea3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 364362e8377f02b5d6518e6ae4d71b6dd1eafc02
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="drawing-formatted-text"></a>Kreslení formátovaného textu
 Toto téma obsahuje přehled funkce <xref:System.Windows.Media.FormattedText> objektu. Tento objekt poskytuje nízké úrovně řízení pro kreslení textu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -96,7 +96,7 @@ Příklad štětce obrázku použita pro tahu a zvýraznění
  ![Následující cesta geometrie textu oblasti](../../../../docs/framework/wpf/advanced/media/textpathgeometry01.gif "TextPathGeometry01")  
 Oblasti následující cesta geometrie textu  
   
- Další informace najdete v tématu [postupy: vytvoření PathGeometry animace textu](http://msdn.microsoft.com/en-us/29f8051e-798a-463f-a926-a099a99e9c67).  
+ Další informace najdete v tématu [postupy: vytvoření PathGeometry animace textu](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67).  
   
  Jakmile byl převeden na můžete vytvořit další zajímavé použití pro formátovaný text <xref:System.Windows.Media.PathGeometry> objektu. Můžete například oříznutí video, které zobrazí uvnitř ho.  
   
@@ -139,4 +139,4 @@ Grafické zobrazení v geometrické cesta textu
  [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
  [Vytvoření obrysového textu](../../../../docs/framework/wpf/advanced/how-to-create-outlined-text.md)  
- [Postupy: vytvoření animace PathGeometry pro Text](http://msdn.microsoft.com/en-us/29f8051e-798a-463f-a926-a099a99e9c67)
+ [Postupy: vytvoření animace PathGeometry pro Text](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67)

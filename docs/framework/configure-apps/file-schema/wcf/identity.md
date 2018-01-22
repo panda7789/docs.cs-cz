@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 819bb9dc9817050e45a39331361dd5489692f0b9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e583acee6309b6f8145cf8567cff12cea1c237e7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltidentitygt"></a>&lt;identity&gt;
 Prvek identity umožňuje vývojáři klienta zadejte v době návrhu očekávaný identitu služby. V procesu mezi klientem a službou [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] infrastruktury zajišťují, že tyto hodnoty odpovídají hodnotám tohoto elementu identitu očekávanou službu a proto může být ověřen. Další informace najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
- \<systém. ServiceModel >  
-\<klient >  
-\<koncový bod >  
+ \<system.ServiceModel>  
+\<client>  
+\<endpoint>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -66,10 +66,10 @@ Prvek identity umožňuje vývojáři klienta zadejte v době návrhu očekávan
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<vlastní >](../../../../../docs/framework/configure-apps/file-schema/wcf/custom.md)|Určuje vlastní sdílené překladač pro netPeerTcpBinding.|  
-|[\<koncový bod >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)|Konfiguruje různé typy koncových bodů.|  
-|[\<Issuer >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje Security Token Service (Služba tokenů zabezpečení) pro federované služby.|  
-|[\<issuerMetadata >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Určuje koncový bod metadat pro Security Token Service (Služba tokenů zabezpečení) federované služby.|  
-|[\<– issuedTokenParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Definuje parametry pro token vydaných v vlastní vazby.|  
+|[\<endpoint>](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)|Konfiguruje různé typy koncových bodů.|  
+|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje Security Token Service (Služba tokenů zabezpečení) pro federované služby.|  
+|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Určuje koncový bod metadat pro Security Token Service (Služba tokenů zabezpečení) federované služby.|  
+|[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Definuje parametry pro token vydaných v vlastní vazby.|  
 |[\<localIssuer >](../../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)|Určuje místní Security Token Service (STS).|  
   
 ## <a name="see-also"></a>Viz také  

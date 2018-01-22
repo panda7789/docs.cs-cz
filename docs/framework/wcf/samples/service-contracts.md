@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c8984016f1f8ad77ab41aa49f8bcc2583406a465
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3ed2fa4439edd157fa7f009b63f20b21e2bb6fc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-contracts"></a>Kontrakty služeb
 Tato část obsahuje příklady vysvětlující kontraktů služby v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -39,7 +39,7 @@ Tato část obsahuje příklady vysvětlující kontraktů služby v [!INCLUDE[i
  [Stream](../../../../docs/framework/wcf/samples/stream.md)  
  Demonstruje použití streamování přenosu režimu komunikace.  
   
- [Asynchronní](http://msdn.microsoft.com/en-us/833db946-f511-4f64-a26f-2759a11217c7)  
+ [Asynchronous](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)  
  Ukazuje, jak klient přístup k operaci služby asynchronně a jak službu můžete implementovat jeho operací asynchronně.  
   
  [Chyby XmlSerializer](../../../../docs/framework/wcf/samples/xmlserializer-faults.md)  

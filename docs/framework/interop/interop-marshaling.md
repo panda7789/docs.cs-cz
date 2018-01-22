@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5bfd5ca9d42c654882c77efafed82aec7e4f0c9b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17638390a07f752a7101209e5635752bc0511d1d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a>Zařazování spolupráce řídí, jak se data předávají v metoda argumentů a návratové hodnoty mezi spravovanými a nespravovanými paměti během volání. Zařazování spolupráce je aktivita běhu zajišťuje služba zařazování modul common language runtime.  
@@ -71,8 +71,8 @@ Vyvolání platformy a toku volání zprostředkovatele komunikace s objekty COM
   
 |Klient COM|Rozhraní .NET serveru|Zařazování požadavky|  
 |----------------|-----------------|-----------------------------|  
-|STA|`Both`stane se STA|Zařazování stejné typu apartment.|  
-|PROSTŘEDÍ MTA|`Both`změní modelu MTA.|Zařazování stejné typu apartment.|  
+|STA|`Both` becomes STA.|Zařazování stejné typu apartment.|  
+|MTA|`Both` becomes MTA.|Zařazování stejné typu apartment.|  
   
  Protože klient a server jsou ve stejné typu apartment, zprostředkovatel komunikace s objekty služby zařazování automaticky zpracovává všechny dat – zařazování. Následující obrázek znázorňuje službu spolupráce zařazování operační mezi spravovanými a nespravovanými haldách v rámci stejné COM stylu typu apartment.  
   
@@ -88,8 +88,8 @@ Zařazování procesu stejné objektu apartment
   
 |Klient .NET|COM server|Zařazování požadavky|  
 |-----------------|----------------|-----------------------------|  
-|Protokol MTA (výchozí)|PROSTŘEDÍ MTA<br /><br /> STA|Zařazování spolupráce<br /><br /> Zprostředkovatel komunikace s objekty a zařazování COM.|  
-|STA|PROSTŘEDÍ MTA<br /><br /> STA|Zprostředkovatel komunikace s objekty a zařazování COM.<br /><br /> Zařazování spolupráce|  
+|Protokol MTA (výchozí)|MTA<br /><br /> STA|Zařazování spolupráce<br /><br /> Zprostředkovatel komunikace s objekty a zařazování COM.|  
+|STA|MTA<br /><br /> STA|Zprostředkovatel komunikace s objekty a zařazování COM.<br /><br /> Zařazování spolupráce|  
   
  Při nespravovanému serveru a klienta spravovaného jsou ve stejné typu apartment, zprostředkovatel komunikace s objekty služby zařazování zpracovává všechny zařazování data. Ale když klient a server se inicializují v různých apartment, COM zařazování je také nutný. Na následujícím obrázku je znázorněno volání mezi apartment.  
   
@@ -105,7 +105,7 @@ Volání mezi apartment mezi klient .NET a objekt modelu COM
     > [!NOTE]
     >  Vlákno klienta C# nastavenou na hodnotu STA, bude vyžadovat volání do modelu MTA COM – součásti zařazování mezi apartment.  
   
- Pokyny týkající se explicitně výběru apartment model najdete v tématu [spravovaná a nespravovaná vlákna](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5).  
+ Pokyny týkající se explicitně výběru apartment model najdete v tématu [spravovaná a nespravovaná vlákna](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5).  
   
  [Zpět na začátek](#top)  
   
@@ -145,7 +145,7 @@ Odkaz na předávání přes hranice procesu a hostitele
  ![Protokol SOAP nebo TcpChannel](../../../docs/framework/interop/media/interopremotesoap.gif "interopremotesoap")  
 Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel – třída  
   
- Některá volání nespravovaného můžete channeled prostřednictvím protokolu SOAP, jako je například volání mezi [obsluhované komponenty](http://msdn.microsoft.com/en-us/f109ee24-81ad-4d99-9892-51ac6f34978c) a COM.  
+ Některá volání nespravovaného můžete channeled prostřednictvím protokolu SOAP, jako je například volání mezi [obsluhované komponenty](http://msdn.microsoft.com/library/f109ee24-81ad-4d99-9892-51ac6f34978c) a COM.  
   
  [Zpět na začátek](#top)  
   
@@ -159,10 +159,10 @@ Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel
 |[Zařazování dat se spoluprací COM](../../../docs/framework/interop/marshaling-data-with-com-interop.md)|Popisuje, jak přizpůsobit COM – obálky ke změně chování zařazování.|  
 |[Postup: Migrace spravovaného kódu DCOM do WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje, jak migrovat z modelu DCOM do WCF.|  
 |[Postupy: Mapování výsledků HRESULT a výjimek](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky pro hodnoty HRESULT a poskytuje kompletní mapování z každé HRESULT do své třídy porovnatelný z hlediska výjimek v rozhraní .NET Framework.|  
-|[Spolupráce pomocí obecných typů](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58)|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilita modelů COM.|  
+|[Spolupráce pomocí obecných typů](http://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58)|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilita modelů COM.|  
 |[Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)|Popisuje vzájemná funkční spolupráce služeb poskytovaných tímto modul common language runtime.|  
-|[Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Obsahuje odkazy na další informace o zahrnutí komponenty modelu COM do své aplikace rozhraní .NET Framework.|  
-|[Aspekty návrhu pro spolupráci](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)|Poskytuje tipy pro zápis integrované COM – součásti.|  
+|[Interoperabilita modelů COM Upřesnit](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Obsahuje odkazy na další informace o zahrnutí komponenty modelu COM do své aplikace rozhraní .NET Framework.|  
+|[Aspekty návrhu pro spolupráci](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)|Poskytuje tipy pro zápis integrované COM – součásti.|  
   
  [Zpět na začátek](#top)  
   

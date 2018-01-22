@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f5d9adcfe701b5897c434dc1479b9692448d8b98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5acb6da7c68f899daa4144e897e9ec31fcfa868a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
 Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  
@@ -45,18 +45,18 @@ peverify filename [options]
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*Název souboru*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
+|*filename*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/ Rozdělit =** *maxErrorCount*|Zruší ověření po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
+|**/break=** *maxErrorCount*|Zruší ověření po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
 |**/Clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD úč.hod cyklu**<br /> Cyklus ověření metadat<br /><br /> **MD úč.hod čisté**<br /> Čisté ověření metadat<br /><br /> **Cyklus IL verze**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **Čistého IL Ver**<br /> Čisté ověřování MSIL<br /><br /> **MD úč.hod cyklus** a **IL verze cyklus** časy zahrnout čas potřebný k provést nezbytné postupy spuštění a vypnutí. **MD úč.hod čistý** a **čistého IL Ver** časy reflektovat čas potřebné k provedení ověření nebo pouze ověření.|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/HRESULT**|Zobrazí kódy chyb v šestnáctkovém formátu.|  
 |**/ Ignorovat =** *hex.code* [, *hex.code*]|Ignoruje zadané kódy chyb.|  
-|**/ Ignorovat = @** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
+|**/ignore=@** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
 |**/IL**|Provádí kontroly pro zabezpečení ověření MSIL typ pro metody implementované v sestavení určeného *filename*. Nástroj Vrátí podrobný popis pro jednotlivé problémy najít nezadáte **/quiet** možnost.|  
-|**/MD**|Provádí ověřovací kontroly metadata sestavení s určeného *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
+|**/md**|Provádí ověřovací kontroly metadata sestavení s určeného *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
 |**/nologo**|Potlačí zobrazení informací o verzi a autorských právech produktu.|  
 |**/nosymbols**|V rozhraní .NET Framework verze 2.0 potlačí zobrazování čísel řádků z důvodu zpětné kompatibility.|  
 |**/quiet**|Nastaví tichý režim; potlačí výstup hlášení problémů ověření. Nástroj Peverify.exe stále hlásí, zda je soubor typově bezpečný, ale již nehlásí informace o problémech, které brání v ověření bezpečnosti typu.|  
@@ -66,7 +66,7 @@ peverify filename [options]
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul Common Language Runtime se opírá o typově bezpečné spuštění kódu aplikace k podpoře vynucení bezpečnostních a izolačních mechanismů. Za normálních okolností kód, který není [ověřitelný typ](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc) nelze spustit, i když můžete nastavit zásady zabezpečení pro povolení spuštění kódu důvěryhodné, ale nelze ověřit.  
+ Modul Common Language Runtime se opírá o typově bezpečné spuštění kódu aplikace k podpoře vynucení bezpečnostních a izolačních mechanismů. Za normálních okolností kód, který není [ověřitelný typ](http://msdn.microsoft.com/library/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc) nelze spustit, i když můžete nastavit zásady zabezpečení pro povolení spuštění kódu důvěryhodné, ale nelze ověřit.  
   
  Pokud **/md** ani **/il** jsou zadány možnosti, Peverify.exe provede oba typy kontrol. Provede PEVerify.exe **/md** nejprve hledá. Pokud nejsou žádné chyby **/il** kontroly se provádějí. Pokud zadáte oba **/md** a **/il**, **/il** kontroly se provádějí i v případě, že jsou chyby v metadatech. Proto v případě, že nejsou žádné chyby metadat **peverify** *filename* je ekvivalentní **peverify** *filename* **/md** **/il**.  
   
@@ -131,6 +131,6 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [NIB: Zápis typ ověřitelný kód](http://msdn.microsoft.com/en-us/d18f10ef-3b48-4f47-8726-96714021547b)  
- [Typ zabezpečení a zabezpečení](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
+ [NIB: Zápis typ ověřitelný kód](http://msdn.microsoft.com/library/d18f10ef-3b48-4f47-8726-96714021547b)  
+ [Typ zabezpečení a zabezpečení](http://msdn.microsoft.com/library/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

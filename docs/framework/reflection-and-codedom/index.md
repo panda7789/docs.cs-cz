@@ -17,11 +17,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6b0e0eda77ebe3d980a99340db8366533e601687
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f6ff2a99f6cf39fd18c19156535f9c1fea63bdb8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dynamic-programming-in-the-net-framework"></a>Dynamické programování v rozhraní .NET Framework
 Tato část dokumentace obsahuje informace o dynamické programování v rozhraní .NET Framework.  
@@ -42,4 +42,4 @@ Tato část dokumentace obsahuje informace o dynamické programování v rozhran
 ## <a name="related-sections"></a>Související oddíly  
  [Průvodce vývojem](../../../docs/framework/development-guide.md)  
   
- [Pokročilé čtení pro rozhraní .NET Framework](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)
+ [Pokročilé čtení pro rozhraní .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)

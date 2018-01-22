@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1eab181ec63da5f0494ce5c4acabe6c6f868be15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ea4e34049ef54cd6d161e381bf92818b5f3531c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
 Tento příklad ukazuje `netNamedPipeBinding` vazby, která poskytuje komunikaci mezi procesy ve stejném počítači. Pojmenované kanály nefungují mezi počítači. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) kalkulačky služby.  
@@ -29,7 +29,7 @@ Tento příklad ukazuje `netNamedPipeBinding` vazby, která poskytuje komunikaci
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
- Vazba je zadána v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut[\<endpoint >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jak je znázorněno v následující ukázka konfigurace:  
+ Vazba je zadána v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut[\<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jak je znázorněno v následující ukázka konfigurace:  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  

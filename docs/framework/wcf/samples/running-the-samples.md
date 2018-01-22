@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3003c89b0cfcda9866c5b1accd154900bc650454
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 603a6dce17d527a3f14e408da19006509514df52
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Ukázky můžete spustit v jednom počítači nebo počítači konfiguraci. Zadaný, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je potřeba upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak spustit ukázku ve stejném počítači a počítači konfigurace. Všimněte si, že jsou rozdíly v kroků pro služby hostované v Internetové informační služby (IIS) a vlastním hostováním ukázky. Většina ukázky jsou hostované ve službě IIS; Zobrazit informace o ukázkový soubor readme k určení, jak je hostovaná.  
@@ -30,13 +30,13 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky na stejném počítači  
   
-1.  Pokud služba je hostitelem služby IIS, ujistěte se, že mají přístup ke službě pomocí prohlížeče tak, že zadáte tuto adresu: http://localhost/servicemodelsamples/service.svc. Potvrzovací stránku má být zobrazena v odpovědi. Pokud se nezobrazí stránka potvrzení, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+1.  Pokud služba je hostitelem služby IIS, ujistěte se, že mají přístup ke službě pomocí prohlížeče tak, že zadáte tuto adresu: http://localhost/servicemodelsamples/service.svc. Potvrzovací stránku má být zobrazena v odpovědi. Pokud se nezobrazí stránka potvrzení, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 2.  Pokud je samoobslužně hostovaná služba, spusťte Service.exe z \service\bin získáte složky pro konkrétní jazyk. Aktivita služby se zobrazí v okně konzoly služby.  
   
 3.  Spusťte Client.exe z \client\bin\\, získáte složky pro konkrétní jazyk. Činnost klienta se zobrazí v okně konzoly klienta.  
   
-4.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky mezi počítači  
   
@@ -92,5 +92,5 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>Viz také  
  [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
- [Spuštění ukázky v pracovní skupině a v počítačích](http://msdn.microsoft.com/en-us/a451a525-e7ce-452d-9da9-620221260113)  
- [Tipy pro odstraňování potíží](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)
+ [Spuštění ukázky v pracovní skupině a v počítačích](http://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113)  
+ [Tipy pro odstraňování potíží](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)

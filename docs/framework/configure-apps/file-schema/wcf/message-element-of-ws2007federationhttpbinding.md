@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 97c0ad9c64046e9c93ce8690016f71d0950fb2d5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f1c30ba2995a0f8768292dd71733d3e6f4c3799f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltmessagegt-element-of-ltws2007federationhttpbindinggt"></a>Element &lt;message&gt; – &lt;ws2007FederationHttpBinding&gt;
 Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) element.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
-\<– ws2007FederationHttpBinding >  
+\<ws2007FederationHttpBinding>  
 \<Vazba >  
 \<zabezpečení >  
 \<Zpráva >  
@@ -99,7 +99,7 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007FederationH
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`algorithmSuite`|Volitelné. Nastaví pro šifrování zpráv, podpisu a algoritmus klíče wrap. Algoritmy a velikosti klíče jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídy. Tyto algoritmy mapovat platformám zadaným v specifikace jazyka zásady zabezpečení (WS-SecurityPolicy).<br /><br /> Najdete v následující tabulce možné hodnoty. Výchozí hodnota je Basic256.|  
-|`issuedKeyType`|Určuje typ klíče pro vystavování. Platné hodnoty patří:<br /><br /> -SymmetricKey<br />-PublicKey<br />-BearerKey<br /><br /> Výchozí hodnota je SymmetricKey. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
+|`issuedKeyType`|Určuje typ klíče pro vystavování. Platné hodnoty patří:<br /><br /> -SymmetricKey<br />-PublicKey<br />-   BearerKey<br /><br /> Výchozí hodnota je SymmetricKey. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
 |`issuedTokenType`|Identifikátor URI, který určuje typ token, který má být vystavené. Výchozí hodnota je `null`.|  
 |`negotiateServiceCredential`|Hodnota, která určuje, zda přihlašovací údaje služby by měl být v rámci vyjednávání vyměňují nebo je k dispozici vzdálené správy. Výchozí hodnota je `true`, což znamená, že je vyjednal přihlašovací údaje služby.|  
   
@@ -128,10 +128,10 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007FederationH
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements >](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Určuje kolekci typů deklarací identity pro tuto vazbu. Každý element je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
-|[\<Issuer >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje koncový bod, který vydá token zabezpečení. Tento element je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
-|[\<issuerMetadata >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Určuje adresu koncového bodu vystavitele.|  
-|[\<tokenRequestParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Kolekce parametrů žádosti o token. Každý parametr je XML element.|  
+|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Určuje kolekci typů deklarací identity pro tuto vazbu. Každý element je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
+|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje koncový bod, který vydá token zabezpečení. Tento element je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
+|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Určuje adresu koncového bodu vystavitele.|  
+|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Kolekce parametrů žádosti o token. Každý parametr je XML element.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -146,5 +146,5 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007FederationH
  `System.ServiceModel.Configuration.FederatedMessageSecurityElement`[Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<Vazba >](../../../../../docs/framework/misc/binding.md)

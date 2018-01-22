@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e35679245d93a98b76bff31d97c6111146348a00
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 23c8476e4013cca6d906d85f11658deddc585869
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
 I když Windows Forms jsou optimalizovány na hostitele Windows Forms – ovládací prvky, můžete dál používat ovládací prvky ActiveX. Při plánování aplikace, která používá ovládací prvky ActiveX, mít na paměti následující aspekty:  
@@ -42,6 +42,6 @@ I když Windows Forms jsou optimalizovány na hostitele Windows Forms – ovlád
 ## <a name="see-also"></a>Viz také  
  [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
  [Zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security.md)  
- [Ovládací prvky a programovatelný objekty porovnání v různých jazycích a knihovny](http://msdn.microsoft.com/en-us/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
+ [Ovládací prvky a programovatelný objekty porovnání v různých jazycích a knihovny](http://msdn.microsoft.com/library/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
  [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
  [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)

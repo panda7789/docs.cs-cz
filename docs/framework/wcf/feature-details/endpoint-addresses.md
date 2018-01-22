@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 94610842cd801a54bba0266a4f658d8a4bb60dcd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58e6d383856d57e95a1ea5bd2658af2ec0b22ed5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledat a identifikovat koncový bod. Tato adresa se skládá především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je znázorněná [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] programovací model pomocí <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiných koncovými body, které exchange zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují jiné záhlaví SOAP, vyžaduje ke zpřístupnění služby. Zadejte další volitelné hlavičky a podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentován v drátové síti WS-Addressing reference koncového bodu (EPR).  
@@ -36,7 +36,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledat a 
   
 -   (volitelné) Port: 322  
   
--   Cesta: /mathservice.svc/secureEndpoint  
+-   Path: /mathservice.svc/secureEndpoint  
   
 ## <a name="defining-an-address-for-a-service"></a>Definování adresu pro službu  
  Adresa koncového bodu pro služby můžete zadat buď imperativní pomocí kódu nebo deklarativně pomocí konfigurace. Definování koncové body v kódu obvykle není praktické protože jsou obvykle liší od těch, které používá při služby je vyvíjen vazeb a adresy pro v nasazené službě. Obecně je praktičtější definovat koncové body služby pomocí konfigurace, nikoli kódu. Zachování vazby a adresování informace mimo kód vám umožní se změnit bez nutnosti znovu zkompiluje nebo znovu nasadit aplikaci.  
@@ -67,9 +67,9 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledat a 
   
  Například lokality může obsahovat následující základní adresy:  
   
--   http://Payroll.myorg.com/Service.svc  
+-   http://payroll.myorg.com/Service.svc  
   
--   http://Shipping.myorg.com/Service.svc  
+-   http://shipping.myorg.com/Service.svc  
   
  S [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], zadejte předponu filtr na úrovni domény aplikace v konfiguračním souboru. Můžete to provést pomocí [ \<baseAddressPrefixFilters >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) element, který obsahuje seznam předpon. Příchozí základní adresy poskytované službou IIS, jsou filtrovány podle seznamu volitelné předponu. Ve výchozím nastavení Pokud není zadána předpony, všechny adresy se předaly. Zadání předpony výsledky pouze odpovídající základní adresu pro tento schéma, které se budou předávat.  
   
@@ -130,7 +130,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledat a 
   
 -   V kódu, vytvořte vlastní adresu hlavičky pomocí <xref:System.ServiceModel.Channels.AddressHeader> třídy a pak se použije při sestavování <xref:System.ServiceModel.EndpointAddress>.  
   
--   V konfiguraci, vlastní [ \<hlavičky >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) jsou určené jako podřízené objekty [ \<endpoint >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
+-   V konfiguraci, vlastní [ \<hlavičky >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) jsou určené jako podřízené objekty [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
   
  Konfigurace je obecně vhodnější kódu, jak ho můžete změnit hlavičky po nasazení.  
   
@@ -141,7 +141,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledat a 
   
 -   V kódu, zadejte vlastní adresu naslouchání přidáním <xref:System.ServiceModel.Description.ClientViaBehavior> třída do kolekce chování pro koncový bod.  
   
--   V konfiguraci, zadejte vlastní adresu naslouchání s `ListenUri` atribut služby [ \<endpoint >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
+-   V konfiguraci, zadejte vlastní adresu naslouchání s `ListenUri` atribut služby [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
   
 ### <a name="custom-soap-address-filter"></a>Filtr adres vlastní SOAP  
  <xref:System.ServiceModel.EndpointAddress.Uri%2A> Se používá ve spojení s žádným <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnost definovat filtr adresy koncového bodu protokolu SOAP (<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A>). Ve výchozím nastavení, tento filtr ověřuje, že má příchozí zprávy `To` záhlaví zprávy, který se shoduje s koncovým bodem je identifikátor URI a zda jsou všechny hlaviček vyžaduje koncový bod ve zprávě.  

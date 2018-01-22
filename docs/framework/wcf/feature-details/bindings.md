@@ -18,14 +18,14 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 977bc032d62856673994e07a71b77d3b668ce7af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 494869985f14dc9562b8d98a7d68cd9639cca97b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-communcation-foundation-bindings"></a>Vazby WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]odděluje postup zápisu softwaru pro aplikaci z jak komunikuje s jiným softwarem. Vazby slouží k určení přenosu, kódování a podrobnosti protokolu povinné pro klienty a služby pro komunikaci mezi sebou. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vazby se používá ke generování základní síťové vyjádření koncového bodu, takže většina podrobnosti vazba musí schválit strany, které komunikují. Nejjednodušší způsob, jak dosáhnout je pro klientům služby používat stejnou vazbu, která koncový bod služby používá. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak to udělat, najdete v části [pomocí vazby na klienty a konfiguraci služby Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb).  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]odděluje postup zápisu softwaru pro aplikaci z jak komunikuje s jiným softwarem. Vazby slouží k určení přenosu, kódování a podrobnosti protokolu povinné pro klienty a služby pro komunikaci mezi sebou. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vazby se používá ke generování základní síťové vyjádření koncového bodu, takže většina podrobnosti vazba musí schválit strany, které komunikují. Nejjednodušší způsob, jak dosáhnout je pro klientům služby používat stejnou vazbu, která koncový bod služby používá. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak to udělat, najdete v části [pomocí vazby na klienty a konfiguraci služby Windows Communication Foundation](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb).  
   
  Vazba se skládá z kolekce elementů vazby. Každý prvek popisuje určitý aspekt jak koncový bod komunikuje s klienty. Vazba musí obsahovat alespoň jeden element vazby přenosu, alespoň jeden kódování zpráv prvku vazby (což element vazby přenosu může zajistit ve výchozím nastavení) a libovolný počet dalších protokol prvky vazeb. Proces, který sestaví runtime mimo tento popis umožňuje každého prvku vazby přispívání kód pro tento modul runtime.  
   
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/22/2017
  [Konfigurace vazeb poskytovaných systémem](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  Popisuje, jak používat a upravovat vazby, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje pro podporu běžné scénáře.  
   
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  Popisuje, jak definovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vazeb pro služby a klienti imperativní v kódu a deklarativně pomocí konfigurace.  
   
  [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)  

@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a3dee3d94063a94869869a9d94ab3cc2bc0a26fb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7c945d23def3bbf6284e7e0db95d391066256df6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="tooltip-overview"></a>ToolTip – přehled
 Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví ukazatel myši nad elementem, například jako přes <xref:System.Windows.Controls.Button>. Toto téma představuje popisek a popisuje, jak vytvářet a přizpůsobovat obsah popisku.  
@@ -78,7 +78,7 @@ Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví u
 ## <a name="using-the-time-interval-properties-of-tooltipservice"></a>Pomocí vlastnosti Interval času ToolTipService  
  <xref:System.Windows.Controls.ToolTipService> Třída poskytuje následující vlastnosti vám umožní nastavit popis pro zobrazení časy: <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>, <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>, a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>.  
   
- Použití <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> vlastnosti k určení zpoždění, obvykle stručné, před <xref:System.Windows.Controls.ToolTip> se zobrazí a také určit, jak dlouho <xref:System.Windows.Controls.ToolTip> , zůstává viditelná. Další informace najdete v tématu [postupy: zobrazení popisek zpoždění](http://msdn.microsoft.com/en-us/618e05ef-f2bf-4a53-a0f4-aacb49918bd7).  
+ Použití <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> vlastnosti k určení zpoždění, obvykle stručné, před <xref:System.Windows.Controls.ToolTip> se zobrazí a také určit, jak dlouho <xref:System.Windows.Controls.ToolTip> , zůstává viditelná. Další informace najdete v tématu [postupy: zobrazení popisek zpoždění](http://msdn.microsoft.com/library/618e05ef-f2bf-4a53-a0f4-aacb49918bd7).  
   
  <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> Vlastnost určuje, pokud popisy pro ovládací prvky se bez počáteční zpoždění při přesunutí ukazatele myši rychle mezi nimi. Další informace o <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> vlastnost, najdete v části [použijte vlastnost BetweenShowDelay](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md).  
   

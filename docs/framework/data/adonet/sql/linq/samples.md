@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ae481527ae4a7a978b183444a053bf773e369099
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 98bcb52d193cffb19f6144364895c040f9860f10
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="samples"></a>Ukázky kódu
 Toto téma obsahuje odkazy na [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] a C# řešení, které obsahují [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ukázkový kód.  
@@ -28,7 +28,7 @@ Toto téma obsahuje odkazy na [!INCLUDE[vbprvb](../../../../../../includes/vbprv
  [Ukázkové dotazy (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
  C# verze SampleQueries řešení  
- [Řešení LINQ C# – ukázky](http://msdn.microsoft.com/en-us/23852e6b-b9a9-4a06-aedb-b27a5930ed74)  
+ [Řešení LINQ C# – ukázky](http://msdn.microsoft.com/library/23852e6b-b9a9-4a06-aedb-b27a5930ed74)  
   
  Postupujte podle těchto kroků najít další příklady [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kód a aplikace:  
   
@@ -40,4 +40,4 @@ Toto téma obsahuje odkazy na [!INCLUDE[vbprvb](../../../../../../includes/vbprv
   
 ## <a name="see-also"></a>Viz také  
  [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)  
- [Technologie LINQ to SQL návody](http://msdn.microsoft.com/en-us/308e66ac-f704-4e00-9b4e-7af0045a2374)
+ [Technologie LINQ to SQL návody](http://msdn.microsoft.com/library/308e66ac-f704-4e00-9b4e-7af0045a2374)

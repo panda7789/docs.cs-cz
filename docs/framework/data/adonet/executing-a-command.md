@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 035d619574707ec7944c80b95d5b7a6ea0de1899
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c4879c49a410dfb40999f3163d8b23158cb71f0e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="executing-a-command"></a>Spouštění příkazu
 Zprostředkovatel dat .NET Framework, jednotlivých součástí rozhraní .NET Framework má svou vlastní objekt příkazu, který dědí z <xref:System.Data.Common.DbCommand>. Zahrnuje zprostředkovatel dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro ODBC <xref:System.Data.Odbc.OdbcCommand> objektu a rozhraní .NET Framework Zprostředkovatel dat pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleCommand> objektu. Každá z těchto metod zpřístupňuje objekty pro provádění příkazů na základě typu příkazu a potřeby návratovou hodnotu, jak je popsáno v následující tabulce.  
@@ -53,5 +53,5 @@ Zprostředkovatel dat .NET Framework, jednotlivých součástí rozhraní .NET F
 ## <a name="see-also"></a>Viz také  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Práce s DataReaders](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [Práce s DataReaders](http://msdn.microsoft.com/library/126a966a-d08d-4d22-a19f-f432908b2b54)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

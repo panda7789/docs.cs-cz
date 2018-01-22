@@ -17,18 +17,18 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d769eca17a45449505e1df96e1cbde584e42d65e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 81b9f8099f98915ec0b0f83dbe0f90e506cb2a79
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Postupy: volání funkce Model definován jako objekt metody
 Toto téma popisuje, jak volat funkci definované model jako metodu <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu vlastní třídy. A *modelu definované funkce* je funkce, která je definována v konceptuálním modelu. Postupy v tomto tématu popisují, jak volat tyto funkce přímo namísto volání je z technologie LINQ dotazy entity. Informace o volání funkcí modelu definované v technologii LINQ na entity dotazy najdete v tématu [postupy: Call Model-Defined funkcí v dotazech](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  
   
  Zda můžete volat funkci model definován jako <xref:System.Data.Objects.ObjectContext> metoda nebo jako statickou metodu vlastní třídy, je nutné nejprve mapovat metodu do modelu definované funkce se <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>. Ale když definujete metodu na <xref:System.Data.Objects.ObjectContext> třídy, je nutné použít <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> vlastnost vystavit LINQ poskytovatele, že když definujete vlastní třídy statickou metodu, je nutné použít <xref:System.Linq.IQueryable.Provider%2A> vlastnost vystavit LINQ zprostředkovatele. Další informace najdete v tématu příklady, které postupujte podle pokynů níže.  
   
- Zadejte níže uvedených postupech obsahuje podrobný přehled pro volání funkce modelu definované jako metodu na <xref:System.Data.Objects.ObjectContext> objektu a jako statickou metodu vlastní třídy. Příklady, které poskytují podrobnější informace o krocích v postupech. V postupech se předpokládá, že jste definovali funkci v konceptuálním modelu. Další informace najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).  
+ Zadejte níže uvedených postupech obsahuje podrobný přehled pro volání funkce modelu definované jako metodu na <xref:System.Data.Objects.ObjectContext> objektu a jako statickou metodu vlastní třídy. Příklady, které poskytují podrobnější informace o krocích v postupech. V postupech se předpokládá, že jste definovali funkci v konceptuálním modelu. Další informace najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).  
   
 ### <a name="to-call-a-model-defined-function-as-a-method-on-an-objectcontext-object"></a>K volání funkce model definován jako metodu objektu ObjectContext  
   
@@ -57,9 +57,9 @@ Toto téma popisuje, jak volat funkci definované model jako metodu <xref:System
 ## <a name="example"></a>Příklad  
  **Volání funkce modelu definované jako metodu objektu ObjectContext**  
   
- Následující příklad ukazuje, jak volat funkci definované model jako metodu <xref:System.Data.Objects.ObjectContext> objektu. V příkladu se používá [Model prodeje společnosti AdventureWorks](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).  
+ Následující příklad ukazuje, jak volat funkci definované model jako metodu <xref:System.Data.Objects.ObjectContext> objektu. V příkladu se používá [Model prodeje společnosti AdventureWorks](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
   
- Zvažte funkce konceptuálního modelu nižší, než je vrací výnosy produktu pro určitý produkt. (Informace o přidání funkce do konceptuálního modelu najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).)  
+ Zvažte funkce konceptuálního modelu nižší, než je vrací výnosy produktu pro určitý produkt. (Informace o přidání funkce do konceptuálního modelu najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).)  
   
  [!code-xml[DP L2E Methods on ObjectContext#4](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#4)]  
 
@@ -95,12 +95,12 @@ Toto téma popisuje, jak volat funkci definované model jako metodu <xref:System
 ## <a name="example"></a>Příklad  
  **Volání funkce modelu definované jako statickou metodu vlastní třídy**  
   
- Další příklad ukazuje, jak volat funkci model definován jako statickou metodu vlastní třídy. V příkladu se používá [Model prodeje společnosti AdventureWorks](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).  
+ Další příklad ukazuje, jak volat funkci model definován jako statickou metodu vlastní třídy. V příkladu se používá [Model prodeje společnosti AdventureWorks](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
   
 > [!NOTE]
 >  Při volání funkce modelu definované jako statickou metodu na vlastní třídu, model definované funkce, musíte přijmout kolekce a vrátí agregace hodnot v kolekci.  
   
- Zvažte funkce konceptuálního modelu nižší, než je vrací výnosy produktu pro kolekci podrobnosti prodejní objednávky. (Informace o přidání funkce do konceptuálního modelu najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).).  
+ Zvažte funkce konceptuálního modelu nižší, než je vrací výnosy produktu pro kolekci podrobnosti prodejní objednávky. (Informace o přidání funkce do konceptuálního modelu najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).).  
   
  [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#1)]
   
@@ -117,6 +117,6 @@ Toto téma popisuje, jak volat funkci definované model jako metodu <xref:System
  [!code-vb[DP L2E Methods on ObjectContext#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#6)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled souboru EDMX](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+ [Přehled souboru EDMX](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
  [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)  
  [Volání funkcí v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)

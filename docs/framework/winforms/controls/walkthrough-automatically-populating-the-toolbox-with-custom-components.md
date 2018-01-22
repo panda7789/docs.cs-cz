@@ -18,14 +18,14 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 08cb39215ea1d9aff1cd7ecc125bd731f14a4d7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b60d4ee7908a5ed9dcb3393132ba7d0bd0a6cb5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Návod: Automatické vyplnění nástrojů vlastními komponentami
-Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených řešení, se automaticky zobrazí v **sada nástrojů**, třeba akce. Můžete také ručně naplnit **sada nástrojů** s vlastních součástí s použitím [zvolte sady nástrojů položek dialogové okno (Visual Studio)](http://msdn.microsoft.com/en-us/bd07835f-18a8-433e-bccc-7141f65263bb), ale **sada nástrojů** bere v úvahu položek ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
+Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených řešení, se automaticky zobrazí v **sada nástrojů**, třeba akce. Můžete také ručně naplnit **sada nástrojů** s vlastních součástí s použitím [zvolte sady nástrojů položek dialogové okno (Visual Studio)](http://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb), ale **sada nástrojů** bere v úvahu položek ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
   
 -   Implementuje <xref:System.ComponentModel.IComponent>;  
   
@@ -49,7 +49,7 @@ Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených ře
  Jakmile budete hotovi, zobrazí se **sada nástrojů** naplněný součást, kterou jste vytvořili.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu a nastavte formulář.  
@@ -58,11 +58,11 @@ Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených ře
   
 1.  Vytvořte projekt aplikace pro systém Windows s názvem `ToolboxExample`.  
   
-     Další informace najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+     Další informace najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 2.  Přidáte novou součást do projektu. Volání `DemoComponent`.  
   
-     Další informace najdete v tématu [NIB: postupy: Přidání nové položky projektu](http://msdn.microsoft.com/en-us/63d3e16b-de6e-4bb5-a0e3-ecec762201ce).  
+     Další informace najdete v tématu [NIB: postupy: Přidání nové položky projektu](http://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce).  
   
 3.  Sestavte projekt.  
   
@@ -93,7 +93,7 @@ Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených ře
   
 1.  Uvolněte projekt z řešení.  
   
-     Další informace o uvolnění projekty najdete v tématu [NIB: postupy: uvolnění a načtěte projekty](http://msdn.microsoft.com/en-us/abc0155b-8fcb-4ffc-95b6-698518a7100b). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
+     Další informace o uvolnění projekty najdete v tématu [NIB: postupy: uvolnění a načtěte projekty](http://msdn.microsoft.com/library/abc0155b-8fcb-4ffc-95b6-698518a7100b). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
   
 2.  Přidejte nový **aplikace Windows** projektu k řešení. Otevřete formulář v **Návrhář**.  
   
@@ -107,7 +107,7 @@ Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených ře
  Tento návod ukazuje, který **sada nástrojů** bere v úvahu součástí projektu, ale **sada nástrojů** je také účtu trvá ovládacích prvků. Experimentujte s vlastní ovládací prvky podle přidávání a odebírání řízení projektů z vašeho řešení.  
   
 ## <a name="see-also"></a>Viz také  
- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)  
- [Postupy: manipulace s kartami panelu nástrojů](http://msdn.microsoft.com/en-us/21285050-cadd-455a-b1f5-a2289a89c4db)  
- [Výběr dialogové okno položek sady nástrojů (Visual Studio)](http://msdn.microsoft.com/en-us/bd07835f-18a8-433e-bccc-7141f65263bb)  
+ [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)  
+ [Postupy: manipulace s kartami panelu nástrojů](http://msdn.microsoft.com/library/21285050-cadd-455a-b1f5-a2289a89c4db)  
+ [Výběr dialogové okno položek sady nástrojů (Visual Studio)](http://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb)  
  [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)

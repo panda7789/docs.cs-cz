@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: caafafe1efb7715722fddf8df79f6e84dd01ece7
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a71d450753fca7d2b3535233f7528c442ec0532a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sql-server-in-process-specific-behavior-of-adonet"></a>SQL Server v specifické pro proces chování ADO.NET
 Existují čtyři hlavní funkční rozšíření ADO.NET, v nalezen <xref:Microsoft.SqlServer.Server> obor názvů, které jsou speciálně určené pro použití v rámci procesu: <xref:Microsoft.SqlServer.Server.SqlContext>, <xref:Microsoft.SqlServer.Server.SqlPipe>, <xref:Microsoft.SqlServer.Server.SqlTriggerContext>, a <xref:Microsoft.SqlServer.Server.SqlDataRecord>.  
@@ -30,5 +30,5 @@ Existují čtyři hlavní funkční rozšíření ADO.NET, v nalezen <xref:Micro
 1.  [SQL Server v rámci procesu konkrétní rozšíření pro technologii ADO.NET](http://go.microsoft.com/fwlink/?LinkId=115403)  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](http://msdn.microsoft.com/en-us/5358a825-e19b-49aa-8214-674ce5fed1da)  
+ [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](http://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
