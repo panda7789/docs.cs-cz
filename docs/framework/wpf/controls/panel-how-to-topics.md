@@ -18,23 +18,23 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 8b3fca74adb89ba46d2be2a4cba83cc5458396c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8585840f57d75220d9c616eee1e90006f604adf4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="panel-how-to-topics"></a><span data-ttu-id="e0adc-102">Témata panelu postupů</span><span class="sxs-lookup"><span data-stu-id="e0adc-102">Panel How-to Topics</span></span>
-<span data-ttu-id="e0adc-103">Témata v této části popisují, jak používat <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e0adc-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Panel> element and related [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
+# <a name="panel-how-to-topics"></a><span data-ttu-id="c8b80-102">Témata panelu postupů</span><span class="sxs-lookup"><span data-stu-id="c8b80-102">Panel How-to Topics</span></span>
+<span data-ttu-id="c8b80-103">Témata v této části popisují, jak používat <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c8b80-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Panel> element and related [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="e0adc-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e0adc-104">In This Section</span></span>  
- [<span data-ttu-id="e0adc-105">Postupy: použití LayoutTransform elementu</span><span class="sxs-lookup"><span data-stu-id="e0adc-105">How to: Apply a LayoutTransform to an Element</span></span>](http://msdn.microsoft.com/en-us/8221db67-d99f-4783-b65e-a6c5a52c03ab)  
- [<span data-ttu-id="e0adc-106">Vytvoření vlastního elementu panelu</span><span class="sxs-lookup"><span data-stu-id="e0adc-106">Create a Custom Panel Element</span></span>](../../../../docs/framework/wpf/controls/how-to-create-a-custom-panel-element.md)  
- [<span data-ttu-id="e0adc-107">Přepsání metody panelu OnRender</span><span class="sxs-lookup"><span data-stu-id="e0adc-107">Override the Panel OnRender Method</span></span>](../../../../docs/framework/wpf/controls/how-to-override-the-panel-onrender-method.md)  
- [<span data-ttu-id="e0adc-108">Nastavení vlastností výšky elementu</span><span class="sxs-lookup"><span data-stu-id="e0adc-108">Set the Height Properties of an Element</span></span>](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)  
- [<span data-ttu-id="e0adc-109">Nastavení vlastností šířky elementu</span><span class="sxs-lookup"><span data-stu-id="e0adc-109">Set the Width Properties of an Element</span></span>](../../../../docs/framework/wpf/controls/how-to-set-the-width-properties-of-an-element.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c8b80-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c8b80-104">In This Section</span></span>  
+ [<span data-ttu-id="c8b80-105">Postupy: použití LayoutTransform elementu</span><span class="sxs-lookup"><span data-stu-id="c8b80-105">How to: Apply a LayoutTransform to an Element</span></span>](http://msdn.microsoft.com/library/8221db67-d99f-4783-b65e-a6c5a52c03ab)  
+ [<span data-ttu-id="c8b80-106">Vytvoření vlastního elementu panelu</span><span class="sxs-lookup"><span data-stu-id="c8b80-106">Create a Custom Panel Element</span></span>](../../../../docs/framework/wpf/controls/how-to-create-a-custom-panel-element.md)  
+ [<span data-ttu-id="c8b80-107">Přepsání metody panelu OnRender</span><span class="sxs-lookup"><span data-stu-id="c8b80-107">Override the Panel OnRender Method</span></span>](../../../../docs/framework/wpf/controls/how-to-override-the-panel-onrender-method.md)  
+ [<span data-ttu-id="c8b80-108">Nastavení vlastností výšky elementu</span><span class="sxs-lookup"><span data-stu-id="c8b80-108">Set the Height Properties of an Element</span></span>](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)  
+ [<span data-ttu-id="c8b80-109">Nastavení vlastností šířky elementu</span><span class="sxs-lookup"><span data-stu-id="c8b80-109">Set the Width Properties of an Element</span></span>](../../../../docs/framework/wpf/controls/how-to-set-the-width-properties-of-an-element.md)  
   
-## <a name="reference"></a><span data-ttu-id="e0adc-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e0adc-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c8b80-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c8b80-110">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -49,9 +49,9 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="e0adc-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="e0adc-111">Related Sections</span></span>  
- [<span data-ttu-id="e0adc-112">Rozložení</span><span class="sxs-lookup"><span data-stu-id="e0adc-112">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="c8b80-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c8b80-111">Related Sections</span></span>  
+ [<span data-ttu-id="c8b80-112">Rozložení</span><span class="sxs-lookup"><span data-stu-id="c8b80-112">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="e0adc-113">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="e0adc-113">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="c8b80-113">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="c8b80-113">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="e0adc-114">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="e0adc-114">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="c8b80-114">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="c8b80-114">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

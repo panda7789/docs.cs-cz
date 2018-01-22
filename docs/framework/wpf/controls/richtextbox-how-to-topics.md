@@ -18,23 +18,23 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 31dd8d636a64b54c914d48b4faee95f82de680fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4375803ab51b139a66ac789f0670fce1e5f64682
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="richtextbox-how-to-topics"></a><span data-ttu-id="5e635-102">RichTextBox – postupy</span><span class="sxs-lookup"><span data-stu-id="5e635-102">RichTextBox How-to Topics</span></span>
-<span data-ttu-id="5e635-103">Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.RichTextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="5e635-103">This section provides examples that demonstrate how to accomplish common tasks using the <xref:System.Windows.Controls.RichTextBox> control.</span></span>  
+# <a name="richtextbox-how-to-topics"></a><span data-ttu-id="e86e5-102">RichTextBox – postupy</span><span class="sxs-lookup"><span data-stu-id="e86e5-102">RichTextBox How-to Topics</span></span>
+<span data-ttu-id="e86e5-103">Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.RichTextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e86e5-103">This section provides examples that demonstrate how to accomplish common tasks using the <xref:System.Windows.Controls.RichTextBox> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5e635-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5e635-104">In This Section</span></span>  
- [<span data-ttu-id="5e635-105">Extrahování textového obsahu z pole RichTextBox</span><span class="sxs-lookup"><span data-stu-id="5e635-105">Extract the Text Content from a RichTextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-extract-the-text-content-from-a-richtextbox.md)  
- [<span data-ttu-id="5e635-106">Programová změna výběru v poli RichTextBox</span><span class="sxs-lookup"><span data-stu-id="5e635-106">Change Selection in a RichTextBox Programmatically</span></span>](../../../../docs/framework/wpf/controls/change-selection-in-a-richtextbox-programmatically.md)  
- [<span data-ttu-id="5e635-107">Uložení, načtení a tisk obsahu RichTextBox</span><span class="sxs-lookup"><span data-stu-id="5e635-107">Save, Load, and Print RichTextBox Content</span></span>](../../../../docs/framework/wpf/controls/how-to-save-load-and-print-richtextbox-content.md)  
- [<span data-ttu-id="5e635-108">Umístění vlastní místní nabídky v prvku RichTextBox</span><span class="sxs-lookup"><span data-stu-id="5e635-108">Position a Custom Context Menu in a RichTextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
- [<span data-ttu-id="5e635-109">Postupy: nahrazení obsahu výchozího hostitele pro RichTextBox</span><span class="sxs-lookup"><span data-stu-id="5e635-109">How to: Replace the Default Content Host for a RichTextBox</span></span>](http://msdn.microsoft.com/en-us/dec1b2ce-9ca5-4bb2-bf54-f8a80a3c8beb)  
+## <a name="in-this-section"></a><span data-ttu-id="e86e5-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e86e5-104">In This Section</span></span>  
+ [<span data-ttu-id="e86e5-105">Extrahování textového obsahu z pole RichTextBox</span><span class="sxs-lookup"><span data-stu-id="e86e5-105">Extract the Text Content from a RichTextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-extract-the-text-content-from-a-richtextbox.md)  
+ [<span data-ttu-id="e86e5-106">Programová změna výběru v poli RichTextBox</span><span class="sxs-lookup"><span data-stu-id="e86e5-106">Change Selection in a RichTextBox Programmatically</span></span>](../../../../docs/framework/wpf/controls/change-selection-in-a-richtextbox-programmatically.md)  
+ [<span data-ttu-id="e86e5-107">Uložení, načtení a tisk obsahu RichTextBox</span><span class="sxs-lookup"><span data-stu-id="e86e5-107">Save, Load, and Print RichTextBox Content</span></span>](../../../../docs/framework/wpf/controls/how-to-save-load-and-print-richtextbox-content.md)  
+ [<span data-ttu-id="e86e5-108">Umístění vlastní místní nabídky v prvku RichTextBox</span><span class="sxs-lookup"><span data-stu-id="e86e5-108">Position a Custom Context Menu in a RichTextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
+ [<span data-ttu-id="e86e5-109">Postupy: nahrazení obsahu výchozího hostitele pro RichTextBox</span><span class="sxs-lookup"><span data-stu-id="e86e5-109">How to: Replace the Default Content Host for a RichTextBox</span></span>](http://msdn.microsoft.com/library/dec1b2ce-9ca5-4bb2-bf54-f8a80a3c8beb)  
   
-## <a name="see-also"></a><span data-ttu-id="5e635-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="5e635-110">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="e86e5-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="e86e5-110">See Also</span></span>  
  <xref:System.Windows.Controls.TextBox>  
- [<span data-ttu-id="5e635-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="5e635-111">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [<span data-ttu-id="5e635-112">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="5e635-112">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+ [<span data-ttu-id="e86e5-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="e86e5-111">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="e86e5-112">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="e86e5-112">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
