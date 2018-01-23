@@ -43,7 +43,7 @@ enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
- Seznam schválených typy výčtu `byte`, [sbyte](../../../csharp/language-reference/keywords/sbyte.md), [krátké](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), [int](../../../csharp/language-reference/keywords/int.md), [Celé_číslo](../../../csharp/language-reference/keywords/uint.md), [dlouho](../../../csharp/language-reference/keywords/long.md), nebo [ulong](../../../csharp/language-reference/keywords/ulong.md).  
+ Seznam schválených typy výčtu [`byte`](../../../csharp/language-reference/keywords/byte.md), [`sbyte`](../../../csharp/language-reference/keywords/sbyte.md), [`short`](../../../csharp/language-reference/keywords/short.md), [`ushort`](../../../csharp/language-reference/keywords/ushort.md), [`int`](../../../csharp/language-reference/keywords/int.md), [`uint`](../../../csharp/language-reference/keywords/uint.md), [`long`](../../../csharp/language-reference/keywords/long.md), nebo [`ulong`](../../../csharp/language-reference/keywords/ulong.md).  
   
  Proměnné typu `Days` lze přiřadit žádnou hodnotu v rozsahu základní typ; hodnoty nejsou omezeny na pojmenované konstanty.  
   
