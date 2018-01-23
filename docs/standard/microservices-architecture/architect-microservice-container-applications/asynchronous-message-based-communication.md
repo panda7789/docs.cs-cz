@@ -114,4 +114,4 @@ Další témata vzít v úvahu při použití asynchronní komunikaci jsou zprá
 
 
 >[!div class="step-by-step"]
-[Předchozí] (komunikace v mikroslužbu architecture.md) [Další] (udržovat mikroslužbu apis.md)
+[Předchozí] (communication-in-microservice-architecture.md) [Další] (maintain-microservice-apis.md)

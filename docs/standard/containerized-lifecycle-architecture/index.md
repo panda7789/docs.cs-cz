@@ -36,4 +36,4 @@ Stručně řečeno kontejnery nabízejí výhody izolace, přenositelnost, flexi
 
 
 >[!div class="step-by-step"]
-[Další] (what je – docker.md)
+[Další] (what-is-docker.md)

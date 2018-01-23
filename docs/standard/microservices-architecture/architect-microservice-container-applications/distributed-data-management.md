@@ -115,4 +115,4 @@ Další podrobnosti o později v tomto průvodci v částech je popsané použit
 
 
 >[!div class="step-by-step"]
-[Předchozí] (logické a fyzického architecture.md) [Další] (identifikovat mikroslužbu domain modelu boundaries.md)
+[Předchozí] (logical-versus-physical-architecture.md) [Další] (identify-microservice-domain-model-boundaries.md)

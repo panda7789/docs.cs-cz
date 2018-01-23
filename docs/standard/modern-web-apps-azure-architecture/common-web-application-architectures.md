@@ -229,4 +229,4 @@ Při monolitický aplikace využívat Docker, rozdělení monolitický aplikaci 
 > - **Architektury elektronická kniha Mikroslužeb** <http://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
-[Předchozí] (architektury principles.md) [Další] (běžné klienta straně web-technologies.md)
+[Předchozí] (architectural-principles.md) [Další] (common-client-side-web-technologies.md)

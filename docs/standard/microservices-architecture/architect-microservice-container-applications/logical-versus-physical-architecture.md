@@ -43,4 +43,4 @@ Stručně řečeno Logická architektura mikroslužeb vždy nemá se shoduje s a
 
 
 >[!div class="step-by-step"]
-[Předchozí] (data suverenity za microservice.md) [Další] (distribuované data-management.md)
+[Předchozí] (data-sovereignty-per-microservice.md) [Další] (distributed-data-management.md)

@@ -65,4 +65,4 @@ Kromě toho když Docker kontejnery spravuje orchestrator, kontejnery může "p�
 
 
 >[!div class="step-by-step"]
-[Předchozí] (containerize monolitický applications.md) [Další] (service-zaměřené na konkrétní architecture.md)
+[Předchozí] (containerize-monolithic-applications.md) [Další] (service-oriented-architecture.md)

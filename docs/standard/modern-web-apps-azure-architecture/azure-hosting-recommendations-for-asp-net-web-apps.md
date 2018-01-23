@@ -130,4 +130,4 @@ Obrázek 11-2 je znázorněný příklad referenční architekturu. Tento diagra
     <https://docs.microsoft.com/Azure/App-Service-Web/Choose-Web-Site-cloud-Service-VM>
 
 >[!div class="step-by-step"]
-[Předchozí] (vývoj proces pro azure.md)
+[Předchozí] (development-process-for-azure.md)

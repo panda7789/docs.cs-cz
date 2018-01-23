@@ -158,4 +158,4 @@ Napsali jsme tento průvodce vám pomůže pochopit architektura kontejnerizovan
 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
 
 >[!div class="step-by-step"]
-[Další] \(kontejner docker Úvod/index.md)
+[Další] (container-docker-introduction/index.md)

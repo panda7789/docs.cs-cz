@@ -79,4 +79,4 @@ Jak je také uvedené na obrázku 4-4 doručí toku publikovat bitovou kopii pro
 
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (docker aplikace stavu data.md)
+[Předchozí] (index.md) [Další] (docker-application-state-data.md)

@@ -59,4 +59,4 @@ Existuje několik výhod není sdílení stejnou entitu uživatele se stejným �
 
 
 >[!div class="step-by-step"]
-[Předchozí] (distribuované data-management.md) [Další] (direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
+[Předchozí] (distributed-data-management.md) [Další] (direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

@@ -69,4 +69,4 @@ Výhody DDD z mikroslužeb získáním skutečné hranice ve formě distribuovan
 
 
 >[!div class="step-by-step"]
-[Předchozí] (mikroslužeb architecture.md) [Další] (logické a fyzického architecture.md)
+[Předchozí] (microservices-architecture.md) [Další] (logical-versus-physical-architecture.md)

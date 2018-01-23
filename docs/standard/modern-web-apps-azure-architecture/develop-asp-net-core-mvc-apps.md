@@ -556,4 +556,4 @@ Pokud máte aplikace na platformě Azure, slouží k poskytování několika slu
 > <https://docs.microsoft.com/Azure/Application-Gateway/Application-Gateway-Introduction>
 
 >[!div class="step-by-step"]
-[Předchozí] (běžné klienta straně web-technologies.md) [Další] (work-with-data-in-asp-net-core-apps.md)
+[Předchozí] (common-client-side-web-technologies.md) [Další] (work-with-data-in-asp-net-core-apps.md)

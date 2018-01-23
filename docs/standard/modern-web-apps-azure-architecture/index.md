@@ -74,4 +74,4 @@ Nebojte se, že předávání této příručce si s týmem k zajištění výkl
 <https://docs.microsoft.com/DotNet/articles/Standard/Choosing-Core-Framework-server>
 
 >[!div class="step-by-step"]
-[Další] (moderních web aplikace characteristics.md)
+[Další] (modern-web-applications-characteristics.md)

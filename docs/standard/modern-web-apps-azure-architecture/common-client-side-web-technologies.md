@@ -171,4 +171,4 @@ Rozhraní JavaScript pokračovat ve vývoji s breakneck rychlost. Použijte info
 > <https://hackernoon.com/5-Best-JavaScript-Frameworks-in-2017-7a63b3870282>
 
 >[!div class="step-by-step"]
-[Předchozí] (běžné web aplikace architectures.md) [Další] (develop-asp-net-core-mvc-apps.md)
+[Předchozí] (common-web-application-architectures.md) [Další] (develop-asp-net-core-mvc-apps.md)

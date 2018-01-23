@@ -115,4 +115,4 @@ Vzhledem k tomu, že komunikace je v reálném čase, klientské aplikace zobraz
 
 
 >[!div class="step-by-step"]
-[Předchozí] (direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md) [Další] (asynchronní – zpráva – na základě communication.md)
+[Předchozí] (direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md) [Další] (asynchronous-message-based-communication.md)

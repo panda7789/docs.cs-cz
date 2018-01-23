@@ -37,4 +37,4 @@ Můžete se setkat scénář, kde se má více procesů spuštěných ve jediný
 
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / net-core-net-framework-containers/official-net-docker-images.md) [Další] (containerize monolitický applications.md)
+[Předchozí] (../net-core-net-framework-containers/official-net-docker-images.md) [Další] (containerize-monolithic-applications.md)

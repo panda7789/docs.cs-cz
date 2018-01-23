@@ -37,4 +37,4 @@ Privátní image registrech hostovaný místně nebo v cloudu se doporučují pr
 -   Chcete mít minimální latenci mezi vaší bitové kopie a prostředí pro vybrané nasazení. Například pokud produkční prostředí Azure, pravděpodobně chcete ukládat obrázků v registru kontejner Azure tak, aby latence sítě bude minimální. Podobným způsobem Pokud provozním prostředí je na místě, můžete chtít mít místní Docker důvěryhodné registru k dispozici v rámci stejné místní síti.
 
 >[!div class="step-by-step"]
-[Předchozí] (docker-terminology.md) [Další] (Docker aplikace-životního cyklu/index.md)
+[Předchozí] (docker-terminology.md) [Další] (Docker-application-lifecycle/index.md)

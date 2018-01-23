@@ -121,4 +121,4 @@ Minimálně měli snažit jednotlivé webové aplikace se vlastní ohraničené 
 > <https://martinfowler.com/bliki/BoundedContext.HTML>
 
 > [!div class="step-by-step"]
-[Předchozí] (choose-between-traditional-web-and-single-page-apps.md) [Další] (běžné web aplikace architectures.md)
+[Předchozí] (choose-between-traditional-web-and-single-page-apps.md) [Další] (common-web-application-architectures.md)

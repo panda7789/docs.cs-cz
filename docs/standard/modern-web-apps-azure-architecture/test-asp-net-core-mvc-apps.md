@@ -280,4 +280,4 @@ public class CatalogControllerGetImage : BaseWebTest
 Tento test funkční vykonává úplné zásobník aplikací ASP.NET MVC jádra, včetně všech middleware, filtry, vazače, atd., které může být na místě. Ověřuje, že danou trasu ("/ katalogu/pic/1) vrátí očekávané bajtové pole pro soubor do vhodného umístění. Nebude tak bez nastavování skutečné webový server a proto zabraňuje většinu brittleness, který používá skutečné webového serveru pro testování můžete zaznamenat (například problémy s nastavením brány firewall). Funkčních testů, které spouštění TestServer jsou obvykle nižší než integrace a testování částí, ale je mnohem rychlejší než testy, které by spustit v síti k serveru webového testu.
 
 >[!div class="step-by-step"]
-[Předchozí] (work-with-data-in-asp-net-core-apps.md) [Další] (vývoj proces pro azure.md)
+[Předchozí] (work-with-data-in-asp-net-core-apps.md) [Další] (development-process-for-azure.md)

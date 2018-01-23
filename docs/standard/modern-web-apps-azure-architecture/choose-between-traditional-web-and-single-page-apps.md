@@ -96,4 +96,4 @@ Následující rozhodnutí tabulka shrnuje některé základní faktorů, které
   | Požadavky na bohatou a komplexní uživatelské rozhraní | **Omezené** | **Vhodným** |
 
 >[!div class="step-by-step"]
-[Předchozí] (moderních web aplikace characteristics.md) [další](architectural-principles.md)
+[Předchozí] (modern-web-applications-characteristics.md) [další](architectural-principles.md)

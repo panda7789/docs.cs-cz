@@ -50,4 +50,4 @@ Tato část uvádí termíny a definice, se kterými měli byste se seznámit s 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (what je – docker.md) [Další] (docker kontejnery Image a registries.md)
+[Předchozí] (what-is-docker.md) [Další] (docker-containers-images-and-registries.md)

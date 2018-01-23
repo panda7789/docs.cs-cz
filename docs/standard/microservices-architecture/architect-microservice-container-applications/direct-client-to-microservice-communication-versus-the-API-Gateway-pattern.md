@@ -123,4 +123,4 @@ V této příručce a referenční dokumentace ukázkovou aplikaci (eShopOnConta
 
 
 >[!div class="step-by-step"]
-[Předchozí] (identifikovat mikroslužbu domain modelu boundaries.md) [Další] (komunikace v mikroslužbu architecture.md)
+[Předchozí] (identify-microservice-domain-model-boundaries.md) [Další] (communication-in-microservice-architecture.md)
