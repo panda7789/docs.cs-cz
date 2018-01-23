@@ -69,4 +69,4 @@ Z těchto jsou pouze první tři zahrnutých nebo byla zavedená v této příru
 
 
 >[!div class="step-by-step"]
-[Předchozí] (service-zaměřené na konkrétní architecture.md) [Další] (data suverenity za microservice.md)
+[Předchozí] (service-oriented-architecture.md) [Další] (data-sovereignty-per-microservice.md)

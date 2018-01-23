@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 97035f297743626c5d9b306712cefdbd8a086c51
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7538c760d396349fe9b1e93a21839e3e59d7f046
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -110,7 +110,7 @@ Přejděte zpět do počáteční problému a jeho příklad. Pokud po aktualiza
 
 Jak je uvedeno výše v části architektura, může mít několik přístupů pro s řešením tohoto problému:
 
--   Pomocí kompletní [Sourcing událostí vzor](https://msdn.microsoft.com/en-us/library/dn589792.aspx).
+-   Pomocí kompletní [Sourcing událostí vzor](https://msdn.microsoft.com/library/dn589792.aspx).
 
 -   Pomocí [transakce protokolu dolování](http://www.scoop.it/t/sql-server-transaction-log-mining).
 
@@ -302,7 +302,7 @@ Některé zpracování zprávy je ze své podstaty idempotent. Například pokud
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Aby byla dodržena zpráva idempotenci** (Podtitulek na této stránce) [ *https://msdn.microsoft.com/en-us/library/jj591565.aspx*](https://msdn.microsoft.com/en-us/library/jj591565.aspx)
+-   **Aby byla dodržena zpráva idempotenci** (Podtitulek na této stránce) [ *https://msdn.microsoft.com/library/jj591565.aspx*](https://msdn.microsoft.com/library/jj591565.aspx)
 
 ## <a name="deduplicating-integration-event-messages"></a>Odstranění duplicit dat zprávy o událostech integrace
 
@@ -325,20 +325,20 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Forked eShopOnContainers pomocí NServiceBus (určitého softwaru)**
     [*http://go.particular.net/eShopOnContainers*](http://go.particular.net/eShopOnContainers)
 
--   **Řízené zasílání zpráv událostí**
-    [*http://soapatterns.org/design\_vzory/událost\_řízené\_zasílání zpráv*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **Event Driven Messaging**
+    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **Jimmy Bogard. Refaktoring směrem odolnost: Vyhodnocení párování**
+-   **Jimmy Bogard. Refactoring Towards Resilience: Evaluating Coupling**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
--   **Publikování a odběru kanálu**
+-   **Publish-Subscribe channel**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **Komunikace mezi ohraničenou kontexty**
+-   **Communicating Between Bounded Contexts**
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
--   **Konzistence typu případné**
-    [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
+-   **Eventual Consistency**
+    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 -   **Hnědá Philip. Strategie pro integraci ohraničenou kontexty**
     [*http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
@@ -346,10 +346,10 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Jan Ryšánková. Vývoj transakční Mikroslužeb pomocí agregace, Sourcing událostí a CQRS - část 2**
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
 
--   **Jan Ryšánková. Vzor Sourcing událostí**
+-   **Jan Ryšánková. Event Sourcing pattern**
     [*http://microservices.io/patterns/data/event-sourcing.html*](http://microservices.io/patterns/data/event-sourcing.html)
 
--   **Představení událostí Sourcing**
+-   **Introducing Event Sourcing**
     [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
 
 -   **Databáze úložiště událostí**. Oficiální web.
@@ -364,7 +364,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Co je Zakončení věta? ** 
      [ *https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
 
--   **Úvod do konzistence dat**
+-   **Data Consistency Primer**
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
 -   **Rick Saling. Věta Zakončení: Proč "Vše, co je různé" s cloudu a Internetu**
@@ -375,13 +375,13 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 
 -   **Účastní transakcí (DTC) externí** (MSMQ) [ *https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
--   **Azure Service Bus. Zprostředkované zasílání zpráv: Duplicitní detekce**
+-   **Azure Service Bus. Brokered Messaging: Duplicate Detection**
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
--   **Průvodce spolehlivost** (RabbitMQ dokumentace) [ *https://www.rabbitmq.com/reliability.html\#příjemce*](https://www.rabbitmq.com/reliability.html%23consumer)
+-   **Reliability Guide** (RabbitMQ documentation) [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
 
 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (rabbitmq-event-bus-development-test-environment.md) [Další] (test-aspnet-core-services-web-apps.md)
+[Previous] (rabbitmq-event-bus-development-test-environment.md) [Next] (test-aspnet-core-services-web-apps.md)

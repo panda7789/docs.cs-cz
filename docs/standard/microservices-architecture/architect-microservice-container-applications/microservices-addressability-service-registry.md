@@ -40,4 +40,4 @@ Všimněte si, že určité překrytí registru služby a vzoru Brána rozhraní
 
 
 >[!div class="step-by-step"]
-[Předchozí] (udržovat mikroslužbu apis.md) [Další] (microservice-based-composite-ui-shape-layout.md)
+[Předchozí] (maintain-microservice-apis.md) [Další] (microservice-based-composite-ui-shape-layout.md)

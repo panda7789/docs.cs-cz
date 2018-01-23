@@ -64,4 +64,4 @@ Ale doporučujeme vám použít následující odkazy na další informace o slo
 
 
 >[!div class="step-by-step"]
-[Předchozí] (mikroslužeb adresovatelnosti service-registry.md) [Další] (odolné vysokou dostupnosti microservices.md)
+[Předchozí] (microservices-addressability-service-registry.md) [Další] (resilient-high-availability-microservices.md)

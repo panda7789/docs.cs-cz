@@ -44,4 +44,4 @@ Nakonec, pokud používáte architekturu REST, [hypermédií](https://www.infoq.
 
 
 >[!div class="step-by-step"]
-[Předchozí] (asynchronní – zpráva – na základě communication.md) [Další] (mikroslužeb adresovatelnosti service-registry.md)
+[Předchozí] (asynchronous-message-based-communication.md) [Další] (microservices-addressability-service-registry.md)
