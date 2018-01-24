@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: bc74b644f432071dc2483e8df3e0938c9e9ee025
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.openlocfilehash: 6b0f3acc3a6dbed4f44497d92d3c518ee5a5d2a7
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="rest-client"></a>Klienta REST
 
@@ -95,12 +95,30 @@ public static void Main(string[] args)
 }
 ```
 
-Nyní máte program, který nic neprovádí, ale dělá asynchronně. Přejděte zpět do `ProcessRepositories` metoda a vyplňte v první verzi:
+Nyní máte program, který nic neprovádí, ale dělá asynchronně. Umožňuje zvýšit.
+
+Je třeba nejprve objekt, který je schopen načíst data z webu; můžete použít <xref:System.Net.Http.HttpClient> to provést. Tento objekt zpracovává žádosti a odpovědi. Vytvořit jednu instanci daného typu v `Program` – třída v souboru Program.cs.
+
+```csharp
+namespace WebAPIClient
+{
+    class Program
+    {
+        private static readonly HttpClient client = new HttpClient();
+
+        static void Main(string[] args)
+        {
+            //...
+        }
+    }
+}
+```
+
+ Přejděte zpět do `ProcessRepositories` metoda a vyplňte v první verzi:
 
 ```csharp
 private static async Task ProcessRepositories()
 {
-    var client = new HttpClient();
     client.DefaultRequestHeaders.Accept.Clear();
     client.DefaultRequestHeaders.Accept.Add(
         new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
@@ -120,7 +138,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 ```
 
-Tato první verze vytvoří žádost webové číst seznam všech úložiště v rámci organizace foundation dotnet. (ID Githubu .NET Foundation je 'dotnet.). Nejprve je třeba vytvořit novou <xref:System.Net.Http.HttpClient>. Tento objekt zpracovává žádosti a odpovědi. Nastavit další několika řádků <xref:System.Net.Http.HttpClient> pro tento požadavek. Nejprve je nakonfigurován tak, aby přijímal odpovědi JSON Githubu.
+Tato první verze vytvoří žádost webové číst seznam všech úložiště v rámci organizace foundation dotnet. (ID Githubu .NET Foundation je 'dotnet.). Nastavit několik prvních řádků <xref:System.Net.Http.HttpClient> pro tento požadavek. Nejprve je nakonfigurován tak, aby přijímal odpovědi JSON Githubu.
 Tento formát je jednoduše JSON. Na další řádek přidá hlavičku uživatelského agenta na všechny požadavky z tohoto objektu. Tyto dvě hlavičky se ověří pomocí kódu serveru Githubu a jsou nezbytné k načtení informací z Githubu.
 
 Po dokončení konfigurace <xref:System.Net.Http.HttpClient>, provedete webové žádosti a načíst odpověď. V této verzi první použijete <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=nameWithType> metoda pohodlí. Tato metoda pohodlí spustí úlohu, která provede webový požadavek, a pak po dokončení žádosti, čtení datového proudu odpovědi a extrahuje obsah z datového proudu. Text odpovědi se vrátí jako <xref:System.String>. Řetězec je k dispozici po dokončení úlohy. 

@@ -13,14 +13,14 @@ ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
 caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 58203570119676e0737b0142b7a7a5fbf23f1ae2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: b60c6028d4b3f72acc31fe6028f7f956e1037eb0
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (možnosti kompilátoru C#)
-**-Lib** možnost určuje umístění sestavení odkazovaných pomocí možnosti [/Reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  
+**-Lib** možnost určuje umístění sestavení odkazovaných pomocí možnosti [– referenční dokumentace (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  
   
 ## <a name="syntax"></a>Syntaxe  
   

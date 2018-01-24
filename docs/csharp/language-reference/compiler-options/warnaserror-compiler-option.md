@@ -13,11 +13,11 @@ ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0127f8982d4b8c487a7e243025052e3eb9a5ff75
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7405987ebf5ae4f068a0f7cd6aef63649e7e69c7
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror (možnosti kompilátoru C#)
 **- Warnaserror +** možnost zpracovává všech upozornění jako chyby  
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
--warnaserror[<U>+</U> | -][:warning-list]  
+-warnaserror[+ | -][:warning-list]  
 ```  
   
 ## <a name="remarks"></a>Poznámky  

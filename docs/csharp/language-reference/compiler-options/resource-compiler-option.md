@@ -16,11 +16,11 @@ ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
 caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c20de499ae0fd5f8869c9b6e78a308fde9787ef9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a305f98b09d390afbeba7b55ab44ff09abc74617
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (možnosti kompilátoru C#)
 Vloží zadaný prostředek do výstupního souboru.  
@@ -42,7 +42,7 @@ Vloží zadaný prostředek do výstupního souboru.
  Usnadnění prostředku: veřejné nebo soukromé. Výchozí hodnota je veřejná.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [/linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md) a propojit prostředku sestavení není přidejte soubor prostředků do výstupního souboru.  
+ Použití [- linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md) a propojit prostředku sestavení není přidejte soubor prostředků do výstupního souboru.  
   
  Ve výchozím nastavení jsou prostředky při jejich vytváření pomocí kompilátor jazyka C# veřejné v sestavení. Chcete-li prostředky privátní, zadejte `private` jako modifikátor dostupnosti. Žádné další usnadnění jinak než `public` nebo `private` je povolen.  
   
