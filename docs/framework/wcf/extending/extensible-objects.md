@@ -1,25 +1,20 @@
 ---
 title: "Rozšiřitelné objekty"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords: extensible objects [WCF]
 ms.assetid: bc88cefc-31fb-428e-9447-6d20a7d452af
-caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e7d7b5245130a7581efbf9badb0699f57a6743dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a1bb341d9e164b1ce232f238f8ddf4a0cf807363
+ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="extensible-objects"></a>Rozšiřitelné objekty
 Vzor extensible objektu se používá buď rozšířit existující třídy runtime s novými funkcemi nebo přidat nový stav na objekt. Rozšíření, které jsou připojené k jednomu rozšiřitelné objekty, aktivujte velmi různých fází zpracování pro přístup k sdílení stavu a funkce, které jsou připojené k běžné extensible objekt, který bude mít přístup k chování.  
@@ -48,15 +43,15 @@ where T : IExtensibleObject<T>
   
  Při přidání rozšíření do kolekce, <xref:System.ServiceModel.IExtension%601.Attach%2A> je volána před přejde do kolekce. Pokud rozšíření je odebrán z kolekce, <xref:System.ServiceModel.IExtension%601.Detach%2A> je volána po jejím odebrání. To znamená (za předpokladu, že příslušné synchronizace) rozšíření Dal spočítat na nalezené pouze v kolekci bude během je mezi <xref:System.ServiceModel.IExtension%601.Attach%2A> a <xref:System.ServiceModel.IExtension%601.Detach%2A>.  
   
- Předaný objekt <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> nebo <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> nemusí být <xref:System.ServiceModel.IExtension%601> (například můžete předat libovolný objekt), ale je vrácená rozšíření <xref:System.ServiceModel.IExtension%601>.  
+ Předaný objekt <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> nebo <xref:System.ServiceModel.IExtensionCollection%601.Find%2A> nemusí být <xref:System.ServiceModel.IExtension%601> (například můžete předat libovolný objekt), ale je vrácená rozšíření <xref:System.ServiceModel.IExtension%601>.  
   
- Pokud je bez přípony v kolekci <xref:System.ServiceModel.IExtension%601>, <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> , vrátí hodnotu null, a <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> vrátí prázdnou kolekci. Pokud se několik rozšíření implementovat <xref:System.ServiceModel.IExtension%601>, <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> vrátí jeden z nich. Hodnota vrácená z <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> je snímek.  
+ Pokud je bez přípony v kolekci <xref:System.ServiceModel.IExtension%601>, <xref:System.ServiceModel.IExtensionCollection%601.Find%2A> , vrátí hodnotu null, a <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> vrátí prázdnou kolekci. Pokud se několik rozšíření implementovat <xref:System.ServiceModel.IExtension%601>, <xref:System.ServiceModel.IExtensionCollection%601.Find%2A> vrátí jeden z nich. Hodnota vrácená z <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> je snímek.
   
  Existují dva základní scénáře. První scénář se používá <xref:System.ServiceModel.IExtensibleObject%601.Extensions%2A> vlastnost jako slovník na základě typu vložení stavu objektu povolení jiné součásti a vyhledejte ho pomocí daného typu.  
   
  Druhý scénář se používá <xref:System.ServiceModel.IExtension%601.Attach%2A> a <xref:System.ServiceModel.IExtension%601.Detach%2A> vlastnosti, které chcete povolit objekt zapojit se do vlastní chování, jako je registrace pro události, sledování přechodů mezi stavy a tak dále.  
   
- <xref:System.ServiceModel.IExtensionCollection%601> Rozhraní je kolekce <xref:System.ServiceModel.IExtension%601> objekty, které umožňují pro načítání <xref:System.ServiceModel.IExtension%601> podle jeho typu. <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A?displayProperty=nameWithType>Vrátí naposledy přidat objekt, který je <xref:System.ServiceModel.IExtension%601> daného typu.  
+ <xref:System.ServiceModel.IExtensionCollection%601> Rozhraní je kolekce <xref:System.ServiceModel.IExtension%601> objekty, které umožňují pro načítání <xref:System.ServiceModel.IExtension%601> podle jeho typu. <xref:System.ServiceModel.IExtensionCollection%601.Find%2A?displayProperty=nameWithType>Vrátí naposledy přidat objekt, který je <xref:System.ServiceModel.IExtension%601> daného typu.  
   
 ### <a name="extensible-objects-in-windows-communication-foundation"></a>Rozšiřitelné objekty ve službě Windows Communication Foundation  
  Existují čtyři rozšiřitelné objekty v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]:  

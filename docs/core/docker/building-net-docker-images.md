@@ -13,11 +13,11 @@ ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
 ms.workload: dotnetcore
-ms.openlocfilehash: cb438957a6519cf503e5bcaf85f2bc82fa18a047
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2b1a57fe264eda0a4d3186c7be8b0de01bd5f0a9
+ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
 
@@ -101,7 +101,7 @@ Použije [Docker více fáze sestavení funkce](https://docs.docker.com/engine/u
 * sestavit ukázku v kontejneru na základě **větší** základní image ASP.NET Core sestavení Docker 
 * zkopíruje do Docker image na základě výsledku poslední sestavení **menší** základní image ASP.NET Core Docker Runtime
 
-> [!Note]
+> [!NOTE]
 > Sestavení bitová kopie obsahuje požadované nástroje k vytváření aplikací při bitovou kopii runtime neexistuje.
 
 ### <a name="prerequisites"></a>Požadavky
@@ -133,7 +133,7 @@ Klient Docker může být nainstalován v:
 
    * [Ubuntu](https://www.docker.com/docker-ubuntu)
 
-* [systému macOS](https://docs.docker.com/docker-for-mac/)
+* [macOS](https://docs.docker.com/docker-for-mac/)
 
 * [Windows](https://docs.docker.com/docker-for-windows/).
 
@@ -174,7 +174,8 @@ docker build -t aspnetapp .
 docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 ```
 
-> [!Note] `docker run` '-P' argument port 5000 na místním počítači na port 80 v kontejneru mapy (formulář mapování portů `host:container`). Další informace najdete v tématu [docker spustit](https://docs.docker.com/engine/reference/commandline/exec/) odkazu na parametry příkazového řádku.
+> [!NOTE]
+> `docker run` '-P' argument port 5000 na místním počítači na port 80 v kontejneru mapy (formulář mapování portů `host:container`). Další informace najdete v tématu [docker spustit](https://docs.docker.com/engine/reference/commandline/exec/) odkazu na parametry příkazového řádku.
 
 Po spuštění aplikace, navštivte **http://localhost: 5000** ve webovém prohlížeči.
 
@@ -196,7 +197,7 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 * Run `docker exec aspnetcore_sample ipconfig`.
 * IP adresa kontejneru zkopírujte a vložte do prohlížeče (například 172.29.245.43).
 
-> [!Note]
+> [!NOTE]
 > Docker exec podporuje identifikační kontejnery s názvem nebo hodnoty hash. V našem příkladu se používá název (aspnetcore_sample).
 
 Podívejte se na následující příklad toho, jak získat IP adresu spuštěné kontejneru systému Windows.
@@ -215,7 +216,7 @@ Ethernet adapter Ethernet:
    Default Gateway . . . . . . . . . : 172.29.240.1
 ```
 
-> [!Note]
+> [!NOTE]
 > Docker exec spustí nový příkaz v běžící kontejneru. Další informace najdete v tématu [docker exec odkaz](https://docs.docker.com/engine/reference/commandline/exec/) na parametry příkazového řádku.
 
 Může vytvářet aplikace, která je připravená k nasazení do produkčního prostředí místně pomocí [dotnet publikování](../tools/dotnet-publish.md) příkaz.
@@ -224,7 +225,7 @@ Může vytvářet aplikace, která je připravená k nasazení do produkčního 
 dotnet publish -c release -o published
 ```
 
-> [!Note]
+> [!NOTE]
 > -C argument verze sestavení aplikace v režimu vydání (výchozí hodnota je režim ladění). Další informace najdete v tématu [dotnet. Spusťte odkaz](../tools/dotnet-run.md) na parametry příkazového řádku.
 
 Spuštění aplikace na **Windows** pomocí následujícího příkazu.
@@ -265,5 +266,5 @@ Zde jsou některé další kroky, které můžete provést:
 * [Načítání rukou pomocí sady Visual Studio pro Mac, kontejnery a bez serveru kódu v cloudu](https://blogs.msdn.microsoft.com/visualstudio/2017/08/31/hands-on-with-visual-studio-for-mac-containers-serverless-code-in-the-cloud/#comments)
 * [Začínáme s Docker a Visual Studio pro Mac testovacího prostředí](https://github.com/Microsoft/vs4mac-labs/tree/master/Docker/Getting-Started)
 
-> [!Note]
+> [!NOTE]
 > Pokud nemáte předplatné Azure, [Přihlaste se ještě dnes](https://azure.microsoft.com/free/?b=16.48) bezplatný účet 30 dnů a 200 USD get v kredity Azure můžete vyzkoušet na libovolnou kombinaci služby Azure.
