@@ -13,11 +13,11 @@ ms.assetid: bcb058eb-2933-4e7f-b356-5c941db4de75
 caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 74cd4caaa134f881297134867018346c323deeab
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a931dccb2aebd2c898b55f0a007d9fac8da42f2e
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="-delaysign-c-compiler-options"></a>-delaysign (možnosti kompilátoru C#)
 Tato možnost způsobí, že kompilátor rezervovat místo ve výstupním souboru tak, aby digitální podpis lze přidat později.  
@@ -33,7 +33,7 @@ Tato možnost způsobí, že kompilátor rezervovat místo ve výstupním soubor
  Použití **- delaysign –** Pokud chcete plně podepsané sestavení. Použití **- delaysign +** Pokud chcete umístit veřejný klíč v sestavení. Výchozí hodnota je **- delaysign –**.  
   
 ## <a name="remarks"></a>Poznámky  
- **- Delaysign** možnost nemá žádný vliv, pokud není použita s [/keyfile](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md) nebo [/keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md).  
+ **- Delaysign** možnost nemá žádný vliv, pokud není použita s [- keyfile](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md) nebo [- keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md).  
   
  Pokud budete požadovat plně podepsané sestavení, kompilátor vytvoří hodnotu hash souboru, který obsahuje manifest (metadata sestavení) a podepíše tuto hodnotu hash s privátním klíčem. Výsledný digitální podpis je uložen do souboru obsahujícího manifest. Při sestavení zpoždění, které jsou podepsané, kompilátor nepodporuje výpočetní a uložení podpis, ale rezervy místa v souboru, takže podpis lze přidat později.  
   

@@ -8,15 +8,15 @@ ms.date: 01/19/2018
 ms.topic: article
 ms.prod: .net-core
 ms.custom: mvc
-ms.openlocfilehash: 210f0a9bbf393055ebcd582d3accb3d77b1c9539
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: e445361f9f4a858f4b34ca1008670fadc62b8b3c
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="microsoft-wcf-web-service-reference-provider-tool"></a>Nástroj zprostředkovatele Microsoft WCF webové služby odkaz
 
-V průběhu let, celá řada vývojářů Visual Studio líbilo na produktivitu, [**přidat odkaz na službu**](../../visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference) nástroj, který poskytuje při jejich projektů rozhraní .NET Framework potřebné pro přístup k webovým službám.  **Odkaz na službu WCF Web** nástroj je rozšíření služby Visual Studio připojené, která poskytuje prostředí jako je třeba funkcionalita přidat odkaz na službu pro .NET Core a ASP.NET Core projekty. Tento nástroj získává metadata z webové služby v aktuálním řešení v umístění v síti, nebo ze souboru WSDL a vytvoří soubor kompatibilní zdroj .NET Core obsahující kód proxy serveru klienta Windows Communication Foundation (WCF), který můžete použít pro přístup k webu Služba.
+V průběhu let, celá řada vývojářů Visual Studio líbilo na produktivitu, [ **přidat odkaz na službu** ](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference) nástroj, který poskytuje při jejich projektů rozhraní .NET Framework potřebné pro přístup k webovým službám.  **Odkaz na službu WCF Web** nástroj je rozšíření služby Visual Studio připojené, která poskytuje prostředí jako je třeba funkcionalita přidat odkaz na službu pro .NET Core a ASP.NET Core projekty. Tento nástroj získává metadata z webové služby v aktuálním řešení v umístění v síti, nebo ze souboru WSDL a vytvoří soubor kompatibilní zdroj .NET Core obsahující kód proxy serveru klienta Windows Communication Foundation (WCF), který můžete použít pro přístup k webu Služba.
 
 > [!IMPORTANT]
 > Služby by měl odkazovat jenom z důvěryhodného zdroje. Přidání odkazů z nedůvěryhodných zdrojů může ohrozit zabezpečení. 
@@ -81,5 +81,5 @@ Po dokončení těchto procesů, můžete vytvořit instanci typu generovaného 
 ### <a name="feedback--questions"></a>Názory a dotazy
 Pokud máte jakékoli dotazy nebo připomínky, [otevřete problém na Githubu](https://github.com/dotnet/wcf/issues/new). Můžete také zkontrolovat existující dotazy nebo problémy [v úložišti WCF na Githubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).
 
-### <a name="release-notes"></a>Poznámky k verzi
+### <a name="release-notes"></a>Zpráva k vydání verze
 * Odkazovat [poznámky k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md) aktualizované verze informace, včetně známých problémů. 

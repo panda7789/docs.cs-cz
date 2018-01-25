@@ -13,11 +13,11 @@ ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
 caps.latest.revision: "25"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 07ca6b9473a4a3401742d05aa7c880da5ac43ad0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f4d7f1b122d3481dc8c3c5256ee361965846a830
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kategorií, najdete v části [C# kompilátoru možnosti uvedené podle kategorie](../../../csharp/language-reference/compiler-options/listed-by-category.md).  
@@ -28,10 +28,10 @@ Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kateg
 |[-?](../../../csharp/language-reference/compiler-options/help-compiler-option.md)|Zobrazí zprávu využití pro stdout.|  
 |-additionalfile|Názvy další soubory, které neovlivňují přímo generování kódu, ale může být používán analyzátory pro vytvoření chyby nebo upozornění.|  
 |[-addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md)|Odkazy zadané moduly do tohoto sestavení|  
-|-Analyzátor|Spusťte analyzátory z tohoto sestavení (krátký tvar: / a)|  
+|-Analyzátor|Spusťte analyzátory z tohoto sestavení (krátký tvar: - a)|  
 |[-appconfig](../../../csharp/language-reference/compiler-options/appconfig-compiler-option.md)|Určuje umístění souboru app.config v době vazby sestavení.|  
 |[-baseaddress](../../../csharp/language-reference/compiler-options/baseaddress-compiler-option.md)|Určuje základní adresu pro knihovnu, která má být sestaven.|  
-|[-bugreport](../../../csharp/language-reference/compiler-options/bugreport-compiler-option.md)|Vytvoří soubor "Hlášení chyb". Tento soubor bude odeslán spolu se všemi informacemi, pokud se používá s /errorreport:prompt nebo /errorreport:send.|  
+|[-bugreport](../../../csharp/language-reference/compiler-options/bugreport-compiler-option.md)|Vytvoří soubor "Hlášení chyb". Tento soubor bude odeslán spolu se všemi informacemi, pokud se používá s - errorreport: řádku nebo - errorreport: Odeslat.|  
 |[-checked](../../../csharp/language-reference/compiler-options/checked-compiler-option.md)|Způsobí, že kompilátor generování kontroly přetečení.|  
 |-checksumalgorithm:\<alg >|Zadejte algoritmus pro výpočet kontrolní součet souboru zdroje uložené v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|  
 |[-codepage](../../../csharp/language-reference/compiler-options/codepage-compiler-option.md)|Určuje znakovou stránku pro použití při otevírání zdrojové soubory.|  

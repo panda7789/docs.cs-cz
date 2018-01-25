@@ -1,5 +1,5 @@
 ---
-title: "referenční dokumentace csproj"
+title: "Přidání do formátu csproj pro .NET Core"
 description: "Další informace o rozdílech mezi existující a .NET Core csproj soubory"
 keywords: odkaz, csproj, .NET Core
 author: blackdwarf
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
 ms.workload: dotnetcore
-ms.openlocfilehash: 329a74cf083819896aafd7fc7993fa0e8ac8f8c2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d2a318f099eaa67912c2cecd1c67ceebaee8629e
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -53,9 +53,9 @@ Následující tabulka uvádí, které elementy a které [globs](https://en.wiki
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob                |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Kompilace           | \*\*/\*.cs (nebo jiné jazyková rozšíření) | \*\*/\*.uživatel;  \*\*/\*.\* proj;  \* \* / \*.sln;  \* \* / \*.vssscc  | Není k dispozici                        |
-| EmbeddedResource  | \*\*/\*resx                              | \*\*/\*.uživatel; \*\*/\*.\* proj; \* \* / \*.sln; \* \* / \*.vssscc     | Není k dispozici                        |
-| Žádné              | \*\*/\*                                   | \*\*/\*.uživatel; \*\*/\*.\* proj; \* \* / \*.sln; \* \* / \*.vssscc     | - \*\*/\*.cs; \* \* / \*resx |
+| Kompilace           | \*\*/\*.cs (nebo jiné jazyková rozšíření) | \*\*/\*.user;  \*\*/\*.\*proj;  \*\*/\*.sln;  \*\*/\*.vssscc  | Není k dispozici                        |
+| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | Není k dispozici                        |
+| Žádné              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | - \*\*/\*.cs; \*\*/\*.resx |
 
 Pokud máte globs ve vašem projektu a pokusíte se sestavení pomocí nejnovější SDK, získáte následující chybě:
 
