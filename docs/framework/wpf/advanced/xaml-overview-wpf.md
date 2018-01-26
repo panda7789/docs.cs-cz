@@ -31,11 +31,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d24ad84c604921e4dd33e818c0b80d8ab315cd58
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ce83713d2483320569bde0d5c9a677f0b357ebf2
+ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotné je větší koncept jazyk než [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -56,7 +56,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
 ## <a name="xaml-syntax-in-brief"></a>Syntaxe jazyka XAML v Brief  
  Následující části popisují základní formy syntaxe jazyka XAML a poskytněte příklad krátký kód. Tyto části nejsou určené k poskytnutí úplné informace o jednotlivých syntaxe formuláře, například jak jsou reprezentována v systému typ zálohování. Další informace o jaké jsou specifikace syntaxe jazyka XAML pro každou z formuláře syntaxe představenými v tomto tématu najdete v tématu [XAML syntaxe v podrobností](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
   
- Velká část informací v následujících částech několik bude základní pro vás, pokud máte předchozí znalost jazyka XML. Toto je důsledkem principů základní návrhu XAML.  Jazyk XAML XAML definuje vlastní koncepty, ale tyto koncepty pracovat v rámci formuláře jazyk a značek XML.  
+ Velká část informací v následujících částech několik bude základní pro vás, pokud máte předchozí znalost jazyka XML. Toto je důsledkem principů základní návrhu XAML.  Jazyk XAML definuje vlastní koncepty, ale tyto koncepty pracovat v rámci formuláře jazyk a značek XML.  
   
 ### <a name="xaml-object-elements"></a>Objekt elementů XAML  
  Element objekt obvykle deklaruje instanci typu. Tento typ je definována v sestavení, které poskytují základní typy pro technologie, která používá jako jazyk XAML.  

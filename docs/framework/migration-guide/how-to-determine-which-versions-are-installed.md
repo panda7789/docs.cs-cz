@@ -1,6 +1,6 @@
 ---
 title: "Postupy: zjištění nainstalovaných verzí rozhraní .NET Framework"
-ms.date: 10/17/2017
+ms.date: 01/24/2018
 ms.prod: .net-framework
 ms.technology: dotnet-clr
 ms.topic: article
@@ -16,11 +16,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 83de6036a9b86478546cdb8356ce132ef32e6be2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dd257e7d481a12389f8a47921ab985ca82a157fc
+ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Framework na svých počítačích. Při vývoji nebo nasazení aplikace, může být potřeba vědět, jaké verze rozhraní .NET Framework, které jsou nainstalovány v počítači uživatele. Všimněte si, že rozhraní .NET Framework obsahuje dvě hlavní komponenty, které jsou samostatně verzí:  
@@ -87,6 +87,8 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
 
      Hodnota `Release` DWORD označuje, která verze rozhraní .NET Framework je nainstalovaná.
 
+    [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
+
     |Hodnota DWORD verze|Version|
     |--------------------------------|-------------|
     |378389|.NET Framework 4.5|
@@ -95,8 +97,8 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
     |379893|.NET Framework 4.5.2|
     |V systémech Windows 10: 393295<br /><br /> Na všech ostatních verzí operačního systému: 393297|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
     |V systémech Windows 10 listopadu Update: 394254<br /><br /> Na všech ostatních verzí operačního systému: 394271|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
-    |Na Windows 10 Anniversary aktualizace: 394802<br /><br /> Na všech ostatních verzí operačního systému: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
-    |Na Windows 10 Creators aktualizace: 460798<br/><br/> Na všech ostatních verzí operačního systému: 460805 | Rozhraní .NET framework 4.7 |
+    |On Windows 10 Anniversary Update: 394802<br /><br /> Na všech ostatních verzí operačního systému: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
+    |On Windows 10 Creators Update: 460798<br/><br/> Na všech ostatních verzí operačního systému: 460805 | Rozhraní .NET framework 4.7 |
     |V systému Windows 10 spadají Creators aktualizace: 461308<br/><br/> Na všech ostatních verzí operačního systému: 461310 | Rozhraní .NET framework 4.7.1 |
 <a name="net_c"></a> 
 #### <a name="to-find-net-framework-versions-by-querying-the-registry-in-code-net-framework-1-4"></a>Vyhledání verze rozhraní .NET Framework podle v registru v kódu (rozhraní .NET Framework 1 – 4)
@@ -128,6 +130,8 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
 1. Existenci `Release` DWORD označuje, zda na počítači byla nainstalována rozhraní .NET Framework 4.5 nebo novější. Hodnota klíčového slova označuje, že nainstalovaná verze. Chcete-li zkontrolovat toto klíčové slovo, použijte <xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A> a <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A> metody <xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType> třídy pro přístup k Software\Microsoft\NET Framework Setup\NDP\v4\Full podklíčem v HKEY_LOCAL_MACHINE v registru systému Windows.
 
 2. Zkontrolujte hodnotu `Release` – klíčové slovo určení nainstalované verze. Chcete-li být dopřednou, můžete zkontrolovat na hodnotu větší než nebo rovna hodnotě hodnoty uvedené v tabulce. Tady jsou verze rozhraní .NET Framework a přidružených `Release` klíčová slova.
+
+    [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
     |Version|Hodnota DWORD verze|
     |-------------|--------------------------------|

@@ -35,11 +35,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: cb98b4d7bbc70fd54e8928c741aa444a6b832046
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 74b5bce3191b2d40e5b37d64b3d1eee24395ce4c
+ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojáři a správci řízení a flexibilitu přes způsob aplikace spustit. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může řídit, které chráněným prostředkům aplikaci můžete přístup, jaké verze sestavení aplikace použije a kde jsou umístěné vzdálené aplikace a objekty. Vývojáři můžou pro nastavení v konfiguračních souborech, takže není nutné znovu zkompiluje aplikace pokaždé, když se změní nastavení. Tato část popisuje, co můžete nakonfigurovat a proč konfigurace aplikace mohou být užitečné.  
@@ -50,7 +50,7 @@ Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojář
  Toto téma popisuje syntaxi konfiguračních souborů a obsahuje informace o třech typech konfiguračních souborů: souborů počítače, aplikací a zabezpečení.  
   
 ## <a name="configuration-file-format"></a>Formát konfiguračního souboru  
- Konfigurační soubory obsahují prvky, které představují logické datové struktury, jež nastavují informace o konfiguraci. V konfiguračním souboru je možné použít značky pro označení začátku a konce prvku. Například `<runtime>` element se skládá z `<runtime>` *podřízené elementy*`</runtime>`. Prázdný element by byla zapsána jako `<runtime/>` nebo `<runtime>``</runtime>`.  
+ Konfigurační soubory obsahují prvky, které představují logické datové struktury, jež nastavují informace o konfiguraci. V konfiguračním souboru je možné použít značky pro označení začátku a konce prvku. Například `<runtime>` element se skládá z `<runtime>` *podřízené elementy*`</runtime>`. Prázdný element by byla zapsána jako `<runtime/>` nebo `<runtime></runtime>`.  
   
  Stejně jako u všech souborů XML rozlišuje syntaxe v konfiguračních souborech velká a malá písmena.  
   

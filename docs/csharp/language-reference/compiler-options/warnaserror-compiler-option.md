@@ -13,11 +13,11 @@ ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7405987ebf5ae4f068a0f7cd6aef63649e7e69c7
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: 6a341fe9760d7fdb0e4df7046cf356e550b4adb9
+ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror (možnosti kompilátoru C#)
 **- Warnaserror +** možnost zpracovává všech upozornění jako chyby  
@@ -45,7 +45,7 @@ ms.lasthandoff: 01/23/2018
   
 3.  Změnit **považovat upozornění jako chyby** vlastnost.  
   
-     Pokud chcete nastavit tuto možnost kompilátoru prostřednictvím kódu programu, najdete v části <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors%2A>.  
+ Pokud chcete nastavit tuto možnost kompilátoru prostřednictvím kódu programu, najdete v části <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>.  
   
 ## <a name="example"></a>Příklad  
  Kompilace `in.cs` kompilátor zobrazovat žádná upozornění:  
