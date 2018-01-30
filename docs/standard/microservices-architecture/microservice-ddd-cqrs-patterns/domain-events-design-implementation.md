@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 54d512261261eff0c09bb96fb963ea8b452ae77f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5840c2f7692d81f193c7d659aea6eb42a431369e
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -241,7 +241,7 @@ Dalším způsobem se mapují události do více obslužných rutin událostí j
 
 **Obrázek 9 až 16**. Dispečer událostí domény pomocí technologie IoC
 
-Můžete vytvořit všechny vložení a artefaktů k implementaci tohoto přístupu podle sami. Však můžete použít také k dispozici knihovny jako [MediatR](https://github.com/jbogard/MediatR), který pod pozadí používá vaše IoT kontejneru. Proto přímo můžete vytvořit předdefinované rozhraní a metody publikování nebo odeslání objekt zprostředkovatel.
+Můžete vytvořit všechny vložení a artefaktů k implementaci tohoto přístupu podle sami. Však můžete použít také k dispozici knihovny jako [MediatR](https://github.com/jbogard/MediatR), který pod pozadí používá vaše kontejner IoC. Proto přímo můžete vytvořit předdefinované rozhraní a metody publikování nebo odeslání objekt zprostředkovatel.
 
 V kódu, je nutné nejprve zaregistrovat typy obslužných rutin událostí v vaší kontejner IoC, jak je znázorněno v následujícím příkladu v [eShopOnContainers řazení mikroslužbu](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs):
 

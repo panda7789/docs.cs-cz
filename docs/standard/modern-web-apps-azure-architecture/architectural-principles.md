@@ -9,13 +9,13 @@ ms.technology: dotnet-docker
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 18abca8ce8280ff1fa2b52650be57a59d1201fab
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bdb215d64253fb7d22ae2c5648030336850006b5
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/29/2018
 ---
-#<a name="architectural-principles"></a>Zásady architektury
+# <a name="architectural-principles"></a>Zásady architektury
 
 > "Pokud počítačů budovy programátory způsob napsali programy a první woodpecker, které byly dodány společně by destroy civilizace."  
 > _\-Weinberg Lucie_
@@ -107,18 +107,18 @@ Minimálně měli snažit jednotlivé webové aplikace se vlastní ohraničené 
 
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
 > - **Oddělené oblasti zájmu**  
-> <http://deviq.com/Separation-of-concerns/>
-> - **Zapouzdření** <http://deviq.com/encapsulation/>
+> <http://deviq.com/separation-of-concerns/>
+> - **Encapsulation** <http://deviq.com/encapsulation/>
 > - **Princip inverzi závislostí**  
-> <http://deviq.com/Dependency-inversion-principle/>
+> <http://deviq.com/dependency-inversion-principle/>
 > - **Princip explicitní závislosti.**  
-> <http://deviq.com/Explicit-Dependencies-principle/>
+> <http://deviq.com/explicit-dependencies-principle/>
 > - **Nemáte opakujte sami**  
-> <http://deviq.com/Don-t-REPEAT-Yourself/>
+> <http://deviq.com/don-t-repeat-yourself/>
 > - **Které trvalost**  
 > <http://deviq.com/persistence-ignorance/>
 > - **Ohraničené kontextu**  
-> <https://martinfowler.com/bliki/BoundedContext.HTML>
+> <https://martinfowler.com/bliki/BoundedContext.html>
 
 > [!div class="step-by-step"]
 [Předchozí] (choose-between-traditional-web-and-single-page-apps.md) [Další] (common-web-application-architectures.md)

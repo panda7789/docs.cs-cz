@@ -1,50 +1,63 @@
 ---
 title: "Podepisování uložené procedury v systému SQL Server"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 01/05/2018
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a3f1ed66ed7caf2272ca27097dc9a838bec7d0ae
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 15771cc214ee17bc2c98bab2423013483d1355f1
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložené procedury v systému SQL Server
-Uložená procedura s certifikát nebo asymetrický klíč můžete přihlásit. To je určen pro scénáře, když prostřednictvím vlastnictví řetězení nelze zdědit oprávnění nebo když je porušený, jako je například dynamická SQL řetězec vlastnictví. Potom vytvoření uživatele namapované na certifikát, udělení uživatelských oprávnění u objektů, které uloženou proceduru potřebuje pro přístup k certifikátu.  
+ Digitální podpis je šifrovaný privátní klíč podepisující ověřování algoritmem digest data. Privátní klíč zajišťuje, že digitální podpis jedinečné pro jeho nosiče nebo vlastníka. Můžete si uložené procedury, funkce (s výjimkou vložené funkce vracející tabulku), aktivační události a sestavení.  
   
- Při spuštění uložené procedury systému SQL Server kombinuje oprávnění uživatele certifikát s těmi, která volajícího. Na rozdíl od EXECUTE KLAUZULI, kontext provádění procedury nemění. Integrované funkce této návratový přihlášení a uživatelská jména vrátí název volajícího, není certifikát uživatelské jméno.  
+ Uložená procedura s certifikát nebo asymetrický klíč můžete přihlásit. To je určen pro scénáře, když prostřednictvím vlastnictví řetězení nelze zdědit oprávnění nebo když je porušený, jako je například dynamická SQL řetězec vlastnictví. Potom můžete vytvořit uživatele namapované na certifikát, udělení uživatelských oprávnění u objektů, které uloženou proceduru potřebuje pro přístup k certifikátu.  
+
+ Také vytvořit přihlášení namapované na stejný certifikát a potom můžete udělit všechny potřebné oprávnění na úrovni serveru na tomto přihlášení nebo přidejte přihlášení na jeden nebo více rolí pevného serveru. To slouží k nedoporučujeme povolovat `TRUSTWORTHY` databáze nastavení pro scénáře, ve kterých jsou potřeba vyšší úroveň oprávnění.  
   
- Digitální podpis je šifrovaný privátní klíč podepisující ověřování algoritmem digest data. Privátní klíč zajišťuje, že digitální podpis jedinečné pro jeho nosiče nebo vlastníka. Můžete si uložené procedury, funkce nebo aktivační události.  
-  
-> [!NOTE]
->  Certifikát můžete vytvořit v hlavní databázi, a udělit oprávnění na úrovni serveru.  
+ Při spuštění uložené procedury systému SQL Server kombinuje oprávnění certifikát uživatele a/nebo přihlášení s těmi, která volajícího. Na rozdíl od `EXECUTE AS` klauzuli nezmění kontext provádění procedury. Integrované funkce této návratový přihlášení a uživatelská jména vrátí název volajícího, není certifikát uživatelské jméno.  
   
 ## <a name="creating-certificates"></a>Vytváření certifikátů  
- Když se přihlásíte uložené procedury s certifikátem, algoritmus digest dat skládající se z šifrované hodnoty hash kód uložené procedury je vytvořený pomocí soukromého klíče. V době běhu je data digest dešifrovat pomocí veřejného klíče a porovná s hodnotou hash uložené procedury. Úprava uloženou proceduru zruší platnost hodnota hash, tak, aby už odpovídá digitální podpis. Tím se zabrání někoho, kdo nemá přístup k privátnímu klíči z Změna kódu uložené procedury. Proto musíte znovu podepsat postup pokaždé, když upravíte ji.  
+ Při přihlašování uložená procedura s certifikát nebo asymetrický klíč, algoritmus digest dat, který se skládá z šifrované hodnoty hash uložené procedury kódu, společně s execute-jako uživatel, je vytvořený pomocí soukromého klíče. V době běhu je data digest dešifrovat pomocí veřejného klíče a porovná s hodnotou hash uložené procedury. Změna execute-jako uživatel zruší platnost hodnota hash tak, aby už odpovídá digitální podpis. Úprava uloženou proceduru zahodí podpis úplně, aby se zabránilo někoho, kdo nemá přístup k privátnímu klíči z Změna kódu uložené procedury. V obou případech musíte znovu podepsat postup pokaždé, když změníte kód nebo execute-jako uživatel.  
   
- Se účastní podepisování modul čtyři kroky:  
+ Se účastní podepisování modul dvě požadované kroky:  
   
-1.  Vytvoření certifikátu pomocí jazyka Transact-SQL `CREATE CERTIFICATE [certificateName]` příkaz. Tento příkaz má několik možností pro nastavení počáteční a koncové datum a heslo. Výchozí datum vypršení platnosti je jeden rok  
-  
-2.  Vytvořit databázi uživatele přidruženého k certifikátu pomocí jazyka Transact-SQL `CREATE USER [userName] FROM CERTIFICATE [certificateName]` příkaz. Tohoto uživatele existuje pouze v databázi a nejsou spojené s přihlášením.  
-  
-3.  Udělte certifikát požadovaná oprávnění pro databázové objekty.  
-  
-> [!NOTE]
->  Certifikát nelze udělit oprávnění pro uživatele, kterého se použila oprávnění odvolat pomocí příkazu ODEPŘÍT. ODEPŘÍT vždy má přednost před udělení, brání volající dědění oprávnění udělená uživateli certifikát.  
+1.  Vytvoření certifikátu pomocí jazyka Transact-SQL `CREATE CERTIFICATE [certificateName]` příkaz. Tento příkaz má několik možností pro nastavení počáteční a koncové datum a heslo. Výchozí datum vypršení platnosti je jeden rok.  
   
 1.  Podepsat certifikát pomocí jazyka Transact-SQL postup `ADD SIGNATURE TO [procedureName] BY CERTIFICATE [certificateName]` příkaz.  
+
+Jakmile modul byl podepsán, jeden nebo více objektů musí být vytvořen aby udržení další oprávnění, které by měly být přidruženy s certifikátem.  
+
+Pokud modul potřebuje další oprávnění na úrovni databáze:  
+  
+1.  Vytvořit databázi uživatele přidruženého k certifikátu pomocí jazyka Transact-SQL `CREATE USER [userName] FROM CERTIFICATE [certificateName]` příkaz. Tohoto uživatele existuje pouze v databázi a nejsou spojené s přihlašovacími údaji, pokud přihlášení také byly vytvořeny z tohoto stejný certifikát.  
+  
+1.  Udělte certifikátu vyžaduje oprávnění na úrovni databáze.  
+  
+Pokud modul potřebuje další oprávnění na úrovni serveru:  
+  
+1.  Zkopírujte certifikát, který chcete `master` databáze.  
+ 
+1.  Vytvořte přihlašovací údaje související s certifikátu pomocí jazyka Transact-SQL `CREATE LOGIN [userName] FROM CERTIFICATE [certificateName]` příkaz.  
+  
+1.  Udělte přihlášení certifikát požadovaná oprávnění na úrovni serveru.  
+  
+> [!NOTE]  
+>  Certifikát nelze udělit oprávnění pro uživatele, kterého se použila oprávnění odvolat pomocí příkazu ODEPŘÍT. ODEPŘÍT vždy má přednost před udělení, brání volající dědění oprávnění udělená uživateli certifikát.  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících zdrojích informací.  

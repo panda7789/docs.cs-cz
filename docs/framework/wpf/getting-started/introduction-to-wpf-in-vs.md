@@ -1,11 +1,12 @@
 ---
-title: "Úvod k použití WPF v sadě Visual Studio 2015"
+title: "Úvod k použití WPF v sadě Visual Studio"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 01/26/2018
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -22,21 +23,22 @@ helpviewer_keywords:
 - WPF [WPF], about Windows Presentation Foundation
 - 3-D rendering [WPF]
 ms.assetid: 582a314e-e23d-4144-b45b-acbbd5579252
-caps.latest.revision: "54"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b1e3a91c4943a4f052d8136eaf32c0c431dd4924
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 674389fdff4394bece5568dac81fdd0cc4bd8c99
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
-# <a name="introduction-to-wpf-in-visual-studio-2015"></a>Úvod k použití WPF v sadě Visual Studio 2015
-Windows Presentation Foundation (WPF) v sadě Visual Studio 2015 poskytuje vývojářům jednotný programovací model pro vytváření moderních aplikací klasické pracovní plochy-obchodní v systému Windows.  
+# <a name="introduction-to-wpf-in-visual-studio"></a>Úvod k použití WPF v sadě Visual Studio
+Windows Presentation Foundation (WPF) v sadě Visual Studio poskytuje vývojářům jednotný programovací model pro vytváření aplikací klasické pracovní plochy-obchodní v systému Windows.  
   
- [Vytvoření moderních desktopových aplikací pomocí Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
+ [Vytvoření aplikací klasické pracovní plochy s Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
   
  [Navrhování XAML v sadě Visual Studio a nástroj Blend for Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  
   

@@ -2,21 +2,22 @@
 title: "Oddělovače pro dokumentační značky (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - XML [C#], delimiters
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: a6ab03d220d1ef71605b83c529595dd986ea922a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0c72ee03ff8a2e28bec1ba83e42cd7f201b140ed
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro dokumentační značky (Průvodce programováním v C#)
 Použití komentáře doc XML vyžaduje oddělovače, které označují kompilátoru kde komentáře dokumentace k zahájení a ukončení. Můžete použít následující typy oddělovače s dokumentační značky XML:  
@@ -25,7 +26,7 @@ Použití komentáře doc XML vyžaduje oddělovače, které označují kompilá
  Oddělovač jeden řádek. Toto je formulář, který je zobrazeno v příkladech dokumentace a použít šablony projektů Visual C#. Pokud je prázdný znak za oddělovačem, tento znak není zahrnut ve výstupu XML.  
   
 > [!NOTE]
->  Visual Studio IDE má funkci inteligentního komentář úpravy, které automaticky vloží \<souhrnné > a \<nebo souhrnných > značky a přesune kurzor v rámci těchto značek po zadání `///` oddělovač v editoru kódu . Přístup k této funkci z [možnosti, textový Editor, C#, formátování vzorků](/visualstudio/ide/reference/options-text-editor-csharp-formatting) na stránkách vlastností projektu.  
+>  Visual Studio IDE má funkci inteligentního komentář úpravy, které automaticky vloží \<souhrnné > a \<nebo souhrnných > značky a přesune kurzor v rámci těchto značek po zadání `///` oddělovač v editoru kódu . Tuto funkci můžete zapnout nebo vypnout [dialogové okno Možnosti](/visualstudio/ide/reference/options-text-editor-csharp-advanced).  
   
  `/** */`  
  Víceřádkový oddělovače.  
@@ -83,7 +84,7 @@ Použití komentáře doc XML vyžaduje oddělovače, které označují kompilá
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
- [/ DOC (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
+ [/doc (C# Compiler Options)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
  [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
