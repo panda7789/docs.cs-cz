@@ -25,7 +25,9 @@
 ### [Přehled knihovny tříd](standard/class-library-overview.md)
 ### [Základní typy](standard/base-types/)
 ## [Knihovny tříd .NET](standard/class-libraries.md)
-## [Analyzátor přenositelnosti](standard/portability-analyzer.md)
+## Analyzátory
+### [Analyzátor rozhraní API](standard/analyzers/api-analyzer.md) 
+### [Analyzátor přenositelnosti](standard/analyzers/portability-analyzer.md)
 ## [Zpracování a vyvolání výjimek](standard/exceptions/)
 ## [Formát souborů sestavení .NET](standard/assembly-format.md)
 ## [Uvolňování paměti](standard/garbage-collection/)
@@ -282,7 +284,6 @@
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
 ## Kurzy
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
-#### [Možnosti F# Interactive](fsharp/tutorials/fsharp-interactive/fsharp-interactive-options.md)
 ### [Zprostředkovatelé typů](fsharp/tutorials/type-providers/index.md)
 #### [Přístup k databázi SQL s použitím zprostředkovatelů typů](fsharp/tutorials/type-providers/accessing-a-sql-database.md)
 #### [Přístup k databázi SQL s použitím zprostředkovatelů typů a entit](fsharp/tutorials/type-providers/accessing-a-sql-database-entities.md)
@@ -408,6 +409,7 @@
 ### [Klíčové slovo fixed](fsharp/language-reference/fixed.md)
 ### [Direktivy kompilátoru](fsharp/language-reference/compiler-directives.md)
 ### [Možnosti kompilátoru](fsharp/language-reference/compiler-options.md)
+### [Možnosti F# Interactive](fsharp/language-reference/fsharp-interactive-options.md)
 ### [Identifikátory zdrojového řádku, souboru a cesty](fsharp/language-reference/source-line-file-path-identifiers.md)
 ### [Informace o volající funkci](fsharp/language-reference/caller-information.md)
 ### [Podrobná syntaxe](fsharp/language-reference/verbose-syntax.md)

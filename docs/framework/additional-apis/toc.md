@@ -4,8 +4,12 @@
 #### [Pole m_WriteList](m_writelist.md)
 ### [Třída ConnectionGroup](connectiongroup.md)
 #### [Pole m_ConnectionList](m_connectionlist.md)
+### [Třída CoreResponseData](coreresponsedata.md)
+#### [Pole m_ResponseHeaders](coreresponsedata_m_responseheaders.md)
+#### [Pole m_StatusCode](coreresponsedata_m_statuscode.md)
 ### Třída HttpWebRequest
 #### [Pole _AutoRedirects](_autoredirects.md)
+#### [Pole _CoreResponse](httpwebrequest__coreresponse.md)
 #### [Pole _HttpResponse](_httpresponse.md)
 ### Třída ServicePoint
 #### [Pole m_ConnectionGroupList](m_connectiongrouplist.md)
