@@ -2,43 +2,42 @@
 title: "Modifikátory přístupu (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: access modifiers [C#]
+helpviewer_keywords:
+- access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 23f99d0925aefde7ef43888d16e888a0943dfc21
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d63cf724a2364059e5f3327254a9ec95f7493e5e
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="access-modifiers-c-reference"></a>Modifikátory přístupu (Referenční dokumentace jazyka C#)
 Modifikátory přístupu jsou klíčová slova slouží k zadání deklarované usnadnění člena nebo typu. Tato část představuje modifikátory čtyři přístupu:  
   
--   [veřejné](../../../csharp/language-reference/keywords/public.md)  
-  
--   [chráněný](../../../csharp/language-reference/keywords/protected.md)  
-  
--   [interní](../../../csharp/language-reference/keywords/internal.md)  
-  
--   [privátní](../../../csharp/language-reference/keywords/private.md)  
+-   `public`
+-   `protected`
+-   `internal`
+-   `private`
   
  Následující šest úrovní přístupu je možné zadat pomocí modifikátory přístupu:  
   
- `public`: Přístup není s omezeným přístupem.  
+- [`public`](public.md): Přístup není s omezeným přístupem.  
   
- `protected`: Přístup je omezen na obsahující třídu nebo typy odvozené od obsahující třídy.  
+- [`protected`](protected.md): Přístup je omezen na obsahující třídu nebo typy odvozené od obsahující třídy.  
   
- `internal`: Přístup je omezen na aktuální sestavení.  
+- [`internal`](internal.md): Přístup je omezen na aktuální sestavení.  
   
- [`protected internal`](../../../csharp/language-reference/keywords/protected-internal.md): Přístup je omezen na aktuální sestavení nebo typy odvozené od obsahující třídy.  
+- [`protected internal`](protected-internal.md): Přístup je omezen na aktuální sestavení nebo typy odvozené od obsahující třídy.  
   
- `private`: Přístup je omezen na nadřazeném typu.  
+- [`private`](private.md): Přístup je omezen na nadřazeném typu.  
 
- [`private protected`](../../../csharp/language-reference/keywords/private-protected.md): Přístup je omezen na obsahující třídu nebo typy odvozené od třídy obsahující v rámci aktuální sestavení.  
+- [`private protected`](private-protected.md): Přístup je omezen na obsahující třídu nebo typy odvozené od třídy obsahující v rámci aktuální sestavení.  
   
  Tato část také obsahuje následující:  
   
@@ -50,7 +49,7 @@ Modifikátory přístupu jsou klíčová slova slouží k zadání deklarované 
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
  [Klíčová slova přístupu](../../../csharp/language-reference/keywords/access-keywords.md)  

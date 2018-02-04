@@ -1,5 +1,5 @@
 ---
-title: "Průvodce rychlé zahájení – Úvod do třídy - C#"
+title: "Úvod do třídy kurz – C# místní – elementy QuickStart"
 description: "Vytvoření vaší první programu C# a prozkoumat objektově orientované koncepty"
 author: billwagner
 ms.author: wiwagn
@@ -9,15 +9,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 4e15b1b12b9420ca1781eca3f2578fa24c9ec82a
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 97c1de562c86ea04153ec09bb0e813565523a3ba
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-classes"></a>Úvod do třídy
 
-Tento úvodní očekává, že máte počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
+Tento rychlý start očekává, že máte počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní quickstarts](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="create-your-application"></a>Vytvoření aplikace
 
@@ -38,9 +38,9 @@ namespace classes
 }
 ```
 
-V této úvodní se chystáte vytvořit nové typy, které představují účet bank. Vývojáři obvykle definujte každá třída v různých textového souboru. Tím je snazší správa růstem program velikost.  Vytvořte nový soubor s názvem **BankAccount.cs** v **třídy** adresáře. 
+V tento rychlý start se chystáte vytvořit nové typy, které představují účet bank. Vývojáři obvykle definujte každá třída v různých textového souboru. Tím je snazší správa růstem program velikost.  Vytvořte nový soubor s názvem **BankAccount.cs** v **třídy** adresáře. 
 
-Tento soubor bude obsahovat definice ***bankovní účet***. Objekt Oriented programování organizuje kód tak, že vytvoříte typy ve formě ***třídy***. Tyto třídy obsahovat kód, který představuje konkrétní entitu. `BankAccount` Třída reprezentuje účet bank. Kód implementuje konkrétní operací prostřednictvím metody a vlastnosti. V této úvodní bankovní účet podporuje toto chování:
+Tento soubor bude obsahovat definice ***bankovní účet***. Objekt Oriented programování organizuje kód tak, že vytvoříte typy ve formě ***třídy***. Tyto třídy obsahovat kód, který představuje konkrétní entitu. `BankAccount` Třída reprezentuje účet bank. Kód implementuje konkrétní operací prostřednictvím metody a vlastnosti. V tento rychlý start účet bank podporuje toto chování:
 
 1. Má 10 číslice, která jednoznačně identifikuje účet bank.
 1. Obsahuje řetězec, který ukládá název nebo názvy vlastníky.
@@ -203,7 +203,7 @@ Chcete-li dokončit tento rychlý start, můžete napsat `GetAccountHistory` met
 
 [!code-csharp[History](../../../samples/csharp/classes-quickstart/BankAccount.cs#History "Display transaction history")]
 
-Se používá <xref:System.Text.StringBuilder> třídy se naformátovat řetězec, který obsahuje jeden řádek pro každou transakci. Seznámili jste se řetězec formátování kódu dříve v těchto rychlé zahájení. Je jeden znak nového `\t`. Která vloží na kartě k formátování výstupu.
+Se používá <xref:System.Text.StringBuilder> třídy se naformátovat řetězec, který obsahuje jeden řádek pro každou transakci. Seznámili jste se formátování kódu dříve v těchto – elementy QuickStart řetězec. Je jeden znak nového `\t`. Která vloží na kartě k formátování výstupu.
 
 Přidejte tento řádek k testování v **Program.cs**:
 
@@ -215,6 +215,6 @@ Typ `dotnet run` a zobrazte si výsledky.
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud jste získali zablokuje, zobrazí se zdroji pro tento rychlý start [v našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/classes-quickstart/)
+Pokud jste získali zablokuje, zobrazí se zdroji pro tento rychlý Start [v našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/classes-quickstart/)
 
-Blahopřejeme, jste dokončili všechny naše rychlý start. Pokud jste přes další, zkuste naši [kurzy](../tutorials/index.md)
+Blahopřejeme, jste dokončili všechny naše Quickstarts. Pokud jste přes další, zkuste naši [kurzy](../tutorials/index.md)

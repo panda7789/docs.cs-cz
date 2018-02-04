@@ -1,9 +1,10 @@
 ---
 title: "Integer – datový typ (Visual Basic)"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Integer
@@ -27,11 +28,11 @@ helpviewer_keywords:
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 69c7fb6caf5d9a10c7d033d1ba0a05c9230d472c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ba700cac58c96b3d6d2f5ed3c74fdd7e95761352
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integer-data-type-visual-basic"></a>Integer – datový typ (Visual Basic)
 Obsahuje 32bitová (4bajtová) celá čísla se znaménkem v rozsahu od -2 147 483 648 do 2 147 483 647.  
@@ -56,10 +57,18 @@ Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jak
 
 [!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#IntS)]  
 
+Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+
+```vb
+Dim number As Integer = &H_C305_F860
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 Číselné literály může také obsahovat `I` [znak typu](../../programming-guide\language-features\data-types/type-characters.md) k označení `Integer` datového typu, jak ukazuje následující příklad.
 
 ```vb
-Dim number = &H035826I
+Dim number = &H_035826I
 ```
 
 ## <a name="programming-tips"></a>Tipy pro programování
@@ -94,8 +103,8 @@ k = 5.5
 
 <xref:System.Int32?displayProperty=nameWithType>   
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Long – datový typ](../../../visual-basic/language-reference/data-types/long-data-type.md)  
- [Short – datový typ](../../../visual-basic/language-reference/data-types/short-data-type.md)  
+ [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)  
+ [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

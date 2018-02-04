@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 600a1bd57015c6a64a51bf99f3ded35a375e62fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 75a39fa1d0301a48cec7ad61c968ee3fc82d189c
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Kanál zásobníku využívá kódování a přenos kanály transformace reprezentace interní zprávy do jeho přenosový formát a odesílat je pomocí konkrétního přenosu. Nejběžnější přenos používá funkční spolupráce při webové služby, je HTTP, a nejběžnější kódování používá webové služby jsou na základě XML SOAP 1.1, SOAP 1.2 a zpráva přenosu optimalizace mechanismus (MTOM).  
@@ -28,57 +30,57 @@ ms.lasthandoff: 12/22/2017
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
 |HTTP 1.1|http://www.ietf.org/rfc/rfc2616.txt|  
-|SOAP 1.1 vazby HTTP|http://www.w3.org/TR/2000/Note-SOAP-20000508/, část 7|  
-|SOAP 1.2 vazby HTTP|http://www.w3.org/TR/soap12-part2/, část 7|  
+|SOAP 1.1 vazby HTTP|http://www.w3.org/TR/2000/NOTE-SOAP-20000508/, Section 7|  
+|SOAP 1.2 vazby HTTP|http://www.w3.org/TR/soap12-part2/, Section 7|  
   
  Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace podrobnosti pro následující protokoly <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívají.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
-|XML|http://www.w3.org/TR/rec-XML|  
-|SOAP 1.1|http://www.w3.org/TR/2000/Note-SOAP-20000508/|  
+|XML|http://www.w3.org/TR/REC-xml|  
+|SOAP 1.1|http://www.w3.org/TR/2000/NOTE-SOAP-20000508/|  
 |SOAP 1.2 jádra|http://www.w3.org/TR/soap12-part1/|  
-|Adresování WS 2004/08|http://www.w3.org/submission/2004/SUBM-WS-Addressing-20040810/|  
-|W3C webových služeb adresování 1.0 – základní|http://www.w3.org/TR/2006/rec-ws-addr-Core-20060509|  
-|W3C webových služeb adresování 1.0 - vazby protokolu SOAP|http://www.w3.org/TR/2006/rec-ws-addr-SOAP-20060509|  
-|W3C webových služeb adresování 1.0 - vazby WSDL|http://www.w3.org/TR/2006/CR-ws-addr-WSDL-20060529/|  
+|Adresování WS 2004/08|http://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/|  
+|W3C webových služeb adresování 1.0 – základní|http://www.w3.org/TR/2006/REC-ws-addr-core-20060509|  
+|W3C webových služeb adresování 1.0 - vazby protokolu SOAP|http://www.w3.org/TR/2006/REC-ws-addr-soap-20060509|  
+|W3C webových služeb adresování 1.0 - vazby WSDL|http://www.w3.org/TR/2006/CR-ws-addr-wsdl-20060529/|  
 W3C webových služeb adresování 1.0 - metadat|http://www.w3.org/TR/ws-addr-metadata/|  
-|Vazba SOAP1.1 WSDL|http://www.w3.org/TR/WSDL/|  
-|Vazba SOAP1.2 WSDL|http://www.w3.org/submission/wsdl11soap12/|  
+|Vazba SOAP1.1 WSDL|http://www.w3.org/TR/wsdl/|  
+|Vazba SOAP1.2 WSDL|http://www.w3.org/Submission/wsdl11soap12/|  
   
  Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace podrobnosti pro následující protokoly <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívá.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
 |XOP|http://www.w3.org/TR/xop10/|  
-|MTOM + SOAP 1.2 vazby|http://www.w3.org/TR/soap12-MTOM/|  
-|MTOM SOAP 1.1 vazby|http://www.w3.org/submission/soap11mtom10/|  
-|Výraz WS-zásad MTOM|http://www.w3.org/submission/2006/SUBM-ws-MTOMPolicy-20061101/.|  
+|MTOM + SOAP 1.2 vazby|http://www.w3.org/TR/soap12-mtom/|  
+|MTOM SOAP 1.1 vazby|http://www.w3.org/Submission/soap11mtom10/|  
+|Výraz WS-zásad MTOM|http://www.w3.org/Submission/2006/SUBM-WS-MTOMPolicy-20061101/.|  
   
  Následující obory názvů XML a přidružené předpony se používají v tomto tématu.  
   
 |Předpona|Namespace Uniform Resource Identifier (URI)|  
 |------------|---------------------------------------------------|  
-|s.11|http://schemas.xmlsoap.org/soap/envelope|  
-|S12|http://www.w3.org/2003/05/SOAP-Envelope|  
-|wsa|http://www.w3.org/2004/08/Addressing|  
-|wsam|http://www.w3.org/2007/05/Addressing/metadata|  
-|wsap|http://schemas.xmlsoap.org/ws/2004/09/Policy/Addressing|  
-|wsa10|http://www.w3.org/2005/08/Addressing|  
-|wsaw10|http://www.w3.org/2006/05/Addressing/WSDL|  
-|XOP|http://www.w3.org/2004/08/XOP/Include|  
+|s11|http://schemas.xmlsoap.org/soap/envelope|  
+|s12|http://www.w3.org/2003/05/soap-envelope|  
+|wsa|http://www.w3.org/2004/08/addressing|  
+|wsam|http://www.w3.org/2007/05/addressing/metadata|  
+|wsap|http://schemas.xmlsoap.org/ws/2004/09/policy/addressing|  
+|wsa10|http://www.w3.org/2005/08/addressing|  
+|wsaw10|http://www.w3.org/2006/05/addressing/wsdl|  
+|XOP|http://www.w3.org/2004/08/xop/include|  
 |xmime|http://www.w3.org/2004/06/xmlmime<br /><br /> http://www.w3.org/2005/05/xmlmime|  
-distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|  
+dp|http://schemas.microsoft.com/net/2006/06/duplex|  
   
 ## <a name="soap-11-and-soap-12"></a>SOAP 1.1 a SOAP 1.2  
   
 ### <a name="envelope-and-processing-model"></a>Obálky a zpracování modelu  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]implementuje zpracování obálky protokolu SOAP 1.1 Basic Profile 1.1 (základní parametr 11) a základní profil 1.0 (SSBP10). SOAP 1.2 obálky zpracování je implementována následující část SOAP12-1.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje zpracování obálky protokolu SOAP 1.1 Basic Profile 1.1 (základní parametr 11) a základní profil 1.0 (SSBP10). SOAP 1.2 obálky zpracování je implementována následující část SOAP12-1.  
   
  Tato část popisuje některé volby implementace provedenou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s ohledem na základní parametr 11 a část SOAP12-1.  
   
 #### <a name="mandatory-header-processing"></a>Zpracování povinnou hlavičku  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]dodržuje pravidla pro zpracování hlavičky označena `mustUnderstand` popsané v protokolu SOAP 1.1 a SOAP 1.2 specifikace, s následující rozdíly.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dodržuje pravidla pro zpracování hlavičky označena `mustUnderstand` popsané v protokolu SOAP 1.1 a SOAP 1.2 specifikace, s následující rozdíly.  
   
  Zprávu, která přejde [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál zásobníku zpracovává jednotlivé kanály nakonfiguroval prvky přidružené vazeb, například, kódování textu zprávy, zabezpečení, spolehlivé zasílání zpráv a transakce. Každý kanál rozpozná hlavičky z přidružených oboru názvů a označí je jako rozumí. Jakmile zprávu zadá dispečera, přečte operaci formátování záhlaví očekávanou odpovídající kontrakt zprávy nebo operaci a značky, které jim rozumím jim. Pak dispečera ověřuje, zda nejsou žádné zbývající hlavičky rozumí ale označen jako `mustUnderstand` a vyvolá výjimku. Zprávy, které obsahují `mustUnderstand` hlavičky, které jsou zaměřeny na příjemce nejsou zpracovávány kód příjemce aplikace.  
   
@@ -100,14 +102,14 @@ distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|
 ### <a name="http-binding"></a>Vazba HTTP  
   
 #### <a name="soap-11-http-binding"></a>SOAP 1.1 vazby HTTP  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]implementuje vazby SOAP1.1 HTTP následující specifikace Basic Profile 1.1 oddíl 3.4 objasnění následující:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje vazby SOAP1.1 HTTP následující specifikace Basic Profile 1.1 oddíl 3.4 objasnění následující:  
   
 -   B2211: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby neimplementuje přesměrování požadavky HTTP POST.  
   
 -   B2212: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienti podporují soubory cookie protokolu HTTP v souladu s 3.4.8.  
   
 #### <a name="soap-12-http-binding"></a>SOAP 1.2 vazby HTTP  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]jak je popsáno v protokolu SOAP 1.2 část 2 (SOAP12Part2) specifikace s následující objasnění, implementuje vazby protokolu SOAP 1.2 HTTP.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jak je popsáno v protokolu SOAP 1.2 část 2 (SOAP12Part2) specifikace s následující objasnění, implementuje vazby protokolu SOAP 1.2 HTTP.  
   
  Parametr volitelné akce pro zavedená SOAP 1.2 `application/soap+xml` typ média. Tento parametr je užitečné k optimalizaci odesílání zpráv bez nutnosti analyzovat do těla protokolu SOAP zprávy při adresování WS nepoužívá.  
   
@@ -118,7 +120,7 @@ distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|
  Když WS-Addressing je zakázána a příchozí požadavek neobsahuje parametr akce, zprávy `Action` považuje za není zadaný.  
   
 ## <a name="ws-addressing"></a>Adresování WS  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]implementuje 3 verze WS adresování:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje 3 verze WS adresování:  
   
 -   Adresování WS 2004/08  
   
@@ -130,7 +132,7 @@ distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|
  Všechny verze WS-Addressing který [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje pomocí koncového bodu odkazy popisují koncové body.  
   
 #### <a name="endpoint-references-and-ws-addressing-versions"></a>Odkazy na koncový bod a adresování WS verze  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]implementuje číslo infrastruktury protokolů, které používají služby WS-Addressing, zejména `EndpointReference` elementu a `W3C.WsAddressing.EndpointReferenceType` – třída (například WS-ReliableMessaging, WS-SecureConversation a WS-Trust). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje použití buď verzi WS-Addressing s ostatními protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Koncové body podporovat jednu verzi WS-Addressing na jeden koncový bod.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje číslo infrastruktury protokolů, které používají služby WS-Addressing, zejména `EndpointReference` elementu a `W3C.WsAddressing.EndpointReferenceType` – třída (například WS-ReliableMessaging, WS-SecureConversation a WS-Trust). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje použití buď verzi WS-Addressing s ostatními protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Koncové body podporovat jednu verzi WS-Addressing na jeden koncový bod.  
   
  Pro R3111, obor názvů pro `EndpointReference` element nebo typ použitý v zprávy se vyměňují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncového bodu musí odpovídat verzi WS adresování implementované tento koncový bod.  
   
@@ -174,7 +176,7 @@ distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|
  Aplikace, které spolupracují s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace můžete přidat tyto zprávy hlavičky a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jejich zpracování odpovídajícím způsobem.  
   
 #### <a name="reference-parameters-and-properties"></a>Odkaz na parametry a vlastnosti  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]implementuje zpracování parametrů odkaz na koncový bod a p – referenční informace  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje zpracování parametrů odkaz na koncový bod a p – referenční informace  
   
  vlastnosti v souladu s příslušnými specifikace.  
   
@@ -232,7 +234,7 @@ distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|
 ### <a name="wsdl-11-binding-and-ws-policy-assertions"></a>WSDL 1.1 vazby a WS-Policy kontrolní výrazy  
   
 #### <a name="indicating-use-of-ws-addressing"></a>Označující použití adresování WS  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]koncový bod podporu pro konkrétní verzi WS-Addressing použije výrazy zásad.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod podporu pro konkrétní verzi WS-Addressing použije výrazy zásad.  
   
  Následující výraz zásad má koncový bod zásad subjektu [WS-PA] a znamená, že zprávy odeslané a přijaté z koncového bodu musí používat WS-Addressing 2004/08.  
   
@@ -276,7 +278,7 @@ distribučního bodu|http://schemas.microsoft.com/NET/2006/06/duplex|
   
  Existují však vzory exchange zprávu, využívající má dva nezávislé konverzace HTTP připojení mezi žadatel a respondér, například nevyžádané jednosměrný zprávy odeslané respondér.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]nabízí funkce, pomocí kterého můžete dvě základní přenosové kanály formuláři složené duplexní kanál, kde jeden kanál je používána pro vstupní zprávy a druhý je používána pro zprávy výstup. V případě přenos HTTP poskytuje složené duplexní dvě připojení HTTP konverzace. Žadatel používá jedno připojení k odesílání zpráv do odpovídající partner a odpovídající partner dalších odesílání zprávy zpět na žadatel.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí funkce, pomocí kterého můžete dvě základní přenosové kanály formuláři složené duplexní kanál, kde jeden kanál je používána pro vstupní zprávy a druhý je používána pro zprávy výstup. V případě přenos HTTP poskytuje složené duplexní dvě připojení HTTP konverzace. Žadatel používá jedno připojení k odesílání zpráv do odpovídající partner a odpovídající partner dalších odesílání zprávy zpět na žadatel.  
   
  Pro odpovědi, odešlou přes požadavky http samostatné ws-am kontrolní výraz je  
   
@@ -574,7 +576,7 @@ mail-address   =     id-left "@" id-right
  A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod nakonfigurovaný na použití MTOM vždycky odešlou kódování MTOM zprávy. I v případě, že žádné části splňují kritéria požadovaná, zpráva je stále kódování MTOM (serializovat jako balíček MIME s jedné součásti MIME obsahující obálku protokolu SOAP).  
   
 ### <a name="ws-policy-assertion-for-mtom"></a>Výraz WS-zásad pro MTOM  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Následující výraz zásad se používá k označení MTOM využití pomocí koncového bodu:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Následující výraz zásad se používá k označení MTOM využití pomocí koncového bodu:  
   
 ```xml  
 <wsoma:OptimizedMimeSerialization ... />  

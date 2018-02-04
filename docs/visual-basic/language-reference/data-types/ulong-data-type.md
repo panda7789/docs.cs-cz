@@ -1,11 +1,13 @@
 ---
 title: "ULong – datový typ (Visual Basic)"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.ulong
+f1_keywords:
+- vb.ulong
 helpviewer_keywords:
 - numbers [Visual Basic], whole
 - whole numbers
@@ -19,14 +21,13 @@ helpviewer_keywords:
 - ULong data type
 - UL literal type characters [Visual Basic]
 ms.assetid: 017e0702-774e-44ae-bedc-786b424ca84e
-caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: afc52bfd16541feed599d5445adad7aba04f8e9d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 606e0ef87b209bb2e75e28223f27d081713c1b7e
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="ulong-data-type-visual-basic"></a>Ulong – datový typ (Visual Basic)
 
@@ -53,10 +54,18 @@ Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jak
 
 [!code-vb[ULong](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#LongS)]
 
+Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+
+```vb
+Dim number As ULong = &H_F9AC_0326_1489_D68C
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 Číselné literály může také obsahovat `UL` nebo `ul` [znak typu](../../programming-guide\language-features\data-types/type-characters.md) k označení `ULong` datového typu, jak ukazuje následující příklad.
 
 ```vb
-Dim number = &H00_00_0A_96_2F_AC_14_D7ul
+Dim number = &H_00_00_0A_96_2F_AC_14_D7ul
 ```
 
 ## <a name="programming-tips"></a>Tipy pro programování
@@ -80,6 +89,6 @@ Dim number = &H00_00_0A_96_2F_AC_14_D7ul
  <xref:System.UInt64>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Postupy: volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

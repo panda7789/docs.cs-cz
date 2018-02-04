@@ -1,6 +1,6 @@
 ---
-title: "Rychlý Start - větve a smyčky - průvodce v C#"
-description: "V této úvodní o větve a smyčky psaní kódu jazyka C# a prozkoumejte syntaxi jazyka, která podporuje podmíněného větvení a smyčky provést příkazy opakovaně."
+title: "Kurz větve a smyčky – C# místní – elementy QuickStart"
+description: "V tento rychlý start o větve a smyčky můžete napsat kód C# a prozkoumejte syntaxi jazyka, která podporuje podmíněného větvení a smyčky provést příkazy opakovaně."
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/31/2017
@@ -9,21 +9,21 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 609c8625b19025a20c1da1e767870eafbab4c4a0
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 7d69b2b9bb02e2999bcd785da653bd4a13ed947c
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 
-Tento rychlý start se naučíte, jak napsat kód, který hledá proměnné a změní cesta spuštění na základě těchto proměnných. Psaní kódu jazyka C# a zobrazit výsledky kompilace a jejím spuštěním. Rychlý start obsahuje řadu lekce, které prozkoumat větvení a opakování ve smyčce konstrukce v jazyce C#. Tyto poznatky získají naučit základy jazyka C#.
+Tento rychlý start se naučíte, jak napsat kód, který hledá proměnné a změní cesta spuštění na základě těchto proměnných. Psaní kódu jazyka C# a zobrazit výsledky kompilace a jejím spuštěním. Rychlý Start obsahuje řadu lekce, které prozkoumat větvení a opakování ve smyčce konstrukce v jazyce C#. Tyto poznatky získají naučit základy jazyka C#.
 
-Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
+Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní quickstarts](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="make-decisions-using-the-if-statement"></a>Rozhodnutí, pomocí `if` – příkaz
 
-Vytvořte adresář s názvem **větví – rychlý Start**. Ujistěte, že aktuální adresář a spusťte `dotnet new console -n BranchesAndLoops -o .`. Tento příkaz vytvoří novou konzolovou aplikaci .NET Core v aktuálním adresáři. 
+Vytvořte adresář s názvem **větví – rychlý Start**. Ujistěte, že aktuální adresář a spusťte `dotnet new console -n BranchesAndLoops -o .`. Tento příkaz vytvoří novou konzolovou aplikaci .NET Core v aktuálním adresáři.
 
 Otevřete **Program.cs** v oblíbeném editoru a nahraďte řádku `Console.Writeline("Hello World!");` následujícím kódem:
 
@@ -45,12 +45,11 @@ int b = 3;
 Typ `dotnet run` znovu. Protože odpověď je menší než 10, nic vytisknout. **Podmínku** jste testování je false. Nemáte žádný kód provést, protože jste zapsat pouze jedním z možných větve pro `if` příkaz: true větev.
 
 > [!TIP]
-> Jak můžete prozkoumat jazyka C# (nebo žádný programovací jazyk), uděláte budete chyby při psaní kódu. Kompilátor vyhledá a ohlásit chyby. Prohlédněte si blíže výstup chyba a kód, který vytvořil chybu. Chyba compler obvykle vám může pomoci najít problém. 
+> Jak můžete prozkoumat jazyka C# (nebo žádný programovací jazyk), uděláte budete chyby při psaní kódu. Kompilátor vyhledá a ohlásit chyby. Prohlédněte si blíže výstup chyba a kód, který vytvořil chybu. Chyba compler obvykle vám může pomoci najít problém.
 
-Tento první příklad ukazuje možnosti `if` a Boolean typy. A *Boolean* je proměnná, která může mít jednu ze dvou hodnot: `true` nebo `false`. C# definuje speciální typ `bool` pro logická hodnota proměnné. `if` Příkaz kontroluje hodnotu `bool`. Pokud je hodnota `true`, následující příkaz `if` provede. Jinak se přeskočí. 
+Tento první příklad ukazuje možnosti `if` a Boolean typy. A *Boolean* je proměnná, která může mít jednu ze dvou hodnot: `true` nebo `false`. C# definuje speciální typ `bool` pro logická hodnota proměnné. `if` Příkaz kontroluje hodnotu `bool`. Pokud je hodnota `true`, následující příkaz `if` provede. Jinak se přeskočí.
 
 Tento proces probíhá kontrola podmínky a provádění příkazů na základě těchto podmínek je velice mocný nástroj.
-
 
 ## <a name="make-if-and-else-work-together"></a>Ujistěte se, pokud a jinak spolupracují
 
@@ -69,7 +68,7 @@ Následující příkaz `else` – klíčové slovo provede pouze, pokud je podm
 
 > [!IMPORTANT]
 > Odsazení pod `if` a `else` příkazy je pro lidské čtečky.
-> Jazyk C# nepodporuje považovat za odsazení, nebo obsahoval mezeru významné. Následující příkaz `if` nebo `else` – klíčové slovo bude proveden podle stavu. Všechny ukázky v této úvodní podle běžnou praxí odsazovat řádky založené na toku řízení příkazů.
+> Jazyk C# nepodporuje považovat za odsazení, nebo obsahoval mezeru významné. Následující příkaz `if` nebo `else` – klíčové slovo bude proveden podle stavu. Všechny ukázky tento rychlý start podle běžnou praxí odsazovat řádky založené na toku řízení příkazů.
 
 Protože odsazení není důležité, budete muset použít `{` a `}` označte, když má více než jeden příkaz, který má být součástí blok, který provede podmíněně. Programátory v jazyce C# obvykle používají tyto složené závorky na všech `if` a `else` klauzule. Následující příklad je stejný jako ten, který jste právě vytvořili. Upravte kód výše tak, aby odpovídala následující kód:
 
@@ -87,7 +86,7 @@ else
 ```
 
 > [!TIP]
-> Procházení zbývající části této úvodní, ukázky kódu, všechny zahrnují složené závorky, následující přijata postupy.
+> Procházení zbytku tento rychlý start, ukázky kódu, všechny zahrnují složené závorky, následující přijata postupy.
 
 Složitější podmínky můžete otestovat. Přidejte následující kód ve vaší `Main` po napsání dosavadní kódu:
 
@@ -227,7 +226,7 @@ for(int index = 0; index < 10; index++)
 } 
 ```
 
-Funguje jako `while` smyčky a `do` smyčky jste už použili. `for` Příkaz má tři části, které řídí, jak to funguje. 
+Funguje jako `while` smyčky a `do` smyčky jste už použili. `for` Příkaz má tři části, které řídí, jak to funguje.
 
 První část je **pro inicializátoru**: `for index = 0;` uvádí, že `index` je proměnná smyčky a nastaví počáteční hodnoty `0`.
 
@@ -252,13 +251,13 @@ Teď, když jste viděli `if` prohlášení a opakování konstrukce v jazyce C#
 
 Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Měli byste obdržet 63 pro odpověď. Zobrazí jednu možnou odpověď podle [zobrazení Dokončený kód v Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/branches-quickstart/Program.cs#L46-L54).
 
-Po dokončení "větví a cyklu" rychlý start.
+Jste dokončili rychlé spuštění "větve a smyčky".
 
-Můžete pokračovat [interpolované řetězce](interpolated-strings-local.md) úvodní ve vašem vývojovém prostředí.
+Můžete pokračovat [interpolované řetězce](interpolated-strings-local.md) rychlé spuštění ve vašem vývojovém prostředí.
 
 Další informace o těchto konceptech v těchto tématech:
 
-[Pokud a else – příkaz](../language-reference/keywords/if-else.md)   
-[While – příkaz](../language-reference/keywords/while.md)   
-[Do – příkaz](../language-reference/keywords/do.md)   
-[For – příkaz](../language-reference/keywords/for.md)   
+[Pokud a else – příkaz](../language-reference/keywords/if-else.md)  
+[While – příkaz](../language-reference/keywords/while.md)  
+[Do – příkaz](../language-reference/keywords/do.md)  
+[For – příkaz](../language-reference/keywords/for.md)  

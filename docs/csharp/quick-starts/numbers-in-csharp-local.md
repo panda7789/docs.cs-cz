@@ -1,5 +1,5 @@
 ---
-title: "Rychlý Start - čísla v jazyce C# – průvodce C#"
+title: "Čísla v jazyce C# kurzu - C# místní – elementy QuickStart"
 description: "Výuka C# prozkoumáním číselnými typy, jejich vlastnosti a metody."
 author: billwagner
 ms.author: wiwagn
@@ -9,17 +9,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9a7f061de23c632560f40ac5eb46defd4537da16
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 9a8b28d840d3c8ef63611e9f584e5984e1dcb1a3
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="numbers-in-c-quick-start"></a>Čísla v jazyce C# rychlý start #
+# <a name="numbers-in-c-quickstart"></a>Čísla v jazyce C# rychlý start
 
-Tento rychlý start se dozvíte, jaké číslo typy v jazyku C# interaktivně. Napíšete malé množství kódu a potom budete zkompilování a spuštění tohoto kódu. Rychlý start obsahuje řadu lekce, které prozkoumat matematické operace v jazyce C# a čísla. Tyto poznatky získají naučit základy jazyka C#.
+Tento rychlý start se dozvíte, jaké číslo typy v jazyku C# interaktivně. Napíšete malé množství kódu a potom budete zkompilování a spuštění tohoto kódu. Rychlý Start obsahuje řadu lekce, které prozkoumat matematické operace v jazyce C# a čísla. Tyto poznatky získají naučit základy jazyka C#.
 
-Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
+Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní quickstarts](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="explore-integer-math"></a>Prozkoumejte matematické celé číslo
 
@@ -319,7 +319,7 @@ Můžete zkontrolovat vaše odpověď podle [prohlížení dokončení ukázkov�
 
 Pokud chcete, zkuste některé jiné vzorce. 
 
-Po dokončení "čísla v C#" rychlý start. Můžete pokračovat [větve a smyčky](branches-and-loops-local.md) úvodní ve vašem vývojovém prostředí.
+Jste dokončili rychlé spuštění "čísla v C#". Můžete pokračovat [větve a smyčky](branches-and-loops-local.md) rychlé spuštění ve vašem vývojovém prostředí.
 
 Další informace o čísla v jazyce C# v následujících tématech:
 

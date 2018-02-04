@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: aa072ca9aa1337bdae839749751c7faf7fc9b2a3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: fcfb78bf521107b14d7796235f52c836f48f41fe
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Když zvolit rozhraní .NET Framework pro Docker kontejnery
 
@@ -33,7 +33,7 @@ Třetí strany knihovny se rychle přechodu [.NET Standard](https://docs.microso
 
 Ale i v případě že výjimečných postupu od standardní rozhraní .NET 2.0 a .NET Core 2.0, mohou existovat případy, kdy některé balíčky NuGet, třeba Windows ke spuštění a nemusí podporovat .NET Core. Pokud tyto balíčky jsou důležité pro vaši aplikaci, budete muset použít rozhraní .NET Framework kontejnerům systému Windows.
 
-## <a name="usingnet-technologies-not-available-for-net-core"></a>Technologie Using.NET není k dispozici pro .NET Core 
+## <a name="using-net-technologies-not-available-for-net-core"></a>Pomocí technologie .NET, není k dispozici pro .NET Core 
 
 Některé technologie .NET Framework nejsou k dispozici v aktuální verzi .NET Core (verze 2.0 době psaní tohoto textu). Některé z nich bude k dispozici v pozdějších verzích .NET Core (.NET Core 2.x), ale jiné se nevztahují na novou aplikaci vzory cílem .NET Core a mohou být nikdy k dispozici.
 
@@ -55,7 +55,7 @@ Do té doby Pokud všechny platformy a služby v Azure stále nepodporuje .NET C
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **.NET core průvodce**
+-   **.NET Core Guide**
     [*https://docs.microsoft.com/dotnet/core/index*](https://docs.microsoft.com/dotnet/core/index)
 
 -   **Portování z rozhraní .NET Framework na .NET Core**
@@ -64,11 +64,11 @@ Do té doby Pokud všechny platformy a služby v Azure stále nepodporuje .NET C
 -   **Rozhraní .NET framework na Průvodce Docker**
     [*https://docs.microsoft.com/dotnet/framework/docker/*](https://docs.microsoft.com/dotnet/framework/docker/)
 
--   **Přehled součásti rozhraní .NET**
+-   **.NET Components Overview**
     [*https://docs.microsoft.com/dotnet/standard/components*](https://docs.microsoft.com/dotnet/standard/components)
 
 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (net – základní – kontejner scenarios.md) [Další] (kontejner framework – volba factors.md)
+[Previous] (net-core-container-scenarios.md) [Next] (container-framework-choice-factors.md)

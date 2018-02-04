@@ -1,7 +1,6 @@
 ---
-title: "Rychlý Start - kolekce – Průvodce C#"
-description: "Výuka C# prozkoumáním kolekce seznamu v této úvodní."
-keywords: "C#, začít, kurz, kolekcí, seznamu"
+title: "Kolekce kurz – C# místní – elementy QuickStart"
+description: "Výuka C# prozkoumáním kolekci seznamů v tomto kurzu."
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/13/2017
@@ -10,25 +9,25 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 44e79432c0a1970313cba21778e2bf439f8a4388
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 76b3baf0525c81e5b3058aa2ab6fd4ccd97d1916
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="c-quick-start-collections"></a>C# rychlý start: kolekce #
+# <a name="c-quickstart-collections"></a>C# rychlý start: kolekce
 
-Tento úvodní poskytuje úvod do jazyka C# a základní informace o <xref:System.Collections.Generic.List%601> třídy.
+Tento rychlý Start obsahuje úvod do jazyka C# a základní informace o <xref:System.Collections.Generic.List%601> třídy.
 
-Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti.
+Tento rychlý start se očekává, že budete mít počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní quickstarts](local-environment.md) s odkazy na další podrobnosti.
 
-## <a name="a-basic-list-example"></a>Příklad základního seznamu.
+## <a name="a-basic-list-example"></a>Příklad základního seznamu
 
 Vytvořte adresář s názvem **seznamu – rychlý Start**. Ujistěte, že aktuální adresář a spusťte `dotnet new console`.
 
 > [!NOTE]
 > Pokud jste právě dokončili [Začínáme s .NET za 10 minut](https://www.microsoft.com/net), můžete používat aplikace Moje aplikace, kterou jste právě vytvořili.
- 
+
 Otevřete **Program.cs** v oblíbeném editoru a nahraďte existující kód následující:
 
 ```csharp
@@ -53,16 +52,16 @@ namespace list_quickstart
 
 Nahraďte `<name>` s vaším jménem. Uložit **Program.cs**. Typ `dotnet run` v okně konzoly vyzkoušejte si to.
 
-Jste právě vytvořili seznam řetězců, přidat tři názvy do tohoto seznamu a vytisknout se názvy v velká písmena. Koncepty, které jste se naučili v dříve rychle spustí používáte k prosmyčkování seznamu.
+Jste právě vytvořili seznam řetězců, přidat tři názvy do tohoto seznamu a vytisknout se názvy v velká písmena. Používáte koncepty, které jste se naučili v dřívější – elementy QuickStart můžete procházet seznam.
 
 Kód zobrazení názvů využívá **interpolované řetězce**.  Když je před `string` s `$` znak, vložením kódu C# v deklaraci řetězec. Konkrétní řetězec nahradí hodnotu, kterou generuje tento kód C#. V tomto příkladu se nahradí `{name.ToUpper()}` s každý název převeden na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A> metoda.
 
 Zachovat umožňuje prohlížení.
-    
+
 ## <a name="modify-list-contents"></a>Změna seznamu obsahu
 
 Kolekce, které jste vytvořili, používá <xref:System.Collections.Generic.List%601> typu. Tento typ ukládá pořadí elementů. Můžete zadat typ elementů mezi lomené závorky.
-    
+
 Jeden důležitým aspektem tohoto <xref:System.Collections.Generic.List%601> typ je ho můžete zvětšit nebo zmenšit, umožňuje přidat nebo odebrat elementy. Přidejte tento kód před uzavírací `}` v `Main` metoda:
 
 ```csharp
@@ -77,7 +76,7 @@ foreach (var name in names)
 ```
 
 Přidali jste dva další názvy na konec seznamu. Můžete rovněž jsme odstranili jeden také. Uložte soubor a typ `dotnet run` vyzkoušejte si to.
-    
+
 <xref:System.Collections.Generic.List%601> Umožňuje odkazovat na jednotlivé položky podle **index** také. Umístěte index mezi `[` a `]` tokeny následující název seznamu. C# používá 0 pro první index. Přidejte tento kód přímo pod kód, který jste právě přidali a zkuste to:
 
 ```csharp
@@ -91,9 +90,10 @@ Nelze získat přístup k indexu přesahuje za konec seznamu. Mějte na paměti,
 Console.WriteLine($"The list has {names.Count} people in it");
  ```
 
-Uložte soubor a typ `dotnet run` znovu a zobrazte si výsledky.    
+Uložte soubor a typ `dotnet run` znovu a zobrazte si výsledky.
 
 ## <a name="search-and-sort-lists"></a>Seznamy hledání a řazení.
+
 Naše ukázky použít seznamy poměrně malý, ale aplikace může často vytvořit seznamy s mnoha další prvky, které se někdy číslování v tisíců. Elementy v těchto kolekcích větší najdete budete muset pro různé položky v seznamu Hledat. <xref:System.Collections.Generic.List%601.IndexOf%2A> Metoda vyhledá položku a vrátí index položky. Tento kód vložte do dolní části vaší `Main` metoda:
 
 ```csharp
@@ -113,7 +113,7 @@ if (index == -1)
 } else
 {
     Console.WriteLine($"The name {names[index]} is at index {index}");
-    
+
 }
 ```
 
@@ -184,7 +184,7 @@ namespace list_quickstart
 
 ## <a name="lists-of-other-types"></a>Seznam dalších typů
 
-Jste dosud používali `string` typu v seznamech dosavadní práce. Provedeme <xref:System.Collections.Generic.List%601> pomocí jiného typu. Vytvořme sady čísel. 
+Jste dosud používali `string` typu v seznamech dosavadní práce. Provedeme <xref:System.Collections.Generic.List%601> pomocí jiného typu. Vytvořme sady čísel.
 
 Přidejte následující k dolnímu okraji nové `Main` metoda:
 
@@ -204,12 +204,13 @@ foreach(var item in fibonacciNumbers)
     Console.WriteLine(item);
 ```
 
-Uložte soubor a typ `dotnet run` a zobrazte si výsledky. 
+Uložte soubor a typ `dotnet run` a zobrazte si výsledky.
 
 > [!TIP]
-> Soustředit se na právě v této části, můžete Zakomentovat kód, který volá `WorkingWithStrings();`. Vloží dva pouze `/` znaky před volání, jako to: `// WorkingWithStrings();`. 
+> Soustředit se na právě v této části, můžete Zakomentovat kód, který volá `WorkingWithStrings();`. Vloží dva pouze `/` znaky před volání, jako to: `// WorkingWithStrings();`.
 
 ## <a name="challenge"></a>výzvy
+
 Pokud můžete umístit společně najdete některé koncepty z tohoto a starší lekce. Rozbalte položku na co jste vytvořili, pokud se Fibonacciho čísla. Zkuste napsat kód pro vytvoření prvních 20 čísel v pořadí. (Jako nápovědu, je číslo 20 Fibonacciho 6765.)
 
 ## <a name="complete-challenge"></a>Dokončení výzvy
@@ -218,6 +219,6 @@ Zobrazí se příklad řešení s nástrojem [prohlížení dokončení ukázkov
 
 S každou iteraci smyčky přenášíte posledních dvou celých čísel v seznamu je sčítání a přidáním této hodnoty do seznamu. Smyčky se opakuje, dokud nepřidáte 20 položky do seznamu.
 
-Blahopřejeme, jste dokončili rychlé spuštění seznamu. Můžete pokračovat [Úvod do třídy](introduction-to-classes.md) úvodní ve vašem vývojovém prostředí.
+Blahopřejeme, jste dokončili rychlé spuštění seznamu. Můžete pokračovat [Úvod do třídy](introduction-to-classes.md) rychlé spuštění ve vašem vývojovém prostředí.
 
 Další informace o práci s `List` zadejte [.NET průvodce](../../standard/index.md) téma na [kolekce](../../standard/collections/index.md). Budete také informace o mnoho dalších typů kolekce.

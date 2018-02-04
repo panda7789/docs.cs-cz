@@ -1,6 +1,6 @@
 ---
-title: "Rychlý Start - interpolované řetězce – průvodce v C#"
-description: "V této úvodní o interpolované řetězce psaní kódu jazyka C# k incude výsledek výrazu v řetězci větší."
+title: "Interpolované řetězce kurz – C# místní – elementy QuickStart"
+description: "V tento rychlý start o interpolované řetězce zapisovat do incude výsledek výrazu v řetězci větší kód C#."
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/11/2018
@@ -9,17 +9,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 14185dd4e364f12756541ac6401d1c6ff3206fe9
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 3cd9fc23dba104f92255b031eef32f80cca915b0
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="interpolated-strings"></a>Interpolované řetězce
 
-Tento rychlý start se naučíte, jak používat interpolované řetězce v jazyce C# k vložení hodnoty do jednoho výstup řetězec. Psaní kódu jazyka C# a zobrazit výsledky kompilace a jejím spuštěním. Rychlý start obsahuje řadu lekce, které vložení hodnoty do řetězce a formátování tyto hodnoty různými způsoby.
+Tento rychlý start se naučíte, jak používat interpolované řetězce v jazyce C# k vložení hodnoty do řetězec jeden výstup. Psaní kódu jazyka C# a zobrazit výsledky kompilace a jejím spuštěním. Rychlý Start obsahuje řadu lekce, které vložení hodnoty do řetězce a formátování tyto hodnoty různými způsoby.
 
-Tento úvodní očekává, že máte počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní rychlé zahájení](local-environment.md) s odkazy na další podrobnosti. 
+Tento rychlý start očekává, že máte počítače, které můžete použít pro vývoj. Téma .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, počítače nebo Linux. Rychlý přehled o příkazy, které budete používat je ve [Úvod do místní quickstarts](local-environment.md) s odkazy na další podrobnosti. 
 
 ## <a name="create-an-interpolated-string"></a>Vytvoření interpolované řetězce
 
@@ -162,9 +162,9 @@ Výstup bude vypadat přibližně takto:
 1/11/2018            Hour 09                1,063.34 feet
 ```
 
-Po dokončení rychlý start interpolované řetězce. 
+Jste dokončili rychlé spuštění interpolované řetězce. 
     
-Můžete pokračovat [pole a kolekce](arrays-and-collections.md) úvodní ve vašem vývojovém prostředí.
+Můžete pokračovat [pole a kolekce](arrays-and-collections.md) rychlé spuštění ve vašem vývojovém prostředí.
 
 Další informace o práci s interpolované řetězce v [interpolované řetězce](../language-reference/keywords/interpolated-strings.md) téma v referenční dokumentace jazyka C#.
 

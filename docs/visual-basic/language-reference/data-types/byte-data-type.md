@@ -1,22 +1,24 @@
 ---
 title: "Byte – datový typ (Visual Basic)"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Byte
+f1_keywords:
+- vb.Byte
 helpviewer_keywords:
 - Byte data type
 - data types [Visual Basic], assigning
 ms.assetid: eed44dff-eaee-4937-a89f-444e418e74f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6475ff3ed905abb022a9ef60204c04b45130ae22
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 02234afc0dc51a2c1338cdd16d1f97765f64b45e
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="byte-data-type-visual-basic"></a>Byte – datový typ (Visual Basic)
 Ukládání nepodepsané celých čísel 8bitové (1bajtů), které rozsah v hodnotě od 0 do 255.
@@ -42,6 +44,14 @@ Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jak
 
 [!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ByteS)]  
 
+Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+
+```vb
+Dim number As Byte = &H_6A
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 ## <a name="programming-tips"></a>Tipy pro programování
 
 -   **Záporná čísla.** Protože `Byte` je typ bez znaménka, nelze ho představují záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `Byte`, Visual Basic Převede výraz, který se `Short` první.
@@ -65,5 +75,5 @@ Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jak
  <xref:System.Byte?displayProperty=nameWithType>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

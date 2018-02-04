@@ -1,8 +1,8 @@
 ### YamlMime:Tutorial
 title: Hello C#
 metadata:
-  title: "Hello C#. Vaše první Úvod do jazyka C#."
-  description: "V této úvodní budete používat prohlížeč další C# interaktivně. Psaní kódu jazyka C# a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči."
+  title: "Hello World Interaktivní kurz – elementy QuickStart C#"
+  description: "V tento rychlý start budete používat prohlížeč další C# interaktivně. Psaní kódu jazyka C# a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči."
   audience: Developer
   level: Beginner
   ms.topic: get-started-article
@@ -13,11 +13,11 @@ metadata:
   ms.custom: mvc
   ms.prod: .net
   ms.technology: devlang-csharp
-  ms.openlocfilehash: ca5fbcd903c5fd3aae35a4a1c4842f488d66fcf0
-  ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+  ms.openlocfilehash: 7bc970e3c6eb93bf98323bd266b8c6a49f0cc1d0
+  ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/20/2018
+  ms.lasthandoff: 02/01/2018
 items:
 - durationInMinutes: 1
   content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče zápisu C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které začínají s programem \"Hello World\". Tyto poznatky získají naučit základy jazyka C#.\n"
@@ -39,4 +39,4 @@ items:
 - title: "Dokončení výzvy"
   durationInMinutes: 3
   content: "Vytvoříte přibližně toto?\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.StartsWith(\"You\"));\nConsole.WriteLine(message.StartsWith(\"goodbye\"));\n\nConsole.WriteLine(message.EndsWith(\"hello\"));\nConsole.WriteLine(message.EndsWith(\"goodbye\"));\n```\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
-- content: "Po dokončení \"Hello C#\" rychlý start.\n\nDalší informace o práci s `string` zadejte [Průvodce programováním v C#](../programming-guide/index.md) téma na [řetězce](../programming-guide/strings/index.md).\n[Postup tipy na řetězce](../how-to/index.md#strings).\0"
+- content: "Jste dokončili rychlé spuštění \"Hello C#\".\n\nDalší informace o práci s `string` zadejte [Průvodce programováním v C#](../programming-guide/index.md) téma na [řetězce](../programming-guide/strings/index.md).\n[Postup tipy na řetězce](../how-to/index.md#strings).\0"

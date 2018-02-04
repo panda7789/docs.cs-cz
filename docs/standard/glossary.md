@@ -12,11 +12,11 @@ ms.devlang: dotnet
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 112be2518ddfb396fce8a14c5056c16cce9f376d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 33123732514a53574036f6f8e948b2cf9acb9229
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 
@@ -44,9 +44,9 @@ V tématu [ASP.NET Core dokumentaci](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>sestavení
 
-A *.dll* soubor, který obsahuje kolekci rozhraní API, kterou lze volat aplikace nebo jiné sestavení.
+A *.dll*/*.exe* soubor, který obsahuje kolekci rozhraní API, kterou lze volat aplikace nebo jiné sestavení.
 
-Sestavení .NET je kolekci typů. Sestavení obsahuje rozhraní, třídy, struktury, výčty a delegáti.  Sestavení v projektu *bin* složky se někdy označují jako *binární soubory*. Viz také [knihovny](#library).
+Sestavení může obsahovat typy jako je rozhraní, třídy, struktury, výčty a delegáti. Sestavení v projektu *bin* složky se někdy označují jako *binární soubory*. Viz také [knihovny](#library).
 
 ## <a name="clr"></a>CLR
 
@@ -210,7 +210,7 @@ Tato technologie si lze představit jako trvalé kompilátoru za běhu. Zkompilu
 
 Balíček NuGet &mdash; nebo právě balíčku &mdash; je *.zip* soubor s jedno nebo více sestavení se stejným názvem spolu s další metadata, jako je například jméno autora.
 
-*.Zip* soubor má *.nupkg* rozšíření a může obsahovat prostředky, jako například *.dll* soubory a *.xml* souborů pro použití s více rozhraní a verze. Při instalaci v aplikaci nebo knihovny, jsou vybrány příslušné prostředky založené na rozhraní target framework určeného aplikace nebo knihovny. Prostředky, které definují rozhraní jsou v *ref* složky a prostředky, které definují implementace *lib* složky.
+*.Zip* soubor má *.nupkg* rozšíření a může obsahovat prostředky, jako například *.dll* soubory a *.xml* souborů pro použití s několika cílů rozhraní a verze. Při instalaci v aplikaci nebo knihovny, jsou vybrány příslušné prostředky založené na rozhraní target framework určeného aplikace nebo knihovny. Prostředky, které definují rozhraní jsou v *ref* složky a prostředky, které definují implementace *lib* složky.
 
 ## <a name="platform"></a>platforma
 
@@ -268,7 +268,7 @@ V tématu [cílové rozhraní](frameworks.md).
 
 ## <a name="uwp"></a>UWP
 
-Univerzální platformy Windows.
+Universal Windows Platform.
 
 Implementace rozhraní .NET, který se používá pro vytváření moderní, dotykovým ovládáním aplikace systému Windows a software pro Internet věcí (IoT). Je určený ke sjednocení různé typy zařízení, které chcete zacílit, včetně počítače, tablety, phablets, telefony a i Xbox. UWP poskytuje mnoho služeb, jako je například centralizované app storu, prostředí provádění (AppContainer) a sadu rozhraní API systému Windows tak, aby používal místo Win32 (WinRT). Aplikace může být napsané v jazyce C++, C#, VB.NET a JavaScript. Při použití jazyka C# a VB.NET, rozhraní API .NET jsou poskytovány .NET Core.
 

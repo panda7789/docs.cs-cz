@@ -2,7 +2,8 @@
 title: "Postupy: Programování pro Office (C# a Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 dev_langs:
 - csharp
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-caps.latest.revision: "46"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 862f445107e0f58e8e00fba1708156c747165def
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 684fe023d46d3522aecd3cbd4d89e7f9ee92140f
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v C# a Visual Basic, které vylepšují programování pro Microsoft Office. Užitečné C# – funkce zahrnují pojmenovaných a nepovinných argumentů a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy v lambda – výrazy a Inicializátory kolekcí.
@@ -98,11 +99,11 @@ Musíte mít aplikaci Microsoft Office Excel a v počítači nainstalována apli
   
      Tato metoda se používají dvě nové C# funkce. Obě tyto funkce již existují v jazyce Visual Basic.  
   
-    -   Metoda [přidat](http://go.microsoft.com/fwlink/?LinkId=210910) má *volitelný parametr* pro zadání konkrétní šablonu. Volitelné parametry, nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnoty parametru. Vzhledem k tomu, že žádný argument se odešlou v předchozím příkladu `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz v dřívějších verzích systému C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
+    -   Metoda [přidat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.workbooks.add.aspx) má *volitelný parametr* pro zadání konkrétní šablonu. Volitelné parametry, nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnoty parametru. Vzhledem k tomu, že žádný argument se odešlou v předchozím příkladu `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz v dřívějších verzích systému C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
   
          Další informace najdete v tématu [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
   
-    -   `Range` a `Offset` vlastnosti [rozsah](http://go.microsoft.com/fwlink/?LinkId=210911) objektu použití *indexovaných vlastností* funkce. Tato funkce umožňuje využívat tyto vlastnosti z typů modelu COM pomocí typické C# syntaxi. Indexované vlastnosti taky umožňují používat `Value` vlastnost `Range` objekt, což eliminuje nutnost používat `Value2` vlastnost. `Value` Vlastnost je indexovaný, ale index je volitelné. Nepovinné argumenty a indexované vlastnosti společně v následujícím příkladu.  
+    -   `Range` a `Offset` vlastnosti [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) objektu použití *indexovaných vlastností* funkce. Tato funkce umožňuje využívat tyto vlastnosti z typů modelu COM pomocí typické C# syntaxi. Indexované vlastnosti taky umožňují používat `Value` vlastnost `Range` objekt, což eliminuje nutnost používat `Value2` vlastnost. `Value` Vlastnost je indexovaný, ale index je volitelné. Nepovinné argumenty a indexované vlastnosti společně v následujícím příkladu.  
   
          [!code-csharp[csOfficeWalkthrough#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_5.cs)]  
   
@@ -122,7 +123,7 @@ Musíte mít aplikaci Microsoft Office Excel a v počítači nainstalována apli
   
      Tyto doplňky ukazují další funkcí v jazyce C#: považuje `Object` hodnoty vrácené z hostitelů COM, jako je Office, jako v případě, že mají typu [dynamické](../../../csharp/language-reference/keywords/dynamic.md). K tomu dojde automaticky při **vložit zprostředkovatel komunikace s objekty typy** je nastaven na výchozí hodnotu, `True`, nebo ekvivalentně, když sestavení se odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru. Typ `dynamic` umožňuje pozdní vazby, již k dispozici v jazyce Visual Basic a zabraňuje explicitní přetypování potřebné v aplikaci Visual C# 2008 a starší verze jazyka.  
   
-     Například `excelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](http://go.microsoft.com/fwlink/?LinkId=210911) metoda. Bez `dynamic`, musíte vysílat pro objekt vrácený rutinou `excelApp.Columns[1]` jako instanci `Range` před voláním metody `AutoFit`.  
+     Například `excelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) metoda. Bez `dynamic`, musíte vysílat pro objekt vrácený rutinou `excelApp.Columns[1]` jako instanci `Range` před voláním metody `AutoFit`.  
   
      [!code-csharp[csOfficeWalkthrough#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_8.cs)]  
   
@@ -196,21 +197,21 @@ Musíte mít aplikaci Microsoft Office Excel a v počítači nainstalována apli
 8.  V sadě Visual Studio, klikněte na tlačítko **Vyčistit řešení** na **sestavení** nabídky vyčistěte dokončený projekt.  
   
 ## <a name="see-also"></a>Viz také  
- [Automaticky implementované vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
- [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
+ [Automaticky implementované vlastnosti (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
+ [Automaticky implementované vlastnosti (C#)](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
  [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
  [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
- [Volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
+ [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
  [Předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)  
  [Pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)  
- [Statické a pozdní vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
- [dynamické](../../../csharp/language-reference/keywords/dynamic.md)  
+ [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
+ [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
  [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
- [Lambda – výrazy](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
- [Lambda – výrazy](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [Lambda Expressions (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [Lambda – výrazy (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)  
- [Návod: Vložení typů z řízených sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
- [Návod: Vytvoření vašeho prvního doplňku VSTO pro Excel](http://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
+ [Návod: Vložení informací o typu ze sestavení Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)  
+ [Návod: Vložení typů ze spravovaných sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
+ [Návod: Vytvoření prvního doplňku VSTO pro Excel](http://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
- [Vzájemná funkční spolupráce](../../../csharp/programming-guide/interop/index.md)
+ [Interoperabilita](../../../csharp/programming-guide/interop/index.md)

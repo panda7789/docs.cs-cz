@@ -30,18 +30,18 @@ helpviewer_keywords:
 - cryptography [.NET Framework], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 653ffbf9597be9c82300b2be69ed6a7f9412769d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 941dd9d130a31c997b634bce8059afef04c178d3
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 <a name="top"></a>Veřejných sítích, jako je Internet není pro zajištění zabezpečené komunikace mezi entitami. Komunikace v těchto sítích je náchylný ke čtení nebo dokonce upravovat neoprávněným třetím stranám. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda nedošlo ke změně dat, a pomáhá poskytovat zabezpečenou komunikaci přes jinak nezabezpečené kanály. Například data mohou být šifrují pomocí šifrovacího algoritmu, přenesen šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zabrání šifrovaná data, bude obtížné dekódovat.  
@@ -115,7 +115,7 @@ ms.lasthandoff: 01/19/2018
   
  Nevýhodou šifrování tajného klíče je, že předpokládá, že obě strany mají dohodnutou klíč a IV a oznamovat jejich hodnot. IV se nepovažuje tajného klíče se dá přenést v podobě prostého textu se zprávou. Ale klíč musí utajení před neoprávněnými uživateli. Z důvodu tyto problémy šifrování tajného klíče se často používá spolu s šifrování veřejného klíče pro hodnoty klíče a IV soukromě komunikaci.  
   
- Za předpokladu, že Alice a Bob se dvěma stranami, které chcete komunikovat přes nezabezpečený kanál, můžou používat šifrování tajného klíče následujícím způsobem: Alice a Bob souhlas s používat jeden konkrétní algoritmus (například AES) s konkrétním klíčem a IV. Alice vytvoří zprávu a vytvoří datový proud sítě (třeba pojmenovaného kanálu nebo síť e-mailu s) na které se mají odeslat zprávu. V dalším kroku se šifruje text pomocí klíče a IV a odešle zprávy zašifrované a IV Bobovi prostřednictvím intranetu. Robert obdrží šifrovaný text a dešifruje ji pomocí IV a dříve dohodnutého klíče. Pokud je přenos zachycen, lze sběrač nelze obnovit na původní zprávu, protože nezná klíč. V tomto scénáři musí zůstat tajný pouze klíč. Ve scénáři skutečných Alice a Bob generuje tajný klíč a šifrování veřejného klíče (asymetrického) používá k přenosu tajný klíč (symetrického) druhé straně. Další informace o šifrování veřejného klíče najdete v další části.  
+ Za předpokladu, že Alice a Bob se dvěma stranami, které chcete komunikovat přes nezabezpečený kanál, můžou používat šifrování tajného klíče následujícím způsobem: Alice a Bob souhlas s používat jeden konkrétní algoritmus (například AES) s konkrétním klíčem a IV. Alice vytvoří zprávu a vytvoří datový proud sítě (možná pojmenovaného kanálu nebo síť e-mailu), na které se mají odeslat zprávu. V dalším kroku se šifruje text pomocí klíče a IV a odešle zprávy zašifrované a IV Bobovi prostřednictvím intranetu. Robert obdrží šifrovaný text a dešifruje ji pomocí IV a dříve dohodnutého klíče. Pokud je přenos zachycen, lze sběrač nelze obnovit na původní zprávu, protože nezná klíč. V tomto scénáři musí zůstat tajný pouze klíč. Ve scénáři skutečných Alice a Bob generuje tajný klíč a šifrování veřejného klíče (asymetrického) používá k přenosu tajný klíč (symetrického) druhé straně. Další informace o šifrování veřejného klíče najdete v další části.  
   
  [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Obsahuje následující třídy, které implementují algoritmy šifrování tajného klíče:  
   

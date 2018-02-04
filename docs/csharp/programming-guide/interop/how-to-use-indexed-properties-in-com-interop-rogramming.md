@@ -2,26 +2,27 @@
 title: "Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - indexed properties [C#]
 - Office programming [C#], indexed properties
 - properties [C#], indexed
 ms.assetid: 756bfc1e-7c28-4d4d-b114-ac9288c73882
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6ccd4248730d3c89528dad62b3f8ced3b9e42b0f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2538dae8f02b17a77cc1eb2798b8b38a7f1d7db2
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="how-to-use-indexed-properties-in-com-interop-programming-c-programming-guide"></a>Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM (Průvodce programováním v C#)
 *Indexované vlastnosti* zlepšit způsob v COM, které se spotřebovávají vlastnosti, které mají parametry v C# – programování. Indexované vlastnosti pracovních společně s další funkce v jazyce Visual C#, jako [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md), nový typ ([dynamické](../../../csharp/language-reference/keywords/dynamic.md)), a [vložených informací o typu](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)do vylepšení programování pro Microsoft Office.  
   
- V dřívějších verzích jazyka C#, jsou dostupné jako vlastnosti jenom v případě metody `get` metoda nemá žádné parametry a `set` metoda má jeden parametr hodnoty. Ne všechny vlastnosti modelu COM však splňovat tato omezení. Například aplikace Excel [rozsah](http://go.microsoft.com/fwlink/?LinkId=166053) vlastnost má `get` přistupujícího objektu, který vyžaduje parametr pro název oblasti. V minulosti protože nelze získat přístup k `Range` vlastnost přímo, jste museli používat `get_Range` metoda místo toho, jak je znázorněno v následujícím příkladu.  
+ V dřívějších verzích jazyka C#, jsou dostupné jako vlastnosti jenom v případě metody `get` metoda nemá žádné parametry a `set` metoda má jeden parametr hodnoty. Ne všechny vlastnosti modelu COM však splňovat tato omezení. Například aplikace Excel [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.range.aspx) vlastnost má `get` přistupujícího objektu, který vyžaduje parametr pro název oblasti. V minulosti protože nelze získat přístup k `Range` vlastnost přímo, jste museli používat `get_Range` metoda místo toho, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideIndexedProperties#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_1.cs)]  
   
@@ -49,8 +50,8 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)  
- [dynamické](../../../csharp/language-reference/keywords/dynamic.md)  
+ [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
  [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
- [Postupy: použití pojmenovaných a nepovinných argumentů v programování pro Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)  
- [Postupy: přístup k objektům spolupráce sady Office pomocí Visual C# – funkce](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)  
+ [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)  
+ [Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)  
  [Návod: Programování pro Office](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)

@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
-ms.workload: dotnetcore
-ms.openlocfilehash: c2cc62d1f7babb09eeccf0422bb4b3022d77ce02
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 24c74f0396dd7bfdf19fc0e11a29110fdbf27173
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="porting-to-net-core---libraries"></a>Portování do .NET Core - knihovny
 
@@ -52,7 +53,7 @@ Několik technologií, které jsou k dispozici pro rozhraní .NET Framework knih
 
 Právě, protože rozhraní API nebo technologie není implementována aktuálně nepodporuje neznamená, že má záměrně nepodporovaný. Problém v souboru [dotnet/corefx úložiště problémy](https://github.com/dotnet/corefx/issues) v Githubu a požádejte o konkrétní rozhraní API a technologie. [Portování požadavků v problémy](https://github.com/dotnet/corefx/labels/port-to-core) jsou označené `port-to-core` popisek.
 
-### <a name="appdomains"></a>Domén
+### <a name="appdomains"></a>AppDomains
 
 Domén izolace aplikace od sebe navzájem. Domén vyžaduje podporu runtime a jsou obecně dost drahé. Nejsou implementované v .NET Core. Plánujeme není na přidání této funkci v budoucnosti. Pro izolaci kódu, doporučujeme samostatné procesy nebo použití kontejnerů jako alternativu. Pro dynamické načítání sestavení, doporučujeme nové <xref:System.Runtime.Loader.AssemblyLoadContext> třídy.
 
@@ -78,7 +79,7 @@ Podobně jako u certifikační Autority, transparentnost zabezpečení umožňuj
 
 Použijte hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnery nebo uživatelské účty pro spouštění procesů nejmenší sadu oprávnění.
 
-### <a name="globaljson"></a>Global.JSON
+### <a name="globaljson"></a>global.json
 
 *Global.json* soubor je volitelný soubor, který vám umožní nastavit verze nástrojů .NET Core projektu. Pokud používáte noční sestavení .NET Core a chcete zadat konkrétní verzi sady SDK, zadejte verzi s *global.json* souboru. Obvykle se nachází v aktuálním pracovním adresáři nebo jednoho z jeho nadřazené adresáře. 
 
@@ -123,7 +124,7 @@ Protože projekty nyní cílí na rozhraní .NET Framework 4.6.2, použijte tuto
 
 Dalším krokem je spustit Analyzátor přenositelnost rozhraní API (ApiPort) k vygenerování sestavy přenositelnost pro analýzu.
 
-Musíte rozumět [analyzátor přenositelnost rozhraní API (ApiPort)](~/docs/standard/portability-analyzer.md) a generování sestav přenositelnost pro cílení na .NET Core. Jak se tento pravděpodobně se může lišit podle vašich potřeb a osobní chutí. Jaké způsobem jsou několik různý přístup. Můžete zjistit sami kombinování kroky těmito dvěma způsoby v závislosti na tom, jak je strukturovaná kódu.
+Musíte rozumět [analyzátor přenositelnost rozhraní API (ApiPort)](../../standard/analyzers/portability-analyzer.md) a generování sestav přenositelnost pro cílení na .NET Core. Jak se tento pravděpodobně se může lišit podle vašich potřeb a osobní chutí. Jaké způsobem jsou několik různý přístup. Můžete zjistit sami kombinování kroky těmito dvěma způsoby v závislosti na tom, jak je strukturovaná kódu.
 
 ### <a name="dealing-primarily-with-the-compiler"></a>Především zabývají kompilátoru
 
@@ -184,7 +185,7 @@ Nejlepší způsob, jak zkontrolujte, zda že vše funguje, když jste přenést
 - [NUnit](http://www.nunit.org/)
   * [Začínáme](https://github.com/nunit/docs/wiki/Installation)
   * [Příspěvku na blogu o migraci z Mstestu na NUnit](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
-- [Mstestu](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
+- [MSTest](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
 
 ## <a name="recommended-approach-to-porting"></a>Doporučeným přístupem k portování
 

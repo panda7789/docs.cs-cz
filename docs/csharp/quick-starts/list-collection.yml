@@ -1,7 +1,7 @@
 ### YamlMime:Tutorial
 title: Kolekce v jazyce C#
 metadata:
-  title: "Kolekce v jazyce C#. Naučte se používat pořadí a kolekcí v jazyku C#."
+  title: "Kolekce Interaktivní kurz – elementy QuickStart C#"
   description: "V tomto kurzu budete používat prohlížeč další C# interaktivně. Psaní kódu jazyka C# a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči."
   audience: Developer
   ms.topic: get-started-article
@@ -11,17 +11,17 @@ metadata:
   interactive: csharp
   ms.prod: .net
   ms.technology: devlang-csharp
-  ms.openlocfilehash: 57cdf4e5c82c0e50de5422051df251db8ddb5d83
-  ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+  ms.openlocfilehash: 483b403b35eef4405b1c7debc52678aef19cb9b6
+  ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/20/2018
+  ms.lasthandoff: 02/01/2018
 items:
 - durationInMinutes: 1
   content: "Tento rychlý start se dozvíte, jaké C# interaktivně, pomocí prohlížeče psaní kódu jazyka C# a zobrazit výsledky kompilace a kód spuštěný. Obsahuje řadu lekce, které slouží k vytváření, úpravě a prozkoumejte kolekce a pole.\n"
 - title: "Vytváření seznamů"
   durationInMinutes: 2
-  content: "Spusťte následující kód v okně interaktivní. K tomu, zadejte následující blok kódu v okně interaktivní (nahradit \"<name>\" s název) a klikněte na tlačítko **spustit** tlačítko:\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nJste právě vytvořili seznam řetězců, přidat tři názvy do tohoto seznamu a vytisknout se názvy v velká písmena. Koncepty, které jste se naučili v dříve rychle spustí používáte k prosmyčkování seznamu.\n\nKód zobrazení názvů využívá **interpolované řetězce**.  Když je před `string` s `$` znak, vložením kódu C# v deklaraci řetězec. Konkrétní řetězec nahradí hodnotu, kterou generuje tento kód C#. V tomto příkladu se nahradí `{name.ToUpper()}` s každý název převeden na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A> metoda.\n\nZachovat umožňuje prohlížení.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
+  content: "Spusťte následující kód v okně interaktivní. K tomu, zadejte následující blok kódu v okně interaktivní (nahradit \"<name>\" s název) a klikněte na tlačítko **spustit** tlačítko:\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nJste právě vytvořili seznam řetězců, přidat tři názvy do tohoto seznamu a vytisknout se názvy v velká písmena. Používáte koncepty, které jste se naučili v dřívější – elementy QuickStart můžete procházet seznam.\n\nKód zobrazení názvů využívá **interpolované řetězce**.  Když je před `string` s `$` znak, vložením kódu C# v deklaraci řetězec. Konkrétní řetězec nahradí hodnotu, kterou generuje tento kód C#. V tomto příkladu se nahradí `{name.ToUpper()}` s každý název převeden na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A> metoda.\n\nZachovat umožňuje prohlížení.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
 - title: "Změna seznamu obsahu"
   durationInMinutes: 3
   content: "Kolekce, které jste vytvořili, používá <xref:System.Collections.Generic.List%601> typu. Tento typ ukládá pořadí elementů. Můžete zadat typ elementů mezi lomené závorky.\n\nJeden důležitým aspektem tohoto <xref:System.Collections.Generic.List%601> typ je ho můžete zvětšit nebo zmenšit, umožňuje přidat nebo odebrat elementy. Přidejte následující kód pod kód, které jste již vytvořili:\n\n```csharp\nConsole.WriteLine();\nnames.Add(\"Maria\");\nnames.Add(\"Bill\");\nnames.Remove(\"Ana\");\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nPřidali jste dva další názvy na konec seznamu. Můžete rovněž jsme odstranili jeden také.\n\n<xref:System.Collections.Generic.List%601> Umožňuje odkazovat na jednotlivé položky podle **index** také. Přístup pomocí položky `[` a `]` tokeny. Přidejte následující kód níže, jste již zapsány a vyzkoušet:\n\n```csharp\nConsole.WriteLine($\"My name is {names[0]}.\");\nConsole.WriteLine($\"I've added {names[2]} and {names[3]} to the list.\");\n```\n\nNemáte oprávnění pro přístup za koncem seznamu. Můžete zkontrolovat, jak dlouho je pomocí seznamu <xref:System.Collections.Generic.List%601.Count%2A> vlastnost. Přidejte následující kód do vyzkoušet:\n\n```csharp\nConsole.WriteLine($\"The list has {names.Count} people in it\");\n```\n\nKlikněte na tlačítko **spustit** znovu a zobrazte si výsledky. V jazyce C#, indexy, které začínají hodnotou 0, takže největší platný index představuje jedno menší než počet položek v seznamu.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
@@ -37,4 +37,4 @@ items:
 - title: "Dokončení výzvy"
   durationInMinutes: 3
   content: "Vytvoříte přibližně toto?\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nS každou iteraci smyčky přenášíte posledních dvou celých čísel v seznamu je sčítání a přidáním této hodnoty do seznamu. Smyčky se opakuje, dokud nepřidáte 20 položky do seznamu.\n\n> [!NOTE]\n> Toto online kódování prostředí je v režimu preview. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet nebo zkuste](https://github.com/dotnet/try/issues).\n"
-- content: "Po dokončení seznamu rychlý start. Tento rychlý start je poslední interaktivní rychlý start. Můžete pokračovat v těchto rychlé spuštění na vašem vývojovém prostředí. Seznámíte se základy [místní vývoj](local-environment.md) a pak vyberte rychlý start. Zkuste tento stejný postup, přímo na další rychlý start nebo znovu spustit na s [čísla v jazyce C#](numbers-in-csharp-local.md) rychlý start.\n\nDalší informace o práci s `List` zadejte [.NET průvodce](../../standard/index.md) téma na [kolekce](../../standard/collections/index.md). Budete také informace o mnoho dalších typů kolekce.\0"
+- content: "Jste dokončili rychlé spuštění seznamu. Tento rychlý start je poslední interaktivní rychlý start. Můžete pokračovat v těchto – elementy QuickStart na vašem vývojovém prostředí. Seznámíte se základy [místní vývoj](local-environment.md) a pak vyberte rychlý start. Zkuste tento stejný postup, přímo na další rychlý start nebo znovu spustit na s [čísla v jazyce C#](numbers-in-csharp-local.md) rychlý start.\n\nDalší informace o práci s `List` zadejte [.NET průvodce](../../standard/index.md) téma na [kolekce](../../standard/collections/index.md). Budete také informace o mnoho dalších typů kolekce.\0"

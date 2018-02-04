@@ -2,7 +2,8 @@
 title: "Výrazy lambda (Průvodce programováním v C#)"
 ms.date: 03/03/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - lambda expressions [C#]
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-caps.latest.revision: "64"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 9127cc5404fb85356f01cac26aa7b03a8ccd70da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: df59647b803bff448a801374a325f07e4903a160
+ms.sourcegitcommit: 22a48b64a0150a60b00b4fc4d8c62cde7f1670c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (Průvodce programováním v C#)
 Výraz lambda je [anonymní funkce](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) , můžete použít k vytvoření [delegáti](../../../csharp/programming-guide/delegates/using-delegates.md) nebo [strom výrazu](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) typy. Pomocí výrazů lambda můžete psát místní funkce, které mohou být předány jako argumenty nebo vráceny jako hodnota volání funkce. Výrazy lambda jsou zvláště užitečné pro psaní výrazů dotazů LINQ.  
@@ -274,13 +275,13 @@ class Test
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="featured-book-chapter"></a>Doporučená kapitola knihy  
- [Výrazy Lambda, delegáti a události](http://go.microsoft.com/fwlink/?LinkId=195395) v [C# 3.0 Cookbook, Third Edition: víc než 250 řešení pro programátory v jazyce C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195369)  
+ [Výrazy Lambda, delegáti a události](https://msdn.microsoft.com/library/orm-9780596516109-03-09.aspx) v [C# 3.0 Cookbook, Third Edition: víc než 250 řešení pro programátory v jazyce C# 3.0](https://msdn.microsoft.com/library/orm-9780596516109-03.aspx)  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md)  
  [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
- [je](../../../csharp/language-reference/keywords/is.md)  
- [Stromy výrazů](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
+ [is](../../../csharp/language-reference/keywords/is.md)  
+ [Stromy výrazů](../../../csharp/programming-guide/concepts/expression-trees/index.md)  
  [Visual Studio 2008 C# – ukázky (viz ukázkové dotazy LINQ soubory a XQuery programu)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)  
- [Rekurzivní lambda – výrazy](http://go.microsoft.com/fwlink/?LinkId=112395)
+ [Rekurzivní lambda – výrazy](https://blogs.msdn.microsoft.com/madst/2007/05/11/recursive-lambda-expressions/)

@@ -1,13 +1,15 @@
 ---
 title: "Short – datový typ (Visual Basic)"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 author: rpetrusha
 ms.author: ronpet
-f1_keywords: vb.Short
+f1_keywords:
+- vb.Short
 helpviewer_keywords:
 - numbers [Visual Basic], whole
 - whole numbers
@@ -21,11 +23,11 @@ helpviewer_keywords:
 - Short data type
 - literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
-ms.openlocfilehash: fef948debed69cf9fb7b0e6bb65eb0ddbe497a92
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 10c9869d4fb84cd013b22bc791bd31fad745f3d3
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="short-data-type-visual-basic"></a>Short – datový typ (Visual Basic)
 Blokování podepsané 16bitových celých čísel (2bajtová), které pohybovat v rozmezí-32 768 do 32 767.  
@@ -50,10 +52,18 @@ Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jak
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
 
+Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+
+```vb
+Dim number As Short = &H_3264
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 Číselné literály může také obsahovat `S` [znak typu](../../programming-guide\language-features\data-types/type-characters.md) k označení `Short` datového typu, jak ukazuje následující příklad.
 
 ```vb
-Dim number = &H0326S
+Dim number = &H_3264S
 ```
 
 ## <a name="programming-tips"></a>Tipy pro programování
@@ -69,7 +79,7 @@ Dim number = &H0326S
  <xref:System.Int16?displayProperty=nameWithType>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Integer – datový typ](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
- [Long – datový typ](../../../visual-basic/language-reference/data-types/long-data-type.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

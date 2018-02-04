@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,21 +21,22 @@ helpviewer_keywords:
 - platform invoke
 - DLL functions
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dd1e5f4fc03da2310022efdeb4530440b5e07f3d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4133cfbdf4c9f164ae9ba42a6bbba94ce019e0be
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Používání nespravovaných funkcí DLL
-Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespravovaných funkcí, které jsou implementované v dynamické knihovny (DLL), například v rozhraní API Win32. Vyhledá a vyvolá exportované funkce a zařazuje její argumenty (celá čísla, řetězce, pole, struktur a tak dále) přes součinnosti hranice, podle potřeby. Další informace o této službě najdete v tématu [A blíže podívejte se na vyvolání platformy](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243).  
+Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespravovaných funkcí, které jsou implementované v dynamické knihovny (DLL), například v rozhraní API Win32. Vyhledá a vyvolá exportované funkce a zařazuje její argumenty (celá čísla, řetězce, pole, struktur a tak dále) přes součinnosti hranice, podle potřeby.  
   
- Tato část obsahuje několik úloh, které jsou přidružené k využívání nespravovaných funkcí knihovny DLL. Kromě následující úlohy jsou obecné požadavky a poskytuje další informace a příklady odkaz.  
+ Tato část uvádí úkoly spojené s využívání nespravovaných funkcí DLL a poskytuje další informace o platformě vyvolání. Kromě následující úlohy jsou obecné požadavky a poskytuje další informace a příklady odkaz.  
   
 #### <a name="to-consume-exported-dll-functions"></a>Využívat exportované funkce DLL  
   
@@ -85,4 +87,3 @@ Nespravovaného volání nespravovaného funkce DLL
  [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)  
  [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)  
  [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)  
- [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
