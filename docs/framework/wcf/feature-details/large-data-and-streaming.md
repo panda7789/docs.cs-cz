@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 187927a9e75348454f5832c2a34bf780e48e4358
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e9551fcf4f302be899dcee8737b3bcfad15f1210
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]je založený na jazyce XML komunikaci infrastruktury. Protože XML data je běžně zakódován ve formátu standardního textu definované v [XML 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojáři a architektům jsou obvykle zajímá přenosová nároků (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje speciální výzvy pro efektivní přenos binární data.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je založený na jazyce XML komunikaci infrastruktury. Protože XML data je běžně zakódován ve formátu standardního textu definované v [XML 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojáři a architektům jsou obvykle zajímá přenosová nároků (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje speciální výzvy pro efektivní přenos binární data.  
   
 ## <a name="basic-considerations"></a>Základní informace  
  Poskytnout základní informace o následující informace pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], v této části jsou zdůrazněné některé obecné aspekty a aspekty kódování binárních dat, a který obecně streamování týkají připojených systémů infrastruktury.  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  V řetězci kódováním Base64 představuje každý znak 6bity původní data 8bitové, což vede k 4:3 kódování režii poměr pro Base64, není počítání velmi formátování znaků (znaků CR return a line feed), které jsou běžně přidány na základě konvence. Při význam rozdíly mezi XML a binární kódování obvykle závisí na scénáři, nárůst velikosti větší než 33 % při přenosu datové části 500 MB obvykle není přijatelný.  
   
- Aby se zabránilo toto kódování režie, mechanismus pro optimalizaci přenosu zpráv (MTOM) umožňuje standard externího velké datové prvky, které jsou obsaženy ve zprávě a jejich provedení se zprávou jako binární data bez jakékoli speciální kódování. S MTOM zprávy se vyměňují podobným způsobem Simple Mail Transfer Protocol (SMTP) e-mailové zprávy s přílohy nebo vložený obsah (obrázky a další vložený obsah); Jako posloupnosti MIME multipart/related spojených s částí kořenové se skutečné zprávu protokolu SOAP zprávy MTOM.  
+ Aby se zabránilo toto kódování režie, mechanismus pro optimalizaci přenosu zpráv (MTOM) umožňuje standard externího velké datové prvky, které jsou obsaženy ve zprávě a jejich provedení se zprávou jako binární data bez jakékoli speciální kódování. S MTOM zprávy se vyměňují podobným způsobem k přenosu protokolu SMTP (Simple Mail) e-mailové zprávy s přílohy nebo vložený obsah (obrázky a další vložený obsah); Jako posloupnosti MIME multipart/related spojených s částí kořenové se skutečné zprávu protokolu SOAP zprávy MTOM.  
   
  Zprávu MTOM SOAP se liší od jeho zrušení kódovaného verze tak, aby speciální element značky, které odkazují na části odpovídající standardu MIME má nahradit původní elementů v zprávu, která obsahovala binární data. V důsledku toho zprávu SOAP odkazuje na binární obsah tak, že odkazuje na části MIME odeslané s ním, ale jinak právě představuje textová data XML. Protože tento model je úzce zarovnán s modelem zavedené SMTP, je široká podpora ke kódování a dekódování zprávy MTOM na spoustě platforem, proto je velmi interoperabilní volba nástrojů.  
   
@@ -72,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="encodings"></a>Kódování  
  *Kódování* definuje sadu pravidel o tom, jak zprávy k dispozici v drátové síti. *Kodér* implementuje takové kódování a na straně odesílatele za měnící <xref:System.ServiceModel.Channels.Message> zprávy v paměti do datového proudu bajtů nebo vyrovnávací paměti bajtů, které mohou být odeslány prostřednictvím sítě. Na straně příjemce zapne kodér pořadí bajtů do zprávy v paměti.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zahrnuje tři kodéry a umožňuje napsat a zařadit vlastní kodéry v případě potřeby.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje tři kodéry a umožňuje napsat a zařadit vlastní kodéry v případě potřeby.  
   
  Každé standardní vazby zahrnuje předkonfigurovaná kodér, při němž vazby s předponou Net * používat binární kodér (zahrnutím <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> třída) při <xref:System.ServiceModel.BasicHttpBinding> a <xref:System.ServiceModel.WSHttpBinding> třídy použít kodér textu zprávy (pomocí Řešitele z <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třída) ve výchozím nastavení.  
   

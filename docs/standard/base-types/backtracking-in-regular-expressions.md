@@ -22,18 +22,18 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 16837a310eabf881da8c88c9192264b918592929
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b3d7b5c42f43795f811af66d42ed364d482c8ced
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 <a name="top"></a>Zpětné navracení nastane, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), a modul regulárních výrazů se vrátí do předchozího uloženého stavu pokračovat hledání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -165,7 +165,7 @@ ms.lasthandoff: 12/23/2017
   
  `(?<=`*dílčím výrazu* `)` je assertion kladné zpětného vyhledávání; to znamená, znak nebo znaků, než aktuální pozice se musí shodovat *dílčím výrazu*. `(?<!`*dílčím výrazu* `)` je kontrolní výraz negativního zpětného vyhledávání; to znamená, znak nebo znaků, než aktuální pozice nesmí odpovídat *dílčím výrazu*. Kontrolní výrazy oba kladné a záporné zpětného vyhledávání jsou velmi užitečné, když *dílčím výrazu* je podmnožinou předchozí dílčím výrazu.  
   
- Následující příklad používá dva ekvivalentní vzory regulárních výrazů, které ověřují uživatelské jméno v e-mailové adrese. První vzor je ovlivněn nízkým výkonem z důvodu nadměrného používání mechanismu navracení. Druhý vzor upraví první regulární výraz nahrazením vnořeného kvantifikátoru kontrolním výrazem pozitivního zpětného vyhledávání. Výstup z příkladu zobrazuje čas spuštění <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metoda.  
+ Následující příklad používá dva ekvivalentní regulární výraz vzorů, které ověřit uživatelské jméno v e-mailovou adresu. První vzor je ovlivněn nízkým výkonem z důvodu nadměrného používání mechanismu navracení. Druhý vzor upraví první regulární výraz nahrazením vnořeného kvantifikátoru kontrolním výrazem pozitivního zpětného vyhledávání. Výstup z příkladu zobrazuje čas spuštění <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metoda.  
   
  [!code-csharp[Conceptual.RegularExpressions.Backtracking#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/cs/backtracking5.cs#5)]
  [!code-vb[Conceptual.RegularExpressions.Backtracking#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking5.vb#5)]  

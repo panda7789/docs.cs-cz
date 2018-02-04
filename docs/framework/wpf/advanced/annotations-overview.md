@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7cc7b09211bc9168bbab85105a0574dc142542ba
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1f3ac3ce66d944934724bef1b69307030ec813e2
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámky nebo komentáře na tištěných dokumentů je takové běžná aktivita, jsme téměř vzít pro udělena. Tyto poznámky nebo komentáře jsou "Poznámky" přidáme do dokumentu. Chcete-li příznak informace nebo chcete zvýraznit položky, které vás zajímají pro pozdější použití. Zápis poznámky na tištěných dokumentů je snadné a běžné, možnost přidávat komentáře osobní do elektronických dokumentů sice obvykle velmi omezená, pokud je k dispozici na všech.  
@@ -73,7 +75,7 @@ Zápis poznámky nebo komentáře na tištěných dokumentů je takové běžná
  [!code-csharp[FlowDocumentAnnotatedViewer#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/CSharp/Window1.xaml.cs#handler)]
  [!code-vb[FlowDocumentAnnotatedViewer#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/visualbasic/window1.xaml.vb#handler)]  
   
- Jiný příklad scénáře zahrnuje aplikace, které umožňují exchange poznámky a rychlé poznámky čtenářů dokumentu prostřednictvím e-mailu. Tato funkce umožňuje tyto aplikace a přejděte na stránku, který obsahuje poznámky, které se vyměňují čtečky.  
+ Jiný příklad scénáře zahrnuje aplikace, které umožňují exchange poznámky a rychlé poznámky čtenářů dokumentu e-mailem. Tato funkce umožňuje tyto aplikace a přejděte na stránku, který obsahuje poznámky, které se vyměňují čtečky.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.Primitives.DocumentViewerBase>  

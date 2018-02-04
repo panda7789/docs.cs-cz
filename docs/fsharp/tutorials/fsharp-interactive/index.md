@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 36af8d1b-dc08-4a37-9497-d23c0a0ac11c
-ms.openlocfilehash: bcf3fe052f305f29ae4cf618d93759bd911e0078
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a18f339d898374a59858cd774154b3846594d183
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="interactive-programming-with-f"></a>Interaktivní programování s jazykem F# #
 
@@ -26,7 +26,7 @@ Rozhraní API použití odkazu přejdete na webu MSDN.  Referenční dokumentace
 
 Program F# Interactive (fsi.exe) se používá pro interaktivní spuštění kódu jazyka F# v konzole nebo pro spuštění skriptů jazyka F#. Jinými slovy, interaktivní jazyk F# provede operace REPL (čtení, vyhodnocení, smyčka tisku) pro jazyk F#.
 
-Chcete-li spustit jazyk F# Interactive z konzoly, spusťte program fsi.exe.  Zjistíte, fsi.exe v "c:\Program soubory (x86) \Microsoft SDKs\F#\<verze > \Framework\<verze >\". Informace o dostupných možnostech příkazového řádku najdete v tématu [interaktivní možnosti F #](fsharp-interactive-options.md).
+Chcete-li spustit jazyk F# Interactive z konzoly, spusťte program fsi.exe.  Zjistíte, fsi.exe v "c:\Program soubory (x86) \Microsoft SDKs\F#\<verze > \Framework\<verze >\". Informace o dostupných možnostech příkazového řádku najdete v tématu [interaktivní možnosti F #](../../language-reference/fsharp-interactive-options.md).
 
 Pokud chcete spustit F # interaktivní pomocí sady Visual Studio, můžete kliknutím na tlačítko příslušný panel nástrojů s názvem bez přípony **F # interaktivní**, nebo použijte klávesy se **Ctrl + Alt + F**. Tím otevřete interaktivní okno nástroje, ve kterém běží relace jazyka F# Interactive. Můžete také vybrat určitý kód, který chcete spustit v okně interaktivní a stiskněte kombinaci kláves **ALT + ENTER**. F # interaktivní se spustí v okně nástroje s názvem bez přípony **F # interaktivní**. Použijete-li tuto kombinaci kláves, ujistěte se, že má okno editoru fokus.
 
@@ -98,5 +98,5 @@ test
 
 |Název|Popis|
 |-----|-----------|
-|[Interaktivní možnosti F #](fsharp-interactive-options.md)|Popisuje syntaxi příkazového řádku a možnosti programu fsi.exe jazyka F# Interactive.|
+|[Možnosti F# Interactive](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxe příkazového řádku a možnosti pro F # interaktivní, fsi.exe.|
 |[Referenční dokumentace interaktivní knihovny F #](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Popisuje funkce knihovny, které jsou k dispozici při spuštění kódu v jazyce F# Interactive.|

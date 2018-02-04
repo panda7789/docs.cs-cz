@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,16 +21,17 @@ helpviewer_keywords:
 - progress information for installation
 - reporting installation progress
 ms.assetid: 3f9d0533-f895-4897-b4ea-528284e0241d
-caps.latest.revision: "40"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: edda4e415f8ce0246ce6aa1a4d39f5bb6cec7728
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 68bb098cf34839e0587864092d1af302d70eca89
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="installutilexe-installer-tool"></a>Installutil.exe (instalační nástroj)
 Instalační program je nástrojem příkazového řádku, který umožňuje nainstalovat a odinstalovat serverové zdroje spuštěním komponent nástroje v zadaných sestaveních. Tento nástroj funguje ve spojení s třídami v <xref:System.Configuration.Install> oboru názvů.  
@@ -57,8 +59,8 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 |------------|-----------------|  
 |`/h[elp]`<br /><br /> -nebo-<br /><br /> `/?`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |`/help`*sestavení*<br /><br /> -nebo-<br /><br /> `/?`*sestavení*|Zobrazí další možnosti, které jsou rozpoznávány jednotlivými instalačními programy v rámci zadaného sestavení, spolu se syntaxí a možnostmi příkazů pro soubor InstallUtil.exe. Tato možnost rozšíří text vrácený jednotlivé komponenty Instalační program <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> vlastnost text nápovědy pro InstallUtil.exe.|  
-|`/AssemblyName`"*assemblyName*<br /><br /> , Verze =*major.minor.build.revision*<br /><br /> , Culture =*národní prostředí*<br /><br /> PublicKeyToken =*publicKeyToken*"|Udává silný název sestavení, které je třeba zaregistrovat v globální mezipaměti sestavení (GAC). Název sestavení musí být plně kvalifikovaný v souladu s verzí, jazykovou verzí a veřejným klíčem sestavení. Plně kvalifikovaný název musí být v uvozovkách.<br /><br /> Například „myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0“ je plně kvalifikovaný název sestavení.|  
-|`/InstallStateDir=[`*directoryName*`]`|Určuje adresář souboru .InstallState, který obsahuje data používaná při odinstalování sestavení. Ve výchozím nastavení je to adresář obsahující sestavení.|  
+|`/AssemblyName`"*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> , Culture =*národní prostředí*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|Udává silný název sestavení, které je třeba zaregistrovat v globální mezipaměti sestavení (GAC). Název sestavení musí být plně kvalifikovaný v souladu s verzí, jazykovou verzí a veřejným klíčem sestavení. Plně kvalifikovaný název musí být v uvozovkách.<br /><br /> Například „myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0“ je plně kvalifikovaný název sestavení.|  
+|`/InstallStateDir=[` *directoryName* `]`|Určuje adresář souboru .InstallState, který obsahuje data používaná při odinstalování sestavení. Ve výchozím nastavení je to adresář obsahující sestavení.|  
 |`/LogFile=`[*filename*]|Určuje název souboru protokolu, do kterého je zaznamenán průběh instalace. Ve výchozím nastavení pokud `/LogFile` není zadán parametr, soubor protokolu s názvem *assemblyname*. InstallLog se vytvoří. Pokud *filename* je tento parametr vynechán, je generován žádný soubor protokolu.|  
 |`/LogToConsole`={`true`&#124;`false`}|Pokud `true`, zobrazí výstup do konzoly. Pokud `false` (výchozí), potlačí výstup do konzoly.|  
 |`/ShowCallStack`|Vypíše zásobník volání do souboru protokolu, jestliže v kterémkoli bodu instalace dojde k výjimce.|  

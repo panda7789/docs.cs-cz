@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: c205aec714d06b5d2aaf2806867fe51ef508385e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f675f75d6dfd51b5259748316864048562ee0452
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="claims-based-identity-model"></a>Model na základě deklarace Identity
-Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Deklarace může být jméno uživatele nebo například e-mailová adresa. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
+Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Jedna deklarace může být uživatelské jméno, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
   
  Používání tohoto modelu nesmírně zjednodušuje jednotné přihlašování a aplikace již nemusí zodpovídat za následující činnosti:  
   
@@ -49,7 +51,7 @@ Při vytváření aplikací pracujících s deklaracemi je identita uživatele 
  Pro účely popisující programovací model Windows Identity Foundation (WIF) používáme termín "identity" představují sadu atributů, které popisují uživatele nebo některé jiné entity v systému, který chcete zabezpečit.  
   
 ### <a name="claim"></a>Deklarace  
- Deklaraci je možné považovat za část informací o identitě, jako je například jméno, e-mailová adresa, věk nebo členství v roli Prodej. Čím více deklarací vaše aplikace obdrží, tím více toho budete o uživateli vědět. Asi vás zajímá, proč toto nastavení se nazývá "deklarace identity," místo "atributy," jak se běžně používá v popisující podnikového adresáře. Důvod souvisí se způsobem doručení. V tomto modelu nevyhledává aplikace atributy uživatele v adresáři. Namísto toho uživatel poskytuje aplikaci deklarace a aplikace tyto deklarace zkoumá. Každou deklaraci vystavuje vystavitel, přičemž deklarace má stejnou důvěryhodnost jako její vystavitel. Deklarace od řadiče domény vaší společnosti má například větší důvěryhodnost než deklarace od samotného uživatele. WIF představuje deklarací identity <xref:System.Security.Claims.Claim> typu, který má <xref:System.Security.Claims.Claim.Issuer%2A> vlastnost, která umožňuje zjistit, kdo danou deklaraci vystavil.  
+ Vezměte v úvahu deklarace identity jako část identity informace, jako je například název, e-mailovou adresu, stáří, členství v roli organizační jednotky prodej. Čím více deklarací vaše aplikace obdrží, tím více toho budete o uživateli vědět. Asi vás zajímá, proč toto nastavení se nazývá "deklarace identity," místo "atributy," jak se běžně používá v popisující podnikového adresáře. Důvod souvisí se způsobem doručení. V tomto modelu nevyhledává aplikace atributy uživatele v adresáři. Namísto toho uživatel poskytuje aplikaci deklarace a aplikace tyto deklarace zkoumá. Každou deklaraci vystavuje vystavitel, přičemž deklarace má stejnou důvěryhodnost jako její vystavitel. Deklarace od řadiče domény vaší společnosti má například větší důvěryhodnost než deklarace od samotného uživatele. WIF představuje deklarací identity <xref:System.Security.Claims.Claim> typu, který má <xref:System.Security.Claims.Claim.Issuer%2A> vlastnost, která umožňuje zjistit, kdo danou deklaraci vystavil.  
   
 ### <a name="security-token"></a>Token zabezpečení  
  Spolu s žádostí poskytuje uživatel vaší aplikaci sadu deklarací. Ve webové službě se tyto deklarace přenášejí v záhlaví zabezpečení obálky SOAP. Ve webové aplikaci využívající prohlížeč přicházejí deklarace z prohlížeče uživatele prostřednictvím metody POST protokolu HTTP a mohou být následně uloženy do mezipaměti v souboru cookie, pokud aplikace potřebuje pracovat s relacemi. Bez ohledu na způsob jejich doručení musejí být deklarace serializovány, a právě zde se uplatňují tokeny zabezpečení. Token zabezpečení je serializovaná sada deklarací, kterou digitálně podepsala vystavující autorita. Podpis je důležitý, protože poskytuje záruku, že vám uživatel jednoduše neposlal balík deklarací, které sám vytvořil. V situacích, kdy postačuje nízká úroveň zabezpečení a používání kryptografie je zbytečné nebo nevhodné, můžete používat nepodepsané tokeny, ale toto téma tento scénář nepopisuje.  
@@ -79,7 +81,7 @@ Při vytváření aplikací pracujících s deklaracemi je identita uživatele 
 ## <a name="basic-scenario-for-a-claims-based-identity-model"></a>Základní scénář pro model deklarovaných identit  
  Následuje příklad systému založeného na deklaracích.  
   
- ![Předávající tok ověřování partnera](../../../docs/framework/security/media/conc-relying-partner-processc.png "conc_relying_partner_processc")  
+ ![Relying Partner Authentication Flow](../../../docs/framework/security/media/conc-relying-partner-processc.png "conc_relying_partner_processc")  
   
  Tento diagram znázorňuje web (aplikace předávající strany, RP), který byl nakonfigurován, aby pro ověřování používal technologii WIF, a klienta, webový prohlížeč, který chce tento web používat.  
   

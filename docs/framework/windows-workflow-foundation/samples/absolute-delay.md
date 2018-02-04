@@ -8,16 +8,17 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b483139a-39bb-4560-8003-8969a8fc2cd1
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f6974c7bb281aa6685725b65edd06bb40a907559
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 60e3b65851dba68b4d01d6e4195b5faf99b583de
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="absolute-delay"></a>Absolutní zpoždění
 Hlavní scénáře pro tato ukázka má počkat, dokud zadané <xref:System.DateTime> pomocí trvanlivý časovačů v aplikaci pracovního postupu. To se liší od pomocí integrovaných <xref:System.Activities.Statements.Delay> aktivitu jako to bude umožňují pouze zpoždění pro danou <xref:System.TimeSpan> (nebo počet minut nebo sekund).  
@@ -49,7 +50,7 @@ Hlavní scénáře pro tato ukázka má počkat, dokud zadané <xref:System.Date
   
  Tento příklad také ukazuje, jak zapnout stálost pro <xref:System.Activities.WorkflowApplication>. Tato ukázka konkrétní použijeme trvanlivý časovače, ve kterých budou data pracovního postupu uvolněna do databáze trvalost během doby nečinnosti při čekání na časovač vyprší. Tato implementace mohou sloužit také pro další akce trvalost. Tento příklad ukazuje, jak nastavit připojovací řetězec trvalost s SQL serverem a postup vytvoření instance úložiště s cílem zachovat data instance pracovního postupu. Logika je k dispozici o tom, jak obnovit pracovního postupu, jakmile se vyvolá událost, takže je spustitelného k instanci pracovního postupu.  
   
- Krocích tuto ukázku, zobrazí se, že doba, ve kterém předdefinované zpoždění začne a dokončení, který zase způsobí, že e-mailová zpráva k odeslání. Z tohoto místa se zastaví AbsoluteDelay aktivity do zadané <xref:System.DateTime> (nebo 0 sekund, pokud <xref:System.DateTime> vypršela platnost) který naopak k odeslání e-mailu po vypršení platnosti. Tato rutina ukáže případech předdefinované použití dvou různých <xref:System.Activities.Statements.Delay> funkce a kdy AbsoluteDelay aktivitu.  
+ Krocích tuto ukázku, zobrazí se, že čas, ve kterém vestavěnou prodlevu zahájí a dokončení, který pak může způsobit e-mailovou zprávu k odeslání. Z tohoto místa se zastaví AbsoluteDelay aktivity do zadané <xref:System.DateTime> (nebo 0 sekund, pokud <xref:System.DateTime> vypršela platnost) který naopak k odeslání e-mailu po vypršení platnosti. Tato rutina ukáže případech předdefinované použití dvou různých <xref:System.Activities.Statements.Delay> funkce a kdy AbsoluteDelay aktivitu.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   

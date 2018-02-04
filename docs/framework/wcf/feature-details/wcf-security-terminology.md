@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,21 +14,22 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: d63871f45fc8e209eb562fec7b208b10f67414b1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 352615238d95cf02788cf88ef412a11ffd2faf37
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Může být obeznámeni některé z technologiím použitým když hovoříte o zabezpečení. Toto téma poskytuje krátké vysvětlení některých termínů zabezpečení, ale není určená k poskytování komplexní dokumentaci pro každou položku.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]termínů používaných v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dokumentaci najdete v tématu [základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] termínů používaných v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dokumentaci najdete v tématu [základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md).  
   
  seznam řízení přístupu (ACL)  
  Seznam ochranu zabezpečení, která se vztahuje k objektu. (Objekt může být soubor, procesů, události či něco jinak museli popisovač zabezpečení.) Položku v seznamu ACL je položka řízení přístupu (ACE). Existují dva typy seznamů řízení přístupu: volitelný a systému.  
@@ -103,7 +105,7 @@ Může být obeznámeni některé z technologiím použitým když hovoříte o 
  ve formátu prostého textu  
  Zpráva, která nejsou šifrována. Zprávy ve formátu prostého textu se někdy označují jako *nezašifrovaný text* zprávy.  
   
- oprávnění  
+ privilege  
  Práva uživatele k provedení různých operací souvisejících s systému, například vypínání systému, načítání ovladače zařízení nebo změně systémového času. Přístupový token uživatele obsahuje seznam oprávnění, že uživatel nebo uživatele skupiny uchování.  
   
  privátní klíč  
@@ -184,7 +186,7 @@ Může být obeznámeni některé z technologiím použitým když hovoříte o 
  Software, který rozhodne, zda je daný soubor důvěryhodný. Toto rozhodnutí je založena na spojených se souborem certifikátu.  
   
  Hlavní název uživatele (UPN)  
- Název uživatelského účtu (někdy označovány jako *přihlašovací uživatelské jméno*) a název domény určujícího doménu, ve kterém se nachází uživatelský účet. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je: someone@example.com (jako u e-mailové adresy).  
+ Název uživatelského účtu (někdy označovány jako *přihlašovací uživatelské jméno*) a název domény určujícího doménu, ve kterém se nachází uživatelský účet. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je: someone@example.com (jako u e-mailovou adresu).  
   
 > [!NOTE]
 >  Kromě standardní UPN formuláře [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přijímá UPN v podobě nižší úrovně, například cohowinery.com\someone.  

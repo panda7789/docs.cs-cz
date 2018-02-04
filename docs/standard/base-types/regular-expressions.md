@@ -26,21 +26,21 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b9922576e4ef942e896f365c44cebec717abe3b4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 145e0c9a722afd9f49216058604936189c003f17
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="net-regular-expressions"></a>Regulární výrazy rozhraní .NET
-Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Extenzivní notace vzoru regulárních výrazů umožňuje rychlé analyzování velkého množství textu pro vyhledání konkrétních znakových vzorů; pro ověření toho, zda text souhlasí s předdefinovaným vzorem (jako je e-mailová adresa); pro vyjmutí, úpravy, nahrazení nebo odstranění textových podřetězců a pro přidávání vyjmutých řetězců do kolekce za účelem vytvoření sestavy. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  
+Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Rozsáhlé porovnávání notace regulárních výrazů umožňuje rychle analyzovat velké objemy text k vyhledání konkrétní znak vzory; k ověření text tak, aby to odpovídá předdefinované vzoru (například e-mailovou adresu); k extrakci, upravit, nahraďte nebo odstranit text dílčích řetězců; a pokud chcete generovat sestavy do kolekce přidat extrahovaných řetězců. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  
   
 ## <a name="how-regular-expressions-work"></a>Principy regulárních výrazů  
  Základnu textu pomocí regulárních výrazů zpracování je modul regulárních výrazů, která je reprezentována <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> objekt v rozhraní .NET. Požadované minimum pro zpracování textu pomocí regulárních výrazů je předání následujících dvou informací modulu regulárních výrazů:  

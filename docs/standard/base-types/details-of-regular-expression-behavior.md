@@ -15,18 +15,18 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c875fee667639923faf44c79afd6488cfc205e20
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c574ab8ddf506802fb42f53b5212dcb4a3bd9d34
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární výraz objekt přiřazení vzorce která zahrnuje modul tradiční Nedeterministická konečné Automaton (NFA) jako je například použité Perl, Python, Emacs a Tcl. To je odlišné z rychlejší, ale omezenější, čistý regulární výraz moduly deterministický konečné Automaton (DFA) jako aplikace awk, egrep nebo lex. To je také odlišné od standardizované, ale pomalejší, k zařízení NFAs POSIX. Následující část popisuje tři typy modulů regulární výraz a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovaná pomocí modul tradiční NFA.  
@@ -145,7 +145,7 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
     |-------------|-----------------|  
     |`^`|Začne porovnávání na začátku řetězce.|  
     |`[A-Z0-9]`|Porovná libovolný znak číselné nebo alfanumerické znaky. (Porovnání se velká a malá písmena.)|  
-    |`([-!#$%&'.*+/=?^`{} &#124; ~\w]) *.|Porovná nula nebo více výskytů libovolný znak, nebo libovolná z následujících znaků:-,!, #, $, % &,:,., *, +, /, =,?, ^, ', {,}, &#124; nebo ~.|  
+    |`([-!#$%&'.*+/=?^`{}&#124;~\w])*`|Porovná nula nebo více výskytů libovolný znak, nebo libovolná z následujících znaků:-,!, #, $, % &,:,., *, +, /, =,?, ^, ', {,}, &#124; nebo ~.|  
     |`(?<=[A-Z0-9])`|Vyhledejte za předchozí znak, který musí být číselné nebo alfanumerické znaky. (Porovnání se velká a malá písmena.)|  
     |`$`|Ukončí porovnávání na konci řetězce.|  
   

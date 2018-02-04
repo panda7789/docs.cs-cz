@@ -3,45 +3,36 @@ title: "Návratové hodnoty REF a ref lokální proměnné (Průvodce C#)"
 description: "Zjistěte, jak definovat a použijte ref vrátit a místní hodnoty ref"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 05/30/2017
+ms.date: 01/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.assetid: 18cf7a4b-29f0-4b14-85b8-80af754aabd8
-ms.openlocfilehash: 1d8fb092b578602b5d4f791a3fd14f47dfae1ba6
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: a74563c0d24b6cd2a2fa8534787f078f3cc92674
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="ref-returns-and-ref-locals"></a>Vrátí REF a místní hodnoty ref
 
-Od verze jazyka C# 7, C# podporuje odkaz návratové hodnoty (ref vrátí). Odkaz vrátí hodnotu umožňuje metodu pro odkaz na objekt, nikoli hodnotu, vrátí zpět do volající. Volající může zvolte zacházet s vráceného objektu vrácena jako v případě, že byly vráceny, hodnotou nebo odkazem. Hodnota vrácená odkazem, volající zpracovává jako referenční místo místní ref je hodnota.
+Od verze jazyka C# 7, C# podporuje odkaz návratové hodnoty (ref vrátí). Odkaz vrátí hodnotu umožňuje metodu pro odkaz na proměnnou, nikoli hodnotu, vrátí zpět do volající. Volající může zvolte zacházet s Vrácená proměnná, jako kdyby byly vráceny, hodnotou nebo odkazem. Volající můžete vytvořit nové proměnné, který je sám odkaz na vrácené hodnoty, názvem ref místní.
 
 ## <a name="what-is-a-reference-return-value"></a>Co je návratovou hodnotu odkazu?
 
-Většina vývojářů obeznámeni s předáním argumentu volané metodě *odkazem*. Seznam obsahuje hodnotu předanou odkaz a veškeré změny provedené zavolat metodu na jeho hodnotu argumentu zavolat metodu jsou vrácen volajícímu. A *odkazovat návratovou hodnotu* protikladem:
+Většina vývojářů obeznámeni s předáním argumentu volané metodě *odkazem*. Seznam obsahuje proměnnou předání odkazem a veškeré změny provedené zavolat metodu na hodnotu argumentu zavolat metodu je možné vysledovat volajícího. A *odkazovat návratovou hodnotu* znamená, že metoda vrátí *odkaz* (nebo alias) některé proměnné jejichž oborem, který zahrnuje metodu a jejichž doba platnosti musíte rozšířit nad rámec návratový metody. Úpravy návratovou hodnotu metody volajícího jsou vytvářeny proměnnou, kterou vrátí metodu.
 
-- Vrácená hodnota zavolat metodu, místo, předaný argument je odkaz.
+Deklarace, který vrací metodu *odkazovat návratová hodnota* označuje, že metoda vrátí alias proměnné. Návrh je často, volající kód mají mít přístup k této proměnné prostřednictvím alias, včetně jej upravit. Vyplývá, že metody vrácení podle reference nemůže mít návratový typ `void`.
 
-- Volající, nikoli zavolat metodu, můžete upravit hodnota vrácená metodou.
+Existují některá omezení na výrazu, která vrací metodu jako návratová hodnota odkazu. Mezi ně patří:
 
-- Místo úpravy k argumentu, které se projeví v stav objektu na volajícího se projeví změny návratovou hodnotu metody volajícího ve stavu objektu, jehož metoda byla volána.
+- Návratová hodnota musí mít životnost, který je delší než provádění metody. Jinými slovy nemůže být místní proměnné v metodě, která vrátí ji. Dá se instanci nebo statické pole třídy, nebo může být argument předaný metodě. Probíhá pokus o vraťte se generuje chyba kompilátoru CS8168, místní proměnné "nemůže vrátit místní 'obj' odkazem protože se nejedná o místní ref."
 
-Návratové hodnoty odkaz můžete vytvořit kompaktnější kódu, jakož i povolit vystavit pouze jednotlivé datové položky, jako je například k elementu pole, které jsou důležité pro volající objekt. Tím se snižuje pravděpodobnost, že volající nechtěně změnit stav objektu.
+- Návratová hodnota nemůže být literál `null`. Probíhá pokus o vrátit `null` vygeneruje Chyba kompilátoru CS8156, "výraz nelze použít v tomto kontextu, protože nemusí být vrátil odkazem."
 
-Existují některá omezení na hodnotu, která metoda může vrátit jako návratová hodnota odkazu. Mezi ně patří:
-
-- Návratová hodnota nemůže být `void`. Probíhá pokus o definovat metodu s `void` návratovou hodnotu odkazu vygeneruje Chyba kompilátoru CS1547, "– klíčové slovo 'void' nelze v tomto kontextu použít."
+   Metoda s návratovým ref může vrátit alias do proměnné, jehož hodnota je aktuálně hodnotu null (bez instancí) nebo [typ s možnou hodnotou Null](../nullable-types/index.md) pro typ hodnoty.
  
-- Návratová hodnota nemůže být místní proměnné v metodu, která vrátí. musí mít obor, který je mimo metodu, která vrátí ji. Dá se instanci nebo statické pole třídy, nebo může být argument předaný metodě. Probíhá pokus o vraťte se generuje chyba kompilátoru CS8168, místní proměnné "nemůže vrátit místní 'obj' odkazem protože se nejedná o místní ref."
-
-- Návratová hodnota nemůže být `null`. Probíhá pokus o vrátit `null` vygeneruje Chyba kompilátoru CS8156, "výraz nelze použít v tomto kontextu, protože nemusí být vrátil odkazem."
-
-   Pokud metoda s návratovým ref musí vrátit hodnotu null, můžete buď vrátit hodnotu null (bez instancí) pro typ odkaz nebo [typ s možnou hodnotou Null](../nullable-types/index.md) pro typ hodnoty.
- 
-- Návratová hodnota nemůže být konstanta, člena výčtu nebo vlastnost `class` nebo `struct`. Na tyto vrácení vygeneruje Chyba kompilátoru CS8156, "výraz nelze použít v tomto kontextu, protože nemusí být vrátil odkazem."
+- Návratová hodnota nemůže být konstanta, člena výčtu, podle hodnota vrácená vlastnost nebo metoda `class` nebo `struct`. Na tyto vrácení vygeneruje Chyba kompilátoru CS8156, "výraz nelze použít v tomto kontextu, protože nemusí být vrátil odkazem."
 
 Kromě toho protože asynchronní metodu může vrátit před dokončením provádění, zatímco vrácená hodnota je stále neznámé, odkaz návratové hodnoty nejsou povoleny u asynchronní metody.
  
@@ -53,7 +44,7 @@ Definice návratové hodnoty ref přidáním [ref](../../language-reference/keyw
 public ref Person GetContactInformation(string fname, string lname);
 ```
 
-Kromě toho název objektu vrácené každou [vrátit](../../language-reference/keywords/return.md) příkaz v těle metoda musí předcházet [ref](../../language-reference/keywords/ref.md) – klíčové slovo. Například následující `return` příkaz vrátí `Person` objekt s názvem `p` odkazem:
+Kromě toho název objektu vrácené každou [vrátit](../../language-reference/keywords/return.md) příkaz v těle metoda musí předcházet [ref](../../language-reference/keywords/ref.md) – klíčové slovo. Například následující `return` příkaz vrátí odkaz na `Person` objekt s názvem `p`:
 
 ```csharp
 return ref p;
@@ -61,25 +52,40 @@ return ref p;
 
 ## <a name="consuming-a-ref-return-value"></a>Využívání návratové hodnoty ref
 
-Volající může zpracovat ref návratovou hodnotu v některém ze dvou způsobů:
+Ref vrátí, zda je hodnota alias jiné proměnné v oboru zavolat metodu. Dokáže interpretovat jakékoli využití návratový ref jako použití proměnné ho aliasy:
 
-- Jako obyčejnou hodnota vrácená metodou hodnotou. Volající můžete ignorovat, že návratová hodnota je odkaz návratovou hodnotu. V takovém případě změny provedené v hodnoty vrácené volání metody, které se neprojeví v stav volané typu. Pokud typ hodnoty vrácené hodnoty, všechny změny hodnoty vrácené volání metody, které se neprojeví v stav volané typu.
+- Při přiřazení jeho hodnota se přiřazení hodnoty proměnné ho aliasy.
+- Při čtení jeho hodnota se čtení hodnoty proměnné ho aliasy.
+- Pokud se ji vrátíte *odkazem* alias se vrátíte k dané stejné proměnné.
+- Pokud předáte na jinou metodu *odkazem* jsou předáním odkazu na proměnnou ho aliasy.
+- Pokud vytvoříte [ref místní](#ref-local) alias, provedete nový alias stejnou proměnnou.
 
-- Jako referenci vrátíte hodnotu. Volající musí definovat proměnnou, ke kterému je přiřazen návratovou hodnotu odkazu jako [ref místní](#ref-local), a všechny změny na hodnoty vrácené volání metody, které se projeví ve stavu volané typu. 
 
 ## <a name="ref-locals"></a>Místní hodnoty REF
 
-Pro zpracování návratovou hodnotu odkazu jako odkaz, volající musí deklarovat hodnota, která má být *ref místní* pomocí `ref` – klíčové slovo. Například pokud je hodnota vrácené `Person.GetContactInfomation` metoda má být využívány jako odkaz, nikoli hodnotu, volání metody, které se zobrazí jako:
+Předpokládejme, `GetContactInformation` metoda je deklarován jako ref návratový:
+
+```csharp
+public ref Person GetContactInformation(string fname, string lname)
+```
+
+-Hodnota přiřazení čte hodnotu proměnné a přiřadí ji k nové proměnné:
+
+```csharp
+Person p = contacts.GetContactInformation("Brandie", "Best");
+```
+
+Předchozí přiřazení deklaruje `p` jako místní proměnné. Počáteční hodnoty budou zkopírována z čtení hodnoty vrácené `GetContactInformation`. Všechny budoucí přiřazení `p` nedojde ke změně hodnoty proměnné vrácený `GetContactInformation`. Proměnná `p` již není alias proměnnou vrátila.
+
+Deklarování *ref místní* proměnné pro kopírování alias na původní hodnotu. V následující přiřazení `p` je alias proměnnou, kterou vrátil `GetContactInformation`.
 
 ```csharp
 ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 ```
 
-Všimněte si, že `ref` – klíčové slovo se používá i před místní deklarace proměnné *a* před voláním metody. Nepodařilo se současně obsahovat `ref` klíčová slova v deklarace proměnné a přiřazení má za následek chyby kompilátoru CS8172, "nelze inicializovat proměnnou podle odkazu s hodnotou." 
- 
-Následné změny `Person` objekt vrácený metodou, se projeví v `contacts` objektu.
+Následné použití `p` je stejný jako použití proměnné vrácený `GetContactInformation` protože `p` je alias pro tuto proměnnou. Změny `p` změnit také proměnnou, kterou vrátil `GetContactInformation`.
 
-Pokud `p` není definován jako místní ref pomocí `ref` – klíčové slovo, všechny změny provedené v `p` volajícího se neprojeví v `contacts` objektu.
+Všimněte si, že `ref` – klíčové slovo se používá i před místní deklarace proměnné *a* před voláním metody. Nepodařilo se současně obsahovat `ref` klíčová slova v deklarace proměnné a přiřazení má za následek chyby kompilátoru CS8172, "nelze inicializovat proměnnou podle odkazu s hodnotou." 
  
 ## <a name="ref-returns-and-ref-locals-an-example"></a>Vrátí REF a místní hodnoty ref: příklad
 

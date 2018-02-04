@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - .NET Framework, extensibility
 - versioning [.NET Framework], add-ins
 ms.assetid: 8dd45b02-7218-40f9-857d-40d7b98b850b
-caps.latest.revision: "42"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 030b84245a5cec09dac3133b04235c65f7bb2d80
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4d288d321063512f91ad94b417bb1a6bf38c9ef9
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="add-ins-and-extensibility"></a>Doplňky a rozšíření
 <a name="top"></a>Doplňky poskytují rozšířené funkce nebo služby pro hostitelskou aplikaci. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje programovací model, který mohou vývojáři k vývoji doplňky a jejich aktivaci ve svých aplikacích hostitele. Model se dosahuje pomocí vytváření komunikační kanál mezi hostitelem a doplněk. Model je implementována pomocí typy v <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>, a <xref:System.AddIn.Contract> obory názvů.  
@@ -105,7 +107,7 @@ Kanál doplňku
   
 <a name="distinguishing_between_addins_and_hosts"></a>   
 ## <a name="distinguishing-between-add-ins-and-hosts"></a>Rozlišit doplňky a hostitele  
- Rozdíl mezi-v a hostitele je jenom hostitel je ten, který aktivuje v doplňku. Hostiteli může být větší dvou, jako je například aplikace word zpracování a jeho programy pro kontrolu pravopisu; nebo hostitele může být menší ze dvou, jako je například klienta rychlého zasílání zpráv, který se vloží přehrávač médií. Model doplňku podporuje doplňky ve scénářích klient i server. Příklady doplňky serveru zahrnují doplňky, které poskytují poštovních serverů s vyhledáváním virů, filtry nevyžádané pošty a ochranu IP. Klient doplňku příklady zahrnují doplňky odkaz pro textové editory, specializované funkce grafických aplikací a her a viry pro místní e-mailových klientů.  
+ Rozdíl mezi-v a hostitele je jenom hostitel je ten, který aktivuje v doplňku. Hostiteli může být větší dvou, jako je například aplikace word zpracování a jeho programy pro kontrolu pravopisu; nebo hostitele může být menší ze dvou, jako je například klienta rychlého zasílání zpráv, který se vloží přehrávač médií. Model doplňku podporuje doplňky ve scénářích klient i server. Příklady doplňky serveru zahrnují doplňky, které poskytují poštovních serverů s vyhledáváním virů, filtry nevyžádané pošty a ochranu IP. Klient doplňku příklady zahrnují doplňky odkaz pro textové editory, specializované funkce grafických aplikací a her a pro místní e-mailové klienty pro vyhledávání virů.  
   
  [Zpět na začátek](#top)  
   

@@ -3,20 +3,21 @@ title: "Přidávání tiskových sestav do aplikací v jazyce Visual Studio"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - printing [Visual Studio], reports
 - reports [Visual Basic], printing in Visual Studio
 ms.assetid: 93928405-ef41-495e-bce2-9d43d5a7080a
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4ce2a8b12d8202a9f201a82b0d4a571249210d48
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 2b0300f31e4c75c72a72590ad22c19441acb7519
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="adding-printable-reports-to-visual-studio-applications"></a>Přidávání tiskových sestav do aplikací v jazyce Visual Studio
 Visual Studio podporuje celou řadu řešení pro sestavy můžete přidat bohaté data sestavy do aplikace Visual Basic. Můžete vytvořit a přidat sestav pomocí ovládacích prvků prohlížeče sestav, Crystal Reports nebo SQL Server Reporting Services.  
@@ -68,7 +69,7 @@ Visual Studio podporuje celou řadu řešení pro sestavy můžete přidat bohat
   
 -   Naplánovat, zpracování sestav tak, aby můžete zadat přesně dobu spuštění sestavy.  
   
--   Distribuce sestav prostřednictvím e-mailu nebo do umístění sdílené složky souborů.  
+-   Distribuce sestav e-mailem nebo do umístění sdílené složky souborů.  
   
 -   Vykazování ad hoc tak, aby obchodní uživatelé můžete vytvořit sestavy, podle potřeby.  
   

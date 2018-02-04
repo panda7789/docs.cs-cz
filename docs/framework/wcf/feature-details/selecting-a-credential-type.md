@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 629d5c55bd679539220566db17401151a1339d18
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9e6b3d84db619ba1b4b5785b134cfe87d1b15cdc
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které government problémy k prokázání přístupem v zemi nebo oblasti. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přihlašovací údaje mohou mít mnoho forem, jako je například uživatelské jméno tokeny a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
@@ -39,7 +41,7 @@ ms.lasthandoff: 12/22/2017
 |Žádné|Určuje, že klient nemusí k dispozici žádné pověření. Výsledkem anonymním klientem.|  
 |Základní|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu HTTP: Basic a ověřování algoritmem Digest](http://go.microsoft.com/fwlink/?LinkID=88313).|  
 |Ověřování algoritmem Digest|Určuje, ověřování hodnotou hash pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu HTTP: Basic a ověřování algoritmem Digest](http://go.microsoft.com/fwlink/?LinkID=88313).|  
-|NTLM|Určuje NT LAN Manager (NTLM) authentication. To se používá, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Můžete také zakázat jeho použití jako zálohu nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, které příčiny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
+|Ntlm|Určuje NT LAN Manager (NTLM) authentication. To se používá, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Můžete také zakázat jeho použití jako zálohu nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, které příčiny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
 |Windows|Určuje ověřování systému Windows. Chcete-li zadat pouze protokol Kerberos v doméně systému Windows, nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false` (výchozí hodnota je `true`).|  
 |certifikát|Provede ověření klienta pomocí certifikátu X.509.|  
 |Heslo|Uživatel musí zadat uživatelské jméno a heslo. Ověření dvojici jméno a heslo uživatele pomocí ověřování systému Windows nebo jiné vlastní řešení.|  
@@ -106,7 +108,7 @@ ms.lasthandoff: 12/22/2017
 > [!IMPORTANT]
 >  Je situaci znát při nelze přepnout identity (to znamená, když vytvoření zabezpečení kontext je na výchozí chování). Pokud vytvoříte službu, která komunikuje s druhou služby, identita použitý k otevření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta ke službě druhý nelze změnit. Pokud je povoleno více klientů používat první službu a službu zosobňuje klienti při přístupu ke službě druhý to všechno bude problém. Pokud službu znovu použije stejného klienta pro všechny volající, všechna volání do druhé služby hotovi s identitou první volající, který byl použitý k otevření klienta ke službě druhý. Jinými slovy služba používá identity první klienta pro všechny jeho klienty komunikovat se službou druhý. To může vést ke zvýšení úrovně oprávnění. Pokud není toto chování žádoucí vaší služby, musíte sledovat každou volajícího a vytvořit nového klienta ke službě druhý pro každý odlišné volajícího a zajistit, aby používal službu pouze správné klienta pro správné volající komunikovat se službou druhý.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]přihlašovací údaje a zabezpečených relací, najdete v části [důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] přihlašovací údaje a zabezpečených relací, najdete v části [důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  
