@@ -1,4 +1,4 @@
-# [Rychlé starty](index.md)
+# [Rychlý start](index.md)
 ## [Hello World](hello-world.yml)
 ## [Čísla v jazyce C#](numbers-in-csharp.yml)
 ## [Větve a smyčky](branches-and-loops.yml)
