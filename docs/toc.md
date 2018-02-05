@@ -209,7 +209,7 @@
 <!-- Start of C# Content -->
 # [Průvodce jazykem C#](csharp/index.md)
 ## [Začínáme](csharp/getting-started/)
-## [Rychlé starty](csharp/quick-starts/)
+## [Rychlý start](csharp/quick-starts/)
 ## [Kurzy](csharp/tutorials/)
 ## [Prohlídka jazyka C#](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
