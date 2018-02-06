@@ -5,27 +5,28 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 481e0751c45054a9f99b8302ed3c2d12abc052ea
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a6bfa60cce332deef2a72da836f96dbe37e65d2a
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/05/2018
 ---
-# <a name="how-to-modify-an-office-open-xml-document-c"></a><span data-ttu-id="1cade-102">Postupy: Úprava dokument Office Open XML (C#)</span><span class="sxs-lookup"><span data-stu-id="1cade-102">How to: Modify an Office Open XML Document (C#)</span></span>
-<span data-ttu-id="1cade-103">Toto téma představuje příklad, který otevře dokument Office Open XML, upraví se a uloží ho.</span><span class="sxs-lookup"><span data-stu-id="1cade-103">This topic presents an example that opens an Office Open XML document, modifies it, and saves it.</span></span>  
+# <a name="how-to-modify-an-office-open-xml-document-c"></a><span data-ttu-id="cd518-102">Postupy: Úprava dokument Office Open XML (C#)</span><span class="sxs-lookup"><span data-stu-id="cd518-102">How to: Modify an Office Open XML Document (C#)</span></span>
+<span data-ttu-id="cd518-103">Toto téma představuje příklad, který otevře dokument Office Open XML, upraví se a uloží ho.</span><span class="sxs-lookup"><span data-stu-id="cd518-103">This topic presents an example that opens an Office Open XML document, modifies it, and saves it.</span></span>  
   
- <span data-ttu-id="1cade-104">Další informace o Office Open XML, najdete v části [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).</span><span class="sxs-lookup"><span data-stu-id="1cade-104">For more information on Office Open XML, see [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).</span></span>  
+ <span data-ttu-id="cd518-104">Další informace o Office Open XML, najdete v části [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) a [www.ericwhite.com](http://ericwhite.com/).</span><span class="sxs-lookup"><span data-stu-id="cd518-104">For more information on Office Open XML, see [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) and [www.ericwhite.com](http://ericwhite.com/).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="1cade-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="1cade-105">Example</span></span>  
- <span data-ttu-id="1cade-106">Tento příklad vyhledá první element odstavce do dokumentu.</span><span class="sxs-lookup"><span data-stu-id="1cade-106">This example finds the first paragraph element in the document.</span></span> <span data-ttu-id="1cade-107">Načte text z odstavce a pak odstranění veškerého textu spustí v odstavci.</span><span class="sxs-lookup"><span data-stu-id="1cade-107">It retrieves the text from the paragraph, and then deletes all text runs in the paragraph.</span></span> <span data-ttu-id="1cade-108">Vytvoří nový text spuštění, který se skládá z první text odstavce, který byl převeden na velká písmena.</span><span class="sxs-lookup"><span data-stu-id="1cade-108">It creates a new text run that consists of the first paragraph text that has been converted to upper case.</span></span> <span data-ttu-id="1cade-109">Poté serializuje změněné XML do balíčku Open XML a zavře.</span><span class="sxs-lookup"><span data-stu-id="1cade-109">It then serializes the changed XML into the Open XML package and closes it.</span></span>  
+## <a name="example"></a><span data-ttu-id="cd518-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="cd518-105">Example</span></span>  
+ <span data-ttu-id="cd518-106">Tento příklad vyhledá první element odstavce do dokumentu.</span><span class="sxs-lookup"><span data-stu-id="cd518-106">This example finds the first paragraph element in the document.</span></span> <span data-ttu-id="cd518-107">Načte text z odstavce a pak odstranění veškerého textu spustí v odstavci.</span><span class="sxs-lookup"><span data-stu-id="cd518-107">It retrieves the text from the paragraph, and then deletes all text runs in the paragraph.</span></span> <span data-ttu-id="cd518-108">Vytvoří nový text spuštění, který se skládá z první text odstavce, který byl převeden na velká písmena.</span><span class="sxs-lookup"><span data-stu-id="cd518-108">It creates a new text run that consists of the first paragraph text that has been converted to upper case.</span></span> <span data-ttu-id="cd518-109">Poté serializuje změněné XML do balíčku Open XML a zavře.</span><span class="sxs-lookup"><span data-stu-id="cd518-109">It then serializes the changed XML into the Open XML package and closes it.</span></span>  
   
- <span data-ttu-id="1cade-110">Tento příklad používá třídy v sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="1cade-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="1cade-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="1cade-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="cd518-110">Tento příklad používá třídy v sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="cd518-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="cd518-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="cd518-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -147,13 +148,13 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="1cade-112">Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převeden na velká prvním odstavci v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="1cade-112">If you open `SampleDoc.docx` after running this program, you can see that this program converted the first paragraph in the document to upper case.</span></span>  
+ <span data-ttu-id="cd518-112">Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převeden na velká prvním odstavci v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="cd518-112">If you open `SampleDoc.docx` after running this program, you can see that this program converted the first paragraph in the document to upper case.</span></span>  
   
- <span data-ttu-id="1cade-113">Spuštění s popsané v dokumentu Open XML ukázka [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="1cade-113">When run with the sample Open XML document described in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:</span></span>  
+ <span data-ttu-id="cd518-113">Spuštění s popsané v dokumentu Open XML ukázka [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="cd518-113">When run with the sample Open XML document described in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:</span></span>  
   
 ```  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1cade-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="1cade-114">See Also</span></span>  
- [<span data-ttu-id="1cade-115">Pokročilé techniky dotazu (technologie LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="1cade-115">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="cd518-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="cd518-114">See Also</span></span>  
+ [<span data-ttu-id="cd518-115">Pokročilé techniky dotazu (technologie LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="cd518-115">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
