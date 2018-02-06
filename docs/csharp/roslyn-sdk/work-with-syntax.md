@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: fa3b7af871380d4f18ebe7ef4f5bc5963cc247c4
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 09d07e6257ad7d32d75328a8c1850888b4d0b937
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="work-with-syntax"></a>Práce s syntaxe
 
@@ -89,7 +89,7 @@ Příkaz uzel uvnitř bloku má rozpětí indikován jeden svislé čáry (|). O
 
 ## <a name="kinds"></a>Typy
 
-Má každý uzel, token nebo trivia <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> vlastnost typu <xref:System.Int32?displayProperty=fullName>, identifikující reprezentované element Přesná syntaxe. Tato hodnota může být převeden na konkrétní jazyk výčet; Každý jazyk C# nebo VB, má jeden `SyntaxKind` – výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=fullName> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=fullName>, v uvedeném pořadí), jsou uvedeny všechny možné uzlů, tokeny a trivia prvky v gramatice. Tento převod je možné provést automaticky přímým přístupem < xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*? displayProperty = nameWithType > nebo < xref: Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*? displayProperty = nameWithType > rozšiřující metody.
+Má každý uzel, token nebo trivia <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> vlastnost typu <xref:System.Int32?displayProperty=nameWithType>, identifikující reprezentované element Přesná syntaxe. Tato hodnota může být převeden na konkrétní jazyk výčet; Každý jazyk C# nebo VB, má jeden `SyntaxKind` – výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, v uvedeném pořadí), jsou uvedeny všechny možné uzlů, tokeny a trivia prvky v gramatice. Tento převod je možné provést automaticky přímým přístupem < xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*? displayProperty = nameWithType > nebo < xref: Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*? displayProperty = nameWithType > rozšiřující metody.
 
 <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> Vlastnost umožňuje snadno rozlišení více tras syntaxe uzlu typů, které sdílejí stejnou třídu uzlu. Pro tokeny a trivia tato vlastnost je jediný způsob, jak z jiné rozlišení jeden typ elementu. 
 

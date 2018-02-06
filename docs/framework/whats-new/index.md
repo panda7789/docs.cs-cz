@@ -3,22 +3,25 @@ title: "Co je nového v rozhraní .NET Framework"
 ms.custom: updateeachrelease
 ms.date: 05/02/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: what's new [.NET Framework]
+helpviewer_keywords:
+- what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e2aa6e67fc45aa02421433a295fdbf5657e4e551
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8d540e3201f0a310641005d95d9c3c0f3dc1d501
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -61,7 +64,7 @@ Rozhraní .NET Framework 4.7.1 obsahuje nové funkce v těchto oblastech:
 - [Jádro](#core471)
 - [Modul common language runtime (CLR)](#clr)
 - [Síťové služby](#net471)
-- [TECHNOLOGIE ASP.NET](#asp-net471) 
+- [ASP.NET](#asp-net471) 
 
 Kromě toho je hlavní fokusu v rozhraní .NET Framework 4.7.1 vylepšení přístupu, který umožňuje aplikaci poskytnout příslušné prostředí pro uživatele technologie usnadnění. Informace o vylepšení přístupnosti v rozhraní .NET Framework 4.7.1 najdete v tématu [co je nového v usnadnění v rozhraní .NET Framework](whats-new-in-accessibility.md). 
 
@@ -80,15 +83,15 @@ Pokud chcete vytvořit vlastní konfigurace tvůrce, odvozujete od abstraktní v
 
 **Spuštění funkce zjišťování**
 
-<xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=fullName> Třída poskytuje mechanismus pro určení, zda je na daný implementace rozhraní .NET v době kompilace nebo běhu podporován předdefinované funkce. Při kompilaci můžete kompilátor zkontrolujte, zda zadané pole existuje k určení, zda je podporováno funkci; Pokud ano, je generování kódu, který využívá této funkce. V době běhu aplikace může volat <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported%2A?displayProperty=nameWithType> metody před vytváření kódu v době běhu. Další informace najdete v tématu [přidejte pomocnou metodu popisující funkce podporovaná modulem runtime](https://github.com/dotnet/corefx/issues/17116).
+<xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=nameWithType> Třída poskytuje mechanismus pro určení, zda je na daný implementace rozhraní .NET v době kompilace nebo běhu podporován předdefinované funkce. Při kompilaci můžete kompilátor zkontrolujte, zda zadané pole existuje k určení, zda je podporováno funkci; Pokud ano, je generování kódu, který využívá této funkce. V době běhu aplikace může volat <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported%2A?displayProperty=nameWithType> metody před vytváření kódu v době běhu. Další informace najdete v tématu [přidejte pomocnou metodu popisující funkce podporovaná modulem runtime](https://github.com/dotnet/corefx/issues/17116).
 
 **Jsou Serializovatelné typy hodnot řazené kolekce členů**
 
-Od verze rozhraní .NET Framework 4.7.1, <xref:System.ValueTuple?displayProperty=fullName> a jeho přidružené obecné typy jsou označeny jako [Serializable](xref:System.SerializableAttribute), což umožňuje binární serializace. To měli migrace řazené kolekce členů typy, jako například <xref:System.Tuple%603> a <xref:System.Tuple%604>, na hodnota řazené kolekce členů typy jednodušší. Další informace najdete v tématu "Kompilátoru – ValueTuple je serializovatelný" v [Runtime rozhraní .NET Framework 4.7.1 a funkce kompilátoru](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features) příspěvku na blogu.
+Od verze rozhraní .NET Framework 4.7.1, <xref:System.ValueTuple?displayProperty=nameWithType> a jeho přidružené obecné typy jsou označeny jako [Serializable](xref:System.SerializableAttribute), což umožňuje binární serializace. To měli migrace řazené kolekce členů typy, jako například <xref:System.Tuple%603> a <xref:System.Tuple%604>, na hodnota řazené kolekce členů typy jednodušší. Další informace najdete v tématu "Kompilátoru – ValueTuple je serializovatelný" v [Runtime rozhraní .NET Framework 4.7.1 a funkce kompilátoru](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features) příspěvku na blogu.
 
 **Podpora pro odkazy jen pro čtení**
 
-Rozhraní .NET Framework 4.7.1 přidá <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute?displayProperty=fullName>. Tento atribut slouží k označení členy, kteří mají návratové typy ref jen pro čtení, nebo parametry kompilátory jazyka. Další informace najdete v tématu "Kompilátoru – podpora pro ReadOnlyReferences" v [Runtime rozhraní .NET Framework 4.7.1 a funkce kompilátoru](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features) příspěvku na blogu. Informace o návratové hodnoty ref najdete v tématu [Ref vrátit hodnoty a ref lokální proměnné (C# průvodce)](~/docs/csharp/programming-guide/classes-and-structs/ref-returns.md) a [Ref návratové hodnoty (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/ref-return-values.md).
+Rozhraní .NET Framework 4.7.1 přidá <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute?displayProperty=nameWithType>. Tento atribut slouží k označení členy, kteří mají návratové typy ref jen pro čtení, nebo parametry kompilátory jazyka. Další informace najdete v tématu "Kompilátoru – podpora pro ReadOnlyReferences" v [Runtime rozhraní .NET Framework 4.7.1 a funkce kompilátoru](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features) příspěvku na blogu. Informace o návratové hodnoty ref najdete v tématu [Ref vrátit hodnoty a ref lokální proměnné (C# průvodce)](~/docs/csharp/programming-guide/classes-and-structs/ref-returns.md) a [Ref návratové hodnoty (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/ref-return-values.md).
 
 <a name="clr" />
 #### <a name="common-language-runtime-clr"></a>Modul common language runtime (CLR)
@@ -144,7 +147,7 @@ Rozhraní .NET Framework 4.7 obsahuje nové funkce v těchto oblastech:
 
 - [Jádro](#Core47)
 - [Síťové služby](#net47)
-- [TECHNOLOGIE ASP.NET](#ASP-NET47)
+- [ASP.NET](#ASP-NET47)
 - [Windows Communication Foundation (WCF)](#wcf47)
 - [Windows Forms](#wf47)
 - [Windows Presentation Foundation (WPF)](#WPF47)
@@ -245,7 +248,7 @@ WPF je tisk rozhraní API v <xref:System.Printing.PrintQueue?displayProperty=nam
 
 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] Obsahuje nové funkce v těchto oblastech:
 
-- [TECHNOLOGIE ASP.NET](#ASPNET462)
+- [ASP.NET](#ASPNET462)
 
 - [Znak kategorií](#Strings)
 
@@ -1446,7 +1449,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 <a name="tailored"></a> 
 ### [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]
- [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]aplikace jsou navrženy pro konkrétní typy zařízení a využít síly operačního systému Windows. Podmnožinu [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo 4.5.1 je k dispozici pro vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pro Windows s použitím jazyka C# nebo Visual Basic. Tato část se nazývá [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] který je popsán v [přehled](http://go.microsoft.com/fwlink/?LinkId=228491) ve službě Windows Dev Center.
+ [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace jsou navrženy pro konkrétní typy zařízení a využít síly operačního systému Windows. Podmnožinu [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo 4.5.1 je k dispozici pro vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pro Windows s použitím jazyka C# nebo Visual Basic. Tato část se nazývá [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] který je popsán v [přehled](http://go.microsoft.com/fwlink/?LinkId=228491) ve službě Windows Dev Center.
 
 <a name="portable"></a> 
 ### <a name="portable-class-libraries"></a>Knihovny přenosných tříd

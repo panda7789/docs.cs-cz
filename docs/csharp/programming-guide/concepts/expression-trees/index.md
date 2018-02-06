@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 9f141c414ef56c591baa882d9495e591e6b08bc8
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5554b9e923b0cc1da4906cda1b7ca4e6aac75f11
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="expression-trees-c"></a>Stromy výrazů (C#)
 Stromy výrazů představují kódu ve stromu jako datová struktura, kde každý uzel je výraz, například, volání metody nebo binární operace, jako `x < y`.  
@@ -99,7 +100,7 @@ Console.WriteLine(factorial);
 // Prints 120.  
 ```
 
-Další informace najdete v tématu [generování dynamických metod s stromů výrazů v sadě Visual Studio 2010](http://go.microsoft.com/fwlink/p/?LinkId=169513), které se rovněž vztahují na novější verze sady Visual Studio.
+Další informace najdete v tématu [generování dynamických metod s stromů výrazů v sadě Visual Studio 2010](https://blogs.msdn.microsoft.com/csharpfaq/2009/09/14/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/), které se rovněž vztahují na novější verze sady Visual Studio.
   
 ## <a name="parsing-expression-trees"></a>Analýza stromů výrazů  
  Následující příklad kódu ukazuje, jak výraz strom, který představuje výrazu lambda `num => num < 5` lze rozložit na jejích částí.  
@@ -159,6 +160,6 @@ Console.WriteLine(expr.Compile()(4));
  <xref:System.Linq.Expressions>  
  [Postupy: provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
  [Postupy: úpravy stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)  
- [Lambda – výrazy](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
- [Přehled Dynamic Language Runtime](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
+ [Výrazy lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [Přehled DLR (Dynamic Language Runtime)](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
  [Programování konceptů (C#)](../../../../csharp/programming-guide/concepts/index.md)

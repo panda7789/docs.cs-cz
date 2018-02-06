@@ -15,11 +15,11 @@ ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f799f86c5dc597b0fe26197ab6321b9d3e82f664
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 5ebdd2d58f2fe502dbeb14148c303487774f531b
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody a umožňuje interoperabilitu mezi C# spravovaný kód a nespravovaného kódu.  
@@ -65,6 +65,8 @@ Téma popisuje metody a umožňuje interoperabilitu mezi C# spravovaný kód a n
   
 ## <a name="see-also"></a>Viz také  
  [Zlepšení výkonu interoperability](https://msdn.microsoft.com/library/ms998551.aspx)  
- [Úvod do vzájemná funkční spolupráce mezi COM a .NET](https://msdn.microsoft.com/library/office/bb610378.aspx) [Úvod zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md) [zařazování mezi spravovaných a nespravovaných kódu](../../../../docs/framework/interop/interop-marshaling.md)  
+ [Úvod do vzájemná funkční spolupráce mezi COM a .NET](https://msdn.microsoft.com/library/office/bb610378.aspx)  
+ [Úvod do zprostředkovatel komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
+ [Zařazování mezi spravovanými a nespravovanými kódu](../../../../docs/framework/interop/interop-marshaling.md)  
  [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

@@ -3,7 +3,8 @@ title: "Rozhraní .NET framework – Průvodce nasazením pro vývojáře"
 ms.custom: updateeachrelease
 ms.date: 12/14/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - developer's guide, deploying .NET Framework
@@ -12,12 +13,13 @@ ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f4a67df0729a85149984f0a72be668cdcee30216
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6b2083efabd6c16bafd8b241980c4cd413258ae5
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat z rozhraní .NET Framework 4.5 na verzi rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] s svoje aplikace.
@@ -28,11 +30,11 @@ Odkazy na stažení, najdete v části [Distribuovatelné balíčky](#redistribu
 
 - 4.7 rozhraní .NET framework pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=825299) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=825303))
 
-- [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=780597) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=780601))
+- [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=780597) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=780601))
 
-- [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=671729) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=671744))
+- [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=671729) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=671744))
 
-- [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=528222) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=528232))
+- [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=528222) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=528232))
 
 - Rozhraní .NET framework 4.5.2 pro všechny operační systémy ([instalačního programu webové](http://go.microsoft.com/fwlink/p/?LinkId=397703) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=397706))
 
@@ -77,7 +79,7 @@ Odkazy na stažení, najdete v části [Distribuovatelné balíčky](#redistribu
 
 ||Instalační program webové|Offline instalační program|
 |-|-------------------|-----------------------|
-|Stažení souboru|Rozhraní .NET framework 4.7.1: <br/>[NDP471. KB4033344 Web.exe](http://go.microsoft.com/fwlin/?LinkId=852092)<br/><br/>Rozhraní .NET framework 4.7: <br />[NDP47. KB3186500 Web.exe](http://go.microsoft.com/fwlink/?LinkId=825298) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462. KB3151802 Web.exe](http://go.microsoft.com/fwlink/?LinkId=780596)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]:<br />[NDP461. KB3102438 Web.exe](http://go.microsoft.com/fwlink/?LinkId=671728)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]:<br />[NDP46. KB3045560 Web.exe](http://go.microsoft.com/fwlink/?LinkId=528222)<br /><br /> Rozhraní .NET framework 4.5.2: <br />[NDP452. KB2901954 Web.exe](http://go.microsoft.com/fwlink/?LinkId=397707)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451. KB2859818 Web.exe](http://go.microsoft.com/fwlink/?LinkId=322115)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_setup.exe](http://go.microsoft.com/fwlink/?LinkId=225704)|Rozhraní .NET framework 4.7.1: <br />[NDP471-KB4033342-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=852104) <br /><br />Rozhraní .NET framework 4.7: <br />[NDP47-KB3186497-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=825302) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151800-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=780600)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]: <br />[NDP461-KB3102436-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=671743)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]: <br />[NDP46-KB3045557-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=528232)<br /><br /> Rozhraní .NET framework 4.5.2: <br />[NDP452-KB2901907-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=397708)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2858728-x86-x64-AllOS-enu.exe](http://go.microsoft.com/fwlink/?LinkId=322116)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702)|
+|Stažení souboru|Rozhraní .NET framework 4.7.1: <br/>[NDP471-KB4033344-Web.exe](http://go.microsoft.com/fwlink/?LinkId=852092)<br/><br/>Rozhraní .NET framework 4.7: <br />[NDP47-KB3186500-Web.exe](http://go.microsoft.com/fwlink/?LinkId=825298) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151802-Web.exe](http://go.microsoft.com/fwlink/?LinkId=780596)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]:<br />[NDP461-KB3102438-Web.exe](http://go.microsoft.com/fwlink/?LinkId=671728)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]:<br />[NDP46-KB3045560-Web.exe](http://go.microsoft.com/fwlink/?LinkId=528222)<br /><br /> Rozhraní .NET framework 4.5.2: <br />[NDP452-KB2901954-Web.exe](http://go.microsoft.com/fwlink/?LinkId=397707)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2859818-Web.exe](http://go.microsoft.com/fwlink/?LinkId=322115)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_setup.exe](http://go.microsoft.com/fwlink/?LinkId=225704)|Rozhraní .NET framework 4.7.1: <br />[NDP471-KB4033342-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=852104) <br /><br />Rozhraní .NET framework 4.7: <br />[NDP47-KB3186497-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=825302) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151800-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=780600)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]: <br />[NDP461-KB3102436-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=671743)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]: <br />[NDP46-KB3045557-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=528232)<br /><br /> Rozhraní .NET framework 4.5.2: <br />[NDP452-KB2901907-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=397708)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2858728-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=322116)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702)|
 |Vyžaduje připojení k Internetu?|Ano|Ne|
 |Velikost souborů ke stažení|Menší (zahrnuje instalační program pro cílovou platformu pouze) *|Větší *|
 |Jazykové sady|Zahrnuté **|Musí být [nainstalovat samostatně](#chain_langpack), pokud nechcete použít balíček, který cílí všechny operační systémy|
@@ -253,15 +255,15 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
 |Rozhraní .NET framework 4.7.1 nainstalován ve všech verzích operačního systému než Windows 10 patří Creators aktualizace|461310|
 |Rozhraní .NET framework 4.7 nainstalovaný na Windows 10 Creators Update|460798|
 |Rozhraní .NET framework 4.7 nainstalován ve všech verzích operačního systému než Windows 10 Creators Update|460805|
-|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]nainstalovat na Windows 10 Anniversary Edition|394802|
-|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]nainstalovaná ve všech verzích operačního systému než Windows 10 Anniversary Edition|394806|
-|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]nainstalovat na Windows 10 listopadu Update|394254|
-|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]nainstalovaná ve všech verzích operačního systému než Windows 10 listopadu Update|394271|
-|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]nainstalovat na Windows 10|393295|
-|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]nainstalovaná ve všech verzích operačního systému než Windows 10|393297|
+|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] nainstalovat na Windows 10 Anniversary Edition|394802|
+|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] nainstalovaná ve všech verzích operačního systému než Windows 10 Anniversary Edition|394806|
+|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] nainstalovat na Windows 10 listopadu Update|394254|
+|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] nainstalovaná ve všech verzích operačního systému než Windows 10 listopadu Update|394271|
+|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] nainstalovat na Windows 10|393295|
+|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] nainstalovaná ve všech verzích operačního systému než Windows 10|393297|
 |.NET Framework 4.5.2|379893|
-|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]nainstalované s [!INCLUDE[win81](../../../includes/win81-md.md)] nebo Windows Server 2012 R2|378675|
-|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]nainstalovat na [!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7|378758|
+|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)] nainstalované s [!INCLUDE[win81](../../../includes/win81-md.md)] nebo Windows Server 2012 R2|378675|
+|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)] nainstalovat na [!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7|378758|
 |[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]|378389|
 
 ### <a name="detecting-the-language-packs"></a>Zjišťování jazykové sady
@@ -355,15 +357,15 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/ CEIPConsent**|Přepíše výchozí chování a odešle anonymní názory společnosti Microsoft zlepšovat prostředí budoucí nasazení. Tuto možnost lze použít pouze v případě, že instalační program zobrazí výzvu k souhlasu, a pokud uživatel uděluje oprávnění k posílat anonymní názory společnosti Microsoft.|
+|**/CEIPConsent**|Přepíše výchozí chování a odešle anonymní názory společnosti Microsoft zlepšovat prostředí budoucí nasazení. Tuto možnost lze použít pouze v případě, že instalační program zobrazí výzvu k souhlasu, a pokud uživatel uděluje oprávnění k posílat anonymní názory společnosti Microsoft.|
 |**/chainingpackage**`packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají do Microsoftu jako vyskytne anonymní informace pomohou vylepšit budoucí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače; Příklad: **/chainingpackage "Lucerne publikování"**. Příklad řetězení balíčku naleznete v části [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
-|**/ LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Instalujte jazykový balíček určeného `LCID` a pokud tichý režim je nastaven vynutí zobrazené uživatelské rozhraní zobrazený v daném jazyce.<br /><br /> Pro web instalační program tato možnost řetězu instalaci jazykovou sadu z webu. **Poznámka:** tuto možnost použijte pouze s webovou Instalační službu.|
+|**/LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Instalujte jazykový balíček určeného `LCID` a pokud tichý režim je nastaven vynutí zobrazené uživatelské rozhraní zobrazený v daném jazyce.<br /><br /> Pro web instalační program tato možnost řetězu instalaci jazykovou sadu z webu. **Poznámka:** tuto možnost použijte pouze s webovou Instalační službu.|
 |**/ log** `file` &#124;`folder`|Určuje umístění souboru protokolu. Výchozí hodnota je dočasnou složku pro proces a výchozí název souboru je založen na balíčku. Pokud přípona souboru .txt, textový protokol vytváří. Pokud zadáte jiné rozšíření nebo bez přípony, vytvoří se protokol HTML.|
 |**/msioptions**|Určuje možnosti, které mají být předány .msi a .msp položek; Příklad: `/msioptions "PROPERTY1='Value'"`.|
-|**/ norestart**|Zabrání restartování automaticky instalační program. Pokud použijete tuto možnost, k zaznamenání návratový kód a zpracování restartování má řetězení aplikace (viz [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=179606) v knihovně MSDN).|
-|**/ passive**|Nastaví pasivní režim. Zobrazuje indikátor průběhu označíte, že je v průběhu instalace, ale nezobrazí žádné chybové zprávy nebo výzvy pro uživatele. V tomto režimu, pokud zřetězené instalační program řetězení balíčku musí zpracovávat [návratové kódy](#return-codes).|
+|**/norestart**|Zabrání restartování automaticky instalační program. Pokud použijete tuto možnost, k zaznamenání návratový kód a zpracování restartování má řetězení aplikace (viz [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=179606) v knihovně MSDN).|
+|**/passive**|Nastaví pasivní režim. Zobrazuje indikátor průběhu označíte, že je v průběhu instalace, ale nezobrazí žádné chybové zprávy nebo výzvy pro uživatele. V tomto režimu, pokud zřetězené instalační program řetězení balíčku musí zpracovávat [návratové kódy](#return-codes).|
 |**/pipe**|Vytvoří komunikační kanál povolit řetězení balíčku k načtení průběh.|
-|**/ promptrestart**|Pouze pasivní režim, pokud instalační program vyžaduje restartování, vyzve uživatele. Tato možnost vyžaduje interakci s uživatelem, pokud je vyžadováno restartování.|
+|**/promptrestart**|Pouze pasivní režim, pokud instalační program vyžaduje restartování, vyzve uživatele. Tato možnost vyžaduje interakci s uživatelem, pokud je vyžadováno restartování.|
 |**/q**|Nastaví tichý režim.|
 |**spínače/opravy**|Aktivuje funkci opravit.|
 |**/serialdownload**|Vynutí instalaci provést až po stažení balíčku.|
@@ -381,23 +383,23 @@ Následující tabulka uvádí jazykových sad rozhraní .NET Framework, které 
 |1029|Čeština|cs|
 |1030|Dánština|da|
 |1031|Němčina – Německo|Německo|
-|1032|Řečtina|El|
-|1035|Finština|Fi|
-|1036|Francouzština – Francie|FR|
-|1037|Hebrejština|mu|
+|1032|Řečtina|el|
+|1035|Finština|fi|
+|1036|Francouzština – Francie|fr|
+|1037|Hebrew|mu|
 |1038|Maďarština|HU|
-|1040|Italština – Itálie|ho|
-|1041|Japonština|Japonsko|
+|1040|Italština – Itálie|it|
+|1041|Japonština|ja|
 |1042|Korejština|Ko|
-|1043|Holandština – Nizozemsko|NL|
-|1044|Norština (Bokmål)|Ne|
-|1045|Polština|PL|
+|1043|Holandština – Nizozemsko|nl|
+|1044|Norwegian (Bokmål)|Ne|
+|1045|Polština|pl|
 |1046|Portugalština – Brazílie|pt-BR|
 |1049|Ruština|RU|
-|1053|Švédština|Sv|
+|1053|Švédština|sv|
 |1055|Turečtina|tr|
 |2052|– Zjednodušená čínština|zh-Hans|
-|2070|Portugalština – Portugalsko|PT-PT|
+|2070|Portugalština – Portugalsko|pt-PT|
 |3082|Španělština – Španělsko (moderní řazení)|ES|
 
 ## <a name="see-also"></a>Viz také
