@@ -17,11 +17,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8d540e3201f0a310641005d95d9c3c0f3dc1d501
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 86f1884749b5fdf93254985ab3e163dca0562648
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -100,12 +100,6 @@ Rozhraní .NET Framework 4.7.1 přidá <xref:System.Runtime.CompilerServices.IsR
 
 Změny uvolňování paměti (GC) v rozhraní .NET Framework 4.7.1 zvýšit celkový výkon, hlavně pro přidělení haldy velkého objektu (LOH). V rozhraní .NET Framework 4.7.1 samostatné zámky slouží pro malé objektu haldy (SOH) a LOH přidělení, což umožňuje přidělení LOH nastat, když pozadí GC (BGC) je komínů prohlášení o stavu. V důsledku toho aplikací, které velký počet přidělených LOH měli vidět snížení spory uzamčení přidělení a lepší výkon. Další informace najdete v části "Vylepšení výkonu GC – modul Runtime" v [Runtime rozhraní .NET Framework 4.7.1 a funkce kompilátoru](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features/) příspěvku na blogu. 
 
-**Podpora pro přenosné soubory PDB**
-
-Rozhraní .NET Framework, počínaje verzí 4.7.1 podporuje přenosné soubory PDB. Standardní soubory PDB jsou pouze pro systém Windows, přenosné soubory PDB můžete vytvořit a čtení na všech platformách. Ve většině případů je formát souboru pro aplikace běžící na konkrétní implementace rozhraní .NET transparentní. Výjimkou je aplikace, která dynamicky vysílá sestavení za běhu; v takovém případě můžete možnost pro vydávání přenosné PDB nabízejí zlepšení výkonu a redukuje paměti aplikace. 
-
-V době běhu můžete určit, zda přenosné PDB podporují na aktuální implementace rozhraní .NET předáním řetězec "PortablePdb" <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported(System.String)?displayProperty=nameWithType> metoda před generováním sestavení.  
- 
 <a name="net471"/>
 #### <a name="networking"></a>Síťové služby
 

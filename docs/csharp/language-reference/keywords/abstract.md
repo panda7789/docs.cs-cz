@@ -2,21 +2,23 @@
 title: "abstract (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - abstract
 - abstract_CSharpKeyword
-helpviewer_keywords: abstract keyword [C#]
+helpviewer_keywords:
+- abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bd26583c42302d8ce9ba4dd22119713548111236
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9c6dbb03a05ff1c86752983d130691ce23e341d7
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="abstract-c-reference"></a>abstract (Referenční dokumentace jazyka C#)
 `abstract` Modifikátor znamená, že je věcí upravována má implementace chybí nebo jsou neúplné. Abstraktní modifikátor lze použít s tříd, metod, vlastností, indexery a události. Použití `abstract` modifikátor v deklaraci třídy k označení, že třída je určen pouze k být základní třídy jiné třídy. Členy označené jako abstraktní, nebo součástí abstraktní třídu, musí být implementované třídy, které jsou odvozeny od abstraktní třídy.  
@@ -50,7 +52,7 @@ ms.lasthandoff: 01/19/2018
     public abstract void MyMethod();  
     ```  
   
-     Poskytuje implementaci metodu přepsání[přepsat](../../../csharp/language-reference/keywords/override.md), který je členem jinou než abstraktní třídou.  
+     Poskytuje implementaci metodu [přepsat](../../../csharp/language-reference/keywords/override.md), který je členem jinou než abstraktní třídou.  
   
 -   Jedná se o chybu používat [statické](../../../csharp/language-reference/keywords/static.md) nebo [virtuální](../../../csharp/language-reference/keywords/virtual.md) modifikátory v deklarace abstraktní metody.  
   

@@ -8,15 +8,15 @@ ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5c3b58ef434e1fd7b713102f2642250d8335d859
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3605a6cd53db695de3af015a777e3c1a0e92af58
+ms.sourcegitcommit: 672c9cd122c13c9813f57f022c86ebdf6dd69b4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro Docker aplikace
 
-Před spuštěním pracovního postupu vnější smyčky pokrývání uzlů celý DevOps cyklus, vše začíná na každý vývojář počítače, kódování aplikace, pomocí jeho upřednostňované jazyky nebo platformy a místní testování (obrázek 4-14). Ale v každém případě je nutné bod velmi důležité společné, bez ohledu na to, jaké jazyk, framework nebo platformy zvolíte. V tomto pracovním postupu konkrétní jsou vždy vývoj a testování Docker kontejnery, ale místně.
+Před spuštěním pracovního postupu vnější smyčky pokrývání uzlů celý DevOps cyklus, vše začíná na každý vývojář počítače, kódování aplikace, pomocí jejich upřednostňované jazyky nebo platformy a místní testování (obrázek 4-14). Ale v každém případě je nutné bod velmi důležité společné, bez ohledu na to, jaké jazyk, framework nebo platformy zvolíte. V tomto pracovním postupu konkrétní jsou vždy vývoj a testování Docker kontejnery, ale místně.
 
 ![](./media/image18.png)
 
@@ -262,4 +262,4 @@ Také můžete ladit .NET Core kontejnery v Docker když pomocí sady Visual Stu
 
 
 >[!div class="step-by-step"]
-[Předchozí] (docker aplikace development-environment.md) [Další] (visual-studio nástroje pro docker.md)
+[Previous] (docker-apps-development-environment.md) [Next] (visual-studio-tools-for-docker.md)

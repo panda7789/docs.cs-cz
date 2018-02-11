@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 3cd9fc23dba104f92255b031eef32f80cca915b0
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 02d06401f16c6205a88a42e7624b8e39ac6473cc
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="interpolated-strings"></a>Interpolované řetězce
 
@@ -144,9 +144,9 @@ Pokud je šířka pole na záporné číslo, pole je zarovnaný doleva:
 Zkuste odebrat záporné přihlásí z `{"Author",-25}` a `{title.Key,-25}` interpolované výrazy a spusťte v příkladu znovu, protože následující kód:
 
 ```csharp
-Console.WriteLine($"\n{"Author",-25}    {"Title",30}\n");
+Console.WriteLine($"\n{"Author",25}    {"Title",30}\n");
 foreach (var title in titles)
-   Console.WriteLine($"{title.Key,-25}     {title.Value,30}");
+   Console.WriteLine($"{title.Key,25}     {title.Value,30}");
 ```
 
 Čas, informace o autorovi je zarovnaný doprava.

@@ -9,15 +9,15 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-ms.openlocfilehash: 5c8b6e2d14a14724a040bed5cc58c5ffef3ce520
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d800d861f65779a73f83cf44e8884566eb7adee4
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="samples-and-tutorials"></a>Ukázky a výukové programy
 
-Dokumentace rozhraní .NET obsahuje sadu ukázky a výukové programy, které můžete naučit o rozhraní .NET. Toto téma popisuje, jak najít, zobrazit a stáhnout .NET Core, ASP.NET Core a C# ukázky a výukové programy. Vyhledejte prostředky, abyste informace na programovací jazyk F # [F # Foundation na webu](http://fsharp.org/learn.html). Pokud vás zajímá zkoumat pomocí editoru online kódu C#, vyzkoušejte následující [interaktivní kurzy](http://go.microsoft.com/fwlink/p/?LinkId=817234). Návod, jak zobrazit a stáhnout ukázkový kód, najdete v článku [zobrazení a stažení ukázky](#viewing-and-downloading-samples) části.
+Dokumentace rozhraní .NET obsahuje sadu ukázky a výukové programy, které můžete naučit o rozhraní .NET. Toto téma popisuje, jak najít, zobrazit a stáhnout .NET Core, ASP.NET Core a C# ukázky a výukové programy. Vyhledejte prostředky, abyste informace na programovací jazyk F # [F # Foundation na webu](http://fsharp.org/learn.html). Pokud vás zajímá zkoumat pomocí editoru online kódu C#, začínat [Interaktivní kurz](https://www.microsoft.com/net/learn/in-browser-tutorial/1) a pokračujte [C# interaktivní quickstarts](../csharp/quick-starts/index.md). Návod, jak zobrazit a stáhnout ukázkový kód, najdete v článku [zobrazení a stažení ukázky](#viewing-and-downloading-samples) části.
 
 ## <a name="net-core"></a>.NET Core
 
@@ -37,7 +37,7 @@ Tento průvodce vám ukáže, jak používat rozhraní příkazového řádku z�
 
 Tato ukázka obsahuje informace o zápisu knihovny pro .NET pomocí nástrojů příkazového řádku pro různé platformy. Tyto nástroje poskytují prostředí efektivní a nízké úrovně, které funguje napříč kterýkoliv podporovaný operační systém. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library) je k dispozici v úložišti dotnet/docs na Githubu.
 
-## <a name="aspnet-core"></a>Jádro ASP.NET
+## <a name="aspnet-core"></a>ASP.NET Core
 
 Najdete v článku [ASP.NET Core kurzy](/aspnet/core/tutorials/). Mnoho články v dokumentaci ASP.NET Core obsahují odkazy na ukázky pro ně zapsán.
 
@@ -49,7 +49,7 @@ Najdete v článku [ASP.NET Core kurzy](/aspnet/core/tutorials/). Mnoho články
 
 Tento příklad znázorňuje syntaxe a funkcí pro vytváření a použití jazyka C# iterátory. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/iterators) je k dispozici v úložišti dotnet/docs na Githubu.
 
-**[Indexery](../csharp/indexers.md)**
+**[Indexers](../csharp/indexers.md)**
 
 Tento příklad znázorňuje syntaxe a funkce pro C# indexery. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers) je k dispozici v úložišti dotnet/docs na Githubu.
 

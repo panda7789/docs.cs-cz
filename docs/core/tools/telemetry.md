@@ -1,7 +1,7 @@
 ---
 title: ".NET core rozhraní příkazového řádku nástroje telemetrie"
 description: "Seznamte se s funkcemi telemetrie nástroje .NET Core, která shromažďují informace o využití za účelem analýzy, která data se shromažďují a jak ji zakázat."
-keywords: "Rozhraní .NET, .NET core telemetrie"
+keywords: .NET,.NET Core,telemetry
 author: richlander
 ms.author: mairaw
 ms.date: 08/04/2017
@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
-ms.workload: dotnetcore
-ms.openlocfilehash: 66ad63f0b2a2f62f34f0784b236d242f1d92066a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 9a78ec370fd53260f26a5d8c15707a5d611e458f
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="net-core-cli-tools-telemetry"></a>.NET core rozhraní příkazového řádku nástroje telemetrie
 
@@ -75,9 +76,9 @@ Chceme vědět, jak se používají nástroje a pokud pracují dobře, co nejsou
 
 Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v [Data o využití .NET Core SDK](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md). Sloupce datového souboru jsou:
 - časové razítko
-- Výskytů &#8224;
+- Occurrences&#8224;
 - Příkaz
-- Geography &#8225;
+- Geography&#8225;
 - Atribut OSFamily
 - RuntimeID
 - OSVersion
@@ -91,12 +92,12 @@ Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v [Data o využití
 
 | časové razítko      | Výskytů | Příkaz | Geography | Atribut OSFamily | RuntimeID     | OSVersion | SDKVersion |
 | -------------- | ----------- | ------- | --------- | -------- | ------------- | --------- | ---------- |
-| 4/16/2017 0:00 | 8           | Spustit     | Ugandy    | Darwin   | OSX.10.12 x64 | 10.12     | 1.0.1      |
+| 4/16/2017 0:00 | 8           | Spustit     | Uganda    | Darwin   | osx.10.12-x64 | 10.12     | 1.0.1      |
 
 ### <a name="datasets"></a>Datové sady
 
-[2016 - 3. ČTVRTLETÍ](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)  
-[2016 - 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)  
+[2016 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)  
+[2016 - Q4](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)  
 [2017 - 1.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q1.tsv)  
 [2017 - DOTAZ Č. 2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)
 
@@ -106,7 +107,7 @@ Další datové sady jsou odeslány standardní formátu adresy URL. Nahraďte `
 https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-<YEAR>-q<QUARTER>.tsv
 ```
 
-## <a name="license"></a>Licence
+## <a name="license"></a>License
 
 Distribuce Microsoft .NET Core má licenci na [smlouvy EULA KNIHOVNY MICROSOFT .NET](https://aka.ms/dotnet-core-eula). Tuto licenci zahrnuje v části "DATA" Povolit telemetrii (zobrazené dole).
 
@@ -133,5 +134,5 @@ You can read more about .NET Core tools telemetry @ https://aka.ms/dotnet-cli-te
 ## <a name="see-also"></a>Viz také
 
 [Co jsme jste se naučili z .NET Core SDK Telemetrie](https://blogs.msdn.microsoft.com/dotnet/2017/07/21/what-weve-learned-from-net-core-sdk-telemetry/)  
-[Odkaz na zdroj telemetrie (dotnet/cli úložišti; release/2.0.0 větve)](https://github.com/dotnet/cli/blob/release/2.0.0/src/dotnet/Telemetry.cs)   
+[Odkaz na zdroj telemetrie (dotnet/cli úložišti; release/2.0.0 větve)](https://github.com/dotnet/cli/tree/release/2.0.0/src/dotnet/Telemetry)   
 [Data o využití .NET core SDK](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md)
