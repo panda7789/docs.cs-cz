@@ -7,12 +7,13 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: c90cfec0e2197e2519bf3f7aae1c9569db79aadf
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: deb66ff52074630616c7be47f1a9751246db501d
+ms.sourcegitcommit: 70dcc89737127e4d5f20500242409b687e51b07e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="dotnet-sln"></a>SLN – DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet-sln`-Upravuje soubor řešení .NET Core.
+`dotnet sln`-Upravuje soubor řešení .NET Core.
 
 ## <a name="synopsis"></a>Stručný obsah
 
