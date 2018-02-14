@@ -9,13 +9,16 @@ ms.technology: dotnet-docker
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 44864274a86634c0199885b5507124f2f54ce0f6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: db9f0ddd875df1f84bcc5681ee1383b0185f8b7e
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architekti moderních webových aplikací pomocí ASP.NET Core a Azure
+
+![Obrázek titulní](./media/cover.jpg)
+
 
 .NET core a ASP.NET Core nabízí několik výhod oproti tradičním .NET – vývoj. .NET Core byste měli použít pro serverové aplikace, pokud některé nebo všechny z následujících akcí, které jsou důležité pro úspěch vaší aplikace:
 
@@ -53,9 +56,9 @@ Tato příručka je doplňkem k "*Architecting a vývoj Kontejnerizované a na z
 
 > ### <a name="architecting-and-developing-containerized-microservice-based-apps-in-net"></a>Architektury a vývoj Kontejnerizované Mikroslužbu na základě aplikací v rozhraní .NET
 > - **elektronická kniha**  
-> <http://aka.MS/MicroservicesEbook>
+> <http://aka.ms/MicroservicesEbook>
 > - **Ukázkové aplikace**  
-> <http://aka.MS/microservicesarchitecture>
+> <http://aka.ms/microservicesarchitecture>
 
 ## <a name="who-should-use-this-guide"></a>Tato příručka, kdo by měl používat
 
@@ -71,7 +74,7 @@ Nebojte se, že předávání této příručce si s týmem k zajištění výkl
 
 ## <a name="references"></a>Odkazy
 - **Volba mezi .NET Core a .NET Framework pro serverové aplikace**  
-<https://docs.microsoft.com/DotNet/articles/Standard/Choosing-Core-Framework-server>
+<https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server>
 
 >[!div class="step-by-step"]
-[Další] (modern-web-applications-characteristics.md)
+[Next] (modern-web-applications-characteristics.md)

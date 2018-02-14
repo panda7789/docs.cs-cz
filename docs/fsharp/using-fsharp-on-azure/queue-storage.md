@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 70dc554c-8f4d-42a7-8e2a-6438657d012a
-ms.openlocfilehash: f5ebdb3f3b50996a397c8420b773178493744d70
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8ec4652bab591dedc687d22c617b9466bc351f10
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage pomocí F # #
 
@@ -142,8 +142,8 @@ Chcete-li odstranit frontu se všemi zprávami, které v ní, zavolejte `Delete`
 
 Teď, když jste se naučili základy používání služby Queue storage, postupujte podle následujících odkazech na další informace o složitějších úlohách úložiště.
 
-- [Klientská knihovna pro úložiště pro .NET – referenční informace](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [Rozhraní API úložiště Azure pro .NET](/dotnet/api/overview/azure/storage)
 - [Typ zprostředkovatele úložiště Azure](https://github.com/fsprojects/AzureStorageTypeProvider)
 - [Blog týmu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/)
-- [Konfigurace připojovacích řetězců](http://msdn.microsoft.com/library/azure/ee758697.aspx)
-- [Referenční dokumentace rozhraní API REST](http://msdn.microsoft.com/library/azure/dd179355)
+- [Konfigurace připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
+- [Referenční dokumentace rozhraní API REST služby Azure Storage](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
-ms.workload: dotnetcore
-ms.openlocfilehash: cf65dc80f135badcb1580726a12a9ae9d94ae3d7
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: ea94c875ae6fe82d0e5d35ba8ca3fd47971fbbe6
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 01/20/2018
 
 ## <a name="name"></a>Název
 
-`dotnet new`-Vytvoří nový projekt, konfigurační soubor nebo řešení v závislosti na určené šablony.
+`dotnet new` -Vytvoří nový projekt, konfigurační soubor nebo řešení v závislosti na určené šablony.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -76,7 +77,7 @@ Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -l` získat 
 | Webové konfigurace                                   | `webconfig`   |               |
 | Soubor řešení                                | `sln`         |               |
 | Stránky Razor                                   | `page`        |               |
-| MVC/ViewImports                              | `viewimports` |               |
+| MVC ViewImports                              | `viewimports` |               |
 | MVC ViewStart                                | `viewstart`   |               |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
@@ -178,103 +179,103 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 **konzole úhlová, reagovat, reactredux**
 
-`--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
+`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
 **classlib**
 
-`-f|--framework <FRAMEWORK>`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp2.0` pro vytvoření základní knihovny tříd rozhraní .NET nebo `netstandard2.0` vytvořit standardní knihovny tříd rozhraní .NET. Výchozí hodnota je `netstandard2.0`.
+`-f|--framework <FRAMEWORK>` -Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp2.0` pro vytvoření základní knihovny tříd rozhraní .NET nebo `netstandard2.0` vytvořit standardní knihovny tříd rozhraní .NET. Výchozí hodnota je `netstandard2.0`.
 
-`--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
+`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
 **mstest, xunit**
 
-`-p|--enable-pack`– Umožňuje vytváření balíčků pro projekt pomocí [dotnet pack](dotnet-pack.md).
+`-p|--enable-pack` – Umožňuje vytváření balíčků pro projekt pomocí [dotnet pack](dotnet-pack.md).
 
-`--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
+`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
 **globaljson**
 
-`--sdk-version <VERSION_NUMBER>`-Určuje verzi rozhraní .NET Core SDK pro použití v *global.json* souboru.
+`--sdk-version <VERSION_NUMBER>` -Určuje verzi rozhraní .NET Core SDK pro použití v *global.json* souboru.
 
 **web**
 
-`--use-launch-settings`-Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
+`--use-launch-settings` -Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
 
-`--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
+`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
 **webapi**
 
-`-au|--auth <AUTHENTICATION_TYPE>`-Typ ověřování. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování. Možné hodnoty jsou:
 
-- `None`-Bez ověřování (výchozí).
-- `IndividualB2C`-Jednotlivé ověřování s Azure AD B2C.
-- `SingleOrg`-Organizační ověřování pro jednoho klienta.
-- `Windows`-Ověřování systému Windows.
+- `None` -Bez ověřování (výchozí).
+- `IndividualB2C` -Jednotlivé ověřování s Azure AD B2C.
+- `SingleOrg` -Organizační ověřování pro jednoho klienta.
+- `Windows` -Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>`-Instance Azure Active Directory B2C se připojit k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>` -Instance Azure Active Directory B2C se připojit k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>`– ID přihlášení a odhlášení zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>` – ID přihlášení a odhlášení zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
 
-`--aad-instance <INSTANCE>`-Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>` -Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>`– ID klienta pro tento projekt. Použití s `IndividualB2C` nebo `SingleOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C` nebo `SingleOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>`-Doména pro directory klienta. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>` -Doména pro directory klienta. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>`-TenantId ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>` -TenantId ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`-r|--org-read-access`– Umožňuje této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access` – Umožňuje této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--use-launch-settings`-Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
+`--use-launch-settings` -Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
 
-`-uld|--use-local-db`-Určuje, že místo SQLite by použít LocalDB. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db` -Určuje, že místo SQLite by použít LocalDB. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
+`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
 **MVC, razor**
 
-`-au|--auth <AUTHENTICATION_TYPE>`-Typ ověřování. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování. Možné hodnoty jsou:
 
-- `None`-Bez ověřování (výchozí).
-- `Individual`-Jednotlivé ověřování.
-- `IndividualB2C`-Jednotlivé ověřování s Azure AD B2C.
-- `SingleOrg`-Organizační ověřování pro jednoho klienta.
-- `MultiOrg`-Organizační ověřování pro víc klientů.
-- `Windows`-Ověřování systému Windows.
+- `None` -Bez ověřování (výchozí).
+- `Individual` -Jednotlivé ověřování.
+- `IndividualB2C` -Jednotlivé ověřování s Azure AD B2C.
+- `SingleOrg` -Organizační ověřování pro jednoho klienta.
+- `MultiOrg` -Organizační ověřování pro víc klientů.
+- `Windows` -Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>`-Instance Azure Active Directory B2C se připojit k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/` .
+`--aad-b2c-instance <INSTANCE>` -Instance Azure Active Directory B2C se připojit k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/` .
 
-`-ssp|--susi-policy-id <ID>`– ID přihlášení a odhlášení zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>` – ID přihlášení a odhlášení zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
 
-`-rp|--reset-password-policy-id <ID>`-Resetování hesla ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-rp|--reset-password-policy-id <ID>` -Resetování hesla ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
 
-`-ep|--edit-profile-policy-id <ID>`-Upravit profil ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ep|--edit-profile-policy-id <ID>` -Upravit profil ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
 
-`--aad-instance <INSTANCE>`-Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` nebo `MultiOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>` -Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` nebo `MultiOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>`– ID klienta pro tento projekt. Použití s `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>`-Doména pro directory klienta. Použití s `SingleOrg` nebo `IndividualB2C` ověřování... Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>` -Doména pro directory klienta. Použití s `SingleOrg` nebo `IndividualB2C` ověřování... Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>`-TenantId ID adresáře pro připojení k. Použití s `SingleOrg` ověřování... Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>` -TenantId ID adresáře pro připojení k. Použití s `SingleOrg` ověřování... Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`--callback-path <PATH>`– Cesta žádosti v rámci základní cesty aplikace identifikátor URI přesměrování. Použití s `SingleOrg` nebo `IndividualB2C` ověřování... Výchozí hodnota je `/signin-oidc`.
+`--callback-path <PATH>` – Cesta žádosti v rámci základní cesty aplikace identifikátor URI přesměrování. Použití s `SingleOrg` nebo `IndividualB2C` ověřování... Výchozí hodnota je `/signin-oidc`.
 
-`-r|--org-read-access`– Umožňuje této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access` – Umožňuje této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--use-launch-settings`-Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
+`--use-launch-settings` -Zahrnuje *launchSettings.json* ve výstupu vygenerované šablony.
 
-`--use-browserlink`-Zahrnuje BrowserLink v projektu.
+`--use-browserlink` -Zahrnuje BrowserLink v projektu.
 
-`-uld|--use-local-db`-Určuje, že místo SQLite by použít LocalDB. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db` -Určuje, že místo SQLite by použít LocalDB. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore`-Nepodporuje provedení implicitní obnovení během vytváření projektu.
+`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
-**stránka**
+**Stránka**
 
 `-na|--namespace <NAMESPACE_NAME>`-Namespace pro generovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
-`-np|--no-pagemodel`-Vytvoří danou stránku bez PageModel.
+`-np|--no-pagemodel` -Vytvoří danou stránku bez PageModel.
 
 **viewimports**
 
@@ -284,19 +285,19 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 **console, xunit, mstest, web, webapi**
 
-`-f|--framework`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
+`-f|--framework` -Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
 **classlib**
 
-`-f|--framework`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0`, `netcoreapp1.1`, nebo `netstandard1.0` k `netstandard1.6`. Výchozí hodnota je `netstandard1.4`.
+`-f|--framework` -Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0`, `netcoreapp1.1`, nebo `netstandard1.0` k `netstandard1.6`. Výchozí hodnota je `netstandard1.4`.
 
 **mvc**
 
-`-f|--framework`-Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
+`-f|--framework` -Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
-`-au|--auth`-Typ ověřování. Hodnoty: `None` nebo `Individual`. Výchozí hodnota je `None`.
+`-au|--auth` -Typ ověřování. Hodnoty: `None` nebo `Individual`. Výchozí hodnota je `None`.
 
-`-uld|--use-local-db`-Určuje, zda pro použití LocalDB místo SQLite. Hodnoty: `true` nebo `false`. Výchozí hodnota je `false`.
+`-uld|--use-local-db` -Určuje, zda pro použití LocalDB místo SQLite. Hodnoty: `true` nebo `false`. Výchozí hodnota je `false`.
 
 ---
 

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: dc82a932-5401-4d19-9fb3-92c50d8db514
-ms.openlocfilehash: 770d405921758eeb7e8d7ea98b95c29c99631475
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e0e78e06fa1129ba5eeb73bc36c14343c93d6927
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="walkthrough-accessing-a-sql-database-by-using-type-providers-and-entities"></a>Návod: Přístup k databázi SQL s použitím zprostředkovatelů typů a entit
 
@@ -66,7 +66,7 @@ Databázi školy můžete vytvořit na libovolném serveru, na kterém je spušt
 3. Otevřete místní nabídku pro nový uzel připojení a potom zvolte **nový dotaz**.
 <br />
 
-4. Otevřete [vytváření ukázkovou databázi školy](http://go.microsoft.com/fwlink/?LinkID=237278) na webu společnosti Microsoft a potom zkopírovat a vložit databázového skriptu vytvářející databázi studenty do okna editoru.
+4. Otevřete [vytváření ukázkovou databázi školy](https://msdn.microsoft.com/library/bb399731(v=vs.100).aspx) na webu společnosti Microsoft a potom zkopírovat a vložit databázového skriptu vytvářející databázi školy do okna editoru.
 <br />
 
 
@@ -240,14 +240,9 @@ Prozkoumat další možnosti dotazu kontrolou operátory dotazu, který je k dis
 
 
 ## <a name="see-also"></a>Viz také
-[Zprostředkovatelé typů](index.md)
-
-[Sqlentityconnection – zprostředkovatel typu](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)
-
-[Návod: Generování typů F # ze souboru schématu EDMX](generating-fsharp-types-from-edmx.md)
-
-[ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)
-
-[Přehled souboru EDMX](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)
-
-[Generátor EDM &#40; EdmGen.exe &#41;](https://msdn.microsoft.com/library/bb387165)
+[Zprostředkovatelé typů](index.md)  
+[Sqlentityconnection – zprostředkovatel typu](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)  
+[Návod: Generování typů F # ze souboru schématu EDMX](generating-fsharp-types-from-edmx.md)  
+[ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)  
+[Přehled souboru EDMX](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+[EDM Generator &#40;EdmGen.exe&#41;](https://msdn.microsoft.com/library/bb387165)  

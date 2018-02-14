@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 9e5d6cea-a98c-461e-a5cc-75f1d154eafd
-ms.openlocfilehash: bf833a96809768011f26df35332ab2372ced2aaf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e003f537c6f0f85b3b0ba932655ae2a54c980bc5
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-table-storage-using-f"></a>Začínáme s Azure Table storage pomocí F # #
 
@@ -186,8 +186,8 @@ Odstranit tabulku z účtu úložiště. Tabulka, která byla odstraněna není 
 
 Teď, když jste se naučili základy používání služby Table storage, postupujte podle následujících odkazech na další informace o složitějších úlohách úložiště:
 
-- [Klientská knihovna pro úložiště pro .NET – referenční informace](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [Rozhraní API úložiště Azure pro .NET](/dotnet/api/overview/azure/storage)
 - [Typ zprostředkovatele úložiště Azure](http://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Blog týmu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/)
-- [Konfigurace připojovacích řetězců](http://msdn.microsoft.com/library/azure/ee758697.aspx)
+- [Konfigurace připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
 - [Začínáme s Azure Table Storage v rozhraní .NET](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/)
