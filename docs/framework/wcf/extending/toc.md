@@ -1,4 +1,4 @@
-# [Rozšíření WCF](extending-wcf.md)
+# [Rozšíření WCF](index.md)
 ## [Rozšíření ServiceHost a vrstva modelu služby](extending-servicehost-and-the-service-model-layer.md)
 ### [Rozšíření klientů](extending-clients.md)
 #### [Postupy: Kontrola a změny zpráv v klientovi](how-to-inspect-or-modify-messages-on-the-client.md)
