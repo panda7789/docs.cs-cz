@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 65a4695c6f4e5268582d83452246ed8262d6fe2f
-ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
+ms.openlocfilehash: fd599118165dcb087f046a307a3f7aeef0cf7078
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Pochopení modelu SDK pro platformu .NET kompilátoru
 
@@ -34,7 +34,7 @@ Odpovídající každé z těchto fází, .NET SDK platformy kompilátoru zpří
 
 Každý kompilátoru kombinuje tyto součásti společně jako jeden celek začátku do konce.
 
-Tato rozhraní API jsou stejné využívá sada Visual Studio. Například kód osnovy a formátování funkce použití syntaxe stromů, prohlížeč objektů a navigační funkce pomocí tabulky symbolů, refaktoring a přejít na definici použití sémantického modelu a upravit a pokračovat používá všechny tyto včetně emitování rozhraní API. 
+Tato rozhraní API jsou stejné ty, které slouží Visual Studio. Například kód osnovy a formátování funkce použití syntaxe stromů, prohlížeč objektů a navigační funkce pomocí tabulky symbolů, refaktoring a přejít na definici použití sémantického modelu a upravit a pokračovat používá všechny tyto včetně emitování rozhraní API. 
 
 ## <a name="api-layers"></a>Rozhraní API vrstvy
 

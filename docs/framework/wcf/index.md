@@ -2,22 +2,24 @@
 title: Windows Communication Foundation
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6b21dc040cc464495c06e8c824354563307622ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0e7ef1702718d24580694a3d0d4c72e41dc314b4
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a>Vývoj aplikací orientovaných na služby s použitím technologie WCF
 Tato část dokumentace obsahuje informace o Windows Communication Foundation (WCF), což je jednotná programovací model pro vytváření aplikací orientovaných na služby. Umožňuje vývojářům vytvářet bezpečné, spolehlivé a zpracovaných řešení, které integrovat do různých platforem a zajistit vzájemnou funkční spolupráci s stávajících investic.
@@ -44,7 +46,7 @@ Tato část dokumentace obsahuje informace o Windows Communication Foundation (W
  [Podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md)  
  Zobrazuje témata, ve kterých můžete zvolit, které [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce nebo funkce, které potřebujete využívat.  
   
- [Rozšíření WCF](../../../docs/framework/wcf/extending/extending-wcf.md)  
+ [Rozšíření WCF](../../../docs/framework/wcf/extending/index.md)  
  Popisuje, jak upravit a rozšířit součásti režimu runtime WCF  
   
  [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
@@ -75,7 +77,7 @@ Tato část dokumentace obsahuje informace o Windows Communication Foundation (W
  Ukázky, které poskytují instrukce v různých aspektů Windows Communication Foundation  
   
  [Glosář Windows Communication Foundation](../../../docs/framework/wcf/glossary.md)  
- Zobrazuje seznam termínů specifických pro[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]  
+ Zobrazuje seznam termínů specifických pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]  
   
  [Obecné referenční informace](../../../docs/framework/wcf/general-reference.md)  
  V části popisuje elementy, které se používají ke konfiguraci služby a klienti Windows Communication Foundation.  

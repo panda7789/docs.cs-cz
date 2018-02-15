@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f1026320114592c25bb5fd123bf92227b26b015
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 132cbc6c7c9ba7d8e6c29f477554fc7b3bbab469
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
 Zadaný v tomto poli je pokyny o [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] dokumentaci. Propojené dokumenty doporučují se, že počáteční body seskupené podle konkrétní zájmů a úrovně odborných znalostí.  
@@ -44,7 +46,7 @@ Zadaný v tomto poli je pokyny o [!INCLUDE[indigo1](../../../includes/indigo1-md
   
 -   Pokud hledáte informace o konkrétní funkce nebo funkce [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], najdete v tématech v části [podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).  
   
--   Pokud chcete rozšířit nebo přizpůsobit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podle svých potřeb, najdete v části [rozšíření WCF](../../../docs/framework/wcf/extending/extending-wcf.md).  
+-   Pokud chcete rozšířit nebo přizpůsobit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podle svých potřeb, najdete v části [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).  
   
 -   Informace o nástrojích, které pomáhají vytvářet a ladit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, najdete v části [nástroje služby Windows Communication Foundation](../../../docs/framework/wcf/tools.md).  
   

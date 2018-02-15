@@ -15,18 +15,18 @@ helpviewer_keywords:
 - customizing Dispose method name
 - Finalize method
 ms.assetid: 31a6c13b-d6a2-492b-9a9f-e5238c983bcb
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 86fef5b18ac2c1c1b1dfee385b726484191fe714
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e0c2e74afea8a0cb5a0e187f05511eabe0527b90
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="dispose-pattern"></a>Dispose – vzor
 Všechny programy získat jeden nebo více systémových prostředků, například paměť, popisovače systému nebo připojení databáze, v průběhu jejich provádění. Vývojáři mají být opatrní při použití takových systémové prostředky, protože musí být vydané po svém získat a použít.  
@@ -35,7 +35,7 @@ Všechny programy získat jeden nebo více systémových prostředků, napříkl
   
  Bohužel spravované paměti se právě jeden z mnoha typů prostředků systému. Prostředky než spravované paměti stále potřeba explicitně vydané a jsou označovány jako nespravované prostředky. Globální Katalog se konkrétně není navržená ke správě takové nespravované prostředky, což znamená, že odpovědnost za správu nespravované prostředky leží do nesprávných rukou vývojáři.  
   
- Modul CLR poskytuje pomoc v uvolnění nespravovaných prostředků. <xref:System.Object?displayProperty=nameWithType>deklaruje virtuální metoda <xref:System.Object.Finalize%2A> (také nazývané finalizační metodu), je volána metodou globální Katalog před paměti objektu je požadovaná globální Katalog a může být potlačena za účelem uvolnění nespravovaných prostředků. Typy, které potlačí finalizační metodu jsou označovány jako finalizable typy.  
+ Modul CLR poskytuje pomoc v uvolnění nespravovaných prostředků. <xref:System.Object?displayProperty=nameWithType> deklaruje virtuální metoda <xref:System.Object.Finalize%2A> (také nazývané finalizační metodu), je volána metodou globální Katalog před paměti objektu je požadovaná globální Katalog a může být potlačena za účelem uvolnění nespravovaných prostředků. Typy, které potlačí finalizační metodu jsou označovány jako finalizable typy.  
   
  I když finalizační metody jsou platné v některých scénářích čištění, mají dvě důležité nevýhody:  
   
@@ -95,7 +95,7 @@ public class DisposableResourceHolder : IDisposable {
   
  Tato část platí také, pro třídy na bázi, který již neimplementuje vzoru Dispose. Pokud se dědí z třídy, která již implementuje vzor, jednoduše přepsat `Dispose(bool)` metody můžete zajistit logiku čištění dalších prostředků.  
   
- **PROVEĎTE ✓** deklarovat chráněné virtuální void `Dispose(bool disposing)` metoda a centralizovat veškerou logiku s uvolňováním nespravovaných prostředků.  
+ **PROVEĎTE ✓** deklarovat `protected virtual void Dispose(bool disposing)` metoda a centralizovat veškerou logiku s uvolňováním nespravovaných prostředků.  
   
  Tato metoda by měla dojít všechny vyčištění prostředků. Metoda je volána z obou finalizační metodu a `IDisposable.Dispose` metoda. Parametr bude mít hodnotu false, pokud volané z uvnitř finalizační metody. Slouží k zajištění, že jakýkoli kód spuštěn během dokončení není přístup k jiné finalizable objekty. Podrobnosti implementace finalizační metody jsou popsané v další části.  
   
@@ -138,7 +138,7 @@ public class DisposableResourceHolder : IDisposable {
   
  **X nesmí** deklarovat žádné přetížení `Dispose` jinak než `Dispose()` a `Dispose(bool)`.  
   
- `Dispose`měli byste zvážit vyhrazené slovo pomohou kodifikovat tohoto vzoru a nedošlo k záměně mezi implementátory informačních technologií, uživatelů a kompilátory. Některé jazyky vybrat automaticky implementovat tento vzor na určité typy.  
+ `Dispose` měli byste zvážit vyhrazené slovo pomohou kodifikovat tohoto vzoru a nedošlo k záměně mezi implementátory informačních technologií, uživatelů a kompilátory. Některé jazyky vybrat automaticky implementovat tento vzor na určité typy.  
   
  **PROVEĎTE ✓** povolit `Dispose(bool)` metoda, která se má volat více než jednou. Zvolit metodu se nic nestane. po prvním volání.  
   
@@ -285,7 +285,7 @@ public class ComplexResourceHolder : IDisposable {
   
  **✓ ZVAŽTE** vytváření a používání objekt kritické finalizable (typu s hierarchie typů, která obsahuje <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject>) pro situace, ve kterých finalizační metody absolutně musí být spuštěn i při krátkodobém uvolnění domény aplikace vynucené a přístup z více vláken zruší.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   

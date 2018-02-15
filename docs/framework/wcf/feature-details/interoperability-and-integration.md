@@ -5,27 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 0d925119-01a1-45c2-9ea0-23061323ad33
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58bb7f0b5d6e43f4e157bda2f7dff5ad7c57a6c3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: fcd6f8454f77cfd2fbd80ed0f77ce1549025a4d6
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="interoperability-and-integration"></a>Vzájemná spolupráce a integrace
 Tato část popisuje vzájemná spolupráce a integrace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Průvodce interoperabilitou protokolů webových služeb](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Toto téma obsahuje specifikace, které jsou podporovány a vazby, která je podporují.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Toto téma obsahuje specifikace, které jsou podporovány a vazby, která je podporují.  
   
  [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  Popisuje, jak aplikací modelu COM + mohou být zpřístupněny jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
@@ -61,4 +63,4 @@ Tato část popisuje vzájemná spolupráce a integrace s [!INCLUDE[indigo1](../
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozšíření WCF](../../../../docs/framework/wcf/extending/extending-wcf.md)
+ [Rozšíření WCF](../../../../docs/framework/wcf/extending/index.md)
