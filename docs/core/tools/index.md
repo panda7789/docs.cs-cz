@@ -7,12 +7,13 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 6dbbc2e95c613d468c7d8c7b0dc15c85849f79dc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: d1bb4eb3b18fe08f38c2cf99a642afb516a797ff
+ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET core nástrojů rozhraní příkazového řádku (CLI)
 
@@ -31,21 +32,21 @@ Ve výchozím nastavení nainstaluje rozhraní příkazového řádku (SxS) způ
 
 Ve výchozím nastavení instalují se následující příkazy:
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 **Základní příkazy**
 
 * [new](dotnet-new.md)
 * [restore](dotnet-restore.md)
-* [sestavení](dotnet-build.md)
-* [publikování](dotnet-publish.md)
-* [Spustit](dotnet-run.md)
-* [Test](dotnet-test.md)
+* [Sestavení](dotnet-build.md)
+* [publish](dotnet-publish.md)
+* [run](dotnet-run.md)
+* [test](dotnet-test.md)
 * [vstest](dotnet-vstest.md)
 * [pack](dotnet-pack.md)
-* [migrace](dotnet-migrate.md)
+* [Migrace](dotnet-migrate.md)
 * [Vyčištění](dotnet-clean.md)
-* [SLN –](dotnet-sln.md)
+* [sln](dotnet-sln.md)
 * [Pomoc](dotnet-help.md)
 * [úložiště](dotnet-store.md)
 
@@ -62,7 +63,7 @@ Ve výchozím nastavení instalují se následující příkazy:
 * [odstranění nuget](dotnet-nuget-delete.md)
 * [místní hodnoty – nuget](dotnet-nuget-locals.md)
 * [nabízená nuget](dotnet-nuget-push.md)
-* [nástroje MSBuild](dotnet-msbuild.md)
+* [msbuild](dotnet-msbuild.md)
 * [Instalační skript pro DotNet.](dotnet-install-script.md)
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
@@ -71,15 +72,15 @@ Ve výchozím nastavení instalují se následující příkazy:
 
 * [new](dotnet-new.md)
 * [restore](dotnet-restore.md)
-* [sestavení](dotnet-build.md)
-* [publikování](dotnet-publish.md)
-* [Spustit](dotnet-run.md)
-* [Test](dotnet-test.md)
+* [Sestavení](dotnet-build.md)
+* [publish](dotnet-publish.md)
+* [run](dotnet-run.md)
+* [test](dotnet-test.md)
 * [vstest](dotnet-vstest.md)
 * [pack](dotnet-pack.md)
-* [migrace](dotnet-migrate.md)
+* [Migrace](dotnet-migrate.md)
 * [Vyčištění](dotnet-clean.md)
-* [SLN –](dotnet-sln.md)
+* [sln](dotnet-sln.md)
 
 **Příkazy Úpravy projektu**
 
@@ -94,7 +95,7 @@ Ve výchozím nastavení instalují se následující příkazy:
 * [odstranění nuget](dotnet-nuget-delete.md)
 * [místní hodnoty – nuget](dotnet-nuget-locals.md)
 * [nabízená nuget](dotnet-nuget-push.md)
-* [nástroje MSBuild](dotnet-msbuild.md)
+* [msbuild](dotnet-msbuild.md)
 * [Instalační skript pro DotNet.](dotnet-install-script.md)
 
 ---
@@ -105,7 +106,7 @@ Rozhraní příkazového řádku přijme model rozšiřitelnosti, které vám um
 
 Struktura rozhraní příkazového řádku příkaz se skládá z [ovladače ("dotnet")](#driver), [příkazu (nebo "akce")](#command-verb)a případně příkaz [argumenty](#arguments) a [možnosti](#options). Zobrazí tento vzor většinu operací rozhraní příkazového řádku, jako je například vytváření novou konzolovou aplikaci a spuštění z příkazového řádku jako následující příkazy, zobrazit, když je proveden z adresáře, s názvem *my_app*:
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 ```console
 dotnet new console
@@ -135,7 +136,7 @@ Když zadáte příkaz, který má ovladače, `dotnet.exe` spustí se proces spu
 
 ### <a name="command-verb"></a>Příkaz ("akce")
 
-Příkaz (nebo "akce") je jednoduše příkaz, který provádí akce. Například `dotnet build` sestavení vašeho kódu. `dotnet publish`publikuje vašeho kódu. Příkazy jsou implementované jako aplikace konzoly pomocí `dotnet {verb}` konvence.
+Příkaz (nebo "akce") je jednoduše příkaz, který provádí akce. Například `dotnet build` sestavení vašeho kódu. `dotnet publish` publikuje vašeho kódu. Příkazy jsou implementované jako aplikace konzoly pomocí `dotnet {verb}` konvence.
 
 ### <a name="arguments"></a>Arguments
 
@@ -151,5 +152,5 @@ Pokud jste použili Preview 2 nástrojů k vytvoření *project.json*– na zák
 
 ## <a name="see-also"></a>Viz také
 
- [DotNet nebo rozhraní příkazového řádku úložiště GitHub](https://github.com/dotnet/cli/)  
+ [dotnet/CLI GitHub Repository](https://github.com/dotnet/cli/)  
  [Průvodce instalací .NET core](https://aka.ms/dotnetcoregs)  

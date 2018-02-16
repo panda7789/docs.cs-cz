@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: f9f3e39b-ce6c-41ff-991f-0625f46441ae
-ms.openlocfilehash: 0fc369993b3ee4c8a9139e4a365330197fe66946
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: f0a8893abca0435307907aa9c169646bf3dec2d5
+ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="f-interactive-options"></a>Interaktivní možnosti F#
 
@@ -42,9 +42,11 @@ Kde seznamy se zobrazují v F # interaktivní možnost argumenty, seznamu elemen
 |**--**|Používá se udělit pokyny F # interaktivní považovat za zbývající argumenty argumenty příkazového řádku F # program nebo skript, kterým můžete přistupovat v kódu pomocí seznamu **fsi.CommandLineArgs**.|
 |**--checked**[**+**&#124;**-**]|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
 |**codepage –:&lt;int&gt;**|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
+|**--consolecolors**[**+**&#124;**-**]|Výstupy upozornění a chybové zprávy v barev.|
 |**--crossoptimize**[**+**&#124;**-**]|Povolit nebo zakázat optimalizace cross-module.|
-|**--debug**[**+**&#124;**-**]<br /><br />**--debug:**[**full**&#124;**pdbonly**]<br /><br />**-g**[**+**&#124;**-**]<br /><br />**-g:**[**full**&#124;**pdbonly**]|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
+|**--debug**[**+**&#124;**-**]<br /><br />**--debug:**[**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]<br /><br />**-g**[**+**&#124;**-**]<br /><br />**-g:**[**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
 |**--definovat:&lt;řetězec&gt;**|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
+|**--deterministic**[**+**&#124;**-**]|Vytváří deterministickou sestavení (včetně verze modulu GUID a časové razítko).|
 |**--exec**|Dá pokyn, F # interaktivní ukončíte po načtení souborů nebo spuštění souboru skriptu zadána na příkazovém řádku.|
 |**--fullpaths**|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
 |**--gui**[**+**&#124;**-**]|Povolí nebo zakáže smyčky událostí Windows Forms. Výchozí hodnota je povoleno.|
@@ -61,7 +63,10 @@ Kde seznamy se zobrazují v F # interaktivní možnost argumenty, seznamu elemen
 |**--quotations-debug**|Určuje, že by měl pro výrazy, které jsou odvozeny od uvozovek literály F # a reflektován definice vygenerované velmi ladicí informace. Informace o ladění se přidá do vlastní atributy uzlu stromu výraz F #. V tématu [Code uvozovky](code-quotations.md) a [Expr.CustomAttributes –](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
 |**--readline**[**+**&#124;**-**]|Povolit nebo zakázat dokončování pomocí tabulátorů v interaktivním režimu.|
 |**--reference:&lt;filename&gt;**<br /><br />**-r:&lt;filename&gt;**|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
+|**--shadowcopyreferences**[**+**&#124;**-**]|Zabraňuje odkazy z zamykají F # interaktivní proces.|
+|**--simpleresolution**|Přeloží odkazy na sestavení pomocí pravidel založených na adresář, nikoli MSBuild řešení.|
 |**tailcalls –**[**+**&#124; **-**]|Povolí nebo zakáže použití pokyn IL tail, což způsobí, že rámce zásobníku znovu použije pro rekurzivní funkce tail. Tato možnost je povolená ve výchozím nastavení.|
+|**--targetprofile:&lt;řetězec&gt;**|Určuje cílový framework profil tohoto sestavení. Platné hodnoty jsou mscorlib, netcore nebo monikerů netstandard.  Výchozí hodnota je mscorlib.|
 |**--použít:&lt;filename&gt;**|Informuje překladač použít daný soubor při spuštění jako počáteční vstup.|
 |**--utf8output**|Stejné jako možnost fsc.exe kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|
 |**--warn:&lt;warning-level&gt;**|Stejné jako **fsc.exe** – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).|

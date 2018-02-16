@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
-ms.workload: dotnetcore
-ms.openlocfilehash: d3c5dde443f848831f7c0585633339c35213357b
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 913d3869559b10af508e695a06d06021f8f90175
+ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -218,7 +219,7 @@ Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NE
    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list'
    sudo apt-get update
    ```
-   **Ubuntu č. 17.04**
+   Ubuntu č. 17.04
 
    ```bash
    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-zesty-prod zesty main" > /etc/apt/sources.list.d/dotnetdev.list'
@@ -242,7 +243,7 @@ Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NE
 4. Nainstalujte .NET Core.
 
    ```bash
-   sudo apt-get install dotnet-sdk-2.1.3
+   sudo apt-get install dotnet-sdk-2.1.4
    ```
 
 4. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
@@ -320,13 +321,13 @@ Instalace .NET Core na Debian 8 nebo Debian 9 (64 bitů):
    
 4. Zaregistrujte Product Microsoft informačního kanálu.
 
-   **Debian 9 (Stretch)**
+   Debian 9 (Stretch)
 
    ```bash
    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/dotnetdev.list'
    ```
    
-   **Debian 8 (Klára)**
+   Debian 8 (Klára)
    
    ```bash
    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/dotnetdev.list'
