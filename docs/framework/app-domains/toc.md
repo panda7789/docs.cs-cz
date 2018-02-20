@@ -10,7 +10,7 @@
 ### [Sestavení a souběžné spouštění](assemblies-and-side-by-side-execution.md)
 ## [Aplikační domény](application-domains.md)
 ## [Témata s návody k doménám a sestavením aplikací](application-domains-and-assemblies-how-to-topics.md)
-## [Používání domén aplikací](application-domains.md)
+## [Používání domén aplikací](use.md)
 ### [Postupy: Vytvoření domény aplikace](how-to-create-an-application-domain.md)
 ### [Postupy: Uvolnění domény aplikace](how-to-unload-an-application-domain.md)
 ### [Postupy: Konfigurace domény aplikace](how-to-configure-an-application-domain.md)
