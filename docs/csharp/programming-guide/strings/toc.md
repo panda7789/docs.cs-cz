@@ -1,5 +1,4 @@
 # [Řetězce](index.md)
-## [Postupy: Zřetězení více řetězců](how-to-concatenate-multiple-strings.md)
 ## [Postupy: Změna obsahu řetězce](how-to-modify-string-contents.md)
 ## [Postupy: Porovnávání řetězců](how-to-compare-strings.md)
 ## [Postupy: Vyhledávání řetězců pomocí řetězcových metod](how-to-search-strings-using-string-methods.md)
