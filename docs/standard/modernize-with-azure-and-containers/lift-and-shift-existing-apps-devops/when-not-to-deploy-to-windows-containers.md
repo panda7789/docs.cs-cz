@@ -39,7 +39,7 @@ Další-nepodporované scénáře a požadavky od komunity, najdete v části Us
 
 -   **Virtuální počítače a kontejnerů v Azure**
 
-    [https://docs.microsoft.com/Azure/Virtual-Machines/Windows/Containers](https://docs.microsoft.com/azure/virtual-machines/windows/containers)
+    [https://docs.microsoft.com/azure/virtual-machines/windows/containers](https://docs.microsoft.com/azure/virtual-machines/windows/containers)
 
 >[!div class="step-by-step"]
 [Předchozí](deploy-existing-net-apps-as-windows-containers.md)

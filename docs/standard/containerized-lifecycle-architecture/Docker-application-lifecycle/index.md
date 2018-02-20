@@ -20,4 +20,4 @@ ms.lasthandoff: 12/23/2017
 
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / docker kontejnery Image a registries.md) [Další] (kontejnery foundation pro devops-collaboration.md)
+[Previous] (../docker-containers-images-and-registries.md) [Next] (containers-foundation-for-devops-collaboration.md)

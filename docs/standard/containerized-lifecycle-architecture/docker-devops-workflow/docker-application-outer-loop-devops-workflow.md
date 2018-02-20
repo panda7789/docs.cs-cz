@@ -237,4 +237,4 @@ Toto téma taky je popsaná v další kapitoly jako součást úlohy, které IT 
 Jenom v případě, že monitorování a Diagnostika jsou 100 procent v rámci sféru DevOps jsou monitorování procesů a analýzy provádí vývojový tým, proti prostředí testování nebo beta. To se provádí tak, že provedete zátěžové testování nebo jednoduše tak, že monitorování beta nebo QA prostředí, kde beta testery zkoušíte nové verze.
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (.. /Run-Manage-monitor-docker-Environments/index.MD)
+[Previous] (index.md) [Next] (../run-manage-monitor-docker-environments/index.md)

@@ -31,7 +31,7 @@ Tabulka 3-1: Otevřete DevOps pracovní postup jakékoli technologie
 
 | Hostitel | Technologie Microsoft | Třetí strany – Azure modulární |
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
-| Platformu pro Docker aplikací   | • Sadu Microsoft Visual Studio a Visual Studio Code<br /> • ROZHRANÍ .NET<br /> • Microsoft Azure Container Service<br /> • Azure Service Fabric<br /> • Kontejner azure registru<br /> | • Libovolného editoru kódu (například Sublime)<br /> • Žádný jazyk (Node.js, Java, přejděte atd.)<br /> • Všechny orchestrator a plánovače<br /> • Žádné Docker registru<br /> |
+| Platformu pro Docker aplikací   | • Sadu Microsoft Visual Studio a Visual Studio Code<br /> • .NET<br /> • Microsoft Azure Container Service<br /> • Azure Service Fabric<br /> • Kontejner azure registru<br /> | • Libovolného editoru kódu (například Sublime)<br /> • Žádný jazyk (Node.js, Java, přejděte atd.)<br /> • Všechny orchestrator a plánovače<br /> • Žádné Docker registru<br /> |
 | DevOps pro aplikace Docker     | • Visual Studio Team Services<br /> • Microsoft Team Foundation Server<br /> • Azure Container Service<br /> • Azure Service Fabric<br /> | • Githubu, Git, Subversion, atd.<br /> • Volaných, Chef, Puppet, rychlosti, CircleCI, TravisCI atd.<br /> • Místní Docker Datacentra, pomocí Docker Swarm, Mesos DC/OS, Kubernetes, atd.<br /> |
 | Správa a sledování  | • Operations Management Suite<br /> • Aplikace statistiky<br /> | • Marathon, Chronos, atd.<br />
 

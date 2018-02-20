@@ -70,14 +70,14 @@ Představte si například, pokud do textového pole hodnota přesahuje 10, elem
 
 ### <a name="jquery-vs-a-spa-framework"></a>jQuery vs SPA Framework
 
-| **Koeficient** | **jQuery** | **Úhlová**|
+| **Koeficient** | **jQuery** | **úhlová**|
 |--------------------------|------------|-------------|
-| Abstrahuje modelu DOM | **Ano** | **Ano** |
-| Podpora jazyka AJAX | **Ano** | **Ano** |
-| Deklarativní datová vazba | **Ne** | **Ano** |
-| Směrování MVC – styl | **Ne** | **Ano** |
-| Ukázka | **Ne** | **Ano** |
-| Přímý odkaz směrování | **Ne** | **Ano** |
+| Abstrahuje modelu DOM | Ano | Ano |
+| Podpora jazyka AJAX | Ano | Ano |
+| Deklarativní datová vazba | Ne | Ano |
+| Směrování MVC – styl | Ne | Ano |
+| Ukázka | Ne | Ano |
+| Přímý odkaz směrování | Ne | Ano |
 
 Většinu funkcí, které jQuery chybí vnitřně lze přidat při přidání dalších knihoven. Rozhraní SPA jako úhlová však poskytuje tyto funkce integrace způsobem, protože je navržen ke všem z nich pamatovat od začátku. JQuery je také velmi imperativní knihovny, což znamená, že je potřeba volat funkce jQuery, aby bylo možné provádět žádné kroky s jQuery. Většinu práce a funkce, které poskytují rozhraní SPA lze provést deklarativně, nevyžadují žádný skutečný kód k zapsání.
 
@@ -148,27 +148,27 @@ Rozhraní JavaScript pokračovat ve vývoji s breakneck rychlost. Použijte info
 
 > ### <a name="references--client-web-technologies"></a>Odkazy – klienta webové technologie
 > - **Kód HTML a CSS**  
-> <https://www.w3.org/Standards/webdesign/htmlcss>
-> - **Sass vs. MENŠÍ**  
-> <https://www.keycdn.com/blog/sass-vs-Less/>
+> <https://www.w3.org/standards/webdesign/htmlcss>
+> - **Sass vs. LESS**  
+> <https://www.keycdn.com/blog/sass-vs-less/>
 > - **Práce se styly aplikace ASP.NET Core s méně, Sass a úžasné písma**  
-> <https://docs.microsoft.com/ASPNET/Core/Client-Side/Less-sass-fa>
+> <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>
 > - **Vývoj pro klientské v ASP.NET Core**  
-> <https://docs.microsoft.com/ASPNET/Core/Client-Side/>
+> <https://docs.microsoft.com/aspnet/core/client-side/>
 > - **jQuery**  
-> <https://jQuery.com/>
+> <https://jquery.com/>
 > - **jQuery vs AngularJS**  
-> <https://www.airpair.com/angularjs/posts/jQuery-angularjs-Comparison-Migration-Walkthrough>
-> - **Úhlová**  
-> <https://angular.IO/>
-> - **Reagovat**  
-> <https://Facebook.github.IO/react/>
+> <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
+> - **úhlová**  
+> <https://angular.io/>
+> - Reagovat  
+> <https://facebook.github.io/react/>
 > - **Reagovat Slingshot**  
 > <https://github.com/coryhouse/react-slingshot>
 > - **Reagovat vs úhlová porovnání 2**  
-> <https://www.codementor.IO/codementorteam/react-vs-angular-2-Comparison-Beginners-Guide-lvz5710ha>
+> <https://www.codementor.io/codementorteam/react-vs-angular-2-comparison-beginners-guide-lvz5710ha>
 > - **5 nejlepší rozhraní JavaScript 2017**  
-> <https://hackernoon.com/5-Best-JavaScript-Frameworks-in-2017-7a63b3870282>
+> <https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282>
 
 >[!div class="step-by-step"]
 [Předchozí] (common-web-application-architectures.md) [Další] (develop-asp-net-core-mvc-apps.md)

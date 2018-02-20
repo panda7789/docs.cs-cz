@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: acabbf5d-fbb8-479f-894c-7251bf16c8c3
-ms.openlocfilehash: 15ba2e167efc1d295d81439dcf85bc7272e05265
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c4ff998c65f3a5c458f36312f6887d869569d814
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -47,9 +47,9 @@ Následující tabulka popisuje metody, které lze použít v třídě Tvůrce p
 |`Delay`|`(unit -> M<'T>) -> M<'T>`|Zabalí výpočetní výraz jako funkce.|
 |`Return`|`'T -> M<'T>`|Volá se pro `return` v výpočetní výrazy.|
 |`ReturnFrom`|`M<'T> -> M<'T>`|Volá se pro `return!` v výpočetní výrazy.|
-|`Run`|`M<'T> -> M<'T>`nebo<br /><br />`M<'T> -> 'T`|Spustí výpočetní výraz.|
-|`Combine`|`M<'T> * M<'T> -> M<'T>`nebo<br /><br />`M<unit> * M<'T> -> M<'T>`|Volá se pro sekvencování v výpočetní výrazy.|
-|`For`|`seq<'T> * ('T -> M<'U>) -> M<'U>`nebo<br /><br />`seq<'T> * ('T -> M<'U>) -> seq<M<'U>>`|Volá se pro `for...do` výrazy v výpočetní výrazy.|
+|`Run`|`M<'T> -> M<'T>` Nebo<br /><br />`M<'T> -> 'T`|Spustí výpočetní výraz.|
+|`Combine`|`M<'T> * M<'T> -> M<'T>` Nebo<br /><br />`M<unit> * M<'T> -> M<'T>`|Volá se pro sekvencování v výpočetní výrazy.|
+|`For`|`seq<'T> * ('T -> M<'U>) -> M<'U>` Nebo<br /><br />`seq<'T> * ('T -> M<'U>) -> seq<M<'U>>`|Volá se pro `for...do` výrazy v výpočetní výrazy.|
 |`TryFinally`|`M<'T> * (unit -> unit) -> M<'T>`|Volá se pro `try...finally` výrazy v výpočetní výrazy.|
 |`TryWith`|`M<'T> * (exn -> M<'T>) -> M<'T>`|Volá se pro `try...with` výrazy v výpočetní výrazy.|
 |`Using`|`'T * ('T -> M<'U>) -> M<'U> when 'U :> IDisposable`|Volá se pro `use` vazby do ve výpočetní výrazy.|
@@ -76,7 +76,7 @@ Ve výše uvedeném kódu volání `Run` a `Delay` byly vynechány, pokud nejsou
 |<code>{&#124; do! expr in cexpr &#124;}</code>|<code>builder.Bind(expr, (fun () -> {&#124; cexpr &#124;}))</code>|
 |<code>{&#124; yield expr &#124;}</code>|`builder.Yield(expr)`|
 |<code>{&#124; yield! expr &#124;}</code>|`builder.YieldFrom(expr)`|
-|<code>{&#124; return expr &#124;}<code>|`builder.Return(expr)`|
+|<code>{&#124; return expr &#124;}</code>|`builder.Return(expr)`|
 |<code>{&#124; return! expr &#124;}</code>|`builder.ReturnFrom(expr)`|
 |<code>{&#124; use pattern = expr in cexpr &#124;}</code>|<code>builder.Using(expr, (fun pattern -> {&#124; cexpr &#124;}))</code>|
 |<code>{&#124; use! value = expr in cexpr &#124;}</code>|<code>builder.Bind(expr, (fun value -> builder.Using(value, (fun value -> {&#124; cexpr &#124;}))))</code>|
@@ -84,7 +84,7 @@ Ve výše uvedeném kódu volání `Run` a `Delay` byly vynechány, pokud nejsou
 |<code>{&#124; if expr then cexpr0 else cexpr1 &#124;}</code>|<code>if expr then {&#124; cexpr0 &#124;} else {&#124; cexpr1 &#124;}</code>|
 |<code>{&#124; match expr with &#124; pattern_i -> cexpr_i &#124;}</code>|<code>match expr with &#124; pattern_i -> {&#124; cexpr_i &#124;}</code>|
 |<code>{&#124; for pattern in expr do cexpr &#124;}</code>|<code>builder.For(enumeration, (fun pattern -> {&#124; cexpr &#124;}))</code>|
-|<code>{&#124; for identifier = expr1 to expr2 do cexpr &#124;}<code>|<code>builder.For(enumeration, (fun identifier -> {&#124; cexpr &#124;}))</code>|
+|<code>{&#124; for identifier = expr1 to expr2 do cexpr &#124;}</code>|<code>builder.For(enumeration, (fun identifier -> {&#124; cexpr &#124;}))</code>|
 |<code>{&#124; while expr do cexpr &#124;}</code>|<code>builder.While(fun () -> expr), builder.Delay({&#124;cexpr &#124;})</code>|
 |<code>{&#124; try cexpr with &#124; pattern_i -> expr_i &#124;}</code>|<code>builder.TryWith(builder.Delay({&#124; cexpr &#124;}), (fun value -> match value with &#124; pattern_i -> expr_i &#124; exn -> reraise exn)))</code>|
 |<code>{&#124; try cexpr finally expr &#124;}</code>|<code>builder.TryFinally(builder.Delay( {&#124; cexpr &#124;}), (fun () -> expr))</code>|
@@ -227,10 +227,10 @@ Výpočetní výraz má základní typ, který vrací výraz. Základní typ mů
 Můžete definovat vlastní operaci na výpočetní výraz a použít vlastní operaci jako operátor v výpočetní výraz. Operátor dotazu může obsahovat třeba ve výrazu dotazu. Když definujete vlastní operace, je nutné definovat výnos a pro metody ve Výpočetní výraz. Chcete-li definovat vlastní operace, umístí jej do Tvůrce třídy pro výpočetní výraz a potom použít [ `CustomOperationAttribute` ](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19). Tento atribut přebírá řetězec jako argument, což je název, který se má použít v rámci vlastní operace. Tento název se dodává do oboru na začátku otevření složené závorky výpočetní výraz. Proto byste neměli používat identifikátory, které mají stejný název jako vlastní operaci v tomto bloku. Například nepoužívejte identifikátorů například `all` nebo `last` ve výrazech dotazů.
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Asynchronní pracovní postupy](asynchronous-workflows.md)
 
-[Pořadí](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
+[Sekvence](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
 
-[Výrazy dotazů](query-expressions.md)
+[Výrazy dotazu](query-expressions.md)

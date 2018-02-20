@@ -19,7 +19,7 @@ ms.lasthandoff: 12/23/2017
 
 > "Data drahocenný jedinou a bude trvat déle, než systémy sami."
 
-TIM Berners-Lee
+Tim Berners-Lee
 
 ## <a name="summary"></a>Souhrn
 
@@ -202,11 +202,11 @@ Je první DbContext \_catalogContext a druhý je DbContext v rámci \_integratio
 
 > ### <a name="references--entity-framework-core"></a>Odkazy – základní Entity Framework
 > - **EF základní dokumentace**  
-> <https://docs.microsoft.com/EF/>
+> <https://docs.microsoft.com/ef/>
 > - **EF jádra: Související Data**  
-> <https://docs.microsoft.com/EF/Core/querying/related-data>
+> <https://docs.microsoft.com/ef/core/querying/related-data>
 > - **Vyhněte se opožděného načítání entity v aplikacích ASPNET**  
-> <http://ardalis.com/AVOID-lazy-Loading-entities-in-ASP-NET-Applications>
+> <http://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## <a name="ef-core-or-micro-orm"></a>Základní EF nebo micro ORM?
 
@@ -286,7 +286,7 @@ Dotazovací jazyk DocumentDB je jednoduché, ale výkonné rozhraní pro dotazov
 **Odkazy – DocumentDB**
 
 -   DocumentDB Introduction\
-    <https://docs.microsoft.com/Azure/documentdb/documentdb-Introduction>
+    <https://docs.microsoft.com/azure/documentdb/documentdb-introduction>
 
 ## <a name="other-persistence-options"></a>Další možnosti trvalost
 
@@ -303,9 +303,9 @@ Také na relační a možnosti úložiště typu NoSQL aplikace ASP.NET Core slo
 **Odkazy – úložiště Azure**
 
 -   Introduction\ úložiště Azure
-    <https://docs.microsoft.com/Azure/Storage/Storage-Introduction>
+    <https://docs.microsoft.com/azure/storage/storage-introduction>
 
-## <a name="caching"></a>Ukládání do mezipaměti
+## <a name="caching"></a>Caching
 
 Ve webových aplikacích každý webový požadavek by se měly dokončit v možná nejkratší době. Jedním ze způsobů jak toho docílit je omezit počet externí volání, které server musíte provést žádost dokončit. Ukládání do mezipaměti zahrnuje ukládání kopii dat na serveru (nebo jiného úložiště dat, který je více než zdroj dat snadno dotaz). Webové aplikace a hlavně-zabezpečené ověřování HESLA tradiční webových aplikací, potřebujete k vytvoření celé uživatelské rozhraní s každou žádostí. To často zahrnuje, vytvoření řadu stejné databázové dotazy opakovaně z jednoho uživatele požadavku na další. Ve většině případů tato data změní zřídka, takže je málo důvod neustále požádat o z databáze. ASP.NET Core podporuje ukládání odpovědí do mezipaměti, pro ukládání do mezipaměti celé stránky a ukládání do mezipaměti dat, která podporuje podrobnější chování ukládání do mezipaměti.
 
@@ -441,4 +441,4 @@ _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
 >[!div class="step-by-step"]
-[Předchozí] (develop-asp-net-core-mvc-apps.md) [Další] (test-asp-net-core-mvc-apps.md)
+[Previous] (develop-asp-net-core-mvc-apps.md) [Next] (test-asp-net-core-mvc-apps.md)

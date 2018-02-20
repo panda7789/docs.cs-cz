@@ -12,12 +12,13 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
-ms.workload: dotnetcore
-ms.openlocfilehash: 8c6daabb3040998d3376ad022790c16b9629233f
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: e538cb541ee2c59caf1feba4a31f86118c42c3ca
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 
@@ -37,7 +38,7 @@ Můžete buď vytvořit vlastní [na základě bitové kopie](https://docs.docke
 
 * [Kontejnery založené na systému Windows: vývoj moderních aplikací pomocí řízení podnikové úrovni.](https://www.youtube.com/watch?v=Ryx3o0rD5lY&feature=youtu.be)
 * [Přehled docker](https://docs.docker.com/engine/docker-overview/)
-* [Soubor Docker kontejnerům Windows](/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile.md)
+* [Soubor Docker kontejnerům Windows](/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)
 * [Osvědčené postupy pro psaní Dockerfiles](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
 * [Vytváření Imagí Dockeru pro aplikace .NET Core](../docker/building-net-docker-images.md)
 
@@ -88,7 +89,7 @@ Ukázky použití .NET Core 2.0. Používají Docker [více fáze sestavení](ht
 
 * To [ukázka .NET Core Docker](https://github.com/dotnet/dotnet-docker-samples/tree/master/dotnetapp-selfcontained) ukazuje osvědčených postupů vzor pro vytváření imagí Dockeru pro [nezávislý aplikace .NET Core](../deploying/index.md). Použít pro kontejner nejmenší provozní bez výhody z [sdílení základní Image mezi kontejnery](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/). Nižších vrstvách Docker však může sdílet.
 
-#### <a name="arm32--raspberry-pi"></a>ARM32 / malin pí
+#### <a name="arm32--raspberry-pi"></a>ARM32 / Raspberry Pi
 
 * [.NET core Runtime ARM32 sestavení oznámení](https://github.com/dotnet/announcements/issues/29)
 
@@ -102,11 +103,11 @@ Ukázky použití .NET Core 2.0. Používají Docker [více fáze sestavení](ht
 
 Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Docker rozhraní .NET Framework. Tyto Image můžete použít jako základ imagí Dockeru.
 
-**Rozhraní .NET framework 4.7**
+Rozhraní .NET framework 4.7
 
 [Dotnet – ukázka framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "text hello world" použití [4.7 rozhraní .NET Framework](../../framework/whats-new/index.md#v47). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.7 docker image](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile).
 
-**Rozhraní .NET framework 4.6.2**
+**.NET Framework 4.6.2**
 
 [Dotnet – ukázka framework: 4.6.2](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.6.2) ukazuje základní "text hello world" použití [rozhraní .NET Framework 4.6.2](../../framework/whats-new/index.md#v462). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.6.2 docker image](https://github.com/Microsoft/dotnet-framework-docker/tree/master/4.6.2).
 

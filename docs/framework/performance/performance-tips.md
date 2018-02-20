@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - Visual Basic, performance
 - performance [Visual Basic]
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 manager: wpickett
-ms.workload: wiwagn
-ms.openlocfilehash: 60c25de889e5055241486078baf46657b6870afd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- wiwagn
+ms.openlocfilehash: cad50862d5ed05dd13c3f73f50af0c466ad930cd
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
 Termín *výkonu* obvykle odkazuje na rychlost zpracování programu. Rychlost provádění někdy zvýšíte následující některých základních pravidel ve zdrojovém kódu. V některých aplikacích je důležité, abyste pečlivě zkontrolujte kód a použít profilery a ujistěte se, zda je spuštěna co nejrychleji. V jiných programů nemáte provést tyto optimalizace, protože je kód spuštěn přijatelně rychlé, jako je zapsán. V tomto článku jsou uvedené některé běžné oblasti, kde můžete sníží výkon a tipy pro zlepšení ho a také odkazy na témata další výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)  
@@ -32,7 +34,7 @@ Termín *výkonu* obvykle odkazuje na rychlost zpracování programu. Rychlost p
  Doporučujeme nepoužívat hodnotu typy v situacích, kde musí být do pole velký počet dobu, například v třídy neobecnou kolekcí, jako <xref:System.Collections.ArrayList?displayProperty=nameWithType>. Zabalení typů hodnot se můžete vyhnout pomocí obecné kolekce <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. Zabalení a rozbalení jsou náročné procesy. Když je do pole zadejte hodnotu, musí být vytvořený zcela nový objekt. Může to trvat až 20 x delší než jednoduchý odkaz přiřazení. Po rozbalení, může proces přetypování trvat čtyřikrát stejně dlouho jako přiřazení. Další informace najdete v tématu [zabalení a rozbalení](~/docs/csharp/programming-guide/types/boxing-and-unboxing.md).  
   
 ## <a name="strings"></a>Řetězce  
- Když jste řetězení velký počet proměnných řetězce, například ve smyčce úzkou použít <xref:System.Text.StringBuilder?displayProperty=nameWithType> místo jazyka C# [+ – operátor](~/docs/csharp/language-reference/operators/addition-operator.md) nebo Visual Basic [operátory zřetězení](~/docs/visual-basic/language-reference/operators/concatenation-operators.md). Další informace najdete v tématu [postupy: řetězení více řetězců](~/docs/csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md) a [operátory řetězení v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).  
+ Když jste řetězení velký počet proměnných řetězce, například ve smyčce úzkou použít <xref:System.Text.StringBuilder?displayProperty=nameWithType> místo jazyka C# [+ – operátor](~/docs/csharp/language-reference/operators/addition-operator.md) nebo Visual Basic [operátory zřetězení](~/docs/visual-basic/language-reference/operators/concatenation-operators.md). Další informace najdete v tématu [postupy: řetězení více řetězců](../../csharp/how-to/concatenate-multiple-strings.md) a [operátory řetězení v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).  
   
 ## <a name="destructors"></a>Destruktory  
  Nepoužívejte prázdné destruktory. Pokud třída obsahuje destruktor, bude vytvořena položka ve frontě Finalize. Při volání destruktoru, volá se ke zpracování fronty uvolňování paměti. Pokud destruktoru je prázdná, to jednoduše vede ke ztrátě výkonu. Další informace najdete v tématu [destruktory](~/docs/csharp/programming-guide/classes-and-structs/destructors.md) a [doba života objektu: jak jsou objekty vytvořen a Destroyed](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  

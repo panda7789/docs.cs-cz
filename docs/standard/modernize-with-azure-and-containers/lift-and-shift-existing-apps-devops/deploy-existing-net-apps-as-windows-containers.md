@@ -95,17 +95,17 @@ Ve scénářích migrace pro stávající nebo starší verze aplikace, které j
 
 Když přidáte název bitové kopie do souboru soubor Docker, můžete vybrat verzi operačního systému a pomocí značky, jako v následujících příkladech založené na rozhraní .NET Framework kontejneru bitových kopií systému Windows:
 
-> | **Značka** | **Systém a verze** |
+> | Značka | **Systém a verze** |
 > |---|---|
-> | **Microsoft/dotnet-framework:4.x-windowsservercore** | Rozhraní .NET framework 4.x na jádru serveru Windows |
-> | **Microsoft/aspnet:4.x-windowsservercore** | Rozhraní .NET framework 4.x pomocí dalších úprav ASP.NET na jádru serveru Windows |
+> | **microsoft/dotnet-framework:4.x-windowsservercore** | Rozhraní .NET framework 4.x na jádru serveru Windows |
+> | **microsoft/aspnet:4.x-windowsservercore** | Rozhraní .NET framework 4.x pomocí dalších úprav ASP.NET na jádru serveru Windows |
 
 Pro .NET Core (napříč platformami operačních systémů Linux a Windows) značek bude vypadat takto:
 
-> | **Značka** | **Systém a verze**
+> | Značka | **Systém a verze**
 > |---|---|
-> | **Microsoft/DotNet:2.0.0-Runtime** | Rozhraní .NET 2.0 core runtime jen v systému Linux |
-> | **Microsoft/DotNet:2.0.0-Runtime-nanoserver** | Rozhraní .NET 2.0 core runtime jen v systému Windows Nano Server |
+> | **microsoft/dotnet:2.0.0-runtime** | Rozhraní .NET 2.0 core runtime jen v systému Linux |
+> | **microsoft/dotnet:2.0.0-runtime-nanoserver** | Rozhraní .NET 2.0 core runtime jen v systému Windows Nano Server |
 
 ### <a name="multi-arch-images"></a>Více architektury bitové kopie
 
@@ -127,15 +127,15 @@ Kontejner systémem Windows s nebo bez izolace technologie Hyper-V je spuštěn�
 
 -   **Dokumentaci k Windows kontejnery**
 
-    [https://docs.microsoft.com/Virtualization/windowscontainers/](https://docs.microsoft.com/virtualization/windowscontainers/)
+    [https://docs.microsoft.com/virtualization/windowscontainers/](https://docs.microsoft.com/virtualization/windowscontainers/)
 
 -   **Základy Windows kontejnery**
 
-    [https://docs.microsoft.com/Virtualization/windowscontainers/About/](https://docs.microsoft.com/virtualization/windowscontainers/about/)
+    [https://docs.microsoft.com/virtualization/windowscontainers/about/](https://docs.microsoft.com/virtualization/windowscontainers/about/)
 
 -   **Infografice: Společnost Microsoft a kontejnery**
 
-    [https://info.microsoft.com/RS/157-GQE-382/Images/Container%20infographic%201.4.17.PDF](https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf)
+    [https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf](https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf)
 
 >[!div class="step-by-step"]
 [Předchozí](how-to-deploy-existing-net-apps-to-azure-app-service.md)

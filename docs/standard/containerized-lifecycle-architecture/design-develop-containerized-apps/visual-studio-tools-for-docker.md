@@ -38,7 +38,7 @@ Visual Studio Tools for Docker zajišťuje konzistentní způsob pro vývoj a ov
 
 Pokud používáte jediný kontejner, je první věcí, které potřebujete k zahájení zapnout podporu Docker do projektu .NET Core. K tomu, klikněte pravým tlačítkem na soubor projektu, jak ukazuje obrázek 4 – 25.
 
-![https://I1.visualstudiogallery.msdn.s-MSFT.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4/Image/File/205468/1/Add-docker-support.PNG](./media/image31.png)
+![https://i1.visualstudiogallery.msdn.s-msft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4/image/file/205468/1/add-docker-support.png](./media/image31.png)
 
 Obrázek 4 – 25: zapnutí Docker podporu pro svůj projekt sady Visual Studio
 
@@ -74,4 +74,4 @@ Nasaďte kontejner ASP.NET vzdáleného hostitele Docker: [https://docs.microsof
 
 
 >[!div class="step-by-step"]
-[Předchozí] (docker aplikace vnitřní smyčky workflow.md) [Další] (set-up-windows-containers-with-powershell.md)
+[Previous] (docker-apps-inner-loop-workflow.md) [Next] (set-up-windows-containers-with-powershell.md)

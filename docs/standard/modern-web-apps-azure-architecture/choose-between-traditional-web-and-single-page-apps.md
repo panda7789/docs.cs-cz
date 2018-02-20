@@ -18,7 +18,7 @@ ms.lasthandoff: 12/23/2017
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradiční webové aplikace a jednostránkové aplikace (SPA)
 
 > "Je Atwood zákonem: jakékoli aplikace, která může být napsán v jazyce JavaScript, zapíšou nakonec v jazyce JavaScript."  
-> _\-Jeff Atwood_
+> _\- Jeff Atwood_
 
 ## <a name="summary"></a>Souhrn
 
@@ -78,7 +78,7 @@ Zápis SPA vyžaduje znalost jazyka JavaScript a TypeScript a způsobů programo
 > - **AngularJS**  
 > <https://angularjs.org/>
 > - **Porovnání 4 rámci oblíbených jazyka JavaScript**  
-> <https://www.developereconomics.com/Feature-Comparison-of-4-Popular-js-mV-Frameworks>
+> <https://www.developereconomics.com/feature-comparison-of-4-popular-js-mv-frameworks>
 
 **Aplikace musí již zveřejňují rozhraní API pro ostatní klienty (interní nebo veřejná)**
 
@@ -90,10 +90,10 @@ Následující rozhodnutí tabulka shrnuje některé základní faktorů, které
 
   | **Koeficient** | **Tradiční webové aplikace** | **Jednostránková aplikace** |
   |---|---|---|
-  | Požadované Team znalost jazyka JavaScript nebo TypeScript | **Minimální** | **Požadované** |
-  | Podpora prohlížeče bez skriptování | **Podporované** | **Nepodporuje se** |
-  | Chování minimální aplikace na straně klienta | **Vhodným** | **Přehnaně** |
-  | Požadavky na bohatou a komplexní uživatelské rozhraní | **Omezené** | **Vhodným** |
+  | Požadované Team znalost jazyka JavaScript nebo TypeScript | **minimální** | **Požadované** |
+  | Podpora prohlížeče bez skriptování | Podporované | **Nepodporuje se** |
+  | Chování minimální aplikace na straně klienta | **Well-Suited** | **Přehnaně** |
+  | Požadavky na bohatou a komplexní uživatelské rozhraní | **Limited** | **Well-Suited** |
 
 >[!div class="step-by-step"]
-[Předchozí] (modern-web-applications-characteristics.md) [další](architectural-principles.md)
+[Předchozí] (moderních web aplikace characteristics.md) [další](architectural-principles.md)

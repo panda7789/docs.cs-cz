@@ -74,10 +74,10 @@ Pro webové rozhraní API, rozhraní ASP.NET MVC základní podporuje [ *vyjedn�
 > ### <a name="references--mapping-requests-to-responses"></a>Odkazy – mapování požadavky na odpovědi
 > - **Směrování do akce Kontroleru**
 > <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
-> - **Model vazby** https://docs.microsoft.com/aspnet/core/mvc/models/model-binding
-> - **Ověření modelu**
+> - **Model Binding** https://docs.microsoft.com/aspnet/core/mvc/models/model-binding
+> - **Model Validation**
 > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
-> - **Filtry** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
+> - **Filters** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
 
 ## <a name="working-with-dependencies"></a>Práce s závislosti
 
@@ -282,13 +282,13 @@ Další informace o implementaci filtry a stáhnout ukázku práce z článku na
 
 > ### <a name="references--structuring-applications"></a>Odkazy – strukturování aplikace
 > - **Oblasti**  
-> <https://docs.microsoft.com/ASPNET/Core/MVC/Controllers/areas>
+> <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **MSDN – funkce řezy pro jádro ASP.NET MVC**
 >  <https://msdn.microsoft.com/magazine/mt763233.aspx>
 > - **Filtry**  
-> <https://docs.microsoft.com/ASPNET/Core/MVC/Controllers/filters>
+> <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **MSDN – skutečných jádro ASP.NET MVC filtry**  
-> <https://msdn.microsoft.com/Magazine/mt767699.aspx>
+> <https://msdn.microsoft.com/magazine/mt767699.aspx>
 
 ## <a name="security"></a>Zabezpečení
 
@@ -388,15 +388,15 @@ Většina webových rozhraní API by měla implementovat ověřování na zákla
 
 > ### <a name="references--security"></a>Odkazy – zabezpečení
 > - **Přehled dokumentace zabezpečení**  
-> https://docs.microsoft.com/ASPNET/Core/Security/
+> https://docs.microsoft.com/aspnet/core/security/
 > - **Vynucování SSL v aplikaci ASP.NET Core**  
-> <https://docs.microsoft.com/ASPNET/Core/Security/enforcing-SSL>
+> <https://docs.microsoft.com/aspnet/core/security/enforcing-ssl>
 > - **Úvod do systému Identity**  
-> <https://docs.microsoft.com/ASPNET/Core/Security/Authentication/identity>
+> <https://docs.microsoft.com/aspnet/core/security/authentication/identity>
 > - **Úvod do autorizace**  
-> <https://docs.microsoft.com/ASPNET/Core/Security/Authorization/Introduction>
+> <https://docs.microsoft.com/aspnet/core/security/authorization/introduction>
 > - **Ověřování a autorizace API Apps v Azure App Service**  
-> <https://docs.microsoft.com/Azure/App-Service-API/App-Service-API-Authentication>
+> <https://docs.microsoft.com/azure/app-service-api/app-service-api-authentication>
 
 ## <a name="client-communication"></a>Komunikace klienta
 
@@ -455,9 +455,9 @@ Zvažte zvýšení způsoby, ve kterých vaše aplikace komunikovat přímo s kl
 
 > ### <a name="references--client-communication"></a>Odkazy – komunikaci klientů
 > - **Jádro ASP.NET SignalR**  
-> <https://github.com/ASPNET/SignalR>
+> <https://github.com/aspnet/SignalR>
 > - **Správce protokolu WebSocket**  
-> https://github.com/Radu-matei/websocket-Manager
+> https://github.com/radu-matei/websocket-manager
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>Návrh – řízené domény by měl použijete ho?
 
@@ -505,7 +505,7 @@ Hybridní přístup by mohla být DDD použít pouze pro transakční či složi
 
 > ### <a name="references--domain-driven-design"></a>Odkazy – funguje na základě domény
 > - **DDD zjednodušeně (StackOverflow odpovědí)**  
-> <https://stackoverflow.com/Questions/1222392/CAN-someone-EXPLAIN-Domain-Driven-Design-ddd-in-Plain-English-Please/1222488#1222488>
+> <https://stackoverflow.com/questions/1222392/can-someone-explain-domain-driven-design-ddd-in-plain-english-please/1222488#1222488>
 
 ## <a name="deployment"></a>Nasazení
 
@@ -547,13 +547,13 @@ Pokud máte aplikace na platformě Azure, slouží k poskytování několika slu
 
 > ### <a name="references--deployment"></a>Odkazy – nasazení
 > - **Přehled nasazení a hostování**  
-> <https://docs.microsoft.com/ASPNET/Core/Publishing/>
+> <https://docs.microsoft.com/aspnet/core/publishing/>
 > - **Kdy použít Kestrel s reverzní proxy server**  
-> <https://docs.microsoft.com/ASPNET/Core/Fundamentals/Servers/kestrel#When-to-use-kestrel-with-a-Reverse-proxy>
+> <https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy>
 > - **Aplikace ASP.NET Core hostitele v Docker**  
-> <https://docs.microsoft.com/ASPNET/Core/Publishing/docker>
+> <https://docs.microsoft.com/aspnet/core/publishing/docker>
 > - **Představení Azure Application Gateway**  
-> <https://docs.microsoft.com/Azure/Application-Gateway/Application-Gateway-Introduction>
+> <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]
 [Předchozí] (common-client-side-web-technologies.md) [Další] (work-with-data-in-asp-net-core-apps.md)

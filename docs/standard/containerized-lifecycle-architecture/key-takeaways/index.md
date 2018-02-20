@@ -29,4 +29,4 @@ ms.lasthandoff: 12/23/2017
 Visual Studio Team Services výrazně zjednodušuje prostředí DevOps určený pro prostředí Docker z průběžné nasazování kanály, včetně jednoduché prostředí Docker nebo pokročilejší orchestrators mikroslužbu a kontejneru na základě Azure.
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+[Previous] (../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)

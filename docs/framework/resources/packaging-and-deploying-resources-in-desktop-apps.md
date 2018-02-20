@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-bcl
+ms.technology:
+- dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -33,16 +34,17 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f170c3e7174b231153a9e201f617faa786291056
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3ab23b263d572a5573de5fc21f15b56e784a9a94
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>Zabalení a nasazení prostředků v aplikacích klasické pracovní plochy
 Aplikací v rozhraní .NET Framework Resource Manageru, reprezentována závisí <xref:System.Resources.ResourceManager> třída načíst lokalizované prostředky. Resource Manager předpokládá, že model hvězdicové slouží k zabalení a nasazení prostředků. Rozbočovače je hlavní sestavení, které obsahuje nelokalizovatelný, spustitelný kód a prostředky pro jednu kulturu, nazvanou neutrální nebo výchozí jazykovou verzi. Představuje výchozí jazykovou verzi záložní jazykovou verzi pro aplikaci. je jazyková verze, jejichž zdroje se použijí, pokud nelze nalézt lokalizované prostředky. Každý paprsek připojí k satelitní sestavení, které obsahuje prostředky pro jednu kulturu, ale neobsahuje žádný kód.  
@@ -129,7 +131,7 @@ Aplikací v rozhraní .NET Framework Resource Manageru, reprezentována závisí
 </configuration>  
 ```  
   
- Optimalizované testu pro satelitní sestavení je funkce přihlášení. Tedy dodržuje modulu runtime kroků popsaných v [prostředků záložní proces](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) Pokud [ \<relativebindforresources – >](../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md) element je součástí aplikace. konfigurační soubor a jeho `enabled` je nastavena na hodnotu `true`. Pokud je to tento případ, procesu zjišťování pro satelitní sestavení je upravit takto:  
+ Optimalizované testu pro satelitní sestavení je funkce přihlášení. Tedy dodržuje modulu runtime kroků popsaných v [prostředků záložní proces](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) Pokud [ \<relativebindforresources – >](../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md) element nachází konfigurace aplikace souboru a jeho `enabled` je nastavena na hodnotu `true`. Pokud je to tento případ, procesu zjišťování pro satelitní sestavení je upravit takto:  
   
 -   Modul runtime používá umístění nadřazeného kódu sestavení testovat pro satelitní sestavení. Pokud je nadřazený sestavení v globální mezipaměti sestavení nainstalováno, modul runtime sondy v mezipaměti, ale není v adresáři aplikace. Pokud je nadřazený sestavení nainstalováno v adresáři aplikace, modulu runtime sondy v adresáři aplikace, ale není v globální mezipaměti sestavení.  
   
@@ -154,19 +156,19 @@ Greeting=Добрый день
   
  Tyto dva soubory zkompilovány pro soubory .resources spuštěním [Generátor zdrojových souborů (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) z příkazového řádku.  Pro prostředek francouzštinu příkaz je:  
   
- **Resgen.exe resources.fr.txt**  
+ **resgen.exe resources.fr.txt**  
   
  Pro ruštinu prostředek příkaz je:  
   
- **Resgen.exe resources.ru.txt**  
+ **resgen.exe resources.ru.txt**  
   
  Soubory .resources jsou vloženy do dynamické knihovny spuštěním [linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) z příkazu řádek pro prostředek francouzštinu následujícím způsobem:  
   
- **Al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll**  
+ **al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll**  
   
  a pro ruštinu prostředek následujícím způsobem:  
   
- **Al /t:lib /embed:resources.ru.resources /culture:ru /out:ru\Example1.resources.dll**  
+ **al /t:lib /embed:resources.ru.resources /culture:ru /out:ru\Example1.resources.dll**  
   
  Zdrojový kód aplikace se nachází v souboru s názvem Example1.cs nebo Example1.vb. Její součástí <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut označuje, že výchozí prostředek aplikace v podadresáři fr. Ji vytvoří Resource Manager, načte hodnotu `Greeting` prostředků a zobrazí se ke konzole.  
   

@@ -30,21 +30,21 @@ helpviewer_keywords:
 - Implicit operator
 - data types [.NET Framework], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 643a1c7d8dd141a8d898af61ba8302f46207321b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d8bbf57625e1d944ab4e97235e718eef7b61a3a4
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="type-conversion-in-the-net-framework"></a>Převod typů v rozhraní .NET Framework
-<a name="top"></a>Každá hodnota má přidružený typ, který definuje atributy, jako je množství přidělené místo na hodnotu rozsahu možných hodnot, které může mít, a členy které to umožní. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  
+<a name="top"></a> Každá hodnota má přidružený typ, který definuje atributy, jako je množství přidělené místo na hodnotu rozsahu možných hodnot, které může mít, a členy které to umožní. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  
   
  Rozhraní .NET Framework automaticky podporuje následující převody:  
   
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/23/2017
   
 -   <xref:System.IConvertible> Rozhraní, které definuje převody každý základní datový typ rozhraní .NET Framework. Další informace najdete v tématu [rozhraní IConvertible](#the_iconvertible_interface) části.  
   
--   <xref:System.Convert> Třídy, která poskytuje sadu metod, které implementují metody v <xref:System.IConvertible> rozhraní. Další informace najdete v tématu[Třída Convert](#Convert) části.  
+-   <xref:System.Convert> Třídy, která poskytuje sadu metod, které implementují metody v <xref:System.IConvertible> rozhraní. Další informace najdete v tématu [Třída Convert](#Convert) části.  
   
 -   <xref:System.ComponentModel.TypeConverter> Třída, která je základní třídu, která můžete rozšířit pro zajištění podpory převodu zadaného typu k žádným jiným typem. Další informace najdete v tématu [Třída TypeConverter](#the_typeconverter_class) části.  
   
@@ -103,9 +103,9 @@ ms.lasthandoff: 12/23/2017
   
 |Typ|Porovnání s rozsahem Int32|  
 |----------|------------------------------------|  
-|<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType>je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>, a <xref:System.Int64.MinValue?displayProperty=nameWithType> je menší než (má negativní větší rozsah než) <xref:System.Int32.MinValue?displayProperty=nameWithType>.|  
-|<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType>je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
-|<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType>je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
+|<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>, a <xref:System.Int64.MinValue?displayProperty=nameWithType> je menší než (má negativní větší rozsah než) <xref:System.Int32.MinValue?displayProperty=nameWithType>.|  
+|<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
+|<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
   
  Zpracovat takové zužující převody [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] umožňuje typům definovat `Explicit` operátor. Kompilátory jednotlivých jazyků poté můžete implementovat tento operátor pomocí vlastní syntaxe nebo člen <xref:System.Convert> třídy lze volat pro převod provést. (Další informace o <xref:System.Convert> třídy najdete v tématu [Třída Convert](#Convert) dál v tomto tématu.) Následující příklad ukazuje použití funkcí jazyka ke zpracování explicitního převodu těchto potenciálně out-of-range celočíselné hodnoty k <xref:System.Int32> hodnoty.  
   

@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c6d22b72e05e6293a7fd3bcf7ddfba6e116e441f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: e20d47e0ae97067d2dcafcf929f717598d4e3e80
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="comparison-semantics-entity-sql"></a>Porovnání sémantiku (entita SQL)
 Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory zahrnuje porovnání instance typu:  
@@ -36,7 +38,7 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
   
 -   \<=  
   
--   >  
+-   \>  
   
 -   \>=  
   
@@ -77,7 +79,7 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
 ## <a name="supported-combinations"></a>Podporované kombinace  
  Následující tabulka uvádí podporované kombinace operátory porovnání pro jednotlivé typy typu:  
   
-|**Typ**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**MÁ HODNOTU NULL.**<br /><br /> **NEMÁ HODNOTU NULL**|  
+|Typ|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|MÁ HODNOTU NULL.<br /><br /> NEMÁ HODNOTU NULL|  
 |-|-|-|-|-|-|-|-|  
 |Typ entity|Ref<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Ref<sup>1</sup>|  
 |Komplexní typ|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  

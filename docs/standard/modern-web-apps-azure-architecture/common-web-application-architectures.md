@@ -167,7 +167,7 @@ Kromě dat implementace přístup musí obsahovat projektu OMI implementace slu�
 > ### <a name="infrastructure-types"></a>Typy infrastruktury
 > -   Základní typy EF (DbContext, migrace)
 > -   Přístup k datům implementace typů (úložiště)
-> -   Specifické pro infrastrukturu služby (FileLogger, SmtpNotifier atd.)
+> -   Infrastructure-specific services (FileLogger, SmtpNotifier, etc.)
 
 V aplikaci ASP.NET MVC základní uživatelské rozhraní vrstvě bude vstupní bod pro aplikaci a bude projektu aplikace ASP.NET MVC jádra. Tento projekt by měl odkazovat projektu základní aplikace a typy jejího musí komunikovat s infrastrukturou výhradně prostřednictvím rozhraní definované v základní aplikace. Žádné přímé vytváření instancí (nebo statické volání) musí být povolené typy vrstvy infrastruktury ve vrstvě uživatelského rozhraní.
 
@@ -219,11 +219,11 @@ Při monolitický aplikace využívat Docker, rozdělení monolitický aplikaci 
 
 > ### <a name="references--common-web-architectures"></a>Odkazy – společné architektury webové
 > - **Vyčištění architektura**  
-> <https://8thlight.com/blog/Uncle-Bob/2012/08/13/the-Clean-Architecture.HTML>
+> <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 > - **Architektura průsvitek**  
-> <http://jeffreypalermo.com/blog/the-onion-Architecture-Part-1/>
+> <http://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 > - **Vzor úložiště**  
-> <http://deviq.com/Repository-Pattern/>
+> <http://deviq.com/repository-pattern/>
 > - **Vyčištění ukázkové architektury řešení**  
 > <https://github.com/ardalis/cleanarchitecture>
 > - **Architektury elektronická kniha Mikroslužeb** <http://aka.ms/MicroservicesEbook>

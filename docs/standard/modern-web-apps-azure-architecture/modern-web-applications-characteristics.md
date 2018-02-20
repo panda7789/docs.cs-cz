@@ -18,7 +18,7 @@ ms.lasthandoff: 12/23/2017
 # <a name="characteristics-of-modern-web-applications"></a>Charakteristika moderních webových aplikací
 
 > "… v návrhu správné funkce levné pocházet. Tento přístup je náročnou, ale stále úspěšná."  
-> _\-Dennis Ritchie_
+> _\- Dennis Ritchie_
 
 ## <a name="summary"></a>Souhrn
 
@@ -36,7 +36,7 @@ V tomto návodu obsahuje odkaz na aplikaci, *eShopOnWeb*, který ukazuje někter
 
 > ### <a name="reference-application"></a>Odkaz na aplikaci
 > - **eShopOnWeb**  
-> <https://github.com/DotNet/eShopOnWeb>
+> <https://github.com/dotnet/eShopOnWeb>
 
 ## <a name="cloud-hosted-and-scalable"></a>Hostovaných v cloudu a škálovatelné
 
@@ -74,11 +74,11 @@ Kromě ASP.NET Core, tradiční ASP.NET 4.x je stále výkonné a spolehlivé pl
 
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
 > - **Úvod do ASP.NET Core**  
-> <https://docs.microsoft.com/ASPNET/Core/>
+> <https://docs.microsoft.com/aspnet/core/>
 > - **Šest klíč výhody z ASP.NET Core které různé a lepší**  
-> <https://blog.trigent.com/Six-Key-Benefits-of-ASP-NET-Core-1-0-which-Make-IT-different-Better/>
+> <https://blog.trigent.com/six-key-benefits-of-asp-net-core-1-0-which-make-it-different-better/>
 > - **Testování v ASP.NET Core**  
-> <https://docs.microsoft.com/ASPNET/Core/Testing/>
+> <https://docs.microsoft.com/aspnet/core/testing/>
 
 >[!div class="step-by-step"]
 [Předchozí] (index.md) [Další] (choose-between-traditional-web-and-single-page-apps.md)

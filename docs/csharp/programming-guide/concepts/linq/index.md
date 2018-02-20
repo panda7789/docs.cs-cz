@@ -1,21 +1,22 @@
 ---
 title: Language-Integrated Query (LINQ) (C#)
 ms.custom: 
-ms.date: 02-02-2017
+ms.date: 02/02/2017
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 40567576716b5ae665f176677fc877db38370a9c
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 0a721bba36eb1ed4ae94b99e25a1dcce33faef6e
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="language-integrated-query-linq"></a>Jazyk integrovaného dotazu (LINQ)
 
@@ -43,7 +44,7 @@ Následující příklad ukazuje operaci dokončení dotazu. Dokončení operace
   
 -   Některé operace, jako například dotaz <xref:System.Linq.Enumerable.Count%2A> nebo <xref:System.Linq.Enumerable.Max%2A>, mít žádná ekvivalentní dotaz výrazu klauzule a proto musí být vyjádřena jako volání metody. Syntaxe využívající metody mohou být kombinovány s syntaxe dotazů různými způsoby. Další informace najdete v tématu [syntaxe využívající dotazy a syntaxe využívající metody v technologii LINQ](query-syntax-and-method-syntax-in-linq.md).  
   
--   Stromy výrazů nebo delegáti, v závislosti na typu, který je použit dotaz na, mohou být zkompilovány výrazy dotazů. <xref:System.Collections.Generic.IEnumerable%601>dotazy jsou kompilovány na delegáty. <xref:System.Linq.IQueryable>a <xref:System.Linq.IQueryable%601> dotazy jsou zkompilovány do stromů výrazů. Další informace najdete v tématu [stromů výrazů](../../../expression-trees.md).  
+-   Stromy výrazů nebo delegáti, v závislosti na typu, který je použit dotaz na, mohou být zkompilovány výrazy dotazů. <xref:System.Collections.Generic.IEnumerable%601> dotazy jsou kompilovány na delegáty. <xref:System.Linq.IQueryable> a <xref:System.Linq.IQueryable%601> dotazy jsou zkompilovány do stromů výrazů. Další informace najdete v tématu [stromů výrazů](../../../expression-trees.md).  
 
 ## <a name="next-steps"></a>Další kroky
 

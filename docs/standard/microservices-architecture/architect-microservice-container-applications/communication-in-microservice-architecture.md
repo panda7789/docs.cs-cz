@@ -11,15 +11,15 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3920160697c55a81a131a7d8c40b096b064a6f03
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f373119f4d221745063688a9a5211d5ae11598b7
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektury mikroslužby
 
-V monolitický aplikace běžící v jednom procesu vyvolají komponenty navzájem pomocí metody úroveň jazyka nebo volání funkce. To může být silného spojen při vytváření objektů s kódem (například `new ClassName()`), nebo můžete vyvolat odpojeného způsobem, pokud používáte vkládání závislostí odkazem abstrakce, nikoli konkrétní objekt instancí. V obou případech objekty jsou spuštěny v rámci stejného procesu. Největší výzvou při změně z monolitický aplikace k aplikaci na základě mikroslužeb spočívá v změna komunikační mechanizmus. Přímé převod z volání metod v procesu do volání vzdáleného volání Procedur služby způsobí, že chatty a není efektivní komunikaci, která nebude provádět i v distribuovaných prostředích. Obtíže spojené s navrhování distribuovaného systému správně jsou dostatečně dobře známé se i canon, označuje jako [fallacies distribuovaných počítačů](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) , uvádí předpoklady, které vývojáři často při přesouvání z monolitický k distribuované návrhů.
+V monolitický aplikace běžící v jednom procesu vyvolají komponenty navzájem pomocí metody úroveň jazyka nebo volání funkce. To může být silného spojen při vytváření objektů s kódem (například `new ClassName()`), nebo můžete vyvolat odpojeného způsobem, pokud používáte vkládání závislostí odkazem abstrakce, nikoli konkrétní objekt instancí. V obou případech objekty jsou spuštěny v rámci stejného procesu. Největší výzvou při změně z monolitický aplikace k aplikaci na základě mikroslužeb spočívá v změna komunikační mechanizmus. Přímé převod z volání metod v procesu do volání vzdáleného volání Procedur služby způsobí, že chatty a není efektivní komunikaci, která nebude provádět i v distribuovaných prostředích. Obtíže spojené s navrhování distribuovaného systému správně jsou dostatečně dobře známé se i canon, označuje jako [Fallacies distribuovaných počítačů](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) , uvádí předpoklady, které vývojáři často při přesouvání z monolitický pro distribuované návrhů.
 
 Není jedno řešení, ale některé. Jedno řešení zahrnuje izolace co nejvíce obchodní mikroslužeb. Potom použít asynchronní komunikaci mezi interní mikroslužeb a nahraďte podrobných komunikaci, která je typické v komunikaci mezi objekty s hrubší podrobných komunikace uvnitř procesy. To můžete udělat, tím, že volání a vrácením data, která agreguje výsledky více interní volání do klienta.
 
@@ -96,10 +96,10 @@ Při použití služeb HTTP REST jazyka definice rozhraní je další hodnota. N
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Martin Fowler. Ryšánková vyspělosti modelu.** Popis modelu REST.
-    [*http://martinfowler.com/articles/richardsonMaturityModel.HTML*](http://martinfowler.com/articles/richardsonMaturityModel.html)
+    [*http://martinfowler.com/articles/richardsonMaturityModel.html*](http://martinfowler.com/articles/richardsonMaturityModel.html)
 
 -   **Swagger.** Oficiální web.
-    [*http://swagger.IO/*](http://swagger.io/)
+    [*http://swagger.io/*](http://swagger.io/)
 
 ### <a name="push-and-real-time-communication-based-on-http"></a>Nabízení a komunikaci v reálném čase, které jsou založené na protokolu HTTP
 

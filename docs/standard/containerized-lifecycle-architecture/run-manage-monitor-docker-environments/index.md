@@ -24,4 +24,4 @@ Jak spouštět kontejnerizované aplikace v produkčním prostředí (platformu 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / docker-devops-workflow/docker-application-outer-loop-devops-workflow.md) [Další] (run-microservices-based-applications-in-production.md)
+[Previous] (../docker-devops-workflow/docker-application-outer-loop-devops-workflow.md) [Next] (run-microservices-based-applications-in-production.md)

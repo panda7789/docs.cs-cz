@@ -258,7 +258,7 @@ Visual Studio Code podporuje ladění Docker, pokud používáte Node.js a jiný
 
 Také můžete ladit .NET Core kontejnery v Docker když pomocí sady Visual Studio, jak je popsáno v následující části.
 
-**Další informace:** Další informace o ladění kontejnerů Node.js Docker, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [https://blogs.msdn.microsoft.com/ \ uživatele\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
+**Další informace:** Další informace o ladění kontejnerů Node.js Docker, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [https://blogs.msdn.microsoft.com/ \ Uživatel\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
 
 
 >[!div class="step-by-step"]

@@ -1,23 +1,25 @@
 ---
 title: "Co je nového v jazyce Visual Basic"
-ms.date: 04/27/2017
+ms.date: 02/15/2018
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: VB.StartPage.WhatsNew
+f1_keywords:
+- VB.StartPage.WhatsNew
 helpviewer_keywords:
 - new features, Visual Basic
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: "145"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d26eb23aae6e5baec98e27a246d06af6b78e0802
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4df9a34e078de9daeff85c894afbbf4d60501f6b
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -25,27 +27,30 @@ Toto téma obsahuje seznam názvů klíčových funkcí pro každou verzi jazyka
   
 ## <a name="current-version"></a>Aktuální verze
 
-Visual Basic / Visual Studio .NET 2017   
-Nové funkce, najdete v části [2017 Visual Basic](#visual-basic-2017)
+Visual Basic 15,5   
+Nové funkce, najdete v části [15,5 Visual Basic](#visual-basic-155)
 
 ## <a name="previous-versions"></a>Předchozí verze
 
-Visual Basic / Visual Studio 2015 rozhraní .NET   
+Visual Basic 15.3   
+Nové funkce, najdete v části [15.3 jazyka Visual Basic](#visual-basic-153)
+
+Visual Basic / Visual Studio .NET 2015   
 Nové funkce, najdete v části [14 Visual Basic](#visual-basic-14)
 
-Visual Basic / Visual Studio 2013 rozhraní .NET  
+Visual Basic / Visual Studio .NET 2013  
 Verze Preview technologie kompilátoru platformy .NET ("Roslyn")
 
-Visual Basic / Visual Studio 2012 rozhraní .NET   
-`Async`a `await` klíčová slova, iterátory, volající – atributy s informacemi
+Visual Basic / Visual Studio .NET 2012   
+`Async` a `await` klíčová slova, iterátory, volající – atributy s informacemi
 
-Visual Basic, Visual Studio 2010 rozhraní .NET   
+Visual Basic, Visual Studio .NET 2010   
 Automaticky implementované vlastnosti, Inicializátory kolekcí, implicitní pokračování řádku, dynamické, obecný co/opravné položky k odchylky, přístupu globální obor názvů
 
-Visual Basic / Visual Studio 2008 rozhraní .NET   
+Visual Basic / Visual Studio .NET 2008   
 Jazyk integrovaného dotazu (LINQ), XML – literály, odvození místního typu objektu inicializátory, anonymní typy, rozšiřující metody, místní `var` odvození výrazy lambda typu `if` operátor, částečné metody, typy hodnot s povolenou hodnotou Null  
 
-Visual Basic / Visual Studio 2005 rozhraní .NET   
+Visual Basic / Visual Studio .NET 2005   
 `My` Typy typu a pomocné rutiny (přístup k aplikaci, počítače, systém souborů, sítě)
 
 Visual Basic / Visual Studio .NET 2003   
@@ -54,7 +59,42 @@ Bitové posunutí – operátory, smyčky deklarace proměnné
 Visual Basic / Visual Studio .NET 2002   
 První verze součásti Visual Basic .NET
 
-## <a name="visual-basic-2017"></a>2017 Visual Basic
+## <a name="visual-basic-155"></a>Visual Basic 15,5
+
+[Bez koncové pojmenované argumenty](../programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md#mixing-arguments-by-position-and-by-name)
+
+V 15.3 jazyka Visual Basic a starší verze, při volání metody zahrnuté argumentů podle pozice a podle názvu, poziční argumenty obsahovaly předcházet pojmenované argumenty. Od verze Visual Basic 15,5, poziční a pojmenované argumenty se může zobrazit v libovolném pořadí, pokud jsou všechny argumenty až poslední poziční argument na správném místě. To je zvlášť užitečné, když pojmenované argumenty se používají k zvýšit kódu.
+
+Například následující volání metody, které má dva argumenty poziční mezi argumentem. Pojmenovaný argument umožňuje vymazat představující stáří hodnota 19.
+
+```vb
+StudentInfo.Display("Mary", age:=19, #9/21/1998#)
+```
+
+**Úvodní šestnáctkově nebo binary nebo osmičková oddělovače**
+
+Visual Basic 2017 přidala se podpora pro znak podtržítka (`_`) jako oddělovač číslice. Počínaje 15,5 Visual Basic, můžete použít znak podtržítka jako počáteční oddělovač mezi předponu a hexadecimální, binary nebo osmičková číslice. Následující příklad používá oddělovač úvodní číslice se definovat 3,271,948,384 šestnáctkové číslo:
+
+```vb
+Dim number As Integer = &H_C305_F860
+``` 
+Chcete-li použít pod skóre znakem jako počáteční oddělovač, musíte přidat následující prvek se v souboru projektu (*.vbproj) jazyka Visual Basic:
+
+```xml
+<PropertyGroup>
+  <LangVersion>15.5</LangVersion>
+</PropertyGroup>
+```
+
+## <a name="visual-basic-153"></a>Visual Basic 15.3
+
+[Odvození pojmenované řazené kolekce členů](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
+
+Přiřadíte-li hodnota řazené kolekce členů elementy z proměnných, Visual Basic odvodí, že název elementů řazené kolekce členů z odpovídající názvy proměnných; není nutné explicitně název element řazené kolekce členů. Následující příklad používá k vytvoření řazené kolekce členů s tři prvky s názvem, odvození `state`, `stateName`, a `capital`.
+
+[!code-vb[Inferred tuple names](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
+
+## <a name="visual-basic-2017"></a>Visual Basic 2017
 
 [Řazené kolekce členů](../programming-guide/language-features/data-types/tuples.md)
 
@@ -107,14 +147,14 @@ Další informace najdete v tématu [hodnoty vrátí odkaz na](../programming-gu
 [Nameof](../../csharp/language-reference/keywords/nameof.md)  
  Pro použití v chybovou zprávu můžete získat název nekvalifikované řetězce na typ nebo člen bez pevné kódování řetězec.  To umožňuje kód a dál správné refaktoring.  Tato funkce je také užitečné pro zapojování model-view-controller MVC odkazy a ohlásí události změněné vlastnosti.  
   
-[Řetězec interpolace](../../csharp/language-reference/keywords/interpolated-strings.md)  
+[Interpolace řetězců](../../csharp/language-reference/keywords/interpolated-strings.md)  
  Řetězec interpolace výrazy můžete vytvářet řetězce.  Interpolované řetězce výrazu vypadá jako šablona řetězec, který obsahuje výrazy.  Interpolované řetězce je jednodušší zjistit, s ohledem na argumenty než [složené formátování](../../standard/base-types/composite-format.md).  
   
 [Člen NULL podmíněného přístupu a indexování](../../csharp/language-reference/operators/null-conditional-operators.md)  
 Můžete otestovat pro null velmi malé syntaktické způsobem před provedením přístup ke členu (`?.`) nebo index (`?[]`) operaci.  Tyto operátory usnadňuje psaní, méně kód pro zpracování null kontroly, zejména pro sestupné řazení do datové struktury.  Pokud levý operand nebo objekt odkaz má hodnotu null, vrátí hodnotu null operace.  
   
 [Víceřádkový textové literály](../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- Textové literály může obsahovat pořadí nový řádek.  Je již nebude nutné starý obejít použití`<xml><![CDATA[...text with newlines...]]></xml>.Value`  
+ Textové literály může obsahovat pořadí nový řádek.  Je již nebude nutné starý obejít použití `<xml><![CDATA[...text with newlines...]]></xml>.Value`  
   
 Komentáře  
 Komentáře můžete vložit po implicitní řádku pokračování, uvnitř inicializátoru výrazy a mezi podmínky výrazu LINQ.  

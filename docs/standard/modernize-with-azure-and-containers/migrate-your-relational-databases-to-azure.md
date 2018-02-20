@@ -110,23 +110,23 @@ Další postupy k migraci databáze pomocí služba migrace databáze Azure najd
 
 -   **Volba cloudového řešení SQL serveru: Azure SQL Database (PaaS) nebo SQL Server na virtuální počítač Azure (IaaS)**
 
-    [https://docs.microsoft.com/Azure/SQL-Database/SQL-Database-paas-vs-SQL-Server-iaas](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)
+    [https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)
 
 -   **Získat rychlejší s Azure SQL DB spravované Instance a služba migrace databáze do cloudu**
 
-    [https://channel9.msdn.com/events/Build/2017/P4008](https://channel9.msdn.com/Events/Build/2017/P4008)
+    [https://channel9.msdn.com/Events/Build/2017/P4008](https://channel9.msdn.com/Events/Build/2017/P4008)
 
 -   **Migrace databáze SQL serveru do databáze SQL v cloudu**
 
-    [https://docs.microsoft.com/Azure/SQL-Database/SQL-Database-cloud-Migrate](https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate)
+    [https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate](https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate)
 
--   **Databáze Azure SQL**
+-   Databáze Azure SQL
 
-    [https://Azure.microsoft.com/Services/SQL-Database/?v=16.50](https://azure.microsoft.com/services/sql-database/?v=16.50)
+    [https://azure.microsoft.com/services/sql-database/?v=16.50](https://azure.microsoft.com/services/sql-database/?v=16.50)
 
 -   **SQL Server na virtuální počítače**
 
-    [https://Azure.microsoft.com/Services/Virtual-Machines/SQL-Server/](https://azure.microsoft.com/services/virtual-machines/sql-server/)
+    [https://azure.microsoft.com/services/virtual-machines/sql-server/](https://azure.microsoft.com/services/virtual-machines/sql-server/)
 
 >[!div class="step-by-step"]
 [Předchozí](lift-and-shift-existing-apps-azure-iaas.md)

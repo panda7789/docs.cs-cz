@@ -18,7 +18,7 @@ ms.lasthandoff: 12/23/2017
 # <a name="development-process-for-azure"></a>Vývoj pro proces pro Azure.
 
 > _"S cloudem, jednotlivce a malé firmy můžete snap jejich prsty a okamžitě nastavit služby rozsáhlých."_  
-> _-Royi Stephan_
+> _- Roy Stephan_
 
  ## <a name="vision"></a>Vize
 
@@ -102,7 +102,7 @@ Nové sestavení se aktivuje na buildovacím serveru vždy, když nové potvrzen
 
 Po sestavení, protože byla úspěšná, proces CD vyzvedne, až bude sestavení artefaktů vytváří. To bude zahrnovat webového nasazení balíčku. Sestavení serveru bude nasazení tohoto balíčku do služby Azure App Service, nahraďte všechny existující služby se nově vytvořená. Obvykle tento krok cílem pracovní prostředí, ale některé aplikace nasadit přímo do produkčního prostředí prostřednictvím procesu disku CD.
 
-#### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Aplikační služba Azure. Webové aplikace.
+#### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Azure App Service. Webové aplikace.
 
 Po nasazení aplikace ASP.NET Core běží v kontextu webové aplikace Azure App Service. Tato webová aplikace je možné monitorovat a nakonfigurované pomocí portálu Azure.
 
@@ -113,8 +113,8 @@ Když webové aplikace běží, můžete monitorovat stav aplikace a shromažďo
 ## <a name="references"></a>Odkazy
 
 **Sestavení a nasazení vaší aplikace ASP.NET Core do Azure**  
-<https://www.VisualStudio.com/docs/Build/Apps/ASPNET/aspnetcore-to-Azure>
+<https://www.visualstudio.com/docs/build/apps/aspnet/aspnetcore-to-azure>
 
 
 >[!div class="step-by-step"]
-[Předchozí] (test-asp-net-core-mvc-apps.md) [Další] (azure-hosting-recommendations-for-asp-net-web-apps.md)
+[Previous] (test-asp-net-core-mvc-apps.md) [Next] (azure-hosting-recommendations-for-asp-net-web-apps.md)

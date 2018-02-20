@@ -118,7 +118,7 @@ I když služby App Service může být nejlepší volbou pro nové webové apli
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Analýzy kompatibility pro Azure App Service**  
-[https://www.migratetoazure.NET/Resources](https://www.migratetoazure.net/Resources)
+[https://www.migratetoazure.net/Resources](https://www.migratetoazure.net/Resources)
 
 
 ### <a name="benefits-of-moving-to-windows-containers"></a>Výhody přechodu na Windows kontejnery

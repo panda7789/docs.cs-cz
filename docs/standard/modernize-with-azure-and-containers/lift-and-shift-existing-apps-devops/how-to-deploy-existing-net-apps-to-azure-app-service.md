@@ -25,7 +25,7 @@ Můžete použít [Azure App Service migrace pomocníka](https://www.migratetoaz
 
 Azure App Service migrace pomocníka podporuje migraci z IIS a běžící v systému Windows Server do cloudu. App Service podporuje Windows Server 2003 a novějších verzích.
 
-> ![https://www.migratetoazure.NET/Images/ImageCanvas.PNG](./media/image5.png)
+> ![https://www.migratetoazure.net/Images/ImageCanvas.png](./media/image5.png)
 >
 > **Obrázek 4 – 5.** Asistent migrace systému služby Azure App Service pomocí
 
@@ -39,7 +39,7 @@ Nástroj pro migraci služby App Service můžete své weby analýza a tvorba se
 
 -   **Asistent migrace systému služby Azure App Service**
 
-    [https://www.migratetoazure.NET/](https://www.migratetoazure.net/)
+    [https://www.migratetoazure.net/](https://www.migratetoazure.net/)
 
 >[!div class="step-by-step"]
 [Předchozí](what-about-cloud-optimized-applications.md)

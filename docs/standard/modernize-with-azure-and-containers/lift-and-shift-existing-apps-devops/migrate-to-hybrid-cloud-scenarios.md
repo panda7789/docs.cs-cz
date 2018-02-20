@@ -23,7 +23,7 @@ Pokud jde o zabezpečení, můžete centralizovat správu a zabezpečení mezi h
 
 Nakonec můžete distribuovat a bezproblémově analyzovat data, používat stejné jazyky dotazu pro cloudové a místní prostředky a použít analýzy a přímý učení v Azure a rozšíření dat, bez ohledu na její zdroj.
 
-## <a name="azure-stack"></a>Azure zásobníku
+## <a name="azure-stack"></a>Azure Stack
 
 Zásobník Azure je hybridní cloudové platformy, která umožňuje poskytovat služby Azure z vaší organizace datového centra. Azure zásobníku je navržen pro podporu nové možnosti pro moderní aplikace v klíčových scénářů, jako je okraj a prostředích bez připojení nebo konkrétní požadavky zabezpečení a dodržování předpisů na schůzku.
 
@@ -51,23 +51,23 @@ Microsoft Azure zásobníku Development Kit je jedním uzlem nasazení zásobní
 
 -   **Azure hybridního cloudu**
 
-    [https://www.microsoft.com/cloud-Platform/hybrid-cloud](https://www.microsoft.com/cloud-platform/hybrid-cloud)
+    [https://www.microsoft.com/cloud-platform/hybrid-cloud](https://www.microsoft.com/cloud-platform/hybrid-cloud)
 
--   **Azure zásobníku**
+-   Azure zásobníku
 
-    [https://Azure.microsoft.com/Overview/Azure-Stack/](https://azure.microsoft.com/overview/azure-stack/)
+    [https://azure.microsoft.com/overview/azure-stack/](https://azure.microsoft.com/overview/azure-stack/)
 
 -   **Účty služby Active Directory pro Windows kontejnery**
 
-    [https://docs.microsoft.com/Virtualization/windowscontainers/Manage-Containers/Manage-serviceaccounts](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts)
+    [https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts)
 
 -   **Vytvořit kontejner s podporou služby Active Directory**
 
-    [https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/Create-a-Container-with-Active-Directory-support/](https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/create-a-container-with-active-directory-support/)
+    [https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/create-a-container-with-active-directory-support/](https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/create-a-container-with-active-directory-support/)
 
 -   **Licencování Azure hybridní výhody**
 
-    [https://Azure.microsoft.com/pricing/hybrid-use-Benefit/](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
+    [https://azure.microsoft.com/pricing/hybrid-use-benefit/](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 
 >[!div class="step-by-step"]
 [Předchozí](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)

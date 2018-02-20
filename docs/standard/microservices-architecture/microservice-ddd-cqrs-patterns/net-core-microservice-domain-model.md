@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 07a79f3d52db400d1539fb4172166cccf8905fb8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0b954efffe2ee7e3e2bdaa49bd1057d72d69088c
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="implementing-a-microservice-domain-model-with-net-core"></a>Implementace modelu mikroslužbu domény s .NET Core 
 
@@ -181,9 +181,9 @@ Například v předchozím příkladu kódu OrderAggregate neexistují několik 
 -   **Julie Lerman. Kódování řízené domény návrh: tipy pro zaměřené na Data Devs**
     [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
 
--   **UDI Dahan. Postup vytvoření plně zapouzdřené domény modely**
+-   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
 
 >[!div class="step-by-step"]
-[Předchozí] (mikroslužbu domain-model.md) [Další] (seedwork-domain-model-base-classes-interfaces.md)
+[Previous] (microservice-domain-model.md) [Next] (seedwork-domain-model-base-classes-interfaces.md)

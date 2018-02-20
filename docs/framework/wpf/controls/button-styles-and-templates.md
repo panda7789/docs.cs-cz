@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - templates [WPF], Button
 - ControlTemplate [WPF], Button
 ms.assetid: e223c759-f8c4-4717-acfb-b1e40bdf5f3b
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7bea309cea0ed6d21b747f31794f1ebb440bf102
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d783b3141463ca2c74ddd649848ea49e154415b6
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="button-styles-and-templates"></a>Styly a šablony tlačítek
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Button> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhledu ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
@@ -36,7 +38,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Button> o
 ## <a name="button-states"></a>Tlačítko stavy  
  Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.Button> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název VisualState|VisualStateGroup Name|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Ve výchozím stavu.|  
 |Myš nad|CommonStates|Ukazatel myši je umístěn nad ovládacího prvku.|  
@@ -45,8 +47,8 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Button> o
 |Zaměřuje|FocusStates|Ovládací prvek má právě fokus.|  
 |Nezaostřená|FocusStates|Ovládací prvek nemá fokus.|  
 |Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je přidružená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek má právě fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek nemá fokus.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` a má právě fokus, ovládacího prvku.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` a ovládací prvek nemá fokus.|  
   
 ## <a name="button-controltemplate-example"></a>Příklad ControlTemplate tlačítko  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button> ovládacího prvku.  

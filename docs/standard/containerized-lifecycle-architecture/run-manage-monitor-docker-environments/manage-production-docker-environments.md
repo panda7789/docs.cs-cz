@@ -49,4 +49,4 @@ Toto jsou nástroje pro správu Service Fabric:
 
 
 >[!div class="step-by-step"]
-[Předchozí] (run-microservices-based-applications-in-production.md) [Další] (monitorování kontejnerizované aplikace services.md)
+[Previous] (run-microservices-based-applications-in-production.md) [Next] (monitor-containerized-application-services.md)

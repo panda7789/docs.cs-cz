@@ -42,10 +42,10 @@ Tabulka 4-1: softwarovými platformami pro kontejner clustering, orchestration a
 
 | Platforma | Popis |
 |---|---|
-| Docker Swarm<br/> ![http://rancher.com/WP-Content/Themes/rancher-2016/Assets/Images/swarm.PNG?v=2016-07-10-AM](./media/image7.png) | Docker Swarm vám dává možnost clusteru a plán Docker kontejnery. Pomocí Swarm, můžete upravit fond hostitelů Docker na jednu virtuální hostitel Docker. Klienty můžete provést žádostí o rozhraní API Swarm stejným způsobem, který dělají na hostitele, což znamená, že Swarm usnadňuje aplikace škálovat na více hostitelů. <br /><br /> Docker Swarm je produkt z Docker společnosti. <br /><br /> Docker v1.12 nebo můžete později spustit nativní a integrované Swarm režimu. |
-| Mesosphere DC/OS<br/>![https://mesosphere.com/WP-Content/uploads/2016/04/logo-Horizontal-styled.PNG](./media/image8.png) |  Mesosphere Enterprise DC/OS (podle Apache Mesos) je platforma pro produkční prostředí pro spouštění kontejnery a distribuovaných aplikací. <br /><br /> DC/OS funguje tak, že poskytuje abstrakci kolekce prostředků, které jsou k dispozici v clusteru a zpřístupnění těchto prostředků postavená na jeho součástí. Marathon se obvykle používá jako plánovače integrovat DC/OS. |
-| Google Kubernetes<br />![https://PBS.twimg.com/Media/BT\_pEfqCAAAiVyz.png](./media/image9.png) | Kubernetes je produkt open source, který poskytuje funkce, které rozsahy z infrastruktura clusteru a kontejner plánování k funkcím Orchestrace. Pomocí něho můžete automatizovat nasazení, škálování a operace kontejnery aplikací napříč clustery hostitelů. <br /><br /> Kubernetes poskytuje infrastrukturu zaměřené na kontejneru, která skupiny kontejnery aplikací do logické jednotky pro snadnou správu a zjišťování. |
-| Azure Service Fabric<br />![https://Azure.microsoft.com/svghandler/Service-Fabric?Width=600&Height=315](./media/image10.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma Microsoft mikroslužeb pro vytváření aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) z služby a vytvoří clustery počítačů. Ve výchozím nastavení Service Fabric nasadí a aktivuje služby jako procesy, ale Service Fabric můžete nasadit services v kontejneru imagí Dockeru. Důležitější, je možné kombinovat služby v procesech se službami v kontejnery ve stejné aplikaci. <br /><br /> Od verze může 2017 funkci Service Fabric, který podporuje nasazení služby jako kontejnery Docker je ve stavu preview. <br /><br /> Můžete vyvíjet služby Service Fabric v mnoha směrech pomocí [Service Fabric programovací modely](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) nasazení [hosta spustitelné soubory](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app) a také kontejnery. Service Fabric podporuje doporučený aplikace modely jako [stavové služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
+| Docker Swarm<br/> ![http://rancher.com/wp-content/themes/rancher-2016/assets/images/swarm.png?v=2016-07-10-am](./media/image7.png) | Docker Swarm vám dává možnost clusteru a plán Docker kontejnery. Pomocí Swarm, můžete upravit fond hostitelů Docker na jednu virtuální hostitel Docker. Klienty můžete provést žádostí o rozhraní API Swarm stejným způsobem, který dělají na hostitele, což znamená, že Swarm usnadňuje aplikace škálovat na více hostitelů. <br /><br /> Docker Swarm je produkt z Docker společnosti. <br /><br /> Docker v1.12 nebo můžete později spustit nativní a integrované Swarm režimu. |
+| Mesosphere DC/OS<br/>![https://mesosphere.com/wp-content/uploads/2016/04/logo-horizontal-styled.png](./media/image8.png) |  Mesosphere Enterprise DC/OS (podle Apache Mesos) je platforma pro produkční prostředí pro spouštění kontejnery a distribuovaných aplikací. <br /><br /> DC/OS funguje tak, že poskytuje abstrakci kolekce prostředků, které jsou k dispozici v clusteru a zpřístupnění těchto prostředků postavená na jeho součástí. Marathon se obvykle používá jako plánovače integrovat DC/OS. |
+| Google Kubernetes<br />![https://pbs.twimg.com/media/Bt\_pEfqCAAAiVyz.png](./media/image9.png) | Kubernetes je produkt open source, který poskytuje funkce, které rozsahy z infrastruktura clusteru a kontejner plánování k funkcím Orchestrace. Pomocí něho můžete automatizovat nasazení, škálování a operace kontejnery aplikací napříč clustery hostitelů. <br /><br /> Kubernetes poskytuje infrastrukturu zaměřené na kontejneru, která skupiny kontejnery aplikací do logické jednotky pro snadnou správu a zjišťování. |
+| Azure Service Fabric<br />![https://azure.microsoft.com/svghandler/service-fabric?width=600&height=315](./media/image10.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma Microsoft mikroslužeb pro vytváření aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) z služby a vytvoří clustery počítačů. Ve výchozím nastavení Service Fabric nasadí a aktivuje služby jako procesy, ale Service Fabric můžete nasadit services v kontejneru imagí Dockeru. Důležitější, je možné kombinovat služby v procesech se službami v kontejnery ve stejné aplikaci. <br /><br /> Od verze může 2017 funkci Service Fabric, který podporuje nasazení služby jako kontejnery Docker je ve stavu preview. <br /><br /> Můžete vyvíjet služby Service Fabric v mnoha směrech pomocí [Service Fabric programovací modely](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) nasazení [hosta spustitelné soubory](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app) a také kontejnery. Service Fabric podporuje doporučený aplikace modely jako [stavové služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
 
 ## <a name="using-container-based-orchestrators-in-azure"></a>Použití na základě kontejneru orchestrators v Azure
 
@@ -92,19 +92,19 @@ Je aktuálně dostupné pro standardní A, D, DS, G a GS řady Linux virtuální
 Toto jsou umístění, kde můžete najít další informace:
 
 -   Úvod do kontejner Docker hostování řešení s Container Service:  
-    https://docs.microsoft.com/Azure/Container-Service/kubernetes/Container-Service-intro-kubernetes>
+    https://docs.microsoft.com/azure/container-service/kubernetes/container-service-intro-kubernetes>
 
 -   Přehled docker Swarm:  
-    <https://docs.docker.com/swarm/Overview/>
+    <https://docs.docker.com/swarm/overview/>
 
 -   Přehled režimu swarm:  
-    <https://docs.docker.com/Engine/swarm/>
+    <https://docs.docker.com/engine/swarm/>
 
 -   Přehled mesosphere DC/OS:    
-    <https://docs.mesosphere.com/1.7/Overview/>
+    <https://docs.mesosphere.com/1.7/overview/>
 
 -   Kubernetes (oficiální web):  
-    <http://kubernetes.IO/>
+    <http://kubernetes.io/>
 
 ## <a name="using-service-fabric"></a>Pomocí Service Fabric
 
@@ -184,4 +184,4 @@ Upozorňujeme, že jsou kontejnery Docker bezstavové sami. Pokud chcete impleme
 
 
 >[!div class="step-by-step"]
-[Předchozí] (applications.md soa) [Další] (docker aplikace development-environment.md)
+[Previous] (soa-applications.md) [Next] (docker-apps-development-environment.md)

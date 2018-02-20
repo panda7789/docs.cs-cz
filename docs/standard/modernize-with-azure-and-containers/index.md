@@ -29,7 +29,7 @@ Všechna práva vyhrazena. Žádná z částí obsah tato kniha může reproduko
 
 Tato kniha je k dispozici zdarma ve formě elektronická kniha (elektronická kniha) k dispozici prostřednictvím více typů komunikačních kanálů v Microsoftu, jako <http://dot.net/architecture>
 
-Pokud máte dotazy týkající se tato kniha e-mailu v[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
+Pokud máte dotazy týkající se tato kniha e-mailu v [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
 
 Tato kniha je k dispozici "jako-je" a vyjadřoval zobrazení a názory vytvářením obsahu. Zobrazení, názory a informace v této příručce, včetně adres URL a dalších odkazů na internetové weby, mohou změnit bez předchozího upozornění.
 
@@ -94,7 +94,7 @@ Na třetí úrovni vyspělosti je konečným cílem v cloudu, ale je volitelné 
 
 Tabulka 1-1 popisuje hlavní výhody a důvody pro výběr každý migrace nebo modernizace přístup.
 
-> | **Připravené pro infrastruktury cloudu** <br /> *Navýšení a posunutí* | **DevOps připravené cloudu** <br /> *Navýšení a posunutí* | **Optimalizovaných cloudů** *Modernize/refactor/přepisování* |
+> | **Připravené pro infrastruktury cloudu** <br /> *Navýšení a posunutí* | **Cloud DevOps-Ready** <br /> *Navýšení a posunutí* | **Optimalizovaných cloudů** *Modernize/refactor/přepisování* |
 > |---|---|---|
 > | **Výpočetní cílové aplikace** |
 > | Aplikace nasazené do virtuálních počítačů v Azure | Kontejnerizované monolitický nebo vícevrstvé aplikace nasazené virtuální počítače, Azure Service Fabric nebo Azure Container Service (Kubernetes) | Kontejnerizované mikroslužeb nebo regulární aplikací založených na PaaS v Azure App Service, Azure Service Fabric, Azure Container Service (Kubernetes) |
@@ -102,7 +102,7 @@ Tabulka 1-1 popisuje hlavní výhody a důvody pro výběr každý migrace nebo 
 > | SQL nebo jakoukoli relační databázi na virtuálním počítači | Spravované Instance databáze Azure SQL | Databáze Azure SQL, Azure Cosmos DB nebo jiných NoSQL |
 > | **Výhody**|
 > | <li>Žádný kód předělávání architektury, nové <li> Minimálně úsilí pro rychlé migrace <li> Jmenovatel nejmenší společný podporují v Azure <li> Záruky základní dostupnosti <li> Po přechodu do cloudu, je snazší i další modernizovat | <li>Žádný kód předělávání architektury, nové <li> Kontejnery nabízejí malé přírůstkové úsilí přes virtuální počítače <li> Vylepšené nasazení a flexibility DevOps uvolnit z důvodu kontejnery <li> Vyšší hustotu a nižší náklady na nasazení <li> Přenositelnost aplikace a závislosti <li> S Azure Container Service (nebo Kubernetes) a Azure Service Fabric, poskytuje vysokou dostupnost a orchestration <li> Opravy uzly nebo virtuálních počítačů v Service Fabric <li> Flexibilita hostitele cílů: sadách škálování virtuálního počítače nebo virtuální počítače Azure, Azure Container Service (nebo Kubernetes), Service Fabric a budoucí kontejneru na základě volby | <li>Architekti pro cloud, refactor, nový kód pro potřeby <li> Přístupy Mikroslužeb nativní cloudu <li> Nové webové aplikace, monolitický, N-vrstvá, cloudu odolné a optimalizovaných cloudů <li> Plně spravované služby <li> Automatické opravy <li> Optimalizovaná pro škálování <li> Optimalizovaná pro autonomní flexibility subsystémem <li> Založený na nasazení a DevOps <li> Rozšířené DevOps, jako je sloty a strategie nasazení <li> PaaS a orchestrator cíle: Azure App Service, Azure Container Service (nebo Kubernetes), Azure Service Fabric a budoucí PaaS na základě kontejneru |
-> | **Problémy** |
+> | Problémy |
 > | <li> Menší hodnota cloudu, než posunutí v provozní výdaje a zavírání datová centra <li> Velmi málo spravované: Ne OS nebo middleware opravy; řešení může infrastruktury, jako je Terraform, Spinnaker nebo Puppet | <li> Containerizing je vyžadovat další krok v křivku neměnné | <li> Může vyžadovat významné kódu refaktoringu nebo přepisování (vyšší čas a finanční) |
 >> **Tabulka 1-1.** Výhody a problémy modernizace cest pro existující aplikace .NET a služby
 

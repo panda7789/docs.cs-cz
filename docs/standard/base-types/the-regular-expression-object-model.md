@@ -41,21 +41,21 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4f1918788a571e9626554eaeec9fdd3f1686d4cc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8917ce764d615282f95aad2eee494fcc0ba7a847
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="the-regular-expression-object-model"></a>Model objektu regulárního výrazu
-<a name="introduction"></a>Toto téma popisuje objektový model použít v práci s regulární výrazy rozhraní .NET. Obsahuje následující oddíly:  
+<a name="introduction"></a> Toto téma popisuje objektový model použít v práci s regulární výrazy rozhraní .NET. Obsahuje následující oddíly:  
   
 -   [Modul regulárních výrazů](#Engine)  
   
@@ -177,7 +177,7 @@ ms.lasthandoff: 12/23/2017
   
 <a name="the_match_collection"></a>   
 ### <a name="the-match-collection"></a>Kolekce shod  
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> Metoda vrátí <xref:System.Text.RegularExpressions.MatchCollection> objekt, který obsahuje <xref:System.Text.RegularExpressions.Match> objekty, které představují všechny shody, které modul regulárních výrazů nacházejí v pořadí, ve kterém nastávají ve vstupním řetězci. Pokud nejsou nalezeny žádné shody, vrátí metoda <xref:System.Text.RegularExpressions.MatchCollection> objektu bez členů. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> Vlastnost umožňuje přístup jednotlivé členy kolekce pomocí indexu z nula na jednu menší než hodnota <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A>je kolekce indexer (v jazyku C#) a výchozí vlastnost (v jazyce Visual Basic).  
+ <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> Metoda vrátí <xref:System.Text.RegularExpressions.MatchCollection> objekt, který obsahuje <xref:System.Text.RegularExpressions.Match> objekty, které představují všechny shody, které modul regulárních výrazů nacházejí v pořadí, ve kterém nastávají ve vstupním řetězci. Pokud nejsou nalezeny žádné shody, vrátí metoda <xref:System.Text.RegularExpressions.MatchCollection> objektu bez členů. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> Vlastnost umožňuje přístup jednotlivé členy kolekce pomocí indexu z nula na jednu menší než hodnota <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> je kolekce indexer (v jazyku C#) a výchozí vlastnost (v jazyce Visual Basic).  
   
  Ve výchozím nastavení, volání <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metoda používá k naplnění opožděné vyhodnocení <xref:System.Text.RegularExpressions.MatchCollection> objektu. Přístup k vlastnosti, které vyžadují plně naplněnou kolekci, například <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> , může mít snížení výkonu. V důsledku toho doporučujeme přistupovat ke kolekci pomocí <xref:System.Collections.IEnumerator> objekt, který je vrácený <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> metoda. Jednotlivé jazyky poskytují konstrukce, jako například `For``Each` v jazyce Visual Basic a `foreach` v jazyce C#, která zabalení kolekce <xref:System.Collections.IEnumerator> rozhraní.  
   

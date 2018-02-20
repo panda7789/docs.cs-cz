@@ -87,23 +87,23 @@ Obrázek 2 – 3 ukazuje spuštění několika migrací virtuálních počítač
 
 -   **Datový list migrovat Azure**
 
-    [https://aka.MS/azuremigration\_datovém listu](https://aka.ms/azuremigration\_datasheet)
+    [https://aka.ms/azuremigration\_datasheet](https://aka.ms/azuremigration\_datasheet)
 
--   **Migrace Azure**
+-   Migrace Azure
 
     [http://azuremigrationcenter.com/](http://azuremigrationcenter.com/)
 
 -   **Migrace do Azure pomocí Site Recovery**
 
-    [https://docs.microsoft.com/Azure/Site-Recovery/Site-Recovery-Migrate-to-Azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure)
+    [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure)
 
 -   **Přehled služby Azure Site Recovery**
 
-    [https://docs.microsoft.com/Azure/Site-Recovery/Site-Recovery-Overview](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)
+    [https://docs.microsoft.com/azure/site-recovery/site-recovery-overview](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)
 
 -   **Migrace virtuálních počítačů v AWS a virtuální počítače Azure**
 
-    [https://docs.microsoft.com/Azure/Site-Recovery/Site-Recovery-Migrate-awS-to-Azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure)
+    [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure)
 
 >[!div class="step-by-step"]
 [Předchozí](index.md)

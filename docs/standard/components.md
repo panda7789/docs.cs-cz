@@ -10,11 +10,11 @@ ms.technology: dotnet-standard
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 08eeb08debdc2e71a85dbc18053bf1aac779069a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8a17d4c36d9c1942166b9ad889103a7942f1813d
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="net-architectural-components"></a>Součástí architektury .NET
 
@@ -53,7 +53,7 @@ Další informace o rozhraní .NET Framework, najdete v článku [rozhraní .NET
 
 ### <a name="mono"></a>Mono
 
-Mono je implementace rozhraní .NET, která se používá hlavně, když se vyžaduje malé runtime. Je modul runtime, která pohání aplikace Xamarin pro Android, Mac, iOS, tvOS a watchOS a se zaměřuje především na malé nároky.
+Mono je implementace rozhraní .NET, která se používá hlavně, když se vyžaduje malé runtime. Je modul runtime, která pohání aplikace Xamarin pro Android, Mac, iOS, tvOS a watchOS a se zaměřuje především na malé nároky. Mono také zajišťuje hry vytvořené pomocí modulu Unity.
 
 Podporuje všechny aktuálně publikovaná verze .NET Standard.
 
@@ -63,7 +63,7 @@ Mono se obvykle používá s kompilátorem za běhu, ale nabízí i úplné stat
 
 Další informace o Mono, najdete v článku [Mono dokumentaci](http://www.mono-project.com/docs/).
 
-### <a name="universal-windows-platform-uwp"></a>Univerzální platformu Windows (UWP)
+### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
 UWP je implementací rozhraní .NET, který se používá pro vytváření moderní, dotykovým ovládáním aplikace systému Windows a software pro Internet věcí (IoT). Je určený ke sjednocení různé typy zařízení, které chcete zacílit, včetně počítače, tablety, phablets, telefony a i Xbox. UWP poskytuje mnoho služeb, jako je například centralizované app storu, prostředí provádění (AppContainer) a sadu rozhraní API systému Windows tak, aby používal místo Win32 (WinRT). Aplikace může být napsané v jazyce C++, C#, VB.NET a JavaScript. Při použití jazyka C# a VB.NET, rozhraní API .NET jsou poskytovány .NET Core.
 

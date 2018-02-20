@@ -18,7 +18,7 @@ ms.lasthandoff: 12/23/2017
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Azure hostování doporučení pro webové aplikace ASP.NET Core
 
 > "-Obchodní žebříčky všude, kde jsou obcházení IT oddělení získat aplikace z cloudu (neboli SaaS) a platícího pro ně, jako kdyby je sdíleli katalogu předplatné. A pokud služby se už nevyžaduje, můžete zrušit předplatné se žádná zařízení zbývající nepoužité v horním."  
-> _\-Daryl Plummer, Gartner analytika_
+> _\- Daryl Plummer, Gartner analytika_
 
 ## <a name="summary"></a>Souhrn
 
@@ -28,7 +28,7 @@ Ať potřebám vaší aplikace a architektura systému Windows Azure může podp
 
 Webové aplikace se dají hostovat pomocí:
 
--   Webové aplikace aplikační služby
+-   App Service Web Apps
 
 -   Kontejnery
 
@@ -38,7 +38,7 @@ Webové aplikace se dají hostovat pomocí:
 
 App Service Web Apps z nich, se o doporučený postup pro většinu scénářů. Pro architektury mikroslužby zvažte přístup založený na kontejneru nebo service fabric. Pokud potřebujete větší kontrolu nad počítače spuštění aplikace, zvažte virtuálních počítačích Azure.
 
-### <a name="app-service-web-apps"></a>Webové aplikace aplikační služby
+### <a name="app-service-web-apps"></a>App Service Web Apps
 
 Služby App Service Web Apps nabízí plně spravovaná platforma optimalizována pro hostování webových aplikací. Je platform-as-a-service(PaaS), nabídky, že vám umožní soustředit na obchodní logiku, zatímco Azure zajistí infrastruktury potřebné pro spouštění a škálování aplikace. Některé klíčové funkce App Service Web Apps:
 
@@ -70,7 +70,7 @@ Jeden cíl Azure Container Service je poskytnout kontejneru hostitelské prostř
 
 Service Fabric je vhodný, pokud vytváříte novou aplikaci nebo přepisovat stávající aplikace pro použití architektury mikroslužby. Aplikace, které se spouštějí na sdílenému fondu počítačů, můžete začněte v malém rozsahu a dosáhnout masivním měřítku se stovkami nebo tisíci počítačů podle potřeby. Stavové služby usnadňují konzistentně a spolehlivě uložení stavu aplikace a Service Fabric automaticky spravuje služba rozdělení do oddílů, škálování a dostupnost za vás. Service Fabric podporuje také WebAPI s Open Web Interface pro .NET (OWIN) a ASP.NET Core. Ve srovnání s App Service, Service Fabric taky poskytuje další kontrolu nad nebo přímý přístup k podkladové infrastruktury. Můžete vzdálené do vašich serverů nebo můžete nakonfigurovat úlohy spuštění serveru.
 
-### <a name="azure-virtual-machines"></a>Virtuální počítače Azure
+### <a name="azure-virtual-machines"></a>Azure Virtual Machines
 
 Pokud máte existující aplikace, které by vyžadovaly významné změny ke spuštění v App Service nebo Service Fabric, může zvolit virtuální počítače za účelem zjednodušení migrace do cloudu. Ale správně konfigurace, zabezpečení a údržba virtuální počítače vyžaduje mnohem víc času a IT odborných znalosti ve srovnání s Azure App Service a Service Fabric. Pokud uvažujete o virtuálních počítačích Azure, ujistěte se, že byste vzít v úvahu následné údržbě náročnost opravy, aktualizovat a spravovat prostředí virtuálních počítačů. Virtuální počítače Azure je infrastruktury jako služba (IaaS), zatímco služba App Service a Service Fabric jsou platformy jako služba (Paas).
 
@@ -118,16 +118,16 @@ Obrázek 11-2 je znázorněný příklad referenční architekturu. Tento diagra
 **Odkazy – Azure hostování doporučení**
 
 -   Architectures\ řešení služby Azure
-    <https://Azure.microsoft.com/Solutions/Architecture/>
+    <https://azure.microsoft.com/solutions/architecture/>
 
--   Guide\ vývojáře pro službu Azure
-    <https://Azure.microsoft.com/Campaigns/Developer-Guide/>
+-   Azure Developer Guide\
+    <https://azure.microsoft.com/campaigns/developer-guide/>
 
 -   Co je Azure App Service? \
-    <https://docs.microsoft.com/Azure/App-Service/App-Service-Value-prop-What-is>
+    <https://docs.microsoft.com/azure/app-service/app-service-value-prop-what-is>
 
 -   Služby Azure App Service, Virtual Machines, Service Fabric a Comparison\ cloudové služby
-    <https://docs.microsoft.com/Azure/App-Service-Web/Choose-Web-Site-cloud-Service-VM>
+    <https://docs.microsoft.com/azure/app-service-web/choose-web-site-cloud-service-vm>
 
 >[!div class="step-by-step"]
 [Předchozí] (development-process-for-azure.md)

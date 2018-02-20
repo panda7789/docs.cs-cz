@@ -1,7 +1,7 @@
 ---
-title: "Generování kolekcí v architektuře .NET Framework"
+title: "Obecné kolekce v rozhraní .NET"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 02/15/2018
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
@@ -13,32 +13,30 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- generics [.NET Framework], collections
-- generic collections [.NET Framework]
+- generics [.NET], collections
+- generic collections [.NET]
+- generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d7e7d11446c14cffbef1e5cade5f082874187636
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 827d5a7edd335769ec5497518cbdf71181aacc2c
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
-# <a name="generic-collections-in-the-net-framework"></a>Generování kolekcí v architektuře .NET Framework
-Toto téma obsahuje přehled obecné třídy kolekcí a jiné obecné typy v rozhraní .NET Framework.  
+# <a name="generic-collections-in-net"></a>Obecné kolekce v rozhraní .NET
+
+ Poskytuje řadu obecné třídy kolekcí v knihovně tříd rozhraní .NET <xref:System.Collections.Generic> a <xref:System.Collections.ObjectModel> obory názvů. Další podrobné informace o těchto tříd naleznete v tématu [běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md).  
   
-## <a name="generic-collections-in-the-net-framework"></a>Generování kolekcí v architektuře .NET Framework  
- Poskytuje řadu obecné třídy kolekcí v knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic> a <xref:System.Collections.ObjectModel> obory názvů. Další informace o těchto tříd naleznete v tématu [běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md).  
+### <a name="systemcollectionsgeneric"></a>System.Collections.Generic  
+ Mnoho typů obecnou kolekci je analogických neobecné typy. <xref:System.Collections.Generic.Dictionary%602> je obecná verze <xref:System.Collections.Hashtable>; používá obecná struktura <xref:System.Collections.Generic.KeyValuePair%602> pro výčet místo <xref:System.Collections.DictionaryEntry>.  
   
-### <a name="systemcollectionsgeneric"></a>System.Collections.Generic –  
- Mnoho typů obecnou kolekci je analogických neobecné typy. <xref:System.Collections.Generic.Dictionary%602>je obecná verze <xref:System.Collections.Hashtable>; používá obecná struktura <xref:System.Collections.Generic.KeyValuePair%602> pro výčet místo <xref:System.Collections.DictionaryEntry>.  
-  
- <xref:System.Collections.Generic.List%601>je obecná verze <xref:System.Collections.ArrayList>. Existují obecné <xref:System.Collections.Generic.Queue%601> a <xref:System.Collections.Generic.Stack%601> třídy, které odpovídají neobecné verzi.  
+ <xref:System.Collections.Generic.List%601> je obecná verze <xref:System.Collections.ArrayList>. Existují obecné <xref:System.Collections.Generic.Queue%601> a <xref:System.Collections.Generic.Stack%601> třídy, které odpovídají neobecné verzi.  
   
  Obecné a neobecné verzích <xref:System.Collections.Generic.SortedList%602>. Obě verze jsou hybridních slovník a seznam. <xref:System.Collections.Generic.SortedDictionary%602> Obecná třída je čistě slovník a nemá žádný neobecný protějšek.  
   
@@ -51,7 +49,7 @@ Toto téma obsahuje přehled obecné třídy kolekcí a jiné obecné typy v roz
  <xref:System.Nullable%601> Obecná struktura umožňuje používat typy hodnot, jako by mohla být přiřazena `null`. To může být užitečné při práci s dotazů databáze, kde může být chybějící pole, které obsahují typy hodnot. Parametr obecného typu mohou být jakéhokoli typu hodnotu.  
   
 > [!NOTE]
->  V jazyce C# není nutné používat <xref:System.Nullable%601> explicitně, protože jazyk má syntaxi pro typy s možnou hodnotou Null.  
+>  V jazyce C# a Visual Basic, není nutné používat <xref:System.Nullable%601> explicitně, protože jazyk má syntaxi pro typy s možnou hodnotou Null. V tématu [typy s možnou hodnotou Null (C# programování průvodce)](../../csharp/programming-guide/nullable-types/index.md) a [typy s možnou hodnotou Null hodnot (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md). 
   
  <xref:System.ArraySegment%601> Obecná struktura poskytuje způsob, jak vymezení rozsahu elementů v rámci jednorozměrné, počítáno od nuly pole libovolného typu. Parametr obecného typu je typ elementy pole.  
   

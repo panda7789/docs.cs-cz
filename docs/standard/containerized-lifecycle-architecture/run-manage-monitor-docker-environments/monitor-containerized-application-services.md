@@ -48,10 +48,10 @@ Vytvořte prostředek Application Insights, postupujte podle pokynů v článcí
 [https://hub.docker.com/r/Microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) a <https://github.com/Microsoft/ApplicationInsights-Docker>
 
 -   **Nastavte Application Insights pro ASP.NET:**  
-[https://docs.microsoft.com/Azure/Application-insights/App-insights-ASP-NET](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net)
+[https://docs.microsoft.com/azure/application-insights/app-insights-asp-net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net)
 
 -   **Application Insights pro webové stránky:**  
-<https://docs.microsoft.com/Azure/Application-insights/App-insights-JavaScript>
+<https://docs.microsoft.com/azure/application-insights/app-insights-javascript>
 
 ## <a name="microsoft-operations-management-suite"></a>Microsoft Operations Management Suite
 
@@ -97,7 +97,7 @@ Obrázek 6-3: metriky výkonu hostitelů Docker zobrazí Operations Management S
 
 Uložení dotazů je také standardní funkce služby Operations Management Suite a mohou vám pomoci zachovat dotazů našli jste užitečné a zjistit trendy ve vašem systému.
 
-**Další informace o** najít informace o instalaci a konfiguraci Docker kontejneru řešení v [Operations Management Suite](http://microsoft.com/oms), přejděte na <https://docs.microsoft.com/azure/ protokol analytics nebo protokolu analytics kontejnery>.
+**Další informace o** najít informace o instalaci a konfiguraci Docker kontejneru řešení v [Operations Management Suite](http://microsoft.com/oms), přejděte na <https://docs.microsoft.com/azure/log-analytics /log-Analytics-containers>.
 
 >[!div class="step-by-step"]
 [Předchozí] (spravovat produkční docker-environments.md) [Další] (.. /Key-takeaways/index.MD)
