@@ -6,7 +6,7 @@
       tocHref: /dotnet/
       topicHref: /dotnet/index
       items:
-        - name: "referenční dokumentace k\_rozhraní API"
+        - name: Prohlížeč rozhraní API pro .NET
           tocHref: /dotnet/api/
           topicHref: /dotnet/api/index
         - name: Průvodce technologií .NET
