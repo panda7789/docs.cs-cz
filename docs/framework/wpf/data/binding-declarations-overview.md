@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2fc90769b1524ec93fd3df6a9b8be3eb28de8195
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 615b92d264b91ab5b267d5e79ab829b8afa489cd
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="binding-declarations-overview"></a>Přehled deklarací připojení
 Toto téma popisuje různé způsoby můžou deklarovat vazbu.  
@@ -47,11 +49,11 @@ Toto téma popisuje různé způsoby můžou deklarovat vazbu.
   
 <a name="MarkupExtensionSyntax"></a>   
 ### <a name="markup-extension-usage"></a>Použití rozšíření značek  
- <xref:System.Windows.Data.Binding>je rozšíření značek. Pokud použijete rozšíření vazby deklarovat vazbu, deklaraci se skládá z řady klauzule následující `Binding` – klíčové slovo a oddělených čárkami (,). Klauzule v deklaraci vazba může být v libovolném pořadí a nejsou počet možných kombinací. Jsou klauzulích *název*=*hodnotu* páry kde *název* je název <xref:System.Windows.Data.Binding> vlastnost a *hodnota* je hodnota, kterou nastavíte pro vlastnost.  
+ <xref:System.Windows.Data.Binding> je rozšíření značek. Pokud použijete rozšíření vazby deklarovat vazbu, deklaraci se skládá z řady klauzule následující `Binding` – klíčové slovo a oddělených čárkami (,). Klauzule v deklaraci vazba může být v libovolném pořadí a nejsou počet možných kombinací. Jsou klauzulích *název*=*hodnotu* páry kde *název* je název <xref:System.Windows.Data.Binding> vlastnost a *hodnota* je hodnota, kterou nastavíte pro vlastnost.  
   
  Při vytváření vazby deklarace řetězců v kódu, musí být připojené k konkrétní závislost vlastnosti cílového objektu. Následující příklad ukazuje, jak vytvořit vazbu <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost pomocí rozšíření vazby, určení <xref:System.Windows.Data.Binding.Source%2A> a <xref:System.Windows.Data.Binding.Path%2A> vlastnosti.  
   
- [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#L37-L37)]  
   
  Zadávat lze většinu vlastností <xref:System.Windows.Data.Binding> třída tímto způsobem. Další informace o rozšíření vazby také jako seznam <xref:System.Windows.Data.Binding> najdete v části vlastnosti, které se nedají nastavit pomocí rozšíření vazby [vazba – rozšíření značek](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) Přehled.  
   
@@ -69,7 +71,7 @@ Toto téma popisuje různé způsoby můžou deklarovat vazbu.
   
 <a name="MBandPB"></a>   
 ### <a name="multibinding-and-prioritybinding"></a>MultiBinding a PriorityBinding  
- <xref:System.Windows.Data.MultiBinding>a <xref:System.Windows.Data.PriorityBinding> nepodporují rozšíření syntaxe jazyka XAML. Proto musíte použít syntaxi element objektu, pokud jsou deklarace <xref:System.Windows.Data.MultiBinding> nebo <xref:System.Windows.Data.PriorityBinding> v jazyce XAML.  
+ <xref:System.Windows.Data.MultiBinding> a <xref:System.Windows.Data.PriorityBinding> nepodporují rozšíření syntaxe jazyka XAML. Proto musíte použít syntaxi element objektu, pokud jsou deklarace <xref:System.Windows.Data.MultiBinding> nebo <xref:System.Windows.Data.PriorityBinding> v jazyce XAML.  
   
 <a name="BindinginCode"></a>   
 ## <a name="creating-a-binding-in-code"></a>Vytváření vazby v kódu  
@@ -77,8 +79,6 @@ Toto téma popisuje různé způsoby můžou deklarovat vazbu.
   
  [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
  [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
-[!code-csharp[BindConversion#end1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#end1)]
-[!code-vb[BindConversion#end1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#end1)]  
   
  Pokud je objekt, jsou vazby <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> můžete volat `SetBinding` metodu objektu přímo místo použití <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>. Příklad, naleznete v části [vytvoření vazby v kódu](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md).  
   
@@ -94,7 +94,7 @@ Toto téma popisuje různé způsoby můžou deklarovat vazbu.
   
 -   Indexery vlastnosti lze zadat v rámci hranaté závorky následující název vlastnosti v případě použití indexeru. Například v klauzuli `Path=ShoppingCart[0]` nastaví vazbu na index, který odpovídá vaší vlastnost interní indexování jak zpracovává řetězcového literálu "0". Vnořené indexery jsou také podporovány.  
   
--   Indexery a podvlastnosti můžete kombinované ve `Path` klauzule, např.`Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`  
+-   Indexery a podvlastnosti můžete kombinované ve `Path` klauzule, např. `Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`  
   
 -   Uvnitř indexery může mít několik parametrů indexer oddělených čárkami (,). Typ každý parametr lze zadat v závorkách. Například můžete mít `Path="[(sys:Int32)42,(sys:Int32)24]"`, kde `sys` je namapována na `System` oboru názvů.  
   
