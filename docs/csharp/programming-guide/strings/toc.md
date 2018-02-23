@@ -4,4 +4,3 @@
 ## [Postupy: Vyhledávání řetězců pomocí řetězcových metod](how-to-search-strings-using-string-methods.md)
 ## [Postupy: Vyhledávání řetězců pomocí regulárních výrazů](how-to-search-strings-using-regular-expressions.md)
 ## [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](how-to-determine-whether-a-string-represents-a-numeric-value.md)
-## [Postupy: Převedení řetězce na typ DateTime](how-to-convert-a-string-to-a-datetime.md)
