@@ -2,21 +2,23 @@
 title: "decimal (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - decimal_CSharpKeyword
 - decimal
-helpviewer_keywords: decimal keyword [C#]
+helpviewer_keywords:
+- decimal keyword [C#]
 ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0e03ab24f5d22133e061be3872de00a143bbeca8
-ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.openlocfilehash: 0da001851c681fe4d698b920d9668b2f6b731e3a
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/25/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="decimal-c-reference"></a>decimal (Referenční dokumentace jazyka C#)
 `decimal` – Klíčové slovo označuje typ dat 128-bit. Porovnání na jiné typy s plovoucí desetinnou čárkou `decimal` typ má více přesnost i s menším rozsahem, takže je vhodné pro finanční a peněžní výpočty. Přibližná rozsah a přesnost pro `decimal` typu jsou uvedené v následující tabulce.  
@@ -64,6 +66,7 @@ myMoney = (decimal)x;
  Následující příklad způsobí chybu kompilátoru tak, že zkusíte přidat [dvojité](../../../csharp/language-reference/keywords/double.md) a `decimal` proměnné.  
   
 ```csharp  
+decimal dec = 0m;
 double dub = 9;  
 // The following line causes an error that reads "Operator '+' cannot be applied to   
 // operands of type 'double' and 'decimal'"  
@@ -93,10 +96,10 @@ Console.WriteLine((double)dec + dub);
 ## <a name="see-also"></a>Viz také  
  <xref:System.Decimal>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
  [Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
  [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
- [Standardní řetězce formátu čísla](../../../standard/base-types/standard-numeric-format-strings.md)
+ [Standardní řetězce číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)

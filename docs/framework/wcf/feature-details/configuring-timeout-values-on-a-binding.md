@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 164b4e3bff3e327b82c78c403a0e65ec8db744ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ce70b8bca923645ea1e00a55ec4d41903d828a99
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>Konfigurace hodnot časových limitů u vazby
 Nejsou k dispozici v vazby WCF několik nastavení časového limitu. Nastavení těchto časový limit nastavení správně může zlepšit pouze vaší služby výkon, ale také play roli v použitelnost a zabezpečení vaší služby. Následující časové limity jsou k dispozici na vazby WCF:  
@@ -90,15 +92,15 @@ public static void Main()
   
 1.  SendTimeout – použitý k inicializaci OperationTimeout, jimiž se řídí celý proces odesílání zprávy, včetně přijímání zprávy odpovědi pro požadavek nebo odpověď operace služby. Tento časový limit platí také při odesílání zprávy odpovědi z kontrakt metody zpětného volání.  
   
-2.  OpenTimeout – použít při otevírání kanály, když není zadaná žádná hodnota explicitní vypršení časového limitu  
+2.  OpenTimeout – použít při otevírání kanály, když není zadaná žádná hodnota explicitní časový limit.  
   
-3.  Intervalu – použít při zavření kanály, když není zadaná žádná hodnota explicitní vypršení časového limitu  
+3.  Intervalu – použít při zavření kanály, když není zadaná žádná hodnota explicitní časový limit.  
   
-4.  ReceiveTimeout – se nepoužívá.  
+4.  ReceiveTimeout – se nepoužije.  
   
 ### <a name="service-side-timeouts"></a>Časové limity straně služby  
  Na straně služby:  
   
-1.  SendTimeout, OpentTimeout, intervalu jsou stejné jako na straně klienta  
+1.  SendTimeout, OpenTimeout, intervalu jsou stejné jako na straně klienta.  
   
 2.  ReceiveTimeout – vrstvou Framework služby použitý k inicializaci časový limit nečinnosti relace, který řídí, jak dlouho může být relace před vypršením časového limitu nečinnosti.

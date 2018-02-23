@@ -2,7 +2,8 @@
 title: "Bohužel jsme tento & č. 39; t mít podrobnosti o této chybě C#"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - CS1583
@@ -882,27 +883,28 @@ f1_keywords:
 - CS8168
 - CS8172
 - CS8179
-helpviewer_keywords: errors [C#], additional information
+helpviewer_keywords:
+- errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 312bcc963e2e444bb5125124a0cb690126c0a770
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5f6224f661aff817b4314d832fcc2ff3938644c0
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Bohužel jsme tento & č. 39; t mít podrobnosti o této chybě C#
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
   
- [Jazyk Visual C#](http://go.microsoft.com/fwlink/?LinkId=146921)  
+ [Jazyk Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
  Poskytuje diskusní fórum pro dotazy a obecnou diskusi týkající se kompilátoru a syntaxe jazyka [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
   
- [Visual C# IDE](http://go.microsoft.com/fwlink/?LinkId=146922)  
+ [Visual C# IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
  Poskytuje fórum pro otázky týkající se způsobu práce v prostředí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
- [Visual C# obecné](http://go.microsoft.com/fwlink/?LinkId=146920)  
+ [Visual C# obecné](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
  Poskytuje fórum pro dotazy týkající se problémů s jazykem [!INCLUDE[csprcs](~/includes/csprcs-md.md)], které nejsou popsány na jiných fórech.  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
@@ -912,7 +914,6 @@ Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Může
  [Další zdroje pro programátory v jazyce Visual C#](../../csharp/getting-started/additional-resources.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)  
  [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)  
  [Kontaktujte nás](/visualstudio/ide/talk-to-us)  
- [Kontaktujte nás](/visualstudio/ide/talk-to-us)

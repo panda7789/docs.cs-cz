@@ -2,18 +2,20 @@
 title: "new – modifikátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: new modifier keyword [C#]
+helpviewer_keywords:
+- new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 28124c2f3ecef01fd4bc43fe7cfc975dd6466506
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4653cdc15415f0601d07cecb78d1c8e492994b11
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="new-modifier-c-reference"></a>new – modifikátor (Referenční dokumentace jazyka C#)
 Když se použije jako modifikátor deklarace, `new` – klíčové slovo explicitně skryje člena, který je zděděn ze základní třídy. Skrytí zděděného členu odvozenou verzí člena nahradí verzi základní třídy. I když můžete skrýt členy, bez použití `new` modifikátor, zobrazí se upozornění kompilátoru. Pokud používáte `new` explicitně skrýt členem, potlačí toto upozornění.  
@@ -26,7 +28,7 @@ Když se použije jako modifikátor deklarace, `new` – klíčové slovo explic
   
  Název skrytí prostřednictvím dědičnosti má jednu z následujících podob:  
   
--   Obecně platí konstanta, pole, vlastnost nebo typ, který byl představen v třídě nebo struktuře skryje všechny členy základní třídy, které jeho název sdílené složky.  Existují zvláštní případy.  Například, pokud je deklarovat nové pole s názvem `N` mít typ, který není invocable a základní typ deklaruje `N` jako metodu nové pole není skrýt základní deklaraci v syntaxi volání.  Najdete v článku [specifikace jazyka C# 5.0](http://go.microsoft.com/fwlink/?LinkId=199552) podrobnosti (viz část "Člen vyhledávání" v části "Výrazy").  
+-   Obecně platí konstanta, pole, vlastnost nebo typ, který byl představen v třídě nebo struktuře skryje všechny členy základní třídy, které jeho název sdílené složky.  Existují zvláštní případy.  Například, pokud je deklarovat nové pole s názvem `N` mít typ, který není invocable a základní typ deklaruje `N` jako metodu nové pole není skrýt základní deklaraci v syntaxi volání.  Najdete v článku [specifikace jazyka C# 5.0](https://www.microsoft.com/download/details.aspx?id=7029) podrobnosti (viz část "Člen vyhledávání" v části "Výrazy").  
   
 -   Metoda byla zavedená v třídě nebo struktuře skryje vlastnosti, pole a typy, které sdílejí tento název v základní třídě. Skryje také všechny metody třídy base, které mají stejným podpisem.  
   
@@ -57,9 +59,9 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Klíčová slova operátorů](../../../csharp/language-reference/keywords/operator-keywords.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
- [Správa verzí pomocí nové klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
- [Znalost, kdy použít nové klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)
+ [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
+ [Znalost, kdy použít klíčová slova override a new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)

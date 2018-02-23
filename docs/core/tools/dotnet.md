@@ -3,17 +3,17 @@ title: "příkaz DotNet - .NET Core rozhraní příkazového řádku"
 description: "Další informace o příkazu dotnet (obecný ovladač pro rozhraní .NET Core rozhraní příkazového řádku nástroje) a jeho použití."
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 11/28/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2eea7d13994bfddc89d8f3513308a6620c53c88c
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.openlocfilehash: bed0876645428cdff11fa83a091fc63e64cedc8f
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="dotnet-command"></a>příkaz DotNet.
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 01/29/2018
 
 ## <a name="name"></a>Název
 
-`dotnet`-Obecné ovladače pro spouštění příkazy příkazového řádku.
+`dotnet` -Obecné ovladače pro spouštění příkazy příkazového řádku.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -37,7 +37,7 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 ## <a name="description"></a>Popis
 
-`dotnet`je obecný ovladač pro nástrojů rozhraní příkazového řádku (CLI). Vyvolání sama o sobě poskytuje stručný využití pokyny.
+`dotnet` je obecný ovladač pro nástrojů rozhraní příkazového řádku (CLI). Vyvolání sama o sobě poskytuje stručný využití pokyny.
 
 Každý konkrétní funkce je implementovaná jako příkaz. Chcete-li používat funkci, je příkaz zadaný po `dotnet`, jako například [ `dotnet build` ](dotnet-build.md). Všechny argumenty následující příkaz jsou vlastní argumenty.
 
@@ -200,6 +200,8 @@ Spustit framework závislé aplikace s názvem `myapp.dll`:
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
 `DOTNET_PACKAGES`
 
 Primární balíček mezipaměti. Pokud není nastavena, je standardně `$HOME/.nuget/packages` v systému Unix nebo `%HOME%\NuGet\Packages` v systému Windows.
@@ -211,3 +213,23 @@ Určuje umístění údržby indexu má použít pro sdílené hostitele při na
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
 Určuje, jestli se data o využití nástroje .NET Core shromažďuje a odesílá společnosti Microsoft. Nastavte na `true` vyjádřit výslovný nesouhlas funkci telemetrie (hodnoty `true`, `1`, nebo `yes` přijata) nastavena, jinak hodnota `false` k vyslovení souhlasu s funkcí telemetrie (hodnoty `false`, `0`, nebo `no` přijata). Pokud není nastavená, výchozí hodnoty je `false`, a je aktivní funkce telemetrie.
+
+`DOTNET_MULTILEVEL_LOOKUP`
+
+Určuje, zda .NET Core runtime, sdílený framework nebo sady SDK jsou vyřešit z globální umístění. Pokud není nastavena, je standardně `true`. Nastavte na `false` není vyřešit z globální umístění a mají izolované instalace .NET Core (hodnoty `0` nebo `false` přijímají). Další informace o víceúrovňovou vyhledávání najdete v tématu [více úroveň SharedFX vyhledávání](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+
+`DOTNET_PACKAGES`
+
+Primární balíček mezipaměti. Pokud není nastavena, je standardně `$HOME/.nuget/packages` v systému Unix nebo `%HOME%\NuGet\Packages` v systému Windows.
+
+`DOTNET_SERVICING`
+
+Určuje umístění údržby indexu má použít pro sdílené hostitele při načítání modulu runtime.
+
+`DOTNET_CLI_TELEMETRY_OPTOUT`
+
+Určuje, jestli se data o využití nástroje .NET Core shromažďuje a odesílá společnosti Microsoft. Nastavte na `true` vyjádřit výslovný nesouhlas funkci telemetrie (hodnoty `true`, `1`, nebo `yes` přijata) nastavena, jinak hodnota `false` k vyslovení souhlasu s funkcí telemetrie (hodnoty `false`, `0`, nebo `no` přijata). Pokud není nastavená, výchozí hodnoty je `false`, a je aktivní funkce telemetrie.
+
+---
