@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 11b6fef5356f97c53dc973b13eb5f1e8c31dbe72
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 509f9e690a5157c2d80ba9726354ce57a9d7ff26
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Postupy: paralelní provádění vícenásobných webových dotazů pomocí modifikátoru async a operátoru await (C#)
 V asynchronní metody když vytváří se spustí úlohy. [Await](../../../../csharp/language-reference/keywords/await.md) operátor se použije pro úlohu v okamžiku v metodě kde zpracování nemůže pokračovat, dokud na dokončení úlohy. Úloha je často očekáváno, jakmile je vytvořen, jako ukazuje následující příklad.  
@@ -47,7 +48,7 @@ var result = await myTask;
   
  Další příklad, která se spouští ve stejnou dobu více úloh, najdete v části [postupy: rozšíření asynchronní návod podle pomocí metody Task.WhenAll (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
   
- Si můžete stáhnout kód v tomto příkladu z [ukázky kódu vývojáře](http://go.microsoft.com/fwlink/?LinkId=254906).  
+ Si můžete stáhnout kód v tomto příkladu z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).  
   
 ### <a name="to-set-up-the-project"></a>Vytvoření projektu  
   
@@ -75,9 +76,9 @@ var result = await myTask;
   
 3.  Do projektu přidejte následující metody podpory:  
   
-    -   `ProcessURLAsync`používá <xref:System.Net.Http.HttpClient> metoda pro stažení obsahu webu, jako bajtové pole. V případě metody podporu `ProcessURLAsync` pak zobrazí a vrátí délku pole.  
+    -   `ProcessURLAsync` používá <xref:System.Net.Http.HttpClient> metoda pro stažení obsahu webu, jako bajtové pole. V případě metody podporu `ProcessURLAsync` pak zobrazí a vrátí délku pole.  
   
-    -   `DisplayResults`Zobrazí počet bajtů v bajtové pole pro každou adresu URL. Toto zobrazení zobrazí, když každý úkol dokončí stahování.  
+    -   `DisplayResults` Zobrazí počet bajtů v bajtové pole pro každou adresu URL. Toto zobrazení zobrazí, když každý úkol dokončí stahování.  
   
      Zkopírujte následující metody a vložte je po `startButton_Click` obslužné rutiny událostí v MainWindow.xaml.cs.  
   

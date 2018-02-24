@@ -1,10 +1,9 @@
 ---
-title: "Kompilátor příkazového řádku jazyka Visual Basic"
-ms.date: 07/20/2015
+title: "Visual Basic – kompilátor příkazového řádku"
+ms.date: 02/20/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - compilers [Visual Basic], Visual Basic options
@@ -13,28 +12,32 @@ helpviewer_keywords:
 - compiler options, Visual Basic
 - Visual Basic compiler, options
 ms.assetid: 6b57c444-50c7-4b88-8f59-ed65cff5e05c
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7230e62a6ce201209df41ad457fbd93f3a5c866f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+author: mairaw
+ms.author: mairaw
+ms.openlocfilehash: 3b1219a5965352057ab6fe564282394e14f6d063
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="visual-basic-command-line-compiler"></a>Kompilátor příkazového řádku jazyka Visual Basic
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Příkazového řádku kompilátoru představuje alternativu ke kompilace programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Tato část obsahuje popis [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] – možnosti kompilátoru.  
+# <a name="visual-basic-command-line-compiler"></a>Visual Basic – kompilátor příkazového řádku
+
+Kompilátor příkazového řádku jazyka Visual Basic představuje alternativu ke kompilace programů z v sadě Visual Studio integrované vývojové prostředí (IDE). Tato část obsahuje popis pro možnosti kompilátoru jazyka Visual Basic.
+
+Každý – možnost kompilátoru je k dispozici ve dvou formách:-možnost a/Option. V jazyce Visual Basic dokumentaci se zobrazí pouze/Option formuláře.
   
-## <a name="in-this-section"></a>V tomto oddílu  
- [Sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
- Popisuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru příkazového řádku, který je poskytnut jako alternativu k kompilace programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] IDE.  
+## <a name="in-this-section"></a>V tomto oddílu
+
+[Sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
+Popisuje příkazového řádku kompilátoru jazyka Visual Basic, který je k dispozici jako alternativu k kompilace programů z v prostředí Visual Studio IDE.
+
+[Možnosti kompilátoru jazyka Visual Basic abecední](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
+Seznamy – možnosti kompilátoru v abecedním tabulce
+
+[Visual Basic – možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
+Uvede – možnosti kompilátoru v funkční skupiny.
   
- [Možnosti kompilátoru jazyka Visual Basic abecední](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
- Zobrazí seznam možností kompilátoru v abecedním tabulce.  
-  
- [Visual Basic – možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
- Uvede – možnosti kompilátoru v funkční skupiny.  
-  
-## <a name="related-sections"></a>Související oddíly  
- [Visual Basic](../../../visual-basic/index.md)  
- Výchozí bod pro [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pomoci.
+## <a name="related-sections"></a>Související oddíly
+
+[Průvodce jazykem Visual Basic](../../index.md)  
+Výchozím bodem pro dokumentaci jazyka Visual Basic.

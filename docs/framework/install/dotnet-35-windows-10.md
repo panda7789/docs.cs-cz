@@ -6,12 +6,13 @@ ms.author: mairaw
 ms.date: 11/27/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.workload: dotnet
-ms.openlocfilehash: ca56bfb37cee60ab014dada7b5d72b74b375dd7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e81008eca3019860789db548d40998a7a7565d31
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Nainstalujte rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8
 
@@ -39,4 +40,4 @@ Můžete povolit rozhraní .NET Framework 3.5 prostřednictvím ovládacího pan
 
 Během instalace, se můžete setkat chyba 0x800f0906 0x800f0907, 0x800f081f nebo 0x800F0922, v takovém případě odkazovat na [chyby instalace rozhraní .NET Framework 3.5: 0x800f0906, 0x800f0907 nebo 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) chcete zjistit, jak chcete-li tyto problémy.
 
-Pokud některou z metod popsaných v předchozím článku nezdaří, nebo pokud nemáte připojení k Internetu, je třeba použít instalačním médiu systému Windows. Další informace najdete v tématu [nasazení rozhraní .NET Framework 3.5 pomocí Deployment Image Servicing and Management (DISM)](https://technet.microsoft.com/library/Dn482069.aspx). Pokud nemáte k dispozici na instalačním médiu, přečtěte si téma [vytvořit instalační médium pro Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).
+Pokud některou z metod popsaných v předchozím článku nezdaří, nebo pokud nemáte připojení k Internetu, je třeba použít instalačním médiu systému Windows. Další informace najdete v tématu [nasazení rozhraní .NET Framework 3.5 pomocí Deployment Image Servicing and Management (DISM)](/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism). Pokud nemáte k dispozici na instalačním médiu, přečtěte si téma [vytvořit instalační médium pro Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).

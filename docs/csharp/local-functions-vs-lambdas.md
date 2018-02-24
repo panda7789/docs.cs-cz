@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
-ms.openlocfilehash: 20312b58a24dc991791edad4bb92d3a8ca6d501a
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.openlocfilehash: 5aa097c19a86e9ae62a37d91fb1b54067280286d
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="local-functions-compared-to-lambda-expressions"></a>Lokální funkce ve srovnání s výrazy lambda
 
@@ -38,19 +38,19 @@ Pravidla jednoznačné přiřazení ovlivní také jakékoli proměnné, které 
 Kompilátor třetí, můžete provést statické analýzy, která umožňuje místní funkce výborný přiřadit zaznamenané proměnné ve vymezeném oboru. Vezměte v úvahu v tomto příkladu:
 
 ```csharp
-bool M()
+int M()
 {
     int y;
-    Local();
+    LocalFunction();
     return y;
 
-    void Local() => y = 0;
+    void LocalFunction() => y = 0;
 }
 ```
 
-Kompilátor můžete určit, který `Local` výborný přiřadí `y` při volání. Protože `Local` je volána před provedením `return` příkaz `y` definitiely přiřazen za `return` příkaz.
+Kompilátor můžete určit, který `LocalFunction` výborný přiřadí `y` při volání. Protože `LocalFunction` je volána před provedením `return` příkaz `y` definitiely přiřazen za `return` příkaz.
 
-Analýzy, která umožňuje, že analysis umožňuje čtvrtý rozdíl.
+Analýza umožňující analysis příklad umožňuje čtvrtý rozdíl.
 V závislosti na jejich použití se můžete vyhnout lokální funkce přidělení haldy, které jsou vždy potřebné pro výrazy lambda. Pokud je místní funkce nikdy převedeno na delegáta a žádné proměnné zachycenou místní funkce zachycenou další lambdas nebo místní funkce, které se převedou na delegáty, kompilátor se můžete vyhnout přidělení haldy. 
 
 Tento příklad asynchronní vezměte v úvahu:

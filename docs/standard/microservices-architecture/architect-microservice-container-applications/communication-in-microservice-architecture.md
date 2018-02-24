@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f373119f4d221745063688a9a5211d5ae11598b7
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 3c80ce8e3c4ccdc7e53634f54dd998581758ab07
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektury mikroslužby
 
@@ -47,7 +47,7 @@ Druhý osy je definování komunikace má jednoho příjemce nebo několika př�
 
 Aplikace založené na mikroslužbu na se často používají kombinaci těchto styly komunikace. Nejběžnějším typem je jeden příjemce komunikace s synchronní protokol například HTTP nebo HTTPS, při vyvolání regulární služby webového rozhraní API HTTP. Mikroslužeb také běžně používají protokoly zasílání zpráv pro asynchronní komunikaci mezi mikroslužeb.
 
-Tyto osy je dobré vědět, takže máte přehlednost na možné komunikační mechanizmy, ale nejsou důležité aspekty při sestavování mikroslužeb. Asynchronní povaha provádění vlákna klienta ani asynchronní povaze vybrané protokolu jsou důležité body při integraci mikroslužeb. Co *je* důležité je třeba možnost integrovat vaši mikroslužeb asynchronně při zachování nezávislost mikroslužeb, jak je popsáno v následující části.
+Tyto osy je dobré vědět, takže máte přehlednost na možné komunikační mechanizmy, ale nejsou důležité aspekty při sestavování mikroslužeb. Ani asynchronní povaha provádění vlákna klienta ani asynchronní povaha vybraného protokolu jsou důležité body při integraci mikroslužeb. Co *je* důležité je třeba možnost integrovat vaši mikroslužeb asynchronně při zachování nezávislost mikroslužeb, jak je popsáno v následující části.
 
 ## <a name="asynchronous-microservice-integration-enforces-microservices-autonomy"></a>Asynchronní mikroslužbu integrace vynucuje nezávislé na mikroslužbu
 

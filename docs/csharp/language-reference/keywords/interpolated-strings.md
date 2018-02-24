@@ -2,17 +2,18 @@
 title: "Interpolované řetězce (C#)"
 ms.date: 10/18/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 324f267e-1c61-431a-97ed-852c1530742d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b8a1fe0be82a0e09d61c66ed463199ff626c9faa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0569636bde875d2d0d8921a544273f3214d05188
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="interpolated-strings-c-reference"></a>Interpolované řetězce (referenční dokumentace jazyka C#)
 
@@ -23,7 +24,7 @@ Argumenty interpolované řetězce jsou srozumitelnější než [složený form�
 ```csharp  
 Console.WriteLine($"Name = {name}, hours = {hours:hh}");
 ```  
-obsahuje dva interpolované výrazy {name}' a '{hodina: hh}'. Je ekvivalentní složený formátovací řetězec:
+obsahuje dva interpolované výrazy {name}' a '{hodin: hh}'. Je ekvivalentní složený formátovací řetězec:
 
 ```csharp
 Console.WriteLine("Name = {0}, hours = {1:hh}", name, hours); 
@@ -80,7 +81,7 @@ Existují tři typu implicitní převody z interpolované řetězce:
 
    Všimněte si, že může být prověřovány interpolované řetězce pouze pomocí reflexe. Pokud je předán řetězec formátování metoda, jako například <xref:System.Console.WriteLine(System.String)>, jeho položky formátu jsou vyřešeny a vrátí výsledný řetězec. 
 
-3. Interpolované řetězce pro převod <xref:System.FormattableString> proměnné, která představuje složený formátovací řetězec. Probíhá kontrola složený formátovací řetězec a jak se vykreslí v důsledku řetězec, například vám můžou pomoct chránit před útoky, vkládání, pokud vytváříte dotazu. <xref:System.FormattableString>také zahrnuje <xref:System.FormattableString.ToString> přetížení, které vám umožní vytvořit výsledek řetězce pro <xref:System.Globalization.CultureInfo.InvariantCulture> a <xref:System.Globalization.CultureInfo.CurrentCulture>.  Všechny výskyty dvojité složené závorky ("{{" a "}}") zůstanou jako dvojité složené závorky, dokud formátovat.  Všechny obsažené interpolace výrazy se převedou na {0}, {1} a tak dále.  
+3. Interpolované řetězce pro převod <xref:System.FormattableString> proměnné, která představuje složený formátovací řetězec. Probíhá kontrola složený formátovací řetězec a jak se vykreslí v důsledku řetězec, například vám můžou pomoct chránit před útoky, vkládání, pokud vytváříte dotazu. <xref:System.FormattableString> také zahrnuje <xref:System.FormattableString.ToString> přetížení, které vám umožní vytvořit výsledek řetězce pro <xref:System.Globalization.CultureInfo.InvariantCulture> a <xref:System.Globalization.CultureInfo.CurrentCulture>.  Všechny výskyty dvojité složené závorky ("{{" a "}}") zůstanou jako dvojité složené závorky, dokud formátovat.  Všechny obsažené interpolace výrazy se převedou na {0}, {1} a tak dále.  
 
    [!code-csharp[interpolated-strings3](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings3.cs#1)]  
 
@@ -91,4 +92,4 @@ Existují tři typu implicitní převody z interpolované řetězce:
  <xref:System.IFormattable?displayProperty=nameWithType>  
  <xref:System.FormattableString?displayProperty=nameWithType>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
