@@ -13,11 +13,11 @@ ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b4e19734bc1b7f394864a44ca0489c669cd63a61
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 7e3d628fe4b4a8f01e692a70892658fceeb87953
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnost rozhraní .NET
 
@@ -25,8 +25,8 @@ Chcete vytvořit více platformami knihovnách? Chcete zobrazit, kolik práce je
 
 ## <a name="new-targets"></a>Nové cíle
 
-* [.NET core](https://dotnetfoundation.org/net-core): má modulárnímu návrhu, aktivuje vedle sebe a cílem mezi různými platformami. Souběžně sdílená umožňuje přijmout nové verze .NET Core, aniž by vás jiné aplikace.
-* [ASP.NET Core](https://dotnetfoundation.org/asp-net-core): je moderní webové – architektura založená na .NET Core a umožňuje vývojářům tak stejné výhody.
+* [.NET core](../../core/index.md): má modulárnímu návrhu, aktivuje vedle sebe a cílem mezi různými platformami. Souběžně sdílená umožňuje přijmout nové verze .NET Core, aniž by vás jiné aplikace.
+* [ASP.NET Core](/aspnet/core): je moderní webové – architektura založená na .NET Core a umožňuje vývojářům tak stejné výhody.
 * [Univerzální platformu Windows](https://blogs.msdn.microsoft.com/dotnet/2014/04/24/net-native-performance): výkon vaší aplikace Windows Store, které běží na x64 a ARM počítačů pomocí .NET Native statické kompilace. 
 * .NET core a rozšíření platformy: Zahrnuje rozhraní API .NET Core kromě jiná rozhraní API v ekosystému .NET například WCF, ASP.NET Core, FSharp a Azure.
 * .NET standard + rozšíření platformy: Obsahuje standardní rozhraní API .NET kromě jiných ekosystém .NET, například WCF, ASP.NET Core, FSharp a Azure.
@@ -47,8 +47,8 @@ Po spuštění analýzy, zobrazí se sestavy přenositelnost .NET. Pouze typy, k
 
 Nechcete použít Visual Studio? Můžete také použít analyzátor přenositelnost z příkazového řádku. Stáhnout pouze [rozhraní API přenositelnost analyzátor](http://www.microsoft.com/download/details.aspx?id=42678).
 
-*   Zadejte následující příkaz k analýze aktuálním adresáři:`\...\ApiPort.exe analyze -f .`
-*   K analýze konkrétní seznamu souborů DLL, zadejte následující příkaz:`\...\ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
+*   Zadejte následující příkaz k analýze aktuálním adresáři: `\...\ApiPort.exe analyze -f .`
+*   K analýze konkrétní seznamu souborů DLL, zadejte následující příkaz: `\...\ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
 
 Přenositelnost sestavy .NET je uloženo jako soubor aplikace Excel (*XLSX*) v aktuálním adresáři. **Podrobnosti** karta v sešitu aplikace Excel obsahuje další informace.
 

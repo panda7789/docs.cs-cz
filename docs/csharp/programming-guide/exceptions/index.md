@@ -2,21 +2,22 @@
 title: "Výjimky a jejich zpracování (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - exception handling [C#]
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 458f6770a89f28dce1e441cd38ec9a56a1c58bc1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3c4ff558f2b850e195138dcc8901d6d860365cfc
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Zpracování funkce nápovědy výjimek jazyka C# můžete řešit neočekávané nebo výjimečně vysoké počty případy, které nastat, pokud je program spuštěn. Používá zpracování výjimek `try`, `catch`, a `finally` klíčová slova a zkuste to akce, které nemusí být úspěšné, pro zpracování chyby, pokud se rozhodnete, že je možné logicky Uděláte to tak a následně vyčištění prostředků. Výjimky může být generována modul CLR (CLR), rozhraní .NET Framework nebo knihovny jakékoli třetí strany, nebo kód aplikace. Výjimky jsou vytvořeny pomocí `throw` – klíčové slovo.  
@@ -48,7 +49,7 @@ Zpracování funkce nápovědy výjimek jazyka C# můžete řešit neočekávan�
   
 -   Kód na `finally` bloku se spustí i v případě, že je vyvolána výjimka. Použití `finally` blok k uvolnění prostředků, např. Zavřete všechny datové proudy nebo soubory, které byly otevřeny `try` bloku.  
   
--   Spravované výjimky v rozhraní .NET Framework se implementují nad zpracování mechanismus výjimek Win32 strukturovaná. Další informace najdete v tématu [strukturované zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [A havárií během na Depths systému Win32 strukturované zpracování výjimek](http://go.microsoft.com/fwlink/?LinkId=119654).  
+-   Spravované výjimky v rozhraní .NET Framework se implementují nad zpracování mechanismus výjimek Win32 strukturovaná. Další informace najdete v tématu [strukturované zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [A havárií během na Depths systému Win32 strukturované zpracování výjimek](http://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Najdete v následujících tématech pro další informace o výjimky a jejich zpracování:  
@@ -63,20 +64,17 @@ Zpracování funkce nápovědy výjimek jazyka C# můžete řešit neočekávan�
   
 -   [Postupy: zpracování výjimky pomocí bloku try/catch (C# Průvodce programováním)](../../../csharp/programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md)  
   
--   [Postupy: spuštění kódu čištění pomocí příkazu finally](../../../csharp/programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md)  
+-   [Postupy: Spuštění kódu čištění pomocí příkazu finally](../../../csharp/programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.SystemException>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [throw](../../../csharp/language-reference/keywords/throw.md)  
- [try-catch –](../../../csharp/language-reference/keywords/try-catch.md)  
- [try-finally –](../../../csharp/language-reference/keywords/try-finally.md)  
- [try-catch-finally –](../../../csharp/language-reference/keywords/try-catch-finally.md)  
+ [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
+ [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
+ [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)  
  [Výjimky](../../../standard/exceptions/index.md)  
- [Hierarchie výjimek](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)  
- [Psaní kódu spolehlivé .NET](http://go.microsoft.com/fwlink/?LinkId=112400)  
- [Minimálním výpisem pro konkrétní výjimky](http://go.microsoft.com/fwlink/?LinkId=112408)

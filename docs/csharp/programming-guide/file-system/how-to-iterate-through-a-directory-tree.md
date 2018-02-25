@@ -2,20 +2,21 @@
 title: "Postupy: Iterace v adresářovém stromě (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c4851938aafefd93aa9189aecbb3f5cdd9a09ea0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7f45bdc4a08922842b079be3ef9d112693ca5d7a
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace v adresářovém stromě (Průvodce programováním v C#)
 Fráze "iterace v adresářovém stromě" znamená přístup každý soubor v každé vnořené podadresáři složce zadaný kořenový na libovolnou hloubku. Nemáte nutně otevřete každý soubor. Název souboru nebo podadresáři jako můžete načíst právě `string`, nebo můžete získat další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> objektu.  
@@ -59,9 +60,9 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  Pokud je třeba uložit obsah v adresářovém stromě v paměti nebo na disku, nejlepší možnost je k uložení pouze <xref:System.IO.FileSystemInfo.FullName%2A> vlastnost (typu `string`) pro každý soubor. Pak můžete použít tento řetězec pro vytvoření nového <xref:System.IO.FileInfo> nebo <xref:System.IO.DirectoryInfo> objektu podle potřeby nebo otevřít libovolný soubor, který vyžaduje další zpracování.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Kód iterace robustní souboru musí vzít v úvahu mnoho složité kroky systému souborů. Další informace najdete v tématu [technické informace o systému souborů NTFS](http://go.microsoft.com/fwlink/?LinkId=79488).  
+ Kód iterace robustní souboru musí vzít v úvahu mnoho složité kroky systému souborů. Další informace o systému souborů najdete v tématu [technické informace o systému souborů NTFS](https://technet.microsoft.com/library/81cc8a8a-bd32-4786-a849-03245d68d8e4).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO>  
- [LINQ a souborové adresáře](http://msdn.microsoft.com/library/5a5d516c-0279-4a84-ac84-b87f54caa808)  
+ [LINQ a souborové adresáře](../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)  
  [Systém souborů a registr (C# Průvodce programováním)](../../../csharp/programming-guide/file-system/index.md)
