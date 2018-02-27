@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 78becece40b4b527869c593f8a1fe1eeba1f1f51
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3003c7b4a10890ddf7faa098ed672ef40b591b30
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pokud nechcete čekat na dokončení. Pomocí následujících příkladech v tomto tématu, můžete přidat tlačítko zrušení k aplikaci, která stahuje obsah jeden web nebo seznam webů.  
@@ -25,11 +26,11 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
 > [!NOTE]
 >  Pro spuštění příkladů, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalovaný ve vašem počítači.  
   
-##  <a name="BKMK_CancelaTask"></a>Zrušení úlohy  
+##  <a name="BKMK_CancelaTask"></a> Zrušení úlohy  
  V prvním příkladu přidruží **zrušit** tlačítka s jeden stahování. Pokud si zvolíte tlačítko, zatímco aplikace je stahování obsahu, stahování je zrušeno.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
- Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046) a pak postupujte podle těchto kroků.  
+ Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
 1.  Dekomprimovat soubor, který jste stáhli a pak spusťte Visual Studio.  
   
@@ -146,11 +147,11 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
     Download canceled.  
     ```  
   
-##  <a name="BKMK_CancelaListofTasks"></a>Zrušit seznam úloh  
+##  <a name="BKMK_CancelaListofTasks"></a> Zrušit seznam úloh  
  Můžete rozšířit předchozí příklad zrušit celou řadu úloh tím, že přidružíte stejné `CancellationTokenSource` instance s každý úkol. Pokud se rozhodnete **zrušit** tlačítko Zrušit všechny úlohy, které ještě nejsou úplné.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
- Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046) a pak postupujte podle těchto kroků.  
+ Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
 1.  Dekomprimovat soubor, který jste stáhli a pak spusťte Visual Studio.  
   
@@ -259,10 +260,10 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
     Downloads canceled.  
     ```  
   
-##  <a name="BKMK_CompleteExamples"></a>Dokončit příklady  
+##  <a name="BKMK_CompleteExamples"></a> Dokončit příklady  
  Kód pro každou z předchozích příkladech v následujících částech. Všimněte si, že je nutné přidat odkaz pro <xref:System.Net.Http>.  
   
- Si můžete stáhnout z projektů [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046).  
+ Si můžete stáhnout z projektů [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  
   
 ### <a name="cancel-a-task-example"></a>Příklad zrušení úlohy  
  Následující kód je soubor MainWindow.xaml.cs kompletní příklad, který zruší jeden úkol.  
@@ -525,4 +526,4 @@ namespace CancelAListOfTasks
  <xref:System.Threading.CancellationToken>  
  [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
  [Vyladění s modifikátorem Async aplikace (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
- [Ukázka asynchronního: Jemnou ladění aplikace](http://go.microsoft.com/fwlink/?LinkId=255046)
+ [Ukázka asynchronního: Jemnou ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

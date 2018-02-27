@@ -19,18 +19,18 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ec6f7df4cc42b71ab9c61e84b71a81f641a1d0b3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 81ccf70482c8b7f4acb0b18381ed4cf07edc06af
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojář, můžete vyvíjet v jednom z mnoha jazycích, které cílí na rozhraní .NET Framework, jako je například C#, C + +/ CLI, Eiffel, F #, IronPython, IronRuby, aplikace PowerBuilder, Visual Basic, Visual COBOL a prostředí Windows PowerShell. Můžete přejít na typy a členy vytvořených pro rozhraní .NET Framework, aniž by museli znát jazyk, ve kterém byly se původně zapsán a bez nutnosti postupovat podle některého z původní jazyk konvence knihovny tříd. Pokud jste vývojář součásti, příslušné součásti jsou přístupné kteroukoli aplikací rozhraní .NET Framework, bez ohledu na jeho jazyk.  
@@ -150,7 +150,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
 |Přetížení|[Overloads](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
 |Přetížení|[Overloads](#overloads)|Vlastnosti a metody mohou být přetíženy na základě pouze na počtu a typů jejich parametrů, s výjimkou operátory převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratový typ.|38|  
 |Přetížení|--|Pokud dva nebo více kompatibilní se specifikací CLS metody, které jsou deklarované v typu mají stejné nameand, pro konkrétní sadu konkretizací typ nemají stejný parametr a návratové typy, thenall tyto metody musí být v těchto typ konkretizací sémanticky ekvivalentní.|48|  
-|Typy|[Zadejte a zadejte signaturách členu](#Types)|<xref:System.Object?displayProperty=nameWithType>je kompatibilní se specifikací CLS. Jiná kompatibilní se specifikací CLS třída musí dědit z třídu kompatibilní se specifikací CLS.|23|  
+|Typy|[Zadejte a zadejte signaturách členu](#Types)|<xref:System.Object?displayProperty=nameWithType> je kompatibilní se specifikací CLS. Jiná kompatibilní se specifikací CLS třída musí dědit z třídu kompatibilní se specifikací CLS.|23|  
 |Vlastnosti|[Vlastnosti](#properties)|Metody, které implementují metody getter a setter shallbe vlastnost označena `SpecialName` v metadatech.|24|  
 |Vlastnosti|[Vlastnosti](#properties)|Přístupové objekty vlastnosti musí být statické, virtuální nebo být všechny instance.|26|  
 |Vlastnosti|[Vlastnosti](#properties)|Typ vlastnosti musí být návratový typ metoda getter a typ poslední argument nastavovací metoda. Typy parametrů vlastnosti musí být typy parametrů metoda getter a všechny typy, ale konečný parametr nastavovací metoda. Všechny tyto typy musí být kompatibilní se specifikací CLS a nebude spravovaný ukazatele (tj, nebude předání odkazem).|27|  
@@ -187,7 +187,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
 |<xref:System.Int64>|64bitové celé číslo se znaménkem|  
 |<xref:System.Single>|Desetinnou čárkou s jednoduchou přesností|  
 |<xref:System.Double>|Dvojitá přesnost s plovoucí desetinnou čárkou|  
-|<xref:System.Boolean>|`true`nebo `false` typu hodnoty|  
+|<xref:System.Boolean>|`true` nebo `false` typu hodnoty|  
 |<xref:System.Char>|Kódování UTF-16 jednotka kódu|  
 |<xref:System.Decimal>|Bez plovoucí čárkou desetinné číslo|  
 |<xref:System.IntPtr>|Ukazatel nebo popisovač velikosti definované platformy|  
@@ -201,7 +201,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
 |<xref:System.TypedReference>|Ukazatel na objekt a její typ modulu runtime|Žádné|  
 |<xref:System.UInt16>|16bitové celé číslo bez znaménka|<xref:System.Int32>|  
 |<xref:System.UInt32>|32bitové celé číslo bez znaménka|<xref:System.Int64>|  
-|<xref:System.UInt64>|64bitové celé číslo bez znaménka|<xref:System.Int64>(může přetečení), <xref:System.Numerics.BigInteger>, nebo<xref:System.Double>|  
+|<xref:System.UInt64>|64bitové celé číslo bez znaménka|<xref:System.Int64> (může přetečení), <xref:System.Numerics.BigInteger>, nebo <xref:System.Double>|  
 |<xref:System.UIntPtr>|Nepodepsané ukazatel nebo popisovač|<xref:System.IntPtr>|  
   
  Knihovna tříd rozhraní .NET Framework nebo jiné knihovny tříd mohou zahrnovat jiné typy, které nejsou kompatibilní se specifikací CLS; například:  
@@ -391,7 +391,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
   
  Common Language Specification ukládá konzervativní za konkretizaci model pro vnořené typy a chráněné členy. Otevřete obecné typy nemůže vystavovat pole nebo členy s podpisy, které obsahují konkrétní instanci vnořené, chráněné obecného typu. Non obecné typy, které rozšiřují konkrétní instanci obecné základní třídy nebo rozhraní nemůže vystavovat pole nebo členy s podpisy, které obsahují různé konkretizaci vnořené, chráněné obecného typu.  
   
- V následujícím příkladu definuje obecného typu `C1<T>` (nebo `C1(Of T)` v jazyce Visual Basic) a chráněná třída `C1<T>.N` (nebo `C1(Of T).N` v jazyce Visual Basic). `C1<T>`má dvě metody, `M1` a `M2`. Ale `M1` není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` (nebo `C1(Of Integer).N`) objekt z C1\<T > (nebo `C1(Of T)`). Třídu sekundu `C2`, je odvozený od `C1<long>` (nebo `C1(Of Long)`). Nabízí dvě metody, `M3` a `M4`. `M3`není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` (nebo `C1(Of Integer).N`) objekt z podtřídou třídy `C1<long>`. Všimněte si, že můžou být i víc omezující kompilátory jazyka. V tomto příkladu jazyka Visual Basic zobrazí chybu při pokusu o zkompilovat `M4`.  
+ V následujícím příkladu definuje obecného typu `C1<T>` (nebo `C1(Of T)` v jazyce Visual Basic) a chráněná třída `C1<T>.N` (nebo `C1(Of T).N` v jazyce Visual Basic). `C1<T>` má dvě metody, `M1` a `M2`. Ale `M1` není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` (nebo `C1(Of Integer).N`) objekt z C1\<T > (nebo `C1(Of T)`). Třídu sekundu `C2`, je odvozený od `C1<long>` (nebo `C1(Of Long)`). Nabízí dvě metody, `M3` a `M4`. `M3` není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` (nebo `C1(Of Integer).N`) objekt z podtřídou třídy `C1<long>`. Všimněte si, že můžou být i víc omezující kompilátory jazyka. V tomto příkladu jazyka Visual Basic zobrazí chybu při pokusu o zkompilovat `M4`.  
   
  [!code-csharp[Conceptual.CLSCompliant#32](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics4.cs#32)]
  [!code-vb[Conceptual.CLSCompliant#32](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics4.vb#32)]  

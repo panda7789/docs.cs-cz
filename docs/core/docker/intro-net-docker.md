@@ -14,11 +14,11 @@ manager: wpickett
 ms.custom: mvc
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: e538cb541ee2c59caf1feba4a31f86118c42c3ca
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: dabc7c0c4a0afab8edf7d2bab410bb9635821936
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 
@@ -103,7 +103,7 @@ Ukázky použití .NET Core 2.0. Používají Docker [více fáze sestavení](ht
 
 Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Docker rozhraní .NET Framework. Tyto Image můžete použít jako základ imagí Dockeru.
 
-Rozhraní .NET framework 4.7
+**Rozhraní .NET framework 4.7**
 
 [Dotnet – ukázka framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "text hello world" použití [4.7 rozhraní .NET Framework](../../framework/whats-new/index.md#v47). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.7 docker image](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile).
 
@@ -184,7 +184,7 @@ Rozhraní .NET framework 4.7
 
 * [Microsoft Azure Cosmos DB emulátoru Image na DockerHub](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator) 
 
-* [Použití emulátoru DB Cosmos Azure pro místní vývoj a testování](/azure/cosmos-db/local-emulator.md#developing-with-the-emulator)
+* [Použití emulátoru DB Cosmos Azure pro místní vývoj a testování](/azure/cosmos-db/local-emulator#developing-with-the-emulator)
 
 ## <a name="exploring-the-rich-docker-development-ecosystem"></a>Zkoumání bohatý ekosystém vývoj Docker
 
@@ -193,10 +193,10 @@ Teď, když jste se naučili o Docker platformy a jiné imagí Dockeru, dalším
 * [Společně pomocí rozhraní .NET a Docker](https://blogs.msdn.microsoft.com/dotnet/2017/05/25/using-net-and-docker-together/)
 * [Návrh a vývoj aplikace s více kontejneru a na základě Mikroslužbu .NET](../../standard/microservices-architecture/multi-container-microservice-net-applications/index.md)
 * [Rozšíření sady Visual Studio Code Docker](https://code.visualstudio.com/docs/languages/dockerfile)
-* [Naučte se používat Azure Service Fabric](/azure/service-fabric/index.md)
+* [Naučte se používat Azure Service Fabric](/azure/service-fabric/index)
 * [Ukázka spuštění získávání Service Fabric](https://azure.microsoft.com/resources/samples/service-fabric-dotnet-getting-started/)
-* [Výhody Windows kontejnery](/virtualization/windowscontainers/about/index.md#video-overview)
-* [Práce s nástroji Visual Studio Docker](/aspnet/core/publishing/visual-studio-tools-for-docker/index.md)
+* [Výhody Windows kontejnery](/virtualization/windowscontainers/about/index#video-overview)
+* [Práce s nástroji Visual Studio Docker](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker)
 * [Nasazení bitových kopií Docker z registru kontejner Azure do Azure kontejner instancí](https://blogs.msdn.microsoft.com/stevelasker/2017/07/28/deploying-docker-images-from-the-azure-container-registry-to-azure-container-instances/)
 * [Ladění pomocí kódu v sadě Visual Studio](https://code.visualstudio.com/docs/nodejs/debugging-recipes#_nodejs-typescript-docker-container)
 * [Načítání rukou pomocí sady Visual Studio pro Mac, kontejnery a bez serveru kódu v cloudu](https://blogs.msdn.microsoft.com/visualstudio/2017/08/31/hands-on-with-visual-studio-for-mac-containers-serverless-code-in-the-cloud/#comments)

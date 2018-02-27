@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bf70bd5e79e962d8edaea2dc037f191707f4e047
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a5339e1d2d592f3ae2a2b5c0e4e96e2bff2df64c
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (C#)
 Pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, můžete současně spustit více úloh a zpracování jednotlivých jejich jste dokončit, nikoli jejich zpracování v pořadí, ve kterém se spouští.  
@@ -26,7 +27,7 @@ Pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithTyp
 >  Pro spuštění příkladů, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalovaný ve vašem počítači.  
   
 ## <a name="downloading-the-example"></a>Stažení příkladu  
- Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046) a pak postupujte podle těchto kroků.  
+ Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
 1.  Dekomprimovat soubor, který jste stáhli a pak spusťte Visual Studio.  
   
@@ -88,14 +89,14 @@ IEnumerable<Task<int>> downloadTasksQuery =
  Byste měli spustit projekt několikrát k ověření, že staženou délky nezobrazí vždy ve stejném pořadí.  
   
 > [!CAUTION]
->  Můžete použít `WhenAny` ve smyčce, jak je popsáno v příkladu k řešení problémů, které zahrnují malý počet úloh. Jiné postupy jsou však efektivnější, pokud máte velký počet úloh ke zpracování. Další informace a příklady naleznete v tématu [zpracování úloh jako jejich dokončení](http://go.microsoft.com/fwlink/?LinkId=260810).  
+>  Můžete použít `WhenAny` ve smyčce, jak je popsáno v příkladu k řešení problémů, které zahrnují malý počet úloh. Jiné postupy jsou však efektivnější, pokud máte velký počet úloh ke zpracování. Další informace a příklady naleznete v tématu [zpracování úloh po dokončení](https://blogs.msdn.microsoft.com/pfxteam/2012/08/02/processing-tasks-as-they-complete/).  
   
 ## <a name="complete-example"></a>Kompletní příklad  
  Následující kód je úplný text souboru MainWindow.xaml.cs pro tento příklad. Hvězdičky označit prvky, které byly přidány v tomto příkladu.  
   
  Všimněte si, že je nutné přidat odkaz pro <xref:System.Net.Http>.  
   
- Si můžete stáhnout z projektu [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046).  
+ Si můžete stáhnout z projektu [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  
   
 ```csharp  
 using System;  
@@ -237,4 +238,4 @@ namespace ProcessTasksAsTheyFinish
  <xref:System.Threading.Tasks.Task.WhenAny%2A>  
  [Vyladění s modifikátorem Async aplikace (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
  [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
- [Ukázka asynchronního: Jemnou ladění aplikace](http://go.microsoft.com/fwlink/?LinkId=255046)
+ [Ukázka asynchronního: Jemnou ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
