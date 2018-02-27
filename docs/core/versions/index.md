@@ -3,17 +3,18 @@ title: "Správa verzí .NET core"
 description: "Pochopit, jak funguje správa verzí .NET Core."
 author: bleroy
 ms.author: mairaw
-ms.date: 08/25/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
-ms.workload: dotnetcore
-ms.openlocfilehash: 369d280268123a69ae9458a2c47e45396728deb5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 70c7f179f3451e51d5ab383cde80959a69f959a1
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="net-core-versioning"></a>Správa verzí .NET core
 
@@ -23,9 +24,13 @@ Tento článek zaměřuje na určující, jak jsou verzí rozhraní .NET Core SD
 
 Neobsahuje velké množství přesunutí části této verze nezávisle .NET Core. Od verze rozhraní .NET Core 2.0, je však snadno pochopit číslo verze nejvyšší úrovně, které každý uživatel rozumí být *verzi* ".NET Core" jako celek. Zbytek tohoto dokumentu přejde na podrobné informace o Správa verzí všech těchto částí. Tyto podrobnosti může být důležité, pokud jste správce balíčků, například.
 
+> [!IMPORTANT]
+> Správa verzí podrobnosti popsané v tomto tématu se nevztahují na aktuální verzi rozhraní .NET Core SDK a modulu runtime.
+> Verze schématu se mění v budoucích verzích. Zobrazí aktuální návrh na [dotnet nebo návrhy](https://github.com/dotnet/designs/pull/29) úložiště.
+
 ## <a name="versioning-details"></a>Správa verzí podrobnosti
 
-Od verze rozhraní .NET 2.0 jádra, zobrazit soubory ke stažení jedna verze číslo v názvu souboru. Byly unified následující čísla verzí:
+Stahování s .NET Core 2.0, zobrazit číslo jedné verze v názvu souboru. Byly unified následující čísla verzí:
 
 * Sdílený framework a přidružené runtime.
 * .NET Core SDK a přidružené rozhraní .NET Core CLI.
@@ -35,8 +40,8 @@ Použití číslo díky jedna verze, což usnadňuje uživatelům vědět, jaká
 
 ### <a name="installers"></a>Instalační programy
 
-Od verze rozhraní .NET 2.0 jádra, soubory ke stažení pro naše [denně sestavení](https://github.com/dotnet/core-setup#daily-builds) a [naše verze](https://www.microsoft.com/net/download/core) dodržovat nové schéma pojmenování je srozumitelnější.
-Instalační program uživatelského rozhraní v těchto stahování byly také upravit tak, aby jasně prezentovat názvy a verze instalovaných komponent. Konkrétně titulů zobrazují stejné číslo verze, která je v názvu souboru ke stažení.
+Pomocí rozhraní .NET 2.0 jádra, soubory ke stažení pro [denně sestavení](https://github.com/dotnet/core-setup#daily-builds) a [uvolní](https://www.microsoft.com/net/download/core) dodržovat nové schéma pojmenování je srozumitelnější.
+Instalační program uživatelského rozhraní v těchto souborů ke stažení se také upravit tak, aby jasně prezentovat názvy a verze instalovaných komponent. Konkrétně titulů zobrazují stejné číslo verze, která je v názvu souboru ke stažení.
 
 #### <a name="file-name-format"></a>Formát názvu souboru
 
@@ -63,7 +68,7 @@ Všechny popisy webu a řetězce uživatelského rozhraní v instalačních prog
 
 | Instalační služba | Název okna                          | Další obsah v instalační program | Co je nainstalována                               |
 | :--       | :--                                   | :--                        | :--                                             |
-| Sada SDK       | Instalační program rozhraní .NET core 2.0 sady SDK (x 64)     | .NET core verze 2.0.4 SDK        | .NET core verze 2.0.4 nástroje + .NET Core verze 2.0.4 Runtime |
+| Sada SDK       | Instalační program rozhraní .NET core 2.0 sady SDK (x 64)     | .NET Core 2.0.4 SDK        | .NET core verze 2.0.4 nástroje + .NET Core verze 2.0.4 Runtime |
 | Modul runtime   | Instalačního programu .NET core 2.0 Runtime (x64) | Základní verze 2.0.4 Runtime rozhraní .NET    | Základní verze 2.0.4 Runtime rozhraní .NET                         |
 
 Verze Preview se liší pouze mírně:
@@ -88,10 +93,10 @@ Je také možné, že je třeba aktualizovat, bez změny v modulu runtime .NET C
 #### <a name="minimum-package-set"></a>Minimální balíčku sady
 
 * `dotnet-runtime-[major].[minor]`: runtime se zadanou verzí (pouze nejnovější verzi oprav pro danou hlavní + menší kombinaci by měl být k dispozici v Správce balíčků). Nové verze oprava aktualizovat balíček, ale nové menší nebo hlavní verze jsou samostatné balíčky.
- 
-  **Závislosti**:`dotnet-host`
 
-* `dotnet-sdk`: nejnovější sadu SDK. `update`Zobrazí souhrn předání hlavní, vedlejší verzi a oprava verze.
+  **Závislosti**: `dotnet-host`
+
+* `dotnet-sdk`: nejnovější sadu SDK. `update` Zobrazí souhrn předání hlavní, vedlejší verzi a oprava verze.
 
   **Závislosti**: nejnovější `dotnet-sdk-[major].[minor]`.
 
@@ -110,15 +115,15 @@ Balíček pracovníků programu rozhodnout pro zahrnují verze preview runtime a
 Obecné zásady vytváření názvů značku Docker je umístit číslo verze před název součásti. Dále je možné využít touto konvencí. Aktuální značky se týkají pouze verze modulu Runtime následujícím způsobem.
 
 * 1.0.8-Runtime
-* 1.0.8-SDK
+* 1.0.8-sdk
 * 2.0.4-runtime
-* 2.0.4-SDK
+* 2.0.4-sdk
 * 2.1.1-Runtime
-* 2.1.1-SDK
+* 2.1.1-sdk
 
 Značky SDK je třeba aktualizovat představují verze sady SDK místo modulu Runtime.
 
-Je také možné, že musíme opravte .NET Core nástroje ale reship existující modulu runtime. V takovém případě verze sady SDK je zvýšena (například na 2.1.2) a pak modulu Runtime zachytí další chvíli trvat, než ho se dodává (například modul Runtime a SDK dodávat tento čas jako 2.1.3).
+Je také možné, ale reship s existující runtime opravené nástroje příkazového řádku .NET Core (zahrnutý v sadě SDK). V takovém případě je vyšší verze sady SDK (například k 2.1.2) a pak modulu Runtime zachytí další chvíli trvat, než ho se dodává (například modul Runtime a SDK dodávat tento čas jako 2.1.3).
 
 ## <a name="semantic-versioning"></a>Sémantické verze
 
@@ -128,26 +133,29 @@ Je také možné, že musíme opravte .NET Core nástroje ale reship existujíc�
 MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 ```
 
-Volitelné `PRERELEASE` a `BUILDNUMBER` částí se nikdy být součástí podporovaných verzích a existovat pouze na noční sestavení, lokálně sestavené ze zdroje cílů a uvolní nepodporovanou verzi preview.
+Volitelné `PRERELEASE` a `BUILDNUMBER` částí nikdy jsou součástí podporovaných verzích a existovat pouze na noční sestavení, místní sestavení ze zdroje cílů a uvolní nepodporovanou verzi preview.
 
 ### <a name="how-version-numbers-are-incremented"></a>Jak se zvýší číslo verze?
 
-`MAJOR`se zvýší, když:
-  - Stará verze už není podporovaná.
-  - Novější `MAJOR` je přijali verzi existující závislosti.
-  - Výchozí nastavení kompatibility datového toku zvuku v nabízí se změní na "off".
+`MAJOR` se zvýší, když:
 
-`MINOR`se zvýší, když:
-  - Přidání útoku na veřejné rozhraní API.
-  - Přidá nové chování.
-  - Novější `MINOR` je přijali verzi existující závislosti.
-  - Zavádí nové závislosti.
-  
-`PATCH`se zvýší, když:
-  - Opravy chyb jsou vytvářeny.
-  - Je přidána podpora pro novější platformu.
-  - Novější `PATCH` je přijali verzi existující závislosti.
-  - Ostatní změny, která jeden z předchozích případech nevejde.
+- Stará verze už není podporovaná.
+- Novější `MAJOR` je přijali verzi existující závislosti.
+- Výchozí nastavení kompatibility datového toku zvuku v nabízí se změní na "off".
+
+`MINOR` se zvýší, když:
+
+- Přidání útoku na veřejné rozhraní API.
+- Přidá nové chování.
+- Novější `MINOR` je přijali verzi existující závislosti.
+- Zavádí nové závislosti.
+
+`PATCH` se zvýší, když:
+
+- Opravy chyb jsou vytvářeny.
+- Je přidána podpora pro novější platformu.
+- Novější `PATCH` je přijali verzi existující závislosti.
+- Všechny ostatní změny nevejde jeden z předchozích případech.
 
 Pokud existuje více změn, nejvyšší element vliv na jednotlivé změny se zvýší, a následující těm, které jsou nastaveny na nulu. Například když `MAJOR` se zvýší, `MINOR` a `PATCH` nastaveny na nulu. Když `MINOR` se zvýší, `PATCH` obnoví nulové chvíli `MAJOR` nedotčené.
 
@@ -176,7 +184,7 @@ Další informace najdete v tématu [.NET Core podporu životního cyklu fakt li
 
 .NET core se provádí z následujících částí:
 
-- Hostitel (také označované jako multiplexor): `dotnet.exe` s `hostfxr` zásad knihovny.
+- Hostitel: buď *dotnet.exe* pro framework závislé aplikace, nebo  *\<appname > .exe* pro samostatné aplikace.
 - SDK (sada nástrojů pro potřeby na počítači pro vývojáře, ale ne v produkčním prostředí).
 - Runtime.
 - Implementace sdílený framework distribuovaných jako balíčky. Každý balíček je verzí nezávisle, hlavně pro správu verzí opravy.
@@ -186,7 +194,7 @@ Další informace najdete v tématu [.NET Core podporu životního cyklu fakt li
 
 ### <a name="net-standard"></a>Standardní rozhraní .NET
 
-.NET standard používá `MAJOR.MINOR` schéma správy verzí. `PATCH`úroveň není užitečné pro .NET Standard, protože ho představují sadu smluv, které jsou vstupní na méně často a není k dispozici stejné požadavky pro správu verzí jako skutečný implementace.
+.NET standard používá `MAJOR.MINOR` schéma správy verzí. `PATCH` úroveň není užitečné pro .NET Standard, protože ho představují sadu smluv, které jsou vstupní na méně často a není k dispozici stejné požadavky pro správu verzí jako skutečný implementace.
 
 Neexistuje žádné skutečné párování mezi .NET Standard verze a verze .NET Core: implementace rozhraní .NET 2.0 standardní se stane rozhraní .NET 2.0 jádra, ale neexistuje žádná záruka, která bude na stejnou verzi rozhraní .NET standardní mapování budoucích verzích .NET Core. .NET core se dají dodávat rozhraní API, které nejsou definované .NET Standard a jako takový může dodávat nové verze bez nutnosti nového Standard .NET. .NET standard je také konceptu, které se vztahují na jiné cíle, jako je rozhraní .NET Framework nebo Mono, i v případě, že došlo k jeho zahájení se shoduje s s .NET Core.
 
@@ -196,7 +204,7 @@ Knihovna balíčky momentální a verze nezávisle. Balíčky, které se překr�
 
 Balíčky popsaného [ `NETStandard.Library` ](https://www.nuget.org/packages/NETStandard.Library) jsou považovány speciálně, protože nejsou v základní platformy.
 
-`NETStandard.Library`balíčky se obvykle verze jako sada, protože mají úrovni implementace závislosti mezi nimi.
+`NETStandard.Library` balíčky se obvykle verze jako sada, protože mají úrovni implementace závislosti mezi nimi.
 
 ### <a name="metapackages"></a>Metapackages
 
@@ -204,7 +212,7 @@ Správa verzí pro .NET Core metapackages je založen na verzi .NET Core, které
 
 Například metapackages v .NET Core 2.1.3 by všechny mít 2.1 jako jejich `MAJOR` a `MINOR` čísla verzí.
 
-Pokaždé, když jsou aktualizovány všechny odkazované balíčky, zvýší se verze opravy pro metapackage. Oprava verze neobsahují ve verzi aktualizované framework. V důsledku toho metapackages nejsou striktně kompatibilní se standardem SemVer protože jejich verze schématu nepředstavuje stupeň změny v základní balíčků, ale hlavně úroveň rozhraní API. 
+Pokaždé, když jsou aktualizovány všechny odkazované balíčky, zvýší se verze opravy pro metapackage. Oprava verze neobsahují ve verzi aktualizované framework. V důsledku toho metapackages nejsou striktně kompatibilní se standardem SemVer protože jejich verze schématu nepředstavuje stupeň změny v základní balíčků, ale hlavně úrovně rozhraní API.
 
 Aktuálně existují dvě primární metapackages pro .NET Core:
 
@@ -218,7 +226,7 @@ Poznámka: [ `Microsoft.NETCore.Portable.Compatibility` ](https://www.nuget.org/
 
 **NETStandard.Library**
 
-[`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library)Popisuje knihovny, které jsou součástí [.NET Standard](../../standard/library.md). Platí pro všechny implementace rozhraní .NET, které podporují Standard .NET, například rozhraní .NET Framework, .NET Core a Mono.
+[`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library) Popisuje knihovny, které jsou součástí [.NET Standard](../../standard/library.md). Platí pro všechny implementace rozhraní .NET, které podporují Standard .NET, například rozhraní .NET Framework, .NET Core a Mono.
 
 ### <a name="target-frameworks"></a>Cílové rozhraní
 
@@ -226,7 +234,7 @@ Target framework verze jsou aktualizovány při přidání nového rozhraní API
 
 ## <a name="versioning-in-practice"></a>Správa verzí v praxi
 
-Když si stáhnete .NET Core, název souboru si stáhnout představuje verze, například `dotnet-sdk-2.0.4-win10-x64.exe`.
+Když si stáhnete .NET Core, název stažený soubor představuje verze, například `dotnet-sdk-2.0.4-win10-x64.exe`.
 
 Existují potvrzení a vyžadování požadavkům na .NET Core úložiště na webu GitHub na každý den, což vede k nové sestavení mnoho knihoven. Není potřeba vytvářet nové veřejné verze .NET Core pro každé změně. Místo toho jsou změny agregován v neurčeném časový úsek (například týdny nebo měsíce) před provedením nové veřejné stabilní verze .NET Core.
 
@@ -251,7 +259,8 @@ Pokaždé, když se dodává novou hlavní verzi .NET Core, `MAJOR` získá zvý
 Různé metapackages jsou aktualizovány tak, aby odkazovaly aktualizované balíčky knihovny .NET Core. [ `Microsoft.NETCore.App` ](https://www.nuget.org/packages/Microsoft.NETCore.App) Metapackage a `netcore` cílové rozhraní jsou verzí jako hlavní aktualizace odpovídající `MAJOR` číslo verze nové verze.
 
 ## <a name="see-also"></a>Viz také
-[Cílové rozhraní](../../standard/frameworks.md)   
-[Balení distribuční .NET core](../build/distribution-packaging.md)   
-[List fakt životního cyklu podpory základní rozhraní .NET](https://www.microsoft.com/net/core/support)   
-[.NET core 2 + verze vazby](https://github.com/dotnet/designs/issues/3)   
+
+[Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)  
+[Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)  
+[List fakt životního cyklu podpory základní rozhraní .NET](https://www.microsoft.com/net/core/support)  
+[.NET core 2 + verze vazby](https://github.com/dotnet/designs/issues/3)  
