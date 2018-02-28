@@ -15,11 +15,11 @@ ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 author: BillWagner
 ms.author: wiwagn
 ms.custom: mvc
-ms.openlocfilehash: 5143fed04148fb17697bd5d040ad23b762505db4
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 30b16ce5c263221fe917b3d6f289fea20d47b584
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Postupy: Analýza řetězců využívajících String.Split (Průvodce C#)
 
@@ -39,7 +39,7 @@ Toto chování usnadňuje formáty stejně jako soubory s hodnotami (CSV) odděl
 
 Abyste mohli předávat volitelný <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parametr vyloučit všechny prázdné řetězce v poli vráceném. Pro složitější zpracování vrácená kolekce, můžete použít [LINQ](../programming-guide/concepts/linq/index.md) k manipulaci s pořadí výsledek.    
 
-<xref:System.String.Split%2A?displayProperty=nameWithType>můžete použít více znaků oddělovače. Následující příklad používá mezery, čárky, tečky, dvojtečky a karty, všechny předané pole obsahující tyto oddělení znaky, na <xref:System.String.Split%2A>.  Smyčky v dolní části kód zobrazí každý slova v poli vráceném.  
+<xref:System.String.Split%2A?displayProperty=nameWithType> můžete použít více znaků oddělovače. Následující příklad používá mezery, čárky, tečky, dvojtečky a karty, všechny předané pole obsahující tyto oddělení znaky, na <xref:System.String.Split%2A>.  Smyčky v dolní části kód zobrazí každý slova v poli vráceném.  
 
 [!code-csharp-interactive[split strings using multiple separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#3)]
 
@@ -47,7 +47,7 @@ Po sobě jdoucích instancí všechny oddělovače způsobit prázdný řetězec
 
 [!code-csharp-interactive[split strings using multiple consecutive separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#4)]
 
-<xref:System.String.Split%2A?displayProperty=nameWithType>může trvat pole řetězců (sekvence znaků, které se chovají jako oddělovače pro potřeby analýzy cíl řetězce, místo jedné znaků).  
+<xref:System.String.Split%2A?displayProperty=nameWithType> může trvat pole řetězců (sekvence znaků, které se chovají jako oddělovače pro potřeby analýzy cíl řetězce, místo jedné znaků).  
   
 [!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
 
@@ -56,4 +56,4 @@ Tyto ukázky můžete zkusit prohlížením kódu v našem [úložiště GitHub]
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
  [Řetězce](../programming-guide/strings/index.md)  
- [Regulární výrazy rozhraní .NET framework](https://msdn.microsoft.com/library/hs600312)
+ [Regulární výrazy rozhraní .NET](../../standard/base-types/regular-expressions.md)

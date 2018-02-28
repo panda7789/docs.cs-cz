@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c574ab8ddf506802fb42f53b5212dcb4a3bd9d34
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 5b471cd8e934880fc8095fbad68b460174ec338c
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární výraz objekt přiřazení vzorce která zahrnuje modul tradiční Nedeterministická konečné Automaton (NFA) jako je například použité Perl, Python, Emacs a Tcl. To je odlišné z rychlejší, ale omezenější, čistý regulární výraz moduly deterministický konečné Automaton (DFA) jako aplikace awk, egrep nebo lex. To je také odlišné od standardizované, ale pomalejší, k zařízení NFAs POSIX. Následující část popisuje tři typy modulů regulární výraz a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovaná pomocí modul tradiční NFA.  
@@ -57,8 +57,8 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
   
     |Vzor|Popis|  
     |-------------|-----------------|  
-    |`.+`(typu greedy kvantifikátoru)|Porovná alespoň jeden výskyt libovolného znaku. To způsobí, že modul regulárních výrazů tak, aby odpovídaly celý řetězec a pak zpětný krok jako potřeby tak, aby odpovídaly zbytek vzoru.|  
-    |`.+?`(opožděné kvantifikátoru)|Porovná alespoň jeden výskyt libovolný znak, ale odpovídat co nejméně.|  
+    |`.+` (typu greedy kvantifikátoru)|Porovná alespoň jeden výskyt libovolného znaku. To způsobí, že modul regulárních výrazů tak, aby odpovídaly celý řetězec a pak zpětný krok jako potřeby tak, aby odpovídaly zbytek vzoru.|  
+    |`.+?` (opožděné kvantifikátoru)|Porovná alespoň jeden výskyt libovolný znak, ale odpovídat co nejméně.|  
     |`(\d+)`|Odpovídají alespoň jeden znak číselné a přiřaďte ho ke skupině první zaznamenávání.|  
     |`\.`|Porovná tečku.|  
   
@@ -108,7 +108,7 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
     |`^`|Začne porovnávání na začátku řádku.|  
     |`(?<Pvt>\<PRIVATE\>\s)?`|Porovná nula nebo jeden výskyt řetězec `<PRIVATE>` následuje prázdný znak. Přiřadit shody zachycující skupiny s názvem `Pvt`.|  
     |`(?(Pvt)((\w+\p{P}?\s)+)`|Pokud `Pvt` zaznamenávání skupina existuje, porovná jeden nebo více výskytů jeden nebo více znaků slova následuje žádnou nebo jednu oddělovače interpunkce následuje prázdný znak. Dílčí řetězec přiřadíte ke skupině první zaznamenávání.|  
-    |`&#124;((\w+\p{P}?\s)+))`|Pokud `Pvt` zachycující skupina neexistuje, shodovat s jedním nebo více výskytů jeden nebo více znaků slova následuje žádnou nebo jednu oddělovače interpunkce následuje prázdný znak. Dílčí řetězec přiřadíte ke skupině třetí zaznamenávání.|  
+    |<code>&#124;((\w+\p{P}?\s)+))<code>|Pokud `Pvt` zachycující skupina neexistuje, shodovat s jedním nebo více výskytů jeden nebo více znaků slova následuje žádnou nebo jednu oddělovače interpunkce následuje prázdný znak. Dílčí řetězec přiřadíte ke skupině třetí zaznamenávání.|  
     |`\r?$`|Odpovídat konci řádku nebo konci řetězce.|  
   
      Další informace o vyhodnocení podmíněného najdete v tématu [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md).  
@@ -145,7 +145,7 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
     |-------------|-----------------|  
     |`^`|Začne porovnávání na začátku řetězce.|  
     |`[A-Z0-9]`|Porovná libovolný znak číselné nebo alfanumerické znaky. (Porovnání se velká a malá písmena.)|  
-    |`([-!#$%&'.*+/=?^`{}&#124;~\w])*`|Porovná nula nebo více výskytů libovolný znak, nebo libovolná z následujících znaků:-,!, #, $, % &,:,., *, +, /, =,?, ^, ', {,}, &#124; nebo ~.|  
+    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])*<code>|Porovná nula nebo více výskytů libovolný znak, nebo libovolná z následujících znaků:-,!, #, $, % &,:,., *, +, /, =,?, ^, \`, {,}, &#124; nebo ~.|  
     |`(?<=[A-Z0-9])`|Vyhledejte za předchozí znak, který musí být číselné nebo alfanumerické znaky. (Porovnání se velká a malá písmena.)|  
     |`$`|Ukončí porovnávání na konci řetězce.|  
   

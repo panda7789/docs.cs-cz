@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: b6b3ce53a08cfacfacb19266b0be216a40633352
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: db062ed2f832ae933941da1c49e84303090f4390
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězce v jazyce C# #
 
-Řetězec interpolace je způsob zástupné symboly v řetězci se nahrazují hodnota proměnné řetězce. Před C# 6, je tím způsobem, jak to udělat pomocí `System.String.Format`. Tento postup funguje v pořádku, ale protože ji používá číslem zástupné symboly, může být těžší ke čtení a podrobnější.
+Řetězec interpolace je způsob zástupné symboly v řetězci se nahrazují hodnota proměnné řetězce. Před C# 6, je tím způsobem, jak to udělat pomocí <xref:System.String.Format%2A?displayProperty=nameWithType>. Tento postup funguje v pořádku, ale protože ji používá číslem zástupné symboly, může být těžší ke čtení a podrobnější.
 
 Jinými programovací jazyky předtím řetězec interpolace integrované do jazyka nějakou dobu. Například v jazyce PHP:
 
@@ -42,7 +42,7 @@ Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci .NET
 dotnet new console
 ```
 
-Tento příkaz vytvoří projektu jen nejzákladnější .NET core s soubor projektu *interpolated.csproj*a soubor zdrojového kódu *Program.cs*. Budete muset provést `dotnet restore` Obnovit závislosti potřebné ke kompilaci tento projekt.
+Tento příkaz vytvoří projekt .NET Core jen nejzákladnější s soubor projektu *interpolated.csproj*a soubor zdrojového kódu *Program.cs*. Budete muset provést `dotnet restore` Obnovit závislosti potřebné ke kompilaci tento projekt.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -52,7 +52,7 @@ Spuštění programu, použijte `dotnet run`. Měli byste vidět "Hello, World" 
 
 ## <a name="intro-to-string-interpolation"></a>Úvod do řetězce interpolace
 
-S `System.String.Format`, zadejte "zástupné symboly" řetězec, který se nahrazují následující řetězec parametry. Například:
+S <xref:System.String.Format%2A?displayProperty=nameWithType>, zadejte "zástupné symboly" řetězec, který se nahrazují následující řetězec argumenty. Například:
 
 [!code-csharp[String.Format example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#StringFormatExample)]  
 
@@ -78,7 +78,7 @@ This is line number 5
 
 ## <a name="how-string-interpolation-works"></a>Jak funguje řetězec interpolace
 
-Na pozadí je tato syntaxe interpolace řetězec přeložit na String.Format kompilátorem. Ano, můžete provést [stejného typu, vy provedete krok před s String.Format](https://msdn.microsoft.com/library/dwhawy9k(v=vs.110).aspx).
+Na pozadí, je tato syntaxe interpolace řetězec přeložit na `String.Format` kompilátorem. Ano, můžete provést [stejného typu, vy provedete krok před s `String.Format` ](../../standard/base-types/formatting-types.md).
 
 Můžete například přidat odsazení a formátování čísel:
 
@@ -96,7 +96,7 @@ Výše by výstup podobný:
 1004       6,227.77
 ```
 
-Pokud název proměnné není nalezen, bude vygenerována chybu v době kompilace.
+Pokud název proměnné není nalezen, je generována chyba kompilace.
 
 Například:
 
@@ -107,21 +107,19 @@ var adj = "quick";
 Console.WriteLine(localizeMe);
 ```
 
-Pokud je kompilovat, bude docházet k chybám:
+Pokud je kompilovat, dojde k chybám:
  
-* `Cannot use local variable 'adj' before it is declared`- `adj` proměnná nebyl deklarován dokud *po* interpolované řetězce.
-* `The name 'otheranimal' does not exist in the current context`-názvem proměnné `otheranimal` nikdy i byla deklarována
+* `Cannot use local variable 'adj' before it is declared` - `adj` proměnná nebyl deklarován dokud *po* interpolované řetězce.
+* `The name 'otheranimal' does not exist in the current context` -názvem proměnné `otheranimal` nikdy i byla deklarována
 
 ## <a name="localization-and-internationalization"></a>Lokalizace a internacionalizace
 
-Interpolované řetězce podporuje `IFormattable` a `FormattableString`, což může být užitečné pro internacionalizace.
+Interpolované řetězce podporuje <xref:System.IFormattable?displayProperty=nameWithType> a <xref:System.FormattableString?displayProperty=nameWithType>, což může být užitečné pro internacionalizace.
 
-Interpolované řetězce ve výchozím nastavení používá aktuální jazykovou verzi. Pokud chcete použít jinou jazykovou verzi, může ho jako přetypování`IFormattable`
-
-Například:
+Interpolované řetězce ve výchozím nastavení používá aktuální jazykovou verzi. Pokud chcete použít jinou jazykovou verzi, přetypovat interpolované řetězec jako `IFormattable`. Například:
 
 [!code-csharp[Interpolation internationalization example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
 
 ## <a name="conclusion"></a>Závěr 
 
-V tomto kurzu jste zjistili, jak používat funkce interpolace řetězec jazyka C# 6. Je v podstatě přesnější způsob jednoduché psaní `String.Format` příkazy se některých aspektů pro pokročilejší použití.
+V tomto kurzu jste zjistili, jak používat funkce interpolace řetězec jazyka C# 6. Je v podstatě přesnější způsob jednoduché psaní `String.Format` příkazy se některých aspektů pro pokročilejší použití. Další informace najdete v tématu [interpolované řetězce](../../csharp//language-reference/keywords/interpolated-strings.md) tématu.

@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9a8b28d840d3c8ef63611e9f584e5984e1dcb1a3
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 99c2f8e4807c4d18c0c798e3a737f4a88d6e62d6
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="numbers-in-c-quickstart"></a>Čísla v jazyce C# rychlý start
 
@@ -38,9 +38,9 @@ Spuštění tohoto kódu zadáním `dotnet run` v příkazovém okně.
 
 Seznámili jste se právě jeden z základní matematické operace s celými čísly. `int` Zadejte představuje **celé číslo**, kladné a záporné celé číslo. Můžete použít `+` symbol pro přidání. Další běžné matematické operace pro celá čísla zahrnují:
 
-- `-`pro odčítání
-- `*`pro násobení
-- `/`pro dělení
+- `-` pro odčítání
+- `*` pro násobení
+- `/` pro dělení
 
 Začít seznamovat se tyto jiné operace. Přidejte tyto řádky po řádek, který zapíše hodnota `c`:
 
@@ -278,7 +278,7 @@ Console.WriteLine(third);
 
 Víte, že `0.3` opakující se právě není stejný jako `1/3`.
 
-***Výzvy***
+***výzvy***
 
 Zkuste jiné výpočty s velká čísla, malá čísla, násobení a dělení pomocí `double` typu.  Zkuste složitější výpočty.
 
@@ -310,9 +310,9 @@ Console.WriteLine(c / d);
 
 Všimněte si, že výpočty pomocí typu decimal obsahuje více číslic vpravo od desetinné čárky. 
 
-***Výzvy***
+***výzvy***
 
-Teď, když jste se seznámili s různými typy číselné, napište kód, který vypočítá oblasti jejichž radius je 2.50 palce kruh. Mějte na paměti, že oblast kruhu je radius spolehlivosti násobí hodnotou platformy. Jeden pomocný parametr: .NET obsahuje konstanty pro platformy, <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu. 
+Teď, když jste se seznámili s různými typy číselné, napište kód, který vypočítá oblasti kruh jejichž radius je 2.50 cm. Mějte na paměti, že oblast kruhu je radius spolehlivosti násobí hodnotou platformy. Jeden pomocný parametr: .NET obsahuje konstanty pro platformy, <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu. 
 
 Měli byste obdržet odpověď až 19, 20.
 Můžete zkontrolovat vaše odpověď podle [prohlížení dokončení ukázkový kód na Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/numbers-quickstart/Program.cs#L104-L106)

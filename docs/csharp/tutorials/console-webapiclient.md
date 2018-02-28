@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 6b0f3acc3a6dbed4f44497d92d3c518ee5a5d2a7
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: 22391c4db3027c0fad2115c767b5e2808fee28a0
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="rest-client"></a>Klienta REST
 
@@ -89,7 +89,7 @@ V dalším kroku přejmenovat definovaný v oboru názvů `namespace` příkaz z
 Potom aktualizujte `Main` metoda mohli volat tuto metodu. `ProcessRepositories` Metoda vrátí úlohu, a neměly by se ukončovat program, než dokončení této úlohy. Proto je nutné použít `Wait` metoda blokovat a počkejte na dokončení úlohy:
 
 ```csharp
-public static void Main(string[] args)
+static void Main(string[] args)
 {
     ProcessRepositories().Wait();
 }
@@ -190,7 +190,7 @@ var repositories = serializer.ReadObject(await streamTask) as List<repo>;
 
 Všimněte si, že teď používáte <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> místo <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>. Serializátor používá jako zdroj datového proudu místo řetězec. Pojďme vysvětlují několik funkcí jazyka C#, které jsou používány ve druhém řádku výše. Argument <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> je `await` výrazu. Await výrazy může vyskytovat téměř kdekoli v kódu, i když až zatím Seznámili jste se pouze jejich v rámci příkazu přiřazení.
 
-Za druhé `as` operátor převede z typu čas kompilace `object` k `List<repo>`. Prohlášení o <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> deklaruje, že vrací objekt typu <xref:System.Object?displayProperty=nameWithType>. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)>Vrátí typ, který jste zadali, když se vám ho (`List<repo>` v tomto kurzu). Pokud převod neproběhne úspěšně, `as` vyhodnocen jako operátor `null`, místo došlo k výjimce.
+Za druhé `as` operátor převede z typu čas kompilace `object` k `List<repo>`. Prohlášení o <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> deklaruje, že vrací objekt typu <xref:System.Object?displayProperty=nameWithType>. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> Vrátí typ, který jste zadali, když se vám ho (`List<repo>` v tomto kurzu). Pokud převod neproběhne úspěšně, `as` vyhodnocen jako operátor `null`, místo došlo k výjimce.
 
 Téměř jste hotovi s v této části. Teď, když jste převést JSON na objekty C#, můžeme zobrazí název každé úložiště. Nahraďte řádky, které čtou:
 

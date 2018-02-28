@@ -21,21 +21,21 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 648c86c71de3c92825af3cfdd4ac2ca023f5e027
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e328c294a9b4ca3047c4ad1750ddedf64bac2218
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
-<a name="top"></a>Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí dojít ke shodě. Pokud použijete na ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo využívat znaků; Vypadá to shody na určené pozici. Například `^` Určuje, že porovnávání musí začít na začátku řádku nebo řetězec. Proto s regulárním výrazem `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. Následující tabulka uvádí ukotvení podporované regulární výrazy v rozhraní .NET.  
+<a name="top"></a> Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí dojít ke shodě. Pokud použijete na ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo využívat znaků; Vypadá to shody na určené pozici. Například `^` Určuje, že porovnávání musí začít na začátku řádku nebo řetězec. Proto s regulárním výrazem `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. Následující tabulka uvádí ukotvení podporované regulární výrazy v rozhraní .NET.  
   
 |Ukotvení|Popis|  
 |------------|-----------------|  
@@ -71,9 +71,9 @@ ms.lasthandoff: 12/23/2017
 |`(\w+\s\w+)`|Porovná jeden nebo více znaků slova následované mezerou, za nímž následuje jeden nebo více znaků slova. Toto je čtvrtý zachycující skupina.|  
 |`,`|Porovná čárku.|  
 |`\s\d{4}`|Odpovídat mezeru a čtyři desetinných míst.|  
-|(-`(\d{4}&#124;present))?`|Porovná nula nebo jeden výskyt pomlčky následovaný čtyři desítková číslice nebo řetězec "existuje". Toto je šesté zachytávající skupina. Zahrnuje také sedmý, zaznamenávání skupiny.|  
+|<code>(-(\d{4}&#124;present))?</code>|Porovná nula nebo jeden výskyt pomlčky následovaný čtyři desítková číslice nebo řetězec "existuje". Toto je šesté zachytávající skupina. Zahrnuje také sedmý, zaznamenávání skupiny.|  
 |`,?`|Porovná nula nebo jeden výskyt čárkou.|  
-|`(\s\d{4}(-(\d{4}&#124;present))?,?)+`|Porovná jeden nebo více výskytů následující: mezery, čtyři desetinných míst, nula nebo jeden výskyt pomlčky následovaný čtyři desítková číslice nebo řetězec "přítomen" a nula nebo jeden čárkami. Toto je pátá zachytávající skupina.|  
+|<code>(\s\d{4}(-(\d{4}&#124;present))?,?)+</code>|Porovná jeden nebo více výskytů následující: mezery, čtyři desetinných míst, nula nebo jeden výskyt pomlčky následovaný čtyři desítková číslice nebo řetězec "přítomen" a nula nebo jeden čárkami. Toto je pátá zachytávající skupina.|  
   
  [Zpět na začátek](#top)  
   

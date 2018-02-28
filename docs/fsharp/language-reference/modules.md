@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 46de2d18-da51-40fa-a262-92edecada79d
-ms.openlocfilehash: 89401c1f889be6c5585a302e3a7ac62478573b95
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9b189903511f53d3ecceb30f3d056e189b00511d
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="modules"></a>Moduly
 
@@ -91,7 +91,7 @@ Pokud chcete, aby všechny kód v souboru ve vnější jeden modul a chcete vnit
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6612.fs)]
 
-## <a name="module-rec-allowing-mutual-recursive-code-at-the-module-level"></a>Modul `rec`: povolení vzájemné rekurzivní kódu na úrovni modulu
+## <a name="recursive-modules"></a>Rekurzivní moduly
 
 F # 4.1 zavádí představu o moduly, které umožňují všechny obsažené kódu být vzájemně rekurzivní.  To se provádí prostřednictvím `module rec`.  Použití `module rec` můžete zmírnit některé důsledně v nebude moci napsat vzájemně referenční kód mezi typy a modulů.  Následuje příklad tohoto:
 

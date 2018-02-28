@@ -17,18 +17,18 @@ helpviewer_keywords:
 - .NET Framework regular expressions, backreference constructs
 - regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2ec92933bdf123412a3d489fc493d76c4a0dc0d0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b4cecc44ff740dd99d10131341c6a6056ce3aab3
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Konstrukce zpětných odkazů v regulárních výrazech
 Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných znaku nebo podřetězce v řetězci. Například pokud vstupní řetězec obsahuje více výskytů libovolného dílčího řetězce, můžete porovnat první výskyt se skupinou zaznamenávání a pak použít zpětný odkaz pro porovnání dalších výskytů dílčí řetězec.  
@@ -41,9 +41,9 @@ Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných zna
 ## <a name="numbered-backreferences"></a>Číslované zpětné odkazy  
  Číslovaný zpětný odkaz používá následující syntaxe:  
   
- `\`*číslo*  
+ `\` *Číslo*  
   
- kde *číslo* je pořadové číslo pozice zachytávající skupiny v regulárním výrazu. Například `\4` odpovídá obsah čtvrtý zachycující skupiny. Pokud *číslo* není definovaná v regulární výraz, dojde k chybě analýzy a vyvolá modul regulárních výrazů <xref:System.ArgumentException>. Například regulární výraz `\b(\w+)\s\1` je platný, protože `(\w+)` je první a pouze zaznamenávání skupiny ve výrazu. Na druhé straně `\b(\w+)\s\2` je neplatný a vyvolá výjimku argument, protože neexistuje žádná zachytávající skupina s číslem `\2`.  
+ kde *číslo* je pořadové číslo pozice zachytávající skupiny v regulárním výrazu. Například `\4` odpovídá obsah čtvrtý zachycující skupiny. Pokud *číslo* není definovaná v regulární výraz, dojde k chybě analýzy a vyvolá modul regulárních výrazů <xref:System.ArgumentException>. Například regulární výraz `\b(\w+)\s\1` je platný, protože `(\w+)` je první a pouze zaznamenávání skupiny ve výrazu. Na druhé straně `\b(\w+)\s\2` je neplatný a vyvolá výjimku argument, protože neexistuje žádná zachytávající skupina s číslem `\2`. Kromě toho pokud *číslo* identifikuje skupinu zachycení v konkrétní pořadí, ale, že zaznamenávání skupiny byl přiřazen jednu číslici název liší od jeho pořadové číslo pozice, také vyvolá analyzátorregulárníchvýrazů<xref:System.ArgumentException>. 
   
  Všimněte si nejednoznačnosti mezi osmičková řídicí kódy (například `\16`) a `\` *číslo* používajících stejnou zápis. Tato nejednoznačnost je přeložit takto:  
   
@@ -70,11 +70,11 @@ Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných zna
 ## <a name="named-backreferences"></a>Pojmenované zpětné odkazy  
  Pojmenované zpětných odkazů se definuje pomocí následující syntaxe:  
   
- `\k<`*název*`>`  
+ `\k<` *Jméno* `>`  
   
  nebo:  
   
- `\k'`*název*`'`  
+ `\k'` *Jméno* `'`  
   
  kde *název* je název zachytávající skupiny definované v regulární výraz. Pokud *název* není definovaná v regulární výraz, dojde k chybě analýzy a vyvolá modul regulárních výrazů <xref:System.ArgumentException>.  
   
@@ -87,12 +87,24 @@ Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných zna
   
  [!code-csharp[RegularExpressions.Language.Backreferences#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference2.cs#2)]
  [!code-vb[RegularExpressions.Language.Backreferences#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference2.vb#2)]  
-  
- Všimněte si, že *název* může být také řetězcovou reprezentaci číslo. Například následující příklad používá regulární výraz `(?<2>\w)\k<2>` k nalezení zdvojených znaků slova v řetězci.  
+
+## <a name="named-numeric-backreferences"></a>S názvem číselné zpětné odkazy
+
+V pojmenované zpětných odkazů s `\k`, *název* může být také řetězcovou reprezentaci číslo. Například následující příklad používá regulární výraz `(?<2>\w)\k<2>` k nalezení zdvojených znaků slova v řetězci. V takovém případě příkladu definuje zaznamenávání skupinu, která je explicitně s názvem "2" a zpětný odkaz je odpovídajícím způsobem s názvem "2". 
   
  [!code-csharp[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference3.cs#3)]
  [!code-vb[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference3.vb#3)]  
-  
+
+Pokud *název* je řetězcová reprezentace číslo a žádná zaznamenávání skupina má tento název `\k<` *název* `>` je stejný jako zpětných odkazů `\`  *číslo*, kde *číslo* je pořadová čísla zachytávání. V následujícím příkladu je jediné zachytávající skupiny s názvem `char`. Konstrukce zpětných odkazů odkazuje na jej jako `\k<1>`. Jako výstup z příklad ukazuje, volání <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> úspěšné, protože `char` je první zachytávající skupina.
+
+[!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference6.cs)]
+[!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference6.vb)]  
+
+Ale pokud *název* je řetězcová reprezentace číslo a zaznamenávání skupiny v, pozice byla explicitně přiřazena číselné název, analyzátor regulární výraz nelze identifikovat zaznamenávání Seskupit podle jeho pořadové číslo pozice . Místo toho vyvolá <xref:System.ArgumentException>. Skupina pouze zaznamenávání v následujícím příkladu je s názvem "2". Protože `\k` konstrukce se používá k definování zpětný odkaz s názvem "1", analyzátor regulárních výrazů se nepodařilo zjistit první skupinu zaznamenávání a vyvolá výjimku.
+
+[!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference7.cs)]
+[!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference7.vb)]  
+
 ## <a name="what-backreferences-match"></a>Co porovnávají  
  Zpětný odkaz odkazuje na nejnovější definice skupiny (definici nejvíce okamžitě na levé straně při kontrole shody zleva doprava). Pokud skupina provádí více zachycení, zpětný odkaz odkazuje na nejnovější zachycení.  
   

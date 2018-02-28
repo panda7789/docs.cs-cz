@@ -9,11 +9,11 @@ ms.assetid: 324f267e-1c61-431a-97ed-852c1530742d
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0569636bde875d2d0d8921a544273f3214d05188
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 03315a2d9a44405ff520a1c333f56311e2657df6
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="interpolated-strings-c-reference"></a>Interpolované řetězce (referenční dokumentace jazyka C#)
 
@@ -43,11 +43,11 @@ kde:
 - *řetězec formátu* je vhodný pro typ objektu, který je formátován řetězec formátu. Například <xref:System.DateTime> hodnotu, může to být standardní hodnoty data a řetězec formátu času, například "D" nebo "d".
 
 > [!IMPORTANT]
-> Nemůže mít žádné mezery mezi `$` a `"` , začíná řetězec. To způsobí, že chybu v době kompilace.
+> Nemůže mít žádné mezery mezi `$` a `"` , začíná řetězec. To způsobí, že chyby kompilace.
 
  Interpolované řetězce můžete použít kdekoli můžete řetězcový literál.  Interpolované řetězce je vyhodnocován pokaždé, když spustí kód s interpolované řetězce. To umožňuje oddělit definice a vyhodnocení interpolované řetězce.  
   
- Zahrnout složené závorky ("{" nebo "}") v interpolované řetězce, pomocí dvou složené závorky, "{{" nebo "}}".  Implicitní převody části Další podrobnosti.  
+ Zahrnout složené závorky ("{" nebo "}") v interpolované řetězce, pomocí dvou složené závorky, "{{" nebo "}}".  Najdete v článku [implicitní převody](#implicit-conversions) další podrobnosti.  
 
 Pokud interpolované řetězec obsahuje jiné znaky s zvláštní význam interpolované řetězce, jako je například uvozovky ("), dvojtečkou (:) ani čárky (,), že by měly být ukončeny Pokud se vyskytují v literálu text, nebo by měl být součástí výrazu oddělená závorky, pokud jsou součástí interpolované výrazu prvků jazyka. Následující příklad řídicí sekvence znaky uvozovek pro zahrnutí ve výsledném řetězci a používá kulaté závorky a tím vymezit výraz `(age == 1 ? "" : "s")` tak, aby dvojtečkou není interpretována jako od řetězec formátu.
 
@@ -73,7 +73,7 @@ Existují tři typu implicitní převody z interpolované řetězce:
 
    Toto je poslední výsledek interpretace řetězec. Všechny výskyty dvojité složené závorky ("{{" a "}}") se převedou na jednom složených závorek. 
 
-2. Interpolované řetězce pro převod <xref:System.IFormattable> proměnné, která umožňuje vytvořit více výsledek řetězce s obsahem specifické pro jazykovou verzi z jedné <xref:System.IFormattable> instance. To je užitečné pro jako jsou správné číselné a číselné formáty pro jednotlivé jazykové verze.  Všechny výskyty dvojité složené závorky ("{{" a "}}") zůstanou jako dvojité složené závorky, dokud se naformátovat řetězec voláním explicitně nebo implicitně <xref:System.Object.ToString> metoda.  Všechny obsažené interpolace výrazy se převedou na {0}, {1} a tak dále.  
+2. Interpolované řetězce pro převod <xref:System.IFormattable> proměnné, která vám umožní vytvořit více výsledek řetězce s obsahem specifické pro jazykovou verzi z jedné <xref:System.IFormattable> instance. To je užitečné pro jako jsou správné číselné a číselné formáty pro jednotlivé jazykové verze.  Všechny výskyty dvojité složené závorky ("{{" a "}}") zůstanou jako dvojité složené závorky, dokud se naformátovat řetězec voláním explicitně nebo implicitně <xref:System.Object.ToString> metoda.  Všechny obsažené interpolace výrazy se převedou na {0}, {1} a tak dále.  
 
    Následující příklad používá reflexe k zobrazení členů, jakož i pole a vlastnosti hodnoty <xref:System.IFormattable> proměnné, která je vytvořena z interpolované řetězce. Také předá <xref:System.IFormattable> proměnnou <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metoda.
 
@@ -91,5 +91,8 @@ Existují tři typu implicitní převody z interpolované řetězce:
 ## <a name="see-also"></a>Viz také  
  <xref:System.IFormattable?displayProperty=nameWithType>  
  <xref:System.FormattableString?displayProperty=nameWithType>  
+ <xref:System.String.Format%2A?displayProperty=nameWithType>  
+ [Interpolace řetězce v jazyce C#](../../../csharp/tutorials/string-interpolation.md)  
+ [Interpolované řetězce v jazyce C#](../../../csharp/quick-starts/interpolated-strings.yml)  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

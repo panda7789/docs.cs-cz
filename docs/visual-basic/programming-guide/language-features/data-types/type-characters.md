@@ -46,11 +46,11 @@ ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
 author: rpetrusha
 ms.author: ronpet
 ms.manager: wpickett
-ms.openlocfilehash: bdb675b9605d03829c95897382daa6d03cf1b041
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 20a9a30689fb62a6956987b06470e76eeb42ebab
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="type-characters-visual-basic"></a>Zadejte znaky (Visual Basic)
 
@@ -88,7 +88,7 @@ Formu literál, jak se objevuje v kódu normálně určuje jeho datového typu. 
 |Textové formě literál|Výchozí datový typ|Příklad|  
 |-----------------------------|-----------------------|-------------|  
 |Číselné, ne zlomkové části|`Integer`|`2147483647`|  
-|Číselné, ne zlomkové části, příliš velký pro`Integer`|`Long`|`2147483648`|  
+|Číselné, ne zlomkové části, příliš velký pro `Integer`|`Long`|`2147483648`|  
 |Číselné, zlomkové části|`Double`|`1.2`|  
 |Uzavřena v uvozovkách|`String`|`"A"`|  
 |Uzavřené v rámci znaky|`Date`|`#5/17/1993 9:32 AM#`|  
@@ -123,7 +123,7 @@ Kompilátor normálně interpretuje celé literálu jako v systému desetinné �
 |Číslo základní|Předpona|Platný dvouciferné hodnoty|Příklad|
 |-----------------|------------|------------------------|-------------|
 |Šestnáctkové (základ 16)|`&H`|0 – 9 a A-F|`&HFFFF`|
-|Binární (se základem 2)|`0B`|0-1|`&B01111100`|
+|Binární (se základem 2)|`&B`|0-1|`&B01111100`|
 |Octal (základní 8)|`&O`|0-7|`&O77`|
 
 Počínaje 2017 Visual Basic, můžete použít znak podtržítka (`_`) jako oddělovač skupin pro zlepšení čitelnosti celočíselný literál. Následující příklad používá `_` znak, který má skupinu binární literálu do skupin 8bitové:

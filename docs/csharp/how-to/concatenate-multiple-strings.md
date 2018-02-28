@@ -14,11 +14,11 @@ ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 978f631a130f9ec2d450779f2a6296a6ce3af356
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 60b36e0ef6bb6c16979c9f0b0e1407e0b4631a2f
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Postupy: řetězení více řetězců (Průvodce C#)
 
@@ -31,7 +31,7 @@ Následující příklad používá zřetězení rozdělením dlouhý řetězec 
  [!code-csharp-interactive[Combining strings at compile time](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#1)]  
   
 
-Ke zřetězení proměnné řetězce, můžete použít `+` nebo `+=` operátory, [řetězec interpolace](../tutorials/string-interpolation.md) nebo <xref:System.String.Concat%2A?displayProperty=nameWithType>, <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.String.Join%2A?displayProperty=nameWithType> nebo <xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType> metody. `+` Operátor se snadno používá a zajišťuje intuitivní kódu. I když používáte několik `+` operátory v jednom příkazu, řetězec obsahu zkopíruje pouze jednou. Následující kód ukazuje dva příklady použití `+` operátor ke zřetězení řetězců:
+Ke zřetězení proměnné řetězce, můžete použít `+` nebo `+=` operátory, [řetězec interpolace](../tutorials/string-interpolation.md) nebo <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.String.Concat%2A?displayProperty=nameWithType>, <xref:System.String.Join%2A?displayProperty=nameWithType> nebo <xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType> metody. `+` Operátor se snadno používá a zajišťuje intuitivní kódu. I když používáte několik `+` operátory v jednom příkazu, řetězec obsahu zkopíruje pouze jednou. Následující kód ukazuje příklady použití `+` a `+=` operátory zřetězení řetězců:
 
 [!code-csharp-interactive[combining strings using +](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#2)]  
 
@@ -42,7 +42,7 @@ V některých výrazy je snazší zřetězení řetězců pomocí řetězce inte
 > [!NOTE]
 >  V operace s řetězci zřetězení kompilátor jazyka C# zpracovává řetězec null stejné jako prázdný řetězec.
 
-Jiné metody ke zřetězení řetězců je <xref:System.String.Format%2A?displayProperty=nameWithType>. Tato metoda funguje dobře, pokud vytváříte řetězec z malý počet součástí řetězce. Tato metoda je také skvělou volbou, když víte, počet řetězců, které si spojený řetězec.
+Jiné metody ke zřetězení řetězců je <xref:System.String.Format%2A?displayProperty=nameWithType>. Tato metoda funguje dobře, pokud vytváříte řetězec z malý počet součástí řetězce.
 
 V jiných případech může být kombinovaných řetězců ve smyčce, kde nevíte, kolik řetězce zdrojů kombinujete a skutečný počet řetězce zdrojů může mít poměrně značnou. <xref:System.Text.StringBuilder> Třída byl navržený pro tyto scénáře. Následující kód používá <xref:System.Text.StringBuilder.Append%2A> metodu <xref:System.Text.StringBuilder> třídy ke zřetězení řetězců.  
   
@@ -50,7 +50,7 @@ V jiných případech může být kombinovaných řetězců ve smyčce, kde nev�
 
 Další informace o [důvodů, proč zvolit zřetězení řetězců nebo `StringBuilder` – třída](xref:System.Text.StringBuilder#StringAndSB)
 
-Další možností pro připojení řetězce z kolekce, je použít <xref:System.String.Concat%2A?displayProperty=nameWithType> metoda. Použití <xref:System.String.Join%2A?displayProperty=nameWithType> metoda Pokud řetězce musí být odděleny delimeter. Následující kód kombinuje pole slov pomocí obou těchto metod:
+Další možností pro připojení řetězce z kolekce, je použít <xref:System.String.Concat%2A?displayProperty=nameWithType> metoda. Použití <xref:System.String.Join%2A?displayProperty=nameWithType> metoda Pokud zdrojové řetězce musí být odděleny delimeter. Následující kód kombinuje pole slov pomocí obou těchto metod:
 
 [!code-csharp-interactive[concatenation of string collection](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#5)]
 

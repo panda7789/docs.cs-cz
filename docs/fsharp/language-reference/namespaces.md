@@ -10,13 +10,13 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ea42156f-e1b9-4535-9383-b45f46f3f7ca
-ms.openlocfilehash: 4378afebe6fd0d9317f734457576dc75d7488bf0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f3f73c4fe2197f1f3f2babbe6691ef6662d8f581
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/27/2018
 ---
-# <a name="namespaces"></a>Obory názvů
+# <a name="namespaces"></a>Jmenné prostory
 
 Obor názvů umožňuje uspořádat kódu do oblasti související funkce tím, že vám k seskupení prvků programu připojit název.
 
@@ -77,7 +77,7 @@ Můžete také použít globální tak, aby odkazovaly nejvyšší úrovně obor
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6408.fs)]
 
-##
+## <a name="recursive-namespaces"></a>Rekurzivní obory názvů
 
 F # 4.1 zavádí představu o obory názvů, který povolit pro všechny obsažené kód jako vzájemně rekurzivní.  To se provádí prostřednictvím `namespace rec`.  Použití `namespace rec` můžete zmírnit některé důsledně v nebude moci napsat vzájemně referenční kód mezi typy a modulů.  Následuje příklad tohoto:
 
@@ -124,7 +124,7 @@ Všimněte si, že výjimka `DontSqueezeTheBananaException` a třídu `Banana` o
 Tato funkce je také k dispozici pro nejvyšší úrovně [moduly](modules.md) v F # 4.1 nebo vyšší.
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Moduly](modules.md)
 

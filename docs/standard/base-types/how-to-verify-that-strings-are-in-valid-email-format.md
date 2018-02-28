@@ -31,11 +31,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: fdbb64cac1f1d4043b8b935fcad32aec88b7bb7a
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 0400fba20e614b441eb549f39d8e831811c55e5e
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
 Následující příklad používá regulární výraz k ověření, že je řetězec ve formátu platné e-mailu.  
@@ -65,17 +65,17 @@ Následující příklad používá regulární výraz k ověření, že je řet
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`^`|Začne porovnávání na začátku řetězce.|  
-|`(?(")`|Určete, zda je první znak uvozovky. `(?(")`je začátku alternace.|  
-|`(?("")("".+?(?<!\\)""@)`|Je-li první znak je znak uvozovek, odpovídat začátku uvozovky následuje alespoň jeden výskyt libovolný znak, za nímž následuje koncové uvozovky. Koncové uvozovky nesmí předcházet zpětné lomítko (\\). `(?<!`je začátku kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou. Řetězec by měl uzavřít s znaku zavináče (@).|  
-|`&#124;(([0-9a-z]`|Je-li první znak není uvozovky, odpovídat libovolný znak abecedy z do z nebo A až Z (porovnání se malá a velká písmena), nebo jakékoli číselné znak od 0 do 9.|  
-|`(\.(?!\.))`|Pokud další znak je dobou, shodovat se. Pokud není po dobu, Hledat na další znak a pokračovat na shodu. `(?!\.)`je negativního nulovou šířkou dopředného vyhledávání, která zabraňuje zobrazování v místní část e-mailovou adresu dvě po sobě jdoucí tečky.|  
-|``&#124;[-!#\$%&'\*\+/=\?\^`{}\&#124;~\w]``|Pokud další znak není dobou, odpovídají libovolný znak nebo jeden z následujících znaků:-! #$%'*+=?^'{} &#124; ~.|  
-|``((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^`{}\&#124;~\w])*``|Shodují se vzorem alternace (období, za nímž následuje jiný období nebo jeden z a počet znaků) nula či více krát.|  
+|`(?(")`|Určete, zda je první znak uvozovky. `(?(")` je začátku alternace.|  
+|`(?("")("".+?(?<!\\)""@)`|Je-li první znak je znak uvozovek, odpovídat začátku uvozovky následuje alespoň jeden výskyt libovolný znak, za nímž následuje koncové uvozovky. Koncové uvozovky nesmí předcházet zpětné lomítko (\\). `(?<!` je začátku kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou. Řetězec by měl uzavřít s znaku zavináče (@).|  
+|<code>&#124;(([0-9a-z]</code>|Je-li první znak není uvozovky, odpovídat libovolný znak abecedy z do z nebo A až Z (porovnání se malá a velká písmena), nebo jakékoli číselné znak od 0 do 9.|  
+|`(\.(?!\.))`|Pokud další znak je dobou, shodovat se. Pokud není po dobu, Hledat na další znak a pokračovat na shodu. `(?!\.)` je negativního nulovou šířkou dopředného vyhledávání, která zabraňuje zobrazování v místní část e-mailovou adresu dvě po sobě jdoucí tečky.|  
+|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}\&#124;~\w]</code>|Pokud další znak není dobou, odpovídají libovolný znak nebo jeden z následujících znaků:-! #$% ' * +=? ^\`{} &#124; ~.|  
+|<code>((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^\`{}\&#124;~\w])*</code>|Shodují se vzorem alternace (období, za nímž následuje jiný období nebo jeden z a počet znaků) nula či více krát.|  
 |`@`|Shoda znak @.|  
 |`(?<=[0-9a-z])`|Pokračovat shody, pokud znak, který předchází @ – znak je A až Z, a až z nebo 0 až 9. `(?<=[0-9a-z])` Konstrukce definuje výraz kladné zpětného vyhledávání s nulovou šířkou.|  
 |`(?(\[)`|Zkontrolujte, zda je znak, který následuje @ levou hranatou závorku.|  
 |`(\[(\d{1,3}\.){3}\d{1,3}\])`|Pokud je levou hranatou závorku, odpovídat levá hranatá závorka následovaný IP adresu (čtyři sady číslic jednu až tři, každý sadou odděleny tečkou) a pravá závorka.|  
-|`&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+`|Pokud je znak, který následuje @ není levou hranatou závorku, jeden alfanumerický znak shodu s hodnotou A-Z, a-z nebo 0-9, za nímž následuje nula nebo více výskytů pomlčka, za nímž následuje žádnou nebo jednu alfanumerický znak s hodnotou A-Z, a-z nebo 0-9 , za nímž následuje období. Tento vzor lze opakovat, jeden či více krát a musí následovat název domény nejvyšší úrovně.|  
+|<code>&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+</code>|Pokud je znak, který následuje @ není levou hranatou závorku, jeden alfanumerický znak shodu s hodnotou A-Z, a-z nebo 0-9, za nímž následuje nula nebo více výskytů pomlčka, za nímž následuje žádnou nebo jednu alfanumerický znak s hodnotou A-Z, a-z nebo 0-9 , za nímž následuje období. Tento vzor lze opakovat, jeden či více krát a musí následovat název domény nejvyšší úrovně.|  
 |`[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`|Název domény nejvyšší úrovně musí začít a končit alfanumerickým znakem (a-z, A-Z a 0 – 9). Může být také dostupný od nuly do 22 znaků ASCII, které jsou buď alfanumerické nebo pomlčky.|  
 |`$`|Ukončí porovnávání na konci řetězce.|  
   
