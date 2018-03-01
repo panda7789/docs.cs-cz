@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostThreadPoolManager.QueueUserWorkItem
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostThreadPoolManager::QueueUserWorkItem
+api_name:
+- IHostThreadPoolManager.QueueUserWorkItem
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostThreadPoolManager::QueueUserWorkItem
 helpviewer_keywords:
 - IHostThreadPoolManager::QueueUserWorkItem method [.NET Framework hosting]
 - QueueUserWorkItem method [.NET Framework hosting]
 ms.assetid: 41602053-8670-4827-9d61-cbfcba509b9c
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c0a304c2052192d3cba761a128e15dc463011030
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

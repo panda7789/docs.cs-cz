@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRAppDomainResourceMonitor.GetCurrentCpuTime
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRAppDomainResourceMonitor::GetCurrentCpuTime
+api_name:
+- ICLRAppDomainResourceMonitor.GetCurrentCpuTime
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRAppDomainResourceMonitor::GetCurrentCpuTime
 helpviewer_keywords:
 - ICLRAppDomainResourceMonitor::GetCurrentCpuTime method [.NET Framework hosting]
 - GetCurrentCpuTime method [.NET Framework hosting]
 ms.assetid: ebc9cc33-fcd6-4cae-9ecb-ea21c51874e6
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2781cfb1e23db02ab8192c78bd0a3e585ee28b2b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

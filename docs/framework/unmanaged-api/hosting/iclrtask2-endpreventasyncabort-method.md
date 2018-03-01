@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTask2.EndPreventAsyncAbort
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTask2::EndPreventAsyncAbort
+api_name:
+- ICLRTask2.EndPreventAsyncAbort
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTask2::EndPreventAsyncAbort
 helpviewer_keywords:
 - EndPreventAsyncAbort method [.NET Framework hosting]
 - ICLRTask2::EndPreventAsyncAbort method [.NET Framework hosting]
 ms.assetid: d8013659-e3df-44b3-814f-a6b534ce62f8
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b18f6b8f6768c0a2980489cf8b84e16a9dd31350
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

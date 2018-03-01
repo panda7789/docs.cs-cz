@@ -5,25 +5,31 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
 api_name:
 - ICLRStrongName.StrongNameGetBlob
 - ICLRStrongName.StrongNameGetBlob
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::StrongNameGetBlob
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::StrongNameGetBlob
 helpviewer_keywords:
 - ICLRStrongName::StrongNameGetBlob method [.NET Framework hosting]
 - StrongNameGetBlob method, ICLRStrongName interface [.NET Framework hosting]
 ms.assetid: a24218f8-7196-44be-b7a2-ee9cdd7a85c4
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f1882936723667b616ff930af00ee899f446521e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

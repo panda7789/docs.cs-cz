@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSecurityManager.OpenThreadToken
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSecurityManager::OpenThreadToken
+api_name:
+- IHostSecurityManager.OpenThreadToken
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSecurityManager::OpenThreadToken
 helpviewer_keywords:
 - IHostSecurityManager::OpenThreadToken method [.NET Framework hosting]
 - OpenThreadToken method [.NET Framework hosting]
 ms.assetid: d5999052-8bf0-4a9e-8621-da6284406b18
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9b5c39632d7628d30149a0a0278f9bf6c865bc29
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

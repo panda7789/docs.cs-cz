@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataEmit.SetMethodProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataEmit::SetMethodProps
+api_name:
+- IMetaDataEmit.SetMethodProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataEmit::SetMethodProps
 helpviewer_keywords:
 - SetMethodProps method [.NET Framework metadata]
 - IMetaDataEmit::SetMethodProps method [.NET Framework metadata]
 ms.assetid: e0c6ac12-22ea-43f5-b799-8cda0faf3336
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 28ec0ba45a83ccf51cc84ee9deb2c658b9b106bd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

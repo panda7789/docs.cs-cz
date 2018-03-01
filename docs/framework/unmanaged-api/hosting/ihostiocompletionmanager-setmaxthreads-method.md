@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager.SetMaxThreads
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager::SetMaxThreads
+api_name:
+- IHostIoCompletionManager.SetMaxThreads
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager::SetMaxThreads
 helpviewer_keywords:
 - IHostIoCompletionManager::SetMaxThreads method [.NET Framework hosting]
 - SetMaxThreads method, IHostIoCompletionManager interface [.NET Framework hosting]
 ms.assetid: ebad4f40-d9f1-4dc6-9b27-a89c9eb3926f
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3d2d8436d85f7be40c89693628794b007e0c6a88
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

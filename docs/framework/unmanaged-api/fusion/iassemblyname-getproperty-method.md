@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IAssemblyName.GetProperty
-api_location: fusion.dll
-api_type: COM
-f1_keywords: IAssemblyName::GetProperty
+api_name:
+- IAssemblyName.GetProperty
+api_location:
+- fusion.dll
+api_type:
+- COM
+f1_keywords:
+- IAssemblyName::GetProperty
 helpviewer_keywords:
 - IAssemblyName::GetProperty method [.NET Framework fusion]
 - GetProperty method [.NET Framework fusion]
 ms.assetid: e59fda62-77d5-4e37-89cb-ce7ae4627975
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3311cc79cd010f59d707283fa555a2ebf66e53db
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

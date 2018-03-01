@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager
-helpviewer_keywords: IHostIoCompletionManager interface [.NET Framework hosting]
+api_name:
+- IHostIoCompletionManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager
+helpviewer_keywords:
+- IHostIoCompletionManager interface [.NET Framework hosting]
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cbb4b87b57d4f5e11a9dab04d20dfb73170bb4a5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

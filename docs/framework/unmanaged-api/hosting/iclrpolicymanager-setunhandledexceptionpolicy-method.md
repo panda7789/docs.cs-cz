@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRPolicyManager.SetUnhandledExceptionPolicy
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRPolicyManager::SetUnhandledExceptionPolicy
+api_name:
+- ICLRPolicyManager.SetUnhandledExceptionPolicy
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRPolicyManager::SetUnhandledExceptionPolicy
 helpviewer_keywords:
 - ICLRPolicyManager::SetUnhandledExceptionPolicy method [.NET Framework hosting]
 - SetUnhandledExceptionPolicy method [.NET Framework hosting]
 ms.assetid: 5268480e-280a-4931-b7a3-dc3ffdf7f78f
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9ad287fedbc06768dd683c254292e0c28760d59a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRHostBindingPolicyManager.ModifyApplicationPolicy
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRHostBindingPolicyManager::ModifyApplicationPolicy
+api_name:
+- ICLRHostBindingPolicyManager.ModifyApplicationPolicy
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRHostBindingPolicyManager::ModifyApplicationPolicy
 helpviewer_keywords:
 - ICLRHostBindingPolicyManager::ModifyApplicationPolicy method [.NET Framework hosting]
 - ModifyApplicationPolicy method [.NET Framework hosting]
 ms.assetid: d82d633e-cce6-427c-8b02-8227e34e12ba
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 018dc40895a79788a9eef20082d764db0b2265c5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

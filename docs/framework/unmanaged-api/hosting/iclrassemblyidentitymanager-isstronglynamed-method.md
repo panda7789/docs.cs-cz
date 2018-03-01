@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRAssemblyIdentityManager.IsStronglyNamed
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRAssemblyIdentityManager::IsStronglyNamed
+api_name:
+- ICLRAssemblyIdentityManager.IsStronglyNamed
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRAssemblyIdentityManager::IsStronglyNamed
 helpviewer_keywords:
 - IsStronglyNamed method [.NET Framework hosting]
 - ICLRAssemblyIdentityManager::IsStronglyNamed method [.NET Framework hosting]
 ms.assetid: 954bd386-2076-4d00-9d46-38c728aa9cab
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1cb727d9144fc3364a04cd5b9064527c55f5ee79
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

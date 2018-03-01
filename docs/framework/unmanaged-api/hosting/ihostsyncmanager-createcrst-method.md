@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager.CreateCrst
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager::CreateCrst
+api_name:
+- IHostSyncManager.CreateCrst
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager::CreateCrst
 helpviewer_keywords:
 - CreateCrst method [.NET Framework hosting]
 - IHostSyncManager::CreateCrst method [.NET Framework hosting]
 ms.assetid: ac278cc8-2540-4a6c-b5c6-b90c3970b4f4
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f932c91892292c787feecf1768c33fb429334bae
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeHost.ExecuteApplication
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeHost::ExecuteApplication
+api_name:
+- ICLRRuntimeHost.ExecuteApplication
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeHost::ExecuteApplication
 helpviewer_keywords:
 - ICLRRuntimeHost::ExecuteApplication method [.NET Framework hosting]
 - ExecuteApplication method [.NET Framework hosting]
 ms.assetid: 5f28cc4e-7176-4e00-aa1f-58ae6ee52fe4
-topic_type: apiref
-caps.latest.revision: "18"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7b765f020bd15fa94fb18a6fd7d81cf66c534639
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

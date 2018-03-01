@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.FindMethod
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::FindMethod
+api_name:
+- IMetaDataImport.FindMethod
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::FindMethod
 helpviewer_keywords:
 - FindMethod method [.NET Framework metadata]
 - IMetaDataImport::FindMethod method [.NET Framework metadata]
 ms.assetid: 0f9bde1d-e306-438d-941b-d0925b322304
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e59cc440ba004545c31d6b25d36cca4fdfb58899
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

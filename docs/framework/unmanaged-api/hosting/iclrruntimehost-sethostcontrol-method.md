@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeHost.SetHostControl
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeHost::SetHostControl
+api_name:
+- ICLRRuntimeHost.SetHostControl
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeHost::SetHostControl
 helpviewer_keywords:
 - SetHostControl method [.NET Framework hosting]
 - ICLRRuntimeHost::SetHostControl method [.NET Framework hosting]
 ms.assetid: 6136be87-e631-4756-81ed-74b66581bad4
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9727144e9504a5a3ad7ae2529286440d07633b2a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

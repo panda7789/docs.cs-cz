@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeInfo.GetVersionString
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeInfo::GetVersionString
+api_name:
+- ICLRRuntimeInfo.GetVersionString
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeInfo::GetVersionString
 helpviewer_keywords:
 - ICLRRuntimeInfo::GetVersionString method [.NET Framework hosting]
 - GetVersionString method, ICLRRuntimeInfo interface [.NET Framework hosting]
 ms.assetid: 98b097ef-2276-4dd9-8551-b03c972e8179
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2ae6f21fac359006b6d2e56fdd4ba50fb18bb972
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataEmit.DefineSecurityAttributeSet
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataEmit::DefineSecurityAttributeSet
+api_name:
+- IMetaDataEmit.DefineSecurityAttributeSet
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataEmit::DefineSecurityAttributeSet
 helpviewer_keywords:
 - IMetaDataEmit::DefineSecurityAttributeSet method [.NET Framework metadata]
 - DefineSecurityAttributeSet method [.NET Framework metadata]
 ms.assetid: 27064ca2-4186-4433-90a7-3b297785e891
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4863ee416bba7fe66326c1d11ec3aa0037d022a1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

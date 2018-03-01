@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTaskManager.GetCurrentTask
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTaskManager::GetCurrentTask
+api_name:
+- ICLRTaskManager.GetCurrentTask
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTaskManager::GetCurrentTask
 helpviewer_keywords:
 - GetCurrentTask method, ICLRTaskManager interface [.NET Framework hosting]
 - ICLRTaskManager::GetCurrentTask method [.NET Framework hosting]
 ms.assetid: c0b82a9f-edc6-4878-9c81-48de53c02142
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 04d12e3ff17cc422121e62f08a77f0271ed78346
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

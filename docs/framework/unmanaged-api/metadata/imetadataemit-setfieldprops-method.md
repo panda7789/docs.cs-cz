@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataEmit.SetFieldProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataEmit::SetFieldProps
+api_name:
+- IMetaDataEmit.SetFieldProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataEmit::SetFieldProps
 helpviewer_keywords:
 - IMetaDataEmit::SetFieldProps method [.NET Framework metadata]
 - SetFieldProps method [.NET Framework metadata]
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: daec4bb11115d4f31764fde767b083796eabbb73
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

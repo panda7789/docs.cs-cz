@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport2.EnumGenericParamConstraints
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport2::EnumGenericParamConstraints
+api_name:
+- IMetaDataImport2.EnumGenericParamConstraints
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport2::EnumGenericParamConstraints
 helpviewer_keywords:
 - EnumGenericParamConstraints method [.NET Framework metadata]
 - IMetaDataImport2::EnumGenericParamConstraints method [.NET Framework metadata]
 ms.assetid: 8a7d4e40-28fe-4e14-b801-4049880130e7
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 72f863205c0fa7f4c6b4477c9d9143d1923a5d4c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostThreadPoolManager.GetMinThreads
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostThreadPoolManager::GetMinThreads
+api_name:
+- IHostThreadPoolManager.GetMinThreads
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostThreadPoolManager::GetMinThreads
 helpviewer_keywords:
 - IHostThreadPoolManager::GetMinThreads method [.NET Framework hosting]
 - GetMinThreads method, IHostThreadPoolManager interface [.NET Framework hosting]
 ms.assetid: dc07232b-b2e4-4dab-87e2-3c955974ab48
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 393400c7a5d9d4d99431cbea4a3c3c82064218f1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

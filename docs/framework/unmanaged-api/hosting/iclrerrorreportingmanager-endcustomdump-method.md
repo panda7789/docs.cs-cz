@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRErrorReportingManager.EndCustomDump
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRErrorReportingManager::EndCustomDump
+api_name:
+- ICLRErrorReportingManager.EndCustomDump
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRErrorReportingManager::EndCustomDump
 helpviewer_keywords:
 - ICLRErrorReportingManager::EndCustomDump method [.NET Framework hosting]
 - EndCustomDump method [.NET Framework hosting]
 ms.assetid: 88a5da04-8729-4108-82c4-af206a7d483e
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 709ef121294a92353b21363ae12919e8e147efab
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

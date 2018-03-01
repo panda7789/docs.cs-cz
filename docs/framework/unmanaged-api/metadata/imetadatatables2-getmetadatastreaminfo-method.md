@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataTables2.GetMetaDataStreamInfo
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataTables2::GetMetaDataStreamInfo
+api_name:
+- IMetaDataTables2.GetMetaDataStreamInfo
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataTables2::GetMetaDataStreamInfo
 helpviewer_keywords:
 - GetMetaDataStreamInfo method [.NET Framework metadata]
 - IMetaDataTables2::GetMetaDataStreamInfo method [.NET Framework metadata]
 ms.assetid: 8b280627-cc74-4789-95da-1fefc966de05
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 06185d8a6f62d69e88aef7579ec40d7dcdec12a5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeInfo.BindAsLegacyV2Runtime
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeInfo::BindAsLegacyV2Runtime
+api_name:
+- ICLRRuntimeInfo.BindAsLegacyV2Runtime
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeInfo::BindAsLegacyV2Runtime
 helpviewer_keywords:
 - ICLRRuntimeInfo::BindAsLegacyV2Runtime method [.NET Framework hosting]
 - BindAsLegacyV2Runtime method [.NET Framework hosting]
 ms.assetid: 65fd55ac-4a24-4479-9384-a2e8013bfb2b
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5552214f722cd7f9a56c2fce1e7c67de41d5bb1f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

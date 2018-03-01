@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRControl
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRControl
-helpviewer_keywords: ICLRControl interface [.NET Framework hosting]
+api_name:
+- ICLRControl
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRControl
+helpviewer_keywords:
+- ICLRControl interface [.NET Framework hosting]
 ms.assetid: a24fd905-1fa6-45a0-ad65-e9e2ee58861e
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b93d87107e1a69b0a047dbf156124fe49cd95d16
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

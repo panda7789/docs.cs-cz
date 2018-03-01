@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRPolicyManager.SetTimeoutAndAction
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRPolicyManager::SetTimeoutAndAction
+api_name:
+- ICLRPolicyManager.SetTimeoutAndAction
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRPolicyManager::SetTimeoutAndAction
 helpviewer_keywords:
 - ICLRPolicyManager::SetTimeoutAndAction method [.NET Framework hosting]
 - SetTimeoutAndAction method [.NET Framework hosting]
 ms.assetid: 60454f91-d855-4ddf-bb6d-60a02f5eabab
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b67150b7544f1d8d25532c564800404b634cae99
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

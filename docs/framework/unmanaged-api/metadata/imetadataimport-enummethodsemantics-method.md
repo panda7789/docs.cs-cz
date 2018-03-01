@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.EnumMethodSemantics
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::EnumMethodSemantics
+api_name:
+- IMetaDataImport.EnumMethodSemantics
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::EnumMethodSemantics
 helpviewer_keywords:
 - EnumMethodSemantics method [.NET Framework metadata]
 - IMetaDataImport::EnumMethodSemantics method [.NET Framework metadata]
 ms.assetid: e7e3c630-9691-46d6-94df-b5593a7bb08a
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 883505076fa9ff4f335c08b069e801ebda1ebb2d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

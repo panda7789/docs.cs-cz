@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetTypeSpecFromToken
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetTypeSpecFromToken
+api_name:
+- IMetaDataImport.GetTypeSpecFromToken
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetTypeSpecFromToken
 helpviewer_keywords:
 - GetTypeSpecFromToken method [.NET Framework metadata]
 - IMetaDataImport::GetTypeSpecFromToken method [.NET Framework metadata]
 ms.assetid: ee518bda-3296-482e-a7b7-e9d51dd1a181
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 10d4d9dcad2494410cc361617d5292c519b6dc00
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

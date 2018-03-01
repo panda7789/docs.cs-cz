@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRSyncManager.DeleteRWLockOwnerIterator
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRSyncManager::DeleteRWLockOwnerIterator
+api_name:
+- ICLRSyncManager.DeleteRWLockOwnerIterator
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRSyncManager::DeleteRWLockOwnerIterator
 helpviewer_keywords:
 - ICLRSyncManager::DeleteRWLockOwnerIterator method [.NET Framework hosting]
 - DeleteRWLockOwnerIterator method [.NET Framework hosting]
 ms.assetid: fcfd340a-b7d6-44e4-8167-2c05b789d483
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dce6699dc625c5c867befe1bc2e307cfaea7719a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

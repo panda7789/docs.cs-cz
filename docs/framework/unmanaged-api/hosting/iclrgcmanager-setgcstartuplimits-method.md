@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRGCManager.SetGCStartupLimits
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRGCManager::SetGCStartupLimits
+api_name:
+- ICLRGCManager.SetGCStartupLimits
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRGCManager::SetGCStartupLimits
 helpviewer_keywords:
 - SetGCStartupLimits method, ICLRGCManager interface [.NET Framework hosting]
 - ICLRGCManager::SetGCStartupLimits method [.NET Framework hosting]
 ms.assetid: 1c8d9959-95b5-4131-be4a-556d97774014
-topic_type: apiref
-caps.latest.revision: "18"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4fd5a1135866b75ea1d11fc5a14289104edfeac4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

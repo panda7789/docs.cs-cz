@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: STARTUP_FLAGS
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: STARTUP_FLAGS
-helpviewer_keywords: STARTUP_FLAGS enumeration [.NET Framework hosting]
+api_name:
+- STARTUP_FLAGS
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- STARTUP_FLAGS
+helpviewer_keywords:
+- STARTUP_FLAGS enumeration [.NET Framework hosting]
 ms.assetid: 4f043594-0c45-4bc6-988e-a6793f0d8d06
-topic_type: apiref
-caps.latest.revision: "22"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ca2db0cd7082a596999f1d74c9092264a65692ea
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

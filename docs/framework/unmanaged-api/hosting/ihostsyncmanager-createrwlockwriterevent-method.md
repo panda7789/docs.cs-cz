@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager.CreateRWLockWriterEvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager::CreateRWLockWriterEvent
+api_name:
+- IHostSyncManager.CreateRWLockWriterEvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager::CreateRWLockWriterEvent
 helpviewer_keywords:
 - CreateRWLockWriterEvent method [.NET Framework hosting]
 - IHostSyncManager::CreateRWLockWriterEvent method [.NET Framework hosting]
 ms.assetid: 70e488c2-cf53-4dc0-ba52-74372d215c41
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: eb38cd76a051b1a4459dff4f8164a6405f5fb32d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

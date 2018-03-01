@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager.Bind
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager::Bind
+api_name:
+- IHostIoCompletionManager.Bind
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager::Bind
 helpviewer_keywords:
 - IHostIoCompletionManager::Bind method [.NET Framework hosting]
 - Bind method [.NET Framework hosting]
 ms.assetid: acd74cb5-7e22-4a07-83c3-82288e1abd9f
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a34de8c04e248d2973e9b27c10da9313db5077ff
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

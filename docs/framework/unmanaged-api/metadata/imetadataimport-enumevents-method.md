@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.EnumEvents
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::EnumEvents
+api_name:
+- IMetaDataImport.EnumEvents
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::EnumEvents
 helpviewer_keywords:
 - IMetaDataImport::EnumEvents method [.NET Framework metadata]
 - EnumEvents method [.NET Framework metadata]
 ms.assetid: e1efedcb-3dd7-42ae-a399-21c24728aec5
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ed783cf80fb068656855c2c06ab814f665f1cede
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

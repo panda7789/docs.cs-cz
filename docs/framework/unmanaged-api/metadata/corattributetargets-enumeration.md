@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorAttributeTargets
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: CorAttributeTargets
-helpviewer_keywords: CorAttributeTargets enumeration [.NET Framework metadata]
+api_name:
+- CorAttributeTargets
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- CorAttributeTargets
+helpviewer_keywords:
+- CorAttributeTargets enumeration [.NET Framework metadata]
 ms.assetid: 694c0fa0-7011-41a9-9dfd-f0e16ea574b5
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4ce701c026b4e977c376b6e6f0f342b031634e38
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

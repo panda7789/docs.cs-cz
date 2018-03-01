@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: COR_PRF_GC_ROOT_FLAGS
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: COR_PRF_GC_ROOT_FLAGS
-helpviewer_keywords: COR_PRF_GC_ROOT_FLAGS enumeration [.NET Framework profiling]
+api_name:
+- COR_PRF_GC_ROOT_FLAGS
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- COR_PRF_GC_ROOT_FLAGS
+helpviewer_keywords:
+- COR_PRF_GC_ROOT_FLAGS enumeration [.NET Framework profiling]
 ms.assetid: 4611ee6f-0f05-4d84-91e1-e83d5e7dd7e4
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5e00f695edb94acbd54d6bd009ccd629aeec1b14
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

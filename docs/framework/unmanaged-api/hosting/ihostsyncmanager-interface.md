@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager
-helpviewer_keywords: IHostSyncManager interface [.NET Framework hosting]
+api_name:
+- IHostSyncManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager
+helpviewer_keywords:
+- IHostSyncManager interface [.NET Framework hosting]
 ms.assetid: 2e081a37-6a28-4c93-b7ab-1c96a464637c
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b51e1dd9219c30eb4918bf1e331c96585f7c03ac
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

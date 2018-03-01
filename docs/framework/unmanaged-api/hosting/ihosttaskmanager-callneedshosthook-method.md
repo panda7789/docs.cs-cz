@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTaskManager.CallNeedsHostHook
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTaskManager::CallNeedsHostHook
+api_name:
+- IHostTaskManager.CallNeedsHostHook
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTaskManager::CallNeedsHostHook
 helpviewer_keywords:
 - CallNeedsHostHook method [.NET Framework hosting]
 - IHostTaskManager::CallNeedsHostHook method [.NET Framework hosting]
 ms.assetid: b60f1f59-9825-4b57-961f-d2979518e6a7
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4774c9f37f73692bf8d9455c51e76aa4c590f925
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostGCManager.SuspensionStarting
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostGCManager::SuspensionStarting
+api_name:
+- IHostGCManager.SuspensionStarting
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostGCManager::SuspensionStarting
 helpviewer_keywords:
 - SuspensionStarting method, IHostGCManager interface [.NET Framework hosting]
 - IHostGCManager::SuspensionStarting method [.NET Framework hosting]
 ms.assetid: c381f524-94cf-4fa2-9298-50f847a03431
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 30f6c611dc719fa6f1162498082cc9a60fb5059b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

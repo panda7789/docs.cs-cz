@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostAssemblyStore.ProvideModule
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostAssemblyStore::ProvideModule
+api_name:
+- IHostAssemblyStore.ProvideModule
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostAssemblyStore::ProvideModule
 helpviewer_keywords:
 - IHostAssemblyStore::ProvideModule method [.NET Framework hosting]
 - ProvideModule method [.NET Framework hosting]
 ms.assetid: f42e3dd0-c88e-4748-b6c0-4c515a633180
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8b29f19933ae985d15627d1eba2622f350a52e72
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

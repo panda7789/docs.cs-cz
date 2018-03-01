@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTaskManager.EndDelayAbort
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTaskManager::EndDelayAbort
+api_name:
+- IHostTaskManager.EndDelayAbort
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTaskManager::EndDelayAbort
 helpviewer_keywords:
 - EndDelayAbort method [.NET Framework hosting]
 - IHostTaskManager::EndDelayAbort method [.NET Framework hosting]
 ms.assetid: 6e02facb-2504-4356-9af5-0cee1f8436a7
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7a38f024c408065ffcd0e0278b76c064ff148bc6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

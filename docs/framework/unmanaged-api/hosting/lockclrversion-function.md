@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: LockClrVersion
+api_name:
+- LockClrVersion
 api_location:
 - mscoree.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: LockClrVersion
-helpviewer_keywords: LockClrVersion function [.NET Framework hosting]
+api_type:
+- DLLExport
+f1_keywords:
+- LockClrVersion
+helpviewer_keywords:
+- LockClrVersion function [.NET Framework hosting]
 ms.assetid: 1318ee37-c43b-40eb-bbe8-88fc46453d74
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a58d7e99f545026f6f133901ef35a1f9b9fabc7d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataTables.GetNextString
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataTables::GetNextString
+api_name:
+- IMetaDataTables.GetNextString
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataTables::GetNextString
 helpviewer_keywords:
 - IMetaDataTables::GetNextString method [.NET Framework metadata]
 - GetNextString method [.NET Framework metadata]
 ms.assetid: d9720428-c353-4f07-a7e8-899e106a1b37
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e2bf16f6debd50729a95a4e887a01c1158b7a937
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

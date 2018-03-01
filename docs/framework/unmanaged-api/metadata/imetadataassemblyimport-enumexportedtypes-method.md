@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataAssemblyImport.EnumExportedTypes
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataAssemblyImport::EnumExportedTypes
+api_name:
+- IMetaDataAssemblyImport.EnumExportedTypes
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataAssemblyImport::EnumExportedTypes
 helpviewer_keywords:
 - EnumExportedTypes method [.NET Framework metadata]
 - IMetaDataAssemblyImport::EnumExportedTypes method [.NET Framework metadata]
 ms.assetid: e5912ed8-e4ce-438b-8ea3-d9e4c288d109
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 54b5a51dc0a12bb4c159b61252c9db0a82f03518
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

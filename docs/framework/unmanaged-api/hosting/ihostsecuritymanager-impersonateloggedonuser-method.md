@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSecurityManager.ImpersonateLoggedOnUser
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSecurityManager::ImpersonateLoggedOnUser
+api_name:
+- IHostSecurityManager.ImpersonateLoggedOnUser
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSecurityManager::ImpersonateLoggedOnUser
 helpviewer_keywords:
 - ImpersonateLoggedOnUser method [.NET Framework hosting]
 - IHostSecurityManager::ImpersonateLoggedOnUser method [.NET Framework hosting]
 ms.assetid: acc49ba0-f1d9-45ad-871f-9d053a89dcbe
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: bf01ca07544fcce59eef81707bb1ff2d1f375feb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

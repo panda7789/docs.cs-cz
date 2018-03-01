@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.StrongNameGetBlobFromImage
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::StrongNameGetBlobFromImage
+api_name:
+- ICLRStrongName.StrongNameGetBlobFromImage
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::StrongNameGetBlobFromImage
 helpviewer_keywords:
 - StrongNameGetBlobFromImage method, ICLRStrongName interface [.NET Framework hosting]
 - ICLRStrongName::StrongNameGetBlobFromImage method [.NET Framework hosting]
 ms.assetid: 0f5a2ec8-e776-4fd8-bda6-937b6834575a
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ff2ec30068903397d9f8d736f4f270c8d3c1669f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorRuntimeHost.CurrentDomain
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICorRuntimeHost::CurrentDomain
+api_name:
+- ICorRuntimeHost.CurrentDomain
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICorRuntimeHost::CurrentDomain
 helpviewer_keywords:
 - ICorRuntimeHost::CreateDomain method [.NET Framework hosting]
 - CurrentDomain method [.NET Framework hosting]
 ms.assetid: dd2afb38-675b-4c3c-a9f3-8ab3b133eb02
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1ac437d924b6f5b290db117260701b554e29b6e7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

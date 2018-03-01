@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostMemoryManager.RegisterMemoryNotificationCallback
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostMemoryManager::RegisterMemoryNotificationCallback
+api_name:
+- IHostMemoryManager.RegisterMemoryNotificationCallback
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostMemoryManager::RegisterMemoryNotificationCallback
 helpviewer_keywords:
 - IHostMemoryManager::RegisterMemoryNotificationCallback method [.NET Framework hosting]
 - RegisterMemoryNotificationCallback method [.NET Framework hosting]
 ms.assetid: 65d301f6-4dbb-4b5f-8eff-82540e2b6465
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a59de95ea671b6f568ade81005c718cac00350e8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

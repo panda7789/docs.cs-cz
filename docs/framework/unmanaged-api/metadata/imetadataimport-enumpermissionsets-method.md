@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.EnumPermissionSets
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::EnumPermissionSets
+api_name:
+- IMetaDataImport.EnumPermissionSets
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::EnumPermissionSets
 helpviewer_keywords:
 - EnumPermissionSets method [.NET Framework metadata]
 - IMetaDataImport::EnumPermissionSets method [.NET Framework metadata]
 ms.assetid: 347d7e5c-c90f-45ad-bd1e-2c7912b0b19c
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7f31d35f21a16983b6ab9c23f1f65c3916b5138d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

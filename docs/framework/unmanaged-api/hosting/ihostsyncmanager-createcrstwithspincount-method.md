@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager.CreateCrstWithSpinCount
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager::CreateCrstWithSpinCount
+api_name:
+- IHostSyncManager.CreateCrstWithSpinCount
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager::CreateCrstWithSpinCount
 helpviewer_keywords:
 - CreateCrstWithSpinCount method [.NET Framework hosting]
 - IHostSyncManager::CreateCrstWithSpinCount method [.NET Framework hosting]
 ms.assetid: 7280fa8c-3639-4abf-91cb-bc343da742d1
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 31830f97cff1c302ee573b8248eb1d83e696ac48
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

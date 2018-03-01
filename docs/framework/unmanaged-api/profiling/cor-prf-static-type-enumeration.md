@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: COR_PRF_STATIC_TYPE
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: COR_PRF_STATIC_TYPE
-helpviewer_keywords: COR_PRF_STATIC_TYPE enumeration [.NET Framework profiling]
+api_name:
+- COR_PRF_STATIC_TYPE
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- COR_PRF_STATIC_TYPE
+helpviewer_keywords:
+- COR_PRF_STATIC_TYPE enumeration [.NET Framework profiling]
 ms.assetid: 441d7809-5b65-41a5-ba64-2910a8008315
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 76d43a620b64c771427cd30af770e70642dabe7a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

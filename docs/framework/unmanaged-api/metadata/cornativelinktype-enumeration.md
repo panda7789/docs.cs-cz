@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorNativeLinkType
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: CorNativeLinkType
-helpviewer_keywords: CorNativeLinkType enumeration [.NET Framework metadata]
+api_name:
+- CorNativeLinkType
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- CorNativeLinkType
+helpviewer_keywords:
+- CorNativeLinkType enumeration [.NET Framework metadata]
 ms.assetid: 4f86ff37-2dab-4e64-819a-76b3bfe828ff
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f19a4366958249881c1f4c33919f239f33c21b21
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

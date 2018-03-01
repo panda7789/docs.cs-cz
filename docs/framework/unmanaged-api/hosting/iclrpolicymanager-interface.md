@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRPolicyManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRPolicyManager
-helpviewer_keywords: ICLRPolicyManager interface [.NET Framework hosting]
+api_name:
+- ICLRPolicyManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRPolicyManager
+helpviewer_keywords:
+- ICLRPolicyManager interface [.NET Framework hosting]
 ms.assetid: 5c834aa1-f2db-408a-b230-c7bec093d364
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ce37f9beb0901eaf1bc98f5af3f8f99a7fedf1c1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

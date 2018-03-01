@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IAssemblyCacheItem.CreateStream
-api_location: fusion.dll
-api_type: COM
-f1_keywords: IAssemblyCacheItem::CreateStream
+api_name:
+- IAssemblyCacheItem.CreateStream
+api_location:
+- fusion.dll
+api_type:
+- COM
+f1_keywords:
+- IAssemblyCacheItem::CreateStream
 helpviewer_keywords:
 - CreateStream method [.NET Framework fusion]
 - IAsssemblyCacheItem::CreateStream method [.NET Framework fusion]
 ms.assetid: 697ab0f4-470c-4baa-a415-4a975c42d0d5
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a24d9732a8e413b3cde0ac1c622743153ff6fd01
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

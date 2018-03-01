@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.EnumInterfaceImpls
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::EnumInterfaceImpls
+api_name:
+- IMetaDataImport.EnumInterfaceImpls
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::EnumInterfaceImpls
 helpviewer_keywords:
 - IMetaDataImport::EnumInterfaceImpls method [.NET Framework metadata]
 - EnumInterfaceImpls method [.NET Framework metadata]
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 646d65ff81795ce0558651db9c3fe1bc7205ae08
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

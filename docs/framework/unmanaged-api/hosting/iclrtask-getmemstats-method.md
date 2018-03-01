@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTask.GetMemStats
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTask::GetMemStats
+api_name:
+- ICLRTask.GetMemStats
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTask::GetMemStats
 helpviewer_keywords:
 - ICLRTask::GetMemStats method [.NET Framework hosting]
 - GetMemStats method [.NET Framework hosting]
 ms.assetid: c9e07657-1682-4c30-a336-f8658ff1a125
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7ad5fb2b76ef282258b9a5293b890a19420c1906
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

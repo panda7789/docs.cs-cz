@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRHostProtectionManager.SetProtectedCategories
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRHostProtectionManager::SetProtectedCategories
+api_name:
+- ICLRHostProtectionManager.SetProtectedCategories
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRHostProtectionManager::SetProtectedCategories
 helpviewer_keywords:
 - SetProtectedCategories method [.NET Framework hosting]
 - ICLRHostProtectionManager::SetProtectedCategories method [.NET Framework hosting]
 ms.assetid: fa21dc7b-5da7-440b-b59e-9180e5181f9d
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0971e93f02420966d6561c5b7d4dce8b75e222fb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

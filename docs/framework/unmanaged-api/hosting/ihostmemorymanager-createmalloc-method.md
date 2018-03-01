@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostMemoryManager.CreateMAlloc
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostMemoryManager::CreateMAlloc
+api_name:
+- IHostMemoryManager.CreateMAlloc
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostMemoryManager::CreateMAlloc
 helpviewer_keywords:
 - CreateAlloc method [.NET Framework hosting]
 - IHostMemoryManager::CreateMAlloc method [.NET Framework hosting]
 ms.assetid: 9ee6e052-bef7-4350-9e4f-edfffd99ad6f
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 19b43ccf7cb2429c28c052ab8ab3a009ec4a30a4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

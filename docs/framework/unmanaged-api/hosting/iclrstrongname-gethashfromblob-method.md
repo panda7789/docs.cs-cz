@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.GetHashFromBlob
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::GetHashFromBlob
+api_name:
+- ICLRStrongName.GetHashFromBlob
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::GetHashFromBlob
 helpviewer_keywords:
 - ICLRStrongName::GetHashFromBlob method [.NET Framework hosting]
 - GetHashFromBlob method, ICLRStrongName interface [.NET Framework hosting]
 ms.assetid: f91d0f89-f356-49ac-aafb-50fad963c13d
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1947441e395ddb9d9d0fd9c4b02e7e991b1c84a2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

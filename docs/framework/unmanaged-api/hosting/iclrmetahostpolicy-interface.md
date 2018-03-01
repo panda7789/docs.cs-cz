@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRMetaHostPolicy
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRMetaHostPolicy
-helpviewer_keywords: ICLRMetaHostPolicy interface [.NET Framework hosting]
+api_name:
+- ICLRMetaHostPolicy
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRMetaHostPolicy
+helpviewer_keywords:
+- ICLRMetaHostPolicy interface [.NET Framework hosting]
 ms.assetid: 1bdeccb6-0698-4c97-ad69-eae2b69e59f1
-topic_type: apiref
-caps.latest.revision: "23"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cd9b8d6aef2289833a0bd192b838e6f70ea8c0ae
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

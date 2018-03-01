@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorGenericParamAttr
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: CorGenericParamAttr
-helpviewer_keywords: CorGenericParamAttr enumeration [.NET Framework metadata]
+api_name:
+- CorGenericParamAttr
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- CorGenericParamAttr
+helpviewer_keywords:
+- CorGenericParamAttr enumeration [.NET Framework metadata]
 ms.assetid: 36c76266-71d8-48dc-bd89-54943fa659c1
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e40613d790baed5bd89bee1e1f5ca57043bfe76a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

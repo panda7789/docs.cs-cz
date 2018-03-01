@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTaskManager.BeginDelayAbort
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTaskManager::BeginDelayAbort
+api_name:
+- IHostTaskManager.BeginDelayAbort
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTaskManager::BeginDelayAbort
 helpviewer_keywords:
 - BeginDelayAbort method [.NET Framework hosting]
 - IHostTaskManager::BeginDelayAbort method [.NET Framework hosting]
 ms.assetid: 75f42a8b-ed68-4718-a030-a179cfba7d72
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a6b37c87f26013dab95f7607e03463437b9797a0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

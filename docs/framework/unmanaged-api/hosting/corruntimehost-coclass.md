@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorRuntimeHost Coclass
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: CorRuntimeHost
-helpviewer_keywords: CoRuntimeHost coclass [.NET Framework hosting]
+api_name:
+- CorRuntimeHost Coclass
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- CorRuntimeHost
+helpviewer_keywords:
+- CoRuntimeHost coclass [.NET Framework hosting]
 ms.assetid: 5833740b-7d67-44b4-865c-b5bf45e291e3
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 23bee1a79dfb54a696495fdb61a7ba9ba4b4c143
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

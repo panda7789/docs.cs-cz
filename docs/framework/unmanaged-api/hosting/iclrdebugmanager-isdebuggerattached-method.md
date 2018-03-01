@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebugManager.IsDebuggerAttached
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRDebugManager::IsDebuggerAttached
+api_name:
+- ICLRDebugManager.IsDebuggerAttached
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebugManager::IsDebuggerAttached
 helpviewer_keywords:
 - IsDebuggerAttached method, ICLRDebugManager interface [.NET Framework hosting]
 - ICLRDebugManager::IsDebuggerAttached method [.NET Framework hosting]
 ms.assetid: 2f105fe0-f52d-49c5-bda5-583fb27e3aa6
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5abd854e224b19efa72100db0163d61b42b0b63c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

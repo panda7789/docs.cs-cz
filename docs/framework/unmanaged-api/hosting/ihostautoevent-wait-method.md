@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostAutoEvent.Wait
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostAutoEvent::Wait
+api_name:
+- IHostAutoEvent.Wait
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostAutoEvent::Wait
 helpviewer_keywords:
 - Wait method, IHostAutoEvent interface [.NET Framework hosting]
 - IHostAutoEvent::Wait method [.NET Framework hosting]
 ms.assetid: 535d51c5-9112-401b-8c36-85f35d7ee609
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e4646e0bd04d69e7fe0125740c9c6e0c1b014071
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

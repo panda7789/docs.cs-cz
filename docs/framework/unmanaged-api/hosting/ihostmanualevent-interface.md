@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostManualEvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostManualEvent
-helpviewer_keywords: IHostManualEvent interface [.NET Framework hosting]
+api_name:
+- IHostManualEvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostManualEvent
+helpviewer_keywords:
+- IHostManualEvent interface [.NET Framework hosting]
 ms.assetid: 300c2661-b7d1-4c39-b080-9ebdef0fd523
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0d55500efbe808b2fce16e869422e727b8ed0b93
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

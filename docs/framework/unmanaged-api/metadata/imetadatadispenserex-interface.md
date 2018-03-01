@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataDispenserEx
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataDispenserEx
-helpviewer_keywords: IMetaDataDispenserEx interface [.NET Framework metadata]
+api_name:
+- IMetaDataDispenserEx
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataDispenserEx
+helpviewer_keywords:
+- IMetaDataDispenserEx interface [.NET Framework metadata]
 ms.assetid: 78b3629e-77a2-4406-89c3-56b5cc2c4594
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4cf062029647d4834118a459db378c8535182daf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

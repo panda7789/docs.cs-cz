@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataAssemblyEmit.DefineAssemblyRef
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataAssemblyEmit::DefineAssemblyRef
+api_name:
+- IMetaDataAssemblyEmit.DefineAssemblyRef
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataAssemblyEmit::DefineAssemblyRef
 helpviewer_keywords:
 - DefineAssemblyRef method [.NET Framework metadata]
 - IMetaDataAssemblyEmit::DefineAssemblyRef method [.NET Framework metadata]
 ms.assetid: 0b284b18-0084-4b3a-912a-5ebe9f29c88b
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 123bd37d189477eade72e3b0e74f923fecce57a7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTask.Join
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTask::Join
+api_name:
+- IHostTask.Join
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTask::Join
 helpviewer_keywords:
 - IHostTask::Join method [.NET Framework hosting]
 - Join method, IHostTask interface [.NET Framework hosting]
 ms.assetid: 2cffcc52-19e0-4ced-a440-fc7375078ac9
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 85ee44fe9185364a6870b996ca98cfe6cc297bf7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

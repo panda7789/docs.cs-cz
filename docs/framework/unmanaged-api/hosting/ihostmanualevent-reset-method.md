@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostManualEvent.Reset
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostManualEvent::Reset
+api_name:
+- IHostManualEvent.Reset
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostManualEvent::Reset
 helpviewer_keywords:
 - Reset method, IHostManualEvent interface [.NET Framework hosting]
 - IHostManualEvent::Reset method [.NET Framework hosting]
 ms.assetid: 0d101168-b5e3-49ce-90c7-85cf2db83c4c
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d1bbd10437662fc8b7fbb52d65d196d7a519538b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

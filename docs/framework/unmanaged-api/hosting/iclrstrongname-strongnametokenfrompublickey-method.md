@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.StrongNameTokenFromPublicKey
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::StrongNameTokenFromPublicKey
+api_name:
+- ICLRStrongName.StrongNameTokenFromPublicKey
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::StrongNameTokenFromPublicKey
 helpviewer_keywords:
 - ICLRStrongName::StrongNameTokenFromPublicKey method [.NET Framework hosting]
 - StrongNameTokenFromPublicKey method, ICLRStrongName interface [.NET Framework hosting]
 ms.assetid: 7962ce88-7e86-4a6f-8298-621b01ffc3c2
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b5ee9153cec51f279e08b0ac0838456645cd7ada
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

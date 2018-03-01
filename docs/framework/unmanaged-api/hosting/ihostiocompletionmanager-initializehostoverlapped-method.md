@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager.InitializeHostOverlapped
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager::InitializeHostOverlapped
+api_name:
+- IHostIoCompletionManager.InitializeHostOverlapped
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager::InitializeHostOverlapped
 helpviewer_keywords:
 - IHostIoCompletionManager::InitializeHostOverlapped method [.NET Framework hosting]
 - InitializeHostOverlapped method [.NET Framework hosting]
 ms.assetid: c35199bf-bc47-4901-b467-4e8a37644bbb
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6b558d638e598ba6e3d0055e3a842976896e99d3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

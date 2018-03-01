@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostAssemblyManager.GetAssemblyStore
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostAssemblyManager::GetAssemblyStore
+api_name:
+- IHostAssemblyManager.GetAssemblyStore
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostAssemblyManager::GetAssemblyStore
 helpviewer_keywords:
 - IHostAssemblyManager::GetAssemblyStore method [.NET Framework hosting]
 - GetAssemblyStore method [.NET Framework hosting]
 ms.assetid: d0f74593-9bb1-4a11-8096-e29734b20698
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 347947622601475147663b8838bef5f36a1f7e32
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

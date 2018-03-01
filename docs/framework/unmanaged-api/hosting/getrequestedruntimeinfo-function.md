@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetRequestedRuntimeInfo
+api_name:
+- GetRequestedRuntimeInfo
 api_location:
 - mscoree.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: GetRequestedRuntimeInfo
-helpviewer_keywords: GetRequestedRuntimeInfo function [.NET Framework hosting]
+api_type:
+- DLLExport
+f1_keywords:
+- GetRequestedRuntimeInfo
+helpviewer_keywords:
+- GetRequestedRuntimeInfo function [.NET Framework hosting]
 ms.assetid: 0dfd7cdc-c116-4e25-b56a-ac7b0378c942
-topic_type: apiref
-caps.latest.revision: "22"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 49459001d3764988eff7b7a4381a843c44e596cb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

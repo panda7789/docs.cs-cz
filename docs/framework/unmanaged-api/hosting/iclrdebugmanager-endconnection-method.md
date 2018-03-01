@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebugManager.EndConnection
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRDebugManager::EndConnection
+api_name:
+- ICLRDebugManager.EndConnection
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebugManager::EndConnection
 helpviewer_keywords:
 - ICLRDebugManager::EndConnection method [.NET Framework hosting]
 - EndConnection method [.NET Framework hosting]
 ms.assetid: 89dc7363-2f29-4eb2-8f23-fccdda6a76a6
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 210226b697eb3dffe574bd842ca31e83948891a4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
