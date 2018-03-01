@@ -2,11 +2,13 @@
 title: "Vnitřní chyba (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID51
+f1_keywords:
+- vbrID51
 ms.assetid: 21266dbb-f4a1-4c5d-a646-27909cf53248
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 6c4023233e588da83d37c061b77cf7cb8988fd6e

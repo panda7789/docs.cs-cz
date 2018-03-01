@@ -2,11 +2,13 @@
 title: "Je k dispozici žádné kolečka myši"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrMouse_NoWheelIsPresent
+f1_keywords:
+- vbrMouse_NoWheelIsPresent
 ms.assetid: e924ffba-4af1-4247-9a6f-d19a03738f62
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 7caf2e24bcbd86ad2b6175d593bd218a9bb4689d

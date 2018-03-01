@@ -2,11 +2,13 @@
 title: "Nelze číst pole s pevnou šířkou, protože FieldWidths není nic nebo je prázdný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_FieldWidthsNothing
+f1_keywords:
+- vbrTextFieldParser_FieldWidthsNothing
 ms.assetid: 623e0825-5640-4e47-8341-7eeec80fc145
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: e7824ada87d28bb9fa79189f37d626ea2ceead14

@@ -2,11 +2,13 @@
 title: "Operaci nelze provést, protože cílový adresář je pod zdrojový adresář"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrIO_CyclicOperation
+f1_keywords:
+- vbrIO_CyclicOperation
 ms.assetid: 850d3a24-5d51-4ac8-a912-630efcd75278
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 0a17877b2335ee010a97f0b522bd4c399867cd7d

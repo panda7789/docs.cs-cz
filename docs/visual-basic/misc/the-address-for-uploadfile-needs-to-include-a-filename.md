@@ -2,11 +2,13 @@
 title: "Adresa pro UploadFile musí obsahovat název souboru"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrNetwork_UploadAddressNeedsFilename
+f1_keywords:
+- vbrNetwork_UploadAddressNeedsFilename
 ms.assetid: 0ee11749-0432-4ccb-8c08-1663a4a55ad0
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: cd99167365efbb4a3bdda3e2bb66ffad9a4bdf0b
