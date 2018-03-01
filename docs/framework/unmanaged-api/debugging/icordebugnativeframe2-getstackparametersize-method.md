@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugNativeFrame2.GetStackParameterSize Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugNativeFrame2::GetStackParameterSize
+api_name:
+- ICorDebugNativeFrame2.GetStackParameterSize Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugNativeFrame2::GetStackParameterSize
 helpviewer_keywords:
 - ICorDebugNativeFrame2::GetStackParameterSize method [.NET Framework debugging]
 - GetStackParameterSize method [.NET Framework debugging]
 ms.assetid: f6a449c8-a941-43ba-9a90-c98b29ae3c36
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fa7e67c252f2ece16c072e22d0333e085fbc4f65
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugModule2.SetJITCompilerFlags
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugModule2::SetJITCompilerFlags
+api_name:
+- ICorDebugModule2.SetJITCompilerFlags
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugModule2::SetJITCompilerFlags
 helpviewer_keywords:
 - ICorDebugModule2::SetJITCompilerFlags method [.NET Framework debugging]
 - SetJITCompilerFlags method [.NET Framework debugging]
 ms.assetid: ea574c84-c622-4589-9a14-b55771af5e06
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cfc25e9ce15996360cd0e3c68805d3707b325f79
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

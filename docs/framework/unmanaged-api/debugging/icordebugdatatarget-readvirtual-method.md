@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugDataTarget.ReadVirtual Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugDataTarget::ReadVirtual
+api_name:
+- ICorDebugDataTarget.ReadVirtual Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugDataTarget::ReadVirtual
 helpviewer_keywords:
 - ICorDebugDataTarget::ReadVirtual method [.NET Framework debugging]
 - ReadVirtual method, ICorDebugDataTarget interface [.NET Framework debugging]
 ms.assetid: 55e57640-b3d2-413d-b4f4-fbc27fb8e37c
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a406af14d4cb5612009972542c0efe9c1b5f62cc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

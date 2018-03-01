@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedReader.Initialize
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedReader::Initialize
+api_name:
+- ISymUnmanagedReader.Initialize
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedReader::Initialize
 helpviewer_keywords:
 - ISymUnmanagedReader::Initialize method [.NET Framework debugging]
 - Initialize method, ISymUnmanagedReader interface [.NET Framework debugging]
 ms.assetid: 8f0dd2fe-7df7-464e-91f4-5518c586bb5f
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 433cd62f7801d386f3b34b7fc8e95bd1d0c5f765
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

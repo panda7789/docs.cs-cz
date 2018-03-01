@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess.IsOSSuspended
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess::IsOSSuspended
+api_name:
+- ICorDebugProcess.IsOSSuspended
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess::IsOSSuspended
 helpviewer_keywords:
 - IsOSSuspended method [.NET Framework debugging]
 - ICorDebugProcess::IsOSSuspended method [.NET Framework debugging]
 ms.assetid: 83406cb2-5797-4402-872d-89c9516aefec
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 97c394e3084007227cf157c62a12df3f5cfac8e6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

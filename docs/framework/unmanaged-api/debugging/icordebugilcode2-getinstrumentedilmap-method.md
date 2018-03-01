@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICorDebugILCode2.GetInstrumentedILMap
-api_location: mscordbi.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ICorDebugILCode2.GetInstrumentedILMap
+api_location:
+- mscordbi.dll
+api_type:
+- COM
 ms.assetid: 7a4e3085-8f95-40ef-a4be-7d6146f47ce2
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0499813bc2192d419dc21d9dbb84aff17894544f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback.Exception
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback::Exception
+api_name:
+- ICorDebugManagedCallback.Exception
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback::Exception
 helpviewer_keywords:
 - Exception method, ICorDebugManagedCallback interface [.NET Framework debugging]
 - ICorDebugManagedCallback::Exception method [.NET Framework debugging]
 ms.assetid: ab18a509-dff3-4930-b585-bd15e0414176
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b964f38501822360e6fc63600f7854c9a90f094c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: LoggingLevelEnum
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: LoggingLevelEnum
-helpviewer_keywords: LoggingLevelEnum enumeration [.NET Framework debugging]
+api_name:
+- LoggingLevelEnum
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- LoggingLevelEnum
+helpviewer_keywords:
+- LoggingLevelEnum enumeration [.NET Framework debugging]
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a1f8bb53d53593073df7ef7aa095eeb3b9f8c632
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

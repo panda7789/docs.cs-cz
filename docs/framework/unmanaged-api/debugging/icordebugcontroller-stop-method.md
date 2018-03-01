@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugController.Stop
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugController::Stop
+api_name:
+- ICorDebugController.Stop
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugController::Stop
 helpviewer_keywords:
 - Stop method, ICorDebugController interface [.NET Framework debugging]
 - ICorDebugController::Stop method [.NET Framework debugging]
 ms.assetid: c34e79be-a7fb-479e-8dec-d126a4c330e5
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7a8699a54814b37cc03404b72330812f3eb2b2f9
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

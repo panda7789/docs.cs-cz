@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugNativeFrame.GetLocalDoubleRegisterValue
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugNativeFrame::GetLocalDoubleRegisterValue
+api_name:
+- ICorDebugNativeFrame.GetLocalDoubleRegisterValue
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugNativeFrame::GetLocalDoubleRegisterValue
 helpviewer_keywords:
 - ICorDebugNativeFrame::GetLocalDoubleRegisterValue method [.NET Framework debugging]
 - GetLocalDoubleRegisterValue method [.NET Framework debugging]
 ms.assetid: 1f838215-ac8a-434f-8ce6-03021d3098d9
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ece07fcffbc0d0e6b8cf06cc04866c1b651e6a01
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugExceptionObjectValue.EnumerateExceptionCallStack
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugExceptionObjectValue::EnumerateExceptionCallStack
+api_name:
+- ICorDebugExceptionObjectValue.EnumerateExceptionCallStack
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugExceptionObjectValue::EnumerateExceptionCallStack
 helpviewer_keywords:
 - EnumerateExceptionCallStack method, ICorDebugExceptionObjectValue interface [.NET Framework debugging]
 - ICorDebugExceptionObjectValue::EnumerateExceptionCallStack method [.NET Framework debugging]
 ms.assetid: 00c64533-15dd-47f4-bb97-fe80a1ebadef
-topic_type: apiref
-caps.latest.revision: "3"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7453c6cc46ecbb063c7c3f99fc2aef85d1fdcba2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

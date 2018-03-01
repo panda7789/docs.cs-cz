@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugObjectValue.GetFieldValue
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugObjectValue::GetFieldValue
+api_name:
+- ICorDebugObjectValue.GetFieldValue
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugObjectValue::GetFieldValue
 helpviewer_keywords:
 - ICorDebugObjectValue::GetFieldValue method [.NET Framework debugging]
 - GetFieldValue method [.NET Framework debugging]
 ms.assetid: c96770b0-3e09-47bb-bd29-20353b043459
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9fcf53610cf96ef1ab62b4768521e8a2fb7ee6c4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

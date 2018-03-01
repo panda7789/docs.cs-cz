@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback3.CustomNotification Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback3::CustomNotification
+api_name:
+- ICorDebugManagedCallback3.CustomNotification Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback3::CustomNotification
 helpviewer_keywords:
 - ICorDebugManagedCallback3::CustomNotification method [.NET Framework debugging]
 - CustomNotification method [.NET Framework debugging]
 ms.assetid: 5e5422ac-afa1-403d-a894-2d7348673e38
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9c42443b0d1e355d4233909357c341763298160e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

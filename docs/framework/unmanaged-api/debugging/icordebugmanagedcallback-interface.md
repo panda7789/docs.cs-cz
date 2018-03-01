@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback
-helpviewer_keywords: ICorDebugManagedCallback interface [.NET Framework debugging]
+api_name:
+- ICorDebugManagedCallback
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback
+helpviewer_keywords:
+- ICorDebugManagedCallback interface [.NET Framework debugging]
 ms.assetid: b47f1d61-c7dc-4196-b926-0b08c94f7041
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fd864cbb5a95143f6dd7f55fc1b1fc57f9f42e98
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

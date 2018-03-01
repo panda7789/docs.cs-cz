@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedReader.UpdateSymbolStore
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedReader::UpdateSymbolStore
+api_name:
+- ISymUnmanagedReader.UpdateSymbolStore
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedReader::UpdateSymbolStore
 helpviewer_keywords:
 - UpdateSymbolStore method [.NET Framework debugging]
 - ISymUnmanagedReader::UpdateSymbolStore method [.NET Framework debugging]
 ms.assetid: 4a17d723-86b9-4f27-bd0d-b70c3259011c
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 267037cbdf9e9bf45454bd8b584563ba1ecd847d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

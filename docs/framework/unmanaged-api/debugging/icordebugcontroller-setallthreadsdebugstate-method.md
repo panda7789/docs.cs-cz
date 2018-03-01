@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugController.SetAllThreadsDebugState
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugController::SetAllThreadsDebugState
+api_name:
+- ICorDebugController.SetAllThreadsDebugState
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugController::SetAllThreadsDebugState
 helpviewer_keywords:
 - SetAllThreadsDebugState method [.NET Framework debugging]
 - ICorDebugController::SetAllThreadsDebugState method [.NET Framework debugging]
 ms.assetid: bdda4bd7-4743-4d58-a22b-8067e967db95
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b8c9904c3c86e405660dcafe9963fe05049524b4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

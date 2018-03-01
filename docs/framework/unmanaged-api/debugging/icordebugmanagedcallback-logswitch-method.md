@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback.LogSwitch
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback::LogSwitch
+api_name:
+- ICorDebugManagedCallback.LogSwitch
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback::LogSwitch
 helpviewer_keywords:
 - LogSwitch method [.NET Framework debugging]
 - ICorDebugManagedCallback::LogSwitch method [.NET Framework debugging]
 ms.assetid: 0ac59d27-783f-4a87-b7a8-baa3ccc54582
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: beb4dc25d634f64d8740005abf83e51ec1e3e731
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

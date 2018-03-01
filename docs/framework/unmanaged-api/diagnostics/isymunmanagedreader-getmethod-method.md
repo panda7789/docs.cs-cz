@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedReader.GetMethod
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedReader::GetMethod
+api_name:
+- ISymUnmanagedReader.GetMethod
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedReader::GetMethod
 helpviewer_keywords:
 - GetMethod method, ISymUnmanagedReader interface [.NET Framework debugging]
 - ISymUnmanagedReader::GetMethod method [.NET Framework debugging]
 ms.assetid: ae6cfb29-bc2c-4606-af86-1d32ebd31020
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7af3f56bc258ba48abba5cba4230de3ca6904ec0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

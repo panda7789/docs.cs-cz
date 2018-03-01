@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess.SetThreadContext
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess::SetThreadContext
+api_name:
+- ICorDebugProcess.SetThreadContext
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess::SetThreadContext
 helpviewer_keywords:
 - ICorDebugProcess::SetThreadContext method [.NET Framework debugging]
 - SetThreadContext method, ICorDebugProcess interface [.NET Framework debugging]
 ms.assetid: a7b50175-2bf1-40be-8f65-64aec7aa1247
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a7d40d455ea17b8df2acd77a1222ac6b080116c6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback2.FunctionRemapComplete
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback2::FunctionRemapComplete
+api_name:
+- ICorDebugManagedCallback2.FunctionRemapComplete
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback2::FunctionRemapComplete
 helpviewer_keywords:
 - FunctionRemapComplete method [.NET Framework debugging]
 - ICorDebugManagedCallback2::FunctionRemapComplete method [.NET Framework debugging]
 ms.assetid: 5396c4c3-4ec3-4e3a-a38d-d65b21f0a2fc
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 52c7ead9091754d4355880befe6a8a11b3cc5eaf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

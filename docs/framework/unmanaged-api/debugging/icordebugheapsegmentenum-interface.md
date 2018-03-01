@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugHealRegionEnum
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugHeapSegmentEnum
-helpviewer_keywords: ICorDebugHeapSegmentEnum interface [.NET Framework debugging]
+api_name:
+- ICorDebugHealRegionEnum
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugHeapSegmentEnum
+helpviewer_keywords:
+- ICorDebugHeapSegmentEnum interface [.NET Framework debugging]
 ms.assetid: 20fc1b9d-e228-4107-bd76-53934c1724b9
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b477631b5920401127d34b2304485bd32c3d78f5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

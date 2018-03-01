@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugBlockingObjectEnum.Next Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugBlockingObjectEnum::Next
+api_name:
+- ICorDebugBlockingObjectEnum.Next Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugBlockingObjectEnum::Next
 helpviewer_keywords:
 - Next method, ICorDebugBlockingObjectEnum interface [.NET Framework debugging]
 - ICorDebugBlockingObjectEnum::Next method [.NET Framework debugging]
 ms.assetid: 0121753f-ebea-48d0-aeb2-ed7fda76dc60
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3f2e2168ea1b03e5a2339baf019da59f1e83a71a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

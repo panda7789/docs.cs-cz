@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugNativeFrame.GetLocalMemoryRegisterValue
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugNativeFrame::GetLocalMemoryRegisterValue
+api_name:
+- ICorDebugNativeFrame.GetLocalMemoryRegisterValue
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugNativeFrame::GetLocalMemoryRegisterValue
 helpviewer_keywords:
 - ICorDebugNativeFrame::GetLocalMemoryRegisterValue method [.NET Framework debugging]
 - GetLocalMemoryRegisterValue method
 ms.assetid: 33a19f6e-1029-4d53-af64-19591c6e58ee
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 19b3a184272af06e465257d317ab32f5a9c3686a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

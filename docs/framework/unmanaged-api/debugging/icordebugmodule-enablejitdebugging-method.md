@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugModule.EnableJITDebugging
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugModule::EnableJITDebugging
+api_name:
+- ICorDebugModule.EnableJITDebugging
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugModule::EnableJITDebugging
 helpviewer_keywords:
 - ICorDebugModule::EnableJITDebugging method [.NET Framework debugging]
 - EnableJITDebugging method [.NET Framework debugging]
 ms.assetid: 0a65e2a4-5bb6-496c-ae6f-40474426b5a6
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7a699f32d8ec4b2418c6af815c22f35470bede3d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

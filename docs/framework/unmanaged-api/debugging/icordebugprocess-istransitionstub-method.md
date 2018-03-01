@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess.IsTransitionStub
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess::IsTransitionStub
+api_name:
+- ICorDebugProcess.IsTransitionStub
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess::IsTransitionStub
 helpviewer_keywords:
 - ICorDebugProcess::IsTransitionStub method [.NET Framework debugging]
 - IsTransitionStub method [.NET Framework debugging]
 ms.assetid: f7653317-7e48-4163-be03-f50f1a4b0f70
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9fe38cf5f53c2514b845238c1d52fa12df526fdd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

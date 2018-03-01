@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorPublishProcess.GetProcessID
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorPublishProcess::GetProcessID
+api_name:
+- ICorPublishProcess.GetProcessID
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorPublishProcess::GetProcessID
 helpviewer_keywords:
 - ICorPublishProcess::GetProcessID method [.NET Framework debugging]
 - GetProcessID method [.NET Framework debugging]
 ms.assetid: f31185e0-f01d-463a-b392-42163e39bfe9
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a048255e075b01f4c3c7635038b22ab581032524
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

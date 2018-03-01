@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedMethod
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedMethod
-helpviewer_keywords: ISymUnmanagedMethod interface [.NET Framework debugging]
+api_name:
+- ISymUnmanagedMethod
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedMethod
+helpviewer_keywords:
+- ISymUnmanagedMethod interface [.NET Framework debugging]
 ms.assetid: f204d74c-cc79-4092-83bb-60654be95649
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b6305625c3d02dbd126a284287e19b319e21eeba
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

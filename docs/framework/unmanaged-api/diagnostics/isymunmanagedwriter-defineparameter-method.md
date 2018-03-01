@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedWriter.DefineParameter
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedWriter::DefineParameter
+api_name:
+- ISymUnmanagedWriter.DefineParameter
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedWriter::DefineParameter
 helpviewer_keywords:
 - DefineParameter method [.NET Framework debugging]
 - ISymUnmanagedWriter::DefineParameter method [.NET Framework debugging]
 ms.assetid: a8e3dd32-6a44-4371-9a74-f417b11998c8
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7fe62a8f6b48d1a9931cc0310811d7fc42f7029b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

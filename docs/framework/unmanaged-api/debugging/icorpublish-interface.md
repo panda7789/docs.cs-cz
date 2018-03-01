@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorPublish
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorPublish
-helpviewer_keywords: ICorPublish interface [.NET Framework debugging]
+api_name:
+- ICorPublish
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorPublish
+helpviewer_keywords:
+- ICorPublish interface [.NET Framework debugging]
 ms.assetid: 87c4fcb2-7703-4a2e-afb6-42973381b960
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7769d26d65a97ea8d1b109e0098eae7e7d51ed10
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

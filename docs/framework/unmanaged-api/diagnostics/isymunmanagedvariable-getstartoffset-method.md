@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedVariable.GetStartOffset
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedVariable::GetStartOffset
+api_name:
+- ISymUnmanagedVariable.GetStartOffset
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedVariable::GetStartOffset
 helpviewer_keywords:
 - GetStartOffset method, ISymUnmanagedVariable interface [.NET Framework debugging]
 - ISymUnmanagedVariable::GetStartOffset method [.NET Framework debugging]
 ms.assetid: 63021fc1-9c2d-4788-811f-fe8ca077206a
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b3fa0c710eb5de8b9a92970002336de22adb2458
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

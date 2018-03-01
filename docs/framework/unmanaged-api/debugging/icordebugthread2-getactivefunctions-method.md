@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugThread2.GetActiveFunctions
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugThread2::GetActiveFunctions
+api_name:
+- ICorDebugThread2.GetActiveFunctions
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugThread2::GetActiveFunctions
 helpviewer_keywords:
 - GetActiveFunctions method [.NET Framework debugging]
 - ICorDebugThread2::GetActiveFunctions method [.NET Framework debugging]
 ms.assetid: 27fae01a-ecec-423a-973e-24f8de55826c
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ecd9446f642011b21f784019f583f49e3a70433a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

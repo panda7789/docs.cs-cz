@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-api_name: ICorDebugType2.GetTypeID
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugType::GetTypeID
+api_name:
+- ICorDebugType2.GetTypeID
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugType::GetTypeID
 helpviewer_keywords:
 - GetTypeID method, ICorDebugType2 interface [.NET Framework debugging]
 - ICorDebugType2.GetTypeID method [.NET Framework debugging]
 ms.assetid: 0b933686-226e-4373-92b7-fac579ee7b1a
-topic_type: apiref
-caps.latest.revision: "4"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d18aa8210ea90736c0757e2587aab4ff143dcdad
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICorDebugFunction3.GetActiveReJitRequestILCode
-api_location: mscordbi.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ICorDebugFunction3.GetActiveReJitRequestILCode
+api_location:
+- mscordbi.dll
+api_type:
+- COM
 ms.assetid: 88584574-ade5-45b2-9778-489ed5c4dd7f
-topic_type: apiref
-caps.latest.revision: "4"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ae041a9a5973194398bbfed41771396b305f52fd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess5.GetArrayLayout
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess5::GetArrayLayout
+api_name:
+- ICorDebugProcess5.GetArrayLayout
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess5::GetArrayLayout
 helpviewer_keywords:
 - ICorDebugProcess5::GetArrayLayout method [.NET Framework debugging]
 - GetArrayLayout method, ICorDebugProcess5 interface [.NET Framework debugging]
 ms.assetid: 9a7393b9-9735-43c6-8616-afb103c432fd
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 608cf003d71599a141b1009ef16c7b7bf89161aa
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

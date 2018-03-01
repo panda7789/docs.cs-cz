@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugThread.GetHandle
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugThread::GetHandle
+api_name:
+- ICorDebugThread.GetHandle
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugThread::GetHandle
 helpviewer_keywords:
 - GetHandle method, ICorDebugThread interface [.NET Framework debugging]
 - ICorDebugThread::GetHandle method [.NET Framework debugging]
 ms.assetid: 172ef8c4-2ead-4cfc-bd2e-dee4fb7191cd
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c7a932d04fef438e19176af565c92e0673339e02
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

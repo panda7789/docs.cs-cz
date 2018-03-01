@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugDataTarget.GetPlatform Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugDataTarget::GetPlatform
+api_name:
+- ICorDebugDataTarget.GetPlatform Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugDataTarget::GetPlatform
 helpviewer_keywords:
 - GetPlatform method [.NET Framework debugging]
 - ICorDebugDataTarget::GetPlatform method [.NET Framework debugging]
 ms.assetid: 9ee96c9d-7a3d-4129-a6cc-7675c7f2dda4
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c19e472ef571def1011d2a00701fea3a6fadfea8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

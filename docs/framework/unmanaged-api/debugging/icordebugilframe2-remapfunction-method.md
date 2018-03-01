@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugILFrame2.RemapFunction
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugILFrame2::RemapFunction
+api_name:
+- ICorDebugILFrame2.RemapFunction
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugILFrame2::RemapFunction
 helpviewer_keywords:
 - ICorDebugILFrame2::RemapFunction method [.NET Framework debugging]
 - RemapFunction method [.NET Framework debugging]
 ms.assetid: dd639ba0-f77b-426d-9ff6-f92706840348
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a9fed4759576d1b6d2fec1a5e9c1e36019e5944c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

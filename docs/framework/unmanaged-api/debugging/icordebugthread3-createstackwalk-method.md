@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugThread3.CreateStackWalk Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugThread3::CreateStackWalk
+api_name:
+- ICorDebugThread3.CreateStackWalk Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugThread3::CreateStackWalk
 helpviewer_keywords:
 - CreateStackWalk method [.NET Framework debugging]
 - ICorDebugThread3::CreateStackWalk method [.NET Framework debugging]
 ms.assetid: c55e35d9-f9aa-4268-94b5-dce44c61acf2
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d3b587a69c7acc3115c282eac065d304dc892b80
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

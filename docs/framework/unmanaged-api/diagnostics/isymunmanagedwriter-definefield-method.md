@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedWriter.DefineField
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedWriter::DefineField
+api_name:
+- ISymUnmanagedWriter.DefineField
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedWriter::DefineField
 helpviewer_keywords:
 - ISymUnmanagedWriter::DefineField method [.NET Framework debugging]
 - DefineField method, ISymUnmanagedWriter interface [.NET Framework debugging]
 ms.assetid: c6a1f797-dbf4-40f5-ab99-d9b4bfb26148
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 51adddc6a8e58846ebefe3c130adaa670c8351e7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDataTarget.GetThreadContext
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICLRDataTarget::GetThreadContext
+api_name:
+- ICLRDataTarget.GetThreadContext
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDataTarget::GetThreadContext
 helpviewer_keywords:
 - ICLRDataTarget::GetThreadContext method [.NET Framework debugging]
 - GetThreadContext method, ICLRDataTarget interface [.NET Framework debugging]
 ms.assetid: b9d8c3b5-3a2e-4225-95d4-dd052c4532c3
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5b03af2f1b1fb851ebc08c23827f59eed9153f19
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

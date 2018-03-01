@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugRemote.DebugActiveProcessEx
-api_location: CorDebug.dll
-api_type: COM
-f1_keywords: ICorDebugRemoteTarget::DebugActiveProcessEx
+api_name:
+- ICorDebugRemote.DebugActiveProcessEx
+api_location:
+- CorDebug.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugRemoteTarget::DebugActiveProcessEx
 helpviewer_keywords:
 - ICorDebugRemote::DebugActiveProcessEx method [.NET Framework debugging]
 - DebugActiveProcessEx method, ICorDebugRemote interface [.NET Framework debugging]
 ms.assetid: b0df5c5d-9a2e-47bf-894c-6f8a9fe24a1f
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 09bc98b477231eb1466300451585f4569aff222c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

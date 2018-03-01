@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugController.Terminate
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugController::Terminate
+api_name:
+- ICorDebugController.Terminate
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugController::Terminate
 helpviewer_keywords:
 - Terminate method, ICorDebugController interface [.NET Framework debugging]
 - ICorDebugController::Terminate method [.NET Framework debugging]
 ms.assetid: 4275af0c-b5a7-4e4c-97c9-7e41f36b2dd8
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2e7647df7a67d8357e72f8f41b0b3f586675aaac
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

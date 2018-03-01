@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedScope.GetChildren
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedScope::GetChildren
+api_name:
+- ISymUnmanagedScope.GetChildren
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedScope::GetChildren
 helpviewer_keywords:
 - ISymUnmanagedScope::GetChildren method [.NET Framework debugging]
 - GetChildren method [.NET Framework debugging]
 ms.assetid: 0bed524e-cc48-4bf0-b9fa-25d665e63ddb
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2259eccc3be68f562a0c5b00ffe7fd47bad9a238
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

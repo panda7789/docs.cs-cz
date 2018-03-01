@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedConstant.GetName
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedConstant::GetName
+api_name:
+- ISymUnmanagedConstant.GetName
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedConstant::GetName
 helpviewer_keywords:
 - ISymUnmanagedConstant::GetName method [.NET Framework debugging]
 - GetName method, ISymUnmanagedConstant interface [.NET Framework debugging]
 ms.assetid: cbaca4e1-4473-459b-ba34-f1f59ce7c0ba
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d312329a2e59376c94937cf3d9bc08a8e6e0e862
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

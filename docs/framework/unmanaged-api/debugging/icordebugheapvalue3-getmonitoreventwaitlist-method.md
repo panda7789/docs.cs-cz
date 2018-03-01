@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugHeapValue3.GetMonitorEventWaitList
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugHeapValue3::GetMonitorEventWaitList
+api_name:
+- ICorDebugHeapValue3.GetMonitorEventWaitList
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugHeapValue3::GetMonitorEventWaitList
 helpviewer_keywords:
 - ICorDebugHeapValue3::GetMonitorEventWaitList method [.NET Framework debugging]
 - GetMonitorEventWaitList method [.NET Framework debugging]
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a4112188ff069184cab998f5bbd0fc70d1ce7dc9
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

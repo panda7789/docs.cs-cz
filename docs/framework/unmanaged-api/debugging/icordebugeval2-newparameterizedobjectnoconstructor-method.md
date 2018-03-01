@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugEval2.NewParameterizedObjectNoConstructor
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugEval2::NewParameterizedObjectNoConstructor
+api_name:
+- ICorDebugEval2.NewParameterizedObjectNoConstructor
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugEval2::NewParameterizedObjectNoConstructor
 helpviewer_keywords:
 - NewParameterizedObjectNoConstructor method [.NET Framework debugging]
 - ICorDebugEval2::NewParameterizedObjectNoConstructor method [.NET Framework debugging]
 ms.assetid: f15b5b78-94f4-4eb9-b3b3-a621272f357c
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 27e4693b39f9ce27ac18eb2fa542b5a0196f21cb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

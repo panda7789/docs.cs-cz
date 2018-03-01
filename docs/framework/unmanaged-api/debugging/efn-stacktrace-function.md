@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: _EFN_StackTrace
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: _EFN_StackTrace
-helpviewer_keywords: _EFN_StackTrace function [.NET Framework debugging]
+api_name:
+- _EFN_StackTrace
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- _EFN_StackTrace
+helpviewer_keywords:
+- _EFN_StackTrace function [.NET Framework debugging]
 ms.assetid: caea7754-867c-4360-a65c-5ced4408fd9d
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 905a44ee3187bc920d9342b043383a1500c28985
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess5.EnumerateHeapRegions
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess5::EnumerateHeapRegions
+api_name:
+- ICorDebugProcess5.EnumerateHeapRegions
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess5::EnumerateHeapRegions
 helpviewer_keywords:
 - EnumerateHeapRegions method, ICorDebugProcess5 interface [.NET Framework debugging]
 - ICorDebugProcess5::EnumerateHeapRegions method [.NET Framework debugging]
 ms.assetid: b1edba68-9c36-4f69-be9f-678ce0b33480
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 478a8490e57946a08670d9f86e1f6ebcc67703a6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

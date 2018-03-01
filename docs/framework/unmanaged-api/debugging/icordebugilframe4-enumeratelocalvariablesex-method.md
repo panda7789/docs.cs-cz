@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICorDebugILFrame4.EnumerateLocalVariablesEx
-api_location: mscordbi.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ICorDebugILFrame4.EnumerateLocalVariablesEx
+api_location:
+- mscordbi.dll
+api_type:
+- COM
 ms.assetid: 6f60aae6-70ec-4c4c-963a-138df98c4668
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c82ecd9045deb772e31e549bf1050f85b148fd0b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

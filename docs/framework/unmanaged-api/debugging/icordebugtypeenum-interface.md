@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugTypeEnum
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugTypeEnum
-helpviewer_keywords: ICorDebugTypeEnum interface [.NET Framework debugging]
+api_name:
+- ICorDebugTypeEnum
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugTypeEnum
+helpviewer_keywords:
+- ICorDebugTypeEnum interface [.NET Framework debugging]
 ms.assetid: 159ccfcf-b37c-4ad9-8e0d-a9a443262472
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f61477d1580d9609b021f98c6662c8f1cad8541c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

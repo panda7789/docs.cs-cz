@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess5.EnumerateHandles
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess5::EnumerateHandles
+api_name:
+- ICorDebugProcess5.EnumerateHandles
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess5::EnumerateHandles
 helpviewer_keywords:
 - EnumerateHandles method, ICorDebugProcess5 interface [.NET Framework debugging]
 - ICorDebugProcess5::EnumerateHandles method [.NET Framework debugging]
 ms.assetid: 7d7fa796-0dc6-4ee8-9d56-40166246d91d
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c9bf9f1a4d565e0af4f3ee34a2805116407027d8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

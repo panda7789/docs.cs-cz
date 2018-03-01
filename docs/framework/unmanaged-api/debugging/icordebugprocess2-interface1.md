@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess2
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess2
-helpviewer_keywords: ICorDebugProcess2 interface [.NET Framework debugging]
+api_name:
+- ICorDebugProcess2
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess2
+helpviewer_keywords:
+- ICorDebugProcess2 interface [.NET Framework debugging]
 ms.assetid: 73332138-5fea-441f-b893-61af87d45a42
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 80f6c35ba2ef2ec74293d0f025ddf20254f504a1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

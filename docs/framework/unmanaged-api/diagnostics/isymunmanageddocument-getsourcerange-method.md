@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedDocument.GetSourceRange
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedDocument::GetSourceRange
+api_name:
+- ISymUnmanagedDocument.GetSourceRange
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedDocument::GetSourceRange
 helpviewer_keywords:
 - ISymUnmanagedDocument::GetSourceRange method [.NET Framework debugging]
 - GetSourceRange method [.NET Framework debugging]
 ms.assetid: 20fefee7-1040-41ba-93dc-bd42f68b90c2
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dcddebbca74bb94bd2411038a02b900b2f64f2d5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
