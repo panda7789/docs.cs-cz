@@ -2,14 +2,16 @@
 title: On (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.on
 - vb.QueryOn
-helpviewer_keywords: On keyword [Visual Basic]
+helpviewer_keywords:
+- On keyword [Visual Basic]
 ms.assetid: 8619c328-1637-4f41-b466-cbe693f4fe73
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 83d6664a098b06cc669dc1930ff6fe5fa1f78f69

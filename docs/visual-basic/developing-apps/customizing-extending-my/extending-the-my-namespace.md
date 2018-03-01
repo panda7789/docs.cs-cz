@@ -2,15 +2,17 @@
 title: "Rozšíření oboru názvů My v jazyce Visual Basic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.AddingMyExtensions
+f1_keywords:
+- vb.AddingMyExtensions
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 808e8617-b01c-4135-8b21-babe87389e8e
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 25fff04b19cce299a2d437e662fb7481153d29da

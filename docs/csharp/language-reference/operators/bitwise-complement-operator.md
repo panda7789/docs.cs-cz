@@ -2,16 +2,18 @@
 title: "~ – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: ~_CSharpKeyword
+f1_keywords:
+- ~_CSharpKeyword
 helpviewer_keywords:
 - tilde (~) one's complement operator [C#]
 - ~ operator [C#]
 - ~ [C#], bitwise complement operator
 - bitwise complement operator [C#]
 ms.assetid: 11bc078a-50e2-4d7e-9896-67ef669dc602
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a9b0cabcb101fce8422b1390ec8c4cb3b3849631

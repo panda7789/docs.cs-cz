@@ -2,11 +2,13 @@
 title: "Funkce ještě nebyla implementována"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID32768
+f1_keywords:
+- vbrID32768
 ms.assetid: 487361ea-7158-479f-ad25-9e7c9b5ea3a6
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 82b1c5e5c19bc1835f2232c31f704a193cf0f118

@@ -2,14 +2,16 @@
 title: "unchecked (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - unchecked_CSharpKeyword
 - unchecked
-helpviewer_keywords: unchecked keyword [C#]
+helpviewer_keywords:
+- unchecked keyword [C#]
 ms.assetid: 0c021f7c-923f-4b3d-a58f-55336f5ac27e
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c05e7cb742d8e8f5a7804656a5ec13548d0498b1

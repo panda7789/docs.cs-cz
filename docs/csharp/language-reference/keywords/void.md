@@ -2,14 +2,16 @@
 title: "void (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - void_CSharpKeyword
 - void
-helpviewer_keywords: void keyword [C#]
+helpviewer_keywords:
+- void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a71cac30132417abce60cdde54322b5f2067d39d

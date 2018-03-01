@@ -4,12 +4,15 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.In
-helpviewer_keywords: In keyword [Visual Basic]
+f1_keywords:
+- vb.In
+helpviewer_keywords:
+- In keyword [Visual Basic]
 ms.assetid: 2f003a85-8fb6-4280-822b-6ac12839b915
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 347c1268ccb29238a0845b57d5d0f88f1ca27d59

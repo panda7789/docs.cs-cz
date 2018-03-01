@@ -4,11 +4,13 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID76
+f1_keywords:
+- vbrID76
 ms.assetid: 644c45d5-4ffa-47e2-96db-6c4d2d5ae815
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 29d0bd8374c60094a1dae7201c8a17f719e45e1d

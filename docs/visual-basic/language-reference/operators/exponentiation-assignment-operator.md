@@ -4,16 +4,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.^=
+f1_keywords:
+- vb.^=
 helpviewer_keywords:
 - assignment statements [Visual Basic], compound
 - statements [Visual Basic], compound assignment
 - ^= operator [Visual Basic]
 - compound assignment statements [Visual Basic]
 ms.assetid: 397da132-2d96-4a85-a7bc-f7c730a608c9
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: fa9d87d2f090a8c18aaab742e73878c7b80f55c0

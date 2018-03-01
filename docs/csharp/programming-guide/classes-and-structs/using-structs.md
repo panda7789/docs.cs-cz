@@ -2,11 +2,13 @@
 title: "Použití struktur (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: structs [C#], using
+helpviewer_keywords:
+- structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 94181c42ce913dc76c9a074e4bcbb8240764c896

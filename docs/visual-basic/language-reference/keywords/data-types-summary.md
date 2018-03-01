@@ -3,11 +3,13 @@ title: "Souhrn datových typů (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: data types [Visual Basic], Visual Basic
+helpviewer_keywords:
+- data types [Visual Basic], Visual Basic
 ms.assetid: 4ea2ef2a-3d4d-42d9-9f8f-173a37c96e53
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 921d9bfc5fd75ab7d82a8c0663fdb2ded9cfbbed

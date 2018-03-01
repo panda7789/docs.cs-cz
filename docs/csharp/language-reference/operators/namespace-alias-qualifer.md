@@ -2,15 +2,17 @@
 title: ":: – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: ::_CSharpKeyword
+f1_keywords:
+- ::_CSharpKeyword
 helpviewer_keywords:
 - ':: operator [C#]'
 - 'namespaces [C#], :: operator'
 - namespace alias qualifier operator (::) [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6b4f1683e1250ed745e15ced88203ca942c75ff8

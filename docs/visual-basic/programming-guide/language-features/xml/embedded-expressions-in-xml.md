@@ -5,16 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vb.XmlEmbeddedExpression
+f1_keywords:
+- vb.XmlEmbeddedExpression
 helpviewer_keywords:
 - embedded expressions [Visual Basic]
 - LINQ to XML [Visual Basic], embedded expressions
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: b1cdba0a39a932f143ac98c2514240e1696a8fe0

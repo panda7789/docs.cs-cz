@@ -2,14 +2,16 @@
 title: "&gt;&gt;= – Operátor (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '>>=_CSharpKeyword'
+f1_keywords:
+- '>>=_CSharpKeyword'
 helpviewer_keywords:
 - right shift assignment operator (>>=) [C#]
 - '>>= operator (right-shift assignment) [C#]'
 ms.assetid: b593778c-b9b4-440d-8b29-c1ac22cb81c0
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6bd0a61860c35a485d61585a90ba297f75d8cf1a

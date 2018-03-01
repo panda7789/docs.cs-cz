@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"define-c-reference\"></a>definování (referenční dokumentace jazyka C#)"
+title: "#definování (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#define'
-helpviewer_keywords: '#define directive [C#]'
+f1_keywords:
+- '#define'
+helpviewer_keywords:
+- '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: ae72a1b6c19421c51348a0d93691ba3fe29a191c

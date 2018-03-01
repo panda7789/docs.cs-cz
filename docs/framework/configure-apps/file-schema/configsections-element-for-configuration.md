@@ -2,9 +2,11 @@
 title: '&lt;configSections&gt; element pro &lt;konfigurace&gt;'
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections
 helpviewer_keywords:
 - configSections Element
 - <configSections> Element
@@ -12,7 +14,8 @@ ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 145a2a5cc23758c9fd2211c2da7fee0bbd736f0f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -2,16 +2,18 @@
 title: "&amp;Operátor (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '&_CSharpKeyword'
+f1_keywords:
+- '&_CSharpKeyword'
 helpviewer_keywords:
 - bitwise AND operator [C#]
 - ampersand operator (&) [C#]
 - '& operator [C#]'
 - AND operator (&) [C#]
 ms.assetid: afa346d5-90ec-4b1f-a2c8-3881f018741d
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: eceee8e01ba46f65c6b182a40d14e62aaba5dd53

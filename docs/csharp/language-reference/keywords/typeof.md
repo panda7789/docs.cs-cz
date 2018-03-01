@@ -2,14 +2,16 @@
 title: "typeof (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - typeof
 - typeof_CSharpKeyword
-helpviewer_keywords: typeof keyword [C#]
+helpviewer_keywords:
+- typeof keyword [C#]
 ms.assetid: 0c08d880-515e-46bb-8cd2-48b8dd62c08d
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: be24740ea7f6fbe8780dd9cac58b7dea9aaf6872

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugArrayValue.GetDimensions
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugArrayValue::GetDimensions
+api_name:
+- ICorDebugArrayValue.GetDimensions
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugArrayValue::GetDimensions
 helpviewer_keywords:
 - ICorDebugArrayValue::GetDimensions method [.NET Framework debugging]
 - GetDimensions method [.NET Framework debugging]
 ms.assetid: 6c116592-134b-4ef2-a319-680e92d013aa
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1769969d411d66417d2b2df7ddc9f810bd7f48ad
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

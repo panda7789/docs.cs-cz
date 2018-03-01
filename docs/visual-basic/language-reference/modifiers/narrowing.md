@@ -3,9 +3,11 @@ title: Narrowing (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.narrowing
+f1_keywords:
+- vb.narrowing
 helpviewer_keywords:
 - conversions [Visual Basic], type
 - type conversion [Visual Basic]
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - Narrowing keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: a207ee91-aca4-4771-b4e2-713f029bf2bb
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 50116c6212e919d4b9b35fc933d80dee14bd4ecf

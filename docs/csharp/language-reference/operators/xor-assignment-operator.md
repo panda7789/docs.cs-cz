@@ -2,12 +2,15 @@
 title: "^= – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: ^=_CSharpKeyword
-helpviewer_keywords: ^= operator [C#]
+f1_keywords:
+- ^=_CSharpKeyword
+helpviewer_keywords:
+- ^= operator [C#]
 ms.assetid: 3658ff9a-61cd-467e-ad6b-8fbf1cfbaae4
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8d4de06dbfd269dc5e0f2cc5003e8981068220a1

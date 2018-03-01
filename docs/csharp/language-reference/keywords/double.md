@@ -2,14 +2,16 @@
 title: "double (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - double
 - double_CSharpKeyword
-helpviewer_keywords: double data type [C#]
+helpviewer_keywords:
+- double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 232dd97e152f943137604074f24b5de779168e59

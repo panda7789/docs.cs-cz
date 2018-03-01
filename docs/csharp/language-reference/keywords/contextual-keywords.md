@@ -2,11 +2,13 @@
 title: "Kontextová klíčová slova (Referenční dokumentace jazyka C#)"
 ms.date: 03/07/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: contextual keywords [C#]
+helpviewer_keywords:
+- contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a6268e09b8063f95aa11fc1563f0b5b5d5d96a08

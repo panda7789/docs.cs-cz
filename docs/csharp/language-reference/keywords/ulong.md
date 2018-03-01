@@ -2,14 +2,16 @@
 title: "ulong (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - ulong_CSharpKeyword
 - ulong
-helpviewer_keywords: ulong keyword [C#]
+helpviewer_keywords:
+- ulong keyword [C#]
 ms.assetid: f2ece624-837a-40cf-92c5-343e7f33397c
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2058d9f6a228b13938fe08d7e2fb11e3b9f4600a

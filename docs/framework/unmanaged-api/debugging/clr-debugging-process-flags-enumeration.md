@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CLR_DEBUGGING_PROCESS_FLAGS
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: CLR_DEBUGGING_PROCESS_FLAG
-helpviewer_keywords: CLR_DEBUGGING_PROCESS_FLAGS enumeration [.NET Framework debugging]
+api_name:
+- CLR_DEBUGGING_PROCESS_FLAGS
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- CLR_DEBUGGING_PROCESS_FLAG
+helpviewer_keywords:
+- CLR_DEBUGGING_PROCESS_FLAGS enumeration [.NET Framework debugging]
 ms.assetid: 85b85fde-1f87-490b-ba8d-d604670959c3
-topic_type: apiref
-caps.latest.revision: "19"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4c6d66f9a11f28ca572e0f1eddc74f3a5197a19d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

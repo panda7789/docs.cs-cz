@@ -2,14 +2,16 @@
 title: "global (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - global
 - global_CSharpKeyword
-helpviewer_keywords: global keyword [C#]
+helpviewer_keywords:
+- global keyword [C#]
 ms.assetid: 8932c16a-6959-42c2-86e7-2c4221ab788b
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: ed2acc7384fbf3825a304888c58658d082858211

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: COR_IL_MAP
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: COR_IL_MAP
-helpviewer_keywords: COR_IL_MAP structure [.NET Framework debugging]
+api_name:
+- COR_IL_MAP
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- COR_IL_MAP
+helpviewer_keywords:
+- COR_IL_MAP structure [.NET Framework debugging]
 ms.assetid: 534ebc17-963d-4b26-8375-8cd940281db3
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2e2772833d75ced2209896ca37cf6cf37fb965f1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

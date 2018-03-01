@@ -2,11 +2,13 @@
 title: "Veřejné členy & č. 39; &lt;membername&gt;& č. 39; na typ & č. 39;&lt; TypeName&gt;& č. 39; nebyla nalezena"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrMissingMember_MemberNotFoundOnType2
+f1_keywords:
+- vbrMissingMember_MemberNotFoundOnType2
 ms.assetid: 6300feb8-78ac-4dd0-9653-1d03e1f5bc20
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ca0ac50c9834bcf051d4e0f15409dd26a99046ae

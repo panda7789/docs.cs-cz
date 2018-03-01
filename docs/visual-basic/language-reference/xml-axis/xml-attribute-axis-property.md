@@ -4,9 +4,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.XmlPropertyAttributeAxis
+f1_keywords:
+- vb.XmlPropertyAttributeAxis
 helpviewer_keywords:
 - attribute axis property [Visual Basic]
 - Visual Basic code, accessing XML
@@ -14,7 +16,7 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 7a4777e1-0618-4de9-9510-fb9ace2bf4db
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: a286c70f57128d0406b3a300610fea5e1c44b32d

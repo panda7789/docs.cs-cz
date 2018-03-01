@@ -3,9 +3,11 @@ title: "Rozšíření (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.widening
+f1_keywords:
+- vb.widening
 helpviewer_keywords:
 - conversions [Visual Basic], type
 - type conversion [Visual Basic]
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - Widening keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 034099397c1d296a42712b8c202e2ac99a0fb43b

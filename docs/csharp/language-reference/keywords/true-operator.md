@@ -2,11 +2,13 @@
 title: "true – – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: true operator [C#]
+helpviewer_keywords:
+- true operator [C#]
 ms.assetid: acaba817-5da5-4364-b3b2-2e5c75ec1839
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 96ab7679862959f3c99e31beac0bd5514228bd8d

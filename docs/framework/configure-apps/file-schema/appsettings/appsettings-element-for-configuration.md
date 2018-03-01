@@ -2,9 +2,11 @@
 title: '&lt;appSettings&gt; element pro &lt;konfigurace&gt;'
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings
 helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
@@ -12,7 +14,8 @@ ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cebb9ba7ebeb483233276324289a4ddc5a0bc381
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDataEnumMemoryRegionsCallback.EnumMemoryRegion
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion
+api_name:
+- ICLRDataEnumMemoryRegionsCallback.EnumMemoryRegion
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion
 helpviewer_keywords:
 - EnumMemoryRegion method [.NET Framework debugging]
 - ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion method [.NET Framework debugging]
 ms.assetid: 9bb93fab-57e8-4f9a-9ef3-1794504fa896
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1a284d7277aa2f8c474ca4aab3dd6208bc3b2bb0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

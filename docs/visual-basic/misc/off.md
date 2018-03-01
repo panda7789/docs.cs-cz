@@ -2,14 +2,16 @@
 title: Off (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - Off
 - vb.Off
-helpviewer_keywords: Off keyword [Visual Basic]
+helpviewer_keywords:
+- Off keyword [Visual Basic]
 ms.assetid: e0b5aa68-bde1-4cdd-b9e4-152798ae1b8b
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: cddbac85a54f000656a758468240ddfbaf5ebafd

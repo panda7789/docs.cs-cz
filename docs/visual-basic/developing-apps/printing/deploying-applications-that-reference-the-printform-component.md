@@ -3,11 +3,13 @@ title: "Nasazení aplikací odkazujících na součást PrintForm (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: PrintForm component [Visual Basic], deploying
+helpviewer_keywords:
+- PrintForm component [Visual Basic], deploying
 ms.assetid: b595ea44-a712-4625-a761-190c64f59bbe
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 15b6e21e769c90e23e66e4f87b37f74462423985

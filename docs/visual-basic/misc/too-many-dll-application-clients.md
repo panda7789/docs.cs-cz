@@ -2,11 +2,13 @@
 title: "Příliš mnoho klientů aplikace knihovny DLL"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID47
+f1_keywords:
+- vbrID47
 ms.assetid: 4b87780b-67ad-4c96-9253-db954a751dad
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d4b9278134e937ac8bf4626237954432d727ac0d

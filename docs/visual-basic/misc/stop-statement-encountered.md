@@ -2,11 +2,13 @@
 title: "Byl zjištěn příkaz Stop"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID999
+f1_keywords:
+- vbrID999
 ms.assetid: 4ef7216c-761a-41dc-a20c-ba133f4f1d18
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 740382c4317287696c96c01e20c590a4910d8e0a

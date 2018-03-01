@@ -2,14 +2,16 @@
 title: "break (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - break
 - break_CSharpKeyword
-helpviewer_keywords: break keyword [C#]
+helpviewer_keywords:
+- break keyword [C#]
 ms.assetid: be2571ed-efb0-4965-b122-81e5b09db0b9
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b533d325be41683ed6f56e9e63b3c11ddde9cb17

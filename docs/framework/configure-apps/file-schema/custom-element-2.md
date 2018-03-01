@@ -2,15 +2,19 @@
 title: "Vlastní element NameValueSectionHandler a DictionarySectionHandler"
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
-helpviewer_keywords: custom element
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
+helpviewer_keywords:
+- custom element
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2154e2a178050e5bafa7d19f37a766141d0a5838
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

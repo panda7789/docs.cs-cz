@@ -2,12 +2,15 @@
 title: "remove (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: remove_CSharpKeyword
-helpviewer_keywords: remove event accessor [C#]
+f1_keywords:
+- remove_CSharpKeyword
+helpviewer_keywords:
+- remove event accessor [C#]
 ms.assetid: c8223426-c17b-4fe2-8406-01564cf1dd2b
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 66647dee0c4cc728ae5e19457a4a5ef0e7f72248

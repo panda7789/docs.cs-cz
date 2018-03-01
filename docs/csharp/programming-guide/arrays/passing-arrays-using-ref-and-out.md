@@ -2,11 +2,13 @@
 title: "Předávání polí pomocí parametrů ref a out (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: arrays [C#], passing using ref and out
+helpviewer_keywords:
+- arrays [C#], passing using ref and out
 ms.assetid: 6a2b261e-a1cc-49a6-b4f0-6cacae385a1e
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7f2d4e613491b26e82523d230398af3ec34b4d0c

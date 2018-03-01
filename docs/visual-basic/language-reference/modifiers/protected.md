@@ -3,9 +3,11 @@ title: Protected (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Protected
+f1_keywords:
+- vb.Protected
 helpviewer_keywords:
 - Protected Friend keyword combination
 - Protected keyword [Visual Basic], and Friend
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - Protected access modifier
 - Protected keyword [Visual Basic]
 ms.assetid: 74ad3d56-309f-49d2-b60c-1d0157d010e8
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2d0cc7a0cb626a9ec8e2a0e47abc02e5268aed56

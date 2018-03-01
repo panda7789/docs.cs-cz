@@ -2,11 +2,13 @@
 title: "Postupy: Přístup k elementu pole pomocí ukazatele (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: pointers [C#], array access
+helpviewer_keywords:
+- pointers [C#], array access
 ms.assetid: 6c46f2af-a730-4855-8638-f136d9abaa12
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 737c1d7fc0bc0a739de5c0a6cbc5dc09f813133e

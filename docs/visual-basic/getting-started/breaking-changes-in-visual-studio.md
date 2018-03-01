@@ -2,11 +2,13 @@
 title: "Nejnovější změny v sadě Visual Studio jazyka Visual Basic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: breaking changes [Visual Basic]
+helpviewer_keywords:
+- breaking changes [Visual Basic]
 ms.assetid: 708fb176-35eb-4cbc-a6e7-a04c6e3bdaff
-caps.latest.revision: "49"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 37c4911b7679d24b23a339b392061923527840e2

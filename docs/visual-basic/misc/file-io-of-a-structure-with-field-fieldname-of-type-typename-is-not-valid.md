@@ -2,11 +2,13 @@
 title: "Vstupně-výstupní struktury s pole & č. 39; &lt;název pole&gt;& č. 39; typ & č. 39;&lt; TypeName&gt;& č. 39; není platný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_UnsupportedFieldType2
+f1_keywords:
+- vbrArgument_UnsupportedFieldType2
 ms.assetid: 028e936f-6210-4290-adb2-46298e13e160
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d9e01ae8be48702f4f2e399ec6c811f30f1f6a19

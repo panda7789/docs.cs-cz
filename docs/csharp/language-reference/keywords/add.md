@@ -2,12 +2,15 @@
 title: "add (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: add_CSharpKeyword
-helpviewer_keywords: add event accessor [C#]
+f1_keywords:
+- add_CSharpKeyword
+helpviewer_keywords:
+- add event accessor [C#]
 ms.assetid: faf30b99-10e8-45cd-ab9a-57585d4d1d8d
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cab77ad5a990cf85075455e347a4b1c02645af37

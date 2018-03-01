@@ -2,11 +2,13 @@
 title: "Nesprávný počet argumentů nebo přiřazení vlastnosti není platná"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID450
+f1_keywords:
+- vbrID450
 ms.assetid: 61700dd4-ebd0-4088-b439-2cd1ef9fc8f4
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 63c1875ac17f44ea4f277a7a0398c472be42870b

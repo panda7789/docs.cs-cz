@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugAppDomain2
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugAppDomain2
-helpviewer_keywords: ICorDebugAppDomain2 interface [.NET Framework debugging]
+api_name:
+- ICorDebugAppDomain2
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugAppDomain2
+helpviewer_keywords:
+- ICorDebugAppDomain2 interface [.NET Framework debugging]
 ms.assetid: 314d29f3-feb0-4a92-9530-b569c280cc31
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c811107fcf32696aee17810af06ac0b2ddc9102d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

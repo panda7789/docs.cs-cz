@@ -7,15 +7,19 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build
-api_location: Microsoft.VisualStudio.Activities.dll
-api_type: Assembly
+api_name:
+- Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build
+api_location:
+- Microsoft.VisualStudio.Activities.dll
+api_type:
+- Assembly
 ms.assetid: d83033b0-a4cb-4d40-835e-5c1a176cde5b
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ffe51e94c9c968679f2cc3a5522eaf3c7f7b3c54
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

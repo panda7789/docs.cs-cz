@@ -2,15 +2,17 @@
 title: "|| – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '||_CSharpKeyword'
+f1_keywords:
+- '||_CSharpKeyword'
 helpviewer_keywords:
 - logical OR operator [C#]
 - conditional-OR operator (||) [C#]
 - '|| operator [C#]'
 ms.assetid: 7d442d8e-400d-421f-b4d2-034bf82bcbdc
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7b95fd162c9a89789e1970b32473c8acf16ba5cf

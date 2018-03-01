@@ -2,11 +2,13 @@
 title: "Postupy: Zachycení výjimky nekompatibilní se specifikací CLS"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: exceptions [C#], non-CLS
+helpviewer_keywords:
+- exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 473cace033983915c66647d14cae16dc7f5d5b9d

@@ -2,14 +2,16 @@
 title: "uint (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - uint
 - uint_CSharpKeyword
-helpviewer_keywords: uint keyword [C#]
+helpviewer_keywords:
+- uint keyword [C#]
 ms.assetid: e93e42c6-ec72-4b0b-89df-2fd8d36f7a7b
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d32f7146d1f9e13d8cf0f275f4fd78b693b09d31

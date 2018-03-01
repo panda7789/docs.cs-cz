@@ -2,15 +2,17 @@
 title: "| – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '|_CSharpKeyword'
+f1_keywords:
+- '|_CSharpKeyword'
 helpviewer_keywords:
 - bitwise OR operator [C#]
 - '| operator [C#]'
 - binary operator (|) [C#]
 ms.assetid: 82d6bb78-54c8-40bf-b679-531180ddaf70
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 374adc30e6937a68d67bfae152f2546c854b829b

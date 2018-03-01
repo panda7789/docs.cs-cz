@@ -2,11 +2,13 @@
 title: "Nastavení není povoleno."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID387
+f1_keywords:
+- vbrID387
 ms.assetid: 809f6768-7dd7-4632-b4dd-83856edfdb48
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 854384a84ccc6f31aef6c350049cc18c8a72a6fd

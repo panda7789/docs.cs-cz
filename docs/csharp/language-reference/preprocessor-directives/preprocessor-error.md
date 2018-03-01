@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"error-c-reference\"></a>Chyba (referenční dokumentace jazyka C#)"
+title: "#Chyba (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#error'
-helpviewer_keywords: '#error directive [C#]'
+f1_keywords:
+- '#error'
+helpviewer_keywords:
+- '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 23528ae81e4ddca23c67c937ca2588ab4c982e98

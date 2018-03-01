@@ -2,11 +2,13 @@
 title: "Postupy: Vyvolávání událostí třídy Base v odvozených třídách (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: events [C#], in derived classes
+helpviewer_keywords:
+- events [C#], in derived classes
 ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c9da65958ce827fab642f4a6310d0c68dfb951a6

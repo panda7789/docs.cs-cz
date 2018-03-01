@@ -2,14 +2,16 @@
 title: "explicit (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - explicit_CSharpKeyword
 - explicit
-helpviewer_keywords: explicit keyword [C#]
+helpviewer_keywords:
+- explicit keyword [C#]
 ms.assetid: cfb8f42a-e411-4db2-af9b-796b05644846
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: eab79d3ac48192f3c176ed44685ab58e50fc89be

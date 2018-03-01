@@ -5,12 +5,14 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: XML literals [Visual Basic], XML 1.0 specification
+helpviewer_keywords:
+- XML literals [Visual Basic], XML 1.0 specification
 ms.assetid: 46f046e5-293c-41a3-b893-4e5f6e32e78a
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c020d94e09eb255ac03df15b519b3dfa78e8e367

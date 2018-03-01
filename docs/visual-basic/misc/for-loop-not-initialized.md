@@ -2,11 +2,13 @@
 title: "Smyčka for nebyla inicializována (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID92
+f1_keywords:
+- vbrID92
 ms.assetid: 7f5b8b87-1a28-474d-8639-9de97922ceab
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: eaaee53d7473602e31114a76be26e7c395ddaf07

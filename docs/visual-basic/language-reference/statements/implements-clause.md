@@ -4,9 +4,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.ImplementsClause
+f1_keywords:
+- vb.ImplementsClause
 helpviewer_keywords:
 - interface implementation [Visual Basic], reimplementation
 - interface members [Visual Basic], reimplementation
@@ -21,7 +23,7 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 73f66eda29e37fda15b4c838da5a0458684131da

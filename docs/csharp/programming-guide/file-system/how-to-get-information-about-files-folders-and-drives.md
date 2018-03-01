@@ -2,11 +2,13 @@
 title: "Postupy: Získávání informací o souborech, složkách a jednotkách (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: files [C#], getting information about
+helpviewer_keywords:
+- files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d5652dda53a0192ce39be497b6e8ad3c97bef042

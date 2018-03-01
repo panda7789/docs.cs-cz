@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugArrayValue.GetElement
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugArrayValue::GetElement
+api_name:
+- ICorDebugArrayValue.GetElement
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugArrayValue::GetElement
 helpviewer_keywords:
 - GetElement method [.NET Framework debugging]
 - ICorDebugArrayValue::GetElement method [.NET Framework debugging]
 ms.assetid: 7ac3cba5-c282-402e-b7ef-b46634f5176b
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9aba987aa6f806bfe1608e081aac4cb501cd23fc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -2,14 +2,16 @@
 title: "sizeof (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - sizeof_CSharpKeyword
 - sizeof
-helpviewer_keywords: sizeof keyword [C#]
+helpviewer_keywords:
+- sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0148ae8381804ca9286315251582c8ab40778369

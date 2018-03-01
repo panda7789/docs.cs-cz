@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: _AxlPublicKeyBlobToPublicKeyToken
-api_location: clr.dll
-api_type: DLLExport
+api_name:
+- _AxlPublicKeyBlobToPublicKeyToken
+api_location:
+- clr.dll
+api_type:
+- DLLExport
 ms.assetid: 2d92a746-d68c-4f53-a16e-727f071a2d80
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7c9dfd42d0908032ed9a652f6f4f5736ba775ce8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

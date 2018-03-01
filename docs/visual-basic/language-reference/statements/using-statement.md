@@ -4,16 +4,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.using
+f1_keywords:
+- vb.using
 helpviewer_keywords:
 - resource disposal
 - Try...Catch...Finally statements, equivalent to Using statement
 - resources [Visual Basic], disposing
 - Using statement [Visual Basic]
 ms.assetid: 665d1580-dd54-4e96-a9a9-6be2a68948f1
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ed9cc0d04c89eac1fe342a0924dd89bb1e258a11

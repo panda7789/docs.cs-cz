@@ -3,14 +3,16 @@ title: "is (Referenční dokumentace jazyka C#)"
 keywords: "je klíčové slovo (C#), je (C#)"
 ms.date: 02/17/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - is_CSharpKeyword
 - is
-helpviewer_keywords: is keyword [C#]
+helpviewer_keywords:
+- is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9f0242439caa21268a6c314409f41587890c4126

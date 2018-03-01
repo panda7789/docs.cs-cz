@@ -2,11 +2,13 @@
 title: "Formát souboru není platný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID321
+f1_keywords:
+- vbrID321
 ms.assetid: d41e6286-6e4a-463b-87fa-e140723e5c7e
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d27729ee0f27046a79c3b062e4ef58b031bfc9fd

@@ -2,11 +2,13 @@
 title: "Postupy: Deklarování, vytváření instancí a použití delegáta (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: delegates [C#], declaring and instantiating
+helpviewer_keywords:
+- delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b5a5329b9e99fcd5830a57eb8f97b4edb67ad8a7

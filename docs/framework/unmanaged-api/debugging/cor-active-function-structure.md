@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: COR_ACTIVE_FUNCTION
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: COR_ACTIVE_FUNCTION
-helpviewer_keywords: COR_ACTIVE_FUNCTION structure [.NET Framework debugging]
+api_name:
+- COR_ACTIVE_FUNCTION
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- COR_ACTIVE_FUNCTION
+helpviewer_keywords:
+- COR_ACTIVE_FUNCTION structure [.NET Framework debugging]
 ms.assetid: ed86185f-2152-459c-961f-10c06d62e83f
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7bb587f485427d9fd88e2f834d844ece18d336ca
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

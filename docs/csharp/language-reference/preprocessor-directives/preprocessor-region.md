@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"region-c-reference\"></a>oblast (referenční dokumentace jazyka C#)"
+title: "#oblast (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#region'
-helpviewer_keywords: '#region directive [C#]'
+f1_keywords:
+- '#region'
+helpviewer_keywords:
+- '#region directive [C#]'
 ms.assetid: 672c87d1-9771-4f64-ab3f-0ad3d4ffb2b4
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cce4a8ac79c4687280e28618d8863d16cd193a3b

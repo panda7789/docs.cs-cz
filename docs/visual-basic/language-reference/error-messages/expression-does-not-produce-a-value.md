@@ -4,14 +4,16 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc30491
 - bc30491
-helpviewer_keywords: BC30491
+helpviewer_keywords:
+- BC30491
 ms.assetid: 8399d7ae-bc0a-49e6-81dc-2e7229708bc9
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 32cbfdaaf70fbf44b798a83c0e550966570dea39

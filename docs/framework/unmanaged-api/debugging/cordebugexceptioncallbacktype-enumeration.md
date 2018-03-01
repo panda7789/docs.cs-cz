@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorDebugExceptionCallbackType
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: CorDebugExceptionCallbackType
-helpviewer_keywords: CorDebugExceptionCallbackType enumeration [.NET Framework debugging]
+api_name:
+- CorDebugExceptionCallbackType
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- CorDebugExceptionCallbackType
+helpviewer_keywords:
+- CorDebugExceptionCallbackType enumeration [.NET Framework debugging]
 ms.assetid: 4d946ad4-3c19-42cb-bec9-8633325ba769
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4efc969395e30dcc237d2ad99c9bc67ee30f4278
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

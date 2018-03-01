@@ -2,11 +2,13 @@
 title: "Nastavit není podporována v době běhu"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID382
+f1_keywords:
+- vbrID382
 ms.assetid: cb7285d3-778f-423d-a2be-88573be8ad48
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c10691abf13ea00cc4eaea961b5ca6fd59a2be8d

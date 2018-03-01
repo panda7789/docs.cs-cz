@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CertVerifyAuthenticodeLicense
-api_location: clr.dll
-api_type: DLLExport
+api_name:
+- CertVerifyAuthenticodeLicense
+api_location:
+- clr.dll
+api_type:
+- DLLExport
 ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: bab3a3bcee52a302345ccdcfad81e7f67efdd8d5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

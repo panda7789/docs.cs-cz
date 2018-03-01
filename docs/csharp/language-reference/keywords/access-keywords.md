@@ -2,11 +2,13 @@
 title: "Klíčová slova přístupu (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: access keywords [C#]
+helpviewer_keywords:
+- access keywords [C#]
 ms.assetid: 3b680d9c-0998-42df-8ba7-5783f7abda75
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c66378c3a61eef9f67994af6af425f79f1adf409

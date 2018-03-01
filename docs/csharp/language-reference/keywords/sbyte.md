@@ -2,14 +2,16 @@
 title: "sbyte (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - sbyte_CSharpKeyword
 - sbyte
-helpviewer_keywords: sbyte keyword [C#]
+helpviewer_keywords:
+- sbyte keyword [C#]
 ms.assetid: 1a9c7b48-73d1-4d33-b485-c4faf0a816bc
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 010ac98f523eca5929100f7c51b8b6ef5d11de30

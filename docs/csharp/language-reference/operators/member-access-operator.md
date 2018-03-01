@@ -2,15 +2,17 @@
 title: ". Operátor (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: ._CSharpKeyword
+f1_keywords:
+- ._CSharpKeyword
 helpviewer_keywords:
 - member access operator (.) [C#]
 - . operator [C#]
 - dot operator (.) [C#]
 ms.assetid: a1f54b52-b686-4ae5-a48e-a2a9ebd0eb7b
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2bb636bc110f57ace9a824a43afdd86246ed0a5c

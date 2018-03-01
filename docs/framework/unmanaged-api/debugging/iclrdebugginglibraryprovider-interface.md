@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebuggingLibraryProvider
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICLRDebuggingLibraryProvider
-helpviewer_keywords: ICLRDebuggingLibraryProvider interface [.NET Framework debugging]
+api_name:
+- ICLRDebuggingLibraryProvider
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebuggingLibraryProvider
+helpviewer_keywords:
+- ICLRDebuggingLibraryProvider interface [.NET Framework debugging]
 ms.assetid: 67739617-6add-41a9-9de5-a3200c3109ce
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a7320bf261f28fed85c44f2550df5ecd06421290
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

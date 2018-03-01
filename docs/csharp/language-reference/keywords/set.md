@@ -2,14 +2,16 @@
 title: "set (Referenční dokumentace jazyka C#)"
 ms.date: 03/10/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - set
 - set_CSharpKeyword
-helpviewer_keywords: set keyword [C#]
+helpviewer_keywords:
+- set keyword [C#]
 ms.assetid: 30d7e4e5-cc2e-4635-a597-14a724879619
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b810280724dcf608859bfa455947a75ce64b7abe

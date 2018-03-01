@@ -2,14 +2,16 @@
 title: "%= – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '%=_CSharpKeyword'
+f1_keywords:
+- '%=_CSharpKeyword'
 helpviewer_keywords:
 - modulus assignment operator (=%) [C#]
 - '%= assignment operator (modulus assignment) [C#]'
 ms.assetid: 47e5f068-1d97-4010-bd3b-e21b5d3a77f5
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9bafd0078153e29fbf923948d9b380d4795c3d35

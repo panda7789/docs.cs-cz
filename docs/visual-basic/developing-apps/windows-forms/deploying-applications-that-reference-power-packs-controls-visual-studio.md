@@ -3,11 +3,13 @@ title: "Nasazení aplikací odkazujících na ovládací prvky Power Pack (Visua
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: Power Packs, deploying
+helpviewer_keywords:
+- Power Packs, deploying
 ms.assetid: f2230f53-a745-4731-89e6-033943faa209
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2a9562acf05cd27eed7bc1ad963845af9a7ca5f9

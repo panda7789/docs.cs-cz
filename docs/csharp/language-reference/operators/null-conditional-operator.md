@@ -2,15 +2,17 @@
 title: "?? Operátor (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: ??_CSharpKeyword
+f1_keywords:
+- ??_CSharpKeyword
 helpviewer_keywords:
 - coalesce operator [C#]
 - ?? operator [C#]
 - conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6c2372380d8162d3e7760bba4a43cdb1c568bf5b

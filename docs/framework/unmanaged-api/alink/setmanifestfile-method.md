@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IALink3.SetManifestFile
-api_location: alink.dll
-api_type: COM
-f1_keywords: SetManifestFile
-helpviewer_keywords: SetManifestFile method
+api_name:
+- IALink3.SetManifestFile
+api_location:
+- alink.dll
+api_type:
+- COM
+f1_keywords:
+- SetManifestFile
+helpviewer_keywords:
+- SetManifestFile method
 ms.assetid: 1b33de4c-19cb-4a36-a93f-8675b2a36d58
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cf48153454fbb2c24dc3f1cfe1f82deefa4ee723
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

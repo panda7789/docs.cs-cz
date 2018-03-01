@@ -2,11 +2,13 @@
 title: "Postupy: Kopírování, odstraňování a přesouvání souborů a složek (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: I/O [C#]
+helpviewer_keywords:
+- I/O [C#]
 ms.assetid: 62e52cd7-9597-4e4a-acf9-1315f5cdbf05
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 56383873674998fc0d6417a2abf4fa72e498f08f

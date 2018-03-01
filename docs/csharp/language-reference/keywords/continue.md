@@ -2,14 +2,16 @@
 title: "continue (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - continue_CSharpKeyword
 - continue
-helpviewer_keywords: continue keyword [C#]
+helpviewer_keywords:
+- continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1ace2c90d03593b51b9ea461a47e122c5da1ab81

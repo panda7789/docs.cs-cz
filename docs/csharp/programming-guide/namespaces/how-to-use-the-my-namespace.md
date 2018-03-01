@@ -2,11 +2,13 @@
 title: "Postupy: Použití oboru názvů My (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: C# language, My namespace access
+helpviewer_keywords:
+- C# language, My namespace access
 ms.assetid: e7152414-0ea5-4c8e-bf02-c8d5bbe45ff4
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f3564c594a5fbb9bd05a956e5c12bbb173d2db51

@@ -4,11 +4,13 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_BufferExceededMaxSize
+f1_keywords:
+- vbrTextFieldParser_BufferExceededMaxSize
 ms.assetid: 36565e82-8458-4a08-86af-d9a7a2c32937
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 222d74fbadad2742d9c560acdd1b6676286da211

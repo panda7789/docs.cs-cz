@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: _AxlGetIssuerPublicKeyHash
-api_location: clr.dll
-api_type: DLLExport
+api_name:
+- _AxlGetIssuerPublicKeyHash
+api_location:
+- clr.dll
+api_type:
+- DLLExport
 ms.assetid: fb626b41-b888-4625-84c3-2c02b5e3866f
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fee2b3e0e74ec13009a9b02d226c6a99b0e2f34b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

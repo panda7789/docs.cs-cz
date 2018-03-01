@@ -2,11 +2,13 @@
 title: "Nelze určit typ pole, protože je nic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_ArrayNotInitialized
+f1_keywords:
+- vbrArgument_ArrayNotInitialized
 ms.assetid: de70697d-e2aa-4661-bfbb-f7ba34539516
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 1a43c0c472ac963cea7460f17374cc7d55fcacfd

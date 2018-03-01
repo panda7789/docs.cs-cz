@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: COR_HEAPOBJECT
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: COR_HEAPOBJECT
-helpviewer_keywords: COR_HEAPOBJECT structure [.NET Framework debugging]
+api_name:
+- COR_HEAPOBJECT
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- COR_HEAPOBJECT
+helpviewer_keywords:
+- COR_HEAPOBJECT structure [.NET Framework debugging]
 ms.assetid: a92fdf95-492b-49ae-a741-2186e5c1d7c5
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 476d9dcb1c6700833b0a113028bdaaf0c5a375c7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

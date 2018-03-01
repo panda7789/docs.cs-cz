@@ -4,12 +4,15 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.isnot
-helpviewer_keywords: IsNot operator [Visual Basic]
+f1_keywords:
+- vb.isnot
+helpviewer_keywords:
+- IsNot operator [Visual Basic]
 ms.assetid: 8dd2bcdb-0166-48a2-9094-60dfb448f36c
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 969fdebdf15a1f779075c58616ccd16c64976a35

@@ -2,14 +2,16 @@
 title: "bool (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - bool_CSharpKeyword
 - bool
-helpviewer_keywords: bool keyword [C#]
+helpviewer_keywords:
+- bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1d52955d64a6c8063e4ea93ceb096459c1c5e984

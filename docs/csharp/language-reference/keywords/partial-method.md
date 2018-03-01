@@ -2,12 +2,15 @@
 title: "partial (metoda) (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: partialmethod_CSharpKeyword
-helpviewer_keywords: partial methods [C#]
+f1_keywords:
+- partialmethod_CSharpKeyword
+helpviewer_keywords:
+- partial methods [C#]
 ms.assetid: 43f40242-17e0-4452-8573-090503ad3137
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 03962a59d5dbe0146cad9835f81d41c06914795b

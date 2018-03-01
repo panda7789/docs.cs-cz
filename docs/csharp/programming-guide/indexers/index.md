@@ -2,14 +2,16 @@
 title: "Indexery (Průvodce programováním v C#)"
 ms.date: 03/10/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.indexers
+f1_keywords:
+- cs.indexers
 helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-caps.latest.revision: "29"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: db49a602b83940cab3f87dea17accb92a2be825d

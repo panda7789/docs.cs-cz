@@ -2,11 +2,13 @@
 title: "Získat nepodporuje (jen pro zápis vlastnost)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID394
+f1_keywords:
+- vbrID394
 ms.assetid: bbe0b526-d6b6-430a-92e2-9e8051847595
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 37a4faac92488aa22ab629d930ede5cc18a74938

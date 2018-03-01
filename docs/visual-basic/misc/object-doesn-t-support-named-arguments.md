@@ -2,11 +2,13 @@
 title: "Objekt nemá & č. 39; nepodporuje pojmenované argumenty"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID446
+f1_keywords:
+- vbrID446
 ms.assetid: f4812db8-e85d-4d5b-b7c9-d54a1f850034
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 25b801b4bed20239cd7961ec8440ebe6cecd353c

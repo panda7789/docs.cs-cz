@@ -3,11 +3,13 @@ title: "Postupy: Tisk klientské oblasti formuláře (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: client area [Visual Basic], printing
+helpviewer_keywords:
+- client area [Visual Basic], printing
 ms.assetid: c06c9c0e-bc07-48cd-9596-e29a2ff96236
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ef42dd3c809ff0a1594350e252d4c4aa2f0ec004

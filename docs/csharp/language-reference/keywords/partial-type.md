@@ -2,14 +2,16 @@
 title: "partial (typ) (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - partialtype
 - partialtype_CSharpKeyword
-helpviewer_keywords: partial types [C#]
+helpviewer_keywords:
+- partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 5212984cc577ce05fc4697e0d648fb5545528562

@@ -2,14 +2,16 @@
 title: "on (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - on_CSharpKeyword
 - on
-helpviewer_keywords: on keyword [C#]
+helpviewer_keywords:
+- on keyword [C#]
 ms.assetid: 06abc536-e07c-4e34-88c1-425208bdcb21
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d3e3683935ad3ad25f63c8248e0eaa789ea479e4

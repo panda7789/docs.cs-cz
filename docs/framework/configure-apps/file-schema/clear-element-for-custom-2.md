@@ -2,9 +2,11 @@
 title: '&lt;Vymazat&gt; element NameValueSectionHandler a DictionarySectionHandler'
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
 helpviewer_keywords:
 - clear Element
 - <clear> Element
@@ -12,7 +14,8 @@ ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 57ee634c987d344d81f1ca099fe55e633bfbf659
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

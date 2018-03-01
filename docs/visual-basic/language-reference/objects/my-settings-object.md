@@ -3,14 +3,16 @@ title: "My.Settings – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - My.MySettingsProperty.Settings
 - My.Settings
-helpviewer_keywords: My.Settings object
+helpviewer_keywords:
+- My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2f744460f8ea6c6c7f5c8c5e1658bd357e910def

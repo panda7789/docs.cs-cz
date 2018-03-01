@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDataTarget.GetCurrentThreadID
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICLRDataTarget::GetCurrentThreadID
+api_name:
+- ICLRDataTarget.GetCurrentThreadID
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDataTarget::GetCurrentThreadID
 helpviewer_keywords:
 - GetCurrentThreadID method, ICLRDataTarget interface [.NET Framework debugging]
 - ICLRDataTarget::GetCurrentThreadID method [.NET Framework debugging]
 ms.assetid: dc9a0a6c-d592-4fb7-86ed-62684da3b0e1
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2fd2c39b20b823e18232081d1655a6770bafccc5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

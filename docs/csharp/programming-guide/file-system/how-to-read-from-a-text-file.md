@@ -2,16 +2,18 @@
 title: "Postupy: Čtení z textového souboru (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: StreamReader.ReadToEnd
+f1_keywords:
+- StreamReader.ReadToEnd
 helpviewer_keywords:
 - text files, writing to
 - reading text files
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d2af6102ac6793b4612a6fbc41f8c50189cc24d5

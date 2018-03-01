@@ -3,11 +3,13 @@ title: "Nebyl zadán formulář spuštění."
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrAppModel_NoStartupForm
+f1_keywords:
+- vbrAppModel_NoStartupForm
 ms.assetid: 8e04af49-4bef-49de-a7ec-e407e9873da7
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: fdffc182ee66497d68aafb7dc37cfef75b4d2e9f

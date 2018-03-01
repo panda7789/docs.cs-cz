@@ -2,11 +2,13 @@
 title: "Metoda nebo data člen nebyl nalezen"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID461
+f1_keywords:
+- vbrID461
 ms.assetid: 40b178c3-7dc4-4216-8460-17ff8d9aedf1
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 9e25e24a13e1d8e86dc28f852c23e00717e9d763

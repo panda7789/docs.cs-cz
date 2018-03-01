@@ -2,11 +2,13 @@
 title: "Použití typů s povolenou hodnotou Null (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: nullable types [C#], about nullable types
+helpviewer_keywords:
+- nullable types [C#], about nullable types
 ms.assetid: 0bacbe72-ce15-4b14-83e1-9c14e6380c28
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c8a42392bbcd2e53c54ff4c13bf98c048262ae4d

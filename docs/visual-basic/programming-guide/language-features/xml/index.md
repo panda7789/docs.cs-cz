@@ -3,9 +3,11 @@ title: XML v jazyce Visual Basic
 description: "Další informace o použití XML a LINQ XML funkcí v kódu jazyka Visual Basic."
 ms.date: 10/20/2017
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: LINQ to XML [Visual Basic]
+helpviewer_keywords:
+- LINQ to XML [Visual Basic]
 ms.assetid: 954b6e40-1246-4185-a018-4061724fcae9
 ms.openlocfilehash: 1b3fc9a716bdc7c369aa7c5c9c2ed118debd2785
 ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a

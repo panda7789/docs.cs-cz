@@ -2,11 +2,13 @@
 title: "ID národního prostředí & č. 39; &lt;název&gt;& č. 39; není v tomto systému podporován."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_LCIDNotSupported1
+f1_keywords:
+- vbrArgument_LCIDNotSupported1
 ms.assetid: 62701434-0ac2-45b8-8b40-a9adc09ae6df
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 0a9a91a297b62278a09c2fe6ee6e74bf0e827a58

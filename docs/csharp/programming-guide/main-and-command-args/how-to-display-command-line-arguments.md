@@ -2,11 +2,13 @@
 title: "Postupy: Zobrazení argumentů příkazového řádku (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: command-line arguments [C#], displaying
+helpviewer_keywords:
+- command-line arguments [C#], displaying
 ms.assetid: b8479f2d-9e05-4d38-82da-2e61246e5437
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f6ae495eef227c6e4d9fb9ca0d4d0c031163fd52
