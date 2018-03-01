@@ -3,14 +3,16 @@ title: "My.Forms – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - My.Forms
 - My.MyProject.Forms
-helpviewer_keywords: My.Forms object
+helpviewer_keywords:
+- My.Forms object
 ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: fe548caacf2c8e7498e3b7abc814b4f89af9b3d6

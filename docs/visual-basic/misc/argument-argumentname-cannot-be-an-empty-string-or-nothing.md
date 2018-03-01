@@ -2,11 +2,13 @@
 title: "Argument &lt;název argumentu argumentname&gt; nemůže být prázdný řetězec nebo nic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrGeneral_ArgumentEmptyOrNothing_Name
+f1_keywords:
+- vbrGeneral_ArgumentEmptyOrNothing_Name
 ms.assetid: 2c458944-1bdf-4ea7-9caf-560ca7582cc0
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: fb7531f9bdd1112a9e07fc862245b01a0db9f66f

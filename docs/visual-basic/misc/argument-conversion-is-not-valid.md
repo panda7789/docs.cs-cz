@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Převod & č. 39; není platný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_InvalidVbStrConv
+f1_keywords:
+- vbrArgument_InvalidVbStrConv
 ms.assetid: a5497ad5-25be-4ac7-91fb-ad117d683efe
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 88c9705eec2a9f61e51ad8969b0c0113c13c3b26

@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Období & č. 39; musí být menší než nebo rovna hodnotě argumentu & č. 39; Životní & č. 39;"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFinancial_PeriodLELife
+f1_keywords:
+- vbrFinancial_PeriodLELife
 ms.assetid: dc575d41-b376-4b05-bbbe-6de1e98385f1
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: be51edf01d39437032c24613165c5d86b6831a51

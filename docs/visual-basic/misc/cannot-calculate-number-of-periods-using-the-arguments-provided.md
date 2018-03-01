@@ -2,11 +2,13 @@
 title: "Nemůže vypočítat počet období pomocí zadaných argumentů"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFinancial_CannotCalculateNPer
+f1_keywords:
+- vbrFinancial_CannotCalculateNPer
 ms.assetid: a96fed1c-73e6-4a2b-9906-0190bc3d4c3c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 4b915fec69e757cb9aa69a83b5c92c1af2988ac4

@@ -2,11 +2,13 @@
 title: Nelze kombinovat SimplifiedChinese a VbStrConv.TraditionalChinese
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_StrConvSCandTC
+f1_keywords:
+- vbrArgument_StrConvSCandTC
 ms.assetid: d8e6a11b-f549-43b5-8337-0594340e1325
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 0fd6006fd346b0fe43958bfb6806759a3bcfb0f1

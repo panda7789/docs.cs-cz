@@ -2,11 +2,13 @@
 title: "Argument nemůže být Nothing"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrGeneral_ArgumentNullException
+f1_keywords:
+- vbrGeneral_ArgumentNullException
 ms.assetid: 2abd995b-36a5-45f0-b3c1-6e0c3b31a875
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5de506c4a24f787dbb9e2d96f0e9e228f7e92288

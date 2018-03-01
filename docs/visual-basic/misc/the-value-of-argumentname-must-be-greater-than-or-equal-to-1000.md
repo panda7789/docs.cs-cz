@@ -2,11 +2,13 @@
 title: "Hodnota &lt;název argumentu argumentname&gt; musí být větší než nebo rovno 1 000"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrApplicationLogNumberTooSmall
+f1_keywords:
+- vbrApplicationLogNumberTooSmall
 ms.assetid: 81aed143-1abb-41c2-9922-8e83711100e3
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 89e3c9a7803485df65c549ee8e2b525d690c2672

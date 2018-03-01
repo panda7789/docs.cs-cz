@@ -2,11 +2,13 @@
 title: "Argument &lt;název argumentu argumentname&gt; musí být větší než nebo rovna hodnotě nula."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_GEZero1
+f1_keywords:
+- vbrArgument_GEZero1
 ms.assetid: 6f54fdc6-e263-4b2f-a66f-f206f3a59818
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5d002c820dab758a7592bb6de438c112af1ad94b

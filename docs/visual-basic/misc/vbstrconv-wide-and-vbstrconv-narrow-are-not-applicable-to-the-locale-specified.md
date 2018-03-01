@@ -2,11 +2,13 @@
 title: "Argumenty VbStrConv.Wide a VbStrConv.Narrow nejsou použitelné pro zadaný národní prostředí"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_WideNarrowNotApplicable
+f1_keywords:
+- vbrArgument_WideNarrowNotApplicable
 ms.assetid: 5811098c-b124-4caf-8a2b-f81f12f1d5f5
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: dd2ddfa8ffa3721a4b6af016db5c2a0aa5d5e2cc

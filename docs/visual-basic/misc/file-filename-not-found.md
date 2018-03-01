@@ -2,11 +2,13 @@
 title: "& Souborů č. 39; &lt;filename&gt;& č. 39; nebyla nalezena"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFileSystem_FileNotFound1
+f1_keywords:
+- vbrFileSystem_FileNotFound1
 ms.assetid: b45bffc9-5b16-4b9b-a413-98a8d726e226
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d3397357853684ab99f182660984cd862bba3a14

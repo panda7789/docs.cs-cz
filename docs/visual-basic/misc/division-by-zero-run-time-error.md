@@ -2,11 +2,13 @@
 title: "Chyba dělení nulou (Visual Basic Runtime)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID11
+f1_keywords:
+- vbrID11
 ms.assetid: 5b9bc5d6-792e-48bc-a974-012e07ad95f3
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ff247ce7d157d87f3776679c8d05f4cd08c45023

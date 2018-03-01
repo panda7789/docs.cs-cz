@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Za & č. 39; není platný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrPPMT_PerGT0AndLTNPer
+f1_keywords:
+- vbrPPMT_PerGT0AndLTNPer
 ms.assetid: 5f3fadba-d32c-4e52-b949-85a907e6c12f
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d943e83c31e12301ac9d4063f9299f45899fc892

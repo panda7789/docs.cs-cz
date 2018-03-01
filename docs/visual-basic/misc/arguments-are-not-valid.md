@@ -2,11 +2,13 @@
 title: "Argumenty nejsou platné"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_InvalidValue
+f1_keywords:
+- vbrArgument_InvalidValue
 ms.assetid: dc0be8ab-b2b7-40b7-8c94-7ac9eadb5e94
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 3f397edf07a88d3357ef81042d84d7482c9e1be5

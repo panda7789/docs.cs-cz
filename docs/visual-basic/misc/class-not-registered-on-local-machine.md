@@ -2,12 +2,14 @@
 title: "Třída není registrované na místním počítači"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vbrID463
+f1_keywords:
+- vbrID463
 ms.assetid: 40c4c622-41d8-4005-9303-c30abe0707bb
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 307d36d52cb66c431fd4d482132fa13af9a2903d

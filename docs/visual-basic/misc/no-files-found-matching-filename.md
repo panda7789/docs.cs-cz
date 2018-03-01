@@ -2,11 +2,13 @@
 title: "Žádné soubory, které jsou odpovídající & č. 39; &lt;filename&gt;& č. 39;"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrKILL_NoFilesFound1
+f1_keywords:
+- vbrKILL_NoFilesFound1
 ms.assetid: 218808a2-8e36-4f13-a60a-770624e1ace3
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 3be65a875215cfc46ef5d0b4f9518574fe541350

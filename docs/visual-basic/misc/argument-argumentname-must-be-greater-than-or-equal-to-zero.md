@@ -2,11 +2,13 @@
 title: "Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; musí být větší než nebo rovna hodnotě nula."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFinancial_ArgGEZero1
+f1_keywords:
+- vbrFinancial_ArgGEZero1
 ms.assetid: 7b901c2a-3447-4afc-91f8-8fa5f6f961d7
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 6e750f7c2542499cbab9630edb9acc486aa0ef7b
