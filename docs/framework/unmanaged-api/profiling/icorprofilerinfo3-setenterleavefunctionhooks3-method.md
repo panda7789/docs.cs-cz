@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo3.SetEnterLeaveFunctionHooks3 Method
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo3::SetEnterLeaveFunctionHooks3
+api_name:
+- ICorProfilerInfo3.SetEnterLeaveFunctionHooks3 Method
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo3::SetEnterLeaveFunctionHooks3
 helpviewer_keywords:
 - SetEnterLeaveFunctionHooks3 method [.NET Framework profiling]
 - ICorProfilerInfo3::SetEnterLeaveFunctionHooks3 method [.NET Framework profiling]
 ms.assetid: f0621465-b84f-40ab-a4e5-56a7abc776a7
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 77a2e8170cd2cf78576b2d376fb592c903bbb403
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

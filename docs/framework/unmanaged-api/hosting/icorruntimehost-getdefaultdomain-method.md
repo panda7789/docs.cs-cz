@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorRuntimeHost.GetDefaultDomain
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICorRuntimeHost::GetDefaultDomain
+api_name:
+- ICorRuntimeHost.GetDefaultDomain
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICorRuntimeHost::GetDefaultDomain
 helpviewer_keywords:
 - ICorRuntimeHost::GetDefaultDomain method [.NET Framework hosting]
 - GetDefaultDomain method [.NET Framework hosting]
 ms.assetid: 5e17a6fc-f335-4aae-9bb0-c3e1271a9426
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: aa732462fb574f1d55fda12f82d8f97da2654e02
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

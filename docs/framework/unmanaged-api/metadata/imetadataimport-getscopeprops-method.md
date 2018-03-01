@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetScopeProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetScopeProps
+api_name:
+- IMetaDataImport.GetScopeProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetScopeProps
 helpviewer_keywords:
 - IMetaDataImport::GetScopeProps method [.NET Framework metadata]
 - GetScopeProps method [.NET Framework metadata]
 ms.assetid: c8ba42d2-d9fa-43cb-bbc0-f33e1e592cb6
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 53e77a7bf0bd0aafc205469c4e101f8bfdcbe80b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

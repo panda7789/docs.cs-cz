@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRValidator.Validate
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRValidator::Validate
+api_name:
+- ICLRValidator.Validate
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRValidator::Validate
 helpviewer_keywords:
 - Validate method, ICLRValidator interface [.NET Framework hosting]
 - ICLRValidator::Validate method [.NET Framework hosting]
 ms.assetid: 0b1b432a-d234-4002-839b-81366c3a8bdc
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7328fe62276de6c33464ab8cfc6d6a5f39ee710e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

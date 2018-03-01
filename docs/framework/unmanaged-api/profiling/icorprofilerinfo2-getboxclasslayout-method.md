@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo2.GetBoxClassLayout
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo2::GetBoxClassLayout
+api_name:
+- ICorProfilerInfo2.GetBoxClassLayout
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo2::GetBoxClassLayout
 helpviewer_keywords:
 - GetBoxClassLayout method [.NET Framework profiling]
 - ICorProfilerInfo2::GetBoxClassLayout method [.NET Framework profiling]
 ms.assetid: 624672b5-1189-488a-85d2-3e12b49617c1
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9ef6df997a4ba4369b87789e47ac7ead2206162e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

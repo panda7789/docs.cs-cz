@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebugManager.SetConnectionTasks
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRDebugManager::SetConnectionTasks
+api_name:
+- ICLRDebugManager.SetConnectionTasks
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebugManager::SetConnectionTasks
 helpviewer_keywords:
 - SetConnectionTasks method [.NET Framework hosting]
 - ICLRDebugManager::SetConnectionTasks method [.NET Framework hosting]
 ms.assetid: b38bbc9a-872c-41a9-b8c3-ca011d25456a
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 09f7e47acfcfbde8d5d9724c3a37303f1a584adb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

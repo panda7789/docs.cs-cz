@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IActionOnCLREvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IActionOnCLREvent
-helpviewer_keywords: IActionOnCLREvent interface [.NET Framework hosting]
+api_name:
+- IActionOnCLREvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IActionOnCLREvent
+helpviewer_keywords:
+- IActionOnCLREvent interface [.NET Framework hosting]
 ms.assetid: b5f9b41e-7301-429c-911f-21d5422292b3
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4b51784f07a90faa9eeb29c18a784d4fbc2c4654
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

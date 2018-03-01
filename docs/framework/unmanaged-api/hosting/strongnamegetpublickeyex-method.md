@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName2.StrongNameGetPublicKeyEx
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: StrongNameGetPublicKeyEx
+api_name:
+- ICLRStrongName2.StrongNameGetPublicKeyEx
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- StrongNameGetPublicKeyEx
 helpviewer_keywords:
 - StrongNameGetPublicKeyEx method, ICLRStrongName2 interface [.NET Framework hosting]
 - ICLRStrongName2::StrongNameGetPublicKeyEx method [.NET Framework hosting]
 ms.assetid: 63d8260c-fb32-4f8f-a357-768afd570f68
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e94498cc8841a95e1918d3f26bd19256793564ab
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

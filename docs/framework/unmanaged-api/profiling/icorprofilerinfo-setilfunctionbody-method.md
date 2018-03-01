@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.SetILFunctionBody
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::SetILFunctionBody
+api_name:
+- ICorProfilerInfo.SetILFunctionBody
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::SetILFunctionBody
 helpviewer_keywords:
 - ICorProfilerInfo::SetILFunctionBody method [.NET Framework profiling]
 - SetILFunctionBody method [.NET Framework profiling]
 ms.assetid: b159c712-00f4-4fc7-a990-40bf9f642e8f
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c44fa89ba66a306792f1ffed162447a6305a0347
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

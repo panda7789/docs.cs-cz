@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport2.GetGenericParamProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport2::GetGenericParamProps
+api_name:
+- IMetaDataImport2.GetGenericParamProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport2::GetGenericParamProps
 helpviewer_keywords:
 - IMetaDataImport2::GetGenericParamProps method [.NET Framework metadata]
 - GetGenericParamProps method [.NET Framework metadata]
 ms.assetid: dbb21e67-712b-49e7-a27c-a1e73ffd46c5
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 70a9669e2f47c3b56f7b50dc96ed2d3ba8314c4e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

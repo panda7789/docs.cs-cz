@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRMetaHost.RequestRuntimeLoadedNotification
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRMetaHost::QueryLegacyV2RuntimeBinding
+api_name:
+- ICLRMetaHost.RequestRuntimeLoadedNotification
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRMetaHost::QueryLegacyV2RuntimeBinding
 helpviewer_keywords:
 - QueryLegacyV2RuntimeBinding method [.NET Framework hosting]
 - ICLRMetaHost::QueryLegacyV2RuntimeBinding method [.NET Framework hosting]
 ms.assetid: 9929817e-acc9-40b7-960c-598664e04b60
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 889d8ca00726c0b271a1d43519803af73018b2a9
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

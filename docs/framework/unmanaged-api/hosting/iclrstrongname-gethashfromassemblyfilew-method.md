@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.GetHashFromAssemblyFileW
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::GetHashFromAssemblyFileW
+api_name:
+- ICLRStrongName.GetHashFromAssemblyFileW
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::GetHashFromAssemblyFileW
 helpviewer_keywords:
 - ICLRStrongName::GetHashFromAssemblyFileW method [.NET Framework hosting]
 - GetHashFromAssemblyFileW method, ICLRStrongName interface [.NET Framework hosting]
 ms.assetid: 5d0b44a2-5a14-44a2-9a0e-e8682fd4e106
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b10d74cd54afc3c93578710d4a2e339a1f8761f3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

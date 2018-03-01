@@ -5,25 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ClrCreateManagedInstance
+api_name:
+- ClrCreateManagedInstance
 api_location:
 - mscoree.dll
 - clr.dll
 - mscorwks.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: ClrCreateManagedInstance
-helpviewer_keywords: ClrCreateManagedInstance function [.NET Framework hosting]
+api_type:
+- DLLExport
+f1_keywords:
+- ClrCreateManagedInstance
+helpviewer_keywords:
+- ClrCreateManagedInstance function [.NET Framework hosting]
 ms.assetid: 58ba42c0-4857-43bf-a039-73a4dc6544c2
-topic_type: apiref
-caps.latest.revision: "20"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 64a1bc6bbd89e3a36ac53b322bb246a7e61baa67
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

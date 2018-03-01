@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo3.GetRuntimeInformation Method
-api_location: Mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo3::GetRuntimeInformation
+api_name:
+- ICorProfilerInfo3.GetRuntimeInformation Method
+api_location:
+- Mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo3::GetRuntimeInformation
 helpviewer_keywords:
 - GetRuntimeInformation method [.NET Framework profiling]
 - ICorProfilerInfo3::GetRuntimeInformation method [.NET Framework profiling]
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5eadd9970d29cc65d8411692407dcae5471e51c6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

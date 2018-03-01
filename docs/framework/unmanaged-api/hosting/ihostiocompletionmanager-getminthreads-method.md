@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager.GetMinThreads
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager::GetMinThreads
+api_name:
+- IHostIoCompletionManager.GetMinThreads
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager::GetMinThreads
 helpviewer_keywords:
 - GetMinThreads method, IHostIoCompletionManager interface [.NET Framework hosting]
 - IHostIoCompletionManager::GetMinThreads method [.NET Framework hosting]
 ms.assetid: d7a7f733-677d-481c-b3d5-444fcc502b8e
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f90a3f416520cc3f635f19d7ae34d5f9f304e9c6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

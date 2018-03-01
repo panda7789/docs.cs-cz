@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostMemoryManager.VirtualFree
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostMemoryManager::VirtualFree
+api_name:
+- IHostMemoryManager.VirtualFree
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostMemoryManager::VirtualFree
 helpviewer_keywords:
 - IHostMemoryManager::VirtualFree method [.NET Framework hosting]
 - VirtualFree method [.NET Framework hosting]
 ms.assetid: 1a436e89-eb28-4d15-bcf1-a072f86dbd99
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 663c01d7e4b551ecf18bdd85a63aefc43f9750e2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

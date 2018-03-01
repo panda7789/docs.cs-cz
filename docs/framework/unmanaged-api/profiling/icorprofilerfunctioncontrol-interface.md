@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerFunctionControl
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerFunctionControl
-helpviewer_keywords: ICorProfilerFunctionControl interface [.NET Framework profiling]
+api_name:
+- ICorProfilerFunctionControl
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerFunctionControl
+helpviewer_keywords:
+- ICorProfilerFunctionControl interface [.NET Framework profiling]
 ms.assetid: 4e3d3141-4662-4166-8f05-bc857c1b4216
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 043e97595ba29d0fb5320b8f1bdc4aad4f755067
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

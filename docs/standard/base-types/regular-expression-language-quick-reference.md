@@ -8,7 +8,8 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: VS.RegularExpressionBuilder
+f1_keywords:
+- VS.RegularExpressionBuilder
 helpviewer_keywords:
 - regex cheat sheet
 - parsing text with regular expressions, language elements
@@ -19,7 +20,7 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-caps.latest.revision: "56"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

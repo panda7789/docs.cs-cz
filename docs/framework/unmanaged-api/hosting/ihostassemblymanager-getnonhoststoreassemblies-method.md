@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostAssemblyManager.GetNonHostStoreAssemblies
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostAssemblyManager::GetNonHostStoreAssemblies
+api_name:
+- IHostAssemblyManager.GetNonHostStoreAssemblies
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostAssemblyManager::GetNonHostStoreAssemblies
 helpviewer_keywords:
 - IHostAssemblyManager::GetNonHostStoreAssemblies method [.NET Framework hosting]
 - GetNonHostStoreAssemblies method [.NET Framework hosting]
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6af013a833ae694aca991f9a71769869cc79b76b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

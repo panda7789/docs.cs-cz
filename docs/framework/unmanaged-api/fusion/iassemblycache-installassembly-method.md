@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IAssemblyCache.InstallAssembly
-api_location: fusion.dll
-api_type: COM
-f1_keywords: IAssemblyCache::InstallAssembly
+api_name:
+- IAssemblyCache.InstallAssembly
+api_location:
+- fusion.dll
+api_type:
+- COM
+f1_keywords:
+- IAssemblyCache::InstallAssembly
 helpviewer_keywords:
 - InstallAssembly method [.NET Framework fusion]
 - IAssemblyCache::InstallAssembly method [.NET Framework fusion]
 ms.assetid: 33c1d269-c85e-4cb1-b0e6-1c510c8fb5fa
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e269d96b28c43918d9913e899db5928c5c73ca96
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

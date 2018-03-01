@@ -3,9 +3,11 @@ title: "Date – datový typ (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Date
+f1_keywords:
+- vb.Date
 helpviewer_keywords:
 - Date data type
 - dates [Visual Basic], Visual Basic data types
@@ -18,7 +20,7 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 190b40888dc4a42075b7b6b27bdb1bd403a7efb5

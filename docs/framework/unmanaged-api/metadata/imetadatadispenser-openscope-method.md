@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataDispenser.OpenScope
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataDispenser::OpenScope
+api_name:
+- IMetaDataDispenser.OpenScope
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataDispenser::OpenScope
 helpviewer_keywords:
 - IMetaDataDispenser::OpenScope method [.NET Framework metadata]
 - OpenScope method, IMetaDataDispenser interface [.NET Framework metadata]
 ms.assetid: 65063ad5-e0d9-4c01-8f8b-9a5950109fa6
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3f1dad7303d83ae550f54d9173a9f4359239091f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager.SetMinThreads
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager::SetMinThreads
+api_name:
+- IHostIoCompletionManager.SetMinThreads
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager::SetMinThreads
 helpviewer_keywords:
 - SetMinThreads method, IHostIoCompletionManager interface [.NET Framework hosting]
 - IHostIoCompletionManager::SetMinThreads method [.NET Framework hosting]
 ms.assetid: dea34b81-8d2b-4cc3-8696-0ad4291d8a92
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1bd64554278fe3c684fadf95f66ce15920827908
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: cancellation, waiting with wait handles
+helpviewer_keywords:
+- cancellation, waiting with wait handles
 ms.assetid: 6e2aa49b-fc84-4bcf-962b-17db98b7edcb
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

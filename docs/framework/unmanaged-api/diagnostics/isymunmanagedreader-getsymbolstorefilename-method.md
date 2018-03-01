@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedReader.GetSymbolStoreFileName
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedReader::GetSymbolStoreFileName
+api_name:
+- ISymUnmanagedReader.GetSymbolStoreFileName
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedReader::GetSymbolStoreFileName
 helpviewer_keywords:
 - GetSymbolStoreFileName method [.NET Framework debugging]
 - ISymUnmanagedReader::GetSymbolStoreFileName method [.NET Framework debugging]
 ms.assetid: c84f4846-9bc8-44a4-9a76-e39106d6d8b2
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1646e8fa5f04da56e4489dca9581e9dc56e01d0e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

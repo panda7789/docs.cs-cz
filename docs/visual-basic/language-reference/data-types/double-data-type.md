@@ -3,9 +3,11 @@ title: "Double – datový typ (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Double
+f1_keywords:
+- vb.Double
 helpviewer_keywords:
 - 'identifier type characters [Visual Basic], #'
 - trailing zeros
@@ -22,7 +24,7 @@ helpviewer_keywords:
 - zeros, trailing
 - Double data type
 ms.assetid: 0c5670f7-fcb1-453a-bef1-374730cd38fd
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ad0e8082edfb7b7d96b0ca2019da88514e5b3b09

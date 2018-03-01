@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymENCUnmanagedMethod
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymENCUnmanagedMethod
-helpviewer_keywords: ISymENCUnmanagedMethod interface [.NET Framework debugging]
+api_name:
+- ISymENCUnmanagedMethod
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymENCUnmanagedMethod
+helpviewer_keywords:
+- ISymENCUnmanagedMethod interface [.NET Framework debugging]
 ms.assetid: faebf594-67d5-4abf-b9c1-547fd3a1ff87
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f7cc1cea74cc632c65c7e3c2aee408e2f9e864d1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

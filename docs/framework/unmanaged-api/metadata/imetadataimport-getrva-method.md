@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetRVA
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetRVA
+api_name:
+- IMetaDataImport.GetRVA
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetRVA
 helpviewer_keywords:
 - GetRVA method [.NET Framework metadata]
 - IMetaDataImport::GetRVA method [.NET Framework metadata]
 ms.assetid: ea422217-988b-4acd-b2db-c55357938275
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6c055afaa129b52c67cd0463a5d44afec5cde103
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

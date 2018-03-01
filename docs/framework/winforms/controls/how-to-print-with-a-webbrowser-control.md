@@ -5,13 +5,15 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-f1_keywords: WebBrowser.Print
+f1_keywords:
+- WebBrowser.Print
 helpviewer_keywords:
 - printing [Windows Forms], Web pages
 - WebBrowser control [Windows Forms], examples
@@ -19,11 +21,12 @@ helpviewer_keywords:
 - Web pages [Windows Forms], printing
 - examples [Windows Forms], WebBrowser control
 ms.assetid: 3fb2a305-64ce-4b6c-9258-5330d3f21b6c
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f72ba017870bfccbb7c0e404c57cab77a96ab8b7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

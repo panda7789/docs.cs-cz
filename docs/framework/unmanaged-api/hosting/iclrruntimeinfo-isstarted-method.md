@@ -5,22 +5,28 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeInfo.IsStarted
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeInfo::IsStarted
+api_name:
+- ICLRRuntimeInfo.IsStarted
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeInfo::IsStarted
 helpviewer_keywords:
 - IsStarted method [.NET Framework hosting]
 - ICLRRuntimeInfo::IsStarted method [.NET Framework hosting]
 ms.assetid: ef6f2662-323b-4534-aa82-6d1afb7b9309
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 991470ca0df3e0cf0470a8c40d3e8e4c40d96026
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -3,18 +3,26 @@ title: "Funkce QualifierSet_GetNames (referenční dokumentace nespravovaného r
 description: "Funkce QualifierSet_GetNames načte názvy kvalifikátory z na objekt nebo vlastnost."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: QualifierSet_GetNames
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: QualifierSet_GetNames
-helpviewer_keywords: QualifierSet_GetNames function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- QualifierSet_GetNames
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- QualifierSet_GetNames
+helpviewer_keywords:
+- QualifierSet_GetNames function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6077b448c2644f68d12679cf208ee921c2af119a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

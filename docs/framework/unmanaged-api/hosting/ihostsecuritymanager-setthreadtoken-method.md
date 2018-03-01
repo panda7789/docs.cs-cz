@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSecurityManager.SetThreadToken
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSecurityManager::SetThreadToken
+api_name:
+- IHostSecurityManager.SetThreadToken
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSecurityManager::SetThreadToken
 helpviewer_keywords:
 - SetThreadToken method [.NET Framework hosting]
 - IHostSecurityManager::SetThreadToken method [.NET Framework hosting]
 ms.assetid: e951c345-8a86-4587-911b-a1a57bc6428a
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 35418907c2b3c75fef689e53b9d6b86ded1f2570
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

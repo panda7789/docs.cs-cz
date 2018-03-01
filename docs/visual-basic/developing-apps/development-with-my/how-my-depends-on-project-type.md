@@ -3,11 +3,13 @@ title: "Závislost oboru názvů My na typu projektu (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: _MYTYPE
+helpviewer_keywords:
+- _MYTYPE
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 4a37bf43096931597278974099becb9be6ae133d

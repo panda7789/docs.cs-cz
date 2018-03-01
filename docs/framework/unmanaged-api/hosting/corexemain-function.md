@@ -5,25 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: _CorExeMain
+api_name:
+- _CorExeMain
 api_location:
 - mscoree.dll
 - clr.dll
 - mscorwks.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: _CorExeMain
-helpviewer_keywords: _CorExeMain function [.NET Framework hosting]
+api_type:
+- DLLExport
+f1_keywords:
+- _CorExeMain
+helpviewer_keywords:
+- _CorExeMain function [.NET Framework hosting]
 ms.assetid: 898f76e2-16f4-4a63-b7d9-dad2d3824d8a
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5f5c0909db10c7bf8e15a7af998b78e0a193a908
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetCLRIdentityManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: GetCLRIdentityManager
-helpviewer_keywords: GetCLRIdentityManager function [.NET Framework hosting]
+api_name:
+- GetCLRIdentityManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- GetCLRIdentityManager
+helpviewer_keywords:
+- GetCLRIdentityManager function [.NET Framework hosting]
 ms.assetid: 66eeca30-adb4-45f4-aff5-347564c95724
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 699361bd33a844733427c213c4ef0f3ca4192906
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

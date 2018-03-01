@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetTypeDefProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetTypeDefProps
+api_name:
+- IMetaDataImport.GetTypeDefProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetTypeDefProps
 helpviewer_keywords:
 - GetTypeDefProps method [.NET Framework metadata]
 - IMetaDataImport::GetTypeDefProps method [.NET Framework metadata]
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f3e7f2c2fe602ef3464766b62ef12e8f83767bf4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

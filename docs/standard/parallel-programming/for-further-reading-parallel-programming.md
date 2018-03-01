@@ -8,9 +8,10 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: tasks, further reading
+helpviewer_keywords:
+- tasks, further reading
 ms.assetid: 98aee307-dde6-4cad-bb58-078497b8064f
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

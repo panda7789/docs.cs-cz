@@ -5,22 +5,28 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICorProfilerCallback6.GetAssemblyReferences
+dev_langs:
+- cpp
+api_name:
+- ICorProfilerCallback6.GetAssemblyReferences
 api_location:
 - mscorwks.dll
 - corprof.idl
-api_type: COM
+api_type:
+- COM
 ms.assetid: 8b391afb-d79f-41bd-94ce-43ce62c6b5fc
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: bc2e80d6d8207a869d43beb46cc9448bdd86dfec
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

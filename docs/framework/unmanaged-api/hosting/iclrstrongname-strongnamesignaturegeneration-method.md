@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.StrongNameSignatureGeneration
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::StrongNameSignatureGeneration
+api_name:
+- ICLRStrongName.StrongNameSignatureGeneration
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::StrongNameSignatureGeneration
 helpviewer_keywords:
 - StrongNameSignatureGeneration method, ICLRStrongName interface [.NET Framework hosting]
 - ICLRStrongName::StrongNameSignatureGeneration method [.NET Framework hosting]
 ms.assetid: 4cdb1284-947a-4ed4-94c1-c5ff5cdfce56
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fcf872dcd1de34aaade06cf26914a75ae971b85b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

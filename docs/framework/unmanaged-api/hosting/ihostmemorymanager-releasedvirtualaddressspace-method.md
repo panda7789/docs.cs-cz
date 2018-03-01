@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostMemoryManager.ReleasedVirtualAddressSpace
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostMemoryManager::ReleasedVirtualAddressSpace
+api_name:
+- IHostMemoryManager.ReleasedVirtualAddressSpace
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostMemoryManager::ReleasedVirtualAddressSpace
 helpviewer_keywords:
 - ReleasedVirtualAddressSpace method [.NET Framework hosting]
 - IHostMemoryManager::ReleasedVirtualAddressSpace method [.NET Framework hosting]
 ms.assetid: d1876601-6ab9-48e1-8ebd-184af1d0cd76
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d6db2868405aadb5879241e12128c6db40c0a5c2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

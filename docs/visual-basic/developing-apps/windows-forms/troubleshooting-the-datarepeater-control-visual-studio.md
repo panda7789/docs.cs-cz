@@ -3,14 +3,16 @@ title: "Řešení potíží s ovládacím prvkem DataRepeater (Visual Studio)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: DataRepeater, troubleshooting
+helpviewer_keywords:
+- DataRepeater, troubleshooting
 ms.assetid: c0ab9469-eced-4f52-aa18-4bd8dd4f1a9a
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2d630dbf8601eeddd5ce3ea02696891a1087f71f

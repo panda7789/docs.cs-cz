@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataTables.GetCodedTokenInfo
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataTables::GetCodedTokenInfo
+api_name:
+- IMetaDataTables.GetCodedTokenInfo
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataTables::GetCodedTokenInfo
 helpviewer_keywords:
 - GetCodedTokenInfo method [.NET Framework metadata]
 - IMetaDataTables::GetCodedTokenInfo method [.NET Framework metadata]
 ms.assetid: 31214d3a-715e-49af-92b3-0fd11e4f218a
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 72c88751940da16a691a5eae46507986a50904a4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

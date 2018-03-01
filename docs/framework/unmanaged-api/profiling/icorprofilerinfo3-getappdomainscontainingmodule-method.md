@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo3.GetAppDomainsContainingModule Method
-api_location: Mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo3::GetAppDomainsContainingModule
+api_name:
+- ICorProfilerInfo3.GetAppDomainsContainingModule Method
+api_location:
+- Mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo3::GetAppDomainsContainingModule
 helpviewer_keywords:
 - GetAppDomainsContainingModule method [.NET Framework profiling]
 - ICorProfilerInfo3::GetAppDomainsContainingModule method [.NET Framework profiling]
 ms.assetid: 603b3881-ea94-4dca-95cd-91eebac873a0
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fa0aa6620f8465154ac31586618af3fe36f3dfe4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRMemoryNotificationCallback.OnMemoryNotification
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRMemoryNotificationCallback::OnMemoryNotification
+api_name:
+- ICLRMemoryNotificationCallback.OnMemoryNotification
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRMemoryNotificationCallback::OnMemoryNotification
 helpviewer_keywords:
 - ICLRMemoryNotificationCallback::OnMemoryNotification method [.NET Framework hosting]
 - OnMemoryNotification method [.NET Framework hosting]
 ms.assetid: 5612a44d-56cc-4f34-af31-8c9809ba9431
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 651dcd6380702a392d2dd06cf899ea567b004ce1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport2.EnumGenericParams
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport2::EnumGenericParams
+api_name:
+- IMetaDataImport2.EnumGenericParams
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport2::EnumGenericParams
 helpviewer_keywords:
 - EnumGenericParams method [.NET Framework metadata]
 - IMetaDataImport2::EnumGenericParams method [.NET Framework metadata]
 ms.assetid: b50488a5-3cf0-483c-82dc-2892a3ec61ac
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: da7a77bd1a758e4bb7fad3fcd15621176abc92a2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

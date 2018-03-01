@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ASM_NAME
-api_location: fusion.dll
-api_type: COM
-f1_keywords: ASM_NAME
-helpviewer_keywords: ASM_NAME enumeration [.NET Framework fusion]
+api_name:
+- ASM_NAME
+api_location:
+- fusion.dll
+api_type:
+- COM
+f1_keywords:
+- ASM_NAME
+helpviewer_keywords:
+- ASM_NAME enumeration [.NET Framework fusion]
 ms.assetid: c8b65b19-d777-428f-bc0c-0d84c78a37bc
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 153daddc0a5529d2c1cddc4669c3dbb098ce7bc2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

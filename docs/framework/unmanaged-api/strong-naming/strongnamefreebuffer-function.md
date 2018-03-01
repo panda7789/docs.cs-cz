@@ -5,26 +5,33 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: StrongNameFreeBuffer
+api_name:
+- StrongNameFreeBuffer
 api_location:
 - mscoree.dll
 - mscorsn.dll
 - clr.dll
 - mscorwks.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: StrongNameFreeBuffer
-helpviewer_keywords: StrongNameFreeBuffer function [.NET Framework strong naming]
+api_type:
+- DLLExport
+f1_keywords:
+- StrongNameFreeBuffer
+helpviewer_keywords:
+- StrongNameFreeBuffer function [.NET Framework strong naming]
 ms.assetid: eda21ecf-4734-4f92-aaba-9f34884385db
-topic_type: apiref
-caps.latest.revision: "19"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f4f5bde035b0ab9df07bb0ab709a67ae1a4cff3f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetHashFromFileW
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: GetHashFromFileW
-helpviewer_keywords: GetHashFromFileW function [.NET Framework strong naming]
+api_name:
+- GetHashFromFileW
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetHashFromFileW
+helpviewer_keywords:
+- GetHashFromFileW function [.NET Framework strong naming]
 ms.assetid: 97c2d7a6-5376-45a1-ba65-146a249147cc
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d7d62526a6ac9bb06a7de8287c9687933402bfb8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

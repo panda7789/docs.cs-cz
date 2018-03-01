@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ILCodeKind
-api_location: mscordbi.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ILCodeKind
+api_location:
+- mscordbi.dll
+api_type:
+- COM
 ms.assetid: b91765e4-82db-46f9-a6dc-6b80610276af
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a79444fe379d6147895e89b25e513b7f4ac7a0ee
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

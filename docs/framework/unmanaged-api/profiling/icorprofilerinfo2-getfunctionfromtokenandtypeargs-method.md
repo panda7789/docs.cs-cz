@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo2.GetFunctionFromTokenAndTypeArgs
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs
+api_name:
+- ICorProfilerInfo2.GetFunctionFromTokenAndTypeArgs
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs
 helpviewer_keywords:
 - ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs method [.NET Framework profiling]
 - GetFunctionFromTokenAndTypeArgs method [.NET Framework profiling]
 ms.assetid: ce8f6aa6-4ebf-4a86-b429-4bbc8af41a8f
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b225b87eab6e65055618c8b6659459637e8a01be
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

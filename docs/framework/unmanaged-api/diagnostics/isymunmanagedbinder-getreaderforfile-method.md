@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedBinder.GetReaderForFile
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedBinder::GetReaderForFile
+api_name:
+- ISymUnmanagedBinder.GetReaderForFile
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedBinder::GetReaderForFile
 helpviewer_keywords:
 - ISymUnmanagedBinder::GetReaderForFile method [.NET Framework debugging]
 - GetReaderForFile method [.NET Framework debugging]
 ms.assetid: 46c06258-831e-47c8-a50a-8650af6b637e
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9c50bb4ca36043fc2491c9a0615b682c94c422e5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

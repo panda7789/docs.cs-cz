@@ -5,11 +5,13 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: My Documents directory
+helpviewer_keywords:
+- My Documents directory
 ms.assetid: 26560d01-7dda-4457-8e95-21db23d71aea
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 3456984a697439a8c2ab7fb88f9f0f32d10cb0e7

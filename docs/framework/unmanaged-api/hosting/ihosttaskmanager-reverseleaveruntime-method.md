@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTaskManager.ReverseLeaveRuntime
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTaskManager::ReverseLeaveRuntime
+api_name:
+- IHostTaskManager.ReverseLeaveRuntime
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTaskManager::ReverseLeaveRuntime
 helpviewer_keywords:
 - IHostTaskManager::ReverseLeaveRuntime method [.NET Framework hosting]
 - ReverseLeaveRuntime method [.NET Framework hosting]
 ms.assetid: 4837d398-16a1-4e32-902c-022cd1aad3ca
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 634465e2d78dbac41b8791d5be44b2821744f07d
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

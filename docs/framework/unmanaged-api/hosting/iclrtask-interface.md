@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTask
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTask
-helpviewer_keywords: ICLRTask interface [.NET Framework hosting]
+api_name:
+- ICLRTask
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTask
+helpviewer_keywords:
+- ICLRTask interface [.NET Framework hosting]
 ms.assetid: b3a44df3-578a-4451-b55e-70c8e7695f5e
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6fcce85e56abae561b05364a925fdb6b55825669
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

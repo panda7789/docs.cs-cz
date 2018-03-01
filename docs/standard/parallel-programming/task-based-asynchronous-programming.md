@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: parallelism, task
+helpviewer_keywords:
+- parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-caps.latest.revision: "51"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

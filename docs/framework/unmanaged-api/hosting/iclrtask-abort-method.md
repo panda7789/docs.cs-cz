@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTask.Abort
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTask::Abort
+api_name:
+- ICLRTask.Abort
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTask::Abort
 helpviewer_keywords:
 - ICLRTask::Abort method [.NET Framework hosting]
 - Abort method, ICLRTask interface [.NET Framework hosting]
 ms.assetid: b3594b5f-2e41-4e36-9096-3586276a138c
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0e417e329b38c8f57dedf2926c0d6ff02a0170f4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

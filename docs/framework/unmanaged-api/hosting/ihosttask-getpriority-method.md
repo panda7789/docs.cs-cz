@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTask.GetPriority
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTask::GetPriority
+api_name:
+- IHostTask.GetPriority
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTask::GetPriority
 helpviewer_keywords:
 - GetPriority method [.NET Framework hosting]
 - IHostTask::GetPriority method [.NET Framework hosting]
 ms.assetid: 4b463cd6-77c1-4f9a-8518-346ad8fc4b70
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 468a2e29ed3c031889fdc5df3d4defa6506d8fcf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

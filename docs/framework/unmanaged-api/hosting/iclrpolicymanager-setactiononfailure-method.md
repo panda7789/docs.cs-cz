@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRPolicyManager.SetActionOnFailure
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRPolicyManager::SetActionOnFailure
+api_name:
+- ICLRPolicyManager.SetActionOnFailure
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRPolicyManager::SetActionOnFailure
 helpviewer_keywords:
 - SetActionOnFailure method [.NET Framework hosting]
 - ICLRPolicyManager::SetActionOnFailure method [.NET Framework hosting]
 ms.assetid: 4664033f-db97-4388-b988-2ec470796e58
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4440b36485ed900b5e64adcead2525dbb7d5206e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

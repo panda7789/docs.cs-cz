@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostIoCompletionManager.GetAvailableThreads
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostIoCompletionManager::GetAvailableThreads
+api_name:
+- IHostIoCompletionManager.GetAvailableThreads
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostIoCompletionManager::GetAvailableThreads
 helpviewer_keywords:
 - GetAvailableThreads method, IHostIoCompletionManager interface [.NET Framework hosting]
 - IHostIoCompletionManager::GetAvailableThreads method [.NET Framework hosting]
 ms.assetid: bab363d1-b859-47a4-9884-5661c611cce7
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 66f2471e07ae5827d2edb553b4226784b42278c4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

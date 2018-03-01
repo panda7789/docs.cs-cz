@@ -5,24 +5,31 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebugManager.SetSymbolReadingPolicy
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRDebugManager::SetSymbolReadingPolicy
+api_name:
+- ICLRDebugManager.SetSymbolReadingPolicy
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebugManager::SetSymbolReadingPolicy
 helpviewer_keywords:
 - ICLRDebugManager, SetSymbolREadingPolicy method
 - SetSymbolReadingPolicy method [.NET Framework hosting]
 - ICLRDebugManager::SetSymbolReadingPolicy method [.NET Framework hosting]
 ms.assetid: bd921fa2-d377-4d79-acfc-64c38d4dcae9
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 440bab97dc765438758abad3275bb2e4f8051da9
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

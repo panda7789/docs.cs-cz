@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerObjectEnum
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerObjectEnum
-helpviewer_keywords: ICorProfilerObjectEnum interface [.NET Framework profiling]
+api_name:
+- ICorProfilerObjectEnum
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerObjectEnum
+helpviewer_keywords:
+- ICorProfilerObjectEnum interface [.NET Framework profiling]
 ms.assetid: 13e1651c-9523-40ef-bfd7-87fb94519f8b
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0e5c44c819f8a92b48c66dcc4c03a576bb9b5bd5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

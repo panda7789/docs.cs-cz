@@ -3,18 +3,26 @@ title: "Funkce CreateInstanceEnumWmi (referenční dokumentace nespravovaného r
 description: "Funkce CreateInstanceEnumWmi vrací enumerátor obsahující instance dané třídy, které splňují kritéria pro výběr."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: CreateInstanceEnumWmi
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: CreateInstanceEnumWmi
-helpviewer_keywords: CreateInstanceEnumWmi function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- CreateInstanceEnumWmi
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- CreateInstanceEnumWmi
+helpviewer_keywords:
+- CreateInstanceEnumWmi function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b796771b07dee28470d37ca3e4292c0a244e056b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostControl.GetHostManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostControl::GetHostManager
+api_name:
+- IHostControl.GetHostManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostControl::GetHostManager
 helpviewer_keywords:
 - GetHostManager method [.NET Framework hosting]
 - IHostControl::GetHostManager method [.NET Framework hosting]
 ms.assetid: 0fa34bca-ed18-4626-9e78-d33684d18edb
-topic_type: apiref
-caps.latest.revision: "19"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6701350fa9bdb51843b117b0191b677e739807a3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

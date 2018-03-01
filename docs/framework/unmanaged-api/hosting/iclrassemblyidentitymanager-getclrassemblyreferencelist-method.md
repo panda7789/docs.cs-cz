@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRAssemblyIdentityManager.GetCLRAssemblyReferenceList
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList
+api_name:
+- ICLRAssemblyIdentityManager.GetCLRAssemblyReferenceList
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList
 helpviewer_keywords:
 - GetClrAssemblyReferenceList method [.NET Framework hosting]
 - ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList method [.NET Framework hosting]
 ms.assetid: cb5ffae5-287b-4a87-9ca8-7ce3ae0601b7
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: eefe5ff68c7bd428c18729dcbd792b4c3cb64c2e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

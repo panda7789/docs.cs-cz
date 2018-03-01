@@ -3,18 +3,26 @@ title: "Funkce FormatFromRawValue (referenční dokumentace nespravovaného rozh
 description: "Funkce FormatFromRawValue převede nezpracovaných dat výkonu do zadaného formátu."
 ms.date: 11/21/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: FormatFromRawValue
-api_location: PerfCounter.dll
-api_type: DLLExport
-f1_keywords: FormatFromRawValue
-helpviewer_keywords: FormatFromRawValue function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- FormatFromRawValue
+api_location:
+- PerfCounter.dll
+api_type:
+- DLLExport
+f1_keywords:
+- FormatFromRawValue
+helpviewer_keywords:
+- FormatFromRawValue function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3daa89ec0b40bb9c08898ecd682f05f0f0ce09a8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

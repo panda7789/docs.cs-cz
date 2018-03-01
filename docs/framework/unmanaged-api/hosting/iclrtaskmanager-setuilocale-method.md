@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTaskManager.SetUILocale
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTaskManager::SetUILocale
+api_name:
+- ICLRTaskManager.SetUILocale
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTaskManager::SetUILocale
 helpviewer_keywords:
 - ICLRTaskManager::SetUILocale method [.NET Framework hosting]
 - SetUILocale method, ICLRTaskManager interface [.NET Framework hosting]
 ms.assetid: 03adaa9a-2beb-49b3-b2c4-6b4fc3f10715
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fab9da8f7e63ad000595378f5bc36f3aadc2ac3d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

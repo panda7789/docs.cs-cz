@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport2
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport2
-helpviewer_keywords: IMetaDataImport2 interface [.NET Framework metadata]
+api_name:
+- IMetaDataImport2
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport2
+helpviewer_keywords:
+- IMetaDataImport2 interface [.NET Framework metadata]
 ms.assetid: d39b2b87-ba53-4771-ae53-952a68452511
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7cd9d2cd2837ff43fbb266717546db3aa98190e3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

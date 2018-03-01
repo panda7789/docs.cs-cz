@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager.CreateSemaphore
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager::CreateSemaphore
+api_name:
+- IHostSyncManager.CreateSemaphore
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager::CreateSemaphore
 helpviewer_keywords:
 - CreateSemaphore method [.NET Framework hosting]
 - IHostSyncManager::CreateSemaphore method [.NET Framework hosting]
 ms.assetid: 37679e94-5ff9-4173-8fa5-457febeb89bf
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d8df29b3eeb565aaa4a977762fcc453fb985e40d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

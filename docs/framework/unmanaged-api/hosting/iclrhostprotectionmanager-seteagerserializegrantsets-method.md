@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRHostProtectionManager.SetEagerSerializeGrantSets
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRHostProtectionManager::SetEagerSerializeGrantSets
+api_name:
+- ICLRHostProtectionManager.SetEagerSerializeGrantSets
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRHostProtectionManager::SetEagerSerializeGrantSets
 helpviewer_keywords:
 - SetEagerSerializeGrantSets method [.NET Framework hosting]
 - ICLRHostProtectionManager::SetEagerSerializeGrantSets method [.NET Framework hosting]
 ms.assetid: d6158360-22b1-4ace-ad85-d830b9964783
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f1d2bb2ecc4ae7edb4edbaa3ff36650c70c82daf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

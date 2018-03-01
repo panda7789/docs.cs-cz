@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebugManager.BeginConnection
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRDebugManager::BeginConnection
+api_name:
+- ICLRDebugManager.BeginConnection
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebugManager::BeginConnection
 helpviewer_keywords:
 - ICLRDebugManager::BeginConnection method [.NET Framework hosting]
 - BeginConnection method [.NET Framework hosting]
 ms.assetid: bdd98146-ff4d-4150-a264-a4c1a32d31f3
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a637ba71dc966cf311526f468393ef4207e10460
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

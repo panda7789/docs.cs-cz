@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorConfiguration
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICorConfiguration
-helpviewer_keywords: ICorConfiguration interface [.NET Framework hosting]
+api_name:
+- ICorConfiguration
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICorConfiguration
+helpviewer_keywords:
+- ICorConfiguration interface [.NET Framework hosting]
 ms.assetid: aaf96116-372b-4538-afb1-9e0fcdac1f98
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: af9a7d4bb1d38fd4a81e954074b074325409ee5e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorErrorIfEmitOutOfOrder
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: CorErrorIfEmitOutOfOrder
-helpviewer_keywords: CorErrorIfEmitOutOfOrder enumeration [.NET Framework metadata]
+api_name:
+- CorErrorIfEmitOutOfOrder
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- CorErrorIfEmitOutOfOrder
+helpviewer_keywords:
+- CorErrorIfEmitOutOfOrder enumeration [.NET Framework metadata]
 ms.assetid: 6d758aad-29a7-44fe-9481-bbff5b799a32
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7c049d78d8ba67ec5f08fc2beb584fef4987c9e8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

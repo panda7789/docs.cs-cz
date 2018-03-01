@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeHost.UnloadAppDomain
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeHost::UnloadAppDomain
+api_name:
+- ICLRRuntimeHost.UnloadAppDomain
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeHost::UnloadAppDomain
 helpviewer_keywords:
 - ICLRRuntimeHost::UnloadAppDomain method [.NET Framework hosting]
 - UnloadAppDomain method [.NET Framework hosting]
 ms.assetid: 571912bc-3429-4ff8-8eb2-ea993ffbd901
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 481f701ae4db15b66596c3af89c2e7aff7a28f88
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

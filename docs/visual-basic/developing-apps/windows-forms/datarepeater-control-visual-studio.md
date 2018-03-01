@@ -3,11 +3,13 @@ title: "DataRepeater – ovládací prvky (Visual Studio)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: DataRepeater, topic list
+helpviewer_keywords:
+- DataRepeater, topic list
 ms.assetid: 68e0cf5e-e2cb-480a-80cc-d13eb6c9b3dd
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5e2b904e3890394366f1a4496329c5edd228f0c2

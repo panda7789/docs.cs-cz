@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataEmit2.SetGenericParamProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataEmit2::SetGenericParamProps
+api_name:
+- IMetaDataEmit2.SetGenericParamProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataEmit2::SetGenericParamProps
 helpviewer_keywords:
 - IMetaDataEmit2::SetGenericParamProps method [.NET Framework metadata]
 - SetGenericParamProps method [.NET Framework metadata]
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6e8e0720934fa9d7ec3669fa1cef7ac3ef9aedaa
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

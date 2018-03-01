@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRTask.NeedsPriorityScheduling
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRTask::NeedsPriorityScheduling
+api_name:
+- ICLRTask.NeedsPriorityScheduling
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRTask::NeedsPriorityScheduling
 helpviewer_keywords:
 - ICLRTask::NeedsPriorityScheduling method [.NET Framework hosting]
 - NeedsPriorityScheduling method [.NET Framework hosting]
 ms.assetid: 9c9db3f3-26bf-4317-88de-5eb926a22a1d
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6ce57a4130c19ffd040bc9fbeba5e775a751efdb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

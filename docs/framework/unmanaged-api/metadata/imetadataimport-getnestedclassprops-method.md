@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetNestedClassProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetNestedClassProps
+api_name:
+- IMetaDataImport.GetNestedClassProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetNestedClassProps
 helpviewer_keywords:
 - GetNestedClassProps method [.NET Framework metadata]
 - IMetaDataImport::GetNestedClassProps method [.NET Framework metadata]
 ms.assetid: 704d19f1-bdef-4745-af8c-6476eb246fb3
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8bbfe382a9a2fdf8ece1015ee73c3d9ef604ec7e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CoInitializeEE
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: CoInitializeEE
-helpviewer_keywords: CoInitializeEE function [.NET Framework hosting]
+api_name:
+- CoInitializeEE
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- CoInitializeEE
+helpviewer_keywords:
+- CoInitializeEE function [.NET Framework hosting]
 ms.assetid: 7e42a928-5068-4ba6-b8c3-806551a01fa8
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0ca564830411a9df0d47cc9765958286bbd40f96
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

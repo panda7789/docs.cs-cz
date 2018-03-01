@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.StrongNameFreeBuffer
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::StrongNameFreeBuffer
+api_name:
+- ICLRStrongName.StrongNameFreeBuffer
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::StrongNameFreeBuffer
 helpviewer_keywords:
 - StrongNameFreeBuffer method, ICLRStrongName interface [.NET Framework hosting]
 - ICLRStrongName::StrongNameFreeBuffer method [.NET Framework hosting]
 ms.assetid: 6148c508-bd1d-4a37-85c3-06ecb09cc857
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 378847ae8bfd1640401c51f75258affbd100cb22
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

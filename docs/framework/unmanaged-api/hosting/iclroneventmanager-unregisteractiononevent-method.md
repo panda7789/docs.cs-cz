@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLROnEventManager.UnregisterActionOnEvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLROnEventManager::UnregisterActionOnEvent
+api_name:
+- ICLROnEventManager.UnregisterActionOnEvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLROnEventManager::UnregisterActionOnEvent
 helpviewer_keywords:
 - UnRegisterActionOnEvent method [.NET Framework hosting]
 - ICLROnEventManager::UnRegisterActionOnEvent method [.NET Framework hosting]
 ms.assetid: 4c02ec37-cdf0-46b2-890e-235092741236
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8d295817a7c6f8a177de3ff251904beeaf8ca828
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

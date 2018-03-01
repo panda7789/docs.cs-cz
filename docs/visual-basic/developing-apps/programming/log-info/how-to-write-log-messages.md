@@ -5,11 +5,13 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: My.Application.Log object, writing log messags
+helpviewer_keywords:
+- My.Application.Log object, writing log messags
 ms.assetid: 972a3e0c-2996-4623-a7a9-d7ebc4d207f8
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ae4d875fd4f95ca51fff565551009e780b17d07a

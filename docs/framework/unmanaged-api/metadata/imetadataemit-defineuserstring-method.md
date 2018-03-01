@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataEmit.DefineUserString
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataEmit::DefineUserString
+api_name:
+- IMetaDataEmit.DefineUserString
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataEmit::DefineUserString
 helpviewer_keywords:
 - DefineUserString method [.NET Framework metadata]
 - IMetaDataEmit::DefineUserString method [.NET Framework metadata]
 ms.assetid: 88fb7ef3-bbdf-429c-b678-c9c153456461
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 729f2d48722fb34b844636b416edf36d715e1a48
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

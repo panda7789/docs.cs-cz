@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedReader2.GetMethodByVersionPreRemap
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedReader2::GetMethodByVersionPreRemap
+api_name:
+- ISymUnmanagedReader2.GetMethodByVersionPreRemap
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedReader2::GetMethodByVersionPreRemap
 helpviewer_keywords:
 - GetMethodByVersionPreRemap method [.NET Framework debugging]
 - ISymUnmanagedReader2::GetMethodByVersionPreRemap method [.NET Framework debugging]
 ms.assetid: 0d144ed4-bdb0-4cac-960c-cb90f4dca173
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c0745428c6e9a51c5c7fa413838cf65eb907eea8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

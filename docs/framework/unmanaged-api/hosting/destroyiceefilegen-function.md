@@ -5,24 +5,31 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: DestroyICeeFileGen
+api_name:
+- DestroyICeeFileGen
 api_location:
 - mscoree.dll
 - mscorpehost.dll
 - mscorpe.dll
-api_type: COM
-f1_keywords: DestroyICeeFileGen
-helpviewer_keywords: DestroyICeeFileGen function [.NET Framework hosting]
+api_type:
+- COM
+f1_keywords:
+- DestroyICeeFileGen
+helpviewer_keywords:
+- DestroyICeeFileGen function [.NET Framework hosting]
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d6c3e326aa71adc1bc9abe350cfc0528c88905cf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

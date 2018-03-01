@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedWriter.SetMethodSourceRange
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedWriter::SetMethodSourceRange
+api_name:
+- ISymUnmanagedWriter.SetMethodSourceRange
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedWriter::SetMethodSourceRange
 helpviewer_keywords:
 - SetMethodSourceRange method [.NET Framework debugging]
 - ISymUnmanagedWriter::SetMethodSourceRange method [.NET Framework debugging]
 ms.assetid: c698b86e-ace7-4b21-9549-f52d6a034959
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 09f82be130dba8087cf649d3e89bec8afc065e86
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

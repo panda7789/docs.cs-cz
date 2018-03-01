@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: COR_PRF_FUNCTION_ARGUMENT_INFO
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: COR_PRF_FUNCTION_ARGUMENT_INFO
-helpviewer_keywords: COR_PRF_FUNCTION_ARGUMENT_INFO structure [.NET Framework profiling]
+api_name:
+- COR_PRF_FUNCTION_ARGUMENT_INFO
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- COR_PRF_FUNCTION_ARGUMENT_INFO
+helpviewer_keywords:
+- COR_PRF_FUNCTION_ARGUMENT_INFO structure [.NET Framework profiling]
 ms.assetid: 07cf3bab-e193-4991-8205-3f41cf2d67b3
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e26377fe3c5cfbae68f90087e3fb624ae4db0dc8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

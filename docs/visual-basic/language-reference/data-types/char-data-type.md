@@ -3,9 +3,11 @@ title: "Char – datový typ (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Char
+f1_keywords:
+- vb.Char
 helpviewer_keywords:
 - literal type characters [Visual Basic], C
 - Char data type
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 16ff547fccbf4481d31ca79537962cc7090fc9b0

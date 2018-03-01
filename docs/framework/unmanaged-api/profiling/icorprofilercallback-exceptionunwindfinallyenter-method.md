@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.ExceptionUnwindFinallyEnter
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::ExceptionUnwindFinallyEnter
+api_name:
+- ICorProfilerCallback.ExceptionUnwindFinallyEnter
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::ExceptionUnwindFinallyEnter
 helpviewer_keywords:
 - ICorProfilerCallback::ExceptionUnwindFinallyEnter method [.NET Framework profiling]
 - ExceptionUnwindFinallyEnter method [.NET Framework profiling]
 ms.assetid: c7fab986-b69f-4ec8-b7b7-91dcfc239cd0
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f3480761c2708fa2f15454a7a99c34e84ee34eb1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

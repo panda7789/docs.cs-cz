@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataDispenserEx.GetOption
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataDispenserEx::GetOption
+api_name:
+- IMetaDataDispenserEx.GetOption
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataDispenserEx::GetOption
 helpviewer_keywords:
 - GetOption method [.NET Framework metadata]
 - IMetaDataDispenserEx::GetOption method [.NET Framework metadata]
 ms.assetid: d7f794e5-8e25-4d65-850a-7c34fbfce87d
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1fd59fa20e95de8486eaa7f18a63333459361ac8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -3,18 +3,26 @@ title: "Funkce BeginEnumeration – funkce (referenční dokumentace nespravovan
 description: "Funkce funkce BeginEnumeration obnoví enumerátor na začátku výčtu"
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: BeginEnumeration
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: BeginEnumeration
-helpviewer_keywords: BeginEnumeration function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- BeginEnumeration
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- BeginEnumeration
+helpviewer_keywords:
+- BeginEnumeration function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 90c3e8448a61145290ea4a75b1d38f7ae010cb9f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

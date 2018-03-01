@@ -8,9 +8,10 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: tasks and APM
+helpviewer_keywords:
+- tasks and APM
 ms.assetid: 7add905b-ff60-4353-af79-5089038d9a08
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

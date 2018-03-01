@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedDocument.FindClosestLine
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedDocument::FindClosestLine
+api_name:
+- ISymUnmanagedDocument.FindClosestLine
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedDocument::FindClosestLine
 helpviewer_keywords:
 - FindClosestLine method [.NET Framework debugging]
 - ISymUnmanagedDocument::FindClosestLine method [.NET Framework debugging]
 ms.assetid: 628f2a04-e529-407d-841e-3b3da219a9cb
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a5467f7d500719e8849b85a57195e98c6eeb7fb3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

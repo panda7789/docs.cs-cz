@@ -5,22 +5,28 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ResolveTypeLib
-api_location: tlbref.dll
-f1_keywords: ResolveTypeLib
+api_name:
+- ResolveTypeLib
+api_location:
+- tlbref.dll
+f1_keywords:
+- ResolveTypeLib
 helpviewer_keywords:
 - ITypeLibResolver::ResolveTypeLib method [.NET Framework]
 - ResolveTypeLib method [.NET Framework]
 ms.assetid: 95d2aa0d-8eeb-4a9f-a216-5249f7e2c167
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 72d1cedbfc1a1ec6c3588a7b0be9cf657d7369fd
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

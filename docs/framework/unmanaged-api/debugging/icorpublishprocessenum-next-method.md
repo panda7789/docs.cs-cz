@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorPublishProcessEnum.Next
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorPublishProcessEnum::Next
+api_name:
+- ICorPublishProcessEnum.Next
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorPublishProcessEnum::Next
 helpviewer_keywords:
 - ICorPublishProcessEnum::Next method [.NET Framework debugging]
 - Next method, ICorPublishProcessEnum interface [.NET Framework debugging]
 ms.assetid: 6c399f37-1e38-4ca1-b70d-8ae41f7228b7
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fb9c2914bffbf1b767b8a293bc06311fddacb176
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

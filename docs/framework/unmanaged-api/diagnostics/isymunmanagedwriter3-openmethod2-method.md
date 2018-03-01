@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedWriter3.OpenMethod2
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedWriter3::OpenMethod2
+api_name:
+- ISymUnmanagedWriter3.OpenMethod2
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedWriter3::OpenMethod2
 helpviewer_keywords:
 - ISymUnmanagedWriter3::OpenMethod2 method [.NET Framework debugging]
 - OpenMethod2 method [.NET Framework debugging]
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8da6de0271ddce5b956e667420a206c09cc291d8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

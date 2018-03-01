@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostCrst
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostCrst
-helpviewer_keywords: IHostCrst interface [.NET Framework hosting]
+api_name:
+- IHostCrst
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostCrst
+helpviewer_keywords:
+- IHostCrst interface [.NET Framework hosting]
 ms.assetid: ac298ebd-0815-47e4-a823-30b31baab903
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3a9ed2b390ad741d90f9179ef5101d328d3b639d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

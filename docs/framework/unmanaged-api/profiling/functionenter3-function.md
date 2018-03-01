@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: FunctionEnter3
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: FunctionEnter3
-helpviewer_keywords: FunctionEnter3 function [.NET Framework profiling]
+api_name:
+- FunctionEnter3
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- FunctionEnter3
+helpviewer_keywords:
+- FunctionEnter3 function [.NET Framework profiling]
 ms.assetid: ef782c53-dae7-4990-b4ad-fddb1e690d4e
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4bbdfa608f1ea60462dc432a7c2b98cafe66d7be
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

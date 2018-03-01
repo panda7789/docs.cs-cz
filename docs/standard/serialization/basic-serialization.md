@@ -7,8 +7,9 @@ helpviewer_keywords:
 - binary serialization, basic serialization
 - serialization, basic serialization
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
-dev_langs: CSharp
-caps.latest.revision: "7"
+dev_langs:
+- CSharp
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett

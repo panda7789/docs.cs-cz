@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager.SetCLRSyncManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager::SetCLRSyncManager
+api_name:
+- IHostSyncManager.SetCLRSyncManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager::SetCLRSyncManager
 helpviewer_keywords:
 - IHostSyncManager::SetCLRSyncManager method [.NET Framework hosting]
 - SetCLRSyncManager method [.NET Framework hosting]
 ms.assetid: 2b8bbe76-a45d-4989-bacb-11df42f8798c
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fca59f0d2617c6fb244b2b1ed7b5cf46a7d5869f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

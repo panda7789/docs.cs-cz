@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: LPOVERLAPPED_COMPLETION_ROUTINE
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: LPOVERLAPPED_COMPLETION_ROUTINE
-helpviewer_keywords: LPOVERLAPPED_COMPLETION_ROUTINE function pointer [.NET Framework hosting]
+api_name:
+- LPOVERLAPPED_COMPLETION_ROUTINE
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- LPOVERLAPPED_COMPLETION_ROUTINE
+helpviewer_keywords:
+- LPOVERLAPPED_COMPLETION_ROUTINE function pointer [.NET Framework hosting]
 ms.assetid: 5fb645d9-b818-401c-8c2c-c30d86de58ba
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9b1846cf8fff5c41fc54ddeec5b495b50c63581c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

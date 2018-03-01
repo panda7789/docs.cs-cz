@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.RemotingServerSendingReply
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::RemotingServerSendingReply
+api_name:
+- ICorProfilerCallback.RemotingServerSendingReply
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::RemotingServerSendingReply
 helpviewer_keywords:
 - RemotingServerSendingReply method [.NET Framework profiling]
 - ICorProfilerCallback::RemotingServerSendingReply method [.NET Framework profiling]
 ms.assetid: dfe84a19-2e03-4be2-8b25-f02bad38e4a9
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4f8fa5a81231c8181e0d0257a1bbfdb4a1f0a7a0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

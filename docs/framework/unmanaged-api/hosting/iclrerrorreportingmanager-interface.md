@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRErrorReportingManager
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRErrorReportingManager
-helpviewer_keywords: ICLRErrorReportingManager interface [.NET Framework hosting]
+api_name:
+- ICLRErrorReportingManager
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRErrorReportingManager
+helpviewer_keywords:
+- ICLRErrorReportingManager interface [.NET Framework hosting]
 ms.assetid: ea8af0d5-4133-4472-8a1f-50570d7e85fa
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1ac362432a5d0c613f4ee1409ee15d92bfef3aeb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

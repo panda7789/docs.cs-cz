@@ -3,14 +3,16 @@ title: "Výraz dolního indexu pole chybí."
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc30306
 - vbc30306
-helpviewer_keywords: BC30306
+helpviewer_keywords:
+- BC30306
 ms.assetid: 3c0d9732-ee37-436f-a1df-29d65712f48a
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: aac09a90abf69fe53f46910fe4b542c6cc632c3a

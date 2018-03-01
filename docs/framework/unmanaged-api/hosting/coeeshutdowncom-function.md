@@ -5,25 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CoEEShutDownCOM
+api_name:
+- CoEEShutDownCOM
 api_location:
 - mscoree.dll
 - clr.dll
 - mscorwks.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: CoEEShutDownCOM
-helpviewer_keywords: CoEEShutDownCOM function [.NET Framework hosting]
+api_type:
+- DLLExport
+f1_keywords:
+- CoEEShutDownCOM
+helpviewer_keywords:
+- CoEEShutDownCOM function [.NET Framework hosting]
 ms.assetid: b634cae2-632f-4737-9be4-92d0652844d7
-topic_type: apiref
-caps.latest.revision: "18"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0ae339310c2bfd186cae798ff603d69735abeefd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

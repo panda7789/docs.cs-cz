@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.AppDomainCreationStarted
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::AppDomainCreationStarted
+api_name:
+- ICorProfilerCallback.AppDomainCreationStarted
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::AppDomainCreationStarted
 helpviewer_keywords:
 - AppDomainCreationStarted method [.NET Framework profiling]
 - ICorProfilerCallback::AppDomainCreationStarted method [.NET Framework profiling]
 ms.assetid: b2a8240b-07fe-4859-bb2b-7d3adbfa0a9f
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fe9089438f64bff19439af76c3f5eaf18fc5d6d4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

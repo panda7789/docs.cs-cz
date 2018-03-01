@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IAssemblyCache
-api_location: fusion.dll
-api_type: COM
-f1_keywords: IAssemblyCache
-helpviewer_keywords: IAssemblyCache interface [.NET Framework fusion]
+api_name:
+- IAssemblyCache
+api_location:
+- fusion.dll
+api_type:
+- COM
+f1_keywords:
+- IAssemblyCache
+helpviewer_keywords:
+- IAssemblyCache interface [.NET Framework fusion]
 ms.assetid: 71ea170f-872d-4fc5-81b6-27da1dec9b19
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 21ebc29a6c442625f7a532f7b1e6a47e7dc4cb69
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

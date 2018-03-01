@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetFunctionInfo
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetFunctionInfo
+api_name:
+- ICorProfilerInfo.GetFunctionInfo
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetFunctionInfo
 helpviewer_keywords:
 - ICorProfilerInfo::GetFunctionInfo method [.NET Framework profiling]
 - GetFunctionInfo method [.NET Framework profiling]
 ms.assetid: c42b5891-019d-46b3-b551-4606295b75b8
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 17512077ef7a8ca45fa76c00f93612015948d083
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

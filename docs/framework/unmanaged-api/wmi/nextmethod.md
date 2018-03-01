@@ -3,18 +3,26 @@ title: "Funkce NextMethod (referenční dokumentace nespravovaného rozhraní AP
 description: "Funkce NextMethod načte další metoda ve výčtu."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: NextMethod
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: NextMethod
-helpviewer_keywords: NextMethod function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- NextMethod
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- NextMethod
+helpviewer_keywords:
+- NextMethod function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6b886b3ecbd1d5b5b8d212846b2bd8291fa43909
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

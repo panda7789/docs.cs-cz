@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: hosting services [WCF], WAS
+helpviewer_keywords:
+- hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 40122670c84f87590a31b79f39695e9626ea9883
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -51,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 |--------------|-------------------|----------------------|---------------------------|  
 |<span data-ttu-id="e7fd8-129">Pouze HTTP</span><span class="sxs-lookup"><span data-stu-id="e7fd8-129">HTTP Only</span></span>|<span data-ttu-id="e7fd8-130">http: *: 80:\*</span><span class="sxs-lookup"><span data-stu-id="e7fd8-130">http: *:80:\*</span></span>|<span data-ttu-id="e7fd8-131">/appTwo</span><span class="sxs-lookup"><span data-stu-id="e7fd8-131">/appTwo</span></span>|<span data-ttu-id="e7fd8-132">http://localhost/appTwo/</span><span class="sxs-lookup"><span data-stu-id="e7fd8-132">http://localhost/appTwo/</span></span>|  
 |<span data-ttu-id="e7fd8-133">HTTP a jiným protokolem než HTTP</span><span class="sxs-lookup"><span data-stu-id="e7fd8-133">Both HTTP and Non-HTTP</span></span>|<span data-ttu-id="e7fd8-134">http: *: 80:\*</span><span class="sxs-lookup"><span data-stu-id="e7fd8-134">http: *:80:\*</span></span><br /><br /> <span data-ttu-id="e7fd8-135">NET.TCP: 808:\*</span><span class="sxs-lookup"><span data-stu-id="e7fd8-135">net.tcp: 808:\*</span></span>|<span data-ttu-id="e7fd8-136">/appTwo</span><span class="sxs-lookup"><span data-stu-id="e7fd8-136">/appTwo</span></span>|<span data-ttu-id="e7fd8-137">http://localhost/appTwo/</span><span class="sxs-lookup"><span data-stu-id="e7fd8-137">http://localhost/appTwo/</span></span><br /><span data-ttu-id="e7fd8-138">NET.TCP://localhost/appTwo/</span><span class="sxs-lookup"><span data-stu-id="e7fd8-138">net.tcp://localhost/appTwo/</span></span>|  
-|<span data-ttu-id="e7fd8-139">Jiným protokolem než HTTP pouze</span><span class="sxs-lookup"><span data-stu-id="e7fd8-139">Non-HTTP only</span></span>|<span data-ttu-id="e7fd8-140">NET.pipe: *</span><span class="sxs-lookup"><span data-stu-id="e7fd8-140">net.pipe: *</span></span>|<span data-ttu-id="e7fd8-141">/appThree</span><span class="sxs-lookup"><span data-stu-id="e7fd8-141">/appThree</span></span>|<span data-ttu-id="e7fd8-142">NET.pipe://appThree/</span><span class="sxs-lookup"><span data-stu-id="e7fd8-142">net.pipe://appThree/</span></span>|  
+|<span data-ttu-id="e7fd8-139">Jiným protokolem než HTTP pouze</span><span class="sxs-lookup"><span data-stu-id="e7fd8-139">Non-HTTP only</span></span>|<span data-ttu-id="e7fd8-140">NET.pipe: \*</span><span class="sxs-lookup"><span data-stu-id="e7fd8-140">net.pipe: \*</span></span>|<span data-ttu-id="e7fd8-141">/appThree</span><span class="sxs-lookup"><span data-stu-id="e7fd8-141">/appThree</span></span>|<span data-ttu-id="e7fd8-142">NET.pipe://appThree/</span><span class="sxs-lookup"><span data-stu-id="e7fd8-142">net.pipe://appThree/</span></span>|  
   
  <span data-ttu-id="e7fd8-143">Služby a prostředky v rámci aplikace lze také řešit.</span><span class="sxs-lookup"><span data-stu-id="e7fd8-143">Services and resources within an application can also be addressed.</span></span> <span data-ttu-id="e7fd8-144">V rámci aplikace jsou prostředky aplikace řešit relativní k cestě základní aplikace.</span><span class="sxs-lookup"><span data-stu-id="e7fd8-144">Within an application, application resources are addressed relative to the base application path.</span></span> <span data-ttu-id="e7fd8-145">Předpokládejme například, že lokalita na contoso.com název počítače má vazby webu pro HTTP i Net.TCP protokoly.</span><span class="sxs-lookup"><span data-stu-id="e7fd8-145">For example, assume that a site on a machine name contoso.com has site bindings for both the HTTP and Net.TCP protocols.</span></span> <span data-ttu-id="e7fd8-146">Také předpokládají, že lokalita obsahuje jednu aplikaci, které jsou umístěné v /Billing, která poskytuje služby v GetOrders.svc.</span><span class="sxs-lookup"><span data-stu-id="e7fd8-146">Also assume that the site contains one application located at /Billing, which exposes a service at GetOrders.svc.</span></span> <span data-ttu-id="e7fd8-147">Poté Pokud služba GetOrders.svc vystavený koncový bod s relativní adresu SecureEndpoint, koncový bod služby by vystavit na následující dva identifikátory URI:</span><span class="sxs-lookup"><span data-stu-id="e7fd8-147">Then, if the GetOrders.svc service exposed an endpoint with a relative address of SecureEndpoint, the service endpoint would be exposed at the following two URIs:</span></span>  
   

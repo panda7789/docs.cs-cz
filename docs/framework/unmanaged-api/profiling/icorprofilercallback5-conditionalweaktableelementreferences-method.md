@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback5.ConditionalWeakTableReferences
-api_location: Mscorwks.dll
-api_type: COM
-f1_keywords: CondiitonalWeakTableElementReferences
+api_name:
+- ICorProfilerCallback5.ConditionalWeakTableReferences
+api_location:
+- Mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- CondiitonalWeakTableElementReferences
 helpviewer_keywords:
 - ConditionalWeakTableElementReferences method, ICorProfilerCallback5 interface [.NET Framework profiling]
 - ICorProfilerCallback5::ConditionalWeakTableElementReferences method [.NET Framework profiling]
 ms.assetid: 532c7a02-a9de-4cea-bb2b-7f470da594de
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8cfe86ac7d0cd5b4a5c6adb9f12ffe9577b6e611
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

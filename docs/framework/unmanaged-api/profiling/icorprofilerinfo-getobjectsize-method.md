@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetObjectSize
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetObjectSize
+api_name:
+- ICorProfilerInfo.GetObjectSize
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetObjectSize
 helpviewer_keywords:
 - GetObjectSize method [.NET Framework profiling]
 - ICorProfilerInfo::GetObjectSize method [.NET Framework profiling]
 ms.assetid: 9f02e763-73f7-42cb-a41c-f78499d9482c
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9425938042485c4330fe3fbc50cdabde6451b427
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

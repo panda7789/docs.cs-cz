@@ -5,20 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-api_name: ICorProfilerInfo7.GetInMemorySymbolsLength
+api_name:
+- ICorProfilerInfo7.GetInMemorySymbolsLength
 api_location:
 - mscorwks.dll
 - icorprof.idl
-api_type: COM
+api_type:
+- COM
 ms.assetid: d62c4a4c-8a62-45aa-8f01-a8387cf36159
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8c1299429e9173069c5a39fe4a2b82d1db5938f8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

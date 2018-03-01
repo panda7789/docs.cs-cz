@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.StrongNameHashSize
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::StrongNameHashSize
+api_name:
+- ICLRStrongName.StrongNameHashSize
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::StrongNameHashSize
 helpviewer_keywords:
 - ICLRStrongName::StrongNameHashSize method [.NET Framework hosting]
 - StrongNameHashSize method, ICLRStrongName interface [.NET Framework hosting]
 ms.assetid: 4a05ee56-08e4-4f3a-86a9-9b52083d5c0f
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: acc2812567ce2d47d3f06c000fc387708c2e8acb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

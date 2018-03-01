@@ -12,9 +12,10 @@ dev_langs:
 - csharp
 - vb
 - cpp
-helpviewer_keywords: exceptions, best practices
+helpviewer_keywords:
+- exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett

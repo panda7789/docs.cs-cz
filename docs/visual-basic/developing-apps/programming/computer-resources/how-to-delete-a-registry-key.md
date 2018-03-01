@@ -5,9 +5,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.DeleteSetting
+f1_keywords:
+- vb.DeleteSetting
 helpviewer_keywords:
 - GetSetting function [Visual Basic]
 - registry [Visual Basic], deleting values
@@ -16,7 +18,7 @@ helpviewer_keywords:
 - registry [Visual Basic], deleting keys
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 0cb98c02531bac133b9dc37a92f75d5c0418dc7c

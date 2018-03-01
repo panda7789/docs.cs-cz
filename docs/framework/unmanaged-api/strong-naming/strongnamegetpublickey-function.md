@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: StrongNameGetPublicKey
+api_name:
+- StrongNameGetPublicKey
 api_location:
 - mscoree.dll
 - mscorsn.dll
-api_type: DLLExport
-f1_keywords: StrongNameGetPublicKey
-helpviewer_keywords: StrongNameGetPublicKey function [.NET Framework strong naming]
+api_type:
+- DLLExport
+f1_keywords:
+- StrongNameGetPublicKey
+helpviewer_keywords:
+- StrongNameGetPublicKey function [.NET Framework strong naming]
 ms.assetid: 5b58c87f-3f72-40df-9b9a-291076931cc3
-topic_type: apiref
-caps.latest.revision: "20"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cec7c1edac24d43924abb2bf8784d45ed6372129
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

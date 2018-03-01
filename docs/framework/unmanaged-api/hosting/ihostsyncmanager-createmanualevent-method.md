@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostSyncManager.CreateManualEvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostSyncManager::CreateManualEvent
+api_name:
+- IHostSyncManager.CreateManualEvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostSyncManager::CreateManualEvent
 helpviewer_keywords:
 - CreateManualEvent method [.NET Framework hosting]
 - IHostSyncManager::CreateManualEvent method [.NET Framework hosting]
 ms.assetid: 68661fbd-09cf-46dc-890b-e694f8a3880a
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 347eaa64b8a5e5b5c9494a779e3d583b10d80052
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

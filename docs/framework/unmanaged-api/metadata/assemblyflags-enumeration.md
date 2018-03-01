@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: AssemblyFlags
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: AssemblyFlags
-helpviewer_keywords: AssemblyFlags enumeration [.NET Framework metadata]
+api_name:
+- AssemblyFlags
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- AssemblyFlags
+helpviewer_keywords:
+- AssemblyFlags enumeration [.NET Framework metadata]
 ms.assetid: 40f9bd9e-16ec-447e-81b0-168c875e9866
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 605817ef23246f708b6cf46a93072cde3003ab43
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

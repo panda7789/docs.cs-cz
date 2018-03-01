@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedVariable
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedVariable
-helpviewer_keywords: ISymUnmanagedVariable interface [.NET Framework debugging]
+api_name:
+- ISymUnmanagedVariable
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedVariable
+helpviewer_keywords:
+- ISymUnmanagedVariable interface [.NET Framework debugging]
 ms.assetid: 704c69ba-77bc-40d7-8c0c-400061686321
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e5ae8d1d05274363dc523c1a2cebf4ed09c1f461
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

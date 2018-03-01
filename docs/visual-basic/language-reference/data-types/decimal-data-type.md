@@ -3,9 +3,11 @@ title: "Decimal – datový typ (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Decimal
+f1_keywords:
+- vb.Decimal
 helpviewer_keywords:
 - literal type characters [Visual Basic], D
 - trailing zeros
@@ -23,7 +25,7 @@ helpviewer_keywords:
 - '@ identifier type character'
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 55a9293fa680a7a04cff4099654d4d66790e8d3d

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IActionOnCLREvent.OnEvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IActionOnCLREvent::OnEvent
+api_name:
+- IActionOnCLREvent.OnEvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IActionOnCLREvent::OnEvent
 helpviewer_keywords:
 - OnEvent method [.NET Framework hosting]
 - IActionOnCLREvent::OnEvent method [.NET Framework hosting]
 ms.assetid: 0970f10c-4304-4c12-91c0-83e51455afb4
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: bfba70cb1e0daf230abd16af6e24b4671334f20d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

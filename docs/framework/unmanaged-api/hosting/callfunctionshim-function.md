@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CallFunctionShim
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: CallFunctionShim
-helpviewer_keywords: CallfunctionShim function [.NET Framework hosting]
+api_name:
+- CallFunctionShim
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- CallFunctionShim
+helpviewer_keywords:
+- CallfunctionShim function [.NET Framework hosting]
 ms.assetid: 37118465-ddf3-41f0-bf27-335b72777e63
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 12c399c876a244d0c27e34b41e08c284d7429bac
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

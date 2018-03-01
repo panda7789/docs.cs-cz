@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetCORSystemDirectory
+api_name:
+- GetCORSystemDirectory
 api_location:
 - mscoree.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: GetCORSystemDirectory
-helpviewer_keywords: GetCORSystemDirectory function [.NET Framework hosting]
+api_type:
+- DLLExport
+f1_keywords:
+- GetCORSystemDirectory
+helpviewer_keywords:
+- GetCORSystemDirectory function [.NET Framework hosting]
 ms.assetid: 3dcd16a7-dafc-4ca8-b5cd-20ffb37db91d
-topic_type: apiref
-caps.latest.revision: "21"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 02b695ac7f75dd38da8cd06e1444af4ae425ebd2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

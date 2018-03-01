@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLROnEventManager.RegisterActionOnEvent
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLROnEventManager::RegisterActionOnEvent
+api_name:
+- ICLROnEventManager.RegisterActionOnEvent
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLROnEventManager::RegisterActionOnEvent
 helpviewer_keywords:
 - ICLROnEventManager::RegisterActionOnEvent method [.NET Framework hosting]
 - RegisterActionOnEvent method [.NET Framework hosting]
 ms.assetid: b944cf49-918d-4c4e-993b-77d097a52550
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 008bdc856c9fbede7398f467674ac191c1860128
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

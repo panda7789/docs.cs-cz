@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRMetaHost.RequestRuntimeLoadedNotification
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRMetaHost::RequestRuntimeLoadedNotification
+api_name:
+- ICLRMetaHost.RequestRuntimeLoadedNotification
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRMetaHost::RequestRuntimeLoadedNotification
 helpviewer_keywords:
 - RequestRuntimeLoadedNotification method [.NET Framework hosting]
 - ICLRMetaHost::RequestRuntimeLoadedNotification method [.NET Framework hosting]
 ms.assetid: 0d5ccc4d-0193-41f5-af54-45d7b70d5321
-topic_type: apiref
-caps.latest.revision: "21"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b7866270d8c9234a375401dfd05b504a06ddbf4b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

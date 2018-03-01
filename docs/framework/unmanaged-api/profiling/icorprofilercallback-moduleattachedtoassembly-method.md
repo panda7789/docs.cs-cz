@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.ModuleAttachedToAssembly
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::ModuleAttachedToAssembly
+api_name:
+- ICorProfilerCallback.ModuleAttachedToAssembly
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::ModuleAttachedToAssembly
 helpviewer_keywords:
 - ICorProfilerCallback::ModuleAttachedToAssembly method [.NET Framework profiling]
 - ModuleAttachedToAssembly method [.NET Framework profiling]
 ms.assetid: b595798a-5d40-4cac-ab4f-911c61d2c5d2
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6183014bf5487d0eebccf2fb70a13c363212046b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

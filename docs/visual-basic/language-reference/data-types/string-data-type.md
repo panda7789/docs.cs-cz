@@ -3,9 +3,11 @@ title: "String – datový typ (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.String
+f1_keywords:
+- vb.String
 helpviewer_keywords:
 - strings [Visual Basic], character
 - strings [Visual Basic], fixed-length
@@ -21,7 +23,7 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 90f126a5cca36969617446e81a8d13434e39df75

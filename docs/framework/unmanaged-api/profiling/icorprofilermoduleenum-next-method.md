@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerModuleEnum.Next Method
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerModuleEnum::Next
+api_name:
+- ICorProfilerModuleEnum.Next Method
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerModuleEnum::Next
 helpviewer_keywords:
 - ICorProfilerModuleEnum::Next method [.NET Framework profiling]
 - Next method, ICorProfilerModuleEnum interface [.NET Framework profiling]
 ms.assetid: a3cea59d-7622-4323-897a-0a464c40f77f
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2fca8a0f999ccc497c1929faa6cead04a1ec2774
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

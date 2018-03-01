@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetHistoryFileDirectory
-api_location: fusion.dll
-api_type: DLLExport
-f1_keywords: GetHistoryFileDirectory
-helpviewer_keywords: GetHistoryFileDirectory function [.NET Framework fusion]
+api_name:
+- GetHistoryFileDirectory
+api_location:
+- fusion.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetHistoryFileDirectory
+helpviewer_keywords:
+- GetHistoryFileDirectory function [.NET Framework fusion]
 ms.assetid: 93232222-926e-42ac-b85d-8a6d33977672
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5d0ec18a4f95d0d280a66b3b9d9200c560f5f187
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

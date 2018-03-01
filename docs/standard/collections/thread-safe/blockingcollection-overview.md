@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: BlockingCollection, overview
+helpviewer_keywords:
+- BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett

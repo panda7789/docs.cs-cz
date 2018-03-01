@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRStrongName.GetHashFromFile
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRStrongName::GetHashFromFile
+api_name:
+- ICLRStrongName.GetHashFromFile
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRStrongName::GetHashFromFile
 helpviewer_keywords:
 - ICLRStrongName::GetHashFromFile method [.NET Framework hosting]
 - GetHashFromFile method, ICLRStrongName interface [.NET Framework hosting]
 ms.assetid: 9e50480a-8ada-4044-b2a5-97bb14ed3525
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 480113148e039ff1be3e438b4af2e24fdeacba14
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

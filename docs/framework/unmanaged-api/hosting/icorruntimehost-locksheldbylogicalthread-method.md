@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorRuntimeHost.LocksHeldByLogicalThread
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICorRuntimeHost::LocksHeldByLogicalThread
+api_name:
+- ICorRuntimeHost.LocksHeldByLogicalThread
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICorRuntimeHost::LocksHeldByLogicalThread
 helpviewer_keywords:
 - ICorRuntimeHost::LocksHeldByLogicalThread method [.NET Framework hosting]
 - LocksHeldByLogicalThread method [.NET Framework hosting]
 ms.assetid: c3601255-d894-4d7c-b1df-c31334551700
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7875d78415d06a55c11a6b42476ff806a5cadc78
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

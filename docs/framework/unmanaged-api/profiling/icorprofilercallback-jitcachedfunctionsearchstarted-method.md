@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.JITCachedFunctionSearchStarted
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::JITCachedFunctionSearchStarted
+api_name:
+- ICorProfilerCallback.JITCachedFunctionSearchStarted
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::JITCachedFunctionSearchStarted
 helpviewer_keywords:
 - JITCachedFunctionSearchStarted method [.NET Framework profiling]
 - ICorProfilerCallback::JITCachedFunctionSearchStarted method [.NET Framework profiling]
 ms.assetid: 5cba642c-0d80-48ee-889d-198c5044d821
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d2208a1a1637b3bb8dd7d7963ab806aeae7921dd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

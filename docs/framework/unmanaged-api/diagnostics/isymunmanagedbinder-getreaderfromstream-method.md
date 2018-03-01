@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedBinder.GetReaderFromStream
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedBinder::GetReaderFromStream
+api_name:
+- ISymUnmanagedBinder.GetReaderFromStream
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedBinder::GetReaderFromStream
 helpviewer_keywords:
 - ISymUnmanagedBinder::GetReaderFromStream method [.NET Framework debugging]
 - GetReaderFromStream method [.NET Framework debugging]
 ms.assetid: aa38efd4-de7e-4482-a5d3-adc152093460
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 36d4d0067cd638eb39ce82eb042242b7b08d3647
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

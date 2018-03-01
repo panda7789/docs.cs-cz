@@ -5,22 +5,31 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: IDENTITY_ATTRIBUTE_BLOB
-api_location: fusion.dll
-api_type: COM
-f1_keywords: IDENTITY_ATTRIBUTE_BLOB
-helpviewer_keywords: IDENTITY_ATTRIBUTE_BLOB structure [.NET Framework fusion]
+dev_langs:
+- cpp
+api_name:
+- IDENTITY_ATTRIBUTE_BLOB
+api_location:
+- fusion.dll
+api_type:
+- COM
+f1_keywords:
+- IDENTITY_ATTRIBUTE_BLOB
+helpviewer_keywords:
+- IDENTITY_ATTRIBUTE_BLOB structure [.NET Framework fusion]
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 05f8f44579b8169a4a8a13ae527adcf0c2a2839a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

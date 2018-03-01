@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ISymUnmanagedWriter.DefineConstant
-api_location: diasymreader.dll
-api_type: COM
-f1_keywords: ISymUnmanagedWriter::DefineConstant
+api_name:
+- ISymUnmanagedWriter.DefineConstant
+api_location:
+- diasymreader.dll
+api_type:
+- COM
+f1_keywords:
+- ISymUnmanagedWriter::DefineConstant
 helpviewer_keywords:
 - DefineConstant method [.NET Framework debugging]
 - ISymUnmanagedWriter::DefineConstant method [.NET Framework debugging]
 ms.assetid: 9e986986-2223-4d5f-b040-85d716146924
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9b22b0d9c9de27ba9950a0501193bc682586bfbc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

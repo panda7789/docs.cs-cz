@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetMethodProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetMethodProps
+api_name:
+- IMetaDataImport.GetMethodProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetMethodProps
 helpviewer_keywords:
 - GetMethodProps method [.NET Framework metadata]
 - IMetaDataImport::GetMethodProps method [.NET Framework metadata]
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e4e0ae7dfed4b13ea83e16d6380443c9d1b72b06
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

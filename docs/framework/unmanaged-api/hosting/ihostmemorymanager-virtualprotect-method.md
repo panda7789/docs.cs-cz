@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostMemoryManager.VirtualProtect
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostMemoryManager::VirtualProtect
+api_name:
+- IHostMemoryManager.VirtualProtect
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostMemoryManager::VirtualProtect
 helpviewer_keywords:
 - IHostMemoryManager::VirtualProtect method [.NET Framework hosting]
 - VirtualProtect method [.NET Framework hosting]
 ms.assetid: 13be0299-df0d-4951-aabf-0676a30b385f
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 77e8e163a16752934d0a1d826cc8463b3d3281bd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

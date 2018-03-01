@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetTypeLibInfo
-api_location: TlbRef.dll
-api_type: DLLExport
-f1_keywords: GetTypeLibInfo
-helpviewer_keywords: GetTypeLibInfo function [.NET Framework]
+api_name:
+- GetTypeLibInfo
+api_location:
+- TlbRef.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetTypeLibInfo
+helpviewer_keywords:
+- GetTypeLibInfo function [.NET Framework]
 ms.assetid: a1c4d165-9bdc-4ca8-940e-292d4ffcc338
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4f6b1ad18809b46b7a2b38137231028f696d51b8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

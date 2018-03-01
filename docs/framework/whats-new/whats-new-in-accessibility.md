@@ -3,16 +3,19 @@ title: "Co je nového v usnadnění v rozhraní .NET Framework"
 ms.custom: updateeachrelease
 ms.date: 10/13/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: what's new [.NET Framework]
+helpviewer_keywords:
+- what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e6a6759ae285f2dd101bddf71ea8e5ca792e87df
 ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: MT

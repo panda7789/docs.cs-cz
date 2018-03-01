@@ -5,20 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-api_name: ICorProfiler7.ModuleInMemorySymbolsUpdated
+api_name:
+- ICorProfiler7.ModuleInMemorySymbolsUpdated
 api_location:
 - mscorwks.dll
 - corprof.idl
-api_type: COM
+api_type:
+- COM
 ms.assetid: f362a896-3247-4894-9727-e48dbbcd2c78
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 898adf043e425c00d6e311e2f67c53ed65cacb33
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -48,7 +52,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
 > [!NOTE]
 >  <span data-ttu-id="74b5a-110">Tato událost není aktuálně aktivována pro symboly implicitně vytvoření nebo úpravě prostřednictvím <xref:System.Reflection.Emit> rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="74b5a-110">This event is not currently raised for symbols implicitly created or modified via <xref:System.Reflection.Emit> APIs.</span></span>  
   
- <span data-ttu-id="74b5a-111">I když symboly jsou součástí předem volání do jednoho z přetížení spravovaný <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> metody, které zahrnuje `rawSymbolStore` argument, abyste zadávali symboly pro sestavení, modul runtime nemusí ve skutečnosti přidružení symbolický dat s modulem dokud po [moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="74b5a-111">Even when symbols are provided up front in a call to one of the overloads of the managed <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> methods that includes a `rawSymbolStore` argument to specify the symbols for the assembly, the runtime may not actually associate the symbolic data with the module until after the [ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) callback has occurred.</span></span> <span data-ttu-id="74b5a-112">Tato událost poskytuje novější příležitostí ke shromažďování symboly pro tyto moduly.</span><span class="sxs-lookup"><span data-stu-id="74b5a-112">This event provides a later opportunity to collect symbols for such modules.</span></span>  
+ <span data-ttu-id="74b5a-111">I když symboly jsou součástí předem volání do jednoho z přetížení spravovaný <xref:System.Reflection.Assembly.Load\*?displayProperty=nameWithType> metody, které zahrnuje `rawSymbolStore` argument, abyste zadávali symboly pro sestavení, modul runtime nemusí ve skutečnosti přidružení symbolický dat s modulem dokud po [moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="74b5a-111">Even when symbols are provided up front in a call to one of the overloads of the managed <xref:System.Reflection.Assembly.Load\*?displayProperty=nameWithType> methods that includes a `rawSymbolStore` argument to specify the symbols for the assembly, the runtime may not actually associate the symbolic data with the module until after the [ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) callback has occurred.</span></span> <span data-ttu-id="74b5a-112">Tato událost poskytuje novější příležitostí ke shromažďování symboly pro tyto moduly.</span><span class="sxs-lookup"><span data-stu-id="74b5a-112">This event provides a later opportunity to collect symbols for such modules.</span></span>  
   
 ## <a name="requirements"></a><span data-ttu-id="74b5a-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="74b5a-113">Requirements</span></span>  
  <span data-ttu-id="74b5a-114">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="74b5a-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  

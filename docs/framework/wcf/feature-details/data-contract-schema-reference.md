@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: data contracts [WCF], schema reference
+helpviewer_keywords:
+- data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 57ccc812aab5df0a9acd99bdcde327d56e4bad8d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -203,8 +206,8 @@ ms.lasthandoff: 12/22/2017
   
 |<span data-ttu-id="7fcc2-285">Obsah</span><span class="sxs-lookup"><span data-stu-id="7fcc2-285">Contents</span></span>|<span data-ttu-id="7fcc2-286">Schéma</span><span class="sxs-lookup"><span data-stu-id="7fcc2-286">Schema</span></span>|  
 |--------------|------------|  
-|`simpleType`|<span data-ttu-id="7fcc2-287">Supported.*</span><span class="sxs-lookup"><span data-stu-id="7fcc2-287">Supported.*</span></span>|  
-|`complexType`|<span data-ttu-id="7fcc2-288">Supported.*</span><span class="sxs-lookup"><span data-stu-id="7fcc2-288">Supported.*</span></span>|  
+|`simpleType`|<span data-ttu-id="7fcc2-287">Supported.\*</span><span class="sxs-lookup"><span data-stu-id="7fcc2-287">Supported.\*</span></span>|  
+|`complexType`|<span data-ttu-id="7fcc2-288">Supported.\*</span><span class="sxs-lookup"><span data-stu-id="7fcc2-288">Supported.\*</span></span>|  
 |`unique`|<span data-ttu-id="7fcc2-289">Ignorovat.</span><span class="sxs-lookup"><span data-stu-id="7fcc2-289">Ignored.</span></span>|  
 |`key`|<span data-ttu-id="7fcc2-290">Ignorovat.</span><span class="sxs-lookup"><span data-stu-id="7fcc2-290">Ignored.</span></span>|  
 |`keyref`|<span data-ttu-id="7fcc2-291">Ignorovat.</span><span class="sxs-lookup"><span data-stu-id="7fcc2-291">Ignored.</span></span>|  

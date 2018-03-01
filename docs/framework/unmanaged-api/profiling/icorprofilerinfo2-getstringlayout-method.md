@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo2.GetStringLayout
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo2::GetStringLayout
+api_name:
+- ICorProfilerInfo2.GetStringLayout
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo2::GetStringLayout
 helpviewer_keywords:
 - GetStringLayout method [.NET Framework profiling]
 - ICorProfilerInfo2::GetStringLayout method [.NET Framework profiling]
 ms.assetid: 43189651-a535-4803-a1d1-f1c427ace2ca
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1ad91829fab31b47a1dd51bb6cc9118c2ebe4c3a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

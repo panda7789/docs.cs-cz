@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GUID_ManagedName
-api_location: alink.dll
-api_type: COM
-f1_keywords: GUID_ManagedName
-helpviewer_keywords: GUID_ManagedName attribute
+api_name:
+- GUID_ManagedName
+api_location:
+- alink.dll
+api_type:
+- COM
+f1_keywords:
+- GUID_ManagedName
+helpviewer_keywords:
+- GUID_ManagedName attribute
 ms.assetid: 11e18095-e444-47bc-aff6-b887ac5dc01e
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 116a9e38b9885f0d0a5afc8f4915b9ce2b50f1dc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

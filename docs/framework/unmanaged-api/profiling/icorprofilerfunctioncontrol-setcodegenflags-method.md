@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerFunctionControl.SetCodegenFlags
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerFunctionControl::SetCodegenFlags
+api_name:
+- ICorProfilerFunctionControl.SetCodegenFlags
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerFunctionControl::SetCodegenFlags
 helpviewer_keywords:
 - ICorProfilerFunctionControl::SetCodegenFlags method [.NET Framework profiling]
 - SetCodegenFlags method, ICorProfilerFunctionControl interface [.NET Framework profiling]
 ms.assetid: a2d5daa5-b990-4ae5-bf2a-c0862fe58bd7
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9264e717da62c88b6f2f6eca262b5635fc928741
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostPolicyManager.OnDefaultAction
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostPolicyManager::OnDefaultAction
+api_name:
+- IHostPolicyManager.OnDefaultAction
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostPolicyManager::OnDefaultAction
 helpviewer_keywords:
 - OnDefaultAction method [.NET Framework hosting]
 - IHostPolicyManager::OnDefaultAction method [.NET Framework hosting]
 ms.assetid: 071e73bd-4795-470f-9373-cfaef553b7f2
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d1fded3d986e6505d0a321c47b03b5cdf9d881a8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

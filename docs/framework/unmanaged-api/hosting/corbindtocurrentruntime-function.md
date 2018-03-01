@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorBindToCurrentRuntime
+api_name:
+- CorBindToCurrentRuntime
 api_location:
 - mscoree.dll
 - mscoreei.dll
-api_type: HeaderDef
-f1_keywords: CorBindToCurrentRuntime
-helpviewer_keywords: CorBindToCurrentRuntime function [.NET Framework hosting]
+api_type:
+- HeaderDef
+f1_keywords:
+- CorBindToCurrentRuntime
+helpviewer_keywords:
+- CorBindToCurrentRuntime function [.NET Framework hosting]
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
-topic_type: apiref
-caps.latest.revision: "22"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0fed8829f8f14833724d1770273ff905d6f5eabf
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

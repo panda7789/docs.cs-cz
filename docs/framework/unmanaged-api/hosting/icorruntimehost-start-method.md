@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorRuntimeHost.Start
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICorRuntimeHost::Start
+api_name:
+- ICorRuntimeHost.Start
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICorRuntimeHost::Start
 helpviewer_keywords:
 - Start method, ICorRuntimeHost interface [.NET Framework hosting]
 - ICorRuntimeHost::Start method [.NET Framework hosting]
 ms.assetid: c66f3ac5-6489-484a-9bed-c31b711cee01
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2d79046db904de68e5b24b2f96206bb1de2de470
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

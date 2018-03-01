@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeHost.Stop
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeHost::Stop
+api_name:
+- ICLRRuntimeHost.Stop
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeHost::Stop
 helpviewer_keywords:
 - ICLRRuntimeHost::Stop method [.NET Framework hosting]
 - Stop method, ICLRRuntimeHost interface [.NET Framework hosting]
 ms.assetid: b8fd7daf-8f8d-4ad7-92ae-019db244cec1
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3cb9eaecdec661ae56727e5fd38c7e9a3b9621d8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

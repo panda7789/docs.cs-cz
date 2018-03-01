@@ -3,14 +3,16 @@ title: "Název člena anonymního typu lze odvodit pouze z jednoduchého nebo kv
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc36556
 - bc36556
-helpviewer_keywords: BC36556
+helpviewer_keywords:
+- BC36556
 ms.assetid: e3ba1f33-3a71-4f03-9b04-ed5ec17de17c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 7068928a17ee5fdb7bf6b5e0a40aaa7e5ef32f11

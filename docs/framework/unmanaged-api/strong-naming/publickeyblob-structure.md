@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: PublicKeyBlob
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: PublicKeyBlob
-helpviewer_keywords: PublicKeyBlob structure [.NET Framework strong naming]
+api_name:
+- PublicKeyBlob
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- PublicKeyBlob
+helpviewer_keywords:
+- PublicKeyBlob structure [.NET Framework strong naming]
 ms.assetid: b9240712-829c-4c8d-9a09-a6e7aa63f63a
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b1f04c692b7549c4d7d8d431591eeb867b673d9a
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

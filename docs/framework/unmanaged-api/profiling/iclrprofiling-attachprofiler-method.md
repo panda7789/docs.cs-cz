@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IClrProfiling.AttachProfiler Method
-api_location: Mscorwks.dll
-api_type: COM
-f1_keywords: IClrProfiling::AttachProfiler
+api_name:
+- IClrProfiling.AttachProfiler Method
+api_location:
+- Mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- IClrProfiling::AttachProfiler
 helpviewer_keywords:
 - AttachProfiler method [.NET Framework profiling]
 - IClrProfiling::AttachProfiler method [.NET Framework profiling]
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5b364ab407294b20ac2f2f830e3f875169a18b7b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

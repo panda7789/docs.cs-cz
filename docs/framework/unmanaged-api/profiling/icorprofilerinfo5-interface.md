@@ -5,19 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo5
-api_location: mscorwks.dll
-api_type: COM
+api_name:
+- ICorProfilerInfo5
+api_location:
+- mscorwks.dll
+api_type:
+- COM
 ms.assetid: 7bd48c34-37ed-4230-9eec-39a17280f05d
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 75bbaf5fdf41a55719965203c50ddd0f5d48263a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

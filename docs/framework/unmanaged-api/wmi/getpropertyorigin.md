@@ -3,18 +3,26 @@ title: "Funkce GetPropertyOrigin (referenční dokumentace rozhraní API Unmnage
 description: "Funkce GetPropertyOrigin Určuje třídu, ve kterém je deklarovaná vlastnost."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: GetPropertyOrigin
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: GetPropertyOrigin
-helpviewer_keywords: GetPropertyOrigin function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- GetPropertyOrigin
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetPropertyOrigin
+helpviewer_keywords:
+- GetPropertyOrigin function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0a79bfc62ad776cb2bfab2c143d19761d64358bf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

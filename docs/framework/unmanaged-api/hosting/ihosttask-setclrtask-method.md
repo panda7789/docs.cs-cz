@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IHostTask.SetCLRTask
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IHostTask::SetCLRTask
+api_name:
+- IHostTask.SetCLRTask
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IHostTask::SetCLRTask
 helpviewer_keywords:
 - SetCLRTask method [.NET Framework hosting]
 - IHostTask::SetCLRTask method [.NET Framework hosting]
 ms.assetid: e9d39c80-41a1-49e7-bb5e-ea3433bfb5d7
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 680ad2c13d8d6fc24134c9399cffb236bd637057
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IDebuggerThreadControl.StartBlockingForDebugger
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: StartBlockingForDebugger
+api_name:
+- IDebuggerThreadControl.StartBlockingForDebugger
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- StartBlockingForDebugger
 helpviewer_keywords:
 - IDebuggerThreadControl::StartBlockingForDebugger method [.NET Framework hosting]
 - StartBlockingForDebugger method [.NET Framework hosting]
 ms.assetid: 5c8f11b4-35d3-4c39-9bbd-58b896ba5ba6
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 99c0bc78705fa07883d92bf0cc1d90300c5ac549
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

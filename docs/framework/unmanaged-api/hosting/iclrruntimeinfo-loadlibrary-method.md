@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRRuntimeInfo.LoadLibrary
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: ICLRRuntimeInfo::LoadLibrary
+api_name:
+- ICLRRuntimeInfo.LoadLibrary
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRRuntimeInfo::LoadLibrary
 helpviewer_keywords:
 - ICLRRuntimeInfo::LoadLibrary method [.NET Framework hosting]
 - LoadLibrary method [.NET Framework hosting]
 ms.assetid: 4517ada3-4417-4ac5-a150-73da7a87c686
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8b688a4f2557c5ab2ef112e13b411e25ad47b8c3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

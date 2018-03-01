@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorPropertyAttr
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: CorPropertyAttr
-helpviewer_keywords: CorPropertyAttr enumeration [.NET Framework metadata]
+api_name:
+- CorPropertyAttr
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- CorPropertyAttr
+helpviewer_keywords:
+- CorPropertyAttr enumeration [.NET Framework metadata]
 ms.assetid: 58ac8202-854d-4efd-acfb-d2da8b446e12
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4470cd46653dd798718e5b3413dbc021a894138b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

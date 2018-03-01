@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IMetaDataImport.GetMemberRefProps
-api_location: mscoree.dll
-api_type: COM
-f1_keywords: IMetaDataImport::GetMemberRefProps
+api_name:
+- IMetaDataImport.GetMemberRefProps
+api_location:
+- mscoree.dll
+api_type:
+- COM
+f1_keywords:
+- IMetaDataImport::GetMemberRefProps
 helpviewer_keywords:
 - GetMemberRefProps method [.NET Framework metadata]
 - IMetaDataImport::GetMemberRefProps method [.NET Framework metadata]
 ms.assetid: 0ea73055-ece0-4151-a094-414c88ef8941
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d6cd229d9286dfe9c12a4c6f7e171f8bb634fcc0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: cpp
-api_name: Acrivate
-api_location: PresentationHost_v0400.dll
+dev_langs:
+- cpp
+api_name:
+- Acrivate
+api_location:
+- PresentationHost_v0400.dll
 ms.assetid: 1400329c-b598-465f-80f2-e3dabf044811
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d890f3bd69c721071695713e0750180d50ed1ddf
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
