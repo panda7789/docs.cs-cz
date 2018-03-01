@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo2
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo2
-helpviewer_keywords: ICorProfilerInfo2 interface [.NET Framework profiling]
+api_name:
+- ICorProfilerInfo2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo2
+helpviewer_keywords:
+- ICorProfilerInfo2 interface [.NET Framework profiling]
 ms.assetid: 91bd49b6-4d12-494f-a8f1-2f251e8c65e3
-topic_type: apiref
-caps.latest.revision: "21"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 47ce316765117108da8e26d92a72febd0efb124d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -7,13 +7,15 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: programming [WF], designing workflows
+helpviewer_keywords:
+- programming [WF], designing workflows
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 15e2a70b89c3ea42442262cc41c03e78de596ffe
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

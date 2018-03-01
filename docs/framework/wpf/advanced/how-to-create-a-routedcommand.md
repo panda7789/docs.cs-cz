@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: RoutedCommand class [WPF], creating
+helpviewer_keywords:
+- RoutedCommand class [WPF], creating
 ms.assetid: aaf6979f-69ab-406f-979f-5766daa85fa0
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 449b55d07aa0119ff23c8642ca83b0989f5b1d4b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

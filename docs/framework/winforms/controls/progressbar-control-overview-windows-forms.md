@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: ProgressBar
+f1_keywords:
+- ProgressBar
 helpviewer_keywords:
 - ProgressBar control [Windows Forms], about ProgressBar control
 - progress controls [Windows Forms], about progress controls
 ms.assetid: a05d9cba-3a6a-4f8f-94b8-8ec12799fb80
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c5ca5fd908124b0f38643c7b2833ba591be3b980
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

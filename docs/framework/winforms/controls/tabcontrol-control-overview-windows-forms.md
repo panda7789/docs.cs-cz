@@ -5,21 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: TabControl
+f1_keywords:
+- TabControl
 helpviewer_keywords:
 - TabControl control [Windows Forms], about TabControl control
 - tab pages [Windows Forms], about tab pages
 - property pages [Windows Forms], Windows Forms
 - Windows Forms dialog boxes [Windows Forms], tabs
 ms.assetid: 2b4ea784-a39d-463c-81d8-af74ce068476
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 04407ca8ddb51658ffd9cc4078d8f545c08e9312
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

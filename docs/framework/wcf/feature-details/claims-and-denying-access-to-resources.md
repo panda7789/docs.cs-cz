@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: claims [WCF], denying access to resources
+helpviewer_keywords:
+- claims [WCF], denying access to resources
 ms.assetid: 145ebb41-680e-4256-b14c-1efb4af1e982
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 156856ddd1a4c3b1d8f77a8a61f7e0336f993839
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

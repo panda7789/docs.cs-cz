@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo4.GetReJITIDs
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo4::GetReJITIDs
+api_name:
+- ICorProfilerInfo4.GetReJITIDs
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo4::GetReJITIDs
 helpviewer_keywords:
 - GetReJITIDs method, ICorProfilerInfo4 interface [.NET Framework profiling]
 - ICorProfilerInfo4::GetReJITIDs method [.NET Framework profiling]
 ms.assetid: 634ac28c-a5b7-4fc3-af84-256c24ca8177
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fb1e507bea6f52e4959f241f1507807a76c0ec5a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

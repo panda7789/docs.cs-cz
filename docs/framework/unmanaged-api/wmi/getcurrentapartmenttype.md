@@ -3,18 +3,26 @@ title: "Funkce GetCurrentApartmentType (referenční dokumentace nespravovaného
 description: "Funkce GetCurrentApartmentType načte typu apartment, ve kterém je prováděna volající."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: GetCurrentApartmentType
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: GetCurrentApartmentType
-helpviewer_keywords: GetCurrentApartmentType function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- GetCurrentApartmentType
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetCurrentApartmentType
+helpviewer_keywords:
+- GetCurrentApartmentType function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a42c6c3c778dbdefd4b83621e65b81741b940ebe
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

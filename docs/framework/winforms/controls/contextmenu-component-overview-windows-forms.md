@@ -5,20 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: ContextMenu
+f1_keywords:
+- ContextMenu
 helpviewer_keywords:
 - ContextMenu component [Windows Forms], about ContextMenu component
 - context menus [Windows Forms], ContextMenu component
 - shortcut menus [Windows Forms], ContextMenu component
 ms.assetid: 49d6398f-d3c4-4679-84fa-1de07b68b05e
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b0db67e8da97f380c3bb2eb9aab951628c4b6487
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

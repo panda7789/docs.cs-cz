@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: StrongNameSignatureSize
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: StrongNameSignatureSize
-helpviewer_keywords: StrongNameSignatureSize function [.NET Framework strong naming]
+api_name:
+- StrongNameSignatureSize
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- StrongNameSignatureSize
+helpviewer_keywords:
+- StrongNameSignatureSize function [.NET Framework strong naming]
 ms.assetid: 4fde4cd0-f53e-4411-a2fe-fc5c54472f95
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 70aa82d5eef62856e8377c75515fb3b187d3ae6d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

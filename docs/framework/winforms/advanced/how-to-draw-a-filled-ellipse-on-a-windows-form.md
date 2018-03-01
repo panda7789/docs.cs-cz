@@ -5,14 +5,16 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 - cpp
-f1_keywords: Graphics.FillEllipse
+f1_keywords:
+- Graphics.FillEllipse
 helpviewer_keywords:
 - ellipses [Windows Forms], drawing
 - circles [Windows Forms], drawing
@@ -21,11 +23,12 @@ helpviewer_keywords:
 - shapes [Windows Forms], drawing
 - forms [Windows Forms], drawing ellipses
 ms.assetid: 781db806-950d-4c5b-b022-493f7fd0c4a8
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 12b17f92fc90cde1e0c1841fc7f9d63728d50294
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

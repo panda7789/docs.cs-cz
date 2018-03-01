@@ -5,21 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: DataNavigator
+f1_keywords:
+- DataNavigator
 helpviewer_keywords:
 - BindingNavigator control [Windows Forms], about BindingNavigator control
 - records [Windows Forms], navigating on a form
 - data [Windows Forms], navigating
 - data navigation
 ms.assetid: 4423eede-f8d1-4d02-822f-5bf8432680d0
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 921f8c7791620d51107fa2ff31a637094fc0c633
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerThreadEnum.GetCount
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerThreadEnum::GetCount
+api_name:
+- ICorProfilerThreadEnum.GetCount
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerThreadEnum::GetCount
 helpviewer_keywords:
 - ICorProfilerThreadEnum::GetCount method [.NET Framework profiling]
 - GetCount method, ICorProfilerThreadEnum interface [.NET Framework profiling]
 ms.assetid: d6dbdc4a-6115-455d-a3f3-704a81d3646b
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: afbcb71fdaf48d07103d6ca2db48b46095dc3acd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

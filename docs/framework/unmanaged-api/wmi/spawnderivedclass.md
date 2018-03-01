@@ -3,18 +3,26 @@ title: "Funkce SpawnDerivedClass (referenční dokumentace nespravovaného rozhr
 description: "Funkce SpawnDerivedClass vytvoří nový objekt, který je odvozen z objektu."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: SpawnDerivedClass
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: SpawnDerivedClass
-helpviewer_keywords: SpawnDerivedClass function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- SpawnDerivedClass
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- SpawnDerivedClass
+helpviewer_keywords:
+- SpawnDerivedClass function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 51a0dd0013b1bb3898bcc81ee2d64be20a5b6ecc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

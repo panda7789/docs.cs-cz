@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: GetHashFromAssemblyFile
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: GetHashFromAssemblyFile
-helpviewer_keywords: GetHashFromAssemblyFile function [.NET Framework strong naming]
+api_name:
+- GetHashFromAssemblyFile
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetHashFromAssemblyFile
+helpviewer_keywords:
+- GetHashFromAssemblyFile function [.NET Framework strong naming]
 ms.assetid: 751ed69f-b7ab-4e07-80de-e17ca9319b0c
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ed5de637f8b8d51e2619ba205d89c753b27722bb
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

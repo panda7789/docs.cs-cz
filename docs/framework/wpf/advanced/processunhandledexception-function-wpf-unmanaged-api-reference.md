@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: cpp
-api_name: ProcessUnhandledException
-api_location: PresentationHost_v0400.dll
+dev_langs:
+- cpp
+api_name:
+- ProcessUnhandledException
+api_location:
+- PresentationHost_v0400.dll
 ms.assetid: 495ce5f6-bb4d-4b30-807a-c3c35f1ca95c
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9bc43b42c2e671e13076ba87ce72e054bd65d107
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: FunctionTailcall3
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: FunctionTailcall3
-helpviewer_keywords: FunctionTailcall3 function [.NET Framework profiling]
+api_name:
+- FunctionTailcall3
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- FunctionTailcall3
+helpviewer_keywords:
+- FunctionTailcall3 function [.NET Framework profiling]
 ms.assetid: 1e48243f-5de6-4bd6-a1d0-e1d248bca4b8
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f2ae13f25a1f99de4cf7dcb46dd33ed86682bf64
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

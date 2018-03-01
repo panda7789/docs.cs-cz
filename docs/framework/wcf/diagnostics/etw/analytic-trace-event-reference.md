@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: analytic tracing [WCF]. reference
+helpviewer_keywords:
+- analytic tracing [WCF]. reference
 ms.assetid: e44540cf-44a1-4efc-b965-7fbfd2131d73
-caps.latest.revision: "50"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9a07aed6ade7d5eb806b666711a49c0b9507d3ee
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

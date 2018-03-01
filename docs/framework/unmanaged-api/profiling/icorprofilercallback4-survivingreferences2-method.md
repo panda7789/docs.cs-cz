@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback4.SurvivingReferences2
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback4::SurvivingReferences2
+api_name:
+- ICorProfilerCallback4.SurvivingReferences2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback4::SurvivingReferences2
 helpviewer_keywords:
 - ICorProfilerCallback4::SurvivingReferences2 method [.NET Framework profiling]
 - SurvivingReferences2 method, ICorProfilerCallback4 interface [.NET Framework profiling]
 ms.assetid: 02b51888-5d89-4e50-a915-45b7e329aad9
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: db40e908421c45e9d4192c436995d8137f81ec0c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

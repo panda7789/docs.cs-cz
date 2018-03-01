@@ -5,17 +5,21 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: ENV.Window.Toolbox
-helpviewer_keywords: Windows Forms controls, adding to form
+f1_keywords:
+- ENV.Window.Toolbox
+helpviewer_keywords:
+- Windows Forms controls, adding to form
 ms.assetid: 997508f2-87e5-4bec-a78e-9eec8f1fb15b
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a78c7a76c907e4b6d49963c76cfe98c099a391d9
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

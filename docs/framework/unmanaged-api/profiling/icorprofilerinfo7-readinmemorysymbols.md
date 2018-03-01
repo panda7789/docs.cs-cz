@@ -5,21 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-api_name: ICorProfilerInfo7.ReadInMemorySymbols
+api_name:
+- ICorProfilerInfo7.ReadInMemorySymbols
 api_location:
 - CorProf.idl
 - CorProf.h
 - CorGuids.lib
-api_type: COM
+api_type:
+- COM
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5851f73cc899ef21d8a5dcfd8f03617641a6625a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

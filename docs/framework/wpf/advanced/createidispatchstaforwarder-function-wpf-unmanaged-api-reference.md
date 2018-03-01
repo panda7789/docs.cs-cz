@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: cpp
-api_name: CreateIDispatchSTAForwarder
-api_location: PresentationHost_v0400.dll
+dev_langs:
+- cpp
+api_name:
+- CreateIDispatchSTAForwarder
+api_location:
+- PresentationHost_v0400.dll
 ms.assetid: 57a02dfa-f091-4ace-9c06-1f4ab52b3527
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5139784fdc067c09d032c0bf37114e0eb1caac33
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

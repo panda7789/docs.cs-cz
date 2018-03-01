@@ -3,18 +3,26 @@ title: "Funkce QualifierSet_Delete (referenční dokumentace nespravovaného roz
 description: "Funkce QualifierSet_Delete odstraní kvalifikátor podle názvu."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: QualifierSet_Delete
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: QualifierSet_Delete
-helpviewer_keywords: QualifierSet_Delete function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- QualifierSet_Delete
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- QualifierSet_Delete
+helpviewer_keywords:
+- QualifierSet_Delete function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4e7b5650a0b47fd8d9b64bb9d0fff3511afe2d43
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

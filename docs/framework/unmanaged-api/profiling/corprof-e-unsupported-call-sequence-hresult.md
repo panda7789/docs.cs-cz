@@ -5,17 +5,21 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: CORPROF_E_UNSUPPORTED_CALL_SEQUENCE
-helpviewer_keywords: CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
+f1_keywords:
+- CORPROF_E_UNSUPPORTED_CALL_SEQUENCE
+helpviewer_keywords:
+- CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
 ms.assetid: f2fc441f-d62e-4f72-a011-354ea13c8c59
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3694e08555df3ad91fbfcc35b6eb385bd24ce3c0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

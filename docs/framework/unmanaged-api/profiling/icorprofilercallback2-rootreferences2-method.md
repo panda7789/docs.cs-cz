@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback2.RootReferences2
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback2::RootReferences2
+api_name:
+- ICorProfilerCallback2.RootReferences2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback2::RootReferences2
 helpviewer_keywords:
 - RootReferences2 method [.NET Framework profiling]
 - ICorProfilerCallback2::RootReferences2 method [.NET Framework profiling]
 ms.assetid: 55a2f907-d216-42eb-8f2f-e5d59c2eebd6
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 29a5a3051b75df18a08498369aa5707a53caf75f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

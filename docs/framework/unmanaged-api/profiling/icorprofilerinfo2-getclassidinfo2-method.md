@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo2.GetClassIDInfo2
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo2::GetClassIDInfo2
+api_name:
+- ICorProfilerInfo2.GetClassIDInfo2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo2::GetClassIDInfo2
 helpviewer_keywords:
 - GetClassIDInfo2 method [.NET Framework profiling]
 - ICorProfilerInfo2::GetClassIDInfo2 method [.NET Framework profiling]
 ms.assetid: 0141d582-d066-4d49-8d1f-ae82129a1960
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e0348462cdbff14486b31e1878f06b7565b47182
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

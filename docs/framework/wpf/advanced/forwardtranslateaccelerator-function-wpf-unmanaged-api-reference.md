@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: cpp
-api_name: ForwardTranslateAccelerator
-api_location: PresentationHost_v0400.dll
+dev_langs:
+- cpp
+api_name:
+- ForwardTranslateAccelerator
+api_location:
+- PresentationHost_v0400.dll
 ms.assetid: fff47a86-9d9f-4176-9530-10e1876e393f
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cca9c78eaf13e04d22fce9f61ce4a7ab9ee09769
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

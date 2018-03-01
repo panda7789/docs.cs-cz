@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo4.RequestRevert
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo4::RequestRevert
+api_name:
+- ICorProfilerInfo4.RequestRevert
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo4::RequestRevert
 helpviewer_keywords:
 - RequestRevert method, ICorProfilerInfo4 interface [.NET Framework profiling]
 - ICorProfilerInfo4::RequestRevert method [.NET Framework profiling]
 ms.assetid: 70261da5-5933-4e25-9de0-ddf51cba56cc
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8f0bf926bc6ba458745231bc17ce20dbe5cdbd1c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

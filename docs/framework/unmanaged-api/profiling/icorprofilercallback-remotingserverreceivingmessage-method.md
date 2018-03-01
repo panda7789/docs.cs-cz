@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.RemotingServerReceivingMessage
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::RemotingServerReceivingMessage
+api_name:
+- ICorProfilerCallback.RemotingServerReceivingMessage
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::RemotingServerReceivingMessage
 helpviewer_keywords:
 - ICorProfilerCallback::RemotingServerReceivingMessage method [.NET Framework profiling]
 - RemotingServerReceivingMessage method [.NET Framework profiling]
 ms.assetid: 5604d21f-e6b7-490e-b469-42122a7568e1
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e4542f5362d83bc5c0419b9f1ff389c9a21aad29
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

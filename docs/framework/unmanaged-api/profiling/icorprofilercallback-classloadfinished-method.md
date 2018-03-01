@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.ClassLoadFinished
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::ClassLoadFinished
+api_name:
+- ICorProfilerCallback.ClassLoadFinished
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::ClassLoadFinished
 helpviewer_keywords:
 - ClassLoadFinished method [.NET Framework profiling]
 - ICorProfilerCallback::ClassLoadFinished method [.NET Framework profiling]
 ms.assetid: 3dd80fbe-d62d-4d4d-acf8-5b7d0efe607e
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ae55325f514f9bec3efdf4764958e4b3fafd922b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

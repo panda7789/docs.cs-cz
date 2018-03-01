@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICorProfilerInfo5.GetEventMask2
-api_location: mscorwks.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ICorProfilerInfo5.GetEventMask2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
 ms.assetid: f854b68f-009c-4ffb-89cd-ca874d1c0fb7
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 72adbbdc3495f4171f555d119cb61d5dbc5ef0e3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

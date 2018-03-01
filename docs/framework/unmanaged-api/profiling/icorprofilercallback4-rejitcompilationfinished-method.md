@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback4.ReJITCompilationFinished
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback4::ReJITCompilationFinished
+api_name:
+- ICorProfilerCallback4.ReJITCompilationFinished
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback4::ReJITCompilationFinished
 helpviewer_keywords:
 - ICorProfilerCallback4::ReJITCompilationFinished method [.NET Framework profiling]
 - ReJITCompilationFinished method, ICorProfilerCallback4 interface [.NET Framework profiling]
 ms.assetid: 3b5cff02-2005-44eb-a2bc-50214c4b0e1d
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1aab8fd836da5238fa939b4d20d019f7bd581213
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

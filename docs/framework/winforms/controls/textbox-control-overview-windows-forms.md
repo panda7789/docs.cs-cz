@@ -5,23 +5,26 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 - cpp
-f1_keywords: TextBox
+f1_keywords:
+- TextBox
 helpviewer_keywords:
 - TextBox control [Windows Forms], about TextBox controls
 - text boxes [Windows Forms], adding
 ms.assetid: d1a9c7f5-fa53-480a-a75c-158f8649ea2f
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4d7312246c43157ca9cd6c7b41d2b110586721c1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

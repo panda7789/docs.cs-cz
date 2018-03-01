@@ -5,17 +5,21 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: TreeView
-helpviewer_keywords: TreeView control [Windows Forms], about TreeView control
+f1_keywords:
+- TreeView
+helpviewer_keywords:
+- TreeView control [Windows Forms], about TreeView control
 ms.assetid: 0ece823a-9508-478a-bbdb-7d7c3bae51d5
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9bbe8549268c2b67b67184966e938f7d62b766a1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: ToolTip
+f1_keywords:
+- ToolTip
 helpviewer_keywords:
 - tooltips [Windows Forms], about tooltips
 - ToolTip component [Windows Forms], about ToolTip component
 ms.assetid: 3fbc6f08-c882-4acd-a960-a08efe3c7e6e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fce1cb5750197e52461b4883f1238325fa10fc5e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

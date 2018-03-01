@@ -5,17 +5,21 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: Splitter
-helpviewer_keywords: Splitter control [Windows Forms], about Splitter control
+f1_keywords:
+- Splitter
+helpviewer_keywords:
+- Splitter control [Windows Forms], about Splitter control
 ms.assetid: e2b6ab83-dfdd-40ec-9762-850702c82dcb
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 32d8829e7303ce23a22d0a01f2428a889ce4ae0f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

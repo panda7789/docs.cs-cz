@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: resource keys [WPF], SystemFonts class
+helpviewer_keywords:
+- resource keys [WPF], SystemFonts class
 ms.assetid: 036ebea7-5677-4f60-8ba4-56c9f9d9b8bd
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 53538c64d2af5d8407f79848ddcd01f7665303c1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

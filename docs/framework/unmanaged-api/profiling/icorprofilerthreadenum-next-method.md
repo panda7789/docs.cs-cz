@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerThreadEnum.Next
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerThreadEnum::Next
+api_name:
+- ICorProfilerThreadEnum.Next
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerThreadEnum::Next
 helpviewer_keywords:
 - ICorProfilerThreadEnum::Next method [.NET Framework profiling]
 - Next method, ICorProfilerThreadEnum interface [.NET Framework profiling]
 ms.assetid: f3535279-3c63-41a2-ab0e-a129dc5a01e8
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: bfefb140b49a606487f1fe2bbdfb8c6a3b5c6fc1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

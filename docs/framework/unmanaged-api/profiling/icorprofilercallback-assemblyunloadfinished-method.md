@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.AssemblyUnloadFinished
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::AssemblyUnloadFinished
+api_name:
+- ICorProfilerCallback.AssemblyUnloadFinished
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::AssemblyUnloadFinished
 helpviewer_keywords:
 - AssemblyUnloadFinished method [.NET Framework profiling]
 - ICorProfilerCallback::AssemblyUnloadFinished method [.NET Framework profiling]
 ms.assetid: 53fca564-84b1-44d4-9e21-17a492d2aae7
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ead41718e0253de599019112178d64c0ab706924
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

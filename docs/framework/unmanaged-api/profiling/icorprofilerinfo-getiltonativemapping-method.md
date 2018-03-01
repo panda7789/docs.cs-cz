@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetILToNativeMapping
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetILToNativeMapping
+api_name:
+- ICorProfilerInfo.GetILToNativeMapping
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetILToNativeMapping
 helpviewer_keywords:
 - GetILToNativeMapping method, ICorProfilerInfo interface [.NET Framework profiling]
 - ICorProfilerInfo::GetILToNativeMapping method [.NET Framework profiling]
 ms.assetid: 6a5431ef-22fb-4e53-bac5-703986297eb1
-topic_type: apiref
-caps.latest.revision: "20"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 89ccfcbf69a0d3907ec244d7a214d6f4a5766767
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

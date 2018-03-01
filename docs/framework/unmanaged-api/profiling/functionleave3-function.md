@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: FunctionLeave3
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: FunctionLeave3
-helpviewer_keywords: FunctionLeave3 function [.NET Framework profiling]
+api_name:
+- FunctionLeave3
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- FunctionLeave3
+helpviewer_keywords:
+- FunctionLeave3 function [.NET Framework profiling]
 ms.assetid: 5d798088-7992-48a0-ae55-d2a7ee31913f
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 689de7f7a9ac370f20941dea57edd7b7224410af
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -3,18 +3,26 @@ title: "Funkce QualifierSet_BeginEnumeration (referenční dokumentace nespravov
 description: "Funkce QualifierSet_BeginEnumeration obnoví enumerátor kvalifikátory objektu."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: QualifierSet_BeginEnumeration
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: QualifierSet_BeginEnumeration
-helpviewer_keywords: QualifierSet_BeginEnumeration function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- QualifierSet_BeginEnumeration
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- QualifierSet_BeginEnumeration
+helpviewer_keywords:
+- QualifierSet_BeginEnumeration function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 440dde03f4ed138a33eb6f817723d7c5c74f6d46
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

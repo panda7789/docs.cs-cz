@@ -5,20 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: vb
-f1_keywords: ServiceController.Pause
+dev_langs:
+- vb
+f1_keywords:
+- ServiceController.Pause
 helpviewer_keywords:
 - Windows Service applications, pausing
 - pausing Windows Service applications
 ms.assetid: eddb9409-942b-46b6-a2ce-fbd4c65f2790
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 90f2b01fae057a05cc71f77cecea3fdf85c832b2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,20 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: NumericUpDown
+f1_keywords:
+- NumericUpDown
 helpviewer_keywords:
 - numeric spin button control [Windows Forms], Windows Forms
 - NumericUpDown control [Windows Forms], about NumericUpDown control
 - spin button control [Windows Forms], Windows Forms
 ms.assetid: cff3cf30-4d46-4381-87df-37bfe83c71c5
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 067a8862ee991213e584819e1cf99eddde06e2bc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

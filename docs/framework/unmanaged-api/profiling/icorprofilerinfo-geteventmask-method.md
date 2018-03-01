@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetEventMask
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetEventMask
+api_name:
+- ICorProfilerInfo.GetEventMask
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetEventMask
 helpviewer_keywords:
 - GetEventMask method [.NET Framework profiling]
 - ICorProfilerInfo::GetEventMask method [.NET Framework profiling]
 ms.assetid: ec34cc13-45a3-4695-abc3-b3347d4e6fc2
-topic_type: apiref
-caps.latest.revision: "18"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1f8bfc0dc5686aa560bfa8282256b5e476976136
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

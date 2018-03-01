@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.ExceptionCatcherEnter
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::ExceptionCatcherEnter
+api_name:
+- ICorProfilerCallback.ExceptionCatcherEnter
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::ExceptionCatcherEnter
 helpviewer_keywords:
 - ICorProfilerCallback::ExceptionCatcherEnter method [.NET Framework profiling]
 - ExceptionCatcherEnter method [.NET Framework profiling]
 ms.assetid: 41462329-a648-46f0-ae6d-728b94c31aa9
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a72b2e75ee622bab357046ff29fac4aa9223d7a0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -3,18 +3,26 @@ title: "Funkce BlessIWbemServices (referenční dokumentace nespravovaného rozh
 description: "Funkce BlessIWbemServices označuje, zda přihlašovací údaje uživatele povolit přístup do služby IWbem třídy."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: BlessIWbemServices
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: BlessIWbemServices
-helpviewer_keywords: BlessIWbemServices function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- BlessIWbemServices
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- BlessIWbemServices
+helpviewer_keywords:
+- BlessIWbemServices function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f384e8d045dd7a6f2f864f0991f8caf4a674408b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

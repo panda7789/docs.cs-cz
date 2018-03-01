@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: ListView controls [WPF], styling
+helpviewer_keywords:
+- ListView controls [WPF], styling
 ms.assetid: 94bf964b-96c8-4bdf-a0c3-f5271b7cb565
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9abc19ca14cf512deff898f5f20d23870b8b7847
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

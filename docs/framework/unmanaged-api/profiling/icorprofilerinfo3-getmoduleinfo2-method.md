@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo3.GetModuleInfo2
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo3::GetModuleInfo2
+api_name:
+- ICorProfilerInfo3.GetModuleInfo2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo3::GetModuleInfo2
 helpviewer_keywords:
 - ICorProfilerInfo3::GetModuleInfo2 method [.NET Framework profiling]
 - GetModuleInfo2 method [.NET Framework profiling]
 ms.assetid: f1f6b8f3-dcfc-49e8-be76-ea50ea90d5a7
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 325db939c692a5dc7740e6cf813644ebffe9fc12
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -3,18 +3,26 @@ title: "Funkce QualifierSet_EndEnumeration (referenční dokumentace nespravovan
 description: "Funkce QualifierSet_EndEnumeration ukončí výčet."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: QualifierSet_EndEnumeration
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: QualifierSet_EndEnumeration
-helpviewer_keywords: QualifierSet_EndEnumeration function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- QualifierSet_EndEnumeration
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- QualifierSet_EndEnumeration
+helpviewer_keywords:
+- QualifierSet_EndEnumeration function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7d8e6bb24eb471d807af2493f82b6be4f644124f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.SetEventMask
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::SetEventMask
+api_name:
+- ICorProfilerInfo.SetEventMask
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::SetEventMask
 helpviewer_keywords:
 - ICorProfilerInfo::SetEventMask method [.NET Framework profiling]
 - SetEventMask method [.NET Framework profiling]
 ms.assetid: 44bc0f56-32fa-491e-a62d-52fc96d48125
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4c6fe763103e7b8aaf6d501c653342a21bd513b8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

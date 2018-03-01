@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.ObjectReferences
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::ObjectReferences
+api_name:
+- ICorProfilerCallback.ObjectReferences
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::ObjectReferences
 helpviewer_keywords:
 - ObjectReferences method [.NET Framework profiling]
 - ICorProfilerCallback::ObjectReferences method [.NET Framework profiling]
 ms.assetid: dd5e9b64-b4a3-4ba6-9be6-ddb540f4ffcf
-topic_type: apiref
-caps.latest.revision: "18"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 30b8f6b5f424ff81ace36baa8d2ae39e0a2f1d1e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

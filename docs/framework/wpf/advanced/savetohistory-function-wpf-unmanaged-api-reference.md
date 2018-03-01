@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: cpp
-api_name: SaveToHistory
-api_location: PresentationHost_v0400.dll
+dev_langs:
+- cpp
+api_name:
+- SaveToHistory
+api_location:
+- PresentationHost_v0400.dll
 ms.assetid: 6dd101a3-44ad-4143-b228-772156f9b8ff
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: af5294aad43b28bc590dd84466e133553f0ee47b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback3.ProfilerDetachSucceeded Method
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback3::ProfilerDetachSucceeded
+api_name:
+- ICorProfilerCallback3.ProfilerDetachSucceeded Method
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback3::ProfilerDetachSucceeded
 helpviewer_keywords:
 - ProfilerDetachSucceeded method [.NET Framework profiling]
 - ICorProfilerCallback3::ProfilerDetachSucceeded method [.NET Framework profiling]
 ms.assetid: 05164966-16ce-4cc9-a530-43a640c00711
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d06671917094752287836800ebc492d5f0a5b595
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

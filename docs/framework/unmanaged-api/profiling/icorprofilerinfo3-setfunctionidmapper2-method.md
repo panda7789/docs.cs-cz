@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo3.SetFunctionIDMapper2 Method
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo3::SetFunctionIDMapper2
+api_name:
+- ICorProfilerInfo3.SetFunctionIDMapper2 Method
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo3::SetFunctionIDMapper2
 helpviewer_keywords:
 - SetFunctionIDMapper2 method [.NET Framework profiling]
 - ICorProfilerInfo3::SetFunctionIDMapper2 method [.NET Framework profiling]
 ms.assetid: 8cdb1188-952a-4ba8-9f05-bfebc18cdd29
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0a58b01345fe1acb7434b8896ebbc8548ab68a98
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,20 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: Label
+f1_keywords:
+- Label
 helpviewer_keywords:
 - images [Windows Forms], displaying in labels
 - labels
 - Label control [Windows Forms], about Label control
 ms.assetid: dcad7f44-11b7-4c55-b0c0-d984ade43d7d
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f68642eb5f996722097976e042006afbf366ae39
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

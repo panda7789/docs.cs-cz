@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: transactions [WCF], ServiceModel attributes
+helpviewer_keywords:
+- transactions [WCF], ServiceModel attributes
 ms.assetid: 1e0d2436-6ae5-439b-9765-a448d6f60000
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: aac52f3c542f88adbca40c6cbbdddc734e12903b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

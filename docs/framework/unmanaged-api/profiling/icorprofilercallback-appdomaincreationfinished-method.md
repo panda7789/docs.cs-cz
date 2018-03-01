@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.AppDomainCreationFinished
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::AppDomainCreationFinished
+api_name:
+- ICorProfilerCallback.AppDomainCreationFinished
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::AppDomainCreationFinished
 helpviewer_keywords:
 - AppDomainCreationFinished method [.NET Framework profiling]
 - ICorProfilerCallback::AppDomainCreationFinished method [.NET Framework profiling]
 ms.assetid: dbab7d90-d515-4dc9-8195-294d5d04bab6
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f779e5a7b0b38558593e84c26b33784383765ca0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

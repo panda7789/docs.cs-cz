@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo4.GetFunctionFromIP2
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo4::GetFunctionFromIP2
+api_name:
+- ICorProfilerInfo4.GetFunctionFromIP2
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo4::GetFunctionFromIP2
 helpviewer_keywords:
 - ICorProfilerInfo4::GetFunctionFromIP2 method [.NET Framework profiling]
 - GetFunctionFromIP2 method, ICorProfilerInfo4 interface [.NET Framework profiling]
 ms.assetid: 46ff70f4-13e9-40a0-802a-0a40abcfc6a0
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4f354bdc198a8060c7241a2b9bdb472bee5ed7b6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

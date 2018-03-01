@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetILFunctionBodyAllocator
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetILFunctionBodyAllocator
+api_name:
+- ICorProfilerInfo.GetILFunctionBodyAllocator
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetILFunctionBodyAllocator
 helpviewer_keywords:
 - GetILFunctionBodyAllocator method [.NET Framework profiling]
 - ICorProfilerInfo::GetILFunctionBodyAllocator method [.NET Framework profiling]
 ms.assetid: 5da1bf3d-dddf-4892-b266-578ee54d570b
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b1feec20f0ddc4f6029490e06d4729b3fdaa7fa8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

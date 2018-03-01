@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback2.GarbageCollectionStarted
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback2::GarbageCollectionStarted
+api_name:
+- ICorProfilerCallback2.GarbageCollectionStarted
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback2::GarbageCollectionStarted
 helpviewer_keywords:
 - GarbageCollectionStarted method [.NET Framework profiling]
 - ICorProfilerCallback2::GarbageCollectionStarted method [.NET Framework profiling]
 ms.assetid: 44eef087-f21f-4fe2-b481-f8a0ee022e7d
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3b721b990312f9acda5c9e0208f998793735d2cd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

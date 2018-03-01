@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: StrongNameKeyDelete
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: StrongNameKeyDelete
-helpviewer_keywords: StrongNameKeyDelete function [.NET Framework strong naming]
+api_name:
+- StrongNameKeyDelete
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- StrongNameKeyDelete
+helpviewer_keywords:
+- StrongNameKeyDelete function [.NET Framework strong naming]
 ms.assetid: 313e71e4-1790-4d2f-b68b-5040ebd1c149
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d3acd8ae5f330e23642a679962a04ccb4f7e8ec6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

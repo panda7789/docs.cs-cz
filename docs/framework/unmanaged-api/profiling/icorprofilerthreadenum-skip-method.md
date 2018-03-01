@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerThreadEnum.Skip
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerThreadEnum::Skip
+api_name:
+- ICorProfilerThreadEnum.Skip
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerThreadEnum::Skip
 helpviewer_keywords:
 - Skip method, ICorProfilerThreadEnum interface [.NET Framework profiling]
 - ICorProfilerThreadEnum::Skip method [.NET Framework profiling]
 ms.assetid: acb8b029-4a96-4ed7-ae3c-310204e5ceea
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c1840722a250dd627a5214700dca95c48aa2e8d2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

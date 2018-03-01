@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerCallback.ExceptionThrown
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerCallback::ExceptionThrown
+api_name:
+- ICorProfilerCallback.ExceptionThrown
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerCallback::ExceptionThrown
 helpviewer_keywords:
 - ExceptionThrown method [.NET Framework profiling]
 - ICorProfilerCallback::ExceptionThrown method [.NET Framework profiling]
 ms.assetid: f1a23f3b-ac21-4905-8abf-8ea59f15af53
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 65fdd8f2912dc2854ba7801244ba489426d05e47
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

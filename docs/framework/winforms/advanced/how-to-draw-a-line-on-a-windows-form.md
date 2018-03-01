@@ -5,24 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-f1_keywords: Graphics.DrawLine
+f1_keywords:
+- Graphics.DrawLine
 helpviewer_keywords:
 - examples [Windows Forms], drawing lines on forms
 - drawing [Windows Forms], lines
 - lines [Windows Forms], drawing
 - drawing lines
 ms.assetid: 55c1dbeb-75d0-430c-9814-a24b8971ad8c
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 78ad7d455f1de4b7077288d9575ea4907c3f218d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

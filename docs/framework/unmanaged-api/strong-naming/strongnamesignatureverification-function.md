@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: StrongNameSignatureVerification
-api_location: mscoree.dll
-api_type: DLLExport
-f1_keywords: StrongNameSignatureVerification
-helpviewer_keywords: StrongNameSignatureVerification function [.NET Framework strong naming]
+api_name:
+- StrongNameSignatureVerification
+api_location:
+- mscoree.dll
+api_type:
+- DLLExport
+f1_keywords:
+- StrongNameSignatureVerification
+helpviewer_keywords:
+- StrongNameSignatureVerification function [.NET Framework strong naming]
 ms.assetid: 933758dd-231e-4382-8819-242c0a13a4b7
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0950efd6c5323aa6a0cd2f1455ac3226b21a2b92
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: MenuStrip
+f1_keywords:
+- MenuStrip
 helpviewer_keywords:
 - MenuStrip control [Windows Forms], about MenuStrip control
 - menus [Windows Forms], creating
 ms.assetid: f45516e5-bf01-4468-b851-d45f4c33c055
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: eb27503fffc798b644f95fd213f8f23bdb3e228a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

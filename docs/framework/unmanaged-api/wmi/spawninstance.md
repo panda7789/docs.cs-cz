@@ -3,18 +3,26 @@ title: "Funkce SpawnInstance (referenční dokumentace nespravovaného rozhraní
 description: "Funkce SpawnInstance vytvoří novou instanci třídy."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: SpawnInstance
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: SpawnInstance
-helpviewer_keywords: SpawnInstance function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- SpawnInstance
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- SpawnInstance
+helpviewer_keywords:
+- SpawnInstance function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 68508f3000e7f4ac481f940ef4c715366c37125c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

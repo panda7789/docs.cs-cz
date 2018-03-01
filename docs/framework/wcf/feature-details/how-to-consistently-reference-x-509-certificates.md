@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: certificates [WCF], referencing X.509 certificates
+helpviewer_keywords:
+- certificates [WCF], referencing X.509 certificates
 ms.assetid: a6de1c63-e450-4640-ad08-ad7302dbfbfc
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2cc313be8c3d6325630e57e0b0e845ad4902bd2a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

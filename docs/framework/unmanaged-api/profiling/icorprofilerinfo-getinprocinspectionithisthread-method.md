@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetInprocInspectionIThisThread
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetInprocInspectionIThisThread
+api_name:
+- ICorProfilerInfo.GetInprocInspectionIThisThread
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetInprocInspectionIThisThread
 helpviewer_keywords:
 - ICorProfilerInfo::GetInprocInspectionIThisThread method [.NET Framework profiling]
 - GetInprocInspectionIThisThread method [.NET Framework profiling]
 ms.assetid: badddccd-f85c-416e-9f0f-419eab2c9d42
-topic_type: apiref
-caps.latest.revision: "20"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c36688af3ab8941a7004061add8598a480f3e202
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

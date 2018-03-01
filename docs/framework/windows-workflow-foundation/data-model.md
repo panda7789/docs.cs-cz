@@ -7,13 +7,15 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: programming [WF], data model
+helpviewer_keywords:
+- programming [WF], data model
 ms.assetid: d5752e51-cfc9-4499-af71-53b6daae9879
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dffdadf9b6896e61dfa23c17ef4d17180be99259
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

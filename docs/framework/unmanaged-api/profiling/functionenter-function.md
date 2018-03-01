@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: FunctionEnter
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: FunctionEnter
-helpviewer_keywords: FunctionEnter function [.NET Framework profiling]
+api_name:
+- FunctionEnter
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- FunctionEnter
+helpviewer_keywords:
+- FunctionEnter function [.NET Framework profiling]
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0387d6d5eee1c30cb1137072e2c4600f12479e8e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,10 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: ServiceController
+f1_keywords:
+- ServiceController
 helpviewer_keywords:
 - Windows Service applications, deploying
 - OnStop method
@@ -27,11 +29,12 @@ helpviewer_keywords:
 - Win32ShareProcess service type
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 613107a13820ad71b854dcba93f21c41f2a5fa5f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -3,18 +3,26 @@ title: "GetNames – funkce (referenční dokumentace nespravovaného rozhraní 
 description: "Funkce GetNames načte názvy vlastností objektu."
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: GetNames
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: GetNames
-helpviewer_keywords: GetNames function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- GetNames
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetNames
+helpviewer_keywords:
+- GetNames function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 80284900c318a3776168b781ce2e0e5e4a68f96d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
