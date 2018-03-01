@@ -2,11 +2,13 @@
 title: "Délka argumentu & č. 39; &lt;název argumentu argumentname&gt;& č. 39; musí být větší než nula."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_LengthGTZero1
+f1_keywords:
+- vbrArgument_LengthGTZero1
 ms.assetid: 709bc232-f8fe-4864-9842-e064795da0f5
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ada717d9ae252f2569bd12d0d734af8a321881b6

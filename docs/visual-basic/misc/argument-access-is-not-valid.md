@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Přístup k & č. 39; není platný. Platné hodnoty pro výstup režimu jsou &#39;OpenAccess.Write & č. 39; a &#39;OpenAccess.Default & č. 39;"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFileSystem_IllegalOutputAccess
+f1_keywords:
+- vbrFileSystem_IllegalOutputAccess
 ms.assetid: 29a40d2d-10d7-476b-b7c5-d10ab6a3bcce
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 839ed4423245906b39d449c49ce000a5436f04e9

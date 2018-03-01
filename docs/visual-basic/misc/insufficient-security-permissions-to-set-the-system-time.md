@@ -2,11 +2,13 @@
 title: "Nedostatečná oprávnění zabezpečení k nastavení systémového času"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrSetLocalTimeFailure
+f1_keywords:
+- vbrSetLocalTimeFailure
 ms.assetid: 6c034821-a260-4837-af1c-c11f8eba6d54
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 066baad66bcf490152fdd14d2bc74eb5cdaf2918

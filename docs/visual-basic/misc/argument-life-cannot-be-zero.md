@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Životní & č. 39; nemůže být nula."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFinancial_LifeNEZero
+f1_keywords:
+- vbrFinancial_LifeNEZero
 ms.assetid: c402da97-a2b2-4219-a83a-0cebbfdffef2
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 63130405550684a6e5d8c9c7bfcd1aa971045f2b

@@ -2,11 +2,13 @@
 title: "Vytváření a používání součástí v jazyce Visual Basic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: components [Visual Basic]
+helpviewer_keywords:
+- components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 17c9b7440d60c38ba30d230f8412c3ca1a21830a

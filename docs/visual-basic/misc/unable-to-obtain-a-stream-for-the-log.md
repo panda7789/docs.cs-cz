@@ -2,11 +2,13 @@
 title: "Nelze získat datový proud pro protokol"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrApplicationLog_ExhaustedPossibleStreamNames
+f1_keywords:
+- vbrApplicationLog_ExhaustedPossibleStreamNames
 ms.assetid: 33994f52-8efb-4790-a459-033e5c1db632
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: dba511ecd2a5c050fc2c037ac437e38715609e95

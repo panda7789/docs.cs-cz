@@ -2,11 +2,13 @@
 title: "Chyba zámku prostředků kódu"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID455
+f1_keywords:
+- vbrID455
 ms.assetid: 67a269bf-f436-4913-bc3c-af7f68116b7d
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c45cc5363e53eb4d7f605214f21e108ae350a69f

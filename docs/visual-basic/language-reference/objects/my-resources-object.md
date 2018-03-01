@@ -3,15 +3,17 @@ title: "My.Resources – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - My.Resources
 - My.Resources.MyResources.ResourceManager
 - My.Resources.MyResources.Culture
-helpviewer_keywords: My.Resources object
+helpviewer_keywords:
+- My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 96e5b909d9945ed631cebe07e4cfc7d5dc2e019f

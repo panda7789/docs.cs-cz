@@ -2,11 +2,13 @@
 title: "Použít & č. 39; FilePutObject – & č. 39; místo & č. 39; FilePut – & č. 39; Při použití argument typu & č. 39; objekt & č. 39;"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrUseFilePutObject
+f1_keywords:
+- vbrUseFilePutObject
 ms.assetid: d207b9b7-5898-4c13-8b03-9feefac5f726
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5612c2bd4dc08f767643d2cd865a2ba1a8210c15

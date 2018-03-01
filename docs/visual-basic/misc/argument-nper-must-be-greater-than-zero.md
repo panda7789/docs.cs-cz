@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Období & č. 39; musí být větší než nula."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrRate_NPerMustBeGTZero
+f1_keywords:
+- vbrRate_NPerMustBeGTZero
 ms.assetid: d49242df-dbd1-4b26-bd8c-ed56d24fdfcd
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d2e0cf124b4d1fac562e5d1697c53ee7328fa759

@@ -2,11 +2,13 @@
 title: "Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; není nic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_InvalidNullValue1
+f1_keywords:
+- vbrArgument_InvalidNullValue1
 ms.assetid: abbde904-c191-4911-8822-c9dd2f81d616
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: e6dcf65ad22882aea6d0239542c81e1b98395cac

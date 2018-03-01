@@ -2,11 +2,13 @@
 title: "Oddělovač nemůže být Nothing nebo prázdný řetězec."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_DelimiterNothing
+f1_keywords:
+- vbrTextFieldParser_DelimiterNothing
 ms.assetid: 8885fcd1-c201-409d-9a32-6ff2b13c0c13
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 3deb1d8106619dbbf5f52a5606f3198001fa6a8f

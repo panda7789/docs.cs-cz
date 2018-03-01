@@ -2,11 +2,13 @@
 title: "Argument & č. 39; Cesta & č. 39; nic nebo musí být prázdná"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_PathNullOrEmpty
+f1_keywords:
+- vbrArgument_PathNullOrEmpty
 ms.assetid: ba8aed14-2543-4c8e-ad88-c35b49078dd6
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 9872b5d795889453004d3e4a331c45a29a349b86

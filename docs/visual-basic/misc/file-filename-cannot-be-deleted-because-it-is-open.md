@@ -2,11 +2,13 @@
 title: "& Souborů č. 39; &lt;filename&gt;& č. 39; nelze odstranit, protože je otevřen"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFileSystem_FileAlreadyOpen1
+f1_keywords:
+- vbrFileSystem_FileAlreadyOpen1
 ms.assetid: e1cbc46a-1db0-412d-8109-31342ec9d327
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: de20e4d7d2169ff522a7ef17b7fa61259c7db87e

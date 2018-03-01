@@ -2,11 +2,13 @@
 title: "Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; není platnou hodnotou"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_InvalidValue1
+f1_keywords:
+- vbrArgument_InvalidValue1
 ms.assetid: 38d937f1-3f81-4c15-834f-c4a2769a0011
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: cc7acb9e91b23ea87cf46fe2b3b15b062429526d
