@@ -4,9 +4,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.With
+f1_keywords:
+- vb.With
 helpviewer_keywords:
 - With keyword [Visual Basic]
 - loop structures [Visual Basic], and With...End With statements
@@ -19,7 +21,7 @@ helpviewer_keywords:
 - With block
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: aa1f416e1bfdf6cdb51b098c0e2bd5e9912cb309

@@ -2,11 +2,13 @@
 title: "Chyba tiskárny"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID482
+f1_keywords:
+- vbrID482
 ms.assetid: 0ce0c4b3-3604-4638-9363-6c9333d0cc9d
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d0581f7ef299dccd81052e5710dfbdc8215be07e

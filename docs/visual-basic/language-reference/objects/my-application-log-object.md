@@ -3,11 +3,13 @@ title: "My.Application.Log – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: My.Application.Log object
+helpviewer_keywords:
+- My.Application.Log object
 ms.assetid: 296147f9-1109-4a55-9b5e-047f1ab9466c
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 9ba367f3d5f5cb5505300b7f4a54d9b3d7c4422e

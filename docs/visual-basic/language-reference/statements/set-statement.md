@@ -4,9 +4,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Set
+f1_keywords:
+- vb.Set
 helpviewer_keywords:
 - property procedures [Visual Basic], Set statements
 - Set statement [Visual Basic]
@@ -14,7 +16,7 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 3b18e6c858e64e78d7ab85fdaafd70e510f7a02f

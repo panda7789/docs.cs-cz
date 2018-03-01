@@ -2,11 +2,13 @@
 title: "Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; musí být v rozsahu 1 až 255"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_Range1toFF1
+f1_keywords:
+- vbrArgument_Range1toFF1
 ms.assetid: a447f9a6-1c90-4c71-abff-81170331e4c5
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 468e25afba26475d30f0b3d61f123b2e17bc99dd

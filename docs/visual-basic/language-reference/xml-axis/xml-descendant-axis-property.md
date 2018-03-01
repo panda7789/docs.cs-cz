@@ -4,9 +4,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.XmlPropertyDescendantsAxis
+f1_keywords:
+- vb.XmlPropertyDescendantsAxis
 helpviewer_keywords:
 - Visual Basic code, accessing XML
 - XML descendant axis property [Visual Basic]
@@ -14,7 +16,7 @@ helpviewer_keywords:
 - XML axis [Visual Basic], descendant
 - XML [Visual Basic], accessing
 ms.assetid: a178f85b-5d54-438f-8479-40b62af6fe76
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 0f3c42b5134b058c010ca4c7a5ee7c24627c65fe

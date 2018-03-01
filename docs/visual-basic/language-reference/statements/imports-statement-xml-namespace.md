@@ -4,16 +4,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.ImportsXmlns
+f1_keywords:
+- vb.ImportsXmlns
 helpviewer_keywords:
 - XML namespace [Visual Basic], importing
 - imports [Visual Basic]
 - Imports statement [Visual Basic]
 - namespaces [Visual Basic], importing
 ms.assetid: 1f4d50a6-08c7-4c2e-8206-ccae35fcd1b4
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: a0fe6d37c58ead94f2c03736318209abb67cd6dc

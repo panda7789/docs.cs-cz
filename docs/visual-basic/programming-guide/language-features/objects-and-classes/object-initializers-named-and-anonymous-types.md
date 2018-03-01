@@ -5,9 +5,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.ObjectInitializer
+f1_keywords:
+- vb.ObjectInitializer
 helpviewer_keywords:
 - object initializers [Visual Basic]
 - anonymous types [Visual Basic], object initializers
@@ -15,7 +17,7 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 349e4f7b4902eb18845fee7cb4d01b217849a4d2

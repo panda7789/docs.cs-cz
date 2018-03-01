@@ -4,9 +4,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Get
+f1_keywords:
+- vb.Get
 helpviewer_keywords:
 - Get statement [Visual Basic], syntax
 - Get statement [Visual Basic]
@@ -15,7 +17,7 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c1ff062a5e3bf41794bd5b4c90f1e188d6d97480

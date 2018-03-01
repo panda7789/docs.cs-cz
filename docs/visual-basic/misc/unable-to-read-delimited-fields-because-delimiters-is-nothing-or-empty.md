@@ -2,11 +2,13 @@
 title: "Nelze číst pole, protože oddělovače není nic nebo je prázdný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_DelimitersNothing
+f1_keywords:
+- vbrTextFieldParser_DelimitersNothing
 ms.assetid: 94f64c48-8e17-449d-b92a-0426efec879c
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 88d68c81a016882f06cf729947d78939a882273b

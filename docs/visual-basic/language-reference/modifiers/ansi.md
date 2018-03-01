@@ -3,15 +3,17 @@ title: Ansi (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Ansi
+f1_keywords:
+- vb.Ansi
 helpviewer_keywords:
 - Declare statement [Visual Basic], marshaling strings [Visual Basic]
 - ANSI, Visual Basic
 - ANSI
 ms.assetid: 4f1fa6ff-5557-41ab-b6da-90baf4c15917
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: aa5724eb9123b2776c3a579e4244c55b3129816b

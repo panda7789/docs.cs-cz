@@ -3,14 +3,16 @@ title: WithEvents (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.WithEvents
 - WithEvents
-helpviewer_keywords: WithEvents keyword [Visual Basic]
+helpviewer_keywords:
+- WithEvents keyword [Visual Basic]
 ms.assetid: 19d461f5-d72f-4de9-8c1d-0a6650316990
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 68a58fd130c04f2ed0cb1f2e5b9250f6c85f120d

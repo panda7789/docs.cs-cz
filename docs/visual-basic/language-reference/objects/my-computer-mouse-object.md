@@ -3,11 +3,13 @@ title: "My.Computer.Mouse – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: My.Computer.Mouse object
+helpviewer_keywords:
+- My.Computer.Mouse object
 ms.assetid: da473357-2120-47dd-bd42-c63d695157eb
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5dc61972799dc81605c85b208fe1e14d5928714d

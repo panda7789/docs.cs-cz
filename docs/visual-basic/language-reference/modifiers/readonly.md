@@ -3,9 +3,11 @@ title: ReadOnly (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.ReadOnly
+f1_keywords:
+- vb.ReadOnly
 helpviewer_keywords:
 - ReadOnly keyword [Visual Basic]
 - variables [Visual Basic], read-only
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - properties [Visual Basic], read-only
 - read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 9ca1d2e4eddb3b88073d6fcd46b0de5c627ba809

@@ -3,11 +3,13 @@ title: "My.Computer.Keyboard – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: My.Computer.Keyboard object
+helpviewer_keywords:
+- My.Computer.Keyboard object
 ms.assetid: 78dec9be-4e69-4ede-b9be-2ac34bec2b26
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 56fd59d0048a680bdd476b05144dfdb66f641287

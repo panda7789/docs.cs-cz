@@ -5,9 +5,11 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.constant
+f1_keywords:
+- vb.constant
 helpviewer_keywords:
 - Integer data type [Visual Basic], declaring constants
 - Single data type [Visual Basic], declaring constants
@@ -28,7 +30,7 @@ helpviewer_keywords:
 - module-level constants and variables
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 554f659e060087228fb43efd8b9d06103e21e980

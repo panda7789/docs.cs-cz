@@ -2,11 +2,13 @@
 title: "Nelze převést počáteční hodnota typu č. 39; &lt;type1&gt;& č. 39; mezní hodnota & č. 39;&lt; Type2&gt;& č. 39; a hodnota krok & č. 39;&lt; Type3&gt;& č. 39; do stejného typu"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrForLoop_CommonType3
+f1_keywords:
+- vbrForLoop_CommonType3
 ms.assetid: 21c45bcf-539c-488a-9cae-221558c37146
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 04bcc14bf1ce85423c5a5a99659955c62c74d8a5

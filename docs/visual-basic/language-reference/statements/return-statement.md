@@ -4,16 +4,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Return
+f1_keywords:
+- vb.Return
 helpviewer_keywords:
 - Return statement [Visual Basic], syntax
 - control flow [Visual Basic], returning control to expressions
 - Return statement [Visual Basic]
 - expressions [Visual Basic], returning control to
 ms.assetid: ac86e7f0-5a67-42c3-9834-0e0381efa3ec
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: b66d16a249164b8989f05f10c785b97055bfde9e

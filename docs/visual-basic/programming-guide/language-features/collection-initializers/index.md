@@ -5,12 +5,15 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.CollectionInitializer
-helpviewer_keywords: collection initializers [Visual Basic]
+f1_keywords:
+- vb.CollectionInitializer
+helpviewer_keywords:
+- collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5ec0179df50df453d6058a4b910d17561394140d

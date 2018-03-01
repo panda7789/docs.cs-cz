@@ -2,11 +2,13 @@
 title: "Nelze načíst pole, protože dvojité uvozovky není platný oddělovač EscapeQuotes nastavena na hodnotu True"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_IllegalDelimiter
+f1_keywords:
+- vbrTextFieldParser_IllegalDelimiter
 ms.assetid: ab8a0c3a-b89c-4617-9e31-7e81f5dca433
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 1b5ee30da2146d6fa9841a80cc0e841bd737961f

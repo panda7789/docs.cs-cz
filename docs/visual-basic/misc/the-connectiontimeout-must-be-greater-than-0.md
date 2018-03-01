@@ -2,11 +2,13 @@
 title: "ConnectionTimeout musí být větší než 0."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrNetwork_BadConnectionTimeout
+f1_keywords:
+- vbrNetwork_BadConnectionTimeout
 ms.assetid: 15ac09a7-47f0-44f3-9e84-5bd10bd07450
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 49e52d7b219d834609658b652f78629c36f79e59

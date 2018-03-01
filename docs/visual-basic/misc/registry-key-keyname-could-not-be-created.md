@@ -2,11 +2,13 @@
 title: "Klíč registru & č. 39; &lt;keyname&gt;& č. 39; nebylo možné vytvořit"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrInteraction_ResKeyNotCreated1
+f1_keywords:
+- vbrInteraction_ResKeyNotCreated1
 ms.assetid: 465ccd53-dfdc-47ec-8b3f-9a65ba739314
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 151b7434ab38f9a17344f15f0f0abef83f78e8cb

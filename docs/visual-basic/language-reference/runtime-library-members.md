@@ -2,16 +2,18 @@
 title: "Členové knihovny prostředí Runtime jazyka Visual Basic"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: VisualBasic
+f1_keywords:
+- VisualBasic
 helpviewer_keywords:
 - run-time libraries, Visual Basic
 - libraries, Visual Basic run-time
 - Microsoft.VisualBasic namespace
 - members [Visual Basic], Visual Basic run-time library
 ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: f928a01424853dc7e3637f49cc3af4108c5afb5b

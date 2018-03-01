@@ -2,11 +2,13 @@
 title: "Metoda & č. 39; &lt;methodname&gt;& č. 39; nejde volat s &lt;číslo&gt; argumenty"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrNoMethodTakingXArguments2
+f1_keywords:
+- vbrNoMethodTakingXArguments2
 ms.assetid: 23260199-b6a4-469f-b75f-4a3d8d25e2cc
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5f1696131cc8eded1f97a4025a99e9f259696903

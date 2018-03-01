@@ -2,11 +2,13 @@
 title: "Hodnota vlastnosti není platná"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID380
+f1_keywords:
+- vbrID380
 ms.assetid: 38540ad2-e02c-49aa-a2b7-b4c82d719cf1
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ade790163fc4a3e9d1eb5f9de41a0cab000c21f5

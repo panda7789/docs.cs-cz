@@ -2,11 +2,13 @@
 title: "Náhrady příliš dlouhý"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID746
+f1_keywords:
+- vbrID746
 ms.assetid: 398ff5eb-b580-456f-8f24-b7a8318e1193
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: fb1863f68a475b73ab78d50c1cdf801a61605965

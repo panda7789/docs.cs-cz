@@ -3,14 +3,16 @@ title: "My.WebServices – objekt"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - My.WebServices
 - My.MyProject.WebServices
-helpviewer_keywords: My.WebServices object
+helpviewer_keywords:
+- My.WebServices object
 ms.assetid: f188dc05-2c75-41b6-bb68-122d1c3110a2
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: a9f2c4017a1df8059f2cc57e7c30a96c474cfda0

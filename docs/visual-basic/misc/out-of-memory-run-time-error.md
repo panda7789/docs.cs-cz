@@ -2,11 +2,13 @@
 title: "Nedostatek paměti (chyba runtime jazyka Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID7
+f1_keywords:
+- vbrID7
 ms.assetid: 96cc12e1-d40a-425f-b365-1ac39e5ddcb0
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c6a312f1e8761a7c8ec08546ddc06688a55e0bdb

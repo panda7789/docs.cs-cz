@@ -2,11 +2,13 @@
 title: "Soubor již existuje."
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID58
+f1_keywords:
+- vbrID58
 ms.assetid: 04c2811f-b164-4e46-b4f0-ee9c948adade
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: a4cd56bf1c25b2a3e72cc99ff9ab1928aac62193

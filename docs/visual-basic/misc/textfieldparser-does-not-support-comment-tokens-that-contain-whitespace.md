@@ -2,11 +2,13 @@
 title: "TextFieldParser nepodporuje komentář tokeny, které obsahují prázdné znaky"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_WhitespaceInToken
+f1_keywords:
+- vbrTextFieldParser_WhitespaceInToken
 ms.assetid: 55107656-270e-4bbb-841a-478904df8e07
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 0e5f41b1f1019459d55d5806f45301f4248e65fc

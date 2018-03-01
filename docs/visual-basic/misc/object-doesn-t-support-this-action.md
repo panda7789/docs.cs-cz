@@ -2,11 +2,13 @@
 title: "Objekt nemá & č. 39; t podporu této akce (Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID445
+f1_keywords:
+- vbrID445
 ms.assetid: 25eb4310-c3aa-4d8d-8989-304cb57e12c1
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 32187ad39972b3fe5772fe98d0ff69242da19fc7

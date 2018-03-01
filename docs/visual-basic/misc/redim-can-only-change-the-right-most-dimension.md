@@ -2,11 +2,13 @@
 title: "& č. 39; ReDim & č. 39; lze změnit pouze dimenze nejvíce vpravo"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArray_TypeMismatch
+f1_keywords:
+- vbrArray_TypeMismatch
 ms.assetid: d53cf41b-7a7a-466c-a29a-920d99698fa9
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 752e0e54c48b3b348a477787e5e911f1b1777667

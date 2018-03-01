@@ -2,11 +2,13 @@
 title: "Zařízení není k dispozici"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID68
+f1_keywords:
+- vbrID68
 ms.assetid: 9a89beda-140e-4b32-8d0a-2dc598ef279a
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ccf846937d1eb36c45cb91627978fec979f44edc

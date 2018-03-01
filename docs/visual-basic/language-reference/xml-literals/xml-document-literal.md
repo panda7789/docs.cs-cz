@@ -4,16 +4,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.XmlLiteralDocument
+f1_keywords:
+- vb.XmlLiteralDocument
 helpviewer_keywords:
 - XML document literal [Visual Basic]
 - XML literals [Visual Basic], document
 - XML documents [Visual Basic], creating
 - document literal [Visual Basic]
 ms.assetid: f7bbee56-0911-41de-b907-96f20450137b
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 008b5857418a572046797bf061a05f265669d427

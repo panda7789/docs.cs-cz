@@ -5,16 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.LambdaFunction
+f1_keywords:
+- vb.LambdaFunction
 helpviewer_keywords:
 - functions [Visual Basic], lambda expressions
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 - inline functions [Visual Basic]
 ms.assetid: 137064b0-3928-4bfa-ba71-c3f9cbd951e2
-caps.latest.revision: "52"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 69ac88d295420277e99058d0f80a5ae1c2ce2e39

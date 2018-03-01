@@ -2,11 +2,13 @@
 title: "Cykly řídicí proměnná typu & č. 39; &lt;typename&gt;& č. 39; neimplementuje & č. 39; System.IComparable & č. 39; rozhraní"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_IComparable2
+f1_keywords:
+- vbrArgument_IComparable2
 ms.assetid: 8dba1270-380a-4f05-8bad-1031e6a9cc90
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: daf475d05edd3a520644aef23ba40e054ba95c6d

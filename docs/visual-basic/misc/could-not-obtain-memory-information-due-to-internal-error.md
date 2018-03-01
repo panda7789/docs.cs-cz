@@ -2,11 +2,13 @@
 title: "Nelze získat informace o paměti z důvodu vnitřní chyby"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrDiagnosticInfo_Memory
+f1_keywords:
+- vbrDiagnosticInfo_Memory
 ms.assetid: 1ba8f774-5858-438e-914e-99fddc9e5e7e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: bf339e34368df8fb03024cec255e39e6992be77f
