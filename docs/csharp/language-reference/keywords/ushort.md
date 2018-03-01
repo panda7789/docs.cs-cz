@@ -2,14 +2,16 @@
 title: "ushort (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - ushort
 - ushort_CSharpKeyword
-helpviewer_keywords: ushort keyword [C#]
+helpviewer_keywords:
+- ushort keyword [C#]
 ms.assetid: 1a7dbaae-b7a0-4111-872a-c88a6d3981ac
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 83fa657303e8392997b04b7d80cdbcdbf39de887

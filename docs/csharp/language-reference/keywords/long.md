@@ -2,14 +2,16 @@
 title: "long (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - long_CSharpKeyword
 - long
-helpviewer_keywords: long keyword [C#]
+helpviewer_keywords:
+- long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7f18bed80550b293195961fd9d42491dd571cbaf

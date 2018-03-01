@@ -4,15 +4,20 @@ ms.date: 05/01/2017
 ms.prod: .net-framework
 ms.technology: 
 ms.topic: reference
-topic_type: apiref
-api_name: System.Net.ServicePoint.m_ConnectionGroupList
-api_location: System.dll
-api_type: Assembly
+topic_type:
+- apiref
+api_name:
+- System.Net.ServicePoint.m_ConnectionGroupList
+api_location:
+- System.dll
+api_type:
+- Assembly
 ms.assetid: df8afb59-f0f6-4ddc-b3c1-839b9fc601d8
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b116c2d56d6c0710f770b1c132029108a52e67da
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

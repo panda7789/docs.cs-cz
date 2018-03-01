@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback2.ExceptionUnwind
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback2::ExceptionUnwind
+api_name:
+- ICorDebugManagedCallback2.ExceptionUnwind
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback2::ExceptionUnwind
 helpviewer_keywords:
 - ICorDebugManagedCallback2::ExceptionUnwind method [.NET Framework debugging]
 - ExceptionUnwind method [.NET Framework debugging]
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 64b85311f625e39dd25c48a60dde2fbaf66a957f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

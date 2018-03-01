@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback.ControlCTrap
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback::ControlCTrap
+api_name:
+- ICorDebugManagedCallback.ControlCTrap
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback::ControlCTrap
 helpviewer_keywords:
 - ICorDebugManagedCallback::ControlCTrap method [.NET Framework debugging]
 - ControlCTrap method [.NET Framework debugging]
 ms.assetid: 0500854e-2121-43d9-a028-64312da35258
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6c5de52b810efeaf7b5c103dcd39a37a37ab3272
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -4,7 +4,8 @@ description: "Další koncepty testů jednotek pro F # v .NET Core prostřednict
 author: rprouse
 ms.date: 12/01/2017
 ms.topic: article
-dev_langs: fsharp
+dev_langs:
+- fsharp
 ms.prod: .net-core
 ms.openlocfilehash: 27a7bb889fd736294252da39b1839b2197b8df03
 ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc

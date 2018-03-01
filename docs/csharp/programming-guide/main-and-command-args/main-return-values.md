@@ -2,11 +2,13 @@
 title: "Návratové hodnoty Main() (Průvodce programováním v C#)"
 ms.date: 08/02/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: Main method [C#], return values
+helpviewer_keywords:
+- Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9f317879a4941adfd3d125c7697226f8a510254c

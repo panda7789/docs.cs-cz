@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugFunction2.GetVersionNumber
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugFunction2::GetVersionNumber
+api_name:
+- ICorDebugFunction2.GetVersionNumber
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugFunction2::GetVersionNumber
 helpviewer_keywords:
 - ICorDebugFunction2::GetVersionNumber method [.NET Framework debugging]
 - GetVersionNumber method, ICorDebugFunction2 interface [.NET Framework debugging]
 ms.assetid: e3a1ce48-9bb9-4ed6-a5fe-5e1819a6333f
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 16902d1a50f691ae555fdbc964bb9a1c6bf563c4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

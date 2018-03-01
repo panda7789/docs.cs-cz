@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: IALink2.ImportFileEx
-api_location: alink.dll
-api_type: COM
-f1_keywords: ImportFileEx
-helpviewer_keywords: ImportFileEx method
+api_name:
+- IALink2.ImportFileEx
+api_location:
+- alink.dll
+api_type:
+- COM
+f1_keywords:
+- ImportFileEx
+helpviewer_keywords:
+- ImportFileEx method
 ms.assetid: ad276f3f-b303-46ac-97e0-66a377adaa4f
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dc2af9db27c5194a1bdcef875b8db8d458d0edfe
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

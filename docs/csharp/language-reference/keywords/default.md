@@ -2,14 +2,16 @@
 title: "default (Referenční dokumentace jazyka C#)"
 ms.date: 08/04/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - default
 - default_CSharpKeyword
-helpviewer_keywords: default keyword [C#]
+helpviewer_keywords:
+- default keyword [C#]
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1078dd21101a41969754de1afc8919f8ac0bda8c

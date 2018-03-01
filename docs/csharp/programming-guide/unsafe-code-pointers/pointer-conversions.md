@@ -2,11 +2,13 @@
 title: "Převody ukazatele (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: pointers [C#], conversions
+helpviewer_keywords:
+- pointers [C#], conversions
 ms.assetid: f0e87502-477a-4ede-a31f-7a3e262e46fb
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 36589d139c91e04d9e3d8b31281a91c26b85a5d5
@@ -22,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
 |<span data-ttu-id="a1f55-106">From</span><span class="sxs-lookup"><span data-stu-id="a1f55-106">From</span></span>|<span data-ttu-id="a1f55-107">Chcete-li</span><span class="sxs-lookup"><span data-stu-id="a1f55-107">To</span></span>|  
 |----------|--------|  
-|<span data-ttu-id="a1f55-108">Žádný typ ukazatele</span><span class="sxs-lookup"><span data-stu-id="a1f55-108">Any pointer type</span></span>|<span data-ttu-id="a1f55-109">void *</span><span class="sxs-lookup"><span data-stu-id="a1f55-109">void*</span></span>|  
+|<span data-ttu-id="a1f55-108">Žádný typ ukazatele</span><span class="sxs-lookup"><span data-stu-id="a1f55-108">Any pointer type</span></span>|<span data-ttu-id="a1f55-109">void \*</span><span class="sxs-lookup"><span data-stu-id="a1f55-109">void\*</span></span>|  
 |<span data-ttu-id="a1f55-110">null</span><span class="sxs-lookup"><span data-stu-id="a1f55-110">null</span></span>|<span data-ttu-id="a1f55-111">Žádný typ ukazatele</span><span class="sxs-lookup"><span data-stu-id="a1f55-111">Any pointer type</span></span>|  
   
  <span data-ttu-id="a1f55-112">Ukazatel explicitní převod se používá k provádění převody, pro které není žádný implicitní převod pomocí výraz přetypování.</span><span class="sxs-lookup"><span data-stu-id="a1f55-112">Explicit pointer conversion is used to perform conversions, for which there is no implicit conversion, by using a cast expression.</span></span> <span data-ttu-id="a1f55-113">V následující tabulce jsou tyto převody.</span><span class="sxs-lookup"><span data-stu-id="a1f55-113">The following table shows these conversions.</span></span>  

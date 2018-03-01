@@ -2,16 +2,18 @@
 title: "Klíčová slova jazyka C#"
 ms.date: 03/07/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.keywords
+f1_keywords:
+- cs.keywords
 helpviewer_keywords:
 - keywords [C#]
 - C# language, keywords
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 038a25fd71098bdd2e4ec7e138178a7aac836e57

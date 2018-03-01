@@ -5,25 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICoreClrDebugTarget.EnumRuntimes
-api_location: mscordbi_macx86.dll
-api_type: COM
-f1_keywords: ICoreClrDebugTarget::EnumRuntimes
+api_name:
+- ICoreClrDebugTarget.EnumRuntimes
+api_location:
+- mscordbi_macx86.dll
+api_type:
+- COM
+f1_keywords:
+- ICoreClrDebugTarget::EnumRuntimes
 helpviewer_keywords:
 - remote debugging API [Silverlight]
 - ICorClrDebugTarget::EnumRuntimes method [Silverlight debugging]
 - EnumRuntimes method, ICoreClrDebugTarget interface [Silverlight debugging]
 - Silverlight, remote debugging
 ms.assetid: 316df866-442d-40cc-b049-45e8adcb65d1
-topic_type: apiref
-caps.latest.revision: "4"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7a242d95785cf4421d30f716ac2987e42681aaef
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

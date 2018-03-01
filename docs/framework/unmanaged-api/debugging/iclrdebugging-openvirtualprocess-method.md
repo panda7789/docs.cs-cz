@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICLRDebugging.OpenVirtualProcess
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICLRDebugging::OpenVirtualProcess
+api_name:
+- ICLRDebugging.OpenVirtualProcess
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICLRDebugging::OpenVirtualProcess
 helpviewer_keywords:
 - OpenVirtualProcess method [.NET Framework debugging]
 - ICLRDebugging::OpenVirtualProcess method [.NET Framework debugging]
 ms.assetid: e8ab7c41-d508-4ed9-8a31-ead072b5a314
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f1f71f42f10c3d25714998d1697b20a5ee13e055
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICLRDataTarget3.GetContextRecord
-api_location: mscordbi.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ICLRDataTarget3.GetContextRecord
+api_location:
+- mscordbi.dll
+api_type:
+- COM
 ms.assetid: 66076ed5-f05c-4114-9788-94cb143abb8a
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 517e2a692c3b67a85bc24437dd5fbaedd5fc7254
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

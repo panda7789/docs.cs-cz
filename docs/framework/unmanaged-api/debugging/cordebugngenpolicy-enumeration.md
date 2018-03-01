@@ -5,22 +5,31 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: CorDebugNGenPolicy
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: CorDebugNGenPolicy
-helpviewer_keywords: CorDebugNgenPolicy enumeration [.NET Framework debugging]
+dev_langs:
+- cpp
+api_name:
+- CorDebugNGenPolicy
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- CorDebugNGenPolicy
+helpviewer_keywords:
+- CorDebugNgenPolicy enumeration [.NET Framework debugging]
 ms.assetid: edb4e4d2-3166-44d4-8b17-bf302f7ea093
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 89767da7178319ed1add3dda0620062893487bfd
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

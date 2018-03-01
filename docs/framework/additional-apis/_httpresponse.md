@@ -4,15 +4,20 @@ ms.date: 05/01/2017
 ms.prod: .net-framework
 ms.technology: 
 ms.topic: reference
-topic_type: apiref
-api_name: System.Net.HttpWebRequest._HttpResponse
-api_location: System.dll
-api_type: Assembly
+topic_type:
+- apiref
+api_name:
+- System.Net.HttpWebRequest._HttpResponse
+api_location:
+- System.dll
+api_type:
+- Assembly
 ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fa70def4c051567f11c355f925e028a2e2342079
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

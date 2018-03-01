@@ -2,12 +2,15 @@
 title: "value (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: value_CSharpKeyword
-helpviewer_keywords: value keyword [C#]
+f1_keywords:
+- value_CSharpKeyword
+helpviewer_keywords:
+- value keyword [C#]
 ms.assetid: c99d6468-687f-4a46-89b4-a95e1b00bf6d
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2501bc8964ed76534dba6c7cc519e095c57cb898

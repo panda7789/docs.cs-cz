@@ -2,15 +2,17 @@
 title: "-nowarn (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /nowarn
+f1_keywords:
+- /nowarn
 helpviewer_keywords:
 - nowarn compiler option [C#]
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2784e63b7c1e67b32fc448b4b112ad0252b1abd9

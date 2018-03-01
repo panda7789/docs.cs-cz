@@ -2,9 +2,11 @@
 title: "-fullpaths (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /fullpaths
+f1_keywords:
+- /fullpaths
 helpviewer_keywords:
 - /fullpaths compiler option [C#]
 - absolute paths [C#]
@@ -12,7 +14,7 @@ helpviewer_keywords:
 - full paths [C#]
 - -fullpaths compiler option [C#]
 ms.assetid: d2a5f857-cbb2-430b-879c-d648aaf0b8c4
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b5cc48337c9c85bf5adfaf8fc24a414e6db4ba26

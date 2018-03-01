@@ -2,14 +2,16 @@
 title: "-= – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: -=_CSharpKeyword
+f1_keywords:
+- -=_CSharpKeyword
 helpviewer_keywords:
 - subtraction assignment operator (-=) [C#]
 - -= operator (subtraction assignment ) [C#]
 ms.assetid: 05c7d68a-423f-4de8-891b-cf24e8fb6ed7
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 443f0d717288a491838d23eaa63218150bd346d5

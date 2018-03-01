@@ -2,14 +2,16 @@
 title: "into (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - into_CSharpKeyword
 - into
-helpviewer_keywords: into keyword [C#]
+helpviewer_keywords:
+- into keyword [C#]
 ms.assetid: 81ec62c1-f0b1-4755-8a31-959876e77f65
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7f2400143e66c68942cdec3ebfa04cfdd8cfe983

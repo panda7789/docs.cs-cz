@@ -2,15 +2,17 @@
 title: "-target: module (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /target:module
+f1_keywords:
+- /target:module
 helpviewer_keywords:
 - -target compiler options [C#], /target:module
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 679d659b2806fb875f908cee840a62278c99096f

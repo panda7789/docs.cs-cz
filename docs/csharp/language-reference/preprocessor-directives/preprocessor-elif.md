@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"elif-c-reference\"></a>elif (referenční dokumentace jazyka C#)"
+title: "#elif (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#elif'
-helpviewer_keywords: '#elif directive [C#]'
+f1_keywords:
+- '#elif'
+helpviewer_keywords:
+- '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1512bbbc46ce15570507c8b51540eef607d55dc8

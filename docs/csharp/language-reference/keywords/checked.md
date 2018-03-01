@@ -2,14 +2,16 @@
 title: "checked (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - checked_CSharpKeyword
 - checked
-helpviewer_keywords: checked keyword [C#]
+helpviewer_keywords:
+- checked keyword [C#]
 ms.assetid: 718a1194-988d-48a3-b089-d6ee8bd1608d
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0ae77894cdc94e41dfa281b92ed3304e0dc25731

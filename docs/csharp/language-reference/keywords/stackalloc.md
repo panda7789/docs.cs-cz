@@ -2,14 +2,16 @@
 title: "stackalloc (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - stackalloc_CSharpKeyword
 - stackalloc
-helpviewer_keywords: stackalloc keyword [C#]
+helpviewer_keywords:
+- stackalloc keyword [C#]
 ms.assetid: adc04c28-3ed2-4326-807a-7545df92b852
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: ad4453f889a344fcd44dfad44a30fef07380b6a3

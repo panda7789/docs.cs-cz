@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugAppDomain
-api_location: corguids.lib
-api_type: COM
-f1_keywords: ICorDebugAppDomain
-helpviewer_keywords: ICorDebugAppDomain interface [.NET Framework debugging]
+api_name:
+- ICorDebugAppDomain
+api_location:
+- corguids.lib
+api_type:
+- COM
+f1_keywords:
+- ICorDebugAppDomain
+helpviewer_keywords:
+- ICorDebugAppDomain interface [.NET Framework debugging]
 ms.assetid: be7ae711-1217-4a44-be40-166e29641b77
-topic_type: apiref
-caps.latest.revision: "22"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: aab18cb1d29931a58e64561f23d91ee4eb3a4278
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

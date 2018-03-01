@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugNativeFrame2.IsChild Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugNativeFrame2::IsChild
+api_name:
+- ICorDebugNativeFrame2.IsChild Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugNativeFrame2::IsChild
 helpviewer_keywords:
 - IsChild method [.NET Framework debugging]
 - ICorDebugNativeFrame2::IsChild method [.NET Framework debugging]
 ms.assetid: 9e2aae09-49cb-4fbd-81e5-e29cd864a88b
-topic_type: apiref
-caps.latest.revision: "8"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 267bc2fcd03786bfceb218dd0218ffa7006f8fa7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

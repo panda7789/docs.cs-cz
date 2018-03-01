@@ -2,15 +2,17 @@
 title: "!= – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '!=_CSharpKeyword'
+f1_keywords:
+- '!=_CSharpKeyword'
 helpviewer_keywords:
 - inequality operator (!=) [C#]
 - not equals operator (!=) [C#]
 - '!= operator [C#]'
 ms.assetid: eeff7a4e-ad6f-462d-9f8d-49e9b91c6c97
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b69d0b12734e690f0ba0209ccbbc7627ff92fe8a

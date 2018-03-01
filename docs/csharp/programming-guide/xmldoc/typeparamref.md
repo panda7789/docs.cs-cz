@@ -2,14 +2,16 @@
 title: "&lt;typeparamref&gt; (C# Průvodce programováním)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: typeparamref
+f1_keywords:
+- typeparamref
 helpviewer_keywords:
 - typeparamref C# XML tag
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 296761f72d3d306c4f37632d7110e31b62c44734

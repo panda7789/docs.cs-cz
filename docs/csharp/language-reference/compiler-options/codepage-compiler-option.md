@@ -2,15 +2,17 @@
 title: "-codepage (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /codepage
+f1_keywords:
+- /codepage
 helpviewer_keywords:
 - /codepage compiler option [C#]
 - codepage compiler option [C#]
 - -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c1181ef98ac5f335c9737771eda2b3bd9227cc9f

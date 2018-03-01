@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugStepper.SetUnmappedStopMask
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugStepper::SetUnmappedStopMask
+api_name:
+- ICorDebugStepper.SetUnmappedStopMask
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugStepper::SetUnmappedStopMask
 helpviewer_keywords:
 - ICorDebugStepper::SetUnmappedStopMask method [.NET Framework debugging]
 - SetUnmappedStopMask method [.NET Framework debugging]
 ms.assetid: b1211981-e90c-4e05-8def-fa18d85ad9ab
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2fffd523caef6bba1b495f9b8a257f57bd8955af
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

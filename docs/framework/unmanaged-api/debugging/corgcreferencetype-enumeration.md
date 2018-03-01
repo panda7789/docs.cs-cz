@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorGCReferenceType
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: CorGCReferenceType
-helpviewer_keywords: CorGCReferenceType
+api_name:
+- CorGCReferenceType
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- CorGCReferenceType
+helpviewer_keywords:
+- CorGCReferenceType
 ms.assetid: d9f16439-5a36-4474-8ffd-4f0b2c2bb686
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b314580f7628eca68a3996aaafb362081c6ed705
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

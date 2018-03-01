@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugController.HasQueuedCallbacks
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugController::HasQueuedCallbacks
+api_name:
+- ICorDebugController.HasQueuedCallbacks
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugController::HasQueuedCallbacks
 helpviewer_keywords:
 - HasQueuedCallbacks method [.NET Framework debugging]
 - ICorDebugController::HasQueuedCallbacks method [.NET Framework debugging]
 ms.assetid: 0d6a1cd9-370b-4462-adbf-e3980e897ea7
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 03d52bb31a81876a00e1af33494b14fb99fee0fa
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

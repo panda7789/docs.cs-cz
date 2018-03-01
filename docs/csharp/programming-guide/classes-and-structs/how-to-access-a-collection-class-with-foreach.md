@@ -2,11 +2,13 @@
 title: "Postupy: Přístup ke třídě kolekce pomocí příkazu foreach (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: collection classes [C#], foreach statement
+helpviewer_keywords:
+- collection classes [C#], foreach statement
 ms.assetid: a6b9cf5c-6c8d-4223-b12c-288949434493
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0cf827e958d4dc3b951d17b53effd155356c0ca5

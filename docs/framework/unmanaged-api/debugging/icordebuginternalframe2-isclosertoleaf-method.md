@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugInternalFrame2.IsCloserToLeaf Method
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugInternalFrame2::IsCloserToLeaf
+api_name:
+- ICorDebugInternalFrame2.IsCloserToLeaf Method
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugInternalFrame2::IsCloserToLeaf
 helpviewer_keywords:
 - ICorDebugInternalFrame2::IsCloserToLeaf method [.NET Framework debugging]
 - IsCloserToLeaf method [.NET Framework debugging]
 ms.assetid: c1d3d1eb-8370-4f25-8297-3bd262b4740a
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7b6b769c25e0cd706eb57965b73d0fcfdcf9b9ea
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

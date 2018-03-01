@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"else-c-reference\"></a>else (C# referenční dokumentace)"
+title: "#else (C# referenční dokumentace)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#else'
-helpviewer_keywords: '#else directive [C#]'
+f1_keywords:
+- '#else'
+helpviewer_keywords:
+- '#else directive [C#]'
 ms.assetid: 6a347322-cfa2-4a86-98f8-ddfa2cb7d4db
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c3468d35a6e45c06f46fe8671708ce01a3cc7b65

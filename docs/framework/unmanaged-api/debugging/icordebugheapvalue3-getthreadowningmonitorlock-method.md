@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugHeapValue3.GetThreadOwningMonitorLock
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugHeapValue3::GetThreadOwningMonitorLock
+api_name:
+- ICorDebugHeapValue3.GetThreadOwningMonitorLock
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugHeapValue3::GetThreadOwningMonitorLock
 helpviewer_keywords:
 - GetThreadOwningMonitorLock method [.NET Framework debugging]
 - ICorDebugHeapValue3::GetThreadOwningMonitorLock method [.NET Framework debugging]
 ms.assetid: e06fc19d-2cf4-4cad-81a3-137a68af8969
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1a2198e54c764fde0248563b040ac98984001888
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

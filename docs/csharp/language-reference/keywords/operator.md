@@ -2,14 +2,16 @@
 title: "operator (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - operator_CSharpKeyword
 - operator
-helpviewer_keywords: operator keyword [C#]
+helpviewer_keywords:
+- operator keyword [C#]
 ms.assetid: 59218cce-e90e-42f6-a6bb-30300981b86a
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1d035319318a710ccee62a0c64ce5981767a21ca

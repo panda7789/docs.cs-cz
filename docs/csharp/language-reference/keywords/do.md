@@ -2,14 +2,16 @@
 title: "do (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - do_CSharpKeyword
 - do
-helpviewer_keywords: do keyword [C#]
+helpviewer_keywords:
+- do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d24078d3fb985f643fb66aa456900d03d2ff3fce

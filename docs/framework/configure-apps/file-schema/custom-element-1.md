@@ -2,15 +2,19 @@
 title: "Vlastní element pro SingleTagSectionHandler"
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
-helpviewer_keywords: custom element
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
+helpviewer_keywords:
+- custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8ee722c7d5db9d58ab1a91f4b1299912981510af
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

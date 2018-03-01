@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugModule.GetMetaDataInterface
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugModule::GetMetaDataInterface
+api_name:
+- ICorDebugModule.GetMetaDataInterface
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugModule::GetMetaDataInterface
 helpviewer_keywords:
 - ICorDebugModule::GetMetaDatainterface method [.NET Framework debugging]
 - GetMetaDatainterface method [.NET Framework debugging]
 ms.assetid: 30d906f2-cf35-4fa9-9d4c-0c31b58c9f3a
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d374b83155ccc8511c6e3217a8a49819d81a7d48
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

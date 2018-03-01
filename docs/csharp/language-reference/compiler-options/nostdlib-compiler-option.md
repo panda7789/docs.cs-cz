@@ -2,15 +2,17 @@
 title: "-nostdlib (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /nostdlib
+f1_keywords:
+- /nostdlib
 helpviewer_keywords:
 - nostdlib compiler option [C#]
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: dd9d2b6a4a9c774aa339e840ad0020ee39cb10d3

@@ -2,9 +2,11 @@
 title: "-warn (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /warn
+f1_keywords:
+- /warn
 helpviewer_keywords:
 - warning level [C#]
 - /w compiler option [C#]
@@ -14,7 +16,7 @@ helpviewer_keywords:
 - w compiler option [C#]
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6a1f2c55aa078adb213a93dc5aff7ced40793bfa

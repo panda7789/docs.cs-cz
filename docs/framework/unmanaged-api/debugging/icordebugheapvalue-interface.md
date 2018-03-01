@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugHeapValue
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugHeapValue
-helpviewer_keywords: ICorDebugHeapValue interface [.NET Framework debugging]
+api_name:
+- ICorDebugHeapValue
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugHeapValue
+helpviewer_keywords:
+- ICorDebugHeapValue interface [.NET Framework debugging]
 ms.assetid: 1bca66db-0359-4ae8-846e-e35f7e547e8b
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d2ab132b73369526204f8fd811e1567b07b4a9b0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

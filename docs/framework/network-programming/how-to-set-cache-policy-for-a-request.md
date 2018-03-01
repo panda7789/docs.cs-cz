@@ -10,13 +10,15 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: request cache policies
+helpviewer_keywords:
+- request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3ff59bab2963d78425f9b7f4b41bdb679ed8e6f6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

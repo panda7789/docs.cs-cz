@@ -2,14 +2,16 @@
 title: "true (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - true_CSharpKeyword
 - "true"
-helpviewer_keywords: true keyword [C#]
+helpviewer_keywords:
+- true keyword [C#]
 ms.assetid: 7d0adcdb-02e9-478c-8c84-2e671d4acef3
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 63ecb46ab8c65cdfc7769d67851b8f43fc63ebff

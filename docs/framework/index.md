@@ -2,10 +2,12 @@
 title: "Rozhraní .NET framework 4.7, 4.6 a 4.5"
 ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 ms.custom: updateeachrelease
-f1_keywords: f61f02f2-2f20-483d-8f56-a9c8f3a54986
+f1_keywords:
+- f61f02f2-2f20-483d-8f56-a9c8f3a54986
 helpviewer_keywords:
 - .NET Framework, documentation
 - documentation, .NET Framework
@@ -13,7 +15,8 @@ ms.assetid: f61f02f2-2f20-483d-8f56-a9c8f3a54986
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 34402e74bb0cb560d213760c38ce4b936d712eb4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

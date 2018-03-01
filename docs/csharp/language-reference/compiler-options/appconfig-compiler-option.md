@@ -2,15 +2,17 @@
 title: "-appconfig (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /appconfig
+f1_keywords:
+- /appconfig
 helpviewer_keywords:
 - /appconfig compiler option [C#]
 - -appconfig compiler option [C#]
 - appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a3f2c1bc9d0d3fec0635d284f64138f0432f59ef

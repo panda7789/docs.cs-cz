@@ -2,12 +2,15 @@
 title: "= – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: =_CSharpKeyword
-helpviewer_keywords: = operator [C#]
+f1_keywords:
+- =_CSharpKeyword
+helpviewer_keywords:
+- = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 4c7188abe54cb69678720b4dbbf4dbdea1be4abe

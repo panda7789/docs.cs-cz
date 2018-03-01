@@ -2,14 +2,16 @@
 title: "public (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - public
 - public_CSharpKeyword
-helpviewer_keywords: public keyword [C#]
+helpviewer_keywords:
+- public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 197ef4a2a8544d439b0c34ec14bb7752b760ea06

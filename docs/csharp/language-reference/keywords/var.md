@@ -2,14 +2,16 @@
 title: "var (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - var
 - var_CSharpKeyword
-helpviewer_keywords: var keyword [C#]
+helpviewer_keywords:
+- var keyword [C#]
 ms.assetid: 0777850a-2691-4e3e-927f-0c850f5efe15
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d2be56243f9c4ddafb3903d14fa6d6f9cb0e2f84

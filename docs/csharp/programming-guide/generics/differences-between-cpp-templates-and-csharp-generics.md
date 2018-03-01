@@ -2,11 +2,13 @@
 title: "Rozdíly mezi šablonami C++ a obecnými typy C# (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: generics [C#], vs. C++ templates
+helpviewer_keywords:
+- generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: aea1b51c26a8f3de56ea66b9cf89e75bfeb59d81

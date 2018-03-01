@@ -2,11 +2,13 @@
 title: "Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: progress dialog [C#]
+helpviewer_keywords:
+- progress dialog [C#]
 ms.assetid: 01b71fe7-8178-4dc8-aeb1-12053be7b51c
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0ac68b5aa6014db87b4f7a269ef73d0608371bd8

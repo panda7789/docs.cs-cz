@@ -2,15 +2,17 @@
 title: "-target: library (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /dll
+f1_keywords:
+- /dll
 helpviewer_keywords:
 - -target compiler options [C#], /target:library
 - target compiler options [C#], /target:library
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 242f8ada7cbffc4a6986339d28c4284b50afca25

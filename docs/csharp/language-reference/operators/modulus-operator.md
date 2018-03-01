@@ -2,14 +2,16 @@
 title: "% – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '%_CSharpKeyword'
+f1_keywords:
+- '%_CSharpKeyword'
 helpviewer_keywords:
 - modulus operator [C#]
 - '% operator [C#]'
 ms.assetid: 3b74f4f9-fd9c-45e7-84fa-c8d71a0dfad7
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cea4aa03424e93f3ec144126d73c63931a737b54

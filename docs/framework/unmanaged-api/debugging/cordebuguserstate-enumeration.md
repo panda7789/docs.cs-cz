@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorDebugUserState
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: CorDebugUserState
-helpviewer_keywords: CorDebugUserState enumeration [.NET Framework debugging]
+api_name:
+- CorDebugUserState
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- CorDebugUserState
+helpviewer_keywords:
+- CorDebugUserState enumeration [.NET Framework debugging]
 ms.assetid: 5f6c2bcd-8102-4e3b-abc5-86ab0bd62def
-topic_type: apiref
-caps.latest.revision: "16"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 57fd9df27b1911c90bd11712b67e6e64588c2b5f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

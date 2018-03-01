@@ -2,14 +2,16 @@
 title: "char (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - char
 - char_CSharpKeyword
-helpviewer_keywords: char data type [C#]
+helpviewer_keywords:
+- char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 41f672e9b12481fa5cce78015e95d2c5245a26db

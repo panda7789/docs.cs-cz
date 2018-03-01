@@ -2,9 +2,11 @@
 title: "&lt;Přidat&gt; element pro &lt;appSettings&gt;"
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/add
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/add
 helpviewer_keywords:
 - add Element
 - <add> Element
@@ -12,7 +14,8 @@ ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d080a7c63ddda0577e66d2e7ddd433c7fd5fdbd1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

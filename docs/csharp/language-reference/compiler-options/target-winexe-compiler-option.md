@@ -2,15 +2,17 @@
 title: "-target: winexe (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /target:winexe
+f1_keywords:
+- /target:winexe
 helpviewer_keywords:
 - /target compiler options [C#], /target:winexe
 - -target compiler options [C#], /target:winexe
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b13af4e665a2bf5a75472bc8f4a501e90c59281a

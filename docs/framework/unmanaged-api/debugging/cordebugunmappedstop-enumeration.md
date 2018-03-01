@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: CorDebugUnmappedStop
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: CorDebugUnmappedStop
-helpviewer_keywords: CorDebugUnmappedStop enumeration [.NET Framework debugging]
+api_name:
+- CorDebugUnmappedStop
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- CorDebugUnmappedStop
+helpviewer_keywords:
+- CorDebugUnmappedStop enumeration [.NET Framework debugging]
 ms.assetid: a684f7d7-d0c2-4690-b721-639e613f11f8
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5700a9a058a349ea70020bafb7d4bed73d1f53f9
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

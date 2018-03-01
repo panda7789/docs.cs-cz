@@ -2,15 +2,17 @@
 title: "+ Operátor (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: +_CSharpKeyword
+f1_keywords:
+- +_CSharpKeyword
 helpviewer_keywords:
 - + operator [C#]
 - concatenation operator [C#]
 - addition operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b15d5d1a304569b92b2f811a9ea714e4b30d60d7

@@ -8,8 +8,10 @@ ms.date: 08/07/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: devlang-vb
-dev_langs: vb
-ms.workload: dotnetcore
+dev_langs:
+- vb
+ms.workload:
+- dotnetcore
 ms.openlocfilehash: b8d87e3a97e2ffeb8e8712bfa5d178bb855f402d
 ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT

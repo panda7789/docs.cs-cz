@@ -2,14 +2,16 @@
 title: "short (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - short
 - short_CSharpKeyword
-helpviewer_keywords: short keyword [C#]
+helpviewer_keywords:
+- short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8ca3c5444c4fa7a49b7169be3e2a5b15d1a72207

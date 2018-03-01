@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugHeapValue.IsValid
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugHeapValue::IsValid
+api_name:
+- ICorDebugHeapValue.IsValid
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugHeapValue::IsValid
 helpviewer_keywords:
 - IsValid method [.NET Framework debugging]
 - ICorDebugHeapValue::IsValid method [.NET Framework debugging]
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3f4f356c953feaf0e6597983f431222a469e90c1
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -2,16 +2,18 @@
 title: "-nologo (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /nologo
+f1_keywords:
+- /nologo
 helpviewer_keywords:
 - -nologo compiler option [C#]
 - nologo compiler option [C#]
 - banners, suppressing startup
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2585e494cc87978b47fe2de5a05b6d2e031c8929

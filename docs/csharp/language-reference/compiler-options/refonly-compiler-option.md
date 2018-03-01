@@ -2,9 +2,11 @@
 title: "-refonly (možnosti kompilátoru C#)"
 ms.date: 07/08/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /refonly
+f1_keywords:
+- /refonly
 helpviewer_keywords:
 - /refonly compiler option [C#]
 - -refonly compiler option [C#]

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-api_name: ICorDebugVariableHomeEnum.Next
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugVariableHomeEnum::Next
+api_name:
+- ICorDebugVariableHomeEnum.Next
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugVariableHomeEnum::Next
 helpviewer_keywords:
 - ICorDebugVariableHomeEnum::Next method [.NET Framework debugging]
 - Next method, ICorDebugVariableHomeEnum interface [.NET Framework debugging]
 ms.assetid: eb9ea96c-5b58-4655-8104-094fc8b393b8
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3bab158cbbe2eaf6e52ae0df6a0eed86d3d0b8ce
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

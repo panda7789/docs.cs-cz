@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugClass.GetToken
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugClass::GetToken
+api_name:
+- ICorDebugClass.GetToken
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugClass::GetToken
 helpviewer_keywords:
 - GetToken method, ICorDebugClass interface [.NET Framework debugging]
 - ICorDebugClass::GetToken method [.NET Framework debugging]
 ms.assetid: ee5c848a-eac4-4462-b07a-07ccd76a75df
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 408575c53feb81a2b273bd1064e2d3eaa37c4fb8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -2,9 +2,11 @@
 title: "-optimize (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /optimize
+f1_keywords:
+- /optimize
 helpviewer_keywords:
 - /optimize compiler option [C#]
 - -o compiler option [C#]
@@ -14,7 +16,7 @@ helpviewer_keywords:
 - compiler optimization [C#]
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2cf6919ee2d4f0a4031e18d46b9e5ebaf816b120

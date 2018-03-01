@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugEval.NewArray
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugEval::NewArray
+api_name:
+- ICorDebugEval.NewArray
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugEval::NewArray
 helpviewer_keywords:
 - NewArray method [.NET Framework debugging]
 - ICorDebugEval::NewArray method [.NET Framework debugging]
 ms.assetid: cc79a67d-5368-434d-a943-209db90491b9
-topic_type: apiref
-caps.latest.revision: "19"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f9116c2ee7edbc39d203728909ce37e963c896fc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

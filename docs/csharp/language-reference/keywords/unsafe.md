@@ -2,14 +2,16 @@
 title: "unsafe (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - unsafe_CSharpKeyword
 - unsafe
-helpviewer_keywords: unsafe keyword [C#]
+helpviewer_keywords:
+- unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1fffbe36e39d279b2364b178188381a403c8ff86

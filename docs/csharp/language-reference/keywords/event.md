@@ -2,16 +2,18 @@
 title: "event (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - event
 - remove
 - event_CSharpKeyword
 - add
-helpviewer_keywords: event keyword [C#]
+helpviewer_keywords:
+- event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f7e7f9f96714f8988eb91d77c63cc4f017d040f5

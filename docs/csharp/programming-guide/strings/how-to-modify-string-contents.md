@@ -2,11 +2,13 @@
 title: "Postupy: Změna obsahu řetězce (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: strings [C#], modifying
+helpviewer_keywords:
+- strings [C#], modifying
 ms.assetid: b6c20bba-ce22-43d7-ad1b-5ce65f714055
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b0810d5722c2c32f7884187bb2e3fc5a039825c9

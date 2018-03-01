@@ -2,15 +2,17 @@
 title: "-zaškrtnutí (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /checked
+f1_keywords:
+- /checked
 helpviewer_keywords:
 - checked compiler option [C#]
 - -checked compiler option [C#]
 - /checked compiler option [C#]
 ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c0a8cc66609fe542fc7db166cd208cfcedb204b8

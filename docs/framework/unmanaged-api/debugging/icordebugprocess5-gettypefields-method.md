@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess5.GetTypeFields
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess5::GetTypeFields
+api_name:
+- ICorDebugProcess5.GetTypeFields
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess5::GetTypeFields
 helpviewer_keywords:
 - GetTypeFields method, ICorDebugProcess5 interface [.NET Framework debugging]
 - ICorDebugProcess5::GetTypeFields method [.NET Framework debugging]
 ms.assetid: 6a0ad3ee-dacb-47e9-abae-4536bcc4804b
-topic_type: apiref
-caps.latest.revision: "6"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1eb167517a33788a0d7e30663675b294d29ba3cc
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

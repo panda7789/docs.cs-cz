@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugBreakpointEnum.Next
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugBreakpointEnum::Next
+api_name:
+- ICorDebugBreakpointEnum.Next
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugBreakpointEnum::Next
 helpviewer_keywords:
 - Next method, ICorDebugBreakpointEnum interface [.NET Framework debugging]
 - ICorDebugBreakpointEnum::Next method [.NET Framework debugging]
 ms.assetid: 2e6bbaea-79ba-448c-a0e3-7c90fc7c2939
-topic_type: apiref
-caps.latest.revision: "14"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b81da25a630b034d4ec2f277f738a5337bdbec3e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

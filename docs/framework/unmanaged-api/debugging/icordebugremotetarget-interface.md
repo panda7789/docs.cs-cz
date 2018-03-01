@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugRemoteTarget
-api_location: CorDebug.dll
-api_type: COM
-f1_keywords: ICorDebugRemoteTarget
-helpviewer_keywords: ICorDebugRemoteTarget interface [.NET Framework debugging]
+api_name:
+- ICorDebugRemoteTarget
+api_location:
+- CorDebug.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugRemoteTarget
+helpviewer_keywords:
+- ICorDebugRemoteTarget interface [.NET Framework debugging]
 ms.assetid: bd9936a6-cc24-4869-8761-0988664464e6
-topic_type: apiref
-caps.latest.revision: "7"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fcfdab2857745dee7c40823ad25592de5dc833ea
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

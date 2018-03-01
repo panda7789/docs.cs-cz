@@ -2,9 +2,11 @@
 title: '&lt;Odebrat&gt; element NameValueSectionHandler a DictionarySectionHandler'
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
 helpviewer_keywords:
 - remove Element
 - <remove> Element
@@ -12,7 +14,8 @@ ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 27b01120cb279dc23b3b081e35f17addc6d1897d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

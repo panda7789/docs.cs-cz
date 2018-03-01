@@ -5,9 +5,11 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
 ms.topic: article
-dev_langs: vb
+dev_langs:
+- vb
 ms.prod: .net-core
-ms.workload: dotnetcore
+ms.workload:
+- dotnetcore
 ms.openlocfilehash: 01922e3ad3b19e13ebea755decf21c6b09e4be37
 ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT

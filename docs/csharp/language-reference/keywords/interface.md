@@ -2,12 +2,15 @@
 title: "interface (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: interface_CSharpKeyword
-helpviewer_keywords: interface keyword [C#]
+f1_keywords:
+- interface_CSharpKeyword
+helpviewer_keywords:
+- interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-caps.latest.revision: "29"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: aba9ee66a90216066a47f22e251182caad465818

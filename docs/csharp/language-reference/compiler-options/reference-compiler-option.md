@@ -2,9 +2,11 @@
 title: "-reference (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /reference
+f1_keywords:
+- /reference
 helpviewer_keywords:
 - /r compiler option [C#]
 - reference compiler option [C#]
@@ -15,7 +17,7 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 60a00b1cd088a051e1a58d245c455b9678a74988

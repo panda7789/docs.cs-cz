@@ -2,15 +2,17 @@
 title: "-recurse (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /recurse
+f1_keywords:
+- /recurse
 helpviewer_keywords:
 - /recurse compiler option [C#]
 - recurse compiler option [C#]
 - -recurse compiler option [C#]
 ms.assetid: 4e8212e5-04e3-45b1-8a42-41bc50e683b0
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b50454112bc7aee6c3e0f8fe674e8727ca9e49be

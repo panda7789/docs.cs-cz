@@ -2,15 +2,17 @@
 title: "-main (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /main
+f1_keywords:
+- /main
 helpviewer_keywords:
 - -main compiler option [C#]
 - main compiler option [C#]
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 5f1d06bf408f13a78df503ab10fe3c57b4ff68a3

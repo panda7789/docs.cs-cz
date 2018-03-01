@@ -2,16 +2,18 @@
 title: "Zabalení a rozbalení (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.boxing
+f1_keywords:
+- cs.boxing
 helpviewer_keywords:
 - C# language, boxing
 - C# language, unboxing
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 893ef47c5e7522581b5d02489100942e47023a63

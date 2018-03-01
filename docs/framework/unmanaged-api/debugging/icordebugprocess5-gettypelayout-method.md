@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess5.GetTypeLayout
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess5::GetTypeLayout
+api_name:
+- ICorDebugProcess5.GetTypeLayout
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess5::GetTypeLayout
 helpviewer_keywords:
 - ICorDebugProcess5::GetTypeLayout method [.NET Framework debugging]
 - GetTypeLayout method, ICorDebugProcess5 interface [.NET Framework debugging]
 ms.assetid: bd62f5d1-e874-41f1-81e5-a29a7572c15d
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4317fd374646dd5187a94f3e91cc88df939ed762
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

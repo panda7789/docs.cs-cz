@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback.EditAndContinueRemap
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback::EditAndContinueRemap
+api_name:
+- ICorDebugManagedCallback.EditAndContinueRemap
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback::EditAndContinueRemap
 helpviewer_keywords:
 - EditAndContinueRemap method [.NET Framework debugging]
 - ICorDebugManagedCallback::EditAndContinueRemap method [.NET Framework debugging]
 ms.assetid: 24a8fcce-317e-48ff-aefc-d86123ada935
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 90c22b697677ec493b8093117af0a9d1a86268ea
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

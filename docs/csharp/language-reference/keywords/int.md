@@ -2,14 +2,16 @@
 title: "int (Referenční dokumentace jazyka C#)"
 ms.date: 03/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - int_CSharpKeyword
 - int
-helpviewer_keywords: int keyword [C#]
+helpviewer_keywords:
+- int keyword [C#]
 ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: e7acb8bb482ebf8f5c2b508e7cfd45b5b64aae3b

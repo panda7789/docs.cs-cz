@@ -2,15 +2,17 @@
 title: "Referenční tabulky pro typy (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.referencetables
+f1_keywords:
+- cs.referencetables
 helpviewer_keywords:
 - C# language, types reference tables
 - types [C#], reference tables
 - C# language, data types
 ms.assetid: 1d2b6a9b-31fd-4fa6-a7b2-bfd9c806ac8a
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: da259bb13a6adcfc09d6a24b6b340b7b6105300e

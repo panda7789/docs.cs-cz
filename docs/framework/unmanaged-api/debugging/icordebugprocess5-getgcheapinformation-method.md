@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess5.GetGCHeapInformation
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess5::GetGCHeapInformation
+api_name:
+- ICorDebugProcess5.GetGCHeapInformation
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess5::GetGCHeapInformation
 helpviewer_keywords:
 - ICorDebugProcess5::GetGCHeapInformation method [.NET Framework debugging]
 - GetGCHeapInformation method, ICorDebugProcess5 interface [.NET Framework debugging]
 ms.assetid: b9538ceb-230a-4079-9cb2-903dbf5c1848
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 70e9e3ab6c7332e492b7146e52e0265653803bf7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

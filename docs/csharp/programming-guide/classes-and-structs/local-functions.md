@@ -2,9 +2,11 @@
 title: "Lokální funkce (C# Průvodce programováním)"
 ms.date: 06/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: local functions [C#]
+helpviewer_keywords:
+- local functions [C#]
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2b4e95d48e451038f0f7004d0901f329b2c57fe5

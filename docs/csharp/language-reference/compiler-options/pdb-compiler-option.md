@@ -2,15 +2,17 @@
 title: "-pdb (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /pdb
+f1_keywords:
+- /pdb
 helpviewer_keywords:
 - -pdb compiler option [C#]
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7528283765c2b6f4a9d5e84015526a95938a6281

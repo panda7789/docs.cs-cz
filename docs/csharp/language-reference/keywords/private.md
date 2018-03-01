@@ -2,14 +2,16 @@
 title: "private (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - private_CSharpKeyword
 - private
-helpviewer_keywords: private keyword [C#]
+helpviewer_keywords:
+- private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d9cc8f86166888b47a758e200182d319c68ca6d4

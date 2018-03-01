@@ -2,14 +2,16 @@
 title: "while (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - while_CSharpKeyword
 - while
-helpviewer_keywords: while keyword [C#]
+helpviewer_keywords:
+- while keyword [C#]
 ms.assetid: 72a0765c-6852-4aca-b327-4a11cb7f5c59
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 420b409689d877c3e1ac744e8d7a65500cf8f964

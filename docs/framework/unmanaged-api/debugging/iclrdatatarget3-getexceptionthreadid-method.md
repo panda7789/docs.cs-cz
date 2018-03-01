@@ -5,20 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: cpp
-api_name: ICLRDataTarget3.GetExceptionThreadID
-api_location: mscordbi.dll
-api_type: COM
+dev_langs:
+- cpp
+api_name:
+- ICLRDataTarget3.GetExceptionThreadID
+api_location:
+- mscordbi.dll
+api_type:
+- COM
 ms.assetid: 307d6ac7-4a86-45f3-999d-6b47004a68f2
-topic_type: apiref
-caps.latest.revision: "3"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0f8b2e7c764eb5d7694633be7fb095b3d19be6e2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

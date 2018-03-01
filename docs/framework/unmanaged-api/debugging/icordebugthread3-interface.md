@@ -5,21 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugThread3
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugThread3
-helpviewer_keywords: ICorDebugThread3 interface [.NET Framework debugging]
+api_name:
+- ICorDebugThread3
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugThread3
+helpviewer_keywords:
+- ICorDebugThread3 interface [.NET Framework debugging]
 ms.assetid: eb2860ef-06cb-4968-a6c3-6d048ecda2a4
-topic_type: apiref
-caps.latest.revision: "9"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6cfb3267637210567f3df9fa08bb75135dc585ec
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

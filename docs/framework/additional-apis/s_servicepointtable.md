@@ -4,15 +4,20 @@ ms.date: 05/01/2017
 ms.prod: .net-framework
 ms.technology: 
 ms.topic: reference
-topic_type: apiref
-api_name: System.Net.ServicePointManager.s_ServicePointTable
-api_location: System.dll
-api_type: Assembly
+topic_type:
+- apiref
+api_name:
+- System.Net.ServicePointManager.s_ServicePointTable
+api_location:
+- System.dll
+api_type:
+- Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8dfdbab78d8efab13487575218820f8b0455248d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

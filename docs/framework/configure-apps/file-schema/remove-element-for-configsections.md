@@ -2,9 +2,11 @@
 title: '&lt;Odebrat&gt; element pro &lt;configSections&gt;'
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/remove
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/remove
 helpviewer_keywords:
 - remove Element
 - <remove> Element
@@ -12,7 +14,8 @@ ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: bf2cb49fbeb01ad176a1d24d711cebc97ba14004
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

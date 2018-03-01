@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugManagedCallback2.ChangeConnection
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugManagedCallback2::ChangeConnection
+api_name:
+- ICorDebugManagedCallback2.ChangeConnection
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugManagedCallback2::ChangeConnection
 helpviewer_keywords:
 - ICorDebugManagedCallback2::ChangeConnection method [.NET Framework debugging]
 - ChangeConnection method [.NET Framework debugging]
 ms.assetid: 7263f9a9-4c0b-4d82-a181-288873fb2b18
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2ba7e84c11f2fc8619b7046e222a742ee3298554
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -2,11 +2,13 @@
 title: "Postupy: Použití výrazů lambda v dotazu (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: lambda expressions [C#], in LINQ
+helpviewer_keywords:
+- lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 279d76aa29f27d35bc907d6779a146a23c7e162a

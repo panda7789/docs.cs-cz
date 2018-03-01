@@ -2,14 +2,16 @@
 title: "&lt;typeparam&gt; (C# Průvodce programováním)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: typeparam
+f1_keywords:
+- typeparam
 helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: e1b8800e39b1ee5eeac8c5d3e4390ed3226b33a3

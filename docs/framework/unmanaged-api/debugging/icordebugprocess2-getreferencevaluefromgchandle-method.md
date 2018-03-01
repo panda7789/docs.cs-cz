@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess2.GetReferenceValueFromGCHandle
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess2::GetReferenceValueFromGCHandle
+api_name:
+- ICorDebugProcess2.GetReferenceValueFromGCHandle
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess2::GetReferenceValueFromGCHandle
 helpviewer_keywords:
 - GetReferenceValueFromGCHandle method [.NET Framework debugging]
 - ICorDebugProcess2::GetReferenceValueFromGCHandle method [.NET Framework debugging]
 ms.assetid: 8bdd7f4c-19f2-4ede-875e-603773e8c128
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0ac4cc32be6914ea858d32b8699a695588f0a1e0
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

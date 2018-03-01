@@ -2,16 +2,18 @@
 title: "-noconfig (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /noconfig
+f1_keywords:
+- /noconfig
 helpviewer_keywords:
 - /noconfig compiler option [C#]
 - csc.rsp
 - -noconfig compiler option [C#]
 - noconfig compiler option [C#]
 ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1004f70547ca3a841c59338a1344235132af3fa7

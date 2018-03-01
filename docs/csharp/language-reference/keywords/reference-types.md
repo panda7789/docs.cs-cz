@@ -2,15 +2,17 @@
 title: "Typy odkazů (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.referencetypes
+f1_keywords:
+- cs.referencetypes
 helpviewer_keywords:
 - reference types [C#]
 - C# language, reference types
 - types [C#], reference types
 ms.assetid: 801cf030-6e2d-4a0d-9daf-1431b0c31f47
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c4f87363246deccf282b499aa2afee2a14d41593

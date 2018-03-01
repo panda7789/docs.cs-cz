@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugStepper.Step
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugStepper::Step
+api_name:
+- ICorDebugStepper.Step
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugStepper::Step
 helpviewer_keywords:
 - Step method, ICorDebugStepper interface [.NET Framework debugging]
 - ICorDebugStepper::Step method [.NET Framework debugging]
 ms.assetid: 38c1940b-ada1-40ba-8295-4c0833744e1e
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f921725d6794f08530a537462208264ced1dc089
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

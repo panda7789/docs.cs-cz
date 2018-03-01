@@ -2,14 +2,16 @@
 title: "object (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - object_CSharpKeyword
 - object
-helpviewer_keywords: object keyword [C#]
+helpviewer_keywords:
+- object keyword [C#]
 ms.assetid: 93f60c0b-e17a-40a9-9362-cca5fb77b0e7
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0fcced75d3a86fd700e642e48b7e325e554cae53

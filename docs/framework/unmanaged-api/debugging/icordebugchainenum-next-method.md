@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugChainEnum.Next
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugChainEnum::Next
+api_name:
+- ICorDebugChainEnum.Next
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugChainEnum::Next
 helpviewer_keywords:
 - ICorDebugChainEnum::Next method [.NET Framework debugging]
 - Next method, ICorDebugChainEnum interface [.NET Framework debugging]
 ms.assetid: 6b791351-bcc5-4ddd-9cab-eff2f7dd5142
-topic_type: apiref
-caps.latest.revision: "12"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e78340d26e4a7ab67fa6c312b1dbd537c5c0a28c
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"warning-c-reference\"></a>upozornění (referenční dokumentace jazyka C#)"
+title: "#upozornění (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#warning'
-helpviewer_keywords: '#warning directive [C#]'
+f1_keywords:
+- '#warning'
+helpviewer_keywords:
+- '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8145c4a62d5179d6fa46e27186d83fc0108939d1

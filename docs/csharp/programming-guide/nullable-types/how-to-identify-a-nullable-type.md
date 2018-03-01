@@ -2,11 +2,13 @@
 title: "Postupy: Identifikace typu s povolenou hodnotou Null (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: nullable types [C#], identifying
+helpviewer_keywords:
+- nullable types [C#], identifying
 ms.assetid: d4b67ee2-66e8-40c1-ae9d-545d32c71387
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 610ed18308df02c5632361cd09ef94330dea598b

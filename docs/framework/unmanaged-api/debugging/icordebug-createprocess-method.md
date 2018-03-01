@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebug.CreateProcess
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebug::CreateProcess
+api_name:
+- ICorDebug.CreateProcess
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebug::CreateProcess
 helpviewer_keywords:
 - ICorDebug::CreateProcess method [.NET Framework debugging]
 - CreateProcess method, ICorDebugProcess interface [.NET Framework debugging]
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
-topic_type: apiref
-caps.latest.revision: "21"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 16e45f3bad92914ce8c7fb0044534789a7a28b2e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

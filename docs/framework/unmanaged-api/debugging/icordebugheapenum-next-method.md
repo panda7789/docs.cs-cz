@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugHeapEnum.Next
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugHeapEnum::Next
+api_name:
+- ICorDebugHeapEnum.Next
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugHeapEnum::Next
 helpviewer_keywords:
 - ICorDebugHeapEnum::Next method [.NET Framework debugging]
 - Next method, ICorDebugHeapEnum interface [.NET Framework debugging]
 ms.assetid: 2221fd06-9e27-4113-972e-2530db8c3594
-topic_type: apiref
-caps.latest.revision: "5"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e9869542b04b26fdf343b4112c2f84a26a3061c5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

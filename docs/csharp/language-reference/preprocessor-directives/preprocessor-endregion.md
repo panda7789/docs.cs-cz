@@ -1,13 +1,16 @@
 ---
-title: "#<a name=\"endregion-c-reference\"></a>endregion – (referenční dokumentace jazyka C#)"
+title: "#endregion – (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '#endregion'
-helpviewer_keywords: '#endregion directive [C#]'
+f1_keywords:
+- '#endregion'
+helpviewer_keywords:
+- '#endregion directive [C#]'
 ms.assetid: 16099660-91b2-49e5-9646-77f9ef069526
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d2964d162406cd3c3b5f0821c2981ef69222ae9b

@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugModule2.SetJMCStatus
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugModule2::SetJMCStatus
+api_name:
+- ICorDebugModule2.SetJMCStatus
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugModule2::SetJMCStatus
 helpviewer_keywords:
 - SetJMCStatus method, ICorDebugModule2 interface [.NET Framework debugging]
 - ICorDebugModule2::SetJMCStatus method [.NET Framework debugging]
 ms.assetid: 8c6d2089-4dbb-4715-b9e9-2a4491c8c9ce
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a461a9c05b18de45426247743c6e4ffca775025a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

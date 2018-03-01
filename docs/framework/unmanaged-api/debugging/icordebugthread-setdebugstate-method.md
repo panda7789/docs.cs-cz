@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugThread.SetDebugState
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugThread::SetDebugState
+api_name:
+- ICorDebugThread.SetDebugState
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugThread::SetDebugState
 helpviewer_keywords:
 - ICorDebugThread::SetDebugState method [.NET Framework debugging]
 - SetDebugState method [.NET Framework debugging]
 ms.assetid: 6382bdf6-d488-4952-b653-cb09b6e1c6c2
-topic_type: apiref
-caps.latest.revision: "13"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f2754caf11f89358b3e81e6324835d5b2e12f17e
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

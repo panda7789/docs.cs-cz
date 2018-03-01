@@ -2,9 +2,11 @@
 title: "-refout (možnosti kompilátoru C#)"
 ms.date: 08/08/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /refout
+f1_keywords:
+- /refout
 helpviewer_keywords:
 - refout compiler option [C#]
 - /refout compiler option [C#]

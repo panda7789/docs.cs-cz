@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugMDA.GetXML
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugMDA::GetXML
+api_name:
+- ICorDebugMDA.GetXML
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugMDA::GetXML
 helpviewer_keywords:
 - ICorDebugMDA::GetXML method [.NET Framework debugging]
 - GetXML method [.NET Framework debugging]
 ms.assetid: 29746b24-3766-4255-8813-0426c45e73e5
-topic_type: apiref
-caps.latest.revision: "10"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 387c9bf53dfbe146ccc1526404a1aed7386b2519
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -2,11 +2,13 @@
 title: "Argumenty příkazového řádku (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: command-line arguments [C#]
+helpviewer_keywords:
+- command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 025ed2c451c0a657ce71db56df603302097fc7ee

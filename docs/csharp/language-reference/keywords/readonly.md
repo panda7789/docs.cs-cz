@@ -2,14 +2,16 @@
 title: "readonly – modifikátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - readonly_CSharpKeyword
 - readonly
-helpviewer_keywords: readonly keyword [C#]
+helpviewer_keywords:
+- readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b499f9fc5121afe6c2e92bcf8c5d2ac593b4c06c

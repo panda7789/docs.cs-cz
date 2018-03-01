@@ -2,15 +2,17 @@
 title: "-nowin32manifest (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /nowin32manifest
+f1_keywords:
+- /nowin32manifest
 helpviewer_keywords:
 - nowin32manifest compiler option [C#]
 - -nowin32manifest compiler option [C#]
 - /nowin32manifest compiler option [C#]
 ms.assetid: 6f06365b-b87b-46a2-b187-b3bfeaf4862d
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7682a3e1ecf483b8495d817ef01e57093ae0f987

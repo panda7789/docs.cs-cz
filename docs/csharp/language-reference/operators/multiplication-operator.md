@@ -2,14 +2,16 @@
 title: "* Operátor (referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '*_CSharpKeyword'
+f1_keywords:
+- '*_CSharpKeyword'
 helpviewer_keywords:
 - multiplication operator (*) [C#]
 - '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 64c32def0935f4347f9aaccc2865b9cd33dd8a70
@@ -18,7 +20,7 @@ ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="14b07-102">* – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="14b07-102">* Operator (C# Reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="14b07-102">\* – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="14b07-102">\* Operator (C# Reference)</span></span>
 <span data-ttu-id="14b07-103">Operátor násobení (`*`), která vypočítá produktu jejími operandy.</span><span class="sxs-lookup"><span data-stu-id="14b07-103">The multiplication operator (`*`), which computes the product of its operands.</span></span>  <span data-ttu-id="14b07-104">Navíc dereference operátor, který umožňuje čtení a zápis do ukazatel.</span><span class="sxs-lookup"><span data-stu-id="14b07-104">Also, the dereference operator, which allows reading and writing to a pointer.</span></span>  
   
 ## <a name="remarks"></a><span data-ttu-id="14b07-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="14b07-105">Remarks</span></span>  
