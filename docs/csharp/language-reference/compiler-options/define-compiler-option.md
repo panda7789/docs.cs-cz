@@ -2,9 +2,11 @@
 title: "-definovat (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /define
+f1_keywords:
+- /define
 helpviewer_keywords:
 - -define compiler option [C#]
 - /define compiler option [C#]
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 273437a4250a393274fa20ad4c02b61dce35ed34

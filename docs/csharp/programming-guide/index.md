@@ -2,16 +2,18 @@
 title: "Průvodce programováním v C#"
 ms.date: 05/02/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.langref
+f1_keywords:
+- cs.langref
 helpviewer_keywords:
 - reference tables [C#]
 - C# language, programming guide
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-caps.latest.revision: "45"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: bd22abedc8fc43fd2bd0ea77e1506394400fbfbb

@@ -2,9 +2,11 @@
 title: "Možnosti kompilátoru C#"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.build.options
+f1_keywords:
+- cs.build.options
 helpviewer_keywords:
 - compiler options [C#]
 - csc.exe
@@ -12,7 +14,7 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 59000f60acdc8ada11bc5abb9e91b5f53d42b9ae

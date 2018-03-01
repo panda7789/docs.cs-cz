@@ -5,26 +5,33 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: StrongNameErrorInfo
+api_name:
+- StrongNameErrorInfo
 api_location:
 - mscoree.dll
 - mscorsn.dll
 - clr.dll
 - mscorwks.dll
 - mscoreei.dll
-api_type: DLLExport
-f1_keywords: StrongNameErrorInfo
-helpviewer_keywords: StrongNameErrorInfo function [.NET Framework strong naming]
+api_type:
+- DLLExport
+f1_keywords:
+- StrongNameErrorInfo
+helpviewer_keywords:
+- StrongNameErrorInfo function [.NET Framework strong naming]
 ms.assetid: e91bf8c3-7c26-4732-938e-2e5b04abfc99
-topic_type: apiref
-caps.latest.revision: "17"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9e17ec04293f6274e307c66fc242c49bbdeee507
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

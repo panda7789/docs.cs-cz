@@ -2,14 +2,16 @@
 title: "+= – operátor (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: +=_CSharpKeyword
+f1_keywords:
+- +=_CSharpKeyword
 helpviewer_keywords:
 - += operator [C#]
 - addition assignment operator (+=) [C#]
 ms.assetid: 9cdf97e6-331d-492b-85e1-3ec3171484e9
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: de83f48fc644d8b232d9ef9e1698272f20a27d65

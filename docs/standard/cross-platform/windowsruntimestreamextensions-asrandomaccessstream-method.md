@@ -11,10 +11,12 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-api_name: System.IO.WindowsRuntimeStreamExtensions.AsRandomAccessStream
-api_location: System.Runtime.WindowsRuntime.dll
+api_name:
+- System.IO.WindowsRuntimeStreamExtensions.AsRandomAccessStream
+api_location:
+- System.Runtime.WindowsRuntime.dll
 ms.assetid: dcc72283-caed-49ee-b45d-ccaf94e97129
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett

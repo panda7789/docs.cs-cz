@@ -5,16 +5,20 @@ ms.date: 01/08/2018
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: PrintPreviewDialog
-helpviewer_keywords: PrintPreviewDialog control (using designer), about PrintPreviewDialog
+f1_keywords:
+- PrintPreviewDialog
+helpviewer_keywords:
+- PrintPreviewDialog control (using designer), about PrintPreviewDialog
 ms.assetid: efd4ee8d-6edd-47ec-88e4-4a4759bd2384
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1228a3cf39ea412cde341c4c4b8b83e0ab2f0299
 ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT

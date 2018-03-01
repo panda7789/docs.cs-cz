@@ -2,15 +2,17 @@
 title: "-highentropyva (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /highentropyva
+f1_keywords:
+- /highentropyva
 helpviewer_keywords:
 - /highentropyva compiler option [C#]
 - -highentropyva compiler option [C#]
 - highentropyva compiler option [C#]
 ms.assetid: eaf409b3-384e-49dd-9417-62453658f421
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d0b9a7a53545623ae5d5692b52973744adbcc299

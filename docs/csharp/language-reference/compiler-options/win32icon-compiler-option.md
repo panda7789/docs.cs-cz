@@ -2,15 +2,17 @@
 title: "-win32icon (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /win32icon
+f1_keywords:
+- /win32icon
 helpviewer_keywords:
 - win32icon compiler option [C#]
 - /win32icon compiler option [C#]
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2ec19bacb975732f2ae04b8cefbfaeaa518b6f15

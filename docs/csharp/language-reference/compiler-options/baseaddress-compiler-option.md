@@ -2,15 +2,17 @@
 title: "-baseaddress (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /dllbase
+f1_keywords:
+- /dllbase
 helpviewer_keywords:
 - baseaddress compiler option [C#]
 - -baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 4e4b4964d587bfdf95949ebd6f0028a25988c2ea

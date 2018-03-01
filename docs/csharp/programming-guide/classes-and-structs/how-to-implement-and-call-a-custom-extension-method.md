@@ -2,11 +2,13 @@
 title: "Postupy: Implementace a volání vlastní metody rozšíření (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: extension methods [C#], implementing and calling
+helpviewer_keywords:
+- extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a277412c69d26f20721381d9cfa839c7f082f2f2

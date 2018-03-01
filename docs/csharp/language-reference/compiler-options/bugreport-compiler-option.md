@@ -2,15 +2,17 @@
 title: "-bugreport (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /bugreport
+f1_keywords:
+- /bugreport
 helpviewer_keywords:
 - /bugreport compiler option [C#]
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d2a6c27454cc8f95b9662d6ae688471849c5cee0

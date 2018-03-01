@@ -2,15 +2,17 @@
 title: "-target: exe (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /exe
+f1_keywords:
+- /exe
 helpviewer_keywords:
 - target compiler options [C#], /target:exe
 - /target compiler options [C#], /target:exe
 - -target compiler options [C#], /target:exe
 ms.assetid: bda5717d-1b91-4848-956b-fcf85c30e432
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 515359b7a8a76e20896389b308df34db03f3798d

@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: threads, cancellation
+helpviewer_keywords:
+- threads, cancellation
 ms.assetid: d2d6d5fd-e263-4fa0-847b-2fc3e0d82337
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

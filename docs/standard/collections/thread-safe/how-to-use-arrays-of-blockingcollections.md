@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: thread-safe collections, blocking collections in pipeline
+helpviewer_keywords:
+- thread-safe collections, blocking collections in pipeline
 ms.assetid: a39c7ec3-3ad7-4f4d-8fe4-b3e9dbabe2ed
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett

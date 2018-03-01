@@ -5,9 +5,11 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.topic: article
-dev_langs: fsharp
+dev_langs:
+- fsharp
 ms.prod: .net-core
-ms.workload: dotnetcore
+ms.workload:
+- dotnetcore
 ms.openlocfilehash: 6dc5388f8e5645530cdd12986a9e1e53e4115c9a
 ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT

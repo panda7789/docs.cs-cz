@@ -2,9 +2,11 @@
 title: "Speciální znaky (referenční dokumentace jazyka C#)"
 ms.date: 02/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.special characters
+f1_keywords:
+- cs.special characters
 helpviewer_keywords:
 - special characters [C#]
 - C# language, special characters
@@ -12,7 +14,7 @@ helpviewer_keywords:
 - '@ character (C#)'
 - '@ character (C#)'
 ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cfbd9c903cdc0d355dd234ac10f21485a2d447a6
