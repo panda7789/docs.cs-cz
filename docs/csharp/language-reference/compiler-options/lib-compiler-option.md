@@ -2,15 +2,17 @@
 title: "-lib (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /lib
+f1_keywords:
+- /lib
 helpviewer_keywords:
 - lib compiler option [C#]
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b60c6028d4b3f72acc31fe6028f7f956e1037eb0

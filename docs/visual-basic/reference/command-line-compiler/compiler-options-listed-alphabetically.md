@@ -4,11 +4,13 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: Visual Basic compiler, options
+helpviewer_keywords:
+- Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 92678a09f9b4dd9f35f4f5c0e5ecb00385b703d1

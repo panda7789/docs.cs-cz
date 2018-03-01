@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: parallel loops, how to speed up
+helpviewer_keywords:
+- parallel loops, how to speed up
 ms.assetid: c7a66677-cb59-4cbf-969a-d2e8fc61a6ce
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

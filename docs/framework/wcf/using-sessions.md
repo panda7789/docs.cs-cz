@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: sessions [WCF]
+helpviewer_keywords:
+- sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f5f6df22918dedf32738a8cb9d73af2e625923a4
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

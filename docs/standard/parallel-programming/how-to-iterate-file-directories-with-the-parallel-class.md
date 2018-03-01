@@ -11,9 +11,10 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: parallel loops, how to iterate directories
+helpviewer_keywords:
+- parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

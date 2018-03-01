@@ -5,19 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: data binding [WPF], PriorityBinding class
+helpviewer_keywords:
+- data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0e6ab8826f2298a8660a85d739fbe3456374b476
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

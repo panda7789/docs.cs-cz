@@ -2,11 +2,13 @@
 title: "TextFieldParser nepodporuje oddělovače, které obsahují znaky ukončovacího"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_EndCharsInDelimiter
+f1_keywords:
+- vbrTextFieldParser_EndCharsInDelimiter
 ms.assetid: 0701f3b6-635b-468e-b908-867df00dd5db
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 19b90aed6d355e373f423c5cd274b390d471b32d

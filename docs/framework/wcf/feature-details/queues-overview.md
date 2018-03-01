@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: queues [WCF], MSMQ integration
+helpviewer_keywords:
+- queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: eb5d0f51fbbb6c8bad9bfbbfd9977368fdbd0666
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

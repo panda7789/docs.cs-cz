@@ -2,11 +2,13 @@
 title: "Obrázek není platný"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID481
+f1_keywords:
+- vbrID481
 ms.assetid: 6ac18c39-042b-423a-9d95-25a7745c84dd
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: f4744bc57da08de396a2ac22a2476a8e2efcc9fd

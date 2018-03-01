@@ -2,9 +2,11 @@
 title: "-resource (možnosti kompilátoru C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /resource
+f1_keywords:
+- /resource
 helpviewer_keywords:
 - -resource compiler option [C#]
 - /resource compiler option [C#]
@@ -13,7 +15,7 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a305f98b09d390afbeba7b55ab44ff09abc74617

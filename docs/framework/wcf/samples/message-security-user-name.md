@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: WS Security
+helpviewer_keywords:
+- WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
-caps.latest.revision: "57"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3d0c5278cf1860a89ea6a1c3ed33b45ed3c48e92
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

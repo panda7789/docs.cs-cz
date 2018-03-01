@@ -1,6 +1,4 @@
 # [Řetězce](index.md)
 ## [Postupy: Změna obsahu řetězce](how-to-modify-string-contents.md)
 ## [Postupy: Porovnávání řetězců](how-to-compare-strings.md)
-## [Postupy: Vyhledávání řetězců pomocí řetězcových metod](how-to-search-strings-using-string-methods.md)
-## [Postupy: Vyhledávání řetězců pomocí regulárních výrazů](how-to-search-strings-using-regular-expressions.md)
 ## [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](how-to-determine-whether-a-string-represents-a-numeric-value.md)

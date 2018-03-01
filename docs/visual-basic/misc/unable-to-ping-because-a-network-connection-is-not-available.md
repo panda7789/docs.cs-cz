@@ -2,11 +2,13 @@
 title: "Nelze odeslat příkaz ping, protože není k dispozici síťové připojení"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrNetwork_NetworkNotAvailable
+f1_keywords:
+- vbrNetwork_NetworkNotAvailable
 ms.assetid: 8d2bac12-bc6a-42ae-b28b-80b026dfabce
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 057cb9f0fee4f6cee30348edc248121feab0b310

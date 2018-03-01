@@ -2,11 +2,13 @@
 title: "Proces & č. 39; &lt;název_procesu&gt;& č. 39; nebyla nalezena"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrProcessNotFound
+f1_keywords:
+- vbrProcessNotFound
 ms.assetid: d6095a7f-6168-4b00-8639-11fb64dd2ebe
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c4c60bb429f26f567d3b8d8e58ff5c4bc49061b7

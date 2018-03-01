@@ -2,11 +2,13 @@
 title: "Řádek &lt;číslo&gt; nelze analyzovat pomocí aktuální FieldWidths"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_MalFormedFixedWidthLine
+f1_keywords:
+- vbrTextFieldParser_MalFormedFixedWidthLine
 ms.assetid: 84e14245-dfdf-4b62-8b84-e83a31608899
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 84a035b548cbf632ae999d2c3f70e8f8e01871d6

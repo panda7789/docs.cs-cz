@@ -2,14 +2,17 @@
 title: "Rozšiřitelné objekty"
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
-helpviewer_keywords: extensible objects [WCF]
+helpviewer_keywords:
+- extensible objects [WCF]
 ms.assetid: bc88cefc-31fb-428e-9447-6d20a7d452af
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a1bb341d9e164b1ce232f238f8ddf4a0cf807363
 ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
 ms.translationtype: MT
