@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a0f20e5b568a464b5c860e3da51e52d4f7d79972
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 49cd0ade4586317158c901586f4dd9528760a9c4
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje pro Docker aplikace
 
@@ -73,7 +73,7 @@ Kódování svoji aplikaci v prostý .NET (obvykle v .NET Core, pokud máte v ú
     [*https://docs.docker.com/docker-for-windows/*](https://docs.docker.com/docker-for-windows/)
 
 -   **Visual Studio 2017**
-    [*https://www.visualstudio.com/vs/visual-studio-2017/*](https://www.visualstudio.com/vs/visual-studio-2017/)
+    [*https://www.visualstudio.com/downloads/*](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
 ![](./media/image4.png)
 
@@ -131,7 +131,7 @@ Můžete zadat další konfiguraci nastavení v soubor Docker, v závislosti na 
     [*https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images*](https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images)
 
 -   **Sestavení vlastní image**. V oficiální dokumentaci Docker.
-    [*https://docs.docker.com/Engine/tutorials/dockerimages/*](https://docs.docker.com/engine/tutorials/dockerimages/)
+    [*https://docs.docker.com/engine/tutorials/dockerimages/*](https://docs.docker.com/engine/tutorials/dockerimages/)
 
 ### <a name="using-multi-arch-image-repositories"></a>Použití více architektury image úložiště
 
@@ -139,17 +139,17 @@ Jednoho úložiště může obsahovat variant platformy, jako je například bit
 
 Pokud zadáte značku, cílení na platformu, která je explicitní jako v následujících případech:
 
--   **Microsoft/aspnetcore:2.0.0-jessie**
+-   **microsoft/aspnetcore:2.0.0-jessie**
 
         .NET Core 2.0 runtime-only on Linux 
 
--   **Microsoft/aspnetcore:2.0.0-nanoserver**
+-   **microsoft/aspnetcore:2.0.0-nanoserver**
 
         .NET Core 2.0 runtime-only on Windows Nano Server
 
 Ale a to je nového od mid 2017, pokud zadáte stejný název bitové kopie, i se stejnou značkou, nových více architektury bitových kopií (například obrázek aspnetcore, která podporuje více architektura) bude používat verzi systému Linux nebo Windows v závislosti na Docker hostitelský operační systém, který nasazujete , jak je znázorněno v následujícím příkladu:
 
--   **Microsoft / aspnetcore:2.0**
+-   **microsoft/aspnetcore:2.0**
 
         Multi-arch: .NET Core 2.0 runtime-only on Linux or Windows Nano Server depending on the Docker host OS
 
@@ -162,9 +162,9 @@ Můžete vytvořit vlastní základní image Docker od začátku. Tento scéná�
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Více architektury .NET Core image**.
-https://github.com/DotNet/Announcements/issues/14 
+https://github.com/dotnet/announcements/issues/14 
 -   **Vytvořte základní image**. Oficiální dokumentaci Docker.
-    [*https://docs.docker.com/Engine/userguide/Eng-Image/baseimages/*](https://docs.docker.com/engine/userguide/eng-image/baseimages/)
+    [*https://docs.docker.com/engine/userguide/eng-image/baseimages/*](https://docs.docker.com/engine/userguide/eng-image/baseimages/)
 
 ![](./media/image7.png)
 
@@ -381,7 +381,7 @@ Pokud vyvíjíte pomocí editoru/CLI přístup, je obtížnější ladění kont
     [*https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh*](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
 
 -   **Steve Lasker. Vytvoření, ladění, nasazení aplikací ASP.NET Core pomocí Docker.** Video.
-    [*https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-2017-Launch/T115*](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115)
+    [*https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115*](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115)
 
 ## <a name="simplified-workflow-when-developing-containers-with-visual-studio"></a>Zjednodušená pracovního postupu při vývoji kontejnery pomocí sady Visual Studio
 
@@ -398,7 +398,7 @@ Kromě toho budete muset provést krok 2 (Přidání podpory Docker do vašich p
 -   **Steve Lasker. .NET – vývoj docker s Visual Studio 2017**
     [*https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111*](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111)
 
--   **Jana T. Fritz. Uveďte základní aplikace .NET v kontejneru s nové nástroje Docker pro sadu Visual Studio**
+-   **Jeffrey T. Fritz. Uveďte základní aplikace .NET v kontejneru s nové nástroje Docker pro sadu Visual Studio**
     [*https://blogs.msdn.microsoft.com/webdev/2016/11/16/new-docker-tools-for-visual-studio/*](https://blogs.msdn.microsoft.com/webdev/2016/11/16/new-docker-tools-for-visual-studio/)
 
 ## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Nastavení Windows kontejnery pomocí příkazů prostředí PowerShell v soubor Docker 
@@ -423,8 +423,8 @@ RUN powershell add-windowsfeature web-asp-net45
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **ASPNET-docker nebo soubor Docker.** Příklady příkazů prostředí Powershell pro spouštění z dockerfiles zahrnout funkce systému Windows.
-    [*https://github.com/Microsoft/ASPNET-docker/BLOB/Master/4.6.2/Dockerfile*](https://github.com/Microsoft/aspnet-docker/blob/master/4.6.2/Dockerfile)
+-   **aspnet-docker/Dockerfile.** Příklady příkazů prostředí Powershell pro spouštění z dockerfiles zahrnout funkce systému Windows.
+    [*https://github.com/Microsoft/aspnet-docker/blob/master/4.6.2/Dockerfile*](https://github.com/Microsoft/aspnet-docker/blob/master/4.6.2/Dockerfile)
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (.. / net-core-single-containers-linux-windows-server-hosts/index.md)
+[Previous] (index.md) [Next] (../net-core-single-containers-linux-windows-server-hosts/index.md)

@@ -8,13 +8,15 @@ ms.date: 08/07/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: devlang-vb
-dev_langs: vb
-ms.workload: dotnetcore
-ms.openlocfilehash: 058e8740ed523d606da0ad46e052f91f31b3b2d9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+dev_langs:
+- vb
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 0e3dbdb5df72963980f459643fcb5f4588e0029f
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="build-a-visual-basic-hello-world-application-with-net-core-in-visual-studio-2017"></a>Vytvoření aplikace Visual Basic Hello World s .NET Core v Visual Studio 2017
 
@@ -22,7 +24,7 @@ Toto téma obsahuje podrobné Úvod do vytváření, ladění a publikování po
 
 ## <a name="prerequisites"></a>Požadavky
 
-[Visual Studio 2017](https://www.visualstudio.com/downloads/) se zatížením "Vývoj pro různé platformy .NET Core" nainstalována. Můžete vyvíjet aplikace pomocí rozhraní .NET 2.0 jádra.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) se zatížením "Vývoj pro různé platformy .NET Core" nainstalována. Můžete vyvíjet aplikace pomocí rozhraní .NET 2.0 jádra.
 
 Další informace najdete v tématu [požadavky pro .NET Core v systému Windows](../../core/windows-prerequisites.md).
 
@@ -34,7 +36,7 @@ Začněte tím, že vytvoření jednoduché aplikace konzoly "Hello World". Post
 
    ![Dialogové okno Nový projekt s vybrané konzolové aplikace](./media/vb-with-visual-studio/new-project.png)
    
-1. Visual Studio používá šablonu pro vytvoření projektu. Šablona konzolové aplikace jazyka Visual Basic pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu `Main`, která má <xref:System.String> pole jako argument. `Main`je vstupní bod aplikace, metoda, která je automaticky volána modulem runtime při jeho spuštění aplikace. Jsou k dispozici v žádných argumentů příkazového řádku zadán při spuštění aplikace *argumentů* pole.
+1. Visual Studio používá šablonu pro vytvoření projektu. Šablona konzolové aplikace jazyka Visual Basic pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu `Main`, která má <xref:System.String> pole jako argument. `Main` je vstupní bod aplikace, metoda, která je automaticky volána modulem runtime při jeho spuštění aplikace. Jsou k dispozici v žádných argumentů příkazového řádku zadán při spuštění aplikace *argumentů* pole.
 
    ![Visual Studio a nový projekt HelloWorld](./media/vb-with-visual-studio/devenv.png)
 

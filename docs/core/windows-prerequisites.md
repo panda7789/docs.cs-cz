@@ -6,26 +6,27 @@ ms.author: johalex
 ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.workload: dotnetcore
-ms.openlocfilehash: fdbba188cf939ce3eb969a1f780e086fcf17da13
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: cdef013adb55fcc52062a42f22f00b681004f7a8
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core v systému Windows
 
 Tento článek ukazuje závislosti potřebné k vývoji aplikací .NET Core v systému Windows. Podporované verze operačního systému a závislosti, které platí na tři způsoby, jak vývoj aplikací .NET Core v systému Windows:
 
 * [Příkazový řádek](tutorials/using-with-xplat-cli.md)
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+* [Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
 ## <a name="net-core-supported-windows-versions"></a>.NET core podporované verze systému Windows
 
 .NET core je podporována v následujících verzích:
 
-* Windows 7 s aktualizací SP1
+* Windows 7 SP1
 * Windows 8.1
 * Windows 10, Windows 10 Anniversary Update (verze 1607) nebo novější verze
 * Windows Server 2008 R2 SP1 (celého serveru nebo jádra serveru)
@@ -54,8 +55,8 @@ V tématu [podporované verze operačního systému aplikace .NET Core 1.x](http
 
 K vývoji aplikací .NET Core pomocí sady .NET Core SDK můžete použít všechny editor.  [Visual Studio 2017](#visual-studio-2017) poskytuje integrované vývojové prostředí pro aplikace .NET Core v systému Windows.
 
-Další informace o změnách ve Visual Studio 2017 v [poznámky k verzi](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes).
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+Další informace o změnách ve Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 K vývoji aplikací .NET Core 2.x ve Visual Studio 2017:
 

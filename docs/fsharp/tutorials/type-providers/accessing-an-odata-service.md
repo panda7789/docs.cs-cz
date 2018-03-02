@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 0adae84c-b0fa-455f-994b-274ecdc6df30
-ms.openlocfilehash: 28c2e9a405670f4e5f9512e99e0e6c3e3082856c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 750407c36a989cece30c0c0654ff905c8eee3b33
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="walkthrough-accessing-an-odata-service-by-using-type-providers"></a>Návod: Přístup ke službě OData s použitím zprostředkovatelů typů
 
 > [!NOTE]
-Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](http://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
+Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](https://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
 
 > [!NOTE]
 Rozhraní API referenčních odkazů se dostanete na webu MSDN.  Referenční dokumentace rozhraní API docs.microsoft.com není dokončena.
@@ -69,7 +69,7 @@ V tomto kroku vytvoříte typ zprostředkovatele, který poskytuje přístup k t
 open Microsoft.FSharp.Data.TypeProviders
 
 
-type Northwind = ODataService<"http://services.odata.org/Northwind/Northwind.svc/">
+type Northwind = ODataService<"https://services.odata.org/Northwind/Northwind.svc/">
 
 let db = Northwind.GetDataContext()
 let fullContext = Northwind.ServiceTypes.NorthwindEntities()
@@ -100,7 +100,7 @@ V tomto kroku použijete F # – výrazy dotazů k dotazování na službu OData
   - řazení (`orderBy`, `thenBy`)
 <br />
 
-  - `AddQueryOption`a `Expand`, které jsou specifické pro OData operace
+  - `AddQueryOption` a `Expand`, které jsou specifické pro OData operace
 <br />
 
   Další informace najdete v tématu [LINQ aspekty &#40; Služby WCF Data Services &#41; ](https://msdn.microsoft.com/library/ee622463.aspx).
@@ -242,11 +242,11 @@ db.DataContext.SendingRequest.Add (fun eventArgs -> printfn "Requesting %A" even
 ```
 
 Výstup jako předchozí kód je:
-<br />`requesting http://services.odata.org/Northwind/Northwind.svc/Orders()?$orderby=ShippedDate&amp;$select=OrderID,ShippedDate`
+<br />`requesting https://services.odata.org/Northwind/Northwind.svc/Orders()?$orderby=ShippedDate&amp;$select=OrderID,ShippedDate`
 
 
 ## <a name="see-also"></a>Viz také
-[Výrazy dotazů](../../language-reference/query-expressions.md)
+[Výrazy dotazu](../../language-reference/query-expressions.md)
 
 [Aspekty LINQ (služby WCF Data Services)](https://msdn.microsoft.com/library/ee622463.aspx)
 

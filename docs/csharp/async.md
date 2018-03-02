@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: 35038b3dae80958071a9615f7f131fca73513077
-ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
+ms.openlocfilehash: d2633bf18fa32adc58dd3f5a2388d11010672da8
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -95,7 +95,7 @@ U teoreticky sklon, je to implementace [Promise Model asynchrony](https://en.wik
 *   Asynchronní kód používá `Task<T>` a `Task`, které jsou konstrukce používané k modelu práci probíhá na pozadí.
 * `async` – Klíčové slovo změní metoda do asynchronní metody, která umožňuje používat `await` – klíčové slovo v jeho obsahu.
 *   Když `await` – klíčové slovo se použije, volání metody pozastaví a vypočítá řízení zpět do jeho volajícího, až do dokončení awaited úloh.
-*   `await`dá se použít jenom uvnitř asynchronní metody.
+*   `await` dá se použít jenom uvnitř asynchronní metody.
 
 ## <a name="recognize-cpu-bound-and-io-bound-work"></a>Rozpoznat vázané na procesor a I/čítači práce
 
@@ -222,7 +222,7 @@ Přestože je méně kódu, vezměte v potaz při kombinování LINQ asynchronn�
 
 I když je relativně jednoduché asynchronní programování, nejsou některé podrobnosti k mějte na paměti, která může zabránit neočekávanému chování.
 
-*  `async`**metody musí mít** `await` **– klíčové slovo v jejich textu nebo nikdy předá!**
+*  `async` **metody musí mít** `await` **– klíčové slovo v jejich textu nebo nikdy předá!**
 
 To je důležité pamatovat.  Pokud `await` není použit v textu `async` metoda, C# kompilátoru bude generovat upozornění, ale kód bude zkompilování a spuštění, jako kdyby šlo o normální metody.  Všimněte si, že také bude velmi neefektivní, jako by být splníte stav stavového stroje generované kompilátor jazyka C# pro asynchronní metody, nic.
 
@@ -230,13 +230,13 @@ To je důležité pamatovat.  Pokud `await` není použit v textu `async` metoda
 
 Toto je názvů v rozhraní .NET sloužící k další snadno odlišení synchronní a asynchronní metody. Všimněte si, že některé metody, které nejsou výslovně volány váš kód (například obslužné rutiny událostí nebo metody kontroleru webového) není nemusí nezbytně vztahovat. Protože tyto nejsou ve vašem kódu explicitně volané, probíhá explicitní o jejich názvy není jako důležité.
 
-*   `async void`**musí být použit pouze pro obslužné rutiny událostí.**
+*   `async void` **lze používat pouze pro obslužné rutiny událostí.**
 
-`async void`je jediný způsob, jak povolit obslužné rutiny událostí asynchronní pracovat, protože události nemají návratové typy (proto nelze provést použití `Task` a `Task<T>`). Jakékoliv jiné použití `async void` nedodrží klepněte na modelu a může být náročné, pokud chcete použít, například:
+`async void` je jediný způsob, jak povolit obslužné rutiny událostí asynchronní pracovat, protože události nemají návratové typy (proto nelze provést použití `Task` a `Task<T>`). Jakékoliv jiné použití `async void` nedodrží klepněte na modelu a může být náročné, pokud chcete použít, například:
 
   *   Výjimky vzniklé v `async void` metoda nemůže být zachycena mimo tuto metodu.
-  *   `async void`metody jsou velmi obtížné otestovat.
-  *   `async void`metody může způsobit chybný vedlejší účinky, pokud má volající není očekáván mají být asynchronní.
+  *   `async void` metody jsou velmi obtížné otestovat.
+  *   `async void` metody může způsobit chybný vedlejší účinky, pokud má volající není očekáván mají být asynchronní.
 
 *   **Pečlivě běhounu při použití asynchronní lambdas v LINQ – výrazy**
 
@@ -248,7 +248,7 @@ Blokování aktuální vlákno jako prostředek k čekání na dokončení úloh
 
 | Použijte... | Místo to... | Pokud chtějí tomu |
 | --- | --- | --- |
-| `await` | `Task.Wait`nebo`Task.Result` | Načítání výsledek úlohy na pozadí |
+| `await` | `Task.Wait` Nebo `Task.Result` | Načítání výsledek úlohy na pozadí |
 | `await Task.WhenAny` | `Task.WaitAny` | Čekání na dokončení žádné úlohy |
 | `await Task.WhenAll` | `Task.WaitAll` | Čekání na dokončení všech úloh |
 | `await Task.Delay` | `Thread.Sleep` | Čekání na v časovém intervalu |
@@ -269,4 +269,5 @@ Doporučené cílem je dosáhnout úplné nebo téměř úplné [referenční pr
 ## <a name="other-resources"></a>Další zdroje
 
 * [Asynchronní podrobný](../standard/async-in-depth.md) poskytuje další informace o fungování úlohy.
+* [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../csharp/programming-guide/concepts/async/index.md)
 * Lucian Wischik [šesti důležité tipy pro asynchronní](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) jsou vynikající prostředků pro asynchronní programování

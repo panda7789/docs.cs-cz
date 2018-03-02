@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 81adb2eb-625f-4ad8-aeaa-8f672a6d79a2
-ms.openlocfilehash: 1df0344e8dab2b40d82d1b9c61ccd2f026906243
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 901457dce358f768b4f4c980703e09f6c744918e
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="walkthrough-generating-f-types-from-an-edmx-schema-file"></a>Návod: Generování typů F# ze souboru schématu EDMX
 
 > [!NOTE]
-Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](http://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
+Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](https://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
 
 > [!NOTE]
 Rozhraní API referenčních odkazů se dostanete na webu MSDN.  Referenční dokumentace rozhraní API docs.microsoft.com není dokončena.
@@ -222,7 +222,7 @@ Tento postup byste měli dokončit pouze v případě, že chcete vědět, jak 
 1. Na řádku nabídek zvolte **SQL**, **editoru jazyka Transact-SQL**, **nový dotaz** k vytvoření databáze. Budete-li k tomu vyzváni, zadejte server a instanci databáze.
 <br />
 
-2. Zkopírujte a vložte obsah skriptu databáze, který vytvoří databázi studenty, jak je popsáno v [dokumentaci k rozhraní Entity Framework](http://msdn.microsoft.com/data/JJ614587.aspx) v datovém centru pro vývojáře.
+2. Zkopírujte a vložte obsah skriptu databáze, který vytvoří databázi studenty, jak je popsáno v [dokumentaci k rozhraní Entity Framework](https://msdn.microsoft.com/data/JJ614587.aspx) v datovém centru pro vývojáře.
 <br />
 
 3. Výběr tlačítka panelu nástrojů symbolem trojúhelníček nebo výběrem položky klíče kombinace kláves Ctrl + Q spusťte skript SQL.
@@ -275,9 +275,9 @@ Prozkoumejte jiné dotazy prohlížením operátory k dispozici dotazu uvedené 
 
 [Návod: Přístup k databázi SQL s použitím zprostředkovatelů typů a entit](accessing-a-sql-database-entities.md)
 
-[Entity Framework](http://msdn.microsoft.com/data/ef)
+[Entity Framework](https://msdn.microsoft.com/data/ef)
 
 [Přehled souboru EDMX](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)
 
-[Generátor EDM &#40; EdmGen.exe &#41;](https://msdn.microsoft.com/library/bb387165)
+[EDM Generator &#40;EdmGen.exe&#41;](https://msdn.microsoft.com/library/bb387165)
 

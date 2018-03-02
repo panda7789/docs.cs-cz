@@ -12,11 +12,11 @@ ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 24a030bb43d49615a7487ce10ad2347fdfd8a290
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 6492edae6e4311252dc664236fb43cd373f7c59f
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec se objekt typu <xref:System.String> jehož hodnota je text. Interně, je text uložený jako sekvenční jen pro čtení kolekce <xref:System.Char> objekty. Neexistuje žádné ukončení null znak na konci C# řetězec; řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, nikoli počet znaků Unicode. Chcete-li získat přístup k jednotlivé body kódu Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -83,7 +83,7 @@ ms.lasthandoff: 02/19/2018
  Jedním přetížením <xref:System.Console.WriteLine%2A> metoda přebírá řetězec formátu jako parametr. Proto můžete vložit pouze formát řetězcový literál bez explicitní volání metody. Ale pokud používáte <xref:System.Diagnostics.Trace.WriteLine%2A> metodu pro zobrazení výstupu ladění v sadě Visual Studio **výstup** okna, je nutné explicitně volání <xref:System.String.Format%2A> – metoda protože <xref:System.Diagnostics.Trace.WriteLine%2A> přijímá pouze řetězec, řetězec formátu. Další informace o řetězce formátu najdete v tématu [typy formátování](../../../standard/base-types/formatting-types.md).  
   
 ## <a name="substrings"></a>Dílčích řetězců  
- Dílčí řetězec je posloupnost znaků, který je obsažen v řetězci. Použití <xref:System.String.Substring%2A> metodu pro vytvoření nového řetězce z části původního řetězce. Jeden nebo více výskytů dílčí řetězec můžete vyhledat pomocí <xref:System.String.IndexOf%2A> metoda. Použití <xref:System.String.Replace%2A> metodu pro nový řetězec nahraďte všechny výskyty je určený dílčí řetězec. Podobně jako <xref:System.String.Substring%2A> metody <xref:System.String.Replace%2A> ve skutečnosti vrátí nového řetězce a nedojde ke změně původního řetězce. Další informace najdete v tématu [postupy: vyhledávání řetězců pomocí řetězcových metod](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md) a [postupy: Změna obsahu řetězce](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md).  
+ Dílčí řetězec je posloupnost znaků, který je obsažen v řetězci. Použití <xref:System.String.Substring%2A> metodu pro vytvoření nového řetězce z části původního řetězce. Jeden nebo více výskytů dílčí řetězec můžete vyhledat pomocí <xref:System.String.IndexOf%2A> metoda. Použití <xref:System.String.Replace%2A> metodu pro nový řetězec nahraďte všechny výskyty je určený dílčí řetězec. Podobně jako <xref:System.String.Substring%2A> metody <xref:System.String.Replace%2A> ve skutečnosti vrátí nového řetězce a nedojde ke změně původního řetězce. Další informace najdete v tématu [postupy: vyhledávání řetězců](../../how-to/search-strings.md) a [postupy: Změna obsahu řetězce](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md).  
   
  [!code-csharp[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_7.cs)]  
   
@@ -127,8 +127,7 @@ string s = String.Empty;
 |[Postupy: Zřetězení více řetězců](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|Ukazuje, jak používat `+` operátor a `Stringbuilder` třída připojit řetězce společně v době potřebné ke kompilaci a běhu.|  
 |[Postupy: Porovnávání řetězců](../../../csharp/programming-guide/strings/how-to-compare-strings.md)|Ukazuje, jak provést pořadí porovnání hodnot řetězců.|  
 |[Postupy: Analýza řetězců využívajících String.Split ](../../how-to/parse-strings-using-split.md)|Obsahuje příklad kódu, která ukazuje, jak používat `String.Split` metoda analyzovat řetězce.|  
-|[Postupy: Vyhledávání řetězců pomocí řetězcových metod](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)|Vysvětluje, jak používat konkrétní metody pro hledání řetězce.|  
-|[Postupy: Vyhledávání řetězců pomocí regulárních výrazů](../../../csharp/programming-guide/strings/how-to-search-strings-using-regular-expressions.md)|Vysvětluje, jak vyhledávání řetězců pomocí regulárních výrazů.|  
+|[Postupy: vyhledávání řetězců](../../how-to/search-strings.md)|Vysvětluje, jak používat konkrétní metody pro hledání řetězce.|  
 |[Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec a zjistěte, zda má platnou číselnou hodnotu.|  
 |[Postupy: Převedení řetězce na typ DateTime](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|Ukazuje, jak převést řetězec jako je například "01/24/2008" k <xref:System.DateTime?displayProperty=nameWithType> objektu.|  
 |[Základní operace s řetězci](../../../../docs/standard/base-types/basic-string-operations.md)|Obsahuje odkazy na témata, které používají <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> metody k provedení základní operace s řetězci.|  

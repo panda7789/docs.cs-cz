@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: 58003c88baf0f8aeea1a511334b99bd0295f8bf1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c09f8abe4dd46453cb6cc5ed7dbb6f60dbf0ad98
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="tutorial-creating-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
@@ -56,7 +56,7 @@ Zprostředkovatelé typů jsou nejvhodnější pro situacích, kde je stabilní 
 
 
 ## <a name="a-simple-type-provider"></a>Jednoduchý typ zprostředkovatele
-Tato ukázka je Samples.HelloWorldTypeProvider v `SampleProviders\Providers` adresář [F # 3.0 ukázka Pack](http://fsharp3sample.codeplex.com) na webu Codeplex. Zprostředkovatel zpřístupní "typ prostor", který obsahuje 100 vymazaných typů, jak ukazuje následující kód pomocí syntaxe podpis F # a vynechat podrobnosti pro všechny kromě `Type1`. Další informace o typech vymazaných najdete v tématu [podrobnosti o vymazat zadané typy](#details-about-erased-provided-types) dál v tomto tématu.
+Tato ukázka je Samples.HelloWorldTypeProvider v `SampleProviders\Providers` adresář [F # 3.0 ukázka Pack](https://fsharp3sample.codeplex.com) na webu Codeplex. Zprostředkovatel zpřístupní "typ prostor", který obsahuje 100 vymazaných typů, jak ukazuje následující kód pomocí syntaxe podpis F # a vynechat podrobnosti pro všechny kromě `Type1`. Další informace o typech vymazaných najdete v tématu [podrobnosti o vymazat zadané typy](#details-about-erased-provided-types) dál v tomto tématu.
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -499,7 +499,7 @@ Vezměte na vědomí následující body:
 - Každou skupinu s názvem výsledkem zadané vlastnosti a přístupu k vlastnosti výsledkem použití indexer na shodu `Groups` kolekce.
 <br />
 
-Následující kód je základní logiku pro implementaci takové zprostředkovatele a v tomto příkladu vynechá přidání všech členů na zadaný typ. Informace o každý přidaný člen najdete v příslušné části dále v tomto tématu. Pro kód úplné stažení ukázky z [F # 3.0 ukázka Pack](http://fsharp3sample.codeplex.com) na webu Codeplex.
+Následující kód je základní logiku pro implementaci takové zprostředkovatele a v tomto příkladu vynechá přidání všech členů na zadaný typ. Informace o každý přidaný člen najdete v příslušné části dále v tomto tématu. Pro kód úplné stažení ukázky z [F # 3.0 ukázka Pack](https://fsharp3sample.codeplex.com) na webu Codeplex.
 
 ```fsharp
 namespace Samples.FSharp.RegexTypeProvider
@@ -1140,7 +1140,7 @@ Pokud má tento dokument vysvětlené jak zadejte vymazaných typy. Mechanismus 
 ```fsharp
 open Microsoft.FSharp.TypeProviders 
 
-type Service = ODataService<" http://services.odata.org/Northwind/Northwind.svc/">
+type Service = ODataService<" https://services.odata.org/Northwind/Northwind.svc/">
 ```
 
 Kód pomocného objektu ProvidedTypes 0,2, který je součástí verze F # 3.0 má omezenou podporu pro zajištění generovaného typy. Pro definici typu generované musí platit následující příkazy:
@@ -1196,10 +1196,10 @@ Když píšete zprostředkovatelů typů, uvědomte si následující pravidla a
 Následující tipy mohou být užitečné během procesu vývoje.
 
 
-- `Run Two Instances of Visual Studio.`Můžete vytvořit typ zprostředkovatele v jedné instance a testování zprostředkovatele v dalších, protože test IDE bude trvat zámek na soubor .dll, který zabrání se znovu sestavit typ zprostředkovatele. Proto je třeba nejprve zavřít druhou instanci sady Visual Studio, zatímco zprostředkovatele je vytvořen v první instance, a pak musí znovu otevřete druhou instanci po zprostředkovatele.
+- `Run Two Instances of Visual Studio.` Můžete vytvořit typ zprostředkovatele v jedné instance a testování zprostředkovatele v dalších, protože test IDE bude trvat zámek na soubor .dll, který zabrání se znovu sestavit typ zprostředkovatele. Proto je třeba nejprve zavřít druhou instanci sady Visual Studio, zatímco zprostředkovatele je vytvořen v první instance, a pak musí znovu otevřete druhou instanci po zprostředkovatele.
 <br />
 
-- `Debug type providers by using invocations of fsc.exe.`Zprostředkovatelé typů můžete vyvolat pomocí následující nástroje:
+- `Debug type providers by using invocations of fsc.exe.` Zprostředkovatelé typů můžete vyvolat pomocí následující nástroje:
 <br />
   - FSC.exe (příkazového řádku kompilátor jazyka F #)
 <br />

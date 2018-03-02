@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 5c26a0aa-186e-476c-9f87-e0191754579e
-ms.openlocfilehash: 66b2503744e9024deac3d6dabea57da4fd393bd8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5e1f6914acad5ae8c7148a7238e2d1d6a8ca5867
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Začínáme s Azure File storage pomocí F # #
 
@@ -97,7 +97,7 @@ Zde si stáhnout soubor právě vytvořili, připojování obsah do místního s
 
 ### <a name="set-the-maximum-size-for-a-file-share"></a>Nastavit maximální velikost sdílené složky
 
-Následující příklad ukazuje, jak zkontrolovat aktuální využití sdílené složky a jak nastavit kvótu pro sdílenou složku. `FetchAttributes`musí být volána k naplnění sdílené složky `Properties`, a `SetProperties` rozšíří místní změny do úložiště Azure File.
+Následující příklad ukazuje, jak zkontrolovat aktuální využití sdílené složky a jak nastavit kvótu pro sdílenou složku. `FetchAttributes` musí být volána k naplnění sdílené složky `Properties`, a `SetProperties` rozšíří místní změny do úložiště Azure File.
 
 [!code-fsharp[FileStorage](../../../samples/snippets/fsharp/azure/file-storage.fsx#L62-L72)]
 
@@ -161,5 +161,5 @@ Viz tyto odkazy na další informace o Azure File storage.
 
 - [Úložiště Azure File je nyní obecně k dispozici](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
 - [Uvnitř Azure File Storage](https://azure.microsoft.com/blog/inside-azure-file-storage/) 
-- [Představujeme službu Microsoft Azure File](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [Nastavení trvalých připojení k Microsoft Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+- [Představujeme službu Microsoft Azure File](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/12/introducing-microsoft-azure-file-service/)
+- [Nastavení trvalých připojení k Microsoft Azure Files](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/26/persisting-connections-to-microsoft-azure-files/)

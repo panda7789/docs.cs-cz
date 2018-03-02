@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 0d6e1e34-277c-4aaf-9880-3ebf81023857
-ms.workload: dotnetcore
-ms.openlocfilehash: cc2defb72c61e45ecfebd26937f1c3fd2d405171
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 552865f225ceac9e7a365452ee06d7fefeeb7213
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Pomocí rozhraní .NET Core SDK a nástrojů v nepřetržité integrace (CI)
 
@@ -44,7 +45,7 @@ Skript instalačního programu je automatizované ke spuštění na začátku se
 
 ## <a name="ci-setup-examples"></a>Instalační program Příklady položek konfigurace
 
-Tato část popisuje ruční instalaci pomocí skriptu prostředí PowerShell nebo bash, společně s popis několik softwaru jako řešení položek konfigurace služba (SaaS). Řešení SaaS CI popsaná jsou [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [Visual Studio Team Services Build](https://www.visualstudio.com/docs/build/overview).
+Tato část popisuje ruční instalaci pomocí skriptu prostředí PowerShell nebo bash, společně s popis několik softwaru jako řešení položek konfigurace služba (SaaS). Řešení SaaS CI popsaná jsou [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [Visual Studio Team Services Build](https://docs.microsoft.com/vsts/build-release/index).
 
 ### <a name="manual-setup"></a>Ruční instalace
 
@@ -148,14 +149,14 @@ install:
   # See appveyor.yml example for install script
 ```
 
-### <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (služby VSTS)
+### <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (VSTS)
 
 Konfigurace Visual Studio Team Services (služby VSTS) k vytvoření projektů .NET Core pomocí jedné z těchto postupů:
 
 1. Spusťte skript ze [ruční instalaci krok](#manual-setup) vaše příkazy.
 1. Vytvořte sestavení skládá z několika služby VSTS předdefinované sestavení úlohy, které jsou nakonfigurovány pro použití nástroje pro .NET Core.
 
-Obě řešení jsou platné. Pomocí skriptu ruční instalace, můžete řídit verzi nástroje, které se zobrazí, protože jste je stáhnout jako součást sestavení. Sestavení se spouští ze skriptu, který je nutné vytvořit. Toto téma se vztahuje pouze na ruční. Další informace o sestavení pomocí služby VSTS skládání úlohy sestavení, přejděte služby VSTS [průběžnou integraci a nasazení](https://www.visualstudio.com/docs/build/overview) tématu.
+Obě řešení jsou platné. Pomocí skriptu ruční instalace, můžete řídit verzi nástroje, které se zobrazí, protože jste je stáhnout jako součást sestavení. Sestavení se spouští ze skriptu, který je nutné vytvořit. Toto téma se vztahuje pouze na ruční. Další informace o sestavení pomocí služby VSTS skládání úlohy sestavení, přejděte služby VSTS [průběžnou integraci a nasazení](https://docs.microsoft.com/vsts/build-release/index) tématu.
 
 Použití skriptu ruční instalaci v služby VSTS, vytvořte novou definici sestavení a zadejte skript, který chcete spustit pro krok sestavení. To se provádí pomocí uživatelského rozhraní služby VSTS:
 
@@ -177,7 +178,7 @@ Použití skriptu ruční instalaci v služby VSTS, vytvořte novou definici ses
 
 ## <a name="orchestrating-the-build"></a>Orchestrace sestavení
 
-Většina tento dokument popisuje, jak získat nástroje .NET Core a nakonfigurovat různé služby CI bez zadání informací o tom, jak orchestraci, nebo *ve skutečnosti sestavení*, kódu s .NET Core. Volby o tom, jak struktury procesu sestavení závisí na mnoha faktorech, které nejde pokrýt obecné způsobem. Prozkoumejte prostředků a ukázky, které jsou součástí sady dokumentace [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [služby VSTS](https://www.visualstudio.com/docs/build/overview) Další informace o Orchestrace buildy s každým technologie.
+Většina tento dokument popisuje, jak získat nástroje .NET Core a nakonfigurovat různé služby CI bez zadání informací o tom, jak orchestraci, nebo *ve skutečnosti sestavení*, kódu s .NET Core. Volby o tom, jak struktury procesu sestavení závisí na mnoha faktorech, které nejde pokrýt obecné způsobem. Prozkoumejte prostředků a ukázky, které jsou součástí sady dokumentace [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [služby VSTS](https://docs.microsoft.com/vsts/build-release/index) Další informace o Orchestrace buildy s každým technologie.
 
 Dva obecné přístupy, které provedete v procesu sestavení pro kód .NET Core pomocí nástrojů .NET Core strukturování jsou přímo pomocí nástroje MSBuild nebo používá příkazy příkazového řádku .NET Core. Jaký přístup byste měli vzít je určen podle vaše pohodlí úroveň s přístupy a kompromis složitostí. MSBuild poskytuje schopnost express vašeho procesu sestavení jako úlohy a cíle, ale se dodává s přidané složitosti učení syntaxe souboru projektu nástroje MSBuild. Pomocí nástroje příkazového řádku .NET Core je možná jednodušší, ale vyžaduje zapisovat orchestration logiku v skriptovací jazyk jako `bash` nebo prostředí PowerShell.
 

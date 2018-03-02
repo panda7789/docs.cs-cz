@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 8db75596-19a9-4eda-b20d-a12d517c8cc1
-ms.openlocfilehash: beee874e3a549531b520d4ac2150bc10dcab7725
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 776a2ddf5563a954e462b3888ebf05da90241e4b
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-f-in-visual-studio-for-mac"></a>Začínáme s F # v sadě Visual Studio pro Mac
 
-F # a nástrojů Visual F # jsou podporovány v sadě Visual Studio pro Mac IDE.  Pokud chcete začít, měli byste [stažení sady Visual Studio pro Mac](https://www.visualstudio.com/downloads/download-visual-studio-vs), pokud jste tak ještě neučinili.  Tento článek používá 2017 pro komunity Visual Studio pro Mac, ale můžete použít F # verzí podle svého výběru.
+F # a nástrojů Visual F # jsou podporovány v sadě Visual Studio pro Mac IDE.  Pokud chcete začít, měli byste [stažení sady Visual Studio pro Mac](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), pokud jste tak ještě neučinili.  Tento článek používá 2017 pro komunity Visual Studio pro Mac, ale můžete použít F # verzí podle svého výběru.
 
 ## <a name="installing-f"></a>Instalace F # #
 
@@ -127,8 +127,8 @@ Toto je pouze balíčku glimpse do co můžete dělat s F # interaktivní.  Dal�
 Pokud jste to ještě neudělali, podívejte se [prohlídka z F #](../tour.md), které zahrnuje některé základní funkce jazyka F #.  Bude vám poskytl přehled některých možností F # a zadejte ukázky dostatečným kódu, které můžete zkopírovat do sady Visual Studio pro Mac a spustit.  Existují také některé skvělé externím prostředkům, můžete použít, showcased v [Průvodce F #](../index.md).
 
 ## <a name="see-also"></a>Viz také
- [Visual F #](../index.md)  
- [Prohlídka F #](../tour.md)  
+ [Visual F#](../index.md)  
+ [Prohlídka jazyka F#](../tour.md)  
  [Referenční dokumentace jazyka F #](../language-reference/index.md)  
  [Odvození typu](../language-reference/type-inference.md)  
  [Referenční dokumentace symbolů a – operátor](../language-reference/symbol-and-operator-reference/index.md)  

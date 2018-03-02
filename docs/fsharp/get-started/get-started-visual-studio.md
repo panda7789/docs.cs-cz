@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 8db75596-19a9-4eda-b20d-a12d517c8cc1
-ms.openlocfilehash: 944bbbba6a26634ace269d86cbbdde9ef9de7bcd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 818bf50507a88e1d765da8d0505ed8da4790b71f
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s F # v sadě Visual Studio
 
-F # a nástrojů Visual F # jsou podporovány v prostředí Visual Studio IDE.  Pokud chcete začít, měli byste [Visual Studio Stáhnout](https://www.visualstudio.com/downloads/download-visual-studio-vs), pokud jste tak ještě neučinili.  Tento článek používá Visual Studio 2017 Community Edition, ale můžete použít F # verzí podle svého výběru.
+F # a nástrojů Visual F # jsou podporovány v prostředí Visual Studio IDE.  Pokud chcete začít, měli byste [Visual Studio Stáhnout](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), pokud jste tak ještě neučinili.  Tento článek používá Visual Studio 2017 Community Edition, ale můžete použít F # verzí podle svého výběru.
 
 ## <a name="installing-f"></a>Instalace F # #
 
@@ -32,9 +32,9 @@ Dále se zobrazí seznam úloh. Můžete nainstalovat F # do některého z násl
 | ASP.NET a vývoje | Ve výchozím nastavení je nainstalovaná žádná akce - F # |
 | Vývoj pro Azure | Ve výchozím nastavení je nainstalovaná žádná akce - F # |
 | Mobilní vývoj pomocí rozhraní .NET | Ve výchozím nastavení je nainstalovaná žádná akce - F # |
-| Vědecké zpracování dat a analytických aplikací | Ve výchozím nastavení je nainstalovaná žádná akce - F # |
+| Aplikace pro datové vědy a analýzy | Ve výchozím nastavení je nainstalovaná žádná akce - F # |
 | Vývoj aplikací rozhraní .NET | Vyberte **podporu klientů jazyka F #** z pravé strany |
-| Úložiště dat a zpracování | Vyberte **podporu klientů jazyka F #** z pravé strany |
+| Ukládání a zpracování dat | Vyberte **podporu klientů jazyka F #** z pravé strany |
 
 Klikněte na tlačítko **upravit** v pravé straně dole.  Nainstaluje všechny objekty, které jste vybrali.  Pak můžete otevřít Visual Studio 2017 s podporou jazyka F # kliknutím **spusťte**.
 
@@ -137,8 +137,8 @@ Toto je pouze balíčku glimpse do co můžete dělat s F # interaktivní. Dalš
 Pokud jste to ještě neudělali, podívejte se [prohlídka z F #](../tour.md), které zahrnuje některé základní funkce jazyka F #.  Bude vám poskytl přehled některých možností F # a zadejte ukázky dostatečným kódu, které můžete zkopírovat do sady Visual Studio a spustit.  Existují také některé skvělé externím prostředkům, můžete použít, showcased v [Průvodce F #](../index.md).
 
 ## <a name="see-also"></a>Viz také
- [Visual F #](index.md)  
- [Prohlídka F #](../tour.md)  
+ [Visual F#](index.md)  
+ [Prohlídka jazyka F#](../tour.md)  
  [Referenční dokumentace jazyka F #](../language-reference/index.md)  
  [Odvození typu](../language-reference/type-inference.md)  
  [Referenční dokumentace symbolů a – operátor](../language-reference/symbol-and-operator-reference/index.md)  

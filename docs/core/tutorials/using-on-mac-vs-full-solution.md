@@ -1,7 +1,7 @@
 ---
 title: "Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac"
 description: "Toto téma vás provede procesem vytvoření .NET Core řešení, která obsahuje opakovaně použitelné knihovny a testování částí."
-keywords: "Rozhraní .NET, .NET core systému macOS, Mac"
+keywords: .NET, .NET Core, macOS, Mac
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 6945bedf-5bf3-4955-8588-83fb87511b79
-ms.workload: dotnetcore
-ms.openlocfilehash: f64bc6463c455a288a374604e42e6747f701b0e7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 0db67593340ea3bae00a45b845a0effe0c1fcab1
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -31,9 +32,9 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá slovo vyhle
 
 - OpenSSL (je-li spuštěna .NET Core 1.1): najdete v článku [požadavky pro .NET Core v systému Mac](../macos-prerequisites.md) tématu.
 - [.NET core SDK 1.1 nebo novější](https://www.microsoft.com/net/core#macos)
-- [2017 Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+- [Visual Studio 2017 for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
 
-Další informace o požadovaných součástí najdete v tématu [požadavky pro .NET Core v systému Mac](../../core/macos-prerequisites.md). Požadavky úplnou Visual Studio 2017 pro Mac najdete v tématu [Visual Studio 2017 požadavky na systém Mac produktu rodiny](https://www.visualstudio.com/productinfo/vs2017-system-requirements-mac).
+Další informace o požadovaných součástí najdete v tématu [požadavky pro .NET Core v systému Mac](../../core/macos-prerequisites.md). Požadavky úplnou Visual Studio 2017 pro Mac najdete v tématu [Visual Studio 2017 požadavky na systém Mac produktu rodiny](/visualstudio/productinfo/vs2017-system-requirements-mac).
 
 ## <a name="building-a-library"></a>Sestavení knihovny
 
@@ -169,7 +170,7 @@ Testování částí zadejte automatizované softwaru testování během vaší 
 
    [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/WordCounterApp/Program.cs)]
 
-1. Spusťte aplikaci v okně konzoly namísto integrovaného vývojového prostředí, klikněte pravým tlačítkem `WordCounterApp` projekt, vyberte **možnosti**a otevřete **výchozí** pod uzlem **konfigurace**. Zaškrtněte políčko pro **spustit na externí konzoly**. Ponechte **pozastavit výstup konzoly** možnost zaškrtnutí. Toto nastavení způsobí, že spawn v okně konzoly, takže můžete zadat vstup pro aplikaci `Console.ReadLine` příkazy. Pokud necháte aplikaci spustit v prostředí IDE, lze zobrazit pouze výstup `Console.WriteLine` příkazy. `Console.ReadLine`příkazy v prostředí IDE nefungují **výstupu aplikace** panelu.
+1. Spusťte aplikaci v okně konzoly namísto integrovaného vývojového prostředí, klikněte pravým tlačítkem `WordCounterApp` projekt, vyberte **možnosti**a otevřete **výchozí** pod uzlem **konfigurace**. Zaškrtněte políčko pro **spustit na externí konzoly**. Ponechte **pozastavit výstup konzoly** možnost zaškrtnutí. Toto nastavení způsobí, že spawn v okně konzoly, takže můžete zadat vstup pro aplikaci `Console.ReadLine` příkazy. Pokud necháte aplikaci spustit v prostředí IDE, lze zobrazit pouze výstup `Console.WriteLine` příkazy. `Console.ReadLine` příkazy v prostředí IDE nefungují **výstupu aplikace** panelu.
 
    ![Okno Možnosti projektu](./media/using-on-mac-vs-full-solution/vsmacfull13.png)
 
@@ -197,4 +198,4 @@ Testování částí zadejte automatizované softwaru testování během vaší 
 
 ## <a name="see-also"></a>Viz také
 
-[Visual Studio 2017 poznámky k verzi pro Mac](https://www.visualstudio.com/news/releasenotes/vs2017-mac-relnotes)
+[Visual Studio 2017 poznámky k verzi pro Mac](/visualstudio/releasenotes/vs2017-mac-relnotes)

@@ -2,7 +2,8 @@
 title: "ref (Referenční dokumentace jazyka C#)"
 ms.date: 05/30/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - ref_CSharpKeyword
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
 ms.assetid: b8a5e59c-907d-4065-b41d-95bf4273c0bd
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0be0eee67b507e2a209c9caaa3eb14cc60e8a763
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9b1e926bd1d9c3a8e0525ed02d102f26e6ec9abd
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -82,10 +83,10 @@ Odkaz vrátit hodnota je definována pomocí `ref` – klíčové slovo:
    ```csharp
    public ref decimal GetCurrentValue()
    ``` 
-- Před každým `return` příkaz v metodě. Příklad:
+- Mezi `return` token a proměnná, vrátí se v `return` příkaz v metodě. Příklad:
  
    ```csharp
-   ref return Decimal.Zero;
+   return ref DecimalArray[0];
    ``` 
 
 V pořadí pro volající změnit stav objektu vrátit hodnota musí být uložen do proměnné, která je explicitně definován jako odkaz [ref místní](#ref-locals). 
@@ -94,7 +95,7 @@ Příklad, naleznete v části [A ref vrátí a ref místní hodnoty – příkl
 
 ## <a name="ref-locals"></a>Místní hodnoty REF
 
-Místní proměnné ref slouží k odkazování na hodnot vrácených pomocí `ref return`.  Místní proměnné ref musí být inicializován a přiřadit ref návratovou hodnotu. Všechny změny na hodnotu místní ref se projeví ve stavu objektu, jehož metoda vrátila hodnotu odkazem.
+Místní proměnné ref slouží k odkazování na hodnot vrácených pomocí `return ref`.  Místní proměnné ref musí být inicializován a přiřadit ref návratovou hodnotu. Všechny změny na hodnotu místní ref se projeví ve stavu objektu, jehož metoda vrátila hodnotu odkazem.
 
 Definovat místní ref pomocí `ref` – klíčové slovo před deklarace proměnné, a také bezprostředně před volání metody, která vrátí hodnotu odkazem. 
 
@@ -121,7 +122,7 @@ Pokud má volající ukládá hodnoty vrácené `GetBookByTitle` metoda jako mí
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
  [Parametry metody](../../../csharp/language-reference/keywords/method-parameters.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)

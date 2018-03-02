@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
-ms.workload: dotnetcore
-ms.openlocfilehash: a38c2e5ff5e11cecaa75b8cd678c362a857d7ebc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 0428f93d4044fa0dd65a6f48ee425948fe052697
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -30,8 +31,8 @@ Abyste mohli začít, vývoj aplikací .NET Core pomocí následujících tyto p
 * [Vytvoření knihovny tříd s C# a .NET Core ve Visual Studio 2017](./tutorials/library-with-visual-studio.md) – Naučte se vytvářet knihovny tříd napsané v C# s použitím Visual Studio 2017.
 * [Vytvoření aplikace Visual Basic Hello World s .NET Core ve Visual Studio 2017](./tutorials/vb-with-visual-studio.md) – Naučte se vytvářet, ladit a publikovat pomocí jazyka Visual Basic a Visual Studio 2017 jednoduché aplikace konzoly .NET Core. 
 * [Sestavení knihovny tříd jazyka Visual Basic a .NET Core ve Visual Studio 2017](./tutorials/vb-library-with-visual-studio.md) – Naučte se vytvářet napsané v jazyce Visual Basic, Visual Studio 2017 pomocí knihovny tříd.
-* [Začínáme s Visual Studio Code na systému Windows pomocí jazyka C# a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio Code](https://www.visualstudio.com/products/code-vs), Microsoft je lightweight editor kódu a platformy, k vytvoření vaší první aplikace konzoly v .NET Core.
-* [Začínáme s .NET Core a Visual Studio 2017](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio 2017](https://www.visualstudio.com/), Microsoft je plně vybavená integrovaného vývojového prostředí, chcete-li vytvořit první napříč platformami konzolové aplikace v .NET Core.
+* [Začínáme s Visual Studio Code na systému Windows pomocí jazyka C# a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio Code](https://code.visualstudio.com/), lightweight cross platforma společnosti Microsoft editor kódu, k vytvoření vaší první aplikace konzoly v .NET Core.
+* [Začínáme s .NET Core a Visual Studio 2017](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), Microsoft je plně vybavená integrovaného vývojového prostředí, chcete-li vytvořit první napříč platformami konzolové aplikace v .NET Core.
 * [Začínáme s .NET Core pomocí příkazového řádku](tutorials/using-with-xplat-cli.md) -pomocí libovolného editoru kódu pomocí [.NET Core a platformy rozhraní příkazového řádku (CLI)](tools/index.md).
 
 Najdete v článku [požadavky pro systém Windows vývoj](windows-prerequisites.md) tématu seznam podporovaných verzí systému Windows.
@@ -43,11 +44,11 @@ Nainstalujte .NET Core [Linux](https://www.microsoft.com/net/core#linuxredhat).
 Abyste mohli začít, vývoj aplikací .NET Core pomocí následujících tyto podrobné kurzy.
 
 * [Začínáme s .NET Core pomocí příkazového řádku](tutorials/using-with-xplat-cli.md) -pomocí libovolného editoru kódu pomocí [.NET Core a platformy rozhraní příkazového řádku (CLI)](tools/index.md).
-* [Začínáme s Visual Studio Code na Ubuntu pomocí jazyka C# a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio Code](https://code.visualstudio.com/), Microsoft je lightweight editor kódu a platformy, k vytvoření vaší první aplikace konzoly v .NET Core na Ubuntu 14.04.
+* [Začínáme s Visual Studio Code na Ubuntu pomocí jazyka C# a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) – toto [Channel9](https://channel9.msdn.com) video ukazuje, jak nainstalovat a používat [Visual Studio Code](https://code.visualstudio.com/), lightweight cross platforma společnosti Microsoft editor kódu, k vytvoření vaší první aplikace konzoly v .NET Core na Ubuntu 14.04.
 
 Najdete v článku [požadavky vývoje pro Linux](linux-prerequisites.md) tématu seznam podporovaných distribucích systému Linux a verze.
 
-## <a name="os-x--macos"></a>OS X nebo systému macOS
+## <a name="os-x--macos"></a>OS X / macOS
 
 Instalace .NET Core pro [systému macOS](https://www.microsoft.com/net/core#macos). .NET core je podporována v OS X El Capitan (verze 10.11) a systému macOS Sierra (verze 10.12).
 

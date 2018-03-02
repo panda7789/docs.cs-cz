@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: FAD4D11E-703A-42D4-9F72-893D9E0F569B
-ms.openlocfilehash: 636604b1a0b645f13ac20d7ed85bde9abae3f9f6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8f1d5abe0412ecf72e38c7d76ef44fdc5fd4a0f7
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="using-f-on-azure"></a>Pomocí F # na Azure
 
@@ -40,7 +40,7 @@ Azure Functions podporovat F # jako první třídy jazyk s efektivní, reaktivn�
 
 Další zdroje informací pro používání Azure Functions a F #:
 
-* [Škálování Azure Functions v F # s použitím Suave](http://blog.tamizhvendan.in/blog/2016/09/19/scale-up-azure-functions-in-f-number-using-suave/)
+* [Škálování Azure Functions v F # s použitím Suave](https://blog.tamizhvendan.in/blog/2016/09/19/scale-up-azure-functions-in-f-number-using-suave/)
 * [Postup vytvoření funkce Azure v jazyce F #](https://mnie.github.io/2016-09-08-AzureFunctions/)
 * [Zprostředkovatel Azure typu pomocí Azure Functions](https://compositional-it.com/blog/2017/08-30-using-the-azure-type-provider-with-azure-functions/index.html)
 
@@ -48,10 +48,10 @@ Další zdroje informací pro používání Azure Functions a F #:
 
 Azure Storage je základní vrstvu služby úložiště pro moderní aplikace, které jsou závislé na odolnost, dostupnost a škálovatelnost, abyste splnili požadavky zákazníků. F # programy mohou komunikovat přímo s služby Azure storage, pomocí techinques popsané v následujících článcích.
 
-* [Začínáme s Azure Blob storage pomocí F #](blob-storage.md)
-* [Začínáme s Azure File storage pomocí F #](file-storage.md)
-* [Začínáme s Azure Queue storage pomocí F #](queue-storage.md)
-* [Začínáme s Azure Table storage pomocí F #](table-storage.md)
+* [Začínáme s Azure Blob Storage s využitím F#](blob-storage.md)
+* [Začínáme s Azure File Storage s využitím F#](file-storage.md)
+* [Začínáme s Azure Queue Storage s využitím F#](queue-storage.md)
+* [Začínáme s Azure Table Storage s využitím F#](table-storage.md)
 
 Úložiště Azure můžete také použít ve spojení s Azure Functions prostřednictvím deklarativní konfigurace spíše než explicitní volání rozhraní API. V tématu [Azure Functions triggerů a vazeb pro Azure Storage](/azure/azure-functions/functions-bindings-storage) což zahrnuje příklady F #.
 

@@ -13,11 +13,11 @@ ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b23a90de991b31005ba5a07a959c717c24869ffb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b01aa5d0fade29d04313a9db2e44517b6512166b
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="async-in-depth"></a>Asynchronní podrobněji
 
@@ -27,8 +27,8 @@ Zápis vázané na vstupně-výstupních operací a procesor asynchronní kód j
 
 Úlohy jsou konstrukce používané k implementaci, která se označuje jako [Promise modelu Concurrency](https://en.wikipedia.org/wiki/Futures_and_promises).  Stručně řečeno nabízejí můžete "příslib" které pracují se dokončit později, umožňují koordinaci s promise s čistou rozhraní API.
 
-*   `Task`představuje jednu operaci, která nevrátí hodnotu.
-*   `Task<T>`představuje jednu operaci, která vrátí hodnotu typu `T`.
+*   `Task` představuje jednu operaci, která nevrátí hodnotu.
+*   `Task<T>` představuje jednu operaci, která vrátí hodnotu typu `T`.
 
 Je důležité důvod o úlohách jako abstrakce pracovní děje asynchronně, a *není* abstrakci přes dělení na vlákna. Ve výchozím nastavení úlohy spustit na aktuální pracovní vlákno a delegovat do operačního systému, podle potřeby. Volitelně můžete úlohy můžete explicitně požadovanou ke spuštění na samostatné vlákno prostřednictvím `Task.Run` rozhraní API.
 
@@ -142,16 +142,17 @@ public async Task<int> CalculateResult(InputData data)
 }
 ```
 
-`CalculateResult()`provede ve vlákně na byla volána.  Při volání `Task.Run`, se zařadí do fronty náročná operace vázané na procesor, `DoExpensiveCalculation()`, ve fondu vláken a přijímá `Task<int>` zpracování.  `DoExpensiveCalculation()`Nakonec běží souběžně na další dostupný vlákno, pravděpodobně na jiné jádro procesoru.  Je možné souběžných práci při `DoExpensiveCalculation()` je zaneprázdněn na jiné vlákno, protože vláken, který označuje `CalculateResult()` stále probíhá.
+`CalculateResult()` provede ve vlákně na byla volána.  Při volání `Task.Run`, se zařadí do fronty náročná operace vázané na procesor, `DoExpensiveCalculation()`, ve fondu vláken a přijímá `Task<int>` zpracování.  `DoExpensiveCalculation()` Nakonec běží souběžně na další dostupný vlákno, pravděpodobně na jiné jádro procesoru.  Je možné souběžných práci při `DoExpensiveCalculation()` je zaneprázdněn na jiné vlákno, protože vláken, který označuje `CalculateResult()` stále probíhá.
 
 Jednou `await` bez provedení `CalculateResult()` jeho volajícího, povolení dalších práce s aktuálním vláknem při, je vhodné `DoExpensiveCalculation()` je produkování výsledku.  Po dokončení, výsledek je zařadit do fronty ke spuštění na hlavní vlákno.  Nakonec se vrátí hlavního vlákna pro provádění `CalculateResult()`, na bod, který bude mít výsledek `DoExpensiveCalculation()`.
 
 ### <a name="why-does-async-help-here"></a>Proč asynchronní pomáhá tady?
 
-`async`a `await` jsou nejlepší praxi Správa pracovních vázané na procesor, když potřebujete odezvy. Existuje více vzory pro použití modifikátoru async s pracovní vázané na procesor. Je důležité si uvědomit, že je malé náklady na použití modifikátoru async a není doporučeno pro úzkou smyčky.  Je to na určit, jak psát kód kolem této nové funkci.
+`async` a `await` jsou nejlepší praxi Správa pracovních vázané na procesor, když potřebujete odezvy. Existuje více vzory pro použití modifikátoru async s pracovní vázané na procesor. Je důležité si uvědomit, že je malé náklady na použití modifikátoru async a není doporučeno pro úzkou smyčky.  Je to na určit, jak psát kód kolem této nové funkci.
 
 ## <a name="see-also"></a>Viz také
 
 [Asynchronní programování v jazyce C#](~/docs/csharp/async.md)   
+[Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../csharp/programming-guide/concepts/async/index.md)  
 [Asynchronní programování v F #](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)   
 [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)

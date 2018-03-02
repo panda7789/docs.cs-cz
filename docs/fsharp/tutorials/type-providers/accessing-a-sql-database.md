@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 1c413eb0-16a5-4c1a-9a4e-ad6877e645d6
-ms.openlocfilehash: 7177eca33ded712308bbc6198040d833b7364d55
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: dbc5d889fb7883b4327180fdf34accf45bf519e7
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="walkthrough-accessing-a-sql-database-by-using-type-providers"></a>Návod: Přístup k databázi SQL s použitím zprostředkovatelů typů
 
 > [!NOTE]
-Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](http://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
+Tento průvodce byl vytvořen pro F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](https://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
 
 > [!NOTE]
 Rozhraní API referenčních odkazů se dostanete na webu MSDN.  Referenční dokumentace rozhraní API docs.microsoft.com není dokončena.
@@ -96,7 +96,7 @@ V tomto kroku vytvoříte zprostředkovatele typů pro svého schématu databáz
 
 #### <a name="to-set-up-the-type-provider-from-a-direct-database-connection"></a>Nastavit typ poskytovatele z databáze přímé připojení
 
-Existují dvě důležité řádky kódu, které potřebujete k vytvoření typy, které můžete použít k dotazu na SQL databázi pomocí typ poskytovatele. Nejprve vytvořit instanci zprostředkovatele typu. K tomu, vytvořit, jak vypadá typ zkratka pro `SqlDataConnection` s statické obecný parametr. `SqlDataConnection`je typ zprostředkovatele SQL a neměla by být zaměňovat s `SqlConnection` typ, který je použit při programování pro technologii ADO.NET. Pokud máte databázi, která chcete připojit a mít připojovací řetězec, použijte následující kód k vyvolání typ poskytovatele. Nahraďte vlastní připojovací řetězec pro zadaný řetězec příklad. Například pokud jako by se tento server je MYSERVER a instanci databáze je INSTANCE, název databáze je databáze a chcete použít ověřování systému Windows pro přístup k databázi a pak připojovací řetězec zadaný v následujícím příkladu kódu.
+Existují dvě důležité řádky kódu, které potřebujete k vytvoření typy, které můžete použít k dotazu na SQL databázi pomocí typ poskytovatele. Nejprve vytvořit instanci zprostředkovatele typu. K tomu, vytvořit, jak vypadá typ zkratka pro `SqlDataConnection` s statické obecný parametr. `SqlDataConnection` je typ zprostředkovatele SQL a neměla by být zaměňovat s `SqlConnection` typ, který je použit při programování pro technologii ADO.NET. Pokud máte databázi, která chcete připojit a mít připojovací řetězec, použijte následující kód k vyvolání typ poskytovatele. Nahraďte vlastní připojovací řetězec pro zadaný řetězec příklad. Například pokud jako by se tento server je MYSERVER a instanci databáze je INSTANCE, název databáze je databáze a chcete použít ověřování systému Windows pro přístup k databázi a pak připojovací řetězec zadaný v následujícím příkladu kódu.
 
 ```fsharp
 type dbSchema = SqlDataConnection<"Data Source=MYSERVER\INSTANCE;Initial Catalog=MyDatabase;Integrated Security=SSPI;">
@@ -452,12 +452,12 @@ INSERT INTO Table3 (Id, Name, Data)
 ## <a name="see-also"></a>Viz také
 [Zprostředkovatelé typů](index.md)
 
-[Sqldataconnection – zprostředkovatel typu](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqldataconnection-type-provider-%5bfsharp%5d)
+[SqlDataConnection Type Provider](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqldataconnection-type-provider-%5bfsharp%5d)
 
 [Návod: Generování typů F # ze souboru DBML](generating-fsharp-types-from-dbml.md)
 
-[Výrazy dotazů](../../language-reference/query-expressions.md)
+[Výrazy dotazu](../../language-reference/query-expressions.md)
 
-[Technologie LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)
+[LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)
 
 [SqlMetal.exe &#40; Nástroj pro vytváření kódu &#41;](https://msdn.microsoft.com/library/bb386987)

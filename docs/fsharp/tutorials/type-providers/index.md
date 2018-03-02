@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 25697ef6-465e-4248-9de5-1d199d4a8b59
-ms.openlocfilehash: 68462a24a9fbd1ee671d7e335f2774adf3476750
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f721b5b378bf70fb594cad66bd90bd96a0320ee2
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="type-providers"></a>Zprostředkovatelé typů
 
 > [!NOTE]
-Tato příručka byla zapsána z F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](http://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
+Tato příručka byla zapsána z F # 3.0 a budou aktualizovány.  V tématu [FSharp.Data](https://fsharp.github.io/FSharp.Data/) pro různé platformy, aktuální typ poskytovatele.
 
 Poskytovatel typů jazyka F# je komponenta, která poskytuje typy, vlastnosti a metody pro váš program. Poskytovatelé typů jsou významnou součástí podpory informačně obsáhlého programování v jazyce F# 3.0. Klíčem k informačně obsáhlému programování je odstranění bariér, které překážejí v práci s rozličnými zdroji informací nalezenými na Internetu a v moderních podnikových prostředích. Jednou takovou významnou překážkou pro zahrnutí zdroje informací do programu je nutnost reprezentovat tyto informace jako typy, vlastnosti a metody pro prostředí programovacího jazyka. Ruční psaní těchto typů je časově velmi náročné a obtížné na správu. Běžnou alternativou je použití generátoru kódu, který do projektu přidává soubory. Konvenční typy generování kódu však nelze dobře integrovat do průzkumných režimů programování podporovaných jazykem F#, protože generovaný kód musí být nahrazen vždy, když je upraven odkaz na službu.
 
@@ -45,9 +45,9 @@ V případě potřeby lze vytvořit vlastní poskytovatele typů nebo vytvořit
 |[Návod: Generování Př &#35; Typy ze souboru schématu EDMX](generating-fsharp-types-from-edmx.md)|Vysvětluje způsob používání poskytovatele typů EdmxFile pro přístup k tabulkám a uloženým procedurám databáze SQL na základě souboru EDMX, v němž je uložena specifikace schématu Entity Framework.|
 |[Kurz: Vytvoření zprostředkovatele typů](creating-a-type-provider.md)|Poskytuje informace o psaní vlastních poskytovatelů typů.|
 |[Zabezpečení zprostředkovatele typů](type-provider-security.md)|Poskytuje informace o zásadách bezpečnosti při vývoji poskytovatelů typů.|
-|[Řešení potíží se zprostředkovateli typu](troubleshooting-type-providers.md)|Poskytuje informace o běžných problémech, které mohou vzniknout při práci s poskytovateli typů, a zahrnuje návrhy řešení.|
+|[Řešení potíží se zprostředkovateli typů](troubleshooting-type-providers.md)|Poskytuje informace o běžných problémech, které mohou vzniknout při práci s poskytovateli typů, a zahrnuje návrhy řešení.|
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](../../language-reference/index.md)
+[Referenční dokumentace jazyka F#](../../language-reference/index.md)
 
-[Visual F #](../../index.md)
+[Visual F#](../../index.md)

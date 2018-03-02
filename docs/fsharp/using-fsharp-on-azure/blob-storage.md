@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: c5b74a4f-dcd1-4849-930c-904b6c8a04e1
-ms.openlocfilehash: 9011bdceabd1b5e0541ecb94f3e812871688025b
-ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
+ms.openlocfilehash: 5be948e100c496bc6613f1fdfb826ece5de6df8e
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage pomocí F # #
 
@@ -236,7 +236,7 @@ Podrobnosti na šifrování dat objektů blob najdete v tématu [v příručce .
 Teď, když jste se naučili základy používání Blob storage, postupujte podle následujících odkazech na další informace.
 
 ### <a name="tools"></a>Nástroje
-- [F # AzureStorageTypeProvider](http://fsprojects.github.io/AzureStorageTypeProvider/) F # – zprostředkovatel typu používanou prozkoumat prostředky Blob, tabulky a fronty Azure Storage a snadno použít operace CRUD s nimi.
+- [F # AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/) F # – zprostředkovatel typu používanou prozkoumat prostředky Blob, tabulky a fronty Azure Storage a snadno použít operace CRUD s nimi.
 - [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage) k F # rozhraní API pro používání služby Microsoft Azure Table Storage
 - [Microsoft Azure Storage Explorer (MASE)](/azure/vs-azure-tools-storage-manage-with-storage-explorer) je samostatná aplikace, volná, od společnosti Microsoft, který umožňuje vizuálně pracovat s daty Azure Storage ve Windows, OS X a Linux.
 
@@ -251,4 +251,4 @@ Teď, když jste se naučili základy používání Blob storage, postupujte pod
 - [Přenos dat pomocí nástroje příkazového řádku azcopy v systému Windows](/azure/storage/common/storage-use-azcopy)
 - [Přenos dat pomocí nástroje příkazového řádku azcopy v systému Linux](/azure/storage/common/storage-use-azcopy-linux)
 - [Konfigurace připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
-- [Blog týmu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/)
+- [Blog týmu Azure Storage](https://blogs.msdn.microsoft.com/windowsazurestorage/)

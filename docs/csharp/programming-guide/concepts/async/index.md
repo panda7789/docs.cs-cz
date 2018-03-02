@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b845bf6f31ef84c78dcfd84832036ca2f2c4cae4
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 6822143df2d02c284d7506d180139c18cfbaf370
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -41,7 +41,7 @@ Asynchronie je obzvláště užitečná pro aplikace, které přistupují k vlá
  Asynchronní přístup přidává ekvivalent automatického přenosu do seznamu možností, z nichž můžete vybírat při vytváření asynchronní operace. To znamená, že získáte všechny výhody tradičního asynchronního programování, ale s mnohem menším úsilím ze strany vývojáře.  
   
 ##  <a name="BKMK_HowtoWriteanAsyncMethod"></a> Asynchronní metody jsou psát  
- [Asynchronní](../../../../csharp/language-reference/keywords/async.md) a [await](../../../../csharp/language-reference/keywords/await.md) klíčová slova v jazyce C# jsou srdcem asynchronní programování. Pomocí těchto dvou klíčová slova, můžete prostředky v rozhraní .NET Framework, .NET Core nebo prostředí Windows Runtime téměř jako snadno, jako je vytváření synchronní metoda vytvoření asynchronní metodu. Asynchronní metody, které definujete pomocí `async` a `await` se označují jako *asynchronní metody*.  
+ [Asynchronní](../../../../csharp/language-reference/keywords/async.md) a [await](../../../../csharp/language-reference/keywords/await.md) klíčová slova v jazyce C# jsou srdcem asynchronní programování. Pomocí těchto dvou klíčová slova, můžete prostředky v rozhraní .NET Framework, .NET Core nebo prostředí Windows Runtime téměř jako snadno, jako je vytváření synchronní metoda vytvoření asynchronní metodu. Asynchronní metody, které definujete pomocí `async` – klíčové slovo se označují jako *asynchronní metody*.  
   
  Následující příklad ukazuje asynchronní metodu. Téměř vše v rámci kódu by vám mělo být zcela známé. Komentáře volají funkce, které jste přidali při tvorbě asynchronie.  
   
@@ -92,21 +92,21 @@ Následující charakteristiky představují shrnutí, co dělá předchozí př
   
 -   Návratový typ je jeden z následujících typů:  
   
-    -   <xref:System.Threading.Tasks.Task%601> Pokud vaše metoda má ve kterém má operand typu TResult příkaz return.  
+    -   <xref:System.Threading.Tasks.Task%601> Pokud vaše metoda má příkaz return, ve kterém má operand typu `TResult`.  
   
     -   <xref:System.Threading.Tasks.Task> Pokud vaše metoda má žádný příkaz return nebo příkaz return s žádné operand.  
   
-    -   `Void` Pokud píšete asynchronní obslužnou rutinu.  
+    -   `void` Pokud píšete asynchronní obslužnou rutinu.  
 
     -   Jiný typ, který má `GetAwaiter` – metoda (počínaje C# 7).
   
-     Další informace naleznete v části „Návratové typy a parametry“ dále v tomto tématu.  
+     Další informace najdete v tématu [parametry a vrátí typy](#BKMK_ReturnTypesandParameters) části.  
   
 -   Metoda obvykle zahrnuje nejméně jeden očekávaný výraz, který označuje bod, kde metoda nemůže pokračovat, dokud očekávaná asynchronní operace nebude dokončena. Během této doby je metoda pozastavena a ovládací prvek se vrátí volajícímu metody. Další část tohoto tématu ukazuje, co se stane v okamžiku pozastavení.  
   
  V asynchronních metodách používáte zadaná klíčová slova a typy pro označení, jakou akci chcete provést, a kompilátor udělá zbytek, včetně udržování přehledu o tom, co musí nastat, když se řízení vrátí do bodu „await“ pozastavené metody. Některé běžné procesy, jako je zpracování smyček a výjimek, může být v tradičním asynchronním kódu obtížné zpracovat. V asynchronní metodě zapisujete tyto prvky podobně, jako byste to udělali v synchronním řešení, a problém je vyřešen.  
   
- Další informace o asynchrony v předchozích verzích rozhraní .NET Framework najdete v tématu [TPL a tradiční rozhraní .NET Framework asynchronní programování](http://msdn.microsoft.com/library/e7b31170-a156-433f-9f26-b1fc7cd1776f).  
+ Další informace o asynchrony v předchozích verzích rozhraní .NET Framework najdete v tématu [TPL a tradiční rozhraní .NET Framework asynchronní programování](../../../../standard/parallel-programming/tpl-and-traditional-async-programming.md).  
   
 ##  <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a> Co se stane, že v asynchronní metody  
  Nejdůležitějším principem, který je třeba pochopit v asynchronním programování, je, jak ovládat přesuny toků od metody k metodě. Následující diagram vás provede procesem.  
@@ -132,7 +132,7 @@ Následující charakteristiky představují shrnutí, co dělá předchozí př
      Proto `AccessTheWebAsync` používá operátor await pozastavit jeho průběh a yield – ovládací prvek na metodu, která volá `AccessTheWebAsync`. `AccessTheWebAsync` Vrátí `Task<int>` volajícímu. Úloha představuje slib vyrábět celé číslo výsledku, který má délku staženého řetězce.  
   
     > [!NOTE]
-    >  Pokud `GetStringAsync` (a proto `getStringTask`) dokončení před `AccessTheWebAsync` čeká se pořád řízení `AccessTheWebAsync`. Nákladů na pozastavení a vrátilo se do `AccessTheWebAsync` by dojít ke znehodnocení části Pokud volané asynchronní proces (`getStringTask`) je již dokončena a AccessTheWebSync nemusí čekat na konečný výsledek.  
+    >  Pokud `GetStringAsync` (a proto `getStringTask`) dokončení před `AccessTheWebAsync` čeká se pořád řízení `AccessTheWebAsync`. Nákladů na pozastavení a vrátilo se do `AccessTheWebAsync` by dojít ke znehodnocení části Pokud volané asynchronní proces (`getStringTask`) je již dokončena a `AccessTheWebSync` nemusí čekat na konečný výsledek.  
   
      Uvnitř volajícího (v tomto případě obslužná rutina události) bude vzor zpracování pokračovat. Volající může provádět další činnosti, které nezávisí na výsledku z `AccessTheWebAsync` před čeká na tento výsledek nebo volající může await okamžitě.   Obslužné rutiny události se čeká na `AccessTheWebAsync`, a `AccessTheWebAsync` čeká `GetStringAsync`.  
   
@@ -146,7 +146,7 @@ Další informace o toku řízení najdete v tématu [řízení toku v asynchron
 ##  <a name="BKMK_APIAsyncMethods"></a> Rozhraní API asynchronní metody  
  Možná se ptáte kde najít metody, jako `GetStringAsync` tuto podporu asynchronní programování. Rozhraní .NET Framework 4.5 nebo vyšší a .NET Core obsahují mnoho členů, které pracují s `async` a `await`. Můžete je rozpoznat příponou "Asynchronní", který se připojí k název člena a jejich návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Například `System.IO.Stream` třída obsahuje metody, jako například <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A>, a <xref:System.IO.Stream.WriteAsync%2A> spolu s synchronních metod <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A>, a <xref:System.IO.Stream.Write%2A>.  
   
- Prostředí Windows Runtime také obsahuje mnoho způsobů, které můžete použít s `async` a `await` v aplikacích pro Windows. Další informace a metody příklad najdete v tématu [rychlý start: pro asynchronní programování pomocí operátoru await](/previous-versions/windows/apps/hh452713(v=win.10)), [asynchronní programování (aplikace pro Windows Store)](/previous-versions/windows/apps/hh464924(v=win.10)), a [WhenAny: Přemostění rozhraní .NET Framework a prostředí Windows Runtime](https://msdn.microsoft.com/library/jj635140(v=vs.120).aspx).  
+ Prostředí Windows Runtime také obsahuje mnoho způsobů, které můžete použít s `async` a `await` v aplikacích pro Windows. Další informace najdete v tématu [zřetězení a asynchronní programování](/windows/uwp/threading-async/) pro vývoj UWP a [asynchronní programování (aplikace pro Windows Store)](/previous-versions/windows/apps/hh464924(v=win.10)) a [rychlý start: pomocí operátoru await pro asynchronní programování](/previous-versions/windows/apps/hh452713(v=win.10)) Pokud používáte starší verze prostředí Windows Runtime.  
   
 ##  <a name="BKMK_Threads"></a> Vláken  
 Asynchronní metody mají být neblokující operace. `await` Výrazu v asynchronní metody neblokuje aktuální vlákno spuštěného awaited úloh. Namísto toho se výraz zaregistruje pro zbývající metody jako pokračování a vrátí řízení volajícímu asynchronní metody.  
@@ -158,7 +158,7 @@ Asynchronní přístup při asynchronním programování se doporučuje v témě
 ##  <a name="BKMK_AsyncandAwait"></a> Async a operátoru await  
  Pokud určíte, že je metoda asynchronní metody pomocí [asynchronní](../../../../csharp/language-reference/keywords/async.md) modifikátor, povolte následující dvě možnosti.  
   
--   Můžete použít označený asynchronní metody [await](../../../../csharp/language-reference/keywords/await.md) k určení bodů pozastavení. Operátor await sděluje kompilátoru, že s asynchronními metodami nelze za daným bodem pokračovat, dokud nebude dokončen očekávaný asynchronní proces. Během této doby se ovládací prvek vrátí volajícímu asynchronní metody.  
+-   Můžete použít označený asynchronní metody [await](../../../../csharp/language-reference/keywords/await.md) k určení bodů pozastavení. `await` Operátor říká kompilátoru za tento bod nemůže pokračovat asynchronní metody, dokud awaited asynchronní proces nebude hotový. Během této doby se ovládací prvek vrátí volajícímu asynchronní metody.  
   
      Pozastavení použití asynchronní metody na `await` výrazu není tvoří výstupu z metody, a `finally` nespouštět bloky.  
   
@@ -232,8 +232,7 @@ Asynchronní rozhraní API v prostředí Windows Runtime programování mít jed
 -   <xref:Windows.Foundation.IAsyncActionWithProgress%601>  
   
 -   <xref:Windows.Foundation.IAsyncOperationWithProgress%602>  
-  
- Další informace a příklady naleznete v tématu [rychlý start: pro asynchronní programování pomocí operátoru await](/previous-versions/windows/apps/hh452713(v=win.10)).  
+   
   
 ##  <a name="BKMK_NamingConvention"></a> Zásady vytváření názvů  
  Podle konvence připojit "Asynchronní" na názvy metod, které mají `async` modifikátor.  
@@ -342,4 +341,6 @@ namespace AsyncFirstExample
   
 ## <a name="see-also"></a>Viz také  
  [async](../../../../csharp/language-reference/keywords/async.md)  
- [await](../../../../csharp/language-reference/keywords/await.md)
+ [await](../../../../csharp/language-reference/keywords/await.md)  
+ [Asynchronní programování](../../../../csharp/async.md)  
+ [Async – přehled](../../../../standard/async.md)  

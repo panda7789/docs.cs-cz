@@ -2,26 +2,27 @@
 title: Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38ccf61b488a40d100895d0dd2bb4bdecca7eba5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96c7c93056b11c08ccdfa48a0d78f2996c2d86d4
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
-# <a name="visual-basic-guide"></a>Příručka jazyka Visual Basic
+# <a name="visual-basic-guide"></a>Průvodce Visual Basicem
 
 Visual Basic je vytvořena pro efektivní vytváření bezpečnost typů a objektově orientované aplikace. Visual Basic umožňuje vývojářům zaměřují na Windows, webové a mobilní zařízení. Stejně, jako u všech jazycích cílení na rozhraní Microsoft .NET Framework, programy vytvořené v výhody jazyka Visual Basic z zabezpečení a jazyk interoperability.  
   
  Generování jazyka Visual Basic pokračuje tradici poskytování rychlý a snadný způsob, jak vytvářet aplikace založené na rozhraní .NET Framework.  
   
- Pokud ještě nemáte jazyka Visual Basic, můžete získat verzi Visual Studia, která zahrnuje jazyka Visual Basic zdarma z [Visual Studio](https://www.visualstudio.com/products/downloads) lokality.  
+ Pokud ještě nemáte jazyka Visual Basic, můžete získat verzi Visual Studia, která zahrnuje jazyka Visual Basic zdarma z [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) lokality.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Začínáme](../visual-basic/getting-started/index.md)  
@@ -29,7 +30,7 @@ Visual Basic je vytvořena pro efektivní vytváření bezpečnost typů a objek
    
  [Programování konceptů](../visual-basic/programming-guide/concepts/index.md) uvede jazykové koncepty, které jsou velmi užitečné pro programátory v jazyce Visual Basic.
 
- [Struktura programu a pravidla týkající se kódu](../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [Struktura programu a zásady týkající se kódu](../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Obsahuje dokumentaci o základní konvence strukturu a kód jazyka Visual Basic, například zásady vytváření názvů, komentáře v kódu a omezení v jazyce Visual Basic.  
   
  [Funkce jazyka Visual Basic](../visual-basic/programming-guide/language-features/index.md)  
@@ -51,7 +52,7 @@ Visual Basic je vytvořena pro efektivní vytváření bezpečnost typů a objek
  Obsahuje odkazy na podrobné pokyny pro běžné scénáře.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Začít s vývojem pomocí sady Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)  
+ [Začínáme s vývojem pomocí jazyka Visual C++](/visualstudio/ide/get-started-developing-with-visual-studio)  
  Poskytuje odkazy na témata, které vám pomůžou získat informace o základní informace o sadě Visual Studio.  
   
  [Knihovna tříd rozhraní .NET framework](http://go.microsoft.com/fwlink/?LinkID=227195)  

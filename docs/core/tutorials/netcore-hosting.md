@@ -1,7 +1,7 @@
 ---
 title: "Hostování rozhraní .NET Core"
 description: "Hostování na .NET Core runtime z nativního kódu"
-keywords: "Rozhraní .NET, .NET core, který je hostitelem, který je hostitelem .NET Core"
+keywords: .NET, .NET Core, Hosting, Hosting .NET Core
 author: mjrousos
 ms.author: mikerou
 ms.date: 2/3/2017
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
-ms.workload: dotnetcore
-ms.openlocfilehash: 2f421c72e8099a328fbc255d51f77a9cd0724e58
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 3c358ab9173032b1f76d30b756ee6290233b2702
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="hosting-net-core"></a>Hostování rozhraní .NET Core
 
@@ -26,7 +27,7 @@ Tento článek nabízí přehled kroky nutné ke spuštění z nativního kódu 
 
 ## <a name="prerequisites"></a>Požadavky
 
-Vzhledem k tomu, že mají hostitelé nativních aplikací, v tomto kurzu se bude zabývat vytváření aplikace C++ hostitele .NET Core. Budete potřebovat C++ vývojové prostředí (například poskytnutá [Visual Studio](https://www.visualstudio.com/downloads/)).
+Vzhledem k tomu, že mají hostitelé nativních aplikací, v tomto kurzu se bude zabývat vytváření aplikace C++ hostitele .NET Core. Budete potřebovat C++ vývojové prostředí (například poskytnutá [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)).
 
 Můžete také jednoduchou aplikaci .NET Core k testování hostitele, takže byste měli nainstalovat [.NET Core SDK](https://www.microsoft.com/net/core) a [sestavení malé testování aplikace .NET Core](../../core/tutorials/with-visual-studio.md) (například "Zdravím svět" aplikace). Vytvořit novou šablonou projektu konzoly .NET Core "Zdravím svět" aplikace je dostačující.
 
@@ -82,12 +83,12 @@ Jakmile se rozhodnete, které AppDomain flags používat, musí být definovány
 
 Běžné vlastnosti objektu třídy AppDomain:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam sestavení cesty (oddělený podle ';' v systému Windows a ':' v systému Unix) které domény aplikace by měl upřednostňovat načítání a udělte úplný vztah důvěryhodnosti (i v částečně důvěryhodné domény). Tento seznam slouží k obsahovat sestavení 'architektury a další důvěryhodné moduly, podobně jako do mezipaměti GAC ve scénářích rozhraní .NET Framework. Někteří hostitelé budou vedle put žádnou knihovnu *coreclr.dll* v tomto seznamu, ostatní uživatelé mají pevně manifesty seznam důvěryhodných sestavení pro svoje účely.
-* `APP_PATHS`Toto je seznam cest k testu v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platformy sestavení (TPA). Tyto cesty jsou určeny jako umístění, kde můžete najít sestavení uživatelů. V doméně AppDomain v izolovaném prostoru sestavení, které jsou načteny z těchto cest bude poskytnuta pouze částečnou důvěryhodností. Běžné cesty APP_PATH obsahovat cestu, kterou aplikace target byla načtena z nebo jiných umístění, kde jsou známé prostředky uživatele za provozu.
-*  `APP_NI_PATHS`Tento seznam je velmi podobné APP_PATHS s tím rozdílem, že má měl představovat cesty, které bude zjištěný pro nativní bitové kopie.
-*  `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cesty, které by měl zavaděč testu při hledání nativních knihoven DLL volání prostřednictvím p/invoke.
-*  `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cest k testu v pro prostředek satelitní sestavení (v podadresářích specifické pro jazykovou verzi).
-*  `AppDomainCompatSwitch`Tento řetězec Určuje, které adaptivní kompatibility se mají použít pro sestavení bez explicitního Přezdívka Framework cíl (úrovni sestavení atribut, která určuje, které Framework sestavení je určen ke spouštění). Obvykle to musí být nastavena na `"UseLatestBehaviorWhenTFMNotSpecified"` , ale některé hostitele nastavit tak, aby starší Silverlight nebo Windows Phone adaptivní kompatibility, místo toho získat.
+* `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam sestavení cesty (oddělený podle ';' v systému Windows a ':' v systému Unix) které domény aplikace by měl upřednostňovat načítání a udělte úplný vztah důvěryhodnosti (i v částečně důvěryhodné domény). Tento seznam slouží k obsahovat sestavení 'architektury a další důvěryhodné moduly, podobně jako do mezipaměti GAC ve scénářích rozhraní .NET Framework. Někteří hostitelé budou vedle put žádnou knihovnu *coreclr.dll* v tomto seznamu, ostatní uživatelé mají pevně manifesty seznam důvěryhodných sestavení pro svoje účely.
+* `APP_PATHS` Toto je seznam cest k testu v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platformy sestavení (TPA). Tyto cesty jsou určeny jako umístění, kde můžete najít sestavení uživatelů. V doméně AppDomain v izolovaném prostoru sestavení, které jsou načteny z těchto cest bude poskytnuta pouze částečnou důvěryhodností. Běžné cesty APP_PATH obsahovat cestu, kterou aplikace target byla načtena z nebo jiných umístění, kde jsou známé prostředky uživatele za provozu.
+*  `APP_NI_PATHS` Tento seznam je velmi podobné APP_PATHS s tím rozdílem, že má měl představovat cesty, které bude zjištěný pro nativní bitové kopie.
+*  `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cesty, které by měl zavaděč testu při hledání nativních knihoven DLL volání prostřednictvím p/invoke.
+*  `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cest k testu v pro prostředek satelitní sestavení (v podadresářích specifické pro jazykovou verzi).
+*  `AppDomainCompatSwitch` Tento řetězec Určuje, které adaptivní kompatibility se mají použít pro sestavení bez explicitního Přezdívka Framework cíl (úrovni sestavení atribut, která určuje, které Framework sestavení je určen ke spouštění). Obvykle to musí být nastavena na `"UseLatestBehaviorWhenTFMNotSpecified"` , ale některé hostitele nastavit tak, aby starší Silverlight nebo Windows Phone adaptivní kompatibility, místo toho získat.
 
 V našem [jednoduchého ukázkového hostitele](https://github.com/dotnet/docs/tree/master/samples/core/hosting), tyto vlastnosti jsou nastavíte takto:
 
@@ -132,7 +133,7 @@ Příklad použití coreclrhost.h (namísto přímo mscoree.h) si můžete prohl
 1. Identifikovat spravovaného kódu k provedení (z příkazového řádku parametrů, třeba). 
 2. Načtení knihovny CoreCLR.
     1. `dlopen("./libcoreclr.so", RTLD_NOW | RTLD_LOCAL);` 
-3. Získání ukazatele na funkce do CoreCLR na `coreclr_initialize`, `coreclr_create_delegate`, `coreclr_execute_assembly`, a `coreclr_shutdown` funkcí pomocí`dlsym`
+3. Získání ukazatele na funkce do CoreCLR na `coreclr_initialize`, `coreclr_create_delegate`, `coreclr_execute_assembly`, a `coreclr_shutdown` funkcí pomocí `dlsym`
     1. `coreclr_initialize_ptr coreclr_initialize = (coreclr_initialize_ptr)dlsym(coreclrLib, "coreclr_initialize");`
 4. Nastavte vlastnosti domény aplikace (např. seznam TPA). Toto je stejný jako krok 5 z mscoree pracovní postup, výše.
 5. Použití `coreclr_initialize` spuštění modulu runtime a vytvoření objektu AppDomain. Tím se vytvoří `hostHandle` ukazatele, který se použije v budoucnosti hostování volání.
