@@ -9,7 +9,6 @@
 ### [Novinky v rozhraní .NET Standard](standard/whats-new/whats-new-in-dotnet-standard.md)
 ## [Cílové architektury](standard/frameworks.md)
 ## [Slovníček k technologii .NET](standard/glossary.md)
-## [Vytváření dokumentace pomocí mdoc](standard/mdoc/index.md)
 ## [Doprovodné materiály k architektuře](standard/guidance-architecture.md)
 ### [Navrhování moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure](standard/modern-web-apps-azure-architecture/)
 ### [Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů s Windows](standard/modernize-with-azure-and-containers/)
@@ -25,9 +24,10 @@
 ### [Přehled knihovny tříd](standard/class-library-overview.md)
 ### [Základní typy](standard/base-types/)
 ## [Knihovny tříd .NET](standard/class-libraries.md)
-## Analyzátory
+## [Analyzátory](standard/analyzers/index.md)
 ### [Analyzátor rozhraní API](standard/analyzers/api-analyzer.md) 
 ### [Analyzátor přenositelnosti](standard/analyzers/portability-analyzer.md)
+### [Analyzátor architektury](standard/analyzers/framework-analyzer.md)
 ## [Zpracování a vyvolání výjimek](standard/exceptions/)
 ## [Formát souborů sestavení .NET](standard/assembly-format.md)
 ## [Uvolňování paměti](standard/garbage-collection/)
@@ -266,6 +266,7 @@
 ### [Jak parsovat řetězce metodou `String.Split`](csharp/how-to/parse-strings-using-split.md)
 ### [Jak řetězit řetězce](csharp/how-to/concatenate-multiple-strings.md)
 ### [Postupy převedení řetězce na typ DateTime](standard/base-types/parsing-datetime.md)
+### [Jak hledat řetězce](csharp/how-to/search-strings.md)
 <!-- End of C# Concepts section -->
 ## [Sada .NET Compiler Platform SDK (rozhraní Roslyn API)](csharp/roslyn-sdk/)
 ## [Průvodce programováním v jazyce C#](csharp/programming-guide/)
