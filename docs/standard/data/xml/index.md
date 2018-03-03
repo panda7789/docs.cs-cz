@@ -9,18 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 22a2eb72dc06a644171c143a61698e661d2c66c6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 824e06a00c4242d8ee38bdfc5a57151a71e4f285
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které vám umožní snadno vytvářet aplikace podporující rozhraní XML. Třídy v následujících oborů názvů podporují analýzy a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.  
@@ -96,5 +96,3 @@ Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které
  [Zabezpečení](../../../../docs/standard/security/index.md)  
  Obsahuje přehled systému zabezpečení rozhraní .NET Framework.  
   
- [Středisko pro vývojáře XML](http://go.microsoft.com/fwlink/?linkid=42458)  
- Poskytuje další technické informace, soubory ke stažení, diskusní skupiny a další prostředky pro vývojáře XML.

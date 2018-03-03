@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 9053724d-a1fb-4f0f-b9dc-7f6dd893e8ff
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: abb7c9322a9b7ddfd3e0add4d8b9be6941c5e240
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: c186b25aeaa42b7285316d7bc9de913dd7b89af7
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="sql-server-security"></a>SQL Server Security
-[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]má řadu funkcí, které podporují vytváření aplikace zabezpečené databáze.  
+[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] má řadu funkcí, které podporují vytváření aplikace zabezpečené databáze.  
   
  Společné aspekty zabezpečení, jako je krádež dat nebo vandalismu, platí bez ohledu na verzi [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] používáte. Integritu dat by měly být považovány porušení zabezpečení. Pokud data nejsou chráněna, je možné, že by se mohly stát nemá, pokud je povoleno manipulaci s daty ad hoc a data jsou nechtěně nebo neoprávněnému změnit nesprávné hodnoty nebo odstraní celý. Navíc často existují právní požadavky, které, musí být použito, jako je například správné úložiště důvěrné informace. Ukládání některé druhy osobních údajů je proscribed zcela, v závislosti na právního, které se vztahují v konkrétní příslušnosti.  
   
@@ -44,13 +46,12 @@ ms.lasthandoff: 01/17/2018
  Popisuje aspekty zabezpečení [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Zabezpečení a ochrana (databázový stroj)](http://msdn2.microsoft.com/library/bb510589\(SQL.100\).aspx.)  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]Témata týkající se webu knihy Online zabezpečení.  
-  
- [Důležité informace o zabezpečení pro SQL Server](http://go.microsoft.com/fwlink/?LinkId=98587)  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]Témata týkající se webu knihy Online zabezpečení.  
-  
+[Centrum zabezpečení pro databázový stroj systému SQL Server a databázi Azure SQL](/sql/relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database)  
+Popisuje důležité informace o zabezpečení pro SQL Server a databáze SQL Azure.
+
+[Důležité informace o zabezpečení pro instalaci serveru SQL](/sql/sql-server/install/security-considerations-for-a-sql-server-installation)  
+Popisuje aspekty zabezpečení, které je třeba zvážit před instalací systému SQL Server.
+
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)

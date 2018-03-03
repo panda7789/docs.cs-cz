@@ -20,21 +20,21 @@ helpviewer_keywords:
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 95f610922126074017802ef53670b26b3596e17c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8835bd09e041ce8bb36c09951ea5526d42ff0c3c
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Postupy: Podepisování dokumentů XML digitálními podpisy
-Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů XML dokumentu nebo jeho část dokumentu XML s digitální podpis.  XML – digitální podpisy (XMLDSIG) umožňují ověřte, že data nebyla změněna po podepsání.  Další informace o standardu XMLDSIG najdete v tématu doporučení World Wide Web Consortium (W3C) [syntaxe podpis XML a zpracování](http://go.microsoft.com/fwlink/?LinkID=136777).  
+Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů XML dokumentu nebo jeho část dokumentu XML s digitální podpis.  XML – digitální podpisy (XMLDSIG) umožňují ověřte, že data nebyla změněna po podepsání.  Další informace o standardu XMLDSIG najdete v tématu doporučení World Wide Web Consortium (W3C) [syntaxe podpis XML a zpracování](https://www.w3.org/TR/xmldsig-core/).  
   
  Příklad kódu v tomto postupu ukazuje, jak k digitálnímu podepisování celý dokument XML a připojit k dokumentu v podpis <`Signature`> elementu.  Tento příklad vytvoří podpisový klíč RSA, přidá klíč do zabezpečeného kontejneru klíčů a pak používá klíč k digitálnímu podepisování dokument XML.  Klíč lze načíst ověřit digitální podpis XML nebo lze použít k podepsání jiného dokumentu XML.  
   

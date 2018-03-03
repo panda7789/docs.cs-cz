@@ -1,5 +1,5 @@
 ---
-title: "Kompilátoru XSLT (xsltc.exe)"
+title: XSLT Compiler (xsltc.exe)
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -9,23 +9,23 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1148af537ef9b502c6f3a9a3cc0588eaed39ac2f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 36696617d1e28a370f6b15f15fb39bc816973f15
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="xslt-compiler-xsltcexe"></a>Kompilátoru XSLT (xsltc.exe)
+# <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
 Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestavení. Kompilované šablony stylů mohou být předány pak přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metoda. Podepsaná sestavení s xsltc.exe nelze vygenerovat.  
   
- Nástroj xsltc.exe je součástí sady Visual Studio 2008. Další informace najdete v tématu [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=89463).  
+ Nástroj xsltc.exe je součástí sady Visual Studio. Další informace najdete v tématu [Visual Studio stáhne](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`/debug[`+&#124;-`]`|Určuje, jestli se má generovat ladicí informace.<br /><br /> Určení `+` nebo `/debug`, způsobí, že kompilátor generovat ladicí informace a umístí jej do souboru databáze (PDB) programu. Je název vygenerovaný soubor PDB `assemblyName`pdb.<br /><br /> Určení `-`, který je v platnosti, pokud nezadáte `/debug`, způsobí, že žádné informace o ladění, který se má vytvořit. Generuje se prodejní sestavení. **Poznámka:** kompilace v režimu ladění může výrazně ovlivnit výkon XSLT.|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |`/nologo`|Potlačí zpráva o autorských právech kompilátoru ze zobrazení.|  
-|`/platform:``string`|Určuje platformy, které lze spustit sestavení. Následující text popisuje platformy platné hodnoty:<br /><br /> `x86`zkompiluje vaše sestavení ke spuštění 32-bit, kompatibilní s x86 common language runtime<br /><br /> `x64`zkompiluje vaše sestavení pro modul common language runtime 64-bit spustit na počítači, který podporuje AMD64 nebo EM64T sada instrukcí.<br /><br /> [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)]zkompiluje vaše sestavení pro modul common language runtime 64-bit spustit na počítači, který má [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] procesoru.<br /><br /> `anycpu`zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Toto nastavení je výchozí.|  
+|`/platform:``string`|Určuje platformy, které lze spustit sestavení. Následující text popisuje platformy platné hodnoty:<br /><br /> `x86` zkompiluje vaše sestavení ke spuštění 32-bit, kompatibilní s x86 common language runtime<br /><br /> `x64` zkompiluje vaše sestavení pro modul common language runtime 64-bit spustit na počítači, který podporuje AMD64 nebo EM64T sada instrukcí.<br /><br /> [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] zkompiluje vaše sestavení pro modul common language runtime 64-bit spustit na počítači, který má [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] procesoru.<br /><br /> `anycpu` Zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Toto nastavení je výchozí.|  
 |`/out:``assemblyName`|Určuje název sestavení, které je výstup. Pokud jsou k dispozici více šablon stylů, výchozí název sestavení název hlavní šablony stylů nebo první šablony stylů.<br /><br /> Pokud list stylu obsahuje skripty, skripty se uloží do samostatné sestavení. Z názvu hlavní sestavení se generují názvy sestavení skriptu. Například pokud jste zadali CustOrders.dll pro název sestavení, první sestavení skriptu název CustOrders_Script1.dll.|  
 |`/settings:``document+-, script+-, DTD+-,`|Určuje, jestli se má povolit `document()` funkce, skript XSLT nebo dokumentu zadejte definice (DTD) v šabloně stylů.<br /><br /> Zakáže podporu pro DTD, použije se výchozí chování `document()` funkce a skriptování.|  
 |`@``file`|Umožňuje zadat soubor, který obsahuje možnosti kompilátoru.|  

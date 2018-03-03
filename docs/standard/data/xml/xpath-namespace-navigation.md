@@ -9,23 +9,23 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cae3fa68d3820e98bee333d0252aeb74b15fe2a7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8cc8d1f031b3f00cdf2b698514220c25c9fec7be
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="xpath-namespace-navigation"></a>Namespace XPath navigace
 Chcete-li používat dotazy jazyka XPath s dokumenty XML, budete muset správně adres obory názvů XML a elementů obsažených ve obory názvů. Obory názvů zabránilo nejednoznačnosti, které může dojít, když se názvy jsou použity v více než jeden kontextu; například název `ID` mohou odkazovat na více než jeden identifikátor přidružený ke různé prvky dokumentu XML. Syntaxe Namespace určuje identifikátory URI, názvů a předpony, které rozlišení prvků dokument XML.  
   
- V příkladu v tomto tématu demonstruje použití předpony v dokumentu XML se navigace <xref:System.Xml.XPath.XPathNavigator>. Další informace o syntaxi a obory názvů najdete v tématu [obory názvů XML](http://go.microsoft.com/fwlink/?linkid=140245).  
+ V příkladu v tomto tématu demonstruje použití předpony v dokumentu XML se navigace <xref:System.Xml.XPath.XPathNavigator>. Další informace o syntaxi a obory názvů najdete v tématu [obory názvů XML](https://msdn.microsoft.com/library/aa468565.aspx).  
   
 ## <a name="namespace-declarations"></a>Namespace – deklarace  
  Namespace – deklarace Zkontrolujte elementy dokumentu XML odlišit a adresovatelné při použití instance <xref:System.Xml.XPath.XPathNavigator>. Namespace předpony zadejte stručný syntaxe pro adresování obory názvů.  

@@ -16,18 +16,18 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9ddb94119d009d61e8126724df2a4b852b7ad3f5
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: e9ebd1a11684afaa143d1f016f31e0a29a3478db
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na datové proudy a souborů. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -39,15 +39,15 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Zde jsou některé běžně používané třídy souborů a adresářů:  
   
--   <xref:System.IO.File>-poskytuje statické metody pro vytvoření, kopírování, odstranění, přesunutí a otevírání souborů a vám pomůže vytvořit <xref:System.IO.FileStream> objektu.  
+-   <xref:System.IO.File> -poskytuje statické metody pro vytvoření, kopírování, odstranění, přesunutí a otevírání souborů a vám pomůže vytvořit <xref:System.IO.FileStream> objektu.  
   
--   <xref:System.IO.FileInfo>-poskytuje instance metody pro vytvoření, kopírování, odstranění, přesunutí a otevírání souborů a vám pomůže vytvořit <xref:System.IO.FileStream> objektu.  
+-   <xref:System.IO.FileInfo> -poskytuje instance metody pro vytvoření, kopírování, odstranění, přesunutí a otevírání souborů a vám pomůže vytvořit <xref:System.IO.FileStream> objektu.  
   
--   <xref:System.IO.Directory>-poskytuje statické metody pro vytváření, přesunutí a výčet prostřednictvím adresářů a podadresářů.  
+-   <xref:System.IO.Directory> -poskytuje statické metody pro vytváření, přesunutí a výčet prostřednictvím adresářů a podadresářů.  
   
--   <xref:System.IO.DirectoryInfo>-poskytuje instance metody pro vytváření, přesunutí a výčet prostřednictvím adresářů a podadresářů.  
+-   <xref:System.IO.DirectoryInfo> -poskytuje instance metody pro vytváření, přesunutí a výčet prostřednictvím adresářů a podadresářů.  
   
--   <xref:System.IO.Path>-poskytuje metody a vlastnosti pro zpracování řetězců adresářů způsobem napříč platformami.  
+-   <xref:System.IO.Path> -poskytuje metody a vlastnosti pro zpracování řetězců adresářů způsobem napříč platformami.  
   
  Kromě použití těchto tříd, uživatelé jazyka Visual Basic můžete použít metody a vlastnosti poskytované <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> třídu pro vstupně-výstupní.  
   
@@ -68,19 +68,19 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Toto jsou některé běžně používané třídy datového proudu:  
   
--   <xref:System.IO.FileStream>– pro čtení a zápis do souboru.  
+-   <xref:System.IO.FileStream> – pro čtení a zápis do souboru.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>– pro čtení a zápis do souboru v izolovaném úložišti.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> – pro čtení a zápis do souboru v izolovaném úložišti.  
   
--   <xref:System.IO.MemoryStream>– pro čtení a zápis do paměti jako úložiště zálohování.  
+-   <xref:System.IO.MemoryStream> – pro čtení a zápis do paměti jako úložiště zálohování.  
   
--   <xref:System.IO.BufferedStream>– pro zlepšení výkonu pro čtení a zápisu operace.  
+-   <xref:System.IO.BufferedStream> – pro zlepšení výkonu pro čtení a zápisu operace.  
   
--   <xref:System.Net.Sockets.NetworkStream>– pro čtení a zápis prostřednictvím sítě soketů.  
+-   <xref:System.Net.Sockets.NetworkStream> – pro čtení a zápis prostřednictvím sítě soketů.  
   
--   <xref:System.IO.Pipes.PipeStream>– pro čtení a zápis přes anonymní a pojmenované kanály.  
+-   <xref:System.IO.Pipes.PipeStream> – pro čtení a zápis přes anonymní a pojmenované kanály.  
   
--   <xref:System.Security.Cryptography.CryptoStream>– pro propojení datové proudy kryptografické transformace.  
+-   <xref:System.Security.Cryptography.CryptoStream> – pro propojení datové proudy kryptografické transformace.  
   
  Příklad práce s datovými proudy asynchronně, naleznete v části [asynchronní vstup-výstup souboru](../../../docs/standard/io/asynchronous-file-i-o.md).  
   
@@ -89,13 +89,13 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Toto jsou některé běžně používané třídy čteček a zapisovačů:  
   
--   <xref:System.IO.BinaryReader>a <xref:System.IO.BinaryWriter> – pro čtení a zápis primitivní datové typy jako binární hodnoty.  
+-   <xref:System.IO.BinaryReader> a <xref:System.IO.BinaryWriter> – pro čtení a zápis primitivní datové typy jako binární hodnoty.  
   
--   <xref:System.IO.StreamReader>a <xref:System.IO.StreamWriter> – pro čtení a zápis znaků pomocí kódování hodnotu převést znaky na a z bajtů.  
+-   <xref:System.IO.StreamReader> a <xref:System.IO.StreamWriter> – pro čtení a zápis znaků pomocí kódování hodnotu převést znaky na a z bajtů.  
   
--   <xref:System.IO.StringReader>a <xref:System.IO.StringWriter> – pro čtení a zápis znaků do a z řetězců.  
+-   <xref:System.IO.StringReader> a <xref:System.IO.StringWriter> – pro čtení a zápis znaků do a z řetězců.  
   
--   <xref:System.IO.TextReader>a <xref:System.IO.TextWriter> – sloužit jako abstraktní základní třídy pro další čtení a zápis, které pro čtení a zápis znaky a řetězce, ale není binární data.  
+-   <xref:System.IO.TextReader> a <xref:System.IO.TextWriter> – sloužit jako abstraktní základní třídy pro další čtení a zápis, které pro čtení a zápis znaky a řetězce, ale není binární data.  
   
  V tématu [postupy: čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md), [postupy: zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md), [postupy: čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md), a [postupy: zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md).  
   
@@ -111,17 +111,17 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Následující třídy jsou při kompresi a dekompresi souborů a datových proudů často používány:  
   
--   <xref:System.IO.Compression.ZipArchive>– pro vytváření a načítání položek v archivu zip.  
+-   <xref:System.IO.Compression.ZipArchive> – pro vytváření a načítání položek v archivu zip.  
   
--   <xref:System.IO.Compression.ZipArchiveEntry>– pro představující komprimovaný soubor.  
+-   <xref:System.IO.Compression.ZipArchiveEntry> – pro představující komprimovaný soubor.  
   
--   <xref:System.IO.Compression.ZipFile>– pro vytváření, extrahování a otevírání zkomprimovaného balíčku.  
+-   <xref:System.IO.Compression.ZipFile> – pro vytváření, extrahování a otevírání zkomprimovaného balíčku.  
   
--   <xref:System.IO.Compression.ZipFileExtensions>– pro vytváření a extrahování položky v zkomprimovaného balíčku.  
+-   <xref:System.IO.Compression.ZipFileExtensions> – pro vytváření a extrahování položky v zkomprimovaného balíčku.  
   
--   <xref:System.IO.Compression.DeflateStream>– pro kompresi a dekompresi datových proudů pomocí algoritmu Deflate.  
+-   <xref:System.IO.Compression.DeflateStream> – pro kompresi a dekompresi datových proudů pomocí algoritmu Deflate.  
   
--   <xref:System.IO.Compression.GZipStream>– pro kompresi a dekompresi datových proudů ve formátu gzip data.  
+-   <xref:System.IO.Compression.GZipStream> – pro kompresi a dekompresi datových proudů ve formátu gzip data.  
   
  V tématu [postupy: komprimování a extrahování souborů](../../../docs/standard/io/how-to-compress-and-extract-files.md).  
   
@@ -132,11 +132,11 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Při implementaci izolovaného úložiště jsou běžně používány následující třídy:  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorage>– poskytuje základní třídu pro implementace izolovaného úložiště.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorage> – poskytuje základní třídu pro implementace izolovaného úložiště.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile>– poskytuje oblast izolovaného úložiště, který obsahuje soubory a adresáře.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFile> – poskytuje oblast izolovaného úložiště, který obsahuje soubory a adresáře.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>-zveřejňuje soubor v izolovaném úložišti.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> -zveřejňuje soubor v izolovaném úložišti.  
   
  V tématu [izolované úložiště](../../../docs/standard/io/isolated-storage.md).  
   
@@ -155,7 +155,7 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  V případě potřeby je možné převádět mezi proudy rozhraní .NET Framework a proudy Windows Runtime. Další informace najdete v tématu [postupy: převod mezi rozhraní .NET Framework datové proudy a datové proudy Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) nebo [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx). <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   
- Další informace o vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [rychlý start: čtení a zápis do souboru](http://go.microsoft.com/fwlink/p/?LinkId=243072) ve službě Windows Dev Center.  
+ Další informace o vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [rychlý start: čtení a zápis souborů](/previous-versions/windows/apps/hh758325(v=win.10)).  
   
 ## <a name="io-and-security"></a>Vstupně-výstupní operace a zabezpečení  
  Při použití třídy v <xref:System.IO?displayProperty=nameWithType> obor názvů, je třeba postupovat podle požadavky na zabezpečení operačního systému jako seznamy řízení přístupu (ACL) pro řízení přístupu k souborů a adresářů. Tento požadavek je kromě žádné <xref:System.Security.Permissions.FileIOPermission> požadavky. Seznamy ACL lze spravovat programově. Další informace najdete v tématu [postupy: Přidání nebo odebrání položek seznamu řízení přístupu](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  

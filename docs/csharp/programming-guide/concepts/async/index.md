@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6822143df2d02c284d7506d180139c18cfbaf370
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 501a11f1bc6118e647cc414f4b83a14f6b41a37d
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -146,7 +146,7 @@ Další informace o toku řízení najdete v tématu [řízení toku v asynchron
 ##  <a name="BKMK_APIAsyncMethods"></a> Rozhraní API asynchronní metody  
  Možná se ptáte kde najít metody, jako `GetStringAsync` tuto podporu asynchronní programování. Rozhraní .NET Framework 4.5 nebo vyšší a .NET Core obsahují mnoho členů, které pracují s `async` a `await`. Můžete je rozpoznat příponou "Asynchronní", který se připojí k název člena a jejich návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Například `System.IO.Stream` třída obsahuje metody, jako například <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A>, a <xref:System.IO.Stream.WriteAsync%2A> spolu s synchronních metod <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A>, a <xref:System.IO.Stream.Write%2A>.  
   
- Prostředí Windows Runtime také obsahuje mnoho způsobů, které můžete použít s `async` a `await` v aplikacích pro Windows. Další informace najdete v tématu [zřetězení a asynchronní programování](/windows/uwp/threading-async/) pro vývoj UWP a [asynchronní programování (aplikace pro Windows Store)](/previous-versions/windows/apps/hh464924(v=win.10)) a [rychlý start: pomocí operátoru await pro asynchronní programování](/previous-versions/windows/apps/hh452713(v=win.10)) Pokud používáte starší verze prostředí Windows Runtime.  
+ Prostředí Windows Runtime také obsahuje mnoho způsobů, které můžete použít s `async` a `await` v aplikacích pro Windows. Další informace najdete v tématu [zřetězení a asynchronní programování](/windows/uwp/threading-async/) pro vývoj UWP a [asynchronní programování (aplikace pro Windows Store)](/previous-versions/windows/apps/hh464924(v=win.10)) a [rychlý start: volání asynchronní rozhraní API v jazyce C# nebo Visual Basic](/previous-versions/windows/apps/hh452713(v=win.10)) Pokud používáte starší verze prostředí Windows Runtime.  
   
 ##  <a name="BKMK_Threads"></a> Vláken  
 Asynchronní metody mají být neblokující operace. `await` Výrazu v asynchronní metody neblokuje aktuální vlákno spuštěného awaited úloh. Namísto toho se výraz zaregistruje pro zbývající metody jako pokračování a vrátí řízení volajícímu asynchronní metody.  

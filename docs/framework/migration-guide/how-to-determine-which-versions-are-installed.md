@@ -2,7 +2,8 @@
 title: "Postupy: zjištění nainstalovaných verzí rozhraní .NET Framework"
 ms.date: 01/24/2018
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,12 +16,13 @@ ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dd257e7d481a12389f8a47921ab985ca82a157fc
-ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0a25ba2d72588dddf0ac1f88d4de59c623e31ff6
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Framework na svých počítačích. Při vývoji nebo nasazení aplikace, může být potřeba vědět, jaké verze rozhraní .NET Framework, které jsou nainstalovány v počítači uživatele. Všimněte si, že rozhraní .NET Framework obsahuje dvě hlavní komponenty, které jsou samostatně verzí:  
@@ -131,7 +133,7 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
 
 2. Zkontrolujte hodnotu `Release` – klíčové slovo určení nainstalované verze. Chcete-li být dopřednou, můžete zkontrolovat na hodnotu větší než nebo rovna hodnotě hodnoty uvedené v tabulce. Tady jsou verze rozhraní .NET Framework a přidružených `Release` klíčová slova.
 
-    [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+    [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
 
     |Version|Hodnota DWORD verze|
     |-------------|--------------------------------|

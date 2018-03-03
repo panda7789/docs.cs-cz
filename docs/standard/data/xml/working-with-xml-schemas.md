@@ -9,23 +9,23 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bbbcc70c-bf9a-4f6a-af72-1bab5384a187
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1cfac14f934efb22f7cd39faceb232cc819b540e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6cba66a0d8291592b082898d20ca780c8067401e
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="working-with-xml-schemas"></a>Práce s XML schémata
 Chcete-li definovat strukturu dokumentu XML, jakož i jeho element relace, datové typy a obsahu omezení, použít definice typu dokumentu (DTD) nebo schématu XML definition language (XSD) schématu. I když dokumentu XML se považuje za ve správném formátu, pokud splňuje všechny požadavky syntaktické definované doporučení jazyka XML (Extensible Markup) 1.0 World Wide Web Consortium (W3C), není to považováno za platný pokud obě je ve správném formátu a vyhovuje omezení podle DTD nebo schéma. Proto i když jsou všechny platné dokumenty XML ve správném formátu, ne všechny dokumenty ve správném formátu XML nejsou platné.  
   
- Další informace o XML, najdete v článku [W3C XML 1.0 doporučení](http://go.microsoft.com/fwlink/?linkid=7269). Další informace o schématu XML, najdete v článku [W3C XML schéma část 1: doporučení struktury](http://go.microsoft.com/fwlink/?linkid=48881) a [W3C XML schéma část 2: datové typy doporučení](http://go.microsoft.com/fwlink/?linkid=17392) doporučení.  
+ Další informace o XML, najdete v článku [W3C XML 1.0 doporučení](https://www.w3.org/TR/REC-xml/). Další informace o schématu XML, najdete v článku [W3C XML schéma část 1: doporučení struktury](https://www.w3.org/TR/xmlschema-1/) a [W3C XML schéma část 2: datové typy doporučení](https://www.w3.org/TR/xmlschema-2/) doporučení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
