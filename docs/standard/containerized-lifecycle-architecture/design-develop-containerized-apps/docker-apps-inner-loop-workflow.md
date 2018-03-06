@@ -8,11 +8,11 @@ ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3605a6cd53db695de3af015a777e3c1a0e92af58
-ms.sourcegitcommit: 672c9cd122c13c9813f57f022c86ebdf6dd69b4f
+ms.openlocfilehash: 632c04507c1478238a5dc2573542f8c88bae2a51
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro Docker aplikace
 
@@ -123,7 +123,7 @@ V soubor Docker musíte také vyzvat Docker pro naslouchání na portu TCP, kter
 
 Existují další řádky konfigurace, které můžete přidat na soubor Docker v závislosti na jazyk nebo rozhraní, které používáte, takže Docker umí spuštění aplikace. Například musíte ENTRYPOINT řádek s \["dotnet", "MyCustomMicroservice.dll"\] ke spuštění aplikace .NET Core, i když můžete mít více variant v závislosti na přístup k sestavení a spuštění služby. Pokud používáte sadu SDK, dotnet rozhraní příkazového řádku k vytvoření a spuštění aplikace .NET, je mírně lišit. Dolní řádek je, že ENTRYPOINT řádku plus další řádky se budou lišit v závislosti na jazyk nebo platformy, které zvolíte pro vaši aplikaci.
 
-**Další informace o** informace o vytváření imagí Dockeru pro aplikace .NET Core, přejděte na <https://docs.microsoft.com/dotnet/articles/core/docker/building-net-docker-images>.
+**Další informace o** informace o vytváření imagí Dockeru pro aplikace .NET Core, přejděte na <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
 
 Další informace o vytváření vlastních bitových kopií, přejděte na [https://docs.docker.com/engine/ \kurzy/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/).
 
@@ -258,7 +258,7 @@ Visual Studio Code podporuje ladění Docker, pokud používáte Node.js a jiný
 
 Také můžete ladit .NET Core kontejnery v Docker když pomocí sady Visual Studio, jak je popsáno v následující části.
 
-**Další informace:** Další informace o ladění kontejnerů Node.js Docker, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [https://blogs.msdn.microsoft.com/ \ Uživatel\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
+**Další informace:** Další informace o ladění kontejnerů Node.js Docker, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [https://blogs.msdn.microsoft.com/ \ uživatele\_ed/2016/02/27 / Visual-Studio-Code-New-features-13-Big-Debugging-Updates-Rich-Object-hover-Conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
 
 
 >[!div class="step-by-step"]

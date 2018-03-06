@@ -7,11 +7,11 @@ ms.date: 10/26/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ead28fe1ffe1e002af73642a1c3b2e72479520f4
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: bced3bed84d138dbda4f322322213b47c0159016
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Postupy a technická získat Začínáme přehled 
 
@@ -47,7 +47,7 @@ Každá z následující kurzy používá nové ukázkových eShopLegacy a eShop
 
 V tomto návodu můžete prozkoumat počáteční implementace dva ukázkové starší verze aplikace. Obě ukázkových aplikací mít monolitický architektura a byly vytvořeny pomocí klasického ASP.NET. Jeden aplikace je založena na technologii ASP.NET 4.x MVC; druhý aplikace je založena na webových formulářů ASP.NET 4.x. Obě aplikace jsou v [úložiště GitHub eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing).
 
-Můžete containerize obě ukázkové aplikace, podobným způsobem můžete containerize klasický [Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) aplikace (WCF), který se má používat jako desktopová aplikace. Příklad, naleznete v části [eShopModernizingWCFWinForms](https://github.com/dotnet-architecture/eShopModernizingWCFWinForms).
+Můžete containerize obě ukázkové aplikace, podobným způsobem můžete containerize klasický [Windows Communication Foundation](../../framework/wcf/whats-wcf.md) aplikace (WCF), který se má používat jako desktopová aplikace. Příklad, naleznete v části [eShopModernizingWCFWinForms](https://github.com/dotnet-architecture/eShopModernizingWCFWinForms).
 
 ### <a name="goals"></a>Cíle
 
@@ -97,7 +97,7 @@ Použití Windows kontejnerů ke zlepšení nasazení existujících aplikací .
 
 Cílem tohoto návodu je tak, aby zobrazovalo několik možností pro containerizing stávající aplikace rozhraní .NET Framework. Můžeš:
 
--   Containerize vaší aplikace pomocí [2017 nástroje sady Visual Studio pro Docker](https://docs.microsoft.com/dotnet/core/docker/visual-studio-tools-for-docker) (Visual Studio 2017 nebo novější verze).
+-   Containerize vaší aplikace pomocí [2017 nástroje sady Visual Studio pro Docker](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (Visual Studio 2017 nebo novější verze).
 
 -   Containerize aplikace tak, že ručně přidáte [soubor Docker](https://docs.docker.com/engine/reference/builder/)a potom pomocí [příkazového řádku Dockeru](https://docs.docker.com/engine/reference/commandline/cli/).
 

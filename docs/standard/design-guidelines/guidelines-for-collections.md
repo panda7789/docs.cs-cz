@@ -9,18 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 62205e6bea39214383f6a653d719c0285f374a9f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 09a2a075e21de6968989575385db07ab39eb627f
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="guidelines-for-collections"></a>Pokyny pro kolekce
 Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že některé běžné vlastnosti lze považovat za kolekce. Je téměř vždy vhodné pro tyto typy pro implementaci <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže v této části jsme pouze na nabídnuté typy implementace jednoho nebo obou těchto rozhraní jako kolekce.  
@@ -31,7 +31,7 @@ Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že ně
   
  **X nesmí** použít <xref:System.Collections.ArrayList> nebo <xref:System.Collections.Generic.List%601> veřejné rozhraní API.  
   
- Tyto typy jsou datové struktury, které jsou určeny k použití v interní implementaci není v veřejná rozhraní API. `List<T>`je optimalizován pro výkon a výkon za cenu čistotu rozhraní API a flexibility. Například, pokud vrátíte `List<T>`, někdy nebudete moci přijímat upozornění, když kód klienta upraví kolekce. Navíc `List<T>` zpřístupní mnoho členů, jako například <xref:System.Collections.Generic.List%601.BinarySearch%2A>, které nejsou užitečné nebo v mnoha scénářích není platná. Následující dvě části popisují typy (abstrakce) určený speciálně pro použití v veřejná rozhraní API.  
+ Tyto typy jsou datové struktury, které jsou určeny k použití v interní implementaci není v veřejná rozhraní API. `List<T>` je optimalizován pro výkon a výkon za cenu čistotu rozhraní API a flexibility. Například, pokud vrátíte `List<T>`, někdy nebudete moci přijímat upozornění, když kód klienta upraví kolekce. Navíc `List<T>` zpřístupní mnoho členů, jako například <xref:System.Collections.Generic.List%601.BinarySearch%2A>, které nejsou užitečné nebo v mnoha scénářích není platná. Následující dvě části popisují typy (abstrakce) určený speciálně pro použití v veřejná rozhraní API.  
   
  **X nesmí** použít `Hashtable` nebo `Dictionary<TKey,TValue>` veřejné rozhraní API.  
   
@@ -61,7 +61,7 @@ Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že ně
   
  **PROVEĎTE ✓** použít <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>, podtřídou třídy `ReadOnlyCollection<T>`, nebo ve výjimečných případech `IEnumerable<T>` pro vlastnosti nebo return hodnoty představující kolekce jen pro čtení.  
   
- Obecně platí, raději `ReadOnlyCollection<T>`. Pokud nesplňuje požadavek na některé (například nesmí kolekce implementovat `IList`), používat vlastní kolekce implementací `IEnumerable<T>`, `ICollection<T>`, nebo `IList<T>`. Pokud budete implementovat vlastní kolekce jen pro čtení, implementujte `ICollection<T>.ReadOnly` vrátí hodnotu false.  
+ Obecně platí, raději `ReadOnlyCollection<T>`. Pokud nesplňuje požadavek na některé (například nesmí kolekce implementovat `IList`), používat vlastní kolekce implementací `IEnumerable<T>`, `ICollection<T>`, nebo `IList<T>`. Pokud budete implementovat vlastní kolekce jen pro čtení, implementujte `ICollection<T>.IsReadOnly` vrátit `true`.  
   
  V případech, kdy jste si jisti, že jediný scénář, se někdy budete chtít podporu je dopředné iterace, můžete jednoduše použít `IEnumerable<T>`.  
   
@@ -135,7 +135,7 @@ Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že ně
   
  Například by měla být volána jen pro čtení kolekci řetězců `ReadOnlyStringCollection`.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   

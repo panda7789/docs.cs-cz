@@ -8,11 +8,11 @@ ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 717675170f19f18fb48c4cea3ddd15bcd9648d71
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0525633b23625d915fd447d438c6281fb14b3b46
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)
 
@@ -28,7 +28,7 @@ Pokud používáte Visual Studio 2015, musíte mít Update 3 nebo novější ver
 
 **Další informace:** pokyny k instalaci sady Visual Studio, přejděte na [https://www.visualstudio.com/ \ produkty/vs-2015produktu edice](https://www.visualstudio.com/products/vs-2015-product-editions).
 
-Chcete-li zobrazit další informace o instalaci Visual Studio Tools for Docker, přejděte na <http://aka.ms/vstoolsfordocker> a <https://docs.microsoft.com/dotnet/articles/core/docker/visual-studio-tools-for-docker>.
+Chcete-li zobrazit další informace o instalaci Visual Studio Tools for Docker, přejděte na <http://aka.ms/vstoolsfordocker> a <https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>.
 
 Pokud používáte Visual Studio 2017, je už součástí sady Docker podpory.
 

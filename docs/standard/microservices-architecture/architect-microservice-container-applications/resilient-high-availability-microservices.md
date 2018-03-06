@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bbad2f0843e05f05e90e2e83c7c35cd4f06ed5e0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cb78e98a01e413f31e6476dac77acdc4e5d4f78d
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost proti chybám a vysoké dostupnosti v mikroslužeb
 
@@ -64,7 +64,7 @@ Různé orchestrators může zvukových podobné, ale diagnostiky a kontroly sta
 
 -   **Knihovna EventFlow Microsoft diagnostiky.** Úložiště GitHub.
 
-    [*https://github.com/Azure/Diagnostics-eventflow*](https://github.com/Azure/diagnostics-eventflow)
+    [*https://github.com/Azure/diagnostics-eventflow*](https://github.com/Azure/diagnostics-eventflow)
 
 -   **Co je Azure Diagnostics**
     [*https://docs.microsoft.com/azure/azure-diagnostics*](https://docs.microsoft.com/azure/azure-diagnostics)
@@ -78,7 +78,7 @@ Různé orchestrators může zvukových podobné, ale diagnostiky a kontroly sta
 -   **Splunk.** Oficiální web.
     [*http://www.splunk.com*](http://www.splunk.com)
 
--   **EventSource – třída**. Rozhraní API pro události trasování událostí pro Windows (ETW) [ *https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource)
+-   **EventSource – třída**. Rozhraní API pro události trasování událostí pro Windows (ETW) [ *https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](xref:System.Diagnostics.Tracing.EventSource)
 
 
 

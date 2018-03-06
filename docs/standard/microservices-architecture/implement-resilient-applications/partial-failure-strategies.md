@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: baeeb47dde77ceaa461214f55482d2312d67ccec
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0b5fdb03e4b0d0c2d4e8aa8a897fd46d56707f11
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="strategies-for-handling-partial-failure"></a>Strategie pro zpracování částečné selhání
 
@@ -31,7 +31,7 @@ Strategie pro práci s částečné selhání patří.
 
 **Zadejte případech Přejít**. V tento přístup procesu klienta provede záložní Pokud se požadavek nezdaří, jako je například vrací data uložená v mezipaměti nebo výchozí hodnotu. Toto je vhodný pro dotazy přístup a složitější pro aktualizace nebo příkazy.
 
-**Omezit počet požadavků ve frontě**. Klienti musí také jiné než horní mez počtu nevyřízených požadavků, které mikroslužbu klient může odesílat do konkrétní služby. Pokud bylo dosaženo limitu, je pravděpodobně neúčinná provádět další požadavky a těmito pokusy má okamžitě selhat. Z hlediska implementace, Polly [přepážkovou izolace](https://github.com/App-vNext/Polly/wiki/Bulkhead) zásadu lze použít ke splnění tohoto požadavku. Tento přístup je v podstatě paralelizace omezení s [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?view=netcore-1.1) jako implementace. Token taky umožňuje "fronty" mimo přepážka. Můžete proaktivně přenesen nadbytečné zatížení i před spuštěním, (například proto kapacity se považuje úplná). Díky tomu odpovědi na určité scénáře selhání rychleji, než by bylo jistič, protože čeká jistič selhání. Objekt BulkheadPolicy v Polly zpřístupňuje jak úplné přepážkovou a jsou fronty a nabízí události přetečení tak mohou sloužit také k řízení automatizované vodorovné škálování.
+**Omezit počet požadavků ve frontě**. Klienti musí také jiné než horní mez počtu nevyřízených požadavků, které mikroslužbu klient může odesílat do konkrétní služby. Pokud bylo dosaženo limitu, je pravděpodobně neúčinná provádět další požadavky a těmito pokusy má okamžitě selhat. Z hlediska implementace, Polly [přepážkovou izolace](https://github.com/App-vNext/Polly/wiki/Bulkhead) zásadu lze použít ke splnění tohoto požadavku. Tento přístup je v podstatě paralelizace omezení s <xref:System.Threading.SemaphoreSlim> jako implementace. Token taky umožňuje "fronty" mimo přepážka. Můžete proaktivně přenesen nadbytečné zatížení i před spuštěním, (například proto kapacity se považuje úplná). Díky tomu odpovědi na určité scénáře selhání rychleji, než by bylo jistič, protože čeká jistič selhání. Objekt BulkheadPolicy v Polly zpřístupňuje jak úplné přepážkovou a jsou fronty a nabízí události přetečení tak mohou sloužit také k řízení automatizované vodorovné škálování.
 
 ## <a name="additional-resources"></a>Další zdroje
 
@@ -47,7 +47,7 @@ Strategie pro práci s částečné selhání patří.
 -   **Návrh odolný aplikací pro Azure**
     [*https://docs.microsoft.com/azure/architecture/resiliency/*](https://docs.microsoft.com/azure/architecture/resiliency/)
 
--   **Transient fault handling**
+-   **Přechodná chyba zpracování**
     <https://docs.microsoft.com/azure/architecture/best-practices/transient-faults>
 
 

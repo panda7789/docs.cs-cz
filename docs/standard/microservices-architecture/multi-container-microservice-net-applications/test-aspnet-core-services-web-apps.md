@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 80b7fa75344f8737baacfba6462a03b436fdf6a8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 596f588aae8c0814e5b40d29c4bf5723f944c5ac
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
@@ -102,12 +102,12 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Steve Smith. Testování řadiče** (ASP.NET Core) [ *https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](https://docs.microsoft.com/aspnet/core/mvc/controllers/testing)
+-   **Steve Smith. Testování řadiče** (ASP.NET Core) [ *https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
 
--   **Steve Smith. Testování integrace** (ASP.NET Core) [ *https://docs.microsoft.com/aspnet/core/testing/integration-testing*](https://docs.microsoft.com/aspnet/core/testing/integration-testing)
+-   **Steve Smith. Testování integrace** (ASP.NET Core) [ *https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
 
 -   **Testování v .NET Core pomocí dotnet testů částí**
-    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test)
+    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 -   **xUnit.net**. Oficiální web.
     [*https://xunit.github.io/*](https://xunit.github.io/)
@@ -125,7 +125,7 @@ public class PrimeWebDefaultRequestShould
 
 Jak jsme uvedli dříve, při testování aplikace s více kontejner, musíte používat v rámci clusteru hostitele nebo kontejner Docker všechny mikroslužeb. Testy začátku do konce služby, které zahrnují více operací zahrnujících několik mikroslužeb musíte nasadit a spustit celou aplikaci na hostiteli Docker spuštěním docker-tvoří nahoru (nebo srovnatelný mechanismus, pokud používáte produktu orchestrator). Po celou aplikaci a všechny její služby běží, můžete provést integraci začátku do konce a funkčních testů.
 
-Existuje několik přístupů, které můžete použít. V soubor docker-compose.yml, který můžete použít k nasazení aplikace (nebo podobné těm, které jsou, jako je docker compose.ci.build.yml), na úrovni řešení můžete rozšířit vstupní bod používat [dotnet testovací](https://docs.microsoft.com/dotnet/core/tools/dotnet-test). Můžete taky jiné vytvářené soubor, který by spouštění testů do bitové kopie, které se zaměříte. Pomocí jiného souboru vytvářené pro integraci testy, které zahrnuje mikroslužeb a databáze na kontejnery měli jistotu, že související data se vždy vynuluje do původního stavu před spuštěním testů.
+Existuje několik přístupů, které můžete použít. V soubor docker-compose.yml, který můžete použít k nasazení aplikace (nebo podobné těm, které jsou, jako je docker compose.ci.build.yml), na úrovni řešení můžete rozšířit vstupní bod používat [dotnet testovací](../../../core/tools/dotnet-test.md). Můžete taky jiné vytvářené soubor, který by spouštění testů do bitové kopie, které se zaměříte. Pomocí jiného souboru vytvářené pro integraci testy, které zahrnuje mikroslužeb a databáze na kontejnery měli jistotu, že související data se vždy vynuluje do původního stavu před spuštěním testů.
 
 Jakmile vytvářené aplikace spuštěná, můžete využít výhod zarážky a výjimky, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu vaší konfigurace v sadě Visual Studio Team Services nebo všechny ostatní systémy CI/CD, který podporuje Docker kontejnery.
 

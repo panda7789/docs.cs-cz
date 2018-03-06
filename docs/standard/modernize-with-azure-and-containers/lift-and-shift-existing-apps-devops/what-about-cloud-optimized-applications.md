@@ -7,11 +7,11 @@ ms.date: 10/26/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4cb85c9dbcc7586510db9947d0151e3856964ef4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: adcb9d2352022cc94238296562b3eb7677bdf20b
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="what-about-cloud-optimized-applications"></a>Co optimalizovaný pro cloudové aplikace?
 
@@ -41,7 +41,7 @@ V architektuře aplikace je zásadní rozdíl v aplikacích na úrovni optimaliz
 
 Vytvoření nové aplikace, které nepoužívají mikroslužeb také má smysl. Existuje mnoho nových a stále moderní scénářů, ve kterých může překročit přístup mikroslužeb podle vašich potřeb. V některých případech může jenom chcete vytvořit jednodušší monolitický webové aplikace nebo přidejte hrubý služby do vícevrstvé aplikace. V těchto případech můžete přesto provést plně využívat cloudové PaaS funkcí, jako ty, které nabízí Azure App Service. Stále snížit práci údržby limitu.
 
-Navíc vzhledem k tomu, že budete vyvíjet nový kód v optimalizovaných Cloudů scénáře (pro celou aplikaci nebo pro částečné subsystémy), když vytvoříte nový kód, byste měli použít novější verze rozhraní .NET ([.NET Core](https://docs.microsoft.com/dotnet/core/) a [ASP.NET Core](https://docs.microsoft.com/aspnet/core/), zejména). To platí hlavně pokud vytvoříte mikroslužeb a kontejnerů, protože je Štíhlá a rychlé rozhraní .NET Core. Získáte rychlý start v kontejnerech a nároky paměti a vaše aplikace bude vysokým výkonem. Tento přístup perfektně vyhovuje požadavkům mikroslužeb a kontejnery a získejte výhody napříč platformami framework-vrácení může běžet stejná aplikace na systému Linux, Windows Server a Macu (Mac pro vývojové prostředí).
+Navíc vzhledem k tomu, že budete vyvíjet nový kód v optimalizovaných Cloudů scénáře (pro celou aplikaci nebo pro částečné subsystémy), když vytvoříte nový kód, byste měli použít novější verze rozhraní .NET ([.NET Core](../../../core/index.md) a [ASP.NET Core](/aspnet/core/), zejména). To platí hlavně pokud vytvoříte mikroslužeb a kontejnerů, protože je Štíhlá a rychlé rozhraní .NET Core. Získáte rychlý start v kontejnerech a nároky paměti a vaše aplikace bude vysokým výkonem. Tento přístup perfektně vyhovuje požadavkům mikroslužeb a kontejnery a získejte výhody napříč platformami framework-vrácení může běžet stejná aplikace na systému Linux, Windows Server a Macu (Mac pro vývojové prostředí).
 
 ## <a name="cloud-native-applications-with-cloud-optimized-applications"></a>Cloud nativní aplikace s optimalizovaný pro cloudové aplikace
 
@@ -65,7 +65,7 @@ Mikroslužeb však nejsou povinné pro všechny nové nebo moderní aplikace. Mi
 
 Architektura mikroslužeb se stává stále žádoucí pro distribuované a velké nebo složité kritické aplikace, které jsou založeny na více nezávislých subsystémy ve formě autonomního služby. V architektuře na základě mikroslužeb vychází aplikace jako kolekce služeb, které můžou být nezávisle vyvinuté, otestovaný, verzí, nasazení a škálovat. To může zahrnovat všechny související, autonomního databáze za mikroslužby.
 
-Podrobný pohled na architekturu mikroslužeb, která můžete implementovat pomocí .NET Core, najdete v části Stažení PDF e kniha [mikroslužeb .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook). V průvodci je dostupná také [online](https://docs.microsoft.com/dotnet/standard/microservices-architecture/).
+Podrobný pohled na architekturu mikroslužeb, která můžete implementovat pomocí .NET Core, najdete v části Stažení PDF e kniha [mikroslužeb .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook). V průvodci je dostupná také [online](../../microservices-architecture/index.md).
 
 Ale i ve scénářích, ve kterých mikroslužeb nabízí výkonné nasazení nezávislé na schopnosti, silné subsystému hranice a různorodost technologie-vyvolají mnoho nových problémů. Na výzvy se vztahují k vývoji distribuované aplikace, jako je například fragmentovaných a nezávislé datové modely; dosažení odolné komunikace mezi mikroslužeb; potřebu konzistence typu případné; a provozní složitost. Mikroslužeb zavést vyšší úroveň složitosti porovnání s tradiční monolitický aplikace.
 

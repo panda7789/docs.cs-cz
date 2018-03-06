@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b10eeff18979674901197203716426af70433c46
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: e6ac6f2d316a94e69c2599acf07aaaf6361b3e5a
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="implementing-value-objects"></a>Implementace hodnota objekty
 
@@ -136,7 +136,7 @@ Právě jste viděli, jak definovat objekt hodnoty v modelu domény. Ale, jak m�
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>Pozadí a starší přístupů pomocí EF základní 1.1
 
-Jako pozadí, byl omezení při použití EF základní 1.0 a 1.1, nelze použít [komplexní typy](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7) definovaným v EF 6.x v tradiční rozhraní .NET Framework. Proto pokud používáte EF základní 1.0 nebo 1.1, je potřebný k uložení objektu hodnotu jako entity EF s pole ID. A, vypadal další jako objekt hodnoty pomocí žádná identita, může skrýt jeho ID, takže byste měli vytvořit jasné, že identita objekt hodnoty není důležité v modelu domény. Toto ID může skrýt pomocí ID jako [stínové vlastnost](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Vzhledem k tomu, že konfigurace pro skrytí ID v modelu je nastaven na úrovni infrastruktury EF, bylo by druh transparentní pro modelu domény.
+Jako pozadí, byl omezení při použití EF základní 1.0 a 1.1, nelze použít [komplexní typy](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) definovaným v EF 6.x v tradiční rozhraní .NET Framework. Proto pokud používáte EF základní 1.0 nebo 1.1, je potřebný k uložení objektu hodnotu jako entity EF s pole ID. A, vypadal další jako objekt hodnoty pomocí žádná identita, může skrýt jeho ID, takže byste měli vytvořit jasné, že identita objekt hodnoty není důležité v modelu domény. Toto ID může skrýt pomocí ID jako [stínové vlastnost](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Vzhledem k tomu, že konfigurace pro skrytí ID v modelu je nastaven na úrovni infrastruktury EF, bylo by druh transparentní pro modelu domény.
 
 Skrytá ID vyžaduje EF základní infrastruktury byla v původní verzi eShopOnContainers (.NET Core 1.1), implementovaná tímto způsobem na úrovni DbContext pomocí rozhraní Fluent API v projektu OMI. Proto se ID skrytá z hlediska domény modelu, ale stále přítomen v infrastruktuře.
 
@@ -168,7 +168,7 @@ Typ entity ve vlastnictví umožňuje mapovat typy, které nemají své vlastní
 Podle vzhledu modelu domény, vlastní typ vypadá nemá žádné identity.
 V pozadí, vlastní typy mají identity, ale je součástí tuto identitu vlastníka navigační vlastnost.
 
-Identita instance vlastní typy není úplně svoje vlastní. Obsahuje tři komponenty: 
+Identita instance vlastní typy není úplně svoje vlastní. Obsahuje tři komponenty:
 
 - Identitu vlastníka
 

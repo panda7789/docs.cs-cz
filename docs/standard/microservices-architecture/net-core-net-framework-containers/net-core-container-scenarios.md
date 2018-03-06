@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5d809ecdbef465206015a103a14baab8dc0b49c7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d9489bca5ac69046818a1809b2f3082baea1eaa8
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy zvolte .NET Core Docker kontejnerů
 
@@ -35,7 +35,7 @@ Je zřejmé Pokud vaším cílem je, aby aplikace (webové aplikace nebo služby
 
 [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/) IDE, vývoje Xamarin Studio, spuštěné v systému macOS a podporuje Docker od mid 2017.
 
-Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systému macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Protože VS Code je lightweight editor, můžete ho vyvíjet kontejnerizované aplikace v systému Mac ve spojení s rozhraní příkazového řádku Dockeru a [nástrojů rozhraní příkazového řádku (CLI) .NET Core](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x). S editory většina jiných výrobců jako Sublime Text, Emacs, vi a open-source OmniSharp projekt, který poskytuje podporu technologie IntelliSense pro jazyky rozhraní .NET, můžete také vybrat .NET Core. Kromě integrovaného vývojového prostředí a editory můžete použít rozhraní příkazového řádku .NET Core pro všechny podporované platformy.
+Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systému macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Protože VS Code je lightweight editor, můžete ho vyvíjet kontejnerizované aplikace v systému Mac ve spojení s rozhraní příkazového řádku Dockeru a [nástrojů rozhraní příkazového řádku (CLI) .NET Core](../../../core/tools/index.md). S editory většina jiných výrobců jako Sublime Text, Emacs, vi a open-source OmniSharp projekt, který poskytuje podporu technologie IntelliSense pro jazyky rozhraní .NET, můžete také vybrat .NET Core. Kromě integrovaného vývojového prostředí a editory můžete použít rozhraní příkazového řádku .NET Core pro všechny podporované platformy.
 
 ## <a name="using-containers-for-new-green-field-projects"></a>Použití kontejnerů pro nové projekty ("zelená pole")
 
@@ -59,4 +59,4 @@ To je obzvláště důležité pro mikroslužeb architektury, kde můžete mít 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (guidance.md obecné) [Další] (net-framework kontejneru scenarios.md)
+[Previous] (general-guidance.md) [Next] (net-framework-container-scenarios.md)

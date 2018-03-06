@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a146cf50639351479d42bff684ea7db21ecf5d3b
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 904b941a274cdd31485d35cf2d025f869638d448
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="date-and-time-data"></a>Datum a čas dat
 SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové typy dat zahrnují rozšířené datové typy s větší rozsah, přesnost a časové pásmo a samostatné typy pro datum a čas. Počínaje verzí rozhraní .NET Framework 3.5 Service Pack (SP) 1, zprostředkovatel dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje úplnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro použití s SqlClient tyto nové funkce.  
@@ -60,7 +62,7 @@ SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a
  Další informace o interpretace data a času v systému SQL Server najdete v tématu [pomocí datum a čas Data](http://go.microsoft.com/fwlink/?LinkID=98361) v SQL Server 2008 Books Online.  
   
 ## <a name="datetime-data-types-and-parameters"></a>Datum a čas datové typy a parametry  
- Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jedné z <xref:System.Data.SqlDbType> výčty. Přidané následující výčty <xref:System.Data.SqlDbType> pro podporu nových typů dat Datum a čas.  
+ Přidané následující výčty <xref:System.Data.SqlDbType> pro podporu nových typů dat Datum a čas.  
   
 -   `SqlDbType.Date`  
   
@@ -69,7 +71,12 @@ SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a
 -   `SqlDbType.DateTime2`  
   
 -   `SqlDbType.DateTimeOffSet`  
-  
+
+Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jedné z předchozí <xref:System.Data.SqlDbType> výčty. 
+
+> [!NOTE]
+> Nelze nastavit `DbType` vlastnost `SqlParameter` k `SqlDbType.Date`.
+
  Můžete také zadat typ <xref:System.Data.SqlClient.SqlParameter> obecně nastavením <xref:System.Data.SqlClient.SqlParameter.DbType%2A> vlastnost `SqlParameter` objekt, který má určitý <xref:System.Data.DbType> hodnota výčtu. Následující hodnoty výčtu jsou přidané do <xref:System.Data.DbType> pro podporu `datetime2` a `datetimeoffset` datové typy:  
   
 -   DbType.DateTime2  

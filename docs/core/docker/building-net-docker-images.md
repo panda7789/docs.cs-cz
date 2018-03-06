@@ -12,12 +12,13 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
-ms.workload: dotnetcore
-ms.openlocfilehash: 2b1a57fe264eda0a4d3186c7be8b0de01bd5f0a9
-ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: d5631bdbc0334640b290c08df17cba0bfe99fe85
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
 
@@ -75,11 +76,11 @@ K dosažení výše uvedené cíle, poskytujeme variant bitové kopie v rámci [
 
 Kromě optimalizované scénářů vývoj, sestavení a produkční poskytujeme další bitové kopie:
 
-* `microsoft/dotnet:<version>-runtime-deps`: **Runtime deps** bitová kopie obsahuje operační systém s všechny nativní závislosti vyžaduje .NET Core. Tento image je pro [nezávislý aplikace](https://docs.microsoft.com/dotnet/core/deploying/index).
+* `microsoft/dotnet:<version>-runtime-deps`: **Runtime deps** bitová kopie obsahuje operační systém s všechny nativní závislosti vyžaduje .NET Core. Tento image je pro [nezávislý aplikace](../deploying/index.md).
 
 Nejnovější verze jednotlivých variant:
 
-* `microsoft/dotnet`nebo `microsoft/dotnet:latest` (alias pro bitovou kopii sady SDK)
+* `microsoft/dotnet` nebo `microsoft/dotnet:latest` (alias pro bitovou kopii sady SDK)
 * `microsoft/dotnet:sdk`
 * `microsoft/dotnet:runtime`
 * `microsoft/dotnet:runtime-deps`

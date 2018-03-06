@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: fcfb78bf521107b14d7796235f52c836f48f41fe
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: eec258ff01bcfeb834fa7a1138fdf822fd00c996
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Když zvolit rozhraní .NET Framework pro Docker kontejnery
 
@@ -29,7 +29,7 @@ Ve většině případů pro tento scénář nebudete muset migrovat stávajíc�
 
 ## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Použití knihovny .NET třetích stran nebo není k dispozici balíčky NuGet pro .NET Core
 
-Třetí strany knihovny se rychle přechodu [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard), což umožňuje kód sdílení ve všech typů rozhraní .NET, včetně .NET Core. Standardní knihovny rozhraní .NET 2.0 a nad rámec plochy rozhraní API kompatibilitu mezi různé architektury stane podstatně větší a v rozhraní .NET 2.0 základní aplikací také přímo odkazovat existující knihovny rozhraní .NET Framework (viz [compat Shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)).
+Třetí strany knihovny se rychle přechodu [.NET Standard](../../net-standard.md), což umožňuje kód sdílení ve všech typů rozhraní .NET, včetně .NET Core. Standardní knihovny rozhraní .NET 2.0 a nad rámec plochy rozhraní API kompatibilitu mezi různé architektury stane podstatně větší a v rozhraní .NET 2.0 základní aplikací také přímo odkazovat existující knihovny rozhraní .NET Framework (viz [compat Shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)).
 
 Ale i v případě že výjimečných postupu od standardní rozhraní .NET 2.0 a .NET Core 2.0, mohou existovat případy, kdy některé balíčky NuGet, třeba Windows ke spuštění a nemusí podporovat .NET Core. Pokud tyto balíčky jsou důležité pro vaši aplikaci, budete muset použít rozhraní .NET Framework kontejnerům systému Windows.
 
@@ -56,16 +56,16 @@ Do té doby Pokud všechny platformy a služby v Azure stále nepodporuje .NET C
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **.NET Core Guide**
-    [*https://docs.microsoft.com/dotnet/core/index*](https://docs.microsoft.com/dotnet/core/index)
+    [*https://docs.microsoft.com/dotnet/core/index*](../../../core/index.md)
 
 -   **Portování z rozhraní .NET Framework na .NET Core**
-    [*https://docs.microsoft.com/dotnet/core/porting/index*](https://docs.microsoft.com/dotnet/core/porting/index)
+    [*https://docs.microsoft.com/dotnet/core/porting/index*](../../../core/porting/index.md)
 
 -   **Rozhraní .NET framework na Průvodce Docker**
-    [*https://docs.microsoft.com/dotnet/framework/docker/*](https://docs.microsoft.com/dotnet/framework/docker/)
+    [*https://docs.microsoft.com/dotnet/framework/docker/*](../../../framework/docker/index.md)
 
 -   **.NET Components Overview**
-    [*https://docs.microsoft.com/dotnet/standard/components*](https://docs.microsoft.com/dotnet/standard/components)
+    [*https://docs.microsoft.com/dotnet/standard/components*](../../components.md)
 
 
 
