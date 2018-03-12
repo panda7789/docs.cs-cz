@@ -17,21 +17,21 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2abd4c772c02c431ecb73139be7f620fe04d5d82
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7536d06c971251fb857fabefc95a50ae4389f785
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
-<a name="top"></a>Kovariance a kontravariance jsou podmínky, které odkazují na možnost používat symbol méně odvozené (méně konkrétní) nebo více odvozeného typu (další konkrétní), než bylo původně zadáno. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: Příklady předpokládají základní třídu s názvem `Base` a odvozené třídy s názvem `Derived`.  
+<a name="top"></a> Kovariance a kontravariance jsou podmínky, které odkazují na možnost používat více odvozený typ (konkrétnější) nebo méně odvozený typ (méně konkrétní) než bylo původně zadáno. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: Příklady předpokládají základní třídu s názvem `Base` a odvozené třídy s názvem `Derived`.  
   
 -   `Covariance`  
   
@@ -93,7 +93,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="generic-interfaces-with-covariant-type-parameters"></a>Obecná rozhraní s parametry kovariantního typu  
  Od verze [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], několik obecných rozhraní má kovariantní parametry typu; například: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IEnumerator%601>, <xref:System.Linq.IQueryable%601>, a <xref:System.Linq.IGrouping%602>. Všechny parametry typu těchto rozhraní jsou kovariantní. Parametry typu se tedy používají pouze pro návratové typy členů.  
   
- Následující příklad znázorňuje parametry kovariantního typu. V příkladu definuje dva typy: `Base` má statickou metodu s názvem `PrintBases` , která má `IEnumerable<Base>` (`IEnumerable(Of Base)` v jazyce Visual Basic) a vytiskne prvky. `Derived`dědí z `Base`. V příkladu se vytváří prázdnou `List<Derived>` (`List(Of Derived)` v jazyce Visual Basic) a ukazuje, že tento typ se dá předat do `PrintBases` a přiřazený k proměnné typu `IEnumerable<Base>` bez přetypování. <xref:System.Collections.Generic.List%601>implementuje <xref:System.Collections.Generic.IEnumerable%601>, který má jeden kovariantní typ parametru. Kovariantní parametr typu je důvod, proč instanci `IEnumerable<Derived>` lze použít místo `IEnumerable<Base>`.  
+ Následující příklad znázorňuje parametry kovariantního typu. V příkladu definuje dva typy: `Base` má statickou metodu s názvem `PrintBases` , která má `IEnumerable<Base>` (`IEnumerable(Of Base)` v jazyce Visual Basic) a vytiskne prvky. `Derived` dědí z `Base`. V příkladu se vytváří prázdnou `List<Derived>` (`List(Of Derived)` v jazyce Visual Basic) a ukazuje, že tento typ se dá předat do `PrintBases` a přiřazený k proměnné typu `IEnumerable<Base>` bez přetypování. <xref:System.Collections.Generic.List%601> implementuje <xref:System.Collections.Generic.IEnumerable%601>, který má jeden kovariantní typ parametru. Kovariantní parametr typu je důvod, proč instanci `IEnumerable<Derived>` lze použít místo `IEnumerable<Base>`.  
   
  [!code-csharp[CoContravarianceInClrGenericI#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravarianceinclrgenerici/cs/example.cs#1)]
  [!code-vb[CoContravarianceInClrGenericI#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravarianceinclrgenerici/vb/example.vb#1)]  
@@ -182,11 +182,11 @@ ms.lasthandoff: 12/23/2017
   
 |Typ|Parametry kovariantního typu|Parametry kontravariantního typu|  
 |----------|-------------------------------|-----------------------------------|  
-|<xref:System.Action%601>k<xref:System.Action%6016>||Ano|  
+|<xref:System.Action%601> K <xref:System.Action%6016>||Ano|  
 |<xref:System.Comparison%601>||Ano|  
 |<xref:System.Converter%602>|Ano|Ano|  
 |<xref:System.Func%601>|Ano||  
-|<xref:System.Func%602>k<xref:System.Func%6017>|Ano|Ano|  
+|<xref:System.Func%602> K <xref:System.Func%6017>|Ano|Ano|  
 |<xref:System.IComparable%601>||Ano|  
 |<xref:System.Predicate%601>||Ano|  
 |<xref:System.Collections.Generic.IComparer%601>||Ano|  

@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2653b9dc8a6ecbcb718c20be8bd6275edf4cfb6e
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: bf26b7ce58c1e20fbbe5043cbd2acfd5712837fa
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tuples-visual-basic"></a>Řazené kolekce členů (Visual Basic)
 
@@ -64,69 +64,70 @@ Pokud chcete povolit názvy elementů interred řazené kolekce členů, je nutn
 <PropertyGroup> 
   <LangVersion>15.3</LangVersion> 
 </PropertyGroup> 
+```
 
-The version number can be any version of the Visual Basic compiler starting with 15.3. Rather than hard-coding a specific compiler version, you can also specify "Latest" as the value of `LangVersion` to compile with the most recent version of the Visual Basic compiler installed on your system.
+Všechny verze aplikace Visual Basic – kompilátor počínaje 15.3 může být číslo verze. Místo pevně kódováno kompilátoru konkrétní verzi, můžete také zadat "Poslední zálohy" jako hodnotu `LangVersion` zkompilovat s nejnovější verzí Visual Basic – kompilátor v systému nainstalována.
 
-In some cases, the Visual Basic compiler cannot infer the tuple element name from the candidate name, and the tuple field can only be referenced using its default name, such as `Item1`, `Item2`, etc. These include:
+V některých případech kompilátoru jazyka Visual Basic nelze odvodit řazené kolekce členů název elementu od názvu candidate a pole řazené kolekce členů může být odkazováno pouze pomocí výchozího názvu, jako třeba `Item1`, `Item2`atd. Mezi ně patří:
 
-- The candidate name is the same as the name of a tuple member, such as `Item3`, `Rest`, or `ToString`.
+- Název candidate je stejný jako název člena řazené kolekce členů, jako `Item3`, `Rest`, nebo `ToString`.
 
-- The candidate name is duplicated in the tuple.
+- Název candidate je duplikována v řazené kolekci členů.
  
-When field name inference fails, Visual Basic does not generate a compiler error, nor is an exception thrown at runtime. Instead, tuple fields must be referenced by their predefined names, such as `Item1` and `Item2`. 
+Pokud pole Název odvození nezdaří, Visual Basic negeneruje Chyba kompilátoru, ani je výjimka vyvolaná za běhu. Místo toho pole řazené kolekce členů musí odkazovat jejich předdefinované názvy, například `Item1` a `Item2`. 
   
-## Tuples versus structures
+## <a name="tuples-versus-structures"></a>Řazené kolekce členů a struktury
 
-A Visual Basic tuple is a value type that is an instance of one of the a **System.ValueTuple** generic types. For example, the `holiday` tuple defined in the previous example is an instance of the <xref:System.ValueTuple%603> structure. It is designed to be a lightweight container for data. Since the tuple aims to make it easy to create an object with multiple data items, it lacks some of the features that a custom structure might have. These include:
+Visual Basic řazené kolekce členů je typ hodnoty, která je instance jednoho z **System.ValueTuple** obecné typy. Například `holiday` řazené kolekce členů definované v předchozím příkladu představuje instanci <xref:System.ValueTuple%603> struktura. Je určený jako lightweight kontejner pro data. Vzhledem k tomu, že řazenou kolekci členů cílem je usnadnit práci pro vytvoření objektu s více datovými položkami, chybí některé funkce, které by mohly mít do vlastní struktury. Mezi ně patří:
 
-- Customer members. You cannot define your own properties, methods, or events for a tuple.
+- Členy zákazníka. Nelze definovat vlastní vlastnosti, metody nebo události pro řazené kolekce členů.
 
-- Validation. You cannot validate the data assigned to fields.
+- Ověření. Nelze ověřit data přiřazené pole.
 
-- Immutability. Visual Basic tuples are mutable. In contrast, a custom structure allows you to control whether an instance is mutable or immutable.
+- Neměnitelnosti. Měnitelný jsou řazené kolekce členů jazyka Visual Basic. Naproti tomu do vlastní struktury umožňuje určit informaci, jestli instance měnitelný nebo neměnné.
 
-If custom members, property and field validation, or immutability are important, you should use the Visual Basic [Structure](../../../language-reference/statements/structure-statement.md) statement to define a custom value type.
+Pokud vlastní členy, vlastnost a pole ověření nebo neměnitelnosti jsou důležité, abyste používali Visual Basicu [struktura](../../../language-reference/statements/structure-statement.md) příkaz k definování typu vlastní hodnoty.
 
-A Visual Basic tuple does inherit the members of its **ValueTuple** type. In addition to its fields, these include the following methods:
+Visual Basic řazené kolekce členů dědění členů jeho **ValueTuple** typu. Kromě jeho polí mezi ně patří následující metody:
 
-| Member | Description |
+| Člen | Popis |
 | ---|---|
-| CompareTo | Compares the current tuple to another tuple with the same number of elements. |
-| Equals | Determines whether the current tuple is equal to another tuple or object. |
-| GetHashCode | Calculates the hash code for the current instance. |
-| ToString | Returns the string representation of this tuple, which takes the form `(Item1, Item2...)`, where `Item1` and `Item2` represent the values of the tuple's fields. |
+| CompareTo | Porovná aktuální řazenou kolekci členů do jiné řazené kolekce členů s stejný počet elementů. |
+| Rovná se | Určuje, zda aktuální řazenou kolekci členů je rovno jiné řazené kolekce členů nebo objekt. |
+| GetHashCode | Vypočítá kód hash pro aktuální instanci. |
+| ToString | Vrátí řetězcovou reprezentaci této řazené kolekce členů, která má tvar `(Item1, Item2...)`, kde `Item1` a `Item2` představují hodnoty polí řazené kolekce členů. |
 
-In addition, the **ValueTuple** types implement <xref:System.Collections.IStructuralComparable> and <xref:System.Collections.IStructuralEquatable> interfaces, which allow you to define customer comparers.
+Kromě toho **ValueTuple** typy implementovat <xref:System.Collections.IStructuralComparable> a <xref:System.Collections.IStructuralEquatable> rozhraní, které umožňují definovat komparátory zákazníka.
 
-## Assignment and tuples
+## <a name="assignment-and-tuples"></a>Přiřazení a řazených kolekcí členů
 
-Visual Basic supports assignment between tuple types that have the same number of fields. The field types can be converted if one of the following is true:
+Visual Basic podporuje přiřazení mezi typy řazené kolekce členů, které mají stejný počet polí. Typy polí lze převést, pokud platí jedna z následujících akcí:
 
-- The source and target field are of the same type.
+- Zdrojové a cílové pole jsou stejného typu.
 
-- A widening (or implicit) conversion of the source type to the target type is defined. 
+- Rozšiřující (nebo implicitní) převodu typ zdroje pro cílový typ je definována. 
 
-- `Option Strict` is `On`, and a narrowing (or explicit) conversion of the source type to the target type is defined. This conversion can throw an exception if the source value is outside the range of the target type.
+- `Option Strict` je `On`, a narrowing (nebo explicitní) převodu typ zdroje pro cílový typ je definovaná. Tento převod může vyvolat výjimku, pokud je zdroj hodnota mimo rozsah typu cíle.
 
-Other conversions are not considered for assignments. Let's look at the kinds of assignments that are allowed between tuple types.
+Jiné převody nejsou považovány za přiřazení. Podívejme se na druhy přiřazení, které jsou povoleny mezi typy řazené kolekce členů.
 
-Consider these variables used in the following examples:
+Vezměte v úvahu tyto proměnné použít v následujících příkladech:
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#1)]
 
-The first two variables, `unnamed` and `anonymous`, do not have semantic names provided for the fields. Their field names are the default `Item1` and `Item2`. The last two variables, `named` and `differentName` have semantic field names. Note that these two tuples have different names for the fields.
+První dvě proměnné, `unnamed` a `anonymous`, nemají sémantického názvy zadaná pro pole. Jejich názvy polí jsou výchozí `Item1` a `Item2`. Poslední dvě proměnné, `named` a `differentName` mít názvy sémantického pole. Všimněte si, že tyto dvě řazené kolekce členů mají odlišné názvy polí.
 
-All four of these tuples have the same number of fields (referred to as 'arity'), and the types of those fields are identical. Therefore, all of these assignments work:
+Všechny čtyři tyto řazené kolekce členů mít stejný počet polí (označované jako "Arita") a typy těchto polí jsou identické. Proto všechny tyto přiřazení fungovat:
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#2)]
 
-Notice that the names of the tuples are not assigned. The values of the fields are assigned following the order of the fields in the tuple.
+Všimněte si, že nejsou přiřazeny názvy řazené kolekce členů. Hodnoty polí jsou přiřazeny následující pořadí polí v řazené kolekci členů.
 
-Finally, notice that we can assign the `named` tuple to the `conversion` tuple, even though the first field of `named` is an `Integer`, and the first field of `conversion` is a `Long`. This assignment succeeds because converting an `Integer` to a `Long` is a widening conversion.
+Všimněte si, že jsme můžete přiřadit `named` řazené kolekce členů k `conversion` řazené kolekce členů, i když první pole `named` je `Integer`a první pole `conversion` je `Long`. Toto přiřazení se podaří, protože převod `Integer` k `Long` je rozšiřující převod.
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#3)]
 
-Tuples with different numbers of fields are not assignable:
+Řazené kolekce členů s odlišný počet polí nejsou přiřadit:
 
 ```vb
 ' Does not compile.

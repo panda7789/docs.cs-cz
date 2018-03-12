@@ -7,11 +7,11 @@ ms.date: 12/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: 26d4dffa6f6680b193788ee6d90dad01fde7cf51
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 591996c02c55c1f54af94280940e41720684251a
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-to-c"></a>Postup (C#)
 
@@ -55,7 +55,7 @@ Tyto články vám pomohou při práci s kolekcí dat.
 Řetězce jsou základní datový typ používaný můžete zobrazit nebo upravit text. Tyto články ukazují obvyklé postupy s řetězci.
 
 - [Porovnávání řetězců](../programming-guide/strings/how-to-compare-strings.md).
-- [Změna obsahu řetězce](../programming-guide/strings/how-to-modify-string-contents.md).
+- [Změna obsahu řetězce](modify-string-contents.md).
 - [Určení, pokud řetězec reprezentuje číslo](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md).
 - [Použití `String.Split` k oddělení řetězců](parse-strings-using-split.md).
 - [Sloučit více řetězce do jednoho](concatenate-multiple-strings.md).

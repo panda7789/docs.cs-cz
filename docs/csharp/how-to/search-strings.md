@@ -11,11 +11,11 @@ helpviewer_keywords:
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
 ms.author: wiwagn
-ms.openlocfilehash: cb672ef74d9eb83df7d1c8985e518136dad54c34
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 60d31a3d6d694c04d0c93b96816928e2ccbd3fba
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-to-search-strings"></a>Postupy: vyhledávání řetězců
 
@@ -60,7 +60,7 @@ Vzor hledání popisuje text, který hledáte. Následující tabulka popisuje k
 
 ## <a name="does-a-string-follow-a-pattern"></a>Řetězec musí dodržovat vzor?
 
-Následující kód používá regulární výrazy k ověření formát každý řetězce v matici. Ověření vyžaduje, aby měl každý řetězec formu telefonní číslo, ve kterém jsou tří skupin číslic oddělených pomlčkami, první dvě skupiny obsahují tři znaky a třetí skupina obsahuje čtyři číslice. Vzor hledání použit regulární výraz `^\\d{3}-\\d{3}-\\d{4}$`. Další informace najdete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](http://msdn.microsoft.com/library/930653a6-95d2-4697-9d5a-52d11bb6fd4c).
+Následující kód používá regulární výrazy k ověření formát každý řetězce v matici. Ověření vyžaduje, aby měl každý řetězec formu telefonní číslo, ve kterém jsou tří skupin číslic oddělených pomlčkami, první dvě skupiny obsahují tři znaky a třetí skupina obsahuje čtyři číslice. Vzor hledání použit regulární výraz `^\\d{3}-\\d{3}-\\d{4}$`. Další informace najdete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../standard/base-types/regular-expression-language-quick-reference.md).
 
 | vzor  | Význam                             |
 | -------- |-------------------------------------|

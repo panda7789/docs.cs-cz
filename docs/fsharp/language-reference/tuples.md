@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 35069073-9a82-410f-8dea-912e2a152e6d
-ms.openlocfilehash: c6a0565ac7022928f5c2bdad5387d896c6c3d387
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 996566f2baaea8ab01e5c80e53caea82e9684714
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tuples"></a>Řazené kolekce členů
 
@@ -89,7 +89,7 @@ int * float * string
 
 ## <a name="interoperation-with-c-tuples"></a>Vzájemná spolupráce s řazenými kolekcemi členů C#
 
-Pro jazyk C# 7 zavést řazené kolekce členů.  Řazených kolekcí členů v C# a jsou struktury a jsou ekvivalentní struktura řazených kolekcí členů v F #.  Pokud potřebujete zajistit vzájemnou funkční spolupráci s C# používá řazené kolekce členů, je nutné použít struktura řazené kolekce členů.
+Pro jazyk C# 7 zavést řazené kolekce členů.  Řazené kolekce členů v jazyce C# jsou struktury a odpovídají struktura řazených kolekcí členů v F #.  Pokud potřebujete zajistit vzájemnou funkční spolupráci s C#, je nutné použít struktura řazené kolekce členů.
 
 Toto je snadné provést.  Představte si například, že je nutné předat řazené kolekce členů třídy jazyka C# a pak využívat jeho výsledek, který je také řazené kolekce členů:
 
@@ -133,6 +133,6 @@ Tato část vysvětluje formu řazených kolekcí členů v případě, že se k
 Struktura řazených kolekcí členů (například `struct (x, y)`), se zásadně liší od odkaz řazené kolekce členů.  Že se kompilují do <xref:System.ValueTuple> typu, přetížené Arita nebo počet parametrů typu.  Jsou ekvivalentní [C# 7 řazených kolekcí členů](../../csharp/tuples.md) a [jazyka Visual Basic 2017 řazených kolekcí členů](../../visual-basic/programming-guide/language-features/data-types/tuples.md)a zajistit vzájemnou funkční spolupráci obousměrně.
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
-[Typy F #](fsharp-types.md)
+[Typy F#](fsharp-types.md)
