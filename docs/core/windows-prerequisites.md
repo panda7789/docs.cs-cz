@@ -3,16 +3,16 @@ title: "Předpoklady pro .NET Core v systému Windows"
 description: "Zjistěte, co závislosti, musíte na váš Windows počítače pro vývoj a spouštění aplikací .NET Core."
 author: JRAlexander
 ms.author: johalex
-ms.date: 02/28/2018
+ms.date: 03/02/2018
 ms.topic: article
 ms.prod: .net-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: e64ecb807fd377458a9998ebbdfe2f6f15b115bb
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 48102f3fb7fa6e93238eefff0e7f1ecbed4d8409
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core v systému Windows
 
@@ -100,5 +100,6 @@ Vývoj aplikací .NET Core 1.x v sadě Visual Studio, [stáhněte a nainstalujte
 >
 > * Na **pomoci** nabídce zvolte **o sadě Microsoft Visual Studio**.
 > * V **o sadě Microsoft Visual Studio** dialogové okno, zkontrolujte číslo verze.
->   * Pro aplikace .NET Core 2.x, Visual Studio 2017 verze 15.3 (26730.01) nebo vyšší.
->   * Pro aplikace .NET Core 1.x, Visual Studio 2017 verze 15.0 (26228.04) nebo vyšší.
+>   * Pro aplikace .NET Core 2.1 Preview 1, Visual Studio 2017 15,6 operací verze Preview 6 nebo vyšší.
+>   * Pro aplikace .NET Core 2.0, Visual Studio 2017 verze 15.3 nebo vyšší.
+>   * Pro aplikace .NET Core 1.x, Visual Studio 2017 verze 15,0 nebo vyšší.

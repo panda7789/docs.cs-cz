@@ -5,36 +5,38 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: e36019cd6d010e25292fa50ed3bf795dfca15f73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 25355acfd7bc82ccff33f68a690f3f02d1235438
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 Určuje nastavení, které povolení auditování událostí zabezpečení během operací služby.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
-\<serviceSecurityAudit >  
+\<serviceSecurityAudit>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <serviceSecurityAudit   
    auditLogLocation="Default/Application/Security"  
-   messageAuthenticationAuditLevel= None/Success/Failure/SuccessAndFailure"   serviceAuthorizationAuditLevel="None/Success/Failure/SuccessAndFailure"  
+   messageAuthenticationAuditLevel= None/Success/Failure/SuccessOrFailure"   serviceAuthorizationAuditLevel="None/Success/Failure/SuccessOrFailure"  
    suppressAuditFailure="Boolean"  
 />  
 ```  
@@ -48,8 +50,8 @@ Určuje nastavení, které povolení auditování událostí zabezpečení běhe
 |---------------|-----------------|  
 |auditLogLocation|Určuje umístění protokolu auditu. Platné hodnoty patří:<br /><br /> -Výchozí: Zabezpečení události se zapisují do protokolu aplikace v systému Windows XP a do protokolu událostí v systému Windows Server 2003 a Windows Vista.<br />-Aplikace: Auditu události se zapisují do protokolu událostí aplikace.<br />-Zabezpečení: Auditu události se zapisují do protokolu událostí zabezpečení.<br /><br /> Výchozí hodnota je výchozí. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLogLocation>.|  
 |suppressAuditFailure|Logická hodnota, která určuje chování pro potlačení chyb při zápisu do protokolu auditování.<br /><br /> Aplikace mají být upozorněni pro chyb při zápisu do protokolu auditování. Pokud vaše aplikace nebyla navržena pro zpracování chyby auditu, měli byste použít tento atribut potlačit selhání při zápisu do protokolu auditování.<br /><br /> Pokud tento atribut je `true`, než OutOfMemoryException, StackOverFlowException, výjimka ThreadAbortException a ArgumentException – výjimky, které jsou výsledkem pokusí zapsat události auditu jsou zpracovány systémem a nejsou rozšíří aplikace. Pokud tento atribut je `false`, aplikace se budou předávat všechny výjimky, které jsou výsledkem pokusí zapsat události auditu.<br /><br /> Výchozí hodnota je `true`.|  
-|serviceAuthorizationAuditLevel|Určuje typy událostí autorizace, které se zaznamenávají do protokolu auditování. Platné hodnoty patří:<br /><br /> -None: Auditování událostí autorizace služby není provedeno.<br />-Úspěch: Pouze události autorizace úspěšné služby se auditují.<br />-Chyba: Pouze selhání události autorizace služby se auditují.<br />-SuccessAndFailure: Obě úspěchy a chyby události autorizace služby se auditují.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
-|messageAuthenticationAuditLevel|Určuje typ zprávy ověřování auditovat události přihlášení. Platné hodnoty patří:<br /><br /> -None: Jsou generovány žádné události auditu.<br />-Úspěch: Pouze události (včetně ověřit podpis zprávy, šifrování a ověření tokenu úplného ověření) úspěšné zabezpečení jsou protokolovány.<br />-Chyba: Jsou protokolovány pouze události chyb.<br />-SuccessAndFailure: Obě jsou zaznamenány události úspěchy a chyby.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
+|serviceAuthorizationAuditLevel|Určuje typy událostí autorizace, které se zaznamenávají do protokolu auditování. Platné hodnoty patří:<br /><br /> -None: Auditování událostí autorizace služby není provedeno.<br />-Úspěch: Pouze události autorizace úspěšné služby se auditují.<br />-Chyba: Pouze selhání události autorizace služby se auditují.<br />-SuccessOrFailure: Obě úspěchy a chyby události autorizace služby se auditují.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
+|messageAuthenticationAuditLevel|Určuje typ zprávy ověřování auditovat události přihlášení. Platné hodnoty patří:<br /><br /> -None: Jsou generovány žádné události auditu.<br />-Úspěch: Pouze události (včetně ověřit podpis zprávy, šifrování a ověření tokenu úplného ověření) úspěšné zabezpečení jsou protokolovány.<br />-Chyba: Jsou protokolovány pouze události chyb.<br />-SuccessOrFailure: Obě jsou zaznamenány události úspěchy a chyby.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -58,7 +60,7 @@ Určuje nastavení, které povolení auditování událostí zabezpečení běhe
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element zobrazí slouží k provádění kontroly [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] události ověřování. Při auditování je povoleno, můžete auditovat buď ověření úspěšné nebo neúspěšné pokusy o (nebo oba). Události se zapisují na jednu ze tří protokolů událostí: aplikace, zabezpečení nebo v protokolu výchozí verzi operačního systému. Protokoly událostí lze všechny zobrazit pomocí prohlížeče událostí systému Windows.  
@@ -71,7 +73,7 @@ Určuje nastavení, které povolení auditování událostí zabezpečení běhe
   
  Události auditu ověřování zpráv tématech, zda zpráva bylo manipulováno, jestli vypršela platnost zprávy a zda může klient ověřit ve službě. Poskytují informace o tom, jestli je ověřování byla úspěšná nebo neúspěšná spolu s identitou klienta a koncový bod zpráva byla odeslána spolu s akce přidružené ke zprávě.  
   
- Události auditu autorizace služby zahrnují rozhodnutí o autorizaci provedené správcem autorizace služby. Poskytují informace o tom, jestli ověření bylo úspěšné systému se nezdařilo spolu s identitou klienta, koncový bod zpráva byla odeslána na akci spojený se zprávou, identifikátor autorizační kontext, který se vygeneroval ze příchozí zprávy a typ Správce autorizací, který se rozhodnete přístup.  
+ Události auditu autorizace služby zahrnují rozhodnutí o autorizaci provedené správcem autorizace služby. Poskytují informace o tom, jestli ověření bylo úspěšné, nebo se nezdařilo spolu s identitou klienta, koncový bod zpráva byla odeslána k akci spojený se zprávou, identifikátor autorizační kontext, který se vygeneroval ze příchozí zprávy a typ Správce autorizací, který se rozhodnete přístup.  
   
 ## <a name="example"></a>Příklad  
   

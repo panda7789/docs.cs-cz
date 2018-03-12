@@ -4,14 +4,15 @@ description: "Modernizovat existující aplikace .NET s cloudu Azure a Windows k
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: eed17ad06c138c3a4eb85f5e023427b681488784
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6811da4b59531e27f2d832c102d37ba1383b15ab
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="lift-and-shift-existing-apps-azure-iaas"></a>Navýšení a posunutí existující aplikace Azure IaaS
 
@@ -27,7 +28,7 @@ Obrázek 2-1 umisťuje aplikace cloudové infrastruktury připravené pro použi
 
 > **Obrázek 2-1.** Umístění aplikace připravené pro infrastruktury cloudu
 
-## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Proč migrovat existující webové aplikace .NET k Azure IaaS 
+## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Proč migrovat existující webové aplikace .NET k Azure IaaS
 
 Hlavním důvodem pro migraci do cloudu, i na úrovni počáteční IaaS, je dosáhnout snížení nákladů. Pomocí více spravovaných infrastruktury služby vaší organizace můžete snížit jeho investice do hardwaru údržby, server nebo zřizování virtuálních počítačů a nasazení a správu infrastruktury.
 
@@ -39,7 +40,7 @@ Také se ukázalo, že aplikace budou snadněji modernizovat a přepracování v
 
 ## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Když k migraci na IaaS místo k PaaS
 
-V další části probereme DevOps připravené pro cloudové aplikace, které jsou nejčastěji založené na platformách PaaS a služby. Tyto aplikace umožňují většina výhody z migraci do cloudu.
+Další části popisují DevOps připravené pro cloudové aplikace, které jsou nejčastěji založené na platformách PaaS a služby. Tyto aplikace umožňují většina výhody z migraci do cloudu.
 
 Pokud je vaším cílem je jednoduše pro přesun existujících aplikací do cloudu, nejprve určete existující aplikace, které bude vyžadovat významné změny spustit v Azure App Service. Tyto aplikace by měla být první kandidáty.
 
@@ -53,15 +54,15 @@ Migrace do cloudu nemusí být obtížné. Ale čtením řada organizací Začí
 
 [Azure migrací](https://aka.ms/azuremigrate) je nová služba, která poskytuje pokyny, přehledy a mechanismy pro potřeby pomoc při migraci na Azure. Poskytuje Azure migrací:
 
--   Zjišťování a vyhodnocení místní virtuální počítače
+- Zjišťování a vyhodnocení místní virtuální počítače
 
--   Mapování integrované závislostí pro zjišťování vysokou spolehlivostí vícevrstvé aplikace
+- Mapování integrované závislostí pro zjišťování vysokou spolehlivostí vícevrstvé aplikace
 
--   Inteligentní snižování na virtuálních počítačích Azure
+- Inteligentní snižování na virtuálních počítačích Azure
 
--   Kompatibility, vytváření sestav s pokyny pro nekompatibilních potenciálních problémů
+- Kompatibility, vytváření sestav s pokyny pro nekompatibilních potenciálních problémů
 
--   Integrace se službou správy databáze Azure pro zjišťování databáze a migrace
+- Integrace se službou správy databáze Azure pro zjišťování databáze a migrace
 
 Azure migrací získáte jistotu, který můžete úlohy migrace s minimálním dopadem na podnikání a spouštějí se podle očekávání v Azure. Nástroje a pokyny můžete dosáhnout maximální návratnost investic, přičemž musí být zajištěno této důležité výkonu a splnění potřeb spolehlivost.
 
@@ -85,23 +86,23 @@ Obrázek 2 – 3 ukazuje spuštění několika migrací virtuálních počítač
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Datový list migrovat Azure**
+- **Datový list migrovat Azure**
 
     [https://aka.ms/azuremigration\_datasheet](https://aka.ms/azuremigration\_datasheet)
 
--   Migrace Azure
+- **Migrace Azure**
 
     [http://azuremigrationcenter.com/](http://azuremigrationcenter.com/)
 
--   **Migrace do Azure pomocí Site Recovery**
+- **Migrace do Azure pomocí Site Recovery**
 
     [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure)
 
--   **Přehled služby Azure Site Recovery**
+- **Přehled služby Azure Site Recovery**
 
     [https://docs.microsoft.com/azure/site-recovery/site-recovery-overview](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)
 
--   **Migrace virtuálních počítačů v AWS a virtuální počítače Azure**
+- **Migrace virtuálních počítačů v AWS a virtuální počítače Azure**
 
     [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure)
 

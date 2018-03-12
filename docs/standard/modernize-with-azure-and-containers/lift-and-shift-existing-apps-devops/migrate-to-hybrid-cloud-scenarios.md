@@ -4,14 +4,15 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/2/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 61b22e48afd543ac077ebb4fe1b7be200f9ec859
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6216068786745ac4ebc00263a14b4afe247193f5
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Migrace na hybridní cloudové scénáře
 
@@ -53,7 +54,7 @@ Microsoft Azure zásobníku Development Kit je jedním uzlem nasazení zásobní
 
     [https://www.microsoft.com/cloud-platform/hybrid-cloud](https://www.microsoft.com/cloud-platform/hybrid-cloud)
 
--   Azure zásobníku
+-   **Azure zásobníku**
 
     [https://azure.microsoft.com/overview/azure-stack/](https://azure.microsoft.com/overview/azure-stack/)
 

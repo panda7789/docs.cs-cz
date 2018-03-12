@@ -4,16 +4,18 @@ description: "Modernizovat existující aplikace .NET s kontejnery cloudu Azure 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 08bf7da36714b2c18d96659814bb11df6d9b26fc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: af9457552a71e4cb5cffe95ce1f33ccfa227268a
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="lift-and-shift-existing-apps-devops"></a>Navýšení a posunutí existujících aplikací DevOps
+
 > Navýšení vizi: A posunutí existující aplikace rozhraní .NET Framework na DevOps připravené pro cloudové aplikace na výrazně zlepšit flexibility vaše nasazení vám umožní dodávat rychlejší a snížit náklady na aplikaci doručení.
 
 Abyste mohli využívat výhody cloudu a nové technologie jako kontejnery, by měl aspoň částečně modernizovat existující aplikace .NET. Nakonec modernizing podnikové aplikace bude nižší vaše náklady na vlastnictví.

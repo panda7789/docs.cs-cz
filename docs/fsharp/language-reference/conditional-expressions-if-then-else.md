@@ -10,13 +10,13 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 16e1871c-4d4d-4691-9ab2-bd2c6f65589a
-ms.openlocfilehash: 3531a112eb53657d5e9102d5e5f3be988360b76e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5823e46cd13053fcd31f94f2d79d1f7470ca5118
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/08/2018
 ---
-# <a name="conditional-expressions-ifthenelse"></a>Podmíněné výrazy:`if...then...else`
+# <a name="conditional-expressions-ifthenelse"></a>Podmíněné výrazy: `if...then...else`
 
 `if...then...else` Výraz spouští různé větví kódu a také vyhodnocuje na jinou hodnotu, v závislosti na logický výraz zadaný.
 
@@ -38,11 +38,12 @@ Následující příklad ukazuje, jak používat `if...then...else` výraz.
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4501.fs)]
 
 ```
-John
-910 is less than 20
+10 is less than 20
+What is your name? John
+How old are you? 9
 You are only 9 years old and already learning F#? Wow!
 ```
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 

@@ -4,20 +4,21 @@ description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f9a30605313c06542fabf9689f700ed726445f57
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bab6e275c93d2cedddf010ab20f98cb8392fa9fa
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasadit existující aplikace .NET jako kontejnery Windows
 
 Nasazení, které jsou založeny na kontejnery Windows se dají použít pro optimalizovaných Cloudů aplikací, nativní cloudu a DevOps připravené pro cloudové aplikace.
 
-V této příručce i v následujících částech se zaměříme na použití kontejnerů Windows pro *DevOps Cloud-Ready* aplikace, když navýšení a posunutí existující aplikace .NET.
+Je pomocí Windows kontejnery pro aktivní v této příručce i v následujících částech *DevOps Cloud-Ready* aplikace, když navýšení a posunutí existující aplikace .NET.
 
 ## <a name="what-are-containers-linux-or-windows"></a>Co jsou kontejnery? (Linux nebo Windows)
 
@@ -41,7 +42,7 @@ V kontejnerech Windows je plně automatizovat proces vytváření balíčků apl
 
 Velký počet organizace jsou containerizing stávající monolitický aplikace z následujících důvodů:
 
--   **Verze flexibility prostřednictvím vylepšené nasazení**. Kontejnery nabízejí konzistentní nasazení smlouva mezi vývoj a provoz. Pokud použijete kontejnery, nebude uslyšíte vývojáři Řekněme, "Ho pracuje na můj počítač, proč ne v produkčním prostředí?" Můžete jednoduše říká, "Běží jako kontejner, takže budete spuštění v produkčním prostředí." Zabalené aplikace, se všemi jeho závislostmi, mohou být provedeny v jakémkoli podporovaných prostředí, na základě kontejneru. Způsob, jakým se má spouštět ve všech cílů nasazení (vývoj, kontrolu kvality, pracovní produkční), bude fungovat. Kontejnery eliminovat většina frictions, když se přesouvají z jedné fáze na další, což výrazně zvyšuje nasazení, a můžete zaslat rychlejší.
+-   **Verze flexibility prostřednictvím vylepšené nasazení**. Kontejnery nabízejí konzistentní nasazení smlouva mezi vývoj a provoz. Pokud použijete kontejnery, nebude uslyšíte vývojáři Řekněme, "Ho pracuje na můj počítač, proč ne v produkčním prostředí?" Můžete jednoduše říká, "Běží jako kontejner, takže se spustí v produkčním prostředí." Zabalené aplikace, se všemi jeho závislostmi, mohou být provedeny v jakémkoli podporovaných prostředí, na základě kontejneru. Způsob, jakým se má spouštět ve všech cílů nasazení (vývoj, kontrolu kvality, pracovní produkční), bude fungovat. Kontejnery eliminovat většina frictions, když se přesouvají z jedné fáze na další, což výrazně zvyšuje nasazení, a můžete zaslat rychlejší.
 
 -   **Snížení nákladů**. Kontejnery vést k nižším nákladům, buď konsolidace a odebrání stávající hardware nebo z spouštění aplikací na vyšší hustotu na jednotku hardwaru.
 
@@ -95,14 +96,14 @@ Ve scénářích migrace pro stávající nebo starší verze aplikace, které j
 
 Když přidáte název bitové kopie do souboru soubor Docker, můžete vybrat verzi operačního systému a pomocí značky, jako v následujících příkladech založené na rozhraní .NET Framework kontejneru bitových kopií systému Windows:
 
-> | Značka | **Systém a verze** |
+> | **Značka** | **Systém a verze** |
 > |---|---|
 > | **microsoft/dotnet-framework:4.x-windowsservercore** | Rozhraní .NET framework 4.x na jádru serveru Windows |
 > | **microsoft/aspnet:4.x-windowsservercore** | Rozhraní .NET framework 4.x pomocí dalších úprav ASP.NET na jádru serveru Windows |
 
 Pro .NET Core (napříč platformami operačních systémů Linux a Windows) značek bude vypadat takto:
 
-> | Značka | **Systém a verze**
+> | **Značka** | **Systém a verze**
 > |---|---|
 > | **microsoft/dotnet:2.0.0-runtime** | Rozhraní .NET 2.0 core runtime jen v systému Linux |
 > | **microsoft/dotnet:2.0.0-runtime-nanoserver** | Rozhraní .NET 2.0 core runtime jen v systému Windows Nano Server |

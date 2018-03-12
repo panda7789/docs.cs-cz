@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - animation [WPF], gradient brush colors
 - brushes [WPF], animating colors of
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c977e8a4a23f9739541cf28d9e34ad9e8db1daf0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 74227ebe815e971087569ff39ac0a3479c1b0d14
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="getting-started-with-ink"></a>Začínáme s inkoustem
 Zařadit digitálního do svých aplikací je jednodušší než kdy dřív. Element Ink byla vyvinuta ze se nezbytným důsledkem metodu COM a systém Windows Forms programování k dosažení úplné integrace do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Není nutné k instalaci modulu runtime knihovny nebo samostatné sady SDK.  
@@ -38,14 +40,14 @@ Zařadit digitálního do svých aplikací je jednodušší než kdy dřív. Ele
 ## <a name="quick-start"></a>Rychlý Start  
  Tato část vám pomůže psát jednoduché [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, která shromažďuje rukopisu.  
   
- Pokud jste tak již neučinili, nainstalujte Microsoft Visual Studio 2005 a [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)]. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace obvykle musí být zkompilovány, abyste mohli zobrazit i v případě, že se skládat pouze z [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Ale [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)] zahrnuje aplikace, aplikaci XamlPad, navržená tak, aby proces implementace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]– na základě uživatelského rozhraní. Tuto aplikaci můžete použít k zobrazení a pustíte do optimalizace s první několik ukázky v tomto dokumentu. Proces vytváření kompilované aplikace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je popsané dál v tomto dokumentu.  
+ Pokud jste tak již neučinili, nainstalujte Microsoft Visual Studio 2005 a [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)]. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace obvykle musí být zkompilovány, abyste mohli zobrazit i v případě, že se skládat pouze z [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Ale [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)] zahrnuje aplikace, aplikaci XamlPad, navržená tak, aby proces implementace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]– na základě uživatelského rozhraní. Tuto aplikaci můžete použít k zobrazení a pustíte do optimalizace s první několik ukázky v tomto dokumentu. Proces vytváření kompilované aplikace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je popsané dál v tomto dokumentu.  
   
- Chcete-li spustit aplikaci XAMLPad, klikněte na tlačítko **spustit** nabídky, přejděte na příkaz **všechny programy**, přejděte na **Microsoft Winndows SDK**, přejděte na příkaz **nástroje**a klikněte na tlačítko **Aplikaci XAMLPad**. V podokně vykreslování vykreslí aplikaci XAMLPad XAML kód napsaný v podokně kódu. Můžete upravit kód XAML a změny se okamžitě zobrazí v podokně vykreslování.  
+ Chcete-li spustit aplikaci XAMLPad, klikněte na tlačítko **spustit** nabídky, přejděte na příkaz **všechny programy**, přejděte na **Microsoft Windows SDK**, přejděte na příkaz **nástroje**a klikněte na tlačítko **Aplikaci XAMLPad**. V podokně vykreslování vykreslí aplikaci XAMLPad XAML kód napsaný v podokně kódu. Můžete upravit kód XAML a změny se okamžitě zobrazí v podokně vykreslování.  
   
 #### <a name="got-ink"></a>Máte rukopisu?  
  Spuštění prvního [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, která podporuje rukopisu:  
   
-1.  Otevřete sadu Microsoft Visual Studio 2005  
+1.  Open Microsoft Visual Studio 2005  
   
 2.  Vytvořte novou **aplikace WPF (Windows)**  
   

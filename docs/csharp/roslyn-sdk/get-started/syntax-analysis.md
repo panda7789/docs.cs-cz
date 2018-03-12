@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: c89695379d545ac5b22fc0716f3e0060b6c08f31
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 52f66782086af651517d54105fea6f5533ea05a2
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="get-started-with-syntax-analysis"></a>Začínáme s syntaxe analýzy
 
@@ -73,7 +73,7 @@ Můžete zkontrolovat uzly ve stromu syntaxe dvěma způsoby. Můžete procháze
 
 ### <a name="manual-traversal"></a>Ruční traversal
 
-Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub ukázky](https://github.com/dotnet/samples/csharp/roslyn-sdk/SyntaxQuickStart).
+Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SyntaxQuickStart).
 
 > [!NOTE]
 > Typy stromu syntaxe využívají dědičnost k popisu různých syntaxe prvky, které jsou platné v různých umístěních v programu. Pomocí těchto rozhraní API často znamená přetypování vlastnosti nebo členy kolekce na konkrétní odvozené typy. V následujících příkladech přiřazení a položky CAST jsou samostatné příkazy, pomocí explicitně typové proměnné. Si můžete přečíst kód návratové typy rozhraní API a typ modulu runtime vrácených objektů. V praxi je dnes běžné použijte implicitně typovaná proměnné a závisí na názvy rozhraní API k popisu typ objektů, je zkontrolován.
@@ -103,7 +103,7 @@ Obvykle by prošel stromu Další informace o kód. V tomto příkladu při anal
 
 [!code-csharp[Find the first member](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#4 "Find the first member")]
 
-Tento člen <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType>. Reprezentuje vše v rámci oboru `namespace Hello World` deklarace. Přidejte následující kód zjistit, co jsou uzly uvnitř deklarované `HelloWorld` obor názvů:
+Tento člen <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType>. Reprezentuje vše v rámci oboru `namespace HelloWorld` deklarace. Přidejte následující kód zjistit, co jsou uzly uvnitř deklarované `HelloWorld` obor názvů:
 
 [!code-csharp[Find the class declaration](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#5 "Find the class declaration")]
 
@@ -127,14 +127,14 @@ The tree has 4 using statements. They are:
         System.Collections
         System.Linq
         System.Text
-The first member is a NamespaceDeclaration
+The first member is a NamespaceDeclaration.
 There are 1 members declared in this namespace.
-The first member is a ClassDeclaration
-There are 1 members declared in the Program class
-The first member is a MethodDeclaration
-The return type of the Main method is void
-The method has 1 parameters
-The type of the args parameter is string[]
+The first member is a ClassDeclaration.
+There are 1 members declared in the Program class.
+The first member is a MethodDeclaration.
+The return type of the Main method is void.
+The method has 1 parameters.
+The type of the args parameter is string[].
 The body text of the Main method follows:
         {
             Console.WriteLine("Hello, World!");
@@ -143,7 +143,7 @@ The body text of the Main method follows:
 
 ### <a name="query-methods"></a>Metody dotazů
 
-Kromě procházení stromy, můžete si také prostudovat stromu syntaxe dotazu metodami definované na <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>. Tyto metody by měla být okamžitě známým všem obeznámeni s XPath. Tyto metody s dotazy LINQ vám pomůže rychle najít věcí ve stromu. <xref:Microsoft.CodeAnalysis.SyntaxNode> , Jako má metody dotazů <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.AncestorsAndSelf%2A> a <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes>.
+Kromě procházení stromy, můžete si také prostudovat stromu syntaxe dotazu metodami definované na <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>. Tyto metody by měla být okamžitě známým všem obeznámeni s XPath. Tyto metody s dotazy LINQ vám pomůže rychle najít věcí ve stromu. <xref:Microsoft.CodeAnalysis.SyntaxNode> , Jako má metody dotazů <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.AncestorsAndSelf%2A> a <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes%2A>.
 
 Tyto metody dotazů můžete použít k vyhledání argument `Main` metoda jako alternativu k procházení stromu. Přidejte následující kód k dolnímu okraji vaší `Main` metoda:
 
@@ -163,7 +163,7 @@ Tento příklad implementuje <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWal
 
 Vytvoření nového jazyka C# **samostatný nástroj pro analýzu kódu** projektu; název "**SyntaxWalker**."
 
-Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/samples/csharp/roslyn-sdk/SyntaxQuickStart). Ukázce na Githubu obsahuje oba projekty popsané v tomto kurzu.
+Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SyntaxQuickStart). Ukázce na Githubu obsahuje oba projekty popsané v tomto kurzu.
 
 Stejně jako v předchozím příkladu můžete definovat na řetězcovou konstantu pro uložení text programu, který se chystáte analýza:
 
@@ -171,7 +171,7 @@ Stejně jako v předchozím příkladu můžete definovat na řetězcovou konsta
 
 Tento zdroj text obsahuje `using` direktivy rozmístěny na čtyři různých umístěních: úrovni souborů, v oboru názvů nejvyšší úrovně a v dva vnořené obory názvů. Tento příklad klade důraz základní scénáře použití <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> třída kódu dotazu. Je náročná navštívit každý uzel ve stromu syntaxe kořenové najít pomocí deklarace. Místo toho vytvořte odvozené třídě a přepsat metodu, která je volána jenom v případě, že je aktuální uzel ve stromové struktuře pomocí – direktiva. Návštěvník neprovádí žádné další práce z jiné typy uzlů. Tato metoda jeden kontroluje všechny `using` příkazy a vytvoří kolekci oborů názvů, které nejsou v `System` oboru názvů. Sestavování <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> , hledá všechny `using` příkazy, ale pouze `using` příkazy.
 
-Teď, když definujete text programu, je nutné vytvořit `SyntaxTree` a získat kořenovém stromové struktuře:
+Teď, když jste definovali text programu, je nutné vytvořit `SyntaxTree` a získat kořenovém stromové struktuře:
 
 [!code-csharp[Create the Syntax tree and access the root](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#2 "Create the Syntax tree and access the root node.")]
 
@@ -198,23 +198,23 @@ Nakonec budete muset přidat dva řádky kódu k vytvoření `UsingCollector` a 
 Zkompilování a spuštění programu. Byste měli vidět následující výstup:
 
 ```console
-        VisitUsingDirective called with System
-        VisitUsingDirective called with System.Collections.Generic
-        VisitUsingDirective called with System.Linq
-        VisitUsingDirective called with System.Text
-        VisitUsingDirective called with Microsoft.CodeAnalysis
-                Success. Adding Microsoft.CodeAnalysis
-        VisitUsingDirective called with Microsoft.CodeAnalysis.CSharp
-                Success. Adding Microsoft.CodeAnalysis.CSharp
-        VisitUsingDirective called with Microsoft
-                Success. Adding Microsoft
-        VisitUsingDirective called with System.ComponentModel
-        VisitUsingDirective called with Microsoft.Win32
-                Success. Adding Microsoft.Win32
-        VisitUsingDirective called with System.Runtime.InteropServices
-        VisitUsingDirective called with System.CodeDom
-        VisitUsingDirective called with Microsoft.CSharp
-                Success. Adding Microsoft.CSharp
+        VisitUsingDirective called with System.
+        VisitUsingDirective called with System.Collections.Generic.
+        VisitUsingDirective called with System.Linq.
+        VisitUsingDirective called with System.Text.
+        VisitUsingDirective called with Microsoft.CodeAnalysis.
+                Success. Adding Microsoft.CodeAnalysis.
+        VisitUsingDirective called with Microsoft.CodeAnalysis.CSharp.
+                Success. Adding Microsoft.CodeAnalysis.CSharp.
+        VisitUsingDirective called with Microsoft.
+                Success. Adding Microsoft.
+        VisitUsingDirective called with System.ComponentModel.
+        VisitUsingDirective called with Microsoft.Win32.
+                Success. Adding Microsoft.Win32.
+        VisitUsingDirective called with System.Runtime.InteropServices.
+        VisitUsingDirective called with System.CodeDom.
+        VisitUsingDirective called with Microsoft.CSharp.
+                Success. Adding Microsoft.CSharp.
 Microsoft.CodeAnalysis
 Microsoft.CodeAnalysis.CSharp
 Microsoft

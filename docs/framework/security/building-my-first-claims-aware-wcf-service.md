@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 791c86b8f833c6b1a8acb6da3b03cfccdafca0e5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: f5641eba212cfdeb95c0a52a82a28b5c2d3e9aee
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Vytváření Můj první službu WCF používající deklarace identity
 ## <a name="applies-to"></a>Platí pro  
@@ -48,7 +50,7 @@ ms.lasthandoff: 01/19/2018
   
  Služba AD FS 2.0 je součástí systému Windows Server R2 a může sloužit jako služba STS pro místní scénáře. Azure Active Directory řízení přístupu (také označované jako služby Řízení přístupu nebo služby ACS) je Cloudová služba, které nabízí v rámci Microsoft Azure. Při sestavování aplikací pracujících s deklaracemi můžete pro testovací nebo vzdělávací účely použít také jinou službu STS. Například můžete použít místní službu tokenů zabezpečení vývoj, která je součástí [identita a přístup pro sadu Visual Studio](http://go.microsoft.com/fwlink/?LinkID=245849) (http://go.microsoft.com/fwlink/?LinkID=245849) tedy volně dostupných online.  
   
- Vytvoření vaší první deklaracemi identity služby WCF pomocí WIF, najdete v části [postupy: sestavení deklaracemi WCF služby pomocí WIF](http://msdn.microsoft.com/library/431e6415-62ed-4a9f-af03-f14d2b4dfe6d).  
+ Vytvoření vaší první deklaracemi identity služby WCF pomocí WIF, najdete v části [postupy: povolení WIF pro webovou aplikaci služby WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md).
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)

@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a17c96a03a35fcc4eb12e188dbc79d8d48153fb7
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: a94300a879ac18d21d35dfe58ac0d9805f240a92
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v rozhraní .NET
 
@@ -64,7 +64,7 @@ Následující příklad ukazuje použití <xref:System.DateTime.Parse%2A?displa
 > Všechny C# ukázky v tomto článku spustit v prohlížeči. Stiskněte **spustit** tlačítko Zobrazit výstup. Můžete taky upravit je a experimentovat sami.
 
 > [!NOTE]
-> Tyto příklady jsou k dispozici v úložišti GitHub dokumentace pro obě [C#](https://github.com/dotnet/docs/samples/tree/master/snippets/csharp/how-to/conversions) a [VB](https://github.com/dotnet/docs/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo si můžete stáhnout projektu jako zipfile pro [C#] ((https://github.com/dotnet/docs/samples/tree/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/docs/samples/tree/master/snippets/visualbasic/how-to/conversions.zip).
+> Tyto příklady jsou k dispozici v úložišti GitHub dokumentace pro obě [C#](https://github.com/dotnet/docs/samples/tree/master/snippets/csharp/how-to/conversions) a [VB](https://github.com/dotnet/docs/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo si můžete stáhnout jako zipfile pro projekt [C#](https://github.com/dotnet/docs/samples/tree/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/docs/samples/tree/master/snippets/visualbasic/how-to/conversions.zip).
 
 [!code-csharp-interactive[Parsing.DateAndTime#1](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#1)]
 [!code-vb[Parsing.DateAndTime#1](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#1)]

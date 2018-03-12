@@ -26,11 +26,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9b9e54d8bbc9ca7cc9172fd83bd15968b3cef8e1
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 107e935f3fd4fd38b4393d09e46c03c0c51c4d79
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení podřetězce vstupní řetězce. Seskupovací konstrukce můžete provést následující akce:  
@@ -393,7 +393,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\d{2}`|Porovná dvě desítková číslice.|  
-|`{?<=\b20)`|Pokračujte shody, pokud dva desetinných míst předchází desetinných míst "20" na hranici slova.|  
+|`(?<=\b20)`|Pokračujte shody, pokud dva desetinných míst předchází desetinných míst "20" na hranici slova.|  
 |`\b`|Ukončí porovnání na hranici slova.|  
   
  Kontrolní výrazy kladné zpětného vyhledávání s nulovou šířkou se taky používají k omezení zpětné navracení při poslední znak nebo znaky ve skupině zaznamenané musí být podmnožinou znaky, které odpovídají vzor regulárního výrazu této skupiny. Například pokud skupinu zaznamená všechny aplikace word po sobě jdoucí znaky, můžete výraz kladné zpětného vyhledávání s nulovou šířkou vyžadují, aby jeho poslední znak abecední.  
