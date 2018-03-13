@@ -267,6 +267,7 @@
 ### [Jak řetězit řetězce](csharp/how-to/concatenate-multiple-strings.md)
 ### [Postupy převedení řetězce na typ DateTime](standard/base-types/parsing-datetime.md)
 ### [Jak hledat řetězce](csharp/how-to/search-strings.md)
+### [Jak změnit obsah řetězce](csharp/how-to/modify-string-contents.md)
 <!-- End of C# Concepts section -->
 ## [Sada .NET Compiler Platform SDK (rozhraní Roslyn API)](csharp/roslyn-sdk/)
 ## [Průvodce programováním v jazyce C#](csharp/programming-guide/)
