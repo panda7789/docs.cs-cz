@@ -2,17 +2,18 @@
 title: "Iterátory (C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6d4994ea57d9fd0df8dfca7ffa40c280499caee6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 48b09368ed0a84dc84793091b819ba7b4b6183f1
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="iterators-c"></a>Iterátory (C#)
 *Iterator* slouží k krok prostřednictvím kolekcí, jako například seznamy a maticových.  
@@ -65,7 +66,7 @@ public static System.Collections.IEnumerable SomeNumbers()
 > [!NOTE]
 >  Všechny příklady v tomto tématu, s výjimkou Iterator jednoduchý příklad, zahrnují [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktivy pro `System.Collections` a `System.Collections.Generic` obory názvů.  
   
-##  <a name="BKMK_SimpleIterator"></a>Jednoduché iterátorů  
+##  <a name="BKMK_SimpleIterator"></a> Jednoduché iterátorů  
  V následujícím příkladu má jeden `yield return` příkaz, který je uvnitř [pro](../../../csharp/language-reference/keywords/for.md) smyčky. V `Main`, každé iteraci `foreach` těla příkazu vytvoří volání funkce iterator, který bude pokračovat na další `yield return` příkaz.  
   
 ```csharp  
@@ -93,7 +94,7 @@ public static System.Collections.Generic.IEnumerable<int>
 }  
 ```  
   
-##  <a name="BKMK_CollectionClass"></a>Vytvoření třídy kolekce  
+##  <a name="BKMK_CollectionClass"></a> Vytvoření třídy kolekce  
  V následujícím příkladu `DaysOfTheWeek` třída implementuje <xref:System.Collections.IEnumerable> rozhraní, což vyžaduje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda. Kompilátor implicitně volá `GetEnumerator` metoda, která vrátí <xref:System.Collections.IEnumerator>.  
   
  `GetEnumerator` Metoda vrátí každý řetězec jeden současně pomocí `yield return` příkaz.  
@@ -222,7 +223,7 @@ public class Zoo : IEnumerable
 }  
 ```  
   
-##  <a name="BKMK_GenericList"></a>Pomocí seznamu obecné iterátory  
+##  <a name="BKMK_GenericList"></a> Pomocí seznamu obecné iterátory  
  V následujícím příkladu `Stack(Of T)` – obecná třída implementuje <xref:System.Collections.Generic.IEnumerable%601> obecné rozhraní. `Push` Metoda přiřadí hodnoty do pole typu `T`. <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> Metoda vrátí pole hodnot pomocí `yield return` příkaz.  
   
  Kromě obecná <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metoda, neobecnou <xref:System.Collections.IEnumerable.GetEnumerator%2A> také musí být implementována metoda. Důvodem je, že <xref:System.Collections.Generic.IEnumerable%601> dědí z <xref:System.Collections.IEnumerable>. Implementace neobecnou odkládat údaje pro obecnou implementaci.  
@@ -339,16 +340,16 @@ public class Stack<T> : IEnumerable<T>
 }  
 ```  
   
-##  <a name="BKMK_SyntaxInformation"></a>Informace ze syntaxe  
+##  <a name="BKMK_SyntaxInformation"></a> Informace ze syntaxe  
  Může dojít iterator jako metodu nebo `get` přistupujícího objektu. Iterátor nemohou být v události, konstruktoru instance, statického konstruktoru nebo statické finalizační metodu.  
   
  Musí existovat implicitní převod z typu výrazu v `yield return` příkaz, který má návratový typ iteraci.  
   
- V jazyce C#, nemůže obsahovat metodu iterator ani `ref` nebo `out` parametry.  
+ V jazyce C#, nemůže obsahovat metodu iterator ani `in`, `ref`, nebo `out` parametry.  
   
  V jazyce C#, "výnos" není vyhrazené slovo a má zvláštní význam jenom v případě, že se používá před `return` nebo `break` – klíčové slovo.  
   
-##  <a name="BKMK_Technical"></a>Technická implementace  
+##  <a name="BKMK_Technical"></a> Technická implementace  
  I když napíšete iterovat jako metodu, kompilátor převede jej do vnořené třídy ve výsledku, který je stav počítače. Tato třída uchovává informace o umístění iterator jako dlouho `foreach` pokračuje smyčky v kódu klienta.  
   
  Pokud chcete zobrazit, jaké kompilátor, můžete nástroj Ildasm.exe zobrazíte kód Microsoft intermediate language, který se vygeneruje pro metodu iterator.  
@@ -361,7 +362,7 @@ public class Stack<T> : IEnumerable<T>
   
  Další informace najdete v tématu [specifikace jazyka C#](../../../csharp/language-reference/language-specification/index.md).  
   
-##  <a name="BKMK_UseOfIterators"></a>Použití iterátory  
+##  <a name="BKMK_UseOfIterators"></a> Použití iterátory  
  Iterátory umožňují zachovat jednoduchost `foreach` cykly, když potřebujete použít složitý kód pro naplnění seznamu pořadí. To může být užitečné, pokud chcete provést následující akce:  
   
 -   Změňte pořadí seznamu po první `foreach` cykly iterací.  
@@ -373,7 +374,7 @@ public class Stack<T> : IEnumerable<T>
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Generic>  
  <xref:System.Collections.Generic.IEnumerable%601>  
- [foreach v](../../../csharp/language-reference/keywords/foreach-in.md)  
- [YIELD –](../../../csharp/language-reference/keywords/yield.md)  
- [Použití příkazu foreach s poli](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [yield](../../../csharp/language-reference/keywords/yield.md)  
+ [Použití příkazu foreach s poli](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)  
  [Obecné typy](../../../csharp/programming-guide/generics/index.md)

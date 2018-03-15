@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6eacc9f6ac815e01c446f7cdea6026904ad2ba90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c29d4ddbf5f1f9ae80535a8a97651b296f3c1fb3
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="variance-in-delegates-c"></a>Odchylky v delegátech (C#)
 Rozhraní .NET framework 3.5 byla zavedena podpora odchylku odpovídající metoda podpisy s typy delegáta v všechny Delegáti v jazyce C#. To znamená, že můžete přiřadit deleguje pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo pracujících s parametry, které mají méně odvozené typy (kontravariance) než je určeno typ delegáta . To zahrnuje obecné a neobecné delegáti.  
@@ -120,9 +121,9 @@ public static void Test()
 ### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Obecní delegáti, které mají typ Variant parametry typu v rozhraní .NET Framework  
  Rozhraní .NET framework 4 zavedl podporu odchylky pro parametry obecného typu v několika existující obecní delegáti:  
   
--   `Action`Deleguje z <xref:System> obor názvů, například <xref:System.Action%601> a<xref:System.Action%602>  
+-   `Action` Deleguje z <xref:System> obor názvů, například <xref:System.Action%601> a <xref:System.Action%602>  
   
--   `Func`Deleguje z <xref:System> obor názvů, například <xref:System.Func%601> a<xref:System.Func%602>  
+-   `Func` Deleguje z <xref:System> obor názvů, například <xref:System.Func%601> a <xref:System.Func%602>  
   
 -   <xref:System.Predicate%601> Delegovat  
   
@@ -148,7 +149,7 @@ public delegate void DContravariant<in A>(A a);
 ```  
   
 > [!IMPORTANT]
->  `ref`a `out` parametry v jazyce C# nelze označit jako typ variant.  
+>  `ref`, `in`, a `out` parametry v jazyce C# nelze označit jako typ variant.  
   
  Je také možné podporovat odchylky a Kovariance v stejného delegáta, ale pro jiný typ parametry. To je ukázáno v následujícím příkladu.  
   

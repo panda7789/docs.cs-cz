@@ -18,14 +18,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4ed0b3991b08eceb950aa1a3aa1704529700feb3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 127737877ac64ac9278bc039650caf72936571bf
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="parallel-diagnostic-tools"></a>Paralelní diagnostické nástroje
-[!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)]poskytuje rozsáhlou podporu pro ladění a profilování vícevláknových aplikací.  
+Visual Studio poskytuje rozsáhlou podporu pro ladění a profilování vícevláknových aplikací.  
   
 ## <a name="debugging"></a>Ladění  
  Ladicí program Visual Studio přidá nové windows pro ladění paralelní aplikace. Další informace naleznete v následujících tématech:  

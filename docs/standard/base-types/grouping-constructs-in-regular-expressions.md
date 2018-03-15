@@ -26,11 +26,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 107e935f3fd4fd38b4393d09e46c03c0c51c4d79
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 766f20f92cd4ac2d987137f86616a69df9f53600
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení podřetězce vstupní řetězce. Seskupovací konstrukce můžete provést následující akce:  
@@ -301,7 +301,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
   
  Konstrukce možnosti skupiny není skupinu zachycení. To znamená i když jakékoli její části řetězec, který je zachycen *dílčím výrazu* se dodává se shodují, není zahrnuta ve skupině zaznamenané ani používaných k naplnění <xref:System.Text.RegularExpressions.GroupCollection> objektu.  
   
- Například regulární výraz `\b(?ix: d \w+)\s` v následujícím příkladu používá vložených možností v seskupovací konstrukce k povolení porovnávání a Ignorovat prázdné vzor při identifikaci všech slov, která začínají znakem "d". Regulární výraz je definována, jak je znázorněno v následující tabulce.  
+ Například regulární výraz `\b(?ix: d \w+)\s` v následujícím příkladu používá vložených možností v seskupovací konstrukce k povolení porovnávání a ignorování prázdných znaků při identifikaci všech slov, která začínají znakem "d". Regulární výraz je definována, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  

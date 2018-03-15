@@ -3,16 +3,17 @@ title: "příkaz pack DotNet - .NET Core rozhraní příkazového řádku"
 description: "Příkaz pack dotnet vytvoří balíčky NuGet pro projekt .NET Core."
 author: mairaw
 ms.author: mairaw
-ms.date: 12/13/2017
+ms.date: 03/10/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 28cd05db0643097a7271fd0488354846598ba493
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 401a4491c27ea10d0fdf1877417f1e2d5da6839f
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-pack"></a>pack DotNet.
 
@@ -20,14 +21,15 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet pack`-Pack kód do balíčku NuGet.
+`dotnet pack` -Pack kód do balíčku NuGet.
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 ```
-dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies] [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
+dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
+    [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 
@@ -48,6 +50,8 @@ Ve výchozím nastavení `dotnet pack` nejprve sestavení projektu. Pokud chcete
 
 Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces okolních. Další informace najdete v tématu [NuGet metadata vlastnosti](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) část ukazuje způsob použití nástroje MSBuild přepínače pro několik různých scénářů.
 
+[!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
+
 ## <a name="arguments"></a>Arguments
 
 `PROJECT`
@@ -56,13 +60,13 @@ Projekt pack. Je buď cestu k [csproj souboru](csproj.md) nebo do adresáře. P�
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 `-c|--configuration {Debug|Release}`
 
 Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
 
-`--force`Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Jde o ekvivalent odstraňování *project.assets.json* souboru.
+`--force` Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Jde o ekvivalent odstraňování *project.assets.json* souboru.
 
 `-h|--help`
 
@@ -157,7 +161,7 @@ Sada pro projekt v aktuálním adresáři:
 Sada `app1` projektu:
 
 `dotnet pack ~/projects/app1/project.csproj`
-    
+
 Pack projekt v aktuálním adresáři a umístí do výsledného balíčky `nupkgs` složky:
 
 `dotnet pack --output nupkgs`
@@ -177,3 +181,7 @@ Nastavte verzi balíčku `2.1.0` s `PackageVersion` vlastnosti MSBuild:
 Pack projekt pro konkrétní [cílové rozhraní](../../standard/frameworks.md):
 
 `dotnet pack /p:TargetFrameworks=net45`
+
+Pack projektu a pro operaci obnovení (.NET Core SDK 2.0 a novějších verzí) pomocí konkrétní runtime (Windows 10):
+
+`dotnet pack --runtime win10-x64`

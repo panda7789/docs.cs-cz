@@ -11,14 +11,14 @@ ms.assetid: 6a2b261e-a1cc-49a6-b4f0-6cacae385a1e
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7f2d4e613491b26e82523d230398af3ec34b4d0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f76f63aee0100c6af6bde73c8543b4e7136b1954
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="passing-arrays-using-ref-and-out-c-programming-guide"></a>Předávání polí pomocí parametrů ref a out (Průvodce programováním v C#)
-Všechny jako [out](../../../csharp/language-reference/keywords/out.md) parametry, `out` parametr typu pole musí mít přiřazenou před jeho použitím; to znamená, musí být přiřazen volaného. Příklad:  
+Všechny jako [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, `out` parametr typu pole musí mít přiřazenou před jeho použitím; to znamená, musí být přiřazen volaného. Příklad:  
   
  [!code-csharp[csProgGuideArrays#39](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-using-ref-and-out_1.cs)]  
   
@@ -39,9 +39,9 @@ Všechny jako [out](../../../csharp/language-reference/keywords/out.md) parametr
  [!code-csharp[csProgGuideArrays#38](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-using-ref-and-out_4.cs)]  
   
 ## <a name="see-also"></a>Viz také  
- [REF](../../../csharp/language-reference/keywords/ref.md)  
+ [ref](../../../csharp/language-reference/keywords/ref.md)  
  [out – modifikátor parametrů](../../../csharp/language-reference/keywords/out-parameter-modifier.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Pole](../../../csharp/programming-guide/arrays/index.md)  
  [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  
  [Vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)  

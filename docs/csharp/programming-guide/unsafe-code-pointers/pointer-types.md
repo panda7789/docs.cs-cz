@@ -2,20 +2,21 @@
 title: "Typy ukazatelů (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
 ms.assetid: 3319faf9-336d-4148-9af2-1da2579cdd1e
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0699793e91199cc623c0d13e42937c8b919e992a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe7b926bdf9f662d25f2fe960b51fc8254b7aa3a
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 V nezabezpečeném kontextu lze jako konkrétní typ použít typ ukazatele, typ hodnoty nebo typ odkazu. Deklarace typu ukazatele má jednu z následujících forem:  
@@ -50,11 +51,11 @@ int *p1, *p2, *p3;   // Invalid in C#
   
 |Příklad|Popis|  
 |-------------|-----------------|  
-|`int* p`|`p`je zde ukazatel na celé číslo.|  
-|`int** p`|`p`je zde ukazatel na ukazatel na celé číslo.|  
-|`int*[] p`|`p`je jednorozměrná pole ukazatele na celá čísla.|  
-|`char* p`|`p`je zde ukazatel na char.|  
-|`void* p`|`p`je zde ukazatel na neznámého typu.|  
+|`int* p`|`p` je zde ukazatel na celé číslo.|  
+|`int** p`|`p` je zde ukazatel na ukazatel na celé číslo.|  
+|`int*[] p`|`p` je jednorozměrná pole ukazatele na celá čísla.|  
+|`char* p`|`p` je zde ukazatel na char.|  
+|`void* p`|`p` je zde ukazatel na neznámého typu.|  
   
  Operátor dereference ukazatele * lze použít pro přístup k obsahu v umístění, na které odkazuje proměnná ukazatele. Předpokládejme například následující deklaraci:  
   
@@ -113,7 +114,7 @@ Console.ReadLine();
   
  Může být ukazatel `null`. Použití operátoru dereference na ukazatele null způsobí chování definované implementací.  
   
- Předávání ukazatelů mezi metodami může způsobit nedefinované chování. Příklady vrací ukazatele místní proměnné prostřednictvím parametru Ref nebo Out, nebo jako výsledek funkce. Pokud byl ukazatel nastaven v pevném bloku, pak proměnná, na kterou odkazuje, již nemusí být pevně stanovená.  
+ Předávání ukazatelů mezi metodami může způsobit nedefinované chování. Vezměte v úvahu metodu, která vrací ukazatel na místní proměnné prostřednictvím `in`, `out` nebo `ref` parametr nebo v důsledku funkce. Pokud byl ukazatel nastaven v pevném bloku, pak proměnná, na kterou odkazuje, již nemusí být pevně stanovená.  
   
  V následující tabulce je uveden seznam operátorů a příkazů, které mohou fungovat u ukazatelů v nezabezpečeném kontextu:  
   
@@ -127,18 +128,18 @@ Console.ReadLine();
 |+ a -|Provádí aritmetické operace ukazatele.|  
 |==,! =, \<, >, \<=, a > =|Porovnává ukazatele.|  
 |`stackalloc`|Přidělí paměť v zásobníku.|  
-|`fixed`příkaz|Dočasně pevně stanoví proměnnou tak, aby bylo možné vyhledat její adresu.|  
+|`fixed` Příkaz|Dočasně pevně stanoví proměnnou tak, aby bylo možné vyhledat její adresu.|  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Nebezpečný kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
  [Převody ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md)  
  [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
  [Typy](../../../csharp/language-reference/keywords/types.md)  
- [nezabezpečený](../../../csharp/language-reference/keywords/unsafe.md)  
+ [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
  [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)  
  [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)  
  [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 93aef07a-6747-4ce4-a10f-a05168978af6
-ms.openlocfilehash: b4305d24163f9b23631d5efb6e838f55127cd9f5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c7ec056f407f3af34528205a5abb1cdef7d43fef
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 
@@ -29,11 +29,11 @@ Následující tabulka uvádí direktivy preprocesoru, které jsou k dispozici v
 
 |– Direktiva|Popis|
 |---------|-----------|
-|`#if`*– symbol*|Podporuje Podmíněná kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována.|
+|`#if` *Symbol*|Podporuje Podmíněná kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována.|
 |`#else`|Podporuje Podmíněná kompilace. Označí části kódu, které chcete zahrnout, pokud je symbol použít s předchozí `#if` není definován.|
 |`#endif`|Podporuje Podmíněná kompilace. Označuje konec podmínkového oddílu kódu.|
 |`#`[řádku] *int*,<br/>`#`[řádku] *int* *řetězec*,<br/>`#`[řádku] *int* *typu verbatim řetězec*|Určuje původní zdrojový kód řádku a název souboru, pro ladění. Tato funkce je k dispozici pro nástroje, které generují F # zdrojového kódu.|
-|`#nowarn`*warningcode*|Zakáže upozornění kompilátoru nebo upozornění. Zakázat upozornění, najděte jeho číslo z výstupu kompilátoru a její zahrnutí do uvozovek. Vynechte předponu "FS". Zakázat více čísel upozornění na stejném řádku, zahrnout všechna čísla v uvozovkách a oddělit každou řetězec mezerou. Příklad:
+|`#nowarn` *warningcode*|Zakáže upozornění kompilátoru nebo upozornění. Zakázat upozornění, najděte jeho číslo z výstupu kompilátoru a její zahrnutí do uvozovek. Vynechte předponu "FS". Zakázat více čísel upozornění na stejném řádku, zahrnout všechna čísla v uvozovkách a oddělit každou řetězec mezerou. Příklad:
 
 `#nowarn "9" "40"`
 
@@ -75,12 +75,12 @@ Následující tabulka uvádí direktiva kompilátoru, která je k dispozici v F
 
 |– Direktiva|Popis|
 |---------|-----------|
-|`#light`["na"|"vypnuto"]|Povolí nebo zakáže prostá syntaxe pro kompatibilitu s jinými verzemi ML. Prostá syntaxe je ve výchozím nastavení povolené. Podrobná syntaxe je vždy povolena. Proto můžete prostá syntaxe a podrobná syntaxe. Direktiva `#light` sám o sobě je ekvivalentní `#light "on"`. Pokud zadáte `#light "off"`, je třeba použít podrobná syntaxe pro všechny jazykové konstrukty. Syntaxe v dokumentaci pro F # se zobrazí za předpokladu, že používáte prostá syntaxe. Další informace najdete v tématu [podrobná syntaxe](verbose-syntax.md).|
+|`#light` ["na"&#124;"vypnuto"]|Povolí nebo zakáže prostá syntaxe pro kompatibilitu s jinými verzemi ML. Prostá syntaxe je ve výchozím nastavení povolené. Podrobná syntaxe je vždy povolena. Proto můžete prostá syntaxe a podrobná syntaxe. Direktiva `#light` sám o sobě je ekvivalentní `#light "on"`. Pokud zadáte `#light "off"`, je třeba použít podrobná syntaxe pro všechny jazykové konstrukty. Syntaxe v dokumentaci pro F # se zobrazí za předpokladu, že používáte prostá syntaxe. Další informace najdete v tématu [podrobná syntaxe](verbose-syntax.md).|
 Direktivy překladač (fsi.exe), najdete v části [interaktivní programování s F #](../tutorials/fsharp-interactive/index.md).
 
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Možnosti kompilátoru](compiler-options.md)
 

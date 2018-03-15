@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 501a11f1bc6118e647cc414f4b83a14f6b41a37d
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: c9f2699646db17c9358f84f4c5407e7aab8b60cf
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -219,7 +219,7 @@ Asynchronní metody může mít `void` návratovým typem. Tato vrátí typ se p
   
 Asynchronní metody, který má `void` vrátí typ nemůže být očekáváno a volající metody vrácení void nelze zachytit všechny výjimky, které vyvolá metoda.  
   
-Asynchronní metody nelze deklarovat [ref](../../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../../csharp/language-reference/keywords/out.md) parametry, ale metodu můžete volat metody, které mají tyto parametry. Asynchronní metody Podobně nelze vrátit hodnotu odkazu, i když ho můžete volat metody s ref návratové hodnoty. 
+Asynchronní metody nelze deklarovat [v](../../../../csharp/language-reference/keywords/in-parameter-modifier.md), [ref](../../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ale metodu můžete volat metody, které mají tyto parametry. Asynchronní metody Podobně nelze vrátit hodnotu odkazu, i když ho můžete volat metody s ref návratové hodnoty. 
   
 Další informace a příklady naleznete v tématu [vrátit typy Async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md). Další informace o tom, jak zachycení výjimek v asynchronní metody najdete v tématu [try-catch –](../../../../csharp/language-reference/keywords/try-catch.md). 
   

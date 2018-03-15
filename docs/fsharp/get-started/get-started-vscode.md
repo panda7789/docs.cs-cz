@@ -1,90 +1,61 @@
 ---
-title: "Začínáme s F # v sadě Visual Studio kódu s Ionide"
+title: "Začínáme s F # v sadě Visual Studio kódu"
 description: "Další informace o použití F # s Visual Studio Code a suite Ionide modulu plug-in."
 keywords: "Visual f #, f #, funkční programování, .NET, Visual Studio Code vscode Ionide"
 author: cartermp
 ms.author: phcart
-ms.date: 09/28/2016
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 49775139-082e-442f-b5a2-dd402399b5d2
-ms.openlocfilehash: 83099005074ea273eae5319edacd2e2ee0f7145f
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: c452e791b27bc3f32e137a515011d953005344c6
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="getting-started-with-f-in-visual-studio-code-with-ionide"></a>Začínáme s F # v sadě Visual Studio kódu s Ionide
+# <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s F # v sadě Visual Studio kódu
 
-Můžete napsat F # [Visual Studio Code](https://code.visualstudio.com) s [modulu plug-in Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp), abyste získali optimálního uživatelského prostředí IDE a platformy, lightweight s IntelliSense a refaktoring kódu základní.  Navštivte [Ionide.io](https://ionide.io) Další informace o sadě modulu plug-in.
+Můžete napsat F # [Visual Studio Code](https://code.visualstudio.com) s [modulu plug-in Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp), abyste získali optimálního uživatelského prostředí IDE (Integrade vývoj Enivronment) a platformy, lightweight s IntelliSense a základní kódu refaktoring.  Navštivte [Ionide.io](http://ionide.io) Další informace o sadě modulu plug-in.
 
 ## <a name="prerequisites"></a>Požadavky
 
-F # 4.0 nebo vyšší musí být nainstalovaný na počítači používat Ionide.
+Musíte mít [nainstalovat git](https://git-scm.com/download) a k dispozici na CESTU ke zkontrolujte pomocí šablon projektu v Ionide.  Můžete ověřit, zda je správně nainstalován zadáním `git --version` v příkazovém řádku a stiskněte **Enter**.
 
-Je také nutné mít [nainstalovat git](https://git-scm.com/download) a k dispozici na CESTU ke zkontrolujte pomocí šablon projektu v Ionide.  Můžete ověřit, zda je správně nainstalován zadáním `git` v naléhavých prompt.and příkaz **Enter**.
+### <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-### <a name="windows"></a>Windows
-
-Pokud jste v systému Windows, máte dvě možnosti pro instalaci F #.
-
-Pokud jste již nainstalovali Visual Studio a nemáte F #, můžete [nainstalovat Visual F # nástroje](get-started-visual-studio.md#installing-f).  Nainstaluje všechny komponenty potřebné k zápisu, zkompilování a spuštění kódu F #.
-
-Pokud dáváte přednost není pro instalaci sady Visual Studio, postupujte podle následujících pokynů:
-
-1. Nainstalujte [rozhraní .NET Framework 4.5 nebo vyšší](https://www.microsoft.com/en-US/download/details.aspx?id=30653) Pokud používáte systém Windows 7.  Pokud používáte Windows 8 nebo vyšší, není potřeba to udělat.
-
-2. Instalace sady Windows SDK pro váš operační systém:
-
-    * [Windows 10 SDK](https://dev.windows.com/en-US/downloads/windows-10-sdk)
-    * [Windows 8.1 SDK](https://developer.microsoft.com/windows/downloads/sdk-archive)
-    * [Windows 8 SDK](https://developer.microsoft.com/windows/downloads/sdk-archive)
-    * [Windows 7 SDK](https://www.microsoft.com/download/details.aspx?id=8279)
-
-3. Nainstalujte [Microsoft sestavení nástroje 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159).  Může se také muset nainstalovat [Microsoft 2013 nástroje pro sestavení](https://www.microsoft.com/en-us/download/details.aspx?id=40760).
-
-4. Nainstalujte [nástroje Visual F #](https://www.microsoft.com/en-us/download/details.aspx?id=48179).
-
-Na 64bitovém systému Windows kompilátoru a nástroje se sem:
-
-```
-C:\Program Files (x86)\Microsoft SDKs\F#\4.0\Framework\v4.0\fsc.exe
-C:\Program Files (x86)\Microsoft SDKs\F#\4.0\Framework\v4.0\fsi.exe
-C:\Program Files (x86)\Microsoft SDKs\F#\4.0\Framework\v4.0\fsiAnyCpu.exe
-```
-
-V systému Windows 32-bit nástroje kompilátoru Zde jsou:
-
-```
-C:\Program Files\Microsoft SDKs\F#\4.0\Framework\v4.0\fsc.exe
-C:\Program Files\Microsoft SDKs\F#\4.0\Framework\v4.0\fsi.exe
-C:\Program Files\Microsoft SDKs\F#\4.0\Framework\v4.0\fsiAnyCpu.exe
-```
-
-Ionide automaticky rozpozná kompilátoru a nástroje, ale pokud tomu tak není z nějakého důvodu (například Visual F # nástroje byly nainstalovány do jiného adresáře), můžete ručně přidat složku obsahující (`...\Microsoft SDKs\F#\4.0`) pro vaši CESTU.
-
-### <a name="macos"></a>macOS
-
-V systému macOS, používá Ionide [Mono](https://www.mono-project.com).  Nejjednodušší způsob, jak nainstalovat Mono v systému macOS je prostřednictvím Homebrew.  Jednoduše zadejte do terminálu následující:
+Používá Ionide [Mono](http://www.mono-project.com).  Nejjednodušší způsob, jak nainstalovat Mono v systému macOS je prostřednictvím Homebrew.  Jednoduše zadejte do terminálu následující:
 
 ```
 brew install mono
 ```
 
-### <a name="linux"></a>Linux
+Je také nutné nainstalovat [.NET Core SDK](https://www.microsoft.com/net/download).
 
-V systému Linux, Ionide také používá [Mono](https://www.mono-project.com).  Pokud jste na Debian a Ubuntu, můžete použít následující:
+### <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+V systému Linux, Ionide také používá [Mono](https://www.mono-project.com). Pokud jste na Debian a Ubuntu, můžete použít následující:
 
 ```
 sudo apt-get update
 sudo apt-get install mono-complete fsharp
 ```
 
+Je také nutné nainstalovat [.NET Core SDK](https://www.microsoft.com/net/download).
+
+### <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+Pokud jste v systému Windows, musíte [instalaci sady Visual Studio s podporou F #](get-started-visual-studio.md#installing-f). Tím se nainstaluje všechny komponenty potřebné k zápisu, zkompilování a spuštění kódu F #.
+
+Je také nutné nainstalovat [.NET Core SDK](https://www.microsoft.com/net/download/).
+
+---
+
 ## <a name="installing-visual-studio-code-and-the-ionide-plugin"></a>Instalace Visual Studio Code a Ionide modulu plug-in
 
-Můžete nainstalovat Visual Studio Code z [code.visualstudio.com](https://code.visualstudio.com) webu.  Potom existují dva způsoby jak najít modul plug-in Ionide:
+Můžete nainstalovat Visual Studio Code z [code.visualstudio.com](https://code.visualstudio.com) webu. Potom existují dva způsoby jak najít modul plug-in Ionide:
 
 1. Použijte příkaz palety (Ctrl + Shift + P v systému Windows, ⌘ + Shift + P v systému macOS, Ctrl + Shift + P v systému Linux) a zadejte následující příkaz:
 
@@ -96,7 +67,7 @@ Můžete nainstalovat Visual Studio Code z [code.visualstudio.com](https://code.
 
     ![](media/getting-started-vscode/vscode-ext.png)
 
-Pouze modul plug-in, které jsou potřebné pro podporu F # ve Visual Studio Code je [Ionide fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp).  Ale můžete taky nainstalovat [Ionide PHISHING](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-FAKE) a získat [ZFALŠOVAT](https://fake.build/) podporu a [Ionide Stáhnout](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-Paket) získat [Stáhnout](https://fsprojects.github.io/Paket/) podporovat.  ZFALŠOVAT a stáhnout dalších F # komunity nástroje pro sestavení projektů a správu závislosti, v uvedeném pořadí.
+Pouze modul plug-in, které jsou potřebné pro podporu F # ve Visual Studio Code je [Ionide fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp). Ale můžete taky nainstalovat [Ionide PHISHING](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-FAKE) a získat [ZFALŠOVAT](https://fsharp.github.io/FAKE/) podporu a [Ionide Stáhnout](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-Paket) získat [Stáhnout](https://fsprojects.github.io/Paket/) podporovat. ZFALŠOVAT a stáhnout dalších F # komunity nástroje pro sestavení projektů a správu závislosti, v uvedeném pořadí.
 
 ## <a name="creating-your-first-project-with-ionide"></a>Vytvoření prvního projektu s Ionide
 
@@ -139,7 +110,7 @@ Tato šablona vytváří několik věcí, které budete užitečné:
 
 1. F # projektu samostatně, pod `ClassLibraryDemo` složky.
 2. Správnou adresářovou strukturu pro přidávání balíčků prostřednictvím [ `Paket` ](https://fsprojects.github.io/Paket/).
-3. Napříč platformami sestavení skriptu s [ `FAKE` ](https://fake.build/).
+3. Napříč platformami sestavení skriptu s [ `FAKE` ](https://fsharp.github.io/FAKE/).
 4. `paket.exe` Spustitelný soubor, který může načíst balíčky a vyřešení závislostí pro vás.
 5. A `.gitignore` soubor, pokud chcete přidat tento projekt na základě Git zdrojového kódu.
 

@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 0c6e44a3e1a1458f4211b66b6d1ef5b4b30cd7c1
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.openlocfilehash: 6e40907cab2aabcf8c8321819c99298314bcfbc5
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="reference-semantics-with-value-types"></a>Odkaz na sémantiku s typy hodnot
 
@@ -46,7 +46,7 @@ Když přidáte `in` modifikátor k předání argumentu podle reference, deklar
 
 Argumenty jsou dvě struktury, že každý obsahovat tři hodnoty Double. Datový typ double je 8 bajtů, takže každý argument je 24 bajtů. Zadáním `in` modifikátor, předáte 4bajtový nebo 8bajtový odkaz na těchto argumentů, v závislosti na architektuře počítače. Rozdíl ve velikosti je malý, ale ho můžete rychle přidat když aplikace zavolá tato metoda ve smyčce úzkou pomocí mnoha různých hodnot.
  
-`in` Modifikátor doplňuje `out` a `ref` také jiné způsoby. Nelze vytvořit přetížení metody, které se liší pouze v přítomnosti z `in`, `out` nebo `ref`. Tyto nové pravidel rozšířit stejné chování, která měla vždy definována pro `out` a `ref` parametry.
+`in` Modifikátor doplňuje `out` a `ref` také jiné způsoby. Nelze vytvořit přetížení metody, které se liší pouze v přítomnosti z `in`, `out`, nebo `ref`. Tyto nové pravidel rozšířit stejné chování, která měla vždy definována pro `out` a `ref` parametry.
 
 `in` Modifikátor mohou být použity u kteréhokoli člena, který používá parametry: metody, delegáti, lambdas, místní funkce, indexery, operátory.
 
@@ -61,7 +61,7 @@ Kompilátor vynucuje, který `in` argument je proměnná jen pro čtení. Může
 
 `in` Parametr označení také můžete použít s typy odkazů nebo součástí číselné hodnoty. Výhody v obou případech jsou však minimální, pokud existuje.
 
-## <a name="ref-readonly-returns"></a>`ref readonly`Vrátí
+## <a name="ref-readonly-returns"></a>`ref readonly` Vrátí
 
 Můžete také vrátí hodnotu typu odkazu, ale zakáže volající upravování tuto hodnotu. Použití `ref readonly` modifikátor vyjádřit záměr tohoto návrhu. Že jsou vrátí odkaz na existující data, ale neumožňuje úpravy upozorní čtečky. 
 
@@ -80,7 +80,7 @@ Přiřadíte-li proměnnou, do které `ref readonly return`, můžete buď zadat
 
 První přiřazení v předchozí kód vytvoří kopii `Origin` konstanta a přiřadí, které zkopírovat. Druhý přiřadí odkaz. Všimněte si, že `readonly` modifikátor musí být součástí deklarace proměnné. Odkaz, na který odkazuje nemůže být upraven. Pokusy o tak mít za následek chyby kompilace.
 
-## <a name="readonly-struct-type"></a>`readonly struct`Typ
+## <a name="readonly-struct-type"></a>`readonly struct` Typ
 
 Použití `ref readonly` k velkým provozem použití struktury může být plně dostačující.
 Další dobu, můžete vytvořit neměnné struktura. Potom můžete vždy předat odkazem jen pro čtení. Aby postup odebere Obranným zkopíruje které se provádějí při přístupu k metodám struktury použít jako `in` parametr.
@@ -93,9 +93,9 @@ Nakonec kompilátor generuje efektivnější kód při volání členy `readonly
 
 [!code-csharp[ReadonlyOnlyPoint3D](../../samples/csharp/reference-semantics/Point3D.cs#ReadonlyOnlyPoint3D "Defining an immutable structure")]
 
-## <a name="ref-struct-type"></a>`ref struct`Typ
+## <a name="ref-struct-type"></a>`ref struct` Typ
 
-Další související jazyk funkcí je schopnost deklarovat typ hodnoty, který musí být přidělena zásobníku. Jinými slovy tyto typy nikdy vytvořením v haldě jako člena jiné třídy. Primární motivace pro tuto funkci byl <xref:System.Span%601> a související struktury. <xref:System.Span%601>může obsahovat spravované ukazatel jako jeden z jejích členů, druhá je délka rozpětí. Je ve skutečnosti implementována trochu jinak protože C# nepodporuje ukazatele na spravované paměti mimo kontextu unsafe. Všechny zápisu, které změní ukazatele a délka není atomic. To znamená <xref:System.Span%601> by podléhají mimo rozsah chyby nebo další narušení bezpečnosti typu není je omezená na jednom zásobníku. Kromě toho uvedení spravovaného ukazatel na haldě GC obvykle dojde k chybě během JIT.
+Další související jazyk funkcí je schopnost deklarovat typ hodnoty, který musí být přidělena zásobníku. Jinými slovy tyto typy nikdy vytvořením v haldě jako člena jiné třídy. Primární motivace pro tuto funkci byl <xref:System.Span%601> a související struktury. <xref:System.Span%601> může obsahovat spravované ukazatel jako jeden z jejích členů, druhá je délka rozpětí. Je ve skutečnosti implementována trochu jinak protože C# nepodporuje ukazatele na spravované paměti mimo kontextu unsafe. Všechny zápisu, které změní ukazatele a délka není atomic. To znamená <xref:System.Span%601> by podléhají mimo rozsah chyby nebo další narušení bezpečnosti typu není je omezená na jednom zásobníku. Kromě toho uvedení spravovaného ukazatel na haldě GC obvykle dojde k chybě během JIT.
 
 Můžete mít podobné požadavky práce paměti vytvořené pomocí [ `stackalloc` ](language-reference/keywords/stackalloc.md) nebo při použití paměti z spolupráce rozhraní API. Můžete definovat vlastní `ref struct` typy těchto potřeb. V tomto článku najdete příklady použití `Span<T>` pro jednoduchost.
 

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b6a0539a-8ce5-4da7-adcf-44be345a2714
-ms.openlocfilehash: 1a97d830c675c8e3980eddae78f3face279ec6dc
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 6395d873c4a04501d25a2edbb1acc0a163dd3e5c
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lambda-expressions"></a>Lambda – výrazy #
 
@@ -96,7 +96,7 @@ Další informace o podpoře pro řazené kolekce členů v jazyce C#, najdete v
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>Lambdas s standardní operátory dotazu ##
 
-LINQ na objekty mezi jiných implementacích mít vstupní parametr s typem je jedním z <xref:System.Func%601> rodiny obecných delegátů. Tyto delegáti pomocí parametrů typu lze definovat počet a typ vstupní parametry a návratový typ delegáta. `Func`Delegáti jsou velmi užitečné pro zapouzdření uživatelem definované výrazy, které se použijí pro každý prvek v sadě zdrojová data. Představte si třeba <xref:System.Func%601> delegáta, kde je syntaxe:
+LINQ na objekty mezi jiných implementacích mít vstupní parametr s typem je jedním z <xref:System.Func%601> rodiny obecných delegátů. Tyto delegáti pomocí parametrů typu lze definovat počet a typ vstupní parametry a návratový typ delegáta. `Func` Delegáti jsou velmi užitečné pro zapouzdření uživatelem definované výrazy, které se použijí pro každý prvek v sadě zdrojová data. Představte si třeba <xref:System.Func%601> delegáta, kde je syntaxe:
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/query1.cs#1)]
 
@@ -150,7 +150,7 @@ Lambdas mohou odkazovat na *vnější proměnné* (viz [anonymní metody](progra
 
 - Proměnné, které jsou představeny v rámci výrazu lambda, nejsou viditelné ve vnější metodě.
 
-- Výraz lambda nemůže zaznamenat přímo `ref` nebo `out` parametr z metody nadřazených.
+- Výraz lambda nemůže zaznamenat přímo `in`, `ref`, nebo `out` parametr z metody nadřazených.
 
 - Příkaz return ve výrazu lambda nezpůsobí vrácení ohraničující metody.
 

@@ -11,11 +11,11 @@ ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d5c727edbbea116d858c6acf6b600f8fd9f43ee2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 17bbfabe8a53fc51e81434d0a2bd9fb2b29c4695
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-indexers-c-programming-guide"></a>Použití indexerů (Průvodce programováním v C#)
 Indexery jsou syntaktické pohodlí, které vám umožní vytvořit [třída](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) , klient aplikace mají přístup k stejně jako pole. Indexery se nejčastěji implementují typy, jejichž primární účelem je zapouzdření k interní kolekce nebo pole. Předpokládejme například, že máte třídy s názvem TempRecord, který reprezentuje teplotní v Farenheit zjištěná v různých časech 10 během období 24 hodin. Třída obsahuje pole s názvem "temps" z typ float představují teploty a <xref:System.DateTime> představující datum teploty nebyly zaznamenány. Implementací indexer v této třídě, mohou klienti získat přístup teploty v instanci TempRecord jako `float temp = tr[4]` místo jako `float temp = tr.temps[4]`. Zápis indexer nejen zjednodušuje syntaxi pro klientské aplikace; také umožňuje třídě a jeho účel intuitivnější pro ostatní vývojáři pochopit.  
@@ -36,7 +36,7 @@ public int this[int index]    // Indexer declaration
   
  Podpis indexer se skládá z počtu a typů jeho formální parametry. Nebude obsahovat typ indexer nebo názvy formální parametrů. Pokud je deklarovat více než jeden indexer ve stejné třídě, musí mít různé podpisy.  
   
- Hodnotu indexer není klasifikovaný jako proměnné. Proto nemůžete předat hodnotu indexer jako [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out.md) parametr.  
+ Hodnotu indexer není klasifikovaný jako proměnné. Proto nemůžete předat hodnotu indexer jako [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr.  
   
  Indexer poskytnout název, který můžete použít další jazyky, používat `name` atribut v deklaraci. Příklad:  
   
@@ -78,6 +78,6 @@ public int this [int index]   // Indexer declaration
 -   Nastavit usnadnění přístupu `get` a [nastavit](../../../csharp/language-reference/keywords/set.md) přístupových objektů na omezující, jako je možné logicky. To je důležité pro `set` přistupujícího objektu v konkrétní. Další informace najdete v tématu [omezení přístupnosti přistupujícího objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Indexery](../../../csharp/programming-guide/indexers/index.md)  
  [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)

@@ -9,15 +9,17 @@ helpviewer_keywords:
 - strings [C#], modifying
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: a67cf24c0f6024d23bc1106943d3447620f18b1f
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 830ca207c4cd5bd24dbb667328465cafb2509409
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Postupy: Změna obsahu řetězce v jazyce C# #
 
 Tento článek ukazuje několik postupů k vytvoření `string` úpravou existující `string`. Všechny techniky ukázán vrátit výsledek změny jako novou `string` objektu. Všechny příklady jasně ukazuje to uložit výsledek nové proměnné. Poté můžete prozkoumat oba původní `string` a `string` vyplývající z úpravy při spuštění každého příkladu.
+
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
 Existuje několik postupů popsaných v tomto článku. Můžete nahradit existující text. Můžete vyhledat a nahradí odpovídající text jiným textem. Řetězec lze považovat posloupnost znaků. Můžete také použít usnadňující metody, které odebrání mezer. Měli byste vybrat techniky, které nejvíce odpovídají váš scénář.
 

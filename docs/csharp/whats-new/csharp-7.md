@@ -10,30 +10,30 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 3f3598fce5abeb67b772f51ed6f93e6ada4c92d0
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 374ac9917464a7e83566440abab10eda8a9c8683
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="whats-new-in-c-7"></a>Co je nového v C# 7
 
 C# 7 přidá řadu nových funkcí jazyka C#:
-* [`out`proměnné](#out-variables)
+* [`out` proměnné](#out-variables)
     - Je možné deklarovat `out` hodnoty vložené jako argumenty pro metodu, kdy se používá.
 * [Řazené kolekce členů](#tuples)
     - Můžete vytvořit jednoduché, Nepojmenované typy, které obsahují více veřejná pole. Kompilátory a nástroje IDE pochopit sémantika tyto typy.
 * [Zahození](#discards)
     - Zahození jsou dočasné, jen pro zápis proměnné používané v přiřazení, pokud vám nezáleží hodnotu přiřazenou. Jsou užitečné, když deconstructing řazených kolekcí členů a uživatelem definované typy, jakož i při volání metody s `out` parametry.
-* [Shoda vzoru](#pattern-matching)
+* [Porovnávání vzorů](#pattern-matching)
     - Můžete vytvořit na základě náhodné typy a hodnoty členů tyto typy logiky větvení.
-* [`ref`lokální a vrátí](#ref-locals-and-returns)
+* [`ref` lokální a vrátí](#ref-locals-and-returns)
     - Metoda argumentů a místní proměnné může být odkazy na další úložiště.
 * [Lokální funkce](#local-functions)
     - Funkce uvnitř jiných funkcí omezit jejich rozsah a viditelnost lze vnořit.
 * [Další výraz vozidlo členy](#more-expression-bodied-members)
     - Seznam členů, které mohou být vytvořeny pomocí výrazů se zvětšil.
-* [`throw`Výrazy](#throw-expressions)
+* [`throw` Výrazy](#throw-expressions)
     - Můžete vyvolat výjimky v konstrukce kódu, které předtím nebyly povoleny, protože `throw` byl příkaz. 
 * [Zobecněný asynchronní návratové typy](#generalized-async-return-types)
     - Metody deklarovat s `async` modifikátoru může vrátit jiné typy kromě `Task` a `Task<T>`.
@@ -42,7 +42,7 @@ C# 7 přidá řadu nových funkcí jazyka C#:
 
 Zbývající část tohoto tématu popisuje každou funkci. Pro každou funkci dozvíte jejich zdůvodnění. Dozvíte syntaxe. Zobrazí se několik ukázkových scénářů, kde pomocí nové funkce mohou zvýšit vaši produktivitu jako vývojář. 
 
-## <a name="out-variables"></a>`out`proměnné
+## <a name="out-variables"></a>`out` proměnné
 
 Existující syntaxi, která podporuje `out` parametry vylepšeno v této verzi.  
 
@@ -157,7 +157,7 @@ Zahození jsou podporovány v následujících scénářích:
 
 * Když deconstructing řazené kolekce členů nebo uživatelem definované typy.
 
-* Při volání metody s [out](../language-reference/keywords/out.md) parametry.
+* Při volání metody s [out](../language-reference/keywords/out-parameter-modifier.md) parametry.
 
 * V porovnávání operaci s [je](../language-reference/keywords/is.md) a [přepínač](../language-reference/keywords/switch.md) příkazy.
 
@@ -175,7 +175,7 @@ Další informace najdete v tématu [zahodí](../discards.md).
 
 Porovnávání se podporuje `is` výrazy a `switch` výrazy. Každý umožňuje zkontrolujete objektu a jeho vlastnosti k určení, pokud objekt splňuje hledané kombinaci vzoru. Můžete použít `when` – klíčové slovo lze určit další pravidla, se vzorem.
 
-### <a name="is-expression"></a>`is`výraz
+### <a name="is-expression"></a>`is` výraz
 
 `is` Vzor výrazu rozšiřuje známé `is` operátor dotazovat objekt nad rámec jeho typu.
 
@@ -191,7 +191,7 @@ Můžete rychle zjistit, budete muset najít součet die zobrazí souhrn, kde n�
 
 Tyto scénáře zachovat rozšíření, můžete zjistit sestavení více `if` a `else if` příkazy. Po který bude nepraktické, budete pravděpodobně chtít přepnout na `switch` vzor výrazy.
 
-### <a name="switch-statement-updates"></a>`switch`aktualizace – příkaz
+### <a name="switch-statement-updates"></a>`switch` aktualizace – příkaz
 
 *Odpovídat výrazu* má známé syntaxe, na základě `switch` příkaz již součástí jazyka C#. Umožňuje překlad stávajícího kódu pro použití výrazu shody před přidáním nové případy: 
 
@@ -280,10 +280,10 @@ Nyní, druhý `WriteLine` příkaz v předchozím příkladu bude vytisknout hod
 Jazyk C# má tři další pravidla, která ochranu proti zneužití `ref` lokální a vrátí:
 
 * Nelze přiřadit standardní metoda návratovou hodnotu pro `ref` místní proměnné.
-    - Která zakáže příkazy jako`ref int i = sequence.Count();`
+    - Která zakáže příkazy jako `ref int i = sequence.Count();`
 * Nelze vrátit `ref` do proměnné, jejichž doba platnosti nepřesahuje provádění metody.
     - To znamená, že nemůže vrátit odkaz na místní proměnná nebo proměnná se podobně jako obor.
-* `ref`lokální a vrátí nelze použít u asynchronních metod.
+* `ref` lokální a vrátí nelze použít u asynchronních metod.
     - Kompilátor nemůže vědět, pokud odkazovaná proměnná byla nastavena na jeho konečná hodnota při návratu asynchronní metody.
 
 Přidání místní hodnoty ref a ref vrátí povolit algoritmy, které jsou efektivnější vyhnout kopírování hodnot nebo provádění operací při přesměrování vícekrát. 
@@ -359,7 +359,7 @@ Tyto inicializacích by dříve, musí být v konstruktoru, s příkazech throw 
 
 ## <a name="generalized-async-return-types"></a>Zobecněný asynchronní návratové typy
 
-Vrácení `Task` objekt z asynchronní metody můžou představovat kritické body v určité cesty. `Task`je typu odkazu, takže ho pomocí znamená přidělování objekt. V případech, kde metodu deklarovat s `async` modifikátor vrátí výsledky uložené v mezipaměti, nebo dokončí synchronně, navíc přidělení se může stát déle náklady v kritické oddíly výkon kódu. Může být velmi náročná, pokud tyto přidělení, ke kterým došlo v úzkou smyčky.
+Vrácení `Task` objekt z asynchronní metody můžou představovat kritické body v určité cesty. `Task` je typu odkazu, takže ho pomocí znamená přidělování objekt. V případech, kde metodu deklarovat s `async` modifikátor vrátí výsledky uložené v mezipaměti, nebo dokončí synchronně, navíc přidělení se může stát déle náklady v kritické oddíly výkon kódu. Může být velmi náročná, pokud tyto přidělení, ke kterým došlo v úzkou smyčky.
 
 Nová funkce jazyka znamená, že asynchronní metody může vrátit jiné typy kromě `Task`, `Task<T>` a `void`. Vrácený typ stále musí vyhovovat vzoru async znamená `GetAwaiter` metoda musí být přístupné. Například jeden konkrétní `ValueTask` do rozhraní .NET framework, aby se přidal typ využívají tato nová funkce jazyka: 
 

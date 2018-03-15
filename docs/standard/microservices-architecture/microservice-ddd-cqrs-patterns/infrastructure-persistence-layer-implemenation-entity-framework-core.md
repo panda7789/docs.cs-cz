@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 67f89b4ee42d896497f462b80d41afff6b347e05
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4acdbde6405af7eb78a8c605562fdb1795fedf4d
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvu trvalosti infrastruktury základní Entity Framework
 
@@ -31,7 +31,7 @@ Vzhledem k tomu, že Úvod do základní EF je již k dispozici v dokumentaci sp
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Entity Framework Core**
+-   **Základní Entity Framework**
     [*https://docs.microsoft.com/ef/core/*](https://docs.microsoft.com/ef/core/)
 
 -   **Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio**
@@ -241,13 +241,13 @@ Všimněte si, že pomocí singleton doba platnosti pro úložiště by mohla zp
 #### <a name="additional-resources"></a>Další zdroje
 
 -   **Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC**
-    [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/ Implementing-the-Repository-and-Unit-of-work-Patterns-in-an-ASP-NET-MVC-Application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+    [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
--   **Jonathan Allen. Strategie implementace pro úložiště vzor s platformou Entity Framework, Dapper a řetězu**
+-   **Jonathan Allen. Strategie implementace pro vzor úložiště s platformou Entity Framework, Dapper a řetězec**
     [*https://www.infoq.com/articles/repository-implementation-strategies*](https://www.infoq.com/articles/repository-implementation-strategies)
 
 -   **Cesaru členka Torre. Porovnávání životnosti služby kontejner IoC jádro ASP.NET s obory instance kontejner Autofac IoC**
-    [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/ Comparing-ASP-NET-Core-IOC-Service-LIFE-Times-and-autofac-IOC-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
+    [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
 
 ## <a name="table-mapping"></a>Mapování tabulek
 
@@ -330,7 +330,7 @@ V příkladu kód ukazuje několik explicitní deklarace a mapování. Ale EF z�
 
 ### <a name="the-hilo-algorithm-in-ef-core"></a>Algoritmus HIS použití/Lo v EF jádra
 
-Zajímavé aspekt kódu v předchozím příkladu je, že používá [HIS použití/Lo algoritmus](https://vladmihalcea.com/2014/06/23/the-hilo-algorithm/) jako strategie generování klíče.
+Zajímavé aspekt kódu v předchozím příkladu je, že používá [HIS použití/Lo algoritmus](https://vladmihalcea.com/the-hilo-algorithm/) jako strategie generování klíče.
 
 Algoritmus HIS použití/Lo je užitečné, když potřebujete jedinečné klíče. Jako souhrn přiřadí algoritmus HIS použití-u jedinečné identifikátory řádky tabulky při není v závislosti na ukládání řádek v databázi okamžitě. Díky tomu můžete začít používat identifikátory hned, jak se stane s standardní sekvenční databázi ID.
 
@@ -457,22 +457,22 @@ I když nepodporujeme doporučené vrácení IQueryable z úložiště, je v po�
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Tabulky mapování**
+-   **Mapování tabulek**
     [*https://docs.microsoft.com/ef/core/modeling/relational/tables*](https://docs.microsoft.com/ef/core/modeling/relational/tables)
 
--   **Používá ke generování klíče Entity Framework Core HiLo**
+-   **Použití HiLo ke generování klíče Entity Framework Core**
     [*http://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/*](http://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/)
 
--   **Zálohování pole**
+-   **Základní pole**
     [*https://docs.microsoft.com/ef/core/modeling/backing-field*](https://docs.microsoft.com/ef/core/modeling/backing-field)
 
--   **Steve Smith. Zapouzdřené kolekcí v Entity Framework Core**
+-   **Steve Smith. Obsah zapouzdřeného kolekcí v Entity Framework Core**
     [*http://ardalis.com/encapsulated-collections-in-entity-framework-core*](http://ardalis.com/encapsulated-collections-in-entity-framework-core)
 
 -   **Stínové vlastnosti**
     [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)
 
--   **Vzor specifikace**
+-   **Specifikace vzor**
     [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
     
 

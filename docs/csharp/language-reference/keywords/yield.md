@@ -14,11 +14,11 @@ ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4735ab33faea71b792cbc6b567884b64bd6ca029
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 11fe3734df61333916e7a07010393bddc96e525c
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 Při použití `yield` – klíčové slovo v příkazu, které označuje, že metoda, operátor, nebo `get` přistupujícího objektu, ve kterých se vyskytuje je iterátor. Pomocí `yield` k definování iterovat odebírá potřebu, explicitní navíc – třída (třída, která obsahuje stav pro výčet, najdete v části <xref:System.Collections.Generic.IEnumerator%601> příklad) při implementaci <xref:System.Collections.IEnumerable> a <xref:System.Collections.IEnumerator> vzor pro vlastní shromažďování typ.  
@@ -44,7 +44,7 @@ yield break;
   
 -   Návratový typ musí být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.  
   
--   Deklaraci nemůže mít žádné [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out.md) parametry.  
+-   Deklaraci nemůže mít žádné [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md) [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry.  
   
  `yield` Typ iterátor, který vrátí <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.IEnumerator> je `object`.  Pokud vrátí iteraci <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.Generic.IEnumerator%601>, musí být implicitní převod z typu výraz v `yield return` příkaz, který má parametr obecného typu.  
   
@@ -95,6 +95,6 @@ foreach (string element in elements)
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [foreach v](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
  [Iterátory](../../iterators.md)

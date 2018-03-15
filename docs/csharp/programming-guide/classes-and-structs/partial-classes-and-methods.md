@@ -2,21 +2,22 @@
 title: "Částečné třídy a metody (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 662b3308c3baa429ed29adca750cbb9b143b79dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 396914e487bee0924c36bb1d7a0f28976f4ad354
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 Je možné rozdělit definice [třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md) nebo metoda přes dvě nebo více zdrojových souborů. Každý zdrojový soubor obsahuje oddíl definice typ nebo metoda a všechny části spojují během kompilace aplikace.  
@@ -63,7 +64,7 @@ Je možné rozdělit definice [třída](../../../csharp/language-reference/keywo
   
 -   class – atributy  
   
--   členy  
+-   členové  
   
  Zvažte například následující deklarace:  
   
@@ -92,17 +93,17 @@ Je možné rozdělit definice [třída](../../../csharp/language-reference/keywo
   
 -   Následující klíčová slova v definici typu partial jsou nepovinné, ale pokud je k dispozici na jednu definici partial typu, nelze v konfliktu s klíčová slova v jiné definici částečné pro stejný typ zadaný:  
   
-    -   [veřejné](../../../csharp/language-reference/keywords/public.md)  
+    -   [public](../../../csharp/language-reference/keywords/public.md)  
   
-    -   [privátní](../../../csharp/language-reference/keywords/private.md)  
+    -   [private](../../../csharp/language-reference/keywords/private.md)  
   
-    -   [chráněný](../../../csharp/language-reference/keywords/protected.md)  
+    -   [protected](../../../csharp/language-reference/keywords/protected.md)  
   
-    -   [interní](../../../csharp/language-reference/keywords/internal.md)  
+    -   [internal](../../../csharp/language-reference/keywords/internal.md)  
   
-    -   [abstraktní](../../../csharp/language-reference/keywords/abstract.md)  
+    -   [abstract](../../../csharp/language-reference/keywords/abstract.md)  
   
-    -   [zapečetěná](../../../csharp/language-reference/keywords/sealed.md)  
+    -   [sealed](../../../csharp/language-reference/keywords/sealed.md)  
   
     -   base – třída  
   
@@ -150,7 +151,7 @@ partial void onNameChanged()
   
 -   Částečné metody deklarace musí začínat kontextové klíčové slovo [částečné](../../../csharp/language-reference/keywords/partial-type.md) a musí vracet metodu [void](../../../csharp/language-reference/keywords/void.md).  
   
--   Částečné metody může mít [ref](../../../csharp/language-reference/keywords/ref.md) ale ne [out](../../../csharp/language-reference/keywords/out.md) parametry.  
+-   Částečné metody může mít [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md) nebo [ref](../../../csharp/language-reference/keywords/ref.md) ale ne [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry.  
   
 -   Částečné metody jsou implicitně [privátní](../../../csharp/language-reference/keywords/private.md), a proto nemůže být [virtuální](../../../csharp/language-reference/keywords/virtual.md).  
   
@@ -166,7 +167,7 @@ partial void onNameChanged()
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
  [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)  
  [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  

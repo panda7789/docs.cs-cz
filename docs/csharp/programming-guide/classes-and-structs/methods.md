@@ -2,20 +2,21 @@
 title: "Metody (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-caps.latest.revision: "41"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ff6e59f70a5718f6616fa9a585dd84144e1774a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5390ee08ddd0f4725bb42bbdf7240bb99bd25301
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazy provádět volání metody a zadání argumentů požadovaná metoda. V jazyce C# každé spuštění instrukce se provádí v kontextu metody. Hlavní metoda je vstupní bod pro každou aplikaci C# a je volána metodou common language runtime (CLR) při spuštění programu.  
@@ -124,13 +125,13 @@ static void Main(string[] args)
   
  Asynchronní metody může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo void. Typ vrácené hodnoty void slouží především k definování obslužné rutiny událostí, kdy je potřeba typ vrácené hodnoty void. Asynchronní metody, který vrátí prázdnou hodnotu nemůže být očekáváno a volající metody vrácení void nelze catch výjimky, které vyvolá metoda.  
   
- V následujícím příkladu `DelayAsync` je asynchronní metody, který má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync`má `return` příkaz, který vrátí celé číslo. Proto metoda deklaraci `DelayAsync` musí mít návratový typ `Task<int>`. Vzhledem k tomu, že je návratový typ `Task<int>`, vyhodnocení `await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask`.  
+ V následujícím příkladu `DelayAsync` je asynchronní metody, který má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má `return` příkaz, který vrátí celé číslo. Proto metoda deklaraci `DelayAsync` musí mít návratový typ `Task<int>`. Vzhledem k tomu, že je návratový typ `Task<int>`, vyhodnocení `await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask`.  
   
  `startButton_Click` Metoda je příkladem asynchronní metody, který má návratový typ void. Protože `DoSomethingAsync` je asynchronní metody, úlohy pro volání `DoSomethingAsync` musí být očekáváno, jak ukazuje následující příkaz: `await DoSomethingAsync();`. `startButton_Click` Metoda musí být definovány se `async` modifikátor vzhledem k tomu, že metoda má `await` výrazu.  
   
  [!code-csharp[csAsyncMethod#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_9.cs)]  
   
- Asynchronní metody nelze deklarovat všechny [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out.md) parametry, ale můžete volat metody, které mají tyto parametry.  
+ Asynchronní metody nelze deklarovat všechny [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ale můžete volat metody, které mají tyto parametry.  
   
  Další informace o asynchronní metody najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md), [řízení toku v asynchronních programech](../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md), a [asynchronní vrátit typy](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
   
@@ -161,14 +162,14 @@ public Customer this[long id] => store.LookupCustomer(id);
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](index.md)  
  [Modifikátory přístupu](access-modifiers.md)  
  [Statické třídy a jejich členové](static-classes-and-static-class-members.md)  
  [Dědičnost](inheritance.md)  
  [Abstraktní a uzavřené třídy a jejich členové](abstract-and-sealed-classes-and-class-members.md)  
- [Parametry](../../../csharp/language-reference/keywords/params.md)  
- [Vrátí](../../../csharp/language-reference/keywords/return.md)  
- [na více systémů](../../../csharp/language-reference/keywords/out.md)  
- [REF](../../../csharp/language-reference/keywords/ref.md)  
+ [params](../../../csharp/language-reference/keywords/params.md)  
+ [return](../../../csharp/language-reference/keywords/return.md)  
+ [out](../../../csharp/language-reference/keywords/out.md)  
+ [ref](../../../csharp/language-reference/keywords/ref.md)  
  [Předávání parametrů](passing-parameters.md)

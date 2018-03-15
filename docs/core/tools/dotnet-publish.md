@@ -3,16 +3,17 @@ title: "příkaz - .NET Core rozhraní příkazového řádku publikování DotN
 description: "Příkaz Publikovat dotnet publikuje do adresáře projektu .NET Core."
 author: mairaw
 ms.author: mairaw
-ms.date: 09/01/2017
+ms.date: 03/10/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: e29d5269ab5e9e2c9fd08811552c09ec1c95363d
-ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 2aa69217e949b970b632c4fad72838b63c2a8988
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-publish"></a>publikování DotNet.
 
@@ -20,11 +21,11 @@ ms.lasthandoff: 01/11/2018
 
 ## <a name="name"></a>Název
 
-`dotnet publish`-Pack aplikace a jeho závislosti do složky pro nasazení k hostování systému.
+`dotnet publish` -Pack aplikace a jeho závislosti do složky pro nasazení k hostování systému.
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies] [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
@@ -42,7 +43,7 @@ dotnet publish [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet publish`zkompiluje aplikace, čte prostřednictvím jeho závislé součásti, zadaný v souboru projektu a publikuje výslednou sadu soubory do adresáře. Výstup bude obsahovat následující:
+`dotnet publish` zkompiluje aplikace, čte prostřednictvím jeho závislé součásti, zadaný v souboru projektu a publikuje výslednou sadu soubory do adresáře. Výstup bude obsahovat následující:
 
 * Kód jazyka (IL) v sestavení s mezilehlé *dll* rozšíření.
 * *. deps.json* soubor, který obsahuje všechny závislosti projektu.
@@ -50,6 +51,8 @@ dotnet publish [-h|--help]
 * Závislosti aplikace. Tyto jsou kopírovány z mezipaměti NuGet do výstupní složky.
 
 `dotnet publish` Výstup příkazu je připraven k nasazení k hostování systému (například server, PC, Mac, přenosných počítačů) pro spuštění a je jediným oficiálně podporované způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, který určuje projekt hostitelský systém může nebo nemusí mít .NET Core sdílené na něm nainstalován modul runtime. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md). Struktura adresářů publikované aplikace, najdete v části [adresářovou strukturu](/aspnet/core/hosting/directory-structure).
+
+[!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
 ## <a name="arguments"></a>Arguments
 
@@ -59,7 +62,7 @@ Projekt k publikování, výchozí nastavení k aktuálnímu adresáři, není-l
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -156,16 +159,20 @@ Publikování tohoto projektu v aktuálním adresáři:
 Publikování aplikace pomocí souboru zadaného projektu:
 
 `dotnet publish ~/projects/app1/app1.csproj`
-    
+
 Publikování tohoto projektu v aktuálním adresáři pomocí `netcoreapp1.1` framework:
 
 `dotnet publish --framework netcoreapp1.1`
-    
+
 Publikování aktuální aplikace pomocí `netcoreapp1.1` framework a prostředí runtime pro `OS X 10.10` (musí seznam tento identifikátorů RID v souboru projektu).
 
 `dotnet publish --framework netcoreapp1.1 --runtime osx.10.11-x64`
 
+Publikování aktuální aplikace ale neobnoví odkazů na projekt na projekt (P2P), pouze v kořenové projektu během operace obnovení (.NET Core SDK 2.0 a novější):
+
+`dotnet publish --no-dependencies`
+
 ## <a name="see-also"></a>Viz také
 
-* [Cílové rozhraní](../../standard/frameworks.md)
+* [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)
 * [Katalog identifikátor runtime (RID)](../rid-catalog.md)

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.openlocfilehash: 9d435fd87a6103d505c14219499eeea9aee045fb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fa840d80bba98889f75863db2612f196d78bd3c5
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="structs"></a>Struktury
 
@@ -38,7 +38,7 @@ Pomocí třídy je možné pro dvě proměnné tak, aby odkazovaly na stejný ob
 
 Pokud `Point` je třída, výstup je 20, protože a b odkazují na stejný objekt. Pokud je bod struktury, výstup je 10, protože přiřazení `a` k `b` vytvoří kopii hodnoty, a tato kopie není ovlivněna následné přiřazení `a.x`.
 
-Předchozí příklad označuje dvě omezení struktury. Nejprve kopírování celá struktura je obvykle míň efektivní než kopírování odkaz na objekt, takže předávání přiřazení a hodnota parametru může být nákladnější s struktury než s odkazové typy. Druhý, s výjimkou `ref` a `out` parametry, není možné vytvořit odkazy na struktury, která pravidla se jejich využití v mnoha situacích.
+Předchozí příklad označuje dvě omezení struktury. Nejprve kopírování celá struktura je obvykle míň efektivní než kopírování odkaz na objekt, takže předávání přiřazení a hodnota parametru může být nákladnější s struktury než s odkazové typy. Druhý, s výjimkou `in`, `ref`, a `out` parametry, není možné vytvořit odkazy na struktury, která pravidla se jejich využití v mnoha situacích.
 
 >[!div class="step-by-step"]
 [Předchozí](classes-and-objects.md)

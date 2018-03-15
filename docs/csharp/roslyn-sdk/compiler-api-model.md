@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: fd599118165dcb087f046a307a3f7aeef0cf7078
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
+ms.openlocfilehash: d230d334eba4e438635a4c70e8c1b5fc5075b065
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Pochopení modelu SDK pro platformu .NET kompilátoru
 
@@ -24,7 +24,7 @@ Kompilátory zpracovat kód, který můžete psát následující strukturovaný
 
 ![postup zpracování zdrojového kódu pro kód objektu kanálu kompilátoru](media/compiler-pipeline.png)
 
-Jednotlivé fáze kanálu je samostatná komponenta. Nejprve fázi analýzy tokenizes a analyzuje zdrojový text do syntaxi, která následuje gramatika jazyka. Druhou fázi deklarace analyzuje zdroje a importované metadata do formuláře s názvem symboly. Další fázi vazby odpovídá identifikátory v kódu na symboly. Nakonec fázi vysílat vysílá sestavení všechny informace sestavena kompilátoru.
+Jednotlivé fáze kanálu je samostatná komponenta. Nejprve fázi analýzy tokenizes a analyzuje zdrojový text do syntaxi, která následuje gramatika jazyka. Druhé fázi deklarace analyzuje zdroje a importované metadata do formuláře s názvem symboly. V dalším kroku fázi vazby odpovídá identifikátory v kódu na symboly. Nakonec fázi vysílat vysílá sestavení všechny informace sestavena kompilátoru.
 
 ![kanál kompilátoru rozhraní api poskytuje přístup k každý krok, který je součástí pipelien kompilátoru](media/compiler-pipeline-api.png)
 
@@ -48,7 +48,7 @@ Vrstva kompilátoru obsahuje objektové modely, které odpovídají vystavený v
 
 ### <a name="diagnostic-apis"></a>Diagnostické rozhraní API
 
-V rámci analýzy kompilátor může vytvořit sadu diagnostiky pokrývajících vše z syntaxe, sémantického a chyby jednoznačné přiřazení do různých upozornění a informační diagnostiky. Vrstvu rozhraní API kompilátoru Tnelze zpřístupní diagnostiky prostřednictvím rozšiřitelné rozhraní API, která umožňuje uživatelem definované analyzátorů zapojené do procesu kompilace. To umožňuje diagnostics definovaný uživatelem, jako jsou ty vyprodukované nástroje, například StyleCop nebo FxCop, se vytváří spolu s definované kompilátoru diagnostiky. Vytváření diagnostiky tímto způsobem má výhodu přirozeně Integrování nástroje, jako je MSBuild a Visual Studio, který je závislý na diagnostiku pro činnosti, jako je například zastavení sestavení na základě zásad a zobrazující podtržení vlnovkou za provozu v editoru a návrhy kódu opravy.
+V rámci analýzy kompilátor může vytvořit sadu diagnostiky pokrývajících vše z syntaxe, sémantického a chyby jednoznačné přiřazení do různých upozornění a informační diagnostiky. Vrstvu rozhraní API kompilátoru zpřístupní diagnostiky prostřednictvím rozšiřitelné rozhraní API, která umožňuje uživatelem definované analyzátorů zapojené do procesu kompilace. To umožňuje diagnostics definovaný uživatelem, jako jsou ty vyprodukované nástroje, například StyleCop nebo FxCop, se vytváří spolu s definované kompilátoru diagnostiky. Vytváření diagnostiky tímto způsobem má výhodu přirozeně Integrování nástroje, jako je MSBuild a Visual Studio, který je závislý na diagnostiku pro činnosti, jako je například zastavení sestavení na základě zásad a zobrazující podtržení vlnovkou za provozu v editoru a návrhy kódu opravy.
 
 ### <a name="scripting-apis"></a>Skriptovací rozhraní API
 

@@ -1,7 +1,7 @@
 ---
 title: "Metody – Průvodce C#"
 description: "Přehled metod, metoda parametry a návratové hodnoty – metoda"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
+keywords: .NET, .NET Core, C#
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/26/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 38e9d8955c99c7fb3ee6347af70037d3da08ff39
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.openlocfilehash: 48127d5168ace7733f29f78dc3f72d9c0d051e4e
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="methods"></a>Metody #
 
@@ -36,7 +36,7 @@ Toto téma obsahuje následující oddíly:
 - [Návratové hodnoty](#return)
 - [Metody rozšíření](#extension)
 - [Asynchronní metody](#async)
-- [Výraz vozidlo členy](#expr)
+- [Členové tvoření výrazy](#expr)
 - [Iterátory](#iterators)
 
 <a name="signatures"></a>
@@ -118,7 +118,7 @@ Následující příklad definuje třídu (která je typu odkazu) s názvem `Sam
 <a name="byref"></a>
 ### <a name="passing-parameters-by-reference"></a>Předávání parametrů odkazem ###
 
-Předání parametru odkazu, pokud chcete změnit hodnotu argumentu v metodě a chcete refect tato změna při volání metody vrátí ovládací prvek. Chcete-li předat parametr odkazu, použijte `ref` nebo `out` – klíčové slovo.
+Předání parametru odkazu, pokud chcete změnit hodnotu argumentu v metodě a chcete refect tato změna při volání metody vrátí ovládací prvek. Chcete-li předat parametr odkazu, použijte [ `ref` ](language-reference/keywords/ref.md) nebo [ `out` ](language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také předat hodnotu odkazem vyhnout kopírování, ale stále zabránit úpravy pomocí [ `in` ](language-reference/keywords/in-parameter-modifier.md) – klíčové slovo.
 
 Následující příklad je stejný jako předchozí, s výjimkou toho, je předaná hodnota odkaz na `ModifyValue` metoda. Pokud je hodnota parametru pozměněn v `ModifyValue` metoda změnu hodnoty se projeví po návratu řízení volajícímu.
 
@@ -162,7 +162,7 @@ V následujícím příkladu definuje metodu, `ExampleMethod`, který má jeden 
 
 [!code-csharp[csSnippets.Methods#21](../../samples/snippets/csharp/concepts/methods/optional1.cs#21)]
 
-Pokud je metoda s více volitelné argumenty je vyvolána pomocí poziční argumenty, volající musíte zadat argument pro všechny volitelné parametry z první z nich pro naposledy, pro který je zadán argument. U `ExampleMethod` metoda, například, pokud má volající poskytuje argument pro `description` parametru, je třeba zadat také jeden pro `optionalInt` parametr. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");`je neplatná metoda volání; `opt.ExampleMethod(2, , "Addition of 2 and 0);` generuje "Argument chybějící" Chyba kompilátoru.
+Pokud je metoda s více volitelné argumenty je vyvolána pomocí poziční argumenty, volající musíte zadat argument pro všechny volitelné parametry z první z nich pro naposledy, pro který je zadán argument. U `ExampleMethod` metoda, například, pokud má volající poskytuje argument pro `description` parametru, je třeba zadat také jeden pro `optionalInt` parametr. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");` je neplatná metoda volání; `opt.ExampleMethod(2, , "Addition of 2 and 0);` generuje "Argument chybějící" Chyba kompilátoru.
 
 Pokud je volána metoda pomocí pojmenované argumenty nebo jejich kombinaci poziční a pojmenované argumenty, volající vynechat všechny argumenty, které následují poslední poziční argument při volání metody.
 
@@ -269,7 +269,7 @@ V následujícím příkladu `DelayAsync` je asynchronní metody, který má ná
 
 [!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
 
-Asynchronní metody nelze deklarovat všechny [ref](language-reference/keywords/ref.md) nebo [out](language-reference/keywords/out.md) parametry, ale můžete volat metody, které mají tyto parametry.
+Asynchronní metody nelze deklarovat všechny [v](language-reference/keywords/in-parameter-modifier.md), [ref](language-reference/keywords/ref.md), nebo [out](language-reference/keywords/out-parameter-modifier.md) parametry, ale můžete volat metody, které mají tyto parametry.
 
  Další informace o asynchronní metody najdete v tématu [asynchronní programování s Async a Await](async.md), [řízení toku v asynchronních programech](programming-guide/concepts/async/control-flow-in-async-programs.md), a [asynchronní vrátit typy](programming-guide/concepts/async/async-return-types.md).
 
@@ -302,9 +302,10 @@ Další informace najdete v tématu [iterátory](programming-guide/concepts/iter
 
 [Modifikátory přístupu](language-reference/keywords/access-modifiers.md)   
 [Statické třídy a jejich členové](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
-[Dědičnost](programming-guide/classes-and-structs/inheritance.md)   
+[dědičnost](programming-guide/classes-and-structs/inheritance.md)   
 [Abstraktní a uzavřené třídy a jejich členové](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
-[Parametry](language-reference/keywords/params.md)   
-[na více systémů](language-reference/keywords/out.md)   
-[REF](language-reference/keywords/ref.md)   
+[params](language-reference/keywords/params.md)   
+[na více systémů](language-reference/keywords/out-parameter-modifier.md)   
+[ref](language-reference/keywords/ref.md)   
+[V](language-reference/keywords/in-parameter-modifier.md)   
 [Předávání parametrů](programming-guide/classes-and-structs/passing-parameters.md)

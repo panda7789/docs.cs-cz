@@ -15,11 +15,11 @@ ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: df59647b803bff448a801374a325f07e4903a160
-ms.sourcegitcommit: 22a48b64a0150a60b00b4fc4d8c62cde7f1670c4
+ms.openlocfilehash: 14bb60a5009f9a1ae59ed9846ebc868cfdcc05c6
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (Průvodce programováním v C#)
 Výraz lambda je [anonymní funkce](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) , můžete použít k vytvoření [delegáti](../../../csharp/programming-guide/delegates/using-delegates.md) nebo [strom výrazu](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) typy. Pomocí výrazů lambda můžete psát místní funkce, které mohou být předány jako argumenty nebo vráceny jako hodnota volání funkce. Výrazy lambda jsou zvláště užitečné pro psaní výrazů dotazů LINQ.  
@@ -157,13 +157,13 @@ public partial class Form1 : Form
  Další informace o tom, jak vytvořit a použít asynchronní metody najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).  
   
 ## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda se standardními operátory dotazu  
- Mnoho standardní operátory dotazu mít vstupní parametr s typem je jedním z <xref:System.Func%602> rodiny obecných delegátů. Tyto delegáty používají parametry typu pro definování počtu a typů vstupních parametrů a návratový typ delegátu. `Func`Delegáti jsou velmi užitečné pro zapouzdření uživatelem definované výrazy, které se použijí pro každý prvek v sadě zdrojová data. Zvažte například následující typ delegátu:  
+ Mnoho standardní operátory dotazu mít vstupní parametr s typem je jedním z <xref:System.Func%602> rodiny obecných delegátů. Tyto delegáty používají parametry typu pro definování počtu a typů vstupních parametrů a návratový typ delegátu. `Func` Delegáti jsou velmi užitečné pro zapouzdření uživatelem definované výrazy, které se použijí pro každý prvek v sadě zdrojová data. Zvažte například následující typ delegátu:  
   
 ```csharp  
 public delegate TResult Func<TArg0, TResult>(TArg0 arg0)  
 ```  
   
- Delegát se dá vytvořit instance jako `Func<int,bool> myFunc` kde `int` je vstupní parametr a `bool` je návratovou hodnotu. Vrácená hodnota je vždy určena v posledním parametru typu. `Func<int, string, bool>`definuje delegáta s dva vstupní parametry, `int` a `string`a návratový typ `bool`. Následující `Func` delegáta, při vyvolání, vrátí hodnotu PRAVDA nebo NEPRAVDA označuje, zda vstupní parametr rovna 5:  
+ Delegát se dá vytvořit instance jako `Func<int,bool> myFunc` kde `int` je vstupní parametr a `bool` je návratovou hodnotu. Vrácená hodnota je vždy určena v posledním parametru typu. `Func<int, string, bool>` definuje delegáta s dva vstupní parametry, `int` a `string`a návratový typ `bool`. Následující `Func` delegáta, při vyvolání, vrátí hodnotu PRAVDA nebo NEPRAVDA označuje, zda vstupní parametr rovna 5:  
   
 ```csharp  
 Func<int, bool> myFunc = x => x == 5;  
@@ -265,7 +265,7 @@ class Test
   
 -   Proměnné, které jsou představeny v rámci výrazu lambda, nejsou viditelné ve vnější metodě.  
   
--   Výraz lambda nemůže zaznamenat přímo `ref` nebo `out` parametr z metody nadřazených.  
+-   Výraz lambda nemůže zaznamenat přímo `in`, `ref`, nebo `out` parametr z metody nadřazených.  
   
 -   Příkaz return ve výrazu lambda nezpůsobí vrácení ohraničující metody.  
   

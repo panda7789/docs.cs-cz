@@ -46,7 +46,7 @@ object.Value
  <xref:System.Xml.Linq.XElement.Value%2A> Vlastnost usnadňuje přístup k hodnotě prvním elementem v kolekci <xref:System.Xml.Linq.XElement> objekty. Tato vlastnost nejprve ověří, zda kolekce obsahuje minimálně jeden objekt. Pokud je kolekce prázdná, vrátí tato vlastnost `Nothing`. Jinak, vrátí tato vlastnost hodnotu <xref:System.Xml.Linq.XElement.Value%2A> vlastnost první prvek v kolekci.  
   
 > [!NOTE]
->  Když k hodnotě atributu XML pomocí ' @' identifikátor, jako je vrácena hodnota atributu `String` a není nutné explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
+>  Když k hodnotě atributu XML pomocí '@' identifikátor, jako je vrácena hodnota atributu `String` a není nutné explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
   
  Pro přístup k další elementy v kolekci, můžete použít vlastnost indexeru rozšíření XML. Další informace najdete v tématu [vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md).  
   

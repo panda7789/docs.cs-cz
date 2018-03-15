@@ -8,12 +8,13 @@ ms.date: 11/30/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: dc93e0554d422ddf42ac54dd94223f0285451e85
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 50e8d5c335386c41e36a490263a4f4ebd2bd39ba
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-restore"></a>obnovení DotNet.
 
@@ -21,11 +22,11 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet restore`-Obnoví závislosti a nástroje projektu.
+`dotnet restore` -Obnoví závislosti a nástroje projektu.
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache] [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
@@ -55,7 +56,7 @@ Pro konkrétní projekt nástrojů, `dotnet restore` nejprve obnoví balíček, 
 
 Chování `dotnet restore` příkaz je ovlivňován některá nastavení v *Nuget.Config* soubor, pokud je k dispozici. Například nastavení `globalPackagesFolder` v *NuGet.Config* umístí obnovené balíčků NuGet v zadané složce. Jde o alternativu k určení `--packages` možnost `dotnet restore` příkaz. Další informace najdete v tématu [NuGet.Config odkaz](/nuget/schema/nuget-config-file).
 
-## <a name="implicit-dotnet-restore"></a>Implicitní`dotnet restore`
+## <a name="implicit-dotnet-restore"></a>Implicitní `dotnet restore`
 
 Od verze rozhraní .NET 2.0 jádra, `dotnet restore` spuštění implicitně v případě potřeby při vydání následující příkazy:
 
@@ -78,7 +79,7 @@ Cesty k souboru projektu k obnovení.
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 `--configfile <FILE>`
 
@@ -118,7 +119,7 @@ Určuje modul runtime pro obnovení balíčků. Slouží k obnovení balíčků 
 
 `-s|--source <SOURCE>`
 
-Určuje zdroj balíčku NuGet k použití během operace obnovení. Všechny zdroje, zadaný v přepíše *NuGet.config* souborům. Zadáním více než jednou. tuto možnost lze zadat více zdrojů.
+Určuje zdroj balíčku NuGet k použití během operace obnovení. Všechny zdroje, zadaný v přepíše *NuGet.config* soubory. Zadáním více než jednou. tuto možnost lze zadat více zdrojů.
 
 `--verbosity <LEVEL>`
 
@@ -160,7 +161,7 @@ Určuje modul runtime pro obnovení balíčků. Slouží k obnovení balíčků 
 
 `-s|--source <SOURCE>`
 
-Určuje zdroj balíčku NuGet k použití během operace obnovení. Všechny zdroje, zadaný v přepíše *NuGet.config* souborům. Zadáním více než jednou. tuto možnost lze zadat více zdrojů.
+Určuje zdroj balíčku NuGet k použití během operace obnovení. Všechny zdroje, zadaný v přepíše *NuGet.config* soubory. Zadáním více než jednou. tuto možnost lze zadat více zdrojů.
 
 `--verbosity <LEVEL>`
 

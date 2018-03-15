@@ -15,11 +15,11 @@ ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c4a89736822342a9d9a24db6d43435f9795b81b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2ddbd0f7268dd5dae4095d661cf800b5b481cbbd
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 Použití `async` modifikátor určíte, že a metody [výrazu lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), nebo [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) je asynchronní. Pokud použijete tento modifikátor způsobu nebo výraz, ho se označuje jako *asynchronní metody*. V následujícím příkladu definuje použití asynchronní metody s názvem `ExampleMethodAsync`: 
@@ -78,7 +78,7 @@ Asynchronní metody může mít následující návratové typy:
 - [void](../../../csharp/language-reference/keywords/void.md), které musí být použit pouze pro obslužné rutiny událostí.
 - Od verze jazyka C# 7, žádný typ, který má přístupné `GetAwaiter` metoda. `System.Threading.Tasks.ValueTask<TResult>` Typ je jednou z těchto implementací. Je k dispozici přidáním balíček NuGet `System.Threading.Tasks.Extensions`. 
 
-Asynchronní metody nelze deklarovat všechny [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out.md) parametry, ani může ho mít <!-- [reference return value](../../programming-guide/classes-and-structs/ref-returns.md) -->návratovou hodnotu odkazu, ale můžete volat metody, které mají tyto parametry.  
+Asynchronní metody nelze deklarovat všechny [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md), [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ani může ho mít [odkazovat návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md), ale může zavolat metody které mají tyto parametry.  
   
 Zadáte `Task<TResult>` jako návratový typ asynchronní metody Pokud [vrátit](../../../csharp/language-reference/keywords/return.md) příkaz metody určuje operand typu `TResult`. Používáte `Task` Pokud žádná smysluplný hodnota je vrácena, pokud je metoda dokončena. To znamená, vrátí volání do metody `Task`, ale při `Task` dokončení žádné `await` výraz, který se čeká na `Task` vyhodnotí jako `void`.  
   
@@ -92,4 +92,4 @@ Další informace a příklady naleznete v tématu [asynchronní vrátit typy](.
  <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>  
  [await](../../../csharp/language-reference/keywords/await.md)  
  [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [Asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md)
+ [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/index.md)

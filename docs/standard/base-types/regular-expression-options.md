@@ -18,21 +18,21 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a4a1513840d17f2e7b02acf821b5032eaac6e6fc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cc32a98930c4c1243f53fc9c5d2a10f339b4de11
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
-<a name="Top"></a>Ve výchozím nastavení při porovnání vstupní řetězec se znaky literálu v vzor regulárního výrazu je velká a malá písmena, prázdné znaky v vzor regulárního výrazu interpretována jako literál prázdné znaky a zaznamenávání skupiny v regulárním výrazu jsou pojmenované implicitně také jako explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možnosti regulárních výrazů. Tyto možnosti, které jsou uvedené v následující tabulce, mohou být zahrnuty vložené jako součást regulární výraz nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické vzor jako odpovídající metodu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
+<a name="Top"></a> Ve výchozím nastavení při porovnání vstupní řetězec se znaky literálu v vzor regulárního výrazu je velká a malá písmena, prázdné znaky v vzor regulárního výrazu interpretována jako literál prázdné znaky a zaznamenávání skupiny v regulárním výrazu jsou pojmenované implicitně také jako explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možnosti regulárních výrazů. Tyto možnosti, které jsou uvedené v následující tabulce, mohou být zahrnuty vložené jako součást regulární výraz nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické vzor jako odpovídající metodu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
   
 |Člen RegexOptions|Vložený znak|Efekt|  
 |-------------------------|----------------------|------------|  
@@ -42,7 +42,7 @@ ms.lasthandoff: 12/23/2017
 |<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|Použití režimu jeden řádek, kde tečka (.) odpovídá každý znak (místo každých znaku kromě `\n`). Další informace najdete v tématu [Jednořákový režim](#Singleline).|  
 |<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Nezachytí nepojmenované skupiny. Jediné platné zachycení explicitně s názvem nebo číslované skupiny formuláře `(?<` *název* `>` *dílčím výrazu*`)`. Další informace najdete v tématu [pouze explicitní zachycení](#Explicit).|  
 |<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|Není k dispozici|Zkompilujte regulární výraz k sestavení. Další informace najdete v tématu [kompilované regulární výrazy](#Compiled).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Vyloučit z vzoru prázdný znak a povolte komentáře po znaku (`#`). Další informace najdete v tématu [Ignorovat prázdné](#Whitespace).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Vyloučit z vzoru prázdný znak a povolte komentáře po znaku (`#`). Další informace najdete v tématu [ignorovat mezer](#Whitespace).|  
 |<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|Není k dispozici|Změňte směr vyhledávání. Hledání přesune zprava doleva místo zleva doprava. Další informace najdete v tématu [režim zprava doleva](#RightToLeft).|  
 |<xref:System.Text.RegularExpressions.RegexOptions.ECMAScript>|Není k dispozici|Povolte chování ECMAScript výrazu. Další informace najdete v tématu [ECMAScript chování porovnávání](#ECMAScript).|  
 |<xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant>|Není k dispozici|Ignorujte rozdíly v jazyce. Další informace najdete v tématu [porovnání s použitím neutrální jazykovou verzi](#Invariant).|  
@@ -285,7 +285,7 @@ ms.lasthandoff: 12/23/2017
   
 -   Prázdné znaky v rámci třídy znak je vždy interpretovány oznámena. Například vzor regulárního výrazu `[ .,;:]` odpovídá žádné jeden prázdný znak, období, čárkou, středníkem nebo středníkem.  
   
--   Mezer není povolen v závorkách kvantifikátor, jako například `{`  *n*  `}`, `{`  *n*  `,}`a `{`  *n*  `,` *m*`}`. Například vzor regulárního výrazu `\d{1. 3}` selže tak, aby odpovídaly žádné posloupností číslic od jedné do tří číslic, protože obsahuje prázdné znaky.  
+-   Mezer není povolen v závorkách kvantifikátor, jako například `{` *n*`}`, `{` *n*`,}`, a `{` *n* `,` *m*`}`. Například vzor regulárního výrazu `\d{1. 3}` selže tak, aby odpovídaly žádné posloupností číslic od jedné do tří číslic, protože obsahuje prázdné znaky.  
   
 -   Prázdné znaky není povoleno v rámci sekvence znaků, která představuje element jazyka. Příklad:  
   
@@ -367,7 +367,7 @@ ms.lasthandoff: 12/23/2017
   
     |Vzor|Popis|  
     |-------------|-----------------|  
-    |(+)|Porovnává písmenem "a" jeden nebo více krát. Toto je druhá zachytávající skupina.|  
+    |(a+)|Porovnává písmenem "a" jeden nebo více krát. Toto je druhá zachytávající skupina.|  
     |(\1)|Porovná podřetězec zachycenou první zaznamenávání skupinu. Toto je třetí zachytávající skupina.|  
     |?|Odpovídat nula nebo jeden znak mezery.|  
     |((a+)(\1)?) +|Shoda vzoru jeden nebo více znaků "a následuje řetězec, který odpovídá skupině první zaznamenávání" následuje žádnou nebo jednu místo znaků jeden či více krát. Toto je první zachytávající skupina.|  
@@ -376,9 +376,9 @@ ms.lasthandoff: 12/23/2017
   
     |Regulární výraz|Kanonické chování|Chování ECMAScript|  
     |------------------------|------------------------|-------------------------|  
-    |`\0`Následuje osmičková číslice 0 až 2|Interpretujte jako osmičkové. Například `\044` vždy interpretována jako osmičkovou hodnotu a znamená "$".|Stejné chování.|  
-    |`\`následuje číslice od 1 do 9, za nímž následuje bez dalších desítkových číslic,|Interpretujte jako zpětný odkaz. Například `\9` vždy znamená zpětných odkazů 9, i když devátá zachycující skupina neexistuje. Pokud zaznamenávání skupina neexistuje, vyvolá analyzátor regulárních výrazů <xref:System.ArgumentException>.|Pokud jednu číslici desítkové soustavy zaznamenávání skupina existuje, zpětných odkazů na tuto číslici. Hodnota, jinak hodnota interpretujte jako literál.|  
-    |`\`následuje číslice od 1 do 9, za nímž následuje další desetinných míst|Číslice interpretujte jako desítkovou hodnotu. Pokud existuje zachycující skupina interpretujte výraz jako zpětný odkaz.<br /><br /> V opačném interpretovat počáteční osmičkové číslice hodnoty 377. To znamená vezměte v úvahu jenom nízkou 8 bitů hodnotu. Zbývající číslice interpretujte jako literály. Například ve výrazu `\3000`, pokud zachycující skupina 300 existuje, interpretovat jako zpětných odkazů 300; pokud zachycující skupina 300 neexistuje, interpretovat jako osmičková 300, za nímž následuje 0.|Interpretujte jako zpětný odkaz převedením tolik číslic nejdříve desetinnou hodnotu, která se může vztahovat k zachycení. Pokud žádné číslic lze převést, interpretujte jako osmičkové pomocí úvodní osmičková číslice hodnoty 377. Zbývající číslice interpretujte jako literály.|  
+    |`\0` Následuje osmičková číslice 0 až 2|Interpretujte jako osmičkové. Například `\044` vždy interpretována jako osmičkovou hodnotu a znamená "$".|Stejné chování.|  
+    |`\` následuje číslice od 1 do 9, za nímž následuje bez dalších desítkových číslic,|Interpretujte jako zpětný odkaz. Například `\9` vždy znamená zpětných odkazů 9, i když devátá zachycující skupina neexistuje. Pokud zaznamenávání skupina neexistuje, vyvolá analyzátor regulárních výrazů <xref:System.ArgumentException>.|Pokud jednu číslici desítkové soustavy zaznamenávání skupina existuje, zpětných odkazů na tuto číslici. Hodnota, jinak hodnota interpretujte jako literál.|  
+    |`\` následuje číslice od 1 do 9, za nímž následuje další desetinných míst|Číslice interpretujte jako desítkovou hodnotu. Pokud existuje zachycující skupina interpretujte výraz jako zpětný odkaz.<br /><br /> V opačném interpretovat počáteční osmičkové číslice hodnoty 377. To znamená vezměte v úvahu jenom nízkou 8 bitů hodnotu. Zbývající číslice interpretujte jako literály. Například ve výrazu `\3000`, pokud zachycující skupina 300 existuje, interpretovat jako zpětných odkazů 300; pokud zachycující skupina 300 neexistuje, interpretovat jako osmičková 300, za nímž následuje 0.|Interpretujte jako zpětný odkaz převedením tolik číslic nejdříve desetinnou hodnotu, která se může vztahovat k zachycení. Pokud žádné číslic lze převést, interpretujte jako osmičkové pomocí úvodní osmičková číslice hodnoty 377. Zbývající číslice interpretujte jako literály.|  
   
  [Zpět na začátek](#Top)  
   

@@ -2,26 +2,27 @@
 title: "Použití vlastností (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - set accessor [C#]
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: aae36195f4a6eb2ab49ec27e1e07debff7289b37
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 36345748e514f0e0a4c945d8ead149c7d8ca9a19
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 Vlastnosti kombinovat aspektů pole a metody. Uživateli objektu, zdá být pole, vlastnosti přístupu k vlastnosti vyžaduje stejná syntaxe. Implementátor třídy, vlastnosti je jeden nebo dva bloky kódu představující [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu nebo [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Blok kódu pro `get` přistupujícího objektu je spuštěn, když je vlastnost číst; blokovat kód pro `set` přistupujícího objektu je spuštěn, když vlastnost je přiřazena nová hodnota. Vlastnost bez `set` přistupujícího objektu je považován za jen pro čtení. Vlastnost bez `get` přistupujícího objektu je považován za jen pro zápis. Vlastnost, která má oba přístupových objektů je pro čtení a zápis.  
   
- Na rozdíl od polí a vlastností nejsou klasifikovaný proměnné. Proto nelze předat jako vlastnost [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out.md) parametr.  
+ Na rozdíl od polí a vlastností nejsou klasifikovaný proměnné. Proto nelze předat jako vlastnost [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr.  
   
  Vlastnosti mají mnoho používá: jejich můžete ověřit data před povolením změnu; transparentně se můžou zpřístupnit data pro třídu, pokud je ve skutečnosti načíst data ze jiný zdroj, například do databáze; jejich zajištění může trvat akce při změně dat, jako je například vyvolání události nebo změně hodnoty nebo jiné pole.  
   
@@ -105,7 +106,7 @@ Vlastnosti kombinovat aspektů pole a metody. Uživateli objektu, zdá být pole
  [!code-csharp[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
  [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
  [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)

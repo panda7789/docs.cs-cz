@@ -2,21 +2,22 @@
 title: "Anonymní metody (Průvodce programováním v C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - anonymous methods [C#]
 - methods [C#], anonymous
 - delegates [C#], anonymous methods
 ms.assetid: a62441fa-f0a3-4acb-9aa6-93762a635275
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4d942e0f3245f6404c896173b2c7ca6f1090a8c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96e78257c5aab84562cd8cdb336bb5a91ba59534
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="anonymous-methods-c-programming-guide"></a>Anonymní metody (Průvodce programováním v C#)
 Ve verzi jazyka C# před 2.0, lze deklarovat pouze [delegovat](../../../csharp/language-reference/keywords/delegate.md) pomocí [s názvem metody](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md). C# 2.0 zavedená anonymní metody a v C# 3.0 nebo novější, výrazů lambda jako upřednostňovaný způsob, jak napsat kód vložený mají přednost před anonymní metody. Ale informace o anonymní metody v tomto tématu platí taky pro výrazy lambda. Neexistuje jeden případ, ve kterém anonymní metoda poskytuje funkce nebyla nalezena v výrazy lambda. Anonymní metody umožňují vynechejte parametr seznamu. To znamená, že anonymní metody lze převést na delegáty s různými podpisy. To není možné pomocí výrazů lambda. Další informace o výrazy lambda konkrétně najdete v tématu [výrazy Lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
@@ -44,7 +45,7 @@ Ve verzi jazyka C# před 2.0, lze deklarovat pouze [delegovat](../../../csharp/l
   
  Odkaz na proměnnou vnější `n` se říká, že *zachytit* vytvoření delegát. Na rozdíl od místní proměnné doba platnosti zaznamenané proměnné rozšiřuje dokud delegáti, které odkazují na anonymní metody jsou způsobilé pro uvolňování paměti.  
   
- Anonymní metody nemůže získat přístup k [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out.md) parametry vnějším oboru.  
+ Anonymní metody nemůže získat přístup k [v](../../../csharp/language-reference/keywords/in.md), [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry vnějším oboru.  
   
  Žádné nezabezpečený kód je přístupná v rámci *anonymní blok metody*.  
   
@@ -63,9 +64,9 @@ Ve verzi jazyka C# před 2.0, lze deklarovat pouze [delegovat](../../../csharp/l
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
- [Lambda – výrazy](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
- [Nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [Nebezpečný kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
  [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
- [Delegáti s pojmenované vs. Anonymní metody](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)
+ [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)
