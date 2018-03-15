@@ -19,24 +19,24 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ee2baef3ddcaebb494f1eae2813e861f93e489dd
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 39cf89856b8096fb879ee42f068e96308c5f9660
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="examples-of-xml-serialization"></a><span data-ttu-id="0f4ca-102">Příklady serializace XML</span><span class="sxs-lookup"><span data-stu-id="0f4ca-102">Examples of XML Serialization</span></span>
-<span data-ttu-id="0f4ca-103">Serializace XML může trvat více než jeden formulář z snadno komplexní.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-103">XML serialization can take more than one form, from simple to complex.</span></span> <span data-ttu-id="0f4ca-104">Například může serializovat třídu, která jednoduše se skládá z veřejného polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="0f4ca-104">For example, you can serialize a class that simply consists of public fields and properties, as shown in [Introducing XML Serialization](../../../docs/standard/serialization/introducing-xml-serialization.md).</span></span> <span data-ttu-id="0f4ca-105">Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).</span><span class="sxs-lookup"><span data-stu-id="0f4ca-105">The following code examples address various advanced scenarios, including how to use XML serialization to generate an XML stream that conforms to a specific XML Schema (XSD) document.</span></span>  
+# <a name="examples-of-xml-serialization"></a><span data-ttu-id="238a5-102">Příklady serializace XML</span><span class="sxs-lookup"><span data-stu-id="238a5-102">Examples of XML Serialization</span></span>
+<span data-ttu-id="238a5-103">Serializace XML může trvat více než jeden formulář z snadno komplexní.</span><span class="sxs-lookup"><span data-stu-id="238a5-103">XML serialization can take more than one form, from simple to complex.</span></span> <span data-ttu-id="238a5-104">Například může serializovat třídu, která jednoduše se skládá z veřejného polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="238a5-104">For example, you can serialize a class that simply consists of public fields and properties, as shown in [Introducing XML Serialization](../../../docs/standard/serialization/introducing-xml-serialization.md).</span></span> <span data-ttu-id="238a5-105">Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).</span><span class="sxs-lookup"><span data-stu-id="238a5-105">The following code examples address various advanced scenarios, including how to use XML serialization to generate an XML stream that conforms to a specific XML Schema (XSD) document.</span></span>  
   
-## <a name="serializing-a-dataset"></a><span data-ttu-id="0f4ca-106">Serializace na sadu dat</span><span class="sxs-lookup"><span data-stu-id="0f4ca-106">Serializing a DataSet</span></span>  
- <span data-ttu-id="0f4ca-107">Kromě serializaci instancí veřejnou třídu instance <xref:System.Data.DataSet> lze také serializovat, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-107">Besides serializing an instance of a public class, an instance of a <xref:System.Data.DataSet> can also be serialized, as shown in the following code example.</span></span>  
+## <a name="serializing-a-dataset"></a><span data-ttu-id="238a5-106">Serializace na sadu dat</span><span class="sxs-lookup"><span data-stu-id="238a5-106">Serializing a DataSet</span></span>  
+ <span data-ttu-id="238a5-107">Kromě serializaci instancí veřejnou třídu instance <xref:System.Data.DataSet> lze také serializovat, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="238a5-107">Besides serializing an instance of a public class, an instance of a <xref:System.Data.DataSet> can also be serialized, as shown in the following code example.</span></span>  
   
 ```vb  
 Private Sub SerializeDataSet(filename As String)  
@@ -82,8 +82,8 @@ private void SerializeDataSet(string filename){
 }  
 ```  
   
-## <a name="serializing-an-xmlelement-and-xmlnode"></a><span data-ttu-id="0f4ca-108">Serializace XmlElement a XmlNode</span><span class="sxs-lookup"><span data-stu-id="0f4ca-108">Serializing an XmlElement and XmlNode</span></span>  
- <span data-ttu-id="0f4ca-109">Můžete také serializovat instance <xref:System.Xml.XmlElement> nebo <xref:System.Xml.XmlNode> třídy, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-109">You can also serialize instances of a <xref:System.Xml.XmlElement> or <xref:System.Xml.XmlNode> class, as shown in the following code example.</span></span>  
+## <a name="serializing-an-xmlelement-and-xmlnode"></a><span data-ttu-id="238a5-108">Serializace XmlElement a XmlNode</span><span class="sxs-lookup"><span data-stu-id="238a5-108">Serializing an XmlElement and XmlNode</span></span>  
+ <span data-ttu-id="238a5-109">Můžete také serializovat instance <xref:System.Xml.XmlElement> nebo <xref:System.Xml.XmlNode> třídy, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="238a5-109">You can also serialize instances of a <xref:System.Xml.XmlElement> or <xref:System.Xml.XmlNode> class, as shown in the following code example.</span></span>  
   
 ```vb  
 private Sub SerializeElement(filename As String)  
@@ -130,8 +130,8 @@ private void SerializeNode(string filename){
 }  
 ```  
   
-## <a name="serializing-a-class-that-contains-a-field-returning-a-complex-object"></a><span data-ttu-id="0f4ca-110">Serializace třídu, která obsahuje pole vrácení komplexního objektu</span><span class="sxs-lookup"><span data-stu-id="0f4ca-110">Serializing a Class that Contains a Field Returning a Complex Object</span></span>  
- <span data-ttu-id="0f4ca-111">Pokud vlastnost nebo pole vrátí komplexní objekt (například pole nebo instance třídy), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) převede ji na element vnořené hlavní dokument XML.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-111">If a property or field returns a complex object (such as an array or a class instance), the [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) converts it to an element nested within the main XML document.</span></span> <span data-ttu-id="0f4ca-112">Můžete například první třídou v následujícím příkladu vrací instanci třídy sekundu.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-112">For example, the first class in the following code example returns an instance of the second class.</span></span>  
+## <a name="serializing-a-class-that-contains-a-field-returning-a-complex-object"></a><span data-ttu-id="238a5-110">Serializace třídu, která obsahuje pole vrácení komplexního objektu</span><span class="sxs-lookup"><span data-stu-id="238a5-110">Serializing a Class that Contains a Field Returning a Complex Object</span></span>  
+ <span data-ttu-id="238a5-111">Pokud vlastnost nebo pole vrátí komplexní objekt (například pole nebo instance třídy), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) převede ji na element vnořené hlavní dokument XML.</span><span class="sxs-lookup"><span data-stu-id="238a5-111">If a property or field returns a complex object (such as an array or a class instance), the [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) converts it to an element nested within the main XML document.</span></span> <span data-ttu-id="238a5-112">Můžete například první třídou v následujícím příkladu vrací instanci třídy sekundu.</span><span class="sxs-lookup"><span data-stu-id="238a5-112">For example, the first class in the following code example returns an instance of the second class.</span></span>  
   
 ```vb  
 Public Class PurchaseOrder  
@@ -154,7 +154,7 @@ public class Address
 }  
 ```  
   
- <span data-ttu-id="0f4ca-113">Serializovaná výstupu XML může vypadat takto.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-113">The serialized XML output might resemble the following.</span></span>  
+ <span data-ttu-id="238a5-113">Serializovaná výstupu XML může vypadat takto.</span><span class="sxs-lookup"><span data-stu-id="238a5-113">The serialized XML output might resemble the following.</span></span>  
   
 ```xml  
 <PurchaseOrder>  
@@ -164,8 +164,8 @@ public class Address
 </PurchaseOrder>  
 ```  
   
-## <a name="serializing-an-array-of-objects"></a><span data-ttu-id="0f4ca-114">Serializace pole objektů</span><span class="sxs-lookup"><span data-stu-id="0f4ca-114">Serializing an Array of Objects</span></span>  
- <span data-ttu-id="0f4ca-115">Můžete také serializovat pole, které vrací pole objektů, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-115">You can also serialize a field that returns an array of objects, as shown in the following code example.</span></span>  
+## <a name="serializing-an-array-of-objects"></a><span data-ttu-id="238a5-114">Serializace pole objektů</span><span class="sxs-lookup"><span data-stu-id="238a5-114">Serializing an Array of Objects</span></span>  
+ <span data-ttu-id="238a5-115">Můžete také serializovat pole, které vrací pole objektů, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="238a5-115">You can also serialize a field that returns an array of objects, as shown in the following code example.</span></span>  
   
 ```vb  
 Public Class PurchaseOrder  
@@ -191,7 +191,7 @@ public class Item
 }  
 ```  
   
- <span data-ttu-id="0f4ca-116">Instance třídy serializovaná může vypadat podobně, pokud jsou řazeny dvě položky.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-116">The serialized class instance might resemble the following, if two items are ordered.</span></span>  
+ <span data-ttu-id="238a5-116">Instance třídy serializovaná může vypadat podobně, pokud jsou řazeny dvě položky.</span><span class="sxs-lookup"><span data-stu-id="238a5-116">The serialized class instance might resemble the following, if two items are ordered.</span></span>  
   
 ```xml  
 <PurchaseOrder xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
@@ -208,8 +208,8 @@ public class Item
 </PurchaseOrder>  
 ```  
   
-## <a name="serializing-a-class-that-implements-the-icollection-interface"></a><span data-ttu-id="0f4ca-117">Serializace třídu tohoto implementuje rozhraní ICollection</span><span class="sxs-lookup"><span data-stu-id="0f4ca-117">Serializing a Class that Implements the ICollection Interface</span></span>  
- <span data-ttu-id="0f4ca-118">Můžete vytvořit vlastní třídy kolekce implementující <xref:System.Collections.ICollection> rozhraní a používat <xref:System.Xml.Serialization.XmlSerializer> k serializaci instance těchto tříd.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-118">You can create your own collection classes by implementing the <xref:System.Collections.ICollection> interface, and use the <xref:System.Xml.Serialization.XmlSerializer> to serialize instances of these classes.</span></span> <span data-ttu-id="0f4ca-119">Všimněte si, že při implementuje třídu <xref:System.Collections.ICollection> rozhraní, pouze kolekce obsažené třídou je serializována.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-119">Note that when a class implements the <xref:System.Collections.ICollection> interface, only the collection contained by the class is serialized.</span></span> <span data-ttu-id="0f4ca-120">Všechny veřejné vlastnosti nebo pole přidán do třídy nesmí být serializován.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-120">Any public properties or fields added to the class will not be serialized.</span></span> <span data-ttu-id="0f4ca-121">Musí obsahovat třídu **přidat** metoda a **položky** vlastnost (indexeru C#), která má být serializován.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-121">The class must include an **Add** method and an **Item** property (C# indexer) to be serialized.</span></span>  
+## <a name="serializing-a-class-that-implements-the-icollection-interface"></a><span data-ttu-id="238a5-117">Serializace třídu tohoto implementuje rozhraní ICollection</span><span class="sxs-lookup"><span data-stu-id="238a5-117">Serializing a Class that Implements the ICollection Interface</span></span>  
+ <span data-ttu-id="238a5-118">Můžete vytvořit vlastní třídy kolekce implementující <xref:System.Collections.ICollection> rozhraní a používat <xref:System.Xml.Serialization.XmlSerializer> k serializaci instance těchto tříd.</span><span class="sxs-lookup"><span data-stu-id="238a5-118">You can create your own collection classes by implementing the <xref:System.Collections.ICollection> interface, and use the <xref:System.Xml.Serialization.XmlSerializer> to serialize instances of these classes.</span></span> <span data-ttu-id="238a5-119">Všimněte si, že při implementuje třídu <xref:System.Collections.ICollection> rozhraní, pouze kolekce obsažené třídou je serializována.</span><span class="sxs-lookup"><span data-stu-id="238a5-119">Note that when a class implements the <xref:System.Collections.ICollection> interface, only the collection contained by the class is serialized.</span></span> <span data-ttu-id="238a5-120">Všechny veřejné vlastnosti nebo pole přidán do třídy nesmí být serializován.</span><span class="sxs-lookup"><span data-stu-id="238a5-120">Any public properties or fields added to the class will not be serialized.</span></span> <span data-ttu-id="238a5-121">Musí obsahovat třídu **přidat** metoda a **položky** vlastnost (indexeru C#), která má být serializován.</span><span class="sxs-lookup"><span data-stu-id="238a5-121">The class must include an **Add** method and an **Item** property (C# indexer) to be serialized.</span></span>  
   
 ```vb  
 Imports System  
@@ -366,16 +366,16 @@ public class Employee{
 }  
 ```  
   
-## <a name="purchase-order-example"></a><span data-ttu-id="0f4ca-122">Příklad pořadí nákupu</span><span class="sxs-lookup"><span data-stu-id="0f4ca-122">Purchase Order Example</span></span>  
- <span data-ttu-id="0f4ca-123">Můžete vyjmout a vložit následující příklad kódu do textového souboru s příponou názvu souboru cs nebo VB přejmenovat.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-123">You can cut and paste the following example code into a text file renamed with a .cs or .vb file name extension.</span></span> <span data-ttu-id="0f4ca-124">Použijte kompilátor jazyka C# nebo Visual Basic pro kompilaci souboru.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-124">Use the C# or Visual Basic compiler to compile the file.</span></span> <span data-ttu-id="0f4ca-125">Spusťte ji pomocí názvu spustitelného souboru.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-125">Then run it using the name of the executable.</span></span>  
+## <a name="purchase-order-example"></a><span data-ttu-id="238a5-122">Příklad pořadí nákupu</span><span class="sxs-lookup"><span data-stu-id="238a5-122">Purchase Order Example</span></span>  
+ <span data-ttu-id="238a5-123">Můžete vyjmout a vložit následující příklad kódu do textového souboru s příponou názvu souboru cs nebo VB přejmenovat.</span><span class="sxs-lookup"><span data-stu-id="238a5-123">You can cut and paste the following example code into a text file renamed with a .cs or .vb file name extension.</span></span> <span data-ttu-id="238a5-124">Použijte kompilátor jazyka C# nebo Visual Basic pro kompilaci souboru.</span><span class="sxs-lookup"><span data-stu-id="238a5-124">Use the C# or Visual Basic compiler to compile the file.</span></span> <span data-ttu-id="238a5-125">Spusťte ji pomocí názvu spustitelného souboru.</span><span class="sxs-lookup"><span data-stu-id="238a5-125">Then run it using the name of the executable.</span></span>  
   
- <span data-ttu-id="0f4ca-126">V tomto příkladu je jednoduché scénáře k předvedení jak instance objektu je vytvořena a serializován do souboru pomocí datového proudu <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-126">This example uses a simple scenario to demonstrate how an instance of an object is created and serialized into a file stream using the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> method.</span></span> <span data-ttu-id="0f4ca-127">Datový proud XML je uložen na soubor a stejný soubor je poté číst zpět a znovu vytvořena do kopii původní objekt pomocí <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-127">The XML stream is saved to a file, and the same file is then read back and reconstructed into a copy of the original object using the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method.</span></span>  
+ <span data-ttu-id="238a5-126">V tomto příkladu je jednoduché scénáře k předvedení jak instance objektu je vytvořena a serializován do souboru pomocí datového proudu <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="238a5-126">This example uses a simple scenario to demonstrate how an instance of an object is created and serialized into a file stream using the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> method.</span></span> <span data-ttu-id="238a5-127">Datový proud XML je uložen na soubor a stejný soubor je poté číst zpět a znovu vytvořena do kopii původní objekt pomocí <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="238a5-127">The XML stream is saved to a file, and the same file is then read back and reconstructed into a copy of the original object using the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method.</span></span>  
   
- <span data-ttu-id="0f4ca-128">V tomto příkladu třída s názvem `PurchaseOrder` je serializaci a potom deserializaci.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-128">In this example, a class named `PurchaseOrder` is serialized and then deserialized.</span></span> <span data-ttu-id="0f4ca-129">Druhé třídu s názvem `Address` je rovněž obsažena, protože veřejné pole s názvem `ShipTo` musí být nastavena na `Address`.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-129">A second class named `Address` is also included because the public field named `ShipTo` must be set to an `Address`.</span></span> <span data-ttu-id="0f4ca-130">Podobně `OrderedItem` třída je zahrnuta, protože pole `OrderedItem` objekty musí být nastaven na `OrderedItems` pole.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-130">Similarly, an `OrderedItem` class is included because an array of `OrderedItem` objects must be set to the `OrderedItems` field.</span></span> <span data-ttu-id="0f4ca-131">Na závěr třída s názvem `Test` obsahuje kód, který serializuje a deserializuje třídy.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-131">Finally, a class named `Test` contains the code that serializes and deserializes the classes.</span></span>  
+ <span data-ttu-id="238a5-128">V tomto příkladu třída s názvem `PurchaseOrder` je serializaci a potom deserializaci.</span><span class="sxs-lookup"><span data-stu-id="238a5-128">In this example, a class named `PurchaseOrder` is serialized and then deserialized.</span></span> <span data-ttu-id="238a5-129">Druhé třídu s názvem `Address` je rovněž obsažena, protože veřejné pole s názvem `ShipTo` musí být nastavena na `Address`.</span><span class="sxs-lookup"><span data-stu-id="238a5-129">A second class named `Address` is also included because the public field named `ShipTo` must be set to an `Address`.</span></span> <span data-ttu-id="238a5-130">Podobně `OrderedItem` třída je zahrnuta, protože pole `OrderedItem` objekty musí být nastaven na `OrderedItems` pole.</span><span class="sxs-lookup"><span data-stu-id="238a5-130">Similarly, an `OrderedItem` class is included because an array of `OrderedItem` objects must be set to the `OrderedItems` field.</span></span> <span data-ttu-id="238a5-131">Na závěr třída s názvem `Test` obsahuje kód, který serializuje a deserializuje třídy.</span><span class="sxs-lookup"><span data-stu-id="238a5-131">Finally, a class named `Test` contains the code that serializes and deserializes the classes.</span></span>  
   
- <span data-ttu-id="0f4ca-132">`CreatePO` Metoda vytvoří `PurchaseOrder`, `Address`, a `OrderedItem` objekty třídy a nastaví hodnoty veřejného polí.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-132">The `CreatePO` method creates the `PurchaseOrder`, `Address`, and `OrderedItem` class objects, and sets the public field values.</span></span> <span data-ttu-id="0f4ca-133">Metoda také vytvoří instanci objektu <xref:System.Xml.Serialization.XmlSerializer> třídu, která se používá k serializaci a deserializaci `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-133">The method also constructs an instance of the <xref:System.Xml.Serialization.XmlSerializer> class that is used to serialize and deserialize the `PurchaseOrder`.</span></span> <span data-ttu-id="0f4ca-134">Všimněte si, že kód předá konstruktoru typu třídy, která bude serializována.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-134">Note that the code passes the type of the class that will be serialized to the constructor.</span></span> <span data-ttu-id="0f4ca-135">Kód také vytvoří `FileStream` používané k zápisu datový proud XML do dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-135">The code also creates a `FileStream` that is used to write the XML stream to an XML document.</span></span>  
+ <span data-ttu-id="238a5-132">`CreatePO` Metoda vytvoří `PurchaseOrder`, `Address`, a `OrderedItem` objekty třídy a nastaví hodnoty veřejného polí.</span><span class="sxs-lookup"><span data-stu-id="238a5-132">The `CreatePO` method creates the `PurchaseOrder`, `Address`, and `OrderedItem` class objects, and sets the public field values.</span></span> <span data-ttu-id="238a5-133">Metoda také vytvoří instanci objektu <xref:System.Xml.Serialization.XmlSerializer> třídu, která se používá k serializaci a deserializaci `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="238a5-133">The method also constructs an instance of the <xref:System.Xml.Serialization.XmlSerializer> class that is used to serialize and deserialize the `PurchaseOrder`.</span></span> <span data-ttu-id="238a5-134">Všimněte si, že kód předá konstruktoru typu třídy, která bude serializována.</span><span class="sxs-lookup"><span data-stu-id="238a5-134">Note that the code passes the type of the class that will be serialized to the constructor.</span></span> <span data-ttu-id="238a5-135">Kód také vytvoří `FileStream` používané k zápisu datový proud XML do dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="238a5-135">The code also creates a `FileStream` that is used to write the XML stream to an XML document.</span></span>  
   
- <span data-ttu-id="0f4ca-136">`ReadPo` Metoda je o něco jednodušší.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-136">The `ReadPo` method is a little simpler.</span></span> <span data-ttu-id="0f4ca-137">Stačí vytvoří objekty k deserializaci a přečte jejich hodnoty.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-137">It just creates objects to deserialize and reads out their values.</span></span> <span data-ttu-id="0f4ca-138">Stejně jako u `CreatePo` metody, je nutné nejprve vytvořit <xref:System.Xml.Serialization.XmlSerializer>, předejte typ třídy k deserializaci do konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-138">As with the `CreatePo` method, you must first construct a <xref:System.Xml.Serialization.XmlSerializer>, passing the type of the class to be deserialized to the constructor.</span></span> <span data-ttu-id="0f4ca-139">Také <xref:System.IO.FileStream> je vyžadována pro čtení dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-139">Also, a <xref:System.IO.FileStream> is required to read the XML document.</span></span> <span data-ttu-id="0f4ca-140">K deserializaci objektů, zavolejte <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu se <xref:System.IO.FileStream> jako argument.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-140">To deserialize the objects, call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method with the <xref:System.IO.FileStream> as an argument.</span></span> <span data-ttu-id="0f4ca-141">Deserializovaný objekt musí být přetypovat na proměnné objektu typu `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-141">The deserialized object must be cast to an object variable of type `PurchaseOrder`.</span></span> <span data-ttu-id="0f4ca-142">Kód poté načte hodnoty deserializovat `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-142">The code then reads the values of the deserialized `PurchaseOrder`.</span></span> <span data-ttu-id="0f4ca-143">Všimněte si, můžete si také přečíst soubor PO.xml, který je vytvořen zobrazíte skutečný XML výstupu.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-143">Note that you can also read the PO.xml file that is created to see the actual XML output.</span></span>  
+ <span data-ttu-id="238a5-136">`ReadPo` Metoda je o něco jednodušší.</span><span class="sxs-lookup"><span data-stu-id="238a5-136">The `ReadPo` method is a little simpler.</span></span> <span data-ttu-id="238a5-137">Stačí vytvoří objekty k deserializaci a přečte jejich hodnoty.</span><span class="sxs-lookup"><span data-stu-id="238a5-137">It just creates objects to deserialize and reads out their values.</span></span> <span data-ttu-id="238a5-138">Stejně jako u `CreatePo` metody, je nutné nejprve vytvořit <xref:System.Xml.Serialization.XmlSerializer>, předejte typ třídy k deserializaci do konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="238a5-138">As with the `CreatePo` method, you must first construct a <xref:System.Xml.Serialization.XmlSerializer>, passing the type of the class to be deserialized to the constructor.</span></span> <span data-ttu-id="238a5-139">Také <xref:System.IO.FileStream> je vyžadována pro čtení dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="238a5-139">Also, a <xref:System.IO.FileStream> is required to read the XML document.</span></span> <span data-ttu-id="238a5-140">K deserializaci objektů, zavolejte <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu se <xref:System.IO.FileStream> jako argument.</span><span class="sxs-lookup"><span data-stu-id="238a5-140">To deserialize the objects, call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method with the <xref:System.IO.FileStream> as an argument.</span></span> <span data-ttu-id="238a5-141">Deserializovaný objekt musí být přetypovat na proměnné objektu typu `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="238a5-141">The deserialized object must be cast to an object variable of type `PurchaseOrder`.</span></span> <span data-ttu-id="238a5-142">Kód poté načte hodnoty deserializovat `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="238a5-142">The code then reads the values of the deserialized `PurchaseOrder`.</span></span> <span data-ttu-id="238a5-143">Všimněte si, můžete si také přečíst soubor PO.xml, který je vytvořen zobrazíte skutečný XML výstupu.</span><span class="sxs-lookup"><span data-stu-id="238a5-143">Note that you can also read the PO.xml file that is created to see the actual XML output.</span></span>  
   
 ```vb  
 Imports System  
@@ -384,21 +384,21 @@ Imports System.Xml.Serialization
 Imports System.IO  
 Imports Microsoft.VisualBasic  
   
-' The XmlRootAttribute allows you to set an alternate name  
+' The XmlRoot attribute allows you to set an alternate name  
 ' (PurchaseOrder) for the XML element and its namespace. By  
 ' default, the XmlSerializer uses the class name. The attribute  
 ' also allows you to set the XML namespace for the element. Lastly,  
 ' the attribute sets the IsNullable property, which specifies whether  
 ' the xsi:null attribute appears if the class instance is set to  
 ' a null reference.   
-<XmlRootAttribute("PurchaseOrder", _  
+<XmlRoot("PurchaseOrder", _  
  Namespace := "http://www.cpandl.com", IsNullable := False)> _  
 Public Class PurchaseOrder  
     Public ShipTo As Address  
     Public OrderDate As String  
     ' The XmlArrayAttribute changes the XML element name  
     ' from the default of "OrderedItems" to "Items".   
-    <XmlArrayAttribute("Items")> _  
+    <XmlArray("Items")> _  
     Public OrderedItems() As OrderedItem  
     Public SubTotal As Decimal  
     Public ShipCost As Decimal  
@@ -406,7 +406,7 @@ Public Class PurchaseOrder
 End Class   
   
 Public Class Address  
-    ' The XmlAttribute instructs the XmlSerializer to serialize the   
+    ' The XmlAttribute attribute instructs the XmlSerializer to serialize the   
     ' Name field as an XML attribute instead of an XML element (the   
     ' default behavior).   
     <XmlAttribute()> _  
@@ -416,7 +416,7 @@ Public Class Address
     ' Setting the IsNullable property to false instructs the  
     ' XmlSerializer that the XML attribute will not appear if  
     ' the City field is set to a null reference.   
-    <XmlElementAttribute(IsNullable := False)> _  
+    <XmlElement(IsNullable := False)> _  
     Public City As String  
     Public State As String  
     Public Zip As String  
@@ -562,22 +562,22 @@ using System.Xml;
 using System.Xml.Serialization;  
 using System.IO;  
   
-// The XmlRootAttribute allows you to set an alternate name   
+// The XmlRoot attribute allows you to set an alternate name   
 // (PurchaseOrder) for the XML element and its namespace. By   
 // default, the XmlSerializer uses the class name. The attribute   
 // also allows you to set the XML namespace for the element. Lastly,  
 // the attribute sets the IsNullable property, which specifies whether   
 // the xsi:null attribute appears if the class instance is set to   
 // a null reference.  
-[XmlRootAttribute("PurchaseOrder", Namespace="http://www.cpandl.com",   
+[XmlRoot("PurchaseOrder", Namespace="http://www.cpandl.com",   
 IsNullable = false)]  
 public class PurchaseOrder  
 {  
     public Address ShipTo;  
     public string OrderDate;   
-    // The XmlArrayAttribute changes the XML element name  
+    // The XmlArray attribute changes the XML element name  
     // from the default of "OrderedItems" to "Items".  
-    [XmlArrayAttribute("Items")]  
+    [XmlArray("Items")]  
     public OrderedItem[] OrderedItems;  
     public decimal SubTotal;  
     public decimal ShipCost;  
@@ -586,7 +586,7 @@ public class PurchaseOrder
   
 public class Address  
 {  
-    // The XmlAttribute instructs the XmlSerializer to serialize the   
+    // The XmlAttribute attribute instructs the XmlSerializer to serialize the   
     // Name field as an XML attribute instead of an XML element (the   
     // default behavior).  
     [XmlAttribute]  
@@ -596,7 +596,7 @@ public class Address
     // Setting the IsNullable property to false instructs the   
     // XmlSerializer that the XML attribute will not appear if   
     // the City field is set to a null reference.  
-    [XmlElementAttribute(IsNullable = false)]  
+    [XmlElement(IsNullable = false)]  
     public string City;  
     public string State;  
     public string Zip;  
@@ -747,7 +747,7 @@ public class Test
 }  
 ```  
   
- <span data-ttu-id="0f4ca-144">Výstup XML může vypadat takto.</span><span class="sxs-lookup"><span data-stu-id="0f4ca-144">The XML output might resemble the following.</span></span>  
+ <span data-ttu-id="238a5-144">Výstup XML může vypadat takto.</span><span class="sxs-lookup"><span data-stu-id="238a5-144">The XML output might resemble the following.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -774,10 +774,10 @@ public class Test
 </PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0f4ca-145">Viz také</span><span class="sxs-lookup"><span data-stu-id="0f4ca-145">See Also</span></span>  
- [<span data-ttu-id="0f4ca-146">Představení serializace XML</span><span class="sxs-lookup"><span data-stu-id="0f4ca-146">Introducing XML Serialization</span></span>](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [<span data-ttu-id="0f4ca-147">Řízení serializace XML pomocí atributů</span><span class="sxs-lookup"><span data-stu-id="0f4ca-147">Controlling XML Serialization Using Attributes</span></span>](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
- [<span data-ttu-id="0f4ca-148">Seznam atributů řídících serializaci XML</span><span class="sxs-lookup"><span data-stu-id="0f4ca-148">Attributes That Control XML Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
- [<span data-ttu-id="0f4ca-149">Třídy XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="0f4ca-149">XmlSerializer Class</span></span>](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
- [<span data-ttu-id="0f4ca-150">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="0f4ca-150">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [<span data-ttu-id="0f4ca-151">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="0f4ca-151">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+## <a name="see-also"></a><span data-ttu-id="238a5-145">Viz také</span><span class="sxs-lookup"><span data-stu-id="238a5-145">See Also</span></span>  
+ [<span data-ttu-id="238a5-146">Představení serializace XML</span><span class="sxs-lookup"><span data-stu-id="238a5-146">Introducing XML Serialization</span></span>](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [<span data-ttu-id="238a5-147">Řízení serializace XML pomocí atributů</span><span class="sxs-lookup"><span data-stu-id="238a5-147">Controlling XML Serialization Using Attributes</span></span>](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+ [<span data-ttu-id="238a5-148">Seznam atributů řídících serializaci XML</span><span class="sxs-lookup"><span data-stu-id="238a5-148">Attributes That Control XML Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+ [<span data-ttu-id="238a5-149">Třídy XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="238a5-149">XmlSerializer Class</span></span>](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
+ [<span data-ttu-id="238a5-150">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="238a5-150">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="238a5-151">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="238a5-151">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
