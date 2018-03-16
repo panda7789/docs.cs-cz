@@ -1,5 +1,5 @@
 ---
-title: "Balíčky, Metapackages a architektury"
+title: "Balíčky, metapackages a architektury"
 description: "Přečtěte si terminologie pro balíčky, metapackages a architektur."
 keywords: "Rozhraní .NET, .NET core"
 author: richlander
@@ -9,14 +9,15 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
-ms.workload: dotnetcore
-ms.openlocfilehash: 599f46253a29db5dfd21d0d44ecf67654b6d2eb3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 85f20594844025655bbfb590364324631bd8e695
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/16/2018
 ---
-# <a name="packages-metapackages-and-frameworks"></a>Balíčky, Metapackages a architektury
+# <a name="packages-metapackages-and-frameworks"></a>Balíčky, metapackages a architektury
 
 .NET core je platforma, které se skládají z balíčků NuGet. Některé produktu vyskytne benefit z podrobných definice balíčků, zatímco jiní jej z hrubý. Abychom vyhověli této duality, je produktu distribuovaných jako podrobných sadu balíčků a pak popsaných v hrubší bloky dat s typem balíček neformálně názvem "metapackage".
 
@@ -76,7 +77,7 @@ Existují výhody použití metapackages:
 
 Klíče metapackages .NET Core jsou:
 
-- [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) -popisuje knihovny, které jsou součástí distribuční .NET Core. Vytvoří [ `.NETCoreApp` framework](https://github.com/dotnet/core-setup/blob/master/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj). Závisí na menší `NETStandard.Library`.
+- [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) -popisuje knihovny, které jsou součástí distribuční .NET Core. Vytvoří [ `.NETCoreApp` framework](https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj). Závisí na menší `NETStandard.Library`.
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) -sadu průčelí kompatibility, které umožňují na základě mscorlib přenosné knihovny tříd (PCLs) ke spuštění na .NET Core.
 
 ## <a name="frameworks"></a>rozhraní
@@ -86,7 +87,7 @@ Klíče metapackages .NET Core jsou:
 Například [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) podporuje následující rozhraní:
 
 - . NETFramework, verze = 4.6
-- . Monikerů NETStandard, verze = 1,3
+- .NETStandard,Version=1.3
 - 6 Xamarin platformy (například xamarinios10)
 
 Je užitečné kontrastu první dva z těchto rozhraní, protože jsou příklady dvěma různými způsoby, že jsou definovány architektury.

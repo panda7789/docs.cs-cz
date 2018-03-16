@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: a2db07c4f5688aece212681af40d69c377f6fa4a
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 30d1c20d66fd0a193c05c97ee726a886f98356ad
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="tutorial-creating-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
@@ -22,11 +22,11 @@ Typ zprostředkovatele mechanismus v F # je významnou část podporuje programo
 
 Ekosystému F # obsahuje řadu typ zprostředkovatele pro běžně používané služby dat na Internet a enterprise. Příklad:
 
-- [FSharp.Data](https://fsharp.github.io/FSharp.Data/) obsahuje typ zprostředkovatele pro JSON, XML, CSV a HTML dokumentu formáty
+- [FSharp.Data](https://fsharp.github.io/FSharp.Data/) obsahuje typ zprostředkovatele pro JSON, XML, CSV a HTML dokumentu formáty.
 
 - [SQLProvider](https://fsprojects.github.io/SQLProvider/) poskytuje dotazy pro tyto zdroje dat silného typu přístup k databázím SQL prostřednictvím objektu mapování a F # LINQ.
 
-- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) obsahuje sadu zprostředkovatelů typu pro model com relačních operátorů čas zaškrtnutí vložení T-SQL v jazyce F #
+- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) má sadu typ zprostředkovatele pro kompilaci zaškrtnutí vložení T-SQL v jazyce F #.
 
 - [FSharp.Data.TypeProviders](https://fsprojects.github.io/FSharp.Data.TypeProviders/) je starší sada zprostředkovatelů typů pro použití pouze s programováním rozhraní .NET Framework pro přístup ke službám dat SQL, rozhraní Entity Framework, OData a WSDL.
 
@@ -62,7 +62,7 @@ Zprostředkovatelé typů jsou nejvhodnější pro situacích, kde je stabilní 
 
 ## <a name="a-simple-type-provider"></a>Jednoduchý typ zprostředkovatele
 
-Tato ukázka je podobná ukázky Samples.HelloWorldTypeProvider `examples` adresář [F # typ poskytovatele sady SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/). Zprostředkovatel zpřístupní "typ prostor", který obsahuje 100 vymazaných typů, jak ukazuje následující kód pomocí syntaxe podpis F # a vynechat podrobnosti pro všechny kromě `Type1`. Další informace o typech vymazaných najdete v tématu [podrobnosti o vymazat zadané typy](#details-about-erased-provided-types) dál v tomto tématu.
+Tato ukázka je Samples.HelloWorldTypeProvider, podobně jako ukázky `examples` adresář [F # typ poskytovatele sady SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/). Zprostředkovatel zpřístupní "typ prostor", který obsahuje 100 vymazaných typů, jak ukazuje následující kód pomocí syntaxe podpis F # a vynechat podrobnosti pro všechny kromě `Type1`. Další informace o typech vymazaných najdete v tématu [podrobnosti o vymazat zadané typy](#details-about-erased-provided-types) dál v tomto tématu.
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -135,11 +135,11 @@ type SampleTypeProvider(config: TypeProviderConfig) as this =
   // And add them to the namespace
   do this.AddNamespace(namespaceName, types)
 
-  [<assembly:TypeProviderAssembly>] 
-  do()
+[<assembly:TypeProviderAssembly>] 
+do()
 ```
 
-Pro tohoto zprostředkovatele použijte otevřete samostatnou instanci sady Visual Studio 2012, vytvořit skript F # a potom přidejte odkaz na poskytovateli z vašeho skriptu pomocí #r jako následující kód:
+Pro tohoto zprostředkovatele použijte otevřete samostatné instanci sady Visual Studio, vytvořit skript F # a potom přidejte odkaz na poskytovateli z vašeho skriptu pomocí #r jako následující kód:
 
 ```fsharp
 #r @".\bin\Debug\Samples.HelloWorldTypeProvider.dll"
@@ -451,13 +451,13 @@ Schopnost Parametrizace zprostředkovatelů typů pomocí statických dat umož�
 
 ### <a name="type-checked-regex-provider"></a>Zaškrtnutí Regex – zprostředkovatel typu
 
-Představte si, že chcete implementovat typ zprostředkovatele pro regulární výrazy, který zabalí .NET `System.Text.RegularExpressions.Regex` knihovny v rozhraní, které poskytuje následující záruky kompilace:
+Představte si, že chcete implementovat typ zprostředkovatele pro regulární výrazy, který zabalí .NET <xref:System.Text.RegularExpressions.Regex> knihovny v rozhraní, které poskytuje následující záruky kompilace:
 
 - Ověřuje, zda je platný regulární výraz.
 
 - Poskytuje pojmenované vlastnosti na odpovídající položky, které jsou založeny na názvy všech skupin v regulárním výrazu.
 
-V této části se dozvíte, jak vytvořit pomocí zprostředkovatelů typů `RegExProviderType` zadejte, že poskytne tyto výhody parameterizes regulární výraz. Kompilátor nahlásí chybu, pokud zadanému vzoru není platný, a typ zprostředkovatele můžete rozbalit skupiny z vzoru tak, aby je můžete přistupovat pomocí vlastnosti shoduje s názvem. Při návrhu zprostředkovatele typ měli zvážit, jak by měla vypadat jeho zveřejněné rozhraní API pro koncové uživatele a jak se tento návrh přeloží pro kód .NET. Následující příklad ukazuje, jak používat takové rozhraní API jak získat komponenty kód oblasti:
+V této části se dozvíte, jak vytvořit pomocí zprostředkovatelů typů `RegexTyped` zadejte, že poskytne tyto výhody parameterizes regulární výraz. Kompilátor nahlásí chybu, pokud zadanému vzoru není platný, a typ zprostředkovatele můžete rozbalit skupiny z vzoru tak, aby je můžete přistupovat pomocí vlastnosti shoduje s názvem. Při návrhu zprostředkovatele typ měli zvážit, jak by měla vypadat jeho zveřejněné rozhraní API pro koncové uživatele a jak se tento návrh přeloží pro kód .NET. Následující příklad ukazuje, jak používat takové rozhraní API jak získat komponenty kód oblasti:
 
 ```fsharp
 type T = RegexTyped< @"(?<AreaCode>^\d{3})-(?<PhoneNumber>\d{3}-\d{4}$)">
@@ -480,7 +480,7 @@ Vezměte na vědomí následující body:
 
 - `RegexTyped` Konstruktor výsledkem volání konstruktoru Regex předávání v statický typ argumentu pro vzoru.
 
-- Výsledky `Match` metoda jsou reprezentované pomocí standardní `System.Text.RegularExpressions.Match` typu.
+- Výsledky `Match` metoda jsou reprezentované pomocí standardní <xref:System.Text.RegularExpressions.Match> typu.
 
 - Každou skupinu s názvem výsledkem zadané vlastnosti a přístupu k vlastnosti výsledkem použití indexer na shodu `Groups` kolekce.
 
@@ -552,7 +552,7 @@ Vezměte na vědomí následující body:
 
 - Používáte `obj` jako základní typ metody, ale budete používat `Regex` objektu jako runtime reprezentaci tohoto typu, jako další příklad ukazuje.
 
-- Volání `Regex` vyvolá konstruktor `System.ArgumentException` při regulární výraz není platný. Kompilátor zachytí výjimku a oznámí chybovou zprávu pro uživatele v době kompilace nebo v editoru Visual Studio. Tato výjimka umožňuje regulární výrazy, které má být ověřen bez spuštění aplikace.
+- Volání `Regex` vyvolá konstruktor <xref:System.ArgumentException> při regulární výraz není platný. Kompilátor zachytí výjimku a oznámí chybovou zprávu pro uživatele v době kompilace nebo v editoru Visual Studio. Tato výjimka umožňuje regulární výrazy, které má být ověřen bez spuštění aplikace.
 
 Typ definovaný nad není ještě užitečné, protože neobsahuje žádné smysluplný metody nebo vlastnosti. Nejprve přidejte statického `IsMatch` metoda:
 
@@ -583,7 +583,7 @@ let matchTy =
 ty.AddMember matchTy
 ```
 
-Potom přidáte jednu vlastnost typu shodu pro každou skupinu. V době běhu je vyjádřené shody `System.Text.RegularExpressions.Match` hodnotu, takže musíte použít uvozovky, která definuje vlastnost `System.Text.RegularExpressions.Match.Groups` indexované vlastnosti získat relevantní skupiny.
+Potom přidáte jednu vlastnost typu shodu pro každou skupinu. V době běhu je vyjádřené shody <xref:System.Text.RegularExpressions.Match> hodnotu, takže musíte použít uvozovky, která definuje vlastnost <xref:System.Text.RegularExpressions.Match.Groups> indexované vlastnosti získat relevantní skupiny.
 
 ```fsharp
 for group in r.GetGroupNames() do
@@ -756,13 +756,11 @@ V této části Vysvětlení způsobu vytváření typ zprostředkovatele, kter�
 Jako jednoduchý příklad zvažte zprostředkovatele typů pro přístup k vědeckých dat ve formátu hodnoty oddělené čárkami (CSV). V této části se předpokládá, že soubory CSV obsahovat řádek záhlaví, za nímž následuje data s plovoucí desetinnou, jak ukazuje následující tabulka:
 
 
-```
-|Distance (meter)|Time (second)|
+|Vzdálenost (monitorování)|Čas (sekundy)|
 |----------------|-------------|
 |50.0|3.7|
 |100.0|5.2|
 |150.0|6.4|
-```
 
 V této části ukazuje, jak poskytnout typ, který vám pomůže získat řádky s `Distance` vlastnost typu `float<meter>` a `Time` vlastnost typu `float<second>`. Pro jednoduchost jsou provedeny následující předpoklady:
 
@@ -788,7 +786,7 @@ printfn "%f" (float time)
 V takovém případě by měl kompilátor převést těchto volání na něco podobného jako v následujícím příkladu:
 
 ```fsharp
-let info = new MiniCsvFile("info.csv")
+let info = new CsvFile("info.csv")
 for row in info.Data do
 let (time:float) = row.[1]
 printfn "%f" (float time)
@@ -1045,9 +1043,10 @@ Tyto verze se používají k vytvoření prostorů na vyžádání typů.
 
 ### <a name="providing-array-types-and-generic-type-instantiations"></a>Typy polí a konkretizací obecného typu
 
-Zkontrolujte zadané členy (jehož podpisy zahrnují typy polí, typy byref a instancí možnosti obecné typy) s použitím normální `MakeArrayType`, `MakePointerType`, a `MakeGenericType` na jakoukoli instanci System.Type, včetně `ProvidedTypeDefinitions`.
+Zkontrolujte zadané členy (jehož podpisy zahrnují typy polí, typy byref a instancí možnosti obecné typy) s použitím normální `MakeArrayType`, `MakePointerType`, a `MakeGenericType` na jakoukoli instanci systému <xref:System.Type>, včetně `ProvidedTypeDefinitions`.
 
-Poznámka: V některých případech budete možná muset použít Pomocník `ProvidedTypeBuilder.MakeGenericType`.  Najdete v dokumentaci typ zprostředkovatele SDK další podrobnosti.
+> [!NOTE]
+> V některých případech možná budete muset použít Pomocník `ProvidedTypeBuilder.MakeGenericType`.  Najdete v článku [dokumentaci k sadě SDK typ zprostředkovatele](https://github.com/fsprojects/FSharp.TypeProviders.SDK/blob/master/README.md#explicit-construction-of-code-makegenerictype-makegenericmethod-and-uncheckedquotations) další podrobnosti.
 
 ### <a name="providing-unit-of-measure-annotations"></a>Poskytnutí jednotek měr poznámky
 
@@ -1096,12 +1095,12 @@ Všechny používá všech členů ze zadané typy může vyvolat výjimky. Ve v
 
 #### <a name="providing-generated-types"></a>Poskytnutí generovaného typy
 
-Pokud má tento dokument vysvětlené jak zadejte vymazaných typy. Mechanismus zprostředkovatele typu v F # můžete také použít k poskytnutí generovaného typů, které jsou přidány jako skutečné definice typů .NET do programu uživatelů. Můžete musí odkazovat na generovaného poskytnout typy pomocí definice typu.
+Tento dokument, pokud má vysvětlené jak poskytnout vymazaných typy. Mechanismus zprostředkovatele typu v F # můžete také použít k poskytnutí generovaného typů, které jsou přidány jako skutečné definice typů .NET do programu uživatelů. Můžete musí odkazovat na generovaného poskytnout typy pomocí definice typu.
 
 ```fsharp
 open Microsoft.FSharp.TypeProviders 
 
-type Service = ODataService<" https://services.odata.org/Northwind/Northwind.svc/">
+type Service = ODataService<"http://services.odata.org/Northwind/Northwind.svc/">
 ```
 
 Kód pomocného objektu ProvidedTypes 0,2, který je součástí verze F # 3.0 má omezenou podporu pro zajištění generovaného typy. Pro definici typu generované musí platit následující příkazy:

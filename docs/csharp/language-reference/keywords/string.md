@@ -2,7 +2,8 @@
 title: "string (Referenční dokumentace jazyka C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - string
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 87df2b158b173072aad5257594e1b1482ae61067
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8899eb75b1b7c556a1e92f173a4d0ca4135014c8
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
-`string` Typ reprezentuje posloupnosti nula nebo více znaků Unicode. `string`je alias <xref:System.String> v rozhraní .NET Framework.  
+`string` Typ reprezentuje posloupnosti nula nebo více znaků Unicode. `string` je alias <xref:System.String> v rozhraní .NET.  
   
  I když `string` typem je odkaz, operátory rovnosti (`==` a `!=`) jsou definovány pro porovnání hodnot `string` objekty, není odkazuje. Díky tomu bude testování rovnosti řetězec intuitivnější. Příklad:  
   
@@ -76,7 +77,7 @@ Console.WriteLine(a);
 > [!NOTE]
 >  Řídicí kód `\udddd` (kde `dddd` čtyři číslice) představuje znak Unicode U +`dddd`. Kódy řídicí Unicode číslice osm jsou také rozpoznána: `\Udddddddd`.  
   
- Typu verbatim textové literály začínat a jsou také uzavřena v uvozovkách. Příklad:  
+ Začínat typu verbatim textové literály `@` a jsou také uzavřena v uvozovkách. Příklad:  
   
 ```csharp  
 @"good morning"  // a string literal  
@@ -94,7 +95,7 @@ Console.WriteLine(a);
 @"""Ahoy!"" cried the captain." // "Ahoy!" cried the captain.  
 ```  
   
- Použití jiné @ symbol používat odkazuje ([/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)) identifikátory, které jsou klíčová slova jazyka C#.  
+ Pro další použití `@` speciální znak, najdete v části [@ – typu verbatim identifikátor](../tokens/verbatim.md).  
   
  Další informace o řetězcích v jazyce C# najdete v tématu [řetězce](../../../csharp/programming-guide/strings/index.md).  
   
@@ -106,10 +107,10 @@ Console.WriteLine(a);
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Osvědčené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Doporučené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
  [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)  
  [Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)  

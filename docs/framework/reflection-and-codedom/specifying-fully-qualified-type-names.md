@@ -1,11 +1,12 @@
 ---
 title: "Určení úplných názvů typů"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 03/14/2018
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,48 +16,108 @@ helpviewer_keywords:
 - tokens
 - BNF
 - assemblies [.NET Framework], names
-- Backus-Naur form
-- languages, BNF grammar
+- languages, grammar
 - fully qualified type names
 - type names
 - special characters
 - IDENTIFIER
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e19aebbeee7fd65e27704af49185a1b8d48b9639
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e31e6e0284de44768b2faad7bcf84d5be343e479
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Určení úplných názvů typů
 Je nutné zadat názvy typů tak, aby měl platný vstup pro různé operace reflexe. Název plně kvalifikovaný typ se skládá z specifikace název sestavení, oboru názvů a název typu. Zadejte název specifikace jsou používány metody, jako <xref:System.Type.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>, a <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>.  
   
-## <a name="backus-naur-form-grammar-for-type-names"></a>Backus-Naur – gramatika formuláře pro názvy typů  
- Backus-Naur formuláře (BNF) definuje syntaxe formální jazyky. Následující tabulka uvádí BNF lexikální pravidla, které popisují, jak rozpoznat platné zadání. Terminály (elementy, které nejsou další reducible) se zobrazí velkými písmeny. Terminálově nezávislých (elementy, které jsou dále reducible) jsou uvedeny v řetězcích rozlišením malých a samostatně uvozovkách, ale jednoduché uvozovky (') není součástí syntaxe sám sebe. Svislou čarou (&#124;) označuje pravidla, která mají dílčích pravidel.  
-  
-|BNF – gramatika z úplné názvy typů|  
-|-----------------------------------------------|  
-|Typ TypeSpec: = ReferenceTypeSpec<br /><br /> &#124;     SimpleTypeSpec|  
-|ReferenceTypeSpec: = SimpleTypeSpec 'a'|  
-|SimpleTypeSpec: = PointerTypeSpec<br /><br /> &#124;     ArrayTypeSpec<br /><br /> &#124;     TypeName|  
-|PointerTypeSpec: = SimpleTypeSpec ' *'|  
-|ArrayTypeSpec: = SimpleTypeSpec [ReflectionDimension]<br /><br /> &#124;     SimpleTypeSpec [ReflectionEmitDimension]|  
-|ReflectionDimension: = ' *'<br /><br /> &#124;     ReflectionDimension ReflectionDimension ','<br /><br /> &#124;     NOTOKEN|  
-|ReflectionEmitDimension: = ' *'<br /><br /> &#124;     Číslo '..' Číslo<br /><br /> &#124;     Číslo '...<br /><br /> &#124;     ReflectionDimension ReflectionDimension ','<br /><br /> &#124;     NOTOKEN|  
-|Číslo: = [0-9] +|  
-|TypeName: = NamespaceTypeName<br /><br /> &#124;     NamespaceTypeName AssemblyNameSpec ','|  
-|NamespaceTypeName: = NestedTypeName<br /><br /> &#124;     NamespaceSpec '. " NestedTypeName|  
-|NestedTypeName: = IDENTIFIKÁTOR<br /><br /> &#124;     NestedTypeName IDENTIFIKÁTOR '+'|  
-|NamespaceSpec: = IDENTIFIKÁTOR<br /><br /> &#124;     NamespaceSpec '. " IDENTIFIKÁTOR|  
-|AssemblyNameSpec: = IDENTIFIKÁTOR<br /><br /> &#124;     IDENTIFIKÁTOR AssemblyProperties ','|  
-|AssemblyProperties: = AssemblyProperty<br /><br /> &#124;     AssemblyProperties AssemblyProperty ','|  
-|AssemblyProperty: = AssemblyPropertyName '=' AssemblyPropertyValue|  
-  
+## <a name="grammar-for-type-names"></a>Gramatika pro názvy typů  
+ Gramatiky definuje syntaxe formální jazyky. Následující tabulka uvádí lexikální pravidla, které popisují, jak rozpoznat platné zadání. Terminály (elementy, které nejsou další reducible) se zobrazí velkými písmeny. Terminálově nezávislých (elementy, které jsou dále reducible) jsou uvedeny v řetězcích rozlišením malých a samostatně uvozovkách, ale jednoduché uvozovky (') není součástí syntaxe sám sebe. Svislou čarou (&#124;) označuje pravidla, která mají dílčích pravidel.  
+
+```antlr
+TypeSpec
+    : ReferenceTypeSpec
+    | SimpleTypeSpec
+    ;
+
+ReferenceTypeSpec
+    : SimpleTypeSpec '&'
+    ;
+
+SimpleTypeSpec
+    : PointerTypeSpec
+    | ArrayTypeSpec
+    | TypeName
+    ;
+
+PointerTypeSpec
+    : SimpleTypeSpec '*'
+    ;
+
+ArrayTypeSpec
+    : SimpleTypeSpec '[ReflectionDimension]'
+    | SimpleTypeSpec '[ReflectionEmitDimension]'
+    ;
+
+ReflectionDimension
+    : '*'
+    | ReflectionDimension ',' ReflectionDimension
+    | NOTOKEN
+    ;
+
+ReflectionEmitDimension
+    : '*'
+    | Number '..' Number
+    | Number '…'
+    | ReflectionDimension ',' ReflectionDimension
+    | NOTOKEN
+    ;
+
+Number
+    : [0-9]+
+    ;
+
+TypeName
+    : NamespaceTypeName
+    | NamespaceTypeName ',' AssemblyNameSpec
+    ;
+
+NamespaceTypeName
+    : NestedTypeName
+    | NamespaceSpec '.' NestedTypeName
+    ;
+
+NestedTypeName
+    : IDENTIFIER
+    | NestedTypeName '+' IDENTIFIER
+    ;
+
+NamespaceSpec
+    : IDENTIFIER
+    | NamespaceSpec '.' IDENTIFIER
+    ;
+
+AssemblyNameSpec
+    : IDENTIFIER
+    | IDENTIFIER ',' AssemblyProperties
+    ;
+
+AssemblyProperties
+    : AssemblyProperty
+    | AssemblyProperties ',' AssemblyProperty
+    ;
+
+AssemblyProperty
+    : AssemblyPropertyName '=' AssemblyPropertyValue
+    ;
+```
+
 ## <a name="specifying-special-characters"></a>Zadání speciální znaky  
  Název typu je IDENTIFIKÁTOR libovolný platný název určit pravidly jazyka.  
   
@@ -139,17 +200,17 @@ com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
   
  Pole jsou přístupné v reflexe určení pořadí pole:  
   
--   `Type.GetType("MyArray[]")`Získá pole jedním dimenze s 0 dolní mez.  
+-   `Type.GetType("MyArray[]")` Získá pole jedním dimenze s 0 dolní mez.  
   
--   `Type.GetType("MyArray[*]")`Získá pole jedním dimenze s neznámou dolní mez.  
+-   `Type.GetType("MyArray[*]")` Získá pole jedním dimenze s neznámou dolní mez.  
   
--   `Type.GetType("MyArray[][]")`Získá pole dvourozměrná pole.  
+-   `Type.GetType("MyArray[][]")` Získá pole dvourozměrná pole.  
   
--   `Type.GetType("MyArray[*,*]")`a `Type.GetType("MyArray[,]")` získá obdélníková dvourozměrná pole s neznámou dolní meze.  
+-   `Type.GetType("MyArray[*,*]")` a `Type.GetType("MyArray[,]")` získá obdélníková dvourozměrná pole s neznámou dolní meze.  
   
  Všimněte si, že se z modulu runtime hlediska, `MyArray[] != MyArray[*]`, ale pro vícerozměrná pole jsou ekvivalentní zápisy dva. To znamená `Type.GetType("MyArray [,]") == Type.GetType("MyArray[*,*]")` vyhodnotí jako **true**.  
   
- Pro **ModuleBuilder.GetType**, `MyArray[0..5]` označuje jeden dimenze pole s velikostí 6, nižší vázán 0. `MyArray[4…]`Určuje pole dimenze jeden neznámý velikost a dolní hranice 4.  
+ Pro **ModuleBuilder.GetType**, `MyArray[0..5]` označuje jeden dimenze pole s velikostí 6, nižší vázán 0. `MyArray[4…]` Určuje pole dimenze jeden neznámý velikost a dolní hranice 4.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Reflection.AssemblyName>  

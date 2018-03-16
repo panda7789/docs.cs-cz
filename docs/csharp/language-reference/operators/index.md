@@ -25,11 +25,11 @@ ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0ac5c6bfb129f0367c2d62ebf139e44b8eb60379
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 68da402bde670077e0700ce1ac60e7980c6568ad
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 C# poskytuje mnoho operátory, které jsou symboly, které určují, které operace (matematické, indexování, volání funkce atd.) provést ve výrazu.  Můžete [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) řada operátorů změnit jejich význam při aplikování uživatelem definovaného typu.  
@@ -49,7 +49,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
  
  [f(x)](../../../csharp/language-reference/operators/invocation-operator.md) – funkce volání.  
   
- [a &#91; x &#93; ](../../../csharp/language-reference/operators/index-operator.md) – agregovaný objekt indexování.  
+ [&#91;x&#93; ](../../../csharp/language-reference/operators/index-operator.md) – agregovaný objekt indexování.  
    
  [x ++](../../../csharp/language-reference/operators/increment-operator.md) – přípony přírůstku.  Vrátí hodnotu x a pak aktualizuje umístění úložiště s hodnotou x, která je jeden znak větší (obvykle přidá na celé číslo 1).  
   
@@ -69,7 +69,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [sizeof –](../../../csharp/language-reference/keywords/sizeof.md) – vrátí velikost v bajtech operand typu.  
   
- [->](../../../csharp/language-reference/operators/dereference-operator.md)– ukazatel vyhodnocení v kombinaci s přístup ke členu.  
+ [->](../../../csharp/language-reference/operators/dereference-operator.md) – ukazatel vyhodnocení v kombinaci s přístup ke členu.  
   
 ## <a name="unary-operators"></a>Unární operátory  
  Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.  Všimněte si, že se můžete kliknutím na operátory přejít na podrobných stránkách s příklady.  
@@ -78,7 +78,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [-x](../../../csharp/language-reference/operators/subtraction-operator.md) – číselné negace.  
   
- [! x](../../../csharp/language-reference/operators/logical-negation-operator.md) – logickou negaci.  
+ [\!x](../../../csharp/language-reference/operators/logical-negation-operator.md) – logickou negaci.  
   
  [~ x](../../../csharp/language-reference/operators/bitwise-complement-operator.md) – bitového doplňku.  
   
@@ -191,7 +191,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [x & = y](../../../csharp/language-reference/operators/and-assignment-operator.md) – a přiřazení.  A hodnotu `y` s hodnotou `x`, uložit výsledek v `x`a vrátí novou hodnotu.  
   
- [x &#124; = y](../../../csharp/language-reference/operators/or-assignment-operator.md) – přiřazení OR.  NEBO hodnota `y` s hodnotou `x`, uložit výsledek v `x`a vrátí novou hodnotu.  
+ [x &#124;= y](../../../csharp/language-reference/operators/or-assignment-operator.md) – přiřazení OR.  NEBO hodnota `y` s hodnotou `x`, uložit výsledek v `x`a vrátí novou hodnotu.  
   
  [x ^ = y](../../../csharp/language-reference/operators/xor-assignment-operator.md) – XOR přiřazení.  XOR hodnotu z `y` s hodnotou `x`, uložit výsledek v `x`a vrátí novou hodnotu.  
   
@@ -199,7 +199,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [x >> = y](../../../csharp/language-reference/operators/right-shift-assignment-operator.md) – přiřazení posunutí doprava.  Hodnota posunutí `x` přímo pomocí `y` místech, uložit výsledek v `x`a vrátí novou hodnotu.  
   
- [=>](../../../csharp/language-reference/operators/lambda-operator.md)– deklarace lambda.  
+ [=>](../../../csharp/language-reference/operators/lambda-operator.md) – deklarace lambda.  
   
 ## <a name="arithmetic-overflow"></a>Aritmetického přetečení  
  Aritmetické operátory ([+](../../../csharp/language-reference/operators/addition-operator.md), [ - ](../../../csharp/language-reference/operators/subtraction-operator.md), [ * ](../../../csharp/language-reference/operators/multiplication-operator.md), [ / ](../../../csharp/language-reference/operators/division-operator.md)) může nepřineslo výsledky, které jsou mimo rozsah možných hodnot pro číselné typ související se situací. Naleznete v části na konkrétní operátor podrobnosti, ale obecně:  
@@ -217,6 +217,6 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [C#](../../../csharp/index.md) [přetížitelné operátory](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)

@@ -16,11 +16,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e6a6759ae285f2dd101bddf71ea8e5ca792e87df
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.openlocfilehash: 5f17550bc0cc4919f00dc93c8e92d258b38c4f76
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v usnadnění v rozhraní .NET Framework
 
@@ -112,7 +112,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 Od verze rozhraní .NET Framework 4.7.1, vysoký kontrast vylepšily do různých ovládacích prvků WPF. Jsou nyní viditelné při <xref:System.Windows.SystemParameters.HighContrast%2A> motiv nastavena. Mezi ně patří:
 
-- <xref:System.Windows.Controls.Expander>ovládací prvek
+- <xref:System.Windows.Controls.Expander> Ovládací prvek
 
     Visual pro zaměřuje <xref:System.Windows.Controls.Expander> ovládací prvek je nyní viditelné. Vizuály klávesnice pro <xref:System.Windows.Controls.ComboBox>,<xref:System.Windows.Controls.ListBox>, a <xref:System.Windows.Controls.RadioButton> ovládací prvky jsou také viditelné. Příklad:
 
@@ -124,7 +124,7 @@ Od verze rozhraní .NET Framework 4.7.1, vysoký kontrast vylepšily do různýc
 
     ![Ovládací prvek Expander fokus po vylepšení přístupnosti](media/expander-after.png)
 
-- <xref:System.Windows.Controls.CheckBox>a <xref:System.Windows.Controls.RadioButton> ovládací prvky
+- <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> ovládací prvky
  
     Text v <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> ovládací prvky je nyní snazší uvidí, když je vybraný v vysoký kontrast motivů. Příklad:
 
@@ -136,7 +136,7 @@ Od verze rozhraní .NET Framework 4.7.1, vysoký kontrast vylepšily do různýc
 
     ![Vysoký kontrast přepínač s fokusem po vylepšení přístupnosti](media/radio-button-after.png)
 
-- <xref:System.Windows.Controls.ComboBox>ovládací prvek
+- <xref:System.Windows.Controls.ComboBox> Ovládací prvek
  
     Od verze rozhraní .NET Framework 4.7.1, ohraničení zakázáno <xref:System.Windows.Controls.ComboBox> ovládací prvek se stejnou barvu jako zakázaný text. Příklad:
     
@@ -168,7 +168,7 @@ Od verze rozhraní .NET Framework 4.7.1, vysoký kontrast vylepšily do různýc
 
     ![Toolbar.ComboBoxStyleKey po vylepšení přístupnosti](media/comboboxstylekey-after.png) 
 
-- <xref:System.Windows.Controls.DataGrid>ovládací prvek
+- <xref:System.Windows.Controls.DataGrid> Ovládací prvek
 
     Od verze rozhraní .NET Framework 4.7.1, šipku řazení indikátoru v <xref:System.Windows.Controls.DataGrid> řídí teď používá opravte barev motivů. Příklad:
 
@@ -201,7 +201,7 @@ Windows Forms (WinForms) v rozhraní .NET Framework 4.7.1 zahrnuje změny usnadn
 Od verze rozhraní .NET Framework 4.7.1, nabízejí různé ovládací prvky WinForms vylepšené vykreslování v funkce Vysoký kontrast režimech k dispozici v operačním systému. Windows 10 došlo ke změně hodnoty pro některé barvy systému vysoký kontrast a Windows Forms je založena na rozhraní Windows 10 Win32. Pro dosažení co nejlepších výsledků spusťte na nejnovější verzi systému Windows a vyjádřit výslovný souhlas na nejnovější změny operačního systému tak, že přidáte soubor app.manifest v testovací aplikaci a zrušení komentář Windows 10 nepodporuje řádku operačního systému, aby vypadal jako následující:
 
 ```xml
-<!– Windows 10 –>
+<!-- Windows 10 -->
 <supportedOS Id=”{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}” />
 ```
 Některé příklady vysoký kontrast změny patří:
