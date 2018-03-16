@@ -17,21 +17,21 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-caps.latest.revision: "58"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: dfcb0d0ace4bd42d89fe7b4c2dc04098858c2945
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 98aaa5c7bbd28facf9cc06fd0d0898b72ea7dbc2
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
-<a name="Top"></a>Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu. Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:  
+<a name="Top"></a> Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu. Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:  
   
 -   Skupiny pozitivních znaků. Znak ve vstupním řetězci musí odpovídat jedné ze zadaných množin znaků. Další informace najdete v tématu [skupina pozitivních znaků](#PositiveGroup).  
   
@@ -84,7 +84,7 @@ ms.lasthandoff: 01/09/2018
 |-------------|-----------------|  
 |`[aeiou]`|Porovná se všemi samohláskami.|  
 |`[\p{P}\d]`|Porovná se všemi interpunkčními znaky a znaky desítkových číslic.|  
-|`[\s\p{P}]`|Porovná se všemi prázdnými znaky a znaky interpunkce.|  
+|`[\s\p{P}]`|Odpovídat všechny mezera nebo interpunkční znaménka.|  
   
  V následujícím příkladu je definována skupina pozitivních znaků obsahující znaky „a“ a „e“ tak, že vstupní řetězec musí obsahovat slovo „grey“ nebo „gray“ následované jiným slovem, aby došlo ke shodě.  
   
@@ -123,7 +123,7 @@ ms.lasthandoff: 01/09/2018
   
  Syntaxe pro určení seznamu jednotlivých znaků je následující:  
   
- [*^ character_group*]  
+ [*^character_group*]  
   
  kde *character_group* je seznam jednotlivých znaků, které se nesmí nacházet ve vstupním řetězci shody proběhla úspěšně. *character_group* může obsahovat libovolnou kombinaci jeden nebo více znaků, literálu, [řídicí znaky](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md), nebo třídy znaků.  
   
@@ -194,7 +194,7 @@ ms.lasthandoff: 01/09/2018
   
  Konstrukce regulárního výrazu  
   
- `\p{`*název*`}`  
+ `\p{` *Jméno* `}`  
   
  odpovídá jakémukoliv znaku, který patří do obecné kategorie Unicode nebo pojmenovaného blok, kde *název* je zkratka pro kategorii nebo název pojmenované bloku. Seznam kategorií zkratky najdete v tématu [podporována obecná Unicode kategorie](#SupportedUnicodeGeneralCategories) později v tomto tématu. Seznam pojmenovaných bloků najdete v tématu [podporované pojmenované bloky](#SupportedNamedBlocks) později v tomto tématu.  
   
@@ -225,7 +225,7 @@ ms.lasthandoff: 01/09/2018
   
  Konstrukce regulárního výrazu  
   
- `\P{`*název*`}`  
+ `\P{` *Jméno* `}`  
   
  odpovídá jakémukoliv znaku, který nepatří do obecné kategorie Unicode nebo pojmenovaného blok, kde *název* je zkratka pro kategorii nebo název pojmenované bloku. Seznam kategorií zkratky najdete v tématu [podporována obecná Unicode kategorie](#SupportedUnicodeGeneralCategories) později v tomto tématu. Seznam pojmenovaných bloků najdete v tématu [podporované pojmenované bloky](#SupportedNamedBlocks) později v tomto tématu.  
   
@@ -240,7 +240,7 @@ ms.lasthandoff: 01/09/2018
   
 <a name="WordCharacter"></a>   
 ## <a name="word-character-w"></a>Znak, který může být součástí slova: \w  
- `\w`odpovídá jakémukoliv znaku aplikace word. Znak slova je členem každé kategorie sady Unicode uvedených v následující tabulce.  
+ `\w` odpovídá jakémukoliv znaku aplikace word. Znak slova je členem každé kategorie sady Unicode uvedených v následující tabulce.  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  
@@ -272,7 +272,7 @@ ms.lasthandoff: 01/09/2018
   
 <a name="NonWordCharacter"></a>   
 ## <a name="non-word-character-w"></a>Znak, který nemůže být součástí slova: \W  
- `\W`odpovídá jakémukoliv znaku aplikace word. Prvek jazyka \W je ekvivalentní s následující třídou znaků:  
+ `\W` odpovídá jakémukoliv znaku aplikace word. Prvek jazyka \W je ekvivalentní s následující třídou znaků:  
   
 ```  
 [^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]  
@@ -313,7 +313,7 @@ ms.lasthandoff: 01/09/2018
   
 <a name="WhitespaceCharacter"></a>   
 ## <a name="white-space-character-s"></a>Prázdný znak: \s  
- `\s`odpovídá jakémukoliv znaku prázdný znak. Je ekvivalentní s uvozovacími sekvencemi a kategoriemi sady Unicode, které jsou uvedeny v následující tabulce.  
+ `\s` odpovídá jakémukoliv znaku prázdný znak. Je ekvivalentní s uvozovacími sekvencemi a kategoriemi sady Unicode, které jsou uvedeny v následující tabulce.  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  
@@ -335,7 +335,7 @@ ms.lasthandoff: 01/09/2018
 |\w+|Porovná jeden nebo více znaků slova.|  
 |(e)?|Porovnává s „e“ jednou nebo vůbec.|  
 |s|Porovnává s „s“.|  
-|(\s &#124; $)|Porovnává buď s prázdným znakem, nebo s koncem vstupního řetězce.|  
+|(\s&#124;$)|Odpovídat prázdný znak nebo konci vstupní řetězec.|  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/whitespace1.cs#10)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/whitespace1.vb#10)]  
@@ -344,7 +344,7 @@ ms.lasthandoff: 01/09/2018
   
 <a name="NonWhitespaceCharacter"></a>   
 ## <a name="non-white-space-character-s"></a>Jiný než prázdný znak: \S  
- `\S`odpovídá jakémukoliv znaku prázdný znak. Ta je ekvivalentní `[^\f\n\r\t\v\x85\p{Z}]` regulární výraz nebo je opakem vzor regulárního výrazu, který je ekvivalentní `\s`, který odpovídá prázdné znaky. Další informace najdete v tématu [prázdný znak: \s](#WhitespaceCharacter).  
+ `\S` odpovídá jakémukoliv znaku prázdný znak. Ta je ekvivalentní `[^\f\n\r\t\v\x85\p{Z}]` regulární výraz nebo je opakem vzor regulárního výrazu, který je ekvivalentní `\s`, který odpovídá prázdné znaky. Další informace najdete v tématu [prázdný znak: \s](#WhitespaceCharacter).  
   
  Pokud je zadán chování ECMAScript, `\S` je ekvivalentní `[^ \f\n\r\t\v]`. Informace o ECMAScript regulární výrazy, najdete v části "ECMAScript chování porovnávání" v [možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
   
@@ -363,7 +363,7 @@ ms.lasthandoff: 01/09/2018
   
 <a name="DigitCharacter"></a>   
 ## <a name="decimal-digit-character-d"></a>Znak desítkové číslice: \d  
- `\d`Vyhledá všechny desítková číslice. Ta je ekvivalentní `\p{Nd}` vzor regulárního výrazu, který obsahuje standardní desítková číslice 0 – 9 a desetinných číslic čísla jiné znakové sady.  
+ `\d` Vyhledá všechny desítková číslice. Ta je ekvivalentní `\p{Nd}` vzor regulárního výrazu, který obsahuje standardní desítková číslice 0 – 9 a desetinných číslic čísla jiné znakové sady.  
   
  Pokud je zadán chování ECMAScript, `\d` je ekvivalentní `[0-9]`. Informace o ECMAScript regulární výrazy, najdete v části "ECMAScript chování porovnávání" v [možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
   
@@ -387,7 +387,7 @@ ms.lasthandoff: 01/09/2018
   
 <a name="NonDigitCharacter"></a>   
 ## <a name="non-digit-character-d"></a>Jiný znak než číslice: \D  
- `\D`odpovídá jakémukoliv znaku bez číslice. Ta je ekvivalentní `\P{Nd}` regulární výraz.  
+ `\D` odpovídá jakémukoliv znaku bez číslice. Ta je ekvivalentní `\P{Nd}` regulární výraz.  
   
  Pokud je zadán chování ECMAScript, `\D` je ekvivalentní `[^0-9]`. Informace o ECMAScript regulární výrazy, najdete v části "ECMAScript chování porovnávání" v [možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
   
@@ -557,7 +557,7 @@ ms.lasthandoff: 01/09/2018
 |D800 - DB7F|`IsHighSurrogates`|  
 |DB80 - DBFF|`IsHighPrivateUseSurrogates`|  
 |DC00 - DFFF|`IsLowSurrogates`|  
-|E000 - F8FF|`IsPrivateUse`nebo`IsPrivateUseArea`|  
+|E000 - F8FF|`IsPrivateUse` Nebo `IsPrivateUseArea`|  
 |F900 - FAFF|`IsCJKCompatibilityIdeographs`|  
 |FB00 - FB4F|`IsAlphabeticPresentationForms`|  
 |FB50 - FDFF|`IsArabicPresentationForms-A`|  
@@ -577,7 +577,7 @@ ms.lasthandoff: 01/09/2018
   
  Výraz odčítání třídy znaků má následující tvar:  
   
- `[`*base_group* `-[` *excluded_group*`]]`  
+ `[` *base_group* `-[` *excluded_group* `]]`  
   
  Hranaté závorky (`[]`) a pomlčku (`-`) jsou povinné. *Base_group* je [skupina kladné znaků](#PositiveGroup) nebo [Skupina negativních znaků](#NegativeGroup). *Excluded_group* komponenta se jiná skupina kladné a záporné znaků nebo jiný výraz odčítání třídy znaků (to znamená, že můžete vnořovat výrazy odčítání třídy znaků).  
   

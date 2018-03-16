@@ -4,17 +4,17 @@ description: "Zkontrolujte některé z klíčových funkcích služby programova
 keywords: "Visual f #, f #, funkční programování, .NET, prohlídka"
 author: cartermp
 ms.author: phcart
-ms.date: 01/24/2017
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 49775139-082e-442f-b5a2-dd402399b5d2
-ms.openlocfilehash: c027e6b71f35fc3b58750eb164124de145244825
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7327573a25aa62af28570b4a8662235f3e41a972
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="tour-of-f"></a>Prohlídka F # #
 
@@ -22,20 +22,13 @@ ms.lasthandoff: 10/18/2017
 
 Existují dvě primární koncepty v jazyce F #: typy a funkce.  Tato ukázka se zdůraznil funkce jazyka, které spadají do těchto dvěma konceptů.
 
-## <a name="how-to-run-the-code-samples"></a>Postup spuštění ukázky kódu
-
->[!NOTE]
-Dvě možnosti pro spuštění ukázky kódu jsou [zkuste F #](http://www.tryfsharp.org/Create) (vyžaduje Silverlight) a [F # pro poznámkové bloky Azure](https://notebooks.azure.com/Microsoft/libraries/fsharp/html/FSharp%20for%20Azure%20Notebooks.ipynb) v Microsoft Azure.
-
-Nejrychlejší způsob, jak spustit tyto ukázky kódu je použití [F # interaktivní](tutorials/fsharp-interactive/index.md).  Právě zkopírujte a vložte ukázky kódu a jejich spuštění existuje.  Případně můžete nastavit projekt k zkompilování a spuštění kód jako konzolové aplikace.  Najdete v článku [Začínáme](./get-started/index.md) části Další informace.
-
 ## <a name="functions-and-modules"></a>Funkce a modulů
 
 Na nejzákladnější požadované žádné program v F # jsou ***funkce*** uspořádány do ***moduly***.  [Funkce](language-reference/functions/index.md) práci na vstupy pro vytvoření výstupy a jsou uspořádány v části [moduly](language-reference/modules.md), které jsou primární způsob skupiny věcí v jazyce F #.  Jsou definované pomocí [ `let` vazby](language-reference/functions/let-bindings.md), které funkce pojmenujte a definovat její argumenty.
 
 [!code-fsharp[BasicFunctions](../../samples/snippets/fsharp/tour.fs#L101-L133)]
 
-`let`vazby jsou také jak vázat hodnotu s názvem, podobně jako na proměnnou v dalších jazycích.  `let`vazby jsou ***neměnné*** ve výchozím nastavení, což znamená, že jakmile hodnota nebo funkce je vázána na název, nelze ji změnit na místě.  Jde na rozdíl od proměnných v jiných jazycích, které jsou ***měnitelný***, což znamená, jejich hodnoty lze změnit v libovolném bodě v čase.  Pokud budete potřebovat měnitelný vazbu, můžete použít `let mutable ...` syntaxe.
+`let` vazby jsou také jak vázat hodnotu s názvem, podobně jako na proměnnou v dalších jazycích.  `let` vazby jsou ***neměnné*** ve výchozím nastavení, což znamená, že jakmile hodnota nebo funkce je vázána na název, nelze ji změnit na místě.  Jde na rozdíl od proměnných v jiných jazycích, které jsou ***měnitelný***, což znamená, jejich hodnoty lze změnit v libovolném bodě v čase.  Pokud budete potřebovat měnitelný vazbu, můžete použít `let mutable ...` syntaxe.
 
 [!code-fsharp[Immutability](../../samples/snippets/fsharp/tour.fs#L75-L94)]
 
