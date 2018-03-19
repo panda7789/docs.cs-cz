@@ -91,9 +91,9 @@ Následující rozhodnutí tabulka shrnuje některé základní faktorů, které
   | **Koeficient** | **Tradiční webové aplikace** | **Jednostránková aplikace** |
   |---|---|---|
   | Požadované Team znalost jazyka JavaScript nebo TypeScript | **minimální** | **Požadované** |
-  | Podpora prohlížeče bez skriptování | Podporované | **Nepodporuje se** |
+  | Podpora prohlížeče bez skriptování | **Podporované** | **Nepodporuje se** |
   | Chování minimální aplikace na straně klienta | **Well-Suited** | **Přehnaně** |
   | Požadavky na bohatou a komplexní uživatelské rozhraní | **Limited** | **Well-Suited** |
 
 >[!div class="step-by-step"]
-[Předchozí] (moderních web aplikace characteristics.md) [další](architectural-principles.md)
+[Předchozí] (modern-web-applications-characteristics.md) [další](architectural-principles.md)

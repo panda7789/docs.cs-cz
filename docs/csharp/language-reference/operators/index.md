@@ -25,11 +25,11 @@ ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 68da402bde670077e0700ce1ac60e7980c6568ad
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: f18c2332f3576847800423c5c0bf7471bf37aafc
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 C# poskytuje mnoho operátory, které jsou symboly, které určují, které operace (matematické, indexování, volání funkce atd.) provést ve výrazu.  Můžete [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) řada operátorů změnit jejich význam při aplikování uživatelem definovaného typu.  
@@ -84,7 +84,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [++ x](../../../csharp/language-reference/operators/increment-operator.md) – předpona přírůstku.  Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, který je jedním větší (obvykle přidá na celé číslo 1).  
   
- [--x](../../../csharp/language-reference/operators/decrement-operator.md) – snížení předpony.  Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, který je jedním méně (obvykle přidá na celé číslo 1).  
+ [--x](../../../csharp/language-reference/operators/decrement-operator.md) – snížení předpony.  Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, který je jedním méně (obvykle odečítá celé číslo 1).  
   
  [(T) x](../../../csharp/language-reference/operators/invocation-operator.md) – typ přetypování.  
   

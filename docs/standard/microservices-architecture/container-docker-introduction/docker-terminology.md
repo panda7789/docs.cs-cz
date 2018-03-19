@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 342b4443470053d81534d4de1d56d2797798c746
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="docker-terminology"></a>Terminologie docker
 
@@ -53,4 +53,4 @@ Tato část uvádí termíny a definice, které byste měli být před získán�
 
 
 >[!div class="step-by-step"]
-[Předchozí] (docker-defined.md) [Další] (docker kontejnery Image registries.md)
+[Previous] (docker-defined.md) [Next] (docker-containers-images-registries.md)

@@ -3,17 +3,17 @@ title: "Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace"
 description: "Průvodce, na které implementace rozhraní .NET, byste měli zvážit při vytváření aplikace server v rozhraní .NET."
 author: cartermp
 ms.author: mairaw
-ms.date: 08/15/2016
+ms.date: 03/15/2018
 ms.topic: article
 ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2108125b9c01a2686d66b0ebd4e43e7ac863e223
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c07b0b760e2a46faea574eef3575409bac773942
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
 
@@ -79,6 +79,7 @@ Ve většině případů nemusíte migrovat stávající aplikace pro .NET Core.
 ### <a name="a-need-to-use-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Potřeba používat knihovny .NET třetích stran nebo není k dispozici balíčky NuGet pro .NET Core
 
 Knihovny jsou osvojují rychle .NET Standard. .NET standard umožňuje sdílení kódu mezi všechny implementace rozhraní .NET, včetně .NET Core. Pomocí rozhraní .NET 2.0 standardní jde to bylo ještě jednodušší:
+
 - Plochy rozhraní API se stala mnohem větší. 
 - Zavedli režim kompatibility rozhraní .NET Framework. Tento režim kompatibility umožňuje .NET Standard nebo .NET Core projekty tak, aby odkazovaly knihovny rozhraní .NET Framework. Další informace o režimu kompatibility najdete v tématu [uvedení standardní rozhraní .NET 2.0](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/).
 
@@ -92,7 +93,7 @@ Některé technologie .NET Framework nejsou k dispozici v .NET Core. Některé z
 
 * Aplikace ASP.NET Web Pages: rozhraní ASP.NET Web Pages nejsou součástí ASP.NET Core. ASP.NET Core [stránky Razor](/aspnet/core/mvc/razor-pages/) mít mnoho společného s webovými stránkami.
 
-* Implementace klienta nebo serveru funkce SignalR technologie ASP.NET. Funkce SignalR technologie ASP.NET v současné době není k dispozici pro ASP.NET Core (ne klienta nebo serveru). Jádro ASP.NET SignalR naplánován ASP.NET Core 2.1. Najdete v článku [ASP.NET Core plán a plán](https://github.com/aspnet/Home/wiki/Roadmap). Náhled stavu je k dispozici [serverové](https://github.com/aspnet/SignalR-Server) a [klientské knihovny](https://github.com/aspnet/SignalR-Client-Net) úložišť GitHub.
+* Implementace klienta nebo serveru funkce SignalR technologie ASP.NET. V současné době [funkce SignalR technologie ASP.NET](https://github.com/aspnet/SignalR) je k dispozici v režimu preview s ASP.NET Core 2.1.
 
 * Implementace služby WCF. I když dojde [knihovny klienta WCF](https://github.com/dotnet/wcf) využívat služby WCF z .NET Core, implementaci serveru WCF je aktuálně k dispozici pouze v rozhraní .NET Framework. Tento scénář není součástí stávající plán pro .NET Core, ale je nepovažoval do budoucna.
 

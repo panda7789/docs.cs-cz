@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 76821e27613335609527b867a6b94dac551f6235
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -190,7 +190,7 @@ Nakonec pokud byly ukládání všech datových proudů událostí, můžete Mic
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **ASP.NET Core HealthChecks** (předběžnou verzi) [ *https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
+-   **ASP.NET Core HealthChecks** (předběžnou verzi) [*https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
 
 -   **Úvod do monitorování stavu Service Fabric**
     [*https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction*](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction)
@@ -202,4 +202,4 @@ Nakonec pokud byly ukládání všech datových proudů událostí, můžete Mic
     [*https://www.microsoft.com/en-us/cloud-platform/operations-management-suite*](https://www.microsoft.com/en-us/cloud-platform/operations-management-suite)
 
 >[!div class="step-by-step"]
-[Předchozí] (implementace okruh dělení pattern.md) [Další] (.. /Secure-NET-microservices-Web-Applications/index.MD)
+[Previous] (implement-circuit-breaker-pattern.md) [Next] (../secure-net-microservices-web-applications/index.md)

@@ -14,23 +14,23 @@ ms.assetid: adc04c28-3ed2-4326-807a-7545df92b852
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ad4453f889a344fcd44dfad44a30fef07380b6a3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4b9c5328bfa1b0fc9a7751763c7d728096886905
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="stackalloc-c-reference"></a>stackalloc (Referenční dokumentace jazyka C#)
 `stackalloc` – Klíčové slovo se používá v kontextu nezabezpečený kód přidělit blok paměti v zásobníku.  
   
-```  
+```csharp  
 int* block = stackalloc int[100];  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
  Klíčové slovo je platný jenom v místní proměnné inicializátory. Následující kód způsobí, že chyby kompilátoru.  
   
-```  
+```csharp  
 int* block;  
 // The following assignment statement causes compiler errors. You  
 // can use stackalloc only when declaring and initializing a local   
@@ -40,7 +40,7 @@ block = stackalloc int[100];
   
  Protože se jedná o typy ukazatelů `stackalloc` vyžaduje [unsafe](../../../csharp/language-reference/keywords/unsafe.md) kontextu. Další informace najdete v tématu [nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md).  
   
- `stackalloc`je třeba [_alloca –](/cpp/c-runtime-library/reference/alloca) v běhové knihovny jazyka C.  
+ `stackalloc` je třeba [_alloca –](/cpp/c-runtime-library/reference/alloca) v běhové knihovny jazyka C.  
   
  Následující příklad vypočítá a zobrazuje prvních 20 čísla v pořadí Fibonacciho. Všechna čísla je součet hodnot předchozích dvou čísel. V kódu bloku paměti dostatečná velikost tak, aby obsahovala 20 elementy typu `int` je přidělená v zásobníku, není haldě. Adresu bloku je uložen v ukazatele `fib`. Tuto paměť nevztahují uvolňování paměti a proto nemusí být připnutý (pomocí [pevné](../../../csharp/language-reference/keywords/fixed-statement.md)). Životnost bloku paměti je omezeno na dobu životnosti metody, která ho definuje. Nelze uvolnit paměť, než metoda vrátí.  
   
@@ -55,7 +55,7 @@ block = stackalloc int[100];
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Klíčová slova operátorů](../../../csharp/language-reference/keywords/operator-keywords.md)  
- [Nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)
+ [Nebezpečný kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)

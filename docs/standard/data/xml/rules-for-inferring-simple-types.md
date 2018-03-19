@@ -9,7 +9,7 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
@@ -17,10 +17,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: c3e6c24fafdd79676e68fa9dd06cf399fc09d5ea
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="rules-for-inferring-simple-types"></a>Pravidla pro jednoduché typy odvození
 Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datový typ pro atributy a elementy.  
@@ -75,7 +75,7 @@ Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datov�
   
  Při první `attr2` je zjištěna hodnota, typ `attr2` je odvodit jako `unsignedByte` na základě hodnoty `0`. Při druhý `attr2` je došlo, typ je propagována do `string` na základě aktuálně odvozené typu `unsignedByte` a že je aktuální hodnota `true` protože <xref:System.Xml.Schema.XmlSchemaInference> třída zvažte předchozí hodnoty, při povýšení odvodit typ. Ale pokud obě instance `attr2` byly zjištěny ve stejném dokumentu XML a není ve dvou různých dokumentů XML, jak je popsáno výše, `attr2` by byla vyvozena jako `boolean`.  
   
-### <a name="ignored-attributes-from-the-httpwwww3org2001xmlschema-instance-namespace"></a>Ignoruje atributů z Namespace http://www.w3.org/2001/XMLSchema-instance  
+### <a name="ignored-attributes-from-the-httpwwww3org2001xmlschema-instance-namespace"></a>Ignorovat atributů z http://www.w3.org/2001/XMLSchema-instance Namespace  
  Následují definice schématu atributů, které během odvození schématu jsou ignorovány.  
   
 |Atribut|Popis|  

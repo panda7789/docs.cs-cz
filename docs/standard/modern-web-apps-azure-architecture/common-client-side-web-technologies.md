@@ -72,12 +72,12 @@ Představte si například, pokud do textového pole hodnota přesahuje 10, elem
 
 | **Koeficient** | **jQuery** | **úhlová**|
 |--------------------------|------------|-------------|
-| Abstrahuje modelu DOM | Ano | Ano |
-| Podpora jazyka AJAX | Ano | Ano |
-| Deklarativní datová vazba | Ne | Ano |
-| Směrování MVC – styl | Ne | Ano |
-| Ukázka | Ne | Ano |
-| Přímý odkaz směrování | Ne | Ano |
+| Abstrahuje modelu DOM | **Ano** | **Ano** |
+| Podpora jazyka AJAX | **Ano** | **Ano** |
+| Deklarativní datová vazba | **Ne** | **Ano** |
+| Směrování MVC – styl | **Ne** | **Ano** |
+| Ukázka | **Ne** | **Ano** |
+| Přímý odkaz směrování | **Ne** | **Ano** |
 
 Většinu funkcí, které jQuery chybí vnitřně lze přidat při přidání dalších knihoven. Rozhraní SPA jako úhlová však poskytuje tyto funkce integrace způsobem, protože je navržen ke všem z nich pamatovat od začátku. JQuery je také velmi imperativní knihovny, což znamená, že je potřeba volat funkce jQuery, aby bylo možné provádět žádné kroky s jQuery. Většinu práce a funkce, které poskytují rozhraní SPA lze provést deklarativně, nevyžadují žádný skutečný kód k zapsání.
 
@@ -161,7 +161,7 @@ Rozhraní JavaScript pokračovat ve vývoji s breakneck rychlost. Použijte info
 > <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
 > - **úhlová**  
 > <https://angular.io/>
-> - Reagovat  
+> - **Reagovat**  
 > <https://facebook.github.io/react/>
 > - **Reagovat Slingshot**  
 > <https://github.com/coryhouse/react-slingshot>

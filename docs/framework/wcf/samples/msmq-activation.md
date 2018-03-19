@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-caps.latest.revision: "29"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a4c3d1dc8116e9c1b26febc4d8473b15d8648c01
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služby WAS (Windows), které se načítají z fronty zpráv. Této ukázce se používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) ukázka. Služba je v tomto případě hostované webové aplikace a klient se hostuje sama a výstupy ke konzole sledovat stav nákupních objednávek odeslána.  
@@ -29,13 +31,13 @@ Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služb
 > [!NOTE]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
 >   
->  \<InstallDrive >: \WF_WCF_Samples  
+>  \<InstallDrive>:\WF_WCF_Samples  
 >   
 >  Pokud tento adresář neexistuje, přejděte na [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a [!INCLUDE[wf](../../../../includes/wf-md.md)] ukázky pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] ke stažení všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
+>  \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
- Proces aktivace služby WAS (Windows), nový mechanismus aktivace procesů pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)], poskytuje službě IIS jako funkce, které byly dřív dostupné jenom pro aplikace založené na protokolu HTTP pro aplikace, které pomocí jiných protokolů než HTTP. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá ke komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje rozhraní adaptér naslouchání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například TCP, pojmenované kanály a služby MSMQ. Funkce pro přijímání požadavků pomocí jiných protokolů než HTTP je hostován spravované služby systému Windows, které jsou spuštěny v SMSvcHost.exe.  
+ Proces aktivace služby WAS (Windows), nový mechanismus aktivace procesů pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)], poskytuje službě IIS jako funkce, které byly dřív dostupné jenom pro aplikace založené na protokolu HTTP pro aplikace, které pomocí jiných protokolů než HTTP. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá ke komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje rozhraní adaptér naslouchání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například TCP, pojmenované kanály a služby MSMQ. Funkce pro přijímání požadavků pomocí jiných protokolů než HTTP je hostován spravované služby systému Windows, které jsou spuštěny v SMSvcHost.exe.  
   
  Adaptér naslouchání Net.Msmq služby (NetMsmqActivator) aktivuje zařazených do fronty aplikací založených na zprávy ve frontě.  
   
@@ -340,7 +342,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Změna identity kompatibilní se pracovní proces:  
   
-    1.  Spusťte Inetmgr.exe.  
+    1.  Run Inetmgr.exe.  
   
     2.  V části **fondy aplikací**, klikněte pravým tlačítkem myši **AppPool** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
   
@@ -348,7 +350,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Změna identity kompatibilní se službu Aktivace:  
   
-    1.  Spusťte modul Services.msc.  
+    1.  Run Services.msc.  
   
     2.  Klikněte pravým tlačítkem myši **Net.MsmqListener adaptér**a zvolte **vlastnosti**.  
   

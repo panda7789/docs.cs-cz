@@ -17,10 +17,10 @@ manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 75a39fa1d0301a48cec7ad61c968ee3fc82d189c
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Kanál zásobníku využívá kódování a přenos kanály transformace reprezentace interní zprávy do jeho přenosový formát a odesílat je pomocí konkrétního přenosu. Nejběžnější přenos používá funkční spolupráce při webové služby, je HTTP, a nejběžnější kódování používá webové služby jsou na základě XML SOAP 1.1, SOAP 1.2 a zpráva přenosu optimalizace mechanismus (MTOM).  
@@ -30,8 +30,8 @@ ms.lasthandoff: 02/01/2018
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
 |HTTP 1.1|http://www.ietf.org/rfc/rfc2616.txt|  
-|SOAP 1.1 vazby HTTP|http://www.w3.org/TR/2000/NOTE-SOAP-20000508/, Section 7|  
-|SOAP 1.2 vazby HTTP|http://www.w3.org/TR/soap12-part2/, Section 7|  
+|SOAP 1.1 vazby HTTP|http://www.w3.org/TR/2000/NOTE-SOAP-20000508/, Část 7|  
+|SOAP 1.2 vazby HTTP|http://www.w3.org/TR/soap12-part2/, Část 7|  
   
  Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace podrobnosti pro následující protokoly <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívají.  
   
@@ -90,7 +90,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
      `mustUnderstand` Hodnota hlavičky se liší mezi SOAP 1.1 a SOAP 1.2. Basic Profile 1.1 vyžaduje, aby `mustUnderstand` hodnota být 0 nebo 1 pro zprávy SOAP 1.1. SOAP 1.2 umožňuje 0, 1, `false`, a `true` hodnoty, ale doporučuje emitování kanonický reprezentace `xs:boolean` hodnoty (`false`, `true`).  
   
--   B1112: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vysílá `mustUnderstand` hodnoty 0 a 1 pro verze protokolu SOAP 1.1 a SOAP 1.2 obálky protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]přijímá prostor celou hodnotu `xs:boolean` pro `mustUnderstand` záhlaví (0, 1, `false`, `true`)  
+-   B1112: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vysílá `mustUnderstand` hodnoty 0 a 1 pro verze protokolu SOAP 1.1 a SOAP 1.2 obálky protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přijímá prostor celou hodnotu `xs:boolean` pro `mustUnderstand` záhlaví (0, 1, `false`, `true`)  
   
 #### <a name="soap-faults"></a>Chyb SOAP  
  Následuje seznam [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-konkrétní implementace chybu protokolu SOAP.  
@@ -132,7 +132,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  Všechny verze WS-Addressing který [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje pomocí koncového bodu odkazy popisují koncové body.  
   
 #### <a name="endpoint-references-and-ws-addressing-versions"></a>Odkazy na koncový bod a adresování WS verze  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje číslo infrastruktury protokolů, které používají služby WS-Addressing, zejména `EndpointReference` elementu a `W3C.WsAddressing.EndpointReferenceType` – třída (například WS-ReliableMessaging, WS-SecureConversation a WS-Trust). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje použití buď verzi WS-Addressing s ostatními protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Koncové body podporovat jednu verzi WS-Addressing na jeden koncový bod.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje číslo infrastruktury protokolů, které používají služby WS-Addressing, zejména `EndpointReference` elementu a `W3C.WsAddressing.EndpointReferenceType` – třída (například WS-ReliableMessaging, WS-SecureConversation a WS-Trust). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje použití buď verzi WS-Addressing s ostatními protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncové body podporovat jednu verzi WS-Addressing na jeden koncový bod.  
   
  Pro R3111, obor názvů pro `EndpointReference` element nebo typ použitý v zprávy se vyměňují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncového bodu musí odpovídat verzi WS adresování implementované tento koncový bod.  
   
@@ -183,7 +183,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  B3221: Pokud nakonfigurovaná pro použití služby WS-Addressing 2004/08 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body nerozlišují mezi zpracování vlastnosti odkazu a odkaz na parametry.  
   
 ### <a name="message-exchange-patterns"></a>Vzory Exchange zpráv  
- Pořadí zpráv zahrnutých v operaci volání webové služby se označuje jako *vzorce výměny zpráv*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje jednosměrné, požadavku a odpovědi a duplexní zprávu výměna vzory. Tato část vysvětluje, WS-Addressing požadavky na zpracování v závislosti na vzorce výměny zpráv používá zpráv.  
+ Pořadí zpráv zahrnutých v operaci volání webové služby se označuje jako *vzorce výměny zpráv*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje jednosměrné, požadavku a odpovědi a duplexní zprávu výměna vzory. Tato část vysvětluje, WS-Addressing požadavky na zpracování v závislosti na vzorce výměny zpráv používá zpráv.  
   
  V této části žadatel odešle první zprávy a příjemce obdrží první zprávu.  
   
@@ -207,7 +207,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
 -   R3322: Pokud je použita WS-Addressing 2004/08, `ReplyTo` musí také obsahovat žádosti.  
   
--   R3323: Pokud se používá WS-Addressing 1.0 a `ReplyTo` není přítomný v požadavku, odkaz na výchozí koncový bod s rovno "http://www.w3.org/2005/08/addressing/anonymous" [address] vlastnost se používá.  
+-   R3323: Při použití služby WS-Addressing 1.0 a `ReplyTo` se nenachází v žádosti o odkazem na výchozí koncový bod s vlastností [address] rovno "http://www.w3.org/2005/08/addressing/anonymous" se používá.  
   
 -   R3324: Žadatel musí zahrnovat `wsa:To`, `wsa:Action`, a `wsa:RelatesTo` hlavičky v odpovědi, jakož i hlavičky pro všechny parametry odkaz nebo odkaz na vlastnosti (nebo obě) určeného `ReplyTo` odkaz na koncový bod v požadavek.  
   
@@ -304,11 +304,11 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  Předchozí příkaz vede k následující požadavky `wsa:ReplyTo` hlavičky pro žádosti o zprávy:  
   
--   R3514: Žádosti o zprávy odeslané do koncového bodu musí mít `ReplyTo` hlavička s `[address]` vlastnost "http://www.w3.org/2005/08/addressing/anonymous" není rovno, pokud koncový bod používá vazbu 1.x HTTP WSDL 1.1 SOAP a má alternativní zásady s `wsap10:UsingAddressing` nebo `wsap:UsingAddressing` assertion kombinaci s `cdp:CompositeDuplex` připojen.  
+-   R3514: Žádosti o zprávy odeslané do koncového bodu musí mít `ReplyTo` hlavička s `[address]` vlastnost není rovno "http://www.w3.org/2005/08/addressing/anonymous" Pokud koncový bod používá vazbu 1.x HTTP WSDL 1.1 SOAP a má alternativní zásady s `wsap10:UsingAddressing` nebo `wsap:UsingAddressing` kontrolní výraz kombinaci s `cdp:CompositeDuplex` připojen.  
   
--   R3515: Žádosti o zprávy odeslané do koncového bodu musí mít `ReplyTo` hlavička s `[address]` vlastnost rovno "http://www.w3.org/2005/08/addressing/anonymous", nebo není `ReplyTo` záhlaví na všechny, pokud koncový bod používá WSDL 1.1 SOAP 1.x HTTP vazby a má zásadu alternativní s `wsap10:UsingAddressing` kontrolní výraz a ne `cdp:CompositeDuplex` assertion připojen.  
+-   R3515: Žádosti o zprávy odeslané do koncového bodu musí mít `ReplyTo` hlavička s `[address]` vlastnost rovno "http://www.w3.org/2005/08/addressing/anonymous", nebo není `ReplyTo` záhlaví na všechny, pokud koncový bod používá vazbu 1.x HTTP WSDL 1.1 SOAP a má alternativní zásad s `wsap10:UsingAddressing` kontrolní výraz a ne `cdp:CompositeDuplex` assertion připojen.  
   
--   R3516: Žádosti o zprávy odeslané do koncového bodu musí mít `ReplyTo` hlavička s `[address]` vlastnost rovno "http://www.w3.org/2005/08/addressing/anonymous" Pokud koncový bod používá vazbu 1.x HTTP WSDL 1.1 SOAP a má zásadu alternativní s `wsap:UsingAddressing` kontrolní výraz a ne `cdp:CompositeDuplex` assertion připojen.  
+-   R3516: Žádosti o zprávy odeslané do koncového bodu musí mít `ReplyTo` hlavička s `[address]` vlastnost rovno "http://www.w3.org/2005/08/addressing/anonymous" Pokud koncový bod používá vazbu 1.x HTTP WSDL 1.1 SOAP a má alternativní zásady s `wsap:UsingAddressing` kontrolní výraz a žádné `cdp:CompositeDuplex`assertion připojen.  
   
  Specifikace WS-addressing WSDL pokusí popisují podobné vazby protokolu zavedením element `<wsaw:Anonymous/>` s tři textové hodnoty (vyžaduje, volitelné a zakázané) k označení požadavky na `wsa:ReplyTo` hlavičky (část 3.2). Bohužel taková definice elementu není zvlášť jako kontrolní výrazy v kontextu služby WS-zásad, protože vyžaduje rozšíření specifické pro doménu, které podporují průnik alternativy pomocí takový prvek jako kontrolní výrazy. Taková definice elementu také určuje hodnota `ReplyTo` záhlaví oproti chování koncového bodu v drátové síti, takže je konkrétní přenos HTTP.  
   
@@ -324,7 +324,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  B3521: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá `wsaw10:Action` atributu u `wsdl:portType/wsdl:operation/[wsdl:input | wsdl:output | wsdl:fault]` dle WS-ADDR10-WSDL k určení `Action` identifikátor URI pro odpovídající zprávy, bez ohledu na verzi WS-Addressing používá koncový bod.  
   
 #### <a name="use-endpoint-reference-inside-wsdl-port"></a>Použití koncový bod odkaz uvnitř WSDL portu  
- WS-ADDR10-WSDL části 4.1 rozšiřuje `wsdl:port` elementu, který chcete zahrnout `<wsa10:EndpointReference…/>` podřízený element k popisu koncový bod v WS-Addressing podmínky. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]rozšíří na adresování WS 2004/08, tento nástroj umožňuje `<wsa:EndpointReference…/>` vypadaly jako podřízeného prvku `wsdl:port`.  
+ WS-ADDR10-WSDL části 4.1 rozšiřuje `wsdl:port` elementu, který chcete zahrnout `<wsa10:EndpointReference…/>` podřízený element k popisu koncový bod v WS-Addressing podmínky. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíří na adresování WS 2004/08, tento nástroj umožňuje `<wsa:EndpointReference…/>` vypadaly jako podřízeného prvku `wsdl:port`.  
   
 -   R3531: Pokud koncový bod má alternativu připojené zásady s `<wsaw10:UsingAddressing/>` výraz zásad, příslušné `wsdl:port` element může obsahovat podřízený element `<wsa10:EndpointReference …/>`.  
   

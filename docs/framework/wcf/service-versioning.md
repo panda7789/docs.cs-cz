@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 791e201907f72f9d590f6d835fd6ec1bfc25633f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně několikrát během své životnosti může potřebovat služby (a koncových bodů, které vystavují) se musí změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo k jiné řešení problémy. Každé změně zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu správu verzí v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].  
@@ -110,7 +112,7 @@ Po počátečním nasazení a potenciálně několikrát během své životnosti
  Podobně jako správa verzí kontraktů dat, Správa verzí kontraktů služby také zahrnuje přidání, změně a odebrání operace.  
   
 ### <a name="specifying-name-namespace-and-action"></a>Zadání názvu, Namespace a akce  
- Ve výchozím nastavení je název kontraktu služby název rozhraní. Jeho výchozí obor názvů je "http://tempuri.org" a "http://tempuri.org/contractname/methodname" je akce jednotlivých operací. Doporučuje se explicitně zadat název a obor názvů pro kontrakt služby a akci pro každou operaci nepoužívejte "http://tempuri.org" a názvy rozhraní a metoda vystavení v kontrakt služby.  
+ Ve výchozím nastavení je název kontraktu služby název rozhraní. Jeho výchozí obor názvů je "http://tempuri.org", a každou operaci akce je "http://tempuri.org/contractname/methodname". Doporučujeme explicitně zadáte název a obor názvů pro kontrakt služby a akci pro každou operaci zrušení "http://tempuri.org" a aby se zabránilo názvy rozhraní a metoda vystavení v kontrakt služby.  
   
 ### <a name="adding-parameters-and-operations"></a>Přidání parametrů a operace  
  Přidání operací služby vystavené služby není pevných změnit, protože existující klienti nemusí být obavy o těchto nových operací.  
@@ -130,13 +132,13 @@ Po počátečním nasazení a potenciálně několikrát během své životnosti
  Seznam chyb, které jsou popsané v kontraktu služby není považováno za vyčerpávající. V každém okamžiku může operace vrátí chyb, které nejsou popsané v její smlouvy. Proto změna sadu chyb, které jsou popsané v kontraktu není považováno za nejnovější. Například přidávání nové chybu kontrakt pomocí <xref:System.ServiceModel.FaultContractAttribute> nebo odebrání existující chyby ze smlouvy.  
   
 ### <a name="service-contract-libraries"></a>Knihovny kontrakt služby  
- Organizace můžou mít zavedené knihovny kontrakty kde kontraktu je publikovaná v centrálním úložišti a služby implementátory implementace kontraktů z tohoto úložiště. Při publikování kontraktu služby do úložiště v tomto případě nemáte žádnou kontrolu nad kteří vytváří služby, které implementaci. Proto nelze změnit po publikování, kontrakt služby vykreslování efektivně neměnné. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]podporuje smlouvy dědičnosti, který můžete použít k vytvoření nové smlouvy, které rozšiřuje stávající smlouvy. Chcete-li tuto funkci používat, definujte nové rozhraní kontraktu služby, která dědí z původního rozhraní kontraktu služby a pak přidejte metody na nové rozhraní. Služba, která implementuje staré kontrakt a implementaci nové smlouvy. Změňte definici koncového bodu "versionOld" používat nové smlouvy. změňte. Klientům "versionOld" budou nadále vypadat jako zpřístupňuje "versionOld" kontrakt; koncový bod klientům "versionNew" zobrazí se koncový bod vystavit kontrakt "versionNew".  
+ Organizace můžou mít zavedené knihovny kontrakty kde kontraktu je publikovaná v centrálním úložišti a služby implementátory implementace kontraktů z tohoto úložiště. Při publikování kontraktu služby do úložiště v tomto případě nemáte žádnou kontrolu nad kteří vytváří služby, které implementaci. Proto nelze změnit po publikování, kontrakt služby vykreslování efektivně neměnné. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje smlouvy dědičnosti, který můžete použít k vytvoření nové smlouvy, které rozšiřuje stávající smlouvy. Chcete-li tuto funkci používat, definujte nové rozhraní kontraktu služby, která dědí z původního rozhraní kontraktu služby a pak přidejte metody na nové rozhraní. Služba, která implementuje staré kontrakt a implementaci nové smlouvy. Změňte definici koncového bodu "versionOld" používat nové smlouvy. změňte. Klientům "versionOld" budou nadále vypadat jako zpřístupňuje "versionOld" kontrakt; koncový bod klientům "versionNew" zobrazí se koncový bod vystavit kontrakt "versionNew".  
   
 ## <a name="address-and-binding-versioning"></a>Adresa a správa verzí vazby  
  Změny adresa koncového bodu a vazby jsou nejnovější změny, pokud klienti podporují dynamicky zjišťování nové adresa koncového bodu nebo vazby. Jeden mechanismus pro implementaci tato funkce je pomocí registru Universal popis zjišťování a integrace (UDDI) a vzor volání UDDI, kde klient pokoušet o komunikaci s koncovým bodem a, při selhání, dotazuje dobře známé UDDI v registru pro aktuální koncový bod metadat. Klient potom použije adresu a vazbu z tato metadata ke komunikaci s koncovým bodem. Pokud tato komunikace úspěšná, klient ukládá do mezipaměti informace o adresu a vazba pro budoucí použití.  
   
 ## <a name="routing-service-and-versioning"></a>Služba Směrování a správa verzí  
- Pokud na změny služby jsou nejnovější změny a musí mít minimálně dva různé verze služby spuštěné současně můžete služby WCF směrování pro směrování zpráv do instance příslušné služby. Směrovací služby WCF používá směrování podle obsahu, jinými slovy, používá informace ve zprávě k určení, kam směrovat zprávy. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Směrovací služby WCF najdete [směrovací služby](../../../docs/framework/wcf/feature-details/routing-service.md). Příklad toho, jak používat službu WCF směrování pro správu verzí služby naleznete v části [postupy: Správa verzí služeb](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).  
+ Pokud na změny služby jsou nejnovější změny a musí mít minimálně dva různé verze služby spuštěné současně můžete služby WCF směrování pro směrování zpráv do instance příslušné služby. Směrovací služby WCF používá směrování podle obsahu, jinými slovy, používá informace ve zprávě k určení, kam směrovat zprávy. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Směrovací služby WCF najdete [směrovací služby](../../../docs/framework/wcf/feature-details/routing-service.md). Příklad toho, jak používat službu WCF směrování pro správu verzí služby naleznete v části [postupy: Správa verzí služeb](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).  
   
 ## <a name="appendix"></a>Příloha  
  Obecné data kontrakt Správa verzí pokyny potřeby striktní Správa verzí je považovat za kontrakty dat neměnné a vytvořit nové, když je nutné provést změny. Novou třídu musí být vytvořen pro každý nový kontrakt dat, aby bylo vyhnout se nutnosti trvat existujícího kódu, která byla zapsána z hlediska mechanismus stará data smlouvy – třída a přepisování z hlediska novou třídu kontraktu dat.  

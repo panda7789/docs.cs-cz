@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-bcl
+ms.technology:
+- dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 97f2f03cd55512c29c686759e756a1941f472157
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -54,7 +56,7 @@ Příklad pro text datový proud vložené objekty a jejich rozsah rozpětí
   
  Pokud je nutné procházení obsahu rozsahu text, sérii kroků se podílejí na pozadí, aby <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> metoda proběhl úspěšně.  
   
-1.  Rozsah textu je normalized; To znamená, rozsah text sbalena na degenerovanou rozsah v <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečné koncový bod. Tento krok je potřeba odebrat nejednoznačnosti v situacích, kde text rozsah zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například "{U} RL [http://www.microsoft.com](http://www.microsoft.com) vložené v textu" kde "{" a "}" jsou koncové body rozsahu text.  
+1.  Rozsah textu je normalized; To znamená, rozsah text sbalena na degenerovanou rozsah v <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečné koncový bod. Tento krok je potřeba odebrat nejednoznačnosti v situacích, kde text rozsah zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například "{U} RL [ http://www.microsoft.com ](http://www.microsoft.com) vložené v textu" kde "{" a "}" jsou koncové body rozsahu text.  
   
 2.  Výsledná oblast je přesunout zpátky <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> na začátek požadované <xref:System.Windows.Automation.Text.TextUnit> hranic.  
   
@@ -79,14 +81,14 @@ Příklady, jak je text rozsah upraveno Move() a ExpandToEnclosingUnit()
 ### <a name="hyperlink"></a>Hypertextový odkaz  
  **Příklad 1 - rozsah text, který obsahuje hypertextový odkaz vložený text**  
   
- {Adresu URL [http://www.microsoft.com](http://www.microsoft.com) vložené do text}.  
+ {Adresu URL [ http://www.microsoft.com ](http://www.microsoft.com) vložené do text}.  
   
 |Metoda volána|Výsledek|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec "adresu URL http://www.microsoft.com/ vložené v textu".|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec "adresa URL http://www.microsoft.com vložené v textu".|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> která obklopuje rozsah textu; v takovém případě <xref:System.Windows.Automation.AutomationElement> představující samotného poskytovatele text.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Vrátí <xref:System.Windows.Automation.AutomationElement> představující ovládacího prvku hypertextový odkaz.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím `GetChildren` metoda.|Vrátí rozsahu, který představuje "http://www.microsoft.com".|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím `GetChildren` metoda.|Vrátí rozsahu, který představuje "http://www.microsoft.com".|  
   
  **Příklad 2 - text oblast, která částečně přesahuje hypertextový odkaz vložený text**  
   
@@ -100,13 +102,13 @@ Příklady, jak je text rozsah upraveno Move() a ExpandToEnclosingUnit()
   
  **Příklad 3 - text oblast, která částečně přesahuje obsah kontejner textu. Kontejner text obsahuje vložený text hypertextový odkaz, který není součástí textu rozsahu.**  
   
- {{URL} [http://www.microsoft.com](http://www.microsoft.com) vložené v textu.  
+ {{URL} [ http://www.microsoft.com ](http://www.microsoft.com) vložené v textu.  
   
 |Metoda volána|Výsledek|  
 |-------------------|------------|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec "Adresa URL".|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> která obklopuje rozsah textu; v takovém případě <xref:System.Windows.Automation.AutomationElement> představující samotného poskytovatele text.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>s parametry (TextUnit.Word, 1).|Vzhledem k tomu, že text hypertextový odkaz se skládá z jednotlivých slov přesune rozpětí rozsah text "http". V takovém případě hypertextový odkaz nepovažuje se za jeden objekt.<br /><br /> Adresu URL {[http]} je vložený text.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> s parametry (TextUnit.Word, 1).|Vzhledem k tomu, že text hypertextový odkaz se skládá z jednotlivých slov přesune rozpětí rozsah text "http". V takovém případě hypertextový odkaz nepovažuje se za jeden objekt.<br /><br /> Adresu URL {[http]} je vložený text.|  
   
 <a name="Image"></a>   
 ### <a name="image"></a>Image  
@@ -119,7 +121,7 @@ Příklady, jak je text rozsah upraveno Move() a ExpandToEnclosingUnit()
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec "vložené v textu". Žádné alternativní text související s bitovou kopii nelze očekává mají být zahrnuty do proudu textu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> která obklopuje rozsah textu; v takovém případě <xref:System.Windows.Automation.AutomationElement> představující samotného poskytovatele text.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Vrátí <xref:System.Windows.Automation.AutomationElement> představující ovládacího prvku obrázek.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> metoda.|Vrátí degenerovanou rozsahu, který představuje "![vložený obrázek – příklad](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")".|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> metoda.|Vrátí degenerovanou rozsahu, který představuje "![vložený obrázek – příklad](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")".|  
   
  **Příklad 2 - text oblast, která částečně přesahuje obsah kontejner textu. Kontejner text obsahuje vložený obrázek, který není součástí textu rozsahu.**  
   
@@ -129,7 +131,7 @@ Příklady, jak je text rozsah upraveno Move() a ExpandToEnclosingUnit()
 |-------------------|------------|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec "image".|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> která obklopuje rozsah textu; v takovém případě <xref:System.Windows.Automation.AutomationElement> představující samotného poskytovatele text.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>s parametry (TextUnit.Word, 1).|Přesune rozpětí textu rozsahu "je". Protože pouze založený na textu vložené objekty jsou považovány za součást text datového proudu, bitové kopie v tomto příkladu nemá vliv přesunutí nebo hodnoty (1 v tomto případě).|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> s parametry (TextUnit.Word, 1).|Přesune rozpětí textu rozsahu "je". Protože pouze založený na textu vložené objekty jsou považovány za součást text datového proudu, bitové kopie v tomto příkladu nemá vliv přesunutí nebo hodnoty (1 v tomto případě).|  
   
 <a name="Table"></a>   
 ### <a name="table"></a>Tabulka  
@@ -146,18 +148,18 @@ Příklady, jak je text rozsah upraveno Move() a ExpandToEnclosingUnit()
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.GridPattern.GetItem%2A>s parametry (0,0)|Vrátí <xref:System.Windows.Automation.AutomationElement> představující obsah buňky tabulky; v takovém případě elementu je ovládací prvek text.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím `GetItem` metoda.|Vrátí oblast, která zahrnuje bitovou kopii ![vložený obrázek – příklad](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample").|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>pro objekt vrácený předchozím `RangeFromChild` metoda.|Vrátí <xref:System.Windows.Automation.AutomationElement> představující buňky tabulky; v takovém případě elementu je ovládacího prvku typu textový, která podporuje vlastnost TableItemPattern.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>pro objekt vrácený předchozím `GetEnclosingElement` metoda.|Vrátí <xref:System.Windows.Automation.AutomationElement> představující tabulku.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>pro objekt vrácený předchozím `GetEnclosingElement` metoda.|Vrátí <xref:System.Windows.Automation.AutomationElement> představující samotného poskytovatele text.|  
+|<xref:System.Windows.Automation.GridPattern.GetItem%2A> s parametry (0,0)|Vrátí <xref:System.Windows.Automation.AutomationElement> představující obsah buňky tabulky; v takovém případě elementu je ovládací prvek text.|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím `GetItem` metoda.|Vrátí oblast, která zahrnuje bitovou kopii ![vložený obrázek – příklad](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample").|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> pro objekt vrácený předchozím `RangeFromChild` metoda.|Vrátí <xref:System.Windows.Automation.AutomationElement> představující buňky tabulky; v takovém případě elementu je ovládacího prvku typu textový, která podporuje vlastnost TableItemPattern.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> pro objekt vrácený předchozím `GetEnclosingElement` metoda.|Vrátí <xref:System.Windows.Automation.AutomationElement> představující tabulku.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> pro objekt vrácený předchozím `GetEnclosingElement` metoda.|Vrátí <xref:System.Windows.Automation.AutomationElement> představující samotného poskytovatele text.|  
   
  **Příklad 2 - získat obsah textu buňky.**  
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.GridPattern.GetItem%2A>s parametry (1,1).|Vrátí <xref:System.Windows.Automation.AutomationElement> představující obsah buňky tabulky; v takovém případě elementu je ovládací prvek text.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím `GetItem` metoda.|Vrátí "Y".|  
+|<xref:System.Windows.Automation.GridPattern.GetItem%2A> s parametry (1,1).|Vrátí <xref:System.Windows.Automation.AutomationElement> představující obsah buňky tabulky; v takovém případě elementu je ovládací prvek text.|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozím `GetItem` metoda.|Vrátí "Y".|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Automation.TextPattern>  

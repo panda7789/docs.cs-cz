@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 94d45537ca3edd5f31f1ed31898857f002312a0b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="how-to-use-filters"></a>Postupy: Použití filtrů
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou dva implementace služby kalkulačky, regularCalc a roundingCalc směrovány zprávy. Obě implementace podporují stejné operace; ale jedna služba zaokrouhlí na nejbližší celé číslo všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete použít zaokrouhlení verzi služby; Pokud žádné služby přání zpráva je mezi těmito dvěma službami skupinu s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  

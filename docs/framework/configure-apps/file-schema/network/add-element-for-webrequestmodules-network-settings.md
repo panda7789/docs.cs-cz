@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -17,24 +18,25 @@ helpviewer_keywords:
 - add element, webRequestModules
 - <add> element, webRequestModules
 ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9b7d2c0f52ea42fcb98be149ab005cd67c2db46a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a>&lt;Přidat&gt; Element pro webRequestModules – (nastavení sítě)
 Přidá vlastní modul žádost webové aplikaci.  
   
  \<Konfigurace >  
-\<System.NET >  
-\<webRequestModules – >  
-\<Přidat >  
+\<system.net>  
+\<webRequestModules>  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,14 +64,14 @@ Přidá vlastní modul žádost webové aplikaci.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[webRequestModules –](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly sloužící k požadavku na informace z hostitelů v síti.|  
+|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly sloužící k požadavku na informace z hostitelů v síti.|  
   
 ## <a name="remarks"></a>Poznámky  
  `prefix` Atribut definuje předpony identifikátoru URI, který používá zadaný modul webové žádosti. Webové žádosti moduly jsou běžně registrovány pro zpracování určitého protokolu, jako je například HTTP nebo FTP, ale lze zaregistrovat pro zpracování požadavku na konkrétní server nebo k adresáři na serveru.  
   
  Modul webové žádosti se vytvoří při porovnávání předpony identifikátoru URI je předána <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metoda.  
   
- Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI – například "http" nebo "http://www.contoso.com".  
+ Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI – například "http", nebo "http://www.contoso.com".  
   
  Hodnota `type` atribut by měl mít název platného typu a odpovídající název sestavení, oddělených čárkou.  
   

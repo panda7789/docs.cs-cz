@@ -13,11 +13,11 @@ ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5445c6971e243e9fc2eea34937683a5c3c432c01
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8f7c421d2490678f7122e78bc0b83ebf3a1aa9ea
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="net-class-libraries"></a>Knihovny tříd rozhraní .NET
 
@@ -55,11 +55,16 @@ Celá řada vývojářů knihovny, že jste přepnuli neměly více knihoven spe
 
 Na následujících platformách podporují .NET Standard knihovny:
 
-*   .NET Core
-*   ASP.NET Core
-*   Rozhraní .NET framework 4.5 +
-*   Aplikace pro Windows Store
-*   Windows Phone 8 +
+* .NET Core
+* .NET Framework
+* Mono
+* Xamarin.iOS, Xamarin.Mac, Xamarin.Android
+* Univerzální platforma Windows (UPW)
+* Windows
+* Windows Phone
+* Windows Phone Silverlight
+
+Další informace najdete v tématu [.NET Standard](net-standard.md) tématu.
 
 ### <a name="mono-class-libraries"></a>Knihovny tříd mono
 

@@ -106,7 +106,7 @@ Požadavek na třídy mají některé z výše uvedené funkce nebo chování p�
 Minimálně měli snažit jednotlivé webové aplikace se vlastní ohraničené kontextu, s vlastní úložiště trvalosti pro svůj obchodní model, místo sdílení databázi s jinými aplikacemi. Probíhá komunikace mezi ohraničené kontexty prostřednictvím programového rozhraní, a nikoli prostřednictvím sdílenou databázi, která umožňuje obchodní logiky a umístěte události provést v reakci na změny, které se uskuteční. Vázaný kontexty mapy úzce k mikroslužeb, které také jsou v ideálním případě implementované jako vlastní jednotlivých ohraničené kontexty.
 
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
-> - Oddělené oblasti zájmu  
+> - **Oddělené oblasti zájmu**  
 > <http://deviq.com/separation-of-concerns/>
 > - **Encapsulation** <http://deviq.com/encapsulation/>
 > - **Princip inverzi závislostí**  
@@ -115,7 +115,7 @@ Minimálně měli snažit jednotlivé webové aplikace se vlastní ohraničené 
 > <http://deviq.com/explicit-dependencies-principle/>
 > - **Nemáte opakujte sami**  
 > <http://deviq.com/don-t-repeat-yourself/>
-> - Které trvalost  
+> - **Které trvalost**  
 > <http://deviq.com/persistence-ignorance/>
 > - **Ohraničené kontextu**  
 > <https://martinfowler.com/bliki/BoundedContext.html>

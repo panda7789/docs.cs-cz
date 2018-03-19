@@ -9,14 +9,14 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: a622b2949c1d2277bb3e82617a5bc2d8cb432263
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="docker-terminology"></a>Terminologie docker
 
-Tato část uvádí termíny a definice, se kterými měli byste se seznámit s před hlubší seznamovat do Docker (Další definice, naleznete rozsáhlé [Glosář](https://docs.docker.com/glossary/) poskytované Docker v <https:// docs.docker.com/glossary/>:
+Tato část uvádí termíny a definice, se kterými měli byste se seznámit s před hlubší seznamovat do Docker (Další definice, naleznete rozsáhlé [Glosář](https://docs.docker.com/glossary/) poskytované Docker v <https://docs.docker.com/glossary/>:
 
 -   **Kontejner image** balíček s všechny závislosti a informace potřebné k vytvoření kontejneru. Obrázek zahrnuje všechny závislosti (například rozhraní) plus nasazení a konfigurace, které má být používána runtime kontejneru. Obvykle bitovou kopii je odvozena z více základní bitových kopií, vrstvy přibývají jeden na druhý k vytvoření kontejneru systému souborů. Bitová kopie je neměnný po jeho vytvoření.
 
@@ -36,7 +36,7 @@ Tato část uvádí termíny a definice, se kterými měli byste se seznámit s 
 
 -   **Azure kontejneru registru** prostředek veřejné pro práci s imagí Dockeru a jeho komponenty v Azure. To poskytuje registr, která je blízko svá nasazení v Azure a udávající řízení přístupu, aby bylo možné pomocí skupin Azure Active Directory a oprávnění.
 
--   **Docker důvěryhodné registru (DTR)** A Docker služby registru (z Docker), který můžete nainstalovat místně tak, aby se nachází v rámci datového centra a sítě organizace. Je vhodné pro privátní bitové kopie, které se mají spravovat v rámci podniku. Docker důvěryhodné registru je součástí produktu Docker Datacenter. Další informace, přejděte na [https://docs.docker.com/docker-trusted-registry/overview/](https://docs.docker.com/docker-trusted-registry/overview/).
+-   **Docker důvěryhodné registru (DTR)** A Docker služby registru (z Docker), který můžete nainstalovat místně tak, aby se nachází v rámci datového centra a sítě organizace. Je vhodné pro privátní bitové kopie, které se mají spravovat v rámci podniku. Docker důvěryhodné registru je součástí produktu Docker Datacenter. Další informace, přejděte na [ https://docs.docker.com/docker-trusted-registry/overview/ ](https://docs.docker.com/docker-trusted-registry/overview/).
 
 -   **Docker Community Edition (CE)** nástroje pro vývoj pro systém Windows a systému macOS pro vytváření, spouštění a testování kontejnery místně. CE docker pro systém Windows poskytuje vývojové prostředí pro Linux a Windows kontejnery. Je na základě hostitelů Linux Docker v systému Windows [technologie Hyper-V](https://www.microsoft.com/en-us/server-cloud/solutions/virtualization.aspx) virtuálních počítačů. Hostitel pro kontejnery Windows je přímo založená na systému Windows. Docker CE pro Mac je založené na rozhraní framework Apple hypervisoru a [xhyve hypervisoru](https://github.com/mist64/xhyve), který poskytuje Linux Docker hostitele virtuálních počítačů Mac OS X. Docker CE pro systém Windows a Mac nahrazuje Docker sada nástrojů, která je založena na Oracle VirtualBox.
 

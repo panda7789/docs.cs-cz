@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e0fe14f096ae0914235ea1d23b874f0aea906d9d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Poskytuje službu Směrování obecné modulární SOAP zprostředkující umožňující směrování zpráv na základě obsahu zprávy. Se službou směrování můžete vytvořit komplexní směrování logiku, která umožňuje implementovat scénáře, jako je služba agregace, verze služby, s prioritou směrování a směrování vícesměrového vysílání. Směrovací služby obsahuje také chyba zpracování, které umožňuje nastavit seznam zálohování koncových bodů, ke kterému jsou zprávy odesílány, pokud dojde k chybě při odesílání na cílové primární koncový bod.  
@@ -163,7 +165,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
 > [!NOTE]
 >  Ve výchozím nastavení vyhodnotí směrovací služby pouze záhlaví zprávy. Chcete-li povolit filtry pro přístup k textu zprávy, musíte nastavit <xref:System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly%2A> k `false`.  
   
- **Vícesměrové vysílání**  
+ **Multicast**  
   
  Při mnoho konfigurace směrování služby používat výhradní filtru logiky, která směrování zpráv do pouze jeden konkrétní koncový bod, můžete směrovat danou zprávou více cílové koncové body. Pro vícesměrové vysílání zprávu pro více cílů musí být splněné následující podmínky:  
   

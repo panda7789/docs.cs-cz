@@ -5,27 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c1b1f923b6673ead42c7c702bd50d253ea06c765
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
 Tento příklad ukazuje, jak shromažďování dat ze [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby za běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), která je integrována do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tato ukázka také ukazuje, jak přidat objekt uživatelské rozhraní WMI pro službu. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak získat data z `ICalculator` služby za běhu.  
   
  Služba WMI je implementace Web-Based Enterprise Management (WBEM) standardní společnosti Microsoft. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM je oborový standard pro jak aplikace vystavit WMI pro externí nástroje pro správu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]implementuje zprostředkovatele rozhraní WMI, komponenty, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje zprostředkovatele rozhraní WMI, komponenty, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
   
  Předdefinované zprostředkovatele rozhraní WMI je aktivovaná v konfiguračním souboru aplikace. To se provádí prostřednictvím `wmiProviderEnabled` atribut [ \<diagnostics >](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, jak znázorňuje následující ukázka konfigurace:  
   
