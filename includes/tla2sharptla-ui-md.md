@@ -1,1 +1,1 @@
-<span data-ttu-id="2973e-101">Uživatelské rozhraní</span><span class="sxs-lookup"><span data-stu-id="2973e-101">UI</span></span>
+<span data-ttu-id="49fb5-101">Uživatelské rozhraní</span><span class="sxs-lookup"><span data-stu-id="49fb5-101">UI</span></span>
