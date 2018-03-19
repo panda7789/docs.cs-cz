@@ -66,6 +66,7 @@
 #### [Postupy: Přizpůsobení zásad mezipaměti na základě času](how-to-customize-a-time-based-cache-policy.md)
 #### [Postupy: Nastavení zásad mezipaměti pro žádost](how-to-set-cache-policy-for-a-request.md)
 ## [Zabezpečení v síťovém programování](security-in-network-programming.md)
+### [Osvědčené postupy k používání protokolu TLS (Transport Layer Security)](tls.md)
 ### [Použití protokolu SSL (Secure Sockets Layer)](using-secure-sockets-layer.md)
 #### [Výběr a ověření certifikátu](certificate-selection-and-validation.md)
 ### [Ověřování v internetu](internet-authentication.md)
