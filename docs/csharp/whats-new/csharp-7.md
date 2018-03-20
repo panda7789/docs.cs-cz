@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 ms.openlocfilehash: 374ac9917464a7e83566440abab10eda8a9c8683
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="whats-new-in-c-7"></a>Co je nového v C# 7
 
@@ -122,7 +122,7 @@ Použití řazených kolekcí členů tímto způsobem nabízí několik výhod:
 
 * Uložit práci při vytváření `class` nebo `struct` , který definuje typ vrácený. 
 * Není nutné k vytvoření nového typu.
-* Rozšíření pro jazyk eliminuje nutnost volání < xref:System.Tuple.Create``1(``0) > metody.
+* Rozšíření pro jazyk eliminuje nutnost volání <xref:System.Tuple.Create``1(``0)> metody.
 
 Deklarace pro metodu poskytuje názvy pro pole řazené kolekce členů, která je vrácena. Při volání metody vrácená hodnota je řazené kolekce členů, jejichž pole jsou `Max` a `Min`:
 
