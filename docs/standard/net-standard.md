@@ -13,11 +13,11 @@ ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9c0d375f160b886b104daeb68b88c25264e3e78f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f22405f4547edcc5034ed221fa144512a237b050
+ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="net-standard"></a>Standardní rozhraní .NET
 
@@ -38,7 +38,7 @@ V následující tabulce jsou uvedeny všechny verze rozhraní .NET Standard a p
 [!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
 
 K vyhledání nejvyšší verze Standard .NET, můžete se zaměřit, postupujte takto:
-1. Najděte řádek, který označuje implementace rozhraní .NET, který chcete spustit na.
+1. Najde řádek, která určuje, které chcete spustit na implementaci rozhraní .NET.
 2. Sloupec najít v daném řádku, která určuje vaší verzí spouštění zprava doleva.
 3. Záhlaví sloupce určuje .NET Standard verzi, která podporuje cílových (a je také podporuje všechny nižší verze .NET Standard).
 4. Tento postup opakujte pro každou platformu, kterou chcete zacílit. Pokud máte více než jeden cílovou platformu, měli byste vybrat menší verze mezi nimi. Pokud chcete spustit v rozhraní .NET Framework 4.5 a .NET Core 1.0, je nejvyšší verze .NET Standard, které můžete použít například standardní .NET 1.1.
@@ -128,7 +128,7 @@ Správa verzí .NET standard je důležité pro použití. S ohledem na rozhran�
 
 Na základě profilu kompatibility PCL zajišťuje [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) balíček NuGet. Při odkazování na balíčky NuGet, které obsahují PCLs na základě profilu, je potřeba tuto závislost.
 
-Na základě profilu PCLs zabalené jako `netstandard` se snadněji využívat než obvykle zabalené PCLs na základě profilu. `netstandard`balení je kompatibilní s stávající uživatele.
+Na základě profilu PCLs zabalené jako `netstandard` se snadněji využívat než obvykle zabalené PCLs na základě profilu. `netstandard` balení je kompatibilní s stávající uživatele.
 
 Sady profilů PCL, které jsou kompatibilní s .NET Standard, můžete zjistit: 
 

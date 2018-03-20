@@ -16,20 +16,23 @@ helpviewer_keywords:
 - best practices, data requests
 - receiving data, best practices
 ms.assetid: 716decc6-5952-47b7-9c5a-ba6fc5698684
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 83254955138c99ec0187e5cf74566266c2ecb303
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 90722abbdb4568be115c0ac77007d5f18984df6f
+ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="best-practices-for-systemnet-classes"></a>Osvědčené postupy pro System.NET – třídy
 Následující doporučení vám pomůže používat třídy součástí <xref:System.Net> využívají doporučené:  
   
+-   Osvědčené postupy zabezpečení TLS (Transport Layer), najdete v části [zabezpečení TLS (Transport Layer) osvědčené postupy v rozhraní .NET Framework](tls.md).
+
 -   Použití <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> kdykoli je to možné místo přetypování typu do odvozené třídy. Aplikace, které používají **WebRequest** a **WebResponse** můžete využít výhod nové protokoly Internetu bez nutnosti změny rozsáhlé kódu.  
   
 -   Při vytváření aplikací ASP.NET, které běží na serveru pomocí **System.Net** třídy, je často lepší, z hlediska výkonu použít asynchronní metody pro <xref:System.Net.WebRequest.GetResponse%2A> a <xref:System.Net.WebResponse.GetResponseStream%2A>.  
