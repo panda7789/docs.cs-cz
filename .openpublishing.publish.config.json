@@ -11,7 +11,7 @@
   },
   "branch_target_mapping": {
     "live": [
-      "Publish"
+      "Publish",
       "Pdf"
     ],
      "live-sxs": [
