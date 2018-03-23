@@ -1,1 +1,1 @@
-<span data-ttu-id="ee0bc-101">Průzkumník souborů</span><span class="sxs-lookup"><span data-stu-id="ee0bc-101">File Explorer</span></span>
+<span data-ttu-id="a1a25-101">Průzkumník souborů</span><span class="sxs-lookup"><span data-stu-id="a1a25-101">File Explorer</span></span>
