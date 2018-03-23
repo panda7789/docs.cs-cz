@@ -1,24 +1,26 @@
 ---
-title: "Společné schéma kolekce"
-ms.custom: 
+title: Společné schéma kolekce
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
-caps.latest.revision: "3"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 893093900b3fc4276f9bd7143b1f235a5ba98f90
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="common-schema-collections"></a>Společné schéma kolekce
 Společné schéma kolekce jsou kolekce schéma, které jsou implementovány každou zprostředkovatelů spravované rozhraní .NET Framework. Můžete zadat dotaz rozhraní .NET Framework spravovaného zprostředkovatele určit seznam podporovaných schématu kolekcí voláním **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají. Tyto kolekce popisují všechny požadované sloupce. Poskytovatelé jsou volně přidat další sloupce, pokud si přejí. Například `SqlClient` a `OracleClient` přidejte název parametru do kolekce omezení.  
@@ -41,7 +43,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
   
 |columnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
-|CompositeIdentifierSeparatorPattern|odkazy řetězců|Regulární výraz tak, aby odpovídaly složené oddělovače v složené identifikátor. Například "\\." (pro SQL Server) nebo "@&#124; \\." (pro Oracle).<br /><br /> Složené identifikátor je obvykle co se používá pro název databázového objektu, například: pubs.dbo.authors nebo pubs@dbo.authors.<br /><br /> Pro systém SQL Server, použijte regulární výraz "\\.". Pro OracleClient, použijte "@&#124; \\.".<br /><br /> Pro použití rozhraní ODBC Catalog_name_seperator.<br /><br /> Pro OLE DB pomocí DBLITERAL_CATALOG_SEPARATOR nebo DBLITERAL_SCHEMA_SEPARATOR.|  
+|CompositeIdentifierSeparatorPattern|odkazy řetězců|Regulární výraz tak, aby odpovídaly složené oddělovače v složené identifikátor. Například "\\." (pro SQL Server) nebo "@&#124;\\." (pro Oracle).<br /><br /> Složené identifikátor je obvykle co se používá pro název databázového objektu, například: pubs.dbo.authors nebo pubs@dbo.authors.<br /><br /> Pro systém SQL Server, použijte regulární výraz "\\.". Pro OracleClient, použijte "@&#124;\\.".<br /><br /> Pro použití rozhraní ODBC Catalog_name_seperator.<br /><br /> Pro OLE DB pomocí DBLITERAL_CATALOG_SEPARATOR nebo DBLITERAL_SCHEMA_SEPARATOR.|  
 |DataSourceProductName|odkazy řetězců|Název produktu přístup poskytovatele, jako je například "Oracle" nebo "SQLServer".|  
 |DataSourceProductVersion|odkazy řetězců|Určuje verzi produktu přístup poskytovatele, v nativním formátu zdroje dat a není ve formátu Microsoft.<br /><br /> V některých případech DataSourceProductVersion a DataSourceProductVersionNormalized se stejnou hodnotu. V případě technologie OLE DB a rozhraní ODBC tyto bude vždy stejná jsou namapované na stejný volání funkce v základní nativní rozhraní API.|  
 |DataSourceProductVersionNormalized|odkazy řetězců|Normalizované verze pro data zdrojové, tak, aby ji můžete porovnat s `String.Compare()`. Formát tohoto objektu je konzistentní pro všechny verze zprostředkovatele, který má zabránit verze 10 řazení mezi verze 1 a verze 2.<br /><br /> Zprostředkovatel Oracle například používá formát "nn.nn.nn.nn.nn" pro jeho normalizované verze, což způsobí, že zdroj dat Oracle 8i vrátit "08.01.07.04.01". Typický formát "nn.nn.nnnn" Microsoft používá systém SQL Server.<br /><br /> V některých případech DataSourceProductVersion a DataSourceProductVersionNormalized se stejnou hodnotu. V případě technologie OLE DB a rozhraní ODBC to bude vždy stejná jsou namapované na stejný volání funkce v základní nativní rozhraní API.|  
@@ -53,10 +55,10 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 |ParameterMarkerPattern|odkazy řetězců|Regulární výraz, který odpovídá parametru značku. Bude mít hodnotu shody názvu parametru, pokud existuje.<br /><br /> Například, pokud jsou podporovány pojmenované parametry ' @' úvodní znak, který bude obsažen v názvu parametru by to byl: "(@[A-Za-z0-9_$ #] *)".<br /><br /> Ale pokud pojmenované parametry jsou podporovány ':' jako úvodní znak a není součástí názvu parametru, bude: ": ([A-Za-z0-9_$ #]\*)".<br /><br /> Samozřejmě pokud zdroj dat nepodporuje pojmenované parametry, jednoduše bude "?".|  
 |ParameterNameMaxLength|int|Maximální délka názvu parametru ve znacích. Visual Studio očekává, že pokud jsou podporovány názvy parametrů, minimální hodnota maximální délky se 30 znaků.<br /><br /> Pokud zdroj dat nepodporuje pojmenované parametry, vrátí tato vlastnost hodnotu 0.|  
 |ParameterNamePattern|odkazy řetězců|Regulární výraz, který odpovídá názvy platný parametr. Různé datové zdroje mají různá pravidla týkající se znaky, které mohou být použity pro názvy parametrů.<br /><br /> Visual Studio očekává, že pokud jsou podporovány názvy parametrů, jsou znaky "\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}" minimální podporované sadu znaků, které jsou platné pro názvy parametrů.|  
-|QuotedIdentifierPattern|odkazy řetězců|Regulární výraz, který odpovídá identifikátor uvozovkách a má hodnotu shody identifikátoru samotné bez uvozovek. Například pokud zdroj dat použije uvozovky k identifikaci identifikátory v uvozovkách, bude: "(([^\\"] &#124;\\" \\")*)".|  
+|QuotedIdentifierPattern|odkazy řetězců|Regulární výraz, který odpovídá identifikátor uvozovkách a má hodnotu shody identifikátoru samotné bez uvozovek. Například pokud zdroj dat použije uvozovky k identifikaci identifikátory v uvozovkách, bude: "(([^\\"]&#124;\\"\\") *) ".|  
 |QuotedIdentifierCase|<xref:System.Data.Common.IdentifierCase>|Určuje, zda jsou nebo nejsou považovány jako malá a velká písmena identifikátory v uvozovkách.|  
 |StatementSeparatorPattern|odkazy řetězců|Regulární výraz, který odpovídá příkaz oddělovače.|  
-|StringLiteralPattern|odkazy řetězců|Regulární výraz, který odpovídá řetězcový literál a má hodnotu shodu literál sám sebe. Například pokud zdroj dat použije k identifikaci řetězce jedním uvozovky, bude: "(" ([^'] &#124; ") *')"'|  
+|StringLiteralPattern|odkazy řetězců|Regulární výraz, který odpovídá řetězcový literál a má hodnotu shodu literál sám sebe. Například pokud zdroj dat použije k identifikaci řetězce jedním uvozovky, bude: "('([^']&#124;'') *") ".|  
 |SupportedJoinOperators|<xref:System.Data.Common.SupportedJoinOperators>|Určuje, jaké typy příkazů SQL spojení jsou podporovány datovým zdrojem.|  
   
 ## <a name="datatypes"></a>Datové typy  

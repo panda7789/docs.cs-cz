@@ -1,27 +1,29 @@
 ---
-title: "Glosář služby Windows Communication Foundation pro .NET Framework 4.5"
-ms.custom: 
+title: Glosář služby Windows Communication Foundation pro .NET Framework 4.5
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], glossary
 - WCF [WCF], glossary
 ms.assetid: 39cd36f4-8a28-4d0b-a830-98d55c9d30ae
-caps.latest.revision: "243"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 76cc8f456701d65b675ce7b89436da5213ea9430
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="windows-communication-foundation-glossary-for-net-framework-45"></a>Glosář služby Windows Communication Foundation pro .NET Framework 4.5
 Následující termíny jsou definovány pro dokumentaci k Windows Communication Foundation.  

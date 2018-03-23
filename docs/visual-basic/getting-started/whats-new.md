@@ -1,5 +1,5 @@
 ---
-title: "Co je nového v jazyce Visual Basic"
+title: Co je nového v jazyce Visual Basic
 ms.date: 02/15/2018
 ms.prod: .net
 ms.technology:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: 
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4df9a34e078de9daeff85c894afbbf4d60501f6b
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: c0452a5dde3a266f5d50f69016eac8144bab9ba6
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -34,6 +34,9 @@ Nové funkce, najdete v části [15,5 Visual Basic](#visual-basic-155)
 
 Visual Basic 15.3   
 Nové funkce, najdete v části [15.3 jazyka Visual Basic](#visual-basic-153)
+
+Visual Basic 2017   
+Nové funkce, najdete v části [2017 Visual Basic](#visual-basic-2017)
 
 Visual Basic / Visual Studio .NET 2015   
 Nové funkce, najdete v části [14 Visual Basic](#visual-basic-14)
@@ -78,7 +81,7 @@ Visual Basic 2017 přidala se podpora pro znak podtržítka (`_`) jako oddělova
 ```vb
 Dim number As Integer = &H_C305_F860
 ``` 
-Chcete-li použít pod skóre znakem jako počáteční oddělovač, musíte přidat následující prvek se v souboru projektu (*.vbproj) jazyka Visual Basic:
+Pokud chcete použít jako počáteční oddělovací znak podtržítka, musíte přidat následující element do projektu jazyka Visual Basic (\*.vbproj) souboru:
 
 ```xml
 <PropertyGroup>
@@ -88,15 +91,19 @@ Chcete-li použít pod skóre znakem jako počáteční oddělovač, musíte př
 
 ## <a name="visual-basic-153"></a>Visual Basic 15.3
 
-[Odvození pojmenované řazené kolekce členů](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
+[**Odvození pojmenované řazené kolekce členů**](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
 
 Přiřadíte-li hodnota řazené kolekce členů elementy z proměnných, Visual Basic odvodí, že název elementů řazené kolekce členů z odpovídající názvy proměnných; není nutné explicitně název element řazené kolekce členů. Následující příklad používá k vytvoření řazené kolekce členů s tři prvky s názvem, odvození `state`, `stateName`, a `capital`.
 
 [!code-vb[Inferred tuple names](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
+**Další přepínače kompilátoru**  
+
+Teď podporuje příkazového řádku kompilátoru Visual Basicu [ **- refout** ](../reference/command-line-compiler/refout-compiler-option.md) a [ **- refonly** ](../reference/command-line-compiler/refonly-compiler-option.md) – možnosti kompilátoru k řízení výstup referenční sestavení. **-refout** definuje výstupního adresáře sestavení odkaz a **- refonly** Určuje, že je referenční sestavení být výstupem kompilace.
+
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 
-[Řazené kolekce členů](../programming-guide/language-features/data-types/tuples.md)
+[**Řazené kolekce členů**](../programming-guide/language-features/data-types/tuples.md)
 
 Řazené kolekce členů jsou jednoduché datové struktury, které se nejčastěji používá k vrácení více hodnot z volání jedné metody. Normálně vrátit více hodnot z metody, je nutné provést jednu z těchto možností:
 

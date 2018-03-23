@@ -1,24 +1,26 @@
 ---
-title: "Korelace trvanlivého duplexního přenosu"
-ms.custom: 
+title: Korelace trvanlivého duplexního přenosu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
-caps.latest.revision: "9"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ceb5cbedf30c8ec53bc815f9cd52f7bcb8a6e327
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="durable-duplex-correlation"></a>Korelace trvanlivého duplexního přenosu
 Korelace trvanlivého duplexního přenosu, také známé jako zpětné volání korelace, je užitečné, když služby pracovního postupu se poslat počáteční volající zpětné volání. Na rozdíl od duplexní režim WCF může dojít kdykoliv v budoucnu zpětné volání a není vázaný na stejném kanálu nebo kanálu životnost; Jediným požadavkem je, že volající mít aktivní koncový bod naslouchání pro zpětné volání zprávy. To umožňuje dvou služeb pracovních postupů pro komunikaci v rámci dlouhodobé konverzace. Toto téma obsahuje přehled korelace trvanlivého duplexního přenosu.  
@@ -27,7 +29,7 @@ Korelace trvanlivého duplexního přenosu, také známé jako zpětné volání
  Korelace trvanlivého duplexního přenosu, dvě služby vyžaduje použití kontextu povoleno vazbu, která podporuje obousměrný operace, jako například <xref:System.ServiceModel.NetTcpContextBinding> nebo <xref:System.ServiceModel.WSHttpContextBinding>. Volání služby Registry <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> s požadovanou vazbu na jejich klienta <xref:System.ServiceModel.Endpoint>. Služba přijímající obdrží tato data ve počáteční volání a používá ho na svůj vlastní <xref:System.ServiceModel.Endpoint> v <xref:System.ServiceModel.Activities.Send> aktivity, která provádí volání zpět do volání služby. V tomto příkladu dvě služby komunikaci mezi sebou. První službě vyvolá metodu na druhý služby a pak se čeká na odpověď. Druhý služba ví název metody zpětného volání, ale koncový bod služby, která implementuje tuto metodu není znám. v době návrhu.  
   
 > [!NOTE]
->  Trvanlivý duplexní přenos může být pouze použít, když <xref:System.ServiceModel.Channels.AddressingVersion> koncového bodu je nakonfigurován s <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Pokud není, pak <xref:System.InvalidOperationException> je vyvolána výjimka s následující zprávou: "zpráva obsahuje hlavičku zpětného volání kontextu se odkaz na koncový bod pro třídu AddressingVersion ' Addressing200408 (HYPERLINK"http://schemas.xmlsoap.org/ws/2004/08/ adresování"http://schemas.xmlsoap.org/ws/2004/08/addressing)'. Zpětné volání kontextu může být přenášen pouze v případě nastavena třídu AddressingVersion 'WSAddressing10'."  
+>  Trvanlivý duplexní přenos může být pouze použít, když <xref:System.ServiceModel.Channels.AddressingVersion> koncového bodu je nakonfigurován s <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Pokud není, pak <xref:System.InvalidOperationException> je vyvolána výjimka s následující zprávou: "zpráva obsahuje hlavičku zpětného volání kontextu se odkaz na koncový bod pro třídu AddressingVersion ' Addressing200408 (HYPERLINK"http://schemas.xmlsoap.org/ws/2004/08/addressing" http://schemas.xmlsoap.org/ws/2004/08/addressing)'. Zpětné volání kontextu může být přenášen pouze v případě nastavena třídu AddressingVersion 'WSAddressing10'."  
   
  V následujícím příkladu je hostované služby pracovního postupu, vytvoří zpětné volání <xref:System.ServiceModel.Endpoint> pomocí <xref:System.ServiceModel.WSHttpContextBinding>.  
   
@@ -212,4 +214,4 @@ WF1 - Items Received
  V tomto příkladu obou pracovních explicitně spravovat pomocí korelace <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Kvůli pouze jeden korelace v pracovních postupech tyto ukázkové, výchozí <xref:System.ServiceModel.Activities.CorrelationHandle> správy by byl dostatečná.  
   
 ## <a name="see-also"></a>Viz také  
- [Trvanlivý duplexní přenos &#91; Ukázky WF &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)
+ [Durable Duplex &#91;WF Samples&#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)

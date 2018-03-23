@@ -1,24 +1,26 @@
 ---
 title: Odkaz na entitu SQL
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ac05ec8a8732da383a4e33e84c669aa29660a0da
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="entity-sql-reference"></a>Odkaz na entitu SQL
 Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] referenční témata. Toto téma shrnuje a skupin [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory podle kategorie.  
@@ -57,7 +59,7 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |[= (Je rovno)](../../../../../../docs/framework/data/adonet/ef/language-reference/equals-entity-sql.md)|Porovnání rovnosti dvou výrazů.|  
 |[> (Větší než)](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-entity-sql.md)|Porovná dva výrazy a určit, zda má levý výraz hodnotu větší než pravý výraz.|  
 |[>= (Větší než nebo rovno)](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-or-equal-to-entity-sql.md)|Porovná dva výrazy a určit, zda má levý výraz hodnotu větší než nebo rovna hodnotě pravý výraz.|  
-|[JE &#91; NE &#93; HODNOTU NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|Určuje, pokud má hodnotu null výrazu dotazu.|  
+|[JE &AMP;#91;NENÍ&AMP;#93; HODNOTU NULL.](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|Určuje, pokud má hodnotu null výrazu dotazu.|  
 |[< (Méně než)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|Porovná dva výrazy a určit, zda má hodnotu menší, než pravý výraz levý výraz.|  
 |[<= (Méně než nebo rovno)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|Porovná dva výrazy a určit, zda levý výraz má hodnotu menší než nebo rovna pravý výraz.|  
 |[&#91;NOT&#93; BETWEEN](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|Určuje, zda výraz výsledkem hodnota v zadaném rozsahu.|  
@@ -71,7 +73,7 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |--------------|-----------------|  
 |[& & (Logické a)](../../../../../../docs/framework/data/adonet/ef/language-reference/and-entity-sql.md)|Logickým operátorem a.|  
 |[! (Logický operátor NOT)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)|Logický operátor NOT.|  
-|[&#124; &#124; (Nebo logické)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|Logické OR.|  
+|[&#124;&#124;(Nebo logické)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|Logické OR.|  
 |[CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)|Vyhodnotí sadu logických výrazů k určení výsledku.|  
 |[THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)|Výsledek [při](http://msdn.microsoft.com/library/6233fe9f-00b0-460e-8372-64e138a5f998) klauzule vyhodnocení na hodnotu true.|  
   
@@ -92,7 +94,7 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |[WHERE](../../../../../../docs/framework/data/adonet/ef/language-reference/where-entity-sql.md)|Podmíněná filtruje data, která je vrácených dotazem.|  
   
 ## <a name="reference-operators"></a>Referenční dokumentace operátory  
- Odkaz je konkrétní entity v sadě konkrétní entitu logické ukazatel (cizí klíč). [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje následující operátory k vytváření, deconstruct a procházení odkazy.  
+ Odkaz je konkrétní entity v sadě konkrétní entitu logické ukazatel (cizí klíč). [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje následující operátory k vytváření, deconstruct a procházení odkazy.  
   
 |Operátor|Použití|  
 |--------------|---------|  
@@ -103,7 +105,7 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |[REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)|Vrátí odkaz na instanci entity.|  
   
 ## <a name="set-operators"></a>Operátory set  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]poskytuje různé operace výkonnou sadu. To zahrnuje operátory set podobná Transact-SQL operátorů, například UNION, INTERSECT, EXCEPT a EXISTS. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]také podporuje operátory pro odstranění duplicit (SET), členství v testování (v) a spojení (připojit). Následující tabulka uvádí [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nastavit operátory.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje různé operace výkonnou sadu. To zahrnuje operátory set podobná Transact-SQL operátorů, například UNION, INTERSECT, EXCEPT a EXISTS. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] také podporuje operátory pro odstranění duplicit (SET), členství v testování (v) a spojení (připojit). Následující tabulka uvádí [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nastavit operátory.  
   
 |Operátor|Použití|  
 |--------------|---------|  
@@ -118,13 +120,13 @@ Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ref
 |[UNION](../../../../../../docs/framework/data/adonet/ef/language-reference/union-entity-sql.md)|Kombinuje výsledky dvou nebo více dotazů do jedné kolekce.|  
   
 ## <a name="type-operators"></a>Typ operátory  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]poskytuje operace, které umožňují typ výrazu (hodnota) sestavený, dotaz a s nimi manipulovat. Následující tabulka uvádí operátory, které se používají k práci s typy.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje operace, které umožňují typ výrazu (hodnota) sestavený, dotaz a s nimi manipulovat. Následující tabulka uvádí operátory, které se používají k práci s typy.  
   
 |Operátor|Použití|  
 |--------------|---------|  
 |[CAST](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)|Převod výrazu jednoho datového typu.|  
 |[COLLECTION](../../../../../../docs/framework/data/adonet/ef/language-reference/collection-entity-sql.md)|Použít v [funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) operaci deklarovat kolekce typy entit a komplexní typy.|  
-|[JE &#91; NE &#93; Z](../../../../../../docs/framework/data/adonet/ef/language-reference/isof-entity-sql.md)|Určuje, zda typ výrazu je zadaného typu nebo jeden z jeho podtypech.|  
+|[JE &AMP;#91;NENÍ&AMP;#93; OF](../../../../../../docs/framework/data/adonet/ef/language-reference/isof-entity-sql.md)|Určuje, zda typ výrazu je zadaného typu nebo jeden z jeho podtypech.|  
 |[OFTYPE](../../../../../../docs/framework/data/adonet/ef/language-reference/oftype-entity-sql.md)|Vrátí kolekci objektů z výrazu dotazu, který je určitého typu.|  
 |[Konstruktor pojmenovaného typu](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md)|Použít k vytvoření instance typy entit a komplexní typy.|  
 |[MULTISET](../../../../../../docs/framework/data/adonet/ef/language-reference/multiset-entity-sql.md)|Vytvoří instanci multimnožina ze seznamu hodnot.|  

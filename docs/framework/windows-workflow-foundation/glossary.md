@@ -1,26 +1,27 @@
 ---
-title: "Glosář služby Windows Workflow Foundation pro rozhraní .NET Framework 4.5"
-ms.custom: 
+title: Glosář služby Windows Workflow Foundation pro rozhraní .NET Framework 4.5
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], glossary
 - WF [WF], glossary
 ms.assetid: ab682b2f-3779-45ca-b831-b7c03d7dbb3a
-caps.latest.revision: "259"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 54a0cc6d9a0c922e57bf00b649894f26b42a64f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="windows-workflow-foundation-glossary-for-net-framework-45"></a>Glosář služby Windows Workflow Foundation pro rozhraní .NET Framework 4.5
 V dokumentaci k Windows Workflow Foundation se používají následující termíny.  

@@ -1,24 +1,26 @@
 ---
-title: "Trvanlivý kontext instance"
-ms.custom: 
+title: Trvanlivý kontext instance
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-caps.latest.revision: "12"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e4f1f3f9e840ba422e327792ec2b0554fad45902
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
 Tento příklad ukazuje, jak přizpůsobit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] runtime umožňující kontexty trvanlivý instance. SQL Server 2005 používá jako své úložiště zálohování (SQL Server 2005 Express v tomto případě). Však také poskytuje přístup k vlastní úložiště mechanismy.  
@@ -242,7 +244,7 @@ else
   
  Jako první krok tohoto procesu se musí uložit ID kontextu, které pochází z vrstvy kanálu pro aktuální objekt InstanceContext. Parametr InstanceContext je součástí modulu runtime, která slouží jako propojení mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dispečera a instance služby. Slouží k poskytování dalších stavu a chování v instanci služby. To je důležité, protože komunikaci mezi relacemi ID kontextu jsou odeslány pouze s první zprávu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]umožňuje rozšíření jeho komponenty runtime InstanceContext přidáním nového stavu a chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objekt - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje rozšíření jeho komponenty runtime InstanceContext přidáním nového stavu a chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objekt - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
   
 -   IExtensibleObject\<T > rozhraní je implementováno modulem objekty, které umožňují rozšíření, které přizpůsobit jejich funkce.  
   
@@ -290,7 +292,7 @@ public void Initialize(InstanceContext instanceContext, Message message)
   
  Jak bylo popsáno dříve ID kontextu je pro čtení z `Properties` kolekce `Message` třídy a předaný konstruktoru třídy extension. Tento příklad ukazuje, jak nelze vyměňovat informace mezi vrstvami konzistentním způsobem.  
   
- Další důležitý krok přepisují proces vytvoření instance služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Umožňuje implementace chování vlastní vytváření instancí a jejich zapojování až modulu runtime použijte rozhraní IInstanceProvider. Nové `InstanceProvider` implementaci třídy chcete tuto úlohu. V konstruktoru byla přijata od instance zprostředkovatele je očekáván typ služby. To se později používá k vytvoření nové instance. V `GetInstance` implementace instance Správce úložiště je vytvořena hledá trvalou instance. Vrátí-li `null` pak novou instanci typu služby vytvořena a vrácena volajícímu.  
+ Další důležitý krok přepisují proces vytvoření instance služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Umožňuje implementace chování vlastní vytváření instancí a jejich zapojování až modulu runtime použijte rozhraní IInstanceProvider. Nové `InstanceProvider` implementaci třídy chcete tuto úlohu. V konstruktoru byla přijata od instance zprostředkovatele je očekáván typ služby. To se později používá k vytvoření nové instance. V `GetInstance` implementace instance Správce úložiště je vytvořena hledá trvalou instance. Vrátí-li `null` pak novou instanci typu služby vytvořena a vrácena volajícímu.  
   
 ```  
 public object GetInstance(InstanceContext instanceContext, Message message)  
