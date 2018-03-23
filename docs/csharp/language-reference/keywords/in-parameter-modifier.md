@@ -1,5 +1,5 @@
 ---
-title: "v – modifikátor parametrů (referenční dokumentace jazyka C#)"
+title: v – modifikátor parametrů (referenční dokumentace jazyka C#)
 ms.date: 03/06/2018
 ms.prod: .net
 ms.technology:
@@ -10,11 +10,11 @@ helpviewer_keywords:
 - in parameters [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 035aac3e6b902f607e533b709713eb1d07c9774a
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 9b8b21e2bdc95829c831ee71f24b47986321b7d0
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v – modifikátor parametrů (referenční dokumentace jazyka C#)
 
@@ -60,7 +60,10 @@ Nelze použít `in`, `ref`, a `out` klíčová slova pro následující typy met
   
 - Iterator metody, které zahrnují [yield vrátit](../../../csharp/language-reference/keywords/yield.md) nebo `yield break` příkaz.  
 
-Obvykle deklarovat `in` argumenty, aby se zabránilo operace kopírování, která je nezbytná k předání argumentů hodnotou. To je velmi užitečné, když jsou argumenty struktury nebo pole struktur.
+Obvykle deklarovat `in` argumenty, aby se zabránilo operace kopírování, která je nezbytná k předání argumentů hodnotou. To je velmi užitečné, když argumenty jsou typy hodnot, jako je například struktury, kde jsou dražší než předání odkazem operace kopírování.
+
+> [!WARNING]
+>  `in` Parametry může být i dražší, pokud došlo ke zneužití. Kompilátor nemusí vědět, pokud člen metody upravit stav struct. Vždy, když kompilátor nebude moct zajistit, že objekt se nemění, obranu vytvoří kopii a volá člen odkazů pomocí tuto kopii. Všechny možné změny se na tuto Obranným kopii. Dva způsoby, aby se zabránilo tyto kopie jsou předat `in` parametry jako `in` argumenty nebo k definování struktury jako `readonly struct`.
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
@@ -69,4 +72,5 @@ Obvykle deklarovat `in` argumenty, aby se zabránilo operace kopírování, kter
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Parametry metody](../../../csharp/language-reference/keywords/method-parameters.md)
+ [Parametry metody](../../../csharp/language-reference/keywords/method-parameters.md)  
+ [Odkaz na sémantiku s typy hodnot](../../../csharp/reference-semantics-with-value-types.md)

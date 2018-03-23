@@ -1,6 +1,6 @@
 ---
-title: "Odkaz na sémantiku s typy hodnot"
-description: "Porozumět funkcím jazyk, které bezpečně minimalizovat kopírování struktury"
+title: Odkaz na sémantiku s typy hodnot
+description: Porozumět funkcím jazyk, které bezpečně minimalizovat kopírování struktury
 author: billwagner
 ms.author: wiwagn
 ms.date: 11/10/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 6e40907cab2aabcf8c8321819c99298314bcfbc5
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 8a0cfe83200d50eefa9b01ab51591a5fe0703ec0
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="reference-semantics-with-value-types"></a>Odkaz na sémantiku s typy hodnot
 
@@ -110,6 +110,22 @@ Cílem zachování `ref struct` zadejte jako proměnnou přidělené zásobníku
 - Nelze zachytit `ref struct` proměnných v výrazy lambda nebo lokální funkce.
 
 Tato omezení Ujistěte se, že nepoužíváte omylem `ref struct` způsobem, který může podporovat spravovaná halda.
+
+## <a name="readonly-ref-struct-type"></a>`readonly ref struct` Typ
+
+Deklarace struktury jako `readonly ref` kombinuje výhody a omezení `ref struct` a `readonly struct` delcarations. 
+
+Následující příklad ukazuje deklaraci `readonly ref struct`.
+
+```csharp
+readonly ref struct ReadOnlyRefPoint2D
+{
+    public int X { get; }
+    public int Y { get; }
+    
+    ReadOnlyRefPoint2D(int x, int y) => (X, Y) = (x, y);
+}
+```
 
 ## <a name="conclusions"></a>Závěrů
 

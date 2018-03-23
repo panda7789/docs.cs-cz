@@ -12,14 +12,16 @@ helpviewer_keywords:
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc14d090951f12fd322b90fababa064d1f5b4e80
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: e66ec709a32b39e2e7427d6ce165f62212dac543
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic – možnosti kompilátoru uvedené podle kategorie
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru příkazového řádku je k dispozici jako alternativu k kompilace programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Tady je seznam [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] možnosti příkazového řádku kompilátoru seřazené podle kategorie funkční.  
+Visual Basic – kompilátor příkazového řádku je k dispozici jako alternativu k kompilace programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazené podle kategorie funkční.  
+
+[!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 ## <a name="compiler-output"></a>Výstup kompilátoru  
   
@@ -45,6 +47,8 @@ ms.lasthandoff: 03/22/2018
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Proces dokumentační komentáře do souboru XML.|  
 |[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Určuje výstupní soubor.|  
+|[-refonly](refonly-compiler-option.md)|Výstupy referenční sestavení.|
+|[-refout](refout-compiler-option.md)|Určuje cestu výstupního referenční sestavení.|
 |[-target](../../../visual-basic/reference/command-line-compiler/target.md)|Určuje formát výstupu.|  
   
 ## <a name="net-assemblies"></a>Sestavení .NET  
@@ -113,7 +117,7 @@ ms.lasthandoff: 03/22/2018
 |[@ (určení souboru odezvy)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|Určuje soubor odezvy.|  
 |[-baseaddress](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|Určuje základní adresy knihovny DLL.|  
 |[-codepage](../../../visual-basic/reference/command-line-compiler/codepage.md)|Určuje znakovou stránku pro všechny soubory zdrojového kódu v kompilace.|  
-|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Určuje, jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru by měl zprávy o chybách interní kompilátoru.|  
+|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Určuje, jak by měla Visual Basic – kompilátor zprávy o chybách interní kompilátoru.|  
 |[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|Informuje jádro systému Windows, jestli konkrétní spustitelný soubor podporuje vysokou entropie místo rozložení náhodného přeskupování (technologie ASLR) adres.|  
 |[-main](../../../visual-basic/reference/command-line-compiler/main.md)|Určuje třídu, která obsahuje `Sub Main` postupu se má provést při spuštění.|  
 |[-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|Nejde kompilovat s Vbc.rsp|  
@@ -130,6 +134,6 @@ ms.lasthandoff: 03/22/2018
   
 ## <a name="see-also"></a>Viz také  
  [Možnosti kompilátoru jazyka Visual Basic abecední](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
- [Úvod do Návrhář projektu](http://msdn.microsoft.com/library/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
+ [Úvod do Návrhář projektu](https://msdn.microsoft.com/en-us/library/898dd854-c98d-430c-ba1b-a913ce3c73d7(v=vs.100))  
  [Možnosti kompilátoru jazyka C# (abecední pořadí)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
  [Možnosti kompilátoru jazyka C# uvedené podle kategorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)

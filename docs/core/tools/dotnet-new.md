@@ -1,22 +1,19 @@
 ---
-title: "nový příkaz DotNet - .NET Core rozhraní příkazového řádku"
-description: "Nový příkaz dotnet vytvoří nové projekty .NET Core na základě zadané šablony."
-keywords: "DotNet nové rozhraní příkazového řádku, rozhraní příkazového řádku příkaz .NET Core"
+title: nový příkaz DotNet - .NET Core rozhraní příkazového řádku
+description: Nový příkaz dotnet vytvoří nové projekty .NET Core na základě zadané šablony.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/13/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: ea94c875ae6fe82d0e5d35ba8ca3fd47971fbbe6
-ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
+ms.openlocfilehash: 2cbd42195d0ec713d2ccb4af823075ece950ceff
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/13/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
@@ -55,7 +52,7 @@ Příkaz volání [modulu šablon](https://github.com/dotnet/templating) vytvoř
 
 Šablona pro vytvoření instance při vyvolání příkazu. Každá šablona může mít specifické možnosti, které lze předat. Další informace najdete v tématu [možnosti šablony](#template-options).
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 
 Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalované .NET Core 2.0 SDK. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
@@ -101,7 +98,7 @@ Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -all` získa
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 
 `--force`
 
@@ -113,7 +110,9 @@ Vytiskne nápovědy pro příkaz. Nelze vyvolat pro `dotnet new` příkaz sám s
 
 `-i|--install <PATH|NUGET_ID>`
 
-Nainstaluje sadu zdroje nebo šablony z `PATH` nebo `NUGET_ID` zadat. Informace o vytváření vlastních šablon najdete v tématu [vlastních šablon pro dotnet nové](custom-templates.md).
+Nainstaluje sadu zdroje nebo šablony z `PATH` nebo `NUGET_ID` zadat. Pokud chcete nainstalovat zkušební verzi balíčku šablony, je třeba zadat ve formátu verze `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` předá \* pro verzi, která představuje poslední stabilní balíčku verze. Prohlédněte si příklad na [příklady](#examples) části.
+
+Informace o vytváření vlastních šablon najdete v tématu [vlastních šablon pro dotnet nové](custom-templates.md).
 
 `-l|--list`
 
@@ -175,11 +174,11 @@ Umístění pro generovaný výstup. Výchozí je aktuální adresář.
 
 Každá šablona projektu může mít další možnosti, které jsou k dispozici. Základní šablony mají následující možnosti:
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 
 **konzole úhlová, reagovat, reactredux**
 
-`--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
+  `--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
 **classlib**
 
@@ -322,6 +321,10 @@ Vytvoření nové aplikace xUnit cílení na rozhraní .NET 2.0 jádra:
 Seznam všech šablon, které jsou k dispozici pro MVC:
 
 `dotnet new mvc -l`
+
+Instalace verze 2.0 šablon jedné stránky aplikace ASP.NET Core (příkaz možnost k dispozici pro .NET Core SDK 1.1 a pouze novější verze):
+
+`dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0`
 
 ## <a name="see-also"></a>Viz také
 

@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic – kompilátor příkazového řádku"
+title: Visual Basic – kompilátor příkazového řádku
 ms.date: 02/20/2018
 ms.prod: .net
 ms.technology:
@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 6b57c444-50c7-4b88-8f59-ed65cff5e05c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3b1219a5965352057ab6fe564282394e14f6d063
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 1a2f03a62488b746b623b7ead94c122b40178a97
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="visual-basic-command-line-compiler"></a>Visual Basic – kompilátor příkazového řádku
 
 Kompilátor příkazového řádku jazyka Visual Basic představuje alternativu ke kompilace programů z v sadě Visual Studio integrované vývojové prostředí (IDE). Tato část obsahuje popis pro možnosti kompilátoru jazyka Visual Basic.
 
-Každý – možnost kompilátoru je k dispozici ve dvou formách:-možnost a/Option. V jazyce Visual Basic dokumentaci se zobrazí pouze/Option formuláře.
+[!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 ## <a name="in-this-section"></a>V tomto oddílu
 

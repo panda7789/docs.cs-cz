@@ -1,5 +1,5 @@
 ---
-title: "ref (Referenční dokumentace jazyka C#)"
+title: ref (Referenční dokumentace jazyka C#)
 ms.date: 03/06/2018
 ms.prod: .net
 ms.technology:
@@ -13,11 +13,11 @@ helpviewer_keywords:
 - ref keyword [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 427045317e9d7d0fe3435a486b9f761908ab5e78
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 63f984f4004cfce9694e7e7405ec2477bc370731
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 
 - V podpis metody, bude vrácena hodnota volajícímu odkazem. V tématu [návratové hodnoty odkaz](#reference-return-values) Další informace.
 
-- V člen textu, k označení, že návratovou hodnotu odkazu ukládají se místně jako odkaz, který má volající v úmyslu upravit. V tématu [místní hodnoty Ref](#ref-locals) Další informace.
+- V těle na člen znamenat, že odkaz návratovou hodnotu uložena místně jako pomůcku, kterou chce změnit volající nebo obecně platí, místní proměnné používá jinou hodnotu odkazem. V tématu [místní hodnoty Ref](#ref-locals) Další informace.
 
 ## <a name="passing-an-argument-by-reference"></a>Předáním argumentu podle reference
 
@@ -109,7 +109,13 @@ Například následující příkaz definuje ref místní hodnotu, která vrát�
 ref decimal estValue = ref Building.GetEstimatedValue();
 ```
 
-Všimněte si, že `ref` – klíčové slovo se musí použít v obou místech nebo kompilátor vygeneruje chyba CS8172, "Nelze inicializovat proměnnou podle odkazu s hodnotou". 
+Hodnotu můžete přejít pomocí odkazu stejným způsobem. V některých případech přístup k hodnotu odkazem zvyšuje výkon vyhnout potenciálně nákladné kopírování. Například následující příkaz ukazuje, jak jeden můžete definovat ref místní hodnotu, která slouží k odkazování hodnotu.
+
+```csharp
+ref VeryLargeStruct reflocal = ref veryLargeStruct;
+```
+
+Všimněte si, že v obou příkladech `ref` – klíčové slovo se musí použít v obou místech nebo kompilátor vygeneruje chyba CS8172, "Nelze inicializovat proměnnou podle odkazu s hodnotou". 
  
 ## <a name="a-ref-returns-and-ref-locals-example"></a>A vrátí ref a ref místní hodnoty – příklad
 

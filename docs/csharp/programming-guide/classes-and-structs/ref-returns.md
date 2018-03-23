@@ -1,6 +1,6 @@
 ---
-title: "Návratové hodnoty REF a ref lokální proměnné (Průvodce C#)"
-description: "Zjistěte, jak definovat a použijte ref vrátit a místní hodnoty ref"
+title: Návratové hodnoty REF a ref lokální proměnné (Průvodce C#)
+description: Zjistěte, jak definovat a použijte ref vrátit a místní hodnoty ref
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/23/2017
@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: a74563c0d24b6cd2a2fa8534787f078f3cc92674
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: c37c6dd61ae02813bcc467982f3b175da9136e4a
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="ref-returns-and-ref-locals"></a>Vrátí REF a místní hodnoty ref
 
@@ -85,7 +85,15 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 
 Následné použití `p` je stejný jako použití proměnné vrácený `GetContactInformation` protože `p` je alias pro tuto proměnnou. Změny `p` změnit také proměnnou, kterou vrátil `GetContactInformation`.
 
-Všimněte si, že `ref` – klíčové slovo se používá i před místní deklarace proměnné *a* před voláním metody. Nepodařilo se současně obsahovat `ref` klíčová slova v deklarace proměnné a přiřazení má za následek chyby kompilátoru CS8172, "nelze inicializovat proměnnou podle odkazu s hodnotou." 
+Všimněte si, že `ref` – klíčové slovo se používá i před místní deklarace proměnné *a* před voláním metody. 
+
+Hodnotu můžete přejít pomocí odkazu stejným způsobem. V některých případech přístup k hodnotu odkazem zvyšuje výkon vyhnout potenciálně nákladné kopírování. Například následující příkaz ukazuje, jak jeden můžete definovat ref místní hodnotu, která slouží k odkazování hodnotu.
+
+```csharp
+ref VeryLargeStruct reflocal = ref veryLargeStruct;
+```
+
+Všimněte si, že `ref` – klíčové slovo se používá i před místní deklarace proměnné *a* před hodnotu v druhém příkladu. Nepodařilo se současně obsahovat `ref` klíčová slova v deklarace proměnné a přiřazení v obou příklady výsledkem chyba kompilátoru CS8172, "nelze inicializovat proměnnou podle odkazu s hodnotou." 
  
 ## <a name="ref-returns-and-ref-locals-an-example"></a>Vrátí REF a místní hodnoty ref: příklad
 
@@ -101,4 +109,5 @@ Bez podpory pro odkaz vrácené hodnoty tyto operace obvykle provádí vrácení
  
 ## <a name="see-also"></a>Viz také
 
-[REF – klíčové slovo](../../language-reference/keywords/ref.md)
+[REF – klíčové slovo](../../language-reference/keywords/ref.md)  
+[Odkaz na sémantiku s typy hodnot](../../../csharp/reference-semantics-with-value-types.md)

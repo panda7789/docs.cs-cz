@@ -12,14 +12,16 @@ helpviewer_keywords:
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 008a1619343874396e22c3606f8a0aeadd81cd7a
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 4c78246a1e9fe14b0ba64ac447293d02e8416079
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru jazyka Visual Basic abecední
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru příkazového řádku je k dispozici jako alternativu k kompilace programů z [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Tady je seznam [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] možnosti příkazového řádku kompilátoru abecedním řazení.  
+Visual Basic – kompilátor příkazového řádku je k dispozici jako alternativu k kompilace programů z [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Následuje seznam řadí abecedně možnosti příkazového řádku kompilátoru jazyka Visual Basic.  
+
+[!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 |Možnost|Účel|  
 |------------|-------------|  
@@ -36,9 +38,9 @@ ms.lasthandoff: 03/22/2018
 |[-define](../../../visual-basic/reference/command-line-compiler/define.md)|Definuje symboly pro Podmíněná kompilace.|  
 |[-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)|Určuje, zda bude sestavení zcela nebo částečně podepsáno.|  
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Zpracuje dokumentační komentáře do souboru XML.|  
-|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Určuje, jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru by měl zprávy o chybách interní kompilátoru.|  
+|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Určuje, jak by měla Visual Basic – kompilátor zprávy o chybách interní kompilátoru.|  
 |[-filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|Určuje, kde chcete-li zarovnat na části výstupní soubor.|  
-|[-help](../../../visual-basic-reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejné jako zadání `-?` možnost. Dojde k žádné kompilace.|  
+|[-help](../../../visual-basic/reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejné jako zadání `-?` možnost. Dojde k žádné kompilace.|  
 |[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|Určuje, jestli konkrétní spustitelný soubor podporuje vysokou entropie místo rozložení náhodného přeskupování (technologie ASLR) adres.|  
 |[-imports](../../../visual-basic/reference/command-line-compiler/imports.md)|Importuje oboru názvů ze zadaného sestavení.|  
 |[-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|Určuje název kontejneru klíčů pro pár klíčů umožnit sestavení silným názvem.|  
@@ -67,6 +69,8 @@ ms.lasthandoff: 03/22/2018
 |[-quiet](../../../visual-basic/reference/command-line-compiler/quiet.md)|Zabrání zobrazení kódu syntaxe související chyby a upozornění kompilátoru.|  
 |[-recurse](../../../visual-basic/reference/command-line-compiler/recurse.md)|Vyhledá podadresáře pro zdrojové soubory pro kompilaci.|  
 |[-reference](../../../visual-basic/reference/command-line-compiler/reference.md)|Naimportuje metadata ze sestavení.|  
+|[-refonly](refonly-compiler-option.md)|Výstupy referenční sestavení.|
+|[-refout](refout-compiler-option.md)|Určuje cestu výstupního referenční sestavení.|
 |[-removeintchecks](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|Zakáže kontrola přetečení celé číslo.|  
 |[-resource](../../../visual-basic/reference/command-line-compiler/resource.md)|Vloží spravovaných prostředků v sestavení.|  
 |[-rootnamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|Určuje obor názvů pro všechny deklarace typu.|  

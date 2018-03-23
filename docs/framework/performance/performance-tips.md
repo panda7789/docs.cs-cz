@@ -1,13 +1,13 @@
 ---
-title: "Tipy pro zvýšení výkonu rozhraní .NET"
-ms.custom: 
+title: Tipy pro zvýšení výkonu rozhraní .NET
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - C# language, performance
@@ -15,17 +15,17 @@ helpviewer_keywords:
 - Visual Basic, performance
 - performance [Visual Basic]
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
-caps.latest.revision: 
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 manager: wpickett
 ms.workload:
 - wiwagn
-ms.openlocfilehash: cad50862d5ed05dd13c3f73f50af0c466ad930cd
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: ac1f5b9e0897650751320a7f5a9290c378d428b6
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
 Termín *výkonu* obvykle odkazuje na rychlost zpracování programu. Rychlost provádění někdy zvýšíte následující některých základních pravidel ve zdrojovém kódu. V některých aplikacích je důležité, abyste pečlivě zkontrolujte kód a použít profilery a ujistěte se, zda je spuštěna co nejrychleji. V jiných programů nemáte provést tyto optimalizace, protože je kód spuštěn přijatelně rychlé, jako je zapsán. V tomto článku jsou uvedené některé běžné oblasti, kde můžete sníží výkon a tipy pro zlepšení ho a také odkazy na témata další výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)  
@@ -48,10 +48,10 @@ Termín *výkonu* obvykle odkazuje na rychlost zpracování programu. Rychlost p
 -   [Základní informace o systém uvolňování paměti a výkon pomocné parametry](http://go.microsoft.com/fwlink/?LinkId=99296)  
   
 -   [Tipy pro zvýšení výkonu a triky v aplikacích .NET](http://go.microsoft.com/fwlink/?LinkId=99297)  
-  
--   [Uvnitř diagnostické nástroje pro .NET](http://go.microsoft.com/fwlink/?LinkId=112407)  
-  
+
 -   [Tidbits Portoriku Mariani výkonu](http://go.microsoft.com/fwlink/?LinkId=115679)  
+
+-   [Blog hovou Morrison](https://blogs.msdn.microsoft.com/vancem/)
   
 ## <a name="see-also"></a>Viz také  
  [Výkon](../../../docs/framework/performance/index.md)  
