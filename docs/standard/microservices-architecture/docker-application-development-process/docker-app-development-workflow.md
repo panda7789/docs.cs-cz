@@ -1,7 +1,7 @@
 ---
-title: "Pracovní postup vývoje pro Docker aplikace"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Pracovní postup vývoje pro Docker aplikace"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Pracovní postup vývoje pro Docker aplikace
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Pracovní postup vývoje pro Docker aplikace
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8537b1db27f512ec0bfc2f23589efe8199ca3287
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 9c3df50430117936fd0b9d4390cb84e02085e48d
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje pro Docker aplikace
 
@@ -69,7 +69,7 @@ Kódování svoji aplikaci v prostý .NET (obvykle v .NET Core, pokud máte v ú
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Začínáme s CE Docker pro systém Windows**
+-   **Začínáme s Docker CE pro Windows**
     [*https://docs.docker.com/docker-for-windows/*](https://docs.docker.com/docker-for-windows/)
 
 -   **Visual Studio 2017**
@@ -351,7 +351,7 @@ Pro [DC/OS](https://mesosphere.com/blog/2015/09/02/dcos-cli-command-line-tool-da
 
 ## <a name="step-6-test-your-docker-application-using-your-local-docker-host"></a>Krok 6. Testování aplikace Docker pomocí vašeho místního hostitele Docker
 
-Tento krok se bude lišit v závislosti na tom, co je to vaše aplikace. Ve jednoduché rozhraní .NET Core webové aplikaci, která je nasazena jako jediný kontejner nebo služby mají přístup ke službě otevřením prohlížeče na hostiteli Docker a přejdete na tuto lokalitu, jak je znázorněno v obrázek 5 – 13. (Pokud se konfigurace v soubor Docker mapuje kontejneru na port hostitele, který je jakoukoli jinou hodnotu než 80, zahrnují hostitele se po v adrese URL.)
+Tento krok se bude lišit v závislosti na tom, co je to vaše aplikace. Ve jednoduché rozhraní .NET Core webové aplikaci, která je nasazena jako jediný kontejner nebo služby mají přístup ke službě otevřením prohlížeče na hostiteli Docker a přejdete na tuto lokalitu, jak je znázorněno v obrázek 5 – 13. (Pokud se konfigurace v soubor Docker mapuje kontejneru na port hostitele, který je jakoukoli jinou hodnotu než 80, zahrnují port hostitele v adrese URL.)
 
 ![](./media/image18.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "Co je nového v rozhraní .NET Framework"
+title: Co je nového v rozhraní .NET Framework
 ms.custom: updateeachrelease
 ms.date: 05/02/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 86f1884749b5fdf93254985ab3e163dca0562648
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: 93c08633af1b4bb46afe9e382066f523c9923a9b
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -192,7 +192,7 @@ Od verze .NET Framework 4.7, ASP.NET přidá novou sadu rozhraní API, která um
 <a name="wcf47" />
 #### <a name="windows-communication-foundation-wcf"></a>Windows Communication Foundation (WCF)
 
-Windows Communication Foundation (WFC) přidává tyto funkce a změny:
+Windows Communication Foundation (WCF) přidává tyto funkce a změny:
 
 **Umožňuje nakonfigurovat výchozí nastavení zabezpečení zprávy do protokolu TLS 1.1 a TLS 1.2**
 
@@ -246,7 +246,7 @@ WPF je tisk rozhraní API v <xref:System.Printing.PrintQueue?displayProperty=nam
 
 - [Znak kategorií](#Strings)
 
-- [Kryptografie](#Crypto462)
+- [Cryptography](#Crypto462)
 
 - [SqlClient](#SQLClient)
 
@@ -254,7 +254,7 @@ WPF je tisk rozhraní API v <xref:System.Printing.PrintQueue?displayProperty=nam
 
 - [Windows Presentation Foundation (WPF)](#WPF462)
 
-- [Modelu Windows Workflow Foundation (WF)](#WF462)
+- [Windows Workflow Foundation (WF)](#WF462)
 
 - [ClickOnce](#ClickOnce)
 
@@ -398,8 +398,8 @@ End Function
 
 |ECDiffieHellman – metoda|Popis|
 |----------------------------|-----------------|
-|<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHash%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí vzorce<br /><br /> Hodnoty HASH (secretPrepend &#124; &#124; *x* &#124; &#124; secretAppend)<br /><br /> Hodnota HASH (secretPrepend orelse – *x* orelse – secretAppend)<br /><br /> kde *x* je počítaný výsledkem algoritmu Diffie-Hellman ES.|
-|<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí vzorce<br /><br /> Metoda HMAC (hmacKey, secretPrepend &#124; &#124; *x* &#124; &#124; secretAppend)<br /><br /> Metoda HMAC (hmacKey secretPrepend orelse – *x* orelse – secretAppend)<br /><br /> kde *x* je počítaný výsledkem algoritmu Diffie-Hellman ES.|
+|<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHash%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí vzorce<br /><br /> Hodnota HASH (secretPrepend &#124; &#124; *x* &#124; &#124; secretAppend)<br /><br /> Hodnota HASH (secretPrepend orelse – *x* orelse – secretAppend)<br /><br /> kde *x* je počítaný výsledkem algoritmu Diffie-Hellman ES.|
+|<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí vzorce<br /><br /> Metoda HMAC (hmacKey secretPrepend &#124; &#124; *x* &#124; &#124; secretAppend)<br /><br /> Metoda HMAC (hmacKey secretPrepend orelse – *x* orelse – secretAppend)<br /><br /> kde *x* je počítaný výsledkem algoritmu Diffie-Hellman ES.|
 |<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyTls%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí algoritmu odvození TLS Pseudonáhodná funkce (PRF).|
 
  **Podpora pro trvalé klíče symetrického šifrování** kryptografie knihovny systému Windows (CNG) přidaná podpora pro ukládání trvalou symetrické klíče a pomocí hardwaru uložené symetrické klíče a [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] mades možné pro vývojáře, aby Pomocí této funkce.  Vzhledem k tomu, že pojem názvy klíčů a klíče zprostředkovatele je specifický pro implementace, použití této funkce vyžaduje využitím konstruktoru konkrétní implementaci typů místo upřednostňované factory přístup (například volání `Aes.Create`).
@@ -468,19 +468,19 @@ End Function
 
  Přidání nové `PoolBlockingPeriod` – klíčové slovo umožňuje vyberte blokování období nejvhodnější pro vaši aplikaci. Hodnoty:
 
- `Auto`Je zakázané fondu připojení blokování období pro aplikaci, která se připojuje k databázi SQL Azure a je povolená fondu připojení blokování období pro aplikaci, která se připojuje k jiné instanci serveru SQL Server. Jedná se o výchozí hodnotu. Pokud název koncového bodu serveru skončí s žádným z následujících, jsou považovány za databází SQL Azure:
+ `Auto` Je zakázané fondu připojení blokování období pro aplikaci, která se připojuje k databázi SQL Azure a je povolená fondu připojení blokování období pro aplikaci, která se připojuje k jiné instanci serveru SQL Server. Jedná se o výchozí hodnotu. Pokud název koncového bodu serveru skončí s žádným z následujících, jsou považovány za databází SQL Azure:
 
-- . database.windows.net
+- .database.windows.net
 
-- . database.chinacloudapi.cn
+- .database.chinacloudapi.cn
 
-- . database.usgovcloudapi.net
+- .database.usgovcloudapi.net
 
-- . database.cloudapi.de
+- .database.cloudapi.de
 
- `AlwaysBlock`Blokování období fondu připojení je vždy povolena.
+ `AlwaysBlock` Blokování období fondu připojení je vždy povolena.
 
- `NeverBlock`Blokování období fondu připojení je k dispozici.
+ `NeverBlock` Blokování období fondu připojení je k dispozici.
 
  **Vylepšení funkce Always Encrypted** SQLClient zavádí dvě vylepšení funkce Always Encrypted:
 
@@ -522,7 +522,7 @@ AppContext.SetSwitch(disableCngCertificates, False)
 </runtime>
 ```
 
-Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objektu používá <xref:System.TimeZoneInfo> zadejte místo <xref:System.TimeZone> typ k deserializaci data a času. <xref:System.TimeZoneInfo>podporuje více pravidel úpravy, které umožňuje pracovat s daty historické časové pásmo;   <xref:System.TimeZone> neexistuje.
+Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objektu používá <xref:System.TimeZoneInfo> zadejte místo <xref:System.TimeZone> typ k deserializaci data a času. <xref:System.TimeZoneInfo> podporuje více pravidel úpravy, které umožňuje pracovat s daty historické časové pásmo;   <xref:System.TimeZone> neexistuje.
 
 Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pásmo, najdete v části [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).
 
@@ -547,7 +547,7 @@ Výsledkem je řetězec serializovaných čas "03:00:00.0000000-08:00" pro syst�
 </runtime>
 ```
 
-Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objektu používá <xref:System.TimeZoneInfo> zadejte místo <xref:System.TimeZone> typ k deserializaci data a času. <xref:System.TimeZoneInfo>podporuje více pravidel úpravy, které umožňuje pracovat s daty historické časové pásmo;   <xref:System.TimeZone> neexistuje.
+Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objektu používá <xref:System.TimeZoneInfo> zadejte místo <xref:System.TimeZone> typ k deserializaci data a času. <xref:System.TimeZoneInfo> podporuje více pravidel úpravy, které umožňuje pracovat s daty historické časové pásmo;   <xref:System.TimeZone> neexistuje.
 
 Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pásmo, najdete v části [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).
 
@@ -626,7 +626,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
  **Podpora pro výrazy jazyka C# a IntelliSense v Návrháři WF Re-hosted** začínající [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], WF podporuje výrazy jazyka C# v obou návrháři sady Visual Studio a v pracovních postupech kódu. Re-hosted návrháře pracovních postupů je klíčovou funkcí WF, které umožňuje návrháře pracovních postupů v aplikaci mimo Visual Studio (například v grafickém subsystému WPF).  Windows Workflow Foundation nabízí možnost podpory výrazy jazyka C# a IntelliSense v Návrháři pracovních postupů Re-hosted. Další informace najdete v tématu [modelu Windows Workflow Foundation blog](http://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
 
- `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`Ve verzích rozhraní .NET Framework před verzí [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], IntelliSense návrhář WF je poškozená, pokud zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio. Při sestavení projektu je úspěšné, typy pracovního postupu nebyly nalezeny v designeru a zobrazí upozornění IntelliSense pro chybějící typy pracovního postupu v **seznam chyb** okno. [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] Řeší tento problém a zpřístupní IntelliSense.
+ `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` Ve verzích rozhraní .NET Framework před verzí [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], IntelliSense návrhář WF je poškozená, pokud zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio. Při sestavení projektu je úspěšné, typy pracovního postupu nebyly nalezeny v designeru a zobrazí upozornění IntelliSense pro chybějící typy pracovního postupu v **seznam chyb** okno. [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] Řeší tento problém a zpřístupní IntelliSense.
 
  **Pracovní postup aplikace V1 s pracovního postupu pro sledování na nyní spustit v režimu FIPS** počítače s režimu dodržování standardů FIPS povolené teď můžete úspěšně spustit pracovní postup verze 1-style aplikace s pracovním postupem sledování. Chcete-li povolit tento scénář, musíte provést následující změny do souboru app.config:
 
@@ -664,7 +664,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 ## <a name="whats-new-in-the-net-framework-461"></a>Co je nového v rozhraní .NET Framework 4.6.1
  [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] Obsahuje nové funkce v těchto oblastech:
 
-- [Kryptografie](#Crypto)
+- [Cryptography](#Crypto)
 
 - [ADO.NET](#ADO.NET461)
 
@@ -944,11 +944,11 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
         }
         ```
 
-         Je vhodné použít konzistentní formát pro přepínače, protože jsou formální smlouvu vystavené knihovny. Níže jsou uvedeny dva zjevné formáty.
+         Je vhodné použít konzistentní formát pro přepínače, protože jsou formální smlouvu vystavené knihovny. Níže jsou uvedeny dva zřejmé formáty.
 
-        - *Přepínač*. *obor názvů*. *názevpřepínače*
+        - *Switch*.*namespace*.*switchname*
 
-        - *Přepínač*. *Knihovna*. *názevpřepínače*
+        - *Přepínač*.* Knihovna*.* názevpřepínače*
 
     - **Změny se asynchronním vzorem (TAP) založený na úlohách**
 
@@ -1045,7 +1045,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
             </appSettings>
             ```
 
-- **Modelu Windows Workflow Foundation (WWF)**
+- **Windows Workflow Foundation (WWF)**
 
      Nyní můžete určit počet sekund, po které služby pracovního postupu bude obsahovat na žádost o operaci pořadí se na více systémů, když dojde nezpracovaných záložek (bez protocol) před vypršením časového limitu požadavku. Záložka (bez protocol) je záložka, která nesouvisí se zbývající Receive aktivity. Některé aktivity vytvořit jiný protokol záložky v jejich provedení, proto nemusí být zřejmé, zda existuje jiný protokol záložky. Mezi ně patří, stavu a vybrat. Pokud máte implementováno s stavový stroj služby pracovních postupů nebo jste obsahující vybrat aktivity, bude s největší pravděpodobností proto máte jiný protokol záložky. Zadejte interval přidáním jako následující řádek `appSettings` části souboru app.config:
 
@@ -1134,7 +1134,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 - **Změna velikosti v ovládacích prvcích Windows Forms.** Tato funkce se rozšířila. Nyní můžete nastavení DPI systému ke změně velikosti součástí tyto doplňkové ovládací prvky (například šipku rozevíracího seznamu v polích se seznamem):
 
-     <xref:System.Windows.Forms.ComboBox>    <xref:System.Windows.Forms.ToolStripComboBox>    <xref:System.Windows.Forms.ToolStripMenuItem>    <xref:System.Windows.Forms.Cursor>    <xref:System.Windows.Forms.DataGridView>    <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
+     <xref:System.Windows.Forms.ComboBox> <xref:System.Windows.Forms.ToolStripComboBox> <xref:System.Windows.Forms.ToolStripMenuItem> <xref:System.Windows.Forms.Cursor> <xref:System.Windows.Forms.DataGridView> <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
 
      Toto je funkce přihlášení. Chcete-li ji povolit, nastavte `EnableWindowsFormsHighDpiAutoResizing` element `true` v souboru aplikace (app.config) konfigurace:
 
@@ -1166,7 +1166,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 - **Podpora transakcí a převodu na trvanlivý zařazení**
 
-     <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType>nové rozhraní API přidání do rozhraní .NET Framework 4.5.2 a 4.6:
+     <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> nové rozhraní API přidání do rozhraní .NET Framework 4.5.2 a 4.6:
 
     ```csharp
     [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust")]
@@ -1196,7 +1196,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
      Další informace o těchto změnách najdete v tématu [Přenosná knihovna tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
-- Rozhraní .NET Framework obsah nastavit teď obsahuje dokumentaci [!INCLUDE[net_native](../../../includes/net-native-md.md)], což je předkompilace technologie pro vytváření a nasazování aplikací pro Windows. [!INCLUDE[net_native](../../../includes/net-native-md.md)]zkompiluje aplikace přímo do nativního kódu, nikoli do převodního jazyka (IL) pro dosažení vyššího výkonu. Podrobnosti najdete v tématu [kompilování aplikací pomocí .NET Native](../../../docs/framework/net-native/index.md).
+- Rozhraní .NET Framework obsah nastavit teď obsahuje dokumentaci [!INCLUDE[net_native](../../../includes/net-native-md.md)], což je předkompilace technologie pro vytváření a nasazování aplikací pro Windows. [!INCLUDE[net_native](../../../includes/net-native-md.md)] zkompiluje aplikace přímo do nativního kódu, nikoli do převodního jazyka (IL) pro dosažení vyššího výkonu. Podrobnosti najdete v tématu [kompilování aplikací pomocí .NET Native](../../../docs/framework/net-native/index.md).
 
 - [Zdroje referenční dokumentace rozhraní .NET Framework](http://referencesource.microsoft.com/) poskytuje nové možnosti procházení a rozšířené funkce. Teď můžete procházet zdrojový kód rozhraní .NET Framework online, [odkaz na stažení](http://referencesource.microsoft.com/download.html) pro zobrazení v režimu offline a projděte zdroje (včetně oprav a aktualizací) během ladění. Další informace naleznete v příspěvku blogu [nový vzhled pro rozhraní .NET odkaz na zdroj](https://blogs.msdn.microsoft.com/dotnet/2014/02/24/a-new-look-for-net-reference-source/).
 
@@ -1214,7 +1214,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 - Změna velikosti v ovládacích prvcích Windows Forms. Nastavení DPI systému můžete použít ke změně velikosti součásti ovládacích prvků (například ikony, které se zobrazují v tabulce vlastností) podle vyjádření výslovného pomocí položku v konfiguračním souboru aplikace (app.config) pro vaši aplikaci. Tato funkce je aktuálně podporována v následujících ovládací prvky Windows Forms:
 
-     <xref:System.Windows.Forms.PropertyGrid>    <xref:System.Windows.Forms.TreeView>Některé aspekty <xref:System.Windows.Forms.DataGridView> (viz [nové funkce ve verzi 4.5.2](#v452) pro další ovládací prvky podporované)
+     <xref:System.Windows.Forms.PropertyGrid> <xref:System.Windows.Forms.TreeView> Některé aspekty <xref:System.Windows.Forms.DataGridView> (viz [nové funkce ve verzi 4.5.2](#v452) pro další ovládací prvky podporované)
 
      Chcete-li povolit tuto funkci, přidejte nový \<appSettings > element do konfiguračního souboru (app.config) a nastavte `EnableWindowsFormsHighDpiAutoResizing` element `true`:
 
@@ -1228,7 +1228,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 - Návratové hodnoty v ladicím programu sady Visual Studio. Když ladíte spravované aplikaci v [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], v okně se zobrazí automobily vrátit typy a hodnoty pro metody. Tyto informace jsou k dispozici pro stolní počítače, Windows Store a Windows Phone aplikace. Další informace najdete v tématu [vyhledejte návratových hodnot volání metod](http://msdn.microsoft.com/library/e3245b37-8e2e-4200-ba84-133726e95f1f\(v=vs.120\).aspx) v knihovně MSDN.
 
-- Upravit a pokračovat pro 64bitové aplikace. [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)]podporuje funkce upravit a pokračovat pro 64bitové spravované aplikace pro stolní počítače, Windows Store a Windows Phone. Existující omezení zůstávají v platnosti pro 32bitové a 64bitové verze aplikace (naleznete v části poslední [podporované změny kódu (C#)](/visualstudio/debugger/supported-code-changes-csharp) článku).
+- Upravit a pokračovat pro 64bitové aplikace. [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)] podporuje funkce upravit a pokračovat pro 64bitové spravované aplikace pro stolní počítače, Windows Store a Windows Phone. Existující omezení zůstávají v platnosti pro 32bitové a 64bitové verze aplikace (naleznete v části poslední [podporované změny kódu (C#)](/visualstudio/debugger/supported-code-changes-csharp) článku).
 
 - Podporující asynchronní ladění. Aby bylo snazší ladit asynchronní aplikace v [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], zásobník volání skryje kód infrastruktury poskytované kompilátory pro podporu asynchronní programování a také řetězy v logické nadřazené rámce, můžete postupovat podle logické programu provádění více jasně. Okno úlohy nahradí okno paralelních úloh a zobrazí úlohy, které se vztahují ke konkrétní zarážek a také další úlohy, které jsou aktuálně aktivní nebo naplánované v aplikaci. Další informace o této funkci v části "podporující asynchronní ladění" [rozhraní .NET Framework 4.5.1 oznámení](https://blogs.msdn.microsoft.com/dotnet/2013/06/26/announcing-the-net-framework-4-5-1-preview/).
 
@@ -1377,7 +1377,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pás
 
 - Popisy tlačítek editoru XML.
 
-- <xref:System.ServiceModel.ChannelFactory>ukládání do mezipaměti podpory.
+- <xref:System.ServiceModel.ChannelFactory> ukládání do mezipaměti podpory.
 
 - Podpora binární kodér komprese.
 

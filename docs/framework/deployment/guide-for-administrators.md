@@ -1,27 +1,29 @@
 ---
-title: ".NET Framework – průvodce nasazením pro administrátory"
-ms.custom: 
+title: .NET Framework – průvodce nasazením pro administrátory
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-caps.latest.revision: "40"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3af5e301e57350b72ac0ea50448c7a46ca6c5387
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f57b5db5c03030d8cb930355586d0253cae13319
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho závislé součásti systému přes síť pomocí Microsoft System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam softwarové a hardwarové požadavky pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], najdete v části [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -109,9 +111,9 @@ Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCL
   
 4.  Na **balíček** stránky **Průvodce vytvoření balíčku a programu**, zadejte následující informace:  
   
-    -   Jméno:`.NET Framework 4.5`  
+    -   Jméno: `.NET Framework 4.5`  
   
-    -   Výrobce:`Microsoft`  
+    -   Výrobce: `Microsoft`  
   
     -   Jazyk. `English (US)`  
   
@@ -121,7 +123,7 @@ Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCL
   
 7.  Na **programu** stránky **Průvodce vytvoření balíčku a programu**, zadejte následující informace:  
   
-    1.  **Název:**`.NET Framework 4.5`  
+    1.  **Jméno:** `.NET Framework 4.5`  
   
     2.  **Příkazový řádek:** `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage ADMINDEPLOYMENT` (Možnosti příkazového řádku jsou popsané v tabulce po provedení těchto kroků)  
   
@@ -136,7 +138,7 @@ Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCL
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/q**|Nastaví tichý režim. Není vyžadován žádný vstup uživatele a nebude zobrazen žádný výstup.|  
-|**/ norestart**|Zabrání instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, musí restartování počítače zpracovat nástroj Správce konfigurace.|  
+|**/norestart**|Zabrání instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, musí restartování počítače zpracovat nástroj Správce konfigurace.|  
 |**/chainingpackage** *název balíčku*|Určuje název balíčku, který provádí řetězení. Tyto informace, se použije v hlášení Další informace o instalaci relace pro ty, kteří si zaregistrovali [Microsoft zkušeností zlepšování Program uživatelů (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244). Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače; Příklad: **/chainingpackage "Řetězení produkt"**.|  
   
  Podle těchto kroků vytvoříte balíček s názvem .NET Framework 4.5. Program provede nasazení tiché instalace rozhraní .NET Framework 4.5. Při tiché instalaci uživatelé nespolupracuje s proces instalace a k získání návratového kódu a zpracovat restartování; má řetězení aplikace v tématu [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=179606).  
@@ -230,8 +232,7 @@ Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCL
 ### <a name="log-file-locations"></a>Umístění souborů protokolu  
  Následující soubory protokolu jsou generována během [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalace:  
   
- %temp%\Microsoft .NET Framework 4.5*.txt  
- %temp%\Microsoft rozhraní .NET framework 4.5\*.html  
+ %temp%\Microsoft rozhraní .NET framework 4.5*.txt %temp%\Microsoft rozhraní .NET Framework 4.5*.html  
   
  Můžete použít [nástroj kolekce protokol](http://www.microsoft.com/download/details.aspx?id=12493) ke shromažďování [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] soubory protokolu a k vytvoření souboru komprimovaný soubor CAB (.cab), která snižuje velikost souborů.  
   
