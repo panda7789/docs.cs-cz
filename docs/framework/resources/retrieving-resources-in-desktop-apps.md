@@ -1,12 +1,13 @@
 ---
-title: "Načítání prostředků v aplikacích klasické pracovní plochy"
-ms.custom: 
+title: Načítání prostředků v aplikacích klasické pracovní plochy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -25,16 +26,17 @@ helpviewer_keywords:
 - translating resources into languages
 - localizing resources
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
-caps.latest.revision: "22"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b1227aa30d854d736bb24413b37d4722e729b2ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a02d9efcadcc4c7066dba4e55268ab898b6790e8
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s místní zdroje v aplikacích klasické pracovní plochy rozhraní .NET Framework by v ideálním případě prostředky pro výchozí nebo neutrální jazykovou verzi balíčku s hlavní sestavení a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v následující části pro přístup k prostředkům s názvem. Pokud se rozhodnete, že není v hlavní sestavení a satelitní sestavení pro vložení vašich prostředků, můžete taky přejít binární soubory RESOURCES přímo, jak je popsáno v části [načítání prostředky z soubory .resources](#from_file) později v tomto článek.  Načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674) ve službě Windows Dev Center.  
@@ -77,15 +79,15 @@ TimeHeader=Текущее время —
   
 ```  
 resgen strings.txt  
-csc GetString.cs /resource:strings.resources  
+csc GetString.cs -resource:strings.resources  
   
 resgen strings.fr-FR.txt  
 md fr-FR  
-al /embed:strings.fr-FR.resources /culture:fr-FR /out:fr-FR\GetString.resources.dll  
+al -embed:strings.fr-FR.resources -culture:fr-FR -out:fr-FR\GetString.resources.dll  
   
 resgen strings.ru-RU.txt  
 md ru-RU  
-al /embed:strings.ru-RU.resources /culture:ru-RU /out:ru-RU\GetString.resources.dll  
+al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.dll  
 ```  
   
  Pokud aktuální jazykové verze uživatelského rozhraní španělština (Španělsko), Všimněte si, že v příkladu se zobrazí anglickými prostředky, protože nejsou k dispozici prostředky španělštiny a výchozí jazykovou verzi v příkladu je angličtina.  
@@ -111,7 +113,7 @@ CreateResources
   
 resgen AppResources.resx  
   
-csc GetStream.cs /resource:AppResources.resources  
+csc GetStream.cs -resource:AppResources.resources  
 ```  
   
  Následující příklad používá <xref:System.Resources.ResourceManager.GetObject%28System.String%29?displayProperty=nameWithType> metodu pro deserializaci vlastních objektů. Příklad obsahuje zdrojový soubor s názvem UIElements.cs (UIElements.vb jazyka Visual Basic), která definuje následující strukturu s názvem `PersonTable`. Tato struktura je určena pro použití ve zobrazení rutinou obecná tabulka, která zobrazuje lokalizované názvy sloupců tabulky. Všimněte si, že `PersonTable` struktura je označené jako <xref:System.SerializableAttribute> atribut.  
@@ -132,12 +134,12 @@ csc GetStream.cs /resource:AppResources.resources
  Můžete sestavit souboru nezbytné prostředků a sestavení a spuštění aplikace tak, že spustíte následující dávkového souboru. Je nutné použít `/r` možnost zadat Resgen.exe s odkazem na UIElements.dll tak, aby se přístup k informacím o `PersonTable` struktura. Pokud používáte C#, nahraďte `vbc` název kompilátoru s `csc`a nahraďte `.vb` rozšíření s `.cs`.  
   
 ```  
-vbc /t:library UIElements.vb  
-vbc CreateResources.vb /r:UIElements.dll  
+vbc -t:library UIElements.vb  
+vbc CreateResources.vb -r:UIElements.dll  
 CreateResources  
   
-resgen UIResources.resx  /r:UIElements.dll  
-vbc GetObject.vb /r:UIElements.dll /resource:UIResources.resources  
+resgen UIResources.resx  -r:UIElements.dll  
+vbc GetObject.vb -r:UIElements.dll -resource:UIResources.resources  
   
 GetObject.exe  
 ```  

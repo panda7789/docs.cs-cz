@@ -1,11 +1,11 @@
 ---
-title: "Síťové programování v rozhraní .NET Framework"
-ms.custom: 
+title: Síťové programování v rozhraní .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Networking
@@ -13,21 +13,23 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-caps.latest.revision: "24"
+caps.latest.revision: ''
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d702e7c910536566aabfaa7948afb24ae94d2cb1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e51f4464eb39dc12ea50f4a94e55030895866f08
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="network-programming-in-the-net-framework"></a>Síťové programování v rozhraní .NET Framework
 Rozhraní Microsoft .NET Framework poskytuje vícevrstvou rozšiřitelnou a spravovatelnou implementaci internetových služeb, kterou můžete rychle a snadno integrovat do své aplikace. Síťové aplikace mohou stavět na připojitelných protokolech a díky tomu automaticky využívat nové internetové protokoly nebo mohou používat spravovanou implementaci rozhraní soketů systému Windows pro práci se sítí na úrovni soketu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
+
  [Úvod k připojitelným protokolům](../../../docs/framework/network-programming/introducing-pluggable-protocols.md)  
  Popisuje, jak získat přístup ke zdroji v Internetu bez ohledu na přístupový protokol, který vyžaduje.  
   
@@ -144,6 +146,8 @@ Rozhraní Microsoft .NET Framework poskytuje vícevrstvou rozšiřitelnou a spra
  Poskytuje podporu pro konfiguraci ověřování s použitím rozšířené ochrany pro aplikace.  
   
 ## <a name="see-also"></a>Viz také  
+
+ [Zabezpečení TLS (Transport Layer) osvědčené postupy v rozhraní .NET Framework](../../../docs/framework/network-programming/tls.md)  
  [Postupy: Témata programování vizuální vrstvy](../../../docs/framework/network-programming/network-programming-how-to-topics.md)  
  [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Ukázky sítě pro .NET na galerie kódů MSDN](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)  

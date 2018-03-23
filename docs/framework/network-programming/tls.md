@@ -1,6 +1,6 @@
 ---
-title: "Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework"
-description: "Osvědčené postupy zabezpečení TLS (Transport Layer) pomocí rozhraní .NET Framework"
+title: Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework
+description: Osvědčené postupy zabezpečení TLS (Transport Layer) pomocí rozhraní .NET Framework
 ms.date: 03/15/2018
 ms.prod: .net-framework
 ms.topic: article
@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 64829eee5b21a44acb18cbec9b901d77d49cab90
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
+ms.openlocfilehash: b67bcaae90cf5107598818b48ac672d74dec1e07
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework
 
@@ -114,7 +114,7 @@ Pokud jste **není** použití vlastní vazby **a** nastavování vaší vazby W
 
 Audit kódu k ověření, že nejsou nastavení na konkrétní verzi protokolu TLS nebo SSL pomocí v následujících částech:
 
-### <a name="for-net-framework-46---462-and-not-wfc"></a>Pro rozhraní .NET Framework 4.6 - 4.6.2 a není WFC
+### <a name="for-net-framework-46---462-and-not-wcf"></a>Pro rozhraní .NET Framework 4.6 - 4.6.2 a není WCF
 
 Nastavte `DontEnableSystemDefaultTlsVersions` `AppContext` přepnout `false`. V tématu [konfigurace zabezpečení pomocí přepínačů AppContext](#configuring-security-via-appcontext-switches).
 

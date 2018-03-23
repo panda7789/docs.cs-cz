@@ -1,22 +1,21 @@
 ---
-title: "Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)"
-ms.custom: 
-ms.date: 07/20/2015
+title: 'Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)'
+ms.custom: ''
+ms.date: 03/14/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 229ff9fb-1bd1-403b-946b-526104864c60
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 72f3e91f9fb88019f937dcd281aa14ab4e887daf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: b39648107697cdbaa8856705f44df605efda11fa
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)
 Sestavení nebo dynamického propojení knihovna (DLL), je propojen s vaším programem za běhu. Chcete-li ukazují, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
@@ -110,23 +109,23 @@ UtilityMethods.MultiplyClass.Multiply(num1, num2)
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  K vytvoření souboru `MathLibrary.DLL`, zkompilovat dva soubory `Add` a `Mult` pomocí následující příkazový řádek.  
   
-```vb  
-vbc /target:library /out:MathLibrary.DLL Add.vb Mult.vb  
+```console  
+vbc -target:library -out:MathLibrary.DLL Add.vb Mult.vb  
 ```  
   
- [/Target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md) – možnost kompilátoru říká kompilátoru výstup knihovny DLL místo soubor EXE. [/Out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) – možnost kompilátoru a potom podle názvu souboru se používá k určení názvu souboru DLL. Jinak, kompilátor použije první soubor (`Add.vb`) jako název knihovnu DLL.  
+ [-Target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md) – možnost kompilátoru říká kompilátoru výstup knihovny DLL místo soubor EXE. [-Out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) – možnost kompilátoru a potom podle názvu souboru se používá k určení názvu souboru DLL. Jinak, kompilátor použije první soubor (`Add.vb`) jako název knihovnu DLL.  
   
  K vytvoření spustitelný soubor `TestCode.exe`, použijte následující příkazový řádek:  
   
-```vb  
-vbc /out:TestCode.exe /reference:MathLibrary.DLL TestCode.vb  
+```console  
+vbc -out:TestCode.exe -reference:MathLibrary.DLL TestCode.vb  
 ```  
   
- **/Out** – možnost kompilátoru říká kompilátoru do výstupního souboru EXE a určuje název souboru výstupního souboru (`TestCode.exe`). Tato možnost kompilátoru je volitelné. [/Reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) – možnost kompilátoru Určuje soubor knihovny DLL nebo soubory, které tento program používá.  
+ **-Out** – možnost kompilátoru říká kompilátoru do výstupního souboru EXE a určuje název souboru výstupního souboru (`TestCode.exe`). Tato možnost kompilátoru je volitelné. [– Referenční dokumentace (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) – možnost kompilátoru Určuje soubor knihovny DLL nebo soubory, které tento program používá.  
   
  Další informace o sestavení z příkazového řádku najdete v tématu a [sestavení z příkazového řádku](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Programování konceptů](../../../../visual-basic/programming-guide/concepts/index.md)  
+ [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)  
  [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [Vytvoření třídy k umístění funkcí DLL](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)

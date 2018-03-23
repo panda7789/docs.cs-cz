@@ -1,8 +1,9 @@
 ---
-title: "Postupy: vytvoření aplikace Windows Forms z příkazového řádku"
-ms.date: 03/30/2017
+title: 'Postupy: vytvoření aplikace Windows Forms z příkazového řádku'
+ms.date: 03/14/2018
 ms.prod: .net-framework
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.topic: article
 dev_langs:
 - csharp
@@ -12,16 +13,15 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating basic form
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22acab6ea3912488ae1382ffb42ca5383a7311af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+author: rpetrusha
+ms.author: ronpet
+ms.workload:
+- dotnet
+ms.openlocfilehash: 79fda0f5f455cbac50c0c1b51f0cd3bef4c5bfbc
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: vytvoření aplikace Windows Forms z příkazového řádku
 Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace Windows Forms z příkazového řádku. Rozsáhlá podpora pro tyto postupy v sadě Visual Studio není k dispozici.  Viz také [návod: vytvoření jednoduché formuláře Windows](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\)).  
@@ -49,9 +49,9 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
 4.  Přidat `Main` metody pro třídu.  
   
-    1.  Použít <xref:System.STAThreadAttribute> k `Main` metoda k určení aplikace Windows Forms je jeden model typu apartment.  
+    1.  Použít <xref:System.STAThreadAttribute> do jazyka C# `Main` je metoda k určení aplikace Windows Forms single-threaded apartment. (Atribut není nutné v jazyce Visual Basic, protože aplikace Windows forms vyvinuté s použitím jazyka Visual Basic model single-threaded apartment ve výchozím nastavení.)  
   
-    2.  Volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> vzhled Windows XP do vaší aplikace.  
+    2.  Volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> použít styly operačního systému do vaší aplikace.  
   
     3.  Vytvoření instance formuláře a potom ho spusťte.  
   
@@ -64,13 +64,13 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
 2.  Zkompilujte formuláře.  
   
-    -   Pokud používáte C#, zadejte:`csc form1.cs`  
+    -   Pokud používáte C#, zadejte: `csc form1.cs`  
   
          `-or-`  
   
-    -   Pokud používáte Visual Basic, zadejte:`vbc form1.vb /r:system.dll,system.drawing.dll,system.windows.forms.dll`  
+    -   Pokud používáte Visual Basic, zadejte: `vbc form1.vb`  
   
-3.  Na příkazovém řádku zadejte:`Form1.exe`  
+3.  Na příkazovém řádku zadejte: `Form1.exe`  
   
 ## <a name="adding-a-control-and-handling-an-event"></a>Přidání ovládacího prvku a zpracování události  
  Předchozí kroky postupu ukázal, jak lze pouze vytvořit základní formuláře systému Windows, který se zkompiluje a spustí. Následující postup vám ukáže, jak vytvořit a přidání ovládacího prvku formuláře a zpracovat události pro ovládací prvek. Další informace o ovládacích prvcích můžete přidat do formulářů Windows najdete v tématu [ovládacích prvků Windows Forms](../../../docs/framework/winforms/controls/index.md).  

@@ -1,7 +1,7 @@
 ---
-title: "Navrhování mikroslužbu aplikační vrstvu a webového rozhraní API"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navrhování mikroslužbu aplikační vrstvu a webového rozhraní API"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Navrhování mikroslužbu aplikační vrstvu a webového rozhraní API
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navrhování mikroslužbu aplikační vrstvu a webového rozhraní API
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c166e0286d0769e24a6361037eb6c4694fb821ae
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 87b48624fde8c7cdab097289f1cf56ab56e1173f
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="designing-the-microservice-application-layer-and-web-api"></a>Navrhování mikroslužbu aplikační vrstvu a webového rozhraní API
 
@@ -29,7 +29,7 @@ PLNOU zásady jsou kritické techniky, který se má použít v jakékoli modern
 
 -   Zásady Liskov nahrazení
 
--   Princip inverzi oddělení
+-   Princip oddělení rozhraní
 
 -   Princip inverzi závislostí
 
@@ -46,7 +46,7 @@ To bude trvat jiný průvodce tak, aby pokrývalo UCELENÝ podrobně. Tato pří
 -   **UCELENÝ: Principy základní mimoprocesová aplikace VOLÁNA**
     [*http://deviq.com/solid/*](http://deviq.com/solid/%20)
 
--   **Inverze – kontejnery ovládacích prvků a vkládání závislostí vzor**
+-   **Inverze – kontejnery ovládacích prvků a vzoru vkládání závislostí**
     [*https://martinfowler.com/articles/injection.html*](https://martinfowler.com/articles/injection.html)
 
 -   **Steve Smith. Nové je pojidlem**

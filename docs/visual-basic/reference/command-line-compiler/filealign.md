@@ -1,10 +1,10 @@
 ---
-title: /filealign
-ms.date: 07/20/2015
+title: -filealign
+ms.date: 03/10/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - sections compiler option [Visual Basic]
@@ -14,22 +14,21 @@ helpviewer_keywords:
 - /filealign compiler option [Visual Basic]
 - filealign compiler option [Visual Basic]
 ms.assetid: cc61ec3d-ad38-4b28-9659-099d73cad099
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: dbabc19c85501b97ef5443a6f6e12524f8de7d91
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 26ff29f00f00d3ea5dbbd0bbf01df4d7858771d0
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="filealign"></a>/filealign
+# <a name="-filealign"></a>-filealign
 Určuje, kde chcete-li zarovnat na části výstupní soubor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-/filealign:number  
+-filealign:number  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -37,14 +36,14 @@ Určuje, kde chcete-li zarovnat na části výstupní soubor.
  Požadováno. Hodnota, která určuje zarovnání oddílů, které jsou ve výstupním souboru. Platné hodnoty jsou 512, 1024, 2048, 4096 až 8192. Tyto hodnoty jsou v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `/filealign` možnost určení zarovnání oddílů, které jsou ve výstupním souboru. Oddíly jsou bloky souvislé paměti v souboru přenosné spustitelný soubor (PE), který obsahuje kód nebo data. `/filealign` Možnost umožňuje kompilovat vaší aplikace pomocí nestandardní zarovnání; není nutné tuto možnost použijte, Většina vývojářů.  
+ Můžete použít `-filealign` možnost určení zarovnání oddílů, které jsou ve výstupním souboru. Oddíly jsou bloky souvislé paměti v souboru přenosné spustitelný soubor (PE), který obsahuje kód nebo data. `-filealign` Možnost umožňuje kompilovat vaší aplikace pomocí nestandardní zarovnání; není nutné tuto možnost použijte, Většina vývojářů.  
   
- Každá část je zarovnán na hranici, která je násobkem `/filealign` hodnotu. Neexistuje žádná pevná výchozí hodnota. Pokud `/filealign` není zadán, kompilátor zvolí výchozí v době kompilace.  
+ Každá část je zarovnán na hranici, která je násobkem `-filealign` hodnotu. Neexistuje žádná pevná výchozí hodnota. Pokud `-filealign` není zadán, kompilátor zvolí výchozí v době kompilace.  
   
  Zadáním velikost oddílu, můžete změnit velikost výstupního souboru. Změna velikosti oddílu může být užitečné pro programy, které se spustí na menší zařízení.  
   
 > [!NOTE]
->  `/filealign` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
+>  `-filealign` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+ [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)

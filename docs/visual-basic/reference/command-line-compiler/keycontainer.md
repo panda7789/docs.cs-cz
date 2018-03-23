@@ -1,32 +1,31 @@
 ---
-title: /keycontainer
-ms.date: 07/20/2015
+title: -keycontainer
+ms.date: 03/10/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - -keycontainer compiler option [Visual Basic]
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b91025fb44164c03c43a3b5ed7341ab009f352e9
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: b433182a502761fb3840ed2003cc50e053fb072a
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="keycontainer"></a>/keycontainer
+# <a name="-keycontainer"></a>-keycontainer
 Určuje název kontejneru klíčů pro pár klíčů umožnit sestavení silným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-/keycontainer:container  
+-keycontainer:container  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -38,26 +37,26 @@ Určuje název kontejneru klíčů pro pár klíčů umožnit sestavení silným
 ## <a name="remarks"></a>Poznámky  
  Kompilátor vytvoří komponentu lze sdílet vložením veřejný klíč do manifestu a podepíše konečné sestavení s privátním klíčem. Chcete-li vygenerovat soubor klíče, zadejte `sn -k``file` na příkazovém řádku. `-i` Možnost nainstaluje pár klíčů do kontejneru. Další informace najdete v tématu [Sn.exe (nástroj silným názvem)][Sn.exe (nástroj silným názvem)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
- Pokud je kompilovat s `/target:module`, název souboru klíče je udržován v modulu a součástí sestavení, které se vytvoří při kompilaci sestavení s [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
+ Pokud je kompilovat s `-target:module`, název souboru klíče je udržován v modulu a součástí sestavení, které se vytvoří při kompilaci sestavení s [- addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
   
  Tuto možnost můžete také určit jako vlastní atribut (<xref:System.Reflection.AssemblyKeyNameAttribute>) ve zdrojovém kódu pro libovolný modul (MSIL intermediate language) společnosti Microsoft.  
   
- Vaše informace šifrování můžete předat také kompilátoru s [/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md). Použití [/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) Pokud chcete, aby částečně podepsané sestavení.  
+ Vaše informace šifrování můžete předat také kompilátoru s [- keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md). Použití [- delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) Pokud chcete, aby částečně podepsané sestavení.  
   
  V tématu [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
   
 > [!NOTE]
->  `/keycontainer` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
+>  `-keycontainer` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje zdrojový soubor `Input.vb` a určuje kontejneru klíčů.  
   
 ```  
-vbc /keycontainer:key1 input.vb  
+vbc -keycontainer:key1 input.vb  
 ```  
   
 ## <a name="see-also"></a>Viz také  
  [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
+ [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -1,41 +1,40 @@
 ---
-title: /optioncompare
+title: -optioncompare
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - /optioncompare
+- -optioncompare
 helpviewer_keywords:
 - optioncompare compiler option [Visual Basic]
 - -optioncompare compiler option [Visual Basic]
 - /optioncompare compiler option [Visual Basic]
 ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 62a9a4bf3428f3ee731e7ecc63be51dbf3076ee4
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 033be2ce3845ed470d56c2097b89b81d10275046
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="optioncompare"></a>/optioncompare
+# <a name="-optioncompare"></a>-optioncompare
 Určuje, jak jsou vytvářeny porovnání řetězců.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-/optioncompare:{binary | text}  
+-optioncompare:{binary | text}  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete zadat `/optioncompare` v jednom ze dvou formách: `/optioncompare:binary` použít binární porovnání řetězců, a `/optioncompare:text` použít porovnávání řetězců textu. Ve výchozím nastavení, kompilátor použije `/optioncompare:binary`.  
+ Můžete zadat `-optioncompare` v jednom ze dvou formách: `-optioncompare:binary` použít binární porovnání řetězců, a `-optioncompare:text` použít porovnávání řetězců textu. Ve výchozím nastavení, kompilátor použije `-optioncompare:binary`.  
   
- V systému Windows určuje znaková stránka používá binární řazení. Typické binární řazení vypadá takto:  
+ V systému Windows aktuální znaková stránka Určuje binární řazení. Typické binární řazení vypadá takto:  
   
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`  
   
@@ -43,7 +42,7 @@ Určuje, jak jsou vytvářeny porovnání řetězců.
   
  `(A = a) < (À = à) < (B=b) < (E=e) < (Ê = ê) < (Z=z) < (Ø = ø)`  
   
-### <a name="to-set-optioncompare-in-the-visual-studio-ide"></a>Chcete-li nastavit/optioncompare v integrovaném vývojovém prostředí sady Visual Studio  
+### <a name="to-set--optioncompare-in-the-visual-studio-ide"></a>Chcete-li nastavit - optioncompare v integrovaném vývojovém prostředí sady Visual Studio  
   
 1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
   
@@ -51,22 +50,22 @@ Určuje, jak jsou vytvářeny porovnání řetězců.
   
 3.  Změňte hodnotu v **možnost porovnat** pole.  
   
-### <a name="to-set-optioncompare-programmatically"></a>Chcete-li nastavit/optioncompare prostřednictvím kódu programu  
+### <a name="to-set--optioncompare-programmatically"></a>Chcete-li nastavit - optioncompare prostřednictvím kódu programu  
   
 -   V tématu [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md).  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `ProjFile.vb` a používá porovnání binárního řetězce.  
   
-```  
-vbc /optioncompare:binary projFile.vb  
+```console
+vbc -optioncompare:binary projFile.vb  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
- [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
- [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
+ [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
+ [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
+ [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
  [Dialogové okno Možnosti výchozí hodnoty, projekty, Visual Basic](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

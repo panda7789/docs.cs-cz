@@ -1,48 +1,50 @@
 ---
-title: "&lt;memoryCache&gt; – Element (nastavení mezipaměti)"
-ms.custom: 
+title: '&lt;memoryCache&gt; – Element (nastavení mezipaměti)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - <memoryCache> element
 - caching [.NET Framework], configuration
 - memoryCache element
 ms.assetid: 182a622f-f7cf-472d-9d0b-451d2fd94525
-caps.latest.revision: "12"
+caps.latest.revision: ''
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 5862e696f084916f3359d185f42e84b2a2789a0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8219607debb9f0f616895a57e0328b3785d5e84e
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ltmemorycachegt-element-cache-settings"></a>&lt;memoryCache&gt; – Element (nastavení mezipaměti)
 Definuje element, který slouží ke konfiguraci mezipaměti, který je založen na <xref:System.Runtime.Caching.MemoryCache> třídy. <xref:System.Runtime.Caching.Configuration.MemoryCacheElement> Třída definuje [memoryCache](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md) element, který můžete použít ke konfiguraci mezipaměti. Více instancí <xref:System.Runtime.Caching.MemoryCache> třídy lze v jedné aplikaci. Každý `memoryCache` element v konfiguračním souboru může obsahovat nastavení pro pojmenovaná <xref:System.Runtime.Caching.MemoryCache> instance.  
   
  \<Konfigurace >  
-\<System.Runtime.Caching – >  
-\<memoryCache >  
+\<system.runtime.caching>  
+\<memoryCache>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<memoryCache   
+<memoryCache>   
     <namedCaches>  
         <!-- child elements -->  
     </namedCaches>   
-< memoryCache />  
+</memoryCache>  
 ```  
   
 ## <a name="type"></a>Typ  
- <xref:System.Runtime.Caching.MemoryCache>Třída.  
+ <xref:System.Runtime.Caching.MemoryCache> Třída.  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
@@ -60,13 +62,13 @@ Definuje element, který slouží ke konfiguraci mezipaměti, který je založen
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches >](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace `namedCache` instance.|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace `namedCache` instance.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<System.Runtime.Caching – >](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|Obsahuje typy, které umožňují implementovat ukládání výstupu do mezipaměti v aplikacích, které jsou součástí [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)].|  
+|[\<system.runtime.caching>](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|Obsahuje typy, které umožňují implementovat ukládání výstupu do mezipaměti v aplikacích, které jsou součástí [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)].|  
   
 ## <a name="remarks"></a>Poznámky  
  <xref:System.Runtime.Caching.MemoryCache> Třída je konkrétní implementaci abstraktní <xref:System.Runtime.Caching.ObjectCache> třídy. Instance <xref:System.Runtime.Caching.MemoryCache> třídy můžete zadat s informace o konfiguraci z konfigurační soubory aplikace. [MemoryCache](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md) obsahuje oddíl konfigurace `namedCaches` kolekce konfigurace.  
@@ -103,5 +105,5 @@ Definuje element, který slouží ke konfiguraci mezipaměti, který je založen
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Caching.MemoryCache>  
- [\<System.Runtime.Caching – > elementu (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)  
- [\<namedCaches > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+ [\<system.runtime.caching> Element (Cache Settings)](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)  
+ [\<namedCaches> Element (Cache Settings)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

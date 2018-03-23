@@ -1,22 +1,21 @@
 ---
-title: "Postupy: vytváření nepodepsaných přátelských sestavení (Visual Basic)"
-ms.custom: 
-ms.date: 07/20/2015
+title: 'Postupy: vytváření nepodepsaných přátelských sestavení (Visual Basic)'
+ms.custom: ''
+ms.date: 03/14/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5735eb79-9729-4c46-ac1f-537ada3acaa7
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a2b2667c60a07a2897a0934d210901042e2e43c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 8cc71a27f24c634ebadb060325df4c602b1387b0
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a>Postupy: vytváření nepodepsaných přátelských sestavení (Visual Basic)
 Tento příklad ukazuje způsob použití přátelských sestavení s sestavení, které jsou bez znaménka.  
@@ -30,7 +29,7 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
     ```vb  
     ' friend_unsigned_A.vb  
     ' Compile with:   
-    ' Vbc /target:library friend_unsigned_A.vb  
+    ' vbc -target:library friend_unsigned_A.vb  
     Imports System.Runtime.CompilerServices  
     Imports System  
   
@@ -53,8 +52,8 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
   
 3.  Kompilace a friend_signed_A se přihlaste pomocí následujícího příkazu.  
   
-    ```vb  
-    Vbc /target:library friend_unsigned_A.vb  
+    ```console  
+    vbc -target:library friend_unsigned_A.vb  
     ```  
   
 4.  Vytvořte soubor jazyka Visual Basic s názvem `friend_unsigned_B` obsahující následující kód. Protože friend_unsigned_A určuje friend_unsigned_B jako přátelského sestavení, můžete přístup k kód v friend_unsigned_B `Friend` typy a členy z friend_unsigned_A.  
@@ -62,7 +61,7 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
     ```vb  
     ' friend_unsigned_B.vb  
     ' Compile with:   
-    ' Vbc /r:friend_unsigned_A.dll friend_unsigned_B.vb  
+    ' vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb  
     Module Module1  
         Sub Main()  
             ' Access a Friend type.  
@@ -80,15 +79,15 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
   
 5.  Zkompilujte friend_signed_B pomocí následujícího příkazu.  
   
-    ```vb  
-    Vbc /r:friend_unsigned_A.dll friend_unsigned_B.vb  
+    ```console
+    vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb  
     ```  
   
      Název sestavení, který je generovaný kompilátoru shodovat friend název sestavení, který je předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Sestavení je možné nastavit explicitně pomocí `/out` – možnost kompilátoru.  
   
 6.  Spusťte soubor friend_signed_B.exe.  
   
-     Program vytiskne dva řetězce: "Class1.Test" a "Class2.Test".  
+     Program zobrazí dva řetězce: "Class1.Test" a "Class2.Test".  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Existují podobnosti mezi <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> oprávnění zabezpečení ke spuštění konkrétní části kódu, můžete požadovat, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda se `Friend` typy a členy.  

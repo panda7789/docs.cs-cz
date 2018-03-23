@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms"
-ms.custom: 
+title: 'Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating simple controls using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 86cbe435-45b7-4cb4-9b5a-47418369758d
-caps.latest.revision: "17"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: da876ec74bf80d4329451a9bf125421731c7f9de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ab7fced9237cad3de30d417770f6f1d7f7e7ed6a
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms
 Tato část vás provede procesem klíčové kroky pro vytvoření vlastního ovládacího prvku Windows Forms. Jednoduché ovládací prvek vyvinuté v tomto návodu umožňuje zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost změnit. Nebudou vyvolat a zpracování událostí.  
@@ -50,7 +52,7 @@ Tato část vás provede procesem klíčové kroky pro vytvoření vlastního ov
      [!code-csharp[System.Windows.Forms.FirstControl#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#3)]
      [!code-vb[System.Windows.Forms.FirstControl#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#3)]  
   
-     Když nastavíte vlastnost, která určuje visual zobrazení ovládacího prvku, je nutné vyvolat <xref:System.Windows.Forms.Control.Invalidate%2A> metodu ho překreslit ovládacího prvku. <xref:System.Windows.Forms.Control.Invalidate%2A>je definována v základní třídě <xref:System.Windows.Forms.Control>.  
+     Když nastavíte vlastnost, která určuje visual zobrazení ovládacího prvku, je nutné vyvolat <xref:System.Windows.Forms.Control.Invalidate%2A> metodu ho překreslit ovládacího prvku. <xref:System.Windows.Forms.Control.Invalidate%2A> je definována v základní třídě <xref:System.Windows.Forms.Control>.  
   
 3.  Přepsání chráněného <xref:System.Windows.Forms.Control.OnPaint%2A> metoda zděděno z <xref:System.Windows.Forms.Control> zajistit logiku vykreslování vlastního ovládacího prvku. Pokud není přepíšete <xref:System.Windows.Forms.Control.OnPaint%2A>, vlastní ovládací prvek nebudou mít k vykreslení sám sebe. V následující fragment kódu <xref:System.Windows.Forms.Control.OnPaint%2A> metoda zobrazí <xref:System.Windows.Forms.Control.Text%2A> vlastnost zděděna od <xref:System.Windows.Forms.Control> s zarovnání určeného `alignmentValue` pole.  
   
@@ -70,12 +72,12 @@ Tato část vás provede procesem klíčové kroky pro vytvoření vlastního ov
   
     2.  Kompilace zdrojového kódu do sestavení a uložte ho do adresáře vaší aplikace. K tomu, že spustíte následující příkaz z adresáře, který obsahuje zdrojový soubor.  
   
-        ```vb  
-        vbc /t:library /out:[path to your application's directory]/CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll FirstControl.vb  
+        ```console  
+        vbc -t:library -out:[path to your application's directory]/CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll FirstControl.vb  
         ```  
   
-        ```csharp  
-        csc /t:library /out:[path to your application's directory]/CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll FirstControl.cs  
+        ```console 
+        csc -t:library -out:[path to your application's directory]/CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll FirstControl.cs  
         ```  
   
          `/t:library` – Možnost kompilátoru říká kompilátoru, že je sestavení, kterou vytváříte knihovny (a ne spustitelný soubor). `/out` Možnost určuje cestu a název sestavení. `/r` Možnost poskytuje název sestavení, které jsou odkazovány pomocí kódu. V tomto příkladu vytvoříte privátní sestavení, které můžete použít jenom vaší aplikace. Proto je nutné uložit v adresáři vaší aplikace. Další informace o balení a nasazení ovládacího prvku pro distribuci najdete v tématu [nasazení](../../../../docs/framework/deployment/index.md).  
@@ -94,19 +96,19 @@ Tato část vás provede procesem klíčové kroky pro vytvoření vlastního ov
   
 2.  Kompilace zdrojový kód do spustitelného souboru sestavení tak, že spustíte následující příkaz z adresáře, který obsahuje zdrojový soubor.  
   
-    ```vb  
-    vbc /r:CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll SimpleForm.vb  
+    ```console  
+    vbc -r:CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll SimpleForm.vb  
     ```  
   
-    ```csharp  
-    csc /r:CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll SimpleForm.cs  
+    ```console 
+    csc -r:CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll SimpleForm.cs  
     ```  
   
      CustomWinControls.dll je sestavení obsahující třídu `FirstControl`. Toto sestavení musí být ve stejném adresáři jako zdrojový soubor pro daný formulář, který přistupuje k (SimpleForm.cs nebo SimpleForms.vb).  
   
 3.  Spusťte SimpleForm.exe pomocí následujícího příkazu.  
   
-    ```  
+    ```console
     SimpleForm  
     ```  
   

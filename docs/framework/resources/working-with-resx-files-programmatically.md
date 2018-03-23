@@ -1,12 +1,13 @@
 ---
-title: "Práce se soubory .resx programově"
-ms.custom: 
+title: Práce se soubory .resx programově
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - resource files, .resx files
 - .resx files
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
-caps.latest.revision: "12"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 17c2cee97c3347a98a015e8526e436815378eed0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 951bd2160baddf100a685af2d78ec49e2146077b
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-resx-files-programmatically"></a>Práce se soubory .resx programově
 Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML, včetně hlavičku, která musí odpovídat určitému schématu následuje data v dvojice název/hodnota, můžete zjistit, že ruční vytvoření těchto souborů je k chybám. Jako alternativu můžete vytvořit soubory .resx programově pomocí typy a členy v knihovně tříd rozhraní .NET Framework. Knihovna tříd rozhraní .NET Framework můžete použít také k načtení prostředků, které jsou uložené v soubory RESX. Toto téma vysvětluje, jak můžete použít typy a členy v <xref:System.Resources> obor názvů pro práci se soubory .resx.  
@@ -83,15 +85,15 @@ Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML,
   
  Výsledkem je soubor binárního prostředku, který má stejný název kořenové jako soubor .resx a příponu souboru .resources. Tento soubor můžete poté zkompilovány do spustitelného souboru nebo knihovny v době kompilace. Pokud používáte Visual Basic – kompilátor, použijte následující syntaxi souboru .resources vložit do aplikace spustitelný soubor:  
   
- **Vbc –** *filename* **/VB Resource:** *.resourcesFilename*  
+ **Vbc –** *filename* **VB-prostředků:** *.resourcesFilename*  
   
  Pokud používáte C#, syntaxe vypadá takto:  
   
- **CSC** *filename* **/.cs Resource:** *.resourcesFilename*  
+ **csc** *filename* **.cs -resource:** *.resourcesFilename*  
   
  Souboru .resources lze také vložit v satelitní sestavení pomocí [Linker sestavení (AL.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md), který má základní syntaxi:  
   
- **Al** *resourcesFilename* **/out:** *assemblyFilename*  
+ **Al** *resourcesFilename* **-out:** *assemblyFilename*  
   
 ## <a name="see-also"></a>Viz také  
  [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
