@@ -1,27 +1,29 @@
 ---
-title: "Využívání datové sady z webové služby XML"
-ms.custom: 
+title: Využívání datové sady z webové služby XML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 316bebfec652987351e64368c3b7c0155011fe8e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9bfcd4d8dca38c9438c072c143cf7ba0eafd6ecf
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Využívání datové sady z webové služby XML
 <xref:System.Data.DataSet> Byl navržen odpojené návrh, v části pro usnadnění pohodlný přenos dat přes Internet. **Datovou sadu** je "serializovatelný", můžete zadat jako vstup nebo výstup webové služby XML bez další kódování požadované Streamovat obsah **datovou sadu** z webové služby XML na klienta a naopak. **Datovou sadu** se implicitně převést na datový proud XML formátu formát DiffGram, odesílají přes síť a potom znovu vytvořena z datového proudu XML jako **datovou sadu** na koncové straně příjmu. To vám dává velmi jednoduchá a flexibilní metodu pro přenášení a vrácení relačních dat pomocí webové služby XML. Další informace o formátu, formátu DiffGram najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
@@ -29,7 +31,7 @@ ms.lasthandoff: 01/19/2018
  Následující příklad ukazuje postup vytvoření webové služby XML a klienta, který používat **datovou sadu** přenosu relační data (včetně upravených dat) a vyřešte všechny aktualizace zpět do původního zdroje data.  
   
 > [!NOTE]
->  Doporučujeme, abyste při vytváření webové služby XML vždy zvažte vliv na zabezpečení. Informace o zabezpečení webové služby XML, najdete v části [zabezpečení XML webové služby vytvořené pomocí ASP.NET](http://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c).  
+>  Doporučujeme, abyste při vytváření webové služby XML vždy zvažte vliv na zabezpečení. Informace o zabezpečení webové služby XML, najdete v části [zabezpečení XML webové služby vytvořené pomocí ASP.NET](https://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c).  
   
 ### <a name="to-create-an-xml-web-service-that-returns-and-consumes-a-dataset"></a>Chcete-li vytvořit XML webové služby, který vrátí a odebírá datové sady  
   
@@ -176,33 +178,33 @@ ms.lasthandoff: 01/19/2018
   
      Proxy server můžete vytvořit pomocí Web Services Description Language Tool. Například pokud webové služby XML je vystavený v http://myserver/data/DataSetSample.asmx adresu URL, příkaz ke například následující vytvořit proxy Visual Basic .NET k oboru názvů z **WebData.DSSample** a ukládá je v souboru Sample.vb.  
   
-    ```  
-    wsdl /l:VB /out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
+    ```console
+    wsdl /l:VB -out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
     ```  
   
      V souboru sample.cs vytvořit proxy C#, vydejte následující příkaz.  
   
-    ```  
-    wsdl /l:CS /out:sample.cs http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
+    ```console
+    wsdl -l:CS -out:sample.cs http://myserver/data/DataSetSample.asmx -n:WebData.DSSample  
     ```  
   
      Proxy server můžete pak zkompilovat jako knihovnu a importovat klient XML webové služby. Zkompilovat kód jazyka Visual Basic .NET proxy uložené v sample.vb jako sample.dll, vydejte následující příkaz.  
   
-    ```  
-    vbc /t:library /out:sample.dll sample.vb /r:System.dll /r:System.Web.Services.dll /r:System.Data.dll /r:System.Xml.dll  
+    ```console  
+    vbc -t:library -out:sample.dll sample.vb -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
      Pro kompilaci proxy kódu C# uložené v sample.cs jako sample.dll, vydejte následující příkaz.  
   
-    ```  
-    csc /t:library /out:sample.dll sample.cs /r:System.dll /r:System.Web.Services.dll /r:System.Data.dll /r:System.Xml.dll  
+    ```console
+    csc -t:library -out:sample.dll sample.cs -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
 3.  Vytvoření klienta XML webové služby.  
   
      Pokud chcete mít k vygenerovat třídu proxy webové služby sady Visual Studio, jednoduše vytvořit projekt klienta a, v okně Průzkumníku řešení klikněte pravým tlačítkem na projekt, klikněte na **přidat odkaz na Web**a vyberte webovou službu z seznam dostupných webových služeb (může to vyžadovat poskytnutí adresu koncový bod webové služby, pokud webová služba není k dispozici v aktuálním řešení, nebo v počítači.) Pokud služby proxy webových XML sami (jak je popsáno v předchozím kroku) vytvoříte, můžete ho importovat do kódu klienta a využívat metody XML webové služby. Následující vzorový kód importuje knihovnu proxy serveru, volání **GetCustomers** k získání seznamu zákazníků, přidá nového zákazníka a poté vrátí **datovou sadu** s aktualizace **UpdateCustomers** .  
   
-     Všimněte si, že v příkladu předá **datovou sadu** vrácený **DataSet.GetChanges** k **UpdateCustomers** protože pouze změněné řádky potřebovat mají být předány  **UpdateCustomers**. **UpdateCustomers** vrátí vyřešený **datovou sadu**, která pak můžete **sloučení** do existujících **datovou sadu** aby se projevily změny vyřešený a žádný řádek informace o chybě z aktualizace. Následující kód předpokládá, zda používáte Visual Studio vytvořit odkaz na Web a že přejmenovali webového odkazu na DsSample v **přidat odkaz na Web** dialogové okno.  
+     Všimněte si, že v příkladu předá **datovou sadu** vrácený **DataSet.GetChanges** k **UpdateCustomers** protože pouze změněné řádky potřebovat mají být předány  **UpdateCustomers**. **UpdateCustomers** vrátí vyřešený **datovou sadu**, která pak můžete **sloučení** do existujících **datovou sadu** začlenit přeložit změny a všechny informace o chybě řádek z aktualizace. Následující kód předpokládá, zda používáte Visual Studio vytvořit odkaz na Web a že přejmenovali webového odkazu na DsSample v **přidat odkaz na Web** dialogové okno.  
   
     ```vb  
     Imports System  
@@ -260,14 +262,14 @@ ms.lasthandoff: 01/19/2018
   
      Pokud se rozhodnete vytvořit třídu proxy sami, musíte provést následující další kroky. Zkompilovat ukázkový, zadejte knihovnu proxy serveru, který byl vytvořen (sample.dll) a související knihovny .NET. Kompilace jazyka Visual Basic .NET verzi příkladu, uložené v souboru client.vb, vydejte následující příkaz.  
   
-    ```  
-    vbc client.vb /r:sample.dll /r:System.dll /r:System.Data.dll /r:System.Xml.dll /r:System.Web.Services.dll  
+    ```console
+    vbc client.vb -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
      Kompilace verze jazyka C# ukázce uložené v souboru client.cs, vydejte následující příkaz.  
   
-    ```  
-    csc client.cs /r:sample.dll /r:System.dll /r:System.Data.dll /r:System.Xml.dll /r:System.Web.Services.dll  
+    ```console
+    csc client.cs -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
 ## <a name="see-also"></a>Viz také  
@@ -277,5 +279,5 @@ ms.lasthandoff: 01/19/2018
  [Naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)  
  [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [Parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
- [Web Services Description Language Tool (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)  
+ [Web Services Description Language Tool (Wsdl.exe)](https://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)  
  [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
