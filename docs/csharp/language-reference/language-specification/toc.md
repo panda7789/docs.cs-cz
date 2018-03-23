@@ -1,4 +1,5 @@
 # [Specifikace konceptu jazyka C# 6.0](index.md)
+## [Úvod](../../../../_csharplang/spec/introduction.md)
 ## [Lexikální struktura](../../../../_csharplang/spec/lexical-structure.md)
 ## [Základní koncepty](../../../../_csharplang/spec/basic-concepts.md)
 ## [Typy](../../../../_csharplang/spec/types.md)
