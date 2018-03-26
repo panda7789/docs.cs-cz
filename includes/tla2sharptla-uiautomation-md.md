@@ -1,1 +1,1 @@
-<span data-ttu-id="8551e-101">automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8551e-101">UI Automation</span></span>
+<span data-ttu-id="5631f-101">automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="5631f-101">UI Automation</span></span>

@@ -1,12 +1,13 @@
 ---
-title: "Rozšíření skleněného rámečku do aplikace WPF"
-ms.custom: 
+title: Rozšíření skleněného rámečku do aplikace WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,31 +18,32 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-caps.latest.revision: "12"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: aad070bca408fc608eb000948c1b942d08f02018
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
-# <a name="extend-glass-frame-into-a-wpf-application"></a><span data-ttu-id="9a583-102">Rozšíření skleněného rámečku do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="9a583-102">Extend Glass Frame Into a WPF Application</span></span>
-<span data-ttu-id="9a583-103">Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] pohotovostní rámce do klientské oblasti [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="9a583-103">This topic demonstrates how to extend the [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] glass frame into the client area of a [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] application.</span></span>  
+# <a name="extend-glass-frame-into-a-wpf-application"></a><span data-ttu-id="9b3fc-102">Rozšíření skleněného rámečku do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="9b3fc-102">Extend Glass Frame Into a WPF Application</span></span>
+<span data-ttu-id="9b3fc-103">Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] pohotovostní rámce do klientské oblasti [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-103">This topic demonstrates how to extend the [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] glass frame into the client area of a [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] application.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="9a583-104">V tomto příkladu budou fungovat jenom na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] počítač se systémem Manager okno plochy (správce) s pohotovostní povolena.</span><span class="sxs-lookup"><span data-stu-id="9a583-104">This example will only work on a [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] machine running the Desktop Window Manager (DWM) with glass enabled.</span></span> [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]<span data-ttu-id="9a583-105">Domácí edice Basic nepodporuje transparentní skleněný efekt.</span><span class="sxs-lookup"><span data-stu-id="9a583-105"> Home Basic edition does not support the transparent glass effect.</span></span> <span data-ttu-id="9a583-106">Oblasti, které by obvykle vykreslení s transparentní skleněný efekt na jinou edici [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] vykreslují neprůhledné.</span><span class="sxs-lookup"><span data-stu-id="9a583-106">Areas that would typically render with the transparent glass effect on other editions of [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] are rendered opaque.</span></span>  
+>  <span data-ttu-id="9b3fc-104">V tomto příkladu budou fungovat jenom na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] počítač se systémem Manager okno plochy (správce) s pohotovostní povolena.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-104">This example will only work on a [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] machine running the Desktop Window Manager (DWM) with glass enabled.</span></span> [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]<span data-ttu-id="9b3fc-105"> Domácí edice Basic nepodporuje transparentní skleněný efekt.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-105"> Home Basic edition does not support the transparent glass effect.</span></span> <span data-ttu-id="9b3fc-106">Oblasti, které by obvykle vykreslení s transparentní skleněný efekt na jinou edici [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] vykreslují neprůhledné.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-106">Areas that would typically render with the transparent glass effect on other editions of [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] are rendered opaque.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9a583-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="9a583-107">Example</span></span>  
- <span data-ttu-id="9a583-108">Následující obrázek ukazuje pohotovostní rámečku rozšířené do na adresu aplikace Internet Explorer 7.</span><span class="sxs-lookup"><span data-stu-id="9a583-108">The following image illustrates the glass frame extended into the address bar of Internet Explorer 7.</span></span>  
+## <a name="example"></a><span data-ttu-id="9b3fc-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="9b3fc-107">Example</span></span>  
+ <span data-ttu-id="9b3fc-108">Následující obrázek ukazuje pohotovostní rámečku rozšířené do na adresu aplikace Internet Explorer 7.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-108">The following image illustrates the glass frame extended into the address bar of Internet Explorer 7.</span></span>  
   
- <span data-ttu-id="9a583-109">**Internet Explorer s rámečkem rozšířené pohotovostní za panel Adresa.**</span><span class="sxs-lookup"><span data-stu-id="9a583-109">**Internet Explorer with extended glass frame behind address bar.**</span></span>  
+ <span data-ttu-id="9b3fc-109">**Internet Explorer s rámečkem rozšířené pohotovostní za panel Adresa.**</span><span class="sxs-lookup"><span data-stu-id="9b3fc-109">**Internet Explorer with extended glass frame behind address bar.**</span></span>  
   
- <span data-ttu-id="9a583-110">![IE7 s rámečkem pohotovostní rozšířeným za panel Adresa. ] (../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")</span><span class="sxs-lookup"><span data-stu-id="9a583-110">![IE7 with glass frame extended behind address bar.](../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")</span></span>  
+ <span data-ttu-id="9b3fc-110">![IE7 s rámečkem pohotovostní rozšířeným za panel Adresa. ] (../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")</span><span class="sxs-lookup"><span data-stu-id="9b3fc-110">![IE7 with glass frame extended behind address bar.](../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")</span></span>  
   
- <span data-ttu-id="9a583-111">Rozšíření rámce přehledné na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, přístup k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba.</span><span class="sxs-lookup"><span data-stu-id="9a583-111">To extend the glass frame on a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, access to unmanaged [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] is needed.</span></span> <span data-ttu-id="9a583-112">Následující příklad kódu nemá nespravovaného (kódu pinvoke) pro dva [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] potřeba splnit pro rozšíření rámečku do klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9a583-112">The following code example does a Platform Invoke (pinvoke) for the two [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] needed to extend the frame into the client area.</span></span> <span data-ttu-id="9a583-113">Každá z těchto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou deklarované v třídy s názvem **NonClientRegionAPI**.</span><span class="sxs-lookup"><span data-stu-id="9a583-113">Each of these [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] are declared in a class called **NonClientRegionAPI**.</span></span>  
+ <span data-ttu-id="9b3fc-111">Rozšíření rámce přehledné na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, přístup k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-111">To extend the glass frame on a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, access to unmanaged [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] is needed.</span></span> <span data-ttu-id="9b3fc-112">Následující příklad kódu nemá nespravovaného (kódu pinvoke) pro dva [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] potřeba splnit pro rozšíření rámečku do klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-112">The following code example does a Platform Invoke (pinvoke) for the two [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] needed to extend the frame into the client area.</span></span> <span data-ttu-id="9b3fc-113">Každá z těchto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou deklarované v třídy s názvem **NonClientRegionAPI**.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-113">Each of these [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] are declared in a class called **NonClientRegionAPI**.</span></span>  
   
 ```csharp  
 [StructLayout(LayoutKind.Sequential)]  
@@ -73,10 +75,10 @@ public static extern int DwmExtendFrameIntoClientArea(
         End Function  
 ```  
   
- <span data-ttu-id="9a583-114">[Dwmextendframeintoclientarea –](https://msdn.microsoft.com/library/aa969512.aspx) je funkce Správce oken plochy, která rozšiřuje rámečku do klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9a583-114">[DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx) is the DWM function that extends the frame into the client area.</span></span> <span data-ttu-id="9a583-115">Jak dlouho trvá dva parametry; Popisovač okna a [OKRAJE](https://msdn.microsoft.com/library/bb773244.aspx) struktura.</span><span class="sxs-lookup"><span data-stu-id="9a583-115">It takes two parameters; a window handle and a [MARGINS](https://msdn.microsoft.com/library/bb773244.aspx) structure.</span></span> <span data-ttu-id="9a583-116">[OKRAJE](https://msdn.microsoft.com/library/bb773244.aspx) Správce oken plochy pozná, kolik velmi rámečku by měla být rozšířena na klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9a583-116">[MARGINS](https://msdn.microsoft.com/library/bb773244.aspx) is used to tell the DWM how much extra the frame should be extended into the client area.</span></span>  
+ <span data-ttu-id="9b3fc-114">[Dwmextendframeintoclientarea –](https://msdn.microsoft.com/library/aa969512.aspx) je funkce Správce oken plochy, která rozšiřuje rámečku do klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-114">[DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx) is the DWM function that extends the frame into the client area.</span></span> <span data-ttu-id="9b3fc-115">Jak dlouho trvá dva parametry; Popisovač okna a [OKRAJE](https://msdn.microsoft.com/library/bb773244.aspx) struktura.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-115">It takes two parameters; a window handle and a [MARGINS](https://msdn.microsoft.com/library/bb773244.aspx) structure.</span></span> <span data-ttu-id="9b3fc-116">[OKRAJE](https://msdn.microsoft.com/library/bb773244.aspx) Správce oken plochy pozná, kolik velmi rámečku by měla být rozšířena na klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-116">[MARGINS](https://msdn.microsoft.com/library/bb773244.aspx) is used to tell the DWM how much extra the frame should be extended into the client area.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9a583-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="9a583-117">Example</span></span>  
- <span data-ttu-id="9a583-118">Chcete-li použít [dwmextendframeintoclientarea –](https://msdn.microsoft.com/library/aa969512.aspx) funkce, musí být získána popisovač okna.</span><span class="sxs-lookup"><span data-stu-id="9a583-118">To use the [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx) function, a window handle must be obtained.</span></span> <span data-ttu-id="9a583-119">V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], můžete získat popisovač okna <xref:System.Windows.Interop.HwndSource.Handle%2A> vlastnost <xref:System.Windows.Interop.HwndSource>.</span><span class="sxs-lookup"><span data-stu-id="9a583-119">In [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], the window handle can be obtained from the <xref:System.Windows.Interop.HwndSource.Handle%2A> property of an <xref:System.Windows.Interop.HwndSource>.</span></span> <span data-ttu-id="9a583-120">V následujícím příkladu je rozšířeno rámečku do oblasti klienta na <xref:System.Windows.FrameworkElement.Loaded> událost okna.</span><span class="sxs-lookup"><span data-stu-id="9a583-120">In the following example, the frame is extended into the client area on the <xref:System.Windows.FrameworkElement.Loaded> event of the window.</span></span>  
+## <a name="example"></a><span data-ttu-id="9b3fc-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="9b3fc-117">Example</span></span>  
+ <span data-ttu-id="9b3fc-118">Chcete-li použít [dwmextendframeintoclientarea –](https://msdn.microsoft.com/library/aa969512.aspx) funkce, musí být získána popisovač okna.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-118">To use the [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx) function, a window handle must be obtained.</span></span> <span data-ttu-id="9b3fc-119">V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], můžete získat popisovač okna <xref:System.Windows.Interop.HwndSource.Handle%2A> vlastnost <xref:System.Windows.Interop.HwndSource>.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-119">In [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], the window handle can be obtained from the <xref:System.Windows.Interop.HwndSource.Handle%2A> property of an <xref:System.Windows.Interop.HwndSource>.</span></span> <span data-ttu-id="9b3fc-120">V následujícím příkladu je rozšířeno rámečku do oblasti klienta na <xref:System.Windows.FrameworkElement.Loaded> událost okna.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-120">In the following example, the frame is extended into the client area on the <xref:System.Windows.FrameworkElement.Loaded> event of the window.</span></span>  
   
 ```csharp  
 void OnLoaded(object sender, RoutedEventArgs e)  
@@ -119,8 +121,8 @@ void OnLoaded(object sender, RoutedEventArgs e)
 }  
 ```  
   
-## <a name="example"></a><span data-ttu-id="9a583-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="9a583-121">Example</span></span>  
- <span data-ttu-id="9a583-122">Následující příklad ukazuje jednoduchý okno, ve kterém je rozšířeno rámečku do klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9a583-122">The following example shows a simple window in which the frame is extended into the client area.</span></span> <span data-ttu-id="9a583-123">Rámečku je rozšířeno za horního ohraničení, který obsahuje dva <xref:System.Windows.Controls.TextBox> objekty.</span><span class="sxs-lookup"><span data-stu-id="9a583-123">The frame is extended behind the top border that contains the two <xref:System.Windows.Controls.TextBox> objects.</span></span>  
+## <a name="example"></a><span data-ttu-id="9b3fc-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="9b3fc-121">Example</span></span>  
+ <span data-ttu-id="9b3fc-122">Následující příklad ukazuje jednoduchý okno, ve kterém je rozšířeno rámečku do klientské oblasti.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-122">The following example shows a simple window in which the frame is extended into the client area.</span></span> <span data-ttu-id="9b3fc-123">Rámečku je rozšířeno za horního ohraničení, který obsahuje dva <xref:System.Windows.Controls.TextBox> objekty.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-123">The frame is extended behind the top border that contains the two <xref:System.Windows.Controls.TextBox> objects.</span></span>  
   
 ```xaml  
 <Window x:Class="SDKSample.Window1"  
@@ -154,13 +156,13 @@ void OnLoaded(object sender, RoutedEventArgs e)
 </Window>  
 ```  
   
- <span data-ttu-id="9a583-124">Následující obrázek ukazuje pohotovostní rámečku rozšířené na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="9a583-124">The following image illustrates the glass frame extended into a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application.</span></span>  
+ <span data-ttu-id="9b3fc-124">Následující obrázek ukazuje pohotovostní rámečku rozšířené na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="9b3fc-124">The following image illustrates the glass frame extended into a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application.</span></span>  
   
- <span data-ttu-id="9a583-125">**Pohotovostní rámec rozšířený do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.** </span><span class="sxs-lookup"><span data-stu-id="9a583-125">**Glass Frame Extended into a**  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]  **Application.**</span></span>  
+ <span data-ttu-id="9b3fc-125">**Pohotovostní rámec rozšířený do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.** </span><span class="sxs-lookup"><span data-stu-id="9b3fc-125">**Glass Frame Extended into a**  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]  **Application.**</span></span>  
   
- <span data-ttu-id="9a583-126">![Skleněný rámec rozšířený do aplikace WPF. ] (../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")</span><span class="sxs-lookup"><span data-stu-id="9a583-126">![Glass Frame Extended into a WPF application.](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")</span></span>  
+ <span data-ttu-id="9b3fc-126">![Skleněný rámec rozšířený do aplikace WPF. ] (../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")</span><span class="sxs-lookup"><span data-stu-id="9b3fc-126">![Glass Frame Extended into a WPF application.](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a583-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="9a583-127">See Also</span></span>  
- [<span data-ttu-id="9a583-128">Přehled Správce oken plochy</span><span class="sxs-lookup"><span data-stu-id="9a583-128">Desktop Window Manager Overview</span></span>](https://msdn.microsoft.com/library/aa969540.aspx)  
- [<span data-ttu-id="9a583-129">Přehled Správce oken plochy rozostření</span><span class="sxs-lookup"><span data-stu-id="9a583-129">Desktop Window Manager Blur Overview</span></span>](https://msdn.microsoft.com/library/aa969537.aspx)  
- [<span data-ttu-id="9a583-130">Dwmextendframeintoclientarea –</span><span class="sxs-lookup"><span data-stu-id="9a583-130">DwmExtendFrameIntoClientArea</span></span>](https://msdn.microsoft.com/library/aa969512.aspx)
+## <a name="see-also"></a><span data-ttu-id="9b3fc-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="9b3fc-127">See Also</span></span>  
+ [<span data-ttu-id="9b3fc-128">Přehled Správce oken plochy</span><span class="sxs-lookup"><span data-stu-id="9b3fc-128">Desktop Window Manager Overview</span></span>](https://msdn.microsoft.com/library/aa969540.aspx)  
+ [<span data-ttu-id="9b3fc-129">Přehled Správce oken plochy rozostření</span><span class="sxs-lookup"><span data-stu-id="9b3fc-129">Desktop Window Manager Blur Overview</span></span>](https://msdn.microsoft.com/library/aa969537.aspx)  
+ [<span data-ttu-id="9b3fc-130">DwmExtendFrameIntoClientArea</span><span class="sxs-lookup"><span data-stu-id="9b3fc-130">DwmExtendFrameIntoClientArea</span></span>](https://msdn.microsoft.com/library/aa969512.aspx)

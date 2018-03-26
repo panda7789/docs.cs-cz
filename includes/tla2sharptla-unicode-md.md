@@ -1,1 +1,1 @@
-<span data-ttu-id="a17a1-101">Kódování Unicode</span><span class="sxs-lookup"><span data-stu-id="a17a1-101">Unicode</span></span>
+<span data-ttu-id="59a76-101">Kódování Unicode</span><span class="sxs-lookup"><span data-stu-id="59a76-101">Unicode</span></span>

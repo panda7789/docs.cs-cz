@@ -1,1 +1,1 @@
-<span data-ttu-id="2e3f3-101">Návrhář postupu provádění</span><span class="sxs-lookup"><span data-stu-id="2e3f3-101">Workflow Designer</span></span>
+<span data-ttu-id="060e4-101">Návrhář postupu provádění</span><span class="sxs-lookup"><span data-stu-id="060e4-101">Workflow Designer</span></span>

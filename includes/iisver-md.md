@@ -1,1 +1,1 @@
-<span data-ttu-id="d663b-101">Internetová informační služba 7,0</span><span class="sxs-lookup"><span data-stu-id="d663b-101">IIS 7.0</span></span>
+<span data-ttu-id="d33a5-101">Internetová informační služba 7,0</span><span class="sxs-lookup"><span data-stu-id="d33a5-101">IIS 7.0</span></span>

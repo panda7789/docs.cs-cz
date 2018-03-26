@@ -1,1 +1,1 @@
-<span data-ttu-id="71156-101">Visual Studio 2008</span><span class="sxs-lookup"><span data-stu-id="71156-101">Visual Studio 2008</span></span>
+<span data-ttu-id="0429c-101">Visual Studio 2008</span><span class="sxs-lookup"><span data-stu-id="0429c-101">Visual Studio 2008</span></span>

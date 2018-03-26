@@ -1,1 +1,1 @@
-<span data-ttu-id="47dbc-101">ASCII</span><span class="sxs-lookup"><span data-stu-id="47dbc-101">ASCII</span></span>
+<span data-ttu-id="c4f24-101">ASCII</span><span class="sxs-lookup"><span data-stu-id="c4f24-101">ASCII</span></span>
