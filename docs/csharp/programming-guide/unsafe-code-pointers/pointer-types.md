@@ -1,5 +1,5 @@
 ---
-title: "Typy ukazatelů (Průvodce programováním v C#)"
+title: Typy ukazatelů (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
 ms.assetid: 3319faf9-336d-4148-9af2-1da2579cdd1e
-caps.latest.revision: 
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: fe7b926bdf9f662d25f2fe960b51fc8254b7aa3a
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 V nezabezpečeném kontextu lze jako konkrétní typ použít typ ukazatele, typ hodnoty nebo typ odkazu. Deklarace typu ukazatele má jednu z následujících forem:  

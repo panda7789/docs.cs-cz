@@ -1,24 +1,26 @@
 ---
-title: "Zpracování škodlivých zpráv"
-ms.custom: 
+title: Zpracování škodlivých zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-caps.latest.revision: "29"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8202c9f715944c6d556c0023444475838cfd5eab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace mohou vzniknout, když aplikace založenou na fronty nemůže zpracovat zprávu z důvodu chyb. Splňovat požadavky na spolehlivost, aplikace přijímá zprávy v rámci transakce. Ruší se transakce, ve kterém byl přijat zprávu ve frontě zanechává zprávy ve frontě, zpráva se pokus o pod novou transakci. Pokud není problém, která způsobila zrušení vyřešen, může být zablokován má přijímající aplikace v smyčku přijímáním a přerušení stejná zpráva, dokud byl překročen maximální počet pokusů o doručení a výsledky poškozená zpráva.  
@@ -32,9 +34,9 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
   
 -   `ReceiveRetryCount`. Celočíselná hodnota, která určuje maximální počet pokusů o opakování doručení zpráv z fronty aplikace do aplikace. Výchozí hodnota je 5. Toto je dostatečná v případech, kde okamžitou opakování odstraňuje problém, například s dočasné vzájemné zablokování v databázi.  
   
--   `MaxRetryCycles`. Celočíselná hodnota, která určuje maximální počet cyklů opakování. Opakování cyklus se skládá z přenosu zprávy z fronty aplikace na dílčí fronta opakování a konfigurovat zpožděním z dílčí fronta opakování zpět do fronty aplikace pro doručování pokuste se znovu spustit. Výchozí hodnota je 2. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], zkusí se zpráva nesmí být delší než (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) časy. `MaxRetryCycles`je na ignorována [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+-   `MaxRetryCycles`. Celočíselná hodnota, která určuje maximální počet cyklů opakování. Opakování cyklus se skládá z přenosu zprávy z fronty aplikace na dílčí fronta opakování a konfigurovat zpožděním z dílčí fronta opakování zpět do fronty aplikace pro doručování pokuste se znovu spustit. Výchozí hodnota je 2. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], zkusí se zpráva nesmí být delší než (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) časy. `MaxRetryCycles` je na ignorována [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
--   `RetryCycleDelay`. Prodlevu mezi cykly opakování. Výchozí hodnota je 30 minut. `MaxRetryCycles`a `RetryCycleDelay` společně poskytují mechanismus potíže, kde opakovat po pravidelné zpoždění odstraňuje problém vyřešit. Například zpracovává uzamčeném řádek nastavit v systému SQL Server čeká na potvrzení transakce.  
+-   `RetryCycleDelay`. Prodlevu mezi cykly opakování. Výchozí hodnota je 30 minut. `MaxRetryCycles` a `RetryCycleDelay` společně poskytují mechanismus potíže, kde opakovat po pravidelné zpoždění odstraňuje problém vyřešit. Například zpracovává uzamčeném řádek nastavit v systému SQL Server čeká na potvrzení transakce.  
   
 -   `ReceiveErrorHandling`. Výčet, který určuje akce pro zprávu, která se nezdařila doručení, po maximální počet opakovaných pokusů, se pokusilo. Hodnoty může být odmítněte odolnost, Drop a přesunout. Výchozí možnost je selhání.  
   
@@ -61,7 +63,7 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
   
  [!code-csharp[S_UE_MSMQ_Poison#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmq_poison/cs/service.cs#1)]  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje dvě vazby standardní zařazených do fronty:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje dvě vazby standardní zařazených do fronty:  
   
 -   <xref:System.ServiceModel.NetMsmqBinding>. A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vazby, které jsou vhodné pro provedení komunikace na základě fronty s jinými [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body.  
   
@@ -73,7 +75,7 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
 ## <a name="best-practice-handling-msmqpoisonmessageexception"></a>Doporučené postupy: Zpracování msmqpoisonmessageexception –  
  Když služba zjistí, že zprávu poškozených, vyvolá zařazených do fronty přenosu <xref:System.ServiceModel.MsmqPoisonMessageException> obsahující `LookupId` poškozených zprávy.  
   
- Můžete implementovat přijímající aplikace <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní pro zpracování chyby, ke kterým aplikace vyžaduje. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Rozšíření kontroly nad zpracováním a vykazováním chyb](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md).  
+ Můžete implementovat přijímající aplikace <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní pro zpracování chyby, ke kterým aplikace vyžaduje. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Rozšíření kontroly nad zpracováním a vykazováním chyb](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md).  
   
  Aplikace může vyžadovat nějaké automatizované zpracování poškozených zpráv, která přemísťuje poškozených zpráv do fronty nezpracovatelná zpráva, aby služba přístup zbytek zprávy ve frontě. Jediný scénář pro použití mechanismu obslužnou rutinu chyby naslouchat poison zpráva výjimky je, když <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> nastavení je <xref:System.ServiceModel.ReceiveErrorHandling.Fault>. Příklad zprávy poison 3.0 služby Řízení front zpráv znázorňuje toto chování. Následující část popisuje kroky pro zpracování poškozených zpráv, včetně osvědčených postupů:  
   
@@ -102,10 +104,10 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
  Relaci projde stejné opakování a postupy zpracování zpráv poison jako do jedné zprávy. Vlastnosti dříve uvedené pro poškozených zpráv se vztahují na celé relace. To znamená, že se pokus o celé relace a přejde na poslední poison zprávy fronty nebo fronty nedoručených zpráv odesílatele, pokud se odmítne zprávy.  
   
 ## <a name="batching-and-poison-messages"></a>Dávkování a poškozených zpráv  
- Pokud zpráva stane poškozených zpráv a je součástí dávky, celý batch je vrácena zpět a kanál vrátí do čtení jednu zprávu najednou. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]dávkování, najdete v části [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
+ Pokud zpráva stane poškozených zpráv a je součástí dávky, celý batch je vrácena zpět a kanál vrátí do čtení jednu zprávu najednou. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] dávkování, najdete v části [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
   
 ## <a name="poison-message-handling-for-messages-in-a-poison-queue"></a>Zpracování zpráv ve frontě poškozených Poison zpráv  
- Zpracování zpráv Poison nemá na konci při umístění zprávu do fronty poison zpráv. Zprávy ve frontě poison zprávy musí být stále číst a zpracovávat. Při čtení zpráv z poslední poškozených dílčí fronta můžete podmnožinu nastavení zpracování poison zpráv. Použít nastavení `ReceiveRetryCount` a `ReceiveErrorHandling`. Můžete nastavit `ReceiveErrorHandling` vyřadit, odmítněte, nebo poruch. `MaxRetryCycles`je ignorován a je vyvolána výjimka, pokud `ReceiveErrorHandling` je nastaven na přesunutí.  
+ Zpracování zpráv Poison nemá na konci při umístění zprávu do fronty poison zpráv. Zprávy ve frontě poison zprávy musí být stále číst a zpracovávat. Při čtení zpráv z poslední poškozených dílčí fronta můžete podmnožinu nastavení zpracování poison zpráv. Použít nastavení `ReceiveRetryCount` a `ReceiveErrorHandling`. Můžete nastavit `ReceiveErrorHandling` vyřadit, odmítněte, nebo poruch. `MaxRetryCycles` je ignorován a je vyvolána výjimka, pokud `ReceiveErrorHandling` je nastaven na přesunutí.  
   
 ## <a name="windows-vista-windows-server-2003-and-windows-xp-differences"></a>Windows Vista, Windows Server 2003 a Windows XP rozdíly  
  Jak již bylo uvedeno dříve, ne všechny zpracování zpráv poison nastavení se vztahují na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Následující klíčové rozdíly mezi služby Řízení front zpráv na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], [!INCLUDE[wxp](../../../../includes/wxp-md.md)], a [!INCLUDE[wv](../../../../includes/wv-md.md)] jsou relevantní pro zpracování poison zpráv:  
@@ -114,7 +116,7 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
   
 -   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje zápornou potvrzení, zatímco [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nepodporují. Záporné potvrzení z přijímající správce front způsobí, že odesílání správce front k umístit odmítnuté zprávy do fronty nedoručených zpráv. Jako takový `ReceiveErrorHandling.Reject` není povolen u [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
--   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje dojde k pokusu o vlastnosti zprávy, která udržuje počet Počet doručení zpráv. Tato vlastnost počet přerušení není k dispozici na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesné hodnoty přečtení stejné zprávy o více než jednu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu ve farmě.  
+-   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje dojde k pokusu o vlastnosti zprávy, která udržuje počet Počet doručení zpráv. Tato vlastnost počet přerušení není k dispozici na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesné hodnoty přečtení stejné zprávy o více než jednu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu ve farmě.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  

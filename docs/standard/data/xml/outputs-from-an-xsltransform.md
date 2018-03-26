@@ -1,15 +1,15 @@
 ---
-title: "Výstupy z XslTransform"
-ms.custom: 
+title: Výstupy z XslTransform
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
-caps.latest.revision: "3"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
@@ -17,10 +17,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 647f3829f4b26791c063d5646669b2fcb7ab6684
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="outputs-from-an-xsltransform"></a>Výstupy z XslTransform
 Vzhledem k tomu, že šablony stylů můžete určit formát výstupu pomocí `<xsl:output>` příkaz s `method` atribut, následující tabulka popisuje formát výstupu je, když <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda se používá k zápisu výstupu a formát výstupu se deklarovaný jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>.  
@@ -32,9 +32,9 @@ Vzhledem k tomu, že šablony stylů můžete určit formát výstupu pomocí `<
   
 |\<Metoda elementu xsl: Output = > atribut|Výsledný formát|  
 |-----------------------------------------|-------------------|  
-|Metoda = "xml"|XML|  
-|Metoda = "html"|HTML|  
-|Metoda = "text"|Text|  
+|method="xml"|XML|  
+|method="html"|HTML|  
+|method="text"|Text|  
   
 > [!NOTE]
 >  Poznámka: `<xsl:output>` příkaz se ignoruje při výstup <xref:System.Xml.Xsl.XslTransform.Transform%2A> je metoda <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter>.  

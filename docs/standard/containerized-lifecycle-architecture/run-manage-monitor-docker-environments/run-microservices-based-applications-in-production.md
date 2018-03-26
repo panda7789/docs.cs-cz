@@ -1,7 +1,7 @@
 ---
-title: "Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
@@ -9,10 +9,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 0d7611d07c9995984269e3f7b071154d9b861367
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí
 
@@ -24,11 +24,11 @@ Dříve v této e knihy, zavedli jsme *clustery* a *plánovače* jako součást 
 
 Když aplikace jsou instancemi mezi několika systémy hostitele, stane se atraktivní schopnost spravovat každý hostitelský systém a abstraktní rychle složitost základní platformy. Je přesněji co orchestrators a plánovače poskytují. Podívejme se stručný na je tady:
 
--   **Plánovače*** *"Plánování" odkazuje na schopnost Správce služby soubor do systém hostitele, který určuje jak spustit specifický kontejner. Spuštění kontejnery v clusteru Docker obvykle označují jako plánování. I když plánování odkazuje na konkrétní operace načítání definici služby v další obecné smysl, plánovače jsou zodpovědní za zapojování do systému init hostitele ke správě služeb v jakémkoli kapacity potřeby.
+-   **Plánovače *** *"Plánování" odkazuje na schopnost Správce služby soubor do systém hostitele, který určuje jak spustit specifický kontejner. Spuštění kontejnery v clusteru Docker obvykle označují jako plánování. I když plánování odkazuje na konkrétní operace načítání definici služby v další obecné smysl, plánovače jsou zodpovědní za zapojování do systému init hostitele ke správě služeb v jakémkoli kapacity potřeby.
 
 Scheduler clusteru má více cílů: efektivně pomocí prostředků clusteru, práce s uživatelem zadané umístění omezení, plánování aplikace rychle není ponechat je ve stavu čekající na vyřízení, má určitý stupeň "rovnosti," Probíhá robustní na chyby, a být vždy k dispozici.
 
--   **Orchestrace*** *platformy rozšířit funkce pro správu životního cyklu komplexní, multicontainer úlohy, které jsou nasazené na clusteru hostitelů. Podle poskytuje abstrakci infrastruktury hostitele, nástroje orchestration uživatelům poskytnout způsob, jak celý cluster považovat za cíl jedno nasazení.
+-   **Orchestrace *** *platformy rozšířit funkce pro správu životního cyklu komplexní, multicontainer úlohy, které jsou nasazené na clusteru hostitelů. Podle poskytuje abstrakci infrastruktury hostitele, nástroje orchestration uživatelům poskytnout způsob, jak celý cluster považovat za cíl jedno nasazení.
 
 Proces orchestration zahrnuje nástrojů a platformu, která můžete automatizovat všechny aspekty správy aplikací z počáteční umístění nebo nasazení na kontejneru; Přesunutí kontejnery na různých hostitelích v závislosti na jeho hostitel stavu nebo výkonu. Správa verzí kumulativní aktualizace a monitorování funkce, které podporují škálování a převzetí služeb při selhání; stavu a mnoho dalších.
 

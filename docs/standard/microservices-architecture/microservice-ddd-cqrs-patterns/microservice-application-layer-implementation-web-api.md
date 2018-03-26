@@ -1,7 +1,7 @@
 ---
-title: "Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: cfca93dca0ec9d05936f4be676e27135c581de94
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
 
@@ -178,8 +178,8 @@ Typ oboru instance Určuje, jak sdílet instanci mezi požadavky pro stejné slu
 -   **Autofac.** Oficiální dokumentaci.
     [*http://docs.autofac.org/en/latest/*](http://docs.autofac.org/en/latest/)
 
--   **Porovnávání životnosti služby kontejner IoC jádro ASP.NET s obory instance kontejner Autofac IoC - Cesaru členka Torre. ** 
-     [ *https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
+-   **Porovnávání životnosti služby kontejner IoC jádro ASP.NET s obory instance kontejner Autofac IoC - Cesaru členka Torre.**
+    [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
 
 ## <a name="implementing-the-command-and-command-handler-patterns"></a>Implementace vzorů příkaz a obslužná rutina příkazu
 
@@ -399,18 +399,18 @@ Toto jsou obslužná rutina příkazu by měl provést další kroky:
 #### <a name="additional-resources"></a>Další zdroje
 
 -   **Označit Seemann. V hranicích, jsou aplikace není objektově orientované**
-    [*http://blog.ploeh.dk/2011/05/31/AttheBoundaries, orientované ApplicationsareNotObject /*](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/)
+    [*http://blog.ploeh.dk/2011/05/31/AttheBoundaries, orientovaný ApplicationsareNotObject /*](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/)
 
 -   **Příkazy a události**
     [*http://cqrs.nu/Faq/commands-and-events*](http://cqrs.nu/Faq/commands-and-events)
 
--   **Obslužná rutina příkazu k čemu slouží? ** 
-     [ *http://cqrs.nu/Faq/command-handlers*](http://cqrs.nu/Faq/command-handlers)
+-   **Obslužná rutina příkazu k čemu slouží?**
+    [*http://cqrs.nu/Faq/command-handlers*](http://cqrs.nu/Faq/command-handlers)
 
--   **Jimmy Bogard. Domain Command Patterns – Handlers**
+-   **Jimmy Bogard. Vzory příkaz domény – obslužné rutiny**
     [*https://jimmybogard.com/domain-command-patterns-handlers/*](https://jimmybogard.com/domain-command-patterns-handlers/)
 
--   **Jimmy Bogard. Domain Command Patterns – Validation**
+-   **Jimmy Bogard. Vzory příkaz domény – ověření**
     [*https://jimmybogard.com/domain-command-patterns-validation/*](https://jimmybogard.com/domain-command-patterns-validation/)
 
 ## <a name="the-command-process-pipeline-how-to-trigger-a-command-handler"></a>Příkaz proces kanálu: spouštění obslužná rutina příkazu
@@ -849,8 +849,8 @@ Podobným způsobem může implementovat jiného chování pro další aspekty n
 -   **CQRS s MediatR a AutoMapper**
     [*https://lostechies.com/jimmybogard/2015/05/05/cqrs-with-mediatr-and-automapper/*](https://lostechies.com/jimmybogard/2015/05/05/cqrs-with-mediatr-and-automapper/)
 
--   **Umístí řadičů vyváženosti: příspěvky a příkazy. ** 
-     [ *https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/*](https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/)
+-   **Umístí řadičů vyváženosti: příspěvky a příkazy.**
+    [*https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/*](https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/)
 
 -   **Boji se mezi vyjímání otázky se zřetězením příkazů zprostředkovatel**
     [*https://lostechies.com/jimmybogard/2014/09/09/tackling-cross-cutting-concerns-with-a-mediator-pipeline/*](https://lostechies.com/jimmybogard/2014/09/09/tackling-cross-cutting-concerns-with-a-mediator-pipeline/)
@@ -858,13 +858,13 @@ Podobným způsobem může implementovat jiného chování pro další aspekty n
 -   **CQRS a REST: ideální doplněk**
     [*https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/*](https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/)
 
--   **MediatR Pipeline Examples**
+-   **Příklady MediatR kanálu**
     [*https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/*](https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/)
 
 -   **Svislé řez testovací zařízení pro MediatR a ASP.NET Core**
-    *<https://lostechies.com/jimmybogard/2016/10/24/vertical-slice-test-fixtures-for-mediatr-and-asp-net-core/>*
+    *<https://lostechies.com/jimmybogard/2016/10/24/vertical-slice-test-fixtures-for-mediatr-and-asp-net-core/> *
 
--   **Rozšíření MediatR pro vkládání závislostí Microsoft vydané**
+-   **Rozšíření MediatR pro vkládání závislostí Microsoft vydání**
     [*https://lostechies.com/jimmybogard/2016/07/19/mediatr-extensions-for-microsoft-dependency-injection-released/*](https://lostechies.com/jimmybogard/2016/07/19/mediatr-extensions-for-microsoft-dependency-injection-released/)
 
 ##### <a name="fluent-validation"></a>Fluent ověření

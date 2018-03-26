@@ -1,33 +1,35 @@
 ---
 title: '&lt;serviceThrottling&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a337d064-1e64-4209-b4a9-db7fdb7e3eaf
-caps.latest.revision: "22"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a059684967af26c72aca48a3fa6bb10c2f26b0c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ltservicethrottlinggt"></a>&lt;serviceThrottling&gt;
 Určuje omezení mechanismus služby Windows Communication Foundation (WCF).  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
-\<serviceThrottling >  
+\<serviceThrottling>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,7 +57,7 @@ Určuje omezení mechanismus služby Windows Communication Foundation (WCF).
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Omezení ovládacích prvků umístit omezení na počet souběžných volání, instancí nebo relací, aby se zabránilo nadměrné spotřeby prostředků.  

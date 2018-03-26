@@ -1,28 +1,30 @@
 ---
-title: "Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], adding rows for new records
 - rows [Windows Forms], new records
 - DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
-caps.latest.revision: "14"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e349a33c90d08606da09ebdf32de6dedb8d6a52c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView
 Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplikaci, bude často chcete umožnit uživatelům možnost přidávat nové řádky dat do úložiště dat. <xref:System.Windows.Forms.DataGridView> Řízení podporuje tato funkce tím, že poskytuje řádek pro nové záznamy, které se vždy zobrazí jako poslední řádek. Je označený s symbol hvězdičky (*) v řádku záhlaví. Následující části popisují některé z věcí, měli byste zvážit, když program s řádkem pro nové záznamy povoleno.  

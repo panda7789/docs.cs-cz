@@ -1,27 +1,29 @@
 ---
 title: UriTemplate a UriTemplateTable
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-caps.latest.revision: "24"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ac77fe2c83828d2cc9473417d2b29b2d2e540923
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate a UriTemplateTable
-Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, který své služby reagovat na. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Přidá dva nové třídy pro umožnění vývojáři kontroly nad jejich identifikátory URI. <xref:System.UriTemplate>a <xref:System.UriTemplateTable> tvoří základ, na základě identifikátoru URI odesílání stroje v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tyto třídy lze také na své vlastní, povolení vývojáři využít šablon a mechanismus mapování URI bez implementace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, který své služby reagovat na. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Přidá dva nové třídy pro umožnění vývojáři kontroly nad jejich identifikátory URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> tvoří základ, na základě identifikátoru URI odesílání stroje v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tyto třídy lze také na své vlastní, povolení vývojáři využít šablon a mechanismus mapování URI bez implementace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
 ## <a name="templates"></a>Šablony  
  Šablona je způsob, jak popisuje sadu relativní identifikátory URI. Sada šablony URI v následující tabulce ukazuje, jak může být definovaná systémem, který načte různých typů informací o počasí.  
@@ -36,32 +38,32 @@ Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, k
  Tato tabulka popisuje sadu strukturálně podobné identifikátory URI. Každá položka je šablona identifikátor URI. Segmenty do složených závorek popisují proměnné. Segmenty není do složených závorek popisují řetězcové literály. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Tříd šablon povolit vývojář trvat příchozí URI, například "/ počasí nebo wa/Praha/prosté", a odpovídat na šablonu, která popisuje, "/weather/ {stavu} / {města} / {aktivity}".  
   
 ## <a name="uritemplate"></a>UriTemplate  
- <xref:System.UriTemplate>je třída, který zapouzdřuje šablonu identifikátor URI. Konstruktor přijímá řetězcový parametr, který definuje šablony. Tento řetězec obsahuje šablonu ve formátu popsané v další části. <xref:System.UriTemplate> Třída poskytuje metody, které vám umožňují odpovídat identifikátor URI příchozí do šablony, generovat identifikátor URI ze šablony, načte kolekci názvy proměnných, které jsou použité v šabloně, určete, jestli dvě šablony jsou ekvivalentní a vrátí šablony řetězec.  
+ <xref:System.UriTemplate> je třída, který zapouzdřuje šablonu identifikátor URI. Konstruktor přijímá řetězcový parametr, který definuje šablony. Tento řetězec obsahuje šablonu ve formátu popsané v další části. <xref:System.UriTemplate> Třída poskytuje metody, které vám umožňují odpovídat identifikátor URI příchozí do šablony, generovat identifikátor URI ze šablony, načte kolekci názvy proměnných, které jsou použité v šabloně, určete, jestli dvě šablony jsou ekvivalentní a vrátí šablony řetězec.  
   
- <xref:System.UriTemplate.Match%28System.Uri%2CSystem.Uri%29>identifikátor URI a pokusí se porovnat identifikátor URI pro šablony trvá základní adresa a kandidátem. Pokud je úspěšné, shody <xref:System.UriTemplateMatch> vrácena instance. <xref:System.UriTemplateMatch> Objekt obsahuje základní identifikátor URI candidate identifikátor URI, názvu a hodnoty kolekce parametry dotazu, pole segmentů relativní cestu, kolekci názvu a hodnoty proměnných, které se shodují, <xref:System.UriTemplate> instance, používá k provádění shody , řetězec, který obsahuje všechny neodpovídající část candidate identifikátor URI (používá se při šablona má zástupný znak) a objekt, který je přidružen šablony.  
+ <xref:System.UriTemplate.Match%28System.Uri%2CSystem.Uri%29> identifikátor URI a pokusí se porovnat identifikátor URI pro šablony trvá základní adresa a kandidátem. Pokud je úspěšné, shody <xref:System.UriTemplateMatch> vrácena instance. <xref:System.UriTemplateMatch> Objekt obsahuje základní identifikátor URI candidate identifikátor URI, názvu a hodnoty kolekce parametry dotazu, pole segmentů relativní cestu, kolekci názvu a hodnoty proměnných, které se shodují, <xref:System.UriTemplate> instance, používá k provádění shody , řetězec, který obsahuje všechny neodpovídající část candidate identifikátor URI (používá se při šablona má zástupný znak) a objekt, který je přidružen šablony.  
   
 > [!NOTE]
 >  <xref:System.UriTemplate> Třída ignoruje schéma a číslo portu při kontrole shody kandidátem URI do šablony.  
   
- Existují dvě metody, které vám umožní generovat identifikátor URI ze šablony, <xref:System.UriTemplate.BindByName%28System.Uri%2CSystem.Collections.Specialized.NameValueCollection%29> a <xref:System.UriTemplate.BindByPosition%28System.Uri%2CSystem.String%5B%5D%29>. <xref:System.UriTemplate.BindByName%28System.Uri%2CSystem.Collections.Specialized.NameValueCollection%29>trvá základní adresa a kolekce názvu a hodnoty parametrů. Tyto parametry jsou nahrazena pro proměnné, když šablona je vázána. <xref:System.UriTemplate.BindByPosition%28System.Uri%2CSystem.String%5B%5D%29>trvá dvojice název/hodnota a nahradí je zprava doleva.  
+ Existují dvě metody, které vám umožní generovat identifikátor URI ze šablony, <xref:System.UriTemplate.BindByName%28System.Uri%2CSystem.Collections.Specialized.NameValueCollection%29> a <xref:System.UriTemplate.BindByPosition%28System.Uri%2CSystem.String%5B%5D%29>. <xref:System.UriTemplate.BindByName%28System.Uri%2CSystem.Collections.Specialized.NameValueCollection%29> trvá základní adresa a kolekce názvu a hodnoty parametrů. Tyto parametry jsou nahrazena pro proměnné, když šablona je vázána. <xref:System.UriTemplate.BindByPosition%28System.Uri%2CSystem.String%5B%5D%29> trvá dvojice název/hodnota a nahradí je zprava doleva.  
   
- <xref:System.UriTemplate.ToString>Vrátí řetězec šablony.  
+ <xref:System.UriTemplate.ToString> Vrátí řetězec šablony.  
   
  <xref:System.UriTemplate.PathSegmentVariableNames%2A> Vlastnost obsahuje kolekci názvů proměnných používaných v rámci segmenty cesty v řetězci šablony.  
   
- <xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29>přijímá <xref:System.UriTemplate> jako parametr a vrací logickou hodnotu, která určuje, zda dvě šablony jsou ekvivalentní. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]část šablony ekvivalenční později v tomto tématu.  
+ <xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29> přijímá <xref:System.UriTemplate> jako parametr a vrací logickou hodnotu, která určuje, zda dvě šablony jsou ekvivalentní. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] část šablony ekvivalenční později v tomto tématu.  
   
- <xref:System.UriTemplate>je navržen pro práci s žádné schéma identifikátoru URI, který vyhovuje gramatika HTTP URI. Následují příklady podporována schémata identifikátoru URI.  
+ <xref:System.UriTemplate> je navržen pro práci s žádné schéma identifikátoru URI, který vyhovuje gramatika HTTP URI. Následují příklady podporována schémata identifikátoru URI.  
   
 -   http://  
   
 -   https://  
   
--   NET.TCP://  
+-   net.tcp://  
   
--   NET.pipe://  
+-   net.pipe://  
   
--   SB: / /  
+-   sb://  
   
  Schémata jako file:// a urn: / / není v souladu s gramatika HTTP URI a způsobit nepředvídatelné výsledky při použití s šablony URI.  
   
@@ -125,11 +127,11 @@ Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, k
 ### <a name="compound-path-segments"></a>Složené segmenty cesty  
  Segmenty cesty složené Povolí jeden segment cesty identifikátoru URI tak, aby obsahovala více proměnných a také v kombinaci s literály proměnné. Následují příklady segmentů složené platnou cestu.  
   
--   argument/FILENAME. {ext} /  
+-   /filename.{ext}/  
   
 -   /{filename}.jpg/  
   
--   / {filename}. {ext} /  
+-   /{filename}.{ext}/  
   
 -   / {a}. {b}someLiteral{c}({d}) /  
   
@@ -140,7 +142,7 @@ Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, k
 -   / {čelisti} {člun} - proměnných musí být odděleny literál.  
   
 ### <a name="matching-and-compound-path-segments"></a>Odpovídající a složené segmenty cesty  
- Segmenty cesty složené umožňují definovat UriTemplate, který má více proměnných v rámci segmentu, jednu cestu. Například v následující řetězec šablony: "adresy / {stavu}. {města} "dvě proměnné (státu a města) jsou definovány v rámci stejné segmentu. Tato šablona by odpovídat adresy URL, například "http://example.com/Washington.Redmond", ale bude se taky shodovat adresu URL jako "http://example.com/Washington.Redmond.Microsoft". V takovém případě proměnné stavu bude obsahovat "Washington" a proměnnou města bude obsahovat "Redmond.Microsoft". V tomto případě jakýkoli text (s výjimkou '/') bude shodovat s proměnnou {města}. Pokud chcete šablonu, která nebude odpovídat "výběr" text, umístěte proměnnou v samostatných šablony segmentu, například: "adresy / {stavu} / {města}.  
+ Segmenty cesty složené umožňují definovat UriTemplate, který má více proměnných v rámci segmentu, jednu cestu. Například v následující řetězec šablony: "adresy / {stavu}. {města} "dvě proměnné (státu a města) jsou definovány v rámci stejné segmentu. Tato šablona by odpovídat adresu URL, jako "http://example.com/Washington.Redmond", ale bude se taky shodovat adresu URL jako"http://example.com/Washington.Redmond.Microsoft". V takovém případě proměnné stavu bude obsahovat "Washington" a proměnnou města bude obsahovat "Redmond.Microsoft". V tomto případě jakýkoli text (s výjimkou '/') bude shodovat s proměnnou {města}. Pokud chcete šablonu, která nebude odpovídat "výběr" text, umístěte proměnnou v samostatných šablony segmentu, například: "adresy / {stavu} / {města}.  
   
 ### <a name="named-wildcard-segments"></a>Segmenty pojmenované zástupný znak  
  Segment s názvem zástupný znak je všechny proměnné segment cesty jejichž proměnné název začíná se zástupným znakem ' *'. Následující řetězec šablony obsahuje segment s názvem zástupné s názvem "čelisti".  
@@ -259,7 +261,7 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
 -   b /b /a/ {var1} / {var2}? x = 1 & y = 2  
   
--   a/{x}/b%20b/{var1}?y=2 & x = 1  
+-   a/{x}/b%20b/{var1}?y=2&x=1  
   
 -   a/{y}/B%20B/{z}/?y=2 & x = 1  
   
@@ -288,19 +290,19 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
  Následující sady řetězce dotazu jsou jednoznačné v rámci sami:  
   
--   ? x = 1  
+-   ?x=1  
   
--   ? x = 2  
+-   ?x=2  
   
--   ? x = 3  
+-   ?x=3  
   
 -   ? x = 1 & y = {var}  
   
--   ? x = 2 & z = {var}  
+-   ?x=2&z={var}  
   
--   ? x = 3  
+-   ?x=3  
   
--   ? x = 1  
+-   ?x=1  
   
 -   ?  
   
@@ -310,35 +312,35 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
 -   ? m = get & c = rss  
   
--   ? m = put & c = rss  
+-   ?m=put&c=rss  
   
 -   ? m = get & c = atom  
   
--   ? m = put & c = atom  
+-   ?m=put&c=atom  
   
  Následující sady šablon řetězec dotazu jsou nejednoznačné v rámci sami:  
   
--   ? x = 1  
+-   ?x=1  
   
--   ? x = {var}  
+-   ?x={var}  
   
  "x = 1"-odpovídá obě šablony.  
   
--   ? x = 1  
+-   ?x=1  
   
 -   ? y = 2  
   
  "x = 1 & y = 2" odpovídá obě šablony. Je to proto, že řetězec dotazu může obsahovat další proměnné řetězce dotazu, pak odpovídá šabloně.  
   
--   ? x = 1  
+-   ?x=1  
   
 -   ? x = 1 & y = {var}  
   
  "x = 1 & y = 3" odpovídá obě šablony.  
   
--   ? x = 3 & y = 4  
+-   ?x=3&y=4  
   
--   ? x = 3 & z = 5  
+-   ?x=3&z=5  
   
 > [!NOTE]
 >  Znaky funkce a funkce se považují za různých znaků, když se zobrazí jako část cesty identifikátor URI nebo <xref:System.UriTemplate> segment cesty literálu (ale a znaky a A jsou považovány za stejnou). Znaky funkce a funkce se považují za stejné znaky, když se zobrazí jako součást <xref:System.UriTemplate> {variableName} nebo řetězec dotazu (a a serverem se také považují za stejné znaky).  

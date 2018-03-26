@@ -1,32 +1,34 @@
 ---
-title: "Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF"
-ms.custom: 
+title: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-caps.latest.revision: "11"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 723f485ab45cbe127bfd337c2d428d38d5f27232
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]umožňuje používat deklarativní ukládání do mezipaměti mechanismus, který je již k dispozici v technologii ASP.NET v službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z vaší operací služby WCF Web HTTP. Když uživatel odešle do služby, který je nakonfigurován pro ukládání do mezipaměti GET protokolu HTTP, ASP.NET zašle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, se nazývá metodu služby a ještě jednou do mezipaměti odpovědi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Ukládání do mezipaměti, ASP.NET, najdete v části [přehled ukládání do mezipaměti technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152534)  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje používat deklarativní ukládání do mezipaměti mechanismus, který je již k dispozici v technologii ASP.NET v službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z vaší operací služby WCF Web HTTP. Když uživatel odešle do služby, který je nakonfigurován pro ukládání do mezipaměti GET protokolu HTTP, ASP.NET zašle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, se nazývá metodu služby a ještě jednou do mezipaměti odpovědi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Ukládání do mezipaměti, ASP.NET, najdete v části [přehled ukládání do mezipaměti technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152534)  
   
 ## <a name="basic-web-http-service-caching"></a>Základní webové služby HTTP ukládání do mezipaměti  
  Povolit HTTP webové služby ukládání do mezipaměti je třeba nejprve povolit režim kompatibility ASP.NET použitím <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> na nastavení služby <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> k <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.  
   
- [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]zavádí nový atribut názvem <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> , můžete zadat název profilu mezipaměti. Tento atribut se používá pro operaci služby. Následující příklad se vztahuje <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> službě povolit režim kompatibility ASP.NET a nakonfiguruje `GetCustomer` operace pro ukládání do mezipaměti. <!--zz<xref:System.ServiceModel.Activation.AspNetCacheProfileAttribute>--> `System.ServiceModel.Activation.AspNetCacheProfileAttribute` Atribut určuje profil mezipaměti, který obsahuje nastavení mezipaměti, který se má použít.  
+ [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] zavádí nový atribut názvem <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> , můžete zadat název profilu mezipaměti. Tento atribut se používá pro operaci služby. Následující příklad se vztahuje <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> službě povolit režim kompatibility ASP.NET a nakonfiguruje `GetCustomer` operace pro ukládání do mezipaměti. <!--zz<xref:System.ServiceModel.Activation.AspNetCacheProfileAttribute>--> `System.ServiceModel.Activation.AspNetCacheProfileAttribute` Atribut určuje profil mezipaměti, který obsahuje nastavení mezipaměti, který se má použít.  
   
 ```csharp
 [ServiceContract] 
@@ -69,7 +71,7 @@ public class Service
 </system.web>  
 ```  
   
- Toto je stejný element konfigurace, který je k dispozici pro aplikace ASP.NET. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Profilech mezipaměti ASP.NET, najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. Webové služby HTTP jsou nejdůležitější atributy v mezipaměti profilu: `cacheDuration` a `varyByParam`. Obě tyto atributy se vyžadují. `cacheDuration`Nastaví množství času, které do mezipaměti odpovědi v sekundách. `varyByParam`Umožňuje zadat parametr řetězce dotazu, který se používá k odpovědi v mezipaměti. Všechny požadavky vytvořené s hodnotami parametrů řetězce dotazu jsou samostatně do mezipaměti. Například po počáteční žádosti http://MyServer/MyHttpService/MyOperation?param=10 všechny následné žádosti se stejným identifikátorem URI by vrátit odpověď uložená v mezipaměti (tak dlouho, dokud není uplynul doba uložení do mezipaměti). V odpovědi na podobné požadavek, který je stejný, ale má jinou hodnotu pro parametr řetězce dotazu parametr samostatně mezipaměti. Pokud nechcete, aby tento samostatné chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
+ Toto je stejný element konfigurace, který je k dispozici pro aplikace ASP.NET. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Profilech mezipaměti ASP.NET, najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. Webové služby HTTP jsou nejdůležitější atributy v mezipaměti profilu: `cacheDuration` a `varyByParam`. Obě tyto atributy se vyžadují. `cacheDuration` Nastaví množství času, které do mezipaměti odpovědi v sekundách. `varyByParam` Umožňuje zadat parametr řetězce dotazu, který se používá k odpovědi v mezipaměti. Všechny požadavky vytvořené s hodnotami parametrů řetězce dotazu jsou samostatně do mezipaměti. Například po počáteční žádosti http://MyServer/MyHttpService/MyOperation?param=10 všechny následné žádosti se stejným identifikátorem URI by vrátit odpověď uložená v mezipaměti (tak dlouho, dokud není uplynul doba uložení do mezipaměti). V odpovědi na podobné požadavek, který je stejný, ale má jinou hodnotu pro parametr řetězce dotazu parametr samostatně mezipaměti. Pokud nechcete, aby tento samostatné chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
   
 ## <a name="sql-cache-dependency"></a>Závislost SQL mezipaměti  
  Webové HTTP služby odezvy také do mezipaměti se závislostí mezipaměti SQL. Pokud vaše webové služby WCF HTTP závisí na data uložená v databázi SQL, můžete ukládat do mezipaměti odpovědi služby a zrušit platnost odpověď uložená v mezipaměti, když data v SQL databázi změny tabulky. Toto chování je úplně nakonfigurován v souboru Web.config. Nejdřív je nutné definovat připojovací řetězec <`connectionStrings`> elementu.  
@@ -133,7 +135,7 @@ public class Service
  Zde je doba uložení do mezipaměti nastavena na 60 sekund, `varyByParam` je nastaven na hodnotu none a `sqlDependency` nastavena na seznam oddělený středníky páry název/tabulky databáze oddělené dvojtečkou. Pokud data v `MyTable` změní odpovědi v mezipaměti pro operaci služby se odebere a po vyvolání operace novou odpověď je generována (voláním operace služby), do mezipaměti a vrátí klientovi.  
   
 > [!IMPORTANT]
->  Pro technologii ASP.NET pro přístup k databázi SQL, je nutné použít [nástroj registrace serveru SQL Server ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152536). Kromě toho musíte povolit odpovídající uživatelskému účtu přístup do databáze a tabulky. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Přístup k systému SQL Server z webové aplikace](http://go.microsoft.com/fwlink/?LinkId=178988).  
+>  Pro technologii ASP.NET pro přístup k databázi SQL, je nutné použít [nástroj registrace serveru SQL Server ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152536). Kromě toho musíte povolit odpovídající uživatelskému účtu přístup do databáze a tabulky. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Přístup k systému SQL Server z webové aplikace](http://go.microsoft.com/fwlink/?LinkId=178988).  
   
 ## <a name="conditional-http-get-based-caching"></a>Podmíněné HTTP GET na základě ukládání do mezipaměti  
  Ve scénářích Web HTTP podmíněného GET protokolu HTTP se často používá služby k implementaci inteligentního ukládání do mezipaměti protokolu HTTP, jak je popsáno v [specifikace protokolu HTTP](http://go.microsoft.com/fwlink/?LinkId=165800). K tomu službu nutné nastavit hodnotu hlavičky značky ETag v odpovědi HTTP. Je také nutné zkontrolovat hlavičku If-None-Match v požadavku HTTP, zda všechny zadané značky ETag odpovídá aktuální značka ETag.  

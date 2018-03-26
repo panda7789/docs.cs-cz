@@ -15,7 +15,7 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-caps.latest.revision: "9"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -23,10 +23,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 46a6ccde7c978fe18737c6ae8733dd2e1e1ec858
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="version-tolerant-serialization"></a>Verze serializace
 Ve verzi 1.0 a 1.1 rozhraní .NET Framework byla problematický vytváření Serializovatelné typy, které by se znovu použít z jedné verze aplikace na další. V případě typu byl změněn přidáním pole navíc, by se objeví následující problémy:  
@@ -134,7 +134,7 @@ End Class
 |<xref:System.Runtime.Serialization.OnSerializingAttribute>|Před serializací.|Připravte pro serializaci. Můžete například vytvořte struktury volitelnými daty.|  
 |<xref:System.Runtime.Serialization.OnSerializedAttribute>|Po serializace.|Protokolovat události serializace.|  
   
- \*Tato zpětné volání je volána před konstruktor deserializace, pokud je k dispozici.  
+ \* Tato zpětné volání je volána před konstruktor deserializace, pokud je k dispozici.  
   
 ### <a name="using-callbacks"></a>Pomocí zpětných volání  
  Chcete-li použít zpětná volání, vztahují na metodu, která přijme příslušný atribut <xref:System.Runtime.Serialization.StreamingContext> parametru. Pouze jednu metodu na třídu může být označena každý z těchto atributů. Příklad:  
@@ -265,7 +265,7 @@ End Class
 ```  
   
 ## <a name="serializationbinder"></a>SerializationBinder  
- Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace.  Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Řízení serializace a deserializace pomocí třídy SerializationBinder](../../../docs/framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).  
+ Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace.  Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Řízení serializace a deserializace pomocí třídy SerializationBinder](../../../docs/framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).  
   
 ## <a name="best-practices"></a>Doporučené postupy  
  Chcete-li zajistit správnou verzí chování, postupujte podle těchto pravidel ke změně typu na verzi:  

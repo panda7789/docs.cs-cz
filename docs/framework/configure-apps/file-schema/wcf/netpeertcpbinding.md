@@ -1,28 +1,28 @@
 ---
 title: '&lt;netPeerTcpBinding&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - netPeerBinding element
 ms.assetid: 2dd77ada-a176-47c7-a740-900b279f1aad
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: a890243ee12202efa9743a6151255525c7f78be2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ltnetpeertcpbindinggt"></a>&lt;netPeerTcpBinding&gt;
 Definuje vazbu pro sdílené kanál konkrétní TCP zasílání zpráv.  

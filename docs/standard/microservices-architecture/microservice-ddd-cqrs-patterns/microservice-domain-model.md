@@ -1,7 +1,7 @@
 ---
-title: "Navržení modelu mikroslužbu domény"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navržení modelu mikroslužbu domény"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Navržení modelu mikroslužbu domény
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navržení modelu mikroslužbu domény
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 752c4cceada2bf0649facbfd46c36c26dc666d29
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="designing-a-microservice-domain-model"></a>Navržení modelu mikroslužbu domény
 
@@ -63,10 +63,10 @@ Někteří uživatelé říkají, že model anemic domény je proti vzor. Ve sku
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **DevIQ. Domain Entity**
+-   **DevIQ. Entita domény**
     [*http://deviq.com/entity/*](http://deviq.com/entity/)
 
--   **Martin Fowler. The Domain Model**
+-   **Martin Fowler. Model domény**
     [*https://martinfowler.com/eaaCatalog/domainModel.html*](https://martinfowler.com/eaaCatalog/domainModel.html)
 
 -   **Martin Fowler. Model Anemic domény**
@@ -87,16 +87,16 @@ Hodnota objekty jsou obtížné spravovat v relačních databází a ORMs jako E
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Martin Fowler. Value Object pattern**
+-   **Martin Fowler. Vzor hodnota objektu**
     [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
 
--   **Value Object**
+-   **Hodnota objektu**
     [*http://deviq.com/value-object/*](http://deviq.com/value-object/)
 
 -   **Hodnota objekty v Test-Driven vývoj**
     [*https://leanpub.com/tdd-ebook/read\#leanpub automaticky hodnota objekty*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
--   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru.** (Sešit; zahrnuje diskuzi o hodnotu objekty) [ *https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+-   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru.** (Sešit; zahrnuje diskuzi o hodnotu objekty) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### <a name="the-aggregate-pattern"></a>Agregační vzor
 
@@ -140,18 +140,18 @@ Identifikace a práci s agregace vyžaduje výzkum a prostředí. Další inform
 #### <a name="additional-resources"></a>Další zdroje
 
 -   **Vaughn Vernon. Efektivní návrh agregace - část I: modelování jeden agregace**
-    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_KOMUNITY\_KOMPOZICE\_ AGREGACE\_část\_1. pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
+    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_KOMUNITY\_KOMPOZICE\_AGREGACE\_část \_1. pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
 
 -   **Vaughn Vernon. Efektivní agregační návrh – část II: Provádění agregací pracovní společně**
-    *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf>*
+    *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf> *
 
 -   **Vaughn Vernon. Efektivní agregační návrh – část III: Získání přehledu prostřednictvím zjišťování**
-    *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf>*
+    *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf> *
 
--   **Sergey Grybniak. DDD Tactical Design Patterns**
+-   **Sergey Grybniak. Vzory návrhu taktické DDD**
     [*https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part*](https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part)
 
--   **Jan Ryšánková. Developing Transactional Microservices Using Aggregates**
+-   **Jan Ryšánková. Vývoj transakční Mikroslužeb používající agregované hodnoty**
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson)
 
 -   **DevIQ. Agregační vzor**

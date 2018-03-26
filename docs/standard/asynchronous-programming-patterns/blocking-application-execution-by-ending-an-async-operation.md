@@ -1,12 +1,12 @@
 ---
-title: "Blokování provádění aplikace ukončením asynchronní operace"
-ms.custom: 
+title: Blokování provádění aplikace ukončením asynchronní operace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - blocks, asynchronous operations
@@ -14,7 +14,7 @@ helpviewer_keywords:
 - asynchronous programming, blocking applications
 - blocking application execution
 ms.assetid: cc5e2834-a65b-4df8-b750-7bdb79997fee
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -25,10 +25,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 3ec7bfe6fe2cef20a6d74030802113a47e8679e1
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="blocking-application-execution-by-ending-an-async-operation"></a>Blokování provádění aplikace ukončením asynchronní operace
 Aplikace, které nelze nadále provádět další činnosti při čekání na výsledky asynchronní operace musí blok, dokud se operace nedokončí. Blokování hlavního vlákna aplikace při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  

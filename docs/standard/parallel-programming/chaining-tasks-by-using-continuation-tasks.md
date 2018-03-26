@@ -1,12 +1,12 @@
 ---
-title: "Řetězení úloh pomocí úloh pokračování"
-ms.custom: 
+title: Řetězení úloh pomocí úloh pokračování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,7 +14,7 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-caps.latest.revision: 
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -22,10 +22,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: b8e21c338648d5925c8576f76dae3aae43a9ca0d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronní programování, je velmi běžné jeden asynchronní operaci na dokončení pro vyvolání druhá operace a předat data. Obvyklým byla provedena pomocí metody zpětného volání. V Task Parallel Library stejné funkce poskytované *úloh pokračování*. Úloha pokračování (známou taky stejně jako pokračování) je asynchronní úkol, který je vyvolán jiná úloha, která se označuje jako *předchůdce*, až se dokončí předchůdce.  

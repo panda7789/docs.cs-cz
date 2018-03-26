@@ -2,7 +2,8 @@
 title: Globalizace pro WPF
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.topic: article
 helpviewer_keywords:
 - XAML [WPF], international user interface
@@ -10,16 +11,17 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-caps.latest.revision: "35"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e6f39d40284e6212715d85fece545e653ff2e60a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma představuje problémy, které byste měli vědět, když zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací elementy jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.  
@@ -28,7 +30,7 @@ Toto téma představuje problémy, které byste měli vědět, když zápis [!IN
   
 <a name="xaml_globalization"></a>   
 ## <a name="xaml-globalization"></a>Globalizace XAML  
- [!INCLUDE[TLA#tla_xaml#initcap](../../../../includes/tlasharptla-xamlsharpinitcap-md.md)]je založena na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] a využívá podpory globalizace definovaný v [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] specifikace. Následující části popisují některé [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] funkce, které byste měli vědět.  
+ [!INCLUDE[TLA#tla_xaml#initcap](../../../../includes/tlasharptla-xamlsharpinitcap-md.md)] je založena na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] a využívá podpory globalizace definovaný v [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] specifikace. Následující části popisují některé [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] funkce, které byste měli vědět.  
   
 <a name="char_reference"></a>   
 ### <a name="character-references"></a>Odkazy na znak  
@@ -54,7 +56,7 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 <a name="lang_attrib"></a>   
 ### <a name="language-attribute"></a>Atribut jazyka  
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]používá [XML: lang](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md) představující atribut language elementu.  Chcete využít výhod <xref:System.Globalization.CultureInfo> třída, hodnotu atributu jazyka musí být jeden ze zadaných názvů jazykovou verzi, předdefinované podle <xref:System.Globalization.CultureInfo>. [XML: lang](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md) je zděditelné ve stromové struktuře – element (podle pravidla XML, nikoli nutně z důvodu závislosti dědičnost vlastnosti) a jeho výchozí hodnota je řetězec prázdný, pokud není explicitně přiřazeny.  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md) představující atribut language elementu.  Chcete využít výhod <xref:System.Globalization.CultureInfo> třída, hodnotu atributu jazyka musí být jeden ze zadaných názvů jazykovou verzi, předdefinované podle <xref:System.Globalization.CultureInfo>. [XML: lang](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md) je zděditelné ve stromové struktuře – element (podle pravidla XML, nikoli nutně z důvodu závislosti dědičnost vlastnosti) a jeho výchozí hodnota je řetězec prázdný, pokud není explicitně přiřazeny.  
   
  Je velmi užitečná pro zadání dialekty atribut language. Například Francouzština má pravopisu, termínů a výslovnosti Francie, Quebec, Belgie, a Švýcarska. Také čínština, japonština nebo korejština sdílení bodů kódu v [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], ale ideografických tvarů se liší a uvidíte úplně jiné písem používají.  
   
@@ -66,7 +68,7 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 <a name="unicode"></a>   
 ### <a name="unicode"></a>Kódování Unicode  
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]podporuje všechny [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] funkce včetně náhrady. Tak dlouho, dokud znaková sada lze mapovat na [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], je podporována. Například GB18030 zavádí některé znaky, které jsou mapované na rozšíření čínština, japonština nebo korejština (CFK) A a B a náhradního páry, proto je plně podporovaný. A [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace můžete použít <xref:System.Globalization.StringInfo> k manipulaci s řetězci bez pochopení, zda mají náhradní dvojice nebo kombinace znaků.  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] podporuje všechny [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] funkce včetně náhrady. Tak dlouho, dokud znaková sada lze mapovat na [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], je podporována. Například GB18030 zavádí některé znaky, které jsou mapované na rozšíření čínština, japonština nebo korejština (CFK) A a B a náhradního páry, proto je plně podporovaný. A [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace můžete použít <xref:System.Globalization.StringInfo> k manipulaci s řetězci bez pochopení, zda mají náhradní dvojice nebo kombinace znaků.  
   
 <a name="design_intl_ui_with_xaml"></a>   
 ## <a name="designing-an-international-user-interface-with-xaml"></a>Navrhování mezinárodní uživatelské rozhraní s XAML  
@@ -74,7 +76,7 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 <a name="intl_text"></a>   
 ### <a name="international-text"></a>Mezinárodní textu  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zahrnuje integrovanou zpracování pro všechny [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] podporované písmových systémech.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje integrovanou zpracování pro všechny [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] podporované písmových systémech.  
   
  Tyto skripty jsou aktuálně podporovány:  
   
@@ -88,15 +90,15 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 -   Řečtina  
   
--   Gudžarátština  
+-   Gujarati  
   
 -   Gurmukhi  
   
--   Hebrejština  
+-   Hebrew  
   
 -   Ideografických skripty  
   
--   Kannadština  
+-   Kannada  
   
 -   Laoská  
   
@@ -106,7 +108,7 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 -   Mongolština  
   
--   Udijština  
+-   Odia  
   
 -   Syrské  
   
@@ -114,9 +116,9 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 -   Telugština  
   
--   Thána  
+-   Thaana  
   
--   Thajštině *  
+-   Thai*  
   
 -   Tibetské  
   
@@ -128,19 +130,19 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 -   Korejské staré písmo  
   
--   Barmské  
+-   Myanmar  
   
 -   Sinhálské  
   
- Všechny používané písmo motorů podporu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)]může zahrnovat písem [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] rozložení tabulky, které povolit písma tvůrcům návrh lépe mezinárodní a vyšší kategorie typografických písem. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Písma rozložení tabulky obsahují informace o nahrazení glyf, umístění glyfů, zarovnání do bloku a standardních hodnot umístění, povolení zpracování textu aplikací ke zlepšení rozložení textu.  
+ Všechny používané písmo motorů podporu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] může zahrnovat písem [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] rozložení tabulky, které povolit písma tvůrcům návrh lépe mezinárodní a vyšší kategorie typografických písem. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Písma rozložení tabulky obsahují informace o nahrazení glyf, umístění glyfů, zarovnání do bloku a standardních hodnot umístění, povolení zpracování textu aplikací ke zlepšení rozložení textu.  
   
- [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)]Povolit písem zpracování velkých glyfu nastaví pomocí [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] kódování. Takové kódování umožňuje široký Mezinárodní podpora také jako variant typografických glyfů.  
+ [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Povolit písem zpracování velkých glyfu nastaví pomocí [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] kódování. Takové kódování umožňuje široký Mezinárodní podpora také jako variant typografických glyfů.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používá technologii vykreslování textu [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] dílčí pixelů technologie, která podporuje nezávislost řešení. To výrazně zlepšuje čitelnost a nabízí možnost podpory vysoké kvality katalogu styl dokumenty pro všechny skripty.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá technologii vykreslování textu [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] dílčí pixelů technologie, která podporuje nezávislost řešení. To výrazně zlepšuje čitelnost a nabízí možnost podpory vysoké kvality katalogu styl dokumenty pro všechny skripty.  
   
 <a name="intl_layout"></a>   
 ### <a name="international-layout"></a>Mezinárodní rozložení  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje velmi pohodlný způsob pro podporu vodorovné, obousměrné a svislém rozložení. V rámci prezentace <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Vzory směr toku jsou:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje velmi pohodlný způsob pro podporu vodorovné, obousměrné a svislém rozložení. V rámci prezentace <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Vzory směr toku jsou:  
   
 -   *LeftToRight* -vodorovném rozložení pro Latin, východoasijské a tak dále.  
   
@@ -152,16 +154,16 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 <a name="mui"></a>   
 ### <a name="multilingual-user-interface"></a>Vícejazyčné uživatelské rozhraní  
- Vícejazyčné uživatelské rozhraní sady MUI (Multilingual) je [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] podporu pro přepínání [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] z jednoho jazyka do druhého. A [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá model sestavení pro podporu MUI. Jedna aplikace obsahuje jazykově neutrální sestavení, jakož i závislých na jazyku satelitní sestavení prostředků. Vstupní bod je spravované. EXE v hlavní sestavení.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Zavaděč prostředku využívá [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]pro správce prostředků pro podporu vyhledávání prostředků a nouzového řešení ověření. Více satelitní sestavení pracovat se stejnou hlavní sestavení. Sestavení prostředků, které je načtena, závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálního vlákna.  
+ Vícejazyčné uživatelské rozhraní sady MUI (Multilingual) je [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] podporu pro přepínání [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] z jednoho jazyka do druhého. A [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá model sestavení pro podporu MUI. Jedna aplikace obsahuje jazykově neutrální sestavení, jakož i závislých na jazyku satelitní sestavení prostředků. Vstupní bod je spravované. EXE v hlavní sestavení.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Zavaděč prostředku využívá [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]pro správce prostředků pro podporu vyhledávání prostředků a nouzového řešení ověření. Více satelitní sestavení pracovat se stejnou hlavní sestavení. Sestavení prostředků, které je načtena, závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálního vlákna.  
   
 <a name="localizable_ui"></a>   
 ### <a name="localizable-user-interface"></a>Možnosti lokalizace uživatelského rozhraní  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace používat [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] definovat jejich [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]umožňuje vývojářům zadat hierarchii objektů sadu vlastností a logiku. Primárním použitím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je vyvinout [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, ale slouží k určení hierarchie libovolného [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty. Většina vývojářů používají [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zadat jejich aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a pomocí programovacího jazyka, jako například [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] reagování na interakci s uživatelem.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používat [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] definovat jejich [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] umožňuje vývojářům zadat hierarchii objektů sadu vlastností a logiku. Primárním použitím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je vyvinout [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, ale slouží k určení hierarchie libovolného [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty. Většina vývojářů používají [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zadat jejich aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a pomocí programovacího jazyka, jako například [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] reagování na interakci s uživatelem.  
   
  Z prostředků hlediska [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů navržený tak, aby popisují jazyk závislé [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] je element prostředků a proto jeho poslední distribuce musí být ve formátu lokalizovatelný zajistit podporu mezinárodní jazyků. Protože [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace obsahují bloky kódu k tomu. Další informace najdete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md). Kód je vynechají a zkompilovat do různých binárních souborů při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor tokenizovaného do formuláře BAML XAML. BAML formu soubory XAML, Image a dalších typů objektů spravovaných prostředků jsou vloženy do satelitní sestavení pro prostředek, který je možné lokalizovat do jiných jazyků, nebo hlavní sestavení při lokalizaci se nevyžaduje.  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)] [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] prostředky, včetně tabulek řetězců, obrázků a tak dále.  
+>  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)] [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] prostředky, včetně tabulek řetězců, obrázků a tak dále.  
   
 <a name="building_localizable_apps"></a>   
 ### <a name="building-localizable-applications"></a>Vytváření možnosti lokalizace aplikací  

@@ -1,5 +1,5 @@
 ---
-title: "Rozhraní .NET framework – Průvodce nasazením pro vývojáře"
+title: Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 ms.custom: updateeachrelease
 ms.date: 12/14/2017
 ms.prod: .net-framework
@@ -16,10 +16,10 @@ manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 6b2083efabd6c16bafd8b241980c4cd413258ae5
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat z rozhraní .NET Framework 4.5 na verzi rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] s svoje aplikace.
@@ -86,7 +86,7 @@ Odkazy na stažení, najdete v části [Distribuovatelné balíčky](#redistribu
 |Metody nasazení|Podporuje všechny metody:<br /><br />- [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Instalační služba systému Windows XML (WiX)](#wix)<br />- [Ruční instalace](#installing_manually)<br />- [Vlastní instalace (řetězení)](#chaining)|Podporuje všechny metody:<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Instalační služba systému Windows XML (WiX)](#wix)<br />- [Ruční instalace](#installing_manually)<br />- [Vlastní instalace (řetězení)](#chaining)|
 |Umístění souborů ke stažení pro nasazení ClickOnce|Microsoft Download Center:<br /><br /> - [Rozhraní .NET framework 4.7.1](http://go.microsoft.com/fwlink/?LinkId=852092) <br/> - [Rozhraní .NET framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [Rozhraní .NET framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780596)<br />- [Rozhraní .NET framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671728)<br />- [Rozhraní .NET framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528222)<br />- [Rozhraní .NET framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=397703)<br />- [Rozhraní .NET framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [Rozhraní .NET framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|Vlastní server nebo Microsoft Download Center:<br /><br /> - [Rozhraní .NET framework 4.7.1](http://go.microsoft.com/fwlink/?LinkId=852104)<br /> - [Rozhraní .NET framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [Rozhraní .NET framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780600)<br />- [Rozhraní .NET framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671743)<br />- [Rozhraní .NET framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528232)<br />- [Rozhraní .NET framework 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [Rozhraní .NET framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [Rozhraní .NET framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|
 
- \*Offline instalační program je větší, protože obsahuje součásti pro všechny cílové platformy. Po dokončení instalace operačního systému Windows, ukládá do mezipaměti pouze instalační program, který byl použit. Pokud offline instalačního programu se odstraní po instalaci, využití místa na disku je stejný, který používá webové instalační služby. Pokud používáte nástroj (například [InstallAware](#installaware-deployment) nebo [InstallShield](#installshield-deployment)) k vytvoření vaší aplikace Instalační program poskytuje instalační složky souboru, která bude odebrána po instalaci, může být offline instalačního programu automaticky se odstraní podle jeho umístění do složky, instalační program.
+ \* Offline instalační program je větší, protože obsahuje součásti pro všechny cílové platformy. Po dokončení instalace operačního systému Windows, ukládá do mezipaměti pouze instalační program, který byl použit. Pokud offline instalačního programu se odstraní po instalaci, využití místa na disku je stejný, který používá webové instalační služby. Pokud používáte nástroj (například [InstallAware](#installaware-deployment) nebo [InstallShield](#installshield-deployment)) k vytvoření vaší aplikace Instalační program poskytuje instalační složky souboru, která bude odebrána po instalaci, může být offline instalačního programu automaticky se odstraní podle jeho umístění do složky, instalační program.
 
  ** Pokud používáte webovou Instalační službu s vlastní instalace, můžete použít výchozí nastavení jazyka na základě nastavení Multilingual User Interface (MUI) uživatele, nebo zadejte jinou jazykovou sadu pomocí `/LCID` možnost na příkazovém řádku. Najdete v části [řetězení pomocí rozhraní .NET Framework výchozí](#chaining_default) příklady.
 
@@ -358,9 +358,9 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 |Možnost|Popis|
 |------------|-----------------|
 |**/CEIPConsent**|Přepíše výchozí chování a odešle anonymní názory společnosti Microsoft zlepšovat prostředí budoucí nasazení. Tuto možnost lze použít pouze v případě, že instalační program zobrazí výzvu k souhlasu, a pokud uživatel uděluje oprávnění k posílat anonymní názory společnosti Microsoft.|
-|**/chainingpackage**`packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají do Microsoftu jako vyskytne anonymní informace pomohou vylepšit budoucí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače; Příklad: **/chainingpackage "Lucerne publikování"**. Příklad řetězení balíčku naleznete v části [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
+|**/chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají do Microsoftu jako vyskytne anonymní informace pomohou vylepšit budoucí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače; Příklad: **/chainingpackage "Lucerne publikování"**. Příklad řetězení balíčku naleznete v části [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
 |**/LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Instalujte jazykový balíček určeného `LCID` a pokud tichý režim je nastaven vynutí zobrazené uživatelské rozhraní zobrazený v daném jazyce.<br /><br /> Pro web instalační program tato možnost řetězu instalaci jazykovou sadu z webu. **Poznámka:** tuto možnost použijte pouze s webovou Instalační službu.|
-|**/ log** `file` &#124;`folder`|Určuje umístění souboru protokolu. Výchozí hodnota je dočasnou složku pro proces a výchozí název souboru je založen na balíčku. Pokud přípona souboru .txt, textový protokol vytváří. Pokud zadáte jiné rozšíření nebo bez přípony, vytvoří se protokol HTML.|
+|**/ log** `file`&#124; `folder`|Určuje umístění souboru protokolu. Výchozí hodnota je dočasnou složku pro proces a výchozí název souboru je založen na balíčku. Pokud přípona souboru .txt, textový protokol vytváří. Pokud zadáte jiné rozšíření nebo bez přípony, vytvoří se protokol HTML.|
 |**/msioptions**|Určuje možnosti, které mají být předány .msi a .msp položek; Příklad: `/msioptions "PROPERTY1='Value'"`.|
 |**/norestart**|Zabrání restartování automaticky instalační program. Pokud použijete tuto možnost, k zaznamenání návratový kód a zpracování restartování má řetězení aplikace (viz [získávání informace o průběhu z instalačního balíku](http://go.microsoft.com/fwlink/?LinkId=179606) v knihovně MSDN).|
 |**/passive**|Nastaví pasivní režim. Zobrazuje indikátor průběhu označíte, že je v průběhu instalace, ale nezobrazí žádné chybové zprávy nebo výzvy pro uživatele. V tomto režimu, pokud zřetězené instalační program řetězení balíčku musí zpracovávat [návratové kódy](#return-codes).|

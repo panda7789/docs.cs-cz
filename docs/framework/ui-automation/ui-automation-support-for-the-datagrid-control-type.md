@@ -1,28 +1,30 @@
 ---
-title: "Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataGrid"
-ms.custom: 
+title: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataGrid
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Data Grid control type
 - control types, Data Grid
 - UI Automation, Data Grid control type
 ms.assetid: a3db4a3f-feb5-4e5f-9b42-aae7fa816e8a
-caps.latest.revision: "32"
+caps.latest.revision: ''
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3eb60004f4ffad0b62b10cf1e3ff5f28a3bf3fef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ui-automation-support-for-the-datagrid-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataGrid
 > [!NOTE]
@@ -38,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-tree-structure"></a>Struktura stromu automatizace požadované uživatelského rozhraní  
  Následující tabulka znázorňuje zobrazení ovládacího prvku a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, která se vztahují k mřížce dat řídí a popisuje, co může být obsažený v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Strom – zobrazení ovládacího prvku|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Strom – zobrazení obsahu|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – zobrazení ovládacího prvku|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – zobrazení obsahu|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
 |DataGrid<br /><br /> <ul><li>Záhlaví (0, 1 nebo 2)<br /><br /> <ul><li>HeaderItem (počet sloupců a řádků)</li></ul></li><li>Datová položka (0 nebo více; může být strukturován hierarchie)</li></ul>|DataGrid<br /><br /> -DataItem (0 nebo více; může být strukturován hierarchie)|  
   
@@ -52,8 +54,8 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélníku, který obsahuje celý ovládací prvek.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|V části poznámky.|Podporováno, pokud je ohraničující obdélník. Není-li každého bodu v rámci ohraničující obdélník je můžete kliknout a provést specializované přístupů testování, přepsání a nabízí bod můžete kliknout.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|DataGrid|Tato hodnota je stejný pro všechny rozhraní uživatelského rozhraní.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Hodnota TRUE|Hodnota této vlastnosti musí být vždy hodnotu True. To znamená, že ovládacího prvku mřížky dat musí být vždy v zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Hodnota této vlastnosti musí být vždy hodnotu True. To znamená, že ovládacího prvku mřížky dat musí být vždy v zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Hodnota této vlastnosti musí být vždy hodnotu True. To znamená, že ovládacího prvku mřížky dat musí být vždy v zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Hodnota této vlastnosti musí být vždy hodnotu True. To znamená, že ovládacího prvku mřížky dat musí být vždy v zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|V části poznámky.|Pokud ovládací prvek může přijímat fokus klávesnice, musí podporovat tuto vlastnost.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Pokud je statický text popisku této vlastnosti musí vystavit odkaz u daného ovládacího prvku.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"datová mřížka"|Lokalizovaný řetězec odpovídající typ ovládacího prvku DataGrid.|  
@@ -84,21 +86,21 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-events"></a>Události automatizace požadované uživatelského rozhraní  
  Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] potřeba podporovat všechny ovládací prvky mřížky data události. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Události|Podpora|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> událost změny vlastnosti.|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent>|Závisí|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.MultipleViewPatternIdentifiers.CurrentViewProperty>událost změny vlastnosti.|Závisí|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty>událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty>událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty>událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty>událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty>událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty>událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
+|<xref:System.Windows.Automation.MultipleViewPatternIdentifiers.CurrentViewProperty> událost změny vlastnosti.|Závisí|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje Scroll vzor, musí podporovat této události.|  
 |<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Požadováno|Žádné|  
   
 <a name="List_View_Control_Example"></a>   
@@ -109,7 +111,7 @@ ms.lasthandoff: 12/22/2017
   
  Zobrazení ovládacího prvku a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, která se vztahují na ovládacího prvku zobrazení seznamu se zobrazí níže. Vzory ovládacích prvků pro jednotlivé elementy automatizace se zobrazí v závorkách.  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Strom – zobrazení ovládacího prvku|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Strom – zobrazení obsahu|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – zobrazení ovládacího prvku|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – zobrazení obsahu|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
 |<ul><li>DataGrid – (Výběr tabulky, mřížky)</li><li>Záhlaví<br /><br /> <ul><li>HeaderItem "Name" (vyvolání)</li><li>HeaderItem "Datum změny" (vyvolání)</li><li>HeaderItem "Velikost" (vyvolání)</li></ul></li><li>Skupina "Contoso" (TableItem, GridItem, SelectionItem, tabulka *, mřížky\*)<br /><br /> <ul><li>Datová položka "účty Receivable.doc" (SelectionItem, vyvolání TableItem\*, GridItem\*)</li><li>Datová položka "účty Payable.doc" (SelectionItem, vyvolání TableItem\*, GridItem\*)</li></ul></li></ul>|<ul><li>DataGrid – (Výběr tabulky, mřížky)</li><li>Skupina "Contoso" (TableItem, GridItem, SelectionItem, tabulka *, mřížky\*)<br /><br /> <ul><li>Datová položka "účty Receivable.doc" (SelectionItem, vyvolání TableItem\*, GridItem\*)</li><li>Datová položka "účty Payable.doc" (SelectionItem, vyvolání TableItem\*, GridItem\*)</li></ul></li></ul>|  
   

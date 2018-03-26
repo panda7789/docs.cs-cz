@@ -1,12 +1,13 @@
 ---
-title: "Přehled přetažení"
-ms.custom: 
+title: Přehled přetažení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-caps.latest.revision: "31"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b7a69a4dcd5fc39b700bf9c3404e70d581509ebc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Přetažení myší běžně odkazuje na metodu přenosu dat, který zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, přetáhněte tyto objekty přes cíle některé požadované přetažení v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
@@ -66,7 +68,7 @@ Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_win
  Zdrojové a cílové operací přetažení myší jsou prvky uživatelského rozhraní; data, která je ve skutečnosti přenášení obvykle nemá vizuální reprezentace. Můžete napsat kód zajistit vizuální znázornění dat, která je přetáhnout, jako například nastane, když přetahování souborů v Průzkumníku Windows. Ve výchozím nastavení poskytnutí zpětné vazby pro uživatele tak, že změníte kurzor představují o tom, že bude mít operaci přetažení myší na data, například zda budou data přesunout ani zkopírovat.  
   
 ### <a name="drag-and-drop-effects"></a>Účinky přetažení myší  
- Jiný vliv na přenášených dat může mít operací přetažení myší. Například můžete zkopírovat data nebo můžete přesunout data. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]definuje <xref:System.Windows.DragDropEffects> výčet, který můžete použít k určení vliv operací přetažení myší. V zdroje operace přetažení, můžete zadat účinky, které vám umožní zdroji v <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda. V cíle přetažení, můžete zadat o tom, že cíl chce <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragEventArgs> třídy. Když cíle přetažení určuje jeho dopad určený v <xref:System.Windows.DragDrop.DragOver> událostí, které se předávají informace zpět do zdroje operace přetažení ve <xref:System.Windows.DragDrop.GiveFeedback> událostí. Zdroje operace přetažení používá tuto informaci k informovat uživatele o tom, jaký vliv má cíle přetažení chtít mít na data. Při umístění dat cíle přetažení určuje skutečné účinek <xref:System.Windows.DragDrop.Drop> událostí. Aby se předávají informace zpět do zdroje operace přetažení jako návratová hodnota <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda. Pokud cíle přetažení vrátí efektu, který není v seznamu zdroje přetažení `allowedEffects`, přetažení myší operace byla zrušena, bez jakékoli přenos dat, ke kterým dochází.  
+ Jiný vliv na přenášených dat může mít operací přetažení myší. Například můžete zkopírovat data nebo můžete přesunout data. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] definuje <xref:System.Windows.DragDropEffects> výčet, který můžete použít k určení vliv operací přetažení myší. V zdroje operace přetažení, můžete zadat účinky, které vám umožní zdroji v <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda. V cíle přetažení, můžete zadat o tom, že cíl chce <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragEventArgs> třídy. Když cíle přetažení určuje jeho dopad určený v <xref:System.Windows.DragDrop.DragOver> událostí, které se předávají informace zpět do zdroje operace přetažení ve <xref:System.Windows.DragDrop.GiveFeedback> událostí. Zdroje operace přetažení používá tuto informaci k informovat uživatele o tom, jaký vliv má cíle přetažení chtít mít na data. Při umístění dat cíle přetažení určuje skutečné účinek <xref:System.Windows.DragDrop.Drop> událostí. Aby se předávají informace zpět do zdroje operace přetažení jako návratová hodnota <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda. Pokud cíle přetažení vrátí efektu, který není v seznamu zdroje přetažení `allowedEffects`, přetažení myší operace byla zrušena, bez jakékoli přenos dat, ke kterým dochází.  
   
  Je důležité si pamatovat, že v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], <xref:System.Windows.DragDropEffects> hodnoty se používají jenom pro komunikaci mezi zdroje operace přetažení a cíle přetažení o důsledcích operaci přetažení myší. Skutečný výsledek operace přetažení myší závisí na vás bude psaní příslušný kód ve vaší aplikaci.  
   
@@ -158,11 +160,11 @@ Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_win
   
  Uvnitř <xref:System.Windows.UIElement.MouseMove> obslužné rutiny události, volání <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda inicializace operace přetažení myší. <xref:System.Windows.DragDrop.DoDragDrop%2A> Metoda přijímá tři parametry:  
   
--   `dragSource`– Odkaz na objekt závislostí, který je zdrojem přenášených dat; Toto je obvykle zdroj <xref:System.Windows.UIElement.MouseMove> událostí.  
+-   `dragSource` – Odkaz na objekt závislostí, který je zdrojem přenášených dat; Toto je obvykle zdroj <xref:System.Windows.UIElement.MouseMove> událostí.  
   
--   `data`-Objekt, který obsahuje přenášených dat, uzavřen do <xref:System.Windows.DataObject>.  
+-   `data` -Objekt, který obsahuje přenášených dat, uzavřen do <xref:System.Windows.DataObject>.  
   
--   `allowedEffects`-Jedním z <xref:System.Windows.DragDropEffects> hodnot výčtu, která určuje povolené důsledky operaci přetažení myší.  
+-   `allowedEffects` -Jedním z <xref:System.Windows.DragDropEffects> hodnot výčtu, která určuje povolené důsledky operaci přetažení myší.  
   
  Jakýkoli serializovatelný objekt lze předat ve `data` parametr. Pokud data není již uzavřen do <xref:System.Windows.DataObject>, bude automaticky zalomit v nové <xref:System.Windows.DataObject>. Pokud chcete předat více datových položek, musíte vytvořit <xref:System.Windows.DataObject> sami, možností a předejte ji do <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda. Další informace najdete v tématu [datových objektů a dat](../../../../docs/framework/wpf/advanced/data-and-data-objects.md).  
   
@@ -197,7 +199,7 @@ Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_win
   
 2.  <xref:System.Windows.DragDrop.DragOver>  
   
-3.  <xref:System.Windows.DragDrop.DragLeave>nebo<xref:System.Windows.DragDrop.Drop>  
+3.  <xref:System.Windows.DragDrop.DragLeave> Nebo <xref:System.Windows.DragDrop.Drop>  
   
  <xref:System.Windows.DragDrop.DragEnter> Události dojde, když data je přetáhnout do cíle přetažení hranic. Tuto událost zajistit náhled důsledky operace přetahování myší, je obvykle zpracovat, pokud je to vhodné pro vaši aplikaci. Nenastavujte <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.DragDrop.DragEnter> událostí, jak se budou přepsány v <xref:System.Windows.DragDrop.DragOver> událostí.  
   

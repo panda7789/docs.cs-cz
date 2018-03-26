@@ -1,28 +1,28 @@
 ---
 title: WSHttpBinding
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WS Profile binding
 ms.assetid: 22d85b19-0135-4141-9179-a0e9c343ad73
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 8ff105c626f72d34cf6963586a84aba945b5af01
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="wshttpbinding"></a>WSHttpBinding
 Tento příklad znázorňuje způsob implementace typické služby a typické klienta pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Tato ukázka se skládá z konzoly programu klienta (client.exe) a knihovnu služby hostované Internetové informační služby (IIS). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ICalculator` rozhraní, která zpřístupňuje matematické operace (přidat, odečíst, násobit a dělit). Klient podá synchronní požadavky a odpovědi služby s výsledkem dané matematické operace. Činnost klienta je viditelný v okně konzoly.  

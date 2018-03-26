@@ -1,24 +1,26 @@
 ---
 title: Migrace z .NET Remoting do WCF
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6b387e100ff881c5394b6a77716a733b3928eae9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak k migraci aplikace, která používá .NET Remoting používat Windows Communication Foundation (WCF). Porovnává podobné koncepty mezi tyto produkty a pak popisuje, jak provést několik běžných scénářů vzdálené komunikace v WCF.  
@@ -34,7 +36,7 @@ Tento článek popisuje, jak k migraci aplikace, která používá .NET Remoting
 |Operace služby|Veřejné metody na typ serveru|Označit pomocí atributu [OperationContract]|  
 |Serializace|ISerializable nebo [Serializable]|DataContractSerializer nebo třídy XmlSerializer|  
 |Objekty předané|Hodnotou nebo odkazem|Podle hodnoty jenom|  
-|Chyby nebo výjimky|Všechny serializovatelný výjimky|FaultContract\<TDetail >|  
+|Chyby nebo výjimky|Všechny serializovatelný výjimky|FaultContract\<TDetail>|  
 |Objekty proxy serveru klienta|Silného typu transparentní proxy jsou automaticky vytvořen z MarshalByRefObjects|Silného typu proxy se generují pomocí ChannelFactory na vyžádání\<TChannel >|  
 |Platforma požadované|Klient i server musí používat Microsoft OS a rozhraní .NET|Více platforem|  
 |Formát zprávy|Soukromé|Oborové standardy (SOAP, WS-* atd.)|  

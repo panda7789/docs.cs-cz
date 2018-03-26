@@ -1,23 +1,24 @@
 ---
-title: "Úloha 2: Hostování návrháře pracovních postupů"
-ms.custom: 
+title: 'Úloha 2: Hostování návrháře pracovních postupů'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-caps.latest.revision: "19"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 991f3d25a81e90ab779936c993ec7dd09a71b794
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře pracovních postupů
 Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] aplikace.  
@@ -107,7 +108,7 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
         }  
         ```  
   
-         [!INCLUDE[crabout](../../../includes/crabout-md.md)]registrace návrháře aktivit, najdete v části [postupy: vytvoření Návrháře vlastních aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).  
+         [!INCLUDE[crabout](../../../includes/crabout-md.md)] registrace návrháře aktivit, najdete v části [postupy: vytvoření Návrháře vlastních aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).  
   
     5.  V `MainWindow` konstruktoru třídy, přidejte volání metody dříve deklarované registrujete metadata pro návrháře podporu a vytvářet <xref:System.Activities.Presentation.WorkflowDesigner>.  
   

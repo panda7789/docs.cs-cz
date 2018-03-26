@@ -1,28 +1,28 @@
 ---
 title: '&lt;wsDualHttpBinding&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - wsDualHttpBinding Element
 ms.assetid: fd8ac4e2-5641-473b-9115-73f14ab1c065
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: a49b534ba22f4ac422eb26885388e24594b49afd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ltwsdualhttpbindinggt"></a>&lt;wsDualHttpBinding&gt;
 Definuje vazbu zabezpečené, spolehlivé a vzájemná spolupráce, který je vhodný pro služby duplexní kontrakty nebo komunikaci prostřednictvím protokolu SOAP zprostředkovatelů.  
@@ -100,7 +100,7 @@ textEncoding="Unicode/BigEndianUnicode/UTF8"
 |[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje kolekci standardní a vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- `WSDualHttpBinding` Poskytuje stejné podporu pro webové služby protokoly, jako `WSHttpBinding`, ale pro použití s duplexní kontrakty. `WSDualHttpBinding`pouze podporuje zabezpečení protokolu SOAP a vyžaduje spolehlivé zasílání zpráv. Tato vazba vyžaduje, aby klient veřejné identifikátor URI, který poskytuje koncový bod zpětného volání pro službu. To zajišťuje `clientBaseAddress` atribut. Duální vazbu zpřístupní IP adresu klienta ke službě. Klient musí použít zabezpečení zajistit, že pouze připojení k službám ho vztahy důvěryhodnosti.  
+ `WSDualHttpBinding` Poskytuje stejné podporu pro webové služby protokoly, jako `WSHttpBinding`, ale pro použití s duplexní kontrakty. `WSDualHttpBinding` pouze podporuje zabezpečení protokolu SOAP a vyžaduje spolehlivé zasílání zpráv. Tato vazba vyžaduje, aby klient veřejné identifikátor URI, který poskytuje koncový bod zpětného volání pro službu. To zajišťuje `clientBaseAddress` atribut. Duální vazbu zpřístupní IP adresu klienta ke službě. Klient musí použít zabezpečení zajistit, že pouze připojení k službám ho vztahy důvěryhodnosti.  
   
  Tato vazba umožňuje spolehlivě komunikovat prostřednictvím jednoho nebo více zprostředkovatelů protokolu SOAP.  
   

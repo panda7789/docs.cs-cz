@@ -1,7 +1,7 @@
 ---
-title: "Návrh aplikace mikroslužbu"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Návrh aplikace mikroslužbu"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Návrh aplikace mikroslužbu
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Návrh aplikace mikroslužbu
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 116ddb44655f0a9708a6496cbe7fb4fbc608300b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace mikroslužbu
 
@@ -104,7 +104,7 @@ Proto jednotky nasazení pro mikroslužeb (a to i pro databáze v této aplikaci
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **eShopOnContainers GitHub repo. Zdrojový kód pro odkaz na aplikaci**
+-   **eShopOnContainers GitHub repo. Zdrojový kód je referenční aplikací**
     *https://aka.ms/eShopOnContainers/*
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Výhody řešení na základě mikroslužbu

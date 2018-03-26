@@ -1,28 +1,28 @@
 ---
 title: NetNamedPipeBinding
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 4ea4e34049ef54cd6d161e381bf92818b5f3531c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
 Tento příklad ukazuje `netNamedPipeBinding` vazby, která poskytuje komunikaci mezi procesy ve stejném počítači. Pojmenované kanály nefungují mezi počítači. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) kalkulačky služby.  

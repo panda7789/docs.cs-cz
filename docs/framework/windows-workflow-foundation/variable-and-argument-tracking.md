@@ -1,23 +1,24 @@
 ---
-title: "Proměnné a Argument sledování"
-ms.custom: 
+title: Proměnné a Argument sledování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-caps.latest.revision: "7"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c0857830b52b2f71df5d81f4bd232b62b894da63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="variable-and-argument-tracking"></a>Proměnné a Argument sledování
 Při spuštění pracovního postupu pro sledování, je často užitečné extrahovat data. To poskytuje další kontext při přístupu k provádění sledování záznamů post. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete rozbalit žádné viditelné proměnné nebo argumentu v rámci oboru všechny aktivity v pracovním postupu pomocí sledování. Sledování profily usnadňují extrahovat data.  

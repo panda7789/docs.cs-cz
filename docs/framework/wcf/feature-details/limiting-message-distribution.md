@@ -1,24 +1,26 @@
 ---
-title: "Omezení distribuce zpráv"
-ms.custom: 
+title: Omezení distribuce zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-caps.latest.revision: "10"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b4d81583a8dfc2c48fb9b7533f071495b562615e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
 Rovnocenného kanálu je záměrné všesměrového vysílání mřížku. Svůj základní flooding model spočívá v distribuci každá zpráva odeslaná do všech členů tohoto oka kteréhokoli člena mřížku. To se hodí v situacích, kde každé zprávy vygenerované metodou členem je relevantní a užitečné pro všechny ostatní členy (například konverzační skupina). Ale mnoho aplikací mít občasné potřebu omezení distribuce zpráv. Například pokud nového člena spojí mřížku a chce načíst poslední zprávou odeslanou přes síť, tento požadavek není nutné k zaplnění na každého člena OK. Žádost může být omezen na téměř okolí, nebo může být odfiltrována místně vygenerovanou zprávy. Zprávy mohou rovněž odeslány do jednotlivých uzlu na OK. Toto téma popisuje použití počet směrování, šíření filtru zpráv, filtrem místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu OK a obsahuje obecné pokyny pro výběr přístup.  
@@ -31,9 +33,9 @@ Rovnocenného kanálu je záměrné všesměrového vysílání mřížku. Svůj
 -   Fragmenty kódu a související informace najdete v tématu [rovnocenného kanálu blog](http://go.microsoft.com/fwlink/?LinkID=114531) (http://go.microsoft.com/fwlink/?LinkID=114531).  
   
 ## <a name="message-propagation-filter"></a>Šíření filtr zpráv  
- `MessagePropagationFilter`můžete použít pro vlastní řízení zahlcení zprávy, zejména v případě, že obsah zprávy nebo jiných konkrétních scénářů určit šíření. Filtr rozhoduje šíření pro každou zprávu, které procházejí uzlu. To platí pro zprávy, které pochází jinde v mřížce, vaše uzlu přijal i zprávy vytvořené v aplikaci. Filtr má přístup ke zprávě a jeho vzniku, takže rozhodnutí o předávání nebo vyřazuje zprávy může být založen na úplné informace, které jsou k dispozici.  
+ `MessagePropagationFilter` můžete použít pro vlastní řízení zahlcení zprávy, zejména v případě, že obsah zprávy nebo jiných konkrétních scénářů určit šíření. Filtr rozhoduje šíření pro každou zprávu, které procházejí uzlu. To platí pro zprávy, které pochází jinde v mřížce, vaše uzlu přijal i zprávy vytvořené v aplikaci. Filtr má přístup ke zprávě a jeho vzniku, takže rozhodnutí o předávání nebo vyřazuje zprávy může být založen na úplné informace, které jsou k dispozici.  
   
- <xref:System.ServiceModel.PeerMessagePropagationFilter>je abstraktní základní třídu s jedinou funkci <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. První argument volání metody předá úplnou kopii zprávy. Všechny změny na zprávu neovlivní skutečné zprávy. Poslední argument volání metody, které identifikuje počátek zprávy (`PeerMessageOrigination.Local` nebo `PeerMessageOrigination.Remote`). Konkrétní implementace této metody musí vracet konstanta z <xref:System.ServiceModel.PeerMessagePropagation> výčtu označující, že zprávy je k přeposlání do místních aplikací (`Local`), přesměrovaná ke vzdáleným klientům (`Remote`), obě (`LocalAndRemote`), nebo žádný z nich (`None`). Tento filtr lze použít přímým přístupem k odpovídající položce `PeerNode` objekt a zadání instanci odvozené šíření filtrovat třídy v `PeerNode.MessagePropagationFilter` vlastnost. Zkontrolujte, zda filtr šíření připojen před otevřením rovnocenného kanálu.  
+ <xref:System.ServiceModel.PeerMessagePropagationFilter> je abstraktní základní třídu s jedinou funkci <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. První argument volání metody předá úplnou kopii zprávy. Všechny změny na zprávu neovlivní skutečné zprávy. Poslední argument volání metody, které identifikuje počátek zprávy (`PeerMessageOrigination.Local` nebo `PeerMessageOrigination.Remote`). Konkrétní implementace této metody musí vracet konstanta z <xref:System.ServiceModel.PeerMessagePropagation> výčtu označující, že zprávy je k přeposlání do místních aplikací (`Local`), přesměrovaná ke vzdáleným klientům (`Remote`), obě (`LocalAndRemote`), nebo žádný z nich (`None`). Tento filtr lze použít přímým přístupem k odpovídající položce `PeerNode` objekt a zadání instanci odvozené šíření filtrovat třídy v `PeerNode.MessagePropagationFilter` vlastnost. Zkontrolujte, zda filtr šíření připojen před otevřením rovnocenného kanálu.  
   
 -   Fragmenty kódu a související informace najdete v tématu [rovnocenného kanálu blog](http://go.microsoft.com/fwlink/?LinkID=114532) (http://go.microsoft.com/fwlink/?LinkID=114532).  
   

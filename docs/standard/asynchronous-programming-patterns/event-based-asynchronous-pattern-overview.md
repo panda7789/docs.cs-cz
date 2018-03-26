@@ -1,12 +1,12 @@
 ---
-title: "Přehled asynchronních vzorů založených na událostech"
-ms.custom: 
+title: Přehled asynchronních vzorů založených na událostech
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,7 +22,7 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-caps.latest.revision: "19"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -30,10 +30,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: efe136ceb87213c5f9911b24a8a522b29a37b384
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které současně provádět mnoho úloh, ale zůstávají reaguje na interakci s uživatelem, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů obsahuje všechny nástroje potřebné k vytvoření vícevláknové aplikace s vysokým výkonem, ale efektivně používání těchto nástrojů vyžaduje významné prostředí s více vlákny inženýrství softwaru. Pro vícevláknové aplikace s relativně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje přehledné řešení. Pro sofistikovanější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronní vzor založený na událostech.  
@@ -50,7 +50,7 @@ Aplikace, které současně provádět mnoho úloh, ale zůstávají reaguje na 
   
  Třídu, která podporuje asynchronní vzor na základě událostí bude mít jednu nebo více metod s názvem *MethodName ***asynchronní**. Tyto metody mohou zrcadlení synchronní verze, které provádět stejné operace na aktuální vlákno. Třídy mohou mít i *MethodName *** dokončeno**  událostí a může obsahovat *MethodName *** AsyncCancel** (nebo jednoduše **CancelAsync**) metoda.  
   
- <xref:System.Windows.Forms.PictureBox>je typické komponenty, která podporuje asynchronní vzor založený na událostech. Si můžete stáhnout bitovou kopii synchronně voláním jeho <xref:System.Windows.Forms.PictureBox.Load%2A> metoda, ale pokud je velký obrázek, nebo pokud jde o pomalé síťové připojení, pro aplikace zastaví ("přečnívat"), dokud se nedokončí operaci stahování a volání k <xref:System.Windows.Forms.PictureBox.Load%2A> vrátí.  
+ <xref:System.Windows.Forms.PictureBox> je typické komponenty, která podporuje asynchronní vzor založený na událostech. Si můžete stáhnout bitovou kopii synchronně voláním jeho <xref:System.Windows.Forms.PictureBox.Load%2A> metoda, ale pokud je velký obrázek, nebo pokud jde o pomalé síťové připojení, pro aplikace zastaví ("přečnívat"), dokud se nedokončí operaci stahování a volání k <xref:System.Windows.Forms.PictureBox.Load%2A> vrátí.  
   
  Pokud chcete, aby vaše aplikace běžet při bitovou kopii načítání, můžete zavolat <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metoda a popisovač <xref:System.Windows.Forms.PictureBox.LoadCompleted> událostí, stejně jako by zpracovat žádné další událost. Při volání <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metoda, vaše aplikace bude nadále spuštěna při stahování pokračuje na samostatné vlákno ("v pozadí"). Vaší obslužné rutiny události bude volána po dokončení operace načítání bitovou kopii a vaší obslužné rutiny událostí můžete zkontrolovat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr k určení, pokud stahování byla úspěšně dokončena.  
   
@@ -132,7 +132,7 @@ public class AsyncExample
 ### <a name="canceling-pending-operations"></a>Rušení čekajících operací  
  Je důležité, abyste mohli před jejich dokončení kdykoli zrušit asynchronní operace. Bude mít třídy, které implementovat asynchronní vzor založený na událostech `CancelAsync` – metoda (Pokud máte pouze jednu asynchronní metodu) nebo *MethodName *** AsyncCancel** – metoda (pokud existuje několik metod asynchronní).  
   
- Metody, které umožňují více volání přijímají `userState` parametr, který můžete použít ke sledování životnost jednotlivých úloh. `CancelAsync`přijímá `userState` parametr, který umožňuje zrušit konkrétní úkolů čekajících na zpracování.  
+ Metody, které umožňují více volání přijímají `userState` parametr, který můžete použít ke sledování životnost jednotlivých úloh. `CancelAsync` přijímá `userState` parametr, který umožňuje zrušit konkrétní úkolů čekajících na zpracování.  
   
  Metody, které podporují jenom jeden nevyřízenou operaci najednou, jako je třeba `Method1Async(string param)`, nejsou možné zrušit.  
   

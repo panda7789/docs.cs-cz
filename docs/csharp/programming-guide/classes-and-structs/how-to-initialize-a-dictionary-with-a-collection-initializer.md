@@ -1,5 +1,5 @@
 ---
-title: "Postupy: Inicializace slovníku pomocí inicializátoru kolekce (Průvodce programováním v C#)"
+title: 'Postupy: Inicializace slovníku pomocí inicializátoru kolekce (Průvodce programováním v C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,14 +8,14 @@ ms.topic: article
 helpviewer_keywords:
 - collection initializers [C#], with Dictionary
 ms.assetid: 25283922-f8ee-40dc-a639-fac30804ec71
-caps.latest.revision: 
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8b8de5fb85a839d52ad00ad552ef823d9817e9b7
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>Postupy: Inicializace slovníku pomocí inicializátoru kolekce (Průvodce programováním v C#)
 A <xref:System.Collections.Generic.Dictionary`2> obsahuje kolekci dvojic klíč/hodnota. Jeho <xref:System.Collections.Generic.Dictionary`2.Add*> metoda přebírá dva parametry: jeden pro klíč a jeden pro hodnotu. K chybě při inicializaci <xref:System.Collections.Generic.Dictionary`2>, nebo jakoukoli kolekci, jejichž `Add` metoda přijímá několik parametrů, uzavřete každou sadu parametrů do složených závorek, jak je znázorněno v následujícím příkladu.  

@@ -1,27 +1,29 @@
 ---
-title: "Zadávání poznámek k typové datové sady"
-ms.custom: 
+title: Zadávání poznámek k typové datové sady
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-caps.latest.revision: "6"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: cc09f3f9b43b70b7f9b302d7a9d75428b5a0e6c7
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="annotating-typed-datasets"></a>Zadávání poznámek k typové datové sady
 Poznámky umožňují změnit názvy elementů v váš zadaný <xref:System.Data.DataSet> beze změny základní schéma. Úprava názvy elementů v základní schéma by způsobilo zadaného objektu **datovou sadu** k odkazování na objekty, které není neexistuje ve zdroji dat, a také dojít ke ztrátě odkaz na objekty, které existují v datovém zdroji.  

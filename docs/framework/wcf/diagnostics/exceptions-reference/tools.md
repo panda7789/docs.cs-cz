@@ -1,24 +1,26 @@
 ---
-title: "Nástroje"
-ms.custom: 
+title: Nástroje
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 89c907f9-313f-408c-992a-631f1eadf1da
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5badbb9142261fc1dc6c2b2d5af3c89c7af776b6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="tools"></a>Nástroje
 Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] nástroje.  
@@ -28,7 +30,7 @@ Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../
 |Kód prostředku|Řetězec prostředku|  
 |-------------------|---------------------|  
 |ParametersTarget|\<výčet >|  
-|ParametersToolConfig|\<configFile >|  
+|ParametersToolConfig|\<configFile>|  
 |ErrInvalidPath|Zadaný je platná cesta UNC. Zkontrolujte zadaného argumentu.|  
 |ParametersReference|\<Cesta k souboru >|  
 |WrnCannotLoadConfigFileForValidation|Zpracování konfiguračního souboru načíst ze zadaného umístění došlo k chybě. Služby, které jsou definovány v tento konfigurační soubor nelze ověřit.|  
@@ -98,7 +100,7 @@ Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../
 |ErrDirectoryNotFound|Zadaný adresář nebyl nalezen. Ověřte, zda adresář existuje a zda máte příslušná oprávnění k jeho čtení.|  
 |ErrUnableToLoadFile|Zadaný soubor nelze přečíst.|  
 |ErrNoFilesFound|Zadaná vstupní cesta k odkazování na všechny existující soubory nezobrazí.|  
-|ParametersConfig|\<configFile >|  
+|ParametersConfig|\<configFile>|  
 |ErrDirectoryInsteadOfFile|Zadaná vstupní cesta pravděpodobně adresáře. Je třeba adresy URL nebo cesty k souborům.|  
 |HelpConfig|Dá pokyn, nástroje pro generování konfigurační soubor se zadaným názvem. Výchozí: output.config.|  
 |ErrSingleUseSwitch|Zadaná možnost nelze zadat více než jednou.|  
@@ -123,7 +125,7 @@ Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../
 |ErrInvalidTarget|Zadaný cíl je platný, pokud je zadán pomocí Zadaná možnost. Podporované cíle nejsou zadány.|  
 |ErrPathTooLong|Výsledná cesta je příliš dlouhá. Zkontrolujte zadané argumenty.|  
 |HelpCommonOptionsCategory|-= BĚŽNÉ MOŽNOSTI =-|  
-|ParametersServiceName|\<serviceConfigName >|  
+|ParametersServiceName|\<serviceConfigName>|  
 |ErrNoValidInputFilesSpecified|Žádné platné vstupní soubory zadané. Zadejte buď dokumenty metadat, nebo soubory sestavení.|  
 |ParametersLanguage|\<jazyk >|  
 |ErrUnableToLoadMetadataDocument|Došlo k chybě při načítání metadat z jednoho načíst dokumentů. Je zadán identifikátor dokumentu.|  
@@ -136,7 +138,7 @@ Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../
 |GeneratingFiles|Generování souborů...|  
 |ErrCannotSpecifyMultipleMappingsForNamespace|Zadané možnosti byla předána neplatná hodnota. Zadaný cílový obor názvů nelze mapovat na více oborů názvů CLR jako zadaný.|  
 |ErrCouldNotLoadReferenceAssemblyAt|Zadaný odkaz na sestavení nelze načíst.|  
-|ParametersOut|\<Soubor >|  
+|ParametersOut|\<file>|  
 |NoCodeWasGeneratedSuggestDCOnly|Generovat kontrakty z schémat, použijte Zadaná možnost.|  
 |ErrUnableToLoadInputConfig|Zadaný konfigurační soubor nelze načíst.|  
 |ErrUnexpectedDelimiter|Argument je neplatný oddělovač (': ' nebo '=') nelze spustit možnost.|  

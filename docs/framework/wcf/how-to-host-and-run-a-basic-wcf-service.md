@@ -1,8 +1,9 @@
 ---
-title: "Postupy: Hostování a spuštění základní služby Windows Communication Foundation Service"
+title: 'Postupy: Hostování a spuštění základní služby Windows Communication Foundation Service'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,12 +15,13 @@ ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1e1c00abfec36622f5da493165259fb1786ab8d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>Postupy: Hostování a spuštění základní služby Windows Communication Foundation Service
 Toto je třetí šesti úlohy, které jsou nutné k vytváření [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace. Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
@@ -157,10 +159,10 @@ Toto je třetí šesti úlohy, které jsou nutné k vytváření [!INCLUDE[indig
   
     2.  Krok 2 – vytvoří instanci <xref:System.ServiceModel.ServiceHost> třída k hostování služby. Konstruktor přebírá dva parametry, typu třídy, která implementuje kontrakt služby a základní adresa služby.  
   
-    3.  Krok 3 – vytvoří <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint` instance. Koncový bod služby se skládá z adresy, vazby a kontraktu služby. <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint` Konstruktor proto trvá typ rozhraní kontraktu služby, vazbu a adresu. Kontrakt služby je `ICalculator`, která definované a implementovat typ služby. Vazba použitá v této ukázce je <xref:System.ServiceModel.WSHttpBinding> tedy předdefinované vazbu, která se používá pro připojení ke koncovým bodům, které odpovídají WS-* specifikace. Další informace o vazby WCF najdete v tématu [vazby WCF – přehled](../../../docs/framework/wcf/bindings-overview.md). Adresa se připojuje k základní adresu k identifikaci koncového bodu. Zadaná adresa v tento kód je "CalculatorService" plně kvalifikovanou adresu pro koncový bod je `"http://localhost:8000/GettingStarted/CalculatorService"` přidání koncového bodu služby je volitelný při použití rozhraní .NET Framework 4.0 nebo novější. V těchto verzích Pokud žádné koncové body se přidají kódu nebo konfigurace, WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresa a kontrakt implementované službu. Další informace o výchozím nastavení najdete v části koncové body [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+    3.  Krok 3 – vytvoří <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint` instance. Koncový bod služby se skládá z adresy, vazby a kontraktu služby. <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint` Konstruktor proto trvá typ rozhraní kontraktu služby, vazbu a adresu. Kontrakt služby je `ICalculator`, která definované a implementovat typ služby. Vazba použitá v této ukázce je <xref:System.ServiceModel.WSHttpBinding> tedy předdefinované vazbu, která se používá pro připojení ke koncovým bodům, které odpovídají WS-* specifikace. Další informace o vazby WCF najdete v tématu [vazby WCF – přehled](../../../docs/framework/wcf/bindings-overview.md). Adresa se připojuje k základní adresu k identifikaci koncového bodu. Zadaná adresa v tento kód je "CalculatorService" plně kvalifikovanou adresu pro koncový bod je `"http://localhost:8000/GettingStarted/CalculatorService"` přidání koncového bodu služby je volitelný při použití rozhraní .NET Framework 4.0 nebo novější. V těchto verzích Pokud žádné koncové body se přidají kódu nebo konfigurace, WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresa a kontrakt implementované službu. Další informace o výchozím nastavení najdete v části koncové body [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
         > [!IMPORTANT]
-        >  Přidání koncového bodu služby je volitelný při použití rozhraní .NET Framework 4 nebo novější. V těchto verzích Pokud žádné koncové body se přidají kódu nebo konfigurace, WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresa a kontrakt implementované službu. Další informace o výchozím nastavení najdete v části koncové body [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+        >  Přidání koncového bodu služby je volitelný při použití rozhraní .NET Framework 4 nebo novější. V těchto verzích Pokud žádné koncové body se přidají kódu nebo konfigurace, WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresa a kontrakt implementované službu. Další informace o výchozím nastavení najdete v části koncové body [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
     4.  Krok 4 – povolení metadata exchange. Metadata exchange budou klienti používat ke generování proxy servery, které se použije k volání operací služby. Povolit vytvořit metadata exchange <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance, nastavte ji na <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`a přidejte požadované chování, <!--zz <xref:System.ServiceModel.ServiceHost.Behaviors%2A>  --> `System.ServiceModel.ServiceHost.Behaviors%2A` kolekce <xref:System.ServiceModel.ServiceHost> instance.  
   
@@ -422,7 +424,7 @@ End Module
 ```  
   
 > [!NOTE]
->  Služby, jako je tento vyžadují oprávnění k registraci adresy protokolu HTTP na počítači pro naslouchání. Toto oprávnění mají účty správců, ale není správcem účty je potřeba udělit oprávnění pro obory názvů HTTP. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Postup konfigurace oboru názvů rezervace najdete v tématu [konfigurace HTTP a HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md). Při spuštění v [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], service.exe musí být spuštěn s oprávněními správce.  
+>  Služby, jako je tento vyžadují oprávnění k registraci adresy protokolu HTTP na počítači pro naslouchání. Toto oprávnění mají účty správců, ale není správcem účty je potřeba udělit oprávnění pro obory názvů HTTP. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Postup konfigurace oboru názvů rezervace najdete v tématu [konfigurace HTTP a HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md). Při spuštění v [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], service.exe musí být spuštěn s oprávněními správce.  
   
  Nyní je služba spuštěná. Pokračujte [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Informace o odstraňování potíží, najdete v části [řešení potíží s kurzu Začínáme](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).  
   

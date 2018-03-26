@@ -1,12 +1,13 @@
 ---
-title: "Ngen.exe (generátor nativních obrázků)"
-ms.custom: 
+title: Ngen.exe (generátor nativních obrázků)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -25,16 +26,17 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-caps.latest.revision: "57"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 20c120323356171d78da35a490488f4654baece6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).  
@@ -287,7 +289,7 @@ ngen /? | /help
   
 <a name="DependencyHint"></a>   
 ### <a name="specifying-a-binding-hint-for-a-dependency"></a>Určení vazby nápovědu pro závislosti  
- Použít <xref:System.Runtime.CompilerServices.DependencyAttribute> k sestavení udávajících pravděpodobnost, že zadaná závislost budou načteny. <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType>Označuje, že je vhodné, pevné vazby <xref:System.Runtime.CompilerServices.LoadHint.Default> označuje, že má být použita výchozí hodnota pro závislost, a <xref:System.Runtime.CompilerServices.LoadHint.Sometimes> označuje, že pevné vazba není vhodná.  
+ Použít <xref:System.Runtime.CompilerServices.DependencyAttribute> k sestavení udávajících pravděpodobnost, že zadaná závislost budou načteny. <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> Označuje, že je vhodné, pevné vazby <xref:System.Runtime.CompilerServices.LoadHint.Default> označuje, že má být použita výchozí hodnota pro závislost, a <xref:System.Runtime.CompilerServices.LoadHint.Sometimes> označuje, že pevné vazba není vhodná.  
   
  Následující kód zobrazuje atributy pro sestavení, které má dvě závislosti. První závislost (Assembly1) je vhodným kandidátem pro pevnou vazbu, druhá závislost (Assembly2) nikoliv.  
   
@@ -501,7 +503,7 @@ ngen uninstall ClientApp /debug
 ```  
   
 > [!NOTE]
->  Odinstalace `/debug` scénáře neodinstaluje scénáře, který zahrnuje obě `/profile` a`/debug.`  
+>  Odinstalace `/debug` scénáře neodinstaluje scénáře, který zahrnuje obě `/profile` a `/debug.`  
   
  Příkaz odinstaluje všechny scénáře pro určitou verzi `ClientApp.exe`:  
   
@@ -571,7 +573,7 @@ ngen update /queue
   
  `update` Akce regeneruje všechny nativní bitové kopie, které se zrušila platnost, nikoli pouze ty, které používají `MyComponent`.  
   
- Pokud vaše aplikace obsahuje mnoho kořeny, můžete řídit prioritu odložené akce. Následující příkazy ve frontě pro instalaci tři kořenových certifikačních autorit. `Assembly1`je nainstalována jako první, bez čekání na čas nečinnosti. `Assembly2`je také nainstalován bez čekání na dobu nečinnosti, ale po dokončení všech akcí priority 1. `Assembly3`nainstaluje se při službu zjistí, že je počítač v nečinnosti.  
+ Pokud vaše aplikace obsahuje mnoho kořeny, můžete řídit prioritu odložené akce. Následující příkazy ve frontě pro instalaci tři kořenových certifikačních autorit. `Assembly1` je nainstalována jako první, bez čekání na čas nečinnosti. `Assembly2` je také nainstalován bez čekání na dobu nečinnosti, ale po dokončení všech akcí priority 1. `Assembly3` nainstaluje se při službu zjistí, že je počítač v nečinnosti.  
   
 ```  
 ngen install Assembly1 /queue:1  

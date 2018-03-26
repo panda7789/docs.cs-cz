@@ -20,7 +20,7 @@ ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
 ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Služba publikování vám usnadní pokročíte z časná vývojového prostředí poskytované [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta ve skutečnosti nasazení aplikace do produkčního prostředí pro účely testování. Než provedete na plán konečné nasazení, můžete použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] službu publikování ověřte, že vaše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba provádí správně a je připravena k publikování. Můžete také nasadit vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby knihovny na různé cílové umístění pro testování.  

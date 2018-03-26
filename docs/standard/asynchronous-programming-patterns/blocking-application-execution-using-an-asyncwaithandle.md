@@ -1,12 +1,12 @@
 ---
-title: "Blokování provádění aplikací pomocí vlastnosti AsyncWaitHandle"
-ms.custom: 
+title: Blokování provádění aplikací pomocí vlastnosti AsyncWaitHandle
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,7 +19,7 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - blocking application execution
 ms.assetid: 3e32daf2-8161-4e8f-addd-9fd9ff101b03
-caps.latest.revision: "6"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -27,10 +27,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 380080c0aa05bc5b94c9ec5fe471f2f255562cd2
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="blocking-application-execution-using-an-asyncwaithandle"></a>Blokování provádění aplikací pomocí vlastnosti AsyncWaitHandle
 Aplikace, které nelze nadále provádět další činnosti při čekání na výsledky asynchronní operace musí blok, dokud se operace nedokončí. Blokování hlavního vlákna aplikace při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  

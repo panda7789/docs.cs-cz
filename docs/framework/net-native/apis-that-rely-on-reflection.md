@@ -1,24 +1,26 @@
 ---
-title: "Rozhraní API, která závisí na reflexi"
-ms.custom: 
+title: Rozhraní API, která závisí na reflexi
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
-caps.latest.revision: "9"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 49ac12bcae3fd85744961a6e3b81129178c2c323
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="apis-that-rely-on-reflection"></a>Rozhraní API, která závisí na reflexi
 V některých případech použití reflexe v kódu není zřejmé a proto [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězu není zachovat metadata, která je vyžadována v době běhu. Toto téma popisuje některé běžné rozhraní API nebo běžných programovací vzorů, které nejsou považovány za součást rozhraní API reflexe, ale který závisí na reflexi proběhl úspěšně. Pokud je používáte ve zdrojovém kódu, můžete přidat informace o nich do direktivy modulu runtime (. rd.xml) tak, aby volání tato rozhraní API nevyvolá výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky nebo některých jiných výjimky za běhu.  
@@ -60,9 +62,9 @@ App1.AppClass`1<System.Int32>.
   
  K úspěšnému spuštění tohoto kódu vyžaduje několik položek metadat:  
   
--   `Browse`metadata pro typ jehož metoda, kterou chcete volat.  
+-   `Browse` metadata pro typ jehož metoda, kterou chcete volat.  
   
--   `Browse`metadata pro metodu, kterou chcete volat.  Pokud je veřejná metoda, přidáte veřejných `Browse` metadata pro typ obsahující zahrnuje metodu, příliš.  
+-   `Browse` metadata pro metodu, kterou chcete volat.  Pokud je veřejná metoda, přidáte veřejných `Browse` metadata pro typ obsahující zahrnuje metodu, příliš.  
   
 -   Dynamické metadata pro metodu, kterou chcete volat, tak, aby delegát volání reflexe není odebraná pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězu. Pokud chybí dynamické metadata pro metodu, je vyvolána následující výjimka, kdy <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> metoda je volána:  
   
@@ -95,7 +97,7 @@ App1.Class1[]
 Unfortunately, no further information is available.  
 ```  
   
- `Browse`metadata pro typ pole je potřeba dynamicky vytvoří instanci.  Následující direktivy modulu runtime umožňuje dynamické vytvořením instance `Class1[]`.  
+ `Browse` metadata pro typ pole je potřeba dynamicky vytvoří instanci.  Následující direktivy modulu runtime umožňuje dynamické vytvořením instance `Class1[]`.  
   
 ```xml  
 <Type Name="App1.Class1[]" Browse="Required Public" />  

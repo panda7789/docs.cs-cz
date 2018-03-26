@@ -1,7 +1,7 @@
 ---
-title: "Události domény. Návrh a implementaci"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Události domény, návrhu a implementace"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Události domény. Návrh a implementaci
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Události domény, návrhu a implementace
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 5840c2f7692d81f193c7d659aea6eb42a431369e
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -76,7 +76,7 @@ Jak znázorňuje obrázek 9 – 15, od stejné domény události, může zpracov
 
 **Obrázek 9 až 15**. Zpracování více akcí v každé doméně
 
-Obslužné rutiny událostí jsou obvykle v aplikační vrstvě, protože objektů infrastruktury, jako jsou úložiště nebo rozhraní API aplikace bude používat mikroslužbu chování. V tomto smysl jsou podobné obslužné rutiny příkazů, obslužné rutiny událostí, tak jak jsou součástí aplikační vrstvu. Důležitý rozdíl je, že příkaz má být zpracován pouze jednou. Událost domény může být zpracována nula nebo  *n*  krát, protože pokud lze přijímat pomocí několika příjemci nebo obslužných rutin událostí pomocí k jinému účelu pro každou obslužnou rutinu.
+Obslužné rutiny událostí jsou obvykle v aplikační vrstvě, protože objektů infrastruktury, jako jsou úložiště nebo rozhraní API aplikace bude používat mikroslužbu chování. V tomto smysl jsou podobné obslužné rutiny příkazů, obslužné rutiny událostí, tak jak jsou součástí aplikační vrstvu. Důležitý rozdíl je, že příkaz má být zpracován pouze jednou. Událost domény může být zpracována nula nebo *n* krát, protože pokud lze přijímat pomocí několika příjemci nebo obslužných rutin událostí pomocí k jinému účelu pro každou obslužnou rutinu.
 
 Možnost Otevřít počet obslužných rutin na událost domény umožňuje přidat mnoho další pravidla domény bez dopadu na váš aktuální kód. Implementace následující obchodní pravidlo, které se má provést vpravo po konkrétní události, například může být stejně snadná jako přidávání několik obslužné rutiny událostí (nebo i pouze jeden):
 
@@ -337,35 +337,35 @@ Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší �
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Gregu Young. Co je událost domény? ** 
-     [ *http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
+-   **Gregu Young. Co je událost domény?**
+    [*http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
 
--   **Jan Stenberg. Domain Events and Eventual Consistency**
+-   **Jan Stenberg. Události domény a konzistence typu případné**
     [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
 
--   **Jimmy Bogard. A better domain events pattern**
+-   **Jimmy Bogard. Lepší vzor události domény**
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
 -   **Vaughn Vernon. Efektivní agregační návrhu část II: Provedení agregace pracovní společně**
-    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_články/Vernon\_2011\_ 2. pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
+    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_články/Vernon\_2011\_2. pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
--   **Jimmy Bogard. Strengthening your domain: Domain Events**
+-   **Jimmy Bogard. Posílení vaší domény: domény události**
     *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
--   **ADAM Truong. Domain Events Pattern Example**
+-   **ADAM Truong. Příklad vzoru události domény**
     [*http://www.tonytruong.net/domain-events-pattern-example/*](http://www.tonytruong.net/domain-events-pattern-example/)
 
 -   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
--   **Udi Dahan. Domain Events – Take 2**
+-   **Udi Dahan. Události domény – trvat 2**
     [*http://udidahan.com/2008/08/25/domain-events-take-2/*](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
 
--   **Udi Dahan. Domain Events – Salvation**
+-   **Udi Dahan. Události domény – Salvation**
     [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
 
--   **Jan Kronquist. Nemáte publikovat události domény, obnoví v nich! ** 
-     [ *https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
+-   **Jan Kronquist. Nemáte publikovat události domény, obnoví v nich!**
+    [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
 -   **Cesaru členka Torre. Domain Events vs. Integrace události v případě architektur se DDD a mikroslužeb**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)

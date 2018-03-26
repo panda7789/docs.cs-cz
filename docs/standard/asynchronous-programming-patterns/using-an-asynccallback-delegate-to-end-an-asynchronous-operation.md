@@ -1,12 +1,12 @@
 ---
-title: "Použití delegáta AsyncCallback k ukončení asynchronní operace"
-ms.custom: 
+title: Použití delegáta AsyncCallback k ukončení asynchronní operace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,7 +17,7 @@ helpviewer_keywords:
 - AsyncCallback delegate
 - stopping asynchronous operations
 ms.assetid: 9d97206c-8917-406c-8961-7d0909d84eeb
-caps.latest.revision: "7"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -25,10 +25,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: d71e78ecd5bf365d0a1f3efb8c8e15d4a1de6dc7
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="using-an-asynccallback-delegate-to-end-an-asynchronous-operation"></a>Použití delegáta AsyncCallback k ukončení asynchronní operace
 Aplikace, které můžete provádět další činnosti při čekání na výsledky asynchronní operace by neměly blokovat, počkejte, až se dokončí. Pokud chcete pokračovat v provádění pokyny při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  

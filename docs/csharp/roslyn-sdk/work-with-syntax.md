@@ -1,6 +1,6 @@
 ---
-title: "Použití syntaxe modelu SDK pro platformu .NET kompilátoru"
-description: "Tento přehled poskytuje představu o typy, které slouží k pochopení a manipulaci s uzly syntaxe."
+title: Použití syntaxe modelu SDK pro platformu .NET kompilátoru
+description: Tento přehled poskytuje představu o typy, které slouží k pochopení a manipulaci s uzly syntaxe.
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/15/2017
@@ -9,10 +9,10 @@ ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
 ms.openlocfilehash: 09d07e6257ad7d32d75328a8c1850888b4d0b937
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="work-with-syntax"></a>Práce s syntaxe
 
@@ -69,7 +69,7 @@ Na rozdíl od syntaxe uzly a tokeny nemají syntaxe trivia nadřazené položky.
 
 Každý uzel, token nebo trivia zná pozici v rámci zdrojový text a počet znaků, které obsahuje. Na pozici textu je reprezentován jako 32bitové celé číslo nulovým základem je `char` index. A <xref:Microsoft.CodeAnalysis.Text.TextSpan> objekt počáteční pozice a počet znaků, obě vyjádřena jako celá čísla. Pokud <xref:Microsoft.CodeAnalysis.Text.TextSpan> má nulové délky, odkazuje na umístění mezi dva znaky.
 
-Každý uzel má dva <xref:Microsoft.CodeAnalysis.Text.TextSpan> vlastnosti: < xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> a < xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*>. 
+Každý uzel má dva <xref:Microsoft.CodeAnalysis.Text.TextSpan> vlastnosti: <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> a <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*>. 
 
 <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> Vlastnost je text období od začátku prvního tokenu v uzlu stromu dílčí na konec posledního token. Toto rozpětí nezahrnuje žádné trivia začátku nebo na konci.
 
@@ -89,7 +89,7 @@ Příkaz uzel uvnitř bloku má rozpětí indikován jeden svislé čáry (|). O
 
 ## <a name="kinds"></a>Typy
 
-Má každý uzel, token nebo trivia <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> vlastnost typu <xref:System.Int32?displayProperty=nameWithType>, identifikující reprezentované element Přesná syntaxe. Tato hodnota může být převeden na konkrétní jazyk výčet; Každý jazyk C# nebo VB, má jeden `SyntaxKind` – výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, v uvedeném pořadí), jsou uvedeny všechny možné uzlů, tokeny a trivia prvky v gramatice. Tento převod je možné provést automaticky přímým přístupem < xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*? displayProperty = nameWithType > nebo < xref: Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*? displayProperty = nameWithType > rozšiřující metody.
+Má každý uzel, token nebo trivia <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> vlastnost typu <xref:System.Int32?displayProperty=nameWithType>, identifikující reprezentované element Přesná syntaxe. Tato hodnota může být převeden na konkrétní jazyk výčet; Každý jazyk C# nebo VB, má jeden `SyntaxKind` – výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, v uvedeném pořadí), jsou uvedeny všechny možné uzlů, tokeny a trivia prvky v gramatice. Tento převod je možné provést automaticky přímým přístupem <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType> rozšiřující metody.
 
 <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> Vlastnost umožňuje snadno rozlišení více tras syntaxe uzlu typů, které sdílejí stejnou třídu uzlu. Pro tokeny a trivia tato vlastnost je jediný způsob, jak z jiné rozlišení jeden typ elementu. 
 

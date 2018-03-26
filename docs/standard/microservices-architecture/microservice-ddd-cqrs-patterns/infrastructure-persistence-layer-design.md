@@ -1,7 +1,7 @@
 ---
-title: "Navrhování vrstvu trvalosti infrastruktury"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navrhování vrstvu trvalosti infrastruktury"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Navrhování vrstvu trvalosti infrastruktury
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navrhování vrstvu trvalosti infrastruktury
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/08/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 76db5388c75d4eb3b5cc23c1e57cc391a15f2934
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>Navrhování vrstvu trvalosti infrastruktury
 
@@ -138,8 +138,8 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
 
 ### <a name="the-repository-pattern"></a>Vzor úložiště
 
--   **EDWARD Hieatt a Rob mi. Vzor úložiště. ** 
-     [ *http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
+-   **EDWARD Hieatt a Rob mi. Vzor úložiště.**
+    [*http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
 
 -   **Vzor úložiště**
     [*https://msdn.microsoft.com/library/ff649690.aspx*](https://msdn.microsoft.com/library/ff649690.aspx)
@@ -147,22 +147,22 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
 -   **Použitému vzoru: Data abstrakce**
     [*http://deviq.com/repository-pattern/*](http://deviq.com/repository-pattern/)
 
--   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru.** (Sešit; zahrnuje diskuzi o vzoru úložiště) [ *https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+-   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru.** (Sešit; zahrnuje diskuzi o vzoru úložiště) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### <a name="unit-of-work-pattern"></a>Jednotka práce vzor
 
--   **Martin Fowler. Jednotka práce vzor. ** 
-     [ *http://martinfowler.com/eaaCatalog/unitOfWork.html*](http://martinfowler.com/eaaCatalog/unitOfWork.html)
+-   **Martin Fowler. Jednotka práce vzor.**
+    [*http://martinfowler.com/eaaCatalog/unitOfWork.html*](http://martinfowler.com/eaaCatalog/unitOfWork.html)
 
 <!-- -->
 
 -   **Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC**
-    [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/ Implementing-the-Repository-and-Unit-of-work-Patterns-in-an-ASP-NET-MVC-Application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+    [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
 ### <a name="the-specification-pattern"></a>Specifikace vzor
 
--   **Specifikace vzor. ** 
-     [ *http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
+-   **Specifikace vzor.**
+    [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
 
 -   **Zařízení Evans Erica (2004). Domain Driven Design. Addison-Wesley. p. 224.**
 

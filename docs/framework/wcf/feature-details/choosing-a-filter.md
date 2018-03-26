@@ -1,24 +1,26 @@
 ---
-title: "Výběr filtru"
-ms.custom: 
+title: Výběr filtru
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e81af51be3e281faa94bcea17ff75b41341abb33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="choosing-a-filter"></a>Výběr filtru
 Při konfiguraci služby směrování, je důležité vybrat filtry správné zpráv a nakonfigurovat je pro přesné shody proti zprávy, které vám umožňují. Pokud filtry, které jste vybrali jsou v jejich odpovídá příliš široké, nebo jsou nesprávně nakonfigurované, zprávy jsou směrovány nesprávně. Pokud jsou filtry příliš omezující, nemusí mít žádné platné tras, které jsou k dispozici pro některé zprávy.  
@@ -142,9 +144,9 @@ XPathMessageFilter xpath1=new XPathMessageFilter("//ns:element");
   
  Tento filtr je užitečné, pokud víte, že zprávy, které jste obdrželi, obsahují konkrétní hodnotu. Například pokud hostujete dvě verze stejné služby a víte, že zprávy adresované na novější verzi služby obsahovat jedinečnou hodnotu ve vlastní hlavičky, můžete vytvořit filtr, který používá XPath přejděte na tuto hlavičku a porovnává hodnotu stisknutím trola v hlavičce na jiný zadaný v konfiguraci filtr k určení, jestli odpovídá filtru.  
   
- Protože dotazů XPath často obsahují jedinečný obory názvů, které jsou často zdlouhavé nebo komplexní řetězcové hodnoty filtr XPath umožňuje obor názvů tabulku použijte k definování jedinečný předpon pro obory. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]obor názvů tabulky, najdete v části [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
+ Protože dotazů XPath často obsahují jedinečný obory názvů, které jsou často zdlouhavé nebo komplexní řetězcové hodnoty filtr XPath umožňuje obor názvů tabulku použijte k definování jedinečný předpon pro obory. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] obor názvů tabulky, najdete v části [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]navrhování dotazů XPath, najdete v části [syntaxe jazyka XPath](http://go.microsoft.com/fwlink/?LinkId=164592).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] navrhování dotazů XPath, najdete v části [syntaxe jazyka XPath](http://go.microsoft.com/fwlink/?LinkId=164592).  
   
 ## <a name="see-also"></a>Viz také  
  [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)  

@@ -1,7 +1,7 @@
 ---
-title: "Migrace z DNX na .NET Core rozhraní příkazového řádku"
-description: "Migrujte pomocí nástrojů pro .NET Core rozhraní příkazového řádku nástroje DNX."
-keywords: "Rozhraní .NET, .NET core"
+title: Migrace z DNX na .NET Core rozhraní příkazového řádku
+description: Migrujte pomocí nástrojů pro .NET Core rozhraní příkazového řádku nástroje DNX.
+keywords: Rozhraní .NET, .NET core
 author: blackdwarf
 ms.author: mairaw
 ms.date: 06/20/2016
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
-ms.workload: dotnetcore
+ms.workload:
+- dotnetcore
 ms.openlocfilehash: dba38de28dc15147e5bcc5bf4cede9f4dd5fca62
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX na .NET Core rozhraní příkazového řádku (project.json)
 
@@ -123,10 +124,10 @@ Poté, co jsou tyto věci dokončí, musíte rozhodnout, jaký typ přenositelno
 
 Po volání na jaký typ přenositelnost chcete budete muset změnit vaše cílové framework(s). Pokud jste zapisovali aplikací pro .NET Core, pravděpodobně používáte `dnxcore50` jako cílové rozhraní. Pomocí rozhraní příkazového řádku a změny, nové [.NET Standard](../../standard/net-standard.md) uvést do režimu, rozhraní musí být jeden z následujících:
 
-1. `netcoreapp1.0`-Pokud píšete aplikace na .NET Core (včetně aplikací ASP.NET Core)
-2. `netstandard1.6`-Pokud píšete knihovny tříd pro .NET Core
+1. `netcoreapp1.0` -Pokud píšete aplikace na .NET Core (včetně aplikací ASP.NET Core)
+2. `netstandard1.6` -Pokud píšete knihovny tříd pro .NET Core
 
-Pokud používáte jiné `dnx` cílem, jako je třeba `dnx451` budete muset změnit také ty. `dnx451`by mělo být změněno na `net451`. Podrobnosti najdete [.NET Standard](../../standard/net-standard.md) Další informace. 
+Pokud používáte jiné `dnx` cílem, jako je třeba `dnx451` budete muset změnit také ty. `dnx451` by mělo být změněno na `net451`. Podrobnosti najdete [.NET Standard](../../standard/net-standard.md) Další informace. 
 
 Vaše `project.json` je většinou připraven. Budete muset projít seznamu závislosti a závislosti aktualizovat na novější verze, zvlášť pokud používáte ASP.NET Core závislosti. Pokud jste používali samostatné balíčky pro rozhraní API BCL, můžete použít balíček modulu runtime, jak je popsáno v [typ přenositelnost aplikace](../deploying/index.md) dokumentu. 
 

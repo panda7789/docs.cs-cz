@@ -1,18 +1,18 @@
 ---
-title: "Ověření nabízené XmlSchemaValidator"
-ms.custom: 
+title: Ověření nabízené XmlSchemaValidator
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
@@ -20,10 +20,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 60c2effea612a579b4c66b7c30243b785b86a263
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Ověření nabízené XmlSchemaValidator
 <xref:System.Xml.Schema.XmlSchemaValidator> Třída poskytuje mechanismus efektivní, vysoce výkonných ověřit data XML oproti schémat XML způsobem nabízené. Například <xref:System.Xml.Schema.XmlSchemaValidator> třída umožňuje ověřit XML informační sadu místní bez nutnosti serializovat jako dokument XML a pak rozboru dokument pomocí ověřování čtečky XML.  
@@ -446,10 +446,10 @@ static void SchemaValidationEventHandler(object sender, ValidationEventArgs e)
   
 |Stav|Přechod|  
 |-----------|----------------|  
-|Ověření|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>(<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; TopLevel*)<xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|  
-|TopLevel|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>&#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|  
-|Prvek|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Obsahu\*)? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> \* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Obsahu\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;|  
-|Obsah|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>&#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|  
+|Ověření|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; TopLevel *) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|  
+|TopLevel|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|  
+|Prvek|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Obsahu\*)? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Obsahu\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>&#124;|  
+|Obsah|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|  
   
 > [!NOTE]
 >  <xref:System.InvalidOperationException> Je vyvolána každou z metod v tabulce výše při volání metody je v nesprávné pořadí podle aktuálního stavu <xref:System.Xml.Schema.XmlSchemaValidator> objektu.  
@@ -476,11 +476,11 @@ static void SchemaValidationEventHandler(object sender, ValidationEventArgs e)
 |<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>|Pokud výchozí <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> metoda je volána, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí pole obsahující všechny globální elementy.<br /><br /> Pokud přetížené <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> metody, která přijímá <xref:System.Xml.Schema.XmlSchemaObject> k chybě při inicializaci částečné ověřování elementu, se nazývá parametr <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí pouze prvek, ke kterému <xref:System.Xml.Schema.XmlSchemaValidator> objekt byl inicializován.|Pokud výchozí <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> metoda je volána, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> Pokud přetížení <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> metody, která použije <xref:System.Xml.Schema.XmlSchemaObject> k chybě při inicializaci částečné ověřování atributu, se nazývá parametr <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí pouze atribut, na kterou <xref:System.Xml.Schema.XmlSchemaValidator> objekt byl inicializován.|Přidá schéma tak, aby <xref:System.Xml.Schema.XmlSchemaSet> z <xref:System.Xml.Schema.XmlSchemaValidator> objektu, pokud má žádné předběžného zpracování chyby.|  
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A>|Pokud element kontextu je platný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů očekáván jako podřízené objekty daného elementu kontextu.<br /><br /> Pokud element kontextu je neplatný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.|Pokud element kontextu je platný a pokud bez volání <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> byl dříve proveden, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam hodnot všechny atributy, které jsou definované v kontextu elementu.<br /><br /> Pokud již byly ověřeny některé atributy, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam hodnot zbývající atributy, které má být ověřen.<br /><br /> Pokud element kontextu je neplatný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.|Stejné jako výše.|  
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>|Pokud je atribut kontext atribut nejvyšší úrovně <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> V opačném případě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů očekávání jako první podřízený element kontextu.|Pokud je atribut kontext atribut nejvyšší úrovně <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> V opačném případě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam zbývající atributů má být ověřen.|Stejné jako výše.|  
-|<xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>Vrátí pořadí elementů očekávání jako první podřízený element kontextu.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>Vrátí seznam hodnot požadované a volitelné atributy, které ještě mají být ověřen pro element kontextu.|Stejné jako výše.|  
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>Vrátí pořadí elementů očekávání jako první podřízený element kontextu.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>vrátí prázdné pole.|Stejné jako výše.|  
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|Pokud je Přimíchán element kontextu contentType, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů v další pozice se očekává.<br /><br /> Pokud je element kontextu contentType typu TextOnly nebo je prázdná, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> Pokud je element kontextu contentType ElementOnly, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů v další pozice ale chybu ověření byl očekáván již došlo.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>Vrátí element kontextu seznam atributů nebyl ověřen.|Stejné jako výše.|  
+|<xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů očekávání jako první podřízený element kontextu.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> Vrátí seznam hodnot požadované a volitelné atributy, které ještě mají být ověřen pro element kontextu.|Stejné jako výše.|  
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů očekávání jako první podřízený element kontextu.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> Vrátí prázdné pole.|Stejné jako výše.|  
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|Pokud je Přimíchán element kontextu contentType, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů v další pozice se očekává.<br /><br /> Pokud je element kontextu contentType typu TextOnly nebo je prázdná, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> Pokud je element kontextu contentType ElementOnly, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů v další pozice ale chybu ověření byl očekáván již došlo.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> Vrátí element kontextu seznam atributů nebyl ověřen.|Stejné jako výše.|  
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>|Pokud mezer kontextu je nejvyšší úrovně mezer <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> V opačném případě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> chování metody jsou stejné jako v <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Pokud mezer kontextu je nejvyšší úrovně mezer <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> V opačném případě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> chování metody jsou stejné jako v <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Stejné jako výše.|  
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>Vrátí pořadí elementů byl očekáván po elementu kontextu (možné na stejné úrovni).|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>Vrátí element kontextu seznam atributů nebyl ověřen.<br /><br /> Pokud element kontextu nemá nadřazený pak <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrací prázdný seznam (element kontextu je nadřazená aktuálního elementu, na kterém <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> byla volána).|Stejné jako výše.|  
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> Vrátí pořadí elementů byl očekáván po elementu kontextu (možné na stejné úrovni).|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> Vrátí element kontextu seznam atributů nebyl ověřen.<br /><br /> Pokud element kontextu nemá nadřazený pak <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrací prázdný seznam (element kontextu je nadřazená aktuálního elementu, na kterém <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> byla volána).|Stejné jako výše.|  
 |<xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|Stejné jako <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Stejné jako <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Stejné jako výše.|  
 |<xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|Vrátí prázdné pole.|Vrátí prázdné pole.|Stejné jako výše.|  
   

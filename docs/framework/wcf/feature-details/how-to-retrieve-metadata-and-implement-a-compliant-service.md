@@ -1,24 +1,26 @@
 ---
-title: "Postupy: načtení metadat a implementovat kompatibilní služby"
-ms.custom: 
+title: 'Postupy: načtení metadat a implementovat kompatibilní služby'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f6f3a2b9-c8aa-4b0b-832c-ec2927bf1163
-caps.latest.revision: "13"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ac7654fa041688bbd703d564f6703df9671fbaea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>Postupy: načtení metadat a implementovat kompatibilní služby
 Často stejná osoba není návrh a implementaci služby. V prostředích, kde jsou důležité spolupráce aplikace kontrakty lze určený nebo popsané v webové služby popis Language (WSDL) a vývojář musí implementovat služba, která odpovídá zadané kontrakt. Můžete také migrovat existující službu pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ale zachovat přenosový formát. Duplexní kontrakty navíc vyžadují volající implementace kontraktu zpětného volání.  

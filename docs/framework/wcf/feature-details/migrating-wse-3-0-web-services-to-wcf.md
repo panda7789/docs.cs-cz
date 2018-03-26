@@ -1,24 +1,26 @@
 ---
 title: Migrace WSE 3.0 Web Services do WCF
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7bc5fff7-a2b2-4dbc-86cc-ecf73653dcdc
-caps.latest.revision: "16"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a7e7187eb6ed444ba2c28aa301ce4b3b16129030
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>Migrace WSE 3.0 Web Services do WCF
 Výhody migrace WSE 3.0 webových služeb pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnují lepší výkon a podporuje další přenosy, další bezpečnostní scénáře a WS-* specifikace. Webová služba, která je migrována z WSE 3.0, která [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] může mít až 200 až 400 % výkonu v přírůstcích. Další informace o přenosech nepodporuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Seznam scénáře podporované nástrojem [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Seznam specifikace, které jsou podporovány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [Průvodce interoperabilitou protokolů webových služeb](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md).  
@@ -36,7 +38,7 @@ Výhody migrace WSE 3.0 webových služeb pro [!INCLUDE[indigo1](../../../../inc
 ## <a name="security"></a>Zabezpečení  
   
 ### <a name="wse-30-web-services-that-are-secured-using-a-policy-file"></a>WSE 3.0 webové služby, které jsou zabezpečené pomocí souboru zásad  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby soubor konfigurace můžete použít k zabezpečení služby a že mechanismus je podobný soubor zásad WSE 3.0. Ve WSE 3.0 při zabezpečení webové služby pomocí soubor zásad použijete připraveného security assertion nebo výraz vlastních zásad. Kontrolní výrazy připraveného zabezpečení mapovat úzce režim ověřování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení prvku vazby. Není pouze [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režimy ověřování a kontrolní výrazy připraveného zabezpečení WSE 3.0 se stejným názvem nebo podobně jejich zabezpečení zprávy pomocí stejné typy přihlašovacích údajů. Například `usernameForCertificate` připraveného security assertion ve WSE 3.0 se mapuje `UsernameForCertificate` režim ověřování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Následující příklady kódu ukazují, jak minimální zásadu, která používá `usernameForCertificate` připraveného security assertion ve WSE 3.0 se mapuje `UsernameForCertificate` režim ověřování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ve vlastní vazby.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby soubor konfigurace můžete použít k zabezpečení služby a že mechanismus je podobný soubor zásad WSE 3.0. Ve WSE 3.0 při zabezpečení webové služby pomocí soubor zásad použijete připraveného security assertion nebo výraz vlastních zásad. Kontrolní výrazy připraveného zabezpečení mapovat úzce režim ověřování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení prvku vazby. Není pouze [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režimy ověřování a kontrolní výrazy připraveného zabezpečení WSE 3.0 se stejným názvem nebo podobně jejich zabezpečení zprávy pomocí stejné typy přihlašovacích údajů. Například `usernameForCertificate` připraveného security assertion ve WSE 3.0 se mapuje `UsernameForCertificate` režim ověřování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Následující příklady kódu ukazují, jak minimální zásadu, která používá `usernameForCertificate` připraveného security assertion ve WSE 3.0 se mapuje `UsernameForCertificate` režim ověřování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ve vlastní vazby.  
   
  **WSE 3.0**  
   
@@ -67,11 +69,11 @@ Výhody migrace WSE 3.0 webových služeb pro [!INCLUDE[indigo1](../../../../inc
   
 |Kontrolní výraz WSE 3.0 to zabezpečení|Konfigurace vlastních vazeb WCF|  
 |----------------------------------------|--------------------------------------|  
-|\<usernameOverTransportSecurity / >|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="UserNameOverTransport" />     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
+|\<usernameOverTransportSecurity />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="UserNameOverTransport" />     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
 |\<mutualCertificate10Security / >|`<customBinding>   <binding name="MyBinding">     <security messageSecurityVersion="WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" authenticationMode="MutualCertificate" />     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
-|\<usernameForCertificateSecurity / >|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="UsernameForCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
+|\<usernameForCertificateSecurity />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="UsernameForCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
 |\<anonymousForCertificateSecurity / >|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="AnonymousForCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
-|\<kerberosSecurity / >|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="Kerberos"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
+|\<kerberosSecurity />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="Kerberos"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
 |\<mutualCertificate11Security / >|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="MutualCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
   
  Další informace o vytváření vlastních vazeb ve službě WCF najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
@@ -82,7 +84,7 @@ Výhody migrace WSE 3.0 webových služeb pro [!INCLUDE[indigo1](../../../../inc
 ### <a name="wse-30-custom-policy-assertion"></a>Výraz WSE 3.0 vlastních zásad  
  Ve WSE 3.0 existují dva typy kontrolních výrazů vlastních zásad: ty, které zabezpečení zprávu protokolu SOAP a ty, které není zabezpečené zprávu protokolu SOAP. Kontrolní výrazy zásad, které zabezpečené protokolu SOAP zprávy jsou odvozeny od WSE 3.0 `SecurityPolicyAssertion` třídy a koncepční ekvivalent v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
   
- Důležitá poznámka: je, že kontrolní výrazy připraveného zabezpečení WSE 3.0 jsou podmnožinou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režimy ověřování. Pokud jste vytvořili vlastní zásady assertion ve WSE 3.0, může být ekvivalentní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režim ověřování. Například WSE 3.0 neposkytuje assertion CertificateOverTransport zabezpečení, která se o ekvivalent `UsernameOverTransport` assertion připraveného zabezpečení, ale používá certifikát X.509 pro účely ověření klienta. Pokud jste definovali vlastní výraz vlastních zásad pro tento scénář [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] díky migrace je přehledné. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Definuje režim ověřování pro tento scénář, můžete využít výhod statické ověřování režimu pomocné metody pro konfiguraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+ Důležitá poznámka: je, že kontrolní výrazy připraveného zabezpečení WSE 3.0 jsou podmnožinou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režimy ověřování. Pokud jste vytvořili vlastní zásady assertion ve WSE 3.0, může být ekvivalentní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režim ověřování. Například WSE 3.0 neposkytuje assertion CertificateOverTransport zabezpečení, která se o ekvivalent `UsernameOverTransport` assertion připraveného zabezpečení, ale používá certifikát X.509 pro účely ověření klienta. Pokud jste definovali vlastní výraz vlastních zásad pro tento scénář [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] díky migrace je přehledné. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Definuje režim ověřování pro tento scénář, můžete využít výhod statické ověřování režimu pomocné metody pro konfiguraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
  Pokud není k dispozici [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režim ověřování, který je ekvivalentní assertion vlastní zásady, které slouží k zabezpečení protokolu SOAP zprávy odvození třídy z <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třídy a zadání ekvivalentní vazby element. Další podrobnosti najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   

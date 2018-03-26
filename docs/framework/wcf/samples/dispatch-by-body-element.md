@@ -1,24 +1,26 @@
 ---
-title: "Přiřazování zpráv metodám podle elementu těla"
-ms.custom: 
+title: Přiřazování zpráv metodám podle elementu těla
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-caps.latest.revision: "13"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4ab8ddccafa8dbf1ecde8afbb07f0a61faa62be5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="dispatch-by-body-element"></a>Přiřazování zpráv metodám podle elementu těla
 Tento příklad znázorňuje způsob implementace alternativní algoritmus pro přiřazení k operacím příchozí zprávy.  
@@ -44,7 +46,7 @@ class DispatchByBodyElementOperationSelector : IDispatchOperationSelector
     }  
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector>implementace jsou velmi jednoduché, jako je pouze jednu metodu na rozhraní pro sestavení: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A>. Úloha tato metoda je kontrola příchozí zprávy a vrátí řetězec, který se rovná názvu metody na kontrakt služby pro aktuální koncový bod.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace jsou velmi jednoduché, jako je pouze jednu metodu na rozhraní pro sestavení: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A>. Úloha tato metoda je kontrola příchozí zprávy a vrátí řetězec, který se rovná názvu metody na kontrakt služby pro aktuální koncový bod.  
   
  V této ukázce získá selektor operace <xref:System.Xml.XmlDictionaryReader> pro příchozí zprávy je text použití <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>. Tato metoda již umisťuje čtečky na prvním podřízeným objektem těla zprávy, tak, aby se pro získání aktuálního elementu název a identifikátor URI oboru názvů a zkombinovat do dostatečná `XmlQualifiedName` , pak se používá pro vyhledávání odpovídající operaci provést z slovník držené selektor operace.  
   

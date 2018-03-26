@@ -1,7 +1,7 @@
 ---
-title: "Vytvoření jednoduchého mikroslužbu CRUD řízené daty"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Vytvoření jednoduchého mikroslužbu CRUD řízené daty"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Vytvoření jednoduchého mikroslužbu CRUD řízené daty
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Vytvoření jednoduchého mikroslužbu CRUD řízené daty
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: be8644e45be8db88c99332476e74c5c968764c74
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduchého mikroslužbu CRUD řízené daty
 
@@ -293,7 +293,7 @@ Tento mechanismus správy verzí je jednoduchý a závisí na serveru pro směro
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Scott Hanselman. Správa verzí základní RESTful webového rozhraní API ASP.NET, umožněno**
+-   **Scott Hanselman. Správa verzí RESTful webová rozhraní API ASP.NET Core umožněno**
     [*http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
 -   **Správa verzí RESTful webového rozhraní API**
@@ -420,4 +420,4 @@ Je to snadné. A protože se automaticky vygeneroval, Swagger metadata se zvýš
 
 
 >[!div class="step-by-step"]
-[Předchozí] (mikroslužbu aplikace design.md) [Další] (více-container-aplikace docker-compose.md)
+[Previous] (microservice-application-design.md) [Next] (multi-container-applications-docker-compose.md)

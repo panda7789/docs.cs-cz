@@ -1,12 +1,13 @@
 ---
-title: "Caspol.exe (nástroj zásad zabezpečení přístupu kódu)"
-ms.custom: 
+title: Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - permission sets, modifying security policy
@@ -22,16 +23,17 @@ helpviewer_keywords:
 - security policy [.NET Framework], modifying
 - manually editing security configuration files
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
-caps.latest.revision: "44"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6ab363e833ecde86a17d9adea3fcd26351725868
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -60,7 +62,7 @@ caspol [options]
 |**-addgroup** {*parent_label &#124; parent_name*} *mship pset_name* [*flags*]<br /><br /> or<br /><br /> **-ag** {*parent_label &#124; parent_name*} *mship pset_name* [*příznaky*]|Přidá do hierarchie skupin kódu novou skupinu kódu. Můžete zadat buď *parent_label* nebo *parent_name*. *Parent_label* argument určuje popisek (například 1. nebo 1.1.) skupiny kódu, která je nadřazené skupině kód, který je přidáván. *Parent_name* argument určuje název skupiny kódu, který je nadřazené skupině kód, který je přidáván. Protože *parent_label* a *parent_name* může být místo používán Caspol.exe musí být schopen rozlišit mezi nimi. Proto *parent_name* nemůže začínat číslem. Kromě toho *parent_name* může obsahovat pouze A-Z, 0-9 nebo podtržítko.<br /><br /> *Mship* argument určuje podmínku členství pro nové skupiny kódu. Další informace najdete v tématu tabulky *mship* argumenty dál v této části.<br /><br /> *Pset_name* argument je název sady oprávnění, která bude přidružena do nové skupiny kódu. Můžete také nastavit jeden nebo více *příznaky* do nové skupiny. Další informace najdete v tématu tabulky *příznaky* argumenty dál v této části.|  
 |**-addpset** {*psfile* &#124; *psfile* p*set_name*}<br /><br /> or<br /><br /> **-ap** {*named*_*psfile* &#124; *psfile* *pset_name*}|Přidá do zásad pojmenovanou sadu oprávnění. Sada oprávnění musí být napsána v jazyce XML a uložena do souboru .xml. Pokud soubor XML obsahuje název oprávnění nastavit, pouze tento soubor (*psfile*) je zadán. Pokud soubor XML neobsahuje název sady oprávnění, musíte zadat oba název souboru XML (*psfile*) a název sady oprávnění (*pset_name*).<br /><br /> Všechna oprávnění použitá v sadě oprávnění musí být definována v sestaveních obsažených v globální mezipaměti sestavení (GAC).|  
 |**-a**[**ll**]|Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady počítače, uživatele a podniku. **– Všechny** možnost vždycky určí na základě zásad aktuálně přihlášeného uživatele. Najdete v článku **- customall** možnost k odkazování na zásady uživatele uživatele, než je aktuální uživatel.|  
-|**-chggroup** {*label &#124;name*} {*mship* &#124; *pset_name* &#124;<br /><br /> *příznaky*`}`<br /><br /> or<br /><br /> **-cg** {*label &#124;name*} {*mship* &#124; *pset_name* &#124;<br /><br /> *příznaky*`}`|Změní podmínka členství skupiny kódu, sadě oprávnění nebo nastavení **výhradní**, **levelfinal**, **název**, nebo **popis**příznaky. Můžete zadat buď *popisek* nebo *název*. *Popisek* argument určuje popisek (například 1. nebo 1.1.) skupiny kódu. *Název* argument určuje název skupiny kódu můžete změnit. Protože *popisek* a *název* může být místo používán Caspol.exe musí být schopen rozlišit mezi nimi. Proto *název* nemůže začínat číslem. Kromě toho *název* může obsahovat pouze A-Z, 0-9 nebo podtržítko.<br /><br /> *Pset_name* argument určuje název sady přidružení ke skupině kódu oprávnění. Podívejte se na tabulky dál v této části informace na *mship* a *příznaky* argumenty.|  
+|**-chggroup** {*label &#124;name*} {*mship* &#124; *pset_name* &#124;<br /><br /> *Příznaky* `}`<br /><br /> or<br /><br /> **-cg** {*label &#124;name*} {*mship* &#124; *pset_name* &#124;<br /><br /> *Příznaky* `}`|Změní podmínka členství skupiny kódu, sadě oprávnění nebo nastavení **výhradní**, **levelfinal**, **název**, nebo **popis**příznaky. Můžete zadat buď *popisek* nebo *název*. *Popisek* argument určuje popisek (například 1. nebo 1.1.) skupiny kódu. *Název* argument určuje název skupiny kódu můžete změnit. Protože *popisek* a *název* může být místo používán Caspol.exe musí být schopen rozlišit mezi nimi. Proto *název* nemůže začínat číslem. Kromě toho *název* může obsahovat pouze A-Z, 0-9 nebo podtržítko.<br /><br /> *Pset_name* argument určuje název sady přidružení ke skupině kódu oprávnění. Podívejte se na tabulky dál v této části informace na *mship* a *příznaky* argumenty.|  
 |**-chgpset***psfile pset_name* <br /><br /> or<br /><br /> **-cp** *psfile pset_name*|Mění pojmenovanou sadu oprávnění. *Psfile* argument poskytuje novou definici pro sadu oprávnění, je soubor serializovaných oprávnění sady ve formátu XML. *Pset_name* argument určuje název sady oprávnění, kterou chcete změnit.|  
 |**-customall***cesta* <br /><br /> or<br /><br /> **-ca***cesta* |Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady počítače, podniku a určeného vlastního uživatele. Je nutné zadat umístění souboru konfigurace zabezpečení vlastní uživatele s *cesta* argument.|  
 |**-cu**[**stomuser**] *path*|Umožňuje spravovat zásadu vlastního uživatele, která nepatří uživateli, jenž aktuálně spouští nástroj Caspol.exe. Je nutné zadat umístění souboru konfigurace zabezpečení vlastní uživatele s *cesta* argument.|  
@@ -78,7 +80,7 @@ caspol [options]
 |**-quiet**<br /><br /> or<br /><br /> **-q**|Dočasně zakazuje dotaz, který se normálně zobrazí pro možnost způsobující změny zásad. Globální nastavení dotazu na změnu se nezmění. Tuto možnost použijte pouze u samostatných příkazů, aby bylo zabráněno zakázání výzev pro všechny příkazy nástroje Caspol.exe.|  
 |**-r**[**ecover**]|Obnoví zásady ze záložního souboru. Kdykoli je provedena změna zásady, uloží nástroj Caspol.exe starou zásadu do záložního souboru.|  
 |**-remfulltrust** *assembly_file*<br /><br /> or<br /><br /> **-rf***assembly_file* |Odstraní sestavení ze seznamu úplné důvěryhodnosti na úrovni zásad. Tato operace by měla být provedena, pokud sada oprávnění obsahující vlastní oprávnění již není zásadou používána. Sestavení implementující vlastní oprávnění byste však měli odstranit ze seznamu úplné důvěryhodnosti pouze tehdy, pokud sestavení neimplementuje žádná další vlastní oprávnění, která jsou stále používána. Po odstranění sestavení ze seznamu by měla být rovněž odstraněna další sestavení, která jsou na něm závislá.|  
-|**-remgroup** {*popisek &#124; název*}<br /><br /> or<br /><br /> **-rg** {l*opisek &#124; název*}|Odstraňuje skupinu kódu zadanou popiskem nebo názvem. Pokud má zadaná skupina kódu podřízenou skupinu kódu, nástroj Caspol.exe odstraní rovněž všechny podřízené skupiny kódu.|  
+|**-remgroup** {*popisek &#124;název*}<br /><br /> or<br /><br /> **-rg** {l*opisek &#124; název*}|Odstraňuje skupinu kódu zadanou popiskem nebo názvem. Pokud má zadaná skupina kódu podřízenou skupinu kódu, nástroj Caspol.exe odstraní rovněž všechny podřízené skupiny kódu.|  
 |**-rempset** *pset_name*<br /><br /> or<br /><br /> **-rp** *pset_name*|Odstraní ze zásady zadanou sadu oprávnění. *Pset_name* argument určuje oprávnění, která nastaveny na odebrání. Nástroj Caspol.exe odstraňuje sadu oprávnění pouze tehdy, pokud není asociována se skupinou kódu. Výchozí (vestavěné) sady oprávnění nemohou být odstraněny.|  
 |**-reset**<br /><br /> or<br /><br /> **-rs**|Vrátí zásadu do původního stavu a uloží ji na disk. To se hodí vždy při podezření, že je změněná zásada neopravitelně poškozena a když je zapotřebí začít znovu s výchozími nastaveními instalace. Resetování se může rovněž hodit, když má být jako výchozí bod pro modifikaci konkrétních konfiguračních souborů zabezpečení použita výchozí zásada. Další informace najdete v tématu [ruční úprava konfiguračních souborů zabezpečení](#cpgrfcodeaccesssecuritypolicyutilitycaspolexeanchor1).|  
 |**-resetlockdown**<br /><br /> or<br /><br /> **-rsld**|Vrátí více omezující verzi výchozí stav zásad a zachová jej na disk; Vytvoří zálohy předchozí zásad počítače a zachová jej do souboru s názvem `security.config.bac`.  Zásady uzamčení dolů je podobná výchozí zásady, s tím rozdílem, že zásady uděluje oprávnění k kód z `Local Intranet`, `Trusted Sites`, a `Internet` zóny a odpovídající skupiny kódu mít žádné podřízené skupiny kódu.|  
@@ -107,8 +109,8 @@ caspol [options]
 |Argument|Popis|  
 |--------------|-----------------|  
 |**– Popis "** *popis* **"**|Pokud se používá s **– addgroup** možnost, určuje popis pro skupinu kódu na Přidat. Pokud se používá s **– chggroup** možnost, určuje popis pro skupinu kódu na Upravit. *Popis* argument musí být uzavřena do uvozovek.|  
-|**-výhradní** {**na**&#124; **vypnout**}|Pokud nastavíte hodnotu **na**, označuje, že pouze sadu oprávnění přidružených ke skupině kódu, které přidáváte nebo úprava považuje za když nějaký kód vyhovuje podmínky členství ve skupině kódu. Pokud je tato možnost nastavená na **vypnout**, Caspol.exe považovat všechny odpovídající kód skupiny na úrovni zásady sady oprávnění.|  
-|**-levelfinal** {**na**&#124; **vypnout**}|Pokud nastavíte hodnotu **na**, označuje, že se považuje za žádné zásady úroveň pod úrovní dojde k kódu přidaném nebo upravené skupiny. Tato možnost je obvykle používaná na úrovni zásad počítače. Pokud je tento příznak například nastaven pro skupinu kódu na úrovni počítače a některý kód odpovídá podmínce členství této skupiny kódu, nástroj Caspol.exe nevypočítá a neaplikuje pro tento kód zásadu na uživatelské úrovni.|  
+|**-výhradní** {**na**&#124;**vypnout**}|Pokud nastavíte hodnotu **na**, označuje, že pouze sadu oprávnění přidružených ke skupině kódu, které přidáváte nebo úprava považuje za když nějaký kód vyhovuje podmínky členství ve skupině kódu. Pokud je tato možnost nastavená na **vypnout**, Caspol.exe považovat všechny odpovídající kód skupiny na úrovni zásady sady oprávnění.|  
+|**-levelfinal** {**na**&#124;**vypnout**}|Pokud nastavíte hodnotu **na**, označuje, že se považuje za žádné zásady úroveň pod úrovní dojde k kódu přidaném nebo upravené skupiny. Tato možnost je obvykle používaná na úrovni zásad počítače. Pokud je tento příznak například nastaven pro skupinu kódu na úrovni počítače a některý kód odpovídá podmínce členství této skupiny kódu, nástroj Caspol.exe nevypočítá a neaplikuje pro tento kód zásadu na uživatelské úrovni.|  
 |**-name "** *název* **"**|Pokud se používá s **– addgroup** možnost, určuje skriptování název pro skupinu kódu na Přidat. Pokud se používá s **- chggroup** možnost, určuje skriptování název pro skupinu kódu na Upravit. *Název* argument musí být uzavřena do uvozovek. *Název* argument nesmí začínat číslem a může obsahovat pouze A-Z, 0-9 nebo podtržítko. Skupiny kódu lze odkazovat to *název* místo podle jejich číselného popisek. *Název* je také velmi užitečné při vytváření skriptů.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -122,7 +124,7 @@ caspol [options]
  Pojmenované sady jsou odkazovány podle svých názvů. **– Seznam** možnost zobrazí seznam skupin kódu následuje seznam pojmenovaných oprávnění nastaví dostupné v této zásadě.  
   
 ## <a name="caspolexe-behavior"></a>Chování nástroje Caspol.exe  
- Všechny možnosti s výjimkou **-s**[**ecurity**] {**na** &#124; **vypnout**} použijte verzi rozhraní .NET Framework, který Caspol.exe byl nainstalován pomocí. Pokud spustíte Caspol.exe nainstalovanou verzí *X* modulu runtime změny platí pouze pro tuto verzi. Jiné souběžné instalace modulu runtime, pokud nějaké existují, nejsou ovlivněny. Pokud je nástroj Caspol.exe spuštěn z příkazového řádku, aniž by se nacházel v adresáři konkrétní verze modulu runtime, bude spuštěn z prvního adresáře verze modulu runtime v cestě (obvykle to bývá poslední nainstalovaná verze).  
+ Všechny možnosti s výjimkou **-s**[**ecurity**] {**na** &#124; **vypnout**} použijte verzi rozhraní .NET Framework, že byl nainstalován Caspol.exe s. Pokud spustíte Caspol.exe nainstalovanou verzí *X* modulu runtime změny platí pouze pro tuto verzi. Jiné souběžné instalace modulu runtime, pokud nějaké existují, nejsou ovlivněny. Pokud je nástroj Caspol.exe spuštěn z příkazového řádku, aniž by se nacházel v adresáři konkrétní verze modulu runtime, bude spuštěn z prvního adresáře verze modulu runtime v cestě (obvykle to bývá poslední nainstalovaná verze).  
   
  **-S**[**ecurity**] {**na** &#124; **vypnout**} možnost je platná pro celý počítač operace. Vypnutí zabezpečení přístupu kódu ukončí kontroly zabezpečení veškerého spravovaného kódu pro všechny uživatele na počítači. Pokud jsou na počítači současně nainstalovány různé verze rozhraní .NET Framework, vypne tento příkaz zabezpečení pro všechny verze nainstalované na počítači. I když **-seznamu** možnost ukazuje, že je vypnuto zabezpečení, nic jiného jasně označuj pro ostatní uživatele, které zabezpečení byla vypnuta.  
   

@@ -1,27 +1,29 @@
 ---
-title: "Načítání Identity nebo hodnoty automatické číslování"
-ms.custom: 
+title: Načítání Identity nebo hodnoty automatické číslování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
-caps.latest.revision: "7"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 15c435d46d3695f78db27801f54ec9de475b2989
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>Načítání Identity nebo hodnoty automatické číslování
 Primární klíče v relační databázi je sloupec nebo kombinace sloupců, které vždy obsahovat jedinečné hodnoty. Znalost hodnotu primárního klíče umožňuje umístit na řádek, který jej obsahuje. Relační databáze weby, jako je například SQL Server, Oracle a Microsoft Access/Jet podporují vytvoření automaticky zvyšování sloupce, které lze určit jako primární klíče. Tyto hodnoty generované serverem při přidávání řádků do tabulky. V systému SQL Server nastavte vlastnost identity sloupce v Oracle vytvoříte pořadí a v aplikaci Microsoft Access vytvořit sloupec Automatické číslo.  
@@ -33,7 +35,7 @@ Primární klíče v relační databázi je sloupec nebo kombinace sloupců, kte
  Některé databázové stroje, jako je například databázový stroj Microsoft Jet přístup, nepodporuje výstupní parametry a nemůže zpracovat více příkazů v jedné dávce. Při práci s databázový stroj, můžete načíst nová hodnota Automatické číslování vygenerované vloženého řádku spuštěním samostatný příkaz SELECT v obslužné rutiny události pro `RowUpdated` události `DataAdapter`.  
   
 > [!NOTE]
->  Alternativu k použití automaticky přírůstkovou hodnotou je použití <xref:System.Guid.NewGuid%2A> metodu <xref:System.Guid> objekt, který chcete generovat identifikátor GUID nebo globálně jedinečný identifikátor v klientském počítači, který je možné zkopírovat do serveru, jako je vložen každý nový řádek. `NewGuid` Metoda generuje 16 bajtů binární hodnotu, která je vytvořena pomocí algoritmu, který poskytuje vysokou pravděpodobnost, že žádná hodnota bude duplicitní. V databázi systému SQL Server, je identifikátor GUID uložené v `uniqueidentifier` sloupec, který systému SQL Server může automaticky generovat pomocí jazyka Transact-SQL `NEWID()` funkce. Pomocí identifikátor GUID jako primární klíč může nepříznivě ovlivnit výkon. [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]poskytuje podporu pro `NEWSEQUENTIALID()` funkci, která generuje sekvenční identifikátor GUID, který není musí být globálně jedinečný, ale který lze efektivněji indexovat.  
+>  Alternativu k použití automaticky přírůstkovou hodnotou je použití <xref:System.Guid.NewGuid%2A> metodu <xref:System.Guid> objekt, který chcete generovat identifikátor GUID nebo globálně jedinečný identifikátor v klientském počítači, který je možné zkopírovat do serveru, jako je vložen každý nový řádek. `NewGuid` Metoda generuje 16 bajtů binární hodnotu, která je vytvořena pomocí algoritmu, který poskytuje vysokou pravděpodobnost, že žádná hodnota bude duplicitní. V databázi systému SQL Server, je identifikátor GUID uložené v `uniqueidentifier` sloupec, který systému SQL Server může automaticky generovat pomocí jazyka Transact-SQL `NEWID()` funkce. Pomocí identifikátor GUID jako primární klíč může nepříznivě ovlivnit výkon. [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] poskytuje podporu pro `NEWSEQUENTIALID()` funkci, která generuje sekvenční identifikátor GUID, který není musí být globálně jedinečný, ale který lze efektivněji indexovat.  
   
 ## <a name="retrieving-sql-server-identity-column-values"></a>Načítání hodnot sloupce Identity serveru SQL  
  Při práci se službou Microsoft SQL Server, můžete vytvořit uložené procedury s výstupní parametr vrátit hodnotu identity pro vloženého řádku. Následující tabulka popisuje tři funkce jazyka Transact-SQL v systému SQL Server, který slouží k načtení hodnoty pro sloupec identity.  
@@ -79,10 +81,10 @@ SET @Identity = SCOPE_IDENTITY()
   
 |Název členu|Popis|  
 |-----------------|-----------------|  
-|<xref:System.Data.UpdateRowSource.Both>|`AcceptChanges`je volána a obě výstup hodnoty parametrů a hodnoty v prvním řádku všechny vrácené výsledné sady jsou umístěny v `DataRow` aktualizované. Pokud neexistují žádné hodnoty, které chcete použít, `RowState` bude <xref:System.Data.DataRowState.Unchanged>.|  
+|<xref:System.Data.UpdateRowSource.Both>|`AcceptChanges` je volána a obě výstup hodnoty parametrů a hodnoty v prvním řádku všechny vrácené výsledné sady jsou umístěny v `DataRow` aktualizované. Pokud neexistují žádné hodnoty, které chcete použít, `RowState` bude <xref:System.Data.DataRowState.Unchanged>.|  
 |<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Řádek byl vrácen, `AcceptChanges` nazývá a řádek je namapovaná na řádek změněné v `DataTable`, nastavení `RowState` k `Modified`. Pokud je vrácen žádný řádek, pak `AcceptChanges` není volán a `RowState` zůstane `Added`.|  
 |<xref:System.Data.UpdateRowSource.None>|Všechny vrácené parametry řádky budou ignorovány. Neexistuje žádná volání `AcceptChanges` a `RowState` zůstane `Added`.|  
-|<xref:System.Data.UpdateRowSource.OutputParameters>|`AcceptChanges`je volána a všechny výstupní parametry jsou namapované na změněných řádků v `DataTable`, nastavení `RowState` k `Modified`. Pokud nejsou žádná výstupní parametry `RowState` bude `Unchanged`.|  
+|<xref:System.Data.UpdateRowSource.OutputParameters>|`AcceptChanges` je volána a všechny výstupní parametry jsou namapované na změněných řádků v `DataTable`, nastavení `RowState` k `Modified`. Pokud nejsou žádná výstupní parametry `RowState` bude `Unchanged`.|  
   
 ### <a name="example"></a>Příklad  
  Tento příklad ukazuje extrahování změněných řádků z `DataTable` a použití <xref:System.Data.SqlClient.SqlDataAdapter> k aktualizaci zdroje dat a načtení nová hodnota sloupce identity. <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> Provede dva příkazy jazyka Transact-SQL; první z nich je příkazu INSERT a druhý je příkaz SELECT, který používá funkci SCOPE_IDENTITY k načtení hodnoty identity.  

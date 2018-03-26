@@ -1,7 +1,7 @@
 ---
-title: "Vytvoření nové vlastní šablony pro dotnet."
-description: "Naučte se vytvořit vlastní šablonu pro nový příkaz dotnet. v této fun kurzu."
-keywords: "Šablona .NET, .NET core, ukázka, kurz, dotnet nové"
+title: Vytvoření nové vlastní šablony pro dotnet.
+description: Naučte se vytvořit vlastní šablonu pro nový příkaz dotnet. v této fun kurzu.
+keywords: Šablona .NET, .NET core, ukázka, kurz, dotnet nové
 author: guardrex
 ms.author: mairaw
 ms.date: 08/12/2017
@@ -12,10 +12,10 @@ ms.assetid: 519b910a-6efe-4394-9b81-0546aa3e7462
 ms.workload:
 - dotnetcore
 ms.openlocfilehash: 7830a437b46d2080efc65f43f9112503add4c305
-ms.sourcegitcommit: 3eea47bff3201ae5d3395b0c7947806c2faca255
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření nové vlastní šablony pro dotnet.
 

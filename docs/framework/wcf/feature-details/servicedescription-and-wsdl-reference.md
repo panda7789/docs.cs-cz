@@ -1,24 +1,26 @@
 ---
 title: ServiceDescription and WSDL Reference
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eedc025d-abd9-46b1-bf3b-61d2d5c95fd6
-caps.latest.revision: "15"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7eadfaaae920071092f569fe2b8882875ed9497f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="servicedescription-and-wsdl-reference"></a>ServiceDescription and WSDL Reference
 Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] mapuje webové služby popis Language (WSDL) dokumenty do a z <xref:System.ServiceModel.Description.ServiceDescription> instance.  
@@ -39,7 +41,7 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
 |`Namespace`|Cílový obor názvů pro `wsdl:service` definice pro službu.|  
 |`Endpoints`|`wsdl:port` Definice pro službu.|  
   
-### <a name="serviceendpoint"></a>Koncového bodu služby  
+### <a name="serviceendpoint"></a>ServiceEndpoint  
  A <xref:System.ServiceModel.Description.ServiceEndpoint> instance se mapuje `wsdl:port` elementu. A <xref:System.ServiceModel.Description.ServiceEndpoint> instance obsahuje adresy, vazby a kontraktu.  
   
  Koncový bod chování, které implementují <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní můžete upravit `wsdl:port` element pro koncový bod jsou připojené k.  
@@ -70,10 +72,10 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
  <xref:System.ServiceModel.Channels.TransportBindingElement> Pro vazbu určuje přenos identifikátor URI (Uniform Resource) pro vazbu protokolu SOAP.  
   
 #### <a name="addressingversion"></a>Třídu AddressingVersion  
- `AddressingVersion` Na vazbu se mapuje na verzi adresování používány `wsd:port`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje SOAP 1.1 a SOAP 1.2 adresy a adresování WS 08/2004 a odkazy na koncový bod služby WS-Addressing 1.0.  
+ `AddressingVersion` Na vazbu se mapuje na verzi adresování používány `wsd:port`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje SOAP 1.1 a SOAP 1.2 adresy a adresování WS 08/2004 a odkazy na koncový bod služby WS-Addressing 1.0.  
   
 #### <a name="envelopeversion"></a>EnvelopeVersion  
- `EnvelopeVersion` u vazby mapy na verzi protokolu SOAP používány `wsdl:binding`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje SOAP 1.1 a SOAP 1.2 vazby.  
+ `EnvelopeVersion` u vazby mapy na verzi protokolu SOAP používány `wsdl:binding`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje SOAP 1.1 a SOAP 1.2 vazby.  
   
 ### <a name="contracts"></a>Kontrakty  
  <xref:System.ServiceModel.Description.ContractDescription> Instanci pro `ServiceEndpoint` instance se mapuje `wsdl:portType`. A `ContractDescription` instance popisuje všechny operace pro danou zakázku.  
@@ -120,7 +122,7 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
 |Vlastnosti|Mapování WSDL|  
 |----------------|------------------|  
 |`Action`|Akce protokolu SOAP nebo WS-Addressing pro zprávu.<br /><br /> Poznámka: této operace, které používají řetězce akce "*" nenachází v jazyce WSDL.|  
-|`Direction`|`MessageDirection.Input`se mapuje na `wsdl:input`.<br /><br /> `MessageDirection.Output`se mapuje na `wsdl:output`.|  
+|`Direction`|`MessageDirection.Input` se mapuje na `wsdl:input`.<br /><br /> `MessageDirection.Output` se mapuje na `wsdl:output`.|  
 |`ProtectionLevel`|Kontrolní výrazy ochrany v zásadách zabezpečení připojené k `wsdl:message` definice pro tuto zprávu.|  
 |`Body`|Text zprávy pro zprávu.|  
 |`Headers`|Hlavičky pro zprávu.|  

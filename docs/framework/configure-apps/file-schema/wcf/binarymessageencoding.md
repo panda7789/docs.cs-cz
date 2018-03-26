@@ -1,31 +1,33 @@
 ---
 title: '&lt;binaryMessageEncoding&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e4ae3cd4-6b67-4ce1-af4b-9400e0a38dba
-caps.latest.revision: "14"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 503c0edf3a21b3fb0f57b5199aa2a1a17df4222d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ltbinarymessageencodinggt"></a>&lt;binaryMessageEncoding&gt;
 Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communication Foundation (WCF) v binárním v drátové síti.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
+\<customBinding>  
 \<Vazba >  
 \<binaryMessageEncoding >  
   
@@ -54,7 +56,7 @@ Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communicati
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -85,4 +87,4 @@ Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communicati
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -1,12 +1,12 @@
 ---
-title: "Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech"
-ms.custom: 
+title: Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Event-based Asynchronous Pattern
@@ -18,7 +18,7 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -26,10 +26,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 910edb8c79518f63e8b881b8eaecd69060fb6711
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
 Asynchronní vzor založený na událostech nabízí efektivní způsob, jak vystavit asynchronní chování v tříd pomocí známých událostí a delegovat sémantiku. Implementovat asynchronní vzor založený na událostech, budete muset postupovat podle několik požadavků na konkrétní chování. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která odpovídá asynchronní vzor založený na událostech.  
@@ -132,9 +132,9 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 ### <a name="threading-and-contexts"></a>Zřetězení a kontexty  
  Pro správné fungování třídě, je důležité, aby obslužné rutiny událostí klienta jsou vyvolány na správné vlákno nebo kontext pro dané aplikaci modelu, včetně [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] a formulářových aplikací Windows. K zajištění správně chová asynchronní třídu v rámci modelu všechny aplikace jsou uvedeny dvě důležité pomocné třídy: <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager>.  
   
- <xref:System.ComponentModel.AsyncOperationManager>poskytuje jednu metodu <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>, která vrátí <xref:System.ComponentModel.AsyncOperation>. Vaše *MethodName *** asynchronní** volání metod <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> a používá třídu vrácený <xref:System.ComponentModel.AsyncOperation> sledovat životnost asynchronní úlohu.  
+ <xref:System.ComponentModel.AsyncOperationManager> poskytuje jednu metodu <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>, která vrátí <xref:System.ComponentModel.AsyncOperation>. Vaše *MethodName *** asynchronní** volání metod <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> a používá třídu vrácený <xref:System.ComponentModel.AsyncOperation> sledovat životnost asynchronní úlohu.  
   
- Chcete-li sestavy průběhu, přírůstkové výsledky a dokončení klientovi, volejte <xref:System.ComponentModel.AsyncOperation.Post%2A> a <xref:System.ComponentModel.AsyncOperation.OperationCompleted%2A> metody na <xref:System.ComponentModel.AsyncOperation>. <xref:System.ComponentModel.AsyncOperation>zodpovídá za zařazování volání obslužné rutiny událostí klienta do správné vlákna nebo kontextu.  
+ Chcete-li sestavy průběhu, přírůstkové výsledky a dokončení klientovi, volejte <xref:System.ComponentModel.AsyncOperation.Post%2A> a <xref:System.ComponentModel.AsyncOperation.OperationCompleted%2A> metody na <xref:System.ComponentModel.AsyncOperation>. <xref:System.ComponentModel.AsyncOperation> zodpovídá za zařazování volání obslužné rutiny událostí klienta do správné vlákna nebo kontextu.  
   
 > [!NOTE]
 >  Tato pravidla můžete obejít, pokud explicitně chcete přejít na zásad aplikačního modelu služby, ale stále těžit z další výhody použití asynchronního vzoru založeného na událostech. Můžete například, že třídu operační ve Windows Forms jako volné zařazování. Volné zařazování třídu, můžete vytvořit tak dlouho, dokud vývojáři pochopit předpokládané omezení. Konzolové aplikace nesynchronizovat provádění <xref:System.ComponentModel.AsyncOperation.Post%2A> volání. To může způsobit `ProgressChanged` události, které má být aktivována mimo pořadí. Pokud chcete mít serializovat provádění <xref:System.ComponentModel.AsyncOperation.Post%2A> volání, implementaci a nainstalovat <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType> třídy.  

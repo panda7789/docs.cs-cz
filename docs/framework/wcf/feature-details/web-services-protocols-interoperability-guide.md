@@ -1,34 +1,36 @@
 ---
-title: "Průvodce interoperabilitou protokolů webových služeb"
-ms.custom: 
+title: Průvodce interoperabilitou protokolů webových služeb
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-caps.latest.revision: "20"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6b962452b6127d259733418969f1fb7b5036b1e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]implementuje počet protokoly webových služeb. Mnoho z těchto protokolů obsahuje mnoho možností a bodů rozšiřitelnosti ponechány na uvážení implementátor. Toto téma obsahuje seznam webové protokoly služeb [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje. Další témata v této části poskytují podrobné informace o nasazení pro každý protokol podporována.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implementuje počet protokoly webových služeb. Mnoho z těchto protokolů obsahuje mnoho možností a bodů rozšiřitelnosti ponechány na uvážení implementátor. Toto téma obsahuje seznam webové protokoly služeb [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje. Další témata v této části poskytují podrobné informace o nasazení pro každý protokol podporována.  
   
 ## <a name="web-services-protocols-implemented-by-wcf"></a>Protokoly implementované WCF webových služeb  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje podporu pro webové služby (WS) infrastruktury protokoly prostřednictvím kanálů a protokoly aplikací webové služby pomocí funkce kontrakty. Vzájemná funkční spolupráce pro protokoly aplikací se provádí pomocí jazyka popis schématu XML 1.0 (XSD) a Web Services Description Language (WSDL) 1.1.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje podporu pro webové služby (WS) infrastruktury protokoly prostřednictvím kanálů a protokoly aplikací webové služby pomocí funkce kontrakty. Vzájemná funkční spolupráce pro protokoly aplikací se provádí pomocí jazyka popis schématu XML 1.0 (XSD) a Web Services Description Language (WSDL) 1.1.  
   
- Poskytuje interoperabilitu infrastruktury protokoly WS-* specifikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]kanály poskytují podporu pro řadu WS -\* protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]kanály jsou nakonfigurované pomocí elementů vazby. Následující tabulky obsahují úplný seznam WS -\* infrastruktury protokoly implementované zprostředkovatelem různé [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] elementů vazby.  
+ Poskytuje interoperabilitu infrastruktury protokoly WS-* specifikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanály poskytují podporu pro řadu WS -\* protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanály jsou nakonfigurované pomocí elementů vazby. Následující tabulky obsahují úplný seznam WS -\* infrastruktury protokoly implementované zprostředkovatelem různé [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] elementů vazby.  
   
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>podporuje specifikace v následující tabulce.  
+ <xref:System.ServiceModel.Channels.HttpTransportBindingElement> podporuje specifikace v následující tabulce.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
@@ -36,7 +38,7 @@ ms.lasthandoff: 12/22/2017
 |SOAP 1.1 vazby HTTP|[Simple Object Access Protocol (SOAP) 1.1](http://go.microsoft.com/fwlink/?LinkId=90520), část 7|  
 |SOAP 1.2 vazby HTTP|[Verze protokolu SOAP 1.2 část 2: Adjuncts (druhé vydání)](http://go.microsoft.com/fwlink/?LinkId=95329), část 7|  
   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporu specifikace v následující tabulce.  
+ <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporu specifikace v následující tabulce.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
@@ -51,7 +53,7 @@ ms.lasthandoff: 12/22/2017
 |Vazba SOAP1.1 WSDL|[Web Services Description Language (WSDL) 1.1](http://go.microsoft.com/fwlink/?LinkId=96160)|  
 |Vazba SOAP1.2 WSDL|[1.1 vazba je očekáváno rozšíření WDSL pro SOAP 1.2](http://go.microsoft.com/fwlink/?LinkId=96691)|  
   
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>podporuje specifikace v následující tabulce.  
+ <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporuje specifikace v následující tabulce.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
@@ -60,13 +62,13 @@ ms.lasthandoff: 12/22/2017
 |MTOM SOAP 1.1 vazby|[SOAP 1.1 vazby pro MTOM 1.0](http://go.microsoft.com/fwlink/?LinkId=96712)|  
 |MTOM WS-PolicyAssertions|K publikování.|  
   
- <xref:System.ServiceModel.Channels.SecurityBindingElement>podporuje specifikace v následující tabulce.  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement> podporuje specifikace v následující tabulce.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
 |WSS: Zabezpečení zpráv protokolu SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv protokolu SOAP 1.0](http://go.microsoft.com/fwlink/?LinkId=94684)|  
 |WSS: Uživatelské jméno Token profil 1.0|[Webové služby profil zabezpečení UsernameToken 1.0](http://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|WSS: X.509 tokenu profil 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](http://go.microsoft.com/fwlink/?LinkId=95335)|  
+|WSS: X.509 Token Profile 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](http://go.microsoft.com/fwlink/?LinkId=95335)|  
 |WSS: SAML 1.1 Token profil 1.0|[Zabezpečení webové služby: Profil tokenu SAML](http://go.microsoft.com/fwlink/?LinkId=96693)|  
 |WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv protokolu SOAP 1.1](http://go.microsoft.com/fwlink/?LinkId=91240)|  
 |WSS uživatelské jméno tokenu Profile 1.1|[Webové služby zabezpečení UsernameToken Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> neimplementuje založené na heslech odvození klíče;<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
@@ -78,7 +80,7 @@ ms.lasthandoff: 12/22/2017
 |WS-SecurityPolicy 2005/07|[Webové služby zabezpečené konverzace jazyk](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Ve znění chybující odeslána OASIS WS-SX technický výbor.<br /><br /> [ws-sx zpráv](http://go.microsoft.com/fwlink/?LinkId=96700)|  
 |WS-ReliableMessaging 1.1|[Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
   
- <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>podporuje specifikace v následující tabulce.  
+ <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> podporuje specifikace v následující tabulce.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  

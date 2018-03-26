@@ -1,29 +1,31 @@
 ---
-title: "Mapování datového typu OLE DB"
-ms.custom: 
+title: Mapování datového typu OLE DB
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04bcb259-59d3-4fd7-894d-4f0dd0c68069
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 407f194a8530f9b9e4241a6bdb4d26a4b891aa46
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ole-db-data-type-mappings"></a>Mapování datového typu OLE DB
 V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ pro datové typy z zprostředkovatel dat .NET Framework pro ADO a OLE DB (<xref:System.Data.OleDb>). Typové přístupových metod pro <xref:System.Data.OleDb.OleDbDataReader> jsou také uvedeny.  
   
-|Typ ADO|Typ OLE DB|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Typ|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]typy přistupujícího objektu|  
+|Typ ADO|Typ OLE DB|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Typ|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy přistupujícího objektu|  
 |--------------|-----------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|  
 |adBigInt|DBTYPE_I8|Int64|GetInt64()|  
 |adBinary|DBTYPE_BYTES|Byte[]|GetBytes()|  
@@ -58,7 +60,7 @@ V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../
 |adUserDefined|DBTYPE_UDT|Nepodporuje se||  
 |adVarNumeric|DBTYPE_VARNUMERIC|Nepodporuje se||  
   
- \*Pro typy OLE DB `DBTYPE_IUNKNOWN` a `DBTYPE_IDISPATCH`, odkaz na objekt je zařazené reprezentace ukazatele.  
+ \* Pro typy OLE DB `DBTYPE_IUNKNOWN` a `DBTYPE_IDISPATCH`, odkaz na objekt je zařazené reprezentace ukazatele.  
   
 ## <a name="see-also"></a>Viz také  
  [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  

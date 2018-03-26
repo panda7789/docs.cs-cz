@@ -20,7 +20,7 @@ ms.openlocfilehash: 893093900b3fc4276f9bd7143b1f235a5ba98f90
 ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="common-schema-collections"></a>Společné schéma kolekce
 Společné schéma kolekce jsou kolekce schéma, které jsou implementovány každou zprostředkovatelů spravované rozhraní .NET Framework. Můžete zadat dotaz rozhraní .NET Framework spravovaného zprostředkovatele určit seznam podporovaných schématu kolekcí voláním **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají. Tyto kolekce popisují všechny požadované sloupce. Poskytovatelé jsou volně přidat další sloupce, pokud si přejí. Například `SqlClient` a `OracleClient` přidejte název parametru do kolekce omezení.  

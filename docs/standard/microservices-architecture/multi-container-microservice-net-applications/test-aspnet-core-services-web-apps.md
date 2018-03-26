@@ -1,7 +1,7 @@
 ---
-title: "Testování služeb ASP.NET Core a webové aplikace"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Testování služeb ASP.NET Core a webové aplikace"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Testování služeb ASP.NET Core a webové aplikace
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Testování služeb ASP.NET Core a webové aplikace
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 596f588aae8c0814e5b40d29c4bf5723f944c5ac
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
@@ -102,17 +102,17 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Steve Smith. Testování řadiče** (ASP.NET Core) [ *https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
+-   **Steve Smith. Testování řadiče** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
 
--   **Steve Smith. Testování integrace** (ASP.NET Core) [ *https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
+-   **Steve Smith. Testování integrace** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
 
--   **Testování v .NET Core pomocí dotnet testů částí**
+-   **Testování v .NET Core pomocí dotnet testů jednotek**
     [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 -   **xUnit.net**. Oficiální web.
     [*https://xunit.github.io/*](https://xunit.github.io/)
 
--   **Unit Test Basics.**
+-   **Testování částí.**
     [*https://msdn.microsoft.com/library/hh694602.aspx*](https://msdn.microsoft.com/library/hh694602.aspx)
 
 -   **Moq**. Úložiště GitHub.

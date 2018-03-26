@@ -1,27 +1,29 @@
 ---
-title: "Nástroje služby Windows Communication Foundation"
-ms.custom: 
+title: Nástroje služby Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF, tools
 - Windows Communication Foundation, tools
 ms.assetid: 399a47b4-bfea-434b-8e83-f76b5063d79d
-caps.latest.revision: "34"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6e28158076fcedf8c7d14d598b1c2ba0a25ff1f8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="windows-communication-foundation-tools"></a>Nástroje služby Windows Communication Foundation
 Microsoft [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] nástroje jsou navržené tak, aby bylo snazší pro vás k vytvoření, nasazení a správě [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace. Tato část obsahuje podrobné informace o nástrojích. Upozorňujeme, že nástroje nejsou podporovány.  

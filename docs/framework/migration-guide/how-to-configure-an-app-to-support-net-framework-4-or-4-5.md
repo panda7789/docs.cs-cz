@@ -1,28 +1,30 @@
 ---
-title: "Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.5"
-ms.custom: 
+title: 'Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.5'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - configuring apps to support .NET Framework 4
 - .NET Framework 4, configuring apps
 - .NET Framework 4.5, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
-caps.latest.revision: "14"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4ba3d248dbdd81cf2e2e4445d1e1eb160605542c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-45"></a>Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.5
 Všechny aplikace, které jsou hostiteli common language runtime (CLR) nutné spustit, nebo *aktivovat*, aby bylo možné spustit spravovaného kódu modulu CLR. Obvykle aplikace .NET Framework funguje ve verzi modulu CLR, pro kterou byla sestavena, ale toto chování stolních aplikací můžete změnit pomocí konfiguračního souboru aplikace (někdy označovaného jako soubor app.config). Nelze však změnit výchozí chování aktivace aplikací pro Windows Store nebo Windows Phone pomocí konfiguračního souboru aplikace. Tento článek vysvětluje, jak povolit stolní aplikaci spuštění v jiné verzi rozhraní .NET Framework, a poskytuje příklad, jak se zaměřit na verzi 4 nebo 4.5.  
@@ -88,7 +90,7 @@ Všechny aplikace, které jsou hostiteli common language runtime (CLR) nutné sp
 |`<supportedRuntime version="v4.0"/>` <br /> `<supportedRuntime version="v2.0.50727"/>`|Spustí se na 3.5|Spustí se na 4 nebo 4.5|Spustí se na 4 nebo 4.5|  
 |`<supportedRuntime version="v4.0"/>`|Zobrazí se chybová zpráva, která vyzve uživatele k instalaci správné verze*|Spustí se na 4 nebo 4.5|Spustí se na 4 nebo 4.5|  
   
- \*Další informace o této chybové zprávě a způsoby, jak tomu zamezit najdete v tématu [rozhraní .NET Framework – chyby inicializace: Správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md).  
+ \* Další informace o této chybové zprávě a způsoby, jak tomu zamezit najdete v tématu [rozhraní .NET Framework – chyby inicializace: Správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  

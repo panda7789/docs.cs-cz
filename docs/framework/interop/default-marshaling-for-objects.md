@@ -1,12 +1,13 @@
 ---
-title: "Výchozí zařazování pro objekty"
-ms.custom: 
+title: Výchozí zařazování pro objekty
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - objects, interop marshaling
 - interop marshaling, objects
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
-caps.latest.revision: "11"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b49575bb7f16b942a56a48e9ad3f5a44edfb373a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="default-marshaling-for-objects"></a>Výchozí zařazování pro objekty
 Parametry a pole zadán jako <xref:System.Object?displayProperty=nameWithType> mohou být zpřístupněny nespravovaného kódu jako jeden z následujících typů:  
@@ -313,7 +315,7 @@ Variant předán podle hodnoty a podle reference
   
  **Výchozí chování zařazování objekty a variant odkazem**  
   
- Rozšíří změny zpět do volající, musí být předán parametry odkazem. Například můžete použít **ref** – klíčové slovo v jazyce C# (nebo **ByRef** v jazyce Visual Basic spravovaný kód) předat parametry odkazem. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \*** .  
+ Rozšíří změny zpět do volající, musí být předán parametry odkazem. Například můžete použít **ref** – klíčové slovo v jazyce C# (nebo **ByRef** v jazyce Visual Basic spravovaný kód) předat parametry odkazem. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \* **.  
   
 -   Při předávání objektu COM odkazem, zařazování vytvoří nové typu variant a zkopíruje obsah odkaz na objekt do varianta než při volání. Varianta předaný funkci nespravované kde je mohou změnit obsah varianta uživatele. Při návratu z volání všechny změny typu variant na nespravované straně rozšířeny zpět na původní objekt. Pokud typ varianty se liší od typu variant předána volání funkce, změny rozšířeny zpět do objektu jiného typu. To znamená typ objektu, který je předán do volání se může lišit od typ objektu vrácená z volání.  
   
@@ -332,12 +334,12 @@ Variant předán podle hodnoty a podle reference
   
 |From|Chcete-li|Změny rozšířeny zpět|  
 |----------|--------|-----------------------------|  
-|**Variant***v* |**Objekt***o* |Nikdy|  
-|**Objekt***o* |**Variant***v* |Nikdy|  
-|**Variant*****\*****pv* |**REF objekt***o* |Vždy|  
-|**REF objekt***o* |**Variant*****\*****pv* |Vždy|  
-|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Objekt***o* |Nikdy|  
-|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_)**|**REF objekt***o* |Pouze v případě, že typ nebyl změněn.|  
+|**Variant***v  *|**Objekt***o  *|Nikdy|  
+|**Objekt***o  *|**Variant***v  *|Nikdy|  
+|**Variant*****\*****pv     *|**REF objekt***o  *|Vždy|  
+|**REF objekt***o  *|**Variant*****\*****pv     *|Vždy|  
+|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Objekt***o  *|Nikdy|  
+|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_)**|**REF objekt***o  *|Pouze v případě, že typ nebyl změněn.|  
   
 ## <a name="see-also"></a>Viz také  
  [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  

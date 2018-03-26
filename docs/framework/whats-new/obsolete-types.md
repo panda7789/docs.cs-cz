@@ -1,31 +1,33 @@
 ---
-title: "Zastaralé typy v rozhraní .NET Framework"
-ms.custom: 
+title: Zastaralé typy v rozhraní .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-caps.latest.revision: "41"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f30b9e245ad38b0e861590e9b2ca3658a2b5e967
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
-<a name="introduction"></a>V tabulkách v tomto článku jsou uvedeny typy, které jsou v zastaralé [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], uspořádány sestavením. Pomocí následujících odkazů můžete zobrazit seznam zastaralé typy a doporučených alternativách v každé sestavení. Protože tyto typy jsou zastaralé, jsou jejich členové také zastaralé. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework, naleznete v části [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).  
+<a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou v zastaralé [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], uspořádány sestavením. Pomocí následujících odkazů můžete zobrazit seznam zastaralé typy a doporučených alternativách v každé sestavení. Protože tyto typy jsou zastaralé, jsou jejich členové také zastaralé. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework, naleznete v části [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).  
   
 -   [Zastaralé typy v sestavení systému](#obsolete_types_in_system_assemblies)  
   
@@ -63,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
     -   [System.Xml.dll](#xml)  
   
-    -   [Knihovně WindowsBase.dll](#WindowsBase)  
+    -   [WindowsBase.dll](#WindowsBase)  
   
 -   [Zastaralé typy v sestavení sady Microsoft](#obsolete_types_in_microsoft_assemblies)  
   
@@ -140,8 +142,8 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Runtime.InteropServices.UCOMITypeLib?displayProperty=nameWithType>|Místo nich se používá <xref:System.Runtime.InteropServices.ComTypes.ITypeLib?displayProperty=nameWithType>.|  
 |<xref:System.Runtime.InteropServices.VARDESC?displayProperty=nameWithType>|Místo nich se používá <xref:System.Runtime.InteropServices.ComTypes.VARDESC?displayProperty=nameWithType>.|  
 |<xref:System.Runtime.InteropServices.VARFLAGS?displayProperty=nameWithType>|Místo nich se používá <xref:System.Runtime.InteropServices.ComTypes.VARFLAGS?displayProperty=nameWithType>.|  
-|<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalScope>se používá pouze pro průhlednost kompatibility .NET 2.0.|  
-|<xref:System.Security.SecurityTreatAsSafeAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityTreatAsSafeAttribute>se používá pouze pro průhlednost kompatibility .NET 2.0. Použijte prosím <xref:System.Security.SecuritySafeCriticalAttribute?displayProperty=nameWithType> místo.|  
+|<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalScope> se používá pouze pro průhlednost kompatibility .NET 2.0.|  
+|<xref:System.Security.SecurityTreatAsSafeAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityTreatAsSafeAttribute> se používá pouze pro průhlednost kompatibility .NET 2.0. Použijte prosím <xref:System.Security.SecuritySafeCriticalAttribute?displayProperty=nameWithType> místo.|  
 |<xref:System.Security.Policy.FirstMatchCodeGroup?displayProperty=nameWithType>|Tento typ je zastaralá a budou odebrány v budoucí verzi rozhraní .NET Framework.|  
 |<xref:System.Security.Policy.PermissionRequestEvidence?displayProperty=nameWithType>|Deklarativní zabezpečení na úrovni sestavení je zastaralá a již nebudou vynuceny modulu CLR ve výchozím nastavení.|  
 |<xref:System.Security.Policy.UnionCodeGroup?displayProperty=nameWithType>|Tento typ je zastaralá a budou odebrány v budoucí verzi rozhraní .NET Framework.|  
@@ -149,7 +151,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="Core"></a>   
-### <a name="assembly-systemcoredll"></a>Sestavení: System.Core.dll  
+### <a name="assembly-systemcoredll"></a>Assembly: System.Core.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -158,35 +160,35 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="data"></a>   
-### <a name="assembly-systemdatadll"></a>Sestavení: System.Data.dll  
+### <a name="assembly-systemdatadll"></a>Assembly: System.Data.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
-|<xref:System.Data.DataSysDescriptionAttribute?displayProperty=nameWithType>|<xref:System.Data.DataSysDescriptionAttribute>je zastaralá.|  
-|<xref:System.Data.PropertyAttributes?displayProperty=nameWithType>|<xref:System.Data.PropertyAttributes>je zastaralá.|  
+|<xref:System.Data.DataSysDescriptionAttribute?displayProperty=nameWithType>|<xref:System.Data.DataSysDescriptionAttribute> je zastaralá.|  
+|<xref:System.Data.PropertyAttributes?displayProperty=nameWithType>|<xref:System.Data.PropertyAttributes> je zastaralá.|  
 |<xref:System.Data.TypedDataSetGenerator?displayProperty=nameWithType>|<xref:System.Data.TypedDataSetGenerator> – Třída bude v budoucí verzi odebrána. Použijte prosím <xref:System.Data.Design.TypedDataSetGenerator?displayProperty=nameWithType> v System.Design.dll.|  
 |<xref:System.Xml.XmlDataDocument?displayProperty=nameWithType>|<xref:System.Xml.XmlDataDocument> – Třída bude v budoucí verzi odebrána.|  
   
  [Zpět na začátek](#introduction)  
   
 <a name="oracleclient"></a>   
-### <a name="assembly-systemdataoracleclientdll"></a>Sestavení: System.Data.OracleClient.dll  
+### <a name="assembly-systemdataoracleclientdll"></a>Assembly: System.Data.OracleClient.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
-|<xref:System.Data.OracleClient.OracleClientFactory?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleClientFactory>je zastaralá.|  
-|<xref:System.Data.OracleClient.OracleCommand?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommand>je zastaralá.|  
-|<xref:System.Data.OracleClient.OracleCommandBuilder?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommandBuilder>je zastaralá.|  
-|<xref:System.Data.OracleClient.OracleConnection?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleConnection>je zastaralá.|  
-|<xref:System.Data.OracleClient.OracleConnectionStringBuilder?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleConnectionStringBuilder>je zastaralá.|  
-|<xref:System.Data.OracleClient.OracleDataAdapter?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleDataAdapter>je zastaralá.|  
-|<xref:System.Data.OracleClient.OraclePermission?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OraclePermission>je zastaralá.|  
-|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType>je zastaralá.|  
+|<xref:System.Data.OracleClient.OracleClientFactory?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleClientFactory> je zastaralá.|  
+|<xref:System.Data.OracleClient.OracleCommand?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommand> je zastaralá.|  
+|<xref:System.Data.OracleClient.OracleCommandBuilder?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommandBuilder> je zastaralá.|  
+|<xref:System.Data.OracleClient.OracleConnection?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleConnection> je zastaralá.|  
+|<xref:System.Data.OracleClient.OracleConnectionStringBuilder?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleConnectionStringBuilder> je zastaralá.|  
+|<xref:System.Data.OracleClient.OracleDataAdapter?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleDataAdapter> je zastaralá.|  
+|<xref:System.Data.OracleClient.OraclePermission?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OraclePermission> je zastaralá.|  
+|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType> je zastaralá.|  
   
  [Zpět na začátek](#introduction)  
   
 <a name="design"></a>   
-### <a name="assembly-systemdesigndll"></a>Sestavení: System.Design.dll  
+### <a name="assembly-systemdesigndll"></a>Assembly: System.Design.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -208,7 +210,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="system"></a>   
-### <a name="assembly-systemdll"></a>Sestavení: System.dll  
+### <a name="assembly-systemdll"></a>Assembly: System.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -223,7 +225,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="enterpriseservices"></a>   
-### <a name="assembly-systementerpriseservicesdll"></a>Sestavení: System.EnterpriseServices.dll  
+### <a name="assembly-systementerpriseservicesdll"></a>Assembly: System.EnterpriseServices.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -232,7 +234,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="net"></a>   
-### <a name="assembly-systemnetdll"></a>Sestavení: System.Net.dll  
+### <a name="assembly-systemnetdll"></a>Assembly: System.Net.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -249,7 +251,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="servicemodel"></a>   
-### <a name="assembly-systemservicemodeldll"></a>Sestavení: System.ServiceModel.dll  
+### <a name="assembly-systemservicemodeldll"></a>Assembly: System.ServiceModel.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -265,7 +267,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="web"></a>   
-### <a name="assembly-systemwebdll"></a>Sestavení: System.Web.dll  
+### <a name="assembly-systemwebdll"></a>Assembly: System.Web.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -286,7 +288,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="mobile"></a>   
-### <a name="assembly-systemwebmobiledll"></a>Sestavení: System.Web.Mobile.dll  
+### <a name="assembly-systemwebmobiledll"></a>Assembly: System.Web.Mobile.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -486,7 +488,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="workflow_activities"></a>   
-### <a name="assembly-systemworkflowactivitiesdll"></a>Sestavení: System.Workflow.Activities.dll  
+### <a name="assembly-systemworkflowactivitiesdll"></a>Assembly: System.Workflow.Activities.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -499,13 +501,13 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="workflow_componentmodel"></a>   
-### <a name="assembly-systemworkflowcomponentmodeldll"></a>Sestavení: System.Workflow.ComponentModel.dll  
+### <a name="assembly-systemworkflowcomponentmodeldll"></a>Assembly: System.Workflow.ComponentModel.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
-|Všechny typy v <xref:System.Workflow.ComponentModel> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=nameWithType> a<xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
-|Všechny typy v <xref:System.Workflow.ComponentModel.Compiler> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=nameWithType> a<xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
-|Všechny typy v <xref:System.Workflow.ComponentModel.Design> oboru názvů s výjimkou<xref:System.Workflow.ComponentModel.Design.ConnectorEventHandler>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
+|Všechny typy v <xref:System.Workflow.ComponentModel> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=nameWithType> a <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
+|Všechny typy v <xref:System.Workflow.ComponentModel.Compiler> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=nameWithType> a <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
+|Všechny typy v <xref:System.Workflow.ComponentModel.Design> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.Design.ConnectorEventHandler>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
 |<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializationManager?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
 |<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializer?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
 |<xref:System.Workflow.ComponentModel.Serialization.ActivityMarkupSerializer?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
@@ -517,7 +519,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="workflow_runtime"></a>   
-### <a name="assembly-systemworkflowruntimedll"></a>Sestavení: System.Workflow.Runtime.dll  
+### <a name="assembly-systemworkflowruntimedll"></a>Assembly: System.Workflow.Runtime.dll  
   
 |Typ|Zpráva|  
 |----------|-------------| 
@@ -525,14 +527,14 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Activities.Tracking.InteropTrackingRecord>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br />Typy Workflow Foundation 3.0 jsou zastaralé. Místo toho použijte typy Workflow 4.0 z <xref:System.Activities>.\*.|   
 |Všechny typy v <xref:System.Workflow.Runtime> obor názvů|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
 |Všechny typy v <xref:System.Workflow.Runtime.Configuration> obor názvů|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
-|Všechny typy v <xref:System.Workflow.Runtime.DebugEngine> oboru názvů s výjimkou<xref:System.Workflow.Runtime.DebugEngine.DebugEngineCallback>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
-|Všechny typy v <xref:System.Workflow.Runtime.Hosting> oboru názvů s výjimkou<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
+|Všechny typy v <xref:System.Workflow.Runtime.DebugEngine> oboru názvů s výjimkou <xref:System.Workflow.Runtime.DebugEngine.DebugEngineCallback>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
+|Všechny typy v <xref:System.Workflow.Runtime.Hosting> oboru názvů s výjimkou <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
 |Všechny typy v <xref:System.Workflow.Runtime.Tracking> obor názvů|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy jsou zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|  
   
  [Zpět na začátek](#introduction)  
   
 <a name="workflowservices"></a>   
-### <a name="assembly-systemworkflowservicesdll"></a>Sestavení: System.WorkflowServices.dll  
+### <a name="assembly-systemworkflowservicesdll"></a>Assembly: System.WorkflowServices.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -561,7 +563,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="xaml"></a>   
-### <a name="assembly-systemxamldll"></a>Sestavení: System.Xaml.dll  
+### <a name="assembly-systemxamldll"></a>Assembly: System.Xaml.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -570,7 +572,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="xml"></a>   
-### <a name="assembly-systemxmldll"></a>Sestavení: System.Xml.dll  
+### <a name="assembly-systemxmldll"></a>Assembly: System.Xml.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -583,11 +585,11 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="WindowsBase"></a>   
-### <a name="assembly-windowsbasedll"></a>Sestavení: knihovně WindowsBase.dll  
+### <a name="assembly-windowsbasedll"></a>Assembly: WindowsBase.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
-|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>je zastaralá. Toto rozhraní je již používán.|  
+|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType> je zastaralá. Toto rozhraní je již používán.|  
   
  [Zpět na začátek](#introduction)  
   
@@ -602,7 +604,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="Engine"></a>   
-### <a name="assembly-microsoftbuildenginedll"></a>Sestavení: Microsoft.Build.Engine.dll  
+### <a name="assembly-microsoftbuildenginedll"></a>Assembly: Microsoft.Build.Engine.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -612,7 +614,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="jscript"></a>   
-### <a name="assembly-microsoftjscriptdll"></a>Sestavení: Microsoft.JScript.dll  
+### <a name="assembly-microsoftjscriptdll"></a>Assembly: Microsoft.JScript.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -638,7 +640,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="VBCompat"></a>   
-### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>Sestavení: Microsoft.VisualBasic.Compatibility.dll  
+### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>Assembly: Microsoft.VisualBasic.Compatibility.dll  
   Informace o migraci z jazyka Visual Basic 6 najdete v tématu [jazyka Visual Basic 6.0 Resource Center](https://msdn.microsoft.com/library/windows/desktop/ms788229).
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -713,7 +715,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="VBCompatData"></a>   
-### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Sestavení: Microsoft.VisualBasic.Compatibility.Data.dll  
+### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Assembly: Microsoft.VisualBasic.Compatibility.Data.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -770,7 +772,7 @@ ms.lasthandoff: 12/22/2017
  [Zpět na začátek](#introduction)  
   
 <a name="visualc"></a>   
-### <a name="assembly-microsoftvisualcdll"></a>Sestavení: Microsoft.VisualC.dll  
+### <a name="assembly-microsoftvisualcdll"></a>Assembly: Microsoft.VisualC.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  

@@ -1,27 +1,29 @@
 ---
-title: "Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků"
-ms.custom: 
+title: Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-caps.latest.revision: "10"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c12bd11cee62cd769f7dffc142806fa5ab1b0137
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]má možnost režim kompatibility ASP.NET povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace pro naprogramovaný tak a konfiguraci jako webových služeb ASP.NET a napodobovat jejich chování. V následujících částech porovnání webových služeb ASP.NET a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle co je potřeba k vývoji aplikací pomocí obou technologií.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] má možnost režim kompatibility ASP.NET povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace pro naprogramovaný tak a konfiguraci jako webových služeb ASP.NET a napodobovat jejich chování. V následujících částech porovnání webových služeb ASP.NET a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle co je potřeba k vývoji aplikací pomocí obou technologií.  
   
 ## <a name="data-representation"></a>Reprezentace dat  
  Vývoj webové služby pomocí ASP.NET se obvykle začíná definování všechny rozšířené datové typy, které má používat služba. ASP.NET spoléhá na <xref:System.Xml.Serialization.XmlSerializer> přeložit data reprezentována rozhraní .NET Framework typů XML pro přenos do nebo ze služby a překládat data přijatá ve formátu XML do objekty rozhraní .NET Framework. Definování komplexních datové typy, které je použití služby ASP.NET vyžaduje třídy definici rozhraní .NET Framework, který <xref:System.Xml.Serialization.XmlSerializer> může serializovat do a z XML. Těchto tříd lze zapsat ručně, nebo vytvořit z definice typů ve schématu XML pomocí příkazového řádku XML schémata a datových typů podporu nástroji pro xsd.exe.  
@@ -36,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Dobře mnoho typů v atributu <xref:System.Xml.Serialization> oboru názvů lze přidat do třídy rozhraní .NET Framework a její členy k řízení zastoupení instancí třídy ve formátu XML.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vývoj aplikací obvykle také začíná definici komplexních typů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]lze používat stejné typy rozhraní .NET Framework jako webové služby ASP.NET.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývoj aplikací obvykle také začíná definici komplexních typů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lze používat stejné typy rozhraní .NET Framework jako webové služby ASP.NET.  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> lze přidat na rozhraní .NET Framework typy, které určují, že instance typu se k serializaci do XML a které konkrétní pole nebo vlastnosti typu se k serializaci, jak znázorňuje následující ukázka kód.  
   
@@ -305,7 +307,7 @@ public class Service : IEcho
 |----------|-------------|  
 |BasicHttpBinding|Vzájemná funkční spolupráce s webovými službami a podpůrné služby WS-BasicProfile 1.1 a 1.0 profil základní zabezpečení klientů.|  
 |WSHttpBinding|Vzájemná funkční spolupráce s webovými službami a klienty, kteří podporují WS-* protokoly prostřednictvím protokolu HTTP.|  
-|– WSDualHttpBinding|Duplexní komunikaci pomocí protokolu HTTP, podle kterého příjemce úvodní zpráva není odpověď přímo do počáteční odesílatele, ale může přenášet libovolný počet odpovědi přes v časovém intervalu pomocí protokolu HTTP v souladu s WS-* protokoly.|  
+|WSDualHttpBinding|Duplexní komunikaci pomocí protokolu HTTP, podle kterého příjemce úvodní zpráva není odpověď přímo do počáteční odesílatele, ale může přenášet libovolný počet odpovědi přes v časovém intervalu pomocí protokolu HTTP v souladu s WS-* protokoly.|  
 |Wsfederationbinding –|Komunikaci pomocí protokolu HTTP, ve kterém lze řídit přístup k prostředkům služby založené na přihlašovací údaje vystavený poskytovatele explicitně identifikovat přihlašovacích údajů.|  
 |NetTcpBinding|Bezpečná a spolehlivá, vysoce výkonných komunikace mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] softwaru entity v síti.|  
 |NetNamedPipeBinding|Bezpečná a spolehlivá, vysoce výkonných komunikace mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] softwaru entity na stejném počítači.|  
@@ -326,7 +328,7 @@ public class DerivativesCalculatorServiceType: IDerivativesCalculator
   
  Některé chování jako <xref:System.ServiceModel.ServiceBehaviorAttribute>, atributů. Ostatní těm, které jsou s vlastnostmi, které správce chtít nastavit, můžete změnit v konfiguraci aplikace.  
   
- V programování typů služeb, často využívání <xref:System.ServiceModel.OperationContext> třídy. Jeho statické <xref:System.ServiceModel.OperationContext.Current%2A> vlastnost poskytuje přístup k informacím o kontextu, ve kterém je spuštěna operace. <xref:System.ServiceModel.OperationContext>je podobná i <xref:System.Web.HttpContext> a <xref:System.EnterpriseServices.ContextUtil> třídy.  
+ V programování typů služeb, často využívání <xref:System.ServiceModel.OperationContext> třídy. Jeho statické <xref:System.ServiceModel.OperationContext.Current%2A> vlastnost poskytuje přístup k informacím o kontextu, ve kterém je spuštěna operace. <xref:System.ServiceModel.OperationContext> je podobná i <xref:System.Web.HttpContext> a <xref:System.EnterpriseServices.ContextUtil> třídy.  
   
 ## <a name="hosting"></a>Hostování  
  Webových služeb ASP.NET kompilovány do sestavení knihovny tříd. Soubor s názvem souboru služby je za předpokladu, že má .asmx rozšíření a obsahuje `@ WebService` direktiva, která identifikuje třídu, která obsahuje kód pro tuto službu a sestavení, ve kterém se nachází.  
@@ -337,7 +339,7 @@ public class DerivativesCalculatorServiceType: IDerivativesCalculator
   
  Soubor služby se zkopíruje do kořenový adresář aplikace ASP.NET v Internetové informační služby (IIS) a sestavení se zkopíruje do podadresáři \bin tento kořenový adresář aplikace. Aplikace je pak přístupné pomocí uniform resource locator (URL) souboru služby v kořenovém adresáři aplikace.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby se dají snadno hostovat v rámci služby IIS 5.1 nebo 6.0, proces aktivace služby WAS (Windows), je dodáván jako součást služby IIS 7.0, a v rámci všech aplikací .NET. K hostování služby IIS 5.1 nebo 6.0, musíte službu používají protokol HTTP jako protokol pro přenos komunikace.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se dají snadno hostovat v rámci služby IIS 5.1 nebo 6.0, proces aktivace služby WAS (Windows), je dodáván jako součást služby IIS 7.0, a v rámci všech aplikací .NET. K hostování služby IIS 5.1 nebo 6.0, musíte službu používají protokol HTTP jako protokol pro přenos komunikace.  
   
  K hostování služby v rámci služby IIS 5.1, 6.0 nebo WAS, použijte postup následovně:  
   
@@ -380,7 +382,7 @@ typeof(Service), //"Service" is the name of the service type baseAdresses))
   
  Tento příklad ukazuje, jak jsou při sestavování zadané adresy pro jeden nebo více přenosové protokoly <xref:System.ServiceModel.ServiceHost>. Tyto adresy jsou označovány jako základní adresy.  
   
- Adresa zadaná pro libovolný koncový bod služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se jedná o adresu relativně k základní adresa hostitele pro koncový bod. Hostitel může mít jeden základní adresa pro každý protokol pro přenos komunikace. V konfiguraci ukázka v předchozím konfiguračním souboru <xref:System.ServiceModel.BasicHttpBinding> vybrané pro používá koncový bod HTTP jako protokol pro přenos, takže adresa koncového bodu, `EchoService`, je relativní vzhledem k základní adresu HTTP hostitele. V případě hostitele v předchozím příkladu je základní adresu HTTP http://www.contoso.com:8000 /. Pro služby hostované v rámci služby IIS nebo WAS základní adresa je adresa URL souboru služby, služby.  
+ Adresa zadaná pro libovolný koncový bod služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se jedná o adresu relativně k základní adresa hostitele pro koncový bod. Hostitel může mít jeden základní adresa pro každý protokol pro přenos komunikace. V konfiguraci ukázka v předchozím konfiguračním souboru <xref:System.ServiceModel.BasicHttpBinding> vybrané pro používá koncový bod HTTP jako protokol pro přenos, takže adresa koncového bodu, `EchoService`, je relativní vzhledem k základní adresu HTTP hostitele. V případě hostitele v předchozím příkladu je základní adresu HTTP http://www.contoso.com:8000/. Pro služby hostované v rámci služby IIS nebo WAS základní adresa je adresa URL souboru služby, služby.  
   
  Pouze služby hostované ve službě IIS nebo WAS a které jsou nakonfigurované s protokolem HTTP jako přenosový protokol výhradně, lze používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] možnost režim kompatibility ASP.NET. Tuto možnost zapnete vyžaduje následující kroky.  
   
@@ -405,7 +407,7 @@ typeof(Service), //"Service" is the name of the service type baseAdresses))
     </configuration>  
     ```  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]aplikace, můžete nakonfigurovat také používat pro své služby souborů a nikoli .svc .asmx jako rozšíření.  
+     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, můžete nakonfigurovat také používat pro své služby souborů a nikoli .svc .asmx jako rozšíření.  
   
     ```xml  
     <system.web>  
@@ -636,7 +638,7 @@ public class Service : WebService, IEcho
   
  Technologie ASP.NET poskytuje značnou kontrolu nad kde stavu relace informace přistupovat pomocí vlastnosti relace <xref:System.Web.HttpContext> je ve skutečnosti uložen. Může být uložená v souborech cookie, v databázi, v paměti aktuálního serveru nebo v paměti na určený server. Volba se provádí v konfiguračním souboru služby.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje rozšiřitelné objekty pro správu stavu. Rozšiřitelné objekty jsou objekty, které implementují <xref:System.ServiceModel.IExtensibleObject%601>. Nejdůležitější rozšiřitelné objekty jsou <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.InstanceContext>. `ServiceHostBase`umožňuje udržovat stav všech instancí služby všechny typy na stejném hostiteli mohou získat přístup, při `InstanceContext` umožňuje udržovat stav, který je přístupný pomocí žádný kód běžící v rámci stejné instance typu služby.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje rozšiřitelné objekty pro správu stavu. Rozšiřitelné objekty jsou objekty, které implementují <xref:System.ServiceModel.IExtensibleObject%601>. Nejdůležitější rozšiřitelné objekty jsou <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.InstanceContext>. `ServiceHostBase` umožňuje udržovat stav všech instancí služby všechny typy na stejném hostiteli mohou získat přístup, při `InstanceContext` umožňuje udržovat stav, který je přístupný pomocí žádný kód běžící v rámci stejné instance typu služby.  
   
  Tady, typ služby `TradingSystem`, má <xref:System.ServiceModel.ServiceBehaviorAttribute> který určuje, že všechna volání ze stejné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] instanci klienta jsou směrovány na stejnou instanci typu služby.  
   
@@ -751,7 +753,7 @@ public void Receive(Message input)
 </behaviors>  
 ```  
   
- Třídy používané ke spuštění ověření na základě deklarace identity musí být odvozeny od <xref:System.ServiceModel.ServiceAuthorizationManager>, který má jenom jednu metodu přepsat, `AccessCheck()`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vždy, když je volána operace služby a poskytuje volá tuto metodu <xref:System.ServiceModel.OperationContext> objekt, který se má deklarace pro uživatele v jeho `ServiceSecurityContext.AuthorizationContext` vlastnost. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje práci při sestavování deklarace identity o uživateli z tokenu jakoukoli zabezpečení uživatele zadaná pro ověřování, což ponechá úkolu vyhodnocení, zda tyto deklarace identity stačit pro operace.  
+ Třídy používané ke spuštění ověření na základě deklarace identity musí být odvozeny od <xref:System.ServiceModel.ServiceAuthorizationManager>, který má jenom jednu metodu přepsat, `AccessCheck()`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vždy, když je volána operace služby a poskytuje volá tuto metodu <xref:System.ServiceModel.OperationContext> objekt, který se má deklarace pro uživatele v jeho `ServiceSecurityContext.AuthorizationContext` vlastnost. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje práci při sestavování deklarace identity o uživateli z tokenu jakoukoli zabezpečení uživatele zadaná pro ověřování, což ponechá úkolu vyhodnocení, zda tyto deklarace identity stačit pro operace.  
   
  Aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] automaticky sestaví deklarace identity z jakéhokoli druhu zabezpečení token je vysoce významnou inovaci, protože je kód pro ověřování založené na deklaracích ke zcela nezávislé na ověřovací mechanismus. Naopak autorizace pomocí seznamů řízení přístupu nebo role v ASP.NET úzce souvisí ověřování systému Windows.  
   

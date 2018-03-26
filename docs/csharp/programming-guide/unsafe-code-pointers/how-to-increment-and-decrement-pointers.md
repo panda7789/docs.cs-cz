@@ -1,21 +1,22 @@
 ---
-title: "Postupy: Přírůstek a úbytek ukazatelů (Průvodce programováním v C#)"
+title: 'Postupy: Přírůstek a úbytek ukazatelů (Průvodce programováním v C#)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - pointers [C#], increment and decrement
 - pointer expressions [C#], increment and decrement
 ms.assetid: 1b8b9281-44ee-485a-9045-3db38a4b4b89
-caps.latest.revision: "20"
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2c8efc6d0844d867ad6eebccf3bb22c03e6d5020
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-increment-and-decrement-pointers-c-programming-guide"></a>Postupy: Přírůstek a úbytek ukazatelů (Průvodce programováním v C#)
 Přírůstek a snížení operátory, `++` a `--`, chcete-li změnit umístění ukazatele podle [sizeof](../../../csharp/language-reference/keywords/sizeof.md) (`pointer-type`) pro ukazatel typu ukazatele – typ *. Přírůstek a snížení výrazy mít tento tvar:  
@@ -48,12 +49,12 @@ p--;
 **Hodnota: 3 @ adresa: 12860284**  
 **Hodnota: 4 @ adresa: 12860288**   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
- [Manipulace s ukazateli](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md)  
+ [Manipulace s ukazateli](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md)  
  [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
  [Typy](../../../csharp/language-reference/keywords/types.md)  
- [nezabezpečený](../../../csharp/language-reference/keywords/unsafe.md)  
+ [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
  [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)  
  [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)
