@@ -1,12 +1,12 @@
 ---
-title: "Řídicí sekvence znaků v regulárních výrazech"
-ms.custom: 
+title: Řídicí sekvence znaků v regulárních výrazech
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,7 +20,7 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-caps.latest.revision: "31"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -28,10 +28,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 8a4ec10bfa332c8caafce57385791d8069a7231a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
 Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících:  
@@ -57,10 +57,10 @@ Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících
 |`\f`|Odpovídá posunu, `\u000C`.|  
 |`\n`|Odpovídá nový řádek, `\u000A`.|  
 |`\e`|Odpovídá escape, `\u001B`.|  
-|`\` *nnn*|Odpovídá znaku ASCII, kde  *nnn*  se skládá ze dvou nebo tří číslic, které představují kód osmičková znak. Například `\040` představuje znak mezery. Tento konstruktor je interpretován jako zpětný odkaz, pokud má jenom jednu číslici (například `\2`) nebo pokud ji odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
-|`\x` *nn*|Odpovídá znaku ASCII, kde  *nn*  je kód letopočty hexadecimálních znaků.|  
-|`\c`*X*|Odpovídá znaku řízení ASCII, kde X je písmeno řídicí znak. Například `\cC` je CTRL-C.|  
-|`\u` *nnnn*|Odpovídá jednotce kódu UTF-16, jehož hodnota je  *nnnn*  hexadecimální. **Poznámka:** Perl 5 řídicí znak, který slouží k určení kódování Unicode nepodporuje rozhraní .NET. Řídicí znak Perl 5 má tvar `\x{`  *####*  `…}`, kde  *####*  `…` je řada šestnáctkových číslic. Místo toho použijte `\u`  *nnnn* .|  
+|`\` *nnn*|Odpovídá znaku ASCII, kde *nnn* se skládá ze dvou nebo tří číslic, které představují kód osmičková znak. Například `\040` představuje znak mezery. Tento konstruktor je interpretován jako zpětný odkaz, pokud má jenom jednu číslici (například `\2`) nebo pokud ji odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
+|`\x` *nn*|Odpovídá znaku ASCII, kde *nn* je kód letopočty hexadecimálních znaků.|  
+|`\c` *X*|Odpovídá znaku řízení ASCII, kde X je písmeno řídicí znak. Například `\cC` je CTRL-C.|  
+|`\u` *nnnn*|Odpovídá jednotce kódu UTF-16, jehož hodnota je *nnnn* hexadecimální. **Poznámka:** Perl 5 řídicí znak, který slouží k určení kódování Unicode nepodporuje rozhraní .NET. Řídicí znak Perl 5 má tvar `\x{` *####* `…}`, kde *####* `…` je řada šestnáctkových číslic. Místo toho použijte `\u` *nnnn*.|  
 |`\`|Když následuje znak, který není rozpoznaný jako řídící znak, odpovídá tento znak. Například `\*` odpovídá znak hvězdičky (*) a je stejná jako `\x2A`.|  
   
 ## <a name="an-example"></a>Příklad  
