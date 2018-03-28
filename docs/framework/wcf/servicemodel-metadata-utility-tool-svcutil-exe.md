@@ -79,7 +79,7 @@ Nástroj ServiceModel Metadata Utility slouží ke generování kódu služby mo
  Služby s koncovým bodem vazba BasicHttpContextbinding Svcutil.exe generuje BasicHttpBinding s `allowCookies` atribut nastaven na `true` místo. Soubory cookie se používají pro kontext na serveru. Pokud chcete spravovat kontext na straně klienta, pokud služba používá soubory cookie, můžete ručně upravit konfiguraci pomocí kontextu vazby.  
   
 > [!CAUTION]
->  Svcutil.exe generuje klienta na základě souboru WSDL nebo zásady přijal od služby. Hlavní název uživatele (UPN) je generována zřetězením uživatelské jméno, "@" a plně kvalifikovaný název domény (FQDN). Pro uživatele, kteří si zaregistrovali na službě Active Directory, ale tento formát není platný a UPN generovaný nástrojem způsobí selhání v ověřování protokolem Kerberos s chybovou zprávou "Pokus o přihlášení se nezdařilo". Chcete-li vyřešit tento problém, neopravíte ručně soubor klienta generované tímto nástrojem.  
+>  Svcutil.exe generuje klienta na základě souboru WSDL nebo zásady přijal od služby. Hlavní název uživatele (UPN) je generována zřetězením uživatelské jméno, "\@" a plně kvalifikovaný název domény (FQDN). Pro uživatele, kteří si zaregistrovali na službě Active Directory, ale tento formát není platný a UPN generovaný nástrojem způsobí selhání v ověřování protokolem Kerberos s chybovou zprávou "Pokus o přihlášení se nezdařilo". Chcete-li vyřešit tento problém, neopravíte ručně soubor klienta generované tímto nástrojem.  
   
  `svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>`  
   
