@@ -1,7 +1,7 @@
 ---
-title: "Řetězec interpolace - C#"
-description: "Zjistěte, jak funguje interpolace řetězce v jazyce C# 6"
-keywords: "Rozhraní .NET, .NET core, C#, řetězec"
+title: Řetězec interpolace - C#
+description: Zjistěte, jak funguje interpolace řetězce v jazyce C# 6
+keywords: Rozhraní .NET, .NET core, C#, řetězec
 author: mgroves
 ms.author: wiwagn
 ms.date: 03/06/2017
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: db062ed2f832ae933941da1c49e84303090f4390
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: a9578d006861b987871071961437345c378a5b58
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězce v jazyce C# #
 
@@ -122,4 +122,4 @@ Interpolované řetězce ve výchozím nastavení používá aktuální jazykovo
 
 ## <a name="conclusion"></a>Závěr 
 
-V tomto kurzu jste zjistili, jak používat funkce interpolace řetězec jazyka C# 6. Je v podstatě přesnější způsob jednoduché psaní `String.Format` příkazy se některých aspektů pro pokročilejší použití. Další informace najdete v tématu [interpolované řetězce](../../csharp//language-reference/keywords/interpolated-strings.md) tématu.
+V tomto kurzu jste zjistili, jak používat funkce interpolace řetězec jazyka C# 6. Je v podstatě přesnější způsob jednoduché psaní `String.Format` příkazy se některých aspektů pro pokročilejší použití. Další informace najdete v tématu [řetězec interpolace](../../csharp//language-reference/tokens/interpolated.md) tématu.

@@ -1,6 +1,6 @@
 ---
-title: "Začínáme s analýzou syntaxe (Roslyn rozhraní API)"
-description: "Úvod k procházení, dotazování a proti stromy syntaxe."
+title: Začínáme s analýzou syntaxe (Roslyn rozhraní API)
+description: Úvod k procházení, dotazování a proti stromy syntaxe.
 author: billwagner
 ms.author: wiwagn
 ms.date: 02/05/2018
@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 52f66782086af651517d54105fea6f5533ea05a2
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 90d6542122dd8c579c63f5f003441ce63a7ca5e9
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="get-started-with-syntax-analysis"></a>Začínáme s syntaxe analýzy
 
@@ -43,6 +43,10 @@ Rozhraní API syntaxe vytvoří stromová struktura s kořenovým představujíc
 
 Tento stručný popis poskytuje přehled o druh informací, které jsou přístupné pomocí syntaxe rozhraní API. Rozhraní API syntaxe není nic, které větší, než vytvoří formální rozhraní API, který popisuje kód obeznámeni, budete vědět z jazyka C#. Všechny schopnosti zahrnují informace o tom, jak kód formátována včetně konce řádku, prázdné znaky a odsazení. Na základě těchto informací můžete plně představují kód jako zapisovat a čtení lidského programátory nebo kompilátoru. Tato struktura pomocí umožňuje interakci se zdrojovým kódem na úrovni hluboko smysluplný. Už je textové řetězce, ale data, která představuje struktura programu v C#.
 
+Abyste mohli začít, budete muset nainstalovat **SDK pro platformu .NET kompilátoru**:
+
+[!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
+
 ## <a name="understanding-syntax-trees"></a>Principy syntaxe stromů
 
 Můžete použít rozhraní API syntaxe pro nějakou analýzu struktury kódu C#. **Syntaxe API** zpřístupní analyzátory, stromy syntaxe a nástroje pro analýzu a vytváření stromů syntaxe. Je způsob, jakým vyhledávání kódu pro specifickou syntaxi elementy nebo číst kód programu.
@@ -67,9 +71,6 @@ Při nic najdete v souboru kódu pomocí syntaxe rozhraní API, většina scén�
 ## <a name="traversing-trees"></a>Procházení stromů
 
 Můžete zkontrolovat uzly ve stromu syntaxe dvěma způsoby. Můžete procházet stromu prozkoumat každý uzel, nebo můžete vyhledat konkrétní prvky nebo uzlů.
-
-> [!IMPORTANT]
-> Následující ukázky vyžadují **SDK pro platformu .NET kompilátoru** nainstalován jako součást Visual Studio 2017. .NET SDK kompilátoru můžete najít jako poslední volitelné součásti, které jsou uvedené v části **vývoj rozšíření pro Visual Studio** zatížení. Šablony nejsou nainstalovány bez této součásti.
 
 ### <a name="manual-traversal"></a>Ruční traversal
 

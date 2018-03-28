@@ -1,6 +1,6 @@
 ---
-title: "Přidání do formátu csproj pro .NET Core"
-description: "Další informace o rozdílech mezi existující a .NET Core csproj soubory"
+title: Přidání do formátu csproj pro .NET Core
+description: Další informace o rozdílech mezi existující a .NET Core csproj soubory
 keywords: odkaz, csproj, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -9,19 +9,20 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
-ms.workload: dotnetcore
-ms.openlocfilehash: d2a318f099eaa67912c2cecd1c67ceebaee8629e
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: fdf91bdb24819c2d92b708e5937980ac2fb0d5fc
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
 Tento dokument popisuje změny, které byly přidány do souborů projektu jako součást přesunutí ze *project.json* k *csproj* a [MSBuild](https://github.com/Microsoft/MSBuild). Další informace o syntaxi souboru obecné projektu a referenční informace najdete v tématu [soubor projektu nástroje MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference) dokumentaci.  
 
 ## <a name="implicit-package-references"></a>Implicitní balíček odkazuje
-Metapackages odkazují implicitně podle framework(s) cíl zadaný v `<TargetFramework>` nebo `<TargetFrameworks>` vlastnost souboru projektu. `<TargetFrameworks>`je ignorována, pokud `<TargetFramework>` je zadaný, nezávisle na pořadí.
+Metapackages odkazují implicitně podle framework(s) cíl zadaný v `<TargetFramework>` nebo `<TargetFrameworks>` vlastnost souboru projektu. `<TargetFrameworks>` je ignorována, pokud `<TargetFramework>` je zadaný, nezávisle na pořadí.
 
 ```xml
  <PropertyGroup>
@@ -72,7 +73,7 @@ Nastavení této vlastnosti na `false` přepíší implicitní zahrnutí a chov�
 
 Tato změna nedojde ke změně hlavní zahrnuje jiné mechanismy. Ale pokud chcete určit, například některé soubory získat publikována s vaší aplikací, můžete pořád použít známé mechanismy v *csproj* pro tento (například `<Content>` element).
 
-`<EnableDefaultCompileItems>`pouze zakáže `Compile` globs, ale nemá žádný vliv na ostatní globs, jako implicitní `None` glob, která se vztahuje také na \*.cs položky. Z tohoto důvodu **Průzkumníku řešení** bude pokračovat zobrazit \*.cs položky v rámci projektu, které jsou zahrnuty jako `None` položky. Podobným způsobem, můžete použít `<EnableDefaultNoneItems>` zakázat implicitní `None` glob.
+`<EnableDefaultCompileItems>` pouze zakáže `Compile` globs, ale nemá žádný vliv na ostatní globs, jako implicitní `None` glob, která se vztahuje také na \*.cs položky. Z tohoto důvodu **Průzkumníku řešení** bude pokračovat zobrazit \*.cs položky v rámci projektu, které jsou zahrnuty jako `None` položky. Podobným způsobem, můžete použít `<EnableDefaultNoneItems>` zakázat implicitní `None` glob.
 
 Chcete-li zakázat **všechny implicitní globs**, můžete nastavit `<EnableDefaultItems>` vlastnost `false` jako v následujícím příkladu:
 ```xml
@@ -97,10 +98,10 @@ Pokud projekt má více cílové rozhraní, se musí výsledky příkazu zaměř
 ## <a name="additions"></a>Přidání
 
 ### <a name="sdk-attribute"></a>Atribut SDK 
-`<Project>` Element *.csproj* soubor má nový atribut názvem `Sdk`. `Sdk`Určuje, které SDK bude používán v projektu. Sadu SDK, jako [rozvrstvení dokumentu](cli-msbuild-architecture.md) popisuje, je sada MSBuild [úlohy](/visualstudio/msbuild/msbuild-tasks) a [cíle](/visualstudio/msbuild/msbuild-targets) , můžete vytvořit kódu .NET Core. Jsme dodávat dvě hlavní sady SDK nástroje .NET Core:
+`<Project>` Element *.csproj* soubor má nový atribut názvem `Sdk`. `Sdk` Určuje, které SDK bude používán v projektu. Sadu SDK, jako [rozvrstvení dokumentu](cli-msbuild-architecture.md) popisuje, je sada MSBuild [úlohy](/visualstudio/msbuild/msbuild-tasks) a [cíle](/visualstudio/msbuild/msbuild-targets) , můžete vytvořit kódu .NET Core. Jsme dodávat dvě hlavní sady SDK nástroje .NET Core:
 
-1. .NET Core SDK s ID`Microsoft.NET.Sdk`
-2. .NET Core web SDK s ID`Microsoft.NET.Sdk.Web`
+1. .NET Core SDK s ID `Microsoft.NET.Sdk`
+2. .NET Core web SDK s ID `Microsoft.NET.Sdk.Web`
 
 Je potřeba mít `Sdk` nastaven atribut na jednu z těchto ID na `<Project>` element Chcete-li použít nástroje .NET Core a sestavení kódu. 
 
@@ -112,41 +113,41 @@ Položka, která určuje závislostí NuGet v projektu. `Include` Atribut určuj
 ```
 
 #### <a name="version"></a>Version
-`Version`Určuje verzi balíčku, který má obnovit. Atribut respektuje pravidla [verze NuGet](/nuget/create-packages/dependency-versions#version-ranges) schéma. Výchozí chování je v případě shody přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní NuGet zápis `[1.2.3]` pro přesnou 1.2.3 verze balíčku.
+`Version` Určuje verzi balíčku, který má obnovit. Atribut respektuje pravidla [verze NuGet](/nuget/create-packages/dependency-versions#version-ranges) schéma. Výchozí chování je v případě shody přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní NuGet zápis `[1.2.3]` pro přesnou 1.2.3 verze balíčku.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets a PrivateAssets
-`IncludeAssets`atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by měl být využívány. 
+`IncludeAssets` atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by měl být využívány. 
 
-`ExcludeAssets`atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by neměl být využívány.
+`ExcludeAssets` atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by neměl být využívány.
 
-`PrivateAssets`atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by měl být využívány ale, že by neměl toku do další projektu. 
+`PrivateAssets` atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by měl být využívány ale, že by neměl toku do další projektu. 
 
 > [!NOTE]
-> `PrivateAssets`je ekvivalentní *project.json*/*xproj* `SuppressParent` element.
+> `PrivateAssets` je ekvivalentní *project.json*/*xproj* `SuppressParent` element.
 
 Tyto atributy mohou obsahovat jednu nebo více z následujících položek:
 
-* `Compile`– jsou k dispozici ke kompilaci proti obsah složky lib.
-* `Runtime`– distribuují obsah složky modulu runtime.
-* `ContentFiles`– obsah *contentfiles* složky se používá.
-* `Build`– props/cíle ve složce sestavení se používají.
-* `Native`– obsah z nativní prostředky se zkopírují do výstupní složky pro modul runtime.
-* `Analyzers`– Analyzátory se používají.
+* `Compile` – jsou k dispozici ke kompilaci proti obsah složky lib.
+* `Runtime` – distribuují obsah složky modulu runtime.
+* `ContentFiles` – obsah *contentfiles* složky se používá.
+* `Build` – props/cíle ve složce sestavení se používají.
+* `Native` – obsah z nativní prostředky se zkopírují do výstupní složky pro modul runtime.
+* `Analyzers` – Analyzátory se používají.
 
 Alternativně může obsahovat atribut:
 
-* `None`– žádné prostředky se používají.
-* `All`– všechny prostředky používají.
+* `None` – žádné prostředky se používají.
+* `All` – všechny prostředky používají.
 
 ### <a name="dotnetclitoolreference"></a>DotNetCliToolReference
-`<DotNetCliToolReference>`Item – prvek určuje nástroj příkazového řádku, který chce uživatel obnovit v kontextu projektu. Je to náhrada za `tools` uzlu v *project.json*. 
+`<DotNetCliToolReference>` Item – prvek určuje nástroj příkazového řádku, který chce uživatel obnovit v kontextu projektu. Je to náhrada za `tools` uzlu v *project.json*. 
 
 ```xml
 <DotNetCliToolReference Include="<package-id>" Version="" />
 ```
 
 #### <a name="version"></a>Version
-`Version`Určuje verzi balíčku, který má obnovit. Atribut respektuje pravidla [verze NuGet](/nuget/create-packages/dependency-versions#version-ranges) schéma. Výchozí chování je v případě shody přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní NuGet zápis `[1.2.3]` pro přesnou 1.2.3 verze balíčku.
+`Version` Určuje verzi balíčku, který má obnovit. Atribut respektuje pravidla [verze NuGet](/nuget/create-packages/dependency-versions#version-ranges) schéma. Výchozí chování je v případě shody přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní NuGet zápis `[1.2.3]` pro přesnou 1.2.3 verze balíčku.
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 `<RuntimeIdentifiers>` Vám umožňuje určit seznam oddělený středníkem [Runtime identifikátorů (RID)](../rid-catalog.md) pro projekt. Povolit identifikátorů RID publikování samostatná nasazení. 
@@ -254,7 +255,7 @@ Tato logické hodnoty Určuje, zda by měl sestavení výstupu sestavení do mno
 Tato logická hodnota určuje, zda všechny položky, které mají typ `Content` budou zahrnuty do výsledného balíček automaticky. Výchozí hodnota je `true`. 
 
 ### <a name="buildoutputtargetfolder"></a>BuildOutputTargetFolder
-Určuje složku, kam umístit výstupního sestavení... Výstup sestavení (a ostatní výstupní soubory) se zkopírují do jejich odpovídajících framework složky.
+Určuje složku, kam umístit výstupu sestavení. Výstup sestavení (a ostatní výstupní soubory) se zkopírují do jejich odpovídajících framework složky.
 
 ### <a name="contenttargetfolders"></a>ContentTargetFolders
 Tato vlastnost určuje, kde se má zobrazit všechny soubory obsahu, pokud výchozí umístění `PackagePath` není zadaný pro ně. Výchozí hodnota je "obsah; contentFiles".

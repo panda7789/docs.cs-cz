@@ -1,7 +1,7 @@
 ---
-title: "Historie jazyka C# – průvodce v C#"
-description: "Co vzhledu jazyk líbí v nejstarších verzích, a jak vyvinul od?"
-keywords: "C#, .NET, .NET Core, co je nového, historie C#"
+title: Historie jazyka C# – průvodce v C#
+description: Co vzhledu jazyk líbí v nejstarších verzích, a jak vyvinul od?
+keywords: C#, .NET, .NET Core, co je nového, historie C#
 author: erikdietrich
 ms.author: wiwagn
 ms.date: 09/20/2017
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: 207c97c5dd7e04f815da61bff7f44393aea86222
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d24d190eab5896121231543e6696b6a4861b5bb8
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -53,7 +53,7 @@ C# 3.0 verze byla v pozdní 2007, společně s Visual Studio 2008, i když úpln
 - [Automaticky implementované vlastnosti](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Výrazy dotazů](../linq/query-expression-basics.md)
-- [Výraz lambda](https://www.daedtech.com/introduction-to-c-lambda-expressions/)
+- [výraz lambda](https://www.daedtech.com/introduction-to-c-lambda-expressions/)
 - [Stromy výrazů](https://blogs.msdn.microsoft.com/charlie/2008/01/31/expression-tree-basics/)
 - [Metody rozšíření](https://www.codeproject.com/Tips/709310/Extension-Method-In-Csharp)
 
@@ -102,7 +102,7 @@ Verze 3.0 a 5.0 C# měl přidat některé působivé funkce v jazyce objektově 
 - [Inicializátory vlastnost](http://geekswithblogs.net/WinAZ/archive/2015/06/30/whatrsquos-new-in-c-6.0-auto-property-initializers.aspx)
 - [Výraz vozidlo členy](https://lostechies.com/jimmybogard/2015/12/17/c-6-feature-review-expression-bodied-function-members/)
 - [Šiřitel hodnotu Null.](https://davefancher.com/2014/08/14/c-6-0-null-propagation-operator/)
-- [Řetězec interpolace](../language-reference/keywords/interpolated-strings.md)
+- [Interpolace řetězců](../language-reference/tokens/interpolated.md)
 - [nameof – operátor](https://stackoverflow.com/questions/31695900/what-is-the-purpose-of-nameof)
 - [Slovník inicializátoru](../programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md)
 

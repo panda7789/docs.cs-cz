@@ -1,24 +1,26 @@
 ---
-title: "Vzory návrhu: Na základě seznamu publikování a odběru"
-ms.custom: 
+title: 'Vzory návrhu: Na základě seznamu publikování a odběru'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-caps.latest.revision: "16"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f5d9b334aae1607f4fb46e0b41155b50eb95a46
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2a4f36c7231146811e4eb033cfb6a3433a58dbb2
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Na základě seznamu publikování a odběru
 Tato ukázka znázorňuje implementovaný jako vzor na základě seznamu publikování a odběru [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] program.  
@@ -89,7 +91,7 @@ public class PriceChangeEventArgs : EventArgs
         }  
   
         //Clients call this service operation to unsubscribe.  
-        //The previous price change event handler is deregistered.  
+        //The previous price change event handler is unregistered.  
   
         public void Unsubscribe()  
         {  

@@ -1,6 +1,6 @@
 ---
-title: "Kolekce kurz – C# místní – elementy QuickStart"
-description: "Výuka C# prozkoumáním kolekci seznamů v tomto kurzu."
+title: Kolekce kurz – C# místní – elementy QuickStart
+description: Výuka C# prozkoumáním kolekci seznamů v tomto kurzu.
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/13/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 76b3baf0525c81e5b3058aa2ab6fd4ccd97d1916
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 88471c5fc60178c058f121ba5e5703999ad61030
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="c-quickstart-collections"></a>C# rychlý start: kolekce
 
@@ -54,7 +54,7 @@ Nahraďte `<name>` s vaším jménem. Uložit **Program.cs**. Typ `dotnet run` v
 
 Jste právě vytvořili seznam řetězců, přidat tři názvy do tohoto seznamu a vytisknout se názvy v velká písmena. Používáte koncepty, které jste se naučili v dřívější – elementy QuickStart můžete procházet seznam.
 
-Kód zobrazení názvů využívá **interpolované řetězce**.  Když je před `string` s `$` znak, vložením kódu C# v deklaraci řetězec. Konkrétní řetězec nahradí hodnotu, kterou generuje tento kód C#. V tomto příkladu se nahradí `{name.ToUpper()}` s každý název převeden na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A> metoda.
+Kód zobrazení názvů využívá [řetězec interpolace](../language-reference/tokens/interpolated.md) funkce.  Když je před `string` s `$` znak, vložením kódu C# v deklaraci řetězec. Konkrétní řetězec nahradí hodnotu, kterou generuje tento kód C#. V tomto příkladu se nahradí `{name.ToUpper()}` s každý název převeden na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A> metoda.
 
 Zachovat umožňuje prohlížení.
 

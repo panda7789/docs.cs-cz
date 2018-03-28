@@ -1,12 +1,13 @@
 ---
-title: "Jak běhové prostředí vyhledává sestavení"
-ms.custom: 
+title: Jak běhové prostředí vyhledává sestavení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - app.config files, assembly locations
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-caps.latest.revision: "20"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 97a56a095c1b0c080cd3df329fce0085dd01af23
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6e154e0658534018ccd1086631cad6d350528b5d
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikace rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledá a váže k sestavení, které tvoří vaši aplikaci. Ve výchozím modulu runtime pokusí vytvořit vazbu s přesnou verzi sestavení, která byla vytvořena s. Toto výchozí chování můžete přepsat pomocí souboru nastavení konfigurace.  
@@ -129,7 +131,7 @@ Pokud chcete úspěšně nasadit aplikace rozhraní .NET Framework, musíte poch
 Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v:3.0.0.0  
 ```  
   
- `compatkey.dat`je soubor klíče se silným názvem. Tento příkaz vytvoří sestavení se silným názvem, který můžete umístit v globální mezipaměti sestavení.  
+ `compatkey.dat` je soubor klíče se silným názvem. Tento příkaz vytvoří sestavení se silným názvem, který můžete umístit v globální mezipaměti sestavení.  
   
 > [!NOTE]
 >  Zásada vydavatele ovlivňuje všechny aplikace, které používají sdílené součásti.  
@@ -139,7 +141,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
  Soubor zásad vydavatele se používá při aktualizaci sdílené součásti a novou verzi sdílená součást by měl být zachyceny pomocí všech aplikací pomocí této součásti. Nastavení v souboru zásad vydavatele přednost před nastavením v konfiguračním souboru aplikace, pokud konfigurační soubor aplikace vynucuje nouzovém režimu.  
   
 #### <a name="safe-mode"></a>Nouzový režim  
- Vydavatel – soubory zásad jsou obvykle explicitně nainstalován jako součást aktualizace service pack nebo program. Pokud je jakýkoli problém s upgradovaný sdílená součást, můžete ignorovat přepsání v souboru zásad vydavatele pomocí nouzového režimu. Nouzový režim je dáno  **\<publisherPolicy použít = "Ano**&#124; **Ne "/ >** elementu, nachází pouze v konfiguračním souboru aplikace. Určuje, zda informace o konfiguraci zásad vydavatele má být odebrána z proces vytváření vazby.  
+ Vydavatel – soubory zásad jsou obvykle explicitně nainstalován jako součást aktualizace service pack nebo program. Pokud je jakýkoli problém s upgradovaný sdílená součást, můžete ignorovat přepsání v souboru zásad vydavatele pomocí nouzového režimu. Nouzový režim je dáno  **\<publisherPolicy použít = "Ano**&#124;**žádné" / >** elementu, nachází pouze v konfiguračním souboru aplikace. Určuje, zda informace o konfiguraci zásad vydavatele má být odebrána z proces vytváření vazby.  
   
  Nouzový režim lze nastavit pro celou aplikaci nebo pro vybrané sestavení. Můžete to znamená, vypněte tuto zásadu pro všechny sestavení, které tvoří aplikace nebo zapnout pro některá sestavení a jiné ne. Selektivně použít zásady vydavatele na sestavení, které tvoří aplikaci, nastavte  **\<publisherPolicy použít\=žádné / >** a zadejte sestavení, které chcete mít vliv na používání \< **dependentAssembly**> elementu. Chcete-li použít zásady vydavatele na všechny sestavení, které tvoří aplikace, nastavte  **\<publisherPolicy použít\=žádné / >** bez prvků závislého sestavení. Další informace o konfiguraci najdete v tématu [konfigurace aplikací pomocí konfiguračních souborů](../../../docs/framework/configure-apps/index.md).  
   
@@ -187,7 +189,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
   
 -   Název, který je název odkazované sestavení.  
   
--   `privatePath` Atribut [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element, který je uživatelem definované seznam podadresářů kořenový adresář. Toto umístění může být zadán v konfiguračním souboru aplikace a spravovaného kódu pomocí <xref:System.AppDomain.AppendPrivatePath%2A> vlastnost pro doménu aplikace. Pokud zadaný ve spravovaném kódu, spravovaného kódu `privatePath` je zjištěný první, a cesty zadané v konfiguračním souboru aplikace.  
+-   `privatePath` Atribut [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element, který je uživatelem definované seznam podadresářů kořenový adresář. Toto umístění může být zadán v konfiguračním souboru aplikace a spravovaného kódu pomocí <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> vlastnost pro doménu aplikace. Pokud zadaný ve spravovaném kódu, spravovaného kódu `privatePath` je zjištěný první, a cesty zadané v konfiguračním souboru aplikace.  
   
 #### <a name="probing-the-application-base-and-culture-directories"></a>Zkušební fáze základ cesty aplikace a adresáře jazykovou verzi  
  Modul runtime vždy začne zkušební fáze v základní aplikace, což může být adresa URL nebo kořenový adresář aplikace do počítače. Pokud odkazované sestavení nebyl nalezen v základní aplikace a je k dispozici žádné informace o jazykové verzi, modul runtime prohledá všechny podadresáře s název sestavení. Zahrnout adresáře, zjištěný:  
@@ -232,13 +234,13 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
   
  Modul runtime sondy následující adresy URL:  
   
- http://www.Code.microsoft.com/de/myAssembly.dll  
+ http://www.code.microsoft.com/de/myAssembly.dll  
   
- http://www.Code.microsoft.com/de/myAssembly/myAssembly.dll  
+ http://www.code.microsoft.com/de/myAssembly/myAssembly.dll  
   
- http://www.Code.microsoft.com/bin/de/myAssembly.dll  
+ http://www.code.microsoft.com/bin/de/myAssembly.dll  
   
- http://www.Code.microsoft.com/bin/de/myAssembly/myAssembly.dll  
+ http://www.code.microsoft.com/bin/de/myAssembly/myAssembly.dll  
   
 ##### <a name="multiple-assemblies-with-the-same-name"></a>Více sestavení se stejným názvem  
  Následující příklad ukazuje, jak nakonfigurovat více sestavení se stejným názvem.  
@@ -254,7 +256,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 #### <a name="other-locations-probed"></a>Jiných umístění zjištěný  
  Umístění sestavení můžete také zjistit pomocí aktuálního kontextu vazby. Této chybě nejčastěji dochází při <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metoda se používá a ve scénářích zprostředkovatele komunikace s objekty COM. Pokud používá sestavení <xref:System.Reflection.Assembly.LoadFrom%2A> metodu pro referenční sestavení, umístění volajícího sestavení se považuje za nápovědu o tom, kde najít odkazované sestavení. Pokud je nalezena shoda, je načteno tohoto sestavení. Pokud není nalezena žádná shoda, modul runtime pokračuje v jeho sémantiku hledání a následně se dotazuje Instalační služby systému Windows k poskytování sestavení. Pokud žádné sestavení zadaný odpovídající vazby požadavek, je vyvolána výjimka. Tato výjimka je <xref:System.TypeLoadException> ve spravovaném kódu, pokud bylo odkazováno typ, nebo <xref:System.IO.FileNotFoundException> Pokud načítá sestavení nebyl nalezen.  
   
- Například pokud Assembly1 odkazuje Assembly2 a Assembly1 byl stažen z http://www.code.microsoft.com/utils, toto umístění se považuje za nápovědu o tom, kde najít Assembly2.dll. Modul runtime pak hledá sestavení v http://www.code.microsoft.com/utils/Assembly2.dll a http://www.code.microsoft.com/utils/Assembly2/Assembly2.dll. Pokud Assembly2 nebyl nalezen v žádném z těchto umístění, dotáže se modul runtime Instalační služby systému Windows.  
+ Například pokud Assembly1 odkazuje Assembly2 a Assembly1 byl stažen z http://www.code.microsoft.com/utils, že se považuje za nápovědu o tom, kde najít Assembly2.dll umístění. Modul runtime pak sondy pro sestavení v http://www.code.microsoft.com/utils/Assembly2.dll a http://www.code.microsoft.com/utils/Assembly2/Assembly2.dll. Pokud Assembly2 nebyl nalezen v žádném z těchto umístění, dotáže se modul runtime Instalační služby systému Windows.  
   
 ## <a name="see-also"></a>Viz také  
  [Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  

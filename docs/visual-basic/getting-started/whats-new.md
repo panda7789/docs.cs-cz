@@ -15,11 +15,11 @@ ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
 caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0452a5dde3a266f5d50f69016eac8144bab9ba6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 4641041657e99fa64bf1b7eb5317a43660ac7e2b
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -154,7 +154,7 @@ Další informace najdete v tématu [hodnoty vrátí odkaz na](../programming-gu
 [Nameof](../../csharp/language-reference/keywords/nameof.md)  
  Pro použití v chybovou zprávu můžete získat název nekvalifikované řetězce na typ nebo člen bez pevné kódování řetězec.  To umožňuje kód a dál správné refaktoring.  Tato funkce je také užitečné pro zapojování model-view-controller MVC odkazy a ohlásí události změněné vlastnosti.  
   
-[Interpolace řetězců](../../csharp/language-reference/keywords/interpolated-strings.md)  
+[Interpolace řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)  
  Řetězec interpolace výrazy můžete vytvářet řetězce.  Interpolované řetězce výrazu vypadá jako šablona řetězec, který obsahuje výrazy.  Interpolované řetězce je jednodušší zjistit, s ohledem na argumenty než [složené formátování](../../standard/base-types/composite-format.md).  
   
 [Člen NULL podmíněného přístupu a indexování](../../csharp/language-reference/operators/null-conditional-operators.md)  

@@ -1,7 +1,7 @@
 ---
 title: Implementace hodnota objekty
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace hodnota objekty"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace hodnota objekty
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ce81991e48fb5eb4eb3bed3dd2fcfe1734ca7bac
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: 4406cf68ab6c6d01845fa8b3c77e071732819894
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="implementing-value-objects"></a>Implementace hodnota objekty
 
@@ -108,11 +108,11 @@ Tuto třídu můžete použít při implementaci skutečnou hodnotu objektu, ste
 ```csharp
 public class Address : ValueObject
 {
-    public String Street { get; private set; }
-    public String City { get; private set; }
-    public String State { get; private set; }
-    public String Country { get; private set; }
-    public String ZipCode { get; private set; }
+    public String Street { get; }
+    public String City { get; }
+    public String State { get; }
+    public String Country { get; }
+    public String ZipCode { get; }
 
     private Address() { }
 

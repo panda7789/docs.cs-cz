@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s .NET Core v systému macOS"
-description: "Tento dokument obsahuje kroky a pracovní postup pro vytvoření základní řešení .NET pomocí Visual Studio Code."
-keywords: "Rozhraní .NET, .NET core, Mac, systému macOS, Visual Studio Code"
+title: Začínáme s .NET Core v systému macOS
+description: Tento dokument obsahuje kroky a pracovní postup pro vytvoření základní řešení .NET pomocí Visual Studio Code.
+keywords: Rozhraní .NET, .NET core, Mac, systému macOS, Visual Studio Code
 author: bleroy
 ms.author: mairaw
 ms.date: 03/23/2017
@@ -9,12 +9,13 @@ ms.topic: get-started-article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
-ms.workload: dotnetcore
-ms.openlocfilehash: 5a8f1fca7623763d43b977d0cc44396de249c62e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 8c045e5625cee53acc4daa3c9fca524bc953b5a1
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="getting-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
 
@@ -102,7 +103,7 @@ namespace Library
 }
 ```
 
-`Thing` Třída obsahuje jeden veřejná metoda `Get`, která vrací součet dvou čísla, ale součet převádění na řetězce a pak ho deserializaci do celé číslo. Toto využívá celou řadu moderní C# funkcí, jako například [ `using static` direktivy](../../csharp/language-reference/keywords/using-static.md), [výraz vozidlo členy](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members), a [interpolované řetězce](../../csharp/language-reference/keywords/interpolated-strings.md).
+`Thing` Třída obsahuje jeden veřejná metoda `Get`, která vrací součet dvou čísla, ale součet převádění na řetězce a pak ho deserializaci do celé číslo. Toto využívá celou řadu moderní C# funkcí, jako například [ `using static` direktivy](../../csharp/language-reference/keywords/using-static.md), [výraz vozidlo členy](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members), a [řetězec interpolace](../../csharp/language-reference/tokens/interpolated.md).
 
 Sestavení knihovny s [ `dotnet build` ](../tools/dotnet-build.md) příkaz. Tímto se vytvoří *library.dll* souboru pod *golden/library/bin/Debug/netstandard1.4*:
 

@@ -1,7 +1,7 @@
 ---
-title: "Pomocí F # na Azure"
-description: "Průvodce pomocí služeb Azure s F #"
-keywords: "Azure cloud, visual f #, f # funkční programování, .NET, .NET Core"
+title: 'Pomocí F # na Azure'
+description: 'Průvodce pomocí služeb Azure s F #'
+keywords: 'Azure cloud, visual f #, f # funkční programování, .NET, .NET Core'
 author: sylvanc
 ms.author: phcart
 ms.date: 09/22/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: FAD4D11E-703A-42D4-9F72-893D9E0F569B
-ms.openlocfilehash: 8f1d5abe0412ecf72e38c7d76ef44fdc5fd4a0f7
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 0849bc77139b4f4383e2c772f5bae62741ee2b8b
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="using-f-on-azure"></a>Pomocí F # na Azure
 
@@ -69,14 +69,14 @@ Azure Storage je základní vrstvu služby úložiště pro moderní aplikace, k
 * [Implementace aplikací Spark v F # s použitím Mobius](https://github.com/Microsoft/Mobius/blob/master/notes/spark-fsharp-mobius.md)
 * [Příklad F # Spark aplikací pomocí Mobius](https://github.com/Microsoft/Mobius/tree/master/examples/fsharp)
 
-## <a name="using-azure-documentdb-with-f"></a>Pomocí Azure DocumentDB F # #
+## <a name="using-azure-cosmos-db-with-f"></a>Pomocí Azure Cosmos DB F # #
 
-[Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) je služba NoSQL pro vysokou dostupnost, globálně distribuované aplikace.
+[Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db) je služba NoSQL pro vysokou dostupnost, globálně distribuované aplikace.
 
-Azure DocumentDB a F # lze použít dvěma způsoby:
+Azure Cosmos DB lze použít s F # dvěma způsoby:
 
-1. Prostřednictvím vytváření sad Azure Functions F # které reagovat na nebo mění na kolekce DocumentDB. V tématu [aktivuje funkce Azure documentdb](/azure/azure-functions/functions-bindings-documentdb), nebo
-2. Pomocí [.NET SDK pro Azure](/azure/documentdb/documentdb-get-started-quickstart). Všimněte si, že tyto příklady jsou v jazyce C#.
+1. Prostřednictvím vytváření sad Azure Functions F # které reagovat na nebo mění do kolekcí Azure Cosmos DB. V tématu [Azure Cosmos DB vazby pro Azure Functions](/azure/azure-functions/functions-bindings-cosmosdb), nebo
+2. Pomocí [Azure Cosmos DB .NET SDK pro rozhraní API pro SQL](/azure/cosmos-db/sql-api-sdk-dotnet). Související ukázky jsou v jazyce C#.
 
 ## <a name="using-azure-event-hubs-with-f"></a>Pomocí služby Azure Event Hubs F # #
 
@@ -119,7 +119,7 @@ Webhooky můžete implementovat v jazyce F # a hostované v Azure pomocí [funkc
 
 Virtuální počítače Azure mohou prostřednictvím kódu programu nasadit a spravovat z F # skripty pomocí rozhraní API a Microsoft.Azure.Management balíčky. Například v tématu [začít pracovat s knihovnami správu pro platformu .NET](https://msdn.microsoft.com/library/dn722415.aspx) a [pomocí Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
 
-Podobně ostatní prostředky služby Azure mohou také nasazení a spravovat z F # skripty s použitím komponenty stejné. Můžete například vytvořit účty úložiště, nasazení Azure Cloud Services, vytváření instancí služby Azure DocumentDB a spravovat centra oznámení Azure prostřednictvím kódu programu z F # skriptů.
+Podobně ostatní prostředky služby Azure mohou také nasazení a spravovat z F # skripty s použitím komponenty stejné. Můžete například vytvořit účty úložiště, nasazení Azure Cloud Services, vytváření instancí Azure Cosmos DB a spravovat centra oznámení Azure prostřednictvím kódu programu z skriptů F #.
 
 Pomocí skriptů F # pro nasazení a správě prostředků není obvykle nutné. Prostředky Azure může být například také nasazené přímo z JSON šablony popisy, které lze nastavit parametry. V tématu [šablon Azure Resource Manageru](/azure/azure-resource-manager/resource-manager-template-best-practices) včetně příkladů, jako [šablon Azure rychlý Start](https://azure.microsoft.com/documentation/templates/).
 

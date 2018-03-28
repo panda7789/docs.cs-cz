@@ -1,12 +1,12 @@
 ---
-title: "Složené formátování"
-ms.custom: 
+title: Složené formátování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,21 +19,21 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-caps.latest.revision: "36"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: dae73a7ace3aac4e7d89ccba186fceacfe9898ae
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 156ef0f063219f5e78084dd664b64699d33e6593
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="composite-formatting"></a>Složené formátování
-Funkce složeného formátování v rozhraní .NET Framework přebírá seznam objektů a složený řetězec formátu jako vstup. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
+Složené formátování funkce .NET vezme jako vstupní seznam objektů a složený formátovací řetězec. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
   
  Funkce složeného formátování je podporována například následujícími metodami:  
   
@@ -64,7 +64,7 @@ Funkce složeného formátování v rozhraní .NET Framework přebírá seznam o
 ## <a name="format-item-syntax"></a>Syntaxe položky formátu  
  Jednotlivé položky formátu mají následující podobu a skládají se z následujících součástí:  
   
- `{`*index*[`,`*zarovnání*] [`:`*formatString*]`}`  
+ `{` *index*[`,`*alignment*][`:`*formatString*]`}`  
   
  Jsou požadovány odpovídající složené závorky ("{" a "}").  
   
@@ -151,7 +151,7 @@ Funkce složeného formátování v rozhraní .NET Framework přebírá seznam o
   
  Za předpokladu, že aktuální den je čtvrtek v květnu, hodnota oba řetězce v předchozím příkladu je `Thursday May` v USA Jazykové verze Angličtina.  
   
- <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>zpřístupňuje stejné funkce jako <xref:System.String.Format%2A?displayProperty=nameWithType>. Jediným rozdílem mezi tyto dvě metody je, že <xref:System.String.Format%2A?displayProperty=nameWithType> vrátí výsledek jako řetězec, při <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> zápisy výsledek, který má výstupní datový proud přidružený <xref:System.Console> objektu. Následující příklad používá <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metoda k formátování hodnotu `MyInt` na hodnotu měny.  
+ <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> zpřístupňuje stejné funkce jako <xref:System.String.Format%2A?displayProperty=nameWithType>. Jediným rozdílem mezi tyto dvě metody je, že <xref:System.String.Format%2A?displayProperty=nameWithType> vrátí výsledek jako řetězec, při <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> zápisy výsledek, který má výstupní datový proud přidružený <xref:System.Console> objektu. Následující příklad používá <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metoda k formátování hodnotu `MyInt` na hodnotu měny.  
   
  [!code-csharp[Formatting.Composite#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#4)]
  [!code-vb[Formatting.Composite#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#4)]  
@@ -161,7 +161,7 @@ Funkce složeného formátování v rozhraní .NET Framework přebírá seznam o
  [!code-csharp[Formatting.Composite#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#5)]
  [!code-vb[Formatting.Composite#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#5)]  
   
- Následující příklad znázorňuje použití zarovnání ve formátování. Argumenty, které jsou formátovány jsou umístěny mezi svislá čára znaků (&#124;) zvýrazněte výsledné zarovnání.  
+ Následující příklad znázorňuje použití zarovnání ve formátování. Argumenty, které jsou ukládány mezi znaky svislé čáry (&#124;) zvýrazněte výsledné zarovnání.  
   
  [!code-csharp[Formatting.Composite#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#6)]
  [!code-vb[Formatting.Composite#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#6)]  
@@ -169,6 +169,8 @@ Funkce složeného formátování v rozhraní .NET Framework přebírá seznam o
 ## <a name="see-also"></a>Viz také  
  <xref:System.Console.WriteLine%2A>  
  <xref:System.String.Format%2A?displayProperty=nameWithType>  
+ [Řetězec interpolace (C#)](../../csharp/language-reference/tokens/interpolated.md)  
+ [Řetězec interpolace (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
  [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
  [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)  

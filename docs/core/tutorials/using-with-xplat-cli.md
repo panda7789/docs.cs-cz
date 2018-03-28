@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s .NET Core pomocí rozhraní příkazového řádku"
-description: "Podrobný kurz znázorňující postup Začínáme s .NET Core v systému Windows, Linux nebo systému macOS pomocí rozhraní .NET Core příkazového řádku (CLI)."
-keywords: ".NET core, rozhraní příkazového řádku"
+title: Začínáme s .NET Core pomocí rozhraní příkazového řádku
+description: Podrobný kurz znázorňující postup Začínáme s .NET Core v systému Windows, Linux nebo systému macOS pomocí rozhraní .NET Core příkazového řádku (CLI).
+keywords: .NET core, rozhraní příkazového řádku
 author: cartermp
 ms.author: mairaw
 ms.date: 03/08/2017
@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
-ms.workload: dotnetcore
-ms.openlocfilehash: 544274783e8a77f55c8ec7e1da0069bf8bdf7b0b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 8587857ef0d0f48f88331d9588e7e97e3290d34c
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core v systému Windows nebo Linux/macOS pomocí příkazového řádku
 
@@ -25,7 +26,7 @@ Pokud jste obeznámeni s .NET Core rozhraní příkazového řádku sady nástro
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET core SDK 1.0](https://www.microsoft.com/net/download/core).
+- [.NET Core SDK 1.0](https://www.microsoft.com/net/download/core).
 - Textového editoru nebo editoru kódu podle svého výběru.
 
 ## <a name="hello-console-app"></a>Hello, konzolovou aplikaci!
@@ -44,7 +45,7 @@ Umožňuje provést rychlé názorný postup:
 
 1. `$ dotnet new console`
 
-   [`dotnet new`](../tools/dotnet-new.md)Vytvoří aktuální `Hello.csproj` souboru projektu se závislostmi, které jsou potřebné k vytvoření konzolové aplikace.  Vytvoří také `Program.cs`, základní souboru, který obsahuje vstupní bod pro aplikaci.
+   [`dotnet new`](../tools/dotnet-new.md) Vytvoří aktuální `Hello.csproj` souboru projektu se závislostmi, které jsou potřebné k vytvoření konzolové aplikace.  Vytvoří také `Program.cs`, základní souboru, který obsahuje vstupní bod pro aplikaci.
    
    `Hello.csproj`:
 
@@ -53,7 +54,7 @@ Umožňuje provést rychlé názorný postup:
    Soubor projektu určuje vše, co je potřeba k obnovení závislosti a sestavte program.
 
    * `OutputType` Značky Určuje, že vytváříme spustitelný soubor, jinými slovy konzolové aplikace.
-   * `TargetFramework` Značky Určuje, jaké implementace rozhraní .NET jsme se cílení na. V případě pomocí zálohy můžete zadat více cílové architektury a sestavení do všech těch v rámci jedné operace. V tomto kurzu jsme budete přilepit k vytváření pouze pro rozhraní .NET Core 1.0.
+   * `TargetFramework` Značky Určuje, jaké implementace rozhraní .NET jsme se cílení na. V pokročilém scénáři, můžete zadat několik cílové architektury a sestavení do všech těch v rámci jedné operace. V tomto kurzu jsme budete přilepit k vytváření pouze pro rozhraní .NET Core 1.0.
 
    `Program.cs`:
 
@@ -67,13 +68,13 @@ Umožňuje provést rychlé názorný postup:
 
 2. `$ dotnet restore`
 
-   [`dotnet restore`](../tools/dotnet-restore.md)volání [NuGet](https://www.nuget.org/) (.NET Správce balíčků) Chcete-li obnovit stromu závislosti. Analyzuje NuGet *Hello.csproj* souboru, stáhne závislosti uvedená v souboru (nebo je získá z mezipaměti na počítači) a zapíše *obj/project.assets.json* souboru.  *Project.assets.json* souboru je nutné být schopni zkompilování a spuštění.
+   [`dotnet restore`](../tools/dotnet-restore.md) volání [NuGet](https://www.nuget.org/) (.NET Správce balíčků) Chcete-li obnovit stromu závislosti. Analyzuje NuGet *Hello.csproj* souboru, stáhne závislosti uvedená v souboru (nebo je získá z mezipaměti na počítači) a zapíše *obj/project.assets.json* souboru.  *Project.assets.json* souboru je nutné být schopni zkompilování a spuštění.
    
    *Project.assets.json* soubor je trvalý a kompletní sadu grafu závislostí NuGet a jiné informace, které popisují aplikace.  Tento soubor je pro čtení pomocí jiných nástrojů, jako například [ `dotnet build` ](../tools/dotnet-build.md) a [ `dotnet run` ](../tools/dotnet-run.md), povolením procesu zdrojového kódu se správnou sadou závislostí NuGet a vytvoření vazby řešení.
    
 3. `$ dotnet run`
 
-   [`dotnet run`](../tools/dotnet-run.md)volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby sestavení, které se sestavily cíle a poté zavolá `dotnet <assembly.dll>` ke spuštění cílová aplikace.
+   [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby sestavení, které se sestavily cíle a poté zavolá `dotnet <assembly.dll>` ke spuštění cílová aplikace.
    
     ```
     $ dotnet run

@@ -1,5 +1,5 @@
 ---
-title: "Řetězce (Průvodce programováním v C#)"
+title: Řetězce (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-caps.latest.revision: 
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 24b3db01047a9f9a47182e0e1ac105f69562c316
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 9478900be008588597c1dd9e75f704c751ebe344
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec se objekt typu <xref:System.String> jehož hodnota je text. Interně, je text uložený jako sekvenční jen pro čtení kolekce <xref:System.Char> objekty. Neexistuje žádné ukončení null znak na konci C# řetězec; řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, nikoli počet znaků Unicode. Chcete-li získat přístup k jednotlivé body kódu Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -124,8 +124,7 @@ string s = String.Empty;
 |Téma|Popis|  
 |-----------|-----------------|  
 |[Postupy: Změna obsahu řetězce](../../how-to/modify-string-contents.md)|Ukázky postupů k transformaci řetězce a upravovat obsah řetězce.|  
-|[Postupy: Zřetězení více řetězců](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|Ukázky postupů kombinovat více řetězce do jednoho řetězce v době kompilace a čas spuštění.|  
-|[Postupy: Porovnávání řetězců](../../../csharp/programming-guide/strings/how-to-compare-strings.md)|Ukazuje, jak provést pořadí porovnání hodnot řetězců.|  
+|[Postupy: Porovnávání řetězců](../../how-to/compare-strings.md)|Ukazuje, jak provést pořadí a jazykovou verzi konkrétní porovnání hodnot řetězců.|  
 |[Postupy: Analýza řetězců využívajících String.Split ](../../how-to/parse-strings-using-split.md)|Obsahuje příklad kódu, která ukazuje, jak používat `String.Split` metoda analyzovat řetězce.|  
 |[Postupy: vyhledávání řetězců](../../how-to/search-strings.md)|Vysvětluje, jak používat v řetězcích vyhledávání pro určitý text nebo vzory.|  
 |[Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec a zjistěte, zda má platnou číselnou hodnotu.|  

@@ -1,6 +1,6 @@
 ---
-title: "Začínáme s sémantického analýzy"
-description: "V tomto kurzu poskytuje přehled o práci s sémantického analysis pomocí .NET SDK kompilátoru."
+title: Začínáme s sémantického analýzy
+description: V tomto kurzu poskytuje přehled o práci s sémantického analysis pomocí .NET SDK kompilátoru.
 author: billwagner
 ms.author: wiwagn
 ms.date: 02/06/2018
@@ -8,17 +8,21 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 94a28d21cfec1894c3ee3b631335043e1d0ec817
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: b9921bc3621d6abfc37b1bf1fc4f481620ccc407
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantického analýzy
 
 Tento kurz předpokládá, že jste obeznámeni s rozhraním API syntaxe. [Začít pracovat s syntaxe analysis](syntax-analysis.md) článek obsahuje úvod dostatečná.
 
 V tomto kurzu můžete prozkoumat **Symbol** a **vazby rozhraní API**. Tato rozhraní API zadání informací o _význam sémantického_ programu. Umožňují vám klást otázky a odpovědi na otázky o typech reprezentována žádné symbol v programu.
+
+Budete muset nainstalovat **SDK pro platformu .NET kompilátoru**:
+
+[!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
 ## <a name="understanding-compilations-and-symbols"></a>Principy kompilace a symboly.
 
@@ -31,9 +35,6 @@ Jako <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, <xre
 ## <a name="querying-symbols"></a>Dotazování symboly
 
 V tomto kurzu si prohlédnete "Hello World" program znovu. Tentokrát dotaz symboly v programu pochopit, jaké typy těchto představují symboly. Dotaz pro typy v oboru názvů a zjistěte, jak lze najít dostupné metody pro typ.
-
-> [!IMPORTANT]
-> Následující ukázky vyžadují **.NET SDK kompilátoru** nainstalován jako součást Visual Studio 2017. .NET SDK kompilátoru můžete najít jako poslední volitelné součásti, které jsou uvedené v části **vývoj rozšíření pro Visual Studio** zatížení. Šablony nejsou nainstalovány bez této součásti.
 
 Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SemanticQuickStart).
 

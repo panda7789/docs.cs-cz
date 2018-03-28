@@ -1,7 +1,7 @@
 ---
-title: "Co je nového v jazyce C# 6 – Průvodce v C#"
-description: "Informace o nových funkcích v C# verze 6"
-keywords: "Rozhraní .NET, .NET core"
+title: Co je nového v jazyce C# 6 – Průvodce v C#
+description: Informace o nových funkcích v C# verze 6
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.date: 09/22/2016
 ms.topic: article
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: f3e7a515b1dde52461ab6abf8a9adbe84d27b7c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ea54e9a05120134eea8e1bc9d82302a7513b43e7
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
@@ -209,17 +209,17 @@ Zajištění, že je na levé straně vyhodnotit pouze jednou můžete také pou
 
 ## <a name="string-interpolation"></a>Řetězec interpolace
 
-C# 6 obsahuje nové syntaxe pro sestavování řetězců z formátovacího řetězce a výrazů, které lze vyhodnotit na vytvořit další řetězcové hodnoty.
+C# 6 obsahuje nové syntaxe pro sestavování řetězců z formátovacího řetězce a výrazy, které se vyhodnocují k vytvoření dalších řetězcové hodnoty.
 
 Tradičně, je potřeba k použití poziční parametry v metodě jako `string.Format`:
 
 [!code-csharp[stringFormat](../../../samples/snippets/csharp/new-in-6/oldcode.cs#stringFormat)]
 
-S C# 6 můžete novou funkci interpolace řetězec pro vložení výrazů do řetězce formátu. Jednoduché adresa řetězec s `$`:
+S C# 6 nové [řetězec interpolace](../language-reference/tokens/interpolated.md) funkce umožňuje vložení výrazů do řetězce formátu. Jednoduše adresa řetězec s `$`:
 
 [!code-csharp[stringInterpolation](../../../samples/snippets/csharp/new-in-6/newcode.cs#FullNameExpressionMember)]
 
-Tento počáteční příklad používá proměnné výrazy pro nahrazovanou výrazy. Můžete rozbalit na tuto syntaxi použít jakýkoli výraz. Například může výpočetní Studentova průměr studijních jako součást interpolace:
+Tento počáteční příklad používá vlastnost výrazy pro nahrazovanou výrazy. Můžete rozbalit na tuto syntaxi použít jakýkoli výraz. Například může výpočetní Studentova průměr studijních jako součást interpolace:
 
 [!code-csharp[stringInterpolationExpression](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationExpression)]
 
@@ -227,7 +227,7 @@ Spuštěný v předchozím příkladu, by zjistíte, že výstup `Grades.Average
 
 [!code-csharp[stringInterpolationFormat](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationFormat)]
 
-Předchozí řádek kódu naformátuje hodnotu `Grades.Average()` jako číslo s plovoucí desetinnou čárkou se dvěma desetinnými místy.
+Naformátuje hodnotu pro předchozí řádek kódu `Grades.Average()` jako číslo s plovoucí desetinnou čárkou se dvěma desetinnými místy.
 
 `:` Vždy interpretována jako oddělovač mezi výraz, který je formátován a řetězec formátu. To může nastat problémy při výraz používá `:` jiným způsobem, jako je například podmíněný operátor:
 
@@ -249,22 +249,17 @@ Místo toho je ilustrativní šířky funkci. Jakýkoli výraz jazyka C# mohou b
 
 ### <a name="string-interpolation-and-specific-cultures"></a>Řetězec interpolace a konkrétní jazykové verze
 
-Všechny příklady uvedené v předchozí části, bude formátu řetězce pomocí aktuální jazykovou verzi a jazyka v počítači kde kód spustí. Potřebujete často řetězec vytvořeného pomocí konkrétní jazykové verze formátu.
-Objekt z řetězce interpolace je typu, který má implicitní převod buď <xref:System.String> nebo <xref:System.FormattableString>.
+Všechny příklady uvedené v předchozí části formátu řetězce pomocí aktuální jazykovou verzi a jazyka v počítači kde kód spustí. Potřebujete často řetězec vytvořeného pomocí konkrétní jazykové verze formátu.
+Pokud chcete provést, použijte ke skutečnosti, že objekt vyprodukované interpolace řetězec může být implicitně převedena na <xref:System.FormattableString>.
 
-<xref:System.FormattableString> Typ obsahuje řetězec formátu a výsledky vyhodnocení argumenty před jejich převádění na řetězce. Můžete použít veřejné metody třídy <xref:System.FormattableString> zadat jazykovou verzi, při formátování řetězce. Například následující vytvoří řetězec pomocí němčina jako jazykové verze. (Použije znak ',' oddělovač desetinných míst a '.' tisíce znak oddělovače.)
+<xref:System.FormattableString> Instance obsahuje řetězec formátu a výsledky vyhodnocení výrazů před jejich převádění na řetězce. Můžete použít veřejné metody třídy <xref:System.FormattableString> zadat jazykovou verzi, při formátování řetězce. Například následující příklad vytvoří řetězec s využitím německé jazykové verze. (Používá znak ',' oddělovač desetinných míst a '.' tisíce znak oddělovače.)
 
 ```csharp
 FormattableString str = $"Average grade is {s.Grades.Average()}";
-var gradeStr = string.Format(null, 
-    System.Globalization.CultureInfo.CreateSpecificCulture("de-de"),
-    str.GetFormat(), str.GetArguments());
+var gradeStr = str.ToString(new System.Globalization.CultureInfo("de-DE"));
 ```
 
-> [!NOTE]
-> V předchozím příkladu není v .NET Core verzi 1.0.1 podporována. Je podporován pouze v rozhraní .NET Framework.
-
-Obecně platí řetězec interpolace výrazy vytvářejí řetězce jako jejich výstup. Když chcete větší kontrolu nad jazyková verze použitá k formátování řetězec, ale můžete zadat konkrétní výstup.  Pokud je funkce, které často potřebujete, můžete vytvořit usnadňující metody, jako rozšiřující metody umožňující snadno formátování s konkrétní jazykové verze.
+Další informace najdete v tématu [řetězec interpolace](../language-reference/tokens/interpolated.md) tématu.
 
 ## <a name="exception-filters"></a>Filtry výjimek
 
@@ -314,7 +309,7 @@ V kódu přidejte filtr výjimek tak, aby všechny kód pro obnovení se provád
 Po přidání tohoto v kódu, můžete nastavit ladicí program na přerušení na všechny neošetřené výjimky. Ladicí program konce kdykoli a spusťte program v ladicím programu `PerformFailingOperation()` vyvolá `RecoverableException`.
 Ladicí program dělí program, protože klauzule catch nebudou provedeny z důvodu výjimky filtr vrací hodnotu false.
 
-## <a name="nameof-expressions"></a>`nameof`Výrazy
+## <a name="nameof-expressions"></a>`nameof` Výrazy
 
 `nameof` Výraz vyhodnocen jako název symbolu. Je skvělým způsobem, jak získat nástroje práce kdykoli budete potřebovat název proměnné, vlastnost nebo pole členů.
 

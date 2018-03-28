@@ -1,6 +1,6 @@
 ---
-title: "Vytvoření aplikace Hello World s .NET Core a C# v Visual Studio 2017"
-description: "Naučte se vytvářet jednoduché konzolové aplikace .NET Core pomocí C# s použitím Visual Studio 2017."
+title: Vytvoření aplikace Hello World s .NET Core a C# v Visual Studio 2017
+description: Naučte se vytvářet jednoduché konzolové aplikace .NET Core pomocí C# s použitím Visual Studio 2017.
 keywords: .NET core, aplikace konzoly .NET Core, Visual Studio 2017
 author: BillWagner
 ms.author: wiwagn
@@ -12,11 +12,11 @@ ms.devlang: csharp
 ms.assetid: 97aa50bf-bdf8-416d-a56c-ac77504c14ea
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 21b36bfa355bbea1b078c4bd29afdf5afeb61453
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 7042a7356fa1b65f7a152208dbfaa9ba27081a8d
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="build-a-c-hello-world-application-with-net-core-in-visual-studio-2017"></a>Sestavení C# Hello, World aplikace s .NET Core v Visual Studio 2017
 
@@ -70,7 +70,7 @@ Vylepšení aplikace vyzve uživatele k zadání názvu a zobrazit ji společně
 
    ![Visual Studio programu c ostré soubor s aktualizované Main – metoda](./media/with-visual-studio/codewindow.png)
 
-   Tento kód zobrazí "Jaký je název vaší?" v okně konzoly a počká, dokud nebude uživatel zadá řetězec následuje klávesu Enter. Ukládají se tento řetězec do proměnné s názvem `name`. Také načte hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost, která obsahuje aktuálním místním časem a přiřadí ji k proměnné s názvem `date`. Nakonec se používá [interpolované řetězce](../../csharp/language-reference/keywords/interpolated-strings.md) k zobrazení těchto hodnot v okně konzoly.
+   Tento kód zobrazí "Jaký je název vaší?" v okně konzoly a počká, dokud nebude uživatel zadá řetězec následuje klávesu Enter. Ukládají se tento řetězec do proměnné s názvem `name`. Také načte hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost, která obsahuje aktuálním místním časem a přiřadí ji k proměnné s názvem `date`. Nakonec se používá [interpolované řetězce](../../csharp/language-reference/tokens/interpolated.md) k zobrazení těchto hodnot v okně konzoly.
 
 1. Kompilace programu výběrem **sestavení** > **sestavit řešení**.
 

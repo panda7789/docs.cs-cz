@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5840c2f7692d81f193c7d659aea6eb42a431369e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: af6a6b73c790577cebf301075f2ff7e90960ea62
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -89,13 +89,13 @@ V jazyce C# domény událostí je jednoduše data za ruku struktura nebo třídy
 ```csharp
 public class OrderStartedDomainEvent : INotification
 {
-    public string UserId { get; private set; }
-    public int CardTypeId { get; private set; }
-    public string CardNumber { get; private set; }
-    public string CardSecurityNumber { get; private set; }
-    public string CardHolderName { get; private set; }
-    public DateTime CardExpiration { get; private set; }
-    public Order Order { get; private set; }
+    public string UserId { get; }
+    public int CardTypeId { get; }
+    public string CardNumber { get; }
+    public string CardSecurityNumber { get; }
+    public string CardHolderName { get; }
+    public DateTime CardExpiration { get; }
+    public Order Order { get; }
 
     public OrderStartedDomainEvent(Order order,
                                    int cardTypeId, string cardNumber,

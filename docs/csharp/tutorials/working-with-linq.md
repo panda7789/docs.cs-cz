@@ -1,7 +1,7 @@
 ---
-title: "Práce s dotazy LINQ"
-description: "V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, zápis metody pro použití v dotazech LINQ a rozlišovat přes a opožděné vyhodnocení."
-keywords: "Rozhraní .NET, .NET core"
+title: Práce s dotazy LINQ
+description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, zápis metody pro použití v dotazech LINQ a rozlišovat přes a opožděné vyhodnocení.
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.author: wiwagn
 ms.date: 03/28/2017
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 3f0fcfebf37d9e6dad52c69111cc5e374ae27183
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: c5720d5391eec327aa2f885fd65579aeb6260488
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="working-with-linq"></a>Práce s dotazy LINQ
 
@@ -313,7 +313,7 @@ Jako jeden konečné čištění provedeme typu představují karty, aniž byste
 
 [!CODE-csharp[PlayingCard](../../../samples/csharp/getting-started/console-linq/playingcard.cs?name=snippet1)]
 
-Tento typ používá *automaticky implementované vlastnosti jen pro čtení* které se nastavují v konstruktoru a pak nemůže být upraven. Je také využívá nové *řetězec interpolace* funkce, která usnadňuje výstupní řetězec formátu.
+Tento typ používá *automaticky implementované vlastnosti jen pro čtení* které se nastavují v konstruktoru a pak nemůže být upraven. Je také využívá [řetězec interpolace](../language-reference/tokens/interpolated.md) funkce, která usnadňuje výstupní řetězec formátu.
 
 Aktualizace dotazu, který generuje počáteční podlaží používat nový typ:
 

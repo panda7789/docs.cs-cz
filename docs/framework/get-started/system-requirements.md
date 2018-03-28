@@ -1,6 +1,6 @@
 ---
-title: "Požadavky na systém rozhraní .NET framework"
-description: "Zjistěte, co jsou hardware, operační systém a softwarové požadavky pro instalaci rozhraní .NET Framework 4.5 a novější verze."
+title: Požadavky na systém rozhraní .NET framework
+description: Zjistěte, co jsou hardware, operační systém a softwarové požadavky pro instalaci rozhraní .NET Framework 4.5 a novější verze.
 ms.custom: updateeachrelease
 ms.date: 02/02/2018
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a0cfbcbc4c2c0857c1fe4163484a43f4521444a3
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: e0b6faf42f0fa47f6104454440033a6272efb224
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -35,13 +35,7 @@ V tabulkách v tomto tématu najdete hardwaru, operačního systému a požadavk
 
 Vývojové prostředí, které vám umožní vyvíjet aplikace pro rozhraní .NET Framework mít samostatnou sadu požadavků.
 
-> [!IMPORTANT]
-> Vzhledem k tomu, že jsou na místě aktualizace rozhraní .NET Framework 4 všechny verze rozhraní .NET Framework, takže jenom na jedné 4.x verzi mohou existovat v systému.
-> Kromě toho jsou nainstalovány na některé verze operačního systému Windows konkrétní verze rozhraní .NET Framework. To znamená, že:
->
-> * Pokud je v počítači již nainstalována novější verze, nelze nainstalovat předchozí verze 4.x.
-> * Pokud se na konkrétní verzi rozhraní .NET předem nainstalovaný operační systém, nelze nainstalovat předchozí verze 4.x na stejném počítači.
-> * Pokud nainstalujete novější verzi, nemusíte nejdřív odinstalovat předchozí verzi.
+[!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
 Informace o stažení a odkazů najdete v tématu [instalaci rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).
 

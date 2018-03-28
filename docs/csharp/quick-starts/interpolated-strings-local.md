@@ -1,6 +1,6 @@
 ---
-title: "Interpolované řetězce kurz – C# místní – elementy QuickStart"
-description: "V tento rychlý start o interpolované řetězce zapisovat do incude výsledek výrazu v řetězci větší kód C#."
+title: Interpolované řetězce kurz – C# místní – elementy QuickStart
+description: V tento rychlý start o interpolované řetězce zapisovat do incude výsledek výrazu v řetězci větší kód C#.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/11/2018
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: b6089b69eb350fce29f86f19f5abeb44acb4b6b4
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 1edd2b9f59d1933547c4152343f226a86ad90216
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="interpolated-strings"></a>Interpolované řetězce
 
@@ -166,5 +166,4 @@ Jste dokončili rychlé spuštění interpolované řetězce.
     
 Můžete pokračovat [pole a kolekce](arrays-and-collections.md) rychlé spuštění ve vašem vývojovém prostředí.
 
-Další informace o práci s interpolované řetězce v [interpolované řetězce](../language-reference/keywords/interpolated-strings.md) téma v referenční dokumentace jazyka C#.
-
+Další informace o interpolované řetězce v [řetězec interpolace](../language-reference/tokens/interpolated.md) téma v referenční dokumentace jazyka C#.

@@ -1,6 +1,6 @@
 ---
-title: "Průvodce jazykem F#"
-description: "Tato příručka poskytuje přehled o různých studijních materiálů F # je funkční programovací jazyk, který běží na rozhraní .NET."
+title: Průvodce jazykem F#
+description: 'Tato příručka poskytuje přehled o různých studijních materiálů F # je funkční programovací jazyk, který běží na rozhraní .NET.'
 author: jackfoxy
 ms.author: phcart
 ms.date: 03/19/2018
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ea27fb37-dad1-4bd4-a3cc-4f5c70767ae9
-ms.openlocfilehash: 8be5ac5090e10ae9270e7eec529bd9b7c3c663fb
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
+ms.openlocfilehash: a101233f396368c0bc25937c49f77699cb9f8cf2
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="f-guide"></a>Průvodce jazykem F#
 
@@ -54,11 +54,14 @@ F # je o produktivitu svou podstatou. Podpora nástrojů pro F # je všudypřít
 
 [Začínáme s F # pomocí rozhraní příkazového řádku .NET Core](get-started/get-started-command-line.md) Pokud chcete pomocí nástroje příkazového řádku.
 
+[Začínáme s F # a Xamarin](https://docs.microsoft.com/xamarin/cross-platform/platform/fsharp/) pro mobilní programování s F #.
+
 ## <a name="references"></a>Odkazy
 
 [Referenční dokumentace jazyka F #](language-reference/index.md) je odkaz na oficiální, komplexní pro všechny funkce jazyka F #. Každý článek vysvětluje syntaxe a zobrazuje ukázky kódu. Na panelu filtru v obsahu slouží k vyhledání konkrétní článků.
 
 [F # referenční dokumentace hlavní knihovny](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference) je referenční dokumentace rozhraní API pro základní knihovny F #.
+
 
 ## <a name="additional-guides"></a>Další příručky
 

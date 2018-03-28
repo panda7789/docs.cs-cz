@@ -1,7 +1,7 @@
 ---
 title: Vlastnosti
-description: "Další informace o C# vlastnosti, které obsahují funkce pro ověření, počítaný hodnoty, opožděné vyhodnocení, a vlastnost změnit oznámení."
-keywords: "Rozhraní .NET, .NET core"
+description: Další informace o C# vlastnosti, které obsahují funkce pro ověření, počítaný hodnoty, opožděné vyhodnocení, a vlastnost změnit oznámení.
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/03/2017
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-ms.openlocfilehash: 1ffacd52df89a955ebfa72dc58836211c7a58640
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.openlocfilehash: 2a25919048f94211b1696ac8c8471a14ce6e15c5
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="properties"></a>Vlastnosti
 
@@ -193,7 +193,7 @@ public class Person
 }
 ```
 
-V příkladu výše používá *řetězec interpolace* syntaxe k vytvoření formátovaný řetězec pro úplný název.
+V příkladu výše používá [řetězec interpolace](../csharp/language-reference/tokens/interpolated.md) funkce vytvořit formátovaný řetězec pro úplný název.
 
 Můžete také použít *výraz vozidlo členy*, který poskytuje více stručného způsob, jak vytvořit použití počítaných `FullName` vlastnost:
 
