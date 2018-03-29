@@ -3,7 +3,7 @@
 ## [Práce se syntaxí](work-with-syntax.md)
 ## [Práce se sémantikou](work-with-semantics.md)
 ## [Práce s pracovním prostorem](work-with-workspace.md)
-
+## [Prozkoumání kódu pomocí vizualizéru syntaxe](syntax-visualizer.md)
 ## Rychlé starty
 ### [Analýza syntaxe](get-started/syntax-analysis.md)
 ### [Sémantická analýza](get-started/semantic-analysis.md)
