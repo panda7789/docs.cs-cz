@@ -23,7 +23,6 @@
 #### [interface](interface.md)
 #### [object](object.md)
 #### [string](string.md)
-#### [Interpolované řetězce](interpolated-strings.md)
 ### [void](void.md)
 ### [var](var.md)
 ### [Referenční tabulky pro typy](reference-tables-for-types.md)
