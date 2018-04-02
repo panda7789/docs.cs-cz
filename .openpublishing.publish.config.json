@@ -77,7 +77,33 @@
         "Tutorial": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "customized_template_paths": [
+        "_dependentPackages/memberpage.plugins/content"
+      ],
+      "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/ECMA2Yaml/tools/Run.ps1",
+          "_dependentPackages/CommonPlugins/tools/SplitTOC.ps1",
+          "_dependentPackages/CommonPlugins/tools/DiffFolder.ps1"
+        ],
+        "docset_postbuild": [
+          "_dependentPackages/ECMA2Yaml/tools/PostBuild.ps1"
+        ]
+      },
+      "pdf_build_exclude_tocs": [],
+      "ECMA2Yaml": {
+        "SourceXmlFolder": "xml",
+        "SourceMetadataFolder": "add\\metadata",
+        "OutputYamlFolder": "api",
+        "Flatten": true
+      },
+      "SplitTOC": [
+        "api/toc.yml"
+      ],
+      "DiffFolder": [
+        "api"
+      ]
     }
   ],
   "notification_subscribers": [],
@@ -120,6 +146,39 @@
       "branch_mapping": {
         "live": "live"
       }
+    },
+    {
+      "path_to_root": "dotnet-xref",
+      "url": "https://github.com/MicrosoftDocs/dotnet-xref",
+      "branch": "live",
+      "branch_mapping": {
+        "master": "master",
+        "live": "live",
+        "live-sxs" : "live"
+      }
+    }
+  ],
+  "dependent_packages": [
+    {
+      "id": "Microsoft.DocAsCode.ECMA2Yaml",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2",
+      "path_to_root": "_dependentPackages/ECMA2Yaml",
+      "target_framework": "net45",
+      "version": "latest"
+    },
+    {
+      "id": "memberpage.plugins",
+      "nuget_feed": "https://www.myget.org/F/docfx/api/v2",
+      "path_to_root": "_dependentPackages/memberpage.plugins",
+      "target_framework": "net45",
+      "version": "latest"
+    },
+    {
+      "id": "Microsoft.OpenPublishing.CommonPlugins",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2",
+      "path_to_root": "_dependentPackages/CommonPlugins",
+      "target_framework": "net45",
+      "version": "latest"
     }
   ]
 }
