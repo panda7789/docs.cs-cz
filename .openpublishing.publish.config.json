@@ -2,7 +2,7 @@
   "need_generate_intellisense": false,
   "need_preview_pull_request": true,
   "need_pr_comments": false,
-  "need_generate_pdf_url_template": false, 
+  "need_generate_pdf_url_template": true,
   "git_repository_branch_open_to_public_contributors": "live",
  "git_repository_url_open_to_public_contributors": "https://github.com/dotnet/docs.cs-cz",
  "continue_with_document_error": true,
@@ -14,10 +14,22 @@
       "Publish",
       "Pdf"
     ],
-     "live-sxs": [
+    "live-sxs": [
       "Publish"
-     ],
+    ],
     "master": [
+      "Publish",
+      "Pdf"
+    ],
+    "serverless-ebook": [
+      "Publish",
+      "Pdf"
+    ],    
+    "ai-ebook": [
+      "Publish",
+      "Pdf"
+    ], 
+    "CITest": [
       "Publish",
       "Pdf"
     ]
@@ -65,33 +77,7 @@
         "Tutorial": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "customized_template_paths": [
-        "_dependentPackages/memberpage.plugins/content"
-      ],
-      "customized_tasks": {
-        "docset_prebuild": [
-          "_dependentPackages/ECMA2Yaml/tools/Run.ps1",
-          "_dependentPackages/CommonPlugins/tools/SplitTOC.ps1",
-          "_dependentPackages/CommonPlugins/tools/DiffFolder.ps1"
-        ],
-        "docset_postbuild": [
-          "_dependentPackages/ECMA2Yaml/tools/PostBuild.ps1"
-        ]
-      },
-      "pdf_build_exclude_tocs": [],
-      "ECMA2Yaml": {
-        "SourceXmlFolder": "xml",
-        "SourceMetadataFolder": "add\\metadata",
-        "OutputYamlFolder": "api",
-        "Flatten": true
-      },
-      "SplitTOC": [
-        "api/toc.yml"
-      ],
-      "DiffFolder": [
-        "api"
-      ]
+      "template_folder": "_themes"
     }
   ],
   "notification_subscribers": [],
@@ -128,37 +114,12 @@
       }
     },
     {
-      "path_to_root": "dotnet-xref",
-      "url": "https://github.com/MicrosoftDocs/dotnet-xref",
-      "branch": "live",
+      "path_to_root": "samples",
+      "url": "https://github.com/dotnet/samples",
+      "branch": "master",
       "branch_mapping": {
-        "master": "master",
-        "live": "live",
-        "live-sxs" : "live"
+        "live": "live"
       }
-    }
-  ],
-  "dependent_packages": [
-    {
-      "id": "Microsoft.DocAsCode.ECMA2Yaml",
-      "nuget_feed": "https://www.myget.org/F/op/api/v2",
-      "path_to_root": "_dependentPackages/ECMA2Yaml",
-      "target_framework": "net45",
-      "version": "latest"
-    },
-    {
-      "id": "memberpage.plugins",
-      "nuget_feed": "https://www.myget.org/F/docfx/api/v2",
-      "path_to_root": "_dependentPackages/memberpage.plugins",
-      "target_framework": "net45",
-      "version": "latest"
-    },
-    {
-      "id": "Microsoft.OpenPublishing.CommonPlugins",
-      "nuget_feed": "https://www.myget.org/F/op/api/v2",
-      "path_to_root": "_dependentPackages/CommonPlugins",
-      "target_framework": "net45",
-      "version": "latest"
     }
   ]
 }
