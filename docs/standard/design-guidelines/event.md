@@ -1,12 +1,12 @@
 ---
-title: "Návrh událostí"
-ms.custom: 
+title: Návrh událostí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - pre-events
@@ -16,7 +16,7 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

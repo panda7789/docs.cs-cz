@@ -1,7 +1,7 @@
 ---
-title: "Úvod ke kontejnerům a Docker"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Úvod ke kontejnerům a Docker"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Úvod ke kontejnerům a Docker
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Úvod ke kontejnerům a Docker
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

@@ -2,14 +2,15 @@
 title: Funkce (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic, functions
 - functions [Visual Basic]
 ms.assetid: d86fc51f-f46e-4941-8ae2-6262da3d2688
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 03833cda517aa79f72d0081c25fbff2e78dcc281

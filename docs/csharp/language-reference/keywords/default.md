@@ -1,5 +1,5 @@
 ---
-title: "default (Referenční dokumentace jazyka C#)"
+title: default (Referenční dokumentace jazyka C#)
 ms.date: 08/04/2017
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
-caps.latest.revision: 
+caps.latest.revision: 11
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1078dd21101a41969754de1afc8919f8ac0bda8c

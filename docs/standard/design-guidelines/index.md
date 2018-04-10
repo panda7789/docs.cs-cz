@@ -1,19 +1,19 @@
 ---
-title: "Pokyny k návrhu architektury"
-ms.custom: 
+title: Pokyny k návrhu architektury
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - libraries, .NET Framework class library
 - class library design guidelines [.NET Framework], about
 - class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

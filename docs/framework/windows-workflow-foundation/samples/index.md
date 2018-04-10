@@ -1,14 +1,15 @@
 ---
-title: "Ukázky Windows Workflow"
+title: Ukázky Windows Workflow
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.topic: article
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 193f8ce60d8675832955b0e153af7f61b28d2707
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

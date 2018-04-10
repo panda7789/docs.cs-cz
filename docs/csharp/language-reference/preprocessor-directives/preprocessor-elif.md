@@ -1,5 +1,5 @@
 ---
-title: "#elif (referenční dokumentace jazyka C#)"
+title: '#elif (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1512bbbc46ce15570507c8b51540eef607d55dc8

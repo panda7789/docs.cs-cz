@@ -1,5 +1,5 @@
 ---
-title: "for (Referenční dokumentace jazyka C#)"
+title: for (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-caps.latest.revision: 
+caps.latest.revision: 39
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cb7e83733fe026658f502b430975a0f8a27e9df3

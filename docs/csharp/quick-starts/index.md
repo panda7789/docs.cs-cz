@@ -1,7 +1,7 @@
 ---
-title: "C# interaktivní kurzy - C# – elementy QuickStart"
-description: "Výuka C# v prohlížeči a začátek práce s vývojové prostředí"
-keywords: "C#, začněte, lekci, interaktivní"
+title: C# interaktivní kurzy - C# – elementy QuickStart
+description: Výuka C# v prohlížeči a začátek práce s vývojové prostředí
+keywords: C#, začněte, lekci, interaktivní
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/30/2018

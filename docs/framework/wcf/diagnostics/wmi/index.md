@@ -1,19 +1,21 @@
 ---
-title: "Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)"
-ms.custom: 
+title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0862f747cb969a6aa2e63d86e842097260e95b56
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

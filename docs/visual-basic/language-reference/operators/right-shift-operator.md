@@ -1,9 +1,9 @@
 ---
-title: "&gt;&gt;Operátor (Visual Basic)"
+title: '&gt;&gt;Operátor (Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -16,7 +16,7 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-caps.latest.revision: 
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 4eb0ed817c95905a679de5026bf6494eb72df078

@@ -1,5 +1,5 @@
 ---
-title: "false – literál (Referenční dokumentace jazyka C#)"
+title: false – literál (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - false literal keyword [C#]
 ms.assetid: fcc1c1a5-0e42-4226-a128-81492a9bf719
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0e553c020ac6c138843e824d6f798ba2fcb02d06

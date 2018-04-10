@@ -1,15 +1,16 @@
 ---
-title: "Přehled atributy (Visual Basic)"
-ms.custom: 
+title: Přehled atributy (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2b78eb3e5ac52ec89e810fde682249c689ba304a

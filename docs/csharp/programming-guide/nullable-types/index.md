@@ -1,5 +1,5 @@
 ---
-title: "Typy s povolenou hodnotou Null (Průvodce programováním v C#)"
+title: Typy s povolenou hodnotou Null (Průvodce programováním v C#)
 ms.date: 05/15/2017
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ helpviewer_keywords:
 - C# language, nullable types
 - types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
-caps.latest.revision: 
+caps.latest.revision: 44
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9b874b265f4adb131a056ea1ef6fb5ffc820343f

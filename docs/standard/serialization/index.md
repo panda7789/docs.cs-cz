@@ -1,11 +1,11 @@
 ---
 title: Serializace v .NET
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - XML serialization, defined
@@ -14,7 +14,7 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett

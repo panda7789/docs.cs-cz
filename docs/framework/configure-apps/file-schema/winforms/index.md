@@ -1,17 +1,18 @@
 ---
-title: "Konfigurační oddíl pro model Windows Forms"
-ms.custom: 
+title: Konfigurační oddíl pro model Windows Forms
+ms.custom: ''
 ms.date: 04/07/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: rpetrusha
 ms.author: ronpet
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f2d83f5dcf6fa93ceba4d670470bd768a2ee1f88
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -1,5 +1,5 @@
 ---
-title: "descending (Referenční dokumentace jazyka C#)"
+title: descending (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - descending keyword [C#]
 ms.assetid: 8d2cd1e5-9c1c-4dfc-b84c-60e2d3240927
-caps.latest.revision: 
+caps.latest.revision: 6
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c467df43eacfc4ec4f561e13218dc1b91749dcce

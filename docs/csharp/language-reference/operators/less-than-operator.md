@@ -1,5 +1,5 @@
 ---
-title: "&lt;Operátor (referenční dokumentace jazyka C#)"
+title: '&lt;Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - less than operator (<) [C#]
 - < operator [C#]
 ms.assetid: 38cb91e6-79a6-48ec-9c1e-7b71fd8d2b41
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 76d53d4c943c886f6b8c8a68e2b8bb12bc9a9d6c

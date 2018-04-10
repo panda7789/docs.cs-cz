@@ -1,7 +1,7 @@
 ---
-title: "Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

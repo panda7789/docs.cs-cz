@@ -1,7 +1,7 @@
 ---
-title: "Úvod do platformy Microsoft a nástrojů pro kontejnerové aplikace"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Úvod do platformy Microsoft a nástrojů pro kontejnerové aplikace
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017

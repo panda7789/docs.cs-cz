@@ -1,15 +1,16 @@
 ---
-title: "Programování v jazyce Visual Basic"
+title: Programování v jazyce Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
 - programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 3c19b68746cf32bf405a6ce1d8a12b203f27f03c

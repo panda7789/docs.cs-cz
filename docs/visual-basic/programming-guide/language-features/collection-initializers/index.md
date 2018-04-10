@@ -1,10 +1,10 @@
 ---
-title: "Inicializátory kolekcí (Visual Basic)"
-ms.custom: 
+title: Inicializátory kolekcí (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,7 +13,7 @@ f1_keywords:
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-caps.latest.revision: 
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5ec0179df50df453d6058a4b910d17561394140d

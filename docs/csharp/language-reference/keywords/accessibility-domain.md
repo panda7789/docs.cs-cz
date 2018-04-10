@@ -1,5 +1,5 @@
 ---
-title: "Doména přístupnosti (Referenční dokumentace jazyka C#)"
+title: Doména přístupnosti (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - accessibility domain [C#]
 ms.assetid: 8af779c1-275b-44be-a864-9edfbca71bcc
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 127bacda4bf8363fccff3dd3ef6770ad50984cfb

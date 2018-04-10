@@ -1,14 +1,15 @@
 ---
-title: "V programu v jazyce C#"
+title: V programu v jazyce C#
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - C# language, about C# program
 - Visual C#, program structure
 ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 441099f4e6dedc1531ef738401fa4d23c919991f

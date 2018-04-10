@@ -1,15 +1,16 @@
 ---
-title: "Chyby kompilátoru jazyka C#"
+title: Chyby kompilátoru jazyka C#
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: error-reference
 helpviewer_keywords:
 - C# language, compiler errors
 - Visual C# compiler, errors
 - errors [C#]
 ms.assetid: 57262ab1-6c50-4f9c-81ad-9fba48477416
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2253183c0dc99ff56d06698420c9f0f8acf8dfef

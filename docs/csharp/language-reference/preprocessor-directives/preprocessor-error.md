@@ -1,5 +1,5 @@
 ---
-title: "#Chyba (referenční dokumentace jazyka C#)"
+title: '#Chyba (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
-caps.latest.revision: 
+caps.latest.revision: 10
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 23528ae81e4ddca23c67c937ca2588ab4c982e98

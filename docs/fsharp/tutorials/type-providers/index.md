@@ -1,7 +1,7 @@
 ---
-title: "Zprostředkovatelé typů"
-description: "Zjistěte, jak poskytovatele typu F # je komponenta, která poskytuje typy, vlastnosti a metody pro použití ve vašich aplikacích."
-keywords: "Visual f #, f #, funkční programování"
+title: Zprostředkovatelé typů
+description: 'Zjistěte, jak poskytovatele typu F # je komponenta, která poskytuje typy, vlastnosti a metody pro použití ve vašich aplikacích.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

@@ -1,7 +1,7 @@
 ---
-title: "Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017

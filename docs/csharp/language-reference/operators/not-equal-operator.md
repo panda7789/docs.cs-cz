@@ -1,5 +1,5 @@
 ---
-title: "!= – operátor (Referenční dokumentace jazyka C#)"
+title: '!= – operátor (Referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - not equals operator (!=) [C#]
 - '!= operator [C#]'
 ms.assetid: eeff7a4e-ad6f-462d-9f8d-49e9b91c6c97
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b69d0b12734e690f0ba0209ccbbc7627ff92fe8a

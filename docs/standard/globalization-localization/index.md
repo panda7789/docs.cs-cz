@@ -1,12 +1,12 @@
 ---
-title: "Globalizace a lokalizace aplikací .NET Framework"
-ms.custom: 
+title: Globalizace a lokalizace aplikací .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - international applications [.NET Framework]
@@ -17,7 +17,7 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-caps.latest.revision: "42"
+caps.latest.revision: 42
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

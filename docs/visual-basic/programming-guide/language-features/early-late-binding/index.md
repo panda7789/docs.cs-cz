@@ -1,11 +1,12 @@
 ---
-title: "Statické a pozdní vazby (Visual Basic)"
-ms.custom: 
+title: Statické a pozdní vazby (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - early binding [Visual Basic]
@@ -19,7 +20,7 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - late binding [Visual Basic], Visual Basic compiler
 ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: aceffe59fb6043b3089621b9a3f95b0425f9a522

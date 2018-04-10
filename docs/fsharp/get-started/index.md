@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s F #"
-description: "Zjistěte, jak začít pracovat s programovací jazyk v rozhraní .NET F #."
-keywords: "Visual f #, f #, funkční programování, .NET, .NET Core"
+title: 'Začínáme s F #'
+description: 'Zjistěte, jak začít pracovat s programovací jazyk v rozhraní .NET F #.'
+keywords: 'Visual f #, f #, funkční programování, .NET, .NET Core'
 author: cartermp
 ms.author: phcart
 ms.date: 09/06/2016

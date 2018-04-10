@@ -1,7 +1,7 @@
 ---
-title: "Implementace odolná aplikace"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace odolná aplikace"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace odolná aplikace
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace odolná aplikace
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

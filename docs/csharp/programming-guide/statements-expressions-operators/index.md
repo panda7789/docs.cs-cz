@@ -1,8 +1,9 @@
 ---
-title: "Příkazy, výrazy a operátory (Průvodce programováním v C#)"
+title: Příkazy, výrazy a operátory (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - expressions [C#]
@@ -12,7 +13,7 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b7c634cb0c0e5f86e324999360d2bc64a457d5da

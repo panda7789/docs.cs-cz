@@ -1,15 +1,15 @@
 ---
 title: Language-Integrated Query (LINQ) (C#)
-ms.custom: 
+ms.custom: ''
 ms.date: 02/02/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-csharp
 ms.topic: article
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-caps.latest.revision: 
+caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0a721bba36eb1ed4ae94b99e25a1dcce33faef6e

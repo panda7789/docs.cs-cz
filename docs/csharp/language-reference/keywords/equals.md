@@ -1,5 +1,5 @@
 ---
-title: "equals (Referenční dokumentace jazyka C#)"
+title: equals (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - equals keyword [C#]
 ms.assetid: e981309a-e4bf-444c-8a2b-5c695e6114b1
-caps.latest.revision: 
+caps.latest.revision: 6
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 260391dd594b83ac7dac4ba1b2aecf4e37db0fff

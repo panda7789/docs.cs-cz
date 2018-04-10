@@ -1,5 +1,5 @@
 ---
-title: "add (Referenční dokumentace jazyka C#)"
+title: add (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - add event accessor [C#]
 ms.assetid: faf30b99-10e8-45cd-ab9a-57585d4d1d8d
-caps.latest.revision: 
+caps.latest.revision: 7
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cab77ad5a990cf85075455e347a4b1c02645af37

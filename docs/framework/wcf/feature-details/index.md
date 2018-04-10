@@ -1,23 +1,25 @@
 ---
-title: "Podrobnosti o funkcích WCF"
-ms.custom: 
+title: Podrobnosti o funkcích WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - features [WCF]
 - WCF, features
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2aa8adc0ce197c3776b8314009fcaa061bed884d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

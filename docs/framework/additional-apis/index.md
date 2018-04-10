@@ -1,13 +1,13 @@
 ---
-title: "Rozhraní API a knihovny další – třída"
-ms.custom: 
+title: Rozhraní API a knihovny další – třída
+ms.custom: ''
 ms.date: 01/29/2018
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Additional class libraries
@@ -15,7 +15,7 @@ helpviewer_keywords:
 - .NET Framework out-of-band releases
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
-caps.latest.revision: 
+caps.latest.revision: 12
 author: mairaw
 ms.author: mairaw
 manager: wpickett

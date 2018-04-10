@@ -1,12 +1,12 @@
 ---
-title: "Zpracování a generování výjimek"
-ms.custom: 
+title: Zpracování a generování výjimek
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - exceptions [.NET Framework], handling
@@ -17,7 +17,7 @@ helpviewer_keywords:
 - exceptions [.NET Framework]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mairaw
 ms.author: mairaw
 manager: wpickett

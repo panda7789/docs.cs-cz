@@ -1,12 +1,12 @@
 ---
-title: "Data, časy a časová pásma"
-ms.custom: 
+title: Data, časy a časová pásma
+ms.custom: ''
 ms.date: 04/10/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - time zone objects [.NET Framework]
@@ -15,7 +15,7 @@ helpviewer_keywords:
 - times [.NET Framework], time zones
 - time [.NET Framework], time zones
 ms.assetid: 295c16e0-641b-4771-94b3-39c1ffa98c13
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

@@ -1,7 +1,7 @@
 ---
-title: "Roslyn na základě analyzátorů - rozhraní .NET"
-description: "Další informace o Roslyn na základě analyzátory, které najít problémy a navrhněte opravy těchto problémů."
-keywords: "Rozhraní .NET, .NET core"
+title: Roslyn na základě analyzátorů - rozhraní .NET
+description: Další informace o Roslyn na základě analyzátory, které najít problémy a navrhněte opravy těchto problémů.
+keywords: Rozhraní .NET, .NET core
 author: billwagner
 ms.author: billwagner
 ms.date: 01/24/2018

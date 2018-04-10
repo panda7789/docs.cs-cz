@@ -1,7 +1,7 @@
 ---
-title: "Co je nového v jazyce C# – průvodce v C#"
-description: "Jak se vyvíjí jazyka C#"
-keywords: "C#, nejnovější funkce, co je nového, Roslyn"
+title: Co je nového v jazyce C# – průvodce v C#
+description: Jak se vyvíjí jazyka C#
+keywords: C#, nejnovější funkce, co je nového, Roslyn
 author: BillWagner
 ms.author: wiwagn
 ms.date: 11/13/2017

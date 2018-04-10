@@ -1,12 +1,12 @@
 ---
-title: "Souborová služba a datový proud I-O"
-ms.custom: 
+title: Souborová služba a datový proud I-O
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - IO namespace
@@ -16,7 +16,7 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-caps.latest.revision: 
+caps.latest.revision: 33
 author: mairaw
 ms.author: mairaw
 manager: wpickett

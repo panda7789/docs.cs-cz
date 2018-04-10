@@ -1,15 +1,15 @@
 ---
-title: "Stromy výrazů (C#)"
-ms.custom: 
+title: Stromy výrazů (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-csharp
 ms.topic: article
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-caps.latest.revision: 
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 5554b9e923b0cc1da4906cda1b7ca4e6aac75f11

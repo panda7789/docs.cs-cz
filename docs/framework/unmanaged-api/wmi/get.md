@@ -1,6 +1,6 @@
 ---
-title: "Get – funkce (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce Get načte zadanou hodnotu vlastnosti."
+title: Get – funkce (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce Get načte zadanou hodnotu vlastnosti.
 ms.date: 11/06/2017
 ms.prod: .net-framework
 ms.technology:

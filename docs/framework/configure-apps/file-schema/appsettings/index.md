@@ -1,8 +1,9 @@
 ---
-title: "Schéma nastavení aplikace"
+title: Schéma nastavení aplikace
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - schema app settings
@@ -13,7 +14,8 @@ ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 028fdbeb90a1499459803f24f3aa62923452edba
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

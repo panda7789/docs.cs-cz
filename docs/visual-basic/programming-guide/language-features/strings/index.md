@@ -1,17 +1,18 @@
 ---
-title: "Řetězce v jazyce Visual Basic"
-ms.custom: 
+title: Řetězce v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, strings
 - strings [Visual Basic], Visual Basic
 ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ffa6e015339387746b0cc1c4e5d3c2b84f84720e

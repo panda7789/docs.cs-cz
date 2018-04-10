@@ -1,7 +1,7 @@
 ---
-title: "Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

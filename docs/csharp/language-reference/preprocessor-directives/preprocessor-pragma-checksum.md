@@ -1,5 +1,5 @@
 ---
-title: "#Direktiva pragma kontrolní součet (referenční dokumentace jazyka C#)"
+title: '#Direktiva pragma kontrolní součet (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-caps.latest.revision: 
+caps.latest.revision: 11
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0604a559be25c300fcdc6041975306b465fc595f

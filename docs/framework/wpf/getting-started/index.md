@@ -1,20 +1,20 @@
 ---
-title: "Začínáme (WPF)"
-ms.custom: 
+title: Začínáme (WPF)
+ms.custom: ''
 ms.date: 01/26/2018
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - getting started [WPF]
 - introduction [WPF]
 - WPF [WPF], getting started
 ms.assetid: 04f91da8-708c-46c7-8172-f1695ec847cd
-caps.latest.revision: 
+caps.latest.revision: 60
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett

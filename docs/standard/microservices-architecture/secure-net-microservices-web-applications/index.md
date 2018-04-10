@@ -1,7 +1,7 @@
 ---
-title: "Zabezpečení rozhraní .NET Mikroslužeb a webových aplikací"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Zabezpečení rozhraní .NET Mikroslužeb a webových aplikací"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Zabezpečení rozhraní .NET Mikroslužeb a webových aplikací
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Zabezpečení rozhraní .NET Mikroslužeb a webových aplikací
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017

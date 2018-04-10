@@ -1,5 +1,5 @@
 ---
-title: "where (omezení obecného typu) (Referenční dokumentace jazyka C#)"
+title: where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - where (generic type constraint) [C#]
 ms.assetid: d7aa871b-0714-416a-bab2-96f87ada4310
-caps.latest.revision: 
+caps.latest.revision: 10
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f2b7b159689aa771d3f9d59e3b1dd340c85b1d79

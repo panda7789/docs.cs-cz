@@ -1,8 +1,8 @@
 ---
-title: "Vývoj s použitím oboru názvů My (Visual Basic)"
+title: Vývoj s použitím oboru názvů My (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -14,7 +14,7 @@ helpviewer_keywords:
 - My feature
 - Visual Basic, programming in
 ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
-caps.latest.revision: 
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2cf51e1f6292a61c071fe6d92f5fcbce4be84ff4

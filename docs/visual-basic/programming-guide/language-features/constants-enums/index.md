@@ -1,11 +1,12 @@
 ---
-title: "Konstanty a výčty v jazyce Visual Basic"
-ms.custom: 
+title: Konstanty a výčty v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - enumerations [Visual Basic]
@@ -17,7 +18,7 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], constants
 - Visual Basic code, improving readability with constants
 ms.assetid: c8aba36e-fa47-4a33-8b68-cb2009218270
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5bbba6434d8b0a5c02882d1ac858296fd8eeb346

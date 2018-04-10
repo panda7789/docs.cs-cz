@@ -1,8 +1,9 @@
 ---
-title: "Rozhraní (Visual Basic)"
+title: Rozhraní (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, interfaces
@@ -10,7 +11,7 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c26bb7322064d0b8cdf733e74f8b37e81b1e620c

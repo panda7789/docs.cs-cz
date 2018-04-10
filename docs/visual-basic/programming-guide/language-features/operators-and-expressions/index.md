@@ -1,11 +1,12 @@
 ---
-title: "Operátory a výrazy v jazyce Visual Basic"
-ms.custom: 
+title: Operátory a výrazy v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - operators [Visual Basic], operands
@@ -16,7 +17,7 @@ helpviewer_keywords:
 - operands
 - expressions [Visual Basic]
 ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: dae47988e27ed4b1a714943ce1fbffe3b815066b

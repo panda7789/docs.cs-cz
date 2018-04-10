@@ -1,5 +1,5 @@
 ---
-title: "&lt;Hodnota&gt; (C# Průvodce programováním)"
+title: '&lt;Hodnota&gt; (C# Průvodce programováním)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - <value> C# XML tag
 - value C# XML tag
 ms.assetid: 08dbadaf-9ab6-43d9-9493-98e43bed199a
-caps.latest.revision: 
+caps.latest.revision: 12
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9ea900c21c2c0477c626be5eff2403312d9e8609

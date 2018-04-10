@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - On keyword [Visual Basic]
 ms.assetid: 8619c328-1637-4f41-b466-cbe693f4fe73
-caps.latest.revision: 
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 83d6664a098b06cc669dc1930ff6fe5fa1f78f69

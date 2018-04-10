@@ -1,7 +1,7 @@
 ---
-title: "Obecné typy (F#)"
-description: "Další informace o použití F # obecné funkce a typy, které vám umožní napsat kód, který funguje s různými typy bez opakování kódu."
-keywords: "Visual f #, f #, funkční programování"
+title: Obecné typy (F#)
+description: 'Další informace o použití F # obecné funkce a typy, které vám umožní napsat kód, který funguje s různými typy bez opakování kódu.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

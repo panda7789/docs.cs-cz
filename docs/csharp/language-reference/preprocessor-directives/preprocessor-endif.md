@@ -1,5 +1,5 @@
 ---
-title: "#endif (referenční dokumentace jazyka C#)"
+title: '#endif (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#endif directive [C#]'
 ms.assetid: 6a5fca55-5aee-441f-86f6-1c99fbe9ec05
-caps.latest.revision: 
+caps.latest.revision: 9
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d7e68dd20d914052c3fe5cabcb83abdae100465c

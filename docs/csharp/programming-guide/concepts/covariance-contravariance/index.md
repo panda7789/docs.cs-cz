@@ -1,14 +1,15 @@
 ---
 title: Kovariance a kontravariance (C#)
-ms.custom: 
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cc6eb2c4371f69588fd235a0bd3e872b42eb028f

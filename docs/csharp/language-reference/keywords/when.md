@@ -1,5 +1,5 @@
 ---
-title: "Když (referenční dokumentace jazyka C#)"
+title: Když (referenční dokumentace jazyka C#)
 ms.date: 03/07/2017
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
-caps.latest.revision: 
+caps.latest.revision: 30
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f453d9f4b443d7adeeb0ab628b4ddad1a0116e49

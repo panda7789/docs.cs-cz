@@ -1,23 +1,25 @@
 ---
-title: "Metadata (referenční dokumentace nespravovaného rozhraní API)"
-ms.custom: 
+title: Metadata (referenční dokumentace nespravovaného rozhraní API)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: reference
 helpviewer_keywords:
 - unmanaged API reference [.NET Framework], metadata
 - native API reference [.NET Framework], metadata
 - metadata [.NET Framework], using the unmanaged API
 ms.assetid: 10cfea92-db5e-4bcb-b301-ef029bcf77a3
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 727bb5261889c2dbb5ccd182d8feb085f4e80da5
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

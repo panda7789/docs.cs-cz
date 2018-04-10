@@ -1,5 +1,5 @@
 ---
-title: "goto – příkaz (referenční dokumentace jazyka C#)"
+title: goto – příkaz (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - goto keyword [C#]
 ms.assetid: 2c03c9c1-8119-44ef-b740-fb3d287a42fe
-caps.latest.revision: 
+caps.latest.revision: 22
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: aa12a7547cfcd4a2076b5b0a308139f8a823f482

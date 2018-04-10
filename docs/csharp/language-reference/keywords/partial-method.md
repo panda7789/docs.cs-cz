@@ -1,5 +1,5 @@
 ---
-title: "partial (metoda) (Referenční dokumentace jazyka C#)"
+title: partial (metoda) (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - partial methods [C#]
 ms.assetid: 43f40242-17e0-4452-8573-090503ad3137
-caps.latest.revision: 
+caps.latest.revision: 26
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 03962a59d5dbe0146cad9835f81d41c06914795b

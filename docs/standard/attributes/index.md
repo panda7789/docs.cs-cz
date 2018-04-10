@@ -1,12 +1,12 @@
 ---
-title: "Rozšiřování metadat pomocí atributů"
-ms.custom: 
+title: Rozšiřování metadat pomocí atributů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - metadata, extending
@@ -18,7 +18,7 @@ helpviewer_keywords:
 - runtime, attributes
 - extending metadata
 ms.assetid: 30386922-1e00-4602-9ebf-526b271a8b87
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

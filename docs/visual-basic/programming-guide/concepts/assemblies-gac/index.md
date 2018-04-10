@@ -1,15 +1,16 @@
 ---
-title: "Sestavení a globální mezipaměti sestavení (Visual Basic)"
-ms.custom: 
+title: Sestavení a globální mezipaměti sestavení (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fcf78ff1-f1ab-4a5d-b6d8-00d2046b6c80
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 893d869b1abaf9caa6f4705f40750912081d7df2

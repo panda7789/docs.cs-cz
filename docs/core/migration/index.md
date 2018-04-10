@@ -1,7 +1,7 @@
 ---
-title: ".NET core migrace do formátu csproj"
+title: .NET core migrace do formátu csproj
 description: .NET core project.json csproj migrace
-keywords: "Rozhraní .NET, .NET core .NET Core migrace"
+keywords: Rozhraní .NET, .NET core .NET Core migrace
 author: blackdwarf
 ms.author: mairaw
 ms.date: 07/19/2017
@@ -9,7 +9,8 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
-ms.workload: dotnetcore
+ms.workload:
+- dotnetcore
 ms.openlocfilehash: 46373d1d100a71cbc43fcdfe6ce16a7ecd796573
 ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT

@@ -1,5 +1,5 @@
 ---
-title: "#Direktiva pragma (referenční dokumentace jazyka C#)"
+title: '#Direktiva pragma (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma directive [C#]'
 ms.assetid: 5b7944cd-d402-46a1-ad8f-feffb2d83673
-caps.latest.revision: 
+caps.latest.revision: 18
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6f53bd0ed3f35f049b0a1cbb21c5b9a563f9fce9

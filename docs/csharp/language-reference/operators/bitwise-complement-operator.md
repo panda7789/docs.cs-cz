@@ -1,5 +1,5 @@
 ---
-title: "~ – operátor (Referenční dokumentace jazyka C#)"
+title: ~ – operátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,7 +13,7 @@ helpviewer_keywords:
 - ~ [C#], bitwise complement operator
 - bitwise complement operator [C#]
 ms.assetid: 11bc078a-50e2-4d7e-9896-67ef669dc602
-caps.latest.revision: 
+caps.latest.revision: 18
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a9b0cabcb101fce8422b1390ec8c4cb3b3849631

@@ -1,6 +1,6 @@
 ---
-title: "Další nástroje .NET core"
-description: "Přehled další nástroje, které podporují a rozšiřovat funkce .NET Core."
+title: Další nástroje .NET core
+description: Přehled další nástroje, které podporují a rozšiřovat funkce .NET Core.
 author: mlacouture
 manager: wpickett
 ms.author: johalex

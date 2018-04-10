@@ -1,5 +1,5 @@
 ---
-title: "sizeof (Referenční dokumentace jazyka C#)"
+title: sizeof (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-caps.latest.revision: 
+caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0148ae8381804ca9286315251582c8ab40778369

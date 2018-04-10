@@ -1,12 +1,13 @@
 ---
-title: "Schéma nastavení webu"
-ms.custom: 
+title: Schéma nastavení webu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Web.config configuration file [ASP.NET]
@@ -16,11 +17,12 @@ helpviewer_keywords:
 - configuration files [ASP.NET]
 - configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a4ece61330fe8e41d9afb894791f9f9e36db35f2
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

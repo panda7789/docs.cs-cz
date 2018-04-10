@@ -1,5 +1,5 @@
 ---
-title: "|| – operátor (Referenční dokumentace jazyka C#)"
+title: '|| – operátor (Referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - conditional-OR operator (||) [C#]
 - '|| operator [C#]'
 ms.assetid: 7d442d8e-400d-421f-b4d2-034bf82bcbdc
-caps.latest.revision: 
+caps.latest.revision: 25
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7b95fd162c9a89789e1970b32473c8acf16ba5cf

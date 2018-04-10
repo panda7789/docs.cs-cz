@@ -1,12 +1,13 @@
 ---
 title: Managed Extensibility Framework (MEF)
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,11 +16,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-caps.latest.revision: "31"
+caps.latest.revision: 31
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 524fa0f2d654c812189ff6863f84db81144fb48f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -272,7 +274,7 @@ public interface IOperationData
 }  
 ```  
   
- <span data-ttu-id="aad8c-212">V takovém případě metadata pro každou operaci je symbol, který představuje tuto operaci, jako například +, -, *, a tak dále.</span><span class="sxs-lookup"><span data-stu-id="aad8c-212">In this case, the metadata for each operation is the symbol that represents that operation, such as +, -, *, and so on.</span></span> <span data-ttu-id="aad8c-213">Operace přidání zpřístupnit, přidejte následující třídy modulu nebo `SimpleCalculator` obor názvů:</span><span class="sxs-lookup"><span data-stu-id="aad8c-213">To make the addition operation available, add the following class to the module or `SimpleCalculator` namespace:</span></span>  
+ <span data-ttu-id="aad8c-212">V takovém případě metadata pro každou operaci je symbol, který představuje tuto operaci, jako například +, -, \*, a tak dále.</span><span class="sxs-lookup"><span data-stu-id="aad8c-212">In this case, the metadata for each operation is the symbol that represents that operation, such as +, -, \*, and so on.</span></span> <span data-ttu-id="aad8c-213">Operace přidání zpřístupnit, přidejte následující třídy modulu nebo `SimpleCalculator` obor názvů:</span><span class="sxs-lookup"><span data-stu-id="aad8c-213">To make the addition operation available, add the following class to the module or `SimpleCalculator` namespace:</span></span>  
   
 ```vb  
 <Export(GetType(IOperation))>  

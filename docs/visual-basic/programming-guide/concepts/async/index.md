@@ -1,15 +1,16 @@
 ---
-title: "Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)"
-ms.custom: 
+title: Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bd7e462b-583b-4395-9c36-45aa9e61072c
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 18e3abb8d010d3766aa1b1239b3d22cc3cb9b47e

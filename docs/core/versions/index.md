@@ -1,6 +1,6 @@
 ---
-title: "Správa verzí .NET core"
-description: "Pochopit, jak funguje správa verzí .NET Core."
+title: Správa verzí .NET core
+description: Pochopit, jak funguje správa verzí .NET Core.
 author: bleroy
 ms.author: mairaw
 ms.date: 02/13/2018

@@ -1,5 +1,5 @@
 ---
-title: "Delegáti (Průvodce programováním v C#)"
+title: Delegáti (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,7 +9,7 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-caps.latest.revision: 
+caps.latest.revision: 30
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 498d2946a6efc8c9dcb710e41c11f20168cfe568

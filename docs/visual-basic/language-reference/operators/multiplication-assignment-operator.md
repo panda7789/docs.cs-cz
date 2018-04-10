@@ -1,9 +1,9 @@
 ---
-title: "*= – operátor (Visual Basic)"
+title: '*= – operátor (Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -16,7 +16,7 @@ helpviewer_keywords:
 - '*= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 96c86509-6eb8-4682-8226-3852e049376f
-caps.latest.revision: 
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2d0a2c638f3faaf20fadb745ef437941ee29d4f6

@@ -1,11 +1,12 @@
 ---
-title: "Tok řízení v jazyce Visual Basic"
-ms.custom: 
+title: Tok řízení v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - statements [Visual Basic], control flow
@@ -14,7 +15,7 @@ helpviewer_keywords:
 - structures [Visual Basic], control
 - conditional statements [Visual Basic], control flow
 ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 6ce0cb7cba8f05b488d47f99da51b0b5de75eb15

@@ -1,5 +1,5 @@
 ---
-title: "#definování (referenční dokumentace jazyka C#)"
+title: '#definování (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-caps.latest.revision: 
+caps.latest.revision: 22
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: ae72a1b6c19421c51348a0d93691ba3fe29a191c

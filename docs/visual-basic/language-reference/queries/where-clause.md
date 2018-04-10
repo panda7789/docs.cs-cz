@@ -1,9 +1,9 @@
 ---
-title: "Where – klauzule (Visual Basic)"
+title: Where – klauzule (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -14,7 +14,7 @@ helpviewer_keywords:
 - queries [Visual Basic], Where
 - Where clause [Visual Basic]
 ms.assetid: 48b5c2c5-3181-429c-8545-894296798c89
-caps.latest.revision: 
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 8c2572f513d00bc72e869cf28d382be799f7a303

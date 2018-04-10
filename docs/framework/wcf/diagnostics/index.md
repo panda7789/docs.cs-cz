@@ -1,12 +1,13 @@
 ---
-title: "Správa a diagnostika"
-ms.custom: 
+title: Správa a diagnostika
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, diagnostics
@@ -16,11 +17,12 @@ helpviewer_keywords:
 - administration [WCF]
 - WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d26386a0669c92b1b21559474c8f5f61862e6de7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -1,5 +1,5 @@
 ---
-title: "unchecked (Referenční dokumentace jazyka C#)"
+title: unchecked (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - unchecked keyword [C#]
 ms.assetid: 0c021f7c-923f-4b3d-a58f-55336f5ac27e
-caps.latest.revision: 
+caps.latest.revision: 23
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c05e7cb742d8e8f5a7804656a5ec13548d0498b1

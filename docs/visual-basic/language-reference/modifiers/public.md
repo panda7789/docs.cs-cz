@@ -2,7 +2,7 @@
 title: Public (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,7 +13,7 @@ helpviewer_keywords:
 - Public keyword [Visual Basic], syntax
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
-caps.latest.revision: 
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: e6cd70adf6ec31c56f39d0443d320dd1b00b00d3

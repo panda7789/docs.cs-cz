@@ -1,5 +1,5 @@
 ---
-title: "Příkazy výběru (Referenční dokumentace jazyka C#)"
+title: Příkazy výběru (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - statements [C#], selection
 ms.assetid: cf21cfa2-34fb-48b0-9cbc-8bb4537a9a05
-caps.latest.revision: 
+caps.latest.revision: 13
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 198c591dcda9a0d29fa34e9ac67b9355cbd8bb0d

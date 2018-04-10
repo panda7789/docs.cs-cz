@@ -1,7 +1,7 @@
 ---
 title: Kurzy C#
-description: "Prozkoumejte tyto C# kurzy, se dozvíte, jak vytvářet programy C# a další funkce jazyka C#."
-keywords: "Rozhraní .NET, .NET core"
+description: Prozkoumejte tyto C# kurzy, se dozvíte, jak vytvářet programy C# a další funkce jazyka C#.
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.author: wiwagn
 ms.date: 09/07/2017

@@ -1,5 +1,5 @@
 ---
-title: "-- – operátor (Referenční dokumentace jazyka C#)"
+title: -- – operátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - -- operator [C#]
 - decrement operator (--) [C#]
 ms.assetid: 6b9cfe86-63c7-421f-9379-c9690fea8720
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 4eb68143103d44defeac7191e7c4ce7d1ee90e9b

@@ -1,5 +1,5 @@
 ---
-title: "[] – operátor (Referenční dokumentace jazyka C#)"
+title: '[] – operátor (Referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,7 +13,7 @@ helpviewer_keywords:
 - '[] operator [C#]'
 - indexing operator [C#]
 ms.assetid: 5c16bb45-88f7-45ff-b42c-1af1972b042c
-caps.latest.revision: 
+caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 03664f5604bb7d7dce9e8ae2ff0ec045c6a203b1

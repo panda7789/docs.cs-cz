@@ -1,5 +1,5 @@
 ---
-title: "where – klauzule (Referenční dokumentace jazyka C#)"
+title: where – klauzule (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - where keyword [C#]
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
-caps.latest.revision: 
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0324346ee5e214bf467fcb522ef781c91fa1b76f

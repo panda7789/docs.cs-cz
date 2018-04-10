@@ -1,7 +1,7 @@
 ---
-title: "Návrh a vývoj Mikroslužbu a více kontejneru na základě aplikací .NET"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Návrh a vývoj Mikroslužbu a více kontejneru na základě aplikací .NET"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Návrh a vývoj Mikroslužbu a více kontejneru na základě aplikací .NET
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Návrh a vývoj Mikroslužbu a více kontejneru na základě aplikací .NET
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

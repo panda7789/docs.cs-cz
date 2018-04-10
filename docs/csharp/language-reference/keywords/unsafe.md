@@ -1,5 +1,5 @@
 ---
-title: "unsafe (Referenční dokumentace jazyka C#)"
+title: unsafe (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1fffbe36e39d279b2364b178188381a403c8ff86

@@ -1,12 +1,13 @@
 ---
-title: "Programování s doménami aplikací a sestaveními"
-ms.custom: 
+title: Programování s doménami aplikací a sestaveními
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - assemblies [.NET Framework], programming
@@ -14,11 +15,12 @@ helpviewer_keywords:
 - application domains, programming
 - programming application domains
 ms.assetid: 96d3b8e3-bef8-4da0-9a81-9841e23a94e9
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 216766a8d8f120594c7d6dd1fd192f90b775c1d7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

@@ -1,6 +1,6 @@
 ---
-title: ".NET core rozhraní příkazového řádku (CLI) nástroje"
-description: "Přehled funkcí a nástrojů .NET Core rozhraní příkazového řádku (CLI)."
+title: .NET core rozhraní příkazového řádku (CLI) nástroje
+description: Přehled funkcí a nástrojů .NET Core rozhraní příkazového řádku (CLI).
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017

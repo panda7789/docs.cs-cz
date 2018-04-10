@@ -1,5 +1,5 @@
 ---
-title: "protected (Referenční dokumentace jazyka C#)"
+title: protected (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-caps.latest.revision: 
+caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 18278ed28f899d9030d6056eca9bbe83ebec04c4

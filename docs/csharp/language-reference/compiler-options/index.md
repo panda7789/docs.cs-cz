@@ -1,5 +1,5 @@
 ---
-title: "Možnosti kompilátoru C#"
+title: Možnosti kompilátoru C#
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -14,7 +14,7 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-caps.latest.revision: 
+caps.latest.revision: 21
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 59000f60acdc8ada11bc5abb9e91b5f53d42b9ae

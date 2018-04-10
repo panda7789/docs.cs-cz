@@ -1,5 +1,5 @@
 ---
-title: "! Operátor (referenční dokumentace jazyka C#)"
+title: '! Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - logical negation operator (!) [C#]
 - NOT operator [C#]
 ms.assetid: f5ae133f-8f64-4560-b34f-cd9cd5eed4ad
-caps.latest.revision: 
+caps.latest.revision: 13
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 3560be4067fdb7a51c6073d2ec159b7d04c00eaa

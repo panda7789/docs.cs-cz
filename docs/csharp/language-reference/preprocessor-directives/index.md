@@ -11,7 +11,7 @@ helpviewer_keywords:
 - preprocessor directives [C#]
 - keywords [C#], preprocessor directives
 ms.assetid: f2406090-b244-4f7e-ab72-3698fefed724
-caps.latest.revision: 
+caps.latest.revision: 13
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6378c8df794a4ee75e7b5ca283b18b228ba46383

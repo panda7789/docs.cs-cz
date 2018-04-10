@@ -1,15 +1,16 @@
 ---
-title: "Stromy výrazů (Visual Basic)"
-ms.custom: 
+title: Stromy výrazů (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8bbbb02d-7ffc-476b-8c25-118d82bf5d46
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ee31d85214fba474db8a3f7499d867cc09bd41a0

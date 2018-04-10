@@ -1,6 +1,6 @@
 ---
-title: "Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)"
-description: "Shrnuje rozhraní .NET Framework nespravovaného rozhraní API pro informace o rozhraní WMI a výkonu čítače."
+title: Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)
+description: Shrnuje rozhraní .NET Framework nespravovaného rozhraní API pro informace o rozhraní WMI a výkonu čítače.
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

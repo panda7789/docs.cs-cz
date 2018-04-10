@@ -1,5 +1,5 @@
 ---
-title: "&lt;&lt;= – Operátor (referenční dokumentace jazyka C#)"
+title: '&lt;&lt;= – Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - <<= operator (left-shift assignment) [C#]
 - left shift assignment operator (<<=) [C#]
 ms.assetid: 3bc99c78-1edb-4827-86fc-bce6c3048871
-caps.latest.revision: 
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b5c2a177182561075442afc3f1b76603c6646bd6

@@ -1,5 +1,5 @@
 ---
-title: "using (Referenční dokumentace jazyka C#)"
+title: using (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - using keyword [C#]
 ms.assetid: 124e1a63-2a4b-4132-b269-3b6d8d3ef72d
-caps.latest.revision: 
+caps.latest.revision: 11
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 06a1ff73ec79b8e071c08bd72a7a64490f6d43db

@@ -1,7 +1,7 @@
 ---
-title: "Interaktivní referenční dokumentace F# (fsi.exe)"
-description: "Zjistěte, jak F # interaktivní (fsi.exe) se používá interaktivní spuštění F # – kód v konzole nebo spuštění skriptů F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Interaktivní referenční dokumentace F# (fsi.exe)
+description: 'Zjistěte, jak F # interaktivní (fsi.exe) se používá interaktivní spuštění F # – kód v konzole nebo spuštění skriptů F #.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

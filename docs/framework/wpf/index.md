@@ -1,13 +1,13 @@
 ---
 title: Windows Presentation Foundation
-ms.custom: 
+ms.custom: ''
 ms.date: 01/25/2018
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 applies_to:
 - Windows 10
@@ -22,7 +22,7 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-caps.latest.revision: 
+caps.latest.revision: 97
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett

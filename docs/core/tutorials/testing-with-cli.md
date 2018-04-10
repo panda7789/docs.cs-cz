@@ -1,7 +1,7 @@
 ---
-title: "Uspořádání a testování projektů pomocí příkazového řádku .NET Core"
-description: "Tento kurz vysvětluje, jak uspořádat a testování .NET Core projekty z příkazového řádku."
-keywords: "Testování, .NET Core CLI, xUnit .NET, .NET core jednotky"
+title: Uspořádání a testování projektů pomocí příkazového řádku .NET Core
+description: Tento kurz vysvětluje, jak uspořádat a testování .NET Core projekty z příkazového řádku.
+keywords: Testování, .NET Core CLI, xUnit .NET, .NET core jednotky
 author: cartermp
 ms.author: mairaw
 ms.date: 05/16/2017
@@ -10,20 +10,21 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
-ms.workload: dotnetcore
-ms.openlocfilehash: 4b8728a175d67cc532866d4de41d412e459f0291
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: c68b7cb7dac069093e2e849543c5b5c21b4ffe3a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a><span data-ttu-id="4ffef-104">Uspořádání a testování projektů pomocí příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="4ffef-104">Organizing and testing projects with the .NET Core command line</span></span>
+# <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a><span data-ttu-id="90fa6-104">Uspořádání a testování projektů pomocí příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="90fa6-104">Organizing and testing projects with the .NET Core command line</span></span>
 
-<span data-ttu-id="4ffef-105">V tomto kurzu následuje [Začínáme s .NET Core v systému Windows nebo Linux/macOS pomocí příkazového řádku](using-with-xplat-cli.md), přesměrujeme vás nad rámec vytvoření jednoduché konzolové aplikace pro vývoj aplikací pokročilé a dobře uspořádány.</span><span class="sxs-lookup"><span data-stu-id="4ffef-105">This tutorial follows [Getting started with .NET Core on Windows/Linux/macOS using the command line](using-with-xplat-cli.md), taking you beyond the creation of a simple console app to develop advanced and well-organized applications.</span></span> <span data-ttu-id="4ffef-106">Po ukazuje, jak používat složky organizace kódu, tento kurz ukazuje, jak rozšířit konzolovou aplikaci pomocí [xUnit](https://xunit.github.io/) testování framework.</span><span class="sxs-lookup"><span data-stu-id="4ffef-106">After showing you how to use folders to organize your code, this tutorial shows you how to extend a console application with the [xUnit](https://xunit.github.io/) testing framework.</span></span>
+<span data-ttu-id="90fa6-105">V tomto kurzu následuje [Začínáme s .NET Core v systému Windows nebo Linux/macOS pomocí příkazového řádku](using-with-xplat-cli.md), přesměrujeme vás nad rámec vytvoření jednoduché konzolové aplikace pro vývoj aplikací pokročilé a dobře uspořádány.</span><span class="sxs-lookup"><span data-stu-id="90fa6-105">This tutorial follows [Getting started with .NET Core on Windows/Linux/macOS using the command line](using-with-xplat-cli.md), taking you beyond the creation of a simple console app to develop advanced and well-organized applications.</span></span> <span data-ttu-id="90fa6-106">Po ukazuje, jak používat složky organizace kódu, tento kurz ukazuje, jak rozšířit konzolovou aplikaci pomocí [xUnit](https://xunit.github.io/) testování framework.</span><span class="sxs-lookup"><span data-stu-id="90fa6-106">After showing you how to use folders to organize your code, this tutorial shows you how to extend a console application with the [xUnit](https://xunit.github.io/) testing framework.</span></span>
 
-## <a name="using-folders-to-organize-code"></a><span data-ttu-id="4ffef-107">Použití složek k uspořádání kódu</span><span class="sxs-lookup"><span data-stu-id="4ffef-107">Using folders to organize code</span></span>
+## <a name="using-folders-to-organize-code"></a><span data-ttu-id="90fa6-107">Použití složek k uspořádání kódu</span><span class="sxs-lookup"><span data-stu-id="90fa6-107">Using folders to organize code</span></span>
 
-<span data-ttu-id="4ffef-108">Pokud chcete zavést nové typy do konzoly aplikace, můžete tak učinit přidáním soubory obsahující typy, které mají aplikace.</span><span class="sxs-lookup"><span data-stu-id="4ffef-108">If you want to introduce new types into a console app, you can do so by adding files containing the types to the app.</span></span> <span data-ttu-id="4ffef-109">Například pokud přidáte soubory obsahující `AccountInformation` a `MonthlyReportRecords` typy do projektu strukturu souborů projektu je plochý a usnadňují přejděte:</span><span class="sxs-lookup"><span data-stu-id="4ffef-109">For example if you add files containing `AccountInformation` and `MonthlyReportRecords` types to your project, the project file structure is flat and easy to navigate:</span></span>
+<span data-ttu-id="90fa6-108">Pokud chcete zavést nové typy do konzoly aplikace, můžete tak učinit přidáním soubory obsahující typy, které mají aplikace.</span><span class="sxs-lookup"><span data-stu-id="90fa6-108">If you want to introduce new types into a console app, you can do so by adding files containing the types to the app.</span></span> <span data-ttu-id="90fa6-109">Například pokud přidáte soubory obsahující `AccountInformation` a `MonthlyReportRecords` typy do projektu strukturu souborů projektu je plochý a usnadňují přejděte:</span><span class="sxs-lookup"><span data-stu-id="90fa6-109">For example if you add files containing `AccountInformation` and `MonthlyReportRecords` types to your project, the project file structure is flat and easy to navigate:</span></span>
 
 ```
 /MyProject
@@ -33,9 +34,9 @@ ms.lasthandoff: 12/23/2017
 |__Program.cs
 ```
 
-<span data-ttu-id="4ffef-110">Však to jenom funguje i při velikost vašeho projektu je poměrně malý.</span><span class="sxs-lookup"><span data-stu-id="4ffef-110">However, this only works well when the size of your project is relatively small.</span></span> <span data-ttu-id="4ffef-111">Můžete si, co se stane Pokud přidáte do projektu 20 typy?</span><span class="sxs-lookup"><span data-stu-id="4ffef-111">Can you imagine what will happen if you add 20 types to the project?</span></span> <span data-ttu-id="4ffef-112">Projekt výborný nebude snadno přejděte a udržovat s třídou mnoho soubory littering kořenového adresáře projektu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-112">The project definitely wouldn't be easy to navigate and maintain with that many files littering the project's root directory.</span></span>
+<span data-ttu-id="90fa6-110">Však to jenom funguje i při velikost vašeho projektu je poměrně malý.</span><span class="sxs-lookup"><span data-stu-id="90fa6-110">However, this only works well when the size of your project is relatively small.</span></span> <span data-ttu-id="90fa6-111">Můžete si, co se stane Pokud přidáte do projektu 20 typy?</span><span class="sxs-lookup"><span data-stu-id="90fa6-111">Can you imagine what will happen if you add 20 types to the project?</span></span> <span data-ttu-id="90fa6-112">Projekt výborný nebude snadno přejděte a udržovat s třídou mnoho soubory littering kořenového adresáře projektu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-112">The project definitely wouldn't be easy to navigate and maintain with that many files littering the project's root directory.</span></span>
 
-<span data-ttu-id="4ffef-113">K uspořádání projektu, vytvořte novou složku a pojmenujte ji *modely* pro soubory typu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-113">To organize the project, create a new folder and name it *Models* to hold the type files.</span></span> <span data-ttu-id="4ffef-114">Pro soubory typu do *modely* složky:</span><span class="sxs-lookup"><span data-stu-id="4ffef-114">Place the type files into the *Models* folder:</span></span>
+<span data-ttu-id="90fa6-113">K uspořádání projektu, vytvořte novou složku a pojmenujte ji *modely* pro soubory typu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-113">To organize the project, create a new folder and name it *Models* to hold the type files.</span></span> <span data-ttu-id="90fa6-114">Pro soubory typu do *modely* složky:</span><span class="sxs-lookup"><span data-stu-id="90fa6-114">Place the type files into the *Models* folder:</span></span>
 
 ```
 /MyProject
@@ -46,17 +47,17 @@ ms.lasthandoff: 12/23/2017
 |__Program.cs
 ```
 
-<span data-ttu-id="4ffef-115">Projekty, které logicky skupiny souborů do složek, které se dají snadno přejděte a údržbu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-115">Projects that logically group files into folders are easy to navigate and maintain.</span></span> <span data-ttu-id="4ffef-116">V další části je vytvořit složitější ukázku se složkami a testování částí.</span><span class="sxs-lookup"><span data-stu-id="4ffef-116">In the next section, you create a more complex sample with folders and unit testing.</span></span>
+<span data-ttu-id="90fa6-115">Projekty, které logicky skupiny souborů do složek, které se dají snadno přejděte a údržbu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-115">Projects that logically group files into folders are easy to navigate and maintain.</span></span> <span data-ttu-id="90fa6-116">V další části je vytvořit složitější ukázku se složkami a testování částí.</span><span class="sxs-lookup"><span data-stu-id="90fa6-116">In the next section, you create a more complex sample with folders and unit testing.</span></span>
 
-## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a><span data-ttu-id="4ffef-117">Uspořádání a testování pomocí ukázkových mazlíčků NewTypes</span><span class="sxs-lookup"><span data-stu-id="4ffef-117">Organizing and testing using the NewTypes Pets Sample</span></span>
+## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a><span data-ttu-id="90fa6-117">Uspořádání a testování pomocí ukázkových mazlíčků NewTypes</span><span class="sxs-lookup"><span data-stu-id="90fa6-117">Organizing and testing using the NewTypes Pets Sample</span></span>
 
-### <a name="building-the-sample"></a><span data-ttu-id="4ffef-118">Vytváření vzorku</span><span class="sxs-lookup"><span data-stu-id="4ffef-118">Building the sample</span></span>
+### <a name="building-the-sample"></a><span data-ttu-id="90fa6-118">Vytváření vzorku</span><span class="sxs-lookup"><span data-stu-id="90fa6-118">Building the sample</span></span>
 
-<span data-ttu-id="4ffef-119">Následující postup, můžete buď absolvovat pomocí [NewTypes mazlíčků ukázkové](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild) nebo vytvořit vlastní soubory a složky.</span><span class="sxs-lookup"><span data-stu-id="4ffef-119">For the following steps, you can either follow along using the [NewTypes Pets Sample](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild) or create your own files and folders.</span></span> <span data-ttu-id="4ffef-120">Typy jsou logicky uspořádány do strukturu složek, která umožňuje přidání další typy později a testy jsou také logicky umístit do složky umožňující přidání další testy později.</span><span class="sxs-lookup"><span data-stu-id="4ffef-120">The types are logically organized into a folder structure that permits the addition of more types later, and tests are also logically placed in folders permitting the addition of more tests later.</span></span>
+<span data-ttu-id="90fa6-119">Následující postup, můžete buď absolvovat pomocí [NewTypes mazlíčků ukázkové](https://github.com/dotnet/samples/tree/master/core/console-apps/NewTypesMsBuild) nebo vytvořit vlastní soubory a složky.</span><span class="sxs-lookup"><span data-stu-id="90fa6-119">For the following steps, you can either follow along using the [NewTypes Pets Sample](https://github.com/dotnet/samples/tree/master/core/console-apps/NewTypesMsBuild) or create your own files and folders.</span></span> <span data-ttu-id="90fa6-120">Typy jsou logicky uspořádány do strukturu složek, která umožňuje přidání další typy později a testy jsou také logicky umístit do složky umožňující přidání další testy později.</span><span class="sxs-lookup"><span data-stu-id="90fa6-120">The types are logically organized into a folder structure that permits the addition of more types later, and tests are also logically placed in folders permitting the addition of more tests later.</span></span>
 
-<span data-ttu-id="4ffef-121">Ukázka obsahuje dva typy `Dog` a `Cat`a je implementovat společné rozhraní a má `IPet`.</span><span class="sxs-lookup"><span data-stu-id="4ffef-121">The sample contains two types, `Dog` and `Cat`, and has them implement a common interface, `IPet`.</span></span> <span data-ttu-id="4ffef-122">Pro `NewTypes` projektu vaším cílem je uspořádat typy související s pet do *mazlíčků* složky.</span><span class="sxs-lookup"><span data-stu-id="4ffef-122">For the `NewTypes` project, your goal is to organize the pet-related types into a *Pets* folder.</span></span> <span data-ttu-id="4ffef-123">Pokud později, přidáte další sadu typy *WildAnimals* například se umístit do *NewTypes* složky spolu s *mazlíčků* složky.</span><span class="sxs-lookup"><span data-stu-id="4ffef-123">If another set of types is added later, *WildAnimals* for example, they're placed in the *NewTypes* folder alongside the *Pets* folder.</span></span> <span data-ttu-id="4ffef-124">*WildAnimals* složka může obsahovat typy pro zvířat, které nejsou mazlíčků, jako například `Squirrel` a `Rabbit` typy.</span><span class="sxs-lookup"><span data-stu-id="4ffef-124">The *WildAnimals* folder may contain types for animals that aren't pets, such as `Squirrel` and `Rabbit` types.</span></span> <span data-ttu-id="4ffef-125">Tímto způsobem jako typy jsou přidány, projekt zůstává i uspořádány.</span><span class="sxs-lookup"><span data-stu-id="4ffef-125">In this way as types are added, the project remains well organized.</span></span> 
+<span data-ttu-id="90fa6-121">Ukázka obsahuje dva typy `Dog` a `Cat`a je implementovat společné rozhraní a má `IPet`.</span><span class="sxs-lookup"><span data-stu-id="90fa6-121">The sample contains two types, `Dog` and `Cat`, and has them implement a common interface, `IPet`.</span></span> <span data-ttu-id="90fa6-122">Pro `NewTypes` projektu vaším cílem je uspořádat typy související s pet do *mazlíčků* složky.</span><span class="sxs-lookup"><span data-stu-id="90fa6-122">For the `NewTypes` project, your goal is to organize the pet-related types into a *Pets* folder.</span></span> <span data-ttu-id="90fa6-123">Pokud později, přidáte další sadu typy *WildAnimals* například se umístit do *NewTypes* složky spolu s *mazlíčků* složky.</span><span class="sxs-lookup"><span data-stu-id="90fa6-123">If another set of types is added later, *WildAnimals* for example, they're placed in the *NewTypes* folder alongside the *Pets* folder.</span></span> <span data-ttu-id="90fa6-124">*WildAnimals* složka může obsahovat typy pro zvířat, které nejsou mazlíčků, jako například `Squirrel` a `Rabbit` typy.</span><span class="sxs-lookup"><span data-stu-id="90fa6-124">The *WildAnimals* folder may contain types for animals that aren't pets, such as `Squirrel` and `Rabbit` types.</span></span> <span data-ttu-id="90fa6-125">Tímto způsobem jako typy jsou přidány, projekt zůstává i uspořádány.</span><span class="sxs-lookup"><span data-stu-id="90fa6-125">In this way as types are added, the project remains well organized.</span></span> 
 
-<span data-ttu-id="4ffef-126">Vytvořte následující strukturu složek s uvedené obsah souboru:</span><span class="sxs-lookup"><span data-stu-id="4ffef-126">Create the following folder structure with file content indicated:</span></span>
+<span data-ttu-id="90fa6-126">Vytvořte následující strukturu složek s uvedené obsah souboru:</span><span class="sxs-lookup"><span data-stu-id="90fa6-126">Create the following folder structure with file content indicated:</span></span>
 
 ```
 /NewTypes
@@ -70,54 +71,54 @@ ms.lasthandoff: 12/23/2017
       |__NewTypes.csproj
 ```
 
-<span data-ttu-id="4ffef-127">*IPet.cs*:</span><span class="sxs-lookup"><span data-stu-id="4ffef-127">*IPet.cs*:</span></span>
+<span data-ttu-id="90fa6-127">*IPet.cs*:</span><span class="sxs-lookup"><span data-stu-id="90fa6-127">*IPet.cs*:</span></span>
 
 [!code-csharp[IPet interface](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/IPet.cs)]
 
-<span data-ttu-id="4ffef-128">*Dog.cs*:</span><span class="sxs-lookup"><span data-stu-id="4ffef-128">*Dog.cs*:</span></span>
+<span data-ttu-id="90fa6-128">*Dog.cs*:</span><span class="sxs-lookup"><span data-stu-id="90fa6-128">*Dog.cs*:</span></span>
 
 [!code-csharp[Dog class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Dog.cs)]
 
-<span data-ttu-id="4ffef-129">*Cat.cs*:</span><span class="sxs-lookup"><span data-stu-id="4ffef-129">*Cat.cs*:</span></span>
+<span data-ttu-id="90fa6-129">*Cat.cs*:</span><span class="sxs-lookup"><span data-stu-id="90fa6-129">*Cat.cs*:</span></span>
 
 [!code-csharp[Cat class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Cat.cs)]
 
-<span data-ttu-id="4ffef-130">*Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="4ffef-130">*Program.cs*:</span></span>
+<span data-ttu-id="90fa6-130">*Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="90fa6-130">*Program.cs*:</span></span>
 
 [!code-csharp[Main](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Program.cs)]
 
-<span data-ttu-id="4ffef-131">*NewTypes.csproj*:</span><span class="sxs-lookup"><span data-stu-id="4ffef-131">*NewTypes.csproj*:</span></span>
+<span data-ttu-id="90fa6-131">*NewTypes.csproj*:</span><span class="sxs-lookup"><span data-stu-id="90fa6-131">*NewTypes.csproj*:</span></span>
 
 [!code-xml[NewTypes csproj](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/NewTypes.csproj)]
 
-<span data-ttu-id="4ffef-132">Spuštěním následujících příkazů:</span><span class="sxs-lookup"><span data-stu-id="4ffef-132">Execute the following commands:</span></span>
+<span data-ttu-id="90fa6-132">Spuštěním následujících příkazů:</span><span class="sxs-lookup"><span data-stu-id="90fa6-132">Execute the following commands:</span></span>
 
 ```console
 dotnet run
 ```
 
-<span data-ttu-id="4ffef-133">Získejte následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4ffef-133">Obtain the following output:</span></span>
+<span data-ttu-id="90fa6-133">Získejte následující výstup:</span><span class="sxs-lookup"><span data-stu-id="90fa6-133">Obtain the following output:</span></span>
 
 ```console
 Woof!
 Meow!
 ```
 
-<span data-ttu-id="4ffef-134">Volitelné cvičení: můžete přidat nové domácí typu, například `Bird`, tím, že rozšíří tento projekt.</span><span class="sxs-lookup"><span data-stu-id="4ffef-134">Optional exercise: You can add a new pet type, such as a `Bird`, by extending this project.</span></span> <span data-ttu-id="4ffef-135">Ujistěte se, ptačí perspektivy na `TalkToOwner` metoda udělení `Tweet!` vlastníkovi.</span><span class="sxs-lookup"><span data-stu-id="4ffef-135">Make the bird's `TalkToOwner` method give a `Tweet!` to the owner.</span></span> <span data-ttu-id="4ffef-136">Spusťte aplikaci znovu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-136">Run the app again.</span></span> <span data-ttu-id="4ffef-137">Výstup bude obsahovat`Tweet!`</span><span class="sxs-lookup"><span data-stu-id="4ffef-137">The output will include `Tweet!`</span></span>
+<span data-ttu-id="90fa6-134">Volitelné cvičení: můžete přidat nové domácí typu, například `Bird`, tím, že rozšíří tento projekt.</span><span class="sxs-lookup"><span data-stu-id="90fa6-134">Optional exercise: You can add a new pet type, such as a `Bird`, by extending this project.</span></span> <span data-ttu-id="90fa6-135">Ujistěte se, ptačí perspektivy na `TalkToOwner` metoda udělení `Tweet!` vlastníkovi.</span><span class="sxs-lookup"><span data-stu-id="90fa6-135">Make the bird's `TalkToOwner` method give a `Tweet!` to the owner.</span></span> <span data-ttu-id="90fa6-136">Spusťte aplikaci znovu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-136">Run the app again.</span></span> <span data-ttu-id="90fa6-137">Výstup bude obsahovat `Tweet!`</span><span class="sxs-lookup"><span data-stu-id="90fa6-137">The output will include `Tweet!`</span></span>
 
-### <a name="testing-the-sample"></a><span data-ttu-id="4ffef-138">Testování vzorku</span><span class="sxs-lookup"><span data-stu-id="4ffef-138">Testing the sample</span></span>
+### <a name="testing-the-sample"></a><span data-ttu-id="90fa6-138">Testování vzorku</span><span class="sxs-lookup"><span data-stu-id="90fa6-138">Testing the sample</span></span>
 
-<span data-ttu-id="4ffef-139">`NewTypes` Projektu je na místě a uspořádán udržováním typy související s mazlíčků ve složce.</span><span class="sxs-lookup"><span data-stu-id="4ffef-139">The `NewTypes` project is in place, and you've organized it by keeping the pets-related types in a folder.</span></span> <span data-ttu-id="4ffef-140">V dalším kroku vytvořte projekt testu a zahájit zápis testování pomocí [xUnit](https://xunit.github.io/) test framework.</span><span class="sxs-lookup"><span data-stu-id="4ffef-140">Next, create your test project and start writing tests with the [xUnit](https://xunit.github.io/) test framework.</span></span> <span data-ttu-id="4ffef-141">Testování částí umožňuje automaticky zkontrolujte bevahior vaše domácí typů potvrďte, že jste operační správně.</span><span class="sxs-lookup"><span data-stu-id="4ffef-141">Unit testing allows you to automatically check the bevahior of your pet types to confirm that they're operating properly.</span></span>
+<span data-ttu-id="90fa6-139">`NewTypes` Projektu je na místě a uspořádán udržováním typy související s mazlíčků ve složce.</span><span class="sxs-lookup"><span data-stu-id="90fa6-139">The `NewTypes` project is in place, and you've organized it by keeping the pets-related types in a folder.</span></span> <span data-ttu-id="90fa6-140">V dalším kroku vytvořte projekt testu a zahájit zápis testování pomocí [xUnit](https://xunit.github.io/) test framework.</span><span class="sxs-lookup"><span data-stu-id="90fa6-140">Next, create your test project and start writing tests with the [xUnit](https://xunit.github.io/) test framework.</span></span> <span data-ttu-id="90fa6-141">Testování částí umožňuje automaticky zkontrolujte bevahior vaše domácí typů potvrďte, že jste operační správně.</span><span class="sxs-lookup"><span data-stu-id="90fa6-141">Unit testing allows you to automatically check the bevahior of your pet types to confirm that they're operating properly.</span></span>
 
-<span data-ttu-id="4ffef-142">Vytvoření *testování* složku s *NewTypesTests* v její složce.</span><span class="sxs-lookup"><span data-stu-id="4ffef-142">Create a *test* folder with a *NewTypesTests* folder within it.</span></span> <span data-ttu-id="4ffef-143">Na příkazovém řádku z *NewTypesTests* složky, provést `dotnet new xunit`.</span><span class="sxs-lookup"><span data-stu-id="4ffef-143">At a command prompt from the *NewTypesTests* folder, execute `dotnet new xunit`.</span></span> <span data-ttu-id="4ffef-144">Tímto se vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.</span><span class="sxs-lookup"><span data-stu-id="4ffef-144">This produces two files: *NewTypesTests.csproj* and *UnitTest1.cs*.</span></span>
+<span data-ttu-id="90fa6-142">Vytvoření *testování* složku s *NewTypesTests* v její složce.</span><span class="sxs-lookup"><span data-stu-id="90fa6-142">Create a *test* folder with a *NewTypesTests* folder within it.</span></span> <span data-ttu-id="90fa6-143">Na příkazovém řádku z *NewTypesTests* složky, provést `dotnet new xunit`.</span><span class="sxs-lookup"><span data-stu-id="90fa6-143">At a command prompt from the *NewTypesTests* folder, execute `dotnet new xunit`.</span></span> <span data-ttu-id="90fa6-144">Tímto se vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.</span><span class="sxs-lookup"><span data-stu-id="90fa6-144">This produces two files: *NewTypesTests.csproj* and *UnitTest1.cs*.</span></span>
 
-<span data-ttu-id="4ffef-145">K testovacímu projektu nemůže otestovat aktuálně typy v `NewTypes` a vyžaduje odkaz na projekt `NewTypes` projektu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-145">The test project cannot currently test the types in `NewTypes` and requires a project reference to the `NewTypes` project.</span></span> <span data-ttu-id="4ffef-146">Chcete-li přidat odkaz na projekt, použijte [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:</span><span class="sxs-lookup"><span data-stu-id="4ffef-146">To add a project reference, use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
+<span data-ttu-id="90fa6-145">K testovacímu projektu nemůže otestovat aktuálně typy v `NewTypes` a vyžaduje odkaz na projekt `NewTypes` projektu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-145">The test project cannot currently test the types in `NewTypes` and requires a project reference to the `NewTypes` project.</span></span> <span data-ttu-id="90fa6-146">Chcete-li přidat odkaz na projekt, použijte [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:</span><span class="sxs-lookup"><span data-stu-id="90fa6-146">To add a project reference, use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
 ```
 
-<span data-ttu-id="4ffef-147">Máte také možnost ručně přidejte odkaz na projekt tak, že přidáte `<ItemGroup>` uzlu *NewTypesTests.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="4ffef-147">You also have the option of manually adding the project reference by adding an `<ItemGroup>` node to the *NewTypesTests.csproj* file:</span></span>
+<span data-ttu-id="90fa6-147">Máte také možnost ručně přidejte odkaz na projekt tak, že přidáte `<ItemGroup>` uzlu *NewTypesTests.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="90fa6-147">You also have the option of manually adding the project reference by adding an `<ItemGroup>` node to the *NewTypesTests.csproj* file:</span></span>
 
 ```xml
 <ItemGroup>
@@ -125,18 +126,18 @@ dotnet add reference ../../src/NewTypes/NewTypes.csproj
 </ItemGroup>
 ```
 
-<span data-ttu-id="4ffef-148">*NewTypesTests.csproj*:</span><span class="sxs-lookup"><span data-stu-id="4ffef-148">*NewTypesTests.csproj*:</span></span>
+<span data-ttu-id="90fa6-148">*NewTypesTests.csproj*:</span><span class="sxs-lookup"><span data-stu-id="90fa6-148">*NewTypesTests.csproj*:</span></span>
 
 [!code-xml[NewTypesTests csproj](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/NewTypesTests.csproj)]
 
-<span data-ttu-id="4ffef-149">*NewTypesTests.csproj* soubor obsahuje následující:</span><span class="sxs-lookup"><span data-stu-id="4ffef-149">The *NewTypesTests.csproj* file contains the following:</span></span>
+<span data-ttu-id="90fa6-149">*NewTypesTests.csproj* soubor obsahuje následující:</span><span class="sxs-lookup"><span data-stu-id="90fa6-149">The *NewTypesTests.csproj* file contains the following:</span></span>
 
-* <span data-ttu-id="4ffef-150">Odkaz na balíček `Microsoft.NET.Test.Sdk`, .NET testování infrastruktury</span><span class="sxs-lookup"><span data-stu-id="4ffef-150">Package reference to `Microsoft.NET.Test.Sdk`, the .NET testing infrastructure</span></span>
-* <span data-ttu-id="4ffef-151">Odkaz na balíček `xunit`, xUnit testování framework</span><span class="sxs-lookup"><span data-stu-id="4ffef-151">Package reference to `xunit`, the xUnit testing framework</span></span>
-* <span data-ttu-id="4ffef-152">Odkaz na balíček `xunit.runner.visualstudio`, nástroj test runner</span><span class="sxs-lookup"><span data-stu-id="4ffef-152">Package reference to `xunit.runner.visualstudio`, the test runner</span></span>
-* <span data-ttu-id="4ffef-153">Odkaz na projekt `NewTypes`, kód pro testování</span><span class="sxs-lookup"><span data-stu-id="4ffef-153">Project reference to `NewTypes`, the code to test</span></span>
+* <span data-ttu-id="90fa6-150">Odkaz na balíček `Microsoft.NET.Test.Sdk`, .NET testování infrastruktury</span><span class="sxs-lookup"><span data-stu-id="90fa6-150">Package reference to `Microsoft.NET.Test.Sdk`, the .NET testing infrastructure</span></span>
+* <span data-ttu-id="90fa6-151">Odkaz na balíček `xunit`, xUnit testování framework</span><span class="sxs-lookup"><span data-stu-id="90fa6-151">Package reference to `xunit`, the xUnit testing framework</span></span>
+* <span data-ttu-id="90fa6-152">Odkaz na balíček `xunit.runner.visualstudio`, nástroj test runner</span><span class="sxs-lookup"><span data-stu-id="90fa6-152">Package reference to `xunit.runner.visualstudio`, the test runner</span></span>
+* <span data-ttu-id="90fa6-153">Odkaz na projekt `NewTypes`, kód pro testování</span><span class="sxs-lookup"><span data-stu-id="90fa6-153">Project reference to `NewTypes`, the code to test</span></span>
 
-<span data-ttu-id="4ffef-154">Změna názvu *UnitTest1.cs* k *PetTests.cs* a nahraďte kód v souboru následující:</span><span class="sxs-lookup"><span data-stu-id="4ffef-154">Change the name of *UnitTest1.cs* to *PetTests.cs* and replace the code in the file with the following:</span></span>
+<span data-ttu-id="90fa6-154">Změna názvu *UnitTest1.cs* k *PetTests.cs* a nahraďte kód v souboru následující:</span><span class="sxs-lookup"><span data-stu-id="90fa6-154">Change the name of *UnitTest1.cs* to *PetTests.cs* and replace the code in the file with the following:</span></span>
 
 ```csharp
 using System;
@@ -165,12 +166,12 @@ public class PetTests
 }
 ```
 
-<span data-ttu-id="4ffef-155">Volitelné cvičení: Pokud jste přidali `Bird` dříve typ, který poskytne `Tweet!` vlastníkovi, přidejte metodu testu do *PetTests.cs* souboru, `BirdTalkToOwnerReturnsTweet`, zkontroluje, jestli `TalkToOwner` metoda funguje správně pro `Bird` typu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-155">Optional exercise: If you added a `Bird` type earlier that yields a `Tweet!` to the owner, add a test method to the *PetTests.cs* file, `BirdTalkToOwnerReturnsTweet`, to check that the `TalkToOwner` method works correctly for the `Bird` type.</span></span>
+<span data-ttu-id="90fa6-155">Volitelné cvičení: Pokud jste přidali `Bird` dříve typ, který poskytne `Tweet!` vlastníkovi, přidejte metodu testu do *PetTests.cs* souboru, `BirdTalkToOwnerReturnsTweet`, zkontroluje, jestli `TalkToOwner` metoda funguje správně pro `Bird` typu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-155">Optional exercise: If you added a `Bird` type earlier that yields a `Tweet!` to the owner, add a test method to the *PetTests.cs* file, `BirdTalkToOwnerReturnsTweet`, to check that the `TalkToOwner` method works correctly for the `Bird` type.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4ffef-156">I když můžete očekávat, který `expected` a `actual` jsou hodnoty stejné, počáteční kontrolní výrazy s `Assert.NotEqual` kontroly určit, že jsou *nerovná*.</span><span class="sxs-lookup"><span data-stu-id="4ffef-156">Although you expect that the `expected` and `actual` values are equal, the initial assertions with the `Assert.NotEqual` checks specify that they are *not equal*.</span></span> <span data-ttu-id="4ffef-157">Vždy nejprve vytvořte testy selhání jednou pro ověření logiku testů.</span><span class="sxs-lookup"><span data-stu-id="4ffef-157">Always initially create your tests to fail once in order to check the logic of the tests.</span></span> <span data-ttu-id="4ffef-158">Toto je důležitým krokem při metodika návrhu řízeného testováním (TDD).</span><span class="sxs-lookup"><span data-stu-id="4ffef-158">This is an important step in test-driven design (TDD) methodology.</span></span> <span data-ttu-id="4ffef-159">Jakmile potvrdíte, že testy nezdaří, můžete upravit kontrolní výrazy a povolení jejich předávání.</span><span class="sxs-lookup"><span data-stu-id="4ffef-159">After you confirm the tests fail, you adjust the assertions to allow them to pass.</span></span>
+> <span data-ttu-id="90fa6-156">I když můžete očekávat, který `expected` a `actual` jsou hodnoty stejné, počáteční kontrolní výrazy s `Assert.NotEqual` kontroly určit, že jsou *nerovná*.</span><span class="sxs-lookup"><span data-stu-id="90fa6-156">Although you expect that the `expected` and `actual` values are equal, the initial assertions with the `Assert.NotEqual` checks specify that they are *not equal*.</span></span> <span data-ttu-id="90fa6-157">Vždy nejprve vytvořte testy selhání jednou pro ověření logiku testů.</span><span class="sxs-lookup"><span data-stu-id="90fa6-157">Always initially create your tests to fail once in order to check the logic of the tests.</span></span> <span data-ttu-id="90fa6-158">Toto je důležitým krokem při metodika návrhu řízeného testováním (TDD).</span><span class="sxs-lookup"><span data-stu-id="90fa6-158">This is an important step in test-driven design (TDD) methodology.</span></span> <span data-ttu-id="90fa6-159">Jakmile potvrdíte, že testy nezdaří, můžete upravit kontrolní výrazy a povolení jejich předávání.</span><span class="sxs-lookup"><span data-stu-id="90fa6-159">After you confirm the tests fail, you adjust the assertions to allow them to pass.</span></span>
 
-<span data-ttu-id="4ffef-160">Na obrázku je dokončený projekt strukturu:</span><span class="sxs-lookup"><span data-stu-id="4ffef-160">The following shows the complete project structure:</span></span>
+<span data-ttu-id="90fa6-160">Na obrázku je dokončený projekt strukturu:</span><span class="sxs-lookup"><span data-stu-id="90fa6-160">The following shows the complete project structure:</span></span>
 
 ```
 /NewTypes
@@ -188,12 +189,12 @@ public class PetTests
       |__NewTypesTests.csproj
 ```
 
-<span data-ttu-id="4ffef-161">Spusťte v *test/NewTypesTests* adresáře.</span><span class="sxs-lookup"><span data-stu-id="4ffef-161">Start in the *test/NewTypesTests* directory.</span></span> <span data-ttu-id="4ffef-162">Obnovit k testovacímu projektu s [ `dotnet restore` ](../tools/dotnet-restore.md) příkaz.</span><span class="sxs-lookup"><span data-stu-id="4ffef-162">Restore the test project with the [`dotnet restore`](../tools/dotnet-restore.md) command.</span></span> <span data-ttu-id="4ffef-163">Spouštění testů pomocí [ `dotnet test` ](../tools/dotnet-test.md) příkaz.</span><span class="sxs-lookup"><span data-stu-id="4ffef-163">Run the tests with the [`dotnet test`](../tools/dotnet-test.md) command.</span></span> <span data-ttu-id="4ffef-164">Tento příkaz spustí nástroj test runner zadaný v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="4ffef-164">This command starts the test runner specified in the project file.</span></span>
+<span data-ttu-id="90fa6-161">Spusťte v *test/NewTypesTests* adresáře.</span><span class="sxs-lookup"><span data-stu-id="90fa6-161">Start in the *test/NewTypesTests* directory.</span></span> <span data-ttu-id="90fa6-162">Obnovit k testovacímu projektu s [ `dotnet restore` ](../tools/dotnet-restore.md) příkaz.</span><span class="sxs-lookup"><span data-stu-id="90fa6-162">Restore the test project with the [`dotnet restore`](../tools/dotnet-restore.md) command.</span></span> <span data-ttu-id="90fa6-163">Spouštění testů pomocí [ `dotnet test` ](../tools/dotnet-test.md) příkaz.</span><span class="sxs-lookup"><span data-stu-id="90fa6-163">Run the tests with the [`dotnet test`](../tools/dotnet-test.md) command.</span></span> <span data-ttu-id="90fa6-164">Tento příkaz spustí nástroj test runner zadaný v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="90fa6-164">This command starts the test runner specified in the project file.</span></span>
 
  [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
  
-<span data-ttu-id="4ffef-165">Podle očekávání, testování selže a konzole zobrazí následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4ffef-165">As expected, testing fails, and the console displays the following output:</span></span>
+<span data-ttu-id="90fa6-165">Podle očekávání, testování selže a konzole zobrazí následující výstup:</span><span class="sxs-lookup"><span data-stu-id="90fa6-165">As expected, testing fails, and the console displays the following output:</span></span>
  
 ```
 Test run for C:\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp1.1\NewTypesTests.dll(.NETCoreApp,Version=v1.1)
@@ -237,11 +238,11 @@ Test Run Failed.
 Test execution time: 2.1371 Seconds
 ```
 
-<span data-ttu-id="4ffef-166">Změnit tvrzení testů z `Assert.NotEqual` k `Assert.Equal`:</span><span class="sxs-lookup"><span data-stu-id="4ffef-166">Change the assertions of your tests from `Assert.NotEqual` to `Assert.Equal`:</span></span>
+<span data-ttu-id="90fa6-166">Změnit tvrzení testů z `Assert.NotEqual` k `Assert.Equal`:</span><span class="sxs-lookup"><span data-stu-id="90fa6-166">Change the assertions of your tests from `Assert.NotEqual` to `Assert.Equal`:</span></span>
 
 [!code-csharp[PetTests class](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/PetTests.cs)]
 
-<span data-ttu-id="4ffef-167">Znovu spusťte testy s `dotnet test` příkazů a získat následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4ffef-167">Re-run the tests with the `dotnet test` command and obtain the following output:</span></span>
+<span data-ttu-id="90fa6-167">Znovu spusťte testy s `dotnet test` příkazů a získat následující výstup:</span><span class="sxs-lookup"><span data-stu-id="90fa6-167">Re-run the tests with the `dotnet test` command and obtain the following output:</span></span>
 
 ```
 Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
@@ -258,7 +259,7 @@ Test Run Successful.
 Test execution time: 1.6634 Seconds
 ```
 
-<span data-ttu-id="4ffef-168">Testování předává.</span><span class="sxs-lookup"><span data-stu-id="4ffef-168">Testing passes.</span></span> <span data-ttu-id="4ffef-169">Domácí typy metody vrací správné hodnoty při posuzování vlastníkovi.</span><span class="sxs-lookup"><span data-stu-id="4ffef-169">The pet types' methods return the correct values when talking to the owner.</span></span>
+<span data-ttu-id="90fa6-168">Testování předává.</span><span class="sxs-lookup"><span data-stu-id="90fa6-168">Testing passes.</span></span> <span data-ttu-id="90fa6-169">Domácí typy metody vrací správné hodnoty při posuzování vlastníkovi.</span><span class="sxs-lookup"><span data-stu-id="90fa6-169">The pet types' methods return the correct values when talking to the owner.</span></span>
 
-<span data-ttu-id="4ffef-170">Když jste se naučili techniky k uspořádání a testování projektů pomocí xUnit.</span><span class="sxs-lookup"><span data-stu-id="4ffef-170">You've learned techniques for organizing and testing projects using xUnit.</span></span> <span data-ttu-id="4ffef-171">Pokračovat v těchto postupů je použití ve vašich vlastních projektů.</span><span class="sxs-lookup"><span data-stu-id="4ffef-171">Go forward with these techniques applying them in your own projects.</span></span> <span data-ttu-id="4ffef-172">*Kódování radostí!*</span><span class="sxs-lookup"><span data-stu-id="4ffef-172">*Happy coding!*</span></span>
+<span data-ttu-id="90fa6-170">Když jste se naučili techniky k uspořádání a testování projektů pomocí xUnit.</span><span class="sxs-lookup"><span data-stu-id="90fa6-170">You've learned techniques for organizing and testing projects using xUnit.</span></span> <span data-ttu-id="90fa6-171">Pokračovat v těchto postupů je použití ve vašich vlastních projektů.</span><span class="sxs-lookup"><span data-stu-id="90fa6-171">Go forward with these techniques applying them in your own projects.</span></span> <span data-ttu-id="90fa6-172">*Kódování radostí!*</span><span class="sxs-lookup"><span data-stu-id="90fa6-172">*Happy coding!*</span></span>
 

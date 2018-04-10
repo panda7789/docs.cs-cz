@@ -1,5 +1,5 @@
 ---
-title: "checked (Referenční dokumentace jazyka C#)"
+title: checked (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - checked keyword [C#]
 ms.assetid: 718a1194-988d-48a3-b089-d6ee8bd1608d
-caps.latest.revision: 
+caps.latest.revision: 24
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0ae77894cdc94e41dfa281b92ed3304e0dc25731

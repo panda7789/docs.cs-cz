@@ -1,7 +1,7 @@
 ---
-title: "klíče takeaways"
-description: "Životní cyklus aplikace kontejnerizované Docker s platformy společnosti Microsoft a _v1.1 nástroje (elektronická kniha)"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: klíče takeaways
+description: Životní cyklus aplikace kontejnerizované Docker s platformy společnosti Microsoft a _v1.1 nástroje (elektronická kniha)
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

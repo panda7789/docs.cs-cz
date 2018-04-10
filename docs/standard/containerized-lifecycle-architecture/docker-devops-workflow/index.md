@@ -1,7 +1,7 @@
 ---
-title: "Pracovní postup docker aplikací devops s nástroji Microsoft"
-description: "Kontejnerizované Docker cyklu aplikací s platformy společnosti Microsoft a Toolsdevops pracovního postupu s nástroji Microsoft"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Pracovní postup docker aplikací devops s nástroji Microsoft
+description: Kontejnerizované Docker cyklu aplikací s platformy společnosti Microsoft a Toolsdevops pracovního postupu s nástroji Microsoft
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

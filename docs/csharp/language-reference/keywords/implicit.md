@@ -1,5 +1,5 @@
 ---
-title: "implicit (referenční dokumentace jazyka C#)"
+title: implicit (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - implicit keyword [C#]
 ms.assetid: 34db590e-eb3a-4f11-88d0-ffb3cd753dab
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c893c7a9afbdc6f715010d537e9ccaf66c5785c1

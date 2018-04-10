@@ -1,8 +1,9 @@
 ---
-title: "Referenční dokumentace jazyka Visual Basic"
+title: Referenční dokumentace jazyka Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic language reference
@@ -13,7 +14,7 @@ helpviewer_keywords:
 - language reference, Visual Basic
 - Visual Basic, language reference
 ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2524df987bfea25b294c6e24abe5a6d8ff548df1
