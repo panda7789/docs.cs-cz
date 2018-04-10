@@ -1,5 +1,5 @@
 ---
-title: "#– Direktiva pragma upozornění (referenční dokumentace jazyka C#)"
+title: '#– Direktiva pragma upozornění (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 5330b448dc2b328992b2d29699557d20df56dee4

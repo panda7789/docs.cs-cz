@@ -1,5 +1,5 @@
 ---
-title: "virtual (Referenční dokumentace jazyka C#)"
+title: virtual (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-caps.latest.revision: 
+caps.latest.revision: 26
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: dce3333646bca6f558e3760849b6cffdb34a6c0b

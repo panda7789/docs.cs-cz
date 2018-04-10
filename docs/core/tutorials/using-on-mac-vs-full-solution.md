@@ -1,6 +1,6 @@
 ---
-title: "Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac"
-description: "Toto téma vás provede procesem vytvoření .NET Core řešení, která obsahuje opakovaně použitelné knihovny a testování částí."
+title: Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
+description: Toto téma vás provede procesem vytvoření .NET Core řešení, která obsahuje opakovaně použitelné knihovny a testování částí.
 keywords: .NET, .NET Core, macOS, Mac
 author: guardrex
 ms.author: mairaw
@@ -11,17 +11,17 @@ ms.devlang: dotnet
 ms.assetid: 6945bedf-5bf3-4955-8588-83fb87511b79
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 0db67593340ea3bae00a45b845a0effe0c1fcab1
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 6d8f89af14167e57b7f1b3b1d6ddce5cae8f6446
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
 Visual Studio pro Mac poskytuje plné integrované vývojové prostředí (IDE) pro vývoj aplikací .NET Core. Toto téma vás provede procesem vytvoření .NET Core řešení, která obsahuje opakovaně použitelné knihovny a testování částí.
 
-V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá slovo vyhledávání a řetězce textu od uživatele, spočítá počet hledaného slova se zobrazí v řetězci pomocí jiné metody v knihovny tříd a vrátí výsledek pro uživatele. Řešení obsahuje také jednotky testování pro knihovny tříd jako úvod do koncepty testy řízený vývoj (TDD). Pokud dáváte přednost pokračujte kurzu s ucelenou ukázku, stáhněte si [ukázkové řešení](https://github.com/dotnet/docs/blob/master/samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter). Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá slovo vyhledávání a řetězce textu od uživatele, spočítá počet hledaného slova se zobrazí v řetězci pomocí jiné metody v knihovny tříd a vrátí výsledek pro uživatele. Řešení obsahuje také jednotky testování pro knihovny tříd jako úvod do koncepty testy řízený vývoj (TDD). Pokud dáváte přednost pokračujte kurzu s ucelenou ukázku, stáhněte si [ukázkové řešení](https://github.com/dotnet/samples/blob/master/core/tutorials/using-on-mac-vs-full-solution/WordCounter). Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 > [!NOTE]
 > Vaše zpětná vazba je vysoce hodnot. Existují dva způsoby, kterými zajistíte názor na vývojový tým v sadě Visual Studio pro Mac:
@@ -50,7 +50,7 @@ Další informace o požadovaných součástí najdete v tématu [požadavky pro
 
    [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/TextUtils/WordCount.cs)]
 
-1. Uložte soubor pomocí některé z tři různé metody: použijte klávesovou zkratku <kbd>&#8984;</kbd> + <kbd>s</kbd>, vyberte **soubor** > **Uložit** z nabídky, nebo klikněte pravým tlačítkem na kartu a vyberte v souboru **Uložit**v kontextové nabídce. Následující obrázek znázorňuje okna IDE:
+1. Uložte soubor pomocí některé z tři různé metody: použijte klávesovou zkratku <kbd> &#8984; </kbd> + <kbd>s</kbd>, vyberte **soubor**  >  **Uložit** z nabídky, nebo klikněte pravým tlačítkem na kartu a vyberte v souboru **Uložit** v kontextové nabídce. Následující obrázek znázorňuje okna IDE:
 
    ![Okno IDE zobrazuje TextUtils třídy knihovny, soubor třídy WordCount, statická třída WordCount a metoda GetWordCount](./media/using-on-mac-vs-full-solution/vsmacfull03.png)
 
@@ -128,7 +128,7 @@ Testování částí zadejte automatizované softwaru testování během vaší 
 
    ![Test selhání](./media/using-on-mac-vs-full-solution/vsmacfull09.png)
 
-1. Změnit `IgnoreCasing` test – metoda změnou `Assert.NotEqual` k `Assert.Equal`. Uložte soubor pomocí klávesové zkratky <kbd>&#8984;</kbd> + <kbd>s</kbd>, **soubor** > **Uložit** z nabídky, nebo kliknete na kartu soubor pravým tlačítkem a vyberete **Uložit**v místní nabídce.
+1. Změnit `IgnoreCasing` test – metoda změnou `Assert.NotEqual` k `Assert.Equal`. Uložte soubor pomocí klávesové zkratky <kbd> &#8984; </kbd> + <kbd>s</kbd>, **soubor** > **Uložit** v nabídce nebo kliknete na kartu soubor pravým tlačítkem a vyberete **Uložit** v místní nabídce.
 
    Očekáváte, který `searchWord` "Konektor" vrátí dvě instance s `inputString` "Konektor konektoru" předaný do `GetWordCount`. Znovu spusťte test kliknutím **spuštění testů** tlačítko v **testování částí** panelu nebo **znovu spusťte testy** tlačítka na **výsledky testu** panelu v dolní části obrazovky. Test byl úspěšný. Existují dvě instance "Konektor" v řetězci "Konektor konektoru" (bez rozlišování velká a malá písmena) a je kontrolní test `true`.
 

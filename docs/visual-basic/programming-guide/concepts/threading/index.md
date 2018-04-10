@@ -1,15 +1,16 @@
 ---
-title: "Dělení na vlákna (Visual Basic)"
-ms.custom: 
+title: Dělení na vlákna (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 704bb04b-ff23-471d-ab12-3cec1c2bca59
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: b544d63651b481ec39f7e07d4e7f549923d2a475

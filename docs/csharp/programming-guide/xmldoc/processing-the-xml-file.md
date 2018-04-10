@@ -1,21 +1,22 @@
 ---
-title: "Zpracování souboru XML (Průvodce programováním v C#)"
+title: Zpracování souboru XML (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e8b4c078ffcf7ba7690b7f3dd61bfab4162dd2cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1e6e983d4fc07aaadc294bc67e146ac600f4c5bc
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který se označí ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md).) ID řetězec jednoznačně identifikuje konstruktu. Programy, které zpracovávají souboru XML slouží k identifikaci příslušnou položku metadata nebo reflexe rozhraní .NET Framework, která se použije v dokumentaci k ID řetězec.  
@@ -24,7 +25,7 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
  Kompilátor dodržuje následující pravidla, když ji vygeneruje ID řetězce:  
   
--   Je bez prázdných znaků v řetězci.  
+-   V řetězci je bez mezer.  
   
 -   První část řetězec ID identifikuje druh člen se identifikuje, prostřednictvím jednoho znaku následovaným dvojtečkou. Se používají následující typy členů:  
   
@@ -52,7 +53,7 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
     -   ELEMENT_TYPE_PINNED je reprezentován jako ' ^' následující změny typu. Kompilátor jazyka C# nikdy vygeneruje.  
   
-    -   ELEMENT_TYPE_CMOD_REQ je reprezentován jako "&#124; a plně kvalifikovaný název třídy modifikátor následující změny typu. Kompilátor jazyka C# nikdy vygeneruje.  
+    -   ELEMENT_TYPE_CMOD_REQ je reprezentován jako '&#124;a plně kvalifikovaný název třídy modifikátor následující změny typu. Kompilátor jazyka C# nikdy vygeneruje.  
   
     -   ELEMENT_TYPE_CMOD_OPT je reprezentován jako '!' a plně kvalifikovaný název třídy modifikátor následující změny typu.  
   
@@ -70,7 +71,7 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
     -   Návratový typ  
   
-    -   TYP ELEMENT_TYPE_SENTINEL  
+    -   ELEMENT_TYPE_SENTINEL  
   
 -   Pro převod operátory pouze (op_Implicit a op_Explicit) návratovou hodnotu metody zakódován ' ~' následuje návratový typ, jako kódování výše.  
   
@@ -86,6 +87,6 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
  [!code-csharp[csProgGuidePointers#21](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/processing-the-xml-file_1.cs)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [/ DOC (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [/doc (C# Compiler Options)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
  [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)

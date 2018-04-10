@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 8c045e5625cee53acc4daa3c9fca524bc953b5a1
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: d130ef34961d19c450dd7142c8a5996c83465646
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
 
@@ -34,7 +34,7 @@ Nainstalovat rozšíření pro Visual Studio kódu C# otevřete Visual Studio Co
 
 ## <a name="getting-started"></a>Začínáme
 
-V tomto kurzu vytvoříte tří projektů: projekt knihovny testů pro tento projekt knihovny a Konzolová aplikace, která používá knihovnu. Můžete [zobrazit nebo stáhnout zdrojovou](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden) pro toto téma na dotnet/docs úložišti na Githubu. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V tomto kurzu vytvoříte tří projektů: projekt knihovny testů pro tento projekt knihovny a Konzolová aplikace, která používá knihovnu. Můžete [zobrazit nebo stáhnout zdrojovou](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) pro toto téma na dotnet/samples úložišti na Githubu. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 Spusťte Visual Studio Code. Stiskněte klávesu <kbd>Ctrl</kbd> + <kbd> \` </kbd> (znak třemi nebo backtick) nebo vyberte **zobrazení > integrované Terminálové** v nabídce otevřete embedded terminálu ve Visual Studio Code. Externí prostředí stále můžete otevřít pomocí Průzkumníka **otevřete v příkazovém řádku** příkazu (**otevřete v terminálu** na Mac nebo Linux) Pokud dáváte přednost práci mimo Visual Studio Code.
 

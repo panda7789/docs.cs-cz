@@ -1,5 +1,5 @@
 ---
-title: "= – operátor (Referenční dokumentace jazyka C#)"
+title: = – operátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 4c7188abe54cb69678720b4dbbf4dbdea1be4abe

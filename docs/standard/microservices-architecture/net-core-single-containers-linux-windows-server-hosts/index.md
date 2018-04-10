@@ -1,7 +1,7 @@
 ---
-title: "Nasazení jednoho kontejneru na základě webových aplikací .NET Core na hostitelích Nano Server systému Windows nebo Linux"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Nasazení jednoho kontejneru na základě webových aplikací .NET Core na hostitelích Nano Server systému Windows nebo Linux"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Nasazení jednoho kontejneru na základě webových aplikací .NET Core na hostitelích Nano Server systému Windows nebo Linux
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Nasazení jednoho kontejneru na základě webových aplikací .NET Core na hostitelích Nano Server systému Windows nebo Linux
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

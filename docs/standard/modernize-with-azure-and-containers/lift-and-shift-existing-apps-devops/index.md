@@ -1,6 +1,6 @@
 ---
-title: "Navýšení a posunutí existujících aplikací DevOps"
-description: "Modernizovat existující aplikace .NET s kontejnery cloudu Azure a Windows."
+title: Navýšení a posunutí existujících aplikací DevOps
+description: Modernizovat existující aplikace .NET s kontejnery cloudu Azure a Windows.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017

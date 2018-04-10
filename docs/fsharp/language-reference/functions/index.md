@@ -1,7 +1,7 @@
 ---
 title: Funkce (F#)
-description: "Informace o funkcích v F # a jak F # podporuje společné funkční programovací konstrukce."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Informace o funkcích v F # a jak F # podporuje společné funkční programovací konstrukce.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

@@ -1,5 +1,5 @@
 ---
-title: "interface (Referenční dokumentace jazyka C#)"
+title: interface (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-caps.latest.revision: 
+caps.latest.revision: 29
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: aba9ee66a90216066a47f22e251182caad465818

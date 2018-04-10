@@ -13,7 +13,7 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-caps.latest.revision: ''
+caps.latest.revision: 24
 author: mcleblanc
 ms.author: markl
 manager: markl

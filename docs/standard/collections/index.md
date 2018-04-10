@@ -1,5 +1,5 @@
 ---
-title: "Kolekce a datové struktury"
+title: Kolekce a datové struktury
 ms.date: 03/30/2017
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-caps.latest.revision: "36"
+caps.latest.revision: 36
 author: mairaw
 ms.author: mairaw
 manager: wpickett

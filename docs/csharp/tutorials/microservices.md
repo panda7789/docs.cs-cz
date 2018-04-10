@@ -1,7 +1,7 @@
 ---
-title: "Mikroslužeb hostované v Docker - C#"
-description: "Naučte se vytvořit základní služby, které běží v kontejnerech Docker asp.net"
-keywords: "Rozhraní .NET, rozhraní .NET core, Docker, C#, ASP.NET, Mikroslužbu"
+title: Mikroslužeb hostované v Docker - C#
+description: Naučte se vytvořit základní služby, které běží v kontejnerech Docker asp.net
+keywords: Rozhraní .NET, rozhraní .NET core, Docker, C#, ASP.NET, Mikroslužbu
 author: BillWagner
 ms.author: wiwagn
 ms.date: 02/03/2017
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: d399cdce81350356b71e21d879a4f5b5079f98d8
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 253b622618ef62c28ac13a287c34b9d9049dd066
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="microservices-hosted-in-docker"></a>Mikroslužeb hostované v Docker
 
@@ -32,7 +32,7 @@ Cestou se dozvíte se taky, některé funkce jazyka C#:
 * Postupy pro zpracování příchozích požadavků HTTP a vygenerování odpovědi HTTP
 * Jak pracovat s typy hodnot s povolenou hodnotou Null
 
-Můžete [zobrazení nebo stažení ukázkové aplikace](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice) pro toto téma. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Můžete [zobrazení nebo stažení ukázkové aplikace](https://github.com/dotnet/samples/tree/master/csharp/getting-started/WeatherMicroservice) pro toto téma. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ### <a name="why-docker"></a>Proč Docker?
 
@@ -98,7 +98,7 @@ A Jakmile vytvoříte aplikaci, můžete ji spustit z příkazového řádku:
 dotnet run
 ```
 
-Výchozí konfigurace naslouchá na http://localhost: 5000. Otevřete prohlížeč, přejděte na této stránce a najdete v části "Hello World!" Zpráva.
+Výchozí konfigurace naslouchá `http://localhost:5000`. Otevřete prohlížeč, přejděte na této stránce a najdete v části "Hello World!" Zpráva.
 
 ### <a name="anatomy-of-an-aspnet-core-application"></a>Anatomie aplikace ASP.NET Core
 

@@ -1,5 +1,5 @@
 ---
-title: "Rozhraní .NET framework 4.7, 4.6 a 4.5"
+title: Rozhraní .NET framework 4.7, 4.6 a 4.5
 ms.date: 10/17/2017
 ms.prod: .net-framework
 ms.technology:

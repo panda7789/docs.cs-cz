@@ -1,14 +1,15 @@
 ---
-title: "Dělení na vlákna (C#)"
-ms.custom: 
+title: Dělení na vlákna (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 236d157d-37c0-4ee8-89fc-721e6c596325
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 661208662c022b2a3b9c5daae6b0425e46ea6501

@@ -1,21 +1,22 @@
 ---
-title: "Obecné typy a reflexe (Průvodce programováním v C#)"
+title: Obecné typy a reflexe (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: cc2363eea7d5c601fc73f5f9eb14b4b07ad14cb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3048cb6a9b333107f6ea37edf31ead96f9fe2057
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Obecné typy a reflexe (Průvodce programováním v C#)
 Protože Common Language Runtime (CLR) má přístup k informacím obecného typu za běhu, můžete získat informace o obecné typy v stejným způsobem jako u neobecné typy reflexe. Další informace najdete v tématu [obecné typy v čase spuštění](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
@@ -38,19 +39,19 @@ Protože Common Language Runtime (CLR) má přístup k informacím obecného typ
 |<xref:System.Type.DeclaringMethod%2A>|Vrací obecná metoda, která definována aktuální obecná typ parametru, nebo hodnota null, pokud parametr typu nebyl definované obecná metoda.|  
 |<xref:System.Type.MakeGenericType%2A>|Nahradí prvků pole typy parametrů typu aktuální definice obecného typu a vrátí <xref:System.Type> objekt reprezentující výsledná sestavený typu.|  
   
- Kromě toho se přidají nové členy k <xref:System.Reflection.MethodInfo> třída povolit informace o běhu pro obecné metody. Najdete v článku <xref:System.Reflection.MethodInfo.IsGenericMethod%2A> vlastnost poznámky seznam invariantní podmínky pro termínů používaných, aby odpovídala v obecné metody.  
+ Kromě toho členy <xref:System.Reflection.MethodInfo> třída povolit informace o běhu pro obecné metody. Najdete v článku <xref:System.Reflection.MethodBase.IsGenericMethod%2A> vlastnost poznámky seznam invariantní podmínky pro termínů používaných, aby odpovídala v obecné metody.  
   
 |Název člena System.Reflection.MemberInfo|Popis|  
 |----------------------------------------------|-----------------|  
-|<xref:System.Reflection.MethodInfo.IsGenericMethod%2A>|Vrátí hodnotu true Pokud je obecná metoda.|  
+|<xref:System.Reflection.MethodBase.IsGenericMethod%2A>|Vrátí hodnotu true Pokud je obecná metoda.|  
 |<xref:System.Reflection.MethodInfo.GetGenericArguments%2A>|Vrátí pole Typ objektů, které představují argumenty typu sestavené obecné metody nebo parametry typu definice obecná metoda.|  
 |<xref:System.Reflection.MethodInfo.GetGenericMethodDefinition%2A>|Vrátí základní definice obecné metody pro aktuální metoda vytvořený.|  
-|<xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A>|Vrátí hodnotu true Pokud metoda nebo některý z jeho nadřazených typů obsahovat všechny parametry typu, pro které nebyla zadána konkrétní typy.|  
-|<xref:System.Reflection.MethodInfo.IsGenericMethodDefinition%2A>|Vrátí hodnotu true, pokud aktuální <xref:System.Reflection.MethodInfo> představuje definici obecná metoda.|  
+|<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>|Vrátí hodnotu true Pokud metoda nebo některý z jeho nadřazených typů obsahovat všechny parametry typu, pro které nebyla zadána konkrétní typy.|  
+|<xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A>|Vrátí hodnotu true, pokud aktuální <xref:System.Reflection.MethodInfo> představuje definici obecná metoda.|  
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|Nahradí prvků pole typy parametrů typu aktuální definice obecné metody a vrátí <xref:System.Reflection.MethodInfo> objekt reprezentující výsledná sestavený metoda.|  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
  [Reflexe a obecné typy](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
  [Obecné typy](~/docs/standard/generics/index.md)

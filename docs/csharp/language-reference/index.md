@@ -1,8 +1,9 @@
 ---
-title: "Referenční dokumentace jazyka C#"
+title: Referenční dokumentace jazyka C#
 ms.date: 02/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - Visual C#, language reference
@@ -11,7 +12,7 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-caps.latest.revision: "43"
+caps.latest.revision: 43
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6f885dcf17bb1e6d6cf4ba628b586f2107675c4a

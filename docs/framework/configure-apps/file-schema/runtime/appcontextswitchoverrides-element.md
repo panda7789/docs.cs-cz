@@ -1,10 +1,8 @@
 ---
 title: '&lt;AppContextSwitchOverrides&gt; – Element'
 ms.custom: ''
-ms.date: 01/08/2018
+ms.date: 03/28/2018
 ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - dotnet-bcl
 - dotnet-clr
@@ -16,17 +14,16 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 71888febdc42f0ee65bdcd55a761700eda065bc1
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a17d67a1c6143897802bb15b983a9a909fd5949c
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; – Element
 Definuje jeden nebo více přepínač používaný <xref:System.AppContext> třídy poskytují mechanismus vyjádření výslovného nesouhlasu pro nové funkce.  
@@ -94,6 +91,7 @@ Definuje jeden nebo více přepínač používaný <xref:System.AppContext> tř�
 |`Switch.System.Net.`<br/>`DontEnableSystemDefaultTlsVersions`|Zakáže SystemDefault TLS verze vrácení zpět na výchozí Tls12, Tls11, Tls.|Rozhraní .NET framework 4.7|
 |`Switch.System.Net.`<br/>`DontEnableTlsAlerts`|Zakáže výstrahy SslStream TLS na straně serveru.|Rozhraní .NET framework 4.7|
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseECMAScriptV6EscapeControlCharacter` |Ovládací prvky jestli [DataContractJsonSerializer](xref:System.Runtime.Serialization.Json.DataContractJsonSerializer) serializuje některé řídicí znaky založených na standardech ECMAScript V6 a v8:. Další informace najdete v tématu [omezení rizik: serializace řídicí znaky s objektu DataContractJsonSerializer](Mitigation:%20Serialization%20of%20Control%20Characters%20with%20the%20DataContractJsonSerializer.md)| Rozhraní .NET framework 4.7 |
+|`Switch.System.Runtime.Serialization.`<br/>`DoNotUseTimeZoneInfo`|Ovládací prvky jestli <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více úpravy nebo pouze jediné úpravy pro časové pásmo. Pokud `true`, použije <xref:System.TimeZoneInfo> typ k serializaci a deserializaci dat Datum a čas; jinak použije <xref:System.TimeZone> typu, který nepodporuje více pravidel úpravy.|.NET Framework 4.6.2|
 |`Switch.System.Security.ClaimsIdentity.`<br/>`SetActorAsReferenceWhenCopyingClaimsIdentity`|Ovládací prvky jestli <xref:System.Security.Claims.ClaimsIdentity.%23ctor%28System.Security.Principal.IIdentity%29?displayProperty=nameWithType> konstruktor nastaví nový objekt <xref:System.Security.Claims.ClaimsIdentity.Actor%2A?displayProperty=nameWithType> vlastnost s odkaz na existující objekt. Další informace najdete v tématu [omezení rizik: konstruktor ClaimsIdentity](~/docs/framework/migration-guide/mitigation-claimsidentity-constructor.md).|.NET Framework 4.6.2|  
 |`Switch.System.Security.Cryptography.`<br/>`AesCryptoServiceProvider.DontCorrectlyResetDecryptor`|Ovládací prvky zda pokus o opakované použití <xref:System.Security.Cryptography.AesCryptoServiceProvider> vyvolá modul pro dešifrování <xref:System.Security.Cryptography.CryptographicException>. Další informace najdete v tématu poskytuje modul pro dešifrování AesCryptoServiceProvider opakovaně použitelné transform](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#aescryptoserviceprovider-decryptor-provides-a-reusable-transform).|.NET Framework 4.6.2|
 |`Switch.System.Security.Cryptography.`<br/>`DoNotAddrOfCspParentWindowHandle`|Ovládací prvky zda hodnotu [CspParameters.ParentWindowHandle](xref:System.Security.Cryptography.CspParameters.ParentWindowHandle) vlastnost je [IntPtr](xref:System.IntPtr) , představuje umístění paměti okno zpracování, nebo zda je popisovač okna (popisovačem HWND). Další informace najdete v tématu [omezení rizik: CspParameters.ParentWindowHandle očekává popisovačem HWND](Mitigation:%20CspParameters.ParentWindowHandle%20Expects%20an%20HWND.md). |Rozhraní .NET framework 4.7|   
@@ -109,6 +107,7 @@ Definuje jeden nebo více přepínač používaný <xref:System.AppContext> tř�
 |`Switch.System.ServiceProcess.`<br/>`DontThrowExceptionsOnStart`|Určuje, zda výjimky vydané na spuštění služby rozšířeny volající <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType> metoda.|Rozhraní .NET framework 4.7.1|
 |`Switch.System.Windows.Controls.Grid.`<br/>`StarDefinitionsCanExceedAvailableSpace` |Určuje, zda Windows Presentation Foundation platí staré algoritmus (`true`) nebo nového algoritmu (`false`) v přidělování místa pro \*-sloupce. Další informace najdete v tématu [omezení rizik: ovládání mřížky přidělení místa na sloupce hvězdičky](Mitigation:%20Grid%20Control's%20Space%20Allocation%20to%20Star-columns.md). |Rozhraní .NET framework 4.7 |
 |`Switch.System.Windows.Controls.TabControl.`<br/>`SelectionPropertiesCanLagBehindSelectionChangedEvent`|Ovládací prvky, jestli selektor nebo na kartě řízení vždy aktualizace hodnota jeho vlastnosti vybrané hodnoty před vyvoláním výběru událost změněné.|Rozhraní .NET framework 4.7.1|
+|`Switch.System.Windows.DoNotScaleForDpiChanges`|Určuje, zda DPI změnách v za systému (hodnota `false`) nebo základ pro sledování (hodnota `true`).|.NET Framework 4.6.2|
 |`Switch.System.Windows.Forms.`<br />`DontSupportReentrantFilterMessage`|Výslovný nesouhlas kód, který umožňuje vlastní <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementace k bezpečně filtrovat zprávy, aniž by došlo k výjimce při <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> metoda je volána. Další informace najdete v tématu [omezení rizik: implementace vlastních IMessageFilter.PreFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md).|.NET Framework 4.6.1|  
 |`Switch.System.Windows.Input.Stylus.`<br/>`EnablePointerSupport`|Určuje, zda je volitelný `WM_POINTER`– na základě touch/pera zásobníku je povolena v aplikacích WPF. Další informace najdete v tématu [omezení rizik: na základě ukazatel Touch a podporu pera](Mitigation:%20Pointer-based%20Touch%20and%20Stylus%20Support.md) | 
 |`Switch.System.Windows.Media.ImageSourceConverter.`<br/>`OverrideExceptionWithNullReferenceException`|Určuje, jestli starší verze [NullReferenceException](xref:System.NullReferenceException) je vyvolána místo výjimky, konkrétně určující příčinou výjimky (například [DirectoryNotFoundException](xref:System.IO.DirectoryNotFoundException) nebo [ FileNotFoundException](xref:System.IO.FileNotFoundException). Je určena pro použití v kódu, který závisí na zpracování [NullReferenceException](xref:System.NullReferenceException). | Rozhraní .NET framework 4.7 |

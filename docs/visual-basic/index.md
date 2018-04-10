@@ -1,6 +1,6 @@
 ---
 title: Visual Basic
-ms.date: 07/20/2015
+ms.date: 03/28/2018
 ms.prod: .net
 ms.technology:
 - devlang-visual-basic
@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Visual Basic
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 96c7c93056b11c08ccdfa48a0d78f2996c2d86d4
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 6a7a02ee91a9e80e9d4871a701f90052c0f63df6
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="visual-basic-guide"></a>Průvodce Visual Basicem
 

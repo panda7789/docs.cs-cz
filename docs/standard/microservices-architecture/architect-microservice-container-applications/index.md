@@ -1,7 +1,7 @@
 ---
-title: "Aplikace založené na architektury Mikroslužby a kontejneru"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Aplikace založené na architektury Mikroslužby a kontejneru"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Aplikace založené na architektury Mikroslužby a kontejneru
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Aplikace založené na architektury Mikroslužby a kontejneru
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

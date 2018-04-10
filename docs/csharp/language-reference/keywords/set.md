@@ -1,5 +1,5 @@
 ---
-title: "set (Referenční dokumentace jazyka C#)"
+title: set (Referenční dokumentace jazyka C#)
 ms.date: 03/10/2017
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - set keyword [C#]
 ms.assetid: 30d7e4e5-cc2e-4635-a597-14a724879619
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b810280724dcf608859bfa455947a75ce64b7abe

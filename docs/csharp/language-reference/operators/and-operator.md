@@ -1,6 +1,6 @@
 ---
-title: "&amp;Operátor (referenční dokumentace jazyka C#)"
-ms.date: 07/20/2015
+title: '&amp; Operátor (referenční dokumentace jazyka C#)'
+ms.date: 04/04/2018
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -13,24 +13,24 @@ helpviewer_keywords:
 - '& operator [C#]'
 - AND operator (&) [C#]
 ms.assetid: afa346d5-90ec-4b1f-a2c8-3881f018741d
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: eceee8e01ba46f65c6b182a40d14e62aaba5dd53
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f26305bfa1e8c9ba45493ad2ab4937d554590911
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="amp-operator-c-reference"></a>&amp;Operátor (referenční dokumentace jazyka C#)
-& Operátor může fungovat jako unární operátor nebo binární operátor.  
+# <a name="amp-operator-c-reference"></a>&amp; Operátor (referenční dokumentace jazyka C#)
+`&` Operátor může fungovat jako unární operátor nebo binární operátor.  
   
 ## <a name="remarks"></a>Poznámky  
- Operátor unární & vrátí adresu jeho operand (vyžaduje [unsafe](../../../csharp/language-reference/keywords/unsafe.md) kontextu).  
+ Unární `&` operátor vrátí adresu jeho operand (vyžaduje [unsafe](../../../csharp/language-reference/keywords/unsafe.md) kontextu).  
   
- Binární & operátory jsou předdefinovány pro integrální typy a `bool`. Pro integrální typy & vypočítá logické bitové operace AND z operandů. Pro `bool` operandy & výpočtů logické a operandů; výsledek je `true` Pokud jsou obě jejími operandy `true`.  
+ Binární `&` jsou operátory předdefinovány pro integrální typy a `bool`. Pro integrální typy & vypočítá logické bitové operace AND z operandů. Pro `bool` operandy & výpočtů logické a operandů; výsledek je `true` Pokud jsou obě jejími operandy `true`.  
   
- `&` Operátor vyhodnotí oba operátory bez ohledu na první z nich je hodnota. Příklad:  
+ Binárního souboru `&` operátor vyhodnotí oba operátory bez ohledu na první z nich je hodnotu, na rozdíl od [operátor podmíněného AND](../../../csharp/language-reference/operators/conditional-and-operator.md) `&&`. Příklad:  
   
  [!code-csharp[csRefOperators#37](../../../csharp/language-reference/operators/codesnippet/CSharp/and-operator_1.cs)]  
   
@@ -41,5 +41,5 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)

@@ -1,8 +1,9 @@
 ---
-title: "Interoperabilita (Průvodce programováním v C#)"
+title: Interoperabilita (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - COM interop
@@ -10,7 +11,7 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-caps.latest.revision: "31"
+caps.latest.revision: 31
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2965543066b0846a6a4f8a3199590049947122f2

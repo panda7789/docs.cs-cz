@@ -1,23 +1,24 @@
 ---
-title: "Serializace pracovních postupů a aktivit do a z XAML"
-ms.custom: 
+title: Serializace pracovních postupů a aktivit do a z XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 37685b32-24e3-4d72-88d8-45d5fcc49ec2
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6c1954f02aef13599f7bd24f8e2d136f0f876256
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4ca32eb9543498279448617e33169ddd22882702
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="serializing-workflows-and-activities-to-and-from-xaml"></a>Serializace pracovních postupů a aktivit do a z XAML
 Kromě se zkompiluje do typy, které jsou součástí sestavení, definice pracovního postupu také serializovat lze do jazyka XAML. Tyto serializovaných definice můžete znovu pro úpravy nebo kontroly, předaný systém sestavení pro kompilaci, nebo načíst a volána. Toto téma poskytuje přehled o serializaci definice pracovního postupu a práce s XAML pracovního postupu definice.  
@@ -27,9 +28,9 @@ Kromě se zkompiluje do typy, které jsou součástí sestavení, definice praco
   
  [!code-csharp[CFX_WorkflowApplicationExample#41](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#41)]  
   
- Každý z <xref:System.Activities.DynamicActivityProperty> instance představuje jeden z vstupní argumenty do pracovního postupu a <xref:System.Activities.ActivityBuilder.Implementation%2A> obsahuje aktivity, které tvoří logika pracovního postupu. Všimněte si, že hodnoty r ve výrazech v tomto příkladu jsou výrazy jazyka Visual Basic. Lambda – výrazy nejsou serializovatelný do jazyka XAML Pokud <xref:System.Activities.Expressions.ExpressionServices.Convert%2A> se používá. Pokud chcete otevřít nebo upravit v Návrháři pracovních postupů jsou určené serializovaných pracovních pak lze použít výrazy jazyka Visual Basic. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).  
+ Každý z <xref:System.Activities.DynamicActivityProperty> instance představuje jeden z vstupní argumenty do pracovního postupu a <xref:System.Activities.ActivityBuilder.Implementation%2A> obsahuje aktivity, které tvoří logika pracovního postupu. Všimněte si, že hodnoty r ve výrazech v tomto příkladu jsou výrazy jazyka Visual Basic. Lambda – výrazy nejsou serializovatelný do jazyka XAML Pokud <xref:System.Activities.Expressions.ExpressionServices.Convert%2A> se používá. Pokud chcete otevřít nebo upravit v Návrháři pracovních postupů jsou určené serializovaných pracovních pak lze použít výrazy jazyka Visual Basic. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).  
   
- K serializaci reprezentována definice pracovního postupu <xref:System.Activities.ActivityBuilder> instance do jazyka XAML, použijte <xref:System.Activities.XamlIntegration.ActivityXamlServices> k vytvoření <xref:System.Xaml.XamlWriter>a potom pomocí <xref:System.Xaml.XamlServices> k serializaci definice pracovního postupu pomocí <xref:System.Xaml.XamlWriter>. <xref:System.Activities.XamlIntegration.ActivityXamlServices>obsahuje metody pro mapování <xref:System.Activities.ActivityBuilder> instance do a z XAML a pro spouštění pracovních postupů XAML a vrátit <xref:System.Activities.DynamicActivity> může být volána. V následujícím příkladu <xref:System.Activities.ActivityBuilder> instance z předchozího příkladu je serializovat na řetězec a taky uloží do souboru.  
+ K serializaci reprezentována definice pracovního postupu <xref:System.Activities.ActivityBuilder> instance do jazyka XAML, použijte <xref:System.Activities.XamlIntegration.ActivityXamlServices> k vytvoření <xref:System.Xaml.XamlWriter>a potom pomocí <xref:System.Xaml.XamlServices> k serializaci definice pracovního postupu pomocí <xref:System.Xaml.XamlWriter>. <xref:System.Activities.XamlIntegration.ActivityXamlServices> obsahuje metody pro mapování <xref:System.Activities.ActivityBuilder> instance do a z XAML a pro spouštění pracovních postupů XAML a vrátit <xref:System.Activities.DynamicActivity> může být volána. V následujícím příkladu <xref:System.Activities.ActivityBuilder> instance z předchozího příkladu je serializovat na řetězec a taky uloží do souboru.  
   
 ```csharp  
 // Serialize the workflow to XAML and store it in a string.  
@@ -74,7 +75,7 @@ sw.Close();
 </Activity>  
 ```  
   
- Pro načtení serializovaných pracovního postupu, <xref:System.Activities.XamlIntegration.ActivityXamlServices> <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A> metoda se používá. To trvá definice serializovaných pracovního postupu a vrátí <xref:System.Activities.DynamicActivity> představující definice pracovního postupu. Všimněte si, že dokud není deserializovat XAML <xref:System.Activities.Activity.CacheMetadata%2A> se volá na text <xref:System.Activities.DynamicActivity> během procesu ověření. Pokud ověření není explicitně volána poté se provádí při vyvolání pracovního postupu. Pokud definice XAML pracovního postupu je neplatná, pak <xref:System.Argument> je vyvolána výjimka. Jakékoli výjimky vyvolány z <xref:System.Activities.Activity.CacheMetadata%2A> řídicí z volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a musí být zpracována volající. V následujícím příkladu je serializovaná pracovní postup z předchozího příkladu načíst a vyvolána pomocí <xref:System.Activities.WorkflowInvoker>.  
+ Pro načtení serializovaných pracovního postupu, <xref:System.Activities.XamlIntegration.ActivityXamlServices> <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A> metoda se používá. To trvá definice serializovaných pracovního postupu a vrátí <xref:System.Activities.DynamicActivity> představující definice pracovního postupu. Všimněte si, že dokud není deserializovat XAML <xref:System.Activities.Activity.CacheMetadata%2A> se volá na text <xref:System.Activities.DynamicActivity> během procesu ověření. Pokud ověření není explicitně volána poté se provádí při vyvolání pracovního postupu. Pokud definice XAML pracovního postupu je neplatná, pak <xref:System.ArgumentException> je vyvolána výjimka. Jakékoli výjimky vyvolány z <xref:System.Activities.Activity.CacheMetadata%2A> řídicí z volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a musí být zpracována volající. V následujícím příkladu je serializovaná pracovní postup z předchozího příkladu načíst a vyvolána pomocí <xref:System.Activities.WorkflowInvoker>.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#43](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#43)]  
   
@@ -83,7 +84,7 @@ sw.Close();
  **25 + 15**  
 **40**    
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)]vyvolání pracovních s vstupní a výstupní argumenty, najdete v části [pomocí WorkflowInvoker a WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md) a <xref:System.Activities.WorkflowInvoker.Invoke%2A>.  
+>  [!INCLUDE[crabout](../../../includes/crabout-md.md)] vyvolání pracovních s vstupní a výstupní argumenty, najdete v části [pomocí WorkflowInvoker a WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md) a <xref:System.Activities.WorkflowInvoker.Invoke%2A>.  
   
  Pokud serializovaných pracovní postup obsahuje C# výrazy, pak <xref:System.Activities.XamlIntegration.ActivityXamlServicesSettings> instanci s jeho <xref:System.Activities.XamlIntegration.ActivityXamlServicesSettings.CompileExpressions%2A> vlastnost nastavena na hodnotu `true` musí být předán jako parametr pro <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A?displayProperty=nameWithType>, jinak hodnota <xref:System.NotSupportedException> bude vyvolána s zprávu podobnou té následující: `Expression Activity type 'CSharpValue`1 vyžaduje kompilace aby bylo možné spustit.  Zkontrolujte, že pracovní postup byl zkompilován. "  
   
@@ -96,7 +97,7 @@ ActivityXamlServicesSettings settings = new ActivityXamlServicesSettings
 DynamicActivity<int> wf = ActivityXamlServices.Load(new StringReader(serializedAB), settings) as DynamicActivity<int>;  
 ```  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).  
+ [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).  
   
  Definice serializovaných pracovního postupu můžete také načíst do <xref:System.Activities.ActivityBuilder> instance pomocí <xref:System.Activities.XamlIntegration.ActivityXamlServices> <xref:System.Activities.XamlIntegration.ActivityXamlServices.CreateBuilderReader%2A> metoda. Po načtení serializovaných pracovního postupu do <xref:System.Activities.ActivityBuilder> instance může být prověřovány a změnit. To je užitečné pro autory návrháře vlastní pracovní postup a poskytuje mechanismus pro ukládání a načíst definice pracovního postupu během procesu návrhu. V následujícím příkladu je načtena definice pracovního postupu serializovaných z předchozího příkladu a jsou prověřovány jeho vlastnosti.  
   

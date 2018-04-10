@@ -1,12 +1,13 @@
 ---
-title: "Nespravované rozhraní API"
-ms.custom: 
+title: Nespravované rozhraní API
+ms.custom: ''
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: reference
 helpviewer_keywords:
 - runtime, unmanaged APIs
@@ -17,7 +18,8 @@ ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d86cf65dfb3637dbacfeff0cf2b5f48b12c49212
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

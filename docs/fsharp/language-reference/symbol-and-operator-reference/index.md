@@ -1,20 +1,20 @@
 ---
-title: "Referenční dokumentace symbolů a operátorů (F#)"
-description: "Další informace o operátory, které se používají v programovací jazyk F # a symboly."
-keywords: "Visual f #, f #, funkční programování"
+title: Referenční dokumentace symbolů a operátorů (F#)
+description: 'Další informace o operátory, které se používají v programovací jazyk F # a symboly.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
-ms.date: 05/16/2016
+ms.date: 04/04/2018
 ms.topic: language-reference
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ab453800-d4d0-4a11-9d55-2b358d56af27
-ms.openlocfilehash: cb21ef7385cb679f9d445f8ee419db3d727fa057
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 2fa4504c7059b4559b364d4000fe4ec6131430e5
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
@@ -34,9 +34,9 @@ Následující tabulka popisuje symboly použité v jazyce F #, obsahuje odkazy 
 |`"""`|[Řetězce](../strings.md)|Vymezuje typu verbatim textového řetězce. Se liší od `@"..."` , můžete určit znak dvojité uvozovky, pomocí v jednoduchých uvozovkách v řetězci.|
 |`#`|[Direktivy kompilátoru](../compiler-directives.md)<br /><br />[Flexibilní typy](../flexible-types.md)|<ul><li>Například předpony direktivu preprocesor nebo kompilátoru `#light`.<br /></li><li>Při použití s typem, označuje *flexibilní typu*, které odkazuje na určitý typ nebo jeden z jeho odvozených typů.<br /></li><ul/>|
 |`$`|Není k dispozici žádné další informace.|<ul><li>Interně používá k určité generované kompilátorem proměnná názvy a funkcí.<br /></li><ul/>|
-|`%`|[Aritmetické operátory](arithmetic-operators.md)<br /><br />[Citace kódu](../code-quotations.md)|<ul><li>Vypočítá numerického zbytku celé číslo.<br /></li><li>Použít pro splétání výrazy do uvozovky typové kódu.<br /></li><ul/>|
+|`%`|[Aritmetické operátory](arithmetic-operators.md)<br /><br />[Citace kódu](../code-quotations.md)|<ul><li>Vypočítá zbytek celé číslo.<br /></li><li>Použít pro splétání výrazy do uvozovky typové kódu.<br /></li><ul/>|
 |`%%`|[Citace kódu](../code-quotations.md)|<ul><li>Použít pro splétání výrazy do netypový kód uvozovky.<br /></li><ul/>|
-|`%?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá numerického zbytku celé číslo, když na pravé straně je typ s možnou hodnotou Null.<br /></li><ul/>|
+|`%?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá zbytek celé číslo, když na pravé straně je typ s možnou hodnotou Null.<br /></li><ul/>|
 |`&`|[Výrazy shody](../match-expressions.md)|<ul><li>Vypočítá adresu měnitelný hodnoty pro použití při vzájemné spolupráci s jinými jazyky.<br /></li><li>Použít v a vzory.<br /></li><ul/>|
 |`&&`|[Logické operátory](boolean-operators.md)|<ul><li>Vypočítá Boolean a operace.<br /></li><ul/>|
 |`&&&`|[Bitové operátory](bitwise-operators.md)|<ul><li>Vypočítá bitové operace AND.<br /></li><ul/>|
@@ -81,8 +81,8 @@ Následující tabulka popisuje symboly použité v jazyce F #, obsahuje odkazy 
 |`<=`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vrátí `true` Pokud na levé straně je menší než nebo rovna pravé straně; jinak vrátí `false`.<br /></li><ul/>|
 |`<=?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá operaci "menší než nebo rovno", když na pravé straně je typ s možnou hodnotou Null.<br /></li><ul/>|
 |<code>&lt;&#124;</code>|[Funkce](../functions/index.md)|<ul><li>Funkce na levé straně (operátor zpětné kanálu) předá výsledek výrazu na pravé straně.<br /></li><ul/>|
-|<code>&lt;&#124;&#124;</code>|[Operators. &#40; & č. 60; &#124; &#124; &#41; &#60;. T1 "T2," P & č. 62; Funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhh-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Předá řazené kolekce členů z dva argumenty funkce na levé straně na pravé straně.<br /></li><ul/>|
-|<code>&lt;&#124;&#124;&#124;</code>|[Operators. &#40; & č. 60; &#124; &#124; &#124; &#41; &#60;. T1, se T2, 'T3,' P & č. 62; Funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhhh-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Předá řazenou kolekci členů ze tří argumentů funkce na levé straně na pravé straně.<br /></li><ul/>|
+|<code>&lt;&#124;&#124;</code>|[Operátory. &#40; &#60; &#124; &#124; &#41; &#60;' T1, T2, U&#62; – funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhh-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Předá řazené kolekce členů z dva argumenty funkce na levé straně na pravé straně.<br /></li><ul/>|
+|<code>&lt;&#124;&#124;&#124;</code>|[Operátory. &#40; &#60; &#124; &#124; &#124; &#41; &#60;'T1, "T2," T3,' U&#62; – funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhhh-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Předá řazenou kolekci členů ze tří argumentů funkce na levé straně na pravé straně.<br /></li><ul/>|
 |`<@...@>`|[Citace kódu](../code-quotations.md)|<ul><li>Vymezuje typové kód uvozovek.<br /></li><ul/>|
 |`<@@...@@>`|[Citace kódu](../code-quotations.md)|<ul><li>Vymezuje netypový kód uvozovek.<br /></li><ul/>|
 |`=`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vrátí `true` Pokud pravé straně; rovná na levé straně, jinak vrátí `false`.<br /></li><ul/>|
@@ -113,8 +113,8 @@ Následující tabulka popisuje symboly použité v jazyce F #, obsahuje odkazy 
 |<code>&#124;&#124;</code>|[Logické operátory](boolean-operators.md)|<ul><li>Vypočítá logická hodnota nebo operaci.<br /></li><ul/>|
 |<code>&#124;&#124;&#124;</code>|[Bitové operátory](bitwise-operators.md)|<ul><li>Vypočítá bitové operace OR.<br /></li><ul/>|
 |<code>&#124;></code>|[Funkce](../functions/index.md)|<ul><li>Předá výsledek na levé straně funkce na pravé straně (operátor kanálu předat dál).<br /></li><ul/>|
-|<code>&#124;&#124;></code>|[Operators. &#40; &#124; &#124; & č. 62; &#41; &#60;. T1 "T2," P & č. 62; Funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hh%5d-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Na levé straně předá řazené kolekce členů z dva argumenty funkce na pravé straně.<br /></li><ul/>|
-|<code>&#124;&#124;&#124;></code>|[Operators. &#40; &#124; &#124; &#124; & č. 62; &#41; &#60;. T1, se T2, 'T3,' P & č. 62; Funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hhh%5d-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Na levé straně předá řazenou kolekci členů ze tří argumentů funkce na pravé straně.<br /></li><ul/>|
+|<code>&#124;&#124;></code>|[Operátory. &#40; &#124; &#124; &#62; &#41; &#60;' T1, T2, U&#62; – funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hh%5d-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Na levé straně předá řazené kolekce členů z dva argumenty funkce na pravé straně.<br /></li><ul/>|
+|<code>&#124;&#124;&#124;></code>|[Operátory. &#40; &#124; &#124; &#124; &#62; &#41; &#60;'T1, "T2," T3,' U&#62; – funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hhh%5d-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Na levé straně předá řazenou kolekci členů ze tří argumentů funkce na pravé straně.<br /></li><ul/>|
 |`~~`|[Přetížení operátoru](../operator-overloading.md)|<ul><li>Používá k deklaraci přetížení pro operátor unární negace.<br /></li><ul/>|
 |`~~~`|[Bitové operátory](bitwise-operators.md)|<ul><li>Vypočítá bitové hodnotě není operace.<br /></li><ul/>|
 |`~-`|[Přetížení operátoru](../operator-overloading.md)|<ul><li>Používá k deklaraci přetížení pro unární mínus – operátor.<br /></li><ul/>|
@@ -127,7 +127,7 @@ Následující tabulka uvádí pořadí priority operátory a žádná jiná kl�
 |--------|-------------|
 |`as`|Vpravo|
 |`when`|Vpravo|
-|<code>&#124;</code>(kanálu)|Vlevo|
+|<code>&#124;</code> (pipe)|Vlevo|
 |`;`|Vpravo|
 |`let`|Neasociativní|
 |`function`, `fun`, `match`, `try`|Neasociativní|
@@ -138,19 +138,19 @@ Následující tabulka uvádí pořadí priority operátory a žádná jiná kl�
 |`or`, <code>&#124;&#124;</code>|Vlevo|
 |`&`, `&&`|Vlevo|
 |`:>`, `:?>`|Vpravo|
-|`!=`*op*, `<` *op*, `>` *op*, `=`, <code>&#124;</code> *op*, `&`  *op*,`&`<br /><br />(včetně `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|Vlevo|
+|`!=`*op*, `<` *op*, `>` *op*, `=`, <code>&#124;</code> *op*, `&` *op* , `&`<br /><br />(včetně `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|Vlevo|
 |`^`*OP*<br /><br />(včetně `^^^`)|Vpravo|
 |`::`|Vpravo|
 |`:?`|Není asociativní|
 |`-`*op*, `+` *op*|Platí pro infix používá tyto symboly|
 |`*`*op*, `/` *op*, `%` *op*|Vlevo|
 |`**`*OP*|Vpravo|
-|`f x`(funkce aplikace)|Vlevo|
-|<code>&#124;</code>(Porovnávací)|Vpravo|
+|`f x` (funkce aplikace)|Vlevo|
+|<code>&#124;</code> (Porovnávací)|Vpravo|
 |operátory předpony (`+`*op*, `-` *op*, `%`, `%%`, `&`, `&&`, `!` *op*, `~` *op*)|Vlevo|
 |`.`|Vlevo|
 |`f(x)`|Vlevo|
-|`f<`*typy*`>`|Vlevo|
+|`f<`*Typy*`>`|Vlevo|
 F # podporuje vlastní přetížení operátoru. To znamená, že můžete definovat vlastní operátory. V předchozí tabulce *op* může být jakékoli platné (pravděpodobně prázdná) posloupnosti znaků operátor, předdefinované nebo definované uživatelem. Proto můžete tuto tabulku určit, jakou posloupnost znaků se má použít pro vlastní operátor k dosažení požadované úrovně priorit. Úvodní `.` znaky jsou ignorovány, když kompilátor určuje prioritu.
 
 ## <a name="see-also"></a>Viz také

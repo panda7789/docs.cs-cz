@@ -1,9 +1,9 @@
 ---
-title: "&lt;&lt;= – Operátor (Visual Basic)"
+title: '&lt;&lt;= – Operátor (Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -17,7 +17,7 @@ helpviewer_keywords:
 - operator<<=
 - compound assignment statements [Visual Basic]
 ms.assetid: 8ad26613-faff-4e2f-89ee-63feee33bfda
-caps.latest.revision: 
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5c5c36e4f91155c09d01b448777483941d018d9a

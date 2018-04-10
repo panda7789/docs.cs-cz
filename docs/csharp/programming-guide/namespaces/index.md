@@ -1,14 +1,15 @@
 ---
-title: "Obory názvů (Průvodce programováním v C#)"
+title: Obory názvů (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 3eb645f5beb61d3cec97a70a54e660c65be52091

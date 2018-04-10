@@ -1,8 +1,9 @@
 ---
-title: "Nezabezpečený kód a ukazatele (Průvodce programováním v C#)"
+title: Nezabezpečený kód a ukazatele (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - security [C#], type safety
@@ -13,7 +14,7 @@ helpviewer_keywords:
 - C# language, pointers
 - pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 32856461fbc6513509342a3567240de723f1fe8f

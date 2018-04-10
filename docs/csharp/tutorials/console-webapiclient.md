@@ -1,7 +1,7 @@
 ---
-title: "Vytvoření klienta REST pomocí .NET Core"
-description: "V tomto kurzu se dozvíte, jaké celou řadu funkcí v .NET Core a jazyka C#."
-keywords: "Rozhraní .NET, .NET core"
+title: Vytvoření klienta REST pomocí .NET Core
+description: V tomto kurzu se dozvíte, jaké celou řadu funkcí v .NET Core a jazyka C#.
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.author: wiwagn
 ms.date: 03/06/2017
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 22391c4db3027c0fad2115c767b5e2808fee28a0
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 8cca71b9b8e09fd26f80d53618a3f1e278e28390
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="rest-client"></a>Klienta REST
 
@@ -31,7 +31,7 @@ Budete sestavit aplikaci, která vydává požadavků HTTP pro službu REST na G
 
 V tomto kurzu je celá řada funkcí. Umožňuje vytvořit, je po jednom.
 
-Pokud dáváte přednost použijte spolu s [konečný vzorek](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient) pro toto téma, můžete ho stáhnout. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Pokud dáváte přednost použijte spolu s [konečný vzorek](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) pro toto téma, můžete ho stáhnout. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Požadavky
 Budete muset nastavit svůj počítač ke spuštění .NET core. Pokyny k instalaci najdete na [.NET Core](https://www.microsoft.com/net/core) stránky. Tuto aplikaci můžete spustit v systému Windows, Linux, systému macOS nebo v kontejner Docker. Budete muset nainstalovat editor vaše oblíbené kódu. Popisy níže použijte [Visual Studio Code](https://code.visualstudio.com/), který je typu open source pro různé platformy editor. Můžete však použít, ať nástroje umíte pracovat s.
@@ -63,7 +63,7 @@ Většinu kódu editory poskytne dokončení pro různé verze tyto knihovny. Ob
 Po provedení těchto změn, byste měli spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) znovu, aby balíček nainstalován ve vašem systému.
 
 ## <a name="making-web-requests"></a>Provádění webových požadavků
-Teď jste připravení zahájit načítání dat z webu. V této aplikaci, budete pro čtení informací z [Githubu API](https://developer.github.com/v3/). Umožňuje načíst informace o projekty v části [.NET Foundation](http://www.dotnetfoundation.org/) zastřešující. Ukázku zahájíte tím, že žádost na rozhraní API Githubu k načtení informací o projektech. Koncový bod, které budete používat: [https://api.github.com/orgs/dotnet/repos](https://api.github.com/orgs/dotnet/repos). Chcete načíst všechny informace o těchto projekty, takže budete používat požadavek HTTP GET.
+Teď jste připravení zahájit načítání dat z webu. V této aplikaci, budete pro čtení informací z [Githubu API](https://developer.github.com/v3/). Umožňuje načíst informace o projekty v části [.NET Foundation](http://www.dotnetfoundation.org/) zastřešující. Ukázku zahájíte tím, že žádost na rozhraní API Githubu k načtení informací o projektech. Koncový bod, které budete používat: [ https://api.github.com/orgs/dotnet/repos ](https://api.github.com/orgs/dotnet/repos). Chcete načíst všechny informace o těchto projekty, takže budete používat požadavek HTTP GET.
 Váš prohlížeč používá také HTTP GET požadavků a vložit, adresu URL do prohlížeče jaké informace můžete budete být přijímání a zpracování.
 
 Můžete použít <xref:System.Net.Http.HttpClient> třída k vytvoření webových požadavků. Všechny moderní API technologie .NET, například <xref:System.Net.Http.HttpClient> podporuje pouze asynchronní metody pro jeho dlouho běžící rozhraní API.
@@ -380,7 +380,7 @@ Nakonec přidejte jednu výstupní více příkaz v konzole a jste připraveni k
 Console.WriteLine(repo.LastPush);
 ```
 
-Teď má shodovat s vaší verzí [dokončení ukázkové](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient).
+Teď má shodovat s vaší verzí [dokončení ukázkové](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient).
  
 ## <a name="conclusion"></a>Závěr
 

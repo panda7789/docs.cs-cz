@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: c5720d5391eec327aa2f885fd65579aeb6260488
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: ce6ed278c4e5a9583a827e8c3ff941c2f25bf182
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-linq"></a>Práce s dotazy LINQ
 
@@ -32,7 +32,7 @@ Magicians použijte tento postup, protože každou kartu, je v zadaném umístě
 
 Pro naše účely je slabá hearted podívejte se na manipulace s posloupností data. Aplikace, kterou budete sestavení bude vytvořit karet a poté proveďte posloupnost podle okolí posouvá, zápis pořadí se pokaždé, když. Budete také porovnat aktualizované pořadí, které se původní pořadí.
 
-V tomto kurzu má několik kroků. Po dokončení každého kroku můžete aplikaci spustit a sledovat průběh. Můžete také zjistit [hotová ukázka](https://github.com/dotnet/docs/blob/master/samples/csharp/getting-started/console-linq) v úložišti GitHub dotnet/docs. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V tomto kurzu má několik kroků. Po dokončení každého kroku můžete aplikaci spustit a sledovat průběh. Můžete také zjistit [hotová ukázka](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) v úložišti GitHub dotnet nebo ukázky. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Požadavky
 

@@ -1,7 +1,7 @@
 ---
-title: "Shoda vzoru – průvodce v C#"
-description: "Další informace o výrazy v jazyce C# pro porovnávání"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
+title: Shoda vzoru – průvodce v C#
+description: Další informace o výrazy v jazyce C# pro porovnávání
+keywords: .NET, .NET Core, C#
 ms.date: 01/24/2017
 ms.author: wiwagn
 ms.topic: article
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 0c77c3c3da9983d20cdd86db18f60f83b86b07ea
-ms.sourcegitcommit: 281070dee88db86ec3bb4634d5f558d1a4e159dd
+ms.openlocfilehash: c3fbc617f742e8dd5db4b2ac46b38958cdc30007
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů #
 
@@ -87,7 +87,7 @@ Pokud omezené na konstantní hodnoty, víc než jeden `case` popisek může odp
 Nyní, s více zobecněn `switch` záleží na pořadí každého oddílu, výrazy. `switch` Výrazy jsou vyhodnocovány v textové pořadí. Provádění přenese na první `switch` štítek, který odpovídá `switch` výraz.  
 Všimněte si, že `default` případu bude spuštěn pouze pokud odpovídají žádné případu popisky. `default` Případ vyhodnotí poslední, bez ohledu na jeho textovou pořadí. Pokud neexistuje žádné `default` případ a žádná druhá `case` příkazy shodují, provádění pokračuje na následující příkaz `switch` příkaz. Žádná z `case` spuštění kódu popisky.
 
-## <a name="when-clauses-in-case-expressions"></a>`when`Klauzule v `case` výrazy
+## <a name="when-clauses-in-case-expressions"></a>`when` Klauzule v `case` výrazy
 
 Můžete použít zvláštní případy pro tyto obrazce, které mají 0 oblasti pomocí `when` klauzule ve `case` popisek. Čtverce s délkou straně 0 nebo kruh se serverem radius 0 má 0 oblasti. Určíte, že podmínky použití `when` klauzule ve `case` štítku:  
 
@@ -112,7 +112,7 @@ Nakonec můžete přidat `null` případ zajistit argument není `null`:
 
 Zvláštní chování `null` vzor je zajímavé protože konstanta `null` ve vzoru nemá typ, ale může být převedena na všechny odkaz na typ nebo typ s možnou hodnotou Null. Místo převést `null` do libovolného typu, který definuje jazyk `null` hodnota nebude odpovídat žádnému typ vzoru, bez ohledu na typ kompilaci proměnné. Díky tomuto chování nové `switch` na základě typu vzor konzistentní s `is` příkaz: `is` příkazy vždy vrátí `false` po hodnotu, se kontroluje `null`. Je také jednodušší: Po zaškrtnutí typ nepotřebujete dodatečnou kontrolu hodnotu null. Uvidíte, že ze skutečnosti, že neexistují žádné null kontroly v žádném případu bloků ukázky výše: nejsou potřebné, protože odpovídající vzoru typ zaručuje nenulovou hodnotu.
 
-## <a name="var-declarations-in-case-expressions"></a>`var`deklarace v `case` výrazy
+## <a name="var-declarations-in-case-expressions"></a>`var` deklarace v `case` výrazy
 
 Zavedení `var` jako jeden z výrazů shodu porovnávací zavádí nové pravidel.
 

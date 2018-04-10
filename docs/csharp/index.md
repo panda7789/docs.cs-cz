@@ -1,6 +1,6 @@
 ---
-title: "Průvodce jazykem C#"
-description: "Zjistěte, jak průvodce C# můžete získat rozsáhlé znalosti v C#, ať už jste vývojář nové nebo po ostřílené expert."
+title: Průvodce jazykem C#
+description: Zjistěte, jak průvodce C# můžete získat rozsáhlé znalosti v C#, ať už jste vývojář nové nebo po ostřílené expert.
 author: BillWagner
 ms.date: 01/30/2018
 ms.topic: article

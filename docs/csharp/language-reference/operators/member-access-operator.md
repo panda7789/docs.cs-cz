@@ -1,5 +1,5 @@
 ---
-title: ". Operátor (referenční dokumentace jazyka C#)"
+title: . Operátor (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - . operator [C#]
 - dot operator (.) [C#]
 ms.assetid: a1f54b52-b686-4ae5-a48e-a2a9ebd0eb7b
-caps.latest.revision: 
+caps.latest.revision: 21
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2bb636bc110f57ace9a824a43afdd86246ed0a5c

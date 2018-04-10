@@ -1,5 +1,5 @@
 ---
-title: "&gt;&gt;Operátor (referenční dokumentace jazyka C#)"
+title: '&gt;&gt;Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - '>> operator [C#]'
 - right shift operator (>>) [C#]
 ms.assetid: a07f8679-d318-4ef8-b38b-65903efb8056
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7c2eddf06d7b8417c9fcb0fed395b2bf51e07144

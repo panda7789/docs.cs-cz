@@ -1,24 +1,25 @@
 ---
-title: "Programování s uzly (C#)"
-ms.custom: 
+title: Programování s uzly (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: c38df0f2-c805-431a-93ff-9103a4284c2f
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 629e530caeabf3231655881199c0c1d83ae9f464
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 92ec8445123a8b685bd6ea134aca0b792cab6d2d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="programming-with-nodes-c"></a>Programování s uzly (C#)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Vývojáři, kteří potřebují často psát programy, jako je například editoru XML, transformace systému nebo Autor sestavy je potřeba psát programy, které fungují na jemnějšího úrovni členitosti než elementů a atributů. Často potřebují k práci na úrovni uzlu, manipulace s textové uzly, pokyny pro zpracování a komentáře. Toto téma obsahuje některé podrobnosti o programování na úrovni uzlu.  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Vývojáři, kteří potřebují často psát programy, jako je například editoru XML, transformace systému nebo Autor sestavy je potřeba psát programy, které fungují na jemnějšího úrovni členitosti než elementů a atributů. Často potřebují k práci na úrovni uzlu, manipulace s textové uzly, pokyny pro zpracování a komentáře. Toto téma obsahuje některé podrobnosti o programování na úrovni uzlu.  
   
 ## <a name="node-details"></a>Podrobnosti o uzlu  
  Existuje několik podrobností programování, které programátorem práce na úrovni uzlu měli vědět.  
@@ -42,7 +43,7 @@ True
 ```  
   
 ### <a name="adjacent-text-nodes-are-possible"></a>Sousední textové uzly jsou možné  
- Počet programovací modely XML jsou vždy sloučit uzly okolního textu. To se někdy nazývá normalizaci textové uzly. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Normalizuje není textové uzly. Pokud přidáte dva textové uzly stejného elementu, bude výsledkem uzly okolního textu. Ale pokud přidáte obsah zadán jako řetězec, nikoli jako <xref:System.Xml.Linq.XText> uzlu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může sloučení řetězec s do okolního textu uzlu.  
+ Počet programovací modely XML jsou vždy sloučit uzly okolního textu. To se někdy nazývá normalizaci textové uzly. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Normalizuje není textové uzly. Pokud přidáte dva textové uzly stejného elementu, bude výsledkem uzly okolního textu. Ale pokud přidáte obsah zadán jako řetězec, nikoli jako <xref:System.Xml.Linq.XText> uzlu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může sloučení řetězec s do okolního textu uzlu.  
   
  Následující příklad ukazuje toto:  
   
@@ -131,10 +132,10 @@ AnAttribute="abc"  IsNamespaceDeclaration:False
 ```  
   
 ### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>Metody osy XPath nevrátí podřízené prázdné místo XDocument  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Umožňuje pro podřízené uzly text <xref:System.Xml.Linq.XDocument>, tak dlouho, dokud textové uzly obsahovat jenom prázdný znak. Ale objektový model XPath nezahrnuje mezer jako podřízené uzly dokumentu, tak při procházení podřízené objekty daného <xref:System.Xml.Linq.XDocument> pomocí <xref:System.Xml.Linq.XContainer.Nodes%2A> osy, bude vrácen mezer textové uzly. Ale když iteraci podřízené objekty daného <xref:System.Xml.Linq.XDocument> pomocí metody XPath osy, nejsou k dispozici mezer textové uzly.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Umožňuje pro podřízené uzly text <xref:System.Xml.Linq.XDocument>, tak dlouho, dokud textové uzly obsahovat jenom prázdný znak. Ale objektový model XPath nezahrnuje mezer jako podřízené uzly dokumentu, tak při procházení podřízené objekty daného <xref:System.Xml.Linq.XDocument> pomocí <xref:System.Xml.Linq.XContainer.Nodes%2A> osy, bude vrácen prázdný textové uzly. Ale když iteraci podřízené objekty daného <xref:System.Xml.Linq.XDocument> pomocí metody XPath osy, nejsou k dispozici prázdný textové uzly.  
   
 ```csharp  
-// Create a document with some white space child nodes of the document.  
+// Create a document with some white-space child nodes of the document.  
 XDocument root = XDocument.Parse(  
 @"<?xml version='1.0' encoding='utf-8' standalone='yes'?>  
   
@@ -143,10 +144,10 @@ XDocument root = XDocument.Parse(
 <!--a comment-->  
 ", LoadOptions.PreserveWhitespace);  
   
-// count the white space child nodes using LINQ to XML  
+// count the white-space child nodes using LINQ to XML  
 Console.WriteLine(root.Nodes().OfType<XText>().Count());  
   
-// count the white space child nodes using XPathEvaluate  
+// count the white-space child nodes using XPathEvaluate  
 Console.WriteLine(((IEnumerable)root.XPathEvaluate("text()")).OfType<XText>().Count());   
 ```  
   

@@ -1,6 +1,6 @@
 ---
-title: "Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery"
-description: "Postup navýšení a posunutí existujících aplikací do cloudu Azure a kontejnery s elektronickou knihu."
+title: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery
+description: Postup navýšení a posunutí existujících aplikací do cloudu Azure a kontejnery s elektronickou knihu.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017

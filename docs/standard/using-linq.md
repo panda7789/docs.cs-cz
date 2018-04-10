@@ -1,7 +1,7 @@
 ---
-title: "LINQ (Language integrovaného dotazu)"
-description: "Zjistěte, jak LINQ poskytuje funkce dotazování úroveň jazyka a rozhraní API jazyka C# a VB jako způsob, jak napsat kód výrazovou, deklarativní."
-keywords: "Rozhraní .NET, .NET core"
+title: LINQ (Language integrovaného dotazu)
+description: Zjistěte, jak LINQ poskytuje funkce dotazování úroveň jazyka a rozhraní API jazyka C# a VB jako způsob, jak napsat kód výrazovou, deklarativní.
+keywords: Rozhraní .NET, .NET core
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
@@ -13,11 +13,11 @@ ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: eb9bc30c31ab02df7c04c885f59cadfcc1f00253
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4d85104d016f5f19f6908670125df91f20536d72
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language integrovaného dotazu)
 
@@ -143,7 +143,7 @@ var cats = dogs.Select(dog => dog.TurnIntoACat());
 var queryCats = from dog in dogs
                 select dog.TurnIntoACat();
 
-// Summing then lengths of a set of strings
+// Summing the lengths of a set of strings
 int seed = 0;
 int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 ```

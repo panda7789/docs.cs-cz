@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: ec9d9fcdcaf2c018762542f6dc403e2a4f89376b
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 04452159c759a0c7236c1b93dc966e5e9c54574a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Prozkoumejte kódu pomocí syntaxe vizualizér Roslyn v sadě Visual Studio
 
@@ -28,16 +28,17 @@ Seznamte se s koncepty používané v sadě SDK platformy .NET kompilátoru nač
 
 Tento příkaz otevře vizualizér syntaxe jako plovoucí okno nástroje. Pokud nemáte, otevřete okno editoru kódu, zobrazení je prázdný, jak je znázorněno na následujícím obrázku. 
 
-![Okno vizualizér syntaxe nástroje](media/syntax-visualizer.png)
+![Okno vizualizér syntaxe nástroje](media/syntax-visualizer/syntax-visualizer.png)
 
 Ukotvení toto okno nástroj na vhodné místo v sadě Visual Studio, jako je například na levé straně. Vizualizér zobrazují informace o aktuální souboru kódu.
 
 Vytvoření nového projektu pomocí **soubor** > **nový projekt** příkaz. Můžete vytvořit buď jazyka Visual Basic nebo C# projektu. Po otevření souboru hlavní kódu pro tento projekt sady Visual Studio zobrazí vizualizéru stromu syntaxe pro ni. Můžete otevřít všechny existující C# / VB soubor v této instanci sady Visual Studio a vizualizér zobrazí tento soubor stromu syntaxe. Pokud máte více souborů kódu otevřete v sadě Visual Studio, vizualizér zobrazí strom syntaxe pro k souboru momentálně aktivní kódu (kód souboru, který má právě fokus klávesnice.)
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
-![Vizualizace stromu syntaxe jazyka C#](media/visualize-csharp.png)
+![Vizualizace stromu syntaxe jazyka C#](media/syntax-visualizer/visualize-csharp.png)
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-<a name="visualizing-a-vb-syntax-treemediavisualize-visual-basicpng"></a>![Vizualizace stromu syntaxe jazyka Visual Basic](media/visualize-visual-basic.png)
+![Vizualizace stromu syntaxe jazyka Visual Basic](media/syntax-visualizer/visualize-visual-basic.png)
+
 ---
 
 Jak ukazuje předchozí bitové kopie, zobrazí okno vizualizér nástroje na začátku článku a mřížku vlastností v dolní části stromu syntaxe. Zobrazí mřížku vlastností vlastnosti položky, který je aktuálně vybrané ve stromu, včetně .NET *typ* a *druh* (SyntaxKind) položky.
@@ -60,13 +61,18 @@ Pozastavení jednou zadáním zadali `Console.`. Stromu má některé barva rů�
 
 Klikněte pravým tlačítkem na libovolnou položku v stromu a klikněte na **zobrazit graf syntaxe směrované**. 
 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 Vizualizér zobrazuje grafické reprezentace podstrom root na vybranou položku. Opakujte tyto kroky **MethodDeclaration** uzlu odpovídající `Main()` metoda v příkladu C#. Vizualizér zobrazí syntaxe graf, který vypadá takto:
 
-![Zobrazení grafu syntaxe jazyka C#](media/csharp-syntax-graph.png)
+![Zobrazení grafu syntaxe jazyka C#](media/syntax-visualizer/csharp-syntax-graph.png)
+# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
 
 Opakujte stejný pro **SubBlock** uzlu odpovídající `Main()` metoda v předchozím příkladu jazyka Visual Basic. Vizualizér zobrazí syntaxe graf, který vypadá takto:
 
-![Zobrazení grafu syntaxe jazyka Visual Basic](media/visual-basic-syntax-graph.png)
+![Zobrazení grafu syntaxe jazyka Visual Basic](media/syntax-visualizer/visual-basic-syntax-graph.png)
+
+---
 
 Prohlížeč syntaxe graf má možnost Zobrazit legendu jeho barevné zvýrazňování schéma. Můžete také najet přes jednotlivé položky v syntaxi grafu pomocí myši zobrazíte vlastnosti odpovídající této položky.
 
@@ -74,7 +80,7 @@ Grafy syntaxi pro různé položky ve stromové struktuře můžete zobrazit opa
 
 Tady je ukotvení rozložení pro použití s okno vizualizér nástroje a okno grafu syntaxe:
 
-![Jeden ukotvení rozložení pro syntaxi a vizualizér okno grafu](media/docking-layout.png)
+![Jeden ukotvení rozložení pro syntaxi a vizualizér okno grafu](media/syntax-visualizer/docking-layout.png)
 
 Další možností je uvést okna grafu syntaxe na druhém monitoru, v rámci instalace dvou monitorů.
 
@@ -84,19 +90,19 @@ Vizualizér syntaxe umožní elementární kontrolu symboly a sémantické infor
 
 Mřížku vlastností v vizualizér aktualizací, jak je znázorněno na následujícím obrázku: symbol pro výraz **SynthesizedIntrinsicOperatorSymbol** s **typ = metoda**.
 
-![Vlastnosti symbolu](media/symbol-properties.png)
+![Vlastnosti symbolu](media/syntax-visualizer/symbol-properties.png)
 
 Zkuste **TypeSymbol zobrazení (pokud existuje)** pro stejné **AddExpression** uzlu. Vlastnost mřížky ve vizualizér aktualizací, jak je znázorněno na následujícím obrázku, která udává, že typ vybraného výrazu je `Int32`.
 
-![Vlastnosti TypeSymbol](media/type-symbol-properties.png)
+![Vlastnosti TypeSymbol](media/syntax-visualizer/type-symbol-properties.png)
 
 Zkuste **TypeSymbol převést zobrazení (pokud existuje)** pro stejné **AddExpression** uzlu. Mřížku vlastností aktualizace, která znamená, že i když je typ výrazu `Int32`, převedený typ výrazu je `Double` jak je znázorněno na následujícím obrázku. Tento uzel obsahuje převedený typ informací o symbolu, protože `Int32` výraz v kontextu, kde musí být převedena na dojde `Double`. Splňuje tento převod `Double` typ určený pro proměnnou `x` na levé straně operátoru přiřazení.
 
-![Převedený TypeSymbol vlastnosti](media/converted-type-symbol-properties.png)
+![Převedený TypeSymbol vlastnosti](media/syntax-visualizer/converted-type-symbol-properties.png)
 
 Nakonec zkuste **zobrazení konstantní hodnota (pokud existuje)** pro stejné **AddExpression** uzlu. Mřížku vlastností ukazuje, že hodnota výrazu konstanta doba kompilace s hodnotou `2`.
 
-![Konstantní hodnota](media/constant-value.png)
+![Konstantní hodnota](media/syntax-visualizer/constant-value.png)
 
 V předchozím příkladu je možné replikovat také v jazyce VB. Typ `Dim x As Double = 1 + 1` v souboru jazyka Visual Basic. Vyberte výraz `1 + 1` v okně editoru kódu. Upozorňuje vizualizér odpovídající **AddExpression** uzlu vizualizér. Opakujte předchozí kroky pro tento **AddExpression** a měli byste vidět stejné výsledky.
 
@@ -114,15 +120,15 @@ End Module
 
 Tento kód představuje alias s názvem `C` která se mapuje na typ `System.Console` v horní části souboru a použije tento alias uvnitř `Main()`. Vyberte použití tento alias `C` v `C.WriteLine()`uvnitř `Main()` metoda. Vizualizér vybere odpovídající **IdentifierName** uzlu vizualizér. Klikněte pravým tlačítkem na tento uzel a klikněte na **zobrazení Symbol (pokud existuje)**. Mřížku vlastností označuje, že tento identifikátor je vázána na typ `System.Console` jak je znázorněno na následujícím obrázku:
 
-![Vlastnosti symbolu](media/symbol-visual-basic.png)
+![Vlastnosti symbolu](media/syntax-visualizer/symbol-visual-basic.png)
 
 Zkuste **AliasSymbol zobrazení (pokud existuje)** pro stejné **IdentifierName** uzlu. Mřížku vlastností označuje identifikátor, který je alias s názvem `C` která je vázaná `System.Console` cíl. Jinými slovy, mřížku vlastností poskytuje informace o **AliasSymbol** odpovídající identifikátor `C`.
 
-![Vlastnosti AliasSymbol](media/alias-symbol.png)
+![Vlastnosti AliasSymbol](media/syntax-visualizer/alias-symbol.png)
 
 Zkontrolujte, zda je symbol odpovídající žádné deklarovaný typ, metoda, vlastnost. Vyberte odpovídající uzel v vizualizér a klikněte na **zobrazení Symbol (pokud existuje)**. Vyberte metodu `Sub Main()`, včetně těla metody. Klikněte na **zobrazení Symbol (pokud existuje)** pro příslušné **SubBlock** uzlu vizualizér. Zobrazí mřížky vlastnosti **MethodSymbol** pro tento **SubBlock** má název `Main` s návratovým typem `Void`.
 
-![Zobrazení symbolů pro deklaraci – metoda](media/method-symbol.png)
+![Zobrazení symbolů pro deklaraci – metoda](media/syntax-visualizer/method-symbol.png)
 
 Příklady uvedené nahoře VB lze snadno replikovat v jazyce C#. Typ `using C = System.Console;` místě `Imports C = System.Console` pro alias. Předchozí kroky v jazyce C# poskytují stejné výsledky v okně vizualizér.
 

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-ms.openlocfilehash: 2a25919048f94211b1696ac8c8471a14ce6e15c5
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 05e51d527dc3c05301fc85d7717c751dc46bf9fa
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="properties"></a>Vlastnosti
 
@@ -103,7 +103,7 @@ Výše uvedených příkladech vám ukázal, jedním z nejjednodušších defini
 
 ### <a name="validation"></a>Ověřování
 
-Můžete napsat kód ve `set` přistupujícího objektu hodnoty reprezentována vlastnost musí být vždy platné. Předpokládejme například, pro jedno pravidlo `Person` třída je, že název nemůže být prázdný ani prázdné. By zápisu, následujícím způsobem:
+Můžete napsat kód ve `set` přistupujícího objektu hodnoty reprezentována vlastnost musí být vždy platné. Předpokládejme například, pro jedno pravidlo `Person` třída je, že název nemůže být prázdný nebo mezer. By zápisu, následujícím způsobem:
 
 ```csharp
 public class Person
@@ -123,7 +123,7 @@ public class Person
 }
 ```
 
-V předchozím příkladu vynucuje pravidlo, že jméno nesmí být prázdný ani prázdné. Pokud vývojář zapíše
+V předchozím příkladu vynucuje pravidlo, že křestní jméno nesmí být prázdný nebo mezer. Pokud vývojář zapíše
 
 ```csharp
 hero.FirstName = "";

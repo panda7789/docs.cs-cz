@@ -1,30 +1,31 @@
 ---
-title: "Při načítání nebo analýza XML1 zachování prázdných znaků"
-ms.custom: 
+title: Při načítání nebo analýza XML1 zachování prázdných znaků
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: f3ff58c4-55aa-4fcd-b933-e3a2ee6e706c
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bc4923ef5ea526de3c988636cd766c3b012c902e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 74576fbc6707607ff9b2557b0825110e32c0b897
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování mezer při načítání nebo analýzu kódu XML
-Toto téma popisuje, jak řídit chování mezer [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+Toto téma popisuje, jak řídit chování prázdný [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
  Běžný scénář je číst zobrazují odsazené XML, vytvořte ve stromu v paměti XML bez mezer text uzlů (tedy ne zachování mezer), provádění některých operací na soubor XML a potom uložte soubor XML s odsazení. Při serializaci XML s formátování se zachová jenom významné mezer ve stromové struktuře XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
  Další z typických možností je číst a upravovat kód XML, který je už záměrně zobrazují odsazené. Možná chcete změnit toto odsazení žádným způsobem. To uděláte v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], zachovat mezer při načtení nebo analyzovat soubor XML a zakázat formátování při serializaci XML.  
   
- Toto téma popisuje chování mezer metody, která naplní stromy XML. Informace o řízení mezer při serializaci XML stromy najdete v tématu [zachování mezer při serializaci](../../../../csharp/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
+ Toto téma popisuje chování prázdný metody, která naplní stromy XML. Informace o řízení mezer při serializaci XML stromy najdete v tématu [zachování mezer při serializaci](../../../../csharp/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
   
 ## <a name="behavior-of-methods-that-populate-xml-trees"></a>Chování metod, která naplní stromy XML  
  Následující metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy naplnit strom XML. Ve stromu XML ze souboru, může naplnění <xref:System.IO.TextReader>, <xref:System.Xml.XmlReader>, nebo řetězec:  

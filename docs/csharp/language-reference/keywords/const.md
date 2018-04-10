@@ -1,5 +1,5 @@
 ---
-title: "const (Referenční dokumentace jazyka C#)"
+title: const (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - const keyword [C#]
 ms.assetid: 79eb447c-117b-4418-933f-97c50aa472db
-caps.latest.revision: 
+caps.latest.revision: 28
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 7f54b686b170622ca1ead736a9f614c9bbef52dc

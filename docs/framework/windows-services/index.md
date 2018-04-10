@@ -1,12 +1,13 @@
 ---
-title: "Vývoj aplikací spouštěných jako služby systému Windows"
-ms.custom: 
+title: Vývoj aplikací spouštěných jako služby systému Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - ServiceInstaller class, Windows Service applications
@@ -17,11 +18,12 @@ helpviewer_keywords:
 - services
 - .NET applications, Windows applications
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 325e43f4b1734bc6ab8753285e5069f36b0fda51
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

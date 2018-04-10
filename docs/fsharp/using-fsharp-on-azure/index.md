@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: FAD4D11E-703A-42D4-9F72-893D9E0F569B
-ms.openlocfilehash: 0849bc77139b4f4383e2c772f5bae62741ee2b8b
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: fdb2378a731a13894cf71356a2713c62a5c2064e
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-f-on-azure"></a>Pomocí F # na Azure
 
@@ -121,7 +121,7 @@ Virtuální počítače Azure mohou prostřednictvím kódu programu nasadit a s
 
 Podobně ostatní prostředky služby Azure mohou také nasazení a spravovat z F # skripty s použitím komponenty stejné. Můžete například vytvořit účty úložiště, nasazení Azure Cloud Services, vytváření instancí Azure Cosmos DB a spravovat centra oznámení Azure prostřednictvím kódu programu z skriptů F #.
 
-Pomocí skriptů F # pro nasazení a správě prostředků není obvykle nutné. Prostředky Azure může být například také nasazené přímo z JSON šablony popisy, které lze nastavit parametry. V tématu [šablon Azure Resource Manageru](/azure/azure-resource-manager/resource-manager-template-best-practices) včetně příkladů, jako [šablon Azure rychlý Start](https://azure.microsoft.com/documentation/templates/).
+Pomocí skriptů F # pro nasazení a správě prostředků není obvykle nutné. Prostředky Azure může být například také nasazené přímo z JSON šablony popisy, které lze nastavit parametry. V tématu [šablon Azure Resource Manageru](/azure/azure-resource-manager/resource-manager-template-best-practices) včetně příkladů, jako [šablon Azure rychlý Start](https://azure.microsoft.com/resources/templates/).
 
 ## <a name="other-resources"></a>Další zdroje
 

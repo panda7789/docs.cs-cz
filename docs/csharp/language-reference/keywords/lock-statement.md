@@ -1,5 +1,5 @@
 ---
-title: "lock – příkaz (Referenční dokumentace jazyka C#)"
+title: lock – příkaz (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-caps.latest.revision: 
+caps.latest.revision: 43
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: eb48c2b1554ad2817406eaef42b4cb336ea46862

@@ -1,5 +1,5 @@
 ---
-title: "break (Referenční dokumentace jazyka C#)"
+title: break (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - break keyword [C#]
 ms.assetid: be2571ed-efb0-4965-b122-81e5b09db0b9
-caps.latest.revision: 
+caps.latest.revision: 21
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: b533d325be41683ed6f56e9e63b3c11ddde9cb17

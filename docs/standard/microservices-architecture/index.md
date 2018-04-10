@@ -1,7 +1,7 @@
 ---
-title: "Rozhraní .NET Mikroslužeb. Architektura pro aplikace .NET Kontejnerizované"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Úvodní část"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Rozhraní .NET Mikroslužeb. Architektura pro aplikace .NET Kontejnerizované
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Úvodní část
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

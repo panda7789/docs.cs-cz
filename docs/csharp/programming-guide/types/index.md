@@ -1,5 +1,5 @@
 ---
-title: "Typy (Průvodce programováním v C#)"
+title: Typy (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -15,7 +15,7 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-caps.latest.revision: 
+caps.latest.revision: 53
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9fe933760fd1ff0d730bf142707f03cf85b886b2

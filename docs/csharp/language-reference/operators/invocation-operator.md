@@ -1,5 +1,5 @@
 ---
-title: "() – operátor (Referenční dokumentace jazyka C#)"
+title: () – operátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - cast operator [C#]
 - () operator [C#]
 ms.assetid: 846e1f94-8a8c-42fc-a42c-fbd38e70d8cc
-caps.latest.revision: 
+caps.latest.revision: 22
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6d62e6c93dcc69c892d4ca96ace3806cb1c8d989

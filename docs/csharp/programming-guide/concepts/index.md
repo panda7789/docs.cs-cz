@@ -1,11 +1,12 @@
 ---
-title: "Programování konceptů (C#)"
+title: Programování konceptů (C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9c82430ec58b81f37a33f4c246ea40f6da465af8

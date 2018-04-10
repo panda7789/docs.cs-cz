@@ -1,7 +1,7 @@
 ---
 title: Hodnoty (F#)
-description: "Zjistěte, jak jsou množství, které mají určitý typ hodnoty v jazyce F #."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Zjistěte, jak jsou množství, které mají určitý typ hodnoty v jazyce F #.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

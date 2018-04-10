@@ -3,17 +3,17 @@ title: nový příkaz DotNet - .NET Core rozhraní příkazového řádku
 description: Nový příkaz dotnet vytvoří nové projekty .NET Core na základě zadané šablony.
 author: mairaw
 ms.author: mairaw
-ms.date: 03/21/2018
+ms.date: 03/26/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2cbd42195d0ec713d2ccb4af823075ece950ceff
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 4432587c0015c353a34816eee4206dc53cdefba9
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -42,7 +42,7 @@ dotnet new [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet new` Příkaz nabízí pohodlný způsob, jak inicializovat platný projekt .NET Core. 
+`dotnet new` Příkaz nabízí pohodlný způsob, jak inicializovat platný projekt .NET Core.
 
 Příkaz volání [modulu šablon](https://github.com/dotnet/templating) vytvořit artefakty na disku na základě určené šablony a možnosti.
 
@@ -122,6 +122,9 @@ Obsahuje seznam šablon, které obsahují zadaný název. Pokud je vyvolána pro
 
 Jazyk šablonu, kterou chcete vytvořit. Jazyk přijata, se liší podle šablony (viz výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
 
+    > [!NOTE]
+    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+
 `-n|--name <OUTPUT_NAME>`
 
 Název pro vytvoření výstupu. Pokud není zadán žádný název, použije se název aktuálního adresáře.
@@ -159,6 +162,9 @@ Obsahuje seznam šablon, které obsahují zadaný název. Pokud je vyvolána pro
 `-lang|--language {C#|F#}`
 
 Jazyk šablonu, kterou chcete vytvořit. Jazyk přijata, se liší podle šablony (viz výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
+
+    > [!NOTE]
+    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -304,7 +310,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 Vytvoření projektu aplikace konzoly F # v aktuálním adresáři:
 
-`dotnet new console -lang f#`
+`dotnet new console -lang F#`
 
 Vytvořte standardní rozhraní .NET projektu knihovny tříd v zadaný adresář (dostupné pouze s .NET Core 2.0 SDK nebo novější verze):
 

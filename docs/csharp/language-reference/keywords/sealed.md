@@ -1,5 +1,5 @@
 ---
-title: "sealed (Referenční dokumentace jazyka C#)"
+title: sealed (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
-caps.latest.revision: 
+caps.latest.revision: 30
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8248b451f0431286fdaba3583fc2031eb6cdbcd7

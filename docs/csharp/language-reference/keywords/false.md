@@ -1,5 +1,5 @@
 ---
-title: "false (Referenční dokumentace jazyka C#)"
+title: false (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - false keyword [C#]
 ms.assetid: a11aa532-efe2-442b-9fcc-8fdb33b8c8b4
-caps.latest.revision: 
+caps.latest.revision: 9
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1b2add7a6426026bee06b82f7e822cc65cb547ba

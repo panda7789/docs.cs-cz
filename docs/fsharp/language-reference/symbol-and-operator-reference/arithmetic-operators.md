@@ -1,20 +1,20 @@
 ---
-title: "Aritmetické operátory (F#)"
-description: "Další informace o aritmetické operátory, které jsou k dispozici v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Aritmetické operátory (F#)
+description: 'Další informace o aritmetické operátory, které jsou k dispozici v programovací jazyk F #.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
-ms.date: 05/16/2016
+ms.date: 04/04/2018
 ms.topic: language-reference
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 75ddcfa3-564e-4382-80a3-f9da73d0f0ea
-ms.openlocfilehash: 237b97c24f207b3a9b4661d66f029f1b18b8fec7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8f11e77457bed40cff081a73181689610871e654
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="arithmetic-operators"></a>Aritmetické operátory
 
@@ -25,12 +25,12 @@ Následující tabulka shrnuje binární aritmetické operátory, které jsou k 
 
 |Binární operátor|Poznámky|
 |---------------|-----|
-|`+`(toho, plus)|Nezaškrtnuté. Podmínku možné přetečení při čísla se sčítají a součet překračuje maximální hodnotu absolutní podporovaného typu.|
-|`-`(odčítání, minus)|Nezaškrtnuté. Možné podtečení podmínek, když jsou odečítat typy bez znaménka, nebo když hodnoty s plovoucí desetinnou čárkou jsou příliš malé a nelze podle typu.|
-|`*`(násobení, časy)|Nezaškrtnuté. Možné přetečení podmínku, když se násobí čísla a produktu přesahuje maximální hodnotu absolutní podporovaného typu.|
-|`/`(dělení dělený)|Dělení nulové příčiny <xref:System.DivideByZeroException> pro integrální typy. Pro typy s plovoucí desetinnou čárkou, dělení nulou vám dává speciální hodnoty s plovoucí desetinnou čárkou `+Infinity` nebo `-Infinity`. Je zde také možné podtečení podmínku po příliš malé a nelze podle typu číslo s plovoucí desetinnou čárkou.|
-|`%`(modulus, mod)|Vrátí zbytek operace dělení. Znaménko výsledek je stejný jako znaménko první operand.|
-|`**`(exponentem umocnění)|Pokud výsledek překročí maximální absolutní hodnota pro typ možné přetečení podmínka.<br /><br />Exponenciální operátor funguje jenom s typy s plovoucí desetinnou čárkou.|
+|`+` (toho, plus)|Nezaškrtnuté. Podmínku možné přetečení při čísla se sčítají a součet překračuje maximální hodnotu absolutní podporovaného typu.|
+|`-` (odčítání, minus)|Nezaškrtnuté. Možné podtečení podmínek, když jsou odečítat typy bez znaménka, nebo když hodnoty s plovoucí desetinnou čárkou jsou příliš malé a nelze podle typu.|
+|`*` (násobení, časy)|Nezaškrtnuté. Možné přetečení podmínku, když se násobí čísla a produktu přesahuje maximální hodnotu absolutní podporovaného typu.|
+|`/` (dělení dělený)|Dělení nulové příčiny <xref:System.DivideByZeroException> pro integrální typy. Pro typy s plovoucí desetinnou čárkou, dělení nulou vám dává speciální hodnoty s plovoucí desetinnou čárkou `+Infinity` nebo `-Infinity`. Je zde také možné podtečení podmínku po příliš malé a nelze podle typu číslo s plovoucí desetinnou čárkou.|
+|`%` (zbývající, rem)|Vrátí zbytek operace dělení. Znaménko výsledek je stejný jako znaménko první operand.|
+|`**` (exponentem umocnění)|Pokud výsledek překročí maximální absolutní hodnota pro typ možné přetečení podmínka.<br /><br />Exponenciální operátor funguje jenom s typy s plovoucí desetinnou čárkou.|
 
 ## <a name="summary-of-unary-arithmetic-operators"></a>Souhrn unární aritmetické operátory
 Následující tabulka shrnuje unární aritmetické operátory, které jsou k dispozici pro typy integrální a s plovoucí desetinnou čárkou.
@@ -38,8 +38,8 @@ Následující tabulka shrnuje unární aritmetické operátory, které jsou k d
 
 |Unární operátor|Poznámky|
 |--------------|-----|
-|`+`(kladné)|Můžete použít na jakýkoli aritmetické výraz. Nezmění přihlašovací hodnoty.|
-|`-`(negace, záporné)|Můžete použít na jakýkoli aritmetické výraz. Změní přihlašovací hodnoty.|
+|`+` (kladné)|Můžete použít na jakýkoli aritmetické výraz. Nezmění přihlašovací hodnoty.|
+|`-` (negace, záporné)|Můžete použít na jakýkoli aritmetické výraz. Změní přihlašovací hodnoty.|
 Chování při přetečení nebo podtečení pro integrální typy je obtékat kolem. To způsobí, že nesprávný výsledek. Celé číslo přetečení je potenciálně vážný problém, který může přispívat k problémy se zabezpečením při softwaru zapisuje na účet pro ni. Pokud se jedná o problém pro vaši aplikaci, zvažte použití zaškrtnuté operátory v `Microsoft.FSharp.Core.Operators.Checked`.
 
 
@@ -52,12 +52,12 @@ V následující tabulce jsou binární porovnání operátory, které jsou k di
 
 |Operátor|Poznámky|
 |--------|-----|
-|`=`(rovnosti, rovná)|Toto není operátor přiřazení. Používá se pouze pro porovnání. Toto je obecná operátor.|
-|`>`(větší než)|Toto je obecná operátor.|
-|`<`(méně než)|Toto je obecná operátor.|
-|`>=`(větší než nebo rovno)|Toto je obecná operátor.|
-|`<=`(menší než nebo rovno)|Toto je obecná operátor.|
-|`<>`(není rovno)|Toto je obecná operátor.|
+|`=` (rovnosti, rovná)|Toto není operátor přiřazení. Používá se pouze pro porovnání. Toto je obecná operátor.|
+|`>` (větší než)|Toto je obecná operátor.|
+|`<` (méně než)|Toto je obecná operátor.|
+|`>=` (větší než nebo rovno)|Toto je obecná operátor.|
+|`<=` (menší než nebo rovno)|Toto je obecná operátor.|
+|`<>` (není rovno)|Toto je obecná operátor.|
 
 ## <a name="overloaded-and-generic-operators"></a>Operátory přetížené a obecná
 Všechny operátory popsané v tomto tématu jsou definovány v **Microsoft.FSharp.Core.Operators** oboru názvů. Některé operátory jsou definované za použití parametry typu určené statisticky. To znamená, že jsou jednotlivé definice pro každý konkrétní typ, který funguje s Tento operátor. Všechny unární a binární aritmetické a bitové operátory jsou v této kategorii. Operátory porovnání obecné a proto fungovat s žádným typem aritmetické jenom primitivní typy. Rozlišovaná sjednocení a typy záznamů mají své vlastní vlastní implementací, které jsou generovány nástrojem kompilátor jazyka F #. Typy tříd, použijte metodu <xref:System.Object.Equals%2A>.
@@ -71,7 +71,7 @@ Použití operátoru ve výrazu omezí odvození typu na tento operátor. Použi
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3501.fs)]
     
 ## <a name="see-also"></a>Viz také
-[Operátor referenční dokumentace symbolů a](index.md)
+[Referenční dokumentace symbolů a operátorů](index.md)
 
 [Přetížení operátoru](../operator-overloading.md)
 

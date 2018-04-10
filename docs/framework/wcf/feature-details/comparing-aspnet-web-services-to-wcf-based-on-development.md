@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-caps.latest.revision: ''
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c12bd11cee62cd769f7dffc142806fa5ab1b0137
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 8e60d28314c47907cc825871b88a0dc771cd0511
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] má možnost režim kompatibility ASP.NET povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace pro naprogramovaný tak a konfiguraci jako webových služeb ASP.NET a napodobovat jejich chování. V následujících částech porovnání webových služeb ASP.NET a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle co je potřeba k vývoji aplikací pomocí obou technologií.  
@@ -187,7 +187,7 @@ public class LineItem
   
 -   V důsledku schopnost serializovat neveřejným členy typy do souboru XML, <xref:System.Runtime.Serialization.DataContractSerializer> má méně omezení pro různé typy .NET, které mohou serializovat do souboru XML. Konkrétně může překládat do typy XML jako <xref:System.Collections.Hashtable> implementující <xref:System.Collections.IDictionary> rozhraní. <xref:System.Runtime.Serialization.DataContractSerializer> Je mnohem pravděpodobnější mohli k serializaci instancí všechny existující typ formátu .NET do XML bez nutnosti upravte definici typu nebo vývoj obálku pro ni.  
   
--   Jiné důsledkem <xref:System.Runtime.Serialization.DataContractSerializer> nebudete mít přístup k neveřejným členy typu je, že vyžaduje úplný vztah důvěryhodnosti, zatímco <xref:System.Xml.Serialization.XmlSerializer> neexistuje. Oprávnění úplný vztah důvěryhodnosti k kód poskytnout úplný přístup ke všem prostředkům na počítači, který může být přístup pomocí přihlašovacích údajů, za kterých je prováděna kód. Této možnosti musí být použit s pozornost, jako plně důvěryhodný kód přistupuje k všechny prostředky ve vašem počítači.  
+-   Jiné důsledkem <xref:System.Runtime.Serialization.DataContractSerializer> nebudete mít přístup k neveřejným členy typu je, že vyžaduje úplný vztah důvěryhodnosti, zatímco <xref:System.Xml.Serialization.XmlSerializer> neexistuje. Oprávnění úplný vztah důvěryhodnosti k kódu poskytuje úplný přístup ke všem prostředkům na počítači, který je přístupný pomocí přihlašovacích údajů, za kterých je prováděna kód. Tato možnost by měla použít dát pozor, jako plně důvěryhodný kód přistupuje k všechny prostředky ve vašem počítači.  
   
 -   <xref:System.Runtime.Serialization.DataContractSerializer> Zahrnuje některé podporu pro správu verzí:  
   
@@ -195,7 +195,7 @@ public class LineItem
   
     -   Tak, že kontraktu dat implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní, jeden můžete povolit <xref:System.Runtime.Serialization.DataContractSerializer> předat členy definované v novější verze sady kontraktu dat prostřednictvím aplikací s předchozími verzemi smlouvy.  
   
- I přes všechny rozdíly, XML, do kterého <xref:System.Xml.Serialization.XmlSerializer> serializuje typu ve výchozím nastavení je sémanticky stejný jako soubor XML, do kterého <xref:System.Runtime.Serialization.DataContractSerializer> serializuje typu zadaný obor názvů pro soubor XML byl explicitně definován. Následující třídy, která má atributy pro použití s oběma serializátorů, jsou převedeny do sémanticky identické XML pomocí <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Runtime.Serialization.DataContractAttribute>:  
+ I přes všechny rozdíly, XML, do kterého <xref:System.Xml.Serialization.XmlSerializer> serializuje typu ve výchozím nastavení je sémanticky stejný jako soubor XML, do kterého <xref:System.Runtime.Serialization.DataContractSerializer> serializuje typu zadaný obor názvů pro soubor XML byl explicitně definován. Následující třídy, která má atributy pro použití s oběma serializátorů, je přeložit na sémanticky identické XML pomocí <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Runtime.Serialization.DataContractAttribute>:  
   
 ```  
 [Serializable]  
@@ -212,7 +212,7 @@ public class LineItem
 }  
 ```  
   
- Windows software development kit (SDK) zahrnuje nástroj příkazového řádku volat [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Nástroj xsd.exe použít s webovými službami ASP.NET, jako například Svcutil.exe může generovat definice datových typů .NET ze schématu XML. Typy jsou kontrakty dat, pokud <xref:System.Runtime.Serialization.DataContractSerializer> můžete emitování XML ve formátu XML schéma definované; jinak, jsou určené pro použití serializace <xref:System.Xml.Serialization.XmlSerializer>. Nástroje Svcutil.exe, můžete také provést ke generování schématu XML z kontrakty dat pomocí jeho `/dataContractOnly` přepínače.  
+ Windows software development kit (SDK) zahrnuje nástroj příkazového řádku volat [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Nástroj xsd.exe použít s webovými službami ASP.NET, jako například Svcutil.exe může generovat definice datových typů .NET ze schématu XML. Typy jsou kontrakty dat, pokud <xref:System.Runtime.Serialization.DataContractSerializer> můžete emitování XML ve formátu XML schéma definované; jinak, jsou určené pro použití serializace <xref:System.Xml.Serialization.XmlSerializer>. Svcutil.exe může také generovat schéma XML z kontrakty dat pomocí jeho `dataContractOnly` přepínače.  
   
 > [!NOTE]
 >  I když webových služeb ASP.NET použijte <xref:System.Xml.Serialization.XmlSerializer>, a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režim kompatibility ASP.NET umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby napodobují chování webových služeb ASP.NET, možnost kompatibility ASP.NET neomezuje jeden pomocí <xref:System.Xml.Serialization.XmlSerializer>. Stále můžete použít <xref:System.Runtime.Serialization.DataContractSerializer> do služeb spuštěných v režimu kompatibility ASP.NET.  

@@ -1,6 +1,6 @@
 ---
-title: "Čísla v jazyce C# kurzu - C# místní – elementy QuickStart"
-description: "Výuka C# prozkoumáním číselnými typy, jejich vlastnosti a metody."
+title: Čísla v jazyce C# kurzu - C# místní – elementy QuickStart
+description: Výuka C# prozkoumáním číselnými typy, jejich vlastnosti a metody.
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/31/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 99c2f8e4807c4d18c0c798e3a737f4a88d6e62d6
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 6570693ea09ca2b548615291ba4f2b69f6d92482
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="numbers-in-c-quickstart"></a>Čísla v jazyce C# rychlý start
 
@@ -278,7 +278,7 @@ Console.WriteLine(third);
 
 Víte, že `0.3` opakující se právě není stejný jako `1/3`.
 
-***výzvy***
+***Výzvy***
 
 Zkuste jiné výpočty s velká čísla, malá čísla, násobení a dělení pomocí `double` typu.  Zkuste složitější výpočty.
 
@@ -310,12 +310,12 @@ Console.WriteLine(c / d);
 
 Všimněte si, že výpočty pomocí typu decimal obsahuje více číslic vpravo od desetinné čárky. 
 
-***výzvy***
+***Výzvy***
 
 Teď, když jste se seznámili s různými typy číselné, napište kód, který vypočítá oblasti kruh jejichž radius je 2.50 cm. Mějte na paměti, že oblast kruhu je radius spolehlivosti násobí hodnotou platformy. Jeden pomocný parametr: .NET obsahuje konstanty pro platformy, <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu. 
 
 Měli byste obdržet odpověď až 19, 20.
-Můžete zkontrolovat vaše odpověď podle [prohlížení dokončení ukázkový kód na Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/numbers-quickstart/Program.cs#L104-L106)
+Můžete zkontrolovat vaše odpověď podle [prohlížení dokončení ukázkový kód na Githubu](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106)
 
 Pokud chcete, zkuste některé jiné vzorce. 
 

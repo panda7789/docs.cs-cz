@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b67bcaae90cf5107598818b48ac672d74dec1e07
-ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
+ms.openlocfilehash: 7298c87c3e61103577d4262ab2dc2645d7e6265a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework
 
@@ -78,7 +78,7 @@ Zbývající část tohoto článku není relevantní, při cílení na rozhran�
 
 ### <a name="for-tcp-sockets-networking"></a>Sokety TCP sítě
 
-<xref:System.Net.Security.SslStream>, pomocí rozhraní .NET Framework 4.7 a novější verze, použije se výchozí hodnota výběr nejlepší protokol zabezpečení a verze operačního systému. Chcete-li získat výchozí nejlepší volbou operačního systému, pokud je to možné, nepoužívejte přetížení metody <xref:System.Net.Security.SslStream> které přebírají explicitního <xref:System.Security.Authentication.SslProtocols> parametr. Jinak, předá <xref:System.Security.Authentication.SslProtocols.None?displayProperty=nameWithType>. Doporučujeme vám, že nepoužíváte <xref:System.Security.Authentication.SslProtocols.Default>; nastavení `SslProtocols.Default` vynutí použití protokolu SSL 3.0 /TLS 1.0 a zabránit TLS 1.2.
+<xref:System.Net.Security.SslStream>, pomocí rozhraní .NET Framework 4.7 a novější verze, použije se výchozí hodnota výběr nejlepší protokol zabezpečení a verze operačního systému. Chcete-li získat výchozí nejlepší volbou operačního systému, pokud je to možné, nepoužívejte přetížení metody <xref:System.Net.Security.SslStream> které přebírají explicitního <xref:System.Security.Authentication.SslProtocols> parametr. Jinak, předá <xref:System.Security.Authentication.SslProtocols.None?displayProperty=nameWithType>. Doporučujeme vám, že nepoužíváte <xref:System.Security.Authentication.SslProtocols.Default>; nastavení `SslProtocols.Default` vynutí použití protokolu SSL 3.0 /TLS 1.0 a brání TLS 1.2.
 
 Není nastavený hodnotu <xref:System.Net.ServicePointManager.SecurityProtocol> vlastnost (pro HTTP sítě).
 

@@ -1,5 +1,5 @@
 ---
-title: "internal (Referenční dokumentace jazyka C#)"
+title: internal (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-caps.latest.revision: 
+caps.latest.revision: 23
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: a3b115022ed2b38dfcfbbfad3c5fc00e0203b255

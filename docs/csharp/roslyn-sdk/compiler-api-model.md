@@ -1,6 +1,6 @@
 ---
-title: "SDK pro platformu .NET kompilátoru koncepty a objektový model"
-description: "Tento přehled poskytuje na pozadí, které potřebujete k efektivní práci s kompilátoru .NET SDK. Dozvíte vrstvy rozhraní API, hlavní typy související se situací a celkové objektový model."
+title: SDK pro platformu .NET kompilátoru koncepty a objektový model
+description: Tento přehled poskytuje na pozadí, které potřebujete k efektivní práci s kompilátoru .NET SDK. Dozvíte vrstvy rozhraní API, hlavní typy související se situací a celkové objektový model.
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/10/2017
@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: d230d334eba4e438635a4c70e8c1b5fc5075b065
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 17a7884518f71d7df1f4a9fe8c91da87d7335e0d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Pochopení modelu SDK pro platformu .NET kompilátoru
 
@@ -22,15 +22,15 @@ Kompilátory zpracovat kód, který můžete psát následující strukturovaný
 
 .NET SDK platformy kompilátoru zpřístupní analýza kódu C# a Visual Basic kompilátory vám jako příjemce tím, že poskytuje vrstvu rozhraní API, které odpovídá tradiční kompilátoru kanálu.
 
-![postup zpracování zdrojového kódu pro kód objektu kanálu kompilátoru](media/compiler-pipeline.png)
+![postup zpracování zdrojového kódu pro kód objektu kanálu kompilátoru](media/compiler-api-model/compiler-pipeline.png)
 
 Jednotlivé fáze kanálu je samostatná komponenta. Nejprve fázi analýzy tokenizes a analyzuje zdrojový text do syntaxi, která následuje gramatika jazyka. Druhé fázi deklarace analyzuje zdroje a importované metadata do formuláře s názvem symboly. V dalším kroku fázi vazby odpovídá identifikátory v kódu na symboly. Nakonec fázi vysílat vysílá sestavení všechny informace sestavena kompilátoru.
 
-![kanál kompilátoru rozhraní api poskytuje přístup k každý krok, který je součástí pipelien kompilátoru](media/compiler-pipeline-api.png)
+![kanál kompilátoru rozhraní api poskytuje přístup k každý krok, který je součástí pipelien kompilátoru](media/compiler-api-model/compiler-pipeline-api.png)
 
 Odpovídající každé z těchto fází, .NET SDK platformy kompilátoru zpřístupní objektový model, který umožňuje přístup k informacím v této fázi. Analýzy fáze zpřístupní stromu syntaxe, fázi deklarace zpřístupní tabulky hierarchické symbolů, fázi vazby zpřístupní výsledek analýzy sémantického kompilátoru a fázi vysílat je rozhraní API, které vytváří IL bajtů kódy.
 
-![k dispozici z kompilátoru jazyka služby rozhraní api v každém kroku kanálu kompilátoru](media/compiler-pipeline-lang-svc.png)
+![k dispozici z kompilátoru jazyka služby rozhraní api v každém kroku kanálu kompilátoru](media/compiler-api-model/compiler-pipeline-lang-svc.png)
 
 Každý kompilátoru kombinuje tyto součásti společně jako jeden celek začátku do konce.
 
@@ -40,7 +40,7 @@ Tato rozhraní API jsou stejné ty, které slouží Visual Studio. Například k
 
 Kompilátor .NET SDK se skládá ze dvou vrstev hlavní rozhraní API: kompilátoru rozhraní API a pracovní prostory rozhraní API.
 
-![rozhraní api vrstvy reprezentována kompilátor kanálu rozhraní API](media/api-layers.png)
+![rozhraní api vrstvy reprezentována kompilátor kanálu rozhraní API](media/compiler-api-model/api-layers.png)
 
 ### <a name="compiler-apis"></a>Rozhraní API kompilátoru
 

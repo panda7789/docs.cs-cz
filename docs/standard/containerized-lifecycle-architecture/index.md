@@ -1,7 +1,7 @@
 ---
-title: "Úvod ke kontejnerům a Docker"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Úvod ke kontejnerům a Docker
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

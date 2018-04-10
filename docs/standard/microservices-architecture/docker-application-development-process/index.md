@@ -1,7 +1,7 @@
 ---
-title: "Aplikace založené na procesu vývoje pro Docker"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Aplikace založené na procesu vývoje pro Docker"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Aplikace založené na procesu vývoje pro Docker
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Aplikace založené na procesu vývoje pro Docker
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017

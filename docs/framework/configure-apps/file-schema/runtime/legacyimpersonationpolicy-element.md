@@ -1,12 +1,13 @@
 ---
-title: "&lt;legacyimpersonationpolicy –&gt; – Element"
-ms.custom: 
+title: '&lt;legacyimpersonationpolicy –&gt; – Element'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#legacyImpersonationPolicy
@@ -15,23 +16,24 @@ helpviewer_keywords:
 - <legacyImpersonationPolicy> element
 - legacyImpersonationPolicy element
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: caeede11d8128af00beb5b1b3426e8c4a5406520
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9a50ad06026b6ef2f819abefc22016aee29f8ab5
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="ltlegacyimpersonationpolicygt-element"></a>&lt;legacyimpersonationpolicy –&gt; – Element
 Určuje, že identitu systému Windows není toku napříč asynchronní bodů, bez ohledu na nastavení tok pro kontext provádění na aktuální vlákno.  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<legacyimpersonationpolicy – >  
+\<legacyImpersonationPolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,8 +55,8 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|<xref:System.Security.Principal.WindowsIdentity>toky přes asynchronní body, v závislosti na <xref:System.Threading.ExecutionContext> toku nastavení pro aktuální vlákno. Toto nastavení je výchozí.|  
-|`true`|<xref:System.Security.Principal.WindowsIdentity>nepostupuje napříč asynchronní bodů, bez ohledu na to <xref:System.Threading.ExecutionContext> toku nastavení na aktuální vlákno.|  
+|`false`|<xref:System.Security.Principal.WindowsIdentity> toky přes asynchronní body, v závislosti na <xref:System.Threading.ExecutionContext> toku nastavení pro aktuální vlákno. Toto nastavení je výchozí.|  
+|`true`|<xref:System.Security.Principal.WindowsIdentity> nepostupuje napříč asynchronní bodů, bez ohledu na to <xref:System.Threading.ExecutionContext> toku nastavení na aktuální vlákno.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -93,8 +95,8 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
   
  Technologie ASP.NET ve výchozím nastavení zakáže zosobnění tok v souboru aspnet.config pomocí následujících nastavení:  
   
-```  
-configuration>  
+``` xml
+<configuration>  
    <runtime>  
       <legacyImpersonationPolicy enabled="true"/>  
       <alwaysFlowImpersonationPolicy enabled="false"/>  
@@ -127,4 +129,4 @@ configuration>
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<alwaysflowimpersonationpolicy – > elementu](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)
+ [\<alwaysFlowImpersonationPolicy> Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)

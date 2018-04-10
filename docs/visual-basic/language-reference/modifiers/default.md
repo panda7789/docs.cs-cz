@@ -1,8 +1,8 @@
 ---
-title: "Výchozí (Visual Basic)"
+title: Výchozí (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -15,7 +15,7 @@ helpviewer_keywords:
 - Default keyword [Visual Basic]
 - default properties
 ms.assetid: 45fce9b9-d212-4b2d-ab86-6e359b8b57af
-caps.latest.revision: 
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 18126a0a5b6254da0b43e806b3de1f5b2127e6a9

@@ -1,13 +1,13 @@
 ---
-title: "Práce s certifikáty"
-ms.custom: 
+title: Práce s certifikáty
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,29 +15,29 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-caps.latest.revision: 
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 80bc22599a2c7b3478912453b3f90a563aec9c57
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba49d990c9f067ae2c10ae2a60cbad24b30f43eb
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, digitální certifikáty X.509 jsou běžně používá k ověření klientů a serverů, šifrování a digitálnímu podepisování zpráv. Toto téma vysvětluje stručně funkce digitální certifikát X.509 a jejich v použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a obsahuje odkazy na témata, která popisují tyto další koncepty nebo která ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a certifikáty.  
   
- Stručně řečeno, digitální certifikát je součástí *infrastruktury veřejných klíčů* (PKI), který je systém digitální certifikáty, certifikačních autorit a dalších registračním autoritám, které k ověřování platnosti každé strany zúčastněné v elektronické transakce pomocí kryptografie využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu pole, které obsahují data, jako například *subjektu* (entit, ke kterému je certifikát vystavený), data platnosti (Pokud je certifikát platný), vystavitele (na Entita, která vydala certifikát) a veřejný klíč. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], každý z těchto vlastností zpracovávány jako <xref:System.IdentityModel.Claims.Claim>, a jednotlivých deklarací identity se dále dělí do dvou typů: identity a doprava. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Certifikáty X.509 [veřejný klíč certifikáty X.509](http://go.microsoft.com/fwlink/?LinkId=209952) [!INCLUDE[crabout](../../../../includes/crabout-md.md)] deklarace identity a autorizace ve WCF najdete v části [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]implementace infrastruktury veřejných KLÍČŮ, najdete v části [Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
+ Stručně řečeno, digitální certifikát je součástí *infrastruktury veřejných klíčů* (PKI), který je systém digitální certifikáty, certifikačních autorit a dalších registračním autoritám, které k ověřování platnosti každé strany zúčastněné v elektronické transakce pomocí kryptografie využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu pole, které obsahují data, jako například *subjektu* (entit, ke kterému je certifikát vystavený), data platnosti (Pokud je certifikát platný), vystavitele (na Entita, která vydala certifikát) a veřejný klíč. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], každý z těchto vlastností zpracovávány jako <xref:System.IdentityModel.Claims.Claim>, a jednotlivých deklarací identity se dále dělí do dvou typů: identity a doprava. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Certifikáty X.509 [veřejný klíč certifikáty X.509](http://go.microsoft.com/fwlink/?LinkId=209952) [!INCLUDE[crabout](../../../../includes/crabout-md.md)] deklarace identity a autorizace ve WCF najdete v části [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] implementace infrastruktury veřejných KLÍČŮ, najdete v části [Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
   
  Primární funkce certifikátu je ověřovat identitu vlastníka certifikátu ostatním uživatelům. Obsahuje certifikát *veřejný klíč* vlastníka, zatímco vlastník uchovává privátní klíč. Veřejný klíč slouží k šifrování zpráv posílaných vlastník certifikátu. Pouze vlastník má přístup k privátnímu klíči, takže pouze vlastník může dešifrovat tyto zprávy.  
   
  Certifikáty musí být vydaný certifikační autoritou, což se často stává třetích stran vystavitelů certifikátů. V doméně systému Windows, je součástí certifikační autority, slouží k vydávání certifikátů pro počítače v doméně.  
   
 ## <a name="viewing-certificates"></a>Zobrazení certifikátů  
- Pro práci s certifikáty, je často potřeba zobrazit a zkontrolovat jejich vlastnosti. Snadno se provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+ Pro práci s certifikáty, je často potřeba zobrazit a zkontrolovat jejich vlastnosti. Snadno se provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
 ## <a name="certificate-stores"></a>Úložiště certifikátů  
  Certifikáty se nacházejí v úložištích. Dva hlavní úložiště umístění zabývajících se dále dělí do dílčí úložiště. Pokud jste správce v počítači, můžete zobrazit oba hlavní úložiště pomocí modulu snap-in nástroje konzoly MMC. Všichni uživatelé můžete zobrazit pouze aktuální úložiště uživatele.  
@@ -55,7 +55,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
   
 -   **Osobní**. Toto úložiště se používá pro certifikáty, které jsou přidružené uživateli počítače. Toto úložiště se obvykle používá pro certifikáty vystavené pomocí jedné z certifikátů certifikační autority v úložišti důvěryhodných kořenových certifikačních autorit nalezen. Certifikát je zde uveden Alternativně může samoobslužné vydané a důvěryhodná aplikace.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]úložiště certifikátů najdete v tématu [úložiště certifikátů](http://go.microsoft.com/fwlink/?LinkId=88912).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] úložiště certifikátů najdete v tématu [úložiště certifikátů](http://go.microsoft.com/fwlink/?LinkId=88912).  
   
 ### <a name="selecting-a-store"></a>Výběr úložiště  
  Výběr umístění pro uložení certifikátu závisí, jak a kdy běží služba nebo klienta. Použít následující obecná pravidla:  
@@ -65,7 +65,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
 -   Pokud se služba nebo klienta je aplikace, která běží pod účtem uživatele, použijte **aktuální uživatel** uložit.  
   
 ### <a name="accessing-stores"></a>Přístup k úložiště  
- Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), stejně jako složky v počítači. Při vytváření služby hostované pomocí Internetové informační služby (IIS), [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít účet přístup k úložišti, které obsahuje certifikáty. Každou z hlavních úložiště je chráněný pomocí seznamu výchozí přístupu, ale mohou být upravena seznamy. Pokud vytvoříte samostatné role pro přístup úložišti, musí udělit oprávnění k této roli. Další postupy k úpravě seznamu přístupu pomocí nástroje WinHttpCertConfig.exe najdete v tématu [postupy: vytvoření dočasné certifikáty pro použití při vývoji](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí klientských certifikátů služby IIS, najdete v části [postup volání webové služby pomocí klientského certifikátu pro ověřování v aplikaci ASP.NET Web](http://go.microsoft.com/fwlink/?LinkId=88914).  
+ Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), stejně jako složky v počítači. Při vytváření služby hostované pomocí Internetové informační služby (IIS), [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít účet přístup k úložišti, které obsahuje certifikáty. Každou z hlavních úložiště je chráněný pomocí seznamu výchozí přístupu, ale mohou být upravena seznamy. Pokud vytvoříte samostatné role pro přístup úložišti, musí udělit oprávnění k této roli. Další postupy k úpravě seznamu přístupu pomocí nástroje WinHttpCertConfig.exe najdete v tématu [postupy: vytvoření dočasné certifikáty pro použití při vývoji](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí klientských certifikátů služby IIS, najdete v části [postup volání webové služby pomocí klientského certifikátu pro ověřování v aplikaci ASP.NET Web](http://go.microsoft.com/fwlink/?LinkId=88914).  
   
 ## <a name="chain-trust-and-certificate-authorities"></a>Řetězec důvěryhodnosti a certifikačních autorit  
  Certifikáty budou vytvořeny v hierarchii, kde je každý jednotlivý certifikát propojený certifikační autoritu, která certifikát vydala. Tento odkaz je certifikát Certifikační autority. Certifikát Certifikační autority a odkazy na certifikační Autoritu, která vydala certifikát originálu Certifikační autority. Tento proces se opakuje, dokud je dosaženo certifikát kořenové certifikační Autority. Certifikát kořenové certifikační Autority je automaticky důvěryhodné.  
@@ -96,7 +96,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
 ## <a name="custom-authentication"></a>Vlastního ověřování  
  `CertificateValidationMode` Vlastnost také umožňuje přizpůsobit, jak se ověřují certifikáty. Ve výchozím nastavení je úroveň nastavena na `ChainTrust`. Použít <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> hodnotu, je nutné také nastavit `CustomCertificateValidatorType` atribut sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
   
- Při vytváření vlastní ověřovací, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metoda. Příklad vlastní ověřování, naleznete v části [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) ukázka. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
+ Při vytváření vlastní ověřovací, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metoda. Příklad vlastní ověřování, naleznete v části [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) ukázka. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
   
 ## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Pomocí Makecert.exe vytvořit řetěz certifikátů  
  Nástroj pro vytvoření certifikátu (Makecert.exe) vytvoří certifikáty X.509 a privátní klíč a veřejného páry klíčů. Můžete uložit privátní klíč, aby na disku a použít ho k vystavování a podepsat nové certifikáty, proto simulaci hierarchie zřetězené certifikáty. Nástroj je určen pro použití pouze jako pomocný při vývoji služeb a by měl být nikdy použit k vytvoření certifikátů, pro skutečné nasazení. Při vývoji [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, použijte následující postup k vytvoření řetěz s Makecert.exe.  
@@ -153,15 +153,15 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
  [!code-vb[c_WorkingWithCertificates#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_workingwithcertificates/vb/source.vb#1)]  
   
 ### <a name="multiple-certificates-with-the-same-value"></a>Víc certifikátů se stejnou hodnotou  
- Úložiště může obsahovat víc certifikátů se stejným názvem subjektu. To znamená, že pokud určíte `x509FindType` je <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> nebo <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>a více než jeden certifikát má stejnou hodnotu, je vyvolána výjimka becausethereisno způsob k rozlišení, který certifikát je vyžadován. To lze zmírnit nastavením `x509FindType` k <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>. Kryptografický otisk pole obsahuje jedinečnou hodnotu, která můžete použít k vyhledání konkrétní certifikát v úložišti. To má však vlastní nevýhodou: Pokud certifikát je odvolaný nebo obnovit, `SetCertificate` metoda nezdaří, protože je také pryč kryptografický otisk. Nebo, pokud již není platný certifikát, se ověřování nezdaří. Způsob, jak toto riziko lze je nastavit `x590FindType` parametru <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> a zadejte název vystavitele. Pokud je potřeba žádné konkrétní vystavitele, můžete také nastavit jednu z dalších <xref:System.Security.Cryptography.X509Certificates.X509FindType> hodnot výčtu, například <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid>.  
+ Úložiště může obsahovat víc certifikátů se stejným názvem subjektu. To znamená, že pokud určíte `x509FindType` je <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> nebo <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>a více než jeden certifikát má stejnou hodnotu, protože neexistuje žádný způsob k rozlišení, který certifikát je vyžadován, je vyvolána výjimka. To lze zmírnit nastavením `x509FindType` k <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>. Kryptografický otisk pole obsahuje jedinečnou hodnotu, která můžete použít k vyhledání konkrétní certifikát v úložišti. To má však vlastní nevýhodou: Pokud certifikát je odvolaný nebo obnovit, `SetCertificate` metoda nezdaří, protože je také pryč kryptografický otisk. Nebo, pokud již není platný certifikát, se ověřování nezdaří. Způsob, jak toto riziko lze je nastavit `x590FindType` parametru <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> a zadejte název vystavitele. Pokud je potřeba žádné konkrétní vystavitele, můžete také nastavit jednu z dalších <xref:System.Security.Cryptography.X509Certificates.X509FindType> hodnot výčtu, například <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid>.  
   
 ## <a name="certificates-in-configuration"></a>Certifikáty v konfiguraci  
  Certifikáty můžete vytvořit také pomocí konfigurace. Pokud vytváříte službu, v části jsou zadané přihlašovací údaje, včetně certifikátů, [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). Pokud programujete klienta, jsou v části zadat certifikátů [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md).  
   
 ## <a name="mapping-a-certificate-to-a-user-account"></a>Mapování certifikátu na uživatelský účet  
- Funkce služby IIS a služby Active Directory je možnost mapovat certifikát na uživatelský účet systému Windows. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Funkce, najdete v části [mapování certifikátů na uživatelské účty](http://go.microsoft.com/fwlink/?LinkId=88917).  
+ Funkce služby IIS a služby Active Directory je možnost mapovat certifikát na uživatelský účet systému Windows. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Funkce, najdete v části [mapování certifikátů na uživatelské účty](http://go.microsoft.com/fwlink/?LinkId=88917).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí služby Active Directory mapování, najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](http://go.microsoft.com/fwlink/?LinkId=88918).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí služby Active Directory mapování, najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](http://go.microsoft.com/fwlink/?LinkId=88918).  
   
  Tato funkce povolená, můžete nastavit <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> vlastnost <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídy k `true`. V konfiguraci, můžete nastavit `mapClientCertificateToWindowsAccount` atribut [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element `true`, jak je znázorněno v následujícím kódu.  
   

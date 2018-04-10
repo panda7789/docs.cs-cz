@@ -1,31 +1,31 @@
 ---
-title: "Paralelní programování v .NET"
-ms.custom: 
+title: Paralelní programování v .NET
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
-caps.latest.revision: 
+caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 554de5d65929afc03b57bdc604ceeb6ac35362d4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c0ea65b0a61719c85ab1da53bcc99f5d43a3210b
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
-Mnoho osobních počítačů a pracovních stanic má dvě nebo čtyři jádra (CPU) umožňující provádění více vláken současně. V blízké budoucnosti se očekává, že počítače budou mít mnohem více jader. V rámci využití výhod dostupného hardwaru lze kód paralelizovat a distribuovat tak práci mezi více procesorů. V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] rozšiřují podporu pro paralelní programování poskytnutím nový modul runtime, nových typů knihovny tříd a nové diagnostické nástroje. Tyto funkce zjednodušují vývoj paralelních aplikací tak, aby bylo možné psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken. Následující obrázek poskytuje podrobný přehled architektury paralelní programování v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+Mnoho osobních počítačů a pracovních stanic má dvě nebo čtyři jádra (CPU) umožňující provádění více vláken současně. V blízké budoucnosti se očekává, že počítače budou mít mnohem více jader. V rámci využití výhod dostupného hardwaru lze kód paralelizovat a distribuovat tak práci mezi více procesorů. V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] rozšiřují podporu pro paralelní programování poskytnutím nový modul runtime, nových typů knihovny tříd a nové diagnostické nástroje. Tyto funkce zjednodušují vývoj paralelních aplikací tak, aby bylo možné psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken. Následující obrázek poskytuje podrobný přehled architektury paralelní programování v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
  ![Paralelní programování architektura .NET](../../../docs/standard/parallel-programming/media/tpl-architecture.png "TPL_Architecture")  
   
@@ -43,5 +43,5 @@ Mnoho osobních počítačů a pracovních stanic má dvě nebo čtyři jádra (
 |[Pro další čtení](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|Obsahuje odkazy na další dokumentaci a zdroje ukázek pro paralelní programování v rozhraní .NET Framework.|  
   
 ## <a name="see-also"></a>Viz také  
- [Vzory pro paralelní programování: Princip fungování a způsob použití paralelní vzory s rozhraním .NET Framework 4](http://go.microsoft.com/fwlink/?LinkID=185142)  
+ [Vzory pro paralelní programování: Princip fungování a způsob použití paralelní vzory s rozhraním .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222)  
  [Ukázky pro paralelní programování s rozhraním .NET Framework](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)

@@ -1,12 +1,13 @@
 ---
-title: "Modifikátory (Visual Basic)"
+title: Modifikátory (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 1564ccf2d8f0fc2f787a19feec17ad5a0badc7db

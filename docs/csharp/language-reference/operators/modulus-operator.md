@@ -1,5 +1,5 @@
 ---
-title: "% – operátor (Referenční dokumentace jazyka C#)"
+title: '% – operátor (Referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - modulus operator [C#]
 - '% operator [C#]'
 ms.assetid: 3b74f4f9-fd9c-45e7-84fa-c8d71a0dfad7
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: cea4aa03424e93f3ec144126d73c63931a737b54

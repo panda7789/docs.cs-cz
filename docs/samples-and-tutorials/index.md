@@ -1,7 +1,7 @@
 ---
-title: "Ukázky a výukové programy"
-description: "Informace o ukázky a výukové programy pro jazyk C#, který vám pomůže, .NET Core a ASP.NET Core informace o rozhraní .NET."
-keywords: "Rozhraní .NET, .NET core, ASP.NET, C#, ukázka, kurzu"
+title: Ukázky a výukové programy
+description: Informace o ukázky a výukové programy pro jazyk C#, který vám pomůže, .NET Core a ASP.NET Core informace o rozhraní .NET.
+keywords: Rozhraní .NET, .NET core, ASP.NET, C#, ukázka, kurzu
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-ms.openlocfilehash: d800d861f65779a73f83cf44e8884566eb7adee4
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: f69aa704b05bffeaf932a093b991810f8678251c
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="samples-and-tutorials"></a>Ukázky a výukové programy
 
@@ -25,17 +25,17 @@ Dokumentace rozhraní .NET obsahuje sadu ukázky a výukové programy, které m�
 
 **[Testování částí v .NET Core pomocí testu dotnet.](../core/testing/unit-testing-with-dotnet-test.md)**
 
-Tento průvodce vám ukáže, jak vytvořit ASP.NET Core webové aplikace a testování částí přidružený. Začne tím, že vytvoříte jednoduché webové aplikace služby a potom přidá testy. Pokračuje v vytváření další testy na Průvodce implementace nové funkce. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento průvodce vám ukáže, jak vytvořit ASP.NET Core webové aplikace a testování částí přidružený. Začne tím, že vytvoříte jednoduché webové aplikace služby a potom přidá testy. Pokračuje v vytváření další testy na Průvodce implementace nové funkce. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test) je k dispozici v úložišti dotnet/samples na Githubu.
 
 ### <a name="tutorials"></a>Kurzy
 
 **[Zápis aplikace konzoly .NET Core pomocí nástrojů příkazového řádku: podrobný Průvodce](../core/tutorials/using-with-xplat-cli.md)**
 
-Tento průvodce vám ukáže, jak používat rozhraní příkazového řádku základní .NET nástrojů pro vývoj aplikací pro různé platformy konzoly. Se spustí s základní konzolovou aplikaci a nakonec zahrnuje více projektech, včetně testování. Můžete přidat funkce krok za krokem, vytváření vašeho vědomí narazíte. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/core/console-apps) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento průvodce vám ukáže, jak používat rozhraní příkazového řádku základní .NET nástrojů pro vývoj aplikací pro různé platformy konzoly. Se spustí s základní konzolovou aplikaci a nakonec zahrnuje více projektech, včetně testování. Můžete přidat funkce krok za krokem, vytváření vašeho vědomí narazíte. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/core/console-apps) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Zapisování knihoven s křížové nástrojů platformy](../core/tutorials/libraries.md)**
 
-Tato ukázka obsahuje informace o zápisu knihovny pro .NET pomocí nástrojů příkazového řádku pro různé platformy. Tyto nástroje poskytují prostředí efektivní a nízké úrovně, které funguje napříč kterýkoliv podporovaný operační systém. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library) je k dispozici v úložišti dotnet/docs na Githubu.
+Tato ukázka obsahuje informace o zápisu knihovny pro .NET pomocí nástrojů příkazového řádku pro různé platformy. Tyto nástroje poskytují prostředí efektivní a nízké úrovně, které funguje napříč kterýkoliv podporovaný operační systém. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library) je k dispozici v úložišti dotnet/samples na Githubu.
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
@@ -45,43 +45,43 @@ Najdete v článku [ASP.NET Core kurzy](/aspnet/core/tutorials/). Mnoho články
 
 ### <a name="samples"></a>Ukázky kódu
 
-**[Iterátory](../csharp/iterators.md)**
+**[iterátory](../csharp/iterators.md)**
 
-Tento příklad znázorňuje syntaxe a funkcí pro vytváření a použití jazyka C# iterátory. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/iterators) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento příklad znázorňuje syntaxe a funkcí pro vytváření a použití jazyka C# iterátory. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/iterators) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Indexers](../csharp/indexers.md)**
 
-Tento příklad znázorňuje syntaxe a funkce pro C# indexery. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento příklad znázorňuje syntaxe a funkce pro C# indexery. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/indexers) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Delegáti a události](../csharp/delegates-events.md)**
 
-Tento příklad znázorňuje syntaxe a funkce pro C# Delegáti a události. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events) je k dispozici v úložišti dotnet/docs na Githubu. A [druhý vzorek](https://github.com/dotnet/docs/tree/master/samples/csharp/events) zaměřené na události je taky v stejného úložiště.
+Tento příklad znázorňuje syntaxe a funkce pro C# Delegáti a události. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/delegates-and-events) je k dispozici v úložišti dotnet/samples na Githubu. A [druhý vzorek](https://github.com/dotnet/samples/tree/master/csharp/events) zaměřené na události je taky v stejného úložiště.
 
 **[Stromy výrazů](../csharp/expression-trees.md)**
 
-Tento příklad znázorňuje mnohé z problémů, které lze vyřešit pomocí stromů výrazů. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento příklad znázorňuje mnohé z problémů, které lze vyřešit pomocí stromů výrazů. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **Ukázky LINQ**
 
-Tato řada vzorků, které ukazují mnoho funkcí z jazyka integrovaného dotazu (LINQ). [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp) je k dispozici v úložišti dotnet/docs na Githubu.
+Tato řada vzorků, které ukazují mnoho funkcí z jazyka integrovaného dotazu (LINQ). [Hotová ukázka](https://github.com/dotnet/samples/tree/master/core/linq/csharp) je k dispozici v úložišti dotnet/samples na Githubu.
 
 ### <a name="tutorials"></a>Kurzy
 
 **[Konzolové aplikace](../csharp/tutorials/console-teleprompter.md)**
 
-Tento kurz představuje konzoly vstupně-výstupních operací, struktura konzolovou aplikaci a základní informace o založený na úlohách asynchronní programovací model. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento kurz představuje konzoly vstupně-výstupních operací, struktura konzolovou aplikaci a základní informace o založený na úlohách asynchronní programovací model. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Klienta REST](../csharp/tutorials/console-webapiclient.md)**
 
-Tento kurz představuje webovou komunikaci, serializace JSON a objektově orientované funkcí jazyka C#. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento kurz představuje webovou komunikaci, serializace JSON a objektově orientované funkcí jazyka C#. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Práce s dotazy LINQ](../csharp/tutorials/working-with-linq.md)**
 
-Tento kurz představuje mnoho funkcí LINQ a jazykové elementy, které ji podporují. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-linq) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento kurz představuje mnoho funkcí LINQ a jazykové elementy, které ji podporují. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-linq) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Mikroslužeb hostované v Docker](../csharp/tutorials/microservices.md)**
 
-Tento kurz představuje vytváření mikroslužbu ASP.NET Core a hostování v Docker. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento kurz představuje vytváření mikroslužbu ASP.NET Core a hostování v Docker. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/WeatherMicroservice) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](../core/tutorials/using-on-mac-vs.md)**
 
@@ -95,11 +95,11 @@ Tento kurz ukazuje, jak sestavit kompletní .NET Core řešení, které obsahuje
 
 **[Spouštění aplikací ASP.NET MVC v kontejnerech Docker Windows](../framework/docker/aspnetmvc.md)**
 
-Tento kurz ukazuje, jak nasadit aplikaci ASP.NET MVC existující kontejner Docker Windows. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/framework/docker/MVCRandomAnswerGenerator) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento kurz ukazuje, jak nasadit aplikaci ASP.NET MVC existující kontejner Docker Windows. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator) je k dispozici v úložišti dotnet/samples na Githubu.
 
 **[Spuštění rozhraní .NET Framework konzolové aplikace v kontejnerech Windows](../framework/docker/console.md)**
 
-Tento kurz ukazuje, jak nasadit stávající aplikace konzoly v kontejneru systému Windows. [Hotová ukázka](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator) je k dispozici v úložišti dotnet/docs na Githubu.
+Tento kurz ukazuje, jak nasadit stávající aplikace konzoly v kontejneru systému Windows. [Hotová ukázka](https://github.com/dotnet/samples/tree/master/framework/docker/ConsoleRandomAnswerGenerator) je k dispozici v úložišti dotnet/samples na Githubu.
 
 ## <a name="viewing-and-downloading-samples"></a>Zobrazení a stažení ukázky
 

@@ -1,7 +1,7 @@
 ---
-title: "Referenční dokumentace jazyka F#"
-description: "Najdete F # jazykové funkce informace z tohoto odkazu na tokeny jazyka, koncepty, typy, výrazy a témata týkající se podporovaných kompilátoru konstrukce."
-keywords: "Visual f #, f #, funkční programování"
+title: Referenční dokumentace jazyka F#
+description: 'Najdete F # jazykové funkce informace z tohoto odkazu na tokeny jazyka, koncepty, typy, výrazy a témata týkající se podporovaných kompilátoru konstrukce.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

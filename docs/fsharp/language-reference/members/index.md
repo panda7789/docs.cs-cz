@@ -1,7 +1,7 @@
 ---
-title: "Členy (F#)"
-description: "Další informace o objektu členy v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Členy (F#)
+description: 'Další informace o objektu členy v programovací jazyk F #.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

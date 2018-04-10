@@ -1,7 +1,7 @@
 ---
-title: "A prohlídka jazyka C# – průvodce v C#"
-description: "Nové jazyka C#? Naučte se základy jazyka."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#, úvod do jazyka C#, průvodce v C#"
+title: A prohlídka jazyka C# – průvodce v C#
+description: Nové jazyka C#? Naučte se základy jazyka.
+keywords: Rozhraní .NET, rozhraní .NET core, C#, úvod do jazyka C#, průvodce v C#
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/10/2016

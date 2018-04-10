@@ -1,12 +1,12 @@
 ---
-title: "TPL a tradiční asynchronní programování v .NET Framework"
-ms.custom: 
+title: TPL a tradiční asynchronní programování v .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,18 +14,18 @@ dev_langs:
 helpviewer_keywords:
 - tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-caps.latest.revision: 
+caps.latest.revision: 16
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 50c4f9cfeb135f1046fbb427585897ca99248afd
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2acfb9a564f3a7bc96ed303f49349afe56ca7fe4
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>TPL a tradiční asynchronní programování v .NET Framework
 Rozhraní .NET Framework poskytuje následující dva standardní vzory pro provádění I/čítači a výpočetních asynchronní operace:  
@@ -127,7 +127,7 @@ Rozhraní .NET Framework poskytuje následující dva standardní vzory pro prov
  [!code-vb[FromAsync#09](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#09)]  
   
 ## <a name="using-the-streamextensions-sample-code"></a>Pomocí StreamExtensions ukázkový kód  
- V Streamextensions.cs soubor v [ukázky pro paralelní programování v rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkID=165717) na webu MSDN, obsahuje několik odkaz implementace, které objekty úlohy použít pro asynchronní soubor a síťový vstupně-výstupních operací.  
+ V Streamextensions.cs soubor v [ukázky pro paralelní programování v rozhraní .NET Framework 4](https://code.msdn.microsoft.com/ParExtSamples), obsahuje několik odkaz implementace, které používají objekty úloh pro asynchronní soubor a sítě vstupně-výstupních operací.  
   
 ## <a name="see-also"></a>Viz také  
  [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

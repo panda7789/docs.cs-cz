@@ -1,6 +1,6 @@
 ---
-title: "Úvod do třídy kurz – C# místní – elementy QuickStart"
-description: "Vytvoření vaší první programu C# a prozkoumat objektově orientované koncepty"
+title: Úvod do třídy kurz – C# místní – elementy QuickStart
+description: Vytvoření vaší první programu C# a prozkoumat objektově orientované koncepty
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/11/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 97c1de562c86ea04153ec09bb0e813565523a3ba
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: dd3fff6f74c92a45545e8e36f28eab351b39b37e
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introduction-to-classes"></a>Úvod do třídy
 
@@ -78,7 +78,7 @@ namespace classes
 
 Před přechodem, Podívejme se na co jste vytvořili.  `namespace` Deklarace poskytuje způsob, jak logicky uspořádat vašeho kódu. Tento rychlý start je poměrně malý, takže všechny kód budete chápat jeden obor názvů. 
 
-`public class BankAccount`definuje třídu, nebo typu, kterou vytváříte. Všechno uvnitř `{` a `}` třídy, které následuje deklarace definuje chování třídy. Existují pět ***členy*** z `BankAccount` třídy. První tři ***vlastnosti***. Vlastnosti jsou datové prvky a může mít kód, který vynucuje ověřování nebo jinými pravidly. Poslední dva jsou ***metody***. Metody jsou bloky kódu, že či jedné funkce. Čtení názvy všech členů, měl by poskytnout dostatek informací pro vás nebo jiné vývojář zjistit, jaké jsou třídy.
+`public class BankAccount` definuje třídu, nebo typu, kterou vytváříte. Všechno uvnitř `{` a `}` třídy, které následuje deklarace definuje chování třídy. Existují pět ***členy*** z `BankAccount` třídy. První tři ***vlastnosti***. Vlastnosti jsou datové prvky a může mít kód, který vynucuje ověřování nebo jinými pravidly. Poslední dva jsou ***metody***. Metody jsou bloky kódu, že či jedné funkce. Čtení názvy všech členů, měl by poskytnout dostatek informací pro vás nebo jiné vývojář zjistit, jaké jsou třídy.
 
 ## <a name="open-a-new-account"></a>Otevřete nový účet
 
@@ -156,7 +156,7 @@ Konstruktor měli získat jeden změnit tak, aby ho přidá počáteční transa
 
 [!code-csharp[Constructor](../../../samples/csharp/classes-quickstart/BankAccount.cs#Constructor "The final version of the constructor")]
 
-<xref:System.DateTime.Now?displayProperty=nameWithType>je vlastnost, která vrátí aktuální datum a čas. Otestování tohoto přidáním několik vkladů a ke stažení v vaší `Main` metoda:
+<xref:System.DateTime.Now?displayProperty=nameWithType> je vlastnost, která vrátí aktuální datum a čas. Otestování tohoto přidáním několik vkladů a ke stažení v vaší `Main` metoda:
 
 ```csharp
 account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
@@ -215,6 +215,6 @@ Typ `dotnet run` a zobrazte si výsledky.
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud jste získali zablokuje, zobrazí se zdroji pro tento rychlý Start [v našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/classes-quickstart/)
+Pokud jste získali zablokuje, zobrazí se zdroji pro tento rychlý Start [v našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/)
 
 Blahopřejeme, jste dokončili všechny naše Quickstarts. Pokud jste přes další, zkuste naši [kurzy](../tutorials/index.md)

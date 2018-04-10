@@ -1,15 +1,16 @@
 ---
-title: "Systém souborů a registr (Průvodce programováním v C#)"
+title: Systém souborů a registr (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - file system [C#]
 - registry [C#]
 - files [C#]
 ms.assetid: 0f2511cf-2b02-4b41-b001-b1754677c38f
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 3d1b4e3fa9b6c6da89abd242be855e9fb7c16dd6

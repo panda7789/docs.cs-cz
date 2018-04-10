@@ -1,6 +1,6 @@
 ---
-title: "Společné architektury webové aplikace"
-description: "Architektury moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure | společné architektury webové aplikace"
+title: Společné architektury webové aplikace
+description: Architektury moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure | společné architektury webové aplikace
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
@@ -9,13 +9,13 @@ ms.technology: dotnet-docker
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: dc5580d38ac29a5e923a4b7d84f9d7e077d5cdb2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7e63f9ca8f13129959e609c824dad1b9b9e44d8d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
-#<a name="common-web-application-architectures"></a>Společné architektury webové aplikace
+# <a name="common-web-application-architectures"></a>Společné architektury webové aplikace
 
 > "Pokud se domníváte, že je dobré architektura náročná, zkuste architektura chybné."  
 > _-Brian zápatí a Joseph Yoder_
@@ -226,7 +226,7 @@ Při monolitický aplikace využívat Docker, rozdělení monolitický aplikaci 
 > <http://deviq.com/repository-pattern/>
 > - **Vyčištění ukázkové architektury řešení**  
 > <https://github.com/ardalis/cleanarchitecture>
-> - **Architektury elektronická kniha Mikroslužeb** <http://aka.ms/MicroservicesEbook>
+> - **Elektronická kniha Mikroslužeb architektury** <http://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
 [Předchozí] (architectural-principles.md) [Další] (common-client-side-web-technologies.md)

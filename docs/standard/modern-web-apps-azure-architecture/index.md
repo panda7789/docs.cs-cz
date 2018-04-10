@@ -1,6 +1,6 @@
 ---
-title: "Architekti moderních webových aplikací pomocí ASP.NET Core a Azure"
-description: "Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Úvod"
+title: Architekti moderních webových aplikací pomocí ASP.NET Core a Azure
+description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Úvod
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017

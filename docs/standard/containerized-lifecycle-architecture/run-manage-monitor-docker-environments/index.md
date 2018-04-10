@@ -1,7 +1,7 @@
 ---
-title: "Spouštět, spravovat a monitorovat Docker produkční prostředí"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Spouštět, spravovat a monitorovat Docker produkční prostředí
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

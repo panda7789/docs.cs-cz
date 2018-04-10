@@ -1,5 +1,5 @@
 ---
-title: "=&gt;Operátor (referenční dokumentace jazyka C#)"
+title: =&gt;Operátor (referenční dokumentace jazyka C#)
 ms.date: 10/02/2017
 ms.prod: .net
 ms.technology:

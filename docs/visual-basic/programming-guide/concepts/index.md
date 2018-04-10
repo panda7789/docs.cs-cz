@@ -1,11 +1,12 @@
 ---
-title: "Programování konceptů (Visual Basic)"
+title: Programování konceptů (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: c84b26f757ec852c9aefecab58eff9e631b95d15

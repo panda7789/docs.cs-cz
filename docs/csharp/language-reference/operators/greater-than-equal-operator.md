@@ -1,5 +1,5 @@
 ---
-title: "&gt;= – Operátor (referenční dokumentace jazyka C#)"
+title: '&gt;= – Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - greater than or equal to operator (>=) [C#]
 - '>= operator [C#]'
 ms.assetid: 0db4dcaf-56a3-4884-a7ad-35f64978a58d
-caps.latest.revision: 
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f020c2bd8756899908681ab72cac7aa2a203c6a1

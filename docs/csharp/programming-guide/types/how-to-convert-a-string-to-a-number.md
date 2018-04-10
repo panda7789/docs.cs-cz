@@ -1,8 +1,9 @@
 ---
-title: "Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)"
+title: 'Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - conversions [C#]
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 3dc67bc2f25bba14df0e3ce6859bb8bc9094871c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c5cecfdf822352d22713985d84cdd7025d0665c8
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)
 Můžete převést [řetězec](../../../csharp/language-reference/keywords/string.md) na číslo pomocí metody v <xref:System.Convert> třídy nebo pomocí `TryParse` nalezena metoda na různých číselnými typy (int, dlouhé, float, atd.).  
@@ -27,7 +28,7 @@ Můžete převést [řetězec](../../../csharp/language-reference/keywords/strin
  Můžete použít `Parse` nebo `TryParse` metody na číselný typ očekáváte, že obsahuje řetězec, například <xref:System.Int32?displayProperty=nameWithType> typu.  <xref:System.Convert.ToUInt32%2A?displayProperty=nameWithType> Používá metoda <xref:System.Int32.Parse%2A> interně.  Pokud řetězec není v platném formátu `Parse` vyvolá výjimku, zatímco `TryParse` vrátí [false](../../../csharp/language-reference/keywords/false.md).  
   
 ## <a name="example"></a>Příklad  
- `Parse` a `TryParse` metody Ignorovat prázdné znaky na začátku a na konci řetězce, ale všechny ostatní znaky musí být znaky, které tvoří příslušného číselného typu (int, long, ulong, float, decimal, atd.).  Všechny prázdné znaky v rámci znaky, které vytvářejí číslo způsobit chybu.  Například můžete použít `decimal.TryParse` analyzovat "10", "10.3", "10", ale tuto metodu nelze použít k analýze 10 z "10 X", "1 0" (Poznámka místa), "10. 3" (Poznámka místa), "10e1" (`float.TryParse` zde funguje), a tak dále.  
+ `Parse` a `TryParse` metody ignorovat mezer na začátku a na konci řetězce, ale všechny ostatní znaky musí být znaky, které tvoří příslušného číselného typu (int, long, ulong, float, decimal, atd.).  Všechny mezer mezi znaky, které vytvářejí číslo způsobit chybu.  Například můžete použít `decimal.TryParse` analyzovat "10", "10.3", "10", ale tuto metodu nelze použít k analýze 10 z "10 X", "1 0" (Poznámka místa), "10. 3" (Poznámka místa), "10e1" (`float.TryParse` zde funguje), a tak dále.  
   
  Následující příklady ukazují úspěšné i neúspěšné volání `Parse` a `TryParse`.  
   
@@ -60,5 +61,5 @@ Můžete převést [řetězec](../../../csharp/language-reference/keywords/strin
   
 ## <a name="see-also"></a>Viz také  
  [Typy](../../../csharp/programming-guide/types/index.md)  
- [Postupy: určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)  
+ [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)  
  [Nástroj formátování rozhraní .NET framework 4](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

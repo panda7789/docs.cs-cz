@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Získávání informací o typu a členu ze sestavení"
-ms.custom: 
+title: 'Postupy: Získávání informací o typu a členu ze sestavení'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - obtaining assembly information
 - assemblies [.NET Framework], obtaining information from
 ms.assetid: 348ae651-ccda-4f13-8eda-19e8337e9438
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c3112b7484e4d03eaacd218ff8e8ac34e77745b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 390afb392c06d5ce003d69f028cd667deb4d86c8
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-obtain-type-and-member-information-from-an-assembly"></a>Postupy: Získávání informací o typu a členu ze sestavení
 <xref:System.Reflection> Obor názvů obsahuje mnoho metody pro získání informací ze sestavení. V této části ukážeme jednu z těchto metod. Další informace najdete v tématu [Přehled reflexe](../../../docs/framework/reflection-and-codedom/reflection.md).  
@@ -38,6 +40,5 @@ ms.lasthandoff: 01/19/2018
  [!code-vb[Conceptual.Types.ViewInfo#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source6.vb#8)]  
   
 ## <a name="see-also"></a>Viz také  
- [Programování s doménami aplikací](http://msdn.microsoft.com/library/bd36055b-56bd-43eb-b4d8-820c37172131)  
- [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)  
+ [Programování s doménami aplikací](./application-domains.md#programming-with-application-domains) [reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)  
  [Používání domén aplikací](../../../docs/framework/app-domains/use.md)

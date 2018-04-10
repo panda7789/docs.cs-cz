@@ -1,7 +1,7 @@
 ---
-title: "Vytváření stromů výrazů"
-description: "Další informace o technikách pro vytváření stromů výrazů."
-keywords: "Rozhraní .NET, .NET core"
+title: Vytváření stromů výrazů
+description: Další informace o technikách pro vytváření stromů výrazů.
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.author: wiwagn
 ms.date: 06/20/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: c0d7bcf6e07f4a49e15e6f6f4e028eebfe82d8bf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7e45f566f66c129111c65a1166a6c71ff518dfc7
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-expression-trees"></a>Vytváření stromů výrazů
 
@@ -169,7 +169,7 @@ BlockExpression body = Expression.Block(
 
 Kód k vytvoření strom výrazu pro funkci faktoriálu je poměrně trochu delší složitěji, a je riddled s popisky a zalomení příkazy a další prvky, kterou jsme chtěli vyhnout v našem každý den kódování úlohy. 
 
-Pro tento oddíl I taky aktualizovali kód návštěvníka navštívit každý uzel v tomto výrazu stromu a zapsat informace o uzly, které jsou vytvořené v této ukázce. Můžete [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees) v úložišti GitHub dotnet/docs. Vytváření a spuštěním ukázky experimentovat sami. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Pro tento oddíl I taky aktualizovali kód návštěvníka navštívit každý uzel v tomto výrazu stromu a zapsat informace o uzly, které jsou vytvořené v této ukázce. Můžete [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) v úložišti GitHub dotnet/docs. Vytváření a spuštěním ukázky experimentovat sami. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="examining-the-apis"></a>Zkoumání rozhraní API
 

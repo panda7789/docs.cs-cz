@@ -1,6 +1,6 @@
 ---
 title: XML v jazyce Visual Basic
-description: "Další informace o použití XML a LINQ XML funkcí v kódu jazyka Visual Basic."
+description: Další informace o použití XML a LINQ XML funkcí v kódu jazyka Visual Basic.
 ms.date: 10/20/2017
 ms.prod: .net
 ms.technology:

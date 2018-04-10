@@ -1,5 +1,5 @@
 ---
-title: "| – operátor (Referenční dokumentace jazyka C#)"
+title: '| – operátor (Referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - '| operator [C#]'
 - binary operator (|) [C#]
 ms.assetid: 82d6bb78-54c8-40bf-b679-531180ddaf70
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 374adc30e6937a68d67bfae152f2546c854b829b

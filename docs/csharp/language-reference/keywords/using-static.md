@@ -1,5 +1,5 @@
 ---
-title: "pomocí statické – direktiva (referenční dokumentace jazyka C#)"
+title: pomocí statické – direktiva (referenční dokumentace jazyka C#)
 ms.date: 03/10/2017
 ms.prod: .net
 ms.technology:

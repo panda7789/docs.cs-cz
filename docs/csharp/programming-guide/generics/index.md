@@ -1,14 +1,15 @@
 ---
-title: "Obecné typy (Průvodce programováním v C#)"
+title: Obecné typy (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0804ca0fcefcc53e06352accf9a2db19edb31037

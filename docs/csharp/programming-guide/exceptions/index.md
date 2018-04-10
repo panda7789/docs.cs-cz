@@ -1,5 +1,5 @@
 ---
-title: "Výjimky a jejich zpracování (Průvodce programováním v C#)"
+title: Výjimky a jejich zpracování (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-caps.latest.revision: 
+caps.latest.revision: 33
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 3c4ff558f2b850e195138dcc8901d6d860365cfc

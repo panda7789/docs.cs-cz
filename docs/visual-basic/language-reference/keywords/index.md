@@ -1,9 +1,10 @@
 ---
-title: "Klíčová slova (Visual Basic)"
+title: Klíčová slova (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - reserved keywords, Visual Basic
@@ -14,7 +15,7 @@ helpviewer_keywords:
 - reserved words, Visual Basic keywords
 - Visual Basic, keywords
 ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
-caps.latest.revision: "43"
+caps.latest.revision: 43
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2ee98b317e9d94cad5087e708bd71ca88d2bae63

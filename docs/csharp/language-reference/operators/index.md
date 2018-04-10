@@ -1,6 +1,6 @@
 ---
 title: Operátory jazyka C#
-ms.date: 03/09/2017
+ms.date: 04/04/2018
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-caps.latest.revision: ''
+caps.latest.revision: 40
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 14ebd489c48f53c8618cadf91f9744bb30f582d3
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: c62a168c845575e4fd3df212db379548926d2fab
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 C# poskytuje mnoho operátory, které jsou symboly, které určují, které operace (matematické, indexování, volání funkce atd.) provést ve výrazu. Můžete [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) řada operátorů změnit jejich význam při aplikování uživatelem definovaného typu.  
@@ -101,7 +101,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [x nebo y](../../../csharp/language-reference/operators/division-operator.md) – dělení. Pokud operandy celá čísla, výsledkem je celé číslo, zkrátí směrem k nule (například `-7 / 2 is -3`).  
   
- [x, % y](../../../csharp/language-reference/operators/modulus-operator.md) – numerického zbytku. Pokud operandy celých čísel, vrátí zbytek dělicí x y.  Pokud `q = x / y` a `r = x % y`, pak `x = q * y + r`.  
+ [x, % y](../../../csharp/language-reference/operators/remainder-operator.md) – zbytek. Pokud operandy celých čísel, vrátí zbytek dělicí x y.  Pokud `q = x / y` a `r = x % y`, pak `x = q * y + r`.  
   
 ## <a name="additive-operators"></a>Operátory sčítání  
  Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.  
@@ -187,7 +187,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
   
  [x / = y](../../../csharp/language-reference/operators/division-assignment-operator.md) – přiřazení dělení. Rozdělení hodnota `x` hodnotou `y`, uložit výsledek v `x`a vrátí novou hodnotu.  
   
- [x % = y](../../../csharp/language-reference/operators/modulus-assignment-operator.md) – přiřazení numerického zbytku. Rozdělení hodnota `x` hodnotou `y`, uložení zbývající v `x`a vrátí novou hodnotu.  
+ [x % = y](../../../csharp/language-reference/operators/remainder-assignment-operator.md) – remainder přiřazení. Rozdělení hodnota `x` hodnotou `y`, uložení zbývající v `x`a vrátí novou hodnotu.  
   
  [x & = y](../../../csharp/language-reference/operators/and-assignment-operator.md) – a přiřazení. A hodnotu `y` s hodnotou `x`, uložit výsledek v `x`a vrátí novou hodnotu.  
   

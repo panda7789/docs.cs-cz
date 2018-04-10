@@ -1,6 +1,6 @@
 ---
-title: "* Operátor (referenční dokumentace jazyka C#)"
-ms.date: 07/20/2015
+title: '* Operátor (referenční dokumentace jazyka C#)'
+ms.date: 04/04/2018
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -11,21 +11,21 @@ helpviewer_keywords:
 - multiplication operator (*) [C#]
 - '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 64c32def0935f4347f9aaccc2865b9cd33dd8a70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 07d06d668ba43ebc3f4fae394d7b6641b122f4a6
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="-operator-c-reference"></a>* – operátor (Referenční dokumentace jazyka C#)
-Operátor násobení (`*`), která vypočítá produktu jejími operandy.  Navíc dereference operátor, který umožňuje čtení a zápis do ukazatel.  
+Operátor násobení (`*`) vypočítá produktu jejími operandy. Všechny číselné typy obsahuje předdefinované operátory násobení.  
+
+`*` slouží také jako dereference operátor, který umožňuje čtení a zápis do ukazatel.
   
 ## <a name="remarks"></a>Poznámky  
- Všechny číselné typy obsahuje předdefinované operátory násobení.  
-  
  `*` Operátor slouží také k deklaraci typy ukazatelů a dereference ukazatele. Tento operátor lze použít pouze v kontextu unsafe, odlišené použití [unsafe](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo a vyžadující [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.  Operátor dereference se taky říká deferenční operátor.  
   
  Uživatelem definované typy může přetížit binárního souboru `*` – operátor (viz [operátor](../../../csharp/language-reference/keywords/operator.md)). Při binární operátor je přetížena, odpovídající operátor přiřazení, pokud existuje, je také implicitně přetížená.  
@@ -38,6 +38,6 @@ Operátor násobení (`*`), která vypočítá produktu jejími operandy.  Naví
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Nebezpečný kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)

@@ -1,5 +1,5 @@
 ---
-title: "static – modifikátor (Referenční dokumentace jazyka C#)"
+title: static – modifikátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-caps.latest.revision: 
+caps.latest.revision: 26
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c47f4a19843039c27ef9f1602581d1004fb8fd76

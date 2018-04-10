@@ -1,14 +1,15 @@
 ---
-title: "Sestavení a globální mezipaměti sestavení (C#)"
-ms.custom: 
+title: Sestavení a globální mezipaměti sestavení (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 923a64e98fde3ab11f4e3feb6c91507ae8886151

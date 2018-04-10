@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: b9921bc3621d6abfc37b1bf1fc4f481620ccc407
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 8703670f650a16d1b6642eaaf4f82f0a73ab4c69
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantického analýzy
 
@@ -36,7 +36,7 @@ Jako <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, <xre
 
 V tomto kurzu si prohlédnete "Hello World" program znovu. Tentokrát dotaz symboly v programu pochopit, jaké typy těchto představují symboly. Dotaz pro typy v oboru názvů a zjistěte, jak lze najít dostupné metody pro typ.
 
-Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SemanticQuickStart).
+Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SemanticQuickStart).
 
 > [!NOTE]
 > Typy stromu syntaxe využívají dědičnost k popisu různých syntaxe prvky, které jsou platné v různých umístěních v programu. Pomocí těchto rozhraní API často znamená přetypování vlastnosti nebo členy kolekce na konkrétní odvozené typy. V následujících příkladech přiřazení a položky CAST jsou samostatné příkazy, pomocí explicitně typové proměnné. Si můžete přečíst kód návratové typy rozhraní API a typ modulu runtime vrácených objektů. V praxi je dnes běžné použijte implicitně typovaná proměnné a závisí na názvy rozhraní API k popisu typ objektů, je zkontrolován.

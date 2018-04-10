@@ -9,7 +9,7 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-caps.latest.revision: ''
+caps.latest.revision: 41
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 9478900be008588597c1dd9e75f704c751ebe344

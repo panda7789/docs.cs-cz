@@ -17,11 +17,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 04696ff346ffab438ce8bef2974fdd1a19d940af
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: e8107fb22fcc8afee8723c77868b0c1e5a404e3f
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -514,7 +514,8 @@ Const DisableCngCertificates As String = "Switch.System.ServiceModel.DisableCngC
 AppContext.SetSwitch(disableCngCertificates, False)
 ```
 
- **Lepší podpora pro více pravidel úpravy letního času v třídě objektu DataContractJsonSerializer** zákazníci mohou používat nastavení konfigurace aplikace k určení zda <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> třída podporuje více úpravy pravidla pro jeden časové pásmo. Toto je funkce přihlášení. Chcete-li ji povolit, přidejte do souboru app.config následující nastavení:
+ **Lepší podporu pro více pravidel úpravy letního času v třídě objektu DataContractJsonSerializer**   
+ Zákazníci mohou používat nastavení konfigurace aplikace k určení zda <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> třída podporuje více pravidel úpravy pro jeden časové pásmo. Toto je funkce přihlášení. Chcete-li ji povolit, přidejte do souboru app.config následující nastavení:
 
 ```xml
 <runtime>
@@ -526,32 +527,8 @@ Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContr
 
 Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pásmo, najdete v části [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).
 
-**Podpora pro zachování UTC čas, kdy serializace a deserializace pomocí třídy XMLSerializer** normálně, když <xref:System.Xml.Serialization.XmlSerializer> třída se používá k serializaci UTC <xref:System.DateTime> hodnoty vytvoří řetězec serializovaných čas, který zachovává Datum a čas, ale předpokládá se místní čas.  Například pokud vytvoříte instanci datum a čas UTC voláním následující kód:
-
-```csharp
-DateTime utc = new DateTime(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc);
-```
-
-```vb
-Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
-```
-
-Výsledkem je řetězec serializovaných čas "03:00:00.0000000-08:00" pro systém osm hodin za čas UTC.  A serializovaných hodnot se vždy deserializovat jako hodnoty místního data a času.
-
- Nastavení konfigurace aplikace můžete určit, zda <xref:System.Xml.Serialization.XmlSerializer> uchovává informace o časovém pásmu UTC při serializaci a deserializaci <xref:System.DateTime> hodnoty:
-
-```xml 
-<runtime>
-     <AppContextSwitchOverrides 
-          value="Switch.System.Runtime.Serialization.DisableSerializeUTCDateTimeToTimeAndDeserializeUTCTimeToUTCDateTime=false" />
-</runtime>
-```
-
-Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objektu používá <xref:System.TimeZoneInfo> zadejte místo <xref:System.TimeZone> typ k deserializaci data a času. <xref:System.TimeZoneInfo> podporuje více pravidel úpravy, které umožňuje pracovat s daty historické časové pásmo;   <xref:System.TimeZone> neexistuje.
-
-Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časové pásmo, najdete v části [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).
-
- **Nejlepší shodu – NetNamedPipeBinding** WCF má nové nastavení aplikace, které lze nastavit u klientských aplikací, aby vždy připojí ke službě naslouchání v identifikátoru URI, který nejlépe odpovídá ten, který požádají. Při tomto nastavení aplikace nastavte na `false` (výchozí), je možné pro klienty, kteří používají <xref:System.ServiceModel.NetNamedPipeBinding> k pokusu o připojení ke službě, naslouchá na identifikátor URI, který je podřetězcem požadovaný identifikátor URI.
+ **Nejlepší shodu – NetNamedPipeBinding**   
+ WCF má nové nastavení aplikace, které lze nastavit u zajistěte, aby byl že vždy připojí ke službě naslouchání v identifikátoru URI, který nejlépe odpovídá ten, který požádají klientské aplikace. Při tomto nastavení aplikace nastavte na `false` (výchozí), je možné pro klienty, kteří používají <xref:System.ServiceModel.NetNamedPipeBinding> k pokusu o připojení ke službě, naslouchá na identifikátor URI, který je podřetězcem požadovaný identifikátor URI.
 
  Například se klient pokusí se připojit k naslouchání služby v `net.pipe://localhost/Service1`, ale jinou službu na tomto počítači spuštěna s oprávněním správce naslouchá na `net.pipe://localhost`. Při tomto nastavení aplikace nastavte na `false`, klient se pokusí připojit k nesprávnou službu. Po nastavení nastavení aplikace nastavte na `true`, klient se vždy připojí k nejlépe odpovídající služby.
 

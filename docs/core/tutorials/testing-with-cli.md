@@ -1,7 +1,7 @@
 ---
-title: "Uspořádání a testování projektů pomocí příkazového řádku .NET Core"
-description: "Tento kurz vysvětluje, jak uspořádat a testování .NET Core projekty z příkazového řádku."
-keywords: "Testování, .NET Core CLI, xUnit .NET, .NET core jednotky"
+title: Uspořádání a testování projektů pomocí příkazového řádku .NET Core
+description: Tento kurz vysvětluje, jak uspořádat a testování .NET Core projekty z příkazového řádku.
+keywords: Testování, .NET Core CLI, xUnit .NET, .NET core jednotky
 author: cartermp
 ms.author: mairaw
 ms.date: 05/16/2017
@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
-ms.workload: dotnetcore
-ms.openlocfilehash: 4b8728a175d67cc532866d4de41d412e459f0291
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: c68b7cb7dac069093e2e849543c5b5c21b4ffe3a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
@@ -52,7 +53,7 @@ Projekty, které logicky skupiny souborů do složek, které se dají snadno př
 
 ### <a name="building-the-sample"></a>Vytváření vzorku
 
-Následující postup, můžete buď absolvovat pomocí [NewTypes mazlíčků ukázkové](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild) nebo vytvořit vlastní soubory a složky. Typy jsou logicky uspořádány do strukturu složek, která umožňuje přidání další typy později a testy jsou také logicky umístit do složky umožňující přidání další testy později.
+Následující postup, můžete buď absolvovat pomocí [NewTypes mazlíčků ukázkové](https://github.com/dotnet/samples/tree/master/core/console-apps/NewTypesMsBuild) nebo vytvořit vlastní soubory a složky. Typy jsou logicky uspořádány do strukturu složek, která umožňuje přidání další typy později a testy jsou také logicky umístit do složky umožňující přidání další testy později.
 
 Ukázka obsahuje dva typy `Dog` a `Cat`a je implementovat společné rozhraní a má `IPet`. Pro `NewTypes` projektu vaším cílem je uspořádat typy související s pet do *mazlíčků* složky. Pokud později, přidáte další sadu typy *WildAnimals* například se umístit do *NewTypes* složky spolu s *mazlíčků* složky. *WildAnimals* složka může obsahovat typy pro zvířat, které nejsou mazlíčků, jako například `Squirrel` a `Rabbit` typy. Tímto způsobem jako typy jsou přidány, projekt zůstává i uspořádány. 
 
@@ -103,7 +104,7 @@ Woof!
 Meow!
 ```
 
-Volitelné cvičení: můžete přidat nové domácí typu, například `Bird`, tím, že rozšíří tento projekt. Ujistěte se, ptačí perspektivy na `TalkToOwner` metoda udělení `Tweet!` vlastníkovi. Spusťte aplikaci znovu. Výstup bude obsahovat`Tweet!`
+Volitelné cvičení: můžete přidat nové domácí typu, například `Bird`, tím, že rozšíří tento projekt. Ujistěte se, ptačí perspektivy na `TalkToOwner` metoda udělení `Tweet!` vlastníkovi. Spusťte aplikaci znovu. Výstup bude obsahovat `Tweet!`
 
 ### <a name="testing-the-sample"></a>Testování vzorku
 

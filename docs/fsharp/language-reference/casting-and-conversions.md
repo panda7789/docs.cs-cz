@@ -1,7 +1,7 @@
 ---
-title: "Přetypování a převody (F#)"
-description: "Zjistěte, jak programovací jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy."
-keywords: "Visual f #, f #, funkční programování"
+title: Přetypování a převody (F#)
+description: 'Zjistěte, jak programovací jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: db30db67-da21-4206-bf0c-9211bd3cb22f
-ms.openlocfilehash: f17d3919c59c5881213d28a59cea7ae184493949
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: df8352b0dd8651f1480515311454a218ea79b971
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="casting-and-conversions-f"></a>Přetypování a převody (F#)
 
@@ -110,7 +110,7 @@ let base1 = d1 :> Base1
 with
 
 ```fsharp
-base1 = upcast d1
+let base1 = upcast d1
 ```
 
 V předchozí kód typ argumentu a návratové typy jsou `Derived1` a `Base1`, v uvedeném pořadí.
@@ -118,4 +118,4 @@ V předchozí kód typ argumentu a návratové typy jsou `Derived1` a `Base1`, v
 Další informace o testech typu najdete v tématu [výrazy shody](match-Expressions.md).
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)

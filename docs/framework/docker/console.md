@@ -1,19 +1,19 @@
 ---
-title: "Spouštění aplikací konzoly v Docker"
-description: "Zjistěte, jak využít stávající aplikace konzoly .NET Framework a spustíte ho v kontejner Windows Docker."
+title: Spouštění aplikací konzoly v Docker
+description: Zjistěte, jak využít stávající aplikace konzoly .NET Framework a spustíte ho v kontejner Windows Docker.
 author: spboyer
-keywords: ".NET – aplikace typu kontejner, konzoly,"
+keywords: .NET – aplikace typu kontejner, konzoly,
 ms.date: 09/28/2016
 ms.topic: article
 ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: 037d94452dd62c06fe6d8ac7aea1143f52b96d32
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 7990ed03028ea9361a8b1760b237b8ed2f9d204d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Konzolové aplikace spuštěna v kontejnerech Windows
 
@@ -25,7 +25,7 @@ Ukázkovou aplikaci konzoly je jednoduchý příklad, která přebírá argument
 
 Kromě odpověď `Environment.MachineName` byla přidána do odpovědi na tento rozdíl mezi systémem aplikace místně a v kontejneru systému Windows. Při spuštění aplikace místně, má být vrácen název místního počítače a při spuštění v systému Windows kontejneru; je vrácen kontejner id relace.
 
-[Kompletní příklad](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator) je k dispozici v úložišti dotnet/docs na Githubu. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+[Kompletní příklad](https://github.com/dotnet/samples/tree/master/framework/docker/ConsoleRandomAnswerGenerator) je k dispozici v úložišti dotnet/samples na Githubu. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 Musíte se seznámit s některé Docker podmínky před zahájením práce na přesunutí aplikace do kontejneru.
 
@@ -54,7 +54,7 @@ Kontejnery Windows jsou podporovány v [Windows 10 Anniversary Update](https://w
 
 Je potřeba mít Docker pro systém Windows, verze 1.12 Beta 26 nebo vyšší pro podporu Windows kontejnery. Ve výchozím nastavení povoluje Docker založenými na systému Linux kontejnery; Přepněte do Windows kontejnery kliknutím pravým tlačítkem na ikonu Docker na hlavním panelu a vyberte **přepnout do kontejnerů Windows**. Docker spustí proces změny a může být nutný restart.
 
-![Windows – kontejnery](./media/console/SwitchContainer.png)
+![Windows-Containers](./media/console/SwitchContainer.png)
 
 ## <a name="building-the-application"></a>Vytváření aplikace
 Obvykle jsou konzolových aplikací distribuovaných přes instalačního programu, FTP nebo sdílené složky nasazení. Pokud nasazujete do kontejneru, prostředky nutné zkompilovat a dvoufázové instalace do umístění, které lze použít při vytváření bitové kopie Docker.

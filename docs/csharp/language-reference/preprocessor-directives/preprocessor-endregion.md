@@ -1,5 +1,5 @@
 ---
-title: "#endregion – (referenční dokumentace jazyka C#)"
+title: '#endregion – (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#endregion directive [C#]'
 ms.assetid: 16099660-91b2-49e5-9646-77f9ef069526
-caps.latest.revision: 
+caps.latest.revision: 10
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d2964d162406cd3c3b5f0821c2981ef69222ae9b

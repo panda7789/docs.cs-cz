@@ -2,6 +2,7 @@
 ## [[] – operátor](index-operator.md)
 ## [() – operátor](invocation-operator.md)
 ## [. – operátor](member-access-operator.md)
+## [Operátory ?. a ?[]](null-conditional-operators.md)
 ## [:: – operátor](namespace-alias-qualifer.md)
 ## [+ – operátor](addition-operator.md)
 ## [- – operátor](subtraction-operator.md)
@@ -40,4 +41,3 @@
 ## [-> – operátor](dereference-operator.md)
 ## [?? – operátor](null-conditional-operator.md)
 ## [=> – operátor](lambda-operator.md)
-## [Podmíněné operátory s null](null-conditional-operators.md)

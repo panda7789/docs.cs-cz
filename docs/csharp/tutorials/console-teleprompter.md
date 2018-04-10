@@ -1,7 +1,7 @@
 ---
-title: "Konzolová aplikace"
-description: "V tomto kurzu se dozvíte, jaké celou řadu funkcí v .NET Core a jazyka C#."
-keywords: "Rozhraní .NET, .NET core"
+title: Konzolová aplikace
+description: V tomto kurzu se dozvíte, jaké celou řadu funkcí v .NET Core a jazyka C#.
+keywords: Rozhraní .NET, .NET core
 author: BillWagner
 ms.author: wiwagn
 ms.date: 03/06/2017
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 08dab8e7b210ab5159645563cd381d50145d764b
-ms.sourcegitcommit: be7862cac09066bc505586cbf071d0e2c8fb1508
+ms.openlocfilehash: cc8645f9eef070d800627ea1c47cf7de1e877783
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="console-application"></a>Konzolová aplikace
 
@@ -52,7 +52,7 @@ namespace TeleprompterConsole
 ```
 
 ## <a name="reading-and-echoing-the-file"></a>Čtení a zobrazování souboru
-První funkce přidání je možnost čtení z textového souboru a zobrazit všechny tento text do konzoly. Nejprve přidejme do textového souboru. Kopírování [sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) soubor z úložiště GitHub pro tento [ukázka](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter) do adresáře projektu. To bude sloužit jako skript pro vaši aplikaci. Pokud vás zajímají informace o tom, jak stáhnout ukázkové aplikace pro toto téma, postupujte podle pokynů v [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples) tématu.
+První funkce přidání je možnost čtení z textového souboru a zobrazit všechny tento text do konzoly. Nejprve přidejme do textového souboru. Kopírování [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) soubor z úložiště GitHub pro tento [ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do adresáře projektu. To bude sloužit jako skript pro vaši aplikaci. Pokud vás zajímají informace o tom, jak stáhnout ukázkové aplikace pro toto téma, postupujte podle pokynů v [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples) tématu.
 
 Dál přidejte následující metodu v třídě Program (přímo pod `Main` metoda):
 
@@ -83,7 +83,7 @@ Tato metoda je zvláštní druh C# metodu s názvem *enumerátor metoda*. Vrát�
 
 Existují dva další C# syntaxe prvky, které může být pro vás nový. `using` Příkaz v této metodě spravuje vyčištění prostředků. Proměnné, která je v inicializovat `using` – příkaz (`reader`, v tomto příkladu) musí implementovat `IDisposable` rozhraní. <xref:System.IDisposable> Rozhraní definuje jedinou metodu `Dispose`, která by měla být volána, když prostředek by měly být uvolněny. Kompilátor generuje tohoto volání při provádění dosáhne složená závorka `using` příkaz. Kód generované kompilátorem zajistí, že prostředek vydání i v případě, že je vyvolána výjimka z kódu v bloku definované na pomocí příkazu.
 
-`reader` Proměnná je definována pomocí `var` – klíčové slovo. `var`definuje *implicitně typované lokální proměnné*. To znamená, že typ proměnné je určen podle typu čas kompilace objekt přiřazenou proměnné. Tady, který je vrácená hodnota z <xref:System.IO.File.OpenText(System.String)> metoda, která je <xref:System.IO.StreamReader> objektu.
+`reader` Proměnná je definována pomocí `var` – klíčové slovo. `var` definuje *implicitně typované lokální proměnné*. To znamená, že typ proměnné je určen podle typu čas kompilace objekt přiřazenou proměnné. Tady, který je vrácená hodnota z <xref:System.IO.File.OpenText(System.String)> metoda, která je <xref:System.IO.StreamReader> objektu.
  
 Nyní Pojďme zadejte kód pro čtení tohoto souboru v `Main` metoda: 
 

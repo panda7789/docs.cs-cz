@@ -1,6 +1,6 @@
 ---
-title: "Kurz větve a smyčky – C# místní – elementy QuickStart"
-description: "V tento rychlý start o větve a smyčky můžete napsat kód C# a prozkoumejte syntaxi jazyka, která podporuje podmíněného větvení a smyčky provést příkazy opakovaně."
+title: Kurz větve a smyčky – C# místní – elementy QuickStart
+description: V tento rychlý start o větve a smyčky můžete napsat kód C# a prozkoumejte syntaxi jazyka, která podporuje podmíněného větvení a smyčky provést příkazy opakovaně.
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/31/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 7d69b2b9bb02e2999bcd785da653bd4a13ed947c
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 9a52bafd1536783c59e9e1b92f3ad16b5000ca3b
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 
@@ -68,7 +68,7 @@ Následující příkaz `else` – klíčové slovo provede pouze, pokud je podm
 
 > [!IMPORTANT]
 > Odsazení pod `if` a `else` příkazy je pro lidské čtečky.
-> Jazyk C# nepodporuje považovat za odsazení, nebo obsahoval mezeru významné. Následující příkaz `if` nebo `else` – klíčové slovo bude proveden podle stavu. Všechny ukázky tento rychlý start podle běžnou praxí odsazovat řádky založené na toku řízení příkazů.
+> Jazyk C# nepodporuje považovat za odsazení nebo mezer významné. Následující příkaz `if` nebo `else` – klíčové slovo bude proveden podle stavu. Všechny ukázky tento rychlý start podle běžnou praxí odsazovat řádky založené na toku řízení příkazů.
 
 Protože odsazení není důležité, budete muset použít `{` a `}` označte, když má více než jeden příkaz, který má být součástí blok, který provede podmíněně. Programátory v jazyce C# obvykle používají tyto složené závorky na všech `if` a `else` klauzule. Následující příklad je stejný jako ten, který jste právě vytvořili. Upravte kód výše tak, aby odpovídala následující kód:
 
@@ -249,7 +249,7 @@ Teď, když jste viděli `if` prohlášení a opakování konstrukce v jazyce C#
 - `if` Příkaz vám dává stav chcete zobrazit, pokud číslo musí být součástí součet.
 - `for` Smyčky vám může pomoct opakujte sérii kroků pro všechna čísla 1 až 20.
 
-Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Měli byste obdržet 63 pro odpověď. Zobrazí jednu možnou odpověď podle [zobrazení Dokončený kód v Githubu](https://github.com/dotnet/docs/tree/master/samples/csharp/branches-quickstart/Program.cs#L46-L54).
+Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Měli byste obdržet 63 pro odpověď. Zobrazí jednu možnou odpověď podle [zobrazení Dokončený kód v Githubu](https://github.com/dotnet/samples/tree/master/csharp/branches-quickstart/Program.cs#L46-L54).
 
 Jste dokončili rychlé spuštění "větve a smyčky".
 

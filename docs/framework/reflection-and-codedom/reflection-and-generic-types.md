@@ -1,12 +1,13 @@
 ---
-title: "Reflexe a obecné typy"
-ms.custom: 
+title: Reflexe a obecné typy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,19 +23,20 @@ helpviewer_keywords:
 - types, generic
 - type parameters
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2c6ace8f34999a6d98fc6784dd21ce88baf2af42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 54ce839c6a569bed784a03acd5e2b92f4f1f5aca
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="reflection-and-generic-types"></a>Reflexe a obecné typy
-<a name="top"></a>Z hlediska reflexe, rozdíl mezi obecného typu a typ obyčejnou je, že obecného typu má přidruženo sadu parametrů typů (je-li definice obecného typu) nebo zadejte argumenty (Pokud je vytvořený typ). Obecná metoda se liší od metody obyčejnou stejným způsobem.  
+<a name="top"></a> Z hlediska reflexe, rozdíl mezi obecného typu a typ obyčejnou je, že obecného typu má přidruženo sadu parametrů typů (je-li definice obecného typu) nebo zadejte argumenty (Pokud je vytvořený typ). Obecná metoda se liší od metody obyčejnou stejným způsobem.  
   
  Existují dva klíče k pochopení, jak reflexe zpracovává obecné typy a metody:  
   
@@ -65,15 +67,15 @@ ms.lasthandoff: 12/22/2017
   
 <a name="is_this_a_generic_type_or_method"></a>   
 ## <a name="is-this-a-generic-type-or-method"></a>Obecný typ nebo metoda, je to?  
- Při použití reflexe prozkoumat neznámého typu, reprezentována instanci <xref:System.Type>, použijte <xref:System.Type.IsGenericType%2A> vlastnosti k určení, zda je neznámý typ Obecné. Vrátí `true` Pokud typ je obecná. Podobně když zkontrolujte Neznámá metoda, reprezentována instanci <xref:System.Reflection.MethodInfo> třídy, použijte <xref:System.Reflection.MethodInfo.IsGenericMethod%2A> vlastnosti k určení, zda je obecná metoda.  
+ Při použití reflexe prozkoumat neznámého typu, reprezentována instanci <xref:System.Type>, použijte <xref:System.Type.IsGenericType%2A> vlastnosti k určení, zda je neznámý typ Obecné. Vrátí `true` Pokud typ je obecná. Podobně když zkontrolujte Neznámá metoda, reprezentována instanci <xref:System.Reflection.MethodInfo> třídy, použijte <xref:System.Reflection.MethodBase.IsGenericMethod%2A> vlastnosti k určení, zda je obecná metoda.  
   
 ### <a name="is-this-a-generic-type-or-method-definition"></a>Obecný typ nebo metoda definice, je to?  
- Použít <xref:System.Type.IsGenericTypeDefinition%2A> vlastnosti k určení zda <xref:System.Type> objekt představuje obecného typu definice a používání <xref:System.Reflection.MethodInfo.IsGenericMethodDefinition%2A> metoda k určení zda <xref:System.Reflection.MethodInfo> představuje definici obecná metoda.  
+ Použít <xref:System.Type.IsGenericTypeDefinition%2A> vlastnosti k určení zda <xref:System.Type> objekt představuje obecného typu definice a používání <xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A> metoda k určení zda <xref:System.Reflection.MethodInfo> představuje definici obecná metoda.  
   
  Obecné metody a typu definice jsou šablony, ze kterých instantiable typy jsou vytvořeny. Obecné typy v knihovně tříd rozhraní .NET Framework, jako <xref:System.Collections.Generic.Dictionary%602>, jsou definice obecného typu.  
   
 ### <a name="is-the-type-or-method-open-or-closed"></a>Typ nebo metoda otevřené nebo zavřené?  
- Obecný typ nebo metoda je zavřený, pokud byla nahrazena instantiable typy pro všechny její parametry typu, včetně všech parametrů typu všech nadřazených typů. Instance obecného typu můžete vytvořit, pouze pokud je uzavřený. <xref:System.Type.ContainsGenericParameters%2A?displayProperty=nameWithType> Vlastnost vrátí `true` Pokud typ je otevřený. Pro metody <xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=nameWithType> metoda provádí stejnou funkci.  
+ Obecný typ nebo metoda je zavřený, pokud byla nahrazena instantiable typy pro všechny její parametry typu, včetně všech parametrů typu všech nadřazených typů. Instance obecného typu můžete vytvořit, pouze pokud je uzavřený. <xref:System.Type.ContainsGenericParameters%2A?displayProperty=nameWithType> Vlastnost vrátí `true` Pokud typ je otevřený. Pro metody <xref:System.Reflection.MethodBase.ContainsGenericParameters%2A?displayProperty=nameWithType> metoda provádí stejnou funkci.  
   
  [Zpět na začátek](#top)  
   
@@ -149,7 +151,7 @@ generic<typename V, typename W> ref class D : B<int, V> {};
   
 <a name="invariants"></a>   
 ## <a name="invariants"></a>Výstupních podmínek  
- Tabulku invariantní podmínky pro běžné podmínky v reflexe pro obecné typy, najdete v části <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>. Další podmínky týkající se obecné metody, najdete v části <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType>.  
+ Tabulku invariantní podmínky pro běžné podmínky v reflexe pro obecné typy, najdete v části <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>. Další podmínky týkající se obecné metody, najdete v části <xref:System.Reflection.MethodBase.IsGenericMethod%2A?displayProperty=nameWithType>.  
   
  [Zpět na začátek](#top)  
   

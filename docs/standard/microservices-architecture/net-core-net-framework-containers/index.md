@@ -1,7 +1,7 @@
 ---
-title: "Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

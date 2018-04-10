@@ -1,20 +1,18 @@
 ---
-title: "Začínáme s F # v sadě Visual Studio pro Mac"
-description: "Další informace o použití F # pomocí sady Visual Studio for Mac."
-keywords: "Visual f #, f #, funkční programování"
-author: mizzle-mo
+title: 'Začínáme s F # v sadě Visual Studio pro Mac'
+description: 'Další informace o použití F # pomocí sady Visual Studio for Mac.'
+author: cartermp
 ms.author: phcart
 ms.date: 02/13/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
-ms.assetid: 8db75596-19a9-4eda-b20d-a12d517c8cc1
-ms.openlocfilehash: 776a2ddf5563a954e462b3888ebf05da90241e4b
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: f56d67a7ecb9c68703638cbe05d8531891c132cd
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-f-in-visual-studio-for-mac"></a>Začínáme s F # v sadě Visual Studio pro Mac
 

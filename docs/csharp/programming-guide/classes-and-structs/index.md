@@ -1,10 +1,11 @@
 ---
-title: "Třídy a struktury (Průvodce programováním v C#)"
-description: "Popisuje použití třídy a struktury (struktury) v jazyce C#."
-keywords: "třídy (C#), struktury (C#), struktury (struktury) (C#), odkazové typy (C#), typy hodnot (C#)"
+title: Třídy a struktury (Průvodce programováním v C#)
+description: Popisuje použití třídy a struktury (struktury) v jazyce C#.
+keywords: třídy (C#), struktury (C#), struktury (struktury) (C#), odkazové typy (C#), typy hodnot (C#)
 ms.date: 01/17/2016
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - structs [C#], about structs
@@ -14,7 +15,7 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-caps.latest.revision: "48"
+caps.latest.revision: 48
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8c4cbbdd0384c0c0e97d6a7c655e798d0562d9a8

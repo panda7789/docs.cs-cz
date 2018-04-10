@@ -1,6 +1,6 @@
 ---
-title: "Hostování rozhraní .NET Core"
-description: "Hostování na .NET Core runtime z nativního kódu"
+title: Hostování rozhraní .NET Core
+description: Hostování na .NET Core runtime z nativního kódu
 keywords: .NET, .NET Core, Hosting, Hosting .NET Core
 author: mjrousos
 ms.author: mikerou
@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 3c358ab9173032b1f76d30b756ee6290233b2702
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 5ff2e8e4da12b2a9822b595abbb2bdb0f583cf02
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="hosting-net-core"></a>Hostování rozhraní .NET Core
 
@@ -35,7 +35,7 @@ Tento kurz a jeho přidružené ukázkové sestavení hostitele Windows; v čás
 
 ## <a name="creating-the-host"></a>Vytváření hostitele
 
-A [Ukázkový hostitel](https://github.com/dotnet/docs/tree/master/samples/core/hosting) demonstraci podle kroků uvedených v tomto článku je k dispozici v úložišti GitHub dotnet/docs. Komentáře v ukázce je *host.cpp* souboru jasně přidružení číslem kroků tohoto kurzu, pomocí které se provádí v ukázce. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+A [Ukázkový hostitel](https://github.com/dotnet/samples/tree/master/core/hosting) demonstraci podle kroků uvedených v tomto článku je k dispozici v úložišti GitHub dotnet nebo ukázky. Komentáře v ukázce je *host.cpp* souboru jasně přidružení číslem kroků tohoto kurzu, pomocí které se provádí v ukázce. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 Mějte na paměti, že Ukázkový hostitel je určen pro použití pro učení účely, takže je indikátor na Kontrola chyb a slouží k zdůraznil čitelnost přes efektivitu. Další ukázky reálného hostitele jsou k dispozici v [dotnet/coreclr](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts) úložiště. [CoreRun hostitele](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/corerun), zejména, je dobré pro obecné účely hostitele studovat po přečtení prostřednictvím jednodušší ukázka.
 
@@ -90,7 +90,7 @@ Běžné vlastnosti objektu třídy AppDomain:
 *  `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cest k testu v pro prostředek satelitní sestavení (v podadresářích specifické pro jazykovou verzi).
 *  `AppDomainCompatSwitch` Tento řetězec Určuje, které adaptivní kompatibility se mají použít pro sestavení bez explicitního Přezdívka Framework cíl (úrovni sestavení atribut, která určuje, které Framework sestavení je určen ke spouštění). Obvykle to musí být nastavena na `"UseLatestBehaviorWhenTFMNotSpecified"` , ale některé hostitele nastavit tak, aby starší Silverlight nebo Windows Phone adaptivní kompatibility, místo toho získat.
 
-V našem [jednoduchého ukázkového hostitele](https://github.com/dotnet/docs/tree/master/samples/core/hosting), tyto vlastnosti jsou nastavíte takto:
+V našem [jednoduchého ukázkového hostitele](https://github.com/dotnet/samples/tree/master/core/hosting), tyto vlastnosti jsou nastavíte takto:
 
 [!code-cpp[NetCoreHost#6](../../../samples/core/hosting/host.cpp#6)]
 

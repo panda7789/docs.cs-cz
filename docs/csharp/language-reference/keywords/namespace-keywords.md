@@ -1,5 +1,5 @@
 ---
-title: "Klíčová slova oboru názvů (Referenční dokumentace jazyka C#)"
+title: Klíčová slova oboru názvů (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - namespaces [C#], keywords
 ms.assetid: 091a66eb-b10d-4f54-9102-5ac0d4bdb84b
-caps.latest.revision: 
+caps.latest.revision: 11
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c5b0d112aed01bcddbe34d73093b70be65212b88

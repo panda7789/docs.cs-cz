@@ -1,7 +1,7 @@
 ---
-title: "Zpracování výjimek (F#)"
-description: "Seznámíte se základy zpracování výjimek v F # a odkazy na výrazy a funkce pro zpracování výjimek."
-keywords: "Visual f #, f #, funkční programování"
+title: Zpracování výjimek (F#)
+description: 'Seznámíte se základy zpracování výjimek v F # a odkazy na výrazy a funkce pro zpracování výjimek.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

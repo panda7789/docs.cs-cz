@@ -1,18 +1,19 @@
 ---
-title: "příkaz úložiště DotNet."
-description: "Příkaz 'dotnet úložiště, ukládá na zadaná sestavení v úložišti balíček modulu runtime."
+title: příkaz úložiště DotNet.
+description: Příkaz 'dotnet úložiště, ukládá na zadaná sestavení v úložišti balíček modulu runtime.
 author: bleroy
 ms.author: mairaw
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: c8e09141eebef2cbddf6742cceeff05e11c25adf
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 80ea40dfbedba3dca0e767b66e14f5de22374d4f
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dotnet-store"></a>úložiště DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet store`-Ukládá na zadaná sestavení v [úložiště balíčku runtime](../deploying/runtime-store.md).
+`dotnet store` -Ukládá na zadaná sestavení v [úložiště balíčku runtime](../deploying/runtime-store.md).
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -28,7 +29,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="description"></a>Popis
 
-`dotnet store`ukládá na zadaná sestavení v [úložiště balíčku runtime](../deploying/runtime-store.md). Ve výchozím nastavení jsou sestavení optimalizované pro cílový modul runtime a framework. Další informace najdete v tématu [úložiště balíčku runtime](../deploying/runtime-store.md) tématu.
+`dotnet store` ukládá na zadaná sestavení v [úložiště balíčku runtime](../deploying/runtime-store.md). Ve výchozím nastavení jsou sestavení optimalizované pro cílový modul runtime a framework. Další informace najdete v tématu [úložiště balíčku runtime](../deploying/runtime-store.md) tématu.
 
 ## <a name="required-options"></a>Požadované možnosti
 
@@ -42,7 +43,7 @@ Určuje, [cílové rozhraní](../../standard/frameworks.md).
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Identifikátor runtime k cíli.
+[Runtime identifikátor](../rid-catalog.md) k cíli.
 
 ## <a name="optional-options"></a>Volitelné možnosti
 

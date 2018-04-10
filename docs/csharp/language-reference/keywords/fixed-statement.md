@@ -1,5 +1,5 @@
 ---
-title: "fixed – příkaz (Referenční dokumentace jazyka C#)"
+title: fixed – příkaz (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - fixed keyword [C#]
 ms.assetid: 7ea6db08-ad49-4a7a-b934-d8c4acad1c3a
-caps.latest.revision: 
+caps.latest.revision: 24
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 13633e71c863b075eede41c9a18419d65350bdb0

@@ -1,6 +1,6 @@
 ---
-title: "Postupy: převedení řetězce na typ DateTime"
-description: "Další techniky k analýze řetězců, které představují data a časy, chcete-li vytvořit hodnotu DateTime z řetězce data a času."
+title: 'Postupy: převedení řetězce na typ DateTime'
+description: Další techniky k analýze řetězců, které představují data a časy, chcete-li vytvořit hodnotu DateTime z řetězce data a času.
 ms.date: 02/15/2018
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -22,11 +22,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a94300a879ac18d21d35dfe58ac0d9805f240a92
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 6912109c11039c311067f330c3af71b15cbadc7a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v rozhraní .NET
 
@@ -64,7 +64,7 @@ Následující příklad ukazuje použití <xref:System.DateTime.Parse%2A?displa
 > Všechny C# ukázky v tomto článku spustit v prohlížeči. Stiskněte **spustit** tlačítko Zobrazit výstup. Můžete taky upravit je a experimentovat sami.
 
 > [!NOTE]
-> Tyto příklady jsou k dispozici v úložišti GitHub dokumentace pro obě [C#](https://github.com/dotnet/docs/samples/tree/master/snippets/csharp/how-to/conversions) a [VB](https://github.com/dotnet/docs/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo si můžete stáhnout jako zipfile pro projekt [C#](https://github.com/dotnet/docs/samples/tree/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/docs/samples/tree/master/snippets/visualbasic/how-to/conversions.zip).
+> Tyto příklady jsou k dispozici v úložišti GitHub dokumentace pro obě [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) a [VB](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo si můžete stáhnout jako zipfile pro projekt [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
 
 [!code-csharp-interactive[Parsing.DateAndTime#1](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#1)]
 [!code-vb[Parsing.DateAndTime#1](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#1)]

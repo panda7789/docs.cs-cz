@@ -1,7 +1,7 @@
 ---
-title: "Jazyk integrovaného dotazu (LINQ)"
-description: "Představuje jazyk integrovaného dotazu (LINQ) v jazyce C#"
-keywords: "Rozhraní .NET, rozhraní .NET core, LINQ, C#"
+title: Jazyk integrovaného dotazu (LINQ)
+description: Představuje jazyk integrovaného dotazu (LINQ) v jazyce C#
+keywords: Rozhraní .NET, rozhraní .NET core, LINQ, C#
 author: BillWagner
 ms.author: wiwagn
 ms.date: 11/30/2016

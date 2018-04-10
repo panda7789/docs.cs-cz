@@ -1,5 +1,5 @@
 ---
-title: "#undef (referenční dokumentace jazyka C#)"
+title: '#undef (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -10,7 +10,7 @@ f1_keywords:
 helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
-caps.latest.revision: 
+caps.latest.revision: 12
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: e7a3c162c0ecb8bb39cc13a34dcd15fa3ce96ebb

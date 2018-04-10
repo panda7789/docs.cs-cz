@@ -1,17 +1,18 @@
 ---
-title: "Katalog .NET core Runtime identifikátor (RID)"
-description: "Další informace o identifikátoru Runtime (RID) a použití identifikátorů RID v .NET Core."
+title: Katalog .NET core Runtime identifikátor (RID)
+description: Další informace o identifikátoru Runtime (RID) a použití identifikátorů RID v .NET Core.
 author: mairaw
 ms.author: mairaw
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net-core
-ms.workload: dotnetcore
-ms.openlocfilehash: 180aac7635746f9ede146c3e561deb9bba9a61ab
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 9343d475319084ddfe3450b4c1d2bbcbd394ad1f
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="net-core-rid-catalog"></a>.NET core identifikátorů RID katalogu
 
@@ -19,7 +20,7 @@ Identifikátorů RID je zkratka pro *Runtime identifikátor*. Hodnoty identifik�
 Balíčky .NET jejich se používá k reprezentování specifické pro platformu prostředky do balíčků NuGet. Následující hodnoty jsou příklady identifikátorů RID: `linux-x64`, `ubuntu.14.04-x64`, `win7-x64`, nebo `osx.10.12-x64`.
 Pro balíčky s nativní závislosti identifikátor RID označí, na kterých platformách lze obnovit balíček.
 
-Identifikátory RID, může být nastavena v `<RuntimeIdentifier>` element souboru projektu. Používají se také prostřednictvím `--runtime` možnost s následující [.NET Core rozhraní příkazového řádku](./tools/index.md):
+Jediný identifikátorů RID, může být nastavena v `<RuntimeIdentifier>` element souboru projektu. Více identifikátorů RID, může být definováno jako seznam oddělený středníkem v souboru projektu `<RuntimeIdentifiers>` elementu. Používají se také prostřednictvím `--runtime` možnost s následující [.NET Core rozhraní příkazového řádku](./tools/index.md):
 
 - [dotnet build](./tools/dotnet-build.md)
 - [dotnet clean](./tools/dotnet-clean.md)
@@ -31,15 +32,15 @@ Identifikátory RID, může být nastavena v `<RuntimeIdentifier>` element soubo
 
 Identifikátory RID, představují konkrétní operační systémy obvykle podívejte se na tento vzor: `[os].[version]-[architecture]-[additional qualifiers]` kde:
 
-- `[os]`je přezdívka systému operační/platformy. Například `ubuntu`.
+- `[os]` je přezdívka systému operační/platformy. Například `ubuntu`.
 
-- `[version]`verze operačního systému ve formě oddělené tečkou (`.`) číslo verze. Například `15.10`.
+- `[version]` verze operačního systému ve formě oddělené tečkou (`.`) číslo verze. Například `15.10`.
 
   - Verze **by neměl** být marketingové verze, protože často představují více diskrétní verzí operačního systému s použitím různých útoku na platformě rozhraní API.
 
-- `[architecture]`je na architektuře procesoru. Příklad: `x86`, `x64`, `arm`, nebo `arm64`.
+- `[architecture]` je na architektuře procesoru. Příklad: `x86`, `x64`, `arm`, nebo `arm64`.
 
-- `[additional qualifiers]`dál rozlišit různých platformách. Příklad: `aot` nebo `corert`.
+- `[additional qualifiers]` dál rozlišit různých platformách. Příklad: `aot` nebo `corert`.
 
 ## <a name="rid-graph"></a>Graf identifikátorů RID
 
@@ -90,23 +91,23 @@ Nejnovější a kompletní verze, najdete v článku [runtime.json](https://gith
 
 V následujícím seznamu jsou nejběžnější identifikátorů RID, použít pro každý operační systém. Ho nezahrnuje `arm` nebo `corert` hodnoty.
 
-## <a name="windows-rids"></a>Windows identifikátorů RID
+## <a name="windows-rids"></a>Windows RIDs
 
 - Přenositelností
   - `win-x86`
   - `win-x64`
-- Windows 7 nebo Windows Server 2008 R2
+- Windows 7 / Windows Server 2008 R2
   - `win7-x64`
   - `win7-x86`
-- Windows 8 nebo Windows Server 2012
+- Windows 8 / Windows Server 2012
   - `win8-x64`
   - `win8-x86`
   - `win8-arm`
-- Windows 8.1 nebo Windows Server 2012 R2
+- Windows 8.1 / Windows Server 2012 R2
   - `win81-x64`
   - `win81-x86`
   - `win81-arm`
-- Windows 10 nebo Windows Server 2016
+- Windows 10 / Windows Server 2016
   - `win10-x64`
   - `win10-x86`
   - `win10-arm`
@@ -127,8 +128,8 @@ V tématu [požadavky pro .NET Core v systému Windows](windows-prerequisites.md
 - Fedora
   - `fedora-x64`
   - `fedora.24-x64`
-  - `fedora.25-x64`(.NET core 2.0 nebo novější verze)
-  - `fedora.26-x64`(.NET core 2.0 nebo novější verze)
+  - `fedora.25-x64` (.NET core 2.0 nebo novější verze)
+  - `fedora.26-x64` (.NET core 2.0 nebo novější verze)
 - Gentoo (.NET Core 2.0 nebo novější verze)
   - `gentoo-x64`
 - openSUSE
@@ -142,12 +143,12 @@ V tématu [požadavky pro .NET Core v systému Windows](windows-prerequisites.md
   - `ol.7.2-x64`
 - Red Hat Enterprise Linux
   - `rhel-x64`
-  - `rhel.6-x64`(.NET core 2.0 nebo novější verze)
+  - `rhel.6-x64` (.NET core 2.0 nebo novější verze)
   - `rhel.7-x64`
   - `rhel.7.1-x64`
   - `rhel.7.2-x64`
-  - `rhel.7.3-x64`(.NET core 2.0 nebo novější verze)
-  - `rhel.7.4-x64`(.NET core 2.0 nebo novější verze)
+  - `rhel.7.3-x64` (.NET core 2.0 nebo novější verze)
+  - `rhel.7.4-x64` (.NET core 2.0 nebo novější verze)
 - Tizen (.NET Core 2.0 nebo novější verze)
   - `tizen`
 - Ubuntu
@@ -164,18 +165,18 @@ V tématu [požadavky pro .NET Core v systému Windows](windows-prerequisites.md
   - `linuxmint.17.2-x64`
   - `linuxmint.17.3-x64`
   - `linuxmint.18-x64`
-  - `linuxmint.18.1-x64`(.NET core 2.0 nebo novější verze)
+  - `linuxmint.18.1-x64` (.NET core 2.0 nebo novější verze)
 
 V tématu [požadavky pro .NET Core v systému Linux](linux-prerequisites.md) Další informace.
 
-## <a name="macos-rids"></a>systému macOS identifikátorů RID
+## <a name="macos-rids"></a>macOS RIDs
 
 systému macOS RID použijte starší branding "OSX".
 
-- `osx-x64`(.NET core 2.0 nebo novější verze, minimální verze je `osx.10.12-x64`)
+- `osx-x64` (.NET core 2.0 nebo novější verze, minimální verze je `osx.10.12-x64`)
 - `osx.10.10-x64`
 - `osx.10.11-x64`
-- `osx.10.12-x64`(.NET core 1.1 nebo novější verze)
+- `osx.10.12-x64` (.NET core 1.1 nebo novější verze)
 - `osx.10.13-x64`
 
 V tématu [požadavky pro .NET Core v systému macOS](macos-prerequisites.md) Další informace.

@@ -1,5 +1,5 @@
 ---
-title: "new – omezení (Referenční dokumentace jazyka C#)"
+title: new – omezení (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - new constraint keyword [C#]
 ms.assetid: 58850b64-cb97-4136-be50-1f3bc7fc1da9
-caps.latest.revision: 
+caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8557e056a664fd470b1f185b619d81235c8fcba7

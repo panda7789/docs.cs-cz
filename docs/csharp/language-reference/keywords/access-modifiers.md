@@ -1,5 +1,5 @@
 ---
-title: "Modifikátory přístupu (Referenční dokumentace jazyka C#)"
+title: Modifikátory přístupu (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d63cf724a2364059e5f3327254a9ec95f7493e5e

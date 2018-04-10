@@ -1,5 +1,5 @@
 ---
-title: "-&gt;Operátor (referenční dokumentace jazyka C#)"
+title: -&gt;Operátor (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ helpviewer_keywords:
 - member access operator (->) [C#]
 - -> operator [C#]
 ms.assetid: e39ccdc1-f1ff-4a92-bf1d-ac2c8c11316a
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 4c5918f56257feb29d2624ba29b8cebaaa4f4ebe

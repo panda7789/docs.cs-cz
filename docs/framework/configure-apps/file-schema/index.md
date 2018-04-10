@@ -1,12 +1,13 @@
 ---
-title: "Schéma konfiguračního souboru pro rozhraní .NET Framework"
-ms.custom: 
+title: Schéma konfiguračního souboru pro rozhraní .NET Framework
+ms.custom: ''
 ms.date: 05/01/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework application configuration, configuration schema
@@ -28,11 +29,12 @@ helpviewer_keywords:
 - configuration settings [.NET Framework], applications
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4af28280de24f3e25362f18985c209b1a2f29523
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

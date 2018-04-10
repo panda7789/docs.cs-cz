@@ -1,5 +1,5 @@
 ---
-title: "by (Referenční dokumentace jazyka C#)"
+title: by (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - by keyword [C#]
 ms.assetid: efe6f0e3-be40-4df2-a144-c7db968ae052
-caps.latest.revision: 
+caps.latest.revision: 6
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: bbbf64eb86c3cca5de659bffce7c5c0639461f85

@@ -1,12 +1,12 @@
 ---
-title: "Zabezpečení v rozhraní .NET Framework"
-ms.custom: 
+title: Zabezpečení v rozhraní .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, security
@@ -14,7 +14,7 @@ helpviewer_keywords:
 - application development [.NET Framework], security
 - security [.NET Framework]
 ms.assetid: 9a9621d7-8883-4a4f-a874-65e8e09e20a6
-caps.latest.revision: "37"
+caps.latest.revision: 37
 author: mairaw
 ms.author: mairaw
 manager: wpickett

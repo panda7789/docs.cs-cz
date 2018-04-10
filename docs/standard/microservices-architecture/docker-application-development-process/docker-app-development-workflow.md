@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9c3df50430117936fd0b9d4390cb84e02085e48d
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 73d4ad82ef8c48f57aa4cceceedba862a2c9ffa4
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje pro Docker aplikace
 
@@ -107,7 +107,7 @@ Použití oficiální úložiště bitové kopie .NET z úložiště Docker Hub 
 
 Následující příklad ukazuje ukázkový soubor Docker pro kontejner ASP.NET Core.
 
-```
+```Dockerfile
 FROM microsoft/aspnetcore:2.0
   
 ARG source
@@ -296,7 +296,7 @@ Pokud vaše aplikace má pouze jediný kontejner, můžete ho spustit publikovat
 
 Můžete spustit kontejner Docker pomocí docker, spusťte příkaz, stejně jako obrázek 5 – 9:
 
-```
+```console
   docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
 ```
 
@@ -405,7 +405,7 @@ Kromě toho budete muset provést krok 2 (Přidání podpory Docker do vašich p
 
 [Kontejnery Windows](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview) vám umožní převést existující aplikace Windows imagí Dockeru a nasadit je stejné nástroje jako zbytek ekosystému Docker. Pokud chcete používat Windows kontejnery, spusťte příkazy prostředí PowerShell v soubor Docker, jak je znázorněno v následujícím příkladu:
 
-```
+```Dockerfile
 FROM microsoft/windowsservercore
   
 LABEL Description="IIS" Vendor="Microsoft" Version="10"
@@ -417,7 +417,7 @@ CMD [ "ping", "localhost", "-t" ]
 
 V takovém případě jsme používáte základní bitovou kopii systému Windows Server Core (FROM nastavení) a instalace služby IIS pomocí příkazu prostředí PowerShell (nastavení spuštění). Podobným způsobem můžete také použít příkazy prostředí PowerShell pro nastavení dalších komponent, jako je ASP.NET 4.x, .NET 4.6 nebo jiný software pro Windows. Například následující příkaz v soubor Docker Nastaví technologii ASP.NET 4.5:
 
-```
+```Dockerfile
 RUN powershell add-windowsfeature web-asp-net45
 ```
 

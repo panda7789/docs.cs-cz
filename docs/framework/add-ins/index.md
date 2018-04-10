@@ -1,13 +1,13 @@
 ---
-title: "Doplňky a rozšíření"
-ms.custom: 
+title: Doplňky a rozšíření
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - extensibility [.NET Framework], add-ins
@@ -20,7 +20,7 @@ helpviewer_keywords:
 - .NET Framework, extensibility
 - versioning [.NET Framework], add-ins
 ms.assetid: 8dd45b02-7218-40f9-857d-40d7b98b850b
-caps.latest.revision: 
+caps.latest.revision: 42
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
