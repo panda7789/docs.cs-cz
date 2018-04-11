@@ -1,1 +1,1 @@
-<span data-ttu-id="45acc-101">Dostupné od verze 4</span><span class="sxs-lookup"><span data-stu-id="45acc-101">Available since 4</span></span>
+<span data-ttu-id="08646-101">Dostupné od verze 4</span><span class="sxs-lookup"><span data-stu-id="08646-101">Available since 4</span></span>
