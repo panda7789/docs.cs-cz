@@ -1,13 +1,13 @@
 ---
-title: "ICorDebugMetaDataLocator::GetMetaData – metoda"
-ms.custom: 
+title: ICorDebugMetaDataLocator::GetMetaData – metoda
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 api_name:
 - ICorDebugMetaDataLocator.GetMetaData
@@ -23,17 +23,17 @@ helpviewer_keywords:
 ms.assetid: f9b0ff22-54db-45eb-9cc3-508000a3141d
 topic_type:
 - apiref
-caps.latest.revision: 
+caps.latest.revision: 8
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 4883ee56c7dd027f053dd072d7c8613f606ff2be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="icordebugmetadatalocatorgetmetadata-method"></a>ICorDebugMetaDataLocator::GetMetaData – metoda
 Požádá ladicí program na vrátit úplnou cestu k modulu, jehož metadat je potřebný pro dokončení operace, které požadovali ladicího programu.  
@@ -80,7 +80,7 @@ HRESULT GetMetaData(
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Metoda byla úspěšně dokončena. `wszPathBuffer`obsahuje úplnou cestu k souboru a je ukončené hodnotou null.|  
+|S_OK|Metoda byla úspěšně dokončena. `wszPathBuffer` obsahuje úplnou cestu k souboru a je ukončené hodnotou null.|  
 |E_NOT_SUFFICIENT_BUFFER|Aktuální velikost `wszPathBuffer` není dostatečná pro uložení úplnou cestu. V takovém případě `pcchPathBuffer` obsahuje potřebný počet `WCHAR`s, včetně ukončující prázdný znak, a `GetMetaData` se nazývá znovu s požadovanou vyrovnávací paměť.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -93,7 +93,7 @@ HRESULT GetMetaData(
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorDebugThread4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)  

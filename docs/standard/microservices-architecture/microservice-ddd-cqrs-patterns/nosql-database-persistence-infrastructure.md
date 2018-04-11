@@ -1,7 +1,7 @@
 ---
-title: "Použití databáze NoSQL jako trvalost infrastruktury"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití databáze NoSQL jako trvalost infrastruktury"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Použití databáze NoSQL jako trvalost infrastruktury
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití databáze NoSQL jako trvalost infrastruktury
+keywords: Docker, Microservices, ASP.NET, Container
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: a6f3a991529aea6560eb12f1400ba2750795ebff
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>Použití databáze NoSQL jako trvalost infrastruktury
 
@@ -307,17 +307,17 @@ Pokud `ESHOP_AZURE_COSMOSDB` – globální proměnná je prázdná, což znamen
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Modelování dokumentů dat pro databáze NoSQL**
+-   **Data dokumentu pro databáze NoSQL modelování**
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 
--   **Vaughn Vernon. Ideální řízené domény návrhu agregace úložišti? ** 
-     [ *https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
+-   **Vaughn Vernon. Ideální řízené domény návrhu agregace úložišti?**
+    [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
 
 -   **Úvod do Azure Cosmos DB: rozhraní API pro MongoDB** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
 
 -   **Azure Cosmos DB: Vytvoření webové aplikace MongoDB API pomocí rozhraní .NET a portálu Azure** 
-    [* https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
 
 -   **Použití emulátoru DB Cosmos Azure pro místní vývoj a testování** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
@@ -325,10 +325,10 @@ Pokud `ESHOP_AZURE_COSMOSDB` – globální proměnná je prázdná, což znamen
 -   **Připojení aplikace MongoDB pro Azure Cosmos DB** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
 
--   **Obrázek Cosmos DB emulátoru Docker (Windows kontejner)** 
+-   **Obrázek Cosmos DB emulátoru Docker (kontejneru systému Windows)** 
     [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
 
--   **Image MongoDB Docker (Linux a Windows kontejneru)** 
+-   **Image MongoDB Docker (Linux a kontejneru systému Windows)** 
     [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
 
 -   **Pomocí Azure DB Cosmos MongoChef (Studio 3T): rozhraní API pro MongoDB účet** 

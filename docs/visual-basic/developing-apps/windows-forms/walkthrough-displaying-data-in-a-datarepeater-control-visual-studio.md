@@ -1,8 +1,8 @@
 ---
-title: "Návod: Zobrazení dat v ovládacím prvku DataRepeater (Visual Studio)"
+title: 'Návod: Zobrazení dat v ovládacím prvku DataRepeater (Visual Studio)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -12,14 +12,14 @@ dev_langs:
 helpviewer_keywords:
 - DataRepeater, walkthrough
 ms.assetid: 65dcdb95-6c3e-47cc-987d-190000f71653
-caps.latest.revision: 
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 93072bf30c8ee2a4a44c4862de0882072c298f8b
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="walkthrough-displaying-data-in-a-datarepeater-control-visual-studio"></a>Návod: Zobrazení dat v ovládacím prvku DataRepeater (Visual Studio)
 Tento názorný postup obsahuje základní scénář zahájení dokončení pro zobrazení vázaných dat v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  

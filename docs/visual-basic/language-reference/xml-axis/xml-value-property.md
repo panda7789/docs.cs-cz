@@ -15,14 +15,14 @@ helpviewer_keywords:
 - XML axis [Visual Basic], Value
 - XML Value property [Visual Basic]
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
-caps.latest.revision: ''
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d9294c2d1d83dce3bca2abc22ee9c70296fc8014
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)
 Poskytuje přístup k hodnotě první prvek kolekce <xref:System.Xml.Linq.XElement> objekty.  
@@ -46,7 +46,7 @@ object.Value
  <xref:System.Xml.Linq.XElement.Value%2A> Vlastnost usnadňuje přístup k hodnotě prvním elementem v kolekci <xref:System.Xml.Linq.XElement> objekty. Tato vlastnost nejprve ověří, zda kolekce obsahuje minimálně jeden objekt. Pokud je kolekce prázdná, vrátí tato vlastnost `Nothing`. Jinak, vrátí tato vlastnost hodnotu <xref:System.Xml.Linq.XElement.Value%2A> vlastnost první prvek v kolekci.  
   
 > [!NOTE]
->  Když k hodnotě atributu XML pomocí '@' identifikátor, jako je vrácena hodnota atributu `String` a není nutné explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
+>  Když k hodnotě atributu XML pomocí '\@' identifikátor, jako je vrácena hodnota atributu `String` a není nutné explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
   
  Pro přístup k další elementy v kolekci, můžete použít vlastnost indexeru rozšíření XML. Další informace najdete v tématu [vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md).  
   

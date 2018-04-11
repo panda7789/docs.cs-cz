@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 90d6542122dd8c579c63f5f003441ce63a7ca5e9
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 9e42253e520b89fd8a864dead8c17d53bdb8a439
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="get-started-with-syntax-analysis"></a>Začínáme s syntaxe analýzy
 
@@ -41,7 +41,7 @@ Podívejte se na text předchozí aplikace. Můžete rozpoznat známé prvky. Ce
 
 Rozhraní API syntaxe vytvoří stromová struktura s kořenovým představující jednotku kompilace. Uzly ve stromu představují použití direktivy, deklaraci oboru názvů a všechny další prvky programu. Stromovou strukturu pokračuje dolů na nejnižší úrovni: text "Hello, World!" je **token řetězcového literálu** tedy následníka **argument**. Rozhraní API syntaxe poskytuje přístup k struktura programu. Pro konkrétního kódu postupů, se můžete dotazovat provede celý strom zjistit kód a vytvořte nové stromy změnou na stávající strom.
 
-Tento stručný popis poskytuje přehled o druh informací, které jsou přístupné pomocí syntaxe rozhraní API. Rozhraní API syntaxe není nic, které větší, než vytvoří formální rozhraní API, který popisuje kód obeznámeni, budete vědět z jazyka C#. Všechny schopnosti zahrnují informace o tom, jak kód formátována včetně konce řádku, prázdné znaky a odsazení. Na základě těchto informací můžete plně představují kód jako zapisovat a čtení lidského programátory nebo kompilátoru. Tato struktura pomocí umožňuje interakci se zdrojovým kódem na úrovni hluboko smysluplný. Už je textové řetězce, ale data, která představuje struktura programu v C#.
+Tento stručný popis poskytuje přehled o druh informací, které jsou přístupné pomocí syntaxe rozhraní API. Rozhraní API syntaxe není nic, které větší, než vytvoří formální rozhraní API, který popisuje kód obeznámeni, budete vědět z jazyka C#. Všechny schopnosti zahrnují informace o tom, jak kód formátována včetně konce řádku, mezer a odsazení. Na základě těchto informací můžete plně představují kód jako zapisovat a čtení lidského programátory nebo kompilátoru. Tato struktura pomocí umožňuje interakci se zdrojovým kódem na úrovni hluboko smysluplný. Už je textové řetězce, ale data, která představuje struktura programu v C#.
 
 Abyste mohli začít, budete muset nainstalovat **SDK pro platformu .NET kompilátoru**:
 
@@ -58,7 +58,7 @@ Stromu syntaxe je datová struktura, použít k pochopení programy C# a Visual 
 * <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType> Třídy, strom analýzy celého představuje o instanci. <xref:Microsoft.CodeAnalysis.SyntaxTree> je abstraktní třída, která má odvozené konfigurace konkrétní jazyk. Pomocí metody analýzy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> (nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType>) třídy analyzovat textu v C# nebo VB.
 * <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType> Třída, která instance představují syntaktické konstrukce, jako je například deklarace, příkazy, výrazy a klauzule.
 * <xref:Microsoft.CodeAnalysis.SyntaxToken?displayProperty=nameWithType> Strukturu, která představuje jednotlivé – klíčové slovo, identifikátor, operátor nebo interpunkce.
-* A nakonec <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> struktura, která představuje syntakticky zanedbatelný bity informace, jako jsou mezery mezi tokeny, direktivy předběžného zpracování a komentáře.
+* A nakonec <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> struktura, která představuje syntakticky zanedbatelný bity informace, jako je prázdné místo mezi tokeny, direktivy předběžného zpracování a komentáře.
 
 Trivia, tokeny a uzly se skládají hierarchicky vytvoříte strom, který představuje úplně vše v fragment kódu Visual Basic a C#. Můžete zobrazit pomocí tato struktura **syntaxe vizualizér** okno. V sadě Visual Studio, vyberte **zobrazení** > **ostatní okna** > **syntaxe vizualizér**. Například předchozí C# zdrojový soubor zkontrolován pomocí **syntaxe vizualizér** vypadá jako na následujícím obrázku:
 
@@ -74,7 +74,7 @@ Můžete zkontrolovat uzly ve stromu syntaxe dvěma způsoby. Můžete procháze
 
 ### <a name="manual-traversal"></a>Ruční traversal
 
-Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SyntaxQuickStart).
+Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SyntaxQuickStart).
 
 > [!NOTE]
 > Typy stromu syntaxe využívají dědičnost k popisu různých syntaxe prvky, které jsou platné v různých umístěních v programu. Pomocí těchto rozhraní API často znamená přetypování vlastnosti nebo členy kolekce na konkrétní odvozené typy. V následujících příkladech přiřazení a položky CAST jsou samostatné příkazy, pomocí explicitně typové proměnné. Si můžete přečíst kód návratové typy rozhraní API a typ modulu runtime vrácených objektů. V praxi je dnes běžné použijte implicitně typovaná proměnné a závisí na názvy rozhraní API k popisu typ objektů, je zkontrolován.
@@ -164,7 +164,7 @@ Tento příklad implementuje <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWal
 
 Vytvoření nového jazyka C# **samostatný nástroj pro analýzu kódu** projektu; název "**SyntaxWalker**."
 
-Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SyntaxQuickStart). Ukázce na Githubu obsahuje oba projekty popsané v tomto kurzu.
+Zobrazí kód dokončení pro tato ukázka v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SyntaxQuickStart). Ukázce na Githubu obsahuje oba projekty popsané v tomto kurzu.
 
 Stejně jako v předchozím příkladu můžete definovat na řetězcovou konstantu pro uložení text programu, který se chystáte analýza:
 

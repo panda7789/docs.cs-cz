@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 09d07e6257ad7d32d75328a8c1850888b4d0b937
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 0230777c59185a6b50d5dac5066efc3afa347f44
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="work-with-syntax"></a>Práce s syntaxe
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/26/2018
 
 Syntaxe stromy jsou primární struktura používá pro kompilaci, analýza kódu, vazbu, refaktoring, funkce IDE a generování kódu. Žádná z částí zdrojový kód odhalíte bez nejprve se identifikovat a rozdělené do jednoho z mnoha dobře známé strukturální jazykové elementy. 
 
-Syntaxe stromy mít tři klíčové atributy. První atribut je v úplné věrnosti obsahovat všechny informace o zdroji stromy syntaxe. To znamená, že ke stromu syntaxe obsahuje každá část informace o nacházejí v zdrojový text, každý gramaticky konstrukce, každý lexikální token a všem ostatním v mezi, včetně prázdný znak, komentáře a preprocesor – direktivy. Například každý literál uvedeno ve zdroji je reprezentována přesně tak, jak byl zadán. Stromy syntaxe také představovat chyby ve zdrojovém kódu, když program je neúplný nebo nesprávně představující chybí nebo přeskočené tokeny ve stromu syntaxe.  
+Syntaxe stromy mít tři klíčové atributy. První atribut je v úplné věrnosti obsahovat všechny informace o zdroji stromy syntaxe. To znamená, že ke stromu syntaxe obsahuje každá část informace o nacházejí v zdrojový text, každý gramaticky konstrukce, každý lexikální token a všem ostatním v mezi, včetně mezer, komentáře a preprocesor – direktivy. Například každý literál uvedeno ve zdroji je reprezentována přesně tak, jak byl zadán. Stromy syntaxe také představovat chyby ve zdrojovém kódu, když program je neúplný nebo nesprávně představující chybí nebo přeskočené tokeny ve stromu syntaxe.  
 
 To umožňuje druhý atribut stromy syntaxe. Text, který se získá analýzou z přesně může vytvářet získané z analyzátor stromu syntaxe. Z libovolného uzlu syntaxe je možné získat textovou reprezentaci, dílčí stromu kořenem v tomto uzlu. To znamená, že syntaxe stromy lze použít jako způsob, jak vytvořit a upravit zdrojový text. Vytvořením stromu, které máte nepřímo vytvořit ekvivalentní text a úpravou stromu syntaxe vytváření novou větev změny mimo na stávající strom upravíte efektivně text. 
 
@@ -57,7 +57,7 @@ Například token literálu celé číslo reprezentuje číselnou hodnotu. Krom�
 
 ## <a name="syntax-trivia"></a>Syntaxe trivia
 
-Syntaxe trivia představují části textu zdroje, které jsou z velké části zanedbatelné pro normální pochopení kódu, například prázdný znak, komentáře a preprocesor – direktivy. Podobně jako syntaxe tokenů trivia jsou typy hodnot. Jedné <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> typ se používá k popisu nejrůznějších druhy trivia.
+Syntaxe trivia představují části textu zdroje, které jsou z velké části zanedbatelné pro normální pochopení kódu, například mezera, komentáře a preprocesor – direktivy. Podobně jako syntaxe tokenů trivia jsou typy hodnot. Jedné <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> typ se používá k popisu nejrůznějších druhy trivia.
 
 Protože trivia nejsou součástí normálního jazykové syntaxe a může vyskytovat kdekoli mezi dvěma tokenů, nejsou zahrnuty ve stromu syntaxe jako podřízený uzel. Ještě protože jsou důležité při implementaci funkce jako Refaktoring a udržovat úplné věrnosti textem zdroje, existují v rámci stromu syntaxe.
 

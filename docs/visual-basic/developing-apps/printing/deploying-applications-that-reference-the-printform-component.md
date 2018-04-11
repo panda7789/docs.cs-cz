@@ -1,22 +1,22 @@
 ---
-title: "Nasazení aplikací odkazujících na součást PrintForm (Visual Basic)"
+title: Nasazení aplikací odkazujících na součást PrintForm (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - PrintForm component [Visual Basic], deploying
 ms.assetid: b595ea44-a712-4625-a761-190c64f59bbe
-caps.latest.revision: 
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 15b6e21e769c90e23e66e4f87b37f74462423985
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="deploying-applications-that-reference-the-printform-component-visual-basic"></a>Nasazení aplikací odkazujících na součást PrintForm (Visual Basic)
 Pokud chcete nasadit aplikaci, která odkazuje <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti, součásti musí být nainstalován v cílovém počítači.  
@@ -38,5 +38,5 @@ Pokud chcete nasadit aplikaci, která odkazuje <xref:Microsoft.VisualBasic.Power
  Jako alternativu k zavedení spouštěcího programu, můžete předem nasadit <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti pomocí systému distribuce elektronického software jako Microsoft Systems Management Server.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: instalace předpokladů s aplikací ClickOnce](/visualstudio/deployment/how-to-install-prerequisites-with-a-clickonce-application)  
- [PrintForm – součást](../../../visual-basic/developing-apps/printing/printform-component.md)
+ [Postupy: Instalace předpokladů s aplikací ClickOnce](/visualstudio/deployment/how-to-install-prerequisites-with-a-clickonce-application)  
+ [Komponenta PrintForm](../../../visual-basic/developing-apps/printing/printform-component.md)

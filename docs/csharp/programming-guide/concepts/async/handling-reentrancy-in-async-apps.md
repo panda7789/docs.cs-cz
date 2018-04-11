@@ -1,22 +1,22 @@
 ---
-title: "Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)"
-ms.custom: 
+title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-csharp
 ms.topic: article
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-caps.latest.revision: 
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0f0b6ba1985ab3cbbcc3490ae9b2ffcceb88f873
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 Když zahrnete asynchronní kód ve vaší aplikaci, musí vzít v úvahu a pravděpodobně zabránit vícenásobný přístup, který odkazuje na nutnosti opětovného zadávání asynchronní operace předtím, než byla dokončena. Pokud nemáte identifikovat a zpracování možnosti pro vícenásobný přístup, může to způsobit neočekávané výsledky.  
@@ -38,7 +38,7 @@ Když zahrnete asynchronní kód ve vaší aplikaci, musí vzít v úvahu a prav
 > [!NOTE]
 >  Pokud chcete spustit v příkladu, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalovaná ve vašem počítači.  
   
-##  <a name="BKMK_RecognizingReentrancy">Rozpozná vícenásobný přístup</a>  
+##  <a name="BKMK_RecognizingReentrancy"></a> Rozpozná vícenásobný přístup  
  V příkladu v tomto tématu, vyberte uživatele **spustit** tlačítko zahájíte asynchronní aplikaci, která stáhne řadu weby a vypočítá celkový počet bajtů, které jsou staženy. Synchronní verzi příkladu by odpovídat stejný způsobem, bez ohledu na to o tom, kolikrát uživatel vybere tlačítko proto, že po prvním vlákna uživatelského rozhraní ignoruje tyto události, dokud nebude dokončeno aplikace spuštěná. V aplikaci asynchronní však vlákna uživatelského rozhraní nadále reagovat a předtím, než byla dokončena, může je znovu zadat asynchronní operaci.  
   
  Následující příklad ukazuje očekávaný výstup, pokud uživatel vybere **spustit** tlačítko pouze jednou. Zobrazí seznam stažené webů s velikost v bajtech každé lokality. Celkový počet bajtů, zobrazí se na konci.  
@@ -95,7 +95,7 @@ TOTAL bytes returned:  890591
   
  Můžete zkontrolovat kód, který vytváří tento výstup podle posouvání na konci tohoto tématu. Můžete experimentovat s kódem stahování řešení do místního počítače a potom spuštěním projektu WebsiteDownload nebo pomocí kódu na konci tohoto tématu vytvořit vlastní projekt. Další informace a pokyny najdete v tématu [kontrolu a spuštění aplikace příklad](#BKMD_SettingUpTheExample).  
   
-##  <a name="BKMK_HandlingReentrancy">Podpora vícenásobného přístupu</a>  
+##  <a name="BKMK_HandlingReentrancy"></a> Podpora vícenásobného přístupu  
  Vícenásobný přístup v mnoha různými způsoby v závislosti na tom, co chcete udělat v aplikaci může zpracovávat. Toto téma představuje následující příklady:  
   
 -   [Zakázat tlačítko Start](#BKMK_DisableTheStartButton)  
@@ -110,7 +110,7 @@ TOTAL bytes returned:  890591
   
      Povolit všechny požadované operace běží asynchronně, ale koordinaci zobrazení výstupu tak, aby výsledky z každé operace se zobrazí společně a v pořadí.  
   
-###  <a name="BKMK_DisableTheStartButton">Zakázat tlačítko Start</a>  
+###  <a name="BKMK_DisableTheStartButton"></a> Zakázat tlačítko Start  
  Můžete blokovat **spustit** tlačítko spuštěného operace zakázáním tlačítka v horní části `StartButton_Click` obslužné rutiny události. Pak opětovného povolení tlačítko uvnitř `finally` blokovat po dokončení operace tak, aby uživatelé znovu spusťte aplikaci.  
   
  Nastavit tento scénář, proveďte následující změny k základní kód, který je součástí [kontrolu a spuštění aplikace příklad](#BKMD_SettingUpTheExample). Také můžete stáhnout dokončení aplikace z [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je DisableStartButton.  
@@ -142,7 +142,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
   
  V důsledku změny, tlačítko nereaguje při `AccessTheWebAsync` stahuje webů, takže proces nelze znovu zadat.  
   
-###  <a name="BKMK_CancelAndRestart">Zrušit a operaci restartujte.</a>  
+###  <a name="BKMK_CancelAndRestart"></a> Zrušit a operaci restartujte.  
  Místo zakázání **spustit** tlačítko můžete zachovat tlačítko aktivní, ale, pokud uživatel vybere akci, že tlačítko Zrušit operaci, která je již spuštěna a pokračovat v operaci nedávno spustila.  
   
  Další informace o zrušení najdete v tématu [Fine-Tuning vaše aplikace Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md).  
@@ -302,7 +302,7 @@ TOTAL bytes returned:  890591
   
  K vyloučení částečné seznamy, zrušte komentář u první řádek kódu `StartButton_Click` zrušte textového pole pokaždé, když uživatel znovu spustí operaci.  
   
-###  <a name="BKMK_RunMultipleOperations">Spustit více operací a fronty výstupu</a>  
+###  <a name="BKMK_RunMultipleOperations"></a> Spustit více operací a fronty výstupu  
  Tento příklad třetí je nejvíce složitý, v tom, že jiná asynchronní operace pokaždé, když uživatel vybere spuštění aplikace **spustit** tlačítko a všechny operace spustit na dokončení. Všechny požadované operace stáhnout weby ze seznamu asynchronně, ale postupně zobrazí výstup z operace. To znamená, je prokládaný skutečné stahování aktivity, jako výstup v [rozpozná vícenásobný přístup](#BKMK_RecognizingReentrancy) ukazuje, ale seznam výsledků pro každou skupinu se zobrazí samostatně.  
   
  Operace sdílet globální konfiguraci <xref:System.Threading.Tasks.Task>, `pendingWork`, který slouží jako těchto pravidel pro proces zobrazení.  
@@ -543,7 +543,7 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
      Po zadání skupiny `StartButton_Click`, operace nedokončí výraz await, dokud zadá operaci `FinishOneGroupAsync`. Žádné jiné operace. proto může získat kontrolu během tohoto segmentu kódu.  
   
-##  <a name="BKMD_SettingUpTheExample">Kontrola a spuštění aplikace příklad</a>  
+##  <a name="BKMD_SettingUpTheExample"></a> Kontrola a spuštění aplikace příklad  
  Abyste lépe pochopili, například aplikace, můžete ji stáhnout, vytvořit sami nebo zkontrolujte kód na konci tohoto tématu bez implementace aplikace.  
   
 > [!NOTE]
@@ -568,7 +568,7 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
 ##### <a name="to-build-a-wpf-app"></a>Vytvoření aplikace WPF  
   
-1.  Spuštění sady Visual Studio.  
+1.  Start Visual Studio.  
   
 2.  Na řádku nabídek zvolte **soubor**, **nový**, **projektu**.  
   

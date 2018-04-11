@@ -1,5 +1,5 @@
 ---
-title: "Vlastní element pro SingleTagSectionHandler"
+title: Vlastní element pro SingleTagSectionHandler
 ms.date: 05/01/2017
 ms.prod: .net-framework
 ms.technology:
@@ -16,17 +16,17 @@ manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 8ee722c7d5db9d58ab1a91f4b1299912981510af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Vlastní element pro SingleTagSectionHandler
 
 Definuje nastavení v části vlastní konfigurace, který je definován <section> element a používá <xref:System.Configuration.SingleTagSectionHandler> třídy.
 
 [**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;*\<sectionName >*
+&nbsp;&nbsp;*\<sectionName>*
 
 ## <a name="syntax"></a>Syntaxe
 

@@ -1,22 +1,22 @@
 ---
-title: "PrintForm – součást (Visual Basic)"
+title: PrintForm – součást (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - PrintForm component [Visual Basic]
 ms.assetid: 03de98b8-b54c-4764-91d7-83c64e974750
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 890d5a3a3f9c3a737a59e17fef0d4ac0407e9924
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="printform-component-visual-basic"></a>PrintForm – součást (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Součásti pro [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] umožňuje vytisknout image Windows Form v době běhu. Své chování nahrazuje u `PrintForm` metoda v dřívějších verzích jazyka Visual Basic.  
@@ -37,9 +37,9 @@ ms.lasthandoff: 11/21/2017
 ### <a name="key-methods-properties-and-events"></a>Klíče metody, vlastnosti a události  
  Metodě klíče <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součást je <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metodu, která vytiskne obrázek formuláře tiskárny, okno náhledu tisku nebo souboru. Existují dvě verze <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda:  
   
--   Základní verze bez parametrů:`Print()`  
+-   Základní verze bez parametrů: `Print()`  
   
--   Přetížené verze s parametry, které určují tisk chování:`Print(printForm As Form, printFormOption As PrintOption)`  
+-   Přetížené verze s parametry, které určují tisk chování: `Print(printForm As Form, printFormOption As PrintOption)`  
   
      `PrintOption` Přetížené metody, určuje základní implementaci používá k vytištění formuláře, zda záhlaví formuláře, posuvníky a ohraničení vytisknou a jestli jsou vytisknout posouvatelného části formuláře.  
   
@@ -51,11 +51,11 @@ ms.lasthandoff: 11/21/2017
   
  Klíče událostí <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti zahrnují následující:  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint>událost. Nastane při <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda je volána a před první stránka výtisků dokumentu.  
+-   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint> událost. Nastane při <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda je volána a před první stránka výtisků dokumentu.  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.EndPrint>událost. Vyskytne se po poslední tisknout.  
+-   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.EndPrint> událost. Vyskytne se po poslední tisknout.  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.QueryPageSettings>událost. Nastane bezprostředně před každou tisknout.  
+-   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.QueryPageSettings> událost. Nastane bezprostředně před každou tisknout.  
   
 ### <a name="remarks"></a>Poznámky  
  Pokud formulář obsahuje text nebo grafické vykresleny podle <xref:System.Drawing.Graphics> metody, použijte základní <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> (`Print()`) metoda k jeho tisku. U některých operačních systémů nemusí vykreslení grafiky při přetížené <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda se používá.  
@@ -76,7 +76,7 @@ pf.Print()
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A>  
  <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A>  
- [Postupy: tisk formuláře pomocí součásti PrintForm](../../../visual-basic/developing-apps/printing/how-to-print-a-form-by-using-the-printform-component.md)  
- [Postupy: tisk klientské oblasti formuláře](../../../visual-basic/developing-apps/printing/how-to-print-the-client-area-of-a-form.md)  
- [Postupy: tisk klientských i Neklientských oblastí formuláře](../../../visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)  
- [Postupy: tisk posuvného formuláře](../../../visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)
+ [Postupy: Tisk formuláře pomocí komponenty PrintForm](../../../visual-basic/developing-apps/printing/how-to-print-a-form-by-using-the-printform-component.md)  
+ [Postupy: Tisk klientské oblasti formuláře](../../../visual-basic/developing-apps/printing/how-to-print-the-client-area-of-a-form.md)  
+ [Postupy: Tisk klientských i neklientských oblastí formuláře](../../../visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)  
+ [Postupy: Tisk posuvného formuláře](../../../visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)

@@ -1,28 +1,28 @@
 ---
-title: "Filtry zpráv"
-ms.custom: 
+title: Filtry zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - routing [WCF], message filters
 ms.assetid: cb33ba49-8b1f-4099-8acb-240404a46d9a
-caps.latest.revision: 
+caps.latest.revision: 8
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: bd5019668e865d2fea835b450d992d45b5273ed7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="message-filters"></a>Filtry zpráv
 Implementace založená na obsahu směrování, služba Směrování používá <xref:System.ServiceModel.Dispatcher.MessageFilter> implementací, které kontrola určité části zprávy, jako je například adresu, název koncového bodu nebo konkrétní příkaz XPath. Pokud žádné filtry zpráv s [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vašim požadavkům, můžete vytvořit vlastní filtr tak, že vytvoříte novou implementací základu <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
@@ -38,14 +38,14 @@ Implementace založená na obsahu směrování, služba Směrování používá 
   
 |Typ filtru|Popis|Filtrování dat význam|Příklad filtru|  
 |------------------|-----------------|-------------------------|--------------------|  
-|Akce|Používá <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> třídy tak, aby odpovídaly zprávy obsahující určité akce.|Akce při filtrování.|\<Název filtru = "action1" filterType = "Action" fulltextových dat filtru = "http://namespace/contract/operation" / >|  
-|EndpointAddress|Používá <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující konkrétní adresu.|Adresa pro filtrování po (v hlavičce na).|\<Název filtru = "adresa1" filterType = fulltextových dat filtru "EndpointAddress" = "http://host/vdir/s.svc/b" / >|  
-|EndpointAddressPrefix|Používá <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující předponu konkrétní adresu.|Adresa pro filtrování při porovnáváním nejdelší předpon.|\<Název filtru = "prefix1" filterType = "EndpointAddressPrefix" fulltextových dat filtru = "http://host/" / >|  
-|A|Používá <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> třídu, která vždy vyhodnotí splněny obě podmínky před vrácením.|fulltextových dat filtru se nepoužívá; Místo toho Filtr1 a Filtr2 mají názvy odpovídající filtry zpráv (také v tabulce), které by měl být **a**ed společně.|\<Název filtru = "and1" filterType = "A" Filtr1 = "adresa1" Filtr2 = "action1" / >|  
-|Vlastní|Uživatelem definovaný typ, který rozšiřuje <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy a má konstruktor trvá řetězec.|Atribut customType je typ plně kvalifikovaný název třídy Vytvoření; fulltextových dat filtru je řetězec, které mají být předána do konstruktoru, při vytváření filtru.|\<Název filtru = "vlastní1" filterType = "Vlastní" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" fulltextových dat filtru = "Vlastní Data" / >|  
+|Akce|Používá <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> třídy tak, aby odpovídaly zprávy obsahující určité akce.|Akce při filtrování.|\<filter name="action1" filterType="Action" filterData="http://namespace/contract/operation" />|  
+|EndpointAddress|Používá <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující konkrétní adresu.|Adresa pro filtrování po (v hlavičce na).|\<filter name="address1" filterType="EndpointAddress" filterData="http://host/vdir/s.svc/b"  />|  
+|EndpointAddressPrefix|Používá <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující předponu konkrétní adresu.|Adresa pro filtrování při porovnáváním nejdelší předpon.|\<filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/" />|  
+|A|Používá <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> třídu, která vždy vyhodnotí splněny obě podmínky před vrácením.|fulltextových dat filtru se nepoužívá; Místo toho Filtr1 a Filtr2 mají názvy odpovídající filtry zpráv (také v tabulce), které by měl být **a**ed společně.|\<filter name="and1" filterType="And" filter1="address1" filter2="action1" />|  
+|Vlastní|Uživatelem definovaný typ, který rozšiřuje <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy a má konstruktor trvá řetězec.|Atribut customType je typ plně kvalifikovaný název třídy Vytvoření; fulltextových dat filtru je řetězec, které mají být předána do konstruktoru, při vytváření filtru.|\<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />|  
 |EndpointName|Používá <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> třídy tak, aby odpovídaly zprávy na základě názvu koncového bodu služby se dostali na.|Název koncového bodu služby, například: "serviceEndpoint1".  To by měl být jeden z koncových bodů zveřejněný ve službě Směrování.|\<Název filtru = "stock1" filterType = fulltextových dat filtru "Koncový bod" = "SvcEndpoint" / >|  
 |MatchAll|Používá <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> třídy. Tento filtr odpovídá všechny příchozí zprávy.|fulltextových dat filtru se nepoužije. Tento filtr bude vždy odpovídat všechny zprávy.|\<Název filtru = "matchAll1" filterType = "MatchAll" / >|  
-|XPath|Používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> třídy tak, aby odpovídaly konkrétní dotazů XPath v rámci zprávy.|Dotaz XPath pro použití při kontrole shody zprávy.|\<Název filtru = "XPath1" filterType = fulltextových dat filtru "XPath" = "//ns:element" / >|  
+|XPath|Používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> třídy tak, aby odpovídaly konkrétní dotazů XPath v rámci zprávy.|Dotaz XPath pro použití při kontrole shody zprávy.|\<filter name="XPath1" filterType="XPath" filterData="//ns:element" />|  
   
  V následujícím příkladu definuje filtr položky, které používají filtry XPath EndpointName a PrefixEndpointAddress zpráv. Tento příklad také ukazuje pomocí vlastního filtru pro RoundRobinFilter1 a RoundRobinFilter2 položky.  
   
@@ -76,15 +76,15 @@ Implementace založená na obsahu směrování, služba Směrování používá 
   
 |Předpona|Obor názvů|  
 |------------|---------------|  
-|s.11|http://schemas.xmlsoap.org/soap/envelope|  
-|S12|http://www.w3.org/2003/05/SOAP-Envelope|  
-|wsaAugust2004|http://schemas.xmlsoap.org/ws/2004/08/Addressing|  
-|wsa10|http://www.w3.org/2005/08/Addressing|  
-|SM|http://schemas.microsoft.com/ServiceModel/2004/05/xpathfunctions|  
+|s11|http://schemas.xmlsoap.org/soap/envelope|  
+|s12|http://www.w3.org/2003/05/soap-envelope|  
+|wsaAugust2004|http://schemas.xmlsoap.org/ws/2004/08/addressing|  
+|wsa10|http://www.w3.org/2005/08/addressing|  
+|sm|http://schemas.microsoft.com/serviceModel/2004/05/xpathfunctions|  
 |tempuri|http://tempuri.org|  
 |Pož|http://schemas.microsoft.com/2003/10/Serialization|  
   
- Když víte, že budete používat konkrétní obor názvů v dotazech XPath, můžete ho přidat do oboru názvů tabulky společně s jedinečný obor názvů a použijte předponu v jakékoli dotaz XPath místo úplné obor názvů. V následujícím příkladu definuje předponu "vlastní" pro obor názvů "http://my.custom.namespace", které se pak použije v dotazu XPath obsažené v fulltextových dat filtru.  
+ Když víte, že budete používat konkrétní obor názvů v dotazech XPath, můžete ho přidat do oboru názvů tabulky společně s jedinečný obor názvů a použijte předponu v jakékoli dotaz XPath místo úplné obor názvů. V následujícím příkladu definuje předponu "vlastní" obor "http://my.custom.namespace", která je pak použita v dotazu XPath obsažené v fulltextových dat filtru.  
   
 ```xml  
 <namespaceTable>  
