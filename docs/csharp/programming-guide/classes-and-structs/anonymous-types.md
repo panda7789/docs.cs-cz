@@ -1,14 +1,15 @@
 ---
-title: "Anonymní typy (Průvodce programováním v C#)"
+title: Anonymní typy (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 24ebf1c98e14eaf74572a6143ea6865d89735a6e

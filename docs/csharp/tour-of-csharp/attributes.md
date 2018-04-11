@@ -1,7 +1,7 @@
 ---
-title: "C# atributy - přehled používání jazyka C#"
-description: "Další informace o deklarativní programování pomocí atributů v jazyce C#"
-keywords: "Rozhraní .NET, csharp"
+title: C# atributy - přehled používání jazyka C#
+description: Další informace o deklarativní programování pomocí atributů v jazyce C#
+keywords: Rozhraní .NET, csharp
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/10/2016

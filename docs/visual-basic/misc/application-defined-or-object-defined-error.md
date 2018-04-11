@@ -1,5 +1,5 @@
 ---
-title: "Chyba aplikace nebo objekt definován"
+title: Chyba aplikace nebo objekt definován
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 f1_keywords:
 - vbrID95
 ms.assetid: 02b8e145-7988-48ad-abad-ed7656b4933c
-caps.latest.revision: 
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d6942e96e4257f899f1c2212fd2e18f4fc964fe4

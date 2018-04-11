@@ -1,8 +1,8 @@
 ---
-title: "& č. 39; Jako žádné & č. 39; není podporována v & č. 39; Declare & č. 39; příkazy"
+title: '& č. 39; Jako žádné & č. 39; není podporována v & č. 39; Declare & č. 39; příkazy'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -12,7 +12,7 @@ f1_keywords:
 helpviewer_keywords:
 - BC30828
 ms.assetid: 7e5cf519-8b64-4ac5-8116-705fe26c846d
-caps.latest.revision: 
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 59120622688ee38d5b8f45c08dfc3ae40711fb8b

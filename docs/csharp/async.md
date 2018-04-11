@@ -1,7 +1,7 @@
 ---
-title: "Asynchronní programování"
-description: "Další informace o C# úroveň jazyka asynchronní programovací model poskytované .NET Core."
-keywords: "Rozhraní .NET, .NET core"
+title: Asynchronní programování
+description: Další informace o C# úroveň jazyka asynchronní programovací model poskytované .NET Core.
+keywords: Rozhraní .NET, .NET core
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016

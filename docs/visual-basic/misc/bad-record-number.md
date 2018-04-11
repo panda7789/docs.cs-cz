@@ -1,5 +1,5 @@
 ---
-title: "Počet chybných záznamů"
+title: Počet chybných záznamů
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 f1_keywords:
 - vbrID63
 ms.assetid: 1fcc33f8-822a-4de9-a6e3-228ddb5824a6
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: be04987353498775ec7dcef50b6acc1e6b4ec149

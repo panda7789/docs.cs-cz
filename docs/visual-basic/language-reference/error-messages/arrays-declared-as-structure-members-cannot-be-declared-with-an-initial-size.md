@@ -1,8 +1,8 @@
 ---
-title: "U polí deklarovaných jako členové struktury nelze deklarovat počáteční velikost."
+title: U polí deklarovaných jako členové struktury nelze deklarovat počáteční velikost.
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -12,7 +12,7 @@ f1_keywords:
 helpviewer_keywords:
 - BC31043
 ms.assetid: 5bd90c71-1b78-444b-91e1-4789451ef085
-caps.latest.revision: 
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 983154a144a79991c86db5056ad0e0e563a3ba73
