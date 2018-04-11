@@ -8,7 +8,7 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
-caps.latest.revision: ''
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -130,11 +130,11 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  **xmlns:m = "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"**  
  **atribut xmlns = "http://www.w3.org/2005/Atom" >**  
  **\<Typ title = "text" > objednávky \< /title >**  
- **\<ID>http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/objednávky\</id>**  
+ **\<id>http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders\</id>**  
  **\<Aktualizovat > 2010-05-19T19:37:07Z\</ aktualizovány >**  
  **\<odkaz relativní = "vlastní" title = "Objednávky" href = "Objednávky" / >**  
  **\<Položka >**  
- **\<ID>http://services.odata.org/Northwind/Northwind.svc/Orders(10643)\</id>**  
+ **\<id>http://services.odata.org/Northwind/Northwind.svc/Orders(10643)\</id>**  
  **\<Typ title = "text" > \< /title >**  
  **\<Aktualizovat > 2010-05-19T19:37:07Z\</ aktualizovány >**  
  **\<Autor >**  
