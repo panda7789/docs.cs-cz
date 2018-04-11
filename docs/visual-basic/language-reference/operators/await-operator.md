@@ -1,9 +1,9 @@
 ---
-title: "Await – operátor (Visual Basic)"
+title: Await – operátor (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,7 +13,7 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-caps.latest.revision: 
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: d639d1398c0f783fcfa40ee9ff278922fd6fc7b5

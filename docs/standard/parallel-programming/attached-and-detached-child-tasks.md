@@ -1,12 +1,12 @@
 ---
-title: "Připojené a odpojené podřízené úlohy"
-ms.custom: 
+title: Připojené a odpojené podřízené úlohy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,7 +14,7 @@ dev_langs:
 helpviewer_keywords:
 - tasks, child tasks
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
-caps.latest.revision: 
+caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

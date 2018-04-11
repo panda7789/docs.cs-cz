@@ -1,7 +1,7 @@
 ---
-title: "Asynchronní programování v F #"
-description: "Zjistěte, jak se provádí F # – programování asynchronních prostřednictvím úroveň jazyka programovací model, který je snadno použitelný a přirozený jazyk."
-keywords: "Rozhraní .NET, .NET core"
+title: 'Asynchronní programování v F #'
+description: 'Zjistěte, jak se provádí F # – programování asynchronních prostřednictvím úroveň jazyka programovací model, který je snadno použitelný a přirozený jazyk.'
+keywords: Rozhraní .NET, .NET core
 author: cartermp
 ms.author: phcart
 ms.date: 06/20/2016

@@ -1,5 +1,5 @@
 ---
-title: "async (Referenční dokumentace jazyka C#)"
+title: async (Referenční dokumentace jazyka C#)
 ms.date: 05/22/2017
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-caps.latest.revision: 
+caps.latest.revision: 52
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2ddbd0f7268dd5dae4095d661cf800b5b481cbbd

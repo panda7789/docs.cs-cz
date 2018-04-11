@@ -2,15 +2,15 @@
 title: Chyba automatizace
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbrID440
 ms.assetid: 2c4be5c5-2f0d-4a2b-96fe-d1b24f08fc4c
-caps.latest.revision: 
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 790b171b8d4022bd6d8b038c4221f24805ae42f5

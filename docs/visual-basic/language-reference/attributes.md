@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - attributes [Visual Basic]
 ms.assetid: 5deb2b8a-1afd-4dbd-8ee8-f093d74ad0eb
-caps.latest.revision: 
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 411208ff134f53f0d3c9b842c9282a1545119066

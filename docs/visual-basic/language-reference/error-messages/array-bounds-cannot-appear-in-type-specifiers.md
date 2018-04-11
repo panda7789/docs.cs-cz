@@ -1,8 +1,8 @@
 ---
-title: "Indexy pole nemohou být použity ve specifikátorech typu."
+title: Indexy pole nemohou být použity ve specifikátorech typu.
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -12,7 +12,7 @@ f1_keywords:
 helpviewer_keywords:
 - BC30638
 ms.assetid: 93b654f4-70fa-4a48-baed-ffae42075550
-caps.latest.revision: 
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 770f86ca960110965b6917a22d284678ff8b6f8c

@@ -1,5 +1,5 @@
 ---
-title: "Pole jako objekty (Průvodce programováním v C#)"
+title: Pole jako objekty (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 helpviewer_keywords:
 - arrays [C#], as objects
 ms.assetid: f76d4403-bd0a-42a0-9bc8-694c55b2c926
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: e29685af509009f42f38ba2dbf8524075e880ff9

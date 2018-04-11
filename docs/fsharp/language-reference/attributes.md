@@ -1,7 +1,7 @@
 ---
 title: Atributy (F#)
-description: "Zjistěte, jak povolit F # atributy metadata, která má být použita pro programovací konstrukce."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Zjistěte, jak povolit F # atributy metadata, která má být použita pro programovací konstrukce.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

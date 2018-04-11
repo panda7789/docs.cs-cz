@@ -1,7 +1,7 @@
 ---
-title: "Async – přehled"
-description: "Zjistěte, jak je asynchronní programování klíče techniku, která usnadňuje přehledné zpracování blokování vstupně-výstupních operací a souběžných operací na víc jader."
-keywords: "Rozhraní .NET, .NET core"
+title: Async – přehled
+description: Zjistěte, jak je asynchronní programování klíče techniku, která usnadňuje přehledné zpracování blokování vstupně-výstupních operací a souběžných operací na víc jader.
+keywords: Rozhraní .NET, .NET core
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016

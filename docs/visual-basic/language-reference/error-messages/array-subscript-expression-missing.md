@@ -1,8 +1,8 @@
 ---
-title: "Výraz dolního indexu pole chybí."
+title: Výraz dolního indexu pole chybí.
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -12,7 +12,7 @@ f1_keywords:
 helpviewer_keywords:
 - BC30306
 ms.assetid: 3c0d9732-ee37-436f-a1df-29d65712f48a
-caps.latest.revision: 
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: aac09a90abf69fe53f46910fe4b542c6cc632c3a

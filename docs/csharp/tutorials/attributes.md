@@ -1,7 +1,7 @@
 ---
 title: Atributy - C#
-description: "Zjistěte, jak fungují atributy v jazyce C#."
-keywords: "Rozhraní .NET, .NET core, C#, atributy"
+description: Zjistěte, jak fungují atributy v jazyce C#.
+keywords: Rozhraní .NET, .NET core, C#, atributy
 author: mgroves
 ms.author: wiwagn
 ms.date: 03/06/2017

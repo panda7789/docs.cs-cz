@@ -1,5 +1,5 @@
 ---
-title: "Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; není platný pro pole"
+title: Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; není platný pro pole
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,7 +8,7 @@ ms.topic: article
 f1_keywords:
 - vbrArgument_InvalidRank1
 ms.assetid: 2c931ede-9c41-4ad3-8dfd-d649617f567c
-caps.latest.revision: 
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 64c52cc305181a53c352763b2c224d60559206c3
