@@ -1,18 +1,18 @@
 ---
 title: Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure
 description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6c9069879859a1704b9650cd7f715e63b0525ea7
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 329656f80a05cc8eab1c54f997659eeda0abb330
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure
 

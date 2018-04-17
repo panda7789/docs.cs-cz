@@ -1,7 +1,7 @@
 ---
-title: "Předpoklady pro .NET Core v systému Mac"
-description: "Podporované verze systému macOS a .NET Core závislosti k vývoji, nasadit a spustit aplikace .NET Core v systému macOS počítače."
-keywords: "Rozhraní .NET, .NET core systému macOS, Mac"
+title: Předpoklady pro .NET Core v systému Mac
+description: Podporované verze systému macOS a .NET Core závislosti k vývoji, nasadit a spustit aplikace .NET Core v systému macOS počítače.
+keywords: Rozhraní .NET, .NET core systému macOS, Mac
 author: guardrex
 ms.author: mairaw
 ms.date: 09/27/2017
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
-ms.workload: dotnetcore
-ms.openlocfilehash: 5aac7566f532312c890bad07c901929ae826ece3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 4bad51e7d0d705ea730382edf80850bca15c5e7a
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="prerequisites-for-net-core-on-macos"></a>Předpoklady pro .NET Core v systému macOS
 
@@ -65,9 +66,9 @@ Stáhněte a nainstalujte rozhraní .NET Core SDK z [.NET stáhne](https://www.m
 
 ---
 
-## <a name="increase-the-maximum-open-file-limit"></a>Zvyšte limit maximální otevření souboru
+## <a name="increase-the-maximum-open-file-limit-net-core-versions-before-net-core-sdk-202"></a>Zvyšte limit maximální otevření souboru (verze .NET Core před .NET Core SDK bodu 2.0.2) 
 
-Výchozí limit pro otevření souboru v systému macOS nemusí dostačovat pro některé úlohy .NET Core, jako je například obnovení projekty nebo spouštění testů jednotek.
+Ve starší verzi .NET Core (před .NET Core SDK bodu 2.0.2) nemusí být výchozí limit pro otevření souboru v systému macOS dostatečná pro některé úlohy .NET Core, jako je například obnovení projekty nebo spouštění testů jednotek.
 
 Toto omezení můžete zvýšit pomocí následujících kroků:
 
@@ -114,4 +115,4 @@ K vývoji aplikací .NET Core pomocí sady .NET Core SDK můžete použít všec
 * Podporované verze operačního systému macOS
 * OpenSSL (.NET Core 1.x pouze; .NET Core 2.x používá zabezpečení služeb dostupných v systému macOS nativně)
 * .NET core SDK pro systém Mac
-* [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+* [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)

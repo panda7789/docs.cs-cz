@@ -1,18 +1,18 @@
 ---
 title: klíče takeaways
 description: Životní cyklus aplikace kontejnerizované Docker s platformy společnosti Microsoft a _v1.1 nástroje (elektronická kniha)
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2ad2e0171b8deaead6d0b28a9da67fec245a405a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5bda215f895fd0e3a66e10c2d85a431314d737fc
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="key-takeaways"></a>klíče takeaways
 
@@ -29,4 +29,4 @@ ms.lasthandoff: 12/23/2017
 Visual Studio Team Services výrazně zjednodušuje prostředí DevOps určený pro prostředí Docker z průběžné nasazování kanály, včetně jednoduché prostředí Docker nebo pokročilejší orchestrators mikroslužbu a kontejneru na základě Azure.
 
 >[!div class="step-by-step"]
-[Previous] (../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+[Předchozí] (.. / run-manage-monitor-docker-environments/monitor-containerized-application-services.md)

@@ -1,21 +1,21 @@
 ---
-title: "Předpoklady pro .NET Core v systému Linux"
-description: "Podporované verze systému Linux a závislostí .NET Core k vývoji, nasazení a spouštění aplikací .NET Core na počítače se systémem Linux."
+title: Předpoklady pro .NET Core v systému Linux
+description: Podporované verze systému Linux a závislostí .NET Core k vývoji, nasazení a spouštění aplikací .NET Core na počítače se systémem Linux.
 keywords: Debian, ubuntu Linux, .NET, .NET core RHEL, centOS,
 author: jralexander
 ms.author: johalex
-ms.date: 12/06/2017
-ms.topic: article
+ms.date: 04/12/2018
+ms.topic: conceptual
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 913d3869559b10af508e695a06d06021f8f90175
-ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
+ms.openlocfilehash: 37dc4f25b6c4915971bc79931a105474fcd43670
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -24,25 +24,28 @@ Tento článek ukazuje závislosti potřebné k vývoji aplikací .NET Core v sy
 * [Příkazového řádku pomocí vašeho oblíbeného editoru](tutorials/using-with-xplat-cli.md)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
+> [!NOTE]
+> Balíček .NET Core SDK není nutné pro produkční servery nebo prostředí. Pouze balíček .NET Core runtime je potřeba pro aplikace nasazené do produkčního prostředí. Nasazení na .NET Core runtime s aplikacemi v rámci samostatná nasazení, ale musí být nasazený pro závislé na Framework nasazených aplikací samostatně. Další informace o typech nasazení závislé na framework a nezávislý najdete v tématu [nasazení aplikace .NET Core](./deploying/index.md). Viz také [aplikace Self-contained Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md) konkrétní pokyny.
+
 ## <a name="supported-linux-versions"></a>Podporované verze systému Linux
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
-Rozhraní .NET 2.0 základní považuje za jeden operační systém Linux. Neexistuje jeden Linux sestavení (podle architektura procesoru) pro podporovaných distribucích systému Linux.
+.NET core 2.x vyhodnotí jako jeden operační systém Linux. Neexistuje jeden Linux sestavení (podle architektura procesoru) podporované distribuce systému Linux.
 
 NET základní 2.x je podporovaný na následujících Linux 64-bit (`x86_64` nebo `amd64`) distribuce/verze:
 
- * Red Hat Enterprise Linux 7
- * CentOS 7
- * Oracle Linux 7
- * Fedora 25, Fedora 26
- * Debian 8.7 nebo novější verze 
- * Ubuntu č. 17.04, Ubuntu 16.04, Ubuntu 14.04
- * Linux máta 18, máta Linux 17
- * openSUSE 42.2 nebo novější verze
- * SUSE Enterprise Linux (SLES) 12 SP2 nebo novější verze
+* Red Hat Enterprise Linux 7
+* CentOS 7
+* Oracle Linux 7
+* Fedora 27, 26
+* Debian 9 8.7 nebo novější verze
+* Ubuntu 17.10, 16.04, 14.04
+* Linux máta 18, 17
+* openSUSE 42.3 nebo novější verze
+* SUSE Enterprise Linux (SLES) 12 Service Pack 2 nebo novější
 
-V tématu [2.x .NET Core, podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy, mimo verze podporu operačního systému a odkazy na zásady životního cyklu.
+V tématu [2.x .NET Core, podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy, distribucí a verzí, nedostatek verze podporu operačního systému a odkazy na zásady životního cyklu.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
@@ -51,12 +54,11 @@ V tématu [2.x .NET Core, podporované verze operačního systému](https://gith
 * Red Hat Enterprise Linux 7
 * CentOS 7
 * Oracle Linux 7
-* Fedora 24
+* Fedora 26
 * Debian 8.2 nebo novější verze
-* Ubuntu 14.04, Ubuntu 16.04, Ubuntu 16.10\*
- * Ubuntu 16.10 podporuje nejnovější verze opravy .NET Core 1.1
-* Linux Mint 17
-* openSUSE 42,1 nebo novější verze (.NET Core 1.1)
+* Ubuntu 16.04, 14.04
+* Linux máta 18, 17
+* openSUSE 42.3 nebo novější verze (.NET Core 1.1)
 
 V tématu [podporované verze operačního systému aplikace .NET Core 1.x](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy, mimo verze podporu operačního systému a odkazy na zásady životního cyklu.
 
@@ -71,15 +73,15 @@ Následující by měla být příklady. Přesné verze a názvy se mohou mírn�
 Ubuntu distribuce vyžadovat nainstalované následující knihovny:
 
 * libunwind8
-* liblttng-ust0
+* liblttng ust0
 * libcurl3
 * libssl1.0.0
 * libuuid1
 * libkrb5-3
 * zlib1g
-* libicu52 (pro 14.X)
-* libicu55 (pro 16.X)
-* libicu57 (pro 17.X)
+* libicu52 (pro 14.x)
+* libicu55 (pro 16.x)
+* libicu57 (pro 17.x)
 
 ### <a name="centos"></a>CentOS
 
@@ -107,537 +109,277 @@ V systému Linux existují dvě možnosti balíček Instalační služby:
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>Skriptování nainstaluje s skript instalačního programu .NET Core
 
-`dotnet-install` Skripty se používají k provedení instalace bez oprávnění správce nástrojů rozhraní příkazového řádku a sdílený modul runtime. Si můžete stáhnout skript z: https://dot.net/v1/dotnet-install.sh
+[Skriptů instalace dotnet](./tools/dotnet-install-script.md) se používají k provedení instalace bez oprávnění správce nástrojů rozhraní příkazového řádku a sdílený modul runtime. Si můžete stáhnout skript z [ https://dot.net/v1/dotnet-install.sh ](https://dot.net/v1/dotnet-install.sh).
 
 Skript bash instalačního programu se používá v automatizace scénáře a instalace bez oprávnění správce. Tento skript také přečte přepínače prostředí PowerShell, takže je můžete používat pomocí skriptu v systémech Linux nebo OS X.
 
-> [!IMPORTANT]
-> Před spuštěním skriptu nainstalujte požadované [závislosti](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md).
+## <a name="install-net-core-for-supported-red-hat-enterprise-linux-rhel-versions"></a>Instalace .NET Core pro podporované verze systému Red Hat Enterprise Linux (RHEL)
 
-## <a name="install-net-core-for-red-hat-enterprise-linux-rhel-7"></a>Instalace .NET Core pro Red Hat Enterprise Linux (RHEL) 7
+Instalace .NET Core na podporovaných verzích systému RHEL:
 
-Instalace .NET Core na RHEL 7:
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
-1. Povolte kanál Red Hat .NET, který je k dispozici v rámci svého předplatného RHEL 7.
-    * Red Hat Enterprise 7 Server použijte:
-    
-         ```bash
-         subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-         ```
-    
-    * Red Hat Enterprise 7 pracovní stanice použijte:
-    
-        ```bash
-        subscription-manager repos --enable=rhel-7-workstation-dotnet-rpms
-         ```
-    
-    * Red Hat Enterprise 7 HPC výpočetní uzel použijte:
-    
-        ```bash
-        subscription-manager repos --enable=rhel-7-hpc-node-dotnet-rpms
-        ```
-
-2. Nainstalujte nástroj scl.
-
-    ```bash
-    yum install scl-utils
-    ```
-    
-3. Instalace .NET Core
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
-Nainstalujte základní rozhraní .NET 2.0 SDK a modulu Runtime:
-
-   ```bash
-   yum install rh-dotnet20
-   ```
-
-Povolte .NET Core SDK nebo modul Runtime 2.0 pro vaše prostředí:
-
-   ```bash
-   scl enable rh-dotnet20 bash
-   ```
+Zajistěte, abyste měli nejnovější informace o instalaci, postupujte podle [pokyny 2.x SDK a instalační program modulu Runtime .NET Core](https://www.microsoft.com/net/download/linux-package-manager/rhel/sdk-current) pro podporované verze systému RHEL.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
 **.NET core 1.1**
 
-Instalace .NET Core 1.1 SDK a modulu Runtime:
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-   ```bash
-   yum install rh-dotnetcore11
-   ```
-
-Povolte .NET Core 1.1 SDK a modulu Runtime pro vaše prostředí:
-
-   ```bash
-   scl enable rh-dotnetcore11 bash
-   ```
-
+2.  Nejnovější 1.1 .NET Core na informace o instalaci Red Hat Enterprise Linux, najdete v části [.NET Core 1.1 Průvodce Začínáme](https://access.redhat.com/documentation/en-us/net_core/1.1/html/getting_started_guide/)
+     
 **.NET core 1.0**
 
-Instalace rozhraní .NET základní 1.0 SDK a modulu Runtime:
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-   ```bash
-   yum install rh-dotnetcore10
-   ```
-
-Povolte .NET Core 1.0 SDK a modulu Runtime pro vaše prostředí:
-
-   ```bash
-   scl enable rh-dotnetcore10 bash
-   ```
-
----
-4. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-     ```bash
-     dotnet --version
-     ```
+2.  Nejnovější 1.0 .NET Core na informace o instalaci Red Hat Enterprise Linux, najdete v části [.NET Core 1.0 Průvodce Začínáme](https://access.redhat.com/documentation/en-us/net_core/1.0/html/getting_started_guide/)
 
 Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NET Core 1.1 – Příručka Začínáme](https://access.redhat.com/documentation/en/net-core/1.1/paged/getting-started-guide/) v Red Hat.
 
-## <a name="install-net-core-for-ubuntu-1404-ubuntu-1604-ubuntu-1610--linux-mint-17-linux-mint-18-64-bit"></a>Instalace .NET Core pro Ubuntu 14.04, Ubuntu 16.04, Ubuntu 16.10 a Linux máta 17 18 máta Linux (64 bitů)
+---
+
+## <a name="install-net-core-for-supported-ubuntu-and-linux-mint-distributionsversions-64-bit"></a>Instalace .NET Core pro podporované Ubuntu Linux máta distribuce/verze a (64 bitů)
+
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+2. Nainstalujte .NET Core 2.x na podporované Ubuntu a Linux máta distribuce/verze (64bitová verze):
 
-2. Registrovat Microsoft Product key jako důvěryhodné.
+**.NET core 2.0**
 
-   ```bash
-   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-   ```
+|Moduly runtime nebo sady SDK          |Ubuntu 17.10  |Ubuntu 16.04 / Linux máta 18|Ubuntu 14.04 / Linux máta 17|
+|-------------------------|--------------|----------------------------|----------------------------|
+|.NET core Runtime 2.0.6  |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.0.6)|[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.0.6)          |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.0.6)            |
+|.NET core Runtime 2.0.5  |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.0.5)|[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.0.5)          |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.0.5)            |
+|.NET core SDK 2.1.103    |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.1.103)|[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.1.103)            |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.1.103)            |
+|.NET core SDK 2.0.3      |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.0.3)|[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.0.3)          |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.0.3)            |
 
-3. Nastavte balíček hostitele požadovanou verzi kanálu.
+**.NET core 2.1**
 
-   **Ubuntu 17.10**
+>[!IMPORTANT]
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
 
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-   Ubuntu č. 17.04
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-zesty-prod zesty main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-
-   **Ubuntu 16.04 / Linux máta 18**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-
-   **Ubuntu 14.04 / Linux máta 17**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-
-4. Nainstalujte .NET Core.
-
-   ```bash
-   sudo apt-get install dotnet-sdk-2.1.4
-   ```
-
-4. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-   ```bash
-   dotnet --version
-   ```
+|Moduly runtime nebo sady SDK                  |Ubuntu 17.10    |Ubuntu 16.04 / Linux máta 18|Ubuntu 14.04 / Linux máta 17|
+|---------------------------------|----------------|----------------------------|----------------------------|
+|.NET core Runtime 2.1.0-preview1 |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.1.0-preview1)|[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.1.0-preview1)            |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.1.0-preview1)            |
+|.NET core SDK 2.1.300-preview1   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.1.300-preview1)|[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.1.300-preview1)            |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.1.300-preview1)            |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
-2. Nastavte balíček hostitele požadovanou verzi kanálu.
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-   **Ubuntu 16.10**
-   
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B02C46DF417A0893
-   sudo apt-get update
-   ```
+2. Nainstalujte .NET Core 1.x na podporované Ubuntu a Linux máta distribuce/verze (64bitová verze):
 
-  **Ubuntu 16.04 / Linux máta 18**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B02C46DF417A0893
-   sudo apt-get update
-   ```
-    
-   **Ubuntu 14.04 / Linux máta 17**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B02C46DF417A0893
-   sudo apt-get update
-   ```
-
-3. Instalace rozhraní .NET základní 1.x na Ubuntu nebo máta Linux:
-
-   ```bash
-   sudo apt-get install dotnet-dev-1.0.4
-   ```
-
-4. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-   ```bash
-   dotnet --version
-   ```
+| Moduly runtime nebo sady SDK         |Ubuntu 16.04 / Linux máta 18|Ubuntu 14.04 / Linux máta 17|
+|-------------------------|----------------------------|----------------------------|
+|.NET core Runtime 1.1.7  |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core Runtime 1.1.6  |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core Runtime 1.0.10 |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core Runtime 1.0.9  |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core SDK bodem 1.1.8      |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core SDK 1.1.7      |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core SDK 1.0.4      |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-ubuntu-14.04-x64-binaries)            |
+|.NET core SDK 1.0.1      |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-ubuntu-16.04-x64-binaries)            |[Odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-ubuntu-14.04-x64-binaries)            |
 
 ---
 
- ## <a name="install-net-core-for-debian-8-or-debian-9-64-bit"></a>Instalace .NET Core pro Debian 8 nebo Debian 9 (64 bitů)
+## <a name="install-net-core-for-supported-debian-versions-64-bit"></a>Instalace .NET Core pro podporované verze Debian (64 bitů)
 
-Instalace .NET Core na Debian 8 nebo Debian 9 (64 bitů):
-
-1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
+Instalace .NET Core na podporované Debian verze (64bitová verze):
 
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
-2. Instalace komponent systému.
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-   ```bash
-   sudo apt-get update
-   sudo apt-get install curl libunwind8 gettext apt-transport-https
-   ```
-   
-3. Zaregistrujte důvěryhodné Microsoft Product key.
+2. Nainstalujte .NET Core 2.x na podporované Debian verze (64bitová verze):
 
-   ```bash
-   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-   ```
-   
-4. Zaregistrujte Product Microsoft informačního kanálu.
+**.NET core 2.0**
 
-   Debian 9 (Stretch)
+|Moduly runtime nebo sady SDK          |Debian 9       |Debian 8       |
+|-------------------------|---------------|---------------|
+|.NET core Runtime 2.0.6  |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.0.6)   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.0.6)   |
+|.NET core Runtime 2.0.5  |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.0.5)   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.0.5)   |
+|.NET core SDK 2.1.103    |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.103)   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.1.103)   |
+|.NET core SDK 2.0.3      |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.0.3)   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.0.3)   |
 
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/dotnetdev.list'
-   ```
-   
-   Debian 8 (Klára)
-   
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/dotnetdev.list'
-   ```
-   
-5. Nainstalujte .NET Core SDK.
+**.NET core 2.1**
 
-   ```bash
-   sudo apt-get update
-   sudo apt-get install dotnet-sdk-2.0.0
-   ```
+>[!IMPORTANT]
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
 
-6. Přidejte CESTU k dotnet.
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
-   
-7. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-   ```bash
-   dotnet --version
-   ```   
-  
+|Moduly runtime nebo sady SDK                  |Debian 9       |Debian 8       |
+|---------------------------------|---------------|---------------|
+|.NET core Runtime 2.1.0-preview1 |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.1.0-preview1)   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.1.0-preview1)   |
+|.NET core SDK 2.1.300-preview1   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.300-preview1)   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.1.300-preview1)   |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
-2. Získáte požadované součásti.
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-   ```bash
-   sudo apt-get install curl libunwind8 gettext
-   ```
+2. Instalace rozhraní .NET základní 1.x na Debian 9 nebo Debian 8:
 
-3. Stáhněte si .NET Core SDK binárních souborů (tarball).
-
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848826
-   ```
-
-4. Rozbalte binární soubory .NET Core SDK.
-
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. Přidejte CESTU k dotnet.
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-
-6. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-   ```bash
-   dotnet --version
-   ```
+* .NET core Runtime 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-debian-x64-binaries)
+* .NET core Runtime 1.1.6 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-debian-x64-binaries)
+* .NET core Runtime 1.0.10 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-debian-x64-binaries)
+* .NET core Runtime 1.0.9 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-debian-x64-binaries)
+* .NET core SDK bodem 1.1.8 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-debian-x64-binaries)
+* .NET core SDK 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-debian-x64-binaries)
+* .NET core SDK 1.0.4 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-debian-x64-binaries)
+* .NET core SDK 1.0.1 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-debian-x64-binaries)
 
 ---
 
-## <a name="install-net-core-for-fedora-24-fedora-25-or-fedora-26-64-bit"></a>Instalace .NET Core pro Fedora 24, Fedora 25 nebo Fedora 26 (64 bitů)
+## <a name="install-net-core-for-supported-fedora-versions-64-bit"></a>Instalace .NET Core pro podporované verze Fedora (64 bitů)
 
-Chcete-li nainstalovat .NET Core 2.x na Fedora 26 nebo Fedora 25 nebo .NET Core 1.x na Fedora 24:
-
-1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
+Instalace .NET Core na podporované verze Fedora:
 
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
-**Fedora 26 nebo Fedora 25**
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-2. Zaregistrujte klíč podpisu společnosti Microsoft.
+2. Nainstalujte .NET Core 2.x na podporované Fedora verze (64bitová verze):
 
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
+**.NET core 2.0**
 
-3. Přidání produktu dotnet informačního kanálu.
+|Moduly runtime nebo sady SDK          |Fedora 26 nebo novější |Fedora 25 nebo předchozí |
+|-------------------------|-------------------|----------------------|
+|.NET core Runtime 2.0.6  |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.0.6)       |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.0.6)           |
+|.NET core Runtime 2.0.5  |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.0.5)       |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.0.5)           |
+|.NET core SDK 2.1.103    |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.1.103)       |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.1.103)           |
+|.NET core SDK 2.0.3      |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.0.3)       |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.0.3)           |
 
-   ```bash
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/dotnetdev.repo'
-   ```
+**.NET core 2.1**
 
-4. Nainstalujte základní rozhraní .NET SDK.
+>[!IMPORTANT]
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
 
-   ```bash
-   sudo dnf update
-   sudo dnf install libunwind libicu
-   sudo dnf install dotnet-sdk-2.0.0
-   ```
-
-5. Přidejte CESTU k dotnet.
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
+|Moduly runtime nebo sady SDK                  |Fedora 26 nebo novější |Fedora 25 nebo předchozí |
+|---------------------------------|-------------------|----------------------|
+|.NET core Runtime 2.1.0-preview1 |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.1.0-preview1)       |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.1.0-preview1)           |        |
+|.NET core SDK 2.1.300-preview1   |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.1.300-preview1)       |[Odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.1.300-preview1)           |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
+
+2. Nainstalujte .NET Core 1.x podporované Fedora verze (64bitová verze):
 
 **Fedora 24**
 
-2. Získáte požadované součásti.
+* .NET core Runtime 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-fedora-24-x64-binaries)
+* .NET core Runtime 1.1.6 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-fedora-24-x64-binaries)
+* .NET core SDK bodem 1.1.8 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-fedora-24-x64-binaries)
+* .NET core SDK 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-fedora-24-x64-binaries)
+* .NET core SDK 1.0.1 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-debian-x64-binaries)
 
-   ```bash
-   sudo dnf install libunwind libicu
-   ```
+**Fedora 23**
 
-3. Stáhněte si .NET Core SDK binárního souboru (tarball).
+* .NET core Runtime 1.0.9 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-fedora-23-x64-binaries)
+* .NET core SDK 1.0.4 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-fedora-23-x64-binaries)
+* .NET core SDK 1.0.1 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-fedora-23-x64-binaries)
 
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848833
-   ```
-
-4. Rozbalte binární soubory .NET Core SDK.
-
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. Přidejte CESTU k dotnet.
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-   
 ---
 
-6. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
+## <a name="install-net-core-for-supported-centos-and-oracle-linux-distributionsversions-64-bit"></a>Instalace .NET Core pro podporované CentOS a Oracle Linux distribuce/verze (64bitová verze)
 
-   ```bash
-   dotnet --version
-   ```
-
-## <a name="install-net-core-for-centos-71-64-bit--oracle-linux-71-64-bit"></a>Instalace .NET Core pro CentOS 7.1 (64 bitů) a Oracle Linux 7.1 (64 bitů)
-
-Chcete-li nainstalovat .NET Core pro CentOS 7.1 (64 bitů) a Oracle Linux 7.1 (64 bitů):
-
-1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
+Chcete-li nainstalovat rozhraní .NET základní pro podporované CentOS a Oracle Linux distribuce/verze (64bitová verze):
 
 > [!NOTE]
 > Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
-2. Zaregistrujte klíč podpisu společnosti Microsoft.
-
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
-
-3. Přidejte Product Microsoft informačního kanálu.
-
-   ```bash
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/dotnetdev.repo'
-   ```
-
-4. Nainstalujte základní rozhraní .NET SDK.
-
-   ```bash
-   sudo yum update
-   sudo yum install libunwind libicu
-   sudo yum install dotnet-sdk-2.0.0
-   ```
-
-5. Přidejte do své CESTĚ dotnet.
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
-
-2. Získáte požadované součásti.
-
-   ```bash
-   sudo yum install libunwind libicu
-   ```
-   
-3. Stáhněte si .NET Core SDK binárního souboru (tarball).
-
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848821
-   ```
-
-4. Rozbalte binární soubory .NET Core SDK.
-
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. Přidejte CESTU k dotnet.
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-
----
-
-6. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-   ```bash
-   dotnet --version
-   ```
-
-## <a name="install-net-core-for-suse-linux-enterprise-server-64-bit"></a>Instalace .NET Core pro SUSE Linux Enterprise Server (64 bitů)
-
-Chcete-li nainstalovat .NET Core 2.x pro SUSE Linux Enterprise Server (SLES) 12 SP2 (64bitová verze):
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-2. Přidání produktu dotnet informačního kanálu.
+2. Instalace .NET Core 2.x na podporované CentOS a Oracle Linux distribuce/verze (64bitová verze):
 
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/dotnetdev.repo'
-   ```
+**.NET core 2.0**
 
-3. Nainstalujte základní rozhraní .NET SDK.
+* .NET core Runtime 2.0.6 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.0.6)
+* .NET core Runtime 2.0.5 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.0.5)
+* .NET core SDK 2.1.103 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.103)
+* .NET core SDK 2.0.3 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.0.3)
+ 
+**.NET core 2.1**
 
-   ```bash
-   sudo zypper update
-   sudo zypper install libunwind libicu
-   sudo zypper install dotnet-sdk-2.0.0
-   ```
+>[!IMPORTANT]
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview/).
 
-4. Přidejte CESTU k dotnet.
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
-
-5. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
-
-   ```bash
-   dotnet --version
-   ```
-   
-## <a name="install-net-core-for-opensuse-64-bit"></a>Instalace .NET Core pro openSUSE (64 bitů)
-
-Chcete-li nainstalovat .NET Core 2.x openSUSE nebo .NET Core 1.x pro openSUSE (64 bitů):
-
-1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
-
-> [!NOTE]
-> Adresář řízenou uživatele je vyžadována pro instalace z tar.gz systému Linux.
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
-2. Zaregistrujte klíč podpisu společnosti Microsoft.
-
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
-
-3. Přidání produktu dotnet informačního kanálu.
-
-   ```bash
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/dotnetdev.repo'
-   ``` 
-
-4. Nainstalujte základní rozhraní .NET SDK.
-
-   ```bash
-   sudo zypper update
-   sudo zypper install libunwind libicu
-   sudo zypper install dotnet-sdk-2.0.0
-   ```
-
-5. Přidejte CESTU k dotnet.
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
+* .NET core Runtime 2.1.0-preview1 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.1.0-preview1)
+* .NET core SDK 2.1.300-preview1 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.300-preview1)
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
-2. Získáte požadované součásti.
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
 
-   ```bash
-   sudo zypper install libunwind libicu
-   ```
+2. Instalace .NET Core 1.x na podporované CentOS a Oracle Linux distribuce/verze (64bitová verze):
 
-3. Stáhněte si .NET Core SDK binárního souboru (tarball).
+* .NET core Runtime 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-centos-x64-binaries)
+* .NET core Runtime 1.1.6 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-centos-x64-binaries)
+* .NET core Runtime 1.0.10 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-centos-x64-binaries)
+* .NET core Runtime 1.0.9 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-centos-x64-binaries)
+* .NET core SDK bodem 1.1.8 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-centos-x64-binaries)
+* .NET core SDK 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-centos-x64-binaries)
+* .NET core SDK 1.0.4 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-centos-x64-binaries)
+* .NET core SDK 1.0.1 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-centos-x64-binaries)
 
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848824
-   ```
-
-4. Rozbalte binární soubory .NET Core SDK.
-   
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. Přidejte CESTU k dotnet.
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-   
 ---
 
-6. Spustit `dotnet --version` příkaz k prokázání instalace byla úspěšná.
+## <a name="install-net-core-for-supported-suse-linux-enterprise-server-and-opensuse-distributionsversions-64-bit"></a>Instalace .NET Core podporované SUSE Linux Enterprise Server a OpenSUSE distribuce/verze (64bitová verze)
 
-   ```bash
-   dotnet --version
-   ```
+K instalaci .NET Core 2.x pro podporované SUSE Linux Enterprise Server a OpenSUSE distribuce/verze (64bitová verze):
+
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
+
+2. Nainstalujte .NET Core 2.x na podporované SUSE Linux Enterprise Server a OpenSUSE distribuce/verze (64bitová verze):
+
+**.NET core 2.0**
+
+* .NET core Runtime 2.0.6 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.0.6)
+* .NET core Runtime 2.0.5 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.0.5)
+* .NET core SDK 2.1.103 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.1.103)
+* .NET core SDK 2.0.3 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.0.3)
+ 
+**.NET core 2.1**
+
+>[!IMPORTANT]
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
+
+* .NET core Runtime 2.1.0-preview1 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.1.0-preview1)
+* .NET core SDK 2.1.300-preview1 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.1.300-preview1)
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+
+1. Odeberte parametr **předchozí preview** verze .NET Core z vašeho systému.
+
+2. Nainstalujte .NET Core 1.x na podporované SUSE Linux Enterprise Server a OpenSUSE distribuce/verze (64bitová verze):
+
+**SUSE Linux Enterprise Server 13.2**
+
+* .NET core Runtime 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-opensuse-13.2-x64-binaries)
+* .NET core Runtime 1.1.6 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-opensuse-13.2-x64-binaries)
+* .NET core SDK 1.1.7 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-opensuse-13.2-x64-binaries)
+
+**openSUSE 24**
+
+* .NET core SDK 1.0.4 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-opensuse-24-x64-binaries)
+* .NET core SDK 1.0.1 [odkaz instalace](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-opensuse-24-x64-binaries)
+
+---
 
 > [!IMPORTANT]
-> Pokud máte potíže s instalací 2.x .NET Core na podporované distribuce systému Linux nebo verzi, naleznete [2.0 – známé problémy](https://github.com/dotnet/core/tree/master/release-notes/2.0) tématu nainstalovaných distribuce/verzí. 
->
-> Pokud máte potíže s instalací 1.x .NET Core na podporované distribuce systému Linux nebo verzi, naleznete [1.0.0 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) a [1.0.1 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md) témata pro vaše nainstalovaná distribuce / verze.
+> Pokud máte potíže s instalací jádra .NET na podporované distribuce systému Linux nebo verzi, naleznete v následujících tématech nainstalovaných distribuce/verzí:
+> * [.NET core 2.1 známé problémy](https://github.com/dotnet/core/tree/master/release-notes/2.1)
+> * [Rozhraní .NET 2.0 základní známé problémy](https://github.com/dotnet/core/tree/master/release-notes/2.0)
+> * [.NET core 1.1 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.1)
+> * [.NET core 1.0 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0)

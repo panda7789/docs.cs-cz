@@ -1,12 +1,9 @@
 ---
-title: "Zařazování řetězců"
-ms.custom: 
+title: Zařazování řetězců
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - marshaling, samples
@@ -18,16 +15,17 @@ helpviewer_keywords:
 - marshaling, platform invoke
 - sample applications [.NET Framework], marshaling strings
 ms.assetid: e21b078b-70fb-4905-be26-c097ab2433ff
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a4d53cd4072ab3f9ff52729f122c0a0ecab400df
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: adcdf55f3e33a48c4fd10ea243bb0ce3497f522f
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="marshaling-strings"></a>Zařazování řetězců
 Vyvolání platformy parametrů řetězce kopie, převod je z formátu rozhraní .NET Framework (Unicode) na nespravované formát (ANSI), v případě potřeby. Protože jsou neměnné spravované řetězce, vyvolání platformy je zpět z nespravované paměti spravované paměti při nekopíruje funkce vrátí hodnotu.  
@@ -36,20 +34,20 @@ Vyvolání platformy parametrů řetězce kopie, převod je z formátu rozhraní
   
 |String|Popis|Ukázka|  
 |------------|-----------------|------------|  
-|Podle hodnoty.|Předá řetězce jako parametry.|[MsgBox](../../../docs/framework/interop/msgbox-sample.md)|  
-|Jako výsledek.|Vrátí řetězce z nespravovaného kódu.|[Řetězce](http://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02)|  
-|Odkazem.|Předá řetězce jako vstup/výstup parametry s využitím <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5)|  
-|Ve struktuře hodnotou.|Předá řetězce ve struktuře, která je v parametru.|[Struktury](http://msdn.microsoft.com/library/96a62265-dcf9-4608-bc0a-1f762ab9f48e)|  
-|Ve struktuře odkazem **(char\*)**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává ukazatel na znak vyrovnávací paměť a velikost vyrovnávací paměti je členem strukturu.|[Řetězce](http://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02)|  
-|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[OSInfo](http://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455)|  
-|Ve třídě hodnotou **(char\*)**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává ukazatel na znak.|[OpenFileDlg](http://msdn.microsoft.com/library/b7dea792-cb92-4baf-ac7b-6a24803e6c75)|  
-|Ve třídě hodnotou **(char[])**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[OSInfo](http://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455)|  
-|Jako pole řetězců hodnotou.|Vytvoří pole řetězců, je předaná hodnota.|[Pole](../../../docs/framework/interop/marshaling-different-types-of-arrays.md)|  
-|Jako pole struktury, které obsahují hodnotu řetězce.|Vytvoří pole struktury, která obsahují řetězce a pole je předaná hodnota.|[Pole](../../../docs/framework/interop/marshaling-different-types-of-arrays.md)|  
+|Podle hodnoty.|Předá řetězce jako parametry.|[MsgBox](msgbox-sample.md)|  
+|Jako výsledek.|Vrátí řetězce z nespravovaného kódu.|[Řetězce](https://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02(v=vs.100))|  
+|Odkazem.|Předá řetězce jako vstup/výstup parametry s využitím <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](https://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5(v=vs.100))|  
+|Ve struktuře hodnotou.|Předá řetězce ve struktuře, která je v parametru.|[Struktury](https://msdn.microsoft.com/library/96a62265-dcf9-4608-bc0a-1f762ab9f48e(v=vs.100))|  
+|Ve struktuře odkazem **(char\*)**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává ukazatel na znak vyrovnávací paměť a velikost vyrovnávací paměti je členem strukturu.|[Řetězce](https://msdn.microsoft.com/library/be9e82a3-dc95-4aaa-9396-61b66e467e02(v=vs.100))|  
+|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře, která je parametr v nebo na více systémů. Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[Osinfo –](https://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455(v=vs.100))|  
+|Ve třídě hodnotou **(char\*)**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává ukazatel na znak.|[OpenFileDlg](https://msdn.microsoft.com/library/b7dea792-cb92-4baf-ac7b-6a24803e6c75(v=vs.100))|  
+|Ve třídě hodnotou **(char[])**.|Předá řetězce do třídy (třídy je parametr v nebo na více systémů). Nespravované funkce očekává, že vyrovnávací paměť embedded znak.|[Osinfo –](https://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455(v=vs.100))|  
+|Jako pole řetězců hodnotou.|Vytvoří pole řetězců, je předaná hodnota.|[Pole](marshaling-different-types-of-arrays.md)|  
+|Jako pole struktury, které obsahují hodnotu řetězce.|Vytvoří pole struktury, která obsahují řetězce a pole je předaná hodnota.|[Pole](marshaling-different-types-of-arrays.md)|  
   
 ## <a name="see-also"></a>Viz také  
- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
- [Datové typy vyvolání platformy](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
- [Zařazování tříd, struktur a sjednocení](../../../docs/framework/interop/marshaling-classes-structures-and-unions.md)  
- [Zařazování pole typů](http://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)  
- [Různé zařazování ukázky](http://msdn.microsoft.com/library/a915c948-54e9-4d0f-a525-95a77fd8ed70)
+ [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)  
+ [Datové typy vyvolání platformy](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))  
+ [Zařazování tříd, struktur a sjednocení](marshaling-classes-structures-and-unions.md)  
+ [Zařazování pole typů](https://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8(v=vs.100))  
+ [Různé zařazování ukázky](https://msdn.microsoft.com/library/a915c948-54e9-4d0f-a525-95a77fd8ed70(v=vs.100))

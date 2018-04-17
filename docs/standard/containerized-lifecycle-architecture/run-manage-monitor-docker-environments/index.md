@@ -1,18 +1,18 @@
 ---
 title: Spouštět, spravovat a monitorovat Docker produkční prostředí
 description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8a8778fe4cbf08467f89a46c57f2970dd98934dd
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1bef0acc4a01a035a02c726800a643e0bcbdfde6
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="run-manage-and-monitor-docker-production-environments"></a>Spouštět, spravovat a monitorovat Docker produkční prostředí
 
@@ -24,4 +24,4 @@ Jak spouštět kontejnerizované aplikace v produkčním prostředí (platformu 
 
 
 >[!div class="step-by-step"]
-[Previous] (../docker-devops-workflow/docker-application-outer-loop-devops-workflow.md) [Next] (run-microservices-based-applications-in-production.md)
+[Předchozí] (.. / docker-devops-workflow/docker-application-outer-loop-devops-workflow.md) [Další] (run-microservices-based-applications-in-production.md)

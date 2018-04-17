@@ -1,18 +1,18 @@
 ---
-title: "Stav a data v aplikacích Docker"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Stav a data v aplikacích Docker
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d4b75faffd76a85f9ca1c779ed58bfa37625cff3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 83094cd9a13d77f489df639096bb42b23ce152e7
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Docker
 

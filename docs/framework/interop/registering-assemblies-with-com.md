@@ -1,12 +1,9 @@
 ---
-title: "Registrování sestav pomocí modelu COM"
-ms.custom: 
+title: Registrování sestav pomocí modelu COM
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - COM interop, registering assemblies
@@ -14,19 +11,20 @@ helpviewer_keywords:
 - interoperation with unmanaged code, registering assemblies
 - registering assemblies
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 39466115e3835361c76361d3cfc04f76161e7dd5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3beaffdc0660055dd047f449388216ccfdd312cc
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="registering-assemblies-with-com"></a>Registrování sestav pomocí modelu COM
-Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci sestavení (Regasm.exe)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití v modelu COM. RegAsm.exe informace o třídě přidá do registru systému, klienti COM můžete použít třídu rozhraní .NET Framework transparentně. <xref:System.Runtime.InteropServices.RegistrationServices> Třída poskytuje ekvivalentní funkce.  
+Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci sestavení (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití v modelu COM. RegAsm.exe informace o třídě přidá do registru systému, klienti COM můžete použít třídu rozhraní .NET Framework transparentně. <xref:System.Runtime.InteropServices.RegistrationServices> Třída poskytuje ekvivalentní funkce.  
   
  Spravované součásti musí být zaregistrován v registru systému Windows, než je možné aktivovat z COM klienta. V následující tabulce jsou uvedeny klíčů, které Regasm.exe obvykle přidá do registru systému Windows. (000000 znamená skutečná hodnota GUID.)  
   
@@ -34,7 +32,7 @@ Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci 
 |----------|-----------------|------------------|  
 |CLSID|Identifikátor třídy|HKEY_CLASSES_ROOT\CLSID\\{000…000}|  
 |IID|Identifikátor rozhraní|HKEY_CLASSES_ROOT\Interface\\{000…000}|  
-|LIBID|Identifikátor knihovny|HKEY_CLASSES_ROOT\TypeLib\\{000…000}|  
+|ID KNIHOVNY|Identifikátor knihovny|HKEY_CLASSES_ROOT\TypeLib\\{000…000}|  
 |ProgID|Programový identifikátor|HKEY_CLASSES_ROOT\000…000|  
   
  V části HKCR\CLSID\\{0000... 0000} klíč, výchozí hodnota je nastavena na ProgID třídy a přidají dva nové pojmenovaných hodnot, třídy a sestavení. Modul runtime čte hodnotu sestavení z registru a předá je do překladač sestavení za běhu. Překladač sestavení se pokusí najít sestavení, na základě informací o sestavení, jako je například číslo název a verze. Sestavení pro překladač sestavení, který se má najít sestavení, musí být v jednom z následujících umístění:  
@@ -53,7 +51,7 @@ Můžete spustit nástroj příkazového řádku volat [nástroj pro registraci 
  Pro `InprocServer32` podklíč, zobrazí se odkaz na Mscoree.dll místo tradiční knihovny typů COM indikující, že modul common language runtime vytvoří spravovaného objektu.  
   
 ## <a name="see-also"></a>Viz také  
- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
- [Postupy: Odkazování na typy .NET z modelu COM](../../../docs/framework/interop/how-to-reference-net-types-from-com.md)  
- [Volání metody objekt .NET.](http://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33)  
- [Nasazení aplikace pro přístup COM](http://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce)
+ [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)  
+ [Postupy: Odkazování na typy .NET z modelu COM](how-to-reference-net-types-from-com.md)  
+ [Volání metody objekt .NET.](https://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33(v=vs.100))  
+ [Nasazení aplikace pro přístup COM](https://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce(v=vs.100))

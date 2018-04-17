@@ -1,12 +1,9 @@
 ---
-title: "Vytváření prototypů ve spravovaném kódu"
-ms.custom: 
+title: Vytváření prototypů ve spravovaném kódu
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -24,19 +21,20 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d1006f59f9841a10066c83a8f0800d3a7c17500a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c59a05c5f6abfa30a71ccf7608f8a84738f99c3a
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
-Toto téma popisuje, jak přistupovat k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace, který se má použít s platformou vyvolání najdete v tématu [zařazování dat s vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+Toto téma popisuje, jak přistupovat k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace, který se má použít s platformou vyvolání najdete v tématu [zařazování dat s vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
  Než se dostanete k nespravované funkce knihoven DLL ze spravovaného kódu, musíte znát název funkce a název knihovny DLL, která vyexportuje ji. Pomocí těchto informací můžete začít zapisovat spravované definici nespravované funkci, která je implementovaná v knihovny DLL. Kromě toho můžete upravit způsob, jakým této platformě vyvolání vytvoří funkci a zařazuje dat do a z funkce.  
   
@@ -44,7 +42,7 @@ Toto téma popisuje, jak přistupovat k nespravovaným funkcím a zavádí něko
 >  Funkce rozhraní API Win32, které přidělují řetězec umožňují volné řetězec pomocí metody `LocalFree`. Vyvolání platformy zpracovává tyto parametry jiným způsobem. Pro platformu vyvolat volání, zkontrolujte parametr `IntPtr` zadejte místo `String` typu. Pomocí metody, které jsou poskytovány <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> třídy ručně převést na řetězec typu a volné ji ručně.  
   
 ## <a name="declaration-basics"></a>Základy deklarace  
- Spravované definice k nespravovaným funkcím jsou závislá, jak můžete vidět v následujících příkladech. Příklady kódu pro více dokončení, najdete v části [příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md).  
+ Spravované definice k nespravovaným funkcím jsou závislá, jak můžete vidět v následujících příkladech. Příklady kódu pro více dokončení, najdete v části [příklady vyvolání platformy](platform-invoke-examples.md).  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -131,7 +129,7 @@ using namespace System::Runtime::InteropServices;
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- <xref:System.Security.Permissions.SecurityAction>Modifikátory fungují správně, pokud jsou uvedeny na třídu, která obsahuje (zabalí) platformu vyvolání volání.  
+ <xref:System.Security.Permissions.SecurityAction> Modifikátory fungují správně, pokud jsou uvedeny na třídu, která obsahuje (zabalí) platformu vyvolání volání.  
   
 ```cpp  
       [RegistryPermission(SecurityAction.Demand, Unrestricted = true)]  
@@ -152,7 +150,7 @@ class PInvokeWrapper
 }  
 ```  
   
- <xref:System.Security.Permissions.SecurityAction>Modifikátory také fungují správně vnořené scénář, kde jsou umístěny na volající platformy vyvolat volání:  
+ <xref:System.Security.Permissions.SecurityAction> Modifikátory také fungují správně vnořené scénář, kde jsou umístěny na volající platformy vyvolat volání:  
   
 ```cpp  
       {  
@@ -231,11 +229,11 @@ interface IDemandStubsItf
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
- [Určení vstupního bodu](../../../docs/framework/interop/specifying-an-entry-point.md)  
- [Určení znakové sady](../../../docs/framework/interop/specifying-a-character-set.md)  
- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)  
- [Aspekty zabezpečení vyvolání platformy](http://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb)  
- [Identifikace funkcí ve knihovnách DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md)  
- [Vytvoření třídy k umístění funkcí DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)  
- [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+ [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)  
+ [Určení vstupního bodu](specifying-an-entry-point.md)  
+ [Určení znakové sady](specifying-a-character-set.md)  
+ [Příklady vyvolání platformy](platform-invoke-examples.md)  
+ [Aspekty zabezpečení vyvolání platformy](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))  
+ [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)  
+ [Vytvoření třídy k umístění funkcí DLL](creating-a-class-to-hold-dll-functions.md)  
+ [Volání funkce DLL](calling-a-dll-function.md)

@@ -1,7 +1,7 @@
 ---
-title: "Model rozšiřitelnosti .NET core rozhraní příkazového řádku"
-description: "Zjistěte, jak můžete rozšířit nástroje rozhraní příkazového řádku (CLI)."
-keywords: "Rozhraní příkazového řádku, rozšiřitelnosti, vlastní příkazy, .NET Core"
+title: Model rozšiřitelnosti .NET core rozhraní příkazového řádku
+description: Zjistěte, jak můžete rozšířit nástroje rozhraní příkazového řádku (CLI).
+keywords: Rozhraní příkazového řádku, rozšiřitelnosti, vlastní příkazy, .NET Core
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
-ms.workload: dotnetcore
-ms.openlocfilehash: 0d273510903c888f3212a57f4c28b118b73cab5c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 53329c302066891c240a234156c2572acc66e7ab
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů .NET core rozhraní příkazového řádku
 
@@ -82,8 +83,8 @@ Vzhledem k tomu, že jsou nástroje přenosné aplikace, musí mít uživatel vy
 
 Tyto druhy nástroje mít graf závislostí, který je zcela oddělenou z grafu závislostí projektu, který používá. Proces obnovení nejprve obnoví závislosti projektu a potom obnoví všechny nástroje a jejich závislosti.
 
-Můžete najít bohatší příklady a různé kombinace to [úložišti .NET Core rozhraní příkazového řádku](https://github.com/dotnet/cli/tree/rel/1.0.1/TestAssets/TestProjects).
-Můžete také zjistit [implementace nástroje používané](https://github.com/dotnet/cli/tree/rel/1.0.1/TestAssets/TestPackages) ve stejném úložišti.
+Můžete najít bohatší příklady a různé kombinace to [úložišti .NET Core rozhraní příkazového řádku](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestProjects).
+Můžete také zjistit [implementace nástroje používané](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestPackages) ve stejném úložišti.
 
 ### <a name="custom-targets"></a>Vlastní cíle
 NuGet má schopnost [balíček vlastní MSBuild cíle a soubory props](/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package). S přechodem .NET Core rozhraní příkazového řádku nástroje pro použití nástroje MSBuild shodný mechanismus rozšiřitelnosti teď vztahují na projekty .NET Core. Tento typ rozšíření by použijte, pokud chcete rozšířit procesu sestavení nebo pokud chcete získat přístup k žádnému artefaktů v procesu sestavení, jako jsou například generované soubory, nebo chcete prohlédnout konfiguraci, pod kterým je volána sestavení , atd.

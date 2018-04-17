@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: af6a6b73c790577cebf301075f2ff7e90960ea62
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: c770ae0286842241288c39c003456c52879c8706
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -76,7 +76,7 @@ Jak znázorňuje obrázek 9 – 15, od stejné domény události, může zpracov
 
 **Obrázek 9 až 15**. Zpracování více akcí v každé doméně
 
-Obslužné rutiny událostí jsou obvykle v aplikační vrstvě, protože objektů infrastruktury, jako jsou úložiště nebo rozhraní API aplikace bude používat mikroslužbu chování. V tomto smysl jsou podobné obslužné rutiny příkazů, obslužné rutiny událostí, tak jak jsou součástí aplikační vrstvu. Důležitý rozdíl je, že příkaz má být zpracován pouze jednou. Událost domény může být zpracována nula nebo *n* krát, protože pokud lze přijímat pomocí několika příjemci nebo obslužných rutin událostí pomocí k jinému účelu pro každou obslužnou rutinu.
+Obslužné rutiny událostí jsou obvykle v aplikační vrstvě, protože objektů infrastruktury, jako jsou úložiště nebo rozhraní API aplikace bude používat mikroslužbu chování. V tomto smysl jsou podobné obslužné rutiny příkazů, obslužné rutiny událostí, tak jak jsou součástí aplikační vrstvu. Důležitý rozdíl je, že příkaz má být zpracován pouze jednou. Událost domény může být zpracována nula nebo *n* krát, protože ho lze přijímat pomocí několika příjemci nebo obslužných rutin událostí pomocí k jinému účelu pro každou obslužnou rutinu.
 
 Možnost Otevřít počet obslužných rutin na událost domény umožňuje přidat mnoho další pravidla domény bez dopadu na váš aktuální kód. Implementace následující obchodní pravidlo, které se má provést vpravo po konkrétní události, například může být stejně snadná jako přidávání několik obslužné rutiny událostí (nebo i pouze jeden):
 
@@ -367,7 +367,7 @@ Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší �
 -   **Jan Kronquist. Nemáte publikovat události domény, obnoví v nich!**
     [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
--   **Cesaru členka Torre. Domain Events vs. Integrace události v případě architektur se DDD a mikroslužeb**
+-   **Cesaru členka Torre. Domény události vs. Integrace události v případě architektur se DDD a mikroslužeb**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 

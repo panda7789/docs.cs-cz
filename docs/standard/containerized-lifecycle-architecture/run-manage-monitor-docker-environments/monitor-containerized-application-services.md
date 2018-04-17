@@ -1,18 +1,18 @@
 ---
-title: "Monitorování kontejnerizované aplikačních služeb"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Monitorování kontejnerizované aplikačních služeb
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 58bf96dfa06a78892563698200e6f4df5f371346
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b3ffa6c230176e1de6269ed0b30d05711ff78704
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="monitor-containerized-application-services"></a>Monitorování kontejnerizované aplikačních služeb
 
@@ -42,10 +42,10 @@ Při spuštění [Application Insights Docker image](https://hub.docker.com/r/mi
 
 Vytvořte prostředek Application Insights, postupujte podle pokynů v článcích uvedené v následujícím seznamu. Portál Azure pro vytvoření nezbytné skriptu.
 
--   **Monitorování aplikací Docker ve službě Application Insights:**[https://docs.microsoft.com/azure/application-insights/app-insights-docker  ](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
+-   **Monitorování Docker aplikací ve službě Application Insights:**  [https://docs.microsoft.com/azure/application-insights/app-insights-docker](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
 
 -   **Aplikace bitovou kopii Insights Docker v Docker Hub a Githubu:**  
-[https://hub.docker.com/r/Microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) a <https://github.com/Microsoft/ApplicationInsights-Docker>
+[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) A <https://github.com/Microsoft/ApplicationInsights-Docker>
 
 -   **Nastavte Application Insights pro ASP.NET:**  
 [https://docs.microsoft.com/azure/application-insights/app-insights-asp-net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net)
@@ -97,7 +97,7 @@ Obrázek 6-3: metriky výkonu hostitelů Docker zobrazí Operations Management S
 
 Uložení dotazů je také standardní funkce služby Operations Management Suite a mohou vám pomoci zachovat dotazů našli jste užitečné a zjistit trendy ve vašem systému.
 
-**Další informace o** najít informace o instalaci a konfiguraci Docker kontejneru řešení v [Operations Management Suite](http://microsoft.com/oms), přejděte na <https://docs.microsoft.com/azure/log-analytics /log-Analytics-containers>.
+**Další informace o** najít informace o instalaci a konfiguraci Docker kontejneru řešení v [Operations Management Suite](http://microsoft.com/oms), přejděte na <https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>.
 
 >[!div class="step-by-step"]
 [Předchozí] (spravovat produkční docker-environments.md) [Další] (.. /Key-takeaways/index.MD)

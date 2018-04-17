@@ -1,13 +1,9 @@
 ---
 title: Výchozí chování zařazování
-ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,17 +13,16 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f0a8fcba31ddfa09ca60f8ba6cf08d20b270c3da
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 7d653e6bd82a897d1fe8591f263a12f4c3a67abf
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech že tu určují chování data související s parametry metody jak předává mezi spravovanými a nespravovanými paměti. Tyto vestavěné pravidla řízení takové zařazování aktivitám v podobě transformace typu dat, zda volaný můžete změnit data do ní předán a tyto změny vrátit volajícímu, a pod kterým okolností zařazování poskytuje optimalizace výkonu.  
@@ -52,10 +47,10 @@ BSTR MethodOne (BSTR b) {
   
  Ale pokud definujete metodu jako vyvolání prototypu platformy, nahraďte, každý **BSTR** zadejte s <xref:System.String> zadejte a volání `MethodOne`, modul se pokusí volné `b` dvakrát. Chování zařazování můžete změnit pomocí <xref:System.IntPtr> typy místo **řetězec** typy.  
   
- Modul runtime vždy používá **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyl přiřazen paměti, že pracujete s **CoTaskMemAlloc** metodu, musíte použít **IntPtr** a volné paměti ručně pomocí odpovídající metodu. Podobně se můžete vyhnout automatické paměti uvolňování v situacích, kde by nikdy uvolnit paměť, například jako při použití **GetCommandLine** funkce z Kernel32.dll, který vrací ukazatel na paměti jádra. Podrobnosti o ručně uvolnění paměti najdete v tématu [vyrovnávací paměti ukázka](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5).  
+ Modul runtime vždy používá **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyl přiřazen paměti, že pracujete s **CoTaskMemAlloc** metodu, musíte použít **IntPtr** a volné paměti ručně pomocí odpovídající metodu. Podobně se můžete vyhnout automatické paměti uvolňování v situacích, kde by nikdy uvolnit paměť, například jako při použití **GetCommandLine** funkce z Kernel32.dll, který vrací ukazatel na paměti jádra. Podrobnosti o ručně uvolnění paměti najdete v tématu [vyrovnávací paměti ukázka](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5(v=vs.100)).  
   
 ## <a name="default-marshaling-for-classes"></a>Výchozí zařazování pro třídy  
- Třídy mohou být zařazena pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždycky zařazené jako rozhraní. V některých případech rozhraní sloužící k zařazování třídy se nazývá rozhraní třídy. Informace o přepsání třídy rozhraní s rozhraním zvoleného najdete v tématu [představení rozhraní třídy](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
+ Třídy mohou být zařazena pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždycky zařazené jako rozhraní. V některých případech rozhraní sloužící k zařazování třídy se nazývá rozhraní třídy. Informace o přepsání třídy rozhraní s rozhraním zvoleného najdete v tématu [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  
   
 ### <a name="passing-classes-to-com"></a>Předávání tříd do modelu COM  
  Když spravovanou třídou předána do modelu COM, spolupráce vláken automaticky zabalí třídy pomocí modelu COM serveru proxy a předá rozhraní třída vyprodukované proxy server a volání metody COM. Proxy server pak deleguje všechna volání na rozhraní třída zpět do spravovaného objektu. Proxy server taky zpřístupňuje další rozhraní, která nejsou explicitně implementované v třídě. Proxy server, jako automaticky implementuje rozhraní **IUnknown** a **IDispatch** jménem třídy.  
@@ -171,7 +166,7 @@ internal class DelegateTest {
 ```  
   
 ## <a name="default-marshaling-for-value-types"></a>Výchozí zařazování pro typy hodnot  
- Většina typy hodnot, jako je například celá čísla a čísla s plovoucí desetinnou čárkou, jsou [přenositelné](../../../docs/framework/interop/blittable-and-non-blittable-types.md) a nevyžadují zařazování. Další [nepřenositelné](../../../docs/framework/interop/blittable-and-non-blittable-types.md) typy mají odlišné reprezentace v paměti spravovanými a nespravovanými a vyžadují kódování. Jiné typy stále vyžadují explicitní formátování mezi součinnosti hranic.  
+ Většina typy hodnot, jako je například celá čísla a čísla s plovoucí desetinnou čárkou, jsou [přenositelné](blittable-and-non-blittable-types.md) a nevyžadují zařazování. Další [nepřenositelné](blittable-and-non-blittable-types.md) typy mají odlišné reprezentace v paměti spravovanými a nespravovanými a vyžadují kódování. Jiné typy stále vyžadují explicitní formátování mezi součinnosti hranic.  
   
  Toto téma obsahuje informace postupujte podle kroků pro typy formátovanou hodnotu:  
   
@@ -450,8 +445,8 @@ interface IValueTypes : IDispatch {
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Přenositelné a nepřenositelné typy](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [Kopírování a přichycování](../../../docs/framework/interop/copying-and-pinning.md)  
- [Výchozí zařazování pro pole](../../../docs/framework/interop/default-marshaling-for-arrays.md)  
- [Výchozí zařazování pro objekty](../../../docs/framework/interop/default-marshaling-for-objects.md)  
- [Výchozí zařazování pro řetězce](../../../docs/framework/interop/default-marshaling-for-strings.md)
+ [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)  
+ [Kopírování a přichycování](copying-and-pinning.md)  
+ [Výchozí zařazování pro pole](default-marshaling-for-arrays.md)  
+ [Výchozí zařazování pro objekty](default-marshaling-for-objects.md)  
+ [Výchozí zařazování pro řetězce](default-marshaling-for-strings.md)

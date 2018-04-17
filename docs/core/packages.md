@@ -1,7 +1,7 @@
 ---
-title: "Balíčky, metapackages a architektury"
-description: "Přečtěte si terminologie pro balíčky, metapackages a architektur."
-keywords: "Rozhraní .NET, .NET core"
+title: Balíčky, metapackages a architektury
+description: Přečtěte si terminologie pro balíčky, metapackages a architektur.
+keywords: Rozhraní .NET, .NET core
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 85f20594844025655bbfb590364324631bd8e695
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: f9b98fb38390e91c7a144ff5585c0a26824303dc
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metapackages a architektury
 
@@ -78,6 +78,7 @@ Existují výhody použití metapackages:
 Klíče metapackages .NET Core jsou:
 
 - [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) -popisuje knihovny, které jsou součástí distribuční .NET Core. Vytvoří [ `.NETCoreApp` framework](https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj). Závisí na menší `NETStandard.Library`.
+- [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) -zahrnuje všechny podporované balíčky z interní a třetích stran závislosti používané ASP.NET Core a Entity Framework Core, Entity Framework Core a ASP.NET Core. V tématu [Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x](/aspnet/core/fundamentals/metapackage) Další informace.
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) -sadu průčelí kompatibility, které umožňují na základě mscorlib přenosné knihovny tříd (PCLs) ke spuštění na .NET Core.
 
 ## <a name="frameworks"></a>rozhraní
@@ -87,7 +88,7 @@ Klíče metapackages .NET Core jsou:
 Například [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) podporuje následující rozhraní:
 
 - . NETFramework, verze = 4.6
-- .NETStandard,Version=1.3
+- . Monikerů NETStandard, verze = 1,3
 - 6 Xamarin platformy (například xamarinios10)
 
 Je užitečné kontrastu první dva z těchto rozhraní, protože jsou příklady dvěma různými způsoby, že jsou definovány architektury.

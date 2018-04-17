@@ -1,30 +1,30 @@
 ---
 title: Co je to Windows Communication Foundation
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], technology overview
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-caps.latest.revision: 
+caps.latest.revision: 51
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7aecddc617afcaf197aa212e8eea7e1342c029fa
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
+ms.openlocfilehash: 1e194a0784eb27043bbd0c127cde6883b4fafb2e
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], může odesílat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  
@@ -72,7 +72,7 @@ ms.lasthandoff: 02/14/2018
   
 -   **Více přenosy a kódování**  
   
-     Na žádném z několik předdefinovaných přenosové protokoly a kódování nelze odesílat zprávy. Nejvíce běžné protokol kódování a je k odeslání zprávy protokolu SOAP text kódovaný pomocí je protokolu HTTP (HyperText Transfer) pro použití na Internetu. Alternativně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje odesílání zpráv přes protokol TCP, pojmenované kanály nebo služby MSMQ. Tyto zprávy mohou být kódovaný jako text nebo pomocí optimalizované binární formát.  Binární data můžete efektivně pomocí standardní MTOM odeslat. Pokud zadaný přenosy ani kódování podle potřeby můžete vytvořit vlastní vlastní přenos nebo kódování. [!INCLUDE[crabout](../../../includes/crabout-md.md)] přenosy a nepodporuje kódování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).  
+     Na žádném z několik předdefinovaných přenosové protokoly a kódování nelze odesílat zprávy. Nejvíce běžné protokolu a kódování, je odesílání text kódovaný protokolu SOAP zprávy pomocí protokol HTTP (HyperText Transfer) pro použití na Internetu. Alternativně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje odesílání zpráv přes protokol TCP, pojmenované kanály nebo služby MSMQ. Tyto zprávy mohou být kódovaný jako text nebo pomocí optimalizované binární formát.  Binární data můžete efektivně pomocí standardní MTOM odeslat. Pokud zadaný přenosy ani kódování podle potřeby můžete vytvořit vlastní vlastní přenos nebo kódování. [!INCLUDE[crabout](../../../includes/crabout-md.md)] přenosy a nepodporuje kódování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).  
   
 -   **Spolehlivé a zařazených do fronty zpráv**  
   

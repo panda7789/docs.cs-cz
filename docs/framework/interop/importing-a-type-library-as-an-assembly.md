@@ -1,13 +1,13 @@
 ---
-title: "Import knihovny typů ve formě sestavení"
-ms.custom: 
+title: Import knihovny typů ve formě sestavení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - importing type library
@@ -23,17 +23,17 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-caps.latest.revision: 
+caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 625bbce6dca8d57d7870dbe13e086c9a34954c9b
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 0299ef58d58318714b8f0eb8082928f8da565d2f
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 Definice typů COM se obvykle nacházejí v knihovny typů. Naproti tomu kompatibilní se specifikací CLS kompilátory vytvořit typ metadat v sestavení. Dva zdroje informací o typu se výrazně lišit. Toto téma popisuje techniky pro generování metadat z knihovny typů. Výsledné sestavení je volána sestavení vzájemné spolupráce a informací o typu, který obsahuje umožňuje aplikacím používat typy modelu COM rozhraní .NET Framework.  
@@ -55,7 +55,7 @@ Definice typů COM se obvykle nacházejí v knihovny typů. Naproti tomu kompati
   
 -   Visual Studio  
   
-     Visual Studio automaticky převede typy modelu COM v knihovně typů metadat v sestavení. Pokyny najdete v tématu [postupy: Přidání odkazů na knihovny typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md) a [návod: vložení informací o typu ze sestavení sady Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3).  
+     Visual Studio automaticky převede typy modelu COM v knihovně typů metadat v sestavení. Pokyny najdete v tématu [postupy: Přidání odkazů na knihovny typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md) a [návod: vložení informací o typu ze sestavení sady Microsoft Office](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100)).  
   
 -   [Knihovna typů – Importér (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
   
@@ -92,4 +92,4 @@ Definice typů COM se obvykle nacházejí v knihovny typů. Naproti tomu kompati
  [Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)  
  [Postupy: Přidávání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)  
  [Postupy: Generování sestavení vzájemné spolupráce z knihoven typů](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)  
- [Návod: Vložení informací o typu ze sestavení Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)
+ [Návod: Vložení informací o typu ze sestavení Microsoft Office](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100))

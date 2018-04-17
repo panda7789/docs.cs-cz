@@ -1,18 +1,18 @@
 ---
 title: Úvod ke kontejnerům a Docker
 description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 31260dc372f87305ad9d4556673a1cc94e24bfcc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 34ed053124bc3806b015d78fd8ffbbdf5725ffb0
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-containers-and-docker"></a>Úvod ke kontejnerům a Docker
 

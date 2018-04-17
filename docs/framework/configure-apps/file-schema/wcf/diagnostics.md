@@ -1,49 +1,57 @@
 ---
 title: '&lt;Diagnostika&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5c7997b3ffc1a1c3a16372398f43e8f0d06aadee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bb5506fd72745f32194b2e3cc409ff848fd1c270
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="ltdiagnosticsgt"></a>&lt;Diagnostika&gt;
 `diagnostics` Element definuje nastavení, které lze použít správce pro spuštění kontroly a řízení.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<Diagnostika >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <system.serviceModel>  
-   <diagnostics etwProviderId="String"       performanceCounters="Off/ServiceOnly/All/Default"              wmiProviderEnabled="Boolean" >       <endToEndTracing activityTracing="Boolean"  
-          messageFlowTracing="Boolean"  
-          propagateActivity="Boolean" />  
-       <messageLogging logEntireMessage="Boolean"  
-          logMalformedMessages="Boolean"  
-          logMessagesAtServiceLevel="Boolean"  
-          logMessagesAtTransportLevel="Boolean"  
-          maxMessagesToLog="Integer"  
-          maxSizeOfMessageToLog="Integer" >  
-          <filters>  
-             <clear />  
-          </filters>  
-       </messageLogging>  
-   </diagnostics>  
+  <diagnostics 
+      etwProviderId="String"       
+      performanceCounters="Off/ServiceOnly/All/Default"              
+      wmiProviderEnabled="Boolean" >       
+    <endToEndTracing 
+        activityTracing="Boolean"  
+        messageFlowTracing="Boolean"  
+        propagateActivity="Boolean" />  
+    <messageLogging 
+        logEntireMessage="Boolean"  
+        logMalformedMessages="Boolean"  
+        logMessagesAtServiceLevel="Boolean"  
+        logMessagesAtTransportLevel="Boolean"  
+        maxMessagesToLog="Integer"  
+        maxSizeOfMessageToLog="Integer" >  
+      <filters>  
+        <clear />  
+      </filters>  
+    </messageLogging>  
+  </diagnostics>  
 </system.serviceModel>  
 ```  
   
@@ -77,18 +85,20 @@ ms.lasthandoff: 12/22/2017
 ## <a name="example"></a>Příklad  
   
 ```xml  
-<diagnostics wmiProviderEnabled="false"  
-       performanceCounters="all">  
-       <messageLogging logEntireMessage="true"  
-          logMalformedMessages="true"  
-          logMessagesAtServiceLevel="true"  
-          logMessagesAtTransportLevel="true"  
-          maxMessagesToLog="42"  
-          maxSizeOfMessageToLog="42">  
-         <filters>  
-         <clear />  
+<diagnostics
+    wmiProviderEnabled="false"  
+    performanceCounters="all">  
+  <messageLogging 
+      logEntireMessage="true"  
+      logMalformedMessages="true"  
+      logMessagesAtServiceLevel="true"  
+      logMessagesAtTransportLevel="true"  
+      maxMessagesToLog="42"  
+      maxSizeOfMessageToLog="42">  
+    <filters>  
+      <clear />  
     </filters>  
-       </messageLogging>  
+  </messageLogging>  
 </diagnostics>  
 ```  
   

@@ -1,5 +1,5 @@
 ---
-title: "Postupy: Programování pro Office (C# a Visual Basic)"
+title: 'Postupy: Programování pro Office (C# a Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,19 +13,18 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 684fe023d46d3522aecd3cbd4d89e7f9ee92140f
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 7108ef10333b2ec7aded1b8f768c2953283ac625
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v C# a Visual Basic, které vylepšují programování pro Microsoft Office. Užitečné C# – funkce zahrnují pojmenovaných a nepovinných argumentů a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy v lambda – výrazy a Inicializátory kolekcí.
 
-Oba jazyky Povolit vložení informace o typu, který umožňuje nasazení sestavení, které pracují se komponenty modelu COM bez nasazení primární spolupracující sestavení (PIA) k počítači uživatele. Další informace najdete v tématu [návod: vložení typů ze spravovaných sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21).  
+Oba jazyky Povolit vložení informace o typu, který umožňuje nasazení sestavení, které pracují se komponenty modelu COM bez nasazení primární spolupracující sestavení (PIA) k počítači uživatele. Další informace najdete v tématu [návod: vložení typů ze spravovaných sestavení](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21).  
   
 Tento návod ukazuje tyto funkce v kontextu programování pro Office, ale mnoho z těchto funkcí je také užitečné obecné programování. V tomto návodu použijete aplikaci doplněk aplikace Excel k vytvoření sešitu aplikace Excel. Dále vytvořte dokument aplikace Word, který obsahuje odkaz k sešitu. Nakonec uvidíte postup povolení a zákaz PIA – závislost.  
   
@@ -169,7 +168,7 @@ Musíte mít aplikaci Microsoft Office Excel a v počítači nainstalována apli
   
      Další informace najdete v tématu [postupy: zobrazení obsahu sestavení](../../../framework/app-domains/how-to-view-assembly-contents.md).  
   
-5.  Dvakrát klikněte **MANIFEST** ikonu. Zobrazí se okno obsahující seznam sestavení, které obsahují položky projektu. `Microsoft.Office.Interop.Excel`a `Microsoft.Office.Interop.Word` nejsou zahrnuty do seznamu. Protože typy, které projektu musí byly naimportovány do vašeho sestavení, odkazů na moduly PIA nejsou potřeba. To výrazně zjednodušuje nasazení. PIA nemusí být k dispozici v počítači uživatele, a vzhledem k tomu, že aplikace nevyžaduje nasazení na konkrétní verzi PIA, aplikace může být navrženy pro práci s více verzemi systému Office, za předpokladu, že rozhraní API pro potřeby existovat ve všech verzích .  
+5.  Dvakrát klikněte **MANIFEST** ikonu. Zobrazí se okno obsahující seznam sestavení, které obsahují položky projektu. `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` nejsou zahrnuty do seznamu. Protože typy, které projektu musí byly naimportovány do vašeho sestavení, odkazů na moduly PIA nejsou potřeba. To výrazně zjednodušuje nasazení. PIA nemusí být k dispozici v počítači uživatele, a vzhledem k tomu, že aplikace nevyžaduje nasazení na konkrétní verzi PIA, aplikace může být navrženy pro práci s více verzemi systému Office, za předpokladu, že rozhraní API pro potřeby existovat ve všech verzích .  
   
      Vzhledem k tomu, že nasazení PIA už není nezbytné, může vytvořit aplikaci v pokročilých scénářích, které pracuje s více verzí sady Office, včetně starší verze. Ale funguje pouze v případě, že váš kód nepoužívá žádné rozhraní API, které nejsou k dispozici ve verzi systému Office, že pracujete s. Není vždy zrušte jestli dané rozhraní API byla k dispozici ve starší verzi a že důvod práce s předchozími verzemi systému Office se nedoporučuje.  
   
@@ -207,11 +206,11 @@ Musíte mít aplikaci Microsoft Office Excel a v počítači nainstalována apli
  [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
  [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
  [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
- [Lambda Expressions (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
  [Lambda – výrazy (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
- [Návod: Vložení informací o typu ze sestavení Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)  
- [Návod: Vložení typů ze spravovaných sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
- [Návod: Vytvoření prvního doplňku VSTO pro Excel](http://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
+ [Návod: Vložení informací o typu ze sestavení Microsoft Office](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100))  
+ [Návod: Vložení typů ze spravovaných sestavení](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
+ [Návod: Vytvoření prvního doplňku VSTO pro Excel](https://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
  [Interoperabilita](../../../csharp/programming-guide/interop/index.md)

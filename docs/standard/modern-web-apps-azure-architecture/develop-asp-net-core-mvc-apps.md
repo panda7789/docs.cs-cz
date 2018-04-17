@@ -1,6 +1,6 @@
 ---
-title: "Vývoj aplikací MVC ASP.NET Core"
-description: "Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | vývoj aplikací MVC ASP.NET Core"
+title: Vývoj aplikací MVC ASP.NET Core
+description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | vývoj aplikací MVC ASP.NET Core
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/07/2017
@@ -9,11 +9,11 @@ ms.technology: dotnet-docker
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c10bf66dd37f0d99c038db7f95999d84986152fa
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 230deb3869887fbcdd07e748d30601f19ec2be2a
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací MVC ASP.NET Core
 
@@ -74,10 +74,10 @@ Pro webové rozhraní API, rozhraní ASP.NET MVC základní podporuje [ *vyjedn�
 > ### <a name="references--mapping-requests-to-responses"></a>Odkazy – mapování požadavky na odpovědi
 > - **Směrování do akce Kontroleru**
 > <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
-> - **Model Binding** https://docs.microsoft.com/aspnet/core/mvc/models/model-binding
-> - **Model Validation**
+> - **Vazby modelu** https://docs.microsoft.com/aspnet/core/mvc/models/model-binding
+> - **Ověření modelu**
 > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
-> - **Filters** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
+> - **filtry** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
 
 ## <a name="working-with-dependencies"></a>Práce s závislosti
 
@@ -400,7 +400,7 @@ Většina webových rozhraní API by měla implementovat ověřování na zákla
 
 ## <a name="client-communication"></a>Komunikace klienta
 
-Kromě obsluhující stránky a reagovat na požadavky na data prostřednictvím webových rozhraní API, může aplikace ASP.NET Core komunikovat přímo s připojenými klienty. Odchozí komunikaci, můžete použít různé přenosu technologií, nejběžnější vrácení objekty WebSockets. Jádro ASP.NET SignalR je do knihovny, která zjednodušuje druh funkce v reálném čase komunikace klienta a serveru pro vaše aplikace. SignalR podporuje celou řadu technologií přenosu, včetně Websocket a abstrahuje tokeny n Podrobnosti implementace od vývojáře.
+Kromě obsluhující stránky a reagovat na požadavky na data prostřednictvím webových rozhraní API, může aplikace ASP.NET Core komunikovat přímo s připojenými klienty. Odchozí komunikaci, můžete použít různé přenosu technologií, nejběžnější vrácení objekty WebSockets. Jádro ASP.NET SignalR je do knihovny, která usnadňuje přidat funkce v reálném čase komunikace klienta a serveru pro vaše aplikace. SignalR podporuje celou řadu technologií přenosu, včetně Websocket a abstrahuje tokeny n Podrobnosti implementace od vývojáře.
 
 Jádro ASP.NET SignalR je aktuálně ve vývoji a bude k dispozici v další verzi ASP.NET Core. Ale jiné [otevřete zdroj Websocket knihovny](https://github.com/radu-matei/websocket-manager) jsou nyní k dispozici.
 

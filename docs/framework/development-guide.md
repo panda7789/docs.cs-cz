@@ -1,28 +1,28 @@
 ---
-title: "Průvodce vývojem s použitím rozhraní .NET Framework"
-ms.custom: 
+title: Průvodce vývojem s použitím rozhraní .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-caps.latest.revision: 
+caps.latest.revision: 13
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5d7950ae39ada3e1e0e070967f8d578fc3371126
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3432ac629a6c754cf7f863b6444dc81b6f9919ef
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a nasazení aplikace rozhraní .NET Framework. Tato část taky poskytuje informace o technologii oblasti jako dynamické programování, vzájemná funkční spolupráce, rozšiřitelnosti, správa paměti a dělení na vlákna.  
@@ -49,7 +49,7 @@ Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a
  [Aplikace služby systému Windows](../../docs/framework/windows-services/index.md)  
  Vysvětluje, jak vytvořit aplikaci, která je nainstalována jako službu a spustit, zastavit a jinak kontrolovat své chování můžete Visual Studio a rozhraní .NET Framework.  
   
- [Paralelní zpracování a souběžnost](../../docs/standard/parallel-processing-and-concurrency.md)  
+ [Paralelní zpracování, souběžnosti a asynchronní programování v rozhraní .NET](../../docs/standard/parallel-processing-and-concurrency.md)  
  Poskytuje informace o spravovaného dělení na vlákna, paralelní programování a vzory asynchronního programování návrhu.  
   
  [Síťové programování v rozhraní .NET Framework](../../docs/framework/network-programming/index.md)  
@@ -59,7 +59,7 @@ Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a
  Vysvětluje, jak můžete použít konfigurační soubory, chcete-li změnit nastavení bez nutnosti její kompilace aplikace rozhraní .NET Framework.  
   
  [Kompilování aplikací pomocí .NET Native](../../docs/framework/net-native/index.md)  
- Vysvětluje, jak můžete pomocí [!INCLUDE[net_native](../../includes/net-native-md.md)] předkompilace technologie pro vytváření a nasazení aplikace pro Windows Store. [!INCLUDE[net_native](../../includes/net-native-md.md)]zkompiluje aplikace, které jsou zapsané ve spravovaném kódu (C#) a která cílí na rozhraní .NET Framework do nativního kódu.  
+ Vysvětluje, jak můžete pomocí [!INCLUDE[net_native](../../includes/net-native-md.md)] předkompilace technologie pro vytváření a nasazení aplikace pro Windows Store. [!INCLUDE[net_native](../../includes/net-native-md.md)] zkompiluje aplikace, které jsou zapsané ve spravovaném kódu (C#) a která cílí na rozhraní .NET Framework do nativního kódu.  
   
  [Zabezpečení](../../docs/standard/security/index.md)  
  Poskytuje informace o třídy a službách v rozhraní .NET Framework, které usnadňují vývoj zabezpečení aplikací.  

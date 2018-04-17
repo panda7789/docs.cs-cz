@@ -1,18 +1,18 @@
 ---
-title: "Orchestrace mikroslužeb a multicontainer aplikace pro vysokou škálovatelnost a dostupnost"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Orchestrace mikroslužeb a multicontainer aplikace pro vysokou škálovatelnost a dostupnost
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/19/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4345fe8f36ecc32a7dd8e72fce5338bff308ffdf
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 92bfd4516866fe82408dd3dd341a13db0ee216c0
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a multicontainer aplikace pro vysokou škálovatelnost a dostupnost
 
@@ -184,4 +184,4 @@ Upozorňujeme, že jsou kontejnery Docker bezstavové sami. Pokud chcete impleme
 
 
 >[!div class="step-by-step"]
-[Previous] (soa-applications.md) [Next] (docker-apps-development-environment.md)
+[Předchozí] (applications.md soa) [Další] (docker aplikace development-environment.md)

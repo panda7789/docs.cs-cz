@@ -1,13 +1,9 @@
 ---
 title: Výchozí zařazování pro objekty
-ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,17 +12,16 @@ helpviewer_keywords:
 - objects, interop marshaling
 - interop marshaling, objects
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b49575bb7f16b942a56a48e9ad3f5a44edfb373a
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 6980db381322d354cace38709586e50681ae0a7e
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="default-marshaling-for-objects"></a>Výchozí zařazování pro objekty
 Parametry a pole zadán jako <xref:System.Object?displayProperty=nameWithType> mohou být zpřístupněny nespravovaného kódu jako jeden z následujících typů:  
@@ -237,7 +232,7 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
   
  V následující tabulce jsou uvedeny možné hodnoty **typ objektu TypeCode** výčet a odpovídající typ varianty COM pro každou hodnotu.  
   
-|TypeCode|Typ varianty COM|  
+|Typ objektu TypeCode|Typ varianty COM|  
 |--------------|----------------------|  
 |**TypeCode.Empty**|**VT_EMPTY**|  
 |**TypeCode.Object**|**VT_UNKNOWN**|  
@@ -304,7 +299,7 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 ## <a name="marshaling-byref-variants"></a>Zařazování ByRef variant  
  I když hodnotou nebo odkazem, se dá předat variant sami **VT_BYREF** příznak lze také s žádným typem variant indikující, že obsah varianta jsou předávány odkazem místo podle hodnoty. Rozdíl mezi zařazování variant odkazem a zařazování hodnotu typu variant s **VT_BYREF** nastaven příznak může být matoucí. Na následujícím obrázku vysvětluje rozdíly.  
   
- ![Variant předán v zásobníku](../../../docs/framework/interop/media/interopvariant.gif "interopvariant")  
+ ![Variant předán v zásobníku](./media/interopvariant.gif "interopvariant")  
 Variant předán podle hodnoty a podle reference  
   
  **Výchozí chování zařazování objekty a variant podle hodnoty**  
@@ -315,7 +310,7 @@ Variant předán podle hodnoty a podle reference
   
  **Výchozí chování zařazování objekty a variant odkazem**  
   
- Rozšíří změny zpět do volající, musí být předán parametry odkazem. Například můžete použít **ref** – klíčové slovo v jazyce C# (nebo **ByRef** v jazyce Visual Basic spravovaný kód) předat parametry odkazem. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \* **.  
+ Rozšíří změny zpět do volající, musí být předán parametry odkazem. Například můžete použít **ref** – klíčové slovo v jazyce C# (nebo **ByRef** v jazyce Visual Basic spravovaný kód) předat parametry odkazem. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \*** .  
   
 -   Při předávání objektu COM odkazem, zařazování vytvoří nové typu variant a zkopíruje obsah odkaz na objekt do varianta než při volání. Varianta předaný funkci nespravované kde je mohou změnit obsah varianta uživatele. Při návratu z volání všechny změny typu variant na nespravované straně rozšířeny zpět na původní objekt. Pokud typ varianty se liší od typu variant předána volání funkce, změny rozšířeny zpět do objektu jiného typu. To znamená typ objektu, který je předán do volání se může lišit od typ objektu vrácená z volání.  
   
@@ -334,15 +329,15 @@ Variant předán podle hodnoty a podle reference
   
 |From|Chcete-li|Změny rozšířeny zpět|  
 |----------|--------|-----------------------------|  
-|**Variant***v  *|**Objekt***o  *|Nikdy|  
-|**Objekt***o  *|**Variant***v  *|Nikdy|  
-|**Variant*****\*****pv     *|**REF objekt***o  *|Vždy|  
-|**REF objekt***o  *|**Variant*****\*****pv     *|Vždy|  
-|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Objekt***o  *|Nikdy|  
-|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_)**|**REF objekt***o  *|Pouze v případě, že typ nebyl změněn.|  
+|**Variant***v*|**Objekt***o*|Nikdy|  
+|**Objekt***o*|**Variant***v*|Nikdy|  
+|**Variant*****\*****pv*|**REF objekt***o*|Vždy|  
+|**REF objekt***o*|**Variant*****\*****pv*|Vždy|  
+|**Variant***v* **(VT_BYREF** *&#124;* **typ VT_\*)** |**Objekt***o*|Nikdy|  
+|**Variant***v* **(VT_BYREF** *&#124;* **typ VT_)** |**REF objekt***o*|Pouze v případě, že typ nebyl změněn.|  
   
 ## <a name="see-also"></a>Viz také  
- [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [Přenositelné a nepřenositelné typy](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [Směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
- [Kopírování a přichycování](../../../docs/framework/interop/copying-and-pinning.md)
+ [Výchozí chování zařazování](default-marshaling-behavior.md)  
+ [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)  
+ [Směrovou atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))  
+ [Kopírování a přichycování](copying-and-pinning.md)

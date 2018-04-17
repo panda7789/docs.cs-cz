@@ -1,18 +1,18 @@
 ---
-title: "Kroky v pracovním postupu vnější smyčky DevOps pro aplikaci Docker"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Kroky v pracovním postupu vnější smyčky DevOps pro aplikaci Docker
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: fe51fc4b5026d17f0f9b93e7fd0dedde93ef4a3c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a03a9d153793b30ca9276b64a0a33e3de26f8f6e
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v pracovním postupu vnější smyčky DevOps pro aplikaci Docker
 
@@ -110,13 +110,13 @@ Snadný způsob, jak vytvořit jednu z těchto je se použije ke spuštění na 
 
 **Další informace o** číst informace o kompletace CI služby Docker sady Visual Studio Team kanálu a návody najdete na následujících serverech:
 
-Spuštění agenta Visual Studio Team Services jako kontejner Docker: [https://hub.docker.com/r/ \ microsoft nebo služby vsts-agent nebo](https://hub.docker.com/r/microsoft/vsts-agent/)
+Spuštění agenta Visual Studio Team Services jako kontejner Docker: [ https://hub.docker.com/r/\ microsoft nebo služby vsts-agent nebo](https://hub.docker.com/r/microsoft/vsts-agent/)
 
 Služby VSTS Docker rozšíření: <https://aka.ms/vstsdockerextension>
 
 Vytváření bitových kopií .NET Core Linux Docker s Visual Studio Team Services: <https://blogs.msdn.microsoft.com/stevelasker/2016/06/13/building-net-core-linux-docker-images-with-visual-studio-team-services/>
 
-Vytváření služby založené na systému Linux týmu Visual Studio vytvořte počítač s podporou Docker: <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
+Vytváření sestavení počítač založený na Linuxu Visual Studio Team služby s Docker podpory: <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
 
 ### <a name="integrate-test-and-validate-multicontainer-docker-applications"></a>Integrace, testování a ověření multicontainer Docker aplikace
 
@@ -220,7 +220,7 @@ Obrázek 5 – 11: Docker nasazení úloh definice nasazení Azure Container Ser
 
 **Další informace o** Další informace o kanálu disku CD s Visual Studio Team Services a Docker, najdete na následujících stránkách:
 
-Rozšíření sady Visual Studio Team Services pro Docker a Azure Container Service: [https://aka.ms/ \ vstsdockerextension](https://aka.ms/vstsdockerextension)
+Rozšíření sady Visual Studio Team Services pro Docker a Azure Container Service: [ https://aka.ms/\ vstsdockerextension](https://aka.ms/vstsdockerextension)
 
 Azure Container Service: <https://aka.ms/azurecontainerservice>
 
@@ -237,4 +237,4 @@ Toto téma taky je popsaná v další kapitoly jako součást úlohy, které IT 
 Jenom v případě, že monitorování a Diagnostika jsou 100 procent v rámci sféru DevOps jsou monitorování procesů a analýzy provádí vývojový tým, proti prostředí testování nebo beta. To se provádí tak, že provedete zátěžové testování nebo jednoduše tak, že monitorování beta nebo QA prostředí, kde beta testery zkoušíte nové verze.
 
 >[!div class="step-by-step"]
-[Previous] (index.md) [Next] (../run-manage-monitor-docker-environments/index.md)
+[Předchozí] (index.md) [Další] (.. /Run-Manage-monitor-docker-Environments/index.MD)

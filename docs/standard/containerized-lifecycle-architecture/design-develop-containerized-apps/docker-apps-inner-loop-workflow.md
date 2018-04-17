@@ -1,18 +1,18 @@
 ---
-title: "Pracovní postup vývoje vnitřní smyčky pro Docker aplikace"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Pracovní postup vývoje vnitřní smyčky pro Docker aplikace
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 632c04507c1478238a5dc2573542f8c88bae2a51
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 7f49b19b0836636bf7656dc618ef2f181a0d7fff
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro Docker aplikace
 
@@ -52,7 +52,7 @@ Způsob, jak vyvíjet aplikaci je poměrně podobným způsobem, které můžete
 
 Nejnovější verze Docker pro Mac a Windows je jednodušší než kdy k vývoji aplikací Docker a instalace je jednoduchá.
 
-**Další informace o** pokyny k nastavení Docker pro systém Windows, přejděte na [https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/).
+**Další informace o** pokyny k nastavení Docker pro systém Windows, přejděte na [ https://docs.docker.com/docker-for-windows/ ](https://docs.docker.com/docker-for-windows/).
 
 Pokyny k nastavení Docker pro Mac, přejděte na <https://docs.docker.com/docker-for-mac/>.
 
@@ -60,7 +60,7 @@ Kromě toho budete potřebovat editor kódu, takže ve skutečnosti můžete vyv
 
 Společnost Microsoft poskytuje Visual Studio Code, což je editor lehký kód, který je podporován v Mac, Windows a Linux a poskytuje technologii IntelliSense, s [podporu mnoha jazyků](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, přejděte, Java, Ruby, Pythonu a většina moderních jazyků), [ladění](https://code.visualstudio.com/Docs/editor/debugging), [integrace s Gitem](https://code.visualstudio.com/Docs/editor/versioncontrol) a [rozšíření podpory](https://code.visualstudio.com/docs/extensions/overview). Tohoto editoru je skvělým přizpůsobit pro vývojáře, Mac a Linux. V systému Windows také můžete použít celou aplikaci Visual Studio.
 
-**Další informace o** pokyny k instalaci Visual Studio pro Windows, Mac nebo Linux, přejděte na [http://code.visualstudio.com/docs/setup/setup-overview/https://docs.docker.com/docker-for-mac/](http://code.visualstudio.com/docs/setup/setup-overview/https:/docs.docker.com/docker-for-mac/).
+**Další informace o** pokyny k instalaci Visual Studio pro Windows, Mac nebo Linux, přejděte na [ http://code.visualstudio.com/docs/setup/setup-overview/https://docs.docker.com/docker-for-mac/ ](http://code.visualstudio.com/docs/setup/setup-overview/https:/docs.docker.com/docker-for-mac/).
 
 Můžete pracovat s příkazového řádku Dockeru a zadejte kód, pomocí libovolného editoru kódu, ale pokud používáte Visual Studio Code, umožňuje se snadno vytvořit soubor Docker a docker-compose.yml soubory v pracovním prostoru. Plus můžete spustit v prostředí IDE, který zobrazí výzvu skripty, které můžou být spuštění propracována operace pomocí příkazového řádku Dockeru pod Visual Studio Code úlohy.
 
@@ -125,7 +125,7 @@ Existují další řádky konfigurace, které můžete přidat na soubor Docker 
 
 **Další informace o** informace o vytváření imagí Dockeru pro aplikace .NET Core, přejděte na <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
 
-Další informace o vytváření vlastních bitových kopií, přejděte na [https://docs.docker.com/engine/ \kurzy/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/).
+Další informace o vytváření vlastních bitových kopií, přejděte na [ https://docs.docker.com/engine/\kurzy/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/).
 
 **Úložiště s více platformami bitové kopie**
 
@@ -258,8 +258,8 @@ Visual Studio Code podporuje ladění Docker, pokud používáte Node.js a jiný
 
 Také můžete ladit .NET Core kontejnery v Docker když pomocí sady Visual Studio, jak je popsáno v následující části.
 
-**Další informace:** Další informace o ladění kontejnerů Node.js Docker, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [https://blogs.msdn.microsoft.com/ \ uživatele\_ed/2016/02/27 / Visual-Studio-Code-New-features-13-Big-Debugging-Updates-Rich-Object-hover-Conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
+**Další informace:** Další informace o ladění kontejnerů Node.js Docker, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [ https://blogs.msdn.microsoft.com/\ uživatele\_ed/2016/02/27 / Visual-Studio-Code-New-features-13-Big-Debugging-Updates-Rich-Object-hover-Conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
 
 
 >[!div class="step-by-step"]
-[Previous] (docker-apps-development-environment.md) [Next] (visual-studio-tools-for-docker.md)
+[Předchozí] (docker aplikace development-environment.md) [Další] (visual-studio nástroje pro docker.md)

@@ -1,12 +1,9 @@
 ---
-title: "Výchozí zařazování pro pole"
-ms.custom: 
+title: Výchozí zařazování pro pole
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,21 +12,22 @@ helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 91df17448a57f7495dc95fb2b4ab1fa63dd8a27f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 84f4015fd9bc5eb2de11b71530115d20c583d21d
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V aplikaci, která obsahuje jenom spravovaného kódu modul common language runtime předá typy polí jako vstupně -výstupní parametry. Naproti tomu spolupráce vláken předá pole jako parametry ve výchozím nastavení.  
   
- S [Připnutí optimalizace](../../../docs/framework/interop/copying-and-pinning.md), pole přenositelné můžou zdánlivě pracovat jako ve vstupně -výstupnímu parametru při interakci s objekty ve stejném typu apartment. Ale pokud později exportovat kód do knihovny typů sloužící ke generování proxy serveru mezi počítači a že knihovna se používá k zařazování voláními napříč apartment, volání obnovit na hodnotu true v parametru chování.  
+ S [Připnutí optimalizace](copying-and-pinning.md), pole přenositelné můžou zdánlivě pracovat jako ve vstupně -výstupnímu parametru při interakci s objekty ve stejném typu apartment. Ale pokud později exportovat kód do knihovny typů sloužící ke generování proxy serveru mezi počítači a že knihovna se používá k zařazování voláními napříč apartment, volání obnovit na hodnotu true v parametru chování.  
   
  Pole jsou svou povahou komplexní a rozdíly mezi spravovanými a nespravovanými pole zaručit informace než jiné nepřenositelné typy. Toto téma obsahuje následující informace na zařazování pole:  
   
@@ -51,9 +49,9 @@ V aplikaci, která obsahuje jenom spravovaného kódu modul common language runt
   
 |Spravovaný typ pole.|Typ elementu|Pořadí|Dolní mez|Zápis podpis|  
 |------------------------|------------------|----------|-----------------|------------------------|  
-|**ELEMENT_TYPE_ARRAY**|Zadaný typ.|Zadaný pořadí.|Volitelně zadaný rozsah.|*typ* **[**  *n* ,*m* **]**|  
+|**ELEMENT_TYPE_ARRAY**|Zadaný typ.|Zadaný pořadí.|Volitelně zadaný rozsah.|*typ* **[** *n*,*m* **]**|  
 |**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array**|  
-|**ELEMENT_TYPE_SZARRAY**|Zadaný typ.|1|0|*typ* **[**  *n*  **]**|  
+|**ELEMENT_TYPE_SZARRAY**|Zadaný typ.|1|0|*typ* **[** *n* **]**|  
   
 <a name="cpcondefaultmarshalingforarraysanchor2"></a>   
 ## <a name="unmanaged-arrays"></a>Nespravované pole  
@@ -65,13 +63,13 @@ V aplikaci, která obsahuje jenom spravovaného kódu modul common language runt
   
 |Nespravovaný typ|Importovaný typ|  
 |--------------------|-------------------|  
-|**SafeArray (** *typ* **)**|**ELEMENT_TYPE_SZARRAY**  **\<**  *ConvertedType***>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis. Bezpečné pole, které nejsou rank = 1, nebo dolní mez = 0 nelze zařadit jako **SZARRAY**.|  
-|*Typ***]** |**ELEMENT_TYPE_SZARRAY**  **\<**  *ConvertedType***>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis.|  
+|**SafeArray (** *typ* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis. Bezpečné pole, které nejsou rank = 1, nebo dolní mez = 0 nelze zařadit jako **SZARRAY**.|  
+|*Typ***]** |**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis.|  
   
 ### <a name="safe-arrays"></a>Bezpečné pole  
  Při importu bezpečným polím z knihovny typů pro sestavení .NET pole jsou převedeny na jednorozměrné pole známé typu (například **int**). Stejné pravidel převodu typů, které se vztahují na parametry platí také pro elementy pole. Například bezpečným polím z **BSTR** typy bude spravované pole řetězců a bezpečným polím variant bude spravované pole objektů. **SAFEARRAY** zaznamenat z knihovny typů a uložit v typu elementu **SAFEARRAY** hodnotu <xref:System.Runtime.InteropServices.UnmanagedType> výčtu.  
   
- Protože pořadí a hranice bezpečné pole nelze určit z knihovny typů, pořadí se předpokládá, že rovno 1 a dolní hranice se předpokládá, že rovna 0. Pořadí a rozsah musí být definován v spravované podpis vyprodukované [Importér knihovny typů (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md). Pokud se liší pořadí předaný metodě za běhu, <xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> je vyvolána výjimka. Pokud v době běhu byl předán typ pole se liší, <xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> je vyvolána výjimka. Následující příklad ukazuje bezpečné pole v spravovanými a nespravovanými kódu.  
+ Protože pořadí a hranice bezpečné pole nelze určit z knihovny typů, pořadí se předpokládá, že rovno 1 a dolní hranice se předpokládá, že rovna 0. Pořadí a rozsah musí být definován v spravované podpis vyprodukované [Importér knihovny typů (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md). Pokud se liší pořadí předaný metodě za běhu, <xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> je vyvolána výjimka. Pokud v době běhu byl předán typ pole se liší, <xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> je vyvolána výjimka. Následující příklad ukazuje bezpečné pole v spravovanými a nespravovanými kódu.  
   
  **Nespravované podpis**  
   
@@ -100,7 +98,7 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- Multidimenzionální nebo nenulové hodnoty svázané bezpečné pole, může být zařazeno do spravovaného kódu, pokud metoda podpis vyprodukované Tlbimp.exe je upravit tak, aby označuje typ elementu **ELEMENT_TYPE_ARRAY** místo **ELEMENT_ TYPE_SZARRAY**. Alternativně můžete použít **/sysarray** přepínač s Tlbimp.exe k importu všech polí jako <xref:System.Array?displayProperty=nameWithType> objekty. V případech, kde je znám být multidimenzionální pole předávány můžete upravit Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak ji znovu zkompilovat. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](http://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be).  
+ Multidimenzionální nebo nenulové hodnoty svázané bezpečné pole, může být zařazeno do spravovaného kódu, pokud metoda podpis vyprodukované Tlbimp.exe je upravit tak, aby označuje typ elementu **ELEMENT_TYPE_ARRAY** místo **ELEMENT_ TYPE_SZARRAY**. Alternativně můžete použít **/sysarray** přepínač s Tlbimp.exe k importu všech polí jako <xref:System.Array?displayProperty=nameWithType> objekty. V případech, kde je znám být multidimenzionální pole předávány můžete upravit Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak ji znovu zkompilovat. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](https://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be(v=vs.100)).  
   
 ### <a name="c-style-arrays"></a>Pole stylu jazyka C  
  Pokud pole ve stylu jazyka je importované z knihovny typů do sestavení .NET, pole je převést na **ELEMENT_TYPE_SZARRAY**.  
@@ -164,7 +162,7 @@ void New2(ref double ar);
 void New3(ref String ar);   
 ```  
   
- Zařazování můžete poskytnout velikost pole úpravou Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak kompilovat znovu. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](http://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be). Pokud chcete zadat počet prvků v poli, použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> typ pro parametr pole spravované metoda definice v jednom z následujících způsobů:  
+ Zařazování můžete poskytnout velikost pole úpravou Microsoft (MSIL intermediate language) kódu vytvořeného pomocí Tlbimp.exe a pak kompilovat znovu. Podrobnosti o tom, jak upravit MSIL kódu najdete v tématu [přizpůsobení běhové obálky s možností](https://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be(v=vs.100)). Pokud chcete zadat počet prvků v poli, použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> typ pro parametr pole spravované metoda definice v jednom z následujících způsobů:  
   
 -   Identifikujte jiný parametr, který obsahuje počet prvků v poli. Parametry jsou identifikovány pozice, počínaje první parametr jako číslo 0.     
   
@@ -205,9 +203,9 @@ void New3(ref String ar);
   
 |Spravovaný typ pole.|Exportovat jako|  
 |------------------------|-----------------|  
-|**ELEMENT_TYPE_SZARRAY**  **\<**  *typ***>**|<xref:System.Runtime.InteropServices.UnmanagedType>**. SafeArray (** *typ* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Typ je součástí podpis. Pořadí je vždy 1, dolní mez je vždy 0. Velikost se vždy označuje za běhu.|  
-|**ELEMENT_TYPE_ARRAY**  **\<**  *typ*  **>**   **\<**  *pořadí*  **>** [ **\<**  *hranice*  **>** ]|**UnmanagedType.SafeArray (** *typ* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Rank, hranice typu, jsou uvedeny v podpis. Velikost se vždy označuje za běhu.|  
-|**ELEMENT_TYPE_CLASS****\<**<xref:System.Array?displayProperty=nameWithType>**>**|**UT_Interface**<br /><br /> **UnmanagedType.SafeArray (** *typ* **)**<br /><br /> Typ, pořadí, rozsah a velikosti jsou vždy známé za běhu.|  
+|**ELEMENT_TYPE_SZARRAY** **\<** *typu* **>**|<xref:System.Runtime.InteropServices.UnmanagedType> **. SafeArray (** *typ* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Typ je součástí podpis. Pořadí je vždy 1, dolní mez je vždy 0. Velikost se vždy označuje za běhu.|  
+|**ELEMENT_TYPE_ARRAY** **\<** *typ* **>** **\<** *pořadí* **>**[**\<** *hranice* **>**]|**UnmanagedType.SafeArray (** *typ* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Rank, hranice typu, jsou uvedeny v podpis. Velikost se vždy označuje za běhu.|  
+|**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=nameWithType>**>**|**UT_Interface**<br /><br /> **UnmanagedType.SafeArray (** *typ* **)**<br /><br /> Typ, pořadí, rozsah a velikosti jsou vždy známé za běhu.|  
   
  Existuje omezení v automatizace OLE týkající se pole struktur, které obsahují LPSTR nebo LPWSTR.  Proto **řetězec** pole mají být zařazena jako **UnmanagedType.BSTR**. Jinak bude vyvolána výjimka.  
   
@@ -320,7 +318,7 @@ HRESULT New(long ar[]);
 HRESULT New(LPStr ar[]);  
 ```  
   
- Vnořená pole nelze zařadit. Například následující podpis, vygeneruje se chyba při exportu se [Exportér knihovny typů (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md).  
+ Vnořená pole nelze zařadit. Například následující podpis, vygeneruje se chyba při exportu se [Exportér knihovny typů (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md).  
   
 #### <a name="managed-signature"></a>Spravované podpis  
   
@@ -382,7 +380,7 @@ public struct MyStruct {
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [Přenositelné a nepřenositelné typy](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [Směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
- [Kopírování a přichycování](../../../docs/framework/interop/copying-and-pinning.md)
+ [Výchozí chování zařazování](default-marshaling-behavior.md)  
+ [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)  
+ [Směrovou atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))  
+ [Kopírování a přichycování](copying-and-pinning.md)

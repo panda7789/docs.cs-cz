@@ -1,18 +1,18 @@
 ---
-title: "Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)"
-description: "Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)
+description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0525633b23625d915fd447d438c6281fb14b3b46
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: cbd4dea32b98e79e85302aa5d4a5c97b1b0fa556
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)
 
@@ -26,7 +26,7 @@ Nejnovější verze Docker pro systém Windows je jednodušší než někdy k v�
 
 Pokud používáte Visual Studio 2015, musíte mít Update 3 nebo novější verze a sady Visual Studio Tools for Docker.
 
-**Další informace:** pokyny k instalaci sady Visual Studio, přejděte na [https://www.visualstudio.com/ \ produkty/vs-2015produktu edice](https://www.visualstudio.com/products/vs-2015-product-editions).
+**Další informace:** pokyny k instalaci sady Visual Studio, přejděte na [ https://www.visualstudio.com/\ produkty/vs-2015produktu edice](https://www.visualstudio.com/products/vs-2015-product-editions).
 
 Chcete-li zobrazit další informace o instalaci Visual Studio Tools for Docker, přejděte na <http://aka.ms/vstoolsfordocker> a <https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>.
 
@@ -70,8 +70,8 @@ Můžete nasadit multicontainer aplikace pomocí jednoho docker-compose.yml soub
 
 Vytvoření, ladění, aktualizace a aktualizace aplikace v místním kontejner Docker: [https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh/](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
 
-Nasaďte kontejner ASP.NET vzdáleného hostitele Docker: [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker/](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+Nasaďte kontejner ASP.NET se vzdáleným hostitelem Docker: [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker/](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 
 
 >[!div class="step-by-step"]
-[Previous] (docker-apps-inner-loop-workflow.md) [Next] (set-up-windows-containers-with-powershell.md)
+[Předchozí] (docker aplikace vnitřní smyčky workflow.md) [Další] (set-up-windows-containers-with-powershell.md)

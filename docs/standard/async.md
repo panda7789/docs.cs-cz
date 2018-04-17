@@ -13,11 +13,11 @@ ms.assetid: 1e38e9d9-8284-46ee-a15f-199adc4f26f4
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f2dddc21dfb124fe97c397a156743981a67e4037
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 85e30292fdc0e0e529eacdd328d4515bba5ee3e8
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="async-overview"></a>Async – přehled
 
@@ -41,4 +41,14 @@ Asynchronní kódu má následující vlastnosti:
 
 ## <a name="whats-next"></a>Co je další?
 
-Podrobné informace o asynchronní koncepty a programování, najdete v části [asynchronní podrobněji](async-in-depth.md) a [založený na úlohách asynchronní programování](~/docs/standard/parallel-programming/task-based-asynchronous-programming.md).
+Další informace najdete v tématu [asynchronní podrobněji](async-in-depth.md) tématu.
+
+[Vzory asynchronního programování](/asynchronous-programming-patterns/index.md) téma obsahuje přehled ze tří asynchronní programování vzorů v rozhraní .NET podporovány:  
+  
+-   [Asynchronní programování modelu (APM)](asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (starší)  
+  
+-   [Na základě událostí asynchronní vzor (EAP)](asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (starší)  
+  
+-   [Založený na úlohách asynchronní vzor (TAP)](asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (doporučeno pro nový vývoj)  
+
+Další informace o doporučených založený na úlohách programovací model najdete v tématu [založený na úlohách asynchronní programování](parallel-programming/task-based-asynchronous-programming.md) tématu.

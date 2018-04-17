@@ -1,5 +1,5 @@
 ---
-title: "yield (Referenční dokumentace jazyka C#)"
+title: yield (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-caps.latest.revision: 
+caps.latest.revision: 46
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 11fe3734df61333916e7a07010393bddc96e525c
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 98453fb218dca1feb36c64331403d6761d231a0e
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 Při použití `yield` – klíčové slovo v příkazu, které označuje, že metoda, operátor, nebo `get` přistupujícího objektu, ve kterých se vyskytuje je iterátor. Pomocí `yield` k definování iterovat odebírá potřebu, explicitní navíc – třída (třída, která obsahuje stav pro výčet, najdete v části <xref:System.Collections.Generic.IEnumerator%601> příklad) při implementaci <xref:System.Collections.IEnumerable> a <xref:System.Collections.IEnumerator> vzor pro vlastní shromažďování typ.  
@@ -79,7 +79,7 @@ foreach (string element in elements)
  Při každém opakování následné `foreach` cykly, odkud pokračuje v provádění těla iterator bylo přerušeno, znovu zastavit při dosažení `yield return` příkaz. `foreach` Dokončení smyčky, kdy konec metodu iterator nebo `yield break` je dosaženo příkaz.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu má `yield return` příkaz, který je uvnitř `for` smyčky. Každé iteraci `foreach` těla příkazu v `Process` vytvoří volání `Power` iterator funkce. Každé volání funkce iterator pokračuje dalším spuštění `yield return` příkaz, který spadá další iterace `for` smyčky.  
+ V následujícím příkladu má `yield return` příkaz, který je uvnitř `for` smyčky. Každé iteraci `foreach` těla příkazu v `Main` metoda vytvoří volání `Power` iterator funkce. Každé volání funkce iterator pokračuje dalším spuštění `yield return` příkaz, který spadá další iterace `for` smyčky.  
   
  Návratový typ metody iterator <xref:System.Collections.IEnumerable>, který je typu iterator rozhraní. Při volání metody iterátoru je vrácen vyčíslitelný objekt, který obsahuje mocniny čísla.  
   

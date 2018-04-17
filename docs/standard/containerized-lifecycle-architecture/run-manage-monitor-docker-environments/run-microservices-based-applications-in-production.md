@@ -1,18 +1,18 @@
 ---
 title: Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí
 description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0d7611d07c9995984269e3f7b071154d9b861367
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 596ca1557d67de1f91e9431fa9b31b31ae162266
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí
 

@@ -1,7 +1,8 @@
 ---
-title: "Co je nového ve standardní rozhraní .NET"
+title: Co je nového ve standardní rozhraní .NET
+description: Tento článek shrnuje nové funkce a vylepšení v každé nové verze .NET Standard nalezen.
 ms.custom: updateeachrelease
-ms.date: 11/08/2017
+ms.date: 04/12/2018
 ms.prod: .net
 ms.topic: article
 ms.technology: dotnet-standard
@@ -11,15 +12,15 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3a5833bdfcf1e3433ea82403908e9a06a88cde27
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 13efc4a927d744662ba8d2e1210d5f8fc166a472
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="whats-new-in-the-net-standard"></a>Co je nového ve standardní rozhraní .NET
 
-.NET Standard je formální specifikaci, která definuje sadu rozhraní API, které musí být k dispozici na implementace rozhraní .NET, které jsou v souladu s touto verzí standardní verzí. .NET Standard je cílena na vývojáře knihovny. Knihovna, která cílí na .NET Standard verzi lze použít v rozhraní .NET Framework, .NET Core nebo Xamarin implementace, která podporuje tuto verzi standard.
+.NET Standard je formální specifikaci, která definuje sadu rozhraní API, která musí být k dispozici na implementace rozhraní .NET, které jsou v souladu s touto verzí standardní verzí. .NET Standard je cílena na vývojáře knihovny. Knihovna, která cílí na .NET Standard verzi lze použít v rozhraní .NET Framework, .NET Core nebo Xamarin implementace, která podporuje tuto verzi standard.
 
 Nejnovější verze .NET Standard je 2.0. Je zahrnut pomocí .NET SDK 2.0 jádra, a také s Visual Studio 2017 verze 15.3 se zatížením .NET Core nainstalována.
 
@@ -27,21 +28,21 @@ Nejnovější verze .NET Standard je 2.0. Je zahrnut pomocí .NET SDK 2.0 jádra
 
 Rozhraní .NET 2.0 standardní podporuje následující implementace rozhraní .NET:
 
-- .NET core 2.0
-- .NET Framework 4.6.1
-- Mono 5.4
-- Xamarin.iOS 10.14
-- Xamarin.Mac 3.8
-- Xamarin.Android 8.0
-- Univerzální platformu Windows 10.0.16299
+- .NET core 2.0 nebo novější
+- Rozhraní .NET framework 4.6.1 nebo novější
+- Mono 5.4 nebo novější
+- Xamarin.iOS 10.14 nebo novější
+- Xamarin.Mac 3.8 nebo novější
+- Xamarin.Android 8.0 nebo novější
+- Univerzální platformu Windows 10.0.16299 nebo novější
 
 ## <a name="whats-new-in-the-net-standard-20"></a>Co je nového v rozhraní .NET 2.0 Standard
- 
+
 Rozhraní .NET 2.0 standardní obsahuje následující nové funkce:
 
-**Významně rozšířená sada rozhraní API**
+### <a name="a-vastly-expanded-set-of-apis"></a>Významně rozšířená sada rozhraní API
 
-Prostřednictvím verzi 1.6 zahrnuty .NET Standard poměrně malou podmnožinu rozhraní API. Mezi ty vyloučené byly mnoho rozhraní API, které byly často používány v rozhraní .NET Framework nebo Xamarin. To komplikuje vývoj, protože vyžaduje, že vývojáři najít vhodný nahrazení pro známé rozhraní API při vývoji aplikací a knihovny, které cílí více implementace rozhraní .NET. Rozhraní .NET 2.0 standardní řeší toto omezení přidáním přes 20 000 další rozhraní API, než byly k dispozici v rozhraní .NET standardní 1.6, předchozí verzi standard. Seznam rozhraní API, které jsou přidané do standardní rozhraní .NET 2.0, naleznete v části [standardní rozhraní .NET 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md). 
+Prostřednictvím verzi 1.6 zahrnuty .NET Standard poměrně malou podmnožinu rozhraní API. Mezi ty vyloučené byly mnoho rozhraní API, které byly často používány v rozhraní .NET Framework nebo Xamarin. To komplikuje vývoj, protože vyžaduje, že vývojáři najít vhodný nahrazení pro známé rozhraní API při vývoji aplikací a knihovny, které cílí více implementace rozhraní .NET. Rozhraní .NET 2.0 standardní řeší toto omezení přidáním přes 20 000 další rozhraní API, než byly k dispozici v rozhraní .NET standardní 1.6, předchozí verzi standard. Seznam rozhraní API, které jsou přidané do standardní rozhraní .NET 2.0, naleznete v části [standardní rozhraní .NET 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
 
 Některé doplňky k <xref:System> oboru názvů v rozhraní .NET 2.0 standardní patří:
 
@@ -57,37 +58,45 @@ Některé doplňky k <xref:System> oboru názvů v rozhraní .NET 2.0 standardn�
 - Výrazně rozšířené funkce v <xref:System.Type> třídy.
 - Lepší podpory pro deserializaci objektů výjimek přidáním k výjimce konstruktor s <xref:System.Runtime.Serialization.SerializationInfo> a <xref:System.Runtime.Serialization.StreamingContext> parametry.
 
-**Podporu pro knihovny rozhraní .NET Framework**
+### <a name="support-for-net-framework-libraries"></a>Podporu pro knihovny rozhraní .NET Framework
 
 Naprostou většinu knihovny cílí rozhraní .NET Framework místo .NET Standard. Většina volání v tyto knihovny jsou však k rozhraním API, které jsou obsažené v rozhraní .NET 2.0 standardní. Od verze rozhraní .NET 2.0 standardní, dostanete knihovny rozhraní .NET Framework z knihovny .NET Standard pomocí [kompatibility shim](https://github.com/dotnet/standard/blob/master/docs/netstandard-20/README.md#assembly-unification). Tuto vrstvu kompatibility je transparentní pro vývojáře; nemusíte dělat nic využívat výhod knihovnách rozhraní .NET Framework.
 
 Jeden požadavek je, že rozhraní API volat knihovna tříd rozhraní .NET Framework musí být součástí standardní rozhraní .NET 2.0.
 
-**Podpora jazyka Visual Basic**
+### <a name="support-for-visual-basic"></a>Podpora jazyka Visual Basic
 
-Nyní můžete vyvíjet .NET standardní knihovny v jazyce Visual Basic. Pro vývojáře jazyka Visual Basic, Visual Studio 2017 verze 15.3 pomocí nebo novější s .NET Core zatížení nainstalované Visual Studio teď obsahuje šablonu standardní knihovna tříd rozhraní .NET. Pro vývojáře jazyka Visual Basic, kteří používají jiné nástroje pro vývoj a prostředí, můžete použít [dotnet nové](../../core/tools/dotnet-new.md) příkaz k vytvoření standardní knihovny .NET projektu. Další informace najdete v tématu [Podpora nástrojů pro rozhraní .NET standardní knihovny](#tooling).
+Nyní můžete vyvíjet .NET standardní knihovny v jazyce Visual Basic. Pro vývojáře jazyka Visual Basic, Visual Studio 2017 verze 15.3 pomocí nebo novější s .NET Core zatížení nainstalované Visual Studio teď obsahuje šablonu standardní knihovna tříd rozhraní .NET. Pro vývojáře jazyka Visual Basic, kteří používají jiné nástroje pro vývoj a prostředí, můžete použít [dotnet nové](../../core/tools/dotnet-new.md) příkaz k vytvoření standardní knihovny .NET projektu. Další informace najdete v tématu [Podpora nástrojů pro rozhraní .NET standardní knihovny](#tooling-support-for-net-standard-libraries).
 
-<a name="tooling" />**Podpora nástrojů pro rozhraní .NET standardní knihovny**
+### <a name="tooling-support-for-net-standard-libraries"></a>Podpora nástrojů pro rozhraní .NET standardní knihovny
 
-Verze rozhraní .NET Core 2.0 a .NET standardní 2.0, jak Visual Studio 2017 a [.NET Core rozhraní příkazového řádku (CLI)](../../core/tools/index.md) patří podpora nástrojů pro vytváření .NET standardní knihovny. 
+Verze rozhraní .NET Core 2.0 a .NET standardní 2.0, jak Visual Studio 2017 a [.NET Core rozhraní příkazového řádku (CLI)](../../core/tools/index.md) patří podpora nástrojů pro vytváření .NET standardní knihovny.
 
-Pokud nainstalujete Visual Studio s **vývoj pro různé platformy .NET Core** zatížení, můžete vytvořit projekt knihovny .NET standardní 2.0 pomocí šablony projektu, jak ukazuje následující obrázek. 
+Pokud nainstalujete Visual Studio s **vývoj pro různé platformy .NET Core** zatížení, můžete vytvořit projekt knihovny .NET standardní 2.0 pomocí šablony projektu, jak ukazuje následující obrázek:
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 ![Přidat nové standardní rozhraní .NET projektu knihovny](./media/std-project-cs.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-<a name="add-new-net-standard-library-projectmediastd-project-vbpng"></a>![Přidat nové standardní rozhraní .NET projektu knihovny](./media/std-project-vb.png)
----
 
-Pokud používáte rozhraní .NET Core příkazového řádku, následující [dotnet nové](../../core/tools/dotnet-new.md) příkaz vytvoří projektu knihovny tříd zacílený standardní rozhraní .NET 2.0.
+Pokud používáte rozhraní .NET Core příkazového řádku, následující [dotnet nové](../../core/tools/dotnet-new.md) příkaz vytvoří projektu knihovny tříd, která cílí rozhraní .NET 2.0 standardní:
 
-```csharp
+```
 dotnet new classlib
 ```
-```vb
+
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+
+![Přidat nové standardní rozhraní .NET projektu knihovny](./media/std-project-vb.png)
+
+Pokud používáte rozhraní .NET Core příkazového řádku, následující [dotnet nové](../../core/tools/dotnet-new.md) příkaz vytvoří projektu knihovny tříd, která cílí rozhraní .NET 2.0 standardní:
+
+```
 dotnet new classlib -lang vb
 ```
-  
+
+---
+
 ## <a name="see-also"></a>Viz také
-[Standardní .NET](../net-standard.md)
-[představení Standard rozhraní .NET](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
+
+[.NET Standard](../net-standard.md)  
+[Představení Standard rozhraní .NET](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)

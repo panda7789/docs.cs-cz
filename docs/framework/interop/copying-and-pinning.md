@@ -1,12 +1,9 @@
 ---
-title: "Kopírování a přichycování"
-ms.custom: 
+title: Kopírování a přichycování
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - pinning, interop marshaling
@@ -14,38 +11,38 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 11739d35d3a6d845feb1f6d9544f6ea347a9942d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c785c7bc9160cb252aad61fea00cce0d9a7eacdf
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 Při zařazování dat, spolupráce vláken můžete zkopírovat nebo kód pin se zařazené data. Kopírování dat umístí kopii dat z jednoho umístění paměti v jiném umístění paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typ hodnoty a kopírování typu předaná odkaz ze spravované na nespravované paměti.  
   
- ![Hodnota předaná podle hodnoty a podle reference typy](../../../docs/framework/interop/media/interopmarshalcopy.gif "interopmarshalcopy")  
+ ![Hodnota předaná podle hodnoty a podle reference typy](./media/interopmarshalcopy.gif "interopmarshalcopy")  
 Typy hodnot předán podle hodnoty a podle reference  
   
  Metoda argumenty předaná hodnota přeuspořádány na nespravovaný kód jako hodnoty v zásobníku. Proces kopírování je SMB direct. Argumenty předávané odkazem jsou předány jako ukazatele v zásobníku. Odkazové typy jsou předávány také podle hodnoty a podle reference. Jak ukazuje následující obrázek, předaná hodnota odkazové typy jsou zkopírovány nebo připnutý.  
   
- ![Zprostředkovatel komunikace s objekty COM](../../../docs/framework/interop/media/interopmarshalpin.gif "interopmarshalpin")  
+ ![Zprostředkovatel komunikace s objekty COM](./media/interopmarshalpin.gif "interopmarshalpin")  
 Odkazové typy předán podle hodnoty a podle reference  
   
  Připnutí dočasně zamkne dat v aktuálním umístění paměti, proto je zachování z se přemístění podle common language runtime systém uvolňování paměti. Zařazování PIN kódy dat snížit režii kopírování a vylepšují výkon. Typ dat určuje, zda je zkopírovat nebo připnuté během procesu zařazování.  Připnutí se provádí automaticky při zařazování pro objekty, jako <xref:System.String>, ale můžete také ručně připnout paměti pomocí <xref:System.Runtime.InteropServices.GCHandle> třídy.  
   
 ## <a name="formatted-blittable-classes"></a>Formátovaný přenositelné třídy  
- Formátovaný [přenositelné](../../../docs/framework/interop/blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu) a běžné reprezentace dat v obou spravovaných a nespravovaných paměti. Pokud tyto typy vyžadují kódování, ukazatel na objekt v haldě je předán volaného přímo. Volaného můžete změnit obsah umístění v paměti se na ně odkazovat ukazatele.  
+ Formátovaný [přenositelné](blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu) a běžné reprezentace dat v obou spravovaných a nespravovaných paměti. Pokud tyto typy vyžadují kódování, ukazatel na objekt v haldě je předán volaného přímo. Volaného můžete změnit obsah umístění v paměti se na ně odkazovat ukazatele.  
   
 > [!NOTE]
 >  Obsah paměti můžete změnit volaného, pokud parametr je označen jako Out či vstup/výstup. Naproti tomu volaného byste neměli Změna obsahu, pokud parametr je nastaven na zařazování jako v což je výchozí nastavení pro formátovaný přenositelné typy. Úprava objektu v generuje problémy, když se stejnou třídu exportují do knihovny typů a použít k volání mezi apartment.  
   
 ## <a name="formatted-non-blittable-classes"></a>Formátovaný nepřenositelné třídy  
- Formátovaný [nepřenositelné](../../../docs/framework/interop/blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu), ale reprezentace dat se liší v spravovanými a nespravovanými paměti. Data můžete vyžadovat transformace za následujících podmínek:  
+ Formátovaný [nepřenositelné](blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu), ale reprezentace dat se liší v spravovanými a nespravovanými paměti. Data můžete vyžadovat transformace za následujících podmínek:  
   
 -   Pokud je třída nepřenositelné zařazena pomocí hodnoty, obdrží volaného ukazatel na kopii datovou strukturu.  
   
@@ -87,7 +84,7 @@ Odkazové typy předán podle hodnoty a podle reference
  Když <xref:System.Text.StringBuilder?displayProperty=nameWithType> je předaná hodnota, předává vláken a odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo na volající. Volající a volaný, musíte souhlasit na velikost vyrovnávací paměti. Volající zodpovídá za vytvoření **StringBuilder** odpovídající délky. Volaného nutné provést nezbytná opatření k zajištění, že není přetečení vyrovnávací paměti. **StringBuilder** je výjimkou pravidla, která odkazové typy předaná hodnota jsou předány jako parametry ve výchozím nastavení. Je to vždy předáno jako vstup/výstup.  
   
 ## <a name="see-also"></a>Viz také  
- [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [Správa paměti s spolupráce zařazování vláken](http://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee)  
- [Směrovou atributy](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+ [Výchozí chování zařazování](default-marshaling-behavior.md)  
+ [Správa paměti s spolupráce zařazování vláken](https://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee(v=vs.100))  
+ [Směrovou atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))  
+ [Zařazování spolupráce](interop-marshaling.md)
