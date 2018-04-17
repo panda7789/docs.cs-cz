@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 8b49079c-6ede-429a-92d7-ecd2fda1ab0e
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 6aa5abd071355b1c1a367b35e9521e6b1af9c945
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a14e8dbf3f9be9910a2c50cfbcb3f52f4e7385e1
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="build-net-core-from-source"></a>Sestavení .NET Core ze zdroje.
 
@@ -24,7 +24,7 @@ Tento článek poskytuje pokyny pro vývojáře, kteří chtějí vytvořit a di
 
 ## <a name="build-the-clr-from-source"></a>Sestavení CLR ze zdroje.
 
-Zdrojový kód pro rozhraní .NET CoreCLR naleznete v [ `dotnet/coreclr` úložišti na Githubu](https://github.com/dotnet/coreclr/).
+Zdrojový kód pro rozhraní .NET CoreCLR naleznete v [dotnet/coreclr](https://github.com/dotnet/coreclr/) úložišti na Githubu.
 
 Sestavení aktuálně závisí na následující požadavky:
 * [Git](https://git-scm.com/)
@@ -32,13 +32,13 @@ Sestavení aktuálně závisí na následující požadavky:
 * [Python](https://www.python.org/)
 * Kompilátor C++.
 
-Po instalaci tyto součásti jsou nainstalovány, můžete vytvořit modulu CLR vyvoláním skriptu buildu (`build.cmd` v systému Windows, nebo `build.sh` na Linuxu a systému macOS) na bázi [úložiště CoreCLR](https://github.com/dotnet/coreclr/).
+Po instalaci tyto součásti jsou nainstalovány, můžete vytvořit modulu CLR vyvoláním skriptu buildu (`build.cmd` v systému Windows, nebo `build.sh` na Linuxu a systému macOS) na bázi [dotnet/coreclr](https://github.com/dotnet/coreclr/) úložiště.
 
 Instalaci součástí lišit v závislosti na operační systém (OS). Přečtěte si pokyny sestavení pro konkrétní operačním systému:
 
  * [Windows](https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md)
  * [Linux](https://github.com/dotnet/coreclr/blob/master/Documentation/building/linux-instructions.md)
- * [systému macOS](https://github.com/dotnet/coreclr/blob/master/Documentation/building/osx-instructions.md)
+ * [macOS](https://github.com/dotnet/coreclr/blob/master/Documentation/building/osx-instructions.md)
  * [FreeBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/freebsd-instructions.md) 
  * [NetBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/netbsd-instructions.md)
 
@@ -70,7 +70,7 @@ Můžete najít další možnosti sestavení s sestavení pomocí? nebo – help
 
 Sestavení umístí všechny jeho soubory generované v rámci `bin` adresář na bázi úložiště.
 Je *bin\Log* adresář, který obsahuje soubory protokolu vygenerovaných během sestavení (velmi užitečné při sestavení selže).
-Skutečný výstup je umístěn v *bin\Product\[platformu].[ Architektura procesoru]. [vytvořit typ]*  adresář, jako třeba *bin\Product\Windows_NT.x64.Release*.
+Skutečný výstup je umístěn v *bin\Product\[platformu]. [Architektura procesoru]. [vytvořit typ]*  adresář, jako třeba *bin\Product\Windows_NT.x64.Release*.
 
 Zatímco 'nezpracovaná' výstup sestavení je někdy vhodná, obvykle vás zajímá jenom balíčky NuGet, které jsou umístěny v `.nuget\pkg` podadresáři předchozí výstupnímu adresáři.
 
@@ -82,12 +82,12 @@ Existují dva základní postupy pro používání váš nový modul runtime:
  2. **Můžete spustit aplikaci pomocí nezabalené knihovny DLL pomocí corerun.exe**.
     Toto úložiště taky definuje jednoduché hostitele názvem corerun.exe které nevyžaduje žádné závislosti na NuGet.
     Budete muset zadat hostitele, kde se dá stáhnout požadované knihovny DLL, které skutečně používáte, a budete muset ručně shromáždit je společně.
-    Tento postup je používána všemi testy v [úložišti CoreCLR](https://github.com/dotnet/coreclr)a jsou užitečné pro rychlé místní "upravit kompilaci ladění" smyčky například předběžné testování částí.
+    Tento postup je používána všemi testy v [dotnet/coreclr](https://github.com/dotnet/coreclr) úložišti a jsou užitečné pro rychlé místní "upravit kompilaci ladění" smyčky například předběžné testování částí.
     V tématu [provádění aplikací využívajících .NET Core s CoreRun.exe](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingCoreRun.md) podrobnosti o použití této techniky.
 
 ## <a name="build-the-cli-from-source"></a>Sestavení rozhraní příkazového řádku ze zdroje.
 
-Zdrojový kód pro rozhraní příkazového řádku .NET Core naleznete v [ `dotnet/cli` úložišti na Githubu](https://github.com/dotnet/cli/).
+Zdrojový kód pro rozhraní příkazového řádku .NET Core naleznete v [dotnet/cli](https://github.com/dotnet/cli/) úložišti na Githubu.
 
 Chcete-li vytvořit základní rozhraní .NET, rozhraní příkazového řádku, potřebujete následující nainstalovaný na počítači.
 
