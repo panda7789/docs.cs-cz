@@ -1,12 +1,9 @@
 ---
-title: "Výchozí zařazování pro řetězce"
-ms.custom: 
+title: Výchozí zařazování pro řetězce
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,45 +12,46 @@ helpviewer_keywords:
 - strings, interop marshaling
 - interop marshaling, strings
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
-caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3d219ad68d125e2b90197fc7703ccfc0a1c857d2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 10f2c0e0e61190f571ae5bd4998f54d128448296
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="default-marshaling-for-strings"></a><span data-ttu-id="f1fc5-102">Výchozí zařazování pro řetězce</span><span class="sxs-lookup"><span data-stu-id="f1fc5-102">Default Marshaling for Strings</span></span>
-<span data-ttu-id="f1fc5-103">Jak <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy mají podobné chování zařazování.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-103">Both the <xref:System.String?displayProperty=nameWithType> and <xref:System.Text.StringBuilder?displayProperty=nameWithType> classes have similar marshaling behavior.</span></span>  
+# <a name="default-marshaling-for-strings"></a><span data-ttu-id="ba424-102">Výchozí zařazování pro řetězce</span><span class="sxs-lookup"><span data-stu-id="ba424-102">Default Marshaling for Strings</span></span>
+<span data-ttu-id="ba424-103">Jak <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy mají podobné chování zařazování.</span><span class="sxs-lookup"><span data-stu-id="ba424-103">Both the <xref:System.String?displayProperty=nameWithType> and <xref:System.Text.StringBuilder?displayProperty=nameWithType> classes have similar marshaling behavior.</span></span>  
   
- <span data-ttu-id="f1fc5-104">Řetězce jsou zařazené jako stylu COM `BSTR` typu nebo jako řetězce ukončené hodnotou null (pole znaků, který končí znak hodnoty null).</span><span class="sxs-lookup"><span data-stu-id="f1fc5-104">Strings are marshaled as a COM-style `BSTR` type or as a null-terminated string (a character array that ends with a null character).</span></span> <span data-ttu-id="f1fc5-105">Můžete zařadit znaky v řetězci, jako kódování Unicode (výchozí nastavení v systémech Windows) nebo ANSI.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-105">The characters within the string can be marshaled as Unicode (the default on Windows systems) or ANSI.</span></span>  
+ <span data-ttu-id="ba424-104">Řetězce jsou zařazené jako stylu COM `BSTR` typu nebo jako řetězce ukončené hodnotou null (pole znaků, který končí znak hodnoty null).</span><span class="sxs-lookup"><span data-stu-id="ba424-104">Strings are marshaled as a COM-style `BSTR` type or as a null-terminated string (a character array that ends with a null character).</span></span> <span data-ttu-id="ba424-105">Můžete zařadit znaky v řetězci, jako kódování Unicode (výchozí nastavení v systémech Windows) nebo ANSI.</span><span class="sxs-lookup"><span data-stu-id="ba424-105">The characters within the string can be marshaled as Unicode (the default on Windows systems) or ANSI.</span></span>  
   
- <span data-ttu-id="f1fc5-106">Toto téma obsahuje následující informace na zařazování typů řetězec:</span><span class="sxs-lookup"><span data-stu-id="f1fc5-106">This topic provides the following information on marshaling string types:</span></span>  
+ <span data-ttu-id="ba424-106">Toto téma obsahuje následující informace na zařazování typů řetězec:</span><span class="sxs-lookup"><span data-stu-id="ba424-106">This topic provides the following information on marshaling string types:</span></span>  
   
--   [<span data-ttu-id="f1fc5-107">Řetězce používané v rozhraních</span><span class="sxs-lookup"><span data-stu-id="f1fc5-107">Strings Used in Interfaces</span></span>](#cpcondefaultmarshalingforstringsanchor1)  
+-   [<span data-ttu-id="ba424-107">Řetězce používané v rozhraních</span><span class="sxs-lookup"><span data-stu-id="ba424-107">Strings Used in Interfaces</span></span>](#cpcondefaultmarshalingforstringsanchor1)  
   
--   [<span data-ttu-id="f1fc5-108">Vyvolání řetězce použité v platformě</span><span class="sxs-lookup"><span data-stu-id="f1fc5-108">Strings Used in Platform Invoke</span></span>](#cpcondefaultmarshalingforstringsanchor5)  
+-   [<span data-ttu-id="ba424-108">Vyvolání řetězce použité v platformě</span><span class="sxs-lookup"><span data-stu-id="ba424-108">Strings Used in Platform Invoke</span></span>](#cpcondefaultmarshalingforstringsanchor5)  
   
--   [<span data-ttu-id="f1fc5-109">Řetězce použité v struktury</span><span class="sxs-lookup"><span data-stu-id="f1fc5-109">Strings Used in Structures</span></span>](#cpcondefaultmarshalingforstringsanchor2)  
+-   [<span data-ttu-id="ba424-109">Řetězce použité v struktury</span><span class="sxs-lookup"><span data-stu-id="ba424-109">Strings Used in Structures</span></span>](#cpcondefaultmarshalingforstringsanchor2)  
   
--   [<span data-ttu-id="f1fc5-110">Řetězce pevné délky vyrovnávací paměti</span><span class="sxs-lookup"><span data-stu-id="f1fc5-110">Fixed-Length String Buffers</span></span>](#cpcondefaultmarshalingforstringsanchor3)  
+-   [<span data-ttu-id="ba424-110">Řetězce pevné délky vyrovnávací paměti</span><span class="sxs-lookup"><span data-stu-id="ba424-110">Fixed-Length String Buffers</span></span>](#cpcondefaultmarshalingforstringsanchor3)  
   
-<a name="cpcondefaultmarshalingforstringsanchor1"></a>   
-## <a name="strings-used-in-interfaces"></a><span data-ttu-id="f1fc5-111">Řetězce používané v rozhraních</span><span class="sxs-lookup"><span data-stu-id="f1fc5-111">Strings Used in Interfaces</span></span>  
- <span data-ttu-id="f1fc5-112">V následující tabulce jsou uvedeny možnosti zařazování pro datový typ řetězec při zařazené jako argument metody na nespravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-112">The following table shows the marshaling options for the string data type when marshaled as a method argument to unmanaged code.</span></span> <span data-ttu-id="f1fc5-113"><xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnoty výčtu k zařazování řetězců do rozhraní COM.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-113">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to COM interfaces.</span></span>  
+<a name="cpcondefaultmarshalingforstringsanchor1"></a>
+
+## <a name="strings-used-in-interfaces"></a><span data-ttu-id="ba424-111">Řetězce používané v rozhraních</span><span class="sxs-lookup"><span data-stu-id="ba424-111">Strings Used in Interfaces</span></span>  
+ <span data-ttu-id="ba424-112">V následující tabulce jsou uvedeny možnosti zařazování pro datový typ řetězec při zařazené jako argument metody na nespravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="ba424-112">The following table shows the marshaling options for the string data type when marshaled as a method argument to unmanaged code.</span></span> <span data-ttu-id="ba424-113"><xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnoty výčtu k zařazování řetězců do rozhraní COM.</span><span class="sxs-lookup"><span data-stu-id="ba424-113">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to COM interfaces.</span></span>  
   
-|<span data-ttu-id="f1fc5-114">Typ výčtu</span><span class="sxs-lookup"><span data-stu-id="f1fc5-114">Enumeration type</span></span>|<span data-ttu-id="f1fc5-115">Popis nespravované formátu</span><span class="sxs-lookup"><span data-stu-id="f1fc5-115">Description of unmanaged format</span></span>|  
+|<span data-ttu-id="ba424-114">Typ výčtu</span><span class="sxs-lookup"><span data-stu-id="ba424-114">Enumeration type</span></span>|<span data-ttu-id="ba424-115">Popis nespravované formátu</span><span class="sxs-lookup"><span data-stu-id="ba424-115">Description of unmanaged format</span></span>|  
 |----------------------|-------------------------------------|  
-|<span data-ttu-id="f1fc5-116">`UnmanagedType.BStr`(výchozí)</span><span class="sxs-lookup"><span data-stu-id="f1fc5-116">`UnmanagedType.BStr` (default)</span></span>|<span data-ttu-id="f1fc5-117">COM – styl `BSTR` s předponou délku a znaky znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-117">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
-|`UnmanagedType.LPStr`|<span data-ttu-id="f1fc5-118">Ukazatel pole znaků ANSI ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-118">A pointer to a null-terminated array of ANSI characters.</span></span>|  
-|`UnmanagedType.LPWStr`|<span data-ttu-id="f1fc5-119">Ukazatel na pole znaků Unicode ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-119">A pointer to a null-terminated array of Unicode characters.</span></span>|  
+|<span data-ttu-id="ba424-116">`UnmanagedType.BStr` (výchozí)</span><span class="sxs-lookup"><span data-stu-id="ba424-116">`UnmanagedType.BStr` (default)</span></span>|<span data-ttu-id="ba424-117">COM – styl `BSTR` s předponou délku a znaky znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="ba424-117">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
+|`UnmanagedType.LPStr`|<span data-ttu-id="ba424-118">Ukazatel pole znaků ANSI ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-118">A pointer to a null-terminated array of ANSI characters.</span></span>|  
+|`UnmanagedType.LPWStr`|<span data-ttu-id="ba424-119">Ukazatel na pole znaků Unicode ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-119">A pointer to a null-terminated array of Unicode characters.</span></span>|  
   
- <span data-ttu-id="f1fc5-120">Tato tabulka platí pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-120">This table applies to strings.</span></span> <span data-ttu-id="f1fc5-121">Ale pro <xref:System.Text.StringBuilder>, jsou povoleny pouze možnosti `UnmanagedType.LPStr` a `UnmanagedType.LPWStr`.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-121">However, for <xref:System.Text.StringBuilder>, the only options allowed are `UnmanagedType.LPStr` and `UnmanagedType.LPWStr`.</span></span>  
+ <span data-ttu-id="ba424-120">Tato tabulka platí pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="ba424-120">This table applies to strings.</span></span> <span data-ttu-id="ba424-121">Ale pro <xref:System.Text.StringBuilder>, jsou povoleny pouze možnosti `UnmanagedType.LPStr` a `UnmanagedType.LPWStr`.</span><span class="sxs-lookup"><span data-stu-id="ba424-121">However, for <xref:System.Text.StringBuilder>, the only options allowed are `UnmanagedType.LPStr` and `UnmanagedType.LPWStr`.</span></span>  
   
- <span data-ttu-id="f1fc5-122">Následující příklad ukazuje řetězce v deklarována `IStringWorker` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-122">The following example shows strings declared in the `IStringWorker` interface.</span></span>  
+ <span data-ttu-id="ba424-122">Následující příklad ukazuje řetězce v deklarována `IStringWorker` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ba424-122">The following example shows strings declared in the `IStringWorker` interface.</span></span>  
   
 ```cpp  
 public interface IStringWorker {  
@@ -65,12 +63,12 @@ void PassStringRef1(ref String s);
 void PassStringRef2([MarshalAs(UnmanagedType.BStr)]ref String s);  
 void PassStringRef3([MarshalAs(UnmanagedType.LPStr)]ref String s);  
 void PassStringRef4([MarshalAs(UnmanagedType.LPWStr)]ref String s);  
-);  
-```  
-  
- <span data-ttu-id="f1fc5-123">Následující příklad ukazuje odpovídající rozhraní, které jsou popsané v knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-123">The following example shows the corresponding interface described in a type library.</span></span>  
-  
-```  
+);
+```
+
+<span data-ttu-id="ba424-123">Následující příklad ukazuje odpovídající rozhraní, které jsou popsané v knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="ba424-123">The following example shows the corresponding interface described in a type library.</span></span>
+
+```
 […]  
 interface IStringWorker : IDispatch {  
 HRESULT PassString1([in] BSTR s);  
@@ -81,28 +79,29 @@ HRESULT PassStringRef1([in, out] BSTR *s);
 HRESULT PassStringRef2([in, out] BSTR *s);  
 HRESULT PassStringRef3([in, out] LPStr *s);  
 HRESULT PassStringRef4([in, out] LPWStr *s);  
-);  
-```  
+);
+```
+
+<a name="cpcondefaultmarshalingforstringsanchor5"></a>
+
+## <a name="strings-used-in-platform-invoke"></a><span data-ttu-id="ba424-124">Vyvolání řetězce použité v platformě</span><span class="sxs-lookup"><span data-stu-id="ba424-124">Strings Used in Platform Invoke</span></span>  
+ <span data-ttu-id="ba424-125">Vyvolání platformy kopie řetězcové argumenty, převod z formátu rozhraní .NET Framework (Unicode) do formátu nespravované platformy.</span><span class="sxs-lookup"><span data-stu-id="ba424-125">Platform invoke copies string arguments, converting from the .NET Framework format (Unicode) to the platform unmanaged format.</span></span> <span data-ttu-id="ba424-126">Řetězce jsou neměnné a nebudou zkopírovány zpět z nespravované paměti spravované paměti při volání vrátí.</span><span class="sxs-lookup"><span data-stu-id="ba424-126">Strings are immutable and are not copied back from unmanaged memory to managed memory when the call returns.</span></span>  
   
-<a name="cpcondefaultmarshalingforstringsanchor5"></a>   
-## <a name="strings-used-in-platform-invoke"></a><span data-ttu-id="f1fc5-124">Vyvolání řetězce použité v platformě</span><span class="sxs-lookup"><span data-stu-id="f1fc5-124">Strings Used in Platform Invoke</span></span>  
- <span data-ttu-id="f1fc5-125">Vyvolání platformy kopie řetězcové argumenty, převod z formátu rozhraní .NET Framework (Unicode) do formátu nespravované platformy.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-125">Platform invoke copies string arguments, converting from the .NET Framework format (Unicode) to the platform unmanaged format.</span></span> <span data-ttu-id="f1fc5-126">Řetězce jsou neměnné a nebudou zkopírovány zpět z nespravované paměti spravované paměti při volání vrátí.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-126">Strings are immutable and are not copied back from unmanaged memory to managed memory when the call returns.</span></span>  
+ <span data-ttu-id="ba424-127">Následující tabulka uvádí možnosti zařazování pro řetězce při zařazené jako argument metody platformy vyvolat volání.</span><span class="sxs-lookup"><span data-stu-id="ba424-127">The following table lists the marshaling options for strings when marshaled as a method argument of a platform invoke call.</span></span> <span data-ttu-id="ba424-128"><xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnoty výčtu k zařazování řetězců.</span><span class="sxs-lookup"><span data-stu-id="ba424-128">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings.</span></span>  
   
- <span data-ttu-id="f1fc5-127">Následující tabulka uvádí možnosti zařazování pro řetězce při zařazené jako argument metody platformy vyvolat volání.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-127">The following table lists the marshaling options for strings when marshaled as a method argument of a platform invoke call.</span></span> <span data-ttu-id="f1fc5-128"><xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnoty výčtu k zařazování řetězců.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-128">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings.</span></span>  
-  
-|<span data-ttu-id="f1fc5-129">Typ výčtu</span><span class="sxs-lookup"><span data-stu-id="f1fc5-129">Enumeration type</span></span>|<span data-ttu-id="f1fc5-130">Popis nespravované formátu</span><span class="sxs-lookup"><span data-stu-id="f1fc5-130">Description of unmanaged format</span></span>|  
+|<span data-ttu-id="ba424-129">Typ výčtu</span><span class="sxs-lookup"><span data-stu-id="ba424-129">Enumeration type</span></span>|<span data-ttu-id="ba424-130">Popis nespravované formátu</span><span class="sxs-lookup"><span data-stu-id="ba424-130">Description of unmanaged format</span></span>|  
 |----------------------|-------------------------------------|  
-|`UnmanagedType.AnsiBStr`|<span data-ttu-id="f1fc5-131">COM – styl `BSTR` s předponou délku a ANSI znaků.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-131">A COM-style `BSTR` with a prefixed length and ANSI characters.</span></span>|  
-|`UnmanagedType.BStr`|<span data-ttu-id="f1fc5-132">COM – styl `BSTR` s předponou délku a znaky znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-132">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
-|`UnmanagedType.LPStr`|<span data-ttu-id="f1fc5-133">Ukazatel pole znaků ANSI ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-133">A pointer to a null-terminated array of ANSI characters.</span></span>|  
-|`UnmanagedType.LPTStr`|<span data-ttu-id="f1fc5-134">Ukazatel na pole znaků závislé na platformu ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-134">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
-|`UnmanagedType.LPWStr`|<span data-ttu-id="f1fc5-135">Ukazatel na pole znaků Unicode ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-135">A pointer to a null-terminated array of Unicode characters.</span></span>|  
-|`UnmanagedType.TBStr`|<span data-ttu-id="f1fc5-136">COM – styl `BSTR` s předponou délku a závislé na platformě znaků.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-136">A COM-style `BSTR` with a prefixed length and platform-dependent characters.</span></span>|  
-|`VBByRefStr`|<span data-ttu-id="f1fc5-137">Hodnota, která umožňuje Visual Basic .NET, chcete-li změnit na řetězec v nespravovaného kódu a mít výsledky projeví ve spravovaném kódu.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-137">A value that enables Visual Basic .NET to change a string in unmanaged code, and have the results reflected in managed code.</span></span> <span data-ttu-id="f1fc5-138">Tato hodnota je podporována pouze pro vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-138">This value is supported only for platform invoke.</span></span> <span data-ttu-id="f1fc5-139">Toto je výchozí hodnota v jazyce Visual Basic pro `ByVal` řetězce.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-139">This is default value in Visual Basic for `ByVal` strings.</span></span>|  
+|`UnmanagedType.AnsiBStr`|<span data-ttu-id="ba424-131">COM – styl `BSTR` s předponou délku a ANSI znaků.</span><span class="sxs-lookup"><span data-stu-id="ba424-131">A COM-style `BSTR` with a prefixed length and ANSI characters.</span></span>|  
+|`UnmanagedType.BStr`|<span data-ttu-id="ba424-132">COM – styl `BSTR` s předponou délku a znaky znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="ba424-132">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
+|`UnmanagedType.LPStr`|<span data-ttu-id="ba424-133">Ukazatel pole znaků ANSI ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-133">A pointer to a null-terminated array of ANSI characters.</span></span>|  
+|`UnmanagedType.LPTStr`|<span data-ttu-id="ba424-134">Ukazatel na pole znaků závislé na platformu ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-134">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
+|`UnmanagedType.LPWStr`|<span data-ttu-id="ba424-135">Ukazatel na pole znaků Unicode ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-135">A pointer to a null-terminated array of Unicode characters.</span></span>|  
+|`UnmanagedType.TBStr`|<span data-ttu-id="ba424-136">COM – styl `BSTR` s předponou délku a závislé na platformě znaků.</span><span class="sxs-lookup"><span data-stu-id="ba424-136">A COM-style `BSTR` with a prefixed length and platform-dependent characters.</span></span>|  
+|`VBByRefStr`|<span data-ttu-id="ba424-137">Hodnota, která umožňuje Visual Basic .NET, chcete-li změnit na řetězec v nespravovaného kódu a mít výsledky projeví ve spravovaném kódu.</span><span class="sxs-lookup"><span data-stu-id="ba424-137">A value that enables Visual Basic .NET to change a string in unmanaged code, and have the results reflected in managed code.</span></span> <span data-ttu-id="ba424-138">Tato hodnota je podporována pouze pro vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="ba424-138">This value is supported only for platform invoke.</span></span> <span data-ttu-id="ba424-139">Toto je výchozí hodnota v jazyce Visual Basic pro `ByVal` řetězce.</span><span class="sxs-lookup"><span data-stu-id="ba424-139">This is default value in Visual Basic for `ByVal` strings.</span></span>|  
   
- <span data-ttu-id="f1fc5-140">Tato tabulka platí pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-140">This table applies to strings.</span></span> <span data-ttu-id="f1fc5-141">Ale pro <xref:System.Text.StringBuilder>, jsou povoleny pouze možnosti `LPStr`, `LPTStr`, a `LPWStr`.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-141">However, for <xref:System.Text.StringBuilder>, the only options allowed are `LPStr`, `LPTStr`, and `LPWStr`.</span></span>  
+ <span data-ttu-id="ba424-140">Tato tabulka platí pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="ba424-140">This table applies to strings.</span></span> <span data-ttu-id="ba424-141">Ale pro <xref:System.Text.StringBuilder>, jsou povoleny pouze možnosti `LPStr`, `LPTStr`, a `LPWStr`.</span><span class="sxs-lookup"><span data-stu-id="ba424-141">However, for <xref:System.Text.StringBuilder>, the only options allowed are `LPStr`, `LPTStr`, and `LPWStr`.</span></span>  
   
- <span data-ttu-id="f1fc5-142">Následující definice typu ukazuje správné použití `MarshalAsAttribute` pro platformu vyvolat volání.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-142">The following type definition shows the correct use of `MarshalAsAttribute` for platform invoke calls.</span></span>  
+ <span data-ttu-id="ba424-142">Následující definice typu ukazuje správné použití `MarshalAsAttribute` pro platformu vyvolat volání.</span><span class="sxs-lookup"><span data-stu-id="ba424-142">The following type definition shows the correct use of `MarshalAsAttribute` for platform invoke calls.</span></span>  
   
 ```vb  
 Class StringLibAPI      
@@ -119,9 +118,9 @@ Public Declare Auto Sub PassAnsiBStr Lib "StringLib.Dll" _
 Public Declare Auto Sub PassTBStr Lib "StringLib.Dll" _  
 (<MarshalAs(UnmanagedType.TBStr)> s As String)  
 End Class  
-```  
-  
-```csharp  
+```
+
+```csharp
 class StringLibAPI {  
 [DllImport("StringLib.Dll")]  
 public static extern void PassLPStr([MarshalAs(UnmanagedType.LPStr)]  
@@ -145,24 +144,24 @@ String s);
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor2"></a>   
-## <a name="strings-used-in-structures"></a><span data-ttu-id="f1fc5-143">Řetězce použité v struktury</span><span class="sxs-lookup"><span data-stu-id="f1fc5-143">Strings Used in Structures</span></span>  
- <span data-ttu-id="f1fc5-144">Řetězce jsou platné členové struktury; ale <xref:System.Text.StringBuilder> vyrovnávací paměti jsou neplatné v struktury.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-144">Strings are valid members of structures; however, <xref:System.Text.StringBuilder> buffers are invalid in structures.</span></span> <span data-ttu-id="f1fc5-145">Následující tabulka zobrazuje zařazování možnosti pro datový typ řetězec, když je typ zařazené jako pole.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-145">The following table shows the marshaling options for the string data type when the type is marshaled as a field.</span></span> <span data-ttu-id="f1fc5-146"><xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnoty výčtu k zařazování řetězců na pole.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-146">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to a field.</span></span>  
+## <a name="strings-used-in-structures"></a><span data-ttu-id="ba424-143">Řetězce použité v struktury</span><span class="sxs-lookup"><span data-stu-id="ba424-143">Strings Used in Structures</span></span>  
+ <span data-ttu-id="ba424-144">Řetězce jsou platné členové struktury; ale <xref:System.Text.StringBuilder> vyrovnávací paměti jsou neplatné v struktury.</span><span class="sxs-lookup"><span data-stu-id="ba424-144">Strings are valid members of structures; however, <xref:System.Text.StringBuilder> buffers are invalid in structures.</span></span> <span data-ttu-id="ba424-145">Následující tabulka zobrazuje zařazování možnosti pro datový typ řetězec, když je typ zařazené jako pole.</span><span class="sxs-lookup"><span data-stu-id="ba424-145">The following table shows the marshaling options for the string data type when the type is marshaled as a field.</span></span> <span data-ttu-id="ba424-146"><xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnoty výčtu k zařazování řetězců na pole.</span><span class="sxs-lookup"><span data-stu-id="ba424-146">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to a field.</span></span>  
   
-|<span data-ttu-id="f1fc5-147">Typ výčtu</span><span class="sxs-lookup"><span data-stu-id="f1fc5-147">Enumeration type</span></span>|<span data-ttu-id="f1fc5-148">Popis nespravované formátu</span><span class="sxs-lookup"><span data-stu-id="f1fc5-148">Description of unmanaged format</span></span>|  
+|<span data-ttu-id="ba424-147">Typ výčtu</span><span class="sxs-lookup"><span data-stu-id="ba424-147">Enumeration type</span></span>|<span data-ttu-id="ba424-148">Popis nespravované formátu</span><span class="sxs-lookup"><span data-stu-id="ba424-148">Description of unmanaged format</span></span>|  
 |----------------------|-------------------------------------|  
-|`UnmanagedType.BStr`|<span data-ttu-id="f1fc5-149">COM – styl `BSTR` s předponou délku a znaky znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-149">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
-|`UnmanagedType.LPStr`|<span data-ttu-id="f1fc5-150">Ukazatel pole znaků ANSI ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-150">A pointer to a null-terminated array of ANSI characters.</span></span>|  
-|`UnmanagedType.LPTStr`|<span data-ttu-id="f1fc5-151">Ukazatel na pole znaků závislé na platformu ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-151">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
-|`UnmanagedType.LPWStr`|<span data-ttu-id="f1fc5-152">Ukazatel na pole znaků Unicode ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-152">A pointer to a null-terminated array of Unicode characters.</span></span>|  
-|`UnmanagedType.ByValTStr`|<span data-ttu-id="f1fc5-153">Pole pevnou délkou znaků; Typ tohoto pole je určena znaková sada obsahující struktury.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-153">A fixed-length array of characters; the array's type is determined by the character set of the containing structure.</span></span>|  
+|`UnmanagedType.BStr`|<span data-ttu-id="ba424-149">COM – styl `BSTR` s předponou délku a znaky znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="ba424-149">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
+|`UnmanagedType.LPStr`|<span data-ttu-id="ba424-150">Ukazatel pole znaků ANSI ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-150">A pointer to a null-terminated array of ANSI characters.</span></span>|  
+|`UnmanagedType.LPTStr`|<span data-ttu-id="ba424-151">Ukazatel na pole znaků závislé na platformu ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-151">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
+|`UnmanagedType.LPWStr`|<span data-ttu-id="ba424-152">Ukazatel na pole znaků Unicode ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="ba424-152">A pointer to a null-terminated array of Unicode characters.</span></span>|  
+|`UnmanagedType.ByValTStr`|<span data-ttu-id="ba424-153">Pole pevnou délkou znaků; Typ tohoto pole je určena znaková sada obsahující struktury.</span><span class="sxs-lookup"><span data-stu-id="ba424-153">A fixed-length array of characters; the array's type is determined by the character set of the containing structure.</span></span>|  
   
- <span data-ttu-id="f1fc5-154">`ByValTStr` Typ se používá pro vložené pevnou délkou znaková pole, které se zobrazují v rámci struktury.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-154">The `ByValTStr` type is used for inline, fixed-length character arrays that appear within a structure.</span></span> <span data-ttu-id="f1fc5-155">Jiné typy platí pro řetězec odkazy obsažené v struktury, které obsahují ukazatele na řetězce.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-155">Other types apply to string references contained within structures that contain pointers to strings.</span></span>  
+ <span data-ttu-id="ba424-154">`ByValTStr` Typ se používá pro vložené pevnou délkou znaková pole, které se zobrazují v rámci struktury.</span><span class="sxs-lookup"><span data-stu-id="ba424-154">The `ByValTStr` type is used for inline, fixed-length character arrays that appear within a structure.</span></span> <span data-ttu-id="ba424-155">Jiné typy platí pro řetězec odkazy obsažené v struktury, které obsahují ukazatele na řetězce.</span><span class="sxs-lookup"><span data-stu-id="ba424-155">Other types apply to string references contained within structures that contain pointers to strings.</span></span>  
   
- <span data-ttu-id="f1fc5-156">`CharSet` Argument <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, který se použije pro strukturu obsahující Určuje formát znakových řetězců v struktury.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-156">The `CharSet` argument of the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute that is applied to the containing structure determines the character format of strings in structures.</span></span> <span data-ttu-id="f1fc5-157">Následující příklad struktury obsahovat odkazy na řetězec a vložené řetězce, a také ANSI, kódování Unicode a závislé na platformě znaky.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-157">The following example structures contain string references and inline strings, as well as ANSI, Unicode, and platform-dependent characters.</span></span>  
+ <span data-ttu-id="ba424-156">`CharSet` Argument <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, který se použije pro strukturu obsahující Určuje formát znakových řetězců v struktury.</span><span class="sxs-lookup"><span data-stu-id="ba424-156">The `CharSet` argument of the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute that is applied to the containing structure determines the character format of strings in structures.</span></span> <span data-ttu-id="ba424-157">Následující příklad struktury obsahovat odkazy na řetězec a vložené řetězce, a také ANSI, kódování Unicode a závislé na platformě znaky.</span><span class="sxs-lookup"><span data-stu-id="ba424-157">The following example structures contain string references and inline strings, as well as ANSI, Unicode, and platform-dependent characters.</span></span>  
   
-### <a name="type-library-representation"></a><span data-ttu-id="f1fc5-158">Typ knihovny reprezentace</span><span class="sxs-lookup"><span data-stu-id="f1fc5-158">Type Library Representation</span></span>  
+### <a name="type-library-representation"></a><span data-ttu-id="ba424-158">Typ knihovny reprezentace</span><span class="sxs-lookup"><span data-stu-id="ba424-158">Type Library Representation</span></span>  
   
-```  
+```
 struct StringInfoA {  
    char *    f1;  
    char      f2[256];  
@@ -178,7 +177,7 @@ struct StringInfoT {
 };  
 ```  
   
- <span data-ttu-id="f1fc5-159">Následující příklad kódu ukazuje, jak používat <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut pro definování stejnou strukturu v různých formátech.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-159">The following code example shows how to use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to define the same structure in different formats.</span></span>  
+ <span data-ttu-id="ba424-159">Následující příklad kódu ukazuje, jak používat <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut pro definování stejnou strukturu v různých formátech.</span><span class="sxs-lookup"><span data-stu-id="ba424-159">The following code example shows how to use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to define the same structure in different formats.</span></span>  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential, CharSet := CharSet.Ansi)> _  
@@ -222,12 +221,12 @@ struct StringInfoT {
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor3"></a>   
-## <a name="fixed-length-string-buffers"></a><span data-ttu-id="f1fc5-160">Řetězce pevné délky vyrovnávací paměti</span><span class="sxs-lookup"><span data-stu-id="f1fc5-160">Fixed-Length String Buffers</span></span>  
- <span data-ttu-id="f1fc5-161">V některých případech vyrovnávací paměti pevné délky znak musí být předán do nespravovaného kódu do práce s.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-161">In some circumstances, a fixed-length character buffer must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="f1fc5-162">Jednoduše předávání řetězec nefunguje v tomto případě protože volaného nelze změnit obsah předané vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-162">Simply passing a string does not work in this case because the callee cannot modify the contents of the passed buffer.</span></span> <span data-ttu-id="f1fc5-163">I v případě, že řetězec je předán odkazem, neexistuje žádný způsob, jak inicializace vyrovnávací paměť na danou velikost.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-163">Even if the string is passed by reference, there is no way to initialize the buffer to a given size.</span></span>  
+## <a name="fixed-length-string-buffers"></a><span data-ttu-id="ba424-160">Řetězce pevné délky vyrovnávací paměti</span><span class="sxs-lookup"><span data-stu-id="ba424-160">Fixed-Length String Buffers</span></span>  
+ <span data-ttu-id="ba424-161">V některých případech vyrovnávací paměti pevné délky znak musí být předán do nespravovaného kódu do práce s.</span><span class="sxs-lookup"><span data-stu-id="ba424-161">In some circumstances, a fixed-length character buffer must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="ba424-162">Jednoduše předávání řetězec nefunguje v tomto případě protože volaného nelze změnit obsah předané vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="ba424-162">Simply passing a string does not work in this case because the callee cannot modify the contents of the passed buffer.</span></span> <span data-ttu-id="ba424-163">I v případě, že řetězec je předán odkazem, neexistuje žádný způsob, jak inicializace vyrovnávací paměť na danou velikost.</span><span class="sxs-lookup"><span data-stu-id="ba424-163">Even if the string is passed by reference, there is no way to initialize the buffer to a given size.</span></span>  
   
- <span data-ttu-id="f1fc5-164">Řešení je předat <xref:System.Text.StringBuilder> vyrovnávací paměti jako argument místo řetězec.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-164">The solution is to pass a <xref:System.Text.StringBuilder> buffer as the argument instead of a string.</span></span> <span data-ttu-id="f1fc5-165">A `StringBuilder` můžete přímo odkázat a upraveném volaného, pokud nepřesáhne kapacitu `StringBuilder`.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-165">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="f1fc5-166">Může být navíc inicializované na pevnou délkou.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-166">It can also be initialized to a fixed length.</span></span> <span data-ttu-id="f1fc5-167">Například, pokud inicializaci `StringBuilder` vyrovnávací paměť pro kapacitou `N`, zařazování poskytuje vyrovnávací paměti o velikosti (`N`+ 1) znaků.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-167">For example, if you initialize a `StringBuilder` buffer to a capacity of `N`, the marshaler provides a buffer of size (`N`+1) characters.</span></span> <span data-ttu-id="f1fc5-168">Účty + 1 k tomu, že nespravované řetězec má hodnotu null. ukončovací při `StringBuilder` neexistuje.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-168">The +1 accounts for the fact that the unmanaged string has a null terminator while `StringBuilder` does not.</span></span>  
+ <span data-ttu-id="ba424-164">Řešení je předat <xref:System.Text.StringBuilder> vyrovnávací paměti jako argument místo řetězec.</span><span class="sxs-lookup"><span data-stu-id="ba424-164">The solution is to pass a <xref:System.Text.StringBuilder> buffer as the argument instead of a string.</span></span> <span data-ttu-id="ba424-165">A `StringBuilder` můžete přímo odkázat a upraveném volaného, pokud nepřesáhne kapacitu `StringBuilder`.</span><span class="sxs-lookup"><span data-stu-id="ba424-165">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="ba424-166">Může být navíc inicializované na pevnou délkou.</span><span class="sxs-lookup"><span data-stu-id="ba424-166">It can also be initialized to a fixed length.</span></span> <span data-ttu-id="ba424-167">Například, pokud inicializaci `StringBuilder` vyrovnávací paměť pro kapacitou `N`, zařazování poskytuje vyrovnávací paměti o velikosti (`N`+ 1) znaků.</span><span class="sxs-lookup"><span data-stu-id="ba424-167">For example, if you initialize a `StringBuilder` buffer to a capacity of `N`, the marshaler provides a buffer of size (`N`+1) characters.</span></span> <span data-ttu-id="ba424-168">Účty + 1 k tomu, že nespravované řetězec má hodnotu null. ukončovací při `StringBuilder` neexistuje.</span><span class="sxs-lookup"><span data-stu-id="ba424-168">The +1 accounts for the fact that the unmanaged string has a null terminator while `StringBuilder` does not.</span></span>  
   
- <span data-ttu-id="f1fc5-169">Například rozhraní API Win32 Microsoft `GetWindowText` je znak pevnou délkou vyrovnávací paměť, která musí být předán do nespravovaného kódu manipulaci s těmito – funkce (definovanou v odkazující na Windows).</span><span class="sxs-lookup"><span data-stu-id="f1fc5-169">For example, the Microsoft Win32 API `GetWindowText` function (defined in Windows.h) is a fixed-length character buffer that must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="f1fc5-170">`LpString`odkazuje na volající přidělit vyrovnávací paměť o velikosti `nMaxCount`.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-170">`LpString` points to a caller-allocated buffer of size `nMaxCount`.</span></span> <span data-ttu-id="f1fc5-171">Volající musí přidělit vyrovnávací paměť a nastavte `nMaxCount` argument velikost přidělené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-171">The caller is expected to allocate the buffer and set the `nMaxCount` argument to the size of the allocated buffer.</span></span> <span data-ttu-id="f1fc5-172">Následující kód ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v odkazující na Windows.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-172">The following code shows the `GetWindowText` function declaration as defined in Windows.h.</span></span>  
+ <span data-ttu-id="ba424-169">Například rozhraní API Win32 Microsoft `GetWindowText` je znak pevnou délkou vyrovnávací paměť, která musí být předán do nespravovaného kódu manipulaci s těmito – funkce (definovanou v odkazující na Windows).</span><span class="sxs-lookup"><span data-stu-id="ba424-169">For example, the Microsoft Win32 API `GetWindowText` function (defined in Windows.h) is a fixed-length character buffer that must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="ba424-170">`LpString` odkazuje na volající přidělit vyrovnávací paměť o velikosti `nMaxCount`.</span><span class="sxs-lookup"><span data-stu-id="ba424-170">`LpString` points to a caller-allocated buffer of size `nMaxCount`.</span></span> <span data-ttu-id="ba424-171">Volající musí přidělit vyrovnávací paměť a nastavte `nMaxCount` argument velikost přidělené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="ba424-171">The caller is expected to allocate the buffer and set the `nMaxCount` argument to the size of the allocated buffer.</span></span> <span data-ttu-id="ba424-172">Následující kód ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v odkazující na Windows.</span><span class="sxs-lookup"><span data-stu-id="ba424-172">The following code shows the `GetWindowText` function declaration as defined in Windows.h.</span></span>  
   
 ```  
 int GetWindowText(  
@@ -237,7 +236,7 @@ int nMaxCount     // Maximum number of characters to copy.
 );  
 ```  
   
- <span data-ttu-id="f1fc5-173">A `StringBuilder` můžete přímo odkázat a upraveném volaného, pokud nepřesáhne kapacitu `StringBuilder`.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-173">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="f1fc5-174">Následující příklad kódu ukazuje, jak `StringBuilder` jde inicializovat na pevnou délkou.</span><span class="sxs-lookup"><span data-stu-id="f1fc5-174">The following code example demonstrates how `StringBuilder` can be initialized to a fixed length.</span></span>  
+ <span data-ttu-id="ba424-173">A `StringBuilder` můžete přímo odkázat a upraveném volaného, pokud nepřesáhne kapacitu `StringBuilder`.</span><span class="sxs-lookup"><span data-stu-id="ba424-173">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="ba424-174">Následující příklad kódu ukazuje, jak `StringBuilder` jde inicializovat na pevnou délkou.</span><span class="sxs-lookup"><span data-stu-id="ba424-174">The following code example demonstrates how `StringBuilder` can be initialized to a fixed length.</span></span>  
   
 ```vb  
 Public Class Win32API  
@@ -270,8 +269,8 @@ public class Window {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f1fc5-175">Viz také</span><span class="sxs-lookup"><span data-stu-id="f1fc5-175">See Also</span></span>  
- [<span data-ttu-id="f1fc5-176">Výchozí chování zařazování</span><span class="sxs-lookup"><span data-stu-id="f1fc5-176">Default Marshaling Behavior</span></span>](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [<span data-ttu-id="f1fc5-177">Přenositelné a nepřenositelné typy</span><span class="sxs-lookup"><span data-stu-id="f1fc5-177">Blittable and Non-Blittable Types</span></span>](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [<span data-ttu-id="f1fc5-178">Směrovou atributy</span><span class="sxs-lookup"><span data-stu-id="f1fc5-178">Directional Attributes</span></span>](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
- [<span data-ttu-id="f1fc5-179">Kopírování a přichycování</span><span class="sxs-lookup"><span data-stu-id="f1fc5-179">Copying and Pinning</span></span>](../../../docs/framework/interop/copying-and-pinning.md)
+## <a name="see-also"></a><span data-ttu-id="ba424-175">Viz také</span><span class="sxs-lookup"><span data-stu-id="ba424-175">See Also</span></span>  
+ [<span data-ttu-id="ba424-176">Výchozí chování zařazování</span><span class="sxs-lookup"><span data-stu-id="ba424-176">Default Marshaling Behavior</span></span>](default-marshaling-behavior.md)  
+ [<span data-ttu-id="ba424-177">Přenositelné a nepřenositelné typy</span><span class="sxs-lookup"><span data-stu-id="ba424-177">Blittable and Non-Blittable Types</span></span>](blittable-and-non-blittable-types.md)  
+ <span data-ttu-id="ba424-178">[Směrovou atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="ba424-178">[Directional Attributes](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))</span></span>  
+ [<span data-ttu-id="ba424-179">Kopírování a přichycování</span><span class="sxs-lookup"><span data-stu-id="ba424-179">Copying and Pinning</span></span>](copying-and-pinning.md)
