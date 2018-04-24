@@ -1,0 +1,1 @@
+Další informace o elementu, který tato třída představuje, najdete v následující specifikaci: [Metadata pro OASIS zabezpečení Assertion značek Language (SAML) V2.0](http://go.microsoft.com/fwlink/?LinkId=231291) (http://go.microsoft.com/fwlink/?LinkId=231291).

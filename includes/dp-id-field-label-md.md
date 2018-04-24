@@ -1,0 +1,1 @@
+Pole identifikátoru vlastnosti závislosti:

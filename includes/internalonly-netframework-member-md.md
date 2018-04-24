@@ -1,0 +1,1 @@
+Tento člen podporuje infrastrukturu rozhraní .NET Framework a není určen pro použití přímo v kódu.

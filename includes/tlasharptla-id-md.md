@@ -1,0 +1,1 @@
+Identifikátor (ID)
