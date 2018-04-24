@@ -1,1 +1,0 @@
-automatizace uživatelského rozhraní

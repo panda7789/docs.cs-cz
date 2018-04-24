@@ -1,1 +1,0 @@
-Profil klienta rozhraní .NET Framework

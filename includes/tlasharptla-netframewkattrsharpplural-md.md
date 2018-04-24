@@ -1,1 +1,0 @@
-Atributy rozhraní .NET Framework
