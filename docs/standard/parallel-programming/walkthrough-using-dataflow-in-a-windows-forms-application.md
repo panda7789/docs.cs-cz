@@ -15,11 +15,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f28e103d6241d954dd6ac4f7e9c7fcb20a06ea0b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 8100f986a98c9e4712603c45a88d48cbb93be649
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Postupy: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -48,7 +48,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 #### <a name="to-create-the-windows-forms-application"></a>K vytvoření Windows Forms aplikace  
   
-1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vytvořit Visual C# nebo Visual Basic **formulářové aplikace Windows** projektu. V tomto dokumentu je projekt s názvem `CompositeImages`.  
+1.  V sadě Visual Studio vytvořit Visual C# nebo Visual Basic **formulářové aplikace Windows** projektu. V tomto dokumentu je projekt s názvem `CompositeImages`.  
   
 2.  V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb jazyka Visual Basic), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
   

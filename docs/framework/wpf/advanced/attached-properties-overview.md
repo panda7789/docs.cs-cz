@@ -1,13 +1,13 @@
 ---
-title: "Přehled připojených vlastností"
-ms.custom: 
+title: Přehled připojených vlastností
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-caps.latest.revision: 
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2d1d0eb55e75cd450d55b69aadca9c60e157eb09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ceba94d80ca66ab228804ffff2a5b8f89a68d7c4
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="attached-properties-overview"></a>Přehled připojených vlastností
 – Přidružená vlastnost je koncept definované XAML. – Přidružená vlastnost je určena pro použití jako typ globální vlastnost, která je nastavit na libovolný objekt. V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], připojené vlastnosti jsou obvykle definovány jako specializovaná forma vlastnost závislosti, který nemá vlastnost konvenční "obálku".  
@@ -67,7 +67,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="an-example-of-a-parent-defined-attached-property"></a>Příkladem definované nadřazené přidružená vlastnost  
  Nejobvyklejším scénářem kde [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] definuje připojené vlastnost je pokud nadřazený element podporuje podřízené elementu kolekce a také implementuje chování kde jsou specifikace chování hlášené samostatně pro každou podřízený element.  
   
- <xref:System.Windows.Controls.DockPanel>definuje <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> přidružená vlastnost, a <xref:System.Windows.Controls.DockPanel> má kód úrovni třídy jako součást svou logikou vykreslování (konkrétně <xref:System.Windows.Controls.DockPanel.MeasureOverride%2A> a <xref:System.Windows.Controls.DockPanel.ArrangeOverride%2A>). A <xref:System.Windows.Controls.DockPanel> instance bude vždy zkontrolujte, zda všechny jeho okamžitou podřízených elementů nastavit hodnotu <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>. Pokud ano, tyto hodnoty se vstup pro logiku vykreslování u této konkrétní podřízený element. Vnořené <xref:System.Windows.Controls.DockPanel> instancí každé považovat vlastní okamžitou podřízené elementu kolekce, ale toto chování je specifický pro implementaci způsobem <xref:System.Windows.Controls.DockPanel> procesy <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> hodnoty. Je možné teoreticky připojenými vlastnosti, které ovlivňují elementy mimo okamžitou nadřazené. Pokud <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> je připojená vlastnost nastavená na element, který neobsahuje žádné <xref:System.Windows.Controls.DockPanel> se vyvolá nadřazeného elementu k provedení akce ho, žádné chyby nebo výjimky. To znamená stačí, aby byl nastaven hodnotu globální vlastnosti, ale nemá žádný aktuální <xref:System.Windows.Controls.DockPanel> nadřazeného objektu, který může využívat informace.  
+ <xref:System.Windows.Controls.DockPanel> definuje <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> přidružená vlastnost, a <xref:System.Windows.Controls.DockPanel> má kód úrovni třídy jako součást svou logikou vykreslování (konkrétně <xref:System.Windows.Controls.DockPanel.MeasureOverride%2A> a <xref:System.Windows.Controls.DockPanel.ArrangeOverride%2A>). A <xref:System.Windows.Controls.DockPanel> instance bude vždy zkontrolujte, zda všechny jeho okamžitou podřízených elementů nastavit hodnotu <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>. Pokud ano, tyto hodnoty se vstup pro logiku vykreslování u této konkrétní podřízený element. Vnořené <xref:System.Windows.Controls.DockPanel> instancí každé považovat vlastní okamžitou podřízené elementu kolekce, ale toto chování je specifický pro implementaci způsobem <xref:System.Windows.Controls.DockPanel> procesy <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> hodnoty. Je možné teoreticky připojenými vlastnosti, které ovlivňují elementy mimo okamžitou nadřazené. Pokud <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> je připojená vlastnost nastavená na element, který neobsahuje žádné <xref:System.Windows.Controls.DockPanel> se vyvolá nadřazeného elementu k provedení akce ho, žádné chyby nebo výjimky. To znamená stačí, aby byl nastaven hodnotu globální vlastnosti, ale nemá žádný aktuální <xref:System.Windows.Controls.DockPanel> nadřazeného objektu, který může využívat informace.  
   
 <a name="attached_properties_code"></a>   
 ## <a name="attached-properties-in-code"></a>Přidružené vlastnosti v kódu  
@@ -106,12 +106,12 @@ ms.lasthandoff: 12/22/2017
  Definujte přidružená vlastnost jako vlastnost závislosti deklarace `public` `static` `readonly` pole typu <xref:System.Windows.DependencyProperty>. V tomto poli se definují pomocí vrácenou hodnotu <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metoda. Název pole musí odpovídat názvu přidružená vlastnost, spolu s řetězec `Property`, dodržujte navázáno [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vzor pojmenovávání identifikace polí a vlastností, které představují. Zprostředkovatel přidružená vlastnost taky nutné zadat statické `Get` *PropertyName* a `Set` *PropertyName* metody jako přístupových objektů pro připojená vlastnost; neúspěšného se budou Výsledkem vlastnost systému se nepodařilo použít přidružená vlastnost.  
   
 > [!NOTE]
->  Pokud vynecháte přistupující objekt get přidružená vlastnost, datová vazba pro vlastnost nebude pracovat, jako například v nástrojů návrhu [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] a Expression Blend.  
+>  Pokud vynecháte přistupující objekt get přidružená vlastnost, nebude fungovat datové vazby na vlastnost v nástrojích pro návrh, jako je například Visual Studio a Expression Blend.  
   
 #### <a name="the-get-accessor"></a>Přistupující objekt Get  
  Podpis pro `Get` *PropertyName* přistupujícího objektu musí být:  
   
- `public static object Get`*PropertyName* `(object` `target`  `)`  
+ `public static object Get` *PropertyName* `(object`  `target` `)`  
   
 -   `target` Objekt lze zadat jako typu konkrétnější v implementaci. Například <xref:System.Windows.Controls.DockPanel.GetDock%2A?displayProperty=nameWithType> metoda typy parametr jako <xref:System.Windows.UIElement>, protože přidružená vlastnost je určena pouze nastavení na <xref:System.Windows.UIElement> instance.  
   
@@ -120,7 +120,7 @@ ms.lasthandoff: 12/22/2017
 #### <a name="the-set-accessor"></a>Přistupující objekt Set  
  Podpis pro `Set` *PropertyName* přistupujícího objektu musí být:  
   
- `public static void Set`*PropertyName* `(object` `target` `, object` `value`    `)`  
+ `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
   
 -   `target` Objekt lze zadat jako typu konkrétnější v implementaci. Například <xref:System.Windows.Controls.DockPanel.SetDock%2A> metoda typy jej jako <xref:System.Windows.UIElement>, protože přidružená vlastnost je určena pouze nastavení na <xref:System.Windows.UIElement> instance.  
   
@@ -132,7 +132,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[WPFAquariumSln#RegisterAttachedBubbler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler)]  
   
 #### <a name="attached-property-attributes"></a>Atributy přidružená vlastnost  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] který slouží k zadání informací o přidružené vlastnosti pro procesy reflexe a uživatelům typické reflexe a vlastnost informací, například Designer. Vzhledem k tomu, že přidružené vlastnosti typu neomezený obor, Designer potřebovat způsob, jak čtenáře uživatelé s globální seznam přidružené vlastnosti, které jsou definovány v konkrétní technologie implementace, která používá XAML. [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] , [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Definuje pro přidružené vlastnosti můžete použít k určení rozsahu situacích, kde se mají danou přidružená vlastnost v okně vlastností. Můžete uvažovat o použití těchto atributů pro vlastních připojené vlastností také. Účel a syntaxi [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] je popsaný na odpovídající odkaz na stránkách:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] který slouží k zadání informací o přidružené vlastnosti pro procesy reflexe a uživatelům typické reflexe a vlastnost informací, například Designer. Vzhledem k tomu, že přidružené vlastnosti typu neomezený obor, Designer potřebovat způsob, jak čtenáře uživatelé s globální seznam přidružené vlastnosti, které jsou definovány v konkrétní technologie implementace, která používá XAML. [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] , [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Definuje pro přidružené vlastnosti můžete použít k určení rozsahu situacích, kde se mají danou přidružená vlastnost v okně vlastností. Můžete uvažovat o použití těchto atributů pro vlastních připojené vlastností také. Účel a syntaxi [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] je popsaný na odpovídající odkaz na stránkách:  
   
 -   <xref:System.Windows.AttachedPropertyBrowsableAttribute>  
   

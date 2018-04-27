@@ -1,29 +1,30 @@
 ---
-title: "Pomocí WorkflowInvoker a WorkflowApplication"
-ms.custom: 
+title: Pomocí WorkflowInvoker a WorkflowApplication
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cd0e583c-a3f9-4fa2-b247-c7b3368c48a7
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 669e1bd1daeb8f2569a851e21d10f250d1bc2204
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 90999867ee1dd678e279832d73d7ecaaa416fe7b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>Pomocí WorkflowInvoker a WorkflowApplication
-[!INCLUDE[wf](../../../includes/wf-md.md)]poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker>poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication>poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost>poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  
+Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication> poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  
   
 ## <a name="using-workflowinvoker"></a>Pomocí WorkflowInvoker  
- <xref:System.Activities.WorkflowInvoker>poskytuje model pro provádění pracovního postupu, jako by šlo volání metody. K vyvolání pracovního postupu pomocí <xref:System.Activities.WorkflowInvoker>, volání <xref:System.Activities.WorkflowInvoker.Invoke%2A> metoda a předejte jí definice pracovního postupu pracovního postupu k vyvolání. V tomto příkladu <xref:System.Activities.Statements.WriteLine> aktivity vyvolání pomocí <xref:System.Activities.WorkflowInvoker>.  
+ <xref:System.Activities.WorkflowInvoker> poskytuje model pro provádění pracovního postupu, jako by šlo volání metody. K vyvolání pracovního postupu pomocí <xref:System.Activities.WorkflowInvoker>, volání <xref:System.Activities.WorkflowInvoker.Invoke%2A> metoda a předejte jí definice pracovního postupu pracovního postupu k vyvolání. V tomto příkladu <xref:System.Activities.Statements.WriteLine> aktivity vyvolání pomocí <xref:System.Activities.WorkflowInvoker>.  
   
  [!code-csharp[CFX_WorkflowInvokerExample#1](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs#1)]  
   
@@ -34,7 +35,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  <xref:System.TimeoutException> Je vyvolána pouze, pokud uplyne časový limit a pracovní postup bude nečinnosti během provádění. Pracovní postup, který trvá déle než zadaný časový interval pro dokončení se úspěšně dokončena, pokud pracovní postup nečinný.  
   
- <xref:System.Activities.WorkflowInvoker>také poskytuje asynchronní verze metodu invoke. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> a <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A>.  
+ <xref:System.Activities.WorkflowInvoker> také poskytuje asynchronní verze metodu invoke. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> a <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A>.  
   
 ### <a name="setting-input-arguments-of-a-workflow"></a>Nastavení vstupní argumenty pracovního postupu  
  Data mohou být předána do pracovního postupu pomocí slovník vstupních parametrů klíčovány pomocí názvu argument, které jsou mapovány na vstupní argumenty pracovního postupu. V tomto příkladu <xref:System.Activities.Statements.WriteLine> je volána a hodnota jeho <xref:System.Activities.Statements.WriteLine.Text%2A> je zadán argument pomocí slovníku vstupní parametry.  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CFX_WorkflowInvokerExample#21](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs#21)]  
   
 ## <a name="using-workflowapplication"></a>Pomocí WorkflowApplication  
- <xref:System.Activities.WorkflowApplication>poskytuje bohatou sadu funkcí pro správu instance pracovního postupu. <xref:System.Activities.WorkflowApplication>funguje jako proxy bezpečný přístup z více vláken na aktuálně <xref:System.Activities.Hosting.WorkflowInstance>, který zapouzdřuje modul runtime a poskytuje metody pro vytvoření a načtení instance pracovního postupu, pozastavení a obnovení, se ukončuje oznámení o události životního cyklu. Ke spuštění pracovního postupu pomocí <xref:System.Activities.WorkflowApplication> vytvoříte <xref:System.Activities.WorkflowApplication>, přihlásit k odběru událostí všechny požadované životního cyklu, spustit workflow a potom počkejte na její dokončení. V tomto příkladu definice pracovního postupu, se skládá z <xref:System.Activities.Statements.WriteLine> vytvoření aktivity a <xref:System.Activities.WorkflowApplication> je vytvořený pomocí definice pracovního postupu zadané. <xref:System.Activities.WorkflowApplication.Completed%2A>je zpracovat tak, že hostitel obdrží oznámení při dokončení pracovního postupu, pracovní postup je spuštěn s volání <xref:System.Activities.WorkflowApplication.Run%2A>, a potom hostitele čeká na dokončení pracovního postupu. Po dokončení pracovního postupu <xref:System.Threading.AutoResetEvent> je sada a hostiteli aplikace můžete pokračovat v provádění, jak je znázorněno v následujícím příkladu.  
+ <xref:System.Activities.WorkflowApplication> poskytuje bohatou sadu funkcí pro správu instance pracovního postupu. <xref:System.Activities.WorkflowApplication> funguje jako proxy bezpečný přístup z více vláken na aktuálně <xref:System.Activities.Hosting.WorkflowInstance>, který zapouzdřuje modul runtime a poskytuje metody pro vytvoření a načtení instance pracovního postupu, pozastavení a obnovení, se ukončuje oznámení o události životního cyklu. Ke spuštění pracovního postupu pomocí <xref:System.Activities.WorkflowApplication> vytvoříte <xref:System.Activities.WorkflowApplication>, přihlásit k odběru událostí všechny požadované životního cyklu, spustit workflow a potom počkejte na její dokončení. V tomto příkladu definice pracovního postupu, se skládá z <xref:System.Activities.Statements.WriteLine> vytvoření aktivity a <xref:System.Activities.WorkflowApplication> je vytvořený pomocí definice pracovního postupu zadané. <xref:System.Activities.WorkflowApplication.Completed%2A> je zpracovat tak, že hostitel obdrží oznámení při dokončení pracovního postupu, pracovní postup je spuštěn s volání <xref:System.Activities.WorkflowApplication.Run%2A>, a potom hostitele čeká na dokončení pracovního postupu. Po dokončení pracovního postupu <xref:System.Threading.AutoResetEvent> je sada a hostiteli aplikace můžete pokračovat v provádění, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#31](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#31)]  
   
@@ -77,7 +78,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CFX_WorkflowApplicationExample#21](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#21)]  
   
 > [!NOTE]
->  <xref:System.Activities.WorkflowApplication>a <xref:System.Activities.WorkflowInvoker> trvat slovník vstupní argumenty a vrátí slovník `out` argumenty. Tyto slovník parametrů, vlastnosti a návratové hodnoty jsou typu `IDictionary<string, object>`. Skutečné instance třídy slovník, který se předává v může být jakákoli třída, která implementuje `IDictionary<string, object>`. V těchto příkladech `Dictionary<string, object>` se používá. [!INCLUDE[crabout](../../../includes/crabout-md.md)]slovník, najdete v části <xref:System.Collections.Generic.IDictionary%602> a <xref:System.Collections.Generic.Dictionary%602>.  
+>  <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowInvoker> trvat slovník vstupní argumenty a vrátí slovník `out` argumenty. Tyto slovník parametrů, vlastnosti a návratové hodnoty jsou typu `IDictionary<string, object>`. Skutečné instance třídy slovník, který se předává v může být jakákoli třída, která implementuje `IDictionary<string, object>`. V těchto příkladech `Dictionary<string, object>` se používá. [!INCLUDE[crabout](../../../includes/crabout-md.md)] slovník, najdete v části <xref:System.Collections.Generic.IDictionary%602> a <xref:System.Collections.Generic.Dictionary%602>.  
   
 ### <a name="passing-data-into-a-running-workflow-using-bookmarks"></a>Předávání dat do pracovního postupu spuštění použití záložek  
  Záložky jsou mechanismus, pomocí kterého aktivity může být obnoven pasivně čekat a jsou mechanismus pro předávání dat do spuštěné instance pracovního postupu. Pokud aktivita čeká na data, můžete vytvořit <xref:System.Activities.Bookmark> a metody zpětného volání, která se má volat při registraci <xref:System.Activities.Bookmark> obnovena, jak je znázorněno v následujícím příkladu.  
@@ -108,4 +109,4 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CFX_WorkflowApplicationExample#2](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#2)]  
   
 ## <a name="summary"></a>Souhrn  
- <xref:System.Activities.WorkflowInvoker>poskytuje jednoduché způsob, jak volat pracovní postupy, a sice poskytuje metody pro předávání dat v při spuštění pracovního postupu a extrahování dat z dokončené pracovního postupu, neposkytuje pro složitější scénáře tedy kde <xref:System.Activities.WorkflowApplication> lze použít.
+ <xref:System.Activities.WorkflowInvoker> poskytuje jednoduché způsob, jak volat pracovní postupy, a sice poskytuje metody pro předávání dat v při spuštění pracovního postupu a extrahování dat z dokončené pracovního postupu, neposkytuje pro složitější scénáře tedy kde <xref:System.Activities.WorkflowApplication> lze použít.

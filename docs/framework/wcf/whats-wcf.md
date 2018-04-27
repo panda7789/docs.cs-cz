@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1e194a0784eb27043bbd0c127cde6883b4fafb2e
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 2fa6efdc61620647d5c6318746e61e09cdde7a46
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], může odesílat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  
@@ -80,7 +80,7 @@ ms.lasthandoff: 04/16/2018
   
 -   **Trvanlivý zprávy**  
   
-     Trvanlivý zpráva je ten, který se nikdy ztraceno v důsledku přerušení v komunikaci. Zprávy ve tvaru trvanlivý zpráva se vždy uloží do databáze. Pokud dojde k narušení služeb, databáze můžete obnovit výměny zpráv, když se obnoví připojení. Můžete také vytvořit trvanlivý zprávu pomocí [!INCLUDE[wf](../../../includes/wf-md.md)]. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Služby pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).  
+     Trvanlivý zpráva je ten, který se nikdy ztraceno v důsledku přerušení v komunikaci. Zprávy ve tvaru trvanlivý zpráva se vždy uloží do databáze. Pokud dojde k narušení služeb, databáze můžete obnovit výměny zpráv, když se obnoví připojení. Můžete také vytvořit trvanlivý zprávy pomocí Windows Workflow Foundation (WF). [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Služby pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).  
   
 -   **Transakce**  
   
@@ -97,7 +97,7 @@ ms.lasthandoff: 04/16/2018
 ## <a name="wcf-integration-with-other-microsoft-technologies"></a>WCF integrace s jinými technologiemi společnosti Microsoft  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je flexibilní platforma. Z důvodu tuto flexibilitu potřebují extrémně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] se také používá v několika dalších produktů společnosti Microsoft. Porozuměním Základy [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], máte okamžitě využívat, pokud používáte některý z těchto produktů.  
   
- První technologie spárovat s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] byl Windows Workflow Foundation (WF). Pracovní postupy zjednodušují vývoj aplikací zapouzdřením kroky v pracovním postupu jako "aktivity". V první verzi [!INCLUDE[wf2](../../../includes/wf2-md.md)], vývojář museli vytvořit hostitele pro pracovní postup. Další verzi [!INCLUDE[wf2](../../../includes/wf2-md.md)] byla integrována [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Který povolen žádný pracovní postup snadno hostitelem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby; to provedete tak, že automaticky zvolíte WF/WCF typu projektu v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
+ První technologie spárovat s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] byl Windows Workflow Foundation (WF). Pracovní postupy zjednodušují vývoj aplikací zapouzdřením kroky v pracovním postupu jako "aktivity". V první verzi modelu Windows Workflow Foundation musí vývojář vytvořit hostitele pro pracovní postup. Na další verzi aplikace Windows Workflow Foundation byla integrována [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Který povolen žádný pracovní postup snadno hostitelem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby; to provedete tak, že automaticky zvolíte WF/WCF typu projektu v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
   
  Microsoft BizTalk Server R2 také využívá [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] technologií komunikace. BizTalk je určena pro příjem a transformovat data z jednoho standardizované formátu do druhého. Zprávy musí doručit do jeho centrální se zprávou, kde zprávu lze je transformovat pomocí striktní mapování, nebo pomocí jedné z BizTalk funkce jako je například modul jeho pracovních postupů. Teď můžete použít BizTalk [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] adaptér obchodnímu systému (LOB) pro doručení zprávy do pole zpráva.  
   

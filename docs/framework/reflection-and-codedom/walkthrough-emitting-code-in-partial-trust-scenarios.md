@@ -1,12 +1,13 @@
 ---
-title: "Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností"
-ms.custom: 
+title: 'Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -21,16 +22,17 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 835483d740b60f98c3170a590edbfbfbe970d783
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: cbdbf8a391235fc03140e032b35eb674a74dc88a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Emitování reflexe používá stejné rozhraní API nastavit v úplné nebo částečné důvěryhodnosti, ale některé funkce vyžadují speciální oprávnění v částečně důvěryhodným kódem. Kromě toho emitování reflexe má funkci anonymně hostované dynamické metody, která je určená pro použití s částečnou důvěryhodností a transparentní pro zabezpečení sestavení.  
@@ -144,7 +146,7 @@ Emitování reflexe používá stejné rozhraní API nastavit v úplné nebo č�
      <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> Metoda vytvoří objekt v cílové doméně aplikace a vrátí proxy server, který slouží k volání vlastnosti a metody objektu.  
   
     > [!NOTE]
-    >  Pokud použijete tento kód v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], musíte změnit název třídy zahrnout obor názvů. Ve výchozím nastavení obor názvů je název projektu. Například pokud je projekt "PartialTrust", název třídy musí být "PartialTrust.Worker".  
+    >  Pokud použijete tento kód v sadě Visual Studio, musíte změnit název třídy zahrnout obor názvů. Ve výchozím nastavení obor názvů je název projektu. Například pokud je projekt "PartialTrust", název třídy musí být "PartialTrust.Worker".  
   
 6.  Přidejte kód volání `SimpleEmitDemo` metoda. Volání je zařazen přes hranice domény aplikace a kód se spustí v doméně aplikace v izolovaném prostoru.  
   
@@ -178,7 +180,7 @@ Emitování reflexe používá stejné rozhraní API nastavit v úplné nebo č�
      [!code-csharp[HowToEmitCodeInPartialTrust#16](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#16)]
      [!code-vb[HowToEmitCodeInPartialTrust#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#16)]  
   
-     Omezení je, že anonymně hostované dynamické metody přístup k datům privátní pouze v sestavení s úrovní důvěryhodnosti rovna nebo menší než úroveň důvěryhodnosti generování sestavení. Například pokud dynamické metoda provádí Internet vztahu důvěryhodnosti, má přístup k privátní data v jiných sestavení, které jsou také provádění Internet vztahu důvěryhodnosti, ale nemá přístup k privátním data [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]sestavení jsou nainstalované v globální mezipaměti sestavení a vždy plně důvěryhodná.  
+     Omezení je, že anonymně hostované dynamické metody přístup k datům privátní pouze v sestavení s úrovní důvěryhodnosti rovna nebo menší než úroveň důvěryhodnosti generování sestavení. Například pokud dynamické metoda provádí Internet vztahu důvěryhodnosti, má přístup k privátní data v jiných sestavení, které jsou také provádění Internet vztahu důvěryhodnosti, ale nemá přístup k privátním data [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení jsou nainstalované v globální mezipaměti sestavení a vždy plně důvěryhodná.  
   
      Anonymně hostované dynamické metody můžete použít s omezeným přístupem možnost pro přeskočení kontroly viditelnost JIT pouze v případě, že uděluje hostitelskou aplikaci <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak. Požadavek pro toto oprávnění je vytvořen při vyvolání metody.  
   
@@ -218,7 +220,7 @@ Emitování reflexe používá stejné rozhraní API nastavit v úplné nebo č�
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Pokud vytvoříte tento příklad kódu [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], musíte změnit název třídy, které chcete zahrnout obor názvů, pokud předejte jej <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> metoda. Ve výchozím nastavení obor názvů je název projektu. Například pokud je projekt "PartialTrust", název třídy musí být "PartialTrust.Worker".  
+-   Pokud vytvoříte tento příklad kódu v sadě Visual Studio, musíte změnit název třídy, které chcete zahrnout obor názvů, pokud předejte jej <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> metoda. Ve výchozím nastavení obor názvů je název projektu. Například pokud je projekt "PartialTrust", název třídy musí být "PartialTrust.Worker".  
   
 ## <a name="see-also"></a>Viz také  
  [Bezpečnostní problémy v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  

@@ -1,28 +1,28 @@
 ---
-title: "Tok transakcí webové služby"
-ms.custom: 
+title: Tok transakcí webové služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-caps.latest.revision: 
+caps.latest.revision: 43
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bf441831a205b022899999b1bf34e1505b8fb6bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f79ffdfe624674074f2e9cadeaccb7f2ab3ba0d7
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
 Tento příklad znázorňuje použití transakce koordinované klienta a klient a server možnosti pro transakci toku pomocí protokolu WS-Atomic Transactions nebo OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje ale operace, které jsou označené k předvedení použití `TransactionFlowAttribute` s **TransactionFlowOption** výčet k určení, do jaké míry transakce toku povolený. V rámci oboru sdružení transakcí protokolu požadovaná operace je zapsán do databáze a dál, dokud klient koordinované transakce byla dokončena – i když klientská transakce nedokončí, transakce webové služby zajišťuje, že příslušné aktualizace do databáze nejsou potvrzeny.  
@@ -31,8 +31,8 @@ Tento příklad znázorňuje použití transakce koordinované klienta a klient 
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
  Po inicializaci připojení k služby a transakce, klient přistupuje k několik operací služby. Kontrakt služby je definován následujícím způsobem v každé z operací jiné nastavení pro demonstraci `TransactionFlowOption`.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculator  
 {  
@@ -48,8 +48,8 @@ public interface ICalculator
     [OperationContract]  
     double Divide(double n1, double n2);   
 }  
-```  
-  
+```
+
  Definuje operace v pořadí, ve kterém se mají být zpracovány:  
   
 -   `Add` Žádost o operaci musí zahrnovat sdružení transakcí.  
@@ -83,8 +83,8 @@ public interface ICalculator
   
 > [!NOTE]
 >  <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> Vlastnost definuje chování, které jsou místní pro implementace metoda služby a nedefinuje schopnost klienta nebo požadavek toku transakce.  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 [ServiceBehavior(TransactionIsolationLevel = System.Transactions.IsolationLevel.Serializable)]  
 public class CalculatorService : ICalculator  
@@ -119,22 +119,22 @@ public class CalculatorService : ICalculator
   
     // Logging method omitted for brevity  
 }  
-```  
-  
+```
+
  Na klienta, službu `TransactionFlowOption` nastavení na operace se projeví v definici generovaného klienta `ICalculator` rozhraní. Navíc služby `transactionFlow` se projeví nastavení vlastnosti v konfiguraci klienta aplikace. Klienta můžete vybrat přenosu a protokol výběrem příslušné `endpointConfigurationName`.  
-  
-```  
+
+```csharp
 // Create a client using either wsat or oletx endpoint configurations  
 CalculatorClient client = new CalculatorClient("WSAtomicTransaction_endpoint");  
 // CalculatorClient client = new CalculatorClient("OleTransactions_endpoint");  
-```  
-  
+```
+
 > [!NOTE]
 >  Zjištěnou chování Tato ukázka je stejný bez ohledu na to, který je vybrán protokol nebo přenos.  
   
  Bylo zahájeno připojení ke službě, klient vytvoří novou `TransactionScope` kolem volání operací služby.  
-  
-```  
+
+```csharp
 // Start a transaction scope  
 using (TransactionScope tx =  
             new TransactionScope(TransactionScopeOption.RequiresNew))  
@@ -191,8 +191,8 @@ using (TransactionScope tx =
 }  
   
 Console.WriteLine("Transaction committed");  
-```  
-  
+```
+
  Volání operace jsou následující:  
   
 -   `Add` Požadavek toků požadované transakce ke službě a k akcím služby v rámci oboru transakce klienta.  
@@ -238,7 +238,7 @@ Press <ENTER> to terminate the service.
   
 1.  Sestavení C# nebo Visual Basic .NET verzi řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
   
-2.  Ujistěte se, že jste nainstalovali SQL Server Express Edition nebo SQL Server a že připojovací řetězec nebyla správně nastavena v konfiguračním souboru aplikace služby. Chcete-li spustit ukázku bez použití databáze, nastavte `usingSql` hodnota v konfiguračním souboru aplikace služby k`false`  
+2.  Ujistěte se, že jste nainstalovali SQL Server Express Edition nebo SQL Server a že připojovací řetězec nebyla správně nastavena v konfiguračním souboru aplikace služby. Chcete-li spustit ukázku bez použití databáze, nastavte `usingSql` hodnota v konfiguračním souboru aplikace služby k `false`  
   
 3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   

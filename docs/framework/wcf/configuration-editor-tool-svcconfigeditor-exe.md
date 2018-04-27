@@ -1,12 +1,13 @@
 ---
-title: "Nástroj Configuration Editor (SvcConfigEditor.exe)"
-ms.custom: 
+title: Nástroj Configuration Editor (SvcConfigEditor.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - configuration files, creating
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-caps.latest.revision: "45"
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e21dacd5f01ba956ba78456b8e325d0b7e767df7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1531c68bdbb3b28436d0701536ef274f34513b19
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Nástroj Configuration Editor (SvcConfigEditor.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Služby Configuration Editor (SvcConfigEditor.exe) umožňuje správcům a vývojářům umožňuje vytvořit a upravit nastavení konfigurace pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vazby, chování, služeb a diagnostiky, aniž by museli přímo upravit konfigurační soubory XML.  
@@ -122,7 +124,7 @@ ms.lasthandoff: 12/22/2017
 4.  Click **OK**.  
   
 > [!NOTE]
->  Nelze upravit hodnotu [ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) uvnitř tohoto nástroje. Přidat nebo upravit tento element, by měl pomocí textového editoru nebo [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
+>  Nelze upravit hodnotu [ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) uvnitř tohoto nástroje. Přidat nebo upravit tento element, měli byste použít textový editor nebo Visual Studio.  
   
 ### <a name="client"></a>Klient  
  **Klienta** uzlu zobrazí všechny koncové body klientů v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčí element <`client`> element v konfiguračním souboru.  

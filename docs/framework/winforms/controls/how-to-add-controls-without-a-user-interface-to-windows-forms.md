@@ -1,13 +1,13 @@
 ---
-title: "Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do formulářů Windows"
-ms.custom: 
+title: 'Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do formulářů Windows'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,17 +22,17 @@ helpviewer_keywords:
 - Windows Forms controls, nonvisual
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
-caps.latest.revision: 
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3abbf931cff9ad459e8c9221f91430ecccefa9cc
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e900c1c34f69531a14cfa11803ef5a6afb4783c6
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do formulářů Windows
 Nevizuální ovládací prvek (nebo součást) poskytuje funkce, které vaše aplikace. Na rozdíl od jiných ovládacích prvků součástí neposkytují uživatelské rozhraní pro uživatele a proto není nutné zobrazit na povrchu Návrhář formulářů Windows. Když součást je přidán do formuláře, zobrazí Návrhář formulářů Windows s možností změny velikosti panelu v dolní části formuláře, kde jsou zobrazeny všechny součásti. Po přidání ovládacího prvku do komponent, můžete vybrat součásti a nastavit jeho vlastnosti, stejně jako další ovládací prvek na formuláři.  
@@ -48,7 +48,7 @@ Nevizuální ovládací prvek (nebo součást) poskytuje funkce, které vaše ap
   
      Na hlavním panelu součást se zobrazí příslušné součásti.  
   
- Kromě toho součásti lze přidat do formuláře za běhu. Toto je běžný scénář, zvlášť, protože součásti nemají výraz visual, na rozdíl od ovládací prvky, které mají uživatelské rozhraní. V příkladu níže <xref:System.Windows.Forms.Timer> přidání komponenty v době běhu. (Všimněte si, že [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] obsahuje řadu různých časovače; v takovém případě pomocí Windows Forms <xref:System.Windows.Forms.Timer> součásti. Další informace o různých časovače v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], najdete v části [Úvod do serverové časovače](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)  
+ Kromě toho součásti lze přidat do formuláře za běhu. Toto je běžný scénář, zvlášť, protože součásti nemají výraz visual, na rozdíl od ovládací prvky, které mají uživatelské rozhraní. V příkladu níže <xref:System.Windows.Forms.Timer> přidání komponenty v době běhu. (Všimněte si, že Visual Studio obsahuje několik různých časovače; v takovém případě pomocí Windows Forms <xref:System.Windows.Forms.Timer> součásti. Další informace o různých časovače v sadě Visual Studio najdete v tématu [Úvod do serverové časovače](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)  
   
 > [!CAUTION]
 >  Součásti mají často prvek specifické vlastnosti, které musejí být nastaveny pro součást efektivní fungování. U <xref:System.Windows.Forms.Timer> níže uvedené součásti, nastavíte `Interval` vlastnost. Ujistěte se, při přidávání součástí do projektu, že nastavíte vlastnosti potřebné pro tuto součást.  

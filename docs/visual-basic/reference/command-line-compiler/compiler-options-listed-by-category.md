@@ -1,6 +1,6 @@
 ---
 title: Možnosti kompilátoru jazyka Visual Basic uvedené podle kategorie
-ms.date: 03/09/2018
+ms.date: 04/12/2018
 ms.prod: .net
 ms.reviewer: ''
 ms.suite: ''
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e66ec709a32b39e2e7427d6ce165f62212dac543
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a90c54ae1bb4d89b2fbe0df62730bc55c0ceb64f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic – možnosti kompilátoru uvedené podle kategorie
-Visual Basic – kompilátor příkazového řádku je k dispozici jako alternativu k kompilace programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazené podle kategorie funkční.  
+Visual Basic – kompilátor příkazového řádku je k dispozici jako alternativu k kompilace programů z v sadě Visual Studio integrované vývojové prostředí (IDE). Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazené podle kategorie funkční.  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
@@ -31,7 +31,7 @@ Visual Basic – kompilátor příkazového řádku je k dispozici jako alternat
 |[-utf8output](../../../visual-basic/reference/command-line-compiler/utf8output.md)|Zobrazí výstup kompilátoru pomocí kódování UTF-8.|  
 |[-verbose](../../../visual-basic/reference/command-line-compiler/verbose.md)|Výstupy doplňující informace během kompilace.|  
 |`-modulename:<string>`|Zadejte název zdrojového modulu|  
-|[-preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|Zadejte jazyk pro výstup kompilátoru.|  
+|[-preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|Zadejte jazyk pro výstup kompilátoru.|
   
 ## <a name="optimization"></a>Optimalizace  
   
@@ -45,6 +45,7 @@ Visual Basic – kompilátor příkazového řádku je k dispozici jako alternat
 |Možnost|Účel|  
 |---|---|  
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Proces dokumentační komentáře do souboru XML.|  
+|[-deterministickou](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Způsobí, že kompilátor výstup sestavení jejichž binární obsah je stejný jako napříč kompilace Pokud vstupní hodnoty jsou identické.|
 |[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Určuje výstupní soubor.|  
 |[-refonly](refonly-compiler-option.md)|Výstupy referenční sestavení.|
@@ -83,7 +84,7 @@ Visual Basic – kompilátor příkazového řádku je k dispozici jako alternat
 |Možnost|Účel|  
 |---|---|  
 |[-?](../../../visual-basic/reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejné jako zadání `-help` možnost. Dojde k žádné kompilace.|  
-|[-help](../../../visual-basic/reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejné jako zadání `-?` možnost. Dojde k žádné kompilace.|  
+|[– Nápověda](../../../visual-basic/reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejné jako zadání `-?` možnost. Dojde k žádné kompilace.|  
   
 ## <a name="language"></a>Jazyk  
   

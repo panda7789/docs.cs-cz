@@ -1,12 +1,13 @@
 ---
-title: "Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF"
-ms.custom: 
+title: 'Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 81d808b982852d5cc6dc187a3c8389748a0dc0bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a8d3fe2dbfe0b4b5fb9081d71cec080dfa54add8
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
 Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikací můžete získat data z mezipaměti místo toho je načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc díky ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.  
@@ -67,7 +69,7 @@ Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý př�
   
 #### <a name="to-create-a-wpf-application"></a>Vytvoření aplikace WPF  
   
-1.  Spustit [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].  
+1.  Spuštění sady Visual Studio.  
   
 2.  V **soubor** nabídky, klikněte na tlačítko **nový**a potom klikněte na **nový projekt**.  
   
@@ -86,7 +88,7 @@ Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý př�
   
 7.  Click **OK**.  
   
-     WPF Designer se otevře v **návrhu** zobrazení a zobrazí MainWindow.xaml soubor. [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]vytvoří **Můj projekt** složka, soubor Application.xaml a soubor MainWindow.xaml.  
+     WPF Designer se otevře v **návrhu** zobrazení a zobrazí MainWindow.xaml soubor. Visual Studio vytvoří **Můj projekt** složka, soubor Application.xaml a soubor MainWindow.xaml.  
   
 ## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Cílení na rozhraní .NET Framework a přidáním odkazu na ukládání do mezipaměti sestavení  
  Ve výchozím nastavení, cílové aplikace WPF [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Použít <xref:System.Runtime.Caching> oboru názvů v aplikaci WPF, aplikace musí mít jako cíl [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] (není [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí obsahovat odkaz na obor názvů.  
@@ -307,7 +309,7 @@ Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý př�
   
      Obsah uložený v mezipaměti z textového souboru se zobrazí v okně se zprávou. Všimněte si, časové razítko souboru.  
   
-3.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu**.**  
+3.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu **.**  
   
      Časové razítko je beze změny. To znamená, že se zobrazí obsah v mezipaměti.  
   
@@ -317,7 +319,7 @@ Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý př�
   
 5.  V textovém editoru otevřete textový soubor, který jste vytvořili. Zatím neprovádějte žádné změny.  
   
-6.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu**.**  
+6.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu **.**  
   
      Všimněte si znovu časové razítko.  
   

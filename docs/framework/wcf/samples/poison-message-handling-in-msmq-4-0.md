@@ -1,24 +1,26 @@
 ---
-title: "Zacházení s nezpracovatelnými zprávami v MSMQ 4.0"
-ms.custom: 
+title: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 32d7c7a93636cbe0086cfbcb5fd1e401a2f013fb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6f2361ed862986d2490968ae422b9b1313eedea3
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 Tento příklad znázorňuje postup zpracování ve službě poškozených zpráv. Tato ukázka je založena na [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) ukázka. V tomto příkladu `netMsmqBinding`. Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.  
@@ -34,7 +36,7 @@ Tento příklad znázorňuje postup zpracování ve službě poškozených zprá
 ## <a name="msmq-v40-poison-handling-sample"></a>MSMQ v4.0 Poison zpracování vzorku  
  V [!INCLUDE[wv](../../../../includes/wv-md.md)], budovy poškozených dílčí fronty, který slouží k uložení poškozených zpráv poskytuje služby MSMQ. Tento příklad znázorňuje osvědčený postup, který se zabývá poškozených zpráv pomocí [!INCLUDE[wv](../../../../includes/wv-md.md)].  
   
- Detekce nezpracovatelná zpráva v [!INCLUDE[wv](../../../../includes/wv-md.md)] je poměrně složité. Existují 3 vlastností, které pomáhají s detekce. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> Je počet časech danou zprávu znovu čtení z fronty a odeslat do aplikace pro zpracování. Znovu načtení zprávy z fronty při jeho je vrátit zpět do fronty protože zprávu nelze odeslat do aplikace nebo aplikaci vrátí zpět transakci v operaci služby. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>je počet, kolikrát zpráva bude přesunuta do fronty opakování. Když <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> je dosaženo, zpráva bude přesunuta do fronty opakování. Vlastnost <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> je prodlevu, po jejímž uplynutí zpráva bude přesunuta z fronty opakování zpět do hlavní fronty. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> Nastaven na hodnotu 0. Zpráva se pokus o znovu. Pokud mají všechny pokusy o tuto zprávu přečíst, zprávy jsou označeny jako poškozen.  
+ Detekce nezpracovatelná zpráva v [!INCLUDE[wv](../../../../includes/wv-md.md)] je poměrně složité. Existují 3 vlastností, které pomáhají s detekce. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> Je počet časech danou zprávu znovu čtení z fronty a odeslat do aplikace pro zpracování. Znovu načtení zprávy z fronty při jeho je vrátit zpět do fronty protože zprávu nelze odeslat do aplikace nebo aplikaci vrátí zpět transakci v operaci služby. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> je počet, kolikrát zpráva bude přesunuta do fronty opakování. Když <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> je dosaženo, zpráva bude přesunuta do fronty opakování. Vlastnost <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> je prodlevu, po jejímž uplynutí zpráva bude přesunuta z fronty opakování zpět do hlavní fronty. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> Nastaven na hodnotu 0. Zpráva se pokus o znovu. Pokud mají všechny pokusy o tuto zprávu přečíst, zprávy jsou označeny jako poškozen.  
   
  Jakmile zprávy je označena jako poškozen, zpráva se zabývá podle nastavení v <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> výčtu. Chcete-li znovu opakují možné hodnoty:  
   
@@ -46,22 +48,22 @@ Tento příklad znázorňuje postup zpracování ve službě poškozených zprá
   
 -   Odmítnutí: Tak, aby zamítal zprávy, poslal zpět do odesílatele je nedoručených zpráv fronty. Tato hodnota je k dispozici pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)].  
   
- Ukázka ukazuje, jak pomocí `Move` dispozice pro poškozená zpráva. `Move`způsobí, že zpráva, kterou chcete přesunout do poškozených dílčí fronty.  
+ Ukázka ukazuje, jak pomocí `Move` dispozice pro poškozená zpráva. `Move` způsobí, že zpráva, kterou chcete přesunout do poškozených dílčí fronty.  
   
  Kontrakt služby je `IOrderProcessor`, která definuje jednosměrné služby, který je vhodný pro použití s front.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-```  
-  
+```
+
  Operace služby zobrazí zprávu s oznámením, že pořadí zpracování. K předvedení funkci nezpracovatelná zpráva `SubmitPurchaseOrder` operace služby vyvolá výjimku pro vrácení transakce u náhodných volání služby. To způsobí, že zpráva, která má být vrátit zpět ve frontě. Nakonec zprávy je označena jako poison. Konfigurace je nastavena na poškozených zprávu přesunout do poškozených dílčí fronty.  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 public class OrderProcessorService : IOrderProcessor  
@@ -127,8 +129,8 @@ public class OrderProcessorService : IOrderProcessor
   
     }  
 }  
-```  
-  
+```
+
  Konfigurace služby obsahuje následující vlastnosti nezpracovatelná zpráva: `receiveRetryCount`, `maxRetryCycles`, `retryCycleDelay`, a `receiveErrorHandling` jak je znázorněno v následujícím souboru konfigurace.  
   
 ```xml  
@@ -171,8 +173,8 @@ public class OrderProcessorService : IOrderProcessor
  Zprávy ve frontě nezpracovatelná zpráva jsou zprávy adresované do služby, která zpracovává zprávu, která může lišit od koncový bod služby nezpracovatelná zpráva. Proto při službu nezpracovatelná zpráva čte zprávy z fronty [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vrstvy kanálu najde neshody v koncových bodů a není odeslat zprávu. V takovém případě zprávy je řešit pořadí zpracování služby, ale je přijímání službou poškozená zpráva. Pokud chcete pokračovat i v případě, že zpráva je určena k jinému koncovému bodu, zobrazí se zpráva, musí přidáme `ServiceBehavior` filtru adresy, kde je kritérium přiřazování tak, aby odpovídaly žádný koncový bod služby je určeno zprávy. To je nutné úspěšně zpracovat zprávy, které můžete číst zprávy z fronty poškozená zpráva.  
   
  Implementace služby nezpracovatelná zpráva, samotné je velmi podobné implementace služby. Implementuje kontrakt a zpracovává objednávky. Tady je příklad kódu.  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 [ServiceBehavior(AddressFilterMode=AddressFilterMode.Any)]  
@@ -215,8 +217,8 @@ public class OrderProcessorService : IOrderProcessor
             serviceHost.Close();  
         }  
     }  
-```  
-  
+```
+
  Na rozdíl od pořadí služby, který čte zprávy z fronty pořadí zpracování služba poškozených zpráv čte zprávy typu z poškozených dílčí fronty. Poškozených fronty je dílčí fronta hlavní fronty, má název "poison" a je automaticky generovaný službou MSMQ. K přístupu, zadejte název fronty, za nímž následuje ";" a dílčí název fronty, v takovém případě-"poškozených", jak je znázorněno v následující ukázka konfigurace.  
   
 > [!NOTE]
@@ -325,7 +327,7 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
     > [!NOTE]
     >  Nastavení `security mode` k `None` je ekvivalentní nastavení `MsmqAuthenticationMode`, `MsmqProtectionLevel`, a `Message` zabezpečení `None`.  
   
-3.  Aby výměny dat Meta pracovat jsme zaregistrovat adresu URL s vazbou http. To vyžaduje, aby služba spuštěna v okně zvýšenými oprávněními příkaz. Jinak dojde k výjimce, jako: neošetřená výjimka: System.ServiceModel.AddressAccessDeniedException: HTTP nebylo možné zaregistrovat http://+:8000/ServiceModelSamples/service/ adresy URL. Váš proces nemá přístupová práva na tento obor názvů (viz http://go.microsoft.com/fwlink/?LinkId=70353 podrobnosti). ---> System.Net.HttpListenerException: přístup byl odepřen.  
+3.  Aby výměny dat Meta pracovat jsme zaregistrovat adresu URL s vazbou http. To vyžaduje, aby služba spuštěna v okně zvýšenými oprávněními příkaz. Jinak dojde k výjimce, jako: neošetřená výjimka: System.ServiceModel.AddressAccessDeniedException: HTTP nebylo možné zaregistrovat URL http://+:8000/ServiceModelSamples/service/. Váš proces nemá přístupová práva na tento obor názvů (viz http://go.microsoft.com/fwlink/?LinkId=70353 podrobnosti). ---> System.Net.HttpListenerException: přístup byl odepřen.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  

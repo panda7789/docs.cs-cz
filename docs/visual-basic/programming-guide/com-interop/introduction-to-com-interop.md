@@ -1,29 +1,30 @@
 ---
-title: "Představení zprostředkovatele komunikace s objekty COM (Visual Basic)"
-ms.custom: 
+title: Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 39a4245b51c1199a6aeb0c23282b1917f51164d2
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5a13fabd729218dc2a980b9c63e153d17a140cce
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje zpřístupnění jeho funkce pro ostatní součásti a hostování aplikací založených na objekt. Při COM – objekty byly nezbytné, aby Windows programování mnoho let, aplikací navržených pro modul CLR (CLR) nabízí celou řadu výhod.  
   
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]aplikace nakonec nahradí vyvinuté pomocí modelu COM. Do té doby se bude pravděpodobně nutné použít nebo vytvořit objekty modelu COM pomocí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Vzájemná funkční spolupráce s modelu COM, nebo *zprostředkovatel komunikace s objekty COM*, vám umožní použít při přechodu do stávajících objektů COM [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vlastním tempem.  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace nakonec nahradí vyvinuté pomocí modelu COM. Do té doby se možná budete muset použít nebo vytvořit objekty modelu COM pomocí sady Visual Studio. Vzájemná funkční spolupráce s modelu COM, nebo *zprostředkovatel komunikace s objekty COM*, vám umožní použít při přechodu do stávajících objektů COM [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vlastním tempem.  
   
  Pomocí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k vytvoření komponenty modelu COM, můžete použít spoluprací COM bez registrace. Díky tomu můžete řídit, která verze knihoven DLL je povoleno, když více než jedna verze je nainstalována v počítači a umožňuje koncovým uživatelům pomocí příkazu XCOPY nebo FTP zkopírujte vaší aplikace do příslušného adresáře v počítači, kde můžete spustit. Další informace najdete v tématu [spoluprací COM bez registrace](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).  
   
@@ -49,7 +50,7 @@ Modelu COM (Component Object) umožňuje zpřístupnění jeho funkce pro ostatn
  Další informace o sestavení a sestavení manifesty najdete v tématu [sestavení a globální mezipaměť sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).  
   
 ### <a name="importing-and-exporting-type-libraries"></a>Import a export knihovny typů  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]obsahuje nástroje, Tlbimp, který umožňuje importovat informace z knihovny typů do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Knihovny typů ze sestavení můžete vygenerovat pomocí nástroje Tlbexp.  
+ Obsahuje nástroje, Tlbimp, který umožňuje importovat informace z knihovny typů do sady Visual Studio [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Knihovny typů ze sestavení můžete vygenerovat pomocí nástroje Tlbexp.  
   
  Informace o Tlbimp a Tlbexp najdete v tématu [Tlbimp.exe (Importér knihovny)](../../../framework/tools/tlbimp-exe-type-library-importer.md) a [Tlbexp.exe (Exportér knihovny)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
   

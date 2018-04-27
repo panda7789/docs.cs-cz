@@ -1,12 +1,13 @@
 ---
-title: "Návod: Vytváření rozšiřitelné aplikace"
-ms.custom: 
+title: 'Návod: Vytváření rozšiřitelné aplikace'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - add-in-side adapter [.NET Framework]
 - contracts for add-in pipelines [.NET Framework]
 ms.assetid: 694a33c5-a040-450d-aed5-ac49fc88ce61
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5cee99346d19c632739bcc6540c43f1a35217a2f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8946e30ac9d7a224af7801bc721e7d9cf6e1fab0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Návod: Vytváření rozšiřitelné aplikace
 Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché Kalkulačka funkcí. Nepředvádí scénářem z reálného prostředí; Místo toho ukazuje základní funkce kanálu a jak doplňku poskytuje služby pro hostitele.  
@@ -61,14 +63,14 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché K
 ## <a name="prerequisites"></a>Požadavky  
  Budete potřebovat k dokončení tohoto názorného postupu:  
   
--   [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
+-   Visual Studio.  
   
 ## <a name="creating-a-visual-studio-solution"></a>Vytváření řešení sady Visual Studio  
- Použít řešení v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] tak, aby obsahovala projektů segmenty kanálu.  
+ Pomocí řešení v sadě Visual Studio projektů segmenty kanálu.  
   
 #### <a name="to-create-the-pipeline-solution"></a>Chcete-li vytvořit kanál řešení  
   
-1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vytvořte nový projekt s názvem `Calc1Contract`. Založit na **knihovny tříd** šablony.  
+1.  V sadě Visual Studio vytvořte nový projekt s názvem `Calc1Contract`. Založit na **knihovny tříd** šablony.  
   
 2.  Název řešení `CalculatorV1`.  
   

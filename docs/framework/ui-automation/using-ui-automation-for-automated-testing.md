@@ -1,28 +1,30 @@
 ---
-title: "Použití automatizace uživatelského rozhraní pro automatizované testování"
-ms.custom: 
+title: Použití automatizace uživatelského rozhraní pro automatizované testování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - automated testing
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 128af9a015d25985b7075f5b670fea36c6773267
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6539829feacf8c9a5c9c1339df299a21ac5fe64f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
@@ -30,9 +32,9 @@ ms.lasthandoff: 12/22/2017
   
  Tento přehled popisuje jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] může být užitečné jako rozhraní pro programový přístup v automatizované testování scénáře.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje jednotné objektový model, který umožňuje všechny [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] architektury vystavit komplexní a bohaté funkce dostupné a snadno automatizované způsobem.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytuje jednotné objektový model, který umožňuje všechny [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] architektury vystavit komplexní a bohaté funkce dostupné a snadno automatizované způsobem.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]byl vyvinut jako následníka k [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)]. [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)]existující framework určená k poskytování řešení pro zpřístupnění ovládací prvky a aplikace. [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)]nebyl navržen s testovací automatizace v paměti, i když se vyvinul tuto roli z důvodu velmi podobné požadavky na usnadnění přístupu a automatizace. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], kromě poskytování přesnější řešení pro usnadnění přístupu, je také určená speciálně pro poskytuje robustní funkce pro automatizované testování. Například [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] spoléhá na jednom rozhraní jak vystavit informace o uživatelském rozhraní a shromažďovat informace, které na produkty; [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odděluje dva modely.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] byl vyvinut jako následníka k [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)]. [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] existující framework určená k poskytování řešení pro zpřístupnění ovládací prvky a aplikace. [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] nebyl navržen s testovací automatizace v paměti, i když se vyvinul tuto roli z důvodu velmi podobné požadavky na usnadnění přístupu a automatizace. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], kromě poskytování přesnější řešení pro usnadnění přístupu, je také určená speciálně pro poskytuje robustní funkce pro automatizované testování. Například [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] spoléhá na jednom rozhraní jak vystavit informace o uživatelském rozhraní a shromažďovat informace, které na produkty; [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odděluje dva modely.  
   
  Zprostředkovatel i klienta jsou nutné k implementaci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] mohla sloužit jako nástroj na automatizovaných testů. Zprostředkovatelé automatizace uživatelského rozhraní jsou aplikace, jako je Microsoft Word, Excel, a na základě jiné aplikace třetí strany nebo ovládací prvky [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] operačního systému. Klienti automatizace uživatelského rozhraní patří automatizovaných testů skripty a aplikací využívajících technologie usnadnění.  
   
@@ -50,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Implementing_UI_Automation"></a>   
 ### <a name="implementing-ui-automation"></a>Implementace automatizace uživatelského rozhraní  
- Jak už bylo zmíněno dříve, bez jednotný model poskytované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], je vyžadován nástroje test a vývojáři vědět informace specifické pro framework tak, aby získal vlastnosti a chování ovládacích prvků v dané platformy. Vzhledem k tomu může být několik různých uživatelského rozhraní architektury přítomen jeden kdykoli v rámci [!INCLUDE[TLA2#tla_win](../../../includes/tla2sharptla-win-md.md)] operačních systémů, včetně [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)], a [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)], může být složitý úkol k testování více aplikací s ovládacími prvky, které pravděpodobně Podobně jako u. Například následující tabulka popisuje názvy vlastností konkrétní rozhraní potřebnou k načtení název (nebo text) přidružené k ovládacímu prvku tlačítko a zobrazuje ekvivalentní jedné [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnost.  
+ Jak už bylo zmíněno dříve, bez jednotný model poskytované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], je vyžadován nástroje test a vývojáři vědět informace specifické pro framework tak, aby získal vlastnosti a chování ovládacích prvků v dané platformy. Vzhledem k tomu může být několik různých uživatelského rozhraní architektury přítomen jeden kdykoli v operačních systémech Windows, včetně [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)], a [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)], může být složitý úkol k testování více aplikací s ovládacími prvky, které vypadají podobně jako . Například následující tabulka popisuje názvy vlastností konkrétní rozhraní potřebnou k načtení název (nebo text) přidružené k ovládacímu prvku tlačítko a zobrazuje ekvivalentní jedné [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnost.  
   
 |Automatizace uživatelského rozhraní – typ ovládacího prvku|Uživatelské rozhraní Framework|Určité vlastnosti Framework|Vlastnosti automatizace uživatelského rozhraní|  
 |--------------------------------|------------------|---------------------------------|----------------------------|  
@@ -70,7 +72,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Programmatic_Access"></a>   
 ### <a name="programmatic-access"></a>Programový přístup  
- Programový přístup poskytuje schopnost napodobují prostřednictvím kódu, všechny interakce a prostředí, které jsou vystavené tradiční myši a vstup z klávesnice. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Umožňuje programový přístup prostřednictvím pět součásti:  
+ Programový přístup poskytuje schopnost napodobují prostřednictvím kódu, všechny interakce a prostředí, které jsou vystavené tradiční myši a vstup z klávesnice. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje programový přístup prostřednictvím pět součásti:  
   
 -   [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Stromu usnadňuje navigace prostřednictvím strukturu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Stromu vychází z kolekce hWnd společnosti. Další informace najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
   
@@ -87,16 +89,16 @@ ms.lasthandoff: 12/22/2017
  Možnost jednoznačně identifikovat a následně vyhledat libovolný ovládací prvek v rámci [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] poskytuje základ pro aplikace v automatizovaných testů pracovat, [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Existuje několik [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] používané klienty a poskytovatelů, které pomáhají v této vlastnosti.  
   
 #### <a name="automationid"></a>AutomationID  
- Jednoznačně identifikuje element automation z uzlů na stejné úrovni. <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>nelokalizovaný, na rozdíl od vlastnosti, jako <xref:System.Windows.Automation.AutomationElement.NameProperty> , je obvykle lokalizované Pokud produkt získá dodaný v několika jazycích. V tématu [používání vlastnosti AutomationID](../../../docs/framework/ui-automation/use-the-automationid-property.md).  
+ Jednoznačně identifikuje element automation z uzlů na stejné úrovni. <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> nelokalizovaný, na rozdíl od vlastnosti, jako <xref:System.Windows.Automation.AutomationElement.NameProperty> , je obvykle lokalizované Pokud produkt získá dodaný v několika jazycích. V tématu [používání vlastnosti AutomationID](../../../docs/framework/ui-automation/use-the-automationid-property.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>nezaručuje jedinečnou identitu v rámci stromu automatizace. Aplikace může například obsahovat ovládacího prvku nabídka s více položek nabídek nejvyšší úrovně, které obsahovat více podřízených položek nabídky. Tyto položky sekundárním nabídce může být označeno obecné schématu, jako je například "Item1, položka 2, Item3, atd.", což duplicitní identifikátory pro podřízené mezi nabídek na nejvyšší úrovni.  
+>  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> nezaručuje jedinečnou identitu v rámci stromu automatizace. Aplikace může například obsahovat ovládacího prvku nabídka s více položek nabídek nejvyšší úrovně, které obsahovat více podřízených položek nabídky. Tyto položky sekundárním nabídce může být označeno obecné schématu, jako je například "Item1, položka 2, Item3, atd.", což duplicitní identifikátory pro podřízené mezi nabídek na nejvyšší úrovni.  
   
 #### <a name="controltype"></a>ControlType  
  Určuje typ ovládacího prvku reprezentována element automatizace. Důležité informace lze odvodit z znalosti o typ ovládacího prvku. V tématu [typy – Přehled ovládacího prvku automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md).  
   
 #### <a name="nameproperty"></a>NameProperty  
- Toto je textový řetězec, který identifikuje nebo vysvětlující ovládacího prvku. <xref:System.Windows.Automation.AutomationElement.NameProperty>musí být použit s opatrní, protože je možné lokalizovat. V tématu [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+ Toto je textový řetězec, který identifikuje nebo vysvětlující ovládacího prvku. <xref:System.Windows.Automation.AutomationElement.NameProperty> musí být použit s opatrní, protože je možné lokalizovat. V tématu [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
   
 <a name="Steps_Required_To_Automate_the_UI_in_a_Test_Application"></a>   
 ### <a name="implementing-ui-automation-in-a-test-application"></a>Implementace automatizace uživatelského rozhraní v testovací aplikace  

@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 64a6fd2f5cbaee17ac35d7b4bd6f08326eafac64
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: ff475259d1835a048d6260cabf4f1d46d2436954
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronní programování, je velmi běžné jeden asynchronní operaci na dokončení pro vyvolání druhá operace a předat data. Obvyklým byla provedena pomocí metody zpětného volání. V Task Parallel Library stejné funkce poskytované *úloh pokračování*. Úloha pokračování (známou taky stejně jako pokračování) je asynchronní úkol, který je vyvolán jiná úloha, která se označuje jako *předchůdce*, až se dokončí předchůdce.  
@@ -130,7 +130,7 @@ V asynchronní programování, je velmi běžné jeden asynchronní operaci na d
   
  Pokračování stavu je užitečné, když převést stávající kód, který používá [asynchronní programování modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) použití TPL. V APM, je obvykle zadat stav objektu v **začít *** metoda* metoda a později přístup, který stavu pomocí <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> vlastnost. Pomocí <xref:System.Threading.Tasks.Task.ContinueWith%2A> metodu, můžete zachovat tento stav při převodu kód, který používá APM použití TPL.  
   
- Pokračování stavu může být také užitečná při práci s <xref:System.Threading.Tasks.Task> objekty v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] ladicí program. Například v **paralelních úloh** okně **úloh** sloupec zobrazuje řetězcovou reprezentaci objektu stav pro každý úkol. Další informace o **paralelních úloh** okně najdete v části [používání okna úloh](/visualstudio/debugger/using-the-tasks-window).  
+ Pokračování stavu může být také užitečná při práci s <xref:System.Threading.Tasks.Task> objekty v ladicím programu sady Visual Studio. Například v **paralelních úloh** okně **úloh** sloupec zobrazuje řetězcovou reprezentaci objektu stav pro každý úkol. Další informace o **paralelních úloh** okně najdete v části [používání okna úloh](/visualstudio/debugger/using-the-tasks-window).  
   
  Následující příklad ukazuje, jak se používání stavu pokračování. Vytvoří řetězec úloh pokračování. Každý úkol poskytuje aktuální čas <xref:System.DateTime> objekt, pro `state` parametr <xref:System.Threading.Tasks.Task.ContinueWith%2A> metoda. Každý <xref:System.DateTime> objekt představuje čas, kdy bude úloha pokračování vytvořena. Každý úkol vytváří jako výsledek a sekundu <xref:System.DateTime> objekt, který představuje čas, kdy na dokončení úlohy. Po dokončení všech úloh tento příklad zobrazuje čas vytvoření a čas, na které každý pokračování úkol dokončí.  
   

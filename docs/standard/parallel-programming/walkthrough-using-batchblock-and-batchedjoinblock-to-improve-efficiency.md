@@ -17,11 +17,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c9ea53fb186551a24f678d905d35caaaa0c26494
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e9305fd2a0e61a71f6875d6061f835e9cdae5dd1
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Postupy: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
 Knihovna toku dat TPL poskytuje <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> třídy, aby mohli přijímat a vyrovnávací paměť dat z jednoho nebo více zdrojů a potom rozšíří na tato data ve vyrovnávací paměti jako jedna kolekce. Tento mechanismus dávkování je užitečné, když shromažďovat data z jednoho nebo více zdrojů a potom zpracovat více datové prvky, jako dávku. Představte si třeba aplikaci, která používá toku dat vložení záznamů do databáze. Tato operace může být efektivnější, pokud jsou ve stejnou dobu namísto postupně postupně vkládána více položek. Tento dokument popisuje postup použití <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> operace vložení třída zlepšit efektivitu takovou databázi. Také popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> třída zaznamenat výsledky a všechny výjimky, které dojít, když program načte z databáze.
@@ -35,7 +35,7 @@ Knihovna toku dat TPL poskytuje <xref:System.Threading.Tasks.Dataflow.BatchBlock
 2.  Ujistěte se, že máte kopii databáze Northwind, Northwind.sdf v počítači k dispozici. Tento soubor se obvykle nachází ve složce % Program Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\.  
   
     > [!IMPORTANT]
-    >  V některých verzích systému Windows, nemůžete se připojit k Northwind.sdf Pokud [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] běží v režimu bez oprávnění správce. Chcete-li se připojit k Northwind.sdf, spusťte [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] nebo [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] příkazového řádku v **spustit jako správce** režimu.  
+    >  V některých verzích systému Windows nemůže připojit k Northwind.sdf Pokud Visual Studio je spuštěna v režimu bez oprávnění správce. Připojit k Northwind.sdf, spusťte Visual Studio nebo příkazového řádku v sadě Visual Studio **spustit jako správce** režimu.  
   
  Tento názorný postup obsahuje následující části:  
   
@@ -57,7 +57,7 @@ Knihovna toku dat TPL poskytuje <xref:System.Threading.Tasks.Dataflow.BatchBlock
 ## <a name="creating-the-console-application"></a>Vytvoření konzolové aplikace  
   
 <a name="consoleApp"></a>   
-1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vytvořit Visual C# nebo Visual Basic **konzolové aplikace** projektu. V tomto dokumentu je projekt s názvem `DataflowBatchDatabase`.  
+1.  V sadě Visual Studio vytvořit Visual C# nebo Visual Basic **konzolové aplikace** projektu. V tomto dokumentu je projekt s názvem `DataflowBatchDatabase`.  
   
 2.  Ve vašem projektu přidejte odkaz na System.Data.SqlServerCe.dll a odkaz na System.Threading.Tasks.Dataflow.dll.  
   

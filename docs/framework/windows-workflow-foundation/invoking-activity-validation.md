@@ -1,29 +1,30 @@
 ---
-title: "Volání ověření aktivity"
-ms.custom: 
+title: Volání ověření aktivity
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 22bef766-c505-4fd4-ac0f-7b363b238969
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f22fc7dc53f52b47be2da3313f678825d4362750
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 39c059e7d8ed2191a4e0ce42d7d5b2087db84a5c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="invoking-activity-validation"></a>Volání ověření aktivity
-Aktivita ověření poskytuje metodu, jak identifikovat a zprávy o chybách v konfiguraci libovolné aktivity před jeho spuštění. Ověření nastane, když pracovní postup se mění v Návrháři pracovních postupů a všechny chyby ověření nebo upozornění se zobrazí v Návrháři pracovních postupů. Ověřování také dochází za běhu, při vyvolání pracovního postupu, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověření výchozí vyvolá výjimku. [!INCLUDE[wf](../../../includes/wf-md.md)]poskytuje <xref:System.Activities.Validation.ActivityValidationServices> třídu, která lze použít aplikace pracovního postupu a nástrojů vývojáři explicitně ověření aktivity. Toto téma popisuje postup použití <xref:System.Activities.Validation.ActivityValidationServices> k provedení ověření aktivity.  
+Aktivita ověření poskytuje metodu, jak identifikovat a zprávy o chybách v konfiguraci libovolné aktivity před jeho spuštění. Ověření nastane, když pracovní postup se mění v Návrháři pracovních postupů a všechny chyby ověření nebo upozornění se zobrazí v Návrháři pracovních postupů. Ověřování také dochází za běhu, při vyvolání pracovního postupu, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověření výchozí vyvolá výjimku. Windows Workflow Foundation (WF) poskytuje <xref:System.Activities.Validation.ActivityValidationServices> třídu, která lze použít aplikace pracovního postupu a nástrojů vývojáři explicitně ověření aktivity. Toto téma popisuje postup použití <xref:System.Activities.Validation.ActivityValidationServices> k provedení ověření aktivity.  
   
 ## <a name="using-activityvalidationservices"></a>Pomocí ActivityValidationServices  
- <xref:System.Activities.Validation.ActivityValidationServices>má dva <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> přetížení, které se používají k vyvolání logiku ověření aktivity. První přetížení trvá kořenovou aktivitu k ověření a vrátí kolekci ověření chyby a upozornění. V následujícím příkladu, vlastní `Add` aktivita se používá, že má dva požadované argumenty.  
+ <xref:System.Activities.Validation.ActivityValidationServices> má dva <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> přetížení, které se používají k vyvolání logiku ověření aktivity. První přetížení trvá kořenovou aktivitu k ověření a vrátí kolekci ověření chyby a upozornění. V následujícím příkladu, vlastní `Add` aktivita se používá, že má dva požadované argumenty.  
   
 ```csharp  
 public sealed class Add : CodeActivity<int>  
@@ -62,7 +63,7 @@ Activity wf = new Sequence
 };  
 ```  
   
- Tento pracovní postup může být ověřen voláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>Vrátí kolekci všechny chyby ověření nebo upozornění obsažené aktivity a všechny podřízené objekty, jak je znázorněno v následujícím příkladu.  
+ Tento pracovní postup může být ověřen voláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> Vrátí kolekci všechny chyby ověření nebo upozornění obsažené aktivity a všechny podřízené objekty, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 ValidationResults results = ActivityValidationServices.Validate(wf);  
@@ -243,7 +244,7 @@ else
 >  Autoři vlastní aktivity může poskytnout logiku ověření v nějaké aktivitě <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsat. Jakékoli výjimky, které jsou vyvolány z <xref:System.Activities.CodeActivity.CacheMetadata%2A> nejsou považovány za chyby ověření. Tyto výjimky bude vyhnuli z volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a musí být zpracována volající.  
   
 ## <a name="using-validationsettings"></a>Pomocí ValidationSettings  
- Ve výchozím nastavení, všechny aktivity ve stromové struktuře aktivity jsou vyhodnocována po ověření je vyvolané <xref:System.Activities.Validation.ActivityValidationServices>. <xref:System.Activities.Validation.ValidationSettings>umožňuje ověření k přizpůsobení v několika různými způsoby podle konfigurace jeho tři vlastnosti. <xref:System.Activities.Validation.ValidationSettings.SingleLevel%2A>Určuje, zda by měl validátor provede stromu celý aktivity nebo platí pouze logiku ověření pro zadané aktivity. Výchozí hodnota pro tuto hodnotu je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>Určuje další omezení mapování z typu do seznamu omezení. Pro základní typ každé aktivity ve stromové struktuře aktivity ověřován je vyhledávání do <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>. Pokud je nalezen odpovídající seznamu omezení, všechna omezení v seznamu se vyhodnocují aktivity. <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A>Určuje, zda validátor by měly vyhodnotit všechna omezení nebo jenom ty zadaný v <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>. Výchozí hodnota je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>a <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> jsou užitečné pro hostitele autoři pracovního postupu přidat další ověřování pro pracovní postupy, jako je například omezení zásad pro nástroje, jako je FxCop. [!INCLUDE[crabout](../../../includes/crabout-md.md)]omezení, najdete v části [deklarativní omezení](../../../docs/framework/windows-workflow-foundation/declarative-constraints.md).  
+ Ve výchozím nastavení, všechny aktivity ve stromové struktuře aktivity jsou vyhodnocována po ověření je vyvolané <xref:System.Activities.Validation.ActivityValidationServices>. <xref:System.Activities.Validation.ValidationSettings> umožňuje ověření k přizpůsobení v několika různými způsoby podle konfigurace jeho tři vlastnosti. <xref:System.Activities.Validation.ValidationSettings.SingleLevel%2A> Určuje, zda by měl validátor provede stromu celý aktivity nebo platí pouze logiku ověření pro zadané aktivity. Výchozí hodnota pro tuto hodnotu je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> Určuje další omezení mapování z typu do seznamu omezení. Pro základní typ každé aktivity ve stromové struktuře aktivity ověřován je vyhledávání do <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>. Pokud je nalezen odpovídající seznamu omezení, všechna omezení v seznamu se vyhodnocují aktivity. <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> Určuje, zda validátor by měly vyhodnotit všechna omezení nebo jenom ty zadaný v <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>. Výchozí hodnota je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> a <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> jsou užitečné pro hostitele autoři pracovního postupu přidat další ověřování pro pracovní postupy, jako je například omezení zásad pro nástroje, jako je FxCop. [!INCLUDE[crabout](../../../includes/crabout-md.md)] omezení, najdete v části [deklarativní omezení](../../../docs/framework/windows-workflow-foundation/declarative-constraints.md).  
   
  Chcete-li použít <xref:System.Activities.Validation.ValidationSettings>, nakonfigurujte požadované vlastnosti a předejte ji ve volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. V tomto příkladu pracovní postup, se skládá z <xref:System.Activities.Statements.Sequence> s vlastní `Add` ověření aktivity. `Add` Aktivita má dva povinnými argumenty.  
   
@@ -313,4 +314,4 @@ else
   
  Tento kód zobrazí následující výstup:  
   
- **Žádná varování nebo chyby** i když `Add` aktivita vyžaduje argumenty, které nejsou vázané, ověření je úspěšné, protože je vyhodnocena pouze kořenové aktivity. Tento typ ověření, který je užitečný pro ověření pouze konkrétní prvky ve stromové struktuře aktivity, jako je například ověřování změnu vlastnosti z jediné aktivity v návrháři. Všimněte si, že pokud je tento pracovní postup je vyvolána, úplného ověření nakonfigurované v pracovním postupu vyhodnotí a <xref:System.Activities.InvalidWorkflowException> by být vyvolána. <xref:System.Activities.Validation.ActivityValidationServices>a <xref:System.Activities.Validation.ValidationSettings> konfigurovat pouze ověření explicitně vyvolané hostitele a není ověřování, který nastane, když je volána pracovního postupu.
+ **Žádná varování nebo chyby** i když `Add` aktivita vyžaduje argumenty, které nejsou vázané, ověření je úspěšné, protože je vyhodnocena pouze kořenové aktivity. Tento typ ověření, který je užitečný pro ověření pouze konkrétní prvky ve stromové struktuře aktivity, jako je například ověřování změnu vlastnosti z jediné aktivity v návrháři. Všimněte si, že pokud je tento pracovní postup je vyvolána, úplného ověření nakonfigurované v pracovním postupu vyhodnotí a <xref:System.Activities.InvalidWorkflowException> by být vyvolána. <xref:System.Activities.Validation.ActivityValidationServices> a <xref:System.Activities.Validation.ValidationSettings> konfigurovat pouze ověření explicitně vyvolané hostitele a není ověřování, který nastane, když je volána pracovního postupu.

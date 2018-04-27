@@ -1,24 +1,26 @@
 ---
-title: "Zpracované vazby služby MSMQ"
-ms.custom: 
+title: Zpracované vazby služby MSMQ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 71f5cb8d-f1df-4e1e-b8a2-98e734a75c37
-caps.latest.revision: "50"
+caps.latest.revision: 50
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 702f3ac45ade5fcd2f37d256ce1213a79f012ae3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e0529aa940c02ee79e25034e57f89d4b476861b8
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="transacted-msmq-binding"></a>Zpracované vazby služby MSMQ
 Tento příklad ukazuje, jak provést zpracovaných komunikace ve frontě pomocí služby Řízení front zpráv (MSMQ).  
@@ -33,19 +35,19 @@ Tento příklad ukazuje, jak provést zpracovaných komunikace ve frontě pomoc�
  V této ukázce klient odešle dávku zpráv do služby z v rámci oboru transakce. Služba v rámci oboru transakce definované ve službě jsou pak přijímá zprávy odeslané do fronty.  
   
  Kontrakt služby je `IOrderProcessor`, jak je znázorněno v následujícím ukázkovém kódu. Rozhraní definuje jednosměrné služby, který je vhodný pro použití s front.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-```  
-  
+```
+
  Chování služby definuje chování operaci s `TransactionScopeRequired` nastavena na `true`. To zajistí, že je žádné správci prostředků přístup metodu použít stejný obor transakce, který se používá k načtení zprávy z fronty. Také zaručuje, že pokud metoda vyvolá výjimku, bude vráceno do fronty. Bez nastavení toto chování operace, zařazených do fronty kanál vytvoří transakci čtení zprávy ve frontě a provede ji automaticky před odesláním tak, že pokud se operace nezdaří, dojde ke ztrátě zprávy. Nejběžnější scénáře je pro operace služby zařazení v transakci, která slouží k načtení zprávy z fronty, jak je ukázáno v následujícím kódu.  
-  
-```  
+
+```csharp
  // This service class that implements the service contract.  
  // This added code writes output to the console window.  
  public class OrderProcessorService : IOrderProcessor  
@@ -58,11 +60,11 @@ public interface IOrderProcessor
      }  
   …  
 }  
-```  
-  
+```
+
  Služba je sám sebou hostované. Pokud používáte přenos MSMQ, používá fronty musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služby obsahuje kód kontrolovat existenci fronty a vytvořit frontu, pokud neexistuje. Název fronty je číst z konfiguračního souboru. Základní adresa se používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování proxy ke službě.  
-  
-```  
+
+```csharp
 // Host the service within this EXE console application.  
 public static void Main()  
 {  
@@ -89,8 +91,8 @@ public static void Main()
         serviceHost.Close();  
     }  
 }  
-```  
-  
+```
+
  Název fronty služby MSMQ je zadaný v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázka konfigurace.  
   
 ```xml  
@@ -103,8 +105,8 @@ public static void Main()
 >  Název fronty používá tečku (.) pro místní počítač a oddělovačů zpětné lomítko, v cestě, při vytváření fronty pomocí <xref:System.Messaging>. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Koncový bod používá adresu fronty s schéma net.msmq, používá "localhost" k označení místního počítače, a používá předávání lomítka v jeho cesty.  
   
  Klient vytvoří oboru transakce. Komunikace s fronty probíhá v rámci oboru transakce, příčinou je považován za atomické jednotky, kde jsou všechny zprávy odeslané do fronty nebo žádné zprávy jsou odesílány do fronty. Transakce se potvrdí voláním <xref:System.Transactions.TransactionScope.Complete%2A> v oboru transakce.  
-  
-```  
+
+```csharp
 // Create a client.  
 OrderProcessorClient client = new OrderProcessorClient();  
   
@@ -142,14 +144,14 @@ client.Close();
 Console.WriteLine();  
 Console.WriteLine("Press <ENTER> to terminate client.");  
 Console.ReadLine();  
-```  
-  
+```
+
  Pokud chcete ověřit, že transakce funguje, měnit klienta, a jak je znázorněno v následujícím ukázkovém kódu komentářů oboru transakce, znovu sestavte řešení a spuštění klienta.  
-  
-```  
+
+```csharp
 //scope.Complete();  
-```  
-  
+```
+
  Protože transakce není dokončena, nejsou zprávy odeslané do fronty.  
   
  Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Uvidíte služby přijmout zprávy z klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby. Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu. Spuštění klienta, vypněte ho a potom spuštění služby a stále obdrží zprávy.  

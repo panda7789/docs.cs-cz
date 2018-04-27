@@ -1,24 +1,26 @@
 ---
-title: "Fronty nedoručených zpráv"
-ms.custom: 
+title: Fronty nedoručených zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-caps.latest.revision: "35"
+caps.latest.revision: 35
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 09a41abc8bc9fc3469ba35d7c7cfbe85d05ca174
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9892579633103f1e7a6612c09865c91c559df34c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tento příklad znázorňuje postup zpracování a zpracování zpráv, které selhaly doručení. Je založena na [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) ukázka. V tomto příkladu `netMsmqBinding` vazby. Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.  
@@ -35,7 +37,7 @@ Tento příklad znázorňuje postup zpracování a zpracování zpráv, které s
   
  Frontu nedoručených zpráv v `NetMsmqBinding` vazba je vyjádřena v následujících vlastností:  
   
--   <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>Vlastnost express druh frontu nedoručených zpráv požadované klientem. Tento výčet má následující hodnoty:  
+-   <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> Vlastnost express druh frontu nedoručených zpráv požadované klientem. Tento výčet má následující hodnoty:  
   
 -   `None`: Klient vyžaduje žádná fronta nedoručených zpráv.  
   
@@ -43,28 +45,28 @@ Tento příklad znázorňuje postup zpracování a zpracování zpráv, které s
   
 -   `Custom`: Vlastní frontu nedoručených zpráv zadán pomocí <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost se používá k ukládání neaktivní zprávy. Tato funkce je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. To se používá, když aplikace musí používat vlastní frontu nedoručených zpráv místo sdílení s dalších aplikací běžících na stejném počítači.  
   
--   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>Vlastnost express konkrétní fronty, které chcete použít jako frontu nedoručených zpráv. Toto je k dispozici pouze v [!INCLUDE[wv](../../../../includes/wv-md.md)].  
+-   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> Vlastnost express konkrétní fronty, které chcete použít jako frontu nedoručených zpráv. Toto je k dispozici pouze v [!INCLUDE[wv](../../../../includes/wv-md.md)].  
   
  V této ukázce klient odešle dávku zpráv do služby z rozsahu transakce a určuje nahodile nízkou hodnotu "time-to-live" pro tyto zprávy (přibližně 2 sekundy). Klient také určuje vlastní frontu nedoručených zpráv používat k zařazování zprávy, jejichž platnost vypršela.  
   
  Klientská aplikace můžou číst zprávy do fronty nedoručených zpráv a buď opakování odesílání zprávy nebo opravte chybu, která způsobila, že na původní zprávu o umístit do fronty nedoručených zpráv a odeslat zprávu. V ukázce klient se zobrazí chybová zpráva.  
   
  Kontrakt služby je `IOrderProcessor`, jak je znázorněno v následujícím ukázkovém kódu.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-```  
-  
+```
+
  Služba kód v ukázce je u [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).  
   
  Komunikace se službou probíhá v rámci oboru transakce. Tato služba čte zprávy z fronty, provede operaci a potom zobrazí výsledky operace. Aplikace také vytvoří frontu nedoručených zpráv nedoručených zpráv.  
-  
-```  
+
+```csharp
 //The service contract is defined in generatedClient.cs, generated from the service by the svcutil tool.  
   
 //Client implementation code.  
@@ -117,8 +119,8 @@ class Client
         Console.ReadLine();  
     }  
 }  
-```  
-  
+```
+
  Konfigurace klienta určuje krátká doba trvání pro zprávy cílové službě. Pokud zpráva nemůže přenášených v rámci zadaná doba trvání, zprávy vyprší a je přesunuta do fronty nedoručených zpráv.  
   
 > [!NOTE]
@@ -163,8 +165,8 @@ class Client
 >  Frontu nedoručených zpráv je fronty klienta a místní účet správce klienta fronty.  
   
  Implementace služby nedoručených zpráv kontroluje z důvodu, že se že zprávu nepodařilo doručení a trvá opravná opatření. Důvod selhání zpráv zachytí ve dvou výčty <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> a <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus%2A>. Můžete získat <xref:System.ServiceModel.Channels.MsmqMessageProperty> z <xref:System.ServiceModel.OperationContext> jak je znázorněno v následujícím ukázkovém kódu:  
-  
-```  
+
+```csharp
 public void SubmitPurchaseOrder(PurchaseOrder po)  
 {  
     Console.WriteLine("Submitting purchase order did not succed ", po);  
@@ -176,15 +178,15 @@ public void SubmitPurchaseOrder(PurchaseOrder po)
     Console.WriteLine("Message Delivery Failure: {0}",   
                                                mqProp.DeliveryFailure);  
     Console.WriteLine();  
-    ….  
-}  
-```  
-  
+    …  
+}
+```
+
  Zprávy do fronty nedoručených zpráv jsou zprávy adresované do služby, která je zpracování zprávy. Proto když služba nedoručených zpráv čte zprávy z fronty [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vrstvy kanálu najde neshody v koncových bodů a není odeslat zprávu. V takovém případě zprávy je řešit pořadí zpracování služby, ale je přijatých službou nedoručených zpráv. Pro příjem zprávy, která je určena k jinému koncovému bodu, filtr adres tak, aby odpovídaly libovolná adresa je uveden v `ServiceBehavior`. To je nutné úspěšně zpracovat zprávy, které se načítají z fronty nedoručených zpráv.  
   
  V této ukázce služba nedoručených zpráv znovu odešle zprávu Pokud z důvodu selhání je, že zpráva Vypršel časový limit. Z jiných důvodů zobrazí chyba doručení, jak je znázorněno v následujícím ukázkovém kódu:  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single, ConcurrencyMode=ConcurrencyMode.Single, AddressFilterMode=AddressFilterMode.Any)]  
@@ -237,8 +239,8 @@ public class PurchaseOrderDLQService : IOrderProcessor
         }  
     }  
 }   
-```  
-  
+```
+
  Následující příklad ukazuje konfiguraci nedoručených zpráv:  
   
 ```xml  

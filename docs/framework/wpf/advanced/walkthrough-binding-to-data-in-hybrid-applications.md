@@ -1,12 +1,13 @@
 ---
-title: "Návod: Připojení k datům v hybridních aplikacích"
-ms.custom: 
+title: 'Návod: Připojení k datům v hybridních aplikacích'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-caps.latest.revision: "39"
+caps.latest.revision: 39
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c1348f3a57dd04d58298c9746b74a7c3a1baf30c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: b8afe4732363ec61d73db13e9b190381cbd8f29d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytuje uživatelům přístup k základní data, zda používáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete pomocí datové vazby v hybridní aplikace, které zahrnují oba [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky.  
@@ -90,7 +92,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytuje už
      [!code-xaml[WPFWithWFAndDatabinding#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
   
 ## <a name="specifying-the-form-layout"></a>Určení rozložení formuláře  
- Rozložení formuláře je definována mřížka s tři řádky a tři sloupce. <xref:System.Windows.Controls.Label>ovládací prvky jsou k dispozici k identifikaci každý sloupec v tabulce Zákazníci.  
+ Rozložení formuláře je definována mřížka s tři řádky a tři sloupce. <xref:System.Windows.Controls.Label> ovládací prvky jsou k dispozici k identifikaci každý sloupec v tabulce Zákazníci.  
   
 #### <a name="to-set-up-the-grid-layout"></a>Nastavit rozložení mřížky  
   
@@ -127,7 +129,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytuje už
      [!code-xaml[WPFWithWFAndDatabinding#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
   
 ## <a name="adding-the-data-source-to-the-project"></a>Přidání zdroje dat do projektu  
- S [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], můžete snadno přidat zdroje dat do projektu. Tento postup přidá silného typu datové sady do projektu. Také se přidají několik jiné třídy, které podporují, jako je například adaptéry tabulek pro každou z vybrané tabulky.  
+ Pomocí sady Visual Studio můžete snadno přidat zdroje dat do projektu. Tento postup přidá silného typu datové sady do projektu. Také se přidají několik jiné třídy, které podporují, jako je například adaptéry tabulek pro každou z vybrané tabulky.  
   
 #### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
   
@@ -160,7 +162,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytuje už
      [!code-csharp[WPFWithWFAndDatabinding#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#12)]
      [!code-vb[WPFWithWFAndDatabinding#12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#12)]  
   
-4.  Open MainWindow.xaml.  
+4.  Otevřete MainWindow.xaml.  
   
 5.  V návrhovém zobrazení nebo zobrazení jazyka XAML, vyberte <xref:System.Windows.Window> elementu.  
   
@@ -187,7 +189,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytuje už
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
- [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [Návrhář WPF](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  [Datové vazby v ukázce hybridní aplikace](http://go.microsoft.com/fwlink/?LinkID=159983)  
  [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
  [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

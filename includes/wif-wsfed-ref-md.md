@@ -1,0 +1,1 @@
+Další informace o zprávě, kterou tato třída představuje, najdete v části 13 následující specifikace: [Web Services Federation Language (WS-Federation) verze 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html) (http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html).

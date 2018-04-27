@@ -20,14 +20,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4b38cbe1bab4c3d2bf0c6ee518dd26df4ff440dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5949bebe91767539c230ba166f9389f09dc2392b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-forms"></a>Windows Forms
-Jak jsou formuláře základní jednotka vaší aplikace, je nezbytné, dáváte některé myšlenku a jejich funkce návrhu. Formulář je nakonec s prázdným projektem že, jako vývojář, zlepšují se ovládacích prvků pro vytvoření uživatelského rozhraní a kódem k manipulaci s daty. Za tímto účelem [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] poskytuje integrované vývojové prostředí (IDE), které pomáhají při psaní kódu, jakož i bohaté nastavit napsané pomocí ovládacího prvku [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Podle vzájemně doplňuje funkci těchto ovládacích prvků pomocí kódu, můžete snadno a rychle vyvíjet řešení, které potřebujete.  
+Jak jsou formuláře základní jednotka vaší aplikace, je nezbytné, dáváte některé myšlenku a jejich funkce návrhu. Formulář je nakonec s prázdným projektem že, jako vývojář, zlepšují se ovládacích prvků pro vytvoření uživatelského rozhraní a kódem k manipulaci s daty. Za tímto účelem Visual Studio poskytuje integrované vývojové prostředí (IDE), které pomáhají při psaní kódu, jakož i bohaté nastavit napsané pomocí ovládacího prvku [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Podle vzájemně doplňuje funkci těchto ovládacích prvků pomocí kódu, můžete snadno a rychle vyvíjet řešení, které potřebujete.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  

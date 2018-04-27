@@ -1,23 +1,24 @@
 ---
-title: "Externí Ruleset Toolkit"
-ms.custom: 
+title: Externí Ruleset Toolkit
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7fbac6bf8be169aca8ad61c69b8d024f44928d8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 40e28bb2b17e511a1b8953ccc8ff9bdf4f0f7392
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="external-ruleset-toolkit"></a>Externí Ruleset Toolkit
 Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovního postupu, pravidla jsou součástí sestavení. V některých případech můžete udržovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez opětovné sestavení a nasazení sestavení pracovního postupu. Tato ukázka vám umožňuje spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu. To umožňuje, aby automaticky začlenit RuleSet změny spuštěných instancí pracovního postupu.  
@@ -27,7 +28,7 @@ Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovní
 > [!NOTE]
 >  Tato ukázka vyžaduje [Microsoft SQL Server](http://go.microsoft.com/fwlink/?LinkId=96181).  
   
- [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)]poskytuje editor RuleSet v rámci Windows Workflow Foundation (WF). Můžete spustit tento editor dvojitým kliknutím `Policy` aktivity v pracovním postupu; ho serializuje definovaný objekt RuleSet k souboru .rules přidružený k workflowu ( `Policy` aktivity spouští RuleSet instance pracovního postupu). Při sestavování projektu workflow, je soubor .rules zkompilovat do sestavení jako prostředek.  
+ [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)] poskytuje editor RuleSet v rámci Windows Workflow Foundation (WF). Můžete spustit tento editor dvojitým kliknutím `Policy` aktivity v pracovním postupu; ho serializuje definovaný objekt RuleSet k souboru .rules přidružený k workflowu ( `Policy` aktivity spouští RuleSet instance pracovního postupu). Při sestavování projektu workflow, je soubor .rules zkompilovat do sestavení jako prostředek.  
   
  Součástí této ukázkové zahrnout:  
   
@@ -67,9 +68,9 @@ Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovní
   
  Obrázek 3: RuleSet editoru  
   
- Toto je znovu hostování editor dialogového okna, který je součástí Windows Workflow Foundation [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] doplňku. Poskytuje stejné funkce, včetně podporu technologie Intellisense. Pravidla jsou vytvořené pro cílový typ (například pracovního postupu), který je přidružen RuleSet v nástroji; Když kliknete na tlačítko **Procházet** v dialogovém okně hlavní nástroj **typ pracovního postupu nebo selektor** dialogové okno se zobrazí, jak je znázorněno na obrázku 4.  
+ Toto je znovu hostování editor dialogového okna, která je součástí doplňku Windows Workflow Foundation Visual Studio. Poskytuje stejné funkce, včetně podporu technologie Intellisense. Pravidla jsou vytvořené pro cílový typ (například pracovního postupu), který je přidružen RuleSet v nástroji; Když kliknete na tlačítko **Procházet** v dialogovém okně hlavní nástroj **typ pracovního postupu nebo selektor** dialogové okno se zobrazí, jak je znázorněno na obrázku 4.  
   
- ![Pracovní postup &#47; Zadejte výběr](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")  
+ ![Pracovní postup &#47;zadejte výběr](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")  
   
  Obrázek 4: Výběr pracovního postupu nebo typu  
   
@@ -83,7 +84,7 @@ Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovní
   
  Obrázek 5: Ověření chyby  
   
- Z **Data** nabídky v nástroji můžete importovat a exportovat sady pravidel. Když kliknete na tlačítko **Import**, zobrazí se dialogové okno výběru souboru, ve kterém můžete vybrat soubor .rules. To může nebo nemusí být v vytvořen soubor původně [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]. Soubor .rules by měl obsahovat serializovaný seznam `RuleDefinitions` instance, který obsahuje kolekci podmínek a kolekce sady pravidel. Nástroj nepoužívá kolekci podmínky, ale použít `RuleDefinitions` .rules formátu umožňující interakci s [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] prostředí.  
+ Z **Data** nabídky v nástroji můžete importovat a exportovat sady pravidel. Když kliknete na tlačítko **Import**, zobrazí se dialogové okno výběru souboru, ve kterém můžete vybrat soubor .rules. To se může nebo nemusí být soubor původně vytvořil v sadě Visual Studio. Soubor .rules by měl obsahovat serializovaný seznam `RuleDefinitions` instance, který obsahuje kolekci podmínek a kolekce sady pravidel. Nástroj nepoužívá kolekci podmínky, ale použít `RuleDefinitions` .rules formátu umožňující interakci s prostředí Visual Studio.  
   
  Po výběru soubor .rules **RuleSet selektor** otevře se dialogové okno (viz obrázek 6). Dialogové okno můžete použít k výběru sady pravidel ze souboru, který chcete importovat (výchozí hodnota určuje všechny sady pravidel). Sady pravidel v souboru .rules nemají číslo verze, protože jejich verze v rámci projektu WF je stejná jako verze sestavení. Během procesu importu nástroj automaticky přiřadí další dostupné hlavní číslo verze (které můžete změnit po importu); Zobrazí číslo přiřazené verze v **RuleSet selektor** seznamu.  
   
@@ -141,7 +142,7 @@ Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovní
   
 9. Konfigurační soubor aplikace se přidá do projektu workflow zadat připojovací řetězec databáze, která se použije službou. To by měl být stejný připojovací řetězec používaný RuleSet nástroj, který odkazuje na databázi, která obsahuje tabulku RuleSet.  
   
-10. Teď můžete spustit `RuleSetToolkitUsageSample` projektu stejně jako všechny ostatní konzolové aplikace pracovního postupu. Stiskněte klávesu F5 nebo Ctrl + F5 v rámci [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] nebo RuleSetToolkitUsageSample.exe soubor spustit přímo.  
+10. Teď můžete spustit `RuleSetToolkitUsageSample` projektu stejně jako všechny ostatní konzolové aplikace pracovního postupu. Stiskněte klávesu F5 nebo Ctrl + F5 ve Visual Studiu nebo soubor RuleSetToolkitUsageSample.exe spustit přímo.  
   
     > [!NOTE]
     >  Protože nástroj načte sestavení ukázkové použití, je třeba nejprve zavřít nástroj RuleSet překompilovat ukázce využití.

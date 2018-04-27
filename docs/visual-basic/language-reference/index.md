@@ -17,11 +17,11 @@ ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
 caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f65df8469ecfbc1296963f95eefbb29068f1cb57
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 8cc41f5d4f60b1ed5ee81128d0ab9a53728ceb65
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="visual-basic-language-reference"></a>Referenční dokumentace jazyka Visual Basic
 Tato část obsahuje referenční informace pro různé funkce jazyka Visual Basic.  
@@ -92,4 +92,4 @@ Tato část obsahuje referenční informace pro různé funkce jazyka Visual Bas
  Poskytuje komplexní nápovědy na všechny oblasti jazyka Visual Basic.  
   
  [Visual Basic – kompilátor příkazového řádku](../../visual-basic/reference/command-line-compiler/index.md)  
- Popisuje postup použití příkazového řádku kompilátoru jako alternativu k kompilace programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE).
+ Popisuje postup použití příkazového řádku kompilátoru jako alternativu k kompilace programů z v sadě Visual Studio integrované vývojové prostředí (IDE).

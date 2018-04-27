@@ -1,8 +1,9 @@
 ---
-title: "Obousměrná podpora pro formulářové aplikace Windows"
+title: Obousměrná podpora pro formulářové aplikace Windows
 ms.date: 09/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.topic: article
 helpviewer_keywords:
 - globalization [Windows Forms], bi-directional support in Windows
@@ -13,15 +14,16 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a8ae0e958c842c2f3cf3fbb788cad1cde6e6cc2b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d670fedb2fe693a871de8f0147b81b97b4958853
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
-Můžete použít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvoření aplikace pro systém Windows podporující obousměrných jazycích (vpravo zprava doleva) jako je například arabština a hebrejština. To zahrnuje standardní formulářů, dialogová okna, MDI formuláře a všechny ovládací prvky můžete pracovat v tyto formuláře – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
+Visual Studio můžete použít k vytvoření aplikace pro systém Windows podporující obousměrných jazycích (vpravo zprava doleva) jako je například arabština a hebrejština. To zahrnuje standardní formulářů, dialogová okna, MDI formuláře a všechny ovládací prvky můžete pracovat v tyto formuláře – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
   
 ## <a name="culture-support"></a>Podpora jazykovou verzi  
  Nastavení jazykové verze uživatelského rozhraní a jazykovou verzi určit, jak funguje aplikace s daty, časy, měny a další informace. Podporu pro jazykovou verzi a jazyková verze uživatelského rozhraní je stejný pro obousměrné jazyky, jako je pro jiné jazyky.   Viz také [třídy specifické pro jazykovou verzi pro globální formuláře systému Windows a webové formuláře](http://msdn.microsoft.com/library/94ye9x8c\(v=vs.110\)) nebo [třídy specifické pro jazykovou verzi pro globální formuláře systému Windows a webové formuláře](http://msdn.microsoft.com/library/94ye9x8c\(v=vs.120\))  
@@ -33,7 +35,7 @@ Můžete použít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvo�
   
 |Ovládací prvek nebo součást|Účinek vlastnosti RightToLeft|Účinek vlastnosti RightToLeftLayout|Vyžaduje zrcadlení?|  
 |------------------------|------------------------------------|------------------------------------------|-------------------------|  
-|<xref:System.Windows.Forms.Button>|Nastaví RTL pořadí čtení. Obrátí <xref:System.Windows.Forms.ButtonBase.TextAlign%2A>, <xref:System.Windows.Forms.ButtonBase.ImageAlign%2A>, a<xref:System.Windows.Forms.ButtonBase.TextImageRelation%2A>|Neplatí|Ne|  
+|<xref:System.Windows.Forms.Button>|Nastaví RTL pořadí čtení. Obrátí <xref:System.Windows.Forms.ButtonBase.TextAlign%2A>, <xref:System.Windows.Forms.ButtonBase.ImageAlign%2A>, a <xref:System.Windows.Forms.ButtonBase.TextImageRelation%2A>|Neplatí|Ne|  
 |<xref:System.Windows.Forms.CheckBox>|Zaškrtávací políčko se zobrazí na pravé straně textu|Neplatí|Ne|  
 |<xref:System.Windows.Forms.CheckedListBox>|Všechna zaškrtávací políčka se zobrazí na pravé straně textu|Neplatí|Ne|  
 |<xref:System.Windows.Forms.ColorDialog>|Není vliv; závisí na jazyce operačního systému|Neplatí|Ne|  
@@ -49,8 +51,8 @@ Můžete použít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvo�
 |<xref:System.Windows.Forms.GroupBox>|Popisek se zobrazí vpravo zarovnaný. Podřízené ovládací prvky mohou dědit tuto vlastnost.|Použití <xref:System.Windows.Forms.TableLayoutPanel> v ovládacím prvku zprava doleva zrcadlení pro podporu|Ne|  
 |<xref:System.Windows.Forms.HScrollBar>|Začíná posouvací políčko (Flash) zarovnaný doprava|Neplatí|Ne|  
 |<xref:System.Windows.Forms.ImageList>|Není požadováno|Neplatí|Ne|  
-|<xref:System.Windows.Forms.Label>|Zobrazí zarovnaný doprava. Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a<xref:System.Windows.Forms.Label.ImageAlign%2A>|Neplatí|Ne|  
-|<xref:System.Windows.Forms.LinkLabel>|Zobrazí zarovnaný doprava. Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a<xref:System.Windows.Forms.Label.ImageAlign%2A>|Neplatí|Ne|  
+|<xref:System.Windows.Forms.Label>|Zobrazí zarovnaný doprava. Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a <xref:System.Windows.Forms.Label.ImageAlign%2A>|Neplatí|Ne|  
+|<xref:System.Windows.Forms.LinkLabel>|Zobrazí zarovnaný doprava. Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a <xref:System.Windows.Forms.Label.ImageAlign%2A>|Neplatí|Ne|  
 |<xref:System.Windows.Forms.ListBox>|Položky jsou zarovnaný doprava|Neplatí|Ne|  
 |<xref:System.Windows.Forms.ListView>|Nastaví pořadí čtení zprava doleva; elementy zůstat zarovnaný doleva|Odpovídá ovládacího prvku|Ano|  
 |<xref:System.Windows.Forms.MainMenu>|Zobrazí vpravo zarovnaný RTL pořadí čtení v době běhu (ne v době návrhu)|Neplatí|Ne|  
@@ -79,7 +81,7 @@ Můžete použít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvo�
 |<xref:System.Windows.Forms.ToolTip>|Nastaví RTL pořadí čtení|Neplatí|Ne|  
 |<xref:System.Windows.Forms.TrackBar>|Posuv nebo sledovat začíná zprava; Když <xref:System.Windows.Forms.TrackBar.Orientation%2A> je svislý, dojde k rysky vpravo|Neplatí|Ne|  
 |<xref:System.Windows.Forms.TreeView>|Nastaví RTL pořadí pouze pro čtení|Odpovídá ovládacího prvku|Ano|  
-|<xref:System.Windows.Forms.UserControl>|Svislý posuvník se zobrazí na levé straně; Vodorovný posuvník má jezdec na pravé straně|Žádné přímé podpory; použít<xref:System.Windows.Forms.TableLayoutPanel>|Ne|  
+|<xref:System.Windows.Forms.UserControl>|Svislý posuvník se zobrazí na levé straně; Vodorovný posuvník má jezdec na pravé straně|Žádné přímé podpory; použít <xref:System.Windows.Forms.TableLayoutPanel>|Ne|  
 |<xref:System.Windows.Forms.VScrollBar>|Zobrazí na levé straně místo pravé straně posouvatelného ovládacích prvků|Neplatí|Ne|  
   
 ## <a name="encoding"></a>Kódování  

@@ -1,24 +1,26 @@
 ---
 title: Relace a fronty
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0de2668eb03a658632bb8a18c711f780b333e86b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f1aeaa72937d23a321eb615ad8b1eb4ec1e7b48e
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="sessions-and-queues"></a>Relace a fronty
 Tento příklad ukazuje, jak odesílat a přijímat sadu související zprávy ve frontě komunikace přes přenosu služby Řízení front zpráv (MSMQ). V tomto příkladu `netMsmqBinding` vazby. Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.  
@@ -42,8 +44,8 @@ Tento příklad ukazuje, jak odesílat a přijímat sadu související zprávy v
  V ukázce klient odešle počet zpráv ve službě v rámci relace v rámci oboru jedné transakci.  
   
  Kontrakt služby je `IOrderTaker`, která definuje jednosměrné služby, který je vhodný pro použití s front. <xref:System.ServiceModel.SessionMode> Použít v kontraktu vidět v následujícím ukázkovém kódu označuje, že zprávy jsou součástí relace.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required)]  
 public interface IOrderTaker  
 {  
@@ -56,11 +58,11 @@ public interface IOrderTaker
     [OperationContract(IsOneWay = true)]  
     void EndPurchaseOrder();  
 }  
-```  
-  
+```
+
  Služba definuje operací služby tak, že první operace využívá v transakci, ale není automaticky dokončit transakce. Další operacích také zařazení ve stejné transakci ale neprovádějte automaticky. Poslední operaci v relaci automaticky dokončení transakce. Proto se používá stejné transakci pro několik volání operace v kontrakt služby. Pokud všechny operace, způsobí výjimku, transakce se vrátí zpět a relace je vrátit zpět do fronty. Po úspěšném poslední operace že je transakce potvrzena. Služba používá `PerSession` jako <xref:System.ServiceModel.InstanceContextMode> přijmout všechny zprávy v relaci ve stejné instanci služby.  
-  
-```  
+
+```csharp
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
 public class OrderTakerService : IOrderTaker  
 {  
@@ -92,11 +94,11 @@ public class OrderTakerService : IOrderTaker
        Console.WriteLine(po.ToString());  
     }  
 }  
-```  
-  
+```
+
  Služba je sám sebou hostované. Pokud používáte přenos MSMQ, používá fronty musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje <xref:System.Messaging> kód zkontrolujte existenci fronty a vytvoří, pokud je to nutné. Název fronty je pro čtení ze souboru konfigurace pomocí <xref:System.Configuration.ConfigurationManager.AppSettings%2A> třídy.  
-  
-```  
+
+```csharp
 // Host the service within this EXE console application.  
 public static void Main()  
 {  
@@ -123,8 +125,8 @@ public static void Main()
         serviceHost.Close();   
     }  
 }  
-```  
-  
+```
+
  Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definováno v sekci system.serviceModel konfiguračního souboru a určuje `netMsmqBinding` vazby.  
   
 ```xml  
@@ -150,8 +152,8 @@ public static void Main()
 ```  
   
  Klient vytvoří oboru transakce. Všechny zprávy v relaci jsou odesílány do fronty v oboru transakce, příčinou je považován za atomické jednotky, kde všechny zprávy úspěch nebo neúspěch. Transakce se potvrdí voláním <xref:System.Transactions.TransactionScope.Complete%2A>.  
-  
-```  
+
+```csharp
 //Create a transaction scope.  
 using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))  
 {  
@@ -178,8 +180,8 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
     // Complete the transaction.  
     scope.Complete();  
 }  
-```  
-  
+```
+
 > [!NOTE]
 >  Pouze jedné transakci můžete použít pro všechny zprávy v relaci a všechny zprávy v relaci musí být odeslány před potvrzením transakce. Zavření klienta ukončí relace. Klient proto musí být ukončeno před dokončením transakce odesílat všechny zprávy do fronty v relaci.  
   

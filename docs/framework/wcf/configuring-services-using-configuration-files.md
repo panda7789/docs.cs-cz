@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e5ad91fa70a743b7135648cb10c7c519e3559bdb
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5f1c7449372ad012280b360c09017a15733fb95b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfiguračním souborem vám umožní poskytovat chování data koncový bod a služby v okamžiku nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
@@ -37,9 +37,9 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
 ## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Soubor Web.config a App.config  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá System.Configuration konfigurace systému [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
   
- Při konfiguraci služby v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], použijte soubor Web.config nebo soubor App.config a zadejte nastavení. Volba název konfiguračního souboru je určen podle hostitelského prostředí, které zvolíte pro službu. Pokud používáte k hostování služby IIS, použijte soubor Web.config. Pokud používáte jiné hostitelské prostředí, můžete používejte soubor App.config.  
+ Při konfiguraci služby v sadě Visual Studio, použijte soubor Web.config nebo App.config soubor můžete nakonfigurovat nastavení. Volba název konfiguračního souboru je určen podle hostitelského prostředí, které zvolíte pro službu. Pokud používáte k hostování služby IIS, použijte soubor Web.config. Pokud používáte jiné hostitelské prostředí, můžete používejte soubor App.config.  
   
- V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], soubor s názvem souboru App.config se používá k vytvoření konečné konfiguračního souboru. Název poslední ve skutečnosti použili při konfiguraci závisí na název sestavení. Například sestavení s názvem "Cohowinery.exe" má název souboru finální konfiguraci "Cohowinery.exe.config". Ale stačí pro změnu souboru App.config. Změny provedené v souboru jsou automaticky vytvářeny do konfiguračního souboru konečné aplikace v době kompilace.  
+ V sadě Visual Studio soubor s názvem souboru App.config slouží k vytvoření souboru finální konfiguraci. Název poslední ve skutečnosti použili při konfiguraci závisí na název sestavení. Například sestavení s názvem "Cohowinery.exe" má název souboru finální konfiguraci "Cohowinery.exe.config". Ale stačí pro změnu souboru App.config. Změny provedené v souboru jsou automaticky vytvářeny do konfiguračního souboru konečné aplikace v době kompilace.  
   
  Pomocí App.config, soubor konfigurační systém při spuštění aplikace a používá konfiguraci sloučí soubor App.config s obsahem souboru Machine.config. Tento mechanismus umožňuje celého systému a jak jsou definovány v souboru Machine.config. Použít soubor App.config pro přepsání nastavení souboru Machine.config; tak, aby získat používají, můžete uzamknout nastavení v souboru Machine.config. V případě Web.config sloučí konfigurační systém souborů Web.config ve všech adresářích vedoucí k adresáři aplikace do konfigurace, který se použije. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Konfigurace a nastavení priority, najdete v tématech v <xref:System.Configuration> oboru názvů.  
   

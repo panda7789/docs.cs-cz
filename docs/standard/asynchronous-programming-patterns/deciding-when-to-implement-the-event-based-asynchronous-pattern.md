@@ -1,12 +1,12 @@
 ---
-title: "Rozhodování, kdy implementovat asynchronní vzor založený na událostech"
-ms.custom: 
+title: Rozhodování, kdy implementovat asynchronní vzor založený na událostech
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Event-based Asynchronous Pattern
@@ -18,18 +18,18 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 111aaaa86877368ccbd0c9c11a26dff47b065698
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 330dc5ec76fe33a7f6165857334a367f578840ef
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>Rozhodování, kdy implementovat asynchronní vzor založený na událostech
 Asynchronní vzor založený na událostech poskytuje základní vzor pro vystavení asynchronní chování třídy. Se zavedením tohoto vzoru [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] definuje dva vzory pro vystavení asynchronní chování: asynchronní vzor na základě <xref:System.IAsyncResult?displayProperty=nameWithType> rozhraní a vzor na základě událostí. Toto téma popisuje, kdy je vhodné pro vás k implementaci obou vzory.  
@@ -63,18 +63,18 @@ Asynchronní vzor založený na událostech poskytuje základní vzor pro vystav
   
     -   Vystavení vzor na základě událostí a <xref:System.IAsyncResult> vzor u stejné třídy, pokud výsledný objekt modelu složitost převáží výhodou oddělení implementace. Je lepší vystavit obou vzory u jedné třídy, než se vyhnout vystavení vzor na základě událostí.  
   
-    -   Pokud musí vystavit obou vzor na základě událostí a <xref:System.IAsyncResult> vzor na jednu třídu, použijte <xref:System.ComponentModel.EditorBrowsableAttribute> nastavena na <xref:System.ComponentModel.EditorBrowsableState.Advanced> označit <xref:System.IAsyncResult> vzor implementace jako upřesňující funkce. To znamená do návrhu prostředí, jako například [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] technologii IntelliSense, není pro zobrazení <xref:System.IAsyncResult> vlastnosti a metody. Tyto vlastnosti a metody jsou stále plně použitelná, ale má vývojář pracující pomocí IntelliSense většího přehledu rozhraní API.  
+    -   Pokud musí vystavit obou vzor na základě událostí a <xref:System.IAsyncResult> vzor na jednu třídu, použijte <xref:System.ComponentModel.EditorBrowsableAttribute> nastavena na <xref:System.ComponentModel.EditorBrowsableState.Advanced> označit <xref:System.IAsyncResult> vzor implementace jako upřesňující funkce. To znamená do návrhu prostředí, jako je například Visual Studio IntelliSense, není pro zobrazení <xref:System.IAsyncResult> vlastnosti a metody. Tyto vlastnosti a metody jsou stále plně použitelná, ale má vývojář pracující pomocí IntelliSense většího přehledu rozhraní API.  
   
 ## <a name="criteria-for-exposing-the-iasyncresult-pattern-in-addition-to-the-event-based-pattern"></a>Kritéria pro vystavení vzoru IAsyncResult kromě vzor založený na událostech  
  Během asynchronního vzoru založeného na událostech má mnoho výhod v rámci výše uvedené scénáře, nemá některé nevýhody, které byste měli vědět, pokud je vaše nejdůležitější požadavek na výkon.  
   
  Existují tři scénáře, které vzor na základě událostí neřeší společně s <xref:System.IAsyncResult> vzoru:  
   
--   Blokování čekání na jednom<xref:System.IAsyncResult>  
+-   Blokování čekání na jednom <xref:System.IAsyncResult>  
   
 -   Blokování čekání na mnoho <xref:System.IAsyncResult> objekty  
   
--   Dotazování pro dokončení na<xref:System.IAsyncResult>  
+-   Dotazování pro dokončení na <xref:System.IAsyncResult>  
   
  Tyto scénáře můžete vyřešit tak, že pomocí vzoru založeného na událostech, ale to se těžkopádnější než při použití <xref:System.IAsyncResult> vzor.  
   

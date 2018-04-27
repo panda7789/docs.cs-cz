@@ -14,16 +14,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5388ed3f55d97f3282a710ac59fe36cfb32fa49c
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6e9481364a70257f6c1711692daf5c81eee9fd88
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="using-a-custom-expression-editor"></a>Pomocí vlastního výrazu editoru
 Editor vlastního výrazu se dá implementovat zajistit výraz bohatší nebo jednodušší prostředí pro úpravy. Existuje několik situací, ve kterých můžete chtít použít editor vlastního výrazu:  
   
--   Poskytovat podporu technologie IntelliSense a dalších bohaté funkce v Návrháři pracovních postupů opětovné hostování nástroje pro úpravy. Tato funkce je třeba zadat, protože výchozí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] editor výrazu nelze použít v opětovné hostování nástroje aplikace.  
+-   Poskytovat podporu technologie IntelliSense a dalších bohaté funkce v Návrháři pracovních postupů opětovné hostování nástroje pro úpravy. Tato funkce je třeba zadat, protože výraz editoru Visual Studio výchozí nelze použít v opětovné hostování nástroje aplikace.  
   
 -   Pro zjednodušení výraz prostředí pro obchodní analytik uživatele, pro úpravy, aby se po není, například vyžaduje výuka Visual Basic nebo řešit výrazy jazyka Visual Basic.  
   

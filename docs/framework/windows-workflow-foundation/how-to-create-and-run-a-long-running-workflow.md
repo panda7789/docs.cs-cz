@@ -1,29 +1,30 @@
 ---
-title: "Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup"
-ms.custom: 
+title: 'Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-caps.latest.revision: "40"
+caps.latest.revision: 40
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a667c303cd1a98e0b027ca2026fe9c719e6baf4f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 10ca88533297e56d48b73b6368c2e8457380f543
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup
-Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul runtime schopnost zachovat a uvolnit nečinnosti pracovní postupy pro databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) ukázán základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady byly uvedeny počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a opětovné záložky. K prokázání efektivně trvalost pracovního postupu, je vyžadován složitější hostitel pracovního postupu spuštění a obnovení několik instancí pracovního postupu, která podporuje. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitele formuláře systému Windows, aplikace, která podporuje spouštění a obnovení více instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce jako sledování a správa verzí, které jsou ukázáno v kurzu následné kroky.  
+Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinnosti pracovní postupy pro databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) ukázán základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady byly uvedeny počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a opětovné záložky. K prokázání efektivně trvalost pracovního postupu, je vyžadován složitější hostitel pracovního postupu spuštění a obnovení několik instancí pracovního postupu, která podporuje. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitele formuláře systému Windows, aplikace, která podporuje spouštění a obnovení více instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce jako sledování a správa verzí, které jsou ukázáno v kurzu následné kroky.  
   
 > [!NOTE]
 >  Tento kurz – krok a všechny následné kroky použít všechny tři typy pracovního postupu z [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md). Pokud jste neprovedli všechny tři typy můžete stáhnout dokončenou verzi kroků z [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
@@ -53,14 +54,14 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
   
 -   [Sestavení a spuštění aplikace](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
   
-###  <a name="BKMK_CreatePersistenceDatabase"></a>K vytvoření databáze trvalost  
+###  <a name="BKMK_CreatePersistenceDatabase"></a> K vytvoření databáze trvalost  
   
 1.  Otevřete SQL Server Management Studio a připojte se k místnímu serveru, například **. \SQLEXPRESS**. Klikněte pravým tlačítkem myši **databáze** uzlu na místním serveru a vyberte **novou databázi**. Název nové databáze **WF45GettingStartedTutorial**přijměte všechny ostatní hodnoty a vyberte **OK**.  
   
     > [!NOTE]
     >  Ujistěte se, že máte **Create Database** oprávnění na místním serveru před vytvořením databáze.  
   
-2.  Zvolte **otevřete**, **soubor** z **souboru** nabídky. Přejděte do následující složky:`C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
+2.  Zvolte **otevřete**, **soubor** z **souboru** nabídky. Přejděte do následující složky: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
   
      Vyberte následující dva soubory a klikněte na **otevřete**.  
   
@@ -75,7 +76,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     > [!WARNING]
     >  Je důležité k provedení předchozí dva kroky ve správném pořadí. Pokud dotazy jsou spouštěny mimo pořadí, dojde k chybám a trvalost databáze není správně nakonfigurováno.  
   
-###  <a name="BKMK_AddReference"></a>Chcete-li přidat odkaz na sestavení DurableInstancing  
+###  <a name="BKMK_AddReference"></a> Chcete-li přidat odkaz na sestavení DurableInstancing  
   
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a vyberte **přidat odkaz na**.  
   
@@ -83,7 +84,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
   
 3.  Zaškrtněte políčko vedle položky **System.Activities.DurableInstancing** a **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu a klikněte na tlačítko **OK**.  
   
-###  <a name="BKMK_CreateForm"></a>Vytvoření pracovního postupu hostitele formuláře  
+###  <a name="BKMK_CreateForm"></a> Vytvoření pracovního postupu hostitele formuláře  
   
 > [!NOTE]
 >  Kroky v tomto postupu popisují, jak přidat a nakonfigurovat formuláře ručně. V případě potřeby můžete stáhnout soubory řešení pro tento kurz a přidejte dokončené formuláře do projektu. Si můžete stáhnout kurz soubory [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976). Po stažení souborů, klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a zvolte **přidat odkaz na**. Přidat odkaz na **System.Windows.Forms** a **System.Drawing**. Tyto odkazy se přidávají automaticky, pokud přidáte nový formulář z **přidat**, **nová položka** nabídce, ale musí být při importu formuláře přidat ručně. Jakmile jsou přidány odkazy, klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **existující položka**. Vyhledejte `Form` složky v souborech projektu, vyberte **WorkflowHostForm.cs** (nebo **WorkflowHostForm.vb**) a klikněte na tlačítko **přidat**. Pokud se rozhodnete importovat formuláře a potom dolů na další část, můžete přeskočit [přidat vlastnosti a metody helper formuláře](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).  
@@ -131,7 +132,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
   
  ![WF45 Začínáme kurz pracovního postupu hostitele formuláře](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")  
   
-###  <a name="BKMK_AddHelperMethods"></a>Chcete-li přidat vlastnosti a metody helper formuláře  
+###  <a name="BKMK_AddHelperMethods"></a> Chcete-li přidat vlastnosti a metody helper formuláře  
  Postup v této části přidejte vlastnosti a pomocné metody do třídy formuláře, nakonfigurujete pro podporu systémem a obnovení workflowů číslo odhad rozhraní formuláře.  
   
 1.  Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníku řešení** a zvolte **kód zobrazení**.  
@@ -351,7 +352,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     }  
     ```  
   
-     `ListPersistedWorkflows`dotazuje úložiště instance k instancí trvalou pracovních postupů a přidá ID instance, které chcete `cboInstanceId` – pole se seznamem.  
+     `ListPersistedWorkflows` dotazuje úložiště instance k instancí trvalou pracovních postupů a přidá ID instance, které chcete `cboInstanceId` – pole se seznamem.  
   
 10. Přidejte následující `UpdateStatus` metoda a odpovídající delegát třídy formuláře. Tato metoda aktualizuje stav aktuálně spuštěných pracovních postupů okně Stav na formuláři.  
   
@@ -432,7 +433,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     }  
     ```  
   
-###  <a name="BKMK_ConfigureWorkflowApplication"></a>Ke konfiguraci úložiště instance, obslužné rutiny životního cyklu pracovního postupu a rozšíření  
+###  <a name="BKMK_ConfigureWorkflowApplication"></a> Ke konfiguraci úložiště instance, obslužné rutiny životního cyklu pracovního postupu a rozšíření  
   
 1.  Přidat `ConfigureWorkflowApplication` metodu do třídy formuláře.  
   
@@ -584,7 +585,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     };  
     ```  
   
-     <xref:System.Activities.PersistableIdleAction> Výčet má tří hodnot: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>, a <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist>příčiny pracovního postupu zachovat ale nezpůsobí odpojení pracovního postupu. <xref:System.Activities.PersistableIdleAction.Unload>pracovní postup se zachovat a jej odpojit.  
+     <xref:System.Activities.PersistableIdleAction> Výčet má tří hodnot: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>, a <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> příčiny pracovního postupu zachovat ale nezpůsobí odpojení pracovního postupu. <xref:System.Activities.PersistableIdleAction.Unload> pracovní postup se zachovat a jej odpojit.  
   
      Následující příklad je dokončené `ConfigureWorkflowApplication` metoda.  
   
@@ -701,8 +702,8 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     }  
     ```  
   
-###  <a name="BKMK_WorkflowVersionMap"></a>Chcete-li povolit spuštění a obnovení více typů pracovního postupu  
- Chcete-li obnovit instanci pracovního postupu, hostitel má zajistit definice pracovního postupu. V tomto kurzu existují tři typy pracovního postupu a následné kroky kurzu zavádět několik verzí z těchto typů. `WorkflowIdentity`poskytuje způsob, jak hostitelskou aplikaci přidružení identifikační informace k instanci pracovního postupu trvalý. Postup v této části ukazují, jak vytvořit třídu nástroj vám pomůže při mapování identitu pracovního postupu z instance pracovního postupu trvalou na odpovídající definice pracovního postupu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]`WorkflowIdentity` a správu verzí, najdete v části [pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
+###  <a name="BKMK_WorkflowVersionMap"></a> Chcete-li povolit spuštění a obnovení více typů pracovního postupu  
+ Chcete-li obnovit instanci pracovního postupu, hostitel má zajistit definice pracovního postupu. V tomto kurzu existují tři typy pracovního postupu a následné kroky kurzu zavádět několik verzí z těchto typů. `WorkflowIdentity` poskytuje způsob, jak hostitelskou aplikaci přidružení identifikační informace k instanci pracovního postupu trvalý. Postup v této části ukazují, jak vytvořit třídu nástroj vám pomůže při mapování identitu pracovního postupu z instance pracovního postupu trvalou na odpovídající definice pracovního postupu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] `WorkflowIdentity` a správa verzí, najdete v části [pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
   
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **třída**. Typ `WorkflowVersionMap` do **název** pole a klikněte na tlačítko **přidat**.  
   
@@ -816,9 +817,9 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     }  
     ```  
   
-     `WorkflowVersionMap`obsahuje tři pracovní postup identit, které jsou mapovány na tři definice pracovního postupu z tohoto kurzu a se používá v následujících částech, když jsou pracovní postupy spuštěny a byl obnoven.  
+     `WorkflowVersionMap` obsahuje tři pracovní postup identit, které jsou mapovány na tři definice pracovního postupu z tohoto kurzu a se používá v následujících částech, když jsou pracovní postupy spuštěny a byl obnoven.  
   
-###  <a name="BKMK_StartWorkflow"></a>Spuštění nového pracovního postupu  
+###  <a name="BKMK_StartWorkflow"></a> Spuštění nového pracovního postupu  
   
 1.  Přidat `Click` obslužné rutiny pro `NewGame`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro formulář a poklikejte na soubor `NewGame`. A `NewGame_Click` přidání obslužné rutiny a zobrazení přepne do zobrazení kódu pro daný formulář. Vždy, když uživatel klikne na toto tlačítko je spuštěn nový pracovní postup.  
   
@@ -1013,7 +1014,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     }  
     ```  
   
-###  <a name="BKMK_ResumeWorkflow"></a>Pracovní postup obnovit  
+###  <a name="BKMK_ResumeWorkflow"></a> Pracovní postup obnovit  
   
 1.  Přidat `Click` obslužné rutiny pro `EnterGuess`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro formulář a poklikejte na soubor `EnterGuess`. Vždy, když uživatel klikne na toto tlačítko je obnoven běh pracovního postupu.  
   
@@ -1229,7 +1230,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     }  
     ```  
   
-###  <a name="BKMK_TerminateWorkflow"></a>Ukončit pracovního postupu  
+###  <a name="BKMK_TerminateWorkflow"></a> Ukončit pracovního postupu  
   
 1.  Přidat `Click` obslužné rutiny pro `QuitGame`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro formulář a poklikejte na soubor `QuitGame`. Vždy, když uživatel klikne na toto tlačítko je ukončen aktuálně vybrané pracovní postup.  
   
@@ -1303,7 +1304,7 @@ Jeden z centrální funkce [!INCLUDE[wf](../../../includes/wf-md.md)] je modul r
     wfApp.Terminate("User resigns.");  
     ```  
   
-###  <a name="BKMK_BuildAndRun"></a>Sestavení a spuštění aplikace  
+###  <a name="BKMK_BuildAndRun"></a> Sestavení a spuštění aplikace  
   
 1.  Klikněte dvakrát na **Program.cs** (nebo **Module1.vb**) v **Průzkumníku řešení** zobrazíte kód.  
   

@@ -3052,11 +3052,11 @@ ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4ab447c06504d6c3bb7c51107e422b2cba1f45e3
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2af9ad571f1e89c11d3aafc118124093d1246f19
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě jazyka Visual Basic
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
@@ -3068,7 +3068,7 @@ Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Může
  Poskytuje fórum pro otázky o a problémů s upgradem do jazyka Visual Basic a práci s funkcemi interoperability.  
   
  [Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)  
- Poskytuje fórum pro otázky týkající se způsobu práce v prostředí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
+ Poskytuje fórum pro dotazy o tom, jak fungují v prostředí Visual Studio.  
   
  [Obecné jazyka Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145973)  
  Poskytuje fórum pro otázky o a problémů s jazykem Visual Basic, které nejsou popsané v dalších fóra.  

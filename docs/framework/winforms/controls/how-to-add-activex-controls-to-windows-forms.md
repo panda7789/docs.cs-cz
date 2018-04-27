@@ -1,28 +1,30 @@
 ---
-title: "Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows"
-ms.custom: 
+title: 'Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Forms controls, ActiveX controls
 - forms [Windows Forms], adding ActiveX controls
 - ActiveX controls [Windows Forms], adding
 ms.assetid: 54a61e5b-555e-4887-b41e-6244fed271eb
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 940dd21fc48c23ce623280aab2c487db5810057c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2cedd71665dc098ca3a6a6bf43c74b2d3a11fe11
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-add-activex-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows
 Zatímco Návrhář formulářů Windows je optimalizovaná tak, aby hostitelské ovládací prvky Windows Forms, můžete taky v rozhraní Windows Forms – ovládací prvky ActiveX.  
@@ -39,7 +41,7 @@ Zatímco Návrhář formulářů Windows je optimalizovaná tak, aby hostitelsk�
   
 -   Dvakrát klikněte na ovládací prvek v panelu nástrojů.  
   
-     [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]Přidá všechny odkazy na ovládací prvek v projektu. Další informace o aspektech, které při použití na Windows Forms – ovládací prvky ActiveX mějte na paměti najdete v tématu [aspekty hostování ovládacího prvku ActiveX ve formuláři Windows](../../../../docs/framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md).  
+     Visual Studio přidá všechny odkazy na ovládací prvek v projektu. Další informace o aspektech, které při použití na Windows Forms – ovládací prvky ActiveX mějte na paměti najdete v tématu [aspekty hostování ovládacího prvku ActiveX ve formuláři Windows](../../../../docs/framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md).  
   
     > [!NOTE]
     >  Systému Windows Forms ActiveX – Importér ovládacích prvků (AxImp.exe) vytvoří argumenty událostí jiného typu než se čekalo na Import ActiveX dynamické knihovny. Argumenty vytvořené AxImp.exe jsou podobné následujícím: `Invoke(object sender, DWebBrowserEvents2_ProgressChangeEvent e)`, když `Invoke(object sender, DWebBrowserEvents2_ProgressChangeEventArgs e)` se očekává. Upozorňujeme, že tato nesrovnalost nezabrání kód fungovat normálně. Podrobnosti najdete v tématu [Windows Forms ActiveX – Importér ovládacích prvků (Aximp.exe)](../../../../docs/framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  

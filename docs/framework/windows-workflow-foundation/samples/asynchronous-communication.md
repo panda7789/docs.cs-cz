@@ -1,26 +1,27 @@
 ---
-title: "Asynchronní komunikaci"
-ms.custom: 
+title: Asynchronní komunikaci
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 128dc092-9eb2-4e33-9470-9a7f62b60df6
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 602fc0ee27d460b11851103b88983d37b472b77a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9cf1cc88f2b9dda0b0f6e155a5d6a465552d6267
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="asynchronous-communication"></a>Asynchronní komunikaci
-Tento příklad znázorňuje způsob komunikace mezi dva různé [!INCLUDE[wf](../../../../includes/wf-md.md)] služby se ve výchozím nastavení provádí asynchronně.  
+Tento příklad znázorňuje, jak komunikaci mezi dvěma různými službami Windows Workflow Foundation (WF) probíhá asynchronně ve výchozím nastavení.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Asynchronní komunikaci mezi [!INCLUDE[wf1](../../../../includes/wf1-md.md)] služby.  

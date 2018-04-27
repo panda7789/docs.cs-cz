@@ -1,13 +1,13 @@
 ---
-title: "Postupy: Změna stylů v elementu v modelu spravovaného objektu dokumentu HTML"
-ms.custom: 
+title: 'Postupy: Změna stylů v elementu v modelu spravovaného objektu dokumentu HTML'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - managed HTML DOM [Windows Forms], changing styles on elements
 ms.assetid: 154e8d9f-3e2d-4e8b-a6f3-c85a070e9cc1
-caps.latest.revision: 
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3726ccdebf310d831fb0d7ea21fab011293f6d99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e833a15e33d0baf80f0078b26758137e7908a8fd
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>Postupy: Změna stylů v elementu v modelu spravovaného objektu dokumentu HTML
-Můžete styly řídit vzhled dokumentu a jeho elementy ve formátu HTML. <xref:System.Windows.Forms.HtmlDocument>a <xref:System.Windows.Forms.HtmlElement> podporu <xref:System.Windows.Forms.HtmlElement.Style%2A> vlastnosti, které přijímají řetězce styl následující formát:  
+Můžete styly řídit vzhled dokumentu a jeho elementy ve formátu HTML. <xref:System.Windows.Forms.HtmlDocument> a <xref:System.Windows.Forms.HtmlElement> podporu <xref:System.Windows.Forms.HtmlElement.Style%2A> vlastnosti, které přijímají řetězce styl následující formát:  
   
  `name1:value1;...;nameN:valueN;`  
   
@@ -75,7 +75,7 @@ Můžete styly řídit vzhled dokumentu a jeho elementy ve formátu HTML. <xref:
 6.  Přidejte následující kód do souboru kódu vašeho projektu.  
   
     > [!IMPORTANT]
-    >  Ujistěte se, že `webBrowser1_DocumentCompleted` rutinu událostí je nakonfigurovaný jako naslouchací proces pro <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> událostí. V [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], dvakrát klikněte na <xref:System.Windows.Forms.WebBrowser> řídit, v textovém editoru, nakonfigurujte naslouchací proces prostřednictvím kódu programu.  
+    >  Ujistěte se, že `webBrowser1_DocumentCompleted` rutinu událostí je nakonfigurovaný jako naslouchací proces pro <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> událostí. V sadě Visual Studio, dvakrát klikněte na <xref:System.Windows.Forms.WebBrowser> řídit, v textovém editoru, nakonfigurujte naslouchací proces prostřednictvím kódu programu.  
   
      [!code-csharp[ManagedDOMStyles#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
      [!code-vb[ManagedDOMStyles#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]  

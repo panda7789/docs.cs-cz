@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 491cbf19ac3c8f1817b12c895655ca1958972a62
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 3669260d34aac0783f2ebd735c79ced91741408a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, jaké klientské aplikace provést, jak nakonfigurovat, vytvořit a použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] klienta a jak zabezpečit klientské aplikace.  
@@ -73,11 +73,11 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
  Pro ilustraci použití <xref:System.ServiceModel.ClientBase%601> třídy, předpokládá následující kontrakt jednoduché služby byla vygenerována z aplikace služby.  
   
 > [!NOTE]
->  Pokud používáte [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] k vytvoření vašeho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta, objekty jsou načteny automaticky do prohlížeče objektů při přidání odkazu na službu do projektu.  
+>  Pokud používáte Visual Studio k vytvoření vašeho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta, objekty jsou načteny automaticky do prohlížeče objektů při přidání odkazu na službu do projektu.  
   
  [!code-csharp[C_GeneratedCodeFiles#12](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#12)]  
   
- Pokud nepoužíváte [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], zkontrolujte kontrakt generovaný kód se najít typ, který rozšiřuje <xref:System.ServiceModel.ClientBase%601> a rozhraní kontraktu služby `ISampleService`. V takovém případě typu vypadá následující kód:  
+ Pokud nepoužíváte Visual Studio, zkontrolujte kontrakt generovaný kód se najít typ, který rozšiřuje <xref:System.ServiceModel.ClientBase%601> a rozhraní kontraktu služby `ISampleService`. V takovém případě typu vypadá následující kód:  
   
  [!code-csharp[C_GeneratedCodeFiles#14](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#14)]  
   

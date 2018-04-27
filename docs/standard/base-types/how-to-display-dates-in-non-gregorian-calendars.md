@@ -1,12 +1,12 @@
 ---
-title: "Postupy: Zobrazování dat v jiném než gregoriánském kalendáři"
-ms.custom: 
+title: 'Postupy: Zobrazování dat v jiném než gregoriánském kalendáři'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - calendars [.NET Framework], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1a9e45fe43e38be3c618df37a639d63a6a0a5349
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8b0af7aad0efc63518291292b0d0b4ca4872956c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Postupy: Zobrazování dat v jiném než gregoriánském kalendáři
 <xref:System.DateTime> a <xref:System.DateTimeOffset> typy používají gregoriánský kalendář jako svůj výchozí kalendář. To znamená, že volání hodnota data a času `ToString` metoda zobrazí řetězcovou reprezentaci datum a čas v gregoriánském kalendáři, i když je datum a čas vytvoření pomocí jiného kalendáře. To je znázorněno v následujícím příkladu, který používá dva různé způsoby vytvoření hodnoty data a času pomocí perského kalendáře, ale stále zobrazuje tyto hodnoty data a času v gregoriánském kalendáři při volání <xref:System.DateTime.ToString%2A> metoda. Tento příklad zobrazuje dvě techniky běžně používané, ale nesprávné zobrazování data v určitém kalendáři.  
@@ -73,7 +73,7 @@ ms.lasthandoff: 12/23/2017
   
     -   <xref:System.Globalization.Calendar.GetSecond%2A>, chcete-li zobrazit do sekund za minutu v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetMilliseconds%2A>, chcete-li zobrazit milisekundy za sekundu v příslušném kalendáři.  
+    -   <xref:System.Globalization.Calendar.GetMilliseconds%2A> , chcete-li zobrazit milisekundy za sekundu v příslušném kalendáři.  
   
 ## <a name="example"></a>Příklad  
  V příkladu se zobrazí datum pomocí dvou různých kalendářů. Zobrazuje datum, po definování kalendáře hidžra jako výchozí kalendář pro jazykovou verzi ar JO a zobrazuje datum Perském kalendáři, který není podporován jako volitelný kalendář DM IR jazykovou verzi.  
@@ -98,7 +98,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje odkaz na System.Core.dll.  
   
- Je možné zkompilovat kód v příkazovém řádku pomocí souboru csc.exe nebo vb.exe. Chcete-li kód zkompilovat v rámci [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vložte jej do šablony projektu konzolové aplikace.  
+ Je možné zkompilovat kód v příkazovém řádku pomocí souboru csc.exe nebo vb.exe. Zkompilovat kód v sadě Visual Studio, že ji umístěte do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také  
  [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)

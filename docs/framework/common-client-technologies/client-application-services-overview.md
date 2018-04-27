@@ -19,24 +19,24 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9ddc1b505146e7ca31bca5acc5e9d19d258a860d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b166dc273eed83660565d9b3bc6a70ffc85547fa
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="client-application-services-overview"></a>Přehled klientských aplikačních služeb
 Klient aplikačních služeb poskytují zjednodušenou přístup k [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a profilu služby z aplikací Windows Forms a Windows Presentation Foundation (WPF). [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby jsou součástí Microsoft ASP.NET 2.0 AJAX rozšíření, která je součástí [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] a [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Tyto služby umožňují více Web a aplikace pro systém Windows sdílet informace o uživateli a správu uživatelů funkci z jednoho serveru.  
   
  Klient aplikačních služeb zahrnují poskytovatelé služeb klienta, které se připojí k model rozšíření webových služeb k povolení následujících funkcí pro aplikace založené na systému Windows:  
   
--   Konfigurace jednoduchého klienta. Můžete povolit a nakonfigurovat přihlašovací údaje, rolí a profilu služby pomocí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] projektu návrháře nebo zadáním poskytovatelé služeb klienta v souboru App.config vašeho projektu. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
+-   Konfigurace jednoduchého klienta. Můžete povolit a nakonfigurovat přihlašovací údaje, rolí a profilu služby pomocí Návrháře projektu sady Visual Studio nebo zadáním poskytovatelé služeb klienta v souboru App.config vašeho projektu. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
   
 -   Jednoduché programovatelnosti. Po povolené a nakonfigurované klientské aplikační služby, poskytovatelé služeb přístup nepřímo prostřednictvím existující [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] členství, role a třídy nastavení aplikace. Můžete také přímo přistupovat [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] třídy, které implementují klientské aplikační služby. Ve většině případů je však nepotřebné přímý přístup. Další informace o třídách služby klienta aplikace najdete v části "Třídy klienta aplikace služby" v tomto tématu.  
   
 -   Podporu offline režimu. Aplikace pro systém Windows mají často pracovat v příležitostně připojených prostředích. Pokud vaše aplikace je online, poskytovatelů služeb klienta mezipaměti hodnoty získané ze serveru pro použití, když je aplikace do režimu offline.  
   
--   Integrace s [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] návrháře nastavení aplikací. Když přidáte do projektu v nastavení [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], můžete zadat nastavení, které se mají přistupovat prostřednictvím poskytovatele služeb nastavení klienta.  
+-   Integrace s návrhářem nastavení aplikace Visual Studio. Když přidáte nastavení do projektu v sadě Visual Studio, můžete nastavení, které se mají přistupovat prostřednictvím poskytovatele služeb nastavení klienta.  
   
  Následující části popisují tyto funkce podrobněji. Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
   
@@ -61,9 +61,9 @@ Klient aplikačních služeb poskytují zjednodušenou přístup k [!INCLUDE[aja
  Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] služby rolí, najdete v části [pomocí rolí informací pomocí Microsoft Ajax](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d).  
   
 ## <a name="settings"></a>Nastavení  
- Klient aplikačních služeb můžete použít k načtení nastavení uživatele aplikace z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby. Klient aplikačních služeb, funkce nastavení webu integruje s funkcí nastavení aplikace, který je součástí [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]. Pokud chcete načíst nastavení webu, nejprve generovat `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) pro váš projekt pomocí **nastavení** kartě [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] Návrhář projektu. Na **nastavení** kartě, můžete použít **zatížení nastavení webové** tlačítko Načíst nastavení webu a přidat je do vygenerovaného `Settings` třídy. Můžete použít nastavení webové nakonfigurovaný na používání všem ověřeným uživatelům nebo všichni anonymní uživatelé.  
+ Klient aplikačních služeb můžete použít k načtení nastavení uživatele aplikace z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby. Klient aplikačních služeb, funkce nastavení webu integruje s funkcí nastavení aplikace, který je součástí [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]. Pokud chcete načíst nastavení webu, nejprve generovat `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) pro váš projekt pomocí **nastavení** kartě v Návrháři projektu sady Visual Studio. Na **nastavení** kartě, můžete použít **zatížení nastavení webové** tlačítko Načíst nastavení webu a přidat je do vygenerovaného `Settings` třídy. Můžete použít nastavení webové nakonfigurovaný na používání všem ověřeným uživatelům nebo všichni anonymní uživatelé.  
   
- Další informace o nastavení aplikace najdete v tématu [přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md). Informace o tom, jak implementovat vlastní třída nastavení, místo aby generovala v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], najdete v části [postupy: vytvoření nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md). Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby najdete v tématu [pomocí informací o profilu s Microsoft Ajax](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61).  
+ Další informace o nastavení aplikace najdete v tématu [přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md). Informace o tom, jak implementovat vlastní třída nastavení, místo aby generovala jednu v sadě Visual Studio najdete v tématu [postupy: vytvoření nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md). Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby najdete v tématu [pomocí informací o profilu s Microsoft Ajax](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61).  
   
 ## <a name="client-application-services-classes"></a>Klientská aplikace služby třídy  
  Následující tabulka popisuje třídy, které implementují funkce klienta aplikace služby.  

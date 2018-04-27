@@ -13,11 +13,11 @@ ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: da42d58190e8069154cd8383cf0a87e0b19f5ae4
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bffbb8dabdd2463633c9d2ca8de3ef120850be3f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Konstanty a výčty (Visual Basic)
 Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojáře. Konstanty ukládat hodnoty, které zůstat konstantní po spuštění aplikace. Výčty poskytují pohodlný způsob pro práci se sadami související konstanty a přidružení konstantních hodnot k názvy.  
@@ -31,7 +31,7 @@ Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojá
 |---|---|  
 |`CONFIG`|Řetězec, který odpovídá aktuální nastavení **aktivní konfigurace řešení** pole **nástroje Configuration Manager**.|  
 |`DEBUG`|A `Boolean` hodnotu, která může být nastavena v **vlastnosti projektu** dialogové okno. Ve výchozím nastavení, konfiguraci ladění pro projekt definuje `DEBUG`. Když `DEBUG` je definován <xref:System.Diagnostics.Debug> metody třídy generovat výstup do **výstup** okno. Pokud není definován, <xref:System.Diagnostics.Debug> metody třídy nejsou kompilovány a nevygeneruje žádný výstup ladění.|  
-|`TARGET`|Řetězec představující výstupní typ pro projekt nebo nastavení příkazového řádku **/target** možnost. Možné hodnoty `TARGET` jsou:<br /><br /> -"winexe" pro aplikaci systému Windows.<br />-"exe" pro konzolové aplikace.<br />-"library" pro knihovny tříd.<br />-"module" pro modul.<br />-Na **/target** možnost může být nastavena v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí. Další informace najdete v tématu [/Target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
+|`TARGET`|Řetězec představující výstupní typ pro projekt nebo nastavení příkazového řádku **/target** možnost. Možné hodnoty `TARGET` jsou:<br /><br /> -"winexe" pro aplikaci systému Windows.<br />-"exe" pro konzolové aplikace.<br />-"library" pro knihovny tříd.<br />-"module" pro modul.<br />-Na **/target** možnost může být nastaven v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu [/Target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
 |`TRACE`|A `Boolean` hodnotu, která může být nastavena v **vlastnosti projektu** dialogové okno. Ve výchozím nastavení, zadejte všechny konfigurace pro projekt `TRACE`. Když `TRACE` je definován <xref:System.Diagnostics.Trace> metody třídy generovat výstup do **výstup** okno. Pokud není definován, <xref:System.Diagnostics.Trace> třídy nejsou kompilovány metody a ne `Trace` nevygeneruje výstup.|  
 |`VBC_VER`|Číslo, které představuje verzi jazyka Visual Basic, v *hlavní*. *méně závažné* formátu. Číslo verze pro [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] je 8.0.|  
   

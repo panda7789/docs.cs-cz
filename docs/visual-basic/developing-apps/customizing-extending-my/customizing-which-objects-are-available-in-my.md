@@ -1,24 +1,25 @@
 ---
-title: "Přizpůsobení výběru objektů dostupných v oboru názvů My (Visual Basic)"
+title: Přizpůsobení výběru objektů dostupných v oboru názvů My (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e5f5be7481ee102074fe1236b91110ee6b1d2944
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 669641a2b6ecbf988f6cad68acf52c5561b32515
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>Přizpůsobení výběru objektů dostupných v oboru názvů My (Visual Basic)
-Toto téma popisuje, jak můžete určit, které `My` objekty jsou povoleny, a to nastavením vašeho projektu `_MYTYPE` konstanty podmíněné kompilace. [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] Integrované vývojové prostředí (IDE) udržuje `_MYTYPE` konstanty podmíněné kompilace pro projekt synchronizována s typem projektu.  
+Toto téma popisuje, jak můžete určit, které `My` objekty jsou povoleny, a to nastavením vašeho projektu `_MYTYPE` konstanty podmíněné kompilace. Prostředí Visual Studio integrované vývoj prostředí (IDE) udržuje `_MYTYPE` konstanty podmíněné kompilace pro projekt synchronizována s typem projektu.  
   
 ## <a name="predefined-mytype-values"></a>Hodnoty předdefinovaných _MYTYPE  
  Je nutné použít `/define` – možnost kompilátoru nastavit `_MYTYPE` konstanty podmíněné kompilace. Při zadání vlastní hodnoty `_MYTYPE` konstantní, je nutné uzavřít řetězcová hodnota v zpětné lomítko nebo uvozovky (\\") pořadí. Například můžete použít:  
@@ -36,7 +37,7 @@ Toto téma popisuje, jak můžete určit, které `My` objekty jsou povoleny, a t
 |Web|"Web"|  
 |Knihovna webových prvků|"WebControl."|  
 |Aplikace systému Windows|"WindowsForms"|  
-|Aplikace pro systém Windows při spuštění s vlastní`Sub Main`|"WindowsFormsWithCustomSubMain"|  
+|Aplikace pro systém Windows při spuštění s vlastní `Sub Main`|"WindowsFormsWithCustomSubMain"|  
 |Knihovna ovládacích prvků Windows|"Systém Windows"|  
 |Služba systému Windows|"Console"|  
 |prázdný|"Prázdný"|  
@@ -79,10 +80,10 @@ Toto téma popisuje, jak můžete určit, které `My` objekty jsou povoleny, a t
  <xref:Microsoft.VisualBasic.Devices.Computer>  
  <xref:Microsoft.VisualBasic.Logging.Log>  
  <xref:Microsoft.VisualBasic.ApplicationServices.User>  
- [Jak Moje závisí na typu projektu](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
+ [Závislost oboru názvů My na typu projektu](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
  [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
  [/ define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)  
- [My.Forms – objekt](../../../visual-basic/language-reference/objects/my-forms-object.md)  
- [My.Request – objekt](../../../visual-basic/language-reference/objects/my-request-object.md)  
- [My.Response – objekt](../../../visual-basic/language-reference/objects/my-response-object.md)  
- [My.WebServices – objekt](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+ [Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)  
+ [Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)  
+ [Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)  
+ [Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)

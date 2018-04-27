@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 72282c62ad23ec825eab7054ab1909d07a062b45
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 20cb6c1cd7a3b06b57bce02d5c3caacc7e2e42b7
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporuje omezenou podmnožinou funkce při spuštění v prostředí s částečně důvěryhodné. Funkce podporované v částečné důvěryhodnosti jsou uspořádaná kolem konkrétní sadu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
@@ -154,7 +154,7 @@ ms.lasthandoff: 04/26/2018
 >  Aby nedošlo k zaplavení trasovací soubory s duplicitní chybami [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zakáže trasování prostředku nebo akce po prvním selhání zabezpečení. Prvním je proveden pokus o přístup k prostředku nebo provedení akce není jeden trasování výjimky pro přístup každý prostředek, který selhal.  
   
 ## <a name="wcf-service-host"></a>Hostitel služby WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Hostitel služby nepodporuje částečnou důvěryhodností. Pokud chcete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] šablona projektu knihovny služby v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvoření služby. Místo toho vytvořte nový web v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] výběrem [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webu šablony služby, která může hostovat službu na webovém serveru, na kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Hostitel služby nepodporuje částečnou důvěryhodností. Pokud chcete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] šablona projektu knihovny služby v sadě Visual Studio k vytvoření služby. Místo toho vytvořte nový web v sadě Visual Studio tak, že zvolíte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webu šablony služby, která může hostovat službu na webovém serveru, na kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
   
 ## <a name="other-limitations"></a>Další omezení  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je obecně omezený na aspekty zabezpečení při jeho způsobené hostitelskou aplikaci. Například pokud [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je hostován v aplikace prohlížeče XAML (XBAP), je předmětem XBAP omezení, jak je popsáno v [zabezpečení systému Windows Presentation Foundation částečné důvěryhodnosti](http://go.microsoft.com/fwlink/?LinkId=89138).  

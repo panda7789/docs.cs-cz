@@ -1,23 +1,24 @@
 ---
-title: "Vlastnost povýšení aktivity"
-ms.custom: 
+title: Vlastnost povýšení aktivity
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 802196b7-1159-4c05-b41b-d3bfdfcc88d9
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 244cea33b684a8674681c4d1974d5d857c4c402b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 12f7aa4bd10a22a3cd3ea361e32016b95e41e46b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="property-promotion-activity"></a>Vlastnost povýšení aktivity
 Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení přímo do pracovního postupu pro tvorbu prostředí. Soubor konfigurace – elementy, aktivity pracovního postupu a pracovní postup rozšíření, které usnadňují používání funkce povýšení jsou k dispozici. Kromě toho vzorek obsahuje jednoduché pracovní postup, který ukazuje, jak lze pomocí této kolekce.  
@@ -74,7 +75,7 @@ Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activ
   
 -   **PropertyPromotionActivity** je knihovna tříd, který obsahuje konfigurační prvky, aktivity pracovního postupu a pracovní postup rozšíření, **CounterServiceApplication** používá.  
   
--   **PropertyPromotionActivitySQLSample.sql** vytvoří a přidá zobrazení [dbo].[CounterService] do databáze.  
+-   **PropertyPromotionActivitySQLSample.sql** vytvoří a přidá zobrazení [dbo]. [ CounterService] do databáze.  
   
 ### <a name="counterserviceapplication"></a>CounterServiceApplication  
   
@@ -106,10 +107,10 @@ go
   
  Když instanci pracovního postupu přetrvává, vloží se řádek do `InstancePromotedProperties` zobrazení pro každý `PromotionSet` definované v konfiguraci. Tento řádek obsahuje všechny propagovaných vlastnosti `PromotionSet` (povýší jednu vlastnost pro každý sloupec). To `PromotionSet` je s klíči řazenou kolekci členů: `InstanceId, PromotionName`. V této ukázce jsme mít jeden `PromotionSet` definované v konfiguraci, jehož název atributu je `CounterService`. Poznámka: Jak `PromotionName` hodnota sloupce je rovna atribut názvu `PromotionSet` elementu.  
   
- Pořadí `promotedValue` elementy koreluje s propagovaných vlastností v umístění `InstancePromotedProperties` zobrazení. `Count`je první `promotedValue` elementu. V důsledku toho je namapovaný na `Value1` sloupec v `InstancePromotedProperties` zobrazení. `LastIncrementedAt`je druhá `promotedValue` elementu. V důsledku toho je namapovaný na `Value2` sloupec v `InstancePromotedProperties` zobrazení.  
+ Pořadí `promotedValue` elementy koreluje s propagovaných vlastností v umístění `InstancePromotedProperties` zobrazení. `Count` je první `promotedValue` elementu. V důsledku toho je namapovaný na `Value1` sloupec v `InstancePromotedProperties` zobrazení. `LastIncrementedAt` je druhá `promotedValue` elementu. V důsledku toho je namapovaný na `Value2` sloupec v `InstancePromotedProperties` zobrazení.  
   
 #### <a name="using-the-promotevalue-activity"></a>Pomocí aktivity PromoteValue  
- Zkontrolujte v souboru CounterService.xamlx ve [!INCLUDE[wf2](../../../../includes/wf2-md.md)] Designer. Definice pracovního postupu jsou speciální dvě aktivity: `PromoteValue<DateTime>` a `PromoteValue<Int32>`.  
+ Zkontrolujte v souboru CounterService.xamlx v Návrháři Windows Workflow Foundation. Definice pracovního postupu jsou speciální dvě aktivity: `PromoteValue<DateTime>` a `PromoteValue<Int32>`.  
   
  `PromoteValue<Int32>` Aktivita má jeho `Name` člen definován jako `Count`. To odpovídá s prvním `promotedValue` element v konfiguraci a má jeho `Value` definován jako `Counter` proměnné pracovního postupu. Když pracovní postup potrvají, `Counter` proměnné pracovního postupu je uchován jako propagovaných vlastnost do `Value1` sloupec `InstancePromotedProperties` zobrazení.  
   

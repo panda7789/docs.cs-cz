@@ -1,24 +1,26 @@
 ---
-title: "Použití monikeru služby WCF u klientů modelu COM"
-ms.custom: 
+title: Použití monikeru služby WCF u klientů modelu COM
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 18633ab7c7d54b4feafc22f6b598acc564084f4a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 322467510d499040c07d6e5e84842542aa325737
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tento příklad znázorňuje způsob použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] monikeru služby pro integraci webových služeb do založená na modelu COM vývojových prostředí, jako je například Microsoft Office Visual Basic pro aplikace (Office VBA) nebo Visual Basic 6.0. Tato ukázka se skládá z klienta Windows Script Host (.vbs), podporující klientské knihovny DLL (.dll) a služby knihovny (DLL) hostované Internetové informační služby (IIS). Služba je služba kalkulačky a klient COM volá matematické operace – přidat, odečíst, násobit a dělit – ve službě. Činnost klienta je viditelný v systému windows pole zpráva.  
@@ -158,7 +160,7 @@ WScript.Echo "WSDL service moniker: 145 - 76.54 = " & wsdlServiceMoniker.Subtrac
   
  Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje volání modelu COM pomocí Přezdívka kontraktu WSDL ke komunikaci s klient COM [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
-## <a name="metadata-exchange-contract"></a>Metadata Exchange Contract  
+## <a name="metadata-exchange-contract"></a>Metadata Exchange kontraktu  
  Pokud chcete používat Přezdívka s MEX kontraktu, stejně jako u kontraktů WSDL, není požadována žádná registrace klienta. V době provedení prostřednictvím interní použití systému Metadata Exchange se načítají, kontrakt služby.  
   
  Klientská aplikace ComCalcClient.vbs znovu používá `GetObject` funkce vytvořit proxy server pro službu.  
@@ -199,7 +201,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Z [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] příkazový řádek, otevřete složku \client\bin, ve složce konkrétní jazyk.  
+3.  Z příkazového řádku Visual Studia otevřete složku \client\bin, ve složce konkrétní jazyk.  
   
     > [!NOTE]
     >  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, spuštění příkazového řádku s oprávněními správce.  

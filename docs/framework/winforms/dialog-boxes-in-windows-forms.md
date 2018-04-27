@@ -1,31 +1,33 @@
 ---
-title: "Dialogová okna ve Windows Forms"
-ms.custom: 
+title: Dialogová okna ve Windows Forms
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - dialog boxes [Windows Forms], Windows Forms
 - Windows Forms dialog boxes
 - dialogs [Windows Forms], using in Windows Forms
 ms.assetid: d43d022b-451b-490d-9386-dc79d98fbf8a
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b8f493013744ffa7819d4cb554f794d9a591a371
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 423f8e83290d46b1f49a34517f67ddaef398b3b3
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dialog-boxes-in-windows-forms"></a>Dialogová okna ve Windows Forms
-Dialogová okna se používají k interakci s uživatelem a načíst informace. Jednoduše řečeno, dialogové okno je formulář se jeho <xref:System.Windows.Forms.FormBorderStyle> výčet vlastností nastavenou na `FixedDialog`. Můžete vytvořit vlastní vlastní dialogových oken pomocí Windows Forms designerem v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]. Přidání ovládacích prvků, jako `Label`, `Textbox`, a `Button` přizpůsobit dialogová okna vašim konkrétním potřebám. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také obsahuje předdefinovaných dialogových oken, jako například **otevřít soubor** a okna zpráv, které můžete přizpůsobit pro vlastní aplikace. Další informace najdete v tématu [– dialogové okno Ovládací prvky a součásti](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md).  
+Dialogová okna se používají k interakci s uživatelem a načíst informace. Jednoduše řečeno, dialogové okno je formulář se jeho <xref:System.Windows.Forms.FormBorderStyle> výčet vlastností nastavenou na `FixedDialog`. Pomocí Windows Forms designerem v sadě Visual Studio můžete vytvořit vlastní vlastní dialogová okna. Přidání ovládacích prvků, jako `Label`, `Textbox`, a `Button` přizpůsobit dialogová okna vašim konkrétním potřebám. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také obsahuje předdefinovaných dialogových oken, jako například **otevřít soubor** a okna zpráv, které můžete přizpůsobit pro vlastní aplikace. Další informace najdete v tématu [– dialogové okno Ovládací prvky a součásti](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Zobrazování dialogových oken pro Windows Forms](../../../docs/framework/winforms/how-to-display-dialog-boxes-for-windows-forms.md)  

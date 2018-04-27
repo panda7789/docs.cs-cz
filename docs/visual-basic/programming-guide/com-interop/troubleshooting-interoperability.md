@@ -26,11 +26,11 @@ ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f3ff175a0f8d152febf2d50c294d401b12285fc7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1fae8215543c50484dc5ea7fc24f292ba84e2699
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
 Když jste vzájemnou spolupráci mezi COM a spravovaného kódu [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], můžete narazit na jeden nebo více z následujících běžných problémů.  
@@ -107,7 +107,7 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
  Informace, jako je popis chyby, HRESULT a zdroj COM chyby můžete najít tak, že prověří obsah objekt výjimky.  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor10"></a> Ovládací prvek ActiveX problémy  
- Většina ovládacích prvků ActiveX, které pracují s Visual Basic 6.0 Visual Basic .NET pracovat bez řešení problémů. Hlavní výjimky jsou ovládací prvky kontejneru nebo ovládací prvky, které vizuálně obsahují další ovládací prvky. Některé příklady starší ovládacích prvků, které nebudou správně fungovat s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] jsou následující:  
+ Většina ovládacích prvků ActiveX, které pracují s Visual Basic 6.0 Visual Basic .NET pracovat bez řešení problémů. Hlavní výjimky jsou ovládací prvky kontejneru nebo ovládací prvky, které vizuálně obsahují další ovládací prvky. Některé příklady starší ovládacích prvků, které nefungují správně pomocí sady Visual Studio jsou následující:  
   
 -   Ovládací prvek Microsoft Forms 2.0 rámce  
   
@@ -115,7 +115,7 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
 -   Ovládací prvek karty Sheridan  
   
- Existují jenom několik řešení pro nepodporovaný problémy ovládací prvek ActiveX. Můžete migrovat existujících ovládacích prvků [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] Pokud původní zdrojový kód. Jinak můžete zkontrolovat s dodavateli softwaru pro aktualizovat. NET kompatibilní s verzí ovládacích prvků k nahrazení nepodporované ovládací prvky ActiveX.  
+ Existují jenom několik řešení pro nepodporovaný problémy ovládací prvek ActiveX. Visual Studio můžete migrovat stávající ovládací prvky, pokud jste vlastníkem původní zdrojový kód. Jinak můžete zkontrolovat s dodavateli softwaru pro aktualizovat. NET kompatibilní s verzí ovládacích prvků k nahrazení nepodporované ovládací prvky ActiveX.  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor11"></a> Vlastnosti jen pro čtení předávání ByRef ovládací prvky  
  Visual Basic .NET někdy vyvolá chyby COM, jako je například "Chyba 0x800A017F CTL_E_SETNOTSUPPORTED", při předání `ReadOnly` vlastnosti některé starší ovládací prvky ActiveX jako `ByRef` parametry pro další postupy. Podobně jako u volání procedur jazyka Visual Basic 6.0 není vyvolá chybu, a parametry jsou zpracovány jako v případě, že jste je předaná hodnota. Visual Basic .NET chybová zpráva znamená, že se pokoušíte změnit vlastnost, která nemá vlastnost `Set` postupu.  

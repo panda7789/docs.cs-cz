@@ -1,0 +1,4 @@
+> [!NOTE]
+> Od verze rozhraní .NET 2.0 jádra, nemusíte spouštět [ `dotnet restore` ](~/docs/core/tools/dotnet-restore.md) vzhledem k tomu, že ji spustí implicitně všechny příkazy, jako například `dotnet build` a `dotnet run`, které vyžadují obnovení proběhnout. Je stále platný příkaz v některých scénářích, kde to explicitní obnovení dává smysl, jako například [průběžnou integraci sestavení v sadě Visual Studio Team Services](/vsts/build-release/apps/aspnet/build-aspnet-core) nebo v systémech sestavení, které je potřeba explicitně řízení čas, kdy dojde k obnovení.
+>
+> Tento příkaz také podporuje `dotnet restore` možnosti při předání v dlouhých úseků (například `--source`). Krátké možnosti formuláře, například `-s`, nejsou podporovány.

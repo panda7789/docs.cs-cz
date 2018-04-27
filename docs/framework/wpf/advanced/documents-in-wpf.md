@@ -1,12 +1,13 @@
 ---
-title: "Dokumenty v platformě WPF"
-ms.custom: 
+title: Dokumenty v platformě WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - documents [WPF], packaging
@@ -17,24 +18,25 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-caps.latest.revision: "36"
+caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 02f65d68cdaad8824905c4545239f5b607c672d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0fcf7281cce7e5921ad7a03011ff85c254231690
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]nabízí širokou škálu funkcí dokumentu, které umožňují vytváření zachováním obsahu, který je navržený jako snadněji přístupu a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě široké možnosti a kvalitu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkcí dokumentu, které umožňují vytváření zachováním obsahu, který je navržený jako snadněji přístupu a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě široké možnosti a kvalitu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  
   
   
 <a name="types_of_documents"></a>   
 ## <a name="types-of-documents"></a>Typy dokumentů  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]rozdělí dokumenty na dvě rozsáhlé kategorie podle zamýšleného použití; Tyto kategorie dokumentu se říká "pevné dokumenty" a "toku dokumentů."  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozdělí dokumenty na dvě rozsáhlé kategorie podle zamýšleného použití; Tyto kategorie dokumentu se říká "pevné dokumenty" a "toku dokumentů."  
   
  Opravené dokumenty jsou určené pro aplikace, které vyžadují přesné [!INCLUDE[TLA#tla_wys](../../../../includes/tlasharptla-wys-md.md)] prezentace, zobrazení nebo tiskárny hardwaru používaného nezávisle. Typické použití pevné dokumenty zahrnují publikování plochy, zpracování textu a rozložení formuláře, kde je velmi důležité a původní návrh stránek. V rámci jeho rozložení pevné dokumentu udržuje přesné poziční umístění obsahu elementů nezávislé na zobrazení nebo tisku zařízení používá. Například pevnou dokument zobrazit na 96 dpi zobrazení se zobrazí stránka přesně stejné při je výstup 600 dpi laserová tiskárna jako když je výstup do phototypesetter 4800 dpi. Rozložení stránky zůstává stejná ve všech případech, zatímco kvalitu dokumentu maximalizuje na možnosti jednotlivých zařízení.  
   
@@ -42,12 +44,12 @@ ms.lasthandoff: 12/22/2017
   
 <a name="document_viewer"></a>   
 ## <a name="document-controls-and-text-layout"></a>Ovládací prvky dokumentu a rozložení textu  
- [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] Poskytuje sadu předdefinovaných ovládacích prvků, které zjednodušují pomocí pevné dokumenty, tok dokumenty a obecné text v rámci vaší aplikace.  Zobrazení obsahu pevné dokumentu je podporována při použití <xref:System.Windows.Controls.DocumentViewer> ovládacího prvku.  Zobrazení obsahu dokumentu toku podporuje tři různé ovládacích prvků: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer> který mapování na jiné scénáře uživatelů (viz níže uvedených částech).  Další [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky poskytují používá zjednodušené rozložení, které podporují obecné text (najdete v části [Text v uživatelském rozhraní](#text_in_the_user_interface), níže).  
+ Rozhraní .NET Framework poskytuje sadu předdefinovaných ovládacích prvků, které zjednodušují pomocí pevné dokumenty, tok dokumenty a obecné text v rámci vaší aplikace.  Zobrazení obsahu pevné dokumentu je podporována při použití <xref:System.Windows.Controls.DocumentViewer> ovládacího prvku.  Zobrazení obsahu dokumentu toku podporuje tři různé ovládacích prvků: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer> který mapování na jiné scénáře uživatelů (viz níže uvedených částech).  Další [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky poskytují používá zjednodušené rozložení, které podporují obecné text (najdete v části [Text v uživatelském rozhraní](#text_in_the_user_interface), níže).  
   
 ### <a name="fixed-document-control---documentviewer"></a>Ovládací prvek pevné dokumentu - třídy DocumentViewer  
  <xref:System.Windows.Controls.DocumentViewer> Řízení slouží k zobrazení <xref:System.Windows.Documents.FixedDocument> obsahu. <xref:System.Windows.Controls.DocumentViewer> Řízení poskytuje intuitivní uživatelské rozhraní, které poskytuje integrovanou podporu pro běžné operace, včetně tiskový výstup, zkopírujte do schránky, přiblížení a text vyhledávacích funkcí. Ovládací prvek poskytuje přístup k stránky obsahu prostřednictvím známých posouvací mechanismus. Všechny jako [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky, <xref:System.Windows.Controls.DocumentViewer> podporuje úplné nebo částečné vytvoření nového stylu, které umožňuje kontrolu vizuálně integraci do prakticky jakékoli aplikaci nebo prostředí.  
   
- <xref:System.Windows.Controls.DocumentViewer>slouží k zobrazení obsahu v režimu jen pro čtení; úpravy nebo změna obsah není k dispozici a není podporována.  
+ <xref:System.Windows.Controls.DocumentViewer> slouží k zobrazení obsahu v režimu jen pro čtení; úpravy nebo změna obsah není k dispozici a není podporována.  
   
 <a name="flow_document"></a>   
 ### <a name="flow-document-controls"></a>Ovládací prvky toku dokumentu  
@@ -56,16 +58,16 @@ ms.lasthandoff: 12/22/2017
  Zobrazení obsahu dokumentu toku podporuje tři ovládacích prvků: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
 #### <a name="flowdocumentreader"></a>FlowDocumentReader  
- <xref:System.Windows.Controls.FlowDocumentReader>obsahuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení, včetně režimu zobrazení jednostránkové (-na stránkách), dva--na stránkách (formát čtení kniha) zobrazení a průběžné posouvání režimu zobrazení (neomezené).  Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  Pokud nepotřebujete schopnost dynamicky přepínání mezi režimy jiné zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují světlejšího váhy toku obsahu prohlížeče, opravené v režimu konkrétní zobrazení.  
+ <xref:System.Windows.Controls.FlowDocumentReader> obsahuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení, včetně režimu zobrazení jednostránkové (-na stránkách), dva--na stránkách (formát čtení kniha) zobrazení a průběžné posouvání režimu zobrazení (neomezené).  Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  Pokud nepotřebujete schopnost dynamicky přepínání mezi režimy jiné zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují světlejšího váhy toku obsahu prohlížeče, opravené v režimu konkrétní zobrazení.  
   
 #### <a name="flowdocumentpageviewer-and-flowdocumentscrollviewer"></a>FlowDocumentPageViewer a třídy FlowDocumentScrollViewer  
- <xref:System.Windows.Controls.FlowDocumentPageViewer>Zobrazuje obsah stránky na čas režimu zobrazení při <xref:System.Windows.Controls.FlowDocumentScrollViewer> ukazuje obsahu v průběžném režimu posouvání.  Obě <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> opravě do režimu konkrétní zobrazení. Porovnání <xref:System.Windows.Controls.FlowDocumentReader>, což zahrnuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení (jako poskytované <xref:System.Windows.Controls.FlowDocumentReaderViewingMode> – výčet), za cenu probíhá další náročné než <xref:System.Windows.Controls.FlowDocumentPageViewer> nebo <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
+ <xref:System.Windows.Controls.FlowDocumentPageViewer> Zobrazuje obsah stránky na čas režimu zobrazení při <xref:System.Windows.Controls.FlowDocumentScrollViewer> ukazuje obsahu v průběžném režimu posouvání.  Obě <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> opravě do režimu konkrétní zobrazení. Porovnání <xref:System.Windows.Controls.FlowDocumentReader>, což zahrnuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení (jako poskytované <xref:System.Windows.Controls.FlowDocumentReaderViewingMode> – výčet), za cenu probíhá další náročné než <xref:System.Windows.Controls.FlowDocumentPageViewer> nebo <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
  Ve výchozím nastavení je vždy zobrazen svislý posuvník a vodorovný posuvník se zobrazí v případě potřeby. Výchozí hodnota [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro <xref:System.Windows.Controls.FlowDocumentScrollViewer> nezahrnuje panel nástrojů, nicméně <xref:System.Windows.Controls.FlowDocumentScrollViewer.IsToolBarVisible%2A> vlastnost slouží k povolení integrované panelu nástrojů.  
   
 <a name="text_in_the_user_interface"></a>   
 ### <a name="text-in-the-user-interface"></a>Text v uživatelském rozhraní  
- Kromě přidávání textu do dokumentů, text samozřejmě slouží v aplikaci uživatelského rozhraní, například formuláře. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsahuje více ovládacích prvků pro kreslení textu na obrazovce. Každý ovládací prvek je zaměřena na jiný scénář a má svou vlastní seznam funkcí a omezení. Obecně <xref:System.Windows.Controls.TextBlock> element byste měli použít, pokud text omezenou podporu vyžadovat, například stručný věty v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label>můžete použít, když je potřebná podpora minimální text. Další informace najdete v tématu [TextBlock přehled](../../../../docs/framework/wpf/controls/textblock-overview.md).  
+ Kromě přidávání textu do dokumentů, text samozřejmě slouží v aplikaci uživatelského rozhraní, například formuláře. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje více ovládacích prvků pro kreslení textu na obrazovce. Každý ovládací prvek je zaměřena na jiný scénář a má svou vlastní seznam funkcí a omezení. Obecně <xref:System.Windows.Controls.TextBlock> element byste měli použít, pokud text omezenou podporu vyžadovat, například stručný věty v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> můžete použít, když je potřebná podpora minimální text. Další informace najdete v tématu [TextBlock přehled](../../../../docs/framework/wpf/controls/textblock-overview.md).  
   
 <a name="packaging"></a>   
 ## <a name="document-packaging"></a>Balení dokumentu  
@@ -73,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Balíček architektura slouží jako základ pro počet klíčové technologie:  
   
--   [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]dokumenty vyhovující [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)].  
+-   [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty vyhovující [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)].  
   
 -   Aplikace Microsoft Office "12" otevřete formátu dokumentů XML (.docx).  
   
@@ -85,7 +87,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="packages"></a>   
 ### <a name="package-components"></a>Součásti balíčku  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Balení rozhraní API umožňují data aplikací a dokumenty, které se uspořádají do jediné přenosné jednotky. Soubor ZIP je jedním z nejběžnějších typů balíčků a je výchozí typ balíčku se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  <xref:System.IO.Packaging.Package>samotný je abstraktní třída, ze kterého <xref:System.IO.Packaging.ZipPackage> je implementovaná pomocí otevřete standardní XML a ZIP souboru architekturu.  <xref:System.IO.Packaging.Package.Open%2A> Používá metoda <xref:System.IO.Packaging.ZipPackage> vytvořit a používat soubory ZIP. ve výchozím nastavení. Balíček může obsahovat tři základní typy položek:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Balení rozhraní API umožňují data aplikací a dokumenty, které se uspořádají do jediné přenosné jednotky. Soubor ZIP je jedním z nejběžnějších typů balíčků a je výchozí typ balíčku se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  <xref:System.IO.Packaging.Package> samotný je abstraktní třída, ze kterého <xref:System.IO.Packaging.ZipPackage> je implementovaná pomocí otevřete standardní XML a ZIP souboru architekturu.  <xref:System.IO.Packaging.Package.Open%2A> Používá metoda <xref:System.IO.Packaging.ZipPackage> vytvořit a používat soubory ZIP. ve výchozím nastavení. Balíček může obsahovat tři základní typy položek:  
   
 |||  
 |-|-|  
@@ -95,7 +97,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="PackageParts"></a>   
 #### <a name="packageparts"></a>PackageParts  
- A <xref:System.IO.Packaging.PackagePart> ("část") je abstraktní třída, která odkazuje na objekt uložen v <xref:System.IO.Packaging.Package>. V souboru ZIP součásti balíčků odpovídají jednotlivé soubory uložené v souboru ZIP.  <xref:System.IO.Packaging.ZipPackagePart>poskytuje výchozí implementaci pro serializovatelné objekty uložené v <xref:System.IO.Packaging.ZipPackage>.  Jako systém souborů části obsažené v balíčku jsou uložené v hierarchické nebo organizace "složky stylu".  Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] balení rozhraní API, aplikace můžete zapsat, ukládání a čtení více <xref:System.IO.Packaging.PackagePart> objekty pomocí jediný kontejner souboru ZIP.  
+ A <xref:System.IO.Packaging.PackagePart> ("část") je abstraktní třída, která odkazuje na objekt uložen v <xref:System.IO.Packaging.Package>. V souboru ZIP součásti balíčků odpovídají jednotlivé soubory uložené v souboru ZIP.  <xref:System.IO.Packaging.ZipPackagePart> poskytuje výchozí implementaci pro serializovatelné objekty uložené v <xref:System.IO.Packaging.ZipPackage>.  Jako systém souborů části obsažené v balíčku jsou uložené v hierarchické nebo organizace "složky stylu".  Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] balení rozhraní API, aplikace můžete zapsat, ukládání a čtení více <xref:System.IO.Packaging.PackagePart> objekty pomocí jediný kontejner souboru ZIP.  
   
 <a name="PackageDigitalSignatures"></a>   
 #### <a name="packagedigitalsignatures"></a>PackageDigitalSignatures  
@@ -135,7 +137,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="XPS_Documents"></a>   
 ## <a name="xps-documents"></a>Dokumenty XPS  
- [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]dokument je balíček, který obsahuje jeden nebo více pevné dokumentů spolu s prostředky a informace požadované pro vykreslení.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]je také nativního [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] formát zařazování tisku souboru.  <xref:System.Windows.Xps.Packaging.XpsDocument> Je uložený v datové sadě standardní ZIP a může obsahovat kombinaci XML a binární součásti, jako jsou soubory bitové kopie a písma. [PackageRelationships](#PackageRelationships) slouží k definování závislostí mezi obsahem a prostředky potřebné k vykreslení plně dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> Design poskytuje řešení zachováním dokumentu, které podporuje více používá:  
+ [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] dokument je balíček, který obsahuje jeden nebo více pevné dokumentů spolu s prostředky a informace požadované pro vykreslení.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] je také nativního [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] formát zařazování tisku souboru.  <xref:System.Windows.Xps.Packaging.XpsDocument> Je uložený v datové sadě standardní ZIP a může obsahovat kombinaci XML a binární součásti, jako jsou soubory bitové kopie a písma. [PackageRelationships](#PackageRelationships) slouží k definování závislostí mezi obsahem a prostředky potřebné k vykreslení plně dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> Design poskytuje řešení zachováním dokumentu, které podporuje více používá:  
   
 -   Čtení, zápisu a ukládání obsahu-document a prostředky jako soubor jeden, přenosných a snadno distribuovat.  
   

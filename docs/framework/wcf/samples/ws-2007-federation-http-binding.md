@@ -1,24 +1,26 @@
 ---
 title: Prvek ws2007FederationHttpBinding
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8b04984ad1e21da4bc86760046029d3b94b70758
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b7126e4c0c293bfbf78cecf97cc13ea91e6c0c62
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 Tento příklad znázorňuje použití <xref:System.ServiceModel.WS2007FederationHttpBinding>, standard, můžete použít k vytvoření této verze podpory 1.3 specifikace WS-Trust federovaných scénářích vazby.  
@@ -108,17 +110,15 @@ Tento příklad znázorňuje použití <xref:System.ServiceModel.WS2007Federatio
  Služba tokenů zabezpečení zpřístupní jeden koncový bod přes standardní <xref:System.ServiceModel.WS2007HttpBinding>. Služba odpovídá na požadavky od klientů pro tokeny. Pokud je klient ověřen pomocí účtu Windows, službu vystaví token, který obsahuje jméno uživatele klienta jako deklarace identity. Při vytváření tokenu služby tokenů zabezpečení přihlásí token pomocí privátní klíč přidružený CN = certifikát služby tokenů zabezpečení. Kromě toho vytvoří symetrického klíče a zašifruje pomocí veřejného klíče přidruženého CN = localhost certifikátu. Při vracení token do klienta, služby tokenů zabezpečení také vrátí symetrický klíč. Klient poskytne vystavený token, který má `ICalculator` služby a prokáže, že zná symetrický klíč podepsáním zprávu s tímto klíčem.  
   
  Při spuštění vzorového žádost o token zabezpečení se zobrazí v okně konzoly služby tokenů zabezpečení. Požadavky a odpovědi operace se zobrazují v oknech konzoly klienta a služby. Stisknutím klávesy ENTER v některém z okna konzoly vypnout aplikaci.  
-  
- `Add(100,15.99) = 115.99`  
-  
- `Subtract(145,76.54) = 68.46`  
-  
- `Multiply(9,81.25) = 731.25`  
-  
- `Divide(22,7) = 3.14285714285714`  
-  
- `Press <ENTER> to terminate client.`  
-  
+
+```
+Add(100,15.99) = 115.99
+Subtract(145,76.54) = 68.46
+Multiply(9,81.25) = 731.25
+Divide(22,7) = 3.14285714285714
+Press <ENTER> to terminate client.
+```
+
  Tato ukázka je součástí souboru Setup.bat umožňuje nakonfigurovat server a službu tokenů zabezpečení příslušné certifikáty, spuštění aplikace s vlastním hostováním. Dávkový soubor vytvoří dva certifikáty v úložišti certifikátů LocalMachine/TrustedPeople. První certifikát obsahuje název subjektu z CN = služby tokenů zabezpečení a slouží k podepisování tokenů zabezpečení, které vystavuje klientovi službou tokenů zabezpečení. Druhý certifikát obsahuje název subjektu z CN = localhost a slouží k šifrování klíče tak, aby mohly dešifrovat službu službou tokenů zabezpečení.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  

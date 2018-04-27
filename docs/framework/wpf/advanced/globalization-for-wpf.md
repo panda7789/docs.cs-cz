@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8bf63c59c0948dd8414232a52fc12fafa0d13aa1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 909461811907c1eb3f494b29294db45dbbe8b01d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma představuje problémy, které byste měli vědět, když zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací elementy jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.  
@@ -180,7 +180,7 @@ Následující příklad ukazuje odkaz hexadecimálních znaků. Všimněte si, 
   
 <a name="using_clickonce"></a>   
 ## <a name="using-clickonce-with-localized-applications"></a>Pomocí lokalizované aplikace ClickOnce  
- ClickOnce je novou technologií nasazení Windows Forms dodávané s [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)]. Umožňuje instalaci aplikací a upgrade webových aplikací. Když je aplikace, která byla nasazena s ClickOnce lokalizované lze zobrazit pouze na lokalizované jazykové verzi. Například pokud je na japonštinu lokalizované nasazené aplikace ji lze zobrazit pouze na japonštinu [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] není v angličtině [!INCLUDE[TLA2#tla_win](../../../../includes/tla2sharptla-win-md.md)]. To představuje problém, protože je běžný scénář japonské uživatelům používají anglickou verzi [!INCLUDE[TLA2#tla_win](../../../../includes/tla2sharptla-win-md.md)].  
+ ClickOnce je novou technologií nasazení Windows Forms dodávané s [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)]. Umožňuje instalaci aplikací a upgrade webových aplikací. Když je aplikace, která byla nasazena s ClickOnce lokalizované lze zobrazit pouze na lokalizované jazykové verzi. Například pokud je na japonštinu lokalizované nasazené aplikace ji lze zobrazit pouze na japonštinu [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] není v anglické systému Windows. To představuje problém, protože je běžný scénář japonské uživatelům anglickou verzí systému Windows.  
   
  Řešení tohoto problému je nastavení záložní atribut neutrální jazyk. Vývojář aplikací můžete volitelně odebrat prostředky z hlavní sestavení a určit, že prostředky naleznete v satelitních sestavení na konkrétní jazykovou verzi. K řízení použití tento proces <xref:System.Resources.NeutralResourcesLanguageAttribute>. Konstruktoru <xref:System.Resources.NeutralResourcesLanguageAttribute> třída má dva podpisy, ten, který přebírá <xref:System.Resources.UltimateResourceFallbackLocation> parametr k určení umístění, kde <xref:System.Resources.ResourceManager> by měl extrahovat nouzové prostředky: hlavní sestavení nebo satelitní sestavení. Následující příklad ukazuje, jak pomocí atributu. Pro konečné umístění zálohy kód způsobí, že <xref:System.Resources.ResourceManager> a hledat prostředky v podadresáři "de" adresáře aktuálně prováděné sestavení.  
   

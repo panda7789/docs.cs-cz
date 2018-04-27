@@ -1,24 +1,26 @@
 ---
-title: "Posouzení migrace (rozhraní Entity Framework)"
-ms.custom: 
+title: Posouzení migrace (rozhraní Entity Framework)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8e4c1b06e5a3a7717b99379fd9bca2c5a8a14a6a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c31d7d481d5016b8f2d440f8a727e5bfcf66717c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="migration-considerations-entity-framework"></a>Posouzení migrace (rozhraní Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do existující aplikace. Jedním z nejčastěji důležitá z těchto výhod je schopnost používat konceptuální model k oddělení používá aplikace ze schématu ve zdroji dat datové struktury. To umožňuje vám umožní snadno provádět budoucí změny do úložiště modelu nebo ke zdroji dat bez zušlechtěných změn do aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], najdete v části [Entity Framework přehled](../../../../../docs/framework/data/adonet/ef/overview.md) a [datového modelu Entity](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -44,7 +46,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  Upgrade aplikace.  
   
-     Projekt vytvořený pomocí dřívější verzi [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] používat, musí být upgradován [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] SP1 a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1.  
+     Projekt vytvořený pomocí dřívější verze sady Visual Studio a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] používat, musí být upgradován [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] SP1 a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1.  
   
 2.  Definujte modely a mapování.  
   
@@ -59,15 +61,15 @@ ms.lasthandoff: 01/19/2018
   
      [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Používá speciálně formátovaný připojovací řetězec při provádění dotazů vůči konceptuálního modelu. Tento připojovací řetězec zapouzdří informace o modelu a soubory mapování a připojení ke zdroji dat. Další informace najdete v tématu [postupy: definování připojovací řetězec](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md).  
   
-4.  Konfigurace [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] projektu.  
+4.  Konfigurace projektu Visual Studia.  
   
-     Odkazuje na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] projektu. Tyto soubory mapování můžete přidat do projektu zajistit, aby byly nasazené aplikace v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [postupy: ruční konfigurace projektu Entity Framework](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
+     Odkazuje na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do projektu Visual Studia. Tyto soubory mapování můžete přidat do projektu zajistit, aby byly nasazené aplikace v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [postupy: ruční konfigurace projektu Entity Framework](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>Důležité informace pro aplikace s existující objekty  
  Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "prostý starý" objekty CLR (objektů POCO), které ignorují trvalost objekty nazývané také. Ve většině případů můžete pracovat stávající objekty [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entity objektů POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3). Můžete také migrovat aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a používat datové třídy, které jsou generovány nástrojem nástroje Entity Framework. Další informace najdete v tématu [postupy: použití průvodce Entity Data Model](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>Důležité informace týkající se aplikací, které používají zprostředkovatele ADO.NET  
- [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]poskytovatelé, například SqlClient, umožňují dotaz na zdroj dat vrátit tabulkové data. Je také možné načíst data do [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] datovou sadu. Následující seznam popisuje důležité informace týkající se upgradu aplikace, která používá stávající [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele:  
+ [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] poskytovatelé, například SqlClient, umožňují dotaz na zdroj dat vrátit tabulkové data. Je také možné načíst data do [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] datovou sadu. Následující seznam popisuje důležité informace týkající se upgradu aplikace, která používá stávající [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele:  
   
  Zobrazení tabulková data pomocí čtecí modul dat.  
  Můžete zvážit při spouštění [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazu pomocí zprostředkovatel EntityClient a výčet prostřednictvím vráceného <xref:System.Data.EntityClient.EntityDataReader> objektu. Provést pouze v případě, že vaše aplikace zobrazí tabulková data pomocí čtecí modul dat a nevyžaduje, aby zařízení, které jsou ve [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] pro vyhodnocování data do objektů, sledování změn a provedení aktualizací. Můžete nadále používat existující data přístupový kód, který provede aktualizace zdroje dat, ale můžete použít existující připojení k němu přistupovat z <xref:System.Data.EntityClient.EntityConnection.StoreConnection%2A> vlastnost <xref:System.Data.EntityClient.EntityConnection>. Další informace najdete v tématu [zprostředkovatel EntityClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
@@ -87,7 +89,7 @@ ms.lasthandoff: 01/19/2018
   
  Další informace najdete v tématu [vazby objektů k ovládacím prvkům](http://msdn.microsoft.com/library/2fd34855-929b-4303-a91e-4bb69d958f2b).  
   
- [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]ovládací prvky datových zdrojů.  
+ [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] ovládací prvky datových zdrojů.  
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje ovládací prvek zdroje dat, který je navržená tak, aby se zjednodušila datové vazby v [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] webové aplikace. Další informace najdete v tématu [ovládacího prvku zdroje dat Entity Framework](http://msdn.microsoft.com/library/1f09af00-9578-4744-a029-765710a3c83f).  
   
 ## <a name="other-considerations"></a>Ostatní úvahy  
@@ -104,7 +106,7 @@ ms.lasthandoff: 01/19/2018
  Pokud vaše aplikace vyžaduje schopnost dotazovat XML data, můžete přesto využít výhod dotazů LINQ s použitím technologie LINQ to XML. Další informace najdete v tématu [technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13).  
   
  Aplikace, které udržují stavu.  
- [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Webové aplikace musí často Udržovat stav webové stránky nebo uživatelské relace. Objekty v <xref:System.Data.Objects.ObjectContext> instance dají uložená v zobrazení stavu klienta, nebo ve stavu relace na serveru a později načíst a znovu připojit ke nový kontext objektu. Další informace najdete v tématu [Attaching a odpojení objekty](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
+ [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] Webové aplikace musí často Udržovat stav webové stránky nebo uživatelské relace. Objekty v <xref:System.Data.Objects.ObjectContext> instance dají uložená v zobrazení stavu klienta, nebo ve stavu relace na serveru a později načíst a znovu připojit ke nový kontext objektu. Další informace najdete v tématu [Attaching a odpojení objekty](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
 ## <a name="see-also"></a>Viz také  
  [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  

@@ -12,11 +12,11 @@ ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 58e63d95c2f10329f85d6150b58f196294de38d1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ebaa934ffaed985439ed65b9f5308404171a91bd
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="get-started-with-visual-basic"></a>Začínáme s jazykem Visual Basic
 Tato část dokumentace vám pomůže začít pracovat s vývoj aplikací jazyka Visual Basic.  
@@ -64,7 +64,7 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
  Pojednává o tom, jak získat podporu a sdělit názor.  
   
  [Visual Studio](/visualstudio/)  
- Obsahuje odkazy na [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] dokumentaci.  
+ Obsahuje odkazy na dokumentaci sady Visual Studio.  
   
  [C#](../../csharp/index.md) obsahuje odkazy na dokumentaci o vývoj aplikací pomocí Visual C#.  
   
@@ -72,4 +72,4 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
  Obsahuje odkazy na dokumentaci jazyka Visual C++.  
   
  [Office a vývoj pro SharePoint](https://msdn.microsoft.com/library/d2tx7z6d)  
- Obsahuje informace o použití aplikace Microsoft Office a [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] jako součást obchodní aplikace.
+ Poskytuje informace o použití aplikace Microsoft Office a Visual Studio jako součást obchodní aplikace.

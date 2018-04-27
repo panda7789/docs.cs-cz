@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 0447df0e6d4f14a4171a315858f992ad23d69373
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6bc761b93ff8d5c0dc79a86d0159d50d65fb727c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wpf-and-wf-integration-in-xaml"></a>WPF a integrace WF v jazyce XAML
-Tento příklad ukazuje, jak vytvořit aplikaci, která používá Windows Presentation Foundation (WPF) a [!INCLUDE[wf](../../../../includes/wf-md.md)] funkce do jednoho dokumentu XAML. K tomu Ukázka používá [!INCLUDE[wf](../../../../includes/wf-md.md)] a rozšiřitelnost XAML.  
+Tento příklad ukazuje, jak vytvořit aplikaci, která používá funkce Windows Presentation Foundation (WPF) a Windows Workflow Foundation (WF) do jednoho dokumentu XAML. K tomu, příklad používá rozšíření Windows Workflow Foundation (WF) a XAML.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  Soubor ShowWindow.xaml deserializuje do <xref:System.Activities.Statements.Sequence> aktivitu se dvěma řetězec proměnné, které jsou s nimi manipulovat aktivitami pořadí: `ShowWindow` a `WriteLine`. <xref:System.Activities.Statements.WriteLine> Výstupem aktivity v okně konzoly výraz, který se přiřadí <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost. `ShowWindow` Zobrazí aktivity [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] okno jako součást logiky provádění pravidla. <xref:System.Activities.ActivityContext.DataContext%2A> Okna zahrnuje proměnných deklarovaných v sekvenci. Ovládací prvky okna deklarované v `ShowWindow` aktivity použít datovou vazbu pro zpracování těchto proměnných. Nakonec okno obsahuje ovládací prvek tlačítko. `Click` Události pro tlačítko se zpracovává souborem <xref:System.Activities.ActivityDelegate> s názvem `MarkupExtension` obsahující `CloseWindow` aktivity. `MarkUpExtension` Vyvolá obsažené aktivity, která obsahuje všechny objekty identifikovaný jako kontext, `x:Name`, a taky <xref:System.Activities.ActivityContext.DataContext%2A> obsahující okna. Proto `CloseWindow.InArgument<Window>` může být svázán pomocí výraz, který odkazuje na název okna.  

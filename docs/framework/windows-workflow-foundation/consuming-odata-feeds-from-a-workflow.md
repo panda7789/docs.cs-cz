@@ -14,17 +14,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9a01be08367fac1f7713f5db4953f67b0d32e073
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2057e2b1c03a1ebcd68d7d59be8839171305707f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využívání OData informační kanály z pracovního postupu
 Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] , umožňuje vytvářet služby, které používají Open Data Protocol (OData) vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantiky representational stavu transfer (REST). OData zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Všechny aplikace mohou komunikovat s služby OData na základě dat Pokud můžete odeslat požadavek HTTP a zpracování datového kanálu OData, vrátí datové služby. Kromě toho služby WCF Data Services zahrnuje klientské knihovny, které poskytují bohatší programovací prostředí spotřebuje informační kanály OData z [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace. Toto téma poskytuje přehled o využívání OData kanálu v pracovním postupu s i bez použití knihovny klienta.  
   
 ## <a name="using-the-sample-northwind-odata-service"></a>Pomocí služby Northwind OData ukázka  
- V příkladech v tomto tématu použijte ukázku, která Northwind služba data nachází v [http://services.odata.org/Northwind/Northwind.svc/](http://go.microsoft.com/fwlink/?LinkID=187426). Tato služba je k dispozici jako součást [OData SDK](http://go.microsoft.com/fwlink/?LinkID=185248) a poskytuje přístup jen pro čtení k ukázkové databázi Northwind. Pokud se požaduje přístup pro zápis, nebo pokud se požaduje místní služby WCF Data Service, můžete provést kroky pro z [WCF Data Services rychlý Start](http://go.microsoft.com/fwlink/?LinkID=131076) vytvořit místní služba OData, která poskytuje přístup k databázi Northwind. Pokud budete postupovat podle rychlé spuštění, nahraďte místní identifikátor URI pro zadanému v ukázkový kód v tomto tématu.  
+ V příkladech v tomto tématu použijte ukázku, která Northwind služba data nachází v [ http://services.odata.org/Northwind/Northwind.svc/ ](http://go.microsoft.com/fwlink/?LinkID=187426). Tato služba je k dispozici jako součást [OData SDK](http://go.microsoft.com/fwlink/?LinkID=185248) a poskytuje přístup jen pro čtení k ukázkové databázi Northwind. Pokud se požaduje přístup pro zápis, nebo pokud se požaduje místní služby WCF Data Service, můžete provést kroky pro z [WCF Data Services rychlý Start](http://go.microsoft.com/fwlink/?LinkID=131076) vytvořit místní služba OData, která poskytuje přístup k databázi Northwind. Pokud budete postupovat podle rychlé spuštění, nahraďte místní identifikátor URI pro zadanému v ukázkový kód v tomto tématu.  
   
 ## <a name="consuming-an-odata-feed-using-the-client-libraries"></a>Využívání datového kanálu OData pomocí klientské knihovny  
  Služby WCF Data Services zahrnuje klientské knihovny, které vám umožní snadno využívat z datového kanálu OData [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] a klientské aplikace. Tyto knihovny zjednodušují odesílání a přijímání zpráv protokolu HTTP. Také se převede datové části zprávy do CLR objektů, které představují entity data. Knihovny klienta funkce dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy umožňují dotazování datové služby a pak pracovat s daty vrácenou entitu jako objekty CLR. Tato část obsahuje dva přístupy k vytváření aktivit, které používají knihovny klienta.  
@@ -37,13 +37,13 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  Všimněte si, že neexistují žádné operace služby vystavený službou a v **služby** položky seznamu jsou představující entity zveřejněné službu Northwind data. Při přidání odkazu na službu pro tyto entity se generují třídy, a použít v kódu klienta. V příkladech v tomto tématu použijte tyto třídy a `NorthwindEntities` třída provádět dotazy.  
   
 > [!NOTE]
->  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Generování dat služby klientské knihovny (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkID=191611).  
+>  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Generování dat služby klientské knihovny (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkID=191611).  
   
 ### <a name="using-asynchronous-methods"></a>Použití asynchronních metod  
- K odstranění problémů možnou latenci, které mohou nastat při přístupu k prostředkům prostřednictvím webu, že doporučujeme, abyste přístup ke službám WCF Data asynchronně. Asynchronní metody pro vyvolání dotazy, zahrnují knihovny klienta služby WCF Data Services a [!INCLUDE[wf](../../../includes/wf-md.md)] poskytuje <xref:System.Activities.AsyncCodeActivity> třídu pro vytváření asynchronní aktivity. <xref:System.Activities.AsyncCodeActivity>odvozené aktivity je možné zapsat do využít výhod [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] tříd, které mají asynchronní metody nebo kód, který se spustí asynchronně můžete umístit do metody a vyvolána pomocí delegáta. Tato část obsahuje dva příklady <xref:System.Activities.AsyncCodeActivity> odvozené aktivity; ten, který používá asynchronní metody knihoven klienta datových služeb WCF a jeden, který používá delegáta.  
+ K odstranění problémů možnou latenci, které mohou nastat při přístupu k prostředkům prostřednictvím webu, že doporučujeme, abyste přístup ke službám WCF Data asynchronně. Knihovny klienta služby WCF Data Services zahrnout asynchronní metody pro vyvolání dotazy, a poskytuje Windows Workflow Foundation (WF) <xref:System.Activities.AsyncCodeActivity> třídu pro vytváření asynchronní aktivity. <xref:System.Activities.AsyncCodeActivity> odvozené aktivity je možné zapsat do využít výhod [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] tříd, které mají asynchronní metody nebo kód, který se spustí asynchronně můžete umístit do metody a vyvolána pomocí delegáta. Tato část obsahuje dva příklady <xref:System.Activities.AsyncCodeActivity> odvozené aktivity; ten, který používá asynchronní metody knihoven klienta datových služeb WCF a jeden, který používá delegáta.  
   
 > [!NOTE]
->  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Asynchronních operací (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193396) a [vytváření asynchronní aktivit](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md).  
+>  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Asynchronní operace (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193396) a [vytváření asynchronní aktivit](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md).  
   
 ### <a name="using-client-library-asynchronous-methods"></a>Pomocí klientské knihovny asynchronních metod  
  <xref:System.Data.Services.Client.DataServiceQuery%601> Třída poskytuje <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> a <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metody pro dotazování služby OData asynchronně. Tyto metody lze volat z <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> přepsání <xref:System.Activities.AsyncCodeActivity> odvozené třídy. Když <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> přepsání vrátí pracovního postupu můžete přejít nečinnosti (ale nezachovají) a při dokončení asynchronní pracovní <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> vyvolání modulem runtime.  
@@ -78,7 +78,7 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  V následujícím příkladu `ListCustomers` aktivity je definována. Tato aktivita dotazuje službu ukázka Northwind data a vrátí `List<Customer>` obsahující všechny zákazníky v databázi Northwind. Asynchronní pracovní provádí `GetCustomers` metoda. Tato metoda dotazuje službu pro všechny zákazníky a pak zkopíruje je do `List<Customer>`. Pak zkontroluje, pokud jsou výsledky stránkovaného fondu. Pokud ano, dotazuje službu pro další stránky výsledků, se přidají do seznamu a bude pokračovat, dokud všechny zákaznická data načíst.  
   
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)]stránkování v datových služeb WCF, najdete v článku. [Postupy: načtení stránkovaného výsledky (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193452).  
+>  [!INCLUDE[crabout](../../../includes/crabout-md.md)] stránkování v datových služeb WCF, najdete v článku. [Postupy: načtení stránkovaného výsledky (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193452).  
   
  Jakmile jsou přidány všechny zákazníky, je vrácena v seznamu. `GetCustomers` Metoda je zadán v rámci aktivity <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> přepsat. Vzhledem k tomu, že metoda má návratovou hodnotu, `Func<string, List<Customer>>` se vytvoří určíte metodu.  
   
@@ -111,11 +111,11 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
   
  **Nezpracovaná data vrácená:**  
 **\<? xml verze = "1.0" kódování = "znakové sady utf-8" samostatné = "yes"? >**   
-**\<Kontakt xmlns = "http://schemas.microsoft.com/ado/2007/08/dataservices" > Marie Anders\</ContactName >** v pracovním postupu, může být součástí kód z tohoto příkladu <xref:System.Activities.CodeActivity.Execute%2A> přepsání <xref:System.Activities.CodeActivity>– na základě vlastní aktivitu, ale stejné funkce můžete také provést pomocí <xref:System.Activities.Expressions.InvokeMethod%601> aktivity. <xref:System.Activities.Expressions.InvokeMethod%601> Aktivity umožňuje autorům pracovního postupu a vyvolání statické metody třídy instance a má také možnost asynchronně vyvolat určenou metodu. V následujícím příkladu se <xref:System.Activities.Expressions.InvokeMethod%601> aktivity je nakonfigurován k volání <xref:System.Net.WebClient.DownloadString%2A> metodu <xref:System.Net.WebClient> třídy a vrátí seznam zákazníků.  
+**\<Kontakt xmlns = "http://schemas.microsoft.com/ado/2007/08/dataservices" > Marie Anders\</ContactName >** v pracovním postupu, může být součástí kód z tohoto příkladu <xref:System.Activities.CodeActivity.Execute%2A> přepsat z <xref:System.Activities.CodeActivity>– na základě vlastní aktivitu, ale stejné funkce můžete také provést pomocí <xref:System.Activities.Expressions.InvokeMethod%601> aktivity. <xref:System.Activities.Expressions.InvokeMethod%601> Aktivity umožňuje autorům pracovního postupu a vyvolání statické metody třídy instance a má také možnost asynchronně vyvolat určenou metodu. V následujícím příkladu se <xref:System.Activities.Expressions.InvokeMethod%601> aktivity je nakonfigurován k volání <xref:System.Net.WebClient.DownloadString%2A> metodu <xref:System.Net.WebClient> třídy a vrátí seznam zákazníků.  
   
  [!code-csharp[CFX_WCFDataServicesActivityExample#3](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_WCFDataServicesActivityExample/cs/Program.cs#3)]  
   
- <xref:System.Activities.Expressions.InvokeMethod%601>můžete volat statické a instance metody třídy. Vzhledem k tomu, <xref:System.Net.WebClient.DownloadString%2A> je metoda instance služby <xref:System.Net.WebClient> třídy, novou instanci třídy <xref:System.Net.WebClient> třída je určena pro <xref:System.Activities.Expressions.InvokeMethod%601.TargetObject%2A>. `DownloadString`je zadán jako <xref:System.Activities.Expressions.InvokeMethod%601.MethodName%2A>, zadaný identifikátor URI, který obsahuje dotaz v <xref:System.Activities.Expressions.InvokeMethod%601.Parameters%2A> je k přiřazené kolekce a návratovou hodnotu <xref:System.Activities.Activity%601.Result%2A> hodnotu. <xref:System.Activities.Expressions.InvokeMethod%601.RunAsynchronously%2A> Nastavena na hodnotu `true`, což znamená, že volání metody se spustí asynchronně s ohledem na pracovním postupu. V následujícím příkladu je pracovní postup vytvořený používající <xref:System.Activities.Expressions.InvokeMethod%601> aktivity k dotazování ukázková data Northwind službu seznam objednávky pro konkrétního zákazníka a pak je vrácená data zapsána do konzoly.  
+ <xref:System.Activities.Expressions.InvokeMethod%601> můžete volat statické a instance metody třídy. Vzhledem k tomu, <xref:System.Net.WebClient.DownloadString%2A> je metoda instance služby <xref:System.Net.WebClient> třídy, novou instanci třídy <xref:System.Net.WebClient> třída je určena pro <xref:System.Activities.Expressions.InvokeMethod%601.TargetObject%2A>. `DownloadString` je zadán jako <xref:System.Activities.Expressions.InvokeMethod%601.MethodName%2A>, zadaný identifikátor URI, který obsahuje dotaz v <xref:System.Activities.Expressions.InvokeMethod%601.Parameters%2A> je k přiřazené kolekce a návratovou hodnotu <xref:System.Activities.Activity%601.Result%2A> hodnotu. <xref:System.Activities.Expressions.InvokeMethod%601.RunAsynchronously%2A> Nastavena na hodnotu `true`, což znamená, že volání metody se spustí asynchronně s ohledem na pracovním postupu. V následujícím příkladu je pracovní postup vytvořený používající <xref:System.Activities.Expressions.InvokeMethod%601> aktivity k dotazování ukázková data Northwind službu seznam objednávky pro konkrétního zákazníka a pak je vrácená data zapsána do konzoly.  
   
  [!code-csharp[CFX_WCFDataServicesActivityExample#1](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_WCFDataServicesActivityExample/cs/Program.cs#1)]  
   
@@ -130,11 +130,11 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  **xmlns:m = "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"**  
  **atribut xmlns = "http://www.w3.org/2005/Atom" >**  
  **\<Typ title = "text" > objednávky \< /title >**  
- **\<id>http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders\</id>**  
+ **\<ID >http://services.odata.org/Northwind/Northwind.svc/Customers("ALFKI") / řadí\</id >**  
  **\<Aktualizovat > 2010-05-19T19:37:07Z\</ aktualizovány >**  
  **\<odkaz relativní = "vlastní" title = "Objednávky" href = "Objednávky" / >**  
  **\<Položka >**  
- **\<id>http://services.odata.org/Northwind/Northwind.svc/Orders(10643)\</id>**  
+ **\<ID >http://services.odata.org/Northwind/Northwind.svc/Orders(10643)\</id >**  
  **\<Typ title = "text" > \< /title >**  
  **\<Aktualizovat > 2010-05-19T19:37:07Z\</ aktualizovány >**  
  **\<Autor >**  
@@ -143,4 +143,4 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  **\<odkaz relativní = "edit" title = "Order" href="Orders(10643)" / >**  
  **\<odkaz relativní = "http://schemas.microsoft.com/ado/2007/08/dataservices/related/Customer"**  
  **typ = "application/atom + xml; zadejte = entry" title = "Zákazník" href = "Objednávky (10643) nebo zákazníka" / >**  
-**...**  Tento příklad obsahuje jednu metodu, pomocí aplikace autoři pracovního postupu můžete využívat nezpracovaná data vrácená z služby OData. [!INCLUDE[crabout](../../../includes/crabout-md.md)]přístup ke službám WCF Data pomocí identifikátory URI, najdete v části [přístup k prostředkům služby dat (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193397) a [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).
+**...**  Tento příklad obsahuje jednu metodu, pomocí aplikace autoři pracovního postupu můžete využívat nezpracovaná data vrácená z služby OData. [!INCLUDE[crabout](../../../includes/crabout-md.md)] přístup ke službám WCF Data pomocí identifikátory URI, najdete v části [přístup k prostředkům služby dat (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193397) a [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).

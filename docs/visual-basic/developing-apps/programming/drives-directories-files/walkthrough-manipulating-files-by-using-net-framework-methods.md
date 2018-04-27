@@ -1,11 +1,12 @@
 ---
-title: "Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)"
-ms.custom: 
+title: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - I/O [Visual Basic], walkthroughs
@@ -21,14 +22,14 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bc42dee640271ef84d35ceeb039d98741d296c5e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ed363efeeef008927f2c34b393de66ca4ccbb0bb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System.IO.StreamReader> třídy, zkontrolujte, pokud je soubor přistupuje, hledat řetězec v souboru pro čtení s instancí <xref:System.IO.StreamReader> třídy a zapisovat do souboru pomocí <xref:System.IO.StreamWriter> třídy.  
@@ -36,7 +37,7 @@ Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="creating-the-application"></a>Vytvoření aplikace  
- Spustit [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] a projekt začněte vytvořením formulář, který uživatel může použít k zápisu do určeného souboru.  
+ Spuštění sady Visual Studio a projekt začněte vytvořením formulář, který uživatel může použít k zápisu do určeného soubor.  
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
@@ -46,7 +47,7 @@ Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System
   
 3.  V **název** zadejte `MyDiary` a klikněte na tlačítko **OK**.  
   
-     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]přidá projekt **Průzkumníku řešení**a **Návrhář formulářů Windows** otevře.  
+     Visual Studio. přidá projekt **Průzkumníku řešení**a **Návrhář formulářů Windows** otevře.  
   
 4.  Přidání ovládacích prvků formuláře v následující tabulce a nastavte odpovídající hodnoty pro jejich vlastnosti.  
   
@@ -57,7 +58,7 @@ Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System
 |<xref:System.Windows.Forms.TextBox>|**Jméno**<br /><br /> **Text**<br /><br /> **Víceřádkového výrazu**|`Entry`<br /><br /> **Zadejte prosím něco.**<br /><br /> `False`|  
   
 ## <a name="writing-to-the-file"></a>Při zápisu do souboru  
- Chcete-li přidat možnost zapisovat do souboru pomocí aplikace, použijte <xref:System.IO.StreamWriter> třídy. <xref:System.IO.StreamWriter>je určený pro výstup znaků v určitém kódování, zatímco <xref:System.IO.Stream> třída je určená pro bajtový vstup a výstup. Použití <xref:System.IO.StreamWriter> pro zapsání řádků informací do standardního textového souboru. Další informace o <xref:System.IO.StreamWriter> třídy najdete v tématu <xref:System.IO.StreamWriter>.  
+ Chcete-li přidat možnost zapisovat do souboru pomocí aplikace, použijte <xref:System.IO.StreamWriter> třídy. <xref:System.IO.StreamWriter> je určený pro výstup znaků v určitém kódování, zatímco <xref:System.IO.Stream> třída je určená pro bajtový vstup a výstup. Použití <xref:System.IO.StreamWriter> pro zapsání řádků informací do standardního textového souboru. Další informace o <xref:System.IO.StreamWriter> třídy najdete v tématu <xref:System.IO.StreamWriter>.  
   
 #### <a name="to-add-writing-functionality"></a>Chcete-li přidat funkce zápisu  
   
@@ -102,7 +103,7 @@ Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System
 |<xref:System.Windows.Forms.TextBox>|**Jméno**<br /><br /> **Viditelné**<br /><br /> **Velikost**<br /><br /> **Víceřádkového výrazu**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|  
 |<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Display`<br /><br /> **Zobrazení**|  
 |<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`GetEntries`<br /><br /> **Získání položek**|  
-|<xref:System.Windows.Forms.ComboBox>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`PickEntries`<br /><br /> **Vyberte položku**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.ComboBox>|**Jméno**<br /><br /> **Text**<br /><br /> **povoleno**|`PickEntries`<br /><br /> **Vyberte položku**<br /><br /> `False`|  
   
 #### <a name="to-populate-the-combo-box"></a>K vyplnění pole se seznamem  
   
@@ -127,9 +128,9 @@ Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System
   
 |Ovládací prvek|Vlastnosti|Hodnoty|  
 |-------------|----------------|------------|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`DeleteEntry`<br /><br /> **Odstranit položku**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`EditEntry`<br /><br /> **Upravit položku**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`SubmitEdit`<br /><br /> **Odeslání úpravy**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **povoleno**|`DeleteEntry`<br /><br /> **Odstranit položku**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **povoleno**|`EditEntry`<br /><br /> **Upravit položku**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **povoleno**|`SubmitEdit`<br /><br /> **Odeslání úpravy**<br /><br /> `False`|  
   
 #### <a name="to-enable-deletion-and-modification-of-entries"></a>Chcete-li povolit odstranění a úpravy položek  
   

@@ -1,0 +1,1 @@
+Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)

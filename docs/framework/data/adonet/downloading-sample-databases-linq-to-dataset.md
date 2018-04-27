@@ -1,24 +1,26 @@
 ---
-title: "Stažení ukázkové databáze (LINQ na DataSet)"
-ms.custom: 
+title: Stažení ukázkové databáze (LINQ na DataSet)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb42a7af-d410-4b7f-b4a8-13c72ce6fd09
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c8c1c2dabb13393764ca8b1fd9c1a717b9e2527e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8e19e51ecf4868d0d49e26b4aafd7e8b3840992d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>Stažení ukázkové databáze (LINQ na DataSet)
 Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace použít ukázkovou databázi AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu Microsoft download. Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace použít jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bezplatně, můžete také použít jako úložiště dat místo systému SQL Server.  
@@ -27,7 +29,7 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
   
 #### <a name="to-download-and-install-the-adventureworks-sample-database-for-sql-server"></a>Chcete-li stáhnout a nainstalovat ukázkovou databázi AdventureWorks pro SQL Server  
   
-1.  Open Internet Explorer.  
+1.  Otevřete Internet Explorer.  
   
 2.  Přejděte na [SQL Server 2005 ukázky a ukázkové databáze](http://go.microsoft.com/fwlink/?linkid=31046) webu.  
   
@@ -74,7 +76,7 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
      Pokud jste nainstalovali tyto soubory na jinou jednotku nebo adresář, musíte cesty změnit správně před spuštěním `sp_attach_db` uložené procedury.  
   
 ## <a name="downloading-sql-server-express-edition"></a>Stahování systému SQL Server Express Edition  
- Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] části používat SQL Server 2005 jako úložiště dat ale můžete upravit tak, aby místo toho použít SQL Server Express Edition. SQL Server Express Edition je k dispozici bezplatně a je možné znovu distribuovat ji s aplikacemi. Pokud používáte [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], SQL Server Express Edition je součástí verze Pro a vyšší.  
+ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] části používat SQL Server 2005 jako úložiště dat ale můžete upravit tak, aby místo toho použít SQL Server Express Edition. SQL Server Express Edition je k dispozici bezplatně a je možné znovu distribuovat ji s aplikacemi. Pokud používáte Visual Studio, SQL Server Express Edition je součástí verze Pro a vyšší.  
   
 #### <a name="to-download-and-install-sql-server-express-edition"></a>Stáhněte a nainstalujte SQL Server Express Edition  
   

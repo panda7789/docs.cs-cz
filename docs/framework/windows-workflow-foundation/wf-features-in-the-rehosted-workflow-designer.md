@@ -14,17 +14,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 999c18f20264a71cf73bbd5afd352ad3104a03e8
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a11a1cddbb5b65bf174cabe7774ad62791657f54
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje
-[!INCLUDE[wf](../../../includes/wf-md.md)] v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená mnoha nových funkcí, včetně několik vylepšení zkušeností Návrháře pracovního postupu. V tomto tématu jsou tyto funkce jsou podporované v Návrháři opětovné hostování nástroje, a ty, které nejsou aktuálně podporovány.  
+Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená mnoha nových funkcí, včetně několik vylepšení zkušeností Návrháře pracovního postupu. V tomto tématu jsou tyto funkce jsou podporované v Návrháři opětovné hostování nástroje, a ty, které nejsou aktuálně podporovány.  
   
 > [!NOTE]
->  Seznam všech nové [!INCLUDE[wf](../../../includes/wf-md.md)] funkce zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], včetně těch, které se nevztahují ke návrháře opětovného hostování, najdete v tématu [co je nového v modelu Windows Workflow Foundation v rozhraní .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).  
+>  Seznam všech nových funkcí Windows Workflow Foundation (WF) byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], včetně těch, které se nevztahují ke návrháře opětovného hostování, najdete v tématu [co je nového v modelu Windows Workflow Foundation v rozhraní .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).  
   
 ## <a name="activities"></a>Aktivity  
  Knihovna předdefinovaných aktivit obsahuje nové aktivity a nové funkce pro stávající aktivity. Všechny tyto nové aktivity jsou podporovány v Návrháři opětovné hostování nástroje. Další informace o těchto nových aktivit najdete v tématu [aktivity](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) části [co je nového v modelu Windows Workflow Foundation v rozhraní .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).  

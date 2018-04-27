@@ -20,21 +20,21 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 48295a187870340948b045a64b852f1e6fdc1a65
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: dfa5eb8ec1e4f9f2eeeb142670b92d5ec35ab6cf
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0
-Předtím, než správci mohou nasadit [!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] aplikace v systému, se musí nejprve potvrďte, že [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] runtime je k dispozici. Toto téma obsahuje skript napsaný v HTML/JavaScript, která správcům umožňuje určit, zda [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] je k dispozici v systému.  
+Správci mohli nasadit aplikace rozhraní Microsoft .NET Framework v systému, se musí nejdřív ověřit, zda je k dispozici modul runtime rozhraní .NET Framework. Toto téma obsahuje skript napsaný v jazyce HTML/JavaScript, mohou správci zjistit, zda je rozhraní .NET Framework v systému existuje.  
   
 > [!NOTE]
 >  Podrobnější informace o instalaci, nasazení a zjišťování rozhraní Microsoft .NET Framework, najdete v článku diskuse ve [nasazení Microsoft .NET Framework verze 3.0](http://go.microsoft.com/fwlink/?LinkId=96739).  
   
 <a name="content_expiration"></a>   
 ## <a name="detect-the-net-clr-user-agent-string"></a>Zjištění řetězce ".NET CLR" User-Agent  
- Když [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] je nainstalovaná, soubor MSI přidá ".NET CLR" a číslo verze řetězec UserAgent. Následující příklad ukazuje skript vložený do jednoduchá stránka HTML. Skript prohledá řetězec UserAgent k určení zda [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] je nainstalován a zobrazí zprávu o stavu ve výsledcích hledání.  
+ Pokud je nainstalované rozhraní .NET Framework, soubor MSI přidá do řetězec UserAgent ".NET CLR" a číslo verze. Následující příklad ukazuje skript vložený do jednoduchá stránka HTML. Skript prohledá řetězec UserAgent k určení, zda je nainstalována rozhraní .NET Framework a zobrazí zprávu o stavu ve výsledcích hledání.  
   
 ```  
 <HTML>  

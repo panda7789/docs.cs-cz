@@ -1,26 +1,27 @@
 ---
-title: "Zpracované fronty"
-ms.custom: 
+title: Zpracované fronty
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b1b011dd-5e0b-482c-9bb0-9d8727038f14
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa475ac31287cebe173df255380b1f34d9af2567
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 628e91589ad32a2646316401c7b2ddb31b13eace
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="transacted-queues"></a>Zpracované fronty
-Tento příklad ukazuje, jak integrovat fronty a transakce v [!INCLUDE[wf](../../../../includes/wf-md.md)] k vytvoření spolehlivou a škálovatelnou služeb. A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope` se v pracovním postupu klienta používá k odeslání zprávy do fronty v transakci pomocí <xref:System.ServiceModel.NetMsmqBinding>. A <xref:System.ServiceModel.Activities.TransactedReceiveScope> se používá na serveru pro příjem zpráv z fronty a aktualizovat stav pracovního postupu ve stejné transakci.  
+Tento příklad ukazuje, jak integrovat front a transakce ve Windows Workflow Foundation (WF) k vytvoření služby spolehlivou a škálovatelnou. A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope` se v pracovním postupu klienta používá k odeslání zprávy do fronty v transakci pomocí <xref:System.ServiceModel.NetMsmqBinding>. A <xref:System.ServiceModel.Activities.TransactedReceiveScope> se používá na serveru pro příjem zpráv z fronty a aktualizovat stav pracovního postupu ve stejné transakci.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  <xref:System.Activities.Statements.TransactionScope>, <xref:System.ServiceModel.Activities.TransactedReceiveScope>, <xref:System.ServiceModel.NetMsmqBinding>, <xref:System.ServiceModel.Activities.Receive>a na základě obsahu korelace.  
@@ -30,7 +31,7 @@ Tento příklad ukazuje, jak integrovat fronty a transakce v [!INCLUDE[wf](../..
   
  Po dokončení klienta služby je nakonfigurovaná a je hostovaná. Jakmile se otevře, začne zpracování zprávy, které již byly umístěny do fronty. Každou zprávu přijme a zpracuje ve stejné transakci serveru. V této ukázce je první přijaté zprávy `CreateAccount` požadavek, který vytvoří instanci a inicializuje obsahu korelace na základě názvu účtu předanou v rámci zprávu požadavku. Modelování druh služby by se dalo očekávat v reálném světě se následující dva <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity, které zpracovávají `AddPoints` a `UsePoints` zpráv ukládány do paralelních větvích v rámci `while` cykly, aby se mohl zpracovávat tyto zprávy opakovaně v libovolném pořadí.  
   
- <xref:System.Activities.Statements.TransactionScope>a <xref:System.ServiceModel.Activities.TransactedReceiveScope> mají bod implicitní trvalost na konci jejich obory, takže pomocí těchto aktivit v [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v kombinaci s front je spolehlivý způsob, jak přesunout z jeden konzistentní stav pracovní postup na další, a zajistit, aby se zprávy nikdy ztratit.  
+ <xref:System.Activities.Statements.TransactionScope> a <xref:System.ServiceModel.Activities.TransactedReceiveScope> mají bod implicitní trvalost na konci jejich obory, takže pomocí těchto aktivit v [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v kombinaci s front je spolehlivý způsob, jak přesunout z jeden konzistentní stav pracovní postup na další, a zajistit, aby se zprávy nikdy ztratit.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   

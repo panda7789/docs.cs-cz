@@ -1,29 +1,29 @@
 ---
-title: "Pracovní postup zabezpečení"
-ms.custom: 
+title: Pracovní postup zabezpečení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-caps.latest.revision: 
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: dbb1d1efc0758410f12f2c669cca85b9f0e38406
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 90e9d5f3a2cff454ff7892877f012f8679b9ccac
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="workflow-security"></a>Pracovní postup zabezpečení
-[!INCLUDE[wf](../../../includes/wf-md.md)]je integrován s několika různých technologií, jako je Microsoft SQL Server a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Interakci s těmito technologiemi může znamenat problémy se zabezpečením do vašeho pracovního postupu, pokud se to udělá nesprávně.  
+Windows Workflow Foundation (WF) je integrovaná s několika různých technologií, jako je Microsoft SQL Server a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Interakci s těmito technologiemi může znamenat problémy se zabezpečením do vašeho pracovního postupu, pokud se to udělá nesprávně.  
   
 ## <a name="persistence-security-concerns"></a>Otázky zabezpečení trvalost  
   
@@ -41,15 +41,15 @@ ms.lasthandoff: 12/22/2017
   
 -   V případě velkého počtu podřízené aktivity, umístění, záložky, rozšíření hostitele nebo obory používají, nebo když se používají záložky s velmi rozsáhlých datových částí, může dojít k vyčerpání paměti nebo zbytečného množství volného místa databáze může být přidělen během trvalost. To může být omezeny pomocí zabezpečení na úrovni objektů a úroveň databáze.  
   
--   Při použití <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, musí být zabezpečená úložiště instance. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Osvědčené postupy pro SQL Server](http://go.microsoft.com/fwlink/?LinkId=164972).  
+-   Při použití <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, musí být zabezpečená úložiště instance. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Osvědčené postupy pro SQL Server](http://go.microsoft.com/fwlink/?LinkId=164972).  
   
--   Citlivá data v úložišti instance by měla šifrovat. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Šifrování zabezpečení SQL](http://go.microsoft.com/fwlink/?LinkId=164976).  
+-   Citlivá data v úložišti instance by měla šifrovat. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Šifrování zabezpečení SQL](http://go.microsoft.com/fwlink/?LinkId=164976).  
   
 -   Vzhledem k tomu, že připojovací řetězec databáze je často zahrnutý v konfiguračním souboru, windows řízení přístupu (ACL) by měla sloužit k zkontrolujte, zda je konfigurační soubor (obvykle Web.Config) zabezpečené a informace přihlašovací jméno a heslo nejsou součástí připojovací řetězec. Ověřování systému Windows by měla místo toho použít mezi databází a webový server.  
   
 ## <a name="considerations-for-workflowservicehost"></a>Důležité informace týkající se hostitele služby pracovního postupu  
   
--   [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]musí být zabezpečená koncových bodů použitých v pracovních postupech. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][WCF – Přehled zabezpečení](http://go.microsoft.com/fwlink/?LinkID=164975).  
+-   [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] musí být zabezpečená koncových bodů použitých v pracovních postupech. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Přehled zabezpečení WCF](http://go.microsoft.com/fwlink/?LinkID=164975).  
   
 -   Ověřování na úrovni hostitele můžete implementovat pomocí <xref:System.ServiceModel.ServiceAuthorizationManager>. V tématu [postupy: vytvoření vlastního Správce autorizací pro službu](http://go.microsoft.com/fwlink/?LinkId=192228) podrobnosti. To také ukazují následující ukázka: [zabezpečení služeb pracovních postupů](../../../docs/framework/windows-workflow-foundation/samples/securing-workflow-services.md).  
   

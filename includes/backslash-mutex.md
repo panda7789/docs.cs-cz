@@ -1,0 +1,1 @@
+Zpětné lomítko (\\) je vyhrazený znak v názvu mutex. Nepoužívejte zpětné lomítko (\\) v názvu mutex s výjimkou uvedeného v poznámce k používání mutex – třídy v relacích terminálového serveru. V opačném <xref:System.IO.DirectoryNotFoundException> mohou být vyvolány, přestože název mutex představuje existující soubor.

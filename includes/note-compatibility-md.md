@@ -1,0 +1,2 @@
+> [!NOTE]
+>  Funkce a objekty v oboru názvů <xref:Microsoft.VisualBasic.Compatibility.VB6> jsou určené k používání nástroji pro upgrade Visual Basicu 6.0 na Visual Basic 2008. Ve většině případů tyto funkce a objekty duplikují funkce, které můžete najít v jiných oborech názvů v rozhraní .NET Framework. Jsou zapotřebí pouze v případě, že model kódu aplikace Visual Basic 6.0 se zásadně liší od implementace rozhraní .NET Framework.

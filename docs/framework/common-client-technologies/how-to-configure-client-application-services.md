@@ -18,14 +18,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e7c6d31293109a0d778136235ccfc894aeba8574
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: f8a6c6be6874c1a90c9e40b5b82d833aeaa9b63a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-configure-client-application-services"></a>Postupy: Konfigurace klientských aplikačních služeb
-Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **Návrhář projektu** povolit a nakonfigurovat klientské aplikační služby. Klient aplikačních služeb můžete použít k ověření uživatelů a načítání uživatelských rolí a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
+Toto téma popisuje způsob použití sady Visual Studio **Návrhář projektu** povolit a nakonfigurovat klientské aplikační služby. Klient aplikačních služeb můžete použít k ověření uživatelů a načítání uživatelských rolí a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
   
  Můžete povolit a nakonfigurovat klientské aplikační služby na **služby** stránky **Návrhář projektu**. **Služby** stránka aktualizuje hodnoty v souboru App.config vašeho projektu. Pro přístup k **Návrhář projektu**, použijte **vlastnosti** příkaz na **projektu** nabídky. Další informace o **služby** stránky najdete v tématu [stránka služby, Návrhář projektu](https://msdn.microsoft.com/library/bb398109).  
   
@@ -100,7 +100,7 @@ Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-
   
      Výchozí hodnota `Data Source = |SQL/CE|` se zobrazí v textovém poli.  
   
-3.  Pokud chcete vygenerovat a používat databázi systému SQL Server Compact, ponechte výchozí hodnotu řetězce připojení. [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] bude generovat soubor databáze a umístí jej v adresáři indikován <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> vlastnost.  
+3.  Pokud chcete vygenerovat a používat databázi systému SQL Server Compact, ponechte výchozí hodnotu řetězce připojení. Visual Studio bude generovat soubor databáze a umístí jej v adresáři indikován <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> vlastnost.  
   
 4.  Generovat a používat šifrované [!INCLUDE[ssEW](../../../includes/ssew-md.md)] databáze, přidejte `password` a `encrypt database` hodnoty do připojovacího řetězce, jak je znázorněno v následujícím příkladu.  
   

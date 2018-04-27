@@ -1,32 +1,33 @@
 ---
-title: "Počkejte aktivity pro vstup"
-ms.custom: 
+title: Počkejte aktivity pro vstup
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d58c344e-9ee8-4ce2-b199-75b3fe45237f
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ac05054d56c424ab3f4d1fdfd9c3590aac8b00bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b9e7942ced071a795f1bf408ca4778a216cd85e4
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wait-for-input-activity"></a>Počkejte aktivity pro vstup
-Tento příklad znázorňuje postup vytvoření pojmenovaného záložky v pracovním postupu. [!INCLUDE[wf](../../../../includes/wf-md.md)]pro vytvoření deklarativní záložku neposkytuje aktivitu. Proto pokud chcete vytvořit záložku v pracovní postup, musíte napsat vlastní aktivity, která ji vytvoří. `WaitForInput` Aktivity definované v této ukázce tuto funkci zajišťuje, aby uživatelé mohou vytvářet záložky deklarativně v pracovním postupu.  
+Tento příklad znázorňuje postup vytvoření pojmenovaného záložky v pracovním postupu. Windows Workflow Foundation (WF) neposkytuje aktivitu pro vytvoření deklarativní záložky. Proto pokud chcete vytvořit záložku v pracovní postup, musíte napsat vlastní aktivity, která ji vytvoří. `WaitForInput` Aktivity definované v této ukázce tuto funkci zajišťuje, aby uživatelé mohou vytvářet záložky deklarativně v pracovním postupu.  
   
 ## <a name="projects-in-this-sample"></a>Projekty v této ukázce  
   
 |**Název projektu**|**Popis**|**Hlavní soubory**|  
 |-|-|-|  
-|WaitForInput|Obsahuje `WaitForInput` aktivita a její návrháře|WaitForInput.cs<br /><br /> `WaitForInput`definici aktivity.|  
+|WaitForInput|Obsahuje `WaitForInput` aktivita a její návrháře|WaitForInput.cs<br /><br /> `WaitForInput` definici aktivity.|  
 |||WaitForInputDesigner.xaml<br /><br /> Vlastní designer pro aplikaci `WaitForInput` aktivity.|  
 |||TypeToFirstGenericArgumentConverter.cs<br /><br /> Převaděče typů WPF použít k aktualizaci obecného typu aktivity v návrháři.|  
 |WaitForInputTestClient|Ukázkovou aplikaci klienta, která slouží ke konfiguraci a spustí pracovní postup pomocí několika aktivit WaitForInput pomocí návrháře pracovních postupů.|Sequence1.XAML<br /><br /> Sekvenční pracovní postup, který používá `WaitForInput` aktivity.|  

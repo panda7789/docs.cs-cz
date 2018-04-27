@@ -20,17 +20,17 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-caps.latest.revision: ''
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b7a69a4dcd5fc39b700bf9c3404e70d581509ebc
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: fe34933c19e7f8a50d144cad99b99decbd501965
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Přetažení myší běžně odkazuje na metodu přenosu dat, který zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, přetáhněte tyto objekty přes cíle některé požadované přetažení v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
@@ -44,7 +44,7 @@ Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_win
   
  Konkrétní akce prováděné během operace přetažení myší jsou aplikace konkrétní a často určenému kontextu.  Například přetažení výběru souborů z jedné složky do jiné na stejném zařízení úložiště přesune soubory ve výchozím nastavení, že přetáhnete soubory z [!INCLUDE[TLA#tla_unc](../../../../includes/tlasharptla-unc-md.md)] sdílenou složku do místní složky zkopíruje soubory ve výchozím nastavení.  
   
- Přetažení myší poskytované systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou navržené jako vysoce flexibilní a přizpůsobitelné podporuje celou řadu scénářů přetažení myší.  Přetažení myší podporuje práci s objekty v rámci jedné aplikace, nebo mezi různými aplikacemi. Přetahování a uvolnění mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace a další [!INCLUDE[TLA2#tla_win](../../../../includes/tla2sharptla-win-md.md)] aplikace je také plně podporovány.  
+ Přetažení myší poskytované systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou navržené jako vysoce flexibilní a přizpůsobitelné podporuje celou řadu scénářů přetažení myší.  Přetažení myší podporuje práci s objekty v rámci jedné aplikace, nebo mezi různými aplikacemi. Přetahování a uvolnění mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také plně podporuje aplikace a další aplikace systému Windows.  
   
  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], jakékoliv <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> mohl účastnit přetažení myší. Události a metody potřebné pro operací přetažení myší jsou definovány v <xref:System.Windows.DragDrop> třídy. <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement> třídy obsahovat aliasy pro <xref:System.Windows.DragDrop> přidružené události tak, aby události se zobrazí ve třídě seznam členů, kdy <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> zdědí jako základní prvek. Obslužné rutiny událostí, které jsou připojené k tyto události jsou připojené k základní <xref:System.Windows.DragDrop> přidružená událost a přijímat stejné instance dat události. Další informace najdete v tématu <xref:System.Windows.UIElement.Drop?displayProperty=nameWithType> událostí.  
   

@@ -1,25 +1,26 @@
 ---
-title: "Práce s protokoly aplikací v jazyce Visual Basic"
-ms.custom: 
+title: Práce s protokoly aplikací v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - logs, application
 - application event logs, Visual Basic
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ea5f3699ca5a1b6b0859ac266656deb933839d3d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 40cad53cd9283a99a93cde79616151e77489e7bb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 `My.Applicaton.Log` a `My.Log` objekty usnadňují zapisovat do protokolů informace o trasování a protokolování.  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="where-messages-are-logged"></a>Kde se protokolují zprávy  
  Pokud sestavení nemá žádný konfigurační soubor `My.Application.Log` a `My.Log` objekty zápis výstupu ladění aplikace (prostřednictvím <xref:System.Diagnostics.DefaultTraceListener> třídy). Kromě toho `My.Application.Log` objekt zapisuje do souboru protokolu sestavení (prostřednictvím <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> – třída), při `My.Log` objekt zapíše do výstupního webová stránka ASP.NET (prostřednictvím <xref:System.Web.WebPageTraceListener> – třída).  
   
- Výstup ladění lze zobrazit v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] **výstup** okno při spuštění aplikace v režimu ladění. Otevřete **výstup** okně klikněte na tlačítko **ladění** položky nabídky, přejděte na příkaz **Windows**a potom klikněte na **výstup**. V **výstup** vyberte **ladění** z **zobrazit výstup z** pole.  
+ Výstup ladění lze zobrazit v sadě Visual Studio **výstup** okno při spuštění aplikace v režimu ladění. Otevřete **výstup** okně klikněte na tlačítko **ladění** položky nabídky, přejděte na příkaz **Windows**a potom klikněte na **výstup**. V **výstup** vyberte **ladění** z **zobrazit výstup z** pole.  
   
  Ve výchozím nastavení `My.Application.Log` soubor protokolu se zapisují cesta k datům uživatele aplikace. Můžete získat cestu z <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> vlastnost <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> objektu. Formát cesty je následující:  
   
@@ -110,4 +111,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+ [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

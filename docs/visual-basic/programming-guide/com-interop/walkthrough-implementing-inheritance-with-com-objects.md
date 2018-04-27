@@ -17,11 +17,11 @@ ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10c6bdf46e351b23705107da3b693531718cfd37
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b03b81c9e04e79f8ce7763ecf8a489d248ff480b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)
 Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, včetně těch, které jsou vytvořené v dřívějších verzích jazyka Visual Basic. Vlastnosti a metody třídy dědí z objektů COM můžete přepsat nebo přetížený stejně jako vlastnosti a metody všechny základní třídy lze přepsat nebo přetížený. Dědičnost z objektů COM je užitečné, když máte existující knihovny tříd, které nechcete znovu zkompilovat.  
@@ -81,7 +81,7 @@ Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, v
     >  I když můžete také zveřejnit třídu vytvořit pomocí jazyka Visual Basic jako objekt COM, není objekt true COM a nelze použít v tomto návodu. Podrobnosti najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 ## <a name="interop-assemblies"></a>Sestavení spolupráce  
- V následujícím postupu vytvoříte spolupráce sestavení, která funguje jako most mezi nespravovaného kódu (například objekt COM) a spravovaný kód [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] používá. Sestavení vzájemné spolupráce, který vytváří jazyka Visual Basic zpracovává mnoho podrobnosti o práci s objekty modelu COM, jako například *zařazování spolupráce*, proces balení parametry a návratové hodnoty do ekvivalentní datové typy jako se přesouvají do a z COM – objekty. Referenční dokumentace jazyka Visual Basic aplikace odkazuje na sestavení vzájemné spolupráce, nikoli skutečné objektu COM.  
+ V následujícím postupu vytvoříte spolupráce sestavení, která funguje jako most mezi nespravovaného kódu (například objekt COM) a spravovaný kód, který se používá v sadě Visual Studio. Sestavení vzájemné spolupráce, který vytváří jazyka Visual Basic zpracovává mnoho podrobnosti o práci s objekty modelu COM, jako například *zařazování spolupráce*, proces balení parametry a návratové hodnoty do ekvivalentní datové typy jako se přesouvají do a z COM – objekty. Referenční dokumentace jazyka Visual Basic aplikace odkazuje na sestavení vzájemné spolupráce, nikoli skutečné objektu COM.  
   
 #### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Chcete-li objekt modelu COM pomocí jazyka Visual Basic 2005 a novějších verzích  
   

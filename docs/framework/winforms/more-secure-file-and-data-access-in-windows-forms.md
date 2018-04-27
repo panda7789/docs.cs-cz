@@ -27,11 +27,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 61e4893ac32d2013b090a748078ec1e3a84ea3ac
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 77c69c5c39d90dcc28aa9c6084d84ace29df6f18
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Využívá oprávnění k ochraně prostředkům a datům. Kde vaše aplikace můžou číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí s částečnou důvěryhodností, pravděpodobně nebudete mít přístup k datům nebo možná budete muset změnit způsob přístupu k datům.  
@@ -39,7 +39,7 @@ ms.lasthandoff: 04/26/2018
  Když dojde k omezení zabezpečení, máte dvě možnosti: uplatnit oprávnění (za předpokladu, že byla udělena do aplikace), nebo použijte verzi funkci určený pro práci v částečné důvěryhodnosti. Následující části popisují, jak pracovat s soubor, databáze a přístup k registru z aplikací, které běží v prostředí s částečnou důvěryhodností.  
   
 > [!NOTE]
->  Ve výchozím nastavení nástroje, které generují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení výchozí tato nasazení na vyžádání úplný vztah důvěryhodnosti z počítačů, na kterých poběží. Pokud se rozhodnete chcete využít výhod zvýšení zabezpečení spuštěných v částečné důvěryhodnosti, musíte změnit toto výchozí nastavení buď [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] nebo jeden z [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] nástroje (Mage.exe nebo MageUI.exe). Další informace o zabezpečení Windows Forms a o způsobu určení úrovně důvěryhodnosti vhodné pro vaše aplikace najdete v tématu [zabezpečení ve Windows Forms přehled](../../../docs/framework/winforms/security-in-windows-forms-overview.md).  
+>  Ve výchozím nastavení nástroje, které generují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení výchozí tato nasazení na vyžádání úplný vztah důvěryhodnosti z počítačů, na kterých poběží. Pokud se rozhodnete chcete využít výhod zvýšení zabezpečení spuštěných v částečné důvěryhodnosti, musíte změnit toto výchozí nastavení v sadě Visual Studio nebo jeden z [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] nástroje (Mage.exe nebo MageUI.exe). Další informace o zabezpečení Windows Forms a o způsobu určení úrovně důvěryhodnosti vhodné pro vaše aplikace najdete v tématu [zabezpečení ve Windows Forms přehled](../../../docs/framework/winforms/security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Přístup k souborům  
  <xref:System.Security.Permissions.FileIOPermission> Třídy ovládacích prvků přístupu souborů a složek v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Ve výchozím nastavení, systém zabezpečení nejsou udělena <xref:System.Security.Permissions.FileIOPermission> do prostředí částečné důvěryhodnosti například místního intranetu a Internetu zóny. Aplikaci, která vyžaduje přístup k souborům mohou však i nadále fungovat v těchto prostředích Pokud změníte návrh aplikace nebo použít různé metody pro přístup k souborům. Ve výchozím nastavení je zóny místního intranetu uděleno právo mají stejný přístup k serveru a stejný přístup directory zpětné připojení k původnímu serveru a čtení z jeho instalační adresář. Ve výchozím nastavení je zóně Internet, pouze uděleno právo připojit zpět k původnímu serveru.  
