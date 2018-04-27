@@ -17,14 +17,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d6b61f5ae7d0e7f3102e0566fb1a6eff3ca072d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ca790f97eb677414655b583e46cb693506ed0cc2
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-workflow-foundation"></a>Windows Workflow Foundation
-Tato část popisuje model programování, ukázky a nástrojů dle [!INCLUDE[wf](../../../includes/wf-md.md)].  
+Tato část popisuje modelu programování, ukázky a nástroje Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Průvodce dokumentací k Windows Workflow](../../../docs/framework/windows-workflow-foundation/guide-to-the-documentation.md)  
@@ -37,19 +37,19 @@ Tato část popisuje model programování, ukázky a nástrojů dle [!INCLUDE[wf
  Popisuje nové funkce v modelu Windows Workflow Foundation v [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)].  
   
  [Specifické funkce Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/feature-specifics.md)  
- Popisuje nové funkce v modelu Windows Workflow Foundation v[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]  
+ Popisuje nové funkce v modelu Windows Workflow Foundation v  [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]  
   
  [Koncepční přehled Windows Workflow](../../../docs/framework/windows-workflow-foundation/conceptual-overview.md)  
- Sadu témat, která popisuje větší Principy [!INCLUDE[wf2](../../../includes/wf2-md.md)].  
+ Sadu témat, která popisuje větší Principy modelu Windows Workflow Foundation.  
   
  [Kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
- Sadu návod témata, které vám představí programování [!INCLUDE[wf2](../../../includes/wf2-md.md)] aplikací.  
+ Sada návod témata, které vám představí programování aplikací modelu Windows Workflow Foundation.  
   
  [Programování Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/programming.md)  
  Sadu Úvod do témata, které byste měli porozumět stane znalosti [!INCLUDE[wf1](../../../includes/wf1-md.md)] programátory.  
   
  [Rozšíření Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/extend.md)  
- Sadu témata, která popisuje, jak rozšířit nebo přizpůsobit [!INCLUDE[wf2](../../../includes/wf2-md.md)] podle svých potřeb.  
+ Sadu témat, který popisuje, jak rozšířit nebo upravit modelu Windows Workflow Foundation, aby vyhovovala vašim potřebám.  
   
  [Glosář služby Windows Workflow Foundation pro rozhraní .NET Framework 4.5](../../../docs/framework/windows-workflow-foundation/glossary.md)  
  Definuje seznam termínů, které jsou specifické pro WF.  

@@ -1,23 +1,24 @@
 ---
-title: "Vozidlo kódu"
-ms.custom: 
+title: Vozidlo kódu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5bfb2d95-9092-4551-9c59-bd8f0a37225e
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1e9c0cecbf398fb024bda672cf9085e9c779d620
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1a07ef581459585f0418cdd24660b8064d0f51b0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="code-bodied"></a>Vozidlo kódu
 Tato část obsahuje ukázky vlastní aktivity vytvořené deklarativně v kódu.  
@@ -39,7 +40,7 @@ Tato část obsahuje ukázky vlastní aktivity vytvořené deklarativně v kódu
  Tento příklad ukazuje, jak vyvíjet vlastní <xref:System.Activities.CodeActivity> používající <xref:System.Activities.AsyncCodeActivityContext> pro práci asynchronně mimo pracovní postup. 
   
  [Vlastní aktivita Hello World](../../../../docs/framework/windows-workflow-foundation/samples/hello-world-custom-activity.md)  
- Tento příklad znázorňuje několik klíčových funkcích služby [!INCLUDE[wf](../../../../includes/wf-md.md)], včetně toho, jak vytvořit jednoduché vlastní aktivity.  
+ Tento příklad znázorňuje několik klíčových funkcí systému Windows Workflow Foundation (WF), včetně toho, jak vytvořit jednoduché vlastní aktivity.  
   
  [Dynamické argumenty](../../../../docs/framework/windows-workflow-foundation/samples/dynamic-arguments.md)  
  Tento příklad znázorňuje způsob implementace aktivitu, pro které jsou definovány argumenty příjemce aktivity spíše než Autor aktivity.

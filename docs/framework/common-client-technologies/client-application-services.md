@@ -1,12 +1,13 @@
 ---
-title: "Klientské aplikační služby"
-ms.custom: 
+title: Klientské aplikační služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - role-based security [.NET Framework], client application services
@@ -24,16 +25,17 @@ helpviewer_keywords:
 - roles [.NET Framework], client application services
 - client application services, about client application services
 ms.assetid: 1487d8df-089e-4f21-abfb-a791a652b58e
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 597b2d4d37d76ca722ddcebf9fcfeae532f67a00
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9532594f5f243faed28229388b9a6d597be57a7d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="client-application-services"></a>Klientské aplikační služby
 Klient aplikačních služeb můžete snadno vytvořit aplikace systému Windows, které používají [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a součástí rozšíření Microsoft ASP.NET 2.0 AJAX profil aplikačních služeb. Tyto služby umožňují více Web a aplikace pro systém Windows sdílet informace o uživateli a správu uživatelů funkci z jednoho serveru. Tyto služby můžete například použít k provádění následujících úloh:  
@@ -53,7 +55,7 @@ Klient aplikačních služeb můžete snadno vytvořit aplikace systému Windows
  Popisuje funkce, které jsou k dispozici prostřednictvím poskytovatelů služeb aplikací klienta.  
   
  [Postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
- Popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] Návrhář projektu k povolení a konfigurace aplikační služby. Také popisuje odpovídající změny do souboru App.config.  
+ Popisuje, jak používat Návrhář projektu sady Visual Studio k povolení a konfigurace aplikační služby. Také popisuje odpovídající změny do souboru App.config.  
   
  [Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
  Popisuje, jak ověřit uživatele, pokud je vaše aplikace nakonfigurovaná pro použití poskytovatele služby ověřování klienta.  

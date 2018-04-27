@@ -1,12 +1,13 @@
 ---
-title: "Postupy: vytvoření páru veřejného a privátního klíče RSA"
-ms.custom: 
+title: 'Postupy: vytvoření páru veřejného a privátního klíče RSA'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,22 +23,23 @@ helpviewer_keywords:
 - .snk files
 - strong-named assemblies, key pairs
 ms.assetid: 05026813-f3bd-4d7c-9e0b-fc588eb3d114
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b8076f5ed713c88f8f538959855408a8c542705a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 991affd7074cd69c1c56c37ab2d0a55f8b3af148
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>Postupy: vytvoření páru veřejného a privátního klíče RSA
 Pro podepsání sestavení silným názvem, musíte mít pár veřejného a privátního klíče. Tento pár veřejného a soukromého kryptografické klíče se používá během kompilace k vytvoření sestavení se silným názvem. Můžete vytvořit pár klíčů pomocí [silný název – nástroj (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md). Soubory párů klíčů obvykle mají příponu .snk.  
   
 > [!NOTE]
->  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], zahrnout stránky vlastností projektu C# a Visual Basic **podpisování** kartu, která umožňuje vybrat existující soubory klíčů nebo generování nových klíčů souborů bez použití Sn.exe. V jazyce Visual C++, můžete zadat umístění existujícího souboru s klíčem v **Upřesnit** stránka vlastností v **Linkeru** části **vlastnosti konfigurace** části **Stránky vlastností** okno. Použití <xref:System.Reflection.AssemblyKeyFileAttribute> atribut k identifikaci soubor klíče dvojice byl proveden zastaralé od verze [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)].  
+>  V sadě Visual Studio, zahrnují stránky vlastností projektu C# a Visual Basic **podpisování** kartu, která umožňuje vybrat existující soubory klíčů nebo generování nových klíčů souborů bez použití Sn.exe. V jazyce Visual C++, můžete zadat umístění existujícího souboru s klíčem v **Upřesnit** stránka vlastností v **Linkeru** části **vlastnosti konfigurace** části **Stránky vlastností** okno. Použití <xref:System.Reflection.AssemblyKeyFileAttribute> atribut k identifikaci soubor klíče dvojice byl proveden zastaralé od verze [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)].  
   
 ### <a name="to-create-a-key-pair"></a>Chcete-li vytvořit pár klíčů  
   
@@ -69,7 +71,7 @@ sn -p keypair.snk public.snk
   
  Při podpisu sestavení se silným názvem, [Linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) hledá klíč souboru relativní k aktuálnímu adresáři a do výstupního adresáře. Pokud používáte kompilátory příkazového řádku, můžete jednoduše zkopírovat klíč k aktuálnímu adresáři obsahuje moduly kódu.  
   
- Pokud používáte starší verzi [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] , nemá **podpisování** karta ve vlastnostech projektu je umístění souboru doporučené klíče adresář projektu s atributem souboru určeným následujícím způsobem:  
+ Pokud používáte starší verze sady Visual Studio, který nemá **podpisování** karta ve vlastnostech projektu je umístění souboru doporučené klíče adresář projektu s atributem souboru určeným následujícím způsobem:  
   
  [!code-cpp[AssemblyName_KeyPair#21](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyName_KeyPair/CPP/keyfileattrib.cpp#21)]
  [!code-csharp[AssemblyName_KeyPair#21](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyName_KeyPair/CS/keyfileattrib.cs#21)]

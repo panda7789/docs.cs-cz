@@ -1,24 +1,26 @@
 ---
-title: "Ukázka třídy XMLSerializer"
-ms.custom: 
+title: Ukázka třídy XMLSerializer
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7d134453-9a35-4202-ba77-9ca3a65babc3
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c89194eebbfe4f25b8d8120be16a18306a92a889
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: af051dffa93aea6586adaea1e49081ddc357a210
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xmlserializer-sample"></a>Ukázka třídy XMLSerializer
 Tento příklad ukazuje, jak k serializaci a deserializaci typy, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer>. Výchozí hodnota [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] formátovací modul je <xref:System.Runtime.Serialization.DataContractSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třídu lze použít k serializaci a deserializaci typy, jestliže <xref:System.Runtime.Serialization.DataContractSerializer> třída se nedá použít. To je často případ, kdy přesnou kontrolu nad XML je požadovaná – například pokud část dat musí být atribut XML a není element XML. Navíc <xref:System.Xml.Serialization.XmlSerializer> často získá automaticky vybrán při vytváření klientů pro jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
@@ -30,7 +32,7 @@ Tento příklad ukazuje, jak k serializaci a deserializaci typy, které jsou kom
   
  <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.XmlSerializerFormatAttribute> je nutné použít na rozhraní, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"), XmlSerializerFormat]  
 public interface IXmlSerializerCalculator  
 {  
@@ -47,7 +49,7 @@ public interface IXmlSerializerCalculator
   
  Veřejné členy `ComplexNumber` třídy jsou serializovat <xref:System.Xml.Serialization.XmlSerializer> jako atributy XML. <xref:System.Runtime.Serialization.DataContractSerializer> Nelze použít k vytvoření tento druh XML instance.  
   
-```  
+```csharp  
 public class ComplexNumber  
 {  
     private double real;  
@@ -83,7 +85,7 @@ public class ComplexNumber
   
  Implementace služby vypočítá a vrátí výsledek ve odpovídající – přijímání a vrácení hodnoty `ComplexNumber` typu.  
   
-```  
+```csharp  
 public class XmlSerializerCalculatorService : IXmlSerializerCalculator  
 {  
     public ComplexNumber Add(ComplexNumber n1, ComplexNumber n2)  
@@ -97,7 +99,7 @@ public class XmlSerializerCalculatorService : IXmlSerializerCalculator
   
  Implementace klienta používá také komplexní čísla. Kontrakt služby a datové typy jsou definovány v generatedClient.cs zdrojový soubor, který byl vygenerován [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z metadat služby. Svcutil.exe může rozpoznat, kdy kontraktu není serializovatelný pomocí <xref:System.Runtime.Serialization.DataContractSerializer> a vrátí do emitování `XmlSerializable` typy v tomto případě. Pokud chcete vynutit použití <xref:System.Xml.Serialization.XmlSerializer>, můžete předat do nástroje Svcutil.exe příkazového řádku /serializer:XmlSerializer (použití třídy XmlSerializer).  
   
-```  
+```csharp  
 // Create a client.  
 XmlSerializerCalculatorClient client = new  
                          XmlSerializerCalculatorClient();  

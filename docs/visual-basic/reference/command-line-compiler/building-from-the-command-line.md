@@ -22,18 +22,18 @@ ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1fd4054838925267647986a5166fd88037b17fae
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 9a9dee47f06e4f7d9fc8d237376df7707130921d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="building-from-the-command-line-visual-basic"></a>Sestavení z příkazového řádku (Visual Basic)
 Projektu jazyka Visual Basic se skládá z jedné nebo více samostatných zdrojové soubory. Během procesu říká kompilace, tyto soubory jsou shromážděna do jednoho balíčku – jeden spustitelný soubor, který může běžet jako aplikace.  
   
- Visual Basic poskytuje jako alternativu k kompilace programů v nástroji příkazového řádku kompilátoru [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE). Kompilátor příkazového řádku je navržené pro situace, ve kterých nechcete, aby úplnou sadu funkcí v prostředí IDE – například když používáte nebo zápis pro počítače s omezené systémové paměti nebo úložný prostor.  
+ Visual Basic poskytuje kompilátoru příkazového řádku jako alternativu k kompilace programů z v sadě Visual Studio integrované vývojové prostředí (IDE). Kompilátor příkazového řádku je navržené pro situace, ve kterých nechcete, aby úplnou sadu funkcí v prostředí IDE – například když používáte nebo zápis pro počítače s omezené systémové paměti nebo úložný prostor.  
   
-  Zkompilovat zdrojové soubory v rámci [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrovaného vývojového prostředí, vyberte **sestavení** příkaz **sestavení** nabídky.  
+  Kompilace zdrojové soubory z v prostředí Visual Studio IDE, vyberte **sestavení** příkaz **sestavení** nabídky.  
   
 > [!TIP]
 >  Při sestavování projektu soubory pomocí prostředí Visual Studio IDE, můžete zobrazit informace o přidruženého **Vbc –** příkazu a jeho přepínače v okně výstupu. Chcete-li zobrazit tyto informace, otevřete [dialogové okno Možnosti, projekty a řešení, sestavení a spuštění](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)a poté nastavte **výstup sestavení projektu MSBuild podrobností** k **normální** nebo vyšší úrovni podrobností. Další informace najdete v tématu [postupy: zobrazení, ukládání a konfigurace souborů protokolu sestavení](http://msdn.microsoft.com/library/75d38b76-26d6-4f43-bbe7-cbacd7cc81e7).  

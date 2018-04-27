@@ -1,35 +1,36 @@
 ---
 title: Entity aktivity
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c04f7413-7fb8-40c6-819e-dc92b145b62e
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c507c3da7f4583bf6ffb7b869cecbf0bfd305077
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 81f8b1852b939d7ceb8b9afae4435ca12239b880
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="entity-activities"></a>Entity aktivity
-Tento příklad ukazuje způsob použití ADO.NET Entity Framework s [!INCLUDE[wf2](../../../../includes/wf2-md.md)] zjednodušit přístup k datům.  
+Tento příklad ukazuje použití ADO.NET Entity Framework pro zjednodušení přístupu k datům s Windows Workflow Foundation.  
   
- ADO.NET Entity Framework umožňuje vývojářům pracovat s daty v podobě objektů specifické pro doménu, vlastností a vztahů například zákazníky, objednávky, podrobnosti o pořadí a vztahy mezi tyto entity. ADO.NET Entity Framework tomu tím, že poskytuje úroveň abstrakce, která umožňuje programování s koncepční aplikační model místo programování přímo proti schématu relační úložiště. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ADO.NET Entity Framework najdete [ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkId=165549).  
+ ADO.NET Entity Framework umožňuje vývojářům pracovat s daty v podobě objektů specifické pro doménu, vlastností a vztahů například zákazníky, objednávky, podrobnosti o pořadí a vztahy mezi tyto entity. ADO.NET Entity Framework tomu tím, že poskytuje úroveň abstrakce, která umožňuje programování s koncepční aplikační model místo programování přímo proti schématu relační úložiště. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ADO.NET Entity Framework najdete [ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkId=165549).  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  V tomto příkladu `Northwind` databáze a obsahuje skripty pro vytváření a odebrání `Northwind` databáze (Setup.cmd a Cleanup.cmd). Projekty v této ukázce obsahovat datový Model Entity na základě `Northwind` databáze. Model můžete najít tak, že otevřete `Northwind.edmx` soubor, který je zahrnutý v projektu. Toto je model, který definuje tvar objektů, které lze přistupovat pomocí ADO.NET Entity Framework.  
   
  Tyto aktivity jsou zahrnuty v této ukázce:  
   
--   `EntitySQLQuery`: `EntitySQLQuery` Aktivity umožňuje načíst objekty z databáze podle řetězce dotazu Entity SQL. Umožňuje zadat dotazy na základě konceptuálního modelu a entitami, které jsou součástí domény nebo model Entity SQL je úložiště nezávislé jazyk, který je podobný SQL. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Entity jazyka SQL, najdete v části [jazyk SQL Entity](http://go.microsoft.com/fwlink/?LinkId=165646).  
+-   `EntitySQLQuery`: `EntitySQLQuery` Aktivity umožňuje načíst objekty z databáze podle řetězce dotazu Entity SQL. Umožňuje zadat dotazy na základě konceptuálního modelu a entitami, které jsou součástí domény nebo model Entity SQL je úložiště nezávislé jazyk, který je podobný SQL. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Entity jazyka SQL, najdete v části [jazyk SQL Entity](http://go.microsoft.com/fwlink/?LinkId=165646).  
   
 -   `EntityLinqQuery`: Tato aktivita umožňuje načíst objekty z databáze na základě dotaz LINQ nebo predikátu.  
   

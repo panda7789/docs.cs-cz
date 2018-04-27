@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ab80f39a15952bee8296166ea19a78498c3c1b23
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 7c33e764b9af46aec3788e7e113d01c4c5fc9905
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 v subsystému WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte významné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější opakovaně používat alespoň některé tohoto kódu vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace místo přepisování je zcela. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Poskytuje přehledné mechanismus pro hostování [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.  
@@ -141,7 +141,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="communication"></a>   
 ## <a name="implement-communication-between-the-control-and-the-page"></a>Implementace komunikace mezi ovládacího prvku a stránky  
- Manipulace s ovládacím prvku odesláním [!INCLUDE[TLA2#tla_win](../../../../includes/tla2sharptla-win-md.md)] zprávy. Ovládací prvek vás upozorní, když uživatel pracuje s ním zasláním oznámení na jeho hostitelské okno. [Hostování Win32 ListBox – ovládací prvek v ukázce WPF](http://go.microsoft.com/fwlink/?LinkID=159998) ukázka zahrnuje uživatelského rozhraní, která poskytuje několik příkladů, jak to funguje:  
+ Ovládací prvek pracovat s odesláním zpráv systému Windows. Ovládací prvek vás upozorní, když uživatel pracuje s ním zasláním oznámení na jeho hostitelské okno. [Hostování Win32 ListBox – ovládací prvek v ukázce WPF](http://go.microsoft.com/fwlink/?LinkID=159998) ukázka zahrnuje uživatelského rozhraní, která poskytuje několik příkladů, jak to funguje:  
   
 -   Připojte položky do seznamu.  
   

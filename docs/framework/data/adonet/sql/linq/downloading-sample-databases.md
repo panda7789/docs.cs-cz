@@ -16,11 +16,11 @@ ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: dd0b29e97d36d67781c92ee24c56aed43c703261
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c4f18bc3e078a03795037f77505aa2533f1e853e
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="downloading-sample-databases"></a>Stažení ukázkové databáze
 Počet ukázky a návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentace použít ukázková databáze Northwind a SQL Server Express Edition. Tyto produkty zdarma můžete stáhnout z webu Microsoft download.  
@@ -42,7 +42,7 @@ Počet ukázky a návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbte
      Ve výchozím nastavení je databáze nainstalována v *jednotky*: \SQL Server 2000 ukázkové databáze.  
   
 ## <a name="downloading-sql-server-express-edition"></a>Stahování systému SQL Server Express Edition  
- SQL Server Express Edition je k dispozici bezplatně a je možné znovu distribuovat ji s aplikacemi. Pokud používáte [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)], SQL Server Express Edition je součástí verze Pro a větší.  
+ SQL Server Express Edition je k dispozici bezplatně a je možné znovu distribuovat ji s aplikacemi. Pokud používáte Visual Studio, SQL Server Express Edition je součástí verze Pro a větší.  
   
 #### <a name="to-download-and-install-sql-server-express-edition"></a>Stáhněte a nainstalujte SQL Server Express Edition  
   

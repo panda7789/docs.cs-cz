@@ -8,20 +8,20 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 56a82682-73c2-4b91-a206-4d8bb12c561b
-caps.latest.revision: ''
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f1d4b3f319d86dd463dabc8b71be7c76c7fef41f
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 32aab8ae875158fed62c70cbc2d7506ba6c8d3c5
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tracking-using-a-text-file"></a>Sledování pomocí textového souboru
-Tento příklad ukazuje, jak rozšířit sledování v [!INCLUDE[wf](../../../../includes/wf-md.md)] tak, že vytvoříte vlastní sledování účastník. Sledování členové jsou třídy rozhraní .NET Framework, které dostanou záznamy sledování z modulu runtime, jak budou vygenerované. Můžete vytvořit účastník sledování přenos sledování události, které chcete podle toho, která je vyžadována pro váš scénář. Například účastník sledování ETW (trasování událostí pro Windows) k dispozici jako součást [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Sledování účastník v této ukázce zapíše záznamy ve formátu XML do textového souboru.  
+Tato ukázka ukazuje, jak rozšířit tak, že vytvoříte vlastní sledování účastník sledování v systému Windows Workflow Foundation (WF). Sledování členové jsou třídy rozhraní .NET Framework, které dostanou záznamy sledování z modulu runtime, jak budou vygenerované. Můžete vytvořit účastník sledování přenos sledování události, které chcete podle toho, která je vyžadována pro váš scénář. Například účastník sledování ETW (trasování událostí pro Windows) k dispozici jako součást [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Sledování účastník v této ukázce zapíše záznamy ve formátu XML do textového souboru.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  K optimalizaci užitečnost a odolnost vaší sledování účastník, musí být vyplněna některé další kroky k správně propojit účastník sledování modulu runtime. Následující tabulka popisuje třídy používané v této ukázce vytvoření sledování člena, který je v souladu s osvědčenými postupy.  
@@ -66,7 +66,7 @@ Tento příklad ukazuje, jak rozšířit sledování v [!INCLUDE[wf](../../../..
   
 5.  Prohlížeč zobrazí **StockPriceService** stránky, který obsahuje adresu wsdl místní služby. Zkopírujte tuto adresu.  
   
-     Příkladem adresu wsdl místní služby je http://localhost:53797/StockPriceService.xamlx?wsdl.  
+     Je například adresa wsdl místní služby http://localhost:53797/StockPriceService.xamlx?wsdl.  
   
 6.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], přejděte na vaše [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] složky (%SystemDrive%\Program Files\Microsoft Visual Studio 10.0 je výchozí instalační složku). Vyhledejte Common7\IDE\ podsložky.  
   

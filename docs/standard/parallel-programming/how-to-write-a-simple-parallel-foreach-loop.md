@@ -1,12 +1,12 @@
 ---
-title: "Postupy: Zápis jednoduché smyčky Parallel.ForEach"
-ms.custom: 
+title: 'Postupy: Zápis jednoduché smyčky Parallel.ForEach'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - foreach, parallel version
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bb628c0de1f0e4452ae13b5f5ee392084118bea5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 90b900bf98ab664e0fce5c70573f01e044d70803
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postupy: Zápis jednoduché smyčky Parallel.ForEach
 Tento příklad ukazuje, jak používat <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> smyčky umožňující datový paralelismus přes jakoukoli <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat.  
@@ -51,7 +51,7 @@ Tento příklad ukazuje, jak používat <xref:System.Threading.Tasks.Parallel.Fo
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Zkopírujte a vložte tento kód do [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] 2010 projekt konzolové aplikace.  
+-   Zkopírujte a vložte tento kód do projektu konzolové aplikace sady Visual Studio 2010.  
   
 -   Přidat odkaz na System.Drawing.dll  
   

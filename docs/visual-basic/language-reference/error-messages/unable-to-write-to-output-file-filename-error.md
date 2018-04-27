@@ -16,11 +16,11 @@ ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a183f81a73c3c8034d9ba7366be8b36d425263da
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ce97bcb2dd0de774c1a82ae75ef5b83c02467edb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="unable-to-write-to-output-file-39ltfilenamegt39-lterrorgt"></a>Nelze zapisovat do výstupního souboru &#39; &lt;filename&gt;&#39;: &lt;chyba&gt;
 Došlo k potížím, vytvoření souboru.  
@@ -41,7 +41,7 @@ Došlo k potížím, vytvoření souboru.
   
 1.  Kompilace programu zjistíte, pokud se chyba objeví znovu.  
   
-2.  Pokud potíže potrvají, uložte si práci a restartujte [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
+2.  Pokud potíže potrvají, uložte si práci a restartujte Visual Studio.  
   
 3.  Pokud potíže potrvají, restartujte počítač.  
   

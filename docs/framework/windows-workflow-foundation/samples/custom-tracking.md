@@ -1,34 +1,35 @@
 ---
-title: "Vlastní sledování"
-ms.custom: 
+title: Vlastní sledování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 465da20193245a338143c566d1046c3d2212279e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 71eb3adaae6a474cf4e0766029c549dfe3a08383
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="custom-tracking"></a>Vlastní sledování
 Tento příklad znázorňuje, jak vytvořit vlastní sledování účastník a zapisovat obsah data sledování do konzoly. Kromě toho ukázku ukazuje, jak pro vydávání <xref:System.Activities.Tracking.CustomTrackingRecord> naplněný uživatelské objekty definované data. Filtry účastnické sledování pomocí konzoly <xref:System.Activities.Tracking.TrackingRecord> objekty vysílaných použitím pracovního postupu profil sledování objekt vytvořený v kódu.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- [!INCLUDE[wf](../../../../includes/wf-md.md)]poskytuje sledování infrastruktury sledovat vykonávání instance pracovního postupu. Modul runtime sledování implementuje instanci pracovního postupu pro vydávání události související s životního cyklu pracovního postupu, události z aktivit pracovního postupu a sledování vlastních událostí. V následující tabulce jsou primární součásti sledování infrastruktury.  
+ Windows Workflow Foundation (WF) poskytuje sledování infrastruktury sledovat vykonávání instance pracovního postupu. Modul runtime sledování implementuje instanci pracovního postupu pro vydávání události související s životního cyklu pracovního postupu, události z aktivit pracovního postupu a sledování vlastních událostí. V následující tabulce jsou primární součásti sledování infrastruktury.  
   
 |Součást|Popis|  
 |---------------|-----------------|  
 |Sledování runtime|Poskytuje infrastrukturu pro vydávání sledování záznamů.|  
-|Sledování účastníků|Využívá záznamy sledování. [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]se dodává s účastníkem sledování, která zapisuje sledování záznamů jako události trasování událostí pro Windows (ETW).|  
+|Sledování účastníků|Využívá záznamy sledování. [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] se dodává s účastníkem sledování, která zapisuje sledování záznamů jako události trasování událostí pro Windows (ETW).|  
 |Sledování profilu|Filtrační mechanismus, který umožňuje účastníkem sledování k odběru pro podmnožinu sledování záznamy vygenerované z instance pracovního postupu.|  
   
  V následující tabulce jsou záznamy sledování, které vysílá modulu runtime pracovního postupu.  

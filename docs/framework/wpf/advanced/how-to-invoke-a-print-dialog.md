@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vyvolání dialogového okna Tisk"
-ms.custom: 
+title: 'Postupy: Vyvolání dialogového okna Tisk'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - invoking print dialogs [WPF]
 - print dialogs [WPF], invoking
 ms.assetid: e3a2c84c-74fe-45a4-8501-5813f9dbfed2
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8831566daca6ca36b40fbaaedbec9ff3ca8aaa99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 65ea65e13d3217466eeacdac4c386cc02c68b29a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-invoke-a-print-dialog"></a>Postupy: Vyvolání dialogového okna Tisk
 Pokud chcete zadat možnost tisknout z aplikace, můžete jednoduše vytvořit a otevřete <xref:System.Windows.Controls.PrintDialog> objektu.  
@@ -38,7 +40,7 @@ Pokud chcete zadat možnost tisknout z aplikace, můžete jednoduše vytvořit a
  Jakmile otevřete dialogové okno, budou uživatelé moci vybrat z tiskárny v počítači nainstalovanou. Možnost výběru budou mít i [zapisovací modul dokumentů Microsoft XPS](http://go.microsoft.com/fwlink/?LinkId=147319) vytvořit [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] souboru místo.  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> Kontrolu nad [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], které je popsané v tomto tématu byste neměli zaměňovat s <xref:System.Windows.Forms.PrintDialog?displayProperty=nameWithType> komponentu [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)].  
+>  <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> Kontrolu nad [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], které je popsané v tomto tématu byste neměli zaměňovat s <xref:System.Windows.Forms.PrintDialog?displayProperty=nameWithType> součásti Windows Forms.  
   
  Přesněji řečeno, můžete použít <xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> metoda bez někdy otevření dialogu. V smysl můžete využít jako komponentu neviditelný tisk ovládacího prvku. Ale z důvodů výkonu by bylo vhodnější použít buď <xref:System.Printing.PrintQueue.AddJob%2A> metoda nebo jednoho z dalších <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace o tom najdete v tématu [programové soubory XPS tiskových](../../../../docs/framework/wpf/advanced/how-to-programmatically-print-xps-files.md) a.  
   

@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 79b51117197f28cec21671eea4dd7b7f2f1cc306
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 901ea984a8e8e90329953a8936e68f2fc07f8847
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
 Identifikuje uživatelem definované souboru manifestu aplikace Win32, který má být vložen do souboru projektu přenosné spustitelný soubor (PE).  
@@ -48,7 +48,7 @@ Identifikuje uživatelem definované souboru manifestu aplikace Win32, který m�
   
 2.  Můžete zadat vlastní manifestu, který není uveden požadovanou úroveň vykonávání.  
   
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] vytvoří výchozí soubor manifest a ukládá je v adresářích debug a release společně se spustitelným souborem. Můžete zobrazit nebo upravit výchozí soubor app.manifest kliknutím **nastavení nástroje Řízení uživatelských účtů zobrazení** na **aplikace** kartě v Návrháři projektu. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
+ Visual Studio vytvoří výchozí soubor manifest a ukládá je v adresářích debug a release společně se spustitelným souborem. Můžete zobrazit nebo upravit výchozí soubor app.manifest kliknutím **nastavení nástroje Řízení uživatelských účtů zobrazení** na **aplikace** kartě v Návrháři projektu. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  Manifest aplikace můžete poskytnout jako vlastní krok po sestavení nebo jako součást zdrojového souboru Win32 pomocí `-nowin32manifest` možnost. Stejnou možnost použijte, pokud má vaše aplikace podléhat souborů nebo registru virtualizace v systému Windows Vista. To zabrání kompilátoru z vytváření a vložení manifestu výchozí v souboru PE.  
   
@@ -73,5 +73,5 @@ Identifikuje uživatelem definované souboru manifestu aplikace Win32, který m�
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)

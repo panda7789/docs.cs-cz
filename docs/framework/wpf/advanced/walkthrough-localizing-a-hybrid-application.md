@@ -1,27 +1,29 @@
 ---
-title: "Návod: Lokalizace hybridní aplikace"
-ms.custom: 
+title: 'Návod: Lokalizace hybridní aplikace'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f9bb7588ef1f6962a5cd55196154ac7f666d53b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: b00553c005b714094f208fc6d4ed40e838b90b49
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
 Tento návod ukazuje, jak k lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementů v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]– na základě hybridní aplikace.  
@@ -123,7 +125,7 @@ Tento návod ukazuje, jak k lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../..
   
 #### <a name="to-assign-resource-identifiers"></a>Přiřadit identifikátory prostředků  
   
-1.  Z nabídky Start otevřít [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] příkazového řádku.  
+1.  Z nabídky Start otevřete příkazový řádek sady Visual Studio.  
   
 2.  Pomocí následujícího příkazu přiřaďte lokalizovatelný obsah identifikátory prostředků.  
   
@@ -150,7 +152,7 @@ Tento návod ukazuje, jak k lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../..
     LocBaml /parse LocalizingWpfInWf.g.en-US.resources /out:temp.csv  
     ```  
   
-3.  Otevřete soubor temp.csv s [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] nebo jiném textovém editoru. Nahraďte řetězec `"Hello"` s jeho španělské překlad `"Hola"`.  
+3.  Pomocí sady Visual Studio nebo jiném textovém editoru otevřete soubor temp.csv. Nahraďte řetězec `"Hello"` s jeho španělské překlad `"Hola"`.  
   
 4.  Uložte soubor temp.csv.  
   
@@ -181,4 +183,4 @@ Tento návod ukazuje, jak k lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../..
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [Lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)  
  [Návod: Lokalizace Windows Forms](http://msdn.microsoft.com/library/9a96220d-a19b-4de0-9f48-01e5d82679e5)  
- [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)
+ [Návrhář WPF](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)

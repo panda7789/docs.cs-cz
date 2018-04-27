@@ -1,24 +1,26 @@
 ---
-title: "Ukázka služby AJAX s protokoly JSON a XML"
-ms.custom: 
+title: Ukázka služby AJAX s protokoly JSON a XML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d831d4663031419977b75c6cfe183ac4bd52a86
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: f1a3f2185743be6d6331db4aa253a0767484b32d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>Ukázka služby AJAX s protokoly JSON a XML
 Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] k vytvoření služby asynchronní JavaScript a XML (AJAX), který vrací data JavaScript Object Notation (JSON) nebo XML. Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka.  
@@ -30,9 +32,9 @@ Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
- Pokud chcete povolit použití ASP.NET AJAX klientů, použijte <xref:System.ServiceModel.Activation.WebServiceHostFactory> (ne <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) v souboru .svc. <xref:System.ServiceModel.Activation.WebServiceHostFactory>Přidá <xref:System.ServiceModel.Description.WebHttpEndpoint> standardní koncového bodu služby. Koncový bod je konfigurována na prázdnou adresu relativně k souboru .svc; To znamená, že adresu služby je http://localhost/ServiceModelSamples/service.svc s žádné další přípony jiný než název operace.  
+ Pokud chcete povolit použití ASP.NET AJAX klientů, použijte <xref:System.ServiceModel.Activation.WebServiceHostFactory> (ne <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) v souboru .svc. <xref:System.ServiceModel.Activation.WebServiceHostFactory> Přidá <xref:System.ServiceModel.Description.WebHttpEndpoint> standardní koncového bodu služby. Koncový bod je konfigurována na prázdnou adresu relativně k souboru .svc; To znamená, že adresa služby je http://localhost/ServiceModelSamples/service.svc, s žádné další přípony jiný než název operace.  
   
-```html  
+```svc
 <%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>  
 ```  
   
@@ -52,28 +54,28 @@ Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/
  Výchozí data formátu pro <xref:System.ServiceModel.Description.WebHttpEndpoint> XML, je při výchozí formát dat pro <xref:System.ServiceModel.Description.WebScriptEndpoint> je JSON. Další informace najdete v tématu [vytváření služeb WCF AJAX bez ASP.NET](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md).  
   
  Službu v následující ukázce je standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby s dvěma operacemi. Obě operace vyžadují <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> body styl na <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy, které je specifická pro `webHttp` chování a nemá žádný vliv na přepínač formátu dat JSON/XML.  
-  
-```  
+
+```csharp
 [OperationContract]  
 [WebInvoke(ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped)]  
 MathResult DoMathXml(double n1, double n2);  
-```  
-  
+```
+
  Formát odpovědi pro tuto operaci je zadán jako XML, který je výchozí nastavení [ \<webHttp >](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) chování. Ale je dobrým zvykem explicitně zadat formát odpovědi.  
   
  Používá jiné operace `WebInvokeAttribute` atribut a explicitně určuje JSON místo XML pro odpověď.  
-  
-```  
+
+```csharp
 [OperationContract]  
 [WebInvoke(ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]  
 MathResult DoMathJson(double n1, double n2);  
-```  
-  
+```
+
  Všimněte si, že v obou případech vrátí operace komplexního typu, `MathResult`, což je standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kontraktů dat typu.  
   
  Klient XmlAjaxClientPage.htm webová stránka obsahuje kód JavaScript, který některé z předchozích dvou operací vyvolá, když uživatel klikne **provádění výpočtu (návratový JSON)** nebo **provádění výpočtu (návratový XML)**  tlačítka na stránce. Kód k vyvolání služby vytvoří text JSON a odešle ji pomocí HTTP POST. Požadavek je vytvořen ručně v jazyce JavaScript, na rozdíl od [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka a další ukázky pomocí prvku ASP.NET AJAX.  
-  
-```  
+
+```csharp
 // Create HTTP request  
 var xmlHttp;  
 // Request instantiation code omitted…  
@@ -92,19 +94,19 @@ body = body + document.getElementById("num2").value + '}';
 xmlHttp.open("POST", url, true);  
 xmlHttp.setRequestHeader("Content-type", "application/json");  
 xmlHttp.send(body);  
-```  
-  
+```
+
  Když službu odpoví, zobrazí se bez dalšího zpracování do textového pole na stránce odpovědi. Tato možnost je implementovaná pro demonstrační účely, abyste mohli přímo sledovat XML a JSON formáty dat použít.  
-  
-```  
+
+```javascript
 // Create result handler   
 xmlHttp.onreadystatechange=function(){  
      if(xmlHttp.readyState == 4){  
           document.getElementById("result").value = xmlHttp.responseText;  
      }  
 }  
-```  
-  
+```
+
 > [!IMPORTANT]
 >  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
 >   

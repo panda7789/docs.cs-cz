@@ -1,29 +1,30 @@
 ---
-title: "Řešení potíží s aplikací pomocí sledování"
-ms.custom: 
+title: Řešení potíží s aplikací pomocí sledování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8851adde-c3c2-4391-9523-d8eb831490af
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb8971c344ff24120b5f85dceb518b0944bd5feb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: adc9a159b8887b0198cf19891f73fdee2a48437b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="using-tracking-to-troubleshoot-applications"></a>Řešení potíží s aplikací pomocí sledování
-[!INCLUDE[wf](../../../includes/wf-md.md)]umožňuje sledovat informace týkající se pracovní postup uvést podrobnosti do provádění [!INCLUDE[wf2](../../../includes/wf2-md.md)] aplikaci nebo službě. [!INCLUDE[wf2](../../../includes/wf2-md.md)]hostitelé dokážou zachytit pracovního postupu události během zpracování instance pracovního postupu. Pokud pracovní postup generuje chyby nebo výjimky, můžete použít [!INCLUDE[wf2](../../../includes/wf2-md.md)] sledování podrobnosti o řešení problémů s jeho zpracování.  
+Windows Workflow Foundation (WF) umožňuje sledovat informace týkající se pracovní postup uvést podrobnosti do spuštění aplikace Windows Workflow Foundation nebo služby. K zachycení událostí pracovního postupu během zpracování instance pracovního postupu dokážou hostitele Windows Workflow Foundation. Pokud pracovní postup generuje chyby nebo výjimky, můžete použít sledování podrobnosti o řešení problémů s jeho zpracování modelu Windows Workflow Foundation.  
   
 ## <a name="troubleshooting-a-wf-using-wf-tracking"></a>Řešení potíží WF pomocí sledování WF  
- Ke zjištění chyb v rámci zpracování [!INCLUDE[wf2](../../../includes/wf2-md.md)] aktivita, můžete povolit sledování s sledování profil, který se dotazuje na <xref:System.Activities.Tracking.ActivityStateRecord> v chybném stavu. Odpovídající dotaz je zadána v následujícím kódu.  
+ Ke zjištění chyb v rámci zpracování aktivity modelu Windows Workflow Foundation, můžete povolit sledování s sledování profil, který se dotazuje na <xref:System.Activities.Tracking.ActivityStateRecord> v chybném stavu. Odpovídající dotaz je zadána v následujícím kódu.  
   
 ```xml  
 <activityStateQueries>  
@@ -55,9 +56,9 @@ ms.lasthandoff: 12/22/2017
 </workflowInstanceQueries>  
 ```  
   
- Když dojde k neošetřené výjimce instanci pracovního postupu <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord> objektu je vygenerované Pokud [!INCLUDE[wf2](../../../includes/wf2-md.md)] bylo povoleno sledování.  
+ Když dojde k neošetřené výjimce instanci pracovního postupu <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord> objektu je vygenerované, pokud bylo povoleno sledování modelu Windows Workflow Foundation.  
   
- Tento záznam sledování obsahuje v podrobnostech o chybě ve formě zásobník výjimek. Obsahuje podrobnosti o zdroj selhání (například aktivita), který došlo k chybě a výsledkem neošetřených výjimek. Přihlásit k odběru událostí selhání z [!INCLUDE[wf2](../../../includes/wf2-md.md)], povolit sledování přidáním účastník sledování. Tento účastník nakonfigurovat sledování profil, který se dotazuje na `ActivityStateQuery (state="Faulted")`, <xref:System.Activities.Tracking.FaultPropagationRecord>, a `WorkflowInstanceQuery (state="UnhandledException")`.  
+ Tento záznam sledování obsahuje v podrobnostech o chybě ve formě zásobník výjimek. Obsahuje podrobnosti o zdroj selhání (například aktivita), který došlo k chybě a výsledkem neošetřených výjimek. K odběru události chyby z Windows Workflow Foundation, povolte sledování přidáním účastník sledování. Tento účastník nakonfigurovat sledování profil, který se dotazuje na `ActivityStateQuery (state="Faulted")`, <xref:System.Activities.Tracking.FaultPropagationRecord>, a `WorkflowInstanceQuery (state="UnhandledException")`.  
   
  Pokud je povoleno sledování pomocí účastník sledování trasování událostí pro Windows, jsou události chyby vygenerované relaci trasování událostí pro Windows. Události lze zobrazit pomocí prohlížeče událostí Prohlížeč událostí. To lze nalézt v uzlu **Prohlížeč událostí -> aplikace a protokoly služby -> Microsoft -> Windows -> serveru aplikace – aplikace** v analytické kanál.  
   

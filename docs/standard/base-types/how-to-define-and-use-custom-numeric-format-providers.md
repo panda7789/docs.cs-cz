@@ -1,12 +1,12 @@
 ---
-title: "Postupy: Definování a používání vlastních poskytovatelů číselného formátu"
-ms.custom: 
+title: 'Postupy: Definování a používání vlastních poskytovatelů číselného formátu'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -21,18 +21,18 @@ helpviewer_keywords:
 - format providers [.NET Framework]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f8f06335d96b3e71f14b3df6b40ef3691c0915f1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: eb578b18b3d3ab7ae617873a33745f36e0e8cacb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Postupy: Definování a používání vlastních poskytovatelů číselného formátu
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje rozsáhlou kontrolu nad řetězcová reprezentace číselné hodnoty. Podporuje následující funkce pro přizpůsobení formát číselné hodnoty:  
@@ -49,7 +49,7 @@ ms.lasthandoff: 12/23/2017
   
 1.  Definice třídy, která implementuje <xref:System.IFormatProvider> a <xref:System.ICustomFormatter> rozhraní.  
   
-2.  Implementace <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. <xref:System.IFormatProvider.GetFormat%2A>je metoda zpětného volání, metoda formátování (například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metoda) vyvolá pro načtení objektu, který je ve skutečnosti odpovědný za provádění vlastní formátování. Typická implementace <xref:System.IFormatProvider.GetFormat%2A> provede následující akce:  
+2.  Implementace <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. <xref:System.IFormatProvider.GetFormat%2A> je metoda zpětného volání, metoda formátování (například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metoda) vyvolá pro načtení objektu, který je ve skutečnosti odpovědný za provádění vlastní formátování. Typická implementace <xref:System.IFormatProvider.GetFormat%2A> provede následující akce:  
   
     1.  Určuje, zda <xref:System.Type> objekt předaný jako metodu představuje parametr <xref:System.ICustomFormatter> rozhraní.  
   
@@ -99,7 +99,7 @@ ms.lasthandoff: 12/23/2017
  V případě tohoto příkladu metoda, která implementuje <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> má sloužit jako metody zpětného volání pro <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metoda. Proto zkontroluje `formatProvider` parametr k určení, zda obsahuje odkaz na aktuální `TelephoneFormatter` objektu. Ale metody lze také volat přímo z kódu. V takovém případě můžete použít `formatProvider` parametr k poskytování <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.NumberFormatInfo> objekt, který poskytuje informace o formátování specifické pro jazykovou verzi.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Je možné zkompilovat kód v příkazovém řádku pomocí souboru csc.exe nebo vb.exe. Chcete-li kód zkompilovat v rámci [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vložte jej do šablony projektu konzolové aplikace.  
+ Je možné zkompilovat kód v příkazovém řádku pomocí souboru csc.exe nebo vb.exe. Zkompilovat kód v sadě Visual Studio, že ji umístěte do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také  
  [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)

@@ -24,11 +24,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b8bd383c94afb5c8bb3574e2fee80bca8c4a9143
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 0f6f92c225e7b3c745c5cf439c9094d72fa0cde0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-distinguish-between-clicks-and-double-clicks"></a>Postupy: Rozlišení mezi kliknutím a poklikáním
 Obvykle jedné *klikněte na tlačítko* zahájí akci uživatele rozhraní (UI) a *dvakrát klikněte na* rozšiřuje akce. Například jedním kliknutím obvykle vybere položku a poklepání upravuje vybranou položku. Windows Forms události kliknutí není pojmout snadno scénář, kde kliknutí a dvojitým kliknutím udělejte nekompatibilní, protože akce vázáno <xref:System.Windows.Forms.Control.Click> nebo <xref:System.Windows.Forms.Control.MouseClick> událostí se provádí před akci vázáno <xref:System.Windows.Forms.Control.DoubleClick>nebo <xref:System.Windows.Forms.Control.MouseDoubleClick> událostí. Toto téma popisuje dvě řešení tohoto problému. Jedno řešení je zpracování události poklikejte na soubor a vrácení akce při zpracování události, klikněte na tlačítko. Ve výjimečných případech budete muset simulovat kliknutím a dvakrát klikněte na chování ve zpracování <xref:System.Windows.Forms.Control.MouseDown> událostí a pomocí <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> a <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A> vlastnosti <xref:System.Windows.Forms.SystemInformation> – třída. Měření čas mezi kliknutí a druhý klikněte na tlačítko nastane před hodnotu <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> je dosaženo a kliknutím na možnost se v obdélníku definované <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>, proveďte akci, poklikejte na soubor; jinak, proveďte akci, klikněte na tlačítko.  
@@ -53,7 +53,7 @@ Obvykle jedné *klikněte na tlačítko* zahájí akci uživatele rozhraní (UI)
   
 -   Odkazy na systém, System.Drawing a System.Windows.Forms sestavení.  
   
- Informace o vytváření těchto příkladech z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Můžete také vytvořit tyto příklady [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] zadáním nebo vložením kód do nové projekty.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření těchto příkladech z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tyto příklady v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kód do nové projekty.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

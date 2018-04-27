@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 02169f1f43ba93b68dc47f5bad038b78d3635a80
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 319d01e8162dbc3806b0d9ba59e90410acb1acd5
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-keyfile"></a>-keyfile
 Určuje soubor, který obsahuje klíč nebo pár klíčů umožnit sestavení silným názvem.  
@@ -48,7 +48,7 @@ Určuje soubor, který obsahuje klíč nebo pár klíčů umožnit sestavení si
  V tématu [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
   
 > [!NOTE]
->  `-keyfile` Možnost není k dispozici v rámci [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] vývojového prostředí; je k dispozici pouze při kompilaci z příkazového řádku.  
+>  `-keyfile` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje zdrojový soubor `Input.vb` a určuje soubor klíče.  
@@ -59,6 +59,6 @@ vbc -keyfile:myfile.sn input.vb
   
 ## <a name="see-also"></a>Viz také  
  [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

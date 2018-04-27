@@ -1,34 +1,35 @@
 ---
-title: "Emulace nejnovější ve chvíli aktivity"
-ms.custom: 
+title: Emulace nejnovější ve chvíli aktivity
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ddff715d-d623-4b54-b841-60bacbc3ca21
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22a03c2e7dcc8d024ed407e7df24a4e9db4e2bf6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 27264832dd82719d7ccb81e1398df343653515b1
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="emulating-breaking-in-a-while-activity"></a>Emulace nejnovější ve chvíli aktivity
 Tento příklad ukazuje, jak rozdělit opakování mechanismus z následujících aktivit: <xref:System.Activities.Statements.DoWhile>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.While>, a <xref:System.Activities.Statements.ParallelForEach%601>.  
   
- To je užitečné, protože [!INCLUDE[wf](../../../../includes/wf-md.md)] neobsahuje žádné aktivity pro přerušení provádění těchto smyčky.  
+ To je užitečné, protože Windows Workflow Foundation (WF) neobsahuje žádnou aktivitu pro přerušení provádění těchto smyčky.  
   
 ## <a name="scenario"></a>Scénář  
  Ukázka vyhledá první spolehlivé dodavatele ze seznamu dodavatelů (instance `Vendor` třídy). Má jednotlivých dodavatelů `ID`, `Name` a spolehlivost číselnou hodnotu, která určuje, jak spolehlivé dodavatele. Ukázka vytvoří vlastní aktivity volá `FindReliableVendor` který přijímá dva vstupní parametry (seznam dodavateli a hodnotu minimální spolehlivost) a vrátí první dodavatele tohoto seznamu, který odpovídá zadaným kritériím.  
   
 ## <a name="breaking-a-loop"></a>Pozastavení smyčku  
- [!INCLUDE[wf](../../../../includes/wf-md.md)]nezahrnuje aktivitu pro přerušení smyčku. Ukázka kódu provede nejnovější smyčku pomocí <xref:System.Activities.Statements.If> aktivity a několik proměnné. V ukázce <xref:System.Activities.Statements.While> aktivity je porušený jednou `reliableVendor` proměnné je jiné než přiřazenou hodnotu `null`.  
+ Windows Workflow Foundation (WF) nezahrnuje aktivitu pro přerušení smyčku. Ukázka kódu provede nejnovější smyčku pomocí <xref:System.Activities.Statements.If> aktivity a několik proměnné. V ukázce <xref:System.Activities.Statements.While> aktivity je porušený jednou `reliableVendor` proměnné je jiné než přiřazenou hodnotu `null`.  
   
  Následující příklad kódu ukazuje, jak ukázku dělí chvíli smyčky.  
   

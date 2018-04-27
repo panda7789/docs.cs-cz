@@ -16,14 +16,14 @@ ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
 caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f1ccf08ba58fa6af60bd8ffd7cba79b205dc0f3d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 20239045426e466ba58427bb9794ea7e55b3aa4c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Volání kompilátoru příkazového řádku (Visual Basic)
-Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spustitelného souboru do příkazového řádku, také známé jako v systému MS-DOS. Pokud kompilujete z výchozího příkazového řádku systému Windows, musíte zadat plně kvalifikovanou cestu ke spustitelnému souboru. Pokud chcete přepsat toto výchozí chování, můžete použít [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] příkazový řádek, nebo upravit proměnné prostředí PATH. Oba umožňují zkompilovat z libovolného adresáře jednoduše zadáním názvu kompilátoru.  
+Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spustitelného souboru do příkazového řádku, také známé jako v systému MS-DOS. Pokud kompilujete z výchozího příkazového řádku systému Windows, musíte zadat plně kvalifikovanou cestu ke spustitelnému souboru. Pokud chcete přepsat toto výchozí chování, můžete buď použít příkazový řádek sady Visual Studio nebo změnit proměnné prostředí PATH. Oba umožňují zkompilovat z libovolného adresáře jednoduše zadáním názvu kompilátoru.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -31,9 +31,9 @@ Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spusti
   
 1.  Otevřete složku programu nástroje sady Visual Studio v rámci skupiny pro program Microsoft Visual Studio.  
   
-2.  Můžete použít [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] příkazového řádku pro přístup do kompilátoru z libovolného adresáře na počítači, pokud je nainstalovaná sada Visual Studio.  
+2.  Příkazový řádek sady Visual Studio pro přístup k kompilátor z libovolného adresáře na počítači, můžete použít, pokud je nainstalovaná sada Visual Studio.  
   
-3.  Vyvolání [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] příkazového řádku.  
+3.  Vyvolání příkazového řádku Visual Studia.  
   
 4.  Na příkazovém řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.  
   

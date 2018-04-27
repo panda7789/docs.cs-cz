@@ -1,26 +1,27 @@
 ---
-title: "Postupy: vytvoření aktivity"
-ms.custom: 
+title: 'Postupy: vytvoření aktivity'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
-caps.latest.revision: "39"
+caps.latest.revision: 39
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4a3b9698d6a060120addff52e6600916a2de19fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0d0d48d1e78efb3484f521958edf22d97ca8053d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
 Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Logika spuštění aktivity můžete implementují ve spravovaném kódu nebo se dá implementovat pomocí jiné aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchý aktivity, která používá kód k implementaci jeho logiku spouštění. Implementace druhá aktivita je definována pomocí jiné aktivity. Tyto aktivity se používají v následující kroky v tomto kurzu.  
@@ -44,7 +45,7 @@ Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.
 5.  V **nainstalovaná** uzlu, vyberte **Visual C#**, **pracovního postupu** (nebo **jazyka Visual Basic**, **pracovního postupu**). Ujistěte se, že **rozhraní .NET Framework 4.5** vybrán [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze rozevíracího seznamu. Vyberte **knihovna aktivit** z **pracovního postupu** seznamu. Typ `NumberGuessWorkflowActivities` v **název** pole a pak klikněte na **OK**.  
   
     > [!NOTE]
-    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky**uzlu **nainstalovaná** uzlu.  
+    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalovaná** uzlu.  
   
 6.  Klikněte pravým tlačítkem na **Activity1.xaml** v **Průzkumníku řešení** a zvolte **odstranit**. Klikněte na tlačítko **OK** k potvrzení.  
   
@@ -62,7 +63,7 @@ Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.
      [!code-vb[CFX_WF_GettingStarted#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/readint.vb#1)]  
   
     > [!NOTE]
-    >  `ReadInt` Aktivity je odvozena z <xref:System.Activities.NativeActivity%601> místo <xref:System.Activities.CodeActivity>, což je výchozí nastavení pro šablony aktivit kódu. <xref:System.Activities.CodeActivity%601>lze použít, pokud aktivita poskytuje jeden výsledek, který je k dispozici prostřednictvím <xref:System.Activities.Activity%601.Result%2A> argument, ale <xref:System.Activities.CodeActivity%601> nepodporuje použití záložek, takže <xref:System.Activities.NativeActivity%601> se používá.  
+    >  `ReadInt` Aktivity je odvozena z <xref:System.Activities.NativeActivity%601> místo <xref:System.Activities.CodeActivity>, což je výchozí nastavení pro šablony aktivit kódu. <xref:System.Activities.CodeActivity%601> lze použít, pokud aktivita poskytuje jeden výsledek, který je k dispozici prostřednictvím <xref:System.Activities.Activity%601.Result%2A> argument, ale <xref:System.Activities.CodeActivity%601> nepodporuje použití záložek, takže <xref:System.Activities.NativeActivity%601> se používá.  
   
 ### <a name="to-create-the-prompt-activity"></a>Chcete-li vytvořit výzva aktivity  
   

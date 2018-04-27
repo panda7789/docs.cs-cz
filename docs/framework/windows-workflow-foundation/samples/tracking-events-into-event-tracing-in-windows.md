@@ -1,36 +1,37 @@
 ---
-title: "Sledování událostí do událostí trasování v systému Windows"
-ms.custom: 
+title: Sledování událostí do událostí trasování v systému Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6798494e442b2e7633461fb821c56130a2af2508
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1a1038f848563c106ee1cac441b8a247e161e268
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí do událostí trasování v systému Windows
-Tento příklad ukazuje, jak povolit [!INCLUDE[wf](../../../../includes/wf-md.md)] sledování v rámci pracovního postupu služby a emitování sledování událostí v trasování událostí pro Windows (ETW). Pro vydávání pracovní postup sledování záznamů do trasování událostí pro Windows, používá ukázku účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).  
+Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Windows Workflow Foundation (WF) a vydávání sledování událostí v trasování událostí pro Windows (ETW). Pro vydávání pracovní postup sledování záznamů do trasování událostí pro Windows, používá ukázku účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).  
   
  Pracovní postup v ukázce přijme požadavek, přiřadí vzájemné vstupních dat vstupní proměnné a vrátí vzájemných zpět klientovi. Když jsou vstupní data 0, dělení nulové výjimkou výskytu, která je neošetřená, dojde k přerušení pracovního postupu. S povoleno sledování, je sledovat záznam chyby vygenerované do trasování událostí pro Windows, které mohou pomoci při odstraňování chyba později. Trasování událostí pro Windows Sledování účastník je nakonfigurovaný s profil sledování k odběru sledování záznamů. Profil sledování je definován v souboru Web.config a zadat jako parametr konfigurace sledování účastníkům trasování událostí pro Windows. Trasování událostí pro Windows Sledování účastník je nakonfigurovaný v souboru Web.config služby pracovního postupu a jsou použity pro službu jako chování služby. V této ukázce zobrazit události sledování v protokolu událostí pomocí prohlížeče událostí.  
   
 ## <a name="workflow-tracking-details"></a>Podrobnosti sledování pracovního postupu  
- [!INCLUDE[wf2](../../../../includes/wf2-md.md)]poskytuje sledování infrastruktury ke sledování provádění instanci pracovního postupu. Modul runtime sledování vytvoří instanci pracovního postupu pro vydávání události související s životního cyklu pracovního postupu, události z aktivit pracovního postupu a vlastních událostí. V následující tabulce jsou primární součásti sledování infrastruktury.  
+ Windows Workflow Foundation poskytuje sledování infrastruktury ke sledování provádění instanci pracovního postupu. Modul runtime sledování vytvoří instanci pracovního postupu pro vydávání události související s životního cyklu pracovního postupu, události z aktivit pracovního postupu a vlastních událostí. V následující tabulce jsou primární součásti sledování infrastruktury.  
   
 |Součást|Popis|  
 |---------------|-----------------|  
 |Sledování runtime|Poskytuje infrastrukturu pro vydávání sledování záznamů.|  
-|Sledování účastníků|Přistupuje ke sledování záznamů. [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]se dodává s účastníkem sledování, která zapisuje sledování záznamů jako události trasování událostí pro Windows (ETW).|  
+|Sledování účastníků|Přistupuje ke sledování záznamů. [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] se dodává s účastníkem sledování, která zapisuje sledování záznamů jako události trasování událostí pro Windows (ETW).|  
 |Sledování profilu|Filtrační mechanismus, který umožňuje účastníkem sledování k odběru pro podmnožinu sledování záznamy vygenerované z instance pracovního postupu.|  
   
  V následující tabulce jsou záznamy sledování, které vysílá modulu runtime pracovního postupu.  
@@ -55,7 +56,7 @@ Tento příklad ukazuje, jak povolit [!INCLUDE[wf](../../../../includes/wf-md.md
   
 3.  Pokud chcete spustit řešení, stisknutím klávesy F5.  
   
-     Ve výchozím nastavení služba naslouchá na portu 53797 (http://localhost:53797/SampleWorkflowService.xamlx).  
+     Ve výchozím nastavení, služba naslouchá na portu 53797 (http://localhost:53797/SampleWorkflowService.xamlx).  
   
 4.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], otevřete testovacího klienta WCF.  
   

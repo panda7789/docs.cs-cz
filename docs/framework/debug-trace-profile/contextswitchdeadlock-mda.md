@@ -1,12 +1,13 @@
 ---
-title: "contextSwitchDeadlock – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - deadlocks [.NET Framework]
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - message pumping
 - context switching deadlocks
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 816afbae0cca18de24c11152541a509b54c119b8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2f3ee9aef3bc824ee25e577a5dbd14aeaa210be3
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="contextswitchdeadlock-mda"></a>contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
 `contextSwitchDeadlock` Pomocník spravovaného ladění (MDA) se aktivuje, když bude během pokusu o přechod kontextu COM zjištěno zablokování.  
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
  Pokud chcete zjistit, pokud MDA nesprávně aktivován, zakažte všechny zarážky, restartujte aplikaci a povolit jeho spuštění bez zastavení. Pokud MDA není aktivováno, je pravděpodobné, že původní aktivace je chybná. V takovém případě zakážete MDA, aby se zabránilo narušení s relaci ladění.  
   
 > [!NOTE]
->  Tato (mda) je ve výchozím nastavení pro [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] a novějších verzích. Když je proces hostování povoleno v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], nelze zakázat mda, které jsou ve výchozím nastavení. Proces hostování je zapnutá ve výchozím nastavení, takže musí být explicitně zakázány. Informace o tom, jak zakázat mda, najdete v části "Povolení a zákaz mda" v [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
+>  Tato (mda) je ve výchozím nastavení pro [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] a novějších verzích. Když je proces hostování povolené v sadě Visual Studio, nelze zakázat mda, které jsou ve výchozím nastavení. Proces hostování je zapnutá ve výchozím nastavení, takže musí být explicitně zakázány. Informace o tom, jak zakázat mda, najdete v části "Povolení a zákaz mda" v [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
 ## <a name="resolution"></a>Rozlišení  
  Postupujte podle COM pravidla týkající se STA čerpání zpráv.  

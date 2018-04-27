@@ -1,24 +1,26 @@
 ---
-title: "Zabezpečení přenosu WS"
-ms.custom: 
+title: Zabezpečení přenosu WS
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 3435eab63cf745607b6ecf61b12123966f80442b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4a332394877e33f6ab97b4be77da6c3267d85401
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ws-transport-security"></a>Zabezpečení přenosu WS
 Tento příklad znázorňuje použití protokolu SSL zabezpečení přenosu s <xref:System.ServiceModel.WSHttpBinding> vazby. Ve výchozím nastavení `wsHttpBinding` vazby poskytuje komunikaci pomocí protokolu HTTP. Když nakonfigurován pro zabezpečení přenosu, vazba podporuje komunikaci přes protokol HTTPS. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. `wsHttpBinding` Je zadán a nakonfigurované v konfiguračních souborech aplikace pro klienta a služby.  
@@ -62,13 +64,13 @@ Tento příklad znázorňuje použití protokolu SSL zabezpečení přenosu s <x
   
  Zadaná adresa používá schéma https://. Konfigurace vazeb nastaví režim zabezpečení `Transport`. Stejný režim zabezpečení je třeba zadat v souboru Web.config dané služby.  
   
- Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí se výstraha zabezpečení při pokusu o přístup protokolu https: adresa, jako je například https://localhost/servicemodelsamples/service.svc z prohlížeče. Chcete-li povolit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta pro práci s testovací certifikát na místě, některé další kód byl přidán do klienta pro potlačení výstrahy zabezpečení. Tento kód a doprovodné třídy, je potřeba, není při použití provozní certifikáty.  
-  
-```  
+ Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí se výstraha zabezpečení při pokusu o přístup protokolu https: adresy, jako například https://localhost/servicemodelsamples/service.svc, z prohlížeče. Chcete-li povolit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta pro práci s testovací certifikát na místě, některé další kód byl přidán do klienta pro potlačení výstrahy zabezpečení. Tento kód a doprovodné třídy, je potřeba, není při použití provozní certifikáty.  
+
+```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
-```  
-  
+```
+
  Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
   
 ```  

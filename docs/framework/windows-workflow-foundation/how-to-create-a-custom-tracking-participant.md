@@ -1,29 +1,30 @@
 ---
-title: "Postupy: vytvoření vlastní sledování účastník"
-ms.custom: 
+title: 'Postupy: vytvoření vlastní sledování účastník'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 345fd696559ba52d41874ff774bd46a2d37f6e6f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d53035c2fb41800a91d3cdea134ae811a09fa3e9
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: vytvoření vlastní sledování účastník
-Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního postupu. Modul runtime pracovního postupu vysílá sledování záznamy, které popisují pracovního postupu události životního cyklu, události aktivit životního cyklu, obnovení záložku a chyb. Tyto záznamy o sledování jsou spotřebovávána sledování účastníky. [!INCLUDE[wf](../../../includes/wf-md.md)]obsahuje standardní sledování člena, který zapíše sledování záznamů jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje, jak vytvořit vlastní sledování účastník a sledování profil, který zaznamenat výstup `WriteLine` aktivity, aby mohly být zobrazeny pro uživatele.  
+Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního postupu. Modul runtime pracovního postupu vysílá sledování záznamy, které popisují pracovního postupu události životního cyklu, události aktivit životního cyklu, obnovení záložku a chyb. Tyto záznamy o sledování jsou spotřebovávána sledování účastníky. Windows Workflow Foundation (WF) obsahuje standardní sledování člena, který zapíše sledování záznamů jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje, jak vytvořit vlastní sledování účastník a sledování profil, který zaznamenat výstup `WriteLine` aktivity, aby mohly být zobrazeny pro uživatele.  
   
 > [!NOTE]
 >  Každého tématu v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív dokončit předchozí témata. Stažení dokončené verze nebo zobrazení na video s návodem kurzu, najdete v tématu [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
@@ -38,7 +39,7 @@ Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního 
   
 -   [Sestavení a spuštění aplikace](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_BuildAndRun)  
   
-###  <a name="BKMK_CustomTrackingParticipant"></a>Chcete-li vytvořit vlastní sledování účastník  
+###  <a name="BKMK_CustomTrackingParticipant"></a> Chcete-li vytvořit vlastní sledování účastník  
   
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **třída**. Typ `StatusTrackingParticipant` do **název** pole a klikněte na tlačítko **přidat**.  
   
@@ -114,7 +115,7 @@ Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního 
   
      Pokud je zadán žádný profil sledování, použije se výchozí sledovacího profilu. Pokud je použita výchozí sledování profil, jsou pro všechny vygenerované záznamy o sledování `ActivityStates`. Vzhledem k tomu, že musíme zaznamenat text během životního cyklu jednou `WriteLine` aktivitu, jsme pouze rozbalte text z `ActivityStates.Executing` stavu. V [vytvořit profil sledování a zaregistrovat účastník sledování](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), sledování profil je vytvořen pouze určující `WriteLine` `ActivityStates.Executing` jsou vygenerované záznamy o sledování.  
   
-###  <a name="BKMK_TrackingProfile"></a>Vytvořit profil sledování a zaregistrovat účastník sledování  
+###  <a name="BKMK_TrackingProfile"></a> Vytvořit profil sledování a zaregistrovat účastník sledování  
   
 1.  Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníku řešení** a zvolte **kód zobrazení**.  
   
@@ -235,7 +236,7 @@ Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního 
         // Workflow lifecycle handlers...  
     ```  
   
-###  <a name="BKMK_DisplayTracking"></a>Chcete-li zobrazit informace o sledování  
+###  <a name="BKMK_DisplayTracking"></a> Chcete-li zobrazit informace o sledování  
   
 1.  Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníku řešení** a zvolte **kód zobrazení**.  
   
@@ -330,7 +331,7 @@ Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního 
     }  
     ```  
   
-###  <a name="BKMK_BuildAndRun"></a>Sestavení a spuštění aplikace  
+###  <a name="BKMK_BuildAndRun"></a> Sestavení a spuštění aplikace  
   
 1.  Stisknutím kombinace kláves Ctrl + Shift + B pro sestavení aplikace.  
   

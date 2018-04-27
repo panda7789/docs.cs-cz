@@ -19,11 +19,11 @@ ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
 caps.latest.revision: 30
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8a1e0e017a700041d13b131d32b72d7118621719
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 75610174fdc91e4a29f17dc5563a7298c56a44e2
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() a argumenty příkazového řádku (C# Průvodce programováním)
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 04/09/2018
 - `Main` je deklarovaná ve třídě nebo struktuře. `Main` musí být [statické](../../../csharp/language-reference/keywords/static.md) a nemusí být [veřejné](../../../csharp/language-reference/keywords/public.md). (V předchozím příkladu, obdrží přístup výchozí [privátní](../../../csharp/language-reference/keywords/private.md).) Nadřazených třídě nebo struktuře nemusí být statická.
 - `Main` mohou mít buď `void`, `int`, nebo, počínaje C# 7.1, `Task`, nebo `Task<int>` návratovým typem.
 - Jenom v případě `Main` vrátí `Task` nebo `Task<int>`, deklaraci `Main` může zahrnovat [ `async` ](../../language-reference/keywords/async.md) modifikátor. Všimněte si, že konkrétně vyloučeny `async void Main` metoda.
-- `Main` Metoda lze deklarovat, bez ohledu `string[]` parametr, který obsahuje argumenty příkazového řádku. Při použití [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] k vytvoření aplikace systému Windows, můžete můžete ručně přidat parametr jinak použít <xref:System.Environment> třída získat argumenty příkazového řádku. Parametry jsou přečíst jako nové indexované argumenty příkazového řádku. Na rozdíl od C a C++ nepovažuje se název programu jako první argument příkazového řádku.
+- `Main` Metoda lze deklarovat, bez ohledu `string[]` parametr, který obsahuje argumenty příkazového řádku. Když pomocí sady Visual Studio k vytvoření aplikace systému Windows, můžete můžete ručně přidat parametr jinak použít <xref:System.Environment> třída získat argumenty příkazového řádku. Parametry jsou přečíst jako nové indexované argumenty příkazového řádku. Na rozdíl od C a C++ nepovažuje se název programu jako první argument příkazového řádku.
 
 Přidání `async` a `Task`, `Task<int>` vrátit typy zjednodušuje kódu programu, když je potřeba spustit konzolové aplikace a `await` asynchronních operací v `Main`.
 

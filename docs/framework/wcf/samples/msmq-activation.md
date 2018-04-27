@@ -1,26 +1,26 @@
 ---
 title: Aktivace MSMQ
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-caps.latest.revision: 
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a4c3d1dc8116e9c1b26febc4d8473b15d8648c01
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: e0f8077e425464d5a9f33662366377d573719659
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služby WAS (Windows), které se načítají z fronty zpráv. Této ukázce se používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) ukázka. Služba je v tomto případě hostované webové aplikace a klient se hostuje sama a výstupy ke konzole sledovat stav nákupních objednávek odeslána.  
@@ -31,9 +31,9 @@ Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služb
 > [!NOTE]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
 >   
->  \<InstallDrive>:\WF_WCF_Samples  
+>  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  Pokud tento adresář neexistuje, přejděte na [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a [!INCLUDE[wf](../../../../includes/wf-md.md)] ukázky pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] ke stažení všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] ke stažení všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
@@ -282,7 +282,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         > [!NOTE]
         >  Tento příkaz je na jednom řádku textu.  
   
-         Tento příkaz umožňuje získat přístup pomocí http://localhost/servicemodelsamples a net.msmq://localhost/servicemodelsamples /servicemodelsamples aplikaci.  
+         Tento příkaz povolí aplikaci /servicemodelsamples získat přístup pomocí http://localhost/servicemodelsamples a net.msmq://localhost/servicemodelsamples.  
   
 7.  Pokud jste tak dosud neučinili dříve, ujistěte se, že je povolena služba Aktivace služby MSMQ. Z **spustit** nabídky, klikněte na tlačítko **spustit**a typ `Services.msc`. V seznamu služeb pro Hledat **adaptér naslouchání Net.Msmq**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **typ spuštění** k **automatické**, klikněte na tlačítko **použít** a klikněte na tlačítko **spustit** tlačítko. Tento krok je třeba provést pouze jednou před první využití služby Net.Msmq adaptér naslouchání.  
   
@@ -342,7 +342,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Změna identity kompatibilní se pracovní proces:  
   
-    1.  Run Inetmgr.exe.  
+    1.  Spusťte Inetmgr.exe.  
   
     2.  V části **fondy aplikací**, klikněte pravým tlačítkem myši **AppPool** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
   

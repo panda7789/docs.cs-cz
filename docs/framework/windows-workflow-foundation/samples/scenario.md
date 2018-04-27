@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 60f6571d7702236ee24c0cb9da2aa4121feddcf0
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ecf45e4d40c305c5e324d3ab8469ff24f5a092ef
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="scenario"></a>Scénář
-Tato část obsahuje příklady [!INCLUDE[wf](../../../../includes/wf-md.md)] scénáře.  
+Tato část obsahuje příklady scénářů Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Knihovna aktivit](../../../../docs/framework/windows-workflow-foundation/samples/activity-library.md)  
@@ -40,7 +40,7 @@ Tato část obsahuje příklady [!INCLUDE[wf](../../../../includes/wf-md.md)] sc
  Ukazuje, jak implementovat pomocí kombinace scénář jednoduchého stopky <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Pick> aktivity.  
   
  [Integrace WPF a WF v XAML](../../../../docs/framework/windows-workflow-foundation/samples/wpf-and-wf-integration-in-xaml.md)  
- Ukazuje, jak vytvořit aplikaci, která používá Windows Presentation Foundation (WPF) a [!INCLUDE[wf](../../../../includes/wf-md.md)] funkce do jednoho dokumentu XAML. K tomu Ukázka používá [!INCLUDE[wf](../../../../includes/wf-md.md)] a rozšiřitelnost XAML.  
+ Ukazuje, jak vytvořit aplikaci, která používá funkce Windows Presentation Foundation (WPF) a Windows Workflow Foundation (WF) do jednoho dokumentu XAML. K tomu, příklad používá rozšíření Windows Workflow Foundation (WF) a XAML.  
   
  [Sada nástrojů pro externí sadu pravidel](../../../../docs/framework/windows-workflow-foundation/samples/external-ruleset-toolkit.md)  
  Ukazuje, jak spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu.

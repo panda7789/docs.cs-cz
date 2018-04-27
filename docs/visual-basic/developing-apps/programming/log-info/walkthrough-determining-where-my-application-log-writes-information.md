@@ -1,11 +1,12 @@
 ---
-title: "Určení, kam objekt My.Application.Log zapisuje informace (Visual Basic)"
-ms.custom: 
+title: Určení, kam objekt My.Application.Log zapisuje informace (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - My.Log object, output location
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - application event logs, output location
 - applications [Visual Basic], output location
 ms.assetid: 5b70143a-7741-45f2-ae1d-03324a3a4189
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f35a850a262e96762b4ada3fdff1f14634f77317
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: d15dc02f9b5c2728ea447b5a1969ea40753258f9
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Zjištění, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 `My.Application.Log` Objekt může zapsat informace do několika naslouchací procesy pro protokoly. Naslouchací procesy pro protokoly jsou nakonfigurovány pomocí souboru konfigurace počítače a mohou být přepsány konfiguračním souboru aplikace. Toto téma popisuje výchozí nastavení a jak určit nastavení pro vaši aplikaci.  
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/21/2017
   
 ### <a name="to-determine-the-listeners-for-myapplicationlog"></a>Chcete-li zjistit naslouchací procesy pro My.Application.Log  
   
-1.  Vyhledejte soubor konfigurace je sestavení. Pokud vyvíjíte sestavení, můžete přístup k souboru app.config v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] z **Průzkumníku řešení**. Jinak název konfiguračního souboru je spolu s ".config" název sestavení a nachází se ve stejném adresáři jako sestavení.  
+1.  Vyhledejte soubor konfigurace je sestavení. Pokud vyvíjíte sestavení, můžete přístup k souboru app.config v sadě Visual Studio z **Průzkumníku řešení**. Jinak název konfiguračního souboru je spolu s ".config" název sestavení a nachází se ve stejném adresáři jako sestavení.  
   
     > [!NOTE]
     >  Konfigurační soubor obsahuje Ne každé sestavení.  

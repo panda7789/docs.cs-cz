@@ -26,14 +26,14 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4d288d321063512f91ad94b417bb1a6bf38c9ef9
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 2e31605f428f4e1dc58ee3332977f14dfd394489
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="add-ins-and-extensibility"></a>Doplňky a rozšíření
-<a name="top"></a>Doplňky poskytují rozšířené funkce nebo služby pro hostitelskou aplikaci. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje programovací model, který mohou vývojáři k vývoji doplňky a jejich aktivaci ve svých aplikacích hostitele. Model se dosahuje pomocí vytváření komunikační kanál mezi hostitelem a doplněk. Model je implementována pomocí typy v <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>, a <xref:System.AddIn.Contract> obory názvů.  
+<a name="top"></a> Doplňky poskytují rozšířené funkce nebo služby pro hostitelskou aplikaci. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje programovací model, který mohou vývojáři k vývoji doplňky a jejich aktivaci ve svých aplikacích hostitele. Model se dosahuje pomocí vytváření komunikační kanál mezi hostitelem a doplněk. Model je implementována pomocí typy v <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>, a <xref:System.AddIn.Contract> obory názvů.  
   
  Tento přehled obsahuje následující části:  
   
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/01/2018
   
  Následující obrázek znázorňuje kanálu.  
   
- ![Přidat & č. 45; ve model kanálu. ] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
+ ![Přidat&#45;ve model kanálu. ] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
 Kanál doplňku  
   
  Sestavení pro tyto segmenty nejsou nemusí být ve stejné doméně aplikace. Doplněk můžete načíst do své vlastní nové aplikace domény, do existující domény aplikace nebo i do domény aplikace hostitele. Více add in můžete načíst do stejné domény aplikace, která umožňuje doplňků sdílet prostředky a kontexty zabezpečení.  
@@ -116,7 +116,7 @@ Kanál doplňku
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Vývoj kanálu](../../../docs/framework/add-ins/pipeline-development.md)|Popisuje komunikační kanál segmentů z hostitelskou aplikaci pro doplněk. Obsahuje příklady kódu v tématech návod, které popisují, jak k vytvoření kanálu a postup nasazení segmenty na kanál v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].|  
+|[Vývoj kanálu](../../../docs/framework/add-ins/pipeline-development.md)|Popisuje komunikační kanál segmentů z hostitelskou aplikaci pro doplněk. Obsahuje příklady kódu v tématech návod, které popisují, jak k vytvoření kanálu a jak nasadit segmenty do kanálu v sadě Visual Studio.|  
 |[Domény a sestavení aplikací](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)|Popisuje vztah mezi doménami aplikací, které poskytují hranici izolace zabezpečení, spolehlivosti a správa verzí a sestavení.|  
   
  [Zpět na začátek](#top)  

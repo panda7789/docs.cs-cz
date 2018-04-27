@@ -1,24 +1,26 @@
 ---
-title: "Načítání metadat"
-ms.custom: 
+title: Načítání metadat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e8a6ef8c-a195-495a-a15e-7d92bdf0b28c
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7321578cb76b9f06f09086834c2826a72631e49f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b3a85c43cf812ccb8e099149646d63cda6b80b71
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="retrieve-metadata"></a>Načítání metadat
 Tento příklad znázorňuje způsob implementace klienta, který dynamicky načítá metadata ze služby vybrat koncový bod s které ke komunikaci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Služba byla změněna vystavit dva koncové body – koncový bod na základní adresa pomocí `basicHttpBinding` vazby a zabezpečení koncového bodu v {*baseaddress*} / secure pomocí `wsHttpBinding` vazby. Namísto konfigurace klienta se adresy koncových bodů a vazby, klienta dynamicky načte metadata pro používání služby <xref:System.ServiceModel.Description.MetadataExchangeClient> tříd a poté naimportuje metadata jako <xref:System.ServiceModel.Description.ServiceEndpointCollection> pomocí <xref:System.ServiceModel.Description.WsdlImporter> třídy.  
@@ -28,7 +30,7 @@ Tento příklad znázorňuje způsob implementace klienta, který dynamicky nač
   
  Klientská aplikace používá importované <xref:System.ServiceModel.Description.ServiceEndpointCollection> vytvořit klientům pro komunikaci se službou. Klientská aplikace iteruje v rámci každé načtené koncový bod a komunikuje s každý koncový bod, který implementuje `ICalculator` kontrakt. Příslušnou adresu a vazby jsou k dispozici s načtené koncového bodu, tak, aby klient je nakonfigurován pro komunikaci se každý koncový bod, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp   
 // Create a MetadataExchangeClient for retrieving metadata.  
 EndpointAddress mexAddress = new EndpointAddress(ConfigurationManager.AppSettings["mexAddress"]);  
 MetadataExchangeClient mexClient = new MetadataExchangeClient(mexAddress);  

@@ -1,8 +1,9 @@
 ---
-title: "-link (možnosti kompilátoru C#)"
+title: -link (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - /l compiler option [C#]
@@ -14,14 +15,14 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 12ba3762a1c514c52b844a30efc9f49648c51b46
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e317c73fab28c76a05b8f7e4472c2439f8731159
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-link-c-compiler-options"></a>-link (možnosti kompilátoru C#)
 Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v zadaném sestavení pro projekt, který je aktuálně kompilován.  
@@ -48,7 +49,7 @@ Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v z
 > [!NOTE]
 >  Když vytvoříte instanci vloženého typu modelu COM v kódu, musíte vytvořit instanci pomocí odpovídající rozhraní. Při pokusu o vytvoření instance vloženého typu modelu COM pomocí CoClass způsobí chybu.  
   
- Chcete-li nastavit `-link` možnost v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], přidejte odkaz na sestavení a nastavte `Embed Interop Types` vlastnost, která má **true**. Výchozí hodnota pro `Embed Interop Types` vlastnost je **false**.  
+ Chcete-li nastavit `-link` možnost v sadě Visual Studio, přidejte odkaz na sestavení a nastavte `Embed Interop Types` vlastnost **true**. Výchozí hodnota pro `Embed Interop Types` vlastnost je **false**.  
   
  Pokud jste k sestavení modelu COM (sestavení A) které se odkazuje na jiný sestavení modelu COM (sestavení B), budete také muset propojit sestavení B, pokud platí některá z následujících:  
   
@@ -90,6 +91,6 @@ csc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.cs
  [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Návod: Vložení typů ze spravovaných sestavení](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
  [-reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)  
- [-noconfig (C# Compiler Options)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)  
+ [-noconfig (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)  
  [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
  [Přehled interoperability](../../../csharp/programming-guide/interop/interoperability-overview.md)

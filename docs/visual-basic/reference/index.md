@@ -12,11 +12,11 @@ ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 26cb885187cff31a085e34c60c820fe7c0bdc787
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 15d71f039223b464a3b5affb9ba7b37886b93200
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="reference-visual-basic"></a>Odkaz (Visual Basic)
 Tato část obsahuje odkazy na referenční informace o různých aspektech programování v jazyce Visual Basic.  
@@ -43,10 +43,10 @@ Tato část obsahuje odkazy na referenční informace o různých aspektech prog
   
 ## <a name="related-sections"></a>Související oddíly  
  [Obecné elementy uživatelského rozhraní (Visual Studio)](/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
- Obsahuje témata pro dialogová okna a windows používá v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
+ Obsahuje témata pro dialogová okna a windows používá v sadě Visual Studio.  
   
  [Nástroje XML v sadě Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
- Obsahuje odkazy na témata o různých nástrojů dostupných v XML [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
+ Obsahuje odkazy na témata o různé nástroje XML k dispozici v sadě Visual Studio.  
   
  [Automatizace a referenční informace k rozšiřitelnosti](http://msdn.microsoft.com/library/93112562-db21-4188-9383-ed19ad79bddf)  
- Obsahuje odkazy na témata týkající se automatizace a rozšiřitelnost v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], pro součásti sdílené a konkrétní jazyk.
+ Obsahuje odkazy na témata týkající se automatizace a rozšíření v sadě Visual Studio pro součásti sdílené a konkrétní jazyk.

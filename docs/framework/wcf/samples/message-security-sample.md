@@ -1,24 +1,26 @@
 ---
-title: "Ukázka zabezpečení zpráv"
-ms.custom: 
+title: Ukázka zabezpečení zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-caps.latest.revision: "33"
+caps.latest.revision: 33
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: efad1940def2c27d57bb1e9da28e51362de5b237
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0ead08c454ed8b9e484d23d426e918c9f11fe3ed
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="message-security-sample"></a>Ukázka zabezpečení zpráv
 Tento příklad ukazuje, jak implementovat aplikaci, která používá `basicHttpBinding` a zabezpečení zpráv. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -105,11 +107,11 @@ Tento příklad ukazuje, jak implementovat aplikaci, která používá `basicHtt
  Stejné podrobnosti vazby a zabezpečení jsou zadané v konfiguračním souboru klienta.  
   
  Identitu volajícího se zobrazí v okně konzoly služby pomocí následujícího kódu:  
-  
-```  
+
+```csharp
 Console.WriteLine("Called by {0}", ServiceSecurityContext.Current.PrimaryIdentity.Name);  
-```  
-  
+```
+
  Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
   
 ```  
@@ -178,7 +180,7 @@ Press <ENTER> to terminate client.
 -   Po dokončení spuštění ukázky, spusťte Cleanup.bat ve složce Ukázky.  
   
     > [!NOTE]
-    >  Tento skript neodebere certifikáty služby v klientském počítači při spuštění této ukázce mezi počítači. Pokud jste spustili [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vzorků, které používají certifikáty mezi počítači, je nutné vymazat certifikáty služby, které byly nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například:`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`  
+    >  Tento skript neodebere certifikáty služby v klientském počítači při spuštění této ukázce mezi počítači. Pokud jste spustili [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vzorků, které používají certifikáty mezi počítači, je nutné vymazat certifikáty služby, které byly nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  

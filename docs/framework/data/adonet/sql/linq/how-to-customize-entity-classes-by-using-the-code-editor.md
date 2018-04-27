@@ -16,16 +16,16 @@ ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3e518a18787a7faa1d3e501d5941fae70daf8b9d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: f57b07d03297347561b6b2e2634038aa1f29bc40
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-customize-entity-classes-by-using-the-code-editor"></a>Postupy: přizpůsobení tříd entit pomocí editoru kódu
 Vývojáři pomocí sady Visual Studio můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] vytvořit nebo upravit jejich tříd entit.  
   
- Můžete také [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)] editor kódu napsat vlastní kód mapování nebo přizpůsobit kód, který již byl vygenerován. Další informace najdete v tématu [na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ Můžete taky editoru kódu v sadě Visual Studio napsat vlastní kód mapování nebo přizpůsobit kód, který již byl vygenerován. Další informace najdete v tématu [na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
   
  Témata v této části popisují postup přizpůsobení modelu objektu.  
   

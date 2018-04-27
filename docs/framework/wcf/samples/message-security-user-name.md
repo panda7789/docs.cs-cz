@@ -1,28 +1,28 @@
 ---
-title: "Zabezpečení zpráv s uživatelským jménem"
-ms.custom: 
+title: Zabezpečení zpráv s uživatelským jménem
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
-caps.latest.revision: 
+caps.latest.revision: 57
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3d0c5278cf1860a89ea6a1c3ed33b45ed3c48e92
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: da9cf3a59976453a5372a95af83dcff181171a01
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="message-security-user-name"></a>Zabezpečení zpráv s uživatelským jménem
 Tento příklad znázorňuje implementaci aplikace, která využívá WS-zabezpečení pomocí uživatelského jména ověřování klienta a vyžaduje server ověřování pomocí certifikátu x.509 v3 serveru. Všechny zprávy aplikace mezi klientem a serverem jsou podepsat a zašifrovat. Ve výchozím nastavení, uživatelské jméno a heslo, které poskytl klient, se používají k přihlašování platný účet systému Windows. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). Tato ukázka se skládá z konzoly programu klienta (Client.exe) a knihovna service (Service.dll) hostované Internetové informační služby (IIS). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  
@@ -129,8 +129,8 @@ Tento příklad znázorňuje implementaci aplikace, která využívá WS-zabezpe
 ```  
   
  Implementace klienta nastaví uživatelské jméno a heslo.  
-  
-```  
+
+```csharp
 // Create a client.  
 CalculatorClient client = new CalculatorClient();  
   
@@ -143,8 +143,8 @@ Console.WriteLine(client.GetCallerIdentity());
 ...  
 //Closing the client gracefully closes the connection and cleans up resources.  
 client.Close();  
-```  
-  
+```
+
  Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
   
 ```  
@@ -164,7 +164,7 @@ Press <ENTER> to terminate client.
   
      Následující řádky z dávkového souboru Setup.bat vytvořit certifikát serveru, který chcete použít.  
   
-    ```  
+    ```bat
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  
@@ -188,7 +188,7 @@ Press <ENTER> to terminate client.
   
      Zkontrolujte následující řádky v dávkovém souboru, Setup.bat certifikát serveru, který je uložen v úložišti LocalMachine přístupné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účet pracovního procesu.  
   
-    ```  
+    ```bat
     echo ************  
     echo setting privileges on server certificates  
     echo ************  
@@ -217,7 +217,7 @@ Press <ENTER> to terminate client.
     > [!NOTE]
     >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio – příkazový řádek. To vyžaduje, aby proměnné prostředí path přejděte na adresář, kam nainstalovat sadu SDK. Tato proměnná prostředí bude automaticky nastavena v rámci Visual Studio – příkazový řádek.  
   
-3.  Ověřte přístup ke službě pomocí prohlížeče zadáním adresy http://localhost/servicemodelsamples/service.svc.  
+3.  Ověřte přístup ke službě pomocí prohlížeče tak, že zadáte adresu http://localhost/servicemodelsamples/service.svc.  
   
 4.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientskou aplikaci konzoly.  
   

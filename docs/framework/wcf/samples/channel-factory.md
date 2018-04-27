@@ -1,24 +1,26 @@
 ---
-title: "Vytvoření postupu kanálu"
-ms.custom: 
+title: Vytvoření postupu kanálu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 09b53aa1-b13c-476c-a461-e82fcacd2a8b
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7f5fb22c329bf7b27c32f05a2d8e41734723f53b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 37b5f880b18f4caac9dc452d93129922ecc33543
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="channel-factory"></a>Vytvoření postupu kanálu
 Tento příklad ukazuje, jak klientská aplikace můžete vytvořit kanál s <xref:System.ServiceModel.ChannelFactory> třída místo generovaného klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -28,7 +30,7 @@ Tento příklad ukazuje, jak klientská aplikace můžete vytvořit kanál s <xr
   
  V tomto příkladu <xref:System.ServiceModel.ChannelFactory%601> třída k vytvoření kanálu pro koncový bod služby. Obvykle k vytvoření kanálu pro koncový bod služby, můžete vygenerovat typu klienta s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a vytvořit instanci typu generované. Můžete také vytvořit kanál pomocí <xref:System.ServiceModel.ChannelFactory%601> třídy, jak je předvedeno v této ukázce. Službu vytvořené následující vzorový kód je stejný jako do služby [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
-```  
+```csharp  
 EndpointAddress address = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");  
 WSHttpBinding binding = new WSHttpBinding();  
 ChannelFactory<ICalculator> factory = new   
@@ -41,7 +43,7 @@ ICalculator channel = factory.CreateChannel();
   
  Po vytvoření kanálu operací služby nelze vyvolat stejně jako v generovaného klienta.  
   
-```  
+```csharp  
 // Call the Add service operation.  
 double value1 = 100.00D;  
 double value2 = 15.99D;  
@@ -51,7 +53,7 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);
   
  Zavřete kanál, se musí nejprve přetypovat <xref:System.ServiceModel.IClientChannel> rozhraní. Důvodem je, že je v klientská aplikace používající deklarována kanál generovaná `ICalculator` rozhraní, které se má metody jako `Add` a `Subtract` ale ne `Close`. `Close` Metoda pochází <xref:System.ServiceModel.ICommunicationObject> rozhraní.  
   
-```  
+```csharp  
 // Close the channel.  
  ((IClientChannel)client).Close();  
 ```  
@@ -79,7 +81,7 @@ Press <ENTER> to terminate client.
   
 1.  Nahraďte plně kvalifikovaný název počítače, ve kterém je spuštěna služba "localhost" v následujícím kódu.  
   
-    ```  
+    ```csharp  
     EndpointAddress address = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");  
     ```  
   

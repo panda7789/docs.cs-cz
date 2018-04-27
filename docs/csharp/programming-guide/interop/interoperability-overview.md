@@ -15,11 +15,11 @@ ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
 caps.latest.revision: 43
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 58538b690958e11b1590c13e6709cac4109ef49d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 51a92f89415fd3750d8d2e1880be0d9c2867600d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody a umožňuje interoperabilitu mezi C# spravovaný kód a nespravovaného kódu.  
@@ -42,7 +42,7 @@ Téma popisuje metody a umožňuje interoperabilitu mezi C# spravovaný kód a n
   
 2.  Přidejte do projektu odkaz na knihovnu COM součásti nebo typu.  
   
-     Když přidáte odkaz na [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] používá [Tlbimp.exe (Importér knihovny)](../../../../docs/framework/tools/tlbimp-exe-type-library-importer.md), což trvá knihovny typů jako vstup do výstupního sestavení vzájemné spolupráce rozhraní .NET Framework. Sestavení, také s názvem obálka volatelná na za běhu (RCW), obsahuje spravované třídy a rozhraní, které balí COM třídy a rozhraní, které jsou v knihovně typu. [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] Přidá do projektu odkaz na vygenerované sestavení.  
+     Když přidáte odkaz, Visual Studio použije [Tlbimp.exe (Importér knihovny)](../../../../docs/framework/tools/tlbimp-exe-type-library-importer.md), což trvá knihovny typů jako vstup do výstupního sestavení vzájemné spolupráce rozhraní .NET Framework. Sestavení, také s názvem obálka volatelná na za běhu (RCW), obsahuje spravované třídy a rozhraní, které balí COM třídy a rozhraní, které jsou v knihovně typu. Visual Studio přidá do projektu odkaz na vygenerované sestavení.  
   
 3.  Vytvoření instance třídy, která je definována v RCW. To, se pak vytvoří instanci objektu COM.  
   
@@ -59,7 +59,7 @@ Téma popisuje metody a umožňuje interoperabilitu mezi C# spravovaný kód a n
   
 2.  Generovat knihovny typů COM a zaregistrovat ji COM využití.  
   
-     Visual C# vlastnosti projektu na automatickou registraci sestavení C# pro zprostředkovatel komunikace s objekty COM, můžete upravit. [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] používá [Regasm.exe (Nástroj registrace sestavení)](../../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)pomocí `/tlb` přepínač příkazového řádku, který přebírá spravované sestavení jako vstup, vytvoření knihovny typů. Popisuje této knihovny typů `public` typy v sestavení a přidá položky registru tak, aby klienti COM můžete vytvořit spravované třídy.  
+     Visual C# vlastnosti projektu na automatickou registraci sestavení C# pro zprostředkovatel komunikace s objekty COM, můžete upravit. Visual Studio použije [Regasm.exe (Nástroj registrace sestavení)](../../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)pomocí `/tlb` přepínač příkazového řádku, který přebírá spravované sestavení jako vstup, vytvoření knihovny typů. Popisuje této knihovny typů `public` typy v sestavení a přidá položky registru tak, aby klienti COM můžete vytvořit spravované třídy.  
   
  Další informace najdete v tématu [vystavení komponent architektury .NET Framework do modelu COM](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md) a [Ukázka třídy COM](../../../csharp/programming-guide/interop/example-com-class.md).  
   

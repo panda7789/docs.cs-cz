@@ -12,11 +12,11 @@ ms.assetid: b595ea44-a712-4625-a761-190c64f59bbe
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 15b6e21e769c90e23e66e4f87b37f74462423985
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: f49a5ef8dd4e36c9ab055ca01dc25ed05b083349
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="deploying-applications-that-reference-the-printform-component-visual-basic"></a>Nasazení aplikací odkazujících na součást PrintForm (Visual Basic)
 Pokud chcete nasadit aplikaci, která odkazuje <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti, součásti musí být nainstalován v cílovém počítači.  
@@ -26,7 +26,7 @@ Pokud chcete nasadit aplikaci, která odkazuje <xref:Microsoft.VisualBasic.Power
 ## <a name="installing-the-printform-as-a-prerequisite"></a>Předpokladem je instalace PrintForm  
  Pokud chcete úspěšně nasadit aplikaci, musíte také nasadit všechny součásti, které jsou odkazovány pomocí aplikace. Proces instalace požadovaných součástí se označuje jako *zavádění*.  
   
- Když <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> ve svém vývojovém počítači je nainstalována součást, balíček zaváděcího nástroje sady Microsoft Visual Basic Power Pack se přidá do [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] adresáře zaváděcího nástroje. Tento balíček je k dispozici v případě postupujte podle pokynů pro přidání předpokladů pro buď [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] nebo instalační služba systému Windows.  
+ Když <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> ve svém vývojovém počítači je nainstalována součást, balíček zaváděcího nástroje sady Microsoft Visual Basic Power Pack je přidán do adresáře zaváděcího nástroje Visual Studio. Tento balíček je k dispozici v případě postupujte podle pokynů pro přidání předpokladů pro buď [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] nebo instalační služba systému Windows.  
   
  Ve výchozím nastavení jsou zaváděné součásti nasazeny ze stejného umístění jako instalační balíček. Alternativně můžete nainstalovat komponenty z adresy URL nebo sdíleného umístění, ze kterého mohou uživatelé stáhnout je podle potřeby.  
   

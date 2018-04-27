@@ -1,5 +1,5 @@
 ---
-title: "Vytváření a používání součástí v jazyce Visual Basic"
+title: Vytváření a používání součástí v jazyce Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,19 +8,19 @@ ms.topic: article
 helpviewer_keywords:
 - components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-caps.latest.revision: 
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 17c9b7440d60c38ba30d230f8412c3ca1a21830a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5b7b145d777ba7ec3250904ad4879dd21926e0e3
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Vytváření a používání součástí v jazyce Visual Basic
 A *součást* je třída, která implementuje <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> rozhraní nebo která pochází přímo nebo nepřímo z třídu, která implementuje <xref:System.ComponentModel.IComponent>. A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] součást je objekt, který je opakovaně použitelný, můžete spolupracovat s ostatními objekty a umožňuje řídit externí zdroje a podpora návrhu.  
   
- Důležitou součást součástí je, že jsou navrhovatelé, což znamená, že v můžete použít třídu, která je součástí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí. Součást můžete přidat do sady nástrojů, přetáhnout a do formuláře a s nimi manipulovat, pokud na návrhovou plochu. Všimněte si, že základní podpora návrhu pro součásti je integrovaná do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]; vývojář součástí nemá žádné další práci využívat základní funkce návrhu.  
+ Důležitou součást součástí je, že jsou navrhovatelé, což znamená, že třídu, která je součástí můžete používat ve Visual Studio integrované vývojové prostředí. Součást můžete přidat do sady nástrojů, přetáhnout a do formuláře a s nimi manipulovat, pokud na návrhovou plochu. Všimněte si, že základní podpora návrhu pro součásti je integrovaná do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]; vývojář součástí nemá žádné další práci využívat základní funkce návrhu.  
   
  A *řízení* je podobná komponentu, oba jsou navrhovatelé. Však ovládacího prvku poskytuje uživatelské rozhraní, zatímco součást neexistuje. Ovládací prvek musí být odvozeny od jednu z tříd základního ovládacího prvku: <xref:System.Windows.Forms.Control> nebo <xref:System.Web.UI.Control>.  
   

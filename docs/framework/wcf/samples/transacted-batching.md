@@ -1,24 +1,26 @@
 ---
-title: "Transakční dávkování"
-ms.custom: 
+title: Transakční dávkování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ecd328ed-332e-479c-a894-489609bcddd2
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 87d8e3e09618b214dcafb7afd82970dde54fc4fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 50596aaf5290146148ecb9636b78f7f9180c0b79
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="transacted-batching"></a>Transakční dávkování
 Tento příklad ukazuje, jak dávky zpracovaných čtení pomocí služby Řízení front zpráv (MSMQ). Zpracovaných Batching je funkce optimalizace výkonu pro zpracovaných čtení v komunikaci ve frontě.  
@@ -142,8 +144,8 @@ Tento příklad ukazuje, jak dávky zpracovaných čtení pomocí služby Říze
  Chování služby definuje chování operaci s `TransactionScopeRequired` nastavena na `true`. To zajistí, že je žádné správci prostředků přístup metodu použít stejný obor transakce, který se používá k načtení zprávy z fronty. V tomto příkladu používáme databáze basic uložit informace o nákupu pořadí obsažené ve zprávě. Oboru transakce také zaručuje, že pokud metoda vyvolá výjimku, bude vráceno do fronty. Bez nastavení toto chování operace, zařazených do fronty kanál, který vytvoří transakci čtení zprávy ve frontě a potvrdí automaticky předtím, než je odeslán, takže pokud se operace nezdaří, dojde ke ztrátě zprávy. Nejběžnější scénáře je pro operace služby zařazení v transakci, která slouží k načtení zprávy z fronty, jak je ukázáno v následujícím kódu.  
   
  Všimněte si, že `ReleaseServiceInstanceOnTransactionComplete` je nastaven na `false`. Toto je důležité požadavek pro dávkové zpracování. Vlastnost `ReleaseServiceInstanceOnTransactionComplete` na `ServiceBehaviorAttribute` označuje, co dělat s instancí služby po dokončení transakce. Ve výchozím nastavení je instance služby vydala po dokončení transakce. Základní aspekt pro dávkování je použití jedné transakci pro čtení a odeslání mnoho zpráv ve frontě. Proto uvolnění instance služby skončilo dokončení transakce předčasně negace velmi použití dávkování. Pokud je tato vlastnost nastavena na `true` a chování dávkového zpracování se přidá do koncového bodu, dávkování chování vyvolá výjimku.  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 [ServiceBehavior(ReleaseServiceInstanceOnTransactionComplete=false,   
@@ -160,11 +162,11 @@ public class OrderProcessorService : IOrderProcessor
     }  
     …  
 }  
-```  
-  
+```
+
  `Orders` Třída zapouzdří zpracování pořadí. V ukázce databáze se aktualizuje informace o objednávce.  
-  
-```  
+
+```csharp
 // Order Processing Logic  
 public class Orders  
 {  
@@ -234,8 +236,8 @@ public class Orders
                                      {1} ", rowsAffected, po.PONumber);  
     }  
 }  
-```  
-  
+```
+
  Dávkování chování a jeho konfigurace jsou určené v konfiguraci aplikace služby.  
   
 ```xml  
@@ -292,8 +294,8 @@ public class Orders
 >  Vybraná velikost dávky je závisí na vaší aplikace. Pokud velikost dávky je příliš malá, nelze získat požadovaný výkon. Na druhé straně Pokud velikost dávky je příliš velký, může zhoršit výkon. Například může vaší transakce a za provozu již a podržením zámky ve vaší databázi nebo vaší transakce a může přestat mrtvých uzamčené, které by mohly způsobit dávky k získání vrácena zpět a vrátit práce.  
   
  Klient vytvoří oboru transakce. Komunikace s fronty probíhá v rámci oboru transakce, příčinou je považován za atomické jednotky, kde jsou všechny zprávy odeslané do fronty nebo žádné zprávy jsou odesílány do fronty. Transakce se potvrdí voláním <xref:System.Transactions.TransactionScope.Complete%2A> v oboru transakce.  
-  
-```  
+
+```csharp
 //Client implementation code.  
 class Client  
 {  
@@ -340,8 +342,8 @@ class Client
         Console.ReadLine();  
     }  
 }  
-```  
-  
+```
+
  Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Uvidíte služby přijmout zprávy z klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby. Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu. Spuštění klienta, vypněte ho a potom spuštění služby a stále přijímá jeho zprávy. Uvidíte postupného výstup jako přečtená v dávce a zpracování zpráv.  
   
 ```  

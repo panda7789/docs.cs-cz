@@ -14,11 +14,11 @@ ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
 caps.latest.revision: 30
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f453d9f4b443d7adeeb0ab628b4ddad1a0116e49
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: bbf150940be040a179618b6964608c8f2a72fc17
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 04/27/2018
 ---
  # <a name="when-c-reference"></a>Když (referenční dokumentace jazyka C#)
 
@@ -27,7 +27,7 @@ Můžete použít `when` kontextové klíčové slovo chcete zadat podmínku fil
 - V `catch` prohlášení o [try/catch –](try-catch.md) nebo [try/catch/finally –](try-catch-finally.md) bloku.
 - V `case` popisek [přepínač](switch.md) příkaz.
 
-## <a name="when-in-a-catch-statement"></a>`when`v `catch` – příkaz
+## <a name="when-in-a-catch-statement"></a>`when` v `catch` – příkaz
 
 Od verze jazyka C# 6, `When` mohou být používány `catch` lze zadat podmínku, která musí být splněny pro obslužnou rutinu pro konkrétní výjimky k provedení. Jeho syntaxe je:
 
@@ -40,9 +40,9 @@ Následující příklad používá `when` – klíčové slovo k podmíněnému
 
  [!code-csharp[when-with-catch](../../../../samples/snippets/csharp/language-reference/keywords/when/catch.cs)]  
   
-## <a name="when-in-a-switch-statement"></a>`when`v `switch` – příkaz
+## <a name="when-in-a-switch-statement"></a>`when` v `switch` – příkaz
 
-Od verze 7, `case` popisky už musí být vzájemně vylučují a pořadí, v jakém `case` zobrazí popisky v `switch` příkaz můžete určit, které bloku přepínačů provede. `when` – Klíčové slovo lze použít k určení podmínku filtrování, který způsobuje její přidružené návěstí pravdivá pouze v případě, že podmínku filtrování platí taky. Jeho syntaxe je:
+Od verze jazyka C# 7.0, `case` popisky už musí být vzájemně vylučují a pořadí, v jakém `case` zobrazí popisky v `switch` příkaz můžete určit, které bloku přepínačů provede. `when` – Klíčové slovo lze použít k určení podmínku filtrování, který způsobuje její přidružené návěstí pravdivá pouze v případě, že podmínku filtrování platí taky. Jeho syntaxe je:
 
 ```csharp
 case (expr) when (when-condition):

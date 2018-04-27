@@ -1,27 +1,29 @@
 ---
-title: "Implementace obchodní logiky (technologie LINQ to SQL)"
-ms.custom: 
+title: Implementace obchodní logiky (technologie LINQ to SQL)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d905f34c29fbd8a15cb8225a4a547490a5c14efd
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: f519162818739d04cbe66b107911a0e0c30d93bc
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Implementace obchodní logiky (technologie LINQ to SQL)
 Termín "obchodní logiky" v tomto tématu vztahuje na všechny vlastní pravidla nebo ověřovací testy, které použijete pro data, než je vložit, aktualizovat nebo odstranit z databáze. Obchodní logika se také někdy označuje jako "obchodní pravidla" nebo "logiku domény." Ve vícevrstvé aplikace je obvykle určený jako logické vrstvu tak, aby ho můžete upravit nezávisle na prezentační vrstvy nebo vrstva přístupu k datům. Datová vrstva přístupu může vyvolat obchodní logiky před nebo za všechny aktualizace, vložení nebo odstranění dat v databázi.  
@@ -166,7 +168,7 @@ public string CustomerID
 }  
 ```  
   
- Ve vašem součástí třídy zápisu definici implementuje metody. V [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)], zadejte po `partial` uvidíte IntelliSense pro definice metoda v další části třídy.  
+ Ve vašem součástí třídy zápisu definici implementuje metody. V sadě Visual Studio, zadejte po `partial` uvidíte IntelliSense pro definice metoda v další části třídy.  
   
 ```vb  
 Partial Public Class Customer  

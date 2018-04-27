@@ -15,14 +15,14 @@ ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c18c1ea645c9f144e2c2043af5460d6fb03f13a1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6a303b0bc9a51ec5566be5cf6db40ff9b9de4c9c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
-Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu jako řadu postupů, které jsou spouštěny v pořadí, ve skutečnosti většiny programů, jsou události řízené – znamená tok provádění je dáno externí výskytů názvem *události*.  
+Při projekt sady Visual Studio může vizualizovat jako řadu postupů, které jsou spouštěny v pořadí, ve skutečnosti většiny programů jsou události řízené – znamená tok provádění je dáno externí výskytů názvem *události*.  
   
  Událost je signál, která informuje o aplikaci, která něco důležité došlo k chybě. Například když uživatel klikne na ovládací prvek na formuláři, formuláře může být spojeno `Click` událostí a volání procedury, která zpracovává událost. Události povolit také samostatné úkoly ke komunikaci. Řekněme například, že aplikace provede úlohu řazení samostatně v hlavní aplikaci. Pokud uživatel zruší řazení, vaše aplikace může odesílat události cancel instruující proces řazení zastavit.  
   

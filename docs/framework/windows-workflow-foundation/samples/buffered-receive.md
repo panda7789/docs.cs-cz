@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9cd4dfcbfc9d417766615c624905f8bce2c10e54
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: abec64433d10a23dca6186c6c9a553bbed12a017
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="buffered-receive"></a>Uložená do vyrovnávací paměti přijímat
-Tato ukázka ukazuje, jak připravit a nakonfigurovat funkci vyrovnávací pamětí příjmu v [!INCLUDE[wf](../../../../includes/wf-md.md)]. Uložená do vyrovnávací paměti přijímat umožňuje autorovi pracovní postup vytvoření pracovního postupu bez nutnosti starat o pořadí, ve kterém jsou přijaty zprávy. Funkci vyrovnávací pamětí příjmu vyrovnávacích pamětí zpráv místně a doručí je, když pracovní postup je připravený je přijmout.  
+Tento příklad ukazuje, jak nastavit a konfigurovat funkci vyrovnávací pamětí příjmu v systému Windows Workflow Foundation (WF). Uložená do vyrovnávací paměti přijímat umožňuje autorovi pracovní postup vytvoření pracovního postupu bez nutnosti starat o pořadí, ve kterém jsou přijaty zprávy. Funkci vyrovnávací pamětí příjmu vyrovnávacích pamětí zpráv místně a doručí je, když pracovní postup je připravený je přijmout.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Zpracování zpráv mimo pořadí pomocí uložených do vyrovnávací paměti, zobrazí se aktivity zasílání zpráv.  

@@ -1,24 +1,26 @@
 ---
-title: "Postupy: použití EdmGen.exe pro generování modelu a soubory mapování"
-ms.custom: 
+title: 'Postupy: použití EdmGen.exe pro generování modelu a soubory mapování'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 677955f0d5969d859febed2004e29ab8ebeb1b04
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9208b52f4184b2b3aa91fee93d86c595220363fc
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a>Postupy: použití EdmGen.exe pro generování modelu a soubory mapování
 Toto téma ukazuje, jak pomocí nástroje Generátor EDM (EdmGen.exe) ke generování založena na databázi školní následující soubory:  
@@ -35,7 +37,7 @@ Toto téma ukazuje, jak pomocí nástroje Generátor EDM (EdmGen.exe) ke generov
   
  Nástroj EdmGen.exe /mode:FullGeneration používá ke generování souborů uvedených výše. Další informace o příkazech EdmGen.exe najdete v tématu [EDM generátor (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).  
   
- Pokud používáte EdmGen.exe pro generování modelu a mapování souborů, musíte ještě nakonfigurovat vaše [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] projektu pro použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [postupy: ruční konfigurace projektu Entity Framework](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
+ Pokud používáte EdmGen.exe pro generování modelu a mapování souborů, stále potřebujete ke konfiguraci projektu sady Visual Studio pro použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [postupy: ruční konfigurace projektu Entity Framework](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
   
 > [!NOTE]
 >  Koncepční model generované EdmGen.exe zahrnuje všechny objekty v databázi. Pokud chcete generovat Koncepční model, který obsahuje pouze konkrétní objekty, použijte průvodce Entity Data Model. Další informace najdete v tématu [postupy: použití průvodce Entity Data Model](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  

@@ -1,24 +1,26 @@
 ---
-title: "Služba AJAX bez konfigurace"
-ms.custom: 
+title: Služba AJAX bez konfigurace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e6db7acd-5679-45d4-b98a-8449c6873838
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13f74a69e05c419cc76cc8df8f58d3e3385ab35f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: ae16dc38c5508eac4a94d464e818f0b97d3b9e3b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ajax-service-without-configuration"></a>Služba AJAX bez konfigurace
 Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vytvořit základní služby ASP.NET asynchronní JavaScript a XML (AJAX) (služba, který je přístupný pomocí kódu jazyka JavaScript z webového prohlížeče klienta) bez použití nastavení konfigurace. Služba používá speciální syntaxe v souboru .svc automaticky povolení koncového bodu AJAX.  
@@ -29,17 +31,17 @@ Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
  Tato ukázka je založen na AJAX služby pomocí HTTP POST. Jak je popsáno v [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázce <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> se používá k hostování služby.  
-  
-```  
+
+```svc
 <%ServiceHost  
     language=c#  
     Debug="true"  
     Service="Microsoft.Ajax.Samples.CalculatorService  
     Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory"  
 %>  
-```  
-  
- <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>automaticky přidá <xref:System.ServiceModel.Description.WebScriptEndpoint> ke službě. Pokud potřebujete provést ke koncovému bodu, žádné změny konfigurace \<systému. ServiceModel > části lze úplně odebrat ze souboru Web.config pro službu. Soubor Web.config obsahuje některá nastavení ASP.NET, které jsou používány ConfigFreeClientPage.aspx. Pokud je tento není tento případ, může odebrat celý soubor Web.config.  
+```
+
+ <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> automaticky přidá <xref:System.ServiceModel.Description.WebScriptEndpoint> ke službě. Pokud potřebujete provést ke koncovému bodu, žádné změny konfigurace `<system.ServiceModel>` části lze úplně odebrat ze souboru Web.config pro službu. Soubor Web.config obsahuje některá nastavení ASP.NET, které jsou používány ConfigFreeClientPage.aspx. Pokud je tento není tento případ, může odebrat celý soubor Web.config.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  

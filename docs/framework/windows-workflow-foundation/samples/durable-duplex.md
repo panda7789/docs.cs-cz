@@ -1,29 +1,30 @@
 ---
-title: "Trvanlivý duplexní přenos"
-ms.custom: 
+title: Trvanlivý duplexní přenos
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4e76d1a1-f3d8-4a0f-8746-4a322cdff6eb
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b1298f150709b48f18de654be2ab17adfdcbf42a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 50d0ac9efae8e6d795455a63d793b2e84407b987
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="durable-duplex"></a>Trvanlivý duplexní přenos
-Tento příklad ukazuje, jak připravit a nakonfigurovat systém exchange trvanlivý duplexní zpráv pomocí zasílání zpráv aktivity v [!INCLUDE[wf](../../../../includes/wf-md.md)]. Trvanlivý duplexní zpráva exchange je obousměrný zpráva systému exchange, který probíhá po dlouhou dobu. Doba platnosti výměny zpráv může být delší než komunikační kanál životnost a doba platnosti v paměti instancí služby.  
+Tento příklad ukazuje, jak připravit a nakonfigurovat systém exchange trvanlivý duplexní zpráv pomocí aktivity zasílání zpráv v systému Windows Workflow Foundation (WF). Trvanlivý duplexní zpráva exchange je obousměrný zpráva systému exchange, který probíhá po dlouhou dobu. Doba platnosti výměny zpráv může být delší než komunikační kanál životnost a doba platnosti v paměti instancí služby.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- V této ukázce dvě [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby je implementovaná sadou [!INCLUDE[wf2](../../../../includes/wf2-md.md)] jsou nakonfigurovány tak, aby měl exchange trvanlivý duplexní zprávy. Trvanlivý duplexní zpráva exchange se skládá ze dvou jednosměrný zprávy přes služby MSMQ a korelační pomocí [.NET kontextová výměna](http://go.microsoft.com/fwlink/?LinkID=166059). Odeslání zpráv pomocí <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.Receive> aktivity zasílání zpráv. Kontextová výměna .NET je slouží k určení adresu zpětné volání na odeslané zprávy. Obě služby jsou hostované pomocí služby Aktivace procesů systému Windows (WAS) a jsou nakonfigurovány pro zapnout stálost instancí služby.  
+ V této ukázce dvě [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby implementovaná pomocí modelu Windows Workflow Foundation jsou nakonfigurovány tak, aby měl exchange trvanlivý duplexní zprávy. Trvanlivý duplexní zpráva exchange se skládá ze dvou jednosměrný zprávy přes služby MSMQ a korelační pomocí [.NET kontextová výměna](http://go.microsoft.com/fwlink/?LinkID=166059). Odeslání zpráv pomocí <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.Receive> aktivity zasílání zpráv. Kontextová výměna .NET je slouží k určení adresu zpětné volání na odeslané zprávy. Obě služby jsou hostované pomocí služby Aktivace procesů systému Windows (WAS) a jsou nakonfigurovány pro zapnout stálost instancí služby.  
   
  První službě (Service1.xamlx) odešle požadavek na službu odeslání (Service2.xamlx) nějakou práci. Po dokončení práce Service2.xamlx odešle oznámení zpátky do Service1.xamlx indikující, že práce na byla dokončena. Konzolové aplikace pracovního postupu nastaví fronty, které služby jsou naslouchá na a odešle zprávu počáteční počáteční aktivovat Service1.xamlx. Jakmile Service1.xamlx obdrží oznámení z Service2.xamlx dokončí požadovanou pracovní, Service1.xamlx výsledek uloží do souboru XML. Při čekání na zprávu zpětného volání, Service1.xamlx potrvají jeho stav instance pomocí výchozího <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>. Service2.xamlx trvá jeho stav instance jako součást dokončení práce požadoval Service1.xamlx.  
   

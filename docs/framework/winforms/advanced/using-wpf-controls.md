@@ -1,27 +1,29 @@
 ---
-title: "Používání ovládacích prvků WPF"
-ms.custom: 
+title: Používání ovládacích prvků WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Forms Designer [Windows Forms], interoperability with WPF
 - interoperability [WPF]
 ms.assetid: 03c85dce-26ad-44cd-bc1d-8e0cb56de096
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5e616019d53648058d51a3d0df457b1380aaf3b1
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: b8225447e6c0daa7894d622616131febb6ac82b5
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="using-wpf-controls"></a>Používání ovládacích prvků WPF
 Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svých aplikacích pomocí formulářů Windows. I když jsou tyto dvě technologie jiné zobrazení, budou spolupracovat bez problémů.  
@@ -63,5 +65,5 @@ Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svý
  [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
  Popisuje vzájemná spolupráce mezi technologie Windows Presentation Foundation a systém Windows Forms.  
   
- [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
- Popisuje postup návrhu Windows Presentation Foundation ovládacích prvků v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].
+ [Návrhář WPF](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
+ Popisuje postup návrhu Windows Presentation Foundation ovládacích prvků v sadě Visual Studio.

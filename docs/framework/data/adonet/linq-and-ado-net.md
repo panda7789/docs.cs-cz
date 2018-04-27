@@ -16,16 +16,16 @@ ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: be91650c7c06a3bdb5410166cc560ffc9a65d542
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d86a3f97bcdb748d397dcf5edf20d4d8ce945bc6
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy, musíte použít dva (nebo více) programovacích jazyků: vysoké úrovně jazyk pro obchodní logiky a prezentační vrstvy (například Visual C# nebo Visual Basic) a dotazovacího jazyka pro interakci s databází (například [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). To vyžaduje vývojáři být znalosti v několika jazycích účinný a také způsobí, že jazyk neshody ve vývojovém prostředí. Například aplikace, která používá přístup k datům rozhraní API při spuštění dotazu oproti databázi Určuje dotaz jako řetězcový literál pomocí uvozovek. Tento řetězec dotazu je zrušení čitelná kompilátoru a není zaškrtnuto políčko pro chyby, jako je například Neplatná syntaxe nebo jestli skutečně existuje sloupců a řádků, které odkazuje. Neexistuje žádný typ kontroly parametry dotazu ale žádné `IntelliSense` buď podporují.  
   
- [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] umožňuje vývojářům formuláři dotazy založené na sadě z jejich kódu aplikace, aniž byste museli použít samostatné dotazovací jazyk. Můžete napsat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazy pro různé zdroje dat vyčíslitelná (to znamená, zdroj dat, který implementuje <xref:System.Collections.IEnumerable> rozhraní), jako jsou například datové struktury v paměti, dokumentů XML, databáze SQL a <xref:System.Data.DataSet> objekty. I když tyto zdroje dat vyčíslitelná jsou implementované v různých způsobů, budou všechny vystavit stejné konstrukce syntaxe a jazyka. Protože dotazy můžete vytvořen v programovacím jazyce sám sebe, nemáte použít jiný dotazovací jazyk, který je vložený jako textové literály, které nelze ověřit pomocí kompilátoru nebo rozumí. Integrace dotazy do programovací jazyk, taky umožňuje [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] programátorům zajistit vyšší produktivitu tím, že poskytuje typ kompilaci a kontrolu syntaxe a `IntelliSense`. Tyto funkce snížení nároků na ladění dotazu a opravy chyb.  
+ [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] umožňuje vývojářům formuláři dotazy založené na sadě z jejich kódu aplikace, aniž byste museli použít samostatné dotazovací jazyk. Můžete napsat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazy pro různé zdroje dat vyčíslitelná (to znamená, zdroj dat, který implementuje <xref:System.Collections.IEnumerable> rozhraní), jako jsou například datové struktury v paměti, dokumentů XML, databáze SQL a <xref:System.Data.DataSet> objekty. I když tyto zdroje dat vyčíslitelná jsou implementované v různých způsobů, budou všechny vystavit stejné konstrukce syntaxe a jazyka. Protože dotazy můžete vytvořen v programovacím jazyce sám sebe, nemáte použít jiný dotazovací jazyk, který je vložený jako textové literály, které nelze ověřit pomocí kompilátoru nebo rozumí. Integraci dotazy do programovací jazyk také umožňuje sadě Visual Studio programátorům zajistit vyšší produktivitu tím, že poskytuje typ kompilaci a kontrolu syntaxe a `IntelliSense`. Tyto funkce snížení nároků na ladění dotazu a opravy chyb.  
   
  Přenášení dat z tabulek SQL do objektů v paměti je často zdlouhavé a náchylné k chybě. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] Zprostředkovatele implementované [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] převede zdrojová data do <xref:System.Collections.IEnumerable>– na základě kolekcí objektů. Programátorů vždy zobrazení dat jako <xref:System.Collections.IEnumerable> kolekce, když dotazujete i při aktualizaci. Úplné `IntelliSense` podpora je k dispozici pro zápis dotazů vůči těchto kolekcí.  
   

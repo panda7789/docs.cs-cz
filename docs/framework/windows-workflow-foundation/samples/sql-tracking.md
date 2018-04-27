@@ -1,26 +1,27 @@
 ---
-title: "Sledování SQL"
-ms.custom: 
+title: Sledování SQL
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6bd8fbe1a29793778d93eeca64b185079d706f3e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2eeb5cf57e6efac77de4a76fe8131189273d5438
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="sql-tracking"></a>Sledování SQL
-Tento příklad znázorňuje, jak psát vlastní účastník sledování SQL, který zapíše sledování záznamů do databáze SQL. [!INCLUDE[wf](../../../../includes/wf-md.md)]poskytuje pracovní postup, chcete-li získat přehled o provádění instanci pracovního postupu pro sledování. Modul runtime sledování vysílá pracovní postup sledování záznamů během spouštění pracovního postupu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pracovní postup sledování, najdete v části [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).  
+Tento příklad znázorňuje, jak psát vlastní účastník sledování SQL, který zapíše sledování záznamů do databáze SQL. Windows Workflow Foundation (WF) poskytuje pracovní postup, chcete-li získat přehled o provádění instanci pracovního postupu pro sledování. Modul runtime sledování vysílá pracovní postup sledování záznamů během spouštění pracovního postupu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pracovní postup sledování, najdete v části [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
@@ -43,7 +44,7 @@ Tento příklad znázorňuje, jak psát vlastní účastník sledování SQL, kt
   
 7.  Prohlížeč zobrazí stránku StockPriceService, který obsahuje službu místní adresu WSDL. Zkopírujte tuto adresu.  
   
-     Příkladem místní služba WSDL adresa je http://localhost:65193/StockPriceService.xamlx?wsdl.  
+     Je například adresa WSDL místní služby http://localhost:65193/StockPriceService.xamlx?wsdl.  
   
 8.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], spuštění testovacího klienta WCF (WcfTestClient.exe). Je umístěn v adresáři 10.0\Common7\IDE Microsoft Visual Studio.  
   
@@ -51,7 +52,7 @@ Tento příklad znázorňuje, jak psát vlastní účastník sledování SQL, kt
   
 10. V testu klienta WCF, poklikejte na **GetStockPrice**. Tím se otevře `GetStockPrice` operace, které přijímá jeden parametr, zadejte hodnotu `Contoso` a klikněte na tlačítko **Invoke**.  
   
-11. Záznamy emitovaného sledování se zapisují do databáze SQL. Pokud chcete zobrazit záznamy sledování, otevřete databázi TrackingSample v SQL Management Studio a přejděte do tabulky. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SQL Server Management Studio, najdete v části [představení SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645). SQL Server 2008 Management Studio Express si můžete stáhnout [zde](http://go.microsoft.com/fwlink/?LinkId=180520). Spuštění vyberte možnost dotazu na tabulky zobrazí data v rámci sledování záznamů uložených v obou tabulkách.  
+11. Záznamy emitovaného sledování se zapisují do databáze SQL. Pokud chcete zobrazit záznamy sledování, otevřete databázi TrackingSample v SQL Management Studio a přejděte do tabulky. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] SQL Server Management Studio, najdete v části [představení SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645). SQL Server 2008 Management Studio Express si můžete stáhnout [zde](http://go.microsoft.com/fwlink/?LinkId=180520). Spuštění vyberte možnost dotazu na tabulky zobrazí data v rámci sledování záznamů uložených v obou tabulkách.  
   
 #### <a name="to-uninstall-the-sample"></a>Chcete-li odinstalovat vzorku  
   

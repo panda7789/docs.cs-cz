@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ea613d21cf7c8064938b94df3826e40caeecf3c3
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 17528db182676ae69694c4e416ee10bff1ae6ef2
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="c-expressions"></a>Výrazy jazyka C#
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporovány v [!INCLUDE[wf](../../../includes/wf-md.md)]. Nové projekty workflow C# vytvořené v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] cílených [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití jazyka C# výrazy a pracovní postup projekty Visual Basic použití výrazů jazyka Visual Basic. Existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] projekty workflow, které používají výrazy jazyka Visual Basic mohou být migrovány do [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] bez ohledu na projekt jazyka a jsou podporovány. Toto téma obsahuje přehled výrazy jazyka C# v [!INCLUDE[wf1](../../../includes/wf1-md.md)].  
+Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporovány v systému Windows Workflow Foundation (WF). Nové projekty workflow C# vytvořené v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] cílených [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití jazyka C# výrazy a pracovní postup projekty Visual Basic použití výrazů jazyka Visual Basic. Existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] projekty workflow, které používají výrazy jazyka Visual Basic mohou být migrovány do [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] bez ohledu na projekt jazyka a jsou podporovány. Toto téma obsahuje přehled výrazy jazyka C# v [!INCLUDE[wf1](../../../includes/wf1-md.md)].  
   
 ## <a name="using-c-expressions-in-workflows"></a>Pomocí jazyka C# výrazů v pracovních postupech  
   
@@ -40,7 +40,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka 
 -   [Použití jazyka C# výrazů v XAMLX služeb pracovních postupů](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md#WFServices)  
   
 ###  <a name="WFDesigner"></a> Pomocí jazyka C# výrazů v Návrháři pracovních postupů  
- Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporovány v [!INCLUDE[wf](../../../includes/wf-md.md)]. Pracovní postup projektů C# vytvořené v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] cílených [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití jazyka C# výrazů, zatímco projekty Visual Basic pracovní postup použití výrazů jazyka Visual Basic. Chcete-li zadat požadované výraz jazyka C#, zadejte ji do pole s názvem bez přípony **zadejte výraz jazyka C#**. Tento popisek se zobrazí v okně vlastností, pokud aktivita je vybrána v Návrháři nebo na aktivity v Návrháři pracovních postupů. V následujícím příkladu dvě `WriteLine` aktivity jsou obsaženy v rámci `Sequence` uvnitř `NoPersistScope`.  
+ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporovány v systému Windows Workflow Foundation (WF). Pracovní postup projektů C# vytvořené v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] cílených [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití jazyka C# výrazů, zatímco projekty Visual Basic pracovní postup použití výrazů jazyka Visual Basic. Chcete-li zadat požadované výraz jazyka C#, zadejte ji do pole s názvem bez přípony **zadejte výraz jazyka C#**. Tento popisek se zobrazí v okně vlastností, pokud aktivita je vybrána v Návrháři nebo na aktivity v Návrháři pracovních postupů. V následujícím příkladu dvě `WriteLine` aktivity jsou obsaženy v rámci `Sequence` uvnitř `NoPersistScope`.  
   
  ![Automaticky vytvoří aktivity pořadí](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")  
   

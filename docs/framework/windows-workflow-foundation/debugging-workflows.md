@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 788cc6b25e4faa8a680f5ec23d88a5d18d0a7c87
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 866fe3ebcec295b57444f937b3b6fd6677bfe0f4
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="debugging-workflows"></a>Ladění pracovních postupů
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] nabízí několik možností pro ladění pracovních postupů běžících z vývojového prostředí. Pracovní postupy můžete ladit v návrháři, v jazyce XAML a v kódu.  
@@ -36,7 +36,7 @@ ms.lasthandoff: 04/26/2018
  Pracovní postup ladění také podporuje pomocí sady Visual Studio infrastruktury připojit k procesu. To umožňuje vytvořit pracovní postup k ladění pracovní postup spuštěn v prostředí s jiného hostitele například Internetové informační služby (IIS) 7.0.  
   
 ## <a name="remote-debugging"></a>Vzdálené ladění  
- [!INCLUDE[wf](../../../includes/wf-md.md)] vzdálené ladění funguje stejně jako vzdálené ladění pro jiné komponenty sady Visual Studio. Informace o používání vzdálené ladění najdete v tématu [postupy: povolení vzdáleného ladění](http://go.microsoft.com/fwlink/?LinkId=196257).  
+ Vzdálené ladění Windows Workflow Foundation (WF) funguje stejně jako vzdálené ladění pro jiné komponenty sady Visual Studio. Informace o používání vzdálené ladění najdete v tématu [postupy: povolení vzdáleného ladění](http://go.microsoft.com/fwlink/?LinkId=196257).  
   
 > [!NOTE]
 >  Pokud je pracovní postup aplikace určena x86 architektura a je hostovaná v počítači se systémem 64bitový operační systém, pak vzdálené ladění nebude fungovat, pokud je na vzdáleném počítači nainstalované sady Visual Studio nebo cíle pro aplikace pracovního postupu se změní na **Žádné procesoru**.  

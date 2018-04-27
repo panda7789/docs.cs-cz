@@ -25,11 +25,11 @@ ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
 caps.latest.revision: 49
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bff2e66b1a196117117370f7620f3f55576ad19b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 12461cc99ec03ed87924c894e23740f9d76385ed
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Návod: Práce se soubory a adresáři v jazyce Visual Basic
 Tento názorný postup obsahuje úvod do základní informace o souboru vstupně-výstupních operací v jazyce Visual Basic. Popisuje postup vytvoření malé aplikace, která obsahuje seznam a prověří textové soubory v adresáři. Pro každý soubor vybraný text aplikace poskytuje atributy souboru a prvního řádku obsahu. Je k dispozici možnost při zápisu informací do souboru protokolu.  
@@ -48,7 +48,7 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
   
 3.  V **název** zadejte `FileExplorer` nastavit název projektu a klikněte na tlačítko **OK**.  
   
-     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] přidá projekt **Průzkumníku**, a otevře v Návrháři formulářů Windows.  
+     Visual Studio. přidá projekt **Průzkumníku**, a otevře v Návrháři formulářů Windows.  
   
 4.  Přidání ovládacích prvků formuláře v následující tabulce a nastavte odpovídající hodnoty pro jejich vlastnosti.  
   

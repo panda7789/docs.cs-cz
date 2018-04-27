@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7fc755ff7f1b6c583a1e9aa1bc209495563812f0
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 43eaa4ffe562cf1dde5abd7e7540125dcf383732
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
 Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a variace.  
@@ -154,7 +154,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
  `ReferencedTypes` Vlastnost odpovídá **/reference** přepínače v určité režimy činnosti nástroje Svcutil.exe.  
   
 > [!NOTE]
->  Při použití Svcutil.exe nebo (v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]) **přidat odkaz na službu** nástroje pro všechny typy v MsCorLib.dll se automaticky odkazuje.  
+>  Při použití Svcutil.exe nebo (v sadě Visual Studio) **přidat odkaz na službu** nástroje pro všechny typy v MsCorLib.dll se automaticky odkazuje.  
   
 #### <a name="import-options-importing-non-datacontract-schema-as-ixmlserializable-types"></a>Možnosti importu: Import schématu Non-kontraktu jako IXmlSerializable typy  
  <xref:System.Runtime.Serialization.XsdDataContractImporter> Podporuje omezenou podmnožinou schématu. Nepodporované schéma konstrukce jsou v něm (například atributy XML), import pokus selže, s výjimkou. Nastavení však <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> vlastnost `true` rozšiřuje rozsah schématu podporována. Pokud nastavíte hodnotu `true`, <xref:System.Runtime.Serialization.XsdDataContractImporter> generuje typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní. To umožňuje přímý přístup k reprezentaci XML z těchto typů.  

@@ -1,24 +1,26 @@
 ---
-title: "Spolupráce s webovými službami ASMX"
-ms.custom: 
+title: Spolupráce s webovými službami ASMX
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce0f548f345e3711edfd547b2e6879fafdbd0ad4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8fa28637ad4ffdc2652c4c925208cd699134579a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="interoperating-with-asmx-web-services"></a>Spolupráce s webovými službami ASMX
 Tento příklad ukazuje, jak integrovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klientská aplikace s existující ASMX webovou službu.  
@@ -30,7 +32,7 @@ Tento příklad ukazuje, jak integrovat [!INCLUDE[indigo1](../../../../includes/
   
  Implementace ASMX webové služby, které jsou uvedené v následující vzorový kód vypočítá a vrátí odpovídající výsledek.  
   
-```  
+```csharp  
 [WebService(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public class CalculatorService : System.Web.Services.WebService  
     {  
@@ -78,7 +80,7 @@ svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samp
   
  Implementace klienta vytvoří instanci objektu generovaného klienta. Generovaného klienta můžete potom použít ke komunikaci se službou.  
   
-```  
+```csharp  
 // Create a client.  
 CalculatorServiceSoapClient client = new CalculatorServiceSoapClient();  
   

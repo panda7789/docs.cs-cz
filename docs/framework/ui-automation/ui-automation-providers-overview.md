@@ -1,27 +1,29 @@
 ---
-title: "Přehled zprostředkovatelů automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled zprostředkovatelů automatizace uživatelského rozhraní
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-caps.latest.revision: "38"
+caps.latest.revision: 38
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dc5cb5749bbfe06fd3a1bbe3537b28c7bbfa295d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a8279b8c2c39ce37fa9e3af55a6b079e8202b3ff
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ui-automation-providers-overview"></a>Přehled zprostředkovatelů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -38,12 +40,12 @@ ms.lasthandoff: 12/22/2017
  Zprostředkovatelé automatizace uživatelského rozhraní lze rozdělit do dvou kategorií: zprostředkovatele na straně klienta a zprostředkovatele na straně serveru.  
   
 ### <a name="client-side-providers"></a>Zprostředkovatelé na straně klienta  
- Klientské poskytovatelé se implementují klienty automatizace uživatelského rozhraní pro komunikaci s aplikací, která nepodporuje, nebo plně nepodporuje, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Zprostředkovatelé na straně klienta obvykle komunikaci se serverem přes hranice procesu pomocí odesílání a přijímání [!INCLUDE[TLA2#tla_win](../../../includes/tla2sharptla-win-md.md)] zprávy.  
+ Klientské poskytovatelé se implementují klienty automatizace uživatelského rozhraní pro komunikaci s aplikací, která nepodporuje, nebo plně nepodporuje, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Zprostředkovatelé na straně klienta obvykle komunikaci se serverem přes hranice procesu přijatých a odeslaných zpráv systému Windows.  
   
- Protože zprostředkovatelů automatizace uživatelského rozhraní pro ovládací prvky v [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA2#tla_winforms](../../../includes/tla2sharptla-winforms-md.md)], nebo [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] aplikace jsou zadaná jako součást operačního systému, klientských aplikací mít málokdy k implementaci vlastních poskytovatelů a tento přehled je nepokrývá Další.  
+ Protože zprostředkovatelů automatizace uživatelského rozhraní pro ovládací prvky v [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], Windows Forms nebo [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] aplikace jsou zadaná jako součást operačního systému, klientských aplikací mít málokdy k implementaci vlastních poskytovatelů a tento přehled je nepokrývá Další.  
   
 ### <a name="server-side-providers"></a>Zprostředkovatelé na straně serveru  
- Serverové poskytovatelé se implementují vlastní ovládací prvky nebo aplikace, které jsou založeny na rozhraní uživatelského rozhraní, jiné než [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA2#tla_winforms](../../../includes/tla2sharptla-winforms-md.md)], nebo [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
+ Serverové poskytovatelé se implementují vlastní ovládací prvky nebo aplikace, které jsou založeny na rozhraní uživatelského rozhraní, jiné než [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], Windows Forms nebo [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
   
  Zprostředkovatele na straně serveru komunikovat s klientským aplikacím přes hranice procesu díky zpřístupnění rozhraní, které se [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] základní systém, který naopak obsluhuje požadavky od klientů.  
   
@@ -52,10 +54,10 @@ ms.lasthandoff: 12/22/2017
  Tato část nabízí stručné vysvětlení některých klíčových konceptů, které je třeba pochopit, aby bylo možné implementace zprostředkovatele automatizace uživatelského rozhraní.  
   
 ### <a name="elements"></a>Elementy  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]elementy jsou části [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] , které jsou viditelné pro klienty automatizace uživatelského rozhraní. Mezi příklady patří aplikace windows, podokna, tlačítek, popisy tlačítek, seznamy a položky seznamu.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementy jsou části [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] , které jsou viditelné pro klienty automatizace uživatelského rozhraní. Mezi příklady patří aplikace windows, podokna, tlačítek, popisy tlačítek, seznamy a položky seznamu.  
   
 ### <a name="navigation"></a>Navigace  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]elementy jsou umístěny do klientů jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Vytvoří stromu tak, že přejdete od jednoho prvku na jiný. Zprostředkovatelé pro každý element, z nichž každá může přejděte na nadřazený, jsou na stejné úrovni a podřízené položky je povolena navigace.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementy jsou umístěny do klientů jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vytvoří stromu tak, že přejdete od jednoho prvku na jiný. Zprostředkovatelé pro každý element, z nichž každá může přejděte na nadřazený, jsou na stejné úrovni a podřízené položky je povolena navigace.  
   
  Další informace o zobrazení klienta [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
   
@@ -75,11 +77,11 @@ ms.lasthandoff: 12/22/2017
 ### <a name="frameworks"></a>rozhraní  
  Rozhraní je komponenta, která spravuje podřízených ovládacích prvků, stiskněte klávesu testování a jsou vykreslení v oblasti obrazovky. Například [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] okno, které se často označuje jako popisovačem HWND může sloužit jako rozhraní, která obsahuje více [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementy například řádku nabídek, stavového řádku a tlačítka.  
   
- [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]kontejner řídí například seznamy a zobrazení stromu se považují za rozhraní, protože obsahují vlastní kód pro vykreslování podřízené položky a provádění vstupů do testování na ně. Naopak [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] pole se seznamem není rozhraní, protože vykreslování a stiskněte klávesu testování je zpracovanou obsahující [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] okno.  
+ [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] kontejner řídí například seznamy a zobrazení stromu se považují za rozhraní, protože obsahují vlastní kód pro vykreslování podřízené položky a provádění vstupů do testování na ně. Naopak [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] pole se seznamem není rozhraní, protože vykreslování a stiskněte klávesu testování je zpracovanou obsahující [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] okno.  
   
  [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] v aplikaci může být tvořen různé architektury. Například může obsahovat okna aplikace HWND [!INCLUDE[TLA#tla_dhtml](../../../includes/tlasharptla-dhtml-md.md)] který zase obsahuje součásti, např. pole se seznamem v popisovačem HWND.  
   
-### <a name="fragments"></a>fragmenty  
+### <a name="fragments"></a>Fragmenty  
  Fragment je podstromu prvků z konkrétní rozhraní. Element v kořenového uzlu podstromu nazývá kořenové fragment. Fragment kořenové nemá nadřazený, ale je obvykle hostovaným v rámci jiné framework, [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] okno (HWND).  
   
 ### <a name="hosts"></a>Hostitelé  

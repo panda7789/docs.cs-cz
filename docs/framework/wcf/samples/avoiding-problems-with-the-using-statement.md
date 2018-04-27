@@ -1,24 +1,26 @@
 ---
-title: "Jak se vyhnout problémům s příkazem Using"
-ms.custom: 
+title: Jak se vyhnout problémům s příkazem Using
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: aff82a8d-933d-4bdc-b0c2-c2f7527204fb
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 202bf02f017857a354a6f23270e49571c6240b26
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dd3065a21c1714b0643bfb87b731193d3367352f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="avoiding-problems-with-the-using-statement"></a>Jak se vyhnout problémům s příkazem Using
 Tento příklad znázorňuje, jak byste neměli používat "použití" příkaz automaticky vyčištění prostředků při použití typový klient jazyka C#. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS).  
@@ -32,7 +34,7 @@ Tento příklad znázorňuje, jak byste neměli používat "použití" příkaz 
   
  První problém, zobrazené `DemonstrateProblemUsingCanThrow` metodou, je, že pravé složené závorce výjimku a kód po pravé složené závorce nepracuje:  
   
-```  
+```csharp   
 using (CalculatorClient client = new CalculatorClient())  
 {  
     ...  
@@ -44,7 +46,7 @@ Console.WriteLine("Hope this code wasn't important, because it might not happen.
   
  Druhý problém, zobrazené `DemonstrateProblemUsingCanThrowAndMask` metodou, je jiná vyplývá pravé složené závorce došlo k výjimce:  
   
-```  
+```csharp   
 using (CalculatorClient client = new CalculatorClient())  
 {  
     ...  
@@ -57,7 +59,7 @@ using (CalculatorClient client = new CalculatorClient())
   
  Nakonec ukazuje, jak vyčistit správně při výskytu výjimek v ukázce `DemonstrateCleanupWithExceptions`. Tato služba využívá bloku try/catch k hlášení chyb a volání `Abort`. Najdete v článku [očekává výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) ukázku další podrobnosti o zachytávání výjimek z volání klienta.  
   
-```  
+```csharp   
 try  
 {  
     ...  

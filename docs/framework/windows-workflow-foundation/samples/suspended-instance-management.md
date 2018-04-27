@@ -1,23 +1,24 @@
 ---
-title: "Správa pozastavenou instancí"
-ms.custom: 
+title: Správa pozastavenou instancí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f5ca3faa-ba1f-4857-b92c-d927e4b29598
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6e04f1e2f334993975b2c4261efdc28ba318dfa3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5f5073e9de217637141d7e3c9d70bb6a0b7a9cd0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="suspended-instance-management"></a>Správa pozastavenou instancí
 Tento příklad ukazuje, jak spravovat instancí pracovních postupů, které byly pozastaveny.  Výchozí akce pro <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> je `AbandonAndSuspend`. To znamená, že ve výchozím nastavení, neošetřených výjimek vyvolaných z instance pracovního postupu hostované v <xref:System.ServiceModel.WorkflowServiceHost> způsobí, že instance má-li být uvolněn z paměti (opuštění) a trvale nebo trvalé verze instance označeno jako pozastaveno. Instanci pracovního postupu pozastavenou nebude možné spustit až po jejím pozastavení.  
@@ -25,7 +26,7 @@ Tento příklad ukazuje, jak spravovat instancí pracovních postupů, které by
  Ukázka ukazuje, jak můžete implementovat nástroj příkazového řádku dotazu pro pozastavenou instance a poskytnout možnost obnovit nebo ukončení instance uživatele. V této ukázce služby pracovního postupu záměrně vyvolá výjimku, způsobuje mohla stát pozastaveno. Nástroj příkazového řádku pak slouží k dotazování pro instanci a následně obnovit nebo ukončení instance.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- <xref:System.ServiceModel.WorkflowServiceHost>s <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> a <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> v [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+ <xref:System.ServiceModel.WorkflowServiceHost> s <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> a <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> v modelu Windows Workflow Foundation (WF).  
   
 ## <a name="discussion"></a>Diskusní  
  Nástroj příkazového řádku, které jsou implementované v této ukázce je specifická pro implementace úložiště instance SQL, který se dodává v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Pokud máte vlastní implementaci instance úložiště, pak tento nástroj můžete přizpůsobit tak, že nahradíte `WorkflowInstanceCommand` implementace v ukázce s implementací, které jsou specifické pro instance úložiště.  

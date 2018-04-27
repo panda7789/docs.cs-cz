@@ -1,31 +1,33 @@
 ---
-title: "Z WCF do Řízení front zpráv"
-ms.custom: 
+title: Z WCF do Řízení front zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 90013752ed03f24c0995bc837efde5f20bf272c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f2ea59c7f1ef2ac6f22500a13eb9bb4456149b7c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Z WCF do Řízení front zpráv
 Tento příklad ukazuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace můžete odeslat zprávu do aplikace služby Řízení front zpráv (MSMQ). Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě. Klienta a služby nemusíte používat ve stejnou dobu.  
   
  Služba přijímá zprávy z fronty a zpracovává objednávky. Služba vytvoří transakční fronty a nastaví obslužné rutiny zpráv přijata zpráva, jak je znázorněno v následujícím ukázkovém kódu.  
-  
-```  
+
+```csharp
 static void Main(string[] args)  
 {  
     if (!MessageQueue.Exists(  
@@ -41,11 +43,11 @@ static void Main(string[] args)
     Console.WriteLine("Order Service is running");  
     Console.ReadLine();  
 }  
-```  
-  
+```
+
  Při příjmu zprávy ve frontě obslužné rutiny zpráv `ProcessOrder` je volána.  
-  
-```  
+
+```csharp
 public static void ProcessOrder(Object source,  
     ReceiveCompletedEventArgs asyncResult)  
 {  
@@ -70,8 +72,8 @@ public static void ProcessOrder(Object source,
     }  
   
 }  
-```  
-  
+```
+
  Extrahuje služby `ProcessOrder` ze služby MSMQ tělo zprávy a zpracuje pořadí.  
   
  Název fronty služby MSMQ je zadaný v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázka konfigurace.  
@@ -86,8 +88,8 @@ public static void ProcessOrder(Object source,
 >  Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty.  
   
  Klient vytvoří nákupní objednávka a odešle nákupní objednávka v rámci oboru transakce, jak je znázorněno v následujícím ukázkovém kódu.  
-  
-```  
+
+```csharp
 // Create the purchase order  
 PurchaseOrder po = new PurchaseOrder();  
 // Fill in the details  
@@ -105,13 +107,13 @@ Console.WriteLine("Order has been submitted:{0}", po);
   
 //Closing the client gracefully closes the connection and cleans up resources  
 client.Close();  
-```  
-  
+```
+
  Klient použije k odeslání zprávy služby MSMQ do fronty vlastní klienta v daném pořadí. Vzhledem k tomu, že je aplikace, který obdrží a zpracuje zprávy aplikací služby MSMQ a ne [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, neexistuje žádný kontrakt implicitní služby mezi těmito dvěma aplikacemi. Ano nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.  
   
  Vlastní klienta je v podstatě stejný pro všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, které používají `MsmqIntegration` vazby k odesílání zpráv. Na rozdíl od ostatních klientů nebude obsahovat celou řadu operací služby. Je zpráva operaci odeslání jenom.  
-  
-```  
+
+```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
@@ -136,8 +138,8 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
         base.Channel.SubmitPurchaseOrder(msg);  
     }  
 }  
-```  
-  
+```
+
  Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Uvidíte služby přijmout zprávy z klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby. Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu. Například můžete spustit klienta, vypněte ho a potom spuštění služby a je stále by přijímat jeho zprávy.  
   
 > [!NOTE]

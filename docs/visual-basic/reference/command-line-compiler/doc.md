@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0948b9ef0675541ca595bb297e01e62c9d79a181
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: e7dc75a0600c9694c4a20f028c810c6aca54eeb6
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-doc"></a>-doc
 Zpracuje dokumentační komentáře do souboru XML.  
@@ -46,7 +46,7 @@ Zpracuje dokumentační komentáře do souboru XML.
   
 -   Členové, jako je například pole, [událostí](../../../visual-basic/language-reference/statements/event-statement.md), [vlastnost](../../../visual-basic/language-reference/statements/property-statement.md), [funkce](../../../visual-basic/language-reference/statements/function-statement.md), nebo [podprogramu](../../../visual-basic/language-reference/statements/sub-statement.md).  
   
- Použít generovaný soubor XML s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] [IntelliSense](/visualstudio/ide/using-intellisense) funkci, ponechte název souboru XML být stejný jako sestavení, které chcete podporovat. Zkontrolujte, zda je soubor XML ve stejném adresáři jako sestavení tak, aby při sestavení odkazuje [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu soubor .xml nalezen také. Soubory dokumentace XML nejsou potřeba pro technologii IntelliSense, která pracují pro kódu v rámci projektu nebo projekty odkazuje na projekt.  
+ Pro použití generovaný soubor XML s sady Visual Studio [IntelliSense](/visualstudio/ide/using-intellisense) funkci, ponechte název souboru XML být stejný jako sestavení, které chcete podporovat. Ujistěte se, že soubor XML je ve stejném adresáři jako sestavení tak, aby při odkazování na sestavení v projektu sady Visual Studio, je také najít soubor .xml. Soubory dokumentace XML nejsou potřeba pro technologii IntelliSense, která pracují pro kódu v rámci projektu nebo projekty odkazuje na projekt.  
   
  Pokud je kompilovat s `/target:module`, soubor XML obsahuje značek `<assembly></assembly>`. Tyto značky zadejte název souboru, který obsahuje manifest sestavení pro výstupní soubor kompilace.  
   
@@ -60,5 +60,5 @@ Zpracuje dokumentační komentáře do souboru XML.
  V tématu [dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md) pro ukázku.  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)

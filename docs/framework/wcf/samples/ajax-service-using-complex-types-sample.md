@@ -1,24 +1,26 @@
 ---
-title: "Ukázka služby AJAX využívající komplexní typy"
-ms.custom: 
+title: Ukázka služby AJAX využívající komplexní typy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 88242b99-4811-4cbe-8201-52ddf48fb174
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4c83da8aba2e1a88665f4443d98dbebbd5b1962b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: b821a252e202f0fef719e1545b38b4423237d0c7
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ajax-service-using-complex-types-sample"></a>Ukázka služby AJAX využívající komplexní typy
 Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] k vytvoření služby ASP.NET asynchronní JavaScript a XML (AJAX), který vytváří instance komplexních typů a odešle je mezi službou a klienta jako JavaScript Object Notation (JSON). Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka.  
@@ -29,37 +31,37 @@ Tento příklad ukazuje, jak používat [!INCLUDE[indigo1](../../../../includes/
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
  Služba v následující ukázce je [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby s žádné kódu pro konkrétní jazyk AJAX. Protože <xref:System.ServiceModel.Web.WebGetAttribute> atribut není použit, bude použita výchozí akce HTTP (dále jen "příspěvek"). Služba obsahuje jednu operaci `DoMath`, která vrací komplexního typu s názvem `MathResult`. Komplexní typ je standardní datového typu kontrakt, který také obsahuje žádné kódu pro konkrétní jazyk AJAX.  
-  
-```  
+
+```csharp
 [DataContract]  
-    public class MathResult  
-    {  
-        [DataMember]  
-        public double sum;  
-        [DataMember]  
-        public double difference;  
-        [DataMember]  
-        public double product;  
-        [DataMember]  
-        public double quotient;  
-    }  
-```  
-  
+public class MathResult  
+{  
+    [DataMember]  
+    public double sum;  
+    [DataMember]  
+    public double difference;  
+    [DataMember]  
+    public double product;  
+    [DataMember]  
+    public double quotient;  
+}  
+```
+
  Vytvoření AJAX koncový bod služby pomocí <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, jen jako ukázka základní služba AJAX.  
   
  Klient ComplexTypeClientPage.aspx webová stránka obsahuje kód ASP.NET a JavaScript pro vyvolání službu, když uživatel klikne **provádění výpočtu** tlačítko na stránce. Kód k vyvolání služby vytvoří text JSON a odešle ji pomocí HTTP POST, podobně jako [AJAX služby pomocí HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md) ukázka.  
   
  Po úspěšné volání služby, můžete přístup k jednotlivé datové členy (`sum`, `difference`, `product` a `quotient`) na výsledný JavaScript objektu.  
-  
-```  
+
+```javascript
 function onSuccess(mathResult){  
      document.getElementById("sum").value = mathResult.sum;  
      document.getElementById("difference").value = mathResult.difference;  
      document.getElementById("product").value = mathResult.product;  
      document.getElementById("quotient").value = mathResult.quotient;  
 }  
-```  
-  
+```
+
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  

@@ -1,24 +1,26 @@
 ---
-title: "Imperativní vlastní vazby"
-ms.custom: 
+title: Imperativní vlastní vazby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6e13bf96-5de0-4476-b646-5f150774418d
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58116f11fc482792cb84023bd3e1c23fe9e94a55
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 44bedc3290d9c10078806ed63a8c5ddfe9754801
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="custom-binding-imperative"></a>Imperativní vlastní vazby
 Ukázka ukazuje, jak napsat kód imperativní pro definice a používání vlastních vazeb bez použití konfiguračního souboru nebo [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] generované klienta. Tato ukázka kombinuje funkce poskytované službou přenos HTTP a spolehlivé relace kanál, chcete-li vytvořit vazbu spolehlivé založené na protokolu HTTP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -27,8 +29,8 @@ Ukázka ukazuje, jak napsat kód imperativní pro definice a používání vlast
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
  Na klientovi i službu je vytvořen vlastní vazby, který obsahuje dva elementy vazby (spolehlivé relace a HTTP):  
-  
-```  
+
+```csharp
 ReliableSessionBindingElement reliableSession = new ReliableSessionBindingElement();  
 reliableSession.Ordered = true;  
   
@@ -37,32 +39,32 @@ httpTransport.AuthenticationScheme = System.Net.AuthenticationSchemes.Anonymous;
 httpTransport.HostNameComparisonMode = HostNameComparisonMode.StrongWildcard;  
   
 CustomBinding binding = new CustomBinding(reliableSession, httpTransport);  
-```  
+```
   
  Vazba na službu, je použita přidáním koncový bod hostitele ServiceHost:  
-  
-```  
+
+```csharp
 serviceHost.AddServiceEndpoint(typeof(ICalculator), binding, "");  
-```  
-  
+```
+
  Na straně klienta je používán vazby <xref:System.ServiceModel.ChannelFactory> k vytvoření kanálu pro službu:  
-  
-```  
+
+```csharp
 EndpointAddress address = new EndpointAddress("http://localhost:8000/servicemodelsamples/service");  
 ChannelFactory<ICalculator> channelFactory = new ChannelFactory<ICalculator>(binding, address);  
 ICalculator channel = channelFactory.CreateChannel();  
-```  
-  
+```
+
  Tento kanál se pak používá k interakci se službou:  
-  
-```  
+
+```csharp
 // Call the Add service operation.  
 double value1 = 100.00D;  
 double value2 = 15.99D;  
 double result = channel.Add(value1, value2);  
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
-```  
-  
+```
+
  Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
   
 ```  

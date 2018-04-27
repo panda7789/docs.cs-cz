@@ -16,11 +16,11 @@ ms.assetid: 23996dca-250f-4320-8211-1560e90172df
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3f27fcf3bd1f80b5daf501609c2cd157c209924a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5314702192dd4536f1d49c3ac8b26214d06b786b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="unable-to-write-output-to-memory"></a>Nelze zapisovat výstup do paměti.
 Došlo k potížím, zápis výstup do paměti.  
@@ -31,7 +31,7 @@ Došlo k potížím, zápis výstup do paměti.
   
 1.  Kompilace programu zjistíte, pokud bude chyba opakovat.  
   
-2.  Pokud potíže potrvají, uložte si práci a restartujte [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
+2.  Pokud potíže potrvají, uložte si práci a restartujte Visual Studio.  
   
 3.  Pokud se chyba objeví znovu, přeinstalujte jazyka Visual Basic.  
   

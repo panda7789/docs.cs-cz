@@ -23,11 +23,11 @@ ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10ecc965fb6d728454b3af33a6e93b2d7dbc327d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: fa63a250ce6bdf4a8a34d9f1c0284a9d04e75f38
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="early-and-late-binding-visual-basic"></a>Statické a pozdní vazby (Visual Basic)
 Visual Basic – kompilátor provede proces nazvaný `binding` když je objekt přiřazení proměnné objektu. Je-li objekt *časné* když je přiřazený k proměnné deklarované jako konkrétní typy objektů. Časná vázaným objektům povolení kompilátoru přidělit paměť a provádět další optimalizace před spuštěním aplikace. Například následující fragment kódu deklaruje proměnnou být typu <xref:System.IO.FileStream>:  
@@ -41,7 +41,7 @@ Visual Basic – kompilátor provede proces nazvaný `binding` když je objekt p
  [!code-vb[VbVbalrOOP#91](../../../../visual-basic/misc/codesnippet/VisualBasic/early-and-late-binding_2.vb)]  
   
 ## <a name="advantages-of-early-binding"></a>Výhody časná vazba  
- Měli byste použít objekty časné vazby, pokud je to možné, protože kompilátor, aby byl důležité optimalizace, které vrací efektivnější aplikace. Objekty časné vazby je výrazně rychlejší než pozdní vazbou a snadněji číst a údržbě, protože s informacemi o tom přesně jaký typ objektů, které používají váš kód. Časná vazba Další výhodou je, že umožňuje užitečných funkcí, jako je doplňování kódu pro automatické a dynamické nápovědy, protože [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí (IDE) můžete určit přesně jaký typ objektu práci se při úpravě kód. Časná vazba snižuje počet a závažnost běhové chyby, protože umožňuje kompilátoru zprávy o chybách, když je program kompilován.  
+ Měli byste použít objekty časné vazby, pokud je to možné, protože kompilátor, aby byl důležité optimalizace, které vrací efektivnější aplikace. Objekty časné vazby je výrazně rychlejší než pozdní vazbou a snadněji číst a údržbě, protože s informacemi o tom přesně jaký typ objektů, které používají váš kód. Časná vazba jiné výhodou je, že umožňuje užitečných funkcí, jako je doplňování kódu pro automatické a dynamické nápovědy, protože integrované vývojové prostředí (IDE) sady Visual Studio můžete určit přesně jaký typ objektu práci se při úpravě kód. Časná vazba snižuje počet a závažnost běhové chyby, protože umožňuje kompilátoru zprávy o chybách, když je program kompilován.  
   
 > [!NOTE]
 >  Pozdní vazba pouze umožňuje přístup ke členům typu, které jsou deklarované jako `Public`. Přístup ke členům deklarován jako `Friend` nebo `Protected Friend` výsledkem chyba spuštění.  

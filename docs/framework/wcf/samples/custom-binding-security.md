@@ -1,24 +1,26 @@
 ---
-title: "Zabezpečení vlastních vazeb"
-ms.custom: 
+title: Zabezpečení vlastních vazeb
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 94c43586606f42cca120ded59637a998d113d229
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4774e4ed6c5afc6e9c4af50e0663ffe8c0964b7f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 Tento příklad ukazuje, jak nakonfigurovat zabezpečení tak, že použití vlastní vazby. Ukazuje, jak použít k povolení zabezpečení na úrovni zpráv společně s zabezpečený přenos vlastní vazby. To je užitečné, když zabezpečení přenosu je potřeba k přenosu zpráv mezi klientem a službou a současně zprávy musí být zabezpečení na úrovni zpráv. Tato konfigurace není podporována vazby poskytované systémem.  
@@ -56,16 +58,16 @@ Tento příklad ukazuje, jak nakonfigurovat zabezpečení tak, že použití vla
   
 ```xml  
 <behaviors>  
-      <serviceBehaviors>  
-        <behavior name="CalculatorServiceBehavior">  
-          <serviceMetadata />  
-          <serviceDebug includeExceptionDetailInFaults="False" />  
-          <serviceCredentials>  
-            <serviceCertificate findValue="localhost" storeLocation="LocalMachine" storeName="My" x509FindType="FindBySubjectName"/>  
-          </serviceCredentials>  
-        </behavior>  
-      </serviceBehaviors>  
-    </behaviors>  
+    <serviceBehaviors>  
+    <behavior name="CalculatorServiceBehavior">  
+        <serviceMetadata />  
+        <serviceDebug includeExceptionDetailInFaults="False" />  
+        <serviceCredentials>  
+        <serviceCertificate findValue="localhost" storeLocation="LocalMachine" storeName="My" x509FindType="FindBySubjectName"/>  
+        </serviceCredentials>  
+    </behavior>  
+    </serviceBehaviors>  
+</behaviors>  
 ```  
   
  Kromě toho používá vlastní vazby zabezpečení zpráv s typ přihlašovacích údajů Windows – jedná se o výchozí typ přihlašovacích údajů. To lze provést `security` prvku vazby. Klienta a služby se ověřují pomocí zabezpečení na úrovni zpráv, pokud se mechanismus ověřování protokolu Kerberos je k dispozici. To se stane, když ukázku běží v prostředí služby Active Directory. Pokud se mechanismus ověřování protokolu Kerberos není k dispozici, je použít ověřování NTLM. NTLM ověřuje klienta pro službu ale neověřuje služby klienta. `security` Prvku vazby je nakonfigurovaný na použití `SecureConversation``authenticationType`, což vede k vytvoření relace zabezpečení na klienta a služby. To je nutné povolit duplexního kontraktu služby pracovat.  
@@ -93,7 +95,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
   
      Certifikát je uložen v úložišti CurrentUser pro hostované webové služby.  
   
-    ```  
+    ```bat
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  

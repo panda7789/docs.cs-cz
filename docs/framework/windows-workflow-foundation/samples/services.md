@@ -1,26 +1,27 @@
 ---
 title: Services1
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 521cdb66-98cb-4ad1-b706-370788a43485
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 924368f5de4c5698c439a6c8744a15babd62d762
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f53c3ee686c4117a621eac43ede1035a83a08e46
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="services"></a>Služby
-Tato část obsahuje odkazy na ukázky, která ukazují [!INCLUDE[wf](../../../../includes/wf-md.md)] služby funkce.  
+Tato část obsahuje odkazy na vzorků, které Předvedení funkcí služby Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Absolutní prodleva](../../../../docs/framework/windows-workflow-foundation/samples/absolute-delay.md)  
@@ -42,7 +43,7 @@ Tato část obsahuje odkazy na ukázky, která ukazují [!INCLUDE[wf](../../../.
  Ukazuje, jak jiný uživatel typy můžete použít v zasílání zpráv aktivity (WF služby). Ukázka služby je služba schválení jednoduché náklady a zveřejňuje tří typů operací.  
   
  [Trvanlivý duplexní přenos](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
- Ukazuje, jak připravit a nakonfigurovat systém exchange trvanlivý duplexní zpráv pomocí zasílání zpráv aktivity v [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+ Ukazuje, jak připravit a nakonfigurovat systém exchange trvanlivý duplexní zpráv pomocí aktivity zasílání zpráv v systému Windows Workflow Foundation (WF).  
   
  [Korelace na základě obsahu](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
  Ukazuje, jak aktivity zasílání zpráv (<xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, a <xref:System.ServiceModel.Activities.ReceiveReply>) lze použít s více na základě obsahu korelací a korelace na základě obsahu.  
@@ -54,10 +55,10 @@ Tato část obsahuje odkazy na ukázky, která ukazují [!INCLUDE[wf](../../../.
  Demonstruje použití trvanlivý zpoždění, což je zpoždění, která je uchována pracovního postupu trvanlivý zařízení během zpoždění.  
   
  [Příjem do vyrovnávací paměti](../../../../docs/framework/windows-workflow-foundation/samples/buffered-receive.md)  
- Ukazuje, jak připravit a nakonfigurovat funkci vyrovnávací pamětí příjmu v [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+ Ukazuje, jak nastavit a konfigurovat funkci vyrovnávací pamětí příjmu v systému Windows Workflow Foundation (WF).  
   
  [Aktivace XAML](../../../../docs/framework/windows-workflow-foundation/samples/xaml-activation.md)  
- Ukazuje, jak k hostování deklarativní pracovního postupu v[!INCLUDE[iisver](../../../../includes/iisver-md.md)]  
+ Ukazuje, jak k hostování deklarativní pracovního postupu v [!INCLUDE[iisver](../../../../includes/iisver-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)

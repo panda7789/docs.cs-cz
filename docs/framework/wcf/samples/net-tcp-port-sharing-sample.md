@@ -1,24 +1,26 @@
 ---
-title: "Ukázka služby Net.TCP Port Sharing"
-ms.custom: 
+title: Ukázka služby Net.TCP Port Sharing
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7dea3a0f0d69662021c78b0f1d57ad0ba8c11fcb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0db4148f9be6db97dec2b8b680dad56171106b2c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="nettcp-port-sharing-sample"></a>Ukázka služby Net.TCP Port Sharing
 Protokol TCP/IP používá 16bitové čísla, který se nazývá port, k odlišení připojení k několika síťových aplikací, které jsou spuštěné na stejném počítači. Pokud aplikace naslouchá na portu, pak všechny přenosy TCP pro tento port přejde k dané aplikaci. Ostatní aplikace nemůže naslouchat na tomto portu ve stejnou dobu.  
@@ -46,8 +48,8 @@ Unhandled Exception: System.ServiceModel.CommunicationException: The TransportMa
   
 ## <a name="enabling-port-sharing"></a>Povolení sdílení portů  
  Následující kód ukazuje, povolení sdílení portů na serveru. Spustí instanci `ICalculator` na pevný port s náhodných cestou URI. I když dvě služby můžete sdílet stejný port, jejich celkový adresy koncových bodů stále musí být jedinečný, aby služba Sdílení portů NetTcp může směrovat zprávy správnou aplikaci.  
-  
-```  
+
+```csharp
 // Configure a binding with TCP port sharing enabled  
 NetTcpBinding binding = new NetTcpBinding();  
 binding.PortSharingEnabled = true;  
@@ -59,8 +61,8 @@ string address =
    String.Format("net.tcp://localhost:9000/calculator/{0}", salt);  
 host.AddServiceEndpoint(typeof(ICalculator), binding, address);  
 host.Open();  
-```  
-  
+```
+
  S sdílení portů povolené, můžete spustit službu vícekrát bez došlo ke konfliktu u číslo portu. Pokud změníte kód zakázat sdílení portů, spuštění dvě kopie výsledků služby v druhé selhání s <xref:System.ServiceModel.AddressAlreadyInUseException>.  
   
 ```  
@@ -69,8 +71,8 @@ Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is 
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
  Chcete-li zkontrolovat, že zprávy jsou správně směrované na sdílení port služby můžete testovacího klienta.  
-  
-```  
+
+```csharp
 class client  
 {  
    static void Main(string[] args)  
@@ -112,8 +114,8 @@ class client
       factory.Close();  
    }  
 }  
-```  
-  
+```
+
  Každá instance služby vytiskne jeho jedinečné číslo a adresu. Když spustíte service.exe například může zobrazit následující text.  
   
 ```  

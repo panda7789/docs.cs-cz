@@ -15,11 +15,11 @@ ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f3f9d7fb51198041356cfc68d49cc703dfdf78b5
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a2c418855cd2e79c31301705706ff1b98f119a97
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="com-interop-visual-basic"></a>Zprostředkovatel komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje objekt vystavit jeho funkce pro ostatní součásti a hostování aplikací. Většina dnešní softwaru zahrnuje objekty modelu COM. I když sestavení .NET jsou nejlepší volbou pro nové aplikace, může v některých případech musíte použít COM – objekty. Tato část popisuje některé z problémů, souvisejících s vytváření a používání objekty modelu COM pomocí jazyka Visual Basic.  
@@ -32,7 +32,7 @@ Modelu COM (Component Object) umožňuje objekt vystavit jeho funkce pro ostatn�
  Popisuje postup přidání odkazů na objekty modelu COM, které se mají knihovny typů.  
   
  [Postupy: Práce s ovládacími prvky ActiveX](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
- Ukazuje, jak přidat funkce, které chcete použít stávající ovládací prvky ActiveX [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] sady nástrojů.  
+ Ukazuje, jak používat existující ovládací prvky ActiveX pro přidání funkcí do panelu nástrojů Visual Studio.  
   
  [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
  Vás provede procesem volání rozhraní API, které jsou součástí operačního systému Windows.  

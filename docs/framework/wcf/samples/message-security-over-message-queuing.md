@@ -1,24 +1,26 @@
 ---
-title: "Zabezpečení zprávy pomocí služby Řízení front zpráv"
-ms.custom: 
+title: Zabezpečení zprávy pomocí služby Řízení front zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: a63c89e969f7a245dcf14d87872b8d629f1ee846
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: aeb0e66c5bad2b2d03a08560e1021b57e793ad55
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpečení zprávy pomocí služby Řízení front zpráv
 Tento příklad znázorňuje implementaci aplikace, která využívá WS-zabezpečení x.509 v3 s ověřováním pomocí certifikátu pro klienta a vyžaduje server ověřování pomocí certifikátu x.509 v3 serveru přes služby MSMQ. Zpráva, že zabezpečení je někdy další žádoucí zajistit, že zůstat šifrovaných zpráv v úložišti služby MSMQ a aplikace můžete provádět vlastní ověřování zprávy.  
@@ -105,8 +107,8 @@ Tento příklad znázorňuje implementaci aplikace, která využívá WS-zabezpe
   
 ## <a name="description"></a>Popis  
  Ukázkový kód klienta a služby jsou stejné jako [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) ukázku s jedním rozdílem. Kontrakt operaci je označena úroveň ochrany, což naznačuje, že zprávy musí být podepsat a zašifrovat.  
-  
-```  
+
+```csharp
 // Define a service contract.   
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
@@ -114,8 +116,8 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, ProtectionLevel=ProtectionLevel.EncryptAndSign)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-```  
-  
+```
+
  Aby se zajistilo, že je zpráva zabezpečené pomocí požadovaný token k identifikaci klienta a služby, souboru App.config obsahuje přihlašovací údaje.  
   
  Konfigurace klienta Určuje certifikát služby k ověřování. Jeho LocalMachine úložiště jako důvěryhodné úložiště používá moct spolehnout na platnosti služby. Určuje také klientský certifikát, který je připojen se zprávou pro ověřování služby klienta.  
@@ -256,29 +258,29 @@ public interface IOrderProcessor
   
  Ukázka ukazuje řízení ověřování pomocí konfigurace a jak získat identitu volajícího z kontextu zabezpečení, jak je znázorněno v následujícím ukázkovém kódu:  
   
-```  
-    // Service class which implements the service contract.  
-    // Added code to write output to the console window.  
-    public class OrderProcessorService : IOrderProcessor  
+```csharp
+// Service class which implements the service contract.  
+// Added code to write output to the console window.  
+public class OrderProcessorService : IOrderProcessor  
+{  
+    private string GetCallerIdentity()  
     {  
-        private string GetCallerIdentity()  
-        {  
-            // The client certificate is not mapped to a Windows identity by default.  
-            // ServiceSecurityContext.PrimaryIdentity is populated based on the information  
-            // in the certificate that the client used to authenticate itself to the service.  
-            return ServiceSecurityContext.Current.PrimaryIdentity.Name;  
-        }  
-  
-        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]  
-        public void SubmitPurchaseOrder(PurchaseOrder po)  
-        {  
-            Console.WriteLine("Client's Identity {0} ", GetCallerIdentity());  
-            Orders.Add(po);  
-            Console.WriteLine("Processing {0} ", po);  
-        }  
+        // The client certificate is not mapped to a Windows identity by default.  
+        // ServiceSecurityContext.PrimaryIdentity is populated based on the information  
+        // in the certificate that the client used to authenticate itself to the service.  
+        return ServiceSecurityContext.Current.PrimaryIdentity.Name;  
+    }  
+
+    [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]  
+    public void SubmitPurchaseOrder(PurchaseOrder po)  
+    {  
+        Console.WriteLine("Client's Identity {0} ", GetCallerIdentity());  
+        Orders.Add(po);  
+        Console.WriteLine("Processing {0} ", po);  
+    }  
   //…  
 }  
-```  
+```
   
  Při spuštění kódu služby zobrazí identifikaci klienta. Následuje příklad výstupu z kódu služby:  
   
@@ -302,7 +304,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
   
      Následující řádek v dávkovém souboru, vytvoří certifikát klienta. Zadaný název klienta se používá v názvu subjektu certifikátu vytvořili. Certifikát je uložen v `My` uložit na `CurrentUser` umístění úložiště.  
   
-    ```  
+    ```bat
     echo ************  
     echo making client cert  
     echo ************  
@@ -313,7 +315,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
   
      Následující řádek v kopie souborů batch certifikát klienta do serveru TrustedPeople úložiště tak, aby server můžete provést příslušné důvěryhodnosti nebo ne důvěryhodnosti rozhodnutí. Pro certifikát nainstalovaný v úložišti TrustedPeople k být důvěryhodný [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služba, režim ověření certifikátu klienta musí být nastavená na `PeerOrChainTrust` nebo `PeerTrust` hodnotu. Viz předchozí ukázka konfigurace služby se dozvíte, jak to lze provést pomocí konfiguračního souboru.  
   
-    ```  
+    ```bat
     echo ************  
     echo copying client cert to server's LocalMachine store  
     echo ************  
@@ -324,7 +326,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
   
      Následující řádky z dávkového souboru Setup.bat vytvořit certifikát serveru, který se má použít:  
   
-    ```  
+    ```bat  
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  

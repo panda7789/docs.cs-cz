@@ -1,29 +1,30 @@
 ---
-title: "Extrahovat Data WF pomocí sledování"
-ms.custom: 
+title: Extrahovat Data WF pomocí sledování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e30c68f5-8c6a-495a-bd20-667a4364c68e
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4d6c269dc9c8b5a0050cfc3ffcefc3160b07c897
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 44e49aa0c9b3b9b53b921fe90838875ab34b7772
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="extract-wf-data-using-tracking"></a>Extrahovat Data WF pomocí sledování
 Tento příklad znázorňuje způsob použití sledování extrahovat proměnné pracovního postupu a argumenty z aktivit pracovního postupu. Také ukazuje přidání poznámky do sledování záznamů a extrahování dat datové části v rámci vlastní sledování záznamů. Příklad používá účastník sledování trasování událostí pro Windows (ETW) extrahovat data z pracovního postupu.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- [!INCLUDE[wf](../../../../includes/wf-md.md)]poskytuje sledování, aby mohl získat přehled o provádění instanci pracovního postupu. Modul runtime sledování vysílá pracovní postup sledování záznamů během spouštění pracovního postupu. Společně s pracovním sledování záznamů můžete extrahovat data v rámci instance pracovního postupu z pracovního postupu. V následujícím seznamu jsou uvedeny typy dat, které mohou být extrahovány z sledování záznamů:  
+ Windows Workflow Foundation (WF) poskytuje sledování, aby mohl získat přehled o provádění instanci pracovního postupu. Modul runtime sledování vysílá pracovní postup sledování záznamů během spouštění pracovního postupu. Společně s pracovním sledování záznamů můžete extrahovat data v rámci instance pracovního postupu z pracovního postupu. V následujícím seznamu jsou uvedeny typy dat, které mohou být extrahovány z sledování záznamů:  
   
 1.  Proměnné pracovního postupu v rámci aktivity a sledování záznamů během provádění aktivity.  
   

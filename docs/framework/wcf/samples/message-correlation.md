@@ -1,24 +1,26 @@
 ---
-title: "Korelace zprávy"
-ms.custom: 
+title: Korelace zprávy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 95336c55b2c3e83e2bd68bb653bbaacc446d8934
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 52dd8d66a4a28b515ebfaee88c4383889839fff0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tento příklad ukazuje, jak můžete k aplikaci služby Řízení front zpráv (MSMQ) odešle zprávu služby MSMQ pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavků a odpovědí. Tato ukázka používá – msmqIntegrationBinding vazby. Služba je v tomto případě vlastním hostováním konzolovou aplikaci, abyste mohli pozorovat, že služby, která přijímá zprávy zařazené do fronty. K  
@@ -28,8 +30,8 @@ Tento příklad ukazuje, jak můžete k aplikaci služby Řízení front zpráv 
  `IOrderProcessor` Operace jednosměrné služby, který je vhodný pro použití se službou Řízení front definuje kontrakt služby. Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ kontrakty operaci. Proto může existovat pouze jedna smlouva operace v tomto případě. Pokud chcete definovat další operace měnící v rámci služby, aplikace musí poskytovat informace, které záhlaví v služby MSMQ zprávy (například štítek, nebo correlationID) slouží k rozhodnout, které operace kontrakt k odeslání. Tento postup je znázorněn v [vlastní Demux](../../../../docs/framework/wcf/samples/custom-demux.md).  
   
  Zprávy služby MSMQ také neobsahuje informace o tom, které hlavičky jsou namapované na různé parametry operace kontrakt. Proto může existovat jenom jeden parametr v operaci kontraktu. Parametr je typu <!--zz <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`--> , `System.ServiceModel.MSMQIntegration.MsmqMessage` obsahující základní zprávy služby MSMQ. Typ "T" v `MsmqMessage<T>` třída reprezentuje data, která je serializován do textu zprávy služby MSMQ. V této ukázce `PurchaseOrder` typ serializován do textu zprávy služby MSMQ.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 [ServiceKnownType(typeof(PurchaseOrder))]  
 public interface IOrderProcessor  
@@ -37,11 +39,11 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-```  
-  
+```
+
  Operace služby zpracovává nákupní objednávka a obsah nákupní objednávka a jeho stav se zobrazí v okně konzoly služby. <xref:System.ServiceModel.OperationBehaviorAttribute> Nakonfiguruje operaci zařazení v transakci s fronty a označit dokončení transakce po návratu operaci. `PurchaseOrder` Obsahuje podrobnosti o pořadí, které musí být služba.  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 public class OrderProcessorService : IOrderProcessor  
 {  
@@ -74,13 +76,13 @@ public class OrderProcessorService : IOrderProcessor
         client.Close();  
     }  
 }  
-```  
-  
+```
+
  Služba používá vlastní klienta `OrderResponseClient` k odeslání zprávy služby MSMQ do fronty. Vzhledem k tomu, že je aplikace, který obdrží a zpracuje zprávy aplikací služby MSMQ a ne [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, neexistuje žádný kontrakt implicitní služby mezi těmito dvěma aplikacemi. Proto nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.  
   
  Vlastní proxy server je v podstatě stejný pro všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, které používají `msmqIntegrationBinding` vazby k odesílání zpráv. Na rozdíl od jiných proxy nebude obsahovat celou řadu operací služby. Je zpráva operaci odeslání jenom.  
-  
-```  
+
+```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderResponse  
 {  
@@ -108,11 +110,11 @@ public partial class OrderResponseClient : System.ServiceModel.ClientBase<IOrder
         base.Channel.SendOrderResponse(msg);  
     }  
 }  
-```  
-  
+```
+
  Služba je sám sebou hostované. Pokud používáte transport integrace MSMQ, používá fronty musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje <xref:System.Messaging> kódu zkontrolujte existenci fronty a vytvořte ji v případě potřeby. Název fronty je číst z konfiguračního souboru.  
-  
-```  
+
+```csharp
 public static void Main()  
 {  
        // Get the MSMQ queue name from application settings in configuration.  
@@ -134,7 +136,7 @@ public static void Main()
             serviceHost.Close();  
       }  
 }  
-```  
+```
   
  Frontu MSMQ, ke které se odesílají žádosti pořadí je zadána v oddílu appSettings konfiguračního souboru. Koncové body klienta a služby jsou definovány v sekci system.serviceModel konfiguračního souboru. Zadejte oba `msmqIntegrationbinding` vazby.  
   
@@ -176,8 +178,8 @@ public static void Main()
 ```  
   
  Klientská aplikace používá <xref:System.Messaging> k odeslání odolné a transakční zprávy do fronty. Tělo zprávy obsahuje nákupní objednávka.  
-  
-```  
+
+```csharp
 static void PlaceOrder()  
 {  
     //Connect to the queue  
@@ -219,8 +221,8 @@ static void PlaceOrder()
     orderMessageID = msg.Id;  
     Console.WriteLine("Placed the order, waiting for response...");  
 }  
-```  
-  
+```
+
  Frontu MSMQ, ve kterém jsou přijaty odpovědi pořadí je zadána v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázka konfigurace.  
   
 > [!NOTE]
@@ -233,8 +235,8 @@ static void PlaceOrder()
 ```  
   
  Uloží aplikace klienta `messageID` pořadí zprávě požadavku, která ji odešle do služby a čeká na odpověď ze služby. Po odpověď dorazí ve frontě, klient ji koreluje s pořadí zpráva se odešle pomocí `correlationID` vlastnosti zprávy, která obsahuje `messageID` objednávky zprávou, která klient odešle do služby původně.  
-  
-```  
+
+```csharp
 static void DisplayOrderStatus()  
 {  
     MessageQueue orderResponseQueue = new   
@@ -273,8 +275,8 @@ static void DisplayOrderStatus()
     }  
   }  
 }  
-```  
-  
+```
+
  Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Zobrazí se službu přijmout zprávy z klienta a odešle odpověď zpět klientovi. Klient se zobrazí odpověď přijal od služby. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.  
   
 > [!NOTE]

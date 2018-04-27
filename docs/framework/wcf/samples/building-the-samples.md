@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d40b59faa4d0f50e59daaa71da6127da367f008b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b8b3e3006072855673c37786ffb763fcd610e40c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Ukázky se dají vytvářet pomocí sady Visual Studio 2010 nebo pomocí **msbuild** příkazu z příkazového řádku. Oba postupy jsou popsány v tomto tématu.  
@@ -39,9 +39,9 @@ ms.lasthandoff: 04/26/2018
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>K vytvoření vzorku pomocí sady Visual Studio  
   
-1.  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2 a spuštění [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], je nutné spustit [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] s vyššími oprávněními. Chcete-li to provést, klikněte pravým tlačítkem myši na ikonu v nabídce Start a pak klikněte na **spustit jako správce**.  
+1.  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2 a spuštění [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], Visual Studio je nutné spustit s oprávněním vyšší úrovně oprávnění. Chcete-li to provést, klikněte pravým tlačítkem myši na ikonu v nabídce Start a pak klikněte na **spustit jako správce**.  
   
-2.  Z **soubor** nabídky v sadě Visual Studio, klikněte na tlačítko **otevřete**, pak klikněte na tlačítko **projekt nebo řešení**. Přejděte na konkrétní jazyk podadresáře v adresáři, do které jste nainstalovali vzorku a dvakrát klikněte na ikonu .sln soubor otevřete řešení v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].  
+2.  Z **soubor** nabídky v sadě Visual Studio, klikněte na tlačítko **otevřete**, pak klikněte na tlačítko **projekt nebo řešení**. Přejděte na konkrétní jazyk podadresáře v adresáři, do které jste nainstalovali vzorku a dvakrát klikněte na ikonu .sln soubor otevřete řešení v sadě Visual Studio.  
   
 3.  V **sestavení** nabídce vyberte možnost **znovu sestavit řešení**. Soubory programu klienta jsou vytvořeny tak client\bin a soubory programu služby jsou vytvořeny tak service\bin. Pokud je služba hostovaná ve službě IIS, zkopírují se k adresáři servicemodelsamples a podadresář \bin také soubory programu služby.  
   

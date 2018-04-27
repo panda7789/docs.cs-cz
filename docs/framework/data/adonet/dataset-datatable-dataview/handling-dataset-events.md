@@ -1,27 +1,29 @@
 ---
-title: "Zpracování událostí datové sady"
-ms.custom: 
+title: Zpracování událostí datové sady
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 54edefe0-bc38-419b-b486-3d8a0c356f13
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 820d93529fc12f3eeacd730cc66ec85ffd560ff9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: aea9fc2caae675b77a8aad730869adb00f593baf
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="handling-dataset-events"></a>Zpracování událostí datové sady
 <xref:System.Data.DataSet> Objekt poskytuje tři události: <xref:System.ComponentModel.MarshalByValueComponent.Disposed>, <xref:System.Data.DataSet.Initialized>, a <xref:System.Data.DataSet.MergeFailed>.  
@@ -56,10 +58,10 @@ private static void DataSetMergeFailed(
 ## <a name="the-initialized-event"></a>Inicializovanou událost  
  <xref:System.Data.DataSet.Initialized> Události dojde po `DataSet` konstruktor inicializuje novou instanci třídy `DataSet`.  
   
- <xref:System.Data.DataSet.IsInitialized%2A> Vlastnost vrátí `true` Pokud `DataSet` dokončení inicializace; v opačném případě vrátí `false`. <xref:System.Data.DataSet.BeginInit%2A> Metodu, která začíná inicializace `DataSet`, nastaví <xref:System.Data.DataSet.IsInitialized%2A> k `false`. <xref:System.Data.DataSet.EndInit%2A> Metoda, což ukončí inicializace `DataSet`, nastaví na `true`. Tyto metody jsou používány [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] prostředí návrhu k chybě při inicializaci `DataSet` který se používá jinou součástí. Nebudete používat běžně je ve vašem kódu.  
+ <xref:System.Data.DataSet.IsInitialized%2A> Vlastnost vrátí `true` Pokud `DataSet` dokončení inicializace; v opačném případě vrátí `false`. <xref:System.Data.DataSet.BeginInit%2A> Metodu, která začíná inicializace `DataSet`, nastaví <xref:System.Data.DataSet.IsInitialized%2A> k `false`. <xref:System.Data.DataSet.EndInit%2A> Metoda, což ukončí inicializace `DataSet`, nastaví na `true`. Tyto metody jsou používány vývojového prostředí sady Visual Studio k chybě při inicializaci `DataSet` který se používá jinou součástí. Nebudete používat běžně je ve vašem kódu.  
   
 ## <a name="the-disposed-event"></a>Uvolněné událostí  
- `DataSet`je odvozený od <xref:System.ComponentModel.MarshalByValueComponent> třídy, která zpřístupňuje jak <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metoda a <xref:System.ComponentModel.MarshalByValueComponent.Disposed> událostí. <xref:System.ComponentModel.MarshalByValueComponent.Disposed> Událost přidá obslužnou rutinu události pro naslouchání na uvolněné událostí na komponentu. Můžete použít <xref:System.ComponentModel.MarshalByValueComponent.Disposed> události `DataSet` Pokud chcete provést kódu, kdy <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metoda je volána. <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A>uvolní prostředky používané <xref:System.ComponentModel.MarshalByValueComponent>.  
+ `DataSet` je odvozený od <xref:System.ComponentModel.MarshalByValueComponent> třídy, která zpřístupňuje jak <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metoda a <xref:System.ComponentModel.MarshalByValueComponent.Disposed> událostí. <xref:System.ComponentModel.MarshalByValueComponent.Disposed> Událost přidá obslužnou rutinu události pro naslouchání na uvolněné událostí na komponentu. Můžete použít <xref:System.ComponentModel.MarshalByValueComponent.Disposed> události `DataSet` Pokud chcete provést kódu, kdy <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metoda je volána. <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> uvolní prostředky používané <xref:System.ComponentModel.MarshalByValueComponent>.  
   
 > [!NOTE]
 >  `DataSet` a `DataTable` objekty dědí <xref:System.ComponentModel.MarshalByValueComponent> a podporovat <xref:System.Runtime.Serialization.ISerializable> rozhraní pro vzdálenou komunikaci. Jedná se o pouze ADO.NET objekty, které se dají používat vzdáleně. Další informace najdete v tématu [vzdálených objektů](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58).  

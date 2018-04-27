@@ -22,18 +22,18 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fe0e446a0005ffcbf296c2728fd93056c3e38f2a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e67d4297ca0fe7028380b6d862f9f86c93bcaa61
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-using-client-application-services"></a>Návod: Použití klientských aplikačních služeb
 Toto téma popisuje postup vytvoření aplikace Windows, která používá klientské aplikační služby k ověřování uživatelů a načítání uživatelských rolí a nastavení.  
   
  V tomto návodu můžete provádět následující úlohy:  
   
--   Vytvořte aplikaci Windows Forms a použít [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] Návrhář projektu povolit a nakonfigurovat klientské aplikační služby.  
+-   Vytvoření aplikace Windows Forms a použít v Návrháři projektu sady Visual Studio k povolení a konfigurace klientských aplikačních služeb.  
   
 -   Vytvořte jednoduchou aplikaci webové služby ASP.NET pro hostování aplikačních služeb a otestovat vaši konfiguraci klienta.  
   
@@ -57,7 +57,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 #### <a name="to-create-a-client-application-and-enable-client-application-services"></a>Vytvořit klientskou aplikaci a povolit klientské aplikační služby  
   
-1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **soubor &#124; nový &#124; projektu** možnost nabídky.  
+1.  V sadě Visual Studio, vyberte **soubor &#124; nový &#124; projektu** možnost nabídky.  
   
 2.  V **nový projekt** v dialogovém **typy projektů** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte možnost **Windows** typ projektu.  
   
@@ -65,7 +65,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 4.  Změnit projekt **název** k `ClientAppServicesDemo`a potom klikněte na **OK**.  
   
-     Nový projekt Windows Forms je otevřen v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
+     Nový projekt Windows Forms je otevřen v sadě Visual Studio.  
   
 5.  Na **projektu** nabídce vyberte možnost **ClientAppServicesDemo vlastnosti**.  
   
@@ -250,7 +250,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 1.  V **Průzkumníku**, v projektu ClientAppServicesDemo přidat odkaz na sestavení System.Web.  
   
-2.  Vyberte soubor Form1 a pak vyberte **zobrazení &#124; kód** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+2.  Vyberte soubor Form1 a pak vyberte **zobrazení &#124; kód** z hlavní nabídky Visual Studio.  
   
 3.  V editoru kódu přidejte na začátek souboru Form1 následující příkazy.  
   
@@ -331,7 +331,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 5.  V **vlastnosti** okno, zadejte **(název)** hodnotu `rememberMeCheckBox` a **Text** hodnotu `&Remember me`.  
   
-6.  Vyberte **zobrazení &#124; kód** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+6.  Vyberte **zobrazení &#124; kód** z hlavní nabídky Visual Studio.  
   
 7.  V editoru kódu přidejte následující kód do horní části souboru.  
   
@@ -371,7 +371,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 #### <a name="to-change-the-user-interface-based-on-user-role"></a>Chcete-li změnit uživatelského rozhraní na základě role uživatele  
   
-1.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+1.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z hlavní nabídky Visual Studio.  
   
 2.  V návrháři, přidejte <xref:System.Windows.Forms.Button> ovládacího prvku formuláře z **sada nástrojů**.  
   
@@ -407,7 +407,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
  Teď můžete aplikaci spustit a přihlaste se jako zaměstnanec zda tlačítko není objeví, a pak se přihlaste jako správce, aby tlačítko zobrazit.  
   
 ## <a name="accessing-web-settings"></a>Přístup k webové nastavení  
- V následujícím postupu přidat textové pole formuláře a navázat jej na webové nastavení. Jako předchozí kód, který používá ověřování a rolí nastavení kódu není přístup k poskytovateli nastavení přímo. Místo toho použije silného typu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) vygenerovat pro váš projekt pomocí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
+ V následujícím postupu přidat textové pole formuláře a navázat jej na webové nastavení. Jako předchozí kód, který používá ověřování a rolí nastavení kódu není přístup k poskytovateli nastavení přímo. Místo toho použije silného typu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) vygenerovat pro svůj projekt Visual Studio.  
   
 #### <a name="to-use-web-settings-in-your-user-interface"></a>Pokud chcete použít nastavení webové uživatelské rozhraní  
   
@@ -425,7 +425,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
      `WebSettingsTestText` Nastavení se zobrazí v návrháři se výchozí hodnota `DefaultText`. Kromě toho `Settings` třídu, která obsahuje `WebSettingsTestText` vlastnost je generován pro projekt.  
   
-5.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+5.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z hlavní nabídky Visual Studio.  
   
 6.  V návrháři, přidejte <xref:System.Windows.Forms.TextBox> ovládacího prvku do formuláře.  
   
@@ -510,7 +510,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 #### <a name="to-enable-offline-mode-in-your-application"></a>Chcete-li povolit offline režimu v aplikaci  
   
-1.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+1.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z hlavní nabídky Visual Studio.  
   
 2.  V návrháři, přidejte <xref:System.Windows.Forms.CheckBox> ovládacího prvku do formuláře.  
   

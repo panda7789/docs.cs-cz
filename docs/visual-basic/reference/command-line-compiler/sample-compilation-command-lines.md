@@ -16,14 +16,14 @@ helpviewer_keywords:
 ms.assetid: 5bfbb487-5f47-4267-969a-39dfb917beeb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf20e2916efd2eb10065be22c319e34ddb2bda9a
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: b61ef6facf33fa043cad28a78405a19308a9864f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="sample-compilation-command-lines-visual-basic"></a>Příkazové řádky ukázkové kompilace (Visual Basic)
-Jako alternativu k kompilace jazyka Visual Basic programů v nástroji [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], můžete zkompilovat z příkazového řádku k vytvoření souborů spustitelný soubor (.exe) nebo dynamická knihovna (DLL).  
+Jako alternativu k kompilace jazyka Visual Basic programů z v sadě Visual Studio můžete zkompilovat z příkazového řádku k vytvoření souborů spustitelný soubor (.exe) nebo dynamická knihovna (DLL).  
   
  Visual Basic – kompilátor příkazového řádku podporuje úplnou sadu možností, které řídí vstup a výstup souborů, sestavení a ladění a preprocesoru možnosti. Každá možnost je k dispozici ve dvou formách zaměňovat: `-option` a `/option`. Tato dokumentace se zobrazí pouze `-option` formuláře.  
   
@@ -43,5 +43,5 @@ Jako alternativu k kompilace jazyka Visual Basic programů v nástroji [!INCLUDE
 >  Při sestavování projektu pomocí prostředí Visual Studio IDE, můžete zobrazit informace o přidruženého **Vbc –** s jeho – možnosti kompilátoru v okně výstupu. Chcete-li zobrazit tyto informace, otevřete [dialogové okno Možnosti, projekty a řešení, sestavení a spuštění](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)a poté nastavte **výstup sestavení projektu MSBuild podrobností** k **normální** nebo vyšší úrovni podrobností.   
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

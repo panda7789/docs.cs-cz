@@ -1,12 +1,13 @@
 ---
-title: "Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)"
-ms.custom: 
+title: Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - ActiveX controls, hosting in Windows Forms
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ebde5bd48b02c20f7d607ebcda2b18ed0830c569
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8098a44c9275be0a40ec8e067d33ac8a00654ec1
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
 Importér ovládacích prvků ActiveX převede definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
@@ -47,18 +49,18 @@ aximp [options]{file.dll | file.ocx}
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*soubor*|Název zdrojového souboru obsahujícího ovládací prvek ActiveX, který má být převeden. Argument souboru musí mít příponu .dll nebo .ocx.|  
+|*Soubor*|Název zdrojového souboru obsahujícího ovládací prvek ActiveX, který má být převeden. Argument souboru musí mít příponu .dll nebo .ocx.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
 |`/delaysign`|Určuje, že Aximp.exe podepíše výsledný ovládací prvek pomocí zpožděného podepisování. Tato možnost je nutné zadat s buď `/keycontainer:`, `/keyfile:`, nebo `/publickey:` možnost. Další informace o procesu zpožděné podepisování najdete v tématu [zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md).|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|`/keycontainer:`*containerName*|Podepíše výsledné ovládacího prvku se silným názvem pomocí pár veřejného a privátního klíče najít v kontejneru klíčů určeného *containerName*.|  
-|`/keyfile:`*filename*|Podepíše výsledné ovládacího prvku se silným názvem pomocí vydavatele oficiální pár veřejného a privátního klíče v nalezen *filename*.|  
+|`/keycontainer:` *ContainerName*|Podepíše výsledné ovládacího prvku se silným názvem pomocí pár veřejného a privátního klíče najít v kontejneru klíčů určeného *containerName*.|  
+|`/keyfile:` *Název souboru*|Podepíše výsledné ovládacího prvku se silným názvem pomocí vydavatele oficiální pár veřejného a privátního klíče v nalezen *filename*.|  
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
-|`/out:`*filename*|Určuje název sestavení, které se má vytvořit.|  
-|`/publickey:`*filename*|Podepíše výsledné ovládacího prvku se silným názvem pomocí veřejného klíče v souboru určeného nalezen *filename*.|  
-|`/rcw:`*filename*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md).|  
+|`/out:` *Název souboru*|Určuje název sestavení, které se má vytvořit.|  
+|`/publickey:` *Název souboru*|Podepíše výsledné ovládacího prvku se silným názvem pomocí veřejného klíče v souboru určeného nalezen *filename*.|  
+|`/rcw:` *Název souboru*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md).|  
 |`/silent`|Potlačí zobrazování zpráv o úspěšném dokončení.|  
 |`/source`|Generuje zdrojový kód jazyka C# pro obálku Windows Forms.|  
 |`/verbose`|Určuje režim podrobného vypisování; zobrazuje dodatečné informace o průběhu.|  
@@ -79,7 +81,7 @@ aximp [options]{file.dll | file.ocx}
   
  Při spuštění Aximp.exe přes shdocvw.dll se vždy vytvoří další soubor s názvem shdocvw.dll v adresáři, ze kterého je nástroj spuštěn. Pokud je tento vygenerovaný soubor umístěn v adresáři Documents and Settings, způsobuje problémy v aplikacích Microsoft Internet Explorer a Průzkumník Windows. Po restartování počítače systém Windows hledá v adresáři Documents and Settings před adresářem system32, aby našel kopii souboru shdocvw.dll. Použije kopii, kterou najde v adresáři Documents and Settings a pokusí se načíst spravované obálky. Aplikace Internet Explorer a Průzkumník Windows nebudou správně fungovat, protože spoléhají na vykreslovací modul ve verzi shdocvw.dll v adresáři system32. Pokud nastane tento problém, odstraňte kopii souboru shdocvw.dll v adresáři Documents and Settings a restartujte počítač.  
   
- Použití Aximp.exe se souborem shdocvw.dll k vytvoření sestavení .NET pro použití při vývoji aplikace může také způsobit problémy. V tomto případě aplikace načte systémovou verzi souboru shdocvw.dll i vygenerovanou verzi a může dát přednost verzi systému. V takovém případě se při pokusu o načtení webové stránky uvnitř ovládacího prvku ActiveX webového prohlížeče uživatelům může zobrazit dialogové okno Otevřít/Uložit. Když uživatel klikne na **otevřete**, otevřou se webové stránky v aplikaci Internet Explorer. K této situaci dochází pouze u počítačů používajících aplikaci Internet Explorer verze 6 nebo starší. K tomuto problému zabránit, použijte spravovaný <xref:System.Windows.Forms.WebBrowser> řízení nebo použijte [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] ke generování spravované shdocvw.dll, jak je popsáno v [postup: Přidejte odkazy na knihovny typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md).  
+ Použití Aximp.exe se souborem shdocvw.dll k vytvoření sestavení .NET pro použití při vývoji aplikace může také způsobit problémy. V tomto případě aplikace načte systémovou verzi souboru shdocvw.dll i vygenerovanou verzi a může dát přednost verzi systému. V takovém případě se při pokusu o načtení webové stránky uvnitř ovládacího prvku ActiveX webového prohlížeče uživatelům může zobrazit dialogové okno Otevřít/Uložit. Když uživatel klikne na **otevřete**, otevřou se webové stránky v aplikaci Internet Explorer. K této situaci dochází pouze u počítačů používajících aplikaci Internet Explorer verze 6 nebo starší. K tomuto problému zabránit, použijte spravovaný <xref:System.Windows.Forms.WebBrowser> řízení nebo pomocí sady Visual Studio vygenerujte spravované shdocvw.dll, jak je popsáno v [postupy: Přidání odkazů na knihovny typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příkaz vytvoří MediaPlayer.dll a AxMediaPlayer.dll pro ovládací prvek Media Player `msdxm.ocx`.  

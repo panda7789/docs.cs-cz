@@ -1,24 +1,26 @@
 ---
-title: "Nestálá komunikace ve frontě"
-ms.custom: 
+title: Nestálá komunikace ve frontě
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0d012f64-51c7-41d0-8e18-c756f658ee3d
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d7af5e29faf000fe3fe86463cb4eca9dc1e5c567
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 01dc48d7df85051449c92f4e91e5d1e58d6ddb91
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="volatile-queued-communication"></a>Nestálá komunikace ve frontě
 Tento příklad znázorňuje, jak provádět nestálá komunikace ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). V tomto příkladu <xref:System.ServiceModel.NetMsmqBinding>. Služba je v tomto případě vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.  
@@ -36,19 +38,19 @@ Tento příklad znázorňuje, jak provádět nestálá komunikace ve frontě pro
 >  Volatile zprávy s žádné záruky, pokud nelze odeslat v rámci oboru transakci pomocí služby MSMQ. Také musíte vytvořit netransakční fronty pro odesílání volatile zpráv.  
   
  Kontrakt služby v této ukázce je `IStockTicker` jednosměrné služby, které jsou nejvhodnější pro použití se službou Řízení front, který definuje.  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IStockTicker  
 {  
     [OperationContract(IsOneWay = true)]  
     void StockTick(string symbol, float price);  
 }  
-```  
-  
+```
+
  Operace služby zobrazí symbol běžícími a ceny, jak je znázorněno v následujícím ukázkovém kódu:  
   
-```  
+```csharp
 public class StockTickerService : IStockTicker  
 {  
     public void StockTick(string symbol, float price)  
@@ -60,8 +62,8 @@ public class StockTickerService : IStockTicker
 ```  
   
  Služba je sám sebou hostované. Pokud používáte přenos MSMQ, používá fronty musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje kód pro Zkontrolujte existenci fronty a vytvořte ji v případě potřeby. Název fronty je číst z konfiguračního souboru. Základní adresa se používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování proxy pro službu.  
-  
-```  
+
+```csharp
 // Host the service within this EXE console application.  
 public static void Main()  
 {  
@@ -88,8 +90,8 @@ public static void Main()
         serviceHost.Close();  
     }  
 }  
-```  
-  
+```
+
  Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definováno v sekci system.serviceModel konfiguračního souboru a určuje `netMsmqBinding` vazby.  
   
 > [!NOTE]
@@ -114,7 +116,7 @@ public static void Main()
                 bindingConfiguration="volatileBinding"   
                 contract="Microsoft.ServiceModel.Samples.IStockTicker" />  
     ...  
-          </service>  
+    </service>  
   </services>  
   
   <bindings>  
@@ -129,8 +131,8 @@ public static void Main()
 ```  
   
  Protože ukázku odesílá zprávy ve frontě pomocí netransakční fronty, nelze odeslat zpracovaných zpráv do fronty.  
-  
-```  
+
+```csharp
 // Create a client.  
 Random r = new Random(137);  
   
@@ -145,8 +147,8 @@ for (int i = 0; i < 10; i++)
   
 //Closing the client gracefully cleans up resources.  
 client.Close();  
-```  
-  
+```
+
  Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Uvidíte služby přijmout zprávy z klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby. Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu. Spuštění klienta, vypněte ho a potom spuštění služby a stále přijímá jeho zprávy.  
   
 ```  

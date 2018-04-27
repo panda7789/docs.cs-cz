@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 94eca5c2aad919fe46fa75626954e10bb68f1110
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b34a0118c9223e8d09bf56de39e3fea1b115688f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon systému Windows Workflow Foundation 4
 Dustinu Metzgar  
@@ -27,7 +27,7 @@ Dustinu Metzgar
   
  V září roku 2010 Microsoft Corporation  
   
- Microsoft [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] obsahuje hlavní revize [!INCLUDE[wf](../../../includes/wf-md.md)] s velkou investice do výkonu.  Tato nová revize představuje významné návrhu změny z předchozích verzí [!INCLUDE[wf1](../../../includes/wf1-md.md)] dodávané jako součást rozhraní .NET Framework 3.0 a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Byla přepracována ze základní programovací model, modulu runtime a nástrojů výrazně zlepšit výkon a použitelnost. Toto téma ukazuje důležité výkonové charakteristiky tyto revize a porovná je s ohledem na předchozí verzi.  
+ Microsoft [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] obsahuje hlavní revizi Windows Workflow Foundation (WF) s velkou investic ve výkonu.  Tato nová revize představuje významné návrhu změny z předchozích verzí [!INCLUDE[wf1](../../../includes/wf1-md.md)] dodávané jako součást rozhraní .NET Framework 3.0 a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Byla přepracována ze základní programovací model, modulu runtime a nástrojů výrazně zlepšit výkon a použitelnost. Toto téma ukazuje důležité výkonové charakteristiky tyto revize a porovná je s ohledem na předchozí verzi.  
   
  Výkon součásti jednotlivé pracovní postup se zvýšila pořadí podle velikosti mezi WF3 a WF4.  Zůstane mezery mezi programového ruční [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb pracovních postupů poměrně malý.  Latence pracovního postupu byla výrazně snižuje v WF4.  Trvalost výkonu zvýšilo faktorem 2.5 3.0.  Monitorování stavu prostřednictvím pracovního postupu pro sledování má výrazně menší režijní náklady.  Tyto jsou přesvědčivé migraci na nebo přijmout WF4 ve svých aplikacích.  
   
@@ -192,7 +192,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  Jak je znázorněno v předchozí části, "porovnání výkonu úrovni součástí," došlo k výraznému snížení režie mezi WF3 a WF4.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby pracovních postupů může nyní téměř odpovídat výkon programového ruční [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb i nadále však mají všechny výhody [!INCLUDE[wf1](../../../includes/wf1-md.md)] modulu runtime.  Tento scénář testovací porovná [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby proti [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby pracovního postupu v WF4.  
   
 ### <a name="online-store-service"></a>Služba online úložiště  
- Jedna z výhod [!INCLUDE[wf2](../../../includes/wf2-md.md)] je schopnost tvoří procesů pomocí několika služeb.  V tomto příkladu je služby online úložiště, které orchestrují dvě volání služby k nákupu pořadí.  Prvním krokem je ověřit pomocí služby ověřování pořadí pořadí.  Druhým krokem je k vyplnění pořadí pomocí služby skladu.  
+ Jednou z výhod modelu Windows Workflow Foundation je schopnost tvoří procesů pomocí několika služeb.  V tomto příkladu je služby online úložiště, které orchestrují dvě volání služby k nákupu pořadí.  Prvním krokem je ověřit pomocí služby ověřování pořadí pořadí.  Druhým krokem je k vyplnění pořadí pomocí služby skladu.  
   
  Dvě služby back-end pořadí ověřování služby a služby skladu, zůstávají stejné pro oba testy.  Část, která se změní je Online služba úložiště, která provádí orchestration.  V jednom případě služba je ruční programového jako [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  V případech, služba je zapsána jako [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby pracovního postupu v WF4. [!INCLUDE[wf1](../../../includes/wf1-md.md)]-specifické funkce, jako jsou sledování a trvalost jsou vypnuté pro tento test.  
   
@@ -448,7 +448,7 @@ public class Workflow1 : Activity
  Sledování stavu zhruba má 3 % dopad na propustnost.  Náklady na základní profil je přibližně 8 %.  
   
 ## <a name="interop"></a>Zprostředkovatel komunikace s objekty  
- WF4 je téměř dokončena přepisování z [!INCLUDE[wf1](../../../includes/wf1-md.md)] a proto nejsou přímo kompatibilní s WF4 WF3 pracovních postupů a aktivit.  Mnoho zákazníků, kteří přijali [!INCLUDE[wf2](../../../includes/wf2-md.md)] již v rané fázi bude mít definice pracovního postupu interní nebo třetích stran a vlastních aktivit pro WF3.  Jedním ze způsobů k usnadnění přechodu na WF4 je pomocí zprostředkovatele komunikace s objekty aktivity, které můžete provést WF3 aktivitám v pracovním postupu WF4.  Dále je doporučeno <xref:System.Activities.Statements.Interop> aktivity použít pouze v případě potřeby. [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na WF4 rezervaci [WF4 migrace pokyny](http://go.microsoft.com/fwlink/?LinkID=153313).  
+ WF4 je téměř dokončena přepisování z [!INCLUDE[wf1](../../../includes/wf1-md.md)] a proto nejsou přímo kompatibilní s WF4 WF3 pracovních postupů a aktivit.  Mnoho zákazníků, které již v rané fázi přijaly modelu Windows Workflow Foundation, bude mít pro WF3 definice pracovního postupu interní nebo třetích stran a vlastní aktivity.  Jedním ze způsobů k usnadnění přechodu na WF4 je pomocí zprostředkovatele komunikace s objekty aktivity, které můžete provést WF3 aktivitám v pracovním postupu WF4.  Dále je doporučeno <xref:System.Activities.Statements.Interop> aktivity použít pouze v případě potřeby. [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na WF4 rezervaci [WF4 migrace pokyny](http://go.microsoft.com/fwlink/?LinkID=153313).  
   
 ### <a name="environment-setup"></a>Nastavení prostředí  
  ![Pracovní postup prostředí pro testování výkonu](../../../docs/framework/windows-workflow-foundation/media/wfperfenvironment.gif "WFPerfEnvironment")  

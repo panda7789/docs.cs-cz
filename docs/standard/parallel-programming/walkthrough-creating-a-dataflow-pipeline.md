@@ -18,11 +18,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: e6471de1a6231f114f6967bb6f777a8dc4d39b82
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ce5af6f31a10f23703b761e041b21f08b71952b9
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Postupy: Vytvoření kanálu toku dat
 Přestože je možné použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> metody pro příjem zpráv z zdroje bloky, bloky zpráv může připojit i k formuláře *kanálu toku dat*. Kanálu toku dat je několika komponent, nebo *bloků toku dat*, z nichž každá provádí konkrétní úlohu, která přispívá ke větší cíl. Každý bloku toku dat v kanálu toku dat provede práci při přijetí zprávy z jiného bloku toku dat. Analogie k tomuto je sestavení pro automobilů výrobní. Při každém vehicle průchodu řádku sestavení, jedné stanici sestaví rámečku, dalšímu nainstaluje modul a tak dále. Vzhledem sestavení řádku umožňuje více vozidel pro sestavení ve stejnou dobu, poskytuje lepší propustnost než ty dokončení vozidel jeden najednou.
@@ -45,7 +45,7 @@ Přestože je možné použít <xref:System.Threading.Tasks.Dataflow.DataflowBlo
  Čtení [toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) před spuštěním tohoto průvodce.  
   
 ## <a name="creating-a-console-application"></a>Vytvoření aplikace konzoly  
- V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vytvoření projektu Visual C# nebo Visual Basic konzolové aplikace. Nainstalujte balíček System.Threading.Tasks.Dataflow NuGet.
+ V sadě Visual Studio vytvořte projekt Visual C# nebo Visual Basic konzolové aplikace. Nainstalujte balíček System.Threading.Tasks.Dataflow NuGet.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 

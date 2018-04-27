@@ -1,46 +1,48 @@
 ---
-title: "Hostitel služby WCF (WcfSvcHost.exe)"
-ms.custom: 
+title: Hostitel služby WCF (WcfSvcHost.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 495088463a6a7463ce1452588dc55d35110f0092
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1da8d7a08e7887e8ba3fd50a8f809e2ff551a7fd
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]Hostitel služby (WcfSvcHost.exe) umožňuje spustit [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] ladicí program (F5) automaticky hostování a testovat službu byla implementována. Potom můžete otestovat pomocí služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) nebo vlastního klienta najít a opravit všechny potenciální chyby.  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Hostitel služby (WcfSvcHost.exe) umožňuje spuštění ladicího programu sady Visual Studio (F5) automaticky hostování a testovat službu, kterou jste implementovali. Potom můžete otestovat pomocí služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) nebo vlastního klienta najít a opravit všechny potenciální chyby.  
   
 ## <a name="wcf-service-host"></a>Hostitel služby WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Hostitel služby zobrazí služeb v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projekt služby, načte konfiguraci projektu a pro každou službu, kterou najde hostitele, který se vytvoří instance. Nástroj je integrován do [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] prostřednictvím [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Šablona služby a je volána, když začnete spusťte ladění svého projektu.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Hostitel služby zobrazí služeb v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projekt služby, načte konfiguraci projektu a pro každou službu, kterou najde hostitele, který se vytvoří instance. Nástroj je integrován do sady Visual Studio prostřednictvím [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Šablona služby a je volána, když začnete spusťte ladění svého projektu.  
   
  Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby, můžete hostovat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby (v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projektu knihovny service) bez psaní dalšího kódu nebo potvrzení k určitému hostiteli během vývoje.  
   
 > [!NOTE]
->  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Hostitel služby nepodporuje částečné důvěryhodnosti. Pokud chcete použít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] šablona projektu knihovny služby v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] k vytvoření služby. Místo toho vytvořte nový web v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] výběrem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] šablony Web Service, která může být hostitelem služby webovém serveru, na kterém [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
+>  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Hostitel služby nepodporuje částečné důvěryhodnosti. Pokud chcete použít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] šablona projektu knihovny služby v sadě Visual Studio k vytvoření služby. Místo toho vytvořte nový web v sadě Visual Studio tak, že zvolíte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] šablony Web Service, která může být hostitelem služby webovém serveru, na kterém [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
   
 ## <a name="project-types-hosted-by-wcf-service-host"></a>Typy projektů hostované hostitel služby WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Hostitel služby může hostovat následující [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby typy projektů knihovny: [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovny služby, knihovny služby sekvenčního pracovního postupu, stavu počítače pracovního postupu služby knihovnu a knihovna syndikace Service. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Hostitel služby můžou hostovat taky těchto služeb, které mohou být přidány do projektu knihovny službu pomocí **přidat položku** funkce. To zahrnuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, Služba Machine stavu WF, WF sekvenční služby XAML WF stav počítače a XAML WF sekvenční služby.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Hostitel služby může hostovat následující [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby typy projektů knihovny: [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovny služby, knihovny služby sekvenčního pracovního postupu, stavu počítače pracovního postupu služby knihovnu a knihovna syndikace Service. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Hostitel služby můžou hostovat taky těchto služeb, které mohou být přidány do projektu knihovny službu pomocí **přidat položku** funkce. To zahrnuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, Služba Machine stavu WF, WF sekvenční služby XAML WF stav počítače a XAML WF sekvenční služby.  
   
  Upozorňujeme ale, ale, že nástroj nebude vám pomohou při konfiguraci hostitele. Pro tuto úlohu je nutné ručně upravit soubor App.config. Nástroj také neověřuje vlastní konfigurační soubory.  
   
 > [!CAUTION]
->  Neměli byste používat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby na hostitele služby v produkčním prostředí, protože nebyla vytvořena pro tento účel.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Hostitel služby nepodporuje spolehlivost, zabezpečení a možnosti správy požadavky na takové prostředí. Místo toho používají službu IIS, protože poskytuje vyšší spolehlivost a monitorovací funkce a je nejlepší řešení pro hostování služeb. Po dokončení vývoj vašich služeb by bylo nutné migrovat služeb z [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby IIS.  
+>  Neměli byste používat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby na hostitele služby v produkčním prostředí, protože nebyla vytvořena pro tento účel.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Hostitel služby nepodporuje spolehlivost, zabezpečení a možnosti správy požadavky na takové prostředí. Místo toho používají službu IIS, protože poskytuje vyšší spolehlivost a monitorovací funkce a je nejlepší řešení pro hostování služeb. Po dokončení vývoj vašich služeb by bylo nutné migrovat služeb z [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby IIS.  
   
 ## <a name="scenarios-for-using-wcf-service-host-inside-visual-studio"></a>Scénáře použití hostitel služby WCF v sadě Visual Studio  
- Následující tabulka obsahuje seznam všech parametrů v **argumenty příkazového řádku** dialogové okno, které lze najít kliknutím pravým tlačítkem na projekt v **Průzkumníka řešení** v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], výběr  **Vlastnosti**, pak výběrem **ladění** kartě a kliknutím na **spustit projekt**. Tyto parametry jsou užitečné při konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby.  
+ Následující tabulka obsahuje seznam všech parametrů v **argumenty příkazového řádku** dialogové okno, které lze najít kliknutím pravým tlačítkem na projekt v **Průzkumníka řešení** v sadě Visual Studio, výběr **Vlastnosti**, pak výběrem **ladění** kartě a kliknutím na **spustit projekt**. Tyto parametry jsou užitečné při konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby.  
   
 |Parametr|Význam|  
 |---------------|-------------|  
@@ -49,14 +51,14 @@ ms.lasthandoff: 12/22/2017
 |`/?`|Zobrazí text nápovědy.|  
   
 #### <a name="using-wcf-test-client"></a>Použití testovacího klienta WCF  
- Po vytvoření nové [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby projektu a stisknutím klávesy F5 spusťte ladicí program, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby spustí hostování všechny služby, které najde v projektu. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Testovacího klienta automaticky otevře a zobrazí seznam koncových bodů služby definována v konfiguračním souboru. V hlavním okně můžete si otestovat parametry a vyvolání služby.  
+ Po vytvoření nové [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby projektu a stisknutím klávesy F5 spusťte ladicí program, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby spustí hostování všechny služby, které najde v projektu. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Testovacího klienta automaticky otevře a zobrazí seznam koncových bodů služby definována v konfiguračním souboru. V hlavním okně můžete si otestovat parametry a vyvolání služby.  
   
- K Ujistěte se, že [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta se používá, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **vlastnosti**, vyberte **ladění**kartě. Klikněte na tlačítko **spuštění projektu** a ujistěte se, že se zobrazí následující v **argumenty příkazového řádku** dialogové okno.  
+ K Ujistěte se, že [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta se používá, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v sadě Visual Studio, vyberte **vlastnosti**, vyberte **ladění**kartě. Klikněte na tlačítko **spuštění projektu** a ujistěte se, že se zobrazí následující v **argumenty příkazového řádku** dialogové okno.  
   
  `/client:WcfTestClient.exe`  
   
 #### <a name="using-a-custom-client"></a>Pomocí vlastního klienta  
- Pokud chcete používat vlastní klienta, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **vlastnosti**, pak vyberte **ladění** karta. Klikněte na tlačítko **spuštění projektu** a upravit `/client` parametr ve **argumenty příkazového řádku** dialogové okno tak, aby odkazovaly do vlastního klienta, jak je uvedeno v následujícím příkladu.  
+ Pokud chcete používat vlastní klienta, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v sadě Visual Studio, vyberte **vlastnosti**, vyberte **ladění** karta. Klikněte na tlačítko **spuštění projektu** a upravit `/client` parametr ve **argumenty příkazového řádku** dialogové okno tak, aby odkazovaly do vlastního klienta, jak je uvedeno v následujícím příkladu.  
   
  `/client:"path/CustomClient.exe"`  
   
@@ -71,13 +73,13 @@ ms.lasthandoff: 12/22/2017
  `/client:iexplore.exe /clientArgs:http://localhost:8731/Design_Time_Addresses/Feed1/`  
   
 #### <a name="specifying-no-client"></a>Určení žádné klienta  
- K určení, že žádné klienta se použije po [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby hostování, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **vlastnosti**, vyberte **Ladění** kartě. Klikněte na tlačítko **spuštění projektu** a nechat **argumenty příkazového řádku** dialogové okno prázdné.  
+ Chcete-li určit, že žádné klienta se použije po [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby hostování, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v sadě Visual Studio, vyberte **vlastnosti**, pak vyberte  **Ladění** kartě. Klikněte na tlačítko **spuštění projektu** a nechat **argumenty příkazového řádku** dialogové okno prázdné.  
   
 #### <a name="using-a-custom-host"></a>Pomocí vlastního hostitele  
- Pokud chcete použít vlastní hostitele, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **vlastnosti**, vyberte **ladění** kartě. Klikněte na tlačítko **spustit externí Program** a zadejte úplnou cestu k vlastní hostitel. Můžete také **argumenty příkazového řádku** dialogové okno zadat argumenty předávané do hostitele.  
+ Pokud chcete použít vlastní hostitele, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v sadě Visual Studio, vyberte **vlastnosti**, vyberte **ladění** kartě. Klikněte na tlačítko **spustit externí Program** a zadejte úplnou cestu k vlastní hostitel. Můžete také **argumenty příkazového řádku** dialogové okno zadat argumenty předávané do hostitele.  
   
 ## <a name="wcf-service-host-user-interface"></a>Uživatelského rozhraní hostitele služby WCF  
- Když jste původně vyvolání [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby (stisknutím klávesy F5 uvnitř [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]), **hostitel služby WCF** automaticky otevře se okno. Když [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby běží, se zobrazí v oznamovací oblasti ikonu programu. Dvakrát klikněte na ikonu Otevřít **hostitel služby WCF** okna  
+ Když jste původně vyvolání [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby (stisknutím klávesy F5 v sadě Visual Studio), **hostitel služby WCF** automaticky otevře se okno. Když [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby běží, se zobrazí v oznamovací oblasti ikonu programu. Dvakrát klikněte na ikonu Otevřít **hostitel služby WCF** okna  
   
  Pokud dojde k chybám při hostování služeb [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] otevře se dialogové okno hostitele služby zobrazíte příslušné informace.  
   
@@ -102,7 +104,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="stopping-wcf-service-host"></a>Zastavení hostitel služby WCF  
  Můžete vypnout [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby následující čtyři způsoby:  
   
--   Ukončit relaci ladění ve [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
+-   Ukončit relaci ladění v sadě Visual Studio.  
   
 -   Vyberte **ukončení** z **soubor** v nabídce **hostitel služby WCF** okno.  
   
@@ -111,7 +113,7 @@ ms.lasthandoff: 12/22/2017
 -   Ukončení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta, pokud se používá.  
   
 ## <a name="using-service-host-without-administrator-privilege"></a>Pomocí hostitele služby bez oprávnění správce  
- Aby mohli uživatelé bez oprávnění správce k vývoji [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, ACL (seznam řízení přístupu) se vytvoří pro obor názvů "http://+:8731/Design_Time_Addresses" během instalace [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]. Seznam řízení přístupu je nastavené na (UI), který zahrnuje všechny interaktivní uživatelé přihlášení k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam ACL umožňuje uživatelům používat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] automatického hostitele služby (wcfSvcHost.exe) bez je udělení oprávnění správce.  
+ Aby mohli uživatelé bez oprávnění správce k vývoji [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, je vytvořit ACL (seznam řízení přístupu) pro obor názvů "http://+:8731/Design_Time_Addresses" při instalaci sady Visual Studio. Seznam řízení přístupu je nastavené na (UI), který zahrnuje všechny interaktivní uživatelé přihlášení k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam ACL umožňuje uživatelům používat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] automatického hostitele služby (wcfSvcHost.exe) bez je udělení oprávnění správce.  
   
  Můžete upravit přístup pomocí nástroje netsh.exe v [!INCLUDE[wv](../../../includes/wv-md.md)] pod účtem zvýšenými na úroveň správce. Následuje příklad použití netsh.exe.  
   

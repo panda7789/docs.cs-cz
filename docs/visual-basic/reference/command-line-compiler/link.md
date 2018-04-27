@@ -18,11 +18,11 @@ helpviewer_keywords:
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4410818b43c0ab12f9488198fffbe4b0f2d89252
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 4699e3adfd83a35ee81a5c8838e300adf6ecf667
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-link-visual-basic"></a>-odkaz (Visual Basic)
 Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v zadaném sestavení pro projekt, který je aktuálně kompilován.  
@@ -51,7 +51,7 @@ Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v z
 > [!NOTE]
 >  Když vytvoříte instanci vloženého typu modelu COM v kódu, musíte vytvořit instanci pomocí odpovídající rozhraní. Při pokusu o vytvoření instance vloženého typu modelu COM pomocí CoClass způsobí chybu.  
   
- Chcete-li nastavit `-link` možnost v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], přidejte odkaz na sestavení a nastavte `Embed Interop Types` vlastnost, která má **true**. Výchozí hodnota pro `Embed Interop Types` vlastnost je **false**.  
+ Chcete-li nastavit `-link` možnost v sadě Visual Studio, přidejte odkaz na sestavení a nastavte `Embed Interop Types` vlastnost **true**. Výchozí hodnota pro `Embed Interop Types` vlastnost je **false**.  
   
  Pokud jste k sestavení modelu COM (sestavení A) které se odkazuje na jiný sestavení modelu COM (sestavení B), budete také muset propojit sestavení B, pokud platí některá z následujících:  
   
@@ -92,7 +92,7 @@ vbc -link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Návod: Vložení typů ze spravovaných sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
  [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  
  [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)  
