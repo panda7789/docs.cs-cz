@@ -217,7 +217,7 @@
 ## [Co je nového v jazyce C#](csharp/whats-new/index.md)
 ### [Co je nového v jazyce C# 7.2](csharp/whats-new/csharp-7-2.md)
 ### [Co je nového v jazyce C# 7.1](csharp/whats-new/csharp-7-1.md)
-### [Co je nového v jazyce C# 7](csharp/whats-new/csharp-7.md)
+### [Co je nového v jazyce C# 7.0](csharp/whats-new/csharp-7.md)
 ### [Co je nového v jazyce C# 6](csharp/whats-new/csharp-6.md)
 ### [Historie verzí jazyka C#](csharp/whats-new/csharp-version-history.md)
 ### [Vztahy mezi jazykem a architekturou](csharp/whats-new/relationships-between-language-and-library.md)
