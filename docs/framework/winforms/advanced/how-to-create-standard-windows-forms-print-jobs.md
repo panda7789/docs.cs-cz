@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytváření standardních tiskových úloh Windows Forms"
-ms.custom: 
+title: 'Postupy: Vytváření standardních tiskových úloh Windows Forms'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,29 +18,30 @@ helpviewer_keywords:
 - printing [Windows Forms], creating print jobs
 - printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 69499cdee7803de504e960b08754df33602cfcf6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0090748ebdc52217176021c877949e62687e8a55
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="how-to-create-standard-windows-forms-print-jobs"></a><span data-ttu-id="c79e8-102">Postupy: Vytváření standardních tiskových úloh Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c79e8-102">How to: Create Standard Windows Forms Print Jobs</span></span>
-<span data-ttu-id="c79e8-103">Základ pro tisk ve Windows Forms je <xref:System.Drawing.Printing.PrintDocument> součást – přesněji řečeno, <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí.</span><span class="sxs-lookup"><span data-stu-id="c79e8-103">The foundation of printing in Windows Forms is the <xref:System.Drawing.Printing.PrintDocument> component—more specifically, the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event.</span></span> <span data-ttu-id="c79e8-104">Vytvořením kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí, můžete zadat, tisknout, jak můžete k jeho tisku.</span><span class="sxs-lookup"><span data-stu-id="c79e8-104">By writing code to handle the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event, you can specify what to print and how to print it.</span></span>  
+# <a name="how-to-create-standard-windows-forms-print-jobs"></a><span data-ttu-id="7ec35-102">Postupy: Vytváření standardních tiskových úloh Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7ec35-102">How to: Create Standard Windows Forms Print Jobs</span></span>
+<span data-ttu-id="7ec35-103">Základ pro tisk ve Windows Forms je <xref:System.Drawing.Printing.PrintDocument> součást – přesněji řečeno, <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí.</span><span class="sxs-lookup"><span data-stu-id="7ec35-103">The foundation of printing in Windows Forms is the <xref:System.Drawing.Printing.PrintDocument> component—more specifically, the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event.</span></span> <span data-ttu-id="7ec35-104">Vytvořením kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí, můžete zadat, tisknout, jak můžete k jeho tisku.</span><span class="sxs-lookup"><span data-stu-id="7ec35-104">By writing code to handle the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event, you can specify what to print and how to print it.</span></span>  
   
-### <a name="to-create-a-print-job"></a><span data-ttu-id="c79e8-105">Chcete-li vytvořit tiskové úlohy</span><span class="sxs-lookup"><span data-stu-id="c79e8-105">To create a print job</span></span>  
+### <a name="to-create-a-print-job"></a><span data-ttu-id="7ec35-105">Chcete-li vytvořit tiskové úlohy</span><span class="sxs-lookup"><span data-stu-id="7ec35-105">To create a print job</span></span>  
   
-1.  <span data-ttu-id="c79e8-106">Přidat <xref:System.Drawing.Printing.PrintDocument> součásti do svého formuláře.</span><span class="sxs-lookup"><span data-stu-id="c79e8-106">Add a <xref:System.Drawing.Printing.PrintDocument> component to your form.</span></span>  
+1.  <span data-ttu-id="7ec35-106">Přidat <xref:System.Drawing.Printing.PrintDocument> součásti do svého formuláře.</span><span class="sxs-lookup"><span data-stu-id="7ec35-106">Add a <xref:System.Drawing.Printing.PrintDocument> component to your form.</span></span>  
   
-2.  <span data-ttu-id="c79e8-107">Napsat kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí.</span><span class="sxs-lookup"><span data-stu-id="c79e8-107">Write code to handle the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event.</span></span>  
+2.  <span data-ttu-id="7ec35-107">Napsat kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí.</span><span class="sxs-lookup"><span data-stu-id="7ec35-107">Write code to handle the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event.</span></span>  
   
-     <span data-ttu-id="c79e8-108">Budete muset code tisk logiky.</span><span class="sxs-lookup"><span data-stu-id="c79e8-108">You will have to code your own printing logic.</span></span> <span data-ttu-id="c79e8-109">Kromě toho budete muset zadat materiálu k tisku.</span><span class="sxs-lookup"><span data-stu-id="c79e8-109">Additionally, you will have to specify the material to be printed.</span></span>  
+     <span data-ttu-id="7ec35-108">Budete muset code tisk logiky.</span><span class="sxs-lookup"><span data-stu-id="7ec35-108">You will have to code your own printing logic.</span></span> <span data-ttu-id="7ec35-109">Kromě toho budete muset zadat materiálu k tisku.</span><span class="sxs-lookup"><span data-stu-id="7ec35-109">Additionally, you will have to specify the material to be printed.</span></span>  
   
-     <span data-ttu-id="c79e8-110">V následujícím příkladu kódu je vytvořen obrázek ukázkové ve tvaru red obdélníku v <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužné rutiny události tak, aby fungoval jako materiálu k tisku.</span><span class="sxs-lookup"><span data-stu-id="c79e8-110">In the following code example, a sample graphic in the shape of a red rectangle is created in the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event handler to act as material to be printed.</span></span>  
+     <span data-ttu-id="7ec35-110">V následujícím příkladu kódu je vytvořen obrázek ukázkové ve tvaru red obdélníku v <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužné rutiny události tak, aby fungoval jako materiálu k tisku.</span><span class="sxs-lookup"><span data-stu-id="7ec35-110">In the following code example, a sample graphic in the shape of a red rectangle is created in the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event handler to act as material to be printed.</span></span>  
   
     ```vb  
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
@@ -66,7 +68,7 @@ ms.lasthandoff: 12/22/2017
        }  
     ```  
   
-     <span data-ttu-id="c79e8-111">([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] a [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="c79e8-111">([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] and [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="7ec35-111">(Visual C# a [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="7ec35-111">(Visual C# and [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.printDocument1.PrintPage += new  
@@ -80,13 +82,13 @@ ms.lasthandoff: 12/22/2017
        (this, &Form1::printDocument1_PrintPage);  
     ```  
   
-     <span data-ttu-id="c79e8-112">Můžete také psát kód pro <xref:System.Drawing.Printing.PrintDocument.BeginPrint> a <xref:System.Drawing.Printing.PrintDocument.EndPrint> události, případně včetně celé číslo představující celkový počet stránek tisknout, se odečte jako vytiskne každé stránce.</span><span class="sxs-lookup"><span data-stu-id="c79e8-112">You may also want to write code for the <xref:System.Drawing.Printing.PrintDocument.BeginPrint> and <xref:System.Drawing.Printing.PrintDocument.EndPrint> events, perhaps including an integer representing the total number of pages to print that is decremented as each page prints.</span></span>  
+     <span data-ttu-id="7ec35-112">Můžete také psát kód pro <xref:System.Drawing.Printing.PrintDocument.BeginPrint> a <xref:System.Drawing.Printing.PrintDocument.EndPrint> události, případně včetně celé číslo představující celkový počet stránek tisknout, se odečte jako vytiskne každé stránce.</span><span class="sxs-lookup"><span data-stu-id="7ec35-112">You may also want to write code for the <xref:System.Drawing.Printing.PrintDocument.BeginPrint> and <xref:System.Drawing.Printing.PrintDocument.EndPrint> events, perhaps including an integer representing the total number of pages to print that is decremented as each page prints.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="c79e8-113">Můžete přidat <xref:System.Windows.Forms.PrintDialog> součásti do svého formuláře zajistit vyčištění a efektivní uživatelské rozhraní (UI) pro vaše uživatele.</span><span class="sxs-lookup"><span data-stu-id="c79e8-113">You can add a <xref:System.Windows.Forms.PrintDialog> component to your form to provide a clean and efficient user interface (UI) to your users.</span></span> <span data-ttu-id="c79e8-114">Nastavení <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnost <xref:System.Windows.Forms.PrintDialog> součást umožňuje vám umožní nastavit vlastnosti související s print dokladu, ve kterém pracujete s svého formuláře.</span><span class="sxs-lookup"><span data-stu-id="c79e8-114">Setting the <xref:System.Windows.Forms.PrintDialog.Document%2A> property of the <xref:System.Windows.Forms.PrintDialog> component enables you to set properties related to the print document you are working with on your form.</span></span> <span data-ttu-id="c79e8-115">Další informace o <xref:System.Windows.Forms.PrintDialog> součást, najdete v části [PrintDialog – komponenta](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="c79e8-115">For more information about the <xref:System.Windows.Forms.PrintDialog> component, see [PrintDialog Component](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).</span></span>  
+    >  <span data-ttu-id="7ec35-113">Můžete přidat <xref:System.Windows.Forms.PrintDialog> součásti do svého formuláře zajistit vyčištění a efektivní uživatelské rozhraní (UI) pro vaše uživatele.</span><span class="sxs-lookup"><span data-stu-id="7ec35-113">You can add a <xref:System.Windows.Forms.PrintDialog> component to your form to provide a clean and efficient user interface (UI) to your users.</span></span> <span data-ttu-id="7ec35-114">Nastavení <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnost <xref:System.Windows.Forms.PrintDialog> součást umožňuje vám umožní nastavit vlastnosti související s print dokladu, ve kterém pracujete s svého formuláře.</span><span class="sxs-lookup"><span data-stu-id="7ec35-114">Setting the <xref:System.Windows.Forms.PrintDialog.Document%2A> property of the <xref:System.Windows.Forms.PrintDialog> component enables you to set properties related to the print document you are working with on your form.</span></span> <span data-ttu-id="7ec35-115">Další informace o <xref:System.Windows.Forms.PrintDialog> součást, najdete v části [PrintDialog – komponenta](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="7ec35-115">For more information about the <xref:System.Windows.Forms.PrintDialog> component, see [PrintDialog Component](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).</span></span>  
   
-     <span data-ttu-id="c79e8-116">Další informace o jaké jsou specifikace Windows Forms tiskové úlohy, včetně toho, jak vytvořit tiskové úlohy prostřednictvím kódu programu, najdete v části <xref:System.Drawing.Printing.PrintPageEventArgs>.</span><span class="sxs-lookup"><span data-stu-id="c79e8-116">For more information about the specifics of Windows Forms print jobs, including how to create a print job programmatically, see <xref:System.Drawing.Printing.PrintPageEventArgs>.</span></span>  
+     <span data-ttu-id="7ec35-116">Další informace o jaké jsou specifikace Windows Forms tiskové úlohy, včetně toho, jak vytvořit tiskové úlohy prostřednictvím kódu programu, najdete v části <xref:System.Drawing.Printing.PrintPageEventArgs>.</span><span class="sxs-lookup"><span data-stu-id="7ec35-116">For more information about the specifics of Windows Forms print jobs, including how to create a print job programmatically, see <xref:System.Drawing.Printing.PrintPageEventArgs>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c79e8-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="c79e8-117">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="7ec35-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="7ec35-117">See Also</span></span>  
  <xref:System.Drawing.Printing.PrintDocument>  
- [<span data-ttu-id="c79e8-118">Podpora tisku v modelu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c79e8-118">Windows Forms Print Support</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+ [<span data-ttu-id="7ec35-118">Podpora tisku v modelu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7ec35-118">Windows Forms Print Support</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

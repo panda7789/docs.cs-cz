@@ -1,11 +1,12 @@
 ---
-title: "If...Then...Else – příkaz (Visual Basic)"
-ms.date: 07/20/2015
+title: If...Then...Else – příkaz (Visual Basic)
+ms.date: 04/16/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.topic: conceptual
 f1_keywords:
 - vb.ElseIf
 - vb.Then
@@ -26,22 +27,22 @@ helpviewer_keywords:
 - If function [Visual Basic], and If...Then...Else statements
 - Else statement [Visual Basic]
 ms.assetid: 790068a2-1307-4e28-8a72-be5ebda099e9
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 898b72055345e88ca35f805de211c0c57cd74200
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1080a17cfcc493175c1e2f3527837030b4254bc2
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="ifthenelse-statement-visual-basic"></a><span data-ttu-id="e9dfe-102">If...Then...Else – příkaz (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e9dfe-102">If...Then...Else Statement (Visual Basic)</span></span>
-<span data-ttu-id="e9dfe-103">Podmíněně spustí skupinu příkazů v závislosti na hodnotě výrazu.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-103">Conditionally executes a group of statements, depending on the value of an expression.</span></span>  
+# <a name="ifthenelse-statement-visual-basic"></a><span data-ttu-id="3e184-102">If...Then...Else – příkaz (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3e184-102">If...Then...Else Statement (Visual Basic)</span></span>
+<span data-ttu-id="3e184-103">Podmíněně spustí skupinu příkazů v závislosti na hodnotě výrazu.</span><span class="sxs-lookup"><span data-stu-id="3e184-103">Conditionally executes a group of statements, depending on the value of an expression.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e9dfe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e9dfe-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3e184-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e184-104">Syntax</span></span>  
   
 ```  
-' Multiple-line syntax:  
+' Multiline syntax:  
 If condition [ Then ]  
     [ statements ]  
 [ ElseIf elseifcondition [ Then ]  
@@ -53,71 +54,86 @@ End If
 ' Single-line syntax:  
 If condition Then [ statements ] [ Else [ elsestatements ] ]  
 ```  
-  
-## <a name="parts"></a><span data-ttu-id="e9dfe-105">Součásti</span><span class="sxs-lookup"><span data-stu-id="e9dfe-105">Parts</span></span>  
+
+## <a name="quick-links-to-example-code"></a><span data-ttu-id="3e184-105">Rychlé odkazy na ukázkový kód</span><span class="sxs-lookup"><span data-stu-id="3e184-105">Quick links to example code</span></span>
+
+<span data-ttu-id="3e184-106">Tento článek obsahuje několik příkladů, které ilustrují použití `If`... `Then`... `Else` příkaz:</span><span class="sxs-lookup"><span data-stu-id="3e184-106">This article includes several examples that illustrate uses of the `If`...`Then`...`Else` statement:</span></span>
+
+* [<span data-ttu-id="3e184-107">Příklad Víceřádkový syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e184-107">Multiline syntax example</span></span>](#multi-line)
+* [<span data-ttu-id="3e184-108">Příklad vnořené syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e184-108">Nested syntax example</span></span>](#nested)
+* [<span data-ttu-id="3e184-109">Příklad syntaxe jeden řádek</span><span class="sxs-lookup"><span data-stu-id="3e184-109">Single-line syntax example</span></span>](#single-line)
+
+## <a name="parts"></a><span data-ttu-id="3e184-110">Součásti</span><span class="sxs-lookup"><span data-stu-id="3e184-110">Parts</span></span>  
  `condition`  
- <span data-ttu-id="e9dfe-106">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-106">Required.</span></span> <span data-ttu-id="e9dfe-107">Výraz.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-107">Expression.</span></span> <span data-ttu-id="e9dfe-108">Se musí vyhodnotit `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-108">Must evaluate to `True` or `False`, or to a data type that is implicitly convertible to `Boolean`.</span></span>  
+ <span data-ttu-id="3e184-111">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="3e184-111">Required.</span></span> <span data-ttu-id="3e184-112">Výraz.</span><span class="sxs-lookup"><span data-stu-id="3e184-112">Expression.</span></span> <span data-ttu-id="3e184-113">Se musí vyhodnotit `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.</span><span class="sxs-lookup"><span data-stu-id="3e184-113">Must evaluate to `True` or `False`, or to a data type that is implicitly convertible to `Boolean`.</span></span>  
   
- <span data-ttu-id="e9dfe-109">Pokud je ve výrazu [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` proměnné, která vyhodnotí jako [nic](../../../visual-basic/language-reference/nothing.md), podmínka je zpracován jako výraz není `True`a `Else` blok je spustit.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-109">If the expression is a [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)`Boolean` variable that evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the condition is treated as if the expression is not `True`, and the `Else` block is executed.</span></span>  
+ <span data-ttu-id="3e184-114">Pokud je ve výrazu [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` proměnné, která vyhodnotí jako [nic](../../../visual-basic/language-reference/nothing.md), podmínka je zpracován jako výraz `False` a `Else` bloku se spustí.</span><span class="sxs-lookup"><span data-stu-id="3e184-114">If the expression is a [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` variable that evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the condition is treated as if the expression is `False` and the `Else` block is executed.</span></span>  
   
  `Then`  
- <span data-ttu-id="e9dfe-110">Požadované v jednom řádku syntaxi; volitelné v syntaxi více řádků.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-110">Required in the single-line syntax; optional in the multiple-line syntax.</span></span>  
+ <span data-ttu-id="3e184-115">Požadované v jednom řádku syntaxi; volitelné v Víceřádkový syntaxi.</span><span class="sxs-lookup"><span data-stu-id="3e184-115">Required in the single-line syntax; optional in the multiline syntax.</span></span>  
   
  `statements`  
- <span data-ttu-id="e9dfe-111">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-111">Optional.</span></span> <span data-ttu-id="e9dfe-112">Jeden nebo více následujících příkazů `If`... `Then` které jsou spouštěny, pokud `condition` vyhodnocuje `True`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-112">One or more statements following `If`...`Then` that are executed if `condition` evaluates to `True`.</span></span>  
+ <span data-ttu-id="3e184-116">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="3e184-116">Optional.</span></span> <span data-ttu-id="3e184-117">Jeden nebo více následujících příkazů `If`... `Then` které jsou spouštěny, pokud `condition` vyhodnocuje `True`.</span><span class="sxs-lookup"><span data-stu-id="3e184-117">One or more statements following `If`...`Then` that are executed if `condition` evaluates to `True`.</span></span>  
   
  `elseifcondition`  
- <span data-ttu-id="e9dfe-113">Požadováno pokud `ElseIf` je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-113">Required if `ElseIf` is present.</span></span> <span data-ttu-id="e9dfe-114">Výraz.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-114">Expression.</span></span> <span data-ttu-id="e9dfe-115">Se musí vyhodnotit `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-115">Must evaluate to `True` or `False`, or to a data type that is implicitly convertible to `Boolean`.</span></span>  
+ <span data-ttu-id="3e184-118">Požadováno pokud `ElseIf` je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="3e184-118">Required if `ElseIf` is present.</span></span> <span data-ttu-id="3e184-119">Výraz.</span><span class="sxs-lookup"><span data-stu-id="3e184-119">Expression.</span></span> <span data-ttu-id="3e184-120">Se musí vyhodnotit `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.</span><span class="sxs-lookup"><span data-stu-id="3e184-120">Must evaluate to `True` or `False`, or to a data type that is implicitly convertible to `Boolean`.</span></span>  
   
  `elseifstatements`  
- <span data-ttu-id="e9dfe-116">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-116">Optional.</span></span> <span data-ttu-id="e9dfe-117">Jeden nebo více následujících příkazů `ElseIf`... `Then` které jsou spouštěny, pokud `elseifcondition` vyhodnocuje `True`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-117">One or more statements following `ElseIf`...`Then` that are executed if `elseifcondition` evaluates to `True`.</span></span>  
+ <span data-ttu-id="3e184-121">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="3e184-121">Optional.</span></span> <span data-ttu-id="3e184-122">Jeden nebo více následujících příkazů `ElseIf`... `Then` které jsou spouštěny, pokud `elseifcondition` vyhodnocuje `True`.</span><span class="sxs-lookup"><span data-stu-id="3e184-122">One or more statements following `ElseIf`...`Then` that are executed if `elseifcondition` evaluates to `True`.</span></span>  
   
  `elsestatements`  
- <span data-ttu-id="e9dfe-118">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-118">Optional.</span></span> <span data-ttu-id="e9dfe-119">Jeden nebo více příkazů, které jsou spouštěny, pokud žádné předchozí `condition` nebo `elseifcondition` výraz vyhodnocen jako `True`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-119">One or more statements that are executed if no previous `condition` or `elseifcondition` expression evaluates to `True`.</span></span>  
+ <span data-ttu-id="3e184-123">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="3e184-123">Optional.</span></span> <span data-ttu-id="3e184-124">Jeden nebo více příkazů, které jsou spouštěny, pokud žádné předchozí `condition` nebo `elseifcondition` výraz vyhodnocen jako `True`.</span><span class="sxs-lookup"><span data-stu-id="3e184-124">One or more statements that are executed if no previous `condition` or `elseifcondition` expression evaluates to `True`.</span></span>  
   
  `End If`  
- <span data-ttu-id="e9dfe-120">Ukončí `If`... `Then`... `Else` bloku.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-120">Terminates the `If`...`Then`...`Else` block.</span></span>  
+ <span data-ttu-id="3e184-125">Ukončí Víceřádkový verzi `If`... `Then`... `Else` bloku.</span><span class="sxs-lookup"><span data-stu-id="3e184-125">Terminates the multiline version of `If`...`Then`...`Else` block.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e9dfe-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e9dfe-121">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3e184-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3e184-126">Remarks</span></span>  
   
-## <a name="multiple-line-syntax"></a><span data-ttu-id="e9dfe-122">Syntaxe více řádků</span><span class="sxs-lookup"><span data-stu-id="e9dfe-122">Multiple-Line Syntax</span></span>  
- <span data-ttu-id="e9dfe-123">Když `If`... `Then`... `Else` příkaz je zjistil, `condition` testování.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-123">When an `If`...`Then`...`Else` statement is encountered, `condition` is tested.</span></span> <span data-ttu-id="e9dfe-124">Pokud `condition` je `True`, následující příkazy `Then` provedení.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-124">If `condition` is `True`, the statements following `Then` are executed.</span></span> <span data-ttu-id="e9dfe-125">Pokud `condition` je `False`, každý `ElseIf` (pokud existují) vyhodnotí v pořadí.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-125">If `condition` is `False`, each `ElseIf` statement (if there are any) is evaluated in order.</span></span> <span data-ttu-id="e9dfe-126">Když `True``elseifcondition` nenajde, příkazy hned za přidruženého `ElseIf` provedení.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-126">When a `True``elseifcondition` is found, the statements immediately following the associated `ElseIf` are executed.</span></span> <span data-ttu-id="e9dfe-127">Pokud žádné `elseifcondition` vyhodnotí jako `True`, nebo pokud nejsou žádné `ElseIf` příkazy, následující příkazy `Else` provedení.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-127">If no `elseifcondition` evaluates to `True`, or if there are no `ElseIf` statements, the statements following `Else` are executed.</span></span> <span data-ttu-id="e9dfe-128">Po provedení následující příkazy `Then`, `ElseIf`, nebo `Else`, provádění pokračuje následující příkaz `End If`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-128">After executing the statements following `Then`, `ElseIf`, or `Else`, execution continues with the statement following `End If`.</span></span>  
+### <a name="multiline-syntax"></a><span data-ttu-id="3e184-127">Víceřádkový syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e184-127">Multiline syntax</span></span>  
+ <span data-ttu-id="3e184-128">Když `If`... `Then`... `Else` příkaz je zjistil, `condition` testování.</span><span class="sxs-lookup"><span data-stu-id="3e184-128">When an `If`...`Then`...`Else` statement is encountered, `condition` is tested.</span></span> <span data-ttu-id="3e184-129">Pokud `condition` je `True`, následující příkazy `Then` provedení.</span><span class="sxs-lookup"><span data-stu-id="3e184-129">If `condition` is `True`, the statements following `Then` are executed.</span></span> <span data-ttu-id="3e184-130">Pokud `condition` je `False`, každý `ElseIf` (pokud existují) vyhodnotí v pořadí.</span><span class="sxs-lookup"><span data-stu-id="3e184-130">If `condition` is `False`, each `ElseIf` statement (if there are any) is evaluated in order.</span></span> <span data-ttu-id="3e184-131">Když `True` `elseifcondition` nenajde, příkazy hned za přidruženého `ElseIf` provedení.</span><span class="sxs-lookup"><span data-stu-id="3e184-131">When a `True` `elseifcondition` is found, the statements immediately following the associated `ElseIf` are executed.</span></span> <span data-ttu-id="3e184-132">Pokud žádné `elseifcondition` vyhodnotí jako `True`, nebo pokud nejsou žádné `ElseIf` příkazy, následující příkazy `Else` provedení.</span><span class="sxs-lookup"><span data-stu-id="3e184-132">If no `elseifcondition` evaluates to `True`, or if there are no `ElseIf` statements, the statements following `Else` are executed.</span></span> <span data-ttu-id="3e184-133">Po provedení následující příkazy `Then`, `ElseIf`, nebo `Else`, provádění pokračuje následující příkaz `End If`.</span><span class="sxs-lookup"><span data-stu-id="3e184-133">After executing the statements following `Then`, `ElseIf`, or `Else`, execution continues with the statement following `End If`.</span></span>  
   
- <span data-ttu-id="e9dfe-129">`ElseIf` a `Else` klauzule jsou obě volitelné.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-129">The `ElseIf` and `Else` clauses are both optional.</span></span> <span data-ttu-id="e9dfe-130">Může mít jako mnoho `ElseIf` klauzule jako je vhodné `If`... `Then`... `Else` příkaz, ale ne `ElseIf` klauzule může vyskytovat po `Else` klauzule.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-130">You can have as many `ElseIf` clauses as you want in an `If`...`Then`...`Else` statement, but no `ElseIf` clause can appear after an `Else` clause.</span></span> <span data-ttu-id="e9dfe-131">`If`... `Then`... `Else` příkazy můžete začlenit do jiné.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-131">`If`...`Then`...`Else` statements can be nested within each other.</span></span>  
+ <span data-ttu-id="3e184-134">`ElseIf` a `Else` klauzule jsou obě volitelné.</span><span class="sxs-lookup"><span data-stu-id="3e184-134">The `ElseIf` and `Else` clauses are both optional.</span></span> <span data-ttu-id="3e184-135">Může mít jako mnoho `ElseIf` klauzule jako je vhodné `If`... `Then`... `Else` příkaz, ale ne `ElseIf` klauzule může vyskytovat po `Else` klauzule.</span><span class="sxs-lookup"><span data-stu-id="3e184-135">You can have as many `ElseIf` clauses as you want in an `If`...`Then`...`Else` statement, but no `ElseIf` clause can appear after an `Else` clause.</span></span> <span data-ttu-id="3e184-136">`If`... `Then`... `Else` příkazy můžete začlenit do jiné.</span><span class="sxs-lookup"><span data-stu-id="3e184-136">`If`...`Then`...`Else` statements can be nested within each other.</span></span>  
   
- <span data-ttu-id="e9dfe-132">V syntaxi více řádků `If` příkaz musí být jediným příkazem v prvním řádku.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-132">In the multiple-line syntax, the `If` statement must be the only statement on the first line.</span></span> <span data-ttu-id="e9dfe-133">`ElseIf`, `Else`, A `End If` příkazy lze předcházet pouze čáry popisku.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-133">The `ElseIf`, `Else`, and `End If` statements can be preceded only by a line label.</span></span> <span data-ttu-id="e9dfe-134">`If`... `Then`... `Else` bloku musí končit `End If` příkaz.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-134">The `If`...`Then`...`Else` block must end with an `End If` statement.</span></span>  
+ <span data-ttu-id="3e184-137">Víceřádkový syntaxe `If` příkaz musí být jediným příkazem v prvním řádku.</span><span class="sxs-lookup"><span data-stu-id="3e184-137">In the multiline syntax, the `If` statement must be the only statement on the first line.</span></span> <span data-ttu-id="3e184-138">`ElseIf`, `Else`, A `End If` příkazy lze předcházet pouze čáry popisku.</span><span class="sxs-lookup"><span data-stu-id="3e184-138">The `ElseIf`, `Else`, and `End If` statements can be preceded only by a line label.</span></span> <span data-ttu-id="3e184-139">`If`... `Then`... `Else` bloku musí končit `End If` příkaz.</span><span class="sxs-lookup"><span data-stu-id="3e184-139">The `If`...`Then`...`Else` block must end with an `End If` statement.</span></span>  
   
 > [!TIP]
->  <span data-ttu-id="e9dfe-135">[Vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md) může být užitečnější, pokud vyhodnotit jeden výraz, který má několik možných hodnot.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-135">The [Select...Case Statement](../../../visual-basic/language-reference/statements/select-case-statement.md) might be more useful when you evaluate a single expression that has several possible values.</span></span>  
+>  <span data-ttu-id="3e184-140">[Vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md) může být užitečnější, pokud vyhodnotit jeden výraz, který má několik možných hodnot.</span><span class="sxs-lookup"><span data-stu-id="3e184-140">The [Select...Case Statement](../../../visual-basic/language-reference/statements/select-case-statement.md) might be more useful when you evaluate a single expression that has several possible values.</span></span>  
   
-## <a name="single-line-syntax"></a><span data-ttu-id="e9dfe-136">Syntaxe jednoho řádku</span><span class="sxs-lookup"><span data-stu-id="e9dfe-136">Single-Line Syntax</span></span>  
- <span data-ttu-id="e9dfe-137">Pomocí syntaxe jeden řádek pro krátké, jednoduché testy.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-137">You can use the single-line syntax for short, simple tests.</span></span> <span data-ttu-id="e9dfe-138">Syntaxe více řádků však poskytuje další strukturu a flexibilitu a je obvykle jednodušší pro čtení, údržbu a ladění.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-138">However, the multiple-line syntax provides more structure and flexibility and is usually easier to read, maintain, and debug.</span></span>  
+### <a name="single-line-syntax"></a><span data-ttu-id="3e184-141">Syntaxe jednoho řádku</span><span class="sxs-lookup"><span data-stu-id="3e184-141">Single-Line syntax</span></span>  
+ <span data-ttu-id="3e184-142">Jeden řádek syntaxe pro jednu podmínku s kódem vám pomůže spustit, pokud to není pravda.</span><span class="sxs-lookup"><span data-stu-id="3e184-142">You can use the single-line syntax for a single condition with code to execute if it's true.</span></span> <span data-ttu-id="3e184-143">Syntaxe více řádků však poskytuje další strukturu a flexibilitu a je jednodušší pro čtení, údržbu a ladění.</span><span class="sxs-lookup"><span data-stu-id="3e184-143">However, the multiple-line syntax provides more structure and flexibility and is easier to read, maintain, and debug.</span></span>  
   
- <span data-ttu-id="e9dfe-139">Jaké způsobem `Then` – klíčové slovo je prověřit, abyste zjistili, zda příkaz je jeden řádek `If`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-139">What follows the `Then` keyword is examined to determine whether a statement is a single-line `If`.</span></span> <span data-ttu-id="e9dfe-140">Pokud jakoukoli jinou hodnotu než komentář se zobrazí po `Then` na stejném řádku příkaz považován za jeden řádek `If` příkaz.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-140">If anything other than a comment appears after `Then` on the same line, the statement is treated as a single-line `If` statement.</span></span> <span data-ttu-id="e9dfe-141">Pokud `Then` chybí, musí být spuštění více řádků `If`... `Then`... `Else`.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-141">If `Then` is absent, it must be the start of a multiple-line `If`...`Then`...`Else`.</span></span>  
+ <span data-ttu-id="3e184-144">Jaké způsobem `Then` – klíčové slovo je prověřit, abyste zjistili, zda příkaz je jeden řádek `If`.</span><span class="sxs-lookup"><span data-stu-id="3e184-144">What follows the `Then` keyword is examined to determine whether a statement is a single-line `If`.</span></span> <span data-ttu-id="3e184-145">Pokud jakoukoli jinou hodnotu než komentář se zobrazí po `Then` na stejném řádku příkaz považován za jeden řádek `If` příkaz.</span><span class="sxs-lookup"><span data-stu-id="3e184-145">If anything other than a comment appears after `Then` on the same line, the statement is treated as a single-line `If` statement.</span></span> <span data-ttu-id="3e184-146">Pokud `Then` chybí, musí být spuštění více řádků `If`... `Then`... `Else`.</span><span class="sxs-lookup"><span data-stu-id="3e184-146">If `Then` is absent, it must be the start of a multiple-line `If`...`Then`...`Else`.</span></span>  
   
- <span data-ttu-id="e9dfe-142">V syntaxi jeden řádek, může mít více příkazů provést v důsledku `If`... `Then` rozhodnutí.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-142">In the single-line syntax, you can have multiple statements executed as the result of an `If`...`Then` decision.</span></span> <span data-ttu-id="e9dfe-143">Všechny příkazy musí být na stejném řádku a být oddělené dvojtečkou.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-143">All statements must be on the same line and be separated by colons.</span></span>  
+ <span data-ttu-id="3e184-147">V syntaxi jeden řádek, může mít více příkazů provést v důsledku `If`... `Then` rozhodnutí.</span><span class="sxs-lookup"><span data-stu-id="3e184-147">In the single-line syntax, you can have multiple statements executed as the result of an `If`...`Then` decision.</span></span> <span data-ttu-id="3e184-148">Všechny příkazy musí být na stejném řádku a být oddělené dvojtečkou.</span><span class="sxs-lookup"><span data-stu-id="3e184-148">All statements must be on the same line and be separated by colons.</span></span>  
+
+## <a name="multiline-syntax-example"></a><span data-ttu-id="3e184-149">Příklad Víceřádkový syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e184-149">Multiline syntax example</span></span>
+
+<a name="multi-line"></a>
+ 
+ <span data-ttu-id="3e184-150">Následující příklad ukazuje použití Víceřádkový syntaxe `If`... `Then`... `Else` příkaz.</span><span class="sxs-lookup"><span data-stu-id="3e184-150">The following example illustrates the use of the multiline syntax of the `If`...`Then`...`Else` statement.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e9dfe-144">Příklad</span><span class="sxs-lookup"><span data-stu-id="e9dfe-144">Example</span></span>  
- <span data-ttu-id="e9dfe-145">Následující příklad ukazuje použití syntaxe více řádků `If`... `Then`... `Else` příkaz.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-145">The following example illustrates the use of the multiple-line syntax of the `If`...`Then`...`Else` statement.</span></span>  
+ [!code-vb[VbVbalrStatements#101](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_1.vb?highlight=11,14,17,19)]
+
+## <a name="nested-syntax-example"></a><span data-ttu-id="3e184-151">Příklad vnořené syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e184-151">Nested syntax example</span></span>
+
+<a name="nested"></a>
+
+ <span data-ttu-id="3e184-152">Následující příklad obsahuje vnořené `If`... `Then`... `Else` příkazy.</span><span class="sxs-lookup"><span data-stu-id="3e184-152">The following example contains nested `If`...`Then`...`Else` statements.</span></span>  
   
- [!code-vb[VbVbalrStatements#101](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#102](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_2.vb?highlight=14,15,17,19,20,21,23,25,26,28)]
+
+## <a name="single-line-syntax-example"></a><span data-ttu-id="3e184-153">Příklad syntaxe jeden řádek</span><span class="sxs-lookup"><span data-stu-id="3e184-153">Single-Line syntax example</span></span>
   
-## <a name="example"></a><span data-ttu-id="e9dfe-146">Příklad</span><span class="sxs-lookup"><span data-stu-id="e9dfe-146">Example</span></span>  
- <span data-ttu-id="e9dfe-147">Následující příklad obsahuje vnořené `If`... `Then`... `Else` příkazy.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-147">The following example contains nested `If`...`Then`...`Else` statements.</span></span>  
+<a name="single-line"></a> <span data-ttu-id="3e184-154">Následující příklad ukazuje použití syntaxe jeden řádek.</span><span class="sxs-lookup"><span data-stu-id="3e184-154">The following example illustrates the use of the single-line syntax.</span></span>  
   
- [!code-vb[VbVbalrStatements#102](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#103](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_3.vb?highlight=18)]
   
-## <a name="example"></a><span data-ttu-id="e9dfe-148">Příklad</span><span class="sxs-lookup"><span data-stu-id="e9dfe-148">Example</span></span>  
- <span data-ttu-id="e9dfe-149">Následující příklad ukazuje použití syntaxe jeden řádek.</span><span class="sxs-lookup"><span data-stu-id="e9dfe-149">The following example illustrates the use of the single-line syntax.</span></span>  
-  
- [!code-vb[VbVbalrStatements#103](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_3.vb)]  
-  
-## <a name="see-also"></a><span data-ttu-id="e9dfe-150">Viz také</span><span class="sxs-lookup"><span data-stu-id="e9dfe-150">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="3e184-155">Viz také</span><span class="sxs-lookup"><span data-stu-id="3e184-155">See also</span></span>  
  <xref:Microsoft.VisualBasic.Interaction.Choose%2A>  
  <xref:Microsoft.VisualBasic.Interaction.Switch%2A>  
- [<span data-ttu-id="e9dfe-151">#If... Then... #Else – direktivy</span><span class="sxs-lookup"><span data-stu-id="e9dfe-151">#If...Then...#Else Directives</span></span>](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
- [<span data-ttu-id="e9dfe-152">Vyberte... Case – příkaz</span><span class="sxs-lookup"><span data-stu-id="e9dfe-152">Select...Case Statement</span></span>](../../../visual-basic/language-reference/statements/select-case-statement.md)  
- [<span data-ttu-id="e9dfe-153">Vnořené řídicí struktury</span><span class="sxs-lookup"><span data-stu-id="e9dfe-153">Nested Control Structures</span></span>](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
- [<span data-ttu-id="e9dfe-154">Rozhodovací struktury</span><span class="sxs-lookup"><span data-stu-id="e9dfe-154">Decision Structures</span></span>](../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
- [<span data-ttu-id="e9dfe-155">Logické a bitové operátory v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e9dfe-155">Logical and Bitwise Operators in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)  
- [<span data-ttu-id="e9dfe-156">Pokud operátor</span><span class="sxs-lookup"><span data-stu-id="e9dfe-156">If Operator</span></span>](../../../visual-basic/language-reference/operators/if-operator.md)
+ [<span data-ttu-id="3e184-156">Direktivy #If...Then...#Else</span><span class="sxs-lookup"><span data-stu-id="3e184-156">#If...Then...#Else Directives</span></span>](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [<span data-ttu-id="3e184-157">Příkaz Select...Case</span><span class="sxs-lookup"><span data-stu-id="3e184-157">Select...Case Statement</span></span>](../../../visual-basic/language-reference/statements/select-case-statement.md)  
+ [<span data-ttu-id="3e184-158">Vnořené řídicí struktury</span><span class="sxs-lookup"><span data-stu-id="3e184-158">Nested Control Structures</span></span>](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
+ [<span data-ttu-id="3e184-159">Rozhodovací struktury</span><span class="sxs-lookup"><span data-stu-id="3e184-159">Decision Structures</span></span>](../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
+ [<span data-ttu-id="3e184-160">Logické a bitové operátory v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="3e184-160">Logical and Bitwise Operators in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)  
+ [<span data-ttu-id="3e184-161">Operátor If</span><span class="sxs-lookup"><span data-stu-id="3e184-161">If Operator</span></span>](../../../visual-basic/language-reference/operators/if-operator.md)

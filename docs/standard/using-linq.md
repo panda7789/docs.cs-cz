@@ -13,19 +13,19 @@ ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4d85104d016f5f19f6908670125df91f20536d72
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 5ce6819abee90ceccc52a79f8bda794f2fd345fb
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="linq-language-integrated-query"></a><span data-ttu-id="0a405-104">LINQ (Language integrovaného dotazu)</span><span class="sxs-lookup"><span data-stu-id="0a405-104">LINQ (Language Integrated Query)</span></span>
+# <a name="linq-language-integrated-query"></a><span data-ttu-id="71870-104">LINQ (Language integrovaného dotazu)</span><span class="sxs-lookup"><span data-stu-id="71870-104">LINQ (Language Integrated Query)</span></span>
 
-## <a name="what-is-it"></a><span data-ttu-id="0a405-105">Co to je?</span><span class="sxs-lookup"><span data-stu-id="0a405-105">What is it?</span></span>
+## <a name="what-is-it"></a><span data-ttu-id="71870-105">Co to je?</span><span class="sxs-lookup"><span data-stu-id="71870-105">What is it?</span></span>
 
-<span data-ttu-id="0a405-106">LINQ poskytuje funkce dotazování úroveň jazyka a [vyšší pořadí funkce](https://en.wikipedia.org/wiki/Higher-order_function) rozhraní API jazyka C# a VB jako způsob, jak napsat kód výrazovou, deklarativní.</span><span class="sxs-lookup"><span data-stu-id="0a405-106">LINQ provides language-level querying capabilities and a [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) API to C# and VB as a way to write expressive, declarative code.</span></span>
+<span data-ttu-id="71870-106">LINQ poskytuje funkce dotazování úroveň jazyka a [vyšší pořadí funkce](https://en.wikipedia.org/wiki/Higher-order_function) rozhraní API jazyka C# a VB jako způsob, jak napsat kód výrazovou, deklarativní.</span><span class="sxs-lookup"><span data-stu-id="71870-106">LINQ provides language-level querying capabilities and a [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) API to C# and VB as a way to write expressive, declarative code.</span></span>
 
-<span data-ttu-id="0a405-107">Syntaxe dotazu úroveň jazyka:</span><span class="sxs-lookup"><span data-stu-id="0a405-107">Language-level query syntax:</span></span>
+<span data-ttu-id="71870-107">Syntaxe dotazu úroveň jazyka:</span><span class="sxs-lookup"><span data-stu-id="71870-107">Language-level query syntax:</span></span>
 
 ```csharp
 var linqExperts = from p in programmers
@@ -33,18 +33,18 @@ var linqExperts = from p in programmers
                   select new LINQExpert(p);
 ```
 
-<span data-ttu-id="0a405-108">Pomocí stejné příklad `IEnumerable<T>` rozhraní API:</span><span class="sxs-lookup"><span data-stu-id="0a405-108">Same example using the `IEnumerable<T>` API:</span></span>
+<span data-ttu-id="71870-108">Pomocí stejné příklad `IEnumerable<T>` rozhraní API:</span><span class="sxs-lookup"><span data-stu-id="71870-108">Same example using the `IEnumerable<T>` API:</span></span>
 
 ```csharp
 var linqExperts = programmers.Where(p => IsNewToLINQ)
                              .Select(p => new LINQExpert(p));
 ```
 
-## <a name="linq-is-expressive"></a><span data-ttu-id="0a405-109">LINQ je Expressive</span><span class="sxs-lookup"><span data-stu-id="0a405-109">LINQ is Expressive</span></span>
+## <a name="linq-is-expressive"></a><span data-ttu-id="71870-109">LINQ je Expressive</span><span class="sxs-lookup"><span data-stu-id="71870-109">LINQ is Expressive</span></span>
 
-<span data-ttu-id="0a405-110">Představte si máte seznam mazlíčků, ale chcete převést do slovníku umožňující přístup mazlíčky přímo pomocí jeho `RFID` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="0a405-110">Imagine you have a list of pets, but want to convert it into a dictionary where you can access a pet directly by its `RFID` value.</span></span>
+<span data-ttu-id="71870-110">Představte si máte seznam mazlíčků, ale chcete převést do slovníku umožňující přístup mazlíčky přímo pomocí jeho `RFID` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="71870-110">Imagine you have a list of pets, but want to convert it into a dictionary where you can access a pet directly by its `RFID` value.</span></span>
 
-<span data-ttu-id="0a405-111">Tradiční imperativní kód:</span><span class="sxs-lookup"><span data-stu-id="0a405-111">Traditional imperative code:</span></span>
+<span data-ttu-id="71870-111">Tradiční imperativní kód:</span><span class="sxs-lookup"><span data-stu-id="71870-111">Traditional imperative code:</span></span>
 
 ```csharp
 var petLookup = new Dictionary<int, Pet>();
@@ -55,21 +55,21 @@ foreach (var pet in pets)
 }
 ```
 
-<span data-ttu-id="0a405-112">Je záměrem za kód není pro vytvoření nového `Dictionary<int, Pet>` a přidejte do ní prostřednictvím smyčku, je pro převod existujícího seznamu do slovníku!</span><span class="sxs-lookup"><span data-stu-id="0a405-112">The intention behind the code is not to create a new `Dictionary<int, Pet>` and add to it via a loop, it is to convert an existing list into a dictionary!</span></span> <span data-ttu-id="0a405-113">LINQ zachovává záměrem, zatímco kód imperativní neexistuje.</span><span class="sxs-lookup"><span data-stu-id="0a405-113">LINQ preserves the intention whereas the imperative code does not.</span></span>
+<span data-ttu-id="71870-112">Je záměrem za kód není pro vytvoření nového `Dictionary<int, Pet>` a přidejte do ní prostřednictvím smyčku, je pro převod existujícího seznamu do slovníku!</span><span class="sxs-lookup"><span data-stu-id="71870-112">The intention behind the code is not to create a new `Dictionary<int, Pet>` and add to it via a loop, it is to convert an existing list into a dictionary!</span></span> <span data-ttu-id="71870-113">LINQ zachovává záměrem, zatímco kód imperativní neexistuje.</span><span class="sxs-lookup"><span data-stu-id="71870-113">LINQ preserves the intention whereas the imperative code does not.</span></span>
 
-<span data-ttu-id="0a405-114">Ekvivalentní výrazu LINQ:</span><span class="sxs-lookup"><span data-stu-id="0a405-114">Equivalent LINQ expression:</span></span>
+<span data-ttu-id="71870-114">Ekvivalentní výrazu LINQ:</span><span class="sxs-lookup"><span data-stu-id="71870-114">Equivalent LINQ expression:</span></span>
 
 ```csharp
 var petLookup = pets.ToDictionary(pet => pet.RFID);
 ```
 
-<span data-ttu-id="0a405-115">Kód pomocí LINQ se hodí v situaci, protože evens pole přehrávání mezi záměr a kódem, když důvody jako programátoři.</span><span class="sxs-lookup"><span data-stu-id="0a405-115">The code using LINQ is valuable because it evens the playing field between intent and code when reasoning as a programmer.</span></span> <span data-ttu-id="0a405-116">Další výhoda je jako stručný výtah kódu.</span><span class="sxs-lookup"><span data-stu-id="0a405-116">Another bonus is code brevity.</span></span> <span data-ttu-id="0a405-117">Představte si velké části codebase redukování 1/3 jako provést výše.</span><span class="sxs-lookup"><span data-stu-id="0a405-117">Imagine reducing large portions of a codebase by 1/3 as done above.</span></span> <span data-ttu-id="0a405-118">Poměrně sladké pozornosti, pravé?</span><span class="sxs-lookup"><span data-stu-id="0a405-118">Pretty sweet deal, right?</span></span>
+<span data-ttu-id="71870-115">Kód pomocí LINQ se hodí v situaci, protože evens pole přehrávání mezi záměr a kódem, když důvody jako programátoři.</span><span class="sxs-lookup"><span data-stu-id="71870-115">The code using LINQ is valuable because it evens the playing field between intent and code when reasoning as a programmer.</span></span> <span data-ttu-id="71870-116">Další výhoda je jako stručný výtah kódu.</span><span class="sxs-lookup"><span data-stu-id="71870-116">Another bonus is code brevity.</span></span> <span data-ttu-id="71870-117">Představte si velké části codebase redukování 1/3 jako provést výše.</span><span class="sxs-lookup"><span data-stu-id="71870-117">Imagine reducing large portions of a codebase by 1/3 as done above.</span></span> <span data-ttu-id="71870-118">Poměrně sladké pozornosti, pravé?</span><span class="sxs-lookup"><span data-stu-id="71870-118">Pretty sweet deal, right?</span></span>
 
-## <a name="linq-providers-simplify-data-access"></a><span data-ttu-id="0a405-119">Zprostředkovatelé LINQ zjednodušit přístup k datům</span><span class="sxs-lookup"><span data-stu-id="0a405-119">LINQ Providers Simplify Data Access</span></span>
+## <a name="linq-providers-simplify-data-access"></a><span data-ttu-id="71870-119">Zprostředkovatelé LINQ zjednodušit přístup k datům</span><span class="sxs-lookup"><span data-stu-id="71870-119">LINQ Providers Simplify Data Access</span></span>
 
-<span data-ttu-id="0a405-120">U významné bloku softwaru stanovené v zástupné vše, co se pohybuje kolem práci s daty z některé zdroje (databáze, JSON, XML atd.).</span><span class="sxs-lookup"><span data-stu-id="0a405-120">For a significant chunk of software out in the wild, everything revolves around dealing with data from some source (Databases, JSON, XML, etc).</span></span> <span data-ttu-id="0a405-121">Často to zahrnuje nové rozhraní API pro každý zdroj dat, což může být nepříjemných učení.</span><span class="sxs-lookup"><span data-stu-id="0a405-121">Often this involves learning a new API for each data source, which can be annoying.</span></span> <span data-ttu-id="0a405-122">Technologie LINQ to zjednodušuje tím, že poskytuje abstrakci společné prvky přístup k datům do syntaxe dotazu, který vypadá stejně bez ohledu na to, jaké zdroje dat vyberte.</span><span class="sxs-lookup"><span data-stu-id="0a405-122">LINQ simplifies this by abstracting common elements of data access into a query syntax which looks the same no matter which data source you pick.</span></span>
+<span data-ttu-id="71870-120">U významné bloku softwaru stanovené v zástupné vše, co se pohybuje kolem práci s daty z některé zdroje (databáze, JSON, XML atd.).</span><span class="sxs-lookup"><span data-stu-id="71870-120">For a significant chunk of software out in the wild, everything revolves around dealing with data from some source (Databases, JSON, XML, etc).</span></span> <span data-ttu-id="71870-121">Často to zahrnuje nové rozhraní API pro každý zdroj dat, což může být nepříjemných učení.</span><span class="sxs-lookup"><span data-stu-id="71870-121">Often this involves learning a new API for each data source, which can be annoying.</span></span> <span data-ttu-id="71870-122">Technologie LINQ to zjednodušuje tím, že poskytuje abstrakci společné prvky přístup k datům do syntaxe dotazu, který vypadá stejně bez ohledu na to, jaké zdroje dat vyberte.</span><span class="sxs-lookup"><span data-stu-id="71870-122">LINQ simplifies this by abstracting common elements of data access into a query syntax which looks the same no matter which data source you pick.</span></span>
 
-<span data-ttu-id="0a405-123">Vezměte v úvahu následující: vyhledání všech elementů XML s hodnotou určitým atributem.</span><span class="sxs-lookup"><span data-stu-id="0a405-123">Consider the following: finding all XML elements with a specific attribute value.</span></span>
+<span data-ttu-id="71870-123">Vezměte v úvahu následující: vyhledání všech elementů XML s hodnotou určitým atributem.</span><span class="sxs-lookup"><span data-stu-id="71870-123">Consider the following: finding all XML elements with a specific attribute value.</span></span>
 
 ```csharp
 public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement documentRoot, string elementName,
@@ -81,19 +81,19 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
 }
 ```
 
-<span data-ttu-id="0a405-124">Psaní kódu ručně procházení v dokumentu XML k provedení této úlohy bude podstatně více náročné.</span><span class="sxs-lookup"><span data-stu-id="0a405-124">Writing code to manually traverse the XML document to perform this task would be far more challenging.</span></span>
+<span data-ttu-id="71870-124">Psaní kódu ručně procházení v dokumentu XML k provedení této úlohy bude podstatně více náročné.</span><span class="sxs-lookup"><span data-stu-id="71870-124">Writing code to manually traverse the XML document to perform this task would be far more challenging.</span></span>
 
-<span data-ttu-id="0a405-125">Jediné, co můžete provést zprostředkovatelům LINQ interakci se souborem XML není.</span><span class="sxs-lookup"><span data-stu-id="0a405-125">Interacting with XML isn’t the only thing you can do with LINQ Providers.</span></span> <span data-ttu-id="0a405-126">[Technologie LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně holou objekt relační Mapper (ORM) pro databázi MSSQL serveru.</span><span class="sxs-lookup"><span data-stu-id="0a405-126">[Linq to SQL](../../docs/framework/data/adonet/sql/linq/index.md) is a fairly bare-bones Object-Relational Mapper (ORM) for an MSSQL Server Database.</span></span> <span data-ttu-id="0a405-127">[JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna nabízí efektivní traversal dokumentu JSON prostřednictvím LINQ.</span><span class="sxs-lookup"><span data-stu-id="0a405-127">The [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) library provides efficient JSON Document traversal via LINQ.</span></span> <span data-ttu-id="0a405-128">Kromě toho, pokud není k dispozici knihovnu, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://msdn.microsoft.com/library/Bb546158.aspx)!</span><span class="sxs-lookup"><span data-stu-id="0a405-128">Furthermore, if there isn’t a library which does what you need, you can also [write your own LINQ Provider](https://msdn.microsoft.com/library/Bb546158.aspx)!</span></span>
+<span data-ttu-id="71870-125">Jediné, co můžete provést zprostředkovatelům LINQ interakci se souborem XML není.</span><span class="sxs-lookup"><span data-stu-id="71870-125">Interacting with XML isn’t the only thing you can do with LINQ Providers.</span></span> <span data-ttu-id="71870-126">[Technologie LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně holou objekt relační Mapper (ORM) pro databázi MSSQL serveru.</span><span class="sxs-lookup"><span data-stu-id="71870-126">[Linq to SQL](../../docs/framework/data/adonet/sql/linq/index.md) is a fairly bare-bones Object-Relational Mapper (ORM) for an MSSQL Server Database.</span></span> <span data-ttu-id="71870-127">[JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna nabízí efektivní traversal dokumentu JSON prostřednictvím LINQ.</span><span class="sxs-lookup"><span data-stu-id="71870-127">The [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) library provides efficient JSON Document traversal via LINQ.</span></span> <span data-ttu-id="71870-128">Kromě toho, pokud není k dispozici knihovnu, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://msdn.microsoft.com/library/Bb546158.aspx)!</span><span class="sxs-lookup"><span data-stu-id="71870-128">Furthermore, if there isn’t a library which does what you need, you can also [write your own LINQ Provider](https://msdn.microsoft.com/library/Bb546158.aspx)!</span></span>
 
-## <a name="why-use-the-query-syntax"></a><span data-ttu-id="0a405-129">Proč používat syntaxi dotazu?</span><span class="sxs-lookup"><span data-stu-id="0a405-129">Why Use the Query Syntax?</span></span>
+## <a name="why-use-the-query-syntax"></a><span data-ttu-id="71870-129">Proč používat syntaxi dotazu?</span><span class="sxs-lookup"><span data-stu-id="71870-129">Why Use the Query Syntax?</span></span>
 
-<span data-ttu-id="0a405-130">Toto je otázku, která se často zobrazí.</span><span class="sxs-lookup"><span data-stu-id="0a405-130">This is a question which often comes up.</span></span> <span data-ttu-id="0a405-131">Po všech, se</span><span class="sxs-lookup"><span data-stu-id="0a405-131">After all, this,</span></span>
+<span data-ttu-id="71870-130">Toto je otázku, která se často zobrazí.</span><span class="sxs-lookup"><span data-stu-id="71870-130">This is a question which often comes up.</span></span> <span data-ttu-id="71870-131">Po všech, se</span><span class="sxs-lookup"><span data-stu-id="71870-131">After all, this,</span></span>
 
 ```csharp
 var filteredItems = myItems.Where(item => item.Foo);
 ```
 
-<span data-ttu-id="0a405-132">je mnohem přesnější než toto:</span><span class="sxs-lookup"><span data-stu-id="0a405-132">is a lot more concise than this:</span></span>
+<span data-ttu-id="71870-132">je mnohem přesnější než toto:</span><span class="sxs-lookup"><span data-stu-id="71870-132">is a lot more concise than this:</span></span>
 
 ```csharp
 var filteredItems = from item in myItems
@@ -101,31 +101,31 @@ var filteredItems = from item in myItems
                     select item;
 ```
 
-<span data-ttu-id="0a405-133">Syntaxe rozhraní API není právě přesnější způsob, jak provést syntaxe dotazu?</span><span class="sxs-lookup"><span data-stu-id="0a405-133">Isn’t the API syntax just a more concise way to do the query syntax?</span></span>
+<span data-ttu-id="71870-133">Syntaxe rozhraní API není právě přesnější způsob, jak provést syntaxe dotazu?</span><span class="sxs-lookup"><span data-stu-id="71870-133">Isn’t the API syntax just a more concise way to do the query syntax?</span></span>
 
-<span data-ttu-id="0a405-134">Ne.</span><span class="sxs-lookup"><span data-stu-id="0a405-134">No.</span></span> <span data-ttu-id="0a405-135">Umožňuje použití syntaxe dotazu **let** klauzuli, která umožňuje zavádět a vytvořte vazbu proměnné v rámci oboru výrazem s použitím v další části výrazu.</span><span class="sxs-lookup"><span data-stu-id="0a405-135">The query syntax allows for the use the **let** clause, which allows you to introduce and bind a variable within the scope of the expression, using it in subsequent pieces of the expression.</span></span> <span data-ttu-id="0a405-136">Reprodukci stejný kód se pouze syntaxí rozhraní API lze provést, ale pravděpodobně povede k kódu, který se těžko čitelný.</span><span class="sxs-lookup"><span data-stu-id="0a405-136">Reproducing the same code with only the API syntax can be done, but will most likely lead to code which is hard to read.</span></span>
+<span data-ttu-id="71870-134">Ne.</span><span class="sxs-lookup"><span data-stu-id="71870-134">No.</span></span> <span data-ttu-id="71870-135">Umožňuje použití syntaxe dotazu **let** klauzuli, která umožňuje zavádět a vytvořte vazbu proměnné v rámci oboru výrazem s použitím v další části výrazu.</span><span class="sxs-lookup"><span data-stu-id="71870-135">The query syntax allows for the use the **let** clause, which allows you to introduce and bind a variable within the scope of the expression, using it in subsequent pieces of the expression.</span></span> <span data-ttu-id="71870-136">Reprodukci stejný kód se pouze syntaxí rozhraní API lze provést, ale pravděpodobně povede k kódu, který se těžko čitelný.</span><span class="sxs-lookup"><span data-stu-id="71870-136">Reproducing the same code with only the API syntax can be done, but will most likely lead to code which is hard to read.</span></span>
 
-<span data-ttu-id="0a405-137">Proto to begs na otázku **by měla pouze použijete syntaxi dotazu?**</span><span class="sxs-lookup"><span data-stu-id="0a405-137">So this begs the question, **should you just use the query syntax?**</span></span>
+<span data-ttu-id="71870-137">Proto to begs na otázku **by měla pouze použijete syntaxi dotazu?**</span><span class="sxs-lookup"><span data-stu-id="71870-137">So this begs the question, **should you just use the query syntax?**</span></span>
 
-<span data-ttu-id="0a405-138">Odpověď na tuto otázku **Ano** Pokud...</span><span class="sxs-lookup"><span data-stu-id="0a405-138">The answer to this question is **yes** if...</span></span>
+<span data-ttu-id="71870-138">Odpověď na tuto otázku **Ano** Pokud...</span><span class="sxs-lookup"><span data-stu-id="71870-138">The answer to this question is **yes** if...</span></span>
 
-*   <span data-ttu-id="0a405-139">Stávající codebase již používá syntaxi dotazu</span><span class="sxs-lookup"><span data-stu-id="0a405-139">Your existing codebase already uses the query syntax</span></span>
-*   <span data-ttu-id="0a405-140">Obor proměnné je potřeba v rámci své dotazy z důvodu složitosti</span><span class="sxs-lookup"><span data-stu-id="0a405-140">You need to scope variables within your queries due to complexity</span></span>
-*   <span data-ttu-id="0a405-141">Dáváte přednost syntaxe dotazu a nebude rušil vaší základu kódu</span><span class="sxs-lookup"><span data-stu-id="0a405-141">You prefer the query syntax and it won’t distract from your codebase</span></span>
+*   <span data-ttu-id="71870-139">Stávající codebase již používá syntaxi dotazu</span><span class="sxs-lookup"><span data-stu-id="71870-139">Your existing codebase already uses the query syntax</span></span>
+*   <span data-ttu-id="71870-140">Obor proměnné je potřeba v rámci své dotazy z důvodu složitosti</span><span class="sxs-lookup"><span data-stu-id="71870-140">You need to scope variables within your queries due to complexity</span></span>
+*   <span data-ttu-id="71870-141">Dáváte přednost syntaxe dotazu a nebude rušil vaší základu kódu</span><span class="sxs-lookup"><span data-stu-id="71870-141">You prefer the query syntax and it won’t distract from your codebase</span></span>
 
-<span data-ttu-id="0a405-142">Odpověď na tuto otázku **žádné** Pokud...</span><span class="sxs-lookup"><span data-stu-id="0a405-142">The answer to this question is **no** if...</span></span>
+<span data-ttu-id="71870-142">Odpověď na tuto otázku **žádné** Pokud...</span><span class="sxs-lookup"><span data-stu-id="71870-142">The answer to this question is **no** if...</span></span>
 
-*   <span data-ttu-id="0a405-143">Stávající codebase již používá syntaxi rozhraní API</span><span class="sxs-lookup"><span data-stu-id="0a405-143">Your existing codebase already uses the API syntax</span></span>
-*   <span data-ttu-id="0a405-144">Máte potřeba proměnných rozsahu v rámci své dotazy</span><span class="sxs-lookup"><span data-stu-id="0a405-144">You have no need to scope variables within your queries</span></span>
-*   <span data-ttu-id="0a405-145">Dáváte přednost syntaxe rozhraní API a nebude rušil vaší základu kódu</span><span class="sxs-lookup"><span data-stu-id="0a405-145">You prefer the API syntax and it won’t distract from your codebase</span></span>
+*   <span data-ttu-id="71870-143">Stávající codebase již používá syntaxi rozhraní API</span><span class="sxs-lookup"><span data-stu-id="71870-143">Your existing codebase already uses the API syntax</span></span>
+*   <span data-ttu-id="71870-144">Máte potřeba proměnných rozsahu v rámci své dotazy</span><span class="sxs-lookup"><span data-stu-id="71870-144">You have no need to scope variables within your queries</span></span>
+*   <span data-ttu-id="71870-145">Dáváte přednost syntaxe rozhraní API a nebude rušil vaší základu kódu</span><span class="sxs-lookup"><span data-stu-id="71870-145">You prefer the API syntax and it won’t distract from your codebase</span></span>
 
-## <a name="essential-samples"></a><span data-ttu-id="0a405-146">Základní ukázky</span><span class="sxs-lookup"><span data-stu-id="0a405-146">Essential Samples</span></span>
+## <a name="essential-samples"></a><span data-ttu-id="71870-146">Základní ukázky</span><span class="sxs-lookup"><span data-stu-id="71870-146">Essential Samples</span></span>
 
-<span data-ttu-id="0a405-147">Skutečně úplný seznam ukázky LINQ, najdete v článku [101 ukázky LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).</span><span class="sxs-lookup"><span data-stu-id="0a405-147">For a truly comprehensive list of LINQ samples, visit [101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).</span></span>
+<span data-ttu-id="71870-147">Skutečně úplný seznam ukázky LINQ, najdete v článku [101 ukázky LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).</span><span class="sxs-lookup"><span data-stu-id="71870-147">For a truly comprehensive list of LINQ samples, visit [101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).</span></span>
 
-<span data-ttu-id="0a405-148">Následuje ukázka rychlé některé důležité údaje LINQ.</span><span class="sxs-lookup"><span data-stu-id="0a405-148">The following is a quick demonstration of some of the essential pieces of LINQ.</span></span> <span data-ttu-id="0a405-149">Toto je nijak komplexní, LINQ, které poskytuje výrazně víc funkcí než co je showcased sem.</span><span class="sxs-lookup"><span data-stu-id="0a405-149">This is in no way comprehensive, as LINQ provides significantly more functionality than what is showcased here.</span></span>
+<span data-ttu-id="71870-148">Následuje ukázka rychlé některé důležité údaje LINQ.</span><span class="sxs-lookup"><span data-stu-id="71870-148">The following is a quick demonstration of some of the essential pieces of LINQ.</span></span> <span data-ttu-id="71870-149">Toto je nijak komplexní, LINQ, které poskytuje výrazně víc funkcí než co je showcased sem.</span><span class="sxs-lookup"><span data-stu-id="71870-149">This is in no way comprehensive, as LINQ provides significantly more functionality than what is showcased here.</span></span>
 
-*   <span data-ttu-id="0a405-150">Másla a chléb - `Where`, `Select`, a `Aggregate`:</span><span class="sxs-lookup"><span data-stu-id="0a405-150">The bread and butter - `Where`, `Select`, and `Aggregate`:</span></span>
+*   <span data-ttu-id="71870-150">Másla a chléb - `Where`, `Select`, a `Aggregate`:</span><span class="sxs-lookup"><span data-stu-id="71870-150">The bread and butter - `Where`, `Select`, and `Aggregate`:</span></span>
 
 ```csharp
 // Filtering a list
@@ -148,14 +148,14 @@ int seed = 0;
 int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 ```
 
-*   <span data-ttu-id="0a405-151">Vyrovnání seznam seznamů:</span><span class="sxs-lookup"><span data-stu-id="0a405-151">Flattening a list of lists:</span></span>
+*   <span data-ttu-id="71870-151">Vyrovnání seznam seznamů:</span><span class="sxs-lookup"><span data-stu-id="71870-151">Flattening a list of lists:</span></span>
 
 ```csharp
 // Transforms the list of kennels into a list of all their dogs.
 var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
 ```
 
-*   <span data-ttu-id="0a405-152">Spojení mezi dvěma sadami (s vlastní komparátoru):</span><span class="sxs-lookup"><span data-stu-id="0a405-152">Union between two sets (with custom comparator):</span></span>
+*   <span data-ttu-id="71870-152">Spojení mezi dvěma sadami (s vlastní komparátoru):</span><span class="sxs-lookup"><span data-stu-id="71870-152">Union between two sets (with custom comparator):</span></span>
 
 ```csharp
 public class DogHairLengthComparer : IEqualityComparer<Dog>
@@ -190,7 +190,7 @@ public class DogHairLengthComparer : IEqualityComparer<Dog>
 var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthComparer());
 ```
 
-*   <span data-ttu-id="0a405-153">Průnik mezi dvěma sadami:</span><span class="sxs-lookup"><span data-stu-id="0a405-153">Intersection between two sets:</span></span>
+*   <span data-ttu-id="71870-153">Průnik mezi dvěma sadami:</span><span class="sxs-lookup"><span data-stu-id="71870-153">Intersection between two sets:</span></span>
 
 ```csharp
 // Gets the volunteers who spend share time with two humane societies.
@@ -198,7 +198,7 @@ var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      new VolunteerTimeComparer());
 ```
 
-*   <span data-ttu-id="0a405-154">Řazení:</span><span class="sxs-lookup"><span data-stu-id="0a405-154">Ordering:</span></span>
+*   <span data-ttu-id="71870-154">Řazení:</span><span class="sxs-lookup"><span data-stu-id="71870-154">Ordering:</span></span>
 
 ```csharp
 // Get driving directions, ordering by if it's toll-free before estimated driving time.
@@ -207,7 +207,7 @@ var results = DirectionsProcessor.GetDirections(start, end)
               .ThenBy(direction => direction.EstimatedTime);
 ```
 
-*   <span data-ttu-id="0a405-155">Nakonec další pokročilé ukázka: určení, jestli jsou stejné hodnoty vlastnosti dvě instance stejného typu (Borrowed a upravených z [tento příspěvek StackOverflow](http://stackoverflow.com/a/844855)):</span><span class="sxs-lookup"><span data-stu-id="0a405-155">Finally, a more advanced sample: determining if the values of the properties of two instances of the same type are equal (Borrowed and modified from [this StackOverflow post](http://stackoverflow.com/a/844855)):</span></span>
+*   <span data-ttu-id="71870-155">Nakonec další pokročilé ukázka: určení, jestli jsou stejné hodnoty vlastnosti dvě instance stejného typu (Borrowed a upravených z [tento příspěvek StackOverflow](http://stackoverflow.com/a/844855)):</span><span class="sxs-lookup"><span data-stu-id="71870-155">Finally, a more advanced sample: determining if the values of the properties of two instances of the same type are equal (Borrowed and modified from [this StackOverflow post](http://stackoverflow.com/a/844855)):</span></span>
 
 ```csharp
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
@@ -231,11 +231,11 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 }
 ```
 
-## <a name="plinq"></a><span data-ttu-id="0a405-156">PLINQ</span><span class="sxs-lookup"><span data-stu-id="0a405-156">PLINQ</span></span>
+## <a name="plinq"></a><span data-ttu-id="71870-156">PLINQ</span><span class="sxs-lookup"><span data-stu-id="71870-156">PLINQ</span></span>
 
-<span data-ttu-id="0a405-157">Paralelní provádění modul pro LINQ – výrazy se PLINQ nebo paralelní LINQ.</span><span class="sxs-lookup"><span data-stu-id="0a405-157">PLINQ, or Parallel LINQ, is a parallel execution engine for LINQ expressions.</span></span> <span data-ttu-id="0a405-158">Jinými slovy regulární výrazy LINQ může být trivially paralelizovaná málo napříč libovolný počet vláken.</span><span class="sxs-lookup"><span data-stu-id="0a405-158">In other words, a regular LINQ expressions can be trivially parallelized across any number of threads.</span></span> <span data-ttu-id="0a405-159">To se provádí prostřednictvím volání `AsParallel()` před výrazem.</span><span class="sxs-lookup"><span data-stu-id="0a405-159">This is accomplished via a call to `AsParallel()` preceding the expression.</span></span>
+<span data-ttu-id="71870-157">Paralelní provádění modul pro LINQ – výrazy se PLINQ nebo paralelní LINQ.</span><span class="sxs-lookup"><span data-stu-id="71870-157">PLINQ, or Parallel LINQ, is a parallel execution engine for LINQ expressions.</span></span> <span data-ttu-id="71870-158">Jinými slovy regulární výrazy LINQ může být trivially paralelizovaná málo napříč libovolný počet vláken.</span><span class="sxs-lookup"><span data-stu-id="71870-158">In other words, a regular LINQ expressions can be trivially parallelized across any number of threads.</span></span> <span data-ttu-id="71870-159">To se provádí prostřednictvím volání `AsParallel()` před výrazem.</span><span class="sxs-lookup"><span data-stu-id="71870-159">This is accomplished via a call to `AsParallel()` preceding the expression.</span></span>
 
-<span data-ttu-id="0a405-160">Zvažte následující:</span><span class="sxs-lookup"><span data-stu-id="0a405-160">Consider the following:</span></span>
+<span data-ttu-id="71870-160">Zvažte následující:</span><span class="sxs-lookup"><span data-stu-id="71870-160">Consider the following:</span></span>
 
 ```csharp
 public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> facebookUsers)
@@ -251,16 +251,16 @@ public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> fa
 }
 ```
 
-<span data-ttu-id="0a405-161">Tento kód bude oddílu `facebookUsers` napříč vlákny systému podle potřeby součet až celkový líbí na každé vlákno paralelně, aby součet výsledky počítaný jednotlivými vlákny a projektu tento výsledek na dobrý řetězec.</span><span class="sxs-lookup"><span data-stu-id="0a405-161">This code will partition `facebookUsers` across system threads as necessary, sum up the total likes on each thread in parallel, sum the results computed by each thread, and project that result into a nice string.</span></span>
+<span data-ttu-id="71870-161">Tento kód bude oddílu `facebookUsers` napříč vlákny systému podle potřeby součet až celkový líbí na každé vlákno paralelně, aby součet výsledky počítaný jednotlivými vlákny a projektu tento výsledek na dobrý řetězec.</span><span class="sxs-lookup"><span data-stu-id="71870-161">This code will partition `facebookUsers` across system threads as necessary, sum up the total likes on each thread in parallel, sum the results computed by each thread, and project that result into a nice string.</span></span>
 
-<span data-ttu-id="0a405-162">Ve formuláři diagram:</span><span class="sxs-lookup"><span data-stu-id="0a405-162">In diagram form:</span></span>
+<span data-ttu-id="71870-162">Ve formuláři diagram:</span><span class="sxs-lookup"><span data-stu-id="71870-162">In diagram form:</span></span>
 
 ![PLINQ diagram](./media/using-linq/plinq-diagram.png)
 
-<span data-ttu-id="0a405-164">Paralelní úlohy vázané na procesor, které lze snadno vyjádřit pomocí LINQ (jinými slovy, jsou čistá funkce a mít žádné vedlejší účinky) jsou skvělý kandidátem pro PLINQ.</span><span class="sxs-lookup"><span data-stu-id="0a405-164">Parallelizable CPU-bound jobs which can be easily expressed via LINQ (in other words, are pure functions and have no side effects) are a great candidate for PLINQ.</span></span> <span data-ttu-id="0a405-165">Pro úlohy, které _provést_ mít vedlejším účinkem, zvažte použití [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).</span><span class="sxs-lookup"><span data-stu-id="0a405-165">For jobs which _do_ have a side effect, consider using the [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).</span></span>
+<span data-ttu-id="71870-164">Paralelní úlohy vázané na procesor, které lze snadno vyjádřit pomocí LINQ (jinými slovy, jsou čistá funkce a mít žádné vedlejší účinky) jsou skvělý kandidátem pro PLINQ.</span><span class="sxs-lookup"><span data-stu-id="71870-164">Parallelizable CPU-bound jobs which can be easily expressed via LINQ (in other words, are pure functions and have no side effects) are a great candidate for PLINQ.</span></span> <span data-ttu-id="71870-165">Pro úlohy, které _provést_ mít vedlejším účinkem, zvažte použití [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).</span><span class="sxs-lookup"><span data-stu-id="71870-165">For jobs which _do_ have a side effect, consider using the [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).</span></span>
 
-## <a name="further-resources"></a><span data-ttu-id="0a405-166">Další prostředky:</span><span class="sxs-lookup"><span data-stu-id="0a405-166">Further Resources:</span></span>
+## <a name="further-resources"></a><span data-ttu-id="71870-166">Další prostředky:</span><span class="sxs-lookup"><span data-stu-id="71870-166">Further Resources:</span></span>
 
-*   [<span data-ttu-id="0a405-167">101 ukázky LINQ</span><span class="sxs-lookup"><span data-stu-id="0a405-167">101 LINQ Samples</span></span>](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-*   <span data-ttu-id="0a405-168">[Linqpad](https://www.linqpad.net/), playground prostředí a databázové dotazy modul pro C# /F # / VB.</span><span class="sxs-lookup"><span data-stu-id="0a405-168">[Linqpad](https://www.linqpad.net/), a playground environment and Database querying engine for C#/F#/VB</span></span>
-*   <span data-ttu-id="0a405-169">[EduLinq](http://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), zde elektronickou knihu pro učení, jak je implementována LINQ na objekty</span><span class="sxs-lookup"><span data-stu-id="0a405-169">[EduLinq](http://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), an e-book for learning how LINQ-to-objects is implemented</span></span>
+*   [<span data-ttu-id="71870-167">101 ukázky LINQ</span><span class="sxs-lookup"><span data-stu-id="71870-167">101 LINQ Samples</span></span>](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
+*   <span data-ttu-id="71870-168">[Linqpad](https://www.linqpad.net/), playground prostředí a databázové dotazy modul pro C# /F # / VB.</span><span class="sxs-lookup"><span data-stu-id="71870-168">[Linqpad](https://www.linqpad.net/), a playground environment and Database querying engine for C#/F#/VB</span></span>
+*   <span data-ttu-id="71870-169">[EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), zde elektronickou knihu pro učení, jak je implementována LINQ na objekty</span><span class="sxs-lookup"><span data-stu-id="71870-169">[EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), an e-book for learning how LINQ-to-objects is implemented</span></span>
